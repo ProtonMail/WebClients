@@ -70,11 +70,11 @@
       "Accept": [
         "Accetta"
       ],
-      "activate": [
-        "attiva"
-      ],
       "Activate": [
         "Attiva"
+      ],
+      "activate": [
+        "attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -391,9 +391,6 @@
       "Disable": [
         "Disabilita"
       ],
-      "Disable E2EE for group address": [
-        "Disabilita la crittografia end-to-end per gli indirizzi di gruppo"
-      ],
       "Disable recovery phrase": [
         "Disabilita la frase di recupero"
       ],
@@ -495,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Abilita il ripristino basato sul dispositivo"
-      ],
-      "Enable E2EE for group address": [
-        "Abilita la crittografia end-to-end per gli indirizzi di gruppo"
       ],
       "Enable multi-user support": [
         "Abilita il supporto multi-utente"
@@ -805,11 +799,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
       "Refresh the page": [
         "Aggiorna la pagina"
+      ],
+      "refresh the page": [
+        "aggiorna la pagina"
       ],
       "Reload": [
         "Ricarica"
@@ -819,9 +813,6 @@
       ],
       "Remove all members": [
         "Rimuovi tutti i membri"
-      ],
-      "Remove all members from group": [
-        "Rimuovi tutti i membri dal gruppo"
       ],
       "Remove bonuses": [
         "Rimuovi bonus"
@@ -867,9 +858,6 @@
       ],
       "Resend code": [
         "Reinvia il codice"
-      ],
-      "Resend invitation": [
-        "Invia nuovamente l'invito"
       ],
       "Reset credentials": [
         "Ripristina credenziali"
@@ -1266,9 +1254,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Aggiungi un dominio pm.me"
-      ],
       "Resuming forward": [
         "Ripristino inoltro"
       ]
@@ -1622,6 +1607,14 @@
         "Seleziona la tua offerta della Fine dell'Anno"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB di spazio di archiviazione (2 volte di più rispetto a qualsiasi altro piano)"
@@ -1643,14 +1636,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Il piano ${ plan } è tornato, ma solo per un periodo di tempo limitato"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3618,6 +3603,43 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Sei stato invitato ad accedere a un file in ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**Collaborativa:** editor di documenti online"
+      ],
+      "**GDPR** and **HIPAA** compliant": [
+        "Conforme a **GDPR** e **HIPAA**"
+      ],
+      "**ISO 27001** certified": [
+        "Certificata **ISO 27001**"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**Sicura:** crittografia end-to-end"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**Semplice e intuitiva:** importa i tuoi file e configurali in pochi minuti"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Protezione avanzata che va oltre gli standard aziendali"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "Unisciti alle oltre 50.000 organizzazioni che già si affidano alla sicurezza di ${ BRAND_NAME }"
+      ],
+      "Protect sensitive business information and collaborate securely": [
+        "Proteggi le informazioni aziendali sensibili e collabora in modo sicuro"
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "Archiviazione sicura su cloud per il pieno controllo dei tuoi dati"
+      ],
+      "Tailored made solutions for larger organizations with custom needs": [
+        "Soluzioni su misura per organizzazioni più grandi con esigenze personalizzate"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "L’unica soluzione aziendale che è:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -6645,6 +6667,9 @@
         "L'utente interessato è nella riga",
         "Gli utenti interessati sono nelle righe"
       ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Dopo essere stati bloccati, i membri dell'organizzazione dovranno sbloccare ${ PASS_APP_NAME } con la propria password o PIN, ecc."
+      ],
       "Align left": [
         "Allinea a sinistra"
       ],
@@ -6934,6 +6959,10 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crea un'etichetta per i messaggi importati, il periodo di tempo dell'importazione e le etichette che desideri importare."
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Crea un cloud sicuro per ${ n } membro",
+        "Crea un cloud sicuro per ${ n } membri"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crea e gestisci account secondari e assegna loro indirizzi email col tuo dominio personalizzato."
       ],
@@ -6992,11 +7021,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "Dedicated servers": [
-        "Server dedicati"
-      ],
       "dedicated servers": [
         "server dedicati"
+      ],
+      "Dedicated servers": [
+        "Server dedicati"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -9576,6 +9605,9 @@
       "15 minutes": [
         "15 minuti"
       ],
+      "2 minutes": [
+        "2 minuti"
+      ],
       "30 minutes": [
         "30 minuti"
       ],
@@ -10987,6 +11019,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Offerta a tempo limitato: **Ottieni il 35% di sconto** sui piani annuali"
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Offerta a tempo limitato: **Risparmia ${ discount } su ${ name } con un piano annuale**"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Sei stato invitato a provare ${ MAIL_APP_NAME }"
       ]
@@ -11411,6 +11446,32 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Get started for $1": [
+        "Inizia con 1$"
+      ],
+      "Get started for 1 €": [
+        "Inizia con 1€"
+      ],
+      "Get started for CHF 1": [
+        "Inizia con 1 CHF"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua Gratis"
@@ -11438,32 +11499,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Get started for $1": [
-        "Inizia con 1$"
-      ],
-      "Get started for 1 €": [
-        "Inizia con 1€"
-      ],
-      "Get started for CHF 1": [
-        "Inizia con 1 CHF"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
       ]
     },
     "new_plans: feature": {
@@ -11719,14 +11754,11 @@
       "Password health": [
         "Stato delle password"
       ],
-      "Password manager to secure credentials": [
-        "Gestore password per la protezione delle credenziali"
-      ],
       "Password-protected Emails": [
         "Email protette da password"
       ],
-      "Phone support (40+ users)": [
-        "Assistenza telefonica (Più di 40 utenti)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Funzionalità premium di ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Assistenza email prioritaria"
@@ -11878,6 +11910,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Condivisione delle casseforti (fino a ${ n } persona)",
         "Condivisione delle casseforti (fino a ${ n } persone)"
+      ],
+      "Version history": [
+        "Cronologia delle versioni"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
@@ -12211,9 +12246,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "L'assistenza telefonica è disponibile dal team del servizio clienti ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con 6 o più utenti"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impedisce l'accesso ai messaggi da parte di ${ BRAND_NAME } o di terzi. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."
@@ -12765,20 +12797,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Chiunque, compresi esterni"
-      ],
-      "Members": [
-        "Membri"
-      ],
-      "Nobody by default": [
-        "Nessuno per impostazione predefinita"
-      ],
-      "Organization members": [
-        "Membri dell'organizzazione"
       ]
     },
     "Option delay send seconds": {
@@ -13545,6 +13563,9 @@
       ],
       "Gift code": [
         "Codice regalo"
+      ],
+      "Group name": [
+        "Nome gruppo"
       ],
       "Link": [
         "Link"
@@ -14478,6 +14499,16 @@
       ],
       "Verification": [
         "Verifica"
+      ]
+    },
+    "signup: Action": {
+      "Request trial": [
+        "Richiedi la prova gratuita"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR and HIPAA compliant": [
+        "Conforme a GDPR e HIPAA"
       ]
     },
     "specialoffer: Action": {
@@ -15990,11 +16021,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-all address": [
-        "Indirizzi Catch-all"
-      ],
       "Catch-All address": [
         "Indirizzi catch-all"
+      ],
+      "Catch-all address": [
+        "Indirizzi Catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"
@@ -17654,11 +17685,6 @@
       ],
       "You're Invited.": [
         "Sei invitato."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Conserva e trasferisci i tuoi bitcoin in modo sicuro"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -1072,6 +1072,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Der Zugang zu ${ PASS_APP_NAME } erfordert immer dein ${ BRAND_NAME }-Passwort."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Zugang zu ${ PASS_APP_NAME } wird deinen Fingerabdruck oder Geräte-PIN-Code benötigen."
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Greife mit unseren mobilen Apps auch unterwegs auf deine Passwörter zu."
       ],
@@ -1429,6 +1432,9 @@
       "Offline support successfully disabled": [
         "Offline-Unterstützung erfolgreich deaktiviert."
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Online-Zugang zu ${ PASS_APP_NAME } wird einen PIN-Code benötigen. Du wirst nach 3 falschen Versuchen abgemeldet werden."
+      ],
       "Open the Extensions menu": [
         "Öffne das Erweiterungen-Menü"
       ],
@@ -1477,6 +1483,9 @@
       ],
       "Please confirm your password": [
         "Bitte bestätige dein Passwort"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Bitte bestätige dein Passwort für automatisches Sperren mit Biometrik."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Bitte bestätige dein Passwort, damit die automatische Passwort-Sperre aktiviert wird."
@@ -1573,6 +1582,9 @@
       ],
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
+      ],
+      "Set by your organization": [
+        "Von deiner Organisation eingestellt"
       ],
       "Settings successfully updated": [
         "Einstellungen erfolgreich aktualisiert."
@@ -1819,6 +1831,9 @@
       ],
       "15 minutes": [
         "15 Minuten"
+      ],
+      "2 minutes": [
+        "2 Minuten"
       ],
       "24 hours": [
         "24 Stunden"

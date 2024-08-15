@@ -453,6 +453,9 @@
       "Increase": [
         "Øk"
       ],
+      "Invite": [
+        "Inviter"
+      ],
       "Keep my Plus subscription": [
         "Behold mitt Plus-abonnement"
       ],
@@ -4195,6 +4198,10 @@
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Opprett en sikker sky for ${ n }-medlem",
+        "Opprett en sikker sky for ${ n }-medlemmer"
+      ],
       "Create in": [
         "Opprett i"
       ],
@@ -6920,14 +6927,11 @@
       "Password health": [
         "Passordhelse"
       ],
-      "Password manager to secure credentials": [
-        "Passordbehandling for å sikre legitimasjon"
-      ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
-      "Phone support (40+ users)": [
-        "Telefonstøtte (40+ brukere)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premium-funksjoner til ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Prioritert e-poststøtte"
@@ -7066,6 +7070,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling av hvelv (opptil ${ n } person)",
         "Deling av hvelv (opptil ${ n } personer)"
+      ],
+      "Version history": [
+        "Versjonshistorikk"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -7315,9 +7322,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Tilpass e-postsignaturen din med logoer, bilder, ikoner for sosiale medier, koblinger til kontaktinformasjonen din og mer."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonstøtte er tilgjengelig fra ${ BRAND_NAME }-kundesuksessteamet i europeisk arbeidstid, for kunder med 6 eller flere brukere."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer at meldinger åpnes av ${ BRAND_NAME } eller tredjeparter. De eneste som kan lese meldingene, er avsenderen og den tiltenkte mottakeren."
@@ -7767,9 +7771,6 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Lagre filene dine og del dem på en sikker måte. Kom i gang ved å sikre de mest private filene dine, for eksempel ID-er, kontrakter og personlige bilder."
-      ],
-      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
-        "Eieren må bekrefte delingstilgang. Du får en e-post når den er ferdig."
       ],
       "Upload a file": [
         "Last opp en fil"
@@ -10277,11 +10278,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-post"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Hold og overfør bitcoin sikkert"
       ]
     },
     "wallet_signup_2024:Bug category": {

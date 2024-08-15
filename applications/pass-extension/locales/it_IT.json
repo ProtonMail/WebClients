@@ -927,6 +927,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Si è verificato un problema durante l'avvio di ${ PASS_SHORT_APP_NAME }. Se il problema persiste, contatta il nostro servizio clienti per ricevere assistenza."
       ],
+      "Wrong extra password": [
+        "Password aggiuntiva errata"
+      ],
       "Wrong password": [
         "Password errata"
       ],
@@ -1444,6 +1447,9 @@
       "Offline support successfully disabled": [
         "Accesso offline disabilitato"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "L'accesso online a ${ PASS_APP_NAME } richiederà un codice PIN per sbloccare la sessione. Verrai disconnesso dopo 3 tentativi falliti."
+      ],
       "Open the Extensions menu": [
         "Apri il menu Estensioni"
       ],
@@ -1489,6 +1495,18 @@
       ],
       "Please confirm your extra password": [
         "Conferma la tua password aggiuntiva"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Conferma la tua password aggiuntiva per abilitare il blocco automatico con biometria."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Conferma la tua password aggiuntiva per abilitare il blocco automatico con la password aggiuntiva."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Conferma la tua password aggiuntiva per disabilitare il blocco attuale."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Conferma la tua password aggiuntiva per aggiornare il periodo di blocco automatico."
       ],
       "Please confirm your password": [
         "Conferma la tua password"
@@ -1597,6 +1615,9 @@
       ],
       "Session timed out": [
         "Sessione scaduta"
+      ],
+      "Set by your organization": [
+        "Impostato dalla tua organizzazione"
       ],
       "Settings successfully updated": [
         "Impostazioni aggiornate correttamente"
@@ -1800,6 +1821,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "I tuoi file verranno crittografati e poi salvati."
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1843,6 +1867,9 @@
       ],
       "15 minutes": [
         "15 minuti"
+      ],
+      "2 minutes": [
+        "2 minuti"
       ],
       "24 hours": [
         "24 ore"

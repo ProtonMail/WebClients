@@ -41,11 +41,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "activate": [
-        "aktiválás"
-      ],
       "Activate": [
         "Aktiválás"
+      ],
+      "activate": [
+        "aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -740,11 +740,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Reload": [
         "Újratöltés"
@@ -754,9 +754,6 @@
       ],
       "Remove all members": [
         "Minden tag eltávolítása"
-      ],
-      "Remove all members from group": [
-        "Minden tag eltávolítása a csoportból"
       ],
       "Remove bonuses": [
         "Kedvezmények törlése"
@@ -793,9 +790,6 @@
       ],
       "Resend code": [
         "Kód újraküldése"
-      ],
-      "Resend invitation": [
-        "Meghívó újraküldése"
       ],
       "Reset credentials": [
         "Hitelesítő adatok visszaállítása"
@@ -9849,6 +9843,23 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -9876,23 +9887,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -10106,14 +10100,8 @@
       "Organize items with multiple vaults": [
         "Elemek rendezése több tárolóba"
       ],
-      "Password manager to secure credentials": [
-        "Jelszókezelő a biztonsági hitelesítő adatok számára"
-      ],
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonos támogatás (40 felhasználótól)"
       ],
       "Priority email support": [
         "Elsőbbségi e-mail támogatás"
@@ -10496,9 +10484,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Alakítsa saját igényeihez az e-mail aláírását, logóval, képpel, közösségi média ikonokkal, hivatkozásokkal az elérhetőségeire stb."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonos támogatás Európai munkaidőben érhető el a ${ BRAND_NAME } Ügyféltámogatási Csoporttól, 6 vagy több felhasználóval rendelkező ügyfeleknek"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Megakadályozza, hogy a ${ BRAND_NAME } vagy harmadik felek hozzáférjenek az üzenetekhez. Csak a feladó és a szándékozott címzett tudja elolvasni az üzenetek szövegét."
@@ -10947,11 +10932,6 @@
         "Kuka"
       ]
     },
-    "option": {
-      "Members": [
-        "Tagok"
-      ]
-    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 másodperc"
@@ -11275,6 +11255,9 @@
       ],
       "Gift code": [
         "Ajándék kód"
+      ],
+      "Group name": [
+        "Csoport név"
       ],
       "Link": [
         "Hivatkozás"
@@ -12973,10 +12956,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [

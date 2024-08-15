@@ -202,9 +202,6 @@
       "Disable": [
         "Desactivar"
       ],
-      "Disable E2EE for group address": [
-        "Desactivar el cifrado de extremo a extremo para la dirección del grupo"
-      ],
       "Discard": [
         "Descartar"
       ],
@@ -276,9 +273,6 @@
       ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
-      ],
-      "Enable E2EE for group address": [
-        "Activar el cifrado de extremo a extremo para la dirección del grupo"
       ],
       "Enable multi-user support": [
         "Activar soporte multiusuario"
@@ -451,9 +445,6 @@
       "Remove all members": [
         "Borrar todos los miembros"
       ],
-      "Remove all members from group": [
-        "Borrar todos los miembros del grupo"
-      ],
       "Remove bonuses": [
         "Borrar los beneficios"
       ],
@@ -483,9 +474,6 @@
       ],
       "Resend code": [
         "Reenviar código"
-      ],
-      "Resend invitation": [
-        "Reenviar la invitación"
       ],
       "Reset credentials": [
         "Restablecer credenciales"
@@ -732,11 +720,6 @@
       ],
       "Zoom out": [
         "Alejar"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Añadir el dominio pm.me"
       ]
     },
     "Action subscription": {
@@ -2270,6 +2253,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de almacenamiento"
+      ],
       "2 users": [
         "2 usuarios"
       ],
@@ -3430,6 +3416,9 @@
         "+${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (te permite conectar más dispositivos a la VPN)",
         "+${ organization.BonusVPN } conexiones para ${ VPN_APP_NAME } (te permite conectar más dispositivos a la VPN)"
       ],
+      "2FA disabled": [
+        "2FA desactivada"
+      ],
       "30-day money-back guarantee": [
         "Garantía de reembolso durante 30 días"
       ],
@@ -3499,6 +3488,9 @@
       ],
       "All Events ": [
         "Todos los eventos"
+      ],
+      "All members have been added.": [
+        "Se han agregado todos los miembros."
       ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
@@ -3673,11 +3665,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personaliza el aspecto de las aplicaciones de ${ BRAND_NAME }"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -3997,7 +3989,7 @@
         "Elemento creado en ${ vaultLink }"
       ],
       "Item created in vault": [
-        "El elemento en la caja fuerte ha sido creado."
+        "Se ha creado el elemento en la caja fuerte."
       ],
       "Item Deleted": [
         "Se ha eliminado el elemento."
@@ -4006,7 +3998,7 @@
         "Elemento eliminado de ${ vaultLink }"
       ],
       "Item deleted from vault": [
-        "Elemento eliminado de la caja fuerte"
+        "Se ha eliminado el elemento de la caja fuerte."
       ],
       "Item flags changed in ${ vaultLink }": [
         "Se han cambiado los marcadores del elemento en ${ vaultLink }."
@@ -4021,7 +4013,7 @@
         "Elemento en ${ vaultLink } restaurado"
       ],
       "Item in vault trashed": [
-        "Elemento en la caja fuerte eliminado"
+        "Se ha eliminado el elemento de la caja fuerte."
       ],
       "Item in vault untrashed": [
         "Se ha restaurado el elemento en la caja fuerte."
@@ -4048,7 +4040,7 @@
         "Elemento actualizado en ${ vaultLink }"
       ],
       "Item updated in vault": [
-        "El elemento en la caja fuerte ha sido actualizado."
+        "Se ha actualizado el elemento en la caja fuerte."
       ],
       "JCB logo": [
         "Logo de JCB"
@@ -5148,6 +5140,12 @@
       "Account storage": [
         "Almacenamiento de la cuenta"
       ],
+      "Add all organization members": [
+        "Agregar todos los miembros de la organización"
+      ],
+      "Add group member": [
+        "Agregar un miembro al grupo"
+      ],
       "Address": [
         "Dirección"
       ],
@@ -6088,6 +6086,10 @@
         "${ n } mensaje al día",
         "${ n } mensajes al día"
       ],
+      "${ n } user": [
+        "${ n } usuario",
+        "Hasta ${ n } usuarios"
+      ],
       "${ n } vault": [
         "${ n } caja fuerte",
         "${ n } cajas fuertes"
@@ -6111,6 +6113,12 @@
       ],
       "${ size } storage": [
         "${ size } de almacenamiento"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Para ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Para todos los servicios de ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 usuario"
@@ -6248,7 +6256,7 @@
         "Administración de grupos (muy pronto)"
       ],
       "Hide-my-email aliases": [
-        "Alias de Hide-my-email"
+        "Alias de hide-my-email"
       ],
       "High-speed streaming": [
         "Transmisión de gran velocidad"
@@ -6278,6 +6286,9 @@
       "No-logs policy": [
         "Política de cero registros"
       ],
+      "Online document editor": [
+        "Editor de documentos en línea"
+      ],
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
       ],
@@ -6287,14 +6298,17 @@
       "Password health": [
         "Estado de la contraseña"
       ],
-      "Password manager to secure credentials": [
-        "Gestor de contraseñas para proteger credenciales"
+      "Password manager": [
+        "Gestor de contraseñas"
       ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
-      "Phone support (40+ users)": [
-        "Soporte por teléfono (40 o más usuarios)"
+      "Phone support (20+ users)": [
+        "Soporte por teléfono (20 o más usuarios)"
+      ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Funciones prémium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
@@ -6345,6 +6359,9 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Servidores en más de ${ vpnServersCountData.paid.countries } país",
         "Servidores en más de ${ vpnServersCountData.paid.countries } países"
+      ],
+      "Share files with no size limit": [
+        "Comparte archivos sin límites de tamaño."
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
@@ -6527,6 +6544,9 @@
       ],
       "Popular": [
         "Popular"
+      ],
+      "Protect sensitive business information and collaborate securely.asdfasdfsdf": [
+        "Protege la información empresarial confidencial y colabora de forma segura."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protege la privacidad de tu familia con todos los servicios combinados de ${ BRAND_NAME }."
@@ -6725,9 +6745,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliza tu firma de correo electrónico con logotipos, imágenes, iconos de redes sociales, enlaces en tus datos de contacto, etc."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 6 usuarios."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impide que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
@@ -6987,17 +7004,14 @@
       ]
     },
     "option": {
-      "Everyone, incl. outside": [
-        "Todo el mundo, incluidos los usuarios externos"
+      "Everyone": [
+        "Todos"
       ],
-      "Members": [
-        "Miembros"
+      "Group members": [
+        "Miembros del grupo"
       ],
-      "Nobody by default": [
-        "Nadie por defecto"
-      ],
-      "Organization members": [
-        "Miembros de la organización"
+      "No one": [
+        "Nadie"
       ]
     },
     "Organization capacity error": {
@@ -7226,7 +7240,7 @@
         "La clave de la organización debe activarse para conceder privilegios de administrador."
       ],
       "Organization key restored": [
-        "La clave de la organización ha sido restaurada."
+        "Se ha restaurado la clave de la organización."
       ],
       "Organization key updated": [
         "La clave de la organización ha sido actualizada."
@@ -7447,6 +7461,9 @@
       ],
       "Gift code": [
         "Código promocional"
+      ],
+      "Group name": [
+        "Nombre del grupo"
       ],
       "Other": [
         "Otro"
@@ -8500,6 +8517,9 @@
       "1 email address": [
         "1 dirección de correo electrónico"
       ],
+      "1 email address per user": [
+        "1 dirección de correo electrónico por usuario"
+      ],
       "1 VPN connection": [
         "1 conexión VPN"
       ],
@@ -9357,10 +9377,10 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -9482,6 +9502,9 @@
       "Disable two-factor authentication": [
         "Desactivar la autenticación de dos factores"
       ],
+      "Disable two-factor authentication?": [
+        "¿Desactivar la autenticación de dos factores?"
+      ],
       "Discard changes?": [
         "¿Descartar los cambios?"
       ],
@@ -9541,6 +9564,9 @@
       ],
       "Email subscriptions": [
         "Boletines electrónicos"
+      ],
+      "Enter 2FA code": [
+        "Ingresa el código 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Entra los puntos finales en tu proveedor de identidad."
@@ -10289,11 +10315,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin vía correo electrónico"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Retén y transfiere tus bitcoins de forma segura"
       ]
     },
     "wallet_signup_2024:Bug category": {
