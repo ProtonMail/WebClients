@@ -40,7 +40,14 @@ const DriveDocsOnboardingModal = (props: ModalProps) => {
                     >
                         {c('Onboarding Action').t`Create new document`}
                     </Button>
-                    <Button size="large" color="norm" shape="ghost" fullWidth onClick={onNext}>
+                    <Button
+                        size="large"
+                        color="norm"
+                        shape="ghost"
+                        fullWidth
+                        onClick={onNext}
+                        data-testid="drive-onboarding-dismiss"
+                    >
                         {c('Onboarding Action').t`Try it later`}
                     </Button>
                 </footer>
