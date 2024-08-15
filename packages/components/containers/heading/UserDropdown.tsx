@@ -223,8 +223,6 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
 
     const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
 
-    const canAccessWallet = useFlag('Wallet');
-
     const inboxDesktopMultiAccountSupport = useFlag('InboxDesktopMultiAccountSupport');
     const showSwitchAccountButton =
         isElectronApp && authentication.mode === 'sso'
@@ -448,7 +446,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
 
                     {(() => {
                         if (viewportWidth['<=small'] && hasAppLinks) {
-                            const availableApps = getAvailableApps({ user, canAccessWallet });
+                            const availableApps = getAvailableApps({ user });
                             if (availableApps.length <= 1) {
                                 return null;
                             }
