@@ -36,7 +36,6 @@ import {
     getSpace,
     getStorageFull,
 } from '@proton/shared/lib/user/storage';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
@@ -149,7 +148,6 @@ const YourStorageSection = ({ app }: Props) => {
     const space = getSpace(user);
     const details = getCompleteSpaceDetails(space);
     const plan = getPlanToUpsell({ storageDetails: details, app });
-    const canAccessWallet = useFlag('Wallet');
 
     return (
         <SettingsSection>
@@ -251,7 +249,7 @@ const YourStorageSection = ({ app }: Props) => {
                                 <MailLogo variant="glyph-only" />
                                 <CalendarLogo variant="glyph-only" />
                                 <PassLogo variant="glyph-only" />
-                                {canAccessWallet && <WalletLogo variant="glyph-only" />}
+                                <WalletLogo variant="glyph-only" />
                             </div>
                             <div className="text-2xl text-bold">{getAppStorage(MAIL_SHORT_APP_NAME)}</div>
                         </div>
