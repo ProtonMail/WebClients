@@ -1,7 +1,7 @@
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
-import { getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
@@ -21,9 +21,6 @@ import {
 import { SettingsSectionExtraWide, SettingsSectionWide } from '../../account';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
-// The import below is used for the docs
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import type UpgradeVpnSection from './UpgradeVpnSection';
 import { getCurrency, resolveUpsellsToDisplay } from './helpers';
 import { SubscriptionPanel, UpsellPanels, UsagePanel } from './panels';
 import PendingInvitationsPanel from './panels/PendingInvitationsPanel';
@@ -51,13 +48,11 @@ const YourPlanSection = ({ app }: Props) => {
     useLoad();
 
     const loading = loadingSubscription || loadingOrganization || loadingPlans || serversCountLoading;
-
     if (!subscription || !plans || loading) {
         return <Loader />;
     }
 
     const { isManagedByMozilla } = subscription;
-
     if (isManagedByMozilla) {
         return <MozillaInfoPanel />;
     }
@@ -76,34 +71,24 @@ const YourPlanSection = ({ app }: Props) => {
     });
 
     const isVpnB2b = getHasVpnB2BPlan(subscription);
-    /**
-     * for VPN B2B, we display the upsells in {@link UpgradeVpnSection}
-     */
     const isWalletEA = app === APPS.PROTONWALLET;
-    const shouldRenderUpsells = !isVpnB2b && !isWalletEA;
-    // VPN B2B plans must not have a usage panel
+    // Subscription panel is displayed for user with a free or paid plan and not in a trial
+    const shouldRenderSubscription = user.canPay || (subscription && !isTrial(subscription));
+    const shouldRenderPendingInvitation = !!invites.length;
+    // Upsell panel if the user has a subscription and is not vpn or wallet
+    const shouldRenderUpsells = !isVpnB2b && !isWalletEA && shouldRenderSubscription;
+    // Usage panel is displayed for members of B2B plans except VPN B2B
     const shouldRenderUsagePanel =
         (organization?.UsedMembers || 0) > 1 && !isVpnB2b && organization?.State === ORGANIZATION_STATE.ACTIVE;
-
-    const shouldRenderPendingInvitation = Boolean(invites.length);
-    const totalPanelsToDisplay = 1 + (+shouldRenderPendingInvitation || upsells.length) + +shouldRenderUsagePanel;
 
     // By default, for style consistency, we display every setting in `SettingsSectionWide`
     // But since 3 panels don't fit in this section (or are too tightly packed),
     // we use the extra wide one when we have > 2 panels to display
-    const shouldRenderInLargeSection = totalPanelsToDisplay > 2;
+    const panelCount = [shouldRenderSubscription, shouldRenderPendingInvitation, shouldRenderUsagePanel].filter(
+        Boolean
+    ).length;
+    const shouldRenderInLargeSection = panelCount + upsells.length > 2;
     const SettingsSection = shouldRenderInLargeSection ? SettingsSectionExtraWide : SettingsSectionWide;
-
-    // Either display pending invitations if any, or upsell(s)
-    const invitationsOrUpsells = (() => {
-        if (shouldRenderPendingInvitation) {
-            return <PendingInvitationsPanel invites={invites} />;
-        }
-        if (shouldRenderUpsells) {
-            return <UpsellPanels upsells={upsells} subscription={subscription} />;
-        }
-        return null;
-    })();
 
     return (
         <SettingsSection>
@@ -115,23 +100,25 @@ const YourPlanSection = ({ app }: Props) => {
                 data-testid="dashboard-panels-container"
             >
                 {/* Subcription details */}
-                <SubscriptionPanel
-                    app={app}
-                    currency={currency}
-                    subscription={subscription}
-                    organization={organization}
-                    user={user}
-                    addresses={addresses}
-                    vpnServers={serversCount}
-                    upsells={shouldRenderUpsells ? upsells : []}
-                />
+                {shouldRenderSubscription && (
+                    <SubscriptionPanel
+                        app={app}
+                        currency={currency}
+                        subscription={subscription}
+                        organization={organization}
+                        user={user}
+                        addresses={addresses}
+                        vpnServers={serversCount}
+                        upsells={shouldRenderUpsells ? upsells : []}
+                    />
+                )}
 
-                {/* Usage for plans with >1 Members */}
+                {/* Usage for plans with >1 Members except VPN B2B */}
                 {shouldRenderUsagePanel && (
                     <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />
                 )}
-
-                {invitationsOrUpsells}
+                {shouldRenderUpsells && <UpsellPanels upsells={upsells} subscription={subscription} />}
+                {shouldRenderPendingInvitation && <PendingInvitationsPanel invites={invites} />}
             </div>
         </SettingsSection>
     );

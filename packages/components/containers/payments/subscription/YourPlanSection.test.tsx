@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor, within } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 
 import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import {
@@ -144,12 +144,13 @@ describe('YourPlanSection', () => {
         it('should render subscription panel and pending invites, without upsells', async () => {
             mockUsePendingUserInvitations.mockReturnValueOnce([[pendingInvite], false]);
 
-            const { getByTestId } = render(<YourPlanSection app={APPS.PROTONMAIL} />);
+            render(<YourPlanSection app={APPS.PROTONMAIL} />);
 
-            const dashboardPanelsContainer = getByTestId('dashboard-panels-container');
+            const dashboardPanelsContainer = screen.getByTestId('dashboard-panels-container');
 
-            expect(dashboardPanelsContainer.childNodes).toHaveLength(2);
-            const [subscriptionPanel, invitePanel] = dashboardPanelsContainer.childNodes;
+            expect(dashboardPanelsContainer.childNodes).toHaveLength(4);
+            const [subscriptionPanel] = dashboardPanelsContainer.childNodes;
+            const invitePanel = screen.getByTestId('pending-invitations-panel');
 
             // Subscription Panel
             expect(subscriptionPanel).toBeTruthy();
@@ -157,7 +158,7 @@ describe('YourPlanSection', () => {
             within(subscriptionPanel as HTMLElement).getByText('Edit billing cycle');
             within(subscriptionPanel as HTMLElement).getByText('Explore other Proton plans');
 
-            // Upsell Panel
+            // Invite Panel
             expect(invitePanel).toBeTruthy();
             within(invitePanel as HTMLElement).getByText('Pending invitation');
             within(invitePanel as HTMLElement).getByText('Invitation from Test Org');
