@@ -3,22 +3,21 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import type { DecryptedLink } from '../../../store';
 import useOpenPreview from '../../useOpenPreview';
 import { hasFoldersSelected, isMultiSelect } from './utils';
 
 interface Props {
-    selectedLinks: DecryptedLink[];
+    selectedBrowserItems: { rootShareId: string; linkId: string; mimeType: string; size?: number; isFile: boolean }[];
 }
 
-const PreviewButton = ({ selectedLinks }: Props) => {
+const PreviewButton = ({ selectedBrowserItems }: Props) => {
     const openPreview = useOpenPreview();
 
     const disabled =
-        isMultiSelect(selectedLinks) ||
-        hasFoldersSelected(selectedLinks) ||
-        !selectedLinks[0]?.mimeType ||
-        !isPreviewAvailable(selectedLinks[0].mimeType, selectedLinks[0].size);
+        isMultiSelect(selectedBrowserItems) ||
+        hasFoldersSelected(selectedBrowserItems) ||
+        !selectedBrowserItems[0]?.mimeType ||
+        !isPreviewAvailable(selectedBrowserItems[0].mimeType, selectedBrowserItems[0].size);
     if (disabled) {
         return null;
     }
@@ -28,8 +27,8 @@ const PreviewButton = ({ selectedLinks }: Props) => {
             title={c('Action').t`Preview`}
             icon={<Icon name="eye" alt={c('Action').t`Preview`} />}
             onClick={() => {
-                if (selectedLinks.length) {
-                    openPreview(selectedLinks[0].rootShareId, selectedLinks[0].linkId);
+                if (selectedBrowserItems.length) {
+                    openPreview(selectedBrowserItems[0].rootShareId, selectedBrowserItems[0].linkId);
                 }
             }}
             data-testid="toolbar-preview"

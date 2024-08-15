@@ -19,7 +19,7 @@ import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { AcceptOrRejectInviteCell, NameCell, SharedByCell, SharedOnCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
 import { translateSortField } from '../SortDropdown';
-import { getSelectedItems, getSelectedPendingInvitationItems } from '../helpers';
+import { getSelectedSharedWithMeItems } from '../helpers';
 import EmptySharedWithMe from './EmptySharedWithMe';
 import { SharedWithMeContextMenu } from './SharedWithMeItemContextMenu';
 
@@ -32,12 +32,13 @@ export interface SharedWithMeItem extends FileBrowserBaseItem {
     name: string;
     signatureIssues?: any;
     signatureAddress?: string;
-    size?: number;
+    size: number;
     trashed: number | null;
     rootShareId: string;
     volumeId: string;
     sharedOn?: number;
     sharedBy?: string;
+    parentLinkId: string;
     invitationDetails?: ExtendedInvitationDetails;
     acceptInvitation?: (invitationId: string) => Promise<void>;
     rejectInvitation?: (invitationId: string) => Promise<void>;
@@ -87,37 +88,17 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
     const { openDocument } = useDocumentActions();
     const { canUseDocs } = useDriveDocsFeatureFlag();
 
-    const { layout, items, sortParams, setSorting, isLoading, pendingInvitations } = sharedWithMeView;
-    const selectedItems = useMemo(
-        () => getSelectedItems(items, selectionControls!.selectedItemIds, 'rootShareId'),
-        [items, selectionControls!.selectedItemIds]
+    const { layout, items, sortParams, setSorting, isLoading } = sharedWithMeView;
+
+    const selectedItemIds = selectionControls!.selectedItemIds;
+    const selectedBrowserItems = useMemo(
+        () => getSelectedSharedWithMeItems(items, selectedItemIds),
+        [items, selectedItemIds]
     );
 
-    const selectedPendingInvitationItems = useMemo(
-        () => getSelectedPendingInvitationItems(pendingInvitations, selectionControls!.selectedItemIds),
-        [pendingInvitations, selectionControls!.selectedItemIds]
-    );
-
-    const browserItems: SharedWithMeItem[] = items.map((item) => ({ ...item, id: item.rootShareId }));
-    const pendingInvitationsItems: SharedWithMeItem[] = pendingInvitations.map((item) => ({
-        isFile: item.link.isFile,
-        trashed: null,
-        mimeType: item.link.mimeType,
-        rootShareId: item.share.shareId,
-        id: item.invitation.invitationId,
-        name: item.link.name,
-        invitationDetails: item,
-        sharedBy: item.invitation.inviterEmail,
-        isInvitation: true,
-        acceptInvitation: sharedWithMeView.acceptPendingInvitation,
-        rejectInvitation: sharedWithMeView.rejectPendingInvitation,
-        isLocked: item.isLocked,
-        linkId: item.link.linkId,
-        volumeId: item.share.volumeId,
-    }));
     const handleClick = useCallback(
         (id: BrowserItemId) => {
-            const item = browserItems.find((item) => item.id === id);
+            const item = items.find((item) => item.id === id);
 
             if (!item) {
                 return;
@@ -143,7 +124,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
 
             navigateToLink(item.rootShareId, item.linkId, item.isFile);
         },
-        [navigateToLink, browserItems]
+        [navigateToLink, items]
     );
 
     const handleItemRender = (item: SharedWithMeItem) => {
@@ -164,7 +145,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
                         onSort={setSorting}
                         sortField={sortParams.sortField}
                         sortOrder={sortParams.sortOrder}
-                        itemCount={browserItems.length}
+                        itemCount={items.length}
                         scrollAreaRef={scrollAreaRef}
                         activeSortingText={activeSortingText}
                     />
@@ -173,7 +154,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
         [sortParams.sortField, sortParams.sortOrder, isLoading]
     );
 
-    if (!items.length && !pendingInvitations.length && !isLoading) {
+    if (!items.length && !isLoading) {
         return <EmptySharedWithMe />;
     }
 
@@ -183,19 +164,16 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
     return (
         <ContactEmailsProvider>
             <SharedWithMeContextMenu
-                selectedLinks={selectedItems}
-                selectedPendingInvitationLinks={selectedPendingInvitationItems}
+                selectedBrowserItems={selectedBrowserItems}
                 anchorRef={contextMenuAnchorRef}
                 close={browserItemContextMenu.close}
                 isOpen={browserItemContextMenu.isOpen}
                 open={browserItemContextMenu.open}
                 position={browserItemContextMenu.position}
-                acceptInvitation={sharedWithMeView.acceptPendingInvitation}
-                rejectInvitation={sharedWithMeView.rejectPendingInvitation}
             />
             <FileBrowser
                 caption={c('Title').t`Shared`}
-                items={[...pendingInvitationsItems, ...browserItems]}
+                items={items}
                 headerItems={headerItems}
                 layout={layout}
                 loading={isLoading}
