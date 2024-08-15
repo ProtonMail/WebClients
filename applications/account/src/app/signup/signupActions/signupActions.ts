@@ -128,9 +128,8 @@ export const handleSaveRecovery = async ({
     cache: SignupCacheResult;
     recoveryEmail?: string;
     recoveryPhone?: string;
-}): Promise<SignupActionResponse> => {
+}): Promise<void> => {
     const {
-        ignoreExplore,
         setupData,
         accountData: { password, signupType },
     } = cache;
@@ -155,15 +154,6 @@ export const handleSaveRecovery = async ({
                 throw e;
             }),
     ]);
-
-    if (ignoreExplore) {
-        return handleDone({ cache, appIntent: cache.appIntent });
-    }
-
-    return {
-        cache,
-        to: SignupSteps.Explore,
-    };
 };
 
 export const handleDisplayName = async ({
@@ -172,8 +162,8 @@ export const handleDisplayName = async ({
 }: {
     cache: SignupCacheResult;
     displayName: string;
-}): Promise<SignupActionResponse> => {
-    const { setupData, accountData, ignoreExplore } = cache;
+}): Promise<SignupCacheResult> => {
+    const { setupData } = cache;
 
     const {
         api,
@@ -184,28 +174,12 @@ export const handleDisplayName = async ({
     // Re-fetch the user to get the updated display name
     const user = await api<{ User: User }>(getUser()).then(({ User }) => User);
 
-    const to = (() => {
-        if (accountData.signupType === SignupType.Email) {
-            // Ignore recovery step if signing up with an external email address because it's automatically set.
-            return ignoreExplore ? undefined : SignupSteps.Explore;
-        }
-        // The next step is recovery by default
-        return SignupSteps.SaveRecovery;
-    })();
-
-    if (!to) {
-        return handleDone({ cache, appIntent: cache.appIntent });
-    }
-
     return {
-        cache: {
-            ...cache,
-            setupData: {
-                ...setupData!,
-                user,
-            },
+        ...cache,
+        setupData: {
+            ...setupData!,
+            user,
         },
-        to,
     };
 };
 
