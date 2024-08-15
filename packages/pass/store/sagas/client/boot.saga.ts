@@ -66,16 +66,16 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         yield put(passwordHistoryGarbageCollect());
 
         if (online) {
-            yield put(withRevalidate(getOrganizationSettings.intent()));
             yield put(startEventPolling());
             yield put(withRevalidate(getBreaches.intent()));
-            yield put(withRevalidate(secureLinksGet.intent()));
-            if (EXTENSION_BUILD) yield put(resolveWebsiteRules.intent());
 
             if (fromCache) {
                 yield put(withRevalidate(getUserFeaturesIntent(userID)));
                 yield put(withRevalidate(getUserAccessIntent(userID)));
                 yield put(withRevalidate(getUserSettings.intent(userID)));
+                yield put(withRevalidate(secureLinksGet.intent()));
+                yield put(withRevalidate(getOrganizationSettings.intent()));
+                if (EXTENSION_BUILD) yield put(resolveWebsiteRules.intent());
             }
         }
 

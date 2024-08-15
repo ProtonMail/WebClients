@@ -77,7 +77,7 @@ const options: RootSagaOptions = {
     ),
 
     getSettings: withContext((ctx) => ctx.service.settings.resolve()),
-    getExtensionStorage: withContext((ctx) => ctx.service.storage.local),
+    getStorage: withContext((ctx) => ctx.service.storage.local),
     getTelemetry: withContext((ctx) => ctx.service.telemetry),
 
     getAppState: withContext((ctx) => ctx.getState()),
