@@ -453,6 +453,9 @@
       "Increase": [
         "Aumentar"
       ],
+      "Invite": [
+        "Invitar"
+      ],
       "Keep my Plus subscription": [
         "Mantener mi suscripción Plus"
       ],
@@ -2414,6 +2417,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de almacenamiento"
+      ],
       "2 users": [
         "2 usuarios"
       ],
@@ -6689,6 +6695,10 @@
         "${ n } mensaje al día",
         "${ n } mensajes al día"
       ],
+      "${ n } user": [
+        "${ n } usuario",
+        "Hasta ${ n } usuarios"
+      ],
       "${ n } vault": [
         "${ n } caja fuerte",
         "${ n } cajas fuertes"
@@ -6712,6 +6722,12 @@
       ],
       "${ size } storage": [
         "${ size } de almacenamiento"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Para ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Para todos los servicios de ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 usuario"
@@ -6837,7 +6853,7 @@
         "Administración de grupos (muy pronto)"
       ],
       "Hide-my-email aliases": [
-        "Alias de Hide-my-email"
+        "Alias de hide-my-email"
       ],
       "High-speed streaming": [
         "Transmisión de gran velocidad"
@@ -6861,6 +6877,9 @@
       "Multiple admin roles": [
         "Distintos roles de administración"
       ],
+      "Online document editor": [
+        "Editor de documentos en línea"
+      ],
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
       ],
@@ -6870,14 +6889,17 @@
       "Password health": [
         "Estado de la contraseña"
       ],
-      "Password manager to secure credentials": [
-        "Gestor de contraseñas para proteger credenciales"
+      "Password manager": [
+        "Gestor de contraseñas"
       ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
-      "Phone support (40+ users)": [
-        "Soporte por teléfono (40 o más usuarios)"
+      "Phone support (20+ users)": [
+        "Soporte por teléfono (20 o más usuarios)"
+      ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Funciones prémium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
@@ -6924,6 +6946,9 @@
       ],
       "Send & receive invitations": [
         "Enviar y recibir invitaciones"
+      ],
+      "Share files with no size limit": [
+        "Comparte archivos sin límites de tamaño."
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
@@ -7098,6 +7123,9 @@
       "Popular": [
         "Popular"
       ],
+      "Protect sensitive business information and collaborate securely.asdfasdfsdf": [
+        "Protege la información empresarial confidencial y colabora de forma segura."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protege la privacidad de tu familia con todos los servicios combinados de ${ BRAND_NAME }."
       ],
@@ -7268,9 +7296,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliza tu firma de correo electrónico con logotipos, imágenes, iconos de redes sociales, enlaces en tus datos de contacto, etc."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 6 usuarios."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impide que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
@@ -7720,9 +7745,6 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Guarda tus archivos y compártelos de forma segura. Empieza asegurando tus archivos más privados como identificaciones, contratos y fotos personales."
-      ],
-      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
-        "El propietario necesita confirmar el acceso a compartir. Recibirás un correo en cuanto lo haga."
       ],
       "Upload a file": [
         "Cargar un archivo"
@@ -9663,6 +9685,9 @@
       "Enable drive search": [
         "Activar la búsqueda en almacenamiento"
       ],
+      "Enter 2FA code": [
+        "Ingresa el código 2FA"
+      ],
       "Enter your password": [
         "Introduce tu contraseña."
       ],
@@ -10230,11 +10255,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin vía correo electrónico"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Retén y transfiere tus bitcoins de forma segura"
       ]
     },
     "wallet_signup_2024:Bug category": {
