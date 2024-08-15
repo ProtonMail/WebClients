@@ -1,11 +1,12 @@
 import type { IconSize } from '@proton/components/components';
-import { CalendarLogo, DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
+import { CalendarLogo, DriveLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components/components';
 import {
     CALENDAR_APP_NAME,
     DRIVE_APP_NAME,
     MAIL_APP_NAME,
     PASS_APP_NAME,
     VPN_APP_NAME,
+    WALLET_APP_NAME,
 } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -37,6 +38,10 @@ const LayoutLogos = ({ size, className }: AppLogosProps) => {
                 {
                     title: PASS_APP_NAME,
                     logo: <PassLogo variant="glyph-only" size={size} />,
+                },
+                {
+                    title: WALLET_APP_NAME,
+                    logo: <WalletLogo variant="glyph-only" size={size} />,
                 },
             ].map(({ title, logo }) => {
                 return (
