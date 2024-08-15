@@ -211,7 +211,7 @@ const PlanSelection = ({
 }: Props) => {
     const canAccessWalletPlan = useFlag('WalletPlan');
     const canAccessDriveBusinessPlan = useFlag('DriveBizPlan');
-    const canAccessDuoPlan = useFlag('DuoPlan') && getCanSubscriptionAccessDuoPlan(subscription);
+    const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
 
     const [user] = useUser();
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
