@@ -25,6 +25,9 @@ export const selectGroupMemberships = (state: GroupMembershipsState) => state[na
 
 const modelThunk = createAsyncModelThunk<Model, GroupMembershipsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument }) => {
+        if (!extraArgument.unleashClient.isEnabled('UserGroupsPermissionCheck')) {
+            return [];
+        }
         return extraArgument
             .api(getGroupMembership())
             .then(({ Memberships }: { Memberships: GroupMembershipReturn[] }): GroupMembershipReturn[] => Memberships)
