@@ -1,26 +1,27 @@
 import { autoUpdater, session, app } from "electron";
 import { updateElectronApp, UpdateSourceType } from "update-electron-app";
 import pkg from "../package.json";
-import { getPlatform, semver } from "./utils/helpers";
+import { getPlatform } from "./utils/helpers";
 import { getSettings } from "./store/settingsStore";
-import { z } from "zod";
 import { verifyDownloadCertificate } from "./utils/keyPinning";
 import { updateLogger } from "./utils/log";
-import { RELEASE_CATEGORIES } from "./utils/external/shared/lib/apps/desktopVersions";
-import { DESKTOP_PLATFORMS } from "./utils/external/shared/lib/constants";
+import { RELEASE_CATEGORIES } from "./utils/external/packages/shared/lib/apps/desktopVersions";
+import { DESKTOP_PLATFORMS } from "./utils/external/packages/shared/lib/constants";
+import {
+    DesktopVersion,
+    VersionFile,
+    VersionFileSchema,
+} from "./utils/external/packages/shared/lib/desktop/DesktopVersion";
+import { semver } from "./utils/external/packages/pass/utils/string/semver";
 
-const releaseInfoSchema = z.object({
-    Version: z.string(),
-    RolloutProportion: z.number(),
-    CategoryName: z.nativeEnum(RELEASE_CATEGORIES),
-});
-const releaseListSchema = z.object({
-    Releases: z.array(releaseInfoSchema).nonempty(),
-});
-type ReleaseInfo = z.infer<typeof releaseInfoSchema>;
-type ReleaseList = z.infer<typeof releaseListSchema>;
+export type LocalDesktopVersion = {
+    Version: DesktopVersion["Version"];
+    RolloutProportion: DesktopVersion["RolloutProportion"];
+    CategoryName: DesktopVersion["CategoryName"];
+};
 
 export let updateDownloaded = false;
+export let cachedLatestVersion: DesktopVersion | null = null;
 
 autoUpdater.on("update-downloaded", () => {
     updateDownloaded = true;
@@ -45,14 +46,14 @@ export function initializeUpdateChecks() {
     setInterval(checkForValidUpdates, pkg.config.updateInterval);
 }
 
-const validUpdate = {} as ReleaseInfo;
+const validUpdate = {} as DesktopVersion;
 
 async function checkForValidUpdates() {
     updateLogger.info("Checking for new valid version.");
 
     const platform = getPlatform();
     const settings = getSettings();
-    const local = {
+    const local: LocalDesktopVersion = {
         Version: app.getVersion(),
         RolloutProportion: settings.rolloutProportion ?? 1,
         CategoryName: settings.releaseCategory ?? RELEASE_CATEGORIES.STABLE,
@@ -69,11 +70,11 @@ async function checkForValidUpdates() {
     }
 
     const newUpdate = getNewUpdate(local, availableVersions);
+    cachedLatestVersion = newUpdate ?? null;
 
     if (!newUpdate) {
         return;
     }
-
     updateLogger.info("New valid update found! new:", newUpdate, "local:", local);
 
     validUpdate.Version = newUpdate.Version;
@@ -90,15 +91,15 @@ async function checkForValidUpdates() {
     });
 }
 
-function getNewUpdate(local: ReleaseInfo, unorderedAvailableVersions: ReleaseList): ReleaseInfo | undefined {
+function getNewUpdate(local: LocalDesktopVersion, unorderedAvailableVersions: VersionFile): DesktopVersion | undefined {
     const availableVersions = {
-        Releases: unorderedAvailableVersions.Releases.sort((a: ReleaseInfo, b: ReleaseInfo) =>
+        Releases: unorderedAvailableVersions.Releases.sort((a: DesktopVersion, b: DesktopVersion) =>
             Math.sign(semver(b.Version) - semver(a.Version)),
         ),
     };
 
-    return ((): ReleaseInfo | undefined =>
-        availableVersions.Releases.find((r: ReleaseInfo) => {
+    return ((): DesktopVersion | undefined =>
+        availableVersions.Releases.find((r: DesktopVersion) => {
             if (local.CategoryName === RELEASE_CATEGORIES.STABLE && r.CategoryName !== RELEASE_CATEGORIES.STABLE) {
                 return false;
             }
@@ -146,19 +147,18 @@ function isANewerThanB(a: string, b: string) {
     return semver(a) > semver(b);
 }
 
-function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<ReleaseList | undefined> {
-    const ses = session.fromPartition("persist:update", { cache: false });
+async function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<VersionFile | undefined> {
+    const updateSession = session.fromPartition("persist:update", { cache: false });
 
-    return ses
-        .fetch(getVersionURL(platform), { cache: "no-cache" })
-        .then((r) => r.json())
-        .then((data) => releaseListSchema.parse(data))
-        .catch((e) => {
-            updateLogger.warn("Check update: failed to get available versions:", e);
-            return undefined;
-        });
+    try {
+        const response = await updateSession.fetch(getVersionURL(platform), { cache: "no-cache" });
+        const json = await response.json();
+        return VersionFileSchema.parse(json);
+    } catch (error) {
+        updateLogger.warn("Check update: failed to get available versions:", error);
+        return undefined;
+    }
 }
 
 export const getNewUpdateTestOnly = getNewUpdate;
-export const releaseListSchemaTestOnly = releaseListSchema;
-export const releaseInfoSchemaTestOnly = releaseInfoSchema;
+export const releaseListSchemaTestOnly = VersionFileSchema;

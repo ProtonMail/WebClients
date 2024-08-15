@@ -1,6 +1,6 @@
 import { Session, WebContents } from "electron";
 import Logger from "electron-log";
-import { CHANGE_VIEW_TARGET } from "./external/shared/lib/desktop/desktopTypes";
+import { CHANGE_VIEW_TARGET } from "./external/packages/shared/lib/desktop/desktopTypes";
 
 export const mainLogger = Logger.scope("main");
 export const ipcLogger = Logger.scope("ipc");
