@@ -22,7 +22,6 @@ enum CommonFeatureFlag {
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
     WalletPlan = 'WalletPlan',
-    DuoPlan = 'DuoPlan',
     DriveBizPlan = 'DriveBizPlan',
     WalletAutoSetup = 'WalletAutoSetup',
     SentinelRecoverySettings = 'SentinelRecoverySettings',
