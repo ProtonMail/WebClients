@@ -3,32 +3,32 @@ import { useMemo } from 'react';
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
 
-import type { DecryptedLink } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import { DetailsButton, DownloadButton, LayoutButton, OpenInDocsButton, PreviewButton } from '../ToolbarButtons';
-import { getSelectedItems } from '../helpers';
+import { getSelectedSharedWithMeItems } from '../helpers';
+import type { SharedWithMeItem } from './SharedWithMe';
 
 interface Props {
     shareId: string;
-    items: DecryptedLink[];
+    items: SharedWithMeItem[];
 }
 
-const SharedWithMeToolbar = ({ shareId, items }: Props) => {
+const SharedWithMeToolbar = ({ items }: Props) => {
     const selectionControls = useSelection()!;
 
     const selectedItems = useMemo(
-        () => getSelectedItems(items, selectionControls!.selectedItemIds),
+        () => getSelectedSharedWithMeItems(items, selectionControls!.selectedItemIds),
         [items, selectionControls!.selectedItemIds]
     );
 
     const renderSelectionActions = () => {
         return (
             <>
-                <PreviewButton selectedLinks={selectedItems} />
-                <OpenInDocsButton shareId={shareId} selectedLinks={selectedItems} />
-                <DownloadButton selectedLinks={selectedItems} />
+                <PreviewButton selectedBrowserItems={selectedItems} />
+                <OpenInDocsButton selectedBrowserItems={selectedItems} />
+                <DownloadButton selectedBrowserItems={selectedItems} />
                 {selectedItems.length ? <Vr /> : null}
-                <DetailsButton selectedLinks={selectedItems} />
+                <DetailsButton selectedBrowserItems={selectedItems} />
             </>
         );
     };

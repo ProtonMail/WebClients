@@ -47,12 +47,12 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
 
         return (
             <>
-                <PreviewButton selectedLinks={selectedItems} />
-                <OpenInDocsButton shareId={shareId} selectedLinks={selectedItems} />
-                <DownloadButton selectedLinks={selectedItems} />
+                <PreviewButton selectedBrowserItems={selectedItems} />
+                <OpenInDocsButton selectedBrowserItems={selectedItems} />
+                <DownloadButton selectedBrowserItems={selectedItems} />
                 <Vr />
                 <RenameButton selectedLinks={selectedItems} />
-                <DetailsButton selectedLinks={selectedItems} />
+                <DetailsButton selectedBrowserItems={selectedItems} />
                 {isOnlyOneItem && <Vr />}
                 {isSharingInviteAvailable ? (
                     <ShareLinkButton selectedLinks={selectedItems} />

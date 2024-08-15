@@ -48,7 +48,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
 
     return {
         linkId: link.LinkID,
-        parentLinkId: link.ParentLinkID,
+        parentLinkId: link.ParentLinkID ?? '',
         // API recognises only file and folder at this moment. In the future,
         // it might include hard- and soft-links, but still, for our case we
         // will differenciate only between files and folders, so we can convert
