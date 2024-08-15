@@ -202,9 +202,6 @@
       "Disable": [
         "Dezactivare"
       ],
-      "Disable E2EE for group address": [
-        "Dezactivare criptare bilaterală pentru adresa grupului"
-      ],
       "Discard": [
         "Renunțare"
       ],
@@ -277,9 +274,6 @@
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
-      "Enable E2EE for group address": [
-        "Activare criptare bilaterală pentru adresa grupului"
-      ],
       "Enable multi-user support": [
         "Activare suport utilizatori multipli"
       ],
@@ -302,7 +296,7 @@
         "Obțineți ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
-        "Obțineți o adresă nouă de e-mail criptată"
+        "Obțineți o adresă de e-mail criptată"
       ],
       "Get in touch": [
         "Contactați-ne"
@@ -451,9 +445,6 @@
       "Remove all members": [
         "Eliminare toți membrii"
       ],
-      "Remove all members from group": [
-        "Eliminare toși membrii din grup"
-      ],
       "Remove bonuses": [
         "Anulare bonusuri"
       ],
@@ -483,9 +474,6 @@
       ],
       "Resend code": [
         "Retrimitere cod"
-      ],
-      "Resend invitation": [
-        "Retrimitere invitație"
       ],
       "Reset credentials": [
         "Resetare acreditări"
@@ -732,11 +720,6 @@
       ],
       "Zoom out": [
         "Micșorare"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Adăugare domeniu pm.me"
       ]
     },
     "Action subscription": {
@@ -3674,6 +3657,11 @@
       "Country code": [
         "Cod țară"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Creați un cont cloud securizat pentru ${ n } membru",
+        "Creați un cont cloud securizat pentru ${ n } membri",
+        "Creați un cont cloud securizat pentru ${ n } de membri"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creați și gestionați conturi subordonate și atribuiți-le adrese de e-mail cu domeniului personal."
       ],
@@ -3706,11 +3694,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizați aspectul aplicației ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -6360,14 +6348,11 @@
       "Password health": [
         "Stare parole"
       ],
-      "Password manager to secure credentials": [
-        "Manager de parole pentru securizarea datelor de autentificare"
-      ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
-      "Phone support (40+ users)": [
-        "Asistență telefonică (peste 40 de utilizatori)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Funcții premium pentru ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
@@ -6520,6 +6505,9 @@
         "Partajare seif (maxim ${ n } persoană)",
         "Partajare seif (maxim ${ n } persoane)",
         "Partajare seif (maxim ${ n } de persoane)"
+      ],
+      "Version history": [
+        "Istoric versiuni"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
@@ -6801,9 +6789,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături către datele de contact și multe altele."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu 6 sau mai mulți utilizatori."
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
       ],
@@ -7081,20 +7066,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Toți, inclusiv din exterior"
-      ],
-      "Members": [
-        "Membri"
-      ],
-      "Nobody by default": [
-        "Implicit nimeni"
-      ],
-      "Organization members": [
-        "Membri organizație"
       ]
     },
     "Organization capacity error": {
@@ -7549,6 +7520,9 @@
       ],
       "Gift code": [
         "Cod cadou"
+      ],
+      "Group name": [
+        "Nume grup"
       ],
       "Other": [
         "Altele"
@@ -9500,10 +9474,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -10471,11 +10445,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin prin e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Păstrați și transferați în siguranță monedele Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

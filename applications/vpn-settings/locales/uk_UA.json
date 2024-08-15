@@ -439,9 +439,6 @@
       "Remove all members": [
         "Видалити всіх учасників"
       ],
-      "Remove all members from group": [
-        "Видалити всіх учасників з групи"
-      ],
       "Remove bonuses": [
         "Вилучити бонуси"
       ],
@@ -471,9 +468,6 @@
       ],
       "Resend code": [
         "Надіслати код повторно"
-      ],
-      "Resend invitation": [
-        "Повторно надіслати запрошення"
       ],
       "Reset credentials": [
         "Скинути облікові дані"
@@ -717,11 +711,6 @@
       ],
       "Zoom out": [
         "Зменшити"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Додати домен «pm.me»"
       ]
     },
     "Action subscription": {
@@ -3652,11 +3641,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "виділені сервери"
-      ],
       "Dedicated servers": [
         "Виділені сервери"
+      ],
+      "dedicated servers": [
+        "виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами."
@@ -6326,14 +6315,8 @@
       "Password health": [
         "Якість пароля"
       ],
-      "Password manager to secure credentials": [
-        "Менеджер паролів для захисту облікових даних"
-      ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
-      ],
-      "Phone support (40+ users)": [
-        "Підтримка за телефоном (40+ користувачів)"
       ],
       "Priority email support": [
         "Пріоритетна підтримка електронною поштою"
@@ -6769,9 +6752,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Налаштуйте свій підпис з використанням логотипів, зображень, піктограм соціальних мереж, посилань на свої контакти та інших можливостей"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Команда підтримки ${ BRAND_NAME } надає допомогу в телефонному режимі впродовж європейського робочого часу клієнтам, які мають 6 або більше користувачів"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Запобігає доступу до повідомлень ${ BRAND_NAME } чи сторонніх осіб. Відправник та отримувач повідомлень – єдині, хто може читати повідомлення."
       ],
@@ -7029,20 +7009,6 @@
       ],
       "The whole organization": [
         "Вся організація"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Усі, включно зі сторонніми"
-      ],
-      "Members": [
-        "Учасники"
-      ],
-      "Nobody by default": [
-        "По стандарту нікому"
-      ],
-      "Organization members": [
-        "Члени організації"
       ]
     },
     "Organization capacity error": {
@@ -7478,6 +7444,9 @@
       ],
       "Gift code": [
         "Подарунковий код"
+      ],
+      "Group name": [
+        "Назва групи"
       ],
       "Other": [
         "Інше"
@@ -9338,11 +9307,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-All address": [
-        "Catch-All адреса"
-      ],
       "Catch-all address": [
         "Catch-all адреси"
+      ],
+      "Catch-All address": [
+        "Catch-All адреса"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -10296,11 +10265,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin електронною поштою"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Безпечно зберігайте й переказуйте Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

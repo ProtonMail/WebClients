@@ -202,9 +202,6 @@
       "Disable": [
         "Poista käytöstä"
       ],
-      "Disable E2EE for group address": [
-        "Poista E2EE käytöstä ryhmäosoitteelle"
-      ],
       "Discard": [
         "Hylkää"
       ],
@@ -276,9 +273,6 @@
       ],
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
-      ],
-      "Enable E2EE for group address": [
-        "Ota päästä päähän -salaus käyttöön ryhmäosoitteelle"
       ],
       "Enable multi-user support": [
         "Ota usean käyttäjän tuki käyttöön"
@@ -451,9 +445,6 @@
       "Remove all members": [
         "Poista kaikki jäsenet"
       ],
-      "Remove all members from group": [
-        "Poista kaikki jäsenet ryhmästä"
-      ],
       "Remove bonuses": [
         "Poista edut"
       ],
@@ -483,9 +474,6 @@
       ],
       "Resend code": [
         "Lähetä koodi uudelleen"
-      ],
-      "Resend invitation": [
-        "Lähetä kutsu uudelleen"
       ],
       "Reset credentials": [
         "Nollaa kirjautumistiedot"
@@ -732,11 +720,6 @@
       ],
       "Zoom out": [
         "Loitonna"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Lisää pm.me-verkkotunnus"
       ]
     },
     "Action subscription": {
@@ -3638,6 +3621,10 @@
       "Country code": [
         "Maakoodi"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Luo suojattu pilvi ${ n } jäsenelle",
+        "Luo suojattu pilvi ${ n } jäsenelle"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Luo ja hallinnoi alitilejä ja määritä niille omaa verkkotunnustasi käyttävät sähköpostiosoitteet."
       ],
@@ -3669,11 +3656,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Mukauta ${ BRAND_NAME }-sovellusten ulkoasua."
       ],
-      "dedicated servers": [
-        "omia palvelimia"
-      ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "dedicated servers": [
+        "omia palvelimia"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -6283,14 +6270,11 @@
       "Password health": [
         "Salasanaterveys"
       ],
-      "Password manager to secure credentials": [
-        "Salasananhallinta kirjautumistietojen turvaamiseen"
-      ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
       ],
-      "Phone support (40+ users)": [
-        "Puhelinasiakaspalvelu (40+ käyttäjää)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premium-ominaisuudet: ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -6439,6 +6423,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
         "Holvin jakaminen (enintään ${ n } henkilöä)"
+      ],
+      "Version history": [
+        "Versiohistoria"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
@@ -6719,9 +6706,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "${ BRAND_NAME }in asiakastyytyväisyystiimi tarjoaa palvelua puhelimitse vähintään 6 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
       ],
@@ -6977,20 +6961,6 @@
       ],
       "The whole organization": [
         "Koko organisaatio"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Kaikki, myös ulkopuoliset"
-      ],
-      "Members": [
-        "Jäsenet"
-      ],
-      "Nobody by default": [
-        "Oletusarvoisesti ei ketään"
-      ],
-      "Organization members": [
-        "Organisaation jäsenet"
       ]
     },
     "Organization capacity error": {
@@ -7440,6 +7410,9 @@
       ],
       "Gift code": [
         "Lahjakoodi"
+      ],
+      "Group name": [
+        "Ryhmän nimi"
       ],
       "Other": [
         "Muu"
@@ -9350,10 +9323,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -10282,11 +10255,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin sähköpostitse"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Säilytä ja siirrä Bitcoinejasi turvallisesti"
       ]
     },
     "wallet_signup_2024:Bug category": {

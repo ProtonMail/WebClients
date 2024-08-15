@@ -202,9 +202,6 @@
       "Disable": [
         "비활성화"
       ],
-      "Disable E2EE for group address": [
-        "그룹 주소에 E2EE를 비활성화합니다"
-      ],
       "Discard": [
         "저장 안함"
       ],
@@ -276,9 +273,6 @@
       ],
       "enable desktop notifications": [
         "데스크톱 알림을 활성화"
-      ],
-      "Enable E2EE for group address": [
-        "그룹 주소에 E2EE를 활성화합니다"
       ],
       "Enable multi-user support": [
         "다중 사용자 지원 활성화"
@@ -451,9 +445,6 @@
       "Remove all members": [
         "모든 구성원 추방"
       ],
-      "Remove all members from group": [
-        "이 그룹내의 모든 구성원 추방"
-      ],
       "Remove bonuses": [
         "보너스 제거"
       ],
@@ -483,9 +474,6 @@
       ],
       "Resend code": [
         "코드 다시 보내기"
-      ],
-      "Resend invitation": [
-        "초대장 재전송"
       ],
       "Reset credentials": [
         "자격 증명 초기화"
@@ -732,11 +720,6 @@
       ],
       "Zoom out": [
         "축소"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "pm.me 도메인 추가"
       ]
     },
     "Action subscription": {
@@ -3635,10 +3618,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } 애플리케이션의 설정을 커스터마이징해 보세요."
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6221,14 +6204,8 @@
       "Password health": [
         "비밀번호 건강도"
       ],
-      "Password manager to secure credentials": [
-        "자격 증명 보호를 위한 비밀번호 관리자"
-      ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
-      ],
-      "Phone support (40+ users)": [
-        "휴대 전화 지원 (40명 이상 사용자)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }의 프리미엄 기능을 사용할 수 있습니다."
@@ -6658,9 +6635,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "로고, 이미지, 소셜 미디어 아이콘, 연락처 링크 등으로 이메일 서명을 개인화하세요."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "전화 지원은 6명 이상의 사용자가 있는 고객을 위해 유럽 업무 시간 동안 ${ BRAND_NAME } 고객 성공 팀에서 이용할 수 있습니다."
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } 또는 제3자가 메시지에 접근하는 것을 방지합니다. 메시지를 읽을 수 있는 유일한 사람은 당신과 이메일을 받은 수신자 뿐이죠."
       ],
@@ -6936,20 +6910,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "모든 사람, 외부인 포함"
-      ],
-      "Members": [
-        "구성원"
-      ],
-      "Nobody by default": [
-        "기본적으로 아무도 없습니다"
-      ],
-      "Organization members": [
-        "조직 구성원"
       ]
     },
     "Organization capacity error": {
@@ -7394,6 +7354,9 @@
       ],
       "Gift code": [
         "기프트 코드"
+      ],
+      "Group name": [
+        "그룹 이름"
       ],
       "Other": [
         "기타"
@@ -9260,11 +9223,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -10199,11 +10162,6 @@
       ],
       "Bitcoin via email": [
         "이메일을 통한 Bitcoin"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bitcoin을 안전하게 보관하고 입출금하세요."
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -202,8 +202,8 @@
       "Disable": [
         "Désactiver"
       ],
-      "Disable E2EE for group address": [
-        "Désactiver le chiffrement de bout en bout pour l'adresse du groupe"
+      "Disable E2EE group mail encryption": [
+        "Désactiver le chiffrement de bout en bout (E2EE) pour les messages de groupe"
       ],
       "Discard": [
         "Abandonner"
@@ -277,8 +277,8 @@
       "enable desktop notifications": [
         "activer les notifications de bureau"
       ],
-      "Enable E2EE for group address": [
-        "Activer le chiffrement de bout en bout pour l'adresse du groupe"
+      "Enable E2EE group mail encryption": [
+        "Activer le chiffrement de bout en bout (E2EE) pour les messages de groupe"
       ],
       "Enable multi-user support": [
         "Activer la prise en charge multi-utilisateur"
@@ -367,6 +367,9 @@
       "Loading verification": [
         "Vérification du transfert"
       ],
+      "Lost access to your 2FA device?": [
+        "Vous n'avez plus accès à votre appareil A2F ?"
+      ],
       "Make admin": [
         "Définir comme administrateur"
       ],
@@ -451,9 +454,6 @@
       "Remove all members": [
         "Retirer tous les membres"
       ],
-      "Remove all members from group": [
-        "Retirer tous les membres du groupe"
-      ],
       "Remove bonuses": [
         "Retirer les bonus"
       ],
@@ -483,9 +483,6 @@
       ],
       "Resend code": [
         "Renvoyer le code"
-      ],
-      "Resend invitation": [
-        "Renvoyer l'invitation"
       ],
       "Reset credentials": [
         "Réinitialiser les identifiants"
@@ -732,11 +729,6 @@
       ],
       "Zoom out": [
         "Zoom arrière"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Ajouter le domaine pm.me"
       ]
     },
     "Action subscription": {
@@ -2265,11 +2257,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Facturation tous les 2 ans à ${ amountBilled }. Les réductions se basent sur le prix mensuel standard."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Facturation annuelle à ${ amountBilled }. Économisez ${ amountSave } par an sur 2 abonnements individuels ${ BRAND_NAME } Unlimited."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 To de stockage"
+      ],
       "2 users": [
         "2 utilisateurs"
       ],
@@ -3430,6 +3428,9 @@
         "+${ organization.BonusVPN } connexion pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)",
         "+${ organization.BonusVPN } connexions pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)"
       ],
+      "2FA disabled": [
+        "2FA désactivée"
+      ],
       "30-day money-back guarantee": [
         "Garantie satisfait ou remboursé pendant 30 jours"
       ],
@@ -3499,6 +3500,9 @@
       ],
       "All Events ": [
         "Tous les événements"
+      ],
+      "All members have been added.": [
+        "Tous les membres ont été ajoutés."
       ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
@@ -3673,11 +3677,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personnalisez le style des applications ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "serveurs dédiés"
-      ],
       "Dedicated servers": [
         "Serveurs dédiés"
+      ],
+      "dedicated servers": [
+        "serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec une ou plusieurs adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -3688,6 +3692,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Suppression de ${ deletedServerCount } serveur de Passerelle",
         "Suppression de ${ deletedServerCount } serveurs de Passerelle"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "La désactivation de l'authentification à deux facteurs rendra votre compte moins sécurisé. Ne procédez que si c'est absolument nécessaire."
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -4551,6 +4558,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Cette vérification peut prendre jusqu'à une heure. Après une vérification réussie, ne supprimez pas l'enregistrement TXT car il est nécessaire pour confirmer que vous possédez toujours le domaine."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Ceci désactivera l'authentification à deux facteurs, à savoir l'application d'authentification et la clé de sécurité."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ceci vous permettra d'utiliser PayPal pour payer votre abonnement ${ BRAND_NAME }. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
@@ -4670,6 +4680,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Importez le logo de votre organisation pour renforcer l'identité de votre marque et créer une expérience personnalisée pour vos utilisateurs."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Utilisez une méthode de récupération pour désactiver vos méthodes d'authentification à deux facteurs."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilisez le meilleur serveur en fonction de la charge actuelle et de la position : ${ formattedBestServerName }"
@@ -5147,6 +5160,12 @@
       ],
       "Account storage": [
         "Espace de stockage du compte"
+      ],
+      "Add all organization members": [
+        "Ajouter tous les membres de l'organisation"
+      ],
+      "Add group member": [
+        "Ajouter un membre au groupe"
       ],
       "Address": [
         "Adresse"
@@ -6088,6 +6107,14 @@
         "${ n } message par jour",
         "${ n } messages par jour"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } coffre-fort ${ PASS_SHORT_APP_NAME } partagé par utilisateur",
+        "${ n } coffres-forts ${ PASS_SHORT_APP_NAME } partagés par utilisateur"
+      ],
+      "${ n } user": [
+        "${ n } utilisateur",
+        "Jusqu'à ${ n } utilisateurs"
+      ],
       "${ n } vault": [
         "${ n } coffre-fort",
         "${ n } coffres-forts"
@@ -6095,6 +6122,10 @@
       "${ n } VPN connection": [
         "${ n } connexion VPN",
         "${ n } connexions VPN"
+      ],
+      "${ options }-day file version history": [
+        "Historique des versions de fichier datant d'${ options } jour",
+        "Historique des versions de fichier datant de ${ options } jours"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
@@ -6109,8 +6140,17 @@
       "${ size } attachment size": [
         "${ size } de pièces jointes"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } d'espace de stockage sécurisé par utilisateur"
+      ],
       "${ size } storage": [
         "${ size } d'espace de stockage"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Pour ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Pour tous les services ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 utilisateur"
@@ -6174,6 +6214,9 @@
       ],
       "Contact groups management": [
         "Gestion des groupes de contacts"
+      ],
+      "Custom and secure business email": [
+        "Adresse e-mail professionnelle sécurisée et personnalisée"
       ],
       "Custom domains for email aliases": [
         "Domaines personnalisés pour les alias d'adresse e-mail"
@@ -6278,6 +6321,9 @@
       "No-logs policy": [
         "Politique de non-journalisation (no log)"
       ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
       "Organize items with multiple vaults": [
         "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
@@ -6287,14 +6333,14 @@
       "Password health": [
         "Sécurité des mots de passe"
       ],
-      "Password manager to secure credentials": [
-        "Gestionnaire de mots de passe pour sécuriser vos identifiants"
+      "Password manager": [
+        "Gestionnaire de mots de passe"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
       ],
-      "Phone support (40+ users)": [
-        "Assistance téléphonique (compte 40 utilisateurs ou plus)"
+      "Phone support (20+ users)": [
+        "Assistance téléphonique (compte 20 utilisateurs ou plus)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
@@ -6349,6 +6395,9 @@
         "Serveurs dans plus de ${ vpnServersCountData.paid.countries } pays",
         "Serveurs dans plus de ${ vpnServersCountData.paid.countries } pays"
       ],
+      "Share files with no size limit": [
+        "Partagez des fichiers sans limite de taille."
+      ],
       "Sign in as user": [
         "Se connecter en tant qu'utilisateur"
       ],
@@ -6372,6 +6421,9 @@
       ],
       "Strict no-logs policy": [
         "Politique stricte de non-journalisation (no log)"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchronisez et sauvegardez tous vos fichiers entre plusieurs appareils."
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -6408,6 +6460,9 @@
       ],
       "Unlimited messages per day": [
         "Aucune limite d'envoi de messages par jour"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Un nombre illimité de coffres-forts ${ PASS_SHORT_APP_NAME } partagés par utilisateur"
       ],
       "Unlimited shared vaults with access permissions": [
         "Nombre illimité de coffres-forts partagés avec droits d'accès"
@@ -6530,6 +6585,9 @@
       ],
       "Popular": [
         "Populaire"
+      ],
+      "Protect sensitive business information and collaborate securely.asdfasdfsdf": [
+        "Protégez les informations sensibles de vos activités et collaborez en toute sécurité."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protégez la vie privée de votre famille avec l'ensemble des services ${ BRAND_NAME }."
@@ -6729,8 +6787,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personnalisez votre signature d'e-mail avec des logos, images, icônes de réseaux sociaux, liens vers vos coordonnées…"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Un support téléphonique est disponible auprès de l'équipe service client ${ BRAND_NAME } aux heures de bureau européennes, pour les clients ayant 6 utilisateurs ou plus."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Un support téléphonique est disponible auprès de l'équipe service client ${ BRAND_NAME } aux heures de bureau européennes, pour les clients ayant 20 utilisateurs ou plus."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Empêche l'accès aux messages par ${ BRAND_NAME } ou par des tiers, les seules personnes pouvant lire les messages étant l'expéditeur et le destinataire."
@@ -6898,6 +6956,9 @@
       "An external address cannot be default": [
         "Une adresse externe ne peut pas être une adresse par défaut."
       ],
+      "Downloaded 2FA recovery codes": [
+        "Télécharger les codes de récupération A2F"
+      ],
       "Invalid code": [
         "Le code n’est pas valide."
       ],
@@ -6990,17 +7051,14 @@
       ]
     },
     "option": {
-      "Everyone, incl. outside": [
-        "Tout le monde, y compris les utilisateurs extérieurs"
+      "Everyone": [
+        "Tout le monde"
       ],
-      "Members": [
-        "Membres"
+      "Group members": [
+        "Membres du groupe"
       ],
-      "Nobody by default": [
-        "Personne par défaut"
-      ],
-      "Organization members": [
-        "Membres de l'organisation"
+      "No one": [
+        "Personne"
       ]
     },
     "Organization capacity error": {
@@ -7451,6 +7509,9 @@
       "Gift code": [
         "Code-cadeau"
       ],
+      "Group name": [
+        "Nom du groupe"
+      ],
       "Other": [
         "Autre"
       ],
@@ -7629,6 +7690,11 @@
       ],
       "User": [
         "Utilisateur"
+      ]
+    },
+    "Safety review": {
+      "You have recommended account safety actions": [
+        "Vous avez des actions de sécurité recommandées pour votre compte."
       ]
     },
     "saml: Action": {
@@ -8503,6 +8569,9 @@
       "1 email address": [
         "1 adresse e-mail"
       ],
+      "1 email address per user": [
+        "1 adresse e-mail par utilisateur"
+      ],
       "1 VPN connection": [
         "1 connexion VPN"
       ],
@@ -9360,10 +9429,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -9485,6 +9554,9 @@
       "Disable two-factor authentication": [
         "Désactiver l'authentification à deux facteurs"
       ],
+      "Disable two-factor authentication?": [
+        "Désactiver l'authentification à deux facteurs ?"
+      ],
       "Discard changes?": [
         "Abandonner les modifications ?"
       ],
@@ -9544,6 +9616,9 @@
       ],
       "Email subscriptions": [
         "Newsletters"
+      ],
+      "Enter 2FA code": [
+        "Entrez le code A2F"
       ],
       "Enter endpoints into your identity provider": [
         "Saisissez les points de terminaison dans votre fournisseur d'identité."
@@ -10295,8 +10370,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Constituez une réserve de bitcoins et réalisez des transactions en toute sécurité"
+      "A safer/easier way to hold & send Bitcoin": [
+        "Une façon plus sécurisée/simple de détenir et d'envoyer des bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {
