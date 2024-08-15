@@ -202,9 +202,6 @@
       "Disable": [
         "გათიშვა"
       ],
-      "Disable E2EE for group address": [
-        "E2EE-ის გამორთვა ჯგუფის მისამართისთვის"
-      ],
       "Discard": [
         "მოცილება"
       ],
@@ -276,9 +273,6 @@
       ],
       "enable desktop notifications": [
         "სამუშაო მაგიდის გაფრთხილებების ჩართვა"
-      ],
-      "Enable E2EE for group address": [
-        "E2EE-ის ჩართვა ჯგუფის მისამართისთვის"
       ],
       "Enable multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
@@ -451,9 +445,6 @@
       "Remove all members": [
         "ყველა წევრის წაშლა"
       ],
-      "Remove all members from group": [
-        "ჯგუფიდან ყველა წევრის წაშლა"
-      ],
       "Remove bonuses": [
         "ბონუსების წაშლა"
       ],
@@ -483,9 +474,6 @@
       ],
       "Resend code": [
         "კოდის თავიდან გაგზავნა"
-      ],
-      "Resend invitation": [
-        "მოსაწვევის თავიდან გაგზავნა"
       ],
       "Reset credentials": [
         "მომხმარებლისა და პაროლის თავიდან დაყენება"
@@ -732,11 +720,6 @@
       ],
       "Zoom out": [
         "დაპატარავება"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "დაამატეთ დომენი pm.me"
       ]
     },
     "Action subscription": {
@@ -3638,6 +3621,10 @@
       "Country code": [
         "ქვეყნის კოდი"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის",
+        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "შექმენით და მართეთ ქვეანგეარიშები და მიანიჭეთ მათ ელფოსტის მისამართები თქვენი პირადი დომენით."
       ],
@@ -3669,11 +3656,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }-ის აპლიკაციების გარეგნობის მორგება."
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -6283,14 +6270,11 @@
       "Password health": [
         "პაროლის სიძლიერე"
       ],
-      "Password manager to secure credentials": [
-        "პაროლების მმართველი ავტორიზაციის დეტალების დასაცავად"
-      ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
-      "Phone support (40+ users)": [
-        "სატელეფონო მხარდაჭერა (40+ მომხმარებელი)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }-ის ფასიანი ფუნქციები"
       ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
@@ -6722,9 +6706,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "მოირგეთ თქვენი ელფოსტის ხელმოწერები მათში ლოგოების, გამოსახულებების, სოცმედიის ხატულების, კონტაქტების დეტალებზე ბმულების და ა. შ. დამატებით"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "სატელეფონო მხარდაჭერა ხელმისაწვდომია ${ BRAND_NAME }-ის მომხმარებელთა წარმატების გუნდიდან ევროპის სამუშაო საათებში, მომხმარებლებისთვის 6 ან მეტი მომხმარებლით"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "კრძალავს შეტყობინებებთან ${ BRAND_NAME }-ის და მესამე პირების წვდომას. შეტყობინების წაკითხვა, მხოლოდ, გამგზავნს და მიმღებს შეუძლიათ."
       ],
@@ -6980,20 +6961,6 @@
       ],
       "The whole organization": [
         "მთელი ორგანიზაცია"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "ყველა, გარეს ჩათვლით"
-      ],
-      "Members": [
-        "წევრები"
-      ],
-      "Nobody by default": [
-        "არავინ ნაგულისხმევად"
-      ],
-      "Organization members": [
-        "ორგანიზაციის წევრები"
       ]
     },
     "Organization capacity error": {
@@ -7443,6 +7410,9 @@
       ],
       "Gift code": [
         "სასაჩუქრე კოდი"
+      ],
+      "Group name": [
+        "ჯგუფის სახელი"
       ],
       "Other": [
         "სხვა"
@@ -9353,10 +9323,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -10285,11 +10255,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin ელფოსტით"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "უსაფრთხოდ შეინახეთ და გადარიცხეთ თქვენი bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
