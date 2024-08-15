@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon, InputFieldTwo, Tooltip } from '@proton/components/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
+import { useActiveBreakpoint } from '@proton/components/hooks';
 import { ASSISTANT_PROMPT_SIZE_LIMIT } from '@proton/llm/lib';
 
 interface Props {
@@ -47,6 +48,8 @@ const ComposerAssistantCustomInput = ({
 
         return { buttonText, buttonIconName };
     }, [isAssistantExpanded, selectedText]);
+
+    const { viewportWidth } = useActiveBreakpoint();
 
     const randomPlaceholder = useMemo(() => {
         const placeholderPrompts = [
@@ -129,7 +132,7 @@ const ComposerAssistantCustomInput = ({
                         onKeyDown={handleKeyDown}
                         data-testid="composer:genie"
                         autoGrow
-                        minRows={3}
+                        minRows={viewportWidth['<=small'] ? 5 : 3}
                         unstyled
                         dense
                         className="rounded-none composer-assistant-input pt-1 pb-0 resize-none"
