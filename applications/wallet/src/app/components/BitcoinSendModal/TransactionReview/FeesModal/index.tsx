@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { noop } from 'lodash';
 import { c } from 'ttag';
 
-import type { WasmApiExchangeRate } from '@proton/andromeda';
+import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import type { IconName } from '@proton/components/components';
 import { Icon, Tooltip } from '@proton/components/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
@@ -21,7 +21,7 @@ interface Props extends ModalOwnProps {
     accountExchangeRate?: WasmApiExchangeRate;
     exchangeRate: WasmApiExchangeRate;
     txBuilderHelpers: TxBuilderHelper;
-    psbtExpectedSize: number | undefined;
+    network: WasmNetwork;
     getFeesByBlockTarget: (blockTarget: number) => number | undefined;
 }
 
@@ -30,20 +30,21 @@ export const FeesModal = ({
     exchangeRate,
     txBuilderHelpers,
     getFeesByBlockTarget,
-    psbtExpectedSize,
+    network,
     ...modalProps
 }: Props) => {
-    const { updateTxBuilder, updateTxBuilderAsync } = txBuilderHelpers;
+    const { txBuilder, updateTxBuilder, updateTxBuilderAsync } = txBuilderHelpers;
 
     const [settings] = useUserWalletSettings();
 
     const getFeeOption = useCallback(
         async (icon: IconName, text: string, blockTarget: number): Promise<[IconName, string, number, number]> => {
-            const feeRate = getFeesByBlockTarget(blockTarget) ?? 0;
-            //  expected to be non-deterministic since input selection during PSBT creation is random
-            return [icon, text, feeRate, feeRate * (psbtExpectedSize ?? 0)];
+            const feeRate = getFeesByBlockTarget(blockTarget) ?? blockTarget;
+            const draftPsbt = await txBuilder.setFeeRate(BigInt(feeRate)).createDraftPsbt(network);
+
+            return [icon, text, feeRate, Number(draftPsbt.total_fees)];
         },
-        [getFeesByBlockTarget, psbtExpectedSize]
+        [getFeesByBlockTarget, network, txBuilder]
     );
 
     const [feeOptions, setFeeOptions] = useState<[IconName, string, number, number][]>([]);
@@ -62,7 +63,7 @@ export const FeesModal = ({
 
     const handleFeesSelection = async (feeRate: number) => {
         updateTxBuilder((txBuilder) => txBuilder.setFeeRate(BigInt(feeRate)));
-        updateTxBuilderAsync((txBuilder) => txBuilder.constrainRecipientAmounts());
+        await updateTxBuilderAsync((txBuilder) => txBuilder.constrainRecipientAmounts());
 
         modalProps.onClose?.();
     };

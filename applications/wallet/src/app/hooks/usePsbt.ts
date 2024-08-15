@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { WasmApiWalletAccount, WasmPsbt, WasmTxBuilder } from '@proton/andromeda';
+import type { WasmApiWalletAccount, WasmPsbt } from '@proton/andromeda';
 import { useUserKeys } from '@proton/components/hooks';
 import type { PublicKeyReference } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
@@ -14,6 +14,7 @@ import { encryptPgp, encryptWalletDataWithWalletKey } from '@proton/wallet';
 import { useBitcoinBlockchainContext } from '../contexts';
 import { getAccountWithChainDataFromManyWallets, isUndefined } from '../utils';
 import { useBlockchainClient } from './useBlockchainClient';
+import { type TxBuilderHelper } from './useTxBuilder';
 
 interface BroadcastData
     extends Required<
@@ -38,7 +39,7 @@ const getNowTimestamp = (): string => {
     return Math.floor(Date.now() / SECOND).toString();
 };
 
-export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreatePsbt = false) => {
+export const usePsbt = ({ txBuilderHelpers }: { txBuilderHelpers: TxBuilderHelper }, shouldCreatePsbt = false) => {
     const blockchainClient = useBlockchainClient();
 
     const { incrementSyncKey, walletsChainData, network } = useBitcoinBlockchainContext();
@@ -48,25 +49,24 @@ export const usePsbt = ({ txBuilder }: { txBuilder: WasmTxBuilder }, shouldCreat
 
     const [userKeys] = useUserKeys();
 
-    const createDraftPsbt = useCallback(
-        async (inputTxBuilder?: WasmTxBuilder) => {
-            if (!isUndefined(network)) {
-                try {
-                    return await (inputTxBuilder ?? txBuilder).createDraftPsbt(network);
-                } catch (err) {
-                    console.error('An error occurred when building PSBT', err);
-                    throw err;
-                }
-            } else {
-                throw new Error('missing network');
+    const { txBuilder } = txBuilderHelpers;
+
+    const createDraftPsbt = useCallback(async (): Promise<WasmPsbt | null> => {
+        if (!isUndefined(network)) {
+            try {
+                return await txBuilder.createDraftPsbt(network);
+            } catch (err) {
+                console.error('An error occurred when building PSBT', err);
+                throw err;
             }
-        },
-        [network, txBuilder]
-    );
+        } else {
+            throw new Error('missing network');
+        }
+    }, [network, txBuilder]);
 
     useEffect(() => {
         const run = async () => {
-            const psbt = await createDraftPsbt();
+            const psbt = await createDraftPsbt().catch(() => null);
 
             if (psbt) {
                 setPsbt(psbt);

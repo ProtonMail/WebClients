@@ -62,7 +62,7 @@ export const useTransactionReview = ({
     const [message, setMessage] = useState('');
     const [noteToSelf, setNoteToSelf] = useState('');
 
-    const { psbt, signAndBroadcastPsbt } = usePsbt({ txBuilder }, true);
+    const { psbt, signAndBroadcastPsbt } = usePsbt({ txBuilderHelpers }, true);
 
     const psbtExpectedSize = psbt?.computeTxSize();
 
