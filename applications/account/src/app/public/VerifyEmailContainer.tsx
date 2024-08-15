@@ -9,9 +9,8 @@ import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { postVerifyValidate } from '@proton/shared/lib/api/verify';
-import { APPS, SECURITY_CHECKUP_PATHS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getAppUrlRelativeToOrigin } from '@proton/shared/lib/helpers/url';
 
 import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
@@ -60,8 +59,7 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
         void withLoading(promise);
     }, []);
 
-    const continueParams = new URLSearchParams({
-        continue: encodeURIComponent(getAppUrlRelativeToOrigin(window.location.origin, APPS.PROTONACCOUNT).toString()),
+    const searchParams = new URLSearchParams({
         email: email || '',
     });
 
@@ -119,11 +117,11 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
                                 <ButtonLike
                                     fullWidth
                                     as="a"
-                                    href={`${SECURITY_CHECKUP_PATHS.ROOT}?${continueParams.toString()}`}
+                                    href={`${SSO_PATHS.SWITCH}?${searchParams.toString()}`}
                                     target="_self"
                                     color="norm"
                                 >
-                                    {c('Action').t`Review account security`}
+                                    {c('Action').t`Sign in`}
                                 </ButtonLike>
                             )
                         }
