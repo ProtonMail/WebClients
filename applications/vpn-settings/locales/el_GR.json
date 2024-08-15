@@ -202,9 +202,6 @@
       "Disable": [
         "Απενεργοποίηση"
       ],
-      "Disable E2EE for group address": [
-        "Απενεργοποίηση E2EE για διεύθυνση ομάδας"
-      ],
       "Discard": [
         "Απόρριψη"
       ],
@@ -276,9 +273,6 @@
       ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
-      ],
-      "Enable E2EE for group address": [
-        "Ενεργοποίηση E2EE για διεύθυνση ομάδας"
       ],
       "Enable multi-user support": [
         "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
@@ -451,9 +445,6 @@
       "Remove all members": [
         "Κατάργηση όλων των μελών"
       ],
-      "Remove all members from group": [
-        "Κατάργηση όλων των μελών από την ομάδα"
-      ],
       "Remove bonuses": [
         "Αφαιρέστε τα μπόνους"
       ],
@@ -483,9 +474,6 @@
       ],
       "Resend code": [
         "Επαναποστολή κωδικού"
-      ],
-      "Resend invitation": [
-        "Επανάληψη αποστολής πρόσκλησης"
       ],
       "Reset credentials": [
         "Επαναφορά διαπιστευτηρίων"
@@ -732,11 +720,6 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Προσθήκη τομέα pm.me"
       ]
     },
     "Action subscription": {
@@ -3673,11 +3656,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Προσαρμόστε την εμφάνιση και την αίσθηση των ${ BRAND_NAME } εφαρμογών."
       ],
-      "dedicated servers": [
-        "αφοσιωμένοι διακομιστές"
-      ],
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
+      ],
+      "dedicated servers": [
+        "αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -6287,14 +6270,8 @@
       "Password health": [
         "Υγεία κωδικού πρόσβασης"
       ],
-      "Password manager to secure credentials": [
-        "Διαχειριστής κωδικών πρόσβασης για την εξασφάλιση διαπιστευτηρίων"
-      ],
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
-      ],
-      "Phone support (40+ users)": [
-        "Τηλεφωνική υποστήριξη (40+ χρήστες)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Premium χαρακτηριστικά του ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
@@ -6729,9 +6706,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Εξατομικεύστε την υπογραφή email σας με λογότυπα, εικόνες, εικονίδια κοινωνικών μέσων, συνδέσμους προς τα στοιχεία επικοινωνίας σας και πολλά άλλα"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Η τηλεφωνική υποστήριξη είναι διαθέσιμη από τη ${ BRAND_NAME } ομάδα επιτυχίας πελατών κατά τις ευρωπαϊκές εργάσιμες ώρες, για πελάτες με 6 ή περισσότερους χρήστες"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Αποτρέπει την πρόσβαση σε μηνύματα από ${ BRAND_NAME } ή τρίτους. Τα μόνα άτομα που μπορούν να διαβάσουν τα μηνύματα είναι ο αποστολέας και ο παραλήπτης."
       ],
@@ -6987,20 +6961,6 @@
       ],
       "The whole organization": [
         "Ολόκληρος ο οργανισμός"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Όλοι, συμπεριλαμβανομένου του εξωτερικού"
-      ],
-      "Members": [
-        "Μέλη"
-      ],
-      "Nobody by default": [
-        "Κανείς από προεπιλογή"
-      ],
-      "Organization members": [
-        "Μέλη οργανισμού"
       ]
     },
     "Organization capacity error": {
@@ -7450,6 +7410,9 @@
       ],
       "Gift code": [
         "Κωδικός δώρου"
+      ],
+      "Group name": [
+        "Όνομα ομάδας"
       ],
       "Other": [
         "Άλλο"
@@ -9357,10 +9320,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -10289,11 +10252,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin μέσω email"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Κρατήστε και μεταφέρετε με ασφάλεια τα bitcoins σας"
       ]
     },
     "wallet_signup_2024:Bug category": {

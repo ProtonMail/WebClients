@@ -202,9 +202,6 @@
       "Disable": [
         "Inaktivera"
       ],
-      "Disable E2EE for group address": [
-        "Inaktivera E2EE för gruppadress"
-      ],
       "Discard": [
         "Avfärda"
       ],
@@ -276,9 +273,6 @@
       ],
       "enable desktop notifications": [
         "aktivera aviseringar för stationär dator"
-      ],
-      "Enable E2EE for group address": [
-        "Aktivera E2EE för gruppadress"
       ],
       "Enable multi-user support": [
         "Aktivera stöd för flera användare"
@@ -451,9 +445,6 @@
       "Remove all members": [
         "Ta bort alla medlemmar"
       ],
-      "Remove all members from group": [
-        "Ta bort alla medlemmar från grupp"
-      ],
       "Remove bonuses": [
         "Ta bort bonusar"
       ],
@@ -483,9 +474,6 @@
       ],
       "Resend code": [
         "Skicka koden igen"
-      ],
-      "Resend invitation": [
-        "Skicka inbjudan igen"
       ],
       "Reset credentials": [
         "Återställ användaruppgifter"
@@ -732,11 +720,6 @@
       ],
       "Zoom out": [
         "Zooma ut"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Lägg till pm.me-domän"
       ]
     },
     "Action subscription": {
@@ -3663,11 +3646,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -6233,14 +6216,8 @@
       "Password health": [
         "Lösenordshälsa"
       ],
-      "Password manager to secure credentials": [
-        "Lösenordshanterare för säkra inloggningsuppgifter"
-      ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonsupport (40+ användare)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Premiumfunktioner av ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
@@ -6678,9 +6655,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personifiera din e-postsignatur med loggor bilder, ikoner för sociala medier, länkar till dina kontaktuppgifter och mer"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonsupport från ${ BRAND_NAME }s kundtjänst är tillgänglig under europeisk arbetstid för kunder med mer än 6 användare"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Förhindrar meddelanden från åtkomst av ${ BRAND_NAME } eller tredje part. De enda som kan läsa meddelandena är avsändaren och den tilltänkta mottagaren."
       ],
@@ -6957,20 +6931,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Alla, inkl. utanför"
-      ],
-      "Members": [
-        "Medlemmar"
-      ],
-      "Nobody by default": [
-        "Ingen som standard"
-      ],
-      "Organization members": [
-        "Organisationsmedlemmar"
       ]
     },
     "Organization capacity error": {
@@ -7423,6 +7383,9 @@
       ],
       "Gift code": [
         "Presentkod"
+      ],
+      "Group name": [
+        "Gruppnamn"
       ],
       "Other": [
         "Annat"
@@ -9289,10 +9252,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -10244,11 +10207,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-post"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Håll och överför dina Bitcoins säkert"
       ]
     },
     "wallet_signup_2024:Bug category": {

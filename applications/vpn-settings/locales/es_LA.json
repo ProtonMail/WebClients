@@ -202,9 +202,6 @@
       "Disable": [
         "Desactivar"
       ],
-      "Disable E2EE for group address": [
-        "Desactivar el cifrado de extremo a extremo para la dirección del grupo"
-      ],
       "Discard": [
         "Descartar"
       ],
@@ -276,9 +273,6 @@
       ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
-      ],
-      "Enable E2EE for group address": [
-        "Activar el cifrado de extremo a extremo para la dirección del grupo"
       ],
       "Enable multi-user support": [
         "Activar soporte multi usuario"
@@ -451,9 +445,6 @@
       "Remove all members": [
         "Eliminar todos los miembros"
       ],
-      "Remove all members from group": [
-        "Eliminar todos los miembros del grupo"
-      ],
       "Remove bonuses": [
         "Borrar los beneficios"
       ],
@@ -483,9 +474,6 @@
       ],
       "Resend code": [
         "Reenviar código"
-      ],
-      "Resend invitation": [
-        "Reenviar invitación"
       ],
       "Reset credentials": [
         "Restablecer credenciales"
@@ -732,11 +720,6 @@
       ],
       "Zoom out": [
         "Alejar"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Añadir dominio pm.me"
       ]
     },
     "Action subscription": {
@@ -3673,11 +3656,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalice el aspecto y sensación de las aplicaciones de ${ BRAND_NAME }"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Los servidores dedicados con direcciones IP dedicadas pueden añadirse a puertas de enlace privadas para activar un control de acceso más preciso."
@@ -6287,14 +6270,8 @@
       "Password health": [
         "Estado de la contraseña"
       ],
-      "Password manager to secure credentials": [
-        "Gestor de contraseñas para proteger credenciales"
-      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
-      ],
-      "Phone support (40+ users)": [
-        "Soporte telefónico (más de 40 usuarios)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Funciones premium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
@@ -6729,9 +6706,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalice la firma del correo electrónico con logotipos, imágenes, íconos de redes sociales, enlaces a los datos de contacto y más"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 6 usuarios."
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
       ],
@@ -6987,20 +6961,6 @@
       ],
       "The whole organization": [
         "Toda la organización"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Todo el mundo, incluidos los usuarios externos"
-      ],
-      "Members": [
-        "Miembros"
-      ],
-      "Nobody by default": [
-        "Nadie por defecto"
-      ],
-      "Organization members": [
-        "Miembros de la organización"
       ]
     },
     "Organization capacity error": {
@@ -7450,6 +7410,9 @@
       ],
       "Gift code": [
         "Código de regalo"
+      ],
+      "Group name": [
+        "Nombre del grupo"
       ],
       "Other": [
         "Otro"
@@ -9360,10 +9323,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -10292,11 +10255,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin vía correo electrónico"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Retenga y transfiera sus bitcoins de forma segura"
       ]
     },
     "wallet_signup_2024:Bug category": {

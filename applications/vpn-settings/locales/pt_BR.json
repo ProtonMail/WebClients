@@ -202,9 +202,6 @@
       "Disable": [
         "Desativar"
       ],
-      "Disable E2EE for group address": [
-        "Desativar criptografia de ponta a ponta para os endereços do endereço"
-      ],
       "Discard": [
         "Descartar"
       ],
@@ -276,9 +273,6 @@
       ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
-      ],
-      "Enable E2EE for group address": [
-        "Ativar criptografia de ponta a ponta para os endereços do endereço"
       ],
       "Enable multi-user support": [
         "Ativar suporte para múltiplos usuários"
@@ -451,9 +445,6 @@
       "Remove all members": [
         "Remover todos os membros"
       ],
-      "Remove all members from group": [
-        "Remover todos os membros do grupo"
-      ],
       "Remove bonuses": [
         "Remover bônus"
       ],
@@ -483,9 +474,6 @@
       ],
       "Resend code": [
         "Reenviar código"
-      ],
-      "Resend invitation": [
-        "Reenviar convite"
       ],
       "Reset credentials": [
         "Redefinir credenciais"
@@ -732,11 +720,6 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Adicionar domínio pm.me"
       ]
     },
     "Action subscription": {
@@ -2806,6 +2789,9 @@
       "You have successfully joined the family group": [
         "Você entrou com sucesso no grupo familiar"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Você tem faturas não pagas. Pague antes de juntar-se ao grupo."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Você precisa configurar um domínio personalizado antes de adicionar usuários."
       ],
@@ -3676,11 +3662,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize a aparência e o estilo das aplicações da ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -6296,14 +6282,8 @@
       "Password health": [
         "Estado da senha"
       ],
-      "Password manager to secure credentials": [
-        "Gerenciador de senhas para proteger credenciais"
-      ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
-      ],
-      "Phone support (40+ users)": [
-        "Suporte por telefone (40 ou mais usuários)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Recursos premium para ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
@@ -6741,9 +6721,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "O suporte por telefone da equipe de Sucesso do Cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 6 ou mais usuários"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
       ],
@@ -7008,20 +6985,6 @@
       ],
       "UDP": [
         "UDP"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Todos, inclusive externos"
-      ],
-      "Members": [
-        "Membros"
-      ],
-      "Nobody by default": [
-        "Ninguém por padrão"
-      ],
-      "Organization members": [
-        "Membros da organização"
       ]
     },
     "Organization capacity error": {
@@ -7477,6 +7440,9 @@
       ],
       "Gift code": [
         "Código de vale-presente"
+      ],
+      "Group name": [
+        "Nome do grupo"
       ],
       "Other": [
         "Outro"
@@ -9387,11 +9353,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -10324,11 +10290,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Guarde e transfira suas bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {
