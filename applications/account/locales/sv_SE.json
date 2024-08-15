@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "activate": [
-        "aktivera"
-      ],
       "Activate": [
         "Aktivera"
+      ],
+      "activate": [
+        "aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -391,9 +391,6 @@
       "Disable": [
         "Inaktivera"
       ],
-      "Disable E2EE for group address": [
-        "Inaktivera E2EE för gruppadress"
-      ],
       "Disable recovery phrase": [
         "Inaktivera återställningsfras"
       ],
@@ -495,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Aktivera enhetsbaserad återställning"
-      ],
-      "Enable E2EE for group address": [
-        "Aktivera E2EE för gruppadress"
       ],
       "Enable multi-user support": [
         "Aktivera stöd för flera användare"
@@ -805,11 +799,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
@@ -819,9 +813,6 @@
       ],
       "Remove all members": [
         "Ta bort alla medlemmar"
-      ],
-      "Remove all members from group": [
-        "Ta bort alla medlemmar från grupp"
       ],
       "Remove bonuses": [
         "Ta bort bonusar"
@@ -867,9 +858,6 @@
       ],
       "Resend code": [
         "Skicka koden igen"
-      ],
-      "Resend invitation": [
-        "Skicka inbjudan igen"
       ],
       "Reset credentials": [
         "Återställ användaruppgifter"
@@ -1266,9 +1254,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Lägg till pm.me-domän"
-      ],
       "Resuming forward": [
         "Återupptar vidarebefordran"
       ]
@@ -1618,6 +1603,14 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1639,14 +1632,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3624,6 +3609,9 @@
       ],
       "Advanced protection that goes beyond industry standards": [
         "Avancerat skydd som går utöver branschstandarder"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "Gå med i de 50 000+ organisationer som redan drar nytta av säkerhet med ${ BRAND_NAME }"
       ],
       "Protect sensitive business information and collaborate securely": [
         "Skydda känslig företagsinformation och samarbeta säkert"
@@ -7016,11 +7004,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -9568,9 +9556,6 @@
       "30 seconds": [
         "30 sekunder"
       ],
-      "4 hours": [
-        "4 timmar"
-      ],
       "5 minutes": [
         "5 minuter"
       ],
@@ -10973,6 +10958,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Tidsbegränsat erbjudande: **Få upp till 35 % rabatt** på årliga paket"
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Tidsbegränsat erbjudande: **Spara ${ discount } på ${ name } med ett 1-årigt paket**"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du har blivit inbjuden att prova ${ MAIL_APP_NAME }"
       ]
@@ -11397,6 +11385,32 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Get started for $1": [
+        "Kom igång för $1"
+      ],
+      "Get started for 1 €": [
+        "Kom igång för 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom igång för CHF 1"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11424,32 +11438,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Get started for $1": [
-        "Kom igång för $1"
-      ],
-      "Get started for 1 €": [
-        "Kom igång för 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Kom igång för CHF 1"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -11699,14 +11687,8 @@
       "Password health": [
         "Lösenordshälsa"
       ],
-      "Password manager to secure credentials": [
-        "Lösenordshanterare för säkra inloggningsuppgifter"
-      ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonsupport (40+ användare)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Premiumfunktioner av ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
@@ -12197,9 +12179,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personifiera din e-postsignatur med loggor bilder, ikoner för sociala medier, länkar till dina kontaktuppgifter och mer"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonsupport från ${ BRAND_NAME }s kundtjänst är tillgänglig under europeisk arbetstid för kunder med mer än 6 användare"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Förhindrar meddelanden från åtkomst av ${ BRAND_NAME } eller tredje part. De enda som kan läsa meddelandena är avsändaren och den tilltänkta mottagaren."
@@ -12751,20 +12730,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Alla, inkl. utanför"
-      ],
-      "Members": [
-        "Medlemmar"
-      ],
-      "Nobody by default": [
-        "Ingen som standard"
-      ],
-      "Organization members": [
-        "Organisationsmedlemmar"
       ]
     },
     "Option delay send seconds": {
@@ -13534,6 +13499,9 @@
       ],
       "Gift code": [
         "Presentkod"
+      ],
+      "Group name": [
+        "Gruppnamn"
       ],
       "Link": [
         "Länk"
@@ -15948,10 +15916,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -17636,11 +17604,6 @@
       ],
       "You're Invited.": [
         "Du är inbjuden."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Håll och överför dina Bitcoins säkert"
       ]
     },
     "wallet_signup_2024:Bug category": {

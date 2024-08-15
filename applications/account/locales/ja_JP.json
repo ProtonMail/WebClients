@@ -67,11 +67,11 @@
       "Accept": [
         "承認する"
       ],
-      "activate": [
-        "有効にする"
-      ],
       "Activate": [
         "有効化"
+      ],
+      "activate": [
+        "有効にする"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -376,9 +376,6 @@
       "Disable": [
         "無効にする"
       ],
-      "Disable E2EE for group address": [
-        "グループアドレスのエンドツーエンド暗号化を無効にする"
-      ],
       "Disable recovery phrase": [
         "回復用フレーズを無効にする"
       ],
@@ -474,9 +471,6 @@
       ],
       "enable desktop notifications": [
         "デスクトップ通知を有効にする"
-      ],
-      "Enable E2EE for group address": [
-        "グループアドレスのエンドツーエンド暗号化を有効にする"
       ],
       "Enable multi-user support": [
         "複数ユーザー対応を有効にする"
@@ -781,10 +775,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Reload": [
@@ -795,9 +789,6 @@
       ],
       "Remove all members": [
         "すべてのメンバーを削除"
-      ],
-      "Remove all members from group": [
-        "グループからすべてのメンバーを削除"
       ],
       "Remove bonuses": [
         "ボーナスを削除"
@@ -840,9 +831,6 @@
       ],
       "Resend code": [
         "コードを再送信"
-      ],
-      "Resend invitation": [
-        "招待の再送"
       ],
       "Reset credentials": [
         "認証情報をリセット"
@@ -1532,6 +1520,14 @@
         "年末オファーを選択してください"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB のストレージ (他のプランの 2 倍以上)"
@@ -1553,14 +1549,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } プランが期間限定で復活します"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
       ]
     },
     "bf2023: Offers": {
@@ -6203,6 +6191,9 @@
       "Are you sure you want to delete this filter?": [
         "このフィルタを削除してもよろしいですか?"
       ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "このグループを削除してもよろしいですか？グループアドレスは機能しなくなります。"
+      ],
       "Are you sure you want to delete this label?": [
         "このラベルを削除してよろしいですか?"
       ],
@@ -6220,6 +6211,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "このユーザーから管理者権限を削除してもよろしいですか？"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "このグループからすべてのメンバーを削除してよろしいですか？"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "ドメイン ${ boldDomain } を削除してもよろしいですか?"
@@ -6431,10 +6425,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6706,6 +6700,9 @@
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "古いパスワードのリセットが原因の場合は、メッセージを再表示しないようにすることができます。"
+      ],
+      "If this option is turned on, organization members will only be able to share vaults within the organization": [
+        "このオプションをオンにすると、組織メンバーは組織内でのみ保管庫を共有できます"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
@@ -10412,6 +10409,23 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free で続行"
@@ -10439,23 +10453,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -10680,9 +10677,6 @@
       ],
       "Password-protected Emails": [
         "パスワードで保護されたメール"
-      ],
-      "Phone support (40+ users)": [
-        "電話サポート（40 ユーザー以上）"
       ],
       "Priority email support": [
         "優先的なメールサポート"
@@ -11114,9 +11108,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "ロゴ、画像、ソーシャルメディアアイコン、連絡先詳細へのリンクなどを使用して電子メールの署名をパーソナライズします"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "ユーザーが 6 名以上のお客様は、ヨーロッパの営業時間内に ${ BRAND_NAME } カスタマー サクセス チームから電話サポートをご利用いただけます"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } または第三者によるメッセージへのアクセスを防ぎます。 メッセージを読める方は送信者と対象の受信者しかありません。"
@@ -11621,11 +11612,6 @@
       ],
       "Trash": [
         "ごみ箱"
-      ]
-    },
-    "option": {
-      "Members": [
-        "メンバー"
       ]
     },
     "Option delay send seconds": {
@@ -12309,6 +12295,9 @@
       ],
       "Gift code": [
         "ギフトコード"
+      ],
+      "Group name": [
+        "グループ名"
       ],
       "Link": [
         "リンク"
@@ -14309,10 +14298,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [

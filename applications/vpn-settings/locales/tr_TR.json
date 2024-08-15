@@ -202,9 +202,6 @@
       "Disable": [
         "Kapat"
       ],
-      "Disable E2EE for group address": [
-        "Grup adresi için E2EE kullanılamasın"
-      ],
       "Discard": [
         "Sil"
       ],
@@ -276,9 +273,6 @@
       ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini açmak"
-      ],
-      "Enable E2EE for group address": [
-        "Grup adresi için E2EE kullanılsın"
       ],
       "Enable multi-user support": [
         "Çok kullanıcı desteğini aç"
@@ -451,9 +445,6 @@
       "Remove all members": [
         "Tüm üyeleri kaldır"
       ],
-      "Remove all members from group": [
-        "Gruptaki tüm üyeleri kaldır"
-      ],
       "Remove bonuses": [
         "Hediyeleri kaldır"
       ],
@@ -483,9 +474,6 @@
       ],
       "Resend code": [
         "Kodu yeniden gönder"
-      ],
-      "Resend invitation": [
-        "Daveti yeniden gönder"
       ],
       "Reset credentials": [
         "Kimlik doğrulama bilgilerini sıfırla"
@@ -732,11 +720,6 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "pm.me etki alanı ekle"
       ]
     },
     "Action subscription": {
@@ -3673,11 +3656,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } uygulamalarının görünümünü ve kullanımını özelleştirin."
       ],
-      "dedicated servers": [
-        "size ayrılmış sunucular"
-      ],
       "Dedicated servers": [
         "Size ayrılmış sunucular"
+      ],
+      "dedicated servers": [
+        "size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -6287,14 +6270,8 @@
       "Password health": [
         "Parola sağlığı"
       ],
-      "Password manager to secure credentials": [
-        "Kimlik doğrulama bilgilerinin güvenliğini sağlamak için parola yöneticisi"
-      ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
-      ],
-      "Phone support (40+ users)": [
-        "Telefon desteği (40+ kullanıcı)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Ücretli ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME } özellikleri"
@@ -6729,9 +6706,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "6 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde ${ BRAND_NAME } müşteri başarısı ekibinden telefonla destek alabilirsiniz"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
       ],
@@ -6987,20 +6961,6 @@
       ],
       "The whole organization": [
         "Tüm kuruluş"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Herkes, dışardakilerle"
-      ],
-      "Members": [
-        "Üyeler"
-      ],
-      "Nobody by default": [
-        "Varsayılan olarak hiç kimse"
-      ],
-      "Organization members": [
-        "Kuruluş üyeleri"
       ]
     },
     "Organization capacity error": {
@@ -7450,6 +7410,9 @@
       ],
       "Gift code": [
         "Hediye kodu"
+      ],
+      "Group name": [
+        "Grup adı"
       ],
       "Other": [
         "Diğer"
@@ -9360,10 +9323,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -10292,11 +10255,6 @@
       ],
       "Bitcoin via email": [
         "E-posta ile Bitcoin"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bitcoin'lerinizi güvenle tutun ve transfer edin"
       ]
     },
     "wallet_signup_2024:Bug category": {

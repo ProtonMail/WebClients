@@ -4416,6 +4416,10 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის",
+        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის"
+      ],
       "Create in": [
         "რაში შევქმნა"
       ],
@@ -6526,14 +6530,11 @@
       "Password health": [
         "პაროლის სიძლიერე"
       ],
-      "Password manager to secure credentials": [
-        "პაროლების მმართველი ავტორიზაციის დეტალების დასაცავად"
-      ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
-      "Phone support (40+ users)": [
-        "სატელეფონო მხარდაჭერა (40+ მომხმარებელი)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }-ის ფასიანი ფუნქციები"
       ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
@@ -6924,9 +6925,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "მოირგეთ თქვენი ელფოსტის ხელმოწერები მათში ლოგოების, გამოსახულებების, სოცმედიის ხატულების, კონტაქტების დეტალებზე ბმულების და ა. შ. დამატებით"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "სატელეფონო მხარდაჭერა ხელმისაწვდომია ${ BRAND_NAME }-ის მომხმარებელთა წარმატების გუნდიდან ევროპის სამუშაო საათებში, მომხმარებლებისთვის 6 ან მეტი მომხმარებლით"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "კრძალავს შეტყობინებებთან ${ BRAND_NAME }-ის და მესამე პირების წვდომას. შეტყობინების წაკითხვა, მხოლოდ, გამგზავნს და მიმღებს შეუძლიათ."
@@ -9845,11 +9843,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin ელფოსტით"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "უსაფრთხოდ შეინახეთ და გადარიცხეთ თქვენი bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

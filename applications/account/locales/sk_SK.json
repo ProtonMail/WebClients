@@ -70,11 +70,11 @@
       "Accept": [
         "Prijať"
       ],
-      "activate": [
-        "aktivovať"
-      ],
       "Activate": [
         "Aktivovať"
+      ],
+      "activate": [
+        "aktivovať"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
@@ -796,11 +796,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "refresh the page": [
-        "obnoviť stránku"
-      ],
       "Refresh the page": [
         "Obnoviť stránku"
+      ],
+      "refresh the page": [
+        "obnoviť stránku"
       ],
       "Reload": [
         "Obnoviť"
@@ -810,9 +810,6 @@
       ],
       "Remove all members": [
         "Odstrániť všetkých členov"
-      ],
-      "Remove all members from group": [
-        "Odstrániť všetkých členov zo skupiny"
       ],
       "Remove bonuses": [
         "Odstrániť bonusy"
@@ -858,9 +855,6 @@
       ],
       "Resend code": [
         "Znovu odoslať kód"
-      ],
-      "Resend invitation": [
-        "Znovu poslať pozvánku"
       ],
       "Reset credentials": [
         "Resetovať poverenia"
@@ -1254,9 +1248,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Pridať doménu pm.me"
-      ],
       "Resuming forward": [
         "Obnovenie preposielania"
       ]
@@ -1615,6 +1606,14 @@
         "Vyberte si svoju koncoročnú ponuku"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Úložisko s kapacitou 6 TB (2x viac ako akýkoľvek iný plán)"
@@ -1636,14 +1635,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plán ${ plan } je späť len na obmedzený čas"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3638,6 +3629,16 @@
     "duoplan2024: Info": {
       "2 users": [
         "2 používatelia"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "Double your storage": [
+        "Zdvojnásobte svoje úložisko"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Predstavujeme ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duration": {
@@ -7042,11 +7043,11 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -11491,6 +11492,32 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for $1": [
+        "Začnite teraz za $1"
+      ],
+      "Get started for 1 €": [
+        "Začnite teraz za 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Začnite teraz za CHF 1"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovať s bezplatným tarifom"
@@ -11518,32 +11545,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for $1": [
-        "Začnite teraz za $1"
-      ],
-      "Get started for 1 €": [
-        "Začnite teraz za 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Začnite teraz za CHF 1"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
       ]
     },
     "new_plans: feature": {
@@ -11829,14 +11830,8 @@
       "Password health": [
         "Zdravie hesla"
       ],
-      "Password manager to secure credentials": [
-        "Správca hesiel na zabezpečenie prihlasovacích údajov"
-      ],
       "Password-protected Emails": [
         "Heslom chránené emaily"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonická podpora (40+ používateľov)"
       ],
       "Priority email support": [
         "Prioritná emailová podpora"
@@ -12120,6 +12115,9 @@
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Bezplatný štartovací účet, ktorý je navrhnutý tak, aby poskytol súkromie pre všetkých už v základnom nastavení."
       ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Neobmedzené súkromie a viac úložného priestoru až pre 2 užívateľov."
+      ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak svoj účet odstránite, prídete o propagačnú cenu a tá už nebude k dispozícii po opätovnom vytvorení nového účtu."
       ],
@@ -12325,9 +12323,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov so 6 a viac používateľmi"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -12870,20 +12865,6 @@
       ],
       "Trash": [
         "Kôš"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Všetci, vrátane externých"
-      ],
-      "Members": [
-        "Členovia"
-      ],
-      "Nobody by default": [
-        "Predvolene nikto"
-      ],
-      "Organization members": [
-        "Členovia organizácie"
       ]
     },
     "Option delay send seconds": {
@@ -13660,6 +13641,9 @@
       ],
       "Gift code": [
         "Darčekový kód"
+      ],
+      "Group name": [
+        "Názov skupiny"
       ],
       "Link": [
         "Odkaz"
@@ -16189,10 +16173,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -17869,11 +17853,6 @@
       ],
       "You're Invited.": [
         "Ste pozvaný!"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bezpečne uchovávajte a prenášajte svoje bitcoiny"
       ]
     },
     "wallet_signup_2024:Bug category": {

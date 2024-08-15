@@ -16,11 +16,11 @@
       "Accept": [
         "Prihvati"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -550,11 +550,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Refresh the page": [
         "Osvježi stranicu"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Reload": [
         "Ponovno učitaj"
@@ -6134,6 +6134,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -6146,14 +6154,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -6627,11 +6627,6 @@
         "Otpad"
       ]
     },
-    "option": {
-      "Members": [
-        "Članovi"
-      ]
-    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 sekundi"
@@ -6840,6 +6835,9 @@
       ],
       "Gift code": [
         "Darovni kôd"
+      ],
+      "Group name": [
+        "Naziv grupe"
       ],
       "Link": [
         "Poveznica"
@@ -7924,10 +7922,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [

@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activar"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -391,9 +391,6 @@
       "Disable": [
         "Desactivar"
       ],
-      "Disable E2EE for group address": [
-        "Desactivar el cifrado de extremo a extremo para la dirección del grupo"
-      ],
       "Disable recovery phrase": [
         "Desactivar la frase de recuperación"
       ],
@@ -495,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Activar la recuperación desde un dispositivo"
-      ],
-      "Enable E2EE for group address": [
-        "Activar el cifrado de extremo a extremo para la dirección del grupo"
       ],
       "Enable multi-user support": [
         "Activar soporte multiusuario"
@@ -805,11 +799,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "refresh the page": [
-        "actualizar la página"
-      ],
       "Refresh the page": [
         "Actualizar la página"
+      ],
+      "refresh the page": [
+        "actualizar la página"
       ],
       "Reload": [
         "Recargar"
@@ -819,9 +813,6 @@
       ],
       "Remove all members": [
         "Borrar todos los miembros"
-      ],
-      "Remove all members from group": [
-        "Borrar todos los miembros del grupo"
       ],
       "Remove bonuses": [
         "Borrar los beneficios"
@@ -867,9 +858,6 @@
       ],
       "Resend code": [
         "Reenviar código"
-      ],
-      "Resend invitation": [
-        "Reenviar la invitación"
       ],
       "Reset credentials": [
         "Restablecer credenciales"
@@ -1266,9 +1254,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Añadir el dominio pm.me"
-      ],
       "Resuming forward": [
         "Reanudar el reenvío"
       ]
@@ -1622,6 +1607,14 @@
         "Selecciona tu oferta de fin de año"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Lo sentimos, esta oferta no está disponible con tu plan actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener **${ discountPercentage } de ${ plan.Title }** al suscribirte durante **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de almacenamiento (el doble que cualquier otro plan)"
@@ -1643,14 +1636,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "El plan ${ plan } está de nuevo disponible por tiempo limitado."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Lo sentimos, esta oferta no está disponible con tu plan actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener **${ discountPercentage } de ${ plan.Title }** al suscribirte durante **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3275,7 +3260,7 @@
     },
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
-        "Cada día a las ${ timesString }"
+        "Cada día, a las ${ timesString }"
       ],
       "Every ${ interval } day, ${ timesString }": [
         "Cada ${ interval } día a las ${ timesString }",
@@ -3627,17 +3612,34 @@
       "**GDPR** and **HIPAA** compliant": [
         "Cumplimiento del **RGPD** y de la **HIPAA**"
       ],
+      "**ISO 27001** certified": [
+        "Certificado **ISO 27001**"
+      ],
       "**Secure:** end-to-end encryption": [
         "**Protegido** con encriptación de extremo a extremo"
       ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**Sencillo y fácil de usar:** importa tus archivos y configúralo en minutos"
+      ],
       "Advanced protection that goes beyond industry standards": [
         "Protección avanzada que va más allá del estándar de la industria"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "Únete a las más de 50.000 organizaciones que ya se benefician de la seguridad de ${ BRAND_NAME }."
+      ],
+      "Protect sensitive business information and collaborate securely": [
+        "Protege la información empresarial confidencial y colabora de forma segura"
       ],
       "Secure cloud storage that gives you control of your data": [
         "Almacenamiento seguro en la nube que te otorga el control de tus datos"
       ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Soluciones a la medida para organizaciones más grandes con necesidades personalizadas"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "La única solución empresarial que es:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3662,6 +3664,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de almacenamiento"
+      ],
       "2 users": [
         "2 usuarios"
       ],
@@ -4223,7 +4228,7 @@
         "No se ha podido abrir la caja fuerte actualizada."
       ],
       "Could not save preference": [
-        "No se pudieron guardar las preferencias"
+        "No se han guardado las preferencias."
       ],
       "Couldn't load invoices. Please try again later.": [
         "No se han podido cargar las facturas. Intenta más tarde."
@@ -6562,6 +6567,9 @@
       "2. They try ${ planName }": [
         "2. Ellos prueban ${ planName }"
       ],
+      "2FA disabled": [
+        "2FA desactivada"
+      ],
       "3. You earn credits": [
         "3. Tú ganas créditos"
       ],
@@ -6668,6 +6676,9 @@
         "El usuario afectado está en la fila.",
         "Los usuarios afectados están en las filas."
       ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Una vez bloqueado, los miembros de la organización tendrán que desbloquear ${ PASS_APP_NAME } con su contraseña o PIN, etc."
+      ],
       "Align left": [
         "Alinear a la izquierda"
       ],
@@ -6687,6 +6698,9 @@
       ],
       "All keys successfully reactivated": [
         "Se han reactivado todas las claves."
+      ],
+      "All members have been added.": [
+        "Se han agregado todos los miembros."
       ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
@@ -7019,11 +7033,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Se pueden añadir servidores dedicados con direcciones IP dedicadas a pasarelas privadas para permitir un control de acceso más preciso."
@@ -7443,7 +7457,7 @@
         "Se ha restablecido la conexión a Internet."
       ],
       "Invitation link expired": [
-        "El enlace de invitación ha caducado."
+        "El enlace de invitación ha expirado."
       ],
       "Invitation link used": [
         "Se ha usado el enlace de invitación."
@@ -7501,7 +7515,7 @@
         "Elemento creado en ${ vaultLink }"
       ],
       "Item created in vault": [
-        "El elemento en la caja fuerte ha sido creado."
+        "Se ha creado el elemento en la caja fuerte."
       ],
       "Item Deleted": [
         "Se ha eliminado el elemento."
@@ -7510,7 +7524,7 @@
         "Elemento eliminado de ${ vaultLink }"
       ],
       "Item deleted from vault": [
-        "Elemento eliminado de la caja fuerte"
+        "Se ha eliminado el elemento de la caja fuerte."
       ],
       "Item flags changed in ${ vaultLink }": [
         "Se han cambiado los marcadores del elemento en ${ vaultLink }."
@@ -7525,7 +7539,7 @@
         "Elemento en ${ vaultLink } restaurado"
       ],
       "Item in vault trashed": [
-        "Elemento en la caja fuerte eliminado"
+        "Se ha eliminado el elemento de la caja fuerte."
       ],
       "Item in vault untrashed": [
         "Se ha restaurado el elemento en la caja fuerte."
@@ -7552,7 +7566,7 @@
         "Elemento actualizado en ${ vaultLink }"
       ],
       "Item updated in vault": [
-        "El elemento en la caja fuerte ha sido actualizado."
+        "Se ha actualizado el elemento en la caja fuerte."
       ],
       "it’s imperative": [
         "es obligatorio"
@@ -7624,7 +7638,7 @@
         "Se ha eliminado el enlace."
       ],
       "Link expired": [
-        "Enlace caducado"
+        "Enlace expirado"
       ],
       "Link type": [
         "Tipo de enlace"
@@ -8172,6 +8186,9 @@
       "Single sign-on removed": [
         "Se ha eliminado el inicio de sesión único."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para las direcciones de dominio personalizadas. Esta función solo está disponible para usuarios de ${ BRAND_NAME } for Business con dominios personalizados."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para tus direcciones de dominio personalizadas. Para solicitar acceso, ${ createTicket } describiendo tus casos de uso, cuáles dominios personalizados te gustaría utilizar y los volúmenes de correo electrónico esperados por hora y por día."
       ],
@@ -8282,7 +8299,7 @@
         "El recuento de descargas incluye las descargas reales y las instancias en las que se obtiene una vista previa de los archivos."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
-        "El correo de verificación ha caducado. Inicia sesión para reenviar un enlace de verificación."
+        "El correo de verificación ha expirado. Inicia sesión para reenviar un enlace de verificación."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "El tamaño de los datos cifrados es ligeramente mayor debido al espacio adicional necesario para cifrado y firmas, los cuales aseguran la seguridad de tus datos."
@@ -8660,7 +8677,7 @@
         "La verificación puede tardar unos minutos."
       ],
       "Verification link expired": [
-        "El enlace de verificación ha caducado"
+        "El enlace de verificación ha expirado"
       ],
       "Verification may take a few minutes.": [
         "La verificación puede tardar unos minutos."
@@ -9609,9 +9626,6 @@
       "30 seconds": [
         "30 segundos"
       ],
-      "4 hours": [
-        "4 horas"
-      ],
       "5 minutes": [
         "5 minutos"
       ],
@@ -9626,6 +9640,12 @@
       ],
       "Activity": [
         "Actividad"
+      ],
+      "Add all organization members": [
+        "Agregar todos los miembros de la organización"
+      ],
+      "Add group member": [
+        "Agregar un miembro al grupo"
       ],
       "Address": [
         "Dirección"
@@ -9706,7 +9726,7 @@
         "Aplicación de autenticación"
       ],
       "Auto show embedded images": [
-        "Mostrar imágenes incrustadas automáticamente"
+        "Mostrar las imágenes incrustadas automáticamente"
       ],
       "Auto show remote images": [
         "Mostrar las imágenes remotas automáticamente"
@@ -9721,7 +9741,7 @@
         "Detectar automáticamente la zona horaria principal"
       ],
       "Auto-load embedded images": [
-        "Cargar automáticamente las imágenes incrustadas"
+        "Cargar las imágenes incrustadas automáticamente"
       ],
       "Auto-load remote content": [
         "Cargar automáticamente el contenido remoto"
@@ -10142,6 +10162,9 @@
       ],
       "Link label (optional)": [
         "Etiqueta del enlace (opcional)"
+      ],
+      "Lock app after inactivity": [
+        "Bloquear la aplicación después de inactividad"
       ],
       "Logo": [
         "Logo"
@@ -11011,6 +11034,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Oferta de tiempo limitado: **Hasta 35% de descuento** en planes anuales"
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Oferta por tiempo limitado: **Ahorra ${ discount } en ${ name } con un plan anual**"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Estás invitado a probar ${ MAIL_APP_NAME }."
       ]
@@ -11435,6 +11461,32 @@
         "Velocidad VPN media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Get started for $1": [
+        "Comenzar por 1$"
+      ],
+      "Get started for 1 €": [
+        "Comenzar por 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Comenzar por 1 CHF"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Seguir con el plan gratuito"
@@ -11462,32 +11514,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Cambiar a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Get started for $1": [
-        "Comenzar por 1$"
-      ],
-      "Get started for 1 €": [
-        "Comenzar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Comenzar por 1 CHF"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
       ]
     },
     "new_plans: feature": {
@@ -11538,6 +11564,10 @@
         "${ n } mensaje al día",
         "${ n } mensajes al día"
       ],
+      "${ n } user": [
+        "${ n } usuario",
+        "Hasta ${ n } usuarios"
+      ],
       "${ n } vault": [
         "${ n } caja fuerte",
         "${ n } cajas fuertes"
@@ -11561,6 +11591,12 @@
       ],
       "${ size } storage": [
         "${ size } de almacenamiento"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Para ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Para todos los servicios de ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 usuario"
@@ -11704,7 +11740,7 @@
         "Administración de grupos (muy pronto)"
       ],
       "Hide-my-email aliases": [
-        "Alias de Hide-my-email"
+        "Alias de hide-my-email"
       ],
       "High-speed streaming": [
         "Transmisión de gran velocidad"
@@ -11734,6 +11770,9 @@
       "No-logs policy": [
         "Política de cero registros"
       ],
+      "Online document editor": [
+        "Editor de documentos en línea"
+      ],
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
       ],
@@ -11743,14 +11782,17 @@
       "Password health": [
         "Estado de la contraseña"
       ],
-      "Password manager to secure credentials": [
-        "Gestor de contraseñas para proteger credenciales"
+      "Password manager": [
+        "Gestor de contraseñas"
       ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
-      "Phone support (40+ users)": [
-        "Soporte por teléfono (40 o más usuarios)"
+      "Phone support (20+ users)": [
+        "Soporte por teléfono (20 o más usuarios)"
+      ],
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Funciones prémium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
@@ -11801,6 +11843,9 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Servidores en más de ${ vpnServersCountData.paid.countries } país",
         "Servidores en más de ${ vpnServersCountData.paid.countries } países"
+      ],
+      "Share files with no size limit": [
+        "Comparte archivos sin límites de tamaño."
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
@@ -12004,6 +12049,9 @@
       ],
       "Popular": [
         "Popular"
+      ],
+      "Protect sensitive business information and collaborate securely.asdfasdfsdf": [
+        "Protege la información empresarial confidencial y colabora de forma segura."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protege la privacidad de tu familia con todos los servicios combinados de ${ BRAND_NAME }."
@@ -12235,9 +12283,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliza tu firma de correo electrónico con logotipos, imágenes, iconos de redes sociales, enlaces en tus datos de contacto, etc."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 6 usuarios."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impide que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
@@ -12771,17 +12816,14 @@
       ]
     },
     "option": {
-      "Everyone, incl. outside": [
-        "Todo el mundo, incluidos los usuarios externos"
+      "Everyone": [
+        "Todos"
       ],
-      "Members": [
-        "Miembros"
+      "Group members": [
+        "Miembros del grupo"
       ],
-      "Nobody by default": [
-        "Nadie por defecto"
-      ],
-      "Organization members": [
-        "Miembros de la organización"
+      "No one": [
+        "Nadie"
       ]
     },
     "Option delay send seconds": {
@@ -13308,7 +13350,7 @@
         "La clave de la organización debe activarse para conceder privilegios de administrador."
       ],
       "Organization key restored": [
-        "La clave de la organización ha sido restaurada."
+        "Se ha restaurado la clave de la organización."
       ],
       "Organization key updated": [
         "La clave de la organización ha sido actualizada."
@@ -13548,6 +13590,9 @@
       ],
       "Gift code": [
         "Código promocional"
+      ],
+      "Group name": [
+        "Nombre del grupo"
       ],
       "Link": [
         "Enlace"
@@ -13836,6 +13881,143 @@
       ],
       "User": [
         "Usuario"
+      ]
+    },
+    "Safety review": {
+      "Account safety review": [
+        "Verificación de seguridad de la cuenta"
+      ],
+      "Add a recovery email": [
+        "Añadir un correo de recuperación"
+      ],
+      "Add a recovery email address": [
+        "Añadir una dirección de correo de recuperación"
+      ],
+      "Add a recovery phone number": [
+        "Agregar un número de teléfono de recuperación"
+      ],
+      "Back to Safety Review": [
+        "Volver a la verificación de seguridad"
+      ],
+      "Check account security": [
+        "Verificar la seguridad de la cuenta"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Se ha enviado el código a ${ boldValue }."
+      ],
+      "Continue to Safety Review": [
+        "Continuar con la verificación de seguridad"
+      ],
+      "Device-based recovery enabled": [
+        "Se ha activado la recuperación desde un dispositivo."
+      ],
+      "Download ${ size }": [
+        "Descargar ${ size }"
+      ],
+      "Download your Recovery Kit": [
+        "Descarga el kit de recuperación"
+      ],
+      "Enable device-based recovery": [
+        "Activar la recuperación desde un dispositivo"
+      ],
+      "Enable recovery by email": [
+        "Activar la recuperación por correo electrónico"
+      ],
+      "Enable recovery by phone": [
+        "Activar la recuperación por teléfono"
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
+        "Si se bloquea tu cuenta ${ BRAND_NAME }, el kit de recuperación te permitirá iniciar sesión y recuperar tus datos."
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Si pierdes tus datos de inicio de sesión y necesitas restablecer tu cuenta, **es obligatorio** que tengas configurados **un método de recuperación de la cuenta y de los datos**. De lo contrario, es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos, archivos o contraseñas."
+      ],
+      "Invalid code": [
+        "El código no es válido."
+      ],
+      "Recovery email address": [
+        "Correo electrónico de recuperación"
+      ],
+      "Recovery phone number": [
+        "Número de teléfono de recuperación"
+      ],
+      "Safeguard your account": [
+        "Protege tu cuenta"
+      ],
+      "Safety review": [
+        "Verificación de seguridad"
+      ],
+      "Send a new code": [
+        "Enviar un nuevo código"
+      ],
+      "Show more": [
+        "Mostrar más"
+      ],
+      "There was an error generating your Recovery Kit": [
+        "Se ha producido un error al generar el kit de recuperación."
+      ],
+      "There was an error verifying your recovery phone": [
+        "Se ha producido un error al verificar el teléfono de recuperación."
+      ],
+      "Update your Recovery Kit": [
+        "¿Actualizar el kit de recuperación?"
+      ],
+      "Update your Recovery Kit?": [
+        "¿Actualizar el kit de recuperación?"
+      ],
+      "Verify": [
+        "Verificar"
+      ],
+      "Verify your recovery email address": [
+        "Verifica la dirección de correo de recuperación"
+      ],
+      "Verify your recovery phone number": [
+        "Verifica el número telefónico de recuperación"
+      ],
+      "You can disable this at any time.": [
+        "Puedes desactivar esto en cualquier momento."
+      ],
+      "You have recommended actions.": [
+        "No tienes acciones recomendadas."
+      ],
+      "You recovery email address is:": [
+        "La dirección de correo electrónico de recuperación es:"
+      ],
+      "You recovery phone number is:": [
+        "El número de teléfono de recuperación es:"
+      ],
+      "Your account is fully secure.": [
+        "Tu cuenta está completamente segura."
+      ],
+      "Your account is secure.": [
+        "Tu cuenta está segura."
+      ],
+      "Your recovery email": [
+        "Correo electrónico de recuperación"
+      ],
+      "Your recovery email has been enabled": [
+        "Se ha activado el correo electrónico de recuperación."
+      ],
+      "Your recovery email is set": [
+        "El correo electrónico de recuperación está configurado."
+      ],
+      "Your Recovery Kit": [
+        "Kit de recuperación"
+      ],
+      "Your Recovery Kit is set": [
+        "El kit de recuperación está configurado."
+      ],
+      "Your recovery methods": [
+        "Métodos de recuperación"
+      ],
+      "Your recovery phone": [
+        "Teléfono de recuperación"
+      ],
+      "Your recovery phone has been enabled": [
+        "Se ha activado el teléfono de recuperación."
+      ],
+      "Your recovery phone is set": [
+        "El teléfono de recuperación está configurado."
       ]
     },
     "saml: Action": {
@@ -14925,6 +15107,9 @@
       "1 email address": [
         "1 dirección de correo electrónico"
       ],
+      "1 email address per user": [
+        "1 dirección de correo electrónico por usuario"
+      ],
       "1 VPN connection": [
         "1 conexión VPN"
       ],
@@ -15562,7 +15747,7 @@
         "Valor SPF copiado en el portapapeles"
       ],
       "Token copied to clipboard": [
-        "El token ha sido copiado al portapapeles."
+        "Se ha copiado el token al portapapeles."
       ],
       "Undo in progress": [
         "Deshacer en progreso"
@@ -15586,7 +15771,7 @@
         "El asistente de escritura ha sido desactivado."
       ],
       "Writing assistant enabled": [
-        "El asistente de escritura ha sido activado."
+        "Se ha activado el asistente de escritura."
       ],
       "Writing assistant setting updated": [
         "El ajuste del asistente de escritura ha sido actualizado."
@@ -15624,7 +15809,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } eliminado"
+        "${ label.Name } borrado"
       ],
       "Address deleted": [
         "Dirección eliminada"
@@ -16003,10 +16188,10 @@
       "Card verification": [
         "Verificación de la tarjeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -16212,6 +16397,9 @@
       "Disable two-factor authentication": [
         "Desactivar la autenticación de dos factores"
       ],
+      "Disable two-factor authentication?": [
+        "¿Desactivar la autenticación de dos factores?"
+      ],
       "Discard changes?": [
         "¿Descartar los cambios?"
       ],
@@ -16301,6 +16489,9 @@
       ],
       "Encryption and keys": [
         "Cifrado y claves"
+      ],
+      "Enter 2FA code": [
+        "Ingresa el código 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Entra los puntos finales en tu proveedor de identidad."
@@ -16589,6 +16780,9 @@
       "PayPal verification failed": [
         "Error con la verificación de PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Personaliza el pie de correo."
+      ],
       "Phone": [
         "Teléfono"
       ],
@@ -16810,7 +17004,7 @@
         "Resumen"
       ],
       "Support ticket closed": [
-        "El tiquete de soporte ha sido cerrado."
+        "Se ha cerrado el tiquete de soporte."
       ],
       "Switch account": [
         "Cambiar de cuenta"
@@ -17659,11 +17853,6 @@
       ],
       "You're Invited.": [
         "Estás invitado."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Retén y transfiere tus bitcoins de forma segura"
       ]
     },
     "wallet_signup_2024:Bug category": {

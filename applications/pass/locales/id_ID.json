@@ -1074,6 +1074,9 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi ${ BRAND_NAME } Anda."
       ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Akses ke ${ PASS_APP_NAME } akan membutuhkan sidik jari atau PIN milik perangkat Anda."
+      ],
       "Add a username field": [
         "Tambah kolom nama pengguna"
       ],
@@ -1458,6 +1461,9 @@
       "Offline support successfully disabled": [
         "Dukungan offline berhasil dinonaktifkan"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Akses ${ PASS_APP_NAME } secara daring akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 percobaan gagal."
+      ],
       "Owner": [
         "Pemilik"
       ],
@@ -1496,6 +1502,9 @@
       ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
+      ],
+      "Please confirm your extra password": [
+        "Silakan konfirmasi kata sandi tambahan Anda"
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Silakan konfirmasi kata sandi tambahan Anda untuk menonaktifkan kunci Anda saat ini."
@@ -1683,6 +1692,9 @@
       "Unlimited hide-my-email aliases": [
         "Tanpa batasan jumlah alias hide-my-email"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Buka ${ PASS_SHORT_APP_NAME } dengan biometrik"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi ${ BRAND_NAME } Anda"
       ],
@@ -1855,9 +1867,6 @@
       ],
       "30 seconds": [
         "30 detik"
-      ],
-      "4 hours": [
-        "4 jam"
       ],
       "5 minutes": [
         "5 menit"
@@ -2957,6 +2966,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Kata sandi ${ BRAND_NAME } diperlukan"
+      ],
       "A description of the problem is required": [
         "Penjelasan masalah diperlukan"
       ],

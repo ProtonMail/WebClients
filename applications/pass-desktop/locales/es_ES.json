@@ -287,7 +287,7 @@
         "Dejar la caja fuerte"
       ],
       "Link copied to clipboard": [
-        "El enlace ha sido copiado al portapapeles."
+        "Se ha copiado el enlace al portapapeles."
       ],
       "Link expires after": [
         "El enlace expira después de"
@@ -1449,7 +1449,7 @@
         "Se ha movido el elemento"
       ],
       "Item successfully pinned": [
-        "Elemento anclado con éxito"
+        "Se ha anclado el elemento."
       ],
       "Item successfully unpinned": [
         "Elemento desanclado con éxito"
@@ -1593,8 +1593,14 @@
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Confirma la contraseña adicional para bloquear automáticamente con datos biométricos."
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Por favor, confirma tu contraseña extra para poder bloquear automáticamente con tu contraseña extra."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Confirma la contraseña adicional para cancelar el registro del bloqueo actual."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Confirma tu contraseña adicional para actualizar la hora de bloqueo automático."
       ],
       "Please confirm your password": [
         "Confirma tu contraseña"
@@ -1903,6 +1909,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Se han encontrado tus datos el ${ displayedDate }."
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Tu organización requiere que asegures tu acceso a ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1968,9 +1977,6 @@
       ],
       "30 seconds": [
         "30 segundos"
-      ],
-      "4 hours": [
-        "4 horas"
       ],
       "5 minutes": [
         "5 minutos"
@@ -2453,7 +2459,7 @@
         "Nombre de la calle"
       ],
       "Street address, P.O. box": [
-        "Dirección de calle, apartado postal"
+        "Calle, apartado postal"
       ],
       "Strong": [
         "Segura"
@@ -3264,7 +3270,7 @@
         "Has alcanzado el límite de cajas fuertes que puedes tener en tu plan."
       ],
       "You have unsaved changes.": [
-        "Tiene cambios sin guardar."
+        "Tienes cambios sin guardar."
       ],
       "You must select at least one mailbox": [
         "Debes seleccionar al menos un buzón."

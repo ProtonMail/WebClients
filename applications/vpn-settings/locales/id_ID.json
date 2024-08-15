@@ -64,6 +64,9 @@
       "Allow": [
         "Izinkan"
       ],
+      "Always allow sending mail to group": [
+        "Selalu perbolehkan mengirim email ke grup"
+      ],
       "Apply": [
         "Terapkan"
       ],
@@ -199,9 +202,6 @@
       "Disable": [
         "Nonaktifkan"
       ],
-      "Disable E2EE for group address": [
-        "Nonaktifkan E2EE untuk alamat grup"
-      ],
       "Discard": [
         "Buang"
       ],
@@ -273,9 +273,6 @@
       ],
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
-      ],
-      "Enable E2EE for group address": [
-        "Aktifkan E2EE untuk alamat grup"
       ],
       "Enable multi-user support": [
         "Aktifkan dukungan multi-pengguna"
@@ -448,9 +445,6 @@
       "Remove all members": [
         "Keluarkan semua anggota"
       ],
-      "Remove all members from group": [
-        "Keluarkan semua anggota dari grup"
-      ],
       "Remove bonuses": [
         "Hapus bonus"
       ],
@@ -480,9 +474,6 @@
       ],
       "Resend code": [
         "Kirim ulang kode"
-      ],
-      "Resend invitation": [
-        "Kirim ulang undangan"
       ],
       "Reset credentials": [
         "Atur ulang kredensial"
@@ -729,11 +720,6 @@
       ],
       "Zoom out": [
         "Perkecil"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Tambah domain pm.me"
       ]
     },
     "Action subscription": {
@@ -2256,6 +2242,9 @@
       "2 users": [
         "2 pengguna"
       ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Akses lengkap semua produk ${ BRAND_NAME }"
+      ],
       "You save ${ amountSave }": [
         "Anda menghemat ${ amountSave }"
       ]
@@ -2266,6 +2255,11 @@
       ],
       "Double your storage": [
         "Gandakan penyimpanan Anda"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Perkenalkan ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email spam notification": {
@@ -2709,6 +2703,9 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Akun dengan domain khusus tidak dapat bergabung ke paket grup."
+      ],
       "customer support": [
         "layanan dukungan"
       ],
@@ -2720,6 +2717,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Akun Lifetime tidak dapat bergabung dalam paket grup."
       ],
       "Manage addresses.": [
         "Kelola alamat."
@@ -2783,6 +2783,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Anda tidak dapat menerima undangan ini dengan paket Anda saat ini."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3571,6 +3574,9 @@
       "Country code": [
         "Kode negara"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Buat awan yang aman untuk ${ n } anggota"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Buat dan kelola sub-akun dan tetapkan untuk mereka alamat email di domain kustom Anda."
       ],
@@ -3601,11 +3607,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
-      "dedicated servers": [
-        "server khusus"
-      ],
       "Dedicated servers": [
         "Server khusus"
+      ],
+      "dedicated servers": [
+        "server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -6178,14 +6184,11 @@
       "Password health": [
         "Kesehatan kata sandi"
       ],
-      "Password manager to secure credentials": [
-        "Manajer kata sandi untuk mengamankan kredensial"
-      ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
       ],
-      "Phone support (40+ users)": [
-        "Dukungan via telepon (40+ pengguna)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Fitur premium ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Dukungan email prioritas"
@@ -6436,6 +6439,9 @@
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
       ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Privasi tak terbatas dan lebih banyak penyimpanan sampai dengan 2 orang."
+      ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
       ],
@@ -6608,9 +6614,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Dukungan via telepon tersedia dari tim ${ BRAND_NAME } Customer Success pada hari dan jam kerja yang berlaku di Eropa pada umumnya, khusus untuk para pelanggan dengan 6 atau lebih pengguna"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Mencegah pesan untuk dapat diakses oleh ${ BRAND_NAME } atau pihak ketiga. Pesan Anda hanya akan dibaca oleh penerima dan Anda sendiri."
@@ -6866,20 +6869,6 @@
       ],
       "The whole organization": [
         "Seluruh organisasi"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Siapa pun, termasuk orang luar"
-      ],
-      "Members": [
-        "Anggota"
-      ],
-      "Nobody by default": [
-        "Tidak ada siapa pun secara bawaan"
-      ],
-      "Organization members": [
-        "Anggota organisasi"
       ]
     },
     "Organization capacity error": {
@@ -7324,6 +7313,9 @@
       ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "Group name": [
+        "Nama grup"
       ],
       "Other": [
         "Lainnya"
@@ -9193,11 +9185,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -10106,11 +10098,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin melalui email"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Simpan dan transfer Bitcoin Anda secara aman"
       ]
     },
     "wallet_signup_2024:Bug category": {
