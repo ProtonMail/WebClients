@@ -2,15 +2,6 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { useLoading } from '@proton/hooks';
-import metrics from '@proton/metrics';
-import { updateCrashReports, updateTelemetry } from '@proton/shared/lib/api/settings';
-import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
-import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
-import noop from '@proton/utils/noop';
-
-import { Toggle } from '../../components';
-import { useApi, useEventManager, useUserSettings } from '../../hooks';
 import {
     SettingsLayout,
     SettingsLayoutLeft,
@@ -18,17 +9,10 @@ import {
     SettingsParagraph,
     SettingsSectionWide,
 } from '../account';
+import CrashReportsToggle from './CrashReportsToggle';
+import TelemetryToggle from './TelemetryToggle';
 
 const PrivacySection = () => {
-    const [userSettings] = useUserSettings();
-    const [loadingTelemetry, withLoadingTelemetry] = useLoading();
-    const [loadingCrashReports, withLoadingCrashReports] = useLoading();
-    const api = useApi();
-    const { call } = useEventManager();
-
-    const telemetryEnabled = !!userSettings?.Telemetry;
-    const crashReportsEnabled = !!userSettings?.CrashReports;
-
     return (
         <SettingsSectionWide>
             <SettingsParagraph>
@@ -42,20 +26,7 @@ const PrivacySection = () => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight isToggleContainer>
-                    <Toggle
-                        id="telemetry"
-                        checked={telemetryEnabled}
-                        onChange={({ target }) => {
-                            const handleChange = async (value: boolean) => {
-                                await api(updateTelemetry({ Telemetry: Number(value) }));
-                                await call();
-                                setMetricsEnabled(value);
-                                metrics.setReportMetrics(value);
-                            };
-                            withLoadingTelemetry(handleChange(target.checked)).catch(noop);
-                        }}
-                        loading={loadingTelemetry}
-                    />
+                    <TelemetryToggle id="telemetry" />
                 </SettingsLayoutRight>
             </SettingsLayout>
             <SettingsLayout>
@@ -65,19 +36,7 @@ const PrivacySection = () => {
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight isToggleContainer>
-                    <Toggle
-                        id="crashReports"
-                        checked={crashReportsEnabled}
-                        onChange={({ target }) => {
-                            const handleChange = async (value: boolean) => {
-                                await api(updateCrashReports({ CrashReports: Number(value) }));
-                                await call();
-                                setSentryEnabled(value);
-                            };
-                            withLoadingCrashReports(handleChange(target.checked)).catch(noop);
-                        }}
-                        loading={loadingCrashReports}
-                    />
+                    <CrashReportsToggle id="crashReports" />
                 </SettingsLayoutRight>
             </SettingsLayout>
         </SettingsSectionWide>

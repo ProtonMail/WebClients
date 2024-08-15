@@ -196,6 +196,37 @@
 			}
 		}
 	}
+
+	// recovery section
+	.account-recovery {
+		> .max-w-custom {
+			max-inline-size: 100%;
+		}
+
+		.settings-layout {
+			flex-direction: column;
+			inline-size: 100%;
+		}
+
+		hr {
+			display: none;
+		}
+
+		.settings-layout-right.flex-1 {
+			flex-direction: column;
+
+			.flex.items-center {
+				flex-direction: row-reverse;
+			}
+		}
+
+		.settings-layout-right,
+		.settings-layout-left {
+			inline-size: 100%;
+			max-inline-size: 100%;
+			padding-block-end: 0.5em;
+		}
+	}
 }
 
 // global structure
