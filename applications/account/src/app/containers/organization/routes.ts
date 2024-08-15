@@ -60,14 +60,9 @@ export const getOrganizationAppRoutes = ({
         isUserGroupsFeatureEnabled &&
         !!organization &&
         hasActiveOrganizationKey &&
-        [
-            PLANS.MAIL_PRO,
-            PLANS.MAIL_BUSINESS,
-            PLANS.BUNDLE_PRO,
-            PLANS.BUNDLE_PRO_2024,
-            PLANS.VISIONARY,
-            PLANS.ENTERPRISE,
-        ].includes(organization?.PlanName);
+        [PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY, PLANS.ENTERPRISE].includes(
+            organization?.PlanName
+        );
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
