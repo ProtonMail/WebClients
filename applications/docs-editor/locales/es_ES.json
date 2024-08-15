@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
       "Add comment": [
         "Añadir un comentario"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "Ajustar el tamaño de la fuente"
+      ],
+      "Alphabetical": [
+        "Por orden alfabético"
       ],
       "and": [
         "y"
@@ -374,6 +389,9 @@
       ]
     },
     "Error": {
+      "Failed to export document.": [
+        "Error al exportar el documento."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Error al importar el HTML debido a un error desconocido."
       ],
