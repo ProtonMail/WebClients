@@ -18,7 +18,6 @@ import {
     removeProcessedFlag,
 } from '@proton/pass/fathom';
 import { type MaybeNull } from '@proton/pass/types';
-import { truthy } from '@proton/pass/utils/fp/predicates';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
@@ -115,6 +114,8 @@ export const createFormManager = (options: FormManagerOptions) => {
             if (state.detectionRequest !== -1) return false;
             const gcd = garbagecollect();
 
+            ctx?.service.detector.applyRules();
+
             if (await ctx?.service.detector.shouldRunDetection()) {
                 state.detectionRequest = requestIdleCallback(async () => {
                     if (state.active) {
@@ -123,18 +124,7 @@ export const createFormManager = (options: FormManagerOptions) => {
                         try {
                             const forms = ctx?.service.detector.runDetection({ onBottleneck, excludedFieldTypes });
 
-                            const websiteExcludeRules = (await ctx?.getWebsiteRules())?.exclude ?? [];
-
-                            const excludedElements = websiteExcludeRules
-                                .map((selector) => document.querySelector(selector))
-                                .filter(truthy);
-
                             forms?.forEach((options) => {
-                                if (excludedElements.some((element) => options.form.contains(element))) {
-                                    logger.debug(`[FormTracker::Detector] Ignoring form due to excluded element`);
-                                    return;
-                                }
-
                                 const formHandle = state.trackedForms.get(options.form) ?? createFormHandles(options);
                                 state.trackedForms.set(options.form, formHandle);
                                 formHandle.reconciliate(options.formType, options.fields);
