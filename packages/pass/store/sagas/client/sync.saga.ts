@@ -14,7 +14,7 @@ import {
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
+import { synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -34,13 +34,7 @@ function* syncWorker({ payload }: ReturnType<typeof syncIntent>) {
         yield put(withRevalidate(getUserFeaturesIntent(user.ID)));
         yield put(withRevalidate(getOrganizationSettings.intent()));
         yield put(withRevalidate(secureLinksGet.intent()));
-        if (EXTENSION_BUILD) {
-            yield put(
-                payload.type === SyncType.FULL
-                    ? withRevalidate(resolveWebsiteRules.intent())
-                    : resolveWebsiteRules.intent()
-            );
-        }
+        if (EXTENSION_BUILD) yield put(withRevalidate(resolveWebsiteRules.intent()));
 
         yield put(syncSuccess(yield call(synchronize, payload.type)));
     } catch (e: unknown) {
