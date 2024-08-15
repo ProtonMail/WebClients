@@ -36,7 +36,7 @@ export function CheckListPlugin(): null {
             return
           }
 
-          editor.update(() => {
+          editor.read(() => {
             const targetNode = $getNearestNodeFromDOMNode(target)
 
             const parentNode = targetNode?.getParent()
