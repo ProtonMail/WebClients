@@ -55,10 +55,10 @@
       "Accept": [
         "接受"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -763,10 +763,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
       "Reload": [
@@ -819,9 +819,6 @@
       ],
       "Resend code": [
         "重新傳送驗證碼"
-      ],
-      "Resend invitation": [
-        "重新發送邀請"
       ],
       "Reset credentials": [
         "重設認證"
@@ -1528,6 +1525,14 @@
         "選擇你的年終優惠"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6TB 的儲存空間 (比其他方案多兩倍)"
@@ -1543,14 +1548,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "此${ plan }方案為時間限定"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
       ]
     },
     "bf2023: Offers": {
@@ -6591,10 +6588,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -10700,6 +10697,32 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Get started for $1": [
+        "以 $1 美元開始"
+      ],
+      "Get started for 1 €": [
+        "以 €1 歐元開始"
+      ],
+      "Get started for CHF 1": [
+        "以 CHF1 瑞士法郎開始"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "繼續使用免費方案"
@@ -10727,32 +10750,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Get started for $1": [
-        "以 $1 美元開始"
-      ],
-      "Get started for 1 €": [
-        "以 €1 歐元開始"
-      ],
-      "Get started for CHF 1": [
-        "以 CHF1 瑞士法郎開始"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -10993,14 +10990,8 @@
       "Password health": [
         "密碼穩固性"
       ],
-      "Password manager to secure credentials": [
-        "密碼管理器以確保身分安全"
-      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
-      ],
-      "Phone support (40+ users)": [
-        "電話支援（40+ 使用者）"
       ],
       "Priority email support": [
         "優先電子郵件支援"
@@ -11435,9 +11426,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "${ BRAND_NAME } 客戶成功團隊於歐洲辦公時間內，為 6 位或以上使用者的客戶提供電話支援"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
@@ -11950,11 +11938,6 @@
       ],
       "Trash": [
         "垃圾"
-      ]
-    },
-    "option": {
-      "Members": [
-        "成員"
       ]
     },
     "Option delay send seconds": {
@@ -12588,6 +12571,9 @@
       ],
       "Gift code": [
         "禮品代碼"
+      ],
+      "Group name": [
+        "群組名稱"
       ],
       "Link": [
         "連結"
@@ -14667,10 +14653,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -16201,11 +16187,6 @@
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "升級以解鎖${ appName }付費版功能"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "安全持有及交易您的 Bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

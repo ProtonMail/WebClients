@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -391,9 +391,6 @@
       "Disable": [
         "Desativar"
       ],
-      "Disable E2EE for group address": [
-        "Desativar criptografia de ponta a ponta para os endereços do endereço"
-      ],
       "Disable recovery phrase": [
         "Desativar a frase de recuperação"
       ],
@@ -495,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Ativar recuperação baseada em dispositivo"
-      ],
-      "Enable E2EE for group address": [
-        "Ativar criptografia de ponta a ponta para os endereços do endereço"
       ],
       "Enable multi-user support": [
         "Ativar suporte para múltiplos usuários"
@@ -805,11 +799,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -819,9 +813,6 @@
       ],
       "Remove all members": [
         "Remover todos os membros"
-      ],
-      "Remove all members from group": [
-        "Remover todos os membros do grupo"
       ],
       "Remove bonuses": [
         "Remover bônus"
@@ -867,9 +858,6 @@
       ],
       "Resend code": [
         "Reenviar código"
-      ],
-      "Resend invitation": [
-        "Reenviar convite"
       ],
       "Reset credentials": [
         "Redefinir credenciais"
@@ -1266,9 +1254,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Adicionar domínio pm.me"
-      ],
       "Resuming forward": [
         "Continuar encaminhamento"
       ]
@@ -1622,6 +1607,14 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1643,14 +1636,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5235,6 +5220,9 @@
       "You have successfully joined the family group": [
         "Você entrou com sucesso no grupo familiar"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Você tem faturas não pagas. Pague antes de juntar-se ao grupo."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Você precisa configurar um domínio personalizado antes de adicionar usuários."
       ],
@@ -7048,11 +7036,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -9638,9 +9626,6 @@
       "30 seconds": [
         "30 segundos"
       ],
-      "4 hours": [
-        "4 horas"
-      ],
       "5 minutes": [
         "5 minutos"
       ],
@@ -11046,6 +11031,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Oferta por tempo limitado: **Obtenha até 35% de desconto** nos planos anuais."
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Oferta por tempo limitado: **Economize ${ discount } no ${ name } no plano de 1 ano**"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Você foi convidado a experimentar o ${ MAIL_APP_NAME }."
       ]
@@ -11473,6 +11461,32 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for $1": [
+        "Começar por 1$"
+      ],
+      "Get started for 1 €": [
+        "Começar por 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Começar por CHF 1"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11500,32 +11514,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for $1": [
-        "Começar por 1$"
-      ],
-      "Get started for 1 €": [
-        "Começar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Começar por CHF 1"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
       ]
     },
     "new_plans: feature": {
@@ -11781,14 +11769,8 @@
       "Password health": [
         "Estado da senha"
       ],
-      "Password manager to secure credentials": [
-        "Gerenciador de senhas para proteger credenciais"
-      ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
-      ],
-      "Phone support (40+ users)": [
-        "Suporte por telefone (40 ou mais usuários)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Recursos premium para ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
@@ -12279,9 +12261,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "O suporte por telefone da equipe de Sucesso do Cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 6 ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
@@ -12833,20 +12812,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Todos, inclusive externos"
-      ],
-      "Members": [
-        "Membros"
-      ],
-      "Nobody by default": [
-        "Ninguém por padrão"
-      ],
-      "Organization members": [
-        "Membros da organização"
       ]
     },
     "Option delay send seconds": {
@@ -13619,6 +13584,9 @@
       ],
       "Gift code": [
         "Código de vale-presente"
+      ],
+      "Group name": [
+        "Nome do grupo"
       ],
       "Link": [
         "Link"
@@ -16077,11 +16045,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço catch-all"
-      ],
       "Catch-All address": [
         "Endereço Catch-All (captura tudo)"
+      ],
+      "Catch-all address": [
+        "Endereço catch-all"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -17754,6 +17722,9 @@
       "Join ${ appName } early access!": [
         "Junte-se ao acesso antecipado do ${ appName }!"
       ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
+        "Crie conta para obter uma conta gratuita da ${ BRAND_NAME } para garantir seu lugar. Quanto mais cedo você criar a conta, mais cedo terá acesso ao ${ appName }. Após o cadastro, você também pode fazer upgrade para o nosso plano Visionary exclusivo para pular a lista de espera e começar a usar o ${ appName } imediatamente."
+      ],
       "Unlock ${ appName } premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium do ${ appName }"
       ],
@@ -17762,11 +17733,6 @@
       ],
       "You're Invited.": [
         "Você está convidado."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Guarde e transfira suas bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

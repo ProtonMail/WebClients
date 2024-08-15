@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "activate": [
-        "aktifkan"
-      ],
       "Activate": [
         "Aktifkan"
+      ],
+      "activate": [
+        "aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -156,6 +156,9 @@
       ],
       "Allow": [
         "Izinkan"
+      ],
+      "Always allow sending mail to group": [
+        "Selalu perbolehkan mengirim email ke grup"
       ],
       "Apply": [
         "Terapkan"
@@ -388,9 +391,6 @@
       "Disable": [
         "Nonaktifkan"
       ],
-      "Disable E2EE for group address": [
-        "Nonaktifkan E2EE untuk alamat grup"
-      ],
       "Disable recovery phrase": [
         "Nonaktifkan frasa pemulihan"
       ],
@@ -492,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Aktifkan pemulihan berbasis perangkat"
-      ],
-      "Enable E2EE for group address": [
-        "Aktifkan E2EE untuk alamat grup"
       ],
       "Enable multi-user support": [
         "Aktifkan dukungan multi-pengguna"
@@ -802,11 +799,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reload": [
         "Muat ulang"
@@ -816,9 +813,6 @@
       ],
       "Remove all members": [
         "Keluarkan semua anggota"
-      ],
-      "Remove all members from group": [
-        "Keluarkan semua anggota dari grup"
       ],
       "Remove bonuses": [
         "Hapus bonus"
@@ -864,9 +858,6 @@
       ],
       "Resend code": [
         "Kirim ulang kode"
-      ],
-      "Resend invitation": [
-        "Kirim ulang undangan"
       ],
       "Reset credentials": [
         "Atur ulang kredensial"
@@ -1263,9 +1254,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Tambah domain pm.me"
-      ],
       "Resuming forward": [
         "Melanjutkan penerusan email"
       ]
@@ -1615,6 +1603,14 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1636,14 +1632,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3378,6 +3366,9 @@
       "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktifkan peristiwa berdetail dan ${ PROTON_SENTINEL_NAME } untuk mengakses fitur-fitur ini"
       ],
+      "Enable detailed events to access these features": [
+        "Aktifkan peristiwa berdetail untuk mengakses fitur-fitur ini"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Enkripsi dan impor kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
       ],
@@ -3601,6 +3592,9 @@
       ]
     },
     "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**Kolaboratif:** penyunting dokumen daring"
+      ],
       "**GDPR** and **HIPAA** compliant": [
         "Berpatuh pada **GDPR** dan **HIPAA**"
       ],
@@ -3609,6 +3603,11 @@
       ],
       "**Secure:** end-to-end encryption": [
         "**Aman:** enkripsi ujung ke ujung"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "Solusi bisnis satu-satunya yang:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -3631,6 +3630,9 @@
       "2 users": [
         "2 pengguna"
       ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Akses lengkap semua produk ${ BRAND_NAME }"
+      ],
       "You save ${ amountSave }": [
         "Anda menghemat ${ amountSave }"
       ]
@@ -3641,6 +3643,11 @@
       ],
       "Double your storage": [
         "Gandakan penyimpanan Anda"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Perkenalkan ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duration": {
@@ -5079,6 +5086,9 @@
       "*Only one free trial per customer.": [
         "*Hanya satu uji coba gratis per pelanggan."
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Akun dengan domain khusus tidak dapat bergabung ke paket grup."
+      ],
       "customer support": [
         "layanan dukungan"
       ],
@@ -5099,6 +5109,9 @@
       ],
       "Leave Visionary plan": [
         "Keluar dari paket Visionary"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Akun Lifetime tidak dapat bergabung dalam paket grup."
       ],
       "Manage addresses.": [
         "Kelola alamat."
@@ -5171,6 +5184,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Anda tidak dapat menerima undangan ini dengan paket Anda saat ini."
       ]
     },
     "familyOffer_2023:Info": {
@@ -5758,6 +5774,11 @@
       ],
       "Left group": [
         "Telah meninggalkan grup"
+      ]
+    },
+    "group_invite_2024: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Silakan coba buka tautan lagi."
       ]
     },
     "group_invite_2024: Info": {
@@ -6839,6 +6860,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Buat label untuk menandai pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label yang ingin Anda impor."
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Buat awan yang aman untuk ${ n } anggota"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Buat dan kelola sub-akun dan tetapkan untuk mereka alamat email di domain kustom Anda."
       ],
@@ -6896,11 +6920,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -9457,9 +9481,6 @@
       "30 seconds": [
         "30 detik"
       ],
-      "4 hours": [
-        "4 jam"
-      ],
       "5 minutes": [
         "5 menit"
       ],
@@ -11272,6 +11293,32 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Get started for $1": [
+        "Mulai dengan harga $1"
+      ],
+      "Get started for 1 €": [
+        "Mulai dengan harga 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Mulai dengan harga CHF 1"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -11299,32 +11346,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Get started for $1": [
-        "Mulai dengan harga $1"
-      ],
-      "Get started for 1 €": [
-        "Mulai dengan harga 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Mulai dengan harga CHF 1"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
       ]
     },
     "new_plans: feature": {
@@ -11565,14 +11586,11 @@
       "Password health": [
         "Kesehatan kata sandi"
       ],
-      "Password manager to secure credentials": [
-        "Manajer kata sandi untuk mengamankan kredensial"
-      ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
       ],
-      "Phone support (40+ users)": [
-        "Dukungan via telepon (40+ pengguna)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Fitur premium ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Dukungan email prioritas"
@@ -11847,6 +11865,9 @@
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
       ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Privasi tak terbatas dan lebih banyak penyimpanan sampai dengan 2 orang."
+      ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
       ],
@@ -12049,9 +12070,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Dukungan via telepon tersedia dari tim ${ BRAND_NAME } Customer Success pada hari dan jam kerja yang berlaku di Eropa pada umumnya, khusus untuk para pelanggan dengan 6 atau lebih pengguna"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Mencegah pesan untuk dapat diakses oleh ${ BRAND_NAME } atau pihak ketiga. Pesan Anda hanya akan dibaca oleh penerima dan Anda sendiri."
@@ -12576,20 +12594,6 @@
       ],
       "Trash": [
         "Buang ke Sampah"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Siapa pun, termasuk orang luar"
-      ],
-      "Members": [
-        "Anggota"
-      ],
-      "Nobody by default": [
-        "Tidak ada siapa pun secara bawaan"
-      ],
-      "Organization members": [
-        "Anggota organisasi"
       ]
     },
     "Option delay send seconds": {
@@ -13351,6 +13355,9 @@
       ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "Group name": [
+        "Nama grup"
       ],
       "Link": [
         "Tautan"
@@ -15758,11 +15765,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -17387,11 +17394,6 @@
       ],
       "You're Invited.": [
         "Anda diundang."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Simpan dan transfer Bitcoin Anda secara aman"
       ]
     },
     "wallet_signup_2024:Bug category": {

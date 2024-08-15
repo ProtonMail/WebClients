@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "activate": [
-        "aktiviraj"
-      ],
       "Activate": [
         "Aktiviraj"
+      ],
+      "activate": [
+        "aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -778,11 +778,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "refresh the page": [
-        "Osvežite stran"
-      ],
       "Refresh the page": [
         "Osveži stran"
+      ],
+      "refresh the page": [
+        "Osvežite stran"
       ],
       "Reload": [
         "Osveži"
@@ -834,9 +834,6 @@
       ],
       "Resend code": [
         "Znova pošlji kodo"
-      ],
-      "Resend invitation": [
-        "Ponovno pošlji povabilo"
       ],
       "Reset credentials": [
         "Ponastavite poverilnice"
@@ -1552,6 +1549,14 @@
         "Izberite ponudbo ob koncu leta"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB prostora za shranjevanje (dvakrat več kot kateri koli drug paket)"
@@ -1573,14 +1578,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } je nazaj samo za omejen čas."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6817,11 +6814,11 @@
       "Data locked": [
         "Podatki so zaklenjeni."
       ],
-      "Dedicated servers": [
-        "Namenski strežniki"
-      ],
       "dedicated servers": [
         "namenski strežniki"
+      ],
+      "Dedicated servers": [
+        "Namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -10960,6 +10957,23 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Raziščite vse pakete ${ BRAND_NAME }."
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Nadaljujte z brezplačnim paketom"
@@ -10987,23 +11001,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadgradi na ${ upsellPlanHumanSize }."
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Raziščite vse pakete ${ BRAND_NAME }."
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
       ]
     },
     "new_plans: feature": {
@@ -11283,14 +11280,8 @@
       "Password health": [
         "Kakovost gesla"
       ],
-      "Password manager to secure credentials": [
-        "Upravitelj gesel za varno preverjanje pristnosti"
-      ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonska podpora (40+ uporabnikov)"
       ],
       "Priority email support": [
         "Prednostna podpora po e-pošti"
@@ -11767,9 +11758,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Prilagodite svoj podpis v e-pošti z logotipi, slikami, ikonami družbenih medijev, povezavami do vaših kontaktnih podatkov in podobnim."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonska podpora je na voljo s strani ${ BRAND_NAME } ekipe za uspeh strank med običajnim poslovnim časom v Evropi za stranke z najmanj šestimi uporabniki."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Preprečuje, da bi do sporočil dostopali ${ BRAND_NAME } ali tretje osebe. Sporočila lahko berejo le pošiljatelj in predvideni prejemnik."
@@ -12309,11 +12297,6 @@
       ],
       "Trash": [
         "Smeti"
-      ]
-    },
-    "option": {
-      "Members": [
-        "Člani"
       ]
     },
     "Option delay send seconds": {
@@ -13039,6 +13022,9 @@
       ],
       "Gift code": [
         "Darilna koda"
+      ],
+      "Group name": [
+        "Ime skupine"
       ],
       "Link": [
         "Povezava"
@@ -15363,10 +15349,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [

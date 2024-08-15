@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "activate": [
-        "ενεργοποιήστε"
-      ],
       "Activate": [
         "Ενεργοποίηση"
+      ],
+      "activate": [
+        "ενεργοποιήστε"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -391,9 +391,6 @@
       "Disable": [
         "Απενεργοποίηση"
       ],
-      "Disable E2EE for group address": [
-        "Απενεργοποίηση E2EE για διεύθυνση ομάδας"
-      ],
       "Disable recovery phrase": [
         "Απενεργοποίηση φράσης ανάκτησης"
       ],
@@ -495,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Ενεργοποίηση ανάκτησης βάσει συσκευής"
-      ],
-      "Enable E2EE for group address": [
-        "Ενεργοποίηση E2EE για διεύθυνση ομάδας"
       ],
       "Enable multi-user support": [
         "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
@@ -805,11 +799,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Reload": [
         "Ανανέωση"
@@ -819,9 +813,6 @@
       ],
       "Remove all members": [
         "Κατάργηση όλων των μελών"
-      ],
-      "Remove all members from group": [
-        "Κατάργηση όλων των μελών από την ομάδα"
       ],
       "Remove bonuses": [
         "Αφαιρέστε τα μπόνους"
@@ -867,9 +858,6 @@
       ],
       "Resend code": [
         "Επαναποστολή κωδικού"
-      ],
-      "Resend invitation": [
-        "Επανάληψη αποστολής πρόσκλησης"
       ],
       "Reset credentials": [
         "Επαναφορά διαπιστευτηρίων"
@@ -1266,9 +1254,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Προσθήκη τομέα pm.me"
-      ],
       "Resuming forward": [
         "Συνέχιση προώθησης"
       ]
@@ -1622,6 +1607,14 @@
         "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Χώρος αποθήκευσης 6 TB (2 φορές περισσότερος από οποιοδήποτε άλλο πρόγραμμα)"
@@ -1643,14 +1636,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
       ]
     },
     "bf2023: Offers": {
@@ -7036,11 +7021,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "Dedicated servers": [
-        "Αφοσιωμένοι διακομιστές"
-      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
+      ],
+      "Dedicated servers": [
+        "Αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -9626,9 +9611,6 @@
       "30 seconds": [
         "30 δευτερόλεπτα"
       ],
-      "4 hours": [
-        "4 ώρες"
-      ],
       "5 minutes": [
         "5 λεπτά"
       ],
@@ -11031,6 +11013,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Προσφορά περιορισμένου χρόνου: **Λάβετε έκπτωση έως και 35%** στα ετήσια προγράμματα"
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Προσφορά περιορισμένου χρόνου: **Εξοικονομήστε ${ discount } στο ${ name } με πρόγραμμα 1 έτους**"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Έχετε προσκληθεί να δοκιμάσετε το ${ MAIL_APP_NAME }"
       ]
@@ -11455,6 +11440,32 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Get started for $1": [
+        "Ξεκινήστε με $1"
+      ],
+      "Get started for 1 €": [
+        "Ξεκινήστε με 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Ξεκινήστε με CHF 1"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Συνέχεια με Δωρεάν"
@@ -11482,32 +11493,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Get started for $1": [
-        "Ξεκινήστε με $1"
-      ],
-      "Get started for 1 €": [
-        "Ξεκινήστε με 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Ξεκινήστε με CHF 1"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -11763,14 +11748,8 @@
       "Password health": [
         "Υγεία κωδικού πρόσβασης"
       ],
-      "Password manager to secure credentials": [
-        "Διαχειριστής κωδικών πρόσβασης για την εξασφάλιση διαπιστευτηρίων"
-      ],
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
-      ],
-      "Phone support (40+ users)": [
-        "Τηλεφωνική υποστήριξη (40+ χρήστες)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Premium χαρακτηριστικά του ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
@@ -12258,9 +12237,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Εξατομικεύστε την υπογραφή email σας με λογότυπα, εικόνες, εικονίδια κοινωνικών μέσων, συνδέσμους προς τα στοιχεία επικοινωνίας σας και πολλά άλλα"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Η τηλεφωνική υποστήριξη είναι διαθέσιμη από τη ${ BRAND_NAME } ομάδα επιτυχίας πελατών κατά τις ευρωπαϊκές εργάσιμες ώρες, για πελάτες με 6 ή περισσότερους χρήστες"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Αποτρέπει την πρόσβαση σε μηνύματα από ${ BRAND_NAME } ή τρίτους. Τα μόνα άτομα που μπορούν να διαβάσουν τα μηνύματα είναι ο αποστολέας και ο παραλήπτης."
@@ -12791,20 +12767,6 @@
       ],
       "Trash": [
         "Διαγραμμένα"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Όλοι, συμπεριλαμβανομένου του εξωτερικού"
-      ],
-      "Members": [
-        "Μέλη"
-      ],
-      "Nobody by default": [
-        "Κανείς από προεπιλογή"
-      ],
-      "Organization members": [
-        "Μέλη οργανισμού"
       ]
     },
     "Option delay send seconds": {
@@ -13571,6 +13533,9 @@
       ],
       "Gift code": [
         "Κωδικός δώρου"
+      ],
+      "Group name": [
+        "Όνομα ομάδας"
       ],
       "Link": [
         "Σύνδεσμος"
@@ -16023,10 +15988,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [
@@ -17679,11 +17644,6 @@
       ],
       "You're Invited.": [
         "Έχετε Προσκληθεί."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Κρατήστε και μεταφέρετε με ασφάλεια τα bitcoins σας"
       ]
     },
     "wallet_signup_2024:Bug category": {
