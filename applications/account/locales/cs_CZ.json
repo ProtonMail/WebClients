@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "activate": [
-        "aktivovat"
-      ],
       "Activate": [
         "Aktivovat"
+      ],
+      "activate": [
+        "aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -796,11 +796,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reload": [
         "Znovu načíst"
@@ -810,9 +810,6 @@
       ],
       "Remove all members": [
         "Odebrat všechny členy"
-      ],
-      "Remove all members from group": [
-        "Odebrat všechny členy ze skupiny"
       ],
       "Remove bonuses": [
         "Odebrat bonusy"
@@ -858,9 +855,6 @@
       ],
       "Resend code": [
         "Znovu odeslat kód"
-      ],
-      "Resend invitation": [
-        "Znovu poslat pozvánku"
       ],
       "Reset credentials": [
         "Resetovat pověření"
@@ -1254,9 +1248,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Přidat doménu pm.me"
-      ],
       "Resuming forward": [
         "Obnovení přeposílání"
       ]
@@ -1615,6 +1606,14 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB úložiště (2x více než jakýkoli jiný tarif)"
@@ -1636,14 +1635,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Tarif ${ plan } je zpět pouze po omezenou dobu"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7059,11 +7050,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -11526,6 +11517,32 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for $1": [
+        "Začít za $1"
+      ],
+      "Get started for 1 €": [
+        "Začít za €1"
+      ],
+      "Get started for CHF 1": [
+        "Začít za 1 CHF"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
@@ -11553,32 +11570,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for $1": [
-        "Začít za $1"
-      ],
-      "Get started for 1 €": [
-        "Začít za €1"
-      ],
-      "Get started for CHF 1": [
-        "Začít za 1 CHF"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
       ]
     },
     "new_plans: feature": {
@@ -11864,14 +11855,8 @@
       "Password health": [
         "Síla hesla"
       ],
-      "Password manager to secure credentials": [
-        "Správce hesel pro zabezpečení přihlašovacích údajů"
-      ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonická podpora (40+ uživatelů)"
       ],
       "Priority email support": [
         "Prioritní podpora"
@@ -12363,9 +12348,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Přizpůsobte svůj podpis logem, obrázky, ikony sociálních médií, odkazem na kontakt atd."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky se 6 a více uživateli"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zamezí přístup ke zprávám třetím stranám i ${ BRAND_NAME }. Jediní lidé, kteří mohou číst zprávy, jsou odesílatel a příjemce."
@@ -12929,20 +12911,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Všichni, včetně externích"
-      ],
-      "Members": [
-        "Členové"
-      ],
-      "Nobody by default": [
-        "Ve výchozím stavu nikdo"
-      ],
-      "Organization members": [
-        "Členové organizace"
       ]
     },
     "Option delay send seconds": {
@@ -13719,6 +13687,9 @@
       ],
       "Gift code": [
         "Dárkový kód"
+      ],
+      "Group name": [
+        "Název skupiny"
       ],
       "Link": [
         "Odkaz"
@@ -16248,10 +16219,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -17951,11 +17922,6 @@
       ],
       "You're Invited.": [
         "Jste pozváni."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bezpečně uchovávejte a převádějte své bitcoiny"
       ]
     },
     "wallet_signup_2024:Bug category": {

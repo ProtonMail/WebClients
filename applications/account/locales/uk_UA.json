@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "activate": [
-        "активувати"
-      ],
       "Activate": [
         "Активувати"
+      ],
+      "activate": [
+        "активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -793,11 +793,11 @@
       "Refresh status": [
         "Оновити стан"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Refresh the page": [
         "Оновити сторінку"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Reload": [
         "Перезавантажити"
@@ -807,9 +807,6 @@
       ],
       "Remove all members": [
         "Видалити всіх учасників"
-      ],
-      "Remove all members from group": [
-        "Видалити всіх учасників з групи"
       ],
       "Remove bonuses": [
         "Вилучити бонуси"
@@ -855,9 +852,6 @@
       ],
       "Resend code": [
         "Надіслати код повторно"
-      ],
-      "Resend invitation": [
-        "Повторно надіслати запрошення"
       ],
       "Reset credentials": [
         "Скинути облікові дані"
@@ -1251,9 +1245,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Додати домен «pm.me»"
-      ],
       "Resuming forward": [
         "Відновлення пересилання"
       ]
@@ -1612,6 +1603,14 @@
         "Оберіть свою пропозицію Кінця року"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом. Але ви можете отримати **${ plan.Title } зі знижкою ${ discountPercentage }**, якщо передплатите на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ТБ сховища (вдвічі більше, ніж з будь-яким іншим планом)"
@@ -1633,14 +1632,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "План ${ plan } доступний знову лише протягом обмеженого часу"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом. Але ви можете отримати **${ plan.Title } зі знижкою ${ discountPercentage }**, якщо передплатите на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7019,11 +7010,11 @@
       "Data locked": [
         "Дані заблоковано"
       ],
-      "Dedicated servers": [
-        "Виділені сервери"
-      ],
       "dedicated servers": [
         "виділені сервери"
+      ],
+      "Dedicated servers": [
+        "Виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами."
@@ -11480,6 +11471,32 @@
         "Середня швидкість VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Get started for $1": [
+        "Почати за 1 $"
+      ],
+      "Get started for 1 €": [
+        "Почати за 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Почати за 1 CHF"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Залишити безплатний"
@@ -11507,32 +11524,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Покращити до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Get started for $1": [
-        "Почати за 1 $"
-      ],
-      "Get started for 1 €": [
-        "Почати за 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Почати за 1 CHF"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -11818,14 +11809,8 @@
       "Password health": [
         "Якість пароля"
       ],
-      "Password manager to secure credentials": [
-        "Менеджер паролів для захисту облікових даних"
-      ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
-      ],
-      "Phone support (40+ users)": [
-        "Підтримка за телефоном (40+ користувачів)"
       ],
       "Priority email support": [
         "Пріоритетна підтримка електронною поштою"
@@ -12314,9 +12299,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Налаштуйте свій підпис з використанням логотипів, зображень, піктограм соціальних мереж, посилань на свої контакти та інших можливостей"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Команда підтримки ${ BRAND_NAME } надає допомогу в телефонному режимі впродовж європейського робочого часу клієнтам, які мають 6 або більше користувачів"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Запобігає доступу до повідомлень ${ BRAND_NAME } чи сторонніх осіб. Відправник та отримувач повідомлень – єдині, хто може читати повідомлення."
@@ -12859,20 +12841,6 @@
       ],
       "Trash": [
         "Смітник"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Усі, включно зі сторонніми"
-      ],
-      "Members": [
-        "Учасники"
-      ],
-      "Nobody by default": [
-        "По стандарту нікому"
-      ],
-      "Organization members": [
-        "Члени організації"
       ]
     },
     "Option delay send seconds": {
@@ -13625,6 +13593,9 @@
       ],
       "Gift code": [
         "Подарунковий код"
+      ],
+      "Group name": [
+        "Назва групи"
       ],
       "Link": [
         "Посилання"
@@ -16034,11 +16005,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-all address": [
-        "Catch-all адреси"
-      ],
       "Catch-All address": [
         "Catch-All адреса"
+      ],
+      "Catch-all address": [
+        "Catch-all адреси"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -17711,11 +17682,6 @@
       ],
       "You're Invited.": [
         "Ви запрошені."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Безпечно зберігайте й переказуйте Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
