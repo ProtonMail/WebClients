@@ -35,6 +35,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
     const bitcoinAddressHelper = selectedAccount?.ID
         ? bitcoinAddressHelperByWalletAccountId[selectedAccount.ID]
         : undefined;
+
     const bitcoinAddress = bitcoinAddressHelper?.receiveBitcoinAddress.address;
 
     return (
@@ -102,7 +103,7 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                         </InputFieldStacked>
                     </InputFieldStackedGroup>
                 ) : (
-                    <div className="flex flex-column items-center justify-center">
+                    <div className="flex flex-column items-center justify-center my-12 py-12">
                         <CircleLoader className="color-primary" />
                         <p className="color-weak mt-6">{c('Wallet receive').t`Address generation in progress`}</p>
                     </div>
@@ -132,7 +133,9 @@ export const WalletReceiveContent = ({ wallet, account }: Props) => {
                                 className="mt-2"
                                 shape="ghost"
                                 size="large"
-                                onClick={() => bitcoinAddressHelper?.generateNewReceiveAddress()}
+                                onClick={() => {
+                                    void bitcoinAddressHelper?.generateNewReceiveAddress();
+                                }}
                                 disabled={!bitcoinAddress || bitcoinAddressHelper.isLoading}
                             >{c('Wallet receive').t`Generate new address`}</Button>
                         );
