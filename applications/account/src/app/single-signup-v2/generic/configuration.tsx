@@ -5,6 +5,7 @@ import type { PublicTheme } from '../../containers/PublicThemeProvider';
 import { SignupType } from '../../signup/interfaces';
 import type { PlanParameters, SignupConfiguration, SignupMode } from '../interface';
 import { getMailConfiguration } from '../mail/configuration';
+import CustomStep from './CustomStep';
 
 export const getGenericConfiguration = ({
     theme,
@@ -47,5 +48,6 @@ export const getGenericConfiguration = ({
         ...mailConfiguration,
         signupTypes: [SignupType.Username, SignupType.Email],
         logo,
+        CustomStep,
     };
 };

@@ -422,7 +422,7 @@ export const getDriveConfiguration = ({
         benefits,
         planCards,
         signupTypes: [SignupType.Email, SignupType.Username],
-        generateMnemonic: false,
+        generateMnemonic: true,
         onboarding: {
             user: false,
             signup: true,
