@@ -3,7 +3,6 @@ import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { Loader } from '../../../components';
@@ -43,7 +42,7 @@ const YourPlanSection = ({ app }: Props) => {
     const [serversCount, serversCountLoading] = useVPNServersCount();
     const [invites = []] = usePendingUserInvitations();
     const [openSubscriptionModal] = useSubscriptionModal();
-    const canAccessDuoPlan = useFlag('DuoPlan') && getCanSubscriptionAccessDuoPlan(subscription);
+    const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
 
     useLoad();
 
