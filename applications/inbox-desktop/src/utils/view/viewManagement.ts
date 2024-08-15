@@ -10,7 +10,7 @@ import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsExitEvent } from "./windowClose";
 import { getLocalID, isAccountSwitch, isHostAllowed, isSameURL, trimLocalID } from "../urls/urlTests";
 import { mainLogger, viewLogger } from "../log";
-import { CHANGE_VIEW_TARGET } from "../external/shared/lib/desktop/desktopTypes";
+import { CHANGE_VIEW_TARGET } from "../external/packages/shared/lib/desktop/desktopTypes";
 
 type ViewID = keyof ReturnType<typeof getConfig>["url"];
 

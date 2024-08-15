@@ -1,6 +1,7 @@
-import { getNewUpdateTestOnly, releaseInfoSchemaTestOnly, releaseListSchemaTestOnly } from "./update";
+import { getNewUpdateTestOnly, LocalDesktopVersion, releaseListSchemaTestOnly } from "./update";
 import { describe } from "@jest/globals";
-import { RELEASE_CATEGORIES } from "./utils/external/shared/lib/apps/desktopVersions";
+import { RELEASE_CATEGORIES } from "./utils/external/packages/shared/lib/apps/desktopVersions";
+import { VersionFile } from "./utils/external/packages/shared/lib/desktop/DesktopVersion";
 
 jest.mock("./utils/view/viewManagement", () => ({
     getCalendarView: () => {},
@@ -14,7 +15,7 @@ jest.mock("electron", () => ({
     },
 }));
 
-const availableVersions = {
+const availableVersions: VersionFile = {
     Releases: [
         {
             CategoryName: "Stable",
@@ -35,6 +36,7 @@ const availableVersions = {
                 },
             ],
             ReleaseNotes: [],
+            ManualUpdate: [],
             RolloutProportion: 1,
         },
         {
@@ -56,6 +58,7 @@ const availableVersions = {
                 },
             ],
             ReleaseNotes: [],
+            ManualUpdate: [],
             RolloutProportion: 0,
         },
         {
@@ -77,6 +80,7 @@ const availableVersions = {
                 },
             ],
             ReleaseNotes: [],
+            ManualUpdate: [],
             RolloutProportion: 0.2,
         },
         {
@@ -98,6 +102,7 @@ const availableVersions = {
                 },
             ],
             ReleaseNotes: [],
+            ManualUpdate: [],
             RolloutProportion: 0.5,
         },
         {
@@ -119,6 +124,7 @@ const availableVersions = {
                 },
             ],
             ReleaseNotes: [],
+            ManualUpdate: [],
             RolloutProportion: 1,
         },
     ],
@@ -141,11 +147,7 @@ function expectGetNewUpdate(td: newUpdateTestData) {
     td.expectedRollout ??= 1;
 
     const have = getNewUpdateTestOnly(
-        releaseInfoSchemaTestOnly.parse({
-            Version: td.localVersion,
-            RolloutProportion: td.localRollout,
-            CategoryName: td.localCategory,
-        }),
+        { Version: td.localVersion, RolloutProportion: td.localRollout, CategoryName: td.localCategory },
         releaseListSchemaTestOnly.parse(availableVersions),
     );
 
@@ -154,13 +156,17 @@ function expectGetNewUpdate(td: newUpdateTestData) {
         return;
     }
 
-    expect(have).toStrictEqual(
-        releaseInfoSchemaTestOnly.parse({
-            Version: td.expectedVersion,
-            CategoryName: td.expectedCategory,
-            RolloutProportion: td.expectedRollout,
-        }),
-    );
+    expect(have).toBeDefined();
+
+    expect({
+        Version: have!.Version,
+        CategoryName: have!.CategoryName,
+        RolloutProportion: have!.RolloutProportion,
+    } satisfies LocalDesktopVersion).toStrictEqual({
+        Version: td.expectedVersion,
+        CategoryName: td.expectedCategory,
+        RolloutProportion: td.expectedRollout,
+    } satisfies LocalDesktopVersion);
 }
 
 describe("get new update", () => {

@@ -18,6 +18,7 @@ import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
 import { getTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
+import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
 
 (async function () {
     initializeLog();
@@ -92,6 +93,7 @@ import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
         });
 
         app.whenReady().then(() => {
+            registerLogIPCForwardTransport();
             const settings = getSettings();
 
             if (settings.overrideError) {

@@ -1,6 +1,6 @@
 import { nativeTheme } from "electron";
 import { getSettings, saveSettings } from "../store/settingsStore";
-import { ThemeModeSetting, ThemeSetting, ThemeTypes } from "./external/shared/lib/themes/themes";
+import { ThemeModeSetting, ThemeSetting, ThemeTypes } from "./external/packages/shared/lib/themes/themes";
 
 const SERIALIZED_THEME_MODE = {
     [ThemeModeSetting.Auto]: "auto",

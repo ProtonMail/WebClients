@@ -3,7 +3,7 @@ import { isWindows } from "../utils/helpers";
 import { addHashToCurrentURL } from "../utils/urls/urlHelpers";
 import { getMailView, getMainWindow, showView } from "../utils/view/viewManagement";
 import { ipcLogger } from "../utils/log";
-import { ElectronNotification } from "../utils/external/shared/lib/desktop/desktopTypes";
+import { ElectronNotification } from "../utils/external/packages/shared/lib/desktop/desktopTypes";
 
 export const handleIPCBadge = (count: number) => {
     ipcLogger.info("Update badge value", count);
@@ -12,7 +12,12 @@ export const handleIPCBadge = (count: number) => {
     }
 
     if (count) {
-        app.setBadgeCount(count);
+        if (count < 0) {
+            ipcLogger.error("Received invalid badge count", count);
+            resetBadge();
+        } else {
+            app.setBadgeCount(count);
+        }
     } else {
         resetBadge();
     }
