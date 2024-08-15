@@ -20,6 +20,7 @@ import type {
     PM_SIGNATURE,
     PM_SIGNATURE_REFERRAL,
     PROMPT_PIN,
+    REMOVE_IMAGE_METADATA,
     SHORTCUTS,
     SHOW_IMAGES,
     SIGN,
@@ -89,5 +90,6 @@ export interface MailSettings {
     ReceiveMIMEType: string;
     ShowMIMEType: string;
     NextMessageOnMove: NEXT_MESSAGE_ON_MOVE;
+    RemoveImageMetadata: REMOVE_IMAGE_METADATA;
     KT: KEY_TRANSPARENCY_SETTING;
 }
