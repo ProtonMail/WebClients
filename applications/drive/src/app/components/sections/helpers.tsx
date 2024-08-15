@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { LinkURLType, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { DecryptedLink, ShareInvitationDetails } from '../../store';
+import type { DecryptedLink } from '../../store';
+import type { SharedWithMeItem } from './SharedWithMe/SharedWithMe';
 
 export const selectMessageForItemList = (
     isFiles: boolean[],
@@ -243,15 +244,17 @@ export const getSelectedItems = (
     return [];
 };
 
-export const getSelectedPendingInvitationItems = (
-    items: ShareInvitationDetails[],
+export const getSelectedSharedWithMeItems = (
+    items: SharedWithMeItem[],
     selectedItemIds: string[]
-): ShareInvitationDetails[] => {
-    return selectedItemIds.reduce<ShareInvitationDetails[]>((acc, selectedItemId) => {
-        const item = items.find(({ invitation }) => selectedItemId === invitation.invitationId);
-        if (item) {
-            acc.push(item);
-        }
-        return acc;
-    }, []);
+): SharedWithMeItem[] => {
+    if (items) {
+        return selectedItemIds
+            .map((selectedItemId) =>
+                items.find(({ isLocked, ...item }) => !isLocked && selectedItemId === item.rootShareId)
+            )
+            .filter(isTruthy) as SharedWithMeItem[];
+    }
+
+    return [];
 };

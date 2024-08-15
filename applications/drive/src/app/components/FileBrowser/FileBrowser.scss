@@ -133,15 +133,6 @@
 	display: none;
 }
 
-// Hack to fix border hidden when putting a background
-.file-browser-list-item--invitation::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background-color: var(--interaction-norm-minor-2);
-	z-index: -1;
-}
-
 // This is the size where Accept / Decline buttons can fit in the list view
 @include media('>=#{em(1280, 16)}') {
 	body:not(.drawer-is-open) {

@@ -85,9 +85,9 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
 
         return (
             <>
-                <PreviewButton selectedLinks={selectedItems} />
-                <OpenInDocsButton shareId={shareId} selectedLinks={selectedItems} />
-                <DownloadButton selectedLinks={selectedItems} />
+                <PreviewButton selectedBrowserItems={selectedItems} />
+                <OpenInDocsButton selectedBrowserItems={selectedItems} />
+                <DownloadButton selectedBrowserItems={selectedItems} />
                 {viewportWidth['<=small'] ? (
                     <ActionsDropdown shareId={shareId} selectedLinks={selectedItems} permissions={permissions} />
                 ) : (
@@ -108,7 +108,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
                                 <RenameButton selectedLinks={selectedItems} />
                             </>
                         ) : null}
-                        <DetailsButton selectedLinks={selectedItems} />
+                        <DetailsButton selectedBrowserItems={selectedItems} />
 
                         {isEditor && (
                             <>
