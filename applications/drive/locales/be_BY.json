@@ -459,6 +459,9 @@
       "Increase": [
         "Павялічыць"
       ],
+      "Invite": [
+        "Запрасіць"
+      ],
       "Keep my Plus subscription": [
         "Пакінуць падпіску Plus"
       ],
@@ -4563,7 +4566,7 @@
         "Файл не будзе абноўлены"
       ],
       "Files and folders that others shared with you will appear here": [
-        "Тут з'явяцца папкі і файлы, якія з вамі абагулілі іншыя карыстальнікі."
+        "Тут будуць з'яўляцца папкі і файлы, якія з вамі абагулілі іншыя карыстальнікі."
       ],
       "Finalizing": [
         "Завяршэнне"
@@ -4593,10 +4596,10 @@
         "з гісторыі версій?"
       ],
       "Get the app to backup photos from your phone.": [
-        "Атрымаць праграму для рэзервовай копіі фатаграфій з вашай прылады."
+        "Атрымайце праграму для рэзервовай копіі фатаграфій з вашай прылады."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Атрымаць настольную праграму, каб сінхранізаваць файлы з камп'ютара."
+        "Атрымайце настольную праграму, каб сінхранізаваць файлы з камп'ютара."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Пазнаёмцеся з ${ DRIVE_APP_NAME } і атрымайце бонус у 3 ГБ! Гэта можна зрабіць ужо сёння."
@@ -7133,14 +7136,11 @@
       "Password health": [
         "Якасць пароля"
       ],
-      "Password manager to secure credentials": [
-        "Менеджар пароляў для бяспекі ўліковых даных"
-      ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
-      "Phone support (40+ users)": [
-        "Падтрымка па тэлефоне (ад 40 карыстальнікаў)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -7285,6 +7285,9 @@
         "Абагульванне сховішча (да ${ n } асоб)",
         "Абагульванне сховішча (да ${ n } асоб)",
         "Абагульванне сховішча (да ${ n } асоб)"
+      ],
+      "Version history": [
+        "Гісторыя версій"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканіруем цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
@@ -7536,9 +7539,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Падтрымку па тэлефоне ад каманды абслугоўвання кліентаў ${ BRAND_NAME } можна атрымаць у працоўныя дні згодна з еўрапейскім графікам для кліентаў, якія маюць 6 або больш карыстальнікаў"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
@@ -8022,9 +8022,6 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Захоўвайце свае файлы і бяспечна іх абагульвайце. Пачніце з абароны вашых самых прыватных файлаў, такіх як пасведчанні асобы, кантракты і асабістыя фатаграфіі."
-      ],
-      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
-        "Уладальнік патрабуе пацвердзіць абагульванне доступу. Вы атрымаеце ліст, калі пацвярджэнне будзе атрымана."
       ],
       "Upload a file": [
         "Запампаваць файл"
@@ -10660,11 +10657,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin праз электронную пошту"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Бяспечна захоўвайце і пераводзьце свае сродкі ў біткойнах"
       ]
     },
     "wallet_signup_2024:Bug category": {

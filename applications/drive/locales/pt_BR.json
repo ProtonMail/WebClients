@@ -453,6 +453,9 @@
       "Increase": [
         "Aumentar"
       ],
+      "Invite": [
+        "Convidar"
+      ],
       "Keep my Plus subscription": [
         "Manter minha assinatura Plus"
       ],
@@ -3365,6 +3368,9 @@
       ],
       "You have successfully joined the family group": [
         "Você entrou com sucesso no grupo familiar"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Você tem faturas não pagas. Pague antes de juntar-se ao grupo."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
@@ -6879,14 +6885,8 @@
       "Password health": [
         "Estado da senha"
       ],
-      "Password manager to secure credentials": [
-        "Gerenciador de senhas para proteger credenciais"
-      ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
-      ],
-      "Phone support (40+ users)": [
-        "Suporte por telefone (40 ou mais usuários)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Recursos premium para ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
@@ -7285,9 +7285,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "O suporte por telefone da equipe de Sucesso do Cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 6 ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
@@ -7737,9 +7734,6 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Armazene seus arquivos e compartilhe-os com segurança. Comece protegendo seus arquivos mais privados, como identidades, contratos e fotos pessoais."
-      ],
-      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
-        "O proprietário precisa confirmar o acesso de compartilhamento. Você receberá um e-mail quando isso for feito."
       ],
       "Upload a file": [
         "Enviar um arquivo"
@@ -10256,11 +10250,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Guarde e transfira suas bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {
