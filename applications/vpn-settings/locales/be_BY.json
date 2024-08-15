@@ -202,9 +202,6 @@
       "Disable": [
         "Адключыць"
       ],
-      "Disable E2EE for group address": [
-        "Адключыць шыфраванне скразным метадам для групавых адрасоў"
-      ],
       "Discard": [
         "Адхіліць"
       ],
@@ -276,9 +273,6 @@
       ],
       "enable desktop notifications": [
         "ўключэнне апавяшчэнняў на працоўным стале"
-      ],
-      "Enable E2EE for group address": [
-        "Уключыць шыфраванне скразным метадам для групавых адрасоў"
       ],
       "Enable multi-user support": [
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
@@ -451,9 +445,6 @@
       "Remove all members": [
         "Выдаліць усіх удзельнікаў"
       ],
-      "Remove all members from group": [
-        "Выдаліць усіх удзельнікаў з групы"
-      ],
       "Remove bonuses": [
         "Выдаліць бонусы"
       ],
@@ -483,9 +474,6 @@
       ],
       "Resend code": [
         "Адправіць код яшчэ раз"
-      ],
-      "Resend invitation": [
-        "Паўторна адправіць запрашэнне"
       ],
       "Reset credentials": [
         "Скінуць уліковыя даныя"
@@ -732,11 +720,6 @@
       ],
       "Zoom out": [
         "Паменшыць"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Дадаць дамен pm.me"
       ]
     },
     "Action subscription": {
@@ -3749,11 +3732,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Наладзьце вонкавы выгляд праграм ${ BRAND_NAME }"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -6431,14 +6414,11 @@
       "Password health": [
         "Якасць пароля"
       ],
-      "Password manager to secure credentials": [
-        "Менеджар пароляў для бяспекі ўліковых даных"
-      ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
-      "Phone support (40+ users)": [
-        "Падтрымка па тэлефоне (ад 40 карыстальнікаў)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -6595,6 +6575,9 @@
         "Абагульванне сховішча (да ${ n } асоб)",
         "Абагульванне сховішча (да ${ n } асоб)",
         "Абагульванне сховішча (да ${ n } асоб)"
+      ],
+      "Version history": [
+        "Гісторыя версій"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканіруем цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
@@ -6877,9 +6860,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Падтрымку па тэлефоне ад каманды абслугоўвання кліентаў ${ BRAND_NAME } можна атрымаць у працоўныя дні згодна з еўрапейскім графікам для кліентаў, якія маюць 6 або больш карыстальнікаў"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
       ],
@@ -7137,20 +7117,6 @@
       ],
       "The whole organization": [
         "Уся арганізацыя"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Усе, у тым ліку староннія"
-      ],
-      "Members": [
-        "Удзельнікі"
-      ],
-      "Nobody by default": [
-        "Прадвызначана ніхто"
-      ],
-      "Organization members": [
-        "Удзельнікі арганізацыі"
       ]
     },
     "Organization capacity error": {
@@ -7610,6 +7576,9 @@
       ],
       "Gift code": [
         "Падарункавы код"
+      ],
+      "Group name": [
+        "Назва групы"
       ],
       "Other": [
         "Іншае"
@@ -9602,10 +9571,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -10566,11 +10535,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin праз электронную пошту"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Бяспечна захоўвайце і пераводзьце свае сродкі ў біткойнах"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -445,9 +445,6 @@
       "Remove all members": [
         "Alle Mitglieder entfernen"
       ],
-      "Remove all members from group": [
-        "Alle Mitglieder aus der Gruppe entfernen"
-      ],
       "Remove bonuses": [
         "Prämien entfernen"
       ],
@@ -477,9 +474,6 @@
       ],
       "Resend code": [
         "Code erneut senden"
-      ],
-      "Resend invitation": [
-        "Einladung erneut senden"
       ],
       "Reset credentials": [
         "Anmeldedaten zurücksetzen"
@@ -723,11 +717,6 @@
       ],
       "Zoom out": [
         "Verkleinern"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "pm.me-Domain hinzufügen"
       ]
     },
     "Action subscription": {
@@ -2794,6 +2783,9 @@
       "You have successfully joined the family group": [
         "Du bist erfolgreich der Familiengruppe beigetreten"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Gruppenabonnement beitrittst."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du musst eine eigene Domain konfigurieren, bevor du mehrere Benutzer hinzufügst."
       ],
@@ -2877,6 +2869,9 @@
       ],
       "An error occurred, please try again": [
         "Ein Fehler ist aufgetreten. Bitte erneut versuchen"
+      ],
+      "Family name updated": [
+        "Familienname aktualisiert"
       ],
       "Member updated": [
         "Mitglied aktualisiert"
@@ -3611,6 +3606,10 @@
       "Country code": [
         "Ländercode"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Erstelle eine sichere Cloud für ${ n } Nutzer",
+        "Erstelle eine sichere Cloud für ${ n } Nutzer"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Erstelle und verwalte Unterkonten und weise ihnen E-Mail-Adressen in deiner eigenen Domain zu."
       ],
@@ -3642,11 +3641,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Passe das Aussehen der ${ BRAND_NAME }-Anwendungen an."
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -6247,14 +6246,11 @@
       "Password health": [
         "Passwortsicherheit"
       ],
-      "Password manager to secure credentials": [
-        "Passwortmanager um Anmeldedaten zu schützen"
-      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
-      "Phone support (40+ users)": [
-        "Telefonischer Support (ab 40 Benutzern)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premiumfunktionen von ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Priorisierter E-Mail-Support"
@@ -6403,6 +6399,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Tresor teilen (bis zu ${ n } Person)",
         "Tresor teilen (bis zu ${ n } Personen)"
+      ],
+      "Version history": [
+        "Versionsverlauf"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
@@ -6683,9 +6682,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonische Unterstützung ist durch das ${ BRAND_NAME }-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 6 oder mehr Benutzern verfügbar."
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindert den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
       ],
@@ -6941,20 +6937,6 @@
       ],
       "The whole organization": [
         "Die gesamte Organisation"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Jeder, inkl. von außerhalb der Organisation"
-      ],
-      "Members": [
-        "Mitglieder"
-      ],
-      "Nobody by default": [
-        "Standardmäßig niemand"
-      ],
-      "Organization members": [
-        "Organisationsmitglieder"
       ]
     },
     "Organization capacity error": {
@@ -7404,6 +7386,9 @@
       ],
       "Gift code": [
         "Gutscheincode"
+      ],
+      "Group name": [
+        "Name der Gruppe"
       ],
       "Other": [
         "Weitere"
@@ -9314,11 +9299,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -10240,11 +10225,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via E-Mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bitcoins sicher aufbewahren und überweisen"
       ]
     },
     "wallet_signup_2024:Bug category": {

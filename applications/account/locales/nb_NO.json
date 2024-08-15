@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "activate": [
-        "aktiver"
-      ],
       "Activate": [
         "Aktiver"
+      ],
+      "activate": [
+        "aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -391,9 +391,6 @@
       "Disable": [
         "Deaktiver"
       ],
-      "Disable E2EE for group address": [
-        "Deaktiver ende-til-ende-kryptert for gruppeadresse"
-      ],
       "Disable recovery phrase": [
         "Deaktiver gjenopprettingsfrase"
       ],
@@ -495,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Aktiver enhetsbasert gjenoppretting"
-      ],
-      "Enable E2EE for group address": [
-        "Aktiver ende-til-ende-kryptert for gruppeadresse"
       ],
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
@@ -805,11 +799,11 @@
       "Refresh status": [
         "Oppdater status"
       ],
-      "refresh the page": [
-        "oppdater siden"
-      ],
       "Refresh the page": [
         "Oppdater siden"
+      ],
+      "refresh the page": [
+        "oppdater siden"
       ],
       "Reload": [
         "Last inn på nytt"
@@ -819,9 +813,6 @@
       ],
       "Remove all members": [
         "Fjern alle medlemmer"
-      ],
-      "Remove all members from group": [
-        "Fjern alle medlemmene fra gruppen"
       ],
       "Remove bonuses": [
         "Fjern bonuser"
@@ -867,9 +858,6 @@
       ],
       "Resend code": [
         "Send kode på nytt"
-      ],
-      "Resend invitation": [
-        "Send invitasjon på nytt"
       ],
       "Reset credentials": [
         "Tilbakestill legitimasjon"
@@ -1266,9 +1254,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Legg til pm.me domene"
-      ],
       "Resuming forward": [
         "Gjenopptar videresending"
       ]
@@ -1622,6 +1607,14 @@
         "Velg ditt slutten av året-tilbud"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsplass (2x mer enn noe annen plan)"
@@ -1643,14 +1636,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planen ${ plan } er bare tilbake i en begrenset periode"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få **${ discountPercentage } av ${ plan.Title }** når du abonnerer for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3618,6 +3603,43 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Du er invitert til å få tilgang til en fil i ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**Samarbeidende:** redigeringsprogram for nettbaserte dokumenter"
+      ],
+      "**GDPR** and **HIPAA** compliant": [
+        "**GDPR-** og **HIPAA-**kompatibel"
+      ],
+      "**ISO 27001** certified": [
+        "**ISO 27001-**sertifisert"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**Sikker:** ende-til-ende-kryptering"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**Enkelt og brukervennlig:** importer filene og oppsettet ditt på få minutter"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Avansert beskyttelse som går utover industristandarder"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "Bli med de 50 000+ organisasjonene som allerede drar nytte av ${ BRAND_NAME }s sikkerhet"
+      ],
+      "Protect sensitive business information and collaborate securely": [
+        "Beskytt sensitiv forretningsinformasjon og samarbeid sikkert"
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "Sikker skylagring som gir deg kontroll over dataene dine"
+      ],
+      "Tailored made solutions for larger organizations with custom needs": [
+        "Skreddersydde løsninger for større organisasjoner med spesifikke behov"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "Den eneste forretningsløsningen som er:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -6645,6 +6667,9 @@
         "Berørt bruker er på rad",
         "Berørte brukere er på radene"
       ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Etter å ha blitt låst, må organisasjonsmedlemmer låse opp ${ PASS_APP_NAME } med passord eller PIN-kode osv."
+      ],
       "Align left": [
         "Juster til venstre"
       ],
@@ -6934,6 +6959,10 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og etikettene du vil importere."
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Opprett en sikker sky for ${ n }-medlem",
+        "Opprett en sikker sky for ${ n }-medlemmer"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opprette og administrere underkontoer og tilordne dem e-postadresser på ditt egendefinerte domene."
       ],
@@ -6992,11 +7021,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerte tjenere"
-      ],
       "dedicated servers": [
         "dedikerte tjenere"
+      ],
+      "Dedicated servers": [
+        "Dedikerte tjenere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerte tjenere med dedikert IP-adresse(r) kan bli lagt til private mellomtjenere for å aktivere finjustert tilgangskontroll."
@@ -9576,6 +9605,9 @@
       "15 minutes": [
         "15 minutter"
       ],
+      "2 minutes": [
+        "2 minutter"
+      ],
       "30 minutes": [
         "30 minutter"
       ],
@@ -9912,6 +9944,9 @@
       "Disable sharing outside the organization": [
         "Deaktiver deling utenfor organisasjonen"
       ],
+      "Disabled": [
+        "Deaktivert"
+      ],
       "Display name": [
         "Visningsnavn"
       ],
@@ -10109,6 +10144,9 @@
       ],
       "Link label (optional)": [
         "Etikett for kobling (valgfritt)"
+      ],
+      "Lock app after inactivity": [
+        "Lås app etter inaktivitet"
       ],
       "Logo": [
         "Logo"
@@ -10981,6 +11019,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Tidsbegrenset tilbud: **Få opptil 35% avslag** på årlige planer"
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Tidsbegrenset tilbud: **Spar ${ discount } på ${ name } med en 1-års plan**"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du er blitt invitert til å forsøke ${ MAIL_APP_NAME }"
       ]
@@ -11405,6 +11446,32 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for $1": [
+        "Kom i gang for $1"
+      ],
+      "Get started for 1 €": [
+        "Kom i gang for 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom i gang for 1 CHF"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsett med Free"
@@ -11432,32 +11499,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for $1": [
-        "Kom i gang for $1"
-      ],
-      "Get started for 1 €": [
-        "Kom i gang for 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Kom i gang for 1 CHF"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
       ]
     },
     "new_plans: feature": {
@@ -11713,14 +11754,11 @@
       "Password health": [
         "Passordhelse"
       ],
-      "Password manager to secure credentials": [
-        "Passordbehandling for å sikre legitimasjon"
-      ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
-      "Phone support (40+ users)": [
-        "Telefonstøtte (40+ brukere)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premium-funksjoner til ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Prioritert e-poststøtte"
@@ -11872,6 +11910,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling av hvelv (opptil ${ n } person)",
         "Deling av hvelv (opptil ${ n } personer)"
+      ],
+      "Version history": [
+        "Versjonshistorikk"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -12202,9 +12243,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Tilpass e-postsignaturen din med logoer, bilder, ikoner for sosiale medier, koblinger til kontaktinformasjonen din og mer."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonstøtte er tilgjengelig fra ${ BRAND_NAME }-kundesuksessteamet i europeisk arbeidstid, for kunder med 6 eller flere brukere."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer at meldinger åpnes av ${ BRAND_NAME } eller tredjeparter. De eneste som kan lese meldingene, er avsenderen og den tiltenkte mottakeren."
@@ -12756,20 +12794,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Alle, inkl. utenfor"
-      ],
-      "Members": [
-        "Medlemmer"
-      ],
-      "Nobody by default": [
-        "Ingen som standard"
-      ],
-      "Organization members": [
-        "Organisasjonsmedlemmer"
       ]
     },
     "Option delay send seconds": {
@@ -13536,6 +13560,9 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "Group name": [
+        "Gruppenavn"
       ],
       "Link": [
         "Kobling"
@@ -14469,6 +14496,16 @@
       ],
       "Verification": [
         "Verifisering"
+      ]
+    },
+    "signup: Action": {
+      "Request trial": [
+        "Be om prøveversjon"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR and HIPAA compliant": [
+        "GDPR- og HIPAA-kompatibel"
       ]
     },
     "specialoffer: Action": {
@@ -15978,10 +16015,10 @@
       "Card verification": [
         "Verifisering av kort"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-all-adresse"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-all-adresse"
       ],
       "Change login password": [
@@ -17657,11 +17694,6 @@
       ],
       "You're Invited.": [
         "Du er invitert."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Hold og overfør bitcoin sikkert"
       ]
     },
     "wallet_signup_2024:Bug category": {

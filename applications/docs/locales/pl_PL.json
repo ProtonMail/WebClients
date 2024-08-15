@@ -3737,6 +3737,12 @@
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Utwórz bezpieczną chmurę dla ${ n } użytkownika",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników"
+      ],
       "Create in": [
         "Utwórz w"
       ],
@@ -5905,14 +5911,11 @@
       "Password health": [
         "Jakość hasła"
       ],
-      "Password manager to secure credentials": [
-        "Menedżer haseł do zabezpieczania danych logowania"
-      ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
       ],
-      "Phone support (40+ users)": [
-        "Wsparcie telefoniczne (dla ponad 40 użytkowników)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Funkcje premium usług ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Priorytetowe wsparcie e-mail"
@@ -6301,9 +6304,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizuj swój podpis za pomocą logo, obrazów, ikon mediów społecznościowych, linków do szczegółów kontaktu i innych elementów"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej 6 użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta ${ BRAND_NAME }"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zapobiega dostępowi do wiadomości przez ${ BRAND_NAME } lub strony trzecie. Wiadomości mogą zostać odczytane tylko przez nadawcę i odbiorcę."
@@ -8589,11 +8589,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoiny przez e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Przechowuj i wysyłaj Bitcoiny w bezpieczny sposób"
       ]
     },
     "wallet_signup_2024:Bug category": {

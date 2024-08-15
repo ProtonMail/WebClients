@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "activate": [
-        "kullanıma al"
-      ],
       "Activate": [
         "Kullanıma al"
+      ],
+      "activate": [
+        "kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -391,9 +391,6 @@
       "Disable": [
         "Kapat"
       ],
-      "Disable E2EE for group address": [
-        "Grup adresi için E2EE kullanılamasın"
-      ],
       "Disable recovery phrase": [
         "Kurtarma ifadesini kapat"
       ],
@@ -495,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Aygıt ile kurtarmayı kullanıma al"
-      ],
-      "Enable E2EE for group address": [
-        "Grup adresi için E2EE kullanılsın"
       ],
       "Enable multi-user support": [
         "Çok kullanıcı desteğini aç"
@@ -805,11 +799,11 @@
       "Refresh status": [
         "Durumu yenile"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Reload": [
         "Yenile"
@@ -819,9 +813,6 @@
       ],
       "Remove all members": [
         "Tüm üyeleri kaldır"
-      ],
-      "Remove all members from group": [
-        "Gruptaki tüm üyeleri kaldır"
       ],
       "Remove bonuses": [
         "Hediyeleri kaldır"
@@ -867,9 +858,6 @@
       ],
       "Resend code": [
         "Kodu yeniden gönder"
-      ],
-      "Resend invitation": [
-        "Daveti yeniden gönder"
       ],
       "Reset credentials": [
         "Kimlik doğrulama bilgilerini sıfırla"
@@ -1266,9 +1254,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "pm.me etki alanı ekle"
-      ],
       "Resuming forward": [
         "İletme sürdürülüyor"
       ]
@@ -1622,6 +1607,14 @@
         "Yıl Sonu teklifini seçin"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB depolama alanı (diğer tarifelerin 2 katı)"
@@ -1643,14 +1636,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } tarifesi kısa bir süre için geri döndü"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor fakat **${ months }** için **${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage }** indirimden yararlanabilirsiniz."
       ]
     },
     "bf2023: Offers": {
@@ -7036,11 +7021,11 @@
       "Data locked": [
         "Veriler kilitlendi"
       ],
-      "Dedicated servers": [
-        "Size ayrılmış sunucular"
-      ],
       "dedicated servers": [
         "size ayrılmış sunucular"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir."
@@ -9626,9 +9611,6 @@
       "30 seconds": [
         "30 saniye"
       ],
-      "4 hours": [
-        "4 saat"
-      ],
       "5 minutes": [
         "5 dakika"
       ],
@@ -11031,6 +11013,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Sınırlı süreli teklif: Yıllık tarifelerde **35% indirim alın**"
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Sınırlı süreli teklif: **${ name } uygulamasında 1 yıllık tarife ile ${ discount } tasarruf edin**"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } uygulamasını denemeye davet edildiniz"
       ]
@@ -11455,6 +11440,32 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Get started for $1": [
+        "$1 ile başlayın"
+      ],
+      "Get started for 1 €": [
+        "1 € ile başlayın"
+      ],
+      "Get started for CHF 1": [
+        "1 CHF ile başlayın"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free tarifesini kullanmayı sürdür"
@@ -11482,32 +11493,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Get started for $1": [
-        "$1 ile başlayın"
-      ],
-      "Get started for 1 €": [
-        "1 € ile başlayın"
-      ],
-      "Get started for CHF 1": [
-        "1 CHF ile başlayın"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
       ]
     },
     "new_plans: feature": {
@@ -11763,14 +11748,8 @@
       "Password health": [
         "Parola sağlığı"
       ],
-      "Password manager to secure credentials": [
-        "Kimlik doğrulama bilgilerinin güvenliğini sağlamak için parola yöneticisi"
-      ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
-      ],
-      "Phone support (40+ users)": [
-        "Telefon desteği (40+ kullanıcı)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Ücretli ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME } özellikleri"
@@ -12258,9 +12237,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "6 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde ${ BRAND_NAME } müşteri başarısı ekibinden telefonla destek alabilirsiniz"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
@@ -12791,20 +12767,6 @@
       ],
       "Trash": [
         "Çöpe at"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Herkes, dışardakilerle"
-      ],
-      "Members": [
-        "Üyeler"
-      ],
-      "Nobody by default": [
-        "Varsayılan olarak hiç kimse"
-      ],
-      "Organization members": [
-        "Kuruluş üyeleri"
       ]
     },
     "Option delay send seconds": {
@@ -13571,6 +13533,9 @@
       ],
       "Gift code": [
         "Hediye kodu"
+      ],
+      "Group name": [
+        "Grup adı"
       ],
       "Link": [
         "Bağlantı"
@@ -16026,10 +15991,10 @@
       "Card verification": [
         "Kart doğrulama"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Tümünü toplama adresi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Tümünü toplama adresi"
       ],
       "Change login password": [
@@ -17682,11 +17647,6 @@
       ],
       "You're Invited.": [
         "Davetlisiniz."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bitcoin'lerinizi güvenle tutun ve transfer edin"
       ]
     },
     "wallet_signup_2024:Bug category": {

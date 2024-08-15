@@ -844,11 +844,11 @@
       "Not saved": [
         "Non salvato"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Apri"
@@ -5683,6 +5683,9 @@
         "${ numOccurrences } occorrenza trovata nel contenuto delle mail",
         "${ numOccurrences } occorrenze trovate nel contenuto delle mail"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } fornisce un modo semplice per creare accessi a siti di terze parti non attendibili in cui non si desidera esporre il proprio indirizzo email."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } richiede almeno 1 server dedicato ${ serverPricePerMonth }"
       ],
@@ -6021,6 +6024,10 @@
       ],
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Crea un cloud sicuro per ${ n } membro",
+        "Crea un cloud sicuro per ${ n } membri"
       ],
       "Create in": [
         "Crea in"
@@ -6741,6 +6748,9 @@
       ],
       "Scheduling message...": [
         "Programmazione del messaggio..."
+      ],
+      "Scribe panel": [
+        "Pannello di Scribe"
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "L'opzione di ricerca che consente di cercare in modo sicuro le parole chiave nel corpo dei messaggi di posta elettronica."
@@ -9233,14 +9243,11 @@
       "Password health": [
         "Stato delle password"
       ],
-      "Password manager to secure credentials": [
-        "Gestore password per la protezione delle credenziali"
-      ],
       "Password-protected Emails": [
         "Email protette da password"
       ],
-      "Phone support (40+ users)": [
-        "Assistenza telefonica (Più di 40 utenti)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Funzionalità premium di ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Assistenza email prioritaria"
@@ -9379,6 +9386,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Condivisione delle casseforti (fino a ${ n } persona)",
         "Condivisione delle casseforti (fino a ${ n } persone)"
+      ],
+      "Version history": [
+        "Cronologia delle versioni"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
@@ -9633,9 +9643,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "L'assistenza telefonica è disponibile dal team del servizio clienti ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con 6 o più utenti"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impedisce l'accesso ai messaggi da parte di ${ BRAND_NAME } o di terzi. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."
@@ -12463,6 +12470,9 @@
       "Groups": [
         "Gruppi"
       ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Nascondi la tua email con ${ PASS_APP_NAME }"
+      ],
       "Human verification": [
         "Verifica umana"
       ],
@@ -13082,11 +13092,6 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Accedi all'app Wallet"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Conserva e trasferisci i tuoi bitcoin in modo sicuro"
       ]
     },
     "wallet_signup_2024:Bug category": {

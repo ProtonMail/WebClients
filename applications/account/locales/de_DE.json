@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "activate": [
-        "aktivieren"
-      ],
       "Activate": [
         "Aktivieren"
+      ],
+      "activate": [
+        "aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -799,11 +799,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "refresh the page": [
+        "aktualisiere die Seite"
       ],
       "Reload": [
         "Neu laden"
@@ -813,9 +813,6 @@
       ],
       "Remove all members": [
         "Alle Mitglieder entfernen"
-      ],
-      "Remove all members from group": [
-        "Alle Mitglieder aus der Gruppe entfernen"
       ],
       "Remove bonuses": [
         "Prämien entfernen"
@@ -861,9 +858,6 @@
       ],
       "Resend code": [
         "Code erneut senden"
-      ],
-      "Resend invitation": [
-        "Einladung erneut senden"
       ],
       "Reset credentials": [
         "Anmeldedaten zurücksetzen"
@@ -1257,9 +1251,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "pm.me-Domain hinzufügen"
-      ],
       "Resuming forward": [
         "Weiterleitung wird fortgesetzt"
       ]
@@ -1613,6 +1604,14 @@
         "Wähle dein Jahresendangebot"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1634,14 +1633,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -3605,6 +3596,34 @@
         "Du wurdest eingeladen, auf eine Datei in ${ DRIVE_APP_NAME } zuzugreifen."
       ]
     },
+    "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**Kollaborativ:** Online-Dokumenteditor"
+      ],
+      "**GDPR** and **HIPAA** compliant": [
+        "**DSGVO** und **HIPAA** konform"
+      ],
+      "**ISO 27001** certified": [
+        "**ISO 27001** zertifiziert"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**Sicher:** Ende-zu-Ende-Verschlüsselung"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**Einfach und benutzerfreundlich:** Importiere deine Dateien und richte es in wenigen Minuten ein"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "Werde Teil der 50.000+ Organisationen die bereits von ${ BRAND_NAME }s Sicherheit profitieren"
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "Sicherer Cloud-Speicher, der dir volle Kontrolle über deine Daten gibt"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "Die einzige Geschäftslösung die:"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Erweiterter Versionsverlauf"
@@ -5177,11 +5196,17 @@
       "You have successfully joined the family group": [
         "Du bist erfolgreich der Familiengruppe beigetreten"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Gruppenabonnement beitrittst."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Du musst eine eigene Domain konfigurieren, bevor du mehrere Benutzer hinzufügst."
       ],
       "You need to configure a custom domain before creating a new user.": [
         "Du musst eine eigene Domain konfigurieren, bevor du einen neuen Benutzer erstellst."
+      ],
+      "You will lose access to all premium features and storage space included with ${ plan }.": [
+        "Du wirst Zugriff zu allen Premiumfunktionen und Speicherplatz, der mit ${ plan } kommt, verlieren."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
@@ -5263,6 +5288,9 @@
       ],
       "An error occurred, please try again": [
         "Ein Fehler ist aufgetreten. Bitte erneut versuchen"
+      ],
+      "Family name updated": [
+        "Familienname aktualisiert"
       ],
       "Member updated": [
         "Mitglied aktualisiert"
@@ -6898,6 +6926,10 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchtest."
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Erstelle eine sichere Cloud für ${ n } Nutzer",
+        "Erstelle eine sichere Cloud für ${ n } Nutzer"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Erstelle und verwalte Unterkonten und weise ihnen E-Mail-Adressen in deiner eigenen Domain zu."
       ],
@@ -6956,11 +6988,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "Dedicated servers": [
-        "Dezidierte Server"
-      ],
       "dedicated servers": [
         "dedizierte Server"
+      ],
+      "Dedicated servers": [
+        "Dezidierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -9525,6 +9557,9 @@
       "15 minutes": [
         "15 Minuten"
       ],
+      "2 minutes": [
+        "2 Minuten"
+      ],
       "30 minutes": [
         "30 Minuten"
       ],
@@ -9858,6 +9893,9 @@
       "Disable sharing outside the organization": [
         "Teilen außerhalb des Unternehmens deaktivieren"
       ],
+      "Disabled": [
+        "Deaktiviert"
+      ],
       "Display name": [
         "Anzeigename"
       ],
@@ -10055,6 +10093,9 @@
       ],
       "Link label (optional)": [
         "Link-Beschreibung (optional)"
+      ],
+      "Lock app after inactivity": [
+        "App nach Inaktivität sperren"
       ],
       "Logo": [
         "Logo"
@@ -10865,6 +10906,9 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } aktivieren"
+      ],
+      "Enable detailed events": [
+        "Aktiviere detaillierte Ereignisse"
       ]
     },
     "Mail import summary": {
@@ -10917,6 +10961,9 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Zeitlich begrenztes Angebot: **Erhalte bis zu 35 % Rabatt** auf Jahresabonnements"
+      ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Zeitlich begrenztes Angebot: **Spare ${ discount } bei ${ name } mit einem 1-Jahresplan**"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du wurdest eingeladen, ${ MAIL_APP_NAME } zu testen."
@@ -11342,6 +11389,32 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Get started for $1": [
+        "Starten Sie für 1 $"
+      ],
+      "Get started for 1 €": [
+        "Starten Sie für 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Starten Sie für 1 CHF"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Mit Free fortfahren"
@@ -11369,32 +11442,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Get started for $1": [
-        "Starten Sie für 1 $"
-      ],
-      "Get started for 1 €": [
-        "Starten Sie für 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Starten Sie für 1 CHF"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
       ]
     },
     "new_plans: feature": {
@@ -11650,14 +11697,11 @@
       "Password health": [
         "Passwortsicherheit"
       ],
-      "Password manager to secure credentials": [
-        "Passwortmanager um Anmeldedaten zu schützen"
-      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
-      "Phone support (40+ users)": [
-        "Telefonischer Support (ab 40 Benutzern)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premiumfunktionen von ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Priorisierter E-Mail-Support"
@@ -11809,6 +11853,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Tresor teilen (bis zu ${ n } Person)",
         "Tresor teilen (bis zu ${ n } Personen)"
+      ],
+      "Version history": [
+        "Versionsverlauf"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
@@ -12139,9 +12186,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonische Unterstützung ist durch das ${ BRAND_NAME }-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 6 oder mehr Benutzern verfügbar."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindert den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
@@ -12672,20 +12716,6 @@
       ],
       "Trash": [
         "In Papierkorb verschieben"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Jeder, inkl. von außerhalb der Organisation"
-      ],
-      "Members": [
-        "Mitglieder"
-      ],
-      "Nobody by default": [
-        "Standardmäßig niemand"
-      ],
-      "Organization members": [
-        "Organisationsmitglieder"
       ]
     },
     "Option delay send seconds": {
@@ -13452,6 +13482,9 @@
       ],
       "Gift code": [
         "Gutscheincode"
+      ],
+      "Group name": [
+        "Name der Gruppe"
       ],
       "Link": [
         "Link"
@@ -14385,6 +14418,11 @@
       ],
       "Verification": [
         "Verifikation"
+      ]
+    },
+    "signup: Action": {
+      "Request trial": [
+        "Probeversion anfordern"
       ]
     },
     "specialoffer: Action": {
@@ -15897,11 +15935,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-all address": [
-        "Catch-all-Weiterleitungsadresse"
-      ],
       "Catch-All address": [
         "Catch-all-Adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-Weiterleitungsadresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -17006,6 +17044,9 @@
       "Enable/disable desktop and mobile notifications": [
         "Mitteilungen auf Desktop- und Mobilgeräten aktivieren/deaktivieren"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Durch Aktivieren von detaillierten Ereignissen wird die IP-Adresse für jedes Ereignis gespeichert."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Endpunkt-URL des Identitätsanbieters (z.B. https://idp.beispiel.com/sso/saml)"
       ],
@@ -17544,11 +17585,6 @@
       ],
       "You're Invited.": [
         "Du bist eingeladen."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bitcoins sicher aufbewahren und überweisen"
       ]
     },
     "wallet_signup_2024:Bug category": {

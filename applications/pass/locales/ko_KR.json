@@ -1515,8 +1515,14 @@
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "생체인증으로 잠금 해제하려면 추가 암호를 확인하세요."
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "비밀번호를 사용하는 자동 잠금을 위해 추가 비밀번호를 확인해 주세요."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "지금의 잠금을 등록 해제하기 위해 추가 비밀번호를 확인해 주세요."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "자동 잠금 시간을 업데이트하기 위해 추가 비밀번호를 확인해 주세요."
       ],
       "Please confirm your password": [
         "비밀번호를 확인하세요"
@@ -1882,9 +1888,6 @@
       ],
       "30 seconds": [
         "30초"
-      ],
-      "4 hours": [
-        "4시간"
       ],
       "5 minutes": [
         "5분"
