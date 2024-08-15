@@ -844,10 +844,10 @@
       "Not saved": [
         "Non enregistré"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -3607,11 +3607,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Facturation tous les 2 ans à ${ amountBilled }. Les réductions se basent sur le prix mensuel standard."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Facturation annuelle à ${ amountBilled }. Économisez ${ amountSave } par an sur 2 abonnements individuels ${ BRAND_NAME } Unlimited."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 To de stockage"
+      ],
       "2 users": [
         "2 utilisateurs"
       ],
@@ -5684,7 +5690,7 @@
         "${ numOccurrences } occurrences trouvées dans le contenu du courrier"
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "${ PASS_APP_NAME } offre un moyen simple de créer des identifiants sur des sites tiers peu fiables pour lesquels vous ne voulez pas révéler votre véritable adresse e-mail."
+        "${ PASS_APP_NAME } offre un moyen simple de créer des identifiants sur des sites tiers peu fiables pour lesquels vous ne voulez pas dévoiler votre véritable adresse e-mail."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
@@ -9059,6 +9065,14 @@
         "${ n } message par jour",
         "${ n } messages par jour"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } coffre-fort ${ PASS_SHORT_APP_NAME } partagé par utilisateur",
+        "${ n } coffres-forts ${ PASS_SHORT_APP_NAME } partagés par utilisateur"
+      ],
+      "${ n } user": [
+        "${ n } utilisateur",
+        "Jusqu'à ${ n } utilisateurs"
+      ],
       "${ n } vault": [
         "${ n } coffre-fort",
         "${ n } coffres-forts"
@@ -9066,6 +9080,10 @@
       "${ n } VPN connection": [
         "${ n } connexion VPN",
         "${ n } connexions VPN"
+      ],
+      "${ options }-day file version history": [
+        "Historique des versions de fichier datant d'${ options } jour",
+        "Historique des versions de fichier datant de ${ options } jours"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
@@ -9080,8 +9098,17 @@
       "${ size } attachment size": [
         "${ size } de pièces jointes"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } d'espace de stockage sécurisé par utilisateur"
+      ],
       "${ size } storage": [
         "${ size } d'espace de stockage"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Pour ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Pour tous les services ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 utilisateur"
@@ -9136,6 +9163,9 @@
       ],
       "Contact groups management": [
         "Gestion des groupes de contacts"
+      ],
+      "Custom and secure business email": [
+        "Adresse e-mail professionnelle sécurisée et personnalisée"
       ],
       "Custom domains for email aliases": [
         "Domaines personnalisés pour les alias d'adresse e-mail"
@@ -9231,6 +9261,9 @@
       "Multiple admin roles": [
         "Plusieurs rôles d'administrateur"
       ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
       "Organize items with multiple vaults": [
         "Plusieurs coffres-forts pour organiser vos mots de passe"
       ],
@@ -9240,14 +9273,14 @@
       "Password health": [
         "Sécurité des mots de passe"
       ],
-      "Password manager to secure credentials": [
-        "Gestionnaire de mots de passe pour sécuriser vos identifiants"
+      "Password manager": [
+        "Gestionnaire de mots de passe"
       ],
       "Password-protected Emails": [
         "Messages protégés par mot de passe"
       ],
-      "Phone support (40+ users)": [
-        "Assistance téléphonique (compte 40 utilisateurs ou plus)"
+      "Phone support (20+ users)": [
+        "Assistance téléphonique (compte 20 utilisateurs ou plus)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
@@ -9298,6 +9331,9 @@
       "Send & receive invitations": [
         "Envoyer et recevoir des invitations"
       ],
+      "Share files with no size limit": [
+        "Partagez des fichiers sans limite de taille."
+      ],
       "Sign in as user": [
         "Se connecter en tant qu'utilisateur"
       ],
@@ -9315,6 +9351,9 @@
       ],
       "Strict no-logs policy": [
         "Politique stricte de non-journalisation (no log)"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchronisez et sauvegardez tous vos fichiers entre plusieurs appareils."
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -9351,6 +9390,9 @@
       ],
       "Unlimited messages per day": [
         "Aucune limite d'envoi de messages par jour"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Un nombre illimité de coffres-forts ${ PASS_SHORT_APP_NAME } partagés par utilisateur"
       ],
       "Unlimited shared vaults with access permissions": [
         "Nombre illimité de coffres-forts partagés avec droits d'accès"
@@ -9470,6 +9512,9 @@
       ],
       "Popular": [
         "Populaire"
+      ],
+      "Protect sensitive business information and collaborate securely.asdfasdfsdf": [
+        "Protégez les informations sensibles de vos activités et collaborez en toute sécurité."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protégez la vie privée de votre famille avec l'ensemble des services ${ BRAND_NAME }."
@@ -9642,8 +9687,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personnalisez votre signature d'e-mail avec des logos, images, icônes de réseaux sociaux, liens vers vos coordonnées…"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Un support téléphonique est disponible auprès de l'équipe service client ${ BRAND_NAME } aux heures de bureau européennes, pour les clients ayant 6 utilisateurs ou plus."
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Un support téléphonique est disponible auprès de l'équipe service client ${ BRAND_NAME } aux heures de bureau européennes, pour les clients ayant 20 utilisateurs ou plus."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Empêche l'accès aux messages par ${ BRAND_NAME } ou par des tiers, les seules personnes pouvant lire les messages étant l'expéditeur et le destinataire."
@@ -10426,6 +10471,11 @@
         "L'invitation de re-chiffrement n'a pas abouti. Veuillez réessayer."
       ]
     },
+    "Safety review": {
+      "You have recommended account safety actions": [
+        "Vous avez des actions de sécurité recommandées pour votre compte."
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Aucun message"
@@ -11065,6 +11115,9 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter des amis à rejoindre ${ BRAND_NAME }"
       ],
+      "Need more space?": [
+        "Besoin de plus de place ?"
+      ],
       "Schedule send": [
         "Programmer l'envoi"
       ],
@@ -11073,6 +11126,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Nous chargeons désormais les images par défaut et empêchons les expéditeurs de vous suivre.\nVous pouvez changer cela dans les ${ settingsLink }."
+      ],
+      "You can now collapse the navigation bar.": [
+        "Vous pouvez maintenant réduire la barre de de navigation."
       ],
       "You can now schedule your messages to be sent later": [
         "Vous pouvez désormais programmer vos messages pour les envoyer plus tard."
@@ -12432,6 +12488,9 @@
       "Enable message content search": [
         "Activer la recherche dans le contenu dans les messages"
       ],
+      "Enter 2FA code": [
+        "Entrez le code A2F"
+      ],
       "Enter your password": [
         "Saisissez votre mot de passe."
       ],
@@ -13096,8 +13155,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Constituez une réserve de bitcoins et réalisez des transactions en toute sécurité"
+      "A safer/easier way to hold & send Bitcoin": [
+        "Une façon plus sécurisée/simple de détenir et d'envoyer des bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {
