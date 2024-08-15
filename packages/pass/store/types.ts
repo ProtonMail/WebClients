@@ -1,10 +1,10 @@
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type {
+    AnyStorage,
     AppState,
     AppStatus,
     ClientEndpoint,
-    ExtensionStorage,
     LocalStoreData,
     MaybeNull,
     MaybePromise,
@@ -48,8 +48,8 @@ export interface RootSagaOptions {
      * current client is using for persisting data */
     setCache: (encrypted: EncryptedPassCache) => Promise<void>;
 
-    /** Retrieves storage on browser extension */
-    getExtensionStorage?: () => ExtensionStorage<LocalStoreData>;
+    /** Retrieves storage for the given client */
+    getStorage?: () => AnyStorage<LocalStoreData>;
 
     /** Callback with the result of the boot sequence. The `clearCache`
      * flag indicates if the boot failure should result in a cache wipe */
