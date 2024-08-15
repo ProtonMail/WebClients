@@ -364,6 +364,10 @@ export const getHasPassB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasPassPro(subscription) || hasPassBusiness(subscription);
 };
 
+export const getHasDriveB2BPlan = (subscription: MaybeFreeSubscription) => {
+    return hasDrivePro(subscription) || hasDriveBusiness(subscription);
+};
+
 const externalMemberB2BPlans: Set<PLANS | ADDON_NAMES> = new Set([
     VPN_PRO,
     VPN_BUSINESS,
