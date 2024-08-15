@@ -844,10 +844,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -5683,6 +5683,9 @@
         "Viestin sisällöstä löytyi ${ numOccurrences } tapahtumakerta",
         "Viestin sisällöstä löytyi ${ numOccurrences } tapahtumakertaa"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } tarjoaa yksinkertaisen tavan kirjautumistietojen luontiin epäluotettavien kolmansien osapuolten sivustoilla, joille et halua paljastaa todellista sähköpostiosoitettasi."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
       ],
@@ -6021,6 +6024,10 @@
       ],
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Luo suojattu pilvi ${ n } jäsenelle",
+        "Luo suojattu pilvi ${ n } jäsenelle"
       ],
       "Create in": [
         "Luo kalenteriin"
@@ -9233,14 +9240,11 @@
       "Password health": [
         "Salasanaterveys"
       ],
-      "Password manager to secure credentials": [
-        "Salasananhallinta kirjautumistietojen turvaamiseen"
-      ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
       ],
-      "Phone support (40+ users)": [
-        "Puhelinasiakaspalvelu (40+ käyttäjää)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Premium-ominaisuudet: ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -9379,6 +9383,9 @@
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
         "Holvin jakaminen (enintään ${ n } henkilöä)"
+      ],
+      "Version history": [
+        "Versiohistoria"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
@@ -9628,9 +9635,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "${ BRAND_NAME }in asiakastyytyväisyystiimi tarjoaa palvelua puhelimitse vähintään 6 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -12458,6 +12462,9 @@
       "Groups": [
         "Ryhmät"
       ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Piilota sähköpostisi ${ PASS_APP_NAME }:lla"
+      ],
       "Human verification": [
         "Ihmisvahvistus"
       ],
@@ -13077,11 +13084,6 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Käytä Wallet-sovellusta"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Säilytä ja siirrä Bitcoinejasi turvallisesti"
       ]
     },
     "wallet_signup_2024:Bug category": {
