@@ -3,14 +3,14 @@ import type { ReactNode } from 'react';
 import { StandardErrorPage } from '@proton/components';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
-import AccountRecovery from './actions/AccountRecovery';
+import AccountSettings from './actions/AccountSettings';
 import DeleteAccount from './actions/DeleteAccount';
+import EmailSettings from './actions/EmailSettings';
 import LabelsSettings from './actions/LabelsSettings';
-import MailSettings from './actions/MailSettings';
+import PrivacySecuritySettings from './actions/PrivacySecuritySettings';
 import SpamFiltersSettings from './actions/SpamFiltersSettings';
 import SubscribeAccount from './actions/SubscribeAccount';
 import WalletSettings from './actions/WalletSettings';
-import SubscriptionDetails from './actions/SubscriptionDetails';
 import { SupportedActions } from './helper';
 
 interface Props {
@@ -30,11 +30,11 @@ const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: 
     return (
         <>
             {action === SupportedActions.WalletSettings && <WalletSettings loader={loader} layout={layout} />}
-            {action === SupportedActions.MailSettings && <MailSettings layout={layout} />}
+            {action === SupportedActions.AccountSettings && <AccountSettings layout={layout} />}
+            {action === SupportedActions.EmailSettings && <EmailSettings layout={layout} />}
             {action === SupportedActions.LabelsSettings && <LabelsSettings layout={layout} />}
             {action === SupportedActions.SpamFiltersSettings && <SpamFiltersSettings layout={layout} />}
-            {action === SupportedActions.AccountRecovery && <AccountRecovery layout={layout} />}
-            {action === SupportedActions.SubscriptionDetails && <SubscriptionDetails layout={layout} />}
+            {action === SupportedActions.PrivacySecuritySettings && <PrivacySecuritySettings layout={layout} />}
             {action === SupportedActions.DeleteAccount && <DeleteAccount />}
             {(action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink) && (
                 <SubscribeAccount
