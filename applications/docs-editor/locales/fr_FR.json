@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
       "Add comment": [
         "Ajouter un commentaire"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "Ajuster la taille de la police"
+      ],
+      "Alphabetical": [
+        "Ordre alphabétique"
       ],
       "and": [
         "et"
@@ -169,6 +184,9 @@
       ],
       "Right align": [
         "Aligner à droite"
+      ],
+      "Roman": [
+        "Chiffres romains"
       ],
       "Save": [
         "Enregistrer"
@@ -374,6 +392,9 @@
       ]
     },
     "Error": {
+      "Failed to export document.": [
+        "L'exportation du document n'a pas abouti."
+      ],
       "Failed to import HTML due to unknown error.": [
         "L'importation du HTML n'a pas abouti en raison d'une erreur inconnue."
       ],
