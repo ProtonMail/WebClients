@@ -70,11 +70,11 @@
       "Accept": [
         "Прыняць"
       ],
-      "activate": [
-        "актываваць"
-      ],
       "Activate": [
         "Актываваць"
+      ],
+      "activate": [
+        "актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -391,9 +391,6 @@
       "Disable": [
         "Адключыць"
       ],
-      "Disable E2EE for group address": [
-        "Адключыць шыфраванне скразным метадам для групавых адрасоў"
-      ],
       "Disable recovery phrase": [
         "Адключыць фразу аднаўлення"
       ],
@@ -495,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Уключыць аднаўленне на падставе прылады"
-      ],
-      "Enable E2EE for group address": [
-        "Уключыць шыфраванне скразным метадам для групавых адрасоў"
       ],
       "Enable multi-user support": [
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
@@ -805,11 +799,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Reload": [
         "Перазагрузіць"
@@ -819,9 +813,6 @@
       ],
       "Remove all members": [
         "Выдаліць усіх удзельнікаў"
-      ],
-      "Remove all members from group": [
-        "Выдаліць усіх удзельнікаў з групы"
       ],
       "Remove bonuses": [
         "Выдаліць бонусы"
@@ -867,9 +858,6 @@
       ],
       "Resend code": [
         "Адправіць код яшчэ раз"
-      ],
-      "Resend invitation": [
-        "Паўторна адправіць запрашэнне"
       ],
       "Reset credentials": [
         "Скінуць уліковыя даныя"
@@ -1266,9 +1254,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Дадаць дамен pm.me"
-      ],
       "Resuming forward": [
         "Перасылка ўзнаўляецца"
       ]
@@ -1630,6 +1615,14 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1651,14 +1644,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3646,6 +3631,43 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Вас запрасілі атрымаць доступ да файла ў ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**Сумесная праца:** рэдактар дакументаў у інтэрнэце"
+      ],
+      "**GDPR** and **HIPAA** compliant": [
+        "Адпавядае патрабаванням **GDPR** і **HIPAA**"
+      ],
+      "**ISO 27001** certified": [
+        "Сертыфікавана згода са стандартам **ISO 27001**"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**Абарона:** скразное шыфраванне"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**Просты і зручны:** імпартуйце свае файны і наладжвайце іх за хвіліны"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Пашыраная бяспека, якая выходзіць за рамкі прамысловых стандартаў"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "Далучайцеся да больш як 50 000 арганізацый, якія ўжо атрымліваюць перавагі ад бяспекі ${ BRAND_NAME }"
+      ],
+      "Protect sensitive business information and collaborate securely": [
+        "Абарона канфідэнцыяльнай інфармацыі ў сферы бізнесу і бяспечнае ўзаемадзеянне"
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "Бяспечнае воблачнае сховішча, якое дае магчымасць кантраляваць вашы даныя"
+      ],
+      "Tailored made solutions for larger organizations with custom needs": [
+        "Індывідуальныя рашэнні для буйных арганізацый з асаблівымі пажаданнямі"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "Адзінае рашэнне для бізнесу, якое:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -6771,6 +6793,9 @@
         "Уплывае на карыстальнікаў у радку",
         "Уплывае на карыстальнікаў у радку"
       ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Удзельнікам арганізацыі неабходна разблакіраваць ${ PASS_APP_NAME } з дапамогай свайго пароля або PIN-кода пасля таго, як праграма будзе заблакіравана."
+      ],
       "Align left": [
         "Выраўнаваць па левым краі"
       ],
@@ -7134,11 +7159,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -9773,9 +9798,6 @@
       "30 seconds": [
         "30 секунд"
       ],
-      "4 hours": [
-        "4 гадзіны"
-      ],
       "5 minutes": [
         "5 хвілін"
       ],
@@ -10106,6 +10128,9 @@
       "Disable sharing outside the organization": [
         "Адключыць абагульванне па-за межамі арганізацыі"
       ],
+      "Disabled": [
+        "Адключана"
+      ],
       "Display name": [
         "Бачнае імя"
       ],
@@ -10303,6 +10328,9 @@
       ],
       "Link label (optional)": [
         "Метка спасылкі (неабавязкова)"
+      ],
+      "Lock app after inactivity": [
+        "Заблакіраваць праграму пасля бяздзейнасці"
       ],
       "Logo": [
         "Лагатып"
@@ -11184,6 +11212,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Прапанова абмежавана па часе: **Атрымайце скідку ў памеры 35%** за штогадовыя тарыфныя планы"
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Прапанова абмежавана па часе: **Эканомце ${ discount } на тарыфным планам ${ name } з гадавой падпіскай**"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Вы былі запрошаны паспрабаваць ${ MAIL_APP_NAME }"
       ]
@@ -11618,6 +11649,32 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Get started for $1": [
+        "Пачніце за 1 $"
+      ],
+      "Get started for 1 €": [
+        "Пачніце за 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Пачніце за 1 CHF"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -11645,32 +11702,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Get started for $1": [
-        "Пачніце за 1 $"
-      ],
-      "Get started for 1 €": [
-        "Пачніце за 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Пачніце за 1 CHF"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -11956,14 +11987,11 @@
       "Password health": [
         "Якасць пароля"
       ],
-      "Password manager to secure credentials": [
-        "Менеджар пароляў для бяспекі ўліковых даных"
-      ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
       ],
-      "Phone support (40+ users)": [
-        "Падтрымка па тэлефоне (ад 40 карыстальнікаў)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "Прэміяльныя функцыі ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -12123,6 +12151,9 @@
         "Абагульванне сховішча (да ${ n } асоб)",
         "Абагульванне сховішча (да ${ n } асоб)",
         "Абагульванне сховішча (да ${ n } асоб)"
+      ],
+      "Version history": [
+        "Гісторыя версій"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканіруем цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
@@ -12455,9 +12486,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Падтрымку па тэлефоне ад каманды абслугоўвання кліентаў ${ BRAND_NAME } можна атрымаць у працоўныя дні згодна з еўрапейскім графікам для кліентаў, якія маюць 6 або больш карыстальнікаў"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
@@ -13000,20 +13028,6 @@
       ],
       "Trash": [
         "Сметніца"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Усе, у тым ліку староннія"
-      ],
-      "Members": [
-        "Удзельнікі"
-      ],
-      "Nobody by default": [
-        "Прадвызначана ніхто"
-      ],
-      "Organization members": [
-        "Удзельнікі арганізацыі"
       ]
     },
     "Option delay send seconds": {
@@ -13790,6 +13804,9 @@
       ],
       "Gift code": [
         "Падарункавы код"
+      ],
+      "Group name": [
+        "Назва групы"
       ],
       "Link": [
         "Спасылка"
@@ -14757,6 +14774,16 @@
       ],
       "Verification": [
         "Праверка"
+      ]
+    },
+    "signup: Action": {
+      "Request trial": [
+        "Запытаць пробны перыяд"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR and HIPAA compliant": [
+        "Адпавядае патрабаванням GDPR і HIPAA"
       ]
     },
     "specialoffer: Action": {
@@ -16331,10 +16358,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -18023,11 +18050,6 @@
       ],
       "You're Invited.": [
         "Вы запрошаны"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Бяспечна захоўвайце і пераводзьце свае сродкі ў біткойнах"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -391,9 +391,6 @@
       "Disable": [
         "გათიშვა"
       ],
-      "Disable E2EE for group address": [
-        "E2EE-ის გამორთვა ჯგუფის მისამართისთვის"
-      ],
       "Disable recovery phrase": [
         "აღდგენის ფრაზის გამორთვა"
       ],
@@ -495,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "მოწყობილობაზე დაფუძნებული აღდგენის ჩართვა"
-      ],
-      "Enable E2EE for group address": [
-        "E2EE-ის ჩართვა ჯგუფის მისამართისთვის"
       ],
       "Enable multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
@@ -805,10 +799,10 @@
       "Refresh status": [
         "სტატუსის განახლება"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "გვერდის განახლება"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "გვერდის განახლება"
       ],
       "Reload": [
@@ -819,9 +813,6 @@
       ],
       "Remove all members": [
         "ყველა წევრის წაშლა"
-      ],
-      "Remove all members from group": [
-        "ჯგუფიდან ყველა წევრის წაშლა"
       ],
       "Remove bonuses": [
         "ბონუსების წაშლა"
@@ -867,9 +858,6 @@
       ],
       "Resend code": [
         "კოდის თავიდან გაგზავნა"
-      ],
-      "Resend invitation": [
-        "მოსაწვევის თავიდან გაგზავნა"
       ],
       "Reset credentials": [
         "მომხმარებლისა და პაროლის თავიდან დაყენება"
@@ -1266,9 +1254,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "დაამატეთ დომენი pm.me"
-      ],
       "Resuming forward": [
         "წინ გაგრძელება"
       ]
@@ -1622,6 +1607,14 @@
         "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 ტბ საცავი (2-ჯერ მეტი, ვიდრე ნებისმიერი სხვა ტარიფი)"
@@ -1643,14 +1636,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "ტარიფი ${ plan } მოკლე დროით დაგვიბრუნდა"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
       ]
     },
     "bf2023: Offers": {
@@ -3618,6 +3603,43 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "მოგიწვიეს წვდომისთვი ფაილზე ${ DRIVE_APP_NAME }-ში"
+      ]
+    },
+    "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**კოლაბორაციული:** დოკუმენტის რედაქტორი ბრაუზერში"
+      ],
+      "**GDPR** and **HIPAA** compliant": [
+        "თავსებადი **GDPR**-სთან და **HIPAA**-სთან"
+      ],
+      "**ISO 27001** certified": [
+        "**ISO 27001** სერტიფიკატით"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**დაცული** გამჭოლი დაშიფვრა"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**მარტივი და მეგობრული:** შემოიტანეთ თქვენი ფაილები და მოირგეთ რამდენიმე წუთში"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "დამატებითი დაცვა, რომელიც ინდუსტრიის სტანდარტებს მიღმაც კი გადის"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "მიუერთდით 50,000+ ორგანიზაციას, რომელიც უკვე სარგებლობს ${ BRAND_NAME }-ის უსაფრთხო ფუნქციონალით"
+      ],
+      "Protect sensitive business information and collaborate securely": [
+        "დაიცავით კონფიდენციალური კომპანიის ინფორმაცია და იმუშავეთ ერთად უსაფრთხოდ"
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "დაცული ღრუბლოვანი საცავი, რომელიც თქვენი მონაცემების მართვის საშუალებას გაძლევთ"
+      ],
+      "Tailored made solutions for larger organizations with custom needs": [
+        "ინდივიდუალური გადაწყვეტილებები დიდი ორგანიზაციებისთვის სპეციფიკური მოთხოვნებით"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "ერთ-ერთი ბიზნეს-გადაწყვეტილება, რომელიც წარმოადგენს:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -6645,6 +6667,9 @@
         "შეცვლადი მომხმარებელი არის ხაზზე",
         "შეცვლადი მომხმარებლები არიან ხაზზე"
       ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "დაბლოკვის შემდეგ ორგანიზაციის წევრებს თავიანთი ${ PASS_APP_NAME }-ის განბლოკვა თავიანთი პაროლით ან PIN-კოდით მოუწევთ."
+      ],
       "Align left": [
         "მარცხნივ სწორება"
       ],
@@ -6934,6 +6959,10 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "შემოტანილი შეტყობინებების ჭდის შექმნა. შემოტანის დროის დიაპაზონი და ჭდეები, რომლის შემოტანაც გნებავთ."
       ],
+      "Create a secure cloud for ${ n } member": [
+        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის",
+        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "შექმენით და მართეთ ქვეანგეარიშები და მიანიჭეთ მათ ელფოსტის მისამართები თქვენი პირადი დომენით."
       ],
@@ -6992,11 +7021,11 @@
       "Data locked": [
         "მონაცემები დაბლოკილია"
       ],
-      "Dedicated servers": [
-        "გამოყოფილი სერვერები"
-      ],
       "dedicated servers": [
         "გამოყოფილი სერვერი"
+      ],
+      "Dedicated servers": [
+        "გამოყოფილი სერვერები"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -9582,9 +9611,6 @@
       "30 seconds": [
         "30 წამი"
       ],
-      "4 hours": [
-        "4 სთ"
-      ],
       "5 minutes": [
         "5 წუთი"
       ],
@@ -10115,6 +10141,9 @@
       ],
       "Link label (optional)": [
         "ბმულის ჭდე (არასავალდებულო)"
+      ],
+      "Lock app after inactivity": [
+        "აპის დაბლოკვა უქმეობის შემდეგ"
       ],
       "Logo": [
         "ლოგო"
@@ -10984,6 +11013,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "შეთავაზება შეზღუდული დროით: **მიიღეთ 35%-მდე ფასდაკლება** წლიურ სატარიფო გეგმებზე"
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "შეთავაზება შეზღუდული დროით: **დაზოგეთ ${ discount } ${ name }-ზე ერთწლიანი სატარიფო გეგმით**"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "თქვენ მიგიწვიეს, სცადოთ ${ MAIL_APP_NAME }"
       ]
@@ -11408,6 +11440,32 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Get started for $1": [
+        "დაწყება $1-ით"
+      ],
+      "Get started for 1 €": [
+        "დაწყება 1 €-ით"
+      ],
+      "Get started for CHF 1": [
+        "დაწყება 1 CHF-ით"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "უფასოთი გაგრძელება"
@@ -11435,32 +11493,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Get started for $1": [
-        "დაწყება $1-ით"
-      ],
-      "Get started for 1 €": [
-        "დაწყება 1 €-ით"
-      ],
-      "Get started for CHF 1": [
-        "დაწყება 1 CHF-ით"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {
@@ -11716,14 +11748,11 @@
       "Password health": [
         "პაროლის სიძლიერე"
       ],
-      "Password manager to secure credentials": [
-        "პაროლების მმართველი ავტორიზაციის დეტალების დასაცავად"
-      ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
-      "Phone support (40+ users)": [
-        "სატელეფონო მხარდაჭერა (40+ მომხმარებელი)"
+      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }-ის ფასიანი ფუნქციები"
       ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
@@ -12208,9 +12237,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "მოირგეთ თქვენი ელფოსტის ხელმოწერები მათში ლოგოების, გამოსახულებების, სოცმედიის ხატულების, კონტაქტების დეტალებზე ბმულების და ა. შ. დამატებით"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "სატელეფონო მხარდაჭერა ხელმისაწვდომია ${ BRAND_NAME }-ის მომხმარებელთა წარმატების გუნდიდან ევროპის სამუშაო საათებში, მომხმარებლებისთვის 6 ან მეტი მომხმარებლით"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "კრძალავს შეტყობინებებთან ${ BRAND_NAME }-ის და მესამე პირების წვდომას. შეტყობინების წაკითხვა, მხოლოდ, გამგზავნს და მიმღებს შეუძლიათ."
@@ -12741,20 +12767,6 @@
       ],
       "Trash": [
         "ნაგვის ყუთი"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "ყველა, გარეს ჩათვლით"
-      ],
-      "Members": [
-        "წევრები"
-      ],
-      "Nobody by default": [
-        "არავინ ნაგულისხმევად"
-      ],
-      "Organization members": [
-        "ორგანიზაციის წევრები"
       ]
     },
     "Option delay send seconds": {
@@ -13521,6 +13533,9 @@
       ],
       "Gift code": [
         "სასაჩუქრე კოდი"
+      ],
+      "Group name": [
+        "ჯგუფის სახელი"
       ],
       "Link": [
         "ბმული"
@@ -14459,6 +14474,11 @@
     "signup: Action": {
       "Request trial": [
         "დროებითი ვერსიის გამოთხოვა"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR and HIPAA compliant": [
+        "თავსებადი GDPR-თან და HIPAA-სთან"
       ]
     },
     "specialoffer: Action": {
@@ -15971,10 +15991,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -17627,11 +17647,6 @@
       ],
       "You're Invited.": [
         "თქვენ მოწვეული ბრძანდებით."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "უსაფრთხოდ შეინახეთ და გადარიცხეთ თქვენი bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

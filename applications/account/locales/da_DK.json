@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "aktivér"
-      ],
       "Activate": [
         "Aktivér"
+      ],
+      "activate": [
+        "aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -391,9 +391,6 @@
       "Disable": [
         "Deaktivér"
       ],
-      "Disable E2EE for group address": [
-        "Deaktiver E2EE for gruppeadresse"
-      ],
       "Disable recovery phrase": [
         "Deaktiver gendannelsessætning"
       ],
@@ -495,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Aktivér enhedsbaseret gendannelse"
-      ],
-      "Enable E2EE for group address": [
-        "Aktiver E2EE for gruppeadresse"
       ],
       "Enable multi-user support": [
         "Aktivere understøttelse af flere brugere"
@@ -805,11 +799,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
       "Refresh the page": [
         "Opdater siden"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -819,9 +813,6 @@
       ],
       "Remove all members": [
         "Fjern alle medlemmer"
-      ],
-      "Remove all members from group": [
-        "Fjern alle medlemmer fra gruppe"
       ],
       "Remove bonuses": [
         "Fjern bonusser"
@@ -867,9 +858,6 @@
       ],
       "Resend code": [
         "Send kode igen"
-      ],
-      "Resend invitation": [
-        "Gensend invitation"
       ],
       "Reset credentials": [
         "Nulstil legitimationsoplysninger"
@@ -1266,9 +1254,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Tilføj pm.me-domæne"
-      ],
       "Resuming forward": [
         "Genoptager videresendelse"
       ]
@@ -1622,6 +1607,14 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1643,14 +1636,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7039,11 +7024,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerede servere"
-      ],
       "dedicated servers": [
         "dedikerede servere"
+      ],
+      "Dedicated servers": [
+        "Dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -9629,9 +9614,6 @@
       "30 seconds": [
         "30 sekunder"
       ],
-      "4 hours": [
-        "4 timer"
-      ],
       "5 minutes": [
         "5 minutter"
       ],
@@ -11034,6 +11016,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Tidsbegrænset tilbud: **Få op til 35% rabat** på års-abonnementer"
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Tidsbegrænset tilbud: **Spar ${ discount } på ${ name } med et 1-årigt abonnement**."
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Du er blevet inviteret til at prøve ${ MAIL_APP_NAME }"
       ]
@@ -11458,6 +11443,32 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for $1": [
+        "Kom i gang for $1"
+      ],
+      "Get started for 1 €": [
+        "Kom i gang for 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom i gang for 1 CHF"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsæt med Free"
@@ -11485,32 +11496,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for $1": [
-        "Kom i gang for $1"
-      ],
-      "Get started for 1 €": [
-        "Kom i gang for 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Kom i gang for 1 CHF"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -11766,14 +11751,8 @@
       "Password health": [
         "Adgangskode-sundhed"
       ],
-      "Password manager to secure credentials": [
-        "Adgangskodehåndtering for at sikre adgangsoplysninger"
-      ],
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
-      ],
-      "Phone support (40+ users)": [
-        "Telefon-support (40+ brugere)"
       ],
       "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
         "Premium-funktioner i ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
@@ -12261,9 +12240,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personliggør din e-mail-signatur med logoer, billeder, ikoner til sociale medier, links til dine kontaktoplysninger og meget mere."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesucces-teamet i den europæiske åbningstid for kunder med 6 eller flere brugere."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer, at beskeder kan tilgås af ${ BRAND_NAME } eller tredjeparter. De eneste personer, der kan læse beskederne, er afsenderen og den tilsigtede modtager."
@@ -12794,20 +12770,6 @@
       ],
       "Trash": [
         "Papirkurv"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Alle, inkl. dem udenfor"
-      ],
-      "Members": [
-        "Medlemmer"
-      ],
-      "Nobody by default": [
-        "Ingen som standard"
-      ],
-      "Organization members": [
-        "Organisationsmedlemmer"
       ]
     },
     "Option delay send seconds": {
@@ -13574,6 +13536,9 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "Group name": [
+        "Gruppenavn"
       ],
       "Link": [
         "Link"
@@ -16029,11 +15994,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-all address": [
-        "Catch-all-adresse"
-      ],
       "Catch-All address": [
         "Catch-All-adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -17685,11 +17650,6 @@
       ],
       "You're Invited.": [
         "Du er inviteret."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Opbevar og overfør dine bitcoins sikkert"
       ]
     },
     "wallet_signup_2024:Bug category": {
