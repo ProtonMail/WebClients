@@ -1499,8 +1499,14 @@
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Veuillez confirmer votre mot de passe supplémentaire afin de permettre le verrouillage automatique avec les données biométriques."
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Veuillez confirmer votre mot de passe supplémentaire afin de permettre le verrouillage automatique avec votre mot de passe supplémentaire."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Veuillez confirmer votre mot de passe supplémentaire afin d'enlever votre verrouillage actuel."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Veuillez confirmer votre mot de passe supplémentaire afin de modifier le délai du verrouillage automatique."
       ],
       "Please confirm your password": [
         "Veuillez confirmer votre mot de passe."
@@ -1885,9 +1891,6 @@
       ],
       "30 seconds": [
         "30 secondes"
-      ],
-      "4 hours": [
-        "4 heures"
       ],
       "5 minutes": [
         "5 minutes"
