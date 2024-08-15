@@ -56,12 +56,12 @@ export function SharedLinksItemContextMenu({
                     <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
                 )}
                 {isOnlyOneFileItem && showOpenInDocs && (
-                    <OpenInDocsButton shareId={selectedLink.rootShareId} link={selectedLink} close={close} />
+                    <OpenInDocsButton selectedBrowserItem={selectedLink} close={close} />
                 )}
-                {<DownloadButton selectedLinks={selectedLinks} close={close} />}
+                {<DownloadButton selectedBrowserItems={selectedLinks} close={close} />}
                 {isOnlyOneItem && <RenameButton showRenameModal={showRenameModal} link={selectedLink} close={close} />}
                 <DetailsButton
-                    selectedLinks={selectedLinks}
+                    selectedBrowserItems={selectedLinks}
                     showDetailsModal={showDetailsModal}
                     showFilesDetailsModal={showFilesDetailsModal}
                     close={close}
