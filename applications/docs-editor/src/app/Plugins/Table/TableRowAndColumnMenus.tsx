@@ -78,7 +78,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
         )
         rowMenuButton.style.visibility = 'visible'
 
-        editor.update(() => {
+        editor.read(() => {
           tableRowNode.current = $getNearestNodeFromDOMNode(row) as TableRowNode
         })
       }
@@ -109,7 +109,7 @@ export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) 
 
         columnMenuButton.style.visibility = 'visible'
 
-        editor.update(() => {
+        editor.read(() => {
           tableCellNode.current = $getNearestNodeFromDOMNode(cell) as TableCellNode
         })
       }
