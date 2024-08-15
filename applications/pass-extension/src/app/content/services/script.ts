@@ -135,6 +135,7 @@ export const createContentScriptClient = ({ scriptId, mainFrame, elements }: Cre
 
             if (enableDetector) {
                 context.service.formManager.observe();
+                await context.service.detector.init();
                 await context.service.formManager.detect({ reason: 'InitialLoad' }).catch(noop);
             }
         } else context.destroy({ reason: 'Start failure' });
