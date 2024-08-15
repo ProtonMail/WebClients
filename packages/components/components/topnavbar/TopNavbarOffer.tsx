@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { CYCLE, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
+import { APPS, CYCLE, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { OfferModal, useOfferModal } from '../../containers';
@@ -125,7 +125,7 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
                     as="button"
                     type="button"
                     color="norm"
-                    size={CTAText.length > 14 ? 'small' : 'medium'}
+                    size={CTAText.length > 14 && app === APPS.PROTONCALENDAR ? 'small' : 'medium'}
                     responsive
                     shape={offerConfig.topButton?.shape || 'solid'}
                     buttonGradient={offerConfig.topButton?.gradient}
