@@ -33,6 +33,7 @@ import type { AutosaveRequest } from './autosave';
 import type { AutosaveFormEntry, FormCredentials, FormStatusPayload, FormSubmitPayload } from './form';
 import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
+import type { ExclusionRules } from './rules';
 import type { TabId } from './runtime';
 import type { AppState, PopupInitialState } from './state';
 
@@ -293,7 +294,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.IMPORT_DECRYPT]: { payload: ImportReaderPayload };
-    [WorkerMessageType.WEBSITE_RULES_REQUEST]: { result: MaybeNull<string[]> };
+    [WorkerMessageType.WEBSITE_RULES_REQUEST]: { rules: MaybeNull<ExclusionRules> };
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };

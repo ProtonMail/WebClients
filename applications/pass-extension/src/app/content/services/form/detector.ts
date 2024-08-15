@@ -7,6 +7,7 @@ import {
     FormType,
     clearDetectionCache,
     fieldTypes,
+    flagSubtreeAsIgnored,
     formTypes,
     getTypeScore,
     prepass,
@@ -14,14 +15,18 @@ import {
     shouldRunClassifier,
 } from '@proton/pass/fathom';
 import type { Fnode } from '@proton/pass/fathom/fathom';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { type ExclusionRules, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import noop from '@proton/utils/noop';
 
 const ruleset = rulesetMaker();
 const NOOP_EL = document.createElement('form');
 const DETECTION_TIE_TRESHOLD = 0.01;
 
+type DetectorState = { rules: MaybeNull<ExclusionRules> };
 type BoundRuleset = ReturnType<typeof ruleset.against>;
 type PredictionResult<T extends string> = { fnode: Fnode; type: T; score: number };
 type PredictionBestSelector<T extends string> = (
@@ -153,7 +158,7 @@ const createDetectionRunner =
                 maxTime: MIN_MAX_DETECTION_TIME,
                 onMaxTime: (detectionTime) => {
                     const { hostname } = window.location;
-                    logger.info(`[Detector::run] detector slow down detected on ${hostname} (took ${detectionTime}ms)`);
+                    logger.info(`[Detector] Slow down detected on ${hostname} (took ${detectionTime}ms)`);
 
                     if (detectionTime >= MAX_MAX_DETECTION_TIME) {
                         onBottleneck({ detectionTime, hostname });
@@ -198,7 +203,27 @@ const isEnabled = (features: Record<CSFeatures, boolean>): boolean =>
     features.AutosuggestPassword;
 
 export const createDetectorService = () => {
+    const state: DetectorState = { rules: null };
+
     return {
+        init: async () => {
+            await sendMessage
+                .onSuccess(contentScriptMessage({ type: WorkerMessageType.WEBSITE_RULES_REQUEST }), ({ rules }) => {
+                    if (rules !== null) {
+                        logger.info('[Detector] Resolved website detection rules');
+                        state.rules = rules;
+                    }
+                })
+                .catch(noop);
+        },
+
+        applyRules: () => {
+            state.rules?.forEach((selector) => {
+                const match = document.querySelector<HTMLElement>(selector);
+                if (match) flagSubtreeAsIgnored(match);
+            });
+        },
+
         isEnabled,
         shouldRunDetection,
         runDetection: createDetectionRunner(ruleset, document),
