@@ -17,7 +17,7 @@ const SharedWithMeView = () => {
     useEffect(setDefaultRoot, []);
 
     const sharedWithMeView = useSharedWithMeView(activeShareId);
-    const hasSharedItems = !!sharedWithMeView.items.length || !!sharedWithMeView.pendingInvitations.length;
+    const hasSharedItems = !!sharedWithMeView.items.length;
 
     const { isSharingInviteAvailable } = useDriveSharingFlags();
     if (!hasSharedItems && !isSharingInviteAvailable) {
@@ -26,12 +26,7 @@ const SharedWithMeView = () => {
 
     // rootShareId is unique per item in shared with me section, so we can use it as id key
     return (
-        <FileBrowserStateProvider
-            itemIds={[
-                ...sharedWithMeView.items.map(({ rootShareId }) => rootShareId),
-                ...sharedWithMeView.pendingInvitations.map(({ invitation }) => invitation.invitationId),
-            ]}
-        >
+        <FileBrowserStateProvider itemIds={sharedWithMeView.items.map(({ rootShareId }) => rootShareId)}>
             <ToolbarRow
                 titleArea={<span className="text-strong pl-1">{c('Info').t`Shared with me`}</span>}
                 toolbar={<SharedWithMeToolbar shareId={activeShareId} items={sharedWithMeView.items} />}

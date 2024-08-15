@@ -1,32 +1,36 @@
 import { MimeIcon, ToolbarButton } from '@proton/components';
 import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 
-import type { DecryptedLink } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import { hasFoldersSelected, isMultiSelect } from './utils';
 
 interface Props {
-    shareId: string;
-    selectedLinks: DecryptedLink[];
+    selectedBrowserItems: {
+        rootShareId: string;
+        linkId: string;
+        mimeType: string;
+        parentLinkId: string;
+        isFile: boolean;
+    }[];
 }
 
-const OpenInDocsButton = ({ selectedLinks, shareId }: Props) => {
-    const selectedLink = selectedLinks.length > 0 ? selectedLinks[0] : undefined;
-    const { openInDocsAction, showOpenInDocs } = useOpenInDocs(selectedLink);
+const OpenInDocsButton = ({ selectedBrowserItems }: Props) => {
+    const selectedBrowserItem = selectedBrowserItems.length > 0 ? selectedBrowserItems[0] : undefined;
+    const { openInDocsAction, showOpenInDocs } = useOpenInDocs(selectedBrowserItem);
 
-    if (!showOpenInDocs || isMultiSelect(selectedLinks) || hasFoldersSelected(selectedLinks)) {
+    if (!showOpenInDocs || isMultiSelect(selectedBrowserItems) || hasFoldersSelected(selectedBrowserItems)) {
         return null;
     }
 
     return (
         <ToolbarButton
-            title={getOpenInDocsString(selectedLink?.mimeType)}
+            title={getOpenInDocsString(selectedBrowserItem?.mimeType)}
             icon={<MimeIcon name="proton-doc" className="mr-2" />}
             onClick={() => {
-                if (selectedLink) {
+                if (selectedBrowserItem) {
                     void openInDocsAction({
-                        shareId,
-                        linkId: selectedLink.linkId,
+                        shareId: selectedBrowserItem.rootShareId,
+                        linkId: selectedBrowserItem.linkId,
                     });
                 }
             }}

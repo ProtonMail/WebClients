@@ -63,9 +63,6 @@ const GridViewItemBase = ({
                     'flex file-browser-grid-item--select',
                     selectionControls?.selectionState !== SelectionState.NONE ? null : 'mouse:group-hover:opacity-100',
                 ])}
-                style={{
-                    background: item.isInvitation && 'var(--interaction-norm-minor-2)',
-                }}
                 onTouchStart={stopPropagation}
                 onKeyDown={stopPropagation}
                 onClick={handleCheckboxWrapperClick}
