@@ -1,14 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { BASE_SIZE } from '../constants';
-
-export const sizeUnits = {
-    B: 1,
-    KB: BASE_SIZE,
-    MB: BASE_SIZE * BASE_SIZE,
-    GB: BASE_SIZE * BASE_SIZE * BASE_SIZE,
-    TB: BASE_SIZE * BASE_SIZE * BASE_SIZE * BASE_SIZE,
-};
+import { sizeUnits } from './size';
 
 export type SizeUnits = keyof typeof sizeUnits;
 
