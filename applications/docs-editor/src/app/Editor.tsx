@@ -52,6 +52,7 @@ type Props = {
   documentId: string
   editingLocked: boolean
   hasEditAccess: boolean
+  onEditorError: (error: Error) => void
   hidden: boolean
   editorInitializationConfig?: EditorInitializationConfig
   /** Non-interactive mode is used when displaying the editor to show a previous history revision */
@@ -68,10 +69,11 @@ export function Editor({
   docState,
   documentId,
   editingLocked,
+  editorInitializationConfig,
   hasEditAccess,
   hidden,
-  editorInitializationConfig,
   nonInteractiveMode: nonInteractiveMode,
+  onEditorError,
   onEditorLoadResult,
   onInteractionModeChange,
   setEditorRef,
@@ -116,7 +118,7 @@ export function Editor({
       {hidden && (
         <div className="bg-norm absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4"></div>
       )}
-      <SafeLexicalComposer initialConfig={BuildInitialEditorConfig(null)}>
+      <SafeLexicalComposer initialConfig={BuildInitialEditorConfig({ onError: onEditorError })}>
         <KeyboardShortcutsPlugin />
         {!nonInteractiveMode && (
           <Toolbar hasEditAccess={hasEditAccess} onInteractionModeChange={onInteractionModeChange} />

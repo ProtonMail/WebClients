@@ -48,11 +48,15 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.docs.role
   }
 
-  editorReportingFatalError(error: string): void {
+  editorReportingError(error: string, extraInfo: { irrecoverable?: boolean; lockEditor?: boolean }): void {
     PostApplicationError(this.eventBus, {
       translatedError: error,
-      irrecoverable: true,
+      irrecoverable: extraInfo.irrecoverable,
     })
+
+    if (extraInfo.lockEditor) {
+      this.docs.editorIsRequestingToLockAfterRenderingIssue()
+    }
   }
 
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, updateSource: BroadcastSource): Promise<void> {
