@@ -6,9 +6,10 @@ import { c } from 'ttag';
 import { Donut } from '@proton/atoms';
 import Slider from '@proton/atoms/Slider/Slider';
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
-import { GIGA } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/shared/lib/constants';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
+import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import clamp from '@proton/utils/clamp';
@@ -30,7 +31,13 @@ export const getTotalStorage = (
 
 export const getInitialStorage = (organization?: Organization) => {
     const isFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
-    return (isFamilyOrg ? 500 : 5) * GIGA;
+    if (isFamilyOrg || organization?.PlanName === PLANS.VISIONARY) {
+        return 500 * sizeUnits.GB;
+    }
+    if ([PLANS.DRIVE_PRO, PLANS.DRIVE_BUSINESS].includes(organization?.PlanName as any)) {
+        return sizeUnits.TB;
+    }
+    return 5 * sizeUnits.GB;
 };
 
 export const getStorageRange = (
@@ -136,7 +143,7 @@ const MemberStorageSelector = ({
 
     // We change the step depending on the remaining space
     const remainingSpace = totalStorage.organizationMaxSpace - totalStorage.organizationUsedSpace;
-    const stepInBytes = remainingSpace > GIGA ? 0.5 * GIGA : 0.1 * GIGA;
+    const stepInBytes = remainingSpace > sizeUnits.GB ? 0.5 * sizeUnits.GB : 0.1 * sizeUnits.GB;
 
     const min = getNumberWithPrecision(getValueInUnit(range.min, sizeUnit), precision);
     const max = getNumberWithPrecision(getValueInUnit(range.max, sizeUnit), precision);

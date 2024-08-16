@@ -10,9 +10,10 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
-import { GIGA, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { getHasExternalMemberCapableB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import clamp from '@proton/utils/clamp';
@@ -53,7 +54,7 @@ enum STEPS {
     STORAGE,
 }
 
-const storageSizeUnit = GIGA;
+const storageSizeUnit = sizeUnits.GB;
 
 const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const normalApi = useApi();
