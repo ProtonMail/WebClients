@@ -31,7 +31,7 @@ export const getTotalStorage = (
 
 export const getInitialStorage = (organization?: Organization) => {
     const isFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
-    if (isFamilyOrg) {
+    if (isFamilyOrg || organization?.PlanName === PLANS.VISIONARY) {
         return 500 * sizeUnits.GB;
     }
     if ([PLANS.DRIVE_PRO, PLANS.DRIVE_BUSINESS].includes(organization?.PlanName as any)) {
