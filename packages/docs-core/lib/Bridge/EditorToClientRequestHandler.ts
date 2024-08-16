@@ -6,11 +6,13 @@ import type {
   InternalEventBusInterface,
   RtsMessagePayload,
 } from '@proton/docs-shared'
+import type { WordCountInfoCollection } from '@proton/docs-shared'
 import type { UserState } from '@lexical/yjs'
 import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import type { ErrorInfo } from 'react'
 import { ApplicationEvent } from '../Application/ApplicationEvent'
+import { WordCountEvent } from './WordCountEvent'
 
 /** Handle messages sent by the editor to the client */
 export class EditorToClientRequestHandler implements EditorRequiresClientMethods {
@@ -107,6 +109,13 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
         lockEditor: extraInfo?.lockEditor,
       })
     }
+  }
+
+  async reportWordCount(wordCountInfo: WordCountInfoCollection): Promise<void> {
+    this.eventBus.publish({
+      type: WordCountEvent,
+      payload: wordCountInfo,
+    })
   }
 
   updateFrameSize(size: number): void {

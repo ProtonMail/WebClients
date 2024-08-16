@@ -4,6 +4,7 @@ import type { CommentInterface } from '../CommentInterface'
 import type { CommentThreadInterface } from '../CommentThreadInterface'
 import type { RtsMessagePayload } from '../Doc/RtsMessagePayload'
 import type { BroadcastSource } from './BroadcastSource'
+import type { WordCountInfoCollection } from '../WordCount/WordCountTypes'
 
 export interface EditorRequiresClientMethods {
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
@@ -39,6 +40,7 @@ export interface EditorRequiresClientMethods {
     audience: 'user-and-devops' | 'devops-only' | 'user-only',
     extraInfo?: { irrecoverable?: boolean; errorInfo?: ErrorInfo; lockEditor?: boolean },
   ): Promise<void>
+  reportWordCount(wordCountInfo: WordCountInfoCollection): Promise<void>
   updateFrameSize(size: number): void
   showGenericAlertModal(message: string): void
 
