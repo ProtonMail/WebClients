@@ -34,12 +34,20 @@ export function handleWebContents(contents: WebContents) {
         }
     };
 
+    const isCurrentContent = () => {
+        return getCurrentView()!.webContents === contents;
+    };
+
     const preventDefault = (ev: Electron.Event) => {
         ev.preventDefault();
     };
 
     contents.on("did-navigate-in-page", (ev, url) => {
         log("did-navigate-in-page", url);
+
+        if (!isCurrentContent()) {
+            return;
+        }
 
         if (!isHostAllowed(url)) {
             return preventDefault(ev);
@@ -70,7 +78,7 @@ export function handleWebContents(contents: WebContents) {
 
         // Only redirect to a different browser view if the navigation is happening in
         // the visible web contents.
-        if (getCurrentView()!.webContents === contents) {
+        if (isCurrentContent()) {
             if (isAccount(details.url) && !isAccountAuthorize(details.url) && getCurrentView() !== getAccountView()) {
                 showView("account", details.url);
                 return preventDefault(details);
