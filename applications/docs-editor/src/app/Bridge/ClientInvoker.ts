@@ -14,6 +14,7 @@ import { EditorBridgeMessageType, BridgeOriginProvider } from '@proton/docs-shar
 import type { UserState } from '@lexical/yjs'
 import { GenerateUUID } from '@proton/docs-core'
 import type { ErrorInfo } from 'react'
+import type { WordCountInfoCollection } from '@proton/docs-shared'
 
 /** Allows the editor to invoke methods on the client */
 export class ClientInvoker implements EditorRequiresClientMethods {
@@ -90,6 +91,10 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     extraInfo: { irrecoverable?: boolean; errorInfo?: ErrorInfo; lockEditor?: boolean },
   ): Promise<void> {
     return this.invokeClientMethod('reportError', [error, audience, extraInfo])
+  }
+
+  async reportWordCount(wordCountInfo: WordCountInfoCollection): Promise<void> {
+    return this.invokeClientMethod('reportWordCount', [wordCountInfo])
   }
 
   async updateFrameSize(size: number): Promise<void> {
