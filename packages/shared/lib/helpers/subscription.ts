@@ -306,6 +306,7 @@ export const getIsConsumerPassPlan = (planName: PLANS | ADDON_NAMES | undefined)
 const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.MAIL,
     PLANS.DRIVE,
+    PLANS.PASS,
     PLANS.VPN,
     PLANS.BUNDLE,
     PLANS.MAIL_PRO,
