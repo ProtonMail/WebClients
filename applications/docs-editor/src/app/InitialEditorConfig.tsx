@@ -1,7 +1,6 @@
 import type { InitialConfigType } from '@lexical/react/LexicalComposer'
 import { AllNodes } from './AllNodes'
 import DocumentEditorTheme from './Theme/Theme'
-import { sendErrorMessage } from './Utils/errorMessage'
 
 /**
  * ShouldBootstrap refers to whether Lexical should initialize
@@ -11,13 +10,13 @@ import { sendErrorMessage } from './Utils/errorMessage'
  */
 export const ShouldBootstrap = false
 
-export function BuildInitialEditorConfig(initialState: string | null): InitialConfigType {
+export function BuildInitialEditorConfig(config: { onError: (e: Error) => void }): InitialConfigType {
   return {
     editable: false,
-    editorState: initialState,
+    editorState: null,
     namespace: 'editor',
     nodes: AllNodes,
     theme: DocumentEditorTheme,
-    onError: (e: Error) => sendErrorMessage(e),
+    onError: config.onError,
   }
 }

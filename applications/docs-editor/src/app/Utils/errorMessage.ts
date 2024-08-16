@@ -11,7 +11,7 @@ export const sendErrorMessage = (error: unknown, errorInfo?: ErrorInfo) => {
     const message: EditorToClientInvokationMessage<keyof EditorRequiresClientMethods> = {
       messageId: GenerateUUID(),
       functionName: 'reportError',
-      args: [errorArg, { errorInfo }],
+      args: [errorArg, 'devops-only', { errorInfo }],
       type: EditorBridgeMessageType.EditorToClientInvokation,
     }
 

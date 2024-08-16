@@ -84,8 +84,12 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('openLink', [url])
   }
 
-  async reportError(error: Error, extraInfo: { irrecoverable?: boolean; errorInfo?: ErrorInfo }): Promise<void> {
-    return this.invokeClientMethod('reportError', [error, extraInfo])
+  async reportError(
+    error: Error,
+    audience: 'user-and-devops' | 'devops-only' | 'user-only',
+    extraInfo: { irrecoverable?: boolean; errorInfo?: ErrorInfo; lockEditor?: boolean },
+  ): Promise<void> {
+    return this.invokeClientMethod('reportError', [error, audience, extraInfo])
   }
 
   async updateFrameSize(size: number): Promise<void> {
