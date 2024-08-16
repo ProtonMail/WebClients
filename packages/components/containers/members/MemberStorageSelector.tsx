@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Donut } from '@proton/atoms';
 import Slider from '@proton/atoms/Slider/Slider';
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
-import { GIGA } from '@proton/shared/lib/constants';
+import { GIGA, PLANS } from '@proton/shared/lib/constants';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -30,7 +30,13 @@ export const getTotalStorage = (
 
 export const getInitialStorage = (organization?: Organization) => {
     const isFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
-    return (isFamilyOrg ? 500 : 5) * GIGA;
+    if (isFamilyOrg) {
+        return 500 * GIGA;
+    }
+    if ([PLANS.DRIVE_PRO, PLANS.DRIVE_BUSINESS].includes(organization?.PlanName as any)) {
+        return 1000 * GIGA;
+    }
+    return 5 * GIGA;
 };
 
 export const getStorageRange = (
