@@ -58,7 +58,7 @@ const isCalendarHome = (urlString: string) => {
             return false;
         }
 
-        return url.pathname === "" || url.pathname === "/" || /^\/u\/(\d+)\/?$/.test(url.pathname);
+        return /^\/u\/(\d+)\/?$/.test(url.pathname); // /u/0;
     } catch (error) {
         return false;
     }
@@ -74,8 +74,6 @@ const isMailHome = (urlString: string) => {
         }
 
         return (
-            url.pathname === "" ||
-            url.pathname === "/" ||
             /^\/u\/(\d+)\/?$/.test(url.pathname) || // /u/0
             /^\/u\/(\d+)\/inbox\/?$/.test(url.pathname) // /u/0/inbox
         );
