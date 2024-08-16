@@ -348,7 +348,7 @@ export const drivePlusUpsell = {
         {
             text: 'Online document editor',
             included: true,
-            icon: 'brand-proton-drive',
+            icon: 'pencil',
         },
         {
             text: 'Recover previous file versions',
