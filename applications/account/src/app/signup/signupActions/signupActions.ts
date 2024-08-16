@@ -283,7 +283,7 @@ export const handleSetupOrg = async ({
     const organization = result?.Organization;
     if (organization && !getIsPassB2BPlan(organization.PlanName) && !getIsVpnB2BPlan(organization.PlanName)) {
         const storageRange = getStorageRange(selfMember, organization);
-        const initialStorage = getInitialStorage(organization);
+        const initialStorage = getInitialStorage(organization, storageRange);
         const storageValue = clamp(initialStorage, storageRange.min, storageRange.max);
         await api(updateQuota(selfMemberID, storageValue)).catch(noop);
     }

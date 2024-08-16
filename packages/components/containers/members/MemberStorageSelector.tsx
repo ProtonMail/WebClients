@@ -29,13 +29,27 @@ export const getTotalStorage = (
     };
 };
 
-export const getInitialStorage = (organization?: Organization) => {
+const getDefaultInitialStorage = (organization: Organization | undefined) => {
     const isFamilyOrg = getOrganizationDenomination(organization) === 'familyGroup';
     if (isFamilyOrg || organization?.PlanName === PLANS.VISIONARY) {
         return 500 * sizeUnits.GB;
     }
     if ([PLANS.DRIVE_PRO, PLANS.DRIVE_BUSINESS].includes(organization?.PlanName as any)) {
         return sizeUnits.TB;
+    }
+    return 5 * sizeUnits.GB;
+};
+
+export const getInitialStorage = (
+    organization: Organization | undefined,
+    storageRange: {
+        min: number;
+        max: number;
+    }
+) => {
+    const result = getDefaultInitialStorage(organization);
+    if (result <= storageRange.max) {
+        return result;
     }
     return 5 * sizeUnits.GB;
 };
