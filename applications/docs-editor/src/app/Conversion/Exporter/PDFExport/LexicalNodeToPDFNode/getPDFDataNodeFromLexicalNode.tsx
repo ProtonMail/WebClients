@@ -6,7 +6,7 @@ import { $isTableNode, $isTableCellNode, $isTableRowNode } from '@lexical/table'
 import type { EditorState } from 'lexical'
 import { type LexicalNode, $isLineBreakNode, $isTextNode, $isElementNode, $isParagraphNode } from 'lexical'
 import { $isImageNode } from '../../../../Plugins/Image/ImageNode'
-import { ExportStyles } from '../ExportStyles'
+import { BodyFontSizePx, ExportStyles } from '../ExportStyles'
 import { getFontSizeForHeading } from './getFontSizeForHeading'
 import { getListItemNode } from './getListItemNode'
 import { getNodeTextAlignment } from './getNodeTextAlignment'
@@ -16,16 +16,15 @@ import { toImage } from '@proton/shared/lib/helpers/image'
 import { isWebpImage } from '../../../ImageSrcUtils'
 import type { ExporterRequiredCallbacks } from '../../EditorExporter'
 import { convertWebpToJpeg } from './convertWebpToJpeg'
+import { pixelsToPoints } from './Utils/pixelsToPoints'
+import { cssStringToMap } from './Utils/cssStringToMap'
+import { pxToNumber } from './Utils/pxToNumber'
 
 const MaxEditorWidthPx = 816
 const WidthOfA4PDFInPx = 794
 const Padding = ExportStyles.page.paddingLeft + ExportStyles.page.paddingRight
 const MaxImageWidth = WidthOfA4PDFInPx - Padding
 const EditorToPDFConversionFactor = MaxImageWidth / MaxEditorWidthPx
-
-function pixelsToPoints(pixels: number): number {
-  return pixels * 0.75
-}
 
 export const getPDFDataNodeFromLexicalNode = async (
   node: LexicalNode,
@@ -47,6 +46,10 @@ export const getPDFDataNodeFromLexicalNode = async (
       const isBold = node.hasFormat('bold')
       const isItalic = node.hasFormat('italic')
       const isHighlight = node.hasFormat('highlight')
+      const stylesMap = cssStringToMap(node.getStyle())
+      const nodeFontSize = stylesMap['font-size'] as string
+      const pdfFontSize =
+        isInlineCode || isCodeNodeText ? pixelsToPoints(BodyFontSizePx) : pixelsToPoints(pxToNumber(nodeFontSize))
 
       let font = isInlineCode || isCodeNodeText ? 'Courier' : 'Helvetica'
       if (isBold || isItalic) {
@@ -64,6 +67,7 @@ export const getPDFDataNodeFromLexicalNode = async (
         children: node.getTextContent(),
         style: {
           fontFamily: font,
+          color: stylesMap.color as string,
           // eslint-disable-next-line no-nested-ternary
           textDecoration: node.hasFormat('underline')
             ? 'underline'
@@ -72,7 +76,7 @@ export const getPDFDataNodeFromLexicalNode = async (
               : undefined,
           // eslint-disable-next-line no-nested-ternary
           backgroundColor: isInlineCode ? '#f1f1f1' : isHighlight ? 'rgb(255,255,0)' : undefined,
-          fontSize: isInlineCode || isCodeNodeText ? 11 : undefined,
+          fontSize: pdfFontSize,
           textAlign: $isElementNode(parent) ? getNodeTextAlignment(parent) : 'left',
         },
       }
@@ -302,7 +306,7 @@ export const getPDFDataNodeFromLexicalNode = async (
         ExportStyles.row,
         ExportStyles.wrap,
         {
-          fontSize: $isHeadingNode(node) ? state.read(() => getFontSizeForHeading(node)) : undefined,
+          fontSize: $isHeadingNode(node) ? state.read(() => pixelsToPoints(getFontSizeForHeading(node))) : undefined,
         },
         $isQuoteNode(node) ? ExportStyles.quote : {},
       ],
