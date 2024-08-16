@@ -16,12 +16,18 @@ interface Props {
 }
 
 const ProtonTipCTA = ({ actionType, settingsUrl, ctaText }: Props) => {
-    const { onClick, modalContent, redirectToSettings, loadingProtonDomains } = useTipConfig({ actionType });
+    const { onClick, modalContent, redirectToSettings, loadingProtonDomains, sendCTAButtonClickedReport } =
+        useTipConfig({ actionType });
     const snoozedElement = useMailSelector(selectSnoozeElement);
 
     if (redirectToSettings && settingsUrl) {
         return (
-            <SettingsLink path={settingsUrl} className="link align-baseline" app={APPS.PROTONMAIL}>
+            <SettingsLink
+                path={settingsUrl}
+                className="link align-baseline"
+                app={APPS.PROTONMAIL}
+                onClick={() => sendCTAButtonClickedReport(actionType)}
+            >
                 {ctaText}
             </SettingsLink>
         );
