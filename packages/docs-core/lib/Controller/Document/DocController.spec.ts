@@ -293,6 +293,14 @@ describe('DocController', () => {
 
       expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
     })
+
+    it('should lock if editor has rendering issue', () => {
+      controller.hasEditorRenderingIssue = true
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
+    })
   })
 
   describe('websocket lifecycle', () => {
@@ -596,6 +604,22 @@ describe('DocController', () => {
       await controller.handleEditorProvidingInitialConversionContent(new Uint8Array())
 
       expect(controller.websocketService.reconnectToDocumentWithoutDelay).toHaveBeenCalled()
+    })
+  })
+
+  describe('editorIsRequestingToLockAfterRenderingIssue', () => {
+    it('should set hasEditorRenderingIssue', () => {
+      controller.editorIsRequestingToLockAfterRenderingIssue()
+
+      expect(controller.hasEditorRenderingIssue).toBe(true)
+    })
+
+    it('should reload editing locked state', () => {
+      controller.reloadEditingLockedState = jest.fn()
+
+      controller.editorIsRequestingToLockAfterRenderingIssue()
+
+      expect(controller.reloadEditingLockedState).toHaveBeenCalled()
     })
   })
 })

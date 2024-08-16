@@ -22,20 +22,21 @@ export interface DocControllerInterface {
   debugGetUnrestrictedSharingUrl(): Promise<string>
   debugSendCommitCommandToRTS(): Promise<void>
   deinit(): void
+  destroy(): void
   duplicateDocument(): Promise<void>
   editorIsReadyToReceiveInvocations(editorInvoker: ClientRequiresEditorMethods): Promise<void>
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
+  editorIsRequestingToLockAfterRenderingIssue(): void
+  exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   getDocumentClientId(): Promise<number | undefined>
+  getEditorJSON(): Promise<SerializedEditorState | undefined>
   getSureDocument(): DocumentMetaInterface
   getVersionHistory(): NativeVersionHistory | undefined
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
   initialize(): Promise<Result<DocLoadSuccessResult>>
   openDocumentSharingModal(): void
+  printAsPDF(): Promise<void>
   renameDocument(newName: string): Promise<TranslatedResult<void>>
   showCommentsPanel(): void
   squashDocument(): Promise<void>
-  exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
-  printAsPDF(): Promise<void>
-  getEditorJSON(): Promise<SerializedEditorState | undefined>
-  destroy(): void
 }
