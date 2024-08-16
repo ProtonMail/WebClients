@@ -61,7 +61,7 @@ import {
 import { useKTVerifier } from '../keyTransparency';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import { AssistantUpdateSubscriptionButton } from '../payments';
-import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
 import SubUserCreateHint from './SubUserCreateHint';
 import { adminTooltipText } from './constants';
@@ -148,7 +148,7 @@ const SubUserCreateModal = ({
             organization &&
             hasVPN &&
             (hasVpnB2bPlan ? true : organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS),
-        storage: clamp(5 * sizeUnits.GB, storageRange.min, storageRange.max),
+        storage: clamp(getInitialStorage(organization), storageRange.min, storageRange.max),
     });
 
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, useGetUser());
