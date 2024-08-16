@@ -122,14 +122,19 @@ function getNewUpdate(local: LocalDesktopVersion, unorderedAvailableVersions: Ve
             }
 
             if (!isANewerThanB(r.Version, local.Version)) {
-                updateLogger.info("Skipping update: no newer version avaiable, local:", local, "latest:", r);
+                updateLogger.info(
+                    "Skipping update: no newer version avaiable, local:",
+                    JSON.stringify(local),
+                    "latest:",
+                    JSON.stringify(r),
+                );
                 return false;
             }
 
             if (local.RolloutProportion > r.RolloutProportion) {
                 updateLogger.info(
                     "Skipping update: a newer version is available",
-                    r,
+                    JSON.stringify(r),
                     `but rollout is low, local:${local.RolloutProportion * 100}%`,
                 );
                 return false;
