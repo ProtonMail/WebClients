@@ -25,7 +25,7 @@ import {
 } from '../../components';
 import { useApi, useEventManager, useNotifications, useSubscription } from '../../hooks';
 import { AssistantUpdateSubscriptionButton } from '../payments';
-import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 
 interface Props extends ModalStateProps {
     organization?: Organization;
@@ -57,7 +57,9 @@ const UserInviteOrEditModal = ({
     const initialModel = useMemo(
         () => ({
             address: '',
-            storage: member ? member.MaxSpace : clamp(500 * sizeUnits.GB, storageRange.min, storageRange.max),
+            storage: member
+                ? member.MaxSpace
+                : clamp(getInitialStorage(organization), storageRange.min, storageRange.max),
             vpn: !!member?.MaxVPN,
             numAI: aiSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
             admin: member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
