@@ -149,8 +149,8 @@ html,
 
 		.navigation-counter-item {
 			position: absolute;
-			inset-block-start: 0;
-			inset-inline-end: 0;
+			inset-block-start: 0.35em;
+			inset-inline-end: 0.35em;
 			transform: translateX(50%) translateY(-50%);
 			inline-size: rem(8);
 			block-size: rem(8);
