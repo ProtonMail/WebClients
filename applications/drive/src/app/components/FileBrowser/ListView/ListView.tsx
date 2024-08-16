@@ -203,7 +203,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
                         outerRef={scrollAreaRef}
                         innerElementType={TableBodyRenderer}
                         itemKey={(index, data) =>
-                            loading && index === itemCount - 1 ? 'loader' : `${data.items[index].id}`
+                            loading && index === itemCount - 1 ? 'loader' : `${data.items[index].id}+${index}`
                         }
                     >
                         {ListItemRow}
