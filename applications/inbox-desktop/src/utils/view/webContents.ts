@@ -42,6 +42,18 @@ export function handleWebContents(contents: WebContents) {
         ev.preventDefault();
     };
 
+    contents.on("did-navigate", (ev, url) => {
+        log("did-navigate", url);
+
+        if (!isCurrentContent()) {
+            return;
+        }
+
+        if (isHome(url)) {
+            resetHiddenViews({ toHomepage: true });
+        }
+    });
+
     contents.on("did-navigate-in-page", (ev, url) => {
         log("did-navigate-in-page", url);
 
