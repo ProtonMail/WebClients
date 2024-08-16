@@ -26,7 +26,7 @@ describe('signature', () => {
 
     describe('insertSignature', () => {
         describe('rules', () => {
-            it('should remove line breaks', () => {
+            it('should not convert line breaks to <br> if HTML content', () => {
                 const result = insertSignature(
                     content,
                     signature,
@@ -36,7 +36,20 @@ describe('signature', () => {
                     undefined,
                     false
                 );
-                expect(result).toContain('<br><strong>');
+                expect(result).toContain('<strong>');
+            });
+
+            it('should not convert line breaks to <br> if plain text content', () => {
+                const result = insertSignature(
+                    content,
+                    'hello \n world',
+                    MESSAGE_ACTIONS.NEW,
+                    mailSettings,
+                    userSettings,
+                    undefined,
+                    false
+                );
+                expect(result).toContain('hello <br> world');
             });
 
             it('should try to clean the signature', () => {
