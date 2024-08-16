@@ -10,7 +10,7 @@ export enum TipActionType {
     CreateAlias = 'alias',
     ScheduleMessage = 'schedule_send',
     ClearMailbox = 'auto_delete',
-    CreateEmailAddress = 'cereate_address',
+    CreateEmailAddress = 'create_address',
     SnoozeEmail = 'snooze',
     EnableDarkWebMonitoring = 'dwm',
     OpenProtonDrive = 'drive',
