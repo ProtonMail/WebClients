@@ -302,7 +302,8 @@
 				background-color: var(--interaction-default-hover);
 			}
 
-			&.dropdown-item--is-selected {
+			&.dropdown-item--is-selected,
+			& .dropdown-item--is-selected {
 				&,
 				&:hover,
 				&:focus,
