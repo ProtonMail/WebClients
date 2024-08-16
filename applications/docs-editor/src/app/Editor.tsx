@@ -42,6 +42,7 @@ import type { EditorLoadResult } from './EditorLoadResult'
 import { KeyboardShortcutsPlugin } from './Plugins/KeyboardShortcuts/KeyboardShortcutsPlugin'
 import { PasteLimitPlugin } from './Plugins/PasteLimitPlugin'
 import { CustomOrderedListPlugin } from './Plugins/CustomList/CustomListPlugin'
+import { WordCountPlugin } from './Plugins/WordCount/WordCountPlugin'
 
 const TypingBotEnabled = false
 
@@ -177,6 +178,7 @@ export function Editor({
         <AutoFocusPlugin isEditorHidden={hidden} />
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
+        <WordCountPlugin onWordCountChange={(wordCountInfo) => clientInvoker.reportWordCount(wordCountInfo)} />
       </SafeLexicalComposer>
     </CollaborationContext.Provider>
   )
