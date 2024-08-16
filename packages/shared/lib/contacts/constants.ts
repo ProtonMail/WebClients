@@ -1,5 +1,5 @@
 // BACK-END DATA
-import { BASE_SIZE } from '../constants';
+import { BASE_SIZE } from '../helpers/size';
 
 export const VCARD_KEY_FIELDS = [
     'key',
