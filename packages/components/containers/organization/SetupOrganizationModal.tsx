@@ -90,7 +90,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     };
 
     const selfMemberID = selfMember?.ID;
-    const initialStorage = getInitialStorage(organization);
+    const initialStorage = getInitialStorage(organization, storageRange);
     // Storage can be undefined in the beginning because org is undefined. So we keep it floating until it's set.
     const storageValue =
         model.storage === -1 ? clamp(initialStorage, storageRange.min, storageRange.max) : model.storage;
