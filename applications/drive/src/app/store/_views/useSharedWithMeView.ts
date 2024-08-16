@@ -189,6 +189,8 @@ export default function useSharedWithMeView(shareId: string) {
     );
 
     useEffect(() => {
+        // Even if the user is going into a folder, we keep shared with me items decryption ongoing in the background
+        // This is due to issue with how we decrypt stuff, to prevent infinite loop
         void withLoading(async () => loadSharedWithMeLinks(new AbortController().signal)).catch(sendErrorReport);
         void withPendingLoading(async () => loadPendingInvitations(abortSignal)).catch(sendErrorReport);
     }, []);

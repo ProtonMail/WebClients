@@ -112,7 +112,7 @@ export function usePendingInvitationsListing() {
     /**
      * Loads shared with me links.
      */
-    const loadPendingInvitations = async (signal: AbortSignal): Promise<void> => {
+    const loadPendingInvitations = async (signal: AbortSignal): Promise<{ Count?: number } | void> => {
         const { addressId } = await getDefaultShare();
         const privateKeys = await getPrivateAddressKeys(addressId);
 

@@ -26,7 +26,7 @@ describe('Performance Telemetry', () => {
     });
 
     it('measureExperimentalPerformance: executes the control function when flag is false', async () => {
-        const feature = Features.optimisticFileUploads;
+        const feature = 'testFeature' as Features;
         const flag = false;
         const controlFunction = jest.fn(() => Promise.resolve('control result'));
         const treatmentFunction = jest.fn(() => Promise.resolve('treatment result'));
@@ -53,7 +53,7 @@ describe('Performance Telemetry', () => {
     });
 
     it('measureExperimentalPerformance: executes the treatment function when flag is true', async () => {
-        const feature = Features.optimisticFileUploads;
+        const feature = 'testFeature' as Features;
         const flag = true;
         const controlFunction = jest.fn(() => Promise.resolve('control result'));
         const treatmentFunction = jest.fn(() => Promise.resolve('treatment result'));

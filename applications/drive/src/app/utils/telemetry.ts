@@ -16,10 +16,9 @@ export enum ExperimentGroup {
 }
 
 export enum Features {
-    optimisticFileUploads = 'optimisticFileUploads',
-    optimisticFolderUploads = 'optimisticFolderUploads',
     mountToFirstItemRendered = 'mountToFirstItemRendered',
     totalSizeComputation = 'totalSizeComputation',
+    sharingLoadLinksByVolume = 'sharingLoadLinksByVolume',
 }
 
 type PerformanceTelemetryAdditionalValues = {
