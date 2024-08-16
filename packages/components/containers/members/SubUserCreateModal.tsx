@@ -148,7 +148,7 @@ const SubUserCreateModal = ({
             organization &&
             hasVPN &&
             (hasVpnB2bPlan ? true : organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS),
-        storage: clamp(getInitialStorage(organization), storageRange.min, storageRange.max),
+        storage: clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
     });
 
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, useGetUser());

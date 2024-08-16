@@ -59,7 +59,7 @@ const UserInviteOrEditModal = ({
             address: '',
             storage: member
                 ? member.MaxSpace
-                : clamp(getInitialStorage(organization), storageRange.min, storageRange.max),
+                : clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
             vpn: !!member?.MaxVPN,
             numAI: aiSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
             admin: member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
