@@ -244,7 +244,7 @@ export function App({ nonInteractiveMode = false }: Props) {
             .getClientInvoker()
             .editorRequestsPropagationOfUpdate(message, debugSource)
             .catch((e: Error) => {
-              void bridge.getClientInvoker().reportError(e)
+              void bridge.getClientInvoker().reportError(e, 'devops-only')
             })
         },
         handleAwarenessStateUpdate: (states) => {
@@ -252,7 +252,7 @@ export function App({ nonInteractiveMode = false }: Props) {
             .getClientInvoker()
             .handleAwarenessStateUpdate(states)
             .catch((e: Error) => {
-              void bridge.getClientInvoker().reportError(e)
+              void bridge.getClientInvoker().reportError(e, 'devops-only')
             })
 
           application.eventBus.publish<DocsAwarenessStateChangeData>({
@@ -332,7 +332,9 @@ export function App({ nonInteractiveMode = false }: Props) {
   const onEditorLoadResult = useCallback(
     (result: TranslatedResult<void>) => {
       if (result.isFailed()) {
-        void bridge.getClientInvoker().reportError(new Error(result.getTranslatedError()), { irrecoverable: true })
+        void bridge
+          .getClientInvoker()
+          .reportError(new Error(result.getTranslatedError()), 'user-and-devops', { irrecoverable: true })
         return
       }
 
@@ -343,6 +345,23 @@ export function App({ nonInteractiveMode = false }: Props) {
       docState.onEditorReadyToReceiveUpdates()
     },
     [docState, bridge],
+  )
+
+  const onEditorError = useCallback(
+    (error: Error) => {
+      /** Report a UI displayable error */
+      const message = c('Error')
+        .t`An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.`
+      void bridge
+        .getClientInvoker()
+        .reportError(new Error(message), 'user-only', { irrecoverable: false, lockEditor: true })
+
+      /** Report the underlying error */
+      void bridge.getClientInvoker().reportError(error, 'devops-only')
+
+      application.logger.error('A lexical error occurred', error)
+    },
+    [application.logger, bridge],
   )
 
   if (!initialConfig || !docState) {
@@ -366,10 +385,11 @@ export function App({ nonInteractiveMode = false }: Props) {
           docState={docState}
           documentId={initialConfig.documentId}
           editingLocked={editingLocked || interactionMode === 'view'}
+          editorInitializationConfig={initialConfig.editorInitializationConfig}
           hasEditAccess={application.getRole().canEdit()}
           hidden={editorHidden}
-          editorInitializationConfig={initialConfig.editorInitializationConfig}
           nonInteractiveMode={nonInteractiveMode}
+          onEditorError={onEditorError}
           onEditorLoadResult={onEditorLoadResult}
           onInteractionModeChange={onInteractionModeChange}
           setEditorRef={setEditorRef}

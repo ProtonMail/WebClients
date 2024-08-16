@@ -85,18 +85,27 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     link.remove()
   }
 
-  async reportError(error: Error, extraInfo?: { irrecoverable?: boolean; errorInfo?: ErrorInfo }): Promise<void> {
-    traceError(error, {
-      tags: {
-        'editor-to-client': true,
-      },
-      extra: {
-        errorInfo: extraInfo?.errorInfo ?? {},
-      },
-    })
+  async reportError(
+    error: Error,
+    audience: 'user-and-devops' | 'devops-only' | 'user-only',
+    extraInfo?: { irrecoverable?: boolean; errorInfo?: ErrorInfo; lockEditor?: boolean },
+  ): Promise<void> {
+    if (audience == 'user-and-devops' || audience == 'devops-only') {
+      traceError(error, {
+        tags: {
+          'editor-to-client': true,
+        },
+        extra: {
+          errorInfo: extraInfo?.errorInfo ?? {},
+        },
+      })
+    }
 
-    if (extraInfo?.irrecoverable) {
-      this.docOrchestrator.editorReportingFatalError(error.message)
+    if (audience === 'user-and-devops' || audience === 'user-only') {
+      this.docOrchestrator.editorReportingError(error.message, {
+        irrecoverable: extraInfo?.irrecoverable,
+        lockEditor: extraInfo?.lockEditor,
+      })
     }
   }
 
