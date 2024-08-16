@@ -14,15 +14,12 @@ import {
     PLANS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import humanSize, { getSizeFormat } from '@proton/shared/lib/helpers/humanSize';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { FreePlanDefault, PlansMap } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import type { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
-
-const getTb = (n: number) => {
-    return `${n} ${getSizeFormat('TB', n)}`;
-};
 
 export const getFreeDriveStorageFeature = (freePlan: FreePlanDefault): PlanCardFeatureDefinition => {
     const totalStorageSize = humanSize({ bytes: freePlan.MaxDriveRewardSpace, fraction: 0 });
@@ -74,14 +71,10 @@ export const getStorageFeature = (
         };
     }
 
-    // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
-    let humanReadableSize = humanSize({ bytes, fraction: 0 });
+    let humanReadableSize = humanSize({ bytes, fraction: 0, unitOptions: { max: 'TB' } });
+    // The storage for Duo is actually not 1 TB, it's slightly less, so we hardcode it to 1TB
     if (options.duo) {
-        humanReadableSize = getTb(1);
-    } else if (options.visionary) {
-        humanReadableSize = getTb(6);
-    } else if (options.family) {
-        humanReadableSize = getTb(3);
+        humanReadableSize = humanSize({ bytes: sizeUnits.TB, fraction: 0, unitOptions: { max: 'TB' } });
     }
 
     const size = boldStorageSize ? <b key="bold-storage-size">{humanReadableSize}</b> : humanReadableSize;
