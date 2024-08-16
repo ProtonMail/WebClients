@@ -17,6 +17,7 @@ import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { getPlatformFriendlyDateForFileName } from '@proton/docs-core'
 import { APP_VERSION } from '../config'
+import { WordCountContextProvider } from '../Components/WordCount/WordCountProvider'
 
 function ApplicationContainer() {
   void import('../tailwind.scss')
@@ -211,21 +212,23 @@ function ApplicationContainer() {
 
   return (
     <ApplicationProvider application={application}>
-      <DocsLayout action={action}>
-        <Switch>
-          <Route path={'*'}>
-            <Content
-              onConversionSuccess={onConversionSuccess}
-              openAction={openAction}
-              actionMode={action}
-              isCreatingNewDocument={isCreatingNewDocument}
-              getNodeContents={driveCompat.getNodeContents}
-              editorInitializationConfig={editorInitializationConfig}
-            />
-          </Route>
-        </Switch>
-        {driveCompat.modals}
-      </DocsLayout>
+      <WordCountContextProvider>
+        <DocsLayout action={action}>
+          <Switch>
+            <Route path={'*'}>
+              <Content
+                onConversionSuccess={onConversionSuccess}
+                openAction={openAction}
+                actionMode={action}
+                isCreatingNewDocument={isCreatingNewDocument}
+                getNodeContents={driveCompat.getNodeContents}
+                editorInitializationConfig={editorInitializationConfig}
+              />
+            </Route>
+          </Switch>
+          {driveCompat.modals}
+        </DocsLayout>
+      </WordCountContextProvider>
     </ApplicationProvider>
   )
 }
