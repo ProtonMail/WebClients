@@ -208,7 +208,7 @@ export function useLinkInner(
             abortSignal: AbortSignal,
             shareId: string,
             linkId: string
-        ): Promise<{ passphrase: string; passphraseSessionKey: SessionKey }> => {
+        ): Promise<{ passphrase: string; passphraseSessionKey: SessionKey; encryptedLink?: EncryptedLink }> => {
             const passphrase = linksKeys.getPassphrase(shareId, linkId);
             const sessionKey = linksKeys.getPassphraseSessionKey(shareId, linkId);
             if (passphrase && sessionKey) {
@@ -247,6 +247,7 @@ export function useLinkInner(
                 return {
                     passphrase: decryptedPassphrase,
                     passphraseSessionKey,
+                    encryptedLink,
                 };
             } catch (e) {
                 throw new EnrichedError('Failed to decrypt link passphrase', {
@@ -271,8 +272,9 @@ export function useLinkInner(
                 return privateKey;
             }
 
-            const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
-            const { passphrase } = await getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId);
+            // getLinkPassphraseAndSessionKey already call getEncryptedLink, prevent to call fetchLink twice
+            let { passphrase, encryptedLink } = await getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId);
+            encryptedLink = encryptedLink || (await getEncryptedLink(abortSignal, shareId, linkId));
 
             try {
                 privateKey = await importPrivateKey({ armoredKey: encryptedLink.nodeKey, passphrase });
