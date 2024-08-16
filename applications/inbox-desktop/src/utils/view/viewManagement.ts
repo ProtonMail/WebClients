@@ -90,7 +90,6 @@ const createViews = (session: Session) => {
 
     const config = getConfig();
     loadURL("mail", config.url.mail);
-    loadURL("calendar", config.url.calendar);
 };
 
 const createBrowserWindow = (session: Session) => {
