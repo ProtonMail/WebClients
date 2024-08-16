@@ -32,6 +32,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import { useAuthentication } from '@proton/components/hooks'
 import { useGetUserSettings } from '@proton/components/hooks/useUserSettings'
+import WordCountOverlay from './WordCount/WordCountOverlay'
 
 type Props = {
   lookup: NodeMeta
@@ -301,7 +302,7 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
   return (
     <div className="relative h-full w-full">
       {ready && debug && <DebugMenu docController={application.docLoader.getDocController()} />}
-
+      {ready && <WordCountOverlay />}
       {!docOrchestrator && (
         <div className="bg-norm flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center gap-4">
           <CircleLoader size="large" />
