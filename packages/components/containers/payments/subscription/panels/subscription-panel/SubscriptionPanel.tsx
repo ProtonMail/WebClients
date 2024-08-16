@@ -42,7 +42,7 @@ import percentage from '@proton/utils/percentage';
 
 import type { IconName } from '../../../../../components';
 import { Icon, Meter, Price, StripedItem, StripedList } from '../../../../../components';
-import { getVersionHistory } from '../../../features/drive';
+import { getBasicFeatures, getVersionHistory } from '../../../features/drive';
 import { getSentinel } from '../../../features/highlights';
 import {
     FREE_PASS_ALIASES,
@@ -56,7 +56,6 @@ import {
     getLoginsAndNotes,
     getProtonPassFeature,
     getVaultSharing,
-    getVaultSharingB2B,
     getVaults,
 } from '../../../features/pass';
 import { getVPNConnectionsFeature } from '../../../features/vpn';
@@ -287,19 +286,7 @@ const SubscriptionPanel = ({
                     text: userText,
                 },
             getVersionHistory(365),
-            {
-                icon: 'envelope',
-                text: addressText,
-            },
-            {
-                icon: 'calendar-checkmark',
-                text: calendarText,
-            },
-            {
-                icon: 'brand-proton-vpn',
-                text: vpnText,
-            },
-            MaxMembers > 1 ? getVaultSharingB2B(FREE_VAULTS) : getVaults(FREE_VAULTS),
+            getBasicFeatures(),
         ];
 
         return (
