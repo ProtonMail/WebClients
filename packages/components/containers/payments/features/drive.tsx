@@ -216,7 +216,7 @@ export const getDocumentEditor = (): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Online document editor`,
         included: true,
-        icon: 'brand-proton-drive',
+        icon: 'pencil',
     };
 };
 
