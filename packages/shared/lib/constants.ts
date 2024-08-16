@@ -1,5 +1,6 @@
 import type { enums } from '@proton/crypto';
 
+import { sizeUnits } from './helpers/size';
 import type { KeyGenConfig, MaxKeys } from './interfaces';
 
 export const DEFAULT_TIMEOUT = 30000; // default fetch timeout
@@ -447,9 +448,6 @@ export enum UNPAID_STATE {
     NO_RECEIVE = 4,
 }
 
-export const BASE_SIZE = 1024;
-export const GIGA = BASE_SIZE ** 3;
-
 export enum MEMBER_TYPE {
     PROTON = 0,
     MANAGED = 1,
@@ -697,12 +695,12 @@ export const UPSELL_ONE_DOLLAR_PROMO_PATHS = [
     SHARED_UPSELL_PATHS.CONTACT_GROUP,
 ];
 
-export const LOYAL_BONUS_STORAGE = 5 * GIGA;
+export const LOYAL_BONUS_STORAGE = 5 * sizeUnits.GB;
 export const LOYAL_BONUS_CONNECTION = 2;
 
-export const COVID_PLUS_BONUS_STORAGE = 5 * GIGA;
-export const COVID_PROFESSIONAL_BONUS_STORAGE = 5 * GIGA;
-export const COVID_VISIONARY_BONUS_STORAGE = 10 * GIGA;
+export const COVID_PLUS_BONUS_STORAGE = 5 * sizeUnits.GB;
+export const COVID_PROFESSIONAL_BONUS_STORAGE = 5 * sizeUnits.GB;
+export const COVID_VISIONARY_BONUS_STORAGE = 10 * sizeUnits.GB;
 
 export const FREE_VPN_CONNECTIONS = 1;
 export const VPN_CONNECTIONS = 10;
