@@ -283,6 +283,7 @@ const useTipConfig = ({ actionType }: Props) => {
         onClick: onClick,
         redirectToSettings: shouldRedirectToSettingsUrl(),
         loadingProtonDomains,
+        sendCTAButtonClickedReport,
     };
 };
 
