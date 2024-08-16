@@ -1,5 +1,5 @@
 import { ACCENT_COLORS } from '../colors';
-import { BASE_SIZE } from '../constants';
+import { BASE_SIZE } from '../helpers/size';
 
 export const MAX_CALENDARS_FREE = 3;
 export const MAX_CALENDARS_PAID = 25; // Only paid mail
