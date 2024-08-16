@@ -14,9 +14,22 @@ type LoadLinksMetaOptions = {
 export type FetchLoadLinksMeta = (
     abortSignal: AbortSignal,
     query: string,
-    shareId: string,
+    volumeId: string,
     linkIds: string[],
     options?: LoadLinksMetaOptions
+) => Promise<{
+    links: DecryptedLink[];
+    parents: DecryptedLink[];
+    errors: any[];
+}>;
+
+export type FetchLoadLinksMetaByVolume = (
+    abortSignal: AbortSignal,
+    volumeId: string,
+    linkWithShareIds: { linkId: string; shareId: string }[],
+    options: Omit<LoadLinksMetaOptions, 'fetchMeta'> & {
+        fetchMeta: FetchMeta;
+    }
 ) => Promise<{
     links: DecryptedLink[];
     parents: DecryptedLink[];
