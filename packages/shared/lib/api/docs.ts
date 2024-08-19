@@ -5,12 +5,14 @@ export enum DocsApiErrorCode {
 export const getDocumentMeta = (volumeId: string, linkId: string) => ({
     method: 'get',
     url: `docs/volumes/${volumeId}/documents/${linkId}/meta`,
+    silence: true,
 });
 
 export const getCommitData = (volumeId: string, linkId: string, commitId: string) => ({
     method: 'get',
     url: `docs/volumes/${volumeId}/documents/${linkId}/commits/${commitId}`,
     output: 'raw',
+    silence: true,
 });
 
 export const seedInitialCommit = (volumeId: string, linkId: string, data: Uint8Array) => ({
@@ -41,6 +43,7 @@ export const createDocument = (volumeId: string, linkId: string) => ({
     method: 'post',
     url: `docs/volumes/${volumeId}/documents/${linkId}`,
     data: {},
+    silence: true,
 });
 
 export const getAllCommentThreadsInDocument = (volumeId: string, linkId: string) => ({
