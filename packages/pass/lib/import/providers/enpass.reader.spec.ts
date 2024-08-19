@@ -35,7 +35,7 @@ describe('Import Enpass json', () => {
 
         const [primary] = payload.vaults;
         expect(primary.name).not.toBeUndefined();
-        expect(primary.items.length).toEqual(9);
+        expect(primary.items.length).toEqual(10);
 
         /* Login */
         const loginItem1 = deobfuscateItem(primary.items[0]) as unknown as ItemImportIntent<'login'>;
@@ -135,11 +135,18 @@ describe('Import Enpass json', () => {
         expect(passwordItem1.content.itemEmail).toEqual('');
         expect(passwordItem1.content.itemUsername).toEqual('username');
         expect(passwordItem1.content.password).toEqual('password');
+
+        /* Identity */
+        const identityItem = deobfuscateItem(primary.items[9]) as unknown as ItemImportIntent<'identity'>;
+        expect(identityItem.metadata.name).toEqual('Identity');
+        expect(identityItem.content.firstName).toEqual('John');
+        expect(identityItem.content.middleName).toEqual('Jay');
+        expect(identityItem.content.lastName).toEqual('Doe');
     });
 
     test('correctly keeps a reference to ignored items', () => {
         expect(payload.ignored).not.toEqual([]);
-        expect(payload.ignored.length).toEqual(6);
+        expect(payload.ignored.length).toEqual(5);
         expect(payload.ignored[0]).toEqual('[Travel] Passport Sample');
     });
 });
