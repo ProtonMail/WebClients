@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { ModelState, getInitialModelState, serverEvent } from '@proton/account';
+import { type ModelState, getInitialModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryContacts } from '@proton/shared/lib/api/contacts';
@@ -9,8 +9,8 @@ import { CONTACTS_LIMIT, CONTACTS_REQUESTS_PER_SECOND } from '@proton/shared/lib
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import { Api } from '@proton/shared/lib/interfaces';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import { type Api } from '@proton/shared/lib/interfaces';
+import { type Contact } from '@proton/shared/lib/interfaces/contacts';
 
 const name = 'contacts' as const;
 
