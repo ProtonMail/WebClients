@@ -20,7 +20,11 @@ interface Props {
 }
 
 // Return config properties to inject in the subscription modal
-const useUpsellConfig = ({ upsellRef, step, onSubscribed }: Props): Partial<UpsellModalProps> => {
+const useUpsellConfig = ({
+    upsellRef,
+    step,
+    onSubscribed,
+}: Props): Partial<UpsellModalProps> & Required<Pick<UpsellModalProps, 'upgradePath'>> => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
