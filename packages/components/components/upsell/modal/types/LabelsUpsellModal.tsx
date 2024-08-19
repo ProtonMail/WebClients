@@ -38,7 +38,7 @@ const LabelsUpsellModal = ({
             description={c('Description')
                 .t`Unlock unlimited folders, labels and more premium features when you upgrade.`}
             modalProps={modalProps}
-            features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
+            features={['unlimited-folders-and-labels', 'more-storage', 'more-email-addresses', 'custom-email-domains']}
             onClose={onCloseCustomAction}
             {...upsellConfig}
         />
