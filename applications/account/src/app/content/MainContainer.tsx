@@ -157,7 +157,7 @@ const MainContainer = () => {
     const assistantKillSwitch = isInAllowedApps ? !hasAssistant && assistantUpsellKillSwitch : true;
 
     const organizationTheme = useOrganizationTheme();
-    const [memberships] = useGroupMemberships();
+    const [memberships, loadingGroupMembership] = useGroupMemberships();
 
     const routes = getRoutes({
         app,
@@ -267,7 +267,13 @@ const MainContainer = () => {
     );
 
     const redirect = (() => {
-        if (loadingOrganization || loadingSubscription || loadingDataRecovery || loadingIsSessionRecoveryAvailable) {
+        if (
+            loadingOrganization ||
+            loadingSubscription ||
+            loadingDataRecovery ||
+            loadingIsSessionRecoveryAvailable ||
+            loadingGroupMembership
+        ) {
             return <PrivateMainAreaLoading />;
         }
 
