@@ -27,16 +27,13 @@ const AutoDeleteUpsellModal = ({ modalProps, upsellComponent }: Props) => {
             modalProps={modalProps}
             features={[
                 'auto-delete-trash-and-spam',
-                'schedule-messages',
-                'unlimited-folders-and-labels',
-                'search-message-content',
                 'more-storage',
-                'more-email-addresses',
-                'custom-email-domains',
                 'email-aliases',
+                'unlimited-folders-and-labels',
+                'custom-email-domains',
             ]}
             description={c('Description')
-                .t`Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.`}
+                .t`Auto-delete spam and trashed messages and unlock more premium features when you upgrade.`}
             title={c('Title').t`Clear out the junk`}
             {...upsellConfig}
         />
