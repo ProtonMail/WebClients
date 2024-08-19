@@ -15,6 +15,7 @@ describe('Import 1password 1pux', () => {
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/1password.1pux');
         payload = await read1Password1PuxData({ data: sourceData, importUsername: true });
+        payload.vaults = payload.vaults.slice(1); // Remove "Personal" empty vault
     });
 
     test('should throw on invalid file content', async () => {
@@ -247,6 +248,48 @@ describe('Import 1password 1pux', () => {
 
     test('should parse `shared` vault items correctly', () => {
         const [, , shared] = payload.vaults;
-        expect(shared.items.length).toEqual(0);
+        expect(shared.items.length).toEqual(1);
+
+        const [identityItem] = shared.items as ItemImportIntent<'identity'>[];
+        expect(identityItem.type).toEqual('identity');
+        expect(identityItem.metadata.name).toEqual('Identity');
+        expect(identityItem.content.fullName).toStrictEqual('');
+        expect(identityItem.content.firstName).toStrictEqual(':first-name:');
+        expect(identityItem.content.lastName).toStrictEqual(':last-name:');
+        expect(identityItem.content.middleName).toStrictEqual('');
+        expect(identityItem.content.fullName).toStrictEqual('');
+        expect(identityItem.content.email).toStrictEqual(':email:');
+        expect(identityItem.content.phoneNumber).toStrictEqual(':default-phone:');
+        expect(identityItem.content.birthdate).toStrictEqual('12 Aug 1995');
+        expect(identityItem.content.gender).toStrictEqual(':gender:');
+        expect(identityItem.content.organization).toStrictEqual(':company:');
+        expect(identityItem.content.streetAddress).toStrictEqual(':main-street:');
+        expect(identityItem.content.zipOrPostalCode).toStrictEqual(':main-zip-code:');
+        expect(identityItem.content.city).toStrictEqual(':main-city:');
+        expect(identityItem.content.stateOrProvince).toStrictEqual(':main-state:');
+        expect(identityItem.content.countryOrRegion).toStrictEqual(':main-country:');
+        expect(identityItem.content.floor).toStrictEqual('');
+        expect(identityItem.content.county).toStrictEqual('');
+        expect(identityItem.content.socialSecurityNumber).toStrictEqual('');
+        expect(identityItem.content.passportNumber).toStrictEqual('');
+        expect(identityItem.content.licenseNumber).toStrictEqual('');
+        expect(identityItem.content.website).toStrictEqual(':website:');
+        expect(identityItem.content.xHandle).toStrictEqual('');
+        expect(identityItem.content.secondPhoneNumber).toStrictEqual(':cell-phone:');
+        expect(identityItem.content.linkedin).toStrictEqual('');
+        expect(identityItem.content.reddit).toStrictEqual('');
+        expect(identityItem.content.facebook).toStrictEqual('');
+        expect(identityItem.content.yahoo).toStrictEqual(':yahoo:');
+        expect(identityItem.content.instagram).toStrictEqual('');
+        expect(identityItem.content.company).toStrictEqual('');
+        expect(identityItem.content.jobTitle).toStrictEqual(':job-title:');
+        expect(identityItem.content.personalWebsite).toStrictEqual('');
+        expect(identityItem.content.workPhoneNumber).toStrictEqual(':business-phone:');
+        expect(identityItem.content.workEmail).toStrictEqual('');
+        expect(identityItem.content.extraAddressDetails).toStrictEqual([]);
+        expect(identityItem.content.extraContactDetails).toStrictEqual([]);
+        expect(identityItem.content.extraPersonalDetails).toStrictEqual([]);
+        expect(identityItem.content.extraWorkDetails).toStrictEqual([]);
+        expect(identityItem.content.extraSections).toStrictEqual([]);
     });
 });

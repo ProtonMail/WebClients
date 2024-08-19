@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
-import type { Item, ItemImportIntent, Maybe, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
+import type { Item, ItemContent, ItemImportIntent, Maybe, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -148,4 +148,30 @@ export const importCreditCardItem = (options: {
     trashed: options.trashed ?? false,
     createTime: options.createTime,
     modifyTime: options.modifyTime,
+});
+
+export const importIdentityItem = ({
+    name,
+    note,
+    createTime,
+    modifyTime,
+    ...content
+}: ItemContent<'identity'> & {
+    name?: MaybeNull<string>;
+    note?: MaybeNull<string>;
+    createTime?: number;
+    modifyTime?: number;
+}): ItemImportIntent<'identity'> => ({
+    type: 'identity',
+    metadata: {
+        name: name || c('Label').t`Unnamed identity`,
+        note: obfuscate(note || ''),
+        itemUuid: uniqueId(),
+    },
+    content,
+    extraFields: [],
+    extraData: [],
+    trashed: false,
+    createTime: createTime,
+    modifyTime: modifyTime,
 });

@@ -21,7 +21,7 @@ describe('Import Dashlane ZIP', () => {
 
     test('should correctly parse items', () => {
         const [vaultData] = payload.vaults;
-        expect(vaultData.items.length).toEqual(14);
+        expect(vaultData.items.length).toEqual(16);
 
         expect(payload.vaults.length).toEqual(1);
         expect(vaultData.name).not.toBeUndefined();
@@ -226,8 +226,7 @@ describe('Import Dashlane ZIP', () => {
     });
 
     test('should correctly hydrate ignored and warnings arrays', () => {
-        expect(payload.ignored.length).toEqual(1);
-        expect(payload.ignored[0]).toEqual('[Personal Info] Unnamed');
+        expect(payload.ignored.length).toEqual(0);
         expect(payload.warnings.length).toEqual(0);
     });
 });

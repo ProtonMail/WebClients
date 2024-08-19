@@ -33,7 +33,7 @@ describe('Import NordPass csv', () => {
 
     it('parses primary `NordPass import` vault items correctly', () => {
         const [primary] = payload.vaults;
-        expect(primary.items.length).toEqual(4);
+        expect(primary.items.length).toEqual(5);
 
         /* Login */
         const loginItem1 = deobfuscateItem(primary.items[0] as any) as unknown as ItemImportIntent<'login'>;
@@ -61,6 +61,20 @@ describe('Import NordPass csv', () => {
         expect(creditCardItem1.content.expirationDate).toEqual('012025');
         expect(creditCardItem1.content.verificationNumber).toEqual('123');
         expect(creditCardItem1.content.pin).toEqual('');
+
+        /* Identity */
+        const identityItem = deobfuscateItem(primary.items[4] as any) as unknown as ItemImportIntent<'identity'>;
+        expect(identityItem.type).toEqual('identity');
+        expect(identityItem.metadata.name).toEqual(':title:');
+        expect(identityItem.metadata.note).toEqual(':note:');
+        expect(identityItem.content.fullName).toEqual(':full-name:');
+        expect(identityItem.content.email).toEqual(':email:');
+        expect(identityItem.content.phoneNumber).toEqual(':phone-number:');
+        expect(identityItem.content.streetAddress).toEqual(':address-1:');
+        expect(identityItem.content.zipOrPostalCode).toEqual(':zip:');
+        expect(identityItem.content.city).toEqual(':city:');
+        expect(identityItem.content.stateOrProvince).toEqual(':state:');
+        expect(identityItem.content.countryOrRegion).toEqual("Côte d'Ivoire");
     });
 
     it('parses secondary vault items correctly', async () => {
@@ -112,6 +126,5 @@ describe('Import NordPass csv', () => {
     test('correctly keeps a reference to ignored items', () => {
         expect(payload.ignored).not.toEqual([]);
         expect(payload.ignored[0]).toEqual('[folder] company services');
-        expect(payload.ignored[1]).toEqual('[identity] TestID');
     });
 });

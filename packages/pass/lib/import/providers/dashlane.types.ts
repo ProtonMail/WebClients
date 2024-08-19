@@ -45,29 +45,29 @@ export type DashlanePaymentItem = {
 
 export type DashlanePersonalInfoItem = {
     type: Maybe<string>;
-    title: Maybe<string>;
-    first_name: Maybe<string>;
-    middle_name: Maybe<string>;
-    last_name: Maybe<string>;
-    login: Maybe<string>;
+    address: Maybe<string>;
+    address_apartment: Maybe<string>;
+    address_building: Maybe<string>;
+    address_door_code: Maybe<string>;
+    address_floor: Maybe<string>;
+    address_recipient: Maybe<string>;
+    city: Maybe<string>;
+    country: Maybe<string>;
     date_of_birth: Maybe<string>;
-    place_of_birth: Maybe<string>;
     email: Maybe<string>;
     email_type: Maybe<string>;
+    first_name: Maybe<string>;
     item_name: Maybe<string>;
-    phone_number: Maybe<string>;
-    address: Maybe<string>;
-    country: Maybe<string>;
-    state: Maybe<string>;
-    city: Maybe<string>;
-    zip: Maybe<string>;
-    address_recipient: Maybe<string>;
-    address_building: Maybe<string>;
-    address_apartment: Maybe<string>;
-    address_floor: Maybe<string>;
-    address_door_code: Maybe<string>;
     job_title: Maybe<string>;
+    last_name: Maybe<string>;
+    login: Maybe<string>;
+    middle_name: Maybe<string>;
+    phone_number: Maybe<string>;
+    place_of_birth: Maybe<string>;
+    state: Maybe<string>;
+    title: Maybe<string>;
     url: Maybe<string>;
+    zip: Maybe<string>;
 };
 
 export type DashlaneItem =
@@ -84,4 +84,4 @@ export type ValidDashlaneItemKeys =
     | keyof DashlaneIdItem
     | keyof DashlanePersonalInfoItem;
 
-export type ParserFunction = (item: DashlaneItem, importUsername?: boolean) => ItemImportIntent | string;
+export type ParserFunction = (item: DashlaneItem, importUsername?: boolean) => ItemImportIntent;
