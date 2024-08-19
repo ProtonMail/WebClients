@@ -14,8 +14,14 @@ import { Button, InlineLinkButton } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME, MAIL_APP_NAME, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import {
+    type APP_NAMES,
+    BRAND_NAME,
+    MAIL_APP_NAME,
+    MEMBER_PRIVATE,
+    MEMBER_ROLE,
+    VPN_CONNECTIONS,
+} from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
@@ -62,9 +68,11 @@ import { useKTVerifier } from '../keyTransparency';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import { AssistantUpdateSubscriptionButton } from '../payments';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import MemberToggleContainer from './MemberToggleContainer';
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
 import SubUserCreateHint from './SubUserCreateHint';
 import { adminTooltipText } from './constants';
+import { getPrivateLabel } from './helper';
 
 enum Step {
     SINGLE,
@@ -111,7 +119,7 @@ const SubUserCreateModal = ({
     ...rest
 }: Props) => {
     const { createNotification } = useNotifications();
-    const { call, stop, start } = useEventManager();
+    const { stop, start } = useEventManager();
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
     const dispatch = useDispatch();
@@ -195,6 +203,7 @@ const SubUserCreateModal = ({
                     member: {
                         ...model,
                         addresses: [emailAddressParts],
+                        private: model.private ? MEMBER_PRIVATE.UNREADABLE : MEMBER_PRIVATE.READABLE,
                         role: model.admin ? MEMBER_ROLE.ORGANIZATION_ADMIN : MEMBER_ROLE.ORGANIZATION_MEMBER,
                         numAI: model.numAI,
                     },
@@ -223,7 +232,6 @@ const SubUserCreateModal = ({
     const handleSubmit = async () => {
         stop();
         await save().finally(start);
-        await call();
         onClose?.();
         createNotification({ text: c('user_modal').t`User created` });
 
@@ -449,7 +457,7 @@ const SubUserCreateModal = ({
                             onChange={({ target }) => handleChange('private')(target.checked)}
                         />
                         <label className="text-semibold" htmlFor="private-toggle">
-                            {c('user_modal').t`Private`}
+                            {c('user_modal').t`Allow admin access`}
                         </label>
                     </div>
                 )}
