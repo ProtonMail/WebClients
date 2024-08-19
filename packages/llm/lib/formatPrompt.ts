@@ -1,3 +1,5 @@
+import { GENERAL_STOP_STRINGS, STOP_STRINGS_REFINE, STOP_STRINGS_WRITE_FULL_EMAIL } from '@proton/llm/lib/constants';
+import { convertToDoubleNewlines, removeStopStrings } from '@proton/llm/lib/helpers';
 import type {
     Action,
     CustomRefineAction,
@@ -8,8 +10,6 @@ import type {
     ShortenAction,
     WriteFullEmailAction,
 } from '@proton/llm/lib/types';
-import { GENERAL_STOP_STRINGS, STOP_STRINGS_REFINE, STOP_STRINGS_WRITE_FULL_EMAIL } from '@proton/llm/lib/constants';
-import { convertToDoubleNewlines, removeStopStrings } from '@proton/llm/lib/helpers';
 
 const SUPPORTED_LLM_LANGS = 'en,fr,de,es,it,pt,ru,zh,ja,cs,sk,pl'.split(',');
 
@@ -220,13 +220,13 @@ function makeInstructions(recipient?: string, locale?: string) {
     }
 
     // {RECIPIENT_INSTRUCTIONS}
-    recipient = recipient?.replaceAll(/["']/, '')?.trim();
+    recipient = recipient?.replaceAll(/["']/g, '')?.trim();
     if (recipient) {
         system = system.replace(
             '{RECIPIENT_INSTRUCTIONS}',
             `The recipient is called "${recipient}".\n` +
-            'Depending on the context, you decide whether to use the full name, ' +
-            'only the first or last name, or none.'
+                'Depending on the context, you decide whether to use the full name, ' +
+                'only the first or last name, or none.'
         );
     } else {
         system = system.replace('{RECIPIENT_INSTRUCTIONS}', '');
