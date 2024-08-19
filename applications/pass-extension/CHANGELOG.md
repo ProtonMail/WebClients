@@ -1,3 +1,7 @@
+### Version 1.22.2
+
+-   Support for importing identities from other password managers
+
 ### Version 1.22.1
 
 -   Decouple "inject" from "open-on-focus" autofill setting
