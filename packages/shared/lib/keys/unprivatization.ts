@@ -366,7 +366,7 @@ interface UnprivatizeMemberAddressKeyDto {
 }
 
 export interface UnprivatizeMemberResult {
-    UserKey: UnprivatizeMemberUserKeyDto;
+    UserKeys: UnprivatizeMemberUserKeyDto[];
     AddressKeys: UnprivatizeMemberAddressKeyDto[];
 }
 
@@ -379,7 +379,7 @@ export const getMemberReadyForUnprivatization = (
             unprivatizationData.InvitationData &&
             unprivatizationData.InvitationSignature &&
             unprivatizationData.ActivationToken &&
-            unprivatizationData.PrivateKey
+            (unprivatizationData.PrivateKeys?.length || 0) > 0
     );
 };
 
@@ -400,7 +400,7 @@ export const unprivatizeMember = async ({
         throw new Error('Invalid requirements');
     }
     const unprivatizationData = member.Unprivatization;
-    const { InvitationData, InvitationSignature, ActivationToken, PrivateKey } = unprivatizationData;
+    const { InvitationData, InvitationSignature, ActivationToken, PrivateKeys } = unprivatizationData;
     await validateInvitationData({
         textData: InvitationData,
         armoredSignature: InvitationSignature,
@@ -429,19 +429,32 @@ export const unprivatizeMember = async ({
         decryptionKeys: [organizationKey],
         verificationKeys: verifiedPublicKeys,
     });
-    const userPrivateKey = await CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: token });
+    const userPrivateKeys = await Promise.all(
+        PrivateKeys.map((privateKey) => {
+            return CryptoProxy.importPrivateKey({
+                armoredKey: privateKey,
+                passphrase: token,
+            });
+        })
+    );
 
-    const newMemberKeyToken = generateActivationToken(); // TODO: This or update member token 128?
-    const armoredUserPrivateKey = await CryptoProxy.exportPrivateKey({
-        privateKey: userPrivateKey,
-        passphrase: newMemberKeyToken,
-    });
+    const newMemberKeyToken = generateActivationToken();
+    const armoredUserPrivateKeys = await Promise.all(
+        userPrivateKeys.map((userPrivateKey) => {
+            return CryptoProxy.exportPrivateKey({
+                privateKey: userPrivateKey,
+                passphrase: newMemberKeyToken,
+            });
+        })
+    );
     const organizationToken = await encryptMemberToken(newMemberKeyToken, organizationKey);
 
-    const UserKey: UnprivatizeMemberUserKeyDto = {
-        OrgPrivateKey: armoredUserPrivateKey,
-        OrgToken: organizationToken,
-    };
+    const UserKeys = armoredUserPrivateKeys.map(
+        (armoredUserPrivateKey): UnprivatizeMemberUserKeyDto => ({
+            OrgPrivateKey: armoredUserPrivateKey,
+            OrgToken: organizationToken,
+        })
+    );
 
     const AddressKeys = (
         await Promise.all(
@@ -453,7 +466,7 @@ export const unprivatizeMember = async ({
                         }
                         const result = await reencryptAddressKeyToken({
                             Token: memberAddressKey.Token,
-                            decryptionKeys: [userPrivateKey],
+                            decryptionKeys: userPrivateKeys,
                             encryptionKey: organizationKey,
                             signingKey: organizationKey,
                         });
@@ -470,7 +483,7 @@ export const unprivatizeMember = async ({
     ).flat();
 
     return {
-        UserKey,
+        UserKeys,
         AddressKeys,
     };
 };
