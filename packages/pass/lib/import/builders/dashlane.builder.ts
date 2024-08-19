@@ -2,7 +2,6 @@ import type { IdentityFieldName } from '@proton/pass/hooks/identity/useIdentityF
 import type { DashlaneIdItem, DashlanePersonalInfoItem } from '@proton/pass/lib/import/providers/dashlane.types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { ItemContent, ItemImportIntent } from '@proton/pass/types';
-import { oneOf } from '@proton/pass/utils/fp/predicates';
 
 import type { IdentityDictionary } from './builders.types';
 
@@ -55,9 +54,7 @@ export const buildDashlaneIdentity = (item: DashlanePersonalInfoItem | DashlaneI
 };
 
 export const groupItems = (items: ItemImportIntent[], itemKey: FileKey) => {
-    const shouldGroupItems = oneOf(FileKey.Ids, FileKey.PersonalInfo)(itemKey);
-
-    if (!shouldGroupItems) return items;
+    if (itemKey !== FileKey.Ids) return items;
 
     // Dashlane creates N entries for each piece of identity information.
     // We need to create a single object with all these entries.

@@ -185,15 +185,12 @@ export const readDashlaneDataZIP = async ({
             FileKey.Ids
         );
 
-        const personalInfos = groupItems(
-            (
-                await parseDashlaneCSV<DashlanePersonalInfoItem>({
-                    data: await zipFile.file('personalInfo.csv')?.async('string'),
-                    headers: DASHLANE_PERSONAL_INFO_EXPECTED_HEADERS,
-                })
-            ).map(processIdentityItem),
-            FileKey.PersonalInfo
-        );
+        const personalInfos = (
+            await parseDashlaneCSV<DashlanePersonalInfoItem>({
+                data: await zipFile.file('personalInfo.csv')?.async('string'),
+                headers: DASHLANE_PERSONAL_INFO_EXPECTED_HEADERS,
+            })
+        ).map(processIdentityItem);
 
         const vaults: ImportVault[] = [
             {
