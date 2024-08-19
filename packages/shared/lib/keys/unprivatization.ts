@@ -45,12 +45,20 @@ export const serializeInvitationData = (data: MemberInvitationData) => {
     return JSON.stringify(data);
 };
 
-export const getInvitationData = async ({ address, api }: { address: string; api: Api }) => {
+export const getInvitationData = async ({
+    address,
+    api,
+    expectRevisionChange,
+}: {
+    address: string;
+    api: Api;
+    expectRevisionChange?: boolean;
+}) => {
     let revision = 1;
     try {
         const result = await fetchSignedKeyLists(api, 0, address);
         const last = result[result.length - 1];
-        revision = last.Revision + 1;
+        revision = last.Revision + (expectRevisionChange ? 1 : 0);
     } catch {}
     return serializeInvitationData({
         Address: address,
@@ -144,22 +152,15 @@ export const validateInvitationData = async ({
 };
 
 export const validateInvitationDataValues = async ({
-    addresses,
     invitationData,
+    invitationAddress,
+    expectRevisionChange,
 }: {
-    api: Api;
-    addresses: Address[];
     invitationData: MemberInvitationData;
+    invitationAddress: Address;
+    expectRevisionChange: boolean;
 }) => {
-    const invitationEmail = invitationData.Address;
-
-    const invitationAddress = addresses.find(({ Email }) => Email === invitationEmail);
-    if (!invitationAddress) {
-        throw new Error('Invalid invitation address');
-    }
-
-    const revision = (invitationAddress.SignedKeyList?.Revision ?? 0) + 1;
-
+    const revision = (invitationAddress.SignedKeyList?.Revision ?? 0) + (expectRevisionChange ? 1 : 0);
     if (revision !== invitationData.Revision) {
         throw new Error('Invalid invitation signed key list revision state');
     }
@@ -167,8 +168,10 @@ export const validateInvitationDataValues = async ({
 
 export const parseUnprivatizationData = async ({
     unprivatizationData,
+    addresses,
 }: {
     unprivatizationData: MemberUnprivatizationOutput;
+    addresses: Address[];
 }): Promise<
     | { type: 'private'; payload: { unprivatizationData: PrivateMemberUnprivatizationOutput } }
     | {
@@ -177,6 +180,7 @@ export const parseUnprivatizationData = async ({
               orgPublicKey: PublicKeyReference;
               invitationData: MemberInvitationData;
               unprivatizationData: PublicMemberUnprivatizationOutput;
+              invitationAddress: Address;
           };
       }
 > => {
@@ -189,13 +193,22 @@ export const parseUnprivatizationData = async ({
         };
     }
     const { OrgPublicKey, InvitationData } = unprivatizationData;
-    const orgPublicKey = await CryptoProxy.importPublicKey({ armoredKey: OrgPublicKey });
     const invitationData = parseInvitationData(InvitationData);
+    const orgPublicKey = await CryptoProxy.importPublicKey({ armoredKey: OrgPublicKey });
+
+    const invitationEmail = invitationData.Address;
+
+    const invitationAddress = addresses.find(({ Email }) => Email === invitationEmail);
+    if (!invitationAddress) {
+        throw new Error('Invalid invitation address');
+    }
+
     return {
         type: 'public',
         payload: {
             orgPublicKey,
             invitationData,
+            invitationAddress,
             unprivatizationData,
         },
     };
@@ -206,12 +219,12 @@ export const validateUnprivatizationData = async ({
     api,
     verifyOutboundPublicKeys,
     parsedUnprivatizationData,
-    addresses,
+    expectRevisionChange,
 }: {
     api: Api;
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     parsedUnprivatizationData: ParsedUnprivatizationData;
-    addresses: Address[];
+    expectRevisionChange: boolean;
 }) => {
     if (parsedUnprivatizationData.type === 'private') {
         return;
@@ -221,6 +234,7 @@ export const validateUnprivatizationData = async ({
         orgPublicKey,
         unprivatizationData: { AdminEmail, InvitationData, InvitationSignature, OrgKeyFingerprintSignature },
         invitationData,
+        invitationAddress,
     } = parsedUnprivatizationData.payload;
     const verifiedPublicKeysResult = await getVerifiedPublicKeys({
         api,
@@ -246,10 +260,43 @@ export const validateUnprivatizationData = async ({
     });
 
     await validateInvitationDataValues({
-        api,
-        addresses,
+        invitationAddress,
         invitationData,
+        expectRevisionChange,
     });
+};
+
+export const acceptUnprivatization = async ({
+    userKeys,
+    addressKeys,
+    parsedUnprivatizationData,
+}: {
+    parsedUnprivatizationData: ParsedUnprivatizationData;
+    userKeys: PrivateKeyReference[];
+    addressKeys: PrivateKeyReference[];
+}) => {
+    if (parsedUnprivatizationData.type === 'private') {
+        return;
+    }
+    const token = generateActivationToken();
+    const { orgPublicKey } = parsedUnprivatizationData.payload;
+    const orgActivationToken = await getEncryptedOrganizationActivationToken({
+        token,
+        encryptionKeys: [orgPublicKey],
+        signingKeys: addressKeys,
+    });
+    const orgPrimaryUserKeysArmored = await Promise.all(
+        userKeys.map((userKey) => {
+            return CryptoProxy.exportPrivateKey({
+                privateKey: userKey,
+                passphrase: token,
+            });
+        })
+    );
+    return {
+        OrgUserKeys: orgPrimaryUserKeysArmored,
+        OrgActivationToken: orgActivationToken,
+    };
 };
 
 export const setupKeysWithUnprivatization = async ({

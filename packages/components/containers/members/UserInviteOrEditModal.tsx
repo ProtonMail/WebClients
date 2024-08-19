@@ -26,6 +26,7 @@ import {
 import { useApi, useEventManager, useNotifications, useSubscription } from '../../hooks';
 import { AssistantUpdateSubscriptionButton } from '../payments';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import MemberToggleContainer from './MemberToggleContainer';
 
 interface Props extends ModalStateProps {
     organization?: Organization;
@@ -162,17 +163,25 @@ const UserInviteOrEditModal = ({
                 )}
 
                 {allowAIAssistantConfiguration && (
-                    <div className="flex items-center gap-2 mb-6">
-                        <Toggle
-                            id="ai-assistant-toggle"
-                            checked={model.numAI}
-                            disabled={!aiSeatsRemaining}
-                            onChange={({ target }) => handleChange('numAI')(target.checked)}
+                    <div className="mb-4">
+                        <MemberToggleContainer
+                            toggle={
+                                <Toggle
+                                    id="ai-assistant-toggle"
+                                    checked={model.numAI}
+                                    disabled={!aiSeatsRemaining}
+                                    onChange={({ target }) => handleChange('numAI')(target.checked)}
+                                />
+                            }
+                            label={
+                                <label className="text-semibold" htmlFor="ai-assistant-toggle">
+                                    {c('Info').t`Writing assistant`}
+                                </label>
+                            }
+                            assistiveText={
+                                !aiSeatsRemaining && !model.numAI ? <AssistantUpdateSubscriptionButton /> : undefined
+                            }
                         />
-                        <label className="text-semibold" htmlFor="ai-assistant-toggle">
-                            {c('Info').t`Writing assistant`}
-                        </label>
-                        {!aiSeatsRemaining && !model.numAI && <AssistantUpdateSubscriptionButton />}
                     </div>
                 )}
 

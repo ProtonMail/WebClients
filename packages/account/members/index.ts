@@ -1,8 +1,9 @@
-import { PayloadAction, ThunkAction, UnknownAction, createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
+import type { PayloadAction, ThunkAction, UnknownAction } from '@reduxjs/toolkit';
+import { createSlice, miniSerializeError, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import type { CacheType } from '@proton/redux-utilities';
 import {
-    CacheType,
     cacheHelper,
     createPromiseStore,
     getFetchedAt,
@@ -15,10 +16,12 @@ import type { Address, Api, EnhancedMember, Member, User } from '@proton/shared/
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
-import { AddressesState, addressesThunk } from '../addresses';
+import type { AddressesState } from '../addresses';
+import { addressesThunk } from '../addresses';
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
-import { UserState, userThunk } from '../user';
+import type { UserState } from '../user';
+import { userThunk } from '../user';
 
 const name = 'members' as const;
 
@@ -42,6 +45,9 @@ const canFetch = (user: User) => {
 
 const getMemberFromState = (state: ModelState<EnhancedMember[]>, target: Member) => {
     return state.value?.find((member) => member.ID === target.ID);
+};
+const getMemberIndexFromState = (state: ModelState<EnhancedMember[]>, target: Member) => {
+    return state.value?.findIndex((member) => member.ID === target.ID);
 };
 
 const freeMembers: EnhancedMember[] = [];
@@ -68,6 +74,33 @@ const slice = createSlice({
         rejected: (state, action) => {
             state.error = action.payload;
             state.meta.fetchedAt = getFetchedAt();
+        },
+        upsertMember: (state, action: PayloadAction<{ member: Member }>) => {
+            const memberIndex = getMemberIndexFromState(state, action.payload.member);
+            if (!state.value) {
+                return;
+            }
+            const newMember = {
+                ...action.payload.member,
+                addressState: 'partial' as const,
+            };
+            if (memberIndex === -1 || memberIndex === undefined) {
+                state.value.push(newMember);
+            } else {
+                const previousMember = state.value[memberIndex];
+                const previousAddressState =
+                    previousMember.addressState === 'full'
+                        ? {
+                              addressState: previousMember.addressState,
+                              Addresses: previousMember.Addresses,
+                          }
+                        : {};
+                const mergedValue: EnhancedMember = {
+                    ...newMember,
+                    ...previousAddressState,
+                };
+                state.value[memberIndex] = mergedValue;
+            }
         },
         memberFetchFulfilled: (state, action: PayloadAction<{ member: Member; addresses: Address[] }>) => {
             const member = getMemberFromState(state, action.payload.member);
@@ -237,6 +270,7 @@ export const getMemberAddresses = ({
 
 export const membersReducer = { [name]: slice.reducer };
 export const membersThunk = modelThunk;
+export const upsertMember = slice.actions.upsertMember;
 export { default as UnavailableAddressesError } from './errors/UnavailableAddressesError';
 export { default as InvalidAddressesError } from './errors/InvalidAddressesError';
 export { default as MemberCreationValidationError } from './errors/MemberCreationValidationError';

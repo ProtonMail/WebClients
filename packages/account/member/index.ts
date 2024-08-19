@@ -1,4 +1,4 @@
-import type { PayloadAction} from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -8,15 +8,17 @@ import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Member, User } from '@proton/shared/lib/interfaces';
 import { isAdmin, isMember } from '@proton/shared/lib/user/helpers';
 
+import type { AddressKeysState } from '../addressKeys';
 import { serverEvent } from '../eventLoop';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
-import type { UserState} from '../user';
+import type { UserState } from '../user';
 import { userThunk } from '../user';
+import type { UserKeysState } from '../userKeys';
 
 const name = 'member';
 
-export interface MemberState extends UserState {
+export interface MemberState extends UserState, UserKeysState, AddressKeysState {
     [name]: ModelState<Member>;
 }
 
@@ -46,16 +48,10 @@ const slice = createSlice({
     name,
     initialState,
     reducers: {
-        pending: (state) => {
-            state.error = undefined;
-        },
-        fulfilled: (state, action: PayloadAction<{ value: Model }>) => {
-            state.value = action.payload.value;
-            state.error = undefined;
-        },
-        rejected: (state, action) => {
-            state.error = action.payload;
-            state.value = undefined;
+        update: (state, action: PayloadAction<Partial<Member>>) => {
+            if (state.value) {
+                state.value = { ...state.value, ...action.payload };
+            }
         },
     },
     extraReducers: (builder) => {
@@ -82,3 +78,4 @@ const slice = createSlice({
 
 export const memberReducer = { [name]: slice.reducer };
 export const memberThunk = modelThunk.thunk;
+export const updateMember = slice.actions.update;

@@ -32,6 +32,8 @@ import {
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
+import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
+import useUnprivatizeMembers from '@proton/components/containers/organization/useUnprivatizeMembers';
 import useConvertExternalAddresses from '@proton/components/containers/organization/useConvertExternalAddresses';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
@@ -230,7 +232,11 @@ const MainContainer = () => {
         </AppLink>
     );
 
-    const top = <TopBanners app={app} />;
+    const top = (
+        <TopBanners app={app}>
+            <UnprivatizationRequestTopBanner />
+        </TopBanners>
+    );
 
     const header = (
         <PrivateHeader
