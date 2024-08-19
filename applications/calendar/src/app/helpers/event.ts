@@ -11,6 +11,11 @@ export const getEventIDFromUniqueId = (itemID: string) => itemID.split('.')[1];
 
 export const getEventStatusTraits = (model: EventModelReadView) => {
     const { status: eventStatus, selfAttendeeIndex } = model;
+
+    const noOneIsAttending =
+        model.attendees.length > 0 &&
+        model.attendees.every((attendee) => attendee.partstat === ICAL_ATTENDEE_STATUS.DECLINED);
+
     if (model.isAttendee && eventStatus === ICAL_EVENT_STATUS.CONFIRMED) {
         const selfAttendee = selfAttendeeIndex !== undefined ? model.attendees[selfAttendeeIndex] : undefined;
         if (selfAttendee) {
@@ -18,13 +23,13 @@ export const getEventStatusTraits = (model: EventModelReadView) => {
             return {
                 isUnanswered: partstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
                 isTentative: partstat === ICAL_ATTENDEE_STATUS.TENTATIVE,
-                isCancelled: partstat === ICAL_ATTENDEE_STATUS.DECLINED,
+                isCancelled: partstat === ICAL_ATTENDEE_STATUS.DECLINED || noOneIsAttending,
             };
         }
     }
     return {
         isTentative: eventStatus === ICAL_EVENT_STATUS.TENTATIVE,
-        isCancelled: eventStatus === ICAL_EVENT_STATUS.CANCELLED,
+        isCancelled: eventStatus === ICAL_EVENT_STATUS.CANCELLED || noOneIsAttending,
     };
 };
 
