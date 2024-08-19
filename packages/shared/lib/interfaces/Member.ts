@@ -69,7 +69,7 @@ export type MemberUnprivatizationOutput = PublicMemberUnprivatizationOutput | Pr
 
 export type MemberUnprivatization = {
     State: MemberUnprivatizationState;
-    PrivateKey: string | null;
+    PrivateKeys: string[] | null;
     ActivationToken: string | null;
     PrivateIntent: boolean;
     InvitationData: string | null;
@@ -79,7 +79,7 @@ export type MemberUnprivatization = {
 
 export type MemberUnprivatizationReadyForUnprivatization = {
     State: MemberUnprivatizationState.Ready;
-    PrivateKey: string;
+    PrivateKeys: string[];
     ActivationToken: string;
     PrivateIntent: false;
     InvitationData: string;
