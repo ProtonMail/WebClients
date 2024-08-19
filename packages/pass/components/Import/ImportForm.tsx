@@ -173,7 +173,7 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                     )}
                     {providerHasUnsupportedItemTypes(form.values.provider) && (
                         <Card className="mb-4 text-sm" type="primary">
-                            {c('Info').t`${PASS_APP_NAME} will only import logins, notes and credit cards.`}
+                            {c('Info').t`${PASS_APP_NAME} will only import logins, notes, credit cards and identities.`}
                         </Card>
                     )}
                 </>
