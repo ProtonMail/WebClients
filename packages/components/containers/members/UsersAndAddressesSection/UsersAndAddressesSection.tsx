@@ -27,7 +27,8 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address, EnhancedMember, Member } from '@proton/shared/lib/interfaces';
-import { MEMBER_STATE, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+import { MEMBER_STATE } from '@proton/shared/lib/interfaces';
+import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
 import {
     getIsDomainActive,
     getOrganizationDenomination,
@@ -74,18 +75,6 @@ import UserRemoveModal from '../UserRemoveModal';
 import UserAndAddressesSectionIntro from './UserAndAddressesSectionIntro';
 import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 import UserTableBadge from './UsersTableBadge';
-
-const getHasMagicLinkLayout = (
-    member?: Member
-): member is Member & { Unprivatization: NonNullable<Member['Unprivatization']> } => {
-    return Boolean(
-        member &&
-            member.Unprivatization &&
-            [MemberUnprivatizationState.Pending, MemberUnprivatizationState.Declined].includes(
-                member.Unprivatization.State as any
-            )
-    );
-};
 
 const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: MutableRefObject<boolean> }) => {
     const { APP_NAME } = useConfig();
@@ -437,7 +426,13 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         allowVpnAccessConfiguration={allowVpnAccessConfiguration}
                         allowPrivateMemberConfiguration={allowPrivateMemberConfiguration}
                         allowAIAssistantConfiguration={allowAIAssistantConfiguration}
-                        showAddressesSection={showAddressesSection && !getHasMagicLinkLayout(tmpMember)}
+                        showAddressesSection={(() => {
+                            const unprivatization = getMemberUnprivatizationMode(tmpMember);
+                            return (
+                                showAddressesSection &&
+                                unprivatization.mode !== MemberUnprivatizationMode.MagicLinkInvite
+                            );
+                        })()}
                         {...subUserEditModalProps}
                     />
                 )}
@@ -538,14 +533,18 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
                         const memberName = member.Name || memberAddresses[0]?.Email;
 
-                        const hasMagicLinkLayout = getHasMagicLinkLayout(member);
-                        const magicLinkInvitationPending =
-                            hasMagicLinkLayout && member.Unprivatization.State === MemberUnprivatizationState.Pending;
-                        const canMagicLinkResend = magicLinkInvitationPending;
+                        const unprivatization = getMemberUnprivatizationMode(member);
 
-                        const isFamilyInvitationPending = member.State === MEMBER_STATE.STATUS_INVITED;
+                        const hasPendingAllowAdminAccessRequest =
+                            unprivatization.mode === MemberUnprivatizationMode.AdminAccess && unprivatization.pending;
 
-                        const hasFeatures = !magicLinkInvitationPending;
+                        const hasMagicLinkLayout = unprivatization.mode === MemberUnprivatizationMode.MagicLinkInvite;
+                        const hasPendingMagicLinkInvite = hasMagicLinkLayout && unprivatization.pending;
+                        const canResendMagicLink = hasPendingMagicLinkInvite;
+
+                        const hasPendingFamilyInvitation = member.State === MEMBER_STATE.STATUS_INVITED;
+
+                        const hasFeaturesColumn = !hasPendingMagicLinkInvite;
 
                         const memberPermissions = getMemberPermissions({
                             appName: APP_NAME,
@@ -561,7 +560,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                             <TableRow
                                 key={member.ID}
                                 labels={tableLabel}
-                                className={clsx('align-top', isFamilyInvitationPending && 'color-weak')}
+                                className={clsx('align-top', hasPendingFamilyInvitation && 'color-weak')}
                             >
                                 <TableCell className="align-baseline">
                                     <div className="flex items-center gap-3">
@@ -604,6 +603,15 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                                     {c('Users table: badge').t`Writing assistant`}
                                                                 </UserTableBadge>
                                                             )}
+                                                            {Boolean(hasPendingAllowAdminAccessRequest) && (
+                                                                <UserTableBadge
+                                                                    type="weak"
+                                                                    tooltip={c('unprivatization')
+                                                                        .t`Request to manage account sent, awaiting user approval`}
+                                                                >
+                                                                    {c('Users table: badge').t`Pending admin access`}
+                                                                </UserTableBadge>
+                                                            )}
                                                             {member['2faStatus'] > 0 && (
                                                                 <UserTableBadge type="weak">
                                                                     {c('Users table: badge').t`2FA`}
@@ -622,10 +630,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                                     );
                                                 }
 
-                                                if (
-                                                    hasMagicLinkLayout &&
-                                                    member.Unprivatization.State === MemberUnprivatizationState.Pending
-                                                ) {
+                                                if (hasPendingMagicLinkInvite) {
                                                     return (
                                                         <UserTableBadge
                                                             type="weak"
@@ -647,11 +652,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     <div
                                         className={clsx(
                                             'flex flex-column flex-nowrap',
-                                            magicLinkInvitationPending && 'color-hint'
+                                            hasPendingMagicLinkInvite && 'color-hint'
                                         )}
                                     >
                                         <MemberRole member={member} />
-                                        {isFamilyInvitationPending && (
+                                        {hasPendingFamilyInvitation && (
                                             <span>
                                                 <UserTableBadge type="weak">
                                                     {c('familyOffer_2023:Family plan').t`Pending`}
@@ -661,8 +666,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                     </div>
                                 </TableCell>
                                 <TableCell className="align-baseline">
-                                    <div className={clsx(magicLinkInvitationPending && 'color-hint')}>
-                                        {isFamilyInvitationPending ? (
+                                    <div className={clsx(hasPendingMagicLinkInvite && 'color-hint')}>
+                                        {hasPendingFamilyInvitation ? (
                                             <p className="m-0 text-ellipsis">{member.Name}</p>
                                         ) : (
                                             <MemberAddresses addresses={memberAddresses} />
@@ -671,17 +676,19 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                 </TableCell>
                                 {showFeaturesColumn && (
                                     <TableCell className="align-baseline">
-                                        {hasFeatures && <MemberFeatures member={member} organization={organization} />}
+                                        {hasFeaturesColumn && (
+                                            <MemberFeatures member={member} organization={organization} />
+                                        )}
                                     </TableCell>
                                 )}
                                 <TableCell className="align-baseline">
                                     <div>
                                         {hasMagicLinkLayout ? (
                                             <MagicLinkMemberActions
-                                                state={member.Unprivatization.State}
+                                                state={member.Unprivatization?.State}
                                                 onEdit={() => handleEditUser(member)}
                                                 onResend={
-                                                    canMagicLinkResend
+                                                    canResendMagicLink
                                                         ? () => {
                                                               setTmpMemberID(member.ID);
                                                               setResendInviteModalOpen(true);
