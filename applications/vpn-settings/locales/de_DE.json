@@ -202,11 +202,17 @@
       "Disable": [
         "Deaktivieren"
       ],
+      "Disable E2EE group mail encryption": [
+        "Ende-zu-Ende-Verschlüsselung für Gruppen-E-Mails deaktivieren"
+      ],
       "Discard": [
         "Verwerfen"
       ],
       "Discard changes": [
         "Änderungen verwerfen"
+      ],
+      "Domain names": [
+        "Domänennamen"
       ],
       "Done": [
         "Fertig"
@@ -273,6 +279,9 @@
       ],
       "enable desktop notifications": [
         "Desktop-Benachrichtigungen zu aktivieren"
+      ],
+      "Enable E2EE group mail encryption": [
+        "Ende-zu-Ende-Verschlüsselung für Gruppen-E-Mails aktivieren"
       ],
       "Enable multi-user support": [
         "Mehrbenutzerunterstützung aktivieren"
@@ -349,9 +358,6 @@
       "Keep logo": [
         "Logo behalten"
       ],
-      "Keep my Plus subscription": [
-        "Plus-Abonnement behalten"
-      ],
       "Let's talk": [
         "Lass uns reden"
       ],
@@ -360,6 +366,9 @@
       ],
       "Loading verification": [
         "Überprüfung wird geladen"
+      ],
+      "Lost access to your 2FA device?": [
+        "Hast du den Zugriff auf dein 2FA-Geräte verloren?"
       ],
       "Make admin": [
         "Zum Administrator ändern"
@@ -672,6 +681,9 @@
       ],
       "Use authentication code": [
         "Authentifizierungscode verwenden"
+      ],
+      "Use group sending permissions": [
+        "Verwende Gruppensenderechte"
       ],
       "Use recovery code": [
         "Wiederherstellungscode verwenden"
@@ -2454,6 +2466,9 @@
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
       ],
+      "Organization key must be activated to create invited users": [
+        "Organisationsschlüssel muss aktiviert sein, um eingeladene Benutzer anzulegen"
+      ],
       "Organization key must be activated to create non-private users": [
         "Organisationsschlüssel muss aktiviert sein, um nicht-private Benutzer anzulegen"
       ],
@@ -3407,6 +3422,9 @@
         "${ organization.BonusVPN } zusätzliche Verbindung für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
         "${ organization.BonusVPN } zusätzliche Verbindungen für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)"
       ],
+      "2FA disabled": [
+        "2FA deaktiviert."
+      ],
       "30-day money-back guarantee": [
         "30 Tage Geld-zurück-Garantie"
       ],
@@ -3476,6 +3494,9 @@
       ],
       "All Events ": [
         "Alle Ereignisse "
+      ],
+      "All members have been added.": [
+        "Alle Mitglieder wurden hinzugefügt."
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
@@ -3607,8 +3628,8 @@
         "Ländercode"
       ],
       "Create a secure cloud for ${ n } member": [
-        "Erstelle eine sichere Cloud für ${ n } Nutzer",
-        "Erstelle eine sichere Cloud für ${ n } Nutzer"
+        "Erstelle eine sichere Cloud für ${ n } Benutzer",
+        "Erstelle eine sichere Cloud für ${ n } Benutzer"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Erstelle und verwalte Unterkonten und weise ihnen E-Mail-Adressen in deiner eigenen Domain zu."
@@ -3656,6 +3677,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } Gateway-Server wird gelöscht",
         "${ deletedServerCount } Gateway-Server werden gelöscht"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Wenn du die Zwei-Faktor-Authentifizierung deaktivierst, wird dein Konto weniger sicher. Fahre nur fort, wenn es unbedingt notwendig ist."
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
@@ -3820,6 +3844,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gehe zu deinem Identitätsanbieter, besorge die SAML-Metadaten für ${ appName } und importiere sie hier."
       ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Gruppenadressen können nur für benutzerdefinierte Domänen erstellt werden. Gehen Sie zur Seite ${ linkToDomainPage }, um eine benutzerdefinierte Domäne hinzuzufügen."
+      ],
       "here": [
         "hier"
       ],
@@ -3955,6 +3982,9 @@
       "Item autofilled in vault": [
         "Eintrag automatisch im Tresor ausgefüllt"
       ],
+      "Item Changed Flags": [
+        "Eintragveränderungskennzeichnung"
+      ],
       "Item Created": [
         "Eintrag erstellt"
       ],
@@ -3972,6 +4002,12 @@
       ],
       "Item deleted from vault": [
         "Eintrag aus Tresor gelöscht"
+      ],
+      "Item flags changed in ${ vaultLink }": [
+        "Kennzeichnung des Eintrags in ${ vaultLink } geändert"
+      ],
+      "Item flags changed in vault": [
+        "Kennzeichnung des Eintrags im Tresor geändert"
       ],
       "Item in ${ vaultLink } trashed": [
         "Eintrag von ${ vaultLink } in den Papierkorb verschoben."
@@ -4510,6 +4546,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Diese Verifizierung kann bis zu einer Stunde dauern. Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Dadurch wird die Zwei-Faktor-Authentifizierung deaktiviert, einschließlich der Authenticator-App und der Sicherheitsschlüssel-Methode."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dadurch kann PayPal zur Bezahlung deines ${ BRAND_NAME }-Abonnements verwendet werden. Du wirst in einem neuen Browser-Tab zu PayPal weitergeleitet. Wenn du Pop-up-Blocker verwendest, deaktiviere diese bitte, bevor du fortfährst."
       ],
@@ -4629,6 +4668,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Lade das Logo deiner Organisation hoch, um deine Markenidentität zu stärken und ein personalisiertes Erlebnis für deine Nutzer zu schaffen."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Verwende eine Wiederherstellungsmethode, um deine Zwei-Faktor-Authentifizierungsmethoden zu deaktivieren."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Verwende den besten Server je nach aktueller Auslastung und Standort: ${ formattedBestServerName }"
@@ -4895,12 +4937,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Nach der Anmeldung wirst du zu ${ destination } weitergeleitet."
       ],
-      "You will lose access to Plus features on this date.": [
-        "An diesem Datum verlierst du den Zugang zu Plus-Funktionen."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "An diesem Datum verlierst du den Zugang zu Plus-Servern und -Funktionen."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du benötigst eine ${ BRAND_NAME }-Adresse um ${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME } zu nutzen"
       ],
@@ -5106,6 +5142,12 @@
       ],
       "Account storage": [
         "Kontenspeicher"
+      ],
+      "Add all organization members": [
+        "Alle Organisationsmitglieder hinzufügen"
+      ],
+      "Add group member": [
+        "Gruppenmitglied hinzufügen"
       ],
       "Address": [
         "Anschrift"
@@ -6249,9 +6291,6 @@
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Premiumfunktionen von ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Priorisierter E-Mail-Support"
       ],
@@ -6399,9 +6438,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Tresor teilen (bis zu ${ n } Person)",
         "Tresor teilen (bis zu ${ n } Personen)"
-      ],
-      "Version history": [
-        "Versionsverlauf"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden und alarmieren dich sofort, wenn wir etwas finden."
@@ -6848,6 +6884,9 @@
       "An external address cannot be default": [
         "Eine externe Adresse kann nicht als Standardadresse verwendet werden."
       ],
+      "Downloaded 2FA recovery codes": [
+        "2FA-Wiederherstellungscodes heruntergeladen."
+      ],
       "Invalid code": [
         "Ungültiger Code"
       ],
@@ -6937,6 +6976,17 @@
       ],
       "The whole organization": [
         "Die gesamte Organisation"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Jeder"
+      ],
+      "Group members": [
+        "Gruppenmitglieder"
+      ],
+      "No one": [
+        "Keiner"
       ]
     },
     "Organization capacity error": {
@@ -8442,6 +8492,9 @@
       "1 email address": [
         "1 E-Mail-Adresse"
       ],
+      "1 email address per user": [
+        "1 E-Mail-Adresse pro Benutzer"
+      ],
       "1 VPN connection": [
         "1 VPN-Verbindung"
       ],
@@ -9424,6 +9477,9 @@
       "Disable two-factor authentication": [
         "Zwei-Faktor-Authentifizierung deaktivieren"
       ],
+      "Disable two-factor authentication?": [
+        "Zwei-Faktor-Authentifizierung deaktivieren?"
+      ],
       "Discard changes?": [
         "Änderungen verwerfen?"
       ],
@@ -9592,6 +9648,9 @@
       ],
       "Organization name": [
         "Name der Organisation"
+      ],
+      "Origin": [
+        "Herkunft"
       ],
       "Password": [
         "Passwort"
@@ -9913,6 +9972,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Heller Modus\" eingestellt ist."
+      ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Die Ursache dafür kann sein, dass das Passwort zurückgesetzt wurde oder der Benutzer sich noch nicht angemeldet hat."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Diese E-Mail-Adresse wird allen Mitgliedern der Organisation angezeigt, wenn Vorgänge in der Kontoverwaltung durchgeführt werden."

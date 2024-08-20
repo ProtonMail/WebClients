@@ -202,11 +202,17 @@
       "Disable": [
         "Desactivar"
       ],
+      "Disable E2EE group mail encryption": [
+        "Desactivar el cifrado de correo de grupo E2EE"
+      ],
       "Discard": [
         "Descartar"
       ],
       "Discard changes": [
         "Descartar los cambios"
+      ],
+      "Domain names": [
+        "Nombres de dominio"
       ],
       "Done": [
         "Hecho"
@@ -273,6 +279,9 @@
       ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
+      ],
+      "Enable E2EE group mail encryption": [
+        "Habilitar el cifrado de correo de grupo E2EE"
       ],
       "Enable multi-user support": [
         "Activar soporte multiusuario"
@@ -349,9 +358,6 @@
       "Keep logo": [
         "Conservar el logo"
       ],
-      "Keep my Plus subscription": [
-        "Mantener mi suscripción Plus"
-      ],
       "Let's talk": [
         "Habla con nosotros"
       ],
@@ -360,6 +366,9 @@
       ],
       "Loading verification": [
         "Cargando verificación"
+      ],
+      "Lost access to your 2FA device?": [
+        "¿Has perdido el acceso a tu dispositivo 2FA?"
       ],
       "Make admin": [
         "Dar permisos para administrar"
@@ -3681,6 +3690,9 @@
         "Eliminando ${ deletedServerCount } servidor de puerta de enlace",
         "Eliminando ${ deletedServerCount } servidores de puerta de enlace"
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Desactivar la autenticación de dos factores hará que tu cuenta sea menos segura. Procede solo si es absolutamente necesario."
+      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
@@ -3843,6 +3855,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Ve a tu proveedor de identidad, obtén los metadatos de SAML para ${ appName } e impórtalos aquí."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Las direcciones de grupo sólo pueden crearse para dominios personalizados. Ve a la página ${ linkToDomainPage } para agregar un dominio personalizado."
       ],
       "here": [
         "aquí"
@@ -4543,6 +4558,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Esta verificación puede tomar hasta una hora. Después de la verificación, no borra el registro TXT, ya que se necesita para confirmar que continúas siendo el propietario del dominio."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Esto desactivará la autenticación de dos factores, incluidos los métodos de la aplicación de autenticación y de la clave de seguridad."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Esto permitirá que se utilice PayPal para pagar tu suscripción a ${ BRAND_NAME }. Te redirigiremos a PayPal en una nueva pestaña del navegador. Si utilizas algún bloqueador de ventanas emergentes, desactívalo para continuar."
       ],
@@ -4662,6 +4680,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Carga el logotipo de tu organización para potenciar tu identidad de marca y crear una experiencia personalizada para tus usuarios."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Utiliza un método de recuperación para desactivar tus métodos de autenticación de dos factores."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utiliza el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
@@ -4927,12 +4948,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Te redirigiremos a ${ destination } después de iniciar sesión."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Perderás el acceso a las funciones de Plus en esta fecha."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Perderás el acceso a los servidores y funciones de Plus en esta fecha."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necesitarás una dirección ${ BRAND_NAME } para utilizar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
@@ -6307,9 +6322,6 @@
       "Phone support (20+ users)": [
         "Soporte por teléfono (20 o más usuarios)"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Funciones prémium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
       ],
@@ -6461,9 +6473,6 @@
         "Compartir la caja fuerte (hasta ${ n } persona)",
         "Compartir la caja fuerte (hasta ${ n } personas)"
       ],
-      "Version history": [
-        "Historial de versiones"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
       ]
@@ -6544,9 +6553,6 @@
       ],
       "Popular": [
         "Popular"
-      ],
-      "Protect sensitive business information and collaborate securely.asdfasdfsdf": [
-        "Protege la información empresarial confidencial y colabora de forma segura."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protege la privacidad de tu familia con todos los servicios combinados de ${ BRAND_NAME }."
@@ -6911,6 +6917,9 @@
       ],
       "An external address cannot be default": [
         "Una dirección externa no puede ser la dirección por defecto.."
+      ],
+      "Downloaded 2FA recovery codes": [
+        "Códigos de recuperación 2FA descargados"
       ],
       "Invalid code": [
         "Código no válido"

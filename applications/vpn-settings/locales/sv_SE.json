@@ -208,6 +208,9 @@
       "Discard changes": [
         "Kasta ändringar"
       ],
+      "Domain names": [
+        "Domännamn"
+      ],
       "Done": [
         "Klar"
       ],
@@ -349,9 +352,6 @@
       "Keep logo": [
         "Behåll logga"
       ],
-      "Keep my Plus subscription": [
-        "Behåll min Plus-prenumeration"
-      ],
       "Let's talk": [
         "Låt oss prata!"
       ],
@@ -360,6 +360,9 @@
       ],
       "Loading verification": [
         "Laddar verifiering"
+      ],
+      "Lost access to your 2FA device?": [
+        "Förlorat åtkomst till din 2FA-enhet?"
       ],
       "Make admin": [
         "Gör till admin"
@@ -3415,6 +3418,9 @@
         "+${ organization.BonusVPN } anslutning för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)",
         "+${ organization.BonusVPN } anslutningar för ${ VPN_APP_NAME } (låter dig ansluta fler enheter till VPN)"
       ],
+      "2FA disabled": [
+        "2FA inaktiverat"
+      ],
       "30-day money-back guarantee": [
         "30 dagars pengarna-tillbaka-garanti"
       ],
@@ -3481,6 +3487,9 @@
       ],
       "All Events ": [
         "Alla händelser "
+      ],
+      "All members have been added.": [
+        "Alla medlemmar har lagts till."
       ],
       "All your changes will be lost.": [
         "Alla dina ändringar kommer att gå förlorade."
@@ -3662,6 +3671,9 @@
         "Tar bort ${ deletedServerCount } gatewayserver",
         "Tar bort ${ deletedServerCount } gatewayservrar"
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Inaktivering av tvåfaktorsautentisering kommer göra ditt konto mindre säkert. Fortsätt endast om det är absolut nödvändigt."
+      ],
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
       ],
@@ -3824,6 +3836,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå till din identitetsleverantör, hämta SAML-metadata för ${ appName } och importera den här."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Gruppadresser kan endast skapas för anpassade domäner. Gå till sida ${ linkToDomainPage } för att lägga till en anpassad domän."
       ],
       "here": [
         "här"
@@ -4620,6 +4635,9 @@
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Ladda upp din organisations logga för att stärka din varumärkesidentitet och skapa en personifierad upplevelse för dina användare."
       ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Använd en återställningsmetod för att inaktivera dina tvåfaktorsautentiseringsmetoder."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Använd den bästa servern enligt nuvarande belastning och position: ${ formattedBestServerName }"
       ],
@@ -4874,12 +4892,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Du kommer att omdirigeras till ${ destination } efter inloggning."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Du kommer förlora åtkomst till Plus-funktioner på detta datum."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Du kommer förlora åtkomst till Plus-servrar och funktioner på detta datum."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du behöver en ${ BRAND_NAME }-adress för att använda ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
       ],
@@ -5085,6 +5097,12 @@
       ],
       "Account storage": [
         "Kontolagring"
+      ],
+      "Add all organization members": [
+        "Lägg till alla organisationsmedlemmar"
+      ],
+      "Add group member": [
+        "Lägg till gruppmedlem"
       ],
       "Address": [
         "Adress"
@@ -6219,9 +6237,6 @@
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Premiumfunktioner av ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Prioriterad e-postsupport"
       ],
@@ -6369,9 +6384,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Valvdelning (upp till ${ n } person)",
         "Valvdelning (upp till ${ n } personer)"
-      ],
-      "Version history": [
-        "Versionshistorik"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
@@ -6821,6 +6833,9 @@
       "An external address cannot be default": [
         "En extern adress kan inte vara standard"
       ],
+      "Downloaded 2FA recovery codes": [
+        "Laddade ner 2FA-återställningskoder"
+      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -6931,6 +6946,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alla"
+      ],
+      "Group members": [
+        "Gruppmedlemmar"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -8410,6 +8436,9 @@
       "1 email address": [
         "1 e-postadress"
       ],
+      "1 email address per user": [
+        "1 e-postadress per användare"
+      ],
       "1 VPN connection": [
         "1 VPN-anslutning"
       ],
@@ -9376,6 +9405,9 @@
       ],
       "Disable two-factor authentication": [
         "Inaktivera tvåfaktorsautentisering"
+      ],
+      "Disable two-factor authentication?": [
+        "Inaktivera tvåfaktorsautentisering?"
       ],
       "Discard changes?": [
         "Ignorera ändringar?"
