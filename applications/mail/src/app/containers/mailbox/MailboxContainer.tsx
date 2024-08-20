@@ -205,9 +205,9 @@ const MailboxContainer = ({
     } = useItemsSelection({
         activeID: elementID,
         allIDs: elementIDs,
-        // Using inputLabelID and page as dependency to update checkedIDs on page and location change
-        // It wasn't working correctly before
-        resetDependencies: [elementID, inputLabelID, page],
+        rowMode: !columnMode,
+        // Using inputLabelID and page as dependency to reset checkedIDs on page or location change
+        resetDependencies: [columnMode ? elementID : undefined, inputLabelID, page],
         onCheck,
     });
 
@@ -222,7 +222,8 @@ const MailboxContainer = ({
     const elementsLength = loading ? placeholderCount : elements.length;
     const showList = columnMode || !elementID;
     const showContentPanel = (columnMode && !!elementsLength) || !!elementID;
-    const showPlaceholder = !breakpoints.viewportWidth['<=small'] && (!elementID || !!checkedIDs.length);
+    const showPlaceholder =
+        !breakpoints.viewportWidth['<=small'] && (!elementID || (!!checkedIDs.length && columnMode));
     const showContentView = showContentPanel && !!elementID;
     const elementIDForList = checkedIDs.length ? undefined : elementID;
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
@@ -279,7 +280,10 @@ const MailboxContainer = ({
                     onMessageLoad();
                     history.push(setParamsInLocation(history.location, { labelID, elementID: element.ID }));
                 }
-                handleCheckAll(false);
+                // We preserve checkbox state when opening a new element in row mode
+                if (columnMode) {
+                    handleCheckAll(false);
+                }
             };
 
             void fetchElementThenCompose();
