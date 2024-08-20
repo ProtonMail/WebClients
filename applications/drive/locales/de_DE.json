@@ -453,8 +453,8 @@
       "Increase": [
         "Vergrößern"
       ],
-      "Keep my Plus subscription": [
-        "Plus-Abonnement behalten"
+      "Invite": [
+        "Einladen"
       ],
       "Later": [
         "Später"
@@ -3363,6 +3363,9 @@
       "You have successfully joined the family group": [
         "Du bist erfolgreich der Familiengruppe beigetreten"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Gruppenabonnement beitrittst."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
       ],
@@ -4191,6 +4194,10 @@
       ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Erstelle eine sichere Cloud für ${ n } Benutzer",
+        "Erstelle eine sichere Cloud für ${ n } Benutzer"
       ],
       "Create in": [
         "Erstellen in"
@@ -5366,12 +5373,6 @@
       ],
       "You need access": [
         "Du benötigst Zugriff"
-      ],
-      "You will lose access to Plus features on this date.": [
-        "An diesem Datum verlierst du den Zugang zu Plus-Funktionen."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "An diesem Datum verlierst du den Zugang zu Plus-Servern und -Funktionen."
       ],
       "You will lose all unsaved changes.": [
         "Alle nicht gespeicherten Änderungen gehen verloren."
@@ -6917,14 +6918,8 @@
       "Password health": [
         "Passwortsicherheit"
       ],
-      "Password manager to secure credentials": [
-        "Passwortmanager um Anmeldedaten zu schützen"
-      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonischer Support (ab 40 Benutzern)"
       ],
       "Priority email support": [
         "Priorisierter E-Mail-Support"
@@ -7313,9 +7308,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonische Unterstützung ist durch das ${ BRAND_NAME }-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 6 oder mehr Benutzern verfügbar."
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindert den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
       ],
@@ -7617,6 +7609,9 @@
       "Failed to open document": [
         "Dokument konnte nicht geöffnet werden"
       ],
+      "Failed to reject share invitation": [
+        "Ablehnung der Einladung zur gemeinsamen Nutzung fehlgeschlagen"
+      ],
       "Failed to remove the file": [
         "Fehler beim Entfernen der Datei"
       ],
@@ -7662,6 +7657,9 @@
       ],
       "Share invitation accepted successfully": [
         "Einladung zur gemeinsamen Nutzung erfolgreich angenommen"
+      ],
+      "Share invitation declined": [
+        "Einladung zur gemeinsamen Nutzung abgelehnt"
       ],
       "Stopping to share this item has failed": [
         "Das Beenden der Freigabe dieses Artikels ist fehlgeschlagen"
@@ -7792,6 +7790,9 @@
       ],
       "Hang tight!": [
         "Einen Moment bitte."
+      ],
+      "Upload and protect your important files": [
+        "Deine wichtigen Dateien hochladen und schützen"
       ],
       "Your welcome bonus": [
         "Dein Willkommensbonus"
@@ -10262,11 +10263,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via E-Mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bitcoins sicher aufbewahren und überweisen"
       ]
     },
     "wallet_signup_2024:Bug category": {

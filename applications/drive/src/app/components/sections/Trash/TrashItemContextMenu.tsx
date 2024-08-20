@@ -36,9 +36,9 @@ export function TrashItemContextMenu({
                 {hasPreviewAvailable && (
                     <PreviewButton shareId={selectedLink.rootShareId} linkId={selectedLink.linkId} close={close} />
                 )}
-                {hasDownloadAvailable && <DownloadButton selectedLinks={selectedLinks} close={close} />}
+                {hasDownloadAvailable && <DownloadButton selectedBrowserItems={selectedLinks} close={close} />}
                 <DetailsButton
-                    selectedLinks={selectedLinks}
+                    selectedBrowserItems={selectedLinks}
                     showDetailsModal={showDetailsModal}
                     showFilesDetailsModal={showFilesDetailsModal}
                     close={close}

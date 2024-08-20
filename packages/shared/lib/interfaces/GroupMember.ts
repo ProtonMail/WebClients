@@ -16,6 +16,11 @@ export enum GROUP_MEMBER_PERMISSIONS {
     OverrideGroupPermissions = 1 << 0, // 0001
 }
 
+export enum GROUP_MEMBERSHIP_STATUS {
+    ACTIVE = 'active',
+    UNANSWERED = 'unanswered',
+}
+
 export interface GroupMemberAddressPendingKey {
     PrivateKey: string; // armored key
     ActivationToken: string; // armored

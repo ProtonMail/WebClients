@@ -618,9 +618,6 @@
       "Italic": [
         "斜體"
       ],
-      "Keep my Plus subscription": [
-        "保持進階版訂購授權"
-      ],
       "Label as": [
         "加上標籤"
       ],
@@ -825,11 +822,11 @@
       "Not saved": [
         "尚未儲存"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open": [
         "開啟"
@@ -3564,6 +3561,33 @@
         "優先支援"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "取得${ BRAND_NAME }Duo"
+      ],
+      "Get it for ${ price }": [
+        "使用${ price }取得它"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 位使用者"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "完整存取${ BRAND_NAME }產品"
+      ],
+      "You save ${ amountSave }": [
+        "您儲存${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "全部${ BRAND_NAME }，給兩人。"
+      ],
+      "Double your storage": [
+        "加倍您的儲存空間"
+      ]
+    },
     "Email body for description (description part)": {
       "DESCRIPTION:\n${ eventDescription }": [
         "描述：${ eventDescription }"
@@ -4595,14 +4619,23 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 群組"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "有自訂網域的帳號無法加入群組方案。"
+      ],
       "customer support": [
         "客服"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "群組方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "若您接受邀請，我們會將您從目前的方案轉出，並將所有剩餘金額存入的您的帳號。"
       ],
       "Invited by: ${ inviteEmail }": [
         "邀請人：${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "終身帳號無法加入群組方案。"
       ],
       "Manage addresses.": [
         "管理電子郵件位址。"
@@ -4639,6 +4672,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "您無法使用目前方案接受此邀請函。"
       ]
     },
     "familyOffer_2023:Label": {
@@ -5539,6 +5575,9 @@
       "${ numOccurrences } occurrence found in the mail content": [
         "${ numOccurrences } 個事件在郵件內容中找到"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME }提供了一個簡單的方法，讓您可以創建使用者但不需要將您的真實電子郵件透露給不可信的第三方網站。"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
       ],
@@ -5856,6 +5895,9 @@
       ],
       "Create a new contact group": [
         "創建新聯絡人群組"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "替成員創建一個安全${ n }"
       ],
       "Create in": [
         "創建在"
@@ -6387,6 +6429,9 @@
       ],
       "Organization size": [
         "組織規模"
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "我們的警示偏向於謹慎。如果您不認識任何外洩的資訊，您可以放心地忽略此報告。"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
@@ -7206,12 +7251,6 @@
       ],
       "You selected **${ elementsCount } message**.": [
         "您選擇**${ elementsCount }則訊息**。"
-      ],
-      "You will lose access to Plus features on this date.": [
-        "您將於此更新失去存取進階功能。"
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "您將於此更新失去存取進階伺服器和功能。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
@@ -9005,14 +9044,8 @@
       "Password health": [
         "密碼穩固性"
       ],
-      "Password manager to secure credentials": [
-        "密碼管理器以確保身分安全"
-      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
-      ],
-      "Phone support (40+ users)": [
-        "電話支援（40+ 使用者）"
       ],
       "Priority email support": [
         "優先電子郵件支援"
@@ -9357,9 +9390,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "${ BRAND_NAME } 客戶成功團隊於歐洲辦公時間內，為 6 位或以上使用者的客戶提供電話支援"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
@@ -11421,6 +11451,12 @@
       "Verification successful": [
         "驗證成功"
       ],
+      "Writing assistant disabled": [
+        "撰寫幫手已停用"
+      ],
+      "Writing assistant enabled": [
+        "撰寫幫手啟用"
+      ],
       "Writing assistant setting updated": [
         "撰寫幫手設定已更新"
       ],
@@ -11920,6 +11956,9 @@
       ],
       "Groups": [
         "群組"
+      ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "使用${ PASS_APP_NAME }隱藏您的電子郵件"
       ],
       "Human verification": [
         "真人身分驗證"
@@ -12519,11 +12558,6 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "存取錢包應用程式"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "安全持有及交易您的 Bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

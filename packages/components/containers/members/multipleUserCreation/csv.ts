@@ -1,8 +1,9 @@
 import type { ParseLocalConfig, ParseResult } from 'papaparse';
 import Papa from 'papaparse';
 
-import { GIGA, MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
+import { MIN_PASSWORD_LENGTH } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 
 import { MAX_IMPORT_FILE_SIZE, MAX_NUMBER_OF_USER_ROWS } from './constants';
@@ -95,7 +96,7 @@ const convertCSVUser = (
         if (!includeStorage || isNaN(totalStorageNumber)) {
             return 0;
         }
-        return totalStorageNumber * GIGA;
+        return totalStorageNumber * sizeUnits.GB;
     })();
 
     const vpnAccess = (() => {

@@ -1,7 +1,6 @@
 import { ContextSeparator, useConfirmActionModal } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
-import type { DecryptedLink, ShareInvitationDetails } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser';
 import { useDetailsModal } from '../../modals/DetailsModal';
@@ -11,65 +10,59 @@ import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
 import { RemoveMeButton } from './ContextMenuButtons';
 import { AcceptButton } from './ContextMenuButtons/AcceptButton';
 import { DeclineButton } from './ContextMenuButtons/DeclineButton';
+import type { SharedWithMeItem } from './SharedWithMe';
 
 export function SharedWithMeContextMenu({
-    selectedLinks,
-    selectedPendingInvitationLinks,
+    selectedBrowserItems,
     anchorRef,
     isOpen,
     position,
     open,
     close,
-    acceptInvitation,
-    rejectInvitation,
 }: ContextMenuProps & {
-    selectedLinks: DecryptedLink[];
-    selectedPendingInvitationLinks: ShareInvitationDetails[];
-    acceptInvitation?: (invitationId: string) => Promise<void>;
-    rejectInvitation?: (invitationId: string) => Promise<void>;
+    selectedBrowserItems: SharedWithMeItem[];
 }) {
-    const selectedLink = selectedLinks.at(0);
-    const selectedPendingInvitationsLink = selectedPendingInvitationLinks.at(0);
-    const isOnlyOneItem = selectedLinks.length === 1 && !!selectedLink;
-    const isOnlyOneFileItem = isOnlyOneItem && selectedLink.isFile;
+    const selectedBrowserItem = selectedBrowserItems.at(0);
+    const isOnlyOneItem = selectedBrowserItems.length === 1 && !!selectedBrowserItem;
+    const isOnlyOneFileItem = isOnlyOneItem && selectedBrowserItem.isFile;
     const hasPreviewAvailable =
         isOnlyOneItem &&
-        selectedLink.isFile &&
-        selectedLink.mimeType &&
-        isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
+        selectedBrowserItem.isFile &&
+        selectedBrowserItem.mimeType &&
+        isPreviewAvailable(selectedBrowserItem.mimeType, selectedBrowserItem.size);
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const { showOpenInDocs } = useOpenInDocs(selectedLink);
+    const { showOpenInDocs } = useOpenInDocs(selectedBrowserItem);
 
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-                {selectedLink && (
+                {selectedBrowserItem && (
                     <>
                         {hasPreviewAvailable && (
                             <PreviewButton
-                                shareId={selectedLink.rootShareId}
-                                linkId={selectedLink.linkId}
+                                shareId={selectedBrowserItem.rootShareId}
+                                linkId={selectedBrowserItem.linkId}
                                 close={close}
                             />
                         )}
                         {isOnlyOneFileItem && showOpenInDocs && (
-                            <OpenInDocsButton shareId={selectedLink.rootShareId} link={selectedLink} close={close} />
+                            <OpenInDocsButton selectedBrowserItem={selectedBrowserItem} close={close} />
                         )}
-                        <DownloadButton selectedLinks={selectedLinks} close={close} />
+                        <DownloadButton selectedBrowserItems={selectedBrowserItems} close={close} />
                         <DetailsButton
-                            selectedLinks={selectedLinks}
+                            selectedBrowserItems={selectedBrowserItems}
                             showDetailsModal={showDetailsModal}
                             showFilesDetailsModal={showFilesDetailsModal}
                             close={close}
                         />
-                        {!!selectedLink && (
+                        {!!selectedBrowserItem && (
                             <>
                                 <ContextSeparator />
                                 <RemoveMeButton
-                                    selectedLink={selectedLink}
+                                    rootShareId={selectedBrowserItem.rootShareId}
                                     showConfirmModal={showConfirmModal}
                                     close={close}
                                 />
@@ -77,20 +70,22 @@ export function SharedWithMeContextMenu({
                         )}
                     </>
                 )}
-                {acceptInvitation && rejectInvitation && selectedPendingInvitationsLink && (
-                    <>
-                        <AcceptButton
-                            acceptInvitation={acceptInvitation}
-                            invitationId={selectedPendingInvitationsLink.invitation.invitationId}
-                            close={close}
-                        />
-                        <DeclineButton
-                            rejectInvitation={rejectInvitation}
-                            invitationId={selectedPendingInvitationsLink.invitation.invitationId}
-                            close={close}
-                        />
-                    </>
-                )}
+                {selectedBrowserItem?.acceptInvitation &&
+                    selectedBrowserItem.rejectInvitation &&
+                    selectedBrowserItem.invitationDetails && (
+                        <>
+                            <AcceptButton
+                                acceptInvitation={selectedBrowserItem.acceptInvitation}
+                                invitationId={selectedBrowserItem.invitationDetails.invitation.invitationId}
+                                close={close}
+                            />
+                            <DeclineButton
+                                rejectInvitation={selectedBrowserItem.rejectInvitation}
+                                invitationId={selectedBrowserItem.invitationDetails.invitation.invitationId}
+                                close={close}
+                            />
+                        </>
+                    )}
             </ItemContextMenu>
             {detailsModal}
             {filesDetailsModal}

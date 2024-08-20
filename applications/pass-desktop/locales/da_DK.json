@@ -1114,9 +1114,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } vil vise elementets favicon via ${ BRAND_NAME } anonymiseret billedproxy."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } vil kun importere logins, noter og betalingskort."
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } kræver din ${ BRAND_NAME }-adgangskode for at tilgå data offline."
       ],
@@ -1593,8 +1590,14 @@
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Bekræft din ekstra adgangskode for at opnå automatisk låsning med biometri."
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Bekræft venligst din ekstra adgangskode for at autolåse med din ekstra adgangskode."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Bekræft venligst din ekstra adgangskode for at afregistrere din nuværende lås."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Bekræft venligst din ekstra adgangskode for at opdatere den automatiske låsetid."
       ],
       "Please confirm your password": [
         "Bekræft venligst din adgangskode"
@@ -1971,9 +1974,6 @@
       ],
       "30 seconds": [
         "30 sekunder"
-      ],
-      "4 hours": [
-        "4 timer"
       ],
       "5 minutes": [
         "5 minutter"

@@ -567,6 +567,9 @@
       "Hide messages": [
         "Приховати повідомлення"
       ],
+      "Hide toolbar": [
+        "Сховати панель інструментів"
+      ],
       "hide-my-email aliases": [
         "псевдонімів Hide-my-email"
       ],
@@ -641,9 +644,6 @@
       ],
       "Italic": [
         "Курсив"
-      ],
-      "Keep my Plus subscription": [
-        "Зберегти передплату Plus"
       ],
       "Label as": [
         "Позначити міткою"
@@ -849,11 +849,11 @@
       "Not saved": [
         "Не збережено"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "Застосувати"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open": [
         "Відкрити"
@@ -1178,6 +1178,9 @@
       ],
       "Show side panel": [
         "Показати бічну панель"
+      ],
+      "Show toolbar": [
+        "Показати панель інструментів"
       ],
       "Sign out": [
         "Вийти"
@@ -4193,6 +4196,9 @@
       "Tab closed": [
         "Вкладку закрито"
       ],
+      "Text is too long to refine": [
+        "Текст надто довгий для редагування"
+      ],
       "Thanks for the feedback!": [
         "Дякуємо за відгук!"
       ],
@@ -4531,6 +4537,9 @@
       ]
     },
     "Error message": {
+      "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
+        "Псевдоніми не можна використовувати, коли додатковий пароль увімкнено в ${ PASS_APP_NAME }."
+      ],
       "App currently unavailable": [
         "Програма наразі недоступна"
       ],
@@ -4560,6 +4569,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Коли увімкнено додатковий пароль, керування псевдонімами може бути здійснено лише в ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "У вас поки що немає жодного контакту. Почніть зі створення нового"
@@ -5754,6 +5766,9 @@
         "${ numOccurrences } збігів у вмісті пошти",
         "${ numOccurrences } збіги у вмісті пошти"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } надає простий спосіб створення облікового запису на ненадійних сторонніх сайтах, де ви не хочете розкривати свою справжню адресу електронної пошти."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
       ],
@@ -6134,6 +6149,12 @@
       ],
       "Create a new contact group": [
         "Створити нову групу контактів"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Створити захищену хмару для користувача ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }"
       ],
       "Create in": [
         "Створити у"
@@ -6690,6 +6711,9 @@
       "Organization size": [
         "Розмір організації"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Наші попередження є запобіжними. Якщо ви не впізнаєте жодної із зазначених відомостей, можете сміливо ігнорувати це повідомлення."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
       ],
@@ -6869,6 +6893,9 @@
       ],
       "Scheduling message...": [
         "Планування повідомлення..."
+      ],
+      "Scribe panel": [
+        "Панель записів"
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Опція пошуку, що дає змогу користуватися безпечним пошуком у вмісті повідомлень електронної пошти."
@@ -7565,12 +7592,6 @@
         "Ви вибрали **${ elementsCount } повідомлення**.",
         "Ви вибрали **${ elementsCount } повідомлень**.",
         "Ви вибрали **${ elementsCount } повідомлень**."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "З цієї дати ви втратите доступ до функцій Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "З цієї дати ви втратите доступ до серверів і функцій Plus."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
@@ -9454,14 +9475,8 @@
       "Password health": [
         "Якість пароля"
       ],
-      "Password manager to secure credentials": [
-        "Менеджер паролів для захисту облікових даних"
-      ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
-      ],
-      "Phone support (40+ users)": [
-        "Підтримка за телефоном (40+ користувачів)"
       ],
       "Priority email support": [
         "Пріоритетна підтримка електронною поштою"
@@ -9854,9 +9869,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Налаштуйте свій підпис з використанням логотипів, зображень, піктограм соціальних мереж, посилань на свої контакти та інших можливостей"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Команда підтримки ${ BRAND_NAME } надає допомогу в телефонному режимі впродовж європейського робочого часу клієнтам, які мають 6 або більше користувачів"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Запобігає доступу до повідомлень ${ BRAND_NAME } чи сторонніх осіб. Відправник та отримувач повідомлень – єдині, хто може читати повідомлення."
@@ -11564,6 +11576,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } з автоматичною переадресацією"
+      ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } календар на користувача",
         "${ MaxCalendars } календарі на користувача",
@@ -11618,6 +11633,9 @@
       "10 email addresses": [
         "10 адрес електронної пошти"
       ],
+      "2 users": [
+        "2 користувачі"
+      ],
       "20 email addresses per user": [
         "20 адрес е-пошти на користувача"
       ],
@@ -11647,6 +11665,9 @@
       ],
       "Custom schedule send and snooze times": [
         "Власний час запланованого надсилання та відкладення"
+      ],
+      "Desktop app and email client support (via IMAP)": [
+        "Підтримка додатків робочого стола та поштового клієнта (через IMAP)"
       ],
       "Direct contribution to our mission": [
         "Прямий внесок до нашої місії"
@@ -12047,6 +12068,9 @@
       ],
       "Import record deleted": [
         "Запис імпорту видалено"
+      ],
+      "Invitation rejected": [
+        "Запрошення відхилено"
       ],
       "Keyboard shortcuts preferences updated": [
         "Налаштування комбінацій клавіш оновлено"
@@ -12691,6 +12715,9 @@
       ],
       "Groups": [
         "Групи"
+      ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Сховати вашу е-пошту з ${ PASS_APP_NAME }"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -13337,11 +13364,6 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Доступ до програми Wallet"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Безпечно зберігайте й переказуйте Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

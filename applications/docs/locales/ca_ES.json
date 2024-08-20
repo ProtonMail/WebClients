@@ -324,9 +324,6 @@
       "Increase": [
         "Incrementa"
       ],
-      "Keep my Plus subscription": [
-        "Mantén la meva subscripció Plus"
-      ],
       "Learn more": [
         "Més informació"
       ],
@@ -2288,7 +2285,7 @@
         "Les invitacions externes estan desactivades temporalment. Torneu a intentar-ho més tard"
       ],
       "Failed to rename document. Please try again later.": [
-        "No s'ha pogut canviar el nom del document. Intenteu-ho més tard."
+        "No s'ha pogut canviar el nom del document. Torneu-ho a provar més tard."
       ],
       "File \"${ name }\" is already downloading": [
         "El fitxer «${ name }» ja s'està descarregant"
@@ -2479,7 +2476,7 @@
         "És possible que l'adreça estigui mal escrita."
       ],
       "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
-        "El document que esteu intentant convertir és massa gran. Això pot passar si el document té un gran nombre d’imatges o altres mitjans. Torneu a provar-ho amb un document més petit."
+        "El document que esteu intentant convertir és massa gran. Això pot passar si el document té un gran nombre d'imatges o altres mitjans. Torneu-ho a provar amb un document més petit."
       ],
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
@@ -3932,7 +3929,7 @@
         "No s'ha trobat cap resultat."
       ],
       "No version history available": [
-        "No hi ha historial de versions disponible."
+        "No hi ha disponible cap historial de versions"
       ],
       "No version history batches available": [
         "No hi ha lots d'historial de versions disponible."
@@ -4108,7 +4105,7 @@
         "Algunes edicions triguen més del previst a sincronitzar-se."
       ],
       "Something went wrong": [
-        "Alguna cosa ha anat malament."
+        "S'ha produït un error."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
@@ -4132,7 +4129,7 @@
         "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
       ],
       "The authorship of edits in the document could not be verified. Do you want to mark this document as verified? You can choose to Ignore to decide later.": [
-        "No s'ha pogut verificar l'autoria de les modificacions del document. Voleu marcar aquest document com a verificat? Podeu optar per Ignorar i decidir-ho més tard."
+        "No s'ha pogut verificar l'autoria de les modificacions en el document. Voleu marcar aquest document com a verificat? Podeu optar per Ignorar i decidir-ho més tard."
       ],
       "The Beginning": [
         "Inici"
@@ -4159,7 +4156,7 @@
         "Aquest document té molta activitat. Algunes funcions poden estar temporalment no disponibles."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "Aquest document potser no existeix, o potser no teniu permís per veure'l. Podeu intentar actualitzar la pàgina per veure si el problema persisteix."
+        "És possible que aquest document no existeixi o que no tingueu permís per a veure'l. Podeu intentar tornar a carregar la pàgina per veure si el problema persisteix."
       ],
       "This item already exists in your library": [
         "Aquest element ja existeix a la biblioteca"
@@ -4379,12 +4376,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal. Si el vostre compte de PayPal no en té, cliqueu el botó de sota."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Perdreu accés a les funcions Plus en aquesta data."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Perdreu l'accés a servidors i característiques Plus en aquesta data."
       ],
       "You will lose all unsaved changes.": [
         "Perdreu tots els canvis sense desar."
@@ -5472,6 +5463,10 @@
         "${ n } missatge per dia",
         "${ n } missatges per dia"
       ],
+      "${ n } user": [
+        "${ n } usuari",
+        "Fins a ${ n } usuaris"
+      ],
       "${ n } vault": [
         "${ n } caixa forta",
         "${ n } caixes fortes"
@@ -5653,14 +5648,8 @@
       "Password health": [
         "Estat de la contrasenya"
       ],
-      "Password manager to secure credentials": [
-        "Gestor de contrasenyes per a assegurar les credencials"
-      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
-      ],
-      "Phone support (40+ users)": [
-        "Suport telefònic (a partir de 40 usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -6032,9 +6021,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalitzeu la vostra signatura de correu electrònic amb logos, imatges, icones de xarxes socials, enllaços als detalls de contacte, etc."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "L'Equip per a l'Èxit del Client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu per a clients amb almenys 6 usuaris."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o tercers accedeixin als missatges. Les úniques persones que poden llegir els missatges són el remitent i el destinatari previst."
@@ -7988,7 +7974,7 @@
         "El compte està protegit"
       ],
       "Your document cannot be loaded": [
-        "No es pot carregar el vostre document."
+        "No s'ha pogut carregar el document"
       ],
       "Your download has a ${ DOCS_APP_NAME } file": [
         "La vostra descàrrega té un fitxer de ${ DOCS_APP_NAME }"

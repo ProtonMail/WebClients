@@ -453,8 +453,8 @@
       "Increase": [
         "Artır"
       ],
-      "Keep my Plus subscription": [
-        "Plus aboneliğimi koru"
+      "Invite": [
+        "Davet et"
       ],
       "Later": [
         "Daha sonra"
@@ -5374,12 +5374,6 @@
       "You need access": [
         "Erişiminiz olması gerekli"
       ],
-      "You will lose access to Plus features on this date.": [
-        "Bu tarihte Plus özelliklerine erişiminizi kaybedeceksiniz."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Bu tarihte Plus sunucularına ve özelliklerine erişiminizi kaybedeceksiniz."
-      ],
       "You will lose all unsaved changes.": [
         "Kaydedilmemiş tüm değişiklikleri kaybedeceksiniz."
       ],
@@ -6867,17 +6861,8 @@
       "Password health": [
         "Parola sağlığı"
       ],
-      "Password manager to secure credentials": [
-        "Kimlik doğrulama bilgilerinin güvenliğini sağlamak için parola yöneticisi"
-      ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
-      ],
-      "Phone support (40+ users)": [
-        "Telefon desteği (40+ kullanıcı)"
-      ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Ücretli ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME } özellikleri"
       ],
       "Priority email support": [
         "Öncelikli e-posta desteği"
@@ -7016,9 +7001,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Kasa paylaşma (${ n } kişiye kadar)",
         "Kasa paylaşma (${ n } kişiye kadar)"
-      ],
-      "Version history": [
-        "Sürüm geçmişi"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını kontrol etmek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -7268,9 +7250,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "6 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde ${ BRAND_NAME } müşteri başarısı ekibinden telefonla destek alabilirsiniz"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
@@ -7720,9 +7699,6 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Dosyalarınızı saklayın ve güvenle paylaşın. Kimlikler, sözleşmeler ve kişisel fotoğraflar gibi en özel dosyalarınızın güvenliğini sağlayarak başlayın."
-      ],
-      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
-        "Sahibinin paylaşım erişimine onay varmesi gerekir. İşlem tamamlandığında bir bildirim e-postası alacaksınız."
       ],
       "Upload a file": [
         "Bir dosya yükleyin"
@@ -10230,11 +10206,6 @@
       ],
       "Bitcoin via email": [
         "E-posta ile Bitcoin"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bitcoin'lerinizi güvenle tutun ve transfer edin"
       ]
     },
     "wallet_signup_2024:Bug category": {

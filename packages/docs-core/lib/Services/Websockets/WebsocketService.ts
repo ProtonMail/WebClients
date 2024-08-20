@@ -5,7 +5,7 @@ import type { EncryptMessage } from '../../UseCase/EncryptMessage'
 import type { EncryptionMetadata } from '../../Types/EncryptionMetadata'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { WebsocketConnection } from '../../Realtime/WebsocketConnection'
-import type { InternalEventBusInterface, WebsocketConnectionInterface, RealtimeUrlAndToken } from '@proton/docs-shared'
+import type { InternalEventBusInterface, WebsocketConnectionInterface } from '@proton/docs-shared'
 import { BroadcastSource, ProcessedIncomingRealtimeEventMessage, assertUnreachableAndLog } from '@proton/docs-shared'
 import type { GetRealtimeUrlAndToken } from '../../UseCase/CreateRealtimeValetToken'
 import type { WebsocketServiceInterface } from './WebsocketServiceInterface'
@@ -38,7 +38,6 @@ import { AckLedger } from './AckLedger/AckLedger'
 import type { AckLedgerInterface } from './AckLedger/AckLedgerInterface'
 import type { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
-import { ApiResult } from '../../Domain/Result/ApiResult'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
 import { UpdateDebouncer } from './Debouncer/UpdateDebouncer'
 import { UpdateDebouncerEventType } from './Debouncer/UpdateDebouncerEventType'
@@ -48,11 +47,6 @@ type LinkID = string
 
 export class WebsocketService implements WebsocketServiceInterface {
   private connections: Record<LinkID, DocumentConnectionRecord> = {}
-  private stressTestorCache: {
-    lastToken?: RealtimeUrlAndToken
-    lastKeys?: DocumentKeys
-    lastDocument?: NodeMeta
-  } = {}
   readonly ledger: AckLedgerInterface = new AckLedger(this.logger, this.handleLedgerStatusChangeCallback.bind(this))
 
   constructor(
@@ -116,50 +110,42 @@ export class WebsocketService implements WebsocketServiceInterface {
   createConnection(
     document: NodeMeta,
     keys: DocumentKeys,
-    options: { commitId: () => string | undefined; isStressTestor?: boolean },
+    options: { commitId: () => string | undefined },
   ): WebsocketConnectionInterface {
-    this.logger.info(`Creating connection for document ${document.linkId} isStressTestor: ${options.isStressTestor}`)
+    this.logger.info(`Creating connection for document ${document.linkId}`)
 
     const callbacks: WebsocketCallbacks = {
       onConnecting: () => {
-        if (!options.isStressTestor) {
-          this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Connecting]>({
-            type: WebsocketConnectionEvent.Connecting,
-            payload: {
-              document: document,
-            },
-          })
-        }
+        this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Connecting]>({
+          type: WebsocketConnectionEvent.Connecting,
+          payload: {
+            document: document,
+          },
+        })
       },
 
       onFailToConnect: (reason) => {
-        if (!options.isStressTestor) {
-          this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.FailedToConnect]>({
-            type: WebsocketConnectionEvent.FailedToConnect,
-            payload: {
-              document: document,
-              serverReason: reason,
-            },
-          })
-        }
+        this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.FailedToConnect]>({
+          type: WebsocketConnectionEvent.FailedToConnect,
+          payload: {
+            document: document,
+            serverReason: reason,
+          },
+        })
       },
 
       onClose: (reason) => {
-        if (!options.isStressTestor) {
-          this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected]>({
-            type: WebsocketConnectionEvent.Disconnected,
-            payload: {
-              document: document,
-              serverReason: reason,
-            },
-          })
-        }
+        this.eventBus.publish<WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected]>({
+          type: WebsocketConnectionEvent.Disconnected,
+          payload: {
+            document: document,
+            serverReason: reason,
+          },
+        })
       },
 
       onMessage: (message) => {
-        if (!options.isStressTestor) {
-          void this.handleConnectionMessage(document, message)
-        }
+        void this.handleConnectionMessage(document, message)
       },
 
       onEncryptionError: (error) => {
@@ -188,15 +174,7 @@ export class WebsocketService implements WebsocketServiceInterface {
       },
 
       getUrlAndToken: async () => {
-        if (options.isStressTestor && this.stressTestorCache.lastToken) {
-          return ApiResult.ok(this.stressTestorCache.lastToken)
-        }
-
         const result = await this._createRealtimeValetToken.execute(document, options.commitId())
-        if (!result.isFailed()) {
-          this.stressTestorCache.lastToken = result.getValue()
-        }
-
         return result
       },
     }
@@ -222,9 +200,6 @@ export class WebsocketService implements WebsocketServiceInterface {
       keys,
       debouncer,
     }
-
-    this.stressTestorCache.lastKeys = keys
-    this.stressTestorCache.lastDocument = document
 
     return connection
   }
@@ -654,18 +629,5 @@ export class WebsocketService implements WebsocketServiceInterface {
     }
 
     void record.connection.disconnect(ConnectionCloseReason.CODES.NORMAL_CLOSURE)
-  }
-
-  public createStressTestConnections(count: number): void {
-    this.logger.debug(`Creating ${count} stress test connections`)
-
-    for (let i = 0; i < count; i++) {
-      const connection = this.createConnection(this.stressTestorCache.lastDocument!, this.stressTestorCache.lastKeys!, {
-        commitId: () => undefined,
-        isStressTestor: true,
-      })
-
-      void connection.connect()
-    }
   }
 }

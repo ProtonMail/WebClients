@@ -1060,9 +1060,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "Το ${ PASS_APP_NAME } θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "Το ${ PASS_APP_NAME } θα απαιτήσει τον ${ BRAND_NAME } κωδικό πρόσβασής σας για να αποκτήσει πρόσβαση σε δεδομένα εκτός σύνδεσης."
       ],
@@ -1533,8 +1530,14 @@
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Παρακαλούμε επιβεβαιώστε τον επιπλέον κωδικό πρόσβασής σας για αυτόματο κλείδωμα με βιομετρικά στοιχεία."
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης για να κλειδώσετε αυτόματα με τον επιπλέον κωδικό πρόσβασής σας."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Παρακαλούμε επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης σας για να καταργήσετε την καταχώρηση του τρέχοντος κλειδώματος."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασης για να ενημερώσετε την ώρα αυτόματου κλειδώματος."
       ],
       "Please confirm your password": [
         "Παρακαλούμε επιβεβαίωσε τον κωδικό πρόσβασής σου"
@@ -1908,9 +1911,6 @@
       ],
       "30 seconds": [
         "30 δευτερόλεπτα"
-      ],
-      "4 hours": [
-        "4 ώρες"
       ],
       "5 minutes": [
         "5 λεπτά"

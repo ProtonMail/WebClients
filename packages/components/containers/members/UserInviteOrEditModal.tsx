@@ -6,8 +6,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { editMemberInvitation, inviteMember, updateAI } from '@proton/shared/lib/api/members';
-import { GIGA, MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
@@ -24,7 +25,7 @@ import {
 } from '../../components';
 import { useApi, useEventManager, useNotifications, useSubscription } from '../../hooks';
 import { AssistantUpdateSubscriptionButton } from '../payments';
-import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 
 interface Props extends ModalStateProps {
     organization?: Organization;
@@ -47,7 +48,7 @@ const UserInviteOrEditModal = ({
     const { validator, onFormSubmit } = useFormErrors();
     const totalStorage = getTotalStorage(member ?? {}, organization);
     const storageRange = getStorageRange(member ?? {}, organization);
-    const storageSizeUnit = GIGA;
+    const storageSizeUnit = sizeUnits.GB;
     const isEditing = !!member?.ID;
 
     const [subscription] = useSubscription();
@@ -56,7 +57,9 @@ const UserInviteOrEditModal = ({
     const initialModel = useMemo(
         () => ({
             address: '',
-            storage: member ? member.MaxSpace : clamp(500 * GIGA, storageRange.min, storageRange.max),
+            storage: member
+                ? member.MaxSpace
+                : clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
             vpn: !!member?.MaxVPN,
             numAI: aiSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
             admin: member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,

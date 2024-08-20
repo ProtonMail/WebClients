@@ -324,9 +324,6 @@
       "Increase": [
         "Lisää"
       ],
-      "Keep my Plus subscription": [
-        "Säilytä Plus-tilaukseni"
-      ],
       "Learn more": [
         "Lue lisää"
       ],
@@ -1951,10 +1948,10 @@
         "Säästä aikaa lähettämällä viestejä ja kutsuja kaikille yhtä aikaa. Vain yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
       ],
       "Set a data recovery method to prevent data loss.": [
-        "Aseta tiedoillesi palautusmenetelmä, jottet menetä niitä."
+        "Aseta tiedoillesi palautustapa, jottet menetä niitä."
       ],
       "Set a recovery method to prevent losing access to your account.": [
-        "Aseta palautusmenetelmä, jottet menetä pääsyä tilillesi."
+        "Aseta palautustapa, jottet menetä pääsyä tilillesi."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Varmista tilillesi korkein mahdollinen suojaus asettamalla salauslauseke."
@@ -1978,7 +1975,7 @@
         "Tilisi ja tietojesi palautusmenetelmät on määritetty ja kaksivaiheinen tunnistautuminen on käytössä."
       ],
       "Your account and data recovery methods are set.": [
-        "Tilisi ja tietojesi palautusmenetelmät on määritetty."
+        "Tilisi ja tietojesi palautustavat on asetettu."
       ]
     },
     "description": {
@@ -3629,6 +3626,10 @@
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Luo suojattu pilvi ${ n } jäsenelle",
+        "Luo suojattu pilvi ${ n } jäsenelle"
+      ],
       "Create in": [
         "Luo kalenteriin"
       ],
@@ -4409,12 +4410,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal-tililläsi on oltava maksukortti tai pankkitili. Jos PayPal-tililläsi ei näitä ole, paina alla olevaa painiketta."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Menetät pääsyn Plus-ominaisuuksiin tänä päivänä."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Menetät pääsyn Plus-palvelimiin ja -ominaisuuksiin tänä päivänä."
       ],
       "You will lose all unsaved changes.": [
         "Menetät kaikki tallentamattomat muutokset."
@@ -5686,14 +5681,8 @@
       "Password health": [
         "Salasanaterveys"
       ],
-      "Password manager to secure credentials": [
-        "Salasananhallinta kirjautumistietojen turvaamiseen"
-      ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
-      ],
-      "Phone support (40+ users)": [
-        "Puhelinasiakaspalvelu (40+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -6071,9 +6060,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "${ BRAND_NAME }in asiakastyytyväisyystiimi tarjoaa palvelua puhelimitse vähintään 6 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -6680,7 +6666,7 @@
     },
     "plan customizer, ips": {
       "please ${ contactHref } our Sales team.": [
-        "${ contactHref } myyntitiimiimme."
+        "${ contactHref } myyntiimme."
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Valitse tilauksesi sisältyvien IP-osoitteiden määrä. Jokainen lisäosoite maksaa ${ price }."
@@ -8234,11 +8220,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin sähköpostitse"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Säilytä ja siirrä Bitcoinejasi turvallisesti"
       ]
     },
     "wallet_signup_2024:Bug category": {

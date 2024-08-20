@@ -453,8 +453,8 @@
       "Increase": [
         "გაგრძელება"
       ],
-      "Keep my Plus subscription": [
-        "ჩემი Plus გამოწერის შენარჩუნება"
+      "Invite": [
+        "მოწვევა"
       ],
       "Later": [
         "მოგვიანებით"
@@ -4195,6 +4195,10 @@
       "Create a new contact group": [
         "კონტაქტების ახალი ჯგუფის შექმნა"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის",
+        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის"
+      ],
       "Create in": [
         "რაში შევქმნა"
       ],
@@ -5369,12 +5373,6 @@
       ],
       "You need access": [
         "გჭირდებათ წვდომა"
-      ],
-      "You will lose access to Plus features on this date.": [
-        "ამ თარიღის დადგომისას Plus-ის თვისებებთან წვდომას დაკარგავთ."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "ამ თარიღის მოსვლისას Plus სერვერებთან და მის ფუნქციებთან წვდომას დაკარგავთ."
       ],
       "You will lose all unsaved changes.": [
         "დაკარგავთ ყველა შეუნახავ ცვლილებას."
@@ -6863,14 +6861,8 @@
       "Password health": [
         "პაროლის სიძლიერე"
       ],
-      "Password manager to secure credentials": [
-        "პაროლების მმართველი ავტორიზაციის დეტალების დასაცავად"
-      ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
-      ],
-      "Phone support (40+ users)": [
-        "სატელეფონო მხარდაჭერა (40+ მომხმარებელი)"
       ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
@@ -7009,9 +7001,6 @@
       "Vault sharing (up to ${ n } person)": [
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
-      ],
-      "Version history": [
-        "ვერსიის ისტორია"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
@@ -7261,9 +7250,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "მოირგეთ თქვენი ელფოსტის ხელმოწერები მათში ლოგოების, გამოსახულებების, სოცმედიის ხატულების, კონტაქტების დეტალებზე ბმულების და ა. შ. დამატებით"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "სატელეფონო მხარდაჭერა ხელმისაწვდომია ${ BRAND_NAME }-ის მომხმარებელთა წარმატების გუნდიდან ევროპის სამუშაო საათებში, მომხმარებლებისთვის 6 ან მეტი მომხმარებლით"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "კრძალავს შეტყობინებებთან ${ BRAND_NAME }-ის და მესამე პირების წვდომას. შეტყობინების წაკითხვა, მხოლოდ, გამგზავნს და მიმღებს შეუძლიათ."
@@ -7713,9 +7699,6 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "შეინახეთ თქვენი ფაილები და გააზიარეთ ისინი უსაფრთხოდ. დაიწყეთ თქვენი ისეთი კონფიდენციალური ფაილების დაცვით, როგორიცაა ID-ები, კონტაქტები და პირადი სურათები."
-      ],
-      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
-        "საჭიროა, მფლობელმა დაადასტუროს გაზიარებულზე წვდომა. როცა ეს მოხდება, ელფოსტას მიიღებთ."
       ],
       "Upload a file": [
         "ფაილის ატვირთვა"
@@ -10223,11 +10206,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin ელფოსტით"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "უსაფრთხოდ შეინახეთ და გადარიცხეთ თქვენი bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

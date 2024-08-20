@@ -52,12 +52,11 @@ const CollapsibleSidebarSpotlight = ({ children, app, isAskUpdateTimezoneModalOp
             onClose={onClose}
             size="large"
             content={
-                <div className="flex flex-nowrap my-2">
+                <div className="flex flex-nowrap items-center my-2">
                     <div className="shrink-0 mr-4">
                         <img src={spotlightImg} alt="" />
                     </div>
                     <div>
-                        <p className="mt-0 mb-2 text-bold">{c('Spotlight').t`Need more space?`}</p>
                         <p className="m-0">{c('Spotlight').t`You can now collapse the navigation bar.`}</p>
                     </div>
                 </div>

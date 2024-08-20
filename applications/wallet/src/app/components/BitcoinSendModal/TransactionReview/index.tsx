@@ -12,8 +12,10 @@ import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { NoteOrMessage } from '../../../atoms/NoteOrMessage';
 import { Price } from '../../../atoms/Price';
 import { TEXT_AREA_MAX_LENGTH } from '../../../constants';
+import { useBitcoinBlockchainContext } from '../../../contexts';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../../store/hooks';
+import { isUndefined } from '../../../utils';
 import { EmailListItem } from '../../EmailListItem';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { EmailSelect } from '../../EmailSelect';
@@ -62,6 +64,8 @@ export const TransactionReview = ({
     const { txBuilder } = txBuilderHelpers;
     const recipients = txBuilder.getRecipients();
 
+    const { network } = useBitcoinBlockchainContext();
+
     const {
         message,
         noteToSelf,
@@ -72,7 +76,6 @@ export const TransactionReview = ({
         totalSentAmount,
         totalFees,
         totalAmount,
-        psbtExpectedSize,
         handleSendTransaction,
     } = useTransactionReview({
         isUsingBitcoinViaEmail,
@@ -300,14 +303,16 @@ export const TransactionReview = ({
                             </Tooltip>
                         </CoreButton>
 
-                        <FeesModal
-                            accountExchangeRate={accountExchangeRate}
-                            exchangeRate={exchangeRate}
-                            txBuilderHelpers={txBuilderHelpers}
-                            getFeesByBlockTarget={getFeesByBlockTarget}
-                            psbtExpectedSize={psbtExpectedSize}
-                            {...feesModal}
-                        />
+                        {!isUndefined(network) && (
+                            <FeesModal
+                                accountExchangeRate={accountExchangeRate}
+                                exchangeRate={exchangeRate}
+                                txBuilderHelpers={txBuilderHelpers}
+                                getFeesByBlockTarget={getFeesByBlockTarget}
+                                network={network}
+                                {...feesModal}
+                            />
+                        )}
                     </div>
 
                     <hr className="my-3" />

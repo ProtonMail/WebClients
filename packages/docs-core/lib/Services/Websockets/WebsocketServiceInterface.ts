@@ -6,7 +6,7 @@ export interface WebsocketServiceInterface {
   createConnection(
     nodeMeta: NodeMeta,
     keys: DocumentKeys,
-    options: { commitId: () => string | undefined; isStressTestor?: boolean },
+    options: { commitId: () => string | undefined },
   ): WebsocketConnectionInterface
 
   sendDocumentUpdateMessage(document: NodeMeta, rawContent: Uint8Array, source: BroadcastSource): Promise<void>
@@ -23,6 +23,5 @@ export interface WebsocketServiceInterface {
 
   debugSendCommitCommandToRTS(document: NodeMeta, keys: DocumentKeys): Promise<void>
   closeConnection(document: { linkId: string }): void
-  createStressTestConnections(count: number): void
   destroy(): void
 }

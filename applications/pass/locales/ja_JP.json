@@ -948,9 +948,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } は、${ BRAND_NAME } の匿名化された画像プロキシを介してアイテムのファビコンを表示します。"
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } は、ログイン情報、メモ、クレジット カードのみをインポートします。"
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } でデータにオフラインでアクセスするには、${ BRAND_NAME } のパスワードが必要です。"
       ],
@@ -1439,6 +1436,9 @@
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "このエクスポートは暗号化されていないため、エクスポートしたファイルにアクセスできる人は誰でもパスワードを見ることができます。セキュリティのため、使い終わったら削除してください。"
+      ],
+      "This option is currently not available on your device.": [
+        "このオプションは現在お使いのデバイスでは利用できません。"
       ],
       "This setting is disabled on the organization level": [
         "この設定は組織レベルでは無効になっています"

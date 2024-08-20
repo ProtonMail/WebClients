@@ -6,4 +6,5 @@ export interface B2BLogsQuery {
     Ip?: string;
     StartTime?: string;
     EndTime?: string;
+    Sort?: string;
 }

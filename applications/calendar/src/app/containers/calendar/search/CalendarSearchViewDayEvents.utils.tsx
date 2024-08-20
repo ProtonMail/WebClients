@@ -15,14 +15,19 @@ export const getEventTraits = (event: VisualSearchItem, addresses?: Address[]) =
         addresses,
     });
 
+    const noOneIsAttending =
+        !!Attendees &&
+        Attendees.length > 0 &&
+        Attendees.every((attendee) => attendee.parameters?.partstat === ICAL_ATTENDEE_STATUS.DECLINED);
+
     const selfAttendee = selfAttendeeIndex !== undefined && Attendees?.[selfAttendeeIndex];
     if (eventStatus === ICAL_EVENT_STATUS.CONFIRMED && !!selfAttendee) {
         const partstat = selfAttendee.parameters?.partstat;
         return {
             isUnanswered: partstat === ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
-            isCancelled: partstat === ICAL_ATTENDEE_STATUS.DECLINED,
+            isCancelled: partstat === ICAL_ATTENDEE_STATUS.DECLINED || noOneIsAttending,
         };
     }
 
-    return { isCancelled };
+    return { isCancelled: isCancelled || noOneIsAttending };
 };

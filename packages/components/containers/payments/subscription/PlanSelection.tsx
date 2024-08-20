@@ -20,6 +20,7 @@ import {
     getMaximumCycleForApp,
     getPricePerCycle,
     hasMaximumCycle,
+    hasPass,
     hasSomeAddonOrPlan,
 } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -211,7 +212,7 @@ const PlanSelection = ({
 }: Props) => {
     const canAccessWalletPlan = useFlag('WalletPlan');
     const canAccessDriveBusinessPlan = useFlag('DriveBizPlan');
-    const canAccessDuoPlan = useFlag('DuoPlan') && getCanSubscriptionAccessDuoPlan(subscription);
+    const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
 
     const [user] = useUser();
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
@@ -283,7 +284,8 @@ const PlanSelection = ({
         hasFreePlan ? FREE_PLAN : null,
         getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
         plansMap[PLANS.BUNDLE],
-        canAccessDuoPlan ? plansMap[PLANS.DUO] : null,
+        // Special condition to hide Pass plus in the individual tab if it's the current plan
+        canAccessDuoPlan && !hasPass(subscription) ? plansMap[PLANS.DUO] : null,
     ]);
 
     let FamilyPlans = filterPlans([

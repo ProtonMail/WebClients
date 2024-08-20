@@ -461,7 +461,7 @@
         "Aseta lisäsalasana"
       ],
       "Setup 2FA": [
-        "Määritä kaksivaiheinen tunnistautuminen"
+        "Määritä 2FA"
       ],
       "Share": [
         "Jaa"
@@ -970,6 +970,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Ongelma käynnistettäessä ${ PASS_SHORT_APP_NAME }ia. Jos ongelma jatkuu, ota yhteyttä asiakaspalveluun saadaksesi apua."
       ],
+      "Wrong extra password": [
+        "Väärä lisäsalasana"
+      ],
       "Wrong password": [
         "Väärä salasana"
       ],
@@ -1110,9 +1113,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
-      ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot ja maksukortit."
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } vaatii ${ BRAND_NAME }-salasanasi tietojen yhteydettömään käyttöön."
@@ -1538,6 +1538,9 @@
       "Offline support successfully disabled": [
         "Yhteydetön tila poistettiin käytöstä"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "${ PASS_APP_NAME }in käyttäminen yhdistettynä vaatii PIN-koodin. Kolmen epäonnistuneen yrityksen jälkeen sinut kirjataan ulos."
+      ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Hälytyksemme ovat varovaisia. Jos et tunnista tietomurron kohteeksi joutuneita tietoja lainkaan, voit huoletta jättää tämän raportin huomiotta."
       ],
@@ -1583,6 +1586,18 @@
       ],
       "Please confirm your extra password": [
         "Vahvista lisäsalasanasi"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Vahvista lisäsalasanasi käyttääksesi automaattista biometristä lukitusta."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Vahvista lisäsalasanasi käyttääksesi automaattista lisäsalasanalukitusta."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Vahvista lisäsalasanasi poistaaksesi nykyisen lukitustapasi."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Vahvista lisäsalasanasi muuttaaksesi automaattilukituksen viivettä."
       ],
       "Please confirm your password": [
         "Vahvista salasanasi"
@@ -1679,6 +1694,9 @@
       ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
+      ],
+      "Set by your organization": [
+        "Organisaatiosi asettama"
       ],
       "Settings successfully updated": [
         "Asetukset tallennettiin"
@@ -1888,6 +1906,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Tietosi havaittiin ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
       ]
     },
     "Label": {
@@ -1932,6 +1953,9 @@
       ],
       "15 minutes": [
         "15 minuutin kuluttua"
+      ],
+      "2 minutes": [
+        "2 minuuttia"
       ],
       "24 hours": [
         "Vuorokauden kuluttua"

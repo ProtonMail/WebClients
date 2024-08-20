@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
       "Add comment": [
         "Afegir document"
       ],
@@ -378,7 +390,7 @@
         "No s'ha pogut importar el codi HTML a causa d'un error desconegut."
       ],
       "Failed to import Markdown due to unknown error.": [
-        "No s'ha pogut importar el markdown a causa d'un error desconegut."
+        "No s'ha pogut importar el Markdown a causa d'un error desconegut."
       ],
       "Failed to import Word document due to unknown error.": [
         "No s'ha pogut importar el document Word a causa d'un error desconegut."

@@ -202,14 +202,17 @@
       "Disable": [
         "Wyłącz"
       ],
-      "Disable E2EE for group address": [
-        "Wyłącz E2EE dla grupy"
+      "Disable E2EE group mail encryption": [
+        "Wyłącz szyfrowanie E2EE poczty grupy"
       ],
       "Discard": [
         "Odrzuć"
       ],
       "Discard changes": [
         "Odrzuć zmiany"
+      ],
+      "Domain names": [
+        "Nazwy domen"
       ],
       "Done": [
         "Gotowe"
@@ -277,8 +280,8 @@
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
       ],
-      "Enable E2EE for group address": [
-        "Włącz E2EE dla grupy"
+      "Enable E2EE group mail encryption": [
+        "Włącz szyfrowanie E2EE poczty grupy"
       ],
       "Enable multi-user support": [
         "Włącz obsługę wielu użytkowników"
@@ -355,9 +358,6 @@
       "Keep logo": [
         "Zachowaj logo"
       ],
-      "Keep my Plus subscription": [
-        "Zachowaj subskrypcję Plus"
-      ],
       "Let's talk": [
         "Porozmawiajmy"
       ],
@@ -366,6 +366,9 @@
       ],
       "Loading verification": [
         "Ładowanie weryfikacji"
+      ],
+      "Lost access to your 2FA device?": [
+        "Nie masz dostępu do urządzenia z uwierzytelnianiem dwustopniowym?"
       ],
       "Make admin": [
         "Administrator"
@@ -451,9 +454,6 @@
       "Remove all members": [
         "Usuń wszystkich użytkowników"
       ],
-      "Remove all members from group": [
-        "Usuń wszystkich użytkowników z grupy"
-      ],
       "Remove bonuses": [
         "Zrezygnuj z bonusów"
       ],
@@ -483,9 +483,6 @@
       ],
       "Resend code": [
         "Wyślij ponownie kod"
-      ],
-      "Resend invitation": [
-        "Wyślij ponownie zaproszenie"
       ],
       "Reset credentials": [
         "Zresetuj dane logowania"
@@ -732,11 +729,6 @@
       ],
       "Zoom out": [
         "Pomniejsz"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Dodaj domenę pm.me"
       ]
     },
     "Action subscription": {
@@ -3488,6 +3480,9 @@
         "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)",
         "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)"
       ],
+      "2FA disabled": [
+        "Uwierzytelnianie dwustopniowe jest wyłączone"
+      ],
       "30-day money-back guarantee": [
         "30-dniowa gwarancja zwrotu pieniędzy"
       ],
@@ -3565,6 +3560,9 @@
       ],
       "All Events ": [
         "Wszystkie zdarzenia"
+      ],
+      "All members have been added.": [
+        "Wszyscy użytkownicy zostali dodani."
       ],
       "All your changes will be lost.": [
         "Wszystkie zmiany zostaną utracone."
@@ -3704,6 +3702,12 @@
       "Country code": [
         "Kod kraju"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Utwórz bezpieczną chmurę dla ${ n } użytkownika",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Twórz subkonta i zarządzaj nimi, a także przypisuj im adresy e-mail w niestandardowej domenie."
       ],
@@ -3737,11 +3741,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -3754,6 +3758,9 @@
         "Usuwanie ${ deletedServerCount } serwerów bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Wyłączenie uwierzytelniania dwustopniowego obniży bezpieczeństwo konta. Zrób to tylko wtedy, jeśli jest to absolutnie konieczne."
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -3919,6 +3926,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Przejdź do swojego dostawcy tożsamości, pobierz metadane SAML dla ${ appName } i zaimportuj je tutaj."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Adresy grup możesz utworzyć tylko dla niestandardowych domen. Przejdź do sekcji ${ linkToDomainPage }, aby dodać niestandardową domenę."
       ],
       "here": [
         "tutaj"
@@ -4628,6 +4638,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Weryfikacja może potrwać do godziny. Nie usuwaj rekordu TXT nawet po pomyślnej weryfikacji, ponieważ jest on potrzebny do potwierdzenia, że nadal jesteś właścicielem domeny."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Spowoduje to wyłączenie uwierzytelniania dwustopniowego, w tym aplikacji uwierzytelniającej i kluczy bezpieczeństwa."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ta opcja umożliwi użycie konta PayPal jako metody płatności za Twoją subskrypcję ${ BRAND_NAME }. Zostaniesz przekierowany na stronę PayPal w nowej karcie przeglądarki. Jeśli używasz opcji blokowania wyskakujących okien, wyłącz ją, aby kontynuować."
       ],
@@ -4747,6 +4760,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Prześlij logo organizacji, aby zwiększyć rozpoznawalność marki."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Użyj metody odzyskiwania, aby wyłączyć uwierzytelnianie dwustopniowe."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Użyj najlepszego serwera w zależności od obciążenia i lokalizacji: ${ formattedBestServerName }"
@@ -5027,12 +5043,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Po zalogowaniu się zostaniesz przekierowany do ${ destination }."
       ],
-      "You will lose access to Plus features on this date.": [
-        "W tym dniu stracisz dostęp do funkcji planu Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "W tym dniu stracisz dostęp do serwerów planu Plus i ich funkcji."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Będziesz potrzebować adresu ${ BRAND_NAME }, aby używać poczty ${ MAIL_APP_NAME } i usługi ${ CALENDAR_APP_NAME }"
       ],
@@ -5244,6 +5254,9 @@
       ],
       "Account storage": [
         "Przestrzeń dyskowa konta"
+      ],
+      "Add all organization members": [
+        "Dodaj wszystkich użytkowników organizacji"
       ],
       "Address": [
         "Adres"
@@ -6416,14 +6429,8 @@
       "Password health": [
         "Jakość hasła"
       ],
-      "Password manager to secure credentials": [
-        "Menedżer haseł do zabezpieczania danych logowania"
-      ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
-      ],
-      "Phone support (40+ users)": [
-        "Wsparcie telefoniczne (dla ponad 40 użytkowników)"
       ],
       "Priority email support": [
         "Priorytetowe wsparcie e-mail"
@@ -6580,9 +6587,6 @@
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)"
-      ],
-      "Version history": [
-        "Historia wersji"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
@@ -6865,9 +6869,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizuj swój podpis za pomocą logo, obrazów, ikon mediów społecznościowych, linków do szczegółów kontaktu i innych elementów"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej 6 użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta ${ BRAND_NAME }"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zapobiega dostępowi do wiadomości przez ${ BRAND_NAME } lub strony trzecie. Wiadomości mogą zostać odczytane tylko przez nadawcę i odbiorcę."
       ],
@@ -7125,20 +7126,6 @@
       ],
       "The whole organization": [
         "Cała organizacja"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Wszyscy, w tym osoby z zewnątrz"
-      ],
-      "Members": [
-        "Członkowie"
-      ],
-      "Nobody by default": [
-        "Domyślnie nikt"
-      ],
-      "Organization members": [
-        "Użytkownicy organizacji"
       ]
     },
     "Organization capacity error": {
@@ -7595,6 +7582,9 @@
       ],
       "Gift code": [
         "Kod podarunkowy"
+      ],
+      "Group name": [
+        "Nazwa grupy"
       ],
       "Other": [
         "Inna"
@@ -9587,10 +9577,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -9715,6 +9705,9 @@
       ],
       "Disable two-factor authentication": [
         "Wyłącz uwierzytelnianie dwustopniowe"
+      ],
+      "Disable two-factor authentication?": [
+        "Wyłączyć uwierzytelnianie dwustopniowe?"
       ],
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
@@ -10551,11 +10544,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoiny przez e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Przechowuj i wysyłaj Bitcoiny w bezpieczny sposób"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -436,6 +436,9 @@
       "Saving": [
         "Desant"
       ],
+      "Section name": [
+        "Nom de la secció"
+      ],
       "Secure links": [
         "Enllaços segurs"
       ],
@@ -1095,9 +1098,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrarà la icona de web de l'element a través del proxy d'imatges anònim ${ BRAND_NAME }."
-      ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } només importarà inicis de sessió, notes i targetes de crèdit."
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } us demanarà la contrasenya ${ BRAND_NAME } per a accedir a les dades fora de línia."
@@ -1882,6 +1882,9 @@
       "15 minutes": [
         "15 minuts"
       ],
+      "2 minutes": [
+        "2 minuts"
+      ],
       "24 hours": [
         "24 hores"
       ],
@@ -2001,6 +2004,9 @@
       ],
       "Create an encrypted note": [
         "Crea una nota xifrada"
+      ],
+      "Create an Identity": [
+        "Crea una identitat"
       ],
       "Create lock": [
         "Crear bloqueig"
@@ -2404,6 +2410,9 @@
       ],
       "Type": [
         "Tipus"
+      ],
+      "Unlock with": [
+        "Desbloqueja amb"
       ],
       "Unnamed Credit Card": [
         "Targeta de crèdit sense nom"

@@ -395,9 +395,6 @@
       "Keep current time zone": [
         "Оставить текущий часовой пояс"
       ],
-      "Keep my Plus subscription": [
-        "Сохраните мою подписку Plus"
-      ],
       "Later": [
         "Позже"
       ],
@@ -825,6 +822,12 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } дополнительный пользовательский домен",
+        "${ domains } дополнительных пользовательских домена",
+        "${ domains } дополнительных пользовательских доменов",
+        "${ domains } дополнительных пользовательских домена"
+      ],
       "${ ips } server": [
         "${ ips } сервер",
         "${ ips } сервера",
@@ -4516,6 +4519,12 @@
       "Create a new contact group": [
         "Создать новую группу контактов"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Создать безопасное облако для ${ n } участника",
+        "Создать безопасное облако для ${ n } участников",
+        "Создать безопасное облако для ${ n } участников",
+        "Создать безопасное облако для ${ n } участников"
+      ],
       "Create in": [
         "Создать в"
       ],
@@ -4830,6 +4839,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Другие пользователи в вашей организации будут видеть ваши занятые часы. Никакие подробности события не сообщаются."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Мы отправляем уведомления, проявляя избыточную осторожность. Если вы не узнаёте какие-либо из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
       ],
       "password": [
         "пароль"
@@ -5214,12 +5226,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Вы ранее отклонили это приглашение. Попросите владельца повторно пригласить вас"
-      ],
-      "You will lose access to Plus features on this date.": [
-        "С этой даты вы потеряете доступ к функциям Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "В этот день вы потеряете доступ к серверам и функциям Plus."
       ],
       "You will lose all unsaved changes.": [
         "Вы потеряете все несохраненные изменения."
@@ -6386,6 +6392,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "Начать с $1"
+      ],
+      "Get started for 1 €": [
+        "Начать с 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Начните с CHF 1"
+      ],
       "Upgrade now": [
         "Улучшить сейчас"
       ]
@@ -6672,14 +6687,8 @@
       "Password health": [
         "Надежность пароля"
       ],
-      "Password manager to secure credentials": [
-        "Менеджер паролей для защиты учетных данных"
-      ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
-      ],
-      "Phone support (40+ users)": [
-        "Поддержка по телефону (более 40 пользователей)"
       ],
       "Priority email support": [
         "Приоритетная поддержка по электронной почте"
@@ -7072,9 +7081,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персонализируйте свою подпись электронной почты с помощью логотипов, изображений, значков социальных сетей, ссылок на контактную информацию и т. д."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Поддержка по телефону предоставляется командой поддержки клиентов ${ BRAND_NAME } в рабочее время в Европе для клиентов с 6 и более пользователями"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Ограничивает доступ к сообщениям для ${ BRAND_NAME } или третьей стороны. Читать сообщения могут только отправитель и предполагаемый получатель."
@@ -10130,11 +10136,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin по эл. почте"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Безопасно храните и переводите Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

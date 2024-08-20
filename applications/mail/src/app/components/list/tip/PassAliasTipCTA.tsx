@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { Button } from '@proton/atoms/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { useModalStateObject } from '@proton/components/components';
 import { usePassAliasesContext } from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/PassAliasesProvider';
 import CreatePassAliasesForm from '@proton/components/components/drawer/views/SecurityCenter/PassAliases/modals/CreatePassAliasesForm/CreatePassAliasesForm';
@@ -68,9 +68,7 @@ const PassAliasTipCTA = ({ ctaText }: Props) => {
                     modalProps={createPassAliasesForm.modalProps}
                 />
             )}
-            <Button onClick={onClick} shape="underline" size="small" className="link align-baseline">
-                {ctaText}
-            </Button>
+            <InlineLinkButton onClick={onClick}>{ctaText}</InlineLinkButton>
         </>
     );
 };

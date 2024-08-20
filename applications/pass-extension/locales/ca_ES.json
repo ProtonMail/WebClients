@@ -434,6 +434,9 @@
       "Saving passkey...": [
         "S'està desant la clau d'accés"
       ],
+      "Section name": [
+        "Nom de la secció"
+      ],
       "Secure links": [
         "Enllaços segurs"
       ],
@@ -1019,9 +1022,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrarà la icona de web de l'element a través del proxy d'imatges anònim ${ BRAND_NAME }."
-      ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } només importarà inicis de sessió, notes i targetes de crèdit."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } us avisarà tan bon punt s'autocompletin les contrasenyes generades."
@@ -1793,6 +1793,9 @@
       "15 minutes": [
         "15 minuts"
       ],
+      "2 minutes": [
+        "2 minuts"
+      ],
       "24 hours": [
         "24 hores"
       ],
@@ -1930,6 +1933,9 @@
       ],
       "Create an encrypted note": [
         "Crea una nota xifrada"
+      ],
+      "Create an Identity": [
+        "Crea una identitat"
       ],
       "Create lock": [
         "Crear bloqueig"
@@ -2333,6 +2339,9 @@
       ],
       "Unlock ${ PASS_APP_NAME }": [
         "Desbloqueja ${ PASS_APP_NAME }"
+      ],
+      "Unlock with": [
+        "Desbloqueja amb"
       ],
       "Unnamed Credit Card": [
         "Targeta de crèdit sense nom"

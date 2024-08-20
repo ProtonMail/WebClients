@@ -450,8 +450,8 @@
       "Increase": [
         "증가"
       ],
-      "Keep my Plus subscription": [
-        "나의 Plus 구독 유지"
+      "Invite": [
+        "초대"
       ],
       "Later": [
         "나중에"
@@ -5031,7 +5031,7 @@
         "스팸 및 남용을 방지하려면 사람임을 확인하세요."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
-        "${ DRIVE_APP_NAME }는 사용자를 보호하기 위해 의심스러운 파일을 검사하고 차단합니다. 하지만 여전히 신뢰하는 사람의 파일만 다룬로드하셔야 합니다."
+        "${ DRIVE_APP_NAME }가 회원님을 보호하기 위해 의심스러운 파일을 검사하고 차단합니다. 하지만 여전히 신뢰하는 사용자의 파일만 다운로드해야 합니다."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
@@ -5290,12 +5290,6 @@
       ],
       "You need access": [
         "접근 권한이 필요합니다"
-      ],
-      "You will lose access to Plus features on this date.": [
-        "오늘 부터 Plus 기능을 잃게 됩니다."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "오늘 부터 Plus 서버 및 기능들에 접근할 수 없게 됩니다."
       ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
@@ -6758,17 +6752,8 @@
       "Password health": [
         "비밀번호 건강도"
       ],
-      "Password manager to secure credentials": [
-        "자격 증명 보호를 위한 비밀번호 관리자"
-      ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
-      ],
-      "Phone support (40+ users)": [
-        "휴대 전화 지원 (40명 이상 사용자)"
-      ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }의 프리미엄 기능을 사용할 수 있습니다."
       ],
       "Priority email support": [
         "이메일 우선 지원"
@@ -6904,9 +6889,6 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "금고 공유 (최대 ${ n }명)"
-      ],
-      "Version history": [
-        "버전 기록"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
@@ -7155,9 +7137,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "로고, 이미지, 소셜 미디어 아이콘, 연락처 링크 등으로 이메일 서명을 개인화하세요."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "전화 지원은 6명 이상의 사용자가 있는 고객을 위해 유럽 업무 시간 동안 ${ BRAND_NAME } 고객 성공 팀에서 이용할 수 있습니다."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } 또는 제3자가 메시지에 접근하는 것을 방지합니다. 메시지를 읽을 수 있는 유일한 사람은 당신과 이메일을 받은 수신자 뿐이죠."
@@ -7571,13 +7550,13 @@
     },
     "Onboarding Info": {
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
-        "문서에서 생성하고 협동하세요. 종단 간 암호화되어 안전합니다."
+        "Docs에서 문서를 생성하고 협동해 보세요. 종단 간 암호화되어 문서가 완벽히 보호됩니다."
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "${ DRIVE_APP_NAME }를 이용하시면 저장공간을 5GB로 확장해 드립니다!"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
-        "${ DOCS_APP_NAME }을 소개합니다"
+        "${ DOCS_APP_NAME }를 소개합니다"
       ],
       "Set a recovery method": [
         "복구 방법 설정"
@@ -7590,9 +7569,6 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "안전하게 파일을 저장 및 공유하세요. ID, 연락처, 개인 사진과 같은 개인 파일을 보호하며 시작해 보세요."
-      ],
-      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
-        "소유자가 접근 공유를 수락해야 합니다. 완료되면 이메일을 받게 됩니다."
       ],
       "Upload a file": [
         "파일 업로드"
@@ -10036,11 +10012,6 @@
       ],
       "Bitcoin via email": [
         "이메일을 통한 Bitcoin"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bitcoin을 안전하게 보관하고 입출금하세요."
       ]
     },
     "wallet_signup_2024:Bug category": {

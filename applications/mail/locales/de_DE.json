@@ -637,9 +637,6 @@
       "Italic": [
         "Kursiv"
       ],
-      "Keep my Plus subscription": [
-        "Plus-Abonnement behalten"
-      ],
       "Label as": [
         "Hinzufügen zu Kategorie"
       ],
@@ -844,11 +841,11 @@
       "Not saved": [
         "Nicht gespeichert"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Öffnen"
@@ -4725,6 +4722,9 @@
       "You have successfully joined the family group": [
         "Du bist erfolgreich der Familiengruppe beigetreten"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Du hast unbezahlte Rechnungen. Bitte bezahle diese, bevor du einem Gruppenabonnement beitrittst."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Du bist eingeladen, dein ${ BRAND_NAME }-Konto mit diesem Gruppenabonnement zu verknüpfen und gemeinsam alle ${ BRAND_NAME_TWO } Premium-Funktionen zu nutzen."
       ],
@@ -5680,6 +5680,9 @@
         "${ numOccurrences } Vorkommen im E-Mail-Inhalt gefunden",
         "${ numOccurrences } Vorkommen im E-Mail-Inhalt gefunden"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } bietet eine einfache Möglichkeit, Anmeldungen auf nicht vertrauenswürdigen Websites von Drittanbietern zu erstellen, auf denen du deine tatsächliche E-Mail-Adresse nicht preisgeben möchtest."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
       ],
@@ -6018,6 +6021,10 @@
       ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Erstelle eine sichere Cloud für ${ n } Benutzer",
+        "Erstelle eine sichere Cloud für ${ n } Benutzer"
       ],
       "Create in": [
         "Erstellen in"
@@ -6739,6 +6746,9 @@
       "Scheduling message...": [
         "Nachricht wird geplant..."
       ],
+      "Scribe panel": [
+        "Schreibpanel"
+      ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Suchoption, mit der du sicher nach Schlüsselwörtern im Text von E-Mails suchen kannst."
       ],
@@ -7398,12 +7408,6 @@
       "You selected **${ elementsCount } message**.": [
         "Du hast **${ elementsCount } Nachricht** ausgewählt.",
         "Du hast **${ elementsCount } Nachrichten** ausgewählt."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "An diesem Datum verlierst du den Zugang zu Plus-Funktionen."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "An diesem Datum verlierst du den Zugang zu Plus-Servern und -Funktionen."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
@@ -9227,14 +9231,8 @@
       "Password health": [
         "Passwortsicherheit"
       ],
-      "Password manager to secure credentials": [
-        "Passwortmanager um Anmeldedaten zu schützen"
-      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonischer Support (ab 40 Benutzern)"
       ],
       "Priority email support": [
         "Priorisierter E-Mail-Support"
@@ -9622,9 +9620,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonische Unterstützung ist durch das ${ BRAND_NAME }-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 6 oder mehr Benutzern verfügbar."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindert den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
@@ -12452,6 +12447,9 @@
       "Groups": [
         "Gruppen"
       ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Verstecke deine E-Mail-Adresse mit ${ PASS_APP_NAME }"
+      ],
       "Human verification": [
         "Captcha"
       ],
@@ -13071,11 +13069,6 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Auf Wallet-App zugreifen"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bitcoins sicher aufbewahren und überweisen"
       ]
     },
     "wallet_signup_2024:Bug category": {

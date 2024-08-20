@@ -76,6 +76,7 @@ export const NewGroupMemberInput = ({
                         }}
                         unstyled
                         placeholder={c('Label').t`Add group member`}
+                        hasAddOnBlur
                     />
                 </InputFieldStacked>
             </InputFieldStackedGroup>

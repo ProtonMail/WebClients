@@ -18,7 +18,7 @@ export interface EditorOrchestratorInterface {
   exportAndDownload(format: DataTypesThatDocumentCanBeExportedAs): Promise<void>
   provideEditorInvoker(editorInvoker: ClientRequiresEditorMethods): void
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
-  editorReportingFatalError(error: string): void
+  editorReportingError(error: string, extraInfo: { irrecoverable?: boolean; lockEditor?: boolean }): void
 
   getTypersExcludingSelf(threadId: string): string[]
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>

@@ -39,6 +39,7 @@ interface Props {
     onDone?: () => void;
     children?: ((props: OnboardingStepRenderCallback) => ReactNode)[];
     hideDiscoverApps?: boolean;
+    hideOrganizationSetup?: boolean;
     showGenericSteps?: boolean;
     extraProductStep?: ((props: OnboardingStepRenderCallback) => ReactNode)[];
 }
@@ -56,6 +57,7 @@ const OnboardingModal = ({
     children,
     size = 'small',
     hideDiscoverApps = false,
+    hideOrganizationSetup = false,
     showGenericSteps,
     onDone,
     extraProductStep,
@@ -150,7 +152,7 @@ const OnboardingModal = ({
     const genericSteps = displayGenericSteps
         ? [
               !isElectronOnSupportedApps(APP_NAME) && themesStep,
-              canSetupOrganization && setupOrganizationStep,
+              canSetupOrganization && !hideOrganizationSetup && setupOrganizationStep,
               !hideDiscoverApps && discoverAppsStep,
           ].filter(isTruthy)
         : [];

@@ -581,6 +581,12 @@
         "ضمانت ۳۰ روزهٔ بازگشت پول"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } ماه",
+        "${ n } ماه اول"
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } ماه",
@@ -3634,14 +3640,15 @@
       "Password-protected Emails": [
         "ایمیل محافظت شده با رمزعبور"
       ],
-      "Phone support (40+ users)": [
-        "پشتیبانی تلفنی (40+ کاربر)"
-      ],
       "Priority email support": [
         "اولویت پشتیبانی ایمیلی"
       ],
       "Priority support": [
         "اولویت پشتیبانی"
+      ],
+      "Protect ${ n } device at a time": [
+        "از ${ n } دستگاه همزمان محافظت کنید",
+        "از ${ n } دستگاه همزمان محافظت کنید"
       ],
       "Router support": [
         "پشتیبانی روتر"
@@ -3862,9 +3869,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "با استفاده از لوگوها، تصاویر، آیکون های شبکه های اجتماعی، لینک جزئیات مخاطب شما و بیشتر، امضای ایمیل خود را شخصی سازی کنید"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "پشتیبانی تلفنی بوسیله تیم موفقیت مشتری ${ BRAND_NAME } در ساعات کاری اروپا، برای مشتریانی که 6 کاربر یابیشتر دارند در دسترس است"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "از دسترسی به پیام ها توسط ${ BRAND_NAME } یا برنامه های مستقل از ما جلوگیری میکند. تنها افرادی که میتوانند پیام ها را بخوانند فرستنده و گیرنده مورد نظر هستند."
       ],
@@ -3993,11 +3997,6 @@
         "پیکربندی‌های سرور استاندارد"
       ]
     },
-    "option": {
-      "Members": [
-        "اعضا"
-      ]
-    },
     "Pass B2B onboarding spotlight": {
       "Set up your organization": [
         "سازمان خود را راه اندازی کنید"
@@ -4101,6 +4100,9 @@
       ],
       "Gift code": [
         "کد هدیه"
+      ],
+      "Group name": [
+        "نام گروه"
       ],
       "Other": [
         "سایر موارد"
@@ -4444,6 +4446,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "${ n } اتصال VPN رایگان برای هر کاربر",
+        "${ n } اتصال VPN رایگان برای هر کاربر"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } اتصال VPN پرسرعت",
         "${ n } اتصال VPN پرسرعت"
@@ -4854,11 +4860,11 @@
       "Card verification": [
         "تایید کارت"
       ],
-      "Catch-All address": [
-        "نشانی همه‌گیر"
-      ],
       "Catch-all address": [
         "نشانی دریافت-همه"
+      ],
+      "Catch-All address": [
+        "نشانی همه‌گیر"
       ],
       "Change login password": [
         "گذرواژه ورود را تغییر دهید"
@@ -5356,6 +5362,10 @@
       "${ n } month": [
         "${ n } ماه",
         "${ n } ماه"
+      ],
+      "${ n } year": [
+        "${ n } سال",
+        "${ n } سال"
       ]
     },
     "wallet_signup_2024: Info": {

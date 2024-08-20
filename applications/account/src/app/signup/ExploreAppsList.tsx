@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon, Logo } from '@proton/components/components';
+import EarlyAccessBadge from '@proton/components/components/earlyAccessBadge/EarlyAccessBadge';
 import useLoading from '@proton/hooks/useLoading';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -16,18 +17,19 @@ interface App {
     name: APP_NAMES;
     description: () => string;
     bit: PRODUCT_BIT;
+    isNew?: boolean;
 }
 
 export const getExploreApps = ({
     subscribed,
     user,
-    canAccessWallet,
+    isWalletAppSwitcherNewBadgeEnabled,
 }: {
     subscribed?: User['Subscribed'];
     user: User | undefined;
-    canAccessWallet: boolean;
+    isWalletAppSwitcherNewBadgeEnabled: boolean;
 }) => {
-    const availableApps = getAvailableApps({ user, canAccessWallet });
+    const availableApps = getAvailableApps({ user });
     return [
         {
             name: APPS.PROTONMAIL,
@@ -68,8 +70,9 @@ export const getExploreApps = ({
             name: APPS.PROTONWALLET,
             bit: PRODUCT_BIT.WALLET,
             description: () => {
-                return c('wallet_signup_2024:app-switcher').t`Securely hold and transfer your bitcoins`;
+                return c('wallet_signup_2024:app-switcher').t`A safer/easier way to hold & send Bitcoin`;
             },
+            isNew: isWalletAppSwitcherNewBadgeEnabled,
         },
     ]
         .sort((a, b) => {
@@ -141,6 +144,7 @@ const ExploreAppsList = ({ onExplore, apps, subscription }: Props) => {
                 const description = app.description();
                 const showLoader = type === appName && loading;
                 const paid = hasBit(subscription.subscribed, app.bit);
+                const isNew = app.isNew;
                 return (
                     <li key={appName}>
                         <Button
@@ -168,6 +172,11 @@ const ExploreAppsList = ({ onExplore, apps, subscription }: Props) => {
                             <div className="flex-1 flex flex-column">
                                 <div className="text-ellipsis">
                                     {name}
+                                    {isNew && (
+                                        <span className="ml-2">
+                                            <EarlyAccessBadge />
+                                        </span>
+                                    )}
                                     {paid && planName ? (
                                         <>
                                             {' '}

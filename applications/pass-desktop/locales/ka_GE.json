@@ -1114,9 +1114,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } ელემენტის favicon-ს ${ BRAND_NAME }-ს ანონიმიზებული გამოსახულებების პროქსით გაჩვენებთ."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს და საკრედიტო ბარათებს შემოიტანს."
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME }-ს თქვენი ${ BRAND_NAME }-ის პაროლი დასჭირდება, რომ მონაცემებთან წვდომა ქსელის გარეშეც გქონდეთ."
       ],
@@ -1541,6 +1538,9 @@
       "Offline support successfully disabled": [
         "ქსელის გარეშე მუშაობა წარმატებით გაითიშა"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "${ PASS_APP_NAME }-სთან ინტერნეტით წვდომისთვის PIN-კოდის შეყვანა მოგიწევთ. სისტემიდან გამოვარდებით 3 ჩავარდნილი მცდელობის შემდეგ."
+      ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "ყურადღება მიაქციეთ ჩვენს გაფრთხილებებს. თუ გაჟონილ ინფორმაციაში თავი ვერ ამოიცანით, ეს ანგარიში, შეგიძლიათ, დაიკიდოთ."
       ],
@@ -1586,6 +1586,18 @@
       ],
       "Please confirm your extra password": [
         "დაადასტურეთ თქვენი დამატებითი პაროლი"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "დაადასტურეთ თქვენი დამატებითი პაროლი, რომ ბიომეტრიით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "დაადასტურეთ თქვენი დამატებითიპაროლი, რომ თქვენი დამატებითი პაროლით ავტოდაბლოკვა ჩართოთ."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი დამატებითი პაროლი."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "დაადასტურეთ თქვენი დამატებითი პაროლი, რომ ავტოდაბლოკვის დრო განაახლოთ."
       ],
       "Please confirm your password": [
         "გთხოვთ, დაადასტუროთ პაროლი."
@@ -1682,6 +1694,9 @@
       ],
       "Session timed out": [
         "სესიის დრო გავიდა"
+      ],
+      "Set by your organization": [
+        "დაყენებულია თქვენი ორგანიზაციის მიერ"
       ],
       "Settings successfully updated": [
         "პარამეტრი წარმატებით განახლდა"
@@ -1891,6 +1906,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "თქვენი ინფორმაციის აღმოჩენის თარიღია ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "თქვენი ორგანიზაცია ითხოვთ, დაიცვათ თქვენი წვდომა ${ PASS_APP_NAME }-ზე"
       ]
     },
     "Label": {
@@ -1956,9 +1974,6 @@
       ],
       "30 seconds": [
         "30 წამი"
-      ],
-      "4 hours": [
-        "4 სთ"
       ],
       "5 minutes": [
         "5 წუთი"

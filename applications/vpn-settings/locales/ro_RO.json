@@ -202,14 +202,17 @@
       "Disable": [
         "Dezactivare"
       ],
-      "Disable E2EE for group address": [
-        "Dezactivare criptare bilaterală pentru adresa grupului"
+      "Disable E2EE group mail encryption": [
+        "Dezactivare criptare bilaterală mesaje din grup"
       ],
       "Discard": [
         "Renunțare"
       ],
       "Discard changes": [
         "Anulare modificări"
+      ],
+      "Domain names": [
+        "Nume domenii"
       ],
       "Done": [
         "Gata"
@@ -277,8 +280,8 @@
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
-      "Enable E2EE for group address": [
-        "Activare criptare bilaterală pentru adresa grupului"
+      "Enable E2EE group mail encryption": [
+        "Activare criptare bilaterală mesaje grup"
       ],
       "Enable multi-user support": [
         "Activare suport utilizatori multipli"
@@ -302,7 +305,7 @@
         "Obțineți ${ vpnPlus }"
       ],
       "Get a new encrypted email address": [
-        "Obțineți o adresă nouă de e-mail criptată"
+        "Obțineți o adresă de e-mail criptată"
       ],
       "Get in touch": [
         "Contactați-ne"
@@ -355,9 +358,6 @@
       "Keep logo": [
         "Păstrare logo"
       ],
-      "Keep my Plus subscription": [
-        "Păstrez abonamentul Plus"
-      ],
       "Let's talk": [
         "Să discutăm"
       ],
@@ -366,6 +366,9 @@
       ],
       "Loading verification": [
         "În curs de verificare"
+      ],
+      "Lost access to your 2FA device?": [
+        "Ați pierdut accesul la dispozitivul pentru A2F?"
       ],
       "Make admin": [
         "Stabilire administrator"
@@ -451,9 +454,6 @@
       "Remove all members": [
         "Eliminare toți membrii"
       ],
-      "Remove all members from group": [
-        "Eliminare toși membrii din grup"
-      ],
       "Remove bonuses": [
         "Anulare bonusuri"
       ],
@@ -483,9 +483,6 @@
       ],
       "Resend code": [
         "Retrimitere cod"
-      ],
-      "Resend invitation": [
-        "Retrimitere invitație"
       ],
       "Reset credentials": [
         "Resetare acreditări"
@@ -732,11 +729,6 @@
       ],
       "Zoom out": [
         "Micșorare"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Adăugare domeniu pm.me"
       ]
     },
     "Action subscription": {
@@ -3462,6 +3454,9 @@
         "+${ organization.BonusVPN } conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
         "+${ organization.BonusVPN } de conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)"
       ],
+      "2FA disabled": [
+        "A2F dezactivată"
+      ],
       "30-day money-back guarantee": [
         "Garanția returnării banilor în 30 de zile"
       ],
@@ -3535,6 +3530,9 @@
       ],
       "All Events ": [
         "Toate evenimentele"
+      ],
+      "All members have been added.": [
+        "Au fost adăugați toți membrii."
       ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
@@ -3674,6 +3672,11 @@
       "Country code": [
         "Cod țară"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Creați un cont cloud securizat pentru ${ n } membru",
+        "Creați un cont cloud securizat pentru ${ n } membri",
+        "Creați un cont cloud securizat pentru ${ n } de membri"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creați și gestionați conturi subordonate și atribuiți-le adrese de e-mail cu domeniului personal."
       ],
@@ -3706,11 +3709,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizați aspectul aplicației ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -3722,6 +3725,9 @@
         "Se șterge ${ deletedServerCount } server poartă de acces",
         "Se șterg ${ deletedServerCount } servere poartă de acces",
         "Se șterg ${ deletedServerCount } de servere poartă de acces"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Dezactivarea autentificării cu doi factori vă va face contul mai puțin sigur. Continuați doar dacă este absolut necesar."
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -3886,6 +3892,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Adresele de grup pot fi create numai pentru domenii personale. Accesați pagina ${ linkToDomainPage } pentru a adăuga un domeniu personal."
       ],
       "here": [
         "aici"
@@ -4595,6 +4604,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Această verificare poate dura până la o oră. După confirmarea verificării, nu eliminați înregistrarea TXT, deoarece este necesară pentru a confirma că dețineți în continuare domeniul."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Aceasta va dezactiva autentificarea cu doi factori, incluzând atât aplicația de autentificare, cât și metodele cu chei de securitate."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Aceasta va activa PayPal ca metodă de plată pentru abonarea la ${ BRAND_NAME }. Se va deschide o fereastră nouă spre PayPal. Dacă folosiți module sau programe de blocare a ferestrelor flotante, trebuie să le dezactivați înainte de a continua."
       ],
@@ -4714,6 +4726,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Încărcați sigla organizației proprii pentru a vă îmbunătăți identitatea mărcii și pentru a crea o experiență personalizată pentru utilizatorii dvs."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Utilizați o metodă de recuperare pentru a dezactiva metodele de autentificare cu doi factori."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Folosire cel mai bun server ținând cont de încărcarea și poziția sa: ${ formattedBestServerName }"
@@ -4987,12 +5002,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Veți pierde accesul la funcțiile Plus la această dată."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Veți pierde accesul la serverele Plus și la funcții la această dată."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Veți avea nevoie de o adresă ${ BRAND_NAME } pentru a utiliza ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
@@ -5201,6 +5210,12 @@
       ],
       "Account storage": [
         "Spațiu cont"
+      ],
+      "Add all organization members": [
+        "Adăugare toți membrii organizației"
+      ],
+      "Add group member": [
+        "Adăugare membru în grup"
       ],
       "Address": [
         "Adresa"
@@ -5554,7 +5569,7 @@
         "Adresa de e-mail de recuperare"
       ],
       "Recovery phone number": [
-        "Numărul de telefon pentru recuperare"
+        "Număr de telefon de recuperare"
       ],
       "Recovery phrase": [
         "Fraza de recuperare"
@@ -5652,7 +5667,7 @@
     },
     "label": {
       "Recovery phone number": [
-        "Numărul de telefon pentru recuperare"
+        "Număr de telefon de recuperare"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6360,14 +6375,8 @@
       "Password health": [
         "Stare parole"
       ],
-      "Password manager to secure credentials": [
-        "Manager de parole pentru securizarea datelor de autentificare"
-      ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
-      ],
-      "Phone support (40+ users)": [
-        "Asistență telefonică (peste 40 de utilizatori)"
       ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
@@ -6801,9 +6810,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături către datele de contact și multe altele."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu 6 sau mai mulți utilizatori."
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
       ],
@@ -6971,6 +6977,9 @@
       "An external address cannot be default": [
         "O adresă externă nu poate fi implicită."
       ],
+      "Downloaded 2FA recovery codes": [
+        "Codurile de recuperare A2F s-au descărcat."
+      ],
       "Invalid code": [
         "Cod nevalid"
       ],
@@ -7084,17 +7093,14 @@
       ]
     },
     "option": {
-      "Everyone, incl. outside": [
-        "Toți, inclusiv din exterior"
+      "Everyone": [
+        "Tuturor"
       ],
-      "Members": [
-        "Membri"
+      "Group members": [
+        "Membrii grup"
       ],
-      "Nobody by default": [
-        "Implicit nimeni"
-      ],
-      "Organization members": [
-        "Membri organizație"
+      "No one": [
+        "Nimeni"
       ]
     },
     "Organization capacity error": {
@@ -7549,6 +7555,9 @@
       ],
       "Gift code": [
         "Cod cadou"
+      ],
+      "Group name": [
+        "Nume grup"
       ],
       "Other": [
         "Altele"
@@ -8638,6 +8647,9 @@
       "1 email address": [
         "O adresă de e-mail"
       ],
+      "1 email address per user": [
+        "O adresă de e-mail per utilizator"
+      ],
       "1 VPN connection": [
         "O conexiune VPN"
       ],
@@ -9500,10 +9512,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -9626,6 +9638,9 @@
       ],
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
+      ],
+      "Disable two-factor authentication?": [
+        "Dezactivați autentificarea cu doi factori?"
       ],
       "Discard changes?": [
         "Anulare modificări?"
@@ -10471,11 +10486,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin prin e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Păstrați și transferați în siguranță monedele Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

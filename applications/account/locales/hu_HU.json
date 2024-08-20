@@ -596,9 +596,6 @@
       "Keep logo": [
         "Logó megtartása"
       ],
-      "Keep my Plus subscription": [
-        "Plus előfizetés megtartása"
-      ],
       "label emails as": [
         "címke hozzáadása:"
       ],
@@ -740,11 +737,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Reload": [
         "Újratöltés"
@@ -754,9 +751,6 @@
       ],
       "Remove all members": [
         "Minden tag eltávolítása"
-      ],
-      "Remove all members from group": [
-        "Minden tag eltávolítása a csoportból"
       ],
       "Remove bonuses": [
         "Kedvezmények törlése"
@@ -794,9 +788,6 @@
       "Resend code": [
         "Kód újraküldése"
       ],
-      "Resend invitation": [
-        "Meghívó újraküldése"
-      ],
       "Reset credentials": [
         "Hitelesítő adatok visszaállítása"
       ],
@@ -826,9 +817,6 @@
       ],
       "Review": [
         "Áttekintés"
-      ],
-      "Review account security": [
-        "A fiók biztonságának áttekintése"
       ],
       "Revoke": [
         "Visszavonás"
@@ -7691,12 +7679,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "A bejelentkezés után az ${ destination } oldalra kerül átirányításra."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Ekkor elveszíti a hozzáférését a Plus lehetőségekhez."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Ekkor elveszíti a hozzáférését a Plus szerverekhez és lehetőségekhez."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Szüksége lesz egy ${ BRAND_NAME } címre, hogy használni tudja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } szolgáltatásokat"
       ],
@@ -8247,9 +8229,6 @@
       "5 minutes": [
         "5 perc"
       ],
-      "Account recovery": [
-        "Fiók helyreállítás"
-      ],
       "Account storage": [
         "Fiók tárhely"
       ],
@@ -8655,9 +8634,6 @@
       "Folder location": [
         "Mappa helye"
       ],
-      "Folders and labels": [
-        "Mappák és címkék"
-      ],
       "Font family": [
         "Betűkészlet család"
       ],
@@ -8759,9 +8735,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-mail szerver (IMAP)"
-      ],
-      "Mail settings": [
-        "E-mail beállítások"
       ],
       "Main": [
         "Elsődleges"
@@ -9008,9 +8981,6 @@
       ],
       "Spam": [
         "Levélszemét"
-      ],
-      "Spam and filters": [
-        "Levélszemét és szűrők"
       ],
       "Starred": [
         "Csillagozott"
@@ -9849,6 +9819,23 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -9876,23 +9863,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -10106,14 +10076,8 @@
       "Organize items with multiple vaults": [
         "Elemek rendezése több tárolóba"
       ],
-      "Password manager to secure credentials": [
-        "Jelszókezelő a biztonsági hitelesítő adatok számára"
-      ],
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonos támogatás (40 felhasználótól)"
       ],
       "Priority email support": [
         "Elsőbbségi e-mail támogatás"
@@ -10392,6 +10356,14 @@
         "A választott csomagja: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -10410,14 +10382,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -10496,9 +10460,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Alakítsa saját igényeihez az e-mail aláírását, logóval, képpel, közösségi média ikonokkal, hivatkozásokkal az elérhetőségeire stb."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonos támogatás Európai munkaidőben érhető el a ${ BRAND_NAME } Ügyféltámogatási Csoporttól, 6 vagy több felhasználóval rendelkező ügyfeleknek"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Megakadályozza, hogy a ${ BRAND_NAME } vagy harmadik felek hozzáférjenek az üzenetekhez. Csak a feladó és a szándékozott címzett tudja elolvasni az üzenetek szövegét."
@@ -10947,11 +10908,6 @@
         "Kuka"
       ]
     },
-    "option": {
-      "Members": [
-        "Tagok"
-      ]
-    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 másodperc"
@@ -11275,6 +11231,9 @@
       ],
       "Gift code": [
         "Ajándék kód"
+      ],
+      "Group name": [
+        "Csoport név"
       ],
       "Link": [
         "Hivatkozás"
@@ -12973,10 +12932,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [

@@ -1140,9 +1140,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі і крэдытныя карткі."
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } будзе патрабаваць ваш пароль ${ BRAND_NAME } для доступу да даных па-за сеткай."
       ],
@@ -1626,8 +1623,14 @@
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Пацвердзіце свой дадатковы пароль для аўтаблакіроўкі з дапамогай біяметрыі."
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Пацвердзіце свой дадатковы пароль, калі вы хочаце прызначыць яго для аўтаблакіроўкі."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Пацвердзіце свой дадатковы пароль, каб скасаваць рэгістрацыю бягучай блакіроўкі."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Пацвердзіце свой дадатковы пароль для абнаўлення часу аўтаматычнага блакіравання."
       ],
       "Please confirm your password": [
         "Пацвердзіце свой пароль"
@@ -2021,9 +2024,6 @@
       "30 seconds": [
         "30 секунд"
       ],
-      "4 hours": [
-        "4 гадзіны"
-      ],
       "5 minutes": [
         "5 хвілін"
       ],
@@ -2079,7 +2079,7 @@
         "Дата нараджэння"
       ],
       "Capital letters (A-Z)": [
-        "Вялікія літары (А-Я)"
+        "Вялікія літары (A-Z)"
       ],
       "Capitalise": [
         "Вялікімі літарамі"
@@ -2214,7 +2214,7 @@
         "Паверх, кватэра, будынак"
       ],
       "Forwards to": [
-        "Пераслаць на"
+        "Перасылаць на"
       ],
       "Free forever": [
         "Бясплатна назаўсёды"
@@ -2244,7 +2244,7 @@
         "Схаваць пароль"
       ],
       "https://example.com": [
-        "https://example.com"
+        "https://pryklad.com"
       ],
       "Identities": [
         "Ідэнтычнасці"
@@ -2490,7 +2490,7 @@
         "Паказваць піктаграмы вэб-сайтаў"
       ],
       "Social security number": [
-        "Нумар сацыяльнага забеспячэння"
+        "Нумар сацыяльнага страхавання"
       ],
       "Special characters (!&*)": [
         "Спецыяльныя сімвалы (!&*)"
@@ -2601,10 +2601,10 @@
         "Вэб-сайты"
       ],
       "Work details": [
-        "Падрабязнасці аб працы"
+        "Звесткі аб працы"
       ],
       "Work email": [
-        "Працоўны адрас электроннай пошты"
+        "Працоўны электронная пошта"
       ],
       "Work phone number": [
         "Працоўны нумар тэлефона"
@@ -2707,7 +2707,7 @@
     },
     "Placeholder": {
       "Add 2FA secret key": [
-        "Дадаць сакрэтны ключ 2ФА"
+        "Дадайце сакрэтны ключ 2ФА"
       ],
       "Add hidden text": [
         "Дадаць схаваны тэкст"
@@ -2887,7 +2887,7 @@
         "Падабаецца ${ PASS_APP_NAME }?"
       ],
       "Enter your extra password": [
-        "Увядзіце ваш дадатковы пароль"
+        "Увядзіце свой дадатковы пароль"
       ],
       "Enter your password": [
         "Увядзіце пароль"
