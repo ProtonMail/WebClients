@@ -97,7 +97,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                 name: groupData.Name,
                 description: groupData.Description,
                 address: groupData.Address.Email,
-                permissions: groupData.Permissions ?? GroupPermissions.NobodyCanSend,
+                permissions: groupData.Permissions ?? GroupPermissions.EveryoneCanSend,
                 members: '',
             },
         });
@@ -260,12 +260,12 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                         setFieldValue('permissions', permissions);
                                     }}
                                 >
+                                    <Option title={c('option').t`Everyone`} value={GroupPermissions.EveryoneCanSend} />
                                     <Option title={c('option').t`No one`} value={GroupPermissions.NobodyCanSend} />
                                     <Option
                                         title={c('option').t`Group members`}
                                         value={GroupPermissions.GroupMembersCanSend}
                                     />
-                                    <Option title={c('option').t`Everyone`} value={GroupPermissions.EveryoneCanSend} />
                                 </InputFieldTwo>
                             </InputFieldStacked>
                         </InputFieldStackedGroup>

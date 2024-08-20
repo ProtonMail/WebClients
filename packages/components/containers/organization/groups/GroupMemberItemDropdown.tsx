@@ -52,11 +52,11 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
     const { call } = useEventManager();
 
     const memberPermissionOptions: PermissionOption[] = [
+        { label: c('Action').t`Use group permissions`, value: GROUP_MEMBER_PERMISSIONS.None },
         {
-            label: c('Action').t`Always allow sending mail to group`,
+            label: c('Action').t`Always allow sending`,
             value: GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions,
         },
-        { label: c('Action').t`Use group sending permissions`, value: GROUP_MEMBER_PERMISSIONS.None },
     ];
 
     const handleRevokeInvitation = async () => {
