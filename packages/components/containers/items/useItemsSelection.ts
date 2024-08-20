@@ -10,6 +10,7 @@ interface Props {
     allIDs: string[];
     resetDependencies?: DependencyList;
     onCheck?: (checked: boolean) => void;
+    rowMode?: boolean;
 }
 
 /**
@@ -21,9 +22,10 @@ interface Props {
  * @param allIDs The complete list of ids in the list
  * @param resetDependencies React dependencies to reset selection if there is a change
  * @param onCheck Optional action to be triggered when interacting with element checkboxes
+ * @param rowMode Used only for mail since we keep checkedMap state in row mode
  * @returns all helpers useful to check one, a range or all items
  */
-const useItemsSelection = ({ activeID, allIDs, resetDependencies, onCheck }: Props) => {
+const useItemsSelection = ({ activeID, allIDs, rowMode, resetDependencies, onCheck }: Props) => {
     // We are managing checked IDs through a Map and not an array for performance issues.
     const [checkedMap, setCheckedMap] = useState<{ [ID: string]: boolean }>({});
 
@@ -39,6 +41,10 @@ const useItemsSelection = ({ activeID, allIDs, resetDependencies, onCheck }: Pro
     }, [checkedMap]);
 
     const selectedIDs = useMemo(() => {
+        // In row mode, activeID has priority over checkedIDs
+        if (activeID && rowMode) {
+            return [activeID];
+        }
         if (checkedIDs.length) {
             return checkedIDs;
         }
