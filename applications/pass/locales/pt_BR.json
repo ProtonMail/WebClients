@@ -843,7 +843,7 @@
         "Modo off-line está temporariamente indisponível para o modo de duas senhas."
       ],
       "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Modo sem rede não está disponível atualmente no seu plano e não é compatível com o modo de duas senhas."
+        "Modo off-line não está disponível atualmente no seu plano e não é compatível com o modo de duas senhas."
       ],
       "Passphrase is incorrect": [
         "A frase secreta está incorreta"
@@ -1059,9 +1059,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "O ${ PASS_APP_NAME } exibirá o favicon do item através do proxy de imagem anonimizado da ${ BRAND_NAME }."
-      ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } importará somente inícios de sessão, notas e cartões de crédito."
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } exigirá sua senha da ${ BRAND_NAME } para acessar seus dados no modo off-line."
@@ -1530,8 +1527,14 @@
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Confirme sua senha adicional para bloquear automaticamente com a sua biometria."
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Confirme sua senha adicional para bloquear automaticamente com a sua senha adicional."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Confirme sua senha adicional para cancelar o registro do seu bloqueio atual."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Confirme sua senha adicional para atualizar o tempo do bloqueio automático."
       ],
       "Please confirm your password": [
         "Confirme sua senha"
@@ -1905,9 +1908,6 @@
       ],
       "30 seconds": [
         "30 segundos"
-      ],
-      "4 hours": [
-        "4 horas"
       ],
       "5 minutes": [
         "5 minutos"

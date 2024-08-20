@@ -202,14 +202,17 @@
       "Disable": [
         "Desativar"
       ],
-      "Disable E2EE for group address": [
-        "Desativar criptografia de ponta a ponta para os endereços do endereço"
+      "Disable E2EE group mail encryption": [
+        "Desativar criptografia de ponta a ponta de e-mails de grupo"
       ],
       "Discard": [
         "Descartar"
       ],
       "Discard changes": [
         "Descartar alterações"
+      ],
+      "Domain names": [
+        "Nomes do domínio"
       ],
       "Done": [
         "Concluído"
@@ -277,8 +280,8 @@
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
       ],
-      "Enable E2EE for group address": [
-        "Ativar criptografia de ponta a ponta para os endereços do endereço"
+      "Enable E2EE group mail encryption": [
+        "Ativar criptografia de ponta a ponta de e-mails de grupo"
       ],
       "Enable multi-user support": [
         "Ativar suporte para múltiplos usuários"
@@ -355,8 +358,8 @@
       "Keep logo": [
         "Manter logotipo"
       ],
-      "Keep my Plus subscription": [
-        "Manter minha assinatura Plus"
+      "Keep my subscription": [
+        "Manter minha assinatura"
       ],
       "Let's talk": [
         "Vamos conversar"
@@ -366,6 +369,9 @@
       ],
       "Loading verification": [
         "Carregando verificação"
+      ],
+      "Lost access to your 2FA device?": [
+        "Perdeu o acesso ao seu dispositivo A2F?"
       ],
       "Make admin": [
         "Tornar administrador"
@@ -451,9 +457,6 @@
       "Remove all members": [
         "Remover todos os membros"
       ],
-      "Remove all members from group": [
-        "Remover todos os membros do grupo"
-      ],
       "Remove bonuses": [
         "Remover bônus"
       ],
@@ -483,9 +486,6 @@
       ],
       "Resend code": [
         "Reenviar código"
-      ],
-      "Resend invitation": [
-        "Reenviar convite"
       ],
       "Reset credentials": [
         "Redefinir credenciais"
@@ -732,11 +732,6 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Adicionar domínio pm.me"
       ]
     },
     "Action subscription": {
@@ -2270,6 +2265,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de armazenamento"
+      ],
       "2 users": [
         "2 usuários"
       ],
@@ -2805,6 +2803,9 @@
       ],
       "You have successfully joined the family group": [
         "Você entrou com sucesso no grupo familiar"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Você tem faturas não pagas. Pague antes de juntar-se ao grupo."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Você precisa configurar um domínio personalizado antes de adicionar usuários."
@@ -3433,6 +3434,9 @@
         "+${ organization.BonusVPN } conexão para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos na VPN)",
         "+${ organization.BonusVPN } conexões para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos na VPN)"
       ],
+      "2FA disabled": [
+        "A2F desativado"
+      ],
       "30-day money-back guarantee": [
         "Garantia de devolução do seu dinheiro por até 30 dias"
       ],
@@ -3502,6 +3506,9 @@
       ],
       "All Events ": [
         "Todos os eventos "
+      ],
+      "All members have been added.": [
+        "Todos os membros foram adicionados"
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
@@ -3676,11 +3683,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize a aparência e o estilo das aplicações da ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -3854,6 +3861,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vá até o seu provedor de identidade, obtenha os metadados SAML para ${ appName } e importe-os aqui."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Os endereços de grupo podem ser criados apenas para domínios personalizados. Vá para a página ${ linkToDomainPage } para adicionar um domínio personalizado."
       ],
       "here": [
         "aqui"
@@ -4677,6 +4687,9 @@
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Envie o logotipo da sua organização para impulsionar a identidade da sua marca e criar uma experiência personalizada para seus usuários"
       ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Use um método de recuperação para desativar seu método de autenticação de dois fatores."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
@@ -4942,11 +4955,8 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Você será redirecionado para ${ destination } depois de iniciar sessão."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Você perderá o acesso aos recursos do Plus nessa data."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Você perderá o acesso aos servidores e recursos do Plus nessa data."
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Você perderá o acesso aos recursos do ${ planTitle } nessa data."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Você precisará de um endereço da ${ BRAND_NAME } para usar o ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -5153,6 +5163,12 @@
       ],
       "Account storage": [
         "Armazenamento da conta"
+      ],
+      "Add all organization members": [
+        "Adicionar todos os membros da organização"
+      ],
+      "Add group member": [
+        "Adicionar um membro ao grupo"
       ],
       "Address": [
         "Endereço"
@@ -6097,6 +6113,14 @@
         "${ n } mensagem por dia",
         "${ n } mensagens por dia"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } cofre compartilhado do ${ PASS_SHORT_APP_NAME } por usuário",
+        "${ n } cofres compartilhados do ${ PASS_SHORT_APP_NAME } por usuário"
+      ],
+      "${ n } user": [
+        "${ n } usuário",
+        "Até ${ n } usuários"
+      ],
       "${ n } vault": [
         "${ n } cofre",
         "${ n } cofres"
@@ -6104,6 +6128,10 @@
       "${ n } VPN connection": [
         "${ n } conexão VPN",
         "${ n } conexões VPN"
+      ],
+      "${ options }-day file version history": [
+        "Histórico de versões do arquivo de ${ options } dia",
+        "Histórico de versões do arquivo de ${ options } dias"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } com ${ n } alias de hide-my-email",
@@ -6118,8 +6146,17 @@
       "${ size } attachment size": [
         "Anexos de ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } de armazenamento seguro por usuário"
+      ],
       "${ size } storage": [
         "${ size } de armazenamento"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Para ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Para todos os serviços da ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 usuário"
@@ -6144,6 +6181,12 @@
       ],
       "Advanced network security": [
         "Segurança de rede avançada"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil"
       ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
@@ -6183,6 +6226,9 @@
       ],
       "Contact groups management": [
         "Gerenciamento de grupos de contatos"
+      ],
+      "Custom and secure business email": [
+        "E-mail corporativo seguro e personalizado"
       ],
       "Custom domains for email aliases": [
         "Domínios personalizados para encaminhamento de mensagens"
@@ -6287,6 +6333,9 @@
       "No-logs policy": [
         "Política de nenhum registro"
       ],
+      "Online document editor": [
+        "Editor de documentos on-line"
+      ],
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
       ],
@@ -6296,17 +6345,14 @@
       "Password health": [
         "Estado da senha"
       ],
-      "Password manager to secure credentials": [
-        "Gerenciador de senhas para proteger credenciais"
+      "Password manager": [
+        "Gerenciador de senhas"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
       ],
-      "Phone support (40+ users)": [
-        "Suporte por telefone (40 ou mais usuários)"
-      ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Recursos premium para ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      "Phone support (20+ users)": [
+        "Suporte por telefone (20 ou mais usuários)"
       ],
       "Priority email support": [
         "Suporte prioritário por e-mail"
@@ -6323,6 +6369,9 @@
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
+      ],
+      "Recover previous file versions": [
+        "Recuperar versões anteriores de arquivos"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Checagens regulares da segurança da sua conta. Alertamos você caso você tenha senhas fracas ou reutilizadas que precisem ser atualizadas."
@@ -6358,6 +6407,9 @@
         "Servidores em ${ vpnServersCountData.paid.countries }+ país",
         "Servidores em ${ vpnServersCountData.paid.countries }+ países"
       ],
+      "Share files with no size limit": [
+        "Compartilhamento de arquivos sem limite de tamanho"
+      ],
       "Sign in as user": [
         "Início de sessão como usuário"
       ],
@@ -6381,6 +6433,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sincronize e faça backup dos seus arquivos em todos os dispositivos"
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
@@ -6417,6 +6472,9 @@
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Cofres compartilhados ilimitados da ${ PASS_SHORT_APP_NAME } por usuário"
       ],
       "Unlimited shared vaults with access permissions": [
         "Cofres compartilhados ilimitados com permissões de acesso"
@@ -6455,9 +6513,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartilhar do cofre (até ${ n } pessoa)",
         "Compartilhar cofre (até ${ n } pessoa)"
-      ],
-      "Version history": [
-        "Histórico de versões"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
@@ -6539,6 +6594,9 @@
       ],
       "Popular": [
         "Popular"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Proteja as informações comerciais sensíveis e colabore com segurança."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
@@ -6741,8 +6799,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "O suporte por telefone da equipe de Sucesso do Cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 6 ou mais usuários"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "O suporte por telefone da equipe de suporte do cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 20 ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
@@ -6910,6 +6968,9 @@
       "An external address cannot be default": [
         "Um endereço externo não pode ser padrão."
       ],
+      "Downloaded 2FA recovery codes": [
+        "Baixar código de recuperação de A2F"
+      ],
       "Invalid code": [
         "Código inválido"
       ],
@@ -7011,17 +7072,14 @@
       ]
     },
     "option": {
-      "Everyone, incl. outside": [
-        "Todos, inclusive externos"
+      "Everyone": [
+        "Todos"
       ],
-      "Members": [
-        "Membros"
+      "Group members": [
+        "Membros do grupo"
       ],
-      "Nobody by default": [
-        "Ninguém por padrão"
-      ],
-      "Organization members": [
-        "Membros da organização"
+      "No one": [
+        "Ninguém"
       ]
     },
     "Organization capacity error": {
@@ -7477,6 +7535,9 @@
       ],
       "Gift code": [
         "Código de vale-presente"
+      ],
+      "Group name": [
+        "Nome do grupo"
       ],
       "Other": [
         "Outro"
@@ -8530,6 +8591,9 @@
       "1 email address": [
         "1 endereço de e-mail"
       ],
+      "1 email address per user": [
+        "1 endereço de e-mail por usuário"
+      ],
       "1 VPN connection": [
         "1 conexão VPN"
       ],
@@ -9387,11 +9451,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -9512,6 +9576,9 @@
       "Disable two-factor authentication": [
         "Desativar autenticação de dois fatores"
       ],
+      "Disable two-factor authentication?": [
+        "Desativar autenticação de dois fatores?"
+      ],
       "Discard changes?": [
         "Descartar alterações?"
       ],
@@ -9571,6 +9638,9 @@
       ],
       "Email subscriptions": [
         "Inscrições de e-mail"
+      ],
+      "Enter 2FA code": [
+        "Insira o código 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Insira endpoints em seu provedor de identidade"
@@ -10324,11 +10394,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Guarde e transfira suas bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

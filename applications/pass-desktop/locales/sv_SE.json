@@ -1108,9 +1108,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } kommer visa objektets favicon via ${ BRAND_NAME } anonymiserade bildproxy."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar och kreditkort."
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } kommer att kräva ditt ${ BRAND_NAME }-lösenord för att komma åt data offline."
       ],
@@ -1523,6 +1520,9 @@
       "Offline mode could not be enabled at the moment": [
         "Offlineläge kunde inte aktiveras just nu"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod. Du kommer att loggas ut efter 3 misslyckade försök."
+      ],
       "Owner": [
         "Ägare"
       ],
@@ -1565,6 +1565,9 @@
       ],
       "Please confirm your extra password": [
         "Bekräfta ditt extra lösenord"
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Bekräfta ditt extra lösenord för att avregistrera ditt nuvarande lås."
       ],
       "Please confirm your password": [
         "Bekräfta ditt lösenord"
@@ -1873,6 +1876,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Din information hittades den ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1938,9 +1944,6 @@
       ],
       "30 seconds": [
         "30 sekunder"
-      ],
-      "4 hours": [
-        "4 timmar"
       ],
       "5 minutes": [
         "5 minuter"

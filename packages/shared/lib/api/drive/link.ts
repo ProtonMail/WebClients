@@ -55,6 +55,12 @@ export const queryLinkMetaBatch = (shareId: string, linksIds: string[], loadThum
     data: { LinkIDs: linksIds, Thumbnails: loadThumbnails ? 1 : 0 },
 });
 
+export const queryVolumeLinkMetaBatch = (volumeId: string, linksIds: string[], loadThumbnails: boolean = false) => ({
+    method: 'post',
+    url: `drive/volumes/${volumeId}/links/fetch_metadata`,
+    data: { LinkIDs: linksIds, Thumbnails: loadThumbnails ? 1 : 0 },
+});
+
 export const queryShareMap = (shareID: string, lastIndex?: number, sessionName?: string, pageSize?: number) => ({
     url: `drive/shares/${shareID}/map`,
     method: 'get',

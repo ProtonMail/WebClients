@@ -330,9 +330,6 @@
       "Increase": [
         "Збільшити"
       ],
-      "Keep my Plus subscription": [
-        "Зберегти передплату Plus"
-      ],
       "Learn more": [
         "Докладніше"
       ],
@@ -2833,6 +2830,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Коли увімкнено додатковий пароль, керування псевдонімами може бути здійснено лише в ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -3722,6 +3722,12 @@
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Створити захищену хмару для користувача ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }"
+      ],
       "Create in": [
         "Створити у"
       ],
@@ -4093,6 +4099,9 @@
       ],
       "Organization size": [
         "Розмір організації"
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Наші попередження є запобіжними. Якщо ви не впізнаєте жодної із зазначених відомостей, можете сміливо ігнорувати це повідомлення."
       ],
       "Owner": [
         "Власник"
@@ -4513,12 +4522,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Ваш обліковий запис PayPal повинен мати пов'язану кредитну картку чи банківський рахунок. Якщо у вас цього немає, будь ласка, натисніть кнопку внизу."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "З цієї дати ви втратите доступ до функцій Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "З цієї дати ви втратите доступ до серверів і функцій Plus."
       ],
       "You will lose all unsaved changes.": [
         "Ви втратите всі незбережені зміни."
@@ -5836,14 +5839,8 @@
       "Password health": [
         "Якість пароля"
       ],
-      "Password manager to secure credentials": [
-        "Менеджер паролів для захисту облікових даних"
-      ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
-      ],
-      "Phone support (40+ users)": [
-        "Підтримка за телефоном (40+ користувачів)"
       ],
       "Priority email support": [
         "Пріоритетна підтримка електронною поштою"
@@ -6226,9 +6223,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Налаштуйте свій підпис з використанням логотипів, зображень, піктограм соціальних мереж, посилань на свої контакти та інших можливостей"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Команда підтримки ${ BRAND_NAME } надає допомогу в телефонному режимі впродовж європейського робочого часу клієнтам, які мають 6 або більше користувачів"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Запобігає доступу до повідомлень ${ BRAND_NAME } чи сторонніх осіб. Відправник та отримувач повідомлень – єдині, хто може читати повідомлення."
@@ -7672,6 +7666,9 @@
       "Import record deleted": [
         "Запис імпорту видалено"
       ],
+      "Invitation rejected": [
+        "Запрошення відхилено"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Останні змінені псевдоніми зберігаються у вашому найстарішому сховищі"
       ],
@@ -8490,11 +8487,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin електронною поштою"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Безпечно зберігайте й переказуйте Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

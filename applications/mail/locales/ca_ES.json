@@ -94,7 +94,7 @@
         "Afegeix al grup"
       ],
       "Adds it below your existing message": [
-        "L'afegeix sota el vostre missatge existent"
+        "Afegeix-lo sota el missatge existent"
       ],
       "Align center": [
         "Alinea al centre"
@@ -637,9 +637,6 @@
       "Italic": [
         "Cursiva"
       ],
-      "Keep my Plus subscription": [
-        "Mantén la meva subscripció Plus"
-      ],
       "Label as": [
         "Etiqueta com a"
       ],
@@ -844,10 +841,10 @@
       "Not saved": [
         "No s'ha desat"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
       "Open": [
@@ -971,7 +968,7 @@
         "Reemplaça"
       ],
       "Replaces the selected text in your message": [
-        "Reemplaça el text seleccionat del vostre missatge"
+        "Reemplaça el text seleccionat al missatge"
       ],
       "Reply": [
         "Respon"
@@ -3593,6 +3590,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB d'emmagatzemament"
+      ],
       "2 users": [
         "2 usuaris"
       ]
@@ -3602,7 +3602,7 @@
         "Tot allò de ${ BRAND_NAME }, per a 2."
       ],
       "Double your storage": [
-        "Dobleu el vostre emmagatzematge"
+        "Dobleu l'emmagatzematge"
       ]
     },
     "Email body for description (description part)": {
@@ -3880,7 +3880,7 @@
         "L'esborrany no s'ha pogut desar. Torni a provar-ho."
       ],
       "Due to an error, text generation couldn't be canceled": [
-        "A causa d'un error, la generació de text no es pot cancel·lar"
+        "A causa d'un error, no s'ha pogut cancel·lar la generació de text"
       ],
       "Email address disabled": [
         "Correu electrònic deshabilitada"
@@ -4067,7 +4067,7 @@
         "Seleccioneu una categoria i el que no ha funcionat amb el text generat."
       ],
       "Please try again or refresh the page.": [
-        "Torneu a provar o refresqueu la pàgina."
+        "Torneu-ho a provar o actualitzeu la pàgina."
       ],
       "Please try generating the text again": [
         "Proveu de generar el text de nou"
@@ -5929,7 +5929,7 @@
         "Confirmeu l'informe de phishing"
       ],
       "Consider when's the best time for your recipient to receive your email, and schedule it to be sent then.": [
-        "Tingueu en compte quan és el millor moment perquè el destinatari rebi el teu correu electrònic i programeu-ne l'enviament."
+        "Tingueu en compte quan és el millor moment perquè el destinatari rebi el correu electrònic i programeu-ne l'enviament."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "S'ha assignat el contacte al grup ${ contactGroupName }."
@@ -6045,7 +6045,7 @@
         "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
       ],
       "Downloading assistant… ${ progressDisplay } GB": [
-        "Descarregant l'assistent… ${ progressDisplay } GB"
+        "S'està descarregant l'assistent… ${ progressDisplay } GB"
       ],
       "Downloading paused": [
         "S'ha posat la descàrrega en pausa"
@@ -6334,7 +6334,7 @@
         "Més informació"
       ],
       "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Saber-ne més de l'assistent d'escriptura ${ BRAND_NAME }"
+        "Més informació sobre l'assistent d'escriptura ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Esquerra a Dreta"
@@ -6681,6 +6681,9 @@
       ],
       "Scheduling message...": [
         "Programant missatge..."
+      ],
+      "Scribe panel": [
+        "Panell de Scribe"
       ],
       "Search option that lets you securely search for keywords in the body of email messages.": [
         "Opció de cerca que permet cercar de forma segura paraules clau en el cos dels missatges de correu electrònic."
@@ -7341,12 +7344,6 @@
       "You selected **${ elementsCount } message**.": [
         "Heu seleccionat **${ elementsCount } missatge**.",
         "Heu seleccionat **${ elementsCount } missatges**."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Perdreu accés a les funcions Plus en aquesta data."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Perdreu l'accés a servidors i característiques Plus en aquesta data."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
@@ -8986,6 +8983,10 @@
         "${ n } missatge per dia",
         "${ n } missatges per dia"
       ],
+      "${ n } user": [
+        "${ n } usuari",
+        "Fins a ${ n } usuaris"
+      ],
       "${ n } vault": [
         "${ n } caixa forta",
         "${ n } caixes fortes"
@@ -9167,14 +9168,8 @@
       "Password health": [
         "Estat de la contrasenya"
       ],
-      "Password manager to secure credentials": [
-        "Gestor de contrasenyes per a assegurar les credencials"
-      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
-      ],
-      "Phone support (40+ users)": [
-        "Suport telefònic (a partir de 40 usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -9556,9 +9551,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalitzeu la vostra signatura de correu electrònic amb logos, imatges, icones de xarxes socials, enllaços als detalls de contacte, etc."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "L'Equip per a l'Èxit del Client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu per a clients amb almenys 6 usuaris."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o tercers accedeixin als missatges. Les úniques persones que poden llegir els missatges són el remitent i el destinatari previst."

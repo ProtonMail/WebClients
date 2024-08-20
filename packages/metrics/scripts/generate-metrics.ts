@@ -99,12 +99,12 @@ async function generateCode(parsedFiles: ParsedFile[]) {
 
     let code = `
 import MetricsBase from './lib/MetricsBase';
-import IMetricsRequestService from './lib/types/IMetricsRequestService';
+import type IMetricsRequestService from './lib/types/IMetricsRequestService';
     `;
 
     const addImport = (interfaceName: string, importName: string) => {
         code += `
-import { ${interfaceName} } from '${typesDirectoryPath}/${importName}'; 
+import type { ${interfaceName} } from '${typesDirectoryPath}/${importName}'; 
         `;
     };
 

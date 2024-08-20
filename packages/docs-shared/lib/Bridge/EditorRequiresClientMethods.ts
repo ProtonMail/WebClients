@@ -4,6 +4,7 @@ import type { CommentInterface } from '../CommentInterface'
 import type { CommentThreadInterface } from '../CommentThreadInterface'
 import type { RtsMessagePayload } from '../Doc/RtsMessagePayload'
 import type { BroadcastSource } from './BroadcastSource'
+import type { WordCountInfoCollection } from '../WordCount/WordCountTypes'
 
 export interface EditorRequiresClientMethods {
   editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void>
@@ -26,7 +27,20 @@ export interface EditorRequiresClientMethods {
 
   openLink(url: string): Promise<void>
 
-  reportError(error: Error, extraInfo?: { irrecoverable?: boolean; errorInfo?: ErrorInfo }): Promise<void>
+  /**
+   * @param audience If devops-only, will only be reported to error reporting tool.
+   *                 If user-and-devops, will show a generic alert and report to error reporting tool.
+   *                 If user-only, will show an alert but not report to reporting tool.
+   * @param extraInfo
+   *  - irrecoverable: If true, will destroy the application instance entirely and display a blocking modal.
+   *                   Otherwise, will show a modal that can be dismissed.
+   */
+  reportError(
+    error: Error,
+    audience: 'user-and-devops' | 'devops-only' | 'user-only',
+    extraInfo?: { irrecoverable?: boolean; errorInfo?: ErrorInfo; lockEditor?: boolean },
+  ): Promise<void>
+  reportWordCount(wordCountInfo: WordCountInfoCollection): Promise<void>
   updateFrameSize(size: number): void
   showGenericAlertModal(message: string): void
 

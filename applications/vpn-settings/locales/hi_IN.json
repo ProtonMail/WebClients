@@ -331,9 +331,6 @@
       "Keep logo": [
         "चिन्ह रखें"
       ],
-      "Keep my Plus subscription": [
-        "मेरी प्लस सदस्यता को बनाए रखें"
-      ],
       "Let's talk": [
         "चलिए बात करते हैं"
       ],
@@ -3225,11 +3222,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } एप्लिकेशन के स्वरूप और अनुभव को अनुकूलित करें"
       ],
-      "dedicated servers": [
-        "समर्पित सर्वर"
-      ],
       "Dedicated servers": [
         "विशेष सर्वर"
+      ],
+      "dedicated servers": [
+        "समर्पित सर्वर"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "विशेष IP पते वाले विशेष सर्वर को निजी गेटवे में जोड़ा जा सकता है ताकि बेहतर पहुंच नियंत्रण संभव हो सके।"
@@ -4308,12 +4305,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "साइन इन के बाद आपको ${ destination } पर पुनःनिर्देशित किया जाएगा।"
-      ],
-      "You will lose access to Plus features on this date.": [
-        "आप इस तिथि पर प्लस सुविधाओं तक पहुंच खो देंगे।"
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "आप इस तिथि पर प्लस सर्वर और सुविधाओं तक पहुंच खो देंगे।"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "आपको एक ${ BRAND_NAME } पते कि जरूरत होगी ${ MAIL_APP_NAME } और ${ CALENDAR_APP_NAME } का इस्तेमाल करने के लिए।"
@@ -5826,9 +5817,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "लोगो, तस्वीर, सोशल मीडिया आइकन, अपने संपर्क जानकारी के लिंक, जैसे चीज़ो के साथ अपने ईमेल हस्ताक्षर को अपनी पसंद का बनाएं।"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "फोन से मदद ${ BRAND_NAME } की ग्राहक सफलता टीम से यूरोप के वर्किंग समय के वक्त मौजूद है, उन ग्रहको के लिए जिनके पास 6 या उससे ज़्यादा यूज़र है"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } या किसी और को आपके संदेश पढ़ने से रोकता है। सिर्फ भेजने वालो और जिनको मिलना चाहिए उनको ही संदेश का एक्सेस है।"
       ],
@@ -6010,11 +5998,6 @@
       ],
       "The whole organization": [
         "संपूर्ण संगठन"
-      ]
-    },
-    "option": {
-      "Members": [
-        "सदस्य"
       ]
     },
     "Organization capacity error": {
@@ -6314,6 +6297,9 @@
       ],
       "Gift code": [
         "उपहार कोड"
+      ],
+      "Group name": [
+        "समूह नाम"
       ],
       "Other": [
         "दूसरा"
@@ -7579,10 +7565,10 @@
       "Card verification": [
         "कार्ड सत्यापन"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "कैच-ऑल एड्रेस"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "कैच-ऑल एड्रेस"
       ],
       "Change login password": [

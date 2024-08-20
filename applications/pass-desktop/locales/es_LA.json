@@ -1114,9 +1114,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrará el favicono del elemento a través del proxy de imagen anónimo de ${ BRAND_NAME }."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } solo importará inicios de sesión, notas y tarjetas de crédito."
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } requerirá la contraseña de ${ BRAND_NAME } para acceder a datos sin conexión."
       ],
@@ -1593,8 +1590,14 @@
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Confirme la contraseña adicional para bloquear automáticamente con datos biométricos."
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Confirme su contraseña adicional para bloquear automáticamente con su contraseña adicional."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Confirme la contraseña adicional para cancelar el registro del bloqueo actual."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Confirme su contraseña adicional para actualizar el tiempo del bloqueo automático."
       ],
       "Please confirm your password": [
         "Confirme su contraseña"
@@ -1971,9 +1974,6 @@
       ],
       "30 seconds": [
         "30 segundos"
-      ],
-      "4 hours": [
-        "4 horas"
       ],
       "5 minutes": [
         "5 minutos"

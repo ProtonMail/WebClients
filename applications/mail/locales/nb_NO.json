@@ -637,9 +637,6 @@
       "Italic": [
         "Kursiv"
       ],
-      "Keep my Plus subscription": [
-        "Behold mitt Plus-abonnement"
-      ],
       "Label as": [
         "Merk som"
       ],
@@ -844,10 +841,10 @@
       "Not saved": [
         "Ikke lagret"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -5683,6 +5680,9 @@
         "${ numOccurrences } forekomst funnet i e-postinnholdet",
         "${ numOccurrences } forekomster funnet i e-postinnholdet"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } gir en enkel måte å opprette pålogginger på ikke-klarerte tredjepartssider der du ikke vil avsløre din faktiske e-postadresse."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
       ],
@@ -6021,6 +6021,10 @@
       ],
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Opprett en sikker sky for ${ n }-medlem",
+        "Opprett en sikker sky for ${ n }-medlemmer"
       ],
       "Create in": [
         "Opprett i"
@@ -7404,12 +7408,6 @@
       "You selected **${ elementsCount } message**.": [
         "Du valgte **${ elementsCount } melding**.",
         "Du valgte **${ elementsCount } meldinger**."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Du vil miste tilgang til Plus-funksjoner på denne datoen."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Du vil miste tilgang til Plus-tjenere og funksjoner på denne datoen."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
@@ -9233,14 +9231,8 @@
       "Password health": [
         "Passordhelse"
       ],
-      "Password manager to secure credentials": [
-        "Passordbehandling for å sikre legitimasjon"
-      ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonstøtte (40+ brukere)"
       ],
       "Priority email support": [
         "Prioritert e-poststøtte"
@@ -9628,9 +9620,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Tilpass e-postsignaturen din med logoer, bilder, ikoner for sosiale medier, koblinger til kontaktinformasjonen din og mer."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonstøtte er tilgjengelig fra ${ BRAND_NAME }-kundesuksessteamet i europeisk arbeidstid, for kunder med 6 eller flere brukere."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer at meldinger åpnes av ${ BRAND_NAME } eller tredjeparter. De eneste som kan lese meldingene, er avsenderen og den tiltenkte mottakeren."
@@ -12458,6 +12447,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Skjul e-posten din med ${ PASS_APP_NAME }"
+      ],
       "Human verification": [
         "Menneskelig verifisering"
       ],
@@ -13077,11 +13069,6 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Få tilgang til Wallet-appen"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Hold og overfør bitcoin sikkert"
       ]
     },
     "wallet_signup_2024:Bug category": {

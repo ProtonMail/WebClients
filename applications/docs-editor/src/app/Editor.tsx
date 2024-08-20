@@ -42,6 +42,7 @@ import type { EditorLoadResult } from './EditorLoadResult'
 import { KeyboardShortcutsPlugin } from './Plugins/KeyboardShortcuts/KeyboardShortcutsPlugin'
 import { PasteLimitPlugin } from './Plugins/PasteLimitPlugin'
 import { CustomOrderedListPlugin } from './Plugins/CustomList/CustomListPlugin'
+import { WordCountPlugin } from './Plugins/WordCount/WordCountPlugin'
 
 const TypingBotEnabled = false
 
@@ -52,6 +53,7 @@ type Props = {
   documentId: string
   editingLocked: boolean
   hasEditAccess: boolean
+  onEditorError: (error: Error) => void
   hidden: boolean
   editorInitializationConfig?: EditorInitializationConfig
   /** Non-interactive mode is used when displaying the editor to show a previous history revision */
@@ -68,10 +70,11 @@ export function Editor({
   docState,
   documentId,
   editingLocked,
+  editorInitializationConfig,
   hasEditAccess,
   hidden,
-  editorInitializationConfig,
   nonInteractiveMode: nonInteractiveMode,
+  onEditorError,
   onEditorLoadResult,
   onInteractionModeChange,
   setEditorRef,
@@ -116,7 +119,7 @@ export function Editor({
       {hidden && (
         <div className="bg-norm absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4"></div>
       )}
-      <SafeLexicalComposer initialConfig={BuildInitialEditorConfig(null)}>
+      <SafeLexicalComposer initialConfig={BuildInitialEditorConfig({ onError: onEditorError })}>
         <KeyboardShortcutsPlugin />
         {!nonInteractiveMode && (
           <Toolbar hasEditAccess={hasEditAccess} onInteractionModeChange={onInteractionModeChange} />
@@ -175,6 +178,7 @@ export function Editor({
         <AutoFocusPlugin isEditorHidden={hidden} />
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
+        <WordCountPlugin onWordCountChange={(wordCountInfo) => clientInvoker.reportWordCount(wordCountInfo)} />
       </SafeLexicalComposer>
     </CollaborationContext.Provider>
   )

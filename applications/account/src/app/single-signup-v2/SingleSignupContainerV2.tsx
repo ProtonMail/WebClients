@@ -1367,7 +1367,8 @@ const SingleSignupContainerV2 = ({
                                         invite: signupParameters.invite,
                                         cache,
                                         api: silentApi,
-                                        mode: product === APPS.PROTONPASS ? 'ov' : 'cro',
+                                        mode:
+                                            product === APPS.PROTONPASS || product === APPS.PROTONDRIVE ? 'ov' : 'cro',
                                     });
                                     setModelDiff({
                                         subscriptionData: result.cache.subscriptionData,

@@ -76,7 +76,7 @@ function TableCellResizer({ editor }: { editor: LexicalEditor }): JSX.Element {
           const cell = getDOMCellFromTarget(target as HTMLElement)
 
           if (cell && activeCell !== cell) {
-            editor.update(() => {
+            editor.read(() => {
               const tableCellNode = $getNearestNodeFromDOMNode(cell.elem)
               if (!tableCellNode) {
                 throw new Error('TableCellResizer: Table cell node not found.')

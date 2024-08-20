@@ -160,8 +160,14 @@
       "Delete Gateway": [
         "刪除閘道器"
       ],
+      "Delete group": [
+        "刪除群組"
+      ],
       "Delete logo": [
         "刪除標誌"
+      ],
+      "Delete member": [
+        "刪除成員"
       ],
       "Delete user": [
         "刪除使用者"
@@ -180,6 +186,12 @@
       ],
       "Discard": [
         "放棄"
+      ],
+      "Discard changes": [
+        "放棄變更"
+      ],
+      "Domain names": [
+        "網域名稱"
       ],
       "Done": [
         "完成"
@@ -210,6 +222,9 @@
       ],
       "Edit Gateway": [
         "編輯閘道器"
+      ],
+      "Edit group": [
+        "編輯群組"
       ],
       "Edit invoice details": [
         "編輯發票詳細資料"
@@ -319,9 +334,6 @@
       "Keep logo": [
         "保留標誌"
       ],
-      "Keep my Plus subscription": [
-        "保持進階版訂購授權"
-      ],
       "Let's talk": [
         "我們一起聊聊！"
       ],
@@ -412,6 +424,9 @@
       "Remove": [
         "移除"
       ],
+      "Remove all members": [
+        "移除所有成員"
+      ],
       "Remove bonuses": [
         "移除贈品"
       ],
@@ -441,9 +456,6 @@
       ],
       "Resend code": [
         "重新傳送驗證碼"
-      ],
-      "Resend invitation": [
-        "重新發送邀請"
       ],
       "Reset credentials": [
         "重設認證"
@@ -588,6 +600,12 @@
       ],
       "Switch or add account": [
         "切換或是添加帳號"
+      ],
+      "Test": [
+        "測試"
+      ],
+      "Test SAML configuration": [
+        "測SAML的配置"
       ],
       "Top up": [
         "充值"
@@ -2158,6 +2176,33 @@
         "優先支援"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "取得${ BRAND_NAME }Duo"
+      ],
+      "Get it for ${ price }": [
+        "使用${ price }取得它"
+      ]
+    },
+    "duoplan2024: Info": {
+      "2 users": [
+        "2 位使用者"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "完整存取${ BRAND_NAME }產品"
+      ],
+      "You save ${ amountSave }": [
+        "您儲存${ amountSave }"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "全部${ BRAND_NAME }，給兩人。"
+      ],
+      "Double your storage": [
+        "加倍您的儲存空間"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } 已加入"
@@ -2594,8 +2639,14 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 群組"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "有自訂網域的帳號無法加入群組方案。"
+      ],
       "customer support": [
         "客服"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "群組方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "若您接受邀請，我們會將您從目前的方案轉出，並將所有剩餘金額存入的您的帳號。"
@@ -2605,6 +2656,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "邀請人：${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "終身帳號無法加入群組方案。"
       ],
       "Manage addresses.": [
         "管理電子郵件位址。"
@@ -2659,6 +2713,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "您的帳號已使用 ${ usedSpace } 的儲存空間，這超過了為您分配的 ${ inviteSpace }。刪除一些資料或要求方案管理員增加您的儲存空間。"
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "您無法使用目前方案接受此邀請函。"
       ]
     },
     "familyOffer_2023:Info": {
@@ -3226,6 +3283,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } 紅利加碼連線數至 ${ VPN_APP_NAME } (您即可享受多設備同時連上 VPN)"
       ],
+      "2FA disabled": [
+        "已停用 2FA"
+      ],
       "30-day money-back guarantee": [
         "30 天體驗不滿意退款服務"
       ],
@@ -3406,6 +3466,9 @@
       "Country code": [
         "國家代碼"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "替成員創建一個安全${ n }"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "創建並管理子帳號，並為其指派在您的自訂網域下的電郵位址。"
       ],
@@ -3436,10 +3499,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "自訂 ${ BRAND_NAME } 應用程式的視覺與設計。"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -4123,6 +4186,12 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
+      "Session Ended": [
+        "作業階段已結束"
+      ],
+      "Session Started": [
+        "作業階段已開始"
+      ],
       "Session timed out": [
         "工作階段已逾時"
       ],
@@ -4612,12 +4681,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "登入後，您將會被重新導向至 ${ destination }。"
       ],
-      "You will lose access to Plus features on this date.": [
-        "您將於此更新失去存取進階功能。"
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "您將於此更新失去存取進階伺服器和功能。"
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "您將需要一個 ${ BRAND_NAME } 電子郵件位址，方可使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME }"
       ],
@@ -4796,6 +4859,9 @@
       ],
       "Account storage": [
         "帳號儲存空間"
+      ],
+      "Add group member": [
+        "增加群組成員"
       ],
       "Address": [
         "電郵位址"
@@ -4989,6 +5055,12 @@
       "Gift code": [
         "禮品代碼"
       ],
+      "Group address": [
+        "群組地址"
+      ],
+      "Group members": [
+        "群組成員"
+      ],
       "Group name": [
         "群組名稱"
       ],
@@ -5129,6 +5201,9 @@
       ],
       "Public certificate (X.509)": [
         "公開憑證 (X.509)"
+      ],
+      "Purpose": [
+        "目的"
       ],
       "Recovery email address": [
         "復原電郵位址"
@@ -5893,14 +5968,8 @@
       "Password health": [
         "密碼穩固性"
       ],
-      "Password manager to secure credentials": [
-        "密碼管理器以確保身分安全"
-      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
-      ],
-      "Phone support (40+ users)": [
-        "電話支援（40+ 使用者）"
       ],
       "Priority email support": [
         "優先電子郵件支援"
@@ -6285,9 +6354,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "以標誌、影像、社交媒體圖示、您的聯絡詳情連結等等，個人化您的電子郵件簽名檔"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "${ BRAND_NAME } 客戶成功團隊於歐洲辦公時間內，為 6 位或以上使用者的客戶提供電話支援"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
       ],
@@ -6530,11 +6596,6 @@
       ],
       "The whole organization": [
         "整個組織"
-      ]
-    },
-    "option": {
-      "Members": [
-        "成員"
       ]
     },
     "Organization capacity error": {
@@ -6887,6 +6948,9 @@
       ],
       "Gift code": [
         "禮品代碼"
+      ],
+      "Group name": [
+        "群組名稱"
       ],
       "Other": [
         "其它"
@@ -8148,6 +8212,12 @@
       "Organization activated": [
         "組織機構已啟用"
       ],
+      "Organization identity updated": [
+        "組織身分已更新"
+      ],
+      "Organization name updated": [
+        "組織名稱更新"
+      ],
       "Password copied to clipboard": [
         "密碼以複製到剪貼簿"
       ],
@@ -8450,10 +8520,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [
@@ -9301,11 +9371,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin透過電子郵件"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "安全持有及交易您的 Bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

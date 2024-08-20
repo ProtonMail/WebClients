@@ -330,14 +330,14 @@
       "Increase": [
         "Павялічыць"
       ],
-      "Keep my Plus subscription": [
-        "Пакінуць падпіску Plus"
+      "Keep my subscription": [
+        "Пакінуць падпіску"
       ],
       "Learn more": [
         "Даведацца больш"
       ],
       "Let's talk": [
-        "Давайце паразмаўляем"
+        "Звяжыцеся з намі"
       ],
       "Load": [
         "Загрузіць"
@@ -2993,7 +2993,7 @@
         "Вы паспяхова далучыліся да сямейнай групы"
       ],
       "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца групавога тарыфнага плана."
+        "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца да групавога тарыфнага плана."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вас запрашаюць далучыць ваш уліковы запіс ${ BRAND_NAME } да гэтага групавога тарыфнага плана, каб разам выкарыстоўваць усе прэміяльныя функцыі ${ BRAND_NAME_TWO }."
@@ -3747,10 +3747,10 @@
         "Стварыць новую групу кантактаў"
       ],
       "Create a secure cloud for ${ n } member": [
-        "Стварэнне бяспечнага воблака для ${ n } удзельніка",
-        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў",
-        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў",
-        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў"
+        "Стварыць бяспечнае воблака для ${ n } удзельніка",
+        "Стварыць бяспечнае воблака для ${ n } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ n } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ n } удзельнікаў"
       ],
       "Create in": [
         "Стварыць у"
@@ -4544,11 +4544,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вы павінны прывязаць крэдытную картку або банкаўскі рахунак да вашага ўліковага запісу PayPal. Калі вы гэтага яшчэ не зрабілі, націсніце на кнопку ніжэй."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Вы страціце доступ да функцый Plus пасля наступлення гэтай даты."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Вы страціце доступ да сервераў і функцыі Plus пасля наступлення гэтай даты."
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Вы страціце доступ да ${ planTitle } функцыі пасля наступлення гэтай даты."
       ],
       "You will lose all unsaved changes.": [
         "Вы страціце ўсе незахаваныя змены."
@@ -4904,7 +4901,7 @@
         "Размяшчэнне папкі"
       ],
       "Forwards to": [
-        "Пераслаць на"
+        "Перасылаць на"
       ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
@@ -5917,14 +5914,8 @@
       "Password health": [
         "Якасць пароля"
       ],
-      "Password manager to secure credentials": [
-        "Менеджар пароляў для бяспекі ўліковых даных"
-      ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
-      ],
-      "Phone support (40+ users)": [
-        "Падтрымка па тэлефоне (ад 40 карыстальнікаў)"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -6310,9 +6301,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Падтрымку па тэлефоне ад каманды абслугоўвання кліентаў ${ BRAND_NAME } можна атрымаць у працоўныя дні згодна з еўрапейскім графікам для кліентаў, якія маюць 6 або больш карыстальнікаў"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
@@ -6794,13 +6782,13 @@
         "Выберыце краіну выстаўлення рахунку"
       ],
       "Please select billing state": [
-        "Выберыце стан выстаўлення рахунку"
+        "Выберыце штат выстаўлення рахунку"
       ],
       "Please select your billing country first.": [
         "Першапачаткова выберыце вашу краіну выстаўлення рахунку."
       ],
       "Please select your billing state first.": [
-        "Першапачаткова выберыце ваш стан выстаўлення рахунку."
+        "Спачатку выберыце ваш штат выстаўлення рахунку."
       ],
       "Select billing country to pay": [
         "Выберыце краіну выстаўлення рахунку для аплаты"
@@ -8158,6 +8146,9 @@
       "Enable 2FA": [
         "Уключыць 2ФА"
       ],
+      "Enter 2FA code": [
+        "Увядзіце 2ФА код"
+      ],
       "Enter your password": [
         "Увядзіце пароль"
       ],
@@ -8601,11 +8592,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin праз электронную пошту"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Бяспечна захоўвайце і пераводзьце свае сродкі ў біткойнах"
       ]
     },
     "wallet_signup_2024:Bug category": {

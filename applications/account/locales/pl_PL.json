@@ -253,6 +253,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potwierdź otwieranie linku ${ linkToShow }"
       ],
+      "Contact sales": [
+        "Skontaktuj się z zespołem sprzedaży"
+      ],
       "Contact support": [
         "Skontaktuj się ze wsparciem technicznym"
       ],
@@ -391,8 +394,8 @@
       "Disable": [
         "Wyłącz"
       ],
-      "Disable E2EE for group address": [
-        "Wyłącz E2EE dla grupy"
+      "Disable E2EE group mail encryption": [
+        "Wyłącz szyfrowanie E2EE poczty grupy"
       ],
       "Disable recovery phrase": [
         "Wyłącz hasło odzyskiwania"
@@ -405,6 +408,9 @@
       ],
       "Discard changes": [
         "Odrzuć zmiany"
+      ],
+      "Domain names": [
+        "Nazwy domen"
       ],
       "Don't show again": [
         "Nie pokazuj ponownie"
@@ -496,8 +502,8 @@
       "Enable device-based recovery": [
         "Włącz odzyskiwanie za pomocą zaufanego urządzenia"
       ],
-      "Enable E2EE for group address": [
-        "Włącz E2EE dla grupy"
+      "Enable E2EE group mail encryption": [
+        "Włącz szyfrowanie E2EE poczty grupy"
       ],
       "Enable multi-user support": [
         "Włącz obsługę wielu użytkowników"
@@ -658,9 +664,6 @@
       "Keep logo": [
         "Zachowaj logo"
       ],
-      "Keep my Plus subscription": [
-        "Zachowaj subskrypcję Plus"
-      ],
       "label emails as": [
         "oznacz wiadomości jako"
       ],
@@ -678,6 +681,9 @@
       ],
       "Loading verification": [
         "Ładowanie weryfikacji"
+      ],
+      "Lost access to your 2FA device?": [
+        "Nie masz dostępu do urządzenia z uwierzytelnianiem dwustopniowym?"
       ],
       "Make admin": [
         "Administrator"
@@ -805,10 +811,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
       "Reload": [
@@ -819,9 +825,6 @@
       ],
       "Remove all members": [
         "Usuń wszystkich użytkowników"
-      ],
-      "Remove all members from group": [
-        "Usuń wszystkich użytkowników z grupy"
       ],
       "Remove bonuses": [
         "Zrezygnuj z bonusów"
@@ -868,9 +871,6 @@
       "Resend code": [
         "Wyślij ponownie kod"
       ],
-      "Resend invitation": [
-        "Wyślij ponownie zaproszenie"
-      ],
       "Reset credentials": [
         "Zresetuj dane logowania"
       ],
@@ -900,9 +900,6 @@
       ],
       "Review": [
         "Podgląd"
-      ],
-      "Review account security": [
-        "Sprawdź bezpieczeństwo konta"
       ],
       "Revoke": [
         "Unieważnij"
@@ -1266,9 +1263,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Dodaj domenę pm.me"
-      ],
       "Resuming forward": [
         "Wznawianie przekierowania"
       ]
@@ -1630,6 +1624,14 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1651,14 +1653,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3661,8 +3655,14 @@
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
         "Dołącz do ponad 50 000 organizacji, które korzystają z bezpieczeństwa ${ BRAND_NAME }"
       ],
+      "Protect sensitive business information and collaborate securely": [
+        "Ochrona poufnych informacji biznesowych i bezpieczna współpraca"
+      ],
       "Secure cloud storage that gives you control of your data": [
         "Bezpieczna przestrzeń dyskowa w chmurze, która daje Ci kontrolę nad Twoimi danymi"
+      ],
+      "Tailored made solutions for larger organizations with custom needs": [
+        "Indywidualne rozwiązania dla większych organizacji o niestandardowych potrzebach"
       ]
     },
     "driveplus2024: Deal details": {
@@ -6674,6 +6674,9 @@
       "2. They try ${ planName }": [
         "2. Znajomi testują plan ${ planName }"
       ],
+      "2FA disabled": [
+        "Uwierzytelnianie dwustopniowe jest wyłączone"
+      ],
       "3. You earn credits": [
         "3. Zarabiasz środki"
       ],
@@ -6788,6 +6791,9 @@
         "Dotyczy użytkowników",
         "Dotyczy użytkowników"
       ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Po zablokowaniu aplikacji użytkownicy organizacji będą musieli odblokować ${ PASS_APP_NAME } za pomocą np. hasła lub kodu PIN."
+      ],
       "Align left": [
         "Wyrównaj do lewej"
       ],
@@ -6811,6 +6817,9 @@
       ],
       "All keys successfully reactivated": [
         "Wszystkie klucze zostały reaktywowane"
+      ],
+      "All members have been added.": [
+        "Wszyscy użytkownicy zostali dodani."
       ],
       "All your changes will be lost.": [
         "Wszystkie zmiany zostaną utracone."
@@ -7085,6 +7094,12 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Utwórz etykietę dla zaimportowanych wiadomości, wybierz przedział czasowy dla tego importu oraz etykiety, które chcesz zaimportować."
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Utwórz bezpieczną chmurę dla ${ n } użytkownika",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Twórz subkonta i zarządzaj nimi, a także przypisuj im adresy e-mail w niestandardowej domenie."
       ],
@@ -7145,11 +7160,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -7168,6 +7183,9 @@
       ],
       "Disable recovery by ${ type }": [
         "Wyłącz odzyskiwanie przez ${ type }"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Wyłączenie uwierzytelniania dwustopniowego obniży bezpieczeństwo konta. Zrób to tylko wtedy, jeśli jest to absolutnie konieczne."
       ],
       "Discount": [
         "Rabat"
@@ -7243,6 +7261,9 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Każda domena może posiadać tylko 1 rekord SPF (TXT). Jeśli chcesz zachować obecny rekord SPF (TXT), możesz dodać ${ spf } do obecnego rekordu (wpisz po ${ spfValue })."
+      ],
+      "Early access": [
+        "Wcześniejszy dostęp"
       ],
       "Edit email address": [
         "Edytuj adres e-mail"
@@ -7367,6 +7388,9 @@
       "finance": [
         "finanse"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Aby uzyskać 10-letnią historię wersji, skontaktuj się z naszym zespołem sprzedaży."
+      ],
       "for choosing ${ product }": [
         "za wybranie ${ product }"
       ],
@@ -7408,6 +7432,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Przejdź do swojego dostawcy tożsamości, pobierz metadane SAML dla ${ appName } i zaimportuj je tutaj."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Adresy grup możesz utworzyć tylko dla niestandardowych domen. Przejdź do sekcji ${ linkToDomainPage }, aby dodać niestandardową domenę."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupuj wiadomości w wątki lub wyświetlaj je oddzielnie."
@@ -8168,6 +8195,9 @@
       "Remember to share the user's sign in details with them.": [
         "Pamiętaj, aby udostępnić użytkownikowi dane logowania."
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "Usuń metadane ze zdjęć, aby chronić prywatność."
+      ],
       "Remove one of your calendars to join this one": [
         "Usuń co najmniej jeden kalendarz, aby dołączyć do tego kalendarza"
       ],
@@ -8552,6 +8582,9 @@
       "This will delete all previous versions of your files.": [
         "Spowoduje to usunięcie poprzednich wersji plików."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Spowoduje to wyłączenie uwierzytelniania dwustopniowego, w tym aplikacji uwierzytelniającej i kluczy bezpieczeństwa."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Ta opcja wyłączy obecne hasło odzyskiwania. Nie będziesz mógł użyć tego hasła, aby uzyska dostęp do konta lub odszyfrowywać dane."
       ],
@@ -8752,6 +8785,9 @@
       ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Użyj menedżera haseł, aby bezpiecznie generować i przechowywać silne hasła oraz łatwo się logować."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Użyj metody odzyskiwania, aby wyłączyć uwierzytelnianie dwustopniowe."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Użyj najlepszego serwera w zależności od obciążenia i lokalizacji: ${ formattedBestServerName }"
@@ -9101,6 +9137,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nie dodano metody odzyskiwania. Jeśli zapomnisz hasła, to nie odzyskasz już swojego konta. Czy chcesz przejść dalej bez dodawania metody odzyskiwania?"
       ],
+      "You do not have permission to perform this action": [
+        "Nie masz uprawnienia do wykonania tej akcji"
+      ],
       "You have ${ availableCount } dedicated server available.": [
         "Masz ${ availableCount } dostępny dedykowany serwer",
         "Masz ${ availableCount } dostępne dedykowane serwery",
@@ -9154,12 +9193,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po zalogowaniu się zostaniesz przekierowany do ${ destination }."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "W tym dniu stracisz dostęp do funkcji planu Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "W tym dniu stracisz dostęp do serwerów planu Plus i ich funkcji."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Będziesz potrzebować adresu ${ BRAND_NAME }, aby używać poczty ${ MAIL_APP_NAME } i usługi ${ CALENDAR_APP_NAME }"
@@ -9781,14 +9814,8 @@
       "30 seconds": [
         "30 sekund"
       ],
-      "4 hours": [
-        "4 godziny"
-      ],
       "5 minutes": [
         "5 minut"
-      ],
-      "Account recovery": [
-        "Odzyskiwanie konta"
       ],
       "Account storage": [
         "Przestrzeń dyskowa konta"
@@ -9798,6 +9825,9 @@
       ],
       "Activity": [
         "Aktywność"
+      ],
+      "Add all organization members": [
+        "Dodaj wszystkich użytkowników organizacji"
       ],
       "Address": [
         "Adres"
@@ -10207,9 +10237,6 @@
       "Folder location": [
         "Lokalizacja folderu"
       ],
-      "Folders and labels": [
-        "Foldery i etykiety"
-      ],
       "Font family": [
         "Czcionka"
       ],
@@ -10273,6 +10300,9 @@
       "Issuer ID": [
         "Identyfikator dostawcy"
       ],
+      "Keep emails in Sent/Drafts": [
+        "Zachowaj wiadomości w Wysłanych / Szkicach"
+      ],
       "Keep me signed in": [
         "Zapamiętaj mnie"
       ],
@@ -10317,9 +10347,6 @@
       ],
       "Mail Server (IMAP)": [
         "Serwer poczty (IMAP)"
-      ],
-      "Mail settings": [
-        "Ustawienia poczty"
       ],
       "Main": [
         "Główny"
@@ -10519,6 +10546,9 @@
       "Recovery phrase": [
         "Hasło odzyskiwania"
       ],
+      "Remove image metadata": [
+        "Usuń metadane obrazu"
+      ],
       "Repeat password": [
         "Potwierdź hasło"
       ],
@@ -10590,9 +10620,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Spam and filters": [
-        "Spam i filtry"
       ],
       "Starred": [
         "Wyróżnione"
@@ -11192,6 +11219,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Oferta ograniczona czasowo: **Uzyskaj do 35% zniżki** na plany roczne"
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Oferta ograniczona czasowa: **Zaoszczędź ${ discount } na rocznym planie ${ name }**"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Otrzymujesz zaproszenie do wypróbowania poczty ${ MAIL_APP_NAME }"
       ]
@@ -11626,6 +11656,32 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for $1": [
+        "Rozpocznij od 1 $"
+      ],
+      "Get started for 1 €": [
+        "Rozpocznij od 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Rozpocznij od 1 CHF"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11653,32 +11709,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for $1": [
-        "Rozpocznij od 1 $"
-      ],
-      "Get started for 1 €": [
-        "Rozpocznij od 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Rozpocznij od 1 CHF"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -11964,14 +11994,8 @@
       "Password health": [
         "Jakość hasła"
       ],
-      "Password manager to secure credentials": [
-        "Menedżer haseł do zabezpieczania danych logowania"
-      ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
-      ],
-      "Phone support (40+ users)": [
-        "Wsparcie telefoniczne (dla ponad 40 użytkowników)"
       ],
       "Priority email support": [
         "Priorytetowe wsparcie e-mail"
@@ -12131,9 +12155,6 @@
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)"
-      ],
-      "Version history": [
-        "Historia wersji"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
@@ -12321,6 +12342,14 @@
         "Wybrany plan: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -12339,14 +12368,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -12466,9 +12487,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizuj swój podpis za pomocą logo, obrazów, ikon mediów społecznościowych, linków do szczegółów kontaktu i innych elementów"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej 6 użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta ${ BRAND_NAME }"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zapobiega dostępowi do wiadomości przez ${ BRAND_NAME } lub strony trzecie. Wiadomości mogą zostać odczytane tylko przez nadawcę i odbiorcę."
@@ -13011,20 +13029,6 @@
       ],
       "Trash": [
         "Przenieś do Kosza"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Wszyscy, w tym osoby z zewnątrz"
-      ],
-      "Members": [
-        "Członkowie"
-      ],
-      "Nobody by default": [
-        "Domyślnie nikt"
-      ],
-      "Organization members": [
-        "Użytkownicy organizacji"
       ]
     },
     "Option delay send seconds": {
@@ -13799,6 +13803,9 @@
       "Gift code": [
         "Kod podarunkowy"
       ],
+      "Group name": [
+        "Nazwa grupy"
+      ],
       "Link": [
         "Link"
       ],
@@ -14092,6 +14099,110 @@
       ],
       "User": [
         "Użytkownik"
+      ]
+    },
+    "Safety review": {
+      "Account safety review": [
+        "Bezpieczeństwo konta"
+      ],
+      "Add a recovery email": [
+        "Dodaj adres pomocniczy"
+      ],
+      "Add a recovery email address": [
+        "Dodaj adres pomocniczy"
+      ],
+      "Add a recovery phone number": [
+        "Dodaj numer pomocniczy"
+      ],
+      "Check account security": [
+        "Sprawdź bezpieczeństwo konta"
+      ],
+      "Device-based recovery enabled": [
+        "Odzyskiwanie za pomocą zaufanego urządzenia zostało włączone"
+      ],
+      "Download ${ size }": [
+        "Pobierz ${ size }"
+      ],
+      "Download your Recovery Kit": [
+        "Pobierz zestaw odzyskiwania"
+      ],
+      "Enable device-based recovery": [
+        "Włącz odzyskiwanie za pomocą zaufanego urządzenia"
+      ],
+      "Enable recovery by email": [
+        "Włącz odzyskiwanie przez e-mail"
+      ],
+      "Enable recovery by phone": [
+        "Włącz odzyskiwanie przez telefon"
+      ],
+      "Invalid code": [
+        "Kod jest nieprawidłowy"
+      ],
+      "Recovery email address": [
+        "Adres pomocniczy"
+      ],
+      "Recovery phone number": [
+        "Numer pomocniczy"
+      ],
+      "Safeguard your account": [
+        "Zabezpiecz konto"
+      ],
+      "Send a new code": [
+        "Wyślij nowy kod"
+      ],
+      "Show more": [
+        "Pokaż więcej"
+      ],
+      "to automatically recover your data when you log into a trusted device": [
+        ", aby automatycznie odzyskać dane na zaufanym i zalogowanym urządzeniu"
+      ],
+      "to recover your account and data if you're ever locked out": [
+        ", aby odzyskać zablokowane konto i dane"
+      ],
+      "to recover your account if you're ever locked out": [
+        ", aby odzyskać zablokowane konto"
+      ],
+      "Update your Recovery Kit": [
+        "Zaktualizuj zestaw odzyskiwania"
+      ],
+      "Verify": [
+        "Zweryfikuj"
+      ],
+      "Verify your recovery email address": [
+        "Zweryfikuj adres pomocniczy"
+      ],
+      "Verify your recovery phone number": [
+        "Zweryfikuj numer pomocniczy"
+      ],
+      "Your account is fully secure.": [
+        "Konto jest bezpieczne"
+      ],
+      "Your account is secure.": [
+        "Konto jest bezpieczne."
+      ],
+      "Your recovery email": [
+        "Twój adres pomocniczy"
+      ],
+      "Your recovery email has been enabled": [
+        "Adres pomocniczy został włączony"
+      ],
+      "Your recovery email is set": [
+        "Adres pomocniczy został ustawiony"
+      ],
+      "Your Recovery Kit": [
+        "Twój zestaw odzyskiwania"
+      ],
+      "Your recovery methods": [
+        "Twoje metody odzyskiwania"
+      ],
+      "Your recovery phone": [
+        "Twój numer pomocniczy"
+      ],
+      "Your recovery phone has been enabled": [
+        "Numer pomocniczy został włączony"
+      ],
+      "Your recovery phone is set": [
+        "Numer pomocniczy został ustawiony"
       ]
     },
     "saml: Action": {
@@ -16214,6 +16325,9 @@
       "Account recovery": [
         "Odzyskiwanie konta"
       ],
+      "Account settings": [
+        "Ustawienia konta"
+      ],
       "Account suspended": [
         "Konto zostało zawieszone"
       ],
@@ -16349,10 +16463,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -16381,6 +16495,9 @@
       ],
       "Clear out the junk": [
         "Opróżnij Kosz"
+      ],
+      "Click a value in the table to use it as filter": [
+        "Kliknij wartość w tabeli, aby użyć jej jako filtra"
       ],
       "Close": [
         "Zamknij"
@@ -16561,6 +16678,9 @@
       ],
       "Disable two-factor authentication": [
         "Wyłącz uwierzytelnianie dwustopniowe"
+      ],
+      "Disable two-factor authentication?": [
+        "Wyłączyć uwierzytelnianie dwustopniowe?"
       ],
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
@@ -16957,6 +17077,9 @@
       ],
       "Privacy and data collection": [
         "Prywatność i zbieranie danych"
+      ],
+      "Privacy and security": [
+        "Prywatność i bezpieczeństwo"
       ],
       "Processing...": [
         "Przetwarzanie..."
@@ -18041,11 +18164,6 @@
       ],
       "You're Invited.": [
         "Otrzymano zaproszenie."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Przechowuj i wysyłaj Bitcoiny w bezpieczny sposób"
       ]
     },
     "wallet_signup_2024:Bug category": {

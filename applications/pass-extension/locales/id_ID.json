@@ -1016,9 +1016,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } akan menampilkan favicon item melalui proxy gambar anonim ${ BRAND_NAME }."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } hanya akan mengimpor rincian masuk, catatan, dan kartu kredit."
-      ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } akan meminta Anda untuk menyimpan kata sandi segera setelah kata sandi yang dihasilkan diisi secara otomatis."
       ],
@@ -1060,6 +1057,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Akses ke ${ PASS_APP_NAME } akan selalu memerlukan kata sandi ${ BRAND_NAME } Anda."
+      ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Akses ke ${ PASS_APP_NAME } akan membutuhkan sidik jari atau PIN milik perangkat Anda."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Akses kata sandi Anda di mana saja dengan aplikasi mobile kami."
@@ -1114,6 +1114,9 @@
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kunci biometrik berhasil didaftarkan. Gunakan kunci ini untuk membuka ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometrik akan dinonaktifkan dan akan harus diaktifkan lagi."
       ],
       "Built in 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
@@ -1424,6 +1427,9 @@
       "Offline support successfully disabled": [
         "Dukungan offline berhasil dinonaktifkan"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Akses ${ PASS_APP_NAME } secara daring akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 percobaan gagal."
+      ],
       "Open the Extensions menu": [
         "Buka menu Ekstensi"
       ],
@@ -1466,11 +1472,26 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Silakan konfirmasi kata sandi ${ BRAND_NAME } Anda untuk mengekspor data ${ PASS_APP_NAME } Anda"
       ],
+      "Please confirm your extra password": [
+        "Silakan konfirmasi kata sandi tambahan Anda"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk mengunci otomatis dengan biometrik."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi tambahan Anda."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Silakan konfirmasi kata sandi tambahan Anda untuk menonaktifkan kunci Anda saat ini."
       ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk memperbarui waktu penguncian otomatis."
+      ],
       "Please confirm your password": [
         "Silakan konfirmasi kata sandi Anda"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Silakan konfirmasi kata sandi Anda untuk mengunci otomatis dengan biometrik."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Silakan konfirmasi kata sandi Anda untuk mengunci secara otomatis dengan kata sandi Anda."
@@ -1667,6 +1688,9 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Buka kunci ${ PASS_APP_NAME } dengan kode PIN Anda untuk menyimpan passkey ini"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Buka ${ PASS_SHORT_APP_NAME } dengan biometrik"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Buka kunci ${ PASS_SHORT_APP_NAME } dengan kata sandi ${ BRAND_NAME } Anda"
       ],
@@ -1774,6 +1798,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Organisasi Anda memerlukan Anda mengamankan akses ke ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1836,9 +1863,6 @@
       ],
       "30 seconds": [
         "30 detik"
-      ],
-      "4 hours": [
-        "4 jam"
       ],
       "5 minutes": [
         "5 menit"
@@ -2849,6 +2873,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Kata sandi ${ BRAND_NAME } diperlukan"
+      ],
       "A description of the problem is required": [
         "Penjelasan masalah diperlukan"
       ],

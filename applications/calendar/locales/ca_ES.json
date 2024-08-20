@@ -392,9 +392,6 @@
       "Keep current time zone": [
         "Mantén la zona horària actual"
       ],
-      "Keep my Plus subscription": [
-        "Mantén la meva subscripció Plus"
-      ],
       "Later": [
         "Més tard"
       ],
@@ -2614,6 +2611,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB d'emmagatzemament"
+      ],
       "2 users": [
         "2 usuaris"
       ]
@@ -2623,7 +2623,7 @@
         "Tot allò de ${ BRAND_NAME }, per a 2."
       ],
       "Double your storage": [
-        "Dobleu el vostre emmagatzematge"
+        "Dobleu l'emmagatzematge"
       ]
     },
     "Duplicate event button tooltip": {
@@ -5054,12 +5054,6 @@
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Heu rebutjat aquesta invitació prèviament. Demaneu al propietari que us torni a convidar"
       ],
-      "You will lose access to Plus features on this date.": [
-        "Perdreu accés a les funcions Plus en aquesta data."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Perdreu l'accés a servidors i característiques Plus en aquesta data."
-      ],
       "You will lose all unsaved changes.": [
         "Perdreu tots els canvis sense desar."
       ],
@@ -6288,6 +6282,10 @@
         "${ n } missatge per dia",
         "${ n } missatges per dia"
       ],
+      "${ n } user": [
+        "${ n } usuari",
+        "Fins a ${ n } usuaris"
+      ],
       "${ n } vault": [
         "${ n } caixa forta",
         "${ n } caixes fortes"
@@ -6469,14 +6467,8 @@
       "Password health": [
         "Estat de la contrasenya"
       ],
-      "Password manager to secure credentials": [
-        "Gestor de contrasenyes per a assegurar les credencials"
-      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
-      ],
-      "Phone support (40+ users)": [
-        "Suport telefònic (a partir de 40 usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -6858,9 +6850,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalitzeu la vostra signatura de correu electrònic amb logos, imatges, icones de xarxes socials, enllaços als detalls de contacte, etc."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "L'Equip per a l'Èxit del Client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu per a clients amb almenys 6 usuaris."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o tercers accedeixin als missatges. Les úniques persones que poden llegir els missatges són el remitent i el destinatari previst."

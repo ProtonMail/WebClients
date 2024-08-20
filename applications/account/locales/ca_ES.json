@@ -112,6 +112,9 @@
       "Add domain": [
         "Afegir domini"
       ],
+      "Add email address": [
+        "Afegeix una adreça de correu electrònic"
+      ],
       "Add filter": [
         "Afegeix un filtre"
       ],
@@ -348,6 +351,9 @@
       ],
       "Delete Gateway": [
         "Elimina la passarel·la"
+      ],
+      "Delete group": [
+        "Elimina el grup"
       ],
       "Delete link": [
         "Elimina l'enllaç"
@@ -637,9 +643,6 @@
       "Keep logo": [
         "Manté el logo"
       ],
-      "Keep my Plus subscription": [
-        "Mantén la meva subscripció Plus"
-      ],
       "label emails as": [
         "etiquetar correus electrònics com"
       ],
@@ -784,11 +787,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -844,9 +847,6 @@
       "Resend code": [
         "Reenvia el codi"
       ],
-      "Resend invitation": [
-        "Reenvia la invitació"
-      ],
       "Reset credentials": [
         "Restaurar credencials"
       ],
@@ -885,6 +885,9 @@
       ],
       "Revoke all other sessions": [
         "Revoca totes les altres sessions"
+      ],
+      "Revoke invitation": [
+        "Revoca la invitació"
       ],
       "Revoke this invitation": [
         "Revoca aquesta invitació"
@@ -1340,6 +1343,9 @@
       "External": [
         "Externa"
       ],
+      "Inactive": [
+        "Inactiva"
+      ],
       "No E2EE mail": [
         "Cap correu E2EE"
       ],
@@ -1577,6 +1583,14 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1598,14 +1612,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3578,6 +3584,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB d'emmagatzemament"
+      ],
       "2 users": [
         "2 usuaris"
       ]
@@ -3587,7 +3596,7 @@
         "Tot allò de ${ BRAND_NAME }, per a 2."
       ],
       "Double your storage": [
-        "Dobleu el vostre emmagatzematge"
+        "Dobleu l'emmagatzematge"
       ]
     },
     "Duration": {
@@ -5171,6 +5180,9 @@
       "An error occurred, please try again": [
         "S'ha produït un error. Intenteu-ho de nou."
       ],
+      "Family name updated": [
+        "S'ha actualitzat el nom de la família."
+      ],
       "Member updated": [
         "S'ha actualitzat el membre"
       ]
@@ -6392,6 +6404,9 @@
       "2. They try ${ planName }": [
         "2. Elles proven ${ planName }"
       ],
+      "2FA disabled": [
+        "2FA desactivada"
+      ],
       "3. You earn credits": [
         "3. Guanyeu crèdits"
       ],
@@ -6827,11 +6842,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -8769,12 +8784,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Se us redirigirà a ${ destination } després d'iniciar la sessió."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Perdreu accés a les funcions Plus en aquesta data."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Perdreu l'accés a servidors i característiques Plus en aquesta data."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necessitareu una adreça de ${ BRAND_NAME } per a utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
@@ -9361,6 +9370,9 @@
       "15 minutes": [
         "15 minuts"
       ],
+      "2 minutes": [
+        "2 minuts"
+      ],
       "30 minutes": [
         "30 minuts"
       ],
@@ -9369,9 +9381,6 @@
       ],
       "5 minutes": [
         "5 minuts"
-      ],
-      "Account recovery": [
-        "Recuperació de compte"
       ],
       "Account storage": [
         "Emmagatzematge del compte"
@@ -9697,6 +9706,9 @@
       "Disable sharing outside the organization": [
         "Desactiva la compartició fora de l'organització"
       ],
+      "Disabled": [
+        "Desactivada"
+      ],
       "Display name": [
         "Nom a mostrar"
       ],
@@ -9789,9 +9801,6 @@
       ],
       "Folder location": [
         "Ubicació de la carpeta"
-      ],
-      "Folders and labels": [
-        "Carpetes i etiquetes"
       ],
       "Font family": [
         "Família tipogràfica"
@@ -9897,9 +9906,6 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de correu (IMAP)"
-      ],
-      "Mail settings": [
-        "Preferències de correu electrònic"
       ],
       "Main": [
         "Principal"
@@ -10170,9 +10176,6 @@
       ],
       "Spam": [
         "Correu brossa"
-      ],
-      "Spam and filters": [
-        "Correu brossa i filtres"
       ],
       "Starred": [
         "Destacats"
@@ -11175,6 +11178,29 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Get started for $1": [
+        "Comenceu per $1"
+      ],
+      "Get started for 1 €": [
+        "Comenceu per 1€"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11202,29 +11228,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Get started for $1": [
-        "Comenceu per $1"
-      ],
-      "Get started for 1 €": [
-        "Comenceu per 1€"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -11274,6 +11277,10 @@
       "${ n } message per day": [
         "${ n } missatge per dia",
         "${ n } missatges per dia"
+      ],
+      "${ n } user": [
+        "${ n } usuari",
+        "Fins a ${ n } usuaris"
       ],
       "${ n } vault": [
         "${ n } caixa forta",
@@ -11480,14 +11487,8 @@
       "Password health": [
         "Estat de la contrasenya"
       ],
-      "Password manager to secure credentials": [
-        "Gestor de contrasenyes per a assegurar les credencials"
-      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
-      ],
-      "Phone support (40+ users)": [
-        "Suport telefònic (a partir de 40 usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -11823,6 +11824,14 @@
         "El vostre pla seleccionat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -11841,14 +11850,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -11963,9 +11964,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalitzeu la vostra signatura de correu electrònic amb logos, imatges, icones de xarxes socials, enllaços als detalls de contacte, etc."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "L'Equip per a l'Èxit del Client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu per a clients amb almenys 6 usuaris."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o tercers accedeixin als missatges. Les úniques persones que poden llegir els missatges són el remitent i el destinatari previst."
@@ -12496,14 +12494,6 @@
       ],
       "Trash": [
         "Paperera"
-      ]
-    },
-    "option": {
-      "Members": [
-        "Membres"
-      ],
-      "Organization members": [
-        "Membres de l'organització"
       ]
     },
     "Option delay send seconds": {
@@ -13250,6 +13240,9 @@
       "Gift code": [
         "Codi regal"
       ],
+      "Group name": [
+        "Nom del grup"
+      ],
       "Link": [
         "Enllaç"
       ],
@@ -13528,6 +13521,23 @@
       ],
       "User": [
         "Usuari"
+      ]
+    },
+    "Safety review": {
+      "Invalid code": [
+        "El codi no és vàlid."
+      ],
+      "Show more": [
+        "Mostra més"
+      ],
+      "Verify": [
+        "Verifica"
+      ],
+      "Your Recovery Kit": [
+        "Kit de recuperació"
+      ],
+      "Your recovery phone": [
+        "Telèfon de recuperació"
       ]
     },
     "saml: Action": {
@@ -15635,10 +15645,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [

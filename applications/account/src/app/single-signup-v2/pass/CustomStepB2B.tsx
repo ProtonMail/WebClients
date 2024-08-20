@@ -21,8 +21,8 @@ import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
 import Step2 from '../Step2';
 import type { SignupCustomStepProps } from '../interface';
+import MnemonicRecoveryStep from './MnemonicRecoveryStep';
 import OrgSetupStep from './OrgSetupStep';
-import RecoveryStep from './RecoveryStep';
 
 enum Step {
     Recovery,
@@ -76,7 +76,7 @@ const CustomStepB2B = ({ measure, productAppName, logo, model, signupParameters 
     return (
         <Layout logo={logo} hasDecoration={false}>
             {step === Step.Recovery && (
-                <RecoveryStep
+                <MnemonicRecoveryStep
                     onMeasureClick={(type) => {
                         void measure({
                             event: TelemetryAccountSignupEvents.interactRecoveryKit,
@@ -105,13 +105,13 @@ const CustomStepB2B = ({ measure, productAppName, logo, model, signupParameters 
                             if (!cache || cache.type !== 'signup') {
                                 throw new Error('Missing cache');
                             }
-                            const signupActionResponse = await handleDisplayName({
+                            const updatedCache = await handleDisplayName({
                                 displayName,
                                 cache,
                             });
 
                             if (validateFlow()) {
-                                cacheRef.current = signupActionResponse.cache;
+                                cacheRef.current = updatedCache;
                                 setStep(Step.OrgSetup);
                             }
                         } catch (error) {

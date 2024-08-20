@@ -645,9 +645,6 @@
       "Italic": [
         "Kursywa"
       ],
-      "Keep my Plus subscription": [
-        "Zachowaj subskrypcję Plus"
-      ],
       "Label as": [
         "Oznacz jako"
       ],
@@ -852,11 +849,11 @@
       "Not saved": [
         "Nie zapisano"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Otwórz"
@@ -5831,6 +5828,9 @@
         "${ numOccurrences } znalezionych powtórzeń w zawartości wiadomości",
         "${ numOccurrences } znalezionych powtórzeń w zawartości wiadomości"
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } zapewnia łatwy sposób tworzenia adresów e-mail dla niezaufanych stron trzecich, gdzie nie chcesz ujawniać swojego prawdziwego adresu."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "Plan ${ plan.Title } wymaga co najmniej 1 dedykowanego serwera ${ serverPricePerMonth }"
       ],
@@ -6211,6 +6211,12 @@
       ],
       "Create a new contact group": [
         "Utwórz nową grupę kontaktów"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Utwórz bezpieczną chmurę dla ${ n } użytkownika",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników",
+        "Utwórz bezpieczną chmurę dla ${ n } użytkowników"
       ],
       "Create in": [
         "Utwórz w"
@@ -7642,12 +7648,6 @@
         "Zaznaczono **${ elementsCount } wiadomości**.",
         "Zaznaczono **${ elementsCount } wiadomości**.",
         "Zaznaczono **${ elementsCount } wiadomości**."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "W tym dniu stracisz dostęp do funkcji planu Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "W tym dniu stracisz dostęp do serwerów planu Plus i ich funkcji."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
@@ -9531,14 +9531,8 @@
       "Password health": [
         "Jakość hasła"
       ],
-      "Password manager to secure credentials": [
-        "Menedżer haseł do zabezpieczania danych logowania"
-      ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
-      ],
-      "Phone support (40+ users)": [
-        "Wsparcie telefoniczne (dla ponad 40 użytkowników)"
       ],
       "Priority email support": [
         "Priorytetowe wsparcie e-mail"
@@ -9683,9 +9677,6 @@
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)",
         "Udostępnianie sejfu (do ${ n } użytkowników)"
-      ],
-      "Version history": [
-        "Historia wersji"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skanujemy dark web, aby sprawdzić, czy adresy lub aliasy ${ BRAND_NAME } zostały ujawnione. W przypadku wycieku danych zostaniesz powiadomiony."
@@ -9937,9 +9928,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizuj swój podpis za pomocą logo, obrazów, ikon mediów społecznościowych, linków do szczegółów kontaktu i innych elementów"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej 6 użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta ${ BRAND_NAME }"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zapobiega dostępowi do wiadomości przez ${ BRAND_NAME } lub strony trzecie. Wiadomości mogą zostać odczytane tylko przez nadawcę i odbiorcę."
@@ -13576,11 +13564,6 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Przejdź do aplikacji Wallet"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Przechowuj i wysyłaj Bitcoiny w bezpieczny sposób"
       ]
     },
     "wallet_signup_2024:Bug category": {

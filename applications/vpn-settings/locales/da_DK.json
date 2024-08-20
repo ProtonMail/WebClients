@@ -202,14 +202,17 @@
       "Disable": [
         "Deaktivér"
       ],
-      "Disable E2EE for group address": [
-        "Deaktiver E2EE for gruppeadresse"
+      "Disable E2EE group mail encryption": [
+        "Deaktiver kryptering af E2EE-gruppemail"
       ],
       "Discard": [
         "Kassér"
       ],
       "Discard changes": [
         "Kassér ændringer"
+      ],
+      "Domain names": [
+        "Domænenavne"
       ],
       "Done": [
         "Udført"
@@ -277,8 +280,8 @@
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
       ],
-      "Enable E2EE for group address": [
-        "Aktiver E2EE for gruppeadresse"
+      "Enable E2EE group mail encryption": [
+        "Aktiver kryptering af E2EE-gruppemail"
       ],
       "Enable multi-user support": [
         "Aktivere understøttelse af flere brugere"
@@ -355,9 +358,6 @@
       "Keep logo": [
         "Behold logo"
       ],
-      "Keep my Plus subscription": [
-        "Behold mit Plus-abonnement"
-      ],
       "Let's talk": [
         "Lad os snakke"
       ],
@@ -366,6 +366,9 @@
       ],
       "Loading verification": [
         "Indlæser verifikation"
+      ],
+      "Lost access to your 2FA device?": [
+        "Mistet adgang til din 2FA-enhed?"
       ],
       "Make admin": [
         "Gør til admin"
@@ -451,9 +454,6 @@
       "Remove all members": [
         "Fjern alle medlemmer"
       ],
-      "Remove all members from group": [
-        "Fjern alle medlemmer fra gruppe"
-      ],
       "Remove bonuses": [
         "Fjern bonusser"
       ],
@@ -483,9 +483,6 @@
       ],
       "Resend code": [
         "Send kode igen"
-      ],
-      "Resend invitation": [
-        "Gensend invitation"
       ],
       "Reset credentials": [
         "Nulstil legitimationsoplysninger"
@@ -732,11 +729,6 @@
       ],
       "Zoom out": [
         "Zoom ud"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Tilføj pm.me-domæne"
       ]
     },
     "Action subscription": {
@@ -3430,6 +3422,9 @@
         "+${ organization.BonusVPN }-forbindelse til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)",
         "+${ organization.BonusVPN }-forbindelser til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)"
       ],
+      "2FA disabled": [
+        "2FA deaktiveret"
+      ],
       "30-day money-back guarantee": [
         "30 dages tilbagebetalingsgaranti"
       ],
@@ -3499,6 +3494,9 @@
       ],
       "All Events ": [
         "Alle begivenheder "
+      ],
+      "All members have been added.": [
+        "Alle medlemmer er blevet tilføjet."
       ],
       "All your changes will be lost.": [
         "Alle dine ændringer vil gå tabt."
@@ -3673,11 +3671,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -3688,6 +3686,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } gateway-server",
         "Sletter ${ deletedServerCount } gateway-servere"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Hvis du deaktiverer totrins-godkendelse, bliver din konto mindre sikker. Gør kun dette med det største forbehold."
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -3851,6 +3852,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Gruppeadresser kan kun oprettes for tilpassede domæner. Gå til siden ${ linkToDomainPage } for at tilføje et tilpasset domæne."
       ],
       "here": [
         "her"
@@ -4551,6 +4555,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denne bekræftelse kan tage op til en time. Efter en vellykket bekræftelse må du ikke fjerne TXT-posten, da den skal bruges til at bekræfte, at du fortsat ejer domænet."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Dette vil deaktivere totrins-godkendelse, herunder både godkendelsesappen og sikkerhedsnøgle-metoderne."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette gør det muligt at benytte PayPal til betaling af dit ${ BRAND_NAME }-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, bedes du deaktivere disse for at fortsætte."
       ],
@@ -4670,6 +4677,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Upload din organisations logo for at styrke din varemærkeidentitet og give dine brugere en personlig oplevelse."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Brug en gendannelsesmetode til at deaktivere dine totrins-godkendelsesmetoder."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Brug den bedste server i henhold til den aktuelle belastning og placering: ${ formattedBestServerName }"
@@ -4936,12 +4946,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil blive omdirigeret til ${ destination } efter login."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Du vil miste adgangen til Plus-funktioner på denne dato."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Du vil miste adgangen til Plus-servere og funktioner på denne dato."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du skal bruge en ${ BRAND_NAME }-adresse for at bruge ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
       ],
@@ -5147,6 +5151,12 @@
       ],
       "Account storage": [
         "Kontolagerplads"
+      ],
+      "Add all organization members": [
+        "Tilføj alle organisationsmedlemmer"
+      ],
+      "Add group member": [
+        "Tilføj gruppemedlem"
       ],
       "Address": [
         "Adresse"
@@ -6287,17 +6297,8 @@
       "Password health": [
         "Adgangskode-sundhed"
       ],
-      "Password manager to secure credentials": [
-        "Adgangskodehåndtering for at sikre adgangsoplysninger"
-      ],
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
-      ],
-      "Phone support (40+ users)": [
-        "Telefon-support (40+ brugere)"
-      ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Premium-funktioner i ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
       ],
       "Priority email support": [
         "Prioriteret e-mail-support"
@@ -6446,9 +6447,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling af boks (op til ${ n } person)",
         "Deling af boks (op til ${ n } personer)"
-      ],
-      "Version history": [
-        "Versionshistorik"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
@@ -6729,9 +6727,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personliggør din e-mail-signatur med logoer, billeder, ikoner til sociale medier, links til dine kontaktoplysninger og meget mere."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesucces-teamet i den europæiske åbningstid for kunder med 6 eller flere brugere."
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer, at beskeder kan tilgås af ${ BRAND_NAME } eller tredjeparter. De eneste personer, der kan læse beskederne, er afsenderen og den tilsigtede modtager."
       ],
@@ -6898,6 +6893,9 @@
       "An external address cannot be default": [
         "En ekstern adresse kan ikke være standard"
       ],
+      "Downloaded 2FA recovery codes": [
+        "Hentede 2FA-gendannelseskoder"
+      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -6990,17 +6988,14 @@
       ]
     },
     "option": {
-      "Everyone, incl. outside": [
-        "Alle, inkl. dem udenfor"
+      "Everyone": [
+        "Alle"
       ],
-      "Members": [
-        "Medlemmer"
+      "Group members": [
+        "Gruppemedlemmer"
       ],
-      "Nobody by default": [
-        "Ingen som standard"
-      ],
-      "Organization members": [
-        "Organisationsmedlemmer"
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -7450,6 +7445,9 @@
       ],
       "Gift code": [
         "Gavekode"
+      ],
+      "Group name": [
+        "Gruppenavn"
       ],
       "Other": [
         "Andet"
@@ -8503,6 +8501,9 @@
       "1 email address": [
         "1 e-mailadresse"
       ],
+      "1 email address per user": [
+        "1 e-mailadresse pr. bruger"
+      ],
       "1 VPN connection": [
         "1 VPN-forbindelse"
       ],
@@ -9360,11 +9361,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -9484,6 +9485,9 @@
       ],
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
+      ],
+      "Disable two-factor authentication?": [
+        "Deaktivér totrins-godkendelse?"
       ],
       "Discard changes?": [
         "Kassér ændringer?"
@@ -10292,11 +10296,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Opbevar og overfør dine bitcoins sikkert"
       ]
     },
     "wallet_signup_2024:Bug category": {

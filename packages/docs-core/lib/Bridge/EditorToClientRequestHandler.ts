@@ -6,11 +6,13 @@ import type {
   InternalEventBusInterface,
   RtsMessagePayload,
 } from '@proton/docs-shared'
+import type { WordCountInfoCollection } from '@proton/docs-shared'
 import type { UserState } from '@lexical/yjs'
 import type { EditorOrchestratorInterface } from '../Services/Orchestrator/EditorOrchestratorInterface'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import type { ErrorInfo } from 'react'
 import { ApplicationEvent } from '../Application/ApplicationEvent'
+import { WordCountEvent } from './WordCountEvent'
 
 /** Handle messages sent by the editor to the client */
 export class EditorToClientRequestHandler implements EditorRequiresClientMethods {
@@ -85,19 +87,35 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     link.remove()
   }
 
-  async reportError(error: Error, extraInfo?: { irrecoverable?: boolean; errorInfo?: ErrorInfo }): Promise<void> {
-    traceError(error, {
-      tags: {
-        'editor-to-client': true,
-      },
-      extra: {
-        errorInfo: extraInfo?.errorInfo ?? {},
-      },
-    })
-
-    if (extraInfo?.irrecoverable) {
-      this.docOrchestrator.editorReportingFatalError(error.message)
+  async reportError(
+    error: Error,
+    audience: 'user-and-devops' | 'devops-only' | 'user-only',
+    extraInfo?: { irrecoverable?: boolean; errorInfo?: ErrorInfo; lockEditor?: boolean },
+  ): Promise<void> {
+    if (audience == 'user-and-devops' || audience == 'devops-only') {
+      traceError(error, {
+        tags: {
+          'editor-to-client': true,
+        },
+        extra: {
+          errorInfo: extraInfo?.errorInfo ?? {},
+        },
+      })
     }
+
+    if (audience === 'user-and-devops' || audience === 'user-only') {
+      this.docOrchestrator.editorReportingError(error.message, {
+        irrecoverable: extraInfo?.irrecoverable,
+        lockEditor: extraInfo?.lockEditor,
+      })
+    }
+  }
+
+  async reportWordCount(wordCountInfo: WordCountInfoCollection): Promise<void> {
+    this.eventBus.publish({
+      type: WordCountEvent,
+      payload: wordCountInfo,
+    })
   }
 
   updateFrameSize(size: number): void {

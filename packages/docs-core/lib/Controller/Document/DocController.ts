@@ -82,6 +82,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   docsServerConnectionReady = false
   didAlreadyReceiveEditorReadyEvent = false
   isRefetchingStaleCommit = false
+  hasEditorRenderingIssue = false
   readonly updatesReceivedWhileEditorInvokerWasNotReady: (DecryptedMessage | ProcessedIncomingRealtimeEventMessage)[] =
     []
   websocketStatus: 'connected' | 'connecting' | 'disconnected' = 'disconnected'
@@ -428,6 +429,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       this.doesUserHaveEditingPermissions() &&
       !this.isExperiencingErroredSync &&
       !this.isLockedDueToSizeContraint &&
+      !this.hasEditorRenderingIssue &&
       this.websocketStatus === 'connected'
     ) {
       this.logger.info('Changing editing locked to false')
@@ -598,6 +600,12 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       translatedError: c('Error')
         .t`The last update you made to the document is either too large, or would exceed the total document size limit. Editing has been temporarily disabled. Your change will not be saved. Please export a copy of your document and reload the page.`,
     })
+  }
+
+  editorIsRequestingToLockAfterRenderingIssue(): void {
+    this.hasEditorRenderingIssue = true
+
+    this.reloadEditingLockedState()
   }
 
   async editorRequestsPropagationOfUpdate(message: RtsMessagePayload, debugSource: BroadcastSource): Promise<void> {

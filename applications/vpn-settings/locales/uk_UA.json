@@ -343,9 +343,6 @@
       "Keep logo": [
         "Залишити логотип"
       ],
-      "Keep my Plus subscription": [
-        "Зберегти передплату Plus"
-      ],
       "Let's talk": [
         "Поговорімо"
       ],
@@ -439,9 +436,6 @@
       "Remove all members": [
         "Видалити всіх учасників"
       ],
-      "Remove all members from group": [
-        "Видалити всіх учасників з групи"
-      ],
       "Remove bonuses": [
         "Вилучити бонуси"
       ],
@@ -471,9 +465,6 @@
       ],
       "Resend code": [
         "Надіслати код повторно"
-      ],
-      "Resend invitation": [
-        "Повторно надіслати запрошення"
       ],
       "Reset credentials": [
         "Скинути облікові дані"
@@ -717,11 +708,6 @@
       ],
       "Zoom out": [
         "Зменшити"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Додати домен «pm.me»"
       ]
     },
     "Action subscription": {
@@ -3619,6 +3605,12 @@
       "Country code": [
         "Код країни"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Створити захищену хмару для користувача ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Створюйте й керуйте підлеглими обліковими записами та призначайте їм поштові адреси у своєму власному домені."
       ],
@@ -3652,11 +3644,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Налаштуйте зовнішній вигляд програм ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "виділені сервери"
-      ],
       "Dedicated servers": [
         "Виділені сервери"
+      ],
+      "dedicated servers": [
+        "виділені сервери"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Щоб мати можливість якісного контролю доступу, до приватних мережевих шлюзів можна додати виділені сервери з виділеними IP-адресами."
@@ -4944,12 +4936,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Після входу ви будете перенаправлені на ${ destination }."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "З цієї дати ви втратите доступ до функцій Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "З цієї дати ви втратите доступ до серверів і функцій Plus."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
@@ -6326,14 +6312,8 @@
       "Password health": [
         "Якість пароля"
       ],
-      "Password manager to secure credentials": [
-        "Менеджер паролів для захисту облікових даних"
-      ],
       "Password-protected Emails": [
         "Електронні листи, захищені паролем"
-      ],
-      "Phone support (40+ users)": [
-        "Підтримка за телефоном (40+ користувачів)"
       ],
       "Priority email support": [
         "Пріоритетна підтримка електронною поштою"
@@ -6769,9 +6749,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Налаштуйте свій підпис з використанням логотипів, зображень, піктограм соціальних мереж, посилань на свої контакти та інших можливостей"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Команда підтримки ${ BRAND_NAME } надає допомогу в телефонному режимі впродовж європейського робочого часу клієнтам, які мають 6 або більше користувачів"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Запобігає доступу до повідомлень ${ BRAND_NAME } чи сторонніх осіб. Відправник та отримувач повідомлень – єдині, хто може читати повідомлення."
       ],
@@ -7029,20 +7006,6 @@
       ],
       "The whole organization": [
         "Вся організація"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Усі, включно зі сторонніми"
-      ],
-      "Members": [
-        "Учасники"
-      ],
-      "Nobody by default": [
-        "По стандарту нікому"
-      ],
-      "Organization members": [
-        "Члени організації"
       ]
     },
     "Organization capacity error": {
@@ -7478,6 +7441,9 @@
       ],
       "Gift code": [
         "Подарунковий код"
+      ],
+      "Group name": [
+        "Назва групи"
       ],
       "Other": [
         "Інше"
@@ -8666,6 +8632,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } з автоматичною переадресацією"
+      ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } календар на користувача",
         "${ MaxCalendars } календарі на користувача",
@@ -8720,6 +8689,9 @@
       "10 email addresses": [
         "10 адрес електронної пошти"
       ],
+      "2 users": [
+        "2 користувачі"
+      ],
       "20 email addresses per user": [
         "20 адрес е-пошти на користувача"
       ],
@@ -8758,6 +8730,9 @@
       ],
       "Custom schedule send and snooze times": [
         "Власний час запланованого надсилання та відкладення"
+      ],
+      "Desktop app and email client support (via IMAP)": [
+        "Підтримка додатків робочого стола та поштового клієнта (через IMAP)"
       ],
       "Direct contribution to our mission": [
         "Прямий внесок до нашої місії"
@@ -9011,6 +8986,9 @@
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Якщо ви ввели дійсний резервний номер телефону, ми надішлемо вам повідомлення з вашими користувацькими іменами впродовж хвилини."
+      ],
+      "Invitation rejected": [
+        "Запрошення відхилено"
       ],
       "Invitation sent": [
         "Запрошення надіслано"
@@ -9338,11 +9316,11 @@
       "Card verification": [
         "Перевірка картки"
       ],
-      "Catch-All address": [
-        "Catch-All адреса"
-      ],
       "Catch-all address": [
         "Catch-all адреси"
+      ],
+      "Catch-All address": [
+        "Catch-All адреса"
       ],
       "Change login password": [
         "Змінити пароль входу"
@@ -10296,11 +10274,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin електронною поштою"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Безпечно зберігайте й переказуйте Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

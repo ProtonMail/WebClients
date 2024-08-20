@@ -294,6 +294,16 @@ export const useBitcoinAddresses = ({
         walletsChainData,
     ]);
 
+    const updateBitcoinAddressHelper = useCallback((accountId: string, update: Partial<BitcoinAddressHelper>) => {
+        setBitcoinAddressHelperByWalletAccountId((prev) => {
+            const prevAccount = prev[accountId];
+            return {
+                ...prev,
+                ...(prevAccount && { [accountId]: { ...prevAccount, ...update } }),
+            };
+        });
+    }, []);
+
     useItemEffect(
         (accountData) => {
             const { wallet, account, isSyncing } = accountData;
@@ -327,6 +337,8 @@ export const useBitcoinAddresses = ({
                         return;
                     }
 
+                    updateBitcoinAddressHelper(account.ID, { isLoading: true });
+
                     try {
                         await api.wallet.updateWalletAccountLastUsedIndex(
                             wallet.ID,
@@ -337,14 +349,9 @@ export const useBitcoinAddresses = ({
 
                     const newReceiveBitcoinAddress = await accountChainData.account.getNextReceiveAddress();
 
-                    setBitcoinAddressHelperByWalletAccountId((prev) => {
-                        const prevAccount = prev[account.ID];
-                        return {
-                            ...prev,
-                            ...(prevAccount && {
-                                [account.ID]: { ...prevAccount, receiveBitcoinAddress: newReceiveBitcoinAddress },
-                            }),
-                        };
+                    updateBitcoinAddressHelper(account.ID, {
+                        receiveBitcoinAddress: newReceiveBitcoinAddress,
+                        isLoading: false,
                     });
                 };
 
@@ -361,7 +368,7 @@ export const useBitcoinAddresses = ({
             void run();
         },
         allWalletAccounts,
-        [walletsChainData]
+        [walletsChainData, updateBitcoinAddressHelper]
     );
 
     return {

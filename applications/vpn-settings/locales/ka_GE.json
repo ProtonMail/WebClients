@@ -202,14 +202,17 @@
       "Disable": [
         "გათიშვა"
       ],
-      "Disable E2EE for group address": [
-        "E2EE-ის გამორთვა ჯგუფის მისამართისთვის"
+      "Disable E2EE group mail encryption": [
+        "E2EE ჯგუფური ელფოსტის დაშიფვრის გამორთვა"
       ],
       "Discard": [
         "მოცილება"
       ],
       "Discard changes": [
         "ცვლილებების გაუქმება"
+      ],
+      "Domain names": [
+        "დომენის სახელები"
       ],
       "Done": [
         "მზადაა"
@@ -277,8 +280,8 @@
       "enable desktop notifications": [
         "სამუშაო მაგიდის გაფრთხილებების ჩართვა"
       ],
-      "Enable E2EE for group address": [
-        "E2EE-ის ჩართვა ჯგუფის მისამართისთვის"
+      "Enable E2EE group mail encryption": [
+        "E2EE ჯგუფური ელფოსტის დაშიფვრის ჩართვა"
       ],
       "Enable multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
@@ -355,9 +358,6 @@
       "Keep logo": [
         "ლოგოს შენარჩუნება"
       ],
-      "Keep my Plus subscription": [
-        "ჩემი Plus გამოწერის შენარჩუნება"
-      ],
       "Let's talk": [
         "ვიბაზროთ"
       ],
@@ -366,6 +366,9 @@
       ],
       "Loading verification": [
         "შემოწმების ჩატვირთვა"
+      ],
+      "Lost access to your 2FA device?": [
+        "დაკარგეთ წვდომა თქვენს 2FA მოწყობილობასთან?"
       ],
       "Make admin": [
         "ადმინობის მინიჭება"
@@ -451,9 +454,6 @@
       "Remove all members": [
         "ყველა წევრის წაშლა"
       ],
-      "Remove all members from group": [
-        "ჯგუფიდან ყველა წევრის წაშლა"
-      ],
       "Remove bonuses": [
         "ბონუსების წაშლა"
       ],
@@ -483,9 +483,6 @@
       ],
       "Resend code": [
         "კოდის თავიდან გაგზავნა"
-      ],
-      "Resend invitation": [
-        "მოსაწვევის თავიდან გაგზავნა"
       ],
       "Reset credentials": [
         "მომხმარებლისა და პაროლის თავიდან დაყენება"
@@ -732,11 +729,6 @@
       ],
       "Zoom out": [
         "დაპატარავება"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "დაამატეთ დომენი pm.me"
       ]
     },
     "Action subscription": {
@@ -3430,6 +3422,9 @@
         "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )",
         "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )"
       ],
+      "2FA disabled": [
+        "2FA გათიშულია"
+      ],
       "30-day money-back guarantee": [
         "30 დღიანი გარანტირებული ფულის დაბრუნება"
       ],
@@ -3499,6 +3494,9 @@
       ],
       "All Events ": [
         "ყველა ღონისძიება "
+      ],
+      "All members have been added.": [
+        "ყველა წევრი დამატებულია."
       ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
@@ -3638,6 +3636,10 @@
       "Country code": [
         "ქვეყნის კოდი"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის",
+        "დაცული ღრუბლის შექმნა ${ n } წევრისთვის"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "შექმენით და მართეთ ქვეანგეარიშები და მიანიჭეთ მათ ელფოსტის მისამართები თქვენი პირადი დომენით."
       ],
@@ -3669,11 +3671,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME }-ის აპლიკაციების გარეგნობის მორგება."
       ],
-      "dedicated servers": [
-        "გამოყოფილი სერვერი"
-      ],
       "Dedicated servers": [
         "გამოყოფილი სერვერები"
+      ],
+      "dedicated servers": [
+        "გამოყოფილი სერვერი"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
@@ -3684,6 +3686,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } რაუტერი სერვერის წაშლა",
         "${ deletedServerCount } რაუტერი სერვერის წაშლა"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "2FA-ის გათიშვა თქვენს ანგარიშს ნაკლებად დაცულს გახდის. გააგრძელეთ, თუ ზუსტად იცით, რას აკეთებთ."
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy-ის ლოგო"
@@ -3847,6 +3852,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე, მიიღეთ SAML მეტამონაცემები ${ appName }-სთვის და შემოიტანეთ ის აქ."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "ჯგუფის მისამართების შექმნა, მხოლოდ, მორგებული დომენებისთვის შეგიძლიათ. გადადით ${ linkToDomainPage }-ზე მორგებული დომენის დასამატებლად."
       ],
       "here": [
         "აქ"
@@ -4547,6 +4555,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "ამ გადამოწმებას ერთ საათამდე შეიძლება, დასჭირდეს. წარმატებული შემოწმების შემდეგ ნუ წაშლით ამ TXT ჩანაწერს. ის იმ ფაქტის შესამოწმებლად გამოიყენება, რომ დომენი, ჯერ კიდევ, თქვენ გეკუთვნით."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "ეს 2FA-ს გამორთავს ორივე, ავთენტიკატორი აპის და უსაფრთხოების გასაღების მეთოდების ჩათვლით."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "მოგცემთ ${ BRAND_NAME }-ის გამოწერის გადასახდელად PayPal-ის გამოყენების საშუალებას. მოხდება თქვენი გადამისამართება PayPal-ზე ბრაუზერის ახალ ჩანართში. თუ იყენებთ მხტუნარების მბლოკავებს, გთხოვთ, გამორთოთ ისინი."
       ],
@@ -4666,6 +4677,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "ატვირთეთ თქვენი ორგანიზაციის ლოგო, რომ გაზარდოთ თქვენი ბრენდის ცნობადობა და შექმნათ პერსონალიზებული გარემო თქვენი მომხმარებლებისთვის."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "გამოიყენეთ აღდგენის მეთოდი 2FA-ის მეთოდების გასათიშად."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "გამოიყენეთ საუკეთესო სერვერი თქვენი მიმდინარე მდებარეობისა და დატვირთვის მიხედვით: ${ formattedBestServerName }"
@@ -4932,12 +4946,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "შესვლის შემდეგ ${ destination }-ზე გადაგამისამართებთ."
       ],
-      "You will lose access to Plus features on this date.": [
-        "ამ თარიღის დადგომისას Plus-ის თვისებებთან წვდომას დაკარგავთ."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "ამ თარიღის მოსვლისას Plus სერვერებთან და მის ფუნქციებთან წვდომას დაკარგავთ."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME }-ის და ${ CALENDAR_APP_NAME }-ის გამოსაყენებლად ${ BRAND_NAME }-ის მისამართი დაგჭირდებათ"
       ],
@@ -5143,6 +5151,12 @@
       ],
       "Account storage": [
         "ანგარიშის საცავი"
+      ],
+      "Add all organization members": [
+        "ყველა ორგანიზაციის წევრის დამატება"
+      ],
+      "Add group member": [
+        "ჯგუფის წევრის დამატება"
       ],
       "Address": [
         "მისამართი"
@@ -6283,14 +6297,8 @@
       "Password health": [
         "პაროლის სიძლიერე"
       ],
-      "Password manager to secure credentials": [
-        "პაროლების მმართველი ავტორიზაციის დეტალების დასაცავად"
-      ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
-      ],
-      "Phone support (40+ users)": [
-        "სატელეფონო მხარდაჭერა (40+ მომხმარებელი)"
       ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
@@ -6439,9 +6447,6 @@
       "Vault sharing (up to ${ n } person)": [
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
-      ],
-      "Version history": [
-        "ვერსიის ისტორია"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
@@ -6722,9 +6727,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "მოირგეთ თქვენი ელფოსტის ხელმოწერები მათში ლოგოების, გამოსახულებების, სოცმედიის ხატულების, კონტაქტების დეტალებზე ბმულების და ა. შ. დამატებით"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "სატელეფონო მხარდაჭერა ხელმისაწვდომია ${ BRAND_NAME }-ის მომხმარებელთა წარმატების გუნდიდან ევროპის სამუშაო საათებში, მომხმარებლებისთვის 6 ან მეტი მომხმარებლით"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "კრძალავს შეტყობინებებთან ${ BRAND_NAME }-ის და მესამე პირების წვდომას. შეტყობინების წაკითხვა, მხოლოდ, გამგზავნს და მიმღებს შეუძლიათ."
       ],
@@ -6891,6 +6893,9 @@
       "An external address cannot be default": [
         "გარე მისამართი ნაგულისხმები ვერ იქნება"
       ],
+      "Downloaded 2FA recovery codes": [
+        "2FA აღდგენის კოდების გადმოწერა"
+      ],
       "Invalid code": [
         "არასწორი კოდი"
       ],
@@ -6983,17 +6988,14 @@
       ]
     },
     "option": {
-      "Everyone, incl. outside": [
-        "ყველა, გარეს ჩათვლით"
+      "Everyone": [
+        "ყველა"
       ],
-      "Members": [
-        "წევრები"
+      "Group members": [
+        "ჯგუფის წევრები"
       ],
-      "Nobody by default": [
-        "არავინ ნაგულისხმევად"
-      ],
-      "Organization members": [
-        "ორგანიზაციის წევრები"
+      "No one": [
+        "არავინ"
       ]
     },
     "Organization capacity error": {
@@ -7443,6 +7445,9 @@
       ],
       "Gift code": [
         "სასაჩუქრე კოდი"
+      ],
+      "Group name": [
+        "ჯგუფის სახელი"
       ],
       "Other": [
         "სხვა"
@@ -8496,6 +8501,9 @@
       "1 email address": [
         "ელფოსტის 1 მისამართი"
       ],
+      "1 email address per user": [
+        "1 ელფოსტის მისამართი თითოეული მომხმარებლისთვის"
+      ],
       "1 VPN connection": [
         "1 VPN შეერთება"
       ],
@@ -9353,10 +9361,10 @@
       "Card verification": [
         "ბარათის გადამოწმება"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "დომენის ყველა ელფოსტის მიმღები მისამართი"
       ],
       "Change login password": [
@@ -9477,6 +9485,9 @@
       ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"
+      ],
+      "Disable two-factor authentication?": [
+        "გამოვრთო 2FA?"
       ],
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
@@ -10285,11 +10296,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin ელფოსტით"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "უსაფრთხოდ შეინახეთ და გადარიცხეთ თქვენი bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { DriveLogo } from '@proton/components/components';
 import { getNCalendarsFeature } from '@proton/components/containers/payments/features/calendar';
 import {
+    getDocumentEditor,
     getEndToEndEncryption,
     getFreeDriveStorageFeature,
     getPremiumFeatures,
@@ -11,12 +12,7 @@ import {
     getVersionHistory,
 } from '@proton/components/containers/payments/features/drive';
 import { getSupport } from '@proton/components/containers/payments/features/highlights';
-import {
-    getCustomSecureMailB2B,
-    getFoldersAndLabelsFeature,
-    getNAddressesFeature,
-    getNDomainsFeature,
-} from '@proton/components/containers/payments/features/mail';
+import { getCustomSecureMailB2B, getNAddressesFeature } from '@proton/components/containers/payments/features/mail';
 import { getPasswordManager } from '@proton/components/containers/payments/features/pass';
 import { getUpToNUsers } from '@proton/components/containers/payments/features/plan';
 import {
@@ -183,7 +179,7 @@ export const getDriveB2BBenefits = ({
 };
 
 export const getFreeDriveFeatures = ({ freePlan }: { freePlan: FreePlanDefault }) => {
-    return [getFreeDriveStorageFeature(freePlan), getEndToEndEncryption()];
+    return [getFreeDriveStorageFeature(freePlan), getDocumentEditor()];
 };
 
 export const getCustomDriveFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
@@ -207,7 +203,7 @@ export const getDrivePlusFeatures = ({ plan, freePlan }: { plan: Plan | undefine
     if (!plan) {
         return [];
     }
-    return [getStorageFeature(plan.MaxSpace, { freePlan }), getEndToEndEncryption(), getVersionHistory()];
+    return [getStorageFeature(plan.MaxSpace, { freePlan }), getDocumentEditor(), getVersionHistory()];
 };
 
 export const getBundleFeatures = ({ plan, freePlan }: { plan: Plan | undefined; freePlan: FreePlanDefault }) => {
@@ -216,7 +212,7 @@ export const getBundleFeatures = ({ plan, freePlan }: { plan: Plan | undefined; 
     }
     return [
         getStorageFeature(plan.MaxSpace, { freePlan }),
-        getEndToEndEncryption(),
+        getDocumentEditor(),
         getVersionHistory(),
         getPremiumFeatures(),
     ];
@@ -229,9 +225,9 @@ export const getFamilyFeatures = ({ plan, freePlan }: { plan: Plan | undefined; 
     return [
         getStorageFeature(plan.MaxSpace, { freePlan, family: true }),
         getUpToNUsers(6),
-        getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
-        getNDomainsFeature({ n: plan.MaxDomains || 1 }),
-        getFoldersAndLabelsFeature('unlimited'),
+        getDocumentEditor(),
+        getVersionHistory(),
+        getPremiumFeatures(),
     ];
 };
 
@@ -426,7 +422,7 @@ export const getDriveConfiguration = ({
         benefits,
         planCards,
         signupTypes: [SignupType.Email, SignupType.Username],
-        generateMnemonic: false,
+        generateMnemonic: true,
         onboarding: {
             user: false,
             signup: true,

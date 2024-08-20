@@ -1060,9 +1060,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin İnternet simgesini görüntüleyecek."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } yalnızca oturum açma, not ve kredi kartı kayıtlarını içe aktarır."
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } uygulaması verilere çevrim dışı erişebilmek için ${ BRAND_NAME } parolanızı isteyecek."
       ],
@@ -1533,8 +1530,14 @@
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Biyometri ile otomatik kilitleme için lütfen ek parolanızı doğrulayın."
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Ek parolanızla otomatik kilitleme için lütfen ek parolanızı yazın."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Geçerli kilidin kaydını kaldırmak için ek parolanızı yazın."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Otomatik kilitleme süresini güncellemek için lütfen ek parolanızı yazın."
       ],
       "Please confirm your password": [
         "Lütfen parolanızı onaylayın"
@@ -1908,9 +1911,6 @@
       ],
       "30 seconds": [
         "30 saniye"
-      ],
-      "4 hours": [
-        "4 saat"
       ],
       "5 minutes": [
         "5 dakika"

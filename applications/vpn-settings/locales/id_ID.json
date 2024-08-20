@@ -64,6 +64,9 @@
       "Allow": [
         "Izinkan"
       ],
+      "Always allow sending mail to group": [
+        "Selalu perbolehkan mengirim email ke grup"
+      ],
       "Apply": [
         "Terapkan"
       ],
@@ -199,14 +202,17 @@
       "Disable": [
         "Nonaktifkan"
       ],
-      "Disable E2EE for group address": [
-        "Nonaktifkan E2EE untuk alamat grup"
+      "Disable E2EE group mail encryption": [
+        "Nonaktifkan enkripsi pesan grup E2EE"
       ],
       "Discard": [
         "Buang"
       ],
       "Discard changes": [
         "Buang perubahan"
+      ],
+      "Domain names": [
+        "Nama domain"
       ],
       "Done": [
         "Selesai"
@@ -274,8 +280,8 @@
       "enable desktop notifications": [
         "mengaktifkan notifikasi desktop"
       ],
-      "Enable E2EE for group address": [
-        "Aktifkan E2EE untuk alamat grup"
+      "Enable E2EE group mail encryption": [
+        "Aktifkan enkripsi pesan grup E2EE"
       ],
       "Enable multi-user support": [
         "Aktifkan dukungan multi-pengguna"
@@ -352,9 +358,6 @@
       "Keep logo": [
         "Pertahankan logo"
       ],
-      "Keep my Plus subscription": [
-        "Pertahankan langganan Plus saya"
-      ],
       "Let's talk": [
         "Mari berbincang"
       ],
@@ -363,6 +366,9 @@
       ],
       "Loading verification": [
         "Memuat verifikasi"
+      ],
+      "Lost access to your 2FA device?": [
+        "Kehilangan akses ke perangkat 2FA Anda?"
       ],
       "Make admin": [
         "Jadikan admin"
@@ -448,9 +454,6 @@
       "Remove all members": [
         "Keluarkan semua anggota"
       ],
-      "Remove all members from group": [
-        "Keluarkan semua anggota dari grup"
-      ],
       "Remove bonuses": [
         "Hapus bonus"
       ],
@@ -480,9 +483,6 @@
       ],
       "Resend code": [
         "Kirim ulang kode"
-      ],
-      "Resend invitation": [
-        "Kirim ulang undangan"
       ],
       "Reset credentials": [
         "Atur ulang kredensial"
@@ -731,11 +731,6 @@
         "Perkecil"
       ]
     },
-    "action": {
-      "Add pm.me domain": [
-        "Tambah domain pm.me"
-      ]
-    },
     "Action subscription": {
       "Reactivate": [
         "Aktifkan kembali"
@@ -846,7 +841,7 @@
         "Lindungi kata sandi dan identitas Anda"
       ],
       "Safeguard your files and photos": [
-        "Lindungi berkas dan foto Anda"
+        "Amankan berkas dan foto Anda"
       ],
       "Secure your communications": [
         "Amankan komunikasi Anda"
@@ -2252,9 +2247,20 @@
         "Dapatkan seharga ${ price }"
       ]
     },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Ditagih per tahun dengan harga ${ amountBilled }. Hemat ${ amountSave } untuk 2 langganan ${ BRAND_NAME } Unlimited individu per tahun."
+      ]
+    },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "Penyimpanan 1 TB"
+      ],
       "2 users": [
         "2 pengguna"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Akses lengkap semua produk ${ BRAND_NAME }"
       ],
       "You save ${ amountSave }": [
         "Anda menghemat ${ amountSave }"
@@ -2266,6 +2272,11 @@
       ],
       "Double your storage": [
         "Gandakan penyimpanan Anda"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Perkenalkan ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email spam notification": {
@@ -2709,8 +2720,14 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Akun dengan domain khusus tidak dapat bergabung ke paket grup."
+      ],
       "customer support": [
         "layanan dukungan"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Paket grup saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jika Anda menerima undangan, kami akan mengalihkan Anda dari paket saat ini dan mengkredit akun Anda dengan sisa saldo."
@@ -2720,6 +2737,9 @@
       ],
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Akun Lifetime tidak dapat bergabung dalam paket grup."
       ],
       "Manage addresses.": [
         "Kelola alamat."
@@ -2769,6 +2789,9 @@
       "You have successfully joined the family group": [
         "Anda telah berhasil bergabung ke grup keluarga ini"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Anda memiliki faktur yang belum dibayar. Silakan dibayar sebelum bergabung dalam paket grup."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Anda harus mengatur domain khusus sebelum menambahkan lebih dari satu pengguna."
       ],
@@ -2783,6 +2806,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Anda tidak dapat menerima undangan ini dengan paket Anda saat ini."
       ]
     },
     "familyOffer_2023:Info": {
@@ -3367,6 +3393,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } koneksi untuk ${ VPN_APP_NAME } (yang memungkinkan Anda untuk menyambungkan lebih banyak perangkat ke VPN dalam satu waktu)"
       ],
+      "2FA disabled": [
+        "2FA dinonaktifkan"
+      ],
       "30-day money-back guarantee": [
         "Jaminan uang kembali dalam 30 hari"
       ],
@@ -3432,6 +3461,9 @@
       ],
       "All Events ": [
         "Semua Acara "
+      ],
+      "All members have been added.": [
+        "Semua anggota telah ditambahkan."
       ],
       "All your changes will be lost.": [
         "Seluruh perubahan yang Anda buat akan hilang."
@@ -3571,6 +3603,9 @@
       "Country code": [
         "Kode negara"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Buat awan yang aman untuk ${ n } anggota"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Buat dan kelola sub-akun dan tetapkan untuk mereka alamat email di domain kustom Anda."
       ],
@@ -3601,11 +3636,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Sesuaikan tampilan dan nuansa aplikasi ${ BRAND_NAME } Anda."
       ],
-      "dedicated servers": [
-        "server khusus"
-      ],
       "Dedicated servers": [
         "Server khusus"
+      ],
+      "dedicated servers": [
+        "server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -3615,6 +3650,9 @@
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Menghapus ${ deletedServerCount } server gateway"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Menonaktifkan autentikasi dua faktor akan membuat akun Anda kurang aman. Hanya lanjutkan jika benar-benar diperlukan."
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -3777,6 +3815,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Tuju penyedia identitas Anda, dapatkan metadata SAML untuk ${ appName }, dan impor metadata tersebut di sini."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Alamat grup hanya dapat dibuat untuk domain khusus. Pergi ke laman ${ linkToDomainPage } untuk menambahkan domain khusus."
       ],
       "here": [
         "di sini"
@@ -4103,7 +4144,7 @@
         "dari"
       ],
       "Once single sign-on is disabled for your organization:": [
-        "Ketika sistem masuk tunggal dinonaktifkan untuk organisasi Anda:"
+        "Pada saat single sign-on dinonaktifkan untuk organisasi Anda:"
       ],
       "Once you reset your password:": [
         "Setelah Anda mengatur ulang kata sandi Anda:"
@@ -4471,6 +4512,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Proses verifikasi ini dapat memakan waktu hingga satu jam. Setelah proses verifikasi berhasil, jangan hapus rekaman TXT ini karena rekaman ini akan dibutuhkan untuk mengonfirmasi bahwa Anda tetap merupakan pemilik dari domain yang bersangkutan."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Ini akan menonaktifkan autentikasi dua faktor, termasuk metode aplikasi autentikator dan kunci keamanan."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tindakan ini akan memungkinkan Anda untuk membayar langganan ${ BRAND_NAME } Anda melalui PayPal. Kami akan membuka PayPal di tab baru. Apabila Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
       ],
@@ -4590,6 +4634,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Unggah logo organisasi Anda untuk mengangkat identitas merek Anda dan menciptakan pengalaman yang personal bagi para pengguna Anda."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Gunakan metode pemulihan untuk menonaktifkan metode autentikasi dua faktor Anda."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
@@ -4849,12 +4896,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Anda akan dialihkan ke ${ destination } setelah masuk."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Anda akan kehilangan akses ke berbagai fitur Plus pada tanggal ini."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Anda akan kehilangan akses ke berbagai server dan fitur Plus pada tanggal ini."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Anda akan butuh alamat ${ BRAND_NAME } untuk dapat menggunakan ${ MAIL_APP_NAME } dan ${ CALENDAR_APP_NAME }"
       ],
@@ -5057,6 +5098,12 @@
       ],
       "Account storage": [
         "Penyimpanan akun"
+      ],
+      "Add all organization members": [
+        "Tambah seluruh anggota organisasi"
+      ],
+      "Add group member": [
+        "Tambah anggota grup"
       ],
       "Address": [
         "Alamat"
@@ -5983,6 +6030,9 @@
       "${ n } message per day": [
         "${ n } pesan per hari"
       ],
+      "${ n } user": [
+        "Sampai dengan ${ n } pengguna"
+      ],
       "${ n } vault": [
         "${ n } brankas"
       ],
@@ -6178,14 +6228,11 @@
       "Password health": [
         "Kesehatan kata sandi"
       ],
-      "Password manager to secure credentials": [
-        "Manajer kata sandi untuk mengamankan kredensial"
+      "Password manager": [
+        "Pengelola kata sandi"
       ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
-      ],
-      "Phone support (40+ users)": [
-        "Dukungan via telepon (40+ pengguna)"
       ],
       "Priority email support": [
         "Dukungan email prioritas"
@@ -6331,9 +6378,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Pembagian brankas (hingga ${ n } pengguna)"
       ],
-      "Version history": [
-        "Riwayat versi"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
       ]
@@ -6435,6 +6479,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Privasi tak terbatas dan lebih banyak penyimpanan sampai dengan 2 orang."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
@@ -6609,9 +6656,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Dukungan via telepon tersedia dari tim ${ BRAND_NAME } Customer Success pada hari dan jam kerja yang berlaku di Eropa pada umumnya, khusus untuk para pelanggan dengan 6 atau lebih pengguna"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Mencegah pesan untuk dapat diakses oleh ${ BRAND_NAME } atau pihak ketiga. Pesan Anda hanya akan dibaca oleh penerima dan Anda sendiri."
       ],
@@ -6688,7 +6732,7 @@
         "Kami tidak menyimpan log sesi yang merekam aktivitas online Anda, dan kami juga tidak mencatat metadata mana pun yang dapat membahayakan privasi Anda"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Kami berkomitmen untuk membantu para pelanggan kami tunduk pada standar undang-undang HIPAA/HITECH, yang ditujukan untuk melindungi rekam jejak kesehatan pribadi (PHI) masing-masing individu. Seluruh pelanggan ${ BRAND_NAME } for Business akan dapat menerima Perjanjian Kerjasama Bisnis (BAA) yang ditandatangani."
+        "Kami berkomitmen untuk membantu pelanggan untuk tunduk pada undang-undang HIPAA/HITECH yang melindungi rekam jejak kesehatan pribadi (PHI) masing-masing individu. Perjanjian Kerjasama Bisnis (BAA) yang ditandatangani tersedia bagi seluruh pelanggan ${ BRAND_NAME }."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Pada saat Anda terhubung ke VPN kami, kueri DNS Anda akan terkirim melalui terowongan VPN terenkripsi kami yang akan meningkatkan privasi dan keamanan Anda"
@@ -6776,6 +6820,9 @@
       ],
       "An external address cannot be default": [
         "Alamat eksternal tidak dapat dijadikan alamat default"
+      ],
+      "Downloaded 2FA recovery codes": [
+        "Kode pemulihan 2FA terunduh"
       ],
       "Invalid code": [
         "Kode tidak valid"
@@ -6869,17 +6916,14 @@
       ]
     },
     "option": {
-      "Everyone, incl. outside": [
-        "Siapa pun, termasuk orang luar"
+      "Everyone": [
+        "Semua orang"
       ],
-      "Members": [
-        "Anggota"
+      "Group members": [
+        "Anggota grup"
       ],
-      "Nobody by default": [
-        "Tidak ada siapa pun secara bawaan"
-      ],
-      "Organization members": [
-        "Anggota organisasi"
+      "No one": [
+        "Tidak seorang pun"
       ]
     },
     "Organization capacity error": {
@@ -7324,6 +7368,9 @@
       ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "Group name": [
+        "Nama grup"
       ],
       "Other": [
         "Lainnya"
@@ -8341,6 +8388,9 @@
       "1 email address": [
         "1 alamat email"
       ],
+      "1 email address per user": [
+        "1 alamat email per pengguna"
+      ],
       "1 VPN connection": [
         "1 koneksi VPN"
       ],
@@ -8687,7 +8737,7 @@
         "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Ketika Anda membatalkan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menyediakan hingga 1 GB untuk penyimpanan Mail dan hingga 5 GB untuk penyimpanan Drive. Tim Anda akan mengalami gangguan dalam pekerjaan mereka karena pengguna tambahan tidak didukung dalam paket gratis."
+        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menyediakan hingga ruang penyimpanan Mail hingga 1 GB dan Drie hingga 5 GB. Tim Anda akan mengalami gangguan dalam pekerjaan mereka karena pengguna tambahan tidak didukung dalam paket gratis."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Drive hingga 5 GB dan Mail hingga 1 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
@@ -9193,11 +9243,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-All address": [
-        "Alamat Catch-All"
-      ],
       "Catch-all address": [
         "Alamat catch-all"
+      ],
+      "Catch-All address": [
+        "Alamat Catch-All"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -9316,6 +9366,9 @@
       "Disable two-factor authentication": [
         "Nonaktifkan autentikasi dua faktor"
       ],
+      "Disable two-factor authentication?": [
+        "Nonaktifkan autentikasi dua faktor?"
+      ],
       "Discard changes?": [
         "Batalkan perubahan?"
       ],
@@ -9375,6 +9428,9 @@
       ],
       "Email subscriptions": [
         "Langganan email"
+      ],
+      "Enter 2FA code": [
+        "Masukkan kode 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Masukkan endpoint ke penyedia identitas Anda"
@@ -9807,6 +9863,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Hal ini dapat disebabkan oleh pengaturan ulang kata sandi atau pengguna yang belum masuk."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Alamat email ini akan ditampilkan kepada seluruh anggota organisasi pada saat melangsungkan tindakan manajemen akun."
       ],
@@ -10106,11 +10165,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin melalui email"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Simpan dan transfer Bitcoin Anda secara aman"
       ]
     },
     "wallet_signup_2024:Bug category": {

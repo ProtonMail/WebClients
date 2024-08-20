@@ -973,6 +973,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "A apărut o problemă la pornirea ${ PASS_SHORT_APP_NAME }. Dacă această problemă continuă, contactați asistența pentru clienți pentru ajutor."
       ],
+      "Wrong extra password": [
+        "Parolă suplimentară greșită."
+      ],
       "Wrong password": [
         "Parolă greșită"
       ],
@@ -1123,9 +1126,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagini anonim ${ BRAND_NAME }."
-      ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } va importa doar autentificări, note și carduri de plată."
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } vă va solicita parola ${ BRAND_NAME } pentru a accesa datele deconectat."
@@ -1555,6 +1555,9 @@
       "Offline support successfully disabled": [
         "Accesul deconectat a fost dezactivat."
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Accesul la online la ${ PASS_APP_NAME } va necesita un cod PIN. După 3 încercări nereușite contul va fi deconectat."
+      ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Alertele noastre de erori noastre de atenționare. Dacă nu recunoașteți niciuna dintre informațiile divulgate, puteți ignora acest raport."
       ],
@@ -1601,6 +1604,18 @@
       ],
       "Please confirm your extra password": [
         "Confirmați parola suplimentară"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Confirmați parola suplimentară pentru a putea bloca automat cu date biometrice."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Confirmați parola suplimentară pentru blocarea automat cu parola suplimentară."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Confirmați parola suplimentară pentru a anula blocarea curentă."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Confirmați parola suplimentară pentru a actualiza timpul de autoblocare."
       ],
       "Please confirm your password": [
         "Confirmați parola"
@@ -1697,6 +1712,9 @@
       ],
       "Session timed out": [
         "Sesiunea a expirat"
+      ],
+      "Set by your organization": [
+        "Setat de către organizație"
       ],
       "Settings successfully updated": [
         "Setările s-au actualizat."
@@ -1908,6 +1926,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1958,6 +1979,9 @@
       ],
       "15 minutes": [
         "15 minute"
+      ],
+      "2 minutes": [
+        "Două minute"
       ],
       "24 hours": [
         "24 de ore"

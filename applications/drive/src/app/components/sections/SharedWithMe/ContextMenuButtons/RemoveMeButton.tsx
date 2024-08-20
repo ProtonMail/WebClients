@@ -2,16 +2,15 @@ import { c } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components';
 
-import type { DecryptedLink } from '../../../../store';
 import { useSharedWithMeActions } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
-    selectedLink: DecryptedLink;
+    rootShareId: string;
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
     close: () => void;
 }
-export const RemoveMeButton = ({ selectedLink, showConfirmModal, close }: Props) => {
+export const RemoveMeButton = ({ rootShareId, showConfirmModal, close }: Props) => {
     const { removeMe } = useSharedWithMeActions();
 
     const handleRemoveMe = () => {
@@ -26,7 +25,7 @@ export const RemoveMeButton = ({ selectedLink, showConfirmModal, close }: Props)
             submitText: c('Action').t`Confirm`,
             onSubmit: () => {
                 const abortController = new AbortController();
-                return removeMe(abortController.signal, selectedLink.rootShareId);
+                return removeMe(abortController.signal, rootShareId);
             },
             canUndo: true, // Just to hide the undo message
         });

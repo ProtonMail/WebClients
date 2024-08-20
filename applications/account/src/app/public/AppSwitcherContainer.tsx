@@ -27,7 +27,7 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const session = state.session;
     const { User, Organization } = session;
 
-    const canAccessWallet = useFlag('Wallet');
+    const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
 
     const subscribed = User.Subscribed;
 
@@ -59,7 +59,11 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                 <Content>
                     <ExploreAppsList
                         subscription={{ subscribed, plan: Organization?.PlanName }}
-                        apps={getExploreApps({ subscribed, user: User, canAccessWallet })}
+                        apps={getExploreApps({
+                            subscribed,
+                            user: User,
+                            isWalletAppSwitcherNewBadgeEnabled,
+                        })}
                         onExplore={async (app) => {
                             await onLogin({
                                 ...session,

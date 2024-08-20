@@ -33,6 +33,7 @@ export function useSharedWithMeLinksListing() {
         }
 
         shareIdsState.current = shareIdsSet;
+        return shareIdsState.current;
     };
 
     const getShareIdsState = (): string[] => Array.from(shareIdsState.current || new Set());
@@ -61,11 +62,12 @@ export function useSharedWithMeLinksListing() {
         signal: AbortSignal,
         loadLinksMeta: FetchLoadLinksMeta,
         AnchorID?: string
-    ): Promise<{ AnchorID: string; More: boolean }> => {
+    ): Promise<{ AnchorID: string; More: boolean; Count?: number }> => {
         if (fetchMeta.current.isEverythingFetched) {
             return {
                 AnchorID: '',
                 More: false,
+                Count: shareIdsState.current?.size,
             };
         }
 
@@ -76,7 +78,7 @@ export function useSharedWithMeLinksListing() {
             volumesState.setVolumeShareIds(link.VolumeID, [link.ShareID]);
             return link.ShareID;
         });
-        setShareIdsState(shareIds);
+        const newShareIdsState = setShareIdsState(shareIds);
 
         const transformedResponse = transformSharedLinksResponseToLinkMap(response);
         await loadSharedLinksMeta(signal, transformedResponse, loadLinksMeta);
@@ -86,22 +88,14 @@ export function useSharedWithMeLinksListing() {
         return {
             AnchorID: response.AnchorID,
             More: response.More,
+            Count: newShareIdsState.size,
         };
     };
 
     /**
      * Loads shared with me links.
      */
-    const loadSharedWithMeLinks = async (
-        signal: AbortSignal,
-        loadLinksMeta: FetchLoadLinksMeta,
-        resetFetchStatus: boolean = false
-    ): Promise<void> => {
-        // TODO: Remove this when we will have share events in place
-        // This allow us to retrigger the loadSharedWithMeLinks call
-        if (resetFetchStatus) {
-            fetchMeta.current.isEverythingFetched = false;
-        }
+    const loadSharedWithMeLinks = async (signal: AbortSignal, loadLinksMeta: FetchLoadLinksMeta): Promise<{ Count?: number } | void> => {
         const callback = (AnchorID?: string) => fetchSharedLinksNextPage(signal, loadLinksMeta, AnchorID);
         return loadFullListingWithAnchor(callback);
     };
@@ -140,6 +134,7 @@ export function useSharedWithMeLinksListing() {
     return {
         loadSharedWithMeLinks,
         getCachedSharedWithMeLinks,
+        setShareIdsState,
     };
 }
 

@@ -421,9 +421,6 @@
       "Keep": [
         "Zadrži"
       ],
-      "Keep my Plus subscription": [
-        "Zadrži Plus pretplatu"
-      ],
       "label emails as": [
         "označi e-poštu kao"
       ],
@@ -550,11 +547,11 @@
       "Refresh status": [
         "Osvježi status"
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Refresh the page": [
         "Osvježi stranicu"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Reload": [
         "Ponovno učitaj"
@@ -5030,9 +5027,6 @@
       "5 minutes": [
         "5 minuta"
       ],
-      "Account recovery": [
-        "Oporavak računa"
-      ],
       "Account storage": [
         "Prostor za pohranu računa"
       ],
@@ -5311,9 +5305,6 @@
       ],
       "Folder location": [
         "Lokacija mape"
-      ],
-      "Folders and labels": [
-        "Mape i oznake"
       ],
       "Font family": [
         "Obitelj fontova"
@@ -6134,6 +6125,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -6146,14 +6145,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -6347,6 +6338,11 @@
         "Za početak odaberite ime za prikaz. To je ono što će ljudi vidjeti kada pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku."
       ]
     },
+    "new_plans: Title": {
+      "Your account's usage": [
+        "Korištenje računa"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -6356,11 +6352,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Otključajte vrhunske značajke nadogradnjom"
-      ]
-    },
-    "new_plans: Title": {
-      "Your account's usage": [
-        "Korištenje računa"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -6627,11 +6618,6 @@
         "Otpad"
       ]
     },
-    "option": {
-      "Members": [
-        "Članovi"
-      ]
-    },
     "Option delay send seconds": {
       "0 seconds": [
         "0 sekundi"
@@ -6840,6 +6826,9 @@
       ],
       "Gift code": [
         "Darovni kôd"
+      ],
+      "Group name": [
+        "Naziv grupe"
       ],
       "Link": [
         "Poveznica"
@@ -7924,10 +7913,10 @@
       "Card verification": [
         "Potvrda kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dohvati-sve adrese e-pošte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dohvati-sve adrese e-pošte"
       ],
       "Change login password": [

@@ -10,3 +10,4 @@ export { default as RequestLinkConfirmationToggle } from './RequestLinkConfirmat
 export { default as DelaySendSecondsSelect } from './DelaySendSecondsSelect';
 export { default as SpamActionSelect } from './SpamActionSelect';
 export { default as SwipeActionSelect } from './SwipeActionSelect';
+export { default as RemoveImageMetadataToggle } from './RemoveImageMetadataToggle';

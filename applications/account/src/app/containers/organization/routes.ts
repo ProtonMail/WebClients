@@ -3,13 +3,12 @@ import { c } from 'ttag';
 import type { SectionConfig } from '@proton/components/containers/layout';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
-    hasMailBusiness,
-    hasVisionary,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
@@ -56,11 +55,14 @@ export const getOrganizationAppRoutes = ({
         (hasOrganizationKey || hasOrganization);
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
+
     const canShowGroupsSection =
         isUserGroupsFeatureEnabled &&
         !!organization &&
         hasActiveOrganizationKey &&
-        (hasVisionary(subscription) || hasMailBusiness(subscription));
+        [PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY, PLANS.ENTERPRISE].includes(
+            organization?.PlanName
+        );
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`

@@ -15,7 +15,7 @@ import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { BRAND_NAME, GIGA, MAIL_APP_NAME, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME, MEMBER_ROLE, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
@@ -23,6 +23,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import { getHasVpnB2BPlan, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
@@ -60,7 +61,7 @@ import {
 import { useKTVerifier } from '../keyTransparency';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import { AssistantUpdateSubscriptionButton } from '../payments';
-import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
 import SubUserCreateHint from './SubUserCreateHint';
 import { adminTooltipText } from './constants';
@@ -115,7 +116,7 @@ const SubUserCreateModal = ({
     const silentApi = getSilentApi(normalApi);
     const dispatch = useDispatch();
     const [organizationKey] = useOrganizationKey();
-    const storageSizeUnit = GIGA;
+    const storageSizeUnit = sizeUnits.GB;
     const storageRange = getStorageRange({}, organization);
     const errorHandler = useErrorHandler();
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
@@ -147,7 +148,7 @@ const SubUserCreateModal = ({
             organization &&
             hasVPN &&
             (hasVpnB2bPlan ? true : organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS),
-        storage: clamp(5 * GIGA, storageRange.min, storageRange.max),
+        storage: clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
     });
 
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, useGetUser());

@@ -15,7 +15,7 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-import type { IWasmApiWalletData, WalletMap } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 import {
     decryptTextData,
     decryptWalletData,
@@ -162,20 +162,20 @@ const addMissingHashToWalletTransactions = async ({
     api,
     walletId,
     walletKey,
-    walletMap,
     transactionDataByHashedTxId,
     userPrivateKeys,
     hmacKey,
     allAddressKeys,
+    checkShouldAbort,
 }: {
     api: WasmApiClients;
     walletId: string;
     walletKey: CryptoKey;
-    walletMap: WalletMap;
     transactionDataByHashedTxId: TransactionDataByHashedTxId;
     userPrivateKeys: PrivateKeyReference[];
     hmacKey: CryptoKey;
     allAddressKeys: PrivateKeyReference[];
+    checkShouldAbort: () => boolean;
 }) => {
     const cloned: TransactionDataByHashedTxId = { ...transactionDataByHashedTxId };
 
@@ -183,13 +183,8 @@ const addMissingHashToWalletTransactions = async ({
     const walletTransactionsToHash = await getWalletTransactionsToHash(api, walletId);
 
     for (const walletTransactionToHash of walletTransactionsToHash) {
-        const account =
-            walletTransactionToHash.Data.WalletAccountID &&
-            walletMap[walletId]?.accounts[walletTransactionToHash.Data.WalletAccountID];
-
-        if (!account) {
-            // TODO: do something to avoid creating automatically transaction here?
-            continue;
+        if (checkShouldAbort()) {
+            return cloned;
         }
 
         try {
@@ -202,7 +197,7 @@ const addMissingHashToWalletTransactions = async ({
             );
 
             // TODO: this can only occur if decryption fails. We need to better handle that
-            if (!decryptedTransactionData.TransactionID) {
+            if (!decryptedTransactionData.TransactionID || !walletTransactionToHash.Data.WalletAccountID) {
                 continue;
             }
 
@@ -214,7 +209,7 @@ const addMissingHashToWalletTransactions = async ({
             await api.wallet
                 .updateWalletTransactionHashedTxId(
                     walletId,
-                    account.ID,
+                    walletTransactionToHash.Data.WalletAccountID,
                     walletTransactionToHash.Data.ID,
                     hashedTransactionID
                 )
@@ -248,6 +243,7 @@ const createMissingTxData = async ({
     walletKey,
     accountIDByDerivationPathByWalletID,
     transactionsWithoutApiData,
+    checkShouldAbort,
     onCreatedTransaction,
 }: {
     api: WasmApiClients;
@@ -256,12 +252,17 @@ const createMissingTxData = async ({
     walletKey: CryptoKey;
     accountIDByDerivationPathByWalletID: AccountIdByDerivationPathAndWalletId;
     transactionsWithoutApiData: [string, TransactionDataTuple][];
+    checkShouldAbort: () => boolean;
     onCreatedTransaction: (record: TransactionDataByHashedTxId) => void;
 }) => {
     const createdTransactionDataByHashedTxId: TransactionDataByHashedTxId = {};
     const [primaryUserKeys] = userKeys;
 
     for (const [hashedTxId, txData] of transactionsWithoutApiData) {
+        if (checkShouldAbort()) {
+            return createdTransactionDataByHashedTxId;
+        }
+
         try {
             const [networkData] = txData;
 
@@ -312,14 +313,12 @@ const fetchTransactions = async ({
     transactionDataByHashedTxId,
     walletId,
     getTransactionsApiData,
-    walletMap,
     walletKey,
     allAddressKeys,
 }: {
     userPrivateKeys: PrivateKeyReference[];
     transactionDataByHashedTxId: TransactionDataByHashedTxId;
     walletId: string;
-    walletMap: WalletMap;
     walletKey: CryptoKey;
     allAddressKeys: PrivateKeyReference[];
     getTransactionsApiData: ReturnType<typeof useGetApiWalletTransactionData>;
@@ -334,12 +333,7 @@ const fetchTransactions = async ({
     for (const { Data: transactionApiData } of transactionsApiData) {
         const { HashedTransactionID } = transactionApiData;
 
-        // TODO: later WalletAccountID won't be nullable anymore, typeguard can be removed then
-        const account =
-            transactionApiData.WalletAccountID &&
-            walletMap[transactionApiData.WalletID]?.accounts[transactionApiData.WalletAccountID];
-
-        if (HashedTransactionID && account) {
+        if (HashedTransactionID) {
             const txNetworkData = transactionDataByHashedTxId[HashedTransactionID]?.[0];
 
             if (txNetworkData) {
@@ -381,7 +375,7 @@ export const useWalletTransactions = ({
     const getTransactionsApiData = useGetApiWalletTransactionData();
 
     const [transactionDataByHashedTxId, setTransactionDataByHashedTxId] = useState<TransactionDataByHashedTxId>();
-    const { accountIDByDerivationPathByWalletID, walletMap } = useBitcoinBlockchainContext();
+    const { accountIDByDerivationPathByWalletID } = useBitcoinBlockchainContext();
     const { createNotification } = useNotifications();
 
     const [loadingRecordInit, withLoadingRecordInit] = useLoading();
@@ -411,11 +405,13 @@ export const useWalletTransactions = ({
         const processUid = generateUID('use-wallet-transactions');
         currentProcessUid.current = processUid;
 
+        const checkShouldAbort = () => currentProcessUid.current !== processUid;
+
         // guard thats check that process is still current one, else do nothing
         const guardSetTransactionData = (
             value: SetStateAction<Partial<Record<string, TransactionDataTuple>> | undefined>
         ) => {
-            (currentProcessUid.current === processUid ? () => setTransactionDataByHashedTxId(value) : noop)();
+            (checkShouldAbort() ? noop : () => setTransactionDataByHashedTxId(value))();
         };
 
         const initResult = (await withLoadingRecordInit(async () => {
@@ -433,7 +429,6 @@ export const useWalletTransactions = ({
             transactionDataByHashedTxId: localTransactionDataByHashedTxId,
             walletId,
             getTransactionsApiData,
-            walletMap,
             walletKey: WalletKey.DecryptedKey,
             allAddressKeys,
         });
@@ -441,7 +436,7 @@ export const useWalletTransactions = ({
         guardSetTransactionData(transactionDataByHashedTxId);
 
         // If we already fetched all api data for the page, we don't need to go further
-        if (compact(Object.values(transactionDataByHashedTxId)).every(([, api]) => !!api)) {
+        if (compact(Object.values(transactionDataByHashedTxId)).every(([, api]) => !!api) || checkShouldAbort()) {
             return;
         }
 
@@ -450,11 +445,11 @@ export const useWalletTransactions = ({
             api: clients,
             walletId,
             walletKey: WalletKey.DecryptedKey,
-            walletMap,
             transactionDataByHashedTxId: localTransactionDataByHashedTxId,
             userPrivateKeys,
             hmacKey,
             allAddressKeys,
+            checkShouldAbort,
         });
 
         const transactionsWithoutApiData = filterTxWithoutApiData(withMissingHashTransactions);
@@ -473,6 +468,7 @@ export const useWalletTransactions = ({
                 walletKey: WalletKey.DecryptedKey,
                 accountIDByDerivationPathByWalletID,
                 transactionsWithoutApiData,
+                checkShouldAbort,
                 onCreatedTransaction: (record) => guardSetTransactionData((prev) => ({ ...prev, ...record })),
             });
         }
@@ -482,7 +478,6 @@ export const useWalletTransactions = ({
         withLoadingRecordInit,
         getTransactionsApiData,
         clients,
-        walletMap,
         allAddressKeys,
         transactions,
         accountIDByDerivationPathByWalletID,
@@ -496,12 +491,9 @@ export const useWalletTransactions = ({
                 return;
             }
 
-            const { WalletID, WalletAccountID } = updatedTx;
+            const { WalletAccountID } = updatedTx;
 
-            // TODO: later WalletAccountID won't be nullable anymore, typeguard can be removed then
-            const account = WalletAccountID && walletMap[WalletID]?.accounts[WalletAccountID];
-
-            if (account && WalletAccountID && wallet?.WalletKey?.DecryptedKey) {
+            if (WalletAccountID && wallet?.WalletKey?.DecryptedKey) {
                 try {
                     const decryptedTransactionData = await decryptTransactionData(
                         updatedTx,
@@ -532,7 +524,7 @@ export const useWalletTransactions = ({
                 }
             }
         },
-        [userKeys, walletMap, wallet?.WalletKey, allAddressKeys, createNotification]
+        [userKeys, wallet?.WalletKey, allAddressKeys, createNotification]
     );
 
     useEffect(() => {

@@ -649,9 +649,6 @@
       "Keep logo": [
         "Logo behouden"
       ],
-      "Keep my Plus subscription": [
-        "Behoud mijn Plus-abonnement"
-      ],
       "label emails as": [
         "e-mail labellen als"
       ],
@@ -796,11 +793,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "refresh the page": [
-        "pagina vernieuwen"
-      ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "refresh the page": [
+        "pagina vernieuwen"
       ],
       "Reload": [
         "Opnieuw laden"
@@ -810,9 +807,6 @@
       ],
       "Remove all members": [
         "Alle leden verwijderen"
-      ],
-      "Remove all members from group": [
-        "Verwijder alle leden uit groep"
       ],
       "Remove bonuses": [
         "Verwijder bonussen"
@@ -859,9 +853,6 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
-      "Resend invitation": [
-        "Uitnodiging opnieuw verzenden"
-      ],
       "Reset credentials": [
         "Inloggegevens resetten"
       ],
@@ -891,9 +882,6 @@
       ],
       "Review": [
         "Bekijken"
-      ],
-      "Review account security": [
-        "Controleer accountbeveiliging"
       ],
       "Revoke": [
         "Intrekken"
@@ -1254,9 +1242,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Voeg pm.me domein toe"
-      ],
       "Resuming forward": [
         "Doorsturen hervatten"
       ]
@@ -1607,6 +1592,14 @@
         "Selecteer uw eindejaarsaanbieding"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement. Maar u kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als u zich inschrijft voor **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB opslagruimte (2x meer dan binnen elk ander abonnement)"
@@ -1628,14 +1621,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Het ${ plan }-abonnement is tijdelijk terug"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement. Maar u kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als u zich inschrijft voor **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6959,11 +6944,11 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
-      "Dedicated servers": [
-        "Dedicated servers"
-      ],
       "dedicated servers": [
         "toegewijde servers"
+      ],
+      "Dedicated servers": [
+        "Dedicated servers"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -8931,12 +8916,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "U wordt doorverwezen naar ${ destination } nadat u inlogt."
       ],
-      "You will lose access to Plus features on this date.": [
-        "U zult toegang verliezen tot Plus-functies op deze datum."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "U zult toegang verliezen tot Plus-servers en -functies op deze datum."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
       ],
@@ -9535,9 +9514,6 @@
       "5 minutes": [
         "5 minuten"
       ],
-      "Account recovery": [
-        "Accountherstel"
-      ],
       "Account storage": [
         "Opslagruimte account"
       ],
@@ -9955,9 +9931,6 @@
       "Folder location": [
         "Map locatie"
       ],
-      "Folders and labels": [
-        "Mappen en labels"
-      ],
       "Font family": [
         "Lettertype familie"
       ],
@@ -10065,9 +10038,6 @@
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
-      ],
-      "Mail settings": [
-        "E-mailinstellingen"
       ],
       "Main": [
         "Primair"
@@ -10338,9 +10308,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Spam and filters": [
-        "Spam en filters"
       ],
       "Starred": [
         "Met ster"
@@ -11346,6 +11313,32 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Get started for $1": [
+        "Ga aan de slag voor $1"
+      ],
+      "Get started for 1 €": [
+        "Ga aan de slag voor 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Ga aan de slag voor CHF 1"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Doorgaan met gratis"
@@ -11373,32 +11366,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgraden naar ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Get started for $1": [
-        "Ga aan de slag voor $1"
-      ],
-      "Get started for 1 €": [
-        "Ga aan de slag voor 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Ga aan de slag voor CHF 1"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
       ]
     },
     "new_plans: feature": {
@@ -11654,14 +11621,8 @@
       "Password health": [
         "Wachtwoordgezondheid"
       ],
-      "Password manager to secure credentials": [
-        "Wachtwoordmanager om inloggegevens veilig te houden"
-      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonische ondersteuning (40+ gebruikers)"
       ],
       "Priority email support": [
         "Prioriteitsondersteuning per e-mail"
@@ -12000,6 +11961,14 @@
         "Uw geselecteerde abonnement: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -12018,14 +11987,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -12143,9 +12104,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonische ondersteuning van het ${ BRAND_NAME }-klantensuccesteam is beschikbaar tijdens Europese kantooruren voor klanten met 6 of meer gebruikers"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Voorkomt dat berichten worden gelezen door ${ BRAND_NAME } of derden. De enige personen die de berichten kunnen lezen, zijn de afzender en de beoogde ontvanger."
@@ -12676,20 +12634,6 @@
       ],
       "Trash": [
         "Prullenbak"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Iedereen, incl. extern"
-      ],
-      "Members": [
-        "Leden"
-      ],
-      "Nobody by default": [
-        "Standaard niemand"
-      ],
-      "Organization members": [
-        "Organisatieleden"
       ]
     },
     "Option delay send seconds": {
@@ -13456,6 +13400,9 @@
       ],
       "Gift code": [
         "Geschenkcode"
+      ],
+      "Group name": [
+        "Groepsnaam"
       ],
       "Link": [
         "Koppeling"
@@ -15889,11 +15836,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-all address": [
-        "Catch-all adres"
-      ],
       "Catch-All address": [
         "Catch-All adres"
+      ],
+      "Catch-all address": [
+        "Catch-all adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -17533,11 +17480,6 @@
       ],
       "You're Invited.": [
         "U bent uitgenodigd."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bewaar uw bitcoins en zet ze veilig over"
       ]
     },
     "wallet_signup_2024:Bug category": {

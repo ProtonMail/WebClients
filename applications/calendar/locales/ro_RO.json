@@ -395,9 +395,6 @@
       "Keep current time zone": [
         "Păstrare fus orar actual"
       ],
-      "Keep my Plus subscription": [
-        "Păstrez abonamentul Plus"
-      ],
       "Later": [
         "Mai târziu"
       ],
@@ -4487,6 +4484,11 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Creați un cont cloud securizat pentru ${ n } membru",
+        "Creați un cont cloud securizat pentru ${ n } membri",
+        "Creați un cont cloud securizat pentru ${ n } de membri"
+      ],
       "Create in": [
         "Creare în"
       ],
@@ -5183,12 +5185,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Anterior ați respins această invitație. Solicitați proprietarului o reinvitare."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Veți pierde accesul la funcțiile Plus la această dată."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Veți pierde accesul la serverele Plus și la funcții la această dată."
       ],
       "You will lose all unsaved changes.": [
         "Veți pierde toate modificările nesalvate."
@@ -6630,14 +6626,8 @@
       "Password health": [
         "Stare parole"
       ],
-      "Password manager to secure credentials": [
-        "Manager de parole pentru securizarea datelor de autentificare"
-      ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
-      ],
-      "Phone support (40+ users)": [
-        "Asistență telefonică (peste 40 de utilizatori)"
       ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
@@ -7029,9 +7019,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături către datele de contact și multe altele."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu 6 sau mai mulți utilizatori."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
@@ -10035,11 +10022,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin prin e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Păstrați și transferați în siguranță monedele Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
