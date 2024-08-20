@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
 import useLoading from '@proton/hooks/useLoading';
 import { semver } from '@proton/pass/utils/string/semver';
 import { DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
@@ -81,6 +82,7 @@ const fetchDesktopClient = async (platform: DESKTOP_PLATFORMS) => {
 const { WINDOWS, MACOS, LINUX } = DESKTOP_PLATFORMS;
 
 const useInboxDesktopVersion = () => {
+    const { currentEnvironment } = useEarlyAccess();
     const [loading, withLoading] = useLoading(true);
 
     const [windowsApp, setWindowsApp] = useState<DesktopVersion | undefined>(initialWindowsClient);
@@ -89,11 +91,23 @@ const useInboxDesktopVersion = () => {
 
     useEffect(() => {
         const getLatestRelease = (releaseList: DesktopVersion[]) => {
-            let latestRelease = releaseList[0];
-            let latestReleaseSemver = semver(latestRelease.Version);
+            let latestRelease = undefined;
+            let latestReleaseSemver = 0;
 
             for (const release of releaseList) {
                 const releaseSemver = semver(release.Version);
+
+                if (!currentEnvironment && release.CategoryName !== RELEASE_CATEGORIES.STABLE) {
+                    continue;
+                }
+
+                if (
+                    currentEnvironment === 'beta' &&
+                    release.CategoryName !== RELEASE_CATEGORIES.STABLE &&
+                    release.CategoryName !== RELEASE_CATEGORIES.EARLY_ACCESS
+                ) {
+                    continue;
+                }
 
                 if (releaseSemver > latestReleaseSemver) {
                     latestRelease = release;
@@ -142,7 +156,7 @@ const useInboxDesktopVersion = () => {
         } else {
             void withLoading(fetchDesktopVersion());
         }
-    }, []);
+    }, [currentEnvironment]);
 
     return { windowsApp, macosApp, linuxApp, loading };
 };
