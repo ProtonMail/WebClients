@@ -456,8 +456,8 @@
       "Invite": [
         "Inviter"
       ],
-      "Keep my Plus subscription": [
-        "Conserver mon abonnement à Plus"
+      "Keep my subscription": [
+        "Conserver mon abonnement"
       ],
       "Later": [
         "Plus tard"
@@ -5383,11 +5383,8 @@
       "You need access": [
         "Accès requis"
       ],
-      "You will lose access to Plus features on this date.": [
-        "À cette date, vous n'aurez plus accès aux fonctionnalités de Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "À cette date, vous n'aurez plus accès aux serveurs et aux fonctionnalités de Plus."
+      "You will lose access to ${ planTitle } features on this date.": [
+        "À cette date, vous n'aurez plus accès aux fonctionnalités de ${ planTitle }."
       ],
       "You will lose all unsaved changes.": [
         "Vous perdrez toutes les modifications non enregistrées."
@@ -6758,6 +6755,12 @@
       "Administration Panel": [
         "Panneau d'administration"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tous les services de base de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Tous les services premium de ${ BRAND_NAME } avec simplement un seul abonnement"
+      ],
       "Auto-delete Spam and Trash": [
         "Suppression automatique des indésirables/spam et de la corbeille"
       ],
@@ -6910,10 +6913,7 @@
         "Messages protégés par mot de passe"
       ],
       "Phone support (20+ users)": [
-        "Assistance téléphonique (compte 20 utilisateurs ou plus)"
-      ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+        "Assistance téléphonique (compte pour 20 utilisateurs ou plus)"
       ],
       "Priority email support": [
         "Assistance prioritaire par e-mail"
@@ -6930,6 +6930,9 @@
       "Protect ${ n } device at a time": [
         "Protégez ${ n } appareil à la fois",
         "Protégez ${ n } appareils en même temps"
+      ],
+      "Recover previous file versions": [
+        "Récupérer les versions précédentes des fichiers"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "La sécurité de votre compte est régulièrement vérifiée. Nous vous avertissons si vous avez des mots de passe réutilisés ou faibles à mettre à jour."
@@ -7062,9 +7065,6 @@
         "Partage du coffre-fort (${ n } personne)",
         "Partage du coffre-fort (jusqu'à ${ n } personnes)"
       ],
-      "Version history": [
-        "Historique des versions"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
       ]
@@ -7143,7 +7143,7 @@
       "Popular": [
         "Populaire"
       ],
-      "Protect sensitive business information and collaborate securely.asdfasdfsdf": [
+      "Protect sensitive business information and collaborate securely.": [
         "Protégez les informations sensibles de vos activités et collaborez en toute sécurité."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
@@ -7747,6 +7747,9 @@
       ]
     },
     "Onboarding Info": {
+      "Collaborate on documents": [
+        "Collaborer sur des documents"
+      ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Créez et collaborez sur des documents. C'est entièrement sécurisé par le chiffrement de bout en bout."
       ],
@@ -7756,11 +7759,20 @@
       "Introducing ${ DOCS_APP_NAME }": [
         "Voici ${ DOCS_APP_NAME }"
       ],
+      "Manage access": [
+        "Gérer l'accès"
+      ],
+      "Securely store, manage, and share your business-critical files with confidence.": [
+        "Stockez, gérez et partagez en toute sécurité et confidentialité les fichiers essentiels à vos activités."
+      ],
       "Set a recovery method": [
         "Définir une méthode de récupération"
       ],
       "Share a file": [
         "Partager un fichier"
+      ],
+      "Share files & folders": [
+        "Partager des fichiers et des dossiers"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Il suffit de faire les actions suivantes d'ici ${ expiresInDays } jour :",
@@ -7768,6 +7780,9 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Stockez vos fichiers et partagez-les en toute sécurité. Commencez par sécuriser vos fichiers les plus confidentiels, comme vos pièces d'identité, vos contrats et vos photos personnelles."
+      ],
+      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
+        "Le propriétaire doit confirmer l'accès au partage. Vous recevrez un e-mail une fois que ce sera fait."
       ],
       "Upload a file": [
         "Importer un fichier"
@@ -7802,6 +7817,9 @@
       ],
       "Hang tight!": [
         "Patientez un instant."
+      ],
+      "Invite team members": [
+        "Inviter les membres de l'équipe"
       ],
       "Upload and protect your important files": [
         "Importez et protégez vos fichiers importants"
@@ -10287,7 +10305,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
-        "Une façon plus sécurisée/simple de détenir et d'envoyer des bitcoins"
+        "Une façon plus sécurisée et simple de détenir et d'envoyer des bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {
