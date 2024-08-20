@@ -933,6 +933,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Pri spúšťaní ${ PASS_SHORT_APP_NAME } sa vyskytla chyba. Ak bude tento problém pretrvávať, kontaktuje našu zákaznícku podporu, prosím."
       ],
+      "Wrong extra password": [
+        "Nesprávne dodatočné heslo"
+      ],
       "Wrong password": [
         "Nesprávne heslo"
       ],
@@ -1051,9 +1054,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zobrazí webové ikony položiek prostredníctvom anonymizovaného ${ BRAND_NAME } proxy servera."
-      ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } naimportuje len prihlasovacie údaje, poznámky a platobné karty."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } vás vyzve hneď, ako sa automaticky vyplnia vygenerované heslá."
@@ -1526,6 +1526,12 @@
       "Please confirm your extra password": [
         "Potvrďte vaše dodatočné heslo, prosím"
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Pre automatické uzamknutie pomocou dodatočného hesla potvrďte svoje dodatočné heslo, prosím."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Pre aktualizovanie času automatického uzamknutia potvrďte svoje dodatočné heslo, prosím."
+      ],
       "Please confirm your password": [
         "Potvrďte vaše heslo, prosím"
       ],
@@ -1840,6 +1846,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
