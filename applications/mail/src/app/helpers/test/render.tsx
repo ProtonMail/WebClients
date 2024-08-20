@@ -229,7 +229,7 @@ export const render = async (
         <Wrapper>
             <TestProvider history={history}>{ui}</TestProvider>
         </Wrapper>,
-        { ...renderOptions, legacyRoot: true }
+        { ...renderOptions }
     );
     await tick(); // Should not be necessary, would be better not to use it, but fails without
 
