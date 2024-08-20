@@ -389,9 +389,6 @@
       "Keep current time zone": [
         "Tetap gunakan zona waktu saat ini"
       ],
-      "Keep my Plus subscription": [
-        "Pertahankan langganan Plus saya"
-      ],
       "Later": [
         "Nanti"
       ],
@@ -2413,7 +2410,7 @@
     },
     "Default signing preference": {
       "Use global default (${ globalDefaultText })": [
-        "Gunakan nilai default global (${ globalDefaultText })"
+        "Gunakan nilai bawaan global (${ globalDefaultText })"
       ]
     },
     "Delete event button tooltip": {
@@ -2603,9 +2600,20 @@
         "Dapatkan seharga ${ price }"
       ]
     },
+    "duoplan2024: Footer": {
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Ditagih per tahun dengan harga ${ amountBilled }. Hemat ${ amountSave } untuk 2 langganan ${ BRAND_NAME } Unlimited individu per tahun."
+      ]
+    },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "Penyimpanan 1 TB"
+      ],
       "2 users": [
         "2 pengguna"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Akses lengkap semua produk ${ BRAND_NAME }"
       ],
       "You save ${ amountSave }": [
         "Anda menghemat ${ amountSave }"
@@ -2617,6 +2625,11 @@
       ],
       "Double your storage": [
         "Gandakan penyimpanan Anda"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "Perkenalkan ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duplicate event button tooltip": {
@@ -3413,6 +3426,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Kami tidak dapat memuat laman ini. Silakan muat ulang laman atau periksa koneksi internet Anda."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Ketika kata sandi tambahan diaktifkan, pengelolaan alias hanya bisa dilakukan di ${ PASS_APP_NAME }."
+      ],
       "You need an active personal calendar to import events": [
         "Anda harus memiliki kalender pribadi yang aktif untuk dapat mengimpor acara"
       ]
@@ -3575,14 +3591,23 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Akun dengan domain khusus tidak dapat bergabung ke paket grup."
+      ],
       "customer support": [
         "layanan dukungan"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Paket grup saat ini tidak mendukung akun eksternal. Buat alamat ${ BRAND_NAME } sebelum bergabung. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jika Anda menerima undangan, kami akan mengalihkan Anda dari paket saat ini dan mengkredit akun Anda dengan sisa saldo."
       ],
       "Invited by: ${ inviteEmail }": [
         "Diundang oleh: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Akun Lifetime tidak dapat bergabung dalam paket grup."
       ],
       "Manage addresses.": [
         "Kelola alamat."
@@ -3611,6 +3636,9 @@
       "You have successfully joined the family group": [
         "Anda telah berhasil bergabung ke grup keluarga ini"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Anda memiliki faktur yang belum dibayar. Silakan dibayar sebelum bergabung dalam paket grup."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Anda diundang untuk mengaitkan Akun ${ BRAND_NAME } Anda ke paket grup ini dan menikmati semua fitur premium ${ BRAND_NAME_TWO } bersama."
       ],
@@ -3619,6 +3647,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Akun Anda menggunakan ruang penyimpanan sebesar ${ usedSpace }, yang melebihi batas ${ inviteSpace } yang dialokasikan kepada Anda. Hapus sebagian data atau minta kepada admin paket untuk meningkatkan ruang penyimpanan Anda."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Anda tidak dapat menerima undangan ini dengan paket Anda saat ini."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3970,7 +4001,7 @@
         "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengeklik tombol 3 titik (...)."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
-        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh ${ BRAND_NAME }."
+        "Hasilkan ${ boldAppPassword } dan gunakan kata sandi ini (alih-alih kata sandi biasa Anda) pada saat diminta oleh ${ BRAND_NAME }."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Tuju ${ boldAccountInfo } yang ada di bawah profil ${ yahooMailLink } Anda."
@@ -4314,6 +4345,9 @@
       "Create a new contact group": [
         "Buat grup kontak baru"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Buat awan yang aman untuk ${ n } anggota"
+      ],
       "Create in": [
         "Buat di"
       ],
@@ -4622,6 +4656,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Pengguna lain dalam organisasi Anda akan dapat melihat waktu sibuk Anda. Tidak ada rincian acara yang akan dibagikan."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Peringatan kami dimaksudkan agar Anda dapat lebih berhati-hati. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
       ],
       "password": [
         "kata sandi"
@@ -4997,12 +5034,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Anda sebelumnya telah menolak undangan ini. Silakan minta pemilik kalender untuk kembali mengundang Anda"
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Anda akan kehilangan akses ke berbagai fitur Plus pada tanggal ini."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Anda akan kehilangan akses ke berbagai server dan fitur Plus pada tanggal ini."
       ],
       "You will lose all unsaved changes.": [
         "Anda akan kehilangan semua perubahan yang belum disimpan."
@@ -5447,7 +5478,7 @@
         "Impor ke:"
       ],
       "Label messages as": [
-        "Labeli pesan-pesan ini dengan"
+        "Labeli pesan sebagai"
       ],
       "Language": [
         "Bahasa"
@@ -6211,6 +6242,9 @@
       "${ n } message per day": [
         "${ n } pesan per hari"
       ],
+      "${ n } user": [
+        "Sampai dengan ${ n } pengguna"
+      ],
       "${ n } vault": [
         "${ n } brankas"
       ],
@@ -6388,14 +6422,11 @@
       "Password health": [
         "Kesehatan kata sandi"
       ],
-      "Password manager to secure credentials": [
-        "Manajer kata sandi untuk mengamankan kredensial"
+      "Password manager": [
+        "Pengelola kata sandi"
       ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
-      ],
-      "Phone support (40+ users)": [
-        "Dukungan via telepon (40+ pengguna)"
       ],
       "Priority email support": [
         "Dukungan email prioritas"
@@ -6532,9 +6563,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Pembagian brankas (hingga ${ n } pengguna)"
       ],
-      "Version history": [
-        "Riwayat versi"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Kami memindai dark web untuk memeriksa apakah alamat atau alias ${ BRAND_NAME } Anda telah dibocorkan serta memberitahukan Anda dengan segera apabila kami menemukan sesuatu."
       ]
@@ -6633,6 +6661,9 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Akun gratis yang dirancang untuk menyediakan privasi sebagai hal yang baku bagi semua."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Privasi tak terbatas dan lebih banyak penyimpanan sampai dengan 2 orang."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menghapus akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon apabila Anda membuat akun baru."
@@ -6780,9 +6811,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Dukungan via telepon tersedia dari tim ${ BRAND_NAME } Customer Success pada hari dan jam kerja yang berlaku di Eropa pada umumnya, khusus untuk para pelanggan dengan 6 atau lebih pengguna"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Mencegah pesan untuk dapat diakses oleh ${ BRAND_NAME } atau pihak ketiga. Pesan Anda hanya akan dibaca oleh penerima dan Anda sendiri."
       ],
@@ -6859,7 +6887,7 @@
         "Kami tidak menyimpan log sesi yang merekam aktivitas online Anda, dan kami juga tidak mencatat metadata mana pun yang dapat membahayakan privasi Anda"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Kami berkomitmen untuk membantu para pelanggan kami tunduk pada standar undang-undang HIPAA/HITECH, yang ditujukan untuk melindungi rekam jejak kesehatan pribadi (PHI) masing-masing individu. Seluruh pelanggan ${ BRAND_NAME } for Business akan dapat menerima Perjanjian Kerjasama Bisnis (BAA) yang ditandatangani."
+        "Kami berkomitmen untuk membantu pelanggan untuk tunduk pada undang-undang HIPAA/HITECH yang melindungi rekam jejak kesehatan pribadi (PHI) masing-masing individu. Perjanjian Kerjasama Bisnis (BAA) yang ditandatangani tersedia bagi seluruh pelanggan ${ BRAND_NAME }."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Pada saat Anda terhubung ke VPN kami, kueri DNS Anda akan terkirim melalui terowongan VPN terenkripsi kami yang akan meningkatkan privasi dan keamanan Anda"
@@ -8518,7 +8546,7 @@
         "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Mail hingga 1 GB dan Drive hingga 5 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Ketika Anda membatalkan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menyediakan hingga 1 GB untuk penyimpanan Mail dan hingga 5 GB untuk penyimpanan Drive. Tim Anda akan mengalami gangguan dalam pekerjaan mereka karena pengguna tambahan tidak didukung dalam paket gratis."
+        "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menyediakan hingga ruang penyimpanan Mail hingga 1 GB dan Drie hingga 5 GB. Tim Anda akan mengalami gangguan dalam pekerjaan mereka karena pengguna tambahan tidak didukung dalam paket gratis."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Pada saat Anda membatalkan langganan ${ planName }, Anda akan diturunkan ke ${ BRAND_NAME } Free, yang hanya menawarkan ruang penyimpanan Drive hingga 5 GB dan Mail hingga 1 GB. Anda juga akan kehilangan segala ruang penyimpanan bonus yang telah Anda peroleh sebelumnya."
@@ -9131,6 +9159,9 @@
       "Encrypted event": [
         "Acara terenkripsi"
       ],
+      "Enter 2FA code": [
+        "Masukkan kode 2FA"
+      ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
       ],
@@ -9615,11 +9646,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin melalui email"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Simpan dan transfer Bitcoin Anda secara aman"
       ]
     },
     "wallet_signup_2024:Bug category": {

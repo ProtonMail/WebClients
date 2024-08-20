@@ -453,8 +453,8 @@
       "Increase": [
         "Øk"
       ],
-      "Keep my Plus subscription": [
-        "Behold mitt Plus-abonnement"
+      "Invite": [
+        "Inviter"
       ],
       "Later": [
         "Senere"
@@ -4195,6 +4195,10 @@
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Opprett en sikker sky for ${ n }-medlem",
+        "Opprett en sikker sky for ${ n }-medlemmer"
+      ],
       "Create in": [
         "Opprett i"
       ],
@@ -5369,12 +5373,6 @@
       ],
       "You need access": [
         "Du må ha tilgang"
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Du vil miste tilgang til Plus-funksjoner på denne datoen."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Du vil miste tilgang til Plus-tjenere og funksjoner på denne datoen."
       ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle endringer som ikke er lagret."
@@ -6920,14 +6918,8 @@
       "Password health": [
         "Passordhelse"
       ],
-      "Password manager to secure credentials": [
-        "Passordbehandling for å sikre legitimasjon"
-      ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonstøtte (40+ brukere)"
       ],
       "Priority email support": [
         "Prioritert e-poststøtte"
@@ -7315,9 +7307,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Tilpass e-postsignaturen din med logoer, bilder, ikoner for sosiale medier, koblinger til kontaktinformasjonen din og mer."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonstøtte er tilgjengelig fra ${ BRAND_NAME }-kundesuksessteamet i europeisk arbeidstid, for kunder med 6 eller flere brukere."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer at meldinger åpnes av ${ BRAND_NAME } eller tredjeparter. De eneste som kan lese meldingene, er avsenderen og den tiltenkte mottakeren."
@@ -7767,9 +7756,6 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Lagre filene dine og del dem på en sikker måte. Kom i gang ved å sikre de mest private filene dine, for eksempel ID-er, kontrakter og personlige bilder."
-      ],
-      "The owner needs to confirm sharing access. You’ll get an email once it’s done.": [
-        "Eieren må bekrefte delingstilgang. Du får en e-post når den er ferdig."
       ],
       "Upload a file": [
         "Last opp en fil"
@@ -10277,11 +10263,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-post"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Hold og overfør bitcoin sikkert"
       ]
     },
     "wallet_signup_2024:Bug category": {

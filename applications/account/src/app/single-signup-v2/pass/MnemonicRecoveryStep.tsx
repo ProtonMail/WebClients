@@ -4,7 +4,7 @@ import CopyRecoveryStep from './CopyRecoveryStep';
 import type { PDFRecoveryProps } from './PDFRecoveryStep';
 import PDFRecoveryStep from './PDFRecoveryStep';
 
-const RecoveryStep = (props: PDFRecoveryProps) => {
+const MnemonicRecoveryStep = (props: PDFRecoveryProps) => {
     const isBrokenBlobDownload = isIos() || isIpad();
     if (isBrokenBlobDownload) {
         return <CopyRecoveryStep {...props} />;
@@ -12,4 +12,4 @@ const RecoveryStep = (props: PDFRecoveryProps) => {
     return <PDFRecoveryStep {...props} />;
 };
 
-export default RecoveryStep;
+export default MnemonicRecoveryStep;

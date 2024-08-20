@@ -253,6 +253,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Vahvista linkin ${ linkToShow } avaus"
       ],
+      "Contact sales": [
+        "Ota yhteyttä myyntiin"
+      ],
       "Contact support": [
         "Ota yhteyttä asiakaspalveluun"
       ],
@@ -391,8 +394,8 @@
       "Disable": [
         "Poista käytöstä"
       ],
-      "Disable E2EE for group address": [
-        "Poista E2EE käytöstä ryhmäosoitteelle"
+      "Disable E2EE group mail encryption": [
+        "Poista ryhmäpostien päästä päähän -salaus käytöstä"
       ],
       "Disable recovery phrase": [
         "Poista palautuslauseke käytöstä"
@@ -405,6 +408,9 @@
       ],
       "Discard changes": [
         "Hylkää muutokset"
+      ],
+      "Domain names": [
+        "Verkkotunnukset"
       ],
       "Don't show again": [
         "Älä näytä uudelleen"
@@ -496,8 +502,8 @@
       "Enable device-based recovery": [
         "Ota laitteistopohjainen palautus käyttöön"
       ],
-      "Enable E2EE for group address": [
-        "Ota päästä päähän -salaus käyttöön ryhmäosoitteelle"
+      "Enable E2EE group mail encryption": [
+        "Ota ryhmäsähköpostien päästä päähän -salaus käyttöön"
       ],
       "Enable multi-user support": [
         "Ota usean käyttäjän tuki käyttöön"
@@ -658,9 +664,6 @@
       "Keep logo": [
         "Säilytä logo"
       ],
-      "Keep my Plus subscription": [
-        "Säilytä Plus-tilaukseni"
-      ],
       "label emails as": [
         "merkitse viestit tunnisteilla"
       ],
@@ -678,6 +681,9 @@
       ],
       "Loading verification": [
         "Ladataan vahvistusta"
+      ],
+      "Lost access to your 2FA device?": [
+        "Menetitkö pääsyn 2FA-laitteeseesi?"
       ],
       "Make admin": [
         "Määritä ylläpitäjäksi"
@@ -805,10 +811,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
       "Reload": [
@@ -819,9 +825,6 @@
       ],
       "Remove all members": [
         "Poista kaikki jäsenet"
-      ],
-      "Remove all members from group": [
-        "Poista kaikki jäsenet ryhmästä"
       ],
       "Remove bonuses": [
         "Poista edut"
@@ -868,9 +871,6 @@
       "Resend code": [
         "Lähetä koodi uudelleen"
       ],
-      "Resend invitation": [
-        "Lähetä kutsu uudelleen"
-      ],
       "Reset credentials": [
         "Nollaa kirjautumistiedot"
       ],
@@ -900,9 +900,6 @@
       ],
       "Review": [
         "Tarkasta"
-      ],
-      "Review account security": [
-        "Tarkista tiliturvallisuus"
       ],
       "Revoke": [
         "Mitätöi"
@@ -1266,9 +1263,6 @@
       ]
     },
     "action": {
-      "Add pm.me domain": [
-        "Lisää pm.me-verkkotunnus"
-      ],
       "Resuming forward": [
         "Jatketaan uudelleenohjausta"
       ]
@@ -1622,6 +1616,14 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1643,14 +1645,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3614,10 +3608,47 @@
         "Luo ilmainen ${ DRIVE_APP_NAME } -tili päästäksesi tiedostoon turvallisesti käsiksi"
       ],
       "Free, encrypted, and secure cloud storage": [
-        "Ilmainen, salattu ja turvallinen pilvitallennustila"
+        "Ilmainen, salattu ja suojattu pilvitallennustila"
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Sinut on kutsuttu käyttämään tiedostoa palvelussa: ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**Yhteistoiminnallinen:** verkkodokumenttieditori"
+      ],
+      "**GDPR** and **HIPAA** compliant": [
+        "**GDPR**- ja **HIPAA** -vaatimusten mukainen"
+      ],
+      "**ISO 27001** certified": [
+        "**ISO 27001** -sertifioitu"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**Suojattu:** päästä päähän -salaus"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**Yksinkertainen ja käyttäjäystävällinen:** tuo tiedostosi ja määritä muutamassa minuutissa"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Kehittynyt ja alan standardit ylittävä suojaus"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "Liity yli 50 000 ${ BRAND_NAME }:n suojausta hyödyntävän yrityksen joukkoon"
+      ],
+      "Protect sensitive business information and collaborate securely": [
+        "Suojaa arkaluonteiset yritystiedot ja yhteistyöskentele turvallisesti."
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "Suojattu pilvitallennustila tietojesi hallintaan"
+      ],
+      "Tailored made solutions for larger organizations with custom needs": [
+        "Räätälöityjä ratkaisuja suuremmille organisaatioille, joilla on yksilöllisiä tarpeita"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "Ainoa yritysratkaisu, joka on:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4435,7 +4466,7 @@
         "Määritä palautuspuhelin ensin"
       ],
       "Please set a recovery/notification email first": [
-        "Aseta ensin palautuksen/ilmoitusten sähköpostiosoite"
+        "Aseta ensin palautus-/ilmoitusosoite"
       ],
       "Please try again in a few moments.": [
         "Yritä uudelleen hetken kuluttua."
@@ -6539,6 +6570,9 @@
       "2. They try ${ planName }": [
         "2. He kokeilevat ${ planName } -tilausta"
       ],
+      "2FA disabled": [
+        "2FA poistettu käytöstä"
+      ],
       "3. You earn credits": [
         "3. Ansaitset krediittejä"
       ],
@@ -6645,6 +6679,9 @@
         "Käyttäjä, jota tämä koskee, on rivillä",
         "Käyttäjät, joita tämä koskee, ovat riveillä"
       ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Lukituksen jälkeen organisaation jäsenten on avattava ${ PASS_APP_NAME } salasanalla, PIN-koodilla, jne."
+      ],
       "Align left": [
         "Tasaa vasemmalle"
       ],
@@ -6664,6 +6701,9 @@
       ],
       "All keys successfully reactivated": [
         "Kaikki avaimet aktivoitiin uudelleen"
+      ],
+      "All members have been added.": [
+        "Kaikki jäsenet on lisätty."
       ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
@@ -6868,7 +6908,7 @@
         "Peru milloin tahansa"
       ],
       "Can’t access your recovery email?": [
-        "Etkö voi käyttää palautussähköpostiasi?"
+        "Etkö voi käyttää palautusosoitettasi?"
       ],
       "Can’t access your recovery phone?": [
         "Etkö voi käyttää palautuspuhelintasi?"
@@ -6934,6 +6974,10 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja tunnisteet, jotka haluat tuoda."
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Luo suojattu pilvi ${ n } jäsenelle",
+        "Luo suojattu pilvi ${ n } jäsenelle"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Luo ja hallinnoi alitilejä ja määritä niille omaa verkkotunnustasi käyttävät sähköpostiosoitteet."
       ],
@@ -6992,11 +7036,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "Dedicated servers": [
-        "Omat palvelimet"
-      ],
       "dedicated servers": [
         "omia palvelimia"
+      ],
+      "Dedicated servers": [
+        "Omat palvelimet"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -7013,6 +7057,9 @@
       ],
       "Disable recovery by ${ type }": [
         "Poista palautuksen ${ type }"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Kaksivaiheisen tunnistautumisen käytöstä poistaminen heikentää tilisi suojausta. Jatka vain, jos se on välttämätöntä."
       ],
       "Discount": [
         "Alennus"
@@ -7086,6 +7133,9 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Kullakin verkkotunnuksella voi olla vain yksi SPF (TXT) -tietue. Mikäli haluat pitää olemassaolevan SPF (TXT) -tietueen, voit lisätä ${ spf } nykyiseen tietueeseen (se tulee ${ spfValue } jälkeen)."
+      ],
+      "Early access": [
+        "Varhainen pääsy"
       ],
       "Edit email address": [
         "Muokkaa sähköpostiosoitetta"
@@ -7210,6 +7260,9 @@
       "finance": [
         "rahoitus"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "10 vuoden versiohistoriaa varten ota yhteyttä myyntiimme."
+      ],
       "for choosing ${ product }": [
         "kun valitsit ${ product }"
       ],
@@ -7251,6 +7304,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Mene identiteetinhallintaasi noutamaan ${ appName } SAML metadata ja tuo se tähän."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Ryhmäosoitteita voidaan luoda vain omille verkkotunnuksille. Siirry sivustolle ${ linkToDomainPage } lisätäksesi oman verkkotunnuksen."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Ryhmittele samaan keskusteluun kuuluvat viestit yhteen tai näytä ne erillään."
@@ -8004,6 +8060,9 @@
       "Remember to share the user's sign in details with them.": [
         "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "Poista kuvien metatiedot suojataksesi yksityisyyttäsi."
+      ],
       "Remove one of your calendars to join this one": [
         "Poista jokin kalentereistasi liittyäksesi tähän kalenteriin"
       ],
@@ -8383,6 +8442,9 @@
       "This will delete all previous versions of your files.": [
         "Tämä poistaa tiedostojesi kaikki aiemmat versiot."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Tämä poistaa käytöstä kaksivaiheisen todennuksen, mukaan lukien sekä todennussovelluksen että suojausavainmenetelmät."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Tämä poistaa nykyisen salauslausekkeesi käytöstä, etkä voi enää käyttää sitä holvisi avaukseen tai tietojesi salauksen purkuun."
       ],
@@ -8583,6 +8645,9 @@
       ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Salasanahallinnan avulla luot erilaisia salasanoja ja säilytät ne turvallisesti, jolloin käytät aina vahvoja salasanoja ja helpotat sisäänkirjautumisia."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Poista kaksivaiheinen tunnistautuminen käytöstä palautustapaa käyttämällä."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Käytä nykyisen kuormituksen ja sijainnin perusteella parasta palvelinta: ${ formattedBestServerName }"
@@ -8918,6 +8983,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Varoitus: Et määrittänyt palautustapaa, joten tilin palautus on mahdotonta mikäli kadotat salasanasi. Jatketaanko ilman palautustapaa?"
       ],
+      "You do not have permission to perform this action": [
+        "Sinulla ei ole oikeuksia tämän toiminnon suorittamiseen"
+      ],
       "You have ${ availableCount } dedicated server available.": [
         "Käytettävissäsi on ${ availableCount } oma palvelin.",
         "Käytettävissäsi on ${ availableCount } omaa palvelinta."
@@ -8969,12 +9037,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Menetät pääsyn Plus-ominaisuuksiin tänä päivänä."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Menetät pääsyn Plus-palvelimiin ja -ominaisuuksiin tänä päivänä."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Tarvitset ${ BRAND_NAME }-osoitteen käyttääksesi ${ MAIL_APP_NAME } ja ${ CALENDAR_APP_NAME } -palveluita"
@@ -9573,6 +9635,9 @@
       "15 minutes": [
         "15 minuutin kuluttua"
       ],
+      "2 minutes": [
+        "2 minuuttia"
+      ],
       "30 minutes": [
         "30 minuutin kuluttua"
       ],
@@ -9582,9 +9647,6 @@
       "5 minutes": [
         "Viiden minuutin kuluttua"
       ],
-      "Account recovery": [
-        "Tilin palautus"
-      ],
       "Account storage": [
         "Tilin tallennustila"
       ],
@@ -9593,6 +9655,12 @@
       ],
       "Activity": [
         "Tapahtumat"
+      ],
+      "Add all organization members": [
+        "Lisää kaikki organisaation jäsenet"
+      ],
+      "Add group member": [
+        "Lisää ryhmän jäsen"
       ],
       "Address": [
         "Osoite"
@@ -9909,6 +9977,9 @@
       "Disable sharing outside the organization": [
         "Poista organisaation ulkopuolinen jakaminen käytöstä"
       ],
+      "Disabled": [
+        "Pois käytöstä"
+      ],
       "Display name": [
         "Näyttönimi"
       ],
@@ -9941,6 +10012,9 @@
       ],
       "Email or username": [
         "Sähköpostiosoite tai käyttäjätunnus"
+      ],
+      "Email settings": [
+        "Sähköpostiasetukset"
       ],
       "Emails": [
         "Viestit"
@@ -10002,9 +10076,6 @@
       "Folder location": [
         "Kansion sijainti"
       ],
-      "Folders and labels": [
-        "Kansiot ja tunnisteet"
-      ],
       "Font family": [
         "Tekstin fontti"
       ],
@@ -10022,6 +10093,9 @@
       ],
       "Group address": [
         "Ryhmän osoite"
+      ],
+      "Group conversations": [
+        "Ryhmäkeskustelut"
       ],
       "Group members": [
         "Ryhmän jäsenet"
@@ -10068,6 +10142,9 @@
       "Issuer ID": [
         "Myöntäjän ID"
       ],
+      "Keep emails in Sent/Drafts": [
+        "Säilytä sähköpostit lähetetyissä/luonnoksissa"
+      ],
       "Keep me signed in": [
         "Pysy kirjautuneena"
       ],
@@ -10107,14 +10184,14 @@
       "Link label (optional)": [
         "Linkin tunniste (valinnainen)"
       ],
+      "Lock app after inactivity": [
+        "Lukitse sovellus käyttämättömyyden jälkeen"
+      ],
       "Logo": [
         "Logo"
       ],
       "Mail Server (IMAP)": [
         "Sähköpostipalvelin (IMAP)"
-      ],
-      "Mail settings": [
-        "Mail-asetukset"
       ],
       "Main": [
         "Pää"
@@ -10314,6 +10391,9 @@
       "Recovery phrase": [
         "Palautuslauseke"
       ],
+      "Remove image metadata": [
+        "Poista kuvien metatiedot"
+      ],
       "Repeat password": [
         "Toista salasana"
       ],
@@ -10385,9 +10465,6 @@
       ],
       "Spam": [
         "Roskaposti"
-      ],
-      "Spam and filters": [
-        "Roskaposti ja suodattimet"
       ],
       "Starred": [
         "Tähdellä"
@@ -10975,6 +11052,9 @@
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Rajoitetun ajan tarjous: **Saat jopa 35 % alennusta** vuosittaisista tilauksista"
       ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Rajoitetun ajan tarjous: **Säästä ${ discount } yhden vuoden ${ name } -tilauksella**"
+      ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Sinut on kutsuttu kokeilemaan ${ MAIL_APP_NAME }ia"
       ]
@@ -11399,6 +11479,32 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Get started for $1": [
+        "Aloitushinta: $1"
+      ],
+      "Get started for 1 €": [
+        "Aloitushinta: 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Aloitushinta: CHF 1"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -11426,32 +11532,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Get started for $1": [
-        "Aloitushinta: $1"
-      ],
-      "Get started for 1 €": [
-        "Aloitushinta: 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Aloitushinta: CHF 1"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: feature": {
@@ -11707,14 +11787,8 @@
       "Password health": [
         "Salasanaterveys"
       ],
-      "Password manager to secure credentials": [
-        "Salasananhallinta kirjautumistietojen turvaamiseen"
-      ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
-      ],
-      "Phone support (40+ users)": [
-        "Puhelinasiakaspalvelu (40+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -12053,6 +12127,14 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -12071,14 +12153,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -12196,9 +12270,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "${ BRAND_NAME }in asiakastyytyväisyystiimi tarjoaa palvelua puhelimitse vähintään 6 käyttäjän asiakkaille eurooppalaisina toimistoaikoina"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -12377,6 +12448,9 @@
       ],
       "Dark Web Monitoring has been enabled": [
         "Pimeän verkon valvonta otettiin käyttöön"
+      ],
+      "Downloaded 2FA recovery codes": [
+        "Lataa 2FA-palautuskoodit"
       ],
       "Invalid code": [
         "Virheellinen koodi"
@@ -12732,17 +12806,14 @@
       ]
     },
     "option": {
-      "Everyone, incl. outside": [
-        "Kaikki, myös ulkopuoliset"
+      "Everyone": [
+        "Kaikki"
       ],
-      "Members": [
-        "Jäsenet"
+      "Group members": [
+        "Ryhmän jäsenet"
       ],
-      "Nobody by default": [
-        "Oletusarvoisesti ei ketään"
-      ],
-      "Organization members": [
-        "Organisaation jäsenet"
+      "No one": [
+        "Ei ketään"
       ]
     },
     "Option delay send seconds": {
@@ -13076,7 +13147,7 @@
         "Hanki ${ appName } selaimelle ${ browserName }"
       ],
       "Get in touch with our sales team": [
-        "Ota yhteyttä myyntitiimiimme"
+        "Ota yhteyttä myyntiimme"
       ],
       "Get the security and features your business needs": [
         "Hanki yrityksesi tarvitsema turva ja ominaisuudet"
@@ -13305,10 +13376,10 @@
         "Ota tilisi ylläpitäjän oikeudet käyttöön aktivoimalla organisaatioavain."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Palauta ylläpitäjän oikeudet käyttämällä tietojen palautusmenetelmää tai nollaamalla organisaation avain."
+        "Käytä palautustapaa tai nollaa organisaation avain ylläpitäjän oikeuksien palauttamiseksi."
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Palauta ylläpitäjän oikeudet käyttämällä tietojen palautusmenetelmää, ottamalla yhteyttä toiseen ylläpitäjään tai nollaamalla organisaation avain."
+        "Käytä palautustapaa, ota yhteyttä toiseen ylläpitäjään tai nollaa organisaation avain ylläpitäjän oikeuksien palauttamiseksi."
       ],
       "We couldn't verify authenticity of this identity.": [
         "Emme voineet vahvistaa tämän identiteetin aitoutta."
@@ -13510,6 +13581,9 @@
       "Gift code": [
         "Lahjakoodi"
       ],
+      "Group name": [
+        "Ryhmän nimi"
+      ],
       "Link": [
         "Verkkosivun URL"
       ],
@@ -13593,7 +13667,7 @@
     },
     "plan customizer, ips": {
       "please ${ contactHref } our Sales team.": [
-        "${ contactHref } myyntitiimiimme."
+        "${ contactHref } myyntiimme."
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Valitse tilauksesi sisältyvien IP-osoitteiden määrä. Jokainen lisäosoite maksaa ${ price }."
@@ -13797,6 +13871,251 @@
       ],
       "User": [
         "Käyttäjä"
+      ]
+    },
+    "Safety review": {
+      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
+        " **Ota käyttöön palautus puhelimitse** päästäksesi takaisin tilillesi, jos unohdat salasanasi."
+      ],
+      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
+        "${ BRAND_NAME } lähettää nollauskoodin sähköpostitse tähän osoitteeseen, kun nollaat salasanasi."
+      ],
+      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
+        "${ BRAND_NAME } lähettää nollauskoodin tekstiviestitse tähän numeroon, kun nollaat salasanasi."
+      ],
+      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
+        "${ enableDeviceRecovery } varmistaaksesi, että tietosi voidaan palauttaa."
+      ],
+      "**Enable recovery by email** to regain access to your account if you forget your password.": [
+        "**Ota käyttöön palautus sähköpostitse** päästäksesi takaisin tilillesi, jos unohdat salasanasi."
+      ],
+      "Account safety review": [
+        "Tilisi turvallisuuskatsaus"
+      ],
+      "Add a recovery email": [
+        "Lisää palautusosoite"
+      ],
+      "Add a recovery email address": [
+        "Lisää palautusosoite"
+      ],
+      "Add a recovery phone number": [
+        "Lisää palautusnumero"
+      ],
+      "Back to Safety Review": [
+        "Takaisin turvallisuuskatsaukseen"
+      ],
+      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
+        "Koska nollasit salasanasi, nykyistä palautuspakettiasi voidaan käyttää vain ennen salasanan nollausta luotujen tietojen palauttamiseen."
+      ],
+      "Can be used to regain access to your account and data": [
+        "Voidaan käyttää palauttamaan pääsysi tilillesi ja tietoihisi"
+      ],
+      "Check account security": [
+        "Tarkista tilin turvallisuus"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Koodi lähetettiin kohteeseen ${ boldValue }"
+      ],
+      "Continue to Safety Review": [
+        "Jatka turvallisuuskatsaukseen"
+      ],
+      "Critical issues found. You are at risk of losing access to your account and data.": [
+        "Kriittisiä ongelmia havaittu. Olet vaarassa menettää pääsyn tilillesi ja tietoihisi."
+      ],
+      "Critical issues found. You are at risk of losing access to your data.": [
+        "Kriittisiä ongelmia havaittu. Olet vaarassa menettää pääsyn tietoihisi."
+      ],
+      "Device-based recovery enabled": [
+        "Laitteistopohjainen palautus on käytössä"
+      ],
+      "Download ${ size }": [
+        "Lataa ${ size }"
+      ],
+      "Download your Recovery Kit": [
+        "Lataa palautuspakettisi"
+      ],
+      "Enable device-based recovery": [
+        "Ota laitteistopohjainen palautus käyttöön"
+      ],
+      "Enable recovery by email": [
+        "Ota palautus sähköpostitse käyttöön"
+      ],
+      "Enable recovery by phone": [
+        "Ota palautus puhelimitse käyttöön"
+      ],
+      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
+        "Ymmärrän, etten voi palauttaa tällä hetkellä lukittuja tietoja tällä palautuspaketilla."
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Jos unohdat ${ BRAND_NAME } -salasanasi ja sinun on nollattava se, kirjautuessasi seuraavan kerran sisään tällä laitteella uutta salasanaasi käyttäen, täysi pääsysi ${ BRAND_NAME } -tilille palautetaan."
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Jos unohdat ${ BRAND_NAME } -salasanasi ja sinun on nollattava se, kirjautuessasi seuraavan kerran sisään tällä laitteella uutta salasanaasi käyttäen, täysi pääsysi ${ BRAND_NAME } -tilille palautetaan."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
+        "Jos et pääse ${ BRAND_NAME } -tilillesi, voit kirjautua ja palauttaa tietosi palautuspakettisi avulla."
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Jos menetät kirjautumistietosi ja sinun on nollattava tilisi, **on ehdottoman tärkeää**, että olet määrittänyt sekä **tilin että tietojen palautustavan**, muuten et välttämättä pääse käsiksi sähköposteihisi, yhteystietoihisi, tiedostoihisi tai salasanoihisi."
+      ],
+      "Invalid code": [
+        "Virheellinen koodi"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Se on ainoa tapa palauttaa tilisi kokonaan, joten varmista, että säilytät sen jossakin turvallisessa paikassa."
+      ],
+      "Recovery email address": [
+        "Palautusosoite"
+      ],
+      "Recovery phone number": [
+        "Palautunumero"
+      ],
+      "Safeguard account now": [
+        "Suojaa tilisi nyt"
+      ],
+      "Safeguard your account": [
+        "Suojaa tilisi"
+      ],
+      "Safeguard your account further": [
+        "Suojaa tilisi paremmin"
+      ],
+      "Safety review": [
+        "Turvallisuuskatsaus"
+      ],
+      "Send a new code": [
+        "Lähetä uusi koodi"
+      ],
+      "Show more": [
+        "Näytä lisää"
+      ],
+      "Take action to secure your account": [
+        "Toimi suojataksesi tilisi"
+      ],
+      "There was an error generating your Recovery Kit": [
+        "Virhe luotaessa palautuspakettiasi"
+      ],
+      "There was an error verifying your recovery email": [
+        "Virhe vahvistettaessa palautusosoitettasi"
+      ],
+      "There was an error verifying your recovery phone": [
+        "Virhe vahvistettaessa palautusnumeroasi"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Varmistaaksesi sähköpostiosoitteen kuuluvan sinulle, syötä osoitteeseen ${ boldEmail } lähetetty vahvistuskoodi."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Varmistaaksesi puhelinnumeron kuuluvan sinulle, syötä numeroon ${ boldPhoneNumber } lähetetty vahvistuskoodi."
+      ],
+      "Update your Recovery Kit": [
+        "Päivitä palautuspakettisi"
+      ],
+      "Update your Recovery Kit?": [
+        "Päivitetäänkö palautuspakettisi?"
+      ],
+      "Verify": [
+        "Vahvista"
+      ],
+      "Verify your recovery email address": [
+        "Vahvista palautusosoitteesi"
+      ],
+      "Verify your recovery phone number": [
+        "Vahvista palautusnumerosi nyt"
+      ],
+      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
+        "Palautuspakettisi luomisessa tapahtui virhe. Yritä myöhemmin uudelleen tai ota yhteyttä asiakaspalveluun, jos ongelma jatkuu."
+      ],
+      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
+        "Palautussähköpostisi vahvistuksessa tapahtui virhe. Yritä myöhemmin uudelleen tai ota yhteyttä asiakaspalveluun, jos ongelma jatkuu."
+      ],
+      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
+        "Palautuspuhelimesi vahvistuksessa tapahtui virhe. Yritä myöhemmin uudelleen tai ota yhteyttä asiakaspalveluun, jos ongelma jatkuu."
+      ],
+      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
+        "Ottaessasi laitepohjaisen palautuksen käyttöön, ${ BRAND_NAME } tallentaa avainketjusi salatun varmuuskopion tiedostona selaimesi verkkotallennustilaan."
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "Olet vaarassa menettää pääsyn tilillesi ja tietoihisi."
+      ],
+      "You are at risk of losing access to your data.": [
+        "Olet vaarassa menettää pääsyn tietoihisi."
+      ],
+      "You can disable this at any time.": [
+        "Voit poistaa tämän käytöstä milloin tahansa."
+      ],
+      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Voit käyttää tässä palautuspaketissa olevaa palautuslauseketta tilisi täydelliseen palauttamiseen, kun nollaat salasanasi. Varmista siis, että säilytät sen jossakin turvallisessa paikassa."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Voit käyttää palautussähköpostia päästäksesi takaisin tilillesi, jos unohdat salasanasi."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Voit käyttää palautuspuhelinta päästäksesi takaisin tilillesi, jos unohdat salasanasi."
+      ],
+      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
+        "Olet aiemmin ladannut palautuspaketin. Uuden lataaminen **poistaa vanhan käytöstä**."
+      ],
+      "You have recommended actions.": [
+        "Sinulle on suositeltuja toimintoja."
+      ],
+      "You recovery email address is:": [
+        "Palautusosoitteesi on:"
+      ],
+      "You recovery phone number is:": [
+        "Palautusnumerosi on:"
+      ],
+      "Your account and data can be recovered": [
+        "Tilisi ja tietosi voidaan palauttaa"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "Tilisi ja tietosi voidaan palauttaa. Tarkista, voitko yhä käyttää palautustapojasi."
+      ],
+      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
+        "Tilisi ja tietosi voidaan palauttaa. Sinulle on suositeltuja toimintoja tilisi suojauksen parantamiseksi."
+      ],
+      "Your account and data can be recovered. You have recommended actions.": [
+        "Tilisi ja tietosi voidaan palauttaa. Sinulle on suositeltuja toimintoja."
+      ],
+      "Your account is fully secure.": [
+        "Tilisi on täysin suojattu."
+      ],
+      "Your account is secure.": [
+        "Tilisi on suojattu."
+      ],
+      "Your recovery email": [
+        "Palautusosoitteesi"
+      ],
+      "Your recovery email and phone can **only recover access to your account**.": [
+        "Palautussähköpostisi ja -puhelimesi voivat **palauttaa vain pääsyn tilillesi**."
+      ],
+      "Your recovery email can **only recover access to your account**.": [
+        "Palautussähköpostisi voi **palauttaa vain pääsyn tilillesi**."
+      ],
+      "Your recovery email has been enabled": [
+        "Palautusosoitteesi on otettu käyttöön"
+      ],
+      "Your recovery email is set": [
+        "Palautusosoitteesi on asetettu"
+      ],
+      "Your Recovery Kit": [
+        "Palautuspakettisi"
+      ],
+      "Your Recovery Kit is set": [
+        "Palautuspakettisi on valmis"
+      ],
+      "Your recovery methods": [
+        "Palautustapasi"
+      ],
+      "Your recovery phone": [
+        "Palautusnumerosi"
+      ],
+      "Your recovery phone can **only recover access to your account**.": [
+        "Palautuspuhelimesi voi **palauttaa vain pääsyn tilillesi**."
+      ],
+      "Your recovery phone has been enabled": [
+        "Palautusnumerosi on otettu käyttöön"
+      ],
+      "Your recovery phone is set": [
+        "Palautusnumerosi on asetettu"
       ]
     },
     "saml: Action": {
@@ -14444,6 +14763,16 @@
         "Vahvistus"
       ]
     },
+    "signup: Action": {
+      "Request trial": [
+        "Pyydä kokeiluversiota"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR and HIPAA compliant": [
+        "GDPR- ja HIPAA -vaatimusten mukainen"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Sulje"
@@ -14875,6 +15204,9 @@
       ],
       "1 email address": [
         "1 sähköpostiosoite"
+      ],
+      "1 email address per user": [
+        "1 sähköpostiosoite per käyttäjä"
       ],
       "1 VPN connection": [
         "1 VPN-yhteys"
@@ -15716,6 +16048,9 @@
       "Status": [
         "Tila"
       ],
+      "Time": [
+        "Aika"
+      ],
       "Total storage": [
         "Tallennustilaa yhteensä"
       ],
@@ -15818,6 +16153,9 @@
       ],
       "Account recovery": [
         "Tilin palautus"
+      ],
+      "Account settings": [
+        "Tilin asetukset"
       ],
       "Account suspended": [
         "Tili on jäädytetty"
@@ -15954,10 +16292,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -15986,6 +16324,9 @@
       ],
       "Clear out the junk": [
         "Tyhjennä roskat"
+      ],
+      "Click a value in the table to use it as filter": [
+        "Klikkaa taulukon arvoa käyttääksesi sitä suodattimena."
       ],
       "Close": [
         "Sulje"
@@ -16162,6 +16503,9 @@
       ],
       "Disable two-factor authentication": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
+      ],
+      "Disable two-factor authentication?": [
+        "Poista kaksivaiheinen tunnistautuminen käytöstä?"
       ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
@@ -16554,6 +16898,9 @@
       ],
       "Privacy and data collection": [
         "Yksityisyys ja tiedonkeruu"
+      ],
+      "Privacy and security": [
+        "Yksityisyys ja turvallisuus"
       ],
       "Processing...": [
         "Käsitellään..."
@@ -17387,7 +17734,7 @@
     },
     "Users table: badge": {
       "2FA": [
-        "Kaksivaiheinen tunnistautuminen"
+        "2FA"
       ],
       "Administrators can't access the data of private users": [
         "Ylläpitäjät eivät pääse käsiksi yksityisten käyttäjien tietoihin"
@@ -17610,11 +17957,6 @@
       ],
       "You're Invited.": [
         "Sinut on kutsuttu."
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Säilytä ja siirrä Bitcoinejasi turvallisesti"
       ]
     },
     "wallet_signup_2024:Bug category": {

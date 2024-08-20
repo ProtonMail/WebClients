@@ -37,7 +37,7 @@ describe('Import LastPass csv', () => {
     it('parses primary `LastPass import` vault items correctly', () => {
         const [source] = sourceFiles;
         const [primary] = payloads[source].vaults;
-        expect(primary.items.length).toEqual(3);
+        expect(primary.items.length).toEqual(4);
 
         /* Login */
         const loginItem1 = deobfuscateItem(primary.items[0] as any) as unknown as ItemImportIntent<'login'>;
@@ -56,7 +56,15 @@ describe('Import LastPass csv', () => {
         expect(noteItem1.metadata.note).toEqual('This is a secure note');
 
         /* Credit Card */
-        const creditCardItem1 = deobfuscateItem(primary.items[2] as any) as unknown as ItemImportIntent<'creditCard'>;
+        const identityItem = deobfuscateItem(primary.items[2] as any) as unknown as ItemImportIntent<'identity'>;
+        expect(identityItem.type).toEqual('identity');
+        expect(identityItem.metadata.name).toEqual('TestID');
+        expect(identityItem.metadata.note).toEqual('');
+        expect(identityItem.content.firstName).toEqual('Test');
+        expect(identityItem.content.middleName).toEqual('Joe');
+
+        /* Credit Card */
+        const creditCardItem1 = deobfuscateItem(primary.items[3] as any) as unknown as ItemImportIntent<'creditCard'>;
         expect(creditCardItem1.type).toEqual('creditCard');
         expect(creditCardItem1.metadata.name).toEqual('Credit Card Item with note');
         expect(creditCardItem1.metadata.note).toEqual('this is a note for the credit card');
@@ -122,7 +130,6 @@ describe('Import LastPass csv', () => {
         const [source] = sourceFiles;
         expect(payloads[source].ignored).not.toEqual([]);
         expect(payloads[source].ignored[0]).toEqual('[Bank Account] test');
-        expect(payloads[source].ignored[1]).toEqual('[Address] TestID');
     });
 
     test('correctly handles CR CR LF line endings', () => {

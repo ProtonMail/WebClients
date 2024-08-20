@@ -50,13 +50,16 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                 {utmTrackers.map((tracker) => {
                     return (
                         <div key={`${tracker.originalURL}`} className="mb-4">
-                            <div className="flex flex-column mb-1">
+                            <div className="flex flex-column mb-0.5">
                                 <span className="color-weak text-sm">{c('Label').t`Original link`}</span>
-                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full items-center">
-                                    <div className="text-ellipsis w-full flex-1" title={tracker.originalURL}>
+                                <div
+                                    className="flex flex-nowrap group-hover-opacity-container max-w-full items-center"
+                                    style={{ 'margin-block': '-0.25em' }}
+                                >
+                                    <div className="text-ellipsis w-full flex-1 py-1" title={tracker.originalURL}>
                                         {tracker.originalURL}
                                     </div>
-                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width shrink-0">
+                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width shrink-0 ml-0.5">
                                         <Tooltip title={c('Label').t`Open in a new tab`}>
                                             <Button
                                                 icon
@@ -73,11 +76,14 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                             </div>
                             <div className="flex flex-column">
                                 <span className="color-primary text-sm">{c('Label').t`Cleaned`}</span>
-                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full items-center">
-                                    <div className="text-ellipsis w-full flex-1" title={tracker.cleanedURL}>
+                                <div
+                                    className="flex flex-nowrap group-hover-opacity-container max-w-full items-center"
+                                    style={{ 'margin-block': '-0.25em' }}
+                                >
+                                    <div className="text-ellipsis w-full flex-1 py-1" title={tracker.cleanedURL}>
                                         {tracker.cleanedURL}
                                     </div>
-                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width shrink-0">
+                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width shrink-0 ml-0.5">
                                         <Tooltip title={c('Label').t`Open in a new tab`}>
                                             <Button
                                                 icon

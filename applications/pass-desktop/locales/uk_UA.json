@@ -1107,9 +1107,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } показуватиме піктограму елемента через анонімний проксі-сервер зображень ${ BRAND_NAME }."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } імпортує лише дані входу, нотатки та кредитні картки."
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } вимагатиме вашого паролю ${ BRAND_NAME } для доступу до даних в автономному режимі."
       ],
@@ -1514,6 +1511,9 @@
       ],
       "Offline support successfully disabled": [
         "Підтримка автономного доступу успішно відключена"
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Наші попередження є запобіжними. Якщо ви не впізнаєте жодної із зазначених відомостей, можете сміливо ігнорувати це повідомлення."
       ],
       "Owner": [
         "Власник"

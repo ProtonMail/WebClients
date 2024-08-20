@@ -573,6 +573,9 @@
       "Speech": [
         "Sprache"
       ],
+      "Start ${ PASS_APP_NAME } at login": [
+        "${ PASS_APP_NAME } beim Anmelden starten"
+      ],
       "Toggle developers tools": [
         "Entwicklerwerkzeuge ein/aus"
       ],
@@ -685,6 +688,9 @@
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Authentifizierung fehlgeschlagen. Bestätige dein ${ BRAND_NAME }-Passwort, um mit dem Export fortzufahren."
+      ],
+      "Biometric authentication failed": [
+        "Biometrische Authentifizierung fehlgeschlagen"
       ],
       "Cannot send invitation at the moment": [
         "Einladung kann aktuell nicht versendet werden",
@@ -964,6 +970,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Beim Start von ${ PASS_SHORT_APP_NAME } ist ein Problem aufgetreten. Wenn dieses Problem weiterhin besteht, wende dich bitte an unseren Kundensupport."
       ],
+      "Wrong extra password": [
+        "Falsches zusätzliches Passwort"
+      ],
       "Wrong password": [
         "Falsches Passwort"
       ],
@@ -1105,9 +1114,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } importiert nur Logins, Notizen und Kreditkarten."
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } benötigt dein ${ BRAND_NAME }-Passwort, um offline auf Daten zugreifen zu können."
       ],
@@ -1132,6 +1138,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Der Zugang zu ${ PASS_APP_NAME } erfordert immer dein ${ BRAND_NAME }-Passwort."
+      ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Zugang zu ${ PASS_APP_NAME } wird deinen Fingerabdruck oder Geräte-PIN-Code benötigen."
       ],
       "Add a username field": [
         "Benutzername-Feld hinzufügen"
@@ -1180,6 +1189,12 @@
       ],
       "Auto-lock successfully disabled.": [
         "Automatische Sperre erfolgreich deaktiviert."
+      ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Bevor du deine Daten in diesem Format exportierst, öffne bitte die Safari-Einstellungen -> Registerkarte „Allgemein“ -> deaktiviere die Option „Sichere Dateien nach dem Herunterladen öffnen“. Dadurch wird verhindert, dass Safari die exportierte Datei fälschlicherweise extrahiert."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Biometrische Sperre erfolgreich registriert. Verwende es, um ${ PASS_APP_NAME } zu entsperren."
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometrie wird deaktiviert und muss erneut aktiviert werden."
@@ -1282,6 +1297,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Aktiviere die automatische Sperre, um deine Daten zu sichern"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Automatische biometrische Sperre aktivieren"
+      ],
+      "Enabling biometrics lock failed": [
+        "Aktivierung der biometrischen Sperre fehlgeschlagen"
       ],
       "Enabling offline mode...": [
         "Offline-Modus wird aktiviert..."
@@ -1517,6 +1538,9 @@
       "Offline support successfully disabled": [
         "Offline-Unterstützung erfolgreich deaktiviert."
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Online-Zugang zu ${ PASS_APP_NAME } wird einen PIN-Code benötigen. Du wirst nach 3 falschen Versuchen abgemeldet werden."
+      ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Unsere Warnungen sind eher auf der Seite der Vorsicht angesiedelt. Wenn du keine der gefundenen Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
@@ -1563,8 +1587,23 @@
       "Please confirm your extra password": [
         "Bitte bestätige dein zusätzliches Passwort"
       ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Bitte bestätige dein zusätzliches Passwort, um die automatische Sperre mit Biometrie zu aktivieren."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Bitte bestätige dein zusätzliches Passwort, damit die automatische Sperre mit deinem zusätzlichen Passwort aktiviert wird."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Bitte bestätige dein zusätzliches Passwort, um die Registrierung deiner aktuellen Sperre aufzuheben."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Bitte bestätige dein Extrapasswort, um die automatische Sperrzeit zu aktualisieren."
+      ],
       "Please confirm your password": [
         "Bitte bestätige dein Passwort"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Bitte bestätige dein Passwort für automatisches Sperren mit Biometrik."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Bitte bestätige dein Passwort, damit die automatische Passwort-Sperre aktiviert wird."
@@ -1655,6 +1694,9 @@
       ],
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
+      ],
+      "Set by your organization": [
+        "Von deiner Organisation eingestellt"
       ],
       "Settings successfully updated": [
         "Einstellungen erfolgreich aktualisiert."
@@ -1864,6 +1906,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Deine Informationen wurden am ${ displayedDate } gefunden."
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } sicherst."
       ]
     },
     "Label": {
@@ -1908,6 +1953,9 @@
       ],
       "15 minutes": [
         "15 Minuten"
+      ],
+      "2 minutes": [
+        "2 Minuten"
       ],
       "24 hours": [
         "24 Stunden"
@@ -2782,6 +2830,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gefällt dir ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Gib dein zusätzliches Passwort ein."
       ],
       "Enter your password": [
         "Passwort eingeben"

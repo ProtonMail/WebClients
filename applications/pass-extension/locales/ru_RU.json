@@ -1040,9 +1040,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } отобразит фавикон элемента через ${ BRAND_NAME } анонимизированный прокси-сервер изображений."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } будет импортировать только логины, заметки и кредитные карты."
-      ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } подскажет вам, как только сгенерированные пароли будут автоматически заполнены."
       ],
@@ -1833,6 +1830,9 @@
       ],
       "15 minutes": [
         "15 минут"
+      ],
+      "2 minutes": [
+        "2 минуты"
       ],
       "24 hours": [
         "24 часа"

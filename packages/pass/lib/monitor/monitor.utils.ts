@@ -11,7 +11,7 @@ import type {
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 import type { AddressBreachDTO, MonitorAddress, MonitorDomain } from './types';
-import { AddressType } from './types';
+import { AddressType, BreachFlag } from './types';
 
 export const getDuplicatePasswords = (logins: ItemRevision<'login'>[]): UniqueItem[][] => {
     const duplicatesMap = new Map<string, UniqueItem[]>();
@@ -49,12 +49,15 @@ export const getAddressId = (address: AddressBreachDTO): string => {
     }
 };
 
+export const isBreachedMonitored = ({ Flags }: BreachCustomEmailGetResponse | BreachAddressGetResponse): boolean =>
+    (Flags & BreachFlag.MonitorDisabled) !== BreachFlag.MonitorDisabled;
+
 export const intoCustomMonitorAddress = (breach: BreachCustomEmailGetResponse): MonitorAddress<AddressType.CUSTOM> => ({
     addressId: breach.CustomEmailID,
     breachCount: breach.BreachCounter,
     breached: breach.BreachCounter > 0,
     email: breach.Email,
-    monitored: breach.Flags << 0 === 0,
+    monitored: isBreachedMonitored(breach),
     type: AddressType.CUSTOM,
     verified: breach.Verified,
     suggestion: false,
@@ -66,7 +69,7 @@ export const intoProtonMonitorAddress = (breach: BreachAddressGetResponse): Moni
     breached: breach.BreachCounter > 0,
     breachedAt: breach.LastBreachTime,
     email: breach.Email,
-    monitored: breach.Flags << 0 === 0,
+    monitored: isBreachedMonitored(breach),
     type: AddressType.PROTON,
 });
 

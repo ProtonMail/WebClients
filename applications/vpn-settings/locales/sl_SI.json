@@ -334,9 +334,6 @@
       "Keep logo": [
         "Ohrani logotip"
       ],
-      "Keep my Plus subscription": [
-        "Ohrani mojo Plus naročnino."
-      ],
       "Let's talk": [
         "Pogovorimo se!"
       ],
@@ -456,9 +453,6 @@
       ],
       "Resend code": [
         "Znova pošlji kodo"
-      ],
-      "Resend invitation": [
-        "Ponovno pošlji povabilo"
       ],
       "Reset credentials": [
         "Ponastavite poverilnice"
@@ -3535,11 +3529,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Prilagodite prikaz aplikacij ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "namenski strežniki"
-      ],
       "Dedicated servers": [
         "Namenski strežniki"
+      ],
+      "dedicated servers": [
+        "namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -4626,12 +4620,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po prijavi boste preusmerjeni na ${ destination }."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Dostop do funkcij Plus boste izgubili na ta datum."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Dostop do strežnikov in funkcij Plus boste izgubili na ta datum."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Za uporabo aplikacij ${ MAIL_APP_NAME } in ${ CALENDAR_APP_NAME } boste potrebovali naslov ${ BRAND_NAME }."
@@ -5959,14 +5947,8 @@
       "Password health": [
         "Kakovost gesla"
       ],
-      "Password manager to secure credentials": [
-        "Upravitelj gesel za varno preverjanje pristnosti"
-      ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonska podpora (40+ uporabnikov)"
       ],
       "Priority email support": [
         "Prednostna podpora po e-pošti"
@@ -6393,9 +6375,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Prilagodite svoj podpis v e-pošti z logotipi, slikami, ikonami družbenih medijev, povezavami do vaših kontaktnih podatkov in podobnim."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonska podpora je na voljo s strani ${ BRAND_NAME } ekipe za uspeh strank med običajnim poslovnim časom v Evropi za stranke z najmanj šestimi uporabniki."
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Preprečuje, da bi do sporočil dostopali ${ BRAND_NAME } ali tretje osebe. Sporočila lahko berejo le pošiljatelj in predvideni prejemnik."
       ],
@@ -6650,11 +6629,6 @@
       ],
       "The whole organization": [
         "Celotna organizacija"
-      ]
-    },
-    "option": {
-      "Members": [
-        "Člani"
       ]
     },
     "Organization capacity error": {
@@ -7066,6 +7040,9 @@
       ],
       "Gift code": [
         "Darilna koda"
+      ],
+      "Group name": [
+        "Ime skupine"
       ],
       "Other": [
         "Ostalo"
@@ -8859,10 +8836,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [

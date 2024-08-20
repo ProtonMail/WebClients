@@ -927,6 +927,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Det oppstod et problem under oppstart av ${ PASS_SHORT_APP_NAME }. Hvis dette problemet vedvarer, kan du kontakte vår kundestøtte for å få hjelp."
       ],
+      "Wrong extra password": [
+        "Galt ekstra passord"
+      ],
       "Wrong password": [
         "Feil passord"
       ],
@@ -1025,9 +1028,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } vil vise elementfavorittikonet via ${ BRAND_NAME }s anonymiserte bildeproxy."
-      ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } vil bare importere pålogginger, notater og kredittkort."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } vil spørre deg så snart genererte passord er autofylt."
@@ -1444,6 +1444,9 @@
       "Offline support successfully disabled": [
         "Støtte for frakoblet tilgang deaktivert"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Nettilgang til ${ PASS_APP_NAME } krever en PIN-kode. Du blir logget ut etter 3 mislykkede forsøk."
+      ],
       "Open the Extensions menu": [
         "Åpne utvidelsesmenyen"
       ],
@@ -1489,6 +1492,18 @@
       ],
       "Please confirm your extra password": [
         "Vennligst bekreft ditt ekstra passord"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Vennligst bekreft det ekstra passordet ditt for å låse automatisk med biometri."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Vennligst bekreft det ekstra passordet for å kunne låse automatisk med ditt ekstra passord."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Vennligst bekreft det ekstra passordet for å avregistrere din nåværende lås."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Vennligst bekreft det ekstra passordet ditt for å oppdatere tiden for automatisk låsing."
       ],
       "Please confirm your password": [
         "Vennligst bekreft passordet ditt"
@@ -1597,6 +1612,9 @@
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
+      ],
+      "Set by your organization": [
+        "Angitt av organisasjonen din"
       ],
       "Settings successfully updated": [
         "Innstillinger oppdatert"
@@ -1800,6 +1818,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1843,6 +1864,9 @@
       ],
       "15 minutes": [
         "15 minutter"
+      ],
+      "2 minutes": [
+        "2 minutter"
       ],
       "24 hours": [
         "24 timer"

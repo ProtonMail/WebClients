@@ -392,9 +392,6 @@
       "Keep current time zone": [
         "Mantieni il fuso orario attuale"
       ],
-      "Keep my Plus subscription": [
-        "Mantieni il mio abbonamento Plus"
-      ],
       "Later": [
         "Più tardi"
       ],
@@ -4416,6 +4413,10 @@
       "Create a new contact group": [
         "Crea nuovo gruppo di contatti"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Crea un cloud sicuro per ${ n } membro",
+        "Crea un cloud sicuro per ${ n } membri"
+      ],
       "Create in": [
         "Crea in"
       ],
@@ -5107,12 +5108,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Hai precedentemente rifiutato quest'invito. Chiedi al proprietario un nuovo invito"
-      ],
-      "You will lose access to Plus features on this date.": [
-        "A partire da questa data perderai l'accesso alle funzionalità Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "A partire da questa data perderai l'accesso ai server e alle funzionalità Plus."
       ],
       "You will lose all unsaved changes.": [
         "Perderai tutte le modifiche non salvate."
@@ -6529,14 +6524,8 @@
       "Password health": [
         "Stato delle password"
       ],
-      "Password manager to secure credentials": [
-        "Gestore password per la protezione delle credenziali"
-      ],
       "Password-protected Emails": [
         "Email protette da password"
-      ],
-      "Phone support (40+ users)": [
-        "Assistenza telefonica (Più di 40 utenti)"
       ],
       "Priority email support": [
         "Assistenza email prioritaria"
@@ -6929,9 +6918,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "L'assistenza telefonica è disponibile dal team del servizio clienti ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con 6 o più utenti"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impedisce l'accesso ai messaggi da parte di ${ BRAND_NAME } o di terzi. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."
@@ -9850,11 +9836,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via email"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Conserva e trasferisci i tuoi bitcoin in modo sicuro"
       ]
     },
     "wallet_signup_2024:Bug category": {

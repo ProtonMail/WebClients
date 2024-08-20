@@ -65,7 +65,7 @@
         "Дазволіць"
       ],
       "Always allow sending mail to group": [
-        "Заўсёды дазваляць адпраўку пошты ў групу"
+        "Заўсёды дазваляць адпраўку лістоў у групу"
       ],
       "Apply": [
         "Ужыць"
@@ -185,7 +185,7 @@
         "Выдаліць лагатып"
       ],
       "Delete member": [
-        "Выдаліць ўдзельніка"
+        "Выдаліць удзельніка"
       ],
       "Delete user": [
         "Выдаліць карыстальніка"
@@ -202,14 +202,17 @@
       "Disable": [
         "Адключыць"
       ],
-      "Disable E2EE for group address": [
-        "Адключыць шыфраванне скразным метадам для групавых адрасоў"
+      "Disable E2EE group mail encryption": [
+        "Адключыць скразное шыфраванне (E2EE) для групавых лістоў"
       ],
       "Discard": [
         "Адхіліць"
       ],
       "Discard changes": [
         "Адхіліць змены"
+      ],
+      "Domain names": [
+        "Даменныя імёны"
       ],
       "Done": [
         "Гатова"
@@ -277,8 +280,8 @@
       "enable desktop notifications": [
         "ўключэнне апавяшчэнняў на працоўным стале"
       ],
-      "Enable E2EE for group address": [
-        "Уключыць шыфраванне скразным метадам для групавых адрасоў"
+      "Enable E2EE group mail encryption": [
+        "Уключыць скразное шыфраванне (E2EE) для групавых лістоў"
       ],
       "Enable multi-user support": [
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
@@ -355,17 +358,20 @@
       "Keep logo": [
         "Пакінуць лагатып"
       ],
-      "Keep my Plus subscription": [
-        "Пакінуць падпіску Plus"
+      "Keep my subscription": [
+        "Пакінуць падпіску"
       ],
       "Let's talk": [
-        "Давайце паразмаўляем"
+        "Звяжыцеся з намі"
       ],
       "Load more": [
         "Загрузіць больш"
       ],
       "Loading verification": [
         "Загружаецца праверка"
+      ],
+      "Lost access to your 2FA device?": [
+        "Згубілі доступ да сваёй прылады 2ФА?"
       ],
       "Make admin": [
         "Можа адміністраваць"
@@ -451,9 +457,6 @@
       "Remove all members": [
         "Выдаліць усіх удзельнікаў"
       ],
-      "Remove all members from group": [
-        "Выдаліць усіх удзельнікаў з групы"
-      ],
       "Remove bonuses": [
         "Выдаліць бонусы"
       ],
@@ -483,9 +486,6 @@
       ],
       "Resend code": [
         "Адправіць код яшчэ раз"
-      ],
-      "Resend invitation": [
-        "Паўторна адправіць запрашэнне"
       ],
       "Reset credentials": [
         "Скінуць уліковыя даныя"
@@ -734,11 +734,6 @@
         "Паменшыць"
       ]
     },
-    "action": {
-      "Add pm.me domain": [
-        "Дадаць дамен pm.me"
-      ]
-    },
     "Action subscription": {
       "Reactivate": [
         "Актываваць паўторна"
@@ -822,7 +817,7 @@
         "Дазвол. непадпіс. пошту"
       ],
       "Default": [
-        "Прадвызначана"
+        "Прадвызначаны"
       ],
       "Disabled": [
         "Адключана"
@@ -2308,7 +2303,7 @@
     },
     "duoplan2024: Title": {
       "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "Прадстаўляем ${ PLAN_NAMES[PLANS.DUO] } "
+        "Прадстаўляем тарыфны план ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Email spam notification": {
@@ -2822,16 +2817,16 @@
         "Вы дасягнулі абмежавання ў ${ n } прынятых запрашэнняў за 6 месяцаў."
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
-        "Вы дасягнулі абмежавання ў ${ n } прынятае запрашэнне за 6 месяцаў. Кнопка зноў стане даступнай пасля таго, як вы зможаце запрашаць дадатковых карыстальнікаў.",
-        "Вы дасягнулі абмежавання ў ${ n } прынятыя запрашэнні за 6 месяцаў. Кнопка зноў стане даступнай пасля таго, як вы зможаце запрашаць дадатковых карыстальнікаў.",
-        "Вы дасягнулі абмежавання ў ${ n } прынятых запрашэнняў за 6 месяцаў. Кнопка зноў стане даступнай пасля таго, як вы зможаце запрашаць дадатковых карыстальнікаў.",
-        "Вы дасягнулі абмежавання ў ${ n } прынятых запрашэнняў за 6 месяцаў. Кнопка зноў стане даступнай пасля таго, як вы зможаце запрашаць дадатковых карыстальнікаў."
+        "Вы дасягнулі абмежавання ў ${ n } прынятае запрашэнне за 6 месяцаў. Кнопка зноў стане даступнай, калі вы зможаце запрашаць дадатковых карыстальнікаў.",
+        "Вы дасягнулі абмежавання ў ${ n } прынятыя запрашэнні за 6 месяцаў. Кнопка зноў стане даступнай, калі вы зможаце запрашаць дадатковых карыстальнікаў.",
+        "Вы дасягнулі абмежавання ў ${ n } прынятых запрашэнняў за 6 месяцаў. Кнопка зноў стане даступнай, калі вы зможаце запрашаць дадатковых карыстальнікаў.",
+        "Вы дасягнулі абмежавання ў ${ n } прынятых запрашэнняў за 6 месяцаў. Кнопка зноў стане даступнай, калі вы зможаце запрашаць дадатковых карыстальнікаў."
       ],
       "You have successfully joined the family group": [
         "Вы паспяхова далучыліся да сямейнай групы"
       ],
       "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца групавога тарыфнага плана."
+        "У вас ёсць неаплачаныя рахункі. Аплаціце іх перад тым, як далучыцца да групавога тарыфнага плана."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Перад дадаваннем некалькіх карыстальнікаў неабходна сканфігураваць карыстальніцкі дамен."
@@ -3494,6 +3489,9 @@
         "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
         "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
       ],
+      "2FA disabled": [
+        "2ФА адключана"
+      ],
       "30-day money-back guarantee": [
         "Гарантыя вяртання грашовых сродкаў на працягу 30 дзён"
       ],
@@ -3571,6 +3569,9 @@
       ],
       "All Events ": [
         "Усе падзеі "
+      ],
+      "All members have been added.": [
+        "Усе ўдзельнікі былі дададзены."
       ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
@@ -3711,10 +3712,10 @@
         "Код краіны"
       ],
       "Create a secure cloud for ${ n } member": [
-        "Стварэнне бяспечнага воблака для ${ n } удзельніка",
-        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў",
-        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў",
-        "Стварэнне бяспечнага воблака для ${ n } удзельнікаў"
+        "Стварыць бяспечнае воблака для ${ n } удзельніка",
+        "Стварыць бяспечнае воблака для ${ n } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ n } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ n } удзельнікаў"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Стварайце і кіруйце падпарадкаванымі ўліковымі запісамі, а таксама прызначайце іх паштовым адрасам у вашым карыстальніцкім дамене."
@@ -3749,11 +3750,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Наладзьце вонкавы выгляд праграм ${ BRAND_NAME }"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -3766,6 +3767,9 @@
         "Выдаленне ${ deletedServerCount } сервераў шлюза",
         "Выдаленне ${ deletedServerCount } сервераў шлюза",
         "Выдаленне ${ deletedServerCount } сервераў шлюза"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Адключэнне двухфактарнай аўтэнтыфікацыі зробіць ваш уліковы запіс менш бяспечным. Працягвайце толькі ў тым выпадку, калі гэта сапраўды неабходна."
       ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
@@ -3931,6 +3935,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перайдзіце да свайго пастаўшчыка пасведчанняў, каб атрымаць метаданыя SAML для ${ appName } і імпартаваць іх сюды."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Групавыя адрасы могуць быць створаны толькі для карыстальніцкіх даменаў. Перайдзіце на старонку ${ linkToDomainPage }, каб дадаць карыстальніцкі дамен."
       ],
       "here": [
         "тут"
@@ -4643,6 +4650,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Гэта праверка можа заняць да адной гадзіны. Пасля паспяховай праверкі не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Гэта адключыць двухфактарную аўтэнтыфікацыю, а таксама праграму аўтэнтыфікатар і метады ключоў бяспекі."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Гэта дазволіць вам аплачваць падпіску ${ BRAND_NAME } праз PayPal. Мы перанакіруем вас на сайт PayPal, які адкрыецца ў новай укладцы браўзера. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
       ],
@@ -4762,6 +4772,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Запампуйце лагатып сваёй арганізацыі, каб павысіць ідэнтычнасць вашага брэнда і стварыць персаналізаваны досвед для вашых карыстальнікаў."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Скарыстайцеся метадам аднаўлення, каб адключыць вашы двухфактарныя метады аўтэнтыфікацыі."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Выкарыстоўваць лепшы сервер у адпаведнасці з бягучай нагрузкай і размяшчэннем: ${ formattedBestServerName }"
@@ -5042,11 +5055,8 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Пасля ўваходу ў ${ destination } вы будзеце пералакіраваны"
       ],
-      "You will lose access to Plus features on this date.": [
-        "Вы страціце доступ да функцый Plus пасля наступлення гэтай даты."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Вы страціце доступ да сервераў і функцыі Plus пасля наступлення гэтай даты."
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Вы страціце доступ да ${ planTitle } функцыі пасля наступлення гэтай даты."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
@@ -5259,6 +5269,12 @@
       ],
       "Account storage": [
         "Сховішча ўліковага запісу"
+      ],
+      "Add all organization members": [
+        "Дадаць удзельнікаў арганізацыі"
+      ],
+      "Add group member": [
+        "Дадаць удзельніка групы"
       ],
       "Address": [
         "Адрас"
@@ -6431,14 +6447,8 @@
       "Password health": [
         "Якасць пароля"
       ],
-      "Password manager to secure credentials": [
-        "Менеджар пароляў для бяспекі ўліковых даных"
-      ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
-      ],
-      "Phone support (40+ users)": [
-        "Падтрымка па тэлефоне (ад 40 карыстальнікаў)"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -6877,9 +6887,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Падтрымку па тэлефоне ад каманды абслугоўвання кліентаў ${ BRAND_NAME } можна атрымаць у працоўныя дні згодна з еўрапейскім графікам для кліентаў, якія маюць 6 або больш карыстальнікаў"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
       ],
@@ -7048,6 +7055,9 @@
       "An external address cannot be default": [
         "Знешні адрас не можа быць прадвызначаным"
       ],
+      "Downloaded 2FA recovery codes": [
+        "Спампаваныя коды аднаўлення 2ФА"
+      ],
       "Invalid code": [
         "Памылковы код"
       ],
@@ -7140,17 +7150,14 @@
       ]
     },
     "option": {
-      "Everyone, incl. outside": [
-        "Усе, у тым ліку староннія"
+      "Everyone": [
+        "Кожнаму"
       ],
-      "Members": [
-        "Удзельнікі"
+      "Group members": [
+        "Удзельнікі групы"
       ],
-      "Nobody by default": [
-        "Прадвызначана ніхто"
-      ],
-      "Organization members": [
-        "Удзельнікі арганізацыі"
+      "No one": [
+        "Нікому"
       ]
     },
     "Organization capacity error": {
@@ -7252,7 +7259,7 @@
     },
     "pass_signup_2023: Header": {
       "Let's talk": [
-        "Давайце паразмаўляем"
+        "Звяжыцеся з намі"
       ],
       "Limited time offer": [
         "Абмежаваная прапанова"
@@ -7317,7 +7324,7 @@
         "у месяц (аплачваецца кожныя два гады)"
       ],
       "Preparing your Recovery Kit": [
-        "Падрыхтоўка вашага камплекту аднаўлення"
+        "Падрыхтоўка камплекту аднаўлення"
       ],
       "Secure vault and link sharing": [
         "Бяспечнае сховішча і абагульванне спасылкі"
@@ -7492,13 +7499,13 @@
         "Выберыце краіну выстаўлення рахунку"
       ],
       "Please select billing state": [
-        "Выберыце стан выстаўлення рахунку"
+        "Выберыце штат выстаўлення рахунку"
       ],
       "Please select your billing country first.": [
         "Першапачаткова выберыце вашу краіну выстаўлення рахунку."
       ],
       "Please select your billing state first.": [
-        "Першапачаткова выберыце ваш стан выстаўлення рахунку."
+        "Спачатку выберыце ваш штат выстаўлення рахунку."
       ],
       "Processing payment": [
         "Апрацоўка плацяжу"
@@ -7516,7 +7523,7 @@
         "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае за першы месяц аплаты. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ price } за кожны месяц. Скасаваць можна ў любы момант."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
-        "Трансакцыя паспяхова выяўлена. Крэдыты будуць дададзены на ваш рахунак пасля таго, як трансакцыя будзе цалкам пацверджана."
+        "Трансакцыя паспяхова выяўлена. Крэдыты будуць дададзены на ваш рахунак пасля таго, як яна будзе цалкам пацверджана."
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
@@ -7610,6 +7617,9 @@
       ],
       "Gift code": [
         "Падарункавы код"
+      ],
+      "Group name": [
+        "Назва групы"
       ],
       "Other": [
         "Іншае"
@@ -7821,7 +7831,7 @@
         "Адбываецца тэсціраванне..."
       ],
       "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
-        "Увядзіце ўліковыя даныя ўваходу для карыстальніка, якія звязаны з **${ domainName }**, каб пратэсціраваць гэту канфігурацыю SAML."
+        "Увядзіце ўліковыя даныя ўваходу для карыстальніка, якія звязаны з **${ domainName }**. Дадзеныя дзеянні дазволяць пратэсціраваць гэту канфігурацыю SAML."
       ],
       "We received a valid SAML response from your identity provider. SSO is enabled for your organization.": [
         "Атрыманы правераны адказ SAML ад вашага пастаўшчыка пасведчанняў. SSO уключаны для вашай арганізацыі."
@@ -8735,6 +8745,9 @@
       "1 email address": [
         "1 адрас электроннай пошты"
       ],
+      "1 email address per user": [
+        "1 адрас электроннай пошты на карыстальніка"
+      ],
       "1 VPN connection": [
         "1 падключэнне па VPN"
       ],
@@ -8850,7 +8863,7 @@
         "${ planName } дае магчымасць карыстацца ўсімі праграмамі і функцыямі, а таксама атрымаць ранні доступ да нашых новых выпускаў і ўсё неабходнае, каб кантраляваць свае даныя і іх бяспеку."
       ],
       "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
-        "${ planName } дае вам неабмежаваную прыватнасць і больш сховішча, які разлічаны на 1 або 2 карыстальнікаў."
+        "${ planName } дае вам неабмежаваную прыватнасць і больш сховішча. Разлічаны на 1 або 2 карыстальнікаў."
       ],
       "${ planName } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their premium features.": [
         "${ planName } дае вашай камандзе ўсё неабходнае, каб быць больш прадукцыйнай і арганізаванай у сваёй працы з доступам да ўсіх праграм ${ BRAND_NAME } і іх прэміяльных функцый."
@@ -9602,10 +9615,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -9731,6 +9744,9 @@
       "Disable two-factor authentication": [
         "Адключыць двухфактарную аўтэнтыфікацыю"
       ],
+      "Disable two-factor authentication?": [
+        "Адключыць двухфактарную аўтэнтыфікацыю?"
+      ],
       "Discard changes?": [
         "Адхіліць змены?"
       ],
@@ -9790,6 +9806,9 @@
       ],
       "Email subscriptions": [
         "Падпіскі электроннай пошты"
+      ],
+      "Enter 2FA code": [
+        "Увядзіце 2ФА код"
       ],
       "Enter endpoints into your identity provider": [
         "Увядзіце канцавыя пункты ў свайго пастаўшчыка пасведчанняў"
@@ -10261,7 +10280,7 @@
         "Адпраўка запрашэння ўдзельніку"
       ],
       "User rejected invitation": [
-        "Карыстальнік адхліў запрашэнне"
+        "Карыстальнік адхіліў запрашэнне"
       ],
       "Waiting user to accept the invitation": [
         "Чаканне прыняцця запрашэння карыстальнікам"
@@ -10566,11 +10585,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin праз электронную пошту"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Бяспечна захоўвайце і пераводзьце свае сродкі ў біткойнах"
       ]
     },
     "wallet_signup_2024:Bug category": {

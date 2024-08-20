@@ -1,10 +1,16 @@
 import jszip from 'jszip';
 import { c } from 'ttag';
 
-import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
+import {
+    build1PassIdentity,
+    formatCCExpirationDate,
+    getValue,
+} from '@proton/pass/lib/import/builders/1password.builder';
+import type { ItemImportIntent, Maybe, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
 import { extractFirst } from '@proton/pass/utils/array/extract-first';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
+import { objectKeys } from '@proton/pass/utils/object/generic';
 import lastItem from '@proton/utils/lastItem';
 
 import { ImportProviderError } from '../helpers/error';
@@ -12,6 +18,7 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importIdentityItem,
     importLoginItem,
     importNoteItem,
 } from '../helpers/transformers';
@@ -34,12 +41,6 @@ import {
     OnePassState,
     OnePasswordTypeMap,
 } from './1password.1pux.types';
-
-const formatCCExpirationDate = (monthYear: Maybe<number>): string => {
-    const monthYearString = String(monthYear);
-    if (!monthYear || monthYearString.length !== 6) return '';
-    return `${monthYearString.slice(4, 6)}${monthYearString.slice(0, 4)}`;
-};
 
 const isNoteSectionField = ({ value }: OnePassField) => 'string' in value || 'url' in value;
 
@@ -84,44 +85,44 @@ const extractURLs = ({ overview }: OnePassItem): string[] => [
 ];
 
 const extractExtraFields = (item: OnePassItem): UnsafeItemExtraField[] => {
-    const { sections = [] } = item.details;
+    const { sections } = item.details;
     if (!sections) return [];
 
     return (
         sections
             /* check that field value key is supported and remove any credit card fields */
             .flatMap(({ fields }) => fields.filter((field) => isSupportedField(field) && !isCreditCardField(field)))
-            .map<UnsafeItemExtraField>(({ title, value }) => {
-                const valueKey = Object.keys(value)[0] as OnePassFieldKey;
+            .map<MaybeNull<UnsafeItemExtraField>>(({ title, value }) => {
+                const [valueKey] = objectKeys<OnePassFieldKey>(value);
+
                 switch (valueKey) {
+                    case OnePassFieldKey.DATE:
                     case OnePassFieldKey.MONTH_YEAR:
-                        return {
-                            fieldName: title || c('Label').t`Text`,
-                            type: 'text',
-                            data: { content: formatCCExpirationDate(value[valueKey]) ?? '' },
-                        };
                     case OnePassFieldKey.STRING:
                     case OnePassFieldKey.URL:
                         return {
                             fieldName: title || c('Label').t`Text`,
                             type: 'text',
-                            data: { content: value[valueKey] ?? '' },
+                            data: { content: getValue(value, valueKey) },
                         };
                     case OnePassFieldKey.TOTP:
                         return {
                             fieldName: title || c('Label').t`TOTP`,
                             type: 'totp',
-                            data: { totpUri: value[valueKey] ?? '' },
+                            data: { totpUri: getValue(value, valueKey) },
                         };
                     case OnePassFieldKey.CONCEALED:
                     case OnePassFieldKey.CREDIT_CARD_NUMBER:
                         return {
                             fieldName: title || c('Label').t`Hidden`,
                             type: 'hidden',
-                            data: { content: value[valueKey] ?? '' },
+                            data: { content: getValue(value, valueKey) },
                         };
+                    default:
+                        return null;
                 }
             })
+            .filter(truthy)
     );
 };
 
@@ -181,6 +182,17 @@ const processPasswordItem = (
         modifyTime: item.updatedAt,
     });
 };
+
+const processIdentityItem = (
+    item: Extract<OnePassItem, { categoryUuid: OnePassCategory.IDENTITY }>
+): Maybe<ItemImportIntent<'identity'>> =>
+    importIdentityItem({
+        name: item.overview.title,
+        note: item.details.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        ...build1PassIdentity(item.details.sections),
+    });
 
 const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePassCategory.CREDIT_CARD }>) => {
     const { cardholder, ccnum, cvv, expiry, pin } = ((): OnePassCreditCardFields => {
@@ -243,6 +255,8 @@ export const read1Password1PuxData = async ({
                                     return processCreditCardItem(item);
                                 case OnePassCategory.PASSWORD:
                                     return processPasswordItem(item);
+                                case OnePassCategory.IDENTITY:
+                                    return processIdentityItem(item);
                                 default:
                                     const { categoryUuid, overview } = item as OnePassBaseItem;
                                     ignored.push(

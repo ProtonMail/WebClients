@@ -10,7 +10,11 @@ export const matches = (element: Element, selector: string) =>
     (element.matches || (element as any).msMatchesSelector).call(element, selector);
 
 /**
- * Check if a HTML content is considered empty
+ * Returns boolean if HTML content is considered empty
+ *
+ * How do we consider content is HTML empty
+ * - element.textContent should be empty
+ * - No images should be present in the HTML content
  */
 export const isHTMLEmpty = (html: string) => {
     if (!html) {

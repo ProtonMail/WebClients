@@ -1,7 +1,5 @@
 import React, { useCallback } from 'react';
 
-import { c } from 'ttag';
-
 import {
     Dropdown,
     DropdownButton,
@@ -63,7 +61,8 @@ const GroupAddressDomainSelect = ({
     disabled,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const [addSubdomainModal, setAddSubdomainModal, renderAddSubdomainModal] = useModalState();
+    // setAddSubdomainModal is removed for now until add pm.me domain option can be supported
+    const [addSubdomainModal, , renderAddSubdomainModal] = useModalState();
     const pmMeDomain = usePmMeDomain();
 
     if (pmMeDomain === null) {
@@ -113,10 +112,6 @@ const GroupAddressDomainSelect = ({
                             onSelect={handleChange}
                         />
                     ))}
-                    <hr className="mt-2" />
-                    <DropdownMenuButton className="text-left" onClick={() => setAddSubdomainModal(true)}>
-                        {c('action').t`Add pm.me domain`}
-                    </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
         </>

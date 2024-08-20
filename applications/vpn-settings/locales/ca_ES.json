@@ -175,6 +175,9 @@
       "Delete Gateway": [
         "Elimina la passarel·la"
       ],
+      "Delete group": [
+        "Elimina el grup"
+      ],
       "Delete logo": [
         "Elimina el logo"
       ],
@@ -340,9 +343,6 @@
       "Keep logo": [
         "Manté el logo"
       ],
-      "Keep my Plus subscription": [
-        "Mantén la meva subscripció Plus"
-      ],
       "Let's talk": [
         "Parlem-ne"
       ],
@@ -466,9 +466,6 @@
       "Resend code": [
         "Reenvia el codi"
       ],
-      "Resend invitation": [
-        "Reenvia la invitació"
-      ],
       "Reset credentials": [
         "Restaurar credencials"
       ],
@@ -495,6 +492,9 @@
       ],
       "Revoke ${ name }": [
         "Revoca ${ name }"
+      ],
+      "Revoke invitation": [
+        "Revoca la invitació"
       ],
       "Save": [
         "Desa"
@@ -789,6 +789,9 @@
       ],
       "External": [
         "Externa"
+      ],
+      "Inactive": [
+        "Inactiva"
       ],
       "No E2EE mail": [
         "Cap correu E2EE"
@@ -2222,6 +2225,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB d'emmagatzemament"
+      ],
       "2 users": [
         "2 usuaris"
       ]
@@ -2231,7 +2237,7 @@
         "Tot allò de ${ BRAND_NAME }, per a 2."
       ],
       "Double your storage": [
-        "Dobleu el vostre emmagatzematge"
+        "Dobleu l'emmagatzematge"
       ]
     },
     "Email spam notification": {
@@ -2801,6 +2807,9 @@
       "An error occurred, please try again": [
         "S'ha produït un error. Intenteu-ho de nou."
       ],
+      "Family name updated": [
+        "S'ha actualitzat el nom de la família."
+      ],
       "Member updated": [
         "S'ha actualitzat el membre"
       ]
@@ -3335,6 +3344,9 @@
         "+${ organization.BonusVPN } connexió per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)",
         "+${ organization.BonusVPN } connexions per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)"
       ],
+      "2FA disabled": [
+        "2FA desactivada"
+      ],
       "30-day money-back guarantee": [
         "30 dies de garantia de reemborsament"
       ],
@@ -3559,11 +3571,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -4804,12 +4816,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Se us redirigirà a ${ destination } després d'iniciar la sessió."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Perdreu accés a les funcions Plus en aquesta data."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Perdreu l'accés a servidors i característiques Plus en aquesta data."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necessitareu una adreça de ${ BRAND_NAME } per a utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
@@ -5942,6 +5948,10 @@
         "${ n } missatge per dia",
         "${ n } missatges per dia"
       ],
+      "${ n } user": [
+        "${ n } usuari",
+        "Fins a ${ n } usuaris"
+      ],
       "${ n } vault": [
         "${ n } caixa forta",
         "${ n } caixes fortes"
@@ -6141,14 +6151,8 @@
       "Password health": [
         "Estat de la contrasenya"
       ],
-      "Password manager to secure credentials": [
-        "Gestor de contrasenyes per a assegurar les credencials"
-      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
-      ],
-      "Phone support (40+ users)": [
-        "Suport telefònic (a partir de 40 usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -6571,9 +6575,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalitzeu la vostra signatura de correu electrònic amb logos, imatges, icones de xarxes socials, enllaços als detalls de contacte, etc."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "L'Equip per a l'Èxit del Client de ${ BRAND_NAME } ofereix assistència telefònica durant l'horari laboral europeu per a clients amb almenys 6 usuaris."
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o tercers accedeixin als missatges. Les úniques persones que poden llegir els missatges són el remitent i el destinatari previst."
       ],
@@ -6829,14 +6830,6 @@
       ],
       "The whole organization": [
         "Tota l'organització"
-      ]
-    },
-    "option": {
-      "Members": [
-        "Membres"
-      ],
-      "Organization members": [
-        "Membres de l'organització"
       ]
     },
     "Organization capacity error": {
@@ -7268,6 +7261,9 @@
       ],
       "Gift code": [
         "Codi regal"
+      ],
+      "Group name": [
+        "Nom del grup"
       ],
       "Other": [
         "Altres"
@@ -9119,10 +9115,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [

@@ -641,9 +641,6 @@
       "Italic": [
         "Înclinat"
       ],
-      "Keep my Plus subscription": [
-        "Păstrez abonamentul Plus"
-      ],
       "Label as": [
         "Etichetare ca"
       ],
@@ -848,10 +845,10 @@
       "Not saved": [
         "Nesalvat"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -5760,6 +5757,9 @@
         "S-au găsit ${ numOccurrences } apariții în conținutul mesajelor.",
         "S-au găsit ${ numOccurrences } de apariții în conținutul mesajelor."
       ],
+      "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "${ PASS_APP_NAME } oferă o modalitate simplă de a crea date de conectare pe site-uri terțe care nu sunt de încredere, unde nu doriți să vă expuneți adresa de e-mail reală."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
       ],
@@ -6119,6 +6119,11 @@
       ],
       "Create a new contact group": [
         "Creare grup de contacte"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Creați un cont cloud securizat pentru ${ n } membru",
+        "Creați un cont cloud securizat pentru ${ n } membri",
+        "Creați un cont cloud securizat pentru ${ n } de membri"
       ],
       "Create in": [
         "Creare în"
@@ -7529,12 +7534,6 @@
         "Ați selectat **${ elementsCount } mesaj**.",
         "Ați selectat **${ elementsCount } mesaje**.",
         "Ați selectat **${ elementsCount } de mesaje**."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Veți pierde accesul la funcțiile Plus la această dată."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Veți pierde accesul la serverele Plus și la funcții la această dată."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
@@ -9388,14 +9387,8 @@
       "Password health": [
         "Stare parole"
       ],
-      "Password manager to secure credentials": [
-        "Manager de parole pentru securizarea datelor de autentificare"
-      ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
-      ],
-      "Phone support (40+ users)": [
-        "Asistență telefonică (peste 40 de utilizatori)"
       ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
@@ -9787,9 +9780,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături către datele de contact și multe altele."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu 6 sau mai mulți utilizatori."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
@@ -12699,6 +12689,9 @@
       "Groups": [
         "Grupuri"
       ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Ascundeți-vă e-mailul cu ${ PASS_APP_NAME }"
+      ],
       "Human verification": [
         "Verificare persoană"
       ],
@@ -13331,11 +13324,6 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Accesare aplicație portofel"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Păstrați și transferați în siguranță monedele Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

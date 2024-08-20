@@ -14,7 +14,7 @@ import Layout from '../Layout';
 import Step2 from '../Step2';
 import type { SignupCustomStepProps } from '../interface';
 import InstallExtensionStep from './InstallExtensionStep';
-import RecoveryStep from './RecoveryStep';
+import MnemonicRecoveryStep from './MnemonicRecoveryStep';
 
 enum Step {
     Recovery,
@@ -52,7 +52,7 @@ const CustomStepB2C = ({ measure, setupImg, productAppName, fork, onSetup, logo,
     return (
         <Layout logo={logo} hasDecoration={false}>
             {step === Step.Recovery && (
-                <RecoveryStep
+                <MnemonicRecoveryStep
                     onMeasureClick={(type) => {
                         void measure({
                             event: TelemetryAccountSignupEvents.interactRecoveryKit,

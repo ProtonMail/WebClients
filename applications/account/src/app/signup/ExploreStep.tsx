@@ -24,7 +24,7 @@ interface Props {
 const ExploreStep = ({ onExplore, user, plan }: Props) => {
     const { APP_NAME } = useConfig();
 
-    const canAccessWallet = useFlag('Wallet');
+    const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -41,7 +41,7 @@ const ExploreStep = ({ onExplore, user, plan }: Props) => {
             <Content>
                 <ExploreAppsList
                     subscription={{ subscribed, plan }}
-                    apps={getExploreApps({ subscribed, user, canAccessWallet })}
+                    apps={getExploreApps({ subscribed, user, isWalletAppSwitcherNewBadgeEnabled })}
                     onExplore={onExplore}
                 />
             </Content>

@@ -1052,9 +1052,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } będzie wyświetlał ikonę stron przez anonimową proxy ${ BRAND_NAME }."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } obsługuje tylko importowanie danych logowania, notatek i kart płatniczych."
-      ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } będzie proponował zapisywanie haseł, gdy wygenerowane hasła zostaną automatycznie uzupełnione."
       ],
@@ -1532,8 +1529,14 @@
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Potwierdź dodatkowe hasło, aby włączyć blokadę."
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Potwierdź dodatkowe hasło, aby włączyć blokadę."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Potwierdź dodatkowe hasło, aby wyłączyć blokadę."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Potwierdź dodatkowe hasło, aby zaktualizować czas automatycznej blokady."
       ],
       "Please confirm your password": [
         "Potwierdź hasło"
@@ -1932,9 +1935,6 @@
       ],
       "30 seconds": [
         "30 sekund"
-      ],
-      "4 hours": [
-        "4 godziny"
       ],
       "5 minutes": [
         "5 minut"

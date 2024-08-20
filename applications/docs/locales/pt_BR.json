@@ -324,8 +324,8 @@
       "Increase": [
         "Aumentar"
       ],
-      "Keep my Plus subscription": [
-        "Manter minha assinatura Plus"
+      "Keep my subscription": [
+        "Manter minha assinatura"
       ],
       "Learn more": [
         "Saiba mais"
@@ -2951,6 +2951,9 @@
       "You have successfully joined the family group": [
         "Você entrou com sucesso no grupo familiar"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Você tem faturas não pagas. Pague antes de juntar-se ao grupo."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
       ],
@@ -4423,11 +4426,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal. Se a sua conta do PayPal não tem isso, clique no botão abaixo."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Você perderá o acesso aos recursos do Plus nessa data."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Você perderá o acesso aos servidores e recursos do Plus nessa data."
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Você perderá o acesso aos recursos do ${ planTitle } nessa data."
       ],
       "You will lose all unsaved changes.": [
         "Você perderá todas as alterações não salvas."
@@ -5581,6 +5581,14 @@
         "${ n } mensagem por dia",
         "${ n } mensagens por dia"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } cofre compartilhado do ${ PASS_SHORT_APP_NAME } por usuário",
+        "${ n } cofres compartilhados do ${ PASS_SHORT_APP_NAME } por usuário"
+      ],
+      "${ n } user": [
+        "${ n } usuário",
+        "Até ${ n } usuários"
+      ],
       "${ n } vault": [
         "${ n } cofre",
         "${ n } cofres"
@@ -5588,6 +5596,10 @@
       "${ n } VPN connection": [
         "${ n } conexão VPN",
         "${ n } conexões VPN"
+      ],
+      "${ options }-day file version history": [
+        "Histórico de versões do arquivo de ${ options } dia",
+        "Histórico de versões do arquivo de ${ options } dias"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } com ${ n } alias de hide-my-email",
@@ -5602,8 +5614,17 @@
       "${ size } attachment size": [
         "Anexos de ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } de armazenamento seguro por usuário"
+      ],
       "${ size } storage": [
         "${ size } de armazenamento"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Para ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Para todos os serviços da ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 usuário"
@@ -5622,6 +5643,12 @@
       ],
       "Administration Panel": [
         "Painel de Administração"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil"
       ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
@@ -5658,6 +5685,9 @@
       ],
       "Contact groups management": [
         "Gerenciamento de grupos de contatos"
+      ],
+      "Custom and secure business email": [
+        "E-mail corporativo seguro e personalizado"
       ],
       "Custom domains for email aliases": [
         "Domínios personalizados para encaminhamento de mensagens"
@@ -5753,6 +5783,9 @@
       "Multiple admin roles": [
         "Múltiplas funções de administração"
       ],
+      "Online document editor": [
+        "Editor de documentos on-line"
+      ],
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
       ],
@@ -5762,17 +5795,14 @@
       "Password health": [
         "Estado da senha"
       ],
-      "Password manager to secure credentials": [
-        "Gerenciador de senhas para proteger credenciais"
+      "Password manager": [
+        "Gerenciador de senhas"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
       ],
-      "Phone support (40+ users)": [
-        "Suporte por telefone (40 ou mais usuários)"
-      ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Recursos premium para ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      "Phone support (20+ users)": [
+        "Suporte por telefone (20 ou mais usuários)"
       ],
       "Priority email support": [
         "Suporte prioritário por e-mail"
@@ -5789,6 +5819,9 @@
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
+      ],
+      "Recover previous file versions": [
+        "Recuperar versões anteriores de arquivos"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Checagens regulares da segurança da sua conta. Alertamos você caso você tenha senhas fracas ou reutilizadas que precisem ser atualizadas."
@@ -5820,6 +5853,9 @@
       "Send & receive invitations": [
         "Enviar e receber convites"
       ],
+      "Share files with no size limit": [
+        "Compartilhamento de arquivos sem limite de tamanho"
+      ],
       "Sign in as user": [
         "Início de sessão como usuário"
       ],
@@ -5837,6 +5873,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sincronize e faça backup dos seus arquivos em todos os dispositivos"
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
@@ -5873,6 +5912,9 @@
       ],
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Cofres compartilhados ilimitados da ${ PASS_SHORT_APP_NAME } por usuário"
       ],
       "Unlimited shared vaults with access permissions": [
         "Cofres compartilhados ilimitados com permissões de acesso"
@@ -5911,9 +5953,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartilhar do cofre (até ${ n } pessoa)",
         "Compartilhar cofre (até ${ n } pessoa)"
-      ],
-      "Version history": [
-        "Histórico de versões"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
@@ -5992,6 +6031,9 @@
       ],
       "Popular": [
         "Popular"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Proteja as informações comerciais sensíveis e colabore com segurança."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
@@ -6159,8 +6201,8 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "O suporte por telefone da equipe de Sucesso do Cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 6 ou mais usuários"
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "O suporte por telefone da equipe de suporte do cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 20 ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
@@ -7908,6 +7950,9 @@
       "Enable 2FA": [
         "Ativar A2F"
       ],
+      "Enter 2FA code": [
+        "Insira o código 2FA"
+      ],
       "Enter your password": [
         "Digite sua senha"
       ],
@@ -8327,11 +8372,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Guarde e transfira suas bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

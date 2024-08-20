@@ -40,11 +40,6 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
     void docController.createInitialCommit()
   }
 
-  const createStressTestors = async () => {
-    const count = 10
-    void application.websocketService.createStressTestConnections(count)
-  }
-
   const copyEditorJSON = async () => {
     const json = await docController.getEditorJSON()
     if (!json) {
@@ -107,9 +102,6 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
         </Button>
         <Button size="small" onClick={createInitialCommit}>
           Create Initial Commit
-        </Button>
-        <Button size="small" onClick={createStressTestors}>
-          Create Websocket Stress Testers
         </Button>
         <Button size="small" onClick={closeConnection}>
           Close Connection

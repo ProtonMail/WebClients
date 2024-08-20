@@ -69,7 +69,7 @@ export const getBitcoinViaEmail = (): PlanCardFeatureDefinition => {
 export const getWalletAppFeature = (): PlanCardFeatureDefinition => {
     return {
         text: WALLET_APP_NAME,
-        tooltip: c('wallet_signup_2024:app-switcher').t`Securely hold and transfer your bitcoins`,
+        tooltip: c('wallet_signup_2024:app-switcher').t`A safer/easier way to hold & send Bitcoin`,
         included: true,
         icon: 'wallet',
     };

@@ -313,9 +313,6 @@
       "Keep logo": [
         "Manter o logo"
       ],
-      "Keep my Plus subscription": [
-        "Manter a minha subscrição Plus"
-      ],
       "Let's talk": [
         "Vamos conversar"
       ],
@@ -432,9 +429,6 @@
       ],
       "Resend code": [
         "Reenviar código"
-      ],
-      "Resend invitation": [
-        "Reenviar o convite"
       ],
       "Reset credentials": [
         "Repor credenciais"
@@ -3221,11 +3215,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize o aspeto e a sensação das aplicações ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -4190,12 +4184,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Irá ser redirecionado para ${ destination } após iniciar sessão."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Perderá o acesso a funcionalidades Plus nesta data."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Nesta data, perderá o acesso a servidores e funcionalidades Plus."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Precisará de um endereço da ${ BRAND_NAME } para usar o ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -5400,9 +5388,6 @@
       "Password-protected Emails": [
         "E-mails protegidos por palavra-passe"
       ],
-      "Phone support (40+ users)": [
-        "Apoio telefónico (40+ utilizadores)"
-      ],
       "Priority email support": [
         "Apoio prioritário por e-mail"
       ],
@@ -5746,9 +5731,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize a sua assinatura de e-mail com logótipos, imagens, ícones de redes sociais, ligações para os seus dados de contacto e muito mais."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "A equipa de apoio ao cliente da ${ BRAND_NAME } presta apoio telefónico durante o horário de expediente europeu a clientes com pelo menos 6 utilizadores."
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acedidas por ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
       ],
@@ -5984,11 +5966,6 @@
       ],
       "UDP": [
         "UDP"
-      ]
-    },
-    "option": {
-      "Members": [
-        "Membros"
       ]
     },
     "Organization capacity error": {
@@ -6252,6 +6229,9 @@
       ],
       "Gift code": [
         "Código de oferta"
+      ],
+      "Group name": [
+        "Nome do grupo"
       ],
       "Other": [
         "Outro"
@@ -7690,11 +7670,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço captura-tudo"
-      ],
       "Catch-all address": [
         "Endereço Catch-All"
+      ],
+      "Catch-All address": [
+        "Endereço captura-tudo"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"

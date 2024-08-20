@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { build1PassLegacyIdentity } from '@proton/pass/lib/import/builders/1password.builder';
 import type { ItemImportIntent, UnsafeItemExtraField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -9,6 +10,7 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importIdentityItem,
     importLoginItem,
     importNoteItem,
 } from '../helpers/transformers';
@@ -142,6 +144,15 @@ const processCreditCardItem = (item: OnePassLegacyItem): ItemImportIntent<'credi
     });
 };
 
+const processIdentityItem = (item: OnePassLegacyItem): ItemImportIntent<'identity'> =>
+    importIdentityItem({
+        name: item.title,
+        note: item.secureContents.notesPlain,
+        createTime: item.createdAt,
+        modifyTime: item.updatedAt,
+        ...build1PassLegacyIdentity(item.secureContents.sections),
+    });
+
 export const parse1PifData = (data: string): OnePassLegacyItem[] =>
     data
         .split('\n')
@@ -168,6 +179,8 @@ export const read1Password1PifData = async ({
                         return processPasswordItem(item);
                     case OnePassLegacyItemType.CREDIT_CARD:
                         return processCreditCardItem(item);
+                    case OnePassLegacyItemType.IDENTITY:
+                        return processIdentityItem(item);
                     default:
                         ignored.push(`[${item.typeName}] ${item.title ?? ''}`);
                 }

@@ -10,7 +10,7 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import type { MessageState } from '../../store/messages/messagesTypes';
 import { dedentTpl } from '../dedent';
 import { isHTMLEmpty } from '../dom';
-import { replaceLineBreaks } from '../string';
+import { containsHTMLTag, replaceLineBreaks } from '../string';
 import { exportPlainText, getPlainTextContent } from './messageContent';
 import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
 
@@ -89,11 +89,26 @@ export const templateBuilder = (
     const { userClass, protonClass, containerClass } = getClassNamesSignature(signature, protonSignature);
     const space = getSpaces(signature, protonSignature, fontStyle, isReply);
 
+    const formattedSignature: string = (() => {
+        const isEmptyContent = isHTMLEmpty(signature);
+        if (isEmptyContent) {
+            return '';
+        }
+
+        const signatureContainsHTML = containsHTMLTag(signature);
+
+        if (signatureContainsHTML) {
+            return signature;
+        }
+
+        return replaceLineBreaks(signature);
+    })();
+
     const defaultStyle = fontStyle === undefined ? '' : `style="${fontStyle}" `;
     const template = dedentTpl`
         <div ${defaultStyle}class="${CLASSNAME_SIGNATURE_CONTAINER} ${containerClass}">
             <div class="${CLASSNAME_SIGNATURE_USER} ${userClass}">
-                ${!isHTMLEmpty(signature) ? replaceLineBreaks(signature) : ''}
+                ${formattedSignature}
             </div>
             ${space.between}
             <div class="${CLASSNAME_SIGNATURE_PROTON} ${protonClass}">

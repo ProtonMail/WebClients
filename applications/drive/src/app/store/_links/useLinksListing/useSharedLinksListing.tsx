@@ -161,7 +161,7 @@ export function useSharedLinksListing() {
         signal: AbortSignal,
         volumeId: string,
         loadLinksMeta: FetchLoadLinksMeta
-    ): Promise<void> => {
+    ): Promise<{ Count?: number } | void> => {
         const callback = (AnchorID?: string) => fetchSharedByMeLinksNextPage(signal, volumeId, loadLinksMeta, AnchorID);
         return loadFullListingWithAnchor(callback);
     };

@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { SettingsLink } from '@proton/components/components/link';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -16,12 +16,18 @@ interface Props {
 }
 
 const ProtonTipCTA = ({ actionType, settingsUrl, ctaText }: Props) => {
-    const { onClick, modalContent, redirectToSettings, loadingProtonDomains } = useTipConfig({ actionType });
+    const { onClick, modalContent, redirectToSettings, loadingProtonDomains, sendCTAButtonClickedReport } =
+        useTipConfig({ actionType });
     const snoozedElement = useMailSelector(selectSnoozeElement);
 
     if (redirectToSettings && settingsUrl) {
         return (
-            <SettingsLink path={settingsUrl} className="link align-baseline" app={APPS.PROTONMAIL}>
+            <SettingsLink
+                path={settingsUrl}
+                className="link align-baseline"
+                app={APPS.PROTONMAIL}
+                onClick={() => sendCTAButtonClickedReport(actionType)}
+            >
                 {ctaText}
             </SettingsLink>
         );
@@ -38,15 +44,9 @@ const ProtonTipCTA = ({ actionType, settingsUrl, ctaText }: Props) => {
     return (
         <>
             {modalContent}
-            <Button
-                onClick={onClick}
-                disabled={isDisabled}
-                shape="underline"
-                size="small"
-                className="link align-baseline"
-            >
+            <InlineLinkButton onClick={onClick} disabled={isDisabled}>
                 {ctaText}
-            </Button>
+            </InlineLinkButton>
         </>
     );
 };

@@ -1,6 +1,5 @@
 import { c, msgid } from 'ttag';
 
-import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import {
     BRAND_NAME,
     DUO_MAX_USERS,
@@ -14,8 +13,10 @@ import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features'
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getRequire2FA, getSSOIntegration } from './b2b';
-import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
+import { getCalendarAppFeature } from './calendar';
 import {
+    getBasicFeatures,
+    getDocumentEditor,
     getDriveAppFeature,
     getFreeDriveStorageFeature,
     getFreeMailStorageFeature,
@@ -191,10 +192,9 @@ export const getDrivePlan = ({
         cta: getCTA(plan.Title),
         features: [
             getStorageFeature(plan.MaxSpace, { boldStorageSize, freePlan }),
-            getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
-            getNCalendarsFeature(plan.MaxCalendars || MAX_CALENDARS_FREE),
-            getVPNConnections(1),
-            getSupport('priority'),
+            getDocumentEditor(),
+            getVersionHistory(),
+            getBasicFeatures(),
         ],
     };
 };
@@ -210,13 +210,9 @@ export const getDriveBusinessPlan = ({
         plan: PLANS.DRIVE_BUSINESS,
         title: plan.Title,
         label: '',
-        description: c('new_plans: info')
-            .t`Protect sensitive business information and collaborate securely.asdfasdfsdf`,
+        description: c('new_plans: info').t`Protect sensitive business information and collaborate securely.`,
         cta: getCTA(plan.Title),
-        features: [
-            getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
-            getVersionHistory(365),
-        ],
+        features: [getStorageFeatureB2B(plan.MaxSpace, { subtext: false }), getVersionHistory(365)],
     };
 };
 

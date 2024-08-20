@@ -45,7 +45,13 @@ import noop from '@proton/utils/noop';
 
 import { getPhoneSupport } from '../../features/b2b';
 import { getNCalendarsFeature, getNCalendarsPerUserFeature } from '../../features/calendar';
-import { getCollaborate, getStorageBoostFeatureB2B, getStorageFeature, getVersionHistory } from '../../features/drive';
+import {
+    getCollaborate,
+    getStorageBoostFeatureB2B,
+    getStorageFeature,
+    getStorageFeatureB2B,
+    getVersionHistory,
+} from '../../features/drive';
 import { getCustomBranding, getSentinel, getUsersFeature } from '../../features/highlights';
 import type { PlanCardFeatureDefinition } from '../../features/interface';
 import {
@@ -145,7 +151,7 @@ type GetPlanUpsellArgs = Omit<GetUpsellArgs, 'plan' | 'upsellPath' | 'otherCtas'
     hasPaidMail?: boolean;
     hasVPN: boolean;
     hasUsers?: boolean;
-    hideDriveBusinessFeatures?: boolean;
+    hasDriveBusinessPlan?: boolean;
     openSubscriptionModal: OpenSubscriptionModalCallback;
 };
 
@@ -484,19 +490,19 @@ const getMailBusinessUpsell = ({ plansMap, openSubscriptionModal, ...rest }: Get
 const getBundleProUpsell = ({
     plansMap,
     openSubscriptionModal,
-    hideDriveBusinessFeatures = false,
+    hasDriveBusinessPlan = false,
     ...rest
 }: GetPlanUpsellArgs): MaybeUpsell => {
     const bundleProPlan = plansMap[PLANS.BUNDLE_PRO_2024] ?? plansMap[PLANS.BUNDLE_PRO];
-
-    const businessStorage = humanSize({ bytes: bundleProPlan?.MaxSpace ?? 500, fraction: 0 });
+    const storageBytes = bundleProPlan?.MaxSpace ?? 1099511627776;
+    const businessStorage = humanSize({ bytes: storageBytes, fraction: 0, unitOptions: { max: 'TB' } });
 
     const features: MaybeUpsellFeature[] = [
-        hideDriveBusinessFeatures ? undefined : getStorageBoostFeatureB2B(businessStorage),
+        hasDriveBusinessPlan ? getStorageFeatureB2B(storageBytes, {}) : getStorageBoostFeatureB2B(businessStorage),
         getB2BNDomainsFeature(bundleProPlan?.MaxDomains ?? 15),
         getNCalendarsPerUserFeature(MAX_CALENDARS_PAID),
         getCollaborate(),
-        hideDriveBusinessFeatures ? undefined : getVersionHistory(365),
+        hasDriveBusinessPlan ? undefined : getVersionHistory(365),
         getPasswordManager(),
         getVaultSharingB2B('unlimited'),
         getB2BHighSpeedVPNConnectionsFeature(),
@@ -673,7 +679,7 @@ export const resolveUpsellsToDisplay = ({
                 return [
                     getBundleProUpsell({
                         ...upsellsPayload,
-                        hideDriveBusinessFeatures: hasDriveBusiness(subscription),
+                        hasDriveBusinessPlan: hasDriveBusiness(subscription),
                     }),
                 ];
             case hasVpnPro(subscription):

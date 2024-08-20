@@ -346,9 +346,6 @@
       "Keep logo": [
         "Ponechat logo"
       ],
-      "Keep my Plus subscription": [
-        "Zachovat mé předplatné Plus"
-      ],
       "Let's talk": [
         "Promluvme si"
       ],
@@ -442,9 +439,6 @@
       "Remove all members": [
         "Odebrat všechny členy"
       ],
-      "Remove all members from group": [
-        "Odebrat všechny členy ze skupiny"
-      ],
       "Remove bonuses": [
         "Odebrat bonusy"
       ],
@@ -474,9 +468,6 @@
       ],
       "Resend code": [
         "Znovu odeslat kód"
-      ],
-      "Resend invitation": [
-        "Znovu poslat pozvánku"
       ],
       "Reset credentials": [
         "Resetovat pověření"
@@ -720,11 +711,6 @@
       ],
       "Zoom out": [
         "Oddálit"
-      ]
-    },
-    "action": {
-      "Add pm.me domain": [
-        "Přidat doménu pm.me"
       ]
     },
     "Action subscription": {
@@ -3683,11 +3669,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Přizpůsobte si vzhled aplikací ${ BRAND_NAME }."
       ],
-      "dedicated servers": [
-        "dedikované servery"
-      ],
       "Dedicated servers": [
         "Dedikované servery"
+      ],
+      "dedicated servers": [
+        "dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -4978,12 +4964,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po přihlášení budete přesměrováni na adresu ${ destination }."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "K tomuto datu ztratíte přístup k Plus serverům a funkcím."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "K tomuto datu ztratíte přístup k Plus serverům a funkcím."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Potřebujete ${ BRAND_NAME } adresu pro používání ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -6363,14 +6343,8 @@
       "Password health": [
         "Síla hesla"
       ],
-      "Password manager to secure credentials": [
-        "Správce hesel pro zabezpečení přihlašovacích údajů"
-      ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
-      ],
-      "Phone support (40+ users)": [
-        "Telefonická podpora (40+ uživatelů)"
       ],
       "Priority email support": [
         "Prioritní podpora"
@@ -6809,9 +6783,6 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Přizpůsobte svůj podpis logem, obrázky, ikony sociálních médií, odkazem na kontakt atd."
       ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky se 6 a více uživateli"
-      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zamezí přístup ke zprávám třetím stranám i ${ BRAND_NAME }. Jediní lidé, kteří mohou číst zprávy, jsou odesílatel a příjemce."
       ],
@@ -7090,20 +7061,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "option": {
-      "Everyone, incl. outside": [
-        "Všichni, včetně externích"
-      ],
-      "Members": [
-        "Členové"
-      ],
-      "Nobody by default": [
-        "Ve výchozím stavu nikdo"
-      ],
-      "Organization members": [
-        "Členové organizace"
       ]
     },
     "Organization capacity error": {
@@ -7563,6 +7520,9 @@
       ],
       "Gift code": [
         "Dárkový kód"
+      ],
+      "Group name": [
+        "Název skupiny"
       ],
       "Other": [
         "Ostatní"
@@ -9543,10 +9503,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
       "Change login password": [
@@ -10524,11 +10484,6 @@
       ],
       "Bitcoin via email": [
         "Bitcoin přes e-mail"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bezpečně uchovávejte a převádějte své bitcoiny"
       ]
     },
     "wallet_signup_2024:Bug category": {

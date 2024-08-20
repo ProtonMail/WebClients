@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
       "Add comment": [
         "Ajouter un commentaire"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "Ajuster la taille de la police"
+      ],
+      "Alphabetical": [
+        "Ordre alphabétique"
       ],
       "and": [
         "et"
@@ -169,6 +184,9 @@
       ],
       "Right align": [
         "Aligner à droite"
+      ],
+      "Roman": [
+        "Chiffres romains"
       ],
       "Save": [
         "Enregistrer"
@@ -374,6 +392,12 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Une erreur s'est produite lors du chargement du document. Pour éviter qu'il ne soit corrompu, l'éditeur a été verrouillé. Nous vous invitons à recharger la page et à essayer de nouveau."
+      ],
+      "Failed to export document.": [
+        "L'exportation du document n'a pas abouti."
+      ],
       "Failed to import HTML due to unknown error.": [
         "L'importation du HTML n'a pas abouti en raison d'une erreur inconnue."
       ],

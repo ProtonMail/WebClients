@@ -55,7 +55,10 @@ export const useMailboxFocus = ({
         if (element === document.activeElement) {
             return;
         }
-        element.scrollIntoView();
+        // Scroll into view only when we reset index to 0
+        if (index === 0) {
+            element.scrollIntoView();
+        }
         element.focus();
     };
 

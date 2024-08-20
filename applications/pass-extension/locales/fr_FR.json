@@ -1029,8 +1029,8 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } affichera la vignette de l'élément en utilisant le proxy d'image anonyme ${ BRAND_NAME }."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } importera uniquement les identifiants, notes et cartes de paiement."
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } importera uniquement les identifiants, notes, cartes de paiement et identités."
       ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } vous indiquera dès que les mots de passe générés sont remplis automatiquement."
@@ -1499,8 +1499,14 @@
       "Please confirm your extra password in order to auto-lock with biometrics.": [
         "Veuillez confirmer votre mot de passe supplémentaire afin de permettre le verrouillage automatique avec les données biométriques."
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Veuillez confirmer votre mot de passe supplémentaire afin de permettre le verrouillage automatique avec votre mot de passe supplémentaire."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Veuillez confirmer votre mot de passe supplémentaire afin d'enlever votre verrouillage actuel."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Veuillez confirmer votre mot de passe supplémentaire afin de modifier le délai du verrouillage automatique."
       ],
       "Please confirm your password": [
         "Veuillez confirmer votre mot de passe."
@@ -1885,9 +1891,6 @@
       ],
       "30 seconds": [
         "30 secondes"
-      ],
-      "4 hours": [
-        "4 heures"
       ],
       "5 minutes": [
         "5 minutes"
@@ -2444,6 +2447,9 @@
       ],
       "Unnamed Credit Card": [
         "Carte de paiement sans nom"
+      ],
+      "Unnamed identity": [
+        "Identité sans nom"
       ],
       "Unnamed item": [
         "Élément sans nom"

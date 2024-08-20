@@ -565,7 +565,7 @@
         "Ocultar la barra de herramientas"
       ],
       "hide-my-email aliases": [
-        "los alias de Hide-my-email"
+        "alias de hide-my-email"
       ],
       "I like this response": [
         "Me gusta esta respuesta"
@@ -636,9 +636,6 @@
       ],
       "Italic": [
         "Cursiva"
-      ],
-      "Keep my Plus subscription": [
-        "Mantener mi suscripción Plus"
       ],
       "Label as": [
         "Etiquetar como"
@@ -752,7 +749,7 @@
         "Más información: ${ safeTitle }"
       ],
       "More refine actions": [
-        "Acciones más refinadas"
+        "Acciones más optimizadas"
       ],
       "More search options": [
         "Más opciones de búsqueda"
@@ -844,10 +841,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
       "Open": [
@@ -3344,7 +3341,7 @@
     },
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
-        "Cada día a las ${ timesString }"
+        "Cada día, a las ${ timesString }"
       ],
       "Every ${ interval } day, ${ timesString }": [
         "Cada ${ interval } día a las ${ timesString }",
@@ -3612,6 +3609,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de almacenamiento"
+      ],
       "2 users": [
         "2 usuarios"
       ],
@@ -6494,7 +6494,7 @@
         "Mensual ${ onDayString }"
       ],
       "More refine actions": [
-        "Acciones más refinadas"
+        "Acciones más optimizadas"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
@@ -7411,12 +7411,6 @@
       "You selected **${ elementsCount } message**.": [
         "Has seleccionado **${ elementsCount } mensaje**.",
         "Has seleccionado **${ elementsCount } mensajes**."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Perderás el acceso a las funciones de Plus en esta fecha."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Perderás el acceso a los servidores y funciones de Plus en esta fecha."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
@@ -9062,6 +9056,10 @@
         "${ n } mensaje al día",
         "${ n } mensajes al día"
       ],
+      "${ n } user": [
+        "${ n } usuario",
+        "Hasta ${ n } usuarios"
+      ],
       "${ n } vault": [
         "${ n } caja fuerte",
         "${ n } cajas fuertes"
@@ -9085,6 +9083,12 @@
       ],
       "${ size } storage": [
         "${ size } de almacenamiento"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Para ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Para todos los servicios de ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 usuario"
@@ -9210,7 +9214,7 @@
         "Administración de grupos (muy pronto)"
       ],
       "Hide-my-email aliases": [
-        "Alias de Hide-my-email"
+        "Alias de hide-my-email"
       ],
       "High-speed streaming": [
         "Transmisión de gran velocidad"
@@ -9234,6 +9238,9 @@
       "Multiple admin roles": [
         "Distintos roles de administración"
       ],
+      "Online document editor": [
+        "Editor de documentos en línea"
+      ],
       "Organize items with multiple vaults": [
         "Organizar elementos en cajas fuertes múltiples"
       ],
@@ -9243,14 +9250,14 @@
       "Password health": [
         "Estado de la contraseña"
       ],
-      "Password manager to secure credentials": [
-        "Gestor de contraseñas para proteger credenciales"
+      "Password manager": [
+        "Gestor de contraseñas"
       ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
-      "Phone support (40+ users)": [
-        "Soporte por teléfono (40 o más usuarios)"
+      "Phone support (20+ users)": [
+        "Soporte por teléfono (20 o más usuarios)"
       ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
@@ -9297,6 +9304,9 @@
       ],
       "Send & receive invitations": [
         "Enviar y recibir invitaciones"
+      ],
+      "Share files with no size limit": [
+        "Comparte archivos sin límites de tamaño."
       ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
@@ -9389,9 +9399,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir la caja fuerte (hasta ${ n } persona)",
         "Compartir la caja fuerte (hasta ${ n } personas)"
-      ],
-      "Version history": [
-        "Historial de versiones"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
@@ -9641,9 +9648,6 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliza tu firma de correo electrónico con logotipos, imágenes, iconos de redes sociales, enlaces en tus datos de contacto, etc."
-      ],
-      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
-        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 6 usuarios."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impide que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
@@ -10130,7 +10134,7 @@
         "Una forma de contactarte"
       ],
       "Describe what to change": [
-        "Describe qué cambiar."
+        "Describe las modificaciones a realizar"
       ],
       "E.g., ": [
         "P. ej., "
@@ -11074,6 +11078,9 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Ahora cargamos las imágenes por defecto y bloqueamos el rastreo por parte de los remitentes. Esto se puede cambiar en ${ settingsLink }."
       ],
+      "You can now collapse the navigation bar.": [
+        "Ahora puedes contraer la barra de navegación."
+      ],
       "You can now schedule your messages to be sent later": [
         "Ahora puedes programar tus mensajes para que sean enviados más tarde."
       ]
@@ -11955,7 +11962,7 @@
         "El asistente de escritura ha sido desactivado."
       ],
       "Writing assistant enabled": [
-        "El asistente de escritura ha sido activado."
+        "Se ha activado el asistente de escritura."
       ],
       "Writing assistant setting updated": [
         "El ajuste del asistente de escritura ha sido actualizado."
@@ -11972,7 +11979,7 @@
         " ahora está activo"
       ],
       "${ label.Name } removed": [
-        "${ label.Name } eliminado"
+        "${ label.Name } borrado"
       ]
     },
     "Success notification when user send feedback": {
@@ -12432,6 +12439,9 @@
       "Enable message content search": [
         "Activar la búsqueda de contenido de mensajes"
       ],
+      "Enter 2FA code": [
+        "Ingresa el código 2FA"
+      ],
       "Enter your password": [
         "Introduce tu contraseña."
       ],
@@ -12470,6 +12480,9 @@
       ],
       "Groups": [
         "Grupos"
+      ],
+      "Hide your email with ${ PASS_APP_NAME }": [
+        "Oculta tu email con ${ PASS_APP_NAME }"
       ],
       "Human verification": [
         "Verificación humana"
@@ -13090,11 +13103,6 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Acceder a la aplicación Wallet"
-      ]
-    },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Retén y transfiere tus bitcoins de forma segura"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -19,8 +19,10 @@ import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import {
+    getHasDriveB2BPlan,
     getHasExternalMemberCapableB2BPlan,
     getHasPassB2BPlan,
+    hasDuo,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -30,7 +32,6 @@ import {
     getIsDomainActive,
     getOrganizationDenomination,
     getOrganizationKeyInfo,
-    isOrganizationFamily,
     validateOrganizationKey,
 } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
@@ -116,23 +117,24 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     } = useAccountSpotlights();
 
     const hasPassB2BPlan = getHasPassB2BPlan(subscription);
+    const hasDriveB2BPlan = getHasDriveB2BPlan(subscription);
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
 
     const useEmail = hasExternalMemberCapableB2BPlan;
-    const allowStorageConfiguration = !hasExternalMemberCapableB2BPlan;
+    const allowStorageConfiguration = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan;
     const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan;
     const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
     const allowAIAssistantConfiguration = accessToAssistant.enabled && !accessToAssistant.killSwitch;
 
     const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
     const showAddressesSection = !hasExternalMemberCapableB2BPlan;
-    const showFeaturesColumn = !hasExternalMemberCapableB2BPlan;
+    const showFeaturesColumn = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan;
 
     const { MaxAI = 0, UsedAI = 0 } = organization || {};
     const aiSeatsRemaining = MaxAI > UsedAI;
 
     const isOrgAFamilyPlan = getOrganizationDenomination(organization) === 'familyGroup';
-    const isOrgFamily = isOrganizationFamily(organization);
+    const hasDuoPlan = hasDuo(subscription);
 
     const canInviteProtonUsers = hasVisionary(subscription) || isOrgAFamilyPlan;
     const { createNotification } = useNotifications();
@@ -494,11 +496,11 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                                 (hasReachedLimit ? (
                                     <Info
                                         className="color-danger"
-                                        title={isOrgFamily ? getInvitationLimit(10) : getInvitationLimit(3)}
+                                        title={hasDuoPlan ? getInvitationLimit(3) : getInvitationLimit(10)}
                                     />
                                 ) : (
                                     <Info
-                                        title={isOrgFamily ? getInvitationAcceptLimit(10) : getInvitationAcceptLimit(3)}
+                                        title={hasDuoPlan ? getInvitationAcceptLimit(3) : getInvitationAcceptLimit(10)}
                                     />
                                 ))}
 

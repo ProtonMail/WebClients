@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { buildLastpassIdentity } from '@proton/pass/lib/import/builders/lastpass.builder';
 import type { ItemImportIntent } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -13,6 +14,7 @@ import {
     getEmailOrUsername,
     getImportedVaultName,
     importCreditCardItem,
+    importIdentityItem,
     importLoginItem,
     importNoteItem,
 } from '../helpers/transformers';
@@ -74,6 +76,13 @@ const processCreditCardItem = (item: LastPassItem): ItemImportIntent<'creditCard
         expirationDate: getCCExpirationDate(item.extra),
     });
 
+const processIdentityItem = (item: LastPassItem): ItemImportIntent<'identity'> =>
+    importIdentityItem({
+        name: item.name,
+        note: getFieldValue(item.extra, 'Notes'),
+        ...buildLastpassIdentity(item),
+    });
+
 export const readLastPassData = async ({
     data,
     importUsername,
@@ -118,11 +127,10 @@ export const readLastPassData = async ({
 
                             const noteType = getFieldValue(item.extra, 'NoteType');
 
-                            if (noteType === LastPassNoteType.CREDIT_CARD) {
-                                return processCreditCardItem(item);
-                            }
-
                             if (!noteType) return processNoteItem(item);
+                            if (noteType === LastPassNoteType.CREDIT_CARD) return processCreditCardItem(item);
+                            if (noteType === LastPassNoteType.ADDRESS) return processIdentityItem(item);
+
                             ignored.push(`[${capitalize(noteType)}] ${item.name}`);
                         })
                         .filter(truthy),
