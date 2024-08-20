@@ -5,12 +5,12 @@ import { DualPaneContent, DualPaneSidebar } from '@proton/atoms/DualPane';
 import { Loader, SettingsParagraph, SettingsSectionWide } from '@proton/components';
 import { Icon, SettingsLink } from '@proton/components/components';
 import type { Organization } from '@proton/shared/lib/interfaces';
-import { GroupPermissions } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import GroupForm from './GroupForm';
 import GroupList from './GroupList';
 import useGroupsManagement from './useGroupsManagement';
+import { INITIAL_FORM_VALUES } from './useGroupsManagement';
 
 import './OrganizationGroupsManagementSection.scss';
 
@@ -39,18 +39,18 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
         MemberCount: undefined,
     };
 
-    const linkToDomainPage = <SettingsLink path="/domain-names">{c('Action').t`Domain names`}</SettingsLink>;
+    const linkToDomainPage = <SettingsLink path="/domain-names">{c('Action').t`Domain name`}</SettingsLink>;
 
     return (
         <SettingsSectionWide className="h-full groups-management">
             <SettingsParagraph className="flex flex-column flex-nowrap" learnMoreUrl="https://proton.me">
                 {c('Info')
-                    .t`With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.`}
+                    .t`With groups, you can quickly and easily send emails to all the people in a specified group.`}
             </SettingsParagraph>
             {!hasAtLeastOneVerifiedCustomDomain && (
                 <SettingsParagraph>
                     {c('Info')
-                        .jt`Group addresses can only be created for custom domains. Go to the ${linkToDomainPage} page to add a custom domain.`}
+                        .jt`A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${linkToDomainPage}.`}
                 </SettingsParagraph>
             )}
             <Button
@@ -59,13 +59,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                 onClick={() => {
                     setUiState('new');
                     resetForm({
-                        values: {
-                            name: '',
-                            description: '',
-                            address: '',
-                            permissions: GroupPermissions.NobodyCanSend,
-                            members: '',
-                        },
+                        values: INITIAL_FORM_VALUES,
                     });
                     setSelectedGroup(newGroupData);
                 }}

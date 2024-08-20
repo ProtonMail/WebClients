@@ -27,6 +27,14 @@ import usePmMeDomain from './usePmMeDomain';
 
 export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';
 
+export const INITIAL_FORM_VALUES = {
+    name: '',
+    description: '',
+    address: '',
+    permissions: GroupPermissions.EveryoneCanSend,
+    members: '',
+};
+
 const useGroupsManagement = (organization?: Organization): GroupsManagementReturn | undefined => {
     const [members] = useMembers();
     const [groups, loadingGroups] = useGroups();
@@ -90,13 +98,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         groupMembers !== undefined ? Object.values(groupMembers) : [];
 
     const form = useFormik({
-        initialValues: {
-            name: '',
-            description: '',
-            address: '',
-            permissions: GroupPermissions.NobodyCanSend,
-            members: '',
-        },
+        initialValues: INITIAL_FORM_VALUES,
         onSubmit: () => {},
         validateOnChange: false,
         validateOnMount: false,
