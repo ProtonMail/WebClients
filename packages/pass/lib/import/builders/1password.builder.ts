@@ -13,7 +13,13 @@ import type { ItemContent, Maybe, MaybeNull } from '@proton/pass/types';
 import { objectKeys } from '@proton/pass/utils/object/generic';
 import { epochToDate } from '@proton/pass/utils/time/format';
 
-import type { IdentityDictionary, IdentityRecord, OnePassFieldValue, OnePassFieldValueFactory } from './builders.types';
+import type {
+    IdentityDictionary,
+    IdentityRecord,
+    OnePassFieldValue,
+    OnePassFieldValueFactory,
+    OnePassLegacyFieldValueFactory,
+} from './builders.types';
 
 const fixedSections = ['name', 'address', 'internet'];
 const addressKeys = ['street', 'city', 'country', 'zip', 'state'];
@@ -76,10 +82,15 @@ const build1PassBaseIdentity =
         }, emptyIdentity);
     };
 
+const legacyValueFactory: OnePassLegacyFieldValueFactory = {
+    birthdate: epochToDate,
+};
+
 export const build1PassLegacyIdentity = build1PassBaseIdentity<OnePassLegacySectionField, OnePassLegacySection>(
     (acc: Partial<ItemContent<'identity'>>, { n, v }) => {
         const identityFieldName = onePasswordDictionary[n];
-        return identityFieldName ? { ...acc, [identityFieldName]: v ?? '' } : acc;
+        const formatValue = legacyValueFactory[identityFieldName];
+        return identityFieldName ? { ...acc, [identityFieldName]: formatValue?.(v) ?? v ?? '' } : acc;
     }
 );
 
