@@ -33,10 +33,10 @@ export const GroupMemberItem = ({ groupMember, groupMember: { Email, State }, me
                     {isRejected && (
                         <span>
                             <Badge
-                                type="warning"
-                                className="rounded-sm color-danger"
-                                tooltip={c('tooltip').t`User rejected invitation`}
-                            >{c('invitation status').t`Rejected`}</Badge>
+                                type="origin"
+                                className="rounded-sm color-weak"
+                                tooltip={c('tooltip').t`User declined invitation`}
+                            >{c('invitation status').t`Declined`}</Badge>
                         </span>
                     )}
                 </div>

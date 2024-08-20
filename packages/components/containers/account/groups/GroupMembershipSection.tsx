@@ -14,7 +14,7 @@ const GroupsTable = ({ memberships, isPrivateUser }: { memberships: GroupMembers
 
     return (
         <>
-            {isEmpty && c('Info').t`You are in no group nor invited to any`}
+            {isEmpty && c('Info').t`You are not currently in any groups and there are no pending invitations`}
             {!isEmpty && (
                 <div style={{ overflow: 'auto' }}>
                     <Table hasActions responsive="cards">
