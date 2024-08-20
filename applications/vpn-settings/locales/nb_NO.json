@@ -202,11 +202,17 @@
       "Disable": [
         "Deaktiver"
       ],
+      "Disable E2EE group mail encryption": [
+        "Deaktiver ende-til-ende-kryptert-gruppekryptering av e-post"
+      ],
       "Discard": [
         "Forkast"
       ],
       "Discard changes": [
         "Forkast endringer"
+      ],
+      "Domain names": [
+        "Domenenavn"
       ],
       "Done": [
         "Ferdig"
@@ -273,6 +279,9 @@
       ],
       "enable desktop notifications": [
         "aktivere skrivebordsvarsler"
+      ],
+      "Enable E2EE group mail encryption": [
+        "Aktiver ende-til-ende-kryptert-gruppekryptering av e-post"
       ],
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
@@ -349,9 +358,6 @@
       "Keep logo": [
         "Behold logo"
       ],
-      "Keep my Plus subscription": [
-        "Behold mitt Plus-abonnement"
-      ],
       "Let's talk": [
         "La oss snakke"
       ],
@@ -360,6 +366,9 @@
       ],
       "Loading verification": [
         "Laster verifisering"
+      ],
+      "Lost access to your 2FA device?": [
+        "Mistet tilgangen til 2FA-enheten din?"
       ],
       "Make admin": [
         "Gjør til administrator"
@@ -3413,6 +3422,9 @@
         "+${ organization.BonusVPN } tilkobling for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)",
         "+${ organization.BonusVPN } tilkoblinger for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)"
       ],
+      "2FA disabled": [
+        "2FA deaktivert"
+      ],
       "30-day money-back guarantee": [
         "30-dagers pengene-tilbake-garanti"
       ],
@@ -3482,6 +3494,9 @@
       ],
       "All Events ": [
         "Alle hendelser "
+      ],
+      "All members have been added.": [
+        "Alle medlemmer er lagt til."
       ],
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
@@ -3672,6 +3687,9 @@
         "Sletter ${ deletedServerCount } mellomtjener",
         "Sletter ${ deletedServerCount } mellomtjenere"
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Deaktivering av tofaktorautentisering vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
@@ -3834,6 +3852,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til identitetsleverandøren, hent SAML-metadataene for ${ appName } og importer dem her."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Gruppeadresser kan bare opprettes for egendefinerte domener. Gå til ${ linkToDomainPage }-siden for å legge til et egendefinert domene."
       ],
       "here": [
         "her"
@@ -4537,6 +4558,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denne verifiseringen kan ta opptil én time. Når bekreftelsen er fullført, må du ikke fjerne TXT-posten, siden det er nødvendig for å bekrefte at du fortsatt eier domenet."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Dette vil deaktivere tofaktorautentisering, inkludert både autentiseringsappen og sikkerhetsnøkkelmetoder."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette vil aktivere at PayPal skal brukes til å betale for ditt ${ BRAND_NAME }-abonnement. Vi vil omdirigere deg til PayPal i en ny nettleserfane. Hvis du blokkerer sprett-opp-vinduer, vennligst deaktiver blokkeringen for å fortsette."
       ],
@@ -4656,6 +4680,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Last opp organisasjonens logo for å styrke merkeidentiteten og skape en personlig opplevelse for brukerne."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Bruk en gjenopprettingsmetode for å deaktivere tofaktorautentiseringsmetodene dine."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Bruk den beste tjeneren i henhold til gjeldende belastning og posisjon: ${ formattedBestServerName }"
@@ -4922,12 +4949,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil bli videresendt til ${ destination } etter pålogging."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Du vil miste tilgang til Plus-funksjoner på denne datoen."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Du vil miste tilgang til Plus-tjenere og funksjoner på denne datoen."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du vil behøve en ${ BRAND_NAME }-adresse for å bruke ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
       ],
@@ -5133,6 +5154,12 @@
       ],
       "Account storage": [
         "Kontolagring"
+      ],
+      "Add all organization members": [
+        "Legg til alle organisasjonsmedlemmene"
+      ],
+      "Add group member": [
+        "Legg til gruppemedlem"
       ],
       "Address": [
         "Adresse"
@@ -6279,9 +6306,6 @@
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Premium-funksjoner til ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Prioritert e-poststøtte"
       ],
@@ -6429,9 +6453,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling av hvelv (opptil ${ n } person)",
         "Deling av hvelv (opptil ${ n } personer)"
-      ],
-      "Version history": [
-        "Versjonshistorikk"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -6878,6 +6899,9 @@
       "An external address cannot be default": [
         "Kan ikke angi en ekstern adresse som standard"
       ],
+      "Downloaded 2FA recovery codes": [
+        "Nedlastede 2FA-gjenopprettingskoder"
+      ],
       "Invalid code": [
         "Ugyldig kode"
       ],
@@ -6988,6 +7012,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Organization capacity error": {
@@ -8493,6 +8528,9 @@
       "1 email address": [
         "1 e-postadresse"
       ],
+      "1 email address per user": [
+        "1 e-postadresse per bruker"
+      ],
       "1 VPN connection": [
         "1 VPN-forbindelse"
       ],
@@ -9471,6 +9509,9 @@
       ],
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
+      ],
+      "Disable two-factor authentication?": [
+        "Deaktivere tofaktorautentisering?"
       ],
       "Discard changes?": [
         "Forkaste endringer?"

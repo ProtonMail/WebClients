@@ -343,9 +343,6 @@
       "Keep logo": [
         "Залишити логотип"
       ],
-      "Keep my Plus subscription": [
-        "Зберегти передплату Plus"
-      ],
       "Let's talk": [
         "Поговорімо"
       ],
@@ -3608,6 +3605,12 @@
       "Country code": [
         "Код країни"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Створити захищену хмару для користувача ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Створюйте й керуйте підлеглими обліковими записами та призначайте їм поштові адреси у своєму власному домені."
       ],
@@ -4933,12 +4936,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Після входу ви будете перенаправлені на ${ destination }."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "З цієї дати ви втратите доступ до функцій Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "З цієї дати ви втратите доступ до серверів і функцій Plus."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
@@ -8635,6 +8632,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } з автоматичною переадресацією"
+      ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } календар на користувача",
         "${ MaxCalendars } календарі на користувача",
@@ -8689,6 +8689,9 @@
       "10 email addresses": [
         "10 адрес електронної пошти"
       ],
+      "2 users": [
+        "2 користувачі"
+      ],
       "20 email addresses per user": [
         "20 адрес е-пошти на користувача"
       ],
@@ -8727,6 +8730,9 @@
       ],
       "Custom schedule send and snooze times": [
         "Власний час запланованого надсилання та відкладення"
+      ],
+      "Desktop app and email client support (via IMAP)": [
+        "Підтримка додатків робочого стола та поштового клієнта (через IMAP)"
       ],
       "Direct contribution to our mission": [
         "Прямий внесок до нашої місії"
@@ -8980,6 +8986,9 @@
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Якщо ви ввели дійсний резервний номер телефону, ми надішлемо вам повідомлення з вашими користувацькими іменами впродовж хвилини."
+      ],
+      "Invitation rejected": [
+        "Запрошення відхилено"
       ],
       "Invitation sent": [
         "Запрошення надіслано"
