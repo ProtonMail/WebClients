@@ -1,16 +1,16 @@
 .recommended-actions {
-	color: var(--signal-danger-major-2);
-	background-color: var(--signal-danger-minor-2);
+	color: var(--optional-promotion-text-color);
+	background: linear-gradient(77.97deg, rgb(109 74 255 / 0.15) 0%, rgb(70 26 255 / 0.04) 100%);
 	text-decoration: none;
 
 	&:hover,
 	&:active,
 	&:focus {
-		color: var(--signal-danger-major-2);
+		color: var(--optional-promotion-text-color);
 	}
 
 	&:hover,
 	&:active {
-		background-color: var(--signal-danger-minor-1);
+		background-color: var(--interaction-norm-minor-1);
 	}
 }

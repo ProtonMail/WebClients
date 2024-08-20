@@ -388,9 +388,9 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                             )}
                             target="_self"
                         >
-                            <Icon className="shrink-0" name="pass-shield-warning" size={6} />
+                            <Icon className="shrink-0" name="pass-shield-ok" size={6} />
 
-                            <div>{c('Safety review').t`You have recommended account safety actions`}</div>
+                            <div>{c('Safety review').t`Review your account safety`}</div>
                         </AppLink>
                     ) : null}
 
