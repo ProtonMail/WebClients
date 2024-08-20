@@ -398,9 +398,6 @@
       "Keep current time zone": [
         "Лишити поточний часовий пояс"
       ],
-      "Keep my Plus subscription": [
-        "Зберегти передплату Plus"
-      ],
       "Later": [
         "Пізніше"
       ],
@@ -3480,6 +3477,9 @@
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Не вдалося завантажити цю сторінку. Перезавантажте сторінку або перевірте з'єднання з інтернетом."
       ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Коли увімкнено додатковий пароль, керування псевдонімами може бути здійснено лише в ${ PASS_APP_NAME }."
+      ],
       "You need an active personal calendar to import events": [
         "Вам необхідний активний особистий календар для імпортування подій"
       ]
@@ -4492,6 +4492,12 @@
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Створити захищену хмару для користувача ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }"
+      ],
       "Create in": [
         "Створити у"
       ],
@@ -4806,6 +4812,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Інші користувачі вашої організації бачитимуть вашу зайнятість. Подробиці подій не поширюються."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Наші попередження є запобіжними. Якщо ви не впізнаєте жодної із зазначених відомостей, можете сміливо ігнорувати це повідомлення."
       ],
       "password": [
         "пароль"
@@ -5190,12 +5199,6 @@
       ],
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Ви раніше відхилили це запрошення. Зверніться до власника з проханням про повторне запрошення"
-      ],
-      "You will lose access to Plus features on this date.": [
-        "З цієї дати ви втратите доступ до функцій Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "З цієї дати ви втратите доступ до серверів і функцій Plus."
       ],
       "You will lose all unsaved changes.": [
         "Ви втратите всі незбережені зміни."
@@ -8686,6 +8689,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } з автоматичною переадресацією"
+      ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } календар на користувача",
         "${ MaxCalendars } календарі на користувача",
@@ -8740,6 +8746,9 @@
       "10 email addresses": [
         "10 адрес електронної пошти"
       ],
+      "2 users": [
+        "2 користувачі"
+      ],
       "20 email addresses per user": [
         "20 адрес е-пошти на користувача"
       ],
@@ -8769,6 +8778,9 @@
       ],
       "Custom schedule send and snooze times": [
         "Власний час запланованого надсилання та відкладення"
+      ],
+      "Desktop app and email client support (via IMAP)": [
+        "Підтримка додатків робочого стола та поштового клієнта (через IMAP)"
       ],
       "Direct contribution to our mission": [
         "Прямий внесок до нашої місії"
@@ -9064,6 +9076,9 @@
       ],
       "Import record deleted": [
         "Запис імпорту видалено"
+      ],
+      "Invitation rejected": [
+        "Запрошення відхилено"
       ],
       "Invitation sent and all events updated": [
         "Запрошення надіслано, а всі події оновлено"

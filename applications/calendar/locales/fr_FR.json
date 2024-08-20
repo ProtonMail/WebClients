@@ -392,8 +392,8 @@
       "Keep current time zone": [
         "Garder le fuseau horaire actuel"
       ],
-      "Keep my Plus subscription": [
-        "Conserver mon abonnement à Plus"
+      "Keep my subscription": [
+        "Conserver mon abonnement"
       ],
       "Later": [
         "Plus tard"
@@ -5118,11 +5118,8 @@
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Vous avez déjà refusé cette invitation. Demandez à l'organisateur de vous réinviter."
       ],
-      "You will lose access to Plus features on this date.": [
-        "À cette date, vous n'aurez plus accès aux fonctionnalités de Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "À cette date, vous n'aurez plus accès aux serveurs et aux fonctionnalités de Plus."
+      "You will lose access to ${ planTitle } features on this date.": [
+        "À cette date, vous n'aurez plus accès aux fonctionnalités de ${ planTitle }."
       ],
       "You will lose all unsaved changes.": [
         "Vous perdrez toutes les modifications non enregistrées."
@@ -6418,6 +6415,12 @@
       "Administration Panel": [
         "Panneau d'administration"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tous les services de base de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Tous les services premium de ${ BRAND_NAME } avec simplement un seul abonnement"
+      ],
       "Auto-delete Spam and Trash": [
         "Suppression automatique des indésirables/spam et de la corbeille"
       ],
@@ -6570,10 +6573,7 @@
         "Messages protégés par mot de passe"
       ],
       "Phone support (20+ users)": [
-        "Assistance téléphonique (compte 20 utilisateurs ou plus)"
-      ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+        "Assistance téléphonique (compte pour 20 utilisateurs ou plus)"
       ],
       "Priority email support": [
         "Assistance prioritaire par e-mail"
@@ -6590,6 +6590,9 @@
       "Protect ${ n } device at a time": [
         "Protégez ${ n } appareil à la fois",
         "Protégez ${ n } appareils en même temps"
+      ],
+      "Recover previous file versions": [
+        "Récupérer les versions précédentes des fichiers"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "La sécurité de votre compte est régulièrement vérifiée. Nous vous avertissons si vous avez des mots de passe réutilisés ou faibles à mettre à jour."
@@ -6722,9 +6725,6 @@
         "Partage du coffre-fort (${ n } personne)",
         "Partage du coffre-fort (jusqu'à ${ n } personnes)"
       ],
-      "Version history": [
-        "Historique des versions"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
       ]
@@ -6803,7 +6803,7 @@
       "Popular": [
         "Populaire"
       ],
-      "Protect sensitive business information and collaborate securely.asdfasdfsdf": [
+      "Protect sensitive business information and collaborate securely.": [
         "Protégez les informations sensibles de vos activités et collaborez en toute sécurité."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
@@ -8311,9 +8311,6 @@
       "Invite friends to ${ BRAND_NAME }": [
         "Inviter des amis à rejoindre ${ BRAND_NAME }"
       ],
-      "Need more space?": [
-        "Besoin de plus de place ?"
-      ],
       "No more scheduling conflicts": [
         "Il n'y a plus de conflits d'horaires."
       ],
@@ -8321,7 +8318,7 @@
         "Vous pouvez maintenant voir quand les participants sont disponibles pour assister à votre réunion."
       ],
       "You can now collapse the navigation bar.": [
-        "Vous pouvez maintenant réduire la barre de de navigation."
+        "Vous pouvez maintenant réduire la barre de navigation."
       ]
     },
     "State": {
@@ -9915,7 +9912,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
-        "Une façon plus sécurisée/simple de détenir et d'envoyer des bitcoins"
+        "Une façon plus sécurisée et simple de détenir et d'envoyer des bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {

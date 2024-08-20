@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -642,9 +642,6 @@
       ],
       "Keep logo": [
         "Manté el logo"
-      ],
-      "Keep my Plus subscription": [
-        "Mantén la meva subscripció Plus"
       ],
       "label emails as": [
         "etiquetar correus electrònics com"
@@ -8787,12 +8784,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Se us redirigirà a ${ destination } després d'iniciar la sessió."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Perdreu accés a les funcions Plus en aquesta data."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Perdreu l'accés a servidors i característiques Plus en aquesta data."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necessitareu una adreça de ${ BRAND_NAME } per a utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
@@ -9391,9 +9382,6 @@
       "5 minutes": [
         "5 minuts"
       ],
-      "Account recovery": [
-        "Recuperació de compte"
-      ],
       "Account storage": [
         "Emmagatzematge del compte"
       ],
@@ -9814,9 +9802,6 @@
       "Folder location": [
         "Ubicació de la carpeta"
       ],
-      "Folders and labels": [
-        "Carpetes i etiquetes"
-      ],
       "Font family": [
         "Família tipogràfica"
       ],
@@ -9921,9 +9906,6 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de correu (IMAP)"
-      ],
-      "Mail settings": [
-        "Preferències de correu electrònic"
       ],
       "Main": [
         "Principal"
@@ -10194,9 +10176,6 @@
       ],
       "Spam": [
         "Correu brossa"
-      ],
-      "Spam and filters": [
-        "Correu brossa i filtres"
       ],
       "Starred": [
         "Destacats"
@@ -11845,6 +11824,14 @@
         "El vostre pla seleccionat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -11863,14 +11850,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {

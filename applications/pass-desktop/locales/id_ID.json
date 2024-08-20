@@ -1101,9 +1101,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } akan menampilkan favicon item melalui proxy gambar anonim ${ BRAND_NAME }."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } hanya akan mengimpor rincian masuk, catatan, dan kartu kredit."
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } akan membutuhkan kata sandi ${ BRAND_NAME } Anda untuk dapat mengakses data secara offline."
       ],
@@ -1184,6 +1181,9 @@
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kunci biometrik berhasil didaftarkan. Gunakan kunci ini untuk membuka ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometrik akan dinonaktifkan dan akan harus diaktifkan lagi."
       ],
       "Breaches detected": [
         "Kebocoran terdeteksi"
@@ -1524,6 +1524,9 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Akses ${ PASS_APP_NAME } secara daring akan memerlukan kode PIN. Anda akan dikeluarkan setelah 3 percobaan gagal."
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Peringatan kami dimaksudkan agar Anda dapat lebih berhati-hati. Apabila Anda tidak mengenali informasi mana pun yang telah ditandai bocor, Anda dapat mengabaikan laporan ini dengan aman."
+      ],
       "Owner": [
         "Pemilik"
       ],
@@ -1566,11 +1569,23 @@
       "Please confirm your extra password": [
         "Silakan konfirmasi kata sandi tambahan Anda"
       ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk mengunci otomatis dengan biometrik."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi tambahan Anda."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Silakan konfirmasi kata sandi tambahan Anda untuk menonaktifkan kunci Anda saat ini."
       ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk memperbarui waktu penguncian otomatis."
+      ],
       "Please confirm your password": [
         "Silakan konfirmasi kata sandi Anda"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Silakan konfirmasi kata sandi Anda untuk mengunci otomatis dengan biometrik."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Silakan konfirmasi kata sandi Anda untuk mengunci secara otomatis dengan kata sandi Anda."
@@ -1871,6 +1886,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Informasi Anda ditemukan pada tanggal ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Organisasi Anda memerlukan Anda mengamankan akses ke ${ PASS_APP_NAME }"
       ]
     },
     "Label": {

@@ -461,7 +461,7 @@
         "Aseta lisäsalasana"
       ],
       "Setup 2FA": [
-        "Määritä kaksivaiheinen tunnistautuminen"
+        "Määritä 2FA"
       ],
       "Share": [
         "Jaa"
@@ -1113,9 +1113,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
-      ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot ja maksukortit."
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } vaatii ${ BRAND_NAME }-salasanasi tietojen yhteydettömään käyttöön."

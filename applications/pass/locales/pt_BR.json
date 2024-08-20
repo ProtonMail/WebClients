@@ -843,7 +843,7 @@
         "Modo off-line está temporariamente indisponível para o modo de duas senhas."
       ],
       "Offline mode isn't currently available for your plan and not compatible with two password mode.": [
-        "Modo sem rede não está disponível atualmente no seu plano e não é compatível com o modo de duas senhas."
+        "Modo off-line não está disponível atualmente no seu plano e não é compatível com o modo de duas senhas."
       ],
       "Passphrase is incorrect": [
         "A frase secreta está incorreta"
@@ -1059,9 +1059,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "O ${ PASS_APP_NAME } exibirá o favicon do item através do proxy de imagem anonimizado da ${ BRAND_NAME }."
-      ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } importará somente inícios de sessão, notas e cartões de crédito."
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } exigirá sua senha da ${ BRAND_NAME } para acessar seus dados no modo off-line."

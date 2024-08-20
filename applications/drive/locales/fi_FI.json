@@ -456,9 +456,6 @@
       "Invite": [
         "Kutsu"
       ],
-      "Keep my Plus subscription": [
-        "Säilytä Plus-tilaukseni"
-      ],
       "Later": [
         "Myöhemmin"
       ],
@@ -2303,10 +2300,10 @@
         "Säästä aikaa lähettämällä viestejä ja kutsuja kaikille yhtä aikaa. Vain yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
       ],
       "Set a data recovery method to prevent data loss.": [
-        "Aseta tiedoillesi palautusmenetelmä, jottet menetä niitä."
+        "Aseta tiedoillesi palautustapa, jottet menetä niitä."
       ],
       "Set a recovery method to prevent losing access to your account.": [
-        "Aseta palautusmenetelmä, jottet menetä pääsyä tilillesi."
+        "Aseta palautustapa, jottet menetä pääsyä tilillesi."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Varmista tilillesi korkein mahdollinen suojaus asettamalla salauslauseke."
@@ -2330,7 +2327,7 @@
         "Tilisi ja tietojesi palautusmenetelmät on määritetty ja kaksivaiheinen tunnistautuminen on käytössä."
       ],
       "Your account and data recovery methods are set.": [
-        "Tilisi ja tietojesi palautusmenetelmät on määritetty."
+        "Tilisi ja tietojesi palautustavat on asetettu."
       ]
     },
     "description": {
@@ -5377,12 +5374,6 @@
       "You need access": [
         "Tarvitset käyttöoikeuden"
       ],
-      "You will lose access to Plus features on this date.": [
-        "Menetät pääsyn Plus-ominaisuuksiin tänä päivänä."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Menetät pääsyn Plus-palvelimiin ja -ominaisuuksiin tänä päivänä."
-      ],
       "You will lose all unsaved changes.": [
         "Menetät kaikki tallentamattomat muutokset."
       ],
@@ -6873,9 +6864,6 @@
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Premium-ominaisuudet: ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
       ],
@@ -7013,9 +7001,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
         "Holvin jakaminen (enintään ${ n } henkilöä)"
-      ],
-      "Version history": [
-        "Versiohistoria"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
@@ -8023,7 +8008,7 @@
     },
     "plan customizer, ips": {
       "please ${ contactHref } our Sales team.": [
-        "${ contactHref } myyntitiimiimme."
+        "${ contactHref } myyntiimme."
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Valitse tilauksesi sisältyvien IP-osoitteiden määrä. Jokainen lisäosoite maksaa ${ price }."

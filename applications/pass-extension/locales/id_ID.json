@@ -1016,9 +1016,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } akan menampilkan favicon item melalui proxy gambar anonim ${ BRAND_NAME }."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } hanya akan mengimpor rincian masuk, catatan, dan kartu kredit."
-      ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } akan meminta Anda untuk menyimpan kata sandi segera setelah kata sandi yang dihasilkan diisi secara otomatis."
       ],
@@ -1117,6 +1114,9 @@
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kunci biometrik berhasil didaftarkan. Gunakan kunci ini untuk membuka ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometrik akan dinonaktifkan dan akan harus diaktifkan lagi."
       ],
       "Built in 2FA authenticator": [
         "Autentikator 2FA terintegrasi"
@@ -1475,11 +1475,23 @@
       "Please confirm your extra password": [
         "Silakan konfirmasi kata sandi tambahan Anda"
       ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk mengunci otomatis dengan biometrik."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk mengunci aplikasi secara otomatis dengan kata sandi tambahan Anda."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Silakan konfirmasi kata sandi tambahan Anda untuk menonaktifkan kunci Anda saat ini."
       ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Silakan konfirmasi kata sandi tambahan Anda untuk memperbarui waktu penguncian otomatis."
+      ],
       "Please confirm your password": [
         "Silakan konfirmasi kata sandi Anda"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Silakan konfirmasi kata sandi Anda untuk mengunci otomatis dengan biometrik."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Silakan konfirmasi kata sandi Anda untuk mengunci secara otomatis dengan kata sandi Anda."
@@ -1786,6 +1798,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Berkas Anda akan dienkripsi dan kemudian disimpan"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Organisasi Anda memerlukan Anda mengamankan akses ke ${ PASS_APP_NAME }"
       ]
     },
     "Label": {

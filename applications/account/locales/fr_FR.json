@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -253,6 +253,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmer l'ouverture du lien ${ linkToShow }"
       ],
+      "Contact sales": [
+        "Contacter le service commercial"
+      ],
       "Contact support": [
         "Contacter le support"
       ],
@@ -405,6 +408,9 @@
       ],
       "Discard changes": [
         "Abandonner les modifications"
+      ],
+      "Domain names": [
+        "Noms de domaine"
       ],
       "Don't show again": [
         "Ne plus afficher"
@@ -658,8 +664,8 @@
       "Keep logo": [
         "Conserver le logo"
       ],
-      "Keep my Plus subscription": [
-        "Conserver mon abonnement à Plus"
+      "Keep my subscription": [
+        "Conserver mon abonnement"
       ],
       "label emails as": [
         "labelliser les messages comme"
@@ -897,9 +903,6 @@
       ],
       "Review": [
         "Examiner"
-      ],
-      "Review account security": [
-        "Examiner la sécurité du compte"
       ],
       "Revoke": [
         "Révoquer"
@@ -7269,6 +7272,9 @@
       "finance": [
         "finance"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Pour un historique des versions sur 10 ans, veuillez contacter notre équipe commerciale."
+      ],
       "for choosing ${ product }": [
         "d'avoir choisi ${ product }"
       ],
@@ -7310,6 +7316,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accédez à votre fournisseur d'identité, récupérez les métadonnées SAML pour ${ appName } et importez-les ici."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Les groupes d'adresses ne peuvent être créés que pour des domaines personnalisés. Accédez à la page ${ linkToDomainPage } pour ajouter un domaine personnalisé."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Groupez les messages d'une même conversation dans votre boite de réception ou affichez-les séparément."
@@ -8063,6 +8072,9 @@
       "Remember to share the user's sign in details with them.": [
         "Pensez à partager les informations de connexion avec l'utilisateur concerné."
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "Retirer les métadonnées de vos images pour préserver votre confidentialité."
+      ],
       "Remove one of your calendars to join this one": [
         "Retirez un de vos calendriers pour rejoindre celui-ci."
       ],
@@ -8446,7 +8458,7 @@
         "Cela supprimera toutes les versions précédentes de vos fichiers."
       ],
       "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
-        "Ceci désactivera l'authentification à deux facteurs, à savoir l'application d'authentification et la clé de sécurité."
+        "Ceci désactivera l'authentification à deux facteurs, à savoir à la fois l'application d'authentification et la clé de sécurité."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Cela désactivera votre phrase de récupération actuelle. Vous ne pourrez pas l'utiliser pour accéder à votre compte ou déchiffrer vos données."
@@ -8986,6 +8998,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Vous n'avez pas défini de méthode de récupération : si vous oubliez votre mot de passe, la récupération de votre compte ne sera pas possible. Voulez-vous continuer sans méthode de récupération ?"
       ],
+      "You do not have permission to perform this action": [
+        "Vous n’avez pas l'autorisation d’effectuer cette action"
+      ],
       "You have ${ availableCount } dedicated server available.": [
         "${ availableCount } serveur dédié est disponible.",
         "${ availableCount } serveurs dédiés sont disponibles."
@@ -9038,11 +9053,8 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Après la connexion, vous serez redirigé vers ${ destination }."
       ],
-      "You will lose access to Plus features on this date.": [
-        "À cette date, vous n'aurez plus accès aux fonctionnalités de Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "À cette date, vous n'aurez plus accès aux serveurs et aux fonctionnalités de Plus."
+      "You will lose access to ${ planTitle } features on this date.": [
+        "À cette date, vous n'aurez plus accès aux fonctionnalités de ${ planTitle }."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Vous avez besoin d'une adresse ${ BRAND_NAME } pour utiliser ${ MAIL_APP_NAME } et ${ CALENDAR_APP_NAME }."
@@ -9653,9 +9665,6 @@
       "5 minutes": [
         "5 minutes"
       ],
-      "Account recovery": [
-        "Récupération du compte"
-      ],
       "Account storage": [
         "Espace de stockage du compte"
       ],
@@ -10022,6 +10031,9 @@
       "Email or username": [
         "E-mail ou nom d'utilisateur"
       ],
+      "Email settings": [
+        "Paramètres du message"
+      ],
       "Emails": [
         "Messages"
       ],
@@ -10082,9 +10094,6 @@
       "Folder location": [
         "Emplacement du dossier"
       ],
-      "Folders and labels": [
-        "Dossiers et labels"
-      ],
       "Font family": [
         "Famille de police"
       ],
@@ -10102,6 +10111,9 @@
       ],
       "Group address": [
         "Groupe d'adresses"
+      ],
+      "Group conversations": [
+        "Conversations de groupe"
       ],
       "Group members": [
         "Membres du groupe"
@@ -10147,6 +10159,9 @@
       ],
       "Issuer ID": [
         "ID de l'émetteur"
+      ],
+      "Keep emails in Sent/Drafts": [
+        "Conserver les messages dans Envoyés/Brouillons"
       ],
       "Keep me signed in": [
         "Se souvenir de moi"
@@ -10195,9 +10210,6 @@
       ],
       "Mail Server (IMAP)": [
         "Serveur de messagerie (IMAP)"
-      ],
-      "Mail settings": [
-        "Paramètres de messagerie"
       ],
       "Main": [
         "Principale"
@@ -10397,6 +10409,9 @@
       "Recovery phrase": [
         "Phrase de récupération"
       ],
+      "Remove image metadata": [
+        "Retirer les métadonnées de l'image"
+      ],
       "Repeat password": [
         "Confirmer le mot de passe"
       ],
@@ -10468,9 +10483,6 @@
       ],
       "Spam": [
         "Indésirables/spam"
-      ],
-      "Spam and filters": [
-        "Filtres et indésirables/spam"
       ],
       "Starred": [
         "Favoris"
@@ -11660,6 +11672,12 @@
       "All ${ BRAND_NAME } services": [
         "Tous les services ${ BRAND_NAME }"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tous les services de base de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Tous les services premium de ${ BRAND_NAME } avec simplement un seul abonnement"
+      ],
       "Auto-delete Spam and Trash": [
         "Suppression automatique des indésirables/spam et de la corbeille"
       ],
@@ -11827,10 +11845,7 @@
         "Messages protégés par mot de passe"
       ],
       "Phone support (20+ users)": [
-        "Assistance téléphonique (compte 20 utilisateurs ou plus)"
-      ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Fonctionnalités premium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+        "Assistance téléphonique (compte pour 20 utilisateurs ou plus)"
       ],
       "Priority email support": [
         "Assistance prioritaire par e-mail"
@@ -11847,6 +11862,9 @@
       "Protect ${ n } device at a time": [
         "Protégez ${ n } appareil à la fois",
         "Protégez ${ n } appareils en même temps"
+      ],
+      "Recover previous file versions": [
+        "Récupérer les versions précédentes des fichiers"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "La sécurité de votre compte est régulièrement vérifiée. Nous vous avertissons si vous avez des mots de passe réutilisés ou faibles à mettre à jour."
@@ -11992,9 +12010,6 @@
         "Partage du coffre-fort (${ n } personne)",
         "Partage du coffre-fort (jusqu'à ${ n } personnes)"
       ],
-      "Version history": [
-        "Historique des versions"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
       ]
@@ -12094,7 +12109,7 @@
       "Popular": [
         "Populaire"
       ],
-      "Protect sensitive business information and collaborate securely.asdfasdfsdf": [
+      "Protect sensitive business information and collaborate securely.": [
         "Protégez les informations sensibles de vos activités et collaborez en toute sécurité."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
@@ -12184,6 +12199,14 @@
         "L'abonnement que vous avez sélectionné : ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -12202,14 +12225,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -14016,13 +14031,13 @@
         "Si vous ne pouvez pas accéder à votre compte ${ BRAND_NAME }, votre kit de récupération vous permettra de vous connecter et de récupérer vos données."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Si vous perdez vos informations de connexion et devez réinitialiser votre compte, **vous devez** avoir à la fois **une méthode de récupération de données et une méthode de de récupération de compte**. Dans le cas contraire, vous ne pourrez peut-être pas accéder à vos messages, contacts fichiers ou mots de passe."
+        "Si vous perdez vos informations de connexion et devez réinitialiser votre compte, **vous devez** avoir à la fois **une méthode de récupération de données et une méthode de récupération de compte**. Dans le cas contraire, vous pourriez ne pas pouvoir accéder à vos courriels, contacts, fichiers ou mots de passe."
       ],
       "Invalid code": [
         "Le code n’est pas valide."
       ],
       "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
-        "Il s'agit du seul moyen de restaurer complètement votre compte, nous vous conseillons de le garder en lieu sûr."
+        "Il s'agit du seul moyen de restaurer complètement votre compte. Nous vous conseillons de le garder en lieu sûr."
       ],
       "Recovery email address": [
         "Adresse e-mail de récupération"
@@ -14100,7 +14115,7 @@
         "Une erreur est survenue lors de la vérification du téléphone de récupération. Nous vous invitons à réessayer plus tard ou à contacter le service client si le problème persiste."
       ],
       "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
-        "Quand vous activez la récupération à partir d'un appareil, ${ BRAND_NAME } stocke un trousseau de sauvegarde chiffré en tant que fichier dans espace de stockage web de votre navigateur."
+        "Quand vous activez la récupération à partir d'un appareil, ${ BRAND_NAME } stocke un trousseau de sauvegarde chiffré en tant que fichier dans un espace de stockage web de votre navigateur."
       ],
       "You are at risk of losing access to your account and data.": [
         "Vous risquez de perdre l'accès à votre compte et à vos données."
@@ -15278,7 +15293,7 @@
         "1 adresse e-mail"
       ],
       "1 email address per user": [
-        "1 adresse e-mail par utilisateur"
+        "Une adresse e-mail par utilisateur"
       ],
       "1 VPN connection": [
         "1 connexion VPN"
@@ -16120,6 +16135,9 @@
       "Status": [
         "Statut"
       ],
+      "Time": [
+        "Temps"
+      ],
       "Total storage": [
         "Espace de stockage total"
       ],
@@ -16222,6 +16240,9 @@
       ],
       "Account recovery": [
         "Récupération du compte"
+      ],
+      "Account settings": [
+        "Paramètres du compte"
       ],
       "Account suspended": [
         "Compte suspendu"
@@ -16970,6 +16991,9 @@
       ],
       "Privacy and data collection": [
         "Vie privée et collecte de données"
+      ],
+      "Privacy and security": [
+        "Vie privée et sécurité"
       ],
       "Processing...": [
         "Traitement en cours…"
@@ -18030,7 +18054,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
-        "Une façon plus sécurisée/simple de détenir et d'envoyer des bitcoins"
+        "Une façon plus sécurisée et simple de détenir et d'envoyer des bitcoins"
       ]
     },
     "wallet_signup_2024:Bug category": {
