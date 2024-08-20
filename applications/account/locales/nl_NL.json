@@ -70,11 +70,11 @@
       "Accept": [
         "Accepteren"
       ],
-      "Activate": [
-        "Activeren"
-      ],
       "activate": [
         "activeer"
+      ],
+      "Activate": [
+        "Activeren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
@@ -649,9 +649,6 @@
       "Keep logo": [
         "Logo behouden"
       ],
-      "Keep my Plus subscription": [
-        "Behoud mijn Plus-abonnement"
-      ],
       "label emails as": [
         "e-mail labellen als"
       ],
@@ -885,9 +882,6 @@
       ],
       "Review": [
         "Bekijken"
-      ],
-      "Review account security": [
-        "Controleer accountbeveiliging"
       ],
       "Revoke": [
         "Intrekken"
@@ -8922,12 +8916,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "U wordt doorverwezen naar ${ destination } nadat u inlogt."
       ],
-      "You will lose access to Plus features on this date.": [
-        "U zult toegang verliezen tot Plus-functies op deze datum."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "U zult toegang verliezen tot Plus-servers en -functies op deze datum."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
       ],
@@ -9526,9 +9514,6 @@
       "5 minutes": [
         "5 minuten"
       ],
-      "Account recovery": [
-        "Accountherstel"
-      ],
       "Account storage": [
         "Opslagruimte account"
       ],
@@ -9946,9 +9931,6 @@
       "Folder location": [
         "Map locatie"
       ],
-      "Folders and labels": [
-        "Mappen en labels"
-      ],
       "Font family": [
         "Lettertype familie"
       ],
@@ -10056,9 +10038,6 @@
       ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
-      ],
-      "Mail settings": [
-        "E-mailinstellingen"
       ],
       "Main": [
         "Primair"
@@ -10329,9 +10308,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Spam and filters": [
-        "Spam en filters"
       ],
       "Starred": [
         "Met ster"
@@ -11985,6 +11961,14 @@
         "Uw geselecteerde abonnement: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -12003,14 +11987,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
