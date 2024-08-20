@@ -324,6 +324,8 @@ export const usePaymentFacade = ({
             'signup-pass-upgrade',
             'signup-vpn',
             'subscription',
+            'signup-v2',
+            'signup-v2-upgrade',
         ];
 
         const showTaxCountry = isMethodTaxCountry && flowsWithTaxCountry.includes(flow);
