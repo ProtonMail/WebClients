@@ -308,6 +308,7 @@ const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.DRIVE,
     PLANS.PASS,
     PLANS.VPN,
+    PLANS.VPN2024,
     PLANS.BUNDLE,
     PLANS.MAIL_PRO,
     PLANS.VISIONARY,
