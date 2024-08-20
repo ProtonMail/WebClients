@@ -327,9 +327,6 @@
       "Increase": [
         "Увеличить"
       ],
-      "Keep my Plus subscription": [
-        "Сохраните мою подписку Plus"
-      ],
       "Learn more": [
         "Подробнее"
       ],
@@ -639,6 +636,12 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } дополнительный пользовательский домен",
+        "${ domains } дополнительных пользовательских домена",
+        "${ domains } дополнительных пользовательских доменов",
+        "${ domains } дополнительных пользовательских домена"
+      ],
       "${ ips } server": [
         "${ ips } сервер",
         "${ ips } сервера",
@@ -3692,6 +3695,12 @@
       "Create a new contact group": [
         "Создать новую группу контактов"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Создать безопасное облако для ${ n } участника",
+        "Создать безопасное облако для ${ n } участников",
+        "Создать безопасное облако для ${ n } участников",
+        "Создать безопасное облако для ${ n } участников"
+      ],
       "Create in": [
         "Создать в"
       ],
@@ -4060,6 +4069,9 @@
       ],
       "Organization size": [
         "Размер организации"
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Мы отправляем уведомления, проявляя избыточную осторожность. Если вы не узнаёте какие-либо из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
       ],
       "Owner": [
         "Владелец"
@@ -4477,12 +4489,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вам необходимо связать кредитную карту или банковский счет с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "С этой даты вы потеряете доступ к функциям Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "В этот день вы потеряете доступ к серверам и функциям Plus."
       ],
       "You will lose all unsaved changes.": [
         "Вы потеряете все несохраненные изменения."
@@ -5501,6 +5507,15 @@
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Get started for $1": [
+        "Начать с $1"
+      ],
+      "Get started for 1 €": [
+        "Начать с 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Начните с CHF 1"
       ],
       "Upgrade now": [
         "Улучшить сейчас"

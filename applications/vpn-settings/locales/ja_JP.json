@@ -61,6 +61,9 @@
       "Allow": [
         "許可"
       ],
+      "Always allow sending mail to group": [
+        "グループへのメール送信を常に許可する"
+      ],
       "Apply": [
         "適用"
       ],
@@ -190,8 +193,17 @@
       "Disable": [
         "無効にする"
       ],
+      "Disable E2EE group mail encryption": [
+        "E2EE グループメール暗号化を無効にする"
+      ],
       "Discard": [
         "破棄"
+      ],
+      "Discard changes": [
+        "変更を破棄"
+      ],
+      "Domain names": [
+        "ドメイン名"
       ],
       "Done": [
         "完了"
@@ -258,6 +270,9 @@
       ],
       "enable desktop notifications": [
         "デスクトップ通知を有効にする"
+      ],
+      "Enable E2EE group mail encryption": [
+        "E2EE グループメール暗号化を有効にする"
       ],
       "Enable multi-user support": [
         "複数ユーザー対応を有効にする"
@@ -330,9 +345,6 @@
       ],
       "Keep logo": [
         "ロゴを維持"
-      ],
-      "Keep my Plus subscription": [
-        "Plus サブスクリプションを維持する"
       ],
       "Let's talk": [
         "話をしよう"
@@ -598,6 +610,12 @@
       "Switch or add account": [
         "アカウントを切り替え・追加"
       ],
+      "Test": [
+        "テスト"
+      ],
+      "Test SAML configuration": [
+        "SAML 構成をテスト"
+      ],
       "Top up": [
         "チャージ"
       ],
@@ -642,6 +660,9 @@
       ],
       "Use authentication code": [
         "認証コードを使用"
+      ],
+      "Use group sending permissions": [
+        "グループ送信権限を使用する"
       ],
       "Use recovery code": [
         "回復用コードを使用"
@@ -4382,12 +4403,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "サインイン後、${ destination } にリダイレクトされます。"
       ],
-      "You will lose access to Plus features on this date.": [
-        "この日付で Plus 機能にアクセスできなくなります。"
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "この日以降、Plus サーバーと機能にアクセスできなくなります。"
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
       ],
@@ -4569,6 +4584,9 @@
       ],
       "Account storage": [
         "アカウントの容量"
+      ],
+      "Add group member": [
+        "グループメンバーを追加"
       ],
       "Address": [
         "メールアドレス"
@@ -8159,6 +8177,9 @@
       ],
       "Couldn’t create accounts": [
         "アカウントの作成に失敗しました"
+      ],
+      "Coupon": [
+        "クーポン"
       ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } ユーザーを作成します"

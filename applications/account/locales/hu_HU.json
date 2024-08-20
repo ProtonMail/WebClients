@@ -41,11 +41,11 @@
       "Accept": [
         "Elfogadás"
       ],
-      "Activate": [
-        "Aktiválás"
-      ],
       "activate": [
         "aktiválás"
+      ],
+      "Activate": [
+        "Aktiválás"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
@@ -596,9 +596,6 @@
       "Keep logo": [
         "Logó megtartása"
       ],
-      "Keep my Plus subscription": [
-        "Plus előfizetés megtartása"
-      ],
       "label emails as": [
         "címke hozzáadása:"
       ],
@@ -820,9 +817,6 @@
       ],
       "Review": [
         "Áttekintés"
-      ],
-      "Review account security": [
-        "A fiók biztonságának áttekintése"
       ],
       "Revoke": [
         "Visszavonás"
@@ -7685,12 +7679,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "A bejelentkezés után az ${ destination } oldalra kerül átirányításra."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Ekkor elveszíti a hozzáférését a Plus lehetőségekhez."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Ekkor elveszíti a hozzáférését a Plus szerverekhez és lehetőségekhez."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Szüksége lesz egy ${ BRAND_NAME } címre, hogy használni tudja a ${ MAIL_APP_NAME } és ${ CALENDAR_APP_NAME } szolgáltatásokat"
       ],
@@ -8241,9 +8229,6 @@
       "5 minutes": [
         "5 perc"
       ],
-      "Account recovery": [
-        "Fiók helyreállítás"
-      ],
       "Account storage": [
         "Fiók tárhely"
       ],
@@ -8649,9 +8634,6 @@
       "Folder location": [
         "Mappa helye"
       ],
-      "Folders and labels": [
-        "Mappák és címkék"
-      ],
       "Font family": [
         "Betűkészlet család"
       ],
@@ -8753,9 +8735,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-mail szerver (IMAP)"
-      ],
-      "Mail settings": [
-        "E-mail beállítások"
       ],
       "Main": [
         "Elsődleges"
@@ -9002,9 +8981,6 @@
       ],
       "Spam": [
         "Levélszemét"
-      ],
-      "Spam and filters": [
-        "Levélszemét és szűrők"
       ],
       "Starred": [
         "Csillagozott"
@@ -10380,6 +10356,14 @@
         "A választott csomagja: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -10398,14 +10382,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {

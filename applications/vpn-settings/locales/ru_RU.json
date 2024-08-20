@@ -193,8 +193,14 @@
       "Disable": [
         "Отключить"
       ],
+      "Disable E2EE group mail encryption": [
+        "Отключить сквозное шифрование почты группы"
+      ],
       "Discard": [
         "Сбросить"
+      ],
+      "Domain names": [
+        "Доменные имена"
       ],
       "Done": [
         "Готово"
@@ -258,6 +264,9 @@
       ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
+      ],
+      "Enable E2EE group mail encryption": [
+        "Включить сквозное шифрование почты группы"
       ],
       "Enable multi-user support": [
         "Включить многопользовательский режим"
@@ -333,9 +342,6 @@
       ],
       "Keep logo": [
         "Оставить логотип"
-      ],
-      "Keep my Plus subscription": [
-        "Сохраните мою подписку Plus"
       ],
       "Let's talk": [
         "Свяжитесь с нами"
@@ -695,6 +701,12 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } дополнительный пользовательский домен",
+        "${ domains } дополнительных пользовательских домена",
+        "${ domains } дополнительных пользовательских доменов",
+        "${ domains } дополнительных пользовательских домена"
+      ],
       "${ ips } server": [
         "${ ips } сервер",
         "${ ips } сервера",
@@ -3454,6 +3466,9 @@
       "All Events ": [
         "Все события"
       ],
+      "All members have been added.": [
+        "Все участники были добавлены."
+      ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
       ],
@@ -3573,6 +3588,12 @@
       ],
       "Country code": [
         "Код страны"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Создать безопасное облако для ${ n } участника",
+        "Создать безопасное облако для ${ n } участников",
+        "Создать безопасное облако для ${ n } участников",
+        "Создать безопасное облако для ${ n } участников"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Создавайте и управляйте дополнительными аккаунтами, назначайте им адреса электронной почты на вашем домене."
@@ -4834,12 +4855,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "После входа в систему вы будете перенаправлены на ${ destination }"
       ],
-      "You will lose access to Plus features on this date.": [
-        "С этой даты вы потеряете доступ к функциям Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "В этот день вы потеряете доступ к серверам и функциям Plus."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам понадобится адрес ${ BRAND_NAME } для использования ${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ],
@@ -5035,6 +5050,12 @@
       ],
       "Account storage": [
         "Хранилище учётной записи"
+      ],
+      "Add all organization members": [
+        "Добавить всех участников организации"
+      ],
+      "Add group member": [
+        "Добавить участника группы"
       ],
       "Address": [
         "Адрес"
@@ -5875,6 +5896,15 @@
       ],
       "From ${ price }": [
         "От: ${ price }"
+      ],
+      "Get started for $1": [
+        "Начать с $1"
+      ],
+      "Get started for 1 €": [
+        "Начать с 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Начните с CHF 1"
       ],
       "Upgrade": [
         "Улучшить"
@@ -6877,6 +6907,17 @@
       ],
       "The whole organization": [
         "Вся организация"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Все"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
+      "No one": [
+        "Никто"
       ]
     },
     "Organization capacity error": {
@@ -8394,6 +8435,9 @@
       ],
       "1 email address": [
         "1 адрес электронной почты"
+      ],
+      "1 email address per user": [
+        "1 адрес электронной почты на пользователя"
       ],
       "1 VPN connection": [
         "1 подключение к VPN"

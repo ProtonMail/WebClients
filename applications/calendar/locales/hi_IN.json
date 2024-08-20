@@ -361,9 +361,6 @@
       "Keep current time zone": [
         "मौजूदा समय क्षेत्र रखें"
       ],
-      "Keep my Plus subscription": [
-        "मेरी प्लस सदस्यता को बनाए रखें"
-      ],
       "Later": [
         "बाद में"
       ],
@@ -4597,12 +4594,6 @@
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "आपने पहले इस न्योते को ठुकरा दिया था। मालिक से नए न्योते के बारे में पूछे"
       ],
-      "You will lose access to Plus features on this date.": [
-        "आप इस तिथि पर प्लस सुविधाओं तक पहुंच खो देंगे।"
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "आप इस तिथि पर प्लस सर्वर और सुविधाओं तक पहुंच खो देंगे।"
-      ],
       "You will lose all unsaved changes.": [
         "आप सभी असहेजित परिवर्तनों को खो देंगे।"
       ],
@@ -6821,11 +6812,23 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "सभी नकली-नाम"
+      ],
       "Create an alias": [
         "नकली-नाम बनाएं"
       ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "तुरंत नकली-नाम उत्पन्न करें, और आसानी से नकली-नामों और पासवर्डों को संभाले।"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email नकलीनाम"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email नकली-नाम ईमेल पता शेयर किए बिना ऑनलाइन चीजों के लिए साइनअप करने की सुविधा देता है। ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "नया नकली-नाम"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } खोलें"
@@ -7460,6 +7463,9 @@
       ],
       "Address copied to clipboard": [
         "पता क्लिपबोर्ड पर कॉपी किया गया"
+      ],
+      "Alias copied to clipboard": [
+        "नकली-नाम क्लिपबोर्ड पर कॉपी किया गया"
       ],
       "All events deleted": [
         "सारे इवेंट मिटाएं गए"

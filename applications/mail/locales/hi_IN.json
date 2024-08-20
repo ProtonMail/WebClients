@@ -567,9 +567,6 @@
       "Italic": [
         "तिरछे अक्षर"
       ],
-      "Keep my Plus subscription": [
-        "मेरी प्लस सदस्यता को बनाए रखें"
-      ],
       "Label as": [
         "के रूप में लेबल"
       ],
@@ -6255,12 +6252,6 @@
         "आपने इस लेबल के साथ **${ count } संदेश** चुना है",
         "आपने इस लेबल के साथ **${ count } संदेश** चुने हैं"
       ],
-      "You will lose access to Plus features on this date.": [
-        "आप इस तिथि पर प्लस सुविधाओं तक पहुंच खो देंगे।"
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "आप इस तिथि पर प्लस सर्वर और सुविधाओं तक पहुंच खो देंगे।"
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "आपको अपने भुगतान को सत्यापित करने के लिए जल्द ही PayPal पर पुनर्निर्देशित किया जाएगा।"
       ],
@@ -8784,11 +8775,23 @@
       ]
     },
     "Security Center": {
+      "All aliases": [
+        "सभी नकली-नाम"
+      ],
       "Create an alias": [
         "नकली-नाम बनाएं"
       ],
+      "Generate aliases on the fly, and easily manage your aliases and passwords.": [
+        "तुरंत नकली-नाम उत्पन्न करें, और आसानी से नकली-नामों और पासवर्डों को संभाले।"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email नकलीनाम"
+      ],
+      "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
+        "Hide-my-email नकली-नाम ईमेल पता शेयर किए बिना ऑनलाइन चीजों के लिए साइनअप करने की सुविधा देता है। ${ learnMoreLink }"
+      ],
+      "New alias": [
+        "नया नकली-नाम"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } खोलें"
@@ -9583,6 +9586,9 @@
       ],
       "Address verification disabled": [
         "पता सत्यापन अक्षम"
+      ],
+      "Alias copied to clipboard": [
+        "नकली-नाम क्लिपबोर्ड पर कॉपी किया गया"
       ],
       "Bug reported": [
         "बग की सूचना दी"
