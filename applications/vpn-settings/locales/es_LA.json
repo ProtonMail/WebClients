@@ -202,11 +202,17 @@
       "Disable": [
         "Desactivar"
       ],
+      "Disable E2EE group mail encryption": [
+        "Desctivar el cifrado del correo grupal"
+      ],
       "Discard": [
         "Descartar"
       ],
       "Discard changes": [
         "Descartar cambios"
+      ],
+      "Domain names": [
+        "Nombres de dominio"
       ],
       "Done": [
         "Hecho"
@@ -273,6 +279,9 @@
       ],
       "enable desktop notifications": [
         "activar las notificaciones de escritorio"
+      ],
+      "Enable E2EE group mail encryption": [
+        "Activar el cifrado del correo grupal"
       ],
       "Enable multi-user support": [
         "Activar soporte multi usuario"
@@ -349,9 +358,6 @@
       "Keep logo": [
         "Conservar logo"
       ],
-      "Keep my Plus subscription": [
-        "Mantener mi suscripción Plus"
-      ],
       "Let's talk": [
         "Hablemos"
       ],
@@ -360,6 +366,9 @@
       ],
       "Loading verification": [
         "Cargando verificación"
+      ],
+      "Lost access to your 2FA device?": [
+        "¿Perdió el acceso a su dispositivo de 2FA?"
       ],
       "Make admin": [
         "Dar permisos para administrar"
@@ -3413,6 +3422,9 @@
         "Más de ${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)",
         "Más de ${ organization.BonusVPN } conexiones para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)"
       ],
+      "2FA disabled": [
+        "2FA desactivada"
+      ],
       "30-day money-back guarantee": [
         "30 días de garantía de devolución del dinero"
       ],
@@ -3482,6 +3494,9 @@
       ],
       "All Events ": [
         "Todos los eventos "
+      ],
+      "All members have been added.": [
+        "Se han añadido todos los miembros."
       ],
       "All your changes will be lost.": [
         "Todos los cambios se perderán."
@@ -3672,6 +3687,9 @@
         "Eliminando ${ deletedServerCount } servidor de puerta de enlace",
         "Eliminando ${ deletedServerCount } servidores de puerta de enlace"
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Desactivar la autenticación de dos factores hará su cuenta menos segura. Proceda solo si es absolutamente necesario."
+      ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
@@ -3834,6 +3852,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vaya al proveedor de identidad, obtenga los metadatos de SAML para ${ appName } e impórtelos aquí."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Las direcciones grupales solo pueden crearse para dominios personalizados. Vaya a ${ linkToDomainPage } para añadir un dominio personalizado."
       ],
       "here": [
         "aquí"
@@ -4534,6 +4555,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Esta verificación puede tomar hasta una hora. Después de la verificación, no borre el registro TXT ya que se necesita para confirmar que continúa siendo el propietario del dominio."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Esto desactivará la autenticación de dos factores, incluyendo los métodos de aplicación de autenticación y la clave de seguridad."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Esto permitirá que PayPal se use para pagar la suscripción a ${ BRAND_NAME }. Le redirigiremos a PayPal en una pestaña nueva de navegador. Si usa cualquier bloqueador emergente, desactívelo para continuar."
       ],
@@ -4653,6 +4677,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Cargue el logotipo de la organización para potenciar su identidad de marca y crear una experiencia personalizada para sus usuarios."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Use un método de recuperación para desactivar los métodos de autenticación de dos factores."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use el mejor servidor según la carga actual y la ubicación: ${ formattedBestServerName }"
@@ -4919,12 +4946,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Le redirigiremos a ${ destination } después de iniciar sesión."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Perderá el acceso a las funciones de Plus en esta fecha."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Perderá el acceso a los servidores y funciones de Plus en esta fecha."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necesitará una dirección de ${ BRAND_NAME } para usar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
@@ -5130,6 +5151,12 @@
       ],
       "Account storage": [
         "Almacenamiento de la cuenta"
+      ],
+      "Add all organization members": [
+        "Añadir todos los miembros de la organización"
+      ],
+      "Add group member": [
+        "Añadir un miembro al grupo"
       ],
       "Address": [
         "Dirección"
@@ -6273,9 +6300,6 @@
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Funciones premium de ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
       ],
@@ -6423,9 +6447,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartir bóveda (hasta ${ n } persona)",
         "Compartir bóveda (hasta ${ n } personas)"
-      ],
-      "Version history": [
-        "Historial de versiones"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
@@ -6872,6 +6893,9 @@
       "An external address cannot be default": [
         "Una dirección externa no puede ser principal"
       ],
+      "Downloaded 2FA recovery codes": [
+        "Códigos de recuperación 2FA descargados"
+      ],
       "Invalid code": [
         "Código inválido"
       ],
@@ -6961,6 +6985,17 @@
       ],
       "The whole organization": [
         "Toda la organización"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Miembros del grupo"
+      ],
+      "No one": [
+        "Nadie"
       ]
     },
     "Organization capacity error": {
@@ -8466,6 +8501,9 @@
       "1 email address": [
         "1 dirección de correo"
       ],
+      "1 email address per user": [
+        "1 dirección de correo por usuario"
+      ],
       "1 VPN connection": [
         "1 conexión VPN"
       ],
@@ -9447,6 +9485,9 @@
       ],
       "Disable two-factor authentication": [
         "Desactivar autenticación de dos factores"
+      ],
+      "Disable two-factor authentication?": [
+        "¿Desactivar la autenticación de dos factores?"
       ],
       "Discard changes?": [
         "¿Descartar cambios?"

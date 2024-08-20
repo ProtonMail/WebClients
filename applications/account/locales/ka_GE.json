@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -253,6 +253,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "დაადასტურეთ ბმულის გახსნა ${ linkToShow }"
       ],
+      "Contact sales": [
+        "გაყიდვებთან კავშირი"
+      ],
       "Contact support": [
         "კონტაქტი მხარდაჭერის გუნდთან"
       ],
@@ -391,6 +394,9 @@
       "Disable": [
         "გათიშვა"
       ],
+      "Disable E2EE group mail encryption": [
+        "E2EE ჯგუფური ელფოსტის დაშიფვრის გამორთვა"
+      ],
       "Disable recovery phrase": [
         "აღდგენის ფრაზის გამორთვა"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "ცვლილებების გაუქმება"
+      ],
+      "Domain names": [
+        "დომენის სახელები"
       ],
       "Don't show again": [
         "აღარ მაჩვენო"
@@ -492,6 +501,9 @@
       ],
       "Enable device-based recovery": [
         "მოწყობილობაზე დაფუძნებული აღდგენის ჩართვა"
+      ],
+      "Enable E2EE group mail encryption": [
+        "E2EE ჯგუფური ელფოსტის დაშიფვრის ჩართვა"
       ],
       "Enable multi-user support": [
         "მრავალმომხმარებლიანობის მხარდაჭერა"
@@ -652,9 +664,6 @@
       "Keep logo": [
         "ლოგოს შენარჩუნება"
       ],
-      "Keep my Plus subscription": [
-        "ჩემი Plus გამოწერის შენარჩუნება"
-      ],
       "label emails as": [
         "ელ-ფოსტების მონიშვნა, როგორც"
       ],
@@ -672,6 +681,9 @@
       ],
       "Loading verification": [
         "შემოწმების ჩატვირთვა"
+      ],
+      "Lost access to your 2FA device?": [
+        "დაკარგეთ წვდომა თქვენს 2FA მოწყობილობასთან?"
       ],
       "Make admin": [
         "ადმინობის მინიჭება"
@@ -888,9 +900,6 @@
       ],
       "Review": [
         "გადახედვა"
-      ],
-      "Review account security": [
-        "ანგარიშის უსაფრთხოების მიმოხილვა"
       ],
       "Revoke": [
         "გაუქმება"
@@ -6561,6 +6570,9 @@
       "2. They try ${ planName }": [
         "2. ისინი ცდიან ${ planName }"
       ],
+      "2FA disabled": [
+        "2FA გათიშულია"
+      ],
       "3. You earn credits": [
         "3. თქვენ იღებთ კრედიტებს"
       ],
@@ -6689,6 +6701,9 @@
       ],
       "All keys successfully reactivated": [
         "ყველა გასაღები წარმატებით გააქტიურდა"
+      ],
+      "All members have been added.": [
+        "ყველა წევრი დამატებულია."
       ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
@@ -7043,6 +7058,9 @@
       "Disable recovery by ${ type }": [
         "${ type }-ით აღდგენის გათიშვა"
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "2FA-ის გათიშვა თქვენს ანგარიშს ნაკლებად დაცულს გახდის. გააგრძელეთ, თუ ზუსტად იცით, რას აკეთებთ."
+      ],
       "Discount": [
         "ფასდაკლება"
       ],
@@ -7115,6 +7133,9 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "თითოეულ დომენს, მხოლოდ, ერთი SPF (TXT) ჩანაწერი შეიძლება, ჰქონდეს. თუ გნებავთ, შეინარჩულოთ არსებული SPF (TXT) ჩანაწერი, თქვენს მმდინარე ჩანაწერს, შეგიძლიათ, ${ spf } დაამატოთ (ჩასვით ის ${ spfValue }-ის შემდეგ)."
+      ],
+      "Early access": [
+        "ადრეული წვდომა"
       ],
       "Edit email address": [
         "ელფოსტის მისამართის ჩასწორება"
@@ -7239,6 +7260,9 @@
       "finance": [
         "ფინანსები"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "10-წლიანი ვერსიის ისტორიისთვის დაუკავშირდით ჩვენი გაყიდვების გუნდს."
+      ],
       "for choosing ${ product }": [
         "${ product }-ის არჩევისთვის"
       ],
@@ -7280,6 +7304,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე, მიიღეთ SAML მეტამონაცემები ${ appName }-სთვის და შემოიტანეთ ის აქ."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "ჯგუფის მისამართების შექმნა, მხოლოდ, მორგებული დომენებისთვის შეგიძლიათ. გადადით ${ linkToDomainPage }-ზე მორგებული დომენის დასამატებლად."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "ელფოსტების ერთ საუბრად და ცალ-ცალკე ჩვენებას შორის გადართვა."
@@ -8033,6 +8060,9 @@
       "Remember to share the user's sign in details with them.": [
         "გახსოვდეთ, რომ აუცილებელია, მომხმარებლებს მათი შესვლის დეტალები გაუზიაროთ."
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "მეტამონაცემების წაშლა გამოსახულებებიდან თქვენი კონფიდენციალობის დასაცავად."
+      ],
       "Remove one of your calendars to join this one": [
         "ამ კალენდართან მისაერთებლად თქვენი ერთი ან მეტი კალენდარი უნდა წაშალოთ"
       ],
@@ -8412,6 +8442,9 @@
       "This will delete all previous versions of your files.": [
         "ეს თქვენი ფაილების ყველა წინა ვერსიას წაშლის."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "ეს 2FA-ს გამორთავს ორივე, ავთენტიკატორი აპის და უსაფრთხოების გასაღების მეთოდების ჩათვლით."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "თქვენი მიმდინარე აღდგენის ფრაზა გაითიშება. ანგარიშთან წვდომას და თქვენი მონაცემების გაშიფვრას ვეღარ შეძლებთ."
       ],
@@ -8612,6 +8645,9 @@
       ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "გამოიყენეთ პაროლების მმართველი თქვენი პაროლების გენერაციისა და უსაფრთხოს შესანახად. იქონიეთ ძლიერი პაროლები და გამოიყენეთ ისნი ადვილად."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "გამოიყენეთ აღდგენის მეთოდი 2FA-ის მეთოდების გასათიშად."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "გამოიყენეთ საუკეთესო სერვერი თქვენი მიმდინარე მდებარეობისა და დატვირთვის მიხედვით: ${ formattedBestServerName }"
@@ -8947,6 +8983,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "თქვენ არ დაგიყენებიათ აღდგენის მეთოდი, ამიტომ ანგარიშის აღდგენა შეუძლებელი იქნება, თუ პაროლი დაგავიწყდათ. გავაგრძელოთ აღდგენის მეთოდის მითითების გარეშე?"
       ],
+      "You do not have permission to perform this action": [
+        "ამ ქმედების შესრულების წვდომა არ გაგაჩნიათ"
+      ],
       "You have ${ availableCount } dedicated server available.": [
         "გაქვთ ${ availableCount } გამოყოფილი ხელმისაწვდომი სერვერი.",
         "გაქვთ ${ availableCount } გამოყოფილი ხელმისაწვდომი სერვერი."
@@ -8998,12 +9037,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "შესვლის შემდეგ ${ destination }-ზე გადაგამისამართებთ."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "ამ თარიღის დადგომისას Plus-ის თვისებებთან წვდომას დაკარგავთ."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "ამ თარიღის მოსვლისას Plus სერვერებთან და მის ფუნქციებთან წვდომას დაკარგავთ."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME }-ის და ${ CALENDAR_APP_NAME }-ის გამოსაყენებლად ${ BRAND_NAME }-ის მისამართი დაგჭირდებათ"
@@ -9614,9 +9647,6 @@
       "5 minutes": [
         "5 წუთი"
       ],
-      "Account recovery": [
-        "ანგარიშის აღდგენა"
-      ],
       "Account storage": [
         "ანგარიშის საცავი"
       ],
@@ -9625,6 +9655,12 @@
       ],
       "Activity": [
         "აქტიურობა"
+      ],
+      "Add all organization members": [
+        "ყველა ორგანიზაციის წევრის დამატება"
+      ],
+      "Add group member": [
+        "ჯგუფის წევრის დამატება"
       ],
       "Address": [
         "მისამართი"
@@ -9977,6 +10013,9 @@
       "Email or username": [
         "ელფოსტა ან მომხმარებლის სახელი"
       ],
+      "Email settings": [
+        "ელფოსტის მორგება"
+      ],
       "Emails": [
         "ელფოსტები"
       ],
@@ -10037,9 +10076,6 @@
       "Folder location": [
         "საქაღალდის მდებარეობა"
       ],
-      "Folders and labels": [
-        "საქაღალდეები და ჭდეები"
-      ],
       "Font family": [
         "ფონტის ოჯახი"
       ],
@@ -10057,6 +10093,9 @@
       ],
       "Group address": [
         "ჯგუფის მისამართი"
+      ],
+      "Group conversations": [
+        "ჯგუფური საუბრები"
       ],
       "Group members": [
         "ჯგუფის წევრები"
@@ -10102,6 +10141,9 @@
       ],
       "Issuer ID": [
         "გამომცემლის ID"
+      ],
+      "Keep emails in Sent/Drafts": [
+        "ელფოსტების გაგზავნილებში/მონახაზებში ჩატოვება"
       ],
       "Keep me signed in": [
         "დამტოვე შესული"
@@ -10150,9 +10192,6 @@
       ],
       "Mail Server (IMAP)": [
         "მეილსერვერი (IMAP)"
-      ],
-      "Mail settings": [
-        "ელფოსტის მორგება"
       ],
       "Main": [
         "მთავარი"
@@ -10352,6 +10391,9 @@
       "Recovery phrase": [
         "აღდგენის მდგომარეობა"
       ],
+      "Remove image metadata": [
+        "გამოსახულების მეტამონაცემების წაშლა"
+      ],
       "Repeat password": [
         "გაიმეორეთ პაროლი"
       ],
@@ -10423,9 +10465,6 @@
       ],
       "Spam": [
         "სპამი"
-      ],
-      "Spam and filters": [
-        "სპამი და ფილტრები"
       ],
       "Starred": [
         "ვარსკვლავიანები"
@@ -11751,9 +11790,6 @@
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }-ის ფასიანი ფუნქციები"
-      ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
       ],
@@ -11904,9 +11940,6 @@
       "Vault sharing (up to ${ n } person)": [
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
         "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
-      ],
-      "Version history": [
-        "ვერსიის ისტორია"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ჩვენ ვასკანერებთ ბნელ ვებს, რომ აღმოვაჩინოთ, არის თუ არა თქვენი ${ BRAND_NAME }-ის მისამართები ან ფსევდონიმები გაჟონილი და გაგაფრთხილოთ, თუ რამეს აღმოვაჩენთ."
@@ -12094,6 +12127,14 @@
         "გადახდის არჩეული ტარიფი: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -12112,14 +12153,6 @@
       ],
       "Unlock premium features by upgrading": [
         "განბლოკეთ პრემიუმ თვისებები ტარიფის აწევით"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -12415,6 +12448,9 @@
       ],
       "Dark Web Monitoring has been enabled": [
         "ბნელი ვების მონიტორინგი ჩართულია"
+      ],
+      "Downloaded 2FA recovery codes": [
+        "2FA აღდგენის კოდების გადმოწერა"
       ],
       "Invalid code": [
         "არასწორი კოდი"
@@ -12767,6 +12803,17 @@
       ],
       "Trash": [
         "ნაგვის ყუთი"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "ყველა"
+      ],
+      "Group members": [
+        "ჯგუფის წევრები"
+      ],
+      "No one": [
+        "არავინ"
       ]
     },
     "Option delay send seconds": {
@@ -13824,6 +13871,260 @@
       ],
       "User": [
         "მომხმარებელი"
+      ]
+    },
+    "Safety review": {
+      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
+        " **ჩართეთ აღდგენა ტელეფონით**, რომ აღიდგინოთ წვდომა თქვენს ანგარიშთან, თუ პაროლი დაგავიწყდათ."
+      ],
+      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
+        "${ BRAND_NAME } გამოიყენებს ან მისამართს, რომ გამოგიგზავნოთ ჩამოყრის კოდები ელფოსტით, თუ პაროლის ჩამოყრას გადაწყვეტთ."
+      ],
+      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
+        "${ BRAND_NAME } გამოიყენებს ან ტელეფონის ნომერს, რომ გამოგიგზავნოთ ჩამოყრის კოდები SMS-ით, თუ პაროლის ჩამოყრას გადაწყვეტთ."
+      ],
+      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
+        "${ enableDeviceRecovery }, რომ დარწმუნებული ბრძანდებოდეთ, რომ მონაცემების აღდგენა შესაძლებელია."
+      ],
+      "**Enable recovery by email** to regain access to your account if you forget your password.": [
+        "**ჩართეთ აღდგენა ელფოსტით**, რომ აღიდგინოთ წვდომა თქვენს ანგარიშთან, თუ პაროლი დაგავიწყდათ."
+      ],
+      "Account safety review": [
+        "ანგარიშის უსაფრთხოების მიმოხილვა"
+      ],
+      "Add a recovery email": [
+        "აღდგენის ელფოსტის დამატება"
+      ],
+      "Add a recovery email address": [
+        "აღდგენის ელფოსტის მისამართის დამატება"
+      ],
+      "Add a recovery phone number": [
+        "აღდგენის ტელეფონის ნომრის დამატება"
+      ],
+      "Back to Safety Review": [
+        "უსაფრთხოების მიმოხილვაზე დაბრუნება"
+      ],
+      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
+        "იმის გამო, რომ პაროლი ჩამოყარეთ, თქვენი მიმდინარე აღდგენის ნაკრები, მხოლოდ, თქვენი პაროლის ჩამოყრამდე არსებული ინფორმაციის აღსადგენად შეგიძლიათ, გამოიყენოთ."
+      ],
+      "Can be used to regain access to your account and data": [
+        "შეგიძლიათ, თქვენს ანგარიშზე და მონაცემებთან წვდომის აღსადგენად გამოიყენოთ"
+      ],
+      "Check account security": [
+        "ანგარიშის უსაფრთხოების შემოწმება"
+      ],
+      "Code sent to ${ boldValue }": [
+        "კოდი გაგზავნილია ${ boldValue }-სთან"
+      ],
+      "Continue to Safety Review": [
+        "გაგრძელება უსაფრთხოების მიმოხილვაზე"
+      ],
+      "Critical issues found. You are at risk of losing access to your account and data.": [
+        "აღმოჩენილია კრიტიკული პრობლემები. შეიძლება, თქვენს მონაცემებთან და ანგარიშთან წვდომა დაკარგოთ."
+      ],
+      "Critical issues found. You are at risk of losing access to your data.": [
+        "აღმოჩენილია კრიტიკული პრობლემები. შეიძლება, თქვენს მონაცემებთან წვდომა დაკარგოთ."
+      ],
+      "Device-based recovery enabled": [
+        "მოწყობილობაზე დაფუძნებული აღდგენა ჩართულია"
+      ],
+      "Download ${ size }": [
+        "${ size }-ის გადმოწერა"
+      ],
+      "Download your Recovery Kit": [
+        "თქვენი აღდგენის ნაკრების გადმოწერა"
+      ],
+      "Enable device-based recovery": [
+        "მოწყობილობაზე დაფუძნებული აღდგენის ჩართვა"
+      ],
+      "Enable recovery by email": [
+        "ელფოსტით აღდგენის ჩართვა"
+      ],
+      "Enable recovery by phone": [
+        "ტელეფონით აღდგენის ჩართვა"
+      ],
+      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
+        "მესმის, რომ ამჟამად დაბლოკილი მონაცემების გაშიფვრა ამ აღდგენის ნაკრებით შეუძლებელია"
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "თუ თქვენი ${ BRAND_NAME }-ის პაროლი დაგავიწყდათ და მისი ჩამოყრა გჭირდებათ, შემდეგ ჯერზე, როცა ამ მოწყობილობაზე ახალი პაროლით შემოხვალთ, თქვენს ${ BRAND_NAME }-ის ანგარიშზე სრული წვდომა აღგიდგებათ."
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "თუ თქვენი ${ BRAND_NAME }-ის პაროლი დაგავიწყდათ და მისი ჩამოყრა გჭირდებათ, შემდეგ ჯერზე, როცა ამ მოწყობილობაზე ახალი პაროლით შემოხვალთ, თქვენს ${ BRAND_NAME }-ის ანგარიშზე სრული წვდომა აღგიდგებათ."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
+        "თუ თქვენი ${ BRAND_NAME }-ის ანგარიში დაგებლოკათ, თქვენი აღდგენის დოკუმენტი შესვლაში და თქვენი მონაცემების აღდგენაში დაგეხმარებათ."
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "თუ თქვენი ავტორიზაციის დეტალები დაკარგეთ და გნებავთ, ჩამოყაროთ თქვენი ანგარიში, **მნიშვნელოვანია**, რომ ორივე, **ანგარიშის აღდგენის და მონაცემების აღდდგენის მეთოდი** გქონდეთ ჩართული. სხვაგვარად, შეიძლება, დაკარგოთ წვდომა თქვენს ელფოსტასთან, კონტაქტებთან, ფაილებთან და პაროლებთან."
+      ],
+      "Invalid code": [
+        "არასწორი კოდი"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "ეს ერთად-ერთი გზაა, თქვენი ანგარიში სრულად აღადგინოთ, ასე რომ, დარწმუნდით, რომ ის დაცულ ადგილას გაქვთ შენახული."
+      ],
+      "Recovery email address": [
+        "აღდგენის ელფოსტის მისამართი"
+      ],
+      "Recovery phone number": [
+        "აღდგენის ტელეფონის ნომერი"
+      ],
+      "Safeguard account now": [
+        "დაიცავით ანგარიში ახლავე"
+      ],
+      "Safeguard your account": [
+        "დაიცავით თქვენ ანგარიში"
+      ],
+      "Safeguard your account further": [
+        "დაიცავით თქვენ ანგარიში უფრო მეტად"
+      ],
+      "Safety review": [
+        "უსაფრთხოების მიმოხილვა"
+      ],
+      "Send a new code": [
+        "ახალი კოდის გაგზავნა"
+      ],
+      "Show more": [
+        "მეტის ჩვენება"
+      ],
+      "Take action to secure your account": [
+        "ქმედებები თქვენი ანგარიშის დასაცავად"
+      ],
+      "There was an error generating your Recovery Kit": [
+        "შეცდომა თქვენი აღდგენის ნაკრების გენერაციისას"
+      ],
+      "There was an error verifying your recovery email": [
+        "შეცდომა თქვენი აღდგენის ელფოსტის გადამოწმებისას"
+      ],
+      "There was an error verifying your recovery phone": [
+        "შეცდომა თქვენი აღდგენის ტელეფონის გადამოწმებისას"
+      ],
+      "to automatically recover your data when you log into a trusted device": [
+        "თქვენი მონაცემები ავტომატურად აღსადგენად, როცა სანდო მოწყობილობაში შედიხართ"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "იმისათვის, რომ დარწმუნდეთ, რომ ელფოსტის მისამართი თქვენია, შეიყვანეთ გადამოწმების კოდი, რომელიც გაგზავნილია მისამართზე ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "იმისათვის, რომ დავრწმუნდეთ, რომ ტელეფონის ნომერი თქვენია, შეიყვანეთ გადამოწმების კოდი, რომელიც გაგზავნილია მისამართზე ${ boldPhoneNumber }."
+      ],
+      "to recover your account and data if you're ever locked out": [
+        "ანგარიშის და მონაცემების აღსადგენად, თუ ვერ შედიხართ"
+      ],
+      "to recover your account if you're ever locked out": [
+        "ანგარიშის აღსადგენად, თუ ვერ შედიხართ"
+      ],
+      "Update your Recovery Kit": [
+        "თქვენი აღდგენის ნაკრების განახლება"
+      ],
+      "Update your Recovery Kit?": [
+        "განახლდეს თქვენი აღდგენის ნაკრები?"
+      ],
+      "Verify": [
+        "გადამოწმება"
+      ],
+      "Verify your recovery email address": [
+        "გადაამოწმეთ თქვენი აღდგენის ელფოსტის მისამართი"
+      ],
+      "Verify your recovery phone number": [
+        "გადაამოწმეთ თქვენი აღდგენის ტელეფონის ნომერი"
+      ],
+      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
+        "აღმოჩენილია შეცდომა თქვენი აღდგენის ნაკრების გენერაციისას. სცადეთ მოგვიანებით, ან, თუ შეცდომა არ გაქრა, დაუკავშირდით ჩვენი მხარდაჭერის გუნდს."
+      ],
+      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
+        "აღმოჩენილია შეცდომა თქვენი აღდგენის ელფოსტის გადამოწმებისას. სცადეთ მოგვიანებით, ან, თუ შეცდომა არ გაქრა, დაუკავშირდით ჩვენი მხარდაჭერის გუნდს."
+      ],
+      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
+        "აღმოჩენილია შეცდომა თქვენი აღდგენის ტელეფონის გადამოწმებისას. სცადეთ მოგვიანებით, ან, თუ შეცდომა არ გაქრა, დაუკავშირდით ჩვენი მხარდაჭერის გუნდს."
+      ],
+      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
+        "როცა მოწყობილობით აღდგენას ჩართავთ, ${ BRAND_NAME } თქვენი ბრაუზერის ვების საცავი დაშფირულ მარქაფის ბრელოკს შეინახავს ფაილის სახით."
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "არსებობს რისკი, თქვენს ანგარითან და მონაცემებთან წვდომა დაკარგოთ"
+      ],
+      "You are at risk of losing access to your data.": [
+        "არსებობს რისკი, თქვენს მონაცემებთან წვდომა დაკარგოთ"
+      ],
+      "You can disable this at any time.": [
+        "გათიშვა ნებისმიერ დროს შეგიძლიათ."
+      ],
+      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "აღდგენის ფრაზა პაროლის ჩამოყრის შემდეგ ანგარიშის სრულად აღსადგენად შეგიძლიათ, გამოიყენოთ, ასე რომ დარწმუნდით, რომ ის უსაფრთხოდ გაქვთ შენახული."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "თუ პაროლი დაგავიწყდათ თქვენს ანგარიშთან წვდომის აღსადგენად, შეგიძლიათ, აღდგენის ელფოსტა გამოიყენოთ."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "თუ პაროლი დაგავიწყდათ თქვენს ანგარიშთან წვდომის აღსადგენად, შეგიძლიათ, აღდგენის ტელეფონი გამოიყენოთ."
+      ],
+      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
+        "აღდგენის ნაკრები უკვე გადმოწერეთ. ახლის გადმოწერა **ძველს გათიშავს**."
+      ],
+      "You have recommended actions.": [
+        "გაქვთ რეკომენდებული ქმედებები."
+      ],
+      "You recovery email address is:": [
+        "თქვენი აღდგენის ელფოსტის მისამართია:"
+      ],
+      "You recovery phone number is:": [
+        "თქვენი აღდგენის ტელეფონის ნომერია:"
+      ],
+      "Your account and data can be recovered": [
+        "თქვენი ანგარიშის და მონაცემების აღდგენა შესაძლებელია"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "თქვენი ანგარიშისა და მონაცემების აღდგენა შესაძლებელია. შეამოწმეთ, გაქვთ ჯერ კიდევ წვდომა თქვენი აღდგენის მეთოდებთან, თუ აღარ."
+      ],
+      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
+        "თქვენი ანგარიშის და მონაცემების აღდგენა შესაძლებელია. ასევე, კიდევ გაქვთ ქმედებები, რათა თქვენი ანგარიში კიდევ უფრო მეტად დაიცვათ."
+      ],
+      "Your account and data can be recovered. You have recommended actions.": [
+        "თქვენი მონაცემებისა და ანგარიშის აღდგენა შესაძლებელია. გაქვთ რეკომენდებული ქმედებები."
+      ],
+      "Your account is fully secure.": [
+        "თქვენი ანგარიში სრულად დაცულია."
+      ],
+      "Your account is secure.": [
+        "თქვენი ანგარიში დაცულია."
+      ],
+      "Your recovery email": [
+        "თქვენი აღდგენის ელფოსტა"
+      ],
+      "Your recovery email and phone can **only recover access to your account**.": [
+        "თქვენი აღდგენის ტელეფონი და ელფოსტა **მხოლოდ თქვენს ანგარიშთან წვდომისთვის შეგიძლიათ, გამოიყენოთ**."
+      ],
+      "Your recovery email can **only recover access to your account**.": [
+        "თქვენი აღდგენის ელფოსტა **მხოლოდ თქვენს ანგარიშთან წვდომისთვის შეგიძლიათ, გამოიყენოთ**."
+      ],
+      "Your recovery email has been enabled": [
+        "თქვენი აღდგენის ელფოსტა ჩართულია"
+      ],
+      "Your recovery email is set": [
+        "თქვენი აღდგენის ელფოსტა დაყენებულია"
+      ],
+      "Your Recovery Kit": [
+        "თქვენი აღდგენის ნაკრები"
+      ],
+      "Your Recovery Kit is set": [
+        "თქვენი აღდგენის ნაკრები დაყენებულია"
+      ],
+      "Your recovery methods": [
+        "თქვენი აღდგენის მეთოდები"
+      ],
+      "Your recovery phone": [
+        "თქენი აღდგენის ტელეფონი"
+      ],
+      "Your recovery phone can **only recover access to your account**.": [
+        "თქვენი აღდგენის ტელეფონი **მხოლოდ თქვენს ანგარიშთან წვდომისთვის შეგიძლიათ, გამოიყენოთ**."
+      ],
+      "Your recovery phone has been enabled": [
+        "თქქვენი აღდგენი ტელეფონი ჩართულია"
+      ],
+      "Your recovery phone is set": [
+        "თქვენი აღდგენის ტელეფონი დაყენებულია"
       ]
     },
     "saml: Action": {
@@ -14913,6 +15214,9 @@
       "1 email address": [
         "ელფოსტის 1 მისამართი"
       ],
+      "1 email address per user": [
+        "1 ელფოსტის მისამართი თითოეული მომხმარებლისთვის"
+      ],
       "1 VPN connection": [
         "1 VPN შეერთება"
       ],
@@ -15753,6 +16057,9 @@
       "Status": [
         "სტატუსი"
       ],
+      "Time": [
+        "დრო"
+      ],
       "Total storage": [
         "სრული საცავი"
       ],
@@ -15855,6 +16162,9 @@
       ],
       "Account recovery": [
         "ანგარიშის აღდგენა"
+      ],
+      "Account settings": [
+        "ანგარიშის მორგება"
       ],
       "Account suspended": [
         "ანგარიში შეჩერებულია"
@@ -16023,6 +16333,9 @@
       ],
       "Clear out the junk": [
         "ნაგვის მოსუფთავება"
+      ],
+      "Click a value in the table to use it as filter": [
+        "დააწკაპუნეთ მნიშვნელობაზე ცხრილში, მისი ფილტრის სახით გამოსაყენებლად"
       ],
       "Close": [
         "დახურვა"
@@ -16199,6 +16512,9 @@
       ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"
+      ],
+      "Disable two-factor authentication?": [
+        "გამოვრთო 2FA?"
       ],
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
@@ -16591,6 +16907,9 @@
       ],
       "Privacy and data collection": [
         "კონფიდენციალურობა და მონაცემების შეგროვება"
+      ],
+      "Privacy and security": [
+        "კონფიდენციალობა და უსაფრთხოება"
       ],
       "Processing...": [
         "დამუშავება..."

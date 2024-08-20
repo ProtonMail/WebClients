@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -391,6 +391,9 @@
       "Disable": [
         "Desativar"
       ],
+      "Disable E2EE group mail encryption": [
+        "Desativar criptografia de ponta a ponta de e-mails de grupo"
+      ],
       "Disable recovery phrase": [
         "Desativar a frase de recuperação"
       ],
@@ -402,6 +405,9 @@
       ],
       "Discard changes": [
         "Descartar alterações"
+      ],
+      "Domain names": [
+        "Nomes do domínio"
       ],
       "Don't show again": [
         "Não mostrar novamente"
@@ -492,6 +498,9 @@
       ],
       "Enable device-based recovery": [
         "Ativar recuperação baseada em dispositivo"
+      ],
+      "Enable E2EE group mail encryption": [
+        "Ativar criptografia de ponta a ponta de e-mails de grupo"
       ],
       "Enable multi-user support": [
         "Ativar suporte para múltiplos usuários"
@@ -652,8 +661,8 @@
       "Keep logo": [
         "Manter logotipo"
       ],
-      "Keep my Plus subscription": [
-        "Manter minha assinatura Plus"
+      "Keep my subscription": [
+        "Manter minha assinatura"
       ],
       "label emails as": [
         "marcar e-mail como"
@@ -672,6 +681,9 @@
       ],
       "Loading verification": [
         "Carregando verificação"
+      ],
+      "Lost access to your 2FA device?": [
+        "Perdeu o acesso ao seu dispositivo A2F?"
       ],
       "Make admin": [
         "Tornar administrador"
@@ -888,9 +900,6 @@
       ],
       "Review": [
         "Revisão"
-      ],
-      "Review account security": [
-        "Revisar segurança da conta"
       ],
       "Revoke": [
         "Revogar"
@@ -3667,6 +3676,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de armazenamento"
+      ],
       "2 users": [
         "2 usuários"
       ],
@@ -6576,6 +6588,9 @@
       "2. They try ${ planName }": [
         "2. Eles tentam ${ planName }"
       ],
+      "2FA disabled": [
+        "A2F desativado"
+      ],
       "3. You earn credits": [
         "3. Você ganha créditos"
       ],
@@ -6704,6 +6719,9 @@
       ],
       "All keys successfully reactivated": [
         "Todas as chaves foram reativadas"
+      ],
+      "All members have been added.": [
+        "Todos os membros foram adicionados"
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
@@ -7131,6 +7149,9 @@
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada domínio só pode ter um registro SPF (TXT). Se quiser manter o registro SPF (TXT) existente, você pode adicionar ${ spf } ao seu registro atual (coloque-o depois de ${ spfValue })."
       ],
+      "Early access": [
+        "Acesso antecipado"
+      ],
       "Edit email address": [
         "Editar endereço de e-mail"
       ],
@@ -7295,6 +7316,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vá até o seu provedor de identidade, obtenha os metadados SAML para ${ appName } e importe-os aqui."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Os endereços de grupo podem ser criados apenas para domínios personalizados. Vá para a página ${ linkToDomainPage } para adicionar um domínio personalizado."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupe e-mails na mesma conversa junto em sua Caixa de Entrada ou exiba-os separadamente."
@@ -8048,6 +8072,9 @@
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de compartilhar os detalhes de início de sessão do usuário com ele."
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "Remover metadados de imagem para proteger sua privacidade."
+      ],
       "Remove one of your calendars to join this one": [
         "Ative este endereço para juntar-se a este calendário"
       ],
@@ -8628,6 +8655,9 @@
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Use um gerenciador de senhas para gerar e armazenar suas senhas com segurança, garantindo senhas fortes e inícios de sessão mais fáceis."
       ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Use um método de recuperação para desativar seu método de autenticação de dois fatores."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
@@ -8962,6 +8992,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Você não definiu um método de recuperação, então a recuperação de conta não será possível se você esquecer sua senha. Continuar sem definir o método de recuperação?"
       ],
+      "You do not have permission to perform this action": [
+        "Você não tem permissão para realizar esta ação"
+      ],
       "You have ${ availableCount } dedicated server available.": [
         "Você tem ${ availableCount } servidor dedicado disponível.",
         "Você tem ${ availableCount } servidores dedicados disponíveis."
@@ -9014,11 +9047,8 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Você será redirecionado para ${ destination } depois de iniciar sessão."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Você perderá o acesso aos recursos do Plus nessa data."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Você perderá o acesso aos servidores e recursos do Plus nessa data."
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Você perderá o acesso aos recursos do ${ planTitle } nessa data."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Você precisará de um endereço da ${ BRAND_NAME } para usar o ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -9629,9 +9659,6 @@
       "5 minutes": [
         "5 minutos"
       ],
-      "Account recovery": [
-        "Recuperar conta"
-      ],
       "Account storage": [
         "Armazenamento da conta"
       ],
@@ -9640,6 +9667,12 @@
       ],
       "Activity": [
         "Atividade"
+      ],
+      "Add all organization members": [
+        "Adicionar todos os membros da organização"
+      ],
+      "Add group member": [
+        "Adicionar um membro ao grupo"
       ],
       "Address": [
         "Endereço"
@@ -9992,6 +10025,9 @@
       "Email or username": [
         "E-mail ou nome de usuário"
       ],
+      "Email settings": [
+        "Configurações do e-mail"
+      ],
       "Emails": [
         "E-mails"
       ],
@@ -10052,9 +10088,6 @@
       "Folder location": [
         "Localização da pasta"
       ],
-      "Folders and labels": [
-        "Pastas e marcadores"
-      ],
       "Font family": [
         "Família de fontes"
       ],
@@ -10072,6 +10105,9 @@
       ],
       "Group address": [
         "Endereço do grupo"
+      ],
+      "Group conversations": [
+        "Conversas em grupo"
       ],
       "Group members": [
         "Membros do grupo"
@@ -10117,6 +10153,9 @@
       ],
       "Issuer ID": [
         "ID do emissor"
+      ],
+      "Keep emails in Sent/Drafts": [
+        "Manter e-mails em Enviadas/Rascunhos"
       ],
       "Keep me signed in": [
         "Mantenha-me conectado"
@@ -10165,9 +10204,6 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
-      ],
-      "Mail settings": [
-        "Configurações do Mail"
       ],
       "Main": [
         "Principal"
@@ -10367,6 +10403,9 @@
       "Recovery phrase": [
         "Frase de recuperação"
       ],
+      "Remove image metadata": [
+        "Remover metadados da imagem"
+      ],
       "Repeat password": [
         "Repita a senha"
       ],
@@ -10438,9 +10477,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Spam and filters": [
-        "Spam e filtros"
       ],
       "Starred": [
         "Com estrela"
@@ -11564,6 +11600,14 @@
         "${ n } mensagem por dia",
         "${ n } mensagens por dia"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } cofre compartilhado do ${ PASS_SHORT_APP_NAME } por usuário",
+        "${ n } cofres compartilhados do ${ PASS_SHORT_APP_NAME } por usuário"
+      ],
+      "${ n } user": [
+        "${ n } usuário",
+        "Até ${ n } usuários"
+      ],
       "${ n } vault": [
         "${ n } cofre",
         "${ n } cofres"
@@ -11571,6 +11615,10 @@
       "${ n } VPN connection": [
         "${ n } conexão VPN",
         "${ n } conexões VPN"
+      ],
+      "${ options }-day file version history": [
+        "Histórico de versões do arquivo de ${ options } dia",
+        "Histórico de versões do arquivo de ${ options } dias"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } com ${ n } alias de hide-my-email",
@@ -11585,8 +11633,17 @@
       "${ size } attachment size": [
         "Anexos de ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } de armazenamento seguro por usuário"
+      ],
       "${ size } storage": [
         "${ size } de armazenamento"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Para ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Para todos os serviços da ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 usuário"
@@ -11614,6 +11671,12 @@
       ],
       "All ${ BRAND_NAME } services": [
         "Todos os serviços da ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Todos os serviços premium da ${ BRAND_NAME } com uma assinatura fácil"
       ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
@@ -11653,6 +11716,9 @@
       ],
       "Contact groups management": [
         "Gerenciamento de grupos de contatos"
+      ],
+      "Custom and secure business email": [
+        "E-mail corporativo seguro e personalizado"
       ],
       "Custom domains for email aliases": [
         "Domínios personalizados para encaminhamento de mensagens"
@@ -11760,6 +11826,9 @@
       "No-logs policy": [
         "Política de nenhum registro"
       ],
+      "Online document editor": [
+        "Editor de documentos on-line"
+      ],
       "Organize items with multiple vaults": [
         "Organize itens com múltiplos cofres"
       ],
@@ -11769,11 +11838,14 @@
       "Password health": [
         "Estado da senha"
       ],
+      "Password manager": [
+        "Gerenciador de senhas"
+      ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Recursos premium para ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
+      "Phone support (20+ users)": [
+        "Suporte por telefone (20 ou mais usuários)"
       ],
       "Priority email support": [
         "Suporte prioritário por e-mail"
@@ -11790,6 +11862,9 @@
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
+      ],
+      "Recover previous file versions": [
+        "Recuperar versões anteriores de arquivos"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Checagens regulares da segurança da sua conta. Alertamos você caso você tenha senhas fracas ou reutilizadas que precisem ser atualizadas."
@@ -11825,6 +11900,9 @@
         "Servidores em ${ vpnServersCountData.paid.countries }+ país",
         "Servidores em ${ vpnServersCountData.paid.countries }+ países"
       ],
+      "Share files with no size limit": [
+        "Compartilhamento de arquivos sem limite de tamanho"
+      ],
       "Sign in as user": [
         "Início de sessão como usuário"
       ],
@@ -11848,6 +11926,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sincronize e faça backup dos seus arquivos em todos os dispositivos"
       ],
       "Tailored to your needs": [
         "Adaptado às suas necessidades"
@@ -11888,6 +11969,9 @@
       "Unlimited messages per day": [
         "Mensagens ilimitadas por dia"
       ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Cofres compartilhados ilimitados da ${ PASS_SHORT_APP_NAME } por usuário"
+      ],
       "Unlimited shared vaults with access permissions": [
         "Cofres compartilhados ilimitados com permissões de acesso"
       ],
@@ -11925,9 +12009,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Compartilhar do cofre (até ${ n } pessoa)",
         "Compartilhar cofre (até ${ n } pessoa)"
-      ],
-      "Version history": [
-        "Histórico de versões"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
@@ -12028,6 +12109,9 @@
       "Popular": [
         "Popular"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Proteja as informações comerciais sensíveis e colabore com segurança."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteja a privacidade da sua família com todos os serviços da ${ BRAND_NAME } combinados."
       ],
@@ -12115,6 +12199,17 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -12133,17 +12228,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -12261,6 +12345,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "O suporte por telefone da equipe de suporte do cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 20 ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
@@ -12439,6 +12526,9 @@
       ],
       "Dark Web Monitoring has been enabled": [
         "O monitoramento da Dark Web foi ativado"
+      ],
+      "Downloaded 2FA recovery codes": [
+        "Baixar código de recuperação de A2F"
       ],
       "Invalid code": [
         "Código inválido"
@@ -12812,6 +12902,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Todos"
+      ],
+      "Group members": [
+        "Membros do grupo"
+      ],
+      "No one": [
+        "Ninguém"
       ]
     },
     "Option delay send seconds": {
@@ -13875,6 +13976,167 @@
       ],
       "User": [
         "Usuário"
+      ]
+    },
+    "Safety review": {
+      "Account safety review": [
+        "Verificação de segurança da conta"
+      ],
+      "Add a recovery email": [
+        "Adicionar um e-mail de recuperação"
+      ],
+      "Add a recovery email address": [
+        "Adicionar um e-mail de recuperação"
+      ],
+      "Add a recovery phone number": [
+        "Adicionar um número de telefone de recuperação"
+      ],
+      "Back to Safety Review": [
+        "Voltar para verificação de segurança"
+      ],
+      "Check account security": [
+        "Verificar a segurança da conta"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Código enviado para ${ boldValue }"
+      ],
+      "Continue to Safety Review": [
+        "Continuar para verificação de segurança"
+      ],
+      "Device-based recovery enabled": [
+        "Recuperação baseada no dispositivo ativada"
+      ],
+      "Download ${ size }": [
+        "Baixar ${ size }"
+      ],
+      "Download your Recovery Kit": [
+        "Baixe seu kit de recuperação"
+      ],
+      "Enable device-based recovery": [
+        "Ativar recuperação baseada em dispositivo"
+      ],
+      "Enable recovery by email": [
+        "Ativar recuperação por e-mail"
+      ],
+      "Enable recovery by phone": [
+        "Ativar recuperação por telefone"
+      ],
+      "Invalid code": [
+        "O código não é válido."
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "É a única maneira de restaurar totalmente sua conta, portanto, mantenha-a em um lugar seguro."
+      ],
+      "Recovery email address": [
+        "Endereço de e-mail de recuperação"
+      ],
+      "Recovery phone number": [
+        "Número de telefone de recuperação"
+      ],
+      "Safeguard account now": [
+        "Proteja sua conta agora"
+      ],
+      "Safeguard your account": [
+        "Proteja sua conta"
+      ],
+      "Safeguard your account further": [
+        "Proteja sua conta ainda mais"
+      ],
+      "Safety review": [
+        "Verificação de segurança"
+      ],
+      "Send a new code": [
+        "Enviar um novo código"
+      ],
+      "Show more": [
+        "Mostrar mais"
+      ],
+      "There was an error generating your Recovery Kit": [
+        "Ocorreu um erro ao gerar seu kit de recuperação"
+      ],
+      "There was an error verifying your recovery email": [
+        "Ocorreu um erro ao verificar seu e-mail de recuperação"
+      ],
+      "There was an error verifying your recovery phone": [
+        "Ocorreu um erro ao verificar seu telefone de recepção"
+      ],
+      "Update your Recovery Kit": [
+        "Atualizar kit de recuperação"
+      ],
+      "Update your Recovery Kit?": [
+        "Atualizar kit de recuperação?"
+      ],
+      "Verify": [
+        "Verificar"
+      ],
+      "Verify your recovery email address": [
+        "Verificar seu endereço de e-mail de recuperação"
+      ],
+      "Verify your recovery phone number": [
+        "Verifique seu endereço de e-mail de recuperação"
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "Você está em risco de perder o acesso da sua conta e dados."
+      ],
+      "You are at risk of losing access to your data.": [
+        "Você está em risco de perder o acesso de seus dados."
+      ],
+      "You can disable this at any time.": [
+        "Você pode desativar isso a qualquer momento."
+      ],
+      "You have recommended actions.": [
+        "Você tem ações recomendadas"
+      ],
+      "You recovery email address is:": [
+        "Seu endereço de e-mail de recuperação é:"
+      ],
+      "You recovery phone number is:": [
+        "Seu telefone de recepção é:"
+      ],
+      "Your account and data can be recovered": [
+        "Sua conta e dados podem ser recuperados"
+      ],
+      "Your account is fully secure.": [
+        "Sua conta está toltamente segura."
+      ],
+      "Your account is secure.": [
+        "Sua conta está segura."
+      ],
+      "Your recovery email": [
+        "Seu e-mail de recuperação"
+      ],
+      "Your recovery email and phone can **only recover access to your account**.": [
+        "Seu e-mail e telefone de recuperação somente **pode recuperar o acesso à sua conta**."
+      ],
+      "Your recovery email can **only recover access to your account**.": [
+        "Seu e-mail de recuperação somente **pode recuperar o acesso à sua conta**."
+      ],
+      "Your recovery email has been enabled": [
+        "Seu e-mail de recuperação está ativado"
+      ],
+      "Your recovery email is set": [
+        "Seu e-mail de recuperação está configurado"
+      ],
+      "Your Recovery Kit": [
+        "Seu kit de recuperação"
+      ],
+      "Your Recovery Kit is set": [
+        "Seu kit de recuperação está configurado"
+      ],
+      "Your recovery methods": [
+        "Seus métodos de recuperação"
+      ],
+      "Your recovery phone": [
+        "Seu telefone de recuperação"
+      ],
+      "Your recovery phone can **only recover access to your account**.": [
+        "Seu telefone de recuperação somente **pode recuperar o acesso à sua conta**."
+      ],
+      "Your recovery phone has been enabled": [
+        "Seu telefone de recuperação está ativado"
+      ],
+      "Your recovery phone is set": [
+        "Seu telefone de recuperação está configurado"
       ]
     },
     "saml: Action": {
@@ -14964,6 +15226,9 @@
       "1 email address": [
         "1 endereço de e-mail"
       ],
+      "1 email address per user": [
+        "1 endereço de e-mail por usuário"
+      ],
       "1 VPN connection": [
         "1 conexão VPN"
       ],
@@ -15804,6 +16069,9 @@
       "Status": [
         "Status"
       ],
+      "Time": [
+        "Hora"
+      ],
       "Total storage": [
         "Total de armazenamento"
       ],
@@ -15909,6 +16177,9 @@
       ],
       "Account recovery": [
         "Recuperação de conta"
+      ],
+      "Account settings": [
+        "Configurações da conta"
       ],
       "Account suspended": [
         "Conta suspensa"
@@ -16254,6 +16525,9 @@
       "Disable two-factor authentication": [
         "Desativar autenticação de dois fatores"
       ],
+      "Disable two-factor authentication?": [
+        "Desativar autenticação de dois fatores?"
+      ],
       "Discard changes?": [
         "Descartar alterações?"
       ],
@@ -16343,6 +16617,9 @@
       ],
       "Encryption and keys": [
         "Criptografia e chaves"
+      ],
+      "Enter 2FA code": [
+        "Insira o código 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Insira endpoints em seu provedor de identidade"
@@ -16651,6 +16928,9 @@
       ],
       "Privacy and data collection": [
         "Privacidade e coleta de dados"
+      ],
+      "Privacy and security": [
+        "Privacidade e segurança"
       ],
       "Processing...": [
         "Processando..."

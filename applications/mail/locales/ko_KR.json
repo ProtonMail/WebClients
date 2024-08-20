@@ -633,9 +633,6 @@
       "Italic": [
         "기울임"
       ],
-      "Keep my Plus subscription": [
-        "나의 Plus 구독 유지"
-      ],
       "Label as": [
         "라벨 추가"
       ],
@@ -6153,7 +6150,7 @@
         "텍스트 생성"
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
-        "들어오는 청구서에 \"${ suggestedLabelName }\"와(과) 같은 색으로 구분된 라벨을 사용해 보세요. 청구를 완료되었다면, 라벨을 \"${ suggestedPaidLabelName }\"으(로) 바꿔보세요."
+        "들어오는 청구서에 \"${ suggestedLabelName }\"와(과) 같은 색으로 구분된 라벨을 사용해 보세요. 청구서 처리가 완료되었다면, 라벨을 \"${ suggestedPaidLabelName }\"으(로) 바꿔보세요."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "${ numAttachments } 개 첨부 파일이 있음 (${ numAttachmentsSize })"
@@ -7285,12 +7282,6 @@
       ],
       "You selected **${ elementsCount } message**.": [
         "**${ elementsCount }개 메시지**를 선택했습니다."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "오늘 부터 Plus 기능을 잃게 됩니다."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "오늘 부터 Plus 서버 및 기능들에 접근할 수 없게 됩니다."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
@@ -9087,9 +9078,6 @@
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }의 프리미엄 기능을 사용할 수 있습니다."
-      ],
       "Priority email support": [
         "이메일 우선 지원"
       ],
@@ -9224,9 +9212,6 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "금고 공유 (최대 ${ n }명)"
-      ],
-      "Version history": [
-        "버전 기록"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."

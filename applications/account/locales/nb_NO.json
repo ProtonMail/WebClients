@@ -70,11 +70,11 @@
       "Accept": [
         "Aksepter"
       ],
-      "Activate": [
-        "Aktiver"
-      ],
       "activate": [
         "aktiver"
+      ],
+      "Activate": [
+        "Aktiver"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
@@ -253,6 +253,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Bekreft åpning av kobling ${ linkToShow }"
       ],
+      "Contact sales": [
+        "Ta kontakt med salg"
+      ],
       "Contact support": [
         "Kontakt brukerstøtte"
       ],
@@ -391,6 +394,9 @@
       "Disable": [
         "Deaktiver"
       ],
+      "Disable E2EE group mail encryption": [
+        "Deaktiver ende-til-ende-kryptert-gruppekryptering av e-post"
+      ],
       "Disable recovery phrase": [
         "Deaktiver gjenopprettingsfrase"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "Forkast endringer"
+      ],
+      "Domain names": [
+        "Domenenavn"
       ],
       "Don't show again": [
         "Ikke vis igjen"
@@ -492,6 +501,9 @@
       ],
       "Enable device-based recovery": [
         "Aktiver enhetsbasert gjenoppretting"
+      ],
+      "Enable E2EE group mail encryption": [
+        "Aktiver ende-til-ende-kryptert-gruppekryptering av e-post"
       ],
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
@@ -652,9 +664,6 @@
       "Keep logo": [
         "Behold logo"
       ],
-      "Keep my Plus subscription": [
-        "Behold mitt Plus-abonnement"
-      ],
       "label emails as": [
         "merke e-poster som"
       ],
@@ -672,6 +681,9 @@
       ],
       "Loading verification": [
         "Laster verifisering"
+      ],
+      "Lost access to your 2FA device?": [
+        "Mistet tilgangen til 2FA-enheten din?"
       ],
       "Make admin": [
         "Gjør til administrator"
@@ -888,9 +900,6 @@
       ],
       "Review": [
         "Gjennomgå"
-      ],
-      "Review account security": [
-        "Gjennomgå kontosikkerhet"
       ],
       "Revoke": [
         "Tilbakekall"
@@ -6561,6 +6570,9 @@
       "2. They try ${ planName }": [
         "2. Prøv deretter ${ planName }"
       ],
+      "2FA disabled": [
+        "2FA deaktivert"
+      ],
       "3. You earn credits": [
         "3. Du tjener kreditter"
       ],
@@ -6689,6 +6701,9 @@
       ],
       "All keys successfully reactivated": [
         "Alle nøkler aktivert på nytt"
+      ],
+      "All members have been added.": [
+        "Alle medlemmer er lagt til."
       ],
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
@@ -7043,6 +7058,9 @@
       "Disable recovery by ${ type }": [
         "Dekativer gjenoppretting etter ${ type }"
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Deaktivering av tofaktorautentisering vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
+      ],
       "Discount": [
         "Rabatt"
       ],
@@ -7115,6 +7133,9 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Hvert domene kan bare ha én SPF-post (TXT). Hvis du vil beholde den eksisterende SPF-posten (TXT), kan du legge til ${ spf } i gjeldende post (plasser den etter ${ spfValue })."
+      ],
+      "Early access": [
+        "Tidlig tilgang"
       ],
       "Edit email address": [
         "Rediger e-postadresse"
@@ -7239,6 +7260,9 @@
       "finance": [
         "finans"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "For en 10-års versjonshistorikk, vennligst kontakt vårt salgsapparat."
+      ],
       "for choosing ${ product }": [
         "for at du velger ${ product }"
       ],
@@ -7280,6 +7304,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til identitetsleverandøren, hent SAML-metadataene for ${ appName } og importer dem her."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Gruppeadresser kan bare opprettes for egendefinerte domener. Gå til ${ linkToDomainPage }-siden for å legge til et egendefinert domene."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupper e-poster fra den samme samtalen i innboksen eller vis dem enkeltvis."
@@ -8036,6 +8063,9 @@
       "Remember to share the user's sign in details with them.": [
         "Husk å dele brukerens påloggingsinformasjon med dem."
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "Fjern metadata fra bilder for å beskytte personvernet ditt."
+      ],
       "Remove one of your calendars to join this one": [
         "Fjern en av dine kalendere for å bli med i denne"
       ],
@@ -8415,6 +8445,9 @@
       "This will delete all previous versions of your files.": [
         "Dette vil slette alle tidligere versjoner av filene dine."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Dette vil deaktivere tofaktorautentisering, inkludert både autentiseringsappen og sikkerhetsnøkkelmetoder."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Dette vil deaktivere din gjeldende gjenopprettingsfrase. Du vil ikke være i stand til å bruke den for å få tilgang til kontoen din eller dekryptere dine data."
       ],
@@ -8615,6 +8648,9 @@
       ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Bruk en passordbehandler til å generere og lagre passordene dine på en sikker måte, noe som sikrer sterke passord og enklere pålogginger."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Bruk en gjenopprettingsmetode for å deaktivere tofaktorautentiseringsmetodene dine."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Bruk den beste tjeneren i henhold til gjeldende belastning og posisjon: ${ formattedBestServerName }"
@@ -8950,6 +8986,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angitt en gjenopprettingsmetode så kontogjenoppretting er umulig hvis du glemmer passordet ditt. Fortsette uten gjenopprettingsmetode?"
       ],
+      "You do not have permission to perform this action": [
+        "Du har ikke rettigheter til å utføre denne handlingen"
+      ],
       "You have ${ availableCount } dedicated server available.": [
         "Du har ${ availableCount } dedikert tjener tilgjengelig.",
         "Du har ${ availableCount } dedikerte tjenere tilgjengelig."
@@ -9001,12 +9040,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil bli videresendt til ${ destination } etter pålogging."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Du vil miste tilgang til Plus-funksjoner på denne datoen."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Du vil miste tilgang til Plus-tjenere og funksjoner på denne datoen."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du vil behøve en ${ BRAND_NAME }-adresse for å bruke ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
@@ -9617,9 +9650,6 @@
       "5 minutes": [
         "5 minutter"
       ],
-      "Account recovery": [
-        "Kontogjenoppretting"
-      ],
       "Account storage": [
         "Kontolagring"
       ],
@@ -9628,6 +9658,12 @@
       ],
       "Activity": [
         "Aktivitet"
+      ],
+      "Add all organization members": [
+        "Legg til alle organisasjonsmedlemmene"
+      ],
+      "Add group member": [
+        "Legg til gruppemedlem"
       ],
       "Address": [
         "Adresse"
@@ -9980,6 +10016,9 @@
       "Email or username": [
         "E-post eller brukernavn"
       ],
+      "Email settings": [
+        "Innstillinger for e-post"
+      ],
       "Emails": [
         "E-poster"
       ],
@@ -10040,9 +10079,6 @@
       "Folder location": [
         "Mappeplassering"
       ],
-      "Folders and labels": [
-        "Mapper og etiketter"
-      ],
       "Font family": [
         "Skriftfamilie"
       ],
@@ -10060,6 +10096,9 @@
       ],
       "Group address": [
         "Gruppeadresse"
+      ],
+      "Group conversations": [
+        "Gruppesamtaler"
       ],
       "Group members": [
         "Gruppemedlemmer"
@@ -10105,6 +10144,9 @@
       ],
       "Issuer ID": [
         "Utsteder-ID"
+      ],
+      "Keep emails in Sent/Drafts": [
+        "Oppbevar e-poster i Sendt/Utkast"
       ],
       "Keep me signed in": [
         "Hold meg pålogget"
@@ -10153,9 +10195,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-posttjener (IMAP)"
-      ],
-      "Mail settings": [
-        "Innstillinger for e-post"
       ],
       "Main": [
         "Hoved"
@@ -10355,6 +10394,9 @@
       "Recovery phrase": [
         "Gjenopprettingsfrase"
       ],
+      "Remove image metadata": [
+        "Fjern bildemetadata"
+      ],
       "Repeat password": [
         "Gjenta passord"
       ],
@@ -10426,9 +10468,6 @@
       ],
       "Spam": [
         "Søppelpost"
-      ],
-      "Spam and filters": [
-        "Søppelpost og filtre"
       ],
       "Starred": [
         "Stjernemerket"
@@ -11757,9 +11796,6 @@
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Premium-funksjoner til ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Prioritert e-poststøtte"
       ],
@@ -11910,9 +11946,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Deling av hvelv (opptil ${ n } person)",
         "Deling av hvelv (opptil ${ n } personer)"
-      ],
-      "Version history": [
-        "Versjonshistorikk"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -12100,6 +12133,14 @@
         "Planen du har valgt: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -12118,14 +12159,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås opp premiumfunksjoner ved å oppgradere"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -12421,6 +12454,9 @@
       ],
       "Dark Web Monitoring has been enabled": [
         "Overvåking av det mørke nettet er aktivert"
+      ],
+      "Downloaded 2FA recovery codes": [
+        "Nedlastede 2FA-gjenopprettingskoder"
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -12794,6 +12830,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Alle"
+      ],
+      "Group members": [
+        "Gruppemedlemmer"
+      ],
+      "No one": [
+        "Ingen"
       ]
     },
     "Option delay send seconds": {
@@ -13851,6 +13898,260 @@
       ],
       "User": [
         "Bruker"
+      ]
+    },
+    "Safety review": {
+      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
+        "**Aktiver gjenoppretting via telefon** for å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
+      ],
+      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
+        "${ BRAND_NAME } vil bruke denne adressen til å sende en tilbakestillingskode på e-post når du tilbakestiller passordet ditt."
+      ],
+      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
+        "${ BRAND_NAME } vil bruke dette telefonnummeret til å sende en tilbakestillingskode på SMS når du tilbakestiller passordet ditt."
+      ],
+      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
+        "${ enableDeviceRecovery } for å sikre at dataene dine kan gjenopprettes."
+      ],
+      "**Enable recovery by email** to regain access to your account if you forget your password.": [
+        "**Aktiver gjenoppretting via e-post** for å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
+      ],
+      "Account safety review": [
+        "Gjennomgang av kontosikkerhet"
+      ],
+      "Add a recovery email": [
+        "Legg til e-postadresse for gjenoppretting"
+      ],
+      "Add a recovery email address": [
+        "Legg til en gjenopprettings-e-postadresse"
+      ],
+      "Add a recovery phone number": [
+        "Legg til et gjenopprettingstelefonnummer"
+      ],
+      "Back to Safety Review": [
+        "Tilbake til gjennomgang av sikkerhet"
+      ],
+      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
+        "Fordi du tilbakestiller passordet, kan det nåværende gjenopprettingssettet bare brukes til å gjenopprette dataene som ble opprettet før tilbakestillingen av passordet."
+      ],
+      "Can be used to regain access to your account and data": [
+        "Kan brukes til å få tilgang til kontoen din og dataene dine"
+      ],
+      "Check account security": [
+        "Gjennomgå kontosikkerhet"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Kode sendt til ${ boldValue }"
+      ],
+      "Continue to Safety Review": [
+        "Fortsett til gjennomgang av sikkerhet"
+      ],
+      "Critical issues found. You are at risk of losing access to your account and data.": [
+        "Kritiske problemer funnet. Du risikerer å miste tilgangen til kontoen din og dataene dine."
+      ],
+      "Critical issues found. You are at risk of losing access to your data.": [
+        "Kritiske problemer funnet. Du risikerer å miste tilgangen til dataene dine."
+      ],
+      "Device-based recovery enabled": [
+        "Enhetsbasert gjenoppretting aktivert"
+      ],
+      "Download ${ size }": [
+        "Last ned ${ size }"
+      ],
+      "Download your Recovery Kit": [
+        "Last ned gjenopprettingssettet ditt"
+      ],
+      "Enable device-based recovery": [
+        "Aktiver enhetsbasert gjenoppretting"
+      ],
+      "Enable recovery by email": [
+        "Aktiver gjenoppretting via e-post"
+      ],
+      "Enable recovery by phone": [
+        "Aktiver gjenoppretting via telefon"
+      ],
+      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
+        "Jeg forstår at jeg ikke vil kunne gjenopprette låste data med dette gjenopprettingssettet"
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Hvis du glemmer ${ BRAND_NAME }-passordet og må tilbakestille det, gjenopprettes full tilgang til ${ BRAND_NAME }-kontoen neste gang du logger på denne enheten med det nye passordet."
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Hvis du glemmer ${ BRAND_NAME }-passordet og må tilbakestille det, gjenopprettes full tilgang til ${ BRAND_NAME }-kontoen neste gang du logger på denne enheten med det nye passordet."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
+        "Hvis du blir låst ute av ${ BRAND_NAME }-kontoen din, vil ditt gjenopprettingssett la deg logge på og gjenopprette dataene dine."
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Hvis du mister påloggingsinformasjonen din og trenger å tilbakestille kontoen din, **er det viktig** at du har både en **kontogjenopprettings- og datagjenopprettingsmetode** på plass, ellers kan det hende du ikke får tilgang til noen av e-postene, kontaktene, filene eller passordene dine."
+      ],
+      "Invalid code": [
+        "Ugyldig kode"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Det er den eneste måten å gjenopprette kontoen din på, så sørg for at du oppbevarer det på et trygt sted."
+      ],
+      "Recovery email address": [
+        "Gjenopprettings-e-postadresse"
+      ],
+      "Recovery phone number": [
+        "Gjenopprettingstelefonnummer"
+      ],
+      "Safeguard account now": [
+        "Beskytt konto nå"
+      ],
+      "Safeguard your account": [
+        "Beskytt kontoen din"
+      ],
+      "Safeguard your account further": [
+        "Beskytt kontoen din ytterligere"
+      ],
+      "Safety review": [
+        "Gjennomgang av sikkerhet"
+      ],
+      "Send a new code": [
+        "Send en ny kode"
+      ],
+      "Show more": [
+        "Vis mer"
+      ],
+      "Take action to secure your account": [
+        "Iverksett tiltak for å sikre kontoen din"
+      ],
+      "There was an error generating your Recovery Kit": [
+        "Det oppstod en feil under generering av gjenopprettingssettet"
+      ],
+      "There was an error verifying your recovery email": [
+        "Det oppsto en feil under bekreftelse av gjenopprettings-e-posten din"
+      ],
+      "There was an error verifying your recovery phone": [
+        "Det oppstod en feil under verifisering av gjenopprettingstelefonen"
+      ],
+      "to automatically recover your data when you log into a trusted device": [
+        "for å automatisk gjenopprette dataene dine når du logger på en pålitelig enhet"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "For å være sikker på at e-postadressen er din, skriv inn verifiseringskoden som ble sendt til ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "For å være sikker på at telefonnummeret er ditt, skriv inn verifiseringskoden som ble sendt til ${ boldPhoneNumber }."
+      ],
+      "to recover your account and data if you're ever locked out": [
+        "for å gjenopprette kontoen og dataene dine hvis du noen gang blir utestengt"
+      ],
+      "to recover your account if you're ever locked out": [
+        "for å gjenopprette kontoen din hvis du noen gang blir utestengt"
+      ],
+      "Update your Recovery Kit": [
+        "Oppdater gjenopprettingssettet ditt"
+      ],
+      "Update your Recovery Kit?": [
+        "Oppdatere gjenopprettingssettet ditt?"
+      ],
+      "Verify": [
+        "Verifiser"
+      ],
+      "Verify your recovery email address": [
+        "Verifiser e-postadressen for gjenoppretting"
+      ],
+      "Verify your recovery phone number": [
+        "Verifiser telefonnummeret for gjenoppretting"
+      ],
+      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
+        "Det oppstod en feil under generering av gjenopprettingssettet. Prøv på nytt senere, eller kontakt kundestøtte hvis problemet vedvarer."
+      ],
+      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
+        "Vi oppdaget en feil under bekreftelse av gjenopprettings-e-posten din. Prøv på nytt senere, eller kontakt kundestøtte hvis problemet vedvarer."
+      ],
+      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
+        "Vi oppdaget en feil under verifisering av gjenopprettingstelefonen. Prøv på nytt senere, eller kontakt kundestøtte hvis problemet vedvarer."
+      ],
+      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
+        "Når du aktiverer enhetsbasert gjenoppretting, vil ${ BRAND_NAME } lagre en kryptert sikkerhetskopinøkkelring som en fil i nettleserens nettlagring."
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "Du risikerer å miste tilgangen til kontoen din og dataene dine."
+      ],
+      "You are at risk of losing access to your data.": [
+        "Du risikerer å miste tilgangen til dataene dine."
+      ],
+      "You can disable this at any time.": [
+        "Du kan deaktivere dette når som helst."
+      ],
+      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Du kan bruke gjenopprettingsfrasen i dette gjenopprettingssettet til å gjenopprette kontoen din fullstendig når du tilbakestiller passordet, så sørg for at du oppbevarer den på et trygt sted."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Du kan bruke gjenopprettings-e-posten din til å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Du kan bruke gjenopprettingstelefonen til å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
+      ],
+      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
+        "Du har tidligere lastet ned et gjenopprettingssett. Nedlasting av en ny vil **deaktivere det gamle**."
+      ],
+      "You have recommended actions.": [
+        "Du har anbefalte handlinger."
+      ],
+      "You recovery email address is:": [
+        "Din gjenopprettings-e-postadresse er:"
+      ],
+      "You recovery phone number is:": [
+        "Telefonnummeret for gjenoppretting er:"
+      ],
+      "Your account and data can be recovered": [
+        "Kontoen din og dataene dine kan gjenopprettes"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "Kontoen din og dataene dine kan gjenopprettes. Sjekk om du fortsatt har tilgang til gjenopprettingsmetodene dine."
+      ],
+      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
+        "Kontoen din og dataene dine kan gjenopprettes. Du har anbefalt tiltak for å beskytte kontoen din ytterligere."
+      ],
+      "Your account and data can be recovered. You have recommended actions.": [
+        "Kontoen din og dataene dine kan gjenopprettes. Du har anbefalte handlinger."
+      ],
+      "Your account is fully secure.": [
+        "Kontoen din er helt sikker."
+      ],
+      "Your account is secure.": [
+        "Kontoen din er sikker."
+      ],
+      "Your recovery email": [
+        "Gjenopprettings-e-posten din"
+      ],
+      "Your recovery email and phone can **only recover access to your account**.": [
+        "Gjenopprettings-e-posten og telefonen kan **bare gjenopprette tilgangen til kontoen din**."
+      ],
+      "Your recovery email can **only recover access to your account**.": [
+        "Gjenopprettings-e-posten kan **bare gjenopprette tilgangen til kontoen din**."
+      ],
+      "Your recovery email has been enabled": [
+        "Gjenopprettings-e-posten din er aktivert"
+      ],
+      "Your recovery email is set": [
+        "Gjenopprettings-e-posten din er angitt"
+      ],
+      "Your Recovery Kit": [
+        "Gjenopprettingssettet ditt"
+      ],
+      "Your Recovery Kit is set": [
+        "Gjenopprettingssettet ditt er angitt"
+      ],
+      "Your recovery methods": [
+        "Gjenopprettingsmetodene dine"
+      ],
+      "Your recovery phone": [
+        "Gjenopprettingstelefonen din"
+      ],
+      "Your recovery phone can **only recover access to your account**.": [
+        "Gjenopprettings-telefonen kan **bare gjenopprette tilgangen til kontoen din**."
+      ],
+      "Your recovery phone has been enabled": [
+        "Gjenopprettingstelefonen din er aktivert"
+      ],
+      "Your recovery phone is set": [
+        "Gjenopprettingstelefonen er angitt"
       ]
     },
     "saml: Action": {
@@ -14940,6 +15241,9 @@
       "1 email address": [
         "1 e-postadresse"
       ],
+      "1 email address per user": [
+        "1 e-postadresse per bruker"
+      ],
       "1 VPN connection": [
         "1 VPN-forbindelse"
       ],
@@ -15780,6 +16084,9 @@
       "Status": [
         "Status"
       ],
+      "Time": [
+        "Tidspunkt"
+      ],
       "Total storage": [
         "Total lagringsplass"
       ],
@@ -15879,6 +16186,9 @@
       ],
       "Account recovery": [
         "Kontogjenoppretting"
+      ],
+      "Account settings": [
+        "Kontoinnstillinger"
       ],
       "Account suspended": [
         "Kontoen er suspendert"
@@ -16047,6 +16357,9 @@
       ],
       "Clear out the junk": [
         "Fjern søppelet"
+      ],
+      "Click a value in the table to use it as filter": [
+        "Klikk på en verdi i tabellen for å bruke den som filter"
       ],
       "Close": [
         "Lukk"
@@ -16223,6 +16536,9 @@
       ],
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
+      ],
+      "Disable two-factor authentication?": [
+        "Deaktivere tofaktorautentisering?"
       ],
       "Discard changes?": [
         "Forkaste endringer?"
@@ -16615,6 +16931,9 @@
       ],
       "Privacy and data collection": [
         "Personvern og datainnsamling"
+      ],
+      "Privacy and security": [
+        "Personvern og sikkerhet"
       ],
       "Processing...": [
         "Behandler..."

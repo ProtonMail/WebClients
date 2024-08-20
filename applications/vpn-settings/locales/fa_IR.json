@@ -581,6 +581,12 @@
         "ضمانت ۳۰ روزهٔ بازگشت پول"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } ماه",
+        "${ n } ماه اول"
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } ماه",
@@ -3640,6 +3646,10 @@
       "Priority support": [
         "اولویت پشتیبانی"
       ],
+      "Protect ${ n } device at a time": [
+        "از ${ n } دستگاه همزمان محافظت کنید",
+        "از ${ n } دستگاه همزمان محافظت کنید"
+      ],
       "Router support": [
         "پشتیبانی روتر"
       ],
@@ -4436,6 +4446,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "${ n } اتصال VPN رایگان برای هر کاربر",
+        "${ n } اتصال VPN رایگان برای هر کاربر"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } اتصال VPN پرسرعت",
         "${ n } اتصال VPN پرسرعت"
@@ -5348,6 +5362,10 @@
       "${ n } month": [
         "${ n } ماه",
         "${ n } ماه"
+      ],
+      "${ n } year": [
+        "${ n } سال",
+        "${ n } سال"
       ]
     },
     "wallet_signup_2024: Info": {

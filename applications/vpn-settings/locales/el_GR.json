@@ -202,11 +202,17 @@
       "Disable": [
         "Απενεργοποίηση"
       ],
+      "Disable E2EE group mail encryption": [
+        "Απενεργοποιήστε την κρυπτογράφηση ομαδικής αλληλογραφίας E2EE"
+      ],
       "Discard": [
         "Απόρριψη"
       ],
       "Discard changes": [
         "Απόρριψη αλλαγών"
+      ],
+      "Domain names": [
+        "Ονόματα τομέων"
       ],
       "Done": [
         "Ολοκληρώθηκε"
@@ -273,6 +279,9 @@
       ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
+      ],
+      "Enable E2EE group mail encryption": [
+        "Ενεργοποιήστε την κρυπτογράφηση ομαδικής αλληλογραφίας E2EE"
       ],
       "Enable multi-user support": [
         "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
@@ -349,9 +358,6 @@
       "Keep logo": [
         "Διατηρήστε το λογότυπο"
       ],
-      "Keep my Plus subscription": [
-        "Διατηρήστε την Plus συνδρομή μου"
-      ],
       "Let's talk": [
         "Ας μιλήσουμε"
       ],
@@ -360,6 +366,9 @@
       ],
       "Loading verification": [
         "Αναμονή για επαλήθευση"
+      ],
+      "Lost access to your 2FA device?": [
+        "Χάσατε την πρόσβαση στη συσκευή 2FA;"
       ],
       "Make admin": [
         "Ορισμός ως διαχειριστή"
@@ -3413,6 +3422,9 @@
         "+${ organization.BonusVPN } σύνδεση για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)",
         "+${ organization.BonusVPN } συνδέσεις για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)"
       ],
+      "2FA disabled": [
+        "Επαλήθευση 2 βημάτων ανενεργή (2FA)"
+      ],
       "30-day money-back guarantee": [
         "Εγγύηση επιστροφής χρημάτων εντός 30 ημερών"
       ],
@@ -3482,6 +3494,9 @@
       ],
       "All Events ": [
         "Όλες οι εκδηλώσεις "
+      ],
+      "All members have been added.": [
+        "Όλα τα μέλη έχουν προστεθεί."
       ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
@@ -3672,6 +3687,9 @@
         "Διαγραφή ${ deletedServerCount } διακομιστή πύλης",
         "Διαγραφή ${ deletedServerCount } διακομιστών πύλης"
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Η απενεργοποίηση του ελέγχου ταυτότητας δύο παραγόντων θα κάνει τον λογαριασμό σας λιγότερο ασφαλή. Προχωρήστε μόνο εάν είναι απολύτως απαραίτητο."
+      ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
       ],
@@ -3834,6 +3852,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Μεταβείτε στον πάροχο ταυτότητάς σας, λάβετε τα μεταδεδομένα SAML για το ${ appName } και εισαγάγετε τα εδώ."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Οι διευθύνσεις ομάδας μπορούν να δημιουργηθούν μόνο για προσαρμοσμένους τομείς. Μεταβείτε στη σελίδα ${ linkToDomainPage } για να προσθέσετε έναν προσαρμοσμένο τομέα."
       ],
       "here": [
         "εδώ"
@@ -4534,6 +4555,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα. Μετά την επιτυχή επαλήθευση, μην καταργήσετε την εγγραφή TXT, καθώς είναι απαραίτητη για να επιβεβαιώσετε ότι εξακολουθείτε να είστε κάτοχος του τομέα."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Αυτό θα απενεργοποιήσει τον έλεγχο ταυτότητας δύο παραγόντων, συμπεριλαμβανομένων τόσο της εφαρμογής ελέγχου ταυτότητας όσο και των μεθόδων κλειδιού ασφαλείας."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο ${ BRAND_NAME }. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
@@ -4653,6 +4677,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Ανεβάστε το λογότυπο του οργανισμού σας για να ενισχύσετε την ταυτότητα της επωνυμίας σας και να δημιουργήσετε μια εξατομικευμένη εμπειρία για τους χρήστες σας."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Χρησιμοποιήστε μια μέθοδο ανάκτησης για να απενεργοποιήσετε τις μεθόδους ελέγχου ταυτότητας δύο παραγόντων."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Χρησιμοποιείστε τον βέλτιστο διακομιστή για το τρέχον φορτίο και θέση: ${ formattedBestServerName }"
@@ -4919,12 +4946,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Θα ανακατευθυνθείτε στο ${ destination } αφού συνδεθείτε."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Θα χάσετε την πρόσβαση στις λειτουργίες του Plus αυτήν την ημέρα."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Θα χάσετε την πρόσβαση στους διακομιστές και λειτουργίες του Plus αυτήν την ημέρα."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Θα χρειαστείτε μια διεύθυνση ${ BRAND_NAME } για να χρησιμοποιήσετε ${ MAIL_APP_NAME } και ${ CALENDAR_APP_NAME }"
       ],
@@ -5130,6 +5151,12 @@
       ],
       "Account storage": [
         "Χωρητικότητα λογαριασμού"
+      ],
+      "Add all organization members": [
+        "Προσθήκη όλων των μελών του οργανισμού"
+      ],
+      "Add group member": [
+        "Προσθήκη μέλους ομάδας"
       ],
       "Address": [
         "Διεύθυνση"
@@ -6273,9 +6300,6 @@
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Premium χαρακτηριστικά του ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Υποστήριξη ηλεκτρονικού ταχυδρομείου προτεραιότητας"
       ],
@@ -6423,9 +6447,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
         "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
-      ],
-      "Version history": [
-        "Ιστορικό εκδόσεων"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
@@ -6872,6 +6893,9 @@
       "An external address cannot be default": [
         "Μια εξωτερική διεύθυνση δεν μπορεί να είναι προεπιλεγμένη"
       ],
+      "Downloaded 2FA recovery codes": [
+        "Λήψη κωδικών ανάκτησης 2FA"
+      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -6961,6 +6985,17 @@
       ],
       "The whole organization": [
         "Ολόκληρος ο οργανισμός"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Όλοι"
+      ],
+      "Group members": [
+        "Μέλη ομάδας"
+      ],
+      "No one": [
+        "Κανένας"
       ]
     },
     "Organization capacity error": {
@@ -8466,6 +8501,9 @@
       "1 email address": [
         "1 ηλ. διεύθυνση"
       ],
+      "1 email address per user": [
+        "1 διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
       "1 VPN connection": [
         "1 σύνδεση VPN"
       ],
@@ -9444,6 +9482,9 @@
       ],
       "Disable two-factor authentication": [
         "Απενεργοποίηση ταυτοποίησης δύο παραγόντων"
+      ],
+      "Disable two-factor authentication?": [
+        "Απενεργοποίηση ταυτοποίησης δύο παραγόντων;"
       ],
       "Discard changes?": [
         "Απόρριψη αλλαγών;"

@@ -70,11 +70,11 @@
       "Accept": [
         "Accetta"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -253,6 +253,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Conferma l'apertura del link ${ linkToShow }"
       ],
+      "Contact sales": [
+        "Contatta il reparto vendite"
+      ],
       "Contact support": [
         "Contatta l'assistenza"
       ],
@@ -391,6 +394,9 @@
       "Disable": [
         "Disabilita"
       ],
+      "Disable E2EE group mail encryption": [
+        "Disabilita la crittografia della posta del gruppo E2EE"
+      ],
       "Disable recovery phrase": [
         "Disabilita la frase di recupero"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "Annulla le modifiche"
+      ],
+      "Domain names": [
+        "Nome dominio"
       ],
       "Don't show again": [
         "Non mostrare nuovamente"
@@ -492,6 +501,9 @@
       ],
       "Enable device-based recovery": [
         "Abilita il ripristino basato sul dispositivo"
+      ],
+      "Enable E2EE group mail encryption": [
+        "Abilita la crittografia della posta del gruppo E2EE"
       ],
       "Enable multi-user support": [
         "Abilita il supporto multi-utente"
@@ -652,9 +664,6 @@
       "Keep logo": [
         "Mantieni il logo"
       ],
-      "Keep my Plus subscription": [
-        "Mantieni il mio abbonamento Plus"
-      ],
       "label emails as": [
         "etichetta le email come"
       ],
@@ -672,6 +681,9 @@
       ],
       "Loading verification": [
         "Caricamento della verifica in corso"
+      ],
+      "Lost access to your 2FA device?": [
+        "Hai perso l'accesso al tuo dispositivo A2F?"
       ],
       "Make admin": [
         "Rendi amministratore"
@@ -888,9 +900,6 @@
       ],
       "Review": [
         "Revisiona"
-      ],
-      "Review account security": [
-        "Controlla la sicurezza dell'account"
       ],
       "Revoke": [
         "Revoca"
@@ -6561,6 +6570,9 @@
       "2. They try ${ planName }": [
         "2. Provano ${ planName }"
       ],
+      "2FA disabled": [
+        "A2F disabilitata"
+      ],
       "3. You earn credits": [
         "3. Guadagni crediti"
       ],
@@ -6689,6 +6701,9 @@
       ],
       "All keys successfully reactivated": [
         "Tutte le chiavi sono state riattivate con successo"
+      ],
+      "All members have been added.": [
+        "Tutti i membri sono stati aggiunti."
       ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
@@ -7043,6 +7058,9 @@
       "Disable recovery by ${ type }": [
         "Disabilita recupero tramite ${ type }"
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Disabilitare l'autenticazione a due fattori renderà il tuo account meno sicuro. Procedere solo se assolutamente necessario."
+      ],
       "Discount": [
         "Sconto"
       ],
@@ -7115,6 +7133,9 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Ogni dominio può avere un solo record SPF (TXT). Se desideri mantenere il record SPF (TXT) esistente, puoi aggiungere ${ spf } al record attuale (inseriscilo dopo ${ spfValue })."
+      ],
+      "Early access": [
+        "Accesso anticipato"
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
@@ -7239,6 +7260,9 @@
       "finance": [
         "dati finanziari"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Per una cronologia delle versioni di 10 anni, contatta il nostro team di vendita."
+      ],
       "for choosing ${ product }": [
         "per aver scelto ${ product }"
       ],
@@ -7280,6 +7304,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vai nel tuo fornitore di identità, ottieni i metadati SAML per ${ appName } e importali qui."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Gli indirizzi di gruppo possono essere creati solo per domini personalizzati. Vai alla pagina ${ linkToDomainPage } per aggiungere un dominio personalizzato."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Raggruppa o visualizza separatamente nella tua Posta in arrivo le email nella stessa conversazione."
@@ -8036,6 +8063,9 @@
       "Remember to share the user's sign in details with them.": [
         "Ricordati di condividere con loro i dettagli di accesso dell'utente."
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "Rimuovi i metadati dalle immagini per proteggere la tua privacy."
+      ],
       "Remove one of your calendars to join this one": [
         "Rimuovi uno dei tuoi calendari per poter partecipare a questo"
       ],
@@ -8415,6 +8445,9 @@
       "This will delete all previous versions of your files.": [
         "Questo eliminerà tutte le versioni precedenti dei tuoi file."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Ciò disabiliterà l'autenticazione a due fattori, inclusi sia l'app di autenticazione che i metodi della chiave di sicurezza."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Questo disabiliterà la tua frase di recupero attuale. Non potrai usarla per accedere al tuo account o decrittografare i tuoi dati."
       ],
@@ -8615,6 +8648,9 @@
       ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Utilizza un gestore di password per generare e conservare in modo sicuro le tue password, assicurandoti password complesse e accessi più semplici."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Utilizza un metodo di ripristino per disabilitare i metodi di autenticazione a due fattori."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Usa il miglior server in base al carico attuale e alla posizione: ${ formattedBestServerName }"
@@ -8950,6 +8986,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Non è stato impostato alcun metodo di recupero, quindi il recupero dell'account è impossibile se si dimentica la password. Procedere senza metodo di recupero?"
       ],
+      "You do not have permission to perform this action": [
+        "Non hai i permessi per eseguire quest'azione"
+      ],
       "You have ${ availableCount } dedicated server available.": [
         "Hai ${ availableCount } server dedicato disponibile.",
         "Hai ${ availableCount } server dedicati disponibili."
@@ -9001,12 +9040,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Verrai reindirizzato su ${ destination } dopo aver effettuato l'accesso."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "A partire da questa data perderai l'accesso alle funzionalità Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "A partire da questa data perderai l'accesso ai server e alle funzionalità Plus."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Avrai bisogno di un indirizzo ${ BRAND_NAME } per utilizzare ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -9617,9 +9650,6 @@
       "5 minutes": [
         "5 minuti"
       ],
-      "Account recovery": [
-        "Recupero dell'account"
-      ],
       "Account storage": [
         "Spazio dell'account"
       ],
@@ -9628,6 +9658,12 @@
       ],
       "Activity": [
         "Attività"
+      ],
+      "Add all organization members": [
+        "Aggiungi tutti i membri dell'organizzazione"
+      ],
+      "Add group member": [
+        "Aggiungi un membro del gruppo"
       ],
       "Address": [
         "Indirizzo"
@@ -9980,6 +10016,9 @@
       "Email or username": [
         "Email o nome utente"
       ],
+      "Email settings": [
+        "Impostazioni dell'email"
+      ],
       "Emails": [
         "Email"
       ],
@@ -10040,9 +10079,6 @@
       "Folder location": [
         "Percorso cartella"
       ],
-      "Folders and labels": [
-        "Cartelle ed etichette"
-      ],
       "Font family": [
         "Tipo di carattere"
       ],
@@ -10060,6 +10096,9 @@
       ],
       "Group address": [
         "Indirizzo di gruppo"
+      ],
+      "Group conversations": [
+        "Conversazioni di gruppo"
       ],
       "Group members": [
         "Membri del gruppo"
@@ -10105,6 +10144,9 @@
       ],
       "Issuer ID": [
         "ID dell'emittente"
+      ],
+      "Keep emails in Sent/Drafts": [
+        "Mantieni le email in Invio/Bozze"
       ],
       "Keep me signed in": [
         "Rimani connesso"
@@ -10153,9 +10195,6 @@
       ],
       "Mail Server (IMAP)": [
         "Server di posta (IMAP)"
-      ],
-      "Mail settings": [
-        "Impostazioni Mail"
       ],
       "Main": [
         "Principale"
@@ -10355,6 +10394,9 @@
       "Recovery phrase": [
         "Frase di recupero"
       ],
+      "Remove image metadata": [
+        "Rimuovi meta-dati dell'immagine"
+      ],
       "Repeat password": [
         "Conferma la password"
       ],
@@ -10426,9 +10468,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Spam and filters": [
-        "Spam e filtri"
       ],
       "Starred": [
         "Importante"
@@ -11757,9 +11796,6 @@
       "Password-protected Emails": [
         "Email protette da password"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Funzionalità premium di ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Assistenza email prioritaria"
       ],
@@ -11910,9 +11946,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Condivisione delle casseforti (fino a ${ n } persona)",
         "Condivisione delle casseforti (fino a ${ n } persone)"
-      ],
-      "Version history": [
-        "Cronologia delle versioni"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
@@ -12100,6 +12133,17 @@
         "Il tuo piano selezionato: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -12118,17 +12162,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Sblocca le funzionalità premium effettuando l'upgrade"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -12424,6 +12457,9 @@
       ],
       "Dark Web Monitoring has been enabled": [
         "Il monitoraggio del Dark Web è stato abilitato"
+      ],
+      "Downloaded 2FA recovery codes": [
+        "Codici di ripristino A2F scaricati"
       ],
       "Invalid code": [
         "Codice non valido"
@@ -12797,6 +12833,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tutti"
+      ],
+      "Group members": [
+        "Membri del gruppo"
+      ],
+      "No one": [
+        "Nessuno"
       ]
     },
     "Option delay send seconds": {
@@ -13854,6 +13901,260 @@
       ],
       "User": [
         "Utente"
+      ]
+    },
+    "Safety review": {
+      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
+        " **Abilita il recupero tramite telefono** per riottenere l'accesso al tuo account se dimentichi la password."
+      ],
+      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
+        "${ BRAND_NAME } utilizzerà questo indirizzo per inviare un codice di reset via email quando reimposti la tua password."
+      ],
+      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
+        "${ BRAND_NAME } utilizzerà questo numero di telefono per inviare un codice di reimpostazione tramite SMS quando reimposti la password."
+      ],
+      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
+        "${ enableDeviceRecovery } per garantire che i tuoi dati possano essere recuperati."
+      ],
+      "**Enable recovery by email** to regain access to your account if you forget your password.": [
+        "**Abilita il recupero tramite email** per riottenere l'accesso al tuo account se dimentichi la password."
+      ],
+      "Account safety review": [
+        "Revisione della sicurezza dell'account"
+      ],
+      "Add a recovery email": [
+        "Aggiungi una email per il recupero"
+      ],
+      "Add a recovery email address": [
+        "Aggiungi un indirizzo email di recupero"
+      ],
+      "Add a recovery phone number": [
+        "Aggiungi un numero di telefono di recupero"
+      ],
+      "Back to Safety Review": [
+        "Torna alla Revisione della Sicurezza"
+      ],
+      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
+        "Poiché hai reimpostato la password, il tuo attuale kit di recupero può essere utilizzato solo per ripristinare i dati creati prima della reimpostazione della password."
+      ],
+      "Can be used to regain access to your account and data": [
+        "Può essere utilizzato per riottenere l'accesso al tuo account e ai tuoi dati"
+      ],
+      "Check account security": [
+        "Controlla la sicurezza dell'account"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Codice inviato a ${ boldValue }"
+      ],
+      "Continue to Safety Review": [
+        "Continua con la Revisione della Sicurezza"
+      ],
+      "Critical issues found. You are at risk of losing access to your account and data.": [
+        "Criticità rilevate. Rischi di perdere l'accesso al tuo account e ai tuoi dati."
+      ],
+      "Critical issues found. You are at risk of losing access to your data.": [
+        "Criticità rilevate. Rischi di perdere l'accesso ai tuoi dati."
+      ],
+      "Device-based recovery enabled": [
+        "Recupero basato sul dispositivo abilitato"
+      ],
+      "Download ${ size }": [
+        "Scarica ${ size }"
+      ],
+      "Download your Recovery Kit": [
+        "Scarica il tuo kit di recupero"
+      ],
+      "Enable device-based recovery": [
+        "Abilita il ripristino basato sul dispositivo"
+      ],
+      "Enable recovery by email": [
+        "Abilita il recupero via email"
+      ],
+      "Enable recovery by phone": [
+        "Abilita il recupero tramite telefono"
+      ],
+      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
+        "Comprendo che non sarò in grado di recuperare i dati attualmente bloccati con questo Kit di Recupero"
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Se dimentichi la password di ${ BRAND_NAME } e devi reimpostarla, la prossima volta che accedi su questo dispositivo utilizzando la nuova password, verrà ripristinato l'accesso completo al tuo account ${ BRAND_NAME }."
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Se dimentichi la password ${ BRAND_NAME } e devi reimpostarla, la prossima volta che accedi a questo dispositivo utilizzando la nuova password, verrà ripristinato l'accesso completo al tuo account ${ BRAND_NAME }."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
+        "Se non riesci ad accedere al tuo account ${ BRAND_NAME }, il tuo Kit di recupero ti consentirà di accedere e recuperare i tuoi dati."
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Se perdi i tuoi dati di accesso e devi reimpostare il tuo account, **è fondamentale** disporre sia di un **metodo di recupero dell'account che di recupero dei dati**, altrimenti potresti non essere in grado di accedere a nessuna delle tue email, contatti, file o password."
+      ],
+      "Invalid code": [
+        "Codice non valido"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "È l'unico modo per ripristinare completamente il tuo account, quindi assicurati di conservarlo in un posto sicuro."
+      ],
+      "Recovery email address": [
+        "Indirizzo email di recupero"
+      ],
+      "Recovery phone number": [
+        "Numero di telefono di recupero"
+      ],
+      "Safeguard account now": [
+        "Proteggi il tuo account adesso"
+      ],
+      "Safeguard your account": [
+        "Proteggi il tuo account"
+      ],
+      "Safeguard your account further": [
+        "Proteggi ulteriormente il tuo account"
+      ],
+      "Safety review": [
+        "Revisione della sicurezza"
+      ],
+      "Send a new code": [
+        "Inviare un nuovo codice"
+      ],
+      "Show more": [
+        "Mostra altro"
+      ],
+      "Take action to secure your account": [
+        "Agisci per proteggere il tuo account"
+      ],
+      "There was an error generating your Recovery Kit": [
+        "Si è verificato un errore durante la generazione del kit di recupero"
+      ],
+      "There was an error verifying your recovery email": [
+        "Si è verificato un errore durante la verifica dell'email di recupero"
+      ],
+      "There was an error verifying your recovery phone": [
+        "Si è verificato un errore durante la verifica del telefono di ripristino"
+      ],
+      "to automatically recover your data when you log into a trusted device": [
+        "per recuperare automaticamente i tuoi dati quando accedi su un dispositivo attendibile"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Per assicurarti che l'indirizzo email sia tuo, inserisci il codice di verifica inviato a ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Per assicurarti che il numero di telefono sia tuo, inserisci il codice di verifica inviato a ${ boldPhoneNumber }."
+      ],
+      "to recover your account and data if you're ever locked out": [
+        "per recuperare il tuo account e i tuoi dati se rimani bloccato"
+      ],
+      "to recover your account if you're ever locked out": [
+        "per recuperare il tuo account se rimani bloccato"
+      ],
+      "Update your Recovery Kit": [
+        "Aggiorna il tuo kit di recupero"
+      ],
+      "Update your Recovery Kit?": [
+        "Aggiornare il tuo kit di recupero?"
+      ],
+      "Verify": [
+        "Verifica"
+      ],
+      "Verify your recovery email address": [
+        "Verifica il tuo indirizzo email di recupero"
+      ],
+      "Verify your recovery phone number": [
+        "Verifica il tuo numero di telefono di recupero"
+      ],
+      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
+        "Si è verificato un errore durante la generazione del kit di recupero. Riprova più tardi o contatta l'assistenza se il problema persiste."
+      ],
+      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
+        "Abbiamo riscontrato un errore durante la verifica dell'e-mail di recupero. Riprova più tardi o contatta l'assistenza se il problema persiste."
+      ],
+      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
+        "Abbiamo riscontrato un errore durante la verifica del numero di telefono di recupero. Riprova più tardi o contatta l'assistenza se il problema persiste."
+      ],
+      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
+        "Quando abiliti il ​​ripristino basato sul dispositivo, ${ BRAND_NAME } memorizzerà un portachiavi di backup crittografato come file nella memoria web del tuo browser."
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "Rischi di perdere l'accesso al tuo account e ai tuoi dati."
+      ],
+      "You are at risk of losing access to your data.": [
+        "Rischi di perdere l'accesso ai tuoi dati."
+      ],
+      "You can disable this at any time.": [
+        "Puoi disabilitarlo in qualsiasi momento."
+      ],
+      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Puoi utilizzare la frase di recupero contenuta in questo kit di recupero per ripristinare completamente il tuo account quando reimposti la password, quindi assicurati di conservarla in un posto sicuro."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Puoi utilizzare la tua email di recupero per riottenere l'accesso al tuo account se dimentichi la password."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Puoi utilizzare il numero di telefono di recupero per riottenere l'accesso al tuo account se dimentichi la password."
+      ],
+      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
+        "Hai già scaricato un kit di recupero. Scaricarne uno nuovo **disattiverà quello vecchio**."
+      ],
+      "You have recommended actions.": [
+        "Hai delle azioni consigliate."
+      ],
+      "You recovery email address is:": [
+        "Il tuo indirizzo email di recupero è:"
+      ],
+      "You recovery phone number is:": [
+        "Il numero di telefono di recupero è:"
+      ],
+      "Your account and data can be recovered": [
+        "Il tuo account e i tuoi dati possono essere recuperati"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "Il tuo account e i tuoi dati possono essere recuperati. Controlla se riesci ancora ad accedere ai tuoi metodi di recupero."
+      ],
+      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
+        "Il tuo account e i tuoi dati possono essere recuperati. Hai consigliato azioni per salvaguardare ulteriormente il tuo account."
+      ],
+      "Your account and data can be recovered. You have recommended actions.": [
+        "Il tuo account e i tuoi dati possono essere recuperati. Ci sono delle azioni consigliate."
+      ],
+      "Your account is fully secure.": [
+        "Il tuo account è completamente sicuro."
+      ],
+      "Your account is secure.": [
+        "Il tuo account è sicuro."
+      ],
+      "Your recovery email": [
+        "La tua email di recupero"
+      ],
+      "Your recovery email and phone can **only recover access to your account**.": [
+        "L'email e il telefono di recupero possono **solo recuperare l'accesso al tuo account**."
+      ],
+      "Your recovery email can **only recover access to your account**.": [
+        "La tua email di recupero può **solo recuperare l'accesso al tuo account**."
+      ],
+      "Your recovery email has been enabled": [
+        "La tua email di recupero è stata abilitata"
+      ],
+      "Your recovery email is set": [
+        "La tua email di recupero è impostata"
+      ],
+      "Your Recovery Kit": [
+        "Il tuo kit di recupero"
+      ],
+      "Your Recovery Kit is set": [
+        "Il tuo kit di recupero è impostato"
+      ],
+      "Your recovery methods": [
+        "I tuoi metodi di recupero"
+      ],
+      "Your recovery phone": [
+        "Il tuo telefono di recupero"
+      ],
+      "Your recovery phone can **only recover access to your account**.": [
+        "Il tuo numero di telefono di recupero può **solo recuperare l'accesso al tuo account**."
+      ],
+      "Your recovery phone has been enabled": [
+        "Il tuo telefono di recupero è stato abilitato"
+      ],
+      "Your recovery phone is set": [
+        "Il tuo telefono di recupero è impostato"
       ]
     },
     "saml: Action": {
@@ -14943,6 +15244,9 @@
       "1 email address": [
         "1 indirizzo email"
       ],
+      "1 email address per user": [
+        "1 indirizzo email per utente"
+      ],
       "1 VPN connection": [
         "1 Connessione VPN"
       ],
@@ -15783,6 +16087,9 @@
       "Status": [
         "Stato"
       ],
+      "Time": [
+        "Orario"
+      ],
       "Total storage": [
         "Spazio totale"
       ],
@@ -15885,6 +16192,9 @@
       ],
       "Account recovery": [
         "Recupero dell'account"
+      ],
+      "Account settings": [
+        "Impostazioni dell'account"
       ],
       "Account suspended": [
         "Account sospeso"
@@ -16053,6 +16363,9 @@
       ],
       "Clear out the junk": [
         "Cancella i messaggi indesiderati"
+      ],
+      "Click a value in the table to use it as filter": [
+        "Clicca su un valore nella tabella per utilizzarlo come filtro"
       ],
       "Close": [
         "Chiudi"
@@ -16229,6 +16542,9 @@
       ],
       "Disable two-factor authentication": [
         "Disabilita l'autenticazione a due fattori"
+      ],
+      "Disable two-factor authentication?": [
+        "Disabilitare l'autenticazione a due fattori?"
       ],
       "Discard changes?": [
         "Annullare le modifiche?"
@@ -16621,6 +16937,9 @@
       ],
       "Privacy and data collection": [
         "Privacy e raccolta dati"
+      ],
+      "Privacy and security": [
+        "Privacy e sicurezza"
       ],
       "Processing...": [
         "Elaborazione..."

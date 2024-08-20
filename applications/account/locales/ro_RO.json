@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -253,6 +253,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmați deschiderea legăturii ${ linkToShow }"
       ],
+      "Contact sales": [
+        "Contactare serviciu comercial"
+      ],
       "Contact support": [
         "Contactați asistența"
       ],
@@ -391,6 +394,9 @@
       "Disable": [
         "Dezactivare"
       ],
+      "Disable E2EE group mail encryption": [
+        "Dezactivare criptare bilaterală mesaje din grup"
+      ],
       "Disable recovery phrase": [
         "Dezactivare fraze de recuperare"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "Anulare modificări"
+      ],
+      "Domain names": [
+        "Nume domenii"
       ],
       "Don't show again": [
         "Nu mai arăta"
@@ -492,6 +501,9 @@
       ],
       "Enable device-based recovery": [
         "Activare recuperare pe bază de dispozitiv"
+      ],
+      "Enable E2EE group mail encryption": [
+        "Activare criptare bilaterală mesaje grup"
       ],
       "Enable multi-user support": [
         "Activare suport utilizatori multipli"
@@ -652,9 +664,6 @@
       "Keep logo": [
         "Păstrare logo"
       ],
-      "Keep my Plus subscription": [
-        "Păstrez abonamentul Plus"
-      ],
       "label emails as": [
         "etichetare mesaje ca"
       ],
@@ -672,6 +681,9 @@
       ],
       "Loading verification": [
         "În curs de verificare"
+      ],
+      "Lost access to your 2FA device?": [
+        "Ați pierdut accesul la dispozitivul pentru A2F?"
       ],
       "Make admin": [
         "Stabilire administrator"
@@ -888,9 +900,6 @@
       ],
       "Review": [
         "Revizuire"
-      ],
-      "Review account security": [
-        "Revizuire securitate cont"
       ],
       "Revoke": [
         "Anulare"
@@ -6620,6 +6629,9 @@
       "2. They try ${ planName }": [
         "2. Ei încearcă ${ planName }"
       ],
+      "2FA disabled": [
+        "A2F dezactivată"
+      ],
       "3. You earn credits": [
         "3. Câștigați credite"
       ],
@@ -6754,6 +6766,9 @@
       ],
       "All keys successfully reactivated": [
         "Toate cheile au fost reactivate"
+      ],
+      "All members have been added.": [
+        "Au fost adăugați toți membrii."
       ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
@@ -7113,6 +7128,9 @@
       "Disable recovery by ${ type }": [
         "Dezactivare recuperare prin ${ type }."
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Dezactivarea autentificării cu doi factori vă va face contul mai puțin sigur. Continuați doar dacă este absolut necesar."
+      ],
       "Discount": [
         "Reducere"
       ],
@@ -7186,6 +7204,9 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Fiecare domeniu poate avea o singură înregistrare SPF (TXT). Dacă doriți să păstrați înregistrarea SPF (TXT) existentă, puteți adăuga ${ spf } la înregistrarea curentă (puneți-o după ${ spfValue })."
+      ],
+      "Early access": [
+        "Acces timpuriu"
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
@@ -7310,6 +7331,9 @@
       "finance": [
         "finanțe"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Pentru un istoric de 10 ani al versiunilor, contactați echipa noastră de vânzări."
+      ],
       "for choosing ${ product }": [
         "pentru că ați ales ${ product }"
       ],
@@ -7351,6 +7375,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Adresele de grup pot fi create numai pentru domenii personale. Accesați pagina ${ linkToDomainPage } pentru a adăuga un domeniu personal."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupare mesaje din aceeași conversație sau afișare separată."
@@ -8112,6 +8139,9 @@
       "Remember to share the user's sign in details with them.": [
         "Aveți grijă să furnizați utilizatorilor detaliile lor de autentificare."
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "Eliminați metadatele din imagini pentru a vă proteja confidențialitatea."
+      ],
       "Remove one of your calendars to join this one": [
         "Eliminați unul din calendare pentru a vă alătura acestuia"
       ],
@@ -8495,6 +8525,9 @@
       "This will delete all previous versions of your files.": [
         "Aceasta va șterge toate versiunile anterioare ale fișierelor."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Aceasta va dezactiva autentificarea cu doi factori, incluzând atât aplicația de autentificare, cât și metodele cu chei de securitate."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Aceasta va dezactiva fraza actuală de recuperare. Nu o veți putea folosi pentru a vă accesa contul sau să decriptați datele."
       ],
@@ -8695,6 +8728,9 @@
       ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Utilizați un manager de parole pentru a vă genera și stoca în siguranță parolele, asigurând parole puternice și conectări mai ușoare."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Utilizați o metodă de recuperare pentru a dezactiva metodele de autentificare cu doi factori."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Folosire cel mai bun server ținând cont de încărcarea și poziția sa: ${ formattedBestServerName }"
@@ -9037,6 +9073,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nu ați setat o metodă de recuperare a contului, deci recuperea contului nu va fi posibilă dacă vă uitați parola. Continuați fără metodă de recuperare?"
       ],
+      "You do not have permission to perform this action": [
+        "Nu aveți permisiunea de a efectua această acțiune."
+      ],
       "You have ${ availableCount } dedicated server available.": [
         "Aveți ${ availableCount } server dedicat disponibil.",
         "Aveți ${ availableCount } servere dedicate disponibile.",
@@ -9089,12 +9128,6 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
-      ],
-      "You will lose access to Plus features on this date.": [
-        "Veți pierde accesul la funcțiile Plus la această dată."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Veți pierde accesul la serverele Plus și la funcții la această dată."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Veți avea nevoie de o adresă ${ BRAND_NAME } pentru a utiliza ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
@@ -9712,9 +9745,6 @@
       "5 minutes": [
         "5 minute"
       ],
-      "Account recovery": [
-        "Recuperare cont"
-      ],
       "Account storage": [
         "Spațiu cont"
       ],
@@ -9723,6 +9753,12 @@
       ],
       "Activity": [
         "Activitate"
+      ],
+      "Add all organization members": [
+        "Adăugare toți membrii organizației"
+      ],
+      "Add group member": [
+        "Adăugare membru în grup"
       ],
       "Address": [
         "Adresa"
@@ -10075,6 +10111,9 @@
       "Email or username": [
         "E-mail sau utilizator"
       ],
+      "Email settings": [
+        "Setări e-mail"
+      ],
       "Emails": [
         "Mesaje"
       ],
@@ -10135,9 +10174,6 @@
       "Folder location": [
         "Amplasare folder"
       ],
-      "Folders and labels": [
-        "Foldere și etichete"
-      ],
       "Font family": [
         "Familie font"
       ],
@@ -10155,6 +10191,9 @@
       ],
       "Group address": [
         "Adresă grup"
+      ],
+      "Group conversations": [
+        "Conversație în grup"
       ],
       "Group members": [
         "Membrii grup"
@@ -10200,6 +10239,9 @@
       ],
       "Issuer ID": [
         "ID emitent"
+      ],
+      "Keep emails in Sent/Drafts": [
+        "Păstrare mesaje din Ciorne/Trimise"
       ],
       "Keep me signed in": [
         "Păstrați-mă conectat"
@@ -10248,9 +10290,6 @@
       ],
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
-      ],
-      "Mail settings": [
-        "Setări e-mail"
       ],
       "Main": [
         "Principală"
@@ -10445,10 +10484,13 @@
         "Fișier de recuperare"
       ],
       "Recovery phone number": [
-        "Numărul de telefon pentru recuperare"
+        "Număr de telefon de recuperare"
       ],
       "Recovery phrase": [
         "Fraza de recuperare"
+      ],
+      "Remove image metadata": [
+        "Eliminare metadate din imagini"
       ],
       "Repeat password": [
         "Repetare parolă"
@@ -10521,9 +10563,6 @@
       ],
       "Spam": [
         "Nedorite"
-      ],
-      "Spam and filters": [
-        "Filtre și mesaje nedorite"
       ],
       "Starred": [
         "Cu stea"
@@ -10666,7 +10705,7 @@
         "Recuperare pe bază de dispozitiv"
       ],
       "Recovery phone number": [
-        "Numărul de telefon pentru recuperare"
+        "Număr de telefon de recuperare"
       ],
       "Recovery phrase": [
         "Fraza de recuperare"
@@ -11878,9 +11917,6 @@
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Funcții premium pentru ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
       ],
@@ -12035,9 +12071,6 @@
         "Partajare seif (maxim ${ n } persoană)",
         "Partajare seif (maxim ${ n } persoane)",
         "Partajare seif (maxim ${ n } de persoane)"
-      ],
-      "Version history": [
-        "Istoric versiuni"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
@@ -12225,6 +12258,14 @@
         "Planul selectat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -12243,14 +12284,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -12548,6 +12581,9 @@
       ],
       "Dark Web Monitoring has been enabled": [
         "Monitorizarea pe internetul ascuns a fost activată."
+      ],
+      "Downloaded 2FA recovery codes": [
+        "Codurile de recuperare A2F s-au descărcat."
       ],
       "Invalid code": [
         "Cod nevalid"
@@ -12926,6 +12962,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tuturor"
+      ],
+      "Group members": [
+        "Membrii grup"
+      ],
+      "No one": [
+        "Nimeni"
       ]
     },
     "Option delay send seconds": {
@@ -13993,6 +14040,260 @@
         "Utilizator"
       ]
     },
+    "Safety review": {
+      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
+        "**Activați recuperarea prin telefon** pentru a vă recâștiga accesul la cont dacă vă uitați parola."
+      ],
+      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
+        "${ BRAND_NAME } va folosi această adresă pentru a trimite un cod de resetare când vă veți resetați parola."
+      ],
+      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
+        "${ BRAND_NAME } va folosi acest număr de telefon pentru a trimite un cod de resetare prin SMS când vă veți resetați parola."
+      ],
+      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
+        "${ enableDeviceRecovery } pentru a vă asigura că vă puteți recupera datele."
+      ],
+      "**Enable recovery by email** to regain access to your account if you forget your password.": [
+        "**Activați recuperarea prin e-mail** pentru a vă recâștiga accesul la cont dacă vă uitați parola."
+      ],
+      "Account safety review": [
+        "Revizuire securitate cont"
+      ],
+      "Add a recovery email": [
+        "Adăugați un e-mail de recuperare"
+      ],
+      "Add a recovery email address": [
+        "Adăugați o adresă de e-mail de recuperare"
+      ],
+      "Add a recovery phone number": [
+        "Adăugați un număr de telefon de recuperare"
+      ],
+      "Back to Safety Review": [
+        "Înapoi la revizuire securitate"
+      ],
+      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
+        "Deoarece v-ați resetat parola, pachetul de recuperare actual poate fi folosit doar pentru a recupera datele create înainte de resetarea parolei."
+      ],
+      "Can be used to regain access to your account and data": [
+        "Pot fi folosite pentru a vă recâștiga accesul la cont și date"
+      ],
+      "Check account security": [
+        "Verificare securitate cont"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Cod trimis către ${ boldValue }"
+      ],
+      "Continue to Safety Review": [
+        "Continuare la revizuire securitate"
+      ],
+      "Critical issues found. You are at risk of losing access to your account and data.": [
+        "S-au găsit probleme critice. Sunteți în pericol de a vă pierde accesul la cont și date."
+      ],
+      "Critical issues found. You are at risk of losing access to your data.": [
+        "S-au găsit probleme critice. Sunteți în pericol de a vă pierde accesul la date."
+      ],
+      "Device-based recovery enabled": [
+        "Activarea pe bază de dispozitiv este activată"
+      ],
+      "Download ${ size }": [
+        "Descărcare ${ size }"
+      ],
+      "Download your Recovery Kit": [
+        "Descărcare pachet de recuperare"
+      ],
+      "Enable device-based recovery": [
+        "Activați recuperarea pe bază de dispozitiv"
+      ],
+      "Enable recovery by email": [
+        "Activare recuperare prin e-mail"
+      ],
+      "Enable recovery by phone": [
+        "Activare recuperare cu număr de telefon"
+      ],
+      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
+        "Înțeleg că nu voi putea recupera datele blocate în prezent cu acest pachet de recuperare"
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Dacă vă uitați parola ${ BRAND_NAME } și trebuie să o resetați, la următoarea reconectare cu acest dispozitiv, cu parola nouă, vă va fi restabilit accesul complet la contul ${ BRAND_NAME }."
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Dacă vă uitați parola ${ BRAND_NAME } și trebuie să o resetați, la următoarea reconectare cu acest dispozitiv, cu parola nouă, vă va fi restabilit accesul complet la contul ${ BRAND_NAME }."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
+        "Dacă nu vă mai puteți accesa contul ${ BRAND_NAME }, pachetul de recuperare vă va permite să vă conectați și să vă recuperați datele."
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Dacă vă pierdeți detaliile de conectare și trebuie să vă resetați contul, **este imperativ** să aveți atât o **metodă de recuperare a contului, cât și o metodă de recuperare a datelor**, altfel este posibil să nu vă puteți accesa niciunul dintre mesajele de pe e-mail, contactele, fișierele sau parolele."
+      ],
+      "Invalid code": [
+        "Codul nu este valid."
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Este singura modalitate de a vă restabili complet contul, așa că asigurați-vă că-l păstrați în siguranță."
+      ],
+      "Recovery email address": [
+        "Adresa de e-mail de recuperare"
+      ],
+      "Recovery phone number": [
+        "Numărul de telefon de recuperare"
+      ],
+      "Safeguard account now": [
+        "Protejați-vă contul acum"
+      ],
+      "Safeguard your account": [
+        "Protejați-vă contul"
+      ],
+      "Safeguard your account further": [
+        "Sporiți securitatea contului"
+      ],
+      "Safety review": [
+        "Revizuire securitate"
+      ],
+      "Send a new code": [
+        "Trimitere cod nou"
+      ],
+      "Show more": [
+        "Mai mult"
+      ],
+      "Take action to secure your account": [
+        "Acționați pentru a vă securiza contul"
+      ],
+      "There was an error generating your Recovery Kit": [
+        "A apărut o eroare la generarea pachetului de recuperare."
+      ],
+      "There was an error verifying your recovery email": [
+        "A apărut o eroare la verificarea adresei de e-mail de recuperare."
+      ],
+      "There was an error verifying your recovery phone": [
+        "A apărut o eroare la verificarea numărului de telefon de recuperare."
+      ],
+      "to automatically recover your data when you log into a trusted device": [
+        "pentru a vă recupera automat datele când vă conectați de pe un dispozitiv de încredere"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Pentru a ne asigura că adresa de e-mail vă aparține, introduceți codul de verificare trimis la ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Pentru a ne asigura că numărul de telefon vă aparține, introduceți codul de verificare trimis la ${ boldPhoneNumber }."
+      ],
+      "to recover your account and data if you're ever locked out": [
+        "pentru a vă recupera contul și datele dacă nu le mai puteți accesa"
+      ],
+      "to recover your account if you're ever locked out": [
+        "pentru a vă recupera contul dacă nu îl mai puteți accesa"
+      ],
+      "Update your Recovery Kit": [
+        "Actualizați pachetul de recuperare"
+      ],
+      "Update your Recovery Kit?": [
+        "Actualizați pachetul de recuperare?"
+      ],
+      "Verify": [
+        "Verificare"
+      ],
+      "Verify your recovery email address": [
+        "Verificați adresa de e-mai de recuperare"
+      ],
+      "Verify your recovery phone number": [
+        "Verificați numărul de telefon de recuperare"
+      ],
+      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
+        "A apărut o eroare la generarea pachetului de recuperare. Reîncercați mai târziu sau contactați asistența dacă problema continuă."
+      ],
+      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
+        "A apărut o eroare la verificarea adresei de e-mail de recuperare. Reîncercați mai târziu sau contactați asistența dacă problema continuă."
+      ],
+      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
+        "A apărut o eroare la verificarea numărului de telefon de recuperare. Reîncercați mai târziu sau contactați asistența dacă problema continuă."
+      ],
+      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
+        "Când activați recuperarea pe bază de dispozitiv, ${ BRAND_NAME } va stoca un lanț de chei de rezervă criptat ca fișier în spațiul de stocare al navigatorului web."
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "Riscați să vă pierdeți accesul la cont și date."
+      ],
+      "You are at risk of losing access to your data.": [
+        "Riscați să vă pierdeți accesul la date."
+      ],
+      "You can disable this at any time.": [
+        "Puteți oricând dezactiva aceasta."
+      ],
+      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Puteți folosi fraza de recuperare din acest pachet de recuperare pentru a vă restabili complet contul atunci când vă resetați parola, așa că asigurați-vă că o păstrați în siguranță."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Vă puteți folosi adresa de e-mail de recuperare pentru a vă recâștiga accesul la cont dacă vă uitați parola."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Vă puteți folosi recuperarea prin telefon pentru a vă recâștiga accesul la cont dacă vă uitați parola."
+      ],
+      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
+        "Ați descărcat anterior pachetul de recuperare. Descărcarea unui nou pachet îl va **dezactiva pe cel vechi**."
+      ],
+      "You have recommended actions.": [
+        "Aveți acțiuni recomandate."
+      ],
+      "You recovery email address is:": [
+        "Adresa de e-mail de recuperare este:"
+      ],
+      "You recovery phone number is:": [
+        "Numărul de telefon de recuperare este:"
+      ],
+      "Your account and data can be recovered": [
+        "Contul și datele vă pot fi recuperate"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "Contul și datele vă pot fi recuperate. Verificați dacă încă vă puteți accesa metodele de recuperare."
+      ],
+      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
+        "Contul și datele vă pot fi recuperate. Aveți acțiuni recomandate pentru a vă spori protecția contului."
+      ],
+      "Your account and data can be recovered. You have recommended actions.": [
+        "Contul și datele vă pot fi recuperate. Aveți acțiuni recomandate."
+      ],
+      "Your account is fully secure.": [
+        "Contul este complet securizat."
+      ],
+      "Your account is secure.": [
+        "Contul este sigur."
+      ],
+      "Your recovery email": [
+        "E-mail de recuperare"
+      ],
+      "Your recovery email and phone can **only recover access to your account**.": [
+        "Adresa de e-mail și numărul de telefon de recuperare vă pot **recupera doar accesul la cont**."
+      ],
+      "Your recovery email can **only recover access to your account**.": [
+        "Adresa de e-mail de recuperare vă poate **recupera doar accesul la cont**."
+      ],
+      "Your recovery email has been enabled": [
+        "Adresa de e-mail de recuperare a fost activată."
+      ],
+      "Your recovery email is set": [
+        "Adresa de e-mail de recuperare este setată"
+      ],
+      "Your Recovery Kit": [
+        "Pachetul de recuperare"
+      ],
+      "Your Recovery Kit is set": [
+        "Pachetul de recuperare este setat"
+      ],
+      "Your recovery methods": [
+        "Metode de recuperare"
+      ],
+      "Your recovery phone": [
+        "Număr de telefon de recuperare"
+      ],
+      "Your recovery phone can **only recover access to your account**.": [
+        "Numărul de telefon de recuperare vă poate **recupera doar accesul la cont**."
+      ],
+      "Your recovery phone has been enabled": [
+        "Numărul de telefon de recuperare a fost activat."
+      ],
+      "Your recovery phone is set": [
+        "Recuperarea prin telefon este setată"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Anulare"
@@ -14456,7 +14757,7 @@
     },
     "session_recovery:settings:action": {
       "Allow password reset from settings": [
-        "Permitere resetare a parolei din setări"
+        "Parola se poate reseta în setări"
       ],
       "Request password reset": [
         "Solicitare resetare parolă"
@@ -15113,6 +15414,9 @@
       ],
       "1 email address": [
         "O adresă de e-mail"
+      ],
+      "1 email address per user": [
+        "O adresă de e-mail per utilizator"
       ],
       "1 VPN connection": [
         "O conexiune VPN"
@@ -15959,6 +16263,9 @@
       "Status": [
         "Stare"
       ],
+      "Time": [
+        "Timp"
+      ],
       "Total storage": [
         "Spațiu total"
       ],
@@ -16067,6 +16374,9 @@
       ],
       "Account recovery": [
         "Recuperare cont"
+      ],
+      "Account settings": [
+        "Setări cont"
       ],
       "Account suspended": [
         "Cont suspendat"
@@ -16235,6 +16545,9 @@
       ],
       "Clear out the junk": [
         "Eliminare mesaje din gunoi"
+      ],
+      "Click a value in the table to use it as filter": [
+        "Faceți clic pe o valoare din tabel pentru a o folosi ca filtru"
       ],
       "Close": [
         "Închidere"
@@ -16413,6 +16726,9 @@
       ],
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
+      ],
+      "Disable two-factor authentication?": [
+        "Dezactivați autentificarea cu doi factori?"
       ],
       "Discard changes?": [
         "Anulare modificări?"
@@ -16807,6 +17123,9 @@
       ],
       "Privacy and data collection": [
         "Confidențialitate și colectare de date"
+      ],
+      "Privacy and security": [
+        "Confidențialitate și securitate"
       ],
       "Processing...": [
         "Se procesează..."
