@@ -22,6 +22,10 @@ const SharedWithMeToolbar = ({ items }: Props) => {
     );
 
     const renderSelectionActions = () => {
+        const haveInvitationInSelection = selectedItems.find((selectedItem) => selectedItem.isInvitation);
+        if (haveInvitationInSelection) {
+            return;
+        }
         return (
             <>
                 <PreviewButton selectedBrowserItems={selectedItems} />
