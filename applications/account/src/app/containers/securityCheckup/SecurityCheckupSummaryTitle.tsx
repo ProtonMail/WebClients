@@ -57,7 +57,7 @@ const SecurityCheckupSummaryTitle = ({ className }: { className?: string }) => {
     if (cohort === SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED) {
         return (
             <Title
-                subline={c('Safety review').t`Critical issues found. You are at risk of losing access to your data.`}
+                subline={c('Safety review').t`You are at risk of losing access to your data.`}
                 icon="pass-shield-warning"
                 color="warning"
                 className={className}
@@ -68,8 +68,7 @@ const SecurityCheckupSummaryTitle = ({ className }: { className?: string }) => {
     if (cohort === SecurityCheckupCohort.NO_RECOVERY_METHOD) {
         return (
             <Title
-                subline={c('Safety review')
-                    .t`Critical issues found. You are at risk of losing access to your account and data.`}
+                subline={c('Safety review').t`You are at risk of losing access to your account and data.`}
                 icon="pass-shield-warning"
                 color="danger"
                 className={className}
