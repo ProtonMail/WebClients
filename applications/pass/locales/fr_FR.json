@@ -1060,8 +1060,8 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } affichera la vignette de l'élément en utilisant le proxy d'image anonyme ${ BRAND_NAME }."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } importera uniquement les identifiants, notes et cartes de paiement."
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } importera uniquement les identifiants, notes, cartes de paiement et identités."
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } vous demandera votre mot de passe ${ BRAND_NAME } pour accéder à vos données en mode hors ligne."
@@ -2446,6 +2446,9 @@
       ],
       "Unnamed Credit Card": [
         "Carte de paiement sans nom"
+      ],
+      "Unnamed identity": [
+        "Identité sans nom"
       ],
       "Unnamed item": [
         "Élément sans nom"
