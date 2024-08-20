@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -71,6 +71,39 @@ export default function useSharedWithMeView(shareId: string) {
         DEFAULT_SORT
     );
 
+    const browserItems: SharedWithMeItem[] = sortedList.reduce<SharedWithMeItem[]>((acc, item) => {
+        acc.push({ ...item, id: item.rootShareId });
+        return acc;
+    }, []);
+
+    const invitationsBrowserItems: SharedWithMeItem[] = [...pendingInvitations.values()].reduce<SharedWithMeItem[]>(
+        (acc, item) => {
+            acc.push({
+                isFile: item.link.isFile,
+                trashed: null,
+                mimeType: item.link.mimeType,
+                rootShareId: item.share.shareId,
+                id: item.share.shareId,
+                name: item.link.name,
+                invitationDetails: item,
+                sharedBy: item.invitation.inviterEmail,
+                isInvitation: true,
+                size: 0,
+                isLocked: item.isLocked,
+                linkId: item.link.linkId,
+                parentLinkId: '',
+                volumeId: item.share.volumeId,
+            });
+            return acc;
+        },
+        []
+    );
+
+    const sortedItems = useMemo(
+        () => sortItemsWithPositions([...invitationsBrowserItems, ...browserItems], acceptedInvitationsPosition),
+        [invitationsBrowserItems, browserItems, acceptedInvitationsPosition]
+    );
+
     const acceptPendingInvitation = async (invitationId: string) => {
         const abortSignal = new AbortController().signal;
         const pendingInvitation = getPendingInvitation(invitationId);
@@ -104,9 +137,7 @@ export default function useSharedWithMeView(shareId: string) {
             getDirectSharingInfo(abortSignal, pendingInvitation.share.shareId),
         ]);
 
-        const index = [...pendingInvitations.values()].findIndex(
-            (item) => item.share.shareId === pendingInvitation.share.shareId
-        );
+        const index = sortedItems.findIndex((item) => item.rootShareId === pendingInvitation.share.shareId);
 
         setAcceptedInvitationsPosition((prevState) => {
             const newState = new Map(prevState);
@@ -158,36 +189,6 @@ export default function useSharedWithMeView(shareId: string) {
         });
     };
 
-    const browserItems: SharedWithMeItem[] = sortedList.reduce<SharedWithMeItem[]>((acc, item) => {
-        acc.push({ ...item, id: item.rootShareId });
-        return acc;
-    }, []);
-
-    const invitationsBrowserItems: SharedWithMeItem[] = [...pendingInvitations.values()].reduce<SharedWithMeItem[]>(
-        (acc, item) => {
-            acc.push({
-                isFile: item.link.isFile,
-                trashed: null,
-                mimeType: item.link.mimeType,
-                rootShareId: item.share.shareId,
-                id: item.share.shareId,
-                name: item.link.name,
-                invitationDetails: item,
-                sharedBy: item.invitation.inviterEmail,
-                isInvitation: true,
-                size: 0,
-                isLocked: item.isLocked,
-                linkId: item.link.linkId,
-                parentLinkId: '',
-                volumeId: item.share.volumeId,
-                acceptInvitation: acceptPendingInvitation,
-                rejectInvitation: rejectPendingInvitation,
-            });
-            return acc;
-        },
-        []
-    );
-
     useEffect(() => {
         // Even if the user is going into a folder, we keep shared with me items decryption ongoing in the background
         // This is due to issue with how we decrypt stuff, to prevent infinite loop
@@ -200,7 +201,7 @@ export default function useSharedWithMeView(shareId: string) {
         // Until we have separate section for pending invitations, we do this trick to keep the position of the item in the list,
         // after invite as been transformed to normal link
         // This will get all saved index of accepted invites, and place them at the same place in the final list.
-        items: sortItemsWithPositions(invitationsBrowserItems.concat(browserItems), acceptedInvitationsPosition),
+        items: sortedItems,
         sortParams,
         setSorting: (sortParams: SortParams<SortField>) => {
             // If user wants to sort items we clear the pinnedItemsIds to have the normal sortedList

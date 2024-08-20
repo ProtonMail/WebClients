@@ -88,19 +88,30 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
     const { openDocument } = useDocumentActions();
     const { canUseDocs } = useDriveDocsFeatureFlag();
 
-    const { layout, items, sortParams, setSorting, isLoading } = sharedWithMeView;
+    const { layout, items, sortParams, setSorting, isLoading, acceptPendingInvitation, rejectPendingInvitation } =
+        sharedWithMeView;
+
+    const itemsWithAcceptReject = items.map((item) =>
+        item.isInvitation
+            ? {
+                  ...item,
+                  acceptInvitation: acceptPendingInvitation,
+                  rejectInvitation: rejectPendingInvitation,
+              }
+            : item
+    );
 
     const selectedItemIds = selectionControls!.selectedItemIds;
     const selectedBrowserItems = useMemo(
-        () => getSelectedSharedWithMeItems(items, selectedItemIds),
-        [items, selectedItemIds]
+        () => getSelectedSharedWithMeItems(itemsWithAcceptReject, selectedItemIds),
+        [itemsWithAcceptReject, selectedItemIds]
     );
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {
-            const item = items.find((item) => item.id === id);
+            const item = itemsWithAcceptReject.find((item) => item.id === id);
 
-            if (!item) {
+            if (!item || item.isInvitation) {
                 return;
             }
             document.getSelection()?.removeAllRanges();
@@ -124,7 +135,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
 
             navigateToLink(item.rootShareId, item.linkId, item.isFile);
         },
-        [navigateToLink, items]
+        [navigateToLink, itemsWithAcceptReject]
     );
 
     const handleItemRender = (item: SharedWithMeItem) => {
@@ -173,7 +184,7 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
             />
             <FileBrowser
                 caption={c('Title').t`Shared`}
-                items={items}
+                items={itemsWithAcceptReject}
                 headerItems={headerItems}
                 layout={layout}
                 loading={isLoading}
