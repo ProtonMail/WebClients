@@ -637,9 +637,6 @@
       "Italic": [
         "Kursivointi"
       ],
-      "Keep my Plus subscription": [
-        "Säilytä Plus-tilaukseni"
-      ],
       "Label as": [
         "Merkitse tunnisteella"
       ],
@@ -3450,10 +3447,10 @@
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
       ],
       "Set a data recovery method to prevent data loss.": [
-        "Aseta tiedoillesi palautusmenetelmä, jottet menetä niitä."
+        "Aseta tiedoillesi palautustapa, jottet menetä niitä."
       ],
       "Set a recovery method to prevent losing access to your account.": [
-        "Aseta palautusmenetelmä, jottet menetä pääsyä tilillesi."
+        "Aseta palautustapa, jottet menetä pääsyä tilillesi."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Jos haluat jatkaa kirjoitusavustajan käyttöä, lisää se tilaukseesi."
@@ -3510,7 +3507,7 @@
         "Tilisi ja tietojesi palautusmenetelmät on määritetty ja kaksivaiheinen tunnistautuminen on käytössä."
       ],
       "Your account and data recovery methods are set.": [
-        "Tilisi ja tietojesi palautusmenetelmät on määritetty."
+        "Tilisi ja tietojesi palautustavat on asetettu."
       ]
     },
     "description": {
@@ -7412,12 +7409,6 @@
         "Valitsit **${ elementsCount } viestin**.",
         "Valitsit **${ elementsCount } viestiä**."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Menetät pääsyn Plus-ominaisuuksiin tänä päivänä."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Menetät pääsyn Plus-palvelimiin ja -ominaisuuksiin tänä päivänä."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
       ],
@@ -9243,9 +9234,6 @@
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Premium-ominaisuudet: ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
       ],
@@ -9383,9 +9371,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
         "Holvin jakaminen (enintään ${ n } henkilöä)"
-      ],
-      "Version history": [
-        "Versiohistoria"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
@@ -9896,7 +9881,7 @@
     },
     "Online accounts": {
       "Have an account with one of these services? Just click to change the email address to your ${ MAIL_APP_NAME } address.": [
-        "Onko sinulla tili johonkin näistä palveluista? Napsauta vain vaihtaaksesi sähköpostiosoitteesi ${ MAIL_APP_NAME } -osoitteeksi."
+        "Onko sinulla tili jossakin näistä palveluista? Klikkaa vaihtaaksesi sähköpostiosoitteeksesi ${ MAIL_APP_NAME }."
       ]
     },
     "Online Accounts Name": {
@@ -10263,7 +10248,7 @@
     },
     "plan customizer, ips": {
       "please ${ contactHref } our Sales team.": [
-        "${ contactHref } myyntitiimiimme."
+        "${ contactHref } myyntiimme."
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Valitse tilauksesi sisältyvien IP-osoitteiden määrä. Jokainen lisäosoite maksaa ${ price }."
