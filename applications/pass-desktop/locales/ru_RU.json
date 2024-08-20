@@ -1116,9 +1116,6 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } отобразит фавикон элемента через ${ BRAND_NAME } анонимизированный прокси-сервер изображений."
       ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } будет импортировать только логины, заметки и кредитные карты."
-      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } потребует ваш пароль ${ BRAND_NAME } чтобы получить доступ к офлайновым данным"
       ],
@@ -1530,6 +1527,9 @@
       "Offline support successfully disabled": [
         "Поддержка офлайновой поддержки успешно отключена"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Мы отправляем уведомления, проявляя избыточную осторожность. Если вы не узнаёте какие-либо из скомпрометированных данных, вы можете смело игнорировать этот отчёт."
+      ],
       "Owner": [
         "Владелец"
       ],
@@ -1924,6 +1924,9 @@
       ],
       "15 minutes": [
         "15 минут"
+      ],
+      "2 minutes": [
+        "2 минуты"
       ],
       "24 hours": [
         "24 часа"
