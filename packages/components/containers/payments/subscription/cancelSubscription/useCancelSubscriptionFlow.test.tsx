@@ -1,3 +1,4 @@
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/test';
@@ -22,7 +23,7 @@ jest.mock('@proton/components/hooks/useVPNServersCount');
 const mockUseVPNServersCount = useVPNServersCount as jest.MockedFunction<any>;
 mockUseVPNServersCount.mockReturnValue([vpnServersCount, false]);
 
-const user: UserModel = {
+const userModel: UserModel = {
     ID: 'user-123',
 } as UserModel;
 
@@ -72,7 +73,7 @@ describe('cancel subscription', () => {
         const { hookRef } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(FREE_SUBSCRIPTION as unknown as SubscriptionModel),
-                user: getModelState({ ...user, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
+                user: getModelState({ ...userModel, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
                 organization: getOrganizationState(organization),
             },
         });
@@ -89,14 +90,14 @@ describe('cancel subscription', () => {
         } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(vpnSubscription),
-                user: getModelState({ ...user, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
+                user: getModelState({ ...userModel, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
                 organization: getOrganizationState(organization),
             },
         });
 
         const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
-        await wait(0);
 
+        await screen.findByTestId('keepSubscription');
         await userEvent.click(getByTestId('keepSubscription'));
 
         await expect(cancelSubscriptionPromise).resolves.toEqual({
@@ -111,14 +112,14 @@ describe('cancel subscription', () => {
         } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(vpnSubscription),
-                user: getModelState({ ...user, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
+                user: getModelState({ ...userModel, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
                 organization: getOrganizationState(organization),
             },
         });
 
         const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
-        await wait(0);
 
+        await screen.findByTestId('cancelSubscription');
         await userEvent.click(getByTestId('cancelSubscription'));
         await wait(0);
         // Simulate user clicking the element to close the feedback modal
@@ -148,14 +149,14 @@ describe('cancel subscription', () => {
             } = setup({
                 preloadedState: {
                     subscription: getSubscriptionState(subscription),
-                    user: getModelState({ ...user, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
+                    user: getModelState({ ...userModel, ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
                     organization: getOrganizationState(organization),
                 },
             });
 
             const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
-            await wait(0);
 
+            await screen.findByTestId('cancelSubscription');
             await userEvent.click(getByTestId('cancelSubscription'));
             await wait(0);
 
@@ -195,7 +196,7 @@ describe('downgrade subscription', () => {
         } = setup({
             preloadedState: {
                 subscription: getSubscriptionState(mailSubscription),
-                user: getModelState({ ...user, hasPaidMail: true, Subscribed: PRODUCT_BIT.MAIL }),
+                user: getModelState({ ...userModel, hasPaidMail: true, Subscribed: PRODUCT_BIT.MAIL }),
                 organization: getOrganizationState(organization),
                 plans: {
                     ...getModelState({ plans: Object.values(PLANS_MAP), freePlan: FREE_PLAN }),
@@ -205,8 +206,10 @@ describe('downgrade subscription', () => {
         });
 
         const cancelSubscriptionPromise = hookRef.hook?.cancelSubscription();
-        await wait(0);
+
+        await screen.findByTestId('highlight-downgrade-to-free');
         await userEvent.click(getByTestId('highlight-downgrade-to-free'));
+
         await wait(0);
         await userEvent.type(container.querySelector('#confirm-text')!, organization.Name);
         await userEvent.click(getByTestId('confirm-member-delete'));

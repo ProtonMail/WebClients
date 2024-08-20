@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react';
+import { act, screen, waitFor } from '@testing-library/react';
 import cloneDeep from 'lodash/cloneDeep';
 
 import { getModelState } from '@proton/account/test';
@@ -54,7 +54,7 @@ it('should render <SubscriptionContainer> if there is no legacy plans', async ()
         return null;
     };
 
-    const { container } = renderWithProviders(
+    renderWithProviders(
         <SubscriptionModalProvider app="proton-account">
             <ContextReaderComponent />
         </SubscriptionModalProvider>
@@ -65,7 +65,7 @@ it('should render <SubscriptionContainer> if there is no legacy plans', async ()
     });
     openSubscriptionModal({} as any);
 
-    expect(container).toHaveTextContent('SubscriptionContainer');
+    await screen.findByText('SubscriptionContainer');
 });
 
 it('should render <SubscriptionContainer> with B2B default audience if it was selected in the callback', async () => {
@@ -87,7 +87,9 @@ it('should render <SubscriptionContainer> with B2B default audience if it was se
         expect(openSubscriptionModal).toBeDefined();
     });
 
-    openSubscriptionModal({ defaultAudience: Audience.B2B } as any);
+    act(() => {
+        openSubscriptionModal({ defaultAudience: Audience.B2B } as any);
+    });
 
     expect(SubscriptionContainer).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -118,7 +120,9 @@ it('should render <SubscriptionContainer> with B2B default audience if plan is a
         expect(openSubscriptionModal).toBeDefined();
     });
 
-    openSubscriptionModal({ plan: PLANS.BUNDLE_PRO } as any);
+    act(() => {
+        openSubscriptionModal({ plan: PLANS.BUNDLE_PRO } as any);
+    });
 
     expect(SubscriptionContainer).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -157,7 +161,9 @@ it('should render <SubscriptionContainer> with B2B default audience if subscript
         expect(openSubscriptionModal).toBeDefined();
     });
 
-    openSubscriptionModal({} as any);
+    act(() => {
+        openSubscriptionModal({} as any);
+    });
 
     expect(SubscriptionContainer).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -188,7 +194,9 @@ it('should render <SubscriptionContainer> with FAMILY default audience if it is 
         expect(openSubscriptionModal).toBeDefined();
     });
 
-    openSubscriptionModal({ defaultAudience: Audience.FAMILY } as any);
+    act(() => {
+        openSubscriptionModal({ defaultAudience: Audience.FAMILY } as any);
+    });
 
     expect(SubscriptionContainer).toHaveBeenCalledWith(
         expect.objectContaining({

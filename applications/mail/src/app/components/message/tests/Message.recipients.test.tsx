@@ -1,3 +1,7 @@
+import { act } from 'react';
+
+import { screen } from '@testing-library/react';
+
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
 import { clearAll } from '../../../helpers/test/helper';
@@ -11,14 +15,14 @@ describe('Message recipients rendering', () => {
         const Name = 'test-name';
         const Address = 'address@test.com';
 
-        const { getByText, details } = await setup({ data: { ToList: [{ Name, Address }] } });
+        const { details } = await setup({ data: { ToList: [{ Name, Address }] } });
 
-        getByText(Name);
+        screen.getByText(Name);
 
         await details();
 
-        getByText(Name);
-        getByText(Address, { exact: false });
+        screen.getByText(Name);
+        screen.getByText(Address, { exact: false });
     });
 
     it('show a recipient matching a contact', async () => {
@@ -29,15 +33,15 @@ describe('Message recipients rendering', () => {
             Name: 'test-contact',
         } as ContactEmail;
 
-        const { store, getByText, details } = await setup({ data: { ToList: [{ Name, Address }] } });
-        store.dispatch(refresh({ contacts: [ContactEmail], contactGroups: [] }));
+        const { store, details } = await setup({ data: { ToList: [{ Name, Address }] } });
+        await act(() => store.dispatch(refresh({ contacts: [ContactEmail], contactGroups: [] })));
 
-        getByText(ContactEmail.Name);
+        screen.getByText(ContactEmail.Name);
 
         await details();
 
-        getByText(ContactEmail.Name);
-        getByText(Address, { exact: false });
+        screen.getByText(ContactEmail.Name);
+        screen.getByText(Address, { exact: false });
     });
 
     it('show recipients in a contact group partial', async () => {
@@ -59,12 +63,12 @@ describe('Message recipients rendering', () => {
             { Name, Address, Group },
         ];
 
-        const { store, getByText } = await setup({ data: { ToList } });
-        store.dispatch(refresh({ contacts, contactGroups: [ContactGroup] }));
+        const { store } = await setup({ data: { ToList } });
+        await act(() => store.dispatch(refresh({ contacts, contactGroups: [ContactGroup] })));
 
         const expectation = `${ContactGroup.Name} (${ToList.length}/${contacts.length})`;
 
-        getByText(expectation);
+        screen.getByText(expectation);
     });
 
     it('show recipients in a contact group full', async () => {
@@ -87,11 +91,11 @@ describe('Message recipients rendering', () => {
             { Name, Address, Group },
         ];
 
-        const { store, getByText } = await setup({ data: { ToList } });
-        store.dispatch(refresh({ contacts, contactGroups: [ContactGroup] }));
+        const { store } = await setup({ data: { ToList } });
+        act(() => store.dispatch(refresh({ contacts, contactGroups: [ContactGroup] })));
 
         const expectation = `${ContactGroup.Name} (${contacts.length})`;
 
-        getByText(expectation);
+        screen.getByText(expectation);
     });
 });

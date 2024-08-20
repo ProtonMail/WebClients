@@ -1,9 +1,8 @@
-import { fireEvent, waitFor } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { CryptoProxy } from '@proton/crypto';
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock } from '@proton/testing';
 
 import { clearAll, minimalCache, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
@@ -84,36 +83,36 @@ END:VCARD`;
         minimalCache();
         setupApiMocks();
 
-        const { getByDisplayValue } = renderWithProviders(
+        const { baseElement } = renderWithProviders(
             <ContactEditModal open={true} {...props} vCardContact={vCardContact} />
         );
 
-        // To see the image loaded
-        await wait(0);
-
-        getByDisplayValue('J. Doe');
-        expect(document.querySelector('img[src="https://example.com/myphoto.jpg"]')).not.toBe(null);
-        getByDisplayValue('FN2');
-        getByDisplayValue('jdoe@example.com');
-        getByDisplayValue('testtel');
-        getByDisplayValue('1');
-        getByDisplayValue('4');
-        getByDisplayValue('5');
-        getByDisplayValue('6');
-        getByDisplayValue('7');
-        getByDisplayValue('testadr');
-        getByDisplayValue('TestNote');
+        screen.getByDisplayValue('J. Doe');
+        // Wait for image to be loaded
+        await waitFor(() =>
+            expect(baseElement.querySelector('img[src="https://example.com/myphoto.jpg"]')).not.toBe(null)
+        );
+        screen.getByDisplayValue('FN2');
+        screen.getByDisplayValue('jdoe@example.com');
+        screen.getByDisplayValue('testtel');
+        screen.getByDisplayValue('1');
+        screen.getByDisplayValue('4');
+        screen.getByDisplayValue('5');
+        screen.getByDisplayValue('6');
+        screen.getByDisplayValue('7');
+        screen.getByDisplayValue('testadr');
+        screen.getByDisplayValue('TestNote');
     });
 
     it.skip('should update basic properties', async () => {
         const vcard = `BEGIN:VCARD
-VERSION:4.0
-UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
-FN:J. Doe
-EMAIL:jdoe@example.com
-TEL:testtel
-NOTE:TestNote
-END:VCARD`;
+    VERSION:4.0
+    UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+    FN:J. Doe
+    EMAIL:jdoe@example.com
+    TEL:testtel
+    NOTE:TestNote
+    END:VCARD`;
 
         const vCardContact = parseToVCard(vcard);
 
@@ -170,19 +169,19 @@ END:VCARD`;
         ).Data;
 
         const expectedSignedCard = `BEGIN:VCARD
-VERSION:4.0
-UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
-FN;PREF=1:New name
-ITEM1.EMAIL;PREF=1:new@email.com
-END:VCARD`.replaceAll('\n', '\r\n');
+    VERSION:4.0
+    UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+    FN;PREF=1:New name
+    ITEM1.EMAIL;PREF=1:new@email.com
+    END:VCARD`.replaceAll('\n', '\r\n');
 
         const expectedEncryptedCard = `BEGIN:VCARD
-VERSION:4.0
-TEL;PREF=1:newtel
-NOTE:NewNote
-N:;;;;
-TITLE:NewTitle
-END:VCARD`.replaceAll('\n', '\r\n');
+    VERSION:4.0
+    TEL;PREF=1:newtel
+    NOTE:NewNote
+    N:;;;;
+    TITLE:NewTitle
+    END:VCARD`.replaceAll('\n', '\r\n');
 
         expect(signedCardContent).toBe(expectedSignedCard);
         expect(encryptedCardContent).toBe(expectedEncryptedCard);
