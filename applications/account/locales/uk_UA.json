@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -646,9 +646,6 @@
       "Keep logo": [
         "Залишити логотип"
       ],
-      "Keep my Plus subscription": [
-        "Зберегти передплату Plus"
-      ],
       "label emails as": [
         "позначати листи міткою"
       ],
@@ -882,9 +879,6 @@
       ],
       "Review": [
         "Огляд"
-      ],
-      "Review account security": [
-        "Переглянути безпеку облікового запису"
       ],
       "Revoke": [
         "Відкликати"
@@ -6950,6 +6944,12 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також мітки, які ви бажаєте імпортувати."
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Створити захищену хмару для користувача ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }",
+        "Створити захищену хмару для користувачів ${ n }"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Створюйте й керуйте підлеглими обліковими записами та призначайте їм поштові адреси у своєму власному домені."
       ],
@@ -7813,6 +7813,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Інші користувачі вашої організації бачитимуть вашу зайнятість. Подробиці подій не поширюються."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Наші попередження є запобіжними. Якщо ви не впізнаєте жодної із зазначених відомостей, можете сміливо ігнорувати це повідомлення."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Застарілий файл відновлення; оновіть для гарантії доступу до своїх даних"
@@ -9020,12 +9023,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Після входу ви будете перенаправлені на ${ destination }."
       ],
-      "You will lose access to Plus features on this date.": [
-        "З цієї дати ви втратите доступ до функцій Plus."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "З цієї дати ви втратите доступ до серверів і функцій Plus."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
       ],
@@ -9638,9 +9635,6 @@
       "5 minutes": [
         "5 хвилин"
       ],
-      "Account recovery": [
-        "Відновлення облікового запису"
-      ],
       "Account storage": [
         "Сховище облікового запису"
       ],
@@ -10058,9 +10052,6 @@
       "Folder location": [
         "Розташування теки"
       ],
-      "Folders and labels": [
-        "Теки й мітки"
-      ],
       "Font family": [
         "Сімейство шрифтів"
       ],
@@ -10168,9 +10159,6 @@
       ],
       "Mail Server (IMAP)": [
         "Поштовий сервер (IMAP)"
-      ],
-      "Mail settings": [
-        "Налаштування пошти"
       ],
       "Main": [
         "Головна"
@@ -10441,9 +10429,6 @@
       ],
       "Spam": [
         "Спам"
-      ],
-      "Spam and filters": [
-        "Спам і фільтри"
       ],
       "Starred": [
         "Із зірочкою"
@@ -12154,6 +12139,14 @@
         "Обраний вами тарифний план: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробна версія ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Використання вашого облікового запису"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Видалити обліковий запис?"
@@ -12172,14 +12165,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Передплатіть тарифний план та розблокуйте преміумфункції"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробна версія ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -15100,6 +15085,9 @@
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
       ],
+      "${ MAIL_APP_NAME } with automatic email forwarding": [
+        "${ MAIL_APP_NAME } з автоматичною переадресацією"
+      ],
       "${ MaxCalendars } calendar per user": [
         "${ MaxCalendars } календар на користувача",
         "${ MaxCalendars } календарі на користувача",
@@ -15154,6 +15142,9 @@
       "10 email addresses": [
         "10 адрес електронної пошти"
       ],
+      "2 users": [
+        "2 користувачі"
+      ],
       "20 email addresses per user": [
         "20 адрес е-пошти на користувача"
       ],
@@ -15192,6 +15183,9 @@
       ],
       "Custom schedule send and snooze times": [
         "Власний час запланованого надсилання та відкладення"
+      ],
+      "Desktop app and email client support (via IMAP)": [
+        "Підтримка додатків робочого стола та поштового клієнта (через IMAP)"
       ],
       "Direct contribution to our mission": [
         "Прямий внесок до нашої місії"
@@ -15481,6 +15475,9 @@
       ],
       "Import record deleted": [
         "Запис імпорту видалено"
+      ],
+      "Invitation rejected": [
+        "Запрошення відхилено"
       ],
       "Invitation sent": [
         "Запрошення надіслано"

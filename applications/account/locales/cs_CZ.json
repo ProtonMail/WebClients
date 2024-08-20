@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -649,9 +649,6 @@
       "Keep logo": [
         "Ponechat logo"
       ],
-      "Keep my Plus subscription": [
-        "Zachovat mé předplatné Plus"
-      ],
       "label emails as": [
         "označit e-maily jako"
       ],
@@ -885,9 +882,6 @@
       ],
       "Review": [
         "Zkontrolovat"
-      ],
-      "Review account security": [
-        "Zkontrolovat zabezpečení účtu"
       ],
       "Revoke": [
         "Zrušit"
@@ -9063,12 +9057,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Po přihlášení budete přesměrováni na adresu ${ destination }."
       ],
-      "You will lose access to Plus features on this date.": [
-        "K tomuto datu ztratíte přístup k Plus serverům a funkcím."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "K tomuto datu ztratíte přístup k Plus serverům a funkcím."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Potřebujete ${ BRAND_NAME } adresu pro používání ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
@@ -9681,9 +9669,6 @@
       "5 minutes": [
         "5 minut"
       ],
-      "Account recovery": [
-        "Obnovení účtu"
-      ],
       "Account storage": [
         "Prostor pro účet"
       ],
@@ -10101,9 +10086,6 @@
       "Folder location": [
         "Umístění složky"
       ],
-      "Folders and labels": [
-        "Složky a štítky"
-      ],
       "Font family": [
         "Rodina písma"
       ],
@@ -10211,9 +10193,6 @@
       ],
       "Mail Server (IMAP)": [
         "E-mailový server (IMAP)"
-      ],
-      "Mail settings": [
-        "Nastavení Mail"
       ],
       "Main": [
         "Hlavní"
@@ -10484,9 +10463,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Spam and filters": [
-        "Spam a filtry"
       ],
       "Starred": [
         "S hvězdičkou"
@@ -12203,6 +12179,14 @@
         "Váš vybraný tarif: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -12221,14 +12205,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {

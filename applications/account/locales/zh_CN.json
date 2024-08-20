@@ -61,11 +61,11 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -580,9 +580,6 @@
       "Keep": [
         "保留"
       ],
-      "Keep my Plus subscription": [
-        "保留 Plus 订阅"
-      ],
       "label emails as": [
         "给邮件加标签"
       ],
@@ -804,9 +801,6 @@
       ],
       "Review": [
         "评论"
-      ],
-      "Review account security": [
-        "检查账户安全"
       ],
       "Revoke": [
         "吊销"
@@ -7650,12 +7644,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "登录后您将被重定向到 ${ destination } 。"
       ],
-      "You will lose access to Plus features on this date.": [
-        "您将在此日期失去访问 Plus 功能的权限。"
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "您将在此日期失去访问 Plus 功能的权限。"
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "使用 ${ MAIL_APP_NAME } 和 ${ CALENDAR_APP_NAME } 还需注册 ${ BRAND_NAME } 邮箱地址"
       ],
@@ -8192,9 +8180,6 @@
       "5 minutes": [
         "5 分钟"
       ],
-      "Account recovery": [
-        "账户恢复"
-      ],
       "Account storage": [
         "账户存储空间"
       ],
@@ -8584,9 +8569,6 @@
       ],
       "Folder location": [
         "文件夹位置"
-      ],
-      "Folders and labels": [
-        "标签与文件夹"
       ],
       "Font family": [
         "字体"
@@ -10335,6 +10317,14 @@
         "您所选的账户等级：${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -10353,14 +10343,6 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {

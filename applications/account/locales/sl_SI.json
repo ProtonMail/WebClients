@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -630,9 +630,6 @@
       ],
       "Keep logo": [
         "Ohrani logotip"
-      ],
-      "Keep my Plus subscription": [
-        "Ohrani mojo Plus naročnino."
       ],
       "label emails as": [
         "označi e-pošto kot"
@@ -8578,12 +8575,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Po prijavi boste preusmerjeni na ${ destination }."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Dostop do funkcij Plus boste izgubili na ta datum."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Dostop do strežnikov in funkcij Plus boste izgubili na ta datum."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Za uporabo aplikacij ${ MAIL_APP_NAME } in ${ CALENDAR_APP_NAME } boste potrebovali naslov ${ BRAND_NAME }."
       ],
@@ -9175,9 +9166,6 @@
       "5 minutes": [
         "5 minut"
       ],
-      "Account recovery": [
-        "Obnovitev računa"
-      ],
       "Account storage": [
         "Shramba računa"
       ],
@@ -9592,9 +9580,6 @@
       "Folder location": [
         "Mesto mape"
       ],
-      "Folders and labels": [
-        "Mape in oznake"
-      ],
       "Font family": [
         "Družina pisave"
       ],
@@ -9693,9 +9678,6 @@
       ],
       "Mail Server (IMAP)": [
         "Poštni strežnik (IMAP)"
-      ],
-      "Mail settings": [
-        "Nastavitve e-pošte"
       ],
       "Main": [
         "Glavno"
@@ -11616,6 +11598,14 @@
         "Izbrali ste: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -11634,14 +11624,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Omogočite premijske funkcije z nadgradnjo računa"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {

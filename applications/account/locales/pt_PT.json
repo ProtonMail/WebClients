@@ -55,11 +55,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -609,9 +609,6 @@
       ],
       "Keep logo": [
         "Manter o logo"
-      ],
-      "Keep my Plus subscription": [
-        "Manter a minha subscrição Plus"
       ],
       "label emails as": [
         "etiquetar e-mail como"
@@ -7946,12 +7943,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Irá ser redirecionado para ${ destination } após iniciar sessão."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Perderá o acesso a funcionalidades Plus nesta data."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Nesta data, perderá o acesso a servidores e funcionalidades Plus."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Precisará de um endereço da ${ BRAND_NAME } para usar o ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
@@ -8496,9 +8487,6 @@
       "5 minutes": [
         "5 minutos"
       ],
-      "Account recovery": [
-        "Recuperação da conta"
-      ],
       "Account storage": [
         "Armazenamento da conta"
       ],
@@ -8904,9 +8892,6 @@
       "Folder location": [
         "Localização da pasta"
       ],
-      "Folders and labels": [
-        "Pastas e etiquetas"
-      ],
       "Font family": [
         "Família de letras"
       ],
@@ -9005,9 +8990,6 @@
       ],
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
-      ],
-      "Mail settings": [
-        "Definições do Mail"
       ],
       "Main": [
         "Principal"
@@ -9254,9 +9236,6 @@
       ],
       "Spam": [
         "Spam"
-      ],
-      "Spam and filters": [
-        "Spam e filtros"
       ],
       "Starred": [
         "Com estrela"
@@ -10739,6 +10718,14 @@
         "O seu plano selecionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminar conta?"
@@ -10757,14 +10744,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
