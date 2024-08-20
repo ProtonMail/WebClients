@@ -2,7 +2,9 @@ import type { ReactNode } from 'react';
 import { createContext, useContext, useRef } from 'react';
 
 import { generateUID, useApi, useEventManager } from '@proton/components';
+import metrics from '@proton/metrics';
 import { queryLatestVolumeEvent, queryVolumeEvents } from '@proton/shared/lib/api/drive/volume';
+import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -11,6 +13,7 @@ import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/even
 
 import { logError } from '../../utils/errorHandling';
 import { driveEventsResultToDriveEvents } from '../_api';
+import type { VolumeType } from '../_shares';
 import type { EventHandler } from './interface';
 
 const DRIVE_EVENT_HANDLER_ID_PREFIX = 'drive-event-handler';
@@ -38,11 +41,51 @@ const DRIVE_EVENT_MANAGER_FUNCTIONS_STUB = {
     },
 };
 
+function countEventsPerType(type: VolumeType, driveEvents: DriveEventsResult) {
+    if (!driveEvents.Events) {
+        return;
+    }
+
+    metrics.drive_sync_event_total.increment(
+        {
+            volumeType: type,
+            eventType: 'update',
+        },
+        driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.UPDATE).length
+    );
+
+    metrics.drive_sync_event_total.increment(
+        {
+            volumeType: type,
+            eventType: 'update_metadata',
+        },
+        driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.UPDATE_METADATA).length
+    );
+
+    metrics.drive_sync_event_total.increment(
+        {
+            volumeType: type,
+            eventType: 'delete',
+        },
+        driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.DELETE).length
+    );
+
+    metrics.drive_sync_event_total.increment(
+        {
+            volumeType: type,
+            eventType: 'create',
+        },
+        driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.CREATE).length
+    );
+}
+
 export function useDriveEventManagerProvider(api: Api, generalEventManager: EventManager) {
     const eventHandlers = useRef(new Map<string, EventHandler>());
     const eventManagers = useRef(new Map<string, EventManager>());
 
-    const genericHandler = (volumeId: string, driveEvents: DriveEventsResult) => {
+    const genericHandler = (volumeId: string, type: VolumeType, driveEvents: DriveEventsResult) => {
+        countEventsPerType(type, driveEvents);
+
         if (!driveEvents.Events?.length) {
             return;
         }
@@ -76,9 +119,9 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     /**
      * Creates event manager for a specified volume and starts interval polling of event.
      */
-    const subscribeToVolume = async (volumeId: string) => {
+    const subscribeToVolume = async (volumeId: string, type: VolumeType) => {
         const eventManager = await createVolumeEventManager(volumeId);
-        eventManager.subscribe((payload: DriveEventsResult) => genericHandler(volumeId, payload));
+        eventManager.subscribe((payload: DriveEventsResult) => genericHandler(volumeId, type, payload));
         eventManagers.current.set(volumeId, eventManager);
     };
 
@@ -86,9 +129,9 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
      * Creates an event manager for a specified volume if doesn't exist,
      * and starts event polling
      */
-    const startVolumeSubscription = async (volumeId: string) => {
+    const startVolumeSubscription = async (volumeId: string, type: VolumeType) => {
         if (!eventManagers.current.get(volumeId)) {
-            await subscribeToVolume(volumeId);
+            await subscribeToVolume(volumeId, type);
         }
         eventManagers.current.get(volumeId)!.start();
     };
