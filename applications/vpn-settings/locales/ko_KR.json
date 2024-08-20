@@ -202,11 +202,17 @@
       "Disable": [
         "비활성화"
       ],
+      "Disable E2EE group mail encryption": [
+        "E2EE 그룹 메일 암호화 비활성화"
+      ],
       "Discard": [
         "저장 안함"
       ],
       "Discard changes": [
         "변경사항 취소"
+      ],
+      "Domain names": [
+        "도메인 이름"
       ],
       "Done": [
         "완료"
@@ -273,6 +279,9 @@
       ],
       "enable desktop notifications": [
         "데스크톱 알림을 활성화"
+      ],
+      "Enable E2EE group mail encryption": [
+        "E2EE 그룹 메일 암호화 활성화"
       ],
       "Enable multi-user support": [
         "다중 사용자 지원 활성화"
@@ -349,9 +358,6 @@
       "Keep logo": [
         "로고 유지"
       ],
-      "Keep my Plus subscription": [
-        "나의 Plus 구독 유지"
-      ],
       "Let's talk": [
         "상담 및 계약 필요"
       ],
@@ -360,6 +366,9 @@
       ],
       "Loading verification": [
         "인증 정보 불러오는 중"
+      ],
+      "Lost access to your 2FA device?": [
+        "2FA 장치에 대한 액세스 권한을 분실하셨나요?"
       ],
       "Make admin": [
         "관리자 생성"
@@ -3381,6 +3390,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "${ VPN_APP_NAME } 을 위한 +${ organization.BonusVPN } 연결 (더 많은 기기를 VPN에 연결할 수 있습니다)"
       ],
+      "2FA disabled": [
+        "2FA 비활성화됨"
+      ],
       "30-day money-back guarantee": [
         "30일 이내 환불 보장"
       ],
@@ -3446,6 +3458,9 @@
       ],
       "All Events ": [
         "모든 이벤트 "
+      ],
+      "All members have been added.": [
+        "모든 멤버가 추가되었습니다"
       ],
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
@@ -3633,6 +3648,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount }개 게이트웨이 서버 삭제 중"
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "2단계 인증을 비활성화하면 계정의 보안이 약해집니다. 꼭 필요한 경우에만 진행하세요."
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
       ],
@@ -3794,6 +3812,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "인증 제공자 페이지 이동 후, ${ appName }에 사용할 SAML 메타데이터를 받은 뒤 여기에 불러오세요."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "그룹 주소는 사용자 정의 도메인에 대해서만 만들 수 있습니다. 사용자 지정 도메인을 추가하려면 ${ linkToDomainPage } 페이지로 이동합니다."
       ],
       "here": [
         "여기"
@@ -4491,6 +4512,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "이 인증은 최대 한 시간까지 걸릴 수 있습니다. 인증이 성공한 뒤에도 TXT 레코드는 도메인을 계속 소유하고 있음을 인증하기 위해 필요하므로 삭제하지 마십시오."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "이렇게 하면 인증 앱과 보안 키 방법을 모두 포함한 2단계 인증이 비활성화됩니다."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "이렇게 하면 PayPal을 사용하여 Proton 구독 비용을 지불할 수 있습니다. 새 브라우저 탭에서 ${ BRAND_NAME } 로 리디렉션합니다. 팝업 차단기를 사용하는 경우 계속하려면 팝업 차단기를 비활성화하십시오."
       ],
@@ -4610,6 +4634,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "조직의 로고를 업로드하여 브랜드 아이덴티티를 높이고 사용자 개개인에 맞는 경험을 제공하세요."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "복구 방법을 사용하여 2단계 인증 방법을 비활성화할 수 있습니다."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "현재 로드 및 위치에 따라 최상의 서버 사용: ${ formattedBestServerName }"
@@ -4869,12 +4896,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
       ],
-      "You will lose access to Plus features on this date.": [
-        "오늘 부터 Plus 기능을 잃게 됩니다."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "오늘 부터 Plus 서버 및 기능들에 접근할 수 없게 됩니다."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME } 을(를) 사용하려면 ${ BRAND_NAME } 주소가 필요합니다."
       ],
@@ -5077,6 +5098,12 @@
       ],
       "Account storage": [
         "계정 저장공간"
+      ],
+      "Add all organization members": [
+        "모든 조직 구성원 추가"
+      ],
+      "Add group member": [
+        "그룹 구성원 추가"
       ],
       "Address": [
         "주소"
@@ -6207,9 +6234,6 @@
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }의 프리미엄 기능을 사용할 수 있습니다."
-      ],
       "Priority email support": [
         "이메일 우선 지원"
       ],
@@ -6353,9 +6377,6 @@
       ],
       "Vault sharing (up to ${ n } person)": [
         "금고 공유 (최대 ${ n }명)"
-      ],
-      "Version history": [
-        "버전 기록"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
@@ -6800,6 +6821,9 @@
       "An external address cannot be default": [
         "외부 주소를 기본으로 할 수 없음"
       ],
+      "Downloaded 2FA recovery codes": [
+        "다운로드한 2FA 복구 코드"
+      ],
       "Invalid code": [
         "잘못된 코드입니다."
       ],
@@ -6910,6 +6934,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "모두"
+      ],
+      "Group members": [
+        "그룹 구성원"
+      ],
+      "No one": [
+        "아무도"
       ]
     },
     "Organization capacity error": {
@@ -8374,6 +8409,9 @@
       "1 email address": [
         "이메일 주소 1개"
       ],
+      "1 email address per user": [
+        "사용자당 이메일 주소 1개"
+      ],
       "1 VPN connection": [
         "1 VPN 연결"
       ],
@@ -9345,6 +9383,9 @@
       ],
       "Disable two-factor authentication": [
         "이중 인증 비활성화"
+      ],
+      "Disable two-factor authentication?": [
+        "이중 인증 비활성화?"
       ],
       "Discard changes?": [
         "변경 사항을 취소할까요?"

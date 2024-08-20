@@ -202,11 +202,17 @@
       "Disable": [
         "Kapat"
       ],
+      "Disable E2EE group mail encryption": [
+        "E2EE grup e-postası şifrelemesini kapat"
+      ],
       "Discard": [
         "Sil"
       ],
       "Discard changes": [
         "Değişiklileri yok say"
+      ],
+      "Domain names": [
+        "Etki alanı adları"
       ],
       "Done": [
         "Tamam"
@@ -273,6 +279,9 @@
       ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini açmak"
+      ],
+      "Enable E2EE group mail encryption": [
+        "E2EE grup e-postası şifrelemesini aç"
       ],
       "Enable multi-user support": [
         "Çok kullanıcı desteğini aç"
@@ -349,9 +358,6 @@
       "Keep logo": [
         "Logoyu tut"
       ],
-      "Keep my Plus subscription": [
-        "Plus aboneliğimi koru"
-      ],
       "Let's talk": [
         "Hadi konuşalım!"
       ],
@@ -360,6 +366,9 @@
       ],
       "Loading verification": [
         "Doğrulama yükleniyor"
+      ],
+      "Lost access to your 2FA device?": [
+        "İki adımlı doğrulama aygıtınıza erişemiyor musunuz?"
       ],
       "Make admin": [
         "Yönetici yap"
@@ -3413,6 +3422,9 @@
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
+      "2FA disabled": [
+        "İki adımlı doğrulama kapalı"
+      ],
       "30-day money-back guarantee": [
         "30 gün içinde ücreti geri ödeme garantisi"
       ],
@@ -3482,6 +3494,9 @@
       ],
       "All Events ": [
         "Tüm etkinlikler "
+      ],
+      "All members have been added.": [
+        "Tüm üyeler eklendi."
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
@@ -3672,6 +3687,9 @@
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
         "${ deletedServerCount } ağ geçidi sunucusu siliniyor"
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "İki adımlı doğrulamayı kapatmak hesabınızın güvenliğini azaltacak. Bu işlemi yalnızca gerçekten gerekliyse yapın."
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
       ],
@@ -3834,6 +3852,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Kimlik hizmeti sağlayıcınıza gidin, ${ appName } için SAML üst verileri alın ve buradan içe aktarın."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Grup adresleri yalnızca özel etki alanları için oluşturulabilir. Özel bir etki alanı eklemek için ${ linkToDomainPage } bölümüne gidin."
       ],
       "here": [
         "buraya"
@@ -4534,6 +4555,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Doğrulama işleminin tamamlanması bir saat kadar sürebilir. Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Bu işlem iki adımlı doğrulamayı kapatacak. Kimlik doğrulama uygulaması ve güvenlik anahtarı yöntemleri kullanılamayacak."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Bu seçenek, ${ BRAND_NAME } aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için onu kapatın."
       ],
@@ -4653,6 +4677,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Marka kimliğinizi güçlendirmek ve kullanıcılarınız için kişiselleştirilmiş bir deneyim oluşturmak için kuruluşunuzun logosunu yükleyin."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "İki adımlı doğrulama yöntemlerini kapatmak için bir kurtarma yöntemi kullanın."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Güncel yük ve konuma göre en iyi sunucuyu kullanın: ${ formattedBestServerName }"
@@ -4919,12 +4946,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Oturum açtıktan sonra ${ destination } sayfasına yönlendirileceksiniz."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Bu tarihte Plus özelliklerine erişiminizi kaybedeceksiniz."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Bu tarihte Plus sunucularına ve özelliklerine erişiminizi kaybedeceksiniz."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } kullanmak için bir ${ BRAND_NAME } adresiniz olmalıdır"
       ],
@@ -5130,6 +5151,12 @@
       ],
       "Account storage": [
         "Hesap depolama alanı"
+      ],
+      "Add all organization members": [
+        "Tüm kuruluş üyelerini ekle"
+      ],
+      "Add group member": [
+        "Grup üyesi ekle"
       ],
       "Address": [
         "Adres"
@@ -6273,9 +6300,6 @@
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Ücretli ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME } özellikleri"
-      ],
       "Priority email support": [
         "Öncelikli e-posta desteği"
       ],
@@ -6423,9 +6447,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Kasa paylaşma (${ n } kişiye kadar)",
         "Kasa paylaşma (${ n } kişiye kadar)"
-      ],
-      "Version history": [
-        "Sürüm geçmişi"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını kontrol etmek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -6872,6 +6893,9 @@
       "An external address cannot be default": [
         "Bir dış adres varsayılan olamaz"
       ],
+      "Downloaded 2FA recovery codes": [
+        "İki adımlı doğrulama kodları indirildi"
+      ],
       "Invalid code": [
         "Kod geçersiz"
       ],
@@ -6961,6 +6985,17 @@
       ],
       "The whole organization": [
         "Tüm kuruluş"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Herkes"
+      ],
+      "Group members": [
+        "Grup üyeleri"
+      ],
+      "No one": [
+        "Hiç kimse"
       ]
     },
     "Organization capacity error": {
@@ -8466,6 +8501,9 @@
       "1 email address": [
         "1 e-posta adresi"
       ],
+      "1 email address per user": [
+        "Her kullanıcı için 1 e-posta adresi"
+      ],
       "1 VPN connection": [
         "1 VPN bağlantısı"
       ],
@@ -9447,6 +9485,9 @@
       ],
       "Disable two-factor authentication": [
         "İki adımlı doğrulamayı kapat"
+      ],
+      "Disable two-factor authentication?": [
+        "İki adımlı doğrulama kapatılsın mı?"
       ],
       "Discard changes?": [
         "Değişiklikler silinsin mi?"

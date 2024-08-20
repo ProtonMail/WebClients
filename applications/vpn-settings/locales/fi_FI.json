@@ -202,11 +202,17 @@
       "Disable": [
         "Poista käytöstä"
       ],
+      "Disable E2EE group mail encryption": [
+        "Poista ryhmäpostien päästä päähän -salaus käytöstä"
+      ],
       "Discard": [
         "Hylkää"
       ],
       "Discard changes": [
         "Hylkää muutokset"
+      ],
+      "Domain names": [
+        "Verkkotunnukset"
       ],
       "Done": [
         "Valmis"
@@ -273,6 +279,9 @@
       ],
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
+      ],
+      "Enable E2EE group mail encryption": [
+        "Ota ryhmäsähköpostien päästä päähän -salaus käyttöön"
       ],
       "Enable multi-user support": [
         "Ota usean käyttäjän tuki käyttöön"
@@ -349,9 +358,6 @@
       "Keep logo": [
         "Säilytä logo"
       ],
-      "Keep my Plus subscription": [
-        "Säilytä Plus-tilaukseni"
-      ],
       "Let's talk": [
         "Keskustellaan"
       ],
@@ -360,6 +366,9 @@
       ],
       "Loading verification": [
         "Ladataan vahvistusta"
+      ],
+      "Lost access to your 2FA device?": [
+        "Menetitkö pääsyn 2FA-laitteeseesi?"
       ],
       "Make admin": [
         "Määritä ylläpitäjäksi"
@@ -3413,6 +3422,9 @@
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteyttä (mahdollistaa VPN-yhteyden useammalla laitteella)"
       ],
+      "2FA disabled": [
+        "2FA poistettu käytöstä"
+      ],
       "30-day money-back guarantee": [
         "30 päivän rahat takaisin -takuu"
       ],
@@ -3482,6 +3494,9 @@
       ],
       "All Events ": [
         "Kaikki tapahtumat"
+      ],
+      "All members have been added.": [
+        "Kaikki jäsenet on lisätty."
       ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
@@ -3586,7 +3601,7 @@
         "Jos poistut nyt, muutoksia ei tallenneta"
       ],
       "Can’t access your recovery email?": [
-        "Etkö voi käyttää palautussähköpostiasi?"
+        "Etkö voi käyttää palautusosoitettasi?"
       ],
       "Can’t access your recovery phone?": [
         "Etkö voi käyttää palautuspuhelintasi?"
@@ -3671,6 +3686,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta",
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Kaksivaiheisen tunnistautumisen käytöstä poistaminen heikentää tilisi suojausta. Jatka vain, jos se on välttämätöntä."
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy -logo"
@@ -3834,6 +3852,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Mene identiteetinhallintaasi noutamaan ${ appName } SAML metadata ja tuo se tähän."
+      ],
+      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
+        "Ryhmäosoitteita voidaan luoda vain omille verkkotunnuksille. Siirry sivustolle ${ linkToDomainPage } lisätäksesi oman verkkotunnuksen."
       ],
       "here": [
         "tässä"
@@ -4534,6 +4555,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Tämä vahvistus voi kestää jopa tunnin. Älä poista TXT-tietuetta onnistuneen vahvistuksen jälkeen, koska sitä tarvitaan vahvistamaan, että omistat verkkotunnuksen myös jatkossa."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Tämä poistaa käytöstä kaksivaiheisen todennuksen, mukaan lukien sekä todennussovelluksen että suojausavainmenetelmät."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Tämän avulla voit maksaa ${ BRAND_NAME }-tilauksesi PayPalilla. Ohjaamme sinut PayPaliin uudessa selaimen välilehdessä. Jos käytät jotakin ponnahdusestoa, poista se käytöstä jatkaaksesi."
       ],
@@ -4653,6 +4677,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Lisää organisaatiosi logo, jotta voit vahvistaa brändisi identiteettiä ja tarjota käyttäjillesi mukautetun käyttökokemuksen."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Poista kaksivaiheinen tunnistautuminen käytöstä palautustapaa käyttämällä."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Käytä nykyisen kuormituksen ja sijainnin perusteella parasta palvelinta: ${ formattedBestServerName }"
@@ -4919,12 +4946,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
       ],
-      "You will lose access to Plus features on this date.": [
-        "Menetät pääsyn Plus-ominaisuuksiin tänä päivänä."
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "Menetät pääsyn Plus-palvelimiin ja -ominaisuuksiin tänä päivänä."
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Tarvitset ${ BRAND_NAME }-osoitteen käyttääksesi ${ MAIL_APP_NAME } ja ${ CALENDAR_APP_NAME } -palveluita"
       ],
@@ -5130,6 +5151,12 @@
       ],
       "Account storage": [
         "Tilin tallennustila"
+      ],
+      "Add all organization members": [
+        "Lisää kaikki organisaation jäsenet"
+      ],
+      "Add group member": [
+        "Lisää ryhmän jäsen"
       ],
       "Address": [
         "Osoite"
@@ -6273,9 +6300,6 @@
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
       ],
-      "Premium features of ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }": [
-        "Premium-ominaisuudet: ${ MAIL_SHORT_APP_NAME }/${ CALENDAR_SHORT_APP_NAME }/${ VPN_SHORT_APP_NAME }/${ DRIVE_SHORT_APP_NAME }/${ PASS_SHORT_APP_NAME }"
-      ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
       ],
@@ -6423,9 +6447,6 @@
       "Vault sharing (up to ${ n } person)": [
         "Holvin jakaminen (enintään ${ n } henkilö)",
         "Holvin jakaminen (enintään ${ n } henkilöä)"
-      ],
-      "Version history": [
-        "Versiohistoria"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
@@ -6872,6 +6893,9 @@
       "An external address cannot be default": [
         "Ulkoinen osoite ei voi olla oletusosoite"
       ],
+      "Downloaded 2FA recovery codes": [
+        "Lataa 2FA-palautuskoodit"
+      ],
       "Invalid code": [
         "Virheellinen koodi"
       ],
@@ -6961,6 +6985,17 @@
       ],
       "The whole organization": [
         "Koko organisaatio"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Kaikki"
+      ],
+      "Group members": [
+        "Ryhmän jäsenet"
+      ],
+      "No one": [
+        "Ei ketään"
       ]
     },
     "Organization capacity error": {
@@ -7100,7 +7135,7 @@
         "Pysyvästi ilmainen"
       ],
       "Get in touch with our sales team": [
-        "Ota yhteyttä myyntitiimiimme"
+        "Ota yhteyttä myyntiimme"
       ],
       "Includes:": [
         "Sisältää:"
@@ -7225,10 +7260,10 @@
         "Ota tilisi ylläpitäjän oikeudet käyttöön aktivoimalla organisaatioavain."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Palauta ylläpitäjän oikeudet käyttämällä tietojen palautusmenetelmää tai nollaamalla organisaation avain."
+        "Käytä palautustapaa tai nollaa organisaation avain ylläpitäjän oikeuksien palauttamiseksi."
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Palauta ylläpitäjän oikeudet käyttämällä tietojen palautusmenetelmää, ottamalla yhteyttä toiseen ylläpitäjään tai nollaamalla organisaation avain."
+        "Käytä palautustapaa, ota yhteyttä toiseen ylläpitäjään tai nollaa organisaation avain ylläpitäjän oikeuksien palauttamiseksi."
       ],
       "We couldn't verify authenticity of this identity.": [
         "Emme voineet vahvistaa tämän identiteetin aitoutta."
@@ -7470,7 +7505,7 @@
     },
     "plan customizer, ips": {
       "please ${ contactHref } our Sales team.": [
-        "${ contactHref } myyntitiimiimme."
+        "${ contactHref } myyntiimme."
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Valitse tilauksesi sisältyvien IP-osoitteiden määrä. Jokainen lisäosoite maksaa ${ price }."
@@ -8466,6 +8501,9 @@
       "1 email address": [
         "1 sähköpostiosoite"
       ],
+      "1 email address per user": [
+        "1 sähköpostiosoite per käyttäjä"
+      ],
       "1 VPN connection": [
         "1 VPN-yhteys"
       ],
@@ -9448,6 +9486,9 @@
       "Disable two-factor authentication": [
         "Poista kaksivaiheinen tunnistautuminen käytöstä"
       ],
+      "Disable two-factor authentication?": [
+        "Poista kaksivaiheinen tunnistautuminen käytöstä?"
+      ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
       ],
@@ -10079,7 +10120,7 @@
     },
     "Users table: badge": {
       "2FA": [
-        "Kaksivaiheinen tunnistautuminen"
+        "2FA"
       ],
       "Administrators can't access the data of private users": [
         "Ylläpitäjät eivät pääse käsiksi yksityisten käyttäjien tietoihin"
