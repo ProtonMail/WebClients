@@ -976,6 +976,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Pri spúšťaní ${ PASS_SHORT_APP_NAME } sa vyskytla chyba. Ak bude tento problém pretrvávať, kontaktuje našu zákaznícku podporu, prosím."
       ],
+      "Wrong extra password": [
+        "Nesprávne dodatočné heslo"
+      ],
       "Wrong password": [
         "Nesprávne heslo"
       ],
@@ -1136,9 +1139,6 @@
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zobrazí webové ikony položiek prostredníctvom anonymizovaného ${ BRAND_NAME } proxy servera."
-      ],
-      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
-        "${ PASS_APP_NAME } naimportuje len prihlasovacie údaje, poznámky a platobné karty."
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } bude vyžadovať vaše ${ BRAND_NAME } heslo na prístup k údajom offline."
@@ -1620,6 +1620,12 @@
       "Please confirm your extra password": [
         "Potvrďte vaše dodatočné heslo, prosím"
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Pre automatické uzamknutie pomocou dodatočného hesla potvrďte svoje dodatočné heslo, prosím."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Pre aktualizovanie času automatického uzamknutia potvrďte svoje dodatočné heslo, prosím."
+      ],
       "Please confirm your password": [
         "Potvrďte vaše heslo, prosím"
       ],
@@ -1928,6 +1934,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informácie boli nájdené dňa ${ displayedDate }"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
