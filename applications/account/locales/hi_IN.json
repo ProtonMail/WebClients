@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -624,9 +624,6 @@
       ],
       "Keep logo": [
         "चिन्ह रखें"
-      ],
-      "Keep my Plus subscription": [
-        "मेरी प्लस सदस्यता को बनाए रखें"
       ],
       "label emails as": [
         "ईमेल को लेबल करें"
@@ -7949,12 +7946,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "साइन इन के बाद आपको ${ destination } पर पुनःनिर्देशित किया जाएगा।"
       ],
-      "You will lose access to Plus features on this date.": [
-        "आप इस तिथि पर प्लस सुविधाओं तक पहुंच खो देंगे।"
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "आप इस तिथि पर प्लस सर्वर और सुविधाओं तक पहुंच खो देंगे।"
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "आपको एक ${ BRAND_NAME } पते कि जरूरत होगी ${ MAIL_APP_NAME } और ${ CALENDAR_APP_NAME } का इस्तेमाल करने के लिए।"
       ],
@@ -8913,9 +8904,6 @@
       "Folder location": [
         "फ़ोल्डर स्थान"
       ],
-      "Folders and labels": [
-        "फ़ोल्डर्स और लेबल"
-      ],
       "Font family": [
         "फ़ॉन्ट परिवार"
       ],
@@ -9011,9 +8999,6 @@
       ],
       "Mail Server (IMAP)": [
         "मेल सर्वर (IMAP)"
-      ],
-      "Mail settings": [
-        "Mail सेटिंग"
       ],
       "Main": [
         "मुख्‍य"
@@ -10688,6 +10673,14 @@
         "आपकी चुनी हुई योजना: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -10706,14 +10699,6 @@
       ],
       "Unlock premium features by upgrading": [
         "अपग्रेड करके प्रीमियम सुविधाओं का लाभ उठाएँ"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {

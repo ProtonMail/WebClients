@@ -67,11 +67,11 @@
       "Accept": [
         "承認する"
       ],
-      "Activate": [
-        "有効化"
-      ],
       "activate": [
         "有効にする"
+      ],
+      "Activate": [
+        "有効化"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
@@ -108,6 +108,9 @@
       ],
       "Add domain": [
         "ドメインを追加"
+      ],
+      "Add email address": [
+        "メールアドレスを追加"
       ],
       "Add filter": [
         "フィルターを追加"
@@ -150,6 +153,9 @@
       ],
       "Allow": [
         "許可"
+      ],
+      "Always allow sending mail to group": [
+        "グループへのメール送信を常に許可する"
       ],
       "Apply": [
         "適用"
@@ -376,6 +382,9 @@
       "Disable": [
         "無効にする"
       ],
+      "Disable E2EE group mail encryption": [
+        "E2EE グループメール暗号化を無効にする"
+      ],
       "Disable recovery phrase": [
         "回復用フレーズを無効にする"
       ],
@@ -384,6 +393,12 @@
       ],
       "Discard": [
         "破棄"
+      ],
+      "Discard changes": [
+        "変更を破棄"
+      ],
+      "Domain names": [
+        "ドメイン名"
       ],
       "Don't show again": [
         "次回から表示しない"
@@ -471,6 +486,12 @@
       ],
       "enable desktop notifications": [
         "デスクトップ通知を有効にする"
+      ],
+      "Enable device-based recovery": [
+        "デバイスベースの回復を有効にする"
+      ],
+      "Enable E2EE group mail encryption": [
+        "E2EE グループメール暗号化を有効にする"
       ],
       "Enable multi-user support": [
         "複数ユーザー対応を有効にする"
@@ -627,9 +648,6 @@
       ],
       "Keep logo": [
         "ロゴを維持"
-      ],
-      "Keep my Plus subscription": [
-        "Plus サブスクリプションを維持する"
       ],
       "label emails as": [
         "メールにラベル付け"
@@ -1060,6 +1078,12 @@
       "Switch or add account": [
         "アカウントを切り替え・追加"
       ],
+      "Test": [
+        "テスト"
+      ],
+      "Test SAML configuration": [
+        "SAML 構成をテスト"
+      ],
       "Top up": [
         "チャージ"
       ],
@@ -1137,6 +1161,9 @@
       ],
       "Use authentication code": [
         "認証コードを使用"
+      ],
+      "Use group sending permissions": [
+        "グループ送信権限を使用する"
       ],
       "Use recovery code": [
         "回復用コードを使用"
@@ -1394,6 +1421,15 @@
       ]
     },
     "Assistant option": {
+      "Data stay on your device but requires a one-time download and compatible hardware": [
+        "データはデバイスに保存されます。一度限りのダウンロードと互換性のあるハードウェアが必要です。"
+      ],
+      "Fast and secure. No logs are kept.": [
+        "高速で安全です。ログは保持されません。"
+      ],
+      "Run on device": [
+        "デバイス上で実行"
+      ],
       "Run on servers": [
         "サーバー上で実行"
       ]
@@ -6167,6 +6203,9 @@
       "and": [
         "と"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "すべてのサブフォルダーも削除されます。このフォルダー「${ nameDeleted }」内のメールは削除されず、すべてのメールフォルダーで確認できます。"
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "このリンクを持っている人は誰でもタイトル、場所、参加者など、このカレンダーに登録されているすべての予定の詳細を見ることができます。"
       ],
@@ -6190,6 +6229,9 @@
       ],
       "Are you sure you want to delete this filter?": [
         "このフィルタを削除してもよろしいですか?"
+      ],
+      "Are you sure you want to delete this folder?": [
+        "このフォルダーを削除してよろしいですか？"
       ],
       "Are you sure you want to delete this group. The group address won't be working anymore.": [
         "このグループを削除してもよろしいですか？グループアドレスは機能しなくなります。"
@@ -8144,12 +8186,6 @@
       "You will be redirected to ${ destination } after signing in.": [
         "サインイン後、${ destination } にリダイレクトされます。"
       ],
-      "You will lose access to Plus features on this date.": [
-        "この日付で Plus 機能にアクセスできなくなります。"
-      ],
-      "You will lose access to Plus servers and features on this date.": [
-        "この日以降、Plus サーバーと機能にアクセスできなくなります。"
-      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
       ],
@@ -8714,9 +8750,6 @@
       "5 minutes": [
         "5分"
       ],
-      "Account recovery": [
-        "アカウントの回復"
-      ],
       "Account storage": [
         "アカウントの容量"
       ],
@@ -8725,6 +8758,9 @@
       ],
       "Activity": [
         "アクティビティ"
+      ],
+      "Add group member": [
+        "グループメンバーを追加"
       ],
       "Address": [
         "メールアドレス"
@@ -9127,9 +9163,6 @@
       ],
       "Folder location": [
         "フォルダーの場所"
-      ],
-      "Folders and labels": [
-        "フォルダーとラベル"
       ],
       "Font family": [
         "フォントファミリー"
@@ -10972,6 +11005,14 @@
         "選択中のプラン: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -10990,14 +11031,6 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -12568,6 +12601,65 @@
       ],
       "User": [
         "ユーザー"
+      ]
+    },
+    "Safety review": {
+      "Account safety review": [
+        "アカウント安全性レビュー"
+      ],
+      "Add a recovery email address": [
+        "回復用メールアドレスを追加"
+      ],
+      "Add a recovery phone number": [
+        "回復用電話番号を追加"
+      ],
+      "Back to Safety Review": [
+        "安全性レビューに戻る"
+      ],
+      "Device-based recovery enabled": [
+        "デバイスベースの回復が有効になりました"
+      ],
+      "Enable device-based recovery": [
+        "デバイスベースの回復を有効にする"
+      ],
+      "Enable recovery by email": [
+        "メールアドレスでの回復を有効にする"
+      ],
+      "Enable recovery by phone": [
+        "電話番号での回復を有効にする"
+      ],
+      "to recover your account and data if you're ever locked out": [
+        "締め出された場合にアカウントとデータを回復するために"
+      ],
+      "to recover your account if you're ever locked out": [
+        "締め出された場合にアカウントを回復するために"
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "パスワードを忘れた場合、回復用メールアドレスを使用してアカウントへのアクセスを回復できます。"
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "パスワードを忘れた場合、回復用電話番号を使用してアカウントへのアクセスを回復できます。"
+      ],
+      "You have recommended actions.": [
+        "推奨されるアクションがあります。"
+      ],
+      "You recovery email address is:": [
+        "回復用メールアドレス:"
+      ],
+      "You recovery phone number is:": [
+        "回復用電話番号:"
+      ],
+      "Your recovery email": [
+        "回復用メールアドレス"
+      ],
+      "Your recovery email has been enabled": [
+        "回復用メールアドレスが有効になりました"
+      ],
+      "Your recovery phone": [
+        "回復用フレーズ"
+      ],
+      "Your recovery phone has been enabled": [
+        "回復用電話番号が有効になりました"
       ]
     },
     "saml: Action": {
@@ -14364,6 +14456,9 @@
       "Couldn’t create accounts": [
         "アカウントの作成に失敗しました"
       ],
+      "Coupon": [
+        "クーポン"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } ユーザーを作成します"
       ],
@@ -14724,6 +14819,9 @@
       "Import failed": [
         "インポートに失敗"
       ],
+      "Import groups": [
+        "グループをインポート"
+      ],
       "Import key": [
         "インポートキー"
       ],
@@ -14870,6 +14968,9 @@
       ],
       "Privacy and data collection": [
         "プライバシーとデータ収集"
+      ],
+      "Privacy and security": [
+        "プライバシーとセキュリティ"
       ],
       "Processing...": [
         "処理中..."
@@ -15047,6 +15148,9 @@
       ],
       "Sort labels alphabetically": [
         "ラベルをアルファベット順に並べ替える"
+      ],
+      "Spam filters": [
+        "迷惑メールフィルター"
       ],
       "Spam, block, and allow lists": [
         "迷惑メール・ブロックアドレス・許可アドレスリスト"
