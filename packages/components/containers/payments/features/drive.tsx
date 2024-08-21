@@ -137,14 +137,22 @@ export const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     };
 };
 
-export const getVersionHistory = (options?: 'generic' | 30 | 365): PlanCardFeatureDefinition => {
-    if (options === 365 || options === 30) {
+export const getVersionHistory = (options?: 'generic' | 365 | '10y'): PlanCardFeatureDefinition => {
+    if (options === 365) {
         return {
             text: c('new_plans: feature').ngettext(
                 msgid`${options}-day file version history`,
                 `${options}-day file version history`,
                 options
             ),
+            included: true,
+            icon: 'clock-rotate-left',
+        };
+    }
+
+    if (options === '10y') {
+        return {
+            text: c('new_plans: feature').t`10-year file version history`,
             included: true,
             icon: 'clock-rotate-left',
         };
@@ -278,23 +286,23 @@ export const getDriveFeatures = (plansMap: PlansMap, freePlan: FreePlanDefault):
             name: 'version-history',
             plans: {
                 [PLANS.FREE]: null,
-                [PLANS.BUNDLE]: getVersionHistory(),
-                [PLANS.MAIL]: null,
-                [PLANS.VPN]: null,
-                [PLANS.DRIVE]: getVersionHistory(),
+                [PLANS.BUNDLE]: getVersionHistory('10y'),
+                [PLANS.MAIL]: getVersionHistory(),
+                [PLANS.VPN]: getVersionHistory(),
+                [PLANS.DRIVE]: getVersionHistory('10y'),
                 [PLANS.DRIVE_BUSINESS]: getVersionHistory(365),
-                [PLANS.PASS]: null,
-                [PLANS.WALLET]: null,
-                [PLANS.FAMILY]: getVersionHistory(),
-                [PLANS.DUO]: getVersionHistory(),
-                [PLANS.MAIL_PRO]: getVersionHistory(30),
-                [PLANS.MAIL_BUSINESS]: getVersionHistory(30),
-                [PLANS.BUNDLE_PRO]: getVersionHistory(365),
-                [PLANS.BUNDLE_PRO_2024]: getVersionHistory(365),
-                [PLANS.PASS_PRO]: getVersionHistory(30),
-                [PLANS.PASS_BUSINESS]: getVersionHistory(30),
-                [PLANS.VPN_PRO]: getVersionHistory(30),
-                [PLANS.VPN_BUSINESS]: getVersionHistory(30),
+                [PLANS.PASS]: getVersionHistory(),
+                [PLANS.WALLET]: getVersionHistory(),
+                [PLANS.FAMILY]: getVersionHistory('10y'),
+                [PLANS.DUO]: getVersionHistory('10y'),
+                [PLANS.MAIL_PRO]: getVersionHistory(),
+                [PLANS.MAIL_BUSINESS]: getVersionHistory(),
+                [PLANS.BUNDLE_PRO]: getVersionHistory('10y'),
+                [PLANS.BUNDLE_PRO_2024]: getVersionHistory('10y'),
+                [PLANS.PASS_PRO]: getVersionHistory(),
+                [PLANS.PASS_BUSINESS]: getVersionHistory(),
+                [PLANS.VPN_PRO]: getVersionHistory(),
+                [PLANS.VPN_BUSINESS]: getVersionHistory(),
             },
         },
         {
