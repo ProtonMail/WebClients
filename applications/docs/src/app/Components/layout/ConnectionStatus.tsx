@@ -6,10 +6,8 @@ import { useApplication } from '../../Containers/ApplicationProvider'
 import { mergeRegister } from '@lexical/utils'
 import type { ConnectionCloseReason } from '@proton/docs-proto'
 import { c } from 'ttag'
-import CloudIcon from '../../Icons/CloudIcon'
 import CloudSlashIcon from '../../Icons/CloudSlashIcon'
 import ArrowsRotate from '../../Icons/ArrowsRotate'
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import Pill from '../Pill'
 import PopoverPill from '../PopoverPill'
 
@@ -39,7 +37,6 @@ export const ConnectionStatus = () => {
   const [hasConcerningMessages, setHasConcerningMessages] = useState(false)
   const [hasErroredMessages, setHasErroredMessages] = useState(false)
   const [saving, setSaving] = useState(false)
-  const [saved, setSaved] = useState(false)
   const [isUserLimitReached, setIsUserLimitReached] = useState(false)
   const [saveStartTime, setSaveStartTime] = useState(0)
   const [lastSaveRetryTime, setLastSaveRetryTime] = useState(0)
@@ -83,7 +80,6 @@ export const ConnectionStatus = () => {
           setStatus(WebsocketConnectionEvent.Disconnected)
           setDisconnectReason(payload.serverReason)
           setSaving(false)
-          setSaved(false)
         },
         WebsocketConnectionEvent.Disconnected,
       ),
@@ -93,7 +89,6 @@ export const ConnectionStatus = () => {
           setStatus(WebsocketConnectionEvent.FailedToConnect)
           setDisconnectReason(payload.serverReason)
           setSaving(false)
-          setSaved(false)
         },
         WebsocketConnectionEvent.FailedToConnect,
       ),
@@ -117,7 +112,6 @@ export const ConnectionStatus = () => {
           clearTimeout(savingTimeoutRef.current)
         }
         setSaving(true)
-        setSaved(false)
         setSaveStartTime(Date.now())
       }, WebsocketConnectionEvent.Saving),
 
@@ -126,7 +120,6 @@ export const ConnectionStatus = () => {
         const remainingTime = Math.max(0, MINIMUM_DURATION_SAVING_MUST_BE_SHOWN - elapsedTime)
         savingTimeoutRef.current = setTimeout(() => {
           setSaving(false)
-          setSaved(true)
         }, remainingTime)
       }, WebsocketConnectionEvent.Saved),
 
@@ -209,18 +202,18 @@ export const ConnectionStatus = () => {
           {c('Info').t`Saving...`}
         </PopoverPill>
       )}
-      {saved && (
+      {!saving && !connectionPill && (
         <PopoverPill
           title={
-            <div className="flex gap-2" data-testid="changes-info-saved">
-              <CloudIcon className="h-6 w-6 fill-current" />
-              <span>{c('Info').t`All changes saved to Drive`}</span>
+            <div className="flex gap-2" data-testid="changes-info-e2e-encrypted">
+              <Icon name="lock-check" className="h-6 w-6 fill-current" />
+              <span>{c('Info').t`End-to-end encrypted`}</span>
             </div>
           }
           content={c('Info').t`Every change you make is automatically and securely saved to Drive.`}
         >
-          <CloudIcon className="h-4 w-4 fill-current" />
-          {c('Info').t`Saved in ${DRIVE_APP_NAME}`}
+          <Icon name="lock-check" className="h-4 w-4 fill-current" />
+          {c('Info').t`End-to-end encrypted`}
         </PopoverPill>
       )}
       {hasErroredMessages && (
