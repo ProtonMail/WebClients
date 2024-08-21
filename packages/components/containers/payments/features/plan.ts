@@ -193,7 +193,7 @@ export const getDrivePlan = ({
         features: [
             getStorageFeature(plan.MaxSpace, { boldStorageSize, freePlan }),
             getDocumentEditor(),
-            getVersionHistory(),
+            getVersionHistory('10y'),
             getBasicFeatures(),
         ],
     };
