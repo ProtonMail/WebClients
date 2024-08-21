@@ -1,4 +1,4 @@
-import { isCJK, isKana, isThai, isWordDelimiter, toCodePoint } from './CharacterUtils'
+import { isCJK, isKana, isThai, isWhitespace, isWordDelimiter, toCodePoint } from './CharacterUtils'
 import type { WordCountInfo } from './WordCountTypes'
 
 const segmenter = new Intl.Segmenter('en', { granularity: 'grapheme' })
@@ -12,7 +12,9 @@ export const createWordCountInfo = (textContent: string): WordCountInfo => {
     const char = segmentData.segment
     const charCodePoint = toCodePoint(char)
 
-    if (char.trim() === char) {
+    const charIsWhitespace = isWhitespace(char)
+
+    if (!charIsWhitespace) {
       nonWhitespaceCharacterCount++
     }
 
@@ -22,7 +24,7 @@ export const createWordCountInfo = (textContent: string): WordCountInfo => {
       break
     }
 
-    const isMatched = !isWordDelimiter(charCodePoint)
+    const isMatched = !charIsWhitespace && !isWordDelimiter(charCodePoint)
     const shouldIncrement = !alreadyMatched || isCJK(charCodePoint) || isKana(charCodePoint) || isThai(charCodePoint)
 
     if (shouldIncrement && isMatched) {
