@@ -81,6 +81,7 @@ export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPa
                     return readProtonPassZIP({
                         data: await file.arrayBuffer(),
                         userId: payload.userId,
+                        currentAliases: payload.options?.currentAliases ?? [],
                     });
                 default:
                     throw new Error(c('Error').t`Unsupported ${PASS_APP_NAME} file format`);
