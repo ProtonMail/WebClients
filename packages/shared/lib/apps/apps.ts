@@ -4,20 +4,29 @@ import { isElectronApp } from '../helpers/desktop';
 import type { User } from '../interfaces';
 import { getIsPublicUserWithoutProtonAddress, getIsSSOVPNOnlyAccount } from '../keys';
 
-export const getPublicUserProtonAddressApps = (): APP_NAMES[] => {
-    return [APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS, APPS.PROTONDRIVE, APPS.PROTONDOCS];
+type AppContext = 'dropdown' | 'app';
+
+export const getPublicUserProtonAddressApps = (context: AppContext): APP_NAMES[] => {
+    const result: APP_NAMES[] = [APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS, APPS.PROTONDRIVE];
+
+    // Proton Docs is never shown in the dropdown context, but we still need it in this list to ensure it's an allowed app.
+    if (context === 'app') {
+        result.push(APPS.PROTONDOCS);
+    }
+
+    return result;
 };
 
 export const getSSOVPNOnlyAccountApps = (): APP_NAMES[] => {
     return [APPS.PROTONVPN_SETTINGS];
 };
 
-export const getAvailableApps = (options: { user?: User }) => {
+export const getAvailableApps = (options: { user?: User; context: AppContext }) => {
     if (getIsSSOVPNOnlyAccount(options.user)) {
         return getSSOVPNOnlyAccountApps();
     }
     if (getIsPublicUserWithoutProtonAddress(options.user)) {
-        return getPublicUserProtonAddressApps();
+        return getPublicUserProtonAddressApps(options.context);
     }
     if (isElectronApp) {
         return [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
