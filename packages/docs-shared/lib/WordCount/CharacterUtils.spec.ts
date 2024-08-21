@@ -1,4 +1,12 @@
-import { isCJK, isKana, isThai, isWithinCodePointRange, isWordDelimiter, toCodePoint } from './CharacterUtils'
+import {
+  isCJK,
+  isKana,
+  isThai,
+  isWhitespace,
+  isWithinCodePointRange,
+  isWordDelimiter,
+  toCodePoint,
+} from './CharacterUtils'
 
 const getCodePointOrThrow = (char: string) => {
   const codePoint = toCodePoint(char)
@@ -44,8 +52,18 @@ test('isWithinCodePointRange', () => {
 test.each([
   ['.', true],
   [',', true],
-  [' ', true],
   ['a', false],
 ])('isWordDelimiter', (delimiter, expected) => {
   expect(isWordDelimiter(toCodePoint(delimiter))).toBe(expected)
+})
+
+test.each([
+  [' ', true],
+  [' ', true],
+  ['\n', true],
+  ['\r', true],
+  ['\t', true],
+  ['a', false],
+])('isWhitespace', (char, expected) => {
+  expect(isWhitespace(char)).toBe(expected)
 })
