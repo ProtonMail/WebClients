@@ -11,17 +11,16 @@ export const useDrivePlan = () => {
     const [organization] = useOrganization();
     const plan = organization?.PlanName || PLANS.FREE;
 
-    const isB2B =
-        // Drive Professional
-        plan === PLANS.DRIVE_BUSINESS ||
-        // Proton Business Suite
-        plan === PLANS.BUNDLE_PRO ||
-        plan === PLANS.BUNDLE_PRO_2024 ||
-        // Enterprise
-        plan === PLANS.ENTERPRISE;
+    // Note: Enterprise plan is currently *NOT* implemented anywhere,
+    //       so it should not be handled.
+
+    const isDriveProfessional = plan === PLANS.DRIVE_BUSINESS;
+    const isProtonBusinessSuite = plan === PLANS.BUNDLE_PRO || plan === PLANS.BUNDLE_PRO_2024;
+
+    const isB2B = isDriveProfessional || isProtonBusinessSuite;
 
     const canUpsellFree = !hasPaidDrive;
-    const canUpsellB2B = isB2B && plan !== PLANS.ENTERPRISE;
+    const canUpsellB2B = isB2B && !isProtonBusinessSuite;
 
     return {
         /** `true` if the user has a paid Drive plan. */
@@ -38,8 +37,19 @@ export const useDrivePlan = () => {
         /** The {@link PLANS} the user is subscribed to. */
         plan,
 
-        /** `true` if the user is on a Drive B2B plan. */
+        /**
+         * `true` if the user is on a Drive B2B plan.
+         *
+         * For Drive, only Drive-specific and ecosystem B2B plans are considered. \
+         * i.e. Mail Professional is not be considered B2B in a Drive context.
+         */
         isB2B,
+
+        /** `true` is plan is *Drive Professional*. */
+        isDriveProfessional,
+
+        /** `true` if plan is *Proton Business Suite*. */
+        isProtonBusinessSuite,
 
         /** `true` if a B2C upsell is available. */
         canUpsellFree,
