@@ -14,11 +14,13 @@ import type { DocumentAction } from '@proton/drive-store'
 
 const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const application = useApplication()
+  const [isReady, setIsReady] = useState(false)
 
   const [controller, setController] = useState<DocControllerInterface | null>(null)
   useEffect(() => {
     return application.docLoader.addStatusObserver({
       onSuccess: () => {
+        setIsReady(true)
         setController(application.docLoader.getDocController())
       },
       onError: traceError,
@@ -29,7 +31,7 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
     <div className="flex items-center px-4 py-2" data-testid="docs-header">
       <DocumentTitleDropdown action={action} controller={controller} />
       <div className="w-2" />
-      <ConnectionStatus />
+      {isReady && <ConnectionStatus />}
       <div className="mr-auto" />
       <DocumentActiveUsers className="mr-2 hidden md:flex" />
       {controller?.role.isAdmin() && (
