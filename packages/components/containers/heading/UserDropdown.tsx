@@ -446,7 +446,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
 
                     {(() => {
                         if (viewportWidth['<=small'] && hasAppLinks) {
-                            const availableApps = getAvailableApps({ user });
+                            const availableApps = getAvailableApps({ user, context: 'dropdown' });
                             if (availableApps.length <= 1) {
                                 return null;
                             }
