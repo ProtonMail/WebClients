@@ -57,6 +57,7 @@ const FrequencyInput = ({ value, frequencyInputType = 'select', onChange, ...res
                             className="text-left flex flex-nowrap items-center"
                             onClick={() => onChange(value)}
                             aria-pressed={selectedOption?.value === value}
+                            key={value}
                         >
                             <span className="flex-1 pr-4">{text}</span>
                             {selectedOption?.value === value && (
