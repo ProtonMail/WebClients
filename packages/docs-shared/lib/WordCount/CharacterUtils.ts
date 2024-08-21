@@ -53,3 +53,5 @@ export const isCJK = (codePoint: number) => {
 }
 
 export const isThai = (codePoint: number) => isWithinCodePointRange(codePoint, [0x0e00, 0x0e7f])
+
+export const isWordCountSupported = typeof Intl?.Segmenter !== 'undefined'
