@@ -39,7 +39,22 @@ const modelThunk = createAsyncModelThunk<Model, GroupMembershipsState, ProtonThu
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
+    reducers: {
+        acceptMembership: (state, action) => {
+            if (state.value && action.payload) {
+                const membershipIndex = state.value.findIndex((membership) => membership.ID === action.payload.ID);
+                if (membershipIndex !== -1) {
+                    state.value[membershipIndex].State = 1;
+                }
+            }
+        },
+        declineOrLeaveMembership: (state, action) => {
+            if (state.value && action.payload) {
+                const updatedMemberships = state.value.filter((membership) => membership.ID !== action.payload.ID);
+                state.value = updatedMemberships;
+            }
+        },
+    },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
@@ -57,6 +72,8 @@ const slice = createSlice({
         });
     },
 });
+
+export const { acceptMembership, declineOrLeaveMembership } = slice.actions;
 
 export const groupMembershipsReducer = { [name]: slice.reducer };
 export const groupMembershipsThunk = modelThunk.thunk;

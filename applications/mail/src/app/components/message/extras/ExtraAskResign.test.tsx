@@ -1,4 +1,6 @@
-import { fireEvent } from '@testing-library/react';
+import { act } from 'react';
+
+import { fireEvent, screen } from '@testing-library/react';
 
 import type { PublicKeyReference } from '@proton/crypto';
 
@@ -19,11 +21,11 @@ const getMessageVerification = (pinnedKeysVerified: boolean, pinnedKeys?: Public
 const setup = async (messageVerification: MessageVerification) => {
     const onResignContact = jest.fn();
 
-    const component = await render(
+    const view = await render(
         <ExtraAskResign message={message} messageVerification={messageVerification} onResignContact={onResignContact} />
     );
 
-    return component;
+    return view;
 };
 
 jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
@@ -46,27 +48,27 @@ describe('Extra ask resign banner', () => {
         const senderKey = await generateKeys('sender', message.Sender.Address);
 
         const messageVerification = getMessageVerification(true, [senderKey.publicKeys[0]]);
-        const { queryByTestId } = await setup(messageVerification);
+        await setup(messageVerification);
 
-        const banner = queryByTestId('extra-ask-resign:banner');
+        const banner = screen.queryByTestId('extra-ask-resign:banner');
 
         expect(banner).toBeNull();
     });
 
     it('should not display the extra ask resign banner when sender is verified and no keys are pinned', async () => {
         const messageVerification = getMessageVerification(true);
-        const { queryByTestId } = await setup(messageVerification);
+        await setup(messageVerification);
 
-        const banner = queryByTestId('extra-ask-resign:banner');
+        const banner = screen.queryByTestId('extra-ask-resign:banner');
 
         expect(banner).toBeNull();
     });
 
     it('should not display the extra ask resign banner when sender is not verified and no keys are pinned', async () => {
         const messageVerification = getMessageVerification(false);
-        const { queryByTestId } = await setup(messageVerification);
+        await setup(messageVerification);
 
-        const banner = queryByTestId('extra-ask-resign:banner');
+        const banner = screen.queryByTestId('extra-ask-resign:banner');
 
         expect(banner).toBeNull();
     });
@@ -76,19 +78,19 @@ describe('Extra ask resign banner', () => {
         addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [{ PublicKey: senderKeys.publicKeyArmored }] } }));
 
         const messageVerification = getMessageVerification(false, [senderKeys.publicKeys[0]]);
-        const { store, getByTestId, getByText } = await setup(messageVerification);
+        const { store } = await setup(messageVerification);
 
         // Initialize contactsMap
-        store.dispatch(refresh({ contacts: [...contactEmails], contactGroups: [] }));
+        await act(() => store.dispatch(refresh({ contacts: [...contactEmails], contactGroups: [] })));
 
         // Banner is displayed
-        getByTestId('extra-ask-resign:banner');
+        screen.getByTestId('extra-ask-resign:banner');
 
         // Modal is opened
-        const trustKeyButton = getByText('Verify');
+        const trustKeyButton = screen.getByText('Verify');
         fireEvent.click(trustKeyButton);
         await tick();
 
-        getByText('Trust pinned keys?');
+        screen.getByText('Trust pinned keys?');
     });
 });

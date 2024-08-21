@@ -6,6 +6,8 @@ import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
 
 import type { TransferMeta } from '../../../components/TransferManager/transfer';
 
+let workerWakeupInterval: ReturnType<typeof setInterval>;
+
 /**
  * Safari and Edge don't support returning stream as a response.
  * Safari - has everything but fails to stream a response from SW.
@@ -28,7 +30,7 @@ function createDownloadIframe(src: string) {
     return iframe;
 }
 
-async function wakeUpServiceWorker() {
+async function wakeUpServiceWorker(retry = true) {
     const worker = navigator.serviceWorker.controller;
 
     if (worker) {
@@ -44,15 +46,21 @@ async function wakeUpServiceWorker() {
         const res = await fetch(url);
         const body = await res.text();
         if (!res.ok || body !== 'pong') {
-            throw new Error('Download worker is dead');
+            if (!retry) {
+                throw new Error('Download worker is dead');
+            }
+            console.warn('Download worker is dead, retrying registration');
+            await initDownloadSW();
+            await wakeUpServiceWorker(false);
         }
     }
     return worker as ServiceWorker;
 }
 
 function serviceWorkerKeepAlive() {
-    const interval = setInterval(() => {
-        wakeUpServiceWorker().catch(() => clearInterval(interval));
+    clearInterval(workerWakeupInterval);
+    workerWakeupInterval = setInterval(() => {
+        wakeUpServiceWorker().catch(() => clearInterval(workerWakeupInterval));
     }, 10000);
 }
 
