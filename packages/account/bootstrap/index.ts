@@ -12,11 +12,8 @@ import { appLink } from '@proton/shared/lib/apps/appLink';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
-import type {
-    AuthenticationStore} from '@proton/shared/lib/authentication/createAuthenticationStore';
-import createAuthenticationStore, {
-    getSafePath,
-} from '@proton/shared/lib/authentication/createAuthenticationStore';
+import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
+import createAuthenticationStore, { getSafePath } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
@@ -26,16 +23,16 @@ import {
     getReturnUrlParameter,
     removeHashParameters,
 } from '@proton/shared/lib/authentication/fork';
-import type { ForkState} from '@proton/shared/lib/authentication/fork/forkState';
+import type { ForkState } from '@proton/shared/lib/authentication/fork/forkState';
 import { getParsedCurrentUrl } from '@proton/shared/lib/authentication/fork/forkState';
 import type { ExtraSessionForkData } from '@proton/shared/lib/authentication/interface';
 import { handleInvalidSession } from '@proton/shared/lib/authentication/logout';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import type { ResumedSessionResult} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
-import type { APP_NAMES} from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SETUP_ADDRESS_PATH, SSO_PATHS } from '@proton/shared/lib/constants';
 import { resumeSessionDrawerApp } from '@proton/shared/lib/drawer/session';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
@@ -401,7 +398,7 @@ export const maybeRedirect = async ({
 
     if (
         getIsPublicUserWithoutProtonAddress(user) &&
-        ![APPS.PROTONACCOUNT, ...getPublicUserProtonAddressApps()].includes(appName as any)
+        ![APPS.PROTONACCOUNT, ...getPublicUserProtonAddressApps('app')].includes(appName as any)
     ) {
         appLink({ to: '/pass', toApp: APPS.PROTONACCOUNT, app: appName, history, authentication });
         await new Promise(noop);
