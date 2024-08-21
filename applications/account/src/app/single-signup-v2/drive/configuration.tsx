@@ -244,7 +244,7 @@ export const getBundleProFeatures = ({ plan }: { plan: Plan | undefined; freePla
     }
     return [
         getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
-        getVersionHistory(365),
+        getVersionHistory('10y'),
         getCustomSecureMailB2B(),
         getB2BHighSpeedVPNConnectionsFeature(),
         getPasswordManager(),

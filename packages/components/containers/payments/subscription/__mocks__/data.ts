@@ -112,6 +112,11 @@ export const unlimitedUpsell = {
             tooltip: 'Create up to 25 calendars or add calendars from friends, family, colleagues, and organizations',
         },
         {
+            icon: 'clock-rotate-left',
+            included: true,
+            text: '10-year file version history',
+        },
+        {
             icon: 'brand-proton-vpn',
             text: '10 high-speed VPN connections',
             included: true,
@@ -351,7 +356,7 @@ export const drivePlusUpsell = {
             icon: 'pencil',
         },
         {
-            text: 'Recover previous file versions',
+            text: '10-year file version history',
             included: true,
             icon: 'clock-rotate-left',
         },
