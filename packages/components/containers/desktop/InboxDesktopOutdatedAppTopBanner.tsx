@@ -13,6 +13,7 @@ import {
     isElectronOnMac as isMac,
     isElectronOnWindows as isWindows,
 } from '@proton/shared/lib/helpers/desktop';
+import { useFlag } from '@proton/unleash';
 
 import TopBanner from '../topBanners/TopBanner';
 import { openLinkInBrowser } from './openExternalLink';
@@ -90,8 +91,9 @@ const DisplayTopBanner = ({ displayTopBanner, link }: { displayTopBanner: boolea
 const InboxDesktopOutdatedAppTopBanner = () => {
     const version = electronAppVersion;
     const { windowsApp, macosApp, linuxApp, loading } = useInboxDesktopVersion();
+    const isUpdateBannerDisabled = useFlag('InboxDesktopManualUpdateBannerDisabled');
 
-    if (!isElectronMail || !version || loading) {
+    if (!isElectronMail || isUpdateBannerDisabled || !version || loading) {
         return null;
     }
 

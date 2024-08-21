@@ -11,18 +11,18 @@ import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
 
 const initialLinuxClients: DesktopVersion = {
     CategoryName: RELEASE_CATEGORIES.EARLY_ACCESS,
-    Version: '1.0.1',
-    ReleaseDate: '2024-03-21',
+    Version: '1.0.6',
+    ReleaseDate: '2024-08-01',
     File: [
         {
             Identifier: '.deb (Ubuntu/Debian)',
-            Url: getDownloadUrl('/mail/linux/ProtonMail-desktop-setup.deb'),
+            Url: getDownloadUrl('/mail/linux/ProtonMail-desktop-beta.deb'),
             Sha512CheckSum:
                 'cc772a801ba6086ace8b313215c46352a88aea6627287b5219ae2963fde1d5d434f8d6ac9fd469a971693ec0d0813b387de8c94af021f41bad993d145937f293',
         },
         {
             Identifier: '.rpm (Fedora/RHEL)',
-            Url: getDownloadUrl('/mail/linux/ProtonMail-desktop-setup.rpm'),
+            Url: getDownloadUrl('/mail/linux/ProtonMail-desktop-beta.rpm'),
             Sha512CheckSum:
                 'de38e6f11b91ab3ff5e987fe6b14d430a8911ec45b94ed7f95b758cb3d542b73cc0551142e4f94950209fa445bc8fdfd9ac3d13d50aafc183be829a0c01298e2',
         },
