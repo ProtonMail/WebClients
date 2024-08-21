@@ -29,7 +29,7 @@ export const getExploreApps = ({
     user: User | undefined;
     isWalletAppSwitcherNewBadgeEnabled: boolean;
 }) => {
-    const availableApps = getAvailableApps({ user });
+    const availableApps = getAvailableApps({ user, context: 'dropdown' });
     return [
         {
             name: APPS.PROTONMAIL,
