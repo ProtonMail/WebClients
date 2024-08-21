@@ -10,6 +10,9 @@ import type { ApplicationInterface } from './ApplicationInterface'
 import type { WebsocketServiceInterface } from '../Services/Websockets/WebsocketServiceInterface'
 import type { LoggerInterface } from '@proton/utils/logs'
 import type { ImageProxyParams } from '../Api/Types/ImageProxyParams'
+import type { CustomWindow } from './Window'
+
+declare const window: CustomWindow
 
 export class Application implements ApplicationInterface {
   private readonly deps = new AppDependencies(this.protonApi, this.imageProxyParams, this.driveCompat, this.appVersion)
@@ -47,5 +50,9 @@ export class Application implements ApplicationInterface {
 
   public get websocketService(): WebsocketServiceInterface {
     return this.deps.get<WebsocketServiceInterface>(App_TYPES.WebsocketService)
+  }
+
+  public get isRunningInNativeMobileWeb(): boolean {
+    return window.Android != null || window.webkit?.messageHandlers?.iOS != null
   }
 }

@@ -428,6 +428,7 @@ const DocumentTitleDropdown = ({
             <Icon name="info-circle" className="color-weak mr-2" />
             {c('Action').t`Help`}
           </DropdownMenuButton>
+
           <DropdownMenuButton
             className="flex items-center text-left"
             onClick={() => {
