@@ -27,13 +27,22 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
     })
   }, [application.docLoader])
 
+  if (application.isRunningInNativeMobileWeb) {
+    return null
+  }
+
   return (
     <div className="flex items-center px-4 py-2" data-testid="docs-header">
       <DocumentTitleDropdown action={action} controller={controller} />
+
       <div className="w-2" />
+
       {isReady && <ConnectionStatus />}
+
       <div className="mr-auto" />
+
       <DocumentActiveUsers className="mr-2 hidden md:flex" />
+
       {controller?.role.isAdmin() && (
         <Button
           shape="ghost"
@@ -45,12 +54,15 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
           {c('Action').t`Share`}
         </Button>
       )}
+
       {controller?.role.canComment() && (
         <>
           <CommentsButton controller={controller} />
         </>
       )}
+
       <div className="w-4" />
+
       <UserDropdown app={APPS.PROTONDOCS} />
     </div>
   )
