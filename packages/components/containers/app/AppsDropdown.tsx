@@ -3,20 +3,18 @@ import { Fragment, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import NewBadge from '@proton/components/components/newBadge/NewBadge';
 import { useConfig, useUser } from '@proton/components/hooks';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
-import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
-import clsx from '@proton/utils/clsx';
 
 import type { AppLinkProps } from '../../components';
-import { Icon, Logo, SimpleDropdown } from '../../components';
+import { Icon, SimpleDropdown } from '../../components';
 import { InboxDesktopAppSwitcher } from '../desktop';
+import ProductIcon from './ProductIcon';
 import ProductLink from './ProductLink';
 
 interface AppsDropdownProps {
@@ -33,8 +31,6 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
         ref: ForwardedRef<HTMLButtonElement>
     ) => {
         const { APP_NAME } = useConfig();
-
-        const isWalletAppSwitcherNewBadgeEnabled = useFlag('WalletAppSwitcherNewBadge');
 
         const availableApps = getAvailableApps({ user });
 
@@ -59,7 +55,6 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
             >
                 <ul className="unstyled my-0 p-4" style={{ '--apps-dropdown-repeat': isElectronMail ? '2' : '3' }}>
                     {availableApps.map((appToLinkTo) => {
-                        const appToLinkToName = getAppShortName(appToLinkTo);
                         const current = app && appToLinkTo === app;
 
                         return (
@@ -76,29 +71,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                                         // The same app opens in the same window, other apps in new windows
                                         target={APP_NAME === appToLinkTo ? '_self' : '_blank'}
                                     >
-                                        <div
-                                            className="apps-dropdown-logo-wrapper flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
-                                            style={{ '--w-custom': '3.25rem', '--h-custom': '3.25rem' }}
-                                        >
-                                            <Logo
-                                                appName={appToLinkTo}
-                                                variant="glyph-only"
-                                                className="shrink-0"
-                                                size={9}
-                                            />
-                                        </div>
-                                        <span
-                                            className={clsx(
-                                                'block text-center text-sm mt-1 apps-dropdown-app-name',
-                                                current ? 'color-norm text-semibold' : 'color-weak'
-                                            )}
-                                            aria-hidden
-                                        >
-                                            {appToLinkToName}
-                                        </span>
-                                        {appToLinkTo === APPS.PROTONWALLET && isWalletAppSwitcherNewBadgeEnabled && (
-                                            <NewBadge />
-                                        )}
+                                        <ProductIcon appToLinkTo={appToLinkTo} current={current} />
                                     </ProductLink>
                                 </li>
                             </Fragment>
@@ -116,9 +89,10 @@ const AuthenticatedAppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProp
     (props: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
         const [user] = useUser();
         const { APP_NAME } = useConfig();
+        const isInboxCustomAppSwitcher = useFlag('InboxDesktopWinLinNewAppSwitcher');
 
         // The app swicher on Mail, Calendar and account desktop application is different
-        if (isElectronOnInboxApps(APP_NAME) && isElectronOnMac) {
+        if (isElectronOnInboxApps(APP_NAME) && (isElectronOnMac || (isInboxCustomAppSwitcher && isElectronMail))) {
             return <InboxDesktopAppSwitcher appToLinkTo={props.app} />;
         }
 
