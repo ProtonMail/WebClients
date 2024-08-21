@@ -18,6 +18,8 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 type ProtonPassReaderPayload = {
     /** unencrypted zip file as ArrayBuffer  */
     data: ArrayBuffer;
+    /** list of current email aliases so we don't import them again if they are present in the data file, otherwise BE will throw an error */
+    currentAliases: string[];
     userId?: string;
 };
 
@@ -66,7 +68,16 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
                     vault: {
                         name: name,
                         shareId: null,
-                        items: itemsToImport.map((item) => {
+                        items: itemsToImport.reduce<ItemImportIntent[]>((acc, item) => {
+                            /* Don't import existing aliases */
+                            if (
+                                item.data.type === 'alias' &&
+                                item.aliasEmail &&
+                                payload.currentAliases.includes(item.aliasEmail)
+                            ) {
+                                return acc;
+                            }
+
                             /* Migrate username to itemEmail */
                             if (semver(parsedExport.version) < semver('1.18.0')) {
                                 if (item.data.type === 'login' && 'username' in item.data.content) {
@@ -76,7 +87,8 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
                                     delete item.data.content.username;
                                 }
                             }
-                            return {
+
+                            acc.push({
                                 ...obfuscateItem({
                                     ...item.data,
                                     ...(item.data.type === 'alias'
@@ -86,8 +98,10 @@ export const readProtonPassZIP = async (payload: ProtonPassReaderPayload): Promi
                                 trashed: item.state === ItemState.Trashed,
                                 createTime: item.createTime,
                                 modifyTime: item.modifyTime,
-                            } as ItemImportIntent;
-                        }),
+                            } as ItemImportIntent);
+
+                            return acc;
+                        }, []),
                     },
                     ignored: ignoredAliases.map((item) => `[Alias] ${item.aliasEmail}`),
                 };

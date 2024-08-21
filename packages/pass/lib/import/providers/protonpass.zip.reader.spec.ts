@@ -6,13 +6,31 @@ import type { ItemImportIntent } from '@proton/pass/types';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 describe('Import Proton Pass ZIP', () => {
+    let payload: ImportPayload;
+    let payloadExcludingCurrentAliases: ImportPayload;
     let oldFormatPayload: ImportPayload;
 
+    const currentAliases = ['infra.structure078@passdevfree.com'];
+
     beforeAll(async () => {
+        const data = await fs.promises.readFile(__dirname + '/mocks/protonpass.zip');
+        payload = await readProtonPassZIP({
+            data,
+            userId: 'SWgOUidqAHPDfImlbYvpp__YSOK3YXRAtOckIo_0qmVNjzqVAOWNS2d60OOR15Cv4RTLBCTVaSa43-036nseXg==',
+            currentAliases: [],
+        });
+
+        payloadExcludingCurrentAliases = await readProtonPassZIP({
+            data,
+            userId: 'SWgOUidqAHPDfImlbYvpp__YSOK3YXRAtOckIo_0qmVNjzqVAOWNS2d60OOR15Cv4RTLBCTVaSa43-036nseXg==',
+            currentAliases,
+        });
+
         const oldFormatData = await fs.promises.readFile(__dirname + '/mocks/protonpass_1.17.zip');
         oldFormatPayload = await readProtonPassZIP({
             data: oldFormatData,
             userId: '5sxjHzI4mlMVq7-ysH-4YxgbEXsNTUlqmVmosbQKL_NgKXe_E0MroEgbKxH2wHTXXtLS3qr1JR_15SWL5kTVOQ==',
+            currentAliases: [],
         });
     });
 
@@ -42,5 +60,18 @@ describe('Import Proton Pass ZIP', () => {
         );
         expect(loginItem.createTime).toEqual(1707735320);
         expect(loginItem.modifyTime).toEqual(1707735349);
+    });
+
+    it('should import all items', async () => {
+        const total = payload.vaults.reduce((acc, { items }) => acc + items.length, 0);
+        expect(total).toEqual(7);
+    });
+
+    it('should not import existing aliases', async () => {
+        const aliases = payload.vaults[0].items.filter((item) => item.type === 'alias');
+        const aliasesWithoutCurrentAliases = payloadExcludingCurrentAliases.vaults[0].items.filter(
+            (item) => item.type === 'alias'
+        );
+        expect(aliasesWithoutCurrentAliases.length).toEqual(aliases.length - currentAliases.length);
     });
 });
