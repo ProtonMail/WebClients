@@ -27,6 +27,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { useWordCount } from '../WordCount/useWordCount'
 import { useFloatingWordCount } from '../WordCount/useFloatingWordCount'
 import WordCountIcon from '../../Icons/WordCountIcon'
+import { isWordCountSupported } from '@proton/docs-shared'
 
 const DocumentTitleDropdown = ({
   controller,
@@ -259,77 +260,77 @@ const DocumentTitleDropdown = ({
             <Icon name="clock-rotate-left" className="color-weak mr-2" />
             {c('Action').t`See version history`}
           </DropdownMenuButton>
-
-          <SimpleDropdown
-            as={DropdownMenuButton}
-            className="flex items-center text-left"
-            data-testid="dropdown-word-count"
-            content={
-              <>
-                <WordCountIcon className="color-weak mr-2 h-4 w-4" />
-                {c('Action').t`Word count`}
-                <span className="ml-auto text-[--text-hint]">{wordCountInfoCollection.document?.wordCount}</span>
-                <Icon name="chevron-right-filled" className="ml-2" />
-              </>
-            }
-            hasCaret={false}
-            onClick={(event: MouseEvent) => {
-              event.preventDefault()
-              event.stopPropagation()
-            }}
-            originalPlacement="right-start"
-            contentProps={{
-              offset: 0,
-            }}
-          >
-            <DropdownMenu className="text-sm">
-              <DropdownMenuButton
-                className="flex items-center gap-1 text-left"
-                onClick={(event) => {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }}
-                data-testid="word-count-label"
-              >
-                <span className="text-bold">{wordCountInfoCollection.document?.wordCount} </span> {c('Info').t`words`}
-              </DropdownMenuButton>
-              <DropdownMenuButton
-                className="flex items-center gap-1 text-left"
-                onClick={(event) => {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }}
-                data-testid="character-count-label"
-              >
-                <span className="text-bold">{wordCountInfoCollection.document?.characterCount}</span>{' '}
-                {c('Info').t`characters`}
-              </DropdownMenuButton>
-              <DropdownMenuButton
-                className="flex items-center gap-1 text-left"
-                onClick={(event) => {
-                  event.preventDefault()
-                  event.stopPropagation()
-                }}
-                data-testid="non-whitespace-character-count-label"
-              >
-                <span className="text-bold">{wordCountInfoCollection.document?.nonWhitespaceCharacterCount}</span>
-                {c('Info').t`characters without spaces`}
-              </DropdownMenuButton>
-              <DropdownMenuButton
-                className="flex items-center gap-1 text-left"
-                onClick={(event) => {
-                  setFloatingUIIsEnabled(!floatingUIIsEnabled)
-                  event.preventDefault()
-                  event.stopPropagation()
-                }}
-                data-testid="non-whitespace-character-count-label"
-              >
-                {c('Info').t`Display word count`}
-                <Toggle data-test-id="floating-word-count-toggle" className="ml-auto" checked={floatingUIIsEnabled} />
-              </DropdownMenuButton>
-            </DropdownMenu>
-          </SimpleDropdown>
-
+          {isWordCountSupported && (
+            <SimpleDropdown
+              as={DropdownMenuButton}
+              className="flex items-center text-left"
+              data-testid="dropdown-word-count"
+              content={
+                <>
+                  <WordCountIcon className="color-weak mr-2 h-4 w-4" />
+                  {c('Action').t`Word count`}
+                  <span className="ml-auto text-[--text-hint]">{wordCountInfoCollection.document?.wordCount}</span>
+                  <Icon name="chevron-right-filled" className="ml-2" />
+                </>
+              }
+              hasCaret={false}
+              onClick={(event: MouseEvent) => {
+                event.preventDefault()
+                event.stopPropagation()
+              }}
+              originalPlacement="right-start"
+              contentProps={{
+                offset: 0,
+              }}
+            >
+              <DropdownMenu className="text-sm">
+                <DropdownMenuButton
+                  className="flex items-center gap-1 text-left"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }}
+                  data-testid="word-count-label"
+                >
+                  <span className="text-bold">{wordCountInfoCollection.document?.wordCount} </span> {c('Info').t`words`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center gap-1 text-left"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }}
+                  data-testid="character-count-label"
+                >
+                  <span className="text-bold">{wordCountInfoCollection.document?.characterCount}</span>{' '}
+                  {c('Info').t`characters`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center gap-1 text-left"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }}
+                  data-testid="non-whitespace-character-count-label"
+                >
+                  <span className="text-bold">{wordCountInfoCollection.document?.nonWhitespaceCharacterCount}</span>
+                  {c('Info').t`characters without spaces`}
+                </DropdownMenuButton>
+                <DropdownMenuButton
+                  className="flex items-center gap-1 text-left"
+                  onClick={(event) => {
+                    setFloatingUIIsEnabled(!floatingUIIsEnabled)
+                    event.preventDefault()
+                    event.stopPropagation()
+                  }}
+                  data-testid="non-whitespace-character-count-label"
+                >
+                  {c('Info').t`Display word count`}
+                  <Toggle data-testid="floating-word-count-toggle" className="ml-auto" checked={floatingUIIsEnabled} />
+                </DropdownMenuButton>
+              </DropdownMenu>
+            </SimpleDropdown>
+          )}
           <hr className="my-1 min-h-px" />
 
           {controller && (
