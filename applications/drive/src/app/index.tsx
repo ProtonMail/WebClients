@@ -6,5 +6,7 @@ import App from './App';
 import UrlsApp from './UrlsApp';
 import './style';
 
+// Trigger CI
+
 const publicUrl = window.location.pathname.startsWith('/urls');
 ReactDOM.render(publicUrl ? <UrlsApp /> : <App />, document.querySelector('.app-root'));
