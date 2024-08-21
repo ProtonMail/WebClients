@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Badge } from '@proton/components/components';
+import { Icon } from '@proton/components/components';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 
@@ -13,14 +14,25 @@ interface Props {
     group: Group; // needs to be removed once GroupMemberItemDropdown does not need it
 }
 
-export const GroupMemberItem = ({ groupMember, groupMember: { Email, State }, memberName, group }: Props) => {
+export const GroupMemberItem = ({
+    groupMember,
+    groupMember: { Email, State, AddressID },
+    memberName,
+    group,
+}: Props) => {
     const isInvitationPending = State === GROUP_MEMBER_STATE.PENDING;
     const isRejected = State === GROUP_MEMBER_STATE.REJECTED;
+    const hasKeys = !!AddressID;
 
     return (
         <>
             <GroupMemberItemWrapper memberEmail={Email} memberName={memberName ?? Email}>
-                <div className="flex flex-column flex-nowrap self-center">
+                <div className="flex flex-row gap-2 flex-nowrap self-center">
+                    {hasKeys && (
+                        <span className="shrink-0 flex mt-0.5">
+                            <Icon name="lock" alt={c('Info').t`Internal user`} />
+                        </span>
+                    )}
                     {isInvitationPending && (
                         <span>
                             <Badge
