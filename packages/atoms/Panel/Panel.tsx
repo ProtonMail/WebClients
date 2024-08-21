@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import { type ReactNode, type Ref, forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Scroll } from '@proton/atoms/Scroll';
@@ -14,9 +14,9 @@ type Props = {
     loading?: boolean;
 };
 
-export const Panel: FC<Props> = ({ header, footer, children, className, loading }) => {
+const PanelBase = ({ header, footer, children, className, loading }: Props, ref: Ref<HTMLElement>) => {
     return (
-        <section className={clsx('panel-section flex flex-column flex-nowrap', className)}>
+        <section ref={ref} className={clsx('panel-section flex flex-column flex-nowrap', className)}>
             {header && <div className="shrink-0 px-4 py-3">{header}</div>}
             <div className="flex-auto h-full overflow-hidden relative">
                 {loading && <CircleLoader size="small" className="z-up absolute inset-center" />}
@@ -29,4 +29,4 @@ export const Panel: FC<Props> = ({ header, footer, children, className, loading 
     );
 };
 
-export default Panel;
+export const Panel = forwardRef(PanelBase);
