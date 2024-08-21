@@ -5,7 +5,7 @@ import type { User } from '../interfaces';
 import { getIsPublicUserWithoutProtonAddress, getIsSSOVPNOnlyAccount } from '../keys';
 
 export const getPublicUserProtonAddressApps = (): APP_NAMES[] => {
-    return [APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS, APPS.PROTONDRIVE];
+    return [APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS, APPS.PROTONDRIVE, APPS.PROTONDOCS];
 };
 
 export const getSSOVPNOnlyAccountApps = (): APP_NAMES[] => {
