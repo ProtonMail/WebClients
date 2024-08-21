@@ -21,6 +21,7 @@ import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/fo
 import type { Group } from '@proton/shared/lib/interfaces';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import DiscardGroupChangesPrompt from './DiscardGroupChangesPrompt';
@@ -28,6 +29,7 @@ import GroupAddressDomainSelect from './GroupAddressDomainSelect';
 import GroupMemberList from './GroupMemberList';
 import { NewGroupMemberInput } from './NewGroupMemberInput';
 import { NewGroupMemberItem } from './NewGroupMemberItem';
+import E2EEToggle from './components/E2EEToggle';
 import { getAddressSuggestedLocalPart } from './helpers';
 import type { GroupsManagementReturn } from './types';
 
@@ -271,6 +273,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                         </InputFieldStackedGroup>
                     </Form>
                 </FormikProvider>
+                {uiState === 'edit' && <E2EEToggle address={groupData.Address as Address} />}
                 <NewGroupMemberInput
                     newGroupMembers={newGroupMembers}
                     onAddNewGroupMembers={handleAddNewMembers}
