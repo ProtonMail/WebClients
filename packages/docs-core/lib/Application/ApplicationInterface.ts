@@ -9,4 +9,5 @@ export interface ApplicationInterface {
   createEmptyDocumentForConversionUseCase: CreateEmptyDocumentForConversion
   get logger(): LoggerInterface
   destroy(): void
+  isRunningInNativeMobileWeb: boolean
 }
