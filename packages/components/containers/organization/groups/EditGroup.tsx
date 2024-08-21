@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import { Panel, PanelHeader } from '@proton/atoms/Panel';
+import { PanelHeader } from '@proton/atoms/Panel';
+import { Panel } from '@proton/atoms/Panel/Panel';
 import {
     InputFieldTwo,
     Option,
@@ -31,6 +32,7 @@ import { NewGroupMemberInput } from './NewGroupMemberInput';
 import { NewGroupMemberItem } from './NewGroupMemberItem';
 import E2EEToggle from './components/E2EEToggle';
 import { getAddressSuggestedLocalPart } from './helpers';
+import useClickOutsidePanel from './hooks/useClickOutsidePanel';
 import type { GroupsManagementReturn } from './types';
 
 interface Props {
@@ -78,14 +80,22 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
     const [newGroupMembers, setNewGroupMembers] = useState<NewGroupMember[]>([]);
     const memberAddressMap = getMemberAddressMap(members);
     const verifiedCustomDomains = customDomains?.filter(getIsDomainActive);
+    const panelRef = useRef<HTMLElement>(null);
 
     const newEmailsToAdd = newGroupMembers.map((member) => member.Address);
+    const sortedNewGroupMembers = useMemo(() => [...newGroupMembers].reverse(), [newGroupMembers]);
+
+    const changeDetected = dirty || !!newGroupMembers.length;
+
+    useClickOutsidePanel(panelRef, () => {
+        if (changeDetected) {
+            setDiscardChangesModal(true);
+        }
+    });
 
     useEffect(() => {
         if (uiState === 'edit') {
-            const addressWithoutDomain = formValues.address.substring(0, formValues.address.indexOf('@'));
             const addressDomain = formValues.address.substring(formValues.address.indexOf('@') + 1);
-            setFieldValue('address', addressWithoutDomain);
             setSelectedDomain(addressDomain);
         } else if (uiState === 'new') {
             setSelectedDomain(suggestedAddressDomainPart);
@@ -137,10 +147,8 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
 
     return (
         <>
-            {renderDiscardChangesModal && (
-                <DiscardGroupChangesPrompt onConfirm={onDiscardChanges} {...discardChangesModalProps} />
-            )}
             <Panel
+                ref={panelRef}
                 header={
                     <PanelHeader
                         className="flex justify-space-between"
@@ -149,7 +157,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                 <Button
                                     color="weak"
                                     onClick={() => {
-                                        if (dirty) {
+                                        if (changeDetected) {
                                             setDiscardChangesModal(true);
                                         } else {
                                             onDiscardChanges();
@@ -161,7 +169,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                 <Button
                                     color="norm"
                                     key="button-save"
-                                    disabled={!dirty}
+                                    disabled={!changeDetected}
                                     loading={loading}
                                     onClick={() => {
                                         onFormSubmit();
@@ -225,11 +233,19 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     className="rounded-none"
                                     name="address"
                                     placeholder={c('placeholder').t`e.g. marketing`}
-                                    value={formValues.address}
+                                    value={
+                                        uiState === 'new'
+                                            ? formValues.address
+                                            : formValues.address.substring(0, formValues.address.indexOf('@'))
+                                    }
                                     onValue={(address: string) => {
                                         setFieldValue('address', address);
                                     }}
-                                    error={validator([emailValidator(`${formValues.address}@${selectedDomain}`)])}
+                                    error={
+                                        uiState === 'new'
+                                            ? validator([emailValidator(`${formValues.address}@${selectedDomain}`)])
+                                            : false
+                                    }
                                     disabled={uiState === 'edit'} // disable until BE supports address change
                                     suffix={(() => {
                                         if (loadingCustomDomains) {
@@ -282,7 +298,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                 />
                 <div className="mt-3 flex flex-column gap-3">
                     <div className="flex flex-column gap-3">
-                        {newGroupMembers.reverse().map((member) => {
+                        {sortedNewGroupMembers.map((member) => {
                             return (
                                 <NewGroupMemberItem
                                     member={member}
@@ -300,6 +316,9 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                     />
                 </div>
             </Panel>
+            {renderDiscardChangesModal && (
+                <DiscardGroupChangesPrompt onConfirm={onDiscardChanges} {...discardChangesModalProps} />
+            )}
         </>
     );
 };
