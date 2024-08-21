@@ -20,6 +20,7 @@ enum CommonFeatureFlag {
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
     InboxDesktopMultiAccountSupport = 'InboxDesktopMultiAccountSupport',
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
+    InboxDesktopManualUpdateBannerDisabled = 'InboxDesktopManualUpdateBannerDisabled',
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
     WalletPlan = 'WalletPlan',
     DriveBizPlan = 'DriveBizPlan',
