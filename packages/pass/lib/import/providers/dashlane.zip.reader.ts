@@ -117,7 +117,10 @@ export const processCreditCardItem = (item: DashlanePaymentItem): ItemImportInte
     });
 
 export const processIdentityItem = (item: DashlanePersonalInfoItem | DashlaneIdItem): ItemImportIntent<'identity'> =>
-    importIdentityItem(buildDashlaneIdentity(item));
+    importIdentityItem({
+        name: 'item_name' in item ? item.item_name : item.name,
+        ...buildDashlaneIdentity(item),
+    });
 
 const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
     data: Maybe<string>;
