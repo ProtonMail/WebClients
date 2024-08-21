@@ -13,7 +13,7 @@ import type { DriveFolder } from '../hooks/drive/useActiveShare';
 import useActiveShare from '../hooks/drive/useActiveShare';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
 import useNavigate from '../hooks/drive/useNavigate';
-import { useDefaultShare, useDriveEventManager } from '../store';
+import { VolumeType, useDefaultShare, useDriveEventManager } from '../store';
 import { useVolumesState } from '../store/_volumes';
 import PreviewContainer from './PreviewContainer';
 
@@ -89,13 +89,19 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
             .then((defaultShare) => {
                 // We exclude subscribing to volumes event of main share (Already done in MainContainer)
                 if (defaultShare.volumeId !== volumeId) {
-                    driveEventManager.volumes.startSubscription(volumeId).catch(noop);
+                    driveEventManager.volumes.startSubscription(volumeId, VolumeType.shared).catch(noop);
                 }
             })
             .catch(noop);
 
         return () => {
-            driveEventManager.volumes.pauseSubscription(volumeId);
+            // This is memoized so should not make another call
+            getDefaultShare().then((defaultShare) => {
+                // We exclude pausing subscription to volumes event of main share
+                if (defaultShare.volumeId !== volumeId) {
+                    driveEventManager.volumes.pauseSubscription(volumeId);
+                }
+            });
         };
     }, [activeFolder.shareId]);
 
