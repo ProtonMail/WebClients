@@ -127,21 +127,26 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     };
 
     const handleSaveGroup = async (newEmails: string[]) => {
-        if (selectedGroup === undefined) {
+        if (!selectedGroup) {
             return;
         }
 
-        // Check address availablity if address changed
-        if (selectedGroup?.Address.Email !== `${formValues.address}@${selectedDomain}`) {
-            await api(
-                checkMemberAddressAvailability({
-                    Local: formValues.address,
-                    Domain: selectedDomain,
-                })
-            );
+        const isNewGroup = uiState === 'new';
+        const formEmailAndDomain = `${formValues.address}@${selectedDomain}`;
+
+        if (isNewGroup) {
+            // Check address availablity if address changed - not supported when in edit mode yet
+            if (selectedGroup?.Address.Email !== formEmailAndDomain) {
+                await api(
+                    checkMemberAddressAvailability({
+                        Local: formValues.address,
+                        Domain: selectedDomain,
+                    })
+                );
+            }
         }
 
-        const apiEndpoint = uiState === 'new' ? createGroup : editGroup;
+        const apiEndpoint = isNewGroup ? createGroup : editGroup;
 
         const Group = await dispatch(
             apiEndpoint({
@@ -149,7 +154,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
                 group: {
                     id: selectedGroup.ID,
                     name: formValues.name,
-                    email: `${formValues.address}@${selectedDomain}`,
+                    email: isNewGroup ? formEmailAndDomain : formValues.address,
                     domain: selectedDomain,
                     description: formValues.description,
                     permissions: formValues.permissions,
