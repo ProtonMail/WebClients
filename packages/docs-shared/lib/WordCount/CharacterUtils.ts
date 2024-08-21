@@ -7,6 +7,8 @@ const wordDelimiters = new Set(Object.values(WordDelimeters).map(toCodePoint))
 
 export const isWordDelimiter = (charCode: number | undefined) => charCode && wordDelimiters.has(charCode)
 
+export const isWhitespace = (char: string) => char.trim() !== char
+
 export const isWithinCodePointRange = (codePoint: number, [start, end]: [number, number]) =>
   codePoint >= start && codePoint <= end
 
