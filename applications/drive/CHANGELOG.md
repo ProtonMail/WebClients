@@ -1,3 +1,20 @@
+# August 2024
+
+-   Enabled downloading of related photos, including stills and videos, for Live Photos.
+-   Resolved several issues that were causing problems with downloads.
+-   Added support for legacy PDF MIME types.
+
+# July 2024
+
+-   Launched Docs in Proton Drive: Introduced real-time editing and collaboration features.
+-   Added functionality to accept or reject items directly from the "Shared with Me" section.
+-   Improved sorting of shared members by display name.
+-   Multiple bug fixes related to the "Shared with Me" section.
+
+# June 2024
+
+-   Launched 'Shared with Me': Enabled the ability to share files directly with other users with 'edit' and 'view' permissions.
+
 # Version 5.0.18.0
 
 You may have noticed there's a new cool kid on the block...

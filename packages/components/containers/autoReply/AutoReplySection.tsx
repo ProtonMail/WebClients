@@ -43,6 +43,8 @@ import AutoReplyFormWeekly from './AutoReplyForm/AutoReplyFormWeekly';
 import DurationField from './AutoReplyForm/fields/DurationField';
 import useAutoReplyForm, { getDefaultAutoResponder } from './AutoReplyForm/useAutoReplyForm';
 
+const AUTO_REPLY_MAX_LENGTH = 4096;
+
 const AutoReplySection = () => {
     const errorHandler = useErrorHandler();
     const [{ hasPaidMail }] = useUser();
@@ -59,6 +61,8 @@ const AutoReplySection = () => {
 
     const editorActionsRef = useRef<EditorActions>();
     const composerRef = useRef<HTMLDivElement>(null);
+
+    const messageLimitReached = model.message.length > AUTO_REPLY_MAX_LENGTH;
 
     const handleToggle = async (enable: boolean) => {
         if (!hasPaidMail) {
@@ -146,54 +150,6 @@ const AutoReplySection = () => {
         {}
     );
 
-    const renderForm = () => (
-        <form
-            onSubmit={async (e) => {
-                e.preventDefault();
-                await withUpdatingLoading(handleSubmit());
-            }}
-        >
-            <DurationField value={model.duration} onChange={updateModel('duration')} />
-
-            {formRenderer(model.duration)}
-
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label className="text-semibold" onClick={() => editorActionsRef.current?.focus()}>
-                        {c('Label').t`Message`}
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight>
-                    <div ref={composerRef} tabIndex={-1} className="w-full">
-                        <Editor
-                            metadata={{ supportImages: false }}
-                            onReady={handleEditorReady}
-                            onChange={updateModel('message')}
-                            simple
-                            openEmojiPickerRef={openEmojiPickerRef}
-                            toolbarConfig={toolbarConfig}
-                            setToolbarConfig={setToolbarConfig}
-                            modalLink={modalLink}
-                            modalImage={modalImage}
-                            modalDefaultFont={modalDefaultFont}
-                            mailSettings={mailSettings}
-                        />
-                    </div>
-
-                    <Button
-                        color="norm"
-                        type="submit"
-                        disabled={updatingLoading}
-                        loading={updatingLoading}
-                        className="mt-4"
-                    >
-                        {c('Action').t`Save`}
-                    </Button>
-                </SettingsLayoutRight>
-            </SettingsLayout>
-        </form>
-    );
-
     const plus = PLAN_NAMES[PLANS.MAIL];
     const bundle = PLAN_NAMES[PLANS.BUNDLE];
 
@@ -229,7 +185,57 @@ const AutoReplySection = () => {
             </SettingsLayout>
 
             {hasPaidMail ? (
-                isEnabled && renderForm()
+                isEnabled && (
+                    <form
+                        onSubmit={async (e) => {
+                            e.preventDefault();
+                            await withUpdatingLoading(handleSubmit());
+                        }}
+                    >
+                        <DurationField value={model.duration} onChange={updateModel('duration')} />
+
+                        {formRenderer(model.duration)}
+
+                        <SettingsLayout>
+                            <SettingsLayoutLeft>
+                                <label className="text-semibold" onClick={() => editorActionsRef.current?.focus()}>
+                                    {c('Label').t`Message`}
+                                </label>
+                            </SettingsLayoutLeft>
+                            <SettingsLayoutRight>
+                                <div ref={composerRef} tabIndex={-1} className="w-full">
+                                    <Editor
+                                        metadata={{ supportImages: false }}
+                                        onReady={handleEditorReady}
+                                        onChange={updateModel('message')}
+                                        simple
+                                        openEmojiPickerRef={openEmojiPickerRef}
+                                        toolbarConfig={toolbarConfig}
+                                        setToolbarConfig={setToolbarConfig}
+                                        modalLink={modalLink}
+                                        modalImage={modalImage}
+                                        modalDefaultFont={modalDefaultFont}
+                                        mailSettings={mailSettings}
+                                    />
+                                </div>
+                                {messageLimitReached && (
+                                    <p className="mt-1 mb-0 color-danger">{c('Error')
+                                        .t`Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.`}</p>
+                                )}
+
+                                <Button
+                                    color="norm"
+                                    type="submit"
+                                    disabled={updatingLoading || messageLimitReached}
+                                    loading={updatingLoading}
+                                    className="mt-4"
+                                >
+                                    {c('Action').t`Save`}
+                                </Button>
+                            </SettingsLayoutRight>
+                        </SettingsLayout>
+                    </form>
+                )
             ) : (
                 <UpgradeBanner className="mt-8" upsellPath={upsellRef}>
                     {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}

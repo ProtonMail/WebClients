@@ -12,7 +12,7 @@ interface Props {
 export const GroupMemberItemWrapper = ({ memberEmail, memberName, children }: Props) => {
     return (
         <>
-            <div className="flex gap-3">
+            <div className="flex gap-3 items-center">
                 <Avatar className="shrink-0 text-rg" color="weak">
                     {getInitials(memberName ?? memberEmail ?? '')}
                 </Avatar>

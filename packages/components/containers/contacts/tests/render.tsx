@@ -151,7 +151,7 @@ export function renderWithProviders(
     { preloadedState, ...renderOptions }: ExtendedRenderOptions = {}
 ) {
     const { store, Wrapper } = getStoreWrapper(preloadedState);
-    return { store, ...originalRender(ui, { wrapper: Wrapper, ...renderOptions, legacyRoot: true }) };
+    return { store, ...originalRender(ui, { wrapper: Wrapper, ...renderOptions }) };
 }
 
 export const minimalCache = () => {};

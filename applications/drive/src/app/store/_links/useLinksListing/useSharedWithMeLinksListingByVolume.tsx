@@ -143,6 +143,7 @@ export function useSharedWithMeLinksListingByVolume() {
     return {
         loadSharedWithMeLinks,
         getCachedSharedWithMeLinks,
+        setShareIdsState,
     };
 }
 

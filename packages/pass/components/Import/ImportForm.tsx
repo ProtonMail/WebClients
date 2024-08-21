@@ -145,14 +145,17 @@ export const ImportForm: FC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ fo
                                 />
                             ) : (
                                 <FileInput
-                                    // on iOS the "accept" attribute does not support the file extension
-                                    {...(!isIos()
-                                        ? {
+                                    // disable the "accept" attribute on:
+                                    // - iOS because the "accept" attribute does not support the file extension
+                                    // - 1Password because it may export a folder ending with .1pif, itself containing the 1pif file we want
+                                    // so we disable the accept attribute to allow selecting the file and not just the folder (tested on macOS)
+                                    {...(isIos() || form.values.provider === ImportProvider.ONEPASSWORD
+                                        ? {}
+                                        : {
                                               accept: PROVIDER_INFO_MAP[form.values.provider].fileExtension
                                                   .replace(/(\w+)/g, '.$1')
                                                   .replace(/\s/g, ''),
-                                          }
-                                        : {})}
+                                          })}
                                     onChange={dropzone.onAttach}
                                     disabled={busy}
                                     shape="solid"

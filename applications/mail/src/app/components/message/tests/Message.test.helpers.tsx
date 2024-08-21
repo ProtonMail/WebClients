@@ -91,6 +91,9 @@ export const setup = async (
 
         await act(async () => {
             ref.current?.expand();
+        });
+
+        await act(async () => {
             // Wait for message initialization to be finished before continuing
             await waitFor(() => {
                 const message = renderResult.store.getState().messages[props.message.ID];

@@ -20,12 +20,14 @@ enum CommonFeatureFlag {
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
     InboxDesktopMultiAccountSupport = 'InboxDesktopMultiAccountSupport',
     InboxDesktopThemeSelection = 'InboxDesktopThemeSelection',
+    InboxDesktopManualUpdateBannerDisabled = 'InboxDesktopManualUpdateBannerDisabled',
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
     WalletPlan = 'WalletPlan',
     DriveBizPlan = 'DriveBizPlan',
     WalletAutoSetup = 'WalletAutoSetup',
     SentinelRecoverySettings = 'SentinelRecoverySettings',
     LeftSidebarCollapsible = 'LeftSidebarCollapsible',
+    InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
 }
 
 enum AccountFlag {

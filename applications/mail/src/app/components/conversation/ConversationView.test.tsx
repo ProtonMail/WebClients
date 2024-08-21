@@ -1,4 +1,4 @@
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -214,7 +214,6 @@ describe('ConversationView', () => {
 
     describe('Auto reload', () => {
         it('should reload a conversation if first request failed', async () => {
-            jest.useFakeTimers();
             mockConsole();
 
             const response = { Conversation: conversation, Messages: [message] };
@@ -233,15 +232,15 @@ describe('ConversationView', () => {
             const header = getByTestId('conversation-header') as HTMLHeadingElement;
             expect(header.getAttribute('class')).toContain('is-loading');
 
-            jest.advanceTimersByTime(5000);
-            await waitForSpyCall({ spy: getSpy, callTimes: 2, disableFakeTimers: false });
+            await wait(3002);
+            await waitFor(() => {
+                expect(getSpy).toHaveBeenCalledTimes(2);
+            });
             await rerender();
 
             expect(header.getAttribute('class')).not.toContain('is-loading');
             getByText(conversation.Subject as string);
             expect(getSpy).toHaveBeenCalledTimes(2);
-
-            jest.runAllTimers();
         });
 
         it('should show error banner after 4 attemps', async () => {
@@ -259,12 +258,16 @@ describe('ConversationView', () => {
 
             await act(async () => {
                 jest.advanceTimersByTime(5000);
-                await waitForSpyCall({ spy: getSpy, callTimes: 2, disableFakeTimers: false });
-                jest.advanceTimersByTime(5000);
-                await waitForSpyCall({ spy: getSpy, callTimes: 3, disableFakeTimers: false });
-                jest.advanceTimersByTime(5000);
-                await waitForSpyCall({ spy: getSpy, callTimes: 4, disableFakeTimers: false });
             });
+            await waitForSpyCall({ spy: getSpy, callTimes: 2, disableFakeTimers: false });
+            await act(async () => {
+                jest.advanceTimersByTime(5000);
+            });
+            await waitForSpyCall({ spy: getSpy, callTimes: 3, disableFakeTimers: false });
+            await act(async () => {
+                jest.advanceTimersByTime(5000);
+            });
+            await waitForSpyCall({ spy: getSpy, callTimes: 4, disableFakeTimers: false });
 
             getByText('Network error', { exact: false });
             getByText('Try again');

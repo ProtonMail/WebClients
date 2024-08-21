@@ -3,7 +3,18 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 
 import type { ModalProps } from '../../../components';
-import { Form, Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, TextArea } from '../../../components';
+import {
+    Form,
+    Loader,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    QRCode,
+    Tabs,
+    TextArea,
+} from '../../../components';
+import {useState} from "react";
 
 export interface WireGuardCreationModalProps extends ModalProps {
     text?: string;
@@ -21,6 +32,7 @@ const WireGuardCreationModal = ({
     onDownload,
     onClose,
 }: WireGuardCreationModalProps) => {
+    const [tab, setTab] = useState<number>(0);
     const close = () => {
         onClose?.();
     };
@@ -39,10 +51,30 @@ const WireGuardCreationModal = ({
             <ModalTwoHeader title={serverName} />
             <ModalTwoContent>
                 {config ? (
-                    <div className="text-center">
-                        <p>{text}</p>
-                        <TextArea className="block mt-2" value={config} readOnly rows={14} />
-                    </div>
+                    <Tabs
+                        fullWidth
+                        value={tab}
+                        onChange={setTab}
+                        tabs={[
+                            {
+                                title: c('Title').t`Text`,
+                                content: (
+                                    <div className="text-center">
+                                        <p>{text}</p>
+                                        <TextArea className="block mt-2" value={config} readOnly rows={14}/>
+                                    </div>
+                                )
+                            },
+                            {
+                                title: c('Title').t`QRCode`,
+                                content: (
+                                    <div className="text-center">
+                                        <QRCode value={config} />
+                                    </div>
+                                )
+                            }
+                        ]}
+                    />
                 ) : (
                     <div className="text-center">
                         <p>{
