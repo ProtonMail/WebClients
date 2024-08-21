@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Tooltip } from '@proton/components/components';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import useLoading from '@proton/hooks/useLoading';
 import { GROUP_MEMBERSHIP_STATUS, type GroupMembership } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -11,7 +11,7 @@ import useGroupActions from './useGroupActions';
 
 const GroupActions = ({ membership, isPrivateUser }: { membership: GroupMembership; isPrivateUser: boolean }) => {
     const { acceptInvitation, declineInvitation, leaveMembership } = useGroupActions();
-    const { call } = useEventManager();
+    const [loading, withLoading] = useLoading();
 
     if (!isPrivateUser && membership.Status === GROUP_MEMBERSHIP_STATUS.ACTIVE) {
         return (
@@ -30,29 +30,26 @@ const GroupActions = ({ membership, isPrivateUser }: { membership: GroupMembersh
             text: c('Action').t`Leave`,
             'data-testid': 'leaveGroup',
             onClick: async () => {
-                await leaveMembership(membership);
-                await call();
+                await withLoading(leaveMembership(membership));
             },
         }, // accept group
         membership.Status === GROUP_MEMBERSHIP_STATUS.UNANSWERED && {
             text: c('Action').t`Accept`,
             'data-testid': 'acceptGroup',
             onClick: async () => {
-                await acceptInvitation(membership);
-                await call();
+                await withLoading(acceptInvitation(membership));
             },
         }, // decline group
         membership.Status === GROUP_MEMBERSHIP_STATUS.UNANSWERED && {
             text: c('Action').t`Decline`,
             'data-testid': 'declineGroup',
             onClick: async () => {
-                await declineInvitation(membership);
-                await call();
+                await withLoading(declineInvitation(membership));
             },
         },
     ].filter(isTruthy);
 
-    return <DropdownActions list={list} size="small" />;
+    return <DropdownActions list={list} size="small" loading={loading} />;
 };
 
 export default GroupActions;
