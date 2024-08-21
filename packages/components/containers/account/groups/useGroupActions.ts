@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
+import { acceptMembership, declineOrLeaveMembership } from '@proton/account';
 import {
     useApi,
+    useErrorHandler,
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
@@ -11,6 +13,7 @@ import {
 } from '@proton/components';
 import { CryptoProxy } from '@proton/crypto';
 import type { PrivateKeyReference } from '@proton/crypto';
+import { baseUseDispatch } from '@proton/react-redux-store';
 import { deleteGroupMember } from '@proton/shared/lib/api/groups';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { createAddressKeyRouteV2, replaceAddressTokens } from '@proton/shared/lib/api/keys';
@@ -83,6 +86,7 @@ const generateGroupMemberAddressKey = async ({
 
 const useGroupActions = () => {
     const api = useApi();
+    const handleError = useErrorHandler();
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
@@ -92,123 +96,135 @@ const useGroupActions = () => {
     const getUser = useGetUser();
     const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
+    const dispatch = baseUseDispatch();
 
     const acceptInvitation = async (membership: GroupMembership) => {
-        const addresses = await getAddresses();
-        const userKeys = await getUserKeys();
+        try {
+            const addresses = await getAddresses();
+            const userKeys = await getUserKeys();
 
-        if (getHasMigratedAddressKeys(addresses) && userKeys.length > 1) {
-            // The token is validated with the primary user key, and this is to ensure that
-            // the address tokens are encrypted to the primary user key.
-            // NOTE: Reencrypting address token happens automatically when generating a new user key,
-            // but there are users who generated user keys before that functionality existed.
-            const primaryUserKey = userKeys[0].privateKey;
-            const splitUserKeys = splitKeys(userKeys);
-            const replacedResult = await getReplacedAddressKeyTokens({
-                addresses,
-                privateKeys: splitUserKeys.privateKeys,
-                privateKey: primaryUserKey,
-            });
-            if (replacedResult.AddressKeyTokens.length) {
-                await api(replaceAddressTokens(replacedResult));
-                await call();
+            if (getHasMigratedAddressKeys(addresses) && userKeys.length > 1) {
+                // The token is validated with the primary user key, and this is to ensure that
+                // the address tokens are encrypted to the primary user key.
+                // NOTE: Reencrypting address token happens automatically when generating a new user key,
+                // but there are users who generated user keys before that functionality existed.
+                const primaryUserKey = userKeys[0].privateKey;
+                const splitUserKeys = splitKeys(userKeys);
+                const replacedResult = await getReplacedAddressKeyTokens({
+                    addresses,
+                    privateKeys: splitUserKeys.privateKeys,
+                    privateKey: primaryUserKey,
+                });
+                if (replacedResult.AddressKeyTokens.length) {
+                    await api(replaceAddressTokens(replacedResult));
+                    await call();
+                }
             }
-        }
 
-        const addressID = membership.AddressID;
-        const address = addresses.find(({ ID }) => ID === addressID);
+            const addressID = membership.AddressID;
+            const address = addresses.find(({ ID }) => ID === addressID);
 
-        if (address === undefined) {
-            throw Error('Address not found');
-        }
+            if (address === undefined) {
+                throw Error('Address not found');
+            }
 
-        const addressKeys = await getAddressKeys(addressID);
-        const forwardeeEmail = address.Email; // get from address
-        const splitUserKeys = splitKeys(userKeys);
-        const splitAddressKeys = splitKeys(addressKeys);
-        const [primaryAddressKey] = address.Keys;
+            const addressKeys = await getAddressKeys(addressID);
+            const forwardeeEmail = address.Email; // get from address
+            const splitUserKeys = splitKeys(userKeys);
+            const splitAddressKeys = splitKeys(addressKeys);
+            const [primaryAddressKey] = address.Keys;
 
-        if (!primaryAddressKey || !primaryAddressKey.Token) {
-            throw new Error('No primary address key');
-        }
+            if (!primaryAddressKey || !primaryAddressKey.Token) {
+                throw new Error('No primary address key');
+            }
 
-        const decryptedPrimaryAddressKeyToken = await getAddressKeyToken({
-            Token: primaryAddressKey.Token,
-            Signature: primaryAddressKey.Signature,
-            privateKeys: splitUserKeys.privateKeys,
-            publicKeys: splitUserKeys.publicKeys,
-        });
-
-        const { addressKeys: forwarderAddressKeys } = await getAndVerifyApiKeys({
-            api,
-            email: membership.Address,
-            verifyOutboundPublicKeys,
-            internalKeysOnly: true,
-        });
-
-        const publicKeys = await Promise.all(
-            forwarderAddressKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
-        );
-
-        let activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
-
-        for (const forwardingKey of [membership.Keys] || []) {
-            const decryptedToken = await decryptMemberToken(
-                forwardingKey.ActivationToken,
-                splitAddressKeys.privateKeys,
-                publicKeys
-            );
-            let privateKey = await CryptoProxy.importPrivateKey({
-                armoredKey: forwardingKey.PrivateKey,
-                passphrase: decryptedToken,
+            const decryptedPrimaryAddressKeyToken = await getAddressKeyToken({
+                Token: primaryAddressKey.Token,
+                Signature: primaryAddressKey.Signature,
+                privateKeys: splitUserKeys.privateKeys,
+                publicKeys: splitUserKeys.publicKeys,
             });
-            const extractedEmail = getEmailFromKey(privateKey);
 
-            // The forwardee email address can change before the user has accepted the forwarding
-            // So we need to update the private key with the email address returned by the API
-            // Use strict comparison because capitalization matters
-            if (extractedEmail !== forwardeeEmail) {
-                const updatedPrivateKey = await CryptoProxy.cloneKeyAndChangeUserIDs({
-                    userIDs: [{ name: forwardeeEmail, email: forwardeeEmail }],
+            const { addressKeys: forwarderAddressKeys } = await getAndVerifyApiKeys({
+                api,
+                email: membership.Address,
+                verifyOutboundPublicKeys,
+                internalKeysOnly: true,
+            });
+
+            const publicKeys = await Promise.all(
+                forwarderAddressKeys.map(({ armoredKey }) => CryptoProxy.importPublicKey({ armoredKey }))
+            );
+
+            let activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
+
+            for (const forwardingKey of [membership.Keys] || []) {
+                const decryptedToken = await decryptMemberToken(
+                    forwardingKey.ActivationToken,
+                    splitAddressKeys.privateKeys,
+                    publicKeys
+                );
+                let privateKey = await CryptoProxy.importPrivateKey({
+                    armoredKey: forwardingKey.PrivateKey,
+                    passphrase: decryptedToken,
+                });
+                const extractedEmail = getEmailFromKey(privateKey);
+
+                // The forwardee email address can change before the user has accepted the forwarding
+                // So we need to update the private key with the email address returned by the API
+                // Use strict comparison because capitalization matters
+                if (extractedEmail !== forwardeeEmail) {
+                    const updatedPrivateKey = await CryptoProxy.cloneKeyAndChangeUserIDs({
+                        userIDs: [{ name: forwardeeEmail, email: forwardeeEmail }],
+                        privateKey,
+                    });
+                    await CryptoProxy.clearKey({ key: privateKey });
+                    privateKey = updatedPrivateKey;
+                }
+
+                const armoredPrivateKey = await CryptoProxy.exportPrivateKey({
+                    privateKey,
+                    passphrase: decryptedPrimaryAddressKeyToken,
+                });
+                const [, updatedActiveKeys] = await generateGroupMemberAddressKey({
+                    api,
+                    address,
+                    keyTransparencyVerify,
+                    groupMemberID: membership.ID,
+                    encryptedToken: primaryAddressKey.Token,
+                    signature: primaryAddressKey.Signature,
+                    privateKeyArmored: armoredPrivateKey,
+                    activeKeys,
                     privateKey,
                 });
-                await CryptoProxy.clearKey({ key: privateKey });
-                privateKey = updatedPrivateKey;
+                await keyTransparencyCommit(userKeys);
+                activeKeys = updatedActiveKeys;
             }
-
-            const armoredPrivateKey = await CryptoProxy.exportPrivateKey({
-                privateKey,
-                passphrase: decryptedPrimaryAddressKeyToken,
-            });
-            const [, updatedActiveKeys] = await generateGroupMemberAddressKey({
-                api,
-                address,
-                keyTransparencyVerify,
-                groupMemberID: membership.ID,
-                encryptedToken: primaryAddressKey.Token,
-                signature: primaryAddressKey.Signature,
-                privateKeyArmored: armoredPrivateKey,
-                activeKeys,
-                privateKey,
-            });
-            await keyTransparencyCommit(userKeys);
-            activeKeys = updatedActiveKeys;
+            dispatch(acceptMembership(membership));
+            createNotification({ text: c('group_invitation: Success').t`Group invitation accepted` });
+        } catch (error) {
+            handleError(error);
         }
-
-        await call();
-        createNotification({ text: c('group_invitation: Success').t`Group invitation accepted` });
     };
 
     const declineInvitation = async (membership: GroupMembership) => {
-        await api(deleteGroupMember(membership.ID));
-        await call();
-        createNotification({ text: c('group_invitation: Success').t`Group invitation declined` });
+        try {
+            await api(deleteGroupMember(membership.ID));
+            dispatch(declineOrLeaveMembership(membership));
+            createNotification({ text: c('group_invitation: Success').t`Group invitation declined` });
+        } catch (error) {
+            handleError(error);
+        }
     };
 
     const leaveMembership = async (membership: GroupMembership) => {
-        await api(deleteGroupMember(membership.ID));
-        await call();
-        createNotification({ text: c('group_invitation: Success').t`Left group` });
+        try {
+            await api(deleteGroupMember(membership.ID));
+            dispatch(declineOrLeaveMembership(membership));
+            createNotification({ text: c('group_invitation: Success').t`Left group` });
+        } catch (error) {
+            handleError(error);
+        }
     };
 
     return {
