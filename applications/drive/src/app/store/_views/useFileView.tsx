@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
+import metrics from '@proton/metrics';
 import { SHARE_MEMBER_PERMISSIONS, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { isProtonDocument, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
@@ -85,6 +86,14 @@ export function usePublicFileView(
         downloadStream
     );
     const navigation = usePublicFileViewNavigation(useNavigation, shareId, sortParams, link?.parentLinkId, linkId);
+
+    useEffect(() => {
+        if (error) {
+            metrics.drive_file_preview_errors_total.increment({
+                type: !link ? 'unknown' : link.isFile ? 'file' : 'folder',
+            });
+        }
+    }, [error]);
 
     return {
         permissions: SHARE_MEMBER_PERMISSIONS.READ,
