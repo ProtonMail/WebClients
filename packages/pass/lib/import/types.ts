@@ -127,6 +127,7 @@ export type ImportReaderPayload = {
     passphrase?: string;
     options?: {
         importUsername?: boolean;
+        currentAliases?: string[];
     };
 };
 

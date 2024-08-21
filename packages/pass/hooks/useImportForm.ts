@@ -18,7 +18,7 @@ import { ImportProvider } from '@proton/pass/lib/import/types';
 import { importItemsIntent } from '@proton/pass/store/actions';
 import { itemsImportRequest } from '@proton/pass/store/actions/requests';
 import type { ImportState } from '@proton/pass/store/reducers';
-import { selectLatestImport, selectUser } from '@proton/pass/store/selectors';
+import { selectAliasItems, selectLatestImport, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { first } from '@proton/pass/utils/array/first';
@@ -100,6 +100,7 @@ export const useImportForm = ({
 
     const result = useSelector(selectLatestImport);
     const user = useSelector(selectUser);
+    const aliases = useSelector(selectAliasItems);
 
     const importItems = useActionRequest(importItemsIntent, {
         initialRequestId: itemsImportRequest(),
@@ -127,7 +128,16 @@ export const useImportForm = ({
                         provider: values.provider,
                         passphrase: values.passphrase,
                         userId: user?.ID,
-                        options: { importUsername: usernameSplitEnabled },
+                        options: {
+                            importUsername: usernameSplitEnabled,
+                            currentAliases:
+                                values.provider === ImportProvider.PROTONPASS
+                                    ? aliases.reduce((acc: string[], { aliasEmail }) => {
+                                          if (aliasEmail) acc.push(aliasEmail);
+                                          return acc;
+                                      }, [])
+                                    : [],
+                        },
                     })
                 );
 
