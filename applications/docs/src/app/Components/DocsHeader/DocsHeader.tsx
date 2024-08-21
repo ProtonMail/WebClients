@@ -14,24 +14,35 @@ import type { DocumentAction } from '@proton/drive-store'
 
 const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
   const application = useApplication()
+  const [isReady, setIsReady] = useState(false)
 
   const [controller, setController] = useState<DocControllerInterface | null>(null)
   useEffect(() => {
     return application.docLoader.addStatusObserver({
       onSuccess: () => {
+        setIsReady(true)
         setController(application.docLoader.getDocController())
       },
       onError: traceError,
     })
   }, [application.docLoader])
 
+  if (application.isRunningInNativeMobileWeb) {
+    return null
+  }
+
   return (
     <div className="flex items-center px-4 py-2" data-testid="docs-header">
       <DocumentTitleDropdown action={action} controller={controller} />
+
       <div className="w-2" />
-      <ConnectionStatus />
+
+      {isReady && <ConnectionStatus />}
+
       <div className="mr-auto" />
+
       <DocumentActiveUsers className="mr-2 hidden md:flex" />
+
       {controller?.role.isAdmin() && (
         <Button
           shape="ghost"
@@ -43,12 +54,15 @@ const DocsHeader = ({ action }: { action?: DocumentAction['mode'] }) => {
           {c('Action').t`Share`}
         </Button>
       )}
+
       {controller?.role.canComment() && (
         <>
           <CommentsButton controller={controller} />
         </>
       )}
+
       <div className="w-4" />
+
       <UserDropdown app={APPS.PROTONDOCS} />
     </div>
   )

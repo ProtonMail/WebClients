@@ -39,7 +39,7 @@ export function SharedWithMeContextMenu({
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-                {selectedBrowserItem && (
+                {selectedBrowserItem && !selectedBrowserItem.isInvitation && (
                     <>
                         {hasPreviewAvailable && (
                             <PreviewButton

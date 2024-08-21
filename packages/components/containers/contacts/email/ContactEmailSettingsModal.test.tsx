@@ -3,6 +3,7 @@ import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 import { CryptoProxy } from '@proton/crypto';
 import { API_CODES, API_KEY_SOURCE, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import type { RequireSome } from '@proton/shared/lib/interfaces';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { addApiMock } from '@proton/testing/lib/api';
@@ -11,6 +12,7 @@ import { clearAll, mockedCryptoApi, notificationManager, renderWithProviders } f
 import type { ContactEmailSettingsProps } from './ContactEmailSettingsModal';
 import ContactEmailSettingsModal from './ContactEmailSettingsModal';
 
+// Fails with React 18 upgrade
 describe('ContactEmailSettingsModal', () => {
     const props: ContactEmailSettingsProps = {
         contactID: 'ContactID',
@@ -62,6 +64,7 @@ END:VCARD`;
 
         const showMoreButton = getByText('Show advanced PGP settings');
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+        await wait(0);
         fireEvent.click(showMoreButton);
 
         const encryptToggle = document.getElementById('encrypt-toggle');
@@ -427,7 +430,7 @@ END:VCARD`;
             />
         );
 
-        const showMoreButton = getByText('Show advanced PGP settings');
+        const showMoreButton = await screen.findByText('Show advanced PGP settings');
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
         fireEvent.click(showMoreButton);
 
@@ -532,6 +535,7 @@ END:VCARD`;
 
         const showMoreButton = getByText('Show advanced PGP settings');
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+        await wait(1);
         fireEvent.click(showMoreButton);
 
         await waitFor(() => {
@@ -623,6 +627,7 @@ END:VCARD`;
 
         const showMoreButton = getByText('Show advanced PGP settings');
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+        await wait(1);
         fireEvent.click(showMoreButton);
 
         await waitFor(() => {
@@ -722,6 +727,7 @@ END:VCARD`;
 
         const showMoreButton = getByText('Show advanced PGP settings');
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+        await wait(1);
         fireEvent.click(showMoreButton);
 
         await waitFor(() => {
@@ -825,6 +831,7 @@ END:VCARD`;
 
             const showMoreButton = screen.getByText('Show advanced PGP settings');
             await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+            await wait(1);
             fireEvent.click(showMoreButton);
 
             await waitFor(() => {
@@ -865,6 +872,7 @@ END:VCARD`;
 
             const showMoreButton = screen.getByText('Show advanced PGP settings');
             await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+            await wait(1);
             fireEvent.click(showMoreButton);
 
             await waitFor(() => {
@@ -905,6 +913,7 @@ END:VCARD`;
 
             const showMoreButton = screen.getByText('Show advanced PGP settings');
             await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+            await wait(1);
             fireEvent.click(showMoreButton);
 
             await waitFor(() => {

@@ -82,7 +82,7 @@ const ViewGroup = ({
                                 size="small"
                                 shape="ghost"
                                 value={groupData.Address.Email}
-                                className="shrink-0 expand-click-area"
+                                className="shrink-0"
                                 onCopy={handleCopy}
                             />
                         </div>

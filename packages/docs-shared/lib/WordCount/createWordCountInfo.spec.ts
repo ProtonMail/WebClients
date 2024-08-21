@@ -20,6 +20,26 @@ test('Different separators', () => {
   expect(nonWhitespaceCharacterCount).toBe(102)
 })
 
+test('Em dashes delimit words', () => {
+  const text = 'Btw—hello—world—foo'
+
+  const { wordCount, characterCount, nonWhitespaceCharacterCount } = createWordCountInfo(text)
+
+  expect(wordCount).toBe(4)
+  expect(characterCount).toBe(19)
+  expect(nonWhitespaceCharacterCount).toBe(19)
+})
+
+test('Hyphens do not delimit words', () => {
+  const text = 'Btw-hello-world-foo'
+
+  const { wordCount, characterCount, nonWhitespaceCharacterCount } = createWordCountInfo(text)
+
+  expect(wordCount).toBe(1)
+  expect(characterCount).toBe(19)
+  expect(nonWhitespaceCharacterCount).toBe(19)
+})
+
 test('Whitespace', () => {
   const text = 'The    quick     brown     fox\njumps\tover the lazy dog'
   const { wordCount, characterCount, nonWhitespaceCharacterCount } = createWordCountInfo(text)

@@ -11,3 +11,7 @@ export type OnePassFieldValue<K extends OnePassFieldKey> = K extends OnePassFiel
 export type OnePassFieldValueFactory = {
     [K in OnePassFieldKey]?: (...args: any) => OnePassFieldValue<K>;
 };
+
+export type OnePassLegacyFieldValueFactory = {
+    [key: string]: (...args: any) => string;
+};

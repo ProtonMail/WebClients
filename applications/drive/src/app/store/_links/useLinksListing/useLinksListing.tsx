@@ -469,7 +469,9 @@ export function useLinksListingProvider() {
         getCachedSharedWithMeLink: sharingLoadLinksByVolume
             ? sharedWithMeLinksListingByVolume.getCachedSharedWithMeLinks
             : sharedWithMeLinksListing.getCachedSharedWithMeLinks,
-        setSharedWithMeShareIdsState: sharedWithMeLinksListing.setShareIdsState,
+        setSharedWithMeShareIdsState: sharingLoadLinksByVolume
+            ? sharedWithMeLinksListingByVolume.setShareIdsState
+            : sharedWithMeLinksListing.setShareIdsState,
         getCachedLinks,
     };
 }

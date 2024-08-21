@@ -3,6 +3,7 @@ import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Address, Key } from '@proton/shared/lib/interfaces';
 
 import { arrayToBase64 } from '../../../helpers/base64';
@@ -105,11 +106,16 @@ describe('Composer attachments', () => {
     };
 
     const waitForAutoSave = async () => {
+        jest.useFakeTimers();
         act(() => {
-            jest.useFakeTimers();
             jest.advanceTimersByTime(3000);
-            jest.useRealTimers();
         });
+        jest.useRealTimers();
+
+        // React 18 got issues with faketimers.
+        // Fix is to wait a bit for a proper rerender.
+        await wait(100);
+
         await waitForSpyCall({ spy: updateSpy });
     };
 

@@ -26,7 +26,7 @@ import {
     useSearchControl,
 } from '../store';
 // TODO: This should be removed after rollout phase
-import { useDriveSharingFlags, useShareActions } from '../store/_shares';
+import { VolumeType, useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
 import DevicesContainer from './DevicesContainer';
 import FolderContainer from './FolderContainer';
@@ -87,7 +87,7 @@ const InitContainer = () => {
             return;
         }
 
-        driveEventManager.volumes.startSubscription(volumeId).catch(console.warn);
+        driveEventManager.volumes.startSubscription(volumeId, VolumeType.own).catch(console.warn);
         return () => {
             driveEventManager.volumes.unsubscribe(volumeId);
         };
