@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import { useApi } from '@proton/components/hooks';
-import { deleteAllGroupMembers, deleteGroup } from '@proton/shared/lib/api/groups';
+import { deleteAllGroupMembers } from '@proton/shared/lib/api/groups';
 import type { Group } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
@@ -31,7 +31,6 @@ const GroupItem = ({
     const memberCount = Number.isInteger(MemberCount) ? MemberCount : undefined;
 
     const handleDeleteGroup = async () => {
-        await api(deleteGroup(ID));
         onDeleteGroup?.();
     };
 

@@ -1,12 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { useFormik } from 'formik';
+import { c } from 'ttag';
 
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
 import {
     useApi,
     useCustomDomains,
+    useErrorHandler,
     useEventManager,
     useGetUser,
     useGroups,
@@ -36,6 +38,7 @@ export const INITIAL_FORM_VALUES = {
 };
 
 const useGroupsManagement = (organization?: Organization): GroupsManagementReturn | undefined => {
+    const handleError = useErrorHandler();
     const [members] = useMembers();
     const [groups, loadingGroups] = useGroups();
     const api = useApi();
@@ -117,12 +120,19 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     }
 
     const onDeleteGroup = async () => {
-        if (selectedGroup !== undefined) {
+        if (!selectedGroup) {
+            return;
+        }
+
+        try {
             await api(deleteGroup(selectedGroup.ID));
+            createNotification({ type: 'success', text: c('Info').t`Group deleted` });
             await call();
             resetForm();
             setSelectedGroup(undefined);
             setUiState('empty');
+        } catch (error) {
+            handleError(error);
         }
     };
 
