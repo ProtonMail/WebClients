@@ -139,6 +139,7 @@ const MainContainer = () => {
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
+    const isUserGroupsMembershipFeatureEnabled = useFlag('UserGroupsMembersPermissionCheck');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -176,6 +177,7 @@ const MainContainer = () => {
         canDisplayB2BLogsPass,
         canDisplayB2BLogsVPN,
         memberships,
+        isUserGroupsMembershipFeatureEnabled,
     });
 
     useEffect(() => {

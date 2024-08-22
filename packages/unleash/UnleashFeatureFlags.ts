@@ -56,6 +56,7 @@ enum AccountFlag {
     SecurityCheckup = 'SecurityCheckup',
     PassB2BForceLock = 'PassB2BForceLock',
     SignedInForgot2FAFlow = 'SignedInForgot2FAFlow',
+    UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
 }
 
 enum CalendarFeatureFlag {
