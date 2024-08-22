@@ -637,6 +637,9 @@
       "Italic": [
         "Cursiva"
       ],
+      "Keep my subscription": [
+        "Mantener mi suscripción"
+      ],
       "Label as": [
         "Etiquetar como"
       ],
@@ -841,10 +844,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
       "Open": [
@@ -3604,6 +3607,9 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Se factura cada dos años por ${ amountBilled }. Los descuentos se aplican sobre el precio mensual estándar."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Facturación anual de ${ amountBilled }. Ahorra ${ amountSave } en 2 suscripciones individuales anuales ilimitadas de ${ BRAND_NAME }."
       ]
@@ -7412,6 +7418,9 @@
         "Has seleccionado **${ elementsCount } mensaje**.",
         "Has seleccionado **${ elementsCount } mensajes**."
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Perderás el acceso a las funciones de ${ planTitle } en esta fecha."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
@@ -9056,6 +9065,10 @@
         "${ n } mensaje al día",
         "${ n } mensajes al día"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } caja fuerte compartida de ${ PASS_SHORT_APP_NAME } por usuario",
+        "${ n } cajas fuertes compartidas de ${ PASS_SHORT_APP_NAME } por usuario"
+      ],
       "${ n } user": [
         "${ n } usuario",
         "Hasta ${ n } usuarios"
@@ -9067,6 +9080,10 @@
       "${ n } VPN connection": [
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
+      ],
+      "${ options }-day file version history": [
+        "Historial de ${ options } día de las versiones de los archivos",
+        "Historial de ${ options } días de las versiones de los archivos"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
@@ -9080,6 +9097,9 @@
       ],
       "${ size } attachment size": [
         "${ size } en archivos adjuntos"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } de almacenamiento seguro por usuario"
       ],
       "${ size } storage": [
         "${ size } de almacenamiento"
@@ -9107,6 +9127,12 @@
       ],
       "Administration Panel": [
         "Panel de administración"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Todos los servicios prémium de ${ BRAND_NAME } en una sola y sencilla suscripción"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
@@ -9143,6 +9169,9 @@
       ],
       "Contact groups management": [
         "Administración de grupos de contactos"
+      ],
+      "Custom and secure business email": [
+        "Correo electrónico empresarial personalizado y seguro"
       ],
       "Custom domains for email aliases": [
         "Dominios personalizados para alias de correo electrónico"
@@ -9275,6 +9304,9 @@
         "Protege ${ n } dispositivo a la vez",
         "Protege ${ n } dispositivos a la vez"
       ],
+      "Recover previous file versions": [
+        "Recuperar las versiones previas de los archivos"
+      ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprobaciones periódicas de la seguridad de tu cuenta. Te avisamos si tienes contraseñas débiles o reusadas que deban actualizarse."
       ],
@@ -9326,6 +9358,9 @@
       "Strict no-logs policy": [
         "Política estricta de cero registros"
       ],
+      "Sync and backup all your files across devices": [
+        "Sincroniza todas las copias de seguridad y todos los archivos en tus distintos dispositivos"
+      ],
       "Tor over VPN": [
         "Tor sobre VPN"
       ],
@@ -9361,6 +9396,9 @@
       ],
       "Unlimited messages per day": [
         "Mensajes al día ilimitados"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Cajas fuertes compartidas ilimitadas de ${ PASS_SHORT_APP_NAME } por usuario"
       ],
       "Unlimited shared vaults with access permissions": [
         "Cajas fuertes compartidas ilimitadas con permisos de acceso"
@@ -9477,6 +9515,9 @@
       ],
       "Popular": [
         "Popular"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Protege la información empresarial confidencial y colabora de forma segura."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protege la privacidad de tu familia con todos los servicios combinados de ${ BRAND_NAME }."
@@ -9648,6 +9689,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personaliza tu firma de correo electrónico con logotipos, imágenes, iconos de redes sociales, enlaces en tus datos de contacto, etc."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 20 usuarios."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impide que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
@@ -13103,6 +13147,11 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Acceder a la aplicación Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Una forma más segura y sencilla de guardar y enviar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

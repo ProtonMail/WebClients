@@ -637,6 +637,9 @@
       "Italic": [
         "Kursiv"
       ],
+      "Keep my subscription": [
+        "Behalte mein Abonnement"
+      ],
       "Label as": [
         "Hinzufügen zu Kategorie"
       ],
@@ -841,11 +844,11 @@
       "Not saved": [
         "Nicht gespeichert"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Öffnen"
@@ -3604,11 +3607,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Alle zwei Jahre für ${ amountBilled } in Rechnung gestellt. Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Jährlich für ${ amountBilled } in Rechnung gestellt. Spare ${ amountSave } bei 2 individuellen ${ BRAND_NAME } Unlimited-Jahresabonnements."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB Speicherplatz"
+      ],
       "2 users": [
         "2 Benutzer"
       ],
@@ -4194,7 +4203,7 @@
         "Tab geschlossen"
       ],
       "Text is too long to refine": [
-        "Der Text ist zu lang, um ihn zu verfeinern"
+        "Der Text ist zu lang, um ihn zu verbessern"
       ],
       "Thanks for the feedback!": [
         "Danke für die Rückmeldung!"
@@ -6566,7 +6575,7 @@
         "Organisationsgröße"
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Unsere Warnungen sind eher auf der Seite der Vorsicht angesiedelt. Wenn du keine der gefundenen Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
+        "Unsere Warnungen sind tendenziell übervorsichtig. Wenn du keine der gefundenen Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Unser System hat diese Nachricht als Phishing-Versuch gekennzeichnet. Bitte überprüfe, ob sie seriös ist."
@@ -7039,7 +7048,7 @@
         "in den Ordner ${ destinationElement } verschoben."
       ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
-        "Um zu vermeiden, dass du von den offenen Tabs in deinem Browser abgelenkt wirst, verwende die Desktopanwendung."
+        "Verwende die Desktopanwendung, um nicht von den offenen Tabs in deinem Browser abgelenkt zu werden."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "Um die Zahlung abzuschließen, sende bitte ${ btcAmountBold } an die untenstehende Adresse."
@@ -7408,6 +7417,9 @@
       "You selected **${ elementsCount } message**.": [
         "Du hast **${ elementsCount } Nachricht** ausgewählt.",
         "Du hast **${ elementsCount } Nachrichten** ausgewählt."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "An diesem Datum verlierst du den Zugang zu ${ planTitle }-Funktionen."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
@@ -9050,6 +9062,14 @@
         "${ n } Nachricht pro Tag",
         "${ n } Nachrichten pro Tag"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } geteilter ${ PASS_SHORT_APP_NAME } Tresor pro Benutzer",
+        "${ n } geteilte ${ PASS_SHORT_APP_NAME } Tresore pro Benutzer"
+      ],
+      "${ n } user": [
+        "${ n } Benutzer",
+        "Bis zu ${ n } Benutzer"
+      ],
       "${ n } vault": [
         "${ n } Tresor",
         "${ n } Tresore"
@@ -9057,6 +9077,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
+      ],
+      "${ options }-day file version history": [
+        "Dateiversionsverlauf für ${ options } Tag",
+        "Dateiversionsverlauf für ${ options } Tage"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } mit ${ n } hide-my-email-Alias",
@@ -9071,8 +9095,17 @@
       "${ size } attachment size": [
         "Anhänge mit einer Größe von ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } sicherer Speicherplatz pro Benutzer"
+      ],
       "${ size } storage": [
         "${ size } Speicherplatz"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - für ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - für alle ${ BRAND_NAME }-Dienste"
       ],
       "1 user": [
         "1 Benutzer"
@@ -9091,6 +9124,12 @@
       ],
       "Administration Panel": [
         "Verwaltungskonsole"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle ${ BRAND_NAME } Standarddienste (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle ${ BRAND_NAME } Premium-Dienste. Ein einfaches Abonnement"
       ],
       "Auto-delete Spam and Trash": [
         "Spam und Papierkorb automatisch löschen"
@@ -9127,6 +9166,9 @@
       ],
       "Contact groups management": [
         "Kontaktgruppenverwaltung"
+      ],
+      "Custom and secure business email": [
+        "Benutzerdefinierte und sichere geschäftliche E-Mails"
       ],
       "Custom domains for email aliases": [
         "Eigene Domains für E-Mail-Aliasse"
@@ -9222,6 +9264,9 @@
       "Multiple admin roles": [
         "Mehrere Administratorrollen"
       ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
       "Organize items with multiple vaults": [
         "Strukturiere Einträge mit mehreren Tresoren"
       ],
@@ -9231,8 +9276,14 @@
       "Password health": [
         "Passwortsicherheit"
       ],
+      "Password manager": [
+        "Passwort-Manager"
+      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonischer Support (ab 20 Benutzern)"
       ],
       "Priority email support": [
         "Priorisierter E-Mail-Support"
@@ -9249,6 +9300,9 @@
       "Protect ${ n } device at a time": [
         "Schütze ${ n } Gerät gleichzeitig",
         "Schütze ${ n } Geräte gleichzeitig"
+      ],
+      "Recover previous file versions": [
+        "Stelle vorherige Dateiversionen wieder her"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmäßige Überprüfungen der Sicherheit deines Kontos. Wir warnen dich, wenn du schwache oder wiederverwendete Passwörter hast, die aktualisiert werden müssen."
@@ -9280,6 +9334,9 @@
       "Send & receive invitations": [
         "Einladungen senden & empfangen"
       ],
+      "Share files with no size limit": [
+        "Teile Dateien ohne Größenbeschränkung"
+      ],
       "Sign in as user": [
         "Als Benutzer anmelden"
       ],
@@ -9297,6 +9354,9 @@
       ],
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
       "Tor over VPN": [
         "Tor über VPN"
@@ -9333,6 +9393,9 @@
       ],
       "Unlimited messages per day": [
         "Unbegrenzte Anzahl von Nachrichten pro Tag"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Unbegrenzte geteilte ${ PASS_SHORT_APP_NAME } Tresore pro Benutzer"
       ],
       "Unlimited shared vaults with access permissions": [
         "Unbegrenzte gemeinsame Tresore mit Zugriffsberechtigungen"
@@ -9449,6 +9512,9 @@
       ],
       "Popular": [
         "Beliebt"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Schütze sensible Geschäftsinformationen und arbeite sicher zusammen."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Schütze die Privatsphäre deiner Familie durch die Kombination aller ${ BRAND_NAME }-Dienste."
@@ -9620,6 +9686,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonische Unterstützung ist durch das ${ BRAND_NAME }-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 20 oder mehr Benutzern verfügbar."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindert den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
@@ -11050,6 +11119,9 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Bilder werden jetzt standardmäßig geladen und deren Absender können dich nicht mehr zurückverfolgen.\nDies kann in den ${ settingsLink } geändert werden."
       ],
+      "You can now collapse the navigation bar.": [
+        "Du kannst nun die Navigationsleiste ausblenden."
+      ],
       "You can now schedule your messages to be sent later": [
         "Du kannst jetzt das Versenden deiner Nachrichten zu einem späteren Zeitpunkt planen."
       ]
@@ -12408,6 +12480,9 @@
       "Enable message content search": [
         "Suche nach Nachrichteninhalten aktivieren"
       ],
+      "Enter 2FA code": [
+        "2FA Code eingeben"
+      ],
       "Enter your password": [
         "Passwort eingeben"
       ],
@@ -13069,6 +13144,11 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Auf Wallet-App zugreifen"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Eine sicherere und einfachere Art Bitcoin zu besitzen und zu versenden"
       ]
     },
     "wallet_signup_2024:Bug category": {
