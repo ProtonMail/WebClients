@@ -112,6 +112,9 @@
       "Cancel subscription": [
         "Peru tilaus"
       ],
+      "characters": [
+        "merkkiä"
+      ],
       "Chat with us": [
         "Keskustele kanssamme"
       ],
@@ -323,6 +326,9 @@
       ],
       "Increase": [
         "Lisää"
+      ],
+      "Keep my subscription": [
+        "Pidä tilaukseni"
       ],
       "Learn more": [
         "Lue lisää"
@@ -609,6 +615,12 @@
       "What do I get?": [
         "Mitä saan?"
       ],
+      "Word count": [
+        "Sanamäärä"
+      ],
+      "words": [
+        "sanaa"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
@@ -652,7 +664,7 @@
         "${ price }/verkkotunnus"
       ],
       "${ price } per user": [
-        "${ price } per käyttäjä"
+        "${ price }/käyttäjä"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } kirjoitusavustajalisenssi",
@@ -3522,9 +3534,6 @@
         "Kaikki (${ totalFoldersCount } tunniste)",
         "Kaikki (${ totalFoldersCount } tunnistetta)"
       ],
-      "All changes saved to Drive": [
-        "Kaikki muutokset on tallennettu Driveen"
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
@@ -3585,6 +3594,12 @@
       ],
       "Change your password": [
         "Vaihda salasanasi"
+      ],
+      "characters": [
+        "merkkiä"
+      ],
+      "characters without spaces": [
+        "merkkiä ilman välilyöntejä"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Tarkistetaan yhteystietoa ${ progress }/${ max }..."
@@ -3672,6 +3687,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy -logo"
       ],
+      "Display word count": [
+        "Näytä sanamäärä"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Etkö näe mitään? Muista sammuttaa pop-up estot."
       ],
@@ -3719,6 +3737,9 @@
       ],
       "Emails are automatically signed": [
         "Viestit allekirjoitetaan automaattisesti"
+      ],
+      "End-to-end encrypted": [
+        "Päästä päähän -salattu"
       ],
       "End-to-end encrypted.": [
         "Päästä päähän -salattu."
@@ -4090,9 +4111,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
       ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Tallennettu ${ DRIVE_APP_NAME }en"
-      ],
       "Saving": [
         "Tallennetaan"
       ],
@@ -4343,6 +4361,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Määrittäessäsi kaksivaiheisen tunnistautumisen saat palautuskoodit, joiden avulla voit kirjautua myös silloin, kun et voi käyttää todennussovellustasi."
       ],
+      "words": [
+        "sanaa"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista tunnistautumistapaa?"
       ],
@@ -4380,11 +4401,11 @@
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjä, jolle olet jakanut kalentereitasi.",
+        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, jolle olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjä, jolle olet jakanut kalentereitasi.",
+        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
       ],
       "You can now return to the application to continue": [
@@ -4410,6 +4431,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal-tililläsi on oltava maksukortti tai pankkitili. Jos PayPal-tililläsi ei näitä ole, paina alla olevaa painiketta."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Menetät pääsyn ${ planTitle } -ominaisuuksiin tänä päivänä."
       ],
       "You will lose all unsaved changes.": [
         "Menetät kaikki tallentamattomat muutokset."
@@ -5461,8 +5485,8 @@
         "${ n } kalenteria"
       ],
       "${ n } calendar per user": [
-        "${ n } kalenteri per käyttäjä",
-        "${ n } kalenteria per käyttäjä"
+        "${ n } kalenteri/käyttäjä",
+        "${ n } kalenteria/käyttäjä"
       ],
       "${ n } custom email domain": [
         "${ n } oma sähköpostiverkkotunnus",
@@ -5500,6 +5524,14 @@
         "${ n } viesti päivässä",
         "${ n } viestiä päivässä"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } jaettu ${ PASS_SHORT_APP_NAME }-holvi/käyttäjä",
+        "${ n } jaettua ${ PASS_SHORT_APP_NAME }-holvia/käyttäjä"
+      ],
+      "${ n } user": [
+        "${ n } käyttäjä",
+        "Enintään ${ n } käyttäjää"
+      ],
       "${ n } vault": [
         "${ n } holvi",
         "${ n } holvia"
@@ -5507,6 +5539,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-yhteys",
         "${ n } VPN-yhteyttä"
+      ],
+      "${ options }-day file version history": [
+        "${ options } päivän tiedostojen versiohistoria",
+        "${ options } päivän tiedostojen versiohistoria"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-alias",
@@ -5521,8 +5557,17 @@
       "${ size } attachment size": [
         "${ size } liitteen koko"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } suojattua tallennustilaa/käyttäjä"
+      ],
       "${ size } storage": [
         "${ size } tallennustilaa"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - ${ DRIVE_APP_NAME }:lle"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Kaikille ${ BRAND_NAME }-palveluille"
       ],
       "1 user": [
         "1 käyttäjä"
@@ -5541,6 +5586,12 @@
       ],
       "Administration Panel": [
         "Hallintapaneeli"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Kaikki premium ${ BRAND_NAME } -palvelut. Yksi helppo tilaus"
       ],
       "Auto-delete Spam and Trash": [
         "Tyhjennä roskaposti ja roskakori automaattisesti"
@@ -5577,6 +5628,9 @@
       ],
       "Contact groups management": [
         "Yhteystietoryhmien hallinta"
+      ],
+      "Custom and secure business email": [
+        "Oma suojattu yrityssähköposti"
       ],
       "Custom domains for email aliases": [
         "Omat verkkotunnukset sähköpostialiaksina"
@@ -5672,6 +5726,9 @@
       "Multiple admin roles": [
         "Useita ylläpitäjien rooleja"
       ],
+      "Online document editor": [
+        "Dokumenttieditori verkossa"
+      ],
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
       ],
@@ -5681,8 +5738,14 @@
       "Password health": [
         "Salasanaterveys"
       ],
+      "Password manager": [
+        "Salasanahallinta"
+      ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
+      ],
+      "Phone support (20+ users)": [
+        "Puhelinasiakaspalvelu (20+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -5699,6 +5762,9 @@
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Tilisi suojaus tarkastetaan säännöllisesti ja saat ilmoituksen heikoista tai toistuvasti käytetyistä salasanoista, jotka on vaihdettava."
@@ -5730,6 +5796,9 @@
       "Send & receive invitations": [
         "Lähetä ja vastaanota kutsuja"
       ],
+      "Share files with no size limit": [
+        "Jaa tiedostoja ilman kokorajoituksia"
+      ],
       "Sign in as user": [
         "Kirjaudu käyttäjänä"
       ],
@@ -5747,6 +5816,9 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
       ],
       "Tor over VPN": [
         "Tor + VPN"
@@ -5783,6 +5855,9 @@
       ],
       "Unlimited messages per day": [
         "Rajattomasti viestejä päivässä"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Rajattomasti jaettuja ${ PASS_SHORT_APP_NAME } -holveja/käyttäjä"
       ],
       "Unlimited shared vaults with access permissions": [
         "Rajattomasti jaettuja holveja erityisillä käyttöoikeuksilla"
@@ -5899,6 +5974,9 @@
       ],
       "Popular": [
         "Suosittu"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Suojaa arkaluonteiset yritystiedot ja yhteistyöskentele turvallisesti."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Suojaa perheesi yksityisyyttä kaikkien ${ BRAND_NAME } -palveluiden yhdistelmällä."
@@ -6060,6 +6138,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "${ BRAND_NAME }:in asiakaspalvelu tarjoaa puhelintukea eurooppalaisina toimistoaikoina asiakkaille, joilla on vähintään 20 käyttäjää"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -7302,8 +7383,8 @@
     },
     "Subscription attribute": {
       "${ n } free VPN connection per user": [
-        "${ n } ilmainen VPN-yhteys per käyttäjä",
-        "${ n } ilmaista VPN-yhteyttä per käyttäjä"
+        "${ n } ilmainen VPN-yhteys/käyttäjä",
+        "${ n } ilmaista VPN-yhteyttä/käyttäjä"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } nopea VPN-yhteys",
@@ -7801,6 +7882,9 @@
       "Enable 2FA": [
         "Ota 2FA käyttöön"
       ],
+      "Enter 2FA code": [
+        "Syötä todennuskoodi"
+      ],
       "Enter your password": [
         "Syötä salasanasi"
       ],
@@ -8204,8 +8288,8 @@
     },
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
-        "${ n } lompakko tiliä kohden",
-        "${ n } lompakkoa tiliä kohden"
+        "${ n } tili/lompakko",
+        "${ n } tiliä/lompakko"
       ],
       "${ n } email address": [
         "${ n } sähköpostiosoite",
@@ -8220,6 +8304,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin sähköpostitse"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Turvallisempi ja helpompi tapa säilyttää ja lähettää Bitcoineja"
       ]
     },
     "wallet_signup_2024:Bug category": {

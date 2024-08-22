@@ -157,9 +157,6 @@
       "Allow": [
         "Permitir"
       ],
-      "Always allow sending mail to group": [
-        "Permitir sempre enviar e-mail por grupo"
-      ],
       "Apply": [
         "Aplicar"
       ],
@@ -252,6 +249,9 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmar a abertura do link ${ linkToShow }"
+      ],
+      "Contact sales": [
+        "Contato com vendas"
       ],
       "Contact support": [
         "Contatar o suporte"
@@ -391,9 +391,6 @@
       "Disable": [
         "Desativar"
       ],
-      "Disable E2EE group mail encryption": [
-        "Desativar criptografia de ponta a ponta de e-mails de grupo"
-      ],
       "Disable recovery phrase": [
         "Desativar a frase de recuperação"
       ],
@@ -405,9 +402,6 @@
       ],
       "Discard changes": [
         "Descartar alterações"
-      ],
-      "Domain names": [
-        "Nomes do domínio"
       ],
       "Don't show again": [
         "Não mostrar novamente"
@@ -498,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Ativar recuperação baseada em dispositivo"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Ativar criptografia de ponta a ponta de e-mails de grupo"
       ],
       "Enable multi-user support": [
         "Ativar suporte para múltiplos usuários"
@@ -811,11 +802,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "Refresh the page": [
-        "Atualizar a página"
-      ],
       "refresh the page": [
         "atualizar a página"
+      ],
+      "Refresh the page": [
+        "Atualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1185,9 +1176,6 @@
       ],
       "Use authentication code": [
         "Usar código de autenticação"
-      ],
-      "Use group sending permissions": [
-        "Usar as permissões de envio de grupo"
       ],
       "Use recovery code": [
         "Usar código de recuperação"
@@ -1616,14 +1604,6 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1645,6 +1625,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3671,6 +3659,9 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Cobrado a cada 2 anos a ${ amountBilled }. Os descontos são baseados no preço mensal padrão."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Cobrado anualmente em ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
       ]
@@ -7054,11 +7045,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -7075,6 +7066,9 @@
       ],
       "Disable recovery by ${ type }": [
         "Desativar recuperação por ${ type }"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Isso desativará a autenticação de dois fatores, incluindo o aplicativo autenticador e os métodos de chave de segurança."
       ],
       "Discount": [
         "Desconto"
@@ -7275,6 +7269,9 @@
       "finance": [
         "finança"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Para obter um histórico de versões de 10 anos, entre em contato com nossa equipe de vendas."
+      ],
       "for choosing ${ product }": [
         "por escolher ${ product }"
       ],
@@ -7316,9 +7313,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vá até o seu provedor de identidade, obtenha os metadados SAML para ${ appName } e importe-os aqui."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Os endereços de grupo podem ser criados apenas para domínios personalizados. Vá para a página ${ linkToDomainPage } para adicionar um domínio personalizado."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupe e-mails na mesma conversa junto em sua Caixa de Entrada ou exiba-os separadamente."
@@ -7858,6 +7852,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Outros usuários da sua organização verão seus horários ocupados. Nenhum detalhe do evento é compartilhado."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nossos alertas são mais cautelosos. Se você não reconhece nenhuma das informações violadas, pode ignorar este relatório com segurança."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Arquivo de recuperação desatualizado. Atualize para garantir acesso aos seus dados"
@@ -8454,6 +8451,9 @@
       "This will delete all previous versions of your files.": [
         "Isto irá excluir todas as versões anteriores de seus arquivos."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Isso desativará a autenticação de dois fatores, incluindo o aplicativo autenticador e os métodos de chave de segurança."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Isso desativará a sua frase de recuperação atual. Você não poderá usá-la para acessar sua conta ou descriptografar seus dados."
       ],
@@ -8871,9 +8871,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Com um endereço criptografado da ${ BRAND_NAME }, você pode usar todos os serviços da ${ BRAND_NAME }."
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Com grupos de usuários, você pode facilmente enviar e-mails, compartilhar dados ou alterar as configurações de grupos específicos de usuários, tudo de uma só vez."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Com o seu plano atual, você pode apenas receber mensagens através do seu endereço @pm.me. Faça upgrade de plano para enviar mensagens e criar endereços adicionais usando @pm.me"
       ],
@@ -8916,9 +8913,6 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Você está usando atualmente ${ usedMembers } de sua ${ maxMembers } licença de usuário disponível.",
         "Você está usando atualmente ${ usedMembers } de suas ${ maxMembers } licenças de usuário disponíveis."
-      ],
-      "You are in no group nor invited to any": [
-        "Você não está em nenhum grupo nem foi convidado para nenhum"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Você iniciou sessão à conta ${ memberAddress }."
@@ -9255,9 +9249,6 @@
     "invitation status": {
       "Pending": [
         "Pendente"
-      ],
-      "Rejected": [
-        "Rejeitado"
       ],
       "Sending invite...": [
         "Enviando convite..."
@@ -11497,32 +11488,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for $1": [
-        "Começar por 1$"
-      ],
-      "Get started for 1 €": [
-        "Começar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Começar por CHF 1"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11550,6 +11515,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for $1": [
+        "Começar por 1$"
+      ],
+      "Get started for 1 €": [
+        "Começar por 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Começar por CHF 1"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
       ]
     },
     "new_plans: feature": {
@@ -12199,17 +12190,6 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -12228,6 +12208,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -13979,6 +13970,21 @@
       ]
     },
     "Safety review": {
+      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
+        " **Habilite a recuperação por telefone** para recuperar o acesso à sua conta caso esqueça a senha."
+      ],
+      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
+        "${ BRAND_NAME } usará esse endereço para enviar um código de redefinição por e-mail quando você redefinir sua senha."
+      ],
+      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
+        "${ BRAND_NAME } usará esse número de telefone para enviar um código de redefinição por SMS quando você redefinir sua senha."
+      ],
+      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
+        "${ enableDeviceRecovery } para garantir que seus dados possam ser recuperados."
+      ],
+      "**Enable recovery by email** to regain access to your account if you forget your password.": [
+        "**Ative a recuperação por e-mail** para recuperar o acesso à sua conta caso esqueça a senha."
+      ],
       "Account safety review": [
         "Verificação de segurança da conta"
       ],
@@ -13993,6 +13999,12 @@
       ],
       "Back to Safety Review": [
         "Voltar para verificação de segurança"
+      ],
+      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
+        "Como você redefiniu sua senha, o Kit de recuperação atual só pode ser usado para recuperar os dados criados antes da redefinição da senha."
+      ],
+      "Can be used to regain access to your account and data": [
+        "Pode ser usado para recuperar o acesso à sua conta e aos seus dados"
       ],
       "Check account security": [
         "Verificar a segurança da conta"
@@ -14020,6 +14032,21 @@
       ],
       "Enable recovery by phone": [
         "Ativar recuperação por telefone"
+      ],
+      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
+        "Entendo que não poderei recuperar os dados bloqueados atualmente com este Kit de recuperação"
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Se você esquecer sua senha de ${ BRAND_NAME } e precisar redefini-la, na próxima vez em que fizer login neste dispositivo usando a nova senha, o acesso total à sua conta de ${ BRAND_NAME } será restaurado."
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Se você esquecer sua senha ${ BRAND_NAME } e precisar redefini-la, na próxima vez que entrar neste dispositivo usando a nova senha, o acesso total à sua conta ${ BRAND_NAME } será restaurado."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
+        "Se você for bloqueado em sua conta ${ BRAND_NAME } seu Kit de recuperação permitirá que você faça login e recupere seus dados."
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Se você perder seus detalhes de login e precisar redefinir sua conta, é **imprescindível** que você tenha um **método de recuperação de conta e de recuperação de dados** em vigor, caso contrário, talvez não consiga acessar nenhum de seus e-mails, contatos, arquivos ou senhas."
       ],
       "Invalid code": [
         "O código não é válido."
@@ -14051,6 +14078,9 @@
       "Show more": [
         "Mostrar mais"
       ],
+      "Take action to secure your account": [
+        "Tome medidas para proteger sua conta"
+      ],
       "There was an error generating your Recovery Kit": [
         "Ocorreu um erro ao gerar seu kit de recuperação"
       ],
@@ -14059,6 +14089,21 @@
       ],
       "There was an error verifying your recovery phone": [
         "Ocorreu um erro ao verificar seu telefone de recepção"
+      ],
+      "to automatically recover your data when you log into a trusted device": [
+        "para recuperar automaticamente seus dados quando você iniciar sessão em um dispositivo confiável"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Para ter certeza de que o endereço de e-mail é seu, digite o código de verificação enviado para ${ boldEmail }."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Para ter certeza de que o número de telefone é seu, digite o código de verificação enviado para ${ boldPhoneNumber }."
+      ],
+      "to recover your account and data if you're ever locked out": [
+        "para recuperar sua conta e seus dados se você for bloqueado"
+      ],
+      "to recover your account if you're ever locked out": [
+        "para recuperar sua conta se você for bloqueado"
       ],
       "Update your Recovery Kit": [
         "Atualizar kit de recuperação"
@@ -14075,6 +14120,18 @@
       "Verify your recovery phone number": [
         "Verifique seu endereço de e-mail de recuperação"
       ],
+      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
+        "Encontramos um erro ao gerar seu kit de recuperação. Tente novamente mais tarde ou entre em contato com o suporte se o problema persistir."
+      ],
+      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
+        "Encontramos um erro ao verificar seu e-mail de recuperação. Tente novamente mais tarde ou entre em contato com o suporte se o problema persistir."
+      ],
+      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
+        "Encontramos um erro ao verificar seu telefone de recuperação. Tente novamente mais tarde ou entre em contato com o suporte se o problema persistir."
+      ],
+      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
+        "Quando você ativar a recuperação baseada em dispositivo, ${ BRAND_NAME } armazenará um chaveiro de backup criptografado como um arquivo no armazenamento da Web do navegador."
+      ],
       "You are at risk of losing access to your account and data.": [
         "Você está em risco de perder o acesso da sua conta e dados."
       ],
@@ -14083,6 +14140,18 @@
       ],
       "You can disable this at any time.": [
         "Você pode desativar isso a qualquer momento."
+      ],
+      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Você pode usar a frase de recuperação deste Kit de recuperação para restaurar totalmente a sua conta quando redefinir a senha, portanto, certifique-se de mantê-la em um local seguro."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Você pode usar o e-mail de recuperação para recuperar o acesso à sua conta caso esqueça a senha."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Você pode usar o telefone de recuperação para recuperar o acesso à sua conta caso esqueça a senha."
+      ],
+      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
+        "Você já fez download de um Kit de recuperação anteriormente. O download de um novo kit **desativará o antigo**."
       ],
       "You have recommended actions.": [
         "Você tem ações recomendadas"
@@ -14095,6 +14164,15 @@
       ],
       "Your account and data can be recovered": [
         "Sua conta e dados podem ser recuperados"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "Sua conta e seus dados podem ser recuperados. Verifique se você ainda pode acessar seus métodos de recuperação."
+      ],
+      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
+        "Sua conta e seus dados podem ser recuperados. Você tem ações recomendadas para proteger ainda mais sua conta."
+      ],
+      "Your account and data can be recovered. You have recommended actions.": [
+        "Sua conta e seus dados podem ser recuperados. Você tem ações recomendadas."
       ],
       "Your account is fully secure.": [
         "Sua conta está toltamente segura."
@@ -16316,11 +16394,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -16348,6 +16426,9 @@
       ],
       "Clear out the junk": [
         "Limpe o lixo"
+      ],
+      "Click a value in the table to use it as filter": [
+        "Clique em um valor na tabela para usá-lo como filtro"
       ],
       "Close": [
         "Fechar"
@@ -17598,9 +17679,6 @@
       "Sending member invitation": [
         "Enviando convite ao membro"
       ],
-      "User rejected invitation": [
-        "O usuário rejeitou o convite"
-      ],
       "Waiting user to accept the invitation": [
         "Esperando o usuário aceitar o convite"
       ]
@@ -18013,6 +18091,11 @@
       ],
       "You're Invited.": [
         "Você está convidado."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Uma maneira segura/fácil de mandar e enviar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
       "Add comment": [
         "Lisää kommentti"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "Muuta fonttikokoa"
+      ],
+      "Alphabetical": [
+        "Aakkosellinen"
       ],
       "and": [
         "ja"
@@ -169,6 +184,9 @@
       ],
       "Right align": [
         "Tasaa oikealle"
+      ],
+      "Roman": [
+        "Roomalainen"
       ],
       "Save": [
         "Tallenna"
@@ -374,6 +392,12 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Virhe dokumentin lataamisessa. Dokumentin vahingoittumisen estämiseksi editori on lukittu. Lataa sivu uudelleen."
+      ],
+      "Failed to export document.": [
+        "Dokumentin vienti epäonnistui."
+      ],
       "Failed to import HTML due to unknown error.": [
         "HTML:n tuonti epäonnistui tuntemattoman virheen takia."
       ],

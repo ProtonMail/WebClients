@@ -157,9 +157,6 @@
       "Allow": [
         "Permitir"
       ],
-      "Always allow sending mail to group": [
-        "Permitir siempre enviar correo al grupo"
-      ],
       "Apply": [
         "Aplicar"
       ],
@@ -394,9 +391,6 @@
       "Disable": [
         "Desactivar"
       ],
-      "Disable E2EE group mail encryption": [
-        "Desctivar el cifrado del correo grupal"
-      ],
       "Disable recovery phrase": [
         "Desactivar frase de recuperación"
       ],
@@ -409,8 +403,8 @@
       "Discard changes": [
         "Descartar cambios"
       ],
-      "Domain names": [
-        "Nombres de dominio"
+      "Domain name": [
+        "Nombre del dominio"
       ],
       "Don't show again": [
         "No volver a mostrar"
@@ -501,9 +495,6 @@
       ],
       "Enable device-based recovery": [
         "Activar recuperación desde un dispositivo"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Activar el cifrado del correo grupal"
       ],
       "Enable multi-user support": [
         "Activar soporte multi usuario"
@@ -664,6 +655,9 @@
       "Keep logo": [
         "Conservar logo"
       ],
+      "Keep my subscription": [
+        "Mantener mi suscripción"
+      ],
       "label emails as": [
         "etiquetar correos como"
       ],
@@ -811,11 +805,11 @@
       "Refresh status": [
         "Actualizar estado"
       ],
-      "Refresh the page": [
-        "Refrescar la página"
-      ],
       "refresh the page": [
         "refresque la página"
+      ],
+      "Refresh the page": [
+        "Refrescar la página"
       ],
       "Reload": [
         "Recargar"
@@ -1120,6 +1114,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Error al guardar debido a: ${ saveError }. Intente guardar de nuevo."
       ],
+      "Turn off": [
+        "Desactivar"
+      ],
+      "Turn on": [
+        "Activar"
+      ],
       "Underline": [
         "Subrayado"
       ],
@@ -1185,9 +1185,6 @@
       ],
       "Use authentication code": [
         "Usar código de autenticación"
-      ],
-      "Use group sending permissions": [
-        "Usar permisos de envío del grupo"
       ],
       "Use recovery code": [
         "Usar código de recuperación"
@@ -1616,14 +1613,6 @@
         "Seleccione la oferta de fin de año"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Lo sentimos, esta oferta no está disponible con el plan actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Lo sentimos, esta oferta no está disponible con el plan actual. Pero puede obtener **${ discountPercentage } de ${ plan.Title }** al suscribirse durante **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de almacenamiento (el doble que cualquier otro plan)"
@@ -1645,6 +1634,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "El plan ${ plan } está de nuevo disponible por tiempo limitado."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Lo sentimos, esta oferta no está disponible con el plan actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Lo sentimos, esta oferta no está disponible con el plan actual. Pero puede obtener **${ discountPercentage } de ${ plan.Title }** al suscribirse durante **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3668,11 +3665,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Se factura cada dos años por ${ amountBilled }. Los descuentos se aplican sobre el precio mensual estándar."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Facturado anualmente por ${ amountBilled }. Ahorre ${ amountSave } en comparación a 2 suscripciones anuales de ${ BRAND_NAME } Unlimited."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB de almacenamiento"
+      ],
       "2 users": [
         "2 usuarios"
       ],
@@ -7039,11 +7042,11 @@
       "Data locked": [
         "Datos bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Los servidores dedicados con direcciones IP dedicadas pueden añadirse a puertas de enlace privadas para activar un control de acceso más preciso."
@@ -7307,9 +7310,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vaya al proveedor de identidad, obtenga los metadatos de SAML para ${ appName } e impórtelos aquí."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Las direcciones grupales solo pueden crearse para dominios personalizados. Vaya a ${ linkToDomainPage } para añadir un dominio personalizado."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupe correos electrónicos en la misma conversación juntos en su bandeja de entrada o muéstrelos por separado."
@@ -8207,6 +8207,9 @@
       "Single sign-on removed": [
         "Inicio de sesión único eliminado"
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Esta función solo está disponible para ${ BRAND_NAME } for Business con dominios personalizados."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Para solicitar acceso, ${ createTicket } describiendo sus casos de uso, cuáles dominios personalizados le gustaría usar y los volúmenes de correo electrónico esperados por hora y por día."
       ],
@@ -8865,9 +8868,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con una dirección cifrada de ${ BRAND_NAME }, puede usar todos los servicios de ${ BRAND_NAME }"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Con grupos de usuarios puede fácilmente enviar correos, compartir datos o cambiar los ajustes de grupos específicos todo a la vez."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Con el plan actual, solo puede recibir mensajes con la dirección @pm.me. Mejore para enviar mensajes y crear direcciones adicionales usando @pm.me."
       ],
@@ -8910,9 +8910,6 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Actualmente está usando ${ usedMembers } de ${ maxMembers } licencia de usuario disponible.",
         "Actualmente está usando ${ usedMembers } de ${ maxMembers } licencias de usuario disponibles."
-      ],
-      "You are in no group nor invited to any": [
-        "No está en ningún grupo ni invitado a ninguno"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Ha iniciado sesión en la cuenta ${ memberAddress }."
@@ -9040,6 +9037,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Le redirigiremos a ${ destination } después de iniciar sesión."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Perderá el acceso a las funciones de ${ planTitle } en esta fecha."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necesitará una dirección de ${ BRAND_NAME } para usar ${ MAIL_APP_NAME } y ${ CALENDAR_APP_NAME }"
@@ -9244,11 +9244,11 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Rechazado"
+      ],
       "Pending": [
         "Pendiente"
-      ],
-      "Rejected": [
-        "Rechazada"
       ],
       "Sending invite...": [
         "Enviando la invitación..."
@@ -11482,32 +11482,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Get started for $1": [
-        "Comenzar por $1"
-      ],
-      "Get started for 1 €": [
-        "Comenzar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Comenzar por CHF 1"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Seguir con el plan gratuito"
@@ -11535,6 +11509,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Actualizar a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Get started for $1": [
+        "Comenzar por $1"
+      ],
+      "Get started for 1 €": [
+        "Comenzar por 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Comenzar por CHF 1"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
       ]
     },
     "new_plans: feature": {
@@ -11585,6 +11585,14 @@
         "${ n } mensaje al día",
         "${ n } mensajes al día"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } bóveda compartida de ${ PASS_SHORT_APP_NAME } por usuario",
+        "${ n } bóvedas compartidas de ${ PASS_SHORT_APP_NAME } por usuario"
+      ],
+      "${ n } user": [
+        "${ n } usuario",
+        "Hasta ${ n } usuarios"
+      ],
       "${ n } vault": [
         "${ n } bóveda",
         "${ n } bóvedas"
@@ -11592,6 +11600,10 @@
       "${ n } VPN connection": [
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
+      ],
+      "${ options }-day file version history": [
+        "Historial de ${ options } día de las versiones de los archivos",
+        "Historial de ${ options } días de las versiones de los archivos"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
@@ -11606,8 +11618,17 @@
       "${ size } attachment size": [
         "${ size } en archivos adjuntos"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } de almacenamiento seguro por usuario"
+      ],
       "${ size } storage": [
         "${ size } de almacenamiento"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Para ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Para todos los servicios de ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 usuario"
@@ -11635,6 +11656,12 @@
       ],
       "All ${ BRAND_NAME } services": [
         "Todos los servicios de ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Todos los servicios prémium de ${ BRAND_NAME } en una sola y sencilla suscripción"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
@@ -11674,6 +11701,9 @@
       ],
       "Contact groups management": [
         "Gestión de grupos de contactos"
+      ],
+      "Custom and secure business email": [
+        "Correo electrónico empresarial personalizado y seguro"
       ],
       "Custom domains for email aliases": [
         "Dominios personalizados para alias de correo electrónico"
@@ -11781,6 +11811,9 @@
       "No-logs policy": [
         "Política de cero registros"
       ],
+      "Online document editor": [
+        "Editor de documentos en línea"
+      ],
       "Organize items with multiple vaults": [
         "Organizar elementos en bóvedas múltiples"
       ],
@@ -11790,8 +11823,14 @@
       "Password health": [
         "Estado de la contraseña"
       ],
+      "Password manager": [
+        "Gestor de contraseñas"
+      ],
       "Password-protected Emails": [
         "Correos electrónicos protegidos con contraseña"
+      ],
+      "Phone support (20+ users)": [
+        "Soporte por teléfono (20 o más usuarios)"
       ],
       "Priority email support": [
         "Soporte prioritario por correo electrónico"
@@ -11808,6 +11847,9 @@
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo a la vez",
         "Proteja ${ n } dispositivos a la vez"
+      ],
+      "Recover previous file versions": [
+        "Recuperar versiones previas de archivos"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprobaciones periódicas de la seguridad de su cuenta. Le avisamos si tiene contraseñas débiles o reusadas que deban actualizarse."
@@ -11843,6 +11885,9 @@
         "Servidores en más de ${ vpnServersCountData.paid.countries } país",
         "Servidores en más de ${ vpnServersCountData.paid.countries } países"
       ],
+      "Share files with no size limit": [
+        "Comparta archivos sin límite de tamaño"
+      ],
       "Sign in as user": [
         "Iniciar sesión como usuario"
       ],
@@ -11866,6 +11911,9 @@
       ],
       "Strict no-logs policy": [
         "Política estricta de no registros"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sincronice todas las copias de seguridad y todos los archivos en sus distintos dispositivos"
       ],
       "Tailored to your needs": [
         "Adaptado a sus necesidades"
@@ -11905,6 +11953,9 @@
       ],
       "Unlimited messages per day": [
         "Mensajes al día ilimitados"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Bóvedas compartidas ilimitadas de ${ PASS_SHORT_APP_NAME } por usuario"
       ],
       "Unlimited shared vaults with access permissions": [
         "Bóvedas compartidas e ilimitadas con permisos de acceso"
@@ -12043,6 +12094,9 @@
       "Popular": [
         "Popular"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Proteja la información sensible del negocio y colabore con seguridad."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteja la privacidad de su familia con todos los servicios combinados de ${ BRAND_NAME }."
       ],
@@ -12130,14 +12184,6 @@
         "El plan seleccionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prueba de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -12156,6 +12202,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Desbloquee funciones premium al actualizar"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prueba de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {
@@ -12273,6 +12327,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalice la firma del correo electrónico con logotipos, imágenes, íconos de redes sociales, enlaces a los datos de contacto y más"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "El equipo de atención al cliente de ${ BRAND_NAME } ofrece asistencia telefónica en horario laboral europeo a los clientes que tienen, como mínimo, 20 usuarios."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Evita que ${ BRAND_NAME } o terceros puedan acceder a los mensajes. Los únicos que pueden leerlos son el remitente y el destinatario."
@@ -13921,12 +13978,6 @@
       ],
       "Continue to Safety Review": [
         "Continuar con la verificación de seguridad"
-      ],
-      "Critical issues found. You are at risk of losing access to your account and data.": [
-        "Problemas críticos encontrados. Está en riesgo de perder acceso a la cuenta y sus datos."
-      ],
-      "Critical issues found. You are at risk of losing access to your data.": [
-        "Problemas críticos encontrados. Está en riesgo de perder acceso a sus datos."
       ],
       "Device-based recovery enabled": [
         "Recuperación desde un dispositivo activada"
@@ -16301,10 +16352,10 @@
       "Card verification": [
         "Verificación de tarjeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Dirección catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Dirección catch-all"
       ],
       "Change login password": [
@@ -16606,6 +16657,9 @@
       "Encryption and keys": [
         "Cifrado y claves"
       ],
+      "Enter 2FA code": [
+        "Ingrese el código 2FA"
+      ],
       "Enter endpoints into your identity provider": [
         "Ingrese puntos finales en el proveedor de identidad"
       ],
@@ -16893,6 +16947,9 @@
       "PayPal verification failed": [
         "Error con la verificación de PayPal"
       ],
+      "Personalise your e-mail footer": [
+        "Personalice su pie de correo"
+      ],
       "Phone": [
         "Teléfono"
       ],
@@ -16916,6 +16973,9 @@
       ],
       "Profile": [
         "Perfil"
+      ],
+      "QRCode": [
+        "Código QR"
       ],
       "Recommended": [
         "Recomendado"
@@ -17130,6 +17190,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "¡Tome precauciones para evitar pérdidas de datos!"
+      ],
+      "Text": [
+        "Texto"
       ],
       "Theme": [
         "Tema"
@@ -17574,9 +17637,6 @@
       "Sending member invitation": [
         "Enviando invitación al miembro"
       ],
-      "User rejected invitation": [
-        "El usuario rechazó la invitación"
-      ],
       "Waiting user to accept the invitation": [
         "Esperando que el usuario acepte la invitación"
       ]
@@ -17966,6 +18026,11 @@
       ],
       "You're Invited.": [
         "Usted está invitado."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Una forma más segura y sencilla de guardar y enviar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

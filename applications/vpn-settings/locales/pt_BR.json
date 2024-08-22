@@ -64,9 +64,6 @@
       "Allow": [
         "Permitir"
       ],
-      "Always allow sending mail to group": [
-        "Permitir sempre enviar e-mail por grupo"
-      ],
       "Apply": [
         "Aplicar"
       ],
@@ -202,17 +199,11 @@
       "Disable": [
         "Desativar"
       ],
-      "Disable E2EE group mail encryption": [
-        "Desativar criptografia de ponta a ponta de e-mails de grupo"
-      ],
       "Discard": [
         "Descartar"
       ],
       "Discard changes": [
         "Descartar alterações"
-      ],
-      "Domain names": [
-        "Nomes do domínio"
       ],
       "Done": [
         "Concluído"
@@ -279,9 +270,6 @@
       ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Ativar criptografia de ponta a ponta de e-mails de grupo"
       ],
       "Enable multi-user support": [
         "Ativar suporte para múltiplos usuários"
@@ -684,9 +672,6 @@
       ],
       "Use authentication code": [
         "Usar código de autenticação"
-      ],
-      "Use group sending permissions": [
-        "Usar as permissões de envio de grupo"
       ],
       "Use recovery code": [
         "Usar código de recuperação"
@@ -2260,6 +2245,9 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Cobrado a cada 2 anos a ${ amountBilled }. Os descontos são baseados no preço mensal padrão."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Cobrado anualmente em ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
       ]
@@ -3683,11 +3671,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalize a aparência e o estilo das aplicações da ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -3698,6 +3686,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Deletando ${ deletedServerCount } servidor gateway",
         "Deletando ${ deletedServerCount } servidores gateway"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Isso desativará a autenticação de dois fatores, incluindo o aplicativo autenticador e os métodos de chave de segurança."
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
@@ -3861,9 +3852,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vá até o seu provedor de identidade, obtenha os metadados SAML para ${ appName } e importe-os aqui."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Os endereços de grupo podem ser criados apenas para domínios personalizados. Vá para a página ${ linkToDomainPage } para adicionar um domínio personalizado."
       ],
       "here": [
         "aqui"
@@ -4567,6 +4555,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Essa verificação pode levar até uma hora. Após uma verificação bem sucedida, não remova este registro TXT, pois ele é necessário para confirmar que você continua sendo proprietário do domínio."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Isso desativará a autenticação de dois fatores, incluindo o aplicativo autenticador e os métodos de chave de segurança."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isso permitirá que o PayPal seja usado para pagar sua assinatura da ${ BRAND_NAME }. Iremos redirecioná-lo para o PayPal em uma nova guia do navegador. Se você usar bloqueadores de pop-up, desative-os para continuar."
       ],
@@ -4849,9 +4840,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Com um endereço criptografado da ${ BRAND_NAME }, você pode usar todos os serviços da ${ BRAND_NAME }."
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Com grupos de usuários, você pode facilmente enviar e-mails, compartilhar dados ou alterar as configurações de grupos específicos de usuários, tudo de uma só vez."
-      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sem a ativação, você não poderá criar novos usuários, adicionar endereços a usuários existentes ou acessar as contas de usuário que não são privadas."
       ],
@@ -5076,9 +5064,6 @@
     "invitation status": {
       "Pending": [
         "Pendente"
-      ],
-      "Rejected": [
-        "Rejeitado"
       ],
       "Sending invite...": [
         "Enviando convite..."
@@ -9451,11 +9436,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço catch-all"
-      ],
       "Catch-All address": [
         "Endereço Catch-All (captura tudo)"
+      ],
+      "Catch-all address": [
+        "Endereço catch-all"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -10107,9 +10092,6 @@
       "Sending member invitation": [
         "Enviando convite ao membro"
       ],
-      "User rejected invitation": [
-        "O usuário rejeitou o convite"
-      ],
       "Waiting user to accept the invitation": [
         "Esperando o usuário aceitar o convite"
       ]
@@ -10394,6 +10376,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Uma maneira segura/fácil de mandar e enviar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

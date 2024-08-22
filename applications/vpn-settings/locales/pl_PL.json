@@ -64,9 +64,6 @@
       "Allow": [
         "Zezwól"
       ],
-      "Always allow sending mail to group": [
-        "Zawsze zezwalaj na wysyłanie wiadomości do grupy"
-      ],
       "Apply": [
         "Zastosuj"
       ],
@@ -202,17 +199,11 @@
       "Disable": [
         "Wyłącz"
       ],
-      "Disable E2EE group mail encryption": [
-        "Wyłącz szyfrowanie E2EE poczty grupy"
-      ],
       "Discard": [
         "Odrzuć"
       ],
       "Discard changes": [
         "Odrzuć zmiany"
-      ],
-      "Domain names": [
-        "Nazwy domen"
       ],
       "Done": [
         "Gotowe"
@@ -279,9 +270,6 @@
       ],
       "enable desktop notifications": [
         "włączyć powiadomienia na pulpicie"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Włącz szyfrowanie E2EE poczty grupy"
       ],
       "Enable multi-user support": [
         "Włącz obsługę wielu użytkowników"
@@ -681,9 +669,6 @@
       ],
       "Use authentication code": [
         "Użyj kodu uwierzytelniającego"
-      ],
-      "Use group sending permissions": [
-        "Użyj uprawnienia grupy"
       ],
       "Use recovery code": [
         "Użyj kodu odzyskiwania"
@@ -3741,11 +3726,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Dostosuj wygląd aplikacji ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Dedykowane serwery"
-      ],
       "dedicated servers": [
         "dedykowane serwery"
+      ],
+      "Dedicated servers": [
+        "Dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -3926,9 +3911,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Przejdź do swojego dostawcy tożsamości, pobierz metadane SAML dla ${ appName } i zaimportuj je tutaj."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Adresy grup możesz utworzyć tylko dla niestandardowych domen. Przejdź do sekcji ${ linkToDomainPage }, aby dodać niestandardową domenę."
       ],
       "here": [
         "tutaj"
@@ -4923,9 +4905,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Dzięki szyfrowanemu adresowi ${ BRAND_NAME } możesz używać wszystkich usług ${ BRAND_NAME }"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Dzięki grupom użytkowników możesz wysyłać wiadomości, udostępniać dane lub zmieniać ustawienia dla konkretnych grup użytkowników."
-      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktywacji nie będziesz w stanie tworzyć nowych użytkowników, dodawać adresów do istniejących użytkowników ani uzyskać dostępu do służbowych kont użytkowników."
       ],
@@ -5161,9 +5140,6 @@
     "invitation status": {
       "Pending": [
         "Oczekujące"
-      ],
-      "Rejected": [
-        "Odrzucone"
       ],
       "Sending invite...": [
         "Wysyłanie zaproszenia"
@@ -9577,10 +9553,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -10237,9 +10213,6 @@
       ],
       "Sending member invitation": [
         "Wysyłanie zaproszenia"
-      ],
-      "User rejected invitation": [
-        "Zaproszenie zostało odrzucone"
       ],
       "Waiting user to accept the invitation": [
         "Oczekiwanie na zaakceptowanie zaproszenia"

@@ -114,6 +114,9 @@
       "characters": [
         "karakter"
       ],
+      "characters out of": [
+        "karakter dari"
+      ],
       "Chat with us": [
         "Mengobrol dengan kami"
       ],
@@ -323,6 +326,9 @@
       ],
       "Increase": [
         "Tingkatkan"
+      ],
+      "Keep my subscription": [
+        "Pertahankan langganan saya"
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -3479,9 +3485,6 @@
       "All (${ totalFoldersCount } label)": [
         "Semua (${ totalFoldersCount } label)"
       ],
-      "All changes saved to Drive": [
-        "Seluruh perubahan disimpan ke Drive"
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Seluruh kontak Anda akan diimpor hingga batas jumlah ${ MAX_CONTACTS_PER_USER } kontak"
       ],
@@ -3544,6 +3547,9 @@
       ],
       "characters": [
         "karakter"
+      ],
+      "characters without spaces": [
+        "karakter tanpa spasi"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Memeriksa kontak ${ progress } dari ${ max }..."
@@ -3629,6 +3635,9 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "Display word count": [
+        "Tampilkan jumlah kata"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Tidak melihat layar apapun? Jangan lupa untuk menonaktifkan pemblokir pop-up Anda."
       ],
@@ -3676,6 +3685,9 @@
       ],
       "Emails are automatically signed": [
         "Email ditandatangani secara otomatis"
+      ],
+      "End-to-end encrypted": [
+        "Terenkripsi secara end-to-end"
       ],
       "End-to-end encrypted.": [
         "Terenkripsi end-to-end."
@@ -4043,9 +4055,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan secara otomatis mengatasi sebagian besar masalah."
       ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Disimpan di ${ DRIVE_APP_NAME }"
-      ],
       "Saving": [
         "Menyimpan"
       ],
@@ -4363,6 +4372,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memiliki kartu yang terhubung, silakan klik tombol di bawah ini."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Anda akan kehilangan akses fitur ${ planTitle } pada tanggal ini."
       ],
       "You will lose all unsaved changes.": [
         "Anda akan kehilangan semua perubahan yang belum disimpan."
@@ -5491,6 +5503,9 @@
       "${ n } message per day": [
         "${ n } pesan per hari"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } brankas ${ PASS_SHORT_APP_NAME } terbagi per pengguna"
+      ],
       "${ n } user": [
         "Sampai dengan ${ n } pengguna"
       ],
@@ -5499,6 +5514,9 @@
       ],
       "${ n } VPN connection": [
         "${ n } koneksi VPN"
+      ],
+      "${ options }-day file version history": [
+        "Riwayat versi berkas ${ options } hari"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } dengan ${ n } alias hide-my-email"
@@ -5512,8 +5530,17 @@
       "${ size } attachment size": [
         "Batas ukuran lampiran ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } penyimpanan aman per pengguna"
+      ],
       "${ size } storage": [
         "Ruang penyimpanan ${ size }"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Untuk ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Untuk semua layanan ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 pengguna"
@@ -5532,6 +5559,12 @@
       ],
       "Administration Panel": [
         "Panel Administrasi"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Semua layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Semua layanan ${ BRAND_NAME } premium. Satu langganan mudah"
       ],
       "Auto-delete Spam and Trash": [
         "Kosongkan Spam dan Sampah secara otomatis"
@@ -5568,6 +5601,9 @@
       ],
       "Contact groups management": [
         "Pengelolaan grup kontak"
+      ],
+      "Custom and secure business email": [
+        "Email bisnis khusus dan aman"
       ],
       "Custom domains for email aliases": [
         "Domain khusus untuk alias email"
@@ -5662,6 +5698,9 @@
       "Multiple admin roles": [
         "Peran admin berangkap"
       ],
+      "Online document editor": [
+        "Penyunting dokumen daring"
+      ],
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
       ],
@@ -5677,6 +5716,9 @@
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
       ],
+      "Phone support (20+ users)": [
+        "Layanan dukungan telepon (20+ pengguna)"
+      ],
       "Priority email support": [
         "Dukungan email prioritas"
       ],
@@ -5691,6 +5733,9 @@
       ],
       "Protect ${ n } device at a time": [
         "Lindungi ${ n } perangkat secara bersamaan"
+      ],
+      "Recover previous file versions": [
+        "Pulihkan versi berkas sebelumnya"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pemeriksaan rutin keamanan akunmu. Kami akan mengingatkan jika kamu memiliki kata sandi yang salah atau yang sudah pernah digunakan, dan perlu diperbarui."
@@ -5722,6 +5767,9 @@
       "Send & receive invitations": [
         "Kirim & terima undangan"
       ],
+      "Share files with no size limit": [
+        "Bagikan berkas tanpa batasan ukuran"
+      ],
       "Sign in as user": [
         "Masuk sebagai pengguna tertentu"
       ],
@@ -5739,6 +5787,9 @@
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sinkronisasikan dan cadangkan semua berkas Anda antara berbagai perangkat"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -5775,6 +5826,9 @@
       ],
       "Unlimited messages per day": [
         "Tanpa batasan jumlah pesan per harinya"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Brankas ${ PASS_SHORT_APP_NAME } terbagi tak terbatas per pengguna"
       ],
       "Unlimited shared vaults with access permissions": [
         "Brankas terbagi yang tak terbatas dengan perizinan akses"
@@ -5889,6 +5943,9 @@
       ],
       "Popular": [
         "Populer"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Lindungi informasi bisnis yang sensitif dan berkolaborasi dengan aman."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Lindungi privasi keluarga Anda dengan perlindungan gabungan dari seluruh layanan ${ BRAND_NAME }."
@@ -6049,6 +6106,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Buat tanda tangan email Anda lebih personal dengan tambahan logo, ikon media sosial, rincian tautan kontak, dan lain sebagainya"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Layanan dukungan telepon tersedia dari tim Layanan Dukungan Pelanggan ${ BRAND_NAME } saat jam kantor Eropa, untuk pelanggan dengan 20 pengguna atau lebih"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Mencegah pesan untuk dapat diakses oleh ${ BRAND_NAME } atau pihak ketiga. Pesan Anda hanya akan dibaca oleh penerima dan Anda sendiri."
@@ -8148,6 +8208,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin melalui email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Cara yang lebih aman/mudah untuk menyimpan & mengirim Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

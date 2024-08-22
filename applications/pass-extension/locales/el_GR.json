@@ -1029,6 +1029,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "Το ${ PASS_APP_NAME } θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις, πιστωτικές κάρτες και ταυτότητες."
+      ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } θα σας προτρέψει μόλις συμπληρωθούν αυτόματα οι κωδικοί πρόσβασης που δημιουργούνται."
       ],
@@ -2444,6 +2447,9 @@
       ],
       "Unnamed Credit Card": [
         "Πιστωτική κάρτα χωρίς όνομα"
+      ],
+      "Unnamed identity": [
+        "Ανώνυμη ταυτότητα"
       ],
       "Unnamed item": [
         "Ανώνυμο στοιχείο"

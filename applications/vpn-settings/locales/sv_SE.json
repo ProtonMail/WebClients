@@ -64,9 +64,6 @@
       "Allow": [
         "Tillåt"
       ],
-      "Always allow sending mail to group": [
-        "Tillåt alltid att skicka e-post till grupp"
-      ],
       "Apply": [
         "Tillämpa"
       ],
@@ -208,9 +205,6 @@
       "Discard changes": [
         "Kasta ändringar"
       ],
-      "Domain names": [
-        "Domännamn"
-      ],
       "Done": [
         "Klar"
       ],
@@ -351,6 +345,9 @@
       ],
       "Keep logo": [
         "Behåll logga"
+      ],
+      "Keep my subscription": [
+        "Behåll min prenumeration"
       ],
       "Let's talk": [
         "Låt oss prata!"
@@ -675,9 +672,6 @@
       ],
       "Use authentication code": [
         "Använd autentiseringskod"
-      ],
-      "Use group sending permissions": [
-        "Använd behörigheter för gruppsändning"
       ],
       "Use recovery code": [
         "Använd återställningskod"
@@ -2247,6 +2241,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB lagringsutrymme"
+      ],
       "2 users": [
         "2 användare"
       ],
@@ -3655,11 +3652,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Anpassa utseendet och känslan för ${ BRAND_NAME }-applikationer."
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -3836,9 +3833,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå till din identitetsleverantör, hämta SAML-metadata för ${ appName } och importera den här."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Gruppadresser kan endast skapas för anpassade domäner. Gå till sida ${ linkToDomainPage } för att lägga till en anpassad domän."
       ],
       "here": [
         "här"
@@ -4794,9 +4788,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME }-tjänster"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Med användargrupper kan du enkelt skicka e-post, dela data eller ändra inställningarna för specifika grupper av användare samtidigt."
-      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Utan aktivering kommer du inte att kunna skapa nya användare, lägga till adresser till befintliga användare eller komma åt icke-privata användarkonton."
       ],
@@ -4891,6 +4882,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du kommer att omdirigeras till ${ destination } efter inloggning."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Du kommer förlora åtkomst till ${ planTitle }-funktioner på detta datum."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du behöver en ${ BRAND_NAME }-adress för att använda ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
@@ -5010,9 +5004,6 @@
     "invitation status": {
       "Pending": [
         "Väntande"
-      ],
-      "Rejected": [
-        "Avvisad"
       ],
       "Sending invite...": [
         "Skickar inbjudan …"
@@ -6041,6 +6032,14 @@
         "${ n } meddelande per dag",
         "${ n } meddelanden per dag"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } delat ${ PASS_SHORT_APP_NAME }-valv per användare",
+        "${ n } delat ${ PASS_SHORT_APP_NAME }-valv per användare"
+      ],
+      "${ n } user": [
+        "${ n } användare",
+        "Upp till ${ n } användare"
+      ],
       "${ n } vault": [
         "${ n } valv",
         "${ n } valv"
@@ -6048,6 +6047,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dags filversionshistorik",
+        "${ options }-dagars filversionshistorik"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
@@ -6062,8 +6065,17 @@
       "${ size } attachment size": [
         "${ size } bilagestorlek"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } lagringsutrymme per användare"
+      ],
       "${ size } storage": [
         "${ size } lagringsutrymme"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - För ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - För alla ${ BRAND_NAME }-tjänster"
       ],
       "1 user": [
         "1 användare"
@@ -6085,6 +6097,12 @@
       ],
       "Advanced network security": [
         "Avancerad nätverkssäkerhet"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alla premiumtjänster för ${ BRAND_NAME }. En enkel prenumeration"
       ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
@@ -6124,6 +6142,9 @@
       ],
       "Contact groups management": [
         "Hantering av kontaktgrupper"
+      ],
+      "Custom and secure business email": [
+        "Anpassad och säker e-post för företag"
       ],
       "Custom domains for email aliases": [
         "Anpassade domäner för e-postalias"
@@ -6225,6 +6246,9 @@
       "No-logs policy": [
         "Ingen loggpolicy"
       ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
       "Organize items with multiple vaults": [
         "Organisera objekt med flera valv"
       ],
@@ -6234,8 +6258,14 @@
       "Password health": [
         "Lösenordshälsa"
       ],
+      "Password manager": [
+        "Lösenordshanterare"
+      ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonsupport (20+ användare)"
       ],
       "Priority email support": [
         "Prioriterad e-postsupport"
@@ -6252,6 +6282,9 @@
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelbundna kontroller av din kontosäkerhet. Vi varnar dig om du har svaga eller återanvända lösenord som behöver uppdateras."
@@ -6287,6 +6320,9 @@
         "Servrar i ${ vpnServersCountData.paid.countries }+ land",
         "Servrar i ${ vpnServersCountData.paid.countries }+ länder"
       ],
+      "Share files with no size limit": [
+        "Dela filer utan storleksbegränsning"
+      ],
       "Sign in as user": [
         "Logga in som användare"
       ],
@@ -6310,6 +6346,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
       ],
       "Tor over VPN": [
         "Tor över VPN"
@@ -6346,6 +6385,9 @@
       ],
       "Unlimited messages per day": [
         "Obegränsat antal meddelanden per dag"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Obegränsat delade ${ PASS_SHORT_APP_NAME }-valv per användare"
       ],
       "Unlimited shared vaults with access permissions": [
         "Obegränsat antal delade valv med åtkomstbehörigheter"
@@ -6465,6 +6507,9 @@
       ],
       "Popular": [
         "Populär"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Skydda känslig företagsinformation och samarbeta säkert."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Skydda din familjs integritet med alla ${ BRAND_NAME }-tjänster kombinerade."
@@ -9281,10 +9326,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -9468,6 +9513,9 @@
       ],
       "Email subscriptions": [
         "E-postprenumerationer"
+      ],
+      "Enter 2FA code": [
+        "Ange 2FA-kod"
       ],
       "Enter endpoints into your identity provider": [
         "Ange ändpunkter i din identitetsleverantör"
@@ -9934,9 +9982,6 @@
       "Sending member invitation": [
         "Skickar medlemsinbjudan"
       ],
-      "User rejected invitation": [
-        "Användare avvisade inbjudan"
-      ],
       "Waiting user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"
       ]
@@ -10239,6 +10284,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-post"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Ett säkrare/enklare sätt att förvara och skicka Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
