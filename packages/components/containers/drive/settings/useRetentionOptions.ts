@@ -38,8 +38,8 @@ export const useRetentionOptions = (revisionRetentionDays?: RevisionRetentionDay
                 const disabled =
                     // Upsell is *always* disabled
                     isUpsell ||
-                    // Drive Lite: cannot upsell, but should still disable all options
-                    (isDriveLite && option.value !== revisionRetentionDays);
+                    // Drive Lite: cannot upsell, max 7 days, can disable
+                    (isDriveLite && option.value !== revisionRetentionDays && option.value !== 0);
 
                 return { ...option, disabled, isUpsell };
             }),
