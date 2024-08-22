@@ -14,17 +14,32 @@
       "Add new table row": [
         "Добавить строку таблицы"
       ],
+      "Adjust font size": [
+        "Изменить размер шрифта"
+      ],
+      "Alphabetical": [
+        "По алфавиту"
+      ],
+      "and": [
+        "и"
+      ],
       "Apply": [
         "Применить"
       ],
       "Bold": [
         "Полужирный"
       ],
+      "Bulleted List": [
+        "Маркированный список"
+      ],
       "Cancel": [
         "Отменить"
       ],
       "Center align": [
         "Выровнять по центру"
+      ],
+      "Check List": [
+        "Контрольный список"
       ],
       "Clear contents": [
         "Очистить содержимое"
@@ -65,6 +80,9 @@
       "Delete thread": [
         "Удалить тему"
       ],
+      "Divider": [
+        "Разделитель"
+      ],
       "Duplicate": [
         "Дублировать"
       ],
@@ -85,6 +103,9 @@
       ],
       "Insert below": [
         "Вставить ниже"
+      ],
+      "Insert comment": [
+        "Вставить комментарий"
       ],
       "Insert image": [
         "Вставить изображение"
@@ -112,6 +133,9 @@
       ],
       "Link": [
         "Ссылка"
+      ],
+      "Numbered List": [
+        "Нумерованный список"
       ],
       "Options": [
         "Параметры"
@@ -149,11 +173,17 @@
       "Right align": [
         "Сравнить по правому краю"
       ],
+      "Roman": [
+        "Римские цифры"
+      ],
       "Save": [
         "Сохранить"
       ],
       "Show thread": [
         "Открыть обсуждение"
+      ],
+      "Strike-through": [
+        "Зачеркнутый"
       ],
       "Strikethrough": [
         "Зачеркивание"
@@ -350,8 +380,29 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Произошла ошибка при загрузке документа. Чтобы избежать повреждения документа, редактор был заблокирован. Перезагрузите страницу и попробуйте снова."
+      ],
+      "Failed to export document.": [
+        "Не удалось экспортировать документ."
+      ],
+      "Failed to import HTML due to unknown error.": [
+        "Не удалось импортировать HTML-документ из-за неизвестной ошибки."
+      ],
+      "Failed to import Markdown due to unknown error.": [
+        "Не удалось импортировать Markdown-файл из-за неизвестной ошибки."
+      ],
+      "Failed to import Word document due to unknown error.": [
+        "Не удалось импортировать документ Word из-за неизвестной ошибки."
+      ],
+      "Failed to initialize editor due to unknown error.": [
+        "Не удалось инициализировать редактор из-за неизвестной ошибки."
+      ],
       "Signature verification failed": [
         "Проверка подписи не удалась"
+      ],
+      "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
+        "Не удается преобразовать документ Word. Защищен ли он паролем? Если да, удалите пароль и повторите попытку."
       ]
     },
     "Error message": {

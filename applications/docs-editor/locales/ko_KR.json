@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A B C D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
       "Add comment": [
         "댓글 달기"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "폰트 크기 조정"
+      ],
+      "Alphabetical": [
+        "알파벳 순"
       ],
       "and": [
         "및"
@@ -169,6 +184,9 @@
       ],
       "Right align": [
         "오른쪽 정렬"
+      ],
+      "Roman": [
+        "로마자"
       ],
       "Save": [
         "저장"
@@ -374,6 +392,12 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "문서 로드 중 오류가 발생했습니다. 문서 손상 방지를 위해 편집기가 잠금되었습니다. 페이지 새로고침 후 다시 시도해 주세요."
+      ],
+      "Failed to export document.": [
+        "문서 추출에 실패했습니다."
+      ],
       "Failed to import HTML due to unknown error.": [
         "알 수 없는 오류로 인해 HTML 문서를 불러올 수 없습니다."
       ],
