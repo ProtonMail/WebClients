@@ -204,17 +204,14 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
                         data-testid="composer:schedule-send:upsell-modal"
                         title={c('Title').t`Set your own schedule`}
                         description={c('Description')
-                            .t`Unlock custom message scheduling and other benefits when you upgrade your plan.`}
+                            .t`Unlock custom message scheduling and more premium features when you upgrade.`}
                         modalProps={upsellModalProps}
                         features={[
                             'schedule-messages',
-                            'auto-delete-trash-and-spam',
-                            'unlimited-folders-and-labels',
-                            'search-message-content',
                             'more-storage',
                             'more-email-addresses',
+                            'unlimited-folders-and-labels',
                             'custom-email-domains',
-                            'email-aliases',
                         ]}
                         {...upsellConfig}
                     />

@@ -18,7 +18,7 @@ const SnoozeDurationSelection = (props: ModalStateProps) => {
             <UpsellModal
                 data-testid="composer:snooze-message:upsell-modal"
                 title={c('Title').t`Want to snooze any time?`}
-                description={c('Description').t`Unlock custom snooze times when you upgrade your plan.`}
+                description={c('Description').t`Unlock custom snooze times and more premium features when you upgrade.`}
                 modalProps={props}
                 features={[
                     'snooze-messages',

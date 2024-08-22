@@ -11,6 +11,7 @@ import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import getUpsellSubscriptionModalConfig from './getUpsellSubscriptionModalConfig';
+import { type UpsellModalProps } from './modal/UpsellModal';
 
 interface Props {
     upsellRef?: string;
@@ -19,7 +20,11 @@ interface Props {
 }
 
 // Return config properties to inject in the subscription modal
-const useUpsellConfig = ({ upsellRef, step, onSubscribed }: Props) => {
+const useUpsellConfig = ({
+    upsellRef,
+    step,
+    onSubscribed,
+}: Props): Partial<UpsellModalProps> & Required<Pick<UpsellModalProps, 'upgradePath'>> => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
@@ -43,6 +48,19 @@ const useUpsellConfig = ({ upsellRef, step, onSubscribed }: Props) => {
             upsellRef,
         });
 
+        const titleByCurrency = (() => {
+            switch (currency) {
+                case 'USD':
+                    return c('new_plans: Title').t`Get Mail Plus for $1`;
+                case 'EUR':
+                    return c('new_plans: Title').t`Get Mail Plus for 1 €`;
+                case 'CHF':
+                    return c('new_plans: Title').t`Get Mail Plus for CHF 1`;
+                default:
+                    return c('new_plans: Title').t`Get Mail Plus`;
+            }
+        })();
+
         const messageByCurrency = (() => {
             switch (currency) {
                 case 'USD':
@@ -59,6 +77,7 @@ const useUpsellConfig = ({ upsellRef, step, onSubscribed }: Props) => {
         // The subscription modal will open in inbox app
         return {
             upgradePath: '',
+            title: isOneDollarPromo ? titleByCurrency : undefined,
             submitText: isOneDollarPromo ? messageByCurrency : undefined,
             onUpgrade() {
                 // Generate a mocked request to track upsell activity
