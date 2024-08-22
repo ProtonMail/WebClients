@@ -88,6 +88,13 @@ const legacyValueFactory: OnePassLegacyFieldValueFactory = {
 
 export const build1PassLegacyIdentity = build1PassBaseIdentity<OnePassLegacySectionField, OnePassLegacySection>(
     (acc: Partial<ItemContent<'identity'>>, { n, v }) => {
+        if (n === OnePassFieldKey.ADDRESS) {
+            return Object.entries(v as any).reduce((fields, [key, value]) => {
+                const identityFieldName = onePasswordDictionary[key];
+                return identityFieldName ? { ...fields, [identityFieldName]: value ?? '' } : fields;
+            }, acc);
+        }
+
         const identityFieldName = onePasswordDictionary[n];
         const formatValue = legacyValueFactory[identityFieldName];
         return identityFieldName ? { ...acc, [identityFieldName]: formatValue?.(v) ?? v ?? '' } : acc;
