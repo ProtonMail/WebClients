@@ -1108,6 +1108,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } kommer visa objektets favicon via ${ BRAND_NAME } anonymiserade bildproxy."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar, kreditkort och identiteter."
+      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } kommer att kräva ditt ${ BRAND_NAME }-lösenord för att komma åt data offline."
       ],
@@ -2479,6 +2482,9 @@
       ],
       "Unnamed Credit Card": [
         "Namnlöst kreditkort"
+      ],
+      "Unnamed identity": [
+        "Namnlös identitet"
       ],
       "Unnamed item": [
         "Namnlöst objekt"

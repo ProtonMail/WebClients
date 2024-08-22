@@ -1101,6 +1101,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } akan menampilkan favicon item melalui proxy gambar anonim ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } hanya akan mengimpor entri masuk, catatan, kartu kredit, dan identitas."
+      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } akan membutuhkan kata sandi ${ BRAND_NAME } Anda untuk dapat mengakses data secara offline."
       ],
@@ -2479,6 +2482,9 @@
       ],
       "Unnamed Credit Card": [
         "Kartu Kredit tidak bernama"
+      ],
+      "Unnamed identity": [
+        "Identitas tanpa nama"
       ],
       "Unnamed item": [
         "Item tidak bernama"

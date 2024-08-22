@@ -64,8 +64,11 @@
       "Allow": [
         "Autoriser"
       ],
-      "Always allow sending mail to group": [
-        "Toujours autoriser l'envoi d'e-mails au groupe"
+      "Allow end-to-end encrypted mail for this group": [
+        "Autoriser les messages chiffrés de bout en bout pour ce groupe"
+      ],
+      "Always allow sending": [
+        "Toujours autoriser l'envoi"
       ],
       "Apply": [
         "Appliquer"
@@ -202,17 +205,14 @@
       "Disable": [
         "Désactiver"
       ],
-      "Disable E2EE group mail encryption": [
-        "Désactiver le chiffrement de bout en bout (E2EE) pour les messages de groupe"
-      ],
       "Discard": [
         "Abandonner"
       ],
       "Discard changes": [
         "Abandonner les modifications"
       ],
-      "Domain names": [
-        "Noms de domaine"
+      "Domain name": [
+        "Nom de domaine"
       ],
       "Done": [
         "Terminé"
@@ -279,9 +279,6 @@
       ],
       "enable desktop notifications": [
         "activer les notifications de bureau"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Activer le chiffrement de bout en bout (E2EE) pour les messages de groupe"
       ],
       "Enable multi-user support": [
         "Activer la prise en charge multi-utilisateur"
@@ -652,6 +649,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Réessayez d'enregistrer. L'enregistrement n'a pas abouti pour la raison suivante : ${ saveError }"
       ],
+      "Turn off": [
+        "Désactiver"
+      ],
+      "Turn on": [
+        "Activer"
+      ],
       "Unlock": [
         "Déverrouiller"
       ],
@@ -685,8 +688,8 @@
       "Use authentication code": [
         "Utiliser le code d'authentification"
       ],
-      "Use group sending permissions": [
-        "Utiliser les autorisations d'envoi du groupe"
+      "Use group permissions": [
+        "Utiliser les autorisations du groupe"
       ],
       "Use recovery code": [
         "Utiliser un code de récupération"
@@ -3443,6 +3446,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Un ${ protonSubdomain } est hébergé par ${ BRAND_NAME }, ce qui vous permet de rapidement créer un sous-domaine. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Un domaine personnalisé est nécessaire pour créer des groupes. Si vous n'en avez pas encore configuré, faites-le d'abord sous ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nom pour vous aider à identifier l'endroit où vous l'utilisez afin de pouvoir facilement le révoquer ou le prolonger ultérieurement."
       ],
@@ -3680,11 +3686,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personnalisez le style des applications ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Serveurs dédiés"
-      ],
       "dedicated servers": [
         "serveurs dédiés"
+      ],
+      "Dedicated servers": [
+        "Serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec une ou plusieurs adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -3856,14 +3862,17 @@
       "Gateways": [
         "Passerelles"
       ],
+      "Gateways monitoring is disabled.": [
+        "La surveillance de la passerelle a été desactivée."
+      ],
+      "Gateways monitoring is enabled.": [
+        "La surveillance de la passerelle a été activée."
+      ],
       "Get ${ upsellPlanName }": [
         "Obtenir ${ upsellPlanName }"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accédez à votre fournisseur d'identité, récupérez les métadonnées SAML pour ${ appName } et importez-les ici."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Les groupes d'adresses ne peuvent être créés que pour des domaines personnalisés. Accédez à la page ${ linkToDomainPage } pour ajouter un domaine personnalisé."
       ],
       "here": [
         "ici"
@@ -4101,6 +4110,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Veuillez patienter : le calendrier est en cours de chargement. Vous serez redirigé vers notre plateforme de programmation Calendly dans un nouvel onglet."
+      ],
+      "Loading gateways monitoring current status.": [
+        "L'état actuel de la surveillance des passerelles est en cours de chargement."
       ],
       "Loading preview": [
         "Chargement de l'aperçu"
@@ -4549,6 +4561,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Cela peut prendre quelques secondes ou minutes selon votre appareil."
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Cette modification sera entièrement répercutée sur toute votre infrastructure dans environ 1 heure."
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Cela peut prendre un moment. Ne fermez pas cette page et ne vous déconnectez pas d'internet."
       ],
@@ -4656,6 +4671,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "Le mode à deux mots de passe utilise des mots de passe distincts pour la connexion à votre compte et pour le déchiffrement de vos données. Ce mode fournit un léger avantage en termes de sécurité dans certains cas, cependant, nous recommandons le mode mot de passe unique pour la plupart des utilisateurs. Pour activer le mode à deux mots de passe, choisissez dans un premier temps un mot de passe de connexion à votre compte, puis choisissez un second mot de passe."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "L'état actuel de la surveillance des passerelles ne peut actuellement pas être vérifié."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Il n'y a malheureusement pas de méthode de récupération enregistrée pour ce compte."
@@ -4849,8 +4867,8 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME }."
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Grâce aux groupes d'utilisateurs, vous pouvez facilement envoyer des messages, partager des données ou modifier les paramètres de certains groupes d'utilisateurs en une seule fois."
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Grâce aux groupes, vous pouvez envoyer rapidement et facilement des messages à toutes les personnes d'un groupe spécifique."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sans activation, vous ne pourrez pas créer de nouveaux utilisateurs, ajouter des adresses aux utilisateurs existants ou accéder aux comptes d'utilisateurs non privés."
@@ -5074,11 +5092,11 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Refusé"
+      ],
       "Pending": [
         "En attente"
-      ],
-      "Rejected": [
-        "Rejeté"
       ],
       "Sending invite...": [
         "Envoi de l'invitation..."
@@ -7699,8 +7717,8 @@
       ]
     },
     "Safety review": {
-      "You have recommended account safety actions": [
-        "Vous avez des actions de sécurité recommandées pour votre compte."
+      "Review your account safety": [
+        "Vérifier la sécurité du compte"
       ]
     },
     "saml: Action": {
@@ -9212,6 +9230,9 @@
       "Creating config file for ${ serverName }": [
         "Création du fichier de configuration pour ${ serverName }"
       ],
+      "Encryption preference updated": [
+        "Les préférences de chiffrement ont été mises à jour."
+      ],
       "Preference updated": [
         "La préférence a été mise à jour."
       ]
@@ -9435,10 +9456,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -9479,6 +9500,12 @@
       ],
       "Connection events": [
         "Événements de connexion"
+      ],
+      "Connection monitor disabled": [
+        "La surveillance de la connexion a été desactivée."
+      ],
+      "Connection monitor enabled": [
+        "La surveillance de la connexion a été activée."
       ],
       "Contact us": [
         "Nous contacter"
@@ -9771,6 +9798,9 @@
       "Processing...": [
         "Traitement en cours…"
       ],
+      "QRCode": [
+        "QR Code"
+      ],
       "Recommended": [
         "Recommandé"
       ],
@@ -9885,6 +9915,9 @@
       ],
       "Switch to two-password mode": [
         "Passer au mode deux mots de passe"
+      ],
+      "Text": [
+        "Texte"
       ],
       "There are no groups": [
         "Il n'y a pas de groupe."
@@ -10091,7 +10124,7 @@
       "Sending member invitation": [
         "Envoi de l'invitation au membre"
       ],
-      "User rejected invitation": [
+      "User declined invitation": [
         "L'utilisateur a refusé l'invitation."
       ],
       "Waiting user to accept the invitation": [

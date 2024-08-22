@@ -3626,9 +3626,6 @@
         "Wszystkie (${ totalFoldersCount } etykiet)",
         "Wszystkie (${ totalFoldersCount } etykiety)"
       ],
-      "All changes saved to Drive": [
-        "Wszystkie zmiany zostały zapisane na dysku"
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Zostanie zaimportowane maksymalnie ${ MAX_CONTACTS_PER_USER } kontakt",
         "Zostaną zaimportowane maksymalnie ${ MAX_CONTACTS_PER_USER } kontakty",
@@ -3829,6 +3826,9 @@
       ],
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
+      ],
+      "End-to-end encrypted": [
+        "Zaszyfrowane end-to-end"
       ],
       "End-to-end encrypted.": [
         "Szyfrowany end-to-end."
@@ -4204,9 +4204,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
-      ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Zapisano w ${ DRIVE_APP_NAME }"
       ],
       "Saving": [
         "Zapisywanie"

@@ -64,9 +64,6 @@
       "Allow": [
         "Salli"
       ],
-      "Always allow sending mail to group": [
-        "Salli aina sähköpostin lähettäminen ryhmälle"
-      ],
       "Apply": [
         "Toteuta"
       ],
@@ -202,17 +199,11 @@
       "Disable": [
         "Poista käytöstä"
       ],
-      "Disable E2EE group mail encryption": [
-        "Poista ryhmäpostien päästä päähän -salaus käytöstä"
-      ],
       "Discard": [
         "Hylkää"
       ],
       "Discard changes": [
         "Hylkää muutokset"
-      ],
-      "Domain names": [
-        "Verkkotunnukset"
       ],
       "Done": [
         "Valmis"
@@ -279,9 +270,6 @@
       ],
       "enable desktop notifications": [
         "näyttääkseen työpöytäilmoituksia"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Ota ryhmäsähköpostien päästä päähän -salaus käyttöön"
       ],
       "Enable multi-user support": [
         "Ota usean käyttäjän tuki käyttöön"
@@ -357,6 +345,9 @@
       ],
       "Keep logo": [
         "Säilytä logo"
+      ],
+      "Keep my subscription": [
+        "Pidä tilaukseni"
       ],
       "Let's talk": [
         "Keskustellaan"
@@ -682,9 +673,6 @@
       "Use authentication code": [
         "Käytä todennuskoodia"
       ],
-      "Use group sending permissions": [
-        "Käytä ryhmälähetyksen käyttöoikeuksia"
-      ],
       "Use recovery code": [
         "Käytä palautuskoodia"
       ],
@@ -752,7 +740,7 @@
         "${ price }/verkkotunnus"
       ],
       "${ price } per user": [
-        "${ price } per käyttäjä"
+        "${ price }/käyttäjä"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } kirjoitusavustajalisenssi",
@@ -2257,11 +2245,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Laskutetaan kahden vuoden välein hintaan ${ amountBilled }. Alennukset perustuvat normaaliin kuukausihinnoitteluun."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Laskutetaan vuosittain hintaan ${ amountBilled }. Säästä ${ amountSave }, kahden henkilön vuosittaisiin ${ BRAND_NAME } Unlimited -tilauksiin verrattuna."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 Tt tallennustilaa"
+      ],
       "2 users": [
         "2 käyttäjää"
       ],
@@ -3671,11 +3665,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Mukauta ${ BRAND_NAME }-sovellusten ulkoasua."
       ],
-      "Dedicated servers": [
-        "Omat palvelimet"
-      ],
       "dedicated servers": [
         "omia palvelimia"
+      ],
+      "Dedicated servers": [
+        "Omat palvelimet"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -3852,9 +3846,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Mene identiteetinhallintaasi noutamaan ${ appName } SAML metadata ja tuo se tähän."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Ryhmäosoitteita voidaan luoda vain omille verkkotunnuksille. Siirry sivustolle ${ linkToDomainPage } lisätäksesi oman verkkotunnuksen."
       ],
       "here": [
         "tässä"
@@ -4840,9 +4831,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Salatulla ${ BRAND_NAME }-osoitteella voit käyttää kaikkia ${ BRAND_NAME }-palveluita"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Käyttäjäryhmien avulla voit helposti lähettää sähköposteja, jakaa tietoja, tai muuttaa tiettyjen käyttäjäryhmien asetuksia kerralla."
-      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ilman aktivointia et voi luoda uusia käyttäjiä, lisätä osoitteita olemassa oleville käyttäjille, etkä käyttää muita kuin yksityisiä käyttäjätilejä."
       ],
@@ -4890,11 +4878,11 @@
         "Voit avata yllä olevan määrityksen heti lisäämällä ${ specificCountryCount } tilauksesi IP-osoitteiden määrään tai ottamalla meihin yhteyttä räätälöityjä ratkaisuja varten."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjä, jolle olet jakanut kalentereitasi.",
+        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, jolle olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjä, jolle olet jakanut kalentereitasi.",
+        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
       ],
       "You can now access and manage the account as an administrator.": [
@@ -4945,6 +4933,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Menetät pääsyn ${ planTitle } -ominaisuuksiin tänä päivänä."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Tarvitset ${ BRAND_NAME }-osoitteen käyttääksesi ${ MAIL_APP_NAME } ja ${ CALENDAR_APP_NAME } -palveluita"
@@ -5064,9 +5055,6 @@
     "invitation status": {
       "Pending": [
         "Odottaa"
-      ],
-      "Rejected": [
-        "Kieltäydytty"
       ],
       "Sending invite...": [
         "Lähetetään kutsua..."
@@ -6059,8 +6047,8 @@
         "${ n } kalenteria"
       ],
       "${ n } calendar per user": [
-        "${ n } kalenteri per käyttäjä",
-        "${ n } kalenteria per käyttäjä"
+        "${ n } kalenteri/käyttäjä",
+        "${ n } kalenteria/käyttäjä"
       ],
       "${ n } custom email domain": [
         "${ n } oma sähköpostiverkkotunnus",
@@ -6098,6 +6086,14 @@
         "${ n } viesti päivässä",
         "${ n } viestiä päivässä"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } jaettu ${ PASS_SHORT_APP_NAME }-holvi/käyttäjä",
+        "${ n } jaettua ${ PASS_SHORT_APP_NAME }-holvia/käyttäjä"
+      ],
+      "${ n } user": [
+        "${ n } käyttäjä",
+        "Enintään ${ n } käyttäjää"
+      ],
       "${ n } vault": [
         "${ n } holvi",
         "${ n } holvia"
@@ -6105,6 +6101,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-yhteys",
         "${ n } VPN-yhteyttä"
+      ],
+      "${ options }-day file version history": [
+        "${ options } päivän tiedostojen versiohistoria",
+        "${ options } päivän tiedostojen versiohistoria"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-alias",
@@ -6119,8 +6119,17 @@
       "${ size } attachment size": [
         "${ size } liitteen koko"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } suojattua tallennustilaa/käyttäjä"
+      ],
       "${ size } storage": [
         "${ size } tallennustilaa"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - ${ DRIVE_APP_NAME }:lle"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Kaikille ${ BRAND_NAME }-palveluille"
       ],
       "1 user": [
         "1 käyttäjä"
@@ -6145,6 +6154,12 @@
       ],
       "Advanced network security": [
         "Edistynyt verkon suojaus"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Kaikki premium ${ BRAND_NAME } -palvelut. Yksi helppo tilaus"
       ],
       "Auto-delete Spam and Trash": [
         "Tyhjennä roskaposti ja roskakori automaattisesti"
@@ -6184,6 +6199,9 @@
       ],
       "Contact groups management": [
         "Yhteystietoryhmien hallinta"
+      ],
+      "Custom and secure business email": [
+        "Oma suojattu yrityssähköposti"
       ],
       "Custom domains for email aliases": [
         "Omat verkkotunnukset sähköpostialiaksina"
@@ -6288,6 +6306,9 @@
       "No-logs policy": [
         "Lokivapaa käytäntö"
       ],
+      "Online document editor": [
+        "Dokumenttieditori verkossa"
+      ],
       "Organize items with multiple vaults": [
         "Järjestele kohteita useilla holveilla"
       ],
@@ -6297,8 +6318,14 @@
       "Password health": [
         "Salasanaterveys"
       ],
+      "Password manager": [
+        "Salasanahallinta"
+      ],
       "Password-protected Emails": [
         "Salasanasuojatut sähköpostiviestit"
+      ],
+      "Phone support (20+ users)": [
+        "Puhelinasiakaspalvelu (20+ käyttäjää)"
       ],
       "Priority email support": [
         "Ensisijainen sähköpostituki"
@@ -6315,6 +6342,9 @@
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
+      ],
+      "Recover previous file versions": [
+        "Palauta aiempia tiedostoversioita"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Tilisi suojaus tarkastetaan säännöllisesti ja saat ilmoituksen heikoista tai toistuvasti käytetyistä salasanoista, jotka on vaihdettava."
@@ -6350,6 +6380,9 @@
         "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa",
         "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa"
       ],
+      "Share files with no size limit": [
+        "Jaa tiedostoja ilman kokorajoituksia"
+      ],
       "Sign in as user": [
         "Kirjaudu käyttäjänä"
       ],
@@ -6373,6 +6406,9 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
       ],
       "Tor over VPN": [
         "Tor + VPN"
@@ -6409,6 +6445,9 @@
       ],
       "Unlimited messages per day": [
         "Rajattomasti viestejä päivässä"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Rajattomasti jaettuja ${ PASS_SHORT_APP_NAME } -holveja/käyttäjä"
       ],
       "Unlimited shared vaults with access permissions": [
         "Rajattomasti jaettuja holveja erityisillä käyttöoikeuksilla"
@@ -6528,6 +6567,9 @@
       ],
       "Popular": [
         "Suosittu"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Suojaa arkaluonteiset yritystiedot ja yhteistyöskentele turvallisesti."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Suojaa perheesi yksityisyyttä kaikkien ${ BRAND_NAME } -palveluiden yhdistelmällä."
@@ -6726,6 +6768,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Mukauta sähköpostiallekirjoitustasi mm. logoilla, kuvilla, sosiaalisen median kuvakkeilla sekä yhteystietolinkeillä"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "${ BRAND_NAME }:in asiakaspalvelu tarjoaa puhelintukea eurooppalaisina toimistoaikoina asiakkaille, joilla on vähintään 20 käyttäjää"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Estää ${ BRAND_NAME }ilta ja ulkopuolisilta tahoilta avaamasta viestejä. Viestejä voivat lukea vain niiden lähettäjät ja tarkoitetut vastaanottajat."
@@ -8459,8 +8504,8 @@
         "${ n } kalenteria/käyttäjä"
       ],
       "${ n } free VPN connection per user": [
-        "${ n } ilmainen VPN-yhteys per käyttäjä",
-        "${ n } ilmaista VPN-yhteyttä per käyttäjä"
+        "${ n } ilmainen VPN-yhteys/käyttäjä",
+        "${ n } ilmaista VPN-yhteyttä/käyttäjä"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } nopea VPN-yhteys",
@@ -8502,7 +8547,7 @@
         "1 sähköpostiosoite"
       ],
       "1 email address per user": [
-        "1 sähköpostiosoite per käyttäjä"
+        "1 sähköpostiosoite/käyttäjä"
       ],
       "1 VPN connection": [
         "1 VPN-yhteys"
@@ -8579,8 +8624,8 @@
         "${ MAIL_APP_NAME } automaattisella sähköpostien edelleenlähetyksellä"
       ],
       "${ MaxCalendars } calendar per user": [
-        "${ MaxCalendars } kalenteri per käyttäjä",
-        "${ MaxCalendars } kalenteria per käyttäjä"
+        "${ MaxCalendars } kalenteri/käyttäjä",
+        "${ MaxCalendars } kalenteria/käyttäjä"
       ],
       "${ maxDomainNames } custom email domain": [
         "${ maxDomainNames } oma sähköpostiverkkotunnus",
@@ -8651,10 +8696,10 @@
         "2 käyttäjää"
       ],
       "20 email addresses per user": [
-        "20 sähköpostiosoitetta per käyttäjä"
+        "20 sähköpostiosoitetta/käyttäjä"
       ],
       "25 calendars per user": [
-        "25 kalenteria per käyttäjä"
+        "25 kalenteria/käyttäjä"
       ],
       "6 users": [
         "6 käyttäjää"
@@ -8855,7 +8900,7 @@
         "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Ryhmäsi työnteko keskeytyy, koska ilmaistilaus ei tue lisäkäyttäjiä."
+        "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään 1 Gt Mail- ja 5 Gt Drive-tallennustilaa. Ryhmäsi työnteko keskeytyy, koska ilmaistilaus ei tue lisäkäyttäjiä."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Kun peruutat ${ planName } -tilauksesi, sinut alennetaan ${ BRAND_NAME } Free -tilaukseen, joka tarjoaa enintään vain 5 Gt Drive- ja 1 Gt Mail-tallennustilaa . Menetät myös kaikki aiemmin myönnetyt tallennustilabonukset."
@@ -9361,10 +9406,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -9548,6 +9593,9 @@
       ],
       "Email subscriptions": [
         "Sähköpostitilaukset"
+      ],
+      "Enter 2FA code": [
+        "Syötä todennuskoodi"
       ],
       "Enter endpoints into your identity provider": [
         "Syötä päätepisteet identiteetin tarjoajaasi"
@@ -10014,9 +10062,6 @@
       "Sending member invitation": [
         "Jäsenkutsua lähetetään"
       ],
-      "User rejected invitation": [
-        "Käyttäjä kieltäytyi kutsusta"
-      ],
       "Waiting user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"
       ]
@@ -10280,8 +10325,8 @@
     },
     "wallet_signup_2024: Info": {
       "${ n } account per wallet": [
-        "${ n } lompakko tiliä kohden",
-        "${ n } lompakkoa tiliä kohden"
+        "${ n } tili/lompakko",
+        "${ n } tiliä/lompakko"
       ],
       "${ n } email address": [
         "${ n } sähköpostiosoite",
@@ -10296,6 +10341,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin sähköpostitse"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Turvallisempi ja helpompi tapa säilyttää ja lähettää Bitcoineja"
       ]
     },
     "wallet_signup_2024:Bug category": {

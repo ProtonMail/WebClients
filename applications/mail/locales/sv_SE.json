@@ -640,6 +640,9 @@
       "Italic": [
         "Kursiv"
       ],
+      "Keep my subscription": [
+        "Behåll min prenumeration"
+      ],
       "Label as": [
         "Märk som"
       ],
@@ -844,11 +847,11 @@
       "Not saved": [
         "Inte sparad"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Öppna"
@@ -3602,6 +3605,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB lagringsutrymme"
+      ],
       "2 users": [
         "2 användare"
       ],
@@ -7410,6 +7416,9 @@
         "Du valde **${ elementsCount } meddelande**.",
         "Du valde **${ elementsCount } meddelanden**."
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Du kommer förlora åtkomst till ${ planTitle }-funktioner på detta datum."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
       ],
@@ -9054,6 +9063,14 @@
         "${ n } meddelande per dag",
         "${ n } meddelanden per dag"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } delat ${ PASS_SHORT_APP_NAME }-valv per användare",
+        "${ n } delat ${ PASS_SHORT_APP_NAME }-valv per användare"
+      ],
+      "${ n } user": [
+        "${ n } användare",
+        "Upp till ${ n } användare"
+      ],
       "${ n } vault": [
         "${ n } valv",
         "${ n } valv"
@@ -9061,6 +9078,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dags filversionshistorik",
+        "${ options }-dagars filversionshistorik"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
@@ -9075,8 +9096,17 @@
       "${ size } attachment size": [
         "${ size } bilagestorlek"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } lagringsutrymme per användare"
+      ],
       "${ size } storage": [
         "${ size } lagringsutrymme"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - För ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - För alla ${ BRAND_NAME }-tjänster"
       ],
       "1 user": [
         "1 användare"
@@ -9092,6 +9122,12 @@
       ],
       "Administration Panel": [
         "Administrationspanel"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alla premiumtjänster för ${ BRAND_NAME }. En enkel prenumeration"
       ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
@@ -9128,6 +9164,9 @@
       ],
       "Contact groups management": [
         "Hantering av kontaktgrupper"
+      ],
+      "Custom and secure business email": [
+        "Anpassad och säker e-post för företag"
       ],
       "Custom domains for email aliases": [
         "Anpassade domäner för e-postalias"
@@ -9220,6 +9259,9 @@
       "Multiple admin roles": [
         "Flera administratörsroller"
       ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
       "Organize items with multiple vaults": [
         "Organisera objekt med flera valv"
       ],
@@ -9229,8 +9271,14 @@
       "Password health": [
         "Lösenordshälsa"
       ],
+      "Password manager": [
+        "Lösenordshanterare"
+      ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonsupport (20+ användare)"
       ],
       "Priority email support": [
         "Prioriterad e-postsupport"
@@ -9247,6 +9295,9 @@
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelbundna kontroller av din kontosäkerhet. Vi varnar dig om du har svaga eller återanvända lösenord som behöver uppdateras."
@@ -9278,6 +9329,9 @@
       "Send & receive invitations": [
         "Skicka och ta emot inbjudningar"
       ],
+      "Share files with no size limit": [
+        "Dela filer utan storleksbegränsning"
+      ],
       "Sign in as user": [
         "Logga in som användare"
       ],
@@ -9295,6 +9349,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
       ],
       "Tor over VPN": [
         "Tor över VPN"
@@ -9331,6 +9388,9 @@
       ],
       "Unlimited messages per day": [
         "Obegränsat antal meddelanden per dag"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Obegränsat delade ${ PASS_SHORT_APP_NAME }-valv per användare"
       ],
       "Unlimited shared vaults with access permissions": [
         "Obegränsat antal delade valv med åtkomstbehörigheter"
@@ -9447,6 +9507,9 @@
       ],
       "Popular": [
         "Populär"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Skydda känslig företagsinformation och samarbeta säkert."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Skydda din familjs integritet med alla ${ BRAND_NAME }-tjänster kombinerade."
@@ -11056,6 +11119,9 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi laddar nu bilder som standard och blockerar avsändare från att spåra dig. Detta kan ändras i ${ settingsLink }."
       ],
+      "You can now collapse the navigation bar.": [
+        "Du kan nu minimera navigeringsfältet."
+      ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu schemalägga dina meddelanden för att skickas senare"
       ]
@@ -12399,6 +12465,9 @@
       "Enable message content search": [
         "Aktivera sökning av meddelandeinnehåll"
       ],
+      "Enter 2FA code": [
+        "Ange 2FA-kod"
+      ],
       "Enter your password": [
         "Ange ditt lösenord"
       ],
@@ -13060,6 +13129,11 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Kom åt Wallet-app"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Ett säkrare/enklare sätt att förvara och skicka Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

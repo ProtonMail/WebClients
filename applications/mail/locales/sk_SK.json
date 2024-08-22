@@ -463,10 +463,10 @@
         "Celá obrazovka"
       ],
       "Expand navigation bar to see folders": [
-        "Rozbaľte navigačný panel pre zobrazenie priečinkov"
+        "Rozbaliť navigačný panel pre zobrazenie priečinkov"
       ],
       "Expand navigation bar to see labels": [
-        "Rozbaľte navigačný panel pre zobrazenie štítkov"
+        "Rozbaliť navigačný panel pre zobrazenie štítkov"
       ],
       "Expand URL": [
         "Rozbaliť adresu URL"
@@ -849,11 +849,11 @@
       "Not saved": [
         "Neuložené"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Otvoriť"
@@ -1180,7 +1180,7 @@
         "Zobraziť bočný panel"
       ],
       "Show toolbar": [
-        "Zobraziť panel s nástrojmi"
+        "Zobraziť panel nástrojov"
       ],
       "Sign out": [
         "Odhlásiť sa"
@@ -4737,7 +4737,7 @@
         "Pridelené úložisko: ${ assignedStorage }"
       ],
       "The subscription will be billed to the primary admin of this plan.": [
-        "Predplatné sa bude účtovať primárnemu správcovi tohto plánu."
+        "Predplatné sa bude účtovať hlavnému správcovi tohto plánu."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Dostali ste pozvanie pripojiť sa k ${ invite.OrganizationName }"
@@ -6215,7 +6215,7 @@
         "Predvolená emailová aplikácia"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
-        "Vedeli ste, že súčasťou vášho ${ BRAND_NAME } je aj šifrované cloudové úložisko? Účet? Prejdite na ${ DRIVE_APP_NAME } a využite svoj priestor naplno. Je to zadarmo."
+        "Vedeli ste, že súčasťou vášho ${ BRAND_NAME } účtu je aj šifrované cloudové úložisko? Prejdite na ${ DRIVE_APP_NAME } a využite svoj priestor naplno. Je to zadarmo."
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Vedeli ste to? Len pre vás sme vyhradili kratšiu emailovú adresu. Je to vaše používateľské meno, za ktorým nasleduje “@${ PM_DOMAIN }”."
@@ -6413,7 +6413,7 @@
         "Generovať text"
       ],
       "Give incoming bills a color-coded label, such as “${ suggestedLabelName }“. Once they're paid, change the label to “${ suggestedPaidLabelName }“.": [
-        "Prichádzajúce účty označte farebným štítkom, napríklad “${ suggestedLabelName }“. Po ich zaplatení zmeňte štítok na “${ suggestedPaidLabelName }“."
+        "Prichádzajúce faktúry označte farebným štítkom, napríklad “${ suggestedLabelName }“. Po ich zaplatení zmeňte štítok na “${ suggestedPaidLabelName }“."
       ],
       "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
         "Obsahuje ${ numAttachments } prílohu (${ numAttachmentsSize })",
@@ -6533,7 +6533,7 @@
         "Už len potvrďte váš výber a my urobíme zbytok."
       ],
       "Keep your login and credit card details safe but always on hand by adding it to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
-        "Prihlasovacie údaje a údaje o kreditnej karte uchovávajte v bezpečí, ale vždy po ruke, a to tak, že ich pridáte do položky ${ PASS_APP_NAME }. Je zadarmo a je súčasťou vášho ${ BRAND_NAME } účtu."
+        "Prihlasovacie údaje a údaje o kreditnej karte uchovávajte v bezpečí, ale vždy po ruke, a to tak, že ich pridáte do ${ PASS_APP_NAME }. Je to zadarmo a je súčasťou vášho ${ BRAND_NAME } účtu."
       ],
       "Keep your mailbox tidy by automatically clearing out trash and spam that have been there for more than 30 days.": [
         "Automatickým vymazávaním obsahu koša a nevyžiadanej pošty, ktoré sú v nich dlhšie ako 30 dní, udržiavajte v poštovej schránke poriadok."
@@ -10301,7 +10301,7 @@
         "Najprv vyberte fakturačnú krajinu, prosím."
       ],
       "Please select your billing state first.": [
-        "Najprv vyberte fakturačnú krajinu, prosím."
+        "Najprv vyberte fakturačný štát, prosím."
       ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
@@ -10488,7 +10488,7 @@
         "Povedzte asistentovi, čo má napísať. Príklad: “Zruš moje členstvo v posilňovni”."
       ],
       "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
-        "Povedzte asistentovi, čo má napísať. Príklad: “Pozvi Jane na môj večierok”."
+        "Povedzte asistentovi, čo má napísať. Príklad: “Pozvi Janu na večierok”."
       ],
       "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
         "Povedzte asistentovi, čo má napísať. Príklad: “Poďakuj spolupracovníkovi za pomoc na projekte”"
@@ -10497,7 +10497,7 @@
         "Povedzte asistentovi, čo má napísať. Príklad: “Napíš motivačný list na stáž”"
       ],
       "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
-        "Povedzte asistentovi, čo má napísať. Príklad: “Napíš klientovi doplňujúci email”"
+        "Povedzte asistentovi, čo má napísať. Príklad: “Napíš klientovi následný email”"
       ],
       "Text": [
         "Text"
@@ -11722,7 +11722,7 @@
         "Po vypršaní vášho ${ planName } predplatného bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 1 GB Mail úložiska a maximálne 5 GB Drive úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Po vypršaní platnosti vášho predplatného ${ planName } budete preradení do ${ BRAND_NAME } Free, ktorý ponúka len do 1 GB úložiska pošty a do 5 GB úložiska disku. Váš tím bude mať výpadky v práci, pretože v bezplatnom pláne nie sú podporovaní ďalší používatelia."
+        "Po vypršaní platnosti vášho predplatného ${ planName } budete preradení do ${ BRAND_NAME } Free, ktorý ponúka len 1 GB úložiska pošty a 5 GB úložiska disku. Váš tím bude mať výpadky v práci, pretože v bezplatnom pláne nie sú podporovaní ďalší používatelia."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršaní vášho ${ planName } plánu bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 5 GB Drive úložiska a maximálne 1 GB Mail úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."

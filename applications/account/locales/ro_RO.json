@@ -157,9 +157,6 @@
       "Allow": [
         "Permitere"
       ],
-      "Always allow sending mail to group": [
-        "Permitere întotdeauna trimitere mesaje la grup"
-      ],
       "Apply": [
         "Aplicare"
       ],
@@ -394,9 +391,6 @@
       "Disable": [
         "Dezactivare"
       ],
-      "Disable E2EE group mail encryption": [
-        "Dezactivare criptare bilaterală mesaje din grup"
-      ],
       "Disable recovery phrase": [
         "Dezactivare fraze de recuperare"
       ],
@@ -408,9 +402,6 @@
       ],
       "Discard changes": [
         "Anulare modificări"
-      ],
-      "Domain names": [
-        "Nume domenii"
       ],
       "Don't show again": [
         "Nu mai arăta"
@@ -501,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Activare recuperare pe bază de dispozitiv"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Activare criptare bilaterală mesaje grup"
       ],
       "Enable multi-user support": [
         "Activare suport utilizatori multipli"
@@ -664,6 +652,9 @@
       "Keep logo": [
         "Păstrare logo"
       ],
+      "Keep my subscription": [
+        "Îmi păstrez abonamentul"
+      ],
       "label emails as": [
         "etichetare mesaje ca"
       ],
@@ -811,11 +802,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "Refresh the page": [
-        "Împrospătare pagină"
-      ],
       "refresh the page": [
         "Împrospătați pagina"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
       ],
       "Reload": [
         "Reîncărcare"
@@ -1185,9 +1176,6 @@
       ],
       "Use authentication code": [
         "Folosire cod de autentificare"
-      ],
-      "Use group sending permissions": [
-        "Folosire permisiuni de trimitere pentru grup"
       ],
       "Use recovery code": [
         "Folosire cod de recuperare"
@@ -1620,14 +1608,6 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1649,6 +1629,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3682,11 +3670,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Facturat la doi ani cu ${ amountBilled }. Reducerile se bazează pe prețul lunar standard."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Facturat anual cu ${ amountBilled }. Economisiți ${ amountSave } cu două abonamente anuale ${ BRAND_NAME } Unlimited."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TiB spațiu de stocare"
+      ],
       "2 users": [
         "Doi utilizatori"
       ],
@@ -5467,7 +5461,7 @@
         "Introduceți cheia de securitate în portul USB al dispozitivului."
       ],
       "Security key": [
-        "Cheie securitate"
+        "Cheie de securitate"
       ],
       "Security key removed": [
         "Cheia de securitate a fost eliminată."
@@ -5493,7 +5487,7 @@
         "Nume cheie"
       ],
       "Security key": [
-        "Cheie securitate"
+        "Cheie de securitate"
       ]
     },
     "fido2: Title": {
@@ -7105,11 +7099,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -7375,9 +7369,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Adresele de grup pot fi create numai pentru domenii personale. Accesați pagina ${ linkToDomainPage } pentru a adăuga un domeniu personal."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupare mesaje din aceeași conversație sau afișare separată."
@@ -8945,9 +8936,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Cu o adresă criptată ${ BRAND_NAME }, puteți utiliza toate serviciile ${ BRAND_NAME }."
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Cu grupurile de utilizatori, puteți trimite cu ușurință e-mailuri, să partajați date sau să modificați setările pentru anumite grupuri de utilizatori simultan."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Cu planul actual, puteți primi doar mesaje cu adresa @pm.me. Modernizați contul pentru a putea și trimite mesaje și a crea adrese suplimentare folosind @pm.me."
       ],
@@ -8994,9 +8982,6 @@
         "Număr licențe de utilizator folosite: ${ usedMembers } din maxim ${ maxMembers }.",
         "Număr licențe de utilizator folosite: ${ usedMembers } din maxim ${ maxMembers }.",
         "Număr licențe de utilizator folosite: ${ usedMembers } din maxim ${ maxMembers }."
-      ],
-      "You are in no group nor invited to any": [
-        "Nu sunteți în niciun grup și nici invitat în vreunul."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Este conectat contul ${ memberAddress }."
@@ -9128,6 +9113,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "După autentificare se va redirecționa la ${ destination }."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Veți pierde accesul la funcțiile planului ${ planTitle } la această dată."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Veți avea nevoie de o adresă ${ BRAND_NAME } pentru a utiliza ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
@@ -9337,9 +9325,6 @@
     "invitation status": {
       "Pending": [
         "În așteptare"
-      ],
-      "Rejected": [
-        "Respinsă"
       ],
       "Sending invite...": [
         "Se trimite invitația..."
@@ -11591,32 +11576,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Get started for $1": [
-        "Începeți cu 1 $"
-      ],
-      "Get started for 1 €": [
-        "Începeți cu 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Începeți cu 1 CHF"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11644,6 +11603,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for $1": [
+        "Începeți cu 1 $"
+      ],
+      "Get started for 1 €": [
+        "Începeți cu 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Începeți cu 1 CHF"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -11705,6 +11690,16 @@
         "${ n } mesaje pe zi",
         "${ n } de mesaje pe zi"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }",
+        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }",
+        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }"
+      ],
+      "${ n } user": [
+        "${ n } utilizator",
+        "Până la ${ n } utilizatori",
+        "Până la ${ n } de utilizatori"
+      ],
       "${ n } vault": [
         "${ n } seif",
         "${ n } seifuri",
@@ -11714,6 +11709,11 @@
         "O conexiune VPN",
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
+      ],
+      "${ options }-day file version history": [
+        "Istoric versiuni fișiere: ${ options } zi",
+        "Istoric versiuni fișiere: ${ options } zile",
+        "Istoric versiuni fișiere: ${ options } de zile"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } cu ${ n } alias hide-my-email",
@@ -11729,8 +11729,17 @@
       "${ size } attachment size": [
         "${ size } mărime atașament"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } de spațiu securizat per utilizator"
+      ],
       "${ size } storage": [
         "${ size } spațiu"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Pentru ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Pentru toate serviciile ${ BRAND_NAME }"
       ],
       "1 user": [
         "Un utilizator"
@@ -11758,6 +11767,12 @@
       ],
       "All ${ BRAND_NAME } services": [
         "Toate serviciile ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Toate serviciile ${ BRAND_NAME } premium cu un singur abonament."
       ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -11797,6 +11812,9 @@
       ],
       "Contact groups management": [
         "Gestionare grupuri de contacte"
+      ],
+      "Custom and secure business email": [
+        "E-mail de afaceri personalizat și securizat"
       ],
       "Custom domains for email aliases": [
         "Domenii personale pentru aliasuri de e-mail"
@@ -11894,7 +11912,7 @@
         "Autentificator A2F integrat"
       ],
       "Kill switch/always-on VPN": [
-        "Întrerupător de urgență/VPN permanent"
+        "Întrerupător de conexiune/VPN permanent"
       ],
       "Limited support": [
         "Asistență limitată"
@@ -11905,6 +11923,9 @@
       "No-logs policy": [
         "Politică fără jurnale"
       ],
+      "Online document editor": [
+        "Editor online de documente"
+      ],
       "Organize items with multiple vaults": [
         "Organizați articole cu seifuri multiple"
       ],
@@ -11914,8 +11935,14 @@
       "Password health": [
         "Stare parole"
       ],
+      "Password manager": [
+        "Manager de parole"
+      ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
+      ],
+      "Phone support (20+ users)": [
+        "Asistență telefonică (peste 20 de utilizatori)"
       ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
@@ -11933,6 +11960,9 @@
         "Protejare ${ n } dispozitiv",
         "Protejare ${ n } dispozitive simultan",
         "Protejare ${ n } de dispozitive simultan"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Verificări regulate ale securității contului deținut. Vă alertăm dacă aveți parole slabe sau reutilizate care trebuie modificate."
@@ -11969,6 +11999,9 @@
         "Servere în peste ${ vpnServersCountData.paid.countries } țări",
         "Servere în peste ${ vpnServersCountData.paid.countries } de țări"
       ],
+      "Share files with no size limit": [
+        "Partajați fișiere fără limită de dimensiune"
+      ],
       "Sign in as user": [
         "Conectați-vă ca utilizator"
       ],
@@ -11992,6 +12025,9 @@
       ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sincronizați fișierele între dispozitive și păstrați copii de rezervă"
       ],
       "Tailored to your needs": [
         "Adaptat nevoilor personale"
@@ -12031,6 +12067,9 @@
       ],
       "Unlimited messages per day": [
         "Mesaje nelimitate pe zi"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Seifuri ${ PASS_SHORT_APP_NAME } partajate nelimitate per utilizator"
       ],
       "Unlimited shared vaults with access permissions": [
         "Seifuri partajate nelimitate cu permisiuni de acces"
@@ -12171,6 +12210,9 @@
       "Popular": [
         "Popular"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Protejați informațiile confidențiale de afaceri și colaborați în siguranță."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protejați-vă confidențialitatea familiei cu toate serviciile ${ BRAND_NAME } combinate."
       ],
@@ -12258,14 +12300,6 @@
         "Planul selectat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -12284,6 +12318,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -12402,6 +12444,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături către datele de contact și multe altele."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu 20 sau mai mulți utilizatori."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
@@ -14085,12 +14130,6 @@
       ],
       "Continue to Safety Review": [
         "Continuare la revizuire securitate"
-      ],
-      "Critical issues found. You are at risk of losing access to your account and data.": [
-        "S-au găsit probleme critice. Sunteți în pericol de a vă pierde accesul la cont și date."
-      ],
-      "Critical issues found. You are at risk of losing access to your data.": [
-        "S-au găsit probleme critice. Sunteți în pericol de a vă pierde accesul la date."
       ],
       "Device-based recovery enabled": [
         "Activarea pe bază de dispozitiv este activată"
@@ -16513,10 +16552,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -16819,6 +16858,9 @@
       ],
       "Encryption and keys": [
         "Criptare și chei"
+      ],
+      "Enter 2FA code": [
+        "Introduceți codul de A2F"
       ],
       "Enter endpoints into your identity provider": [
         "Introduceți puncte finale în furnizorul de identitate"
@@ -17791,9 +17833,6 @@
       "Sending member invitation": [
         "Se trimite invitația membrului"
       ],
-      "User rejected invitation": [
-        "Utilizatorul a respins invitația"
-      ],
       "Waiting user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
       ]
@@ -18221,6 +18260,11 @@
         "Ați primit o invitație."
       ]
     },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "O metodă mai sigură/ușoară de a păstra/trimite bitcoini"
+      ]
+    },
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Problemă portofel"
@@ -18349,7 +18393,7 @@
     },
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        "Această cheie nu mai corespunde standardelor noastre de securitate. Vă sugerăm să o marcați ca fiind învechită și să generați o nouă cheie."
+        "Această cheie nu mai corespunde standardelor noastre de securitate. Vă sugerăm să o marcați ca fiind învechită și să generați o cheie nouă."
       ]
     },
     "Weekly recurring event, frequency": {

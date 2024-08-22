@@ -1060,6 +1060,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin İnternet simgesini görüntüleyecek."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } yalnızca oturum açma, not, kredi kartı ve kimlik kayıtlarını içe aktarır."
+      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } uygulaması verilere çevrim dışı erişebilmek için ${ BRAND_NAME } parolanızı isteyecek."
       ],
@@ -2443,6 +2446,9 @@
       ],
       "Unnamed Credit Card": [
         "Adsız kredi kartı"
+      ],
+      "Unnamed identity": [
+        "Adsız kimlik"
       ],
       "Unnamed item": [
         "Adsız öge"

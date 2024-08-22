@@ -330,6 +330,9 @@
       "Increase": [
         "Povečaj"
       ],
+      "Keep my subscription": [
+        "Ohrani mojo naročnino"
+      ],
       "Learn more": [
         "Več o tem"
       ],
@@ -500,6 +503,9 @@
       ],
       "Select all": [
         "Označi vse"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Izberite obračunski cikel ${ billingText }"
       ],
       "Select country": [
         "Izberite državo"
@@ -1199,6 +1205,9 @@
       "British Indian Ocean Territory": [
         "Britansko ozemlje v Indijskem oceanu"
       ],
+      "British Virgin Islands": [
+        "Britanski Deviški otoki"
+      ],
       "Brunei Darussalam": [
         "Brunej"
       ],
@@ -1253,6 +1262,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo (Demokratična republika)"
+      ],
       "Congo, Democratic Republic of the": [
         "Demokratična republika Kongo"
       ],
@@ -1291,6 +1303,9 @@
       ],
       "Dominican Republic": [
         "Dominikanska republika"
+      ],
+      "East Timor": [
+        "Vzhodni Timor"
       ],
       "Ecuador": [
         "Ekvador"
@@ -1433,6 +1448,9 @@
       "Ireland": [
         "Irska"
       ],
+      "Islamic Republic of Iran": [
+        "Islamska republika Iran"
+      ],
       "Isle of Man": [
         "Otok Man"
       ],
@@ -1463,6 +1481,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Koreja (Demokratična ljudska republika)"
+      ],
+      "Korea (Republic of)": [
+        "Koreja (Republika)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -1471,6 +1495,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgizistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laoška ljudska demokratična republika"
       ],
       "Laos": [
         "Laos"
@@ -1488,6 +1515,9 @@
         "Liberija"
       ],
       "Libya": [
+        "Libija"
+      ],
+      "Libyan Arab Jamahiriya": [
         "Libija"
       ],
       "Liechtenstein": [
@@ -1780,6 +1810,9 @@
       ],
       "Tanzania": [
         "Tanzanija"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzanija, Združena republika"
       ],
       "Thailand": [
         "Tajska"
@@ -2791,6 +2824,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Te strani ni bilo mogoče naložiti. Osvežite stran ali preverite svojo povezavo z internetom."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Ko je omogočeno dodatno geslo, je upravljanje vzdevkov mogoče samo v ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -2917,6 +2953,9 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Prostor, ki vam je dodeljen: ${ assignedStorage }"
       ],
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Naročnina bo zaračunana glavnemu skrbniku tega paketa."
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vabljeni ste, da se pridružite organizaciji ${ invite.OrganizationName }."
       ],
@@ -2925,6 +2964,12 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Povabljeni ste, da se pridružite organizaciji ${ bannerOrganization }. ${ viewInviteButton }"
+      ],
+      "You have successfully joined the family group": [
+        "Uspešno ste se pridružili družinski skupini"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Imate neplačane račune. Plačajte jih, preden se boste pridružili skupinskemu paketu."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Povabljeni ste, da povežete svoj ${ BRAND_NAME } račun s skupinskim paketom in skupaj uživate vse premijske funkcije ${ BRAND_NAME_TWO }."
@@ -3563,9 +3608,6 @@
         "Vse (${ totalFoldersCount } oznake)",
         "Vse (${ totalFoldersCount } oznak)"
       ],
-      "All changes saved to Drive": [
-        "Vse spremembe so shranjene v Drive."
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
         "Vsi vaši stiki bodo uvoženi, do meje ${ MAX_CONTACTS_PER_USER }.",
@@ -3757,6 +3799,9 @@
       ],
       "Emails are automatically signed": [
         "Sporočila so samodejno podpisana"
+      ],
+      "End-to-end encrypted": [
+        "Popolnoma šifrirano"
       ],
       "End-to-end encrypted.": [
         "Popolnoma šifrirano."
@@ -4129,9 +4174,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osveževanje strani ali ${ link } bo samodejno odpravilo večino težav."
-      ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Shranjeno v ${ DRIVE_APP_NAME }"
       ],
       "Saving": [
         "Shranjevanje"
@@ -5467,6 +5509,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Zmanjšanje paketa na ${ downgradedPlanName }."
       ],
+      "Get started for $1": [
+        "Začnite za 1 USD"
+      ],
+      "Get started for 1 €": [
+        "Začnite za 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Začnite za 1 CHF"
+      ],
       "Upgrade now": [
         "Nadgradi zdaj"
       ]
@@ -5563,6 +5614,12 @@
         "${ n } sporočili na dan",
         "${ n } sporočila na dan",
         "${ n } sporočil na dan"
+      ],
+      "${ n } user": [
+        "${ n } uporabnik",
+        "Do ${ n } uporabnika",
+        "Do ${ n } uporabniki",
+        "Do ${ n } uporabnikov"
       ],
       "${ n } vault": [
         "${ n } trezor",
@@ -5744,6 +5801,9 @@
       "Multiple admin roles": [
         "Več vlog skrbnikov"
       ],
+      "Online document editor": [
+        "Spletni urejevalnik dokumentov"
+      ],
       "Organize items with multiple vaults": [
         "Organizirajte predmete z več arhivi."
       ],
@@ -5752,6 +5812,9 @@
       ],
       "Password health": [
         "Kakovost gesla"
+      ],
+      "Password manager": [
+        "Upravitelj gesel"
       ],
       "Password-protected Emails": [
         "E-pošta, zaščitena z geslom"
@@ -5773,6 +5836,9 @@
         "Zaščitite ${ n } naprave hkrati.",
         "Zaščitite ${ n } naprave hkrati.",
         "Zaščitite ${ n } naprav hkrati."
+      ],
+      "Recover previous file versions": [
+        "Obnovi prejšnje različice datoteke"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Redni pregledi varnosti računa. Opozorimo vas, če imate šibka ali večkrat uporabljena gesla, ki jih je treba posodobiti."
@@ -6017,6 +6083,9 @@
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Zaščitite vaša dnevna opravila s celovitim šifriranjem. Vključuje podporo za koledarje po meri, delitev koledarjev in drugo."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Zavarujte svoje datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano skupno rabo datotek in drugo."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Zavarujte vaša sporočila s celovitim šifriranjem. Vključuje podporo za e-poštne domene po meri, 15 e-poštnih naslovov, neomejeno število vzdevkov hide-my-email in drugo."
@@ -6574,6 +6643,15 @@
       ],
       "MM/YY": [
         "MM/LL"
+      ],
+      "Please select billing country": [
+        "Izberite državo za izstavitev računa"
+      ],
+      "Please select your billing country first.": [
+        "Najprej izberite državo za izstavitev računa."
+      ],
+      "Select billing country to pay": [
+        "Izberite državo za izstavitev računa za plačilo"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Posebej znižana cena ${ priceWithDiscount } velja za prve ${ months }. Kupon velja za ${ couponRedemptions } obnovitve. Nato se samodejno podaljša po ${ price } za obdobje ${ months } mesecev. Naročnino lahko kadarkoli prekličete."
@@ -7595,6 +7673,9 @@
     "Suffix for price": {
       "per month": [
         "na mesec"
+      ],
+      "per user per month": [
+        "na uporabnika mesečno"
       ]
     },
     "summer2023: Tooltip": {
@@ -7805,6 +7886,9 @@
       "Continue with partial import?": [
         "Nadaljujte z delnim uvozom?"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Create contact": [
         "Ustvari stik"
       ],
@@ -7954,6 +8038,9 @@
       ],
       "Import failed": [
         "Uvoz ni uspel"
+      ],
+      "Import groups": [
+        "Uvozi skupine"
       ],
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"
@@ -8324,6 +8411,14 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Dostop do varnih strežnikov, do hitrih prenosov P2P/BitTorrent, Tor prek VPN in še več"
+      ]
+    },
+    "wallet_signup_2024: Info": {
+      "${ n } email address": [
+        "${ n } e-poštni naslov",
+        "${ n } e-poštna naslova",
+        "${ n } e-poštni naslovi",
+        "${ n } e-poštnih naslovov"
       ]
     },
     "Warning": {

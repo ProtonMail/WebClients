@@ -3540,9 +3540,6 @@
         "Tous (${ totalFoldersCount } label)",
         "Tous (${ totalFoldersCount } labels)"
       ],
-      "All changes saved to Drive": [
-        "Tous les changements ont été enregistrés sur Drive."
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }.",
         "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }."
@@ -3746,6 +3743,9 @@
       ],
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
+      ],
+      "End-to-end encrypted": [
+        "Chiffré de bout en bout"
       ],
       "End-to-end encrypted.": [
         "Chiffré de bout en bout."
@@ -4116,9 +4116,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
-      ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Copié dans ${ DRIVE_APP_NAME }"
       ],
       "Saving": [
         "Enregistrement"
@@ -6847,8 +6844,8 @@
       ]
     },
     "Safety review": {
-      "You have recommended account safety actions": [
-        "Vous avez des actions de sécurité recommandées pour votre compte."
+      "Review your account safety": [
+        "Vérifier la sécurité du compte"
       ]
     },
     "Security Center": {
