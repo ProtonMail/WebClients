@@ -633,6 +633,9 @@
       "Italic": [
         "기울임"
       ],
+      "Keep my subscription": [
+        "나의 구독 유지"
+      ],
       "Label as": [
         "라벨 추가"
       ],
@@ -837,10 +840,10 @@
       "Not saved": [
         "저장되지 않음"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
       "Open": [
@@ -3585,11 +3588,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "2년간 ${ amountBilled }가 결제됩니다. 할인은 표준 월 비용에 따라 정해집니다."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "매년 ${ amountBilled }가 결제됩니다. ${ BRAND_NAME } 무제한 연간 구독 두 개를 따로 결제하는 것보다 ${ amountSave }를 절약할 수 있습니다."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1GB 저장공간"
+      ],
       "2 users": [
         "두 사용자들"
       ],
@@ -7283,6 +7292,9 @@
       "You selected **${ elementsCount } message**.": [
         "**${ elementsCount }개 메시지**를 선택했습니다."
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "오늘 부터 ${ planTitle } 기능에 접근할 수 없습니다."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
       ],
@@ -7341,7 +7353,7 @@
         "로그인 정보는 가져오기 작업이 끝나면 삭제됩니다."
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "메시지가 ${ numberOfDays } 일에 만료됨."
+        "메시지가 ${ numberOfDays }일 뒤에 만료됩니다."
       ],
       "Your message will expire today.": [
         "메시지가 오늘 만료됩니다."
@@ -8898,11 +8910,20 @@
       "${ n } message per day": [
         "하루 당 ${ n } 메시지"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "사용자 당 ${ n }개 공유된 ${ PASS_SHORT_APP_NAME } 금고"
+      ],
+      "${ n } user": [
+        "최대 ${ n }명 사용자"
+      ],
       "${ n } vault": [
         "${ n }개 금고"
       ],
       "${ n } VPN connection": [
         "${ n } 개 VPN 연결"
+      ],
+      "${ options }-day file version history": [
+        "${ options }일 파일 버전 기록"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ n }개의 hide-my-email이 포함된 ${ PASS_APP_NAME }"
@@ -8916,8 +8937,17 @@
       "${ size } attachment size": [
         "첨부 파일 크기: ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "사용자 당 ${ size } 보안 스토리지"
+      ],
       "${ size } storage": [
         "${ size } 저장공간"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - ${ DRIVE_APP_NAME }용"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - 전체 ${ BRAND_NAME } 서비스용"
       ],
       "1 user": [
         "사용자 1명"
@@ -8936,6 +8966,12 @@
       ],
       "Administration Panel": [
         "관리 패널"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "모든 ${ BRAND_NAME } 베이직 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독"
       ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
@@ -8972,6 +9008,9 @@
       ],
       "Contact groups management": [
         "연락처 그룹 관리"
+      ],
+      "Custom and secure business email": [
+        "커스텀 및 보안 비즈니스 이메일"
       ],
       "Custom domains for email aliases": [
         "이메일 별칭을 위한 커스텀 도메인"
@@ -9066,6 +9105,9 @@
       "Multiple admin roles": [
         "다중 관리자 역할"
       ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
       ],
@@ -9075,8 +9117,14 @@
       "Password health": [
         "비밀번호 건강도"
       ],
+      "Password manager": [
+        "비밀번호 관리자"
+      ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
+      ],
+      "Phone support (20+ users)": [
+        "휴대 전화 지원 (20명 이상 사용자)"
       ],
       "Priority email support": [
         "이메일 우선 지원"
@@ -9092,6 +9140,9 @@
       ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "회원님 계정 보안에 대한 정기 점검입니다. 약한 비밀번호 또는 업데이트가 필요한 재사용된 비밀번호가 있는지 알려드립니다."
@@ -9123,6 +9174,9 @@
       "Send & receive invitations": [
         "전송 및 받은 초대"
       ],
+      "Share files with no size limit": [
+        "크기 제한 없는 파일 공유"
+      ],
       "Sign in as user": [
         "사용자로 로그인"
       ],
@@ -9140,6 +9194,9 @@
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
+      ],
+      "Sync and backup all your files across devices": [
+        "기기를 넘나들며 파일을 동기화 및 백업하세요"
       ],
       "Tor over VPN": [
         "VPN을 통한 Tor"
@@ -9176,6 +9233,9 @@
       ],
       "Unlimited messages per day": [
         "하루에 무제한 메시지"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "사용자 당 무제한 공유된 ${ PASS_SHORT_APP_NAME } 금고"
       ],
       "Unlimited shared vaults with access permissions": [
         "권한 접근이 포함된 무제한 공유 가능 금고"
@@ -9290,6 +9350,9 @@
       ],
       "Popular": [
         "인기"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "민감한 비즈니스 정보를 보호하고 안전하게 공동 작업하기."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 서비스들로 가족의 개인정보를 보호하세요."
@@ -9460,6 +9523,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "로고, 이미지, 소셜 미디어 아이콘, 연락처 링크 등으로 이메일 서명을 개인화하세요."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "전화 지원은 20명 이상의 사용자가 있는 고객을 위해 유럽 업무 시간 동안 ${ BRAND_NAME } 고객 성공 팀에서 이용할 수 있습니다."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } 또는 제3자가 메시지에 접근하는 것을 방지합니다. 메시지를 읽을 수 있는 유일한 사람은 당신과 이메일을 받은 수신자 뿐이죠."
@@ -10858,6 +10924,9 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "이제 일반적으로 이미지를 로드하며 전송자가 당신을 트래킹하지 못하도록 차단할 수 있습니다. ${ settingsLink }에서 언제든지 변경할 수 있습니다."
       ],
+      "You can now collapse the navigation bar.": [
+        "이제 탐색 모음을 축소할 수 있습니다."
+      ],
       "You can now schedule your messages to be sent later": [
         "이제 메시지를 예약하여 나중에 전송할 수 있습니다"
       ]
@@ -12166,6 +12235,9 @@
       "Enable message content search": [
         "메시지 컨텐츠 검색 활성화"
       ],
+      "Enter 2FA code": [
+        "2FA 코드 입력"
+      ],
       "Enter your password": [
         "비밀번호를 입력하세요"
       ],
@@ -12814,6 +12886,11 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Wallet 앱 접근"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "쉽고 안전하게 Bitcoin을 보관 및 송금하세요"
       ]
     },
     "wallet_signup_2024:Bug category": {

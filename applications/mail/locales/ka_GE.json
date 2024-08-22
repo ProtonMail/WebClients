@@ -637,6 +637,9 @@
       "Italic": [
         "კურსივი"
       ],
+      "Keep my subscription": [
+        "ჩემი გამოწერის შენარჩუნება"
+      ],
       "Label as": [
         "დანიშვნა, როგორც"
       ],
@@ -841,10 +844,10 @@
       "Not saved": [
         "არაა შენახული"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open": [
@@ -3604,11 +3607,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "2 წელიწადში ერთხელ გადახდელი თანხა ${ amountBilled }. ფასდაკლებები სტანდარტულ თვიურ ფასს ეყრდნობა."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "წლიურად გადასახდელი თანხა: ${ amountBilled }. დაზოგეთ ${ amountSave } ორზე მეტი ინდივიდუალური ${ BRAND_NAME }-ის ულიმიტო წლიური გამოწერისთვის."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 ტბ საცავი"
+      ],
       "2 users": [
         "2 მომხმარებელი"
       ],
@@ -7409,6 +7418,9 @@
         "მონიშნეთ **${ elementsCount } შეტყობინება**.",
         "მონიშნეთ **${ elementsCount } შეტყობინება**."
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "ამ თარიღის მოსვლისას ${ planTitle }-სთან და მის ფუნქციებთან წვდომას დაკარგავთ."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
       ],
@@ -9050,6 +9062,14 @@
         "${ n }-მდე შეტყობინება დღეში",
         "${ n }-მდე შეტყობინება დღეში"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } გაზიარებული ${ PASS_SHORT_APP_NAME }-ის საცავი თითოეული მომხმარებლისთვის",
+        "${ n } გაზიარებული ${ PASS_SHORT_APP_NAME }-ის საცავი თითოეული მომხმარებლისთვის"
+      ],
+      "${ n } user": [
+        "${ n } მომხმარებელი",
+        "${ n }-მდე მომხმარებელი"
+      ],
       "${ n } vault": [
         "${ n } საცავი",
         "${ n } საცავი"
@@ -9057,6 +9077,10 @@
       "${ n } VPN connection": [
         "${ n } VPN კავშირი",
         "${ n } VPN კავშირი"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-დღიანი ფაილის ვერსიის ისტორია",
+        "${ options }-დღიანი ფაილის ვერსიის ისტორია"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით",
@@ -9071,8 +9095,17 @@
       "${ size } attachment size": [
         "${ size } მიმაგრებული ფაილი"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } დაცული საცავი თითოეული მომხმარებლისთვის"
+      ],
       "${ size } storage": [
         "${ size } საცავი"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - ${ DRIVE_APP_NAME }-სთვის"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - ყველა ${ BRAND_NAME } სერვისისთვის"
       ],
       "1 user": [
         "1 მომხმარებელი"
@@ -9091,6 +9124,12 @@
       ],
       "Administration Panel": [
         "ადმინისტრატორის პანელი"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "ყველა ${ BRAND_NAME }-ის სერვისი (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "ყველა ფასიანი ${ BRAND_NAME }-ის სერვისი. ერთი იოლი გამოწერა"
       ],
       "Auto-delete Spam and Trash": [
         "სპამისა და ნაგვის ყუთის ავტომატური წაშლა"
@@ -9127,6 +9166,9 @@
       ],
       "Contact groups management": [
         "კონტაქტების ჯგუფების მართვა"
+      ],
+      "Custom and secure business email": [
+        "მორგებული და დაცული საქმიანი ელფოსტა"
       ],
       "Custom domains for email aliases": [
         "თქვენი დომენი ელფოსტის მეტსახელებისთვის"
@@ -9222,6 +9264,9 @@
       "Multiple admin roles": [
         "მრავალი ადმინის როლი"
       ],
+      "Online document editor": [
+        "დოკუმენტების რედაქტორი ინტერნეტში"
+      ],
       "Organize items with multiple vaults": [
         "დაალაგეთ ერთზე მეტი საცავის მქონე ელემენტები"
       ],
@@ -9231,8 +9276,14 @@
       "Password health": [
         "პაროლის სიძლიერე"
       ],
+      "Password manager": [
+        "პაროლების მმართველი"
+      ],
       "Password-protected Emails": [
         "პაროლით დაცული ელფოსტები"
+      ],
+      "Phone support (20+ users)": [
+        "სატელეფონო მხარდაჭერა (20+ მომხმარებელი)"
       ],
       "Priority email support": [
         "პრიორიტეტული ელფოსტის მხარდაჭერა"
@@ -9249,6 +9300,9 @@
       "Protect ${ n } device at a time": [
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
+      ],
+      "Recover previous file versions": [
+        "წინა ფაილის ვერსიების აღდგენა"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "თქვენი ანგარიშის უსაფრთხოების რეგულარული შემოწმება. ჩვენ გაგაფრთხილებთ, თუ სუსტ, ან გამეორებულ პაროლს იყენებთ, რომელიც საჭიროა, განაახლოთ."
@@ -9280,6 +9334,9 @@
       "Send & receive invitations": [
         "მოსაწვევების გაგზავნა და მიღება"
       ],
+      "Share files with no size limit": [
+        "გააზიარეთ ფაილები ზომის შეზღუდვის გარეშე"
+      ],
       "Sign in as user": [
         "მომხმარებლით შესვლა"
       ],
@@ -9297,6 +9354,9 @@
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
+      ],
+      "Sync and backup all your files across devices": [
+        "დაასინქრონეთ და დაამარქაფეთ ყველა თქვენი ფაილი ყველა თქვენს მოწყობილობაზე"
       ],
       "Tor over VPN": [
         "Tor VPN-ის ზემოდან"
@@ -9333,6 +9393,9 @@
       ],
       "Unlimited messages per day": [
         "ულიმიტო დღიური გზავნა/დღეში"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "შეუზღუდავი გაზიარებული ${ PASS_SHORT_APP_NAME }-ის საცავი თითოეული მომხმარებლისთვის"
       ],
       "Unlimited shared vaults with access permissions": [
         "განუსაზღვრელი გაზიარებული საცავები წვდომის შეზღუდვებით"
@@ -9449,6 +9512,9 @@
       ],
       "Popular": [
         "პოპულარული"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "დაიცავით კონფიდენციალური კომპანიის ინფორმაცია და იმუშავეთ ერთად უსაფრთხოდ."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "დაიცავით თქვენი ოჯახის კონფიდენციალობა ყველა ${ BRAND_NAME }-ის სერვისის ერთად."
@@ -9620,6 +9686,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "მოირგეთ თქვენი ელფოსტის ხელმოწერები მათში ლოგოების, გამოსახულებების, სოცმედიის ხატულების, კონტაქტების დეტალებზე ბმულების და ა. შ. დამატებით"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "სატელეფონო მხარდაჭერა ხელმისაწვდომია ${ BRAND_NAME }-ის მომხმარებელთა მხარდაჭერის გუნდიდან ევროპის სამუშაო საათებში, მომხმარებლებისთვის 20 ან მეტი მომხმარებლით"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "კრძალავს შეტყობინებებთან ${ BRAND_NAME }-ის და მესამე პირების წვდომას. შეტყობინების წაკითხვა, მხოლოდ, გამგზავნს და მიმღებს შეუძლიათ."
@@ -11050,6 +11119,9 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "ახლა გამოსახულებებს ნაგულისხმევად ჩავტვირთავთ და დავბლოკავთ გამომგზავნებს თქვენი ტრეკინგისგან. შეცვლა შეგიძლიათ აქ ${ settingsLink }."
       ],
+      "You can now collapse the navigation bar.": [
+        "შეგიძლიათ ჩამოშალოთ ნავიგაციის ზოლი."
+      ],
       "You can now schedule your messages to be sent later": [
         "ახლა შეგიძლიათ, შექმნათ შეტყობინებების განრიგი, რომელიც დანიშნულ დროს აგზავნის ელფოსტას"
       ]
@@ -12408,6 +12480,9 @@
       "Enable message content search": [
         "შეტყობინების შიგთავსში ძებნის ჩართვა"
       ],
+      "Enter 2FA code": [
+        "შეიყვანეთ 2FA კოდი"
+      ],
       "Enter your password": [
         "შეიყვანეთ თქვენი პაროლი"
       ],
@@ -13069,6 +13144,11 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "წვდომა საფულის აპთან"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "უფრო უსაფრთხო და ადვილი გზა Bitcoin-ის შესანახად და გასაგზავნად"
       ]
     },
     "wallet_signup_2024:Bug category": {
