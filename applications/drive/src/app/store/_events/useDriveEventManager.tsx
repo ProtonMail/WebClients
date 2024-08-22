@@ -46,37 +46,49 @@ function countEventsPerType(type: VolumeType, driveEvents: DriveEventsResult) {
         return;
     }
 
-    metrics.drive_sync_event_total.increment(
-        {
-            volumeType: type,
-            eventType: 'update',
-        },
-        driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.UPDATE).length
-    );
+    const deleteCount = driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.DELETE).length;
+    if (deleteCount) {
+        metrics.drive_sync_event_total.increment(
+            {
+                volumeType: type,
+                eventType: 'delete',
+            },
+            deleteCount
+        );
+    }
 
-    metrics.drive_sync_event_total.increment(
-        {
-            volumeType: type,
-            eventType: 'update_metadata',
-        },
-        driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.UPDATE_METADATA).length
-    );
+    const createCount = driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.CREATE).length;
+    if (createCount) {
+        metrics.drive_sync_event_total.increment(
+            {
+                volumeType: type,
+                eventType: 'create',
+            },
+            createCount
+        );
+    }
 
-    metrics.drive_sync_event_total.increment(
-        {
-            volumeType: type,
-            eventType: 'delete',
-        },
-        driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.DELETE).length
-    );
+    const updateCount = driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.UPDATE).length;
+    if (updateCount) {
+        metrics.drive_sync_event_total.increment(
+            {
+                volumeType: type,
+                eventType: 'update',
+            },
+            updateCount
+        );
+    }
 
-    metrics.drive_sync_event_total.increment(
-        {
-            volumeType: type,
-            eventType: 'create',
-        },
-        driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.CREATE).length
-    );
+    const updateMetadata = driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.UPDATE_METADATA).length;
+    if (updateMetadata) {
+        metrics.drive_sync_event_total.increment(
+            {
+                volumeType: type,
+                eventType: 'update_metadata',
+            },
+            updateMetadata
+        );
+    }
 }
 
 export function useDriveEventManagerProvider(api: Api, generalEventManager: EventManager) {
