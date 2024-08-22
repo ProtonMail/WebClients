@@ -11,10 +11,11 @@ type RevisionRetentionOption = {
     value: RevisionRetentionDaysSetting;
     label: string;
     disabled: boolean;
+    isUpsell: boolean;
 };
 
 export const useRetentionOptions = (revisionRetentionDays?: RevisionRetentionDaysSetting) => {
-    const { canUpsellFree, canUpsellB2B } = useDrivePlan();
+    const { canUpsellFree, canUpsellB2B, isDriveLite } = useDrivePlan();
 
     const options: RevisionRetentionOption[] = useMemo(
         () =>
@@ -26,15 +27,21 @@ export const useRetentionOptions = (revisionRetentionDays?: RevisionRetentionDay
                     { value: 180, label: getRetentionLabel(180) },
                     { value: 365, label: getRetentionLabel(365) },
                     { value: 3650, label: getRetentionLabel(3650) },
-                ] satisfies Omit<RevisionRetentionOption, 'disabled'>[]
+                ] satisfies Omit<RevisionRetentionOption, 'disabled' | 'isUpsell'>[]
             ).map((option) => {
-                const isUpsellOption =
+                const isUpsell =
                     // Free user: revisionRetentionDays will be the default and only available value
                     (canUpsellFree && option.value !== revisionRetentionDays) ||
                     // Business user: 10 years option is disabled
                     (canUpsellB2B && option.value === 3650);
 
-                return { ...option, disabled: isUpsellOption };
+                const disabled =
+                    // Upsell is *always* disabled
+                    isUpsell ||
+                    // Drive Lite: cannot upsell, but should still disable all options
+                    (isDriveLite && option.value !== revisionRetentionDays);
+
+                return { ...option, disabled, isUpsell };
             }),
         [canUpsellFree, canUpsellB2B, revisionRetentionDays]
     );

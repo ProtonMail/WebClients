@@ -44,7 +44,7 @@ const RetentionDaysSection = () => {
                         </Radio>
                     );
 
-                    if (option.disabled) {
+                    if (option.isUpsell) {
                         optionRadio = (
                             <Tooltip key={id} title={c('Info').t`Upgrade to unlock`} originalPlacement="right">
                                 <div className="w-full">{optionRadio}</div>
