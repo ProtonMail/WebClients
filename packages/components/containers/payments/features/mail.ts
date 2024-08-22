@@ -334,7 +334,16 @@ const getDesktopApp = (included: boolean): PlanCardFeatureDefinition => {
     };
 };
 
-export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
+const getEmailDistributionLists = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`Email distribution lists`,
+        tooltip: c('new_plans: tooltip')
+            .t`Add people to email groups with designated email addresses for easy communication`,
+        included,
+    };
+};
+
+export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFeature: boolean): PlanCardFeature[] => {
     return [
         {
             name: 'addresses',
@@ -804,6 +813,29 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.BUNDLE_PRO_2024]: getDesktopApp(true),
                 [PLANS.PASS_PRO]: getDesktopApp(false),
                 [PLANS.PASS_BUSINESS]: getDesktopApp(false),
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'email-distribution-lists',
+            plans: {
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: null,
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_BUSINESS]: null,
+                [PLANS.PASS]: null,
+                [PLANS.WALLET]: null,
+                [PLANS.FAMILY]: null,
+                [PLANS.DUO]: null,
+                [PLANS.MAIL_PRO]: canAccessDistributionListFeature ? getEmailDistributionLists(false) : null,
+                [PLANS.MAIL_BUSINESS]: canAccessDistributionListFeature ? getEmailDistributionLists(true) : null,
+                [PLANS.BUNDLE_PRO]: null,
+                [PLANS.BUNDLE_PRO_2024]: canAccessDistributionListFeature ? getEmailDistributionLists(true) : null,
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },

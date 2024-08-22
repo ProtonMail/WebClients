@@ -213,6 +213,7 @@ const PlanSelection = ({
     const canAccessWalletPlan = useFlag('WalletPlan');
     const canAccessDriveBusinessPlan = useFlag('DriveBizPlan');
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
+    const canAccessDistributionListFeature = useFlag('UserGroupsPermissionCheck');
 
     const [user] = useUser();
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
@@ -344,6 +345,7 @@ const PlanSelection = ({
         plansMap,
         serversCount: vpnServers,
         freePlan,
+        canAccessDistributionListFeature,
     });
 
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
