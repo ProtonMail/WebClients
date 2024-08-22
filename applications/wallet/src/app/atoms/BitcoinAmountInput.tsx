@@ -21,6 +21,8 @@ interface Props extends InputFieldOwnProps, InputProps {
     unit: WasmBitcoinUnit | WasmApiExchangeRate;
 
     min?: number;
+
+    accountBalance?: number;
 }
 
 const formatNumberForDisplay = (num: number, decimalPlaces: number) => {
@@ -39,18 +41,24 @@ export const BitcoinAmountInput = ({
 
     min,
 
+    accountBalance,
+
     inputClassName,
     ...inputProps
 }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const safeMin = min ?? 0;
     const amount = Math.max(safeMin, convertAmount(value, COMPUTE_BITCOIN_UNIT, unit));
+    const accountBalanceAmount = accountBalance ? convertAmount(accountBalance, COMPUTE_BITCOIN_UNIT, unit) : undefined;
 
     const onChange = (event: ChangeEvent<HTMLInputElement>) => {
         const parsedAmount = parseFloat(event.target.value.replace(/^0+(\d+)/, '$1'));
         const updatedAmount = Number.isFinite(parsedAmount) && parsedAmount > safeMin ? parsedAmount : safeMin;
-
-        onValueChange?.(convertAmount(updatedAmount, unit, COMPUTE_BITCOIN_UNIT));
+        if (accountBalanceAmount && updatedAmount > accountBalanceAmount) {
+            onValueChange?.(convertAmount(accountBalanceAmount, unit, COMPUTE_BITCOIN_UNIT));
+        } else {
+            onValueChange?.(convertAmount(updatedAmount, unit, COMPUTE_BITCOIN_UNIT));
+        }
     };
 
     return (
@@ -59,7 +67,8 @@ export const BitcoinAmountInput = ({
             dense={dense}
             type="number"
             value={formatNumberForDisplay(amount, getPrecision(unit))}
-            min={min}
+            min={safeMin}
+            max={accountBalance}
             step={getDecimalStepByUnit(unit)}
             onChange={onChange}
             className="invisible-number-input-arrow bg-norm border-none"
