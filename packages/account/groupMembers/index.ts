@@ -62,6 +62,18 @@ const slice = createSlice({
                 meta: { fetchedAt: getFetchedAt(), fetchedEphemeral: undefined },
             };
         },
+        updateOverridePermissions: (
+            state,
+            action: PayloadAction<{ groupID: string; memberID: string; newValue: number }>
+        ) => {
+            const { groupID, memberID, newValue } = action.payload;
+
+            const group = state[groupID]?.value;
+
+            if (group && group[memberID]) {
+                group[memberID].Permissions = newValue;
+            }
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(serverEvent, (state, action) => {
@@ -100,7 +112,7 @@ const slice = createSlice({
         });
     },
 });
-
+export const { updateOverridePermissions } = slice.actions;
 const promiseStore = createPromiseMapStore<GroupMembers>();
 
 export const groupMembersThunk = ({

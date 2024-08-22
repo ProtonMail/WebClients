@@ -8,6 +8,25 @@ import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 import GroupMemberItemDropdown from './GroupMemberItemDropdown';
 import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';
 
+type InvitationBadgeMap = Partial<{
+    [key in GROUP_MEMBER_STATE]: { label: string; tooltip: string };
+}>;
+
+const getInvitationBadgeMap = (): InvitationBadgeMap => ({
+    [GROUP_MEMBER_STATE.PENDING]: {
+        label: c('invitation status').t`Pending`,
+        tooltip: c('tooltip').t`Waiting user to accept the invitation`,
+    },
+    [GROUP_MEMBER_STATE.REJECTED]: {
+        label: c('invitation status').t`Declined`,
+        tooltip: c('tooltip').t`User declined invitation`,
+    },
+    [GROUP_MEMBER_STATE.PAUSED]: {
+        label: c('invitation status').t`Paused`,
+        tooltip: c('tooltip').t`Group membership paused`,
+    },
+});
+
 interface Props {
     groupMember: GroupMember;
     memberName?: string;
@@ -20,9 +39,8 @@ export const GroupMemberItem = ({
     memberName,
     group,
 }: Props) => {
-    const isInvitationPending = State === GROUP_MEMBER_STATE.PENDING;
-    const isRejected = State === GROUP_MEMBER_STATE.REJECTED;
     const hasKeys = !!AddressID;
+    const badge = getInvitationBadgeMap()[State];
 
     return (
         <>
@@ -33,22 +51,11 @@ export const GroupMemberItem = ({
                             <Icon name="lock" alt={c('Info').t`Internal user`} />
                         </span>
                     )}
-                    {isInvitationPending && (
+                    {badge && (
                         <span>
-                            <Badge
-                                type="origin"
-                                className="rounded-sm color-weak"
-                                tooltip={c('tooltip').t`Waiting user to accept the invitation`}
-                            >{c('invitation status').t`Pending`}</Badge>
-                        </span>
-                    )}
-                    {isRejected && (
-                        <span>
-                            <Badge
-                                type="origin"
-                                className="rounded-sm color-weak"
-                                tooltip={c('tooltip').t`User declined invitation`}
-                            >{c('invitation status').t`Declined`}</Badge>
+                            <Badge type="origin" className="rounded-sm color-weak" tooltip={badge.tooltip}>
+                                {badge.label}
+                            </Badge>
                         </span>
                     )}
                 </div>
