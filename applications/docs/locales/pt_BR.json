@@ -112,6 +112,12 @@
       "Cancel subscription": [
         "Cancelar assinatura"
       ],
+      "characters": [
+        "caracteres"
+      ],
+      "characters out of": [
+        "caracteres de"
+      ],
       "Chat with us": [
         "Converse conosco"
       ],
@@ -614,6 +620,15 @@
       ],
       "What do I get?": [
         "O que eu recebo?"
+      ],
+      "Word count": [
+        "Contagem de palavras"
+      ],
+      "words": [
+        "palavras"
+      ],
+      "words out of": [
+        "palavras de"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
@@ -3540,9 +3555,6 @@
         "Tudo (${ totalFoldersCount } marcador)",
         "Todos (${ totalFoldersCount } marcadores)"
       ],
-      "All changes saved to Drive": [
-        "Todas as alterações foram salvas no Drive"
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }",
         "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }"
@@ -3603,6 +3615,12 @@
       ],
       "Change your password": [
         "Alterar sua senha"
+      ],
+      "characters": [
+        "caracteres"
+      ],
+      "characters without spaces": [
+        "caracteres sem espaços"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Verificando contato ${ progress } de ${ max }..."
@@ -3690,6 +3708,9 @@
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
       ],
+      "Display word count": [
+        "Mostrar contagem de palavras"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não aparece nada? Lembre-se de desativar os bloqueadores de pop-up."
       ],
@@ -3737,6 +3758,9 @@
       ],
       "Emails are automatically signed": [
         "E-mails são assinados automaticamente"
+      ],
+      "End-to-end encrypted": [
+        "Criptografado de ponta a ponta"
       ],
       "End-to-end encrypted.": [
         "Criptografado de ponta a ponta."
@@ -4014,6 +4038,9 @@
       "Organization size": [
         "Tamanho da organização"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nossos alertas são mais cautelosos. Se você não reconhece nenhuma das informações violadas, pode ignorar este relatório com segurança."
+      ],
       "Owner": [
         "Proprietário"
       ],
@@ -4104,9 +4131,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
-      ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Salvo no ${ DRIVE_APP_NAME }"
       ],
       "Saving": [
         "Salvando"
@@ -4357,6 +4381,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo autenticador."
+      ],
+      "words": [
+        "palavras"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
@@ -8372,6 +8399,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Uma maneira segura/fácil de mandar e enviar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

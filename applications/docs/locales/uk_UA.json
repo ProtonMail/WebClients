@@ -3614,9 +3614,6 @@
         "Усі (${ totalFoldersCount } міток)",
         "Усі (${ totalFoldersCount } мітки)"
       ],
-      "All changes saved to Drive": [
-        "Всі зміни збережено на Drive"
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
         "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
@@ -3817,6 +3814,9 @@
       ],
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
+      ],
+      "End-to-end encrypted": [
+        "Наскрізно зашифровано"
       ],
       "End-to-end encrypted.": [
         "Наскрізно зашифровано."
@@ -4195,9 +4195,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Оновлення сторінки чи ${ link } автоматично розв'яже більшість проблем."
-      ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Збережено у ${ DRIVE_APP_NAME }"
       ],
       "Saving": [
         "Збереження"
