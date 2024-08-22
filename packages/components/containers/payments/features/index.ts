@@ -16,14 +16,16 @@ export const getAllFeatures = ({
     plansMap,
     serversCount,
     freePlan,
+    canAccessDistributionListFeature,
 }: {
     plansMap: PlansMap;
     serversCount: VPNServersCountData;
     freePlan: FreePlanDefault;
+    canAccessDistributionListFeature: boolean;
 }) => {
     return {
         highlight: getHighlightFeatures(plansMap, freePlan),
-        mail: getMailFeatures(plansMap),
+        mail: getMailFeatures(plansMap, canAccessDistributionListFeature),
         calendar: getCalendarFeatures(plansMap),
         drive: getDriveFeatures(plansMap, freePlan),
         pass: getPassFeatures(),
