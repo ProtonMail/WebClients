@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { updateOverridePermissions } from '@proton/account';
 import { Button } from '@proton/atoms/Button';
 import { useApi, useEventManager } from '@proton/components';
 import {
@@ -10,10 +11,13 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components/components';
+import { baseUseDispatch } from '@proton/react-redux-store';
 import { deleteGroupMember as revokeGroupInvitation, updateGroupMember } from '@proton/shared/lib/api/groups';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces';
+
+import { useErrorHandler } from '../../../hooks';
 
 interface PermissionOption {
     label: string;
@@ -49,7 +53,9 @@ interface Props {
 const GroupMemberItemDropdown = ({ member, group }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const api = useApi();
+    const handleError = useErrorHandler();
     const { call } = useEventManager();
+    const dispatch = baseUseDispatch();
 
     const memberPermissionOptions: PermissionOption[] = [
         { label: c('Action').t`Use group permissions`, value: GROUP_MEMBER_PERMISSIONS.None },
@@ -65,17 +71,27 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
     };
 
     const handleOverrideGroupPermissions = async (value: number) => {
-        const newPermissions = setBit(
-            clearBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions),
-            value
-        );
-        await api(
-            updateGroupMember(member.ID, {
-                GroupID: group.ID,
-                Permissions: newPermissions,
-            })
-        );
-        await call();
+        try {
+            const newPermissions = setBit(
+                clearBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions),
+                value
+            );
+            await api(
+                updateGroupMember(member.ID, {
+                    GroupID: group.ID,
+                    Permissions: newPermissions,
+                })
+            );
+            dispatch(
+                updateOverridePermissions({
+                    groupID: group.ID,
+                    memberID: member.ID,
+                    newValue: newPermissions,
+                })
+            );
+        } catch (error) {
+            handleError(error);
+        }
     };
 
     const overrideGroupPermissions: GROUP_MEMBER_PERMISSIONS = hasBit(
