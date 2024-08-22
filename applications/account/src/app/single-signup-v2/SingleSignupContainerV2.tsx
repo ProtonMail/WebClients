@@ -302,9 +302,12 @@ const SingleSignupContainerV2 = ({
             };
         }
 
-        // Due to the scribe addon complexity in dealing with signed in users we'll temporarily disable it
+        // Due to the scribe addon and drive b2b complexity in dealing with signed in users we'll temporarily disable it
         let signIn: SignupParameters2['signIn'] = 'standard';
-        if ([APPS.PROTONMAIL, APPS.PROTONCALENDAR].includes(toApp as any) || productParam === 'generic') {
+        if (
+            [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE].includes(toApp as any) ||
+            productParam === 'generic'
+        ) {
             localID = -1;
             signIn = 'redirect';
         }
