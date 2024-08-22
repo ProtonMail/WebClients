@@ -2,6 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
+import { MetricShareType } from '../../../utils/type/MetricShareType';
 import type { Share } from '../../_shares/interface';
 import { ShareType } from '../../_shares/interface';
 import { VerificationError } from '../worker/verifier';
@@ -9,7 +10,6 @@ import type { FileUploadReady } from './interface';
 import type { FailedUploadMetadata } from './useUploadMetrics';
 import useUploadMetrics, {
     UploadErrorCategory,
-    UploadShareType,
     getErrorCategory,
     getFailedUploadMetadata,
     getShareType,
@@ -50,7 +50,7 @@ describe('useUploadMetrics::', () => {
                 getShareType({
                     type: ShareType.default,
                 } as Share)
-            ).toBe(UploadShareType.Own);
+            ).toBe(MetricShareType.Own);
         });
 
         it('for photos share', () => {
@@ -58,7 +58,7 @@ describe('useUploadMetrics::', () => {
                 getShareType({
                     type: ShareType.photos,
                 } as Share)
-            ).toBe(UploadShareType.Photo);
+            ).toBe(MetricShareType.Photo);
         });
 
         it('for device share', () => {
@@ -66,7 +66,7 @@ describe('useUploadMetrics::', () => {
                 getShareType({
                     type: ShareType.device,
                 } as Share)
-            ).toBe(UploadShareType.Device);
+            ).toBe(MetricShareType.Device);
         });
 
         it('for standard share', () => {
@@ -74,11 +74,11 @@ describe('useUploadMetrics::', () => {
                 getShareType({
                     type: ShareType.standard,
                 } as Share)
-            ).toBe(UploadShareType.Shared);
+            ).toBe(MetricShareType.Shared);
         });
 
         it('for no share', () => {
-            expect(getShareType(undefined)).toBe(UploadShareType.Shared);
+            expect(getShareType(undefined)).toBe(MetricShareType.Shared);
         });
 
         it('for any other type of share', () => {
@@ -86,7 +86,7 @@ describe('useUploadMetrics::', () => {
                 getShareType({
                     type: -1, // not specified type
                 } as any)
-            ).toBe(UploadShareType.Shared);
+            ).toBe(MetricShareType.Shared);
         });
     });
 
