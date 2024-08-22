@@ -1042,6 +1042,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagini anonim ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } va importa doar date de conectare, note, carduri de credit și identități."
+      ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } va solicita autosalvarea parolelor autogenerate imediat după completate."
       ],
@@ -2470,6 +2473,9 @@
       ],
       "Unnamed Credit Card": [
         "Card de credit nedenumit"
+      ],
+      "Unnamed identity": [
+        "Identitate nedenumită"
       ],
       "Unnamed item": [
         "Element fără nume"
