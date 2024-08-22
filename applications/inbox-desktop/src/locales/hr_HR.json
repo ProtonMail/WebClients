@@ -1,0 +1,30 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "hr_HR"
+  },
+  "contexts": {
+    "App menu": {
+      "Clear application data": [
+        "Izbriši podatke aplikacije"
+      ],
+      "Uninstall Proton Mail": [
+        "Deinstalirajte Proton Mail"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Promjene koje ste napravili možda neće biti spremljene."
+      ],
+      "Leave": [
+        "Napusti"
+      ],
+      "Leave page?": [
+        "Napusti stranicu?"
+      ],
+      "Stay": [
+        "Ostani"
+      ]
+    }
+  }
+}
