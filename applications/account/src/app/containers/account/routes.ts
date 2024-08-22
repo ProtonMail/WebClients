@@ -45,7 +45,7 @@ export const getAccountAppRoutes = ({
     isBreachesAccountDashboardEnabled,
     showThemeSelection,
     assistantKillSwitch,
-    isUserGroupsFeatureEnabled,
+    isUserGroupsMembershipFeatureEnabled,
     memberships,
 }: {
     app: APP_NAMES;
@@ -60,7 +60,7 @@ export const getAccountAppRoutes = ({
     isBreachesAccountDashboardEnabled: boolean;
     showThemeSelection: boolean;
     assistantKillSwitch: boolean;
-    isUserGroupsFeatureEnabled: boolean;
+    isUserGroupsMembershipFeatureEnabled: boolean;
     memberships: GroupMembershipReturn[] | undefined;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type } = user;
@@ -342,7 +342,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Group membership`,
                 to: '/group-membership',
                 icon: 'pass-group',
-                available: isUserGroupsFeatureEnabled && (memberships?.length ?? 0) > 0,
+                available: isUserGroupsMembershipFeatureEnabled && (memberships?.length ?? 0) > 0,
                 subsections: [
                     {
                         id: 'group-membership',
