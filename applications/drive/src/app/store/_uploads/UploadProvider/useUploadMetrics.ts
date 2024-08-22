@@ -11,19 +11,12 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
+import { MetricShareType } from '../../../utils/type/MetricShareType';
 import type { Share } from '../../_shares/interface';
 import { ShareType } from '../../_shares/interface';
 import useShareState from '../../_shares/useSharesState';
 import { isVerificationError } from '../worker/verifier';
 import type { FileUploadReady } from './interface';
-
-// TODO: DRVWEB-4123 Unify Share Types
-export enum UploadShareType {
-    Own = 'own',
-    Device = 'device',
-    Photo = 'photo',
-    Shared = 'shared',
-}
 
 export enum UploadErrorCategory {
     FreeSpaceExceeded = 'free_space_exceeded',
@@ -75,7 +68,7 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
     // already in cache. (to be continued...)
     const { getShare } = useShareState();
 
-    const getShareIdType = (shareId: string): UploadShareType => {
+    const getShareIdType = (shareId: string): MetricShareType => {
         const share = getShare(shareId);
         return getShareType(share);
     };
@@ -108,7 +101,7 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
         // Type of error
         metricsModule.drive_upload_errors_total.increment({
             type: errorCategory,
-            shareType: shareType === UploadShareType.Own ? 'main' : shareType,
+            shareType: shareType === MetricShareType.Own ? 'main' : shareType,
             initiator: 'explicit',
         });
 
@@ -141,23 +134,23 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
     };
 }
 
-export function getShareType(share?: Share): UploadShareType {
+export function getShareType(share?: Share): MetricShareType {
     // (see above...) But if the share is not there anyway, we need to
     // still decide about share type. Own shares are always loaded by
     // default, so we can bet that its not own/device/photo and thus
     // we can set its shared one.
     if (!share) {
-        return UploadShareType.Shared;
+        return MetricShareType.Shared;
     }
 
     if (share.type === ShareType.default) {
-        return UploadShareType.Own;
+        return MetricShareType.Own;
     } else if (share.type === ShareType.photos) {
-        return UploadShareType.Photo;
+        return MetricShareType.Photo;
     } else if (share.type === ShareType.device) {
-        return UploadShareType.Device;
+        return MetricShareType.Device;
     }
-    return UploadShareType.Shared;
+    return MetricShareType.Shared;
 }
 
 export function getErrorCategory(error: any): UploadErrorCategory {
