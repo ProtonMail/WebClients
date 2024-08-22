@@ -11,6 +11,8 @@ import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { ExportCSVItem } from './types';
 import { type ExportData, ExportFormat, type ExportOptions } from './types';
 
+const EXPORT_AS_JSON_TYPES = ['creditCard', 'identity'];
+
 /** Exporting data from the extension uses the .zip format
  * for future-proofing : we will support integrating additional
  * files when exporting */
@@ -41,10 +43,9 @@ export const createPassExportCSV = (payload: ExportData): string => {
             })(),
             username: data.type === 'login' ? data.content.itemUsername : '',
             password: 'password' in data.content ? data.content.password : '',
-            note:
-                data.type === 'creditCard'
-                    ? JSON.stringify({ ...data.content, note: data.metadata.note })
-                    : data.metadata.note,
+            note: EXPORT_AS_JSON_TYPES.includes(data.type)
+                ? JSON.stringify({ ...data.content, note: data.metadata.note })
+                : data.metadata.note,
             totp: 'totpUri' in data.content ? data.content.totpUri : '',
             createTime: createTime.toString(),
             modifyTime: modifyTime.toString(),
