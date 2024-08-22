@@ -182,6 +182,7 @@ export const AmountInput = ({ txBuilderHelpers, btcAddressMap, onBack, account, 
                             remainingBalance={remainingAmount}
                             onAmountChange={(v) => handleUpdateSingleAmount(v)}
                             onSendAll={handleSendAllFromSingleAmount}
+                            accountBalance={accountBalance}
                         />
                     </div>
                 </>
@@ -201,6 +202,7 @@ export const AmountInput = ({ txBuilderHelpers, btcAddressMap, onBack, account, 
                                 onAmountChange={(v) => handleUpdateSingleAmount(v)}
                                 onExchangeRateChange={(e) => setControlledExchangeRate(e)}
                                 remainingBalance={remainingAmount}
+                                accountBalance={accountBalance}
                             />
                         );
                     })()}
