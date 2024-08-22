@@ -3364,7 +3364,7 @@
         "Pridelené úložisko: ${ assignedStorage }"
       ],
       "The subscription will be billed to the primary admin of this plan.": [
-        "Predplatné sa bude účtovať primárnemu správcovi tohto plánu."
+        "Predplatné sa bude účtovať hlavnému správcovi tohto plánu."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Dostali ste pozvanie pripojiť sa k ${ invite.OrganizationName }"
@@ -8065,7 +8065,7 @@
         "Najprv vyberte fakturačnú krajinu, prosím."
       ],
       "Please select your billing state first.": [
-        "Najprv vyberte fakturačnú krajinu, prosím."
+        "Najprv vyberte fakturačný štát, prosím."
       ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"
@@ -9182,7 +9182,7 @@
         "Po vypršaní vášho ${ planName } predplatného bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 1 GB Mail úložiska a maximálne 5 GB Drive úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
-        "Po vypršaní platnosti vášho predplatného ${ planName } budete preradení do ${ BRAND_NAME } Free, ktorý ponúka len do 1 GB úložiska pošty a do 5 GB úložiska disku. Váš tím bude mať výpadky v práci, pretože v bezplatnom pláne nie sú podporovaní ďalší používatelia."
+        "Po vypršaní platnosti vášho predplatného ${ planName } budete preradení do ${ BRAND_NAME } Free, ktorý ponúka len 1 GB úložiska pošty a 5 GB úložiska disku. Váš tím bude mať výpadky v práci, pretože v bezplatnom pláne nie sú podporovaní ďalší používatelia."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
         "Po vypršaní vášho ${ planName } plánu bude váš účet znížený na ${ BRAND_NAME } Free, ktorý ponúka maximálne 5 GB Drive úložiska a maximálne 1 GB Mail úložiska. Prídete tiež o všetky predchádzajúce získané bonusy k úložisku."
