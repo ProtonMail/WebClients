@@ -721,10 +721,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
       "Reload": [
@@ -1394,14 +1394,6 @@
         "选择您的年终优惠"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此优惠不适用于您当前的套餐。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 存储空间 (是其他套餐的 2 倍)"
@@ -1423,6 +1415,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "套餐 ${ plan } 限时回归"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
       ]
     },
     "bf2023: Offers": {
@@ -6039,10 +6039,10 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -9775,23 +9775,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -9819,6 +9802,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
       ]
     },
     "new_plans: feature": {
@@ -10317,14 +10317,6 @@
         "您所选的账户等级：${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -10343,6 +10335,14 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -13103,10 +13103,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
       "Change login password": [

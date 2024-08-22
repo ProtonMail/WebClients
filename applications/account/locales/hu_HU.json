@@ -737,11 +737,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse az oldalt"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Reload": [
         "Újratöltés"
@@ -7526,9 +7526,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Egy titkosított ${ BRAND_NAME } címmel hozzáférhet az összes ${ BRAND_NAME } szolgáltatáshoz"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Felhasználói csoportok segítségével könnyen küldhet e-mailt, oszthat meg adatokat, vagy változtathatja meg a felhasználók egy bizonyos csoportjának tulajdonságait egyszerre."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "A jelenlegi terveiddel csak fogadni tudsz üzeneteket a @pm.me címeden. Frissítsd a terveidet, hogy üzeneteket küldhess és létrehozhass további címeket a @pm.me használatával."
       ],
@@ -7564,9 +7561,6 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Jelenleg ${ usedMembers } felhasználói licencet használ, az elérhető ${ maxMembers } licencből.",
         "Jelenleg ${ usedMembers } felhasználói licencet használ, az elérhető ${ maxMembers } licencből."
-      ],
-      "You are in no group nor invited to any": [
-        "Nincs semmilyen csoportban és meg sem hívták"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Jelenleg a következőként van belépve a fiókba: ${ memberAddress }."
@@ -9819,23 +9813,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -9863,6 +9840,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -10356,14 +10350,6 @@
         "A választott csomagja: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -10382,6 +10368,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -12932,10 +12926,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
