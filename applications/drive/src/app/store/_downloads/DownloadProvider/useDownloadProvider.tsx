@@ -24,6 +24,7 @@ import type { InitDownloadCallback, LinkDownload } from '../interface';
 import type { UpdateFilter } from './interface';
 import useDownloadContainsDocument from './useDownloadContainsDocument';
 import useDownloadControl from './useDownloadControl';
+import { useDownloadMetrics } from './useDownloadMetrics';
 import useDownloadQueue from './useDownloadQueue';
 import useDownloadScanIssue from './useDownloadScanIssue';
 import useDownloadSignatureIssue from './useDownloadSignatureIssue';
@@ -31,6 +32,7 @@ import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 export default function useDownloadProvider(initDownload: InitDownloadCallback) {
     const onlineStatus = useOnline();
     const { createNotification } = useNotifications();
+    const { observe } = useDownloadMetrics();
     const { preventLeave } = usePreventLeave();
     const [downloadIsTooBigModal, showDownloadIsTooBigModal] = useDownloadIsTooBigModal();
 
@@ -188,6 +190,10 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
             control.resumeDownloads(({ id }) => ids.includes(id));
         }
     }, [onlineStatus]);
+
+    useEffect(() => {
+        observe(queue.downloads);
+    }, [queue.downloads]);
 
     return {
         downloads: queue.downloads,
