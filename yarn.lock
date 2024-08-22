@@ -7472,15 +7472,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/testpackage-loki-client@workspace:tests/packages/loki":
+  version: 0.0.0-use.local
+  resolution: "@proton/testpackage-loki-client@workspace:tests/packages/loki"
+  dependencies:
+    cross-fetch: "npm:^4.0.0"
+    eslint: "npm:^8.57.0"
+    prettier: "npm:^3.3.3"
+    proxy-agent: "npm:^6.4.0"
+    typescript: "npm:^5.5.4"
+  languageName: unknown
+  linkType: soft
+
 "@proton/testpackage-measurement-sdk@workspace:tests/packages/measurement-sdk":
   version: 0.0.0-use.local
   resolution: "@proton/testpackage-measurement-sdk@workspace:tests/packages/measurement-sdk"
   dependencies:
     "@playwright/test": "npm:^1.45.1"
-    cross-fetch: "npm:^4.0.0"
     eslint: "npm:^8.57.0"
     prettier: "npm:^3.3.3"
-    proxy-agent: "npm:^6.4.0"
     typescript: "npm:^5.5.4"
   languageName: unknown
   linkType: soft
