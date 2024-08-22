@@ -51,7 +51,7 @@ const useGroupCrypto = () => {
             api,
         });
         await call();
-        createNotification({ text: c('Success notification').t`Encryption preference updated` });
+        createNotification({ text: c('Success notification').t`Preferences updated` });
     };
 
     const disableEncryption = async (
