@@ -12,7 +12,6 @@ import {
     getPrivateText,
 } from '@proton/account';
 import { Button, Card } from '@proton/atoms';
-import MemberToggleContainer from '@proton/components/containers/members/MemberToggleContainer';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -446,7 +445,7 @@ const SubUserEditModal = ({
                                 }
                                 label={
                                     <label className="text-semibold" htmlFor="private-toggle">
-                                        {c('Label for new member').t`Private user`}
+                                        {getPrivateLabel()}
                                     </label>
                                 }
                                 assistiveText={

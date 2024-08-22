@@ -507,7 +507,7 @@ export const setAdminRoles = ({
             throw new Error('Only used on passwordless organizations');
         }
         if (!organizationKey?.privateKey) {
-            throw new Error('Organization key must be activated to set admin roles');
+            throw new Error('Organization key must be activated to set admin role');
         }
         const userKey = userKeys[0]?.privateKey;
         if (!userKey) {
