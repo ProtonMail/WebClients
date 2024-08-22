@@ -157,8 +157,11 @@
       "Allow": [
         "Autoriser"
       ],
-      "Always allow sending mail to group": [
-        "Toujours autoriser l'envoi d'e-mails au groupe"
+      "Allow end-to-end encrypted mail for this group": [
+        "Autoriser les messages chiffrés de bout en bout pour ce groupe"
+      ],
+      "Always allow sending": [
+        "Toujours autoriser l'envoi"
       ],
       "Apply": [
         "Appliquer"
@@ -394,9 +397,6 @@
       "Disable": [
         "Désactiver"
       ],
-      "Disable E2EE group mail encryption": [
-        "Désactiver le chiffrement de bout en bout (E2EE) pour les messages de groupe"
-      ],
       "Disable recovery phrase": [
         "Désactiver la phrase de récupération"
       ],
@@ -409,8 +409,8 @@
       "Discard changes": [
         "Abandonner les modifications"
       ],
-      "Domain names": [
-        "Noms de domaine"
+      "Domain name": [
+        "Nom de domaine"
       ],
       "Don't show again": [
         "Ne plus afficher"
@@ -501,9 +501,6 @@
       ],
       "Enable device-based recovery": [
         "Activer la récupération à partir d'un appareil"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Activer le chiffrement de bout en bout (E2EE) pour les messages de groupe"
       ],
       "Enable multi-user support": [
         "Activer la prise en charge multi-utilisateur"
@@ -814,11 +811,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "Refresh the page": [
-        "Actualiser la page"
-      ],
       "refresh the page": [
         "actualiser la page"
+      ],
+      "Refresh the page": [
+        "Actualiser la page"
       ],
       "Reload": [
         "Recharger"
@@ -1123,6 +1120,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Réessayez d'enregistrer. L'enregistrement n'a pas abouti pour la raison suivante : ${ saveError }"
       ],
+      "Turn off": [
+        "Désactiver"
+      ],
+      "Turn on": [
+        "Activer"
+      ],
       "Underline": [
         "Souligner"
       ],
@@ -1189,8 +1192,8 @@
       "Use authentication code": [
         "Utiliser le code d'authentification"
       ],
-      "Use group sending permissions": [
-        "Utiliser les autorisations d'envoi du groupe"
+      "Use group permissions": [
+        "Utiliser les autorisations du groupe"
       ],
       "Use recovery code": [
         "Utiliser un code de récupération"
@@ -1619,14 +1622,6 @@
         "Choisissez votre offre de fin d'année"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 To d'espace de stockage (2 fois plus que tout autre abonnement)"
@@ -1648,6 +1643,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "L'abonnement ${ plan } est de retour pour une durée limitée."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4212,6 +4215,9 @@
       "Authentication error.": [
         "Erreur d'authentification"
       ],
+      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
+        "Le message de réponse automatique est trop long. Nous vous invitons à le raccourcir."
+      ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Les réponses automatiques sont une fonctionnalité proposée dans le cadre d'un abonnement payant. Nous vous invitons à changer d'abonnement pour utiliser cette fonctionnalité."
       ],
@@ -6597,6 +6603,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Un ${ protonSubdomain } est hébergé par ${ BRAND_NAME }, ce qui vous permet de rapidement créer un sous-domaine. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Un domaine personnalisé est nécessaire pour créer des groupes. Si vous n'en avez pas encore configuré, faites-le d'abord sous ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nom pour vous aider à identifier l'endroit où vous l'utilisez afin de pouvoir facilement le révoquer ou le prolonger ultérieurement."
       ],
@@ -7048,11 +7057,11 @@
       "Data locked": [
         "Les données sont verrouillées."
       ],
-      "dedicated servers": [
-        "serveurs dédiés"
-      ],
       "Dedicated servers": [
         "Serveurs dédiés"
+      ],
+      "dedicated servers": [
+        "serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec une ou plusieurs adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -7296,6 +7305,12 @@
       "Gateways": [
         "Passerelles"
       ],
+      "Gateways monitoring is disabled.": [
+        "La surveillance de la passerelle a été desactivée."
+      ],
+      "Gateways monitoring is enabled.": [
+        "La surveillance de la passerelle a été activée."
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "La génération d’une nouvelle phrase de récupération désactivera l’ancienne."
       ],
@@ -7316,9 +7331,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accédez à votre fournisseur d'identité, récupérez les métadonnées SAML pour ${ appName } et importez-les ici."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Les groupes d'adresses ne peuvent être créés que pour des domaines personnalisés. Accédez à la page ${ linkToDomainPage } pour ajouter un domaine personnalisé."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Groupez les messages d'une même conversation dans votre boite de réception ou affichez-les séparément."
@@ -7684,6 +7696,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Veuillez patienter : le calendrier est en cours de chargement. Vous serez redirigé vers notre plateforme de programmation Calendly dans un nouvel onglet."
+      ],
+      "Loading gateways monitoring current status.": [
+        "L'état actuel de la surveillance des passerelles est en cours de chargement."
       ],
       "Loading preview": [
         "Chargement de l'aperçu"
@@ -8391,6 +8406,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Cela peut prendre quelques secondes ou minutes selon votre appareil."
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Cette modification sera entièrement répercutée sur toute votre infrastructure dans environ 1 heure."
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Cela peut prendre un moment. Ne fermez pas cette page et ne vous déconnectez pas d'internet."
       ],
@@ -8588,6 +8606,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "Le mode à deux mots de passe utilise des mots de passe distincts pour la connexion à votre compte et pour le déchiffrement de vos données. Ce mode fournit un léger avantage en termes de sécurité dans certains cas, cependant, nous recommandons le mode mot de passe unique pour la plupart des utilisateurs. Pour activer le mode à deux mots de passe, choisissez dans un premier temps un mot de passe de connexion à votre compte, puis choisissez un second mot de passe."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "L'état actuel de la surveillance des passerelles ne peut actuellement pas être vérifié."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "La signature du fichier de récupération ne peut pas être vérifiée. Nous vous invitons à contacter le support."
@@ -8877,8 +8898,8 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Avec une adresse chiffrée ${ BRAND_NAME }, vous pouvez utiliser tous les services ${ BRAND_NAME }."
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Grâce aux groupes d'utilisateurs, vous pouvez facilement envoyer des messages, partager des données ou modifier les paramètres de certains groupes d'utilisateurs en une seule fois."
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Grâce aux groupes, vous pouvez envoyer rapidement et facilement des messages à toutes les personnes d'un groupe spécifique."
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Avec votre abonnement actuel, vous pouvez uniquement recevoir des messages avec votre adresse @pm.me. Changez d'abonnement pour envoyer des messages et créer des adresses supplémentaires en utilisant @pm.me."
@@ -8923,8 +8944,8 @@
         "Nombre de licences utilisateurs que vous utilisez : ${ usedMembers } sur ${ maxMembers }",
         "Nombre de licences utilisateurs que vous utilisez : ${ usedMembers } sur ${ maxMembers }"
       ],
-      "You are in no group nor invited to any": [
-        "Vous ne faites partie d'aucun groupe et n'êtes invité à aucun."
+      "You are not currently in any groups and there are no pending invitations": [
+        "Vous n'appartenez actuellement à aucun groupe et il n'y a aucune invitation en attente."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Vous êtes connecté au compte ${ memberAddress }."
@@ -9259,11 +9280,11 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Refusé"
+      ],
       "Pending": [
         "En attente"
-      ],
-      "Rejected": [
-        "Rejeté"
       ],
       "Sending invite...": [
         "Envoi de l'invitation..."
@@ -11497,32 +11518,6 @@
         "Vitesse VPN moyenne"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Découvrir tous les abonnements ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Get started for $1": [
-        "Lancez-vous pour 1 $"
-      ],
-      "Get started for 1 €": [
-        "Lancez-vous pour 1  €"
-      ],
-      "Get started for CHF 1": [
-        "Lancez-vous pour 1  CHF"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuer avec Free"
@@ -11550,6 +11545,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Passer à ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Découvrir tous les abonnements ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Get started for $1": [
+        "Lancez-vous pour 1 $"
+      ],
+      "Get started for 1 €": [
+        "Lancez-vous pour 1  €"
+      ],
+      "Get started for CHF 1": [
+        "Lancez-vous pour 1  CHF"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
       ]
     },
     "new_plans: feature": {
@@ -12199,14 +12220,6 @@
         "L'abonnement que vous avez sélectionné : ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -12225,6 +12238,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -13994,12 +14015,6 @@
       "Continue to Safety Review": [
         "Continuer vers la vérification de sécurité"
       ],
-      "Critical issues found. You are at risk of losing access to your account and data.": [
-        "Des problèmes critiques ont été détectés. Vous risquez de perdre l'accès à votre compte et vos données."
-      ],
-      "Critical issues found. You are at risk of losing access to your data.": [
-        "Des problèmes critiques ont été détectés. Vous risquez de perdre l'accès à vos données."
-      ],
       "Device-based recovery enabled": [
         "La récupération à partir d'un appareil a été activée."
       ],
@@ -14044,6 +14059,9 @@
       ],
       "Recovery phone number": [
         "Numéro de téléphone de récupération"
+      ],
+      "Review your account safety": [
+        "Vérifier la sécurité du compte"
       ],
       "Safeguard account now": [
         "Protégez votre compte"
@@ -14137,9 +14155,6 @@
       ],
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Vous avez déjà téléchargé un kit de récupération. Si vous en téléchargez un nouveau, ceci **désactivera l'ancien**."
-      ],
-      "You have recommended account safety actions": [
-        "Vous avez des actions de sécurité recommandées pour votre compte."
       ],
       "You have recommended actions.": [
         "Vous avez des actions recommandées."
@@ -16017,6 +16032,9 @@
       "Creating config file for ${ serverName }": [
         "Création du fichier de configuration pour ${ serverName }"
       ],
+      "Encryption preference updated": [
+        "Les préférences de chiffrement ont été mises à jour."
+      ],
       "Filter removed": [
         "Le filtre a été retiré."
       ],
@@ -16379,10 +16397,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
       "Change login password": [
@@ -16441,6 +16459,12 @@
       ],
       "Connection events": [
         "Événements de connexion"
+      ],
+      "Connection monitor disabled": [
+        "La surveillance de la connexion a été desactivée."
+      ],
+      "Connection monitor enabled": [
+        "La surveillance de la connexion a été activée."
       ],
       "Contact us": [
         "Nous contacter"
@@ -17001,6 +17025,9 @@
       "Profile": [
         "Profil"
       ],
+      "QRCode": [
+        "QR Code"
+      ],
       "Recommended": [
         "Recommandé"
       ],
@@ -17214,6 +17241,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "Évitez toute perte de données en prenant quelques précautions."
+      ],
+      "Text": [
+        "Texte"
       ],
       "Theme": [
         "Thème"
@@ -17658,7 +17688,7 @@
       "Sending member invitation": [
         "Envoi de l'invitation au membre"
       ],
-      "User rejected invitation": [
+      "User declined invitation": [
         "L'utilisateur a refusé l'invitation."
       ],
       "Waiting user to accept the invitation": [
