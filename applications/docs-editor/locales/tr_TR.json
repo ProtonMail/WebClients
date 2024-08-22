@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
       "Add comment": [
         "Yorum ekle"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "Yazı boyutunu ayarla"
+      ],
+      "Alphabetical": [
+        "Alfabetik"
       ],
       "and": [
         "ve"
@@ -169,6 +184,9 @@
       ],
       "Right align": [
         "Sağa hizala"
+      ],
+      "Roman": [
+        "Roman"
       ],
       "Save": [
         "Kaydet"
@@ -374,6 +392,12 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Belge yüklenirken bir sorun çıktı. Belgenin bozulmasını önlemek için düzenleyici kilitlendi. Lütfen sayfayı yeniden yükleyip yeniden deneyin."
+      ],
+      "Failed to export document.": [
+        "Belge dışa aktarılamadı."
+      ],
       "Failed to import HTML due to unknown error.": [
         "HTML kodu bilinmeyen bir sorun nedeniyle içe aktarılamadı."
       ],
