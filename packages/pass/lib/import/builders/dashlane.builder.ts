@@ -54,7 +54,7 @@ export const buildDashlaneIdentity = (item: DashlanePersonalInfoItem | DashlaneI
 };
 
 export const groupItems = (items: ItemImportIntent[], itemKey: FileKey) => {
-    if (itemKey !== FileKey.Ids) return items;
+    if (itemKey !== FileKey.Ids || items.length === 0) return items;
 
     // Dashlane creates N entries for each piece of identity information.
     // We need to create a single object with all these entries.
