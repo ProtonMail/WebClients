@@ -637,6 +637,9 @@
       "Italic": [
         "Kursiv"
       ],
+      "Keep my subscription": [
+        "Bevar mit abonnement"
+      ],
       "Label as": [
         "Anvend etiketten"
       ],
@@ -841,10 +844,10 @@
       "Not saved": [
         "Ikke gemt"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open": [
@@ -3604,11 +3607,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Faktureres hvert 2. år til ${ amountBilled }. Rabatter er baseret på den månedlige standardpris."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Faktureres årligt til ${ amountBilled }. Spar ${ amountSave } på 2 enkeltstående ${ BRAND_NAME }. Ubegrænset årlige abonnementer."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB lagerplads"
+      ],
       "2 users": [
         "2 brugere"
       ],
@@ -7409,6 +7418,9 @@
         "Du valgte **${ elementsCount } besked**.",
         "Du valgte **${ elementsCount } beskeder**."
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Du vil miste adgang til ${ planTitle }-funktioner på denne dato."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
       ],
@@ -9050,6 +9062,14 @@
         "${ n } daglig besked",
         "${ n } daglige beskeder"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } delt ${ PASS_SHORT_APP_NAME } boks pr. bruger",
+        "${ n } delt ${ PASS_SHORT_APP_NAME } boks pr. bruger"
+      ],
+      "${ n } user": [
+        "${ n } bruger",
+        "Op til ${ n } brugere"
+      ],
       "${ n } vault": [
         "${ n } boks",
         "${ n } bokse"
@@ -9057,6 +9077,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dags filversionshistorik",
+        "${ options }-dags filversionshistorik"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
@@ -9071,8 +9095,17 @@
       "${ size } attachment size": [
         "${ size } vedhæftningsstørrelse"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } sikker lagerplads pr. bruger"
+      ],
       "${ size } storage": [
         "${ size } lagerplads"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Til ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Til alle ${ BRAND_NAME }-tjenester"
       ],
       "1 user": [
         "1 bruger"
@@ -9091,6 +9124,12 @@
       ],
       "Administration Panel": [
         "Administrationspanel"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle premium ${ BRAND_NAME }-tjenester. Ét nemt abonnement"
       ],
       "Auto-delete Spam and Trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
@@ -9127,6 +9166,9 @@
       ],
       "Contact groups management": [
         "Administration af kontaktgrupper"
+      ],
+      "Custom and secure business email": [
+        "Tilpasset og sikker erhvervsmail"
       ],
       "Custom domains for email aliases": [
         "Brugerdomæner til e-mailaliasser"
@@ -9222,6 +9264,9 @@
       "Multiple admin roles": [
         "Flere administratorroller"
       ],
+      "Online document editor": [
+        "Online dokumentredigering"
+      ],
       "Organize items with multiple vaults": [
         "Organiser elementer med flere bokse"
       ],
@@ -9231,8 +9276,14 @@
       "Password health": [
         "Adgangskode-sundhed"
       ],
+      "Password manager": [
+        "Adgangskodehåndtering"
+      ],
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
+      ],
+      "Phone support (20+ users)": [
+        "Telefon-support (20+ brugere)"
       ],
       "Priority email support": [
         "Prioriteret e-mail-support"
@@ -9249,6 +9300,9 @@
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmæssig kontrol af din kontosikkerhed. Vi advarer dig, hvis dine adgangskoder er svage eller genbruges og skal opdateres."
@@ -9280,6 +9334,9 @@
       "Send & receive invitations": [
         "Send og modtag invitationer"
       ],
+      "Share files with no size limit": [
+        "Del filer uden størrelsesbegrænsning"
+      ],
       "Sign in as user": [
         "Log ind som bruger"
       ],
@@ -9297,6 +9354,9 @@
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -9333,6 +9393,9 @@
       ],
       "Unlimited messages per day": [
         "Ubegrænset beskedafsendelse pr. dag"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Ubegrænset deling af ${ PASS_SHORT_APP_NAME } bokse pr. bruger"
       ],
       "Unlimited shared vaults with access permissions": [
         "Ubegrænsede delte bokse med adgangstilladelser"
@@ -9449,6 +9512,9 @@
       ],
       "Popular": [
         "Populær"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Beskyt følsomme erhvervsoplysninger, og samarbejd sikkert."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskyt din families privatliv med alle ${ BRAND_NAME } tjenester kombineret."
@@ -9620,6 +9686,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personliggør din e-mail-signatur med logoer, billeder, ikoner til sociale medier, links til dine kontaktoplysninger og meget mere."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i europæisk åbningstid for kunder med 20 eller flere brugere"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer, at beskeder kan tilgås af ${ BRAND_NAME } eller tredjeparter. De eneste personer, der kan læse beskederne, er afsenderen og den tilsigtede modtager."
@@ -11050,6 +11119,9 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Vi indlæser nu billeder som standard og blokerer afsendere fra at spore dig. Dette kan ændres i ${ settingsLink }."
       ],
+      "You can now collapse the navigation bar.": [
+        "Du kan nu skjule navigationslinjen."
+      ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu planlægge dine beskeder til senere afsendelse"
       ]
@@ -12408,6 +12480,9 @@
       "Enable message content search": [
         "Aktiver beskedindholdssøgning"
       ],
+      "Enter 2FA code": [
+        "Indtast 2FA-kode"
+      ],
       "Enter your password": [
         "Indtast din adgangskode"
       ],
@@ -13069,6 +13144,11 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Tilgå Wallet-appen"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "En sikrere/nemmere måde at opbevare og sende Bitcoin på"
       ]
     },
     "wallet_signup_2024:Bug category": {

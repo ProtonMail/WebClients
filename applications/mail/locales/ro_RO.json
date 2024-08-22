@@ -641,6 +641,9 @@
       "Italic": [
         "Înclinat"
       ],
+      "Keep my subscription": [
+        "Îmi păstrez abonamentul"
+      ],
       "Label as": [
         "Etichetare ca"
       ],
@@ -845,10 +848,10 @@
       "Not saved": [
         "Nesalvat"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -3623,11 +3626,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Facturat la doi ani cu ${ amountBilled }. Reducerile se bazează pe prețul lunar standard."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Facturat anual cu ${ amountBilled }. Economisiți ${ amountSave } cu două abonamente anuale ${ BRAND_NAME } Unlimited."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TiB spațiu de stocare"
+      ],
       "2 users": [
         "Doi utilizatori"
       ],
@@ -4832,12 +4841,12 @@
         "Inserați cheia de securitate legată la contul ${ BRAND_NAME }."
       ],
       "Security key": [
-        "Cheie securitate"
+        "Cheie de securitate"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Cheie securitate"
+        "Cheie de securitate"
       ]
     },
     "file size format": {
@@ -7535,6 +7544,9 @@
         "Ați selectat **${ elementsCount } mesaje**.",
         "Ați selectat **${ elementsCount } de mesaje**."
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Veți pierde accesul la funcțiile planului ${ planTitle } la această dată."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
@@ -9202,6 +9214,16 @@
         "${ n } mesaje pe zi",
         "${ n } de mesaje pe zi"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }",
+        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }",
+        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }"
+      ],
+      "${ n } user": [
+        "${ n } utilizator",
+        "Până la ${ n } utilizatori",
+        "Până la ${ n } de utilizatori"
+      ],
       "${ n } vault": [
         "${ n } seif",
         "${ n } seifuri",
@@ -9211,6 +9233,11 @@
         "O conexiune VPN",
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
+      ],
+      "${ options }-day file version history": [
+        "Istoric versiuni fișiere: ${ options } zi",
+        "Istoric versiuni fișiere: ${ options } zile",
+        "Istoric versiuni fișiere: ${ options } de zile"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } cu ${ n } alias hide-my-email",
@@ -9226,8 +9253,17 @@
       "${ size } attachment size": [
         "${ size } mărime atașament"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } de spațiu securizat per utilizator"
+      ],
       "${ size } storage": [
         "${ size } spațiu"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Pentru ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Pentru toate serviciile ${ BRAND_NAME }"
       ],
       "1 user": [
         "Un utilizator"
@@ -9246,6 +9282,12 @@
       ],
       "Administration Panel": [
         "Panou de administrare"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Toate serviciile ${ BRAND_NAME } premium cu un singur abonament."
       ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -9282,6 +9324,9 @@
       ],
       "Contact groups management": [
         "Gestionare grupuri de contacte"
+      ],
+      "Custom and secure business email": [
+        "E-mail de afaceri personalizat și securizat"
       ],
       "Custom domains for email aliases": [
         "Domenii personale pentru aliasuri de e-mail"
@@ -9370,13 +9415,16 @@
         "Autentificator A2F integrat"
       ],
       "Kill switch/always-on VPN": [
-        "Întrerupător de urgență/VPN permanent"
+        "Întrerupător de conexiune/VPN permanent"
       ],
       "Limited support": [
         "Asistență limitată"
       ],
       "Multiple admin roles": [
         "Mai multe roluri de administrare"
+      ],
+      "Online document editor": [
+        "Editor online de documente"
       ],
       "Organize items with multiple vaults": [
         "Organizați articole cu seifuri multiple"
@@ -9387,8 +9435,14 @@
       "Password health": [
         "Stare parole"
       ],
+      "Password manager": [
+        "Manager de parole"
+      ],
       "Password-protected Emails": [
         "Mesaje protejate prin parolă"
+      ],
+      "Phone support (20+ users)": [
+        "Asistență telefonică (peste 20 de utilizatori)"
       ],
       "Priority email support": [
         "Asistență pe e-mail prioritară"
@@ -9406,6 +9460,9 @@
         "Protejare ${ n } dispozitiv",
         "Protejare ${ n } dispozitive simultan",
         "Protejare ${ n } de dispozitive simultan"
+      ],
+      "Recover previous file versions": [
+        "Recuperați versiunile anterioare ale fișierelor"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Verificări regulate ale securității contului deținut. Vă alertăm dacă aveți parole slabe sau reutilizate care trebuie modificate."
@@ -9437,6 +9494,9 @@
       "Send & receive invitations": [
         "Trimiteți și primiți invitații"
       ],
+      "Share files with no size limit": [
+        "Partajați fișiere fără limită de dimensiune"
+      ],
       "Sign in as user": [
         "Conectați-vă ca utilizator"
       ],
@@ -9454,6 +9514,9 @@
       ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sincronizați fișierele între dispozitive și păstrați copii de rezervă"
       ],
       "Tor over VPN": [
         "Tor prin VPN"
@@ -9490,6 +9553,9 @@
       ],
       "Unlimited messages per day": [
         "Mesaje nelimitate pe zi"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Seifuri ${ PASS_SHORT_APP_NAME } partajate nelimitate per utilizator"
       ],
       "Unlimited shared vaults with access permissions": [
         "Seifuri partajate nelimitate cu permisiuni de acces"
@@ -9608,6 +9674,9 @@
       ],
       "Popular": [
         "Popular"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Protejați informațiile confidențiale de afaceri și colaborați în siguranță."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protejați-vă confidențialitatea familiei cu toate serviciile ${ BRAND_NAME } combinate."
@@ -9780,6 +9849,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături către datele de contact și multe altele."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu 20 sau mai mulți utilizatori."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
@@ -11242,6 +11314,9 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Imaginile sunt încărcate implicit și expeditorii sunt blocați să vă urmărească. Aceasta se poate modifica în ${ settingsLink }."
       ],
+      "You can now collapse the navigation bar.": [
+        "Acum puteți restrânge bara de navigare."
+      ],
       "You can now schedule your messages to be sent later": [
         "Acum puteți să vă programați mesajele pentru a fi trimise mai târziu."
       ]
@@ -12650,6 +12725,9 @@
       "Enable message content search": [
         "Activați căutarea conținutului mesajului"
       ],
+      "Enter 2FA code": [
+        "Introduceți codul de A2F"
+      ],
       "Enter your password": [
         "Introduceţi parola"
       ],
@@ -13324,6 +13402,11 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Accesare aplicație portofel"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "O metodă mai sigură/ușoară de a păstra/trimite bitcoini"
       ]
     },
     "wallet_signup_2024:Bug category": {

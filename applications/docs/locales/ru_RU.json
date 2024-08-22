@@ -180,6 +180,9 @@
       "Create and copy alias": [
         "Создать и скопировать псевдоним"
       ],
+      "Create new document": [
+        "Создать новый документ"
+      ],
       "Current plan": [
         "Текущий тариф"
       ],
@@ -327,6 +330,9 @@
       "Increase": [
         "Увеличить"
       ],
+      "Keep my subscription": [
+        "Сохранить подписку"
+      ],
       "Learn more": [
         "Подробнее"
       ],
@@ -401,6 +407,9 @@
       ],
       "Pay ${ price } now": [
         "Оплатите ${ price } сейчас"
+      ],
+      "PDF (.pdf)": [
+        "PDF (.pdf)"
       ],
       "Plain Text (.txt)": [
         "Обычный текст (.txt)"
@@ -494,6 +503,9 @@
       ],
       "Select all": [
         "Выделить все"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Выбрать платежный цикл ${ billingText }"
       ],
       "Select country": [
         "Выберите страну"
@@ -605,6 +617,9 @@
       ],
       "What do I get?": [
         "Что я получу?"
+      ],
+      "Word count": [
+        "Количество слов"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контакта",
@@ -2221,6 +2236,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Сумма ниже допустимого минимума (${ minimumAmount })."
       ],
+      "An error occurred while attempting to convert the document. Please try again.": [
+        "При попытке преобразовать документ произошла ошибка. Попробуйте еще раз."
+      ],
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "При попытке дублирования документа произошла ошибка. Пожалуйста, попробуйте еще раз."
       ],
@@ -2506,6 +2524,9 @@
       "The address might be misspelled": [
         "Возможно, адрес указан неверно"
       ],
+      "The document you are trying to convert is too large. This may occur if the document has a large number of images or other media. Please try again with a smaller document.": [
+        "Документ, который вы пытаетесь преобразовать, слишком большой. Это может произойти, если в документе много изображений или других материалов. Попробуйте еще раз с меньшим документом."
+      ],
       "The email addresses do not match": [
         "Адреса электронной почты не совпадают"
       ],
@@ -2604,6 +2625,9 @@
       ],
       "Validation error": [
         "Ошибка проверки"
+      ],
+      "We are having trouble saving recent edits. Please refresh the page.": [
+        "У нас возникли проблемы при сохранении последних изменений. Попробуйте обновить страницу."
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Нельзя отправить письмо более чем ${ maxContacts } получателю",
@@ -2815,6 +2839,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Когда дополнительный пароль включен, управлять псевдонимами можно только в ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -2920,14 +2947,23 @@
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Аккаунты с пользовательским доменом не могут присоединиться к групповому плану."
+      ],
       "customer support": [
         "служба поддержки"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "На данный момент групповые планы не поддерживают внешние аккаунты. Перед подключением создайте адрес ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Если вы примете приглашение, тарифный план будет изменен. Неиспользованный баланс возвратится на счет аккаунта."
       ],
       "Invited by: ${ inviteEmail }": [
         "Вас приглашает: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Пожизненные аккаунты не могут присоединиться к групповому плану."
       ],
       "Manage addresses.": [
         "Управляйте адресами."
@@ -2941,6 +2977,9 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Доступный объем хранилища: ${ assignedStorage }"
       ],
+      "The subscription will be billed to the primary admin of this plan.": [
+        "Счет за подписку будет выставлен основному администратору этого тарифа."
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас пригласили присоединиться к организации «${ invite.OrganizationName }»‎"
       ],
@@ -2950,6 +2989,12 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас пригласили присоединиться к группе «${ bannerOrganization }». ${ viewInviteButton }"
       ],
+      "You have successfully joined the family group": [
+        "Вы успешно присоединились к семейному плану"
+      ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "У вас есть неоплаченные счета. Пожалуйста, оплатите их, прежде чем присоединиться к группе."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Вам предложили присоединить аккаунт ${ BRAND_NAME } к групповому тарифу для совместного использования всех платных функций ${ BRAND_NAME_TWO }."
       ],
@@ -2958,6 +3003,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Ваш аккаунт занимает ${ usedSpace }, что превышает лимит хранилища в ${ inviteSpace }. Удалите некоторые данные или попросите администратора тарифного плана увеличить доступный вам объем."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "Вы не можете принять это приглашение со своим текущим планом."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3428,6 +3476,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
       ],
@@ -3587,9 +3638,6 @@
         "Все (${ totalFoldersCount } ярлыков)",
         "Всё (${ totalFoldersCount } ярлыков)"
       ],
-      "All changes saved to Drive": [
-        "Все изменения сохранены в Drive"
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
@@ -3743,6 +3791,9 @@
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
       ],
+      "Display word count": [
+        "Показывать количество слов"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ничего не видно? Не забудьте отключить блокировку всплывающих окон."
       ],
@@ -3790,6 +3841,9 @@
       ],
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
+      ],
+      "End-to-end encrypted": [
+        "Зашифровано сквозным методом"
       ],
       "End-to-end encrypted.": [
         "Со сквозным шифрованием."
@@ -4166,9 +4220,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Сохранено в ${ DRIVE_APP_NAME }"
-      ],
       "Saving": [
         "Сохранение"
       ],
@@ -4264,6 +4315,9 @@
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
         "В этом документе много активности. Некоторые функции могут быть временно недоступны."
+      ],
+      "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
+        "Документ не существует или у вас нет разрешения на его просмотр. Попробуйте обновить страницу, чтобы проверить, сохраняется ли проблема."
       ],
       "This item already exists in your library": [
         "Этот элемент уже существует в вашей библиотеке"
@@ -4489,6 +4543,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вам необходимо связать кредитную карту или банковский счет с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "В этот день вы потеряете доступ к возможностям ${ planTitle }."
       ],
       "You will lose all unsaved changes.": [
         "Вы потеряете все несохраненные изменения."
@@ -5232,6 +5289,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Добавить помощника по написанию ${ BRAND_NAME } Scribe"
+      ],
       "for ${ price }": [
         "за ${ price }"
       ]
@@ -5614,6 +5674,18 @@
         "${ n } сообщений в день",
         "Сообщений в день: ${ n }"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } общее хранилище ${ PASS_SHORT_APP_NAME } для каждого пользователя",
+        "${ n } общих хранилища ${ PASS_SHORT_APP_NAME } для каждого пользователя",
+        "${ n } общих хранилищ ${ PASS_SHORT_APP_NAME } для каждого пользователя",
+        "${ n } общих хранилищ ${ PASS_SHORT_APP_NAME } для каждого пользователя"
+      ],
+      "${ n } user": [
+        "${ n } пользователь",
+        "До ${ n } пользователей",
+        "До ${ n } пользователей",
+        "До ${ n } пользователей"
+      ],
       "${ n } vault": [
         "${ n } хранилище",
         "${ n } хранилища",
@@ -5625,6 +5697,12 @@
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } с ${ n } псевдонимом hide-my-email",
@@ -5641,8 +5719,17 @@
       "${ size } attachment size": [
         "Размер вложения: ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } защищенного хранилища на пользователя"
+      ],
       "${ size } storage": [
         "${ size } хранилища"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } — для ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } — для всех сервисов ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 пользователь"
@@ -5661,6 +5748,12 @@
       ],
       "Administration Panel": [
         "Панель администратора"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Все основные сервисы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Все платные сервисы ${ BRAND_NAME }. В одной легкой подписке"
       ],
       "Auto-delete Spam and Trash": [
         "Автоудаление спама и сообщений в корзине"
@@ -5697,6 +5790,9 @@
       ],
       "Contact groups management": [
         "Управление группами контактов"
+      ],
+      "Custom and secure business email": [
+        "Настраивамая и защищённая бизнес-почта"
       ],
       "Custom domains for email aliases": [
         "Пользовательские домены для псевдонимов электронной почты"
@@ -5794,6 +5890,9 @@
       "Multiple admin roles": [
         "Несколько должностей администраторов"
       ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
       "Organize items with multiple vaults": [
         "Организуйте элементы с помощью нескольких хранилищ"
       ],
@@ -5803,8 +5902,14 @@
       "Password health": [
         "Надежность пароля"
       ],
+      "Password manager": [
+        "Менеджер паролей"
+      ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
+      ],
+      "Phone support (20+ users)": [
+        "Поддержка по телефону (более 20 пользователей)"
       ],
       "Priority email support": [
         "Приоритетная поддержка по электронной почте"
@@ -5823,6 +5928,9 @@
         "Защитите ${ n } устройства одновременно",
         "Защитите ${ n } устройств одновременно",
         "Защитите ${ n } устройств одновременно"
+      ],
+      "Recover previous file versions": [
+        "Восстановить предыдущие версии файла"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Регулярная проверка безопасности вашего аккаунта. Мы предупредим вас, если у вас есть ненадежные или повторно используемые пароли, которые необходимо обновить."
@@ -5854,6 +5962,9 @@
       "Send & receive invitations": [
         "Отправляйте и получайте приглашения"
       ],
+      "Share files with no size limit": [
+        "Делитесь файлами без ограничений по размеру"
+      ],
       "Sign in as user": [
         "Войти как пользователь"
       ],
@@ -5871,6 +5982,9 @@
       ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
+      ],
+      "Sync and backup all your files across devices": [
+        "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
       ],
       "Tor over VPN": [
         "Tor через VPN"
@@ -5907,6 +6021,9 @@
       ],
       "Unlimited messages per day": [
         "Неограниченное количество сообщений в день"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Неограниченные общие хранилища ${ PASS_SHORT_APP_NAME } для каждого пользователя"
       ],
       "Unlimited shared vaults with access permissions": [
         "Неограниченное количество совместно используемых хранилищ с правами доступа"
@@ -6028,6 +6145,9 @@
       "Popular": [
         "Популярный"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Защитите конфиденциальную деловую информацию и сотрудничайте безопасно."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Защитите конфиденциальность вашей семьи с помощью комплекса услуг ${ BRAND_NAME }."
       ],
@@ -6076,6 +6196,9 @@
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } Защитите свое расписание с помощью сквозного шифрования. Включает поддержку пользовательских календарей, совместное использование календарей и многое другое."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает автоматическую синхронизацию, общий доступ к зашифрованным файлам и многое другое."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME } Защитите свою электронную почту с помощью сквозного шифрования. Включает поддержку пользовательских почтовых доменов, 15 адресов электронной почты, неограниченное количество ide-my-email псевдонимов и многое другое."
@@ -6187,6 +6310,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персонализируйте свою подпись электронной почты с помощью логотипов, изображений, значков социальных сетей, ссылок на контактную информацию и т. д."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Клиенты, у которых 20 и более пользователей, могут обратиться за помощью к команде поддержки ${ BRAND_NAME } по телефону в рабочее время согласно европейскому графику"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Ограничивает доступ к сообщениям для ${ BRAND_NAME } или третьей стороны. Читать сообщения могут только отправитель и предполагаемый получатель."
@@ -7639,6 +7765,9 @@
       "Import record deleted": [
         "Запись об импорте удалена"
       ],
+      "Invitation rejected": [
+        "Приглашение отклонено"
+      ],
       "Last modified aliases stored in your oldest vault": [
         "Последние измененные псевдонимы хранятся в вашем самом старом хранилище"
       ],
@@ -8014,6 +8143,9 @@
       "Enable 2FA": [
         "Включить 2ФА"
       ],
+      "Enter 2FA code": [
+        "Введите код двухфакторной аутентификации"
+      ],
       "Enter your password": [
         "Введите свой пароль"
       ],
@@ -8052,6 +8184,9 @@
       ],
       "Import failed": [
         "Импорт не удался"
+      ],
+      "Import groups": [
+        "Импорт групп"
       ],
       "Invalid verification code": [
         "Неверный проверочный код"
@@ -8454,6 +8589,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin по эл. почте"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Безопасный и простой способ хранить и переводить Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -1055,6 +1055,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі, крэдытныя карткі і асабістыя звесткі."
+      ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } прапануе вам, як толькі згенерыраваныя паролі будуць запоўнены аўтаматычна."
       ],
@@ -2496,6 +2499,9 @@
       ],
       "Unnamed Credit Card": [
         "Крэдытная картка без назвы"
+      ],
+      "Unnamed identity": [
+        "Асабістыя звесткі без назвы"
       ],
       "Unnamed item": [
         "Элемент без назвы"

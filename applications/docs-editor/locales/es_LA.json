@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
       "Add comment": [
         "Añadir un comentario"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "Ajustar tamaño de fuente"
+      ],
+      "Alphabetical": [
+        "Por orden alfabético"
       ],
       "and": [
         "y"
@@ -169,6 +184,9 @@
       ],
       "Right align": [
         "Alinear a la derecha"
+      ],
+      "Roman": [
+        "Números romanos"
       ],
       "Save": [
         "Guardar"
@@ -374,6 +392,12 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Ocurrió un error al cargar el documento. Se bloqueó el editor para evitar la corrupción del documento. Recargue la página e intente de nuevo."
+      ],
+      "Failed to export document.": [
+        "Error al exportar el documento."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Error al importar el HTML debido a un error desconocido."
       ],

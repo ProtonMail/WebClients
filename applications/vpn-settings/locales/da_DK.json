@@ -64,9 +64,6 @@
       "Allow": [
         "Tillad"
       ],
-      "Always allow sending mail to group": [
-        "Tillad altid at sende mail til gruppen"
-      ],
       "Apply": [
         "Anvend"
       ],
@@ -202,17 +199,11 @@
       "Disable": [
         "Deaktivér"
       ],
-      "Disable E2EE group mail encryption": [
-        "Deaktiver kryptering af E2EE-gruppemail"
-      ],
       "Discard": [
         "Kassér"
       ],
       "Discard changes": [
         "Kassér ændringer"
-      ],
-      "Domain names": [
-        "Domænenavne"
       ],
       "Done": [
         "Udført"
@@ -279,9 +270,6 @@
       ],
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Aktiver kryptering af E2EE-gruppemail"
       ],
       "Enable multi-user support": [
         "Aktivere understøttelse af flere brugere"
@@ -357,6 +345,9 @@
       ],
       "Keep logo": [
         "Behold logo"
+      ],
+      "Keep my subscription": [
+        "Bevar mit abonnement"
       ],
       "Let's talk": [
         "Lad os snakke"
@@ -681,9 +672,6 @@
       ],
       "Use authentication code": [
         "Brug godkendelseskode"
-      ],
-      "Use group sending permissions": [
-        "Brug tilladelser til gruppeafsendelse"
       ],
       "Use recovery code": [
         "Brug gendannelseskode"
@@ -2257,11 +2245,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Faktureres hvert 2. år til ${ amountBilled }. Rabatter er baseret på den månedlige standardpris."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Faktureres årligt til ${ amountBilled }. Spar ${ amountSave } på 2 enkeltstående ${ BRAND_NAME }. Ubegrænset årlige abonnementer."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB lagerplads"
+      ],
       "2 users": [
         "2 brugere"
       ],
@@ -3671,11 +3665,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Tilpas ${ BRAND_NAME }-applikationernes udseende."
       ],
-      "Dedicated servers": [
-        "Dedikerede servere"
-      ],
       "dedicated servers": [
         "dedikerede servere"
+      ],
+      "Dedicated servers": [
+        "Dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -3852,9 +3846,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Gruppeadresser kan kun oprettes for tilpassede domæner. Gå til siden ${ linkToDomainPage } for at tilføje et tilpasset domæne."
       ],
       "here": [
         "her"
@@ -4840,9 +4831,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypteret ${ BRAND_NAME }-adresse kan du bruge alle ${ BRAND_NAME }-tjenester"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Med brugergrupper kan du nemt sende mails, dele data eller ændre indstillingerne for bestemte grupper af brugere på én gang."
-      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
       ],
@@ -4945,6 +4933,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil blive omdirigeret til ${ destination } efter login."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Du vil miste adgang til ${ planTitle }-funktioner på denne dato."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du skal bruge en ${ BRAND_NAME }-adresse for at bruge ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
@@ -5064,9 +5055,6 @@
     "invitation status": {
       "Pending": [
         "Afventer"
-      ],
-      "Rejected": [
-        "Afvist"
       ],
       "Sending invite...": [
         "Sender invitation..."
@@ -6098,6 +6086,14 @@
         "${ n } daglig besked",
         "${ n } daglige beskeder"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } delt ${ PASS_SHORT_APP_NAME } boks pr. bruger",
+        "${ n } delt ${ PASS_SHORT_APP_NAME } boks pr. bruger"
+      ],
+      "${ n } user": [
+        "${ n } bruger",
+        "Op til ${ n } brugere"
+      ],
       "${ n } vault": [
         "${ n } boks",
         "${ n } bokse"
@@ -6105,6 +6101,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dags filversionshistorik",
+        "${ options }-dags filversionshistorik"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
@@ -6119,8 +6119,17 @@
       "${ size } attachment size": [
         "${ size } vedhæftningsstørrelse"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } sikker lagerplads pr. bruger"
+      ],
       "${ size } storage": [
         "${ size } lagerplads"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Til ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Til alle ${ BRAND_NAME }-tjenester"
       ],
       "1 user": [
         "1 bruger"
@@ -6145,6 +6154,12 @@
       ],
       "Advanced network security": [
         "Avanceret netværkssikkerhed"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle premium ${ BRAND_NAME }-tjenester. Ét nemt abonnement"
       ],
       "Auto-delete Spam and Trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
@@ -6184,6 +6199,9 @@
       ],
       "Contact groups management": [
         "Administration af kontaktgrupper"
+      ],
+      "Custom and secure business email": [
+        "Tilpasset og sikker erhvervsmail"
       ],
       "Custom domains for email aliases": [
         "Brugerdomæner til e-mailaliasser"
@@ -6288,6 +6306,9 @@
       "No-logs policy": [
         "Ingen logfiler-politik"
       ],
+      "Online document editor": [
+        "Online dokumentredigering"
+      ],
       "Organize items with multiple vaults": [
         "Organiser elementer med flere bokse"
       ],
@@ -6297,8 +6318,14 @@
       "Password health": [
         "Adgangskode-sundhed"
       ],
+      "Password manager": [
+        "Adgangskodehåndtering"
+      ],
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
+      ],
+      "Phone support (20+ users)": [
+        "Telefon-support (20+ brugere)"
       ],
       "Priority email support": [
         "Prioriteret e-mail-support"
@@ -6315,6 +6342,9 @@
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmæssig kontrol af din kontosikkerhed. Vi advarer dig, hvis dine adgangskoder er svage eller genbruges og skal opdateres."
@@ -6350,6 +6380,9 @@
         "Servere i ${ vpnServersCountData.paid.countries }+ land",
         "Servere i ${ vpnServersCountData.paid.countries }+ lande"
       ],
+      "Share files with no size limit": [
+        "Del filer uden størrelsesbegrænsning"
+      ],
       "Sign in as user": [
         "Log ind som bruger"
       ],
@@ -6373,6 +6406,9 @@
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -6409,6 +6445,9 @@
       ],
       "Unlimited messages per day": [
         "Ubegrænset beskedafsendelse pr. dag"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Ubegrænset deling af ${ PASS_SHORT_APP_NAME } bokse pr. bruger"
       ],
       "Unlimited shared vaults with access permissions": [
         "Ubegrænsede delte bokse med adgangstilladelser"
@@ -6528,6 +6567,9 @@
       ],
       "Popular": [
         "Populær"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Beskyt følsomme erhvervsoplysninger, og samarbejd sikkert."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskyt din families privatliv med alle ${ BRAND_NAME } tjenester kombineret."
@@ -6726,6 +6768,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personliggør din e-mail-signatur med logoer, billeder, ikoner til sociale medier, links til dine kontaktoplysninger og meget mere."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i europæisk åbningstid for kunder med 20 eller flere brugere"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer, at beskeder kan tilgås af ${ BRAND_NAME } eller tredjeparter. De eneste personer, der kan læse beskederne, er afsenderen og den tilsigtede modtager."
@@ -9361,11 +9406,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-all address": [
-        "Catch-all-adresse"
-      ],
       "Catch-All address": [
         "Catch-All-adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -9548,6 +9593,9 @@
       ],
       "Email subscriptions": [
         "E-mail-abonnementer"
+      ],
+      "Enter 2FA code": [
+        "Indtast 2FA-kode"
       ],
       "Enter endpoints into your identity provider": [
         "Angiv slutpunkter i din identitetsudbyder"
@@ -10014,9 +10062,6 @@
       "Sending member invitation": [
         "Sender medlemsinvitation"
       ],
-      "User rejected invitation": [
-        "Bruger afviste invitation"
-      ],
       "Waiting user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"
       ]
@@ -10296,6 +10341,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "En sikrere/nemmere måde at opbevare og sende Bitcoin på"
       ]
     },
     "wallet_signup_2024:Bug category": {

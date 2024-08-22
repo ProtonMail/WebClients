@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "Α) Β) Γ) Δ)"
+      ],
+      "a) b) c) d)": [
+        "α) β) γ) δ)"
+      ],
+      "A. B. C. D.": [
+        "Α. Β. Γ. Δ."
+      ],
+      "a. b. c. d.": [
+        "α. β. γ. δ."
+      ],
       "Add comment": [
         "Προσθήκη σχολίου"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "Προσαρμογή μεγέθους γραμματοσειράς"
+      ],
+      "Alphabetical": [
+        "Αλφαβητικά"
       ],
       "and": [
         "και"
@@ -169,6 +184,9 @@
       ],
       "Right align": [
         "Στοίχιση στα δεξιά"
+      ],
+      "Roman": [
+        "Ρωμαϊκό"
       ],
       "Save": [
         "Αποθήκευση"
@@ -374,6 +392,12 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Παρουσιάστηκε σφάλμα κατά τη φόρτωση του εγγράφου. Για να αποφευχθεί η καταστροφή εγγράφων, το πρόγραμμα επεξεργασίας έχει κλειδωθεί. Φορτώστε ξανά τη σελίδα και προσπαθήστε ξανά."
+      ],
+      "Failed to export document.": [
+        "Αποτυχία εξαγωγής εγγράφου."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Αποτυχία εισαγωγής HTML λόγω άγνωστου σφάλματος."
       ],

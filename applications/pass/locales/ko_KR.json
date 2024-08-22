@@ -1047,6 +1047,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME }가 항목 아이콘을 ${ BRAND_NAME } 비공개 이미지 프록시를 통해 표시합니다."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME }가 오직 로그인, 메모, 신용 카드 및 신원 정보에 한해 불러옵니다."
+      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME }에서 오프라인 데이터 접근을 위해 ${ BRAND_NAME } 비밀번호를 필요로 합니다."
       ],
@@ -2416,6 +2419,9 @@
       ],
       "Unnamed Credit Card": [
         "이름 없는 신용카드"
+      ],
+      "Unnamed identity": [
+        "이름이 지정되지 않은 신원"
       ],
       "Unnamed item": [
         "이름 없는 항목"

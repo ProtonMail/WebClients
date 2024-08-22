@@ -1114,6 +1114,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } vil vise elementfavorittikonet via ${ BRAND_NAME }s anonymiserte bildeproxy."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } vil bare importere pålogginger, notater, kredittkort og identiteter."
+      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } krever passordet ditt for ${ BRAND_NAME } for å få frakoblet tilgang til data."
       ],
@@ -2506,6 +2509,9 @@
       ],
       "Unnamed Credit Card": [
         "Ikke navngitt kredittkort"
+      ],
+      "Unnamed identity": [
+        "Ikke navngitt identitet"
       ],
       "Unnamed item": [
         "Ikke navngitt element"

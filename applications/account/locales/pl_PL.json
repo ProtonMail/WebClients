@@ -157,9 +157,6 @@
       "Allow": [
         "Zezwól"
       ],
-      "Always allow sending mail to group": [
-        "Zawsze zezwalaj na wysyłanie wiadomości do grupy"
-      ],
       "Apply": [
         "Zastosuj"
       ],
@@ -394,9 +391,6 @@
       "Disable": [
         "Wyłącz"
       ],
-      "Disable E2EE group mail encryption": [
-        "Wyłącz szyfrowanie E2EE poczty grupy"
-      ],
       "Disable recovery phrase": [
         "Wyłącz hasło odzyskiwania"
       ],
@@ -408,9 +402,6 @@
       ],
       "Discard changes": [
         "Odrzuć zmiany"
-      ],
-      "Domain names": [
-        "Nazwy domen"
       ],
       "Don't show again": [
         "Nie pokazuj ponownie"
@@ -501,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Włącz odzyskiwanie za pomocą zaufanego urządzenia"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Włącz szyfrowanie E2EE poczty grupy"
       ],
       "Enable multi-user support": [
         "Włącz obsługę wielu użytkowników"
@@ -811,10 +799,10 @@
       "Refresh status": [
         "Odśwież status"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Odśwież stronę"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Odśwież stronę"
       ],
       "Reload": [
@@ -1185,9 +1173,6 @@
       ],
       "Use authentication code": [
         "Użyj kodu uwierzytelniającego"
-      ],
-      "Use group sending permissions": [
-        "Użyj uprawnienia grupy"
       ],
       "Use recovery code": [
         "Użyj kodu odzyskiwania"
@@ -1624,14 +1609,6 @@
         "Wybierz ofertę końcoworoczną"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB przestrzeni dyskowej (2 razy więcej niż w innych planach)"
@@ -1653,6 +1630,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } wraca w ograniczonej czasowo ofercie"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Oferta nie jest dostępna w obecnym planie."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Oferta nie jest dostępna w obecnym planie. Możesz uzyskać **${ discountPercentage } zniżki na plan ${ plan.Title }** przy subskrypcji na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7160,11 +7145,11 @@
       "Data locked": [
         "Dane są zablokowane"
       ],
-      "dedicated servers": [
-        "dedykowane serwery"
-      ],
       "Dedicated servers": [
         "Dedykowane serwery"
+      ],
+      "dedicated servers": [
+        "dedykowane serwery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedykowane serwery z dedykowanymi adresami IP można dodać do prywatnych bram, aby precyzyjnie kontrolować dostęp do nich."
@@ -7432,9 +7417,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Przejdź do swojego dostawcy tożsamości, pobierz metadane SAML dla ${ appName } i zaimportuj je tutaj."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Adresy grup możesz utworzyć tylko dla niestandardowych domen. Przejdź do sekcji ${ linkToDomainPage }, aby dodać niestandardową domenę."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupuj wiadomości w wątki lub wyświetlaj je oddzielnie."
@@ -9002,9 +8984,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Dzięki szyfrowanemu adresowi ${ BRAND_NAME } możesz używać wszystkich usług ${ BRAND_NAME }"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Dzięki grupom użytkowników możesz wysyłać wiadomości, udostępniać dane lub zmieniać ustawienia dla konkretnych grup użytkowników."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "W obecnym planie możesz tylko odbierać wiadomości z adresu @pm.me. Ulepsz konto, aby wysyłać wiadomości i tworzyć dodatkowe adresy @pm.me."
       ],
@@ -9055,9 +9034,6 @@
         "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika.",
         "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika.",
         "Używasz ${ usedMembers } z ${ maxMembers } dostępnych licencji użytkownika."
-      ],
-      "You are in no group nor invited to any": [
-        "Nie jesteś w żadnej grupie i w żadnym zaproszeniu"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Zalogowano jako ${ memberAddress }."
@@ -9405,9 +9381,6 @@
     "invitation status": {
       "Pending": [
         "Oczekujące"
-      ],
-      "Rejected": [
-        "Odrzucone"
       ],
       "Sending invite...": [
         "Wysyłanie zaproszenia"
@@ -11656,32 +11629,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Get started for $1": [
-        "Rozpocznij od 1 $"
-      ],
-      "Get started for 1 €": [
-        "Rozpocznij od 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Rozpocznij od 1 CHF"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kontynuuj z planem Free"
@@ -11709,6 +11656,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for $1": [
+        "Rozpocznij od 1 $"
+      ],
+      "Get started for 1 €": [
+        "Rozpocznij od 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Rozpocznij od 1 CHF"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -12342,14 +12315,6 @@
         "Wybrany plan: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -12368,6 +12333,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Odblokuj funkcje premium poprzez ulepszenie"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -16463,10 +16436,10 @@
       "Card verification": [
         "Weryfikacja karty płatniczej"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adres catch-all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adres catch-all"
       ],
       "Change login password": [
@@ -17745,9 +17718,6 @@
       ],
       "Sending member invitation": [
         "Wysyłanie zaproszenia"
-      ],
-      "User rejected invitation": [
-        "Zaproszenie zostało odrzucone"
       ],
       "Waiting user to accept the invitation": [
         "Oczekiwanie na zaakceptowanie zaproszenia"

@@ -112,6 +112,12 @@
       "Cancel subscription": [
         "Avsluta prenumeration"
       ],
+      "characters": [
+        "tecken"
+      ],
+      "characters out of": [
+        "tecken av"
+      ],
       "Chat with us": [
         "Chatta med oss"
       ],
@@ -323,6 +329,9 @@
       ],
       "Increase": [
         "Öka"
+      ],
+      "Keep my subscription": [
+        "Behåll min prenumeration"
       ],
       "Learn more": [
         "Lär dig mer"
@@ -608,6 +617,15 @@
       ],
       "What do I get?": [
         "Vad får jag?"
+      ],
+      "Word count": [
+        "Antal ord"
+      ],
+      "words": [
+        "ord"
+      ],
+      "words out of": [
+        "ord av"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakt",
@@ -3530,9 +3548,6 @@
         "Alla (${ totalFoldersCount } etikett)",
         "Alla (${ totalFoldersCount } etiketter)"
       ],
-      "All changes saved to Drive": [
-        "Alla ändringar sparades till Drive"
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }",
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }"
@@ -3593,6 +3608,12 @@
       ],
       "Change your password": [
         "Ändra ditt lösenord"
+      ],
+      "characters": [
+        "tecken"
+      ],
+      "characters without spaces": [
+        "tecken utan mellanslag"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontrollerar kontakt ${ progress } av ${ max }..."
@@ -3680,6 +3701,9 @@
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
       ],
+      "Display word count": [
+        "Visa antalet ord"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du inget? Kom ihåg att stänga av popup-blockerare."
       ],
@@ -3727,6 +3751,9 @@
       ],
       "Emails are automatically signed": [
         "E-post signeras automatiskt"
+      ],
+      "End-to-end encrypted": [
+        "End-to-end-krypterat"
       ],
       "End-to-end encrypted.": [
         "End-to-end-krypterad."
@@ -4095,9 +4122,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
       ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Sparades i ${ DRIVE_APP_NAME }"
-      ],
       "Saving": [
         "Sparar"
       ],
@@ -4348,6 +4372,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
       ],
+      "words": [
+        "ord"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vill du få en ny verifieringskod eller använda en alternativ verifieringsmetod?"
       ],
@@ -4415,6 +4442,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Du måste ha ett kreditkort eller bankkonto kopplat till ditt PayPal-konto. Om ditt PayPal-konto inte har det, klicka på knappen nedan."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Du kommer förlora åtkomst till ${ planTitle }-funktioner på detta datum."
       ],
       "You will lose all unsaved changes.": [
         "Du kommer att förlora alla osparade ändringar."
@@ -5565,6 +5595,14 @@
         "${ n } meddelande per dag",
         "${ n } meddelanden per dag"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } delat ${ PASS_SHORT_APP_NAME }-valv per användare",
+        "${ n } delat ${ PASS_SHORT_APP_NAME }-valv per användare"
+      ],
+      "${ n } user": [
+        "${ n } användare",
+        "Upp till ${ n } användare"
+      ],
       "${ n } vault": [
         "${ n } valv",
         "${ n } valv"
@@ -5572,6 +5610,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dags filversionshistorik",
+        "${ options }-dagars filversionshistorik"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
@@ -5586,8 +5628,17 @@
       "${ size } attachment size": [
         "${ size } bilagestorlek"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } lagringsutrymme per användare"
+      ],
       "${ size } storage": [
         "${ size } lagringsutrymme"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - För ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - För alla ${ BRAND_NAME }-tjänster"
       ],
       "1 user": [
         "1 användare"
@@ -5603,6 +5654,12 @@
       ],
       "Administration Panel": [
         "Administrationspanel"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alla premiumtjänster för ${ BRAND_NAME }. En enkel prenumeration"
       ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
@@ -5639,6 +5696,9 @@
       ],
       "Contact groups management": [
         "Hantering av kontaktgrupper"
+      ],
+      "Custom and secure business email": [
+        "Anpassad och säker e-post för företag"
       ],
       "Custom domains for email aliases": [
         "Anpassade domäner för e-postalias"
@@ -5731,6 +5791,9 @@
       "Multiple admin roles": [
         "Flera administratörsroller"
       ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
       "Organize items with multiple vaults": [
         "Organisera objekt med flera valv"
       ],
@@ -5740,8 +5803,14 @@
       "Password health": [
         "Lösenordshälsa"
       ],
+      "Password manager": [
+        "Lösenordshanterare"
+      ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonsupport (20+ användare)"
       ],
       "Priority email support": [
         "Prioriterad e-postsupport"
@@ -5758,6 +5827,9 @@
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelbundna kontroller av din kontosäkerhet. Vi varnar dig om du har svaga eller återanvända lösenord som behöver uppdateras."
@@ -5789,6 +5861,9 @@
       "Send & receive invitations": [
         "Skicka och ta emot inbjudningar"
       ],
+      "Share files with no size limit": [
+        "Dela filer utan storleksbegränsning"
+      ],
       "Sign in as user": [
         "Logga in som användare"
       ],
@@ -5806,6 +5881,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
       ],
       "Tor over VPN": [
         "Tor över VPN"
@@ -5842,6 +5920,9 @@
       ],
       "Unlimited messages per day": [
         "Obegränsat antal meddelanden per dag"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Obegränsat delade ${ PASS_SHORT_APP_NAME }-valv per användare"
       ],
       "Unlimited shared vaults with access permissions": [
         "Obegränsat antal delade valv med åtkomstbehörigheter"
@@ -5958,6 +6039,9 @@
       ],
       "Popular": [
         "Populär"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Skydda känslig företagsinformation och samarbeta säkert."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Skydda din familjs integritet med alla ${ BRAND_NAME }-tjänster kombinerade."
@@ -7868,6 +7952,9 @@
       "Enable 2FA": [
         "Aktivera 2FA"
       ],
+      "Enter 2FA code": [
+        "Ange 2FA-kod"
+      ],
       "Enter your password": [
         "Ange ditt lösenord"
       ],
@@ -8284,6 +8371,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-post"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Ett säkrare/enklare sätt att förvara och skicka Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
