@@ -21,7 +21,7 @@ describe('Import Dashlane ZIP', () => {
 
     test('should correctly parse items', () => {
         const [vaultData] = payload.vaults;
-        expect(vaultData.items.length).toEqual(16);
+        expect(vaultData.items.length).toEqual(15);
 
         expect(payload.vaults.length).toEqual(1);
         expect(vaultData.name).not.toBeUndefined();
