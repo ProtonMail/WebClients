@@ -23,7 +23,7 @@ const ContactUpgradeModal = (modalProps: ModalStateProps) => {
             modalProps={modalProps}
             features={['more-storage', 'more-email-addresses', 'unlimited-folders-and-labels', 'custom-email-domains']}
             description={c('Description')
-                .t`Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.`}
+                .t`Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.`}
             title={c('Title').t`Unlock contacts groups`}
             {...upsellConfig}
         />

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { BRAND_NAME, CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { getNCalendarsText } from '../../../containers/payments/features/calendar';
 import type { UpsellFeature } from './interface';
@@ -14,7 +14,6 @@ export type UpsellFeatureName =
     | 'more-storage'
     | 'more-email-addresses'
     | 'custom-email-domains'
-    | 'email-aliases'
     | 'snooze-messages'
     | 'more-calendars'
     | 'calendar-sharing'
@@ -48,14 +47,14 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
     },
     'more-storage': {
         icon: 'storage',
-        getText: () => c('new_plans: feature').t`Up to 3 TB of storage`,
+        getText: () => c('new_plans: feature').t`15 GB storage`,
         getTooltip: () =>
             c('new_plans: feature info')
                 .t`Storage space is shared across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME} and ${DRIVE_APP_NAME}`,
     },
     'more-email-addresses': {
         icon: 'envelopes',
-        getText: () => c('new_plans: feature').t`Up to 15 email addresses`,
+        getText: () => c('new_plans: feature').t`10 email addresses/aliases`,
         getTooltip: () =>
             c('new_plans: feature info')
                 .t`Create multiple email addresses for your online identities e.g. JohnShopper@${domain} for shopping accounts, JohnNews@${domain2} for news subscription`,
@@ -63,13 +62,7 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
     'custom-email-domains': {
         icon: 'globe',
         getText: () => c('new_plans: feature').t`Custom email domains`,
-        getTooltip: () =>
-            c('new_plans: feature info').t`Use your own custom email domain address, e.g., you@yourname.com`,
-    },
-    'email-aliases': {
-        icon: 'eye-slash',
-        getText: () => c('new_plans: feature').t`Hide-my-email aliases`,
-        getTooltip: () => c('new_plans: feature info').t`Get unlimited aliases with SimpleLogin by ${BRAND_NAME}`,
+        getTooltip: () => c('new_plans: feature info').t`1 custom email domain`,
     },
     'snooze-messages': {
         icon: 'clock',
