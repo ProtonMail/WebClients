@@ -166,8 +166,14 @@ const SubUserEditModal = ({
         canTogglePrivate = member.Private === MEMBER_PRIVATE.READABLE && !unprivatization.exists;
     }
 
-    const canPromoteAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER && !member.SSO;
-    const canRevokeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+    const canPromoteAdmin =
+        !isSelf &&
+        member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER &&
+        !member.SSO &&
+        unprivatization.mode !== MemberUnprivatizationMode.MagicLinkInvite;
+
+    const canRevokeAdmin = !isSelf && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+
     const errorHandler = useErrorHandler();
 
     const updatePartialModel = (partial: Partial<typeof model>) => {
