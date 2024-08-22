@@ -7,7 +7,13 @@ import { logger } from '@proton/pass/utils/logger';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
-import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
+import {
+    getImportedVaultName,
+    importCreditCardItem,
+    importIdentityItem,
+    importLoginItem,
+    importNoteItem,
+} from '../helpers/transformers';
 import type { ImportPayload } from '../types';
 
 type CreditCardCsvItem = ItemCreditCard & { note: string };
@@ -29,6 +35,12 @@ const processCreditCardItem = (item: ProtonPassCSVItem): ItemImportIntent<'credi
         modifyTime: item.modifyTime ? Number(item.modifyTime) : undefined,
     });
 };
+
+const processIdentityItem = (item: ProtonPassCSVItem): ItemImportIntent<'identity'> =>
+    importIdentityItem({
+        name: item.name,
+        ...JSON.parse(item.note as string),
+    });
 
 export const readProtonPassCSV = async ({
     data,
@@ -79,6 +91,8 @@ export const readProtonPassCSV = async ({
                                 });
                             case 'creditCard':
                                 return processCreditCardItem(item);
+                            case 'identity':
+                                return processIdentityItem(item);
                             default:
                                 return importNoteItem({
                                     name: item.name,
