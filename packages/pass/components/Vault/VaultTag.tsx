@@ -22,14 +22,19 @@ export const VaultTag: FC<Props> = ({ title, shared = false, icon, color, count,
     return (
         <div
             className={clsx(
-                'pass-vault-tag flex items-center text-sm gap-x-2 flex-nowrap lh100',
+                'pass-vault-tag flex items-center text-sm gap-x-1 flex-nowrap lh100',
                 shared && 'pass-vault-tag--shared'
             )}
             style={shared ? { '--vault-icon-color': VAULT_COLOR_MAP[color ?? VaultColor.COLOR1] } : undefined}
         >
-            {<Icon className="shrink-0" name={icon} size={iconSize} />}
+            {<Icon className="shrink-0 mr-1" name={icon} size={iconSize} />}
             <span className="text-ellipsis">{title}</span>
-            {count !== undefined && count > 1 && <span className="shrink-0">• {count}</span>}
+            {shared && count && (
+                <>
+                    <span className="shrink-0">• {count}</span>
+                    <Icon className="shrink-0" name="users" size={iconSize} />
+                </>
+            )}
         </div>
     );
 };
