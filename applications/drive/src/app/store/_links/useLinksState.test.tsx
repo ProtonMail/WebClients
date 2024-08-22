@@ -602,7 +602,8 @@ describe('useLinksState', () => {
                     EVENT_TYPES.UPDATE,
                     { linkId: 'linkId7', name: 'new name', parentLinkId: 'linkId0', rootShareId: 'shareId' },
                 ],
-            ])
+            ]),
+            jest.fn()
         );
 
         expect(Object.keys(result.shareId.links)).toMatchObject([
@@ -627,7 +628,8 @@ describe('useLinksState', () => {
                     EVENT_TYPES.CREATE,
                     { linkId: 'newLink', name: 'newLink', parentLinkId: 'linkId0', rootShareId: 'shareId2' },
                 ],
-            ])
+            ]),
+            jest.fn()
         );
 
         expect(Object.keys(result)).toMatchObject(['shareId']);

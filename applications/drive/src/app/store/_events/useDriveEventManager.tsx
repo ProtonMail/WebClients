@@ -1,10 +1,8 @@
 import type { ReactNode } from 'react';
-import { createContext, useContext, useRef } from 'react';
+import { createContext, useContext, useMemo, useRef } from 'react';
 
 import { generateUID, useApi, useEventManager } from '@proton/components';
-import metrics from '@proton/metrics';
 import { queryLatestVolumeEvent, queryVolumeEvents } from '@proton/shared/lib/api/drive/volume';
-import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -13,7 +11,8 @@ import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/even
 
 import { logError } from '../../utils/errorHandling';
 import { driveEventsResultToDriveEvents } from '../_api';
-import type { VolumeType } from '../_shares';
+import type { VolumeType } from '../_volumes';
+import { EventsMetrics, countEventsPerType } from './driveEventsMetrics';
 import type { EventHandler } from './interface';
 
 const DRIVE_EVENT_HANDLER_ID_PREFIX = 'drive-event-handler';
@@ -41,59 +40,10 @@ const DRIVE_EVENT_MANAGER_FUNCTIONS_STUB = {
     },
 };
 
-function countEventsPerType(type: VolumeType, driveEvents: DriveEventsResult) {
-    if (!driveEvents.Events) {
-        return;
-    }
-
-    const deleteCount = driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.DELETE).length;
-    if (deleteCount) {
-        metrics.drive_sync_event_total.increment(
-            {
-                volumeType: type,
-                eventType: 'delete',
-            },
-            deleteCount
-        );
-    }
-
-    const createCount = driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.CREATE).length;
-    if (createCount) {
-        metrics.drive_sync_event_total.increment(
-            {
-                volumeType: type,
-                eventType: 'create',
-            },
-            createCount
-        );
-    }
-
-    const updateCount = driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.UPDATE).length;
-    if (updateCount) {
-        metrics.drive_sync_event_total.increment(
-            {
-                volumeType: type,
-                eventType: 'update',
-            },
-            updateCount
-        );
-    }
-
-    const updateMetadata = driveEvents.Events.filter((event) => event.EventType === EVENT_TYPES.UPDATE_METADATA).length;
-    if (updateMetadata) {
-        metrics.drive_sync_event_total.increment(
-            {
-                volumeType: type,
-                eventType: 'update_metadata',
-            },
-            updateMetadata
-        );
-    }
-}
-
 export function useDriveEventManagerProvider(api: Api, generalEventManager: EventManager) {
     const eventHandlers = useRef(new Map<string, EventHandler>());
     const eventManagers = useRef(new Map<string, EventManager>());
+    const eventsMetrics = useMemo(() => new EventsMetrics(), [api, generalEventManager]);
 
     const genericHandler = (volumeId: string, type: VolumeType, driveEvents: DriveEventsResult) => {
         countEventsPerType(type, driveEvents);
@@ -102,16 +52,22 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
             return;
         }
 
+        eventsMetrics.batchStart(volumeId, driveEvents);
+
         const handlerPromises: unknown[] = [];
         eventHandlers.current.forEach((handler) => {
-            handlerPromises.push(handler(volumeId, driveEventsResultToDriveEvents(driveEvents)));
+            handlerPromises.push(
+                handler(volumeId, driveEventsResultToDriveEvents(driveEvents), eventsMetrics.processed)
+            );
         });
 
         /*
             forcing .poll function's returned Promise to be resolved
             *after* event processin is finished
         */
-        return Promise.all(handlerPromises);
+        return Promise.all(handlerPromises).then(() => {
+            eventsMetrics.batchCompleted(volumeId, driveEvents.EventID, type);
+        });
     };
 
     const createVolumeEventManager = async (volumeId: string) => {
