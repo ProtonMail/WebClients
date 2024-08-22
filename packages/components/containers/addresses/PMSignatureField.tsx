@@ -82,7 +82,6 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
                         'more-storage',
                         'more-email-addresses',
                         'custom-email-domains',
-                        'email-aliases',
                     ]}
                 />
             )}
