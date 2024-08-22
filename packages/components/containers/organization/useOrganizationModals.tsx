@@ -255,6 +255,7 @@ const useOrganizationModals = (onceRef: MutableRefObject<boolean>) => {
             )}
             {renderReactivatePasswordlessModal && (
                 <ReactivatePasswordlessOrganizationKey
+                    user={user}
                     onResetKeys={handleResetOrganizationKeys}
                     disableResetOrganizationKeys={disableResetOrganizationKeys}
                     otherAdminsWithKeyAccess={otherAdminsWithKeyAccess}
