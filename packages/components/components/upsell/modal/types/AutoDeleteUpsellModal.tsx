@@ -28,7 +28,7 @@ const AutoDeleteUpsellModal = ({ modalProps, upsellComponent }: Props) => {
             features={[
                 'auto-delete-trash-and-spam',
                 'more-storage',
-                'email-aliases',
+                'more-email-addresses',
                 'unlimited-folders-and-labels',
                 'custom-email-domains',
             ]}
