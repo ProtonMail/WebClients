@@ -2,11 +2,33 @@ import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { acceptMemberUnprivatizationInfo, deleteMemberUnprivatizationInfo } from '@proton/shared/lib/api/members';
-import type { Api, Member } from '@proton/shared/lib/interfaces';
-import { type ParsedUnprivatizationData, acceptUnprivatization } from '@proton/shared/lib/keys';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { removeAddressKeyRoute, removeUserKeyRoute } from '@proton/shared/lib/api/keys';
+import {
+    acceptMemberUnprivatizationInfo,
+    deleteMemberUnprivatizationInfo,
+    queryMemberUnprivatizationInfo,
+} from '@proton/shared/lib/api/members';
+import type {
+    Address,
+    Api,
+    InactiveKey,
+    Member,
+    Organization,
+    VerifyOutboundPublicKeys,
+} from '@proton/shared/lib/interfaces';
+import { type MemberUnprivatizationOutput, MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
+import {
+    type ParsedUnprivatizationData,
+    acceptUnprivatization,
+    parseUnprivatizationData,
+    validateUnprivatizationData,
+} from '@proton/shared/lib/keys';
 
 import { addressKeysThunk } from '../addressKeys';
+import { type AddressesState, addressesThunk } from '../addresses';
+import { type InactiveKeysState, selectInactiveKeys } from '../inactiveKeys';
+import { type OrganizationState, organizationThunk } from '../organization';
 import { userKeysThunk } from '../userKeys';
 import { type MemberState, memberThunk, updateMember } from './index';
 
@@ -58,6 +80,59 @@ export const getPendingUnprivatizationRequest = ({
     };
 };
 
+export const deleteAllInactiveKeys = ({
+    api,
+}: {
+    api: Api;
+}): ThunkAction<Promise<void>, AddressesState & InactiveKeysState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch, getState) => {
+        const inactiveKeys = selectInactiveKeys(getState());
+
+        const inactiveUserKeys = inactiveKeys.user;
+        const inactiveAddressesKeys = Object.entries(inactiveKeys.addresses).flatMap(([addressID, inactiveKeys]) => {
+            if (!inactiveKeys.length) {
+                return [];
+            }
+            return [{ addressID, inactiveKeys }];
+        });
+
+        if (!inactiveUserKeys.length && !inactiveAddressesKeys.length) {
+            return;
+        }
+
+        const addresses = await dispatch(addressesThunk());
+        const addressesMap = addresses.reduce<{ [id: string]: Address }>((acc, address) => {
+            acc[address.ID] = address;
+            return acc;
+        }, {});
+
+        const deleteInactiveAddressKeys = async ({
+            addressID,
+            inactiveKeys: inactiveAddressKeys,
+        }: {
+            addressID: string;
+            inactiveKeys: InactiveKey[];
+        }) => {
+            const address = addressesMap[addressID];
+            const signedKeyList = address?.SignedKeyList || null;
+
+            await Promise.all(
+                inactiveAddressKeys.map(({ Key }: InactiveKey) => {
+                    return api(removeAddressKeyRoute({ ID: Key.ID, SignedKeyList: signedKeyList }));
+                })
+            );
+        };
+
+        await Promise.all(inactiveAddressesKeys.map(deleteInactiveAddressKeys));
+
+        await Promise.all(
+            inactiveUserKeys.map(({ Key }) => {
+                return api(removeUserKeyRoute({ ID: Key.ID }));
+            })
+        );
+    };
+};
+
 export const memberRejectUnprivatization = ({
     api,
 }: {
@@ -95,6 +170,7 @@ export const memberAcceptUnprivatization = ({
         if (!payload) {
             return;
         }
+        await dispatch(deleteAllInactiveKeys({ api }));
         await api(acceptMemberUnprivatizationInfo(payload));
         dispatch(updateMember({ Unprivatization: null }));
     };
