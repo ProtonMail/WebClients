@@ -35,6 +35,7 @@ interface Arguments {
     canDisplayB2BLogsPass: boolean;
     canDisplayB2BLogsVPN: boolean;
     memberships: GroupMembershipReturn[] | undefined;
+    isUserGroupsMembershipFeatureEnabled: boolean;
 }
 
 export const getRoutes = ({
@@ -54,6 +55,7 @@ export const getRoutes = ({
     canDisplayB2BLogsPass,
     canDisplayB2BLogsVPN,
     memberships,
+    isUserGroupsMembershipFeatureEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -69,7 +71,7 @@ export const getRoutes = ({
             isBreachesAccountDashboardEnabled,
             showThemeSelection,
             assistantKillSwitch,
-            isUserGroupsFeatureEnabled,
+            isUserGroupsMembershipFeatureEnabled,
             memberships,
         }),
         mail: getMailAppRoutes({
