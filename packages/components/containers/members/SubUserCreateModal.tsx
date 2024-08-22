@@ -9,6 +9,7 @@ import {
     UnavailableAddressesError,
     createMember,
     getPrivateAdminError,
+    getPrivateText,
 } from '@proton/account';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
@@ -436,76 +437,101 @@ const SubUserCreateModal = ({
                     />
                 )}
 
-                {allowVpnAccessConfiguration && hasVPN && (
-                    <div className="flex items-center gap-2 mb-5">
-                        <Toggle
-                            id="vpn-toggle"
-                            checked={model.vpn}
-                            onChange={({ target }) => handleChange('vpn')(target.checked)}
+                <div className="flex flex-column gap-2">
+                    {allowVpnAccessConfiguration && hasVPN && (
+                        <MemberToggleContainer
+                            toggle={
+                                <Toggle
+                                    id="vpn-toggle"
+                                    checked={model.vpn}
+                                    onChange={({ target }) => handleChange('vpn')(target.checked)}
+                                />
+                            }
+                            label={
+                                <label className="text-semibold" htmlFor="vpn-toggle">
+                                    {c('user_modal').t`VPN connections`}
+                                </label>
+                            }
                         />
-                        <label className="text-semibold" htmlFor="vpn-toggle">
-                            {c('user_modal').t`VPN connections`}
-                        </label>
-                    </div>
-                )}
+                    )}
 
-                {allowPrivateMemberConfiguration && (
-                    <div className="flex items-center gap-2 mb-6">
-                        <Toggle
-                            id="private-toggle"
-                            checked={model.private}
-                            onChange={({ target }) => handleChange('private')(target.checked)}
+                    {allowPrivateMemberConfiguration && (
+                        <MemberToggleContainer
+                            toggle={
+                                <Toggle
+                                    id="private-toggle"
+                                    checked={model.private}
+                                    onChange={({ target }) => handleChange('private')(target.checked)}
+                                />
+                            }
+                            label={
+                                <label className="text-semibold" htmlFor="private-toggle">
+                                    {getPrivateLabel()}
+                                </label>
+                            }
+                            assistiveText={getPrivateText()}
                         />
-                        <label className="text-semibold" htmlFor="private-toggle">
-                            {c('user_modal').t`Allow admin access`}
-                        </label>
-                    </div>
-                )}
+                    )}
 
-                {model.mode === CreateMemberMode.Password && (
-                    <>
-                        <div className="flex items-center gap-2 mb-6">
-                            <Toggle
-                                id="admin-toggle"
-                                checked={model.admin}
-                                onChange={({ target }) => handleChange('admin')(target.checked)}
+                    {model.mode === CreateMemberMode.Password && (
+                        <>
+                            <MemberToggleContainer
+                                toggle={
+                                    <Toggle
+                                        id="admin-toggle"
+                                        checked={model.admin}
+                                        onChange={({ target }) => handleChange('admin')(target.checked)}
+                                    />
+                                }
+                                label={
+                                    <label className="text-semibold" htmlFor="admin-toggle">
+                                        {c('user_modal').t`Admin`}
+                                    </label>
+                                }
+                                assistiveText={
+                                    <>
+                                        {adminTooltipText()}{' '}
+                                        {passwordlessMode && model.private && model.admin && (
+                                            <Tooltip title={getPrivateAdminError()} openDelay={0}>
+                                                <Icon className="color-danger ml-2" name="info-circle-filled" />
+                                            </Tooltip>
+                                        )}
+                                    </>
+                                }
                             />
-                            <label className="text-semibold" htmlFor="admin-toggle">
-                                {c('user_modal').t`Admin`}
-                            </label>
-                            <Tooltip title={adminTooltipText()}>
-                                <Icon name="info-circle" className="color-primary" />
-                            </Tooltip>
-                            {passwordlessMode && model.private && model.admin && (
-                                <Tooltip title={getPrivateAdminError()} openDelay={0}>
-                                    <Icon className="color-danger ml-2" name="info-circle-filled" />
-                                </Tooltip>
-                            )}
-                        </div>
-                    </>
-                )}
+                        </>
+                    )}
 
-                {allowAIAssistantConfiguration && (
-                    <div className="flex items-center gap-2 mb-6">
-                        <Toggle
-                            id="ai-assistant-toggle"
-                            checked={model.numAI}
-                            disabled={!aiSeatsRemaining}
-                            onChange={({ target }) => handleChange('numAI')(target.checked)}
+                    {allowAIAssistantConfiguration && (
+                        <MemberToggleContainer
+                            toggle={
+                                <Toggle
+                                    id="ai-assistant-toggle"
+                                    checked={model.numAI}
+                                    disabled={!aiSeatsRemaining}
+                                    onChange={({ target }) => handleChange('numAI')(target.checked)}
+                                />
+                            }
+                            label={
+                                <>
+                                    <label className="text-semibold" htmlFor="ai-assistant-toggle">
+                                        {c('user_modal').t`Writing assistant`}
+                                    </label>
+                                </>
+                            }
+                            assistiveText={
+                                !aiSeatsRemaining && !model.numAI ? <AssistantUpdateSubscriptionButton /> : undefined
+                            }
                         />
-                        <label className="text-semibold" htmlFor="ai-assistant-toggle">
-                            {c('user_modal').t`Writing assistant`}
-                        </label>
-                        {!aiSeatsRemaining && !model.numAI && <AssistantUpdateSubscriptionButton />}
-                    </div>
-                )}
+                    )}
 
-                {model.mode !== CreateMemberMode.Password && (
-                    <SubUserCreateHint className="mb-4">
-                        {c('Info')
-                            .t`You will be able to promote the user to administrator once they've accepted the invitation.`}
-                    </SubUserCreateHint>
-                )}
+                    {model.mode !== CreateMemberMode.Password && (
+                        <SubUserCreateHint>
+                            {c('Info')
+                                .t`You will be able to promote the user to administrator once they've accepted the invitation.`}
+                        </SubUserCreateHint>
+                    )}
+                </div>
             </ModalContent>
             <ModalFooter>
                 {showMultipleUserUploadButton ? (
