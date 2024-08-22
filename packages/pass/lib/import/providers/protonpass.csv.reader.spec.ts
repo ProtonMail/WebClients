@@ -66,6 +66,45 @@ describe('Import Proton Pass CSV', () => {
         expect(loginItem.createTime).toEqual(1707735320);
         expect(loginItem.modifyTime).toEqual(1707735349);
 
+        /* Identity */
+        const identityItem = firstVaultItems[2] as ItemImportIntent<'identity'>;
+        expect(identityItem.type).toStrictEqual('identity');
+        expect(identityItem.metadata.name).toStrictEqual(':identity-title:');
+        expect(identityItem.content.fullName).toStrictEqual(':full-name:');
+        expect(identityItem.content.email).toStrictEqual(':email:');
+        expect(identityItem.content.phoneNumber).toStrictEqual(':phone-number:');
+        expect(identityItem.content.firstName).toStrictEqual(':first-name:');
+        expect(identityItem.content.middleName).toStrictEqual(':middle-name:');
+        expect(identityItem.content.lastName).toStrictEqual(':last-name:');
+        expect(identityItem.content.birthdate).toStrictEqual(':birthdate:');
+        expect(identityItem.content.gender).toStrictEqual(':gender:');
+        expect(identityItem.content.extraPersonalDetails.length).toStrictEqual(2);
+        expect(identityItem.content.organization).toStrictEqual(':organization:');
+        expect(identityItem.content.streetAddress).toStrictEqual(':street:');
+        expect(identityItem.content.zipOrPostalCode).toStrictEqual(':zip:');
+        expect(identityItem.content.city).toStrictEqual(':city:');
+        expect(identityItem.content.stateOrProvince).toStrictEqual(':state:');
+        expect(identityItem.content.countryOrRegion).toStrictEqual(':country:');
+        expect(identityItem.content.floor).toStrictEqual(':floor:');
+        expect(identityItem.content.county).toStrictEqual(':county:');
+        expect(identityItem.content.extraAddressDetails.length).toStrictEqual(2);
+        expect(identityItem.content.socialSecurityNumber).toStrictEqual(':social-security-number:');
+        expect(identityItem.content.passportNumber).toStrictEqual(':passport-number:');
+        expect(identityItem.content.licenseNumber).toStrictEqual(':license-number:');
+        expect(identityItem.content.xHandle).toStrictEqual(':x-handle:');
+        expect(identityItem.content.secondPhoneNumber).toStrictEqual(':phone-number:');
+        expect(identityItem.content.company).toStrictEqual(':company:');
+        expect(identityItem.content.jobTitle).toStrictEqual(':job-title:');
+        expect(identityItem.content.extraSections).toStrictEqual([
+            {
+                sectionName: ':custom-section:',
+                sectionFields: [
+                    { data: { content: ':text-value:' }, fieldName: ':field-section:', type: 'text' },
+                    { data: { content: ':hidden-value:' }, fieldName: ':hidden-section:', type: 'hidden' },
+                ],
+            },
+        ]);
+
         /* Credit Card */
         const creditCardItem = secondVaultItems[0] as ItemImportIntent<'creditCard'>;
         expect(creditCardItem.type).toEqual('creditCard');
