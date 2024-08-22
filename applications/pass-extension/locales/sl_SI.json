@@ -26,6 +26,9 @@
       "Add new item": [
         "Dodaj nov predmet"
       ],
+      "Add section": [
+        "Dodaj razdelek"
+      ],
       "Add username field": [
         "Dodajte polje za uporabniško ime"
       ],
@@ -127,6 +130,9 @@
       ],
       "Create card": [
         "Ustvari kartico"
+      ],
+      "Create identity": [
+        "Ustvari identiteto"
       ],
       "Create login": [
         "Ustvarite prijavo"
@@ -409,6 +415,9 @@
       ],
       "Saving passkey...": [
         "Shranjevanje identifikacijskega ključa ..."
+      ],
+      "Section name": [
+        "Ime sekcije"
       ],
       "See all": [
         "Poglejte vse"
@@ -1319,6 +1328,9 @@
       "Never": [
         "Nikoli"
       ],
+      "No identity item found": [
+        "Identiteta ni bila najdena"
+      ],
       "No login found": [
         "Ni prijave"
       ],
@@ -1409,6 +1421,9 @@
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Račun je zaščiten z ${ PROTON_SENTINEL_LINK }, našim naprednim programom"
       ],
+      "Quickly autofill your identities.": [
+        "Hitro samodejno izpolnite svoje identitete."
+      ],
       "Registering extra password...": [
         "Registracija dodatnega gesla ..."
       ],
@@ -1426,6 +1441,9 @@
       ],
       "Save passkey": [
         "Shrani identifikacijski ključ"
+      ],
+      "Secure links": [
+        "Varne povezave"
       ],
       "Select an existing login item to update.": [
         "Izberite podatke za prijavo, katere želite posodobiti."
@@ -1729,6 +1747,12 @@
       "Account": [
         "Račun"
       ],
+      "Add section": [
+        "Dodaj razdelek"
+      ],
+      "Additional details": [
+        "Trenutne podrobnosti"
+      ],
       "Address details": [
         "Podrobnosti naslova"
       ],
@@ -1831,6 +1855,9 @@
       "Create an encrypted note": [
         "Ustvarite šifrirano opombo"
       ],
+      "Create an Identity": [
+        "Ustvari identiteto"
+      ],
       "Create new vault": [
         "Ustvari nov trezor"
       ],
@@ -1839,6 +1866,12 @@
       ],
       "Created at": [
         "Ustvarjeno ob"
+      ],
+      "Custom hidden field": [
+        "Skrito polje po meri"
+      ],
+      "Custom text field": [
+        "Besedilno polje po meri"
       ],
       "Device": [
         "Naprava"
@@ -1879,6 +1912,9 @@
       "Extra password": [
         "Dodatno geslo"
       ],
+      "Facebook account": [
+        "Račun Facebook"
+      ],
       "Field name": [
         "Ime polja"
       ],
@@ -1887,6 +1923,9 @@
       ],
       "First name": [
         "Ime"
+      ],
+      "Floor, apartment, building": [
+        "Nadstropje, stanovanje, stavba"
       ],
       "Forwards to": [
         "Posreduje na"
@@ -1912,11 +1951,17 @@
       "Hide password": [
         "Skrij geslo"
       ],
+      "https://example.com": [
+        "https://example.com"
+      ],
       "Identities": [
         "Identitete"
       ],
       "Identity": [
         "Identiteta"
+      ],
+      "Identity autofill": [
+        "Samodejno izpolnjevanje identitete"
       ],
       "Import": [
         "Uvoz"
@@ -1977,6 +2022,9 @@
       ],
       "License number": [
         "Registrska številka"
+      ],
+      "LinkedIn account": [
+        "Račun LinkedIn"
       ],
       "Login": [
         "Prijava"
@@ -2251,6 +2299,9 @@
       "X handle": [
         "X vzdevek"
       ],
+      "Yahoo account": [
+        "Račun Yahoo"
+      ],
       "You are about to create": [
         "Ustvarili boste"
       ],
@@ -2404,6 +2455,9 @@
       "Auto-lock update": [
         "Posodobitev samodejnega zaklepanja"
       ],
+      "Autofill": [
+        "Samodejno izpolnjevanje"
+      ],
       "Confirm extra password": [
         "Potrdite dodatno geslo"
       ],
@@ -2460,6 +2514,9 @@
       ],
       "History": [
         "Zgodovina"
+      ],
+      "Identity": [
+        "Identiteta"
       ],
       "Import - ${ date }": [
         "Uvoz - ${ date }"
@@ -2612,6 +2669,9 @@
       ],
       "OTP secret or URI required": [
         "Zahtevana je skrivnost OTP ali URI"
+      ],
+      "Section name cannot be empty": [
+        "Ime razdelka ne sme biti prazno"
       ],
       "Url already exists": [
         "URL že obstaja"

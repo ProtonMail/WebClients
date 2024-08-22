@@ -2907,7 +2907,7 @@
         "Uitgenodigd door: ${ inviteEmail }"
       ],
       "Lifetime accounts cannot join a group plan.": [
-        "Levenslange accounts kunnen niet deelnemen aan een groepsplan."
+        "Levenslange accounts kunnen niet deelnemen aan een groepsabonnement."
       ],
       "Manage addresses.": [
         "Beheer adressen."
@@ -2946,7 +2946,7 @@
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
       ],
       "Your cannot accept this invitation with your current plan.": [
-        "Je kan deze uitnodiging niet accepteren met je huidige abonnement."
+        "U kunt deze uitnodiging niet accepteren met uw huidige abonnement."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3513,9 +3513,6 @@
         "Alle (${ totalFoldersCount } label)",
         "Alle (${ totalFoldersCount } labels)"
       ],
-      "All changes saved to Drive": [
-        "Alle wijzigingen opgeslagen op Drive"
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
         "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
@@ -3617,6 +3614,10 @@
       "Create a new contact group": [
         "Maak een nieuwe contactengroep"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Maak een beveiligde cloud voor ${ n } lid",
+        "Maak een beveiligde cloud voor ${ n } leden"
+      ],
       "Create in": [
         "Maak in"
       ],
@@ -3706,6 +3707,9 @@
       ],
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
+      ],
+      "End-to-end encrypted": [
+        "End-to-end versleuteld"
       ],
       "End-to-end encrypted.": [
         "End-to-end versleuteld."
@@ -4073,9 +4077,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
-      ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Opgeslagen op ${ DRIVE_APP_NAME }"
       ],
       "Saving": [
         "Bezig met opslaan"
@@ -5404,7 +5405,7 @@
         "Ga aan de slag voor $1"
       ],
       "Get started for 1 €": [
-        "Ga aan de slag voor 1 €"
+        "Ga aan de slag voor € 1"
       ],
       "Get started for CHF 1": [
         "Ga aan de slag voor CHF 1"
@@ -6486,7 +6487,7 @@
         "MM/JJ"
       ],
       "Payment Processing": [
-        "Betaling Wordt Verwerkt"
+        "Betaling wordt verwerkt"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."

@@ -392,6 +392,9 @@
       "Keep current time zone": [
         "Διατήρηση τρέχουσας ζώνης ώρας"
       ],
+      "Keep my subscription": [
+        "Διατηρήστε την συνδρομή μου"
+      ],
       "Later": [
         "Αργότερα"
       ],
@@ -2622,11 +2625,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Χρεώνεται κάθε 2 χρόνια με ${ amountBilled }. Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Χρεώνεται ετησίως με ${ amountBilled }. Εξοικονομήστε ${ amountSave } πάνω από 2 μεμονωμένα ${ BRAND_NAME } Απεριόριστες ετήσιες συνδρομές."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB αποθηκευτικού χώρου"
+      ],
       "2 users": [
         "2 χρήστες"
       ],
@@ -5109,6 +5118,9 @@
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "Έχετε προηγουμένως απορρίψει αυτήν την πρόσκληση. Παρακαλούμε ρωτήστε τον κάτοχο για μια νέα πρόσκληση"
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Θα χάσετε την πρόσβαση στις και λειτουργίες του ${ planTitle } αυτήν την ημέρα."
+      ],
       "You will lose all unsaved changes.": [
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
       ],
@@ -6340,6 +6352,14 @@
         "${ n } μήνυμα ανά ημέρα",
         "${ n } μηνύματα ανά ημέρα"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } κοινόχρηστη ${ PASS_SHORT_APP_NAME } κρύπτη ανά χρήστη",
+        "${ n } κοινόχρηστες ${ PASS_SHORT_APP_NAME } κρύπτες ανά χρήστη"
+      ],
+      "${ n } user": [
+        "${ n } χρήστης",
+        "Μέχρι και ${ n } χρήστες"
+      ],
       "${ n } vault": [
         "${ n } κρύπτη",
         "${ n } κρύπτες"
@@ -6347,6 +6367,10 @@
       "${ n } VPN connection": [
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-ημέρα ιστορικό εκδόσεων αρχείου",
+        "${ options }-ημέρες ιστορικό εκδόσεων αρχείου"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμο",
@@ -6361,8 +6385,17 @@
       "${ size } attachment size": [
         "${ size } μέγεθος συνημμένων"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } ασφαλούς αποθηκευτικού χώρου ανά χρήστη"
+      ],
       "${ size } storage": [
         "${ size } αποθηκευτικός χώρος"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Για ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Για όλες τις ${ BRAND_NAME } υπηρεσίες"
       ],
       "1 user": [
         "1 χρήστης"
@@ -6381,6 +6414,12 @@
       ],
       "Administration Panel": [
         "Πίνακας Διαχείρισης"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Όλες οι premium υπηρεσίες ${ BRAND_NAME }. Μια εύκολη συνδρομή"
       ],
       "Auto-delete Spam and Trash": [
         "Αυτόματη διαγραφή Ανεπιθύμητων μηνυμάτων και Κάδου απορριμμάτων"
@@ -6417,6 +6456,9 @@
       ],
       "Contact groups management": [
         "Διαχείριση ομάδων επαφών"
+      ],
+      "Custom and secure business email": [
+        "Προσαρμοσμένο και ασφαλές επαγγελματικό ηλεκτρονικό ταχυδρομείο"
       ],
       "Custom domains for email aliases": [
         "Προσαρμοσμένοι τομείς για ψευδώνυμα email"
@@ -6512,6 +6554,9 @@
       "Multiple admin roles": [
         "Πολλαπλοί ρόλοι διαχειριστή"
       ],
+      "Online document editor": [
+        "Ηλεκτρονικός επεξεργαστής εγγράφων"
+      ],
       "Organize items with multiple vaults": [
         "Οργάνωση στοιχείων με πολλές κρύπτες"
       ],
@@ -6521,8 +6566,14 @@
       "Password health": [
         "Υγεία κωδικού πρόσβασης"
       ],
+      "Password manager": [
+        "Διαχειριστής κωδικών"
+      ],
       "Password-protected Emails": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου που προστατεύονται με κωδικό πρόσβασης"
+      ],
+      "Phone support (20+ users)": [
+        "Τηλεφωνική υποστήριξη (20+ χρήστες)"
       ],
       "Priority email support": [
         "Υποστήριξη ηλεκτρονικού ταχυδρομείου προτεραιότητας"
@@ -6539,6 +6590,9 @@
       "Protect ${ n } device at a time": [
         "Προστατέψτε ${ n } συσκευή ανά φορά",
         "Προστατέψτε ${ n } συσκευές ανά φορά"
+      ],
+      "Recover previous file versions": [
+        "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Τακτικοί έλεγχοι της ασφάλειας του λογαριασμού σας. Σας ειδοποιούμε εάν έχετε αδύναμους ή επαναχρησιμοποιημένους κωδικούς πρόσβασης που πρέπει να ενημερωθούν."
@@ -6570,6 +6624,9 @@
       "Send & receive invitations": [
         "Αποστολή & λήψη προσκλήσεων"
       ],
+      "Share files with no size limit": [
+        "Κοινή χρήση αρχείων χωρίς όριο μεγέθους"
+      ],
       "Sign in as user": [
         "Είσοδος ως χρήστης"
       ],
@@ -6587,6 +6644,9 @@
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
+      ],
+      "Sync and backup all your files across devices": [
+        "Συγχρονίστε και δημιουργήστε αντίγραφα ασφαλείας όλων των αρχείων σας σε όλες τις συσκευές"
       ],
       "Tor over VPN": [
         "Tor μέσω VPN"
@@ -6623,6 +6683,9 @@
       ],
       "Unlimited messages per day": [
         "Απεριόριστα μηνύματα ανά ημέρα"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Απεριόριστες κοινόχρηστες κρύπτες ${ PASS_SHORT_APP_NAME } ανά χρήστη"
       ],
       "Unlimited shared vaults with access permissions": [
         "Απεριόριστες κοινόχρηστες θυρίδες αποθήκευσης με δικαιώματα πρόσβασης"
@@ -6739,6 +6802,9 @@
       ],
       "Popular": [
         "Δημοφιλές"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Προστατεύστε τις ευαίσθητες επιχειρηματικές πληροφορίες και συνεργαστείτε με ασφάλεια."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Προστατέψτε το απόρρητο της οικογένειάς σας με όλες τις υπηρεσίες του ${ BRAND_NAME } σε συνδυασμό."
@@ -6910,6 +6976,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Εξατομικεύστε την υπογραφή email σας με λογότυπα, εικόνες, εικονίδια κοινωνικών μέσων, συνδέσμους προς τα στοιχεία επικοινωνίας σας και πολλά άλλα"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Η τηλεφωνική υποστήριξη είναι διαθέσιμη από τη ${ BRAND_NAME } Ομάδα Υποστήριξης πελατών κατά τις Ευρωπαϊκές εργάσιμες ώρες, για πελάτες με 20 ή περισσότερους χρήστες"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Αποτρέπει την πρόσβαση σε μηνύματα από ${ BRAND_NAME } ή τρίτους. Τα μόνα άτομα που μπορούν να διαβάσουν τα μηνύματα είναι ο αποστολέας και ο παραλήπτης."
@@ -8242,6 +8311,9 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "Τώρα μπορείτε να δείτε πότε οι συμμετέχοντες είναι ελεύθεροι να παρακολουθήσουν τη συνάντησή σας."
+      ],
+      "You can now collapse the navigation bar.": [
+        "Τώρα μπορείτε να συμπτύξετε τη γραμμή περιήγησης."
       ]
     },
     "State": {
@@ -9333,6 +9405,9 @@
       "Encrypted event": [
         "Κρυπτογραφημένη εκδήλωση"
       ],
+      "Enter 2FA code": [
+        "Εισαγωγή κωδικού 2FA"
+      ],
       "Enter your password": [
         "Εισάγετε τον κωδικό σας"
       ],
@@ -9828,6 +9903,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin μέσω email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Ένας ασφαλέστερος/ευκολότερος τρόπος για να κρατήσετε και να στείλετε Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

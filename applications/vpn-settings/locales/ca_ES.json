@@ -368,7 +368,7 @@
         "Necessiteu ajuda?"
       ],
       "New group": [
-        "Crea un grup"
+        "Grup nou"
       ],
       "Next": [
         "Següent"
@@ -627,6 +627,12 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Intenteu tornar a desar. No s'ha pogut desar a causa de: ${ saveError }"
+      ],
+      "Turn off": [
+        "Desactiva"
+      ],
+      "Turn on": [
+        "Activa"
       ],
       "Unlock": [
         "Desbloquejar"
@@ -3345,7 +3351,7 @@
         "+${ organization.BonusVPN } connexions per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)"
       ],
       "2FA disabled": [
-        "2FA desactivada"
+        "2FA desactivat"
       ],
       "30-day money-back guarantee": [
         "30 dies de garantia de reemborsament"
@@ -3571,11 +3577,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -4266,7 +4272,7 @@
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
       "Session Ended": [
-        "S'ha finalitzat la sessió."
+        "Sessió finalitzada"
       ],
       "Session Roaming": [
         "Sessió itinerant"
@@ -4710,9 +4716,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Amb una adreça xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Amb els grups d'usuaris, podeu enviar correus electrònics, compartir dades o canviar la configuració per a grups específics d'usuaris tot alhora de manera senzilla."
-      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
       ],
@@ -4927,11 +4930,11 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Rebutjat"
+      ],
       "Pending": [
         "Pendent"
-      ],
-      "Rejected": [
-        "Rebutjat"
       ]
     },
     "Invoice state display as badge": {
@@ -6830,6 +6833,14 @@
       ],
       "The whole organization": [
         "Tota l'organització"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "No one": [
+        "Ningú"
       ]
     },
     "Organization capacity error": {
@@ -9115,10 +9126,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -9220,6 +9231,9 @@
       ],
       "Delete account": [
         "Elimina el compte"
+      ],
+      "Delete group?": [
+        "Voleu eliminar el grup?"
       ],
       "Delete organization logo?": [
         "Voleu eliminar el logo de l'organització?"
@@ -9442,6 +9456,9 @@
       "Processing...": [
         "Processant..."
       ],
+      "QRCode": [
+        "Codi QR"
+      ],
       "Recommended": [
         "Recomanat"
       ],
@@ -9553,6 +9570,9 @@
       ],
       "Switch to two-password mode": [
         "Canviar al mode de dues contrasenyes"
+      ],
+      "Text": [
+        "Text"
       ],
       "Time": [
         "Hora"

@@ -852,10 +852,10 @@
       "Not saved": [
         "Не захавана"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
       "Open": [
@@ -3645,11 +3645,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Аплачваецца кожныя 2 гады ў памеры ${ amountBilled }. Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Аплачваецца штогод у памеры ${ amountBilled }. Эканомія складае ${ amountSave } пры гадавой падпісцы на 2 асабістыя ўліковыя запісы ${ BRAND_NAME } Unlimited."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 ТБ сховішча"
+      ],
       "2 users": [
         "2 карыстальнікі"
       ],
@@ -6782,6 +6788,9 @@
       "Organization size": [
         "Памер арганізацыі"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Папярэджанні з нашага боку носяць дадатковую перасцярогу. Калі вы не выявілі ў сябе ніякіх парушэнняў бяспекі, то можаце смела праігнараваць гэту справаздачу."
+      ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша сістэма пазначыла гэта паведамленне як спробу фішынгу. Праверце яго надзейнасць"
       ],
@@ -7662,7 +7671,7 @@
         "Вы выбралі **${ elementsCount } паведамленняў**."
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Вы страціце доступ да ${ planTitle } функцыі пасля наступлення гэтай даты."
+        "Вы страціце доступ да ${ planTitle } функцыі пасля гэтай даты."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
@@ -9357,6 +9366,18 @@
         "${ n } паведамленняў у дзень",
         "${ n } паведамленні ў дзень"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } абагуленае сховішча ${ PASS_SHORT_APP_NAME } на карыстальніка",
+        "${ n } абагуленыя сховішчы ${ PASS_SHORT_APP_NAME } на карыстальніка",
+        "${ n } абагуленых сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка",
+        "${ n } абагуленых сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка"
+      ],
+      "${ n } user": [
+        "${ n } карыстальнік",
+        "Да ${ n } карыстальнікаў",
+        "Да ${ n } карыстальнікаў",
+        "Да ${ n } карыстальнікаў"
+      ],
       "${ n } vault": [
         "${ n } сховішча",
         "${ n } сховішчы",
@@ -9368,6 +9389,12 @@
         "${ n } падключэнні па VPN",
         "${ n } падключэнняў па VPN",
         "${ n } падключэнні па VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-дзённая гісторыя змяненняў версіі файла",
+        "${ options }-дзённая гісторыя змяненняў версіі файла",
+        "${ options }-дзённая гісторыя змяненняў версіі файла",
+        "${ options }-дзённая гісторыя змяненняў версіі файла"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
@@ -9384,8 +9411,17 @@
       "${ size } attachment size": [
         "Памер далучэння: ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } бяспечнага сховішча на карыстальніка"
+      ],
       "${ size } storage": [
         "${ size } сховішча"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - для ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - для ўсіх сэрвісаў ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 карыстальнік"
@@ -9404,6 +9440,12 @@
       ],
       "Administration Panel": [
         "Панэль адміністратара"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Адна простая падпіска"
       ],
       "Auto-delete Spam and Trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
@@ -9440,6 +9482,9 @@
       ],
       "Contact groups management": [
         "Кіраванне групамі кантактаў"
+      ],
+      "Custom and secure business email": [
+        "Персаналізаваная і бяспечная электронная пошта для бізнесу"
       ],
       "Custom domains for email aliases": [
         "Карыстальніцкія дамены для псеўданімаў электроннай пошты"
@@ -9537,6 +9582,9 @@
       "Multiple admin roles": [
         "Некалькі роляў адміністратара"
       ],
+      "Online document editor": [
+        "Рэдактар дакументаў у інтэрнэце"
+      ],
       "Organize items with multiple vaults": [
         "Упарадкаванне элементаў з некалькімі сховішчамі"
       ],
@@ -9546,8 +9594,14 @@
       "Password health": [
         "Якасць пароля"
       ],
+      "Password manager": [
+        "Менеджар пароляў"
+      ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
+      ],
+      "Phone support (20+ users)": [
+        "Падтрымка па тэлефоне (ад 20 карыстальнікаў)"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -9566,6 +9620,9 @@
         "Абараніць ${ n } прылады адначасова",
         "Абараніць ${ n } прылад адначасова",
         "Абараніць ${ n } прылады адначасова"
+      ],
+      "Recover previous file versions": [
+        "Аднавіць папярэднія версіі файла"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Рэгулярныя праверкі бяспекі вашага ўліковага запісу. Мы папярэджваем вас аб неабходнасці абнавіць паролі, якія з'яўляюцца ненадзейнымі або выкарыстоўваліся паўторна."
@@ -9597,6 +9654,9 @@
       "Send & receive invitations": [
         "Адпраўка і атрыманне запрашэнняў"
       ],
+      "Share files with no size limit": [
+        "Абагульванне файлаў без абмежавання памеру"
+      ],
       "Sign in as user": [
         "Уваход у якасці карыстальніка"
       ],
@@ -9614,6 +9674,9 @@
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
+      ],
+      "Sync and backup all your files across devices": [
+        "Сінхранізацыя і рэзервовае капіяванне ўсіх вашых файлаў паміж прыладамі"
       ],
       "Tor over VPN": [
         "Tor праз VPN"
@@ -9650,6 +9713,9 @@
       ],
       "Unlimited messages per day": [
         "Неабмежаваная колькасць паведамленняў у дзень"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Неабмежаванае абагульванне сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка"
       ],
       "Unlimited shared vaults with access permissions": [
         "Неабмежаваная колькасць абагуленых сховішчаў з дазволамі доступу"
@@ -9770,6 +9836,9 @@
       ],
       "Popular": [
         "Папулярны"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Абарона адчувальных звестак бізнесу і бяспечнае супрацоўніцтва."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
@@ -9943,6 +10012,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Служба падтрымкі кліентаў ${ BRAND_NAME } ажыццяўляе падтрымку па тэлефоне ў працоўны час (еўрапейскі часавы пояс) для кліентаў ад 20 карыстальнікаў і больш."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
@@ -11436,6 +11508,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Цяпер мы прадвызначана загрузілі відарысы і заблакіравалі адпраўнікоў ад сачэння за вамі. Гэта можна змяніць у ${ settingsLink }."
+      ],
+      "You can now collapse the navigation bar.": [
+        "Цяпер вы можаце згарнуць панэль навігацыі."
       ],
       "You can now schedule your messages to be sent later": [
         "Цяпер вы можаце запланаваць адпраўку паведамленняў на больш позні час"
@@ -13585,6 +13660,11 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Доступ да праграмы Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Бяспечны і самы лёгкі спосаб захоўваць і адпраўляць Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

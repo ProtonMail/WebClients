@@ -707,7 +707,7 @@
         "Necessiteu ajuda?"
       ],
       "New group": [
-        "Crea un grup"
+        "Grup nou"
       ],
       "Next": [
         "Següent"
@@ -787,11 +787,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "refresca la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -1092,6 +1092,12 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Intenteu tornar a desar. No s'ha pogut desar a causa de: ${ saveError }"
+      ],
+      "Turn off": [
+        "Desactiva"
+      ],
+      "Turn on": [
+        "Activa"
       ],
       "Underline": [
         "Subratllat"
@@ -1583,14 +1589,6 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1612,6 +1610,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6405,7 +6411,7 @@
         "2. Elles proven ${ planName }"
       ],
       "2FA disabled": [
-        "2FA desactivada"
+        "2FA desactivat"
       ],
       "3. You earn credits": [
         "3. Guanyeu crèdits"
@@ -6842,11 +6848,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -7909,7 +7915,7 @@
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
       "Session Ended": [
-        "S'ha finalitzat la sessió."
+        "Sessió finalitzada"
       ],
       "Session Roaming": [
         "Sessió itinerant"
@@ -8614,9 +8620,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Amb una adreça xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Amb els grups d'usuaris, podeu enviar correus electrònics, compartir dades o canviar la configuració per a grups específics d'usuaris tot alhora de manera senzilla."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Amb el vostre pla actual, només podeu rebre missatges amb la vostra adreça @pm.me. Milloreu per enviar missatges i crear adreces addicionals utilitzant @pm.me."
       ],
@@ -8979,11 +8982,11 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Rebutjat"
+      ],
       "Pending": [
         "Pendent"
-      ],
-      "Rejected": [
-        "Rebutjat"
       ]
     },
     "Invoice state display as badge": {
@@ -11178,29 +11181,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Get started for $1": [
-        "Comenceu per $1"
-      ],
-      "Get started for 1 €": [
-        "Comenceu per 1€"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11228,6 +11208,29 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Get started for $1": [
+        "Comenceu per $1"
+      ],
+      "Get started for 1 €": [
+        "Comenceu per 1€"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -11824,14 +11827,6 @@
         "El vostre pla seleccionat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -11850,6 +11845,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -12494,6 +12497,14 @@
       ],
       "Trash": [
         "Paperera"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Tothom"
+      ],
+      "No one": [
+        "Ningú"
       ]
     },
     "Option delay send seconds": {
@@ -13537,7 +13548,7 @@
         "Kit de recuperació"
       ],
       "Your recovery phone": [
-        "Telèfon de recuperació"
+        "El vostre telèfon de recuperació"
       ]
     },
     "saml: Action": {
@@ -15410,6 +15421,9 @@
       "Status": [
         "Estat"
       ],
+      "Time": [
+        "Hora"
+      ],
       "Total storage": [
         "Emmagatzematge"
       ],
@@ -15645,10 +15659,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -15816,6 +15830,9 @@
       ],
       "Delete folder?": [
         "Voleu eliminar la carpeta?"
+      ],
+      "Delete group?": [
+        "Voleu eliminar el grup?"
       ],
       "Delete key permanently?": [
         "Voleu eliminar la clau de manera permanent?"
@@ -16249,6 +16266,9 @@
       "Profile": [
         "Perfil"
       ],
+      "QRCode": [
+        "Codi QR"
+      ],
       "Recommended": [
         "Recomanat"
       ],
@@ -16459,6 +16479,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "Preneu precaucions per evitar la pèrdua de dades!"
+      ],
+      "Text": [
+        "Text"
       ],
       "Theme": [
         "Tema"

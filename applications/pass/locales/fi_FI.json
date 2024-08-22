@@ -1060,6 +1060,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot, maksukortit ja identiteetit."
+      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } vaatii ${ BRAND_NAME }-salasanasi tietojen yhteydettömään käyttöön."
       ],
@@ -2443,6 +2446,9 @@
       ],
       "Unnamed Credit Card": [
         "Nimetön maksukortti"
+      ],
+      "Unnamed identity": [
+        "Nimetön identiteetti"
       ],
       "Unnamed item": [
         "Nimetön kohde"

@@ -2415,6 +2415,9 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Cobrado a cada 2 anos a ${ amountBilled }. Os descontos são baseados no preço mensal padrão."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Cobrado anualmente em ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
       ]
@@ -4737,6 +4740,9 @@
       ],
       "Organization size": [
         "Tamanho da organização"
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nossos alertas são mais cautelosos. Se você não reconhece nenhuma das informações violadas, pode ignorar este relatório com segurança."
       ],
       "Owner": [
         "Proprietário"
@@ -7764,6 +7770,9 @@
       ]
     },
     "Onboarding Info": {
+      "Collaborate on documents": [
+        "Colaborar em documentos"
+      ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Crie e colabore em documentos. Tudo isso é protegido por criptografia de ponta a ponta."
       ],
@@ -7776,11 +7785,17 @@
       "Manage access": [
         "Gerenciar acesso"
       ],
+      "Securely store, manage, and share your business-critical files with confidence.": [
+        "Armazene, gerencie e compartilhe com segurança seus arquivos essenciais aos negócios com confiança."
+      ],
       "Set a recovery method": [
         "Definir um método de recuperação"
       ],
       "Share a file": [
         "Compartilhar um arquivo"
+      ],
+      "Share files & folders": [
+        "Compartilhar arquivos e pastas"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Basta preencher o seguinte dentro de ${ expiresInDays } dia:",
@@ -10313,6 +10328,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Uma maneira segura/fácil de mandar e enviar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

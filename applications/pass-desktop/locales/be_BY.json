@@ -574,7 +574,7 @@
         "Маўленне"
       ],
       "Start ${ PASS_APP_NAME } at login": [
-        "Запусціце ${ PASS_APP_NAME } падчас уваходу"
+        "Запускаць ${ PASS_APP_NAME } пры ўваходзе"
       ],
       "Toggle developers tools": [
         "Пераключыць інструменты распрацоўшчыка"
@@ -1140,6 +1140,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі, крэдытныя карткі і асабістыя звесткі."
+      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } будзе патрабаваць ваш пароль ${ BRAND_NAME } для доступу да даных па-за сеткай."
       ],
@@ -1574,6 +1577,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Для доступу праз інтэрнэт да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Папярэджанні з нашага боку носяць дадатковую перасцярогу. Калі вы не выявілі ў сябе ніякіх парушэнняў бяспекі, то можаце смела праігнараваць гэту справаздачу."
       ],
       "Owner": [
         "Уладальнік"
@@ -2557,6 +2563,9 @@
       ],
       "Unnamed Credit Card": [
         "Крэдытная картка без назвы"
+      ],
+      "Unnamed identity": [
+        "Асабістыя звесткі без назвы"
       ],
       "Unnamed item": [
         "Элемент без назвы"

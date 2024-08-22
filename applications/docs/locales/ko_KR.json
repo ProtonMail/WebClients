@@ -111,6 +111,9 @@
       "Cancel subscription": [
         "구독 취소"
       ],
+      "characters": [
+        "자"
+      ],
       "Chat with us": [
         "채팅으로 문의하기"
       ],
@@ -320,6 +323,9 @@
       ],
       "Increase": [
         "증가"
+      ],
+      "Keep my subscription": [
+        "나의 구독 유지"
       ],
       "Learn more": [
         "더 알아보기"
@@ -605,6 +611,12 @@
       ],
       "What do I get?": [
         "무엇을 받게 되나요?"
+      ],
+      "Word count": [
+        "단어 수"
+      ],
+      "words": [
+        "개 (단어)"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "vCard 파일을 ${ maxAttachments }개 이상 연락처로 보낼 수 없습니다"
@@ -3467,9 +3479,6 @@
       "All (${ totalFoldersCount } label)": [
         "총 (${ totalFoldersCount } 개 라벨)"
       ],
-      "All changes saved to Drive": [
-        "모든 변경 사항을 드라이브에 저장했습니다."
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "최대 ${ MAX_CONTACTS_PER_USER }개까지 연락처를 가져옵니다"
       ],
@@ -3529,6 +3538,12 @@
       ],
       "Change your password": [
         "비밀번호를 변경하십시오"
+      ],
+      "characters": [
+        "글자"
+      ],
+      "characters without spaces": [
+        "자 (공백 제외)"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "연락처 확인 중 ${ max } 중 ${ progress }..."
@@ -3614,6 +3629,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
       ],
+      "Display word count": [
+        "단어수 표시"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "아무것도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요."
       ],
@@ -3661,6 +3679,9 @@
       ],
       "Emails are automatically signed": [
         "이메일들이 자동적으로 서명됨"
+      ],
+      "End-to-end encrypted": [
+        "종단간 암호화됨"
       ],
       "End-to-end encrypted.": [
         "종단간 암호화됨."
@@ -4028,9 +4049,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
       ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }에 저장됨"
-      ],
       "Saving": [
         "저장 중"
       ],
@@ -4280,6 +4298,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
       ],
+      "words": [
+        "개 (단어)"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
       ],
@@ -4345,6 +4366,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal 계정과 연결된 신용 카드 또는 은행 계좌가 있어야 합니다. PayPal 계정에 연결된 신용 카드나 은행 계좌가 없다면 아래 버튼을 클릭해 주세요."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "오늘 부터 ${ planTitle } 기능에 접근할 수 없습니다."
       ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
@@ -5416,11 +5440,20 @@
       "${ n } message per day": [
         "하루 당 ${ n } 메시지"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "사용자 당 ${ n }개 공유된 ${ PASS_SHORT_APP_NAME } 금고"
+      ],
+      "${ n } user": [
+        "최대 ${ n }명 사용자"
+      ],
       "${ n } vault": [
         "${ n }개 금고"
       ],
       "${ n } VPN connection": [
         "${ n } 개 VPN 연결"
+      ],
+      "${ options }-day file version history": [
+        "${ options }일 파일 버전 기록"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ n }개의 hide-my-email 별칭이 포함된 ${ PASS_APP_NAME }"
@@ -5434,8 +5467,17 @@
       "${ size } attachment size": [
         "첨부 파일 크기: ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "사용자 당 ${ size } 보안 스토리지"
+      ],
       "${ size } storage": [
         "${ size } 저장공간"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - ${ DRIVE_APP_NAME }용"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - 전체 ${ BRAND_NAME } 서비스용"
       ],
       "1 user": [
         "사용자 1명"
@@ -5454,6 +5496,12 @@
       ],
       "Administration Panel": [
         "관리 패널"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "모든 ${ BRAND_NAME } 베이직 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독"
       ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
@@ -5490,6 +5538,9 @@
       ],
       "Contact groups management": [
         "연락처 그룹 관리"
+      ],
+      "Custom and secure business email": [
+        "커스텀 및 보안 비즈니스 이메일"
       ],
       "Custom domains for email aliases": [
         "이메일 별칭을 위한 커스텀 도메인"
@@ -5584,6 +5635,9 @@
       "Multiple admin roles": [
         "다중 관리자 역할"
       ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
       ],
@@ -5593,8 +5647,14 @@
       "Password health": [
         "비밀번호 건강도"
       ],
+      "Password manager": [
+        "비밀번호 관리자"
+      ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
+      ],
+      "Phone support (20+ users)": [
+        "휴대 전화 지원 (20명 이상 사용자)"
       ],
       "Priority email support": [
         "이메일 우선 지원"
@@ -5610,6 +5670,9 @@
       ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "회원님 계정 보안에 대한 정기 점검입니다. 약한 비밀번호 또는 업데이트가 필요한 재사용된 비밀번호가 있는지 알려드립니다."
@@ -5641,6 +5704,9 @@
       "Send & receive invitations": [
         "전송 및 받은 초대"
       ],
+      "Share files with no size limit": [
+        "크기 제한 없는 파일 공유"
+      ],
       "Sign in as user": [
         "사용자로 로그인"
       ],
@@ -5658,6 +5724,9 @@
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
+      ],
+      "Sync and backup all your files across devices": [
+        "기기를 넘나들며 파일을 동기화 및 백업하세요"
       ],
       "Tor over VPN": [
         "VPN을 통한 Tor"
@@ -5694,6 +5763,9 @@
       ],
       "Unlimited messages per day": [
         "하루에 무제한 메시지"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "사용자 당 무제한 공유된 ${ PASS_SHORT_APP_NAME } 금고"
       ],
       "Unlimited shared vaults with access permissions": [
         "권한 접근이 포함된 무제한 공유 가능 금고"
@@ -5808,6 +5880,9 @@
       ],
       "Popular": [
         "인기"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "민감한 비즈니스 정보를 보호하고 안전하게 공동 작업하기."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 서비스들로 가족의 개인정보를 보호하세요."
@@ -5968,6 +6043,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "로고, 이미지, 소셜 미디어 아이콘, 연락처 링크 등으로 이메일 서명을 개인화하세요."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "전화 지원은 20명 이상의 사용자가 있는 고객을 위해 유럽 업무 시간 동안 ${ BRAND_NAME } 고객 성공 팀에서 이용할 수 있습니다."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } 또는 제3자가 메시지에 접근하는 것을 방지합니다. 메시지를 읽을 수 있는 유일한 사람은 당신과 이메일을 받은 수신자 뿐이죠."
@@ -7657,6 +7735,9 @@
       "Enable 2FA": [
         "2단계 인증 활성화"
       ],
+      "Enter 2FA code": [
+        "2FA 코드 입력"
+      ],
       "Enter your password": [
         "비밀번호를 입력하세요"
       ],
@@ -8064,6 +8145,11 @@
       ],
       "Bitcoin via email": [
         "이메일을 통한 Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "쉽고 안전하게 Bitcoin을 보관 및 송금하세요"
       ]
     },
     "wallet_signup_2024:Bug category": {

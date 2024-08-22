@@ -456,6 +456,9 @@
       "Invite": [
         "Inviter"
       ],
+      "Keep my subscription": [
+        "Behold mitt abonnement"
+      ],
       "Later": [
         "Senere"
       ],
@@ -2409,11 +2412,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Faktureres hvert 2. år til ${ amountBilled }. Rabatter er basert på standard månedlig pris."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Faktureres årlig til ${ amountBilled }. Spar ${ amountSave } over 2 individuelle ${ BRAND_NAME } ubegrensede årlige abonnementer."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB lagring"
+      ],
       "2 users": [
         "2 brukere"
       ],
@@ -5374,6 +5383,9 @@
       "You need access": [
         "Du må ha tilgang"
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Du vil miste tilgang til ${ planTitle }-funksjoner på denne datoen."
+      ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle endringer som ikke er lagret."
       ],
@@ -6737,6 +6749,14 @@
         "${ n } melding per dag",
         "${ n } meldinger per dag"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } delt ${ PASS_SHORT_APP_NAME }-hvelv per bruker",
+        "${ n } delte ${ PASS_SHORT_APP_NAME }-hvelv per bruker"
+      ],
+      "${ n } user": [
+        "${ n } bruker",
+        "Opptil ${ n } brukere"
+      ],
       "${ n } vault": [
         "${ n } hvelv",
         "${ n } hvelv"
@@ -6744,6 +6764,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dag filversjonshistorikk",
+        "${ options }-dager filversjonshistorikk"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
@@ -6758,8 +6782,17 @@
       "${ size } attachment size": [
         "${ size } vedleggsstørrelse"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } med sikker lagringsplass per bruker"
+      ],
       "${ size } storage": [
         "${ size } lagringsplass"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - for ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - for alle ${ BRAND_NAME }-tjenester"
       ],
       "1 user": [
         "1 bruker"
@@ -6778,6 +6811,12 @@
       ],
       "Administration Panel": [
         "Administrasjonspanel"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle premium ${ BRAND_NAME }-tjenester. Ett enkelt abonnement"
       ],
       "Auto-delete Spam and Trash": [
         "Auto-slett søppelpost og papirkurv"
@@ -6814,6 +6853,9 @@
       ],
       "Contact groups management": [
         "Administrasjon av kontaktgrupper"
+      ],
+      "Custom and secure business email": [
+        "Tilpasset og sikker bedrifts-e-post"
       ],
       "Custom domains for email aliases": [
         "Egendefinerte domener for e-postaliaser"
@@ -6909,6 +6951,9 @@
       "Multiple admin roles": [
         "Flere administratorroller"
       ],
+      "Online document editor": [
+        "Dokumentredigering på nett"
+      ],
       "Organize items with multiple vaults": [
         "Organiser elementer med flere hvelv"
       ],
@@ -6918,8 +6963,14 @@
       "Password health": [
         "Passordhelse"
       ],
+      "Password manager": [
+        "Passordbehandler"
+      ],
       "Password-protected Emails": [
         "Passordbeskyttede e-poster"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonstøtte (20+ brukere)"
       ],
       "Priority email support": [
         "Prioritert e-poststøtte"
@@ -6936,6 +6987,9 @@
       "Protect ${ n } device at a time": [
         "Beskytt ${ n } enhet om gangen",
         "Beskytt ${ n } enheter om gangen"
+      ],
+      "Recover previous file versions": [
+        "Gjenopprett tidligere filversjoner"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmessige kontroller av kontosikkerheten din. Vi varsler deg hvis du har svake eller gjenbrukte passord som må oppdateres."
@@ -6967,6 +7021,9 @@
       "Send & receive invitations": [
         "Send & motta invitasjoner"
       ],
+      "Share files with no size limit": [
+        "Del filer uten størrelsesbegrensning"
+      ],
       "Sign in as user": [
         "Logg på som bruker"
       ],
@@ -6984,6 +7041,9 @@
       ],
       "Strict no-logs policy": [
         "Streng ingen-loggførings-praksis"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkroniser og sikkerhetskopier alle filene dine på tvers av enheter"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -7020,6 +7080,9 @@
       ],
       "Unlimited messages per day": [
         "Ubegrensede meldinger per dag"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Ubegrenset delte ${ PASS_SHORT_APP_NAME }-hvelv per bruker"
       ],
       "Unlimited shared vaults with access permissions": [
         "Ubegrenset delte hvelv med tilgangstillatelser"
@@ -7136,6 +7199,9 @@
       ],
       "Popular": [
         "Populær"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Beskytt sensitiv forretningsinformasjon og samarbeid sikkert."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskytt familiens personvern med alle ${ BRAND_NAME }-tjenester kombinert."
@@ -7307,6 +7373,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Tilpass e-postsignaturen din med logoer, bilder, ikoner for sosiale medier, koblinger til kontaktinformasjonen din og mer."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonstøtte er tilgjengelig fra ${ BRAND_NAME }-kundestøtteteamet i europeisk arbeidstid, for kunder med 20 eller flere brukere"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer at meldinger åpnes av ${ BRAND_NAME } eller tredjeparter. De eneste som kan lese meldingene, er avsenderen og den tiltenkte mottakeren."
@@ -7735,6 +7804,9 @@
       ]
     },
     "Onboarding Info": {
+      "Collaborate on documents": [
+        "Samarbeid på dokumenter"
+      ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Opprett og samarbeid på dokumenter. Det hele er beskyttet av ende-til-ende-kryptering."
       ],
@@ -7744,11 +7816,20 @@
       "Introducing ${ DOCS_APP_NAME }": [
         "Introduserer ${ DOCS_APP_NAME }"
       ],
+      "Manage access": [
+        "Administrer tilgang"
+      ],
+      "Securely store, manage, and share your business-critical files with confidence.": [
+        "Lagre, administrer og del dine forretningskritiske filer på en sikker måte."
+      ],
       "Set a recovery method": [
         "Angi en gjenopprettingsmetode"
       ],
       "Share a file": [
         "Del en fil"
+      ],
+      "Share files & folders": [
+        "Del filer og mapper"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Bare fullfør følgende i løpet av neste ${ expiresInDays } dag:",
@@ -7756,6 +7837,9 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Lagre filene dine og del dem på en sikker måte. Kom i gang ved å sikre de mest private filene dine, for eksempel ID-er, kontrakter og personlige bilder."
+      ],
+      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
+        "Eieren må bekrefte delingstilgang. Du får en e-post når det er gjort."
       ],
       "Upload a file": [
         "Last opp en fil"
@@ -7790,6 +7874,9 @@
       ],
       "Hang tight!": [
         "Hold deg fast!"
+      ],
+      "Invite team members": [
+        "Inviter medlemmer av teamet"
       ],
       "Upload and protect your important files": [
         "Last opp og beskytt viktige filer"
@@ -9696,6 +9783,9 @@
       "Enable drive search": [
         "Aktiver søk i Drive"
       ],
+      "Enter 2FA code": [
+        "Angi 2FA-kode"
+      ],
       "Enter your password": [
         "Skriv inn passord"
       ],
@@ -10263,6 +10353,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via e-post"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "En sikrere/enklere måte å oppbevare og sende Bitcoin på"
       ]
     },
     "wallet_signup_2024:Bug category": {

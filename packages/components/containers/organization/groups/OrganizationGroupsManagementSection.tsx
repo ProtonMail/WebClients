@@ -4,6 +4,7 @@ import { Button } from '@proton/atoms';
 import { DualPaneContent, DualPaneSidebar } from '@proton/atoms/DualPane';
 import { Loader, SettingsParagraph, SettingsSectionWide } from '@proton/components';
 import { Icon, SettingsLink } from '@proton/components/components';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
@@ -43,7 +44,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
 
     return (
         <SettingsSectionWide className="h-full groups-management">
-            <SettingsParagraph className="flex flex-column flex-nowrap" learnMoreUrl="https://proton.me">
+            <SettingsParagraph className="flex flex-column flex-nowrap" learnMoreUrl={getKnowledgeBaseUrl('/groups')}>
                 {c('Info')
                     .t`With groups, you can quickly and easily send emails to all the people in a specified group.`}
             </SettingsParagraph>
