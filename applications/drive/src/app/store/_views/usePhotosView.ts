@@ -7,7 +7,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import type { LinkDownload } from '../_downloads';
 import { useDownloadProvider } from '../_downloads';
-import type { DriveEvents } from '../_events';
+import type { DriveEvent, DriveEvents } from '../_events';
 import { useDriveEventManager } from '../_events';
 import { useLinksListing, useLinksQueue } from '../_links';
 import { isPhotoGroup, sortWithCategories, usePhotos } from '../_photos';
@@ -19,9 +19,10 @@ import { useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
  * to update our internal state which is not linked to the global state.
  */
 export function updateByEvents(
-    { events }: DriveEvents,
+    { events, eventId }: DriveEvents,
     shareId: string,
-    removePhotosFromCache: (linkIds: string[]) => void
+    removePhotosFromCache: (linkIds: string[]) => void,
+    processedEventCounter: (eventId: string, event: DriveEvent) => void
 ) {
     const linksToRemove = events
         .filter(
@@ -29,13 +30,16 @@ export function updateByEvents(
                 event.eventType === EVENT_TYPES.DELETE ||
                 (event.originShareId === shareId && event.encryptedLink.rootShareId !== event.originShareId)
         )
-        .map((event) => event.encryptedLink.linkId);
+        .map((event) => {
+            processedEventCounter(eventId, event);
+            return event.encryptedLink.linkId;
+        });
 
     removePhotosFromCache(linksToRemove);
 }
 
 export const usePhotosView = () => {
-    const events = useDriveEventManager();
+    const eventsManager = useDriveEventManager();
     const { getCachedChildren, loadLinksMeta } = useLinksListing();
     const { shareId, linkId, isLoading, volumeId, photos, loadPhotos, removePhotosFromCache } = usePhotos();
     const { addToQueue } = useLinksQueue({ loadThumbnails: true });
@@ -118,14 +122,14 @@ export const usePhotosView = () => {
 
         loadPhotos(abortController.signal, volumeId);
 
-        const callbackId = events.eventHandlers.register((eventVolumeId, events) => {
+        const callbackId = eventsManager.eventHandlers.register((eventVolumeId, events, processedEventCounter) => {
             if (eventVolumeId === volumeId) {
-                updateByEvents(events, shareId, removePhotosFromCache);
+                updateByEvents(events, shareId, removePhotosFromCache, processedEventCounter);
             }
         });
 
         return () => {
-            events.eventHandlers.unregister(callbackId);
+            eventsManager.eventHandlers.unregister(callbackId);
             abortController.abort();
         };
     }, [volumeId, shareId]);

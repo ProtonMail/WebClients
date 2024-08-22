@@ -10,7 +10,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
 import { driveEventsResultToDriveEvents } from '../_api';
-import { VolumeType } from '../_shares';
+import { VolumeType } from '../_volumes';
 import { useDriveEventManagerProvider } from './useDriveEventManager';
 
 const VOLUME_ID_1 = 'volumeId-1';
@@ -146,8 +146,16 @@ describe('useDriveEventManager', () => {
             hook.current.eventHandlers.register(handler);
             await hook.current.pollEvents.driveEvents();
             expect(handler).toBeCalledTimes(2);
-            expect(handler).toBeCalledWith(VOLUME_ID_1, driveEventsResultToDriveEvents(EVENT_PAYLOAD));
-            expect(handler).toBeCalledWith(VOLUME_ID_2, driveEventsResultToDriveEvents(EVENT_PAYLOAD));
+            expect(handler).toBeCalledWith(
+                VOLUME_ID_1,
+                driveEventsResultToDriveEvents(EVENT_PAYLOAD),
+                expect.any(Function)
+            );
+            expect(handler).toBeCalledWith(
+                VOLUME_ID_2,
+                driveEventsResultToDriveEvents(EVENT_PAYLOAD),
+                expect.any(Function)
+            );
         });
     });
 });
