@@ -2963,7 +2963,7 @@
         "Pridelené úložisko: ${ assignedStorage }"
       ],
       "The subscription will be billed to the primary admin of this plan.": [
-        "Predplatné sa bude účtovať primárnemu správcovi tohto plánu."
+        "Predplatné sa bude účtovať hlavnému správcovi tohto plánu."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Dostali ste pozvanie pripojiť sa k ${ invite.OrganizationName }"
@@ -3617,9 +3617,6 @@
         "Všetky (${ totalFoldersCount } štítkov)",
         "Všetky (${ totalFoldersCount } štítkov)"
       ],
-      "All changes saved to Drive": [
-        "Všetky zmeny uložené v Drive"
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
@@ -3814,6 +3811,9 @@
       ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
+      ],
+      "End-to-end encrypted": [
+        "End-to-end šifrované"
       ],
       "End-to-end encrypted.": [
         "Šifrovanie počas celého spojenia."
@@ -4192,9 +4192,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
-      ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Uložené v ${ DRIVE_APP_NAME }"
       ],
       "Saving": [
         "Ukladanie"
@@ -6710,7 +6707,7 @@
         "Najprv vyberte fakturačnú krajinu, prosím."
       ],
       "Please select your billing state first.": [
-        "Najprv vyberte fakturačnú krajinu, prosím."
+        "Najprv vyberte fakturačný štát, prosím."
       ],
       "Select billing country to pay": [
         "Vyberte fakturačnú krajinu na platbu"

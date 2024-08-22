@@ -330,6 +330,9 @@
       "Increase": [
         "Zvýšit"
       ],
+      "Keep my subscription": [
+        "Zachovat mé předplatné"
+      ],
       "Learn more": [
         "Více informací"
       ],
@@ -2833,6 +2836,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Tuto stránku se nám nepodařilo načíst. Aktualizujte prosím stránku nebo zkontrolujte svoje internetové připojení."
+      ],
+      "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
+        "Pokud je povoleno dodatečné heslo, lze správu aliasů provádět pouze v ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -2938,14 +2944,23 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Účty s vlastními doménami se nemohou připojit ke skupinovému tarifu."
+      ],
       "customer support": [
         "zákaznická podpora"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Skupinové tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
       ],
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Doživotní účty nemohou být připojeny ke skupinovému tarifu."
       ],
       "Manage addresses.": [
         "Spravovat adresy."
@@ -2974,6 +2989,9 @@
       "You have successfully joined the family group": [
         "Úspěšně jste se připojili k rodinné skupině"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Máte nezaplacené faktury. Před připojením ke skupinovému tarifu je prosím uhraďte."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Můžete propojit svůj účet ${ BRAND_NAME } s tímto skupinovým tarifem a společně využívat všechny prémiové funkce ${ BRAND_NAME_TWO }."
       ],
@@ -2982,6 +3000,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet používá ${ usedSpace } úložiště, což je více než ${ inviteSpace }, které vám byly přiděleny. Smažte některá data nebo požádejte správce tarifu o navýšení úložiště."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "S vaším současným tarifem nemůžete přijmout tuto pozvánku."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3614,9 +3635,6 @@
         "Všech (${ totalFoldersCount } štítků)",
         "Všech (${ totalFoldersCount } štítků)"
       ],
-      "All changes saved to Drive": [
-        "Všechny změny uloženy na Drive"
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
@@ -3722,6 +3740,12 @@
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Vytvořte bezpečný cloud pro ${ n } člena",
+        "Vytvořte bezpečný cloud pro ${ n } členy",
+        "Vytvořte bezpečný cloud pro ${ n } členů",
+        "Vytvořte bezpečný cloud pro ${ n } členů"
+      ],
       "Create in": [
         "Vytvořit v"
       ],
@@ -3811,6 +3835,9 @@
       ],
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
+      ],
+      "End-to-end encrypted": [
+        "Koncově šifrováno"
       ],
       "End-to-end encrypted.": [
         "Koncově šifrováno."
@@ -4094,6 +4121,9 @@
       "Organization size": [
         "Velikost organizace"
       ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Naše upozornění jsou spíše opatrná. Pokud nepoznáváte žádné z uniklých informací, můžete tuto zprávu bez obav ignorovat."
+      ],
       "Owner": [
         "Vlastník"
       ],
@@ -4186,9 +4216,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
-      ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Uloženo v ${ DRIVE_APP_NAME }"
       ],
       "Saving": [
         "Ukládání"
@@ -4513,6 +4540,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Váš PayPal účet musíte mít propojený s platební kartou nebo bankovním účtem. Pokud nemáte, klikněte na tlačítko níže."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "K tomuto datu ztratíte přístup k funkcím ${ planTitle }."
       ],
       "You will lose all unsaved changes.": [
         "Ztratíte všechny neuložené změny."
@@ -5641,6 +5671,18 @@
         "${ n } zpráv denně",
         "${ n } zpráv denně"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } sdílelý trezor ${ PASS_SHORT_APP_NAME } na uživatele",
+        "${ n } sdílelé trezory ${ PASS_SHORT_APP_NAME } na uživatele",
+        "${ n } sdílelých trezorů ${ PASS_SHORT_APP_NAME } na uživatele",
+        "${ n } sdílelých trezorů ${ PASS_SHORT_APP_NAME } na uživatele"
+      ],
+      "${ n } user": [
+        "${ n } uživatel",
+        "Až ${ n } uživatelé",
+        "Až ${ n } uživatelů",
+        "Až ${ n } uživatelů"
+      ],
       "${ n } vault": [
         "${ n } trezor",
         "${ n } trezory",
@@ -5652,6 +5694,12 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN",
         "${ n } připojení VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } aliasem hide-my-email",
@@ -5668,8 +5716,17 @@
       "${ size } attachment size": [
         "${ size } velikost přílohy"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } bezpečného prostoru na uživatele"
+      ],
       "${ size } storage": [
         "${ size } úložiště"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Pro ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Pro všechny služby ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 uživatel"
@@ -5688,6 +5745,12 @@
       ],
       "Administration Panel": [
         "Panel správce"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Všechny prémiové služby ${ BRAND_NAME }. Jedno snadné předplatné"
       ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
@@ -5724,6 +5787,9 @@
       ],
       "Contact groups management": [
         "Správa skupin kontaktů"
+      ],
+      "Custom and secure business email": [
+        "Přizpůsobitelný a zabezpečený firemní e-mail"
       ],
       "Custom domains for email aliases": [
         "Vlastní domény pro e-mailové aliasy"
@@ -5821,6 +5887,9 @@
       "Multiple admin roles": [
         "Více rolí správce"
       ],
+      "Online document editor": [
+        "Online editor dokumentů"
+      ],
       "Organize items with multiple vaults": [
         "Uspořádání položek pomocí více trezorů"
       ],
@@ -5830,8 +5899,14 @@
       "Password health": [
         "Síla hesla"
       ],
+      "Password manager": [
+        "Správce hesel"
+      ],
       "Password-protected Emails": [
         "Zprávy chráněné heslem"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonická podpora (20+ uživatelů)"
       ],
       "Priority email support": [
         "Prioritní podpora"
@@ -5850,6 +5925,9 @@
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň"
+      ],
+      "Recover previous file versions": [
+        "Obnova předchozích verzí souborů"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečení účtu. Upozorníme vás, pokud máte slabá nebo opakovaně používaná hesla, která je třeba aktualizovat."
@@ -5881,6 +5959,9 @@
       "Send & receive invitations": [
         "Odesílání a přijímání pozvánek"
       ],
+      "Share files with no size limit": [
+        "Sdílení souborů bez omezení velikosti"
+      ],
       "Sign in as user": [
         "Přihlasit se jako uživatel"
       ],
@@ -5898,6 +5979,9 @@
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchronizace a zálohování všech vašich souborů mezi zařízeními"
       ],
       "Tor over VPN": [
         "TOR skrze VPN"
@@ -5934,6 +6018,9 @@
       ],
       "Unlimited messages per day": [
         "Neomezený počet zpráv za den"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Neomezený počet sdílených trezorů ${ PASS_SHORT_APP_NAME } na uživatele"
       ],
       "Unlimited shared vaults with access permissions": [
         "Neomezený počet sdílených trezorů s oprávněním k přístupu"
@@ -6054,6 +6141,9 @@
       ],
       "Popular": [
         "Oblíbené"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Chraňte citlivé obchodní informace a bezpečně spolupracujte."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chraňte soukromí své rodiny pomocí všech služeb ${ BRAND_NAME }."
@@ -6217,6 +6307,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Přizpůsobte svůj podpis logem, obrázky, ikony sociálních médií, odkazem na kontakt atd."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonická podpora je dostupná od týmu zákaznické podpory ${ BRAND_NAME } během evropské pracovní doby, pro zákazníky se 20 a více uživateli"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zamezí přístup ke zprávám třetím stranám i ${ BRAND_NAME }. Jediní lidé, kteří mohou číst zprávy, jsou odesílatel a příjemce."
@@ -8062,6 +8155,9 @@
       "Enable 2FA": [
         "Povolit 2FA"
       ],
+      "Enter 2FA code": [
+        "Zadejte kód 2FA"
+      ],
       "Enter your password": [
         "Zadejte Vaše heslo"
       ],
@@ -8505,6 +8601,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin přes e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bezpečnější/snazší způsob, jak vlastnit a posílat Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
