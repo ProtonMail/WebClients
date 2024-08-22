@@ -25,5 +25,5 @@ To build the Firefox version of the ProtonPass extension, please follow these st
 2.  Navigate to the unzipped folder in your terminal: `cd ProtonPass-{version}-{commit}-FF`
 3.  Install dependencies: `yarn`
 4.  Navigate to the extension folder: `cd applications/pass-extension`
-5.  Build the Firefox addon: `yarn run build:ff`
+5.  Build the Firefox addon: `yarn run build:extension:ff`
 6.  Build files are located at `applications/pass-extension/dist`
