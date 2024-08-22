@@ -4,7 +4,12 @@ const karmaSpecReporter = require('karma-spec-reporter');
 const karmaChromeLauncher = require('karma-chrome-launcher');
 const karmaJunitReporter = require('karma-junit-reporter');
 const { chromium } = require('playwright');
+const { existsSync } = require('node:fs');
 process.env.CHROME_BIN = chromium.executablePath();
+
+if (!existsSync(process.env.CHROME_BIN)) {
+    throw new Error('Chromium executable not found. Run `npx playwright install chromium`');
+}
 
 module.exports = (config) => {
     config.set({
