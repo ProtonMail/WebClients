@@ -9,7 +9,9 @@ import type { Member, User } from '@proton/shared/lib/interfaces';
 import { isAdmin, isMember } from '@proton/shared/lib/user/helpers';
 
 import type { AddressKeysState } from '../addressKeys';
+import type { AddressesState } from '../addresses';
 import { serverEvent } from '../eventLoop';
+import type { InactiveKeysState } from '../inactiveKeys';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 import type { UserState } from '../user';
@@ -18,7 +20,7 @@ import type { UserKeysState } from '../userKeys';
 
 const name = 'member';
 
-export interface MemberState extends UserState, UserKeysState, AddressKeysState {
+export interface MemberState extends UserState, AddressesState, UserKeysState, AddressKeysState, InactiveKeysState {
     [name]: ModelState<Member>;
 }
 

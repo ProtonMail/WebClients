@@ -1,4 +1,4 @@
-import { TypedStartListening } from '@reduxjs/toolkit';
+import type { TypedStartListening } from '@reduxjs/toolkit';
 
 import {
     type AddressKeysState,

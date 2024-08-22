@@ -3,7 +3,6 @@ import { combineReducers } from 'redux';
 import {
     allowAddressDeletionReducer,
     domainsAddressesReducer,
-    inactiveKeysReducer,
     paymentMethodsReducer,
     samlReducer,
 } from '@proton/account';
@@ -17,5 +16,4 @@ export const rootReducer = combineReducers({
     ...calendarsReducer,
     ...samlReducer,
     ...allowAddressDeletionReducer,
-    inactiveKeys: inactiveKeysReducer,
 });

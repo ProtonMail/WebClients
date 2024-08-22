@@ -101,12 +101,14 @@ export const requestUnprivatization = ({
         const organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
         if (!organizationKey?.privateKey) {
             throw new MemberCreationValidationError(
-                c('Error').t`Organization key must be activated to create invited users`
+                c('unprivatization').t`Organization key must be activated to request data access`
             );
         }
         const primaryEmailAddress = member.Addresses?.[0].Email;
         if (!primaryEmailAddress) {
-            throw new MemberCreationValidationError(c('Error').t`Create an address to unprivatize this member`);
+            throw new MemberCreationValidationError(
+                c('unprivatization').t`The user must have an address to request data access`
+            );
         }
         const invitationData = await getInvitationData({
             api,

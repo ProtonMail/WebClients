@@ -7,6 +7,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
+import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import type { Member } from '@proton/shared/lib/interfaces';
 import { type ParsedUnprivatizationData } from '@proton/shared/lib/keys';
 
@@ -16,7 +17,9 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
+    useModalState,
 } from '../../../components/modalTwo';
+import AuthModal from '../../password/AuthModal';
 
 interface Props extends Omit<ModalProps<'div'>, 'children' | 'buttons'> {
     onChange: () => void;
@@ -29,6 +32,7 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
     const [loading, withLoading] = useLoading();
     const dispatch = useDispatch();
     const api = useApi();
+    const [authModalProps, setAuthModal, renderAuthModal] = useModalState();
 
     const adminEmail = parsedUnprivatizationData.payload.unprivatizationData.AdminEmail;
 
@@ -63,32 +67,44 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
     );
 
     return (
-        <ModalTwo {...rest}>
-            <ModalTwoHeader title={c('unprivatization').t`Enable admin access?`} />
-            <ModalTwoContent>
-                <p>
-                    {getBoldFormattedText(
-                        c('unprivatization')
-                            .t`An administrator of the ${orgName} organization (**${adminEmail}**) wants to enable administrator access for your account.`
-                    )}
-                </p>
-                <p>
-                    {c('unprivatization')
-                        .t`If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.`}
-                </p>
-                <p>{c('unprivatization').jt`You can ${reject} this request if you do not wish to proceed.`}</p>
-            </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button onClick={rest.onClose}>{c('unprivatization').t`Cancel`}</Button>
-                <Button
-                    color="norm"
-                    loading={loading}
-                    onClick={() => {
+        <>
+            {renderAuthModal && (
+                <AuthModal
+                    config={unlockPasswordChanges()}
+                    {...authModalProps}
+                    onCancel={authModalProps.onClose}
+                    onSuccess={async () => {
                         handleAccept();
                     }}
-                >{c('unprivatization').t`Enable administrator access`}</Button>
-            </ModalTwoFooter>
-        </ModalTwo>
+                />
+            )}
+            <ModalTwo {...rest}>
+                <ModalTwoHeader title={c('unprivatization').t`Enable admin access?`} />
+                <ModalTwoContent>
+                    <p className="text-break-all">
+                        {getBoldFormattedText(
+                            c('unprivatization')
+                                .t`An administrator of the **${orgName}** organization (**${adminEmail}**) wants to enable administrator access for your account.`
+                        )}
+                    </p>
+                    <p>
+                        {c('unprivatization')
+                            .t`If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.`}
+                    </p>
+                    <p>{c('unprivatization').jt`You can ${reject} this request if you do not wish to proceed.`}</p>
+                </ModalTwoContent>
+                <ModalTwoFooter>
+                    <Button onClick={rest.onClose}>{c('unprivatization').t`Cancel`}</Button>
+                    <Button
+                        color="norm"
+                        loading={loading}
+                        onClick={() => {
+                            setAuthModal(true);
+                        }}
+                    >{c('unprivatization').t`Enable administrator access`}</Button>
+                </ModalTwoFooter>
+            </ModalTwo>
+        </>
     );
 };
 
