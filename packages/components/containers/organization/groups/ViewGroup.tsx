@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Panel, PanelHeader } from '@proton/atoms/Panel';
+import { PanelHeader } from '@proton/atoms/Panel';
+import { Panel } from '@proton/atoms/Panel/Panel';
 import { Copy, Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import type { Group } from '@proton/shared/lib/interfaces';

@@ -1,6 +1,7 @@
 ### Version 1.22.2
 
 -   Support for importing identities from other password managers
+-   Avoid importing duplicate aliases during Proton Pass import
 
 ### Version 1.22.1
 

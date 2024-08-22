@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
       "Add comment": [
         "Дадаць каментарый"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "Наладзіць памер шрыфту"
+      ],
+      "Alphabetical": [
+        "Па алфавіце"
       ],
       "and": [
         "і"
@@ -169,6 +184,9 @@
       ],
       "Right align": [
         "Выраўнаваць па правым краі"
+      ],
+      "Roman": [
+        "Рымскімі"
       ],
       "Save": [
         "Захаваць"
@@ -374,6 +392,12 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Адбылася памылка падчас загрузкі дакумента. Рэдактар заблакіраваны, каб прадухіліць пашкоджанне дакумента. Перазагрузіце старонку і паспрабуйце яшчэ раз."
+      ],
+      "Failed to export document.": [
+        "Не ўдалося экспартаваць дакумент."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Не ўдалося імпартаваць HTML па прычыне невядомай памылкі."
       ],

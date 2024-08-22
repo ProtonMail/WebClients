@@ -157,9 +157,6 @@
       "Allow": [
         "Tillåt"
       ],
-      "Always allow sending mail to group": [
-        "Tillåt alltid att skicka e-post till grupp"
-      ],
       "Apply": [
         "Tillämpa"
       ],
@@ -405,9 +402,6 @@
       ],
       "Discard changes": [
         "Kasta ändringar"
-      ],
-      "Domain names": [
-        "Domännamn"
       ],
       "Don't show again": [
         "Visa inte igen"
@@ -658,6 +652,9 @@
       "Keep logo": [
         "Behåll logga"
       ],
+      "Keep my subscription": [
+        "Behåll min prenumeration"
+      ],
       "label emails as": [
         "märk e-postmeddelanden som"
       ],
@@ -805,11 +802,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "Refresh the page": [
-        "Uppdatera sidan"
-      ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
@@ -1179,9 +1176,6 @@
       ],
       "Use authentication code": [
         "Använd autentiseringskod"
-      ],
-      "Use group sending permissions": [
-        "Använd behörigheter för gruppsändning"
       ],
       "Use recovery code": [
         "Använd återställningskod"
@@ -1606,14 +1600,6 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1635,6 +1621,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3654,6 +3648,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB lagringsutrymme"
+      ],
       "2 users": [
         "2 användare"
       ],
@@ -7019,11 +7016,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -7287,9 +7284,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå till din identitetsleverantör, hämta SAML-metadata för ${ appName } och importera den här."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Gruppadresser kan endast skapas för anpassade domäner. Gå till sida ${ linkToDomainPage } för att lägga till en anpassad domän."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppera e-post i samma konversation tillsammans i din inkorg eller visa dem separat."
@@ -8812,9 +8806,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME }-tjänster"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Med användargrupper kan du enkelt skicka e-post, dela data eller ändra inställningarna för specifika grupper av användare samtidigt."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Med ditt nuvarande paket kan du endast ta emot meddelanden med din adress @pm.me. Uppgradera för att skicka meddelanden och skapa ytterligare adresser med @pm.me."
       ],
@@ -8849,9 +8840,6 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Du använder för närvarande ${ usedMembers } av din ${ maxMembers } tillgängliga användarlicens.",
         "Du använder för närvarande ${ usedMembers } av dina ${ maxMembers } tillgängliga användarlicenser."
-      ],
-      "You are in no group nor invited to any": [
-        "Du är inte i någon grupp och inte heller inbjuden till någon"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du är inloggad på kontot ${ memberAddress }."
@@ -8979,6 +8967,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du kommer att omdirigeras till ${ destination } efter inloggning."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Du kommer förlora åtkomst till ${ planTitle }-funktioner på detta datum."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du behöver en ${ BRAND_NAME }-adress för att använda ${ MAIL_APP_NAME } och ${ CALENDAR_APP_NAME }"
@@ -9185,9 +9176,6 @@
     "invitation status": {
       "Pending": [
         "Väntande"
-      ],
-      "Rejected": [
-        "Avvisad"
       ],
       "Sending invite...": [
         "Skickar inbjudan …"
@@ -11421,32 +11409,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Get started for $1": [
-        "Kom igång för $1"
-      ],
-      "Get started for 1 €": [
-        "Kom igång för 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Kom igång för CHF 1"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11474,6 +11436,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Get started for $1": [
+        "Kom igång för $1"
+      ],
+      "Get started for 1 €": [
+        "Kom igång för 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom igång för CHF 1"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -11524,6 +11512,14 @@
         "${ n } meddelande per dag",
         "${ n } meddelanden per dag"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } delat ${ PASS_SHORT_APP_NAME }-valv per användare",
+        "${ n } delat ${ PASS_SHORT_APP_NAME }-valv per användare"
+      ],
+      "${ n } user": [
+        "${ n } användare",
+        "Upp till ${ n } användare"
+      ],
       "${ n } vault": [
         "${ n } valv",
         "${ n } valv"
@@ -11531,6 +11527,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dags filversionshistorik",
+        "${ options }-dagars filversionshistorik"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
@@ -11545,8 +11545,17 @@
       "${ size } attachment size": [
         "${ size } bilagestorlek"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } lagringsutrymme per användare"
+      ],
       "${ size } storage": [
         "${ size } lagringsutrymme"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - För ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - För alla ${ BRAND_NAME }-tjänster"
       ],
       "1 user": [
         "1 användare"
@@ -11571,6 +11580,12 @@
       ],
       "All ${ BRAND_NAME } services": [
         "Alla ${ BRAND_NAME }-tjänster"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alla premiumtjänster för ${ BRAND_NAME }. En enkel prenumeration"
       ],
       "Auto-delete Spam and Trash": [
         "Ta automatiskt bort skräppost och papperskorg"
@@ -11610,6 +11625,9 @@
       ],
       "Contact groups management": [
         "Hantering av kontaktgrupper"
+      ],
+      "Custom and secure business email": [
+        "Anpassad och säker e-post för företag"
       ],
       "Custom domains for email aliases": [
         "Anpassade domäner för e-postalias"
@@ -11714,6 +11732,9 @@
       "No-logs policy": [
         "Ingen loggpolicy"
       ],
+      "Online document editor": [
+        "Dokumentredigerare online"
+      ],
       "Organize items with multiple vaults": [
         "Organisera objekt med flera valv"
       ],
@@ -11723,8 +11744,14 @@
       "Password health": [
         "Lösenordshälsa"
       ],
+      "Password manager": [
+        "Lösenordshanterare"
+      ],
       "Password-protected Emails": [
         "Lösenordsskyddade e-postmeddelanden"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonsupport (20+ användare)"
       ],
       "Priority email support": [
         "Prioriterad e-postsupport"
@@ -11741,6 +11768,9 @@
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
+      ],
+      "Recover previous file versions": [
+        "Återställ tidigare filversioner"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelbundna kontroller av din kontosäkerhet. Vi varnar dig om du har svaga eller återanvända lösenord som behöver uppdateras."
@@ -11776,6 +11806,9 @@
         "Servrar i ${ vpnServersCountData.paid.countries }+ land",
         "Servrar i ${ vpnServersCountData.paid.countries }+ länder"
       ],
+      "Share files with no size limit": [
+        "Dela filer utan storleksbegränsning"
+      ],
       "Sign in as user": [
         "Logga in som användare"
       ],
@@ -11799,6 +11832,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
       ],
       "Tailored to your needs": [
         "Skräddarsytt efter dina behov"
@@ -11838,6 +11874,9 @@
       ],
       "Unlimited messages per day": [
         "Obegränsat antal meddelanden per dag"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Obegränsat delade ${ PASS_SHORT_APP_NAME }-valv per användare"
       ],
       "Unlimited shared vaults with access permissions": [
         "Obegränsat antal delade valv med åtkomstbehörigheter"
@@ -11976,6 +12015,9 @@
       "Popular": [
         "Populär"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Skydda känslig företagsinformation och samarbeta säkert."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Skydda din familjs integritet med alla ${ BRAND_NAME }-tjänster kombinerade."
       ],
@@ -12063,17 +12105,6 @@
         "Ditt valda paket: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -12092,6 +12123,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -13881,12 +13923,6 @@
       ],
       "Continue to Safety Review": [
         "Fortsätt till säkerhetsgranskning"
-      ],
-      "Critical issues found. You are at risk of losing access to your account and data.": [
-        "Kritiska problem hittades. Du riskerar att förlora åtkomst till ditt konto och data."
-      ],
-      "Critical issues found. You are at risk of losing access to your data.": [
-        "Kritiska problem hittades. Du riskerar att förlora åtkomst till dina data."
       ],
       "Device-based recovery enabled": [
         "Enhetsbaserad återställning aktiverad"
@@ -16214,10 +16250,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -16518,6 +16554,9 @@
       ],
       "Encryption and keys": [
         "Kryptering och nycklar"
+      ],
+      "Enter 2FA code": [
+        "Ange 2FA-kod"
       ],
       "Enter endpoints into your identity provider": [
         "Ange ändpunkter i din identitetsleverantör"
@@ -17496,9 +17535,6 @@
       "Sending member invitation": [
         "Skickar medlemsinbjudan"
       ],
-      "User rejected invitation": [
-        "Användare avvisade inbjudan"
-      ],
       "Waiting user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"
       ]
@@ -17911,6 +17947,11 @@
       ],
       "You're Invited.": [
         "Du är inbjuden."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Ett säkrare/enklare sätt att förvara och skicka Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -157,9 +157,6 @@
       "Allow": [
         "Tillad"
       ],
-      "Always allow sending mail to group": [
-        "Tillad altid at sende mail til gruppen"
-      ],
       "Apply": [
         "Anvend"
       ],
@@ -394,9 +391,6 @@
       "Disable": [
         "Deaktivér"
       ],
-      "Disable E2EE group mail encryption": [
-        "Deaktiver kryptering af E2EE-gruppemail"
-      ],
       "Disable recovery phrase": [
         "Deaktiver gendannelsessætning"
       ],
@@ -408,9 +402,6 @@
       ],
       "Discard changes": [
         "Kassér ændringer"
-      ],
-      "Domain names": [
-        "Domænenavne"
       ],
       "Don't show again": [
         "Vis ikke igen"
@@ -501,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Aktivér enhedsbaseret gendannelse"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Aktiver kryptering af E2EE-gruppemail"
       ],
       "Enable multi-user support": [
         "Aktivere understøttelse af flere brugere"
@@ -664,6 +652,9 @@
       "Keep logo": [
         "Behold logo"
       ],
+      "Keep my subscription": [
+        "Bevar mit abonnement"
+      ],
       "label emails as": [
         "giv e-mails etiketten"
       ],
@@ -811,11 +802,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "Refresh the page": [
-        "Opdater siden"
-      ],
       "refresh the page": [
         "opdater siden"
+      ],
+      "Refresh the page": [
+        "Opdater siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -1185,9 +1176,6 @@
       ],
       "Use authentication code": [
         "Brug godkendelseskode"
-      ],
-      "Use group sending permissions": [
-        "Brug tilladelser til gruppeafsendelse"
       ],
       "Use recovery code": [
         "Brug gendannelseskode"
@@ -1616,14 +1604,6 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1645,6 +1625,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3668,11 +3656,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Faktureres hvert 2. år til ${ amountBilled }. Rabatter er baseret på den månedlige standardpris."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Faktureres årligt til ${ amountBilled }. Spar ${ amountSave } på 2 enkeltstående ${ BRAND_NAME }. Ubegrænset årlige abonnementer."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB lagerplads"
+      ],
       "2 users": [
         "2 brugere"
       ],
@@ -7039,11 +7033,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerede servere"
-      ],
       "Dedicated servers": [
         "Dedikerede servere"
+      ],
+      "dedicated servers": [
+        "dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -7307,9 +7301,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Gruppeadresser kan kun oprettes for tilpassede domæner. Gå til siden ${ linkToDomainPage } for at tilføje et tilpasset domæne."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppér e-mails i den samme samtale i din indbakke, eller vis dem separat."
@@ -8865,9 +8856,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypteret ${ BRAND_NAME }-adresse kan du bruge alle ${ BRAND_NAME }-tjenester"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Med brugergrupper kan du nemt sende mails, dele data eller ændre indstillingerne for bestemte grupper af brugere på én gang."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Med dit nuværende abonnement kan du kun modtage beskeder med din @pm.me-adresse. Opgrader for at sende beskeder og oprette yderligere adresser med @pm.me."
       ],
@@ -8910,9 +8898,6 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens.",
         "Du bruger i øjeblikket ${ usedMembers } af dine ${ maxMembers } tilgængelige brugerlicenser."
-      ],
-      "You are in no group nor invited to any": [
-        "Du er ikke i gruppe eller inviteret til nogen"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du er logget ind på kontoen ${ memberAddress }."
@@ -9040,6 +9025,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil blive omdirigeret til ${ destination } efter login."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Du vil miste adgang til ${ planTitle }-funktioner på denne dato."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du skal bruge en ${ BRAND_NAME }-adresse for at bruge ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
@@ -9246,9 +9234,6 @@
     "invitation status": {
       "Pending": [
         "Afventer"
-      ],
-      "Rejected": [
-        "Afvist"
       ],
       "Sending invite...": [
         "Sender invitation..."
@@ -11482,32 +11467,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Get started for $1": [
-        "Kom i gang for $1"
-      ],
-      "Get started for 1 €": [
-        "Kom i gang for 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Kom i gang for 1 CHF"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsæt med Free"
@@ -11535,6 +11494,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for $1": [
+        "Kom i gang for $1"
+      ],
+      "Get started for 1 €": [
+        "Kom i gang for 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Kom i gang for 1 CHF"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -11585,6 +11570,14 @@
         "${ n } daglig besked",
         "${ n } daglige beskeder"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } delt ${ PASS_SHORT_APP_NAME } boks pr. bruger",
+        "${ n } delt ${ PASS_SHORT_APP_NAME } boks pr. bruger"
+      ],
+      "${ n } user": [
+        "${ n } bruger",
+        "Op til ${ n } brugere"
+      ],
       "${ n } vault": [
         "${ n } boks",
         "${ n } bokse"
@@ -11592,6 +11585,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dags filversionshistorik",
+        "${ options }-dags filversionshistorik"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
@@ -11606,8 +11603,17 @@
       "${ size } attachment size": [
         "${ size } vedhæftningsstørrelse"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } sikker lagerplads pr. bruger"
+      ],
       "${ size } storage": [
         "${ size } lagerplads"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Til ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Til alle ${ BRAND_NAME }-tjenester"
       ],
       "1 user": [
         "1 bruger"
@@ -11635,6 +11641,12 @@
       ],
       "All ${ BRAND_NAME } services": [
         "Alle ${ BRAND_NAME }-tjenester"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle premium ${ BRAND_NAME }-tjenester. Ét nemt abonnement"
       ],
       "Auto-delete Spam and Trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
@@ -11674,6 +11686,9 @@
       ],
       "Contact groups management": [
         "Administration af kontaktgrupper"
+      ],
+      "Custom and secure business email": [
+        "Tilpasset og sikker erhvervsmail"
       ],
       "Custom domains for email aliases": [
         "Brugerdomæner til e-mailaliasser"
@@ -11781,6 +11796,9 @@
       "No-logs policy": [
         "Ingen logfiler-politik"
       ],
+      "Online document editor": [
+        "Online dokumentredigering"
+      ],
       "Organize items with multiple vaults": [
         "Organiser elementer med flere bokse"
       ],
@@ -11790,8 +11808,14 @@
       "Password health": [
         "Adgangskode-sundhed"
       ],
+      "Password manager": [
+        "Adgangskodehåndtering"
+      ],
       "Password-protected Emails": [
         "Adgangskodebeskyttede e-mails"
+      ],
+      "Phone support (20+ users)": [
+        "Telefon-support (20+ brugere)"
       ],
       "Priority email support": [
         "Prioriteret e-mail-support"
@@ -11808,6 +11832,9 @@
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
+      ],
+      "Recover previous file versions": [
+        "Gendan tidligere filversioner"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmæssig kontrol af din kontosikkerhed. Vi advarer dig, hvis dine adgangskoder er svage eller genbruges og skal opdateres."
@@ -11843,6 +11870,9 @@
         "Servere i ${ vpnServersCountData.paid.countries }+ land",
         "Servere i ${ vpnServersCountData.paid.countries }+ lande"
       ],
+      "Share files with no size limit": [
+        "Del filer uden størrelsesbegrænsning"
+      ],
       "Sign in as user": [
         "Log ind som bruger"
       ],
@@ -11866,6 +11896,9 @@
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
       ],
       "Tailored to your needs": [
         "Skræddersyet til dine behov"
@@ -11905,6 +11938,9 @@
       ],
       "Unlimited messages per day": [
         "Ubegrænset beskedafsendelse pr. dag"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Ubegrænset deling af ${ PASS_SHORT_APP_NAME } bokse pr. bruger"
       ],
       "Unlimited shared vaults with access permissions": [
         "Ubegrænsede delte bokse med adgangstilladelser"
@@ -12043,6 +12079,9 @@
       "Popular": [
         "Populær"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Beskyt følsomme erhvervsoplysninger, og samarbejd sikkert."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Beskyt din families privatliv med alle ${ BRAND_NAME } tjenester kombineret."
       ],
@@ -12130,14 +12169,6 @@
         "Dit valgte abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -12156,6 +12187,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås op for premium-funktioner ved at opgradere"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -12273,6 +12312,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personliggør din e-mail-signatur med logoer, billeder, ikoner til sociale medier, links til dine kontaktoplysninger og meget mere."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesupport-team i europæisk åbningstid for kunder med 20 eller flere brugere"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer, at beskeder kan tilgås af ${ BRAND_NAME } eller tredjeparter. De eneste personer, der kan læse beskederne, er afsenderen og den tilsigtede modtager."
@@ -13921,12 +13963,6 @@
       ],
       "Continue to Safety Review": [
         "Fortsæt til sikkerhedsgennemgang"
-      ],
-      "Critical issues found. You are at risk of losing access to your account and data.": [
-        "Kritiske problemer fundet. Du risikerer at miste adgangen til din konto og dine data."
-      ],
-      "Critical issues found. You are at risk of losing access to your data.": [
-        "Kritiske problemer fundet. Du risikerer at miste adgang til dine data."
       ],
       "Device-based recovery enabled": [
         "Enhedsbaseret gendannelse aktiveret"
@@ -16304,11 +16340,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-All address": [
-        "Catch-All-adresse"
-      ],
       "Catch-all address": [
         "Catch-all-adresse"
+      ],
+      "Catch-All address": [
+        "Catch-All-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"
@@ -16608,6 +16644,9 @@
       ],
       "Encryption and keys": [
         "Kryptering og nøgler"
+      ],
+      "Enter 2FA code": [
+        "Indtast 2FA-kode"
       ],
       "Enter endpoints into your identity provider": [
         "Angiv slutpunkter i din identitetsudbyder"
@@ -17577,9 +17616,6 @@
       "Sending member invitation": [
         "Sender medlemsinvitation"
       ],
-      "User rejected invitation": [
-        "Bruger afviste invitation"
-      ],
       "Waiting user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"
       ]
@@ -17969,6 +18005,11 @@
       ],
       "You're Invited.": [
         "Du er inviteret."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "En sikrere/nemmere måde at opbevare og sende Bitcoin på"
       ]
     },
     "wallet_signup_2024:Bug category": {

@@ -1060,6 +1060,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "O ${ PASS_APP_NAME } exibirá o favicon do item através do proxy de imagem anonimizado da ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } importará somente inícios de sessão, notas, cartões de crédito e identidades."
+      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } exigirá sua senha da ${ BRAND_NAME } para acessar seus dados no modo off-line."
       ],
@@ -1480,6 +1483,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN. Você será desconectado após 3 tentativas fracassadas."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Nossos alertas são mais cautelosos. Se você não reconhece nenhuma das informações violadas, pode ignorar este relatório com segurança."
       ],
       "Owner": [
         "Proprietário"
@@ -2443,6 +2449,9 @@
       ],
       "Unnamed Credit Card": [
         "Cartão de crédito sem nome"
+      ],
+      "Unnamed identity": [
+        "Identidade sem nome"
       ],
       "Unnamed item": [
         "Item sem nome"

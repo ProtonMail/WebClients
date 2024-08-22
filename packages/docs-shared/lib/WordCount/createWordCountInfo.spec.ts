@@ -30,6 +30,62 @@ test('Em dashes delimit words', () => {
   expect(nonWhitespaceCharacterCount).toBe(19)
 })
 
+test('Special characters and symbols', () => {
+  const text = 'The cost is $5.99 @store #bigDeal'
+
+  const { wordCount, characterCount, nonWhitespaceCharacterCount } = createWordCountInfo(text)
+
+  /** Matches other online word counters and Docs products*/
+  expect(wordCount).toBe(7)
+  expect(characterCount).toBe(33)
+  expect(nonWhitespaceCharacterCount).toBe(28)
+})
+
+test('Numbers in words', () => {
+  const text = 'The chemical formula for water is H2O and the pandemic is COVID-19'
+  const { wordCount } = createWordCountInfo(text)
+
+  expect(wordCount).toBe(12)
+})
+
+test('Accented Characters and diacritics', () => {
+  const text = 'Café culture is thriving in the city, with many façades reflecting a historical charm.'
+  const { wordCount } = createWordCountInfo(text)
+
+  expect(wordCount).toBe(14)
+})
+
+test('Long text and paragraphs', () => {
+  // simulate a large gap in text
+  const longText = 'This is a long paragraph. ' + ' '.repeat(1000) + 'Another sentence.'
+  const { wordCount } = createWordCountInfo(longText)
+
+  expect(wordCount).toBe(7)
+})
+
+test('Consecutive punctuation marks', () => {
+  const text = 'Wait... what?!!! This is incredible...'
+  const { wordCount } = createWordCountInfo(text)
+
+  expect(wordCount).toBe(5)
+})
+
+test('URLs and email addresses', () => {
+  const text = 'Please visit our site at https://example.com or contact us at info@example.com'
+  const { wordCount } = createWordCountInfo(text)
+
+  /** Matches other online word counters and Docs products*/
+  expect(wordCount).toBe(15)
+})
+
+test('Abbreviations and acronyms', () => {
+  const text = 'I live in the U.S.A. and work for NASA.'
+  const { wordCount } = createWordCountInfo(text)
+
+  /** Matches other online word counters and Docs products*/
+  expect(wordCount).toBe(11)
+})
+
 test('Hyphens do not delimit words', () => {
   const text = 'Btw-hello-world-foo'
 
@@ -51,6 +107,26 @@ test('Whitespace', () => {
 
 test('Leading and trailing whitespace', () => {
   expect(createWordCountInfo('               The quick brown fox jumps over the lazy dog           ').wordCount).toBe(9)
+})
+
+test('The\u00a0quick\u00a0brown\u00a0fox\u00a0jumps\u00a0over\u00a0the\u00a0lazy\u00a0dog', () => {
+  const text = 'The\u00a0quick\u00a0brown\u00a0fox\u00a0jumps\u00a0over\u00a0the\u00a0lazy\u00a0dog'
+
+  const { wordCount, characterCount, nonWhitespaceCharacterCount } = createWordCountInfo(text)
+
+  expect(wordCount).toBe(9)
+  expect(characterCount).toBe(43)
+  expect(nonWhitespaceCharacterCount).toBe(35)
+})
+
+test('contractions with apostrophe should not count as two separate words', () => {
+  const text = "shouldn't couldn't wouldn't"
+
+  const { wordCount, characterCount, nonWhitespaceCharacterCount } = createWordCountInfo(text)
+
+  expect(wordCount).toBe(3)
+  expect(characterCount).toBe(27)
+  expect(nonWhitespaceCharacterCount).toBe(25)
 })
 
 test('Spanish', () => {

@@ -32,7 +32,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     ) => {
         const { APP_NAME } = useConfig();
 
-        const availableApps = getAvailableApps({ user });
+        const availableApps = getAvailableApps({ user, context: 'dropdown' });
 
         if (availableApps.length <= 1) {
             return null;

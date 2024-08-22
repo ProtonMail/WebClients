@@ -157,9 +157,6 @@
       "Allow": [
         "Erlauben"
       ],
-      "Always allow sending mail to group": [
-        "Senden von E-Mails an die Gruppe immer erlauben"
-      ],
       "Apply": [
         "Übernehmen"
       ],
@@ -394,9 +391,6 @@
       "Disable": [
         "Deaktivieren"
       ],
-      "Disable E2EE group mail encryption": [
-        "Ende-zu-Ende-Verschlüsselung für Gruppen-E-Mails deaktivieren"
-      ],
       "Disable recovery phrase": [
         "Wiederherstellungsphrase deaktivieren"
       ],
@@ -408,9 +402,6 @@
       ],
       "Discard changes": [
         "Änderungen verwerfen"
-      ],
-      "Domain names": [
-        "Domänennamen"
       ],
       "Don't show again": [
         "Nicht wieder anzeigen"
@@ -501,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Gerätebasierte Wiederherstellung aktivieren"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Ende-zu-Ende-Verschlüsselung für Gruppen-E-Mails aktivieren"
       ],
       "Enable multi-user support": [
         "Mehrbenutzerunterstützung aktivieren"
@@ -664,6 +652,9 @@
       "Keep logo": [
         "Logo behalten"
       ],
+      "Keep my subscription": [
+        "Behalte mein Abonnement"
+      ],
       "label emails as": [
         "Nachrichten folgender Kategorie zuordnen"
       ],
@@ -811,11 +802,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "Refresh the page": [
-        "Seite aktualisieren"
-      ],
       "refresh the page": [
         "aktualisiere die Seite"
+      ],
+      "Refresh the page": [
+        "Seite aktualisieren"
       ],
       "Reload": [
         "Neu laden"
@@ -1185,9 +1176,6 @@
       ],
       "Use authentication code": [
         "Authentifizierungscode verwenden"
-      ],
-      "Use group sending permissions": [
-        "Verwende Gruppensenderechte"
       ],
       "Use recovery code": [
         "Wiederherstellungscode verwenden"
@@ -1616,14 +1604,6 @@
         "Wähle dein Jahresendangebot"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1645,6 +1625,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -3668,11 +3656,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Alle zwei Jahre für ${ amountBilled } in Rechnung gestellt. Rabatte werden auf Grundlage des monatlichen Standardpreises berechnet."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Jährlich für ${ amountBilled } in Rechnung gestellt. Spare ${ amountSave } bei 2 individuellen ${ BRAND_NAME } Unlimited-Jahresabonnements."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB Speicherplatz"
+      ],
       "2 users": [
         "2 Benutzer"
       ],
@@ -6883,6 +6877,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Stärke die Markenidentität deines Unternehmens und schaffe ein konsistentes Online-Erlebnis für deine Benutzer."
       ],
+      "Breach Custom Email Created": [
+        "Persönliche E-Mail im Falle einer Datenpanne erstellt"
+      ],
+      "Breach Custom Email Deleted": [
+        "Persönliche E-Mail im Falle einer Datenpanne gelöscht"
+      ],
+      "Breach Custom Email Validated": [
+        "Persönliche E-Mail im Falle einer Datenpanne validiert"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "Standardmäßig können Organisationsmitglieder nur Tresore exportieren, deren Eigentümer sie sind. Wenn diese Option aktiviert ist, können sie keine Daten exportieren."
       ],
@@ -7027,11 +7030,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "dedicated servers": [
-        "dedizierte Server"
-      ],
       "Dedicated servers": [
         "Dezidierte Server"
+      ],
+      "dedicated servers": [
+        "dedizierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -7295,9 +7298,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gehe zu deinem Identitätsanbieter, besorge die SAML-Metadaten für ${ appName } und importiere sie hier."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Gruppenadressen können nur für benutzerdefinierte Domänen erstellt werden. Gehen Sie zur Seite ${ linkToDomainPage }, um eine benutzerdefinierte Domäne hinzuzufügen."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppiere E-Mails in derselben Konversation in deinem Posteingang oder zeige diese getrennt an."
@@ -7839,7 +7839,7 @@
         "Andere Benutzer innerhalb deiner Organisation sehen deine belegten Zeitfenster. Es werden keine Termindetails geteilt."
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Unsere Warnungen sind eher auf der Seite der Vorsicht angesiedelt. Wenn du keine der gefundenen Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
+        "Unsere Warnungen sind tendenziell übervorsichtig. Wenn du keine der gefundenen Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Veraltete Wiederherstellungsdatei. Aktualisiere diese, um den Zugriff auf deine Daten zu gewährleisten."
@@ -8853,9 +8853,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Mit einer verschlüsselten ${ BRAND_NAME }-Adresse kannst du alle ${ BRAND_NAME }-Dienste nutzen."
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Mit Benutzergruppen kannst du problemlos E-Mails versenden, Daten gemeinsam nutzen oder die Einstellungen für bestimmte Benutzergruppen auf einmal ändern."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Mit deinem aktuellen Abonnement kannst du mit deiner @pm.me-Adresse nur Nachrichten empfangen. Führe ein Upgrade durch, um Nachrichten senden und weitere @pm.me-Adressen hinzufügen zu können."
       ],
@@ -8898,9 +8895,6 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Du verwendest aktuell ${ usedMembers } von deiner ${ maxMembers } verfügbaren Benutzerlizenz.",
         "Du verwendest aktuell ${ usedMembers } von deinen ${ maxMembers } verfügbaren Benutzerlizenzen."
-      ],
-      "You are in no group nor invited to any": [
-        "Du gehörst keiner Gruppe an und bist auch zu keiner eingeladen"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du bist beim Konto ${ memberAddress } angemeldet."
@@ -9028,6 +9022,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Nach der Anmeldung wirst du zu ${ destination } weitergeleitet."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "An diesem Datum verlierst du den Zugang zu ${ planTitle }-Funktionen."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du benötigst eine ${ BRAND_NAME }-Adresse um ${ MAIL_APP_NAME } und ${ CALENDAR_APP_NAME } zu nutzen"
@@ -9234,9 +9231,6 @@
     "invitation status": {
       "Pending": [
         "Ausstehend"
-      ],
-      "Rejected": [
-        "Abgelehnt"
       ],
       "Sending invite...": [
         "Einladung wird versendet..."
@@ -11470,32 +11464,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Get started for $1": [
-        "Starten Sie für 1 $"
-      ],
-      "Get started for 1 €": [
-        "Starten Sie für 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Starten Sie für 1 CHF"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Mit Free fortfahren"
@@ -11523,6 +11491,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Get started for $1": [
+        "Starten Sie für 1 $"
+      ],
+      "Get started for 1 €": [
+        "Starten Sie für 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Starten Sie für 1 CHF"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
       ]
     },
     "new_plans: feature": {
@@ -11573,6 +11567,14 @@
         "${ n } Nachricht pro Tag",
         "${ n } Nachrichten pro Tag"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } geteilter ${ PASS_SHORT_APP_NAME } Tresor pro Benutzer",
+        "${ n } geteilte ${ PASS_SHORT_APP_NAME } Tresore pro Benutzer"
+      ],
+      "${ n } user": [
+        "${ n } Benutzer",
+        "Bis zu ${ n } Benutzer"
+      ],
       "${ n } vault": [
         "${ n } Tresor",
         "${ n } Tresore"
@@ -11580,6 +11582,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
+      ],
+      "${ options }-day file version history": [
+        "Dateiversionsverlauf für ${ options } Tag",
+        "Dateiversionsverlauf für ${ options } Tage"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } mit ${ n } hide-my-email-Alias",
@@ -11594,8 +11600,17 @@
       "${ size } attachment size": [
         "Anhänge mit einer Größe von ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } sicherer Speicherplatz pro Benutzer"
+      ],
       "${ size } storage": [
         "${ size } Speicherplatz"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - für ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - für alle ${ BRAND_NAME }-Dienste"
       ],
       "1 user": [
         "1 Benutzer"
@@ -11623,6 +11638,12 @@
       ],
       "All ${ BRAND_NAME } services": [
         "Alle ${ BRAND_NAME }-Dienste"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle ${ BRAND_NAME } Standarddienste (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle ${ BRAND_NAME } Premium-Dienste. Ein einfaches Abonnement"
       ],
       "Auto-delete Spam and Trash": [
         "Spam und Papierkorb automatisch löschen"
@@ -11662,6 +11683,9 @@
       ],
       "Contact groups management": [
         "Kontaktgruppenverwaltung"
+      ],
+      "Custom and secure business email": [
+        "Benutzerdefinierte und sichere geschäftliche E-Mails"
       ],
       "Custom domains for email aliases": [
         "Eigene Domains für E-Mail-Aliasse"
@@ -11769,6 +11793,9 @@
       "No-logs policy": [
         "No-Logs-Richtlinie"
       ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
       "Organize items with multiple vaults": [
         "Strukturiere Einträge mit mehreren Tresoren"
       ],
@@ -11778,8 +11805,14 @@
       "Password health": [
         "Passwortsicherheit"
       ],
+      "Password manager": [
+        "Passwort-Manager"
+      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonischer Support (ab 20 Benutzern)"
       ],
       "Priority email support": [
         "Priorisierter E-Mail-Support"
@@ -11796,6 +11829,9 @@
       "Protect ${ n } device at a time": [
         "Schütze ${ n } Gerät gleichzeitig",
         "Schütze ${ n } Geräte gleichzeitig"
+      ],
+      "Recover previous file versions": [
+        "Stelle vorherige Dateiversionen wieder her"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmäßige Überprüfungen der Sicherheit deines Kontos. Wir warnen dich, wenn du schwache oder wiederverwendete Passwörter hast, die aktualisiert werden müssen."
@@ -11831,6 +11867,9 @@
         "Server in mehr als ${ vpnServersCountData.paid.countries } Land",
         "Server in mehr als ${ vpnServersCountData.paid.countries } Ländern"
       ],
+      "Share files with no size limit": [
+        "Teile Dateien ohne Größenbeschränkung"
+      ],
       "Sign in as user": [
         "Als Benutzer anmelden"
       ],
@@ -11854,6 +11893,9 @@
       ],
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
       "Tailored to your needs": [
         "Auf deine Bedürfnisse zugeschnitten"
@@ -11893,6 +11935,9 @@
       ],
       "Unlimited messages per day": [
         "Unbegrenzte Anzahl von Nachrichten pro Tag"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Unbegrenzte geteilte ${ PASS_SHORT_APP_NAME } Tresore pro Benutzer"
       ],
       "Unlimited shared vaults with access permissions": [
         "Unbegrenzte gemeinsame Tresore mit Zugriffsberechtigungen"
@@ -12031,6 +12076,9 @@
       "Popular": [
         "Beliebt"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Schütze sensible Geschäftsinformationen und arbeite sicher zusammen."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Schütze die Privatsphäre deiner Familie durch die Kombination aller ${ BRAND_NAME }-Dienste."
       ],
@@ -12118,14 +12166,6 @@
         "Das von dir ausgewählte Abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -12144,6 +12184,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -12261,6 +12309,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonische Unterstützung ist durch das ${ BRAND_NAME }-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 20 oder mehr Benutzern verfügbar."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindert den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
@@ -13865,6 +13916,15 @@
       ]
     },
     "Safety review": {
+      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
+        " **Aktiviere die Wiederherstellung per Mobiltelefon**, um den Zugang zu deinem Konto wiederzuerlangen, wenn du dein Passwort vergisst."
+      ],
+      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
+        "Wenn du dein Passwort zurücksetzt, nutzt ${ BRAND_NAME } diese Adresse, um einen Wiederherstellungscode per E-Mail zuzusenden."
+      ],
+      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
+        "Wenn du dein Passwort zurücksetzt, nutzt ${ BRAND_NAME } diese Adresse, um einen Wiederherstellungscode per SMS zuzusenden."
+      ],
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery }, um sicherzustellen, dass deine Daten wiederhergestellt werden können."
       ],
@@ -13900,12 +13960,6 @@
       ],
       "Continue to Safety Review": [
         "Weiter zur Sicherheitsüberprüfung"
-      ],
-      "Critical issues found. You are at risk of losing access to your account and data.": [
-        "Kritische Probleme gefunden. Es besteht die Gefahr, dass du den Zugriff auf dein Konto und deine Daten verlierst."
-      ],
-      "Critical issues found. You are at risk of losing access to your data.": [
-        "Kritische Probleme gefunden. Es besteht die Gefahr, dass du den Zugriff auf deine Daten verlierst."
       ],
       "Device-based recovery enabled": [
         "Gerätebasierte Wiederherstellung aktiviert"
@@ -13979,11 +14033,17 @@
       "There was an error verifying your recovery email": [
         "Fehler beim Verifizieren deiner Wiederherstellungs-E-Mail-Adresse."
       ],
+      "There was an error verifying your recovery phone": [
+        "Bei der Überprüfung deines Mobiltelefons zur Wiederherstellung trat ein Fehler auf"
+      ],
       "to automatically recover your data when you log into a trusted device": [
         ", um deine Daten automatisch wiederherzustellen, wenn du dich bei einem vertrauenswürdigen Gerät anmeldest."
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Um sicherzugehen, dass es sich um deine E-Mail-Adresse handelt, gib den an ${ boldEmail } gesendeten Verifizierungscode ein."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Um sicherzugehen, dass es sich um deine Telefonnummer handelt, gib den an ${ boldPhoneNumber } gesendeten Verifizierungscode ein."
       ],
       "to recover your account and data if you're ever locked out": [
         ", um dein Konto und deine Daten wiederherzustellen, wenn du dich ausschließt."
@@ -14012,6 +14072,9 @@
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Bei der Verifizierung deiner Wiederherstellungs-E-Mail-Adresse ist ein Fehler aufgetreten. Bitte versuche es später noch einmal oder kontaktiere den Support, wenn das Problem weiterhin besteht."
       ],
+      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
+        "Bei der Überprüfung deines Mobiltelefons zur Wiederherstellung trat ein Fehler auf.\nBitte versuche es später erneut oder wende dich an den Support, wenn das Problem weiterhin besteht."
+      ],
       "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
         "Wenn du die gerätebasierte Wiederherstellung aktivierst, speichert ${ BRAND_NAME } einen verschlüsselten Backup-Schlüsselbund als Datei im Webspeicher deines Browsers."
       ],
@@ -14029,6 +14092,9 @@
       ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Du kannst deine Wiederherstellungs-E-Mail verwenden, um wieder Zugang zu deinem Konto zu erhalten, wenn du dein Passwort vergessen hast."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Du kannst dein Mobiltelefon für die Wiederherstellung benutzen, um den Zugang zu deinem Konto wiederzuerlangen, wenn du dein Passwort vergisst."
       ],
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Du hast bereits ein Wiederherstellungskit heruntergeladen. Wenn du ein neues herunterlädst, wird das alte Kit **deaktiviert**."
@@ -14089,6 +14155,12 @@
       ],
       "Your recovery phone can **only recover access to your account**.": [
         "Deine Wiederherstellungs-Telefonnummer kann **nur den Zugang zu deinem Konto** wiederherstellen."
+      ],
+      "Your recovery phone has been enabled": [
+        "Dein Mobiltelefon für die Wiederherstellung wurde aktiviert"
+      ],
+      "Your recovery phone is set": [
+        "Dein Mobiltelefon für die Wiederherstellung wurde festgelegt"
       ]
     },
     "saml: Action": {
@@ -16265,11 +16337,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-All address": [
-        "Catch-all-Adresse"
-      ],
       "Catch-all address": [
         "Catch-all-Weiterleitungsadresse"
+      ],
+      "Catch-All address": [
+        "Catch-all-Adresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -16569,6 +16641,9 @@
       ],
       "Encryption and keys": [
         "Verschlüsselung und Schlüssel"
+      ],
+      "Enter 2FA code": [
+        "2FA Code eingeben"
       ],
       "Enter endpoints into your identity provider": [
         "Trage die Endpunkte bei deinem Identitätsanbieter ein."
@@ -17538,9 +17613,6 @@
       "Sending member invitation": [
         "Mitgliedseinladung wird versendet"
       ],
-      "User rejected invitation": [
-        "Benutzer hat Einladung abgelehnt"
-      ],
       "Waiting user to accept the invitation": [
         "Auf die Annahme der Einladung wartender Benutzer"
       ]
@@ -17930,6 +18002,11 @@
       ],
       "You're Invited.": [
         "Du bist eingeladen."
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Eine sicherere und einfachere Art Bitcoin zu besitzen und zu versenden"
       ]
     },
     "wallet_signup_2024:Bug category": {
