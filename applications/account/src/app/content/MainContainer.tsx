@@ -305,7 +305,7 @@ const MainContainer = () => {
             return <Redirect to={`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`} />;
         }
     } else if (getIsPublicUserWithoutProtonAddress(user)) {
-        if (!getPublicUserProtonAddressApps().includes(appFromPathname!)) {
+        if (!getPublicUserProtonAddressApps('app').includes(appFromPathname!)) {
             return <Redirect to={`/${getSlugFromApp(APPS.PROTONPASS)}`} />;
         }
     }

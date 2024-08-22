@@ -793,11 +793,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "Refresh the page": [
-        "Pagina vernieuwen"
-      ],
       "refresh the page": [
         "pagina vernieuwen"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
       ],
       "Reload": [
         "Opnieuw laden"
@@ -1592,14 +1592,6 @@
         "Selecteer uw eindejaarsaanbieding"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement. Maar u kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als u zich inschrijft voor **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB opslagruimte (2x meer dan binnen elk ander abonnement)"
@@ -1621,6 +1613,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Het ${ plan }-abonnement is tijdelijk terug"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement. Maar u kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als u zich inschrijft voor **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5097,7 +5097,7 @@
         "Verlaat Visionary-abonnement"
       ],
       "Lifetime accounts cannot join a group plan.": [
-        "Levenslange accounts kunnen niet deelnemen aan een groepsplan."
+        "Levenslange accounts kunnen niet deelnemen aan een groepsabonnement."
       ],
       "Manage addresses.": [
         "Beheer adressen."
@@ -5172,7 +5172,7 @@
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
       ],
       "Your cannot accept this invitation with your current plan.": [
-        "Je kan deze uitnodiging niet accepteren met je huidige abonnement."
+        "U kunt deze uitnodiging niet accepteren met uw huidige abonnement."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6886,6 +6886,10 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die je wilt importeren."
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Maak een beveiligde cloud voor ${ n } lid",
+        "Maak een beveiligde cloud voor ${ n } leden"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creëer en beheer sub-accounts en wijs aan deze sub-accounts e-mailadressen van uw eigen domein toe."
       ],
@@ -6944,11 +6948,11 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
-      "dedicated servers": [
-        "toegewijde servers"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "dedicated servers": [
+        "toegewijde servers"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -8743,9 +8747,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Met een versleuteld ${ BRAND_NAME }-adres, kan je gebruik maken van alle ${ BRAND_NAME }-diensten"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Met gebruikersgroepen kunt u gemakkelijk e-mails verzenden, gegevens delen, of instellingen voor specifieke groepen gebruikers in één keer wijzigen."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Met je huidige abonnement kunt u met uw @pm.me-adres enkel berichten ontvangen. Upgrade om berichten te verzenden en extra adressen aan te maken met @pm.me."
       ],
@@ -8788,9 +8789,6 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicentie",
         "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicenties"
-      ],
-      "You are in no group nor invited to any": [
-        "U bevindt zich niet in een groep en bent er voor geen uitgenodigd"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "U bent ingelogd op het account ${ memberAddress }."
@@ -9116,9 +9114,6 @@
     "invitation status": {
       "Pending": [
         "In behandeling"
-      ],
-      "Rejected": [
-        "Afgewezen"
       ]
     },
     "Invoice state display as badge": {
@@ -11313,32 +11308,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Get started for $1": [
-        "Ga aan de slag voor $1"
-      ],
-      "Get started for 1 €": [
-        "Ga aan de slag voor 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Ga aan de slag voor CHF 1"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Doorgaan met gratis"
@@ -11366,6 +11335,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgraden naar ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Get started for $1": [
+        "Ga aan de slag voor $1"
+      ],
+      "Get started for 1 €": [
+        "Ga aan de slag voor € 1"
+      ],
+      "Get started for CHF 1": [
+        "Ga aan de slag voor CHF 1"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
       ]
     },
     "new_plans: feature": {
@@ -11961,14 +11956,6 @@
         "Uw geselecteerde abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -11987,6 +11974,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -13251,7 +13246,7 @@
         "MM/JJ"
       ],
       "Payment Processing": [
-        "Betaling Wordt Verwerkt"
+        "Betaling wordt verwerkt"
       ],
       "Please add a payment method in the dashboard to continue.": [
         "Voeg een betaalmethode toe in het dashboard om door te gaan."
@@ -14881,7 +14876,7 @@
         "${ planName } geeft uw team wat ze nodig hebben om productiever en georganiseerder te zijn in hun werk, met toegang tot alle ${ BRAND_NAME }-apps en hun premium-functies."
       ],
       "${ planName } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
-        "${ planName } geeft je team wat ze nodig hebben om productiever en beter georganiseerd te zijn, om controle te hebben over hun inbox, planning en meer."
+        "${ planName } geeft uw team wat ze nodig hebben om productiever en beter georganiseerd te zijn, om controle te hebben over hun inbox, planning en meer."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
         "${ planName } gaat verder dan de basis om je te helpen productiever, georganiseerder, en in controle van je inbox, e-mailidentiteit en meer te zijn."
@@ -14929,7 +14924,7 @@
         "Nieuwe bestanden toevoegen"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Nadat uw ${ planName }abonnement is verlopen, wordt u gedowngraded naar ${ BRAND_NAME } Free, dat slechts 1 GB aan Mailopslag en maximaal 5 GB aan Drive opslagruimte biedt. Je verliest ook alle eerder toegekende opslagbonussen."
+        "Nadat uw ${ planName }abonnement is verlopen, wordt u gedowngraded naar ${ BRAND_NAME } Free, dat slechts 1 GB aan Mailopslag en maximaal 5 GB aan Drive opslagruimte biedt. U verliest ook alle eerder toegekende opslagbonussen."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Nadat uw ${ planName }-abonnement verloopt, wordt u gedowngraded naar ${ BRAND_NAME } Free, dat tot slechts 1 GB aan Mail-opslag en 5 GB aan Drive-opslag biedt. Uw team zal onderbrekingen ondervinden in hun werk, aangezien extra gebruikers niet ondersteund worden binnen het gratis abonnement."
@@ -15019,7 +15014,7 @@
         "${ config.planName } behouden"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Hou je team veilig onderweg met onze apps voor web, iOS, Android, Windows, Mac en Linux."
+        "Houd uw team veilig onderweg met onze apps voor web, iOS, Android, Windows, Mac en Linux."
       ],
       "Learn more": [
         "Lees meer"
@@ -15118,7 +15113,7 @@
         "Wat je opgeeft wanneer je ${ planName } annuleert"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
-        "Wanneer u ${ planName } annuleert, wordt u gedowngraded naar ${ BRAND_NAME } Free, die slechts 1 GB aan Mailopslag en maximaal 5 GB aan Drive opslagruimte biedt. Je verliest ook alle eerder toegekende opslagbonussen."
+        "Wanneer u ${ planName } annuleert, wordt u gedowngraded naar ${ BRAND_NAME } Free, die slechts 1 GB aan Mailopslag en maximaal 5 GB aan Drive opslagruimte biedt. U verliest ook alle eerder toegekende opslagbonussen."
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
         "Wanneer u ${ planName } annuleert, wordt u gedowngraded naar ${ BRAND_NAME } Free, dat tot slechts 1 GB aan Mail-opslag en 5 GB aan Drive-opslag biedt. Uw team zal onderbrekingen ondervinden in hun werk, aangezien extra gebruikers niet ondersteund worden binnen het gratis abonnement."
@@ -15836,11 +15831,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -17087,9 +17082,6 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
-      ],
-      "User rejected invitation": [
-        "Uitnodiging afgewezen door gebruiker"
       ],
       "Waiting user to accept the invitation": [
         "Wachten tot gebruiker de uitnodiging accepteert"

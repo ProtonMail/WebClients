@@ -64,9 +64,6 @@
       "Allow": [
         "Consenti"
       ],
-      "Always allow sending mail to group": [
-        "Consenti sempre l'invio di mail al gruppo"
-      ],
       "Apply": [
         "Applica"
       ],
@@ -202,17 +199,11 @@
       "Disable": [
         "Disabilita"
       ],
-      "Disable E2EE group mail encryption": [
-        "Disabilita la crittografia della posta del gruppo E2EE"
-      ],
       "Discard": [
         "Scarta"
       ],
       "Discard changes": [
         "Annulla le modifiche"
-      ],
-      "Domain names": [
-        "Nome dominio"
       ],
       "Done": [
         "Fatto"
@@ -279,9 +270,6 @@
       ],
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Abilita la crittografia della posta del gruppo E2EE"
       ],
       "Enable multi-user support": [
         "Abilita il supporto multi-utente"
@@ -681,9 +669,6 @@
       ],
       "Use authentication code": [
         "Usa il codice di autenticazione"
-      ],
-      "Use group sending permissions": [
-        "Utilizza i permessi per l'invio di gruppo"
       ],
       "Use recovery code": [
         "Usa un codice di recupero"
@@ -3671,11 +3656,11 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalizza l'aspetto delle applicazioni di ${ BRAND_NAME }"
       ],
-      "Dedicated servers": [
-        "Server dedicati"
-      ],
       "dedicated servers": [
         "server dedicati"
+      ],
+      "Dedicated servers": [
+        "Server dedicati"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -3852,9 +3837,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vai nel tuo fornitore di identità, ottieni i metadati SAML per ${ appName } e importali qui."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Gli indirizzi di gruppo possono essere creati solo per domini personalizzati. Vai alla pagina ${ linkToDomainPage } per aggiungere un dominio personalizzato."
       ],
       "here": [
         "qui"
@@ -4843,9 +4825,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi di ${ BRAND_NAME }"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "Con i gruppi di utenti, puoi facilmente inviare email, condividere dati o modificare le impostazioni per gruppi specifici di utenti contemporaneamente."
-      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Senza attivazione non sarà possibile creare nuovi utenti, aggiungere indirizzi per gli utenti esistenti o accedere agli account non privati."
       ],
@@ -5067,9 +5046,6 @@
     "invitation status": {
       "Pending": [
         "In attesa"
-      ],
-      "Rejected": [
-        "Rifiutato"
       ],
       "Sending invite...": [
         "Spedizione in corso dell'invito..."
@@ -9391,11 +9367,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-all address": [
-        "Indirizzi Catch-all"
-      ],
       "Catch-All address": [
         "Indirizzi catch-all"
+      ],
+      "Catch-all address": [
+        "Indirizzi Catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"
@@ -10043,9 +10019,6 @@
       ],
       "Sending member invitation": [
         "Invio dell'invito all'utente"
-      ],
-      "User rejected invitation": [
-        "L'utente ha rifiutato l'invito"
       ],
       "Waiting user to accept the invitation": [
         "In attesa che l'utente accetti l'invito"

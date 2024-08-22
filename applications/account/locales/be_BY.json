@@ -157,9 +157,6 @@
       "Allow": [
         "Дазволіць"
       ],
-      "Always allow sending mail to group": [
-        "Заўсёды дазваляць адпраўку лістоў у групу"
-      ],
       "Apply": [
         "Ужыць"
       ],
@@ -394,9 +391,6 @@
       "Disable": [
         "Адключыць"
       ],
-      "Disable E2EE group mail encryption": [
-        "Адключыць скразное шыфраванне (E2EE) для групавых лістоў"
-      ],
       "Disable recovery phrase": [
         "Адключыць фразу аднаўлення"
       ],
@@ -408,9 +402,6 @@
       ],
       "Discard changes": [
         "Адхіліць змены"
-      ],
-      "Domain names": [
-        "Даменныя імёны"
       ],
       "Don't show again": [
         "Больш не паказваць"
@@ -501,9 +492,6 @@
       ],
       "Enable device-based recovery": [
         "Уключыць аднаўленне на падставе прылады"
-      ],
-      "Enable E2EE group mail encryption": [
-        "Уключыць скразное шыфраванне (E2EE) для групавых лістоў"
       ],
       "Enable multi-user support": [
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
@@ -814,11 +802,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "Refresh the page": [
-        "Абнавіць старонку"
-      ],
       "refresh the page": [
         "абнавіць старонку"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
       ],
       "Reload": [
         "Перазагрузіць"
@@ -1188,9 +1176,6 @@
       ],
       "Use authentication code": [
         "Выкарыстаць код аўтэнтыфікацыі"
-      ],
-      "Use group sending permissions": [
-        "Выкарыстоўваць дазволы групавой адпраўкі"
       ],
       "Use recovery code": [
         "Выкарыстоўваць код аднаўлення"
@@ -1627,14 +1612,6 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1656,6 +1633,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3699,11 +3684,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Аплачваецца кожныя 2 гады ў памеры ${ amountBilled }. Скідкі разлічваюцца на падставе стандартнай платы за месяц."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Аплачваецца штогод у памеры ${ amountBilled }. Эканомія складае ${ amountSave } пры гадавой падпісцы на 2 асабістыя ўліковыя запісы ${ BRAND_NAME } Unlimited."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 ТБ сховішча"
+      ],
       "2 users": [
         "2 карыстальнікі"
       ],
@@ -7177,11 +7168,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "dedicated servers": [
-        "вылучаныя серверы"
-      ],
       "Dedicated servers": [
         "Вылучаныя серверы"
+      ],
+      "dedicated servers": [
+        "вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -7449,9 +7440,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перайдзіце да свайго пастаўшчыка пасведчанняў, каб атрымаць метаданыя SAML для ${ appName } і імпартаваць іх сюды."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "Групавыя адрасы могуць быць створаны толькі для карыстальніцкіх даменаў. Перайдзіце на старонку ${ linkToDomainPage }, каб дадаць карыстальніцкі дамен."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Групуйце лісты ў адну размову ў папцы з уваходнымі лістамі або адлюстроўвайце іх асобна."
@@ -7995,6 +7983,9 @@
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Іншыя карыстальнікі ў вашай арганізацыі будуць бачыць вашы інтэрвалы занятасці. Падрабязнасці аб падзеі не абагульваюцца."
+      ],
+      "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
+        "Папярэджанні з нашага боку носяць дадатковую перасцярогу. Калі вы не выявілі ў сябе ніякіх парушэнняў бяспекі, то можаце смела праігнараваць гэту справаздачу."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Састарэлы файл аднаўлення; абнавіце яго для таго, каб быць упэўненым, што вы зможаце атрымаць доступ да вашых даных"
@@ -9022,9 +9013,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME }"
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "З групамі карыстальнікаў вы зможаце лёгка адпраўляць лісты, абагульваць даныя або адначасова змяняць налады для канкрэтных груп усіх карыстальнікаў."
-      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "На вашым бягучым тарыфным плане даступна толькі атрыманне лістоў з адраса @pm.me. Палепшыце яго, каб адпраўляць лісты і ствараць дадатковыя адрасы з выкарыстаннем @pm.me."
       ],
@@ -9075,9 +9063,6 @@
         "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
         "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
         "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій."
-      ],
-      "You are in no group nor invited to any": [
-        "Вы не з'яўляецеся ўдзельнікам ніякай групы і ў ніякую групу не запрошаны"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Вы ўвайшлі ва ўліковы запіс ${ memberAddress }."
@@ -9215,7 +9200,7 @@
         "Пасля ўваходу ў ${ destination } вы будзеце пералакіраваны"
       ],
       "You will lose access to ${ planTitle } features on this date.": [
-        "Вы страціце доступ да ${ planTitle } функцыі пасля наступлення гэтай даты."
+        "Вы страціце доступ да ${ planTitle } функцыі пасля гэтай даты."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
@@ -9428,9 +9413,6 @@
     "invitation status": {
       "Pending": [
         "У чаканні"
-      ],
-      "Rejected": [
-        "Адхілена"
       ],
       "Sending invite...": [
         "Адпраўка запрашэння..."
@@ -11694,32 +11676,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Get started for $1": [
-        "Пачніце за 1 $"
-      ],
-      "Get started for 1 €": [
-        "Пачніце за 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Пачніце за 1 CHF"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -11747,6 +11703,32 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Get started for $1": [
+        "Пачніце за 1 $"
+      ],
+      "Get started for 1 €": [
+        "Пачніце за 1 €"
+      ],
+      "Get started for CHF 1": [
+        "Пачніце за 1 CHF"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -11819,6 +11801,18 @@
         "${ n } паведамленняў у дзень",
         "${ n } паведамленні ў дзень"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } абагуленае сховішча ${ PASS_SHORT_APP_NAME } на карыстальніка",
+        "${ n } абагуленыя сховішчы ${ PASS_SHORT_APP_NAME } на карыстальніка",
+        "${ n } абагуленых сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка",
+        "${ n } абагуленых сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка"
+      ],
+      "${ n } user": [
+        "${ n } карыстальнік",
+        "Да ${ n } карыстальнікаў",
+        "Да ${ n } карыстальнікаў",
+        "Да ${ n } карыстальнікаў"
+      ],
       "${ n } vault": [
         "${ n } сховішча",
         "${ n } сховішчы",
@@ -11830,6 +11824,12 @@
         "${ n } падключэнні па VPN",
         "${ n } падключэнняў па VPN",
         "${ n } падключэнні па VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-дзённая гісторыя змяненняў версіі файла",
+        "${ options }-дзённая гісторыя змяненняў версіі файла",
+        "${ options }-дзённая гісторыя змяненняў версіі файла",
+        "${ options }-дзённая гісторыя змяненняў версіі файла"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
@@ -11846,8 +11846,17 @@
       "${ size } attachment size": [
         "Памер далучэння: ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } бяспечнага сховішча на карыстальніка"
+      ],
       "${ size } storage": [
         "${ size } сховішча"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - для ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - для ўсіх сэрвісаў ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 карыстальнік"
@@ -11875,6 +11884,12 @@
       ],
       "All ${ BRAND_NAME } services": [
         "Усе сэрвісы ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Усе прэміяльныя сэрвісы ${ BRAND_NAME }. Адна простая падпіска"
       ],
       "Auto-delete Spam and Trash": [
         "Аўтаматычнае выдаленне спаму і смецця"
@@ -11914,6 +11929,9 @@
       ],
       "Contact groups management": [
         "Кіраванне групамі кантактаў"
+      ],
+      "Custom and secure business email": [
+        "Персаналізаваная і бяспечная электронная пошта для бізнесу"
       ],
       "Custom domains for email aliases": [
         "Карыстальніцкія дамены для псеўданімаў электроннай пошты"
@@ -12023,6 +12041,9 @@
       "No-logs policy": [
         "Палітыка адсутнасці журналаў актыўнасці"
       ],
+      "Online document editor": [
+        "Рэдактар дакументаў у інтэрнэце"
+      ],
       "Organize items with multiple vaults": [
         "Упарадкаванне элементаў з некалькімі сховішчамі"
       ],
@@ -12032,8 +12053,14 @@
       "Password health": [
         "Якасць пароля"
       ],
+      "Password manager": [
+        "Менеджар пароляў"
+      ],
       "Password-protected Emails": [
         "Лісты абароненыя паролем"
+      ],
+      "Phone support (20+ users)": [
+        "Падтрымка па тэлефоне (ад 20 карыстальнікаў)"
       ],
       "Priority email support": [
         "Прыярытэтная падтрымка па электроннай пошце"
@@ -12052,6 +12079,9 @@
         "Абараніць ${ n } прылады адначасова",
         "Абараніць ${ n } прылад адначасова",
         "Абараніць ${ n } прылады адначасова"
+      ],
+      "Recover previous file versions": [
+        "Аднавіць папярэднія версіі файла"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Рэгулярныя праверкі бяспекі вашага ўліковага запісу. Мы папярэджваем вас аб неабходнасці абнавіць паролі, якія з'яўляюцца ненадзейнымі або выкарыстоўваліся паўторна."
@@ -12089,6 +12119,9 @@
         "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
         "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах"
       ],
+      "Share files with no size limit": [
+        "Абагульванне файлаў без абмежавання памеру"
+      ],
       "Sign in as user": [
         "Уваход у якасці карыстальніка"
       ],
@@ -12112,6 +12145,9 @@
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
+      ],
+      "Sync and backup all your files across devices": [
+        "Сінхранізацыя і рэзервовае капіяванне ўсіх вашых файлаў паміж прыладамі"
       ],
       "Tailored to your needs": [
         "Адаптаваны пад вашы патрэбы"
@@ -12151,6 +12187,9 @@
       ],
       "Unlimited messages per day": [
         "Неабмежаваная колькасць паведамленняў у дзень"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Неабмежаванае абагульванне сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка"
       ],
       "Unlimited shared vaults with access permissions": [
         "Неабмежаваная колькасць абагуленых сховішчаў з дазволамі доступу"
@@ -12293,6 +12332,9 @@
       "Popular": [
         "Папулярны"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Абарона адчувальных звестак бізнесу і бяспечнае супрацоўніцтва."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Абараняйце прыватнасць вашай сям'і з дапамогай усіх сэрвісаў ${ BRAND_NAME } адначасова."
       ],
@@ -12380,14 +12422,6 @@
         "Выбраны тарыфны план: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -12406,6 +12440,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -12525,6 +12567,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персаналізуйце свой подпіс у электронных лістах з дапамогай лагатыпаў, відарысаў, значкоў з сацыяльных сетак, спасылак на вашы кантактныя звесткі і г.д."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Служба падтрымкі кліентаў ${ BRAND_NAME } ажыццяўляе падтрымку па тэлефоне ў працоўны час (еўрапейскі часавы пояс) для кліентаў ад 20 карыстальнікаў і больш."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Абмяжоўвае доступ да паведамленняў ${ BRAND_NAME } або старонніх асоб. Чытаць паведамленні можа толькі адпраўнік і меркаваны атрымальнік."
@@ -14201,12 +14246,6 @@
       ],
       "Continue to Safety Review": [
         "Працягнуць у бяспечным аглядзе"
-      ],
-      "Critical issues found. You are at risk of losing access to your account and data.": [
-        "Знойдзены крытычныя праблемы. Вы рызыкуеце страціць доступ да свайго ўліковага запісу і даных."
-      ],
-      "Critical issues found. You are at risk of losing access to your data.": [
-        "Знойдзены крытычныя праблемы. Вы рызыкуеце страціць доступ да сваіх даных."
       ],
       "Device-based recovery enabled": [
         "Аднаўленне на падставе прылады ўключана"
@@ -16674,10 +16713,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -17960,9 +17999,6 @@
       "Sending member invitation": [
         "Адпраўка запрашэння ўдзельніку"
       ],
-      "User rejected invitation": [
-        "Карыстальнік адхіліў запрашэнне"
-      ],
       "Waiting user to accept the invitation": [
         "Чаканне прыняцця запрашэння карыстальнікам"
       ]
@@ -18368,7 +18404,7 @@
         "Далучайцеся да ранняга доступу ${ appName }"
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "Зарэгіструйце бясплатны ўліковы запіс ${ BRAND_NAME }, каб абараніць сваё месца. Неўзабаве пасля рэгістрацыі вы атрымаеце доступ да ${ appName }, таксама зможаце палепшыць яго да нашага эксклюзіўнага тарыфнага плана. Заўважце, што вам не давядзецца знаходзіцца ў спісе чакання і ў вас будзе магчымасць адразу пачаць выкарыстоўваць ${ appName }."
+        "Зарэгіструйце бясплатны ўліковы запіс ${ BRAND_NAME }, каб абараніць сваё месца. Неўзабаве пасля рэгістрацыі вы атрымаеце доступ да ${ appName }, таксама зможаце палепшыць яго да нашага эксклюзіўнага Visionary тарыфнага плана. Заўважце, што вам не давядзецца знаходзіцца ў спісе чакання і ў вас будзе магчымасць адразу пачаць выкарыстоўваць ${ appName }."
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "Палепшыце сваю падпіску, каб разблакіраваць прэміяльныя функцыі ${ appName }"
@@ -18378,6 +18414,11 @@
       ],
       "You're Invited.": [
         "Вы запрошаны"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Бяспечны і самы лёгкі спосаб захоўваць і адпраўляць Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

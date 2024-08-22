@@ -112,6 +112,12 @@
       "Cancel subscription": [
         "Abonnement kündigen"
       ],
+      "characters": [
+        "Zeichen"
+      ],
+      "characters out of": [
+        "Zeichen von"
+      ],
       "Chat with us": [
         "Chatte mit uns"
       ],
@@ -323,6 +329,9 @@
       ],
       "Increase": [
         "Vergrößern"
+      ],
+      "Keep my subscription": [
+        "Behalte mein Abonnement"
       ],
       "Learn more": [
         "Mehr erfahren"
@@ -608,6 +617,15 @@
       ],
       "What do I get?": [
         "Was bekomme ich dafür?"
+      ],
+      "Word count": [
+        "Anzahl Wörter"
+      ],
+      "words": [
+        "Wörter"
+      ],
+      "words out of": [
+        "Wörter von"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakt enthalten.",
@@ -3522,9 +3540,6 @@
         "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
-      "All changes saved to Drive": [
-        "Alle Änderungen in Drive gespeichert"
-      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
         "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
@@ -3585,6 +3600,12 @@
       ],
       "Change your password": [
         "Passwort ändern"
+      ],
+      "characters": [
+        "Zeichen"
+      ],
+      "characters without spaces": [
+        "Zeichen ohne Leerzeichen"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontakt ${ progress } von ${ max } wird geprüft…"
@@ -3672,6 +3693,9 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
       ],
+      "Display word count": [
+        "Zeige Anzahl Wörter"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Es passiert nichts? Denke daran, deine Pop-up-Blocker zu deaktivieren."
       ],
@@ -3719,6 +3743,9 @@
       ],
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
+      ],
+      "End-to-end encrypted": [
+        "Ende-zu-Ende-verschlüsselt"
       ],
       "End-to-end encrypted.": [
         "Ende-zu-Ende-verschlüsselt."
@@ -3997,7 +4024,7 @@
         "Organisationsgröße"
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Unsere Warnungen sind eher auf der Seite der Vorsicht angesiedelt. Wenn du keine der gefundenen Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
+        "Unsere Warnungen sind tendenziell übervorsichtig. Wenn du keine der gefundenen Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
       ],
       "Owner": [
         "Besitzer"
@@ -4089,9 +4116,6 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
-      ],
-      "Saved in ${ DRIVE_APP_NAME }": [
-        "Gespeichert in ${ DRIVE_APP_NAME }"
       ],
       "Saving": [
         "Wird gespeichert"
@@ -4343,6 +4367,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authenticator App verlierst."
       ],
+      "words": [
+        "Wörter"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
       ],
@@ -4410,6 +4437,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Es muss eine Kreditkarte oder ein Bankkonto mit deinem PayPal-Konto verknüpft sein. Um dies nachzuholen, klicke bitte auf die nachfolgende Schaltfläche."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "An diesem Datum verlierst du den Zugang zu ${ planTitle }-Funktionen."
       ],
       "You will lose all unsaved changes.": [
         "Alle nicht gespeicherten Änderungen gehen verloren."
@@ -5557,6 +5587,14 @@
         "${ n } Nachricht pro Tag",
         "${ n } Nachrichten pro Tag"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } geteilter ${ PASS_SHORT_APP_NAME } Tresor pro Benutzer",
+        "${ n } geteilte ${ PASS_SHORT_APP_NAME } Tresore pro Benutzer"
+      ],
+      "${ n } user": [
+        "${ n } Benutzer",
+        "Bis zu ${ n } Benutzer"
+      ],
       "${ n } vault": [
         "${ n } Tresor",
         "${ n } Tresore"
@@ -5564,6 +5602,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
+      ],
+      "${ options }-day file version history": [
+        "Dateiversionsverlauf für ${ options } Tag",
+        "Dateiversionsverlauf für ${ options } Tage"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } mit ${ n } hide-my-email-Alias",
@@ -5578,8 +5620,17 @@
       "${ size } attachment size": [
         "Anhänge mit einer Größe von ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } sicherer Speicherplatz pro Benutzer"
+      ],
       "${ size } storage": [
         "${ size } Speicherplatz"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - für ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - für alle ${ BRAND_NAME }-Dienste"
       ],
       "1 user": [
         "1 Benutzer"
@@ -5598,6 +5649,12 @@
       ],
       "Administration Panel": [
         "Verwaltungskonsole"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Alle ${ BRAND_NAME } Standarddienste (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Alle ${ BRAND_NAME } Premium-Dienste. Ein einfaches Abonnement"
       ],
       "Auto-delete Spam and Trash": [
         "Spam und Papierkorb automatisch löschen"
@@ -5634,6 +5691,9 @@
       ],
       "Contact groups management": [
         "Kontaktgruppenverwaltung"
+      ],
+      "Custom and secure business email": [
+        "Benutzerdefinierte und sichere geschäftliche E-Mails"
       ],
       "Custom domains for email aliases": [
         "Eigene Domains für E-Mail-Aliasse"
@@ -5729,6 +5789,9 @@
       "Multiple admin roles": [
         "Mehrere Administratorrollen"
       ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
       "Organize items with multiple vaults": [
         "Strukturiere Einträge mit mehreren Tresoren"
       ],
@@ -5738,8 +5801,14 @@
       "Password health": [
         "Passwortsicherheit"
       ],
+      "Password manager": [
+        "Passwort-Manager"
+      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonischer Support (ab 20 Benutzern)"
       ],
       "Priority email support": [
         "Priorisierter E-Mail-Support"
@@ -5756,6 +5825,9 @@
       "Protect ${ n } device at a time": [
         "Schütze ${ n } Gerät gleichzeitig",
         "Schütze ${ n } Geräte gleichzeitig"
+      ],
+      "Recover previous file versions": [
+        "Stelle vorherige Dateiversionen wieder her"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmäßige Überprüfungen der Sicherheit deines Kontos. Wir warnen dich, wenn du schwache oder wiederverwendete Passwörter hast, die aktualisiert werden müssen."
@@ -5787,6 +5859,9 @@
       "Send & receive invitations": [
         "Einladungen senden & empfangen"
       ],
+      "Share files with no size limit": [
+        "Teile Dateien ohne Größenbeschränkung"
+      ],
       "Sign in as user": [
         "Als Benutzer anmelden"
       ],
@@ -5804,6 +5879,9 @@
       ],
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
       ],
       "Tor over VPN": [
         "Tor über VPN"
@@ -5840,6 +5918,9 @@
       ],
       "Unlimited messages per day": [
         "Unbegrenzte Anzahl von Nachrichten pro Tag"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Unbegrenzte geteilte ${ PASS_SHORT_APP_NAME } Tresore pro Benutzer"
       ],
       "Unlimited shared vaults with access permissions": [
         "Unbegrenzte gemeinsame Tresore mit Zugriffsberechtigungen"
@@ -5956,6 +6037,9 @@
       ],
       "Popular": [
         "Beliebt"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Schütze sensible Geschäftsinformationen und arbeite sicher zusammen."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Schütze die Privatsphäre deiner Familie durch die Kombination aller ${ BRAND_NAME }-Dienste."
@@ -6117,6 +6201,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonische Unterstützung ist durch das ${ BRAND_NAME }-Kundenbetreuungsteam während der europäischen Geschäftszeiten für Kunden mit 20 oder mehr Benutzern verfügbar."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindert den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
@@ -7858,6 +7945,9 @@
       "Enable 2FA": [
         "2FA aktivieren"
       ],
+      "Enter 2FA code": [
+        "2FA Code eingeben"
+      ],
       "Enter your password": [
         "Passwort eingeben"
       ],
@@ -8277,6 +8367,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via E-Mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Eine sicherere und einfachere Art Bitcoin zu besitzen und zu versenden"
       ]
     },
     "wallet_signup_2024:Bug category": {

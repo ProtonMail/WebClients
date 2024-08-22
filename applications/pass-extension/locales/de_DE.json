@@ -1029,6 +1029,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } importiert nur Logins, Notizen, Kreditkarten und Identitäten."
+      ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } wird dich fragen, sobald die generierten Passwörter automatisch ausgefüllt werden."
       ],
@@ -2444,6 +2447,9 @@
       ],
       "Unnamed Credit Card": [
         "Unbenannte Kreditkarte"
+      ],
+      "Unnamed identity": [
+        "Unbenannte Identität"
       ],
       "Unnamed item": [
         "Unbenannter Eintrag"

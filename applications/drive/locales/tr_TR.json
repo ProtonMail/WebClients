@@ -456,6 +456,9 @@
       "Invite": [
         "Davet et"
       ],
+      "Keep my subscription": [
+        "Aboneliğimi sürdür"
+      ],
       "Later": [
         "Daha sonra"
       ],
@@ -2409,11 +2412,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "2 yılda bir ${ amountBilled } tutar ile faturalanır. İndirimler standart aylık ücret üzerinden hesaplanır."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Yıllık olarak ${ amountBilled } ile faturalanır. 2 kişisel ${ BRAND_NAME } Unlimited yıllık aboneliğinde ${ amountSave } indirim alın."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB depolama alanı"
+      ],
       "2 users": [
         "2 kullanıcı"
       ],
@@ -5374,6 +5383,9 @@
       "You need access": [
         "Erişiminiz olması gerekli"
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Bu tarihte ${ planTitle } özelliklerine erişiminizi kaybedeceksiniz."
+      ],
       "You will lose all unsaved changes.": [
         "Kaydedilmemiş tüm değişiklikleri kaybedeceksiniz."
       ],
@@ -6680,6 +6692,14 @@
         "Her gün ${ n } ileti",
         "Her gün ${ n } ileti"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "Her kullanıcı için ${ n } paylaşılan ${ PASS_SHORT_APP_NAME } kasası",
+        "Her kullanıcı için ${ n } paylaşılan ${ PASS_SHORT_APP_NAME } kasası"
+      ],
+      "${ n } user": [
+        "${ n } kullanıcı",
+        "${ n } kullanıcıya kadar"
+      ],
       "${ n } vault": [
         "${ n } kasa",
         "${ n } kasa"
@@ -6687,6 +6707,10 @@
       "${ n } VPN connection": [
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
+      ],
+      "${ options }-day file version history": [
+        "${ options } günlük dosya sürümü geçmişi",
+        "${ options } günlük dosya sürümü geçmişi"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı",
@@ -6701,8 +6725,17 @@
       "${ size } attachment size": [
         "${ size } ek dosya boyutu"
       ],
+      "${ size } of secure storage per user": [
+        "Her kullanıcı için ${ size } güvenli depolama alanı"
+      ],
       "${ size } storage": [
         "${ size } depolama alanı"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - ${ DRIVE_APP_NAME } için"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Tüm ${ BRAND_NAME } hizmetleri için"
       ],
       "1 user": [
         "1 kullanıcı"
@@ -6721,6 +6754,12 @@
       ],
       "Administration Panel": [
         "Yönetim panosu"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik"
       ],
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
@@ -6757,6 +6796,9 @@
       ],
       "Contact groups management": [
         "Kişi grupları yönetimi"
+      ],
+      "Custom and secure business email": [
+        "Özel ve güvenli kurumsal e-posta hizmeti"
       ],
       "Custom domains for email aliases": [
         "E-posta takma adları için özel etki alanları"
@@ -6852,6 +6894,9 @@
       "Multiple admin roles": [
         "Birden çok yönetici rolü"
       ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
       "Organize items with multiple vaults": [
         "Birden çok kasa ile ögeleri gruplayın"
       ],
@@ -6861,8 +6906,14 @@
       "Password health": [
         "Parola sağlığı"
       ],
+      "Password manager": [
+        "Parola yöneticisi"
+      ],
       "Password-protected Emails": [
         "Parola korumalı e-postalar"
+      ],
+      "Phone support (20+ users)": [
+        "Telefon desteği (20+ kullanıcı)"
       ],
       "Priority email support": [
         "Öncelikli e-posta desteği"
@@ -6879,6 +6930,9 @@
       "Protect ${ n } device at a time": [
         "Aynı anda ${ n } aygıtı koruyun",
         "Aynı anda ${ n } aygıtı koruyun"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerine dönün"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
@@ -6910,6 +6964,9 @@
       "Send & receive invitations": [
         "Davetleri alma ve gönderme"
       ],
+      "Share files with no size limit": [
+        "Dosyaları boyut sınırı olmadan paylaşın"
+      ],
       "Sign in as user": [
         "Kullanıcı olarak oturum açma"
       ],
@@ -6927,6 +6984,9 @@
       ],
       "Strict no-logs policy": [
         "Sıkı kayıt tutmama ilkesi"
+      ],
+      "Sync and backup all your files across devices": [
+        "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
       ],
       "Tor over VPN": [
         "VPN üzerinden Tor"
@@ -6963,6 +7023,9 @@
       ],
       "Unlimited messages per day": [
         "Her gün sınırsız sayıda ileti"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Her kullanıcı için sınırsız paylaşılan ${ PASS_SHORT_APP_NAME } kasası"
       ],
       "Unlimited shared vaults with access permissions": [
         "Erişim izinleri ile sınırsız sayıda paylaşılan kasa"
@@ -7079,6 +7142,9 @@
       ],
       "Popular": [
         "Beğenilen"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Önemli iş bilgilerinizi koruyun ve güvende kalarak işbirliği yapın."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
@@ -7250,6 +7316,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "20 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde ${ BRAND_NAME } müşteri desteği ekibinden telefonla destek alabilirsiniz"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
@@ -7678,6 +7747,9 @@
       ]
     },
     "Onboarding Info": {
+      "Collaborate on documents": [
+        "Belgeler üzerinde iş birliği yapın"
+      ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Belgeler oluşturun ve üzerinde işbirliği yapın. Her şey uçtan uca şifreleme ile korunur."
       ],
@@ -7687,11 +7759,20 @@
       "Introducing ${ DOCS_APP_NAME }": [
         "${ DOCS_APP_NAME } ile tanışın"
       ],
+      "Manage access": [
+        "Erişim izinlerini yönetin"
+      ],
+      "Securely store, manage, and share your business-critical files with confidence.": [
+        "İş açısından kritik önemdeki dosyalarınızı güvenle saklayın, yönetin ve paylaşın."
+      ],
       "Set a recovery method": [
         "Bir kurtarma yöntemi ayarlayın"
       ],
       "Share a file": [
         "Bir dosya paylaş"
+      ],
+      "Share files & folders": [
+        "Dosyaları ve klasörleri paylaşın"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Yalnızca gelecek ${ expiresInDays } günde şu işlemleri yapın:",
@@ -7699,6 +7780,9 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Dosyalarınızı saklayın ve güvenle paylaşın. Kimlikler, sözleşmeler ve kişisel fotoğraflar gibi en özel dosyalarınızın güvenliğini sağlayarak başlayın."
+      ],
+      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
+        "Sahibi paylaşım erişimi iznini onaylamalıdır. İşlem tamamlandığında bir e-posta alacaksınız."
       ],
       "Upload a file": [
         "Bir dosya yükleyin"
@@ -7733,6 +7817,9 @@
       ],
       "Hang tight!": [
         "Sıkı durun!"
+      ],
+      "Invite team members": [
+        "Ekip üyelerini davet edin"
       ],
       "Upload and protect your important files": [
         "Önemli dosyalarınızı yükleyin ve koruyun"
@@ -9639,6 +9726,9 @@
       "Enable drive search": [
         "Drive arama özelliğini aç"
       ],
+      "Enter 2FA code": [
+        "İki adımlı doğrulama kodunu yazın"
+      ],
       "Enter your password": [
         "Parolanızı yazın"
       ],
@@ -10206,6 +10296,11 @@
       ],
       "Bitcoin via email": [
         "E-posta ile Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bitcoin saklamanın ve göndermenin daha güvenli ve kolay yolu"
       ]
     },
     "wallet_signup_2024:Bug category": {

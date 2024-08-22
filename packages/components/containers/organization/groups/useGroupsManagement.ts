@@ -1,12 +1,14 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { useFormik } from 'formik';
+import { c } from 'ttag';
 
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
 import {
     useApi,
     useCustomDomains,
+    useErrorHandler,
     useEventManager,
     useGetUser,
     useGroups,
@@ -36,6 +38,7 @@ export const INITIAL_FORM_VALUES = {
 };
 
 const useGroupsManagement = (organization?: Organization): GroupsManagementReturn | undefined => {
+    const handleError = useErrorHandler();
     const [members] = useMembers();
     const [groups, loadingGroups] = useGroups();
     const api = useApi();
@@ -117,31 +120,43 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     }
 
     const onDeleteGroup = async () => {
-        if (selectedGroup !== undefined) {
+        if (!selectedGroup) {
+            return;
+        }
+
+        try {
             await api(deleteGroup(selectedGroup.ID));
+            createNotification({ type: 'success', text: c('Info').t`Group deleted` });
             await call();
             resetForm();
             setSelectedGroup(undefined);
             setUiState('empty');
+        } catch (error) {
+            handleError(error);
         }
     };
 
     const handleSaveGroup = async (newEmails: string[]) => {
-        if (selectedGroup === undefined) {
+        if (!selectedGroup) {
             return;
         }
 
-        // Check address availablity if address changed
-        if (selectedGroup?.Address.Email !== `${formValues.address}@${selectedDomain}`) {
-            await api(
-                checkMemberAddressAvailability({
-                    Local: formValues.address,
-                    Domain: selectedDomain,
-                })
-            );
+        const isNewGroup = uiState === 'new';
+        const formEmailAndDomain = `${formValues.address}@${selectedDomain}`;
+
+        if (isNewGroup) {
+            // Check address availablity if address changed - not supported when in edit mode yet
+            if (selectedGroup?.Address.Email !== formEmailAndDomain) {
+                await api(
+                    checkMemberAddressAvailability({
+                        Local: formValues.address,
+                        Domain: selectedDomain,
+                    })
+                );
+            }
         }
 
-        const apiEndpoint = uiState === 'new' ? createGroup : editGroup;
+        const apiEndpoint = isNewGroup ? createGroup : editGroup;
 
         const Group = await dispatch(
             apiEndpoint({
@@ -149,7 +164,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
                 group: {
                     id: selectedGroup.ID,
                     name: formValues.name,
-                    email: `${formValues.address}@${selectedDomain}`,
+                    email: isNewGroup ? formEmailAndDomain : formValues.address,
                     domain: selectedDomain,
                     description: formValues.description,
                     permissions: formValues.permissions,

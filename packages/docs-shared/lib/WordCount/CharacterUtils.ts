@@ -7,6 +7,8 @@ const wordDelimiters = new Set(Object.values(WordDelimeters).map(toCodePoint))
 
 export const isWordDelimiter = (charCode: number | undefined) => charCode && wordDelimiters.has(charCode)
 
+export const isWhitespace = (char: string) => char.trim() !== char
+
 export const isWithinCodePointRange = (codePoint: number, [start, end]: [number, number]) =>
   codePoint >= start && codePoint <= end
 
@@ -51,3 +53,5 @@ export const isCJK = (codePoint: number) => {
 }
 
 export const isThai = (codePoint: number) => isWithinCodePointRange(codePoint, [0x0e00, 0x0e7f])
+
+export const isWordCountSupported = typeof Intl?.Segmenter !== 'undefined'
