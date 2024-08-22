@@ -64,9 +64,6 @@
       "Allow": [
         "허용"
       ],
-      "Always allow sending mail to group": [
-        "항상 그룹에게 메일 발송을 허용합니다"
-      ],
       "Apply": [
         "적용"
       ],
@@ -202,17 +199,11 @@
       "Disable": [
         "비활성화"
       ],
-      "Disable E2EE group mail encryption": [
-        "E2EE 그룹 메일 암호화 비활성화"
-      ],
       "Discard": [
         "저장 안함"
       ],
       "Discard changes": [
         "변경사항 취소"
-      ],
-      "Domain names": [
-        "도메인 이름"
       ],
       "Done": [
         "완료"
@@ -279,9 +270,6 @@
       ],
       "enable desktop notifications": [
         "데스크톱 알림을 활성화"
-      ],
-      "Enable E2EE group mail encryption": [
-        "E2EE 그룹 메일 암호화 활성화"
       ],
       "Enable multi-user support": [
         "다중 사용자 지원 활성화"
@@ -357,6 +345,9 @@
       ],
       "Keep logo": [
         "로고 유지"
+      ],
+      "Keep my subscription": [
+        "나의 구독 유지"
       ],
       "Let's talk": [
         "상담 및 계약 필요"
@@ -681,9 +672,6 @@
       ],
       "Use authentication code": [
         "인증 코드를 사용"
-      ],
-      "Use group sending permissions": [
-        "그룹 발송 권한들 사용하기"
       ],
       "Use recovery code": [
         "복구코드 사용"
@@ -2248,11 +2236,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "2년간 ${ amountBilled }가 결제됩니다. 할인은 표준 월 비용에 따라 정해집니다."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "매년 ${ amountBilled }가 결제됩니다. ${ BRAND_NAME } 무제한 연간 구독 두 개를 따로 결제하는 것보다 ${ amountSave }를 절약할 수 있습니다."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1GB 저장공간"
+      ],
       "2 users": [
         "두 사용자들"
       ],
@@ -3633,10 +3627,10 @@
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "${ BRAND_NAME } 애플리케이션의 설정을 커스터마이징해 보세요."
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -3812,9 +3806,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "인증 제공자 페이지 이동 후, ${ appName }에 사용할 SAML 메타데이터를 받은 뒤 여기에 불러오세요."
-      ],
-      "Group addresses can only be created for custom domains. Go to the ${ linkToDomainPage } page to add a custom domain.": [
-        "그룹 주소는 사용자 정의 도메인에 대해서만 만들 수 있습니다. 사용자 지정 도메인을 추가하려면 ${ linkToDomainPage } 페이지로 이동합니다."
       ],
       "here": [
         "여기"
@@ -4797,9 +4788,6 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "암호화된 ${ BRAND_NAME } 주소로, 모든 ${ BRAND_NAME } 서비스를 사용할 수 있어요."
       ],
-      "With user groups, you can easily send emails, share data, or change the settings for specific groups of users all at once.": [
-        "사용자 그룹을 이용하면, 특정한 유저 그룹에 대해 이메일을 보내거나 데이터를 공유하고 설정을 변경하는 것이 한 번에 간편하게 가능합니다."
-      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "활성화하지 않으면 새 사용자를 만들거나 기존 사용자에게 주소를 추가하거나 개인이 아닌 사용자 계정에 액세스할 수 없습니다."
       ],
@@ -4895,6 +4883,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "로그인하면 ${ destination }으로 리다이렉트 됩니다."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "오늘 부터 ${ planTitle } 기능에 접근할 수 없습니다."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME } 을(를) 사용하려면 ${ BRAND_NAME } 주소가 필요합니다."
@@ -5014,9 +5005,6 @@
     "invitation status": {
       "Pending": [
         "대기 중"
-      ],
-      "Rejected": [
-        "거절됨"
       ],
       "Sending invite...": [
         "초대하는 중..."
@@ -6036,11 +6024,20 @@
       "${ n } message per day": [
         "하루 당 ${ n } 메시지"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "사용자 당 ${ n }개 공유된 ${ PASS_SHORT_APP_NAME } 금고"
+      ],
+      "${ n } user": [
+        "최대 ${ n }명 사용자"
+      ],
       "${ n } vault": [
         "${ n }개 금고"
       ],
       "${ n } VPN connection": [
         "${ n } 개 VPN 연결"
+      ],
+      "${ options }-day file version history": [
+        "${ options }일 파일 버전 기록"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ n }개의 hide-my-email 별칭이 포함된 ${ PASS_APP_NAME }"
@@ -6054,8 +6051,17 @@
       "${ size } attachment size": [
         "첨부 파일 크기: ${ size }"
       ],
+      "${ size } of secure storage per user": [
+        "사용자 당 ${ size } 보안 스토리지"
+      ],
       "${ size } storage": [
         "${ size } 저장공간"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - ${ DRIVE_APP_NAME }용"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - 전체 ${ BRAND_NAME } 서비스용"
       ],
       "1 user": [
         "사용자 1명"
@@ -6080,6 +6086,12 @@
       ],
       "Advanced network security": [
         "향상된 네트워크 보안"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "모든 ${ BRAND_NAME } 베이직 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "모든 프리미엄 ${ BRAND_NAME } 서비스. 쉬운 구독"
       ],
       "Auto-delete Spam and Trash": [
         "스팸 및 휴지통 자동 삭제"
@@ -6119,6 +6131,9 @@
       ],
       "Contact groups management": [
         "연락처 그룹 관리"
+      ],
+      "Custom and secure business email": [
+        "커스텀 및 보안 비즈니스 이메일"
       ],
       "Custom domains for email aliases": [
         "이메일 별칭을 위한 커스텀 도메인"
@@ -6222,6 +6237,9 @@
       "No-logs policy": [
         "무로그 정책"
       ],
+      "Online document editor": [
+        "온라인 문서 편집기"
+      ],
       "Organize items with multiple vaults": [
         "다중 금고와 항목 정리"
       ],
@@ -6231,8 +6249,14 @@
       "Password health": [
         "비밀번호 건강도"
       ],
+      "Password manager": [
+        "비밀번호 관리자"
+      ],
       "Password-protected Emails": [
         "비밀번호로 보호된 이메일"
+      ],
+      "Phone support (20+ users)": [
+        "휴대 전화 지원 (20명 이상 사용자)"
       ],
       "Priority email support": [
         "이메일 우선 지원"
@@ -6248,6 +6272,9 @@
       ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
+      ],
+      "Recover previous file versions": [
+        "이전 파일 버전 복구"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "회원님 계정 보안에 대한 정기 점검입니다. 약한 비밀번호 또는 업데이트가 필요한 재사용된 비밀번호가 있는지 알려드립니다."
@@ -6282,6 +6309,9 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }개 이상 국가 내 서버"
       ],
+      "Share files with no size limit": [
+        "크기 제한 없는 파일 공유"
+      ],
       "Sign in as user": [
         "사용자로 로그인"
       ],
@@ -6305,6 +6335,9 @@
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
+      ],
+      "Sync and backup all your files across devices": [
+        "기기를 넘나들며 파일을 동기화 및 백업하세요"
       ],
       "Tor over VPN": [
         "VPN을 통한 Tor"
@@ -6341,6 +6374,9 @@
       ],
       "Unlimited messages per day": [
         "하루에 무제한 메시지"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "사용자 당 무제한 공유된 ${ PASS_SHORT_APP_NAME } 금고"
       ],
       "Unlimited shared vaults with access permissions": [
         "권한 접근이 포함된 무제한 공유 가능 금고"
@@ -6458,6 +6494,9 @@
       ],
       "Popular": [
         "인기"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "민감한 비즈니스 정보를 보호하고 안전하게 공동 작업하기."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "${ BRAND_NAME } 서비스들로 가족의 개인정보를 보호하세요."
@@ -6655,6 +6694,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "로고, 이미지, 소셜 미디어 아이콘, 연락처 링크 등으로 이메일 서명을 개인화하세요."
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "전화 지원은 20명 이상의 사용자가 있는 고객을 위해 유럽 업무 시간 동안 ${ BRAND_NAME } 고객 성공 팀에서 이용할 수 있습니다."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "${ BRAND_NAME } 또는 제3자가 메시지에 접근하는 것을 방지합니다. 메시지를 읽을 수 있는 유일한 사람은 당신과 이메일을 받은 수신자 뿐이죠."
@@ -9261,11 +9303,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-all address": [
-        "Catch-all 주소"
-      ],
       "Catch-All address": [
         "Catch-All 주소"
+      ],
+      "Catch-all address": [
+        "Catch-all 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
@@ -9446,6 +9488,9 @@
       ],
       "Email subscriptions": [
         "이메일 구독"
+      ],
+      "Enter 2FA code": [
+        "2FA 코드 입력"
       ],
       "Enter endpoints into your identity provider": [
         "사용자의 인증 제공자로 부터 엔드포인트를 입력하십시오."
@@ -9910,9 +9955,6 @@
       "Sending member invitation": [
         "멤버 초대장 발송 중"
       ],
-      "User rejected invitation": [
-        "사용자가 초대를 거절함"
-      ],
       "Waiting user to accept the invitation": [
         "사용자의 초대 수락 대기 중"
       ]
@@ -10203,6 +10245,11 @@
       ],
       "Bitcoin via email": [
         "이메일을 통한 Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "쉽고 안전하게 Bitcoin을 보관 및 송금하세요"
       ]
     },
     "wallet_signup_2024:Bug category": {
