@@ -1,4 +1,7 @@
+import { prepareContentToInsert } from '../message/messageContent';
 import { CLASSNAME_SIGNATURE_CONTAINER } from '../message/messageSignature';
+
+export type ComposerReturnType = 'html' | 'plaintext';
 
 type GetContentBeforeBlockquoteOptions = (
     | {
@@ -8,6 +11,7 @@ type GetContentBeforeBlockquoteOptions = (
       }
     | {
           editorType: 'html';
+          returnType: ComposerReturnType;
       }
 ) & { editorContent: string };
 
@@ -16,6 +20,7 @@ type GetContentBeforeBlockquoteOptions = (
  */
 export const getMessageContentBeforeBlockquote = (args: GetContentBeforeBlockquoteOptions) => {
     const { editorType, editorContent } = args;
+
     if (!editorContent) {
         return '';
     }
@@ -53,6 +58,10 @@ export const getMessageContentBeforeBlockquote = (args: GetContentBeforeBlockquo
             current = next;
         }
 
+        if (args.returnType === 'html') {
+            return editorContentRootDiv.innerHTML;
+        }
+
         return editorContentRootDiv.innerText;
     }
 
@@ -75,6 +84,7 @@ type SetContentBeforeBlockquoteOptions = (
            * Expected string format example: 'font-family: Arial, serif; font-size: 12px;'
            */
           wrapperDivStyles: string;
+          canKeepFormatting: boolean;
       }
 ) & {
     /** Content to add */
@@ -90,7 +100,7 @@ export const setMessageContentBeforeBlockquote = (args: SetContentBeforeBlockquo
     }
 
     if ('html' === editorType) {
-        const { wrapperDivStyles } = args;
+        const { wrapperDivStyles, canKeepFormatting } = args;
         const editorContentRootDiv = new DOMParser().parseFromString(editorContent, 'text/html').body as HTMLElement;
         let shouldDelete = true;
 
@@ -117,7 +127,7 @@ export const setMessageContentBeforeBlockquote = (args: SetContentBeforeBlockquo
 
         const divEl = document.createElement('div');
         divEl.setAttribute('style', wrapperDivStyles);
-        divEl.innerText = content;
+        divEl.innerHTML = canKeepFormatting ? prepareContentToInsert(content, false, true) : content;
         divEl.appendChild(document.createElement('br'));
         divEl.appendChild(document.createElement('br'));
 

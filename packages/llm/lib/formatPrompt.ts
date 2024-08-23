@@ -236,6 +236,7 @@ function makeInstructions(recipient?: string, locale?: string) {
 }
 
 export function formatPromptWriteFullEmail(action: WriteFullEmailAction): string {
+    const { assistantOutputFormat = 'plaintext' } = action;
     return makePromptFromTurns([
         {
             role: 'system',
@@ -247,7 +248,7 @@ export function formatPromptWriteFullEmail(action: WriteFullEmailAction): string
         },
         {
             role: 'assistant',
-            contents: `Sure, here's your email:\n\n\`\`\`plaintext\n${HARMFUL_CHECK_PREFIX}`,
+            contents: `Sure, here's your email:\n\n\`\`\`${assistantOutputFormat}\n${HARMFUL_CHECK_PREFIX}`,
         },
     ]);
 }
@@ -282,6 +283,8 @@ export function formatPromptCustomRefine(action: CustomRefineAction): string {
     let system: string;
     let user: string;
     let newEmailStart: string;
+    let userInputFormat: 'plaintext' | 'markdown' = action.userInputFormat || 'plaintext';
+    let assistantOutputFormat: 'plaintext' | 'markdown' = action.assistantOutputFormat || 'plaintext';
 
     if (isEntireEmail) {
         oldEmail = mid.trim();
@@ -303,7 +306,7 @@ export function formatPromptCustomRefine(action: CustomRefineAction): string {
     const turns = [
         {
             role: 'user',
-            contents: `Here's my original email:\n\n\`\`\`plaintext\n${oldEmail}\n\`\`\`\n\n${user}`,
+            contents: `Here's my original email:\n\n\`\`\`${userInputFormat}\n${oldEmail}\n\`\`\`\n\n${user}`,
         },
         {
             role: 'system',
@@ -311,7 +314,7 @@ export function formatPromptCustomRefine(action: CustomRefineAction): string {
         },
         {
             role: 'assistant',
-            contents: `Sure, here's your modified email. I rewrote it in the same language as the original:\n\n\`\`\`plaintext\n${newEmailStart}`,
+            contents: `Sure, here's your modified email. I rewrote it in the same language as the original:\n\n\`\`\`${assistantOutputFormat}\n${newEmailStart}`,
         },
     ];
 
