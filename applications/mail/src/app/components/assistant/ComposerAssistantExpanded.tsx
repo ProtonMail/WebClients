@@ -1,4 +1,5 @@
 import type { RefObject } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,8 +19,11 @@ import clsx from '@proton/utils/clsx';
 import AssistantFeedbackModal from 'proton-mail/components/assistant/modals/AssistantFeedbackModal';
 import { ASSISTANT_INSERT_TYPE } from 'proton-mail/hooks/assistant/useComposerAssistantGenerate';
 
+import ComposerAssistantResult from './ComposerAssistantResult';
+
 interface Props {
     assistantID: string;
+    isComposerPlainText: boolean;
     generationResult: string;
     assistantResultRef: RefObject<HTMLElement>;
     assistantResultChildRef: RefObject<HTMLElement>;
@@ -38,6 +42,7 @@ interface Props {
 
 const ComposerAssistantExpanded = ({
     assistantID,
+    isComposerPlainText,
     generationResult,
     assistantResultRef,
     assistantResultChildRef,
@@ -55,8 +60,9 @@ const ComposerAssistantExpanded = ({
 }: Props) => {
     const { createNotification } = useNotifications();
     const { sendNotUseAnswerAssistantReport } = useAssistantTelemetry();
-    const { isGeneratingResult, setAssistantStatus, cancelRunningAction, cleanSpecificErrors } =
+    const { isGeneratingResult, setAssistantStatus, cancelRunningAction, cleanSpecificErrors, canKeepFormatting } =
         useAssistant(assistantID);
+    const generatedContentRef = useRef<HTMLDivElement>(null);
 
     const handleCancel = async () => {
         if (isGeneratingResult) {
@@ -85,6 +91,9 @@ const ComposerAssistantExpanded = ({
         onResetPrompt();
         onResetGeneration();
     };
+
+    const hasPlaintextGeneration =
+        isComposerPlainText || isGeneratingResult || !canKeepFormatting || !generatedContentRef.current;
 
     return (
         <div className="flex-1 flex flex-nowrap flex-column">
@@ -115,17 +124,23 @@ const ComposerAssistantExpanded = ({
                             ])}
                             aria-busy={isGeneratingResult ? true : undefined}
                         >
-                            {generationResult}
+                            <div ref={generatedContentRef}>
+                                <ComposerAssistantResult
+                                    result={generationResult}
+                                    assistantID={assistantID}
+                                    isComposerPlainText={isComposerPlainText}
+                                />
+                            </div>
 
                             <Copy
                                 size="small"
                                 className="absolute top-0 right-0 mt-2 mr-2"
                                 shape="ghost"
-                                value={generationResult}
+                                value={hasPlaintextGeneration ? generationResult : generatedContentRef.current}
                                 disabled={isGeneratingResult || !generationResult}
                                 onCopy={() => {
                                     createNotification({
-                                        text: c('Success').t`Text copied to clipboard`,
+                                        text: c('Success').t`Content copied to clipboard`,
                                     });
                                 }}
                             />

@@ -1,6 +1,7 @@
 import type { MutableRefObject, RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import type { EditorMetadata } from '@proton/components/components';
 import { ComposerAssistantTrialEndedUpsellModal, useModalStateObject } from '@proton/components/components';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, getHasAssistantStatus, useAssistant } from '@proton/llm/lib';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
@@ -12,6 +13,7 @@ import clsx from '@proton/utils/clsx';
 import ComposerAssistantExpanded from 'proton-mail/components/assistant/ComposerAssistantExpanded';
 import ResumeDownloadingModal from 'proton-mail/components/assistant/modals/ResumeDownloadingModal';
 import ComposerAssistantToolbar from 'proton-mail/components/assistant/toolbar/ComposerAssistantToolbar';
+import type { ComposerReturnType } from 'proton-mail/helpers/composer/contentFromComposerMessage';
 import { removeLineBreaks } from 'proton-mail/helpers/string';
 import useComposerAssistantGenerate from 'proton-mail/hooks/assistant/useComposerAssistantGenerate';
 import useComposerAssistantScrollButton from 'proton-mail/hooks/assistant/useComposerAssistantScrollButton';
@@ -22,8 +24,9 @@ import './ComposerAssistant.scss';
 
 interface Props {
     assistantID: string;
+    editorMetadata: EditorMetadata;
     composerSelectedText: string;
-    getContentBeforeBlockquote: () => string;
+    getContentBeforeBlockquote: (returnType?: ComposerReturnType) => string;
     setContentBeforeBlockquote: (content: string) => void;
     composerContentRef: RefObject<HTMLElement>;
     composerContainerRef: RefObject<HTMLElement>;
@@ -38,6 +41,7 @@ interface Props {
 
 const ComposerAssistant = ({
     assistantID,
+    editorMetadata,
     composerSelectedText,
     getContentBeforeBlockquote,
     setContentBeforeBlockquote,
@@ -93,6 +97,7 @@ const ComposerAssistant = ({
         replaceMessageBody,
     } = useComposerAssistantGenerate({
         assistantID,
+        isComposerPlainText: editorMetadata.isPlainText,
         showAssistantSettingsModal: () => setInnerModal(ComposerInnerModalStates.AssistantSettings),
         showResumeDownloadModal: () => resumeDownloadModal.openModal(true),
         showUpsellModal: () => upsellModal.openModal(true),
@@ -175,6 +180,7 @@ const ComposerAssistant = ({
             {isAssistantExpanded && (
                 <ComposerAssistantExpanded
                     assistantID={assistantID}
+                    isComposerPlainText={editorMetadata.isPlainText}
                     generationResult={generationResult}
                     assistantResultChildRef={assistantResultChildRef}
                     assistantResultRef={assistantResultRef}

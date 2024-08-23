@@ -1,6 +1,6 @@
 import { stripLeadingSlash, stripTrailingSlash } from '@proton/shared/lib/helpers/string';
 
-import type { APP_NAMES} from '../constants';
+import type { APP_NAMES } from '../constants';
 import { VPN_HOSTNAME } from '../constants';
 import { APPS, APPS_CONFIGURATION, DOH_DOMAINS, LINK_TYPES } from '../constants';
 import window from '../window';

@@ -1,0 +1,15 @@
+@import '~@proton/styles/scss/lib';
+
+.composer-assistant-result {
+	blockquote {
+		padding-block: 0;
+		padding-inline: rem(16) 0;
+		margin: 0;
+		border-inline-start: 4px solid #e5e5e5;
+
+		&::after,
+		&::before {
+			content: none;
+		}
+	}
+}

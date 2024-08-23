@@ -5,13 +5,18 @@ import { c } from 'ttag';
 
 import type { ButtonLikeShape, ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { copyDomToClipboard, textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';
 
-interface Props extends ButtonProps {
-    value: string;
+interface Props extends Omit<ButtonProps, 'value'> {
+    /**
+     * Content that will be copied to the clipboard.
+     * If passing a string, text will be copied,
+     * but if an HTMLElement is passed, HTML content will be copied, not text (images, links etc.. are kept)
+     */
+    value: string | HTMLElement;
     className?: string;
     onCopy?: () => void;
     tooltipText?: string;
@@ -24,7 +29,13 @@ const Copy = (
 ) => {
     const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
-        textToClipboard(value, e.currentTarget);
+
+        // In some cases we want to copy the content as HTML
+        if (typeof value === 'string') {
+            textToClipboard(value, e.currentTarget);
+        } else {
+            void copyDomToClipboard(value);
+        }
         onCopy?.();
     };
 

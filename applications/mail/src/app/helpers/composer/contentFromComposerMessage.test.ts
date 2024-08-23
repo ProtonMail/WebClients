@@ -14,6 +14,7 @@ describe('getMessageContentBeforeBlockquote', () => {
             getMessageContentBeforeBlockquote({
                 editorType: 'html',
                 editorContent: '',
+                returnType: 'plaintext',
             })
         ).toBe('');
     });
