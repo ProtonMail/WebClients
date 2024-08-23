@@ -336,9 +336,8 @@ const getDesktopApp = (included: boolean): PlanCardFeatureDefinition => {
 
 const getEmailDistributionLists = (included: boolean): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Email distribution lists`,
-        tooltip: c('new_plans: tooltip')
-            .t`Add people to email groups with designated email addresses for easy communication`,
+        text: c('new_plans: feature').t`Email groups`,
+        tooltip: c('new_plans: tooltip').t`Email everyone in a group with a single email address`,
         included,
     };
 };
