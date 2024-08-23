@@ -9,6 +9,7 @@ import { escape, unescape } from '@proton/shared/lib/sanitize/escape';
 import { MESSAGE_IFRAME_ROOT_ID } from '../../components/message/constants';
 import type { MESSAGE_ACTIONS } from '../../constants';
 import type { MessageState, PartialMessageState } from '../../store/messages/messagesTypes';
+import { parseModelResult } from '../assistant/result';
 import { findSender } from '../message/messageRecipients';
 import { toText } from '../parserHtml';
 import { textToHtml } from '../textToHtml';
@@ -200,13 +201,21 @@ export const getContentWithBlockquotes = (
 export const getComposerDefaultFontStyles = (mailSettings: MailSettings) =>
     `font-family: ${mailSettings?.FontFace || DEFAULT_FONT_FACE_ID}; font-size: ${mailSettings?.FontSize || DEFAULT_FONT_SIZE}px`;
 
-export const sanitizeContentToInsert = (textToInsert: string, isPlainText: boolean) => {
+export const prepareContentToInsert = (textToInsert: string, isPlainText: boolean, isMarkdown: boolean) => {
+    if (isPlainText) {
+        return unescape(textToInsert);
+    }
+
+    if (isMarkdown) {
+        return parseModelResult(textToInsert);
+    }
+
     // Because rich text editor convert text to HTML, we need to escape the text before inserting it
     // As a 2nd layer of security, to prevent adding unsafe elements, we also want to sanitize the content before importing it
     const escapedText = escape(textToInsert);
     const sanitizedText = message(escapedText);
 
-    return isPlainText ? unescape(sanitizedText) : sanitizedText;
+    return sanitizedText;
 };
 
 export const insertTextBeforeContent = (

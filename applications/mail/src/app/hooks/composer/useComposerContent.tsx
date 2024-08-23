@@ -15,6 +15,7 @@ import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
+import type { ComposerReturnType } from 'proton-mail/helpers/composer/contentFromComposerMessage';
 import {
     getMessageContentBeforeBlockquote,
     setMessageContentBeforeBlockquote,
@@ -85,6 +86,7 @@ export interface EditorComposer {
     closeAssistant: (id: string) => void;
     setAssistantStatus: (id: string, status: OpenedAssistantStatus) => void;
     handleResetAssistantState: () => void;
+    canKeepFormatting: boolean;
 }
 
 export interface EditorQuickReply {
@@ -454,7 +456,7 @@ export const useComposerContent = (args: EditorArgs) => {
     /**
      * Returns plain text content before the blockquote and signature in the editor
      */
-    const getContentBeforeBlockquote = () => {
+    const getContentBeforeBlockquote = (returnType: ComposerReturnType = 'plaintext') => {
         const { editorRef, type } = args;
         // Do nothing if quick reply
         if (type === EditorTypes.quickReply) {
@@ -483,6 +485,7 @@ export const useComposerContent = (args: EditorArgs) => {
             editorType,
             editorContent,
             addressSignature,
+            returnType,
         });
     };
 
@@ -516,6 +519,7 @@ export const useComposerContent = (args: EditorArgs) => {
             content,
             wrapperDivStyles: getComposerDefaultFontStyles(mailSettings),
             addressSignature,
+            canKeepFormatting: args.canKeepFormatting,
         });
 
         return handleChangeContent(nextContent, true);
