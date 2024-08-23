@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { useAssistantSubscriptionStatus, useUserSettings } from '@proton/components/hooks';
+import { useAssistantSubscriptionStatus, useAuthentication, useUserSettings } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { isPromptSizeValid, useAssistant } from '@proton/llm/lib';
 import type {
@@ -13,9 +13,13 @@ import type {
 } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus, isPredefinedRefineActionType, isRefineActionType } from '@proton/llm/lib/types';
 import { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
+import { prepareContentToModel } from 'proton-mail/helpers/assistant/input';
+import { markdownToHTML } from 'proton-mail/helpers/assistant/markdown';
+import type { ComposerReturnType } from 'proton-mail/helpers/composer/contentFromComposerMessage';
 import { removeLineBreaks } from 'proton-mail/helpers/string';
 
 export enum ASSISTANT_INSERT_TYPE {
@@ -32,6 +36,7 @@ export interface GenerateResultProps {
 
 interface Props {
     assistantID: string;
+    isComposerPlainText: boolean;
     showAssistantSettingsModal: () => void;
     showResumeDownloadModal: () => void;
     showUpsellModal: () => void;
@@ -39,7 +44,7 @@ interface Props {
     expanded: boolean;
     recipients: Recipient[];
     sender: Recipient | undefined;
-    getContentBeforeBlockquote: () => string;
+    getContentBeforeBlockquote: (returnType?: ComposerReturnType) => string;
     checkScrollButtonDisplay: () => boolean | undefined;
     selectedText: string | undefined;
     composerSelectedText: string;
@@ -52,6 +57,7 @@ interface Props {
 
 const useComposerAssistantGenerate = ({
     assistantID,
+    isComposerPlainText,
     showAssistantSettingsModal,
     showResumeDownloadModal,
     showUpsellModal,
@@ -80,8 +86,11 @@ const useComposerAssistantGenerate = ({
 
     const [{ AIAssistantFlags, Locale: locale }] = useUserSettings();
     const { trialStatus, start: startTrial } = useAssistantSubscriptionStatus();
-    const { downloadPaused, generateResult, setAssistantStatus, addSpecificError } = useAssistant(assistantID);
+    const { downloadPaused, generateResult, setAssistantStatus, addSpecificError, canKeepFormatting } =
+        useAssistant(assistantID);
     const { sendUseAnswerAssistantReport } = useAssistantTelemetry();
+
+    const authentication = useAuthentication();
 
     const handleCheckValidPrompt = (action: Action) => {
         const isValidPrompt = isPromptSizeValid(action);
@@ -133,7 +142,7 @@ const useComposerAssistantGenerate = ({
                  * - The full email in plaintext
                  * - The start and end index of the selection within the full email
                  */
-                const plain = removeLineBreaks(getContentBeforeBlockquote());
+                const plain = removeLineBreaks(getContentBeforeBlockquote('plaintext'));
                 const idxStart = plain.indexOf(removeLineBreaks(selectedText));
                 const idxEnd = idxStart + removeLineBreaks(selectedText).length;
 
@@ -142,6 +151,8 @@ const useComposerAssistantGenerate = ({
                     fullEmail: plain,
                     idxStart,
                     idxEnd,
+                    userInputFormat: 'plaintext',
+                    assistantOutputFormat: isComposerPlainText || !canKeepFormatting ? 'plaintext' : 'markdown',
                 };
 
                 const isValidPrompt = handleCheckValidPrompt(action);
@@ -164,11 +175,29 @@ const useComposerAssistantGenerate = ({
                  * - The refine prompt
                  * - The previous generated text
                  * - The start and end index of the selection within the previous generated text
+                 *
+                 *
+                 * Because generationResult contains Markdown text, we need to convert it to plaintext
+                 * before searching for the text selection, otherwise we might not find it,
+                 * which will break the refine.
+                 * So same as the case with text selection in the composer, we cannot keep the HTML format.
                  */
-                const idxStart = generationResult.indexOf(selectedText);
+
+                let content = '';
+
+                if (canKeepFormatting) {
+                    // Get the plaintext content by converting md content to HTML and getting the innerText
+                    // We are also keeping line breaks in that case so that we don't break formatting
+                    const html = markdownToHTML(generationResult, true);
+                    content = parseStringToDOM(html).body.innerText;
+                } else {
+                    content = generationResult;
+                }
+
+                const idxStart = content.indexOf(selectedText);
                 const idxEnd = idxStart + selectedText.length;
-                const beforeSelection = generationResult.slice(0, idxStart);
-                const afterSelection = generationResult.slice(idxEnd, generationResult.length);
+                const beforeSelection = content.slice(0, idxStart);
+                const afterSelection = content.slice(idxEnd, content.length);
 
                 const handleInsertRefineInGenerationResult = (textToReplace: string) => {
                     handleStartTrial();
@@ -176,11 +205,13 @@ const useComposerAssistantGenerate = ({
                     handleSetResult(newResult);
                 };
 
-                const action = {
+                const action: Action = {
                     ...partialAction,
-                    fullEmail: generationResult,
+                    fullEmail: content,
                     idxStart,
                     idxEnd,
+                    userInputFormat: 'plaintext',
+                    assistantOutputFormat: isComposerPlainText || !canKeepFormatting ? 'plaintext' : 'markdown',
                 };
 
                 const isValidPrompt = handleCheckValidPrompt(action);
@@ -215,7 +246,17 @@ const useComposerAssistantGenerate = ({
 
     /* Generation related */
     const getEmailContentsForRefinement = () => {
-        const composerContent = removeLineBreaks(getContentBeforeBlockquote());
+        const mode = composerSelectedText || !canKeepFormatting ? 'plaintext' : 'html';
+        const contentBeforeBlockquote = getContentBeforeBlockquote(mode);
+
+        let composerContent;
+        if (isComposerPlainText || composerSelectedText || !canKeepFormatting) {
+            composerContent = removeLineBreaks(contentBeforeBlockquote);
+        } else {
+            const uid = authentication.getUID();
+            composerContent = prepareContentToModel(contentBeforeBlockquote, uid);
+        }
+
         if (expanded && generationResult) {
             return generationResult;
         } else if (composerContent) {
@@ -231,6 +272,8 @@ const useComposerAssistantGenerate = ({
                 recipient: recipients?.[0]?.Name,
                 sender: sender?.Name,
                 locale,
+                // no need to set input format since it can only be plaintext in that case
+                assistantOutputFormat: isComposerPlainText || !canKeepFormatting ? 'plaintext' : 'markdown',
             };
         }
 
@@ -243,6 +286,8 @@ const useComposerAssistantGenerate = ({
             fullEmail,
             idxStart: 0,
             idxEnd: fullEmail.length,
+            userInputFormat: isComposerPlainText || !canKeepFormatting ? 'plaintext' : 'markdown',
+            assistantOutputFormat: isComposerPlainText || !canKeepFormatting ? 'plaintext' : 'markdown',
         };
 
         // Predefined refine (shorten, proofread etc)
