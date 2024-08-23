@@ -32,6 +32,7 @@ import {
 } from '@proton/components';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
+import useConvertExternalAddresses from '@proton/components/containers/organization/useConvertExternalAddresses';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
 import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
@@ -185,6 +186,7 @@ const MainContainer = () => {
     }, [location.pathname, location.hash]);
 
     useDeviceRecovery();
+    useConvertExternalAddresses();
 
     /*
      * There's no logical app to return/go to from VPN settings since the
