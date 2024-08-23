@@ -104,7 +104,7 @@ export const SearchLibraryProvider = ({ children }: Props) => {
             return;
         }
 
-        const callbackId = driveEventManager.eventHandlers.register(async (volumeId, events) => {
+        const callbackId = driveEventManager.eventHandlers.register(async (volumeId, events, processedEventCounter) => {
             // The store is updated via volume events which includes all shares
             // including my files or devices. Encrypted search works only for
             // my files and thus we need to filter for events affecting only
@@ -138,6 +138,9 @@ export const SearchLibraryProvider = ({ children }: Props) => {
                             event.eventType === EVENT_TYPES.DELETE || event.encryptedLink.rootShareId === defaultShareId
                     ),
             };
+            defaultShareEvents.events.forEach((event) => {
+                processedEventCounter(events.eventId, event);
+            });
             const searchEvents = await convertDriveEventsToSearchEvents(
                 defaultShareId,
                 defaultShareEvents,

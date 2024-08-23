@@ -18,11 +18,6 @@ export enum ShareType {
     photos,
 }
 
-export enum VolumeType {
-    own = 'own',
-    shared = 'shared',
-}
-
 export enum ShareState {
     active = 1,
     deleted,
