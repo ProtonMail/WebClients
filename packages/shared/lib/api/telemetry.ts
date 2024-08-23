@@ -171,6 +171,7 @@ export enum TelemetryCollapsibleLeftSidebarEvents {
 export enum TelemetryProtonTipsEvents {
     tipDispayed = 'tip_displayed',
     CTAButtonClicked = 'cta_clicked',
+    tipChangeState = 'tip_change_state',
 }
 
 export type TelemetryEvents =
