@@ -26,8 +26,9 @@ import {
     useSearchControl,
 } from '../store';
 // TODO: This should be removed after rollout phase
-import { VolumeType, useDriveSharingFlags, useShareActions } from '../store/_shares';
+import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
+import { VolumeType } from '../store/_volumes';
 import DevicesContainer from './DevicesContainer';
 import FolderContainer from './FolderContainer';
 import NoAccessContainer from './NoAccessContainer';
@@ -94,7 +95,9 @@ const InitContainer = () => {
     }, [defaultShareRoot.volumeId]);
 
     useEffect(() => {
-        driveEventManager.eventHandlers.register((_volumeId, events) => convertExternalInvitationsFromEvents(events));
+        driveEventManager.eventHandlers.register((_volumeId, events, processedEventCounter) =>
+            convertExternalInvitationsFromEvents(events, processedEventCounter)
+        );
     }, []);
 
     if (loading) {
