@@ -1,22 +1,12 @@
 import type { FormEvent } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
-import { addressType } from '@proton/shared/lib/api/addresses';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import type {
-    Address,
-    Api,
-    DecryptedKey,
-    Domain,
-    DomainAddress,
-    KeyTransparencyVerify,
-} from '@proton/shared/lib/interfaces';
+import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import {
     DKIM_STATE,
     DMARC_STATE,
@@ -25,8 +15,6 @@ import {
     SPF_STATE,
     VERIFY_STATE,
 } from '@proton/shared/lib/interfaces';
-import { clearExternalFlags, getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys';
-import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -43,18 +31,7 @@ import {
     Tooltip,
     useFormErrors,
 } from '../../components';
-import {
-    useApi,
-    useCustomDomains,
-    useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
-    useGetUser,
-    useGetUserKeys,
-    useNotifications,
-    useStep,
-} from '../../hooks';
-import { useKTVerifier } from '../keyTransparency';
+import { useApi, useCustomDomains, useEventManager, useNotifications, useStep } from '../../hooks';
 import AddressesSection from './AddressesSection';
 import DKIMSection from './DKIMSection';
 import DMARCSection from './DMARCSection';
@@ -89,48 +66,9 @@ interface Props extends ModalProps {
     domainAddresses?: DomainAddress[];
 }
 
-const convertToInternalAddress = async ({
-    address,
-    keys,
-    api,
-    keyTransparencyVerify,
-}: {
-    address: Address;
-    keys: DecryptedKey[];
-    api: Api;
-    keyTransparencyVerify: KeyTransparencyVerify;
-}) => {
-    const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, keys);
-    const internalAddress = {
-        ...address,
-        // Reset type to an internal address with a custom domain
-        Type: ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN,
-    };
-    const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
-        getNormalizedActiveKeys(internalAddress, activeKeys).map((key) => {
-            return {
-                ...key,
-                flags: clearExternalFlags(key.flags),
-            };
-        }),
-        address,
-        keyTransparencyVerify
-    );
-    await api(
-        addressType(address.ID, {
-            Type: internalAddress.Type,
-            SignedKeyList: signedKeyList,
-        })
-    );
-    await onSKLPublishSuccess();
-};
-
 const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const [customDomains, loadingCustomDomains] = useCustomDomains();
-    const onceRef = useRef(false);
     const [domainModel, setDomain] = useState<Partial<Domain>>(() => ({ ...domain }));
-    const getAddresses = useGetAddresses();
-    const getAddressKeys = useGetAddressKeys();
 
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -139,46 +77,6 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const { step, next, goTo } = useStep();
     const { call } = useEventManager();
     const { validator, onFormSubmit } = useFormErrors();
-
-    const getUser = useGetUser();
-    const getUserKeys = useGetUserKeys();
-    const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, getUser);
-
-    useEffect(() => {
-        const run = async () => {
-            if (onceRef.current) {
-                return;
-            }
-            const domainName = domainModel.DomainName;
-            // Once a domain has gotten verified, and before we display the MX setup, we attempt to convert external addresess
-            // to internal ones by changing the type by updating the SKL.
-            if (!domainModel.ID || !domainName || domainModel.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD) {
-                return;
-            }
-            onceRef.current = true;
-            const addresses = await getAddresses();
-            const externalAddresses = addresses.filter(
-                (address) => address.Type === ADDRESS_TYPE.TYPE_EXTERNAL && address.Email.endsWith(domainName)
-            );
-            if (!externalAddresses.length) {
-                return;
-            }
-            await Promise.all(
-                externalAddresses.map(async (externalAddress) => {
-                    return convertToInternalAddress({
-                        address: externalAddress,
-                        keys: await getAddressKeys(externalAddress.ID),
-                        api: getSilentApi(api),
-                        keyTransparencyVerify,
-                    });
-                })
-            );
-            const userKeys = await getUserKeys();
-            await keyTransparencyCommit(userKeys);
-            await call();
-        };
-        void run();
-    }, [domainModel?.DomainName, domainModel?.ID, domainModel?.VerifyState]);
 
     const handleClose = async () => {
         void call(); // Refresh domains model present in background page
