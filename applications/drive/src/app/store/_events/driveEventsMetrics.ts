@@ -124,13 +124,15 @@ export class EventsMetrics {
             const total = events[eventType];
             if (total !== undefined && total.size > 0) {
                 const difference = total.difference(processed || new Set());
-                metrics.drive_sync_event_unecessary_total.increment(
-                    {
-                        volumeType: type,
-                        eventType: eventType,
-                    },
-                    difference.size
-                );
+                if (difference.size) {
+                    metrics.drive_sync_event_unecessary_total.increment(
+                        {
+                            volumeType: type,
+                            eventType: eventType,
+                        },
+                        difference.size
+                    );
+                }
             }
         });
     }
