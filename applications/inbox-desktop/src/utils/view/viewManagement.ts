@@ -1,4 +1,4 @@
-import { BrowserView, BrowserWindow, Input, Session, WebContents, app } from "electron";
+import { BrowserView, BrowserWindow, Event, Input, Session, WebContents, app } from "electron";
 import { debounce } from "lodash";
 import { WindowBounds, getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
@@ -33,6 +33,15 @@ const loadingViewMap: Record<ViewID, Promise<void> | undefined> = {
 
 const PRELOADED_VIEWS: ViewID[] = ["mail", "calendar"];
 let mainWindow: undefined | BrowserWindow = undefined;
+
+/**
+ * @see https://www.electronjs.org/docs/latest/api/web-contents#event-did-fail-load
+ * @see https://source.chromium.org/chromium/chromium/src/+/main:net/base/net_error_list.h
+ */
+const IGNORED_NET_ERROR_CODES = [
+    -3, // ABORTED
+    -300, // INVALID_URL
+];
 
 export const viewCreationAppStartup = (session: Session) => {
     mainWindow = createBrowserWindow(session);
@@ -248,23 +257,36 @@ export async function loadURL(viewID: ViewID, url: string) {
         view.webContents.stop();
     }
 
-    loadingViewMap[viewID] = new Promise<void>((resolve, reject) => {
+    loadingViewMap[viewID] = new Promise<void>((resolve) => {
         let loadingTimeoutID: NodeJS.Timeout | undefined = undefined;
 
-        const handleLoadingTimeout = () => {
-            viewLogger(viewID).error("loadURL timeout", url);
+        const cleanup = () => {
             clearTimeout(loadingTimeoutID);
-            reject();
-        };
-
-        const handleStopLoading = () => {
-            clearTimeout(loadingTimeoutID);
-            view.webContents.off("did-stop-loading", handleStopLoading);
+            view.webContents.off("did-stop-loading", handleLoadFinish);
+            view.webContents.on("did-fail-load", handleLoadError);
             resolve();
         };
 
-        view.webContents.on("did-stop-loading", handleStopLoading);
-        loadingTimeoutID = setTimeout(handleLoadingTimeout, 30000);
+        const handleLoadTimeout = () => {
+            viewLogger(viewID).error("loadURL timeout", url);
+            cleanup();
+        };
+
+        const handleLoadFinish = () => {
+            viewLogger(viewID).debug("did-finish-load", url);
+            cleanup();
+        };
+
+        const handleLoadError = (_event: Event, errorCode: number, errorDescription: string) => {
+            if (!IGNORED_NET_ERROR_CODES.includes(errorCode)) {
+                viewLogger(viewID).error("did-fail-load", url, errorCode, errorDescription);
+            }
+            cleanup();
+        };
+
+        view.webContents.on("did-finish-load", handleLoadFinish);
+        view.webContents.on("did-fail-load", handleLoadError);
+        loadingTimeoutID = setTimeout(handleLoadTimeout, 30000);
         view.webContents.loadURL(url);
     });
 
