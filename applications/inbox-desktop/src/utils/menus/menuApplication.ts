@@ -3,7 +3,6 @@ import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
 import { getMainWindow, getSpellCheckStatus, resetZoom, toggleSpellCheck, updateZoom } from "../view/viewManagement";
-import { areDevToolsAvailable } from "../view/windowHelpers";
 import { isProdEnv } from "../config";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
@@ -177,31 +176,6 @@ export const setApplicationMenu = () => {
             },
         ],
     });
-
-    if (areDevToolsAvailable()) {
-        insertInMenu({
-            menu: temp,
-            key: "view",
-            allOSEntries: [
-                { type: "separator" },
-                {
-                    label: c("App menu").t`Toggle developers tools`,
-                    accelerator: isMac ? "Cmd+Alt+I" : "Ctrl+Shift+I",
-                    click: () => {
-                        const mainWindow = getMainWindow();
-                        if (mainWindow) {
-                            const view = mainWindow.getBrowserView();
-                            if (view) {
-                                view.webContents.toggleDevTools();
-                            } else {
-                                mainWindow.webContents.toggleDevTools();
-                            }
-                        }
-                    },
-                },
-            ],
-        });
-    }
 
     const menu = Menu.buildFromTemplate(temp);
     Menu.setApplicationMenu(menu);
