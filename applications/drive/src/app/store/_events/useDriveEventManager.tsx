@@ -13,7 +13,7 @@ import { logError } from '../../utils/errorHandling';
 import { driveEventsResultToDriveEvents } from '../_api';
 import type { VolumeType } from '../_volumes';
 import { EventsMetrics, countEventsPerType } from './driveEventsMetrics';
-import type { EventHandler } from './interface';
+import type { DriveEvent, EventHandler } from './interface';
 
 const DRIVE_EVENT_HANDLER_ID_PREFIX = 'drive-event-handler';
 
@@ -57,7 +57,9 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
         const handlerPromises: unknown[] = [];
         eventHandlers.current.forEach((handler) => {
             handlerPromises.push(
-                handler(volumeId, driveEventsResultToDriveEvents(driveEvents), eventsMetrics.processed)
+                handler(volumeId, driveEventsResultToDriveEvents(driveEvents), (eventId: string, event: DriveEvent) => {
+                    eventsMetrics.processed(eventId, event);
+                })
             );
         });
 
