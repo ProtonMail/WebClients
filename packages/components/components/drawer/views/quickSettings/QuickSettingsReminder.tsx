@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
 import { ThemeColor } from '@proton/colors/types';
 import { Icon } from '@proton/components/components';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
@@ -12,7 +11,12 @@ interface Props {
 
 const QuickSettingsReminder = ({ reminder }: Props) => {
     return (
-        <Button key={reminder.text} shape="ghost" fullWidth className="py-2 px-3" onClick={reminder.callback}>
+        <button
+            type="button"
+            key={reminder.text}
+            className={clsx(reminder.icon && 'px-3', 'py-2 hover:text-underline')}
+            onClick={reminder.callback}
+        >
             <span className="flex items-center gap-2">
                 {reminder.icon && (
                     <span className={clsx('flex shrink-0', reminder.color && `color-${reminder.color}`)}>
@@ -28,7 +32,7 @@ const QuickSettingsReminder = ({ reminder }: Props) => {
                     {reminder.text}
                 </span>
             </span>
-        </Button>
+        </button>
     );
 };
 
