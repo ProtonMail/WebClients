@@ -118,7 +118,6 @@ export enum TelemetryMailEvents {
 }
 
 export enum TelemetryMailSelectAllEvents {
-    notification_move_to = 'notification_move_to',
     button_move_to_archive = 'button_move_to_archive',
     button_move_to_trash = 'button_move_to_trash',
     banner_move_to = 'banner_move_to',
