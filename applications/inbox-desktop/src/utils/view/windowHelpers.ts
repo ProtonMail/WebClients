@@ -2,14 +2,10 @@ import { BrowserWindowConstructorOptions, Session, app } from "electron";
 import { join } from "path";
 import { MINIMUM_HEIGHT, MINIMUM_WIDTH, getWindowBounds } from "../../store/boundsStore";
 import { getSettings } from "../../store/settingsStore";
-import { getConfig, isProdEnv } from "../config";
+import { getConfig } from "../config";
 import { isLinux, isMac, isWindows } from "../helpers";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
-
-export const areDevToolsAvailable = () => {
-    return !isProdEnv();
-};
 
 const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
     if (isMac) {
@@ -42,7 +38,7 @@ export const getWindowConfig = (session: Session): BrowserWindowConstructorOptio
         minHeight: MINIMUM_HEIGHT,
         ...getOSSpecificConfig(),
         webPreferences: {
-            devTools: areDevToolsAvailable(),
+            devTools: true,
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
             spellcheck: settings.spellChecker,
             // Security additions
