@@ -59,6 +59,7 @@ import { CancellationReminderSection } from '@proton/components/containers';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
 import useConvertExternalAddresses from '@proton/components/containers/organization/useConvertExternalAddresses';
+import useUnprivatizeMembers from '@proton/components/containers/organization/useUnprivatizeMembers';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import type { BugModalMode } from '@proton/components/containers/support/BugModal';
 import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
@@ -106,6 +107,7 @@ const MainContainer: FunctionComponent = () => {
         canDisplayB2BLogsVPN,
     });
     useConvertExternalAddresses();
+    useUnprivatizeMembers();
 
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
