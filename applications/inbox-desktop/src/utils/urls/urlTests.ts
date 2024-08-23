@@ -176,7 +176,7 @@ export const isHostAllowed = (host: string) => {
                 return url.host === hostURl.host;
             });
     } catch (error) {
-        mainLogger.error("isHostAllowed", error);
+        mainLogger.error("isHostAllowed", host, error);
         return false;
     }
 };
