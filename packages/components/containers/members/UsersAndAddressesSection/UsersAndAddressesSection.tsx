@@ -58,7 +58,6 @@ import { SetupOrgSpotlight } from '../../account/spotlights/passB2bOnboardingSpo
 import { AddressModal } from '../../addresses';
 import CreateMissingKeysAddressModal from '../../addresses/missingKeys/CreateMissingKeysAddressModal';
 import useOrganizationModals from '../../organization/useOrganizationModals';
-import useUnprivatizeMembers from '../../organization/useUnprivatizeMembers';
 import ChangeMemberPasswordModal from '../ChangeMemberPasswordModal';
 import InviteUserCreateSubUserModal from '../InviteUserCreateSubUserModal';
 import LoginMemberModal from '../LoginMemberModal';
@@ -98,8 +97,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const hasSetupActiveOrganizationWithKeys =
         organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationSetupWithKeys(organization);
     const organizationModals = useOrganizationModals(onceRef);
-
-    useUnprivatizeMembers();
 
     const {
         passOnboardingSpotlights: { setupOrgSpotlight },
