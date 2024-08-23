@@ -1,7 +1,12 @@
-import type { MouseEvent } from 'react';
-
 import { c } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useApi from '@proton/components/hooks/useApi';
+import useEventManager from '@proton/components/hooks/useEventManager';
+import useNotifications from '@proton/components/hooks/useNotifications';
+import useUser from '@proton/components/hooks/useUser';
+import useUserSettings from '@proton/components/hooks/useUserSettings';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import {
     APPS,
@@ -13,16 +18,11 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 
-import { Info, SettingsLink, useModalState } from '../../components';
-import Icon from '../../components/icon/Icon';
-import { useApi, useEventManager, useNotifications, useUser, useUserSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsSection from '../account/SettingsSection';
-import ShortcutsToggle from '../general/ShortcutsToggle';
 import ToggleAssistantContainer from '../general/ToggleAssistant/ToggleAssistantContainer';
-import { MailShortcutsModal } from '../mail';
 import DailyEmailNotificationToggle from '../recovery/DailyEmailNotificationToggle';
 import RecoveryEmail from '../recovery/email/RecoveryEmail';
 
@@ -32,13 +32,6 @@ const MessagesGeneralSection = () => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-
-    const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
-
-    const handleOpenShortcutsModal = (e: MouseEvent) => {
-        e.preventDefault();
-        setMailShortcutsModalOpen(true);
-    };
 
     const showRecoveryEmailInput = !user.isPrivate;
     const canEnableDailyEmails = !!userSettings?.Email?.Value;
@@ -64,30 +57,7 @@ const MessagesGeneralSection = () => {
 
     return (
         <>
-            <MailShortcutsModal {...mailShortcutsProps} />
             <SettingsSection>
-                <SettingsLayout>
-                    <SettingsLayoutLeft>
-                        <label htmlFor="shortcutsToggle" className="flex-1">
-                            <span className="text-semibold">{c('Title').t`Keyboard shortcuts`}</span>
-                            <button
-                                type="button"
-                                className="ml-2 inline-flex relative interactive-pseudo-protrude interactive--no-background"
-                                onClick={handleOpenShortcutsModal}
-                            >
-                                <Icon
-                                    className="color-primary"
-                                    name="info-circle"
-                                    alt={c('Action').t`More info: Keyboard shortcuts`}
-                                    size={4}
-                                />
-                            </button>
-                        </label>
-                    </SettingsLayoutLeft>
-                    <SettingsLayoutRight isToggleContainer>
-                        <ShortcutsToggle className="mr-4" id="shortcutsToggle" />
-                    </SettingsLayoutRight>
-                </SettingsLayout>
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <label htmlFor="dailyNotificationsToggle" className="flex-1">
