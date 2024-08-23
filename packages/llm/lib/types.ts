@@ -50,6 +50,11 @@ export type GenerationCallback = (fulltext: string, details?: GenerationCallback
  * like the refine location.
  */
 
+type ActionOptions = {
+    userInputFormat?: 'plaintext' | 'markdown';
+    assistantOutputFormat?: 'plaintext' | 'markdown';
+};
+
 // "Write Full Email": initial generation of an email based on a user prompt.
 export type WriteFullEmailAction = {
     type: 'writeFullEmail';
@@ -57,7 +62,7 @@ export type WriteFullEmailAction = {
     recipient?: string;
     sender?: string;
     locale?: string;
-};
+} & ActionOptions;
 
 // Identifies a substring to refine along with its context. Only for refine actions.
 // Usually, this will be a selection inside the generated text.
@@ -65,7 +70,7 @@ export type RefineLocation = {
     fullEmail: string; // `fullEmail.slice(idxStart, idxEnd)` is the part to rephrase
     idxStart: number; // beginning of part to rephrase
     idxEnd: number; // end of part to rephrase
-};
+} & ActionOptions;
 
 // "Custom Refine" refers to the reformulation of an already-generated email, or part of it,
 // with a custom request written by the user (e.g. "make it formal").
@@ -73,7 +78,7 @@ export type CustomRefineAction = PartialCustomRefineAction & RefineLocation;
 export type PartialCustomRefineAction = {
     type: 'customRefine';
     prompt: string; // user-submitted instruction of what to do with this text
-};
+} & ActionOptions;
 
 // "Proofread" action button.
 export type ProofreadAction = PartialProofreadAction & RefineLocation;

@@ -155,6 +155,10 @@ export interface AssistantContextType {
         assistantType: ASSISTANT_TYPE;
         errorType: ERROR_TYPE;
     }) => void;
+    /**
+     * Feature flag that allows to use the logic to keep HTML formatting
+     */
+    canKeepFormatting: boolean;
 }
 
 export const AssistantContext = createContext<AssistantContextType | null>(null);
@@ -196,6 +200,7 @@ export const useAssistant = (assistantID?: string) => {
         handleCheckHardwareCompatibility,
         cleanSpecificErrors,
         addSpecificError,
+        canKeepFormatting,
     } = assistantContext;
 
     const isGeneratingResult = !assistantID ? false : !!runningActions[assistantID];
@@ -267,5 +272,6 @@ export const useAssistant = (assistantID?: string) => {
         handleCheckHardwareCompatibility,
         cleanSpecificErrors: handleCleanSpecifcErrors,
         addSpecificError,
+        canKeepFormatting,
     };
 };

@@ -16,7 +16,7 @@ import { getPublicRecipients, getRecipients, getSender } from '@proton/shared/li
 import noop from '@proton/utils/noop';
 
 import ComposerAssistant from 'proton-mail/components/assistant/ComposerAssistant';
-import { insertTextBeforeContent, sanitizeContentToInsert } from 'proton-mail/helpers/message/messageContent';
+import { insertTextBeforeContent, prepareContentToInsert } from 'proton-mail/helpers/message/messageContent';
 import { removeLineBreaks } from 'proton-mail/helpers/string';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
@@ -99,6 +99,7 @@ const Composer = (
         downloadPaused,
         getIsStickyAssistant,
         cancelRunningAction,
+        canKeepFormatting,
     } = useAssistant(composerID);
 
     // onClose handler can be called in an async handler
@@ -200,6 +201,7 @@ const Composer = (
         closeAssistant,
         setAssistantStatus,
         handleResetAssistantState,
+        canKeepFormatting,
     });
 
     // Update subject on ComposerFrame
@@ -325,7 +327,7 @@ const Composer = (
     }, []);
 
     const handleInsertGeneratedTextInEditor = (textToInsert: string) => {
-        const cleanedText = sanitizeContentToInsert(textToInsert, metadata.isPlainText);
+        const cleanedText = prepareContentToInsert(textToInsert, metadata.isPlainText, canKeepFormatting);
         const needsSeparator = !!removeLineBreaks(getContentBeforeBlockquote());
         const newBody = insertTextBeforeContent(modelMessage, cleanedText, mailSettings, needsSeparator);
 
@@ -352,7 +354,7 @@ const Composer = (
 
     const handleSetEditorSelection = (textToInsert: string) => {
         if (editorRef.current) {
-            const cleanedText = sanitizeContentToInsert(textToInsert, metadata.isPlainText);
+            const cleanedText = prepareContentToInsert(textToInsert, metadata.isPlainText, false);
 
             editorRef.current.setSelectionContent(cleanedText);
         }
@@ -407,6 +409,7 @@ const Composer = (
                     {isAssistantOpenedInComposer && (
                         <ComposerAssistant
                             assistantID={composerID}
+                            editorMetadata={metadata}
                             getContentBeforeBlockquote={getContentBeforeBlockquote}
                             setContentBeforeBlockquote={setContentBeforeBlockquote}
                             composerSelectedText={selectedText}
