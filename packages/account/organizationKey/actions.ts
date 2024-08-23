@@ -1,7 +1,8 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -17,15 +18,15 @@ import {
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import {
+import type {
     Address,
     Api,
     CachedOrganizationKey,
     EnhancedMember,
-    MEMBER_ORG_KEY_STATE,
     Member,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
+import { MEMBER_ORG_KEY_STATE } from '@proton/shared/lib/interfaces';
 import {
     acceptInvitation,
     generateOrganizationKeySignature,
