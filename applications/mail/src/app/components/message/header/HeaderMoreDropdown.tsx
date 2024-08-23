@@ -115,7 +115,7 @@ const HeaderMoreDropdown = ({
     const [user] = useUser();
     const { feature } = useFeature(FeatureCode.SetExpiration);
     const closeDropdown = useRef<() => void>();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal } = useMoveToFolder();
     const [folders = []] = useFolders();
     const { markAs } = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
@@ -671,7 +671,6 @@ const HeaderMoreDropdown = ({
             />
             {moveScheduledModal}
             {moveSnoozedModal}
-            {moveAllModal}
             {moveToSpamModal}
             {renderCustomExpirationModal && (
                 <CustomExpirationModal onSubmit={handleCustomExpiration} {...CustomExpirationModalProps} />

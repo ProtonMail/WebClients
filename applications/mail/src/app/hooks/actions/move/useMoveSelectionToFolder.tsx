@@ -1,6 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -11,20 +10,16 @@ import { useGetFolders, useGetLabels } from '@proton/mail';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';
-import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
 import MoveSnoozedModal from 'proton-mail/components/list/snooze/components/MoveSnoozedModal';
 import MoveScheduledModal from 'proton-mail/components/message/modals/MoveScheduledModal';
 import MoveToSpamModal from 'proton-mail/components/message/modals/MoveToSpamModal';
-import MoveAllNotificationButton from 'proton-mail/components/notifications/MoveAllNotificationButton';
 import UndoActionNotification from 'proton-mail/components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
-import { isSearch as testIsSearch } from 'proton-mail/helpers/elements';
-import { isCustomLabel, isLabel } from 'proton-mail/helpers/labels';
-import { extractSearchParameters } from 'proton-mail/helpers/mailboxUrl';
+import { isCustomLabel } from 'proton-mail/helpers/labels';
 import {
     askToUnsubscribe,
     getNotificationTextMoved,
@@ -32,20 +27,15 @@ import {
     searchForScheduled,
     searchForSnoozed,
 } from 'proton-mail/helpers/moveToFolder';
-import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import type { MoveParams } from 'proton-mail/hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
 import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
-import { useDeepMemo } from 'proton-mail/hooks/useDeepMemo';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { Element } from 'proton-mail/models/element';
-import type { SearchParameters } from 'proton-mail/models/tools';
 import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
-import { pageSize as pageSizeSelector } from 'proton-mail/store/elements/elementsSelectors';
-import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
-const { INBOX, TRASH, ARCHIVE, ALMOST_ALL_MAIL: ALMOST_ALL_MAIL_ID, SNOOZED, ALL_MAIL } = MAILBOX_LABEL_IDS;
-const MOVE_ALL_FOLDERS = [TRASH, ARCHIVE];
+const { INBOX, ALMOST_ALL_MAIL: ALMOST_ALL_MAIL_ID, SNOOZED, ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 interface MoveSelectionParams extends MoveParams {
     isMessage: boolean;
@@ -57,7 +47,6 @@ interface MoveSelectionParams extends MoveParams {
  */
 export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
-    const location = useLocation();
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const getLabels = useGetLabels();
@@ -68,18 +57,11 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
     const { getFilterActions } = useCreateFilters();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
-    const { moveAllToFolder, moveAllModal } = useMoveAllToFolder();
-
-    const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(location), [location]);
-    const isSearch = testIsSearch(searchParameters);
-
     const [canUndo, setCanUndo] = useState(true); // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
     const [moveScheduledModal, handleShowScheduledModal] = useModalTwo(MoveScheduledModal);
     const [moveSnoozedModal, handleMoveSnoozedModal] = useModalTwo(MoveSnoozedModal);
     const [moveToSpamModal, handleShowSpamModal] = useModalTwo(MoveToSpamModal);
-
-    const pageSize = useMailSelector(pageSizeSelector);
 
     const moveSelectionToFolder = useCallback(
         async ({
@@ -228,45 +210,18 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     sourceLabelID
                 );
 
-                const suggestMoveAll =
-                    elements.length === pageSize &&
-                    MOVE_ALL_FOLDERS.includes(destinationLabelID as MAILBOX_LABEL_IDS) &&
-                    !isCustomLabel(sourceLabelID, labels) &&
-                    !isSearch;
-
-                const handleMoveAll = suggestMoveAll
-                    ? () =>
-                          moveAllToFolder({
-                              type: MoveAllType.moveAll,
-                              sourceLabelID: sourceLabelID,
-                              destinationLabelID: destinationLabelID,
-                              telemetryEvent: TelemetryMailSelectAllEvents.notification_move_to,
-                          })
-                    : undefined;
-
-                const moveAllButton = handleMoveAll ? (
-                    <MoveAllNotificationButton
-                        onMoveAll={handleMoveAll}
-                        isMessage={isMessage}
-                        isLabel={isLabel(sourceLabelID, labels)}
-                    />
-                ) : null;
-
                 createNotification({
                     text: (
                         <UndoActionNotification onUndo={canUndo ? () => handleUndo(promise) : undefined}>
-                            <span className="text-left">
-                                {notificationText}
-                                {moveAllButton}
-                            </span>
+                            <span className="text-left">{notificationText}</span>
                         </UndoActionNotification>
                     ),
                     expiration: SUCCESS_NOTIFICATION_EXPIRATION,
                 });
             }
         },
-        [isSearch, pageSize, moveAllToFolder]
+        []
     );
 
-    return { moveSelectionToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal };
+    return { moveSelectionToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal };
 };
