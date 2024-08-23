@@ -54,6 +54,8 @@ const suggestedPaidLabelName = 'Paid';
 
 const { vpn, drive, pass } = MAIL_UPSELL_BANNERS_OPTIONS_URLS;
 
+const TIP_HIDDEN = -1 as const;
+
 const useTips = () => {
     const [addresses, loadingAddresses] = useAddresses();
     const [folders, loadingFolders] = useFolders();
@@ -93,6 +95,12 @@ const useTips = () => {
 
     useEffect(() => {
         if (!feature) {
+            return;
+        }
+
+        // Users can hide the tips in the apparence settings
+        if (feature.Value === TIP_HIDDEN) {
+            setShouldDisplayTips(false);
             return;
         }
 
