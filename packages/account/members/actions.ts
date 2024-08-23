@@ -1,4 +1,4 @@
-import { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
+import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -7,7 +7,10 @@ import {
     checkMemberAddressAvailability,
     createMemberAddress,
     createMember as createMemberConfig,
-    privatizeMember,
+    deleteUnprivatizationRequest,
+    getMember as getMemberConfig,
+    privatizeMember as privatizeMemberConfig,
+    requestUnprivatization as requestUnprivatizationConfig,
     updateAI,
     updateName,
     updateQuota,
@@ -18,20 +21,21 @@ import {
     DEFAULT_KEYGEN_TYPE,
     HTTP_STATUS_CODE,
     KEYGEN_CONFIGS,
+    MEMBER_PRIVATE,
     MEMBER_ROLE,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import {
+import type {
     Address,
     Api,
-    CreateMemberMode,
     Domain,
     KeyTransparencyCommit,
     KeyTransparencyVerify,
     Member,
     VerifyOutboundPublicKeys,
 } from '@proton/shared/lib/interfaces';
+import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import {
     getInvitationData,
     getIsPasswordless,
@@ -44,13 +48,20 @@ import noop from '@proton/utils/noop';
 
 import { addressesThunk } from '../addresses';
 import { organizationThunk } from '../organization';
-import { OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
-import { MemberKeyPayload, getMemberKeyPayload, getPrivateAdminError, setAdminRoles } from '../organizationKey/actions';
+import type { OrganizationKeyState } from '../organizationKey';
+import { organizationKeyThunk } from '../organizationKey';
+import type { MemberKeyPayload } from '../organizationKey/actions';
+import { getMemberKeyPayload, getPrivateAdminError, setAdminRoles } from '../organizationKey/actions';
 import { userKeysThunk } from '../userKeys';
 import InvalidAddressesError from './errors/InvalidAddressesError';
 import UnavailableAddressesError from './errors/UnavailableAddressesError';
-import { MemberCreationValidationError, membersThunk } from './index';
+import { MemberCreationValidationError, membersThunk, upsertMember } from './index';
 import validateAddUser from './validateAddUser';
+
+const getMember = (api: Api, memberID: string) =>
+    api<{
+        Member: Member;
+    }>(getMemberConfig(memberID)).then(({ Member }) => Member);
 
 export const setAdminRole = ({
     member,
@@ -77,12 +88,89 @@ export const setAdminRole = ({
     };
 };
 
+export const requestUnprivatization = ({
+    api,
+    member,
+    upsert,
+}: {
+    api: Api;
+    member: Member;
+    upsert: boolean;
+}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        const organizationKey = await dispatch(organizationKeyThunk()); // Ensure latest key
+        if (!organizationKey?.privateKey) {
+            throw new MemberCreationValidationError(
+                c('unprivatization').t`Organization key must be activated to request data access`
+            );
+        }
+        const primaryEmailAddress = member.Addresses?.[0].Email;
+        if (!primaryEmailAddress) {
+            throw new MemberCreationValidationError(
+                c('unprivatization').t`The user must have an address to request data access`
+            );
+        }
+        const invitationData = await getInvitationData({
+            api,
+            address: primaryEmailAddress,
+            expectRevisionChange: false,
+        });
+        const invitationSignature = await getSignedInvitationData(organizationKey.privateKey, invitationData);
+        await api(
+            requestUnprivatizationConfig(member.ID, {
+                InvitationData: invitationData,
+                InvitationSignature: invitationSignature,
+            })
+        );
+        if (upsert) {
+            dispatch(upsertMember({ member: await getMember(api, member.ID) }));
+        }
+    };
+};
+
+export const deleteRequestUnprivatization = ({
+    api,
+    member,
+    upsert,
+}: {
+    api: Api;
+    member: Member;
+    upsert: boolean;
+}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        if (member.Unprivatization === null) {
+            return;
+        }
+        await api(deleteUnprivatizationRequest(member.ID));
+        if (upsert) {
+            dispatch(upsertMember({ member: await getMember(api, member.ID) }));
+        }
+    };
+};
+
+export const privatizeMember = ({
+    api,
+    member,
+    upsert,
+}: {
+    api: Api;
+    member: Member;
+    upsert: boolean;
+}): ThunkAction<Promise<void>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        await api(privatizeMemberConfig(member.ID));
+        if (upsert) {
+            dispatch(upsertMember({ member: await getMember(api, member.ID) }));
+        }
+    };
+};
+
 interface CreateMemberPayload {
     name: string;
     addresses: { Local: string; Domain: string }[];
     invitationEmail: string;
     mode: CreateMemberMode;
-    private: boolean;
+    private: MEMBER_PRIVATE | null;
     storage: number;
     vpn?: boolean;
     password: string;
@@ -100,7 +188,12 @@ export const editMember = ({
     memberDiff: Partial<CreateMemberPayload>;
     memberKeyPacketPayload: MemberKeyPayload | null;
     api: Api;
-}): ThunkAction<Promise<boolean>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<
+    Promise<{ diff: true; member: Member } | { diff: false; member: null }>,
+    OrganizationKeyState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch) => {
         if (memberDiff.name !== undefined) {
             await api(updateName(member.ID, memberDiff.name));
@@ -120,10 +213,31 @@ export const editMember = ({
         if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
             await api(updateRole(member.ID, MEMBER_ROLE.ORGANIZATION_MEMBER));
         }
-        if (memberDiff.private) {
-            await api(privatizeMember(member.ID));
+        if (memberDiff.private !== undefined) {
+            if (memberDiff.private === MEMBER_PRIVATE.UNREADABLE) {
+                if (member.Unprivatization) {
+                    await dispatch(deleteRequestUnprivatization({ member, api, upsert: false }));
+                } else {
+                    await dispatch(privatizeMember({ member, api, upsert: false }));
+                }
+            }
+            if (member.Private === MEMBER_PRIVATE.UNREADABLE && memberDiff.private === MEMBER_PRIVATE.READABLE) {
+                await dispatch(requestUnprivatization({ member, api, upsert: false }));
+            }
         }
-        return Object.values(memberDiff).some((value) => value !== undefined);
+        const diff = Object.values(memberDiff).some((value) => value !== undefined);
+        if (diff) {
+            const updatedMember = await getMember(api, member.ID);
+            dispatch(upsertMember({ member: updatedMember }));
+            return {
+                diff: true,
+                member: updatedMember,
+            };
+        }
+        return {
+            diff: false,
+            member: null,
+        };
     };
 };
 
@@ -197,7 +311,7 @@ export const createMember = ({
         }
 
         const error = validateAddUser({
-            privateUser: model.private,
+            privateUser: model.private === MEMBER_PRIVATE.UNREADABLE,
             organization,
             organizationKeyInfo: getOrganizationKeyInfo(organization, organizationKey, ownerAddresses),
             verifiedDomains,
@@ -325,6 +439,7 @@ export const createMember = ({
             const invitationData = await getInvitationData({
                 api,
                 address: `${firstAddressParts.Local}@${firstAddressParts.Domain}`,
+                expectRevisionChange: true,
             });
             const invitationSignature = await getSignedInvitationData(organizationKey.privateKey, invitationData);
             const Member = await api(
@@ -334,7 +449,7 @@ export const createMember = ({
                         Email: model.invitationEmail,
                         Data: invitationData,
                         Signature: invitationSignature,
-                        PrivateIntent: model.private,
+                        PrivateIntent: model.private === MEMBER_PRIVATE.UNREADABLE,
                     },
                 })
             ).then(({ Member }) => Member);
@@ -346,6 +461,8 @@ export const createMember = ({
                     addresses: model.addresses,
                 });
             }
+
+            dispatch(upsertMember({ member: await getMember(api, Member.ID) }));
             return;
         }
 
@@ -354,7 +471,7 @@ export const createMember = ({
             credentials: { password: model.password },
             config: createMemberConfig({
                 ...payload,
-                Private: +model.private,
+                Private: +(model.private === MEMBER_PRIVATE.UNREADABLE),
             }),
         }).then(({ Member }) => Member);
 
@@ -403,5 +520,7 @@ export const createMember = ({
                 await api(updateRole(Member.ID, MEMBER_ROLE.ORGANIZATION_ADMIN));
             }
         }
+
+        dispatch(upsertMember({ member: await getMember(api, Member.ID) }));
     };
 };

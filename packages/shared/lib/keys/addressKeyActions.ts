@@ -1,4 +1,4 @@
-import { removeKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from '../api/keys';
+import { removeAddressKeyRoute, setKeyFlagsRoute, setKeyPrimaryRoute } from '../api/keys';
 import type { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../interfaces';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
@@ -58,7 +58,7 @@ export const deleteAddressKey = async (
         address,
         keyTransparencyVerify
     );
-    await api(removeKeyRoute({ ID, SignedKeyList: signedKeyList }));
+    await api(removeAddressKeyRoute({ ID, SignedKeyList: signedKeyList }));
     await onSKLPublishSuccess();
 };
 

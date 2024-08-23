@@ -1,0 +1,29 @@
+@import '~@proton/styles/scss/lib';
+
+.member-toggle-container {
+	display: grid;
+	grid-template:
+		'toggle label'
+		'assistive assistive';
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto 1fr;
+	grid-column-gap: #{rem(8)};
+
+	@include media('>xsmall') {
+		grid-template-areas:
+			'toggle label'
+			'toggle assistive';
+	}
+
+	&-toggle {
+		grid-area: toggle;
+	}
+
+	&-label {
+		grid-area: label;
+	}
+
+	&-assistive {
+		grid-area: assistive;
+	}
+}

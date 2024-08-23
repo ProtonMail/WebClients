@@ -123,12 +123,12 @@ const JoinMagicLinkContainer = ({ onLogin, onUsed, toApp, productParam }: Props)
                     getAllAddresses(authApi),
                     authApi<MemberUnprivatizationOutput>(queryMemberUnprivatizationInfo()),
                 ]);
-                const parsedUnprivatizationData = await parseUnprivatizationData({ unprivatizationData });
+                const parsedUnprivatizationData = await parseUnprivatizationData({ unprivatizationData, addresses });
                 await validateUnprivatizationData({
                     api: authApi,
                     verifyOutboundPublicKeys,
                     parsedUnprivatizationData,
-                    addresses,
+                    expectRevisionChange: true,
                 });
                 dataRef.current = {
                     user,

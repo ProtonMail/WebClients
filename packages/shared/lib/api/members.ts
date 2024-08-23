@@ -68,6 +68,7 @@ interface UnprivatizationInvitation {
     Signature: string;
     PrivateIntent: boolean;
 }
+
 interface InviteMemberPayload extends Omit<MemberPayload, 'Private'> {
     Invitation: UnprivatizationInvitation;
 }
@@ -80,6 +81,16 @@ export const createMember = (data: MemberPayload | InviteMemberPayload) => ({
 
 export const queryMemberUnprivatizationInfo = () => ({
     method: 'get',
+    url: `core/v4/members/me/unprivatize`,
+});
+export const acceptMemberUnprivatizationInfo = (data: { OrgUserKeys: string[]; OrgActivationToken: string }) => ({
+    method: 'post',
+    url: `core/v4/members/me/unprivatize`,
+    data,
+});
+
+export const deleteMemberUnprivatizationInfo = () => ({
+    method: 'delete',
     url: `core/v4/members/me/unprivatize`,
 });
 
@@ -159,6 +170,22 @@ export const updateAI = (memberID: string, MaxAI: number) => ({
     method: 'put',
     url: `core/v4/members/${memberID}/ai`,
     data: { MaxAI },
+});
+
+export interface RequestMemberUnprivatizationInput {
+    InvitationData: string;
+    InvitationSignature: string;
+}
+
+export const requestUnprivatization = (memberID: string, data: RequestMemberUnprivatizationInput) => ({
+    method: 'post',
+    url: `core/v4/members/${memberID}/unprivatize`,
+    data,
+});
+
+export const deleteUnprivatizationRequest = (memberID: string) => ({
+    method: 'delete',
+    url: `core/v4/members/${memberID}/unprivatize`,
 });
 
 export const resendUnprivatizationLink = (memberID: string) => ({
