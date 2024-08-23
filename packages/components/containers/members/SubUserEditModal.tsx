@@ -3,8 +3,14 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { MemberKeyPayload } from '@proton/account';
-import { editMember, getMemberAddresses, getMemberEditPayload, getPrivateAdminError } from '@proton/account';
+import {
+    type MemberPromptAction,
+    editMember,
+    getMemberAddresses,
+    getMemberEditPayload,
+    getPrivateAdminError,
+    getPrivateText,
+} from '@proton/account';
 import { Button, Card } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -12,39 +18,29 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, NAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { EnhancedMember } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, Member } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
+import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton/shared/lib/keys/memberHelper';
+import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../components';
+import { Icon, InputFieldTwo, Prompt, Toggle, Tooltip, useFormErrors } from '../../components';
 import {
-    Icon,
-    Info,
-    InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    Prompt,
-    Toggle,
-    Tooltip,
-    useFormErrors,
+    type ModalProps,
     useModalState,
-} from '../../components';
-import {
-    useApi,
-    useErrorHandler,
-    useEventManager,
-    useNotifications,
-    useOrganization,
-    useOrganizationKey,
-} from '../../hooks';
+} from '../../components/modalTwo';
+import { useApi, useErrorHandler, useNotifications, useOrganization, useOrganizationKey } from '../../hooks';
 import Addresses from '../addresses/Addresses';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import { AssistantUpdateSubscriptionButton } from '../payments';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import MemberToggleContainer from './MemberToggleContainer';
 import { adminTooltipText } from './constants';
+import { getPrivateLabel } from './helper';
 
 interface Props extends ModalProps<'form'> {
     member: EnhancedMember;
@@ -55,6 +51,49 @@ interface Props extends ModalProps<'form'> {
     showAddressesSection?: boolean;
     aiSeatsRemaining: boolean;
 }
+
+interface MemberState {
+    name: string;
+    storage: number;
+    vpn: boolean;
+    private: MEMBER_PRIVATE;
+    ai: boolean;
+    role: MEMBER_ROLE;
+}
+
+const getMemberDiff = ({
+    model,
+    initialModel,
+    hasVPN,
+}: {
+    model: MemberState;
+    initialModel: MemberState;
+    hasVPN: boolean;
+}) => {
+    return {
+        name: initialModel.name !== model.name ? model.name : undefined,
+        storage: initialModel.storage !== model.storage ? model.storage : undefined,
+        vpn: hasVPN && initialModel.vpn !== model.vpn ? model.vpn : undefined,
+        numAI: initialModel.ai !== model.ai ? model.ai : undefined,
+        private: model.private !== initialModel.private ? model.private : undefined,
+        role: model.role !== initialModel.role ? model.role : undefined,
+    };
+};
+
+const getMemberStateFromMember = (member: Member) => {
+    return {
+        name: member.Name,
+        storage: member.MaxSpace,
+        vpn: !!member.MaxVPN,
+        private: member.Private,
+        ai: !!member.NumAI,
+        role: member.Role,
+    };
+};
+
+const getMemberKeyPacketPayload = (memberAction: MemberPromptAction | null) => {
+    return memberAction?.type === 'confirm-promote' ? memberAction.payload : null;
+};
 
 const SubUserEditModal = ({
     member,
@@ -68,14 +107,21 @@ const SubUserEditModal = ({
 }: Props) => {
     const [organization] = useOrganization();
     const [organizationKey] = useOrganizationKey();
+    const unprivatizeMemberEnabled = useFlag('UnprivatizeMember');
     const dispatch = useDispatch();
     const storageSizeUnit = sizeUnits.GB;
-    const { call } = useEventManager();
     const verifyOutboundPublicKeys = useVerifyOutboundPublicKeys();
     const { validator, onFormSubmit } = useFormErrors();
+    const [confirmUnprivatizationProps, setConfirmUnprivatizationModal, renderConfirmUnprivatization] = useModalState();
+    const [
+        confirmRemoveUnprivatizationProps,
+        setConfirmRemoveUnprivatizationModal,
+        renderConfirmRemoveUnprivatization,
+    ] = useModalState();
+    const [confirmPrivatizationProps, setConfirmPrivatizationModal, renderConfirmPrivatization] = useModalState();
     const [confirmDemotionModalProps, setConfirmDemotionModal, renderConfirmDemotion] = useModalState();
     const [confirmPromotionModalProps, setConfirmPromotionModal, renderConfirmPromotion] = useModalState();
-    const memberKeyPacketPayload = useRef<MemberKeyPayload | null>(null);
+    const memberPromptActionRef = useRef<MemberPromptAction | null>(null);
     const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
     // We want to keep AI enabled if all seats are taken but the user already has a seat
@@ -85,69 +131,173 @@ const SubUserEditModal = ({
         dispatch(getMemberAddresses({ member })).catch(noop);
     }, []);
 
-    const initialModel = useMemo(
-        () => ({
-            name: member.Name,
-            storage: member.MaxSpace,
-            vpn: !!member.MaxVPN,
-            private: !!member.Private,
-            ai: !!member.NumAI,
-            admin: member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
-        }),
-        [member]
-    );
+    const initialModel = useMemo((): MemberState => {
+        return getMemberStateFromMember(member);
+    }, [member]);
 
-    const [model, updateModel] = useState(initialModel);
+    const [model, updateModel] = useState<MemberState>(initialModel);
 
     const [submitting, withLoading] = useLoading();
+    const [loadingUnprivatization, withLoadingUnprivatization] = useLoading();
+    const [loadingRole, withLoadingRole] = useLoading();
     const { createNotification } = useNotifications();
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
 
     const hasVPN = Boolean(organization?.MaxVPN);
-    const canMakePrivate = member.Private === MEMBER_PRIVATE.READABLE && !member.Unprivatization;
-    const canMakeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER && !member.SSO;
-    const canRevokeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+    const unprivatization = getMemberUnprivatizationMode(member);
+
+    const isSelf = Boolean(member.Self);
+
+    let canTogglePrivate;
+    if (unprivatizeMemberEnabled) {
+        const organizationHasKeys = Boolean(organization?.HasKeys);
+        const isSelfAndPrivate = Boolean(isSelf && member.Private === MEMBER_PRIVATE.UNREADABLE);
+
+        canTogglePrivate =
+            // Organization must be keyful, so not family-style organization
+            organizationHasKeys &&
+            // Not yourself, to avoid requesting unprivatization for yourself
+            !isSelfAndPrivate &&
+            // The user does not have an ongoing unprivatization request or an admin request is ongoing (to be able to remove it)
+            (!unprivatization.exists || unprivatization.mode === MemberUnprivatizationMode.AdminAccess);
+    } else {
+        canTogglePrivate = member.Private === MEMBER_PRIVATE.READABLE && !unprivatization.exists;
+    }
+
+    const canPromoteAdmin =
+        !isSelf &&
+        member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER &&
+        !member.SSO &&
+        unprivatization.mode !== MemberUnprivatizationMode.MagicLinkInvite;
+
+    const canRevokeAdmin = !isSelf && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+
     const errorHandler = useErrorHandler();
 
     const updatePartialModel = (partial: Partial<typeof model>) => {
         updateModel({ ...model, ...partial });
     };
 
-    const handleSubmit = async ({
-        role,
-        memberKeyPacketPayload,
-    }: {
-        role: MEMBER_ROLE | null;
-        memberKeyPacketPayload: MemberKeyPayload | null;
-    }) => {
+    const handleUpdateMember = async (memberDiff: Parameters<typeof editMember>[0]['memberDiff']) => {
+        const memberKeyPacketPayload = getMemberKeyPacketPayload(memberPromptActionRef.current);
+
         const result = await dispatch(
             editMember({
                 member,
-                memberDiff: {
-                    name: initialModel.name !== model.name ? model.name : undefined,
-                    storage: initialModel.storage !== model.storage ? model.storage : undefined,
-                    vpn: hasVPN && initialModel.vpn !== model.vpn ? model.vpn : undefined,
-                    numAI: initialModel.ai !== model.ai ? model.ai : undefined,
-                    private:
-                        canMakePrivate && model.private && model.private !== initialModel.private ? true : undefined,
-                    role: role !== null ? role : undefined,
-                },
+                memberDiff,
                 memberKeyPacketPayload,
                 api: silentApi,
             })
         );
-        if (result) {
-            await call();
+        if (result.member) {
+            updateModel(getMemberStateFromMember(result.member));
             createNotification({ text: c('Success').t`User updated` });
         }
-        rest.onClose?.();
+        return result.diff;
     };
 
     const handleClose = submitting ? undefined : rest.onClose;
 
+    const hasToggledPrivate = model.private === MEMBER_PRIVATE.UNREADABLE && !unprivatization.pending;
+    const hasToggledAdmin = model.role === MEMBER_ROLE.ORGANIZATION_ADMIN;
+
     return (
         <>
+            {renderConfirmUnprivatization && (
+                <Prompt
+                    title={c('unprivatization').t`Request user permission for data access`}
+                    buttons={[
+                        <Button
+                            color="norm"
+                            loading={submitting}
+                            onClick={() => {
+                                confirmUnprivatizationProps.onClose();
+                                void withLoadingUnprivatization(
+                                    handleUpdateMember({ private: MEMBER_PRIVATE.READABLE })
+                                ).catch(errorHandler);
+                            }}
+                        >{c('unprivatization').t`Send request`}</Button>,
+                        <Button
+                            onClick={() => {
+                                confirmUnprivatizationProps.onClose();
+                            }}
+                        >{c('Action').t`Cancel`}</Button>,
+                    ]}
+                    {...confirmUnprivatizationProps}
+                >
+                    <div>
+                        {c('unprivatization')
+                            .t`To proceed, you'll need to request the user's permission to access their data or reset their password.`}
+                        <br />
+                        <br />
+
+                        {c('unprivatization')
+                            .t`Once the user consents, you will be able to help them regain account access or manage their data.`}
+                    </div>
+                </Prompt>
+            )}
+            {renderConfirmRemoveUnprivatization && (
+                <Prompt
+                    title={c('unprivatization').t`Delete request to access user data?`}
+                    buttons={[
+                        <Button
+                            color="danger"
+                            loading={submitting}
+                            onClick={() => {
+                                confirmRemoveUnprivatizationProps.onClose();
+                                void withLoadingUnprivatization(
+                                    handleUpdateMember({ private: MEMBER_PRIVATE.UNREADABLE })
+                                ).catch(errorHandler);
+                            }}
+                        >{c('unprivatization').t`Delete request`}</Button>,
+                        <Button
+                            onClick={() => {
+                                confirmRemoveUnprivatizationProps.onClose();
+                            }}
+                        >{c('Action').t`Cancel`}</Button>,
+                    ]}
+                    {...confirmRemoveUnprivatizationProps}
+                >
+                    <div>
+                        {c('unprivatization')
+                            .t`This will delete the pending request for administrator access to the user’s data or password reset.`}
+                    </div>
+                </Prompt>
+            )}
+            {renderConfirmPrivatization && (
+                <Prompt
+                    title={c('unprivatization').t`Revoke administrator access?`}
+                    buttons={[
+                        <Button
+                            color="danger"
+                            loading={submitting}
+                            onClick={() => {
+                                confirmPrivatizationProps.onClose();
+                                void withLoadingUnprivatization(
+                                    handleUpdateMember({ private: MEMBER_PRIVATE.UNREADABLE })
+                                ).catch(errorHandler);
+                            }}
+                        >{c('unprivatization').t`Revoke access`}</Button>,
+                        <Button
+                            onClick={() => {
+                                confirmPrivatizationProps.onClose();
+                            }}
+                        >{c('Action').t`Cancel`}</Button>,
+                    ]}
+                    {...confirmPrivatizationProps}
+                >
+                    <div>
+                        {c('unprivatization')
+                            .t`This will revoke the administrator permission to manage this user's account.`}
+                        <br />
+                        <br />
+
+                        {c('unprivatization')
+                            .t`By making the user private you won't be able to help them regain access to their data or account.`}
+                    </div>
+                </Prompt>
+            )}
             {renderConfirmDemotion && (
                 <Prompt
                     title={c('Title').t`Change role`}
@@ -157,12 +307,9 @@ const SubUserEditModal = ({
                             loading={submitting}
                             onClick={() => {
                                 confirmDemotionModalProps.onClose();
-                                void withLoading(
-                                    handleSubmit({
-                                        role: MEMBER_ROLE.ORGANIZATION_MEMBER,
-                                        memberKeyPacketPayload: memberKeyPacketPayload.current,
-                                    })
-                                ).catch(errorHandler);
+                                withLoadingRole(handleUpdateMember({ role: MEMBER_ROLE.ORGANIZATION_MEMBER })).catch(
+                                    errorHandler
+                                );
                             }}
                         >{c('Action').t`Remove`}</Button>,
                         <Button
@@ -188,12 +335,9 @@ const SubUserEditModal = ({
                             loading={submitting}
                             onClick={() => {
                                 confirmPromotionModalProps.onClose();
-                                withLoading(
-                                    handleSubmit({
-                                        role: MEMBER_ROLE.ORGANIZATION_ADMIN,
-                                        memberKeyPacketPayload: memberKeyPacketPayload.current,
-                                    })
-                                ).catch(errorHandler);
+                                withLoadingRole(handleUpdateMember({ role: MEMBER_ROLE.ORGANIZATION_ADMIN })).catch(
+                                    errorHandler
+                                );
                             }}
                         >{c('Action').t`Make admin`}</Button>,
                         <Button
@@ -209,10 +353,11 @@ const SubUserEditModal = ({
                     </div>
                     <Card rounded className="text-break">
                         {(() => {
-                            if (!memberKeyPacketPayload.current) {
+                            const memberKeyPacketPayload = getMemberKeyPacketPayload(memberPromptActionRef.current);
+                            if (!memberKeyPacketPayload) {
                                 return '';
                             }
-                            const { member, email } = memberKeyPacketPayload.current;
+                            const { member, email } = memberKeyPacketPayload;
                             return (
                                 <>
                                     <div className="text-bold">{member.Name}</div>
@@ -235,39 +380,13 @@ const SubUserEditModal = ({
                         return;
                     }
 
-                    let role: MEMBER_ROLE | null = (() => {
-                        if (canRevokeAdmin && !model.admin && model.admin !== initialModel.admin) {
-                            return MEMBER_ROLE.ORGANIZATION_MEMBER;
-                        }
-                        if (canMakeAdmin && model.admin && model.admin !== initialModel.admin) {
-                            return MEMBER_ROLE.ORGANIZATION_ADMIN;
-                        }
-                        return null;
-                    })();
-
-                    const run = async () => {
-                        memberKeyPacketPayload.current = null;
-                        const { payload, action } = await dispatch(
-                            getMemberEditPayload({
-                                verifyOutboundPublicKeys,
-                                role,
-                                member,
-                                api: silentApi,
-                            })
-                        );
-                        memberKeyPacketPayload.current = payload;
-                        if (action === 'confirm-demote') {
-                            setConfirmDemotionModal(true);
-                            return;
-                        }
-                        if (action === 'confirm-promote') {
-                            setConfirmPromotionModal(true);
-                            return;
-                        }
-                        await handleSubmit({ role, memberKeyPacketPayload: payload });
+                    const handleSubmit = async () => {
+                        const memberDiff = getMemberDiff({ model, initialModel, hasVPN });
+                        await handleUpdateMember(memberDiff);
+                        rest.onClose?.();
                     };
 
-                    withLoading(run()).catch(errorHandler);
+                    withLoading(handleSubmit()).catch(errorHandler);
                 }}
                 onClose={handleClose}
             >
@@ -283,69 +402,151 @@ const SubUserEditModal = ({
                         autoFocus
                     />
 
-                    {allowVpnAccessConfiguration && hasVPN ? (
-                        <div className="flex mb-6 items-center gap-2">
-                            <Toggle
-                                id="vpn-toggle"
-                                checked={model.vpn}
-                                onChange={({ target }) => updatePartialModel({ vpn: target.checked })}
+                    <div className="flex flex-column gap-2 mb-4">
+                        {allowVpnAccessConfiguration && hasVPN ? (
+                            <MemberToggleContainer
+                                toggle={
+                                    <Toggle
+                                        id="vpn-toggle"
+                                        checked={model.vpn}
+                                        onChange={({ target }) => updatePartialModel({ vpn: target.checked })}
+                                    />
+                                }
+                                label={
+                                    <label className="text-semibold" htmlFor="vpn-toggle">
+                                        {c('Label for new member').t`VPN connections`}
+                                    </label>
+                                }
                             />
-                            <label className="text-semibold" htmlFor="vpn-toggle">
-                                {c('Label for new member').t`VPN connections`}
-                            </label>
-                        </div>
-                    ) : null}
+                        ) : null}
 
-                    {allowPrivateMemberConfiguration && canMakePrivate && (
-                        <div className="flex mb-6 items-center gap-2">
-                            <Toggle
-                                id="private-toggle"
-                                checked={model.private}
-                                onChange={({ target }) => updatePartialModel({ private: target.checked })}
+                        {allowPrivateMemberConfiguration && canTogglePrivate && (
+                            <MemberToggleContainer
+                                toggle={
+                                    <Toggle
+                                        id="private-toggle"
+                                        checked={hasToggledPrivate}
+                                        loading={loadingUnprivatization}
+                                        onChange={({ target }) => {
+                                            if (hasToggledPrivate && !target.checked) {
+                                                setConfirmUnprivatizationModal(true);
+                                                return;
+                                            }
+                                            if (!hasToggledPrivate && target.checked && unprivatization.pending) {
+                                                setConfirmRemoveUnprivatizationModal(true);
+                                                return;
+                                            }
+                                            if (!hasToggledPrivate && target.checked) {
+                                                setConfirmPrivatizationModal(true);
+                                                return;
+                                            }
+                                        }}
+                                    />
+                                }
+                                label={
+                                    <label className="text-semibold" htmlFor="private-toggle">
+                                        {getPrivateLabel()}
+                                    </label>
+                                }
+                                assistiveText={
+                                    <>
+                                        {unprivatization.pending &&
+                                        unprivatization.mode === MemberUnprivatizationMode.AdminAccess
+                                            ? c('unprivatization').t`Pending admin access`
+                                            : getPrivateText()}
+                                    </>
+                                }
                             />
-                            <label className="text-semibold" htmlFor="private-toggle">
-                                {c('Label for new member').t`Private`}
-                            </label>
-                        </div>
-                    )}
+                        )}
 
-                    {(canMakeAdmin || canRevokeAdmin) && (
-                        <div className="flex items-center mb-6 gap-2">
-                            <Toggle
-                                id="admin-toggle"
-                                checked={model.admin}
-                                onChange={({ target }) => updatePartialModel({ admin: target.checked })}
-                            />
-                            <label className="text-semibold mr-1" htmlFor="admin-toggle">
-                                {c('Label for new member').t`Admin`}
-                            </label>
-                            <Info title={adminTooltipText()} url={getKnowledgeBaseUrl('/user-roles')} />
-                            {passwordlessMode &&
-                                model.private &&
-                                model.admin &&
-                                member.addressState === 'full' &&
-                                !member.Addresses?.[0]?.HasKeys && (
-                                    <Tooltip title={getPrivateAdminError()} openDelay={0}>
-                                        <Icon className="color-danger ml-2" name="info-circle-filled" />
-                                    </Tooltip>
-                                )}
-                        </div>
-                    )}
+                        {(canPromoteAdmin || canRevokeAdmin) && (
+                            <MemberToggleContainer
+                                toggle={
+                                    <Toggle
+                                        id="admin-toggle"
+                                        loading={loadingRole}
+                                        checked={hasToggledAdmin}
+                                        onChange={({ target }) => {
+                                            const run = async (memberDiff: { role: MEMBER_ROLE }) => {
+                                                const result = await dispatch(
+                                                    getMemberEditPayload({
+                                                        verifyOutboundPublicKeys,
+                                                        member,
+                                                        memberDiff,
+                                                        api: silentApi,
+                                                    })
+                                                );
 
-                    {allowAIAssistantConfiguration && (
-                        <div className="flex items-center gap-2 mb-6">
-                            <Toggle
-                                id="ai-assistant-toggle"
-                                checked={model.ai}
-                                disabled={disableAI}
-                                onChange={({ target }) => updatePartialModel({ ai: target.checked })}
+                                                memberPromptActionRef.current = result;
+
+                                                if (result?.type === 'confirm-promote') {
+                                                    if (result.prompt) {
+                                                        setConfirmPromotionModal(true);
+                                                        return;
+                                                    }
+                                                }
+
+                                                if (result?.type === 'confirm-demote') {
+                                                    setConfirmDemotionModal(true);
+                                                    return;
+                                                }
+
+                                                await handleUpdateMember(memberDiff);
+                                            };
+
+                                            const newRole = target.checked
+                                                ? MEMBER_ROLE.ORGANIZATION_ADMIN
+                                                : MEMBER_ROLE.ORGANIZATION_MEMBER;
+
+                                            withLoadingRole(run({ role: newRole })).catch(errorHandler);
+                                        }}
+                                    />
+                                }
+                                label={
+                                    <label className="text-semibold" htmlFor="admin-toggle">
+                                        {c('Label for new member').t`Admin`}
+                                    </label>
+                                }
+                                assistiveText={
+                                    <div>
+                                        {adminTooltipText()}{' '}
+                                        {passwordlessMode &&
+                                            hasToggledPrivate &&
+                                            hasToggledAdmin &&
+                                            member.addressState === 'full' &&
+                                            !member.Addresses?.[0]?.HasKeys && (
+                                                <Tooltip title={getPrivateAdminError()} openDelay={0}>
+                                                    <Icon className="color-danger ml-2" name="info-circle-filled" />
+                                                </Tooltip>
+                                            )}
+                                    </div>
+                                }
                             />
-                            <label className="text-semibold" htmlFor="ai-assistant-toggle">
-                                {c('Info').t`Writing assistant`}
-                            </label>
-                            {!aiSeatsRemaining && !model.ai && <AssistantUpdateSubscriptionButton />}
-                        </div>
-                    )}
+                        )}
+
+                        {allowAIAssistantConfiguration && (
+                            <MemberToggleContainer
+                                toggle={
+                                    <Toggle
+                                        id="ai-assistant-toggle"
+                                        checked={model.ai}
+                                        disabled={disableAI}
+                                        onChange={({ target }) => updatePartialModel({ ai: target.checked })}
+                                    />
+                                }
+                                label={
+                                    <>
+                                        <label className="text-semibold" htmlFor="ai-assistant-toggle">
+                                            {c('Info').t`Writing assistant`}
+                                        </label>
+                                    </>
+                                }
+                                assistiveText={
+                                    !aiSeatsRemaining && !model.ai ? <AssistantUpdateSubscriptionButton /> : undefined
+                                }
+                            />
+                        )}
+                    </div>
 
                     {allowStorageConfiguration && (
                         <MemberStorageSelector

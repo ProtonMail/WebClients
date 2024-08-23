@@ -226,14 +226,23 @@ export const setKeyFlagsRoute = ({ ID, ...data }: SetKeyFlagsPayload) => ({
     data,
 });
 
-interface RemoveKeyPayload {
+interface RemoveUserKeyPayload {
     ID: string;
-    SignedKeyList: SignedKeyList;
 }
 
-export const removeKeyRoute = ({ ID, ...data }: RemoveKeyPayload) => ({
-    url: `core/v4/keys/${ID}/delete`,
-    method: 'put',
+export const removeUserKeyRoute = ({ ID }: RemoveUserKeyPayload) => ({
+    url: `core/v4/keys/user/${ID}`,
+    method: 'delete',
+});
+
+interface RemoveAddressKeyPayload {
+    ID: string;
+    SignedKeyList: SignedKeyList | null;
+}
+
+export const removeAddressKeyRoute = ({ ID, ...data }: RemoveAddressKeyPayload) => ({
+    url: `core/v4/keys/address/${ID}/delete`,
+    method: 'post',
     data,
 });
 

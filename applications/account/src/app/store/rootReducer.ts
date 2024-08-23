@@ -3,7 +3,6 @@ import { combineReducers } from '@reduxjs/toolkit';
 import {
     allowAddressDeletionReducer,
     domainsAddressesReducer,
-    inactiveKeysReducer,
     paymentMethodsReducer,
     samlReducer,
 } from '@proton/account';
@@ -24,7 +23,6 @@ export const rootReducer = combineReducers({
     ...holidaysDirectoryReducer,
     ...samlReducer,
     ...allowAddressDeletionReducer,
-    inactiveKeys: inactiveKeysReducer,
 });
 
 export type AccountState = ReturnType<typeof rootReducer>;
