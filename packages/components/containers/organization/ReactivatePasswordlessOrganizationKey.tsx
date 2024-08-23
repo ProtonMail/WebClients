@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import type { Member } from '@proton/shared/lib/interfaces';
+import type { Member, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { ModalProps } from '../../components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '../../components';
@@ -11,12 +11,14 @@ interface Props extends Omit<ModalProps, 'buttons' | 'title' | 'children'> {
     onResetKeys: () => void;
     disableResetOrganizationKeys: boolean;
     otherAdminsWithKeyAccess: Member[];
+    user: UserModel;
 }
 
 const ReactivatePasswordlessOrganizationKey = ({
     onResetKeys,
     otherAdminsWithKeyAccess,
     disableResetOrganizationKeys,
+    user,
     ...rest
 }: Props) => {
     return (
@@ -60,9 +62,11 @@ const ReactivatePasswordlessOrganizationKey = ({
                             onResetKeys();
                         }}
                     >{c('Action').t`Reset keys`}</Button>
-                    <ButtonLike color="norm" as={SettingsLink} path="/recovery" onClick={rest.onClose}>
-                        {c('Action').t`Recover data`}
-                    </ButtonLike>
+                    {user.isPrivate && (
+                        <ButtonLike color="norm" as={SettingsLink} path="/recovery" onClick={rest.onClose}>
+                            {c('Action').t`Recover data`}
+                        </ButtonLike>
+                    )}
                 </div>
             </ModalTwoFooter>
         </ModalTwo>

@@ -1,8 +1,7 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -59,6 +58,10 @@ const keyGenConfig = KEYGEN_CONFIGS[KEYGEN_TYPES.CURVE25519];
 
 export const getPrivateAdminError = () => {
     return c('passwordless').t`Private users can be promoted to admin when they've signed in for the first time`;
+};
+
+export const getPrivateText = () => {
+    return c('unprivatization').t`Admins can't access the data of private users and can't reset their password.`;
 };
 
 export const getPublicAdminError = () => {
@@ -281,44 +284,42 @@ const getReEncryptedMemberTokens = async ({
     });
 };
 
+type ConfirmPromotionMemberAction = {
+    type: 'confirm-promote';
+    payload: MemberKeyPayload;
+    prompt: boolean;
+};
+type ConfirmDemotionMemberAction = {
+    type: 'confirm-demote';
+    payload: null;
+};
+export type MemberPromptAction = ConfirmPromotionMemberAction | ConfirmDemotionMemberAction;
+
 export const getMemberEditPayload = ({
     verifyOutboundPublicKeys,
     member,
-    role,
+    memberDiff,
     api,
 }: {
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     member: EnhancedMember;
-    role: MEMBER_ROLE | null;
+    memberDiff: Partial<{
+        role: MEMBER_ROLE;
+    }>;
     api: Api;
-}): ThunkAction<
-    Promise<
-        | { action: 'confirm-demote'; payload: null }
-        | {
-              action: 'confirm-promote';
-              payload: MemberKeyPayload;
-          }
-        | {
-              action: 'pass-through';
-              payload: MemberKeyPayload | null;
-          }
-    >,
-    OrganizationKeyState,
-    ProtonThunkArguments,
-    UnknownAction
-> => {
+}): ThunkAction<Promise<MemberPromptAction | null>, OrganizationKeyState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch) => {
         const organizationKey = await dispatch(organizationKeyThunk());
         const passwordlessMode = getIsPasswordless(organizationKey?.Key);
 
-        if (role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
+        if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_MEMBER) {
             return {
-                action: 'confirm-demote',
+                type: 'confirm-demote',
                 payload: null,
             };
         }
 
-        if (role === MEMBER_ROLE.ORGANIZATION_ADMIN && passwordlessMode) {
+        if (memberDiff.role === MEMBER_ROLE.ORGANIZATION_ADMIN && passwordlessMode) {
             const payload = await getMemberKeyPayload({
                 organizationKey,
                 mode: {
@@ -332,21 +333,20 @@ export const getMemberEditPayload = ({
 
             if (member.Private === MEMBER_PRIVATE.UNREADABLE) {
                 return {
-                    action: 'confirm-promote',
+                    type: 'confirm-promote',
                     payload,
+                    prompt: true,
                 };
             }
 
             return {
-                action: 'pass-through',
+                type: 'confirm-promote',
                 payload,
+                prompt: false,
             };
         }
 
-        return {
-            action: 'pass-through',
-            payload: null,
-        };
+        return null;
     };
 };
 
@@ -507,7 +507,7 @@ export const setAdminRoles = ({
             throw new Error('Only used on passwordless organizations');
         }
         if (!organizationKey?.privateKey) {
-            throw new Error('Organization key must be active to set admin roles');
+            throw new Error('Organization key must be activated to set admin role');
         }
         const userKey = userKeys[0]?.privateKey;
         if (!userKey) {

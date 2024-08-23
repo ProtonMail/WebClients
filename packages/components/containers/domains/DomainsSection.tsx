@@ -32,7 +32,6 @@ import {
 } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import useOrganizationModals from '../organization/useOrganizationModals';
-import useUnprivatizeMembers from '../organization/useUnprivatizeMembers';
 import CatchAllModal from './CatchAllModal';
 import DeleteDomainModal from './DeleteDomainModal';
 import DomainModal from './DomainModal';
@@ -56,8 +55,6 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
     const [organization, loadingOrganization] = useOrganization();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
     const organizationModals = useOrganizationModals(onceRef);
-
-    useUnprivatizeMembers();
 
     const [tmpDomainProps, setTmpDomainProps] = useState<{ domain: Domain; domainAddresses: DomainAddress[] } | null>(
         null
