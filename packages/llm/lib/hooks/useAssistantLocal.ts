@@ -42,7 +42,11 @@ export const useAssistantLocal = ({
     active,
 }: Props): Omit<
     AssistantContextType,
-    'getIsStickyAssistant' | 'handleCheckHardwareCompatibility' | 'cleanSpecificErrors' | 'addSpecificError'
+    | 'getIsStickyAssistant'
+    | 'handleCheckHardwareCompatibility'
+    | 'cleanSpecificErrors'
+    | 'addSpecificError'
+    | 'canKeepFormatting'
 > => {
     const api = useApi();
     const { createNotification } = useNotifications();

@@ -25,6 +25,61 @@ export const textToClipboard = (text = '', target = document.body) => {
     oldActiveElement?.focus?.();
 };
 
+export const copyDomToClipboard = async (element: HTMLElement) => {
+    if (!element || !(element instanceof HTMLElement)) {
+        console.error('Invalid element provided');
+        return;
+    }
+
+    // Try to use the Clipboard API if available
+    if (navigator.clipboard && typeof navigator.clipboard.write === 'function') {
+        const type = 'text/html';
+        const blob = new Blob([element.innerHTML], { type });
+        const data = [new ClipboardItem({ [type]: blob })];
+        await navigator.clipboard.write(data);
+    } else {
+        const activeElement = document.activeElement;
+
+        // Create an off-screen container for the element's HTML content
+        const tempContainer = document.createElement('div');
+        tempContainer.style.position = 'absolute';
+        tempContainer.style.left = '-9999px';
+        tempContainer.innerHTML = element.innerHTML;
+
+        document.body.appendChild(tempContainer);
+
+        const selection = window.getSelection();
+        if (!selection) {
+            console.error('Failed to get selection');
+            document.body.removeChild(tempContainer);
+            return;
+        }
+
+        // Select the contents of the temporary container
+        const range = document.createRange();
+        range.selectNodeContents(tempContainer);
+
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        // Copy the selected content to the clipboard
+        try {
+            document.execCommand('copy');
+        } catch (err) {
+            console.error('Failed to copy content', err);
+        }
+
+        // Clean up
+        document.body.removeChild(tempContainer);
+        selection.removeAllRanges();
+
+        // Restore previous focus
+        if (activeElement instanceof HTMLElement) {
+            activeElement.focus();
+        }
+    }
+};
+
 export const getOS = () => {
     const { name = 'other', version = '' } = ua.os;
     return { name, version };

@@ -96,6 +96,7 @@ enum MailFeatureFlag {
     SelectAll = 'SelectAll',
     SelectAllOptimistic = 'SelectAllOptimistic',
     ComposerAssistant = 'ComposerAssistant',
+    ComposerAssistantFormatting = 'ComposerAssistantFormatting',
     WalletRightSidebarLink = 'WalletRightSidebarLink',
     ProtonTips = 'ProtonTips',
 }

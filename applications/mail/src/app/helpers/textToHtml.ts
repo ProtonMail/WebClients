@@ -79,6 +79,20 @@ const removeNewLinePlaceholder = (html: string, placeholder: string) => html.rep
  */
 const escapeBackslash = (text = '') => text.replace(/\\/g, '\\\\');
 
+export const prepareConversionToHTML = (content: string) => {
+    // We want empty new lines to behave as if they were not empty (this is non-standard markdown behaviour)
+    // It's more logical though for users that don't know about markdown.
+    const placeholder = generatePlaceHolder(content);
+    // We don't want to treat backslash as a markdown escape since it removes backslashes. So escape all backslashes with a backslash.
+    const withPlaceholder = addNewLinePlaceholders(escapeBackslash(content), placeholder);
+    const rendered = md.render(withPlaceholder);
+    return removeNewLinePlaceholder(rendered, placeholder);
+};
+
+export const extractContentFromPtag = (content: string) => {
+    return /^<p>(((?!<p>)[\s\S])*)<\/p>$/.exec(content)?.[1];
+};
+
 /**
  * Replace the signature by a temp hash, we replace it only
  * if the content is the same.
@@ -129,21 +143,14 @@ export const textToHtml = (
 ) => {
     const text = replaceSignature(input, signature, mailSettings, userSettings);
 
-    // We want empty new lines to behave as if they were not empty (this is non-standard markdown behaviour)
-    // It's more logical though for users that don't know about markdown.
-    const placeholder = generatePlaceHolder(text);
-    // We don't want to treat backslash as a markdown escape since it removes backslashes. So escape all backslashes with a backslash.
-    const withPlaceholder = addNewLinePlaceholders(escapeBackslash(text), placeholder);
-    const rendered = md.render(withPlaceholder);
-    const html = removeNewLinePlaceholder(rendered, placeholder);
+    const html = prepareConversionToHTML(text);
 
     const withSignature = attachSignature(html, signature, text, mailSettings, userSettings).trim();
+
     /**
      * The capturing group includes negative lookup "(?!<p>)" in order to avoid nested problems.
      * Ex, this capture will be ignored : "<p>Hello</p><p>Hello again</p>""
      * Because it would have ended up with this result : "Hello</p><p>Hello again"
      */
-    const extractContentFromPTag = /^<p>(((?!<p>)[\s\S])*)<\/p>$/.exec(withSignature)?.[1];
-
-    return extractContentFromPTag || withSignature;
+    return extractContentFromPtag(withSignature) || withSignature;
 };

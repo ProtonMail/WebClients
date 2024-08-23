@@ -48,6 +48,7 @@ const AssistantProvider = ({ children }: AssistantProviderProps) => {
                 handleCheckHardwareCompatibility: commonState.handleCheckHardwareCompatibility,
                 cleanSpecificErrors: commonState.cleanSpecificErrors,
                 addSpecificError: commonState.addSpecificError,
+                canKeepFormatting: commonState.canKeepFormatting,
             }}
         >
             {children}
