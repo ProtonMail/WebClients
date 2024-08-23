@@ -14,6 +14,7 @@ import { getLocalID, isAccountSwitch, isHostAllowed, isSameURL, trimLocalID } fr
 import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
+import { handleBeforeInput } from "./windowShortcuts";
 
 type ViewID = keyof ReturnType<typeof getConfig>["url"];
 
@@ -116,20 +117,9 @@ const createViews = (session: Session) => {
         browserViewMap.account.webContents.on("before-input-event", handleBeforeInput);
     }
 
-    // We need to listen for this shortcut manually because the `CtrlOrCmd+Plus` shortcut
-    // does not work properly on Linux and Windows (it requires the Shift key too). This
-    // might be removed in the future if electron fixes it.
-    if (isWindows || isLinux) {
-        const handleBeforeInput = (_event: unknown, input: Input) => {
-            if (input.type === "keyDown" && input.control && input.key === "+") {
-                updateZoom("in");
-            }
-        };
-
-        browserViewMap.mail.webContents.on("before-input-event", handleBeforeInput);
-        browserViewMap.calendar.webContents.on("before-input-event", handleBeforeInput);
-        browserViewMap.account.webContents.on("before-input-event", handleBeforeInput);
-    }
+    browserViewMap.mail.webContents.on("before-input-event", handleBeforeInput);
+    browserViewMap.calendar.webContents.on("before-input-event", handleBeforeInput);
+    browserViewMap.account.webContents.on("before-input-event", handleBeforeInput);
 
     browserViewMap.mail.setAutoResize({ width: true, height: true });
     browserViewMap.calendar.setAutoResize({ width: true, height: true });
