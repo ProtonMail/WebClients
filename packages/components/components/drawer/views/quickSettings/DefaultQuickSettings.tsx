@@ -8,7 +8,7 @@ import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interface
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
-import { Info, Toggle, Tooltip } from '../../../../components';
+import { Info, Toggle } from '../../../../components';
 import { ThemeCards, useTheme } from '../../../../containers';
 import ThemeSyncModeDropdown from '../../../../containers/themes/ThemeSyncModeDropdown';
 import { useEarlyAccess, useNotifications, useShowThemeSelection } from '../../../../hooks';
@@ -124,28 +124,26 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                 </DrawerAppSection>
             )}
 
-            <Tooltip
-                title={c('Info')
-                    .t`Try new ${BRAND_NAME} features, updates and products before they are released to the public. This will reload the application`}
-            >
-                {/* additional div needed for tooltip */}
-                <div className="w-full shrink-0">
-                    <DrawerAppSection>
-                        <QuickSettingsSectionRow
-                            label={c('Label').t`Beta Access`}
-                            action={
-                                <Toggle
-                                    id="toggle-early-access"
-                                    loading={betaToggleLoading}
-                                    checked={earlyAccess.value}
-                                    onChange={handleChangeEarlyAccess}
-                                    data-testid="drawer-quick-settings:beta-access-toggle"
-                                />
-                            }
+            <DrawerAppSection>
+                <QuickSettingsSectionRow
+                    label={c('Label').t`Beta Access`}
+                    labelInfo={
+                        <Info
+                            title={c('Info')
+                                .t`Try new ${BRAND_NAME} features, updates and products before they are released to the public. This will reload the application`}
                         />
-                    </DrawerAppSection>
-                </div>
-            </Tooltip>
+                    }
+                    action={
+                        <Toggle
+                            id="toggle-early-access"
+                            loading={betaToggleLoading}
+                            checked={earlyAccess.value}
+                            onChange={handleChangeEarlyAccess}
+                            data-testid="drawer-quick-settings:beta-access-toggle"
+                        />
+                    }
+                />
+            </DrawerAppSection>
 
             <QuickSettingsStorageLimitBanner />
 

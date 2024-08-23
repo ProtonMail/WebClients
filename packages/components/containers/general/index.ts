@@ -1,4 +1,3 @@
-export { default as ToggleAssistantContainer } from './ToggleAssistant/ToggleAssistantContainer';
 export { default as AutoSaveContactsToggle } from './AutoSaveContactsToggle';
 export { default as DateFormatSection } from './DateFormatSection';
 export { default as LanguageAndTimeSection } from './LanguageAndTimeSection';
@@ -6,4 +5,5 @@ export { default as LanguageSection } from './LanguageSection';
 export { default as PmMeSection } from './PmMeSection';
 export { default as ShortcutsToggle } from './ShortcutsToggle';
 export { default as TimeFormatSection } from './TimeFormatSection';
+export { default as ToggleAssistantContainer } from './ToggleAssistant/ToggleAssistantContainer';
 export { default as WeekStartSection } from './WeekStartSection';
