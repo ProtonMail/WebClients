@@ -1,16 +1,23 @@
-import { UnknownAction } from '@reduxjs/toolkit';
-import { ThunkAction } from 'redux-thunk';
+import type { UnknownAction } from '@reduxjs/toolkit';
+import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { unprivatizeMemberKeysRoute } from '@proton/shared/lib/api/members';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Api, Member, MemberReadyForUnprivatization, VerifyOutboundPublicKeys } from '@proton/shared/lib/interfaces';
+import type {
+    Api,
+    Member,
+    MemberReadyForUnprivatization,
+    VerifyOutboundPublicKeys,
+} from '@proton/shared/lib/interfaces';
 import { getMemberReadyForUnprivatization, getSentryError, unprivatizeMember } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
-import { MembersState, getMemberAddresses, membersThunk } from './index';
+import type { OrganizationKeyState } from '../organizationKey';
+import { organizationKeyThunk } from '../organizationKey';
+import type { MembersState } from './index';
+import { getMemberAddresses, membersThunk } from './index';
 
 const ephemeralState = {
     running: false,
@@ -37,14 +44,18 @@ export const unprivatizeMembers = ({
             return;
         }
         ephemeralState.running = true;
-        const api = getSilentApi(normalApi);
         const members = await dispatch(membersThunk());
         const membersToUnprivatize = getMembersToUnprivatize(members);
-        const organizationKey = await dispatch(organizationKeyThunk());
-        if (!membersToUnprivatize?.length || !organizationKey?.privateKey) {
+        if (!membersToUnprivatize.length) {
             ephemeralState.running = false;
             return;
         }
+        const organizationKey = await dispatch(organizationKeyThunk());
+        if (!organizationKey?.privateKey) {
+            ephemeralState.running = false;
+            return;
+        }
+        const api = getSilentApi(normalApi);
         const failedMembers: Member[] = [];
         const successfulMembers: Member[] = [];
         try {
