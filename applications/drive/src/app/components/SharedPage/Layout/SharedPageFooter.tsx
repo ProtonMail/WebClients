@@ -1,15 +1,21 @@
 import { useActiveBreakpoint } from '@proton/components/hooks';
 
-import { useDownload, useDownloadScanFlag } from '../../../store';
+import type { useBookmarksPublicView } from '../../../store';
+import { useDownload, useDownloadScanFlag, useDriveShareURLBookmarkingFeatureFlag } from '../../../store';
+import { SaveToDriveButton } from '../Bookmarks/SaveToDriveButton';
 import type { DownloadButtonProps } from './DownloadButton';
 import { DownloadButton } from './DownloadButton';
 import ReportAbuseButton from './ReportAbuseButton';
 
-interface Props extends DownloadButtonProps {}
-const SharedPageFooter = ({ rootItem, items }: Props) => {
+interface Props extends DownloadButtonProps {
+    bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
+}
+const SharedPageFooter = ({ rootItem, items, bookmarksPublicView }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
     const { hasDownloads } = useDownload();
     const isDownloadScanEnabled = useDownloadScanFlag();
+    const { isLoading, addBookmark, isAlreadyBookmarked, urlPassword, isLoggedIn } = bookmarksPublicView;
+    const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
 
     if (viewportWidth['<=small']) {
         // Hide download button if transfer modal is present
@@ -17,18 +23,22 @@ const SharedPageFooter = ({ rootItem, items }: Props) => {
             return null;
         }
         return (
-            <div className="fixed bottom-0 p-4 flex flex-wrap justify-center bg-weak w-full">
-                {isDownloadScanEnabled ? (
-                    <DownloadButton
-                        rootItem={rootItem}
-                        items={items}
-                        isScanAndDownload
-                        className="mr-4"
-                        color="weak"
-                        hideIcon
+            <div className="fixed bottom-0 p-4 flex flex-wrap justify-center bg-weak w-full gap-4">
+                <DownloadButton
+                    rootItem={rootItem}
+                    items={items}
+                    isScanAndDownload={isDownloadScanEnabled}
+                    color="weak"
+                />
+                {isDriveShareUrlBookmarkingEnabled && (
+                    <SaveToDriveButton
+                        loading={isLoading}
+                        onClick={addBookmark}
+                        alreadyBookmarked={isAlreadyBookmarked}
+                        urlPassword={urlPassword}
+                        isLoggedIn={isLoggedIn}
                     />
-                ) : null}
-                <DownloadButton className="flex-1" rootItem={rootItem} items={items} hideIcon={isDownloadScanEnabled} />
+                )}
             </div>
         );
     }

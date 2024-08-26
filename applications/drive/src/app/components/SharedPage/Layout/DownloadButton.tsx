@@ -1,13 +1,25 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, Href } from '@proton/atoms';
 import type { ThemeColorUnion } from '@proton/colors/types';
-import { Icon } from '@proton/components';
-import clsx from '@proton/utils/clsx';
+import { ButtonGroup, usePopperAnchor } from '@proton/components/components';
+import {
+    Dropdown,
+    DropdownButton,
+    DropdownMenu,
+    DropdownMenuButton,
+    DropdownSizeUnit,
+} from '@proton/components/components/dropdown';
+import { Icon } from '@proton/components/components/icon';
+import { Spotlight } from '@proton/components/components/spotlight';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
 import type { DecryptedLink } from '../../../store';
-import { useDownload, useDownloadScanFlag } from '../../../store';
+import { useDownload } from '../../../store';
 import { isTransferActive, isTransferPaused } from '../../../utils/transfer';
 import { useSelection } from '../../FileBrowser';
 import { getSelectedItems } from '../../sections/helpers';
@@ -21,21 +33,65 @@ export interface DownloadButtonProps {
     isScanAndDownload?: boolean;
     color?: ThemeColorUnion;
     disabled?: boolean;
-    hideIcon?: boolean;
 }
-export function DownloadButton({
-    items,
-    className,
-    rootItem,
-    isScanAndDownload,
-    color,
-    disabled,
-    hideIcon,
-}: DownloadButtonProps) {
+
+const SpotlightContent = () => (
+    <div>
+        <h5 className="text-semibold mb-3 flex items-center">
+            <Icon name="info-circle" size={5} className="mr-2" />
+            {c('Info').t`File scanning in Drive`}
+        </h5>
+        <div className="mb-6">
+            {c('Info')
+                .t`To help protect you, ${DRIVE_APP_NAME} can scan and block malicious files. You should still only download files from people you trust.`}{' '}
+            <Href className="text-no-decoration" href={getKnowledgeBaseUrl('/proton-drive-malware-protection')}>
+                {c('Link').t`Learn more`}
+            </Href>
+        </div>
+    </div>
+);
+
+const SpotlightFooter = () => (
+    <div className="bg-white">
+        <div className="flex flex-row items-center">
+            <Icon name="lock-check-filled" size={6} className="mr-2 color-disabled" />
+            <span className="color-disabled">{c('Info').t`End-to-End Encrypted`}.</span>
+            <Href className="color-disabled ml-1" href={getKnowledgeBaseUrl('/proton-drive-malware-protection')}>
+                {c('Link').t`Learn more`}
+            </Href>
+        </div>
+    </div>
+);
+const InfoIcon = ({ className }: { className?: string }) => {
+    const [show, setShow] = useState(false);
+    const toggleSpotlight = () => setShow((current) => !current);
+    const handleClose = () => setShow(false);
+
+    return (
+        <Spotlight
+            content={<SpotlightContent />}
+            footer={<SpotlightFooter />}
+            show={show}
+            onClose={handleClose}
+            originalPlacement="bottom-end"
+            size="large"
+        >
+            <button
+                className={className}
+                onClick={toggleSpotlight}
+                aria-label={c('Action').t`Open scan and download info`}
+            >
+                <Icon name="info-circle" size={4} data-testid="scan-and-download-tooltip" />
+            </button>
+        </Spotlight>
+    );
+};
+
+export function DownloadButton({ items, rootItem, isScanAndDownload, disabled }: DownloadButtonProps) {
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLDivElement>();
     const { token } = usePublicToken();
     const selectionControls = useSelection();
     const { downloads, download, clearDownloads } = useDownload();
-    const isDownloadScanEnabled = useDownloadScanFlag();
 
     useDownloadNotifications(downloads);
 
@@ -50,54 +106,95 @@ export function DownloadButton({
             ? selectedItems.map((link) => ({ ...link, shareId: token }))
             : [{ ...rootItem, shareId: token }];
 
-        const options = isScanAndDownload && isDownloadScanEnabled ? { virusScan: true } : undefined;
-        void download(downloadLinks, options);
+        void download(downloadLinks);
     };
 
-    const { isDisabled, isDownloading } = downloads.reduce(
-        (acc, transfer) => {
-            const isLoading = isTransferActive(transfer) || isTransferPaused(transfer);
-            if (isLoading) {
-                return {
-                    isDisabled: true,
-                    // The following prop is used to handle Scan and Download.
-                    // we want to show spinner only for the button that has been clicked,
-                    // but the other has to be disabled at the same time
-                    isDownloading: isScanAndDownload ? !!transfer?.options?.virusScan : !transfer?.options?.virusScan,
-                };
-            }
-            return acc;
-        },
-        { isDisabled: false, isDownloading: false }
-    );
+    const handleScanAndDownload = () => {
+        // To keep always only one download around.
+        clearDownloads();
 
+        const downloadLinks = selectedItems.length
+            ? selectedItems.map((link) => ({ ...link, shareId: token }))
+            : [{ ...rootItem, shareId: token }];
+
+        void download(downloadLinks, { virusScan: true });
+    };
+
+    const isDownloading = !!downloads.find((transfer) => isTransferActive(transfer) || isTransferPaused(transfer));
     let buttonText: string = '';
+    let buttonTextScanAndDownload: string = '';
 
     if (rootItem.isFile) {
-        buttonText = isScanAndDownload ? c('Action').t`Scan & Download` : c('Action').t`Download`;
+        buttonText = c('Action').t`Download`;
+        buttonTextScanAndDownload = c('Action').t`Scan & Download`;
     } else {
         if (count) {
-            buttonText = isScanAndDownload
-                ? c('Action').t`Scan & Download (${count})`
-                : c('Action').t`Download (${count})`;
+            buttonText = c('Action').t`Download (${count})`;
+            buttonTextScanAndDownload = c('Action').t`Scan & Download (${count})`;
         } else {
-            buttonText = isScanAndDownload ? c('Action').t`Scan & Download all` : c('Action').t`Download all`;
+            buttonText = c('Action').t`Download all`;
+            buttonTextScanAndDownload = c('Action').t`Scan & Download all`;
         }
     }
 
-    const buttonColor = color || (isDownloading ? 'weak' : 'norm');
+    if (!isScanAndDownload) {
+        return (
+            <Button
+                color="weak"
+                shape="outline"
+                loading={isDownloading}
+                disabled={disabled}
+                onClick={handleDownload}
+                data-testid="download-button"
+            >
+                <Icon name="arrow-down-line" className="mr-2" />
+                {buttonText}
+            </Button>
+        );
+    }
 
     return (
-        <Button
-            className={clsx(['self-center my-auto', className])}
-            color={buttonColor}
-            onClick={handleDownload}
-            loading={isDownloading}
-            data-testid={`${isScanAndDownload ? 'scan-' : ''}download-button`}
-            disabled={isDisabled || disabled}
-        >
-            {buttonText}
-            {!isDownloading && !hideIcon ? <Icon name="arrow-down-line" className="ml-2" /> : null}
-        </Button>
+        <div className="flex flex-nowrap items-center gap-4">
+            <InfoIcon className="hidden md:block" />
+            <div ref={anchorRef}>
+                <ButtonGroup>
+                    <Button
+                        loading={isDownloading}
+                        onClick={handleScanAndDownload}
+                        disabled={disabled}
+                        data-testid="scan-download-button"
+                    >
+                        <Icon name="arrow-down-line" className="mr-2" />
+                        {buttonTextScanAndDownload}
+                    </Button>
+                    <DropdownButton
+                        hasCaret
+                        isOpen={isOpen}
+                        onClick={toggle}
+                        disabled={isDownloading || disabled}
+                        data-testid="dropdown-download-button"
+                    />
+                </ButtonGroup>
+                <Dropdown
+                    anchorRef={anchorRef}
+                    isOpen={isOpen}
+                    onClose={close}
+                    size={{
+                        width: DropdownSizeUnit.Anchor,
+                    }}
+                >
+                    <DropdownMenu>
+                        <DropdownMenuButton
+                            className="text-left"
+                            onClick={handleDownload}
+                            data-testid="download-button"
+                        >
+                            <Icon name="arrow-down-line" className="mr-2" />
+                            {buttonText}
+                        </DropdownMenuButton>
+                    </DropdownMenu>
+                </Dropdown>
+            </div>
+        </div>
     );
 }
