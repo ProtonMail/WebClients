@@ -1,13 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getGroups } from '@proton/shared/lib/api/groups';
-import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Group } from '@proton/shared/lib/interfaces';
 
 import type { DomainsState } from '../domains';
-import { serverEvent } from '../eventLoop';
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
 import type { OrganizationKeyState } from '../organizationKey';
@@ -38,24 +37,33 @@ const modelThunk = createAsyncModelThunk<Model, GroupsState, ProtonThunkArgument
 const slice = createSlice({
     name,
     initialState,
-    reducers: {},
+    reducers: {
+        addGroup: (state, action: PayloadAction<Group>) => {
+            if (!state.value) {
+                state.value = [];
+            }
+            state.value.push(action.payload);
+        },
+        updateGroup: (state, action: PayloadAction<Group>) => {
+            if (!state.value) {
+                state.value = [];
+            }
+            const index = state.value.findIndex((group) => group.ID === action.payload.ID);
+            if (index !== -1) {
+                state.value[index] = action.payload;
+            }
+        },
+        removeGroup: (state, action: PayloadAction<string>) => {
+            if (state.value && action.payload) {
+                const updatedGroups = state.value.filter((group) => group.ID !== action.payload);
+                state.value = updatedGroups;
+            }
+        },
+    },
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
-        builder.addCase(serverEvent, (state, action) => {
-            if (!state.value) {
-                return;
-            }
-
-            if (action.payload.Groups) {
-                state.value = updateCollection({
-                    model: state.value,
-                    events: action.payload.Groups,
-                    itemKey: 'Group',
-                });
-            }
-        });
     },
 });
-
+export const { addGroup, updateGroup, removeGroup } = slice.actions;
 export const groupsReducer = { [name]: slice.reducer };
 export const groupThunk = modelThunk.thunk;

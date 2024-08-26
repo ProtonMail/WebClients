@@ -3,13 +3,14 @@ import { useEffect, useMemo, useState } from 'react';
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { addGroup, removeGroup, updateGroup } from '@proton/account';
+import { updateMembersAfterEdit } from '@proton/account';
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { createGroup, editGroup } from '@proton/account/groups/actions';
 import {
     useApi,
     useCustomDomains,
     useErrorHandler,
-    useEventManager,
     useGetUser,
     useGroups,
     useKTVerifier,
@@ -48,7 +49,6 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const [selectedGroup, setSelectedGroup] = useState<Group | undefined>(undefined);
     const [uiState, setUiState] = useState<GROUPS_STATE>('empty');
     const [customDomains, loadingCustomDomains] = useCustomDomains();
-    const { call } = useEventManager();
     const addGroupMember = useAddGroupMember();
     const pmMeDomain = usePmMeDomain();
 
@@ -126,8 +126,8 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
         try {
             await api(deleteGroup(selectedGroup.ID));
+            dispatch(removeGroup(selectedGroup.ID));
             createNotification({ type: 'success', text: c('Info').t`Group deleted` });
-            await call();
             resetForm();
             setSelectedGroup(undefined);
             setUiState('empty');
@@ -180,10 +180,17 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             })
         );
         await Promise.all(addMembersPromises);
-        await call();
+
+        if (isNewGroup) {
+            setUiState('view');
+            dispatch(addGroup(Group));
+        } else {
+            dispatch(updateGroup(Group));
+            dispatch(updateMembersAfterEdit({ groupId: Group.ID }));
+            setUiState('view');
+        }
 
         resetForm();
-        setUiState('view');
         setSelectedGroup(Group);
     };
 
