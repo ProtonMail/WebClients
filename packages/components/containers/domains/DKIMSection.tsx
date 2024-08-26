@@ -64,7 +64,17 @@ const DKIMSection = ({ domain }: Props) => {
                                 <code>CNAME</code>
                             </TableCell>
                             <TableCell label={c('Header for domain modal').t`Host name`}>
-                                <code>{row.Hostname}</code>
+                                <div className="flex flex-nowrap items-center">
+                                    <Copy
+                                        onCopy={handleCopy}
+                                        size="small"
+                                        className="shrink-0 mr-2"
+                                        value={row.Hostname}
+                                    />{' '}
+                                    <div className="text-ellipsis">
+                                        <code title={row.Hostname}>{row.Hostname}</code>
+                                    </div>
+                                </div>
                             </TableCell>
                             <TableCell label={c('Header for domain modal').t`Value / Data`}>
                                 <div className="flex flex-nowrap items-center">
