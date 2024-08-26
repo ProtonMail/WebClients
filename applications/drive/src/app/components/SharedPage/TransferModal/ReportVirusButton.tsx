@@ -39,7 +39,6 @@ export default function ReportVirusButton({ linkInfo, comment, className, report
                     shape="outline"
                     color="norm"
                     data-testid="report-abuse-button"
-                    style={{ '--min-w-custom': '6rem' }}
                     className={className}
                     onClick={handleClick}
                 >

@@ -17,4 +17,7 @@ export { default as useTransfersView } from './useTransfersView';
 export { default as useTrashView } from './useTrashView';
 export { default as useDevicesView } from './useDevicesView';
 export { default as usePhotosView } from './usePhotosView';
+export { useBookmarksPublicView } from './useBookmarksPublicView';
+export { useBookmarksView } from './useBookmarksView';
+
 export * from './useTree';
