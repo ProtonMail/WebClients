@@ -64,6 +64,8 @@ export function App({ nonInteractiveMode = false }: Props) {
   const [editingLocked, setEditingLocked] = useState(true)
   const [interactionMode, setInteractionMode] = useState<DocumentInteractionMode>('edit')
 
+  const [showTreeView, setShowTreeView] = useState(false)
+
   useEffectOnce(() => {
     setTtagLocales(locales)
   })
@@ -228,6 +230,10 @@ export function App({ nonInteractiveMode = false }: Props) {
           }
 
           return editorRef.current.getEditorState().toJSON()
+        },
+
+        async toggleDebugTreeView() {
+          setShowTreeView((show) => !show)
         },
       }
 
@@ -394,6 +400,7 @@ export function App({ nonInteractiveMode = false }: Props) {
           onInteractionModeChange={onInteractionModeChange}
           setEditorRef={setEditorRef}
           username={initialConfig.username}
+          showTreeView={showTreeView}
         />
       </ApplicationProvider>
       <Icons />
