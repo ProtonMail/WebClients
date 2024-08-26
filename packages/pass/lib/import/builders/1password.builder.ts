@@ -1,30 +1,23 @@
-import type {
-    OnePassLegacySection,
-    OnePassLegacySectionField,
-} from '@proton/pass/lib/import/providers/1password.1pif.types';
 import {
-    type ItemSection,
-    type OnePassField,
-    OnePassFieldKey,
-    type OnePassFields,
+    type OnePassLegacySection,
+    type OnePassLegacySectionField,
+    OnePassLegacySectionFieldKey,
+} from '@proton/pass/lib/import/providers/1password.1pif.types';
+import type {
+    OnePassField,
+    OnePassFields,
+    OnePassSection,
 } from '@proton/pass/lib/import/providers/1password.1pux.types';
-import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { ItemContent, Maybe, MaybeNull } from '@proton/pass/types';
+import { OnePassFieldKey } from '@proton/pass/lib/import/providers/1password.1pux.types';
+import { type ItemBuilder, itemBuilder } from '@proton/pass/lib/items/item.builder';
+import type { IdentityFieldName, ItemContent, Maybe } from '@proton/pass/types';
 import { objectKeys } from '@proton/pass/utils/object/generic';
 import { epochToDate } from '@proton/pass/utils/time/format';
 
-import type {
-    IdentityDictionary,
-    IdentityRecord,
-    OnePassFieldValue,
-    OnePassFieldValueFactory,
-    OnePassLegacyFieldValueFactory,
-} from './builders.types';
+const ONE_PASS_FIXED_SECTIONS = ['name', 'address', 'internet'];
+const ONE_PASS_ADDRESS_KEYS = ['street', 'city', 'country', 'zip', 'state'];
 
-const fixedSections = ['name', 'address', 'internet'];
-const addressKeys = ['street', 'city', 'country', 'zip', 'state'];
-
-const onePasswordDictionary: IdentityDictionary = {
+const ONE_PASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     address1: 'streetAddress',
     busphone: 'workPhoneNumber',
     birthdate: 'birthdate',
@@ -45,71 +38,79 @@ const onePasswordDictionary: IdentityDictionary = {
     zip: 'zipOrPostalCode',
 };
 
-export const formatCCExpirationDate = (monthYear: Maybe<number>): string => {
+export const formatMonthYearDate = (monthYear: Maybe<number>): string => {
     const monthYearString = String(monthYear);
     if (!monthYear || monthYearString.length !== 6) return '';
     return `${monthYearString.slice(4, 6)}${monthYearString.slice(0, 4)}`;
 };
 
-const onePassValueFactory: OnePassFieldValueFactory = {
-    [OnePassFieldKey.ADDRESS]: (address: MaybeNull<Record<string, string>>) =>
-        addressKeys.reduce<IdentityRecord[]>((acc, key) => {
-            const field = onePasswordDictionary[key];
-            return field ? [...acc, { [field]: address?.[key] ?? '' }] : acc;
-        }, []),
-    [OnePassFieldKey.DATE]: epochToDate,
-    [OnePassFieldKey.MONTH_YEAR]: (value: number) => formatCCExpirationDate(value),
+export const formatFieldValue = (field: OnePassFields, key: OnePassFieldKey): string => {
+    const value = field[key];
+    if (!value) return '';
+
+    switch (key) {
+        case OnePassFieldKey.DATE:
+            return epochToDate(field[key]!);
+        case OnePassFieldKey.MONTH_YEAR:
+            return formatMonthYearDate(field[key]!);
+        default:
+            return String(value);
+    }
 };
 
-export const getValue = <K extends OnePassFieldKey>(fields: OnePassFields, key: K): OnePassFieldValue<K> => {
-    const factory = onePassValueFactory[key];
-    const value = fields[key];
-    return (factory?.(value) ?? String(value)) as OnePassFieldValue<K>;
+export const formatLegacySectionFieldValue = (field: OnePassLegacySectionField): string => {
+    const value = field.v;
+    if (!value) return '';
+
+    switch (field.k) {
+        case OnePassLegacySectionFieldKey.DATE:
+            return epochToDate(field.v!);
+        default:
+            return String(value);
+    }
 };
 
-const build1PassBaseIdentity =
-    <T, S extends OnePassLegacySection | ItemSection>(
-        reducer: (acc: Partial<ItemContent<'identity'>>, field: T) => Partial<ItemContent<'identity'>>
+const identityBuilderFactory =
+    <Field, Section extends { name: string; fields?: Field[] }>(
+        buildField: (item: ItemBuilder<'identity'>, field: Field) => void
     ) =>
-    (sections?: S[]): ItemContent<'identity'> => {
-        const emptyIdentity = itemBuilder('identity').data.content;
-        if (!sections) return emptyIdentity;
+    (sections?: Section[]): ItemContent<'identity'> => {
+        const item = itemBuilder('identity');
 
-        return sections.reduce<ItemContent<'identity'>>((acc, { name, fields }) => {
-            // Support extra sections in next version
-            if (!fixedSections.includes(name) || !fields) return acc;
-            return { ...acc, ...fields.reduce(reducer as any, {}) };
-        }, emptyIdentity);
+        sections?.forEach(({ name, fields }) => {
+            /* FIXME: Support extra sections in next version */
+            if (!ONE_PASS_FIXED_SECTIONS.includes(name) || !fields) return item;
+            fields.forEach((field) => buildField(item, field));
+        });
+
+        return item.data.content;
     };
 
-const legacyValueFactory: OnePassLegacyFieldValueFactory = {
-    birthdate: epochToDate,
-};
+export const build1PassIdentity = identityBuilderFactory<OnePassField, OnePassSection>((item, { id, value }) => {
+    const [fieldKey] = objectKeys<OnePassFieldKey>(value);
+    const fieldName = ONE_PASS_IDENTITY_FIELD_MAP[id];
 
-export const build1PassLegacyIdentity = build1PassBaseIdentity<OnePassLegacySectionField, OnePassLegacySection>(
-    (acc: Partial<ItemContent<'identity'>>, { n, v }) => {
-        if (n === OnePassFieldKey.ADDRESS) {
-            return Object.entries(v as any).reduce((fields, [key, value]) => {
-                const identityFieldName = onePasswordDictionary[key];
-                return identityFieldName ? { ...fields, [identityFieldName]: value ?? '' } : fields;
-            }, acc);
-        }
-
-        const identityFieldName = onePasswordDictionary[n];
-        const formatValue = legacyValueFactory[identityFieldName];
-        return identityFieldName ? { ...acc, [identityFieldName]: formatValue?.(v) ?? v ?? '' } : acc;
+    if (fieldKey === OnePassFieldKey.ADDRESS) {
+        return ONE_PASS_ADDRESS_KEYS.forEach((key) => {
+            const address = value[fieldKey];
+            const field = ONE_PASS_IDENTITY_FIELD_MAP[key];
+            if (field) item.set('content', (content) => content.set(field, address?.[key] ?? ''));
+        });
     }
-);
 
-export const build1PassIdentity = build1PassBaseIdentity<OnePassField, ItemSection>(
-    (acc: Partial<ItemContent<'identity'>>, { id, value }) => {
-        const [valueKey] = objectKeys<OnePassFieldKey>(value);
+    if (fieldName) item.set('content', (content) => content.set(fieldName, formatFieldValue(value, fieldKey)));
+});
 
-        if (valueKey === OnePassFieldKey.ADDRESS) {
-            return getValue(value, valueKey).reduce((fields, field) => ({ ...fields, ...field }), acc);
+export const build1PassLegacyIdentity = identityBuilderFactory<OnePassLegacySectionField, OnePassLegacySection>(
+    (item, field) => {
+        if (field.k === OnePassLegacySectionFieldKey.ADDRESS && field.v) {
+            return Object.entries(field.v).forEach(([key, value]) => {
+                const field = ONE_PASS_IDENTITY_FIELD_MAP[key];
+                if (field) item.set('content', (content) => content.set(field, value ?? ''));
+            });
         }
 
-        const identityFieldName = onePasswordDictionary[id];
-        return identityFieldName ? { ...acc, [identityFieldName]: getValue(value, valueKey) } : acc;
+        const fieldName = ONE_PASS_IDENTITY_FIELD_MAP[field.n];
+        if (fieldName) item.set('content', (content) => content.set(fieldName, formatLegacySectionFieldValue(field)));
     }
 );

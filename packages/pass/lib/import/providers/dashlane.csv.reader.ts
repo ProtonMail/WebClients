@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { FileKey, groupItems } from '@proton/pass/lib/import/builders/dashlane.builder';
+import { FileKey } from '@proton/pass/lib/import/builders/dashlane.builder';
 import {
     processCreditCardItem,
     processIdentityItem,
@@ -41,10 +41,7 @@ const Criteria = {
 const getParser = (item: DashlaneItem): [ParserFunction, FileKey] => {
     for (const key in Criteria) {
         const { keys, parser } = Criteria[key as FileKey];
-
-        if (keys.every((k) => k in item)) {
-            return [parser, key as FileKey];
-        }
+        if (keys.every((k) => k in item)) return [parser, key as FileKey];
     }
 
     throw new Error(c('Error').t`Unknown item`);
@@ -67,17 +64,9 @@ export const readDashlaneDataCSV = async ({
             onError: (error) => warnings?.push(error),
         });
 
-        const [parser, itemKey] = getParser(items[0]);
-        const importItems = items.map((item) => parser(item, importUsername));
-        const vaultItems = groupItems(importItems, itemKey);
-
-        const vaults: ImportVault[] = [
-            {
-                name: getImportedVaultName(),
-                shareId: null,
-                items: vaultItems,
-            },
-        ];
+        const [parser] = getParser(items[0]);
+        const vaultItems = items.map((item) => parser(item, importUsername));
+        const vaults: ImportVault[] = [{ name: getImportedVaultName(), shareId: null, items: vaultItems }];
 
         return { vaults, ignored: [], warnings };
     } catch (e) {

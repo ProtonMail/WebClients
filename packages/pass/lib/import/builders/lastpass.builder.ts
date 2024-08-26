@@ -1,14 +1,11 @@
-import type { IdentityFieldName } from '@proton/pass/hooks/identity/useIdentityForm';
 import type { LastPassItem } from '@proton/pass/lib/import/providers/lastpass.types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { ItemContent } from '@proton/pass/types';
+import type { IdentityFieldName, ItemContent } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-
-import type { IdentityDictionary } from './builders.types';
 
 const UNIQUE_SEPARATOR = uniqueId();
 
-const lastpassDictionary: IdentityDictionary = {
+const LAST_PASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     'First Name': 'firstName',
     'Middle Name': 'middleName',
     Gender: 'gender',
@@ -24,29 +21,38 @@ const lastpassDictionary: IdentityDictionary = {
     Phone: 'phoneNumber',
 };
 
-const lastpassValueFactory: Partial<{ [k in IdentityFieldName]: (v: string) => string }> = {
-    phoneNumber: (value: string) => {
-        try {
-            const parsedValue = JSON.parse(value);
-            return `${parsedValue.ext}${parsedValue.num}`;
-        } catch {
-            return '';
-        }
-    },
+const parsePhoneNumber = (value: string): string => {
+    try {
+        const parsedValue = JSON.parse(value);
+        return `${parsedValue.ext}${parsedValue.num}`;
+    } catch {
+        return '';
+    }
 };
 
-export const buildLastpassIdentity = (item: LastPassItem): ItemContent<'identity'> => {
-    const emptyIdentity = itemBuilder('identity').data.content;
-    return (
-        item.extra
+const formatFieldValue = (value: string, field: IdentityFieldName): string => {
+    switch (field) {
+        case 'phoneNumber':
+            return parsePhoneNumber(value);
+        default:
+            return String(value || '');
+    }
+};
+
+export const buildLastpassIdentity = (importItem: LastPassItem): ItemContent<'identity'> => {
+    const item = itemBuilder('identity');
+
+    const fields =
+        importItem.extra
             ?.split('\n')
             .slice(1)
-            .map((i) => i.replace(':', UNIQUE_SEPARATOR).split(UNIQUE_SEPARATOR))
-            .reduce((acc, [key, dirtyValue]) => {
-                const field = lastpassDictionary[key];
-                if (!field) return acc;
-                const value = lastpassValueFactory[field]?.(dirtyValue) ?? String(dirtyValue || '');
-                return { ...acc, [field]: value };
-            }, emptyIdentity) ?? emptyIdentity
-    );
+            .map((i) => i.replace(':', UNIQUE_SEPARATOR).split(UNIQUE_SEPARATOR)) ?? [];
+
+    fields.forEach(([key, value]) => {
+        const field = LAST_PASS_IDENTITY_FIELD_MAP[key];
+        if (!field || !value) return;
+        item.set('content', (content) => content.set(field, formatFieldValue(value, field)));
+    });
+
+    return item.data.content;
 };

@@ -1,9 +1,6 @@
-import type { IdentityFieldName } from '@proton/pass/hooks/identity/useIdentityForm';
 import type { DashlaneIdItem, DashlanePersonalInfoItem } from '@proton/pass/lib/import/providers/dashlane.types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { ItemContent, ItemImportIntent } from '@proton/pass/types';
-
-import type { IdentityDictionary } from './builders.types';
+import type { IdentityFieldName, ItemContent, Maybe } from '@proton/pass/types';
 
 export enum FileKey {
     Login = 'Login',
@@ -13,7 +10,7 @@ export enum FileKey {
     SecureNotes = 'SecureNotes',
 }
 
-const dashlaneDictionary: IdentityDictionary = {
+const DASHLANE_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     address: 'streetAddress',
     address_floor: 'floor',
     city: 'city',
@@ -32,39 +29,28 @@ const dashlaneDictionary: IdentityDictionary = {
     zip: 'zipOrPostalCode',
 };
 
-const fieldsTypeFactory: { [key: string]: IdentityDictionary[] } = {
-    passport: [{ number: 'passportNumber' }],
-    license: [{ number: 'licenseNumber' }],
-    social_security: [{ number: 'socialSecurityNumber' }],
-    company: [{ item_name: 'company' }],
+const DASHLANE_DYNAMIC_IDENTITY_FIELD_MAP: Record<string, Record<string, IdentityFieldName>> = {
+    passport: { number: 'passportNumber' },
+    license: { number: 'licenseNumber' },
+    social_security: { number: 'socialSecurityNumber' },
+    company: { item_name: 'company' },
 };
 
-// Dashlane has the same key for different properties, based on type
-const hydrateDictionaryByType = (type: string) => {
-    const dynamicFields = fieldsTypeFactory[type] ?? [];
-    dynamicFields.forEach((field) => Object.assign(dashlaneDictionary, field));
+/* Dashlane has the same key for different properties, based on type */
+const resolveFieldNameForType = (key: string, type?: string): Maybe<IdentityFieldName> => {
+    const match = type ? DASHLANE_DYNAMIC_IDENTITY_FIELD_MAP?.[type]?.[key] : null;
+    return match ?? DASHLANE_IDENTITY_FIELD_MAP[key];
 };
 
-export const buildDashlaneIdentity = (item: DashlanePersonalInfoItem | DashlaneIdItem): ItemContent<'identity'> => {
-    hydrateDictionaryByType(item?.type ?? '');
-    return Object.entries(item).reduce((acc, [key, value]) => {
-        const field = dashlaneDictionary[key];
-        return field ? { ...acc, [field]: value } : acc;
-    }, itemBuilder('identity').data.content);
-};
+export const buildDashlaneIdentity = (
+    importItem: DashlanePersonalInfoItem | DashlaneIdItem
+): ItemContent<'identity'> => {
+    const item = itemBuilder('identity');
 
-export const groupItems = (items: ItemImportIntent[], itemKey: FileKey) => {
-    if (itemKey !== FileKey.Ids || items.length === 0) return items;
+    Object.entries(importItem).forEach(([key, value]) => {
+        const fieldName = resolveFieldNameForType(key, importItem.type);
+        if (fieldName && value) item.set('content', (content) => content.set(fieldName, value));
+    });
 
-    // Dashlane creates N entries for each piece of identity information.
-    // We need to create a single object with all these entries.
-    return [
-        items.reduce<ItemImportIntent<'identity'>>((acc, { content }) => {
-            Object.entries(content).forEach(([k, v]) => {
-                const key = k as IdentityFieldName;
-                if (!acc.content[key]) acc.content[key] = v ?? '';
-            });
-            return acc;
-        }, items[0] as ItemImportIntent<'identity'>),
-    ];
+    return item.data.content;
 };

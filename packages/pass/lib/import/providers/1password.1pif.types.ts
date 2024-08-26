@@ -7,8 +7,11 @@ export enum OnePassLegacyItemType {
     NOTE = 'securenotes.SecureNote',
     PASSWORD = 'passwords.Password',
 }
+
 export enum OnePassLegacySectionFieldKey {
+    ADDRESS = 'address',
     CONCEALED = 'concealed',
+    DATE = 'date',
     STRING = 'string',
     URL = 'URL',
 }
@@ -19,12 +22,22 @@ export type OnePassLegacyField = {
     designation?: OnePassLoginDesignation;
 };
 
+export type OnePassLegacySectionFieldValue<K extends OnePassLegacySectionFieldKey = OnePassLegacySectionFieldKey> = {
+    [OnePassLegacySectionFieldKey.ADDRESS]?: Record<string, string>;
+    [OnePassLegacySectionFieldKey.CONCEALED]?: string;
+    [OnePassLegacySectionFieldKey.DATE]?: number;
+    [OnePassLegacySectionFieldKey.STRING]?: string;
+    [OnePassLegacySectionFieldKey.URL]?: string;
+}[K];
+
 export type OnePassLegacySectionField = {
-    k: OnePassLegacySectionFieldKey;
-    n: string;
-    v?: string;
-    t: string;
-};
+    [K in OnePassLegacySectionFieldKey]: {
+        k: K;
+        n: string;
+        v?: OnePassLegacySectionFieldValue<K>;
+        t: string;
+    };
+}[OnePassLegacySectionFieldKey];
 
 export type OnePassLegacySection = {
     title?: string;
@@ -58,3 +71,5 @@ export type OnePassLegacyItem = {
         pin?: string;
     };
 };
+
+export type OnePassLegacyFieldValueFactory = { [key: string]: (...args: any) => string };

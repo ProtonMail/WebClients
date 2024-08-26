@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { build1PassLegacyIdentity } from '@proton/pass/lib/import/builders/1password.builder';
-import type { ItemImportIntent, UnsafeItemExtraField } from '@proton/pass/types';
+import type { ItemImportIntent, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -61,31 +61,34 @@ const extractExtraFields = (item: OnePassLegacyItem) => {
         .flatMap(({ fields }) =>
             (fields as OnePassLegacySectionField[])
                 .filter(({ k }) => Object.values(OnePassLegacySectionFieldKey).includes(k))
-                .map<UnsafeItemExtraField>(({ k, t, v, n }) => {
-                    switch (k) {
+                .map<MaybeNull<UnsafeItemExtraField>>((field) => {
+                    switch (field.k) {
                         case OnePassLegacySectionFieldKey.STRING:
                         case OnePassLegacySectionFieldKey.URL:
                             return {
-                                fieldName: t || c('Label').t`Text`,
+                                fieldName: field.t || c('Label').t`Text`,
                                 type: 'text',
-                                data: { content: v ?? '' },
+                                data: { content: field.v ?? '' },
                             };
                         case OnePassLegacySectionFieldKey.CONCEALED:
-                            if (n.startsWith('TOTP')) {
+                            if (field.n.startsWith('TOTP')) {
                                 return {
-                                    fieldName: t || c('Label').t`TOTP`,
+                                    fieldName: field.t || c('Label').t`TOTP`,
                                     type: 'totp',
-                                    data: { totpUri: v ?? '' },
+                                    data: { totpUri: field.v ?? '' },
                                 };
                             }
                             return {
                                 // translator: label for a field that is hidden. Singular only.
-                                fieldName: t || c('Label').t`Hidden`,
+                                fieldName: field.t || c('Label').t`Hidden`,
                                 type: 'hidden',
-                                data: { content: v ?? '' },
+                                data: { content: field.v ?? '' },
                             };
+                        default:
+                            return null;
                     }
                 })
+                .filter(truthy)
         );
 };
 
