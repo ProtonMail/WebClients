@@ -39,4 +39,5 @@ export interface DocControllerInterface {
   renameDocument(newName: string): Promise<TranslatedResult<void>>
   showCommentsPanel(): void
   squashDocument(): Promise<void>
+  toggleDebugTreeView(): Promise<void>
 }
