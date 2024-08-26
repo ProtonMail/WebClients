@@ -252,8 +252,8 @@ export async function loadURL(viewID: ViewID, url: string) {
 
         const cleanup = () => {
             clearTimeout(loadingTimeoutID);
-            view.webContents.off("did-stop-loading", handleLoadFinish);
-            view.webContents.on("did-fail-load", handleLoadError);
+            view.webContents.off("did-finish-load", handleLoadFinish);
+            view.webContents.off("did-fail-load", handleLoadError);
             resolve();
         };
 
