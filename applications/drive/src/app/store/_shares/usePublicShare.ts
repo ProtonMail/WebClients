@@ -20,7 +20,10 @@ import useSharesState from './useSharesState';
 export default function usePublicShare() {
     const api = useApi();
     const { request, getSessionInfo, isSessionProtonUser } = usePublicSession();
-    const { user } = useUserIfAuthenticated(isSessionProtonUser(), getSessionInfo()?.sessionUid);
+    const { user, isLoading: isUserLoading } = useUserIfAuthenticated(
+        isSessionProtonUser(),
+        getSessionInfo()?.sessionUid
+    );
     const sharesKeys = useSharesKeys();
     const { setLinks } = useLinksState();
     const { setShares } = useSharesState();
@@ -177,5 +180,6 @@ export default function usePublicShare() {
         loadPublicShare,
         submitAbuseReport,
         user,
+        isUserLoading,
     };
 }

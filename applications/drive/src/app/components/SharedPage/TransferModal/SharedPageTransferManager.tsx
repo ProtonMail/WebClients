@@ -80,7 +80,7 @@ const ScanIssueContent = ({
                     {buttonLabel}
                 </Button>
                 <ReportVirusButton
-                    className="text-nowrap pr-6"
+                    className="text-nowrap"
                     linkInfo={rootItem}
                     comment={comment}
                     reportCallback={handleCancel}

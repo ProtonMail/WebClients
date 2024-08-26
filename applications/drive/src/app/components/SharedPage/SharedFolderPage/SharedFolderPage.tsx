@@ -7,12 +7,11 @@ import FilePreview from '@proton/components/containers/filePreview/FilePreview';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DecryptedLink } from '../../../store';
-import { useDownload, usePublicFolderView } from '../../../store';
+import { useBookmarksPublicView, useDownload, usePublicFolderView } from '../../../store';
 import { usePublicFileView } from '../../../store/_views/useFileView';
 import type { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
-import { useUpsellFloatingModal } from '../../modals/UpsellFloatingModal';
 import Breadcrumbs from '../Layout/Breadcrumbs';
 import HeaderSecureLabel from '../Layout/HeaderSecureLabel';
 import HeaderSize from '../Layout/HeaderSize';
@@ -95,7 +94,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
     const [fileBrowserItems, setFileBrowserItems] = useState<PublicLink[]>([]);
     const [displayedLink, setDiplayedLink] = useState<DecryptedLink | undefined>();
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
-    const [renderUpsellFloatingModal] = useUpsellFloatingModal();
+    const bookmarksPublicView = useBookmarksPublicView();
 
     const onItemOpen = (item: DecryptedLink) => {
         if (item.isFile) {
@@ -200,8 +199,21 @@ export default function SharedFolder({ token, rootLink }: Props) {
 
     return (
         <FileBrowserStateProvider itemIds={fileBrowserItems.map(({ linkId }) => linkId)}>
-            <SharedPageLayout FooterComponent={<SharedPageFooter rootItem={rootLink} items={fileBrowserItems} />}>
-                <SharedPageHeader rootItem={rootLink} items={fileBrowserItems} className="mt-7 mb-8">
+            <SharedPageLayout
+                FooterComponent={
+                    <SharedPageFooter
+                        rootItem={rootLink}
+                        items={fileBrowserItems}
+                        bookmarksPublicView={bookmarksPublicView}
+                    />
+                }
+            >
+                <SharedPageHeader
+                    rootItem={rootLink}
+                    items={fileBrowserItems}
+                    bookmarksPublicView={bookmarksPublicView}
+                    className="mt-7 mb-8"
+                >
                     <div className="max-w-full flex items-center">
                         <Breadcrumbs
                             token={token}
@@ -229,7 +241,6 @@ export default function SharedFolder({ token, rootLink }: Props) {
                 <SharedFileBrowser {...folderView} onItemOpen={onItemOpen} items={fileBrowserItems} />
                 <SharedPageTransferManager rootItem={rootLink} />
             </SharedPageLayout>
-            {renderUpsellFloatingModal}
         </FileBrowserStateProvider>
     );
 }
