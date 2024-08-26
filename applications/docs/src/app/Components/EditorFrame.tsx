@@ -99,6 +99,7 @@ export function EditorFrame({ onFrameReady, isViewOnly = false }: Props) {
       style={{ width: '100%', height: '100%' }}
       ref={setIframe}
       sandbox={SANDBOX_OPTIONS}
+      allow="clipboard-write"
     ></iframe>
   )
 }
