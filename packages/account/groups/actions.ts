@@ -3,7 +3,14 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { addDomain } from '@proton/shared/lib/api/domains';
 import { createGroup as createGroupCall, editGroup as editGroupCall } from '@proton/shared/lib/api/groups';
-import type { Api, Domain, Group, GroupFlags, GroupPermissions, KeyTransparencyVerify } from '@proton/shared/lib/interfaces';
+import type {
+    Api,
+    Domain,
+    Group,
+    GroupFlags,
+    GroupPermissions,
+    KeyTransparencyVerify,
+} from '@proton/shared/lib/interfaces';
 import { createGroupAddressKey } from '@proton/shared/lib/keys/groupKeys';
 
 import { domainsThunk } from '../domains';
@@ -36,7 +43,7 @@ const saveGroup =
         keyTransparencyVerify: KeyTransparencyVerify;
         api: Api;
     }): ThunkAction<Promise<Group>, GroupsState, ProtonThunkArguments, UnknownAction> => {
-        return async (dispatch, getState, extra) => {
+        return async (dispatch) => {
             const [domains] = await Promise.all([dispatch(domainsThunk())]);
 
             if (!domains?.some((domain) => domain.DomainName === groupPayload.domain)) {
@@ -77,8 +84,6 @@ const saveGroup =
                     keyTransparencyVerify,
                 });
             }
-
-            await extra.eventManager.call();
 
             return group;
         };
