@@ -58,6 +58,10 @@ export const useActivePing = (interval: number = ACTIVE_PING_INTERVAL) => {
         });
     };
 
+    const handleBeforeUnload = () => {
+        localStorageWithExpiry.storeData(key, Date.now().toString(), interval);
+    };
+
     useEffect(() => {
         cleanLocalStorage();
 
@@ -68,6 +72,7 @@ export const useActivePing = (interval: number = ACTIVE_PING_INTERVAL) => {
         };
 
         document.addEventListener('visibilitychange', handleVisibilityChange);
+        window.addEventListener('beforeunload', handleBeforeUnload);
 
         const intervalFunction = setInterval(() => {
             sendActivePingIfVisible();
@@ -75,6 +80,7 @@ export const useActivePing = (interval: number = ACTIVE_PING_INTERVAL) => {
 
         return () => {
             document.removeEventListener('visibilitychange', handleVisibilityChange);
+            window.removeEventListener('beforeunload', handleBeforeUnload);
             clearInterval(intervalFunction);
         };
     }, [api, interval]);

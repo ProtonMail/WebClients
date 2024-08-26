@@ -49,11 +49,13 @@ export function PublicDriveProvider({ children }: PublicDriveProviderProps) {
     return (
         <UnleashFlagProvider api={api}>
             <PublicSessionProvider>
-                <SharesProvider>
-                    <PublicLinksProvider>
-                        <PublicDownloadsProvider>{children}</PublicDownloadsProvider>
-                    </PublicLinksProvider>
-                </SharesProvider>
+                <VolumesProvider>
+                    <SharesProvider>
+                        <PublicLinksProvider>
+                            <PublicDownloadsProvider>{children}</PublicDownloadsProvider>
+                        </PublicLinksProvider>
+                    </SharesProvider>
+                </VolumesProvider>
             </PublicSessionProvider>
         </UnleashFlagProvider>
     );
