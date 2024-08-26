@@ -3,7 +3,7 @@ import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
-    type CacheType,
+    CacheType,
     cacheHelper,
     createPromiseMapStore,
     getFetchedAt,
@@ -148,6 +148,20 @@ export const groupMembersThunk = ({
             }
         };
         return cacheHelper({ store: promiseStore, key: groupId, select, cb, cache });
+    };
+};
+
+export const updateMembersAfterEdit = ({
+    groupId,
+}: {
+    groupId: string;
+}): ThunkAction<void, GroupMembersState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        try {
+            await dispatch(groupMembersThunk({ groupId, cache: CacheType.None }));
+        } catch (error) {
+            console.error('Error', error);
+        }
     };
 };
 
