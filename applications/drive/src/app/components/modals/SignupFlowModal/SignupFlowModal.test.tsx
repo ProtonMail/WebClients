@@ -1,19 +1,21 @@
 import React from 'react';
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { mocked } from 'jest-mock';
 
 import useApi from '@proton/components/hooks/useApi';
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 import { DRIVE_SIGNIN, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 
 import { PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY } from '../../../utils/url/password';
-import { SignUpFlowModal } from './SignUpFlowModal';
+import { SignupFlowModal } from './SignupFlowModal';
 
 jest.mock('@proton/components/hooks/useApi');
+const mockedUseApi = jest.mocked(useApi);
 
-const mockedUseApi = mocked(useApi);
+jest.mock('@proton/shared/lib/helpers/browser');
+const mockedReplaceUrl = jest.mocked(replaceUrl);
 
 const ResizeObserverMock = jest.fn(() => ({
     disconnect: jest.fn(),
@@ -21,17 +23,11 @@ const ResizeObserverMock = jest.fn(() => ({
     unobserve: jest.fn(),
 }));
 
-describe('SignUpFlowModal', () => {
+describe('SignupFlowModal', () => {
     let assignMock = jest.fn();
 
     beforeAll(() => {
         window.ResizeObserver = ResizeObserverMock;
-    });
-    beforeEach(() => {
-        // To support JSDom navigation
-        delete (window as any).location;
-        (window as any).location = { assign: assignMock as any };
-        window.location.href = '';
     });
 
     afterEach(() => {
@@ -40,13 +36,13 @@ describe('SignUpFlowModal', () => {
     });
 
     it('should open the modal and delete the password from localStorage on mount', () => {
-        render(<SignUpFlowModal urlPassword="testPassword" />);
+        render(<SignupFlowModal urlPassword="testPassword" open onClose={() => {}} onExit={() => {}} />);
         expect(localStorageWithExpiry.getData(PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY)).toEqual(null);
         expect(screen.getByTestId('public-share-signup-modal-email')).toBeInTheDocument();
     });
 
     it('should handle email input change and validation', () => {
-        render(<SignUpFlowModal urlPassword="testPassword" />);
+        render(<SignupFlowModal urlPassword="testPassword" open onClose={() => {}} onExit={() => {}} />);
         const emailInput = screen.getByTestId<HTMLInputElement>('public-share-signup-modal-email');
 
         fireEvent.change(emailInput, { target: { value: 'invalid-email' } });
@@ -59,7 +55,7 @@ describe('SignUpFlowModal', () => {
         mockedUseApi.mockReturnValue(mockApi);
         mockApi.mockResolvedValue({ Code: 1000 });
 
-        render(<SignUpFlowModal urlPassword="testPassword" />);
+        render(<SignupFlowModal urlPassword="testPassword" open onClose={() => {}} onExit={() => {}} />);
         const emailInput = screen.getByTestId('public-share-signup-modal-email');
         const submitButton = screen.getByText('Continue');
 
@@ -68,7 +64,7 @@ describe('SignUpFlowModal', () => {
 
         await waitFor(() => {
             expect(localStorageWithExpiry.getData(PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY)).toEqual('testPassword');
-            expect(window.location.href).toBe(DRIVE_SIGNUP);
+            expect(mockedReplaceUrl).toHaveBeenCalledWith(DRIVE_SIGNUP);
         });
     });
 
@@ -77,7 +73,7 @@ describe('SignUpFlowModal', () => {
         mockedUseApi.mockReturnValue(mockApi);
         mockApi.mockRejectedValue({ data: { Code: API_CUSTOM_ERROR_CODES.ALREADY_USED, Error: 'test message' } });
 
-        render(<SignUpFlowModal urlPassword="testPassword" />);
+        render(<SignupFlowModal urlPassword="testPassword" open onClose={() => {}} onExit={() => {}} />);
         const emailInput = screen.getByTestId('public-share-signup-modal-email');
         const submitButton = screen.getByText('Continue');
 
@@ -86,7 +82,7 @@ describe('SignUpFlowModal', () => {
 
         await waitFor(() => {
             expect(localStorageWithExpiry.getData(PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY)).toEqual('testPassword');
-            expect(window.location.href).toBe(DRIVE_SIGNIN);
+            expect(mockedReplaceUrl).toHaveBeenCalledWith(DRIVE_SIGNIN);
         });
     });
 
@@ -96,7 +92,7 @@ describe('SignUpFlowModal', () => {
 
         mockApi.mockRejectedValue({ data: { Code: '123456', Error: 'Some error occurred' } });
 
-        render(<SignUpFlowModal urlPassword="testPassword" />);
+        render(<SignupFlowModal urlPassword="testPassword" open onClose={() => {}} onExit={() => {}} />);
         const emailInput = screen.getByTestId('public-share-signup-modal-email');
         const submitButton = screen.getByText('Continue');
 

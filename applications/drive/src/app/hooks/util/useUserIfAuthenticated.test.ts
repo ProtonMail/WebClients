@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { useApi } from '@proton/components';
+import useLoading from '@proton/hooks/useLoading';
 import { getUser } from '@proton/shared/lib/api/user';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
@@ -18,6 +19,10 @@ jest.mock('../../utils/errorHandling', () => {
 
 const mockUseApi = jest.mocked(useApi);
 const mockSendErrorReport = jest.mocked(sendErrorReport);
+
+jest.mock('@proton/hooks/useLoading');
+const mockedWithLoading = jest.fn().mockImplementation((fn) => fn());
+jest.mocked(useLoading).mockReturnValue([true, mockedWithLoading, () => {}]);
 
 describe('useUserIfAuthenticated', () => {
     afterEach(() => {

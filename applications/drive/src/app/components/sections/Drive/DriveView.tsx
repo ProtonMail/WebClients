@@ -61,6 +61,7 @@ function DriveView() {
                     disabled={folderView.isActiveLinkReadOnly}
                 >
                     <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
+
                     {activeFolder && <Drive activeFolder={activeFolder} folderView={folderView} />}
                 </UploadDragDrop>
             ) : (
