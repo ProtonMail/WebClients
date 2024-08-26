@@ -1,6 +1,6 @@
 import jszip from 'jszip';
 
-import { FileKey, buildDashlaneIdentity, groupItems } from '@proton/pass/lib/import/builders/dashlane.builder';
+import { buildDashlaneIdentity } from '@proton/pass/lib/import/builders/dashlane.builder';
 import type { ItemImportIntent, Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -178,15 +178,12 @@ export const readDashlaneDataZIP = async ({
             })
         ).map(processCreditCardItem);
 
-        const ids = groupItems(
-            (
-                await parseDashlaneCSV<DashlaneIdItem>({
-                    data: await zipFile.file('ids.csv')?.async('string'),
-                    headers: DASHLANE_IDS_EXPECTED_HEADERS,
-                })
-            ).map(processIdentityItem),
-            FileKey.Ids
-        );
+        const ids = (
+            await parseDashlaneCSV<DashlaneIdItem>({
+                data: await zipFile.file('ids.csv')?.async('string'),
+                headers: DASHLANE_IDS_EXPECTED_HEADERS,
+            })
+        ).map(processIdentityItem);
 
         const personalInfos = (
             await parseDashlaneCSV<DashlanePersonalInfoItem>({

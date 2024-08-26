@@ -1,10 +1,8 @@
 import type { EnpassCategory, EnpassItem } from '@proton/pass/lib/import/providers/enpass.types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { ItemContent } from '@proton/pass/types';
+import type { IdentityFieldName, ItemContent } from '@proton/pass/types';
 
-import type { IdentityDictionary } from './builders.types';
-
-const enpassDictionary: IdentityDictionary = {
+const ENPASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     130: 'firstName',
     131: 'middleName',
     132: 'lastName',
@@ -31,12 +29,13 @@ const enpassDictionary: IdentityDictionary = {
     165: 'email',
 };
 
-export const buildEnpassIdentity = (item: EnpassItem<EnpassCategory.IDENTITY>): ItemContent<'identity'> => {
-    const emptyIdentity = itemBuilder('identity').data.content;
-    return (
-        item.fields?.reduce<ItemContent<'identity'>>((acc, { uid, value }) => {
-            const field = enpassDictionary[uid];
-            return field ? { ...acc, [field]: value ?? '' } : acc;
-        }, emptyIdentity) ?? emptyIdentity
-    );
+export const buildEnpassIdentity = (importItem: EnpassItem<EnpassCategory.IDENTITY>): ItemContent<'identity'> => {
+    const item = itemBuilder('identity');
+
+    importItem.fields?.forEach(({ uid, value }) => {
+        const field = ENPASS_IDENTITY_FIELD_MAP[uid];
+        if (field) item.set('content', (content) => content.set(field, value ?? ''));
+    });
+
+    return item.data.content;
 };

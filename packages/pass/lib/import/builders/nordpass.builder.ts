@@ -1,10 +1,8 @@
 import type { NordPassItem } from '@proton/pass/lib/import/providers/nordpass.types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { ItemContent } from '@proton/pass/types';
+import type { IdentityFieldName, ItemContent } from '@proton/pass/types';
 
-import type { IdentityDictionary } from './builders.types';
-
-const nordPassDictionary: IdentityDictionary = {
+const nordPassDictionary: Record<string, IdentityFieldName> = {
     url: 'website',
     zipcode: 'zipOrPostalCode',
     full_name: 'fullName',
@@ -16,8 +14,13 @@ const nordPassDictionary: IdentityDictionary = {
     state: 'stateOrProvince',
 };
 
-export const buildNordPassIdentity = (item: NordPassItem): ItemContent<'identity'> =>
-    Object.entries(item).reduce((acc, [key, value]) => {
+export const buildNordPassIdentity = (importItem: NordPassItem): ItemContent<'identity'> => {
+    const item = itemBuilder('identity');
+
+    Object.entries(importItem).forEach(([key, value]) => {
         const field = nordPassDictionary[key];
-        return field ? { ...acc, [field]: value ?? '' } : acc;
-    }, itemBuilder('identity').data.content);
+        if (field) item.set('content', (content) => content.set(field, value ?? ''));
+    });
+
+    return item.data.content;
+};
