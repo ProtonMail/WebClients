@@ -1,36 +1,44 @@
-import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
-import { ExtraSessionForkSearchParameters } from '@proton/shared/lib/authentication/fork/constants';
-import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
+import { getParsedPathWithoutLocalIDBasename } from '../createAuthenticationStore';
 
-import { getSafePath } from '../createAuthenticationStore';
-
-const key = 'returnUrl';
+const returnUrlKey = 'returnUrl';
 
 export const getReturnUrlParameter = (searchParams: URLSearchParams) => {
     try {
         // Must be encoded to support params in itself
-        const url = decodeURIComponent(searchParams.get(key) || '');
+        const url = decodeURIComponent(searchParams.get(returnUrlKey) || '');
+        // Must start with /
         if (!url.startsWith('/')) {
             return;
         }
-        return `/${getSafePath(url)}`;
+        // Must strip the LocalID basename
+        return `/${getParsedPathWithoutLocalIDBasename(url)}`;
     } catch {}
 };
 
-export const getParsedPath = (value: string) => {
-    try {
-        if (!value) {
-            throw new InvalidForkConsumeError('Missing url');
-        }
-        const url = new URL(value, window.location.origin);
-        // Drop the continue or email query parameter to clean the URL
-        [key, ExtraSessionForkSearchParameters.Email].forEach((param) => {
-            if (url.searchParams.has(param)) {
-                url.searchParams.delete(param);
-            }
-        });
-        return getPathFromLocation(url);
-    } catch {
-        return '/';
+const returnUrlContextKey = 'returnUrlContext';
+export type ReturnUrlContext = 'private' | 'public';
+
+export const getReturnUrlContextParameter = (searchParams: URLSearchParams): ReturnUrlContext => {
+    const context = searchParams.get(returnUrlContextKey) || '';
+    return context === 'public' ? context : 'private';
+};
+
+export const getReturnUrl = (searchParams: URLSearchParams) => {
+    const context = getReturnUrlContextParameter(searchParams);
+    const returnUrl = getReturnUrlParameter(searchParams);
+
+    if (!returnUrl) {
+        return;
     }
+
+    const parsedReturnUrl = new URL(returnUrl, window.location.origin);
+
+    return {
+        context,
+        returnUrl,
+        pathname: parsedReturnUrl.pathname,
+        search: parsedReturnUrl.search,
+        searchParams: parsedReturnUrl.searchParams,
+        hash: parsedReturnUrl.hash,
+    };
 };
