@@ -20,7 +20,7 @@ const getIsSSOPath = (pathname: string) => {
     return Object.values(SSO_PATHS).some((path) => strippedPathname.startsWith(path));
 };
 
-export const getSafePath = (url: string) => {
+export const getParsedPathWithoutLocalIDBasename = (url: string) => {
     try {
         const { pathname, hash, search } = new URL(url, window.location.origin);
         if (getIsSSOPath(pathname)) {
@@ -33,7 +33,10 @@ export const getSafePath = (url: string) => {
 };
 
 const getPath = (basename: string | undefined, oldUrl: string, requestedPath?: string) => {
-    return [basename || '', `/${getSafePath(requestedPath || '/') || getSafePath(oldUrl)}`].join('');
+    return [
+        basename || '',
+        `/${getParsedPathWithoutLocalIDBasename(requestedPath || '/') || getParsedPathWithoutLocalIDBasename(oldUrl)}`,
+    ].join('');
 };
 
 interface AuthData {
