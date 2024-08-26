@@ -12,7 +12,9 @@ export const getProtonMailSignature = ({
     referralProgramUserLink,
 }: Options = {}) => {
     const link =
-        isReferralProgramLinkEnabled && referralProgramUserLink ? referralProgramUserLink : 'https://proton.me/';
+        isReferralProgramLinkEnabled && referralProgramUserLink
+            ? referralProgramUserLink
+            : 'https://proton.me/mail/home';
 
     // translator: full sentence is: "Sent with Proton Mail secure email"
     const signature = c('Info').t`Sent with <a href="${link}" target="_blank">${
