@@ -30,7 +30,7 @@ describe('Import Enpass json', () => {
         );
     });
 
-    it('should correctly parse items', () => {
+    test('should correctly parse items', () => {
         expect(payload.vaults.length).toEqual(1);
 
         const [primary] = payload.vaults;

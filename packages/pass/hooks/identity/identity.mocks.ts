@@ -7,7 +7,7 @@ export const MOCK_FIELDS = {
     lastName: { name: 'lastName', label: 'lastName', placeholder: '' },
     email: { name: 'email', label: 'email', placeholder: 'Enter email' },
     phoneNumber: { name: 'phoneNumber', label: 'phoneNumber', placeholder: 'Enter phone' },
-} as any as IdentityFormFields;
+} as IdentityFormFields;
 
 export const MOCK_SECTIONS: IdentityFormSection[] = [
     {

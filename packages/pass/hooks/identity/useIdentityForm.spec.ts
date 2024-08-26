@@ -1,4 +1,5 @@
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
+import type { IdentityFieldName } from '@proton/pass/types';
 
 import { MOCK_FIELDS, MOCK_SECTIONS } from './identity.mocks';
 import { addFormSectionOptionalField, buildFormSections } from './useIdentityForm';
@@ -111,7 +112,7 @@ describe('`addFormSectionOptionalField`', () => {
     });
 
     it('should noop if the field is not found', () => {
-        const result = addFormSectionOptionalField(1, 'nonexistent' as any)(MOCK_SECTIONS);
+        const result = addFormSectionOptionalField(1, 'nonexistent' as unknown as IdentityFieldName)(MOCK_SECTIONS);
         expect(result[1]).toEqual(MOCK_SECTIONS[1]);
     });
 });

@@ -45,7 +45,7 @@ describe('Import bitwarden json', () => {
         expect(secondary.name).toEqual('custom folder');
 
         /* Login */
-        const loginItem1 = deobfuscateItem(primary.items[0] as any) as unknown as ItemImportIntent<'login'>;
+        const loginItem1 = deobfuscateItem(primary.items[0]) as unknown as ItemImportIntent<'login'>;
         const allowedApp = loginItem1.platformSpecific?.android?.allowedApps[0];
         expect(loginItem1.type).toBe('login');
         expect(loginItem1.metadata.name).toBe('LoginItemMultipleWebsites');
@@ -68,7 +68,7 @@ describe('Import bitwarden json', () => {
         expect(allowedApp?.hashes).toContain('ch.protonmail.android');
 
         /* Identity */
-        const identityItem = deobfuscateItem(primary.items[1] as any) as unknown as ItemImportIntent<'identity'>;
+        const identityItem = deobfuscateItem(primary.items[1]) as unknown as ItemImportIntent<'identity'>;
         expect(identityItem.type).toBe('identity');
         expect(identityItem.metadata.name).toBe('IdentityItem');
         expect(identityItem.content.fullName).toStrictEqual('');
@@ -111,14 +111,14 @@ describe('Import bitwarden json', () => {
         expect(identityItem.content.extraSections).toStrictEqual([]);
 
         /* Note */
-        const noteItem = deobfuscateItem(primary.items[2] as any) as unknown as ItemImportIntent<'note'>;
+        const noteItem = deobfuscateItem(primary.items[2]) as unknown as ItemImportIntent<'note'>;
         expect(noteItem.type).toBe('note');
         expect(noteItem.metadata.name).toBe('NoteItem');
         expect(noteItem.metadata.note).toBe('note content');
         expect(noteItem.content).toStrictEqual({});
 
         /* Login empty */
-        const loginItem2 = deobfuscateItem(primary.items[3] as any) as unknown as ItemImportIntent<'login'>;
+        const loginItem2 = deobfuscateItem(primary.items[3]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2.type).toBe('login');
         expect(loginItem2.metadata.name).toBe('LoginItemEmptyFields');
         expect(loginItem2.metadata.note).toBe('login note');
@@ -129,7 +129,7 @@ describe('Import bitwarden json', () => {
         expect(loginItem2.content.totpUri).toStrictEqual('');
 
         /* Login broken url */
-        const loginItem3 = deobfuscateItem(primary.items[4] as any) as unknown as ItemImportIntent<'login'>;
+        const loginItem3 = deobfuscateItem(primary.items[4]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem3.type).toBe('login');
         expect(loginItem3.metadata.name).toBe('LoginItemBrokenUrl');
         expect(loginItem3.metadata.note).toBe('');
@@ -140,7 +140,7 @@ describe('Import bitwarden json', () => {
         expect(loginItem3.content.totpUri).toStrictEqual('');
 
         /* Credit Card */
-        const ccItem1 = deobfuscateItem(primary.items[5] as any) as unknown as ItemImportIntent<'creditCard'>;
+        const ccItem1 = deobfuscateItem(primary.items[5]) as unknown as ItemImportIntent<'creditCard'>;
         expect(ccItem1.type).toBe('creditCard');
         expect(ccItem1.metadata.name).toBe('Credit Card Y');
         expect(ccItem1.metadata.note).toBe('Credit Card Y AMEX note');

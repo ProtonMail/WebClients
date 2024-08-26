@@ -3,8 +3,8 @@ import { c } from 'ttag';
 
 import {
     build1PassIdentity,
-    formatCCExpirationDate,
-    getValue,
+    formatFieldValue,
+    formatMonthYearDate,
 } from '@proton/pass/lib/import/builders/1password.builder';
 import type { ItemImportIntent, Maybe, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
 import { extractFirst } from '@proton/pass/utils/array/extract-first';
@@ -93,30 +93,32 @@ const extractExtraFields = (item: OnePassItem): UnsafeItemExtraField[] => {
             /* check that field value key is supported and remove any credit card fields */
             .flatMap(({ fields }) => fields.filter((field) => isSupportedField(field) && !isCreditCardField(field)))
             .map<MaybeNull<UnsafeItemExtraField>>(({ title, value }) => {
-                const [valueKey] = objectKeys<OnePassFieldKey>(value);
+                const [fieldKey] = objectKeys(value);
+                const data = value[fieldKey];
+                if (!data) return null;
 
-                switch (valueKey) {
+                switch (fieldKey) {
+                    case OnePassFieldKey.STRING:
                     case OnePassFieldKey.DATE:
                     case OnePassFieldKey.MONTH_YEAR:
-                    case OnePassFieldKey.STRING:
                     case OnePassFieldKey.URL:
                         return {
                             fieldName: title || c('Label').t`Text`,
                             type: 'text',
-                            data: { content: getValue(value, valueKey) },
+                            data: { content: formatFieldValue(value, fieldKey) },
                         };
                     case OnePassFieldKey.TOTP:
                         return {
                             fieldName: title || c('Label').t`TOTP`,
                             type: 'totp',
-                            data: { totpUri: getValue(value, valueKey) },
+                            data: { totpUri: formatFieldValue(value, fieldKey) },
                         };
                     case OnePassFieldKey.CONCEALED:
                     case OnePassFieldKey.CREDIT_CARD_NUMBER:
                         return {
                             fieldName: title || c('Label').t`Hidden`,
                             type: 'hidden',
-                            data: { content: getValue(value, valueKey) },
+                            data: { content: formatFieldValue(value, fieldKey) },
                         };
                     default:
                         return null;
@@ -216,7 +218,7 @@ const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePas
         cardholderName: cardholder?.value.string,
         number: ccnum?.value.creditCardNumber,
         verificationNumber: cvv?.value.concealed,
-        expirationDate: formatCCExpirationDate(expiry?.value.monthYear),
+        expirationDate: formatMonthYearDate(expiry?.value.monthYear),
         pin: pin?.value.concealed,
     });
 };

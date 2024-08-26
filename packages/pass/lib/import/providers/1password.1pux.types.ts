@@ -47,7 +47,18 @@ export enum OnePassFieldKey {
     URL = 'url',
 }
 
-export type OnePassFields = { [K in OnePassFieldKey]?: K extends OnePassFieldKey.MONTH_YEAR ? number : string };
+export type OnePassFieldValue<K extends OnePassFieldKey> = {
+    [OnePassFieldKey.ADDRESS]?: Record<string, string>;
+    [OnePassFieldKey.CONCEALED]?: string;
+    [OnePassFieldKey.CREDIT_CARD_NUMBER]?: string;
+    [OnePassFieldKey.DATE]?: number;
+    [OnePassFieldKey.MONTH_YEAR]?: number;
+    [OnePassFieldKey.STRING]?: string;
+    [OnePassFieldKey.TOTP]?: string;
+    [OnePassFieldKey.URL]?: string;
+}[K];
+
+export type OnePassFields = { [K in OnePassFieldKey]?: OnePassFieldValue<K> };
 
 export enum OnePassCreditCardFieldId {
     CARDHOLDER = 'cardholder',
@@ -70,7 +81,7 @@ export type OnePassField = {
     value: OnePassFields;
 };
 
-export type ItemSection = {
+export type OnePassSection = {
     title: string;
     name: string;
     fields: OnePassField[];
@@ -78,7 +89,7 @@ export type ItemSection = {
 
 export type OnePassItemDetails = {
     notesPlain: Maybe<string>;
-    sections: Maybe<ItemSection[]>;
+    sections: Maybe<OnePassSection[]>;
 };
 
 export type OnePassPassword = OnePassItemDetails & { password: string };
@@ -90,7 +101,7 @@ export type OnePassLogin = OnePassItemDetails & {
         type: OnePassFieldType;
         designation: OnePassLoginDesignation;
         notesPlain: Maybe<string>;
-        sections: ItemSection[];
+        sections: OnePassSection[];
     }[];
 };
 export type OnePassCreditCard = OnePassItemDetails;

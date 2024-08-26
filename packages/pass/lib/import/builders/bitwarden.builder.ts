@@ -5,11 +5,9 @@ import {
     type BitwardenIdentityItem,
 } from '@proton/pass/lib/import/providers/bitwarden.types';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { ItemContent, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
+import type { IdentityFieldName, ItemContent, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
 
-import type { IdentityDictionary } from './builders.types';
-
-const bitwardenDictionary: IdentityDictionary = {
+const BITWARDEN_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     firstName: 'firstName',
     middleName: 'middleName',
     lastName: 'lastName',
@@ -43,20 +41,30 @@ export const extraFieldsFactory: {
     }),
 };
 
-export const buildBitwardenIdentity = (item: BitwardenIdentityItem): ItemContent<'identity'> => {
-    const emptyIdentity = itemBuilder('identity').data.content;
-    const extraSectionFields =
-        item.fields?.filter((f) => Object.values(BitwardenCustomFieldType).includes(f.type)) ?? [];
+export const buildBitwardenIdentity = ({ fields, identity }: BitwardenIdentityItem): ItemContent<'identity'> => {
+    const item = itemBuilder('identity');
+    const extraSectionFields = fields?.filter((f) => Object.values(BitwardenCustomFieldType).includes(f.type)) ?? [];
 
-    if (extraSectionFields.length > 0) {
-        emptyIdentity.extraSections.push({
-            sectionName: 'Extra fields',
-            sectionFields: extraSectionFields.map(({ name, type, value }) => extraFieldsFactory[type](name, value)),
+    item.set('content', (content) => {
+        if (extraSectionFields.length > 0) {
+            content.set('extraSections', (sections) => {
+                sections.push({
+                    sectionName: 'Extra fields',
+                    sectionFields: extraSectionFields.map(({ name, type, value }) =>
+                        extraFieldsFactory[type](name, value)
+                    ),
+                });
+                return sections;
+            });
+        }
+
+        Object.entries(identity).forEach(([key, value]) => {
+            const field = BITWARDEN_IDENTITY_FIELD_MAP[key];
+            if (field) content.set(field, value ?? '');
         });
-    }
 
-    return Object.entries(item.identity).reduce((acc, [key, value]) => {
-        const field = bitwardenDictionary[key];
-        return field ? { ...acc, [field]: value ?? '' } : acc;
-    }, emptyIdentity);
+        return content;
+    });
+
+    return item.data.content;
 };
