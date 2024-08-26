@@ -21,6 +21,8 @@
     "test:watch": "jest --watch --coverage=false"
   },
   "dependencies": {
+    "@lexical/utils": "0.17.1-nightly.20240823.0",
+    "@lexical/yjs": "0.17.1-nightly.20240823.0",
     "@proton/account": "workspace:^",
     "@proton/atoms": "workspace:^",
     "@proton/components": "workspace:^",
@@ -43,7 +45,6 @@
     "@proton/utils": "workspace:^",
     "@reduxjs/toolkit": "^2.2.6",
     "buffer": "^6.0.3",
-    "lexical": "0.17.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^5.3.4",
