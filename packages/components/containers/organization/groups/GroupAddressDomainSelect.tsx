@@ -5,6 +5,7 @@ import {
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
+    DropdownSizeUnit,
     Icon,
     useModalState,
     usePopperAnchor,
@@ -33,12 +34,14 @@ const Option = ({
     }, [option]);
     return (
         <DropdownMenuButton
-            className="text-left flex justify-space-between items-center"
+            className="text-left flex items-center flex-nowrap gap-4"
             key={option.value}
             onClick={handleClick}
         >
-            <span className="flex items-center mr-14">{option.label}</span>
-            {isSelected ? <Icon className="color-primary" name="checkmark" data-testid="selected-domain" /> : null}
+            <span className="overflow-x-auto">{option.label}</span>
+            {isSelected ? (
+                <Icon className="color-primary shrink-0" name="checkmark" data-testid="selected-domain" />
+            ) : null}
         </DropdownMenuButton>
     );
 };
@@ -102,7 +105,12 @@ const GroupAddressDomainSelect = ({
             >
                 {`@${selectedDomain}`}
             </DropdownButton>
-            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+            <Dropdown
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+                size={{ width: DropdownSizeUnit.Dynamic, height: DropdownSizeUnit.Dynamic }}
+            >
                 <DropdownMenu>
                     {domainOptions.map((option) => (
                         <Option
