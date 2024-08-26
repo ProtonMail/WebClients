@@ -13,7 +13,9 @@ import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proto
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
 import type { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
-import createAuthenticationStore, { getSafePath } from '@proton/shared/lib/authentication/createAuthenticationStore';
+import createAuthenticationStore, {
+    getParsedPathWithoutLocalIDBasename,
+} from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
@@ -244,7 +246,7 @@ export const createHistory = ({
     const path = forkState?.url ? getParsedCurrentUrl(forkState.url) : '';
 
     if (path || (basename && !pathname.startsWith(basename))) {
-        const safePath = `/${getSafePath(path || '')}`;
+        const safePath = `/${getParsedPathWithoutLocalIDBasename(path || '')}`;
         // Important that there's a history event even if no path is set so that basename gets properly set
         history.replace(safePath);
     }
