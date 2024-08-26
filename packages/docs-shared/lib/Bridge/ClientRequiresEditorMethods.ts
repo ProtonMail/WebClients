@@ -33,4 +33,5 @@ export interface ClientRequiresEditorMethods {
   exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array>
   printAsPDF(): Promise<void>
   loadUserSettings(settings: UserSettings): Promise<void>
+  toggleDebugTreeView(): Promise<void>
 }

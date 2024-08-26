@@ -100,6 +100,10 @@ export class EditorInvoker implements ClientRequiresEditorMethods {
     return this.invokeEditorMethod('getCurrentEditorState', [])
   }
 
+  async toggleDebugTreeView(): Promise<void> {
+    return this.invokeEditorMethod('toggleDebugTreeView', [])
+  }
+
   async initializeEditor(
     documentId: string,
     username: string,
