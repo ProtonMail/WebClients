@@ -43,6 +43,7 @@ import { KeyboardShortcutsPlugin } from './Plugins/KeyboardShortcuts/KeyboardSho
 import { PasteLimitPlugin } from './Plugins/PasteLimitPlugin'
 import { CustomOrderedListPlugin } from './Plugins/CustomList/CustomListPlugin'
 import { WordCountPlugin } from './Plugins/WordCount/WordCountPlugin'
+import TreeViewPlugin from './Plugins/TreeView/TreeViewPlugin'
 
 const TypingBotEnabled = false
 
@@ -62,6 +63,8 @@ type Props = {
   onInteractionModeChange: (mode: DocumentInteractionMode) => void
   setEditorRef: (instance: LexicalEditor | null) => void
   username: string
+
+  showTreeView: boolean
 }
 
 export function Editor({
@@ -79,6 +82,7 @@ export function Editor({
   onInteractionModeChange,
   setEditorRef,
   username,
+  showTreeView,
 }: Props) {
   const yjsWebsockProvider = useMemo(() => {
     const baseProvider = (): Provider => {
@@ -179,6 +183,7 @@ export function Editor({
         <ReadonlyLinkFixPlugin openLink={openLink} />
         <EditorRefPlugin editorRef={setEditorRef} />
         <WordCountPlugin onWordCountChange={(wordCountInfo) => clientInvoker.reportWordCount(wordCountInfo)} />
+        {showTreeView && <TreeViewPlugin />}
       </SafeLexicalComposer>
     </CollaborationContext.Provider>
   )
