@@ -50,6 +50,10 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
     void navigator.clipboard.writeText(stringified)
   }
 
+  const toggleDebugTreeView = () => {
+    void docController.toggleDebugTreeView()
+  }
+
   useEffect(() => {
     if (!docController) {
       return
@@ -108,6 +112,9 @@ const DebugMenu = ({ docController }: { docController: DocControllerInterface })
         </Button>
         <Button size="small" onClick={copyEditorJSON}>
           Copy Editor JSON
+        </Button>
+        <Button size="small" onClick={toggleDebugTreeView}>
+          Toggle Tree View
         </Button>
         {sharingUrl && (
           <div className="flex flex-col">

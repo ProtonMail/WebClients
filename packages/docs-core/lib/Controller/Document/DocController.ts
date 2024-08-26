@@ -951,5 +951,9 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     return json
   }
 
+  async toggleDebugTreeView(): Promise<void> {
+    void this.editorInvoker?.toggleDebugTreeView()
+  }
+
   deinit() {}
 }
