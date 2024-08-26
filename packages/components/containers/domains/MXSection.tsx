@@ -4,9 +4,11 @@ import { Href } from '@proton/atoms';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Alert, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
+import { Alert, Copy, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
+import { useNotifications } from '../../hooks';
 
 const MXSection = () => {
+    const { createNotification } = useNotifications();
     const boldAddresses = <strong key="addresses">{c('Tab in domain modal').t`Addresses`}</strong>;
     const tableTitles = [
         c('Header for domain modal').t`Type`,
@@ -20,7 +22,9 @@ const MXSection = () => {
      * "Before you can receive emails for your custom domain addresses at Proton Mail, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips here."
      */
     const kbLink = <Href href={getKnowledgeBaseUrl('/custom-domain')}>{c('Link').t`here`}</Href>;
-
+    const handleCopy = () => createNotification({ text: c('Success').t`Value copied to clipboard` });
+    const mailDomain = 'mail.protonmail.ch';
+    const mailsecDomain = 'mailsec.protonmail.ch';
     return (
         <>
             <Alert className="mb-4">
@@ -38,8 +42,39 @@ const MXSection = () => {
             <Table responsive="cards" className="mt-4">
                 <TableHeader cells={tableTitles} />
                 <TableBody>
-                    <TableRow labels={tableTitles} cells={['MX', '@', 'mail.protonmail.ch', '10']} />
-                    <TableRow labels={tableTitles} cells={['MX', '@', 'mailsec.protonmail.ch', '20']} />
+                    <TableRow
+                        labels={tableTitles}
+                        cells={[
+                            <code key="mx">MX</code>,
+                            <code key="at">@</code>,
+                            <div className="flex flex-nowrap items-center" key="value">
+                                <Copy size="small" onCopy={handleCopy} className="shrink-0 mr-2" value={mailDomain} />{' '}
+                                <code className="text-ellipsis lh-rg" title={mailDomain}>
+                                    {mailDomain}
+                                </code>
+                            </div>,
+                            <code key="ten">10</code>,
+                        ]}
+                    />
+                    <TableRow
+                        labels={tableTitles}
+                        cells={[
+                            <code key="mx">MX</code>,
+                            <code key="at">@</code>,
+                            <div className="flex flex-nowrap items-center" key="value">
+                                <Copy
+                                    size="small"
+                                    onCopy={handleCopy}
+                                    className="shrink-0 mr-2"
+                                    value={mailsecDomain}
+                                />{' '}
+                                <code className="text-ellipsis lh-rg" title={mailsecDomain}>
+                                    {mailsecDomain}
+                                </code>
+                            </div>,
+                            <code key="twenty">20</code>,
+                        ]}
+                    />
                 </TableBody>
             </Table>
             <Alert className="mb-4">
