@@ -47,6 +47,7 @@ import { getIsPassApp, getIsVPNApp, getToApp, getToAppName } from '@proton/share
 import {
     ForkType,
     getCanUserReAuth,
+    getReturnUrl,
     getShouldReAuth,
     produceExtensionFork,
     produceFork,
@@ -423,25 +424,31 @@ const BasePublicApp = ({ onLogin }: Props) => {
             );
         }
 
-        const getDefaultRedirectUrl = () => {
-            const url = (() => {
-                if (localRedirect) {
-                    const path = localRedirect.path || '/';
-                    return new URL(getAppHref(path, APPS.PROTONACCOUNT, LocalID));
-                }
+        const getRedirectUrl = () => {
+            if (localRedirect) {
+                const path = localRedirect.path || '/';
+                return new URL(getAppHref(path, APPS.PROTONACCOUNT, LocalID));
+            }
 
-                const path = getDefaultPath(toApp);
-                return new URL(getAppHref(path, toApp, LocalID));
-            })();
+            const returnUrl = getReturnUrl(initialSearchParams);
+            if (returnUrl) {
+                const url = new URL(
+                    getAppHref(returnUrl.pathname, toApp, returnUrl.context === 'private' ? LocalID : undefined)
+                );
+                url.search = returnUrl.search;
+                url.hash = returnUrl.hash;
+                return url;
+            }
 
+            const path = getDefaultPath(toApp);
+            const url = new URL(getAppHref(path, toApp, LocalID));
             if (session.flow === 'signup') {
                 addSignupSearchParams(url.searchParams, { appIntent });
             }
-
             return url;
         };
 
-        const url = getDefaultRedirectUrl();
+        const url = getRedirectUrl();
 
         if (url.hostname === window.location.hostname || authentication.mode !== 'sso') {
             onLogin({
