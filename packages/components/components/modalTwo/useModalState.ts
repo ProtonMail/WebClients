@@ -13,7 +13,7 @@ export interface ModalStateProps {
 
 type ModalStateOptions = Partial<Pick<ModalStateProps, 'open' | 'onClose' | 'onExit'>>;
 type ModalStateReturnTuple = [
-    modalProps: ModalStateProps,
+    modalProps: ModalStateProps & { key: Key },
     openModal: (newValue: boolean) => void,
     renderModal: boolean,
 ];
