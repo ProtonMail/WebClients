@@ -3,7 +3,6 @@ import { useIsOrganizationBeforeBackfill, useScribePaymentsEnabled } from '@prot
 import { baseUseSelector } from '@proton/react-redux-store';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
-import { isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { useFlag } from '@proton/unleash';
 
 const PLANS_SUPPORTING_SCRIBE = [
@@ -36,23 +35,14 @@ const useAssistantFeatureEnabled = () => {
     const user = baseUseSelector(selectUser)?.value;
     const userHasScribeSeat = !!user?.NumAI;
 
-    // If the user has a scribe seat, it takes precedence over the feature flags
-    // This is needed for the rollout as we can't sync the two feature flags
-    // "AIAssistantAddonSignup" and "ComposerAssistant" to be shown to the same
-    // cohort. Can be changed once this feature is fully rolled to users
-    //
-    // A check for the org is added so we gradually release the feature out
-    // for visionaries as they have 6 AI seats assigned by default
-    // TODO: Remove once Scribe has been fully rolled out
     const enabled =
-        (userHasScribeSeat && !isOrganizationVisionary(organization)) ||
-        (accessToAssistant &&
-            !isOrganizationBeforeBackfill &&
-            // you can't see anything Scribe related if the payments can't support you buying it
-            // but if you have a seat you can still use it
-            (scribePaymentsEnabled || userHasScribeSeat) &&
-            // user can't enter scribe trial if the organization plan doesn't support it
-            planSupportsScribe);
+        accessToAssistant &&
+        !isOrganizationBeforeBackfill &&
+        // you can't see anything Scribe related if the payments can't support you buying it
+        // but if you have a seat you can still use it
+        (scribePaymentsEnabled || userHasScribeSeat) &&
+        // user can't enter scribe trial if the organization plan doesn't support it
+        planSupportsScribe;
 
     return {
         /**
