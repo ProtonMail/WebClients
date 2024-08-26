@@ -33,7 +33,7 @@ export const DriveHeader = ({
 }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
-    const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
+    const [{ open, onClose, onExit, key }, setRebrandingFeedbackModal] = useModalState();
 
     return (
         <>
@@ -53,7 +53,7 @@ export const DriveHeader = ({
                 settingsButton={settingsButton}
             />
 
-            <RebrandingFeedbackModal {...rebrandingFeedbackModal} />
+            <RebrandingFeedbackModal key={key} open={open} onClose={onClose} onExit={onExit} />
         </>
     );
 };
