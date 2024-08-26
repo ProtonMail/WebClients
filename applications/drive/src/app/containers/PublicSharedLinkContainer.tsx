@@ -3,17 +3,17 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { LocationErrorBoundary } from '@proton/components';
-import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
-import { SignUpFlowModal } from '../components/SharedPage/Bookmarks/SignUpFlowModal';
+import { useSignupFlowModal } from '../components/modals/SignupFlowModal/SignupFlowModal';
+import { useUpsellFloatingModal } from '../components/modals/UpsellFloatingModal';
 import usePublicToken from '../hooks/drive/usePublicToken';
 import type { DecryptedLink } from '../store';
 import { PublicDriveProvider, useDownload, usePublicAuth, usePublicShare } from '../store';
-import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_shares/useDriveShareURLBookmarking';
+import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_bookmarks/useDriveShareURLBookmarking';
 import { sendErrorReport } from '../utils/errorHandling';
 import { getErrorMetricType } from '../utils/errorHandling/apiErrors';
 import type { ErrorTuple } from '../utils/type/ErrorTuple';
@@ -44,12 +44,14 @@ function PublicShareLinkInitContainer() {
         submitPassword,
     } = usePublicAuth(token, urlPassword);
     const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
-    const isProtonUser = isProtonUserFromCookie();
     const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);
     const [[publicShareError, publicShareErrorMessage], setError] = useState<ErrorTuple>([, '']);
     const [link, setLink] = useState<DecryptedLink>();
-    const { loadPublicShare, user } = usePublicShare();
+    const { loadPublicShare, user, isUserLoading } = usePublicShare();
+    const [signUpFlowModal, showSignUpFlowModal] = useSignupFlowModal();
+    const [renderUpsellFloatingModal] = useUpsellFloatingModal();
 
+    const isLoggedIn = !!user;
     const error: ErrorTuple[0] = authError || publicShareError;
     const errorMessage: ErrorTuple[1] = authErrorMessage || publicShareErrorMessage;
 
@@ -83,7 +85,7 @@ function PublicShareLinkInitContainer() {
     useEffect(() => {
         const abortController = new AbortController();
 
-        if (token && !isLoading && !authErrorMessage && !isPasswordNeeded) {
+        if (token && !isLoading && !authErrorMessage && !isPasswordNeeded && !isUserLoading) {
             void withLoading(
                 loadPublicShare(abortController.signal)
                     .then(({ link }) => {
@@ -106,7 +108,14 @@ function PublicShareLinkInitContainer() {
         return () => {
             abortController.abort();
         };
-    }, [token, isLoading, authErrorMessage, isPasswordNeeded]);
+    }, [token, isLoading, authErrorMessage, isPasswordNeeded, isUserLoading]);
+
+    useEffect(() => {
+        /** If the navigation appears from a non proton user and the flag is enabled, we display a sign-up flow modal */
+        if (isDriveShareUrlBookmarkingEnabled && !isLoggedIn && !isUserLoading) {
+            showSignUpFlowModal({ urlPassword });
+        }
+    }, [isDriveShareUrlBookmarkingEnabled, isLoggedIn, isUserLoading]);
 
     const showLoadingPage = isLoading || isLoadingDecrypt;
     const showErrorPage = errorMessage || (showLoadingPage === false && link === undefined);
@@ -130,8 +139,7 @@ function PublicShareLinkInitContainer() {
             ) : (
                 <SharedFolderPage token={token} rootLink={link} />
             )}
-            {/** If the navigation appears from a non proton user and the flag is enabled, we display a sign-up flow modal */}
-            {isDriveShareUrlBookmarkingEnabled && !isProtonUser && <SignUpFlowModal urlPassword={urlPassword} />}
+            {isDriveShareUrlBookmarkingEnabled && !isLoggedIn ? signUpFlowModal : renderUpsellFloatingModal}
         </>
     );
 }

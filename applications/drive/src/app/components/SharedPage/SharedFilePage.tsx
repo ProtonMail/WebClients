@@ -5,10 +5,9 @@ import { FilePreviewContent } from '@proton/components/containers/filePreview/Fi
 import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import type { DecryptedLink } from '../../store';
-import { useDownloadScanFlag } from '../../store';
+import { useBookmarksPublicView, useDownloadScanFlag } from '../../store';
 import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
-import { useUpsellFloatingModal } from '../modals/UpsellFloatingModal';
 import HeaderSecureLabel from './Layout/HeaderSecureLabel';
 import HeaderSize from './Layout/HeaderSize';
 import SharedPageFooter from './Layout/SharedPageFooter';
@@ -23,16 +22,27 @@ interface Props {
 
 export default function SharedFilePage({ token, link }: Props) {
     const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(token, link.linkId);
-    const [renderUpsellFloatingModal] = useUpsellFloatingModal();
     const isDownloadScanEnabled = useDownloadScanFlag();
     const { viewportWidth } = useActiveBreakpoint();
+    const bookmarksPublicView = useBookmarksPublicView();
 
     return (
         <FileBrowserStateProvider itemIds={[link.linkId]}>
             <SharedPageLayout
-                FooterComponent={<SharedPageFooter rootItem={link} items={[{ id: link.linkId, ...link }]} />}
+                FooterComponent={
+                    <SharedPageFooter
+                        rootItem={link}
+                        items={[{ id: link.linkId, ...link }]}
+                        bookmarksPublicView={bookmarksPublicView}
+                    />
+                }
             >
-                <SharedPageHeader rootItem={link} items={[{ id: link.linkId, ...link }]} className="mt-3 mb-4">
+                <SharedPageHeader
+                    rootItem={link}
+                    items={[{ id: link.linkId, ...link }]}
+                    bookmarksPublicView={bookmarksPublicView}
+                    className="mt-3 mb-4"
+                >
                     <div className="w-full flex flex-nowrap flex-column md:items-center md:flex-row">
                         <FileNameDisplay className="text-4xl text-bold py-1 md:p-1" text={link.name} />
                         <div
@@ -62,7 +72,6 @@ export default function SharedFilePage({ token, link }: Props) {
                 />
             </SharedPageLayout>
             <SharedPageTransferManager rootItem={link} />
-            {renderUpsellFloatingModal}
         </FileBrowserStateProvider>
     );
 }
