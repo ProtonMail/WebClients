@@ -156,12 +156,14 @@ const Composer = (
         innerModal,
         setInnerModal,
         attachmentsFoundKeyword,
+        noReplyEmail,
         handlePassword,
         handleExpiration,
         handleCloseInnerModal,
         handleNoRecipients,
         handleNoSubjects,
         handleNoAttachments,
+        handleNoReplyEmail,
         handleCloseInsertImageModal,
         handleSendAnyway,
         handleCancelSend,
@@ -315,6 +317,7 @@ const Composer = (
         handleNoRecipients,
         handleNoSubjects,
         handleNoAttachments,
+        handleNoReplyEmail,
     });
 
     useImperativeHandle(ref, () => ({
@@ -376,6 +379,7 @@ const Composer = (
                 innerModal={innerModal}
                 message={modelMessage}
                 attachmentsFoundKeyword={attachmentsFoundKeyword}
+                noReplyEmail={noReplyEmail}
                 handleChange={handleChange}
                 pendingFiles={pendingFiles}
                 handleCloseInnerModal={handleCloseInnerModal}
