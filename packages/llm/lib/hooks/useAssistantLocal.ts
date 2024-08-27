@@ -5,7 +5,13 @@ import { c } from 'ttag';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useStateRef from '@proton/hooks/useStateRef';
-import type { AssistantContextType, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
+import type {
+    AssistantContextType,
+    AssistantRunningActions,
+    GenerateAssistantResult} from '@proton/llm/lib';
+import {
+    MODEL_UNLOADED,
+} from '@proton/llm/lib';
 import {
     CACHING_FAILED,
     FAILED_TO_DOWNLOAD,
@@ -463,6 +469,13 @@ export const useAssistantLocal = ({
                     generatedTokensNumber.current = 0;
                 }
             } catch (e: any) {
+                // Sometimes the model is being unloaded automatically by the llm lib.
+                // If we detect that the model is not loaded during generate, load it again and retry generation
+                if (e === MODEL_UNLOADED) {
+                    await loadModelOnGPU();
+                    return generateResult({ action, callback, assistantID, hasSelection });
+                }
+
                 if (e.name === 'PromptRejectedError') {
                     addSpecificError({
                         assistantID,
@@ -483,6 +496,7 @@ export const useAssistantLocal = ({
                 // Otherwise, on next submit the previous result will be displayed for a few ms
                 callback('');
             }
+
             // Reset the generating state
             cleanRunningActions(assistantID);
         });
