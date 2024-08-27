@@ -760,18 +760,6 @@
       "Move": [
         "Déplacer"
       ],
-      "Move all conversations from this folder": [
-        "Déplacer toutes les conversations de ce dossier"
-      ],
-      "Move all conversations from this label": [
-        "Déplacer toutes les conversations de ce label"
-      ],
-      "Move all messages from this folder": [
-        "Déplacer tous les messages de ce dossier"
-      ],
-      "Move all messages from this label": [
-        "Déplacer tous les messages de ce label"
-      ],
       "Move all to archive": [
         "Tout déplacer dans le dossier Archives"
       ],
@@ -3403,9 +3391,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "L'authentification A2F ajoute une couche de sécurité supplémentaire, empêchant tout accès non autorisé."
       ],
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Supprimez automatiquement les messages qui sont dans les dossiers Corbeille et Indésirables/spam depuis plus de 30 jours. Profitez de ces fonctionnalités et de bien d'autres en passant à l'abonnement supérieur."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
       ],
@@ -3443,9 +3428,6 @@
       "No labels": [
         "Aucun label"
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Gagnez du temps en envoyant des messages ou des invitations à tout le monde en même temps (une fonctionnalité premium parmi bien d'autres). Changez d'abonnement dès maintenant."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "En passant à un abonnement supérieur, vous disposez de plusieurs adresses e-mail qui vous permettent de mieux gérer vos différentes activités et vous bénéficiez de fonctionnalités premium."
       ],
@@ -3470,11 +3452,11 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activez la protection contre le suivi dans les messages pour empêcher les annonceurs et toute autre personne de suivre votre localisation et vos activités en ligne."
       ],
-      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Profitez de la fonctionnalité de programmation personnalisée des messages et d'autres fonctionnalités en passant à un abonnement supérieur."
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Débloquez l'envoi programmé de messages personnalisé et d'autres fonctionnalités en passant à un abonnement supérieur."
       ],
-      "Unlock custom snooze times when you upgrade your plan.": [
-        "Changez d'abonnement pour personnaliser les périodes de mise en attente."
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Bénéficiez de périodes de mise en attente personnalisées et d'autres fonctionnalités premium en passant à un abonnement supérieur."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Disposez d'adresses e-mail plus courtes et d'autres fonctionnalités premium en changeant d'abonnement."
@@ -9110,6 +9092,15 @@
       "1 user": [
         "1 utilisateur"
       ],
+      "10 email addresses/aliases": [
+        "10 adresses e-mail/alias"
+      ],
+      "10-year file version history": [
+        "Historique des versions de fichier sur 10 ans"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
       "24/7 account management support": [
         "Assistance à la gestion de compte 24h/24 et 7j/7"
       ],
@@ -9238,9 +9229,6 @@
       ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
-      ],
-      "Hide-my-email aliases": [
-        "Alias « hide-my-email »"
       ],
       "High-speed streaming": [
         "Streaming haut débit"
@@ -9416,12 +9404,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
       ],
-      "Up to 15 email addresses": [
-        "Jusqu'à 15 adresses e-mail"
-      ],
-      "Up to 3 TB of storage": [
-        "Jusqu'à 3 To d'espace de stockage"
-      ],
       "User credential management": [
         "Gestion des identifiants des utilisateurs"
       ],
@@ -9440,20 +9422,17 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domaine de messagerie personnalisé"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain2 } » pour les abonnements à des sites d'informations par exemple."
-      ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
         "Mettez les messages en attente et recevez un rappel quand vous le voulez."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Espace de stockage partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utilisez votre adresse e-mail personnalisée à partir de votre propre nom de domaine (vous@votrenom.com)."
       ]
     },
     "new_plans: heading": {
@@ -9555,6 +9534,20 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Commentaires"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus": [
+        "Je choisis Mail Plus"
+      ],
+      "Get Mail Plus for $1": [
+        "Obtenir Mail Plus pour 1 $"
+      ],
+      "Get Mail Plus for 1 €": [
+        "Obtenir Mail Plus pour 1 €"
+      ],
+      "Get Mail Plus for CHF 1": [
+        "Obtenir Mail Plus pour 1 CHF"
       ]
     },
     "new_plans: title": {
@@ -11846,6 +11839,9 @@
       "Contacts deleted": [
         "Les contacts ont été supprimés."
       ],
+      "Content copied to clipboard": [
+        "Le contenu a été copié dans le presse-papiers."
+      ],
       "Conversation added to ${ labelName }.": [
         "La conversation a été ajoutée à ${ labelName }."
       ],
@@ -11991,9 +11987,6 @@
       ],
       "Self-destruction set": [
         "L'autodestruction est programmée."
-      ],
-      "Text copied to clipboard": [
-        "Le texte a été copié dans le presse-papiers."
       ],
       "Thanks for the feedback!": [
         "Merci pour vos commentaires !"

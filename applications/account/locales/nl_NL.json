@@ -1102,6 +1102,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Probeer opnieuw op te slaan. Opslaan mislukt door: ${ saveError }"
       ],
+      "Turn off": [
+        "Uitschakelen"
+      ],
+      "Turn on": [
+        "Inschakelen"
+      ],
       "Underline": [
         "Onderstreept"
       ],
@@ -1352,6 +1358,9 @@
       "External": [
         "Extern"
       ],
+      "Inactive": [
+        "Inactief"
+      ],
       "No E2EE mail": [
         "Geen E2EE mail"
       ],
@@ -1441,7 +1450,7 @@
         "Snel en veilig. Er worden geen logboeken opgeslagen."
       ],
       "Run on device": [
-        "Op apparaat uitvoeren"
+        "Uitgevoerd op het apparaat zelf"
       ],
       "Run on servers": [
         "Uitvoeren op servers"
@@ -3353,9 +3362,6 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Verwijder automatisch berichten van de prullenbak of spam die ouder zijn dan 30 dagen. Geniet hiervan en van andere voordelen wanneer u upgrade."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maanden ${ plusPlanName } verdiend."
       ],
@@ -3606,6 +3612,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB opslagruimte"
+      ],
       "2 users": [
         "2 gebruikers"
       ],
@@ -5150,8 +5159,8 @@
         "U hebt de limiet van ${ n } geaccepteerde uitnodigingen in 6 maanden bereikt."
       ],
       "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
-        "U hebt de limiet van ${ n } geaccepteerde uitnodiging in 6 maanden bereikt. De knop wordt weer opnieuw actief zodra je weer nieuwe gebruikers kunt uitnodigen.",
-        "U hebt de limiet van ${ n } geaccepteerde uitnodigingen in 6 maanden bereikt. De knop wordt weer opnieuw actief zodra je weer nieuwe gebruikers kunt uitnodigen."
+        "U hebt de limiet van ${ n } geaccepteerde uitnodiging in 6 maanden bereikt. De knop wordt weer opnieuw actief zodra u opnieuw nieuwe gebruikers kunt uitnodigen.",
+        "U hebt de limiet van ${ n } geaccepteerde uitnodigingen in 6 maanden bereikt. De knop wordt weer opnieuw actief zodra u opnieuw nieuwe gebruikers kunt uitnodigen."
       ],
       "You have successfully joined the family group": [
         "U hebt zich succesvol aangesloten bij de familiegroep"
@@ -5242,6 +5251,9 @@
       ],
       "An error occurred, please try again": [
         "Er is een fout opgetreden, probeer het opnieuw"
+      ],
+      "Family name updated": [
+        "Gezinsnaam bijgewerkt"
       ],
       "Member updated": [
         "Lid bijgewerkt"
@@ -7043,6 +7055,9 @@
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Elk domein kan slechts één SPF- (TXT-)record hebben. Als u de bestaande SPF- (TXT-)record wilt houden, u kunt ${ spf } toevoegen aan uw huidige record (zet het na ${ spfValue })."
       ],
+      "Early access": [
+        "Vroegtijdige toegang"
+      ],
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
@@ -7205,6 +7220,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Ga naar uw identiteitsprovider, haal de SAML-metadata voor ${ appName } op en importeer deze hier."
       ],
+      "Group deleted": [
+        "Groep verwijderd"
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Groepeer e-mails in hetzelfde gesprek samen in uw Inbox of geef ze apart weer."
       ],
@@ -7358,6 +7376,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installeer een serverconfiguratie bestand om te verbinden met een specifieke server in het land van uw keuze."
+      ],
+      "Internal user": [
+        "Interne gebruiker"
       ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
@@ -8721,7 +8742,7 @@
         "U zal tegoed ontvangen om op uw abonnement te gebruiken wanneer zij zich abonneren."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
-        "Wanneer u uw huidige betaalde abonnement annuleert, zal het saldo van uw abonnement als accounttegoed worden teruggestort en wordt je gedowngrade naar het ${ BRAND_NAME } ${ PLANS.FREE } plan."
+        "Wanneer u uw huidige betaalde abonnement annuleert, zal het saldo van uw abonnement als accounttegoed worden teruggestort en wordt u gedowngrade naar het ${ BRAND_NAME } ${ PLANS.FREE } abonnement."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wanneer u opzegt, dan zal uw abonnement niet worden verlengd, maar u kunt nog steeds van de voordelen van uw abonnement genieten tot het einde van de abonnementsperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } Free abonnement."
@@ -8909,10 +8930,13 @@
         "U moet nog steeds reageren op uitnodigingen om de organisator uw reactie te laten zien."
       ],
       "You will be able to promote the user to administrator once they've accepted the invitation.": [
-        "Je kunt de gebruiker promoveren tot beheerder van zodra ze de uitnodiging hebben geaccepteerd."
+        "U kunt de gebruiker promoveren tot beheerder van zodra ze de uitnodiging hebben geaccepteerd."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "U wordt doorverwezen naar ${ destination } nadat u inlogt."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "U verliest toegang tot ${ planTitle } functies op deze datum."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "U heeft een ${ BRAND_NAME }-adres nodig om ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } te gebruiken"
@@ -9500,6 +9524,9 @@
       "15 minutes": [
         "15 minuten"
       ],
+      "2 minutes": [
+        "2 minuten"
+      ],
       "30 minutes": [
         "30 minuten"
       ],
@@ -9833,6 +9860,9 @@
       "Disable sharing outside the organization": [
         "Delen buiten de organisatie uitschakelen"
       ],
+      "Disabled": [
+        "Uitgeschakeld"
+      ],
       "Display name": [
         "Weergavenaam"
       ],
@@ -9865,6 +9895,9 @@
       ],
       "Email or username": [
         "E-mailadres of gebruikersnaam"
+      ],
+      "Email settings": [
+        "E-mailinstellingen"
       ],
       "Emails": [
         "E-mails"
@@ -10474,9 +10507,6 @@
     "Label for new member": {
       "Admin": [
         "Beheerder"
-      ],
-      "Private": [
-        "Privé"
       ],
       "VPN connections": [
         "VPN-verbindingen"
@@ -11432,6 +11462,9 @@
       "${ size } attachment size": [
         "${ size } bijlagegrootte"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } veilige opslag per gebruiker"
+      ],
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
@@ -11576,9 +11609,6 @@
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliassen"
-      ],
       "High-speed streaming": [
         "Streamen op hoge snelheid"
       ],
@@ -11616,8 +11646,14 @@
       "Password health": [
         "Wachtwoordgezondheid"
       ],
+      "Password manager": [
+        "Wachtwoordbeheer"
+      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonische ondersteuning (20+ gebruikers)"
       ],
       "Priority email support": [
         "Prioriteitsondersteuning per e-mail"
@@ -11634,6 +11670,9 @@
       "Protect ${ n } device at a time": [
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
@@ -11751,12 +11790,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
       ],
-      "Up to 15 email addresses": [
-        "Tot wel 15 e-mailadressen"
-      ],
-      "Up to 3 TB of storage": [
-        "Tot wel 3 TB opslag"
-      ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
       ],
@@ -11778,17 +11811,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Berichten snoozen en ontvangen wanneer u wil"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
       ]
     },
     "new_plans: heading": {
@@ -12110,7 +12137,7 @@
         "Bescherm uw gezin tegen schadelijke websites en krijg toegang tot onze supersnelle VPN-servers om uw favoriete inhoud te streamen"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Bescherm je echte e-mailadres tegen openbaarmaking of lekken met aliassen (een willekeurig gegenereerd e-mailadres dat e-mails naar je hoofdinbox stuurt)."
+        "Bescherm uw echte e-mailadres tegen openbaarmaking of lekken met aliassen (een willekeurig gegenereerd e-mailadres dat e-mails naar uw hoofdinbox stuurt)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Voorziet het hoogste niveau van account beveiliging en gespecialiseerde ondersteuning"
@@ -12629,6 +12656,17 @@
       ],
       "Trash": [
         "Prullenbak"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Iedereen"
+      ],
+      "Group members": [
+        "Groepsleden"
+      ],
+      "No one": [
+        "Niemand"
       ]
     },
     "Option delay send seconds": {
@@ -13688,6 +13726,26 @@
         "Gebruiker"
       ]
     },
+    "Safety review": {
+      "Download ${ size }": [
+        "${ size } downloaden"
+      ],
+      "Invalid code": [
+        "Ongeldige code"
+      ],
+      "Verify": [
+        "Verifiëren"
+      ],
+      "Your recovery email": [
+        "Uw herstel-e-mailadres"
+      ],
+      "Your Recovery Kit": [
+        "Uw herstelkit"
+      ],
+      "Your recovery phone": [
+        "Uw herstel-telefoonnummer"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Annuleren"
@@ -14333,6 +14391,11 @@
         "Verificatie"
       ]
     },
+    "signup: Action": {
+      "Request trial": [
+        "Proefperiode aanvragen"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Sluiten"
@@ -14867,7 +14930,7 @@
         "${ planName } geeft u toegang tot alle apps en premiumfuncties. Privacy is ingebouwd zodat u meteen aan de slag kunt, wetende dat uw gegevens en identiteit veilig zijn."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat je nodig hebt om de controle over de veiligheid van de veiligheid te hebben."
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
       ],
       "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
         "${ planName } geeft u onbeperkte privacy en meer opslagruimte voor tot wel 2 personen."
@@ -14879,7 +14942,7 @@
         "${ planName } geeft uw team wat ze nodig hebben om productiever en beter georganiseerd te zijn, om controle te hebben over hun inbox, planning en meer."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
-        "${ planName } gaat verder dan de basis om je te helpen productiever, georganiseerder, en in controle van je inbox, e-mailidentiteit en meer te zijn."
+        "${ planName } gaat verder dan de basis om je te helpen productiever, georganiseerder, en in controle van uw inbox, e-mailidentiteit en meer te zijn."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
         "${ planName } helpt u bij het verzekeren dat al uw gezinsleden - en hun gegevens - beveiligd zijn wanneer ze online zijn."
@@ -14888,7 +14951,7 @@
         "${ planName } biedt ${ planMaxSpace } opslag voor uw e-mails, bijlagen, gebeurtenissen, wachtwoorden, en bestanden. U komt ook in aanmerking voor jaarlijkse bonussen op uw opslag."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
-        "${ planName } biedt ${ planMaxSpace } aan opslag voor uw bestanden en foto's. U komt ook in aanmkering voor jaarlijkse opslagbonussen."
+        "${ planName } biedt ${ planMaxSpace } aan opslag voor uw bestanden en foto's. U komt ook in aanmerking voor jaarlijkse opslagbonussen."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } biedt ${ planMaxSpace } opslag per gebruiker voor e-mails, bijlagen, gebeurtenissen, en bestanden. U komt ook in aanmerking voor jaarlijkse opslagbonussen."
@@ -15026,7 +15089,7 @@
         "Laat uw bedrijf opvallen"
       ],
       "Manage your calendar": [
-        "Beheer uw kalender"
+        "Beheer uw agenda"
       ],
       "Online privacy, for your whole family": [
         "Online privacy voor het hele gezin"
@@ -15110,7 +15173,7 @@
         "Bekijk het interview"
       ],
       "What you give up when you cancel ${ planName }": [
-        "Wat je opgeeft wanneer je ${ planName } annuleert"
+        "Wat u opgeeft wanneer u ${ planName } annuleert"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Wanneer u ${ planName } annuleert, wordt u gedowngraded naar ${ BRAND_NAME } Free, die slechts 1 GB aan Mailopslag en maximaal 5 GB aan Drive opslagruimte biedt. U verliest ook alle eerder toegekende opslagbonussen."
@@ -16130,6 +16193,9 @@
       "Encryption and keys": [
         "Versleuteling en sleutels"
       ],
+      "Enter 2FA code": [
+        "Voer 2FA code in"
+      ],
       "Enter endpoints into your identity provider": [
         "Voer eindpunten in bij uw identiteitsprovider"
       ],
@@ -16648,6 +16714,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "Neem voorzorgsmaatregelen om gegevensverlies te voorkomen!"
+      ],
+      "Text": [
+        "Tekst"
       ],
       "Theme": [
         "Thema"
@@ -17225,9 +17294,6 @@
       "Optional": [
         "Optioneel"
       ],
-      "Private": [
-        "Privé"
-      ],
       "Remember to share the user's sign in details with them.": [
         "Vergeet niet om de inloggegevens van de gebruiker met hen te delen."
       ],
@@ -17462,7 +17528,7 @@
         "Doe mee met ${ appName } vroegtijdige toegang!"
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "Meld u aan voor een gratis ${ BRAND_NAME } account om uw plek vast te stellen. Hoe eerder u zich aanmeldt, hoe sneller u toegang krijgt tot ${ appName }. Na de aanmelding kunt u zich ook upgraden naar ons exclusieve Visionair abonnement om de wachtlijst over te slaan en meteen gebruik van ${ appName } te kunnen maken."
+        "Meld u aan voor een gratis ${ BRAND_NAME }-account om uw plek vast te stellen. Hoe eerder u zich aanmeldt, hoe sneller u toegang krijgt tot ${ appName }. Na de aanmelding kunt u zich ook upgraden naar ons exclusieve Visionair abonnement om de wachtlijst over te slaan en meteen gebruik van ${ appName } te kunnen maken."
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "Ontgrendel ${ appName } premium functies door te upgraden"

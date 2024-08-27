@@ -130,6 +130,9 @@
       "Create card": [
         "Kaart aanmaken"
       ],
+      "Create identity": [
+        "Identiteit aanmaken"
+      ],
       "Create login": [
         "Login aanmaken"
       ],
@@ -144,6 +147,9 @@
       ],
       "Creating vault": [
         "Kluis aanmaken"
+      ],
+      "Custom section": [
+        "Aangepaste sectie"
       ],
       "Customize": [
         "Personaliseer"
@@ -283,6 +289,9 @@
       "Manage access": [
         "Beheer toegang"
       ],
+      "Manage vault access": [
+        "Toegang kluis beheren"
+      ],
       "Manually sync your data": [
         "Synchroniseer uw data manueel"
       ],
@@ -412,6 +421,9 @@
       "Set access level": [
         "Stel toegangsniveau in"
       ],
+      "Set extra password": [
+        "Stel uw extra wachtwoord in"
+      ],
       "Setup 2FA": [
         "2FA Instellen"
       ],
@@ -480,6 +492,9 @@
       ],
       "Verify": [
         "Verifiëren"
+      ],
+      "Via secure link": [
+        "Via beveiligde link"
       ],
       "View details": [
         "Details weergeven"
@@ -1042,6 +1057,9 @@
       "Access successfully confirmed": [
         "Toegang succesvol bevestigd"
       ],
+      "Add a username field": [
+        "Veld gebruikersnaam toevoegen"
+      ],
       "Add your custom email address to monitor :": [
         "Voeg uw aangepast e-mailadres toe om te monitoren:"
       ],
@@ -1182,6 +1200,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Voer uw extra wachtwoord in"
       ],
       "Enter your PIN code": [
         "Voer uw pincode in"
@@ -1463,6 +1484,9 @@
       "Restoring trashed items...": [
         "Verwijderde items herstellen..."
       ],
+      "Secure links": [
+        "Beveiligde links"
+      ],
       "Select destination vault": [
         "Kies bestemmingskluis"
       ],
@@ -1716,6 +1740,9 @@
       "15 minutes": [
         "15 minuten"
       ],
+      "2 minutes": [
+        "2 minuten"
+      ],
       "24 hours": [
         "24 uur"
       ],
@@ -1776,6 +1803,9 @@
       "Beta Access": [
         "Bèta toegang"
       ],
+      "Birthdate": [
+        "Geboortedatum"
+      ],
       "Capital letters (A-Z)": [
         "Hoofdletters (A-Z)"
       ],
@@ -1812,6 +1842,9 @@
       "Country or Region": [
         "Land of regio"
       ],
+      "County": [
+        "Provincie"
+      ],
       "Create a credit card": [
         "Kredietkaart aanmaken"
       ],
@@ -1823,6 +1856,9 @@
       ],
       "Create an encrypted note": [
         "Versleutelde notitie aanmaken"
+      ],
+      "Create an Identity": [
+        "Identiteit aanmaken"
       ],
       "Create new vault": [
         "Nieuwe kluis aanmaken"
@@ -1851,6 +1887,12 @@
       "Email": [
         "E-mailadres"
       ],
+      "Email (alias)": [
+        "E-mail (alias)"
+      ],
+      "Email (new alias)": [
+        "E-mail (nieuwe alias)"
+      ],
       "Email address": [
         "E-mailadres"
       ],
@@ -1871,6 +1913,9 @@
       ],
       "Export": [
         "Exporteren"
+      ],
+      "Extra password": [
+        "Extra wachtwoord"
       ],
       "Field name": [
         "Veldnaam"
@@ -1932,6 +1977,9 @@
       "Include numbers (0-9)": [
         "Nummers toevoegen (0-9)"
       ],
+      "Instagram handle": [
+        "Instagram gebruikersnaam"
+      ],
       "Invitations": [
         "Uitnodigingen"
       ],
@@ -1991,6 +2039,9 @@
       ],
       "Members": [
         "Leden"
+      ],
+      "Middle name": [
+        "Tussenvoegsel"
       ],
       "Modified": [
         "Gewijzigd"
@@ -2060,6 +2111,9 @@
       ],
       "Personal details": [
         "Persoonlijke gegevens"
+      ],
+      "Personal website": [
+        "Persoonlijke website"
       ],
       "PGP-encrypted JSON (recommended)": [
         "JSON PGP-versleuteld (aanbevolen)"
@@ -2169,6 +2223,9 @@
       "Type": [
         "Soort"
       ],
+      "Unlock with": [
+        "Ontgrendelen met"
+      ],
       "Unnamed Credit Card": [
         "Naamloze kredietkaart"
       ],
@@ -2220,8 +2277,17 @@
       "Work email": [
         "Zakelijke e-mail"
       ],
+      "Work phone number": [
+        "Telefoonnummer werk"
+      ],
+      "X handle": [
+        "X-gebruikersnaam"
+      ],
       "You are about to create": [
         "U staat op het punt volgende aan te maken"
+      ],
+      "ZIP or Postal code": [
+        "Postcode"
       ]
     },
     "Link": {
@@ -2433,6 +2499,9 @@
       "Breaches detected for": [
         "Inbreuken gedetecteerd voor"
       ],
+      "Confirm extra password": [
+        "Bevestig extra wachtwoord"
+      ],
       "Confirm PIN code": [
         "Pincode bevestigen"
       ],
@@ -2474,6 +2543,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Tevreden met ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Voer uw extra wachtwoord in"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -2580,6 +2652,9 @@
       "Remove email address?": [
         "E-mailadres verwijderen?"
       ],
+      "Remove extra password": [
+        "Verwijder uw extra wachtwoord"
+      ],
       "Resolved breaches": [
         "Opgeloste inbreuken"
       ],
@@ -2604,6 +2679,9 @@
       ],
       "Set access level": [
         "Stel toegangsniveau in"
+      ],
+      "Set extra password": [
+        "Stel uw extra wachtwoord in"
       ],
       "Set up 2FA for better security": [
         "2FA instellen voor betere beveiliging"

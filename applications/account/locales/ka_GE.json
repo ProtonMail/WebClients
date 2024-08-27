@@ -157,6 +157,12 @@
       "Allow": [
         "დაშვება"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "გამჭოლად დაშიფრული ელფოსტის დაშვება ამ ჯგუფისთვის"
+      ],
+      "Always allow sending": [
+        "გაგზავნის ყოველთვის დაშვება"
+      ],
       "Apply": [
         "გადატარება"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "ცვლილებების გაუქმება"
+      ],
+      "Domain name": [
+        "დომენის სახელი"
       ],
       "Don't show again": [
         "აღარ მაჩვენო"
@@ -1111,6 +1120,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "შენახვა კიდევ ერთხელ სცადეთ. შენახვის შეცდომის მიზეზი: ${ saveError }"
       ],
+      "Turn off": [
+        "გამორთვა"
+      ],
+      "Turn on": [
+        "ჩართვა"
+      ],
       "Underline": [
         "ხაზგასმა"
       ],
@@ -1176,6 +1191,9 @@
       ],
       "Use authentication code": [
         "ავთენტიკაციის კოდის გამოყენება"
+      ],
+      "Use group permissions": [
+        "ჯგუფის წვდომების გამოყენება"
       ],
       "Use recovery code": [
         "აღდგენის კოდის გამოყენება"
@@ -3365,9 +3383,6 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "შეტყობინებების სპამიდან და ნაგვის ყუთიდან 30 დღეში ავტომატური წაშლა. ისიამოვნეთ ამ და სხვა ფასიანი თვისებებით, როცა პაკეტს ასწევთ."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "გილოცავთ! თქვენ ახლა ${ plusPlanName }-ის, მაქსიმუმ, ${ rewardsLimit } უფასო თვე გაქვთ."
       ],
@@ -4196,6 +4211,9 @@
       ],
       "Authentication error.": [
         "ავთენტიკაციის შეცდომა."
+      ],
+      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
+        "შეტყობინების ავტოპასუხის სიგრძე დასაშვებზე დიდია. შემოკლეთ, რომ შეზღუდვებში ჩაჯდეს."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "ავტომოპასუხე ფასიანი ფუნქციაა. მის გამოსაყენებლად ფასიან ანგარიშზე გადასვლაა საჭირო."
@@ -6579,6 +6597,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } დაჰოსტილია ${ BRAND_NAME }-ის მიერ, რაც ქვედომენების სწრაფად მორგების საშუალება გაძლევთ. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "ჯგუფების შესაქმნელად აუცილებელია მორგებული დომენი. თუ მორგებული დომენი არ გაქვთ, დაამატეთ პირველი, ბმულზე ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "სახელი, რომლითაც ადვილად იცნობთ, თუ მისი გაფართოება ან გაუქმება დაგჭირდათ."
       ],
@@ -7278,6 +7299,12 @@
       "Gateways": [
         "რაუტერები"
       ],
+      "Gateways monitoring is disabled.": [
+        "კარიბჭეების მონიტორინგი ჩართულია."
+      ],
+      "Gateways monitoring is enabled.": [
+        "კარიბჭეების მონიტორინგი ჩართულია."
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "აღდგენის ახალი ფრაზის გენერაცია ძველ ფრაზას გათიშავს."
       ],
@@ -7298,6 +7325,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "გადადით თქვენს იდენტიფიკატორის მომწოდებელზე, მიიღეთ SAML მეტამონაცემები ${ appName }-სთვის და შემოიტანეთ ის აქ."
+      ],
+      "Group deleted": [
+        "ჯგუფი წაიშალა"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "ელფოსტების ერთ საუბრად და ცალ-ცალკე ჩვენებას შორის გადართვა."
@@ -7452,6 +7482,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "არჩეულ ქვეყანაში სპეციფიკურ სერვერთან დასაკავშირებლად საჭიროა ამ სერვერის კონფიგურაციის ფაილის დაყენება."
+      ],
+      "Internal user": [
+        "შიდა მომხმარებელი"
       ],
       "Internet connection lost": [
         "ინტერნეტკავშირი დაკარგულია"
@@ -7663,6 +7696,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "მიმდინარეობს კალენდრის ჩატვირთვა. მოითმინეთ. გადაგამისამართებთ ჩვენს დაგეგმვის პლატფორმაზე Calendly ახალ ჩანართში."
+      ],
+      "Loading gateways monitoring current status.": [
+        "მიმდინარეობს კარიბჭეების მონიტორინგის მიმდინარე სტატუსის ჩატვირთვა."
       ],
       "Loading preview": [
         "გადახედვის ჩატვირთვა"
@@ -8367,6 +8403,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "თქვენი მოწყობილობის წარმადობიდან გამომდინარე, რამდენიმე წამიდან რამდენიმე წუთამდე შეიძლება დასჭირდეს"
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "ეს ცვლილება თქვენს ინფრასტრუქტურაში ძალაში ასე 1 საათში შევა"
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "ამას საკმაო დროს შეიძლება, დასჭირდეს. ნუ დახურავთ ამ გვერდს და ნუ გათიშავთ ინტერნეტს."
       ],
@@ -8564,6 +8603,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "ორპაროლიანი რეჟიმი იყენებს სხვადასხვა პაროლებს შესასვლელად და მონაცემების გასაშიფრად. ეს ქმედება უსაფრთხოების უმნიშვნელო გაუმჯობესებაა, მაგრამ მომხმარებლების უმრავლესობას ჩვენ მაინც ერთპაროლიან რეჟმს ვურჩევთ. ორპაროლიან რეჟიმზე გადასართავად ჯერ დააყენეთ შესვლის პაროლი, მერე კი მეორე პაროლი."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "კარიბჭეების მონიტორინგის მიმდინარე სტატუსის შემოწმება შეუძლებელია."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "ფაილის ხელმოწერის შემოწმების შეცდომა. დაუკავშირდით მხარდაჭერის გუნდს."
@@ -8853,6 +8895,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "${ BRAND_NAME }-ის დაშიფრული მისამართით თქვენ ${ BRAND_NAME }-ის ყველა სერვისის გამოყენება შეგიძლიათ"
       ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "ჯგუფებით ელფოსტების გაგზავნა ამ ჯგუფის წევრებისთვის უფრო ადვილია."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "თქვენი მიმდინარე ტარიფით @pm.me დომენის თქვენი მომხმარებლით ელფოსტის, მხოლოდ, მიღება შეგიძლიათ. @pm.me დომენზე დამატებითი მისამართების დასამატებლად და მათით ელფოსტის გასაგზავნად, ასწიეთ სატარიფო გეგმა."
       ],
@@ -8895,6 +8940,9 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "ამჟამად თქვენი ხელმისაწვდომი ${ maxMembers } ლიცენზიიდან ${ usedMembers }-ს იყენებთ.",
         "ამჟამად თქვენი ხელმისაწვდომი ${ maxMembers } ლიცენზიიდან ${ usedMembers }-ს იყენებთ."
+      ],
+      "You are not currently in any groups and there are no pending invitations": [
+        "ამჟამად ჯგუფების წევრი არ ბრძანდებით და არც მოსაწვევები გაქვთ"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "შესული ბრძანდებით ანგარიშში ${ memberAddress }."
@@ -9229,6 +9277,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "უარყოფილია"
+      ],
+      "Paused": [
+        "შეჩერებულია"
+      ],
       "Pending": [
         "რიგში"
       ],
@@ -10622,9 +10676,6 @@
       "Admin": [
         "ადმინისტრატორი"
       ],
-      "Private": [
-        "პირადი"
-      ],
       "VPN connections": [
         "VPN შეერთებები"
       ]
@@ -11762,9 +11813,6 @@
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
-      "Hide-my-email aliases": [
-        "მეტსახელი Hide My Email-სთვის"
-      ],
       "High-speed streaming": [
         "ჩქაროსნული სტრიმინგი"
       ],
@@ -11958,12 +12006,6 @@
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize }-მდე საცავი"
       ],
-      "Up to 15 email addresses": [
-        "15-მდე ელფოსტის მისამართი"
-      ],
-      "Up to 3 TB of storage": [
-        "3ტბ-მდე საცავი"
-      ],
       "User credential management": [
         "მომხმარებლების პაროლების მართვა"
       ],
@@ -11985,17 +12027,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain2 } ახალი ამბების გამოწერებისთვის"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "მიიღეთ განუსაზღვრელი მეტსახელები SimpleLogin-სგან (${ BRAND_NAME })"
-      ],
       "Snooze messages and get reminded when you want": [
         "დაადუმეთ დროებით შეტყობინებები და ჩვენ შეგახსენებთ, როცა გნებავთ"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "გამოიყენეთ ელფოსტის თქვენი დომენი, მაგ: you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -15981,6 +16017,9 @@
       "Preference updated": [
         "პარამეტრები განახლდა"
       ],
+      "Preferences updated": [
+        "პარამეტრები განახლდა"
+      ],
       "Status updated": [
         "სტატუსი განახლებულია"
       ]
@@ -16399,6 +16438,12 @@
       ],
       "Connection events": [
         "მიერთების მოვლენები"
+      ],
+      "Connection monitor disabled": [
+        "კავშირის მონიტორი გამორთულია"
+      ],
+      "Connection monitor enabled": [
+        "კავშირის მონიტორი ჩართულია"
       ],
       "Contact us": [
         "დაგვიკავშირდით"
@@ -16956,6 +17001,9 @@
       "Profile": [
         "პროფილი"
       ],
+      "QRCode": [
+        "QR კოდი"
+      ],
       "Recommended": [
         "რეკომენდებულია"
       ],
@@ -17169,6 +17217,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "მიიღეთ ზომები მონაცემების დაკარგვის თავიდან ასაცილებლად!"
+      ],
+      "Text": [
+        "ტექსტი"
       ],
       "Theme": [
         "თემა"
@@ -17610,8 +17661,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
       ],
+      "Group membership paused": [
+        "ჯგუფის წევრობა შეჩერდა"
+      ],
       "Sending member invitation": [
         "გაწევრების მოსაწვევის გაგზავნა"
+      ],
+      "User declined invitation": [
+        "მომხმარებელმა უარჰყო მოსაწვევი"
       ],
       "Waiting user to accept the invitation": [
         "მომხმარებლის დასტურის მოლოდინი"
@@ -17659,6 +17716,29 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tor Browser-ის ეს ვერსია მხარდაუჭერელია. განაახლეთ უკანასკნელ ვერსიამდე: ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Delete request": [
+        "მოთხოვნის წაშლა"
+      ],
+      "Private user": [
+        "კონფიდენციალური მომხმარებელი"
+      ],
+      "reject": [
+        "უარყოფა"
+      ],
+      "Revoke access": [
+        "წვდომის გაუქმება"
+      ],
+      "Send request": [
+        "მოთხოვნის გაგზავნა"
+      ],
+      "View request": [
+        "მოთხოვნის ნახვა"
       ]
     },
     "Update font modal": {
@@ -17754,9 +17834,6 @@
       ],
       "Optional": [
         "არასავალდებულო"
-      ],
-      "Private": [
-        "პირადი"
       ],
       "Remember to share the user's sign in details with them.": [
         "გახსოვდეთ, რომ აუცილებელია, მომხმარებლებს მათი შესვლის დეტალები გაუზიაროთ."

@@ -346,6 +346,9 @@
       "Keep logo": [
         "Zachowaj logo"
       ],
+      "Keep my subscription": [
+        "Zachowaj subskrypcję"
+      ],
       "Let's talk": [
         "Porozmawiajmy"
       ],
@@ -2259,6 +2262,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB przestrzeni dyskowej"
+      ],
       "2 users": [
         "2 użytkowników"
       ],
@@ -5022,6 +5028,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Po zalogowaniu się zostaniesz przekierowany do ${ destination }."
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "W tym dniu stracisz dostęp do funkcji planu ${ planTitle }."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Będziesz potrzebować adresu ${ BRAND_NAME }, aby używać poczty ${ MAIL_APP_NAME } i usługi ${ CALENDAR_APP_NAME }"
       ],
@@ -5698,9 +5707,6 @@
       "Admin": [
         "Administrator"
       ],
-      "Private": [
-        "Prywatny"
-      ],
       "VPN connections": [
         "Połączenia VPN"
       ]
@@ -6198,6 +6204,18 @@
         "${ n } wiadomości dziennie",
         "${ n } wiadomości dziennie"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } udostępniony sejf ${ PASS_SHORT_APP_NAME } na użytkownika",
+        "${ n } udostępnione sejfy ${ PASS_SHORT_APP_NAME } na użytkownika",
+        "${ n } udostępnionych sejfów ${ PASS_SHORT_APP_NAME } na użytkownika",
+        "${ n } udostępnionych sejfów ${ PASS_SHORT_APP_NAME } na użytkownika"
+      ],
+      "${ n } user": [
+        "${ n } użytkownik",
+        "Do ${ n } użytkowników",
+        "Do ${ n } użytkowników",
+        "Do ${ n } użytkowników"
+      ],
       "${ n } vault": [
         "${ n } sejf",
         "${ n } sejfy",
@@ -6209,6 +6227,12 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } z ${ n } aliasem hide-my-email",
@@ -6225,8 +6249,17 @@
       "${ size } attachment size": [
         "${ size } rozmiaru załącznika"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } przestrzeni dyskowej na użytkownika"
+      ],
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } dla ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } do wszystkich usług ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 użytkownik"
@@ -6251,6 +6284,12 @@
       ],
       "Advanced network security": [
         "Zaawansowane bezpieczeństwo sieci"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Wszystkie podstawowe usługi ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja"
       ],
       "Auto-delete Spam and Trash": [
         "Automatyczne usuwanie Spamu i Kosza"
@@ -6290,6 +6329,9 @@
       ],
       "Contact groups management": [
         "Zarządzanie grupami kontaktów"
+      ],
+      "Custom and secure business email": [
+        "Niestandardowy i bezpieczny adres firmowy"
       ],
       "Custom domains for email aliases": [
         "Niestandardowe domeny dla aliasów"
@@ -6363,9 +6405,6 @@
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
-      "Hide-my-email aliases": [
-        "Aliasy hide-my-email"
-      ],
       "High-speed streaming": [
         "Szybki streaming"
       ],
@@ -6396,6 +6435,9 @@
       "No-logs policy": [
         "Polityka braku przechowywania logów"
       ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
       ],
@@ -6405,8 +6447,14 @@
       "Password health": [
         "Jakość hasła"
       ],
+      "Password manager": [
+        "Menadżer haseł"
+      ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
+      ],
+      "Phone support (20+ users)": [
+        "Wsparcie telefoniczne (dla ponad 20 użytkowników)"
       ],
       "Priority email support": [
         "Priorytetowe wsparcie e-mail"
@@ -6425,6 +6473,9 @@
         "Ochrona ${ n } urządzeń jednocześnie",
         "Ochrona ${ n } urządzeń jednocześnie",
         "Ochrona ${ n } urządzenia jednocześnie"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regularne sprawdzaj bezpieczeństwo konta. Zostaniesz powiadomiony o słabych i identycznych hasłach."
@@ -6486,6 +6537,9 @@
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
       ],
+      "Sync and backup all your files across devices": [
+        "Synchronizuj wszystkie pliki i wykonuj ich kopie zapasowe na różnych urządzeniach"
+      ],
       "Tor over VPN": [
         "Tor przez VPN"
       ],
@@ -6522,6 +6576,9 @@
       "Unlimited messages per day": [
         "Nieograniczone wysyłanie wiadomości"
       ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Nieograniczona liczba udostępnionych sejfów ${ PASS_SHORT_APP_NAME } na użytkownika"
+      ],
       "Unlimited shared vaults with access permissions": [
         "Nieograniczona liczba udostępnionych sejfów z osobnymi uprawnieniami"
       ],
@@ -6542,12 +6599,6 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } przestrzeni dyskowej"
-      ],
-      "Up to 15 email addresses": [
-        "Do 15 adresów e-mail"
-      ],
-      "Up to 3 TB of storage": [
-        "Do 3 TB przestrzeni dyskowej"
       ],
       "User credential management": [
         "Zarządzanie danymi logowania użytkownika"
@@ -6572,17 +6623,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain2 } dla subskrybowania wiadomości"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Uzyskaj nieograniczoną liczbę aliasów SimpleLogin przez ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Odłóż wiadomości i otrzymaj powiadomienie o nich w dowolnym momencie"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Korzystaj z adresu w niestandardowej domenie, np. ty@twojanazwa.pl"
       ]
     },
     "new_plans: heading": {
@@ -6645,6 +6690,9 @@
       "Popular": [
         "Popularny"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Ochrona poufnych informacji biznesowych i bezpieczna współpraca."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chroń prywatność rodziny za pomocą usług ${ BRAND_NAME }."
       ],
@@ -6705,6 +6753,14 @@
         "regulamin"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Wersja próbna planu ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Użycie konta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -6717,14 +6773,6 @@
       ],
       "Switch plans?": [
         "Zmienić plany?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Wersja próbna planu ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -9745,6 +9793,9 @@
       "Email subscriptions": [
         "Listy mailingowe"
       ],
+      "Enter 2FA code": [
+        "Wpisz kod uwierzytelniający"
+      ],
       "Enter endpoints into your identity provider": [
         "Wpisz punkty końcowe do dostawcy tożsamości"
       ],
@@ -10292,9 +10343,6 @@
       ],
       "Optional": [
         "Opcjonalnie"
-      ],
-      "Private": [
-        "Prywatny"
       ],
       "Remember to share the user's sign in details with them.": [
         "Pamiętaj, aby udostępnić użytkownikowi dane logowania."

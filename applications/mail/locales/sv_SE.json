@@ -763,18 +763,6 @@
       "Move": [
         "Flytta"
       ],
-      "Move all conversations from this folder": [
-        "Flytta alla konversationer från denna mapp"
-      ],
-      "Move all conversations from this label": [
-        "Flytta alla konversationer från denna etikett"
-      ],
-      "Move all messages from this folder": [
-        "Flytta alla meddelanden från denna mapp"
-      ],
-      "Move all messages from this label": [
-        "Flytta alla meddelanden från denna etikett"
-      ],
       "Move all to archive": [
         "Flytta alla till arkiv"
       ],
@@ -3401,9 +3389,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
       ],
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Rensa automatiskt bort meddelanden som är äldre än 30 dagar från papperskorg och skräppost. Njut av denna och andra fördelar när du uppgraderar."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
       ],
@@ -3441,9 +3426,6 @@
       "No labels": [
         "Inga etiketter"
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Spara tid genom att skicka e-post eller inbjudningar till alla samtidigt, en premiumfunktion bland många andra. Uppgradera idag."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ],
@@ -3467,12 +3449,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå på skydd för e-postspårning för att förhindra annonsörer och andra från att spåra din plats och onlineaktivitet."
-      ],
-      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Lås upp anpassat meddelandeschemaläggning och andra fördelar när du uppgraderar ditt paket."
-      ],
-      "Unlock custom snooze times when you upgrade your plan.": [
-        "Lås upp anpassade tider för snooze när du uppgraderar ditt paket."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Lås upp kortare e-postadresser och andra premiumfunktioner genom att uppgradera."
@@ -9234,9 +9210,6 @@
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-alias"
-      ],
       "High-speed streaming": [
         "Höghastighetsstreaming"
       ],
@@ -9411,12 +9384,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Upp till ${ totalStorageSize } lagringsutrymme"
       ],
-      "Up to 15 email addresses": [
-        "Upp till 15 e-postadresser"
-      ],
-      "Up to 3 TB of storage": [
-        "Upp till 3 TB lagringsutrymme"
-      ],
       "User credential management": [
         "Hantera användaruppgifter"
       ],
@@ -9438,17 +9405,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain2 } för nyhetsprenumeration"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Få obegränsade alias med SimpleLogin av ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Snooza meddelanden och bli påmind när du vill"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Använd din egen anpassade e-postdomänadress, t.ex. du@dittnamn.se"
       ]
     },
     "new_plans: heading": {
@@ -9552,6 +9513,11 @@
         "Feedback"
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -9564,11 +9530,6 @@
       ],
       "Switch plans?": [
         "Byt paket?"
-      ]
-    },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
       ]
     },
     "new_plans: tooltip": {
@@ -11971,9 +11932,6 @@
       ],
       "Self-destruction set": [
         "Självförstörelse inställt"
-      ],
-      "Text copied to clipboard": [
-        "Text kopierad till urklipp"
       ],
       "Thanks for the feedback!": [
         "Tack för feedbacken!"

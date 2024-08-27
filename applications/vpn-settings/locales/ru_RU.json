@@ -64,6 +64,12 @@
       "Allow": [
         "Разрешить"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Разрешить сквозное шифрование для этой группы"
+      ],
+      "Always allow sending": [
+        "Всегда разрешать отправку"
+      ],
       "Apply": [
         "Применить"
       ],
@@ -175,6 +181,9 @@
       "Delete Gateway": [
         "Удалить Шлюз"
       ],
+      "Delete group": [
+        "Удалить группу"
+      ],
       "Delete logo": [
         "Удалить логотип"
       ],
@@ -201,6 +210,9 @@
       ],
       "Discard changes": [
         "Сбросить изменения"
+      ],
+      "Domain name": [
+        "Доменное имя"
       ],
       "Done": [
         "Готово"
@@ -231,6 +243,9 @@
       ],
       "Edit Gateway": [
         "Изменить Шлюз"
+      ],
+      "Edit group": [
+        "Редактировать группу"
       ],
       "Edit invoice details": [
         "Изменение информации счета-фактуры"
@@ -634,6 +649,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Попробуйте сохранить еще раз. Не удалось сохранить из-за: ${ saveError }"
       ],
+      "Turn off": [
+        "Отключить"
+      ],
+      "Turn on": [
+        "Включить"
+      ],
       "Unlock": [
         "Разблокировать"
       ],
@@ -666,6 +687,9 @@
       ],
       "Use authentication code": [
         "Используйте код аутентификации"
+      ],
+      "Use group permissions": [
+        "Использовать права группы"
       ],
       "Use recovery code": [
         "Использовать код восстановления"
@@ -3466,6 +3490,9 @@
       "30-day money-back guarantee.": [
         "30-дневная гарантия возврата денег."
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ protonSubdomain } управляется ${ BRAND_NAME }, что позволяет быстро настроить поддомен. ${ learnMoreLink }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Имя, которое поможет вам определить, где вы его используете, чтобы вы могли легко отозвать или продлить его позже."
       ],
@@ -3562,6 +3589,9 @@
       "Amount due": [
         "Сумма к оплате"
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Вы уверены, что хотите отменить редактирование группы?"
+      ],
       "Are you sure you want to discard your changes?": [
         "Вы уверены, что хотите отменить изменения?"
       ],
@@ -3570,6 +3600,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы уверены, что хотите удалить административные полномочия у этого пользователя?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Вы уверены, что хотите удалить всех участников из этой группы?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Вы уверены, что хотите удалить домен ${ boldDomain }?"
@@ -3714,6 +3747,9 @@
         "Удаление ${ deletedServerCount } шлюзовых серверов",
         "Удаление ${ deletedServerCount } шлюзовых серверов",
         "Удаление ${ deletedServerCount } шлюзовых серверов"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Отключение двухфакторной аутентификации сделает вашу учетную запись менее защищенной. Продолжайте только при крайней необходимости."
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
@@ -4561,6 +4597,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Проверка может занять до одного часа. После успешной проверки не удаляйте запись TXT, так как она необходима для подтверждения того, что вы продолжаете владеть доменом."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Это отключит двухфакторную аутентификацию, в том числе приложение для аутентификации и ключи безопасности."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Это позволит использовать PayPal для оплаты подписки на ${ BRAND_NAME }. Мы перенаправим вас на PayPal в новой вкладке браузера. Если вы используете какие-либо блокировщики всплывающих окон, пожалуйста, отключите их, чтобы продолжить."
       ],
@@ -5360,6 +5399,12 @@
       "Gift code": [
         "Подарочный код"
       ],
+      "Group address": [
+        "Адрес группы"
+      ],
+      "Group members": [
+        "Участники группы"
+      ],
       "Group name": [
         "Название группы"
       ],
@@ -5616,9 +5661,6 @@
     "Label for new member": {
       "Admin": [
         "Администратор"
-      ],
-      "Private": [
-        "Конфиденциальный"
       ],
       "VPN connections": [
         "Подключения к VPN"
@@ -6318,9 +6360,6 @@
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
-      "Hide-my-email aliases": [
-        "Псевдонимы hide-my-email"
-      ],
       "High-speed streaming": [
         "Высокоскоростной стриминг"
       ],
@@ -6519,12 +6558,6 @@
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
       ],
-      "Up to 15 email addresses": [
-        "До 15 адресов электронной почты"
-      ],
-      "Up to 3 TB of storage": [
-        "До 3 ТБ хранилища"
-      ],
       "User credential management": [
         "Управление учетными данными пользователя"
       ],
@@ -6548,17 +6581,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Получите неограниченное количество псевдонимов с SimpleLogin от ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Отложите сообщения и получите напоминание в нужное время"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Используйте собственный адрес домена электронной почты, например, you@yourname.com."
       ]
     },
     "new_plans: heading": {
@@ -6684,6 +6711,14 @@
         "условия"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -6696,14 +6731,6 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -7432,8 +7459,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
+      "Please select billing country": [
+        "Пожалуйста, выберите страну выставления счета"
+      ],
+      "Please select billing state": [
+        "Пожалуйста, выберите государство выставления счета"
+      ],
+      "Please select your billing country first.": [
+        "Сначала выберите страну для выставления счета."
+      ],
+      "Please select your billing state first.": [
+        "Сначала выберите государство для выставления счета."
+      ],
       "Processing payment": [
         "Обработка платежа"
+      ],
+      "Select billing country to pay": [
+        "Для оплаты, пожалуйста выберите страну"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Купон действителен при продлении на ${ couponRedemptions }. Затем он будет автоматически продлен по цене ${ price } на ${ months } месяцев. Вы можете отменить его в любое время."
@@ -9280,6 +9322,9 @@
       ],
       "Preference updated": [
         "Предпочтение обновлено"
+      ],
+      "Preferences updated": [
+        "Настройки обновлены"
       ]
     },
     "Suffix": {
@@ -10228,9 +10273,6 @@
       ],
       "Optional": [
         "Необязательно"
-      ],
-      "Private": [
-        "Частный"
       ],
       "Remember to share the user's sign in details with them.": [
         "Не забудьте сообщить им пользовательские данные для входа в систему."

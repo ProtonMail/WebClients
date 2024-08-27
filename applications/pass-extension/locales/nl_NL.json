@@ -128,6 +128,9 @@
       "Create card": [
         "Kaart aanmaken"
       ],
+      "Create identity": [
+        "Identiteit aanmaken"
+      ],
       "Create login": [
         "Login aanmaken"
       ],
@@ -142,6 +145,9 @@
       ],
       "Creating vault": [
         "Kluis aanmaken"
+      ],
+      "Custom section": [
+        "Aangepaste sectie"
       ],
       "Customize": [
         "Personaliseer"
@@ -284,6 +290,9 @@
       "Manage access": [
         "Beheer toegang"
       ],
+      "Manage vault access": [
+        "Toegang kluis beheren"
+      ],
       "Manually sync your data": [
         "Synchroniseer uw data manueel"
       ],
@@ -410,6 +419,9 @@
       "Set access level": [
         "Stel toegangsniveau in"
       ],
+      "Set extra password": [
+        "Stel uw extra wachtwoord in"
+      ],
       "Setup 2FA": [
         "2FA Instellen"
       ],
@@ -484,6 +496,9 @@
       ],
       "Upgrade now to share with more people": [
         "Upgrade nu om met meer mensen te delen"
+      ],
+      "Via secure link": [
+        "Via beveiligde link"
       ],
       "View app logs": [
         "Bekijk app logs"
@@ -996,6 +1011,9 @@
       "Access your passwords on the go with our mobile apps.": [
         "Krijg onderweg toegang tot uw wachtwoorden met onze mobiele apps."
       ],
+      "Add a username field": [
+        "Veld gebruikersnaam toevoegen"
+      ],
       "Admin": [
         "Beheerder"
       ],
@@ -1136,6 +1154,9 @@
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Voer verificatiecode in. Cijfer ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Voer uw extra wachtwoord in"
       ],
       "Enter your PIN code": [
         "Voer uw pincode in"
@@ -1383,6 +1404,9 @@
       ],
       "Save passkey": [
         "Passkey opslaan"
+      ],
+      "Secure links": [
+        "Beveiligde links"
       ],
       "Select an existing login item to update.": [
         "Selecteer een bestaand login item om bij te werken."
@@ -1633,6 +1657,9 @@
       "15 minutes": [
         "15 minuten"
       ],
+      "2 minutes": [
+        "2 minuten"
+      ],
       "24 hours": [
         "24 uur"
       ],
@@ -1711,6 +1738,9 @@
       "Autosuggest": [
         "Automatische suggestie"
       ],
+      "Birthdate": [
+        "Geboortedatum"
+      ],
       "Capital letters (A-Z)": [
         "Hoofdletters (A-Z)"
       ],
@@ -1747,6 +1777,9 @@
       "Country or Region": [
         "Land of regio"
       ],
+      "County": [
+        "Provincie"
+      ],
       "Create a credit card": [
         "Kredietkaart aanmaken"
       ],
@@ -1758,6 +1791,9 @@
       ],
       "Create an encrypted note": [
         "Versleutelde notitie aanmaken"
+      ],
+      "Create an Identity": [
+        "Identiteit aanmaken"
       ],
       "Create new vault": [
         "Nieuwe kluis aanmaken"
@@ -1786,6 +1822,12 @@
       "Email": [
         "E-mailadres"
       ],
+      "Email (alias)": [
+        "E-mail (alias)"
+      ],
+      "Email (new alias)": [
+        "E-mail (nieuwe alias)"
+      ],
       "Email aliases": [
         "E-mailaliassen"
       ],
@@ -1803,6 +1845,9 @@
       ],
       "Export": [
         "Exporteren"
+      ],
+      "Extra password": [
+        "Extra wachtwoord"
       ],
       "Field name": [
         "Veldnaam"
@@ -1861,6 +1906,9 @@
       "Include numbers (0-9)": [
         "Nummers toevoegen (0-9)"
       ],
+      "Instagram handle": [
+        "Instagram gebruikersnaam"
+      ],
       "Invitations": [
         "Uitnodigingen"
       ],
@@ -1917,6 +1965,9 @@
       ],
       "Members": [
         "Leden"
+      ],
+      "Middle name": [
+        "Tussenvoegsel"
       ],
       "Modified": [
         "Gewijzigd"
@@ -1992,6 +2043,9 @@
       ],
       "Personal details": [
         "Persoonlijke gegevens"
+      ],
+      "Personal website": [
+        "Persoonlijke website"
       ],
       "PGP-encrypted JSON (recommended)": [
         "JSON PGP-versleuteld (aanbevolen)"
@@ -2113,6 +2167,9 @@
       "Unlock ${ PASS_APP_NAME }": [
         "Ontgrendel ${ PASS_APP_NAME }"
       ],
+      "Unlock with": [
+        "Ontgrendelen met"
+      ],
       "Unnamed Credit Card": [
         "Naamloze kredietkaart"
       ],
@@ -2161,8 +2218,17 @@
       "Work email": [
         "Zakelijke e-mail"
       ],
+      "Work phone number": [
+        "Telefoonnummer werk"
+      ],
+      "X handle": [
+        "X-gebruikersnaam"
+      ],
       "You are about to create": [
         "U staat op het punt volgende aan te maken"
+      ],
+      "ZIP or Postal code": [
+        "Postcode"
       ]
     },
     "Message": {
@@ -2304,6 +2370,12 @@
       "Auto-lock update": [
         "Automatische vergrendelingsupdate"
       ],
+      "Autofill": [
+        "Automatisch aanvullen"
+      ],
+      "Confirm extra password": [
+        "Bevestig extra wachtwoord"
+      ],
       "Confirm PIN code": [
         "Pincode bevestigen"
       ],
@@ -2331,6 +2403,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Tevreden met ${ PASS_APP_NAME }?"
       ],
+      "Enter your extra password": [
+        "Voer uw extra wachtwoord in"
+      ],
       "Enter your password": [
         "Voer uw wachtwoord in"
       ],
@@ -2357,6 +2432,9 @@
       ],
       "History": [
         "Geschiedenis"
+      ],
+      "Identity": [
+        "Identiteit"
       ],
       "Import - ${ date }": [
         "Importeren - ${ date }"
@@ -2412,6 +2490,9 @@
       "Pinned (${ items.length })": [
         "Vastgemaakt (${ items.length })"
       ],
+      "Remove extra password": [
+        "Verwijder uw extra wachtwoord"
+      ],
       "Restore this version?": [
         "Deze versie herstellen?"
       ],
@@ -2423,6 +2504,9 @@
       ],
       "Set access level": [
         "Stel toegangsniveau in"
+      ],
+      "Set extra password": [
+        "Stel uw extra wachtwoord in"
       ],
       "Set up 2FA for more security": [
         "2FA instellen voor meer beveiliging"

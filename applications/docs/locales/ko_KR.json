@@ -1943,9 +1943,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "연락처 병합 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "다른 많은 것들 중에서 프리미엄 기능인 모든 사람에게 이메일이나 초대장을 한 번에 보내 시간을 절약하세요. 오늘 업그레이드하세요."
-      ],
       "Set a data recovery method to prevent data loss.": [
         "데이터 손실을 방지하려면 데이터 복구 방법을 설정하세요."
       ],
@@ -4107,7 +4104,7 @@
         "구독이 매달 갱신됩니다."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "구독 종료 예정: ${ planName }의 혜택을 유지하려면 ${ byDate }까지 재 활성화해주세요. ${ reactivateLink }"
+        "구독 종료 예정: ${ planName }의 혜택을 계속 이용하려면 ${ byDate }까지 재활성화해주세요. ${ reactivateLink }"
       ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
@@ -5611,9 +5608,6 @@
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email 별칭"
-      ],
       "High-speed streaming": [
         "고속 스트리밍"
       ],
@@ -5785,12 +5779,6 @@
       "Up to ${ totalStorageSize } storage": [
         "최대 ${ totalStorageSize } 스토리지"
       ],
-      "Up to 15 email addresses": [
-        "최대 15개의 이메일 주소"
-      ],
-      "Up to 3 TB of storage": [
-        "최대 3 TB 스토리지"
-      ],
       "User credential management": [
         "사용자 자격 증명 관리"
       ],
@@ -5811,17 +5799,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "${ BRAND_NAME } 의 SimpleLogin으로 무제한 별칭을 얻으세요"
-      ],
       "Snooze messages and get reminded when you want": [
         "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "사용자 지정 이메일 도메인 주소를 사용하세요. 예시, you@yourname.com"
       ]
     },
     "new_plans: heading": {

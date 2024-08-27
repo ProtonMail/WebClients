@@ -157,6 +157,12 @@
       "Allow": [
         "Erlauben"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Ende-zu-Ende-verschlüsselte E-Mail für diese Gruppe zulassen"
+      ],
+      "Always allow sending": [
+        "Senden immer erlauben"
+      ],
       "Apply": [
         "Übernehmen"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "Änderungen verwerfen"
+      ],
+      "Domain name": [
+        "Domainname"
       ],
       "Don't show again": [
         "Nicht wieder anzeigen"
@@ -1111,6 +1120,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Versuche erneut zu speichern. Das Speichern ist fehlgeschlagen aufgrund von: ${ saveError }"
       ],
+      "Turn off": [
+        "Deaktivieren"
+      ],
+      "Turn on": [
+        "Einschalten"
+      ],
       "Underline": [
         "Unterstreichen"
       ],
@@ -1176,6 +1191,9 @@
       ],
       "Use authentication code": [
         "Authentifizierungscode verwenden"
+      ],
+      "Use group permissions": [
+        "Verwende Gruppenrechte"
       ],
       "Use recovery code": [
         "Wiederherstellungscode verwenden"
@@ -3365,9 +3383,6 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Nachrichten, die länger als 30 Tage im Papierkorb oder Spam-Ordner liegen, automatisch löschen. Genieße diesen und weitere Vorteile, die du durch ein Upgrade erhältst."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Herzlichen Glückwunsch! Du hast das Maximum von ${ rewardsLimit } kostenlosen Monaten von ${ plusPlanName } verdient."
       ],
@@ -4196,6 +4211,9 @@
       ],
       "Authentication error.": [
         "Authentifizierungsfehler."
+      ],
+      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
+        "Die automatische Antwort überschreitet die zulässige Länge. Bitte kürze die Nachricht so, dass sie innerhalb des Limits liegt."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automatische Antworten sind eine kostenpflichtige Funktion. Bitte führe ein Upgrade auf ein kostenpflichtiges Konto durch, um diese Funktion nutzen zu können."
@@ -6579,6 +6597,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Eine ${ protonSubdomain } wird von ${ BRAND_NAME } gehostet, wodurch du schnell eine Subdomain einrichten kannst. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Um Gruppen zu erstellen, ist eine benutzerdefinierte Domäne erforderlich. Wenn Du noch keine benutzerdefinierte Domäne eingerichtet hast, tu dies zuerst unter ${ linkToDomainPage }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ein Name, mit dem du erkennen kannst, wo es im Einsatz ist, damit du es später leicht widerrufen oder verlängern kannst."
       ],
@@ -7278,6 +7299,12 @@
       "Gateways": [
         "Gateways"
       ],
+      "Gateways monitoring is disabled.": [
+        "Die Gateway-Überwachung ist deaktiviert."
+      ],
+      "Gateways monitoring is enabled.": [
+        "Die Gateway-Überwachung ist aktiviert."
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Wenn du eine neue Wiederherstellungsphrase erstellst, wird dadurch deine bisherige Phrase deaktiviert."
       ],
@@ -7298,6 +7325,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gehe zu deinem Identitätsanbieter, besorge die SAML-Metadaten für ${ appName } und importiere sie hier."
+      ],
+      "Group deleted": [
+        "Gruppe gelöscht"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppiere E-Mails in derselben Konversation in deinem Posteingang oder zeige diese getrennt an."
@@ -7452,6 +7482,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installiere eine Serverkonfigurationsdatei, um eine Verbindung zu einem bestimmten Server im Land deiner Wahl herzustellen."
+      ],
+      "Internal user": [
+        "Interner Benutzer"
       ],
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
@@ -7663,6 +7696,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Kalender wird geladen, bitte warte. Du wirst in einer neuen Registerkarte zu unserer Terminplanungsplattform Calendly weitergeleitet."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Der aktuelle Status der Gateway-Überwachung wird geladen."
       ],
       "Loading preview": [
         "Vorschau wird geladen"
@@ -8367,6 +8403,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Dies kann je nach Gerät ein paar Sekunden oder einige Minuten dauern."
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Diese Änderung wird sich in ungefähr 1 Stunde auf Ihrer gesamten Infrastruktur auswirken."
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dies kann einige Zeit dauern. Bitte schließe diese Seite nicht und trenne die Verbindung zum Internet nicht."
       ],
@@ -8564,6 +8603,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "Der Zwei-Passwörter-Modus benutzt separate Passwörter für die Anmeldung und das Entschlüsseln des Postfachs. Dies bietet einen kleinen Sicherheitsvorteil in einigen Situationen. Unabhängig davon empfehlen wir den meisten Benutzern den Ein-Passwort-Modus. Um auf den Zwei-Passwörter-Modus zu wechseln, lege zuerst ein Anmeldepasswort fest und füge dann ein zweites Passwort hinzu."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "Der aktuelle Status der Gateways kann nicht überprüft werden."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Signatur der Wiederherstellungsdatei konnte nicht bestätigt werden. Bitte kontaktiere den Support."
@@ -8853,6 +8895,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Mit einer verschlüsselten ${ BRAND_NAME }-Adresse kannst du alle ${ BRAND_NAME }-Dienste nutzen."
       ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Mit Gruppen kannst Du schnell und einfach E-Mails an alle Mitglieder einer bestimmten Gruppe senden."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Mit deinem aktuellen Abonnement kannst du mit deiner @pm.me-Adresse nur Nachrichten empfangen. Führe ein Upgrade durch, um Nachrichten senden und weitere @pm.me-Adressen hinzufügen zu können."
       ],
@@ -8895,6 +8940,9 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Du verwendest aktuell ${ usedMembers } von deiner ${ maxMembers } verfügbaren Benutzerlizenz.",
         "Du verwendest aktuell ${ usedMembers } von deinen ${ maxMembers } verfügbaren Benutzerlizenzen."
+      ],
+      "You are not currently in any groups and there are no pending invitations": [
+        "Du bist derzeit in keiner Gruppe und es gibt auch keine ausstehenden Einladungen"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du bist beim Konto ${ memberAddress } angemeldet."
@@ -9229,6 +9277,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Abgelehnt"
+      ],
+      "Paused": [
+        "Angehalten"
+      ],
       "Pending": [
         "Ausstehend"
       ],
@@ -10622,9 +10676,6 @@
       "Admin": [
         "Admin"
       ],
-      "Private": [
-        "Privat"
-      ],
       "VPN connections": [
         "VPN-Verbindungen"
       ]
@@ -11762,9 +11813,6 @@
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-Aliasse"
-      ],
       "High-speed streaming": [
         "Hochgeschwindigkeits-Streaming"
       ],
@@ -11958,12 +12006,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
       ],
-      "Up to 15 email addresses": [
-        "Bis zu 15 E-Mail-Adressen"
-      ],
-      "Up to 3 TB of storage": [
-        "Bis zu 3 TB Speicherplatz"
-      ],
       "User credential management": [
         "Verwaltung von Benutzeranmeldedaten"
       ],
@@ -11985,17 +12027,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain2 } für Nachrichten-Abonnements."
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Schalte Nachrichten stumm und werde daran erinnert wann immer du möchtest."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Verwende deine eigenen E-Mail-Domain-Adressen, z. B. du@deinedomain.de"
       ]
     },
     "new_plans: heading": {
@@ -15981,6 +16017,9 @@
       "Preference updated": [
         "Einstellungen aktualisiert"
       ],
+      "Preferences updated": [
+        "Einstellungen aktualisiert"
+      ],
       "Status updated": [
         "Status aktualisiert"
       ]
@@ -16399,6 +16438,12 @@
       ],
       "Connection events": [
         "Verbindungsereignisse"
+      ],
+      "Connection monitor disabled": [
+        "Verbindungsüberwachung deaktiviert"
+      ],
+      "Connection monitor enabled": [
+        "Verbindungsüberwachung aktiviert"
       ],
       "Contact us": [
         "Kontaktiere uns"
@@ -16956,6 +17001,9 @@
       "Profile": [
         "Profil"
       ],
+      "QRCode": [
+        "QR-Code"
+      ],
       "Recommended": [
         "Empfohlen"
       ],
@@ -17169,6 +17217,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "Triff Vorsichtsmaßnahmen, um Datenverluste zu vermeiden!"
+      ],
+      "Text": [
+        "Text"
       ],
       "Theme": [
         "Farbschema"
@@ -17610,8 +17661,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Aliase, Freigabe, integrierter 2FA und mehr."
       ],
+      "Group membership paused": [
+        "Gruppenmitgliedschaft pausiert"
+      ],
       "Sending member invitation": [
         "Mitgliedseinladung wird versendet"
+      ],
+      "User declined invitation": [
+        "Der Benutzer hat die Einladung abgelehnt"
       ],
       "Waiting user to accept the invitation": [
         "Auf die Annahme der Einladung wartender Benutzer"
@@ -17754,9 +17811,6 @@
       ],
       "Optional": [
         "Optional"
-      ],
-      "Private": [
-        "Privat"
       ],
       "Remember to share the user's sign in details with them.": [
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
