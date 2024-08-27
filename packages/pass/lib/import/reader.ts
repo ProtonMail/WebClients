@@ -1,25 +1,25 @@
 import { c } from 'ttag';
 
-import { readKasperskyData } from '@proton/pass/lib/import/providers/kaspersky.reader';
-import { readProtonPassCSV } from '@proton/pass/lib/import/providers/protonpass.csv.reader';
+import { readKasperskyData } from '@proton/pass/lib/import/providers/kaspersky/kaspersky.reader';
+import { readProtonPassCSV } from '@proton/pass/lib/import/providers/protonpass/protonpass.csv.reader';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { read1Password1PifData } from './providers/1password.reader.1pif';
-import { read1Password1PuxData } from './providers/1password.reader.1pux';
-import { readBitwardenData } from './providers/bitwarden.reader';
-import { readChromiumData } from './providers/chromium.reader';
-import { readDashlaneDataCSV } from './providers/dashlane.csv.reader';
-import { readDashlaneDataZIP } from './providers/dashlane.zip.reader';
-import { readEnpassData } from './providers/enpass.reader';
-import { readFirefoxData } from './providers/firefox.reader';
-import { readKeePassData } from './providers/keepass.reader';
-import { readKeeperData } from './providers/keeper.reader';
-import { readLastPassData } from './providers/lastpass.reader';
-import { readNordPassData } from './providers/nordpass.reader';
-import { decryptProtonPassImport, readProtonPassZIP } from './providers/protonpass.zip.reader';
-import { readRoboformData } from './providers/roboform.reader';
-import { readSafariData } from './providers/safari.reader';
+import { read1Password1PifData } from './providers/1password/1pif.reader';
+import { read1Password1PuxData } from './providers/1password/1pux.reader';
+import { readBitwardenData } from './providers/bitwarden/bitwarden.reader';
+import { readChromiumData } from './providers/chromium/chromium.reader';
+import { readDashlaneDataCSV } from './providers/dashlane/dashlane.csv.reader';
+import { readDashlaneDataZIP } from './providers/dashlane/dashlane.zip.reader';
+import { readEnpassData } from './providers/enpass/enpass.reader';
+import { readFirefoxData } from './providers/firefox/firefox.reader';
+import { readKeePassData } from './providers/keepass/keepass.reader';
+import { readKeeperData } from './providers/keeper/keeper.reader';
+import { readLastPassData } from './providers/lastpass/lastpass.reader';
+import { readNordPassData } from './providers/nordpass/nordpass.reader';
+import { decryptProtonPassImport, readProtonPassZIP } from './providers/protonpass/protonpass.zip.reader';
+import { readRoboformData } from './providers/roboform/roboform.reader';
+import { readSafariData } from './providers/safari/safari.reader';
 import { type ImportPayload, ImportProvider, type ImportReaderPayload } from './types';
 
 export const extractFileExtension = (fileName: string): string => {
