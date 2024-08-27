@@ -1,6 +1,6 @@
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
-import { hasBundle, hasTwoYears } from '@proton/shared/lib/helpers/subscription';
+import { hasBundle, hasTwoYears, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import type { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -13,6 +13,7 @@ const isEligible = ({ subscription, user, protonConfig }: Props) => {
     const parentApp = getAppFromPathnameSafe(window.location.pathname);
     const hasUnlimited = hasBundle(subscription);
     const hasTwoYear = hasTwoYears(subscription);
+    const isNotExternal = !isManagedExternally(subscription);
 
     // check storage and duration
     const hasValidApp =
@@ -23,7 +24,7 @@ const isEligible = ({ subscription, user, protonConfig }: Props) => {
     const { canPay, isDelinquent } = user;
     const notDelinquent = !isDelinquent;
 
-    return hasValidApp && canPay && notDelinquent && hasUnlimited && hasTwoYear;
+    return hasValidApp && canPay && notDelinquent && hasUnlimited && hasTwoYear && isNotExternal;
 };
 
 export default isEligible;
