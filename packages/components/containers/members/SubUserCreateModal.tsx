@@ -201,6 +201,7 @@ const SubUserCreateModal = ({
             return await dispatch(
                 createMember({
                     api: silentApi,
+                    single: true,
                     member: {
                         ...model,
                         addresses: [emailAddressParts],
