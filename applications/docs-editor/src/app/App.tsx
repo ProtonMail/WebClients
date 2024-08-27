@@ -93,6 +93,7 @@ export function App({ nonInteractiveMode = false }: Props) {
 
         async loadUserSettings(settings) {
           void loadLocales({ locales, userSettings: settings })
+          application.setLocale(settings.Locale)
         },
 
         async showEditor() {
