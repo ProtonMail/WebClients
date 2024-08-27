@@ -14,7 +14,7 @@ interface Props extends ModalOwnProps {
     header?: ReactNode;
     subline?: string | JSX.Element;
     className?: string;
-    key?: string;
+    key?: React.Key;
     hasClose?: boolean;
 }
 
