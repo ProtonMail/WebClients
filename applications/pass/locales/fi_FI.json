@@ -1143,7 +1143,7 @@
         "Ennen kuin viet tietosi tässä muodossa, avaa Safarin asetukset -> \"Yleiset\" -välilehti -> poista asetus \"Avaa turvalliset tiedostot lataamisen jälkeen\" käytöstä. Tämä estää Safaria purkamasta vietyjä tiedostoja virheellisesti."
       ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
-        "Biometrinen lukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in salasanallasi"
+        "Biometrinen avaus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in sillä."
       ],
       "Biometrics will be disabled and will need to be enabled again.": [
         "Biometria poistetaan käytöstä, ja se on otettava käyttöön uudelleen."
@@ -1221,7 +1221,7 @@
         "Tuo pudottamalla"
       ],
       "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Safari-selaimen laajennusten rajoitusten vuoksi tiedostopääte \".pgp\" puuttuu tietojen viennin jälkeen. Nimeä tiedosto uudelleen viennin jälkeen siten, että sillä on \".pgp\" -pääte (esim. file.pgp)."
+        "Safarin laajennusrajoitusten vuoksi tiedostopääte \".pgp\" puuttuu tietojen viennin jälkeen. Uudelleennimeä tiedosto viennin jälkeen siten, että sillä on \".pgp\" -pääte (esim. tiedosto.pgp)."
       ],
       "Editor": [
         "Muokkaus"
@@ -1248,10 +1248,10 @@
         "Suojaa tietojasi ottamalla automaattilukitus käyttöön"
       ],
       "Enabling biometrics auto-lock": [
-        "Automaattista biometristä lukitusta otetaan käyttöön"
+        "Automaattista biometristä avausta otetaan käyttöön"
       ],
       "Enabling biometrics lock failed": [
-        "Automaattisen biometrisen lukituksen käyttöönotto epäonnistui"
+        "Automaattisen biometrisen avauksen käyttöönotto epäonnistui"
       ],
       "Enabling offline mode...": [
         "Yhteydetöntä tilaa otetaan käyttöön..."
@@ -1531,13 +1531,13 @@
         "Vahvista lisäsalasanasi"
       ],
       "Please confirm your extra password in order to auto-lock with biometrics.": [
-        "Vahvista lisäsalasanasi käyttääksesi automaattista biometristä lukitusta."
+        "Käytä automaattista biometristä avausta vahvistamalla lisäsalasanasi."
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Vahvista lisäsalasanasi käyttääksesi automaattista lisäsalasanalukitusta."
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
-        "Vahvista lisäsalasanasi poistaaksesi nykyisen lukitustapasi."
+        "Poista nykyinen lukitustapa vahvistamalla lisäsalasanasi."
       ],
       "Please confirm your extra password in order to update the auto-lock time.": [
         "Vahvista lisäsalasanasi muuttaaksesi automaattilukituksen viivettä."
@@ -1546,7 +1546,7 @@
         "Vahvista salasanasi"
       ],
       "Please confirm your password in order to auto-lock with biometrics.": [
-        "Käytä automaattista biometristä lukitusta vahvistamalla salasanasi."
+        "Käytä automaattista biometristä avausta vahvistamalla salasanasi."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Käytä automaattista salasanalukitusta vahvistamalla salasanasi."
@@ -1700,7 +1700,7 @@
         "Käyttäjä ei ole vielä hyväksynyt kutsua."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Tätä vientiä ei salata, eli kuka tahansa, jolla on pääsy vietyyn tiedostoon, voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
+        "Vientitiedosto on salaamaton, eli kuka tahansa sen käsittelijä voi nähdä salasanasi. Tietojesi suojaamiseksi, poista tiedosto heti kun et enää tarvitse sitä."
       ],
       "This option is currently not available on your device.": [
         "Tämä valinta ei ole tällä hetkellä käytettävissä laitteellasi."
@@ -1730,7 +1730,7 @@
         "Rajattomasti Hide-my-email-aliaksia"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
-        "Avaa ${ PASS_SHORT_APP_NAME } biometrialla"
+        "Avaa ${ PASS_SHORT_APP_NAME } biometrisillä tiedoilla"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Avaa ${ PASS_SHORT_APP_NAME } ${ BRAND_NAME }-salasanallasi"
@@ -1904,7 +1904,7 @@
         "2FA-salaisuus (TOTP)"
       ],
       "2FA token (TOTP)": [
-        "Todennuskoodi (TOTP)"
+        "Vahvistuskoodi (TOTP)"
       ],
       "30 days": [
         "30 päivän kuluttua"
@@ -2123,7 +2123,7 @@
         "Luo suojattu linkki tähän kohteeseen"
       ],
       "Generic CSV": [
-        "Yleispätevä CSV"
+        "Geneerinen CSV"
       ],
       "Grant": [
         "Myönnä"
@@ -2288,7 +2288,7 @@
         "Organisaatio"
       ],
       "Passkey": [
-        "Todentamisavain"
+        "Pääsyavain"
       ],
       "Passphrase": [
         "Tunnuslauseke"
@@ -2857,7 +2857,7 @@
         "Tervetuliaislahjamme sinulle"
       ],
       "Passkey": [
-        "Todentamisavain"
+        "Pääsyavain"
       ],
       "Password Health": [
         "Salasanaterveys"
@@ -3021,7 +3021,7 @@
     },
     "Warning": {
       "${ BRAND_NAME } password is required": [
-        "${ BRAND_NAME } -salasana vaaditaan"
+        "${ BRAND_NAME }-salasana vaaditaan"
       ],
       "A description of the problem is required": [
         "Ongelman kuvaus vaaditaan"
