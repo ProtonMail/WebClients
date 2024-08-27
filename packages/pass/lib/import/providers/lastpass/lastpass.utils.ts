@@ -19,6 +19,7 @@ export const LASTPASS_EXPECTED_HEADERS: (keyof LastPassItem)[] = [
 const LAST_PASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     'First Name': 'firstName',
     'Middle Name': 'middleName',
+    'Last Name': 'lastName',
     Gender: 'gender',
     Birthday: 'birthdate',
     Company: 'company',
@@ -60,10 +61,25 @@ const formatLastPassPhoneNumber = (value: string): string => {
     }
 };
 
+/** LastPass stores birthday's as {month},{day},{year}.
+ * It allows empty date parts so we should handle :
+ * - `,14,1990` -> `14, 1990`
+ * - `December,,1990` -> `December, 1990`
+ * - `December,,` -> `December`
+ * - `,,` -> `` */
+const formatLastPassBirthdate = (value: string): string =>
+    value
+        .split(',')
+        .map((str) => str.trim())
+        .filter(truthy)
+        .join(', ');
+
 const formatLastPassFieldValue = (value: string, field: IdentityFieldName): string => {
     switch (field) {
         case 'phoneNumber':
             return formatLastPassPhoneNumber(value);
+        case 'birthdate':
+            return formatLastPassBirthdate(value);
         default:
             return String(value || '');
     }
