@@ -115,6 +115,9 @@
       "characters": [
         "merkkiä"
       ],
+      "characters out of": [
+        "merkkiä /"
+      ],
       "Chat with us": [
         "Keskustele kanssamme"
       ],
@@ -586,7 +589,7 @@
         "Käytä eri maksutapaa"
       ],
       "Use authentication code": [
-        "Käytä todennuskoodia"
+        "Käytä vahvistuskoodia"
       ],
       "Use for sending": [
         "Käytä lähetykseen"
@@ -620,6 +623,9 @@
       ],
       "words": [
         "sanaa"
+      ],
+      "words out of": [
+        "sanaa /"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
@@ -1955,9 +1961,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja yhdistetään... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
-      ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Säästä aikaa lähettämällä viestejä ja kutsuja kaikille yhtä aikaa. Vain yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Aseta tiedoillesi palautustapa, jottet menetä niitä."
@@ -3984,7 +3987,7 @@
         "Versiohistoriaa ei ole käytettävissä"
       ],
       "No version history batches available": [
-        "Versiohistoriaeriä ei ole käytettävissä"
+        "Versiohistorian eriä ei ole käytettävissä"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Mikään tallennetuista avaimista ei kelpaa salaukseen. Viestien lähettämiseksi tähän osoitteeseen, lataa kelvollinen avain tai poista \"Salaa viestit\" käytöstä."
@@ -5701,9 +5704,6 @@
       "Group management (coming soon)": [
         "Ryhmähallinta (tulossa pian)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliakset"
-      ],
       "High-speed streaming": [
         "Nopea suoratoisto"
       ],
@@ -5878,12 +5878,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Jopa ${ totalStorageSize } tallennustilaa"
       ],
-      "Up to 15 email addresses": [
-        "15 sähköpostiosoitetta"
-      ],
-      "Up to 3 TB of storage": [
-        "Jopa 3 Tb tallennustilaa"
-      ],
       "User credential management": [
         "Käyttäjien tunnusten hallinta"
       ],
@@ -5905,17 +5899,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain2 } uutiskirjeille"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Hanki rajattomasti aliaksia ${ BRAND_NAME }in SimpleLogin-palvelusta"
-      ],
       "Snooze messages and get reminded when you want": [
         "Torkuta viestejä ja saa muistutuksia kun haluat"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Käytä sähköpostiosoitteissasi omaa verkkotunnustasi, kuten nimesi@esimerkki.fi"
       ]
     },
     "new_plans: heading": {
@@ -6384,7 +6372,7 @@
         "Jäsenen käyttöoikeus mitätöitiin"
       ],
       "Access updated": [
-        "Pääsy on päivitetty"
+        "Käyttöoikeus on päivitetty"
       ],
       "Access updated and shared": [
         "Käyttöoikeus muutettiin ja jaettiin"
@@ -7883,7 +7871,7 @@
         "Ota 2FA käyttöön"
       ],
       "Enter 2FA code": [
-        "Syötä todennuskoodi"
+        "Syötä vahvistuskoodi"
       ],
       "Enter your password": [
         "Syötä salasanasi"

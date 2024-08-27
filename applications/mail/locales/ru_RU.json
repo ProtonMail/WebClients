@@ -768,18 +768,6 @@
       "Move": [
         "Переместить"
       ],
-      "Move all conversations from this folder": [
-        "Переместить все цепочки писем из этой папки"
-      ],
-      "Move all conversations from this label": [
-        "Переместить все цепочки писем с этого ярлыка"
-      ],
-      "Move all messages from this folder": [
-        "Переместить все сообщения из этой папки"
-      ],
-      "Move all messages from this label": [
-        "Переместить все сообщения с этого ярлыка"
-      ],
       "Move all to archive": [
         "Переместить всё в Архив"
       ],
@@ -1576,6 +1564,9 @@
       ],
       "Fast and secure. No logs are kept.": [
         "Быстро и безопасно. Журналы не сохраняются."
+      ],
+      "Run on device": [
+        "Запуск на устройстве"
       ],
       "Run on servers": [
         "Выполнять на серверах"
@@ -3436,9 +3427,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
       ],
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Автоматически удалять сообщения старше 30 дней из Корзины и Спама. Воспользуйтесь этими и другими функциями после обновления."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
       ],
@@ -3478,9 +3466,6 @@
       "No labels": [
         "Нет ярлыков"
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Экономьте время, отправляя электронные письма или приглашения всем сразу, это одна из многих функций премиум-подписки. Купите её уже сегодня."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
       ],
@@ -3504,12 +3489,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Включите защиту от отслеживания электронной почты, чтобы предотвратить слежку рекламодателей и других лиц за вашим местоположением и активностью в сети."
-      ],
-      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Разблокируйте возможность планирования пользовательских сообщений и другие преимущества при улучшении тарифа."
-      ],
-      "Unlock custom snooze times when you upgrade your plan.": [
-        "При обновлении тарифа вы сможете настроить время задержки."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Обновите тариф, чтобы разблокировать более короткие адреса электронной почты и другие премиум-функции."
@@ -9552,9 +9531,6 @@
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
-      "Hide-my-email aliases": [
-        "Псевдонимы hide-my-email"
-      ],
       "High-speed streaming": [
         "Высокоскоростной стриминг"
       ],
@@ -9735,12 +9711,6 @@
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
       ],
-      "Up to 15 email addresses": [
-        "До 15 адресов электронной почты"
-      ],
-      "Up to 3 TB of storage": [
-        "До 3 ТБ хранилища"
-      ],
       "User credential management": [
         "Управление учетными данными пользователя"
       ],
@@ -9764,17 +9734,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Получите неограниченное количество псевдонимов с SimpleLogin от ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Отложите сообщения и получите напоминание в нужное время"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Используйте собственный адрес домена электронной почты, например, you@yourname.com."
       ]
     },
     "new_plans: heading": {
@@ -10417,6 +10381,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
+      ],
+      "Please select billing country": [
+        "Пожалуйста, выберите страну выставления счета"
+      ],
+      "Please select billing state": [
+        "Пожалуйста, выберите государство выставления счета"
+      ],
+      "Please select your billing country first.": [
+        "Сначала выберите страну для выставления счета."
+      ],
+      "Please select your billing state first.": [
+        "Сначала выберите государство для выставления счета."
+      ],
+      "Select billing country to pay": [
+        "Для оплаты, пожалуйста выберите страну"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Купон действителен при продлении на ${ couponRedemptions }. Затем он будет автоматически продлен по цене ${ price } на ${ months } месяцев. Вы можете отменить его в любое время."
@@ -12430,9 +12409,6 @@
       ],
       "Self-destruction set": [
         "Самоуничтожение установлено"
-      ],
-      "Text copied to clipboard": [
-        "Текст скопирован в буфер обмена"
       ],
       "Thanks for the feedback!": [
         "Спасибо за отзыв!"

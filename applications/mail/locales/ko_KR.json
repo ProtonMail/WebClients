@@ -756,18 +756,6 @@
       "Move": [
         "이동"
       ],
-      "Move all conversations from this folder": [
-        "이 폴더의 모든 대화 이동"
-      ],
-      "Move all conversations from this label": [
-        "이 라벨의 모든 대화 이동"
-      ],
-      "Move all messages from this folder": [
-        "이 폴더의 모든 메시지 이동"
-      ],
-      "Move all messages from this label": [
-        "이 라벨의 모든 메시지 이동"
-      ],
       "Move all to archive": [
         "모든 항목을 보관함으로 이동"
       ],
@@ -3385,9 +3373,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2단계 인증은 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
       ],
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "휴지통과 스팸함의 30일 이상 된 메시지를 자동으로 삭제합니다. 업그레이드하여 이 기능과 다른 혜택들을 누려보세요."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
       ],
@@ -3424,9 +3409,6 @@
       "No labels": [
         "레이블 없음"
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "다른 많은 것들 중에서 프리미엄 기능인 모든 사람에게 이메일이나 초대장을 한 번에 보내 시간을 절약하세요. 오늘 업그레이드하세요."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
       ],
@@ -3450,12 +3432,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "위치와 온라인 활동을 추적하는 광고주와 기타 사람들로부터의 추적을 방지하기 위해 이메일 추적기 보호 기능을 활성화하세요."
-      ],
-      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "플랜을 업그레이드 하여 사용자 지정 메시지 스케줄과 다른 혜택을 잠금 해제하세요."
-      ],
-      "Unlock custom snooze times when you upgrade your plan.": [
-        "플랜 업그레이드로 사용자 지정 방해 금지 모드를 잠금해제 하세요."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "업그레이드하여 더 짧은 이메일 주소와 기타 프리미엄 기능을 잠금 해제하세요."
@@ -6132,7 +6108,7 @@
         "${ hoursDiff }시간 내에 만료"
       ],
       "file attached": [
-        "파일 손상됨"
+        "개 파일 첨부됨"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "필터는 수신과 발신을 포함한 모든 이메일에서 작동합니다. 각 필터는 적어도 이름, 조건 및 작업을 포함해야 합니다."
@@ -6756,7 +6732,7 @@
         "구독이 매달 갱신됩니다."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "구독 종료 예정: ${ planName }의 혜택을 유지하려면 ${ byDate }까지 재 활성화해주세요. ${ reactivateLink }"
+        "구독 종료 예정: ${ planName }의 혜택을 계속 이용하려면 ${ byDate }까지 재활성화해주세요. ${ reactivateLink }"
       ],
       "Temporarily unavailable. Please check back later.": [
         "일시적으로 사용할 수 없어요. 나중에 다시 시도해주세요."
@@ -9081,9 +9057,6 @@
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email 별칭"
-      ],
       "High-speed streaming": [
         "고속 스트리밍"
       ],
@@ -9255,12 +9228,6 @@
       "Up to ${ totalStorageSize } storage": [
         "최대 ${ totalStorageSize } 스토리지"
       ],
-      "Up to 15 email addresses": [
-        "최대 15개의 이메일 주소"
-      ],
-      "Up to 3 TB of storage": [
-        "최대 3 TB 스토리지"
-      ],
       "User credential management": [
         "사용자 자격 증명 관리"
       ],
@@ -9281,17 +9248,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "${ BRAND_NAME } 의 SimpleLogin으로 무제한 별칭을 얻으세요"
-      ],
       "Snooze messages and get reminded when you want": [
         "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "사용자 지정 이메일 도메인 주소를 사용하세요. 예시, you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -11755,9 +11716,6 @@
       ],
       "Self-destruction set": [
         "자동 폭파 설정"
-      ],
-      "Text copied to clipboard": [
-        "텍스트가 클립보드에 복사되었습니다"
       ],
       "Thanks for the feedback!": [
         "의견을 주셔서 감사합니다!"

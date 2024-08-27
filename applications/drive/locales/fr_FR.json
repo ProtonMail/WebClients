@@ -2299,9 +2299,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Gagnez du temps en envoyant des messages ou des invitations à tout le monde en même temps (une fonctionnalité premium parmi bien d'autres). Changez d'abonnement dès maintenant."
-      ],
       "Set a data recovery method to prevent data loss.": [
         "Définissez une méthode de récupération pour éviter la perte de données."
       ],
@@ -4565,9 +4562,6 @@
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
       ],
-      "Keep your file secure with end-to-end encryption in ${ DRIVE_APP_NAME }.": [
-        "Gardez vos fichiers en sécurité avec le chiffrement de bout en bout dans ${ DRIVE_APP_NAME }."
-      ],
       "Key fingerprint": [
         "Empreinte de la clé"
       ],
@@ -6740,6 +6734,15 @@
       "1 user": [
         "1 utilisateur"
       ],
+      "10 email addresses/aliases": [
+        "10 adresses e-mail/alias"
+      ],
+      "10-year file version history": [
+        "Historique des versions de fichier sur 10 ans"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
       "24/7 account management support": [
         "Assistance à la gestion de compte 24h/24 et 7j/7"
       ],
@@ -6868,9 +6871,6 @@
       ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
-      ],
-      "Hide-my-email aliases": [
-        "Alias « hide-my-email »"
       ],
       "High-speed streaming": [
         "Streaming haut débit"
@@ -7046,12 +7046,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
       ],
-      "Up to 15 email addresses": [
-        "Jusqu'à 15 adresses e-mail"
-      ],
-      "Up to 3 TB of storage": [
-        "Jusqu'à 3 To d'espace de stockage"
-      ],
       "User credential management": [
         "Gestion des identifiants des utilisateurs"
       ],
@@ -7070,20 +7064,17 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domaine de messagerie personnalisé"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain2 } » pour les abonnements à des sites d'informations par exemple."
-      ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
         "Mettez les messages en attente et recevez un rappel quand vous le voulez."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Espace de stockage partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utilisez votre adresse e-mail personnalisée à partir de votre propre nom de domaine (vous@votrenom.com)."
       ]
     },
     "new_plans: heading": {
@@ -7185,6 +7176,20 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Commentaires"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus": [
+        "Je choisis Mail Plus"
+      ],
+      "Get Mail Plus for $1": [
+        "Obtenir Mail Plus pour 1 $"
+      ],
+      "Get Mail Plus for 1 €": [
+        "Obtenir Mail Plus pour 1 €"
+      ],
+      "Get Mail Plus for CHF 1": [
+        "Obtenir Mail Plus pour 1 CHF"
       ]
     },
     "new_plans: title": {
@@ -9981,9 +9986,6 @@
       ],
       "Show actions": [
         "Afficher les actions"
-      ],
-      "Sign in": [
-        "Se connecter"
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"

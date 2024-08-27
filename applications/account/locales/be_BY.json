@@ -157,6 +157,12 @@
       "Allow": [
         "Дазволіць"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Дазволіць зашыфраваныя скразным метадам лісты для гэтай групы"
+      ],
+      "Always allow sending": [
+        "Заўсёды дазваляць адпраўку"
+      ],
       "Apply": [
         "Ужыць"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "Адхіліць змены"
+      ],
+      "Domain name": [
+        "Назва дамена"
       ],
       "Don't show again": [
         "Больш не паказваць"
@@ -1111,6 +1120,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Паспрабуйце захаваць яшчэ раз пазней. Не ўдалося выканаць аперацыю па прычыне: ${ saveError }"
       ],
+      "Turn off": [
+        "Адключыць"
+      ],
+      "Turn on": [
+        "Уключыць"
+      ],
       "Underline": [
         "Падкрэслены"
       ],
@@ -1176,6 +1191,9 @@
       ],
       "Use authentication code": [
         "Выкарыстаць код аўтэнтыфікацыі"
+      ],
+      "Use group permissions": [
+        "Выкарыстаць дазволы групы"
       ],
       "Use recovery code": [
         "Выкарыстоўваць код аднаўлення"
@@ -3393,9 +3411,6 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Аўтаматычна ачышчае паведамленні, якія старэйшыя за 30 дзён са сметніцы і спама. Атрымлівайце асалоду ад гэтай і іншых пераваг пасля паляпшэння."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Віншуем! Вы зарабілі максімальную колькасць з ${ rewardsLimit } бясплатных месяцаў тарыфнага плана ${ plusPlanName }."
       ],
@@ -3638,7 +3653,7 @@
         "Адпавядае патрабаванням **GDPR** і **HIPAA**"
       ],
       "**ISO 27001** certified": [
-        "Сертыфікавана згода са стандартам **ISO 27001**"
+        "Сертыфікавана згодна са стандартам **ISO 27001**"
       ],
       "**Secure:** end-to-end encryption": [
         "**Абарона:** скразное шыфраванне"
@@ -4224,6 +4239,9 @@
       ],
       "Authentication error.": [
         "Памылка аўтэнтыфікацыі."
+      ],
+      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
+        "Аўтаматычны адказ на паведамленне перавышае дазволеную даўжыню. Скараціце тэкст паведамлення, каб яно адпавядала ўстаноўленаму абмежаванню."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Аўтаматычныя адказы з'яўляюцца платнай функцыяй. Перайдзіце на платны ўліковы запіс, каб карыстацца ёй."
@@ -6697,6 +6715,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Субдамен ${ protonSubdomain } размешчаны на ${ BRAND_NAME }, які дазваляе вам хутка наладжваць субдамены. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Для стварэння групы патрабуецца карыстальніцкі дамен. Калі ў вас адсутнічае наладжаны карыстальніцкі дамен, то спачатку стварыце яго па спасылцы ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Назва, якая дапаможа вам вызначыць, дзе вы яго выкарыстоўваеце, каб вы маглі лёгка адклікаць яго або падоўжыць яго пазней."
       ],
@@ -7420,6 +7441,12 @@
       "Gateways": [
         "Шлюзы"
       ],
+      "Gateways monitoring is disabled.": [
+        "Назіранне за шлюзамі выключана."
+      ],
+      "Gateways monitoring is enabled.": [
+        "Назіранне за шлюзамі ўключана."
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Генерацыя новай фразы аднаўлення прывядзе да дэактывацыі папярэдняй."
       ],
@@ -7440,6 +7467,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перайдзіце да свайго пастаўшчыка пасведчанняў, каб атрымаць метаданыя SAML для ${ appName } і імпартаваць іх сюды."
+      ],
+      "Group deleted": [
+        "Група выдалена"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Групуйце лісты ў адну размову ў папцы з уваходнымі лістамі або адлюстроўвайце іх асобна."
@@ -7596,6 +7626,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Усталюйце файл канфігурацыі сервера для падключэння да вызначанага сервера ў краіне, якую вы выбралі."
+      ],
+      "Internal user": [
+        "Унутраны карыстальнік"
       ],
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
@@ -7809,6 +7842,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Бягучы статус назірання загрузкі шлюзоў."
       ],
       "Loading preview": [
         "Загрузка папярэдняга прагляду"
@@ -8527,6 +8563,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Гэта можа заняць ад некалькіх секунд да некалькіх хвілін у залежнасці ад вашай прылады"
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Гэта змена будзе цалкам адлюстравана паміж усёй вашай інфраструктурай прыкладна за 1 гадзіну"
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Гэта можа заняць некаторы час. Не закрывайце старонку і не адключайцеся ад інтэрнэту."
       ],
@@ -8724,6 +8763,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "У рэжыме двух пароляў выкарыстоўваюцца асобныя паролі для ўваходу ў сістэму і для расшыфроўкі даных. Гэта дае нязначныя перавагі для бяспекі ў некаторых сітуацыях. Аднак для большасці карыстальнікаў мы раім рэжым аднаго пароля. Для пераключэння ў рэжым двух пароляў, спачатку задайце пароль для ўваходу, а потым другі пароль."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "Немагчыма праверыць бягучы статус назірання за шлюзамі."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Немагчыма праверыць файл аднаўлення подпісу. Звярніцеся ў службу падтрымкі."
@@ -9013,6 +9055,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME }"
       ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Пры дапамозе груп, вы можаце хутка і лёгка адпраўляць лісты ўсім людзям у канкрэтнай групе."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "На вашым бягучым тарыфным плане даступна толькі атрыманне лістоў з адраса @pm.me. Палепшыце яго, каб адпраўляць лісты і ствараць дадатковыя адрасы з выкарыстаннем @pm.me."
       ],
@@ -9063,6 +9108,9 @@
         "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
         "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій.",
         "Цяпер вы выкарыстоўваеце ${ usedMembers } з ${ maxMembers } даступных вам карыстальніцкіх ліцэнзій."
+      ],
+      "You are not currently in any groups and there are no pending invitations": [
+        "Пакуль вы не належыце да ніводнай з груп і ў вас адсутнічаюць запрашэнні, якія чакаюць разгляду"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Вы ўвайшлі ва ўліковы запіс ${ memberAddress }."
@@ -9411,6 +9459,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Адхілена"
+      ],
+      "Paused": [
+        "Прыпынена"
+      ],
       "Pending": [
         "У чаканні"
       ],
@@ -10686,6 +10740,9 @@
       "Time zone": [
         "Часавы пояс"
       ],
+      "Tips and insights": [
+        "Парады і аналітыка"
+      ],
       "To: ${ toEmail }": [
         "Каму: ${ toEmail }"
       ],
@@ -10811,9 +10868,6 @@
     "Label for new member": {
       "Admin": [
         "Адміністратар"
-      ],
-      "Private": [
-        "Прыватны"
       ],
       "VPN connections": [
         "Падключэнні па VPN"
@@ -12008,9 +12062,6 @@
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
       ],
-      "Hide-my-email aliases": [
-        "Псеўданімаў Hide-my-email"
-      ],
       "High-speed streaming": [
         "Высакахуткасная трансляцыя"
       ],
@@ -12212,12 +12263,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
       ],
-      "Up to 15 email addresses": [
-        "Да 15 адрасоў электроннай пошты"
-      ],
-      "Up to 3 TB of storage": [
-        "Да 3 ТБ сховішча"
-      ],
       "User credential management": [
         "Кіраванне ўліковымі данымі карыстальнікаў"
       ],
@@ -12241,17 +12286,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Атрымайце неабмежаваную колькасць псеўданімаў з SimpleLogin у ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Адкладайце паведамленні і атрымлівайце напаміны, калі вам гэта неабходна"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Выкарыстоўвайце свой уласны карыстальніцкі дамен адраса электроннай пошты. Напрыклад, you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -13498,7 +13537,7 @@
         "Запуск ${ PASS_APP_NAME }"
       ],
       "Limited time offer: ${ title } for ${ price } for the 1st month": [
-        "Прапанова абмежаваная па часе: ${ title } вам абыдзецца ў ${ price } за першы месяц"
+        "Прапанова абмежавана па часе: ${ title } вам абыдзецца ў ${ price } за першы месяц"
       ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Прапанова абмежаваная па часе. Атрымайце ${ title } па цане ${ price } у месяц за карыстальніка!"
@@ -14293,7 +14332,7 @@
         "Нумар тэлефона для аднаўлення"
       ],
       "Safeguard account now": [
-        "Абараніць уліковы запіс зараз"
+        "Абараніце ўліковы запіс зараз"
       ],
       "Safeguard your account": [
         "Абараніць свой уліковы запіс"
@@ -16345,6 +16384,9 @@
       "Preference updated": [
         "Параметры абноўлены"
       ],
+      "Preferences updated": [
+        "Параметры абноўлены"
+      ],
       "Status updated": [
         "Статус абноўлены"
       ]
@@ -16776,6 +16818,12 @@
       "Connection events": [
         "Падзеі падключэння"
       ],
+      "Connection monitor disabled": [
+        "Назіранне за падключэннем адключана"
+      ],
+      "Connection monitor enabled": [
+        "Назіранне за падключэннем уключана"
+      ],
       "Contact us": [
         "Звязацца з намі"
       ],
@@ -17023,7 +17071,7 @@
         "Шыфраванне і ключы"
       ],
       "Enter 2FA code": [
-        "Увядзіце 2ФА код"
+        "Увядзіце код 2ФА"
       ],
       "Enter endpoints into your identity provider": [
         "Увядзіце канцавыя пункты ў свайго пастаўшчыка пасведчанняў"
@@ -17340,6 +17388,9 @@
       "Profile": [
         "Профіль"
       ],
+      "QRCode": [
+        "QR-код"
+      ],
       "Recommended": [
         "Рэкамендавана"
       ],
@@ -17555,6 +17606,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "Прыміце меры перасцярогі, каб пазбегнуць страты даных!"
+      ],
+      "Text": [
+        "Тэкст"
       ],
       "Theme": [
         "Тэма"
@@ -17856,6 +17910,9 @@
       "Feature in early access": [
         "Функцыю можна паспрабаваць у раннім доступе"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "Атрымаць парады па прадукцыйнасці і бяспецы, якія дапамогуць вам атрымаць максімум ад ${ MAIL_APP_NAME } і не толькі."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Пошта Gmail аўтаматычна класіфікуе некаторыя лісты, такія як \"Сацыяльныя\" і \"Рэклама\". Вы можаце выбраць куды імпартаваць гэтыя лісты."
       ],
@@ -17996,8 +18053,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
+      "Group membership paused": [
+        "Знаходжанне ў групе прыпынена"
+      ],
       "Sending member invitation": [
         "Адпраўка запрашэння ўдзельніку"
+      ],
+      "User declined invitation": [
+        "Карыстальнік адхіліў запрашэнне"
       ],
       "Waiting user to accept the invitation": [
         "Чаканне прыняцця запрашэння карыстальнікам"
@@ -18045,6 +18108,86 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Гэта версія браўзера Tor не падтрымліваецца. Абнавіце праграму да апошняй версіі ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў, а таксама аднаўляць іх паролі."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "Адміністратар арганізацыі ${ orgName } хоча ўключыць доступ адміністратара для вашага ўліковага запісу."
+      ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "Адміністратар арганізацыі **${ orgName }** (**${ adminEmail }**) хоча ўключыць доступ адміністратара для вашага ўліковага запісу."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "У вас больш не будзе магчымасці дапамагаць карыстальніку аднавіць доступ да яго даных або ўліковага запісу, калі ён стане прыватным."
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Delete request": [
+        "Выдаліць запыт"
+      ],
+      "Delete request to access user data?": [
+        "Выдаліць запыт на доступ да даных карыстальніка?"
+      ],
+      "Enable admin access?": [
+        "Уключыць доступ адміністратара?"
+      ],
+      "Enable administrator access": [
+        "Уключыць доступ адміністратара"
+      ],
+      "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
+        "У вашага адміністратара арганізацыі будзе магчымасць скінуць ваш пароль і аднавіць доступ да вашага ўліковага запісу ў выпадку, калі вы згубіце доступ да яго."
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Як толькі карыстальнік пагадзіцца, вы зможаце дапамагчы яму аднавіць доступ да ўліковага запісу або кіраваць яго данымі."
+      ],
+      "Organization key must be activated to request data access": [
+        "Ключ арганізацыі павінен быць актываваны, каб запытаць доступ да даных"
+      ],
+      "Pending admin access": [
+        "Чаканне правоў доступу адміністратара"
+      ],
+      "Private user": [
+        "Прыватны карыстальнік"
+      ],
+      "reject": [
+        "адхіліць"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Запыт на кіраванне ўліковым запісам адпраўлены. Чакаецца зацвярджэнне ад карыстальніка"
+      ],
+      "Request user permission for data access": [
+        "Запытаць дазвол у карыстальніка на доступ да даных"
+      ],
+      "Revoke access": [
+        "Адклікаць доступ"
+      ],
+      "Revoke administrator access?": [
+        "Адклікаць доступ адміністратара?"
+      ],
+      "Send request": [
+        "Адправіць запыт"
+      ],
+      "The user must have an address to request data access": [
+        "Карыстальнік павінен мець адрас, каб запытаць доступ да даных"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Гэта дзеянне выдаліць незавершаны запыт правоў адміністратара да даных карыстальніка або скіданне пароля."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Гэта дзеянне прывядзе да адклікання правоў адміністратара для кіравання ўліковым запісам карыстальніка."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Для працягу, вам неабходна запытаць правы ў карыстальніка на доступ да яго даных або скінуць яго пароль."
+      ],
+      "View request": [
+        "Паглядзець запыт"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "Вы зможаце ${ reject } запыт, калі не захочаце працягваць."
       ]
     },
     "Update font modal": {
@@ -18143,9 +18286,6 @@
       "Optional": [
         "Неабавязкова"
       ],
-      "Private": [
-        "Прыватнае"
-      ],
       "Remember to share the user's sign in details with them.": [
         "Не забудзьце абагуліць падрабязнасці ўваходу з імі."
       ],
@@ -18180,6 +18320,9 @@
       ],
       "It's you": [
         "Гэта вы"
+      ],
+      "Pending admin access": [
+        "Чаканне правоў доступу адміністратара"
       ],
       "Private": [
         "Прыватны"
@@ -18401,10 +18544,10 @@
         "Запрасіць сяброў"
       ],
       "Join ${ appName } early access!": [
-        "Далучайцеся да ранняга доступу ${ appName }"
+        "Далучайцеся да ранняга доступу ${ appName }!"
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "Зарэгіструйце бясплатны ўліковы запіс ${ BRAND_NAME }, каб абараніць сваё месца. Неўзабаве пасля рэгістрацыі вы атрымаеце доступ да ${ appName }, таксама зможаце палепшыць яго да нашага эксклюзіўнага Visionary тарыфнага плана. Заўважце, што вам не давядзецца знаходзіцца ў спісе чакання і ў вас будзе магчымасць адразу пачаць выкарыстоўваць ${ appName }."
+        "Зарэгіструйце бясплатны ўліковы запіс ${ BRAND_NAME }, каб абараніць сваё месца. Чым раней вы зарэгіструецеся, тым хутчэй атрымаеце доступ да ${ appName }. Вам таксама будзе даступны пераход на наш эксклюзіўны тарыфны план Visionary. Заўважце, што вам не давядзецца знаходзіцца ў спісе чакання і ў вас будзе магчымасць адразу пачаць выкарыстоўваць ${ appName }."
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "Палепшыце сваю падпіску, каб разблакіраваць прэміяльныя функцыі ${ appName }"

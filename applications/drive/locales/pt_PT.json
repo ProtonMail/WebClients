@@ -2159,9 +2159,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A unir contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Poupe tempo enviando e-mails ou convites a todos de uma só vez, uma funcionalidade premium entre muitas outras. Actualize hoje mesmo."
-      ],
       "Set a recovery method to prevent losing access to your account.": [
         "Defina um método de recuperação para evitar a perda de acesso à sua conta."
       ],
@@ -5569,7 +5566,7 @@
         "Chaves públicas"
       ],
       "Public link password": [
-        "Palavra-passe do link público"
+        "Palavra-passe da ligação pública"
       ],
       "Region": [
         "Região"
@@ -6017,7 +6014,7 @@
         "Arquivo RAR"
       ],
       "Rich Text Format (RTF)": [
-        "Formato de texto rico (RTF)"
+        "Rich Text Format (RTF)"
       ],
       "Small web format (SWF)": [
         "Formato pequeno para a web (SWF)"
@@ -6312,9 +6309,6 @@
       "Group management (coming soon)": [
         "Gestão de grupos (em breve)"
       ],
-      "Hide-my-email aliases": [
-        "Aliases do Hide-my-email"
-      ],
       "High-speed streaming": [
         "Streaming de alta velocidade"
       ],
@@ -6441,12 +6435,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
       ],
-      "Up to 15 email addresses": [
-        "Até 15 endereços de e-mail "
-      ],
-      "Up to 3 TB of storage": [
-        "Até 3 TB de armazenamento"
-      ],
       "User credential management": [
         "Gestão das credenciais dos utilizadores"
       ],
@@ -6462,17 +6450,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crie vários endereços de e-mail para as suas identidades online, por exemplo, JohnShopper@${ domain } para contas de compras, JohnNews@${ domain2 } para subscrição de notícias"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Obtenha aliases ilimitados com SimpleLogin por ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Adie mensagens e seja relembrado quando quiser"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utilize o seu próprio endereço de domínio de e-mail personalizado, por exemplo, you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -6922,7 +6904,7 @@
         "O ficheiro ou pasta «${ filename }» e ${ count } outros já são enviados."
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "O ficheiro ou pasta «${ filename }» já está a enviar."
+        "O ficheiro ou pasta “${ filename }” já está a ser carregado"
       ],
       "File or folder is missing a name": [
         "Ficheiro ou pasta sem nome"
@@ -7253,6 +7235,10 @@
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Selecione o número de IP a incluir no seu plano. Cada IP adicional custa ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Se precisar de mais do que ${ maxIPs } IP, ",
+        "Se precisar de mais do que ${ maxIPs } IPs, "
       ]
     },
     "plan customizer, users": {
@@ -8172,7 +8158,7 @@
         "A recuperação foi iniciada."
       ],
       "Secure link copied": [
-        "O link seguro foi copiado."
+        "Ligação segura copiada"
       ],
       "The link to your file was successfully copied": [
         "A ligação do seu ficheiro foi copiada."
@@ -8790,9 +8776,6 @@
       ],
       "Show actions": [
         "Mostrar ações"
-      ],
-      "Sign in": [
-        "Iniciar sessão"
       ],
       "Sign in and grant access": [
         "Faça login e conceda acesso"
