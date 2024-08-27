@@ -62,7 +62,14 @@ export const SignupFlowModal = ({ urlPassword, onClose, ...modalProps }: { urlPa
     };
 
     return (
-        <ModalTwo as={Form} onSubmit={handleSubmit} onClose={onClose} size="small" {...modalProps}>
+        <ModalTwo
+            as={Form}
+            onSubmit={handleSubmit}
+            onClose={onClose}
+            size="small"
+            {...modalProps}
+            data-testid="download-page-sign-in"
+        >
             <ModalTwoHeader
                 title={
                     <div className="flex flex-column mb-1">
