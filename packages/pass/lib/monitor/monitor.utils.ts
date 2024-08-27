@@ -96,7 +96,7 @@ export const intoFetchedBreach = (breach: Breach): FetchedBreaches => ({
     publishedAt: breach.PublishedAt,
     size: breach.Size ?? 0,
     passwordLastChars: breach.PasswordLastChars ?? null,
-    exposedData: breach.ExposedData.map((data) => ({ code: data.Code, name: data.Name })),
+    exposedData: breach.ExposedData.map((data) => ({ code: data.Code, name: data.Name, values: data.Values ?? [] })),
     actions: breach.Actions.map((action) => ({
         code: action.Code,
         name: action.Name,
