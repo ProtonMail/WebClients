@@ -2487,9 +2487,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mesclando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Ganhe tempo enviando e-mail ou convites para todo mundo de uma só vez, uma funcionalidade premium entre muitas outras. Faça o upgrade hoje."
-      ],
       "Set a data recovery method to prevent data loss.": [
         "Defina um método de recuperação para prevenir a perda de dados."
       ],
@@ -6376,7 +6373,7 @@
       ],
       "${ n } user": [
         "${ n } usuário",
-        "Até ${ n } usuários"
+        "${ n } usuários"
       ],
       "${ n } vault": [
         "${ n } cofre",
@@ -6546,9 +6543,6 @@
       ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
-      ],
-      "Hide-my-email aliases": [
-        "Aliases do Hide-my-email"
       ],
       "High-speed streaming": [
         "Streaming em alta velocidade"
@@ -6724,12 +6718,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
       ],
-      "Up to 15 email addresses": [
-        "Até 15 endereços de e-mail"
-      ],
-      "Up to 3 TB of storage": [
-        "Até 3TB de armazenamento"
-      ],
       "User credential management": [
         "Gerenciamento de credenciais de usuário"
       ],
@@ -6751,17 +6739,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crie vários endereços de e-mail para suas identidades on-line, por exemplo: JoaoLojas@${ domain } para contas de lojas e JoaoNoticias@${ domain2 } para assinaturas de notícias"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Obtenha aliases ilimitados com SimpleLogin da ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Adie mensagens e receba lembretes quando quiser"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Use seu próprio domínio de e-mail personalizado, por exemplo: voce@seunome.com"
       ]
     },
     "new_plans: heading": {
@@ -6865,6 +6847,11 @@
         "Comentários"
       ]
     },
+    "new_plans: Title": {
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -6879,17 +6866,12 @@
         "Mudar de plano?"
       ]
     },
-    "new_plans: Title": {
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui sinclonização automática, compartilhamento de arquivo criptografado e muito mais."
+        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento criptografado em nuvem. Inclui sincronização automática, compartilhamento de arquivo criptografado e muito mais."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteja seus e-mails com criptografia de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados hide-my-email e muito mais."

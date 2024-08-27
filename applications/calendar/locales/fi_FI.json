@@ -735,7 +735,7 @@
         "Käytä eri maksutapaa"
       ],
       "Use authentication code": [
-        "Käytä todennuskoodia"
+        "Käytä vahvistuskoodia"
       ],
       "Use for sending": [
         "Käytä lähetykseen"
@@ -2483,9 +2483,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja yhdistetään... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
-      ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Säästä aikaa lähettämällä viestejä ja kutsuja kaikille yhtä aikaa. Vain yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Aseta tiedoillesi palautustapa, jottet menetä niitä."
@@ -6529,9 +6526,6 @@
       "Group management (coming soon)": [
         "Ryhmähallinta (tulossa pian)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliakset"
-      ],
       "High-speed streaming": [
         "Nopea suoratoisto"
       ],
@@ -6706,12 +6700,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Jopa ${ totalStorageSize } tallennustilaa"
       ],
-      "Up to 15 email addresses": [
-        "15 sähköpostiosoitetta"
-      ],
-      "Up to 3 TB of storage": [
-        "Jopa 3 Tb tallennustilaa"
-      ],
       "User credential management": [
         "Käyttäjien tunnusten hallinta"
       ],
@@ -6733,17 +6721,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain2 } uutiskirjeille"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Hanki rajattomasti aliaksia ${ BRAND_NAME }in SimpleLogin-palvelusta"
-      ],
       "Snooze messages and get reminded when you want": [
         "Torkuta viestejä ja saa muistutuksia kun haluat"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Käytä sähköpostiosoitteissasi omaa verkkotunnustasi, kuten nimesi@esimerkki.fi"
       ]
     },
     "new_plans: heading": {
@@ -8686,7 +8668,7 @@
         "Kutsutut jäsenet poistetaan organisaatiostasi"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Pidä ryhmäsi turvallisesti liikkeellä verkko-, iOS-, Android-, Windows-, Mac- ja Linux-sovelluksillamme."
+        "Suojaa tiimisi myös liikkeessä verkko-, iOS-, Android-, Windows-, Mac- ja Linux-sovelluksillamme."
       ],
       "Learn more": [
         "Lue lisää"
@@ -9406,7 +9388,7 @@
         "Salattu tapahtuma"
       ],
       "Enter 2FA code": [
-        "Syötä todennuskoodi"
+        "Syötä vahvistuskoodi"
       ],
       "Enter your password": [
         "Syötä salasanasi"
