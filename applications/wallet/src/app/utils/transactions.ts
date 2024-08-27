@@ -96,7 +96,7 @@ export const getTransactionRecipientHumanReadableName = (
     walletMap: WalletMap,
     addresses: Address[] = []
 ) => {
-    const address = transaction.apiData?.ToList[output.address];
+    const address = transaction.apiData?.ToList?.[output.address];
     const { wallet, account } = getWalletAndAccountFromTransaction(transaction, walletMap);
 
     // If output is owned by wallet account and transaction wasn't sent from it, we display the Wallet - WalletAccount as recipient
