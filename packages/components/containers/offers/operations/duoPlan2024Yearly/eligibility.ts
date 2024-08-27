@@ -1,6 +1,6 @@
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
-import { hasBundle, hasMonthly, hasYearly } from '@proton/shared/lib/helpers/subscription';
+import { hasBundle, hasMonthly, hasYearly, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import type { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -20,8 +20,9 @@ const isEligible = ({ subscription, user, protonConfig }: Props) => {
         protonConfig.APP_NAME === APPS.PROTONMAIL;
     const { canPay, isDelinquent } = user;
     const notDelinquent = !isDelinquent;
+    const isNotExternal = !isManagedExternally(subscription);
 
-    return hasValidApp && canPay && notDelinquent && hasUnlimited && hasOneYear;
+    return hasValidApp && canPay && notDelinquent && hasUnlimited && hasOneYear && isNotExternal;
 };
 
 export default isEligible;
