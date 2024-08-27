@@ -13,6 +13,7 @@ import {
     processDashlaneIdentity,
     processDashlaneLogin,
     processDashlaneNote,
+    processDashlanePersonalInfo,
 } from './dashlane.utils';
 
 const Criteria: Record<DashlaneFileKey, { keys: string[]; parser: DashlaneItemParser<any> }> = {
@@ -30,7 +31,7 @@ const Criteria: Record<DashlaneFileKey, { keys: string[]; parser: DashlaneItemPa
     },
     [DashlaneFileKey.PersonalInfo]: {
         keys: ['date_of_birth', 'email'],
-        parser: processDashlaneIdentity,
+        parser: processDashlanePersonalInfo,
     },
     [DashlaneFileKey.SecureNotes]: {
         keys: ['title', 'note'],
