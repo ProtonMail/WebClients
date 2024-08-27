@@ -54,6 +54,7 @@ const apiWalletOne: WasmApiWallet = {
     Type: WalletType.OnChain,
     Fingerprint: null,
     PublicKey: null,
+    MigrationRequired: 0,
 };
 
 const apiWalletTwo: WasmApiWallet = {
@@ -68,6 +69,7 @@ const apiWalletTwo: WasmApiWallet = {
     Type: WalletType.OnChain,
     Fingerprint: null,
     PublicKey: null,
+    MigrationRequired: 0,
 };
 
 // TODO: either support or reject Electrum seeds (BIP39 alternative)
@@ -83,6 +85,7 @@ const apiWalletThree: WasmApiWallet = {
     Type: WalletType.OnChain,
     Fingerprint: null,
     PublicKey: null,
+    MigrationRequired: 0,
 };
 
 const apiWalletKeyOne: WasmApiWalletKey = {
