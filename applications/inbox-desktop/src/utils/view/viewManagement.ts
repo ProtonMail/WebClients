@@ -165,7 +165,7 @@ function updateViewBounds(viewID: ViewID) {
 
     if (isWindows) {
         horizontalMargin = 16;
-        verticalMargin = 32;
+        verticalMargin = 40;
     } else if (isLinux) {
         verticalMargin = 24;
     }
