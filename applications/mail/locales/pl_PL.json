@@ -645,6 +645,9 @@
       "Italic": [
         "Kursywa"
       ],
+      "Keep my subscription": [
+        "Zachowaj subskrypcję"
+      ],
       "Label as": [
         "Oznacz jako"
       ],
@@ -764,18 +767,6 @@
       ],
       "Move": [
         "Przenieś"
-      ],
-      "Move all conversations from this folder": [
-        "Przenieś wszystkie wątki z tego folderu"
-      ],
-      "Move all conversations from this label": [
-        "Przenieś wszystkie wątki z tej etykiety"
-      ],
-      "Move all messages from this folder": [
-        "Przenieś wszystkie wiadomości z tego folderu"
-      ],
-      "Move all messages from this label": [
-        "Przenieś wszystkie wiadomości z tej etykiety"
       ],
       "Move all to archive": [
         "Przenieś wszystko do Archiwum"
@@ -3430,9 +3421,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Uwierzytelnianie dwustopniowe dodaje dodatkową warstwę bezpieczeństwa, zapobiegając nieautoryzowanemu dostępowi."
       ],
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Automatycznie usuwaj wiadomości, które znajdują się w Koszu lub Spamie dłużej niż 30 dni. Ulepsz konto i ciesz się tym oraz innymi bonusami."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Trwa odszyfrowywanie kontaktów… Proces może potrwać kilka minut. Kiedy się zakończy, będziesz mógł pobrać plik z wyeksportowanymi kontaktami."
       ],
@@ -3472,9 +3460,6 @@
       "No labels": [
         "Brak etykiet"
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Zaoszczędź czas, wysyłając wiadomości lub zaproszenia do wszystkich naraz. To jedna z wielu funkcji premium. Ulepsz konto."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddziel różne aspekty swojego życia dzięki wielu adresom e-mail i odblokuj więcej funkcji premium po ulepszeniu konta."
       ],
@@ -3498,12 +3483,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Włącz ochronę przed śledzeniem wiadomości, aby uniemożliwić reklamodawcom i innym firmom śledzenie Twojej lokalizacji i aktywności online."
-      ],
-      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Ulepsz plan, aby odblokować niestandardowe planowanie wiadomości i inne bonusy."
-      ],
-      "Unlock custom snooze times when you upgrade your plan.": [
-        "Ulepsz plan, aby odblokować niestandardowy czas odłożenia."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Ulepsza konto, aby odblokować krótsze adresy e-mail i inne funkcje premium."
@@ -3641,6 +3620,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB przestrzeni dyskowej"
+      ],
       "2 users": [
         "2 użytkowników"
       ],
@@ -7649,6 +7631,9 @@
         "Zaznaczono **${ elementsCount } wiadomości**.",
         "Zaznaczono **${ elementsCount } wiadomości**."
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "W tym dniu stracisz dostęp do funkcji planu ${ planTitle }."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "W celu zweryfikowania płatności wkrótce zostaniesz przekierowany na stronę firmy PayPal."
       ],
@@ -9342,6 +9327,18 @@
         "${ n } wiadomości dziennie",
         "${ n } wiadomości dziennie"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } udostępniony sejf ${ PASS_SHORT_APP_NAME } na użytkownika",
+        "${ n } udostępnione sejfy ${ PASS_SHORT_APP_NAME } na użytkownika",
+        "${ n } udostępnionych sejfów ${ PASS_SHORT_APP_NAME } na użytkownika",
+        "${ n } udostępnionych sejfów ${ PASS_SHORT_APP_NAME } na użytkownika"
+      ],
+      "${ n } user": [
+        "${ n } użytkownik",
+        "Do ${ n } użytkowników",
+        "Do ${ n } użytkowników",
+        "Do ${ n } użytkowników"
+      ],
       "${ n } vault": [
         "${ n } sejf",
         "${ n } sejfy",
@@ -9353,6 +9350,12 @@
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } z ${ n } aliasem hide-my-email",
@@ -9369,8 +9372,17 @@
       "${ size } attachment size": [
         "${ size } rozmiaru załącznika"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } przestrzeni dyskowej na użytkownika"
+      ],
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } dla ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } do wszystkich usług ${ BRAND_NAME }"
       ],
       "1 user": [
         "1 użytkownik"
@@ -9389,6 +9401,12 @@
       ],
       "Administration Panel": [
         "Panel administratora"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Wszystkie podstawowe usługi ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Wszystkie usługi ${ BRAND_NAME } w wersji premium. Jedna prosta subskrypcja"
       ],
       "Auto-delete Spam and Trash": [
         "Automatyczne usuwanie Spamu i Kosza"
@@ -9425,6 +9443,9 @@
       ],
       "Contact groups management": [
         "Zarządzanie grupami kontaktów"
+      ],
+      "Custom and secure business email": [
+        "Niestandardowy i bezpieczny adres firmowy"
       ],
       "Custom domains for email aliases": [
         "Niestandardowe domeny dla aliasów"
@@ -9495,9 +9516,6 @@
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
-      "Hide-my-email aliases": [
-        "Aliasy hide-my-email"
-      ],
       "High-speed streaming": [
         "Szybki streaming"
       ],
@@ -9522,6 +9540,9 @@
       "Multiple admin roles": [
         "Wiele ról administratora"
       ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
       "Organize items with multiple vaults": [
         "Organizuj elementy w wielu sejfach"
       ],
@@ -9531,8 +9552,14 @@
       "Password health": [
         "Jakość hasła"
       ],
+      "Password manager": [
+        "Menadżer haseł"
+      ],
       "Password-protected Emails": [
         "Wiadomości chronione hasłem"
+      ],
+      "Phone support (20+ users)": [
+        "Wsparcie telefoniczne (dla ponad 20 użytkowników)"
       ],
       "Priority email support": [
         "Priorytetowe wsparcie e-mail"
@@ -9551,6 +9578,9 @@
         "Ochrona ${ n } urządzeń jednocześnie",
         "Ochrona ${ n } urządzeń jednocześnie",
         "Ochrona ${ n } urządzenia jednocześnie"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regularne sprawdzaj bezpieczeństwo konta. Zostaniesz powiadomiony o słabych i identycznych hasłach."
@@ -9600,6 +9630,9 @@
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
       ],
+      "Sync and backup all your files across devices": [
+        "Synchronizuj wszystkie pliki i wykonuj ich kopie zapasowe na różnych urządzeniach"
+      ],
       "Tor over VPN": [
         "Tor przez VPN"
       ],
@@ -9636,6 +9669,9 @@
       "Unlimited messages per day": [
         "Nieograniczone wysyłanie wiadomości"
       ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Nieograniczona liczba udostępnionych sejfów ${ PASS_SHORT_APP_NAME } na użytkownika"
+      ],
       "Unlimited shared vaults with access permissions": [
         "Nieograniczona liczba udostępnionych sejfów z osobnymi uprawnieniami"
       ],
@@ -9656,12 +9692,6 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } przestrzeni dyskowej"
-      ],
-      "Up to 15 email addresses": [
-        "Do 15 adresów e-mail"
-      ],
-      "Up to 3 TB of storage": [
-        "Do 3 TB przestrzeni dyskowej"
       ],
       "User credential management": [
         "Zarządzanie danymi logowania użytkownika"
@@ -9686,17 +9716,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain2 } dla subskrybowania wiadomości"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Uzyskaj nieograniczoną liczbę aliasów SimpleLogin przez ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Odłóż wiadomości i otrzymaj powiadomienie o nich w dowolnym momencie"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Korzystaj z adresu w niestandardowej domenie, np. ty@twojanazwa.pl"
       ]
     },
     "new_plans: heading": {
@@ -9755,6 +9779,9 @@
       ],
       "Popular": [
         "Popularny"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Ochrona poufnych informacji biznesowych i bezpieczna współpraca."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chroń prywatność rodziny za pomocą usług ${ BRAND_NAME }."
@@ -11419,6 +11446,9 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Od teraz domyślnie ładujemy obrazy i blokujemy śledzenie w wiadomościach. Możesz to zmienić w ${ settingsLink }."
       ],
+      "You can now collapse the navigation bar.": [
+        "Możesz zwinąć pasek nawigacji."
+      ],
       "You can now schedule your messages to be sent later": [
         "Możesz zaplanować wysyłanie wiadomości w późniejszym czasie"
       ]
@@ -12356,9 +12386,6 @@
       "Self-destruction set": [
         "Samozniszczenie zostało ustawione"
       ],
-      "Text copied to clipboard": [
-        "Tekst został skopiowany do schowka"
-      ],
       "Thanks for the feedback!": [
         "Dziękujemy za opinię!"
       ],
@@ -12876,6 +12903,9 @@
       ],
       "Enable message content search": [
         "Włącz wyszukiwanie zawartości wiadomości"
+      ],
+      "Enter 2FA code": [
+        "Wpisz kod uwierzytelniający"
       ],
       "Enter your password": [
         "Wpisz hasło"
