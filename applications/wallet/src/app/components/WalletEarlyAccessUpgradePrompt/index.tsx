@@ -51,9 +51,6 @@ export const WalletEarlyAccessUpgradePrompt = ({ ...modalProps }: ModalOwnProps)
         </span>
     );
 
-    const { onClose, onExit, open } = exploreProtonModal;
-    const modalPropsWithoutKey = { onClose, onExit, open };
-
     return (
         <>
             <Prompt
@@ -115,7 +112,7 @@ export const WalletEarlyAccessUpgradePrompt = ({ ...modalProps }: ModalOwnProps)
                 </div>
             </Prompt>
 
-            <Modal {...modalPropsWithoutKey} enableCloseWhenClickOutside hasClose={false}>
+            <Modal {...exploreProtonModal} enableCloseWhenClickOutside hasClose={false}>
                 {products.map(({ app, text }, index) => {
                     return (
                         <div
