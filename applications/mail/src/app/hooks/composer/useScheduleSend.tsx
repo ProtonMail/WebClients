@@ -29,6 +29,7 @@ interface Props {
     handleNoRecipients?: () => void;
     handleNoSubjects?: () => void;
     handleNoAttachments?: (keyword: string) => void;
+    handleNoReplyEmail?: (email: string) => void;
 }
 
 export const useScheduleSend = ({
@@ -40,6 +41,7 @@ export const useScheduleSend = ({
     handleNoRecipients,
     handleNoSubjects,
     handleNoAttachments,
+    handleNoReplyEmail,
 }: Props) => {
     const { canScheduleSend } = useScheduleSendFeature();
 
@@ -54,7 +56,8 @@ export const useScheduleSend = ({
     const { preliminaryVerifications } = useSendVerifications(
         handleNoRecipients,
         handleNoSubjects,
-        handleNoAttachments
+        handleNoAttachments,
+        handleNoReplyEmail
     );
 
     const referenceCount = toMap(

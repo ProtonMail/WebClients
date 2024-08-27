@@ -45,6 +45,7 @@ export interface UseSendHandlerParameters {
     handleNoRecipients?: () => void;
     handleNoSubjects?: () => void;
     handleNoAttachments?: (keyword: string) => void;
+    handleNoReplyEmail?: (email: string) => void;
     setIsSending?: Dispatch<SetStateAction<boolean>>;
     isQuickReply?: boolean;
     hasNetworkError: boolean;
@@ -66,6 +67,7 @@ export const useSendHandler = ({
     handleNoRecipients,
     handleNoSubjects,
     handleNoAttachments,
+    handleNoReplyEmail,
     setIsSending,
     isQuickReply,
     hasNetworkError,
@@ -79,7 +81,8 @@ export const useSendHandler = ({
     const { preliminaryVerifications, extendedVerifications } = useSendVerifications(
         handleNoRecipients,
         handleNoSubjects,
-        handleNoAttachments
+        handleNoAttachments,
+        handleNoReplyEmail
     );
     const sendMessage = useSendMessage();
 
