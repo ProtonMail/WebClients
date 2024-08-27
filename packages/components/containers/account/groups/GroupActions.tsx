@@ -3,17 +3,19 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Tooltip } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
-import { GROUP_MEMBERSHIP_STATUS, type GroupMembership } from '@proton/shared/lib/interfaces';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { GROUP_MEMBERSHIP_STATUS, GROUP_MEMBER_PERMISSIONS, type GroupMembership } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import DropdownActions from '../../../components/dropdown/DropdownActions';
 import useGroupActions from './useGroupActions';
 
-const GroupActions = ({ membership, isPrivateUser }: { membership: GroupMembership; isPrivateUser: boolean }) => {
+const GroupActions = ({ membership }: { membership: GroupMembership }) => {
     const { acceptInvitation, declineInvitation, leaveMembership } = useGroupActions();
     const [loading, withLoading] = useLoading();
 
-    if (!isPrivateUser && membership.Status === GROUP_MEMBERSHIP_STATUS.ACTIVE) {
+    const canLeave = hasBit(membership.Permissions, GROUP_MEMBER_PERMISSIONS.LEAVE);
+    if (!canLeave && membership.Status === GROUP_MEMBERSHIP_STATUS.ACTIVE) {
         return (
             <Tooltip title={c('Info').t`You do not have permission to perform this action`}>
                 <div className="inline-block">
