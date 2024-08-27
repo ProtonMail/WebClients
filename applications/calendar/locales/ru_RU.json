@@ -2375,6 +2375,9 @@
       ]
     },
     "Custom frequency option": {
+      "After…": [
+        "Через…"
+      ],
       "Never": [
         "Никогда"
       ],
@@ -2522,9 +2525,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
-      ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Экономьте время, отправляя электронные письма или приглашения всем сразу, это одна из многих функций премиум-подписки. Купите её уже сегодня."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Установите метод восстановления данных, чтобы предотвратить их потерю."
@@ -5456,6 +5456,11 @@
         "Создание приглашений в общем календаре не разрешается"
       ]
     },
+    "Input label": {
+      "Link label (optional)": [
+        "Ярлык ссылки (необязательно)"
+      ]
+    },
     "Input placeholder": {
       "Add label": [
         "Добавить ярлык"
@@ -6735,9 +6740,6 @@
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
-      "Hide-my-email aliases": [
-        "Псевдонимы hide-my-email"
-      ],
       "High-speed streaming": [
         "Высокоскоростной стриминг"
       ],
@@ -6918,12 +6920,6 @@
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
       ],
-      "Up to 15 email addresses": [
-        "До 15 адресов электронной почты"
-      ],
-      "Up to 3 TB of storage": [
-        "До 3 ТБ хранилища"
-      ],
       "User credential management": [
         "Управление учетными данными пользователя"
       ],
@@ -6947,17 +6943,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Получите неограниченное количество псевдонимов с SimpleLogin от ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Отложите сообщения и получите напоминание в нужное время"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Используйте собственный адрес домена электронной почты, например, you@yourname.com."
       ]
     },
     "new_plans: heading": {
@@ -7760,6 +7750,21 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
+      ],
+      "Please select billing country": [
+        "Пожалуйста, выберите страну выставления счета"
+      ],
+      "Please select billing state": [
+        "Пожалуйста, выберите государство выставления счета"
+      ],
+      "Please select your billing country first.": [
+        "Сначала выберите страну для выставления счета."
+      ],
+      "Please select your billing state first.": [
+        "Сначала выберите государство для выставления счета."
+      ],
+      "Select billing country to pay": [
+        "Для оплаты, пожалуйста выберите страну"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Купон действителен при продлении на ${ couponRedemptions }. Затем он будет автоматически продлен по цене ${ price } на ${ months } месяцев. Вы можете отменить его в любое время."
