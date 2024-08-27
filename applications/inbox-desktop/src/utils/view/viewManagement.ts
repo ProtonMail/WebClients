@@ -1,6 +1,6 @@
-import { BrowserView, BrowserWindow, Event, Input, Session, WebContents, app } from "electron";
+import { BrowserView, BrowserWindow, Event, Input, Rectangle, Session, WebContents, app } from "electron";
 import { debounce } from "lodash";
-import { WindowBounds, getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
+import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
 import { updateDownloaded } from "../../update";
 import { getConfig } from "../config";
@@ -142,21 +142,40 @@ const createBrowserWindow = (session: Session) => {
     return mainWindow;
 };
 
-const adjustBoundsForWindows = (bounds: WindowBounds) => {
-    if (isWindows || isLinux) {
-        const windowWidth = isWindows ? 16 : 0;
-        const windowHeight = isWindows ? 32 : 24;
-
-        return {
-            ...bounds,
-            x: bounds.x,
-            y: bounds.y,
-            width: bounds.width - windowWidth,
-            height: bounds.height - windowHeight,
-        };
+function updateViewBounds(viewID: ViewID) {
+    if (!mainWindow) {
+        viewLogger(viewID).warn("cannot adjust view bounds, mainWindow is null");
+        return;
     }
-    return bounds;
-};
+
+    const { height: windowHeight, width: windowWidth } = mainWindow.getBounds();
+    let horizontalMargin = 0;
+    let verticalMargin = 0;
+
+    if (isWindows) {
+        horizontalMargin = 16;
+        verticalMargin = 32;
+    } else if (isLinux) {
+        verticalMargin = 24;
+    }
+
+    const updatedBounds: Rectangle = {
+        x: 0,
+        y: 0,
+        width: windowWidth - horizontalMargin,
+        height: windowHeight - verticalMargin,
+    };
+
+    const view = browserViewMap[viewID];
+
+    if (!view) {
+        viewLogger(viewID).warn("cannot adjust view bounds, view is null");
+        return;
+    }
+
+    viewLogger(viewID).verbose("updating view bounds", JSON.stringify(updatedBounds));
+    view.setBounds(updatedBounds);
+}
 
 async function updateLocalID(urlString: string) {
     if (!isHostAllowed(urlString) || isAccountSwitch(urlString)) {
@@ -190,9 +209,8 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
 
     const internalShowView = async (windowTitle: string) => {
         const view = browserViewMap[viewID]!;
-        const bounds = adjustBoundsForWindows(getWindowBounds());
-        view.setBounds({ x: 0, y: 0, width: bounds.width, height: bounds.height });
-        view.webContents.setZoomFactor(bounds.zoom);
+        updateViewBounds(viewID);
+        view.webContents.setZoomFactor(getWindowBounds().zoom);
 
         if (viewID === currentViewID) {
             viewLogger(viewID).info("showView loading in current view", url);
