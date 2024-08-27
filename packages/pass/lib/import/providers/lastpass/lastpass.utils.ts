@@ -1,10 +1,10 @@
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { IdentityFieldName, ItemContent } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import type { IdentityFieldName, ItemContent, Maybe } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 
 import type { LastPassItem } from './lastpass.types';
 
-const UNIQUE_SEPARATOR = uniqueId();
+const KEY_SEPARATOR = ':';
 
 export const LASTPASS_EXPECTED_HEADERS: (keyof LastPassItem)[] = [
     'url',
@@ -33,9 +33,9 @@ const LAST_PASS_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
 };
 
 /** match key and get the value: 'NoteType:Credit Card' */
-export const extractLastPassFieldValue = (extra: LastPassItem['extra'], key: string) => {
-    if (!extra) return null;
-    const match = extra.match(new RegExp(`${key}:(.*)`));
+export const extractLastPassFieldValue = (value: Maybe<string>, key: string) => {
+    if (!value) return null;
+    const match = value.match(new RegExp(`${key}${KEY_SEPARATOR}(.*)`));
     return match && match[1];
 };
 
@@ -74,7 +74,15 @@ export const extractLastPassIdentity = (importItem: LastPassItem): ItemContent<'
         importItem.extra
             ?.split('\n')
             .slice(1)
-            .map((i) => i.replace(':', UNIQUE_SEPARATOR).split(UNIQUE_SEPARATOR)) ?? [];
+            .map((field) => {
+                const sepIndex = field.indexOf(KEY_SEPARATOR);
+                if (sepIndex === -1) return null;
+
+                const key = field.slice(0, sepIndex);
+                const value = field.slice(sepIndex + KEY_SEPARATOR.length);
+                return [key, value] as const;
+            })
+            .filter(truthy) ?? [];
 
     fields.forEach(([key, value]) => {
         const field = LAST_PASS_IDENTITY_FIELD_MAP[key];
