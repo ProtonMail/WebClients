@@ -2484,9 +2484,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, puedes cerrar esta ventana."
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Ahorra tiempo enviando correos electrónicos o invitaciones a todos a la vez, una función premium entre muchas otras. Actualiza hoy mismo."
-      ],
       "Set a data recovery method to prevent data loss.": [
         "Establece un método de recuperación de datos para evitar la pérdida de datos."
       ],
@@ -6403,6 +6400,15 @@
       "1 user": [
         "1 usuario"
       ],
+      "10 email addresses/aliases": [
+        "10 direcciones/alias de correo electrónico"
+      ],
+      "10-year file version history": [
+        "Historial de 10 años de las versiones de los archivos"
+      ],
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
       "24/7 account management support": [
         "Soporte de administración de cuenta 24/7"
       ],
@@ -6531,9 +6537,6 @@
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
-      ],
-      "Hide-my-email aliases": [
-        "Alias de hide-my-email"
       ],
       "High-speed streaming": [
         "Transmisión de gran velocidad"
@@ -6709,12 +6712,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
       ],
-      "Up to 15 email addresses": [
-        "Hasta 15 direcciones de correo electrónico"
-      ],
-      "Up to 3 TB of storage": [
-        "Hasta 3 TB de almacenamiento"
-      ],
       "User credential management": [
         "Administración de credenciales de usuario"
       ],
@@ -6733,20 +6730,17 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 dominio de correo electrónico personalizado"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crea diferentes direcciones de correo para tus identidades en línea, p. ej. JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
-      ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
       ],
       "Snooze messages and get reminded when you want": [
         "Pausa los mensajes y recibe un recordatorio cuando quieras."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utiliza tu propia dirección de correo personalizada, p. ej. tu@tunombre.com"
       ]
     },
     "new_plans: heading": {
@@ -6848,6 +6842,20 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Comentarios"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus": [
+        "Obtén Mail Plus"
+      ],
+      "Get Mail Plus for $1": [
+        "Obtén Mail Plus por 1$"
+      ],
+      "Get Mail Plus for 1 €": [
+        "Obtén Mail Plus por 1€"
+      ],
+      "Get Mail Plus for CHF 1": [
+        "Obtén Mail Plus por 1CHF"
       ]
     },
     "new_plans: title": {
