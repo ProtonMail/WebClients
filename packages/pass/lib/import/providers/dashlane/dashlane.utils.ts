@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import {
     getEmailOrUsername,
     importCreditCardItem,
@@ -157,10 +159,37 @@ export const processDashlaneCC: DashlaneItemParser<DashlanePaymentItem> = (item)
                 : '',
     });
 
-export const processDashlaneIdentity: DashlaneItemParser<DashlanePersonalInfoItem | DashlaneIdItem> = (
+const extractDashlaneIdentityTitle = (item: DashlaneIdItem) => {
+    const type = (() => {
+        switch (item.type) {
+            case 'card':
+                return c('Label').t`ID Card`;
+            case 'passport':
+                return c('Label').t`Passport`;
+            case 'license':
+                return c('Label').t`License`;
+            case 'social_security':
+                return c('Label').t`Social security`;
+            case 'tax_number':
+                return c('Label').t`Tax number`;
+            default:
+                return '';
+        }
+    })();
+
+    return type && item.name ? `${type} (${item.name})` : type;
+};
+
+export const processDashlaneIdentity: DashlaneItemParser<DashlaneIdItem> = (item): ItemImportIntent<'identity'> =>
+    importIdentityItem({
+        name: extractDashlaneIdentityTitle(item),
+        ...extractDashlaneIdentity(item),
+    });
+
+export const processDashlanePersonalInfo: DashlaneItemParser<DashlanePersonalInfoItem> = (
     item
 ): ItemImportIntent<'identity'> =>
     importIdentityItem({
-        name: 'item_name' in item ? item.item_name : item.name,
+        name: item.title || item.item_name,
         ...extractDashlaneIdentity(item),
     });
