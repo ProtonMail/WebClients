@@ -596,7 +596,7 @@
     },
     "Description": {
       "${ total } other login uses the same password": [
-        "${ total } iné prihlásenie už používa rovnaké heslo",
+        "${ total } iné prihlásenie používa rovnaké heslo",
         "${ total } iné prihlasovania už používajú rovnaké heslo",
         "${ total } iných prihlasovaní už používa rovnaké heslo",
         "${ total } iných prihlasovaní už používa rovnaké heslo"
@@ -772,7 +772,7 @@
         "Zlyhala aktualizácia nastavení ${ PROTON_SENTINEL_NAME }"
       ],
       "Failed updating monitor flag of the item": [
-        "Zlyhala aktualizácia značky monitorovania položky"
+        "Aktualizácia príznaku sledovania položky zlyhala"
       ],
       "Failed updating monitoring status for this email address": [
         "Aktualizácia stavu monitorovania tejto emailovej adresy zlyhala"
@@ -1032,7 +1032,7 @@
         "${ count } zobrazenie",
         "${ count } zobrazení",
         "${ count } zobrazenia",
-        "${ count } zobrazenia"
+        "${ count }/ zobrazení"
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } zobrazení"
@@ -1542,7 +1542,7 @@
         "Potvrďte, prosím, vaše heslo pre automatické uzamknutie pomocou vášho hesla."
       ],
       "Please confirm your password in order to unregister your current lock.": [
-        "Potvrďte, prosím, vaše heslo pre zrušenie vášho aktuálneho zámku."
+        "Potvrďte, prosím, vaše heslo pre zrušenie aktuálneho zámku."
       ],
       "Please confirm your password in order to update the auto-lock time.": [
         "Potvrďte, prosím, vaše heslo pre aktualizáciu času automatického uzamknutia."
@@ -1737,7 +1737,7 @@
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou biometrie"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Odomknutie ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
+        "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho dodatočného hesla"
@@ -1827,7 +1827,7 @@
         "Dosiahli ste maximálnu povolenú dĺžku ${ maxLength } znakov."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
-        "Dôjde k odhláseniu a budete sa musieť znova prihlásiť na všetkých ďalších vašich zariadeniach."
+        "Dôjde k odhláseniu a budete sa musieť znova prihlásiť na všetkých ďalších zariadeniach."
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tento PIN kód použijete na odomknutie aplikácie ${ PASS_APP_NAME } , keď sa po určitom čase nečinnosti automaticky uzamkne."
@@ -1868,7 +1868,7 @@
         "${ days } deň",
         "${ days } dni",
         "${ days } dní",
-        "${ days } dňa"
+        "${ days } dní"
       ],
       "${ hours } hour": [
         "${ hours } hodiny",
@@ -2249,7 +2249,7 @@
         "Urobiť všetkých čitateľmi"
       ],
       "max views reached": [
-        "bol dosiahnutý počet zobrazení"
+        "dosiahnutý max. počet zobrazení"
       ],
       "Members": [
         "Členovia"
@@ -2423,7 +2423,7 @@
         "Špeciálne znaky (!&*)"
       ],
       "State or province": [
-        "Kraj alebo región"
+        "Štát alebo provincia"
       ],
       "Street address": [
         "Ulica a č."
