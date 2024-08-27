@@ -28,7 +28,7 @@ const ResendInvitePrompt = ({ onClose, onResend, email, ...rest }: Props) => {
             ]}
             {...rest}
         >
-            <p className="text-break-all">
+            <p className="text-break">
                 {getBoldFormattedText(c('Info').t`This will send a new invite to **${email}**.`)}
             </p>
         </Prompt>
