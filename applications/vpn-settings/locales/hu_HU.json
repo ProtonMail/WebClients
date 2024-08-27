@@ -4723,9 +4723,6 @@
       "Admin": [
         "Adminisztrátor"
       ],
-      "Private": [
-        "Privát"
-      ],
       "VPN connections": [
         "VPN kapcsolat"
       ]
@@ -5221,9 +5218,6 @@
       "Group management (coming soon)": [
         "Csoportkezelés (hamarosan elérhető)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email álnevek"
-      ],
       "High-speed streaming": [
         "Nagy sebességű videózás"
       ],
@@ -5363,12 +5357,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Akár ${ totalStorageSize } tárhely"
       ],
-      "Up to 15 email addresses": [
-        "Akár 15 e-mail cím"
-      ],
-      "Up to 3 TB of storage": [
-        "Akár 3 TB tárhely"
-      ],
       "User credential management": [
         "Felhasználói adatok kezelése"
       ],
@@ -5387,14 +5375,8 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain2 } a hírleveleinek"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Korlátlan számú e-mail álnév, a ${ BRAND_NAME } SimpleLogin segítségével"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Használja a saját egyedi e-mail domain címét, pl. on@azonneve.com"
       ]
     },
     "new_plans: heading": {
@@ -5490,6 +5472,14 @@
         "felhasználási feltételek"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -5502,14 +5492,6 @@
       ],
       "Switch plans?": [
         "Csomag váltása?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -7771,9 +7753,6 @@
       ],
       "Optional": [
         "Nem kötelező"
-      ],
-      "Private": [
-        "Privát"
       ],
       "Remember to share the user's sign in details with them.": [
         "Ne felejtse el megosztani a felhasználóval belépési adatait."

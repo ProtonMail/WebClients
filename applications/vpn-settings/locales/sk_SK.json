@@ -205,6 +205,9 @@
       "Discard changes": [
         "Zahodiť zmeny"
       ],
+      "Domain name": [
+        "Názov domény"
+      ],
       "Done": [
         "Hotovo"
       ],
@@ -354,6 +357,9 @@
       ],
       "Loading verification": [
         "Načítavanie overenia"
+      ],
+      "Lost access to your 2FA device?": [
+        "Stratili ste prístup k svojmu zariadeniu 2FA?"
       ],
       "Make admin": [
         "Urobiť správcom"
@@ -633,6 +639,12 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokúste sa znova uložiť. Uloženie zlyhalo z dôvodu: ${ saveError }"
+      ],
+      "Turn off": [
+        "Vypnúť"
+      ],
+      "Turn on": [
+        "Zapnúť"
       ],
       "Unlock": [
         "Odomknúť"
@@ -3392,6 +3404,9 @@
       "${ vaultLink } deleted": [
         "${ vaultLink } bol vymazaný"
       ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } zdieľaný emailom"
+      ],
       "${ vaultLink } updated": [
         "Štítok ${ vaultLink } bol aktualizovaný"
       ],
@@ -3421,6 +3436,9 @@
         "+${ organization.BonusVPN } pripojenia pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
         "+${ organization.BonusVPN } pripojení pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
         "+${ organization.BonusVPN } pripojení pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)"
+      ],
+      "2FA disabled": [
+        "2FA vypnuté"
       ],
       "30-day money-back guarantee": [
         "30-dňová záruka vrátenia peňazí"
@@ -3499,6 +3517,9 @@
       ],
       "All Events ": [
         "Všetky udalosti "
+      ],
+      "All members have been added.": [
+        "Všetci členovia boli pridaní"
       ],
       "All your changes will be lost.": [
         "Všetky vaše zmeny budú stratené."
@@ -3586,6 +3607,15 @@
       ],
       "Billing cycle: ${ text }": [
         "Fakturačné obdobie: ${ text }"
+      ],
+      "Breach Custom Email Created": [
+        "Vlastný email pre úniky pridaný"
+      ],
+      "Breach Custom Email Deleted": [
+        "Vlastný email pre úniky zmazaný"
+      ],
+      "Breach Custom Email Validated": [
+        "Vlastný email pre úniky overený"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ak prejdete na bezplatnú verziu, natrvalo stratíte súčasné výhody a to i v budúcnosti, ak opäť upgradujte svoj účet na platenú verziu."
@@ -3679,6 +3709,9 @@
         "Odstraňovanie ${ deletedServerCount } serverov brány",
         "Odstraňovanie ${ deletedServerCount } serverov brány",
         "Odstraňovanie ${ deletedServerCount } serverov brány"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Vypnutím dvojfázového overovania bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -3845,6 +3878,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Prejdite k vášmu poskytovateľovi identity, stiahnite metadáta SAML pre ${ appName } a importujte ich sem."
       ],
+      "Group deleted": [
+        "Skupina bola zmazaná"
+      ],
       "here": [
         "tu"
       ],
@@ -3935,6 +3971,9 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Nainštalujte konfiguračný súbor serveru a pripojte sa ku konkrétnemu serveru v krajine podľa vašeho výberu."
       ],
+      "Internal user": [
+        "Interný používateľ"
+      ],
       "Internet connection lost": [
         "Strata internetového pripojenia"
       ],
@@ -3974,6 +4013,9 @@
       "Item Autofilled": [
         "Položka automaticky vyplnená"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Položka automaticky vyplnená v ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "Položka v trezore automaticky vyplnená"
       ],
@@ -3998,6 +4040,9 @@
       "Item deleted from vault": [
         "Položka bola z trezora vymazaná"
       ],
+      "Item flags changed in ${ vaultLink }": [
+        "Príznaky položky zmenené v ${ vaultLink }"
+      ],
       "Item flags changed in vault": [
         "Príznaky položky v trezore zmenené"
       ],
@@ -4015,6 +4060,9 @@
       ],
       "Item Read": [
         "Položka bola prečítaná"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Položka prečítaná v ${ vaultLink }"
       ],
       "Item read in vault": [
         "Položka v trezore prečítaná"
@@ -4394,6 +4442,12 @@
       "Share Updated": [
         "Zdieľanie aktualizované"
       ],
+      "Shared ${ vaultLink } deleted": [
+        "Zdieľaný ${ vaultLink } zmazaný"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Zdieľaný ${ vaultLink } aktualizovaný"
+      ],
       "Shared vault deleted": [
         "Zdieľaný trezor bol vymazaný"
       ],
@@ -4541,6 +4595,9 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Toto overenie môže trvať až jednu hodinu. Po úspešnom overení neodstraňujte záznam TXT, pretože je potrebný na potvrdenie, že doménu naďalej vlastníte."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Tým dôjde k deaktivácii dvojfázového overovania, vrátane aplikácie pre autentizáciu a metód bezpečnostného kľúča."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní, aby sa PayPal použil na zaplatenie vášho predplatného ${ BRAND_NAME }. Na novej karte prehliadača vás presmerujeme na PayPal. Ak používate nejaké blokovanie automaticky otváraných okien, deaktivujte ho, aby ste mohli pokračovať."
       ],
@@ -4660,6 +4717,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Nahrajte logo vašej organizácie, aby ste posilnili identitu značky a vytvorili personalizované prostredie pre používateľov."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Na deaktiváciu vašich metód dvojfázového overovania použite metódu obnovenia."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použite najlepší server podľa aktuálneho zaťaženia a umiestnenia: ${ formattedBestServerName }"
@@ -5048,6 +5108,9 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Odmietnuté"
+      ],
       "Pending": [
         "Čakajúce"
       ]
@@ -5601,9 +5664,6 @@
     "Label for new member": {
       "Admin": [
         "Administrátor"
-      ],
-      "Private": [
-        "Súkromné"
       ],
       "VPN connections": [
         "VPN pripojenia"
@@ -6267,9 +6327,6 @@
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email aliasy"
-      ],
       "High-speed streaming": [
         "Vysokorýchlostné streamovanie"
       ],
@@ -6447,12 +6504,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného priestoru"
       ],
-      "Up to 15 email addresses": [
-        "Až 15 emailových adries"
-      ],
-      "Up to 3 TB of storage": [
-        "Až do 3 TB úložiska"
-      ],
       "User credential management": [
         "Správa používateľských údajov"
       ],
@@ -6476,17 +6527,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JohnShopper@${ domain } pre nákupné účty, JohnNews@${ domain2 } pre odber noviniek"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Odložte správy a pripomeňte si ich, kedy chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Použite svoju vlastnú emailovú doménovú adresu, napr. vy@vasemeno.com"
       ]
     },
     "new_plans: heading": {
@@ -6609,6 +6654,14 @@
         "zmluvnými podmienkami používania"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -6621,14 +6674,6 @@
       ],
       "Switch plans?": [
         "Zmeniť plán?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -9227,6 +9272,9 @@
       ],
       "Preference updated": [
         "Nastavenie uložené"
+      ],
+      "Preferences updated": [
+        "Predvoľby aktualizované"
       ]
     },
     "Suffix": {
@@ -9577,6 +9625,9 @@
       "Disable two-factor authentication": [
         "Vypnúť dvojstupňové overenie"
       ],
+      "Disable two-factor authentication?": [
+        "Deaktivovať dvojfázové overenie?"
+      ],
       "Discard changes?": [
         "Zrušiť zmeny?"
       ],
@@ -9784,6 +9835,9 @@
       "Processing...": [
         "Prebieha spracovanie..."
       ],
+      "QRCode": [
+        "QR kód"
+      ],
       "Recommended": [
         "Odporúčané"
       ],
@@ -9900,6 +9954,9 @@
       ],
       "Switch to two-password mode": [
         "Prepnúť do režimu s dvomi heslami"
+      ],
+      "Text": [
+        "Text"
       ],
       "There are no groups": [
         "Nie sú tu žiadne skupiny"
@@ -10178,9 +10235,6 @@
       ],
       "Optional": [
         "Voliteľné"
-      ],
-      "Private": [
-        "Súkromné"
       ],
       "Remember to share the user's sign in details with them.": [
         "Nezabudnite s nimi zdieľať prihlasovacie údaje používateľa."

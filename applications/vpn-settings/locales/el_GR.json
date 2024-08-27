@@ -64,6 +64,12 @@
       "Allow": [
         "Επιτρέπεται"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Να επιτρέπεται η κρυπτογραφημένη αλληλογραφία από άκρο σε άκρο για αυτήν την ομάδα"
+      ],
+      "Always allow sending": [
+        "Να επιτρέπεται πάντα η αποστολή"
+      ],
       "Apply": [
         "Εφαρμογή"
       ],
@@ -204,6 +210,9 @@
       ],
       "Discard changes": [
         "Απόρριψη αλλαγών"
+      ],
+      "Domain name": [
+        "Όνομα τομέα"
       ],
       "Done": [
         "Ολοκληρώθηκε"
@@ -640,6 +649,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Παρακαλώ προσπαθήστε να αποθηκεύσετε ξανά. Η αποθήκευση απέτυχε λόγω: ${ saveError }"
       ],
+      "Turn off": [
+        "Απενεργοποίηση"
+      ],
+      "Turn on": [
+        "Ενεργοποίηση"
+      ],
       "Unlock": [
         "Ξεκλείδωμα"
       ],
@@ -672,6 +687,9 @@
       ],
       "Use authentication code": [
         "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
+      ],
+      "Use group permissions": [
+        "Χρήση δικαιωμάτων ομάδας"
       ],
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
@@ -3428,6 +3446,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Ένα ${ protonSubdomain } φιλοξενείται από το ${ BRAND_NAME }, το οποίο σας επιτρέπει να ρυθμίσετε γρήγορα έναν υποτομέα. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Απαιτείται προσαρμοσμένος τομέας για τη δημιουργία ομάδων. Εάν δεν έχετε ρυθμίσει έναν προσαρμοσμένο τομέα, κάντε το πρώτα στο ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ένα όνομα που σας βοηθά να αναγνωρίζετε πού το χρησιμοποιείτε, ώστε αργότερα να μπορείτε εύκολα να το ανακαλέσετε ή επεκτείνετε."
       ],
@@ -3841,11 +3862,20 @@
       "Gateways": [
         "Πύλες"
       ],
+      "Gateways monitoring is disabled.": [
+        "Η παρακολούθηση πυλών είναι απενεργοποιημένη."
+      ],
+      "Gateways monitoring is enabled.": [
+        "Η παρακολούθηση πυλών είναι ενεργοποιημένη."
+      ],
       "Get ${ upsellPlanName }": [
         "Απόκτηση ${ upsellPlanName }"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Μεταβείτε στον πάροχο ταυτότητάς σας, λάβετε τα μεταδεδομένα SAML για το ${ appName } και εισαγάγετε τα εδώ."
+      ],
+      "Group deleted": [
+        "Η ομάδα διαγράφηκε"
       ],
       "here": [
         "εδώ"
@@ -3936,6 +3966,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Εγκαταστήστε ένα αρχείο διαμόρφωσης διακομιστή για να συνδεθείτε σε έναν συγκεκριμένο διακομιστή στη χώρα της επιλογής σας."
+      ],
+      "Internal user": [
+        "Εσωτερικός χρήστης"
       ],
       "Internet connection lost": [
         "Απώλεια σύνδεσης στο διαδίκτυο"
@@ -4083,6 +4116,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Φόρτωση ημερολογίου, παρακαλούμε περιμένετε. Θα μεταφερθείτε στην πλατφόρμα προγραμματισμού Calendly σε μια νέα καρτέλα."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Φόρτωση πυλών παρακολούθησης της τρέχουσας κατάστασης."
       ],
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
@@ -4531,6 +4567,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Αυτό μπορεί να πάρει μερικά δευτερόλεπτα ή μερικά λεπτά, αναλόγως της συσκευής σας"
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Αυτή η αλλαγή θα αντικατοπτρίζεται πλήρως σε όλη την υποδομή σας σε περίπου 1 ώρα"
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Αυτό μπορεί να διαρκέσει αρκετό χρόνο. Μην κλείνετε αυτή τη σελίδα και μην αποσυνδέεστε από το διαδίκτυο."
       ],
@@ -4638,6 +4677,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "Η λειτουργία δύο κωδικών πρόσβασης χρησιμοποιεί ξεχωριστούς κωδικούς πρόσβασης για σύνδεση και αποκρυπτογράφηση δεδομένων. Αυτό παρέχει ένα μικρό πλεονέκτημα ασφαλείας σε ορισμένες περιπτώσεις, ωστόσο συνιστούμε τη λειτουργία ενός κωδικού πρόσβασης για τους περισσότερους χρήστες. Για να μεταβείτε σε λειτουργία δύο κωδικών πρόσβασης, ορίστε πρώτα έναν κωδικό πρόσβασης σύνδεσης και, στη συνέχεια, ορίστε έναν δεύτερο κωδικό πρόσβασης."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "Δεν είναι δυνατός ο έλεγχος των πυλών παρακολούθησης της τρέχουσας κατάστασης."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Δυστυχώς δεν έχει αποθηκευτεί μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
@@ -4830,6 +4872,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Με κρυπτογραφημένη διεύθυνση ${ BRAND_NAME }, μπορείτε να χρησιμοποιήσετε όλες τις ${ BRAND_NAME } υπηρεσίες"
+      ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Με τις ομάδες, μπορείτε γρήγορα και εύκολα να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα άτομα μιας συγκεκριμένης ομάδας."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
@@ -5053,6 +5098,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Απορρίφθηκε"
+      ],
+      "Paused": [
+        "Σε παύση"
+      ],
       "Pending": [
         "Σε εκκρεμότητα"
       ],
@@ -5609,9 +5660,6 @@
     "Label for new member": {
       "Admin": [
         "Διαχειριστής"
-      ],
-      "Private": [
-        "Ιδιωτικό"
       ],
       "VPN connections": [
         "Συνδέσεις VPN"
@@ -6275,9 +6323,6 @@
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email ψευδώνυμα"
-      ],
       "High-speed streaming": [
         "Ροή υψηλής ταχύτητας"
       ],
@@ -6468,12 +6513,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
       ],
-      "Up to 15 email addresses": [
-        "Έως 15 ηλ. διευθύνσεις"
-      ],
-      "Up to 3 TB of storage": [
-        "Έως 3 TB αποθηκευτικού χώρου"
-      ],
       "User credential management": [
         "Διαχείριση διαπιστευτηρίων χρηστών"
       ],
@@ -6495,17 +6534,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain2 } για συνδρομή ειδήσεων"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Αποκτήστε απεριόριστα ψευδώνυμα με το SimpleLogin από ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Αναβολή μηνυμάτων και λήψη υπενθύμισης όποτε θέλετε"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Χρησιμοποιήστε τη δική σας προσαρμοσμένη διεύθυνση τομέα ηλεκτρονικού ταχυδρομείου, π.χ. you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -6631,6 +6664,14 @@
         "όροι και προϋποθέσεις"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -6643,14 +6684,6 @@
       ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -9185,6 +9218,9 @@
       ],
       "Preference updated": [
         "Οι προτιμήσεις ενημερώθηκαν"
+      ],
+      "Preferences updated": [
+        "Οι προτιμήσεις ενημερώθηκαν"
       ]
     },
     "Suffix": {
@@ -9447,6 +9483,12 @@
       ],
       "Connection events": [
         "Συμβάντα σύνδεσης"
+      ],
+      "Connection monitor disabled": [
+        "Απενεργοποιημένη η παρακολούθηση σύνδεσης"
+      ],
+      "Connection monitor enabled": [
+        "Ενεργοποιημένη η παρακολούθηση σύνδεσης"
       ],
       "Contact us": [
         "Επικοινωνήστε μαζί μας"
@@ -9739,6 +9781,9 @@
       "Processing...": [
         "Γίνεται επεξεργασία..."
       ],
+      "QRCode": [
+        "QR Κωδικός"
+      ],
       "Recommended": [
         "Προτεινόμενο"
       ],
@@ -9853,6 +9898,9 @@
       ],
       "Switch to two-password mode": [
         "Μετάβαση σε λειτουργία δύο κωδικών πρόσβασης"
+      ],
+      "Text": [
+        "Κείμενο"
       ],
       "There are no groups": [
         "Δεν υπάρχουν ομάδες"
@@ -10056,8 +10104,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ],
+      "Group membership paused": [
+        "Η συμμετοχή στην ομάδα τέθηκε σε παύση"
+      ],
       "Sending member invitation": [
         "Αποστολή πρόσκλησης μέλους"
+      ],
+      "User declined invitation": [
+        "Ο χρήστης απέρριψε την πρόσκληση"
       ],
       "Waiting user to accept the invitation": [
         "Αναμονή χρήστη για αποδοχή της πρόσκλησης"
@@ -10077,6 +10131,59 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Αυτή η έκδοση του περιηγητή Tor δεν υποστηρίζεται. Παρακαλούμε ενημερώστε στην τελευταία ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Οι διαχειριστές δεν μπορούν να έχουν πρόσβαση στα δεδομένα των ιδιωτών χρηστών και δεν μπορούν να επαναφέρουν τον κωδικό πρόσβασής τους."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Κάνοντας τον χρήστη ιδιωτικό, δε θα μπορείτε να τον βοηθήσετε να ανακτήσει την πρόσβαση στα δεδομένα ή τον λογαριασμό του."
+      ],
+      "Delete request": [
+        "Διαγραφή αίτησης"
+      ],
+      "Delete request to access user data?": [
+        "Διαγραφή αιτήματος πρόσβασης σε δεδομένα χρήστη;"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Μόλις ο χρήστης συναινέσει, θα μπορείτε να τον βοηθήσετε να ανακτήσει την πρόσβαση στον λογαριασμό του ή να διαχειριστεί τα δεδομένα του."
+      ],
+      "Organization key must be activated to request data access": [
+        "Το κλειδί οργανισμού πρέπει να είναι ενεργοποιημένο για να ζητήσετε πρόσβαση σε δεδομένα"
+      ],
+      "Pending admin access": [
+        "Πρόσβαση διαχειριστή σε εκκρεμότητα"
+      ],
+      "Private user": [
+        "Ιδιωτικός χρήστης"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Αίτημα διαχείρισης λογαριασμού που στάλθηκε, εν αναμονή έγκρισης χρήστη"
+      ],
+      "Request user permission for data access": [
+        "Αίτηση άδειας χρήστη για πρόσβαση σε δεδομένα"
+      ],
+      "Revoke access": [
+        "Ανάκληση πρόσβασης"
+      ],
+      "Revoke administrator access?": [
+        "Ανάκληση πρόσβασης διαχειριστή;"
+      ],
+      "Send request": [
+        "Αποστολή αιτήματος"
+      ],
+      "The user must have an address to request data access": [
+        "Ο χρήστης πρέπει να έχει μια διεύθυνση για να ζητήσει πρόσβαση στα δεδομένα"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Αυτό θα διαγράψει το εκκρεμές αίτημα για πρόσβαση διαχειριστή στα δεδομένα του χρήστη ή επαναφορά κωδικού πρόσβασης."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Αυτό θα ανακαλέσει την άδεια διαχειριστή για τη διαχείριση του λογαριασμού αυτού του χρήστη."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Για να συνεχίσετε, θα πρέπει να ζητήσετε την άδεια του χρήστη για πρόσβαση στα δεδομένα του ή επαναφορά του κωδικού πρόσβασής του."
       ]
     },
     "upsell panel": {
@@ -10138,9 +10245,6 @@
       "Optional": [
         "Προαιρετικό"
       ],
-      "Private": [
-        "Ιδιωτικό"
-      ],
       "Remember to share the user's sign in details with them.": [
         "Θυμηθείτε να μοιραστείτε τις λεπτομέρειες σύνδεσης με τον χρήστη."
       ],
@@ -10175,6 +10279,9 @@
       ],
       "It's you": [
         "Είστε εσείς"
+      ],
+      "Pending admin access": [
+        "Πρόσβαση διαχειριστή σε εκκρεμότητα"
       ],
       "Private": [
         "Ιδιωτικό"

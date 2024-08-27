@@ -3863,7 +3863,7 @@
         "Passerelles"
       ],
       "Gateways monitoring is disabled.": [
-        "La surveillance de la passerelle a été desactivée."
+        "La surveillance de la passerelle a été désactivée."
       ],
       "Gateways monitoring is enabled.": [
         "La surveillance de la passerelle a été activée."
@@ -3873,6 +3873,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accédez à votre fournisseur d'identité, récupérez les métadonnées SAML pour ${ appName } et importez-les ici."
+      ],
+      "Group deleted": [
+        "Le groupe a été supprimé."
       ],
       "here": [
         "ici"
@@ -3963,6 +3966,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installez un fichier de configuration serveur pour vous connecter à un serveur spécifique du pays de votre choix."
+      ],
+      "Internal user": [
+        "Utilisateur Interne"
       ],
       "Internet connection lost": [
         "La connexion internet est perdue."
@@ -5095,6 +5101,9 @@
       "Declined": [
         "Refusé"
       ],
+      "Paused": [
+        "Suspendu"
+      ],
       "Pending": [
         "En attente"
       ],
@@ -5652,9 +5661,6 @@
       "Admin": [
         "Admin"
       ],
-      "Private": [
-        "Privé"
-      ],
       "VPN connections": [
         "Connexions VPN"
       ]
@@ -6176,6 +6182,15 @@
       "1 user": [
         "1 utilisateur"
       ],
+      "10 email addresses/aliases": [
+        "10 adresses e-mail/alias"
+      ],
+      "10-year file version history": [
+        "Historique des versions de fichier sur 10 ans"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
       "24/7 account management support": [
         "Assistance à la gestion de compte 24h/24 et 7j/7"
       ],
@@ -6316,9 +6331,6 @@
       ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
-      ],
-      "Hide-my-email aliases": [
-        "Alias « hide-my-email »"
       ],
       "High-speed streaming": [
         "Streaming haut débit"
@@ -6510,12 +6522,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
       ],
-      "Up to 15 email addresses": [
-        "Jusqu'à 15 adresses e-mail"
-      ],
-      "Up to 3 TB of storage": [
-        "Jusqu'à 3 To d'espace de stockage"
-      ],
       "User credential management": [
         "Gestion des identifiants des utilisateurs"
       ],
@@ -6534,20 +6540,17 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domaine de messagerie personnalisé"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain2 } » pour les abonnements à des sites d'informations par exemple."
-      ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
         "Mettez les messages en attente et recevez un rappel quand vous le voulez."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Espace de stockage partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utilisez votre adresse e-mail personnalisée à partir de votre propre nom de domaine (vous@votrenom.com)."
       ]
     },
     "new_plans: heading": {
@@ -6673,6 +6676,26 @@
         "conditions générales d'utilisation"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Get Mail Plus": [
+        "Je choisis Mail Plus"
+      ],
+      "Get Mail Plus for $1": [
+        "Obtenir Mail Plus pour 1 $"
+      ],
+      "Get Mail Plus for 1 €": [
+        "Obtenir Mail Plus pour 1 €"
+      ],
+      "Get Mail Plus for CHF 1": [
+        "Obtenir Mail Plus pour 1 CHF"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -6685,14 +6708,6 @@
       ],
       "Switch plans?": [
         "Changer d'abonnement ?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -9230,11 +9245,11 @@
       "Creating config file for ${ serverName }": [
         "Création du fichier de configuration pour ${ serverName }"
       ],
-      "Encryption preference updated": [
-        "Les préférences de chiffrement ont été mises à jour."
-      ],
       "Preference updated": [
         "La préférence a été mise à jour."
+      ],
+      "Preferences updated": [
+        "Les préférences ont été mises à jour."
       ]
     },
     "Suffix": {
@@ -9502,7 +9517,7 @@
         "Événements de connexion"
       ],
       "Connection monitor disabled": [
-        "La surveillance de la connexion a été desactivée."
+        "La surveillance de la connexion a été désactivée."
       ],
       "Connection monitor enabled": [
         "La surveillance de la connexion a été activée."
@@ -10121,6 +10136,9 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME } : sécurisez vos identifiants de connexion sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ],
+      "Group membership paused": [
+        "L'adhésion au groupe a été suspendue."
+      ],
       "Sending member invitation": [
         "Envoi de l'invitation au membre"
       ],
@@ -10145,6 +10163,59 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Cette version du navigateur Tor n'est pas prise en charge. Nous vous invitons à mettre à jour avec la dernière ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "En rendant l'utilisateur privé, vous ne pourrez pas l'aider à retrouver l'accès à ses données ou à son compte."
+      ],
+      "Delete request": [
+        "Supprimer la demande"
+      ],
+      "Delete request to access user data?": [
+        "Supprimer la demande d'accès aux données de l'utilisateur ?"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Une fois que l'utilisateur a donné son accord, vous pourrez l'aider à retrouver l'accès à son compte ou à gérer ses données."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clé d'organisation doit être activée pour demander l'accès aux données"
+      ],
+      "Pending admin access": [
+        "Accès administrateur en attente"
+      ],
+      "Private user": [
+        "Utilisateur privé"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Demande de gestion du compte envoyée, en attente de l'approbation de l'utilisateur"
+      ],
+      "Request user permission for data access": [
+        "Demander l'autorisation de l'utilisateur pour l'accès aux données"
+      ],
+      "Revoke access": [
+        "Révoquer l'accès"
+      ],
+      "Revoke administrator access?": [
+        "Révoquer l'accès administrateur ?"
+      ],
+      "Send request": [
+        "Envoyer une demande"
+      ],
+      "The user must have an address to request data access": [
+        "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Cela supprimera la demande en attente pour l'accès en tant qu'administrateur aux données de l'utilisateur ou pour la réinitialisation du mot de passe."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Ceci révoquera l'autorisation administrateur pour gérer le compte de cet utilisateur."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Pour continuer, vous devez demander à l'utilisateur l'autorisation d'accéder à ses données ou de réinitialiser son mot de passe."
       ]
     },
     "upsell panel": {
@@ -10206,9 +10277,6 @@
       "Optional": [
         "Facultatif"
       ],
-      "Private": [
-        "Privé"
-      ],
       "Remember to share the user's sign in details with them.": [
         "Pensez à partager les informations de connexion avec l'utilisateur concerné."
       ],
@@ -10243,6 +10311,9 @@
       ],
       "It's you": [
         "C'est vous"
+      ],
+      "Pending admin access": [
+        "Accès administrateur en attente"
       ],
       "Private": [
         "Privé"
