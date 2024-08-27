@@ -1965,9 +1965,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
-      ],
       "Set a data recovery method to prevent data loss.": [
         "Indstil en datagendannelsesmetode for at forhindre datatab."
       ],
@@ -5522,8 +5519,8 @@
         "${ n } mapper og etiketter"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } Hide-my-email-alias",
-        "${ n } Hide-my-email-aliasser"
+        "${ n } hide-my-email-alias",
+        "${ n } hide-my-email-aliasser"
       ],
       "${ n } label": [
         "${ n } etiket",
@@ -5558,7 +5555,7 @@
         "${ PASS_APP_NAME } med ${ n } hide-my-email-aliasser"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } med ubegrænsede hide-my-email aliasser"
+        "${ PASS_APP_NAME } med ubegrænsede hide-my-email-aliasser"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME }-program"
@@ -5710,9 +5707,6 @@
       "Group management (coming soon)": [
         "Gruppe administration (kommer snart)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliasser"
-      ],
       "High-speed streaming": [
         "Streaming ved høj hastighed"
       ],
@@ -5815,7 +5809,7 @@
         "SMTP-indsendelse"
       ],
       "SMTP submission for select organizations": [
-        "SMTP indsendelse for udvalgte organisationer"
+        "SMTP-indsendelse for udvalgte organisationer"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
@@ -5887,12 +5881,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
       ],
-      "Up to 15 email addresses": [
-        "Op til 15 e-mailadresser"
-      ],
-      "Up to 3 TB of storage": [
-        "Op til 3 TB lagerplads"
-      ],
       "User credential management": [
         "Administration af brugerlegitimationsoplysninger"
       ],
@@ -5914,17 +5902,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Opret flere e-mailadresser for dine online identiteter, f.eks. JensShopper@${ domain } for shoppingkonto, JensNyheder@${ domain2 } til nyhedsabonnementer."
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Udsæt beskeder, og bliv mindet om dem, når du ønsker det"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Brug din egen brugerdefinerede e-mail-domæneadresse, f.eks. dig@ditnavn.com"
       ]
     },
     "new_plans: heading": {
@@ -6860,10 +6842,10 @@
         "Generér aliasser på farten, og administrér nemt dine aliasser og adgangskoder."
       ],
       "Hide-my-email aliases": [
-        "Hide-my-email aliasser"
+        "Hide-my-email-aliasser"
       ],
       "Hide-my-email aliases let you sign up for things online without sharing your email address. ${ learnMoreLink }": [
-        "Hide-my-email aliasser giver dig mulighed for at tilmelde dig ting online uden at dele din e-mailadresse. ${ learnMoreLink }"
+        "Hide-my-email-aliasser giver dig mulighed for at tilmelde dig ting online uden at dele din e-mailadresse. ${ learnMoreLink }"
       ],
       "New alias": [
         "Nyt alias"
@@ -7249,7 +7231,7 @@
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Alle vores premium-tjenester med deres højeste grænser: 100 e-mailadresser, mulighed for 10 brugerdomæner, ubegrænsede Hide-my-email-aliasser, kalenderdeling, krypteret cloud-lagring og fildeling og meget mere."
+        "Alle vores premium-tjenester med deres højeste grænser: 100 e-mailadresser, mulighed for 10 brugerdomæner, ubegrænsede hide-my-email-aliasser, kalenderdeling, krypteret cloud-lagring og fildeling og meget mere."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support til 3 tilpassede e-maildomæner, 15 e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere."
