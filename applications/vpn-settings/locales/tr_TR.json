@@ -64,6 +64,12 @@
       "Allow": [
         "İzin ver"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Bu grupta uçtan uca şifrelenmiş e-posta kullanılabilsin"
+      ],
+      "Always allow sending": [
+        "Her zaman gönderim yapılabilsin"
+      ],
       "Apply": [
         "Uygula"
       ],
@@ -204,6 +210,9 @@
       ],
       "Discard changes": [
         "Değişiklileri yok say"
+      ],
+      "Domain name": [
+        "Etki alanı adı"
       ],
       "Done": [
         "Tamam"
@@ -640,6 +649,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
       ],
+      "Turn off": [
+        "Kapat"
+      ],
+      "Turn on": [
+        "Aç"
+      ],
       "Unlock": [
         "Kilidi aç"
       ],
@@ -672,6 +687,9 @@
       ],
       "Use authentication code": [
         "Kimlik doğrulama kodu kullan"
+      ],
+      "Use group permissions": [
+        "Grup izinleri kullanılsın"
       ],
       "Use recovery code": [
         "Kurtarma kodunu kullan"
@@ -3428,6 +3446,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } tarafından sunulan bir ${ protonSubdomain }, hızlıca bir alt etki alanı kurmanızı sağlar. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Gruplar oluşturmak için özel bir etki alanı gereklidir. Bir özel etki alanınız yoksa, önce ${ linkToDomainPage } bölümünden bu işlemi tamamlayın."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Daha sonra sertifikayı kolayca geçersiz kılmaya ya da uzatmaya yardımcı olacak bir ad."
       ],
@@ -3841,11 +3862,20 @@
       "Gateways": [
         "Ağ geçitleri"
       ],
+      "Gateways monitoring is disabled.": [
+        "Ağ geçitleri izlemesi kapalı."
+      ],
+      "Gateways monitoring is enabled.": [
+        "Ağ geçitleri izlemesi açık."
+      ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } tarifesini edinin"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Kimlik hizmeti sağlayıcınıza gidin, ${ appName } için SAML üst verileri alın ve buradan içe aktarın."
+      ],
+      "Group deleted": [
+        "Grup silindi"
       ],
       "here": [
         "buraya"
@@ -3936,6 +3966,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Seçtiğiniz ülkedeki belirli bir sunucuya bağlanmak için bir sunucu yapılandırma dosyası yükleyin."
+      ],
+      "Internal user": [
+        "İç kullanıcı"
       ],
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
@@ -4083,6 +4116,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Ağ geçitlerinin güncel durumları yükleniyor."
       ],
       "Loading preview": [
         "Ön izleme yükleniyor"
@@ -4531,6 +4567,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Bu işlem aygıtınıza bağlı olarak birkaç saniye ya da dakika sürebilir"
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Bu değişiklik yaklaşık 1 saat içinde altyapınıza tam olarak yansıyacak"
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Bu işlemin tamamlanması biraz zaman alabilir. Bu sırada lütfen bu sayfayı kapatmayın veya İnternet bağlantınızı kesmeyin."
       ],
@@ -4638,6 +4677,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "İki parola kipi açıldığında, oturum açmak ve verilerin şifresini çözmek için ayrı parolalar kullanılır. Bu seçenek, bazı durumlarda küçük bir güvenlik avantajı sağlar. Ancak çoğu kullanıcıya tek parola kullanmasını öneririz. İki parola kipini açmak için önce bir oturum açma parolası ve ardından bir ikinci parola belirleyin."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "Ağ geçitlerinin güncel izleme durumları yüklenemedi."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
@@ -4830,6 +4872,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME } hizmetlerini kullanabilirsiniz"
+      ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Grupları kullanarak, belirli bir gruptaki kullanıcılara kolayca e-postalar gönderebilirsiniz."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Kullanıma almadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
@@ -5053,6 +5098,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Reddedildi"
+      ],
+      "Paused": [
+        "Duraklatılmış"
+      ],
       "Pending": [
         "Bekliyor"
       ],
@@ -5609,9 +5660,6 @@
     "Label for new member": {
       "Admin": [
         "Yönetici"
-      ],
-      "Private": [
-        "Korunan"
       ],
       "VPN connections": [
         "VPN bağlantısı"
@@ -6275,9 +6323,6 @@
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email takma adları"
-      ],
       "High-speed streaming": [
         "Yüksek hızlı yayın akışı izleme"
       ],
@@ -6468,12 +6513,6 @@
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
       ],
-      "Up to 15 email addresses": [
-        "15 e-posta adresine kadar"
-      ],
-      "Up to 3 TB of storage": [
-        "3 TB depolama alanına kadar"
-      ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
       ],
@@ -6495,17 +6534,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "${ BRAND_NAME } SimpleLogin ile sınırsız sayıda takma ad edinin"
-      ],
       "Snooze messages and get reminded when you want": [
         "İletileri erteleyin ve istediğiniz zaman yeniden görün"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Dilerseniz siz@sirketiniz.com gibi kendi özel etki alanınızla e-posta adresleri oluşturun"
       ]
     },
     "new_plans: heading": {
@@ -6631,6 +6664,14 @@
         "hüküm ve koşullar"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } deneme"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -6643,14 +6684,6 @@
       ],
       "Switch plans?": [
         "Tarifeler değiştirilsin mi?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } deneme"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {
@@ -9185,6 +9218,9 @@
       ],
       "Preference updated": [
         "Tercih güncellendi"
+      ],
+      "Preferences updated": [
+        "Ayarlar güncellendi"
       ]
     },
     "Suffix": {
@@ -9450,6 +9486,12 @@
       ],
       "Connection events": [
         "Bağlantı işlemleri"
+      ],
+      "Connection monitor disabled": [
+        "Bağlantı monitörü kapalı"
+      ],
+      "Connection monitor enabled": [
+        "Bağlantı monitörü açık"
       ],
       "Contact us": [
         "Bize ulaşın"
@@ -9742,6 +9784,9 @@
       "Processing...": [
         "İşleniyor..."
       ],
+      "QRCode": [
+        "QR kodu"
+      ],
       "Recommended": [
         "Önerilen"
       ],
@@ -9856,6 +9901,9 @@
       ],
       "Switch to two-password mode": [
         "İki parola kipini aç"
+      ],
+      "Text": [
+        "Metin"
       ],
       "There are no groups": [
         "Herhangi bir grup yok"
@@ -10059,8 +10107,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
       ],
+      "Group membership paused": [
+        "Grup üyeliği duraklatılmış"
+      ],
       "Sending member invitation": [
         "Üye daveti gönderiliyor"
+      ],
+      "User declined invitation": [
+        "Kullanıcı daveti reddetti"
       ],
       "Waiting user to accept the invitation": [
         "Kullanıcının daveti kabul etmesi bekleniyor"
@@ -10140,9 +10194,6 @@
       ],
       "Optional": [
         "İsteğe bağlı"
-      ],
-      "Private": [
-        "Korunan"
       ],
       "Remember to share the user's sign in details with them.": [
         "Kullanıcının oturum açabilmesi için kimlik doğrulama bilgilerini paylaşmayı unutmayın."
