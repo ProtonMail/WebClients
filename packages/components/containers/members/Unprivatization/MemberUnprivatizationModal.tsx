@@ -81,7 +81,7 @@ const MemberUnprivatizationModal = ({ member, orgName, parsedUnprivatizationData
             <ModalTwo {...rest}>
                 <ModalTwoHeader title={c('unprivatization').t`Enable admin access?`} />
                 <ModalTwoContent>
-                    <p className="text-break-all">
+                    <p className="text-break">
                         {getBoldFormattedText(
                             c('unprivatization')
                                 .t`An administrator of the **${orgName}** organization (**${adminEmail}**) wants to enable administrator access for your account.`
