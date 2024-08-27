@@ -26,7 +26,7 @@ export const DEFAULT_FIAT_CURRENCY = 'USD';
 
 export const DEFAULT_FIRST_ACCOUNT_LABEL = 'Primary Account';
 export const DEFAULT_FIRST_ACCOUNT_INDEX = 0;
-export const DEFAULT_FIRST_BVE_ACCOUNT_LABEL = 'Bitcoin Via Email';
+export const DEFAULT_FIRST_BVE_ACCOUNT_LABEL = 'Bitcoin via Email';
 export const DEFAULT_FIRST_BVE_ACCOUNT_INDEX = 1;
 export const DEFAULT_SCRIPT_TYPE = WasmScriptType.NativeSegwit;
 

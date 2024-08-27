@@ -125,7 +125,7 @@ export const MetricsAndCtas = ({
                         </div>
                     </div>
 
-                    <div className="metrics-and-ctas-chart" style={{ height: '3rem', width: '10rem' }}>
+                    <div className="metrics-and-ctas-chart" style={{ height: '3rem', width: '8rem' }}>
                         <Line
                             id="line-chart"
                             options={lineChartOptions}
