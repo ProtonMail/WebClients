@@ -58,6 +58,17 @@ export const viewCreationAppStartup = (session: Session) => {
     mainWindow.on("maximize", debouncedUpdateWindowBounds);
     mainWindow.on("unmaximize", debouncedUpdateWindowBounds);
 
+    const updateViewsBounds = () => {
+        for (const viewID of Object.keys(browserViewMap) as ViewID[]) {
+            if (browserViewMap[viewID]) {
+                updateViewBounds(viewID);
+            }
+        }
+    };
+
+    mainWindow.on("maximize", updateViewsBounds);
+    mainWindow.on("unmaximize", updateViewsBounds);
+
     mainWindow.on("close", (event) => {
         // We don't want to prevent the close event if the update is downloaded
         if (updateDownloaded) {
