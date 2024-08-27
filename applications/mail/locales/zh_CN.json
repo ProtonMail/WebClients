@@ -735,18 +735,6 @@
       "Move": [
         "移动"
       ],
-      "Move all conversations from this folder": [
-        "移动该文件夹中的所有对话"
-      ],
-      "Move all conversations from this label": [
-        "移动该标签中的所有对话"
-      ],
-      "Move all messages from this folder": [
-        "移动该文件夹中的所有邮件"
-      ],
-      "Move all messages from this label": [
-        "移动该标签中的所有邮件"
-      ],
       "Move all to archive": [
         "全部存档"
       ],
@@ -1142,6 +1130,9 @@
       ],
       "Show side panel": [
         "显示侧边栏"
+      ],
+      "Show toolbar": [
+        "显示工具栏"
       ],
       "Sign out": [
         "退出"
@@ -2782,6 +2773,9 @@
       "Kiribati": [
         "基里巴斯"
       ],
+      "Korea (Republic of)": [
+        "大韩(民国)"
+      ],
       "Kosovo": [
         "科索沃"
       ],
@@ -3304,9 +3298,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "双重验证能为您再增添一道安全防线，将试图盗取账户者拒之门外。"
       ],
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "废件箱与垃圾邮件超过 30 天自动为您清理。升级账户即可开启，还能享受更多功能。"
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "正在解密通讯录，可能需要几分钟的时间。完成后您就可以下载导出的通讯录文件了。"
       ],
@@ -3343,9 +3334,6 @@
       "No labels": [
         "无标签"
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "群发日程邀请与邮件，省时又省力，还有更多高级功能，升级账户即可体验。"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "升级账户即可使用多个邮箱地址隔离工作与生活中的各项事务，还可解锁更多高级功能。"
       ],
@@ -3369,12 +3357,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "开启邮件跟踪防护，避免广告商等第三方监视您的地理位置和网络轨迹。"
-      ],
-      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "升级账户即可自由选择发送时间，还有各种高级功能。"
-      ],
-      "Unlock custom snooze times when you upgrade your plan.": [
-        "升级账户即可自由调整延迟通知时间。"
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "升级账户即可解锁更短的邮箱地址以及更多高级功能。"
@@ -8578,6 +8560,15 @@
       "Downgrade to ${ downgradedPlanName }": [
         "降级至 ${ downgradedPlanName }"
       ],
+      "Get started for $1": [
+        "1$即可开始"
+      ],
+      "Get started for 1 €": [
+        "1€即可开始"
+      ],
+      "Get started for CHF 1": [
+        "1CHF即可开始"
+      ],
       "Upgrade now": [
         "立即升级账户"
       ]
@@ -8774,11 +8765,11 @@
       "GDPR data processing agreement": [
         "GDPR 数据处理协议"
       ],
+      "Generate emails with only a prompt": [
+        "有一个提示的情形下，写出邮件"
+      ],
       "Group management (coming soon)": [
         "群组管理（即将推出）"
-      ],
-      "Hide-my-email aliases": [
-        "Hide My Email 邮箱别名"
       ],
       "High-speed streaming": [
         "高速看视频"
@@ -8807,6 +8798,9 @@
       "Password-protected Emails": [
         "邮件密码保护"
       ],
+      "Phone support (20+ users)": [
+        "支持手机(至少20位用户)"
+      ],
       "Priority email support": [
         "优先享受邮件客服"
       ],
@@ -8816,6 +8810,9 @@
       "Priority support & live chat": [
         "优先与客服实时沟通"
       ],
+      "Proofread and refine your texts": [
+        "请校对和完善您的文本"
+      ],
       "Protect ${ n } device at a time": [
         "一次性保护 ${ n } 个设备"
       ],
@@ -8824,6 +8821,9 @@
       ],
       "Router support": [
         "支持路由器部署"
+      ],
+      "Save time emailing": [
+        "节省发送邮件的时间"
       ],
       "Schedule and snooze emails for any time": [
         "自由选择邮件收发时间"
@@ -8836,6 +8836,9 @@
       ],
       "Secure Core servers": [
         "Secure Core 服务器"
+      ],
+      "See team's availability": [
+        "看到团队的可得性"
       ],
       "Send & receive invitations": [
         "发送和接收邀请"
@@ -8909,17 +8912,14 @@
       "Up to ${ totalStorageSize } storage": [
         "最高 ${ totalStorageSize } 存储空间"
       ],
-      "Up to 15 email addresses": [
-        "最多 15 个邮箱地址"
-      ],
-      "Up to 3 TB of storage": [
-        "高达 3 TB 的存储空间"
-      ],
       "User credential management": [
         "用户身份验证管理"
       ],
       "User session management": [
         "用户登录管理"
+      ],
+      "User storage management": [
+        "用户储存管理"
       ],
       "Vault sharing (up to ${ n } person)": [
         "密码分享（最多${ n }个人）"
@@ -8929,17 +8929,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain2 } 用于收取时事新闻"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "通过 ${ BRAND_NAME } 提供的 SimpleLogin 服务使用无限量的邮箱别名"
-      ],
       "Snooze messages and get reminded when you want": [
         "推迟邮件提醒，自由决定何时接收通知"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "在邮箱地址中使用您自己的域名（如 you@yourname.com）"
       ]
     },
     "new_plans: heading": {
@@ -11421,6 +11415,9 @@
       ],
       "Enable message content search": [
         "启用邮件全文搜索"
+      ],
+      "Enter 2FA code": [
+        "输入 2FA 验证码"
       ],
       "Enter your password": [
         "输入密码"

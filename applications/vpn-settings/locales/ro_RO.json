@@ -64,6 +64,12 @@
       "Allow": [
         "Permitere"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Permitere mesaje criptate bilateral pentru acest grup"
+      ],
+      "Always allow sending": [
+        "Permitere întotdeauna trimitere"
+      ],
       "Apply": [
         "Aplicare"
       ],
@@ -204,6 +210,9 @@
       ],
       "Discard changes": [
         "Anulare modificări"
+      ],
+      "Domain name": [
+        "Nume domeniu"
       ],
       "Done": [
         "Gata"
@@ -640,6 +649,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Reîncercați salvarea. Aceasta a eșuat deoarece: ${ saveError }"
       ],
+      "Turn off": [
+        "Oprire"
+      ],
+      "Turn on": [
+        "Pornire"
+      ],
       "Unlock": [
         "Deblocare"
       ],
@@ -672,6 +687,9 @@
       ],
       "Use authentication code": [
         "Folosire cod de autentificare"
+      ],
+      "Use group permissions": [
+        "Folosire permisiuni grup"
       ],
       "Use recovery code": [
         "Folosire cod de recuperare"
@@ -3460,6 +3478,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Un ${ protonSubdomain } este găzduit de ${ BRAND_NAME }, ceea ce vă permite să configurați rapid un subdomeniu. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Este necesar un domeniu personal pentru a crea grupuri. Dacă nu aveți un domeniu personal configurat, faceți-o mai întâi pe ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nume care vă ajută să identificați unde o folosiți pentru a o anula sau extinde mai târziu."
       ],
@@ -3881,11 +3902,20 @@
       "Gateways": [
         "Porți de acces"
       ],
+      "Gateways monitoring is disabled.": [
+        "Monitorizarea porților de acces este dezactivată."
+      ],
+      "Gateways monitoring is enabled.": [
+        "Monitorizarea porților de acces este activată."
+      ],
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
+      ],
+      "Group deleted": [
+        "Grupul s-a șters."
       ],
       "here": [
         "aici"
@@ -3976,6 +4006,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instalați un fișier de configurare al serverului pentru a vă conecta la un server din țara aleasă."
+      ],
+      "Internal user": [
+        "Utilizator intern"
       ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
@@ -4123,6 +4156,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Calendarul se încarcă, așteptați. Pagina se va redirecționa către platforma noastră de programări Calendly într-o filă nouă."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Se încarcă starea curentă de monitorizare a porților de acces."
       ],
       "Loading preview": [
         "Se încarcă previzualizarea"
@@ -4580,6 +4616,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Acesta poate dura câteva secunde sau câteva minute, în funcție de dispozitivul folosit"
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Această modificare va fi complet aplicată infrastructurii în aproximativ o oră."
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Asta ar putea dura ceva timp. Nu închideți această pagină și nu vă deconectați de la internet."
       ],
@@ -4687,6 +4726,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "Modul cu două parole folosește parole separate pentru conectare și pentru decriptarea datelor. Aceasta furnizează un beneficiu minor de securitate în unele situații. Totuși recomandăm parola unică la majoritatea utilizatorilor. Pentru a comuta la modul cu două parole, mai întâi creați o parolă de conectare și apoi una secundară."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "Imposibil de verificat starea curentă de monitorizare a porților de acces."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Din păcate nu există nicio metodă de recuperare salvată pentru acest cont."
@@ -4879,6 +4921,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Cu o adresă criptată ${ BRAND_NAME }, puteți utiliza toate serviciile ${ BRAND_NAME }."
+      ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Cu grupuri, puteți trimite rapid și ușor mesaje tuturor persoanelor dintr-un anumit grup."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
@@ -5109,6 +5154,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Refuzată"
+      ],
+      "Paused": [
+        "Suspendată"
+      ],
       "Pending": [
         "În așteptare"
       ],
@@ -5671,9 +5722,6 @@
     "Label for new member": {
       "Admin": [
         "Administrator"
-      ],
-      "Private": [
-        "Privat"
       ],
       "VPN connections": [
         "Conexiuni VPN"
@@ -6355,9 +6403,6 @@
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
       ],
-      "Hide-my-email aliases": [
-        "Aliasuri hide-my-email"
-      ],
       "High-speed streaming": [
         "Transmisii în flux de mare viteză"
       ],
@@ -6552,12 +6597,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
       ],
-      "Up to 15 email addresses": [
-        "Până la 15 adrese de e-mail"
-      ],
-      "Up to 3 TB of storage": [
-        "Până la 3 TiB spațiu de stocare"
-      ],
       "User credential management": [
         "Gestionare acreditări utilizatori"
       ],
@@ -6580,17 +6619,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Creați adrese de e-mail multiple pentru identitățile personale online, de ex. ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain2 } pentru abonamentul la știri."
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Amânați mesajele și fiți notificat când doriți."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utilizați propria adresă de domeniu pentru e-mail. De exemplu: nume@adresapersonala.ro"
       ]
     },
     "new_plans: heading": {
@@ -6716,6 +6749,14 @@
         "termenii și condițiile"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -6728,14 +6769,6 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -9339,6 +9372,9 @@
       ],
       "Preference updated": [
         "Preferințe actualizate"
+      ],
+      "Preferences updated": [
+        "Preferințe actualizate"
       ]
     },
     "Suffix": {
@@ -9604,6 +9640,12 @@
       ],
       "Connection events": [
         "Evenimente de conexiune"
+      ],
+      "Connection monitor disabled": [
+        "Monitorizare conexiune dezactivată"
+      ],
+      "Connection monitor enabled": [
+        "Monitorizare conexiune activată"
       ],
       "Contact us": [
         "Contactați-ne"
@@ -9899,6 +9941,9 @@
       "Processing...": [
         "Se procesează..."
       ],
+      "QRCode": [
+        "Cod QR"
+      ],
       "Recommended": [
         "Recomandat"
       ],
@@ -10014,6 +10059,9 @@
       ],
       "Switch to two-password mode": [
         "Comutare la modul cu două parole"
+      ],
+      "Text": [
+        "Text"
       ],
       "There are no groups": [
         "Nu există grupuri"
@@ -10217,8 +10265,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ],
+      "Group membership paused": [
+        "Apartenența la grup a fost suspendată"
+      ],
       "Sending member invitation": [
         "Se trimite invitația membrului"
+      ],
+      "User declined invitation": [
+        "Utilizatorul a refuzat invitația"
       ],
       "Waiting user to accept the invitation": [
         "Se așteaptă ca utilizatorul să accepte invitația"
@@ -10238,6 +10292,59 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Această versiune a Tor Browser nu este suportată. Actualizați la cea mai recentă ${ stableRelease }."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Făcând utilizatorul privat, nu îl veți putea ajuta să-și recâștige accesul la date sau la cont."
+      ],
+      "Delete request": [
+        "Anulare cerere"
+      ],
+      "Delete request to access user data?": [
+        "Anulați solicitarea de acces la datele utilizatorului?"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "După ce utilizatorul își dă acordul, îl veți putea ajuta să recâștige accesul la cont sau să-și gestioneze datele."
+      ],
+      "Organization key must be activated to request data access": [
+        "Cheia organizației trebuie activată pentru a solicita accesul la date."
+      ],
+      "Pending admin access": [
+        "Acces de administrare în așteptare"
+      ],
+      "Private user": [
+        "Utilizator privat"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "S-a trimis solicitarea de gestionare a contului. Se așteaptă aprobarea de la utilizator."
+      ],
+      "Request user permission for data access": [
+        "Solicitare permisiune de la utilizator de a-i accesa datele"
+      ],
+      "Revoke access": [
+        "Revocare acces"
+      ],
+      "Revoke administrator access?": [
+        "Revocați accesul administratorului?"
+      ],
+      "Send request": [
+        "Trimitere solicitare"
+      ],
+      "The user must have an address to request data access": [
+        "Utilizatorul trebuie să aibă o adresă pentru a solicita acces la date."
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Aceasta va anula solicitarea în așteptare pentru accesul de administrare a datelor utilizatorului sau de resetare a parolei."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Aceasta va revoca permisiunea administratorului de a gestiona contul acestui utilizator."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Pentru a continua, va trebui să solicitați permisiunea utilizatorului de a-i putea accesa datele sau de a-i reseta parola."
       ]
     },
     "upsell panel": {
@@ -10299,9 +10406,6 @@
       "Optional": [
         "Opțional"
       ],
-      "Private": [
-        "Privat"
-      ],
       "Remember to share the user's sign in details with them.": [
         "Aveți grijă să furnizați utilizatorilor detaliile lor de autentificare."
       ],
@@ -10336,6 +10440,9 @@
       ],
       "It's you": [
         "Sunt eu"
+      ],
+      "Pending admin access": [
+        "Acces de administrare în așteptare"
       ],
       "Private": [
         "Privat"

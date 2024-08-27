@@ -2481,9 +2481,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Bespaar tijd door e-mails of uitnodigingen naar iedereen tegelijkertijd te sturen, een premium functie zoals vele anderen. Upgrade vandaag."
-      ],
       "Set a data recovery method to prevent data loss.": [
         "Stel een methode voor gegevensherstel in om gegevensverlies te voorkomen."
       ],
@@ -2627,6 +2624,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB opslagruimte"
+      ],
       "2 users": [
         "2 gebruikers"
       ],
@@ -5097,6 +5097,9 @@
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "U hebt deze uitnodiging eerder al geweigerd. Vraag de eigenaar naar een nieuwe uitnodiging"
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "U verliest toegang tot ${ planTitle } functies op deze datum."
+      ],
       "You will lose all unsaved changes.": [
         "U zal alle wijzigingen kwijtraken."
       ],
@@ -6349,6 +6352,9 @@
       "${ size } attachment size": [
         "${ size } bijlagegrootte"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } veilige opslag per gebruiker"
+      ],
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
@@ -6475,9 +6481,6 @@
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliassen"
-      ],
       "High-speed streaming": [
         "Streamen op hoge snelheid"
       ],
@@ -6509,8 +6512,14 @@
       "Password health": [
         "Wachtwoordgezondheid"
       ],
+      "Password manager": [
+        "Wachtwoordbeheer"
+      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonische ondersteuning (20+ gebruikers)"
       ],
       "Priority email support": [
         "Prioriteitsondersteuning per e-mail"
@@ -6527,6 +6536,9 @@
       "Protect ${ n } device at a time": [
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
@@ -6631,12 +6643,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
       ],
-      "Up to 15 email addresses": [
-        "Tot wel 15 e-mailadressen"
-      ],
-      "Up to 3 TB of storage": [
-        "Tot wel 3 TB opslag"
-      ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
       ],
@@ -6658,17 +6664,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Berichten snoozen en ontvangen wanneer u wil"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
       ]
     },
     "new_plans: heading": {
@@ -6909,7 +6909,7 @@
         "Bescherm uw gezin tegen schadelijke websites en krijg toegang tot onze supersnelle VPN-servers om uw favoriete inhoud te streamen"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Bescherm je echte e-mailadres tegen openbaarmaking of lekken met aliassen (een willekeurig gegenereerd e-mailadres dat e-mails naar je hoofdinbox stuurt)."
+        "Bescherm uw echte e-mailadres tegen openbaarmaking of lekken met aliassen (een willekeurig gegenereerd e-mailadres dat e-mails naar uw hoofdinbox stuurt)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Voorziet het hoogste niveau van account beveiliging en gespecialiseerde ondersteuning"
@@ -8214,7 +8214,7 @@
     },
     "Spotlight": {
       "Color-code your calendar to better organize your day, track your time, and more.": [
-        "Voorzie uw kalender van kleurcodes om uw dag beter te organiseren, uw tijd beter bij te houden, en meer."
+        "Voorzie uw agenda van kleurcodes om uw dag beter te organiseren, uw tijd beter bij te houden, en meer."
       ],
       "Custom event colors": [
         "Aangepaste kleuren voor afspraken"
@@ -8473,7 +8473,7 @@
         "${ planName } geeft u toegang tot alle apps en premiumfuncties. Privacy is ingebouwd zodat u meteen aan de slag kunt, wetende dat uw gegevens en identiteit veilig zijn."
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat je nodig hebt om de controle over de veiligheid van de veiligheid te hebben."
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
       ],
       "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
         "${ planName } geeft u onbeperkte privacy en meer opslagruimte voor tot wel 2 personen."
@@ -8485,7 +8485,7 @@
         "${ planName } geeft uw team wat ze nodig hebben om productiever en beter georganiseerd te zijn, om controle te hebben over hun inbox, planning en meer."
       ],
       "${ planName } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
-        "${ planName } gaat verder dan de basis om je te helpen productiever, georganiseerder, en in controle van je inbox, e-mailidentiteit en meer te zijn."
+        "${ planName } gaat verder dan de basis om je te helpen productiever, georganiseerder, en in controle van uw inbox, e-mailidentiteit en meer te zijn."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
         "${ planName } helpt u bij het verzekeren dat al uw gezinsleden - en hun gegevens - beveiligd zijn wanneer ze online zijn."
@@ -8494,7 +8494,7 @@
         "${ planName } biedt ${ planMaxSpace } opslag voor uw e-mails, bijlagen, gebeurtenissen, wachtwoorden, en bestanden. U komt ook in aanmerking voor jaarlijkse bonussen op uw opslag."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
-        "${ planName } biedt ${ planMaxSpace } aan opslag voor uw bestanden en foto's. U komt ook in aanmkering voor jaarlijkse opslagbonussen."
+        "${ planName } biedt ${ planMaxSpace } aan opslag voor uw bestanden en foto's. U komt ook in aanmerking voor jaarlijkse opslagbonussen."
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } biedt ${ planMaxSpace } opslag per gebruiker voor e-mails, bijlagen, gebeurtenissen, en bestanden. U komt ook in aanmerking voor jaarlijkse opslagbonussen."
@@ -8614,7 +8614,7 @@
         "Laat uw bedrijf opvallen"
       ],
       "Manage your calendar": [
-        "Beheer uw kalender"
+        "Beheer uw agenda"
       ],
       "Online privacy, for your whole family": [
         "Online privacy voor het hele gezin"
@@ -8689,7 +8689,7 @@
         "Bekijk het interview"
       ],
       "What you give up when you cancel ${ planName }": [
-        "Wat je opgeeft wanneer je ${ planName } annuleert"
+        "Wat u opgeeft wanneer u ${ planName } annuleert"
       ],
       "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Wanneer u ${ planName } annuleert, wordt u gedowngraded naar ${ BRAND_NAME } Free, die slechts 1 GB aan Mailopslag en maximaal 5 GB aan Drive opslagruimte biedt. U verliest ook alle eerder toegekende opslagbonussen."
@@ -9320,6 +9320,9 @@
       ],
       "Encrypted event": [
         "Versleutelde afspraak"
+      ],
+      "Enter 2FA code": [
+        "Voer 2FA code in"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"

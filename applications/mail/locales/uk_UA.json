@@ -765,18 +765,6 @@
       "Move": [
         "Перемістити"
       ],
-      "Move all conversations from this folder": [
-        "Перемістити всі розмови з цієї теки"
-      ],
-      "Move all conversations from this label": [
-        "Перемістити всі розмови з цієї мітки"
-      ],
-      "Move all messages from this folder": [
-        "Перемістити всі повідомлення з цієї теки"
-      ],
-      "Move all messages from this label": [
-        "Перемістити всі повідомлення з цієї мітки"
-      ],
       "Move all to archive": [
         "Перемістити все в архів"
       ],
@@ -3420,9 +3408,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двоетапна автентифікація підвищує рівень безпеки, запобігаючи несанкціонованому доступу."
       ],
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Автоматично очищуйте повідомлення зі спаму та смітника через 30 днів. Скористайтеся цими та іншими перевагами після передплати."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Розшифрування контактів… Це може тривати кілька хвилин. Після завершення процесу ви зможете завантажити файл з усіма експортованими контактами."
       ],
@@ -3462,9 +3447,6 @@
       "No labels": [
         "Немає міток"
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Заощаджуйте час, надсилаючи листи або запрошення одразу всім адресатам – одна з багатьох преміумфункцій, доступних у передплачених тарифних планах."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Передплатіть тарифний план, щоб відокремити різні аспекти свого життя за допомогою декількох адрес електронної пошти та отримати доступ до інших преміумфункцій."
       ],
@@ -3488,12 +3470,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Увімкніть захист від стеження для електронної пошти, щоб рекламодавці та сторонні служби не відстежували ваше розташування й активність в інтернеті."
-      ],
-      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Користуйтеся власним розкладом листування та іншими перевагами після оновлення тарифного плану."
-      ],
-      "Unlock custom snooze times when you upgrade your plan.": [
-        "Після покращення плану ви зможете встановлювати власний час відкладення."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Передплатіть тарифний план і розблокуйте короткі адреси електронної пошти та інші преміальні функції."
@@ -9439,9 +9415,6 @@
       "Group management (coming soon)": [
         "Керування групами (незабаром)"
       ],
-      "Hide-my-email aliases": [
-        "Псевдоніми Hide-my-email"
-      ],
       "High-speed streaming": [
         "Високошвидкісна потокова трансляція"
       ],
@@ -9601,12 +9574,6 @@
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
       ],
-      "Up to 15 email addresses": [
-        "До 15 адрес електронної пошти"
-      ],
-      "Up to 3 TB of storage": [
-        "До 3 ТБ сховища"
-      ],
       "User credential management": [
         "Керування обліковими даними користувача"
       ],
@@ -9630,17 +9597,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Створіть різні адреси електронної пошти для ваших онлайн-профілів, наприклад, ArtemShopper@${ domain } для інтернет-магазинів, ArtemNews@${ domain2 } для підписки на новини"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Отримайте необмежену кількість псевдонімів із SimpleLogin від ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Відкладайте повідомлення та отримуйте нагадування, коли захочете"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Використовуйте власні доменні адреси електронної пошти, наприклад, you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -12170,9 +12131,6 @@
       ],
       "Self-destruction set": [
         "Самознищення встановлено"
-      ],
-      "Text copied to clipboard": [
-        "Текст скопійовано до буфера обміну"
       ],
       "Thanks for the feedback!": [
         "Дякуємо за відгук!"

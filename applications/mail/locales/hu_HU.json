@@ -683,18 +683,6 @@
       "Move": [
         "Áthelyezés"
       ],
-      "Move all conversations from this folder": [
-        "Helyezzen át minden beszélgetést ebből a mappából"
-      ],
-      "Move all conversations from this label": [
-        "Helyezzen át minden beszélgetést ebből a címkéből"
-      ],
-      "Move all messages from this folder": [
-        "Helyezzen át minden üzenetet ebből a mappából"
-      ],
-      "Move all messages from this label": [
-        "Helyezzen át minden üzenetet ebből a címkéből"
-      ],
       "Move all to archive": [
         "Összes áthelyezése az archívumba"
       ],
@@ -3162,9 +3150,6 @@
       "${ manageBlockedAddressesSettingsLink } in settings.": [
         "${ manageBlockedAddressesSettingsLink } a beállításoknál."
       ],
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Törölje automatikusan a 30 napnál régebben a lomtárba vagy a levélszemét mappába került leveleket. Ehhez a lehetőséghez és további előnyökhöz, váltson nagyobb csomagra."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Névjegyek visszafejtése… Ez eltarthat néhány percig. A folyamat végeztével letölthető lesz az exportált névjegy lista."
       ],
@@ -3199,9 +3184,6 @@
       "No labels": [
         "Nincsenek címkék"
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Takarítson meg időt azzal, hogy mindenkinek egyszerre elküldi az e-mailt vagy meghívókat. Ez egy prémium lehetőség, sok másikkal együtt. Váltson nagyobb csomagra."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Válassza külön élete különböző részeit több e-mail címmel és érjen el még több prémium funkciót, nagyobb csomagra váltással."
       ],
@@ -3210,9 +3192,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Kapcsolja be az e-mail nyomkövetés elleni védelmet, hogy megakadályozza, hogy a hirdetők és mások nyomon kövessék az Ön tartózkodási helyét és online tevékenységét."
-      ],
-      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Használja az üzenet ütemezési lehetőséget és tegyen szert további előnyökre, nagyobb csomagra váltással."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Szerezzen rövidebb e-mail címeket és egyéb prémium funkciókat, nagyobb csomagra váltással."
@@ -8350,9 +8329,6 @@
       "Group management (coming soon)": [
         "Csoportkezelés (hamarosan elérhető)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email álnevek"
-      ],
       "High-speed streaming": [
         "Nagy sebességű videózás"
       ],
@@ -8485,12 +8461,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Akár ${ totalStorageSize } tárhely"
       ],
-      "Up to 15 email addresses": [
-        "Akár 15 e-mail cím"
-      ],
-      "Up to 3 TB of storage": [
-        "Akár 3 TB tárhely"
-      ],
       "User credential management": [
         "Felhasználói adatok kezelése"
       ],
@@ -8509,14 +8479,8 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain2 } a hírleveleinek"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Korlátlan számú e-mail álnév, a ${ BRAND_NAME } SimpleLogin segítségével"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "A tárhely megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Használja a saját egyedi e-mail domain címét, pl. on@azonneve.com"
       ]
     },
     "new_plans: heading": {

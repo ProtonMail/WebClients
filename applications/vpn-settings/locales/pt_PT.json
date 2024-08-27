@@ -2994,6 +2994,10 @@
         "${ remainingAddresses.length } mais",
         "${ remainingAddresses.length } mais"
       ],
+      "${ remainingAddresses.length } more address": [
+        "Mais ${ remainingAddresses.length } endereço",
+        "Mais ${ remainingAddresses.length } endereços"
+      ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
       ],
@@ -4778,9 +4782,6 @@
       "Admin": [
         "Administrador"
       ],
-      "Private": [
-        "Privado"
-      ],
       "VPN connections": [
         "Ligações VPN"
       ]
@@ -5345,9 +5346,6 @@
       "Group management (coming soon)": [
         "Gestão de grupos (em breve)"
       ],
-      "Hide-my-email aliases": [
-        "Aliases do Hide-my-email"
-      ],
       "High-speed streaming": [
         "Streaming de alta velocidade"
       ],
@@ -5490,12 +5488,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
       ],
-      "Up to 15 email addresses": [
-        "Até 15 endereços de e-mail "
-      ],
-      "Up to 3 TB of storage": [
-        "Até 3 TB de armazenamento"
-      ],
       "User credential management": [
         "Gestão das credenciais dos utilizadores"
       ],
@@ -5511,17 +5503,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crie vários endereços de e-mail para as suas identidades online, por exemplo, JohnShopper@${ domain } para contas de compras, JohnNews@${ domain2 } para subscrição de notícias"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Obtenha aliases ilimitados com SimpleLogin por ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Adie mensagens e seja relembrado quando quiser"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utilize o seu próprio endereço de domínio de e-mail personalizado, por exemplo, you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -5626,6 +5612,14 @@
         "termos e condições"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminar conta?"
@@ -5638,14 +5632,6 @@
       ],
       "Switch plans?": [
         "Alterar o plano?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -6281,6 +6267,10 @@
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Selecione o número de IP a incluir no seu plano. Cada IP adicional custa ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Se precisar de mais do que ${ maxIPs } IP, ",
+        "Se precisar de mais do que ${ maxIPs } IPs, "
       ]
     },
     "plan customizer, users": {
@@ -6436,7 +6426,7 @@
         "Conversão de moeda"
       ],
       "Invoice": [
-        "Factura"
+        "Fatura"
       ]
     },
     "Select search results": {
@@ -8078,6 +8068,10 @@
       "Subscription": [
         "Subscrição"
       ],
+      "Successfully created ${ n } user account": [
+        "Criada com sucesso ${ n } conta de utilizador",
+        "Criada com sucesso ${ n } contas de utilizador"
+      ],
       "Summary": [
         "Resumo"
       ],
@@ -8314,9 +8308,6 @@
       ],
       "Optional": [
         "Opcional"
-      ],
-      "Private": [
-        "Privado"
       ],
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de partilhar os detalhes de início de sessão do utilizador com o mesmo."

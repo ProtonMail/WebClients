@@ -157,6 +157,12 @@
       "Allow": [
         "Salli"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Salli päästä päähän -salattu sähköposti tälle ryhmälle"
+      ],
+      "Always allow sending": [
+        "Salli lähetys aina"
+      ],
       "Apply": [
         "Toteuta"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "Hylkää muutokset"
+      ],
+      "Domain name": [
+        "Verkkotunnus"
       ],
       "Don't show again": [
         "Älä näytä uudelleen"
@@ -1111,6 +1120,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yritä tallennusta uudelleen. Tallennus epäonnistui: ${ saveError }"
       ],
+      "Turn off": [
+        "Poista käytöstä"
+      ],
+      "Turn on": [
+        "Ota käyttöön"
+      ],
       "Underline": [
         "Alleviivaus"
       ],
@@ -1175,7 +1190,10 @@
         "Käytä eri maksutapaa"
       ],
       "Use authentication code": [
-        "Käytä todennuskoodia"
+        "Käytä vahvistuskoodia"
+      ],
+      "Use group permissions": [
+        "Käytä ryhmän käyttöoikeuksia"
       ],
       "Use recovery code": [
         "Käytä palautuskoodia"
@@ -3365,9 +3383,6 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Poista roskakorissa ja roskapostissa yli 30 päivää olleet viestit automaattisesti. Nauti tästä ja muista eduista päivittämällä tilauksesi."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Onnittelut! Olet ansainnut vapaiden kuukausien enimmäismäärän ${ rewardsLimit } kuukautta ${ plusPlanName }."
       ],
@@ -4196,6 +4211,9 @@
       ],
       "Authentication error.": [
         "Todennusvirhe."
+      ],
+      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
+        "Automaattivastauksen pituus ylittää sallitun rajan. Lyhennä sitä niin, että se mahtuu rajojen sisälle."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automaattivastaus on maksullinen ominaisuus. Päivitä maksulliseen tiliin käyttääksesi sitä."
@@ -5449,7 +5467,7 @@
         "Käyttääksesi kaksivaiheista tunnistautumista suojausavaimella, on kaksivaiheinen tunnistautuminen todennussovelluksella otettava käyttöön"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
-        "Vahvista identiteettisi fyysisellä U2F- tai FIDO2-suojausavaimella"
+        "Vahvista henkilöllisyytesi fyysisellä U2F- tai FIDO2-suojausavaimella"
       ],
       "Your two-factor authentication key is ready to use.": [
         "Suojausavaimesi on valmis käyttöön."
@@ -5874,7 +5892,7 @@
         "Toiminnot"
       ],
       "App version": [
-        "Sovelluksen versio"
+        "Sovellusversio"
       ],
       "Best deal": [
         "Paras tarjous"
@@ -7228,7 +7246,7 @@
         "Tapahtumakutsut ja osanottovahvistukset lähetetään tällä kielellä."
       ],
       "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
-        "Tapahtumiin sisältyvät tunnistautumisyritykset kaikkiin ${ BRAND_NAME } -tunnuksiasi käyttäviin ${ BRAND_NAME_TWO } -palveluihin."
+        "Tapahtumiin sisältyvät tunnistautumisyritykset kaikkiin ${ BRAND_NAME }-tunnuksiasi käyttäviin ${ BRAND_NAME_TWO }-palveluihin."
       ],
       "Example: ${ spfExample }": [
         "Esimerkki: ${ spfExample }"
@@ -7278,6 +7296,12 @@
       "Gateways": [
         "Yhdyskäytävät"
       ],
+      "Gateways monitoring is disabled.": [
+        "Yhdyskäytävien valvonta ei ole käytössä."
+      ],
+      "Gateways monitoring is enabled.": [
+        "Yhdyskäytävien valvonta on käytössä."
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Uuden palautuslausekkeen luonti poistaa vanhan lausekkeen käytöstä."
       ],
@@ -7298,6 +7322,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Mene identiteetinhallintaasi noutamaan ${ appName } SAML metadata ja tuo se tähän."
+      ],
+      "Group deleted": [
+        "Ryhmä poistettiin"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Ryhmittele samaan keskusteluun kuuluvat viestit yhteen tai näytä ne erillään."
@@ -7360,7 +7387,7 @@
         "Jos kadotat salasanasi ja joudut palauttamaan tilisi, ${ boldImperative } määrittää ${ boldAccountAndRecovery } tai saatat menettää viestiesi, yhteystietojesi tai tiedostojesi käyttöoikeuden."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
-        "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen todennuskoodin sijaan. Koodit ovat kertakäyttöisiä."
+        "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen vahvistuskoodin sijaan. Koodit ovat kertakäyttöisiä."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ MAIL_APP_NAME } ja ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
@@ -7452,6 +7479,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Asenna palvelinkohtainen määritystiedosto yhdistääksesi tiettyyn palvelimeen valitsemassasi maassa."
+      ],
+      "Internal user": [
+        "Sisäinen käyttäjä"
       ],
       "Internet connection lost": [
         "Internet-yhteys katkesi"
@@ -7663,6 +7693,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Kalenteria ladataan, odota. Sinut ohjataan uudelle välilehdelle aikataulualustallemme Calendlyyn."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Yhdyskäytävien valvonnan tilaa ladataan."
       ],
       "Loading preview": [
         "Ladataan esikatselua"
@@ -8494,7 +8527,7 @@
         "jatkaaksesi palveluun ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
-        "Kehittääksemme palveluitamme edelleen, keräämme ajoittain jotakin tietoja seurataksemme niiden normaalia toimintaa. Näitä tietoja ei jaeta ulkopuolisten tahojen kanssa."
+        "Kehittääksemme palveluitamme edelleen keräämme ajoittain tietoja seurataksemme niiden normaalia toimintaa. Näitä tietoja ei jaeta ulkopuolisten tahojen kanssa."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Purkaaksesi lukittujen tietojesi salauksen ja avataksesi ne salasanan uudelleenasetuksen jälkeen, valitse palautustapa."
@@ -8564,6 +8597,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "Kahden salasanan tila käyttää erillisiä salasanoja kirjautumiseen ja tietojen salauksen purkamiseen. Tämä tarjoaa pienen turvallisuusedun joissain tilanteissa, mutta suosittelemme yhden salasanan tilaa useimmille käyttäjille. Vaihtaaksesi kahden salasanan tilaan, aseta ensin kirjautumissalasana ja sitten toinen salasana."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "Yhdyskäytävien valvonnan tilaa ei voida tarkistaa."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Palautustiedoston allekirjoitusta ei voitu vahvistaa. Ota yhteyttä tukeen."
@@ -8853,6 +8889,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Salatulla ${ BRAND_NAME }-osoitteella voit käyttää kaikkia ${ BRAND_NAME }-palveluita"
       ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Ryhmien avulla voit helposti ja nopeasti lähettää sähköposteja kaikille tiettyyn ryhmään kuuluville henkilöille."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Nykyisellä tilauksellasi voit vain vastaanottaa viestejä @pm.me-osoitteellasi. Päivittämällä tilauksesi voit myös lähettää @pm.me-osoitteesta ja luoda niitä lisää."
       ],
@@ -8895,6 +8934,9 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Käytössäsi on ${ usedMembers } käyttäjä lisenssiisi sisältyvästä ${ maxMembers } käyttäjästä.",
         "Käytössäsi on ${ usedMembers } käyttäjä lisenssiisi sisältyvästä ${ maxMembers } käyttäjästä."
+      ],
+      "You are not currently in any groups and there are no pending invitations": [
+        "Et kuulu tällä hetkellä mihinkään ryhmään eikä odottavia kutsuja ole"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Olet kirjautunut tunnuksella ${ memberAddress }."
@@ -9229,6 +9271,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Kieltäydytty"
+      ],
+      "Paused": [
+        "Keskeytyi"
+      ],
       "Pending": [
         "Odottaa"
       ],
@@ -10496,6 +10544,9 @@
       "Time zone": [
         "Aikavyöhyke"
       ],
+      "Tips and insights": [
+        "Vinkkejä ja näkemyksiä"
+      ],
       "To: ${ toEmail }": [
         "Vastaanottaja: ${ toEmail }"
       ],
@@ -10621,9 +10672,6 @@
     "Label for new member": {
       "Admin": [
         "Ylläpitäjä"
-      ],
-      "Private": [
-        "Yksityinen"
       ],
       "VPN connections": [
         "VPN-yhteydet"
@@ -10980,10 +11028,10 @@
         "Ota ${ reason } käyttöön"
       ],
       "Enable detailed events": [
-        "Ota yksityiskohtaiset tapahtumat käyttöön"
+        "Käytä yksityiskohtaisia tapahtumatietoja"
       ],
       "Enable security events": [
-        "Ota suojaustapahtumat käyttöön"
+        "Käytä suojaustapahtumia"
       ]
     },
     "Mail import summary": {
@@ -11038,7 +11086,7 @@
         "Rajoitetun ajan tarjous: **Saat jopa 35 % alennusta** vuosittaisista tilauksista"
       ],
       "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
-        "Rajoitetun ajan tarjous: **Säästä ${ discount } yhden vuoden ${ name } -tilauksella**"
+        "Aikarajoitettu tarjous: **Säästä ${ discount } yksivuotisella ${ name }-tilauksella**"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Sinut on kutsuttu kokeilemaan ${ MAIL_APP_NAME }ia"
@@ -11762,9 +11810,6 @@
       "Group management (coming soon)": [
         "Ryhmähallinta (tulossa pian)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliakset"
-      ],
       "High-speed streaming": [
         "Nopea suoratoisto"
       ],
@@ -11958,12 +12003,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Jopa ${ totalStorageSize } tallennustilaa"
       ],
-      "Up to 15 email addresses": [
-        "15 sähköpostiosoitetta"
-      ],
-      "Up to 3 TB of storage": [
-        "Jopa 3 Tb tallennustilaa"
-      ],
       "User credential management": [
         "Käyttäjien tunnusten hallinta"
       ],
@@ -11985,17 +12024,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain2 } uutiskirjeille"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Hanki rajattomasti aliaksia ${ BRAND_NAME }in SimpleLogin-palvelusta"
-      ],
       "Snooze messages and get reminded when you want": [
         "Torkuta viestejä ja saa muistutuksia kun haluat"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Käytä sähköpostiosoitteissasi omaa verkkotunnustasi, kuten nimesi@esimerkki.fi"
       ]
     },
     "new_plans: heading": {
@@ -13237,7 +13270,7 @@
         "Avoin lähdekoodi ja auditoitu"
       ],
       "Passkeys supported on all devices": [
-        "Avainkoodeja tuetaan kaikilla laitteilla"
+        "Pääsyavaimia tuetaan kaikilla laitteilla"
       ],
       "per month": [
         "kuukaudessa"
@@ -15502,7 +15535,7 @@
         "Säilytä ${ config.planName }"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Pidä ryhmäsi turvallisesti liikkeellä verkko-, iOS-, Android-, Windows-, Mac- ja Linux-sovelluksillamme."
+        "Suojaa tiimisi myös liikkeessä verkko-, iOS-, Android-, Windows-, Mac- ja Linux-sovelluksillamme."
       ],
       "Learn more": [
         "Lue lisää"
@@ -15981,6 +16014,9 @@
       "Preference updated": [
         "Asetus päivitetty"
       ],
+      "Preferences updated": [
+        "Asetukset päivitetty"
+      ],
       "Status updated": [
         "Tila päivitettiin"
       ]
@@ -16400,6 +16436,12 @@
       "Connection events": [
         "Yhteystapahtumat"
       ],
+      "Connection monitor disabled": [
+        "Yhteyden valvonta ei ole käytössä"
+      ],
+      "Connection monitor enabled": [
+        "Yhteyden valvonta on käytössä"
+      ],
       "Contact us": [
         "Ota yhteyttä"
       ],
@@ -16643,7 +16685,7 @@
         "Salaus ja avaimet"
       ],
       "Enter 2FA code": [
-        "Syötä todennuskoodi"
+        "Syötä vahvistuskoodi"
       ],
       "Enter endpoints into your identity provider": [
         "Syötä päätepisteet identiteetin tarjoajaasi"
@@ -16956,6 +16998,9 @@
       "Profile": [
         "Profiili"
       ],
+      "QRCode": [
+        "QR-koodi"
+      ],
       "Recommended": [
         "Suositus"
       ],
@@ -17035,7 +17080,7 @@
         "Suojaus ja yksityisyys"
       ],
       "Security events": [
-        "Turvallisuustapahtumat"
+        "Suojaustapahtumat"
       ],
       "Security logs": [
         "Suojauslokit"
@@ -17169,6 +17214,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "Välty tietojen menetykseltä varautumalla!"
+      ],
+      "Text": [
+        "Teksti"
       ],
       "Theme": [
         "Teema"
@@ -17426,7 +17474,7 @@
         "IP-osoitteen arvioitu sijainti"
       ],
       "Any protection applied to suspicious activity": [
-        "Kaikki epäilyttävään toimintaan sovelletut suojaustoimenpiteet"
+        "Epäilyttävään toimintaan kohdistetut suojaustoimenpiteet"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"
@@ -17447,7 +17495,7 @@
         "Poista roskakorin ja roskapostin viestit 30 päivän kuluttua. Automaattisen poiston käyttöönotto asettaa roskakorissa/roskapostissa jo olevien viestien poistopäivän niiden siirtopäivän perusteella."
       ],
       "Device information such as operating system": [
-        "Tietoja laitteesta, kuten mm. käyttöjärjestelmä"
+        "Muun muassa käyttöjärjestelmän kaltaisia tietoja käytetystä laitteesta"
       ],
       "Each imported email will have this label": [
         "Jokainen tuotu viesti merkitään tällä tunnisteella"
@@ -17462,7 +17510,7 @@
         "Ota työpöytä- ja mobiili-ilmoitukset käyttöön/poista ne käytöstä"
       ],
       "Enabling detailed events records the IP address for each event.": [
-        "Yksityiskohtaisten tapahtumien käyttöönotto tallentaa kunkin tapahtuman IP-osoitteen."
+        "Yksityiskohtaisten tapahtumatietojen käyttöönotto tallentaa kunkin tapahtuman IP-osoitteen."
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Identiteetin tarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
@@ -17519,7 +17567,7 @@
         "Tuonti alkaa viimeisimmistä viesteistä."
       ],
       "The Internet Service Provider of the IP address": [
-        "IP-osoitteen Internet-operaattori"
+        "IP-osoitteen Internet-palveluntarjoaja"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Uusi tilausjakso alkaa ${ formattedTime }"
@@ -17610,8 +17658,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajoittamattoman määrän aliaksia, jakamisen, integroidun 2FA:n ja muuta."
       ],
+      "Group membership paused": [
+        "Ryhmän jäsenyys on pysäytetty"
+      ],
       "Sending member invitation": [
         "Jäsenkutsua lähetetään"
+      ],
+      "User declined invitation": [
+        "Käyttäjä hylkäsi kutsun"
       ],
       "Waiting user to accept the invitation": [
         "Odotetaan, että käyttäjä hyväksyy kutsun"
@@ -17659,6 +17713,38 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tätä Tor-selaimen versiota ei tueta. Päivitä viimeisimpään ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "${ orgName }:n ylläpitäjä haluaa antaa tilillesi ylläpitäjän oikeudet."
+      ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "Organisaation **${ orgName }** ylläpitäjä (**${ adminEmail }**) haluaa antaa tilillesi ylläpitäjän oikeudet."
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Delete request": [
+        "Poista pyyntö"
+      ],
+      "Private user": [
+        "Yksityinen käyttäjä"
+      ],
+      "reject": [
+        "kieltäydy"
+      ],
+      "Revoke access": [
+        "Mitätöi käyttöoikeus"
+      ],
+      "Revoke administrator access?": [
+        "Mitätöidäänkö ylläpitäjän käyttöoikeus?"
+      ],
+      "Send request": [
+        "Lähetä pyyntö"
+      ],
+      "View request": [
+        "Näytä pyyntö"
       ]
     },
     "Update font modal": {
@@ -17754,9 +17840,6 @@
       ],
       "Optional": [
         "Valinnainen"
-      ],
-      "Private": [
-        "Yksityinen"
       ],
       "Remember to share the user's sign in details with them.": [
         "Muista jakaa käyttäjälle hänen kirjautumistietonsa."

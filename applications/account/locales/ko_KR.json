@@ -157,6 +157,12 @@
       "Allow": [
         "허용"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "이 그룹에 대한 종단간 암호화 허용"
+      ],
+      "Always allow sending": [
+        "항상 전송 허용"
+      ],
       "Apply": [
         "적용"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "변경사항 취소"
+      ],
+      "Domain name": [
+        "도메인 이름"
       ],
       "Don't show again": [
         "다시 표시하지 않음"
@@ -1111,6 +1120,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "다시 저장해보세요. 이 이유로 저장을 실패했습니다: ${ saveError }"
       ],
+      "Turn off": [
+        "끄기"
+      ],
+      "Turn on": [
+        "켜기"
+      ],
       "Underline": [
         "밑줄"
       ],
@@ -1176,6 +1191,9 @@
       ],
       "Use authentication code": [
         "인증 코드를 사용"
+      ],
+      "Use group permissions": [
+        "그룹 발송 권한들 사용하기"
       ],
       "Use recovery code": [
         "복구코드 사용"
@@ -3351,9 +3369,6 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "휴지통과 스팸함의 30일 이상 된 메시지를 자동으로 삭제합니다. 업그레이드하여 이 기능과 다른 혜택들을 누려보세요."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "축하합니다! ${ plusPlanName }의 최대 ${ rewardsLimit }월이 무료로 적립되었습니다."
       ],
@@ -4182,6 +4197,9 @@
       ],
       "Authentication error.": [
         "인증 오류"
+      ],
+      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
+        "자동 답장 기능의 메시지가 최대 길이를 초과합니다. 제한 내로 메시지를 설정하십시오."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "자동 응답은 유료 기능입니다. 이 기능을 추후 사용하려면 유료 플랜으로 업그레이드 하십시오."
@@ -6520,6 +6538,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain }은(는) ${ BRAND_NAME }에서 호스팅됩니다. 빠른 하위 도매인 설정을 도와드립니다. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "커스텀 도메인은 그룹 생성이 필요합니다. 커스텀 도메인 설정이 되어 있지 않다면, 먼저 아래 링크에서 설정하세요. ${ linkToDomainPage }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "나중에 쉽게 취소하거나 확장할 수 있도록 사용 위치를 식별하는 데 도움이 되는 이름이에요."
       ],
@@ -7207,6 +7228,12 @@
       "Gateways": [
         "게이트웨이"
       ],
+      "Gateways monitoring is disabled.": [
+        "게이트웨이 모니터링 비활성화됨."
+      ],
+      "Gateways monitoring is enabled.": [
+        "게이트웨이 모니터링 활성화됨."
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "새 복구 방법을 구성하면 이전의 복구 방법이 비활성화 됩니다."
       ],
@@ -7227,6 +7254,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "인증 제공자 페이지 이동 후, ${ appName }에 사용할 SAML 메타데이터를 받은 뒤 여기에 불러오세요."
+      ],
+      "Group deleted": [
+        "그룹이 삭제됨"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "받은 편지함에 있는 동일한 메일을 함께 그룹화하거나 별도로 표시합니다."
@@ -7380,6 +7410,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "선택한 국가의 특정 서버에 연결하려면 서버 구성 파일을 설치하세요."
+      ],
+      "Internal user": [
+        "내부 사용자"
       ],
       "Internet connection lost": [
         "인터넷 연결 없음"
@@ -7590,6 +7623,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "캘린더를 불러오는 중, 새로운 탭에서 일정 플랫폼 Calendly로 리디렉션됩니다."
+      ],
+      "Loading gateways monitoring current status.": [
+        "게이트웨이 모니터링 현재 상태 로드 중."
       ],
       "Loading preview": [
         "미리보기 불러오는 중"
@@ -8177,7 +8213,7 @@
         "구독이 매달 갱신됩니다."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "구독 종료 예정: ${ planName }의 혜택을 유지하려면 ${ byDate }까지 재 활성화해주세요. ${ reactivateLink }"
+        "구독 종료 예정: ${ planName }의 혜택을 계속 이용하려면 ${ byDate }까지 재활성화해주세요. ${ reactivateLink }"
       ],
       "Summary": [
         "주문 요약"
@@ -8289,6 +8325,9 @@
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "기기에 따라 몇 초 또는 몇 분이 걸릴 수 있습니다"
+      ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "해당 변경 사항이 약 1시간 내에 사용자의 인프라에 반영됩니다."
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "이 작업은 몇 분이 소요될 수 있습니다. 이 페이지를 닫거나 인터넷 연결을 끊지 마세요."
@@ -8487,6 +8526,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "2차 비밀번호 모드는 로그인과 데이터 복호화에 다른 비밀번호를 사용합니다. 이것으로 일부 상황에서 사소한 보안 이점을 얻을 수 있으나, 대부분의 사용자에게는 1차 비밀번호 모드를 권장합니다. 2차 비밀번호 모드로 변경하려면 먼저 로그인 비밀번호를 설정한 다음 두 번째 비밀번호를 설정하십시오."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "현재 게이트웨이 모니터링 상태 확인 불가."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "복구 파일의 서명을 검증할 수 없습니다. 고객지원으로 문의해 주십시오."
@@ -8776,6 +8818,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "암호화된 ${ BRAND_NAME } 주소로, 모든 ${ BRAND_NAME } 서비스를 사용할 수 있어요."
       ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "그룹으로, 빠르고 쉽게 특정 그룹 내의 사용자에게 이메일 전송이 가능합니다."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "현재 요금제에서는, 오직 @pm.me 주소로만 메시지를 받으실 수 있습니다. 업그레이드 하여 @pm.me를 사용하는 추가적인 주소를 만들어 메시지를 전송하세요."
       ],
@@ -8814,6 +8859,9 @@
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "현재 ${ maxMembers } 사용 가능한 사용자 라이선스 ${ usedMembers }을(를) 사용하고 있습니다."
+      ],
+      "You are not currently in any groups and there are no pending invitations": [
+        "속해진 그룹이나 대기 중인 초대가 없습니다."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } 계정으로 로그인했습니다."
@@ -9141,6 +9189,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "거절됨"
+      ],
+      "Paused": [
+        "일시정지됨"
+      ],
       "Pending": [
         "대기 중"
       ],
@@ -10533,9 +10587,6 @@
       "Admin": [
         "관리자"
       ],
-      "Private": [
-        "개인"
-      ],
       "VPN connections": [
         "VPN 연결"
       ]
@@ -11645,9 +11696,6 @@
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email 별칭"
-      ],
       "High-speed streaming": [
         "고속 스트리밍"
       ],
@@ -11837,12 +11885,6 @@
       "Up to ${ totalStorageSize } storage": [
         "최대 ${ totalStorageSize } 스토리지"
       ],
-      "Up to 15 email addresses": [
-        "최대 15개의 이메일 주소"
-      ],
-      "Up to 3 TB of storage": [
-        "최대 3 TB 스토리지"
-      ],
       "User credential management": [
         "사용자 자격 증명 관리"
       ],
@@ -11863,17 +11905,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "${ BRAND_NAME } 의 SimpleLogin으로 무제한 별칭을 얻으세요"
-      ],
       "Snooze messages and get reminded when you want": [
         "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "사용자 지정 이메일 도메인 주소를 사용하세요. 예시, you@yourname.com"
       ]
     },
     "new_plans: heading": {
@@ -15817,6 +15853,9 @@
       "Preference updated": [
         "환경설정 업데이트 완료"
       ],
+      "Preferences updated": [
+        "환경설정 업데이트 완료"
+      ],
       "Status updated": [
         "상태 업데이트됨"
       ]
@@ -16226,6 +16265,12 @@
       ],
       "Connection events": [
         "연결된 이벤트"
+      ],
+      "Connection monitor disabled": [
+        "연결 모니터 비활성화됨"
+      ],
+      "Connection monitor enabled": [
+        "연결 모니터 활성화됨"
       ],
       "Contact us": [
         "문의"
@@ -16779,6 +16824,9 @@
       "Profile": [
         "프로필"
       ],
+      "QRCode": [
+        "QR 코드"
+      ],
       "Recommended": [
         "추천됨"
       ],
@@ -16991,6 +17039,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "데이터 손실을 방지하려면 예방 조치를 취하세요!"
+      ],
+      "Text": [
+        "텍스트"
       ],
       "Theme": [
         "테마"
@@ -17432,8 +17483,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: 모든 기기의 로그인을 보호하세요. 무제한 별칭, 공유, 통합형 2FA와 더 많은 기능을 갖추고 있습니다."
       ],
+      "Group membership paused": [
+        "그룹 구성 권한 중단됨"
+      ],
       "Sending member invitation": [
         "멤버 초대장 발송 중"
+      ],
+      "User declined invitation": [
+        "사용자가 초대를 거절함"
       ],
       "Waiting user to accept the invitation": [
         "사용자의 초대 수락 대기 중"
@@ -17575,9 +17632,6 @@
       ],
       "Optional": [
         "선택사항"
-      ],
-      "Private": [
-        "개인"
       ],
       "Remember to share the user's sign in details with them.": [
         "사용자의 로그인 세부 사항을 공유하는 것을 잊지 마세요."

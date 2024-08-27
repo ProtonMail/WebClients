@@ -708,18 +708,6 @@
       "Move": [
         "移動"
       ],
-      "Move all conversations from this folder": [
-        "このフォルダーからすべての会話を移動"
-      ],
-      "Move all conversations from this label": [
-        "このラベルからすべての会話を移動"
-      ],
-      "Move all messages from this folder": [
-        "このフォルダーからすべてのメッセージを移動"
-      ],
-      "Move all messages from this label": [
-        "このラベルからすべてのメッセージを移動"
-      ],
       "Move all to archive": [
         "すべてアーカイブに移動"
       ],
@@ -3215,9 +3203,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
       ],
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "ごみ箱や迷惑メールフォルダーで30日以上経過したメッセージを自動削除します。アップグレードすれば、これだけでなく他の利点も享受できます。"
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "連絡先を復号しています… これには数分かかります。完了するとエクスポートされたすべての連絡先がダウンロードできるようになります。"
       ],
@@ -3248,9 +3233,6 @@
       "No labels": [
         "ラベルがありません"
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "一度に全員にメールや招待状を送信することで時間を節約できます。今すぐアップグレード"
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
       ],
@@ -3262,9 +3244,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "電子メール トラッカー保護をオンにして、広告主などがあなたの位置情報やオンライン アクティビティを追跡しないようにします。"
-      ],
-      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "プランをアップグレードすると、カスタムメッセージの送信予約などを使用できます。"
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "アップグレードして短いメールアドレスとその他のプレミアム機能を使用できるようにします。"
@@ -8380,9 +8359,6 @@
       "Group management (coming soon)": [
         "グループ管理 (近日公開)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email エイリアス"
-      ],
       "High-speed streaming": [
         "高速ストリーミング"
       ],
@@ -8515,12 +8491,6 @@
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
       ],
-      "Up to 15 email addresses": [
-        "15 件のメールアドレス"
-      ],
-      "Up to 3 TB of storage": [
-        "3 TB のストレージ"
-      ],
       "User credential management": [
         "ユーザー資格管理"
       ],
@@ -8535,17 +8505,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "SimpleLogin by ${ BRAND_NAME } で無制限にエイリアスを作成"
-      ],
       "Snooze messages and get reminded when you want": [
         "メッセージをスヌーズし、必要なときに再通知します"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "独自ドメインのメールアドレスを使用する（例：you@yourname.com）"
       ]
     },
     "new_plans: heading": {
