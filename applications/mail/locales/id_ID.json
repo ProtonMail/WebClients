@@ -166,7 +166,7 @@
         "Blokir pengirim"
       ],
       "Bold": [
-        "Tebal"
+        "Cetak tebal"
       ],
       "Cancel": [
         "Batal"
@@ -631,7 +631,7 @@
         "Sisipkan tautan"
       ],
       "Italic": [
-        "Miring"
+        "Cetak miring"
       ],
       "Keep my subscription": [
         "Pertahankan langganan saya"
@@ -755,18 +755,6 @@
       ],
       "Move": [
         "Pindahkan"
-      ],
-      "Move all conversations from this folder": [
-        "Pindahkan seluruh percakapan dari folder ini"
-      ],
-      "Move all conversations from this label": [
-        "Pindahkan seluruh percakapan dari label ini"
-      ],
-      "Move all messages from this folder": [
-        "Pindahkan seluruh pesan dari folder ini"
-      ],
-      "Move all messages from this label": [
-        "Pindahkan seluruh pesan dari label ini"
       ],
       "Move all to archive": [
         "Pindahkan semuanya ke arsip"
@@ -3385,9 +3373,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA memberikan lapisan keamanan tambahan, yang mencegah akses masuk yang tidak diinginkan."
       ],
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Hapus pesan yang telah dibuang dan ditandai sebagai spam selama lebih dari 30 hari secara otomatis. Nikmati fitur ini dan berbagai kelebihan lainnya dengan meningkatkan paket langganan Anda."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
       ],
@@ -3424,9 +3409,6 @@
       "No labels": [
         "Tidak ada label"
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Hemat waktu Anda dengan fitur pengiriman email atau undangan massal, yang merupakan satu dari sekian banyak fitur premium yang tersedia. Tingkatkan paket Anda sekarang juga."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Pisahkan berbagai aspek kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
       ],
@@ -3450,12 +3432,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Aktifkan perlindungan pelacak email untuk mencegah pengiklan dan pihak lainnya dari melacak lokasi dan aktivitas online Anda."
-      ],
-      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Dapatkan fitur penjadwalan pesan khusus dan berbagai kelebihan lainnya dengan meningkatkan akun Anda."
-      ],
-      "Unlock custom snooze times when you upgrade your plan.": [
-        "Buka pilih sendiri waktu penundaan setelah meningkatkan langganan"
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Dapatkan alamat email yang lebih pendek dan berbagai fitur premium lainnya dengan meningkatkan akun."
@@ -8968,7 +8944,7 @@
         "Panel Administrasi"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
-        "Semua layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+        "Seluruh layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "Semua layanan ${ BRAND_NAME } premium. Satu langganan mudah"
@@ -9081,9 +9057,6 @@
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
       ],
-      "Hide-my-email aliases": [
-        "Alias hide-my-email"
-      ],
       "High-speed streaming": [
         "Streaming berkecepatan tinggi"
       ],
@@ -9106,7 +9079,7 @@
         "Peran admin berangkap"
       ],
       "Online document editor": [
-        "Penyunting dokumen daring"
+        "Editor dokumen online"
       ],
       "Organize items with multiple vaults": [
         "Kelola item dengan berbagai brankas"
@@ -9196,7 +9169,7 @@
         "Kebijakan tanpa log yang ketat"
       ],
       "Sync and backup all your files across devices": [
-        "Sinkronisasikan dan cadangkan semua berkas Anda antara berbagai perangkat"
+        "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -9235,7 +9208,7 @@
         "Tanpa batasan jumlah pesan per harinya"
       ],
       "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
-        "Brankas ${ PASS_SHORT_APP_NAME } terbagi tak terbatas per pengguna"
+        "Brankas ${ PASS_SHORT_APP_NAME } terbagi tanpa batasan jumlah per pengguna"
       ],
       "Unlimited shared vaults with access permissions": [
         "Brankas terbagi yang tak terbatas dengan perizinan akses"
@@ -9254,12 +9227,6 @@
       ],
       "Up to ${ totalStorageSize } storage": [
         "Ruang penyimpanan hingga ${ totalStorageSize }"
-      ],
-      "Up to 15 email addresses": [
-        "Hingga 15 alamat email"
-      ],
-      "Up to 3 TB of storage": [
-        "Kuota penyimpanan hingga 3 TB"
       ],
       "User credential management": [
         "Pengelolaan kredensial pengguna"
@@ -9281,17 +9248,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Dapatkan alamat email samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Tunda pesan dan ingatkan saat Anda mau"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ruang penyimpanan terbagi antara ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Gunakan domain email khusus milik Anda sendiri, mis. anda@namaanda.com"
       ]
     },
     "new_plans: heading": {
@@ -10925,7 +10886,7 @@
         "Kami kini memuat gambar secara bawaan dan memblokir pengirim untuk dapat melacak Anda. Hal ini dapat diubah di ${ settingsLink }."
       ],
       "You can now collapse the navigation bar.": [
-        "Anda sekarang dapat menutup bilah navigasi."
+        "Anda kini dapat menutup bilah navigasi ini."
       ],
       "You can now schedule your messages to be sent later": [
         "Kini Anda dapat menjadwalkan pengiriman pesan"
@@ -11755,9 +11716,6 @@
       ],
       "Self-destruction set": [
         "Waktu penghapusan otomatis diatur"
-      ],
-      "Text copied to clipboard": [
-        "Teks disalin ke papan klip"
       ],
       "Thanks for the feedback!": [
         "Terima kasih atas masukannya!"
