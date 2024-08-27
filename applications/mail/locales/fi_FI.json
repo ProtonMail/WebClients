@@ -760,18 +760,6 @@
       "Move": [
         "Siirrä"
       ],
-      "Move all conversations from this folder": [
-        "Siirrä kaikki tämän kansion keskustelut"
-      ],
-      "Move all conversations from this label": [
-        "Siirrä kaikki tällä tunnisteella merkityt keskustelut"
-      ],
-      "Move all messages from this folder": [
-        "Siirrä kaikki tämän kansion viestit"
-      ],
-      "Move all messages from this label": [
-        "Siirrä kaikki tällä tunnisteella merkityt viestit"
-      ],
       "Move all to archive": [
         "Siirrä kaikki arkistoon"
       ],
@@ -1328,7 +1316,7 @@
         "Käytä eri maksutapaa"
       ],
       "Use authentication code": [
-        "Käytä todennuskoodia"
+        "Käytä vahvistuskoodia"
       ],
       "Use for sending": [
         "Käytä lähetykseen"
@@ -3403,9 +3391,6 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lisää ylimääräisen turvakerroksen, joka estää luvattoman pääsyn tilillesi."
       ],
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Poista roskakorissa ja roskapostissa yli 30 päivää olleet viestit automaattisesti. Nauti tästä ja muista eduista päivittämällä tilauksesi."
-      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
       ],
@@ -3443,9 +3428,6 @@
       "No labels": [
         "Tunnisteita ei ole"
       ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Säästä aikaa lähettämällä viestejä ja kutsuja kaikille yhtä aikaa. Vain yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
-      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla ja avaa myös muita premium-ominaisuuksia päivittämällä tilauksesi."
       ],
@@ -3469,12 +3451,6 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ota sähköpostin seurantasuojaus käyttöön, jotta mainostajat ja muut tahot eivät voi jäljittää sijaintiasi ja valvoa verkkotoimintaasi."
-      ],
-      "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
-        "Avaa mukautettava viestien ajoitus sekä muita etuja päivittämällä tilauksesi."
-      ],
-      "Unlock custom snooze times when you upgrade your plan.": [
-        "Päivitä tilauksesi määrittääksesi omia torkutusaikojasi."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Avaa lyhyemmät sähköpostiosoitteet ja myös muita premium-ominaisuuksia päivittämällä tilauksesi."
@@ -9239,9 +9215,6 @@
       "Group management (coming soon)": [
         "Ryhmähallinta (tulossa pian)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliakset"
-      ],
       "High-speed streaming": [
         "Nopea suoratoisto"
       ],
@@ -9416,12 +9389,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Jopa ${ totalStorageSize } tallennustilaa"
       ],
-      "Up to 15 email addresses": [
-        "15 sähköpostiosoitetta"
-      ],
-      "Up to 3 TB of storage": [
-        "Jopa 3 Tb tallennustilaa"
-      ],
       "User credential management": [
         "Käyttäjien tunnusten hallinta"
       ],
@@ -9443,17 +9410,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain2 } uutiskirjeille"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Hanki rajattomasti aliaksia ${ BRAND_NAME }in SimpleLogin-palvelusta"
-      ],
       "Snooze messages and get reminded when you want": [
         "Torkuta viestejä ja saa muistutuksia kun haluat"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Käytä sähköpostiosoitteissasi omaa verkkotunnustasi, kuten nimesi@esimerkki.fi"
       ]
     },
     "new_plans: heading": {
@@ -11514,7 +11475,7 @@
         "Kutsutut jäsenet poistetaan organisaatiostasi"
       ],
       "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
-        "Pidä ryhmäsi turvallisesti liikkeellä verkko-, iOS-, Android-, Windows-, Mac- ja Linux-sovelluksillamme."
+        "Suojaa tiimisi myös liikkeessä verkko-, iOS-, Android-, Windows-, Mac- ja Linux-sovelluksillamme."
       ],
       "Learn more": [
         "Lue lisää"
@@ -11986,9 +11947,6 @@
       ],
       "Self-destruction set": [
         "Tuhoutuminen on asetettu"
-      ],
-      "Text copied to clipboard": [
-        "Teksti kopioitiin leikepöydälle"
       ],
       "Thanks for the feedback!": [
         "Kiitos palautteesta!"
@@ -12481,7 +12439,7 @@
         "Käytä viestien sisältöhakua"
       ],
       "Enter 2FA code": [
-        "Syötä todennuskoodi"
+        "Syötä vahvistuskoodi"
       ],
       "Enter your password": [
         "Syötä salasanasi"
