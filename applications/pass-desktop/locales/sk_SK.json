@@ -618,7 +618,7 @@
     },
     "Description": {
       "${ total } other login uses the same password": [
-        "${ total } iné prihlásenie už používa rovnaké heslo",
+        "${ total } iné prihlásenie používa rovnaké heslo",
         "${ total } iné prihlasovania už používajú rovnaké heslo",
         "${ total } iných prihlasovaní už používa rovnaké heslo",
         "${ total } iných prihlasovaní už používa rovnaké heslo"
@@ -827,7 +827,7 @@
         "Zlyhala aktualizácia nastavení ${ PROTON_SENTINEL_NAME }"
       ],
       "Failed updating monitor flag of the item": [
-        "Zlyhala aktualizácia značky monitorovania položky"
+        "Aktualizácia príznaku sledovania položky zlyhala"
       ],
       "Failed updating monitoring status for this email address": [
         "Aktualizácia stavu monitorovania tejto emailovej adresy zlyhala"
@@ -935,7 +935,7 @@
         "Presun do koša zlyhal"
       ],
       "Try reaching out to the link owner.": [
-        "Skúste osloviť vlastníka odkazu."
+        "Skúste kontaktovať vlastníka odkazu."
       ],
       "Unable to generate an OTP code for this item": [
         "Pre túto položku nie je možné vygenerovať OTP kód"
@@ -1117,7 +1117,7 @@
         "${ count } zobrazenie",
         "${ count } zobrazení",
         "${ count } zobrazenia",
-        "${ count } zobrazenia"
+        "${ count }/ zobrazení"
       ],
       "${ count }/${ maxReads } views": [
         "${ count }/${ maxReads } zobrazení"
@@ -1153,7 +1153,7 @@
         "${ row.breachCount } zistený únik",
         "${ row.breachCount } zistených únikov",
         "${ row.breachCount } zistené úniky",
-        "${ row.breachCount } zistené úniky"
+        "${ row.breachCount } zistených únikov"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dní na bezplatné vyskúšanie prémiových funkcií. Len počas vášho prvého týždňa s ${ BRAND_NAME }."
@@ -1636,7 +1636,7 @@
         "Potvrďte, prosím, vaše heslo pre automatické uzamknutie pomocou vášho hesla."
       ],
       "Please confirm your password in order to unregister your current lock.": [
-        "Potvrďte, prosím, vaše heslo pre zrušenie vášho aktuálneho zámku."
+        "Potvrďte, prosím, vaše heslo pre zrušenie aktuálneho zámku."
       ],
       "Please confirm your password in order to update the auto-lock time.": [
         "Potvrďte, prosím, vaše heslo pre aktualizáciu času automatického uzamknutia."
@@ -1819,7 +1819,7 @@
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou biometrie"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Odomknutie ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
+        "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho hesla do ${ BRAND_NAME }"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
         "Odomknúť ${ PASS_SHORT_APP_NAME } pomocou vášho dodatočného hesla"
@@ -1906,7 +1906,7 @@
         "Dosiahli ste maximálnu povolenú dĺžku ${ maxLength } znakov."
       ],
       "You will be logged out and need to log in again on all of your other devices.": [
-        "Dôjde k odhláseniu a budete sa musieť znova prihlásiť na všetkých ďalších vašich zariadeniach."
+        "Dôjde k odhláseniu a budete sa musieť znova prihlásiť na všetkých ďalších zariadeniach."
       ],
       "You will be notified of data breaches for these email addresses.": [
         "V prípade týchto emailových adries vám budú zasielané oznámenia o úniku údajov."
@@ -1956,7 +1956,7 @@
         "${ days } deň",
         "${ days } dni",
         "${ days } dní",
-        "${ days } dňa"
+        "${ days } dní"
       ],
       "${ hours } hour": [
         "${ hours } hodiny",
@@ -2322,7 +2322,7 @@
         "Urobiť všetkých čitateľmi"
       ],
       "max views reached": [
-        "bol dosiahnutý počet zobrazení"
+        "dosiahnutý max. počet zobrazení"
       ],
       "Members": [
         "Členovia"
@@ -2484,7 +2484,7 @@
         "Špeciálne znaky (!&*)"
       ],
       "State or province": [
-        "Kraj alebo región"
+        "Štát alebo provincia"
       ],
       "Status": [
         "Stav"
