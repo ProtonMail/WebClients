@@ -26,6 +26,7 @@ import {
     processDashlaneIdentity,
     processDashlaneLogin,
     processDashlaneNote,
+    processDashlanePersonalInfo,
 } from './dashlane.utils';
 
 const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
@@ -96,7 +97,7 @@ export const readDashlaneDataZIP = async ({
                 data: await zipFile.file('personalInfo.csv')?.async('string'),
                 headers: DASHLANE_PERSONAL_INFO_EXPECTED_HEADERS,
             })
-        ).map(unary(processDashlaneIdentity));
+        ).map(unary(processDashlanePersonalInfo));
 
         const vaults: ImportVault[] = [
             {
