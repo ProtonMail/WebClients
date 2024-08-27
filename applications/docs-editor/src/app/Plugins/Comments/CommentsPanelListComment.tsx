@@ -133,7 +133,7 @@ export function CommentsPanelListComment({
               {name}
             </span>
             <span className="select-none text-xs opacity-50" data-testid="comment-creation-time">
-              <CommentTime createTime={comment.createTime} />
+              <CommentTime createTime={comment.createTime} languageCode={application.languageCode} />
               {comment.createTime.milliseconds !== comment.modifyTime.milliseconds && ' • Edited'}
             </span>
           </div>
