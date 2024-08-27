@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import useEarlyAccess from '@proton/components/hooks/useEarlyAccess';
 import useLoading from '@proton/hooks/useLoading';
-import { semver } from '@proton/pass/utils/string/semver';
 import { DESKTOP_PLATFORMS, RELEASE_CATEGORIES } from '@proton/shared/lib/constants';
 import { type DesktopVersion, VersionFileSchema } from '@proton/shared/lib/desktop/DesktopVersion';
+import { getLatestRelease } from '@proton/shared/lib/desktop/getLatestRelease';
 import { getInboxDesktopInfo, hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronOnLinux, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
 import { getDownloadUrl } from '@proton/shared/lib/helpers/url';
@@ -90,48 +90,20 @@ const useInboxDesktopVersion = () => {
     const [linuxApp, setLinuxApp] = useState<DesktopVersion | undefined>(initialLinuxClients);
 
     useEffect(() => {
-        const getLatestRelease = (releaseList: DesktopVersion[]) => {
-            let latestRelease = undefined;
-            let latestReleaseSemver = 0;
-
-            for (const release of releaseList) {
-                const releaseSemver = semver(release.Version);
-
-                if (!currentEnvironment && release.CategoryName !== RELEASE_CATEGORIES.STABLE) {
-                    continue;
-                }
-
-                if (
-                    currentEnvironment === 'beta' &&
-                    release.CategoryName !== RELEASE_CATEGORIES.STABLE &&
-                    release.CategoryName !== RELEASE_CATEGORIES.EARLY_ACCESS
-                ) {
-                    continue;
-                }
-
-                if (releaseSemver > latestReleaseSemver) {
-                    latestRelease = release;
-                    latestReleaseSemver = releaseSemver;
-                }
-            }
-
-            return latestRelease;
-        };
-
         const fetchDesktopVersion = async () => {
             const promises = [fetchDesktopClient(WINDOWS), fetchDesktopClient(MACOS), fetchDesktopClient(LINUX)];
             const [windowsClient, macosClient, linuxClient] = await Promise.all(promises);
 
             if (windowsClient) {
-                setWindowsApp(getLatestRelease(windowsClient));
+                setWindowsApp(getLatestRelease(currentEnvironment, windowsClient));
             }
 
             if (macosClient) {
-                setMacosApp(getLatestRelease(macosClient));
+                setMacosApp(getLatestRelease(currentEnvironment, macosClient));
             }
 
             if (linuxClient) {
-                setLinuxApp(getLatestRelease(linuxClient));
+                setLinuxApp(getLatestRelease(currentEnvironment, linuxClient));
             }
         };
 
