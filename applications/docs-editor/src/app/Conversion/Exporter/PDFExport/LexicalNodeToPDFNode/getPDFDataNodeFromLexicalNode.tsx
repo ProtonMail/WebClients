@@ -19,6 +19,7 @@ import { convertWebpToJpeg } from './convertWebpToJpeg'
 import { pixelsToPoints } from './Utils/pixelsToPoints'
 import { cssStringToMap } from './Utils/cssStringToMap'
 import { pxToNumber } from './Utils/pxToNumber'
+import { getFontForText } from '../Fonts/FontSelector'
 
 const MaxEditorWidthPx = 816
 const WidthOfA4PDFInPx = 794
@@ -51,22 +52,17 @@ export const getPDFDataNodeFromLexicalNode = async (
       const pdfFontSize =
         isInlineCode || isCodeNodeText ? pixelsToPoints(BodyFontSizePx) : pixelsToPoints(pxToNumber(nodeFontSize))
 
-      let font = isInlineCode || isCodeNodeText ? 'Courier' : 'Helvetica'
-      if (isBold || isItalic) {
-        font += '-'
-        if (isBold) {
-          font += 'Bold'
-        }
-        if (isItalic) {
-          font += 'Oblique'
-        }
-      }
+      const fontFamily = getFontForText(node.getTextContent(), {
+        isCode: isInlineCode || isCodeNodeText,
+        isBold,
+        isItalic,
+      })
 
       return {
         type: 'Text',
         children: node.getTextContent(),
         style: {
-          fontFamily: font,
+          fontFamily: fontFamily,
           color: stylesMap.color as string,
           // eslint-disable-next-line no-nested-ternary
           textDecoration: node.hasFormat('underline')
