@@ -2,6 +2,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     checkMemberAddressAvailability,
@@ -227,7 +228,11 @@ export const editMember = ({
         }
         const diff = Object.values(memberDiff).some((value) => value !== undefined);
         if (diff) {
-            const updatedMember = await getMember(api, member.ID);
+            const [updatedMember] = await Promise.all([
+                getMember(api, member.ID),
+                // Upserting the member also has an effect on the org values, so they need to be updated too.
+                dispatch(organizationThunk({ cache: CacheType.None })),
+            ]);
             dispatch(upsertMember({ member: updatedMember }));
             return {
                 diff: true,
@@ -265,6 +270,7 @@ const createAddressesForMember = async ({
 
 export const createMember = ({
     member: originalModel,
+    single,
     verifiedDomains,
     keyTransparencyVerify,
     keyTransparencyCommit,
@@ -273,6 +279,7 @@ export const createMember = ({
     validationOptions,
 }: {
     member: CreateMemberPayload;
+    single: boolean;
     verifiedDomains: Domain[] /* Remove dependency, move to thunk */;
     validationOptions: {
         disableStorageValidation?: boolean;
@@ -462,7 +469,12 @@ export const createMember = ({
                 });
             }
 
-            dispatch(upsertMember({ member: await getMember(api, Member.ID) }));
+            const [updatedMember] = await Promise.all([
+                getMember(api, Member.ID),
+                // Upserting the member also has an effect on the org values, so they need to be updated too.
+                single ? dispatch(organizationThunk({ cache: CacheType.None })) : undefined,
+            ]);
+            dispatch(upsertMember({ member: updatedMember }));
             return;
         }
 
@@ -521,6 +533,11 @@ export const createMember = ({
             }
         }
 
-        dispatch(upsertMember({ member: await getMember(api, Member.ID) }));
+        const [updatedMember] = await Promise.all([
+            getMember(api, Member.ID),
+            // Upserting the member also has an effect on the org values, so they need to be updated too.
+            single ? dispatch(organizationThunk({ cache: CacheType.None })) : undefined,
+        ]);
+        dispatch(upsertMember({ member: updatedMember }));
     };
 };
