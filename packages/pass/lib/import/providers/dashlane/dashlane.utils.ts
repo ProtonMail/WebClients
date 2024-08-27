@@ -15,6 +15,7 @@ import type {
     ItemImportIntent,
     Maybe,
 } from '@proton/pass/types';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 
 import type {
     DashlaneIdItem,
@@ -236,9 +237,9 @@ const extractDashlaneIdentityTitle = (item: DashlaneIdItem) => {
             case 'passport':
                 return c('Label').t`Passport`;
             case 'license':
-                return c('Label').t`License`;
+                return c('Label').t`Driver's license`;
             case 'social_security':
-                return c('Label').t`Social security`;
+                return c('Label').t`Social security number`;
             case 'tax_number':
                 return c('Label').t`Tax number`;
             default:
@@ -247,6 +248,16 @@ const extractDashlaneIdentityTitle = (item: DashlaneIdItem) => {
     })();
 
     return type && item.name ? `${type} (${item.name})` : type;
+};
+
+const extractDashlanePersonalInfoTitle = (item: DashlanePersonalInfoItem) => {
+    switch (item.type) {
+        case 'name':
+            const parts = [item.first_name, item.middle_name, item.last_name].filter(truthy);
+            return parts.join(' ').trim();
+        default:
+            return item.item_name;
+    }
 };
 
 export const processDashlaneIdentity: DashlaneItemParser<DashlaneIdItem> = (item): ItemImportIntent<'identity'> =>
@@ -259,6 +270,6 @@ export const processDashlanePersonalInfo: DashlaneItemParser<DashlanePersonalInf
     item
 ): ItemImportIntent<'identity'> =>
     importIdentityItem({
-        name: item.title || item.item_name,
+        name: extractDashlanePersonalInfoTitle(item),
         ...extractDashlaneIdentity(item),
     });
