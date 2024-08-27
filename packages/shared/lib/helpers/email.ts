@@ -224,3 +224,9 @@ export function extractEmailFromUserID(userID: string): string | undefined {
     const [, email] = /<([^>]*)>/.exec(userID) || [];
     return email;
 }
+
+export const isNoReplyEmail = (email: string) => {
+    const normalizedEmail = canonicalizeEmailByGuess(email);
+    const [localPart] = getEmailParts(normalizedEmail);
+    return localPart.includes('noreply') || localPart.includes('no-reply') || localPart.includes('donotreply');
+};
