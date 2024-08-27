@@ -18,5 +18,6 @@ export const STOP_STRINGS_REFINE = ['</span>', '</div>'];
 
 export const FAILED_TO_DOWNLOAD = 'Failed to download:';
 export const CACHING_FAILED = 'Caching failed';
+export const MODEL_UNLOADED = 'Error: Chat module not yet initialized, did you call chat.reload?';
 
 export const assistantAuthorizedApps = [APPS_CONFIGURATION[PROTONMAIL].subdomain];
