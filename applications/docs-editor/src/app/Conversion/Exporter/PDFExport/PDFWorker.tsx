@@ -3,6 +3,8 @@ import { Document, Page, View, Text, pdf, Link, Image, Svg, Path } from '@react-
 import { expose } from 'comlink'
 import type { PDFDataNode } from './PDFDataNode'
 import { ExportStyles } from './ExportStyles'
+import { PerformChineseWrappingFix } from './ChineseWrappingFix'
+import { LoadCustomFonts } from './FontLoader'
 
 const Node = ({ node }: { node: PDFDataNode }) => {
   if (!node) {
@@ -47,6 +49,9 @@ const PDFDocument = ({ nodes, pageSize }: { nodes: PDFDataNode[]; pageSize: Page
 }
 
 const renderPDF = async (nodes: PDFDataNode[], pageSize: PageProps['size']): Promise<Blob> => {
+  PerformChineseWrappingFix()
+  LoadCustomFonts(nodes)
+
   const doc = pdf(<PDFDocument pageSize={pageSize} nodes={nodes} />)
   const blob = await doc.toBlob()
   return blob
