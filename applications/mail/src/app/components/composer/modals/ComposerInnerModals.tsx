@@ -30,6 +30,7 @@ interface Props {
     handleSendAnyway: () => void;
     handleCancelSend: (error: string) => void;
     attachmentsFoundKeyword: string;
+    noReplyEmail: string;
     composerID: string;
     handleToggleAssistant: (aiFlag: AI_ASSISTANT_ACCESS) => void;
 }
@@ -47,9 +48,11 @@ const ComposerInnerModals = ({
     handleSendAnyway,
     handleCancelSend,
     attachmentsFoundKeyword,
+    noReplyEmail,
     composerID,
     handleToggleAssistant,
 }: Props) => {
+    const boldNoReplyEmail = <strong key="no-reply-email">{noReplyEmail}</strong>;
     return (
         <>
             {innerModal === ComposerInnerModalStates.Password && (
@@ -120,6 +123,22 @@ const ComposerInnerModals = ({
                         <div>
                             <Href href={getKnowledgeBaseUrl('/attachment-reminders')}>{c('Link').t`Learn more`}</Href>
                         </div>
+                    </Alert>
+                </ComposerInnerModal>
+            )}
+            {innerModal === ComposerInnerModalStates.NoReplyEmail && (
+                <ComposerInnerModal
+                    title={c('Title').t`No-reply address detected`}
+                    onCancel={() => handleCancelSend('no-reply email')}
+                    onSubmit={handleSendAnyway}
+                    submit={c('Action').t`Send anyway`}
+                >
+                    <Alert>
+                        {
+                            // translator: Full sentence is "The email address "boldNoReplyEmail" does not seem to accept replies. Are you sure you want to send your message?"
+                            c('Info')
+                                .jt`The email address ${boldNoReplyEmail} does not seem to accept replies. Are you sure you want to send your message?`
+                        }
                     </Alert>
                 </ComposerInnerModal>
             )}

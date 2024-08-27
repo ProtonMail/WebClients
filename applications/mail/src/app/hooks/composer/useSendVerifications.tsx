@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { useGetEncryptionPreferences, useModals, useNotifications } from '@proton/components';
 import { serverTime } from '@proton/crypto';
 import { HOUR } from '@proton/shared/lib/constants';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { isNoReplyEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { mentionAttachment } from '@proton/shared/lib/helpers/emailAttachment';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
@@ -32,7 +32,8 @@ import { useGetMessage } from '../message/useMessage';
 export const useSendVerifications = (
     handleNoRecipients?: () => void,
     handleNoSubjects?: () => void,
-    handleNoAttachments?: (keyword: string) => void
+    handleNoAttachments?: (keyword: string) => void,
+    handleNoReplyEmail?: (email: string) => void
 ) => {
     const { createModal } = useModals();
     const { createNotification } = useNotifications();
@@ -53,6 +54,16 @@ export const useSendVerifications = (
         if (!getRecipients(message.data).length) {
             if (handleNoRecipients) {
                 await handleNoRecipients();
+            }
+        }
+
+        // Try to reply to no-reply emails
+        const emails = getRecipientsAddresses(message.data);
+        const noReplyEmail = emails.find((email) => isNoReplyEmail(email));
+
+        if (noReplyEmail) {
+            if (handleNoReplyEmail) {
+                await handleNoReplyEmail(noReplyEmail);
             }
         }
 

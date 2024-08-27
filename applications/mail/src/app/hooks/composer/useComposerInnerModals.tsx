@@ -13,6 +13,7 @@ export enum ComposerInnerModalStates {
     NoSubjects,
     NoAttachments,
     AssistantSettings,
+    NoReplyEmail,
 }
 
 interface UseComposerInnerModals {
@@ -26,6 +27,8 @@ export const useComposerInnerModals = ({ pendingFiles, handleCancelAddAttachment
 
     // Keyword found in the email if the user seems to want to send an attachment but there is none
     const [attachmentsFoundKeyword, setAttachmentsFoundKeyword] = useState('');
+
+    const [noReplyEmail, setNoReplyEmail] = useState('');
 
     const sendPromise = usePromise<void>();
 
@@ -67,6 +70,12 @@ export const useComposerInnerModals = ({ pendingFiles, handleCancelAddAttachment
         return sendPromise.renew();
     };
 
+    const handleNoReplyEmail = (email: string) => {
+        setInnerModal(ComposerInnerModalStates.NoReplyEmail);
+        setNoReplyEmail(email);
+        return sendPromise.renew();
+    };
+
     const handleCloseInsertImageModal = () => {
         handleCancelAddAttachment();
         handleCloseInnerModal();
@@ -86,6 +95,7 @@ export const useComposerInnerModals = ({ pendingFiles, handleCancelAddAttachment
         innerModal,
         setInnerModal,
         attachmentsFoundKeyword,
+        noReplyEmail,
         handlePassword,
         handleExpiration,
         handleCloseInnerModal,
@@ -93,6 +103,7 @@ export const useComposerInnerModals = ({ pendingFiles, handleCancelAddAttachment
         handleNoRecipients,
         handleNoSubjects,
         handleNoAttachments,
+        handleNoReplyEmail,
         handleCloseInsertImageModal,
         handleSendAnyway,
         handleCancelSend,
