@@ -8,7 +8,13 @@ import {
     importNoteItem,
 } from '@proton/pass/lib/import/helpers/transformers';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
-import type { IdentityFieldName, ItemContent, ItemImportIntent, Maybe } from '@proton/pass/types';
+import type {
+    IdentityExtraFieldsKey,
+    IdentityFieldName,
+    ItemContent,
+    ItemImportIntent,
+    Maybe,
+} from '@proton/pass/types';
 
 import type {
     DashlaneIdItem,
@@ -77,6 +83,10 @@ export const DASHLANE_PERSONAL_INFO_EXPECTED_HEADERS: (keyof DashlanePersonalInf
     'zip',
 ];
 
+type DashlaneIdentityFieldConfig =
+    | { type: 'field'; fieldName: IdentityFieldName }
+    | { type: 'extraSection'; fieldSection: IdentityExtraFieldsKey; getFieldName: () => string };
+
 const DASHLANE_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     address: 'streetAddress',
     address_floor: 'floor',
@@ -96,17 +106,54 @@ const DASHLANE_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     zip: 'zipOrPostalCode',
 };
 
-const DASHLANE_DYNAMIC_IDENTITY_FIELD_MAP: Record<string, Record<string, IdentityFieldName>> = {
-    passport: { number: 'passportNumber' },
-    license: { number: 'licenseNumber' },
-    social_security: { number: 'socialSecurityNumber' },
-    company: { item_name: 'company' },
+const DASHLANE_DYNAMIC_IDENTITY_FIELD_MAP: Record<string, Record<string, DashlaneIdentityFieldConfig>> = {
+    passport: {
+        number: {
+            type: 'field',
+            fieldName: 'passportNumber',
+        },
+    },
+    license: {
+        number: {
+            type: 'field',
+            fieldName: 'licenseNumber',
+        },
+    },
+    social_security: {
+        number: {
+            type: 'field',
+            fieldName: 'socialSecurityNumber',
+        },
+    },
+    company: {
+        item_name: {
+            type: 'field',
+            fieldName: 'company',
+        },
+    },
+    card: {
+        number: {
+            type: 'extraSection',
+            fieldSection: 'extraContactDetails',
+            getFieldName: () => c('Label').t`ID Card`,
+        },
+    },
+    tax_number: {
+        number: {
+            type: 'extraSection',
+            fieldSection: 'extraContactDetails',
+            getFieldName: () => c('Label').t`Tax number`,
+        },
+    },
 };
 
 /* Dashlane has the same key for different properties, based on type */
-const resolveFieldNameForType = (key: string, type?: string): Maybe<IdentityFieldName> => {
-    const match = type ? DASHLANE_DYNAMIC_IDENTITY_FIELD_MAP?.[type]?.[key] : null;
-    return match ?? DASHLANE_IDENTITY_FIELD_MAP[key];
+const resolveFieldForType = (key: string, type?: string): Maybe<DashlaneIdentityFieldConfig> => {
+    const dynamicFieldMatch = type ? DASHLANE_DYNAMIC_IDENTITY_FIELD_MAP?.[type]?.[key] : undefined;
+    if (dynamicFieldMatch) return dynamicFieldMatch;
+
+    const fieldName = DASHLANE_IDENTITY_FIELD_MAP[key];
+    if (fieldName) return { type: 'field', fieldName };
 };
 
 export const extractDashlaneIdentity = (
@@ -115,8 +162,30 @@ export const extractDashlaneIdentity = (
     const item = itemBuilder('identity');
 
     Object.entries(importItem).forEach(([key, value]) => {
-        const fieldName = resolveFieldNameForType(key, importItem.type);
-        if (fieldName && value) item.set('content', (content) => content.set(fieldName, value));
+        if (!value) return;
+        const field = resolveFieldForType(key, importItem.type);
+
+        switch (field?.type) {
+            case 'field': {
+                item.set('content', (content) => content.set(field.fieldName, value));
+                break;
+            }
+
+            case 'extraSection': {
+                item.set('content', (content) =>
+                    content.set(field.fieldSection, (section) => {
+                        section.push({
+                            fieldName: field.getFieldName(),
+                            type: 'text',
+                            data: { content: value },
+                        });
+
+                        return section;
+                    })
+                );
+                break;
+            }
+        }
     });
 
     return item.data.content;
