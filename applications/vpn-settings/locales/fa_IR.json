@@ -3251,9 +3251,6 @@
       "Admin": [
         "مدیر"
       ],
-      "Private": [
-        "خصوصی"
-      ],
       "VPN connections": [
         "اتصالات VPN"
       ]
@@ -3786,6 +3783,14 @@
         "شرایط و ضوابط"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "دوره آزمایشی رایگان ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "رکورد استفاده حساب شما"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "حذف کردن حساب؟"
@@ -3798,14 +3803,6 @@
       ],
       "Switch plans?": [
         "تغییر دادن طرح؟"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "دوره آزمایشی رایگان ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "رکورد استفاده حساب شما"
       ]
     },
     "new_plans: tooltip": {
@@ -5295,9 +5292,6 @@
       ],
       "Optional": [
         "اختیاری"
-      ],
-      "Private": [
-        "خصوصی"
       ],
       "User created": [
         "کاربر ایجاد شد"

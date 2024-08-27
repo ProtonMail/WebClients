@@ -346,6 +346,9 @@
       "Keep logo": [
         "Mantieni il logo"
       ],
+      "Keep my subscription": [
+        "Mantieni il mio abbonamento"
+      ],
       "Let's talk": [
         "Parliamo"
       ],
@@ -4928,6 +4931,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Verrai reindirizzato su ${ destination } dopo aver effettuato l'accesso."
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Perderai l'accesso alle funzionalità del piano ${ planTitle } a partire da questa data."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Avrai bisogno di un indirizzo ${ BRAND_NAME } per utilizzare ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
@@ -5604,9 +5610,6 @@
       "Admin": [
         "Amministratore"
       ],
-      "Private": [
-        "Privato"
-      ],
       "VPN connections": [
         "Connessioni VPN"
       ]
@@ -6080,6 +6083,14 @@
         "${ n } messaggio al giorno",
         "${ n } messaggi al giorno"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } ${ PASS_SHORT_APP_NAME } cassaforte condivisa per utente",
+        "${ n } ${ PASS_SHORT_APP_NAME } casseforti condivise per utente"
+      ],
+      "${ n } user": [
+        "${ n } utente",
+        "Fino a ${ n } utenti"
+      ],
       "${ n } vault": [
         "${ n } cassaforte",
         "${ n } casseforti"
@@ -6087,6 +6098,10 @@
       "${ n } VPN connection": [
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
+      ],
+      "${ options }-day file version history": [
+        "Cronologia delle versioni dei file per ${ options } giorno",
+        "Cronologia delle versioni dei file per ${ options } giorni"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias Hide-my-email",
@@ -6100,6 +6115,9 @@
       ],
       "${ size } attachment size": [
         "Dimensioni allegato ${ size }"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } di spazio di archiviazione sicuro per utente"
       ],
       "${ size } storage": [
         "${ size } di archiviazione"
@@ -6239,9 +6257,6 @@
       "Group management (coming soon)": [
         "Gestione dei gruppi (in arrivo)"
       ],
-      "Hide-my-email aliases": [
-        "Alias Hide-my-email"
-      ],
       "High-speed streaming": [
         "Streaming ad alta velocità"
       ],
@@ -6282,6 +6297,9 @@
       "Password-protected Emails": [
         "Email protette da password"
       ],
+      "Phone support (20+ users)": [
+        "Supporto telefonico (oltre 20 utenti)"
+      ],
       "Priority email support": [
         "Assistenza email prioritaria"
       ],
@@ -6297,6 +6315,9 @@
       "Protect ${ n } device at a time": [
         "Proteggi ${ n } dispositivo alla volta",
         "Proteggi ${ n } dispositivi alla volta"
+      ],
+      "Recover previous file versions": [
+        "Recuperare versioni precedenti del file"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Controlli regolari della sicurezza del tuo account. Ti avvisiamo se hai password deboli o riutilizzate che devono essere aggiornate."
@@ -6411,12 +6432,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Fino a ${ totalStorageSize } di archiviazione"
       ],
-      "Up to 15 email addresses": [
-        "Fino a 15 indirizzi email"
-      ],
-      "Up to 3 TB of storage": [
-        "Fino a 3 TB di spazio di archiviazione"
-      ],
       "User credential management": [
         "Gestione delle credenziali utente"
       ],
@@ -6438,17 +6453,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crea più indirizzi email per le tue identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping, LuigiNotizie@${ domain2 } per gli abbonamenti alle notizie."
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Posticipa i messaggi e ricevili quando vuoi"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Usa l'indirizzo del tuo dominio email personalizzato, ad esempio tu@il-tuo-nome.it"
       ]
     },
     "new_plans: heading": {
@@ -6571,6 +6580,17 @@
         "termini e condizioni"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -6583,17 +6603,6 @@
       ],
       "Switch plans?": [
         "Vuoi cambiare il piano?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -9555,6 +9564,9 @@
       "Email subscriptions": [
         "Newsletter"
       ],
+      "Enter 2FA code": [
+        "Inserisci il codice di autenticazione a due fattori"
+      ],
       "Enter endpoints into your identity provider": [
         "Inserisci gli endpoint nel tuo fornitore di identità"
       ],
@@ -10098,9 +10110,6 @@
       ],
       "Optional": [
         "Facoltativo"
-      ],
-      "Private": [
-        "Privato"
       ],
       "Remember to share the user's sign in details with them.": [
         "Ricordati di condividere con loro i dettagli di accesso dell'utente."

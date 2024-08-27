@@ -5025,9 +5025,6 @@
       "Admin": [
         "管理者"
       ],
-      "Private": [
-        "プライベート"
-      ],
       "VPN connections": [
         "VPN 接続"
       ]
@@ -5588,9 +5585,6 @@
       "Group management (coming soon)": [
         "グループ管理 (近日公開)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email エイリアス"
-      ],
       "High-speed streaming": [
         "高速ストリーミング"
       ],
@@ -5738,12 +5732,6 @@
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
       ],
-      "Up to 15 email addresses": [
-        "15 件のメールアドレス"
-      ],
-      "Up to 3 TB of storage": [
-        "3 TB のストレージ"
-      ],
       "User credential management": [
         "ユーザー資格管理"
       ],
@@ -5758,17 +5746,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "例えば、JohnShopper@${ domain }はショッピングアカウント用、JohnNews@${ domain2 }はニュース購読用です。"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "SimpleLogin by ${ BRAND_NAME } で無制限にエイリアスを作成"
-      ],
       "Snooze messages and get reminded when you want": [
         "メッセージをスヌーズし、必要なときに再通知します"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "独自ドメインのメールアドレスを使用する（例：you@yourname.com）"
       ]
     },
     "new_plans: heading": {
@@ -5879,6 +5861,14 @@
         "利用規約"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -5891,14 +5881,6 @@
       ],
       "Switch plans?": [
         "プランを変更しますか?"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -8794,9 +8776,6 @@
       ],
       "Optional": [
         "オプション"
-      ],
-      "Private": [
-        "プライベート"
       ],
       "Remember to share the user's sign in details with them.": [
         "ユーザーのサインイン情報を共有することを忘れないでください。"
