@@ -157,6 +157,12 @@
       "Allow": [
         "Permitir"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Permitir criptografia de ponta-a-ponta neste grupo"
+      ],
+      "Always allow sending": [
+        "Sempre permitir o envio"
+      ],
       "Apply": [
         "Aplicar"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "Descartar alterações"
+      ],
+      "Domain name": [
+        "Nome do domínio"
       ],
       "Don't show again": [
         "Não mostrar novamente"
@@ -1111,6 +1120,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Tente salvar novamente. Erro ao salvar devido a: ${ saveError }"
       ],
+      "Turn off": [
+        "Desligar"
+      ],
+      "Turn on": [
+        "Ligar"
+      ],
       "Underline": [
         "Sublinhado"
       ],
@@ -1176,6 +1191,9 @@
       ],
       "Use authentication code": [
         "Usar código de autenticação"
+      ],
+      "Use group permissions": [
+        "Usar permissões de grupo"
       ],
       "Use recovery code": [
         "Usar código de recuperação"
@@ -3368,9 +3386,6 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Limpe automaticamente as mensagens com mais de 30 dias da lixeira e do spam. Aproveite este e outros benefícios ao realizar o upgrade."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Parabéns! Você ganhou um máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
       ],
@@ -4199,6 +4214,9 @@
       ],
       "Authentication error.": [
         "Erro de autenticação."
+      ],
+      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
+        "A mensagem de resposta automática excede o comprimento permitido. Por favor, reduza-a para enquadrar ao limite."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Respostas automáticas é um recurso pago. Atualizepara uma conta paga para usar este recurso."
@@ -6594,6 +6612,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Um ${ protonSubdomain } é hospedado pela ${ BRAND_NAME }, que permite que você configure rapidamente um subdomínio. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Um domínio personalizado é obrigatório para criar grupos. Se você não tem um domínio personalizado configurado, pode configurar em ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Um nome para ajudá-lo a identificar onde você o utiliza, para poder revogá-lo ou estendê-lo facilmente mais tarde."
       ],
@@ -7293,6 +7314,12 @@
       "Gateways": [
         "Gateways"
       ],
+      "Gateways monitoring is disabled.": [
+        "Monitoramento de gateways está desativado."
+      ],
+      "Gateways monitoring is enabled.": [
+        "Gateways monitoring está habilitado."
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Gerar uma nova frase de recuperação desativará a antiga."
       ],
@@ -7313,6 +7340,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Vá até o seu provedor de identidade, obtenha os metadados SAML para ${ appName } e importe-os aqui."
+      ],
+      "Group deleted": [
+        "Grupo deletado"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupe e-mails na mesma conversa junto em sua Caixa de Entrada ou exiba-os separadamente."
@@ -7467,6 +7497,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instale um arquivo de configuração do servidor para se conectar a um servidor específico no país de sua escolha."
+      ],
+      "Internal user": [
+        "Usuário interno"
       ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
@@ -7678,6 +7711,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Carregando o calendário, aguarde. Você será redirecionado à nossa plataforma de agendamento Calendly numa nova guia."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Carregando o estado atual de monitoramento dos gateways."
       ],
       "Loading preview": [
         "Carregando visualização"
@@ -8385,6 +8421,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Isto pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Essa mudança será totalmente refletida na sua infraestrutura no prazo de 1 hora"
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Isso pode levar algum tempo. Não feche esta página ou desconecte-se da internet."
       ],
@@ -8582,6 +8621,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "O modo de duas senhas usa senhas separadas para acessar e descriptografar seus dados. Isso provê um pequeno benefício de segurança em algumas situações, porém recomendamos o modo de senha única para a maioria dos usuários. Para alternar para o modo de duas senhas, primeiro defina uma senha de acesso e depois uma segunda senha."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "Não foi possível verificar o estado atual de monitoramento dos gateways."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Não foi possível verificar a assinatura do arquivo de recuperação. Entre em contato com o suporte."
@@ -8871,6 +8913,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Com um endereço criptografado da ${ BRAND_NAME }, você pode usar todos os serviços da ${ BRAND_NAME }."
       ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Com grupos, você pode rapidamente e facilmente enviar e-mails para todas as pessoas em um grupo específico."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Com o seu plano atual, você pode apenas receber mensagens através do seu endereço @pm.me. Faça upgrade de plano para enviar mensagens e criar endereços adicionais usando @pm.me"
       ],
@@ -8913,6 +8958,9 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Você está usando atualmente ${ usedMembers } de sua ${ maxMembers } licença de usuário disponível.",
         "Você está usando atualmente ${ usedMembers } de suas ${ maxMembers } licenças de usuário disponíveis."
+      ],
+      "You are not currently in any groups and there are no pending invitations": [
+        "Você atualmente não está em algum grupo e não tem convites pendentes"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Você iniciou sessão à conta ${ memberAddress }."
@@ -9247,6 +9295,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Recusado"
+      ],
+      "Paused": [
+        "Pausado"
+      ],
       "Pending": [
         "Pendente"
       ],
@@ -10514,6 +10568,9 @@
       "Time zone": [
         "Fuso horário"
       ],
+      "Tips and insights": [
+        "Dicas e insights"
+      ],
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
       ],
@@ -10642,9 +10699,6 @@
     "Label for new member": {
       "Admin": [
         "Administrador"
-      ],
-      "Private": [
-        "Privado"
       ],
       "VPN connections": [
         "Conexões VPN"
@@ -11597,7 +11651,7 @@
       ],
       "${ n } user": [
         "${ n } usuário",
-        "Até ${ n } usuários"
+        "${ n } usuários"
       ],
       "${ n } vault": [
         "${ n } cofre",
@@ -11785,9 +11839,6 @@
       ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
-      ],
-      "Hide-my-email aliases": [
-        "Aliases do Hide-my-email"
       ],
       "High-speed streaming": [
         "Streaming em alta velocidade"
@@ -11982,12 +12033,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
       ],
-      "Up to 15 email addresses": [
-        "Até 15 endereços de e-mail"
-      ],
-      "Up to 3 TB of storage": [
-        "Até 3TB de armazenamento"
-      ],
       "User credential management": [
         "Gerenciamento de credenciais de usuário"
       ],
@@ -12009,17 +12054,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crie vários endereços de e-mail para suas identidades on-line, por exemplo: JoaoLojas@${ domain } para contas de lojas e JoaoNoticias@${ domain2 } para assinaturas de notícias"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Obtenha aliases ilimitados com SimpleLogin da ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Adie mensagens e receba lembretes quando quiser"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Use seu próprio domínio de e-mail personalizado, por exemplo: voce@seunome.com"
       ]
     },
     "new_plans: heading": {
@@ -12226,7 +12265,7 @@
         "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui sinclonização automática, compartilhamento de arquivo criptografado e muito mais."
+        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento criptografado em nuvem. Inclui sincronização automática, compartilhamento de arquivo criptografado e muito mais."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteja seus e-mails com criptografia de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados hide-my-email e muito mais."
@@ -16035,6 +16074,9 @@
       "Preference updated": [
         "Preferência atualizada"
       ],
+      "Preferences updated": [
+        "Preferências atualizadas"
+      ],
       "Status updated": [
         "Status atualizado"
       ]
@@ -16456,6 +16498,12 @@
       ],
       "Connection events": [
         "Eventos de conexão"
+      ],
+      "Connection monitor disabled": [
+        "Monitor de conexão desativado"
+      ],
+      "Connection monitor enabled": [
+        "Monitor de conexão ativado"
       ],
       "Contact us": [
         "Fale conosco"
@@ -16957,7 +17005,7 @@
         "Filtros de organização"
       ],
       "Organization key": [
-        "Clave da organização"
+        "Chave da organização"
       ],
       "Organization name": [
         "Nome da organização"
@@ -17018,6 +17066,9 @@
       ],
       "Profile": [
         "Perfil"
+      ],
+      "QRCode": [
+        "Código QR"
       ],
       "Recommended": [
         "Recomendado"
@@ -17232,6 +17283,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "Previna-se para evitar perda de dados!"
+      ],
+      "Text": [
+        "Texto"
       ],
       "Theme": [
         "Tema"
@@ -17676,8 +17730,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ],
+      "Group membership paused": [
+        "Pausa na associação do grupo"
+      ],
       "Sending member invitation": [
         "Enviando convite ao membro"
+      ],
+      "User declined invitation": [
+        "O usuário rejeitou o convite"
       ],
       "Waiting user to accept the invitation": [
         "Esperando o usuário aceitar o convite"
@@ -17725,6 +17785,68 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Esta versão do navegador Tor não é suportada. Atualize-o para a última ${ stableRelease }."
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Os administradores não podem acessar os dados de usuários privados e não podem redefinir suas senhas."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "Um administrador da ${ orgName } deseja ativar o acesso de administrador para sua conta."
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Delete request": [
+        "Excluir solicitação"
+      ],
+      "Delete request to access user data?": [
+        "Deletar requisição de acesso aos dados do usuário?"
+      ],
+      "Enable admin access?": [
+        "Ativar acesso administrador"
+      ],
+      "Enable administrator access": [
+        "Ativar o acesso do administrador"
+      ],
+      "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
+        "Se você perder o acesso às suas credenciais, o administrador da sua organização conseguirá redefinir a sua senha e reestabelecer o acesso à sua conta."
+      ],
+      "Organization key must be activated to request data access": [
+        "A chave da organização precisa ser ativada para solicitar o acesso aos dados"
+      ],
+      "Pending admin access": [
+        "Acesso administrador pendente"
+      ],
+      "Private user": [
+        "Usuário privado"
+      ],
+      "reject": [
+        "rejeitar"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Requisição para gerenciar conta enviada, esperando a aprovação do usuário"
+      ],
+      "Request user permission for data access": [
+        "Requisição da permissão do usuário para acessar os dados."
+      ],
+      "Revoke access": [
+        "Revogar acesso"
+      ],
+      "Revoke administrator access?": [
+        "Revogar acesso administrativo?"
+      ],
+      "Send request": [
+        "Enviar solicitação"
+      ],
+      "The user must have an address to request data access": [
+        "O usuário deve ter um endereço para solicitar o acesso aos dados"
+      ],
+      "View request": [
+        "Ver solicitação"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "Você pode ${ reject } essa requisição, se você preferir não prosseguir."
       ]
     },
     "Update font modal": {
@@ -17821,9 +17943,6 @@
       "Optional": [
         "Opcional"
       ],
-      "Private": [
-        "Privado"
-      ],
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de compartilhar os detalhes de início de sessão do usuário com eles."
       ],
@@ -17858,6 +17977,9 @@
       ],
       "It's you": [
         "É você"
+      ],
+      "Pending admin access": [
+        "Acesso administrador pendente"
       ],
       "Private": [
         "Privado"

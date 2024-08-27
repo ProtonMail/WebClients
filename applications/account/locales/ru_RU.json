@@ -157,6 +157,12 @@
       "Allow": [
         "Разрешить"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Разрешить сквозное шифрование для этой группы"
+      ],
+      "Always allow sending": [
+        "Всегда разрешать отправку"
+      ],
       "Apply": [
         "Применить"
       ],
@@ -355,6 +361,9 @@
       "Delete Gateway": [
         "Удалить Шлюз"
       ],
+      "Delete group": [
+        "Удалить группу"
+      ],
       "Delete link": [
         "Удалить ссылку"
       ],
@@ -400,6 +409,9 @@
       "Discard changes": [
         "Сбросить изменения"
       ],
+      "Domain name": [
+        "Доменное имя"
+      ],
       "Don't show again": [
         "Больше не показывать"
       ],
@@ -442,6 +454,9 @@
       "Edit Gateway": [
         "Изменить Шлюз"
       ],
+      "Edit group": [
+        "Редактировать группу"
+      ],
       "Edit invoice details": [
         "Изменение информации счета-фактуры"
       ],
@@ -483,6 +498,9 @@
       ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
+      ],
+      "Enable device-based recovery": [
+        "Включить восстановление на основе устройств"
       ],
       "Enable multi-user support": [
         "Включить многопользовательский режим"
@@ -1102,6 +1120,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Попробуйте сохранить еще раз. Не удалось сохранить из-за: ${ saveError }"
       ],
+      "Turn off": [
+        "Отключить"
+      ],
+      "Turn on": [
+        "Включить"
+      ],
       "Underline": [
         "Подчёркнутый"
       ],
@@ -1167,6 +1191,9 @@
       ],
       "Use authentication code": [
         "Используйте код аутентификации"
+      ],
+      "Use group permissions": [
+        "Использовать права группы"
       ],
       "Use recovery code": [
         "Использовать код восстановления"
@@ -1447,6 +1474,9 @@
       ],
       "Fast and secure. No logs are kept.": [
         "Быстро и безопасно. Журналы не сохраняются."
+      ],
+      "Run on device": [
+        "Запуск на устройстве"
       ],
       "Run on servers": [
         "Выполнять на серверах"
@@ -3378,9 +3408,6 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Автоматически удалять сообщения старше 30 дней из Корзины и Спама. Воспользуйтесь этими и другими функциями после обновления."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Поздравляем! Вы заработали максимальное количество из ${ rewardsLimit } бесплатных месяцев ${ plusPlanName }."
       ],
@@ -6570,6 +6597,9 @@
       "30-day money-back guarantee.": [
         "30-дневная гарантия возврата денег."
       ],
+      "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
+        "${ protonSubdomain } управляется ${ BRAND_NAME }, что позволяет быстро настроить поддомен. ${ learnMoreLink }"
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Имя, которое поможет вам определить, где вы его используете, чтобы вы могли легко отозвать или продлить его позже."
       ],
@@ -6753,6 +6783,9 @@
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Каждый, кто имеет эту ссылку, не сможет синхронизировать или получать будущие обновления для вашего календаря. Если вы захотите снова предоставить им доступ, вам придется создать новую ссылку."
       ],
+      "Are you sure you want to cancel editing the group?": [
+        "Вы уверены, что хотите отменить редактирование группы?"
+      ],
       "Are you sure you want to delete this calendar?": [
         "Вы уверены, что хотите удалить этот календарь?"
       ],
@@ -6788,6 +6821,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы уверены, что хотите удалить административные полномочия у этого пользователя?"
+      ],
+      "Are you sure you want to remove all members from this group?": [
+        "Вы уверены, что хотите удалить всех участников из этой группы?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
         "Вы уверены, что хотите удалить домен ${ boldDomain }?"
@@ -7037,6 +7073,9 @@
         "Удаление ${ deletedServerCount } шлюзовых серверов",
         "Удаление ${ deletedServerCount } шлюзовых серверов",
         "Удаление ${ deletedServerCount } шлюзовых серверов"
+      ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Отключение двухфакторной аутентификации сделает вашу учетную запись менее защищенной. Продолжайте только при крайней необходимости."
       ],
       "Discount": [
         "Скидка"
@@ -8403,6 +8442,9 @@
       "This will delete all previous versions of your files.": [
         "Это удалит все предыдущие версии ваших файлов."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Это отключит двухфакторную аутентификацию, в том числе приложение для аутентификации и ключи безопасности."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Это отключит вашу текущую фразу восстановления. Вы не сможете использовать ее для доступа к своему аккаунту или для расшифровки данных."
       ],
@@ -8639,6 +8681,9 @@
       ],
       "Vault Deleted": [
         "Хранилище удалено"
+      ],
+      "Vault either deleted or requires access permissions": [
+        "Хранилище удалено или требует разрешения на доступ"
       ],
       "Vault shared with email": [
         "Общий доступ к хранилищу с помощью электронной почты"
@@ -9099,6 +9144,9 @@
       "Your recovery phrase": [
         "Ваша фраза для восстановления"
       ],
+      "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
+        "Ваша фраза для восстановления — это набор из 12 случайных слов в определенном порядке."
+      ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
       ],
@@ -9188,6 +9236,11 @@
     "Infog": {
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
+      ]
+    },
+    "Input label": {
+      "Link label (optional)": [
+        "Ярлык ссылки (необязательно)"
       ]
     },
     "Input placeholder": {
@@ -10040,8 +10093,14 @@
       "Gift code": [
         "Подарочный код"
       ],
+      "Group address": [
+        "Адрес группы"
+      ],
       "Group conversations": [
         "Групповые цепочки писем"
+      ],
+      "Group members": [
+        "Участники группы"
       ],
       "Group name": [
         "Название группы"
@@ -10123,6 +10182,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Уровень для фильтрации блокировщика NetShield"
+      ],
+      "Lock app after inactivity": [
+        "Блокировать приложение при отсутствии активности"
       ],
       "Logo": [
         "Логотип"
@@ -10567,9 +10629,6 @@
     "Label for new member": {
       "Admin": [
         "Администратор"
-      ],
-      "Private": [
-        "Конфиденциальный"
       ],
       "VPN connections": [
         "Подключения к VPN"
@@ -11755,9 +11814,6 @@
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
-      "Hide-my-email aliases": [
-        "Псевдонимы hide-my-email"
-      ],
       "High-speed streaming": [
         "Высокоскоростной стриминг"
       ],
@@ -11959,12 +12015,6 @@
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
       ],
-      "Up to 15 email addresses": [
-        "До 15 адресов электронной почты"
-      ],
-      "Up to 3 TB of storage": [
-        "До 3 ТБ хранилища"
-      ],
       "User credential management": [
         "Управление учетными данными пользователя"
       ],
@@ -11988,17 +12038,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Получите неограниченное количество псевдонимов с SimpleLogin от ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Отложите сообщения и получите напоминание в нужное время"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Объём хранилища распределяется между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Используйте собственный адрес домена электронной почты, например, you@yourname.com."
       ]
     },
     "new_plans: heading": {
@@ -13502,8 +13546,23 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Сначала повторно активируйте подписку, чтобы уменьшить количество дополнений."
       ],
+      "Please select billing country": [
+        "Пожалуйста, выберите страну выставления счета"
+      ],
+      "Please select billing state": [
+        "Пожалуйста, выберите государство выставления счета"
+      ],
+      "Please select your billing country first.": [
+        "Сначала выберите страну для выставления счета."
+      ],
+      "Please select your billing state first.": [
+        "Сначала выберите государство для выставления счета."
+      ],
       "Processing payment": [
         "Обработка платежа"
+      ],
+      "Select billing country to pay": [
+        "Для оплаты, пожалуйста выберите страну"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "Специально сниженная цена ${ priceWithDiscount } действует в течение первых ${ months }. Купон действителен при продлении на ${ couponRedemptions }. Затем он будет автоматически продлен по цене ${ price } на ${ months } месяцев. Вы можете отменить его в любое время."
@@ -13916,8 +13975,23 @@
       ]
     },
     "Safety review": {
+      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
+        "${ BRAND_NAME } отправит на этот адрес код для сброса пароля, когда вы будете его восстанавливать."
+      ],
+      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
+        "${ BRAND_NAME } отправит на этот номер телефона SMS с кодом для сброса пароля, когда вы будете его восстанавливать."
+      ],
+      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
+        "${ enableDeviceRecovery }, чтобы убедиться, что ваши данные могут быть восстановлены."
+      ],
+      "**Enable recovery by email** to regain access to your account if you forget your password.": [
+        "**Включите восстановление по электронной почте**, чтобы вернуть доступ к аккаунту, если вы забудете пароль."
+      ],
       "Account safety review": [
         "Проверка безопасности аккаунта"
+      ],
+      "Add a recovery email address": [
+        "Добавить адрес эл. почты для восстановления доступа"
       ],
       "Add a recovery phone number": [
         "Добавить номер телефона для восстановления"
@@ -13925,8 +13999,14 @@
       "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
         "Так как вы сбросили пароль, ваш текущий набор восстановления может быть использован только для восстановления данных, созданных перед сбросом пароля."
       ],
+      "Can be used to regain access to your account and data": [
+        "Может использоваться для восстановления доступа к вашему аккаунту и данным"
+      ],
       "Code sent to ${ boldValue }": [
         "Код отправлен на ${ boldValue }"
+      ],
+      "Device-based recovery enabled": [
+        "Восстановление на базе устройств включено"
       ],
       "Download ${ size }": [
         "Скачать ${ size }"
@@ -13934,14 +14014,26 @@
       "Download your Recovery Kit": [
         "Скачайте набор для восстановления"
       ],
+      "Enable device-based recovery": [
+        "Включить восстановление на основе устройств"
+      ],
+      "Enable recovery by email": [
+        "Включить восстановление по электронной почте"
+      ],
       "Enable recovery by phone": [
         "Разрешить восстановление по номеру телефона"
       ],
       "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
         "Я понимаю, что я не смогу восстановить заблокированные в данный момент данные с помощью этого набора восстановления"
       ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Если вы забудете пароль от ${ BRAND_NAME } и вам потребуется его сбросить, при следующем входе на этом устройстве с новым паролем будет восстановлен полный доступ к вашему аккаунту ${ BRAND_NAME }."
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
         "Если ваш аккаунт ${ BRAND_NAME } будет заблокирован, ваш набор для восстановления позволит вам войти в систему и восстановить данные."
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Если вы потеряете данные для входа и вам потребуется сбросить аккаунт, **крайне необходимо**, чтобы у вас был **настроен способ восстановления аккаунта и данных**, иначе вы не сможете получить доступ ко всей вашей электронной почте, контактам, файлам и паролям."
       ],
       "Invalid code": [
         "Недействительный код"
@@ -13949,17 +14041,35 @@
       "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
         "Это единственный способ полностью восстановить аккаунт, поэтому убедитесь, что вы храните его в надежном месте."
       ],
+      "Recovery email address": [
+        "Резервный адрес электронной почты"
+      ],
       "Safeguard account now": [
         "Защитите аккаунт сейчас"
       ],
       "Safeguard your account": [
         "Защитите свой аккаунт"
       ],
+      "Safeguard your account further": [
+        "Дополнительно защитите свой аккаунт"
+      ],
       "Safety review": [
         "Обзор безопасности"
       ],
       "Send a new code": [
         "Отправить новый код"
+      ],
+      "Show more": [
+        "Показать ещё"
+      ],
+      "Take action to secure your account": [
+        "Примите меры для защиты вашего аккаунта"
+      ],
+      "There was an error verifying your recovery email": [
+        "Произошла ошибка при подтверждении резервного адреса электронной почты"
+      ],
+      "to automatically recover your data when you log into a trusted device": [
+        "чтобы автоматически восстановить данные при входе на доверенное устройство"
       ],
       "to recover your account and data if you're ever locked out": [
         "чтобы восстановить аккаунт и данные, если вы когда-нибудь потеряете доступ"
@@ -13976,14 +14086,29 @@
       "Verify": [
         "Проверить"
       ],
+      "Verify your recovery email address": [
+        "Подтвердите адрес электронной почты для восстановления"
+      ],
       "Verify your recovery phone number": [
         "Подтвердите номер телефона для восстановления"
+      ],
+      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
+        "Когда вы включаете восстановление на базе устройств, ${ BRAND_NAME } сохраняет зашифрованный резервный ключ как файл в хранилище вашего браузера."
       ],
       "You are at risk of losing access to your account and data.": [
         "Вам грозит потеря доступа к аккаунту и данным."
       ],
       "You are at risk of losing access to your data.": [
         "Вам грозит потеря доступа к данным."
+      ],
+      "You can disable this at any time.": [
+        "Вы можете отключить это в любое время."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Вы можете использовать резервный адрес электронной почты, чтобы вернуть доступ к аккаунту, если вы забудете пароль."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Вы можете использовать резервный номер телефона, чтобы вернуть доступ к аккаунту, если вы забудете пароль."
       ],
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Вы ранее скачивали набор для восстановления. Загрузка нового **деактивирует старый**."
@@ -14000,14 +14125,44 @@
       "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
         "Вы можете восстановить аккаунт и данные. У вас есть рекомендованные действия, чтобы дальше защитить аккаунт."
       ],
+      "Your account and data can be recovered. You have recommended actions.": [
+        "Ваш аккаунт и данные могут быть восстановлены. Есть рекомендуемые действия."
+      ],
       "Your account is fully secure.": [
         "Ваш аккаунт полностью защищен."
+      ],
+      "Your account is secure.": [
+        "Ваш аккаунт защищен."
       ],
       "Your recovery email": [
         "Ваш резервный адрес электронной почты"
       ],
+      "Your recovery email and phone can **only recover access to your account**.": [
+        "Ваш резервный адрес электронной почты и телефон могут **восстановить доступ только к вашему аккаунту**."
+      ],
+      "Your recovery email can **only recover access to your account**.": [
+        "Ваш резервный адрес электронной почты может **восстановить доступ только к вашему аккаунту**."
+      ],
+      "Your recovery email has been enabled": [
+        "Резервный адрес электронной почты включен"
+      ],
+      "Your recovery email is set": [
+        "Резервный адрес электронной почты настроен"
+      ],
+      "Your Recovery Kit": [
+        "Ваш набор для восстановления"
+      ],
+      "Your recovery methods": [
+        "Ваши способы восстановления"
+      ],
       "Your recovery phone": [
         "Ваш резервный номер телефона"
+      ],
+      "Your recovery phone can **only recover access to your account**.": [
+        "Ваш номер телефона для восстановления может **восстановить доступ только к вашему аккаунту**."
+      ],
+      "Your recovery phone has been enabled": [
+        "Резервный номер телефона включен"
       ]
     },
     "saml: Action": {
@@ -15872,6 +16027,9 @@
       "Preference updated": [
         "Предпочтение обновлено"
       ],
+      "Preferences updated": [
+        "Настройки обновлены"
+      ],
       "Status updated": [
         "Состояние обновлено"
       ]
@@ -16269,6 +16427,9 @@
       ],
       "Clear out the junk": [
         "Очистить от спама"
+      ],
+      "Click a value in the table to use it as filter": [
+        "Нажмите значение в таблице, чтобы использовать его в качестве фильтра"
       ],
       "Close": [
         "Закрыть"
@@ -17645,9 +17806,6 @@
       ],
       "Optional": [
         "Необязательно"
-      ],
-      "Private": [
-        "Частный"
       ],
       "Remember to share the user's sign in details with them.": [
         "Не забудьте сообщить им пользовательские данные для входа в систему."
