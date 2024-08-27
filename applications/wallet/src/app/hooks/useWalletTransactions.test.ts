@@ -264,6 +264,7 @@ describe('useWalletTransactions', () => {
                 Fingerprint: '',
                 PublicKey: null,
                 Passphrase: '',
+                MigrationRequired: 0,
             },
             WalletAccounts: [
                 {
