@@ -157,6 +157,12 @@
       "Allow": [
         "Tillåt"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Tillåt end-to-end-krypterad e-post för denna grupp"
+      ],
+      "Always allow sending": [
+        "Tillåt alltid sändning"
+      ],
       "Apply": [
         "Tillämpa"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "Kasta ändringar"
+      ],
+      "Domain name": [
+        "Domännamn"
       ],
       "Don't show again": [
         "Visa inte igen"
@@ -1111,6 +1120,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Försök att spara igen. Det gick inte att spara på grund av: ${ saveError }"
       ],
+      "Turn off": [
+        "Stäng av"
+      ],
+      "Turn on": [
+        "Slå på"
+      ],
       "Underline": [
         "Understruken"
       ],
@@ -1176,6 +1191,9 @@
       ],
       "Use authentication code": [
         "Använd autentiseringskod"
+      ],
+      "Use group permissions": [
+        "Använd gruppbehörigheter"
       ],
       "Use recovery code": [
         "Använd återställningskod"
@@ -3360,9 +3378,6 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Rensa automatiskt bort meddelanden som är äldre än 30 dagar från papperskorg och skräppost. Njut av denna och andra fördelar när du uppgraderar."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Grattis! Du har tjänat det maximala antalet ${ rewardsLimit } gratis månader av ${ plusPlanName }."
       ],
@@ -7285,6 +7300,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå till din identitetsleverantör, hämta SAML-metadata för ${ appName } och importera den här."
       ],
+      "Group deleted": [
+        "Grupp borttagen"
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppera e-post i samma konversation tillsammans i din inkorg eller visa dem separat."
       ],
@@ -7435,6 +7453,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installera en serverkonfigurationsfil för att ansluta till en specifik server i det land du väljer."
+      ],
+      "Internal user": [
+        "Intern användare"
       ],
       "Internet connection lost": [
         "Internetanslutning förlorades"
@@ -8329,6 +8350,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Detta kan ta några sekunder eller minuter beroende på din enhet"
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Denna ändring kommer att återspeglas fullt ut i din infrastruktur inom cirka 1 timme"
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Detta kan ta lite tid. Stäng inte denna sida eller koppla från Internet."
       ],
@@ -8806,6 +8830,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME }-tjänster"
       ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Med grupper kan du snabbt och enkelt skicka e-post till alla personer i en specificerad grupp."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Med ditt nuvarande paket kan du endast ta emot meddelanden med din adress @pm.me. Uppgradera för att skicka meddelanden och skapa ytterligare adresser med @pm.me."
       ],
@@ -8840,6 +8867,9 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Du använder för närvarande ${ usedMembers } av din ${ maxMembers } tillgängliga användarlicens.",
         "Du använder för närvarande ${ usedMembers } av dina ${ maxMembers } tillgängliga användarlicenser."
+      ],
+      "You are not currently in any groups and there are no pending invitations": [
+        "Du är för närvarande inte i några grupper och det finns inga väntande inbjudningar"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du är inloggad på kontot ${ memberAddress }."
@@ -9174,6 +9204,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Avböjd"
+      ],
+      "Paused": [
+        "Pausad"
+      ],
       "Pending": [
         "Väntande"
       ],
@@ -10438,6 +10474,9 @@
       "Time zone": [
         "Tidszon"
       ],
+      "Tips and insights": [
+        "Tips och insikter"
+      ],
       "To: ${ toEmail }": [
         "Till: ${ toEmail }"
       ],
@@ -10566,9 +10605,6 @@
     "Label for new member": {
       "Admin": [
         "Admin"
-      ],
-      "Private": [
-        "Privat"
       ],
       "VPN connections": [
         "VPN-anslutningar"
@@ -11701,9 +11737,6 @@
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-alias"
-      ],
       "High-speed streaming": [
         "Höghastighetsstreaming"
       ],
@@ -11897,12 +11930,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Upp till ${ totalStorageSize } lagringsutrymme"
       ],
-      "Up to 15 email addresses": [
-        "Upp till 15 e-postadresser"
-      ],
-      "Up to 3 TB of storage": [
-        "Upp till 3 TB lagringsutrymme"
-      ],
       "User credential management": [
         "Hantera användaruppgifter"
       ],
@@ -11924,17 +11951,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain2 } för nyhetsprenumeration"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Få obegränsade alias med SimpleLogin av ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Snooza meddelanden och bli påmind när du vill"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Använd din egen anpassade e-postdomänadress, t.ex. du@dittnamn.se"
       ]
     },
     "new_plans: heading": {
@@ -15891,6 +15912,9 @@
       "Preference updated": [
         "Preferenser uppdaterade"
       ],
+      "Preferences updated": [
+        "Preferenser uppdaterade"
+      ],
       "Status updated": [
         "Status uppdaterad"
       ]
@@ -16312,6 +16336,12 @@
       ],
       "Connection events": [
         "Anslutningshändelser"
+      ],
+      "Connection monitor disabled": [
+        "Anslutningsövervakning inaktiverad"
+      ],
+      "Connection monitor enabled": [
+        "Anslutningsövervakning aktiverad"
       ],
       "Contact us": [
         "Kontakta oss"
@@ -16875,6 +16905,9 @@
       "Profile": [
         "Profil"
       ],
+      "QRCode": [
+        "QR-kod"
+      ],
       "Recommended": [
         "Rekommenderad"
       ],
@@ -17088,6 +17121,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "Vidta försiktighetsåtgärder för att undvika dataförlust!"
+      ],
+      "Text": [
+        "Text"
       ],
       "Theme": [
         "Tema"
@@ -17532,8 +17568,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ],
+      "Group membership paused": [
+        "Gruppmedlemskap pausad"
+      ],
       "Sending member invitation": [
         "Skickar medlemsinbjudan"
+      ],
+      "User declined invitation": [
+        "Användare avböjde inbjudan"
       ],
       "Waiting user to accept the invitation": [
         "Väntar på att användaren ska acceptera inbjudan"
@@ -17581,6 +17623,74 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Denna version av Tor-webbläsaren stöds inte. Uppdatera till senaste ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Administratörer kan inte komma åt privata användares data och kan inte återställa deras lösenord."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "En administratör för ${ orgName } vill aktivera administratörsåtkomst för ditt konto."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Genom att göra användaren privat kommer du inte att kunna hjälpa dem att återfå åtkomst till sin data eller sitt konto."
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Delete request": [
+        "Ta bort begäran"
+      ],
+      "Delete request to access user data?": [
+        "Ta bort begäran om åtkomst till användardata?"
+      ],
+      "Enable admin access?": [
+        "Aktivera administratörsåtkomst?"
+      ],
+      "Enable administrator access": [
+        "Aktivera administratörsåtkomst"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "När användaren samtycker kommer du att kunna hjälpa dem att återfå kontoåtkomst eller hantera deras data."
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisationsnyckel måste vara aktiverad för att begära dataåtkomst"
+      ],
+      "Pending admin access": [
+        "Väntande administratörsåtkomst"
+      ],
+      "Private user": [
+        "Privat användare"
+      ],
+      "reject": [
+        "avvisa"
+      ],
+      "Revoke access": [
+        "Återkalla åtkomst"
+      ],
+      "Revoke administrator access?": [
+        "Återkalla administratörsåtkomst?"
+      ],
+      "Send request": [
+        "Skicka förfrågan"
+      ],
+      "The user must have an address to request data access": [
+        "Användaren måste ha en adress för att begära dataåtkomst"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Detta kommer ta bort den väntande begäran om administratörsåtkomst till användarens data eller lösenordsåterställning."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Detta kommer återkalla administratörsbehörigheten att hantera denna användares konto."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "För att fortsätta måste du begära användarens tillåtelse att komma åt deras data eller återställa deras lösenord."
+      ],
+      "View request": [
+        "Visa begäran"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "Du kan ${ reject } denna begäran om du inte vill fortsätta."
       ]
     },
     "Update font modal": {
@@ -17677,9 +17787,6 @@
       "Optional": [
         "Valfritt"
       ],
-      "Private": [
-        "Privat"
-      ],
       "Remember to share the user's sign in details with them.": [
         "Kom ihåg att dela användarens inloggningsinformation med dem."
       ],
@@ -17714,6 +17821,9 @@
       ],
       "It's you": [
         "Det är du"
+      ],
+      "Pending admin access": [
+        "Väntande administratörsåtkomst"
       ],
       "Private": [
         "Privat"

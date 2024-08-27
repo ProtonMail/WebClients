@@ -250,6 +250,9 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potvrďte otvorenie odkazu ${ linkToShow }"
       ],
+      "Contact sales": [
+        "Kontaktovať obchodný tím"
+      ],
       "Contact support": [
         "Kontaktovať podporu"
       ],
@@ -399,6 +402,9 @@
       ],
       "Discard changes": [
         "Zahodiť zmeny"
+      ],
+      "Domain name": [
+        "Názov domény"
       ],
       "Don't show again": [
         "Viac nezobrazovať"
@@ -666,6 +672,9 @@
       ],
       "Loading verification": [
         "Načítavanie overenia"
+      ],
+      "Lost access to your 2FA device?": [
+        "Stratili ste prístup k svojmu zariadeniu 2FA?"
       ],
       "Make admin": [
         "Urobiť správcom"
@@ -1101,6 +1110,12 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokúste sa znova uložiť. Uloženie zlyhalo z dôvodu: ${ saveError }"
+      ],
+      "Turn off": [
+        "Vypnúť"
+      ],
+      "Turn on": [
+        "Zapnúť"
       ],
       "Underline": [
         "Podčiarknuté"
@@ -3381,14 +3396,17 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Automatické mazanie správ starších ako 30 dní z koša a spamu. Užívajte si túto a ďalšie výhody pri navýšení plánu."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulujeme! Získali ste maximum ${ rewardsLimit } bezplatných mesiacov ${ plusPlanName }."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Povoľte ${ PROTON_SENTINEL_NAME } pre prístup k týmto funkciám"
+      ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Pre prístup k týmto funkciám povoľte podrobné udalosti a ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Enable detailed events to access these features": [
+        "Povolením podrobných udalostí získate prístup k týmto funkciám"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrovanie a import kontaktov... Táto akcia môže trvať niekoľko minút. Akonáhle je proces ukončený, môžete zavrieť tento modul."
@@ -6527,6 +6545,9 @@
       "${ vaultLink } deleted": [
         "${ vaultLink } bol vymazaný"
       ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } zdieľaný emailom"
+      ],
       "${ vaultLink } updated": [
         "Štítok ${ vaultLink } bol aktualizovaný"
       ],
@@ -6574,6 +6595,9 @@
       ],
       "2. They try ${ planName }": [
         "2. Vyskúšajú ${ planName }"
+      ],
+      "2FA disabled": [
+        "2FA vypnuté"
       ],
       "3. You earn credits": [
         "3. Získavate kredity"
@@ -6689,6 +6713,9 @@
         "Zasiahnutí používatelia sú v riadkoch",
         "Zasiahnutí používatelia sú v riadkoch"
       ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "Po uzamknutí budú musieť členovia organizácie odomknúť ${ PASS_APP_NAME } pomocou svojho hesla alebo kódu PIN atď."
+      ],
       "Align left": [
         "Zarovnať vľavo"
       ],
@@ -6712,6 +6739,9 @@
       ],
       "All keys successfully reactivated": [
         "Všetky kľúče boli úspešne reaktivované"
+      ],
+      "All members have been added.": [
+        "Všetci členovia boli pridaní"
       ],
       "All your changes will be lost.": [
         "Všetky vaše zmeny budú stratené."
@@ -6893,6 +6923,15 @@
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Posilnite identitu značky vašej organizácie a vytvorte konzistentnejší online zážitok pre vašich používateľov."
       ],
+      "Breach Custom Email Created": [
+        "Vlastný email pre úniky pridaný"
+      ],
+      "Breach Custom Email Deleted": [
+        "Vlastný email pre úniky zmazaný"
+      ],
+      "Breach Custom Email Validated": [
+        "Vlastný email pre úniky overený"
+      ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "V predvolenom nastavení môžu členovia organizácie exportovať len tie trezory, ktorých sú vlastníkmi. Ak je táto možnosť zapnutá, nebudú môcť exportovať žiadne údaje"
       ],
@@ -7061,6 +7100,9 @@
       "Disable recovery by ${ type }": [
         "Deaktivovať obnovenie ${ type }"
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "Vypnutím dvojfázového overovania bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
+      ],
       "Discount": [
         "Zľava"
       ],
@@ -7135,6 +7177,9 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Každá doména môže mať iba jeden SPF (TXT) záznam. Ak chcete zachovať existujúci SPF (TXT) záznam, môžete k existujúcemu záznamu pridať ${ spf } (vložte ho za ${ spfValue })."
+      ],
+      "Early access": [
+        "Predbežný prístup"
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
@@ -7232,6 +7277,9 @@
       "Event invitations and RSVPs will be sent in this language.": [
         "Pozvánky na udalosti a RSVP budú zaslané v tomto jazyku."
       ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "Udalosti zaznamenávajú pokusy o prihlásenie do všetkých služieb ${ BRAND_NAME } s použitím vašich prístupových údajov ${ BRAND_NAME_TWO }."
+      ],
       "Example: ${ spfExample }": [
         "Príklad: ${ spfExample }"
       ],
@@ -7255,6 +7303,9 @@
       ],
       "finance": [
         "financie"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Pre 10-ročnú históriu verzií prosím kontaktujte náš obchodný tím."
       ],
       "for choosing ${ product }": [
         "za výber ${ product }"
@@ -7297,6 +7348,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Prejdite k vášmu poskytovateľovi identity, stiahnite metadáta SAML pre ${ appName } a importujte ich sem."
+      ],
+      "Group deleted": [
+        "Skupina bola zmazaná"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Emaily v rovnakej konverzácii môžete v priečinku Doručená pošta zoskupiť alebo zobraziť samostatne."
@@ -7454,6 +7508,9 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Nainštalujte konfiguračný súbor serveru a pripojte sa ku konkrétnemu serveru v krajine podľa vašeho výberu."
       ],
+      "Internal user": [
+        "Interný používateľ"
+      ],
       "Internet connection lost": [
         "Strata internetového pripojenia"
       ],
@@ -7508,6 +7565,9 @@
       "Item Autofilled": [
         "Položka automaticky vyplnená"
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Položka automaticky vyplnená v ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "Položka v trezore automaticky vyplnená"
       ],
@@ -7532,6 +7592,9 @@
       "Item deleted from vault": [
         "Položka bola z trezora vymazaná"
       ],
+      "Item flags changed in ${ vaultLink }": [
+        "Príznaky položky zmenené v ${ vaultLink }"
+      ],
       "Item flags changed in vault": [
         "Príznaky položky v trezore zmenené"
       ],
@@ -7549,6 +7612,9 @@
       ],
       "Item Read": [
         "Položka bola prečítaná"
+      ],
+      "Item read in ${ vaultLink }": [
+        "Položka prečítaná v ${ vaultLink }"
       ],
       "Item read in vault": [
         "Položka v trezore prečítaná"
@@ -8051,6 +8117,9 @@
       "Remember to share the user's sign in details with them.": [
         "Nezabudnite s nimi zdieľať prihlasovacie údaje používateľa."
       ],
+      "Remove metadata from images to protect your privacy.": [
+        "Odstránenie metadát z vašich obrázkov na ochranu vášho súkromia."
+      ],
       "Remove one of your calendars to join this one": [
         "Odstráňte jeden zo svojich kalendárov pre pripojenie k tomuto"
       ],
@@ -8161,6 +8230,12 @@
       ],
       "Share Updated": [
         "Zdieľanie aktualizované"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Zdieľaný ${ vaultLink } zmazaný"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Zdieľaný ${ vaultLink } aktualizovaný"
       ],
       "Shared vault deleted": [
         "Zdieľaný trezor bol vymazaný"
@@ -8432,6 +8507,9 @@
       "This will delete all previous versions of your files.": [
         "Toto zmaže všetky predchádzajúce verzie vašich súborov."
       ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Tým dôjde k deaktivácii dvojfázového overovania, vrátane aplikácie pre autentizáciu a metód bezpečnostného kľúča."
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Týmto sa deaktivuje vaša súčasná obnovovacia fráza. Nebudete ju môcť použiť k prístupu k vášmu účtu, alebo k dešifrovaniu údajov."
       ],
@@ -8632,6 +8710,9 @@
       ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Na generovanie a bezpečné ukladanie hesiel používajte správcu hesiel, ktorý zabezpečí silné heslá a jednoduchšie prihlasovanie."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Na deaktiváciu vašich metód dvojfázového overovania použite metódu obnovenia."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použite najlepší server podľa aktuálneho zaťaženia a umiestnenia: ${ formattedBestServerName }"
@@ -8975,6 +9056,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nenastavili ste metódu obnovenia, takže obnovenie konta nebude možné, ak zabudnete heslo. Pokračovať bez metódy obnovy?"
       ],
+      "You do not have permission to perform this action": [
+        "Na vykonanie tejto akcie nemáte oprávnenie"
+      ],
       "You have ${ availableCount } dedicated server available.": [
         "Máte dostupný ${ availableCount } dedikovaný server.",
         "Máte dostupné ${ availableCount } dedikované servery.",
@@ -9233,6 +9317,9 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Odmietnuté"
+      ],
       "Pending": [
         "Čakajúce"
       ]
@@ -9962,6 +10049,9 @@
       "Disable sharing outside the organization": [
         "Zakázať zdieľanie mimo organizácie"
       ],
+      "Disabled": [
+        "Deaktivovaný"
+      ],
       "Display name": [
         "Zobrazované meno"
       ],
@@ -9994,6 +10084,9 @@
       ],
       "Email or username": [
         "Email alebo používateľské meno"
+      ],
+      "Email settings": [
+        "Nastavenie e-mailu"
       ],
       "Emails": [
         "Emaily"
@@ -10073,6 +10166,9 @@
       "Group address": [
         "Skupinové adresy"
       ],
+      "Group conversations": [
+        "Skupinové konverzácie"
+      ],
       "Group members": [
         "Členovia skupiny"
       ],
@@ -10117,6 +10213,9 @@
       ],
       "Issuer ID": [
         "ID vydávateľa"
+      ],
+      "Keep emails in Sent/Drafts": [
+        "Ponechať e-maily v Odoslaných/Konceptoch"
       ],
       "Keep me signed in": [
         "Zostať prihlásený"
@@ -10361,6 +10460,9 @@
       "Recovery phrase": [
         "Obnovovacia fráza"
       ],
+      "Remove image metadata": [
+        "Odstrániť metadáta obrázku"
+      ],
       "Repeat password": [
         "Zopakovať heslo"
       ],
@@ -10603,9 +10705,6 @@
     "Label for new member": {
       "Admin": [
         "Administrátor"
-      ],
-      "Private": [
-        "Súkromné"
       ],
       "VPN connections": [
         "VPN pripojenia"
@@ -11755,9 +11854,6 @@
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email aliasy"
-      ],
       "High-speed streaming": [
         "Vysokorýchlostné streamovanie"
       ],
@@ -11938,12 +12034,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného priestoru"
       ],
-      "Up to 15 email addresses": [
-        "Až 15 emailových adries"
-      ],
-      "Up to 3 TB of storage": [
-        "Až do 3 TB úložiska"
-      ],
       "User credential management": [
         "Správa používateľských údajov"
       ],
@@ -11967,17 +12057,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JohnShopper@${ domain } pre nákupné účty, JohnNews@${ domain2 } pre odber noviniek"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Odložte správy a pripomeňte si ich, kedy chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Použite svoju vlastnú emailovú doménovú adresu, napr. vy@vasemeno.com"
       ]
     },
     "new_plans: heading": {
@@ -13907,6 +13991,116 @@
         "Používateľ"
       ]
     },
+    "Safety review": {
+      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
+        "${ enableDeviceRecovery } pre zaistenie možnosti obnovy vašich dát."
+      ],
+      "Account safety review": [
+        "Kontrola bezpečnosti účtu"
+      ],
+      "Add a recovery email address": [
+        "Pridajte emailovú adresu pre obnovenie"
+      ],
+      "Add a recovery phone number": [
+        "Pridajte telefónne číslo určené na obnovenie"
+      ],
+      "Can be used to regain access to your account and data": [
+        "Môže byť použité pre obnovenie prístupu k vášmu účtu a dátam"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Kód zaslaný na ${ boldValue }"
+      ],
+      "Device-based recovery enabled": [
+        "Obnovenie založené na zariadení je povolené"
+      ],
+      "Download ${ size }": [
+        "Stiahnuť ${ size }"
+      ],
+      "Download your Recovery Kit": [
+        "Stiahnite si svoju sadu pre obnovenie"
+      ],
+      "Enable device-based recovery": [
+        "Povoľte obnovenie založené na zariadení"
+      ],
+      "Enable recovery by email": [
+        "Povoľte obnovenie emailom"
+      ],
+      "Enable recovery by phone": [
+        "Povoľte obnovenie telefónom"
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Ak zabudnete svoje heslo ${ BRAND_NAME } a bude ho nutné resetovať, môžete sa prihlásiť k účtu pomocou tohto zariadenia a nového hesla a obnoviť tým plný prístup k svojmu účtu ${ BRAND_NAME }."
+      ],
+      "Invalid code": [
+        "Neplatný kód"
+      ],
+      "Safeguard your account further": [
+        "Zvýšte zabezpečenie svojho účtu ešte viac"
+      ],
+      "Send a new code": [
+        "Poslať nový kód"
+      ],
+      "Show more": [
+        "Zobraziť viac"
+      ],
+      "Take action to secure your account": [
+        "Podniknite kroky na zabezpečenie účtu"
+      ],
+      "to automatically recover your data when you log into a trusted device": [
+        "pre automatické obnovenie vašich dát, keď sa prihlásite do dôveryhodného zariadenia"
+      ],
+      "to recover your account and data if you're ever locked out": [
+        "pre obnovenie vášho účtu a dát, ak kedykoľvek stratíte prístup"
+      ],
+      "to recover your account if you're ever locked out": [
+        "pre obnovenie vášho účtu, ak kedykoľvek stratíte prístup"
+      ],
+      "Update your Recovery Kit": [
+        "Aktualizujte si svoju sadu pre obnovenie"
+      ],
+      "Verify": [
+        "Overiť"
+      ],
+      "Verify your recovery email address": [
+        "Overte svoju emailovú adresu určenú na obnovenie"
+      ],
+      "Verify your recovery phone number": [
+        "Overte svoje telefónne číslo určené na obnovenie"
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "Hrozí, že stratíte prístup k svojmu účtu a dátam."
+      ],
+      "You are at risk of losing access to your data.": [
+        "Hrozí, že stratíte prístup k svojim dátam."
+      ],
+      "Your account and data can be recovered. You have recommended actions.": [
+        "Váš účet a dáta môžu byť obnovené. Sú tu niektoré odporúčané akcie."
+      ],
+      "Your account is secure.": [
+        "Váš účet je zabezpečený."
+      ],
+      "Your recovery email": [
+        "Váš email pre obnovenie"
+      ],
+      "Your recovery email and phone can **only recover access to your account**.": [
+        "Iba váš email pre obnovenie a telefón môžu **obnoviť prístup k vášmu účtu**."
+      ],
+      "Your recovery email can **only recover access to your account**.": [
+        "Iba váš email pre obnovenie môže **obnoviť prístup k vášmu účtu**."
+      ],
+      "Your Recovery Kit": [
+        "Vaša sada pre obnovenie"
+      ],
+      "Your recovery methods": [
+        "Vaše metódy obnovenia"
+      ],
+      "Your recovery phone": [
+        "Váš telefón pre obnovenie"
+      ],
+      "Your recovery phone can **only recover access to your account**.": [
+        "Iba váš telefón pre obnovenie môže **obnoviť prístup k vášmu účtu**."
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "Zrušiť"
@@ -15778,6 +15972,9 @@
       "Preference updated": [
         "Nastavenie uložené"
       ],
+      "Preferences updated": [
+        "Predvoľby aktualizované"
+      ],
       "Status updated": [
         "Stav bol aktualizovaný"
       ]
@@ -15889,6 +16086,9 @@
       ],
       "Status": [
         "Stav"
+      ],
+      "Time": [
+        "Čas"
       ],
       "Total storage": [
         "Celkové úložisko"
@@ -16004,6 +16204,9 @@
       ],
       "Account recovery": [
         "Obnovenie účtu"
+      ],
+      "Account settings": [
+        "Nastavenie účtu"
       ],
       "Account suspended": [
         "Účet pozastavený"
@@ -16172,6 +16375,9 @@
       ],
       "Clear out the junk": [
         "Prečistenie nevyžiadanej pošty"
+      ],
+      "Click a value in the table to use it as filter": [
+        "Kliknutím na hodnotu v tabuľke ju použijete ako filter."
       ],
       "Close": [
         "Zatvoriť"
@@ -16352,6 +16558,9 @@
       ],
       "Disable two-factor authentication": [
         "Vypnúť dvojstupňové overenie"
+      ],
+      "Disable two-factor authentication?": [
+        "Deaktivovať dvojfázové overenie?"
       ],
       "Discard changes?": [
         "Zrušiť zmeny?"
@@ -16749,11 +16958,17 @@
       "Privacy and data collection": [
         "Ochrana a zber osobných údajov"
       ],
+      "Privacy and security": [
+        "Súkromie a bezpečnosť"
+      ],
       "Processing...": [
         "Prebieha spracovanie..."
       ],
       "Profile": [
         "Profil"
+      ],
+      "QRCode": [
+        "QR kód"
       ],
       "Recommended": [
         "Odporúčané"
@@ -16832,6 +17047,9 @@
       ],
       "Security and privacy": [
         "Bezpečnosť a súkromie"
+      ],
+      "Security events": [
+        "Bezpečnostné udalosti"
       ],
       "Security logs": [
         "Bezpečnostné protokoly"
@@ -16967,6 +17185,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "Buďte opatrní, aby nedošlo k strate údajov!"
+      ],
+      "Text": [
+        "Text"
       ],
       "Theme": [
         "Motív"
@@ -17545,9 +17766,6 @@
       ],
       "Optional": [
         "Voliteľné"
-      ],
-      "Private": [
-        "Súkromné"
       ],
       "Remember to share the user's sign in details with them.": [
         "Nezabudnite s nimi zdieľať prihlasovacie údaje používateľa."

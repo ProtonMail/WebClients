@@ -157,6 +157,12 @@
       "Allow": [
         "Tillad"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Tillad end-to-end-krypteret mail for denne gruppe"
+      ],
+      "Always allow sending": [
+        "Tillad altid at sende"
+      ],
       "Apply": [
         "Anvend"
       ],
@@ -402,6 +408,9 @@
       ],
       "Discard changes": [
         "Kassér ændringer"
+      ],
+      "Domain name": [
+        "Domænenavn"
       ],
       "Don't show again": [
         "Vis ikke igen"
@@ -1111,6 +1120,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Prøv at gemme igen. Det lykkedes ikke at gemme på grund af: ${ saveError }"
       ],
+      "Turn off": [
+        "Slå fra"
+      ],
+      "Turn on": [
+        "Slå til"
+      ],
       "Underline": [
         "Understreg"
       ],
@@ -1176,6 +1191,9 @@
       ],
       "Use authentication code": [
         "Brug godkendelseskode"
+      ],
+      "Use group permissions": [
+        "Brug gruppetilladelser"
       ],
       "Use recovery code": [
         "Brug gendannelseskode"
@@ -3365,9 +3383,6 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Ryd automatisk op i beskeder, der er ældre end 30 dage, fra papirkurven og spam. Nyd dette og andre fordele når du opgraderer."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Tillykke! Du har optjent de maksimale ${ rewardsLimit } gratis måneder med ${ plusPlanName }."
       ],
@@ -4196,6 +4211,9 @@
       ],
       "Authentication error.": [
         "Godkendelsesfejl."
+      ],
+      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
+        "Autosvar-beskeden overskrider den tilladte længde. Forkort den til at passe inden for grænsen."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automatiske svar er en betalingsfunktion. Opgrader venligst til en betalt konto for at bruge denne funktion."
@@ -6304,7 +6322,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Er du sikker på, at du vil importere en privat nøgle? Hvis du importerer en usikkert genereret eller lækket privat nøgle, kan det skade dine e-mailes sikkerhed.\n\nBemærk også, at den offentlige nøgle, der svarer til denne private nøgle, vil være offentligt tilgængelig fra vores nøgleserver. Hvis nøglen indeholder personlige oplysninger (f.eks. dit fulde navn), som du ikke ønsker at offentliggøre, skal du redigere nøglen, før du importerer den."
+        "Er du sikker på, at du vil importere en privat nøgle? Hvis du importerer en usikkert genereret eller lækket privat nøgle, kan det skade dine e-mails sikkerhed.\n\nBemærk også, at den offentlige nøgle, der svarer til denne private nøgle, vil være offentligt tilgængelig fra vores nøgleserver. Hvis nøglen indeholder personlige oplysninger (f.eks. dit fulde navn), som du ikke ønsker at offentliggøre, skal du redigere nøglen, før du importerer den."
       ]
     },
     "Import provider": {
@@ -6581,6 +6599,9 @@
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Et ${ protonSubdomain } hostes af ${ BRAND_NAME }, hvor du hurtigt kan oprette et underdomæne. ${ learnMoreLink }"
+      ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "For at oprette grupper kræves et tilpasset domæne. Hvis det ikke er sat op, skal det først gøres under ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn, så du kan fastslå, hvor du bruger den, så du nemt kan tilbagekalde den eller forlænge den senere."
@@ -7281,6 +7302,12 @@
       "Gateways": [
         "Gateways"
       ],
+      "Gateways monitoring is disabled.": [
+        "Portalovervågning er deaktiveret."
+      ],
+      "Gateways monitoring is enabled.": [
+        "Portalovervågning er aktiveret."
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
       ],
@@ -7301,6 +7328,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
+      ],
+      "Group deleted": [
+        "Gruppe slettet"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Gruppér e-mails i den samme samtale i din indbakke, eller vis dem separat."
@@ -7455,6 +7485,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Installer en server-konfigurationsfil for at oprette forbindelse til en bestemt server i et land af eget valg."
+      ],
+      "Internal user": [
+        "Intern bruger"
       ],
       "Internet connection lost": [
         "Internetforbindelse mistet"
@@ -7666,6 +7699,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Indlæser kalender, vent venligst. Du vil blive omdirigeret til vores planlægningsplatform Calendly i en ny fane."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Indlæser aktuel overvågningsstatus for portaler."
       ],
       "Loading preview": [
         "Indlæser forhåndsvisning"
@@ -8370,6 +8406,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Dette kan tage nogle sekunder/minutter afhængigt af din enhed"
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Denne ændring vil blive afspejlet på tværs af din infrastruktur i løbet af ca. 1 time."
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dette kan tage noget tid. Luk ikke denne side, og afbryd ikke forbindelsen til internettet."
       ],
@@ -8567,6 +8606,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "Tilstanden med to adgangskoder bruger separate adgangskoder til login og dekryptering af data. I nogle situationer giver det en mindre sikkerhedsfordel, dog anbefaler vi én adgangskodetilstand til de fleste brugere. Skift til to-adgangskodetilstand ved først at indstille en login-adgangskode og derefter en anden adgangskode."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "Ude af stand til at tjekke overvågningsstatus for portaler."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kan ikke verificere signaturen for gendannelsesfilen. Kontakt venligst support."
@@ -8856,6 +8898,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypteret ${ BRAND_NAME }-adresse kan du bruge alle ${ BRAND_NAME }-tjenester"
       ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Med grupper kan du hurtigt og nemt sende mails til alle personer i en bestemt gruppe."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Med dit nuværende abonnement kan du kun modtage beskeder med din @pm.me-adresse. Opgrader for at sende beskeder og oprette yderligere adresser med @pm.me."
       ],
@@ -8898,6 +8943,9 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Du bruger i øjeblikket ${ usedMembers } af din ${ maxMembers } tilgængelige brugerlicens.",
         "Du bruger i øjeblikket ${ usedMembers } af dine ${ maxMembers } tilgængelige brugerlicenser."
+      ],
+      "You are not currently in any groups and there are no pending invitations": [
+        "Du er pt. ikke med i nogen grupper, og der er ingen ventende invitationer."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Du er logget ind på kontoen ${ memberAddress }."
@@ -9232,6 +9280,12 @@
       ]
     },
     "invitation status": {
+      "Declined": [
+        "Afvist"
+      ],
+      "Paused": [
+        "Sat på pause"
+      ],
       "Pending": [
         "Afventer"
       ],
@@ -10499,6 +10553,9 @@
       "Time zone": [
         "Tidszone"
       ],
+      "Tips and insights": [
+        "Tips og indblik"
+      ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
       ],
@@ -10624,9 +10681,6 @@
     "Label for new member": {
       "Admin": [
         "Admin"
-      ],
-      "Private": [
-        "Privat"
       ],
       "VPN connections": [
         "VPN-forbindelser"
@@ -11559,8 +11613,8 @@
         "${ n } mapper og etiketter"
       ],
       "${ n } hide-my-email alias": [
-        "${ n } Hide-my-email-alias",
-        "${ n } Hide-my-email-aliasser"
+        "${ n } hide-my-email-alias",
+        "${ n } hide-my-email-aliasser"
       ],
       "${ n } label": [
         "${ n } etiket",
@@ -11595,7 +11649,7 @@
         "${ PASS_APP_NAME } med ${ n } hide-my-email-aliasser"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } med ubegrænsede hide-my-email aliasser"
+        "${ PASS_APP_NAME } med ubegrænsede hide-my-email-aliasser"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME }-program"
@@ -11765,9 +11819,6 @@
       "Group management (coming soon)": [
         "Gruppe administration (kommer snart)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliasser"
-      ],
       "High-speed streaming": [
         "Streaming ved høj hastighed"
       ],
@@ -11880,7 +11931,7 @@
         "SMTP-indsendelse"
       ],
       "SMTP submission for select organizations": [
-        "SMTP indsendelse for udvalgte organisationer"
+        "SMTP-indsendelse for udvalgte organisationer"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
@@ -11961,12 +12012,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
       ],
-      "Up to 15 email addresses": [
-        "Op til 15 e-mailadresser"
-      ],
-      "Up to 3 TB of storage": [
-        "Op til 3 TB lagerplads"
-      ],
       "User credential management": [
         "Administration af brugerlegitimationsoplysninger"
       ],
@@ -11988,17 +12033,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Opret flere e-mailadresser for dine online identiteter, f.eks. JensShopper@${ domain } for shoppingkonto, JensNyheder@${ domain2 } til nyhedsabonnementer."
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Udsæt beskeder, og bliv mindet om dem, når du ønsker det"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Brug din egen brugerdefinerede e-mail-domæneadresse, f.eks. dig@ditnavn.com"
       ]
     },
     "new_plans: heading": {
@@ -15006,7 +15045,7 @@
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Alle vores premium-tjenester med deres højeste grænser: 100 e-mailadresser, mulighed for 10 brugerdomæner, ubegrænsede Hide-my-email-aliasser, kalenderdeling, krypteret cloud-lagring og fildeling og meget mere."
+        "Alle vores premium-tjenester med deres højeste grænser: 100 e-mailadresser, mulighed for 10 brugerdomæner, ubegrænsede hide-my-email-aliasser, kalenderdeling, krypteret cloud-lagring og fildeling og meget mere."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support til 3 tilpassede e-maildomæner, 15 e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere."
@@ -15984,6 +16023,9 @@
       "Preference updated": [
         "Præference opdateret"
       ],
+      "Preferences updated": [
+        "Præferencer opdateret"
+      ],
       "Status updated": [
         "Status opdateret"
       ]
@@ -16402,6 +16444,12 @@
       ],
       "Connection events": [
         "Forbindelseshændelse"
+      ],
+      "Connection monitor disabled": [
+        "Forbindelsesmonitor deaktiveret"
+      ],
+      "Connection monitor enabled": [
+        "Forbindelsesmonitor aktiveret"
       ],
       "Contact us": [
         "Kontakt os"
@@ -16959,6 +17007,9 @@
       "Profile": [
         "Profil"
       ],
+      "QRCode": [
+        "QR-kode"
+      ],
       "Recommended": [
         "Anbefalet"
       ],
@@ -17172,6 +17223,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "Tag forholdsregler for at undgå tab af data!"
+      ],
+      "Text": [
+        "Tekst"
       ],
       "Theme": [
         "Tema"
@@ -17473,6 +17527,9 @@
       "Feature in early access": [
         "Funktion i tidlig adgang"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "Få tips til produktivitet og sikkerhed for at få mest muligt ud af ${ MAIL_APP_NAME } og mere til."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
@@ -17613,8 +17670,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
       ],
+      "Group membership paused": [
+        "Gruppemedlemskab sat på pause"
+      ],
       "Sending member invitation": [
         "Sender medlemsinvitation"
+      ],
+      "User declined invitation": [
+        "Bruger afviste invitation"
       ],
       "Waiting user to accept the invitation": [
         "Venter på, at brugeren accepterer invitationen"
@@ -17662,6 +17725,86 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Denne version af Tor Browseren er ikke understøttet. Opdatér venligst til den nyeste ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Administratorer kan ikke tilgå private brugeres data eller nulstille deres adgangskode."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "En administrator af ${ orgName } ønsker at aktivere administratoradgang til din konto."
+      ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "En administrator af organisationen **${ orgName }** (**${ adminEmail }**) ønsker at aktivere administratoradgang til din konto."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Hvis brugeren gøres privat, kan du ikke hjælpe til med at få adgang til deres data eller konto igen."
+      ],
+      "Cancel": [
+        "Annuller"
+      ],
+      "Delete request": [
+        "Slet anmodning"
+      ],
+      "Delete request to access user data?": [
+        "Slet anmodning om at tilgå brugerdata?"
+      ],
+      "Enable admin access?": [
+        "Aktiver administratoradgang?"
+      ],
+      "Enable administrator access": [
+        "Aktiver administratoradgang"
+      ],
+      "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
+        "Hvis du nogensinde mister adgang til dine data, vil din organisations administratorer kunne nulstille din adgangskode og gendanne adgangen til din konto."
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Så snart brugeren har givet sit samtykke, kan du hjælpe dem med at tilgå deres konto igen eller håndtere deres data."
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisationsnøglen skal aktiveres for at anmode om dataadgang"
+      ],
+      "Pending admin access": [
+        "Afventer administratoradgang"
+      ],
+      "Private user": [
+        "Privat bruger"
+      ],
+      "reject": [
+        "afvis"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Anmodning om at håndtere konto sendt, afventer brugergodkendelse"
+      ],
+      "Request user permission for data access": [
+        "Anmod om brugertilladelse til dataadgang"
+      ],
+      "Revoke access": [
+        "Tilbagekald adgang"
+      ],
+      "Revoke administrator access?": [
+        "Tilbagekald administratoradgang?"
+      ],
+      "Send request": [
+        "Send anmodning"
+      ],
+      "The user must have an address to request data access": [
+        "Brugeren skal have en adresse for at anmode om dataadgang"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Dette vil slette afventende anmodning om administratoradgang til brugerens data eller nulstilling af adgangskode."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Dette vil tilbagekalde administratorens tilladelse til at håndtere denne brugers konto."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "For at fortsætte skal du bede om brugerens tilladelse til at tilgå deres data eller nulstille deres adgangskode."
+      ],
+      "View request": [
+        "Vis anmodning"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "Du kan ${ reject } denne anmodning, hvis du ikke vil fortsætte."
       ]
     },
     "Update font modal": {
@@ -17758,9 +17901,6 @@
       "Optional": [
         "Valgfri"
       ],
-      "Private": [
-        "Privat"
-      ],
       "Remember to share the user's sign in details with them.": [
         "Husk at dele brugerens login-oplysninger med dem."
       ],
@@ -17795,6 +17935,9 @@
       ],
       "It's you": [
         "Det er dig"
+      ],
+      "Pending admin access": [
+        "Afventer administratoradgang"
       ],
       "Private": [
         "Privat"

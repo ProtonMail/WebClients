@@ -157,6 +157,12 @@
       "Allow": [
         "Permitir"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Permitir los correos cifrados de extremo a extremo para este grupo"
+      ],
+      "Always allow sending": [
+        "Permitir siempre el envío"
+      ],
       "Apply": [
         "Aplicar"
       ],
@@ -1185,6 +1191,9 @@
       ],
       "Use authentication code": [
         "Utilizar código de autenticación"
+      ],
+      "Use group permissions": [
+        "Usar los permisos del grupo"
       ],
       "Use recovery code": [
         "Utilizar código de recuperación"
@@ -3374,9 +3383,6 @@
       ]
     },
     "Description": {
-      "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
-        "Elimina automáticamente los mensajes de más de 30 días de las carpetas Papelera y Spam. Disfruta de este y otros beneficios al mejorar tu plan."
-      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "¡Felicidades! Has ganado el máximo de meses gratis de ${ rewardsLimit } de ${ plusPlanName }."
       ],
@@ -4205,6 +4211,9 @@
       ],
       "Authentication error.": [
         "Error de autenticación."
+      ],
+      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
+        "El mensaje de la respuesta automática supera la longitud permitida. Reduzca su longitud para cumplir con el límite."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Las respuestas automáticas son una función de pago. Mejora a un plan de pago para utilizar esta función."
@@ -6591,6 +6600,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Un ${ protonSubdomain } es alojado por ${ BRAND_NAME }, que fácilmente te permite configurar un subdominio. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Se requiere un dominio personalizado para crear grupos. Si aún no tienes uno, puedes configurarlo desde ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
@@ -7290,6 +7302,12 @@
       "Gateways": [
         "Puertas de enlace"
       ],
+      "Gateways monitoring is disabled.": [
+        "El monitoreo de puertas de enlace está desactivado."
+      ],
+      "Gateways monitoring is enabled.": [
+        "El monitoreo de puertas de enlace está activado."
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generar una frase de recuperación nueva desactivará la anterior."
       ],
@@ -7310,6 +7328,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Ve a tu proveedor de identidad, obtén los metadatos de SAML para ${ appName } e impórtalos aquí."
+      ],
+      "Group deleted": [
+        "Se ha eliminado el grupo."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Agrupa correos electrónicos en la misma conversación juntos en tu bandeja de entrada o muéstralos por separado."
@@ -7464,6 +7485,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instala un archivo de configuración de servidor para conectarte a un servidor específico en el país de tu elección."
+      ],
+      "Internal user": [
+        "Usuario interno"
       ],
       "Internet connection lost": [
         "Se ha perdido la conexión a internet."
@@ -7675,6 +7699,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Espera ya que se está cargando el calendario. Se te redirigirá a nuestra plataforma de programación Calendly en una pestaña nueva."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Cargando las puertas de enlace que monitorean el estado actual"
       ],
       "Loading preview": [
         "Cargando vista previa"
@@ -8382,6 +8409,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Esto puede tardar unos segundos o minutos dependiendo de tu dispositivo."
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "El cambio se verá reflejado sobre tu infraestructura aproximadamente dentro de 1 hora"
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Esto puede tardar un tiempo. No cierres está página ni te desconectes de internet."
       ],
@@ -8579,6 +8609,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "El modo de dos contraseñas usa contraseñas separadas para el inicio de sesión y el descifrado de los datos. Esto proporciona un beneficio de seguridad en algunas situaciones, sin embargo, recomendamos el modo de una contraseña para la mayoría de los usuarios. Para cambiar al modo de dos contraseñas, primero define una contraseña de inicio de sesión y luego una segunda contraseña."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "No se puede verificar el estado actual del monitoreo de las puertas de enlace."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "No se ha podido verificar la firma del archivo de recuperación. Póngate en contacto con el servicio de asistencia."
@@ -8868,6 +8901,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios ${ BRAND_NAME }."
       ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Con grupos puedes enviar correos electrónicos a todos sus miembros de manera rápida y sencilla"
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "Con tu plan actual, sólo puedes recibir mensajes con tu dirección @pm.me. Mejora tu cuenta para enviar mensajes y crear direcciones adicionales con @pm.me."
       ],
@@ -8910,6 +8946,9 @@
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "Actualmente estás usando ${ usedMembers } de ${ maxMembers } licencia de usuario disponible.",
         "Actualmente estás usando ${ usedMembers } de ${ maxMembers } licencias de usuario disponibles."
+      ],
+      "You are not currently in any groups and there are no pending invitations": [
+        "No perteneces actualmente a ningún grupo y no hay invitaciones pendientes."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Has iniciado sesión en la cuenta ${ memberAddress }."
@@ -9246,6 +9285,9 @@
     "invitation status": {
       "Declined": [
         "Rechazado"
+      ],
+      "Paused": [
+        "En pausa"
       ],
       "Pending": [
         "Pendiente"
@@ -10640,9 +10682,6 @@
       "Admin": [
         "Administrador"
       ],
-      "Private": [
-        "Privado"
-      ],
       "VPN connections": [
         "Conexiones VPN"
       ]
@@ -11633,6 +11672,15 @@
       "1 user": [
         "1 usuario"
       ],
+      "10 email addresses/aliases": [
+        "10 direcciones/alias de correo electrónico"
+      ],
+      "10-year file version history": [
+        "Historial de 10 años de las versiones de los archivos"
+      ],
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
       "24/7 account management support": [
         "Soporte de administración de cuenta 24/7"
       ],
@@ -11779,9 +11827,6 @@
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
-      ],
-      "Hide-my-email aliases": [
-        "Alias de hide-my-email"
       ],
       "High-speed streaming": [
         "Transmisión de gran velocidad"
@@ -11976,12 +12021,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
       ],
-      "Up to 15 email addresses": [
-        "Hasta 15 direcciones de correo electrónico"
-      ],
-      "Up to 3 TB of storage": [
-        "Hasta 3 TB de almacenamiento"
-      ],
       "User credential management": [
         "Administración de credenciales de usuario"
       ],
@@ -12000,20 +12039,17 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 dominio de correo electrónico personalizado"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crea diferentes direcciones de correo para tus identidades en línea, p. ej. JuanCompras@${ domain } para cuentas de compras, JuanNoticias@${ domain2 } para suscripciones de noticias"
-      ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
       ],
       "Snooze messages and get reminded when you want": [
         "Pausa los mensajes y recibe un recordatorio cuando quieras."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Utiliza tu propia dirección de correo personalizada, p. ej. tu@tunombre.com"
       ]
     },
     "new_plans: heading": {
@@ -12207,6 +12243,18 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Prueba de ${ shortPlan.title }"
+      ],
+      "Get Mail Plus": [
+        "Obtén Mail Plus"
+      ],
+      "Get Mail Plus for $1": [
+        "Obtén Mail Plus por 1$"
+      ],
+      "Get Mail Plus for 1 €": [
+        "Obtén Mail Plus por 1€"
+      ],
+      "Get Mail Plus for CHF 1": [
+        "Obtén Mail Plus por 1CHF"
       ],
       "Your account's usage": [
         "Uso de la cuenta"
@@ -15999,6 +16047,9 @@
       "Preference updated": [
         "Se ha actualizado la preferencia."
       ],
+      "Preferences updated": [
+        "Se han actualizado las preferencias."
+      ],
       "Status updated": [
         "Se ha actualizado el estado."
       ]
@@ -16417,6 +16468,12 @@
       ],
       "Connection events": [
         "Eventos de la conexión"
+      ],
+      "Connection monitor disabled": [
+        "Se ha desactivado el monitoreo de la conexión."
+      ],
+      "Connection monitor enabled": [
+        "Se ha activado el monitoreo de la conexión."
       ],
       "Contact us": [
         "Contacta con nosotros"
@@ -17637,6 +17694,9 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ],
+      "Group membership paused": [
+        "Se ha pausado la membresía del grupo."
+      ],
       "Sending member invitation": [
         "Enviando una invitación al miembro"
       ],
@@ -17784,9 +17844,6 @@
       ],
       "Optional": [
         "Opcional"
-      ],
-      "Private": [
-        "Privado"
       ],
       "Remember to share the user's sign in details with them.": [
         "Recuerda compartir los detalles de inicio de sesión con el usuario."
