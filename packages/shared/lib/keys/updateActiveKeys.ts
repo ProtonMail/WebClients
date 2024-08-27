@@ -1,9 +1,21 @@
 import type { ActiveAddressKeyPayload } from '../api/keys';
 import { AddressActiveStatus, updateAddressActiveKeysRoute } from '../api/keys';
-import type { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../interfaces';
+import type { Address, AddressKey, Api, DecryptedKey, KeyTransparencyVerify } from '../interfaces';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getInactiveKeys } from './getInactiveKeys';
 import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
+
+/**
+ * Filters the decrypted keys to include only those that have been migrated and have a matching
+ * address key.
+ * A key is considered migrated if it has a Token and a Signature associated with it.
+ */
+function filterMigratedDecryptedKeys(decryptedKeys: DecryptedKey[], addressKeys: AddressKey[]) {
+    return decryptedKeys.filter(({ ID }) => {
+        const matchingAddressKey = addressKeys.find((addressKey) => ID === addressKey.ID);
+        return matchingAddressKey && matchingAddressKey.Token && matchingAddressKey.Signature;
+    });
+}
 
 /**
  * Checks if there is a mismatch between active keys reported by the server
@@ -14,7 +26,9 @@ export const hasActiveKeysMismatch = (address: Address, decryptedKeys: Decrypted
         // If there are no decrypted keys or no skl, do not update.
         return false;
     }
-    const activeKeysIDs = new Set(decryptedKeys.map(({ ID }) => ID));
+    // Only consider migrated keys as active.
+    const migratedDecryptedKeys = filterMigratedDecryptedKeys(decryptedKeys, address.Keys);
+    const activeKeysIDs = new Set(migratedDecryptedKeys.map(({ ID }) => ID));
     return address.Keys.some(({ Active, ID }) => Active && !activeKeysIDs.has(ID));
 };
 
@@ -28,9 +42,11 @@ export const updateActiveKeys = async (
     decryptedKeys: DecryptedKey[],
     keyTransparencyVerify: KeyTransparencyVerify
 ) => {
+    // Only consider migrated keys as active.
+    const migratedDecryptedKeys = filterMigratedDecryptedKeys(decryptedKeys, address.Keys);
     const [activeKeys, inactiveKeys] = await Promise.all([
-        getActiveKeys(address, address.SignedKeyList, address.Keys, decryptedKeys),
-        getInactiveKeys(address.Keys, decryptedKeys),
+        getActiveKeys(address, address.SignedKeyList, address.Keys, migratedDecryptedKeys),
+        getInactiveKeys(address.Keys, migratedDecryptedKeys),
     ]);
     const normalizedActiveKeys = getNormalizedActiveKeys(address, activeKeys);
     const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
