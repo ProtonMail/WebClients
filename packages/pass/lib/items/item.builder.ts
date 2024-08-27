@@ -90,7 +90,7 @@ export const itemContentBuilder = <T extends ItemType, R = ObjectHandler<UnsafeI
     throw new Error('unsupported item type');
 };
 
-type ItemBuilder<T extends ItemType = ItemType> = {
+type ItemBuilderInterface<T extends ItemType = ItemType> = {
     [K in T]: {
         type: K;
         content: ObjectHandler<UnsafeItemContent<K>>;
@@ -103,7 +103,7 @@ type ItemBuilder<T extends ItemType = ItemType> = {
 export const itemBuilder = <T extends ItemType>(type: T, from?: Item<T>) => {
     const init = (from ? deobfuscateItem(from as Item) : null) as MaybeNull<UnsafeItem>;
 
-    return objectHandler<ItemBuilder<T>, Item<T>>(
+    return objectHandler<ItemBuilderInterface<T>, Item<T>>(
         {
             type,
             content: itemContentBuilder<T>(type).merge(init?.content ?? {}),
@@ -119,3 +119,5 @@ export const itemBuilder = <T extends ItemType>(type: T, from?: Item<T>) => {
             } as UnsafeItem)
     );
 };
+
+export type ItemBuilder<T extends ItemType> = ObjectHandler<ItemBuilderInterface<T>, Item<T>>;

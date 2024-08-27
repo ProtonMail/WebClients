@@ -2,14 +2,11 @@ import { type ComponentType, useMemo, useState } from 'react';
 
 import type { FactoryOpts } from 'imask/masked/factory';
 
-import type { ExtractKeysOfType, IdentityValues, UnsafeItemExtraField } from '@proton/pass/types';
+import type { IdentityExtraFieldsKey, IdentityFieldName, IdentityValues } from '@proton/pass/types';
 import { arrayRemove } from '@proton/pass/utils/array/remove';
 import { prop } from '@proton/pass/utils/fp/lens';
 
 import { getIdentityFields, getInitialSections } from './utils';
-
-export type IdentityFieldName = ExtractKeysOfType<IdentityValues, string>;
-export type IdentityExtraFieldsKey = ExtractKeysOfType<IdentityValues, UnsafeItemExtraField[]>;
 
 export type IdentityFormField = {
     name: IdentityFieldName;
