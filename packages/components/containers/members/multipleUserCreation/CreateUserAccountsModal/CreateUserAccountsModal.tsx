@@ -36,7 +36,7 @@ import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
-import type { APP_NAMES} from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
@@ -320,6 +320,7 @@ const CreateUserAccountsModal = ({
                 await dispatch(
                     createMember({
                         api: silentApi,
+                        single: false,
                         member: {
                             mode,
                             name: user.displayName,
