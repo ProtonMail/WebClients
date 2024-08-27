@@ -3,7 +3,13 @@ import { ServerTime } from '@proton/docs-shared'
 import { useMemo } from 'react'
 import { c } from 'ttag'
 
-export function CommentTime({ createTime }: { createTime: ServerTime }) {
+export function CommentTime({
+  createTime,
+  languageCode,
+}: {
+  createTime: ServerTime
+  languageCode: Intl.LocalesArgument
+}) {
   const createTimeUtil = useMemo(() => new ServerTime(createTime.serverTimestamp), [createTime.serverTimestamp])
 
   if (createTimeUtil.isNewerThan(10, 'seconds')) {
@@ -18,7 +24,7 @@ export function CommentTime({ createTime }: { createTime: ServerTime }) {
   if (createTimeUtil.isNewerThan(60, 'minutes')) {
     return (
       <span data-testid="comment-time-ago">
-        {createTimeUtil.relativeFormat(createTimeUtil.relativeMinutes, 'minute')}
+        {createTimeUtil.relativeFormat(createTimeUtil.relativeMinutes, 'minute', languageCode)}
       </span>
     )
   }
