@@ -49,10 +49,12 @@ export const formatLastPassCCExpirationDate = (extra: LastPassItem['extra']) => 
     return `${String(date.getUTCMonth() + 1).padStart(2, '0')}${date.getUTCFullYear()}`;
 };
 
+/** LastPass appends the country code in the number.
+ * The phone extension should be appended */
 const formatLastPassPhoneNumber = (value: string): string => {
     try {
         const parsedValue = JSON.parse(value);
-        return `${parsedValue.ext}${parsedValue.num}`;
+        return `${parsedValue?.num ?? ''}${parsedValue?.ext ?? ''}`;
     } catch {
         return '';
     }
