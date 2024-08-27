@@ -1,10 +1,15 @@
 import { convertTimestampToMilliseconds } from './convertTimestampToMilliseconds'
 
-const rtf = new Intl.RelativeTimeFormat('en', {
-  localeMatcher: 'best fit',
-  numeric: 'auto',
-  style: 'short',
-})
+function createFormatter(languageCode: Intl.LocalesArgument) {
+  return new Intl.RelativeTimeFormat(languageCode, {
+    localeMatcher: 'best fit',
+    numeric: 'auto',
+    style: 'short',
+  })
+}
+
+let rtf = createFormatter('en')
+let lastUsedRtfLanguage: Intl.LocalesArgument = 'en'
 
 export class ServerTime {
   constructor(public serverTimestamp: number) {}
@@ -29,7 +34,17 @@ export class ServerTime {
     }
   }
 
-  relativeFormat(time: number, unit: Intl.RelativeTimeFormatUnit) {
+  relativeFormat(time: number, unit: Intl.RelativeTimeFormatUnit, languageCode: Intl.LocalesArgument) {
+    if (lastUsedRtfLanguage !== languageCode) {
+      try {
+        rtf = createFormatter(languageCode)
+        lastUsedRtfLanguage = languageCode
+      } catch (error) {
+        rtf = createFormatter('en')
+        lastUsedRtfLanguage = 'en'
+      }
+    }
+
     return rtf.format(time, unit)
   }
 
