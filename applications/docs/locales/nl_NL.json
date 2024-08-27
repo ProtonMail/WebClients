@@ -112,6 +112,9 @@
       "Cancel subscription": [
         "Abonnement opzeggen"
       ],
+      "characters out of": [
+        "tekens uit"
+      ],
       "Chat with us": [
         "Chat met ons"
       ],
@@ -608,6 +611,12 @@
       ],
       "What do I get?": [
         "Wat krijg ik?"
+      ],
+      "words": [
+        "woorden"
+      ],
+      "words out of": [
+        "woorden uit"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "U kunt geen vCard-bestanden met meer dan ${ maxAttachments } contact verzenden",
@@ -1943,9 +1952,6 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
-      ],
-      "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
-        "Bespaar tijd door e-mails of uitnodigingen naar iedereen tegelijkertijd te sturen, een premium functie zoals vele anderen. Upgrade vandaag."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Stel een methode voor gegevensherstel in om gegevensverlies te voorkomen."
@@ -3574,6 +3580,9 @@
       "Change your password": [
         "Wijzig uw wachtwoord"
       ],
+      "characters without spaces": [
+        "tekens zonder spaties"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Controle van contact ${ progress } van ${ max }..."
       ],
@@ -4175,7 +4184,7 @@
         "Dit document heeft veel activiteit. Sommige functies zijn mogelijk tijdelijk niet beschikbaar."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
-        "Dit document bestaat mogelijk niet of u hebt geen toestemming om het te bekijken. Je kunt de pagina proberen te herladen om te zien of het probleem zich blijft voordoen."
+        "Dit document bestaat mogelijk niet of u hebt geen toestemming om het te bekijken. U kunt de pagina proberen te herladen om te zien of het probleem zich blijft voordoen."
       ],
       "This item already exists in your library": [
         "Dit item bestaat al in uw bibliotheek"
@@ -4328,6 +4337,9 @@
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Als u tweestapsverificatie instelt, geven we u herstelcodes die u kunt gebruiken om in te loggen als u toegang verliest tot uw verificatie-app."
       ],
+      "words": [
+        "woorden"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
       ],
@@ -4395,6 +4407,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "U verliest toegang tot ${ planTitle } functies op deze datum."
       ],
       "You will lose all unsaved changes.": [
         "U zal alle wijzigingen kwijtraken."
@@ -5506,6 +5521,9 @@
       "${ size } attachment size": [
         "${ size } bijlagegrootte"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } veilige opslag per gebruiker"
+      ],
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
@@ -5632,9 +5650,6 @@
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
-      "Hide-my-email aliases": [
-        "Hide-my-email-aliassen"
-      ],
       "High-speed streaming": [
         "Streamen op hoge snelheid"
       ],
@@ -5666,8 +5681,14 @@
       "Password health": [
         "Wachtwoordgezondheid"
       ],
+      "Password manager": [
+        "Wachtwoordbeheer"
+      ],
       "Password-protected Emails": [
         "E-mails met wachtwoordbeveiliging"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonische ondersteuning (20+ gebruikers)"
       ],
       "Priority email support": [
         "Prioriteitsondersteuning per e-mail"
@@ -5684,6 +5705,9 @@
       "Protect ${ n } device at a time": [
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
@@ -5788,12 +5812,6 @@
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
       ],
-      "Up to 15 email addresses": [
-        "Tot wel 15 e-mailadressen"
-      ],
-      "Up to 3 TB of storage": [
-        "Tot wel 3 TB opslag"
-      ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
       ],
@@ -5815,17 +5833,11 @@
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online-identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain2 } voor nieuwsabonnementen"
       ],
-      "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
-        "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
-      ],
       "Snooze messages and get reminded when you want": [
         "Berichten snoozen en ontvangen wanneer u wil"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
-      ],
-      "Use your own custom email domain address, e.g., you@yourname.com": [
-        "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
       ]
     },
     "new_plans: heading": {
@@ -6056,7 +6068,7 @@
         "Bescherm uw gezin tegen schadelijke websites en krijg toegang tot onze supersnelle VPN-servers om uw favoriete inhoud te streamen"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Bescherm je echte e-mailadres tegen openbaarmaking of lekken met aliassen (een willekeurig gegenereerd e-mailadres dat e-mails naar je hoofdinbox stuurt)."
+        "Bescherm uw echte e-mailadres tegen openbaarmaking of lekken met aliassen (een willekeurig gegenereerd e-mailadres dat e-mails naar uw hoofdinbox stuurt)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Voorziet het hoogste niveau van account beveiliging en gespecialiseerde ondersteuning"
@@ -7337,7 +7349,7 @@
     },
     "Subscription reminder": {
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
-        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat je nodig hebt om de controle over de veiligheid van de veiligheid te hebben."
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
       ]
     },
     "Subscription renewal state": {
@@ -7785,6 +7797,9 @@
       ],
       "Enable 2FA": [
         "2FA inschakelen"
+      ],
+      "Enter 2FA code": [
+        "Voer 2FA code in"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
