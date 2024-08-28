@@ -1,4 +1,4 @@
-import type { Ref } from 'react';
+import type { Ref, RefObject } from 'react';
 import { forwardRef } from 'react';
 
 import { c } from 'ttag';
@@ -34,6 +34,8 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     userSettings?: UserSettings;
     editorMetadata: EditorMetadata;
     isInert?: boolean;
+    isAssistantExpanded?: boolean;
+    toolbarWrapperRef?: RefObject<HTMLDivElement>;
 }
 
 const ComposerContent = (
@@ -57,6 +59,8 @@ const ComposerContent = (
         editorMetadata,
         isInert,
         toolbarCustomRender,
+        isAssistantExpanded,
+        toolbarWrapperRef,
     }: Props,
     ref: Ref<HTMLElement>
 ) => {
@@ -105,8 +109,19 @@ const ComposerContent = (
                     userSettings={userSettings}
                     editorMetadata={editorMetadata}
                     toolbarCustomRender={toolbarCustomRender}
+                    hasAttachments={attachments.length > 0}
                 />
             </div>
+
+            {/* Used to display the toolbar below the composer*/}
+            {!editorMetadata.isPlainText && (
+                <div
+                    ref={toolbarWrapperRef}
+                    // @ts-ignore
+                    inert={isAssistantExpanded ? '' : undefined}
+                />
+            )}
+
             {showAttachments && (
                 // Add a wrapping div so that Dropzone does not break the UI
                 <div>
@@ -122,6 +137,7 @@ const ComposerContent = (
                             onRemoveUpload={onRemoveUpload}
                             className={clsx(['composer-attachments-list', isOutside && 'eo-composer-attachments-list'])}
                             outsideKey={outsideKey}
+                            noPaddingTop={!isOutside}
                         />
                     </Dropzone>
                 </div>
