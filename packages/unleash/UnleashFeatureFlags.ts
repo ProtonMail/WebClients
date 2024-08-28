@@ -23,7 +23,6 @@ enum CommonFeatureFlag {
     InboxDesktopManualUpdateBannerDisabled = 'InboxDesktopManualUpdateBannerDisabled',
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
     WalletPlan = 'WalletPlan',
-    DriveBizPlan = 'DriveBizPlan',
     WalletAutoSetup = 'WalletAutoSetup',
     SentinelRecoverySettings = 'SentinelRecoverySettings',
     LeftSidebarCollapsible = 'LeftSidebarCollapsible',
