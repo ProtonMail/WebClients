@@ -1,6 +1,7 @@
-import { useLocalState, useUser } from '@proton/components/hooks';
+import { useLocalState, useUser, useUserSettings } from '@proton/components/hooks';
 import { getIsAssistantOpened } from '@proton/llm/lib';
 import type { OpenedAssistant } from '@proton/llm/lib/types';
+import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
 interface Props {
     openedAssistants: OpenedAssistant[];
@@ -14,6 +15,7 @@ interface Props {
  */
 const useAssistantSticky = ({ openedAssistants }: Props) => {
     const [user] = useUser();
+    const [{ AIAssistantFlags }] = useUserSettings();
     const [stickyAssistant, setStickyAssistant] = useLocalState(false, `${user.ID}-open-assistant`);
 
     const setAssistantStickyOn = () => {
@@ -32,6 +34,10 @@ const useAssistantSticky = ({ openedAssistants }: Props) => {
         // - There is no other assistant opened (as long as we don't have a queue mechanism)
         if (stickyAssistant) {
             const isAssistantOpenedInComposer = getIsAssistantOpened(openedAssistants, assistantID);
+
+            if (AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY) {
+                return canShowAssistant && canRunAssistant && !isAssistantOpenedInComposer;
+            }
             return canShowAssistant && canRunAssistant && openedAssistants.length === 0 && !isAssistantOpenedInComposer;
         }
         return false;
