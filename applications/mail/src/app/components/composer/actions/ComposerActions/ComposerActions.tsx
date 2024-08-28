@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button, Vr } from '@proton/atoms';
 import type { EditorMetadata } from '@proton/components';
+import { useModalStateObject, useUser } from '@proton/components';
 import {
     FeatureCode,
     Icon,
@@ -14,6 +15,7 @@ import {
     useSpotlightOnFeature,
     useUserSettings,
 } from '@proton/components';
+import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { getIsAssistantOpened, useAssistant } from '@proton/llm/lib';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -98,6 +100,7 @@ const ComposerActions = ({
     onToggleToolbar,
     displayToolbar,
 }: Props) => {
+    const [user] = useUser();
     const dispatch = useMailDispatch();
 
     const { viewportWidth } = useActiveBreakpoint();
@@ -121,6 +124,7 @@ const ComposerActions = ({
         syncInProgress,
     });
 
+    const assistantUpsellModal = useModalStateObject();
     const { initAssistant, hasCompatibleHardware, hasCompatibleBrowser, openedAssistants, downloadPaused } =
         useAssistant(composerID);
 
@@ -135,6 +139,10 @@ const ComposerActions = ({
     const handleToggleAssistant = () => {
         if (assistantSpotlight.show) {
             assistantSpotlight.onClose();
+        }
+        if (user.isFree) {
+            assistantUpsellModal.openModal(true);
+            return;
         }
         if (!isAssistantOpened && AIAssistantFlags === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
             if (!hasCompatibleHardware) {
@@ -321,6 +329,9 @@ const ComposerActions = ({
                     </div>
                 </div>
             </div>
+            {assistantUpsellModal.render && (
+                <ComposerAssistantUpsellModal modalProps={assistantUpsellModal.modalProps} />
+            )}
         </footer>
     );
 };

@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components/components';
 import { UpsellModal, useUpsellConfig } from '@proton/components/components';
+import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
@@ -11,7 +12,8 @@ const SnoozeDurationSelection = (props: ModalStateProps) => {
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.SNOOZE_MESSAGE,
     });
-    const upsellConfig = useUpsellConfig({ upsellRef });
+    const oneDollarConfig = useOneDollarConfig();
+    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
 
     return (
         <div onClick={(e) => e.stopPropagation()}>

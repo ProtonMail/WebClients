@@ -104,10 +104,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
 
     const PrivacyLink = (
         <Href key="privacy-link" href={getStaticURL('/blog/proton-scribe-writing-assistant')}>
-            {
-                // translator: full sentence => Learn more about Proton's writing assistant`
-                c('Info').t`Learn more about ${BRAND_NAME}'s writing assistant`
-            }
+            {c('Info').t`Learn more about the writing assistant`}
         </Href>
     );
 
@@ -125,7 +122,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
                     {trialStatus === 'trial-not-started' && (
                         <div className="color-weak pt-4 text-center">{
                             // translator: ASSISTANT_TRIAL_TIME_DAYS will always be more than one. Full sentence: "Free for 14 days".
-                            c('Info').t`Free for ${ASSISTANT_TRIAL_TIME_DAYS} days`
+                            c('Info').t`Free to try for ${ASSISTANT_TRIAL_TIME_DAYS} days`
                         }</div>
                     )}
                 </>
@@ -144,14 +141,14 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
                     onClick={() => setInputValue(CLIENT_ONLY)}
                     id={`assistant-setting-${composerID}`}
                 >
-                    <span className="shrink-0 flex">
+                    <span className="shrink-0 flex my-auto">
                         <img src={desktopImg} alt="" className="m-auto" />
                     </span>
                     <span className="flex-1 text-left my-1 pl-3 pr-2">
-                        <span>{c('Assistant option').t`Run on device`}</span>
+                        <span>{c('Assistant option').t`Securely run on device`}</span>
                         <span className="block m-0 mt-1 color-weak text-sm">
                             {c('Assistant option')
-                                .t`Data stay on your device but requires a one-time download and compatible hardware`}
+                                .t`Data remains on device to protect your privacy. Requires a download and compatible hardware.`}
                         </span>
                     </span>
                     <span
@@ -175,13 +172,13 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
                     onClick={() => setInputValue(SERVER_ONLY)}
                     id={`assistant-setting-${composerID}`}
                 >
-                    <span className="shrink-0 flex">
+                    <span className="shrink-0 flex my-auto">
                         <img src={serverImg} alt="" className="m-auto" />
                     </span>
                     <span className="flex-1 text-left my-1 pl-3 pr-2">
-                        <span>{c('Assistant option').t`Run on servers`}</span>
+                        <span>{c('Assistant option').t`Securely run on ${BRAND_NAME} servers`}</span>
                         <span className="block m-0 mt-1 color-weak text-sm">{c('Assistant option')
-                            .t`Fast and secure. No logs are kept.`}</span>
+                            .t`No logs are kept to protect your privacy. Faster processing.`}</span>
                     </span>
                     <span
                         className={clsx(
