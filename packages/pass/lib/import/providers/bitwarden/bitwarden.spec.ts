@@ -13,22 +13,18 @@ describe('Import bitwarden json', () => {
     beforeAll(async () => {
         for (let sourceFile of sourceFiles) {
             const data = await fs.promises.readFile(sourceFile, 'utf-8');
-            payloads[sourceFile] = await readBitwardenData({ data, importUsername: true });
+            payloads[sourceFile] = await readBitwardenData({ data });
         }
     });
 
     it('should throw on encrypted json payload', () => {
-        expect(() =>
-            readBitwardenData({ data: JSON.stringify({ encrypted: true, items: [] }), importUsername: true })
-        ).toThrow();
+        expect(() => readBitwardenData({ data: JSON.stringify({ encrypted: true, items: [] }) })).toThrow();
     });
 
     it('should throw on corrupted files', () => {
-        expect(() => readBitwardenData({ data: 'not-a-json-body', importUsername: true })).toThrow();
-        expect(() => readBitwardenData({ data: JSON.stringify({ encrypted: false }), importUsername: true })).toThrow();
-        expect(() =>
-            readBitwardenData({ data: JSON.stringify({ encrypted: false, items: '[]' }), importUsername: true })
-        ).toThrow();
+        expect(() => readBitwardenData({ data: 'not-a-json-body' })).toThrow();
+        expect(() => readBitwardenData({ data: JSON.stringify({ encrypted: false }) })).toThrow();
+        expect(() => readBitwardenData({ data: JSON.stringify({ encrypted: false, items: '[]' }) })).toThrow();
     });
 
     it('should correctly parse items', () => {

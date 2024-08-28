@@ -11,11 +11,11 @@ describe('Import Safari CSV', () => {
 
     beforeAll(async () => {
         const sourceData = await fs.promises.readFile(__dirname + '/mocks/safari.csv', 'utf8');
-        payload = await readSafariData({ data: sourceData, importUsername: true });
+        payload = await readSafariData({ data: sourceData });
     });
 
     it('should handle corrupted files', async () => {
-        await expect(readSafariData({ data: 'not-a-csv-file', importUsername: true })).rejects.toThrow();
+        await expect(readSafariData({ data: 'not-a-csv-file' })).rejects.toThrow();
     });
 
     it('should correctly parse items', async () => {

@@ -13,10 +13,10 @@ describe('Import Proton Pass CSV', () => {
 
     beforeAll(async () => {
         const sourceData = await fs.promises.readFile(__dirname + '/mocks/protonpass.csv', 'utf8');
-        payload = await readProtonPassCSV({ data: sourceData, importUsername: true });
+        payload = await readProtonPassCSV({ data: sourceData });
 
         const oldSourceData = await fs.promises.readFile(__dirname + '/mocks/protonpass-old-before-vault.csv', 'utf8');
-        oldPayloadBeforeVault = await readProtonPassCSV({ data: oldSourceData, importUsername: true });
+        oldPayloadBeforeVault = await readProtonPassCSV({ data: oldSourceData });
 
         const oldSourceDataBeforeEmailUsername = await fs.promises.readFile(
             __dirname + '/mocks/protonpass-old-before-email-username.csv',
@@ -24,12 +24,11 @@ describe('Import Proton Pass CSV', () => {
         );
         oldPayloadBeforeEmailUsername = await readProtonPassCSV({
             data: oldSourceDataBeforeEmailUsername,
-            importUsername: true,
         });
     });
 
     it('should handle corrupted files', async () => {
-        await expect(readProtonPassCSV({ data: 'not-a-csv-file', importUsername: true })).rejects.toThrow();
+        await expect(readProtonPassCSV({ data: 'not-a-csv-file' })).rejects.toThrow();
     });
 
     it('should correctly parse items', async () => {
