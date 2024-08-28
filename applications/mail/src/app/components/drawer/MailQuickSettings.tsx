@@ -182,7 +182,9 @@ const MailQuickSettings = () => {
 
     const handleEnableAssistantLocal = async () => {
         const { hasCompatibleHardware, hasCompatibleBrowser } = await handleCheckHardwareCompatibility();
-        if (!hasCompatibleBrowser || !hasCompatibleHardware) {
+        // If more than one assistant, we want to close them all when switching to local mode,
+        // otherwise users will get several assistant opened at the same time and we still don't have a queue mechanism
+        if (!hasCompatibleBrowser || !hasCompatibleHardware || openedAssistants.length > 1) {
             for (const { id: otherComposerID } of openedAssistants) {
                 closeAssistant(otherComposerID, true);
             }
