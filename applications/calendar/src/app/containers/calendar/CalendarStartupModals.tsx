@@ -5,11 +5,9 @@ import {
     CancellationReminderModal,
     FeatureCode,
     LightLabellingFeatureModal,
-    RebrandingFeedbackModal,
     getShouldOpenReferralModal,
     useFeature,
     useModalState,
-    useRebrandingFeedback,
     useShowLightLabellingFeatureModal,
     useSubscription,
 } from '@proton/components';
@@ -28,9 +26,6 @@ const CalendarStartupModals = ({ setStartupModalState }: Props) => {
     const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
     const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
 
-    const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
-    const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
-
     // Cancellation reminder modals
     const { feature } = useFeature<ReminderFlag>(FeatureCode.AutoDowngradeReminder);
     const [reminderModal, setReminderModal, renderReminderModal] = useModalState();
@@ -39,11 +34,6 @@ const CalendarStartupModals = ({ setStartupModalState }: Props) => {
     const showLightLabellingFeatureModal = useShowLightLabellingFeatureModal();
     const [lightLabellingFeatureModalProps, setLightLabellingFeatureModal, renderLightLabellingFeatureModal] =
         useModalState();
-
-    const onCloseWithState = (onClose: () => void) => () => {
-        onClose();
-        setStartupModalState((state) => ({ ...state, isOpen: false }));
-    };
 
     const onceRef = useRef(false);
     useEffect(() => {
@@ -71,29 +61,15 @@ const CalendarStartupModals = ({ setStartupModalState }: Props) => {
         } else if (showLightLabellingFeatureModal) {
             onceRef.current = true;
             setLightLabellingFeatureModal(true);
-        } else if (handleRebrandingFeedbackModalDisplay) {
-            openModal(setRebrandingFeedbackModal);
         } else {
             setStartupModalState({ hasModal: false, isOpen: false });
         }
-    }, [
-        shouldOpenReferralModal.open,
-        showLightLabellingFeatureModal,
-        handleRebrandingFeedbackModalDisplay,
-        openReminderModal,
-    ]);
+    }, [shouldOpenReferralModal.open, showLightLabellingFeatureModal, openReminderModal]);
 
     return (
         <>
             {renderReminderModal && <CancellationReminderModal {...reminderModal} />}
             {renderLightLabellingFeatureModal && <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />}
-            {renderRebrandingFeedbackModal && (
-                <RebrandingFeedbackModal
-                    onMount={handleRebrandingFeedbackModalDisplay}
-                    {...rebrandingFeedbackModal}
-                    onClose={onCloseWithState(rebrandingFeedbackModal.onClose)}
-                />
-            )}
         </>
     );
 };
