@@ -59,7 +59,7 @@ const SecurityCheckupLayout = ({ children }: Props) => {
             );
         }
 
-        if (!backLink || !backLink.appName) {
+        if (!backLink || !backLink.appNameFromHostname) {
             return (
                 <ButtonLike
                     as={Link}
@@ -75,22 +75,22 @@ const SecurityCheckupLayout = ({ children }: Props) => {
         }
 
         const label = (() => {
-            if (backLink.appName === APPS.PROTONMAIL) {
+            if (backLink.appNameFromHostname === APPS.PROTONMAIL) {
                 return c('Navigation').t`Inbox`;
             }
-            if (backLink.appName === APPS.PROTONCALENDAR) {
+            if (backLink.appNameFromHostname === APPS.PROTONCALENDAR) {
                 return c('Navigation').t`Calendar`;
             }
-            if (backLink.appName === APPS.PROTONDRIVE) {
+            if (backLink.appNameFromHostname === APPS.PROTONDRIVE) {
                 return c('Navigation').t`Drive`;
             }
-            if (backLink.appName === APPS.PROTONPASS) {
+            if (backLink.appNameFromHostname === APPS.PROTONPASS) {
                 return c('Navigation').t`Pass vaults`;
             }
-            if (backLink.appName === APPS.PROTONDOCS) {
+            if (backLink.appNameFromHostname === APPS.PROTONDOCS) {
                 return c('Navigation').t`Documents`;
             }
-            if (backLink.appName === APPS.PROTONWALLET) {
+            if (backLink.appNameFromHostname === APPS.PROTONWALLET) {
                 return c('wallet_signup_2024:Navigation').t`Wallet`;
             }
 
@@ -100,7 +100,7 @@ const SecurityCheckupLayout = ({ children }: Props) => {
         return (
             <ButtonLike
                 as={AppLink}
-                toApp={backLink.appName}
+                toApp={backLink.appNameFromHostname}
                 to={backLink.to}
                 target="_self"
                 shape="outline"
@@ -140,11 +140,11 @@ const SecurityCheckupLayout = ({ children }: Props) => {
     }, [location.search]);
 
     const logo = (() => {
-        if (!backLink || !backLink.logoAppName) {
+        if (!backLink || !backLink.appName) {
             return <ProtonLogo variant="full" color={theme.information.dark ? 'invert' : undefined} />;
         }
 
-        return <Logo appName={backLink.logoAppName} />;
+        return <Logo appName={backLink.appName} />;
     })();
 
     return (
