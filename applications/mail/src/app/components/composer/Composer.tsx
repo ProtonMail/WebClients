@@ -252,12 +252,15 @@ const Composer = (
                 return;
             }
 
-            // When in local mode, we can only run one prompt at a time. It's better
-            // to restrict the UI to one composer at a time. When you try opening
-            // one, we will force close the other one you got
-            for (const { id: otherComposerID } of openedAssistants) {
-                closeAssistant(otherComposerID);
+            if (aiFlag === AI_ASSISTANT_ACCESS.CLIENT_ONLY) {
+                // When in local mode, we can only run one prompt at a time. It's better
+                // to restrict the UI to one composer at a time. When you try opening
+                // one, we will force close the other one you got
+                for (const { id: otherComposerID } of openedAssistants) {
+                    closeAssistant(otherComposerID);
+                }
             }
+
             openAssistant(composerID, manual);
         }
     };
