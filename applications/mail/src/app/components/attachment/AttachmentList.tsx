@@ -39,6 +39,7 @@ interface Props {
     onRemoveUpload?: (pendingUpload: PendingUpload) => Promise<void>;
     className?: string;
     outsideKey?: OutsideKey;
+    noPaddingTop?: boolean;
 }
 
 const AttachmentList = ({
@@ -52,6 +53,7 @@ const AttachmentList = ({
     onRemoveUpload,
     className,
     outsideKey,
+    noPaddingTop = false,
     ...rest
 }: Props) => {
     const { handleDownload: download, confirmDownloadModal } = useDownload();
@@ -166,6 +168,8 @@ const AttachmentList = ({
 
     const attachmentsToShow = isNumAttachmentsWithoutEmbedded ? pureAttachments : attachments;
 
+    const noPadding = noPaddingTop && !expanded;
+
     return (
         <div
             className={clsx([
@@ -183,7 +187,10 @@ const AttachmentList = ({
                 outsideKey={outsideKey}
             />
             <div
-                className="flex flex-row w-full pt-2 justify-space-between composer-attachment-list-wrapper"
+                className={clsx([
+                    'flex flex-row w-full justify-space-between composer-attachment-list-wrapper',
+                    !noPadding && 'pt-2',
+                ])}
                 data-testid="attachment-list:header"
             >
                 <TagButton
