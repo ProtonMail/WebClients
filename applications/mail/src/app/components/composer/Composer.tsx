@@ -413,7 +413,7 @@ const Composer = (
                         ref={composerMetaRef}
                         isInert={isAssistantExpanded}
                     />
-                    {isAssistantOpenedInComposer && (
+                    {isAssistantOpenedInComposer && canShowAssistant && (
                         <ComposerAssistant
                             assistantID={composerID}
                             editorMetadata={metadata}

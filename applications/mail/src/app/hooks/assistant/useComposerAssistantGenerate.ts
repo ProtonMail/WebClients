@@ -53,6 +53,7 @@ interface Props {
     setContentBeforeBlockquote: (content: string) => void;
     prompt: string;
     setPrompt: (value: string) => void;
+    setAssistantStatus: (assistantID: string, status: OpenedAssistantStatus) => void;
 }
 
 const useComposerAssistantGenerate = ({
@@ -319,9 +320,10 @@ const useComposerAssistantGenerate = ({
             return;
         }
 
-        // Stop if trial ended
-        if (trialStatus === 'trial-ended') {
+        // Stop if trial ended or if user has no trial (free users)
+        if (trialStatus === 'trial-ended' || trialStatus === 'no-trial') {
             showUpsellModal();
+            setAssistantStatus(assistantID, OpenedAssistantStatus.COLLAPSED);
             return;
         }
 

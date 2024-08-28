@@ -5,4 +5,4 @@ export { default as FiltersUpsellModal } from './types/FiltersUpsellModal';
 export { default as LabelsUpsellModal } from './types/LabelsUpsellModal';
 export { default as AutoDeleteUpsellModal } from './types/AutoDeleteUpsellModal';
 export { default as PmMeUpsellModal } from './types/PmMeUpsellModal';
-export { default as ComposerAssistantTrialEndedUpsellModal } from './types/ComposerAssistantTrialEndedUpsellModal';
+export { default as ComposerAssistantB2BUpsellModal } from './types/ComposerAssistantB2BUpsellModal';

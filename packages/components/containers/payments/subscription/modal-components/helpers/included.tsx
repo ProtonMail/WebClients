@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import {
+    BRAND_NAME,
     CALENDAR_SHORT_APP_NAME,
     DRIVE_SHORT_APP_NAME,
     DUO_MAX_USERS,
@@ -208,6 +209,10 @@ export const getWhatsIncluded = ({
                 type: 'text',
                 text: getPremium(WALLET_SHORT_APP_NAME),
             },
+            {
+                type: 'text',
+                text: c('Info').t`${BRAND_NAME} Scribe writing assistant`,
+            },
         ];
     }
 
@@ -242,6 +247,10 @@ export const getWhatsIncluded = ({
             {
                 type: 'text',
                 text: getPremiumPasswordManagerText(),
+            },
+            {
+                type: 'text',
+                text: c('Info').t`${BRAND_NAME} Scribe writing assistant`,
             },
         ];
     }

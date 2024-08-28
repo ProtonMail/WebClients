@@ -4,31 +4,20 @@ import { Button } from '@proton/atoms/Button';
 import type { ModalStateProps } from '@proton/components/components';
 import { Loader, Price, UpsellModal } from '@proton/components/components';
 import { useSubscriptionModal } from '@proton/components/containers';
-import {
-    useAssistantUpsellConfig,
-    useMember,
-    useOrganization,
-    usePlans,
-    useSubscription,
-    useUser,
-} from '@proton/components/hooks';
+import { useAssistantUpsellConfig, usePlans, useSubscription, useUser } from '@proton/components/hooks';
 import { getScribeAddonNameByPlan } from '@proton/components/payments/core';
 import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, PLAN_TYPES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
-import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
-import { getAIAddonMonthlyPrice } from './ComposerAssistantTrialEndedupsellModel.helpers';
+import { getAIAddonMonthlyPrice } from './ComposerAssistantUpsellModal.helpers';
 
 interface Props {
     modalProps: ModalStateProps;
-    handleCloseAssistant: () => void;
+    isOrgUser?: boolean;
 }
-const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssistant }: Props) => {
+const ComposerAssistantB2BUpsellModal = ({ modalProps, isOrgUser }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
-    const [organization, loadingOrg] = useOrganization();
-    const [member, loadingMember] = useMember();
-    const isOrgUser = isOrganization(organization) && !isSuperAdmin(member ? [member] : []);
 
     const [user, loadingUser] = useUser();
     const [plans, loadingPlans] = usePlans();
@@ -41,7 +30,7 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssista
     });
     const { assistantUpsellConfig } = useAssistantUpsellConfig({ upsellRef, plans: plans?.plans ?? [] });
 
-    if (loadingPlans || loadingUser || loadingOrg || loadingMember || loadingSubscription) {
+    if (loadingPlans || loadingUser || loadingSubscription) {
         return <Loader />;
     }
 
@@ -68,13 +57,16 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssista
             modalProps={{
                 ...modalProps,
                 onClose: () => {
-                    handleCloseAssistant();
                     modalProps.onClose();
                 },
             }}
             headerType="composer-assistant"
-            featuresDescription={<b className="pb-4">{c('Description').t`Use the writing assistant to:`}</b>}
-            features={['generate-emails-with-prompt', 'proofread-an-refine', 'save-time-emailing']}
+            features={[
+                'generate-emails-with-prompt',
+                'quickly-craft-replies',
+                'proofread-an-refine',
+                'save-time-emailing',
+            ]}
             size="small"
             submitText={c('Action').t`Get the writing assistant`}
             submitButton={
@@ -86,7 +78,6 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssista
                         fullWidth
                         onClick={() => {
                             modalProps.onClose();
-                            handleCloseAssistant();
                         }}
                     >
                         {c('Action').t`Close`}
@@ -111,8 +102,10 @@ const ComposerAssistantTrialEndedUpsellModal = ({ modalProps, handleCloseAssista
                 )
             }
             submitPosition="outside"
+            hideFeaturesListBorder={true}
+            iconSize={4}
         />
     );
 };
 
-export default ComposerAssistantTrialEndedUpsellModal;
+export default ComposerAssistantB2BUpsellModal;

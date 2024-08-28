@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import { useConfig } from '@proton/components/hooks';
 import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -17,7 +18,8 @@ const ContactUpgradeModal = (modalProps: ModalStateProps) => {
             component: UPSELL_COMPONENT.MODAL,
         }) || '';
 
-    const upsellConfig = useUpsellConfig({ upsellRef });
+    const oneDollarConfig = useOneDollarConfig();
+    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
     return (
         <UpsellModal
             modalProps={modalProps}
