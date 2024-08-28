@@ -32,7 +32,7 @@ const useAssistantSticky = ({ openedAssistants }: Props) => {
         // - Feature flag is ON
         // - user can run the assistant (if user has local mode in settings, but cannot run it, then we don't open it)
         // - There is no other assistant opened (as long as we don't have a queue mechanism)
-        if (stickyAssistant) {
+        if (stickyAssistant && !user.isFree) {
             const isAssistantOpenedInComposer = getIsAssistantOpened(openedAssistants, assistantID);
 
             if (AIAssistantFlags === AI_ASSISTANT_ACCESS.SERVER_ONLY) {

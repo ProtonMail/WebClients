@@ -2,7 +2,8 @@ import type { MutableRefObject, RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import type { EditorMetadata } from '@proton/components/components';
-import { ComposerAssistantTrialEndedUpsellModal, useModalStateObject } from '@proton/components/components';
+import { useModalStateObject } from '@proton/components/components';
+import  ComposerAssistantUpsellModal from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, getHasAssistantStatus, useAssistant } from '@proton/llm/lib';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant';
@@ -58,10 +59,10 @@ const ComposerAssistant = ({
     const assistantResultChildRef = useRef<HTMLDivElement>(null);
     const assistantResultRef = useRef<HTMLDivElement>(null);
 
-    const upsellModal = useModalStateObject();
+    const assistantUpsellModal = useModalStateObject();
     const resumeDownloadModal = useModalStateObject();
 
-    const { closeAssistant, openedAssistants, setAssistantStatus, resumeDownloadModel, error, cleanSpecificErrors } =
+    const { openedAssistants, setAssistantStatus, resumeDownloadModel, error, cleanSpecificErrors } =
         useAssistant(assistantID);
 
     const isAssistantExpanded = useMemo(() => {
@@ -100,7 +101,7 @@ const ComposerAssistant = ({
         isComposerPlainText: editorMetadata.isPlainText,
         showAssistantSettingsModal: () => setInnerModal(ComposerInnerModalStates.AssistantSettings),
         showResumeDownloadModal: () => resumeDownloadModal.openModal(true),
-        showUpsellModal: () => upsellModal.openModal(true),
+        showUpsellModal: () => assistantUpsellModal.openModal(true),
         onResetFeedbackSubmitted: () => {
             setFeedbackSubmitted(false);
         },
@@ -116,6 +117,7 @@ const ComposerAssistant = ({
         setContentBeforeBlockquote,
         prompt,
         setPrompt,
+        setAssistantStatus,
     });
 
     const handleResetToPreviousPrompt = () => {
@@ -198,13 +200,8 @@ const ComposerAssistant = ({
                 />
             )}
 
-            {upsellModal.render && (
-                <ComposerAssistantTrialEndedUpsellModal
-                    modalProps={{
-                        ...upsellModal.modalProps,
-                    }}
-                    handleCloseAssistant={() => closeAssistant(assistantID, true)}
-                />
+            {assistantUpsellModal.render && (
+                <ComposerAssistantUpsellModal modalProps={assistantUpsellModal.modalProps} />
             )}
             {resumeDownloadModal.render && (
                 <ResumeDownloadingModal

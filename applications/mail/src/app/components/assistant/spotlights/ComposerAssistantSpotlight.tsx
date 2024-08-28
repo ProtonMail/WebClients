@@ -27,9 +27,9 @@ const ComposerAssistantSpotlight = ({ children, show, onClose, onDisplayed }: Pr
                         <img src={spotlightImg} alt="" />
                     </div>
                     <div>
-                        <b>{c('Info').t`${BRAND_NAME} Scribe writing assistant`}</b>
+                        <b>{c('Info').t`Your private writing assistant`}</b>
                         <br />
-                        {c('Info').t`Craft better emails, quickly and effortlessly. Try it now.`}
+                        {c('Info').t`${BRAND_NAME} Scribe helps you craft better emails quickly and effortlessly.`}
                     </div>
                 </div>
             }

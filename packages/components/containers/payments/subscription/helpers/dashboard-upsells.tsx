@@ -59,6 +59,7 @@ import {
     getNAddressesFeature,
     getNAddressesFeatureB2B,
     getNDomainsFeature,
+    getProtonScribe,
 } from '../../features/mail';
 import { FREE_PASS_ALIASES, getPasswordManager, getProtonPassFeature, getVaultSharingB2B } from '../../features/pass';
 import { getShortPlan, getVPNEnterprisePlan } from '../../features/plan';
@@ -383,6 +384,7 @@ const getDuoUpsell = ({
         getHighSpeedVPNConnectionsFeature(),
         getProtonPassFeature(),
         getSentinel(true),
+        getProtonScribe(true),
     ];
 
     return getUpsell({
@@ -431,6 +433,7 @@ const getFamilyUpsell = ({
         getHighSpeedVPNConnectionsFeature(),
         getProtonPassFeature(),
         getSentinel(true),
+        getProtonScribe(true),
     ];
 
     return getUpsell({
