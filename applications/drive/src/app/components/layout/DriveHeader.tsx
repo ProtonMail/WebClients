@@ -2,15 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    PrivateHeader,
-    RebrandingFeedbackModal,
-    TopNavbarListItemFeedbackButton,
-    UserDropdown,
-    useActiveBreakpoint,
-    useHasRebrandingFeedback,
-    useModalState,
-} from '@proton/components';
+import { PrivateHeader, UserDropdown, useActiveBreakpoint } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import isSearchFeatureEnabled from '../../utils/isSearchFeatureEnabled';
@@ -32,18 +24,11 @@ export const DriveHeader = ({
     settingsButton,
 }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
-    const hasRebrandingFeedback = useHasRebrandingFeedback();
-    const [{ open, onClose, onExit, key }, setRebrandingFeedbackModal] = useModalState();
 
     return (
         <>
             <PrivateHeader
                 app={APPS.PROTONDRIVE}
-                feedbackButton={
-                    hasRebrandingFeedback ? (
-                        <TopNavbarListItemFeedbackButton onClick={() => setRebrandingFeedbackModal(true)} />
-                    ) : null
-                }
                 userDropdown={<UserDropdown app={APPS.PROTONDRIVE} />}
                 title={title}
                 expanded={isHeaderExpanded}
@@ -52,8 +37,6 @@ export const DriveHeader = ({
                 actionArea={isSearchFeatureEnabled() && searchBox}
                 settingsButton={settingsButton}
             />
-
-            <RebrandingFeedbackModal key={key} open={open} onClose={onClose} onExit={onExit} />
         </>
     );
 };
