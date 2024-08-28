@@ -197,6 +197,11 @@ export const familyUpsell = {
             included: true,
             icon: 'shield',
         },
+        {
+            text: 'Proton Scribe writing assistant',
+            included: true,
+            icon: 'magic-wand',
+        },
     ],
     otherCtas: [],
     price: { value: 1999, currency: 'EUR' },
@@ -256,6 +261,11 @@ export const duoUpsell = {
             tooltip: `Provides the highest level of account security protection and specialist support`,
             included: true,
             icon: 'shield',
+        },
+        {
+            text: 'Proton Scribe writing assistant',
+            included: true,
+            icon: 'magic-wand',
         },
     ],
     otherCtas: [],

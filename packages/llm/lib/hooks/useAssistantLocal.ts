@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi, useNotifications } from '@proton/components/hooks';
+import { useApi, useNotifications, useUser } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useStateRef from '@proton/hooks/useStateRef';
 import type {
@@ -56,6 +56,7 @@ export const useAssistantLocal = ({
 > => {
     const api = useApi();
     const { createNotification } = useNotifications();
+    const [user] = useUser();
 
     const llmManager = useRef<LlmManager | null>(null);
     const llmModel = useRef<LlmModel | null>(null);
@@ -125,44 +126,44 @@ export const useAssistantLocal = ({
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
     } = useRunningActions({ addSpecificError });
 
+    const handleGetAssistantConfig = () => {
+        llmManager.current = new GpuLlmManager();
+
+        assistantConfigPromiseRef.current = new Promise((resolve, reject) => {
+            void queryAssistantModels(api)
+                .then(async (models) => {
+                    const config = buildMLCConfig(models);
+                    if (config) {
+                        assistantConfigRef.current = config;
+
+                        if (llmManager.current) {
+                            // Check if user has all needed files in cache, so that we can set the state and avoid
+                            // going through the download phase when it's not needed during init
+                            setLocalState((localState) => ({
+                                ...localState,
+                                isCheckingCache: true,
+                            }));
+                            await llmManager.current.isDownloaded(config).then((isDownloaded) => {
+                                setLocalState((localState) => ({
+                                    ...localState,
+                                    isModelDownloading: false,
+                                    isModelDownloaded: isDownloaded,
+                                    isCheckingCache: false,
+                                }));
+                            });
+                        }
+                    }
+                    // Resolve the config promise ref so that we can proceed with init if needed
+                    resolve();
+                })
+                .catch(reject);
+        });
+    };
+
     useEffect(() => {
         if (active && !llmManager.current && canShowAssistant && hasCompatibleHardware && hasCompatibleBrowser) {
-            llmManager.current = new GpuLlmManager();
-
-            const handleGetAssistantModels = () => {
-                assistantConfigPromiseRef.current = new Promise((resolve, reject) => {
-                    void queryAssistantModels(api)
-                        .then(async (models) => {
-                            const config = buildMLCConfig(models);
-                            if (config) {
-                                assistantConfigRef.current = config;
-
-                                if (llmManager.current) {
-                                    // Check if user has all needed files in cache, so that we can set the state and avoid
-                                    // going through the download phase when it's not needed during init
-                                    setLocalState((localState) => ({
-                                        ...localState,
-                                        isCheckingCache: true,
-                                    }));
-                                    await llmManager.current.isDownloaded(config).then((isDownloaded) => {
-                                        setLocalState((localState) => ({
-                                            ...localState,
-                                            isModelDownloading: false,
-                                            isModelDownloaded: isDownloaded,
-                                            isCheckingCache: false,
-                                        }));
-                                    });
-                                }
-                            }
-                            // Resolve the config promise ref so that we can proceed with init if needed
-                            resolve();
-                        })
-                        .catch(reject);
-                });
-            };
-
-            // Get assistant models API side
-            handleGetAssistantModels();
+            // Start llm manager and get assistant models API side
+            handleGetAssistantConfig();
         }
     }, [active, canShowAssistant, hasCompatibleHardware, hasCompatibleBrowser]);
 
@@ -302,9 +303,23 @@ export const useAssistantLocal = ({
             try {
                 let completedDownload;
 
+                // If assistant config is not set at all, start get config process manually
+                // Typically, this happens when starting the assistant for the first time and choosing local mode.
+                // We trigger the init manually, but the useEffect that handle getting the config has not run yet.
+                if (!llmManager.current) {
+                    handleGetAssistantConfig();
+                }
+
                 // Ensure config is set before starting init
                 if (assistantConfigPromiseRef.current) {
                     await assistantConfigPromiseRef.current;
+                }
+
+                // We don't want to go through the init process with free users.
+                // Free users have no trial period, so they shouldn't be able to download the model,
+                // and of course they shouldn't pass in the loading on GPU step too
+                if (user.isFree) {
+                    return;
                 }
 
                 const {
@@ -343,7 +358,7 @@ export const useAssistantLocal = ({
             // - Proceed if init completed
             initPromise.current = undefined;
         });
-    }, []);
+    }, [user]);
 
     const cancelDownloadModel = () => {
         if (llmManager.current) {

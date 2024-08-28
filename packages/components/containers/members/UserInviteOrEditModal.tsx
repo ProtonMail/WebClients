@@ -9,7 +9,7 @@ import { editMemberInvitation, inviteMember, updateAI } from '@proton/shared/lib
 import { MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
-import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { hasDuo, hasFamily, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 
@@ -54,6 +54,8 @@ const UserInviteOrEditModal = ({
 
     const [subscription] = useSubscription();
     const isVisionary = hasVisionary(subscription);
+    const isDuo = hasDuo(subscription);
+    const isFamily = hasFamily(subscription);
 
     const initialModel = useMemo(
         () => ({
@@ -62,7 +64,7 @@ const UserInviteOrEditModal = ({
                 ? member.MaxSpace
                 : clamp(getInitialStorage(organization, storageRange), storageRange.min, storageRange.max),
             vpn: !!member?.MaxVPN,
-            numAI: aiSeatsRemaining && isVisionary, // Visionary users should have the toggle set to true by default
+            numAI: aiSeatsRemaining && (isVisionary || isDuo || isFamily), // Visionary, Duo and Family users should have the toggle set to true by default
             admin: member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
         }),
         [member]

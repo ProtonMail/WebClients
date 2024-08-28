@@ -1,12 +1,14 @@
-import { c } from 'ttag';
+import type { ReactNode } from 'react';
 
-import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
+import type { SUBSCRIPTION_STEPS } from '@proton/components/containers';
+import { useSubscriptionModal } from '@proton/components/containers';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
-import { APPS, COUPON_CODES, CYCLE, UPSELL_ONE_DOLLAR_PROMO_PATHS } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
+import type { CYCLE } from '@proton/shared/lib/constants';
+import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
-import type { Currency } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
@@ -16,13 +18,23 @@ import { type UpsellModalProps } from './modal/UpsellModal';
 interface Props {
     upsellRef?: string;
     step?: SUBSCRIPTION_STEPS;
+    coupon?: string;
+    cycle?: CYCLE;
+    planIDs?: { [key: string]: number };
     onSubscribed?: () => void;
+    submitText?: ReactNode;
+    title?: ReactNode;
 }
 
 // Return config properties to inject in the subscription modal
 const useUpsellConfig = ({
     upsellRef,
     step,
+    coupon,
+    cycle,
+    planIDs,
+    submitText,
+    title,
     onSubscribed,
 }: Props): Partial<UpsellModalProps> & Required<Pick<UpsellModalProps, 'upgradePath'>> => {
     const [user] = useUser();
@@ -30,55 +42,27 @@ const useUpsellConfig = ({
     const [openSubscriptionModal] = useSubscriptionModal();
     const hasSubscriptionModal = openSubscriptionModal !== noop;
     const inboxUpsellFlowEnabled = useFlag('InboxUpsellFlow');
-    const ABTestInboxUpsellOneDollarEnabled = useFlag('ABTestInboxUpsellOneDollar');
     const { APP_NAME } = useConfig();
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
     const hasInAppPayments = APP_NAME === APPS.PROTONMAIL || hasInboxDesktopInAppPayments;
+    const managedExternally = isManagedExternally(subscription);
 
-    if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef) {
-        const currency: Currency = user?.Currency || 'USD';
-        const isOneDollarPromo =
-            ABTestInboxUpsellOneDollarEnabled &&
-            UPSELL_ONE_DOLLAR_PROMO_PATHS.some((promoPath) => upsellRef?.includes(promoPath));
-
+    if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef && !managedExternally) {
         const subscriptionCallBackProps = getUpsellSubscriptionModalConfig({
-            coupon: isOneDollarPromo ? COUPON_CODES.TRYMAILPLUS0724 : undefined,
-            cycle: isOneDollarPromo ? CYCLE.MONTHLY : undefined,
-            step: isOneDollarPromo ? SUBSCRIPTION_STEPS.CHECKOUT : step,
+            coupon,
+            cycle,
+            step,
             upsellRef,
+            planIDs,
         });
-
-        const titleByCurrency = (() => {
-            switch (currency) {
-                case 'USD':
-                    return c('new_plans: Title').t`Get Mail Plus for $1`;
-                case 'EUR':
-                    return c('new_plans: Title').t`Get Mail Plus for 1 €`;
-                case 'CHF':
-                    return c('new_plans: Title').t`Get Mail Plus for CHF 1`;
-                default:
-                    return c('new_plans: Title').t`Get Mail Plus`;
-            }
-        })();
-
-        const messageByCurrency = (() => {
-            switch (currency) {
-                case 'USD':
-                    return c('new_plans: Action').t`Get started for $1`;
-                case 'EUR':
-                    return c('new_plans: Action').t`Get started for 1 €`;
-                case 'CHF':
-                    return c('new_plans: Action').t`Get started for CHF 1`;
-                default:
-                    return c('new_plans: Action').t`Upgrade now`;
-            }
-        })();
 
         // The subscription modal will open in inbox app
         return {
             upgradePath: '',
-            title: isOneDollarPromo ? titleByCurrency : undefined,
-            submitText: isOneDollarPromo ? messageByCurrency : undefined,
+            // Add next fields only if they are defined.
+            // We are spreading the returned object on UpsellModal which could erase props set manually on it
+            ...(title && { title }),
+            ...(submitText && { submitText }),
             onUpgrade() {
                 // Generate a mocked request to track upsell activity
                 const urlParameters = { ref: upsellRef, load: 'modalOpen' };

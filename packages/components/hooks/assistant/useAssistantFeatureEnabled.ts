@@ -11,6 +11,17 @@ const PLANS_SUPPORTING_SCRIBE = [
     PLANS.BUNDLE_PRO,
     PLANS.BUNDLE_PRO_2024,
     PLANS.VISIONARY,
+    PLANS.DUO,
+    PLANS.FAMILY,
+    PLANS.FREE,
+    PLANS.DRIVE,
+    PLANS.MAIL,
+    PLANS.PASS,
+    PLANS.VPN,
+    PLANS.VPN2024,
+    PLANS.WALLET,
+    PLANS.BUNDLE,
+    PLANS.VPN_PASS_BUNDLE,
 ];
 
 function isScribeSupported(organization?: Organization): boolean {
@@ -27,13 +38,13 @@ const useAssistantFeatureEnabled = () => {
     const scribePaymentsEnabled = useScribePaymentsEnabled();
     const isOrganizationBeforeBackfill = useIsOrganizationBeforeBackfill();
 
-    const organization = baseUseSelector(selectOrganization)?.value;
-    const planSupportsScribe = isScribeSupported(organization);
-
-    const paymentsEnabled = accessToAssistant && !isOrganizationBeforeBackfill && scribePaymentsEnabled;
-
     const user = baseUseSelector(selectUser)?.value;
     const userHasScribeSeat = !!user?.NumAI;
+
+    const organization = baseUseSelector(selectOrganization)?.value;
+    const planSupportsScribe = isScribeSupported(organization) || (user ? user.isFree : false);
+
+    const paymentsEnabled = accessToAssistant && !isOrganizationBeforeBackfill && scribePaymentsEnabled;
 
     const enabled =
         accessToAssistant &&
