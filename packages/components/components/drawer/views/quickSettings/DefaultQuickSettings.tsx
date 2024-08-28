@@ -41,6 +41,8 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
         void betaToggleWithLoading(run());
     };
 
+    const betaToggleId = 'toggle-early-access';
+
     return (
         <>
             {showThemeSelection && (
@@ -126,6 +128,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
 
             <DrawerAppSection>
                 <QuickSettingsSectionRow
+                    labelProps={{ htmlFor: betaToggleId }}
                     label={c('Label').t`Beta Access`}
                     labelInfo={
                         <Info
@@ -135,7 +138,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                     }
                     action={
                         <Toggle
-                            id="toggle-early-access"
+                            id={betaToggleId}
                             loading={betaToggleLoading}
                             checked={earlyAccess.value}
                             onChange={handleChangeEarlyAccess}
