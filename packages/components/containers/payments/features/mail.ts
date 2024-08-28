@@ -342,6 +342,14 @@ const getEmailDistributionLists = (included: boolean): PlanCardFeatureDefinition
     };
 };
 
+export const getProtonScribe = (included: boolean): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`${BRAND_NAME} Scribe writing assistant`,
+        icon: 'magic-wand',
+        included,
+    };
+};
+
 export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFeature: boolean): PlanCardFeature[] => {
     return [
         {
@@ -833,6 +841,29 @@ export const getMailFeatures = (plansMap: PlansMap, canAccessDistributionListFea
                 [PLANS.MAIL_BUSINESS]: canAccessDistributionListFeature ? getEmailDistributionLists(true) : null,
                 [PLANS.BUNDLE_PRO]: null,
                 [PLANS.BUNDLE_PRO_2024]: canAccessDistributionListFeature ? getEmailDistributionLists(true) : null,
+                [PLANS.PASS_PRO]: null,
+                [PLANS.PASS_BUSINESS]: null,
+                [PLANS.VPN_PRO]: null,
+                [PLANS.VPN_BUSINESS]: null,
+            },
+        },
+        {
+            name: 'scribe',
+            plans: {
+                [PLANS.FREE]: null,
+                [PLANS.BUNDLE]: null,
+                [PLANS.MAIL]: null,
+                [PLANS.VPN]: null,
+                [PLANS.DRIVE]: null,
+                [PLANS.DRIVE_BUSINESS]: null,
+                [PLANS.PASS]: null,
+                [PLANS.WALLET]: null,
+                [PLANS.FAMILY]: getProtonScribe(true),
+                [PLANS.DUO]: getProtonScribe(true),
+                [PLANS.MAIL_PRO]: null,
+                [PLANS.MAIL_BUSINESS]: null,
+                [PLANS.BUNDLE_PRO]: null,
+                [PLANS.BUNDLE_PRO_2024]: null,
                 [PLANS.PASS_PRO]: null,
                 [PLANS.PASS_BUSINESS]: null,
                 [PLANS.VPN_PRO]: null,

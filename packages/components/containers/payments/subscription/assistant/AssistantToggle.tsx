@@ -9,12 +9,15 @@ import {
     getScribeUpsellLearnMore,
     useAssistantSubscriptionStatus,
     useAssistantUpsellConfig,
+    useMember,
+    useOrganization,
     usePlans,
     useSubscription,
     useSubscriptionModal,
 } from '@proton/components';
-import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { getIsB2CUserAbleToRunScribe } from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal.helpers';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
+import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasPlanWithAIAssistantIncluded } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
@@ -25,6 +28,8 @@ const AssistantToggle = () => {
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const [plans] = usePlans();
+    const [organization] = useOrganization();
+    const [member] = useMember();
 
     const composerAssistantEnabled = useAssistantFeatureEnabled();
     const planWithAIAssistantIncluded = hasPlanWithAIAssistantIncluded(subscription);
@@ -40,6 +45,13 @@ const AssistantToggle = () => {
         isSettings: true,
     });
     const { assistantUpsellConfig } = useAssistantUpsellConfig({ upsellRef, plans: plans?.plans ?? [] });
+
+    const isB2CUser = getIsB2CUserAbleToRunScribe(subscription, organization, member);
+
+    // Do  not show scribe banner to b2c users. The feature is available in Duo plan only for b2c, it's not an addon
+    if (isB2CUser) {
+        return null;
+    }
 
     // don't show scribe upsell if user can't pay for it
     if (!composerAssistantEnabled.enabled) {

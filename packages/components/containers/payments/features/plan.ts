@@ -34,6 +34,7 @@ import {
     getNAddressesFeatureB2B,
     getNDomainsFeature,
     getNMessagesFeature,
+    getProtonScribe,
     getSMTPToken,
 } from './mail';
 import {
@@ -548,6 +549,7 @@ export const getFamilyPlan = ({
             getPassAppFeature(),
             getSupport('priority'),
             getSMTPToken(true),
+            getProtonScribe(true),
         ],
     };
 };
@@ -584,6 +586,7 @@ export const getDuoPlan = ({
             getPassAppFeature(),
             getSupport('priority'),
             getSMTPToken(true),
+            getProtonScribe(true),
         ],
     };
 };

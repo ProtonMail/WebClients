@@ -172,7 +172,7 @@ const ComposerAssistantExpanded = ({
                         </Button>
                     </Tooltip>
                 )}
-                <Tooltip title={c('Action').t`Adds it below your existing message`}>
+                <Tooltip title={c('Action').t`Adds it above your existing message`}>
                     <Button
                         onClick={() => handleInsertGenerationInComposer(ASSISTANT_INSERT_TYPE.INSERT)}
                         color="norm"

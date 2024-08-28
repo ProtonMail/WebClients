@@ -10,7 +10,7 @@ import useUser from '../useUser';
 
 export const ASSISTANT_TRIAL_TIME_DAYS = 14;
 
-export type TrialStatus = 'trial-ongoing' | 'trial-ended' | 'trial-not-started' | 'is-paid';
+export type TrialStatus = 'trial-ongoing' | 'trial-ended' | 'trial-not-started' | 'is-paid' | 'no-trial';
 
 // Prevent multiple starts in case of multiple start calls
 let started = false;
@@ -31,6 +31,11 @@ const useAssistantSubscriptionStatus = () => {
     const endDate = trialStartDate ? addDays(trialStartDate, ASSISTANT_TRIAL_TIME_DAYS) : null;
 
     const trialStatus: TrialStatus = (() => {
+        // Free users have no trial period
+        if (user.isFree) {
+            return 'no-trial';
+        }
+
         if (hasAiAssistantAddon) {
             return 'is-paid';
         }
@@ -58,7 +63,7 @@ const useAssistantSubscriptionStatus = () => {
     };
 
     return {
-        canUseAssistant: hasAiAssistantAddon && trialStatus !== 'trial-ended',
+        canUseAssistant: hasAiAssistantAddon && trialStatus !== 'trial-ended' && trialStatus !== 'no-trial',
         trialEndDate: endDate,
         trialStatus,
         start,

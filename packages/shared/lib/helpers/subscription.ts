@@ -194,7 +194,7 @@ const hasAIAssistantCondition = [
 export const hasAIAssistant = (subscription: MaybeFreeSubscription) =>
     hasSomeAddonOrPlan(subscription, hasAIAssistantCondition);
 
-export const PLANS_WITH_AI_INCLUDED = [VISIONARY];
+export const PLANS_WITH_AI_INCLUDED = [VISIONARY, DUO, FAMILY];
 export const hasPlanWithAIAssistantIncluded = (subscription: MaybeFreeSubscription) =>
     hasSomeAddonOrPlan(subscription, PLANS_WITH_AI_INCLUDED);
 

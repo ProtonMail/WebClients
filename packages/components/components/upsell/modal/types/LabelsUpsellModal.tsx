@@ -6,6 +6,8 @@ import type { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { APP_UPSELL_REF_PATH, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
+import useOneDollarConfig from '../../useOneDollarPromo';
+
 interface Props {
     modalProps: ModalStateProps;
     feature: MAIL_UPSELL_PATHS.UNLIMITED_FOLDERS | MAIL_UPSELL_PATHS.UNLIMITED_LABELS;
@@ -29,8 +31,8 @@ const LabelsUpsellModal = ({
         feature,
         isSettings,
     });
-
-    const upsellConfig = useUpsellConfig({ upsellRef });
+    const oneDollarConfig = useOneDollarConfig();
+    const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
 
     return (
         <UpsellModal
