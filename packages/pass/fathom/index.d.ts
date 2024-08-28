@@ -143,6 +143,7 @@ declare enum IdentityFieldType {
     ZIPCODE = 9,
     ORGANIZATION = 10,
     COUNTRY = 11,
+    EMAIL = 12,
 }
 declare const getIdentityHaystack: (input: HTMLInputElement) => string;
 declare const getIdentityFieldType: (input: HTMLInputElement) => IdentityFieldType | undefined;
