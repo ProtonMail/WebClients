@@ -11,8 +11,8 @@ const getBackLink = ({ backHref, hostname }: { backHref: string; hostname: strin
     }
 
     return {
-        appName: getAppFromHostname(backUrl.hostname),
-        logoAppName: getAppFromHostname(backUrl.hostname) || getAppFromPathnameSafe(backUrl.pathname),
+        appNameFromHostname: getAppFromHostname(backUrl.hostname),
+        appName: getAppFromHostname(backUrl.hostname) || getAppFromPathnameSafe(backUrl.pathname),
         to: stripLocalBasenameFromPathname(backUrl.pathname),
         href: backUrl.href,
     };
