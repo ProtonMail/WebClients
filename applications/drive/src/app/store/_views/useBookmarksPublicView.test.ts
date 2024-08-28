@@ -46,6 +46,13 @@ const mockedUrlPassword = '#password';
 jest.mock('../../hooks/drive/usePublicToken');
 jest.mocked(usePublicToken).mockReturnValue({ urlPassword: mockedUrlPassword, token: mockedToken });
 
+jest.mock('@proton/shared/lib/authentication/persistedSessionHelper', () => {
+    return {
+        ...jest.requireActual('@proton/shared/lib/authentication/persistedSessionHelper'),
+        resumeSession: jest.fn().mockReturnValue({}),
+    };
+});
+
 const UID = 'UID';
 
 describe('useBookmarksPublicView', () => {
