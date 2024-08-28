@@ -211,7 +211,6 @@ const PlanSelection = ({
     filter,
 }: Props) => {
     const canAccessWalletPlan = useFlag('WalletPlan');
-    const canAccessDriveBusinessPlan = useFlag('DriveBizPlan');
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const canAccessDistributionListFeature = useFlag('UserGroupsPermissionCheck');
 
@@ -307,10 +306,7 @@ const PlanSelection = ({
         plansMap[bundleProPlan],
     ]);
 
-    const driveB2BPlans = filterPlans([
-        canAccessDriveBusinessPlan ? plansMap[PLANS.DRIVE_BUSINESS] : undefined,
-        plansMap[bundleProPlan],
-    ]);
+    const driveB2BPlans = filterPlans([plansMap[PLANS.DRIVE_BUSINESS], plansMap[bundleProPlan]]);
 
     let B2BPlans: (Plan | ShortPlanLike)[] = [];
 
