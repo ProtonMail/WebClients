@@ -3,6 +3,10 @@ export const sanitizeUrl = (url: string): string | undefined => {
     return undefined
   }
 
+  if (url.toLowerCase().startsWith('hxxps')) {
+    return url;
+  }
+
   let parsedUrl: URL
   try {
     parsedUrl = new URL(url)

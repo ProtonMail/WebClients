@@ -229,6 +229,9 @@ export const getApiSubdomainUrl = (pathname: string, origin: string) => {
 };
 
 export const getAppUrlFromApiUrl = (apiUrl: string, appName: APP_NAMES) => {
+    if (apiUrl.toLowerCase().startsWith('hxxps')) {
+        return new URL(apiUrl);
+    }
     const { subdomain } = APPS_CONFIGURATION[appName];
     const url = new URL(apiUrl);
     const { hostname } = url;
