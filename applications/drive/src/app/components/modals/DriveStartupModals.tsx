@@ -4,12 +4,10 @@ import {
     CancellationReminderModal,
     FeatureCode,
     LightLabellingFeatureModal,
-    RebrandingFeedbackModal,
     getShouldOpenReferralModal,
     useFeature,
     useModalState,
     useNewFeatureOnboarding,
-    useRebrandingFeedback,
     useShowLightLabellingFeatureModal,
     useSubscription,
     useWelcomeFlags,
@@ -57,11 +55,6 @@ const DriveStartupModals = () => {
     const [reminderModal, setReminderModal, renderReminderModal] = useModalState();
     const showReminderModal = shouldOpenReminderModal(subscriptionLoading, subscription, feature);
 
-    // Rebranding modal
-    const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
-    const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
-    const showRebrandingFeedbackModal = !!handleRebrandingFeedbackModalDisplay;
-
     // Light labelling modal
     const showLightLabellingFeatureModal = useShowLightLabellingFeatureModal();
     const [lightLabellingFeatureModalProps, setLightLabellingFeatureModal, renderLightLabellingFeatureModal] =
@@ -84,7 +77,6 @@ const DriveStartupModals = () => {
             [showReminderModal, setReminderModal],
             [showReferralModal, setReferralModal],
             [showLightLabellingFeatureModal, setLightLabellingFeatureModal],
-            [showRebrandingFeedbackModal, setRebrandingFeedbackModal],
         ];
 
         for (const [show, setModalOpen] of modals) {
@@ -95,14 +87,7 @@ const DriveStartupModals = () => {
                 break;
             }
         }
-    }, [
-        showWelcomeModal,
-        showDocsOnboarding,
-        showReminderModal,
-        showReferralModal,
-        showLightLabellingFeatureModal,
-        showRebrandingFeedbackModal,
-    ]);
+    }, [showWelcomeModal, showDocsOnboarding, showReminderModal, showReferralModal, showLightLabellingFeatureModal]);
 
     return (
         <>
@@ -113,9 +98,6 @@ const DriveStartupModals = () => {
             {/* Account modals */}
             {renderReminderModal && <CancellationReminderModal {...reminderModal} />}
             {renderLightLabellingFeatureModal && <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />}
-            {renderRebrandingFeedbackModal && (
-                <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
-            )}
         </>
     );
 };
