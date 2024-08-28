@@ -1,9 +1,12 @@
-import type { DragEvent } from 'react';
+import type { DragEvent} from 'react';
+import { useMemo } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import { ErrorBoundary, useHandler, useToggle, useWindowSize } from '@proton/components';
 import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
+import { getHasAssistantStatus } from '@proton/llm/lib';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
+import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
@@ -79,7 +82,11 @@ const ComposerFrame = ({
         drawerOffset,
     });
 
-    const { closeAssistant } = useAssistant(composerID);
+    const { closeAssistant, openedAssistants } = useAssistant(composerID);
+
+    const isAssistantExpanded = useMemo(() => {
+        return getHasAssistantStatus(openedAssistants, composerID, OpenedAssistantStatus.EXPANDED);
+    }, [composerID, openedAssistants]);
 
     // onClose handler can be called in a async handler
     // Input onClose ref can change in the meantime
@@ -140,16 +147,18 @@ const ComposerFrame = ({
             tabIndex={-1}
             data-testid={composerID}
         >
-            <ComposerTitleBar
-                title={subject}
-                minimized={minimized}
-                maximized={maximized}
-                toggleMinimized={toggleMinimized}
-                toggleMaximized={toggleMaximized}
-                onClose={handleClose}
-                handleStartDragging={handleStartDragging}
-                minimizeButtonRef={minimizeButtonRef}
-            />
+            {!isAssistantExpanded && (
+                <ComposerTitleBar
+                    title={subject}
+                    minimized={minimized}
+                    maximized={maximized}
+                    toggleMinimized={toggleMinimized}
+                    toggleMaximized={toggleMaximized}
+                    onClose={handleClose}
+                    handleStartDragging={handleStartDragging}
+                    minimizeButtonRef={minimizeButtonRef}
+                />
+            )}
             <ErrorBoundary initiative="composer">
                 <Composer
                     ref={composerRef}
