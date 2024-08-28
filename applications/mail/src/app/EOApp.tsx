@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import * as bootstrap from '@proton/account/bootstrap';
 import {
     ApiProvider,
+    AuthenticationProvider,
     CacheProvider,
     CompatibilityCheck,
     ConfigProvider,
@@ -42,33 +43,35 @@ const boostrapApp = () => {
 };
 
 const App = () => {
-    const { store, api, cache } = useInstance(boostrapApp);
+    const { authentication, store, api, cache } = useInstance(boostrapApp);
     return (
         <ProtonStoreProvider store={store}>
-            <ConfigProvider config={config}>
-                <CompatibilityCheck>
-                    <Icons />
-                    <RightToLeftProvider>
-                        <ThemeProvider appName={config.APP_NAME}>
-                            <Router>
-                                <PreventLeaveProvider>
-                                    <NotificationsProvider>
-                                        <ModalsProvider>
-                                            <ApiProvider api={api}>
-                                                <CacheProvider cache={cache}>
-                                                    <StandardPublicApp loader={<LoaderPage />} locales={locales}>
-                                                        <EOContainer />
-                                                    </StandardPublicApp>
-                                                </CacheProvider>
-                                            </ApiProvider>
-                                        </ModalsProvider>
-                                    </NotificationsProvider>
-                                </PreventLeaveProvider>
-                            </Router>
-                        </ThemeProvider>
-                    </RightToLeftProvider>
-                </CompatibilityCheck>
-            </ConfigProvider>
+            <AuthenticationProvider store={authentication}>
+                <ConfigProvider config={config}>
+                    <CompatibilityCheck>
+                        <Icons />
+                        <RightToLeftProvider>
+                            <ThemeProvider appName={config.APP_NAME}>
+                                <Router>
+                                    <PreventLeaveProvider>
+                                        <NotificationsProvider>
+                                            <ModalsProvider>
+                                                <ApiProvider api={api}>
+                                                    <CacheProvider cache={cache}>
+                                                        <StandardPublicApp loader={<LoaderPage />} locales={locales}>
+                                                            <EOContainer />
+                                                        </StandardPublicApp>
+                                                    </CacheProvider>
+                                                </ApiProvider>
+                                            </ModalsProvider>
+                                        </NotificationsProvider>
+                                    </PreventLeaveProvider>
+                                </Router>
+                            </ThemeProvider>
+                        </RightToLeftProvider>
+                    </CompatibilityCheck>
+                </ConfigProvider>
+            </AuthenticationProvider>
         </ProtonStoreProvider>
     );
 };
