@@ -24,17 +24,13 @@ import {
     PrivateHeader,
     PrivateMainArea,
     QuickSettingsAppButton,
-    RebrandingFeedbackModal,
     ToolbarButton,
     Tooltip,
     TopBanners,
-    TopNavbarListItemFeedbackButton,
     UserDropdown,
     useContactGroups,
     useDrawer,
     useFeature,
-    useHasRebrandingFeedback,
-    useModalState,
     useNotifications,
     useOpenDrawerOnLoad,
     useToggle,
@@ -148,10 +144,8 @@ const CalendarContainerView = ({
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { createNotification } = useNotifications();
     const [groups = []] = useContactGroups();
-    const hasRebrandingFeedback = useHasRebrandingFeedback();
     const isCalendarEncryptedSearchEnabled = !!useFeature(FeatureCode.CalendarEncryptedSearch).feature?.Value;
     const searchSpotlightAnchorRef = useRef<HTMLButtonElement>(null);
-    const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
     const [user] = useUser();
 
     useOpenDrawerOnLoad();
@@ -533,11 +527,6 @@ const CalendarContainerView = ({
                         </FloatingButton>
                     )
                 }
-                feedbackButton={
-                    hasRebrandingFeedback ? (
-                        <TopNavbarListItemFeedbackButton onClick={() => setRebrandingFeedbackModal(true)} />
-                    ) : null
-                }
                 title={c('Title').t`Calendar`}
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
@@ -546,8 +535,6 @@ const CalendarContainerView = ({
                 hideUpsellButton={isSmallViewport}
                 settingsButton={drawerSettingsButton}
             />
-
-            <RebrandingFeedbackModal {...rebrandingFeedbackModal} />
         </>
     );
 
