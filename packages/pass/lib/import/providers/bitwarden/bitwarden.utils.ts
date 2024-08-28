@@ -15,7 +15,8 @@ const BITWARDEN_IDENTITY_FIELD_MAP: Record<string, IdentityFieldName> = {
     middleName: 'middleName',
     lastName: 'lastName',
     address1: 'streetAddress',
-    address2: 'floor',
+    address2: 'streetAddress',
+    address3: 'streetAddress',
     city: 'city',
     state: 'stateOrProvince',
     postalCode: 'zipOrPostalCode',
@@ -97,9 +98,12 @@ export const extractBitwardenIdentity = ({ fields, identity }: BitwardenIdentity
             });
         }
 
+        /* Certain bitwarden identity fields should be merged.
+         * eg: `address1`, `address2` and `address3` should be
+         * concatenated into the `streetAddress` field */
         Object.entries(identity).forEach(([key, value]) => {
             const field = BITWARDEN_IDENTITY_FIELD_MAP[key];
-            if (field) content.set(field, value ?? '');
+            if (field && value) content.set(field, (current) => (current ? `${current} ${value}` : value));
         });
 
         return content;
