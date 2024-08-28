@@ -21,8 +21,8 @@
     "test:watch": "jest --watch --coverage=false"
   },
   "dependencies": {
-    "@lexical/utils": "0.17.1-nightly.20240823.0",
-    "@lexical/yjs": "0.17.1-nightly.20240823.0",
+    "@lexical/utils": "0.17.1",
+    "@lexical/yjs": "0.17.1",
     "@proton/account": "workspace:^",
     "@proton/atoms": "workspace:^",
     "@proton/components": "workspace:^",
