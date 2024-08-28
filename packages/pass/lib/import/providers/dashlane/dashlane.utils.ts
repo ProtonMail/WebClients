@@ -136,7 +136,7 @@ const DASHLANE_DYNAMIC_IDENTITY_FIELD_MAP: Record<string, Record<string, Dashlan
         number: {
             type: 'extraSection',
             fieldSection: 'extraContactDetails',
-            getFieldName: () => c('Label').t`ID Card`,
+            getFieldName: () => c('Label').t`ID Card number`,
         },
     },
     tax_number: {
@@ -237,9 +237,10 @@ const extractDashlaneIdentityTitle = (item: DashlaneIdItem) => {
             case 'passport':
                 return c('Label').t`Passport`;
             case 'license':
-                return c('Label').t`Driver's license`;
+                // Translator: License refers to Driver's License here
+                return c('Label').t`License`;
             case 'social_security':
-                return c('Label').t`Social security number`;
+                return c('Label').t`Social security`;
             case 'tax_number':
                 return c('Label').t`Tax number`;
             default:
