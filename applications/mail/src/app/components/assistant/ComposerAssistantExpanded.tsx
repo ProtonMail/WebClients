@@ -148,10 +148,18 @@ const ComposerAssistantExpanded = ({
                     </Scroll>
                 </div>
             )}
+
+            <Button
+                onClick={handleCancel}
+                shape="ghost"
+                className="absolute top-0 right-0 mr-3 mt-3"
+                icon
+                aria-label={c('Action').t`Cancel`}
+            >
+                <Icon name="cross-big" />
+            </Button>
+
             <div className="shrink-0 mt-auto">
-                <Button onClick={handleCancel} shape="outline" className="mr-2">
-                    {c('Action').t`Cancel`}
-                </Button>
                 {showReplaceButton && (
                     <Tooltip title={c('Action').t`Replaces the selected text in your message`}>
                         <Button
