@@ -13,6 +13,7 @@ import {
     useModalState,
     useUpsellConfig,
 } from '@proton/components/components';
+import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -173,7 +174,8 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
             feature: MAIL_UPSELL_PATHS.SCHEDULE_SEND,
         });
 
-        const upsellConfig = useUpsellConfig({ upsellRef });
+        const oneDollarConfig = useOneDollarConfig();
+        const upsellConfig = useUpsellConfig({ upsellRef, ...oneDollarConfig });
 
         return (
             <>

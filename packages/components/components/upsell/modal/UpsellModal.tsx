@@ -4,7 +4,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import type { ModalSize, ModalStateProps } from '@proton/components/components';
+import type { IconSize, ModalSize, ModalStateProps } from '@proton/components/components';
 import { Icon, Info, ModalTwo, ModalTwoContent, ModalTwoHeader, SettingsLink } from '@proton/components/components';
 import calendarHeaderImage from '@proton/styles/assets/img/illustrations/upsell-calendar-header.svg';
 import composerAssistantImage from '@proton/styles/assets/img/illustrations/upsell-composer-assistant.svg';
@@ -27,7 +27,16 @@ const getHeader = (headerType: UpsellHeaderType) => {
 };
 
 type UpsellBoxProps = Partial<
-    Pick<UpsellModalProps, 'hideInfo' | 'submitText' | 'submitButton' | 'featuresDescription'> & {
+    Pick<
+        UpsellModalProps,
+        | 'hideInfo'
+        | 'submitText'
+        | 'submitButton'
+        | 'featuresDescription'
+        | 'hideFeaturesListBorder'
+        | 'footerText'
+        | 'iconSize'
+    > & {
         path: string;
     }
 > &
@@ -48,6 +57,9 @@ const UpsellBox = ({
     submitText,
     submitPosition,
     submitButton,
+    hideFeaturesListBorder = false,
+    footerText,
+    iconSize = 5,
 }: UpsellBoxProps) => {
     const UpgradeButton = submitButton || (
         <ButtonLike
@@ -75,12 +87,19 @@ const UpsellBox = ({
                     />
                 </div>
                 <h1 className="h3 text-bold mb-4">{title}</h1>
-                <div className="color-weak mb-4 px-4">{description}</div>
+                <div className={clsx(['color-weak mb-4', hideFeaturesListBorder ? undefined : 'px-4'])}>
+                    {description}
+                </div>
             </div>
 
             {features.length ? (
                 <>
-                    <div className="border border-primary rounded p-6 pt-4">
+                    <div
+                        className={clsx([
+                            'pt-4',
+                            hideFeaturesListBorder ? undefined : 'p-6 border border-primary rounded',
+                        ])}
+                    >
                         {featuresDescription}
                         <ul className={clsx('m-0 unstyled', submitPosition === 'inside' && 'mb-4')}>
                             {features.map((featureName) => {
@@ -89,7 +108,11 @@ const UpsellBox = ({
                                     <li className="py-2 rounded" key={feature.getText()}>
                                         <div className="flex flex-nowrap items-center">
                                             <div className="mr-3 shrink-0 flex">
-                                                <Icon className="color-primary m-auto" size={5} name={feature.icon} />
+                                                <Icon
+                                                    className="color-primary m-auto"
+                                                    size={iconSize}
+                                                    name={feature.icon}
+                                                />
                                             </div>
                                             <div className="flex-1">
                                                 {feature.getText()}
@@ -102,10 +125,20 @@ const UpsellBox = ({
                                 );
                             })}
                         </ul>
-                        {submitPosition === 'inside' && UpgradeButton}
+                        {submitPosition === 'inside' && (
+                            <>
+                                {UpgradeButton}
+                                {footerText && <div className="color-weak text-center">{footerText}</div>}
+                            </>
+                        )}
                     </div>
 
-                    {submitPosition === 'outside' && <div className="mt-4">{UpgradeButton}</div>}
+                    {submitPosition === 'outside' && (
+                        <>
+                            <div className="mt-4">{UpgradeButton}</div>
+                            {footerText && <div className="mt-4 color-weak text-center">{footerText}</div>}
+                        </>
+                    )}
                 </>
             ) : (
                 UpgradeButton
@@ -127,13 +160,16 @@ export interface UpsellModalProps {
     headerType?: UpsellHeaderType;
     hideInfo?: boolean;
     size?: ModalSize;
-    submitText?: string;
+    submitText?: ReactNode;
     submitPosition?: 'inside' | 'outside';
     /**
      * Overrides `submitText`, `position` and `handleUpgrade` as it is a ReactNode
      * replacing submit button
      */
     submitButton?: ReactNode;
+    hideFeaturesListBorder?: boolean;
+    footerText?: ReactNode;
+    iconSize?: IconSize;
 }
 
 const UpsellModal = ({
@@ -152,6 +188,9 @@ const UpsellModal = ({
     submitText,
     submitPosition = 'inside',
     submitButton,
+    hideFeaturesListBorder,
+    footerText,
+    iconSize,
 }: UpsellModalProps) => {
     const handleUpgrade = () => {
         onUpgrade?.();
@@ -179,6 +218,9 @@ const UpsellModal = ({
                     submitText={submitText}
                     submitPosition={submitPosition}
                     submitButton={submitButton}
+                    hideFeaturesListBorder={hideFeaturesListBorder}
+                    footerText={footerText}
+                    iconSize={iconSize}
                 />
             </ModalTwoContent>
         </ModalTwo>

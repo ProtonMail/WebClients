@@ -31,7 +31,7 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { sizeUnits } from '@proton/shared/lib/helpers/size';
-import { getHasVpnB2BPlan, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { getHasVpnB2BPlan, hasDuo, hasFamily, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import type { Domain, EnhancedMember, Organization } from '@proton/shared/lib/interfaces';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsPasswordless } from '@proton/shared/lib/keys';
@@ -134,6 +134,8 @@ const SubUserCreateModal = ({
     const [subscription] = useSubscription();
     const hasVpnB2bPlan = getHasVpnB2BPlan(subscription);
     const isVisionary = hasVisionary(subscription);
+    const isDuo = hasDuo(subscription);
+    const isFamily = hasFamily(subscription);
 
     const [step, setStep] = useState<Step>(Step.SINGLE);
 
@@ -151,7 +153,7 @@ const SubUserCreateModal = ({
         confirm: '',
         address: '',
         invitationEmail: '',
-        numAI: aiSeatsRemaining || isVisionary, // Visionary users should have the toggle set to true by default
+        numAI: aiSeatsRemaining || isVisionary || isDuo || isFamily, // Visionary, Duo and Family users should have the toggle set to true by default
         domain: useEmail ? null : (verifiedDomains[0]?.DomainName ?? null),
         vpn:
             organization &&
