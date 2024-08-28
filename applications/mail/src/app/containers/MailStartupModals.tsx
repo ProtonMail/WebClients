@@ -6,11 +6,9 @@ import {
     FeatureCode,
     InboxDesktopFreeTrialOnboardingModal,
     LightLabellingFeatureModal,
-    RebrandingFeedbackModal,
     getShouldOpenReferralModal,
     useFeature,
     useModalState,
-    useRebrandingFeedback,
     useShowLightLabellingFeatureModal,
     useSubscription,
     useUser,
@@ -43,8 +41,6 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
     const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
     const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
 
-    const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
-    const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
     const [, setWelcomeFlagsDone] = useWelcomeFlags();
 
     const showLightLabellingFeatureModal = useShowLightLabellingFeatureModal();
@@ -72,16 +68,8 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
         } else if (showLightLabellingFeatureModal) {
             onceRef.current = true;
             setLightLabellingFeatureModal(true);
-        } else if (handleRebrandingFeedbackModalDisplay) {
-            openModal(setRebrandingFeedbackModal);
         }
-    }, [
-        shouldOpenReferralModal.open,
-        handleRebrandingFeedbackModalDisplay,
-        showLightLabellingFeatureModal,
-        onboardingOpen,
-        openReminderModal,
-    ]);
+    }, [shouldOpenReferralModal.open, showLightLabellingFeatureModal, onboardingOpen, openReminderModal]);
 
     return (
         <>
@@ -101,9 +89,6 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
                 </EasySwitchProvider>
             )}
             {renderLightLabellingFeatureModal && <LightLabellingFeatureModal {...lightLabellingFeatureModalProps} />}
-            {renderRebrandingFeedbackModal && (
-                <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
-            )}
         </>
     );
 };

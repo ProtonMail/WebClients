@@ -3,18 +3,7 @@ import { memo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import type { Breakpoints } from '@proton/components';
-import {
-    FloatingButton,
-    Icon,
-    PrivateHeader,
-    RebrandingFeedbackModal,
-    TopNavbarListItemFeedbackButton,
-    UserDropdown,
-    useFolders,
-    useHasRebrandingFeedback,
-    useLabels,
-    useModalState,
-} from '@proton/components';
+import { FloatingButton, Icon, PrivateHeader, UserDropdown, useFolders, useLabels } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -43,14 +32,11 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const mailSettings = useMailModel('MailSettings');
-    const hasRebrandingFeedback = useHasRebrandingFeedback();
     const dispatch = useMailDispatch();
     const expanded = useMailSelector(selectLayoutIsExpanded);
     const onToggleExpand = useCallback(() => dispatch(layoutActions.toggleSidebarExpand()), []);
 
     const onCompose = useOnCompose();
-
-    const [feedbackModalProps, setFeedbackModalOpen] = useModalState();
 
     const hideMenuButton = breakpoints.viewportWidth['<=small'] && !!elementID;
     const hideUpsellButton =
@@ -71,11 +57,6 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
                 hideMenuButton={hideMenuButton}
                 hideUpsellButton={hideUpsellButton}
                 title={labelName}
-                feedbackButton={
-                    hasRebrandingFeedback ? (
-                        <TopNavbarListItemFeedbackButton onClick={() => setFeedbackModalOpen(true)} />
-                    ) : null
-                }
                 actionArea={
                     breakpoints.viewportWidth['<=small'] ||
                     breakpoints.viewportWidth.medium ||
@@ -115,7 +96,6 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
                     </FloatingButton>
                 }
             />
-            <RebrandingFeedbackModal {...feedbackModalProps} />
         </>
     );
 };
