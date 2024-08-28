@@ -60,13 +60,7 @@ const isNoteItem = (item: KeeperItem): boolean =>
         if (idx !== 5) return !value;
     });
 
-export const readKeeperData = async ({
-    data,
-    importUsername,
-}: {
-    data: string;
-    importUsername?: boolean;
-}): Promise<ImportPayload> => {
+export const readKeeperData = async ({ data }: { data: string }): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -102,7 +96,7 @@ export const readKeeperData = async ({
                                 return importLoginItem({
                                     name: item[1],
                                     note: item[5],
-                                    ...(importUsername ? getEmailOrUsername(item[2]) : { email: item[2] }),
+                                    ...getEmailOrUsername(item[2]),
                                     password: item[3],
                                     urls: [item[4]],
                                     totp: extractTOTP(item),

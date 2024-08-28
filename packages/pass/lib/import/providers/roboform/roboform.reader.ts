@@ -26,13 +26,7 @@ const formatOtpAuthUri = (item: RoboformItem): Maybe<string> => {
     return `otpauth://totp/${item.Name}:none?secret=${secret}`;
 };
 
-export const readRoboformData = async ({
-    data,
-    importUsername,
-}: {
-    data: string;
-    importUsername?: boolean;
-}): Promise<ImportPayload> => {
+export const readRoboformData = async ({ data }: { data: string }): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -86,7 +80,7 @@ export const readRoboformData = async ({
                     name: item.Name,
                     urls: [item.MatchUrl],
                     note: item.Note,
-                    ...(importUsername ? getEmailOrUsername(item.Login) : { email: item.Login }),
+                    ...getEmailOrUsername(item.Login),
                     password: item.Pwd,
                     totp: formatOtpAuthUri(item),
                 });
