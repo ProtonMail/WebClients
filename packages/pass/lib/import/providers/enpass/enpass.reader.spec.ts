@@ -12,22 +12,14 @@ describe('Import Enpass json', () => {
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/enpass.json', 'utf8');
-        payload = readEnpassData({ data: sourceData, importUsername: true });
+        payload = readEnpassData({ data: sourceData });
     });
 
     it('should throw on corrupted files', () => {
-        expect(() => readEnpassData({ data: 'not-a-json-body', importUsername: true })).toThrow(
-            'Enpass file could not be parsed.'
-        );
-        expect(() => readEnpassData({ data: '{ "items": null }', importUsername: true })).toThrow(
-            'File does not match expected format'
-        );
-        expect(() => readEnpassData({ data: '{ "items": {} }', importUsername: true })).toThrow(
-            'File does not match expected format'
-        );
-        expect(() => readEnpassData({ data: '{}', importUsername: true })).toThrow(
-            'File does not match expected format'
-        );
+        expect(() => readEnpassData({ data: 'not-a-json-body' })).toThrow('Enpass file could not be parsed.');
+        expect(() => readEnpassData({ data: '{ "items": null }' })).toThrow('File does not match expected format');
+        expect(() => readEnpassData({ data: '{ "items": {} }' })).toThrow('File does not match expected format');
+        expect(() => readEnpassData({ data: '{}' })).toThrow('File does not match expected format');
     });
 
     test('should correctly parse items', () => {

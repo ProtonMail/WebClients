@@ -26,11 +26,11 @@ import {
     formatLastPassCCExpirationDate,
 } from './lastpass.utils';
 
-const processLoginItem = (item: LastPassItem, importUsername?: boolean): ItemImportIntent<'login'> =>
+const processLoginItem = (item: LastPassItem): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.name,
         note: item.extra,
-        ...(importUsername ? getEmailOrUsername(item.username) : { email: item.username }),
+        ...getEmailOrUsername(item.username),
         password: item.password,
         urls: [item.url],
         totp: item.totp,
@@ -59,13 +59,7 @@ const processIdentityItem = (item: LastPassItem): ItemImportIntent<'identity'> =
         ...extractLastPassIdentity(item),
     });
 
-export const readLastPassData = async ({
-    data,
-    importUsername,
-}: {
-    data: string;
-    importUsername?: boolean;
-}): Promise<ImportPayload> => {
+export const readLastPassData = async ({ data }: { data: string }): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -99,7 +93,7 @@ export const readLastPassData = async ({
                     items: items
                         .map((item) => {
                             const isNote = item.url === 'http://sn';
-                            if (!isNote) return processLoginItem(item, importUsername);
+                            if (!isNote) return processLoginItem(item);
 
                             const noteType = extractLastPassFieldValue(item.extra, 'NoteType');
 

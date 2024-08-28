@@ -8,12 +8,12 @@ import { readDashlaneDataCSV } from './dashlane.csv.reader';
 
 const readCSVData = async (filename: string): Promise<ImportPayload> => {
     const sourceData = await fs.promises.readFile(__dirname + `/mocks/${filename}`, 'utf8');
-    return readDashlaneDataCSV({ data: sourceData, importUsername: true });
+    return readDashlaneDataCSV({ data: sourceData });
 };
 
 describe('Import Dashlane CSV', () => {
     test('should throw on invalid file content', async () => {
-        await expect(readDashlaneDataCSV({ data: 'not-a-csv-file', importUsername: true })).rejects.toThrow();
+        await expect(readDashlaneDataCSV({ data: 'not-a-csv-file' })).rejects.toThrow();
     });
 
     test('should correctly parse login items', async () => {

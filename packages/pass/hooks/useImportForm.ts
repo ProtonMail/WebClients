@@ -126,7 +126,6 @@ export const useImportForm = ({
                         passphrase: values.passphrase,
                         userId: user?.ID,
                         options: {
-                            importUsername: true,
                             currentAliases:
                                 values.provider === ImportProvider.PROTONPASS
                                     ? aliases.reduce((acc: string[], { aliasEmail }) => {

@@ -16,13 +16,7 @@ import type { SafariItem } from './safari.types';
  * so we only expect headers in common and not all of them, to avoid readCSV throwing an error */
 const SAFARI_EXPECTED_HEADERS: (keyof SafariItem)[] = ['Title', 'Username', 'Password'];
 
-export const readSafariData = async ({
-    data,
-    importUsername,
-}: {
-    data: string;
-    importUsername?: boolean;
-}): Promise<ImportPayload> => {
+export const readSafariData = async ({ data }: { data: string }): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -43,7 +37,7 @@ export const readSafariData = async ({
                             importLoginItem({
                                 name: item.Title,
                                 note: item.Notes,
-                                ...(importUsername ? getEmailOrUsername(item.Username) : { email: item.Username }),
+                                ...getEmailOrUsername(item.Username),
                                 password: item.Password,
                                 urls: [item.URL],
                                 totp: item.OTPAuth,

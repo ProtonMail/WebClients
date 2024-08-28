@@ -12,11 +12,11 @@ describe('Import Dashlane ZIP', () => {
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/dashlane.zip');
-        payload = await readDashlaneDataZIP({ data: sourceData, importUsername: true });
+        payload = await readDashlaneDataZIP({ data: sourceData });
     });
 
     test('should throw on invalid file content', async () => {
-        await expect(readDashlaneDataZIP({ data: new ArrayBuffer(1), importUsername: true })).rejects.toThrow();
+        await expect(readDashlaneDataZIP({ data: new ArrayBuffer(1) })).rejects.toThrow();
     });
 
     test('should correctly parse items', () => {
