@@ -12,6 +12,7 @@ import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 import diff from '@proton/utils/diff';
 
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
@@ -48,6 +49,7 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     mailSettings?: MailSettings;
     userSettings?: UserSettings;
     editorMetadata: EditorMetadata;
+    hasAttachments?: boolean;
 }
 
 const EditorWrapper = ({
@@ -65,6 +67,7 @@ const EditorWrapper = ({
     userSettings,
     editorMetadata,
     toolbarCustomRender,
+    hasAttachments,
 }: Props) => {
     const isMounted = useIsMounted();
     const skipNextInputRef = useRef(false); // Had trouble by using a state here
@@ -285,7 +288,7 @@ const EditorWrapper = ({
 
     return canRenderEditor ? (
         <Editor
-            editorToolbarClassname="mb-4 mx-6"
+            editorToolbarClassname={clsx(['mx-6', !hasAttachments && 'mb-4'])}
             editorClassname="px-6"
             metadata={editorMetadata}
             disabled={disabled}

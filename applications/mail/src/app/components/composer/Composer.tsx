@@ -454,17 +454,10 @@ const Composer = (
                                 ? createPortal(toolbar, toolbarWrapperRef.current)
                                 : null
                         }
+                        toolbarWrapperRef={toolbarWrapperRef}
+                        isAssistantExpanded={isAssistantExpanded}
                     />
                 </div>
-
-                {/* Used to display the toolbar below the composer*/}
-                {!metadata.isPlainText && (
-                    <div
-                        ref={toolbarWrapperRef}
-                        // @ts-ignore
-                        inert={isAssistantExpanded ? '' : undefined}
-                    />
-                )}
 
                 <ComposerActions
                     composerID={composerID}
