@@ -1,11 +1,13 @@
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms/Button';
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
+    SettingsLink,
     useSecurityCheckup,
 } from '@proton/components';
 
@@ -13,7 +15,7 @@ import Actions from './Actions';
 import RecoveryMethods, { showRecoveryMethods } from './RecoveryMethods';
 
 const RecommendedActions = () => {
-    const { actions, furtherActions, securityState } = useSecurityCheckup();
+    const { actions, furtherActions, securityState, backLink } = useSecurityCheckup();
 
     const actionsSet = new Set(actions);
     const filteredFurtherActions = furtherActions.filter((action) => !actionsSet.has(action));
@@ -55,6 +57,18 @@ const RecommendedActions = () => {
                 <div className="flex flex-column gap-2">
                     <h2 className="text-rg text-semibold">{c('Safety review').t`Your recovery methods`}</h2>
                     <RecoveryMethods />
+
+                    <ButtonLike
+                        className="mt-6 self-center"
+                        as={SettingsLink}
+                        path={'/recovery'}
+                        app={backLink?.appName}
+                        shape="ghost"
+                        color="norm"
+                        target="_self"
+                    >
+                        {c('Action').t`View recovery settings`}
+                    </ButtonLike>
                 </div>
             ) : null}
 

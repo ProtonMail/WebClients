@@ -59,6 +59,35 @@ describe('getBackLink', () => {
         });
     });
 
+    describe('appNameFromHostname', () => {
+        test('returns undefined appNameFromHostname for account hostname', () => {
+            const result = getBackLink({
+                backHref: 'https://account.proton.me',
+                hostname: 'account.proton.me',
+            });
+
+            expect(result.appNameFromHostname).toEqual(undefined);
+        });
+
+        test('returns undefined appNameFromHostname if hostname application is not in ALLOWED_APPS', () => {
+            const result = getBackLink({
+                backHref: 'https://verify.proton.me',
+                hostname: 'verify.proton.me',
+            });
+
+            expect(result.appNameFromHostname).toEqual(undefined);
+        });
+
+        test('returns correct appNameFromHostname if hostname application is in ALLOWED_APPS', () => {
+            const result = getBackLink({
+                backHref: 'https://mail.proton.me',
+                hostname: 'mail.proton.me',
+            });
+
+            expect(result.appNameFromHostname).toEqual('proton-mail');
+        });
+    });
+
     describe('appName', () => {
         test('returns undefined appName for account hostname', () => {
             const result = getBackLink({
@@ -86,35 +115,6 @@ describe('getBackLink', () => {
 
             expect(result.appName).toEqual('proton-mail');
         });
-    });
-
-    describe('logoAppName', () => {
-        test('returns undefined logoAppName for account hostname', () => {
-            const result = getBackLink({
-                backHref: 'https://account.proton.me',
-                hostname: 'account.proton.me',
-            });
-
-            expect(result.logoAppName).toEqual(undefined);
-        });
-
-        test('returns undefined logoAppName if hostname application is not in ALLOWED_APPS', () => {
-            const result = getBackLink({
-                backHref: 'https://verify.proton.me',
-                hostname: 'verify.proton.me',
-            });
-
-            expect(result.logoAppName).toEqual(undefined);
-        });
-
-        test('returns correct logoAppName if hostname application is in ALLOWED_APPS', () => {
-            const result = getBackLink({
-                backHref: 'https://mail.proton.me',
-                hostname: 'mail.proton.me',
-            });
-
-            expect(result.logoAppName).toEqual('proton-mail');
-        });
 
         test('prioritises hostname app over pathname app', () => {
             const result = getBackLink({
@@ -122,34 +122,34 @@ describe('getBackLink', () => {
                 hostname: 'mail.proton.me',
             });
 
-            expect(result.logoAppName).toEqual('proton-mail');
+            expect(result.appName).toEqual('proton-mail');
         });
 
-        test('returns undefined logoAppName if pathname application is not in ALLOWED_APPS', () => {
+        test('returns undefined appName if pathname application is not in ALLOWED_APPS', () => {
             const result = getBackLink({
                 backHref: 'https://account.proton.me/verify',
                 hostname: 'account.proton.me',
             });
 
-            expect(result.logoAppName).toEqual(undefined);
+            expect(result.appName).toEqual(undefined);
         });
 
-        test('returns correct logoAppName if hostname application is in ALLOWED_APPS', () => {
+        test('returns correct appName if hostname application is in ALLOWED_APPS', () => {
             const result = getBackLink({
                 backHref: 'https://account.proton.me/mail',
                 hostname: 'account.proton.me',
             });
 
-            expect(result.logoAppName).toEqual('proton-mail');
+            expect(result.appName).toEqual('proton-mail');
         });
 
-        test('returns correct logoAppName if local basename included', () => {
+        test('returns correct appName if local basename included', () => {
             const result = getBackLink({
                 backHref: 'https://account.proton.me/u/0/mail',
                 hostname: 'account.proton.me',
             });
 
-            expect(result.logoAppName).toEqual('proton-mail');
+            expect(result.appName).toEqual('proton-mail');
         });
     });
 });
