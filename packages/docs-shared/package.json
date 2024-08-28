@@ -11,7 +11,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@lexical/yjs": "0.17.1-nightly.20240823.0",
+    "@lexical/yjs": "0.17.1",
     "@proton/docs-proto": "workspace:^",
     "google-protobuf": "^3.21.4",
     "y-protocols": "^1.0.6",
