@@ -6716,7 +6716,7 @@ __metadata:
     react-sortable-hoc: "npm:^2.0.0"
     react-virtualized: "npm:^9.22.5"
     resize-observer: "npm:^1.0.4"
-    roosterjs: "npm:8.61.0"
+    roosterjs: "npm:8.47.0"
     tabbable: "npm:^6.2.0"
     tinycolor2: "npm:^1.6.0"
     ttag: "npm:^1.8.7"
@@ -37148,79 +37148,74 @@ __metadata:
   languageName: node
   linkType: hard
 
-"roosterjs-editor-api@npm:^8.61.0, roosterjs-editor-api@npm:^8.62.0":
-  version: 8.62.0
-  resolution: "roosterjs-editor-api@npm:8.62.0"
+"roosterjs-editor-api@npm:^8.47.0":
+  version: 8.47.0
+  resolution: "roosterjs-editor-api@npm:8.47.0"
   dependencies:
-    roosterjs-editor-dom: "npm:^8.62.0"
-    roosterjs-editor-types: "npm:^8.62.0"
-    tslib: "npm:^2.3.1"
-  checksum: 10c0/972cc0563523f2fc5ea962403453684adabc452b3a5b57a211fc86bb39ae47462e8bf2cffa951d62dc5f38fbaee806204994439c5488ed87ed8b74d37877703a
+    roosterjs-editor-dom: "npm:^8.47.0"
+    roosterjs-editor-types: "npm:^8.47.0"
+  checksum: 10c0/e326c6997436e8e9562fe0a60e75c4b7c74fc4a9a667506e8f857d51d5db8de968e9132639c14747e6182f9427b9f6c120c3f3e88d67a20bda63ecf59f6784a0
   languageName: node
   linkType: hard
 
-"roosterjs-editor-core@npm:^8.61.0":
-  version: 8.62.0
-  resolution: "roosterjs-editor-core@npm:8.62.0"
+"roosterjs-editor-core@npm:^8.47.0":
+  version: 8.47.0
+  resolution: "roosterjs-editor-core@npm:8.47.0"
   dependencies:
-    roosterjs-editor-dom: "npm:^8.62.0"
-    roosterjs-editor-types: "npm:^8.62.0"
-    tslib: "npm:^2.3.1"
-  checksum: 10c0/b3b8c5c8cd6373df4b52edf8c6da0c9c25b7c5bc4dfc2b2c2128581c50b40be6dfd3c659cce1c38f97e6d6302d2a77a5e4767576a30d190d742ebdc0e79186e9
+    roosterjs-editor-dom: "npm:^8.47.0"
+    roosterjs-editor-types: "npm:^8.47.0"
+  checksum: 10c0/9be5b69dc935180bef86e633141ba5372e5fe20961af48a64facc6a7a920f39ef5c891ef65fbfa4ec39e1ae320f3951c3c89d09510a15f7e7d98126018d87859
   languageName: node
   linkType: hard
 
-"roosterjs-editor-dom@npm:^8.61.0, roosterjs-editor-dom@npm:^8.62.0":
-  version: 8.62.0
-  resolution: "roosterjs-editor-dom@npm:8.62.0"
+"roosterjs-editor-dom@npm:^8.47.0":
+  version: 8.47.0
+  resolution: "roosterjs-editor-dom@npm:8.47.0"
   dependencies:
-    roosterjs-editor-types: "npm:^8.62.0"
-    tslib: "npm:^2.3.1"
-  checksum: 10c0/42520295cfd847dc3f0934d01b42cb1423735ac56a3f45743bf7638bb52f645d12d8d53ef3c19dfa7e4b521649384ebcb8a5b18c02bb60e25d49992761bf302d
+    roosterjs-editor-types: "npm:^8.47.0"
+  checksum: 10c0/c031ff015e81ce2a88c7a4d8218dc2b4e0a704b083a8d7ef11886705889682dba8b347d467d425df5dda5d3bd72f306b93a4aa9ea8231c87153fd6c514ae60fe
   languageName: node
   linkType: hard
 
-"roosterjs-editor-plugins@npm:^8.61.0":
-  version: 8.62.0
-  resolution: "roosterjs-editor-plugins@npm:8.62.0"
+"roosterjs-editor-plugins@npm:^8.47.0":
+  version: 8.47.0
+  resolution: "roosterjs-editor-plugins@npm:8.47.0"
   dependencies:
-    roosterjs-editor-api: "npm:^8.62.0"
-    roosterjs-editor-dom: "npm:^8.62.0"
-    roosterjs-editor-types: "npm:^8.62.0"
-    tslib: "npm:^2.3.1"
-  checksum: 10c0/903e23f13633d6135987372d13ca5ec24ef8dec2c6fb55026c97a95cd2791930d63f1b49d3832884721d27a8a484b92a8cd5d3d2b9938a9653473849d459416d
+    roosterjs-editor-api: "npm:^8.47.0"
+    roosterjs-editor-dom: "npm:^8.47.0"
+    roosterjs-editor-types: "npm:^8.47.0"
+  checksum: 10c0/5cdeb72844d835652ed5ae7a93542c2eedc3321d0682547c881ad5a8bd67ef67c9d247b078176fb42a7704e0fc978aaf6bb65c1d7c928e0e13e9bac669ec4dca
   languageName: node
   linkType: hard
 
-"roosterjs-editor-types-compatible@npm:^8.61.0":
-  version: 8.62.0
-  resolution: "roosterjs-editor-types-compatible@npm:8.62.0"
+"roosterjs-editor-types-compatible@npm:^8.47.0":
+  version: 8.47.0
+  resolution: "roosterjs-editor-types-compatible@npm:8.47.0"
   dependencies:
-    roosterjs-editor-types: "npm:^8.62.0"
-  checksum: 10c0/6a7cf984eb7eb577308ca620748cdbb4100c477733aa628a7ba8780fb8cad7d31ce02750354b2c7f185d60db799829a0ac8fa80f02933a0e8e6e5fe841ccffc9
+    roosterjs-editor-types: "npm:^8.47.0"
+  checksum: 10c0/f7190d5dc40ed5c7973999c73602c525681d460cd9a3f36d13ae9ada5a5be8807b9ba14b5b8e9a1ca401cc738874fa628b4a849a2fd7699f7b57832de3dcd824
   languageName: node
   linkType: hard
 
-"roosterjs-editor-types@npm:^8.61.0, roosterjs-editor-types@npm:^8.62.0":
-  version: 8.62.0
-  resolution: "roosterjs-editor-types@npm:8.62.0"
-  checksum: 10c0/2f3c2bc3c2ff9cbbd4f1d620380cde884f6578629ab030bb9a38275030cf5f33d6ca1bbd153de6c2fd5f5ebe07f878b73c6a581e7f11b012580e6b4569c6e446
+"roosterjs-editor-types@npm:^8.47.0":
+  version: 8.47.0
+  resolution: "roosterjs-editor-types@npm:8.47.0"
+  checksum: 10c0/8dcc3c68390ed6c3b0bbc26cea82565081ffa90700a3965ba84c9bbd8a2afa16c66172f394bed0bc13fb2e512c076dd38ac13a4f2b0649470d7ac46c646a490f
   languageName: node
   linkType: hard
 
-"roosterjs@npm:8.61.0":
-  version: 8.61.0
-  resolution: "roosterjs@npm:8.61.0"
+"roosterjs@npm:8.47.0":
+  version: 8.47.0
+  resolution: "roosterjs@npm:8.47.0"
   dependencies:
     roosterjs-color-utils: "npm:^1.1.0"
-    roosterjs-editor-api: "npm:^8.61.0"
-    roosterjs-editor-core: "npm:^8.61.0"
-    roosterjs-editor-dom: "npm:^8.61.0"
-    roosterjs-editor-plugins: "npm:^8.61.0"
-    roosterjs-editor-types: "npm:^8.61.0"
-    roosterjs-editor-types-compatible: "npm:^8.61.0"
-    tslib: "npm:^2.3.1"
-  checksum: 10c0/e448edb847577b00912c2f9c5fe136d37fd667ae55cb71c7a160d1494e73303bc3893797dd90074e1de5ce1c5d25652a6fa6d4504a349514e6dce5621384b748
+    roosterjs-editor-api: "npm:^8.47.0"
+    roosterjs-editor-core: "npm:^8.47.0"
+    roosterjs-editor-dom: "npm:^8.47.0"
+    roosterjs-editor-plugins: "npm:^8.47.0"
+    roosterjs-editor-types: "npm:^8.47.0"
+    roosterjs-editor-types-compatible: "npm:^8.47.0"
+  checksum: 10c0/b3c9b70e7dec2abe9b03d7182e53e1b0164e40b2d53a726cc199eedd0cf4088b1005719bc167a837215ad50a55686b821b2cbd2fe1663e3141d84cc9f9097a86
   languageName: node
   linkType: hard
 
@@ -40717,7 +40712,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.3.1, tslib@npm:^2.4.0, tslib@npm:^2.4.1, tslib@npm:^2.6.2, tslib@npm:^2.6.3":
+"tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.4.0, tslib@npm:^2.4.1, tslib@npm:^2.6.2, tslib@npm:^2.6.3":
   version: 2.6.3
   resolution: "tslib@npm:2.6.3"
   checksum: 10c0/2598aef53d9dbe711af75522464b2104724d6467b26a60f2bdac8297d2b5f1f6b86a71f61717384aa8fd897240467aaa7bcc36a0700a0faf751293d1331db39a
