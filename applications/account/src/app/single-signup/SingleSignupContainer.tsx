@@ -64,6 +64,7 @@ import Step1 from './Step1';
 import Step2 from './Step2';
 import Step3 from './Step3';
 import Step4 from './Step4';
+import { pushConvertGoal } from './convert';
 import { getUpsellShortPlan } from './helper';
 import onboardingVPNWelcome2 from './illustration.svg';
 import type { VPNSignupModel } from './interface';
@@ -359,7 +360,20 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             wait(3500),
         ]);
 
-        void measure(getSignupTelemetryData(model.plansMap, cache));
+        const signupFinishEvents = getSignupTelemetryData(model.plansMap, cache);
+        if (signupFinishEvents.dimensions.type === 'free') {
+            pushConvertGoal(['triggerConversion', '100464858']);
+        } else {
+            pushConvertGoal(['triggerConversion', '100464856']);
+            pushConvertGoal([
+                'pushRevenue',
+                `${signupFinishEvents.values.amount_charged}`,
+                `${signupFinishEvents.dimensions.plan}`,
+                '100464860',
+            ]);
+        }
+
+        void measure(signupFinishEvents);
 
         return result.cache;
     };
