@@ -1,8 +1,9 @@
-import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import { FeatureCode, useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 
-import { DriveFolder } from '../hooks/drive/useActiveShare';
+import type { DriveFolder } from '../hooks/drive/useActiveShare';
 import { useLinksListing } from '../store/_links';
 import { useDefaultShare } from '../store/_shares';
 import { sendErrorReport } from '../utils/errorHandling';

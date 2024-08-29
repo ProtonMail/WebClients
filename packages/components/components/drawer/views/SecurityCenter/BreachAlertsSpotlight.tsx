@@ -52,7 +52,7 @@ const BreachAlertsSpotlight = ({ children }: Props) => {
         displaySpotlight
     );
 
-    const shouldShowSpotlight = useSpotlightShow(show);
+    const shouldShowSpotlight = useSpotlightShow(show, 3000);
 
     return (
         <Spotlight

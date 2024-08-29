@@ -5,7 +5,12 @@
 	$arrow-width: 1em;
 
 	position: fixed;
-	z-index: map.get($z-indexes, 'tooltips');
+	z-index: map.get($z-indexes, 'spotlights');
+
+	&--is-above-modal {
+		z-index: calc(#{map.get($z-indexes, 'modals')} + 1);
+	}
+
 	min-inline-size: 10em;
 	max-inline-size: 25em;
 	transform: scale(1);

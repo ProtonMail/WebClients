@@ -78,6 +78,7 @@ const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Pro
                 show={shouldShowColorSpotlight}
                 originalPlacement="right"
                 onDisplayed={onDisplayed}
+                isAboveModal
             >
                 <div className="shrink-0">
                     <ColorPicker

@@ -3,7 +3,7 @@ import { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Spotlight } from '@proton/components/components';
+import { Spotlight, useSpotlightShow } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
 import { useSpotlightOnFeature, useUser } from '@proton/components/hooks';
 import { useAssistant } from '@proton/llm/lib';
@@ -34,10 +34,11 @@ const ComposerAssistantInitialSetupSpotlight = forwardRef<ComposerAssistantIniti
     ({ children, anchorRef }, ref) => {
         const [user] = useUser();
         // Do not show spotlight to free users since they cannot download the model
-        const { show, onDisplayed: onDisplayedComposerSpotlight } = useSpotlightOnFeature(
+        const { show: showSpotlightFeature, onDisplayed: onDisplayedComposerSpotlight } = useSpotlightOnFeature(
             FeatureCode.ComposerAssistantInitialSetup,
             !user.isFree
         );
+        const show = useSpotlightShow(showSpotlightFeature);
         const { isModelLoadedOnGPU } = useAssistant();
         const [showSpotlight, setShowSpotlight] = useState(false);
 
