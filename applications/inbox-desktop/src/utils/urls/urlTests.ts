@@ -58,7 +58,7 @@ const isCalendarHome = (urlString: string) => {
             return false;
         }
 
-        return url.pathname === "" || url.pathname === "/" || /^\/u\/(\d+)\/?$/.test(url.pathname);
+        return /^\/u\/(\d+)\/?$/.test(url.pathname); // /u/0;
     } catch (error) {
         return false;
     }
@@ -74,14 +74,16 @@ const isMailHome = (urlString: string) => {
         }
 
         return (
-            url.pathname === "" ||
-            url.pathname === "/" ||
             /^\/u\/(\d+)\/?$/.test(url.pathname) || // /u/0
             /^\/u\/(\d+)\/inbox\/?$/.test(url.pathname) // /u/0/inbox
         );
     } catch (error) {
         return false;
     }
+};
+
+export const isHome = (urlString: string) => {
+    return isMailHome(urlString) || isCalendarHome(urlString);
 };
 
 export const isAccount = (urlString: string) => {
@@ -174,7 +176,7 @@ export const isHostAllowed = (host: string) => {
                 return url.host === hostURl.host;
             });
     } catch (error) {
-        mainLogger.error("isHostAllowed", error);
+        mainLogger.error("isHostAllowed", host, error);
         return false;
     }
 };

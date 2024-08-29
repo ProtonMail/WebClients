@@ -2,8 +2,7 @@ import { app, Menu, shell, type MenuItemConstructorOptions } from "electron";
 import { c } from "ttag";
 import { uninstallProton } from "../../macos/uninstall";
 import { clearStorage, isMac } from "../helpers";
-import { getMainWindow, getSpellCheckStatus, toggleSpellCheck } from "../view/viewManagement";
-import { areDevToolsAvailable } from "../view/windowHelpers";
+import { getMainWindow, getSpellCheckStatus, resetZoom, toggleSpellCheck, updateZoom } from "../view/viewManagement";
 import { isProdEnv } from "../config";
 
 type MenuKey = "app" | "file" | "edit" | "view" | "window";
@@ -64,7 +63,7 @@ export const setApplicationMenu = () => {
                 { role: "cut" },
                 { role: "copy" },
                 { role: "paste" },
-                { role: "pasteAndMatchStyle", accelerator: isMac ? "Cmd+Shift+V" : "Ctrl+Shift+V" },
+                { role: "pasteAndMatchStyle", accelerator: "CmdOrCtrl+Shift+V" },
                 { role: "selectAll" },
                 {
                     label: c("App menu").t`Check spelling while typing`,
@@ -82,7 +81,7 @@ export const setApplicationMenu = () => {
             submenu: [
                 {
                     label: c("App menu").t`Reload`,
-                    accelerator: isMac ? "Cmd+R" : "Ctrl+R",
+                    accelerator: "CmdOrCtrl+R",
                     click: () => {
                         const mainWindow = getMainWindow();
                         if (mainWindow) {
@@ -97,7 +96,7 @@ export const setApplicationMenu = () => {
                 },
                 {
                     label: c("App menu").t`Force Reload`,
-                    accelerator: isMac ? "Cmd+Shift+R" : "Ctrl+Shift+R",
+                    accelerator: "CmdOrCtrl+Shift+R",
                     click: () => {
                         const mainWindow = getMainWindow();
                         if (mainWindow) {
@@ -111,9 +110,9 @@ export const setApplicationMenu = () => {
                     },
                 },
                 { type: "separator" },
-                { role: "resetZoom" },
-                { role: "zoomIn" },
-                { role: "zoomOut" },
+                { label: c("App menu").t`Actual Size`, accelerator: "CmdOrCtrl+0", click: resetZoom },
+                { label: c("App menu").t`Zoom In`, accelerator: "CmdOrCtrl+Plus", click: () => updateZoom("in") },
+                { label: c("App menu").t`Zoom Out`, accelerator: "CmdOrCtrl+-", click: () => updateZoom("out") },
                 { type: "separator" },
                 { role: "togglefullscreen" },
             ],
@@ -177,31 +176,6 @@ export const setApplicationMenu = () => {
             },
         ],
     });
-
-    if (areDevToolsAvailable()) {
-        insertInMenu({
-            menu: temp,
-            key: "view",
-            allOSEntries: [
-                { type: "separator" },
-                {
-                    label: c("App menu").t`Toggle developers tools`,
-                    accelerator: isMac ? "Cmd+Alt+I" : "Ctrl+Shift+I",
-                    click: () => {
-                        const mainWindow = getMainWindow();
-                        if (mainWindow) {
-                            const view = mainWindow.getBrowserView();
-                            if (view) {
-                                view.webContents.toggleDevTools();
-                            } else {
-                                mainWindow.webContents.toggleDevTools();
-                            }
-                        }
-                    },
-                },
-            ],
-        });
-    }
 
     const menu = Menu.buildFromTemplate(temp);
     Menu.setApplicationMenu(menu);

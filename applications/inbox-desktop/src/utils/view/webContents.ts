@@ -5,6 +5,7 @@ import {
     isAccountSwitch,
     isAccoutLite,
     isCalendar,
+    isHome,
     isHostAllowed,
     isMail,
     isUpgradeURL,
@@ -16,6 +17,8 @@ import {
     getCurrentView,
     getMailView,
     getWebContentsViewName,
+    resetHiddenViews,
+    getZoom,
     showView,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
@@ -32,12 +35,40 @@ export function handleWebContents(contents: WebContents) {
         }
     };
 
+    const isCurrentContent = () => {
+        return getCurrentView()!.webContents === contents;
+    };
+
     const preventDefault = (ev: Electron.Event) => {
         ev.preventDefault();
     };
 
+    contents.on("did-navigate", (ev, url) => {
+        log("did-navigate", url);
+
+        if (isHostAllowed(url)) {
+            // We need to ensure that the zoom is consistent for all URLs.
+            // Currently electron stores the zoom factor for each URL (this is chromium's behavior)
+            // and it is not able to have a default zoom factor (lack of API).
+            log("did-navigate set zoom factor to", getZoom());
+            contents.setZoomFactor(getZoom());
+        }
+
+        if (!isCurrentContent()) {
+            return;
+        }
+
+        if (isHome(url)) {
+            resetHiddenViews({ toHomepage: true });
+        }
+    });
+
     contents.on("did-navigate-in-page", (ev, url) => {
         log("did-navigate-in-page", url);
+
+        if (!isCurrentContent()) {
+            return;
+        }
 
         if (!isHostAllowed(url)) {
             return preventDefault(ev);
@@ -45,6 +76,10 @@ export function handleWebContents(contents: WebContents) {
 
         if (isAccountSwitch(url)) {
             resetBadge();
+        }
+
+        if (isHome(url)) {
+            resetHiddenViews({ toHomepage: true });
         }
 
         // This is used to redirect users to the external browser for internal upgrade modals
@@ -64,7 +99,7 @@ export function handleWebContents(contents: WebContents) {
 
         // Only redirect to a different browser view if the navigation is happening in
         // the visible web contents.
-        if (getCurrentView()!.webContents === contents) {
+        if (isCurrentContent()) {
             if (isAccount(details.url) && !isAccountAuthorize(details.url) && getCurrentView() !== getAccountView()) {
                 showView("account", details.url);
                 return preventDefault(details);
