@@ -179,30 +179,30 @@ export const WalletCreationModal = ({ theme, isFirstCreation, onWalletCreate, ..
                     </Collapsible>
                 )}
 
+                <div className="w-full flex flex-row gap-2">
+                    <Button
+                        fullWidth
+                        size="large"
+                        shape="solid"
+                        color="norm"
+                        disabled={loadingWalletSubmit}
+                        onClick={() => {
+                            void onWalletSubmit({ isFirstCreation });
+                        }}
+                    >{c('Wallet setup').t`Create new wallet`}</Button>
+                    <Button
+                        fullWidth
+                        className="text-semibold"
+                        size="large"
+                        shape="ghost"
+                        color="norm"
+                        disabled={loadingWalletSubmit}
+                        onClick={() => {
+                            setWalletImportModal(true);
+                        }}
+                    >{c('Wallet setup').t`Import wallet`}</Button>
+                </div>
                 <ModalTwoFooter className="prompt-footer">
-                    <div className="w-full flex flex-row gap-2">
-                        <Button
-                            fullWidth
-                            size="large"
-                            shape="solid"
-                            color="norm"
-                            disabled={loadingWalletSubmit}
-                            onClick={() => {
-                                void onWalletSubmit({ isFirstCreation });
-                            }}
-                        >{c('Wallet setup').t`Create new wallet`}</Button>
-                        <Button
-                            fullWidth
-                            className="text-semibold"
-                            size="large"
-                            shape="ghost"
-                            color="norm"
-                            disabled={loadingWalletSubmit}
-                            onClick={() => {
-                                setWalletImportModal(true);
-                            }}
-                        >{c('Wallet setup').t`Import wallet`}</Button>
-                    </div>
                     {walletSettings.AcceptTermsAndConditions ? undefined : (
                         <p className="color-weak text-break text-center text-sm">{getTermAndConditionsSentence()}</p>
                     )}
