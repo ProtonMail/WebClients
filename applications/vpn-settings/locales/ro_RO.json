@@ -6110,15 +6110,6 @@
       "From ${ price }": [
         "De la ${ price }"
       ],
-      "Get started for $1": [
-        "Începeți cu 1 $"
-      ],
-      "Get started for 1 €": [
-        "Începeți cu 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Începeți cu 1 CHF"
-      ],
       "Upgrade": [
         "Modificare"
       ],
@@ -6397,9 +6388,6 @@
       "GDPR data processing agreement": [
         "Acordul de prelucrare a datelor GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Generați mesaje cu doar o solicitare"
-      ],
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
       ],
@@ -6461,9 +6449,6 @@
       ],
       "Priority support & live chat": [
         "Asistență prioritară și conversații live"
-      ],
-      "Proofread and refine your texts": [
-        "Corectați și îmbunătățiți textul"
       ],
       "Protect ${ n } device at a time": [
         "Protejare ${ n } dispozitiv",
@@ -6749,14 +6734,6 @@
         "termenii și condițiile"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -6769,6 +6746,14 @@
       ],
       "Switch plans?": [
         "Schimbare planuri?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {

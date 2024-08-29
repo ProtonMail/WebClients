@@ -44,6 +44,12 @@
       "Allow": [
         "Engedélyezés"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Végpontok közt titkosított e-mail küldése a csoportnak"
+      ],
+      "Always allow sending": [
+        "Bármikor küldhető"
+      ],
       "Apply": [
         "Alkalmazás"
       ],
@@ -175,6 +181,9 @@
       ],
       "Discard changes": [
         "Módosítások elvetése"
+      ],
+      "Domain name": [
+        "Domain név"
       ],
       "Done": [
         "Kész"
@@ -310,6 +319,9 @@
       ],
       "Loading verification": [
         "Ellenőrzés folyamatban"
+      ],
+      "Lost access to your 2FA device?": [
+        "Elvesztette a kétlépcsős hitelesítési eszközét?"
       ],
       "Make admin": [
         "Átállítás adminisztrátornak"
@@ -569,6 +581,12 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Próbálja újra. Sikertelen mentés oka: ${ saveError }"
       ],
+      "Turn off": [
+        "Kikapcsolás"
+      ],
+      "Turn on": [
+        "Bekapcsolás"
+      ],
       "Unlock": [
         "Feloldás"
       ],
@@ -598,6 +616,9 @@
       ],
       "Use authentication code": [
         "Hitelesítő kód használata"
+      ],
+      "Use group permissions": [
+        "Csoport jogosultságok használata"
       ],
       "Use recovery code": [
         "Helyreállító kód használata"
@@ -1915,6 +1936,9 @@
       "${ name } failed to move to spam list": [
         "${ name } áthelyezése a levélszemét listára nem sikerült"
       ],
+      "${ name } moved to allow list": [
+        "${ name } áthelyezve az engedélyezettekhez"
+      ],
       "${ name } moved to block list": [
         "${ name } áthelyezve a tiltólistára"
       ],
@@ -1971,11 +1995,17 @@
       "${ name } deletion failed": [
         "${ name } törlése nem sikerült"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } áthelyezése nem sikerült az engedélyezettekhez"
+      ],
       "${ name } failed to move to block list": [
         "${ name } áthelyezése a tiltott listára nem sikerült"
       ],
       "${ name } failed to move to spam list": [
         "${ name } áthelyezése a levélszemét listára nem sikerült"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } áthelyezve az engedélyezettekhez"
       ],
       "${ name } moved to block list": [
         "${ name } áthelyezve a tiltólistára"
@@ -1990,6 +2020,11 @@
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Az ellenőrző e-mailt elküldtük erre a címre: ${ address }"
+      ]
+    },
+    "Empty group name": {
+      "Unnamed": [
+        "Névtelen"
       ]
     },
     "eoy2023: Deal details": {
@@ -2034,6 +2069,9 @@
       "Email address is invalid": [
         "Az e-mail cím érvénytelen"
       ],
+      "Email address is not available": [
+        "Az e-mail cím nem érhető el"
+      ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
       ],
@@ -2043,14 +2081,26 @@
       "Error connecting to the Bitcoin API.": [
         "Hiba a Bitcoin API-ra csatlakozás közben."
       ],
+      "Failed to process the logo": [
+        "A logó feldolgozása nem sikerült"
+      ],
+      "File too large. Your logo must be 30 KB or smaller.": [
+        "A fájl túl nagy. A logó maximum 30 KB lehet."
+      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Ha a TV készüléken a számláló lejárt, kattintson a Frissítés gombra a TV-n, és adja meg újra a kódot."
+      ],
+      "Incorrect file type. Upload a file in PNG or JPEG format.": [
+        "Érvénytelen fájltípus. PNG vagy JPG formátumú fájlt töltsön fel."
       ],
       "Incorrect login credentials. Please try again.": [
         "Helytelen bejelentkezési adatok. Próbálja meg újra."
       ],
       "Incorrect password": [
         "Hibás jelszó"
+      ],
+      "Incorrect second password. Please try again.": [
+        "Hibás második jelszó. Próbálja meg újra."
       ],
       "Incorrect username": [
         "Helytelen felhasználónév"
@@ -2094,6 +2144,12 @@
       "Organization key is not decrypted": [
         "A szervezeti kulcs nincs visszafejtve"
       ],
+      "Organization key must be activated to create invited users": [
+        "A szervezeti kulcsot aktiválni kell, meghívott felhasználók létrehozásához"
+      ],
+      "Organization key must be activated to create non-private users": [
+        "A szervezeti kulcsot aktiválni kell, nem-privát felhasználók létrehozásához"
+      ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
       ],
@@ -2111,6 +2167,9 @@
       ],
       "Payments are currently not available, please try again later": [
         "Fizetés jelenleg nem lehetséges, kérjük, próbálja meg később"
+      ],
+      "Please configure a custom domain before adding addresses.": [
+        "Címek létrehozása előtt, állítson be egy saját domain nevet."
       ],
       "Please configure a custom domain before adding users to your organization.": [
         "Vegyen fel egy saját domain nevet, mielőtt felhasználókat venne fel a szervezethez."
@@ -2136,6 +2195,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Váltson egy üzleti csomagra, egynél több felhasználval, hogy több felhasználót kezelhessen."
       ],
+      "Please upload a square file": [
+        "Egy négyzet alakú képet töltsön fel"
+      ],
       "Process aborted": [
         "Folyamat megszakítva"
       ],
@@ -2157,6 +2219,12 @@
       "The email addresses do not match": [
         "Az e-mail címek nem egyeznek"
       ],
+      "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
+        "A kép túl nagy. Legfeljebb ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS } méret lehetséges"
+      ],
+      "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
+        "A kép túl kicsi. Legalább ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS } méret szükséges"
+      ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Legalább ${ price } kredit feltöltése szükséges"
       ],
@@ -2171,6 +2239,9 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
+        "Nem-privát felhasználói fiókok létrehozásához és eléréshez, helyre kell állítania az adminisztrátori jogosultságát."
       ],
       "Try again later": [
         "Próbálja meg később"
@@ -2373,9 +2444,32 @@
         "Család"
       ]
     },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organizationName }": [
+        "${ member.Name } eltávolítva a(z) ${ organizationName } szervezetből"
+      ],
+      "An error occurred, please try again": [
+        "Hiba történt, próbálja meg újra"
+      ],
+      "Member updated": [
+        "Tag frissítve"
+      ]
+    },
     "familyOffer_2023:Title": {
+      "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
+        "Felhasználó hozzáadása a ${ PLAN_NAMES.visionary2022 } fiókjához"
+      ],
       "Delete organization?": [
         "Szervezet törlése?"
+      ],
+      "Edit user storage": [
+        "Felhasználó tárhelyének szerkesztése"
+      ],
+      "Invite a user": [
+        "Felhasználó meghívása"
+      ],
+      "Manage family group": [
+        "Családi csoport szerkesztése"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -2554,6 +2648,21 @@
       ],
       "Spam:": [
         "Levélszemét:"
+      ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Határozza meg az alábbi listák létrehozásával, hogy mi kerülhessen a szervezet tagjainak levelesládájába:"
+      ],
+      "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
+        "Ezek a listák a szervezet összes fiókjára vonatkoznak. A tagok készíthetnek saját szűrőket is, de nem tudják felülbírálni az Ön által letiltott domain neveket vagy címeket."
+      ],
+      "To ensure critical messages don't end up in spam and getting missed": [
+        "Hogy fontos levelek semmiképpen se kerülhessenek észrevétlenül a levélszemétbe"
+      ],
+      "To prevent junk mail from clogging up inboxes": [
+        "Hogy a levélszemét ne halmozódjon fel a bejövő levelei közt"
+      ],
+      "To stop phishing or suspicious emails from entering your organization's email system": [
+        "A gyanús és adathalász e-mailek megállításához a szervezet levelezőrendszere előtt"
       ]
     },
     "Font face option": {
@@ -2821,6 +2930,9 @@
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolatok (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
       ],
+      "2FA disabled": [
+        "Kétlépcsős hitelesítés kikapcsolva"
+      ],
       "30-day money-back guarantee": [
         "30 napos pénz-visszafizetési garancia"
       ],
@@ -2829,6 +2941,9 @@
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "A(z) ${ protonSubdomain } domain nevet a ${ BRAND_NAME } tárolja, így gyorsan létrehozhat egy aldomain nevet. ${ learnMoreLink }"
+      ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Csoportok létrehozásához saját domain név szükséges. Ha nincs saját domain neve beállítva, kezdjen azzal a ${ linkToDomainPage } részen."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Egy név, ami segít azonosítani, hogy hol használja, így később könnyedén visszavonhatja vagy kiterjesztheti."
@@ -2878,6 +2993,9 @@
       ],
       "All Events ": [
         "Minden esemény "
+      ],
+      "All members have been added.": [
+        "Minden tag hozzáadva."
       ],
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
@@ -3029,6 +3147,9 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
       ],
+      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
+        "A kétlépcsős hitelesítés kikapcsolása csökkenti a fiókja biztonságát. Csak akkor folytassa, ha feltétlen szükséges."
+      ],
       "Discover ProtectBuy logo": [
         "Fedezze fel a ProtectBuy-t logó"
       ],
@@ -3162,8 +3283,17 @@
       "Gateways": [
         "Átjárók"
       ],
+      "Gateways monitoring is disabled.": [
+        "Átjárók figyelése ki van kapcsolva."
+      ],
+      "Gateways monitoring is enabled.": [
+        "Átjárók figyelése be van kapcsolva."
+      ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } beszerzése"
+      ],
+      "Group deleted": [
+        "Csoport törölve"
       ],
       "here": [
         "ide"
@@ -3251,6 +3381,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Telepítsen egy szerverkonfigurációs fájlt, ha egy adott szerverhez szeretne kapcsolódni a választott országban."
+      ],
+      "Internal user": [
+        "Belső felhasználó"
       ],
       "Internet connection lost": [
         "Az internetkapcsolat megszakadt"
@@ -3392,6 +3525,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } betöltése"
+      ],
+      "Loading gateways monitoring current status.": [
+        "Az aktuális állapotot figyelő átjárók betöltése."
       ],
       "Loading preview": [
         "Előnézet betöltése"
@@ -3780,6 +3916,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Ez néhány másodpercet vagy néhány percet is igénybe vehet"
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Ez a változás 1 órán belül teljes mértékben megjelenik az infrastruktúrájában"
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Ez eltarthat egy ideig. Ne zárja be ezt az oldalt és ne kapcsolódjon le az internetről."
       ],
@@ -3794,6 +3933,9 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Az ellenőrzés akár egy órát is igénybe vehet. A sikeres ellenőrzés után se távolítsa el a TXT rekordot, annak megerősítésére, hogy továbbra is öné a domain név."
+      ],
+      "This will disable two-factor authentication, including both the authenticator app and security key methods.": [
+        "Ez kikapcsolja a kétlépcsős hitelesítést, mind hitelesítő alkalmazással, mind pedig hitelesítési kulccsal."
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ez lehetővé teszi, hogy a ${ BRAND_NAME } előfizetését PayPallal fizesse. A tranzakció befejezéséhez átirányításra kerül a PayPalhoz egy új böngészőfülön. A folytatáshoz engedélyezze a felugró ablakokat."
@@ -3879,6 +4021,9 @@
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "A két jelszavas mód különválasztja a bejelentkezési jelszót és az adatok titkosításához használt jelszót. Ez egy kis biztonsági előnnyel járhat bizonyos esetekben, de a legtöbb felhasználónak inkább az egy jelszavas módot javasoljuk. A két jelszavas módra váltáshoz, először adja meg a bejelentkezési jelszót és aztán pedig az második jelszót."
       ],
+      "Unable to check gateways monitoring current status.": [
+        "Az aktuális állapotot figyelő átjárók ellenőrzése nem sikerült."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Sajnos, nincs helyreállítási módszer beállítva ehhez a fiókhoz."
       ],
@@ -3905,6 +4050,9 @@
       ],
       "Upload your organization’s logo to boost your brand identity and create a personalized experience for your users.": [
         "Töltse fel a szervezet logóját a márkanév erősítéséhez, és igazítsa igényeihez a megjelenést a felhasználói számára."
+      ],
+      "Use a recovery method to disable your two-factor authentication methods.": [
+        "Tiltsa le a kétlépcsős hitelesítést az egyik helyreállítási módszerével."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Használja a legjobb szervert, jelenlegi terhelés és pozíció szerint: ${ formattedBestServerName }"
@@ -4043,6 +4191,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Egy titkosított ${ BRAND_NAME } címmel hozzáférhet az összes ${ BRAND_NAME } szolgáltatáshoz"
+      ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Csoportok segítségével könnyen küldhet egyszerre e-mailt egy adott csoportba tartozó személyeknek."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Aktiválás nélkül nem fog tudni új felhasználókat létrehozni, címeket felvenni meglévő felhasználókhoz, vagy nem-privát fiókokat elérni."
@@ -4308,6 +4459,12 @@
       ],
       "Account storage": [
         "Fiók tárhely"
+      ],
+      "Add all organization members": [
+        "A szervezet összes tagjának hozzáadása"
+      ],
+      "Add group member": [
+        "Csoport tag hozzáadása"
       ],
       "Address": [
         "Cím"
@@ -5128,6 +5285,9 @@
       "Administration Panel": [
         "Adminisztrációs panel"
       ],
+      "Advanced network security": [
+        "Fejlett hálózati biztonság"
+      ],
       "Auto-delete Spam and Trash": [
         "Levélszemét és lomtár automatikus törlése"
       ],
@@ -5142,6 +5302,9 @@
       ],
       "Automatic email forwarding": [
         "Automatikus e-mail továbbítás"
+      ],
+      "Available on all platforms": [
+        "Minden platformon elérhető"
       ],
       "Calendar sharing": [
         "Naptár megosztás"
@@ -5209,8 +5372,14 @@
       "Fast P2P/BitTorrent downloads": [
         "Gyors P2P/BitTorrent letöltések"
       ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "A ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME } ingyenes funkciói"
+      ],
       "Free VPN on a single device": [
         "Ingyenes VPN egy eszközön"
+      ],
+      "Fully refundable for 30 days": [
+        "30 napig teljesen visszaigényelhető"
       ],
       "GDPR data processing agreement": [
         "GDPR adatfeldolgozói megállapodás"
@@ -5468,16 +5637,11 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "A \"Fizetés\" gombra kattintással elfogadja a ${ termsAndConditions }et."
+      ],
       "terms and conditions": [
         "felhasználási feltételek"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: title": {
@@ -5492,6 +5656,14 @@
       ],
       "Switch plans?": [
         "Csomag váltása?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -5788,6 +5960,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Csomag megtartása"
+      ],
       "Start using ${ appName }": [
         "${ appName } használatának megkezdése"
       ],
@@ -5843,11 +6018,74 @@
       ]
     },
     "passwordless": {
+      "Are you sure you want to change your organization key?": [
+        "Biztos, hogy megváltoztatja a szervezeti kulcsot?"
+      ],
+      "Non-private users can be promoted to admin when they have setup keys": [
+        "Nem-privát felhasználók akkor kaphatnak adminisztrátori jogot, ha van beállítási kulcsuk"
+      ],
+      "Organization key activated": [
+        "Szervezeti kulcs aktiválva"
+      ],
+      "Organization key does not exist.": [
+        "A szervezeti kulcs nem létezik."
+      ],
+      "Organization key restored": [
+        "Szervezeti kulcs helyreállítva"
+      ],
+      "Organization key updated": [
+        "Szervezeti kulcs frissítve"
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Hozzáférés megtagadva, adminisztrátori jogok korlátozásra kerültek."
       ],
+      "Please ensure they have an enabled address and invite them separately later.": [
+        "Ellenőrzze, hogy van-e bekapcsolt címük és hívja meg külön később."
+      ],
+      "Private users can be promoted to admin when they've signed in for the first time": [
+        "Privát felhasználók akkor kaphatnak adminisztrátori jogot, ha már legalább egyszer beléptek"
+      ],
+      "Reset organization key": [
+        "Szervezeti kulcs visszaállítása"
+      ],
+      "The following administrators could not be restored.": [
+        "Az alábbi adminisztrátorok helyreállítása nem sikerült."
+      ],
+      "The following administrators will get access to the organization key.": [
+        "Az alábbi adminisztrátorok kapnak elérést a szervezeti kulcshoz."
+      ],
       "The organization key must be activated first.": [
         "Először a szervezeti kulcs aktiválása szükséges."
+      ],
+      "This will send the latest organization key to the administrators that currently don't have access to it.": [
+        "Ez elküldi a legfrissebb szervezeti kulcsot azoknak az adminisztrátoroknak, akik jelenleg nem érik el."
+      ],
+      "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
+        "Nem-privát felhasználói fiókok létrehozásához és eléréshez, aktiválnia kell a szervezeti kulcsát."
+      ],
+      "To enable administrator rights on your account, activate the organization key.": [
+        "Aktiválja a szervezeti kulcsot, hogy adminisztrátor jogot engedélyezhessen a fiókján."
+      ],
+      "Use a data recovery method or reset the organization key to restore administrator privileges.": [
+        "Az adminisztrátori jogok helyreállításához használjon egy helyreállítási módszert vagy állítsa vissza a szervezeti kulcsot."
+      ],
+      "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
+        "Az adminisztrátori jogok helyreállításához használjon egy helyreállítási módszert, lépjen kapcsolatba egy másik adminisztrátorral, vagy állítsa vissza a szervezeti kulcsot."
+      ],
+      "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
+        "Nem sikerült ellenőrizni a feladó cím kulcsának hitelességét. Esetenként késedelem lehet a feladó adatainak frissülésében. Próbálja meg később. Ha nem bízik meg a feladó vagy a meghívó hitelességében, vegye fel a kapcsolatot a ${ BRAND_NAME } ügyfélszolgálattal."
+      ],
+      "We have verified the authenticity of this sender and invitation.": [
+        "Ellenőriztük a feladó és a meghívó hitelességét."
+      ],
+      "You have been made administrator of the organization **${ organizationName }** by": [
+        "A(z) **${ organizationName }** szervezet adminisztrátorává tette"
+      ],
+      "You must privatize all users before generating a new organization key": [
+        "Az összes felhasználót privátra kell állítani, mielőtt egy új szervezeti kulcsot hozna létre"
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "A művelet végrehajtásához a szervezeti kulcs elérésére van szüksége."
       ]
     },
     "Payment method option": {
@@ -6012,6 +6250,9 @@
       ],
       "Verify now": [
         "Ellenőrzés most"
+      ],
+      "Verify now this recovery email address: ${ email.Value }": [
+        "Most erősítse meg ezt a helyreállítási e-mail címet: ${ email.Value }"
       ],
       "Verify recovery email?": [
         "Helyreállító e-mail megerősítése?"
@@ -6877,6 +7118,18 @@
       "Organization activated": [
         "Szervezet aktiválva"
       ],
+      "Organization identity updated": [
+        "Szervezet azonosítója frissítve"
+      ],
+      "Organization logo removed": [
+        "Szervezet logója eltávolítva"
+      ],
+      "Organization logo updated": [
+        "Szervezet logója frissítve"
+      ],
+      "Organization name updated": [
+        "Szervezet neve frissítve"
+      ],
       "Password copied to clipboard": [
         "Jelszó a vágólapra másolva"
       ],
@@ -7206,6 +7459,12 @@
       "Connection events": [
         "Kapcsolódási események"
       ],
+      "Connection monitor disabled": [
+        "Kapcsolat figyelés kikapcsolva"
+      ],
+      "Connection monitor enabled": [
+        "Kapcsolat figyelés bekapcsolva"
+      ],
       "Contact us": [
         "Kapcsolatfelvétel"
       ],
@@ -7267,6 +7526,9 @@
       ],
       "Disable two-factor authentication": [
         "Kétlépcsős hitelesítés kikapcsolása"
+      ],
+      "Disable two-factor authentication?": [
+        "Kétlépcsős hitelesítés kikapcsolása?"
       ],
       "Discard changes?": [
         "Módosítások elvetése?"
@@ -7449,6 +7711,9 @@
       "Processing...": [
         "Folyamatban..."
       ],
+      "QRCode": [
+        "QR-kód"
+      ],
       "Recommended": [
         "Javasolt"
       ],
@@ -7542,6 +7807,9 @@
       ],
       "Switch to two-password mode": [
         "Két jelszavas módra váltás"
+      ],
+      "Text": [
+        "Szöveg"
       ],
       "There are no groups": [
         "Nincsenek csoportok"
