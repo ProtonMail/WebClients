@@ -2,7 +2,6 @@ import { Notification, app, session } from "electron";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
-import { saveWindowBounds } from "./store/boundsStore";
 import { saveAppID } from "./store/idStore";
 import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
@@ -159,14 +158,13 @@ import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
         });
     }
 
-    // Only used on macOS to save the windows position when CMD+Q is used
     app.on("before-quit", () => {
         const mainWindow = getMainWindow();
-        if (!mainWindow || !isMac || updateDownloaded) {
+
+        if (!mainWindow || mainWindow.isDestroyed() || updateDownloaded) {
             return;
         }
 
-        saveWindowBounds(mainWindow);
         mainWindow.destroy();
     });
 
