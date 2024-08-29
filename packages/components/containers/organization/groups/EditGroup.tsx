@@ -32,7 +32,7 @@ import { NewGroupMemberInput } from './NewGroupMemberInput';
 import { NewGroupMemberItem } from './NewGroupMemberItem';
 import E2EEToggle from './components/E2EEToggle';
 import { getAddressSuggestedLocalPart } from './helpers';
-import useClickOutsidePanel from './hooks/useClickOutsidePanel';
+import useTriggerDiscardModal from './hooks/useTriggerDiscardModal';
 import type { GroupsManagementReturn } from './types';
 
 interface Props {
@@ -87,7 +87,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
 
     const changeDetected = dirty || !!newGroupMembers.length;
 
-    useClickOutsidePanel(panelRef, () => {
+    useTriggerDiscardModal(() => {
         if (changeDetected) {
             setDiscardChangesModal(true);
         }
