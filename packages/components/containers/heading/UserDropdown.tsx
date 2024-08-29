@@ -142,7 +142,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
         FeatureCode.ReferralProgramSpotlight,
         !!referralProgramFeature?.Value && !!userSettings?.Referral?.Eligible && subscriptionStartedThirtyDaysAgo
     );
-    const shouldShowSpotlight = useSpotlightShow(showSpotlight);
+    const shouldShowSpotlight = useSpotlightShow(showSpotlight, 3000);
 
     const { createNotification, hideNotification } = useNotifications();
     const handleCopyEmail = () => {

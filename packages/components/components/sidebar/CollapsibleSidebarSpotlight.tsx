@@ -41,7 +41,7 @@ const CollapsibleSidebarSpotlight = ({ children, app, isAskUpdateTimezoneModalOp
 
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(feature, displaySpotlight);
 
-    const shouldShowSpotlight = useSpotlightShow(show);
+    const shouldShowSpotlight = useSpotlightShow(show, 3000);
 
     return (
         <Spotlight
