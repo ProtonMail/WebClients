@@ -93,9 +93,6 @@
       "Add to group": [
         "Adăugare la grup"
       ],
-      "Adds it below your existing message": [
-        "Adaugă-l sub mesajul existent"
-      ],
       "Align center": [
         "Centrare"
       ],
@@ -836,10 +833,10 @@
       "Not saved": [
         "Nesalvat"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1093,9 +1090,6 @@
       ],
       "send auto-reply email": [
         "trimitere răspuns automat"
-      ],
-      "Send feedback": [
-        "Trimitere feedback"
       ],
       "Send read receipt": [
         "Trimitere confirmare de citire"
@@ -3486,9 +3480,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Trageți și plasați prioritatea de îmbinare dintre contacte. Debifați contactele pe care nu doriți să le îmbinați."
       ],
-      "Use the writing assistant to:": [
-        "Utilizați asistentul de scriere pentru a:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Nu am găsit instrumente de urmărire și adrese URL cunoscute în acest e-mail."
       ],
@@ -4592,11 +4583,6 @@
         "Imagine neselectată"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Scorul este obligatoriu"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Nu se poate trimite invitația către ${ email }. ${ errorMessage }"
@@ -4800,11 +4786,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Experiența personală"
       ]
     },
     "fido2: Error": {
@@ -6085,9 +6066,6 @@
       "Country code": [
         "Cod țară"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Creați e-mailuri mai bune, rapid și fără efort. Încercați acum."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Creare un calendar",
         "Creare ${ calendarsToBeCreatedCount } calendare",
@@ -6335,9 +6313,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pentru mai multe rezultate, încercați să căutați în conținutul mesajelor."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Gratuit pentru ${ ASSISTANT_TRIAL_TIME_DAYS } zile"
-      ],
       "From": [
         "De la"
       ],
@@ -6485,9 +6460,6 @@
       ],
       "Learn more": [
         "Detalii"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Aflați mai multe despre asistentul de scriere din ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "De la stânga la dreapta"
@@ -7953,12 +7925,6 @@
       "Automatically save contacts": [
         "Salvare automată contacte"
       ],
-      "Awful": [
-        "Îngrozitoare"
-      ],
-      "Bad": [
-        "Rea"
-      ],
       "BCC": [
         "Ca"
       ],
@@ -8145,14 +8111,8 @@
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
-      "Good": [
-        "Bună"
-      ],
       "Hide password": [
         "Ascundere parolă"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Cum ați descrie experiența cu noul ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Înțeleg riscul"
@@ -8255,9 +8215,6 @@
       ],
       "Notification": [
         "Notificare"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Deschidere într-o filă nouă"
@@ -8429,9 +8386,6 @@
       ],
       "Without attachment": [
         "Fără atașamente"
-      ],
-      "Wonderful": [
-        "Minunată"
       ],
       "Writing assistant": [
         "Asistent de scriere"
@@ -9095,15 +9049,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Începeți cu 1 $"
-      ],
-      "Get started for 1 €": [
-        "Începeți cu 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Începeți cu 1 CHF"
-      ],
       "Upgrade now": [
         "Modificare"
       ]
@@ -9367,9 +9312,6 @@
       "GDPR data processing agreement": [
         "Acordul de prelucrare a datelor GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Generați mesaje cu doar o solicitare"
-      ],
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
       ],
@@ -9425,9 +9367,6 @@
       ],
       "Priority support & live chat": [
         "Asistență prioritară și conversații live"
-      ],
-      "Proofread and refine your texts": [
-        "Corectați și îmbunătățiți textul"
       ],
       "Protect ${ n } device at a time": [
         "Protejare ${ n } dispozitiv",
@@ -9668,16 +9607,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Povestiți-ne despre experiența avută. (opțional)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Feedback"
       ]
     },
     "new_plans: title": {
@@ -12212,11 +12141,6 @@
         "${ label.Name } a fost eliminată"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Mesajul a fost trimis"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/lună"
@@ -12698,9 +12622,6 @@
       "External encryption": [
         "Criptare externă"
       ],
-      "Feedback": [
-        "Feedback"
-      ],
       "Filter name cannot contain only spaces": [
         "Numele filtrului nu poate conține doar spații"
       ],
@@ -12993,9 +12914,6 @@
       ],
       "Send email": [
         "Trimitere e-mail"
-      ],
-      "Send feedback": [
-        "Trimitere feedback"
       ],
       "Send with changed preferences?": [
         "Trimitere cu preferințele schimbate?"
