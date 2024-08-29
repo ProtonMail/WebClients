@@ -772,11 +772,11 @@
       "Not saved": [
         "Não guardado"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Aceitar"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Abrir"
@@ -1014,9 +1014,6 @@
       ],
       "send auto-reply email": [
         "enviar resposta automática"
-      ],
-      "Send feedback": [
-        "Enviar comentários"
       ],
       "Send read receipt": [
         "Enviar recibo de leitura"
@@ -4220,11 +4217,6 @@
         "Nenhuma imagem selecionada"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Avaliação necessária"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Não é possível enviar o convite para ${ email }. ${ errorMessage }"
@@ -4407,11 +4399,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui sincronização automática, partilha de ficheiros encriptados e muito mais."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Os seus comentários"
       ]
     },
     "fido2: Error": {
@@ -7289,12 +7276,6 @@
       "Automatically save contacts": [
         "Guardar contactos automaticamente"
       ],
-      "Awful": [
-        "Horrível"
-      ],
-      "Bad": [
-        "Mau"
-      ],
       "BCC": [
         "BCC"
       ],
@@ -7475,14 +7456,8 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
-      "Good": [
-        "Bom"
-      ],
       "Hide password": [
         "Ocultar a palavra-passe"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Como descreveria a sua experiência com o novo ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Eu compreendo o risco."
@@ -7582,9 +7557,6 @@
       ],
       "Notification": [
         "Notificação"
-      ],
-      "OK": [
-        "Aceitar"
       ],
       "Open in a new tab": [
         "Abrir num novo separador"
@@ -7750,9 +7722,6 @@
       ],
       "Without attachment": [
         "Sem anexo"
-      ],
-      "Wonderful": [
-        "Maravilhoso"
       ],
       "Your alias": [
         "O seu alias"
@@ -8799,16 +8768,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Conte-nos a sua experiência. (Opcional)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Comentários"
       ]
     },
     "new_plans: title": {
@@ -10761,11 +10720,6 @@
         "${ label.Name } removida"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Comentário enviado"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/mês"
@@ -11209,9 +11163,6 @@
       "External encryption": [
         "Encriptação externa"
       ],
-      "Feedback": [
-        "Comentários"
-      ],
       "Filter name cannot contain only spaces": [
         "O nome do filtro não pode conter apenas espaços"
       ],
@@ -11497,9 +11448,6 @@
       ],
       "Send email": [
         "Enviar um e-mail"
-      ],
-      "Send feedback": [
-        "Enviar comentários"
       ],
       "Send with changed preferences?": [
         "Enviar com preferências alteradas?"

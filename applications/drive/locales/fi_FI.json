@@ -744,9 +744,6 @@
       "Select country": [
         "Valitse maa"
       ],
-      "Send feedback": [
-        "Lähetä palautetta"
-      ],
       "Set recovery phrase": [
         "Aseta palautuslauseke"
       ],
@@ -3220,11 +3217,6 @@
         "Kuvaa ei valittu"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Pisteytys vaaditaan"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Liitetyn ICS-tiedoston salausta ei voitu purkaa"
@@ -3429,11 +3421,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. automaattisen synkronoinnin ja salatun tiedostojen jakamisen."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Palautteesi"
       ]
     },
     "fido2: Error": {
@@ -5612,12 +5599,6 @@
       "Automatically save contacts": [
         "Tallenna yhteystiedot automaattisesti"
       ],
-      "Awful": [
-        "Surkea"
-      ],
-      "Bad": [
-        "Huono"
-      ],
       "Beta Access": [
         "Käytä beetaversiota"
       ],
@@ -5817,14 +5798,8 @@
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
       ],
-      "Good": [
-        "Hyvä"
-      ],
       "Hide password": [
         "Piilota salasana"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Miten kuvailisit kokemustasi uuden ${ BRAND_NAME }in parissa?"
       ],
       "I understand the risk": [
         "Ymmärrän riskin"
@@ -5915,9 +5890,6 @@
       ],
       "Notification": [
         "Ilmoitus"
-      ],
-      "OK": [
-        "OK"
       ],
       "Operating system": [
         "Käyttöjärjestelmä"
@@ -6104,9 +6076,6 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Mikä on suurin syy tilauksen lopetukseen tai alennukseen?"
-      ],
-      "Wonderful": [
-        "Erinomainen"
       ],
       "Yes, I want to permanently delete my old files": [
         "Kyllä, haluan poistaa vanhat tiedostoni pysyvästi"
@@ -6323,7 +6292,7 @@
         "Tyhjennä roskaposti ja roskakori automaattisesti"
       ],
       "Custom schedule send and snooze times": [
-        "Aseta mukautetut lähetys- ja torkutusajat"
+        "Omat lähetys- ja torkutusajat"
       ],
       "Support for 1 custom email domain": [
         "1 oma sähköpostiverkkotunnus"
@@ -6602,15 +6571,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Aloitushinta: $1"
-      ],
-      "Get started for 1 €": [
-        "Aloitushinta: 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Aloitushinta: CHF 1"
-      ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
       ]
@@ -6857,9 +6817,6 @@
       "GDPR data processing agreement": [
         "GDPR-tietojenkäsittelysopimus"
       ],
-      "Generate emails with only a prompt": [
-        "Luo sähköposteja pelkällä kehotteella"
-      ],
       "Group management (coming soon)": [
         "Ryhmähallinta (tulossa pian)"
       ],
@@ -6915,9 +6872,6 @@
       "Priority support & live chat": [
         "Ensisijainen tuki ja live-chat"
       ],
-      "Proofread and refine your texts": [
-        "Oikolue ja paranna kirjoitustasi"
-      ],
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
@@ -6938,7 +6892,7 @@
         "Tee sähköpostittelusta nopeampaa"
       ],
       "Schedule and snooze emails for any time": [
-        "Ajoita ja torkuta sähköpostit milloin tahansa"
+        "Ajoita viestien lähetys tai torkutus mihin tahansa"
       ],
       "Schedule messages at any time": [
         "Ajoita viestit lähtemään milloin tahansa"
@@ -7059,7 +7013,7 @@
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain2 } uutiskirjeille"
       ],
       "Snooze messages and get reminded when you want": [
-        "Torkuta viestejä ja saa muistutuksia kun haluat"
+        "Torkuta viestejä ja saa muistutus haluamaasi aikaan"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
@@ -7154,16 +7108,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Kerro kokemuksestasi. (Valinnainen)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Palaute"
       ]
     },
     "new_plans: title": {
@@ -8840,7 +8784,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Käyttöjärjestelmä: ${ totalPrice }"
+        "Hintaan ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -8993,7 +8937,7 @@
         "Kattava yksityisyys ja suojaus"
       ],
       "Custom schedule send and snooze times": [
-        "Mukautetut lähetys- ja torkutusajat"
+        "Vapaavalintaiset lähetys- ja torkutusajat"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Työpöytäsovellus- ja sähköpostiohjelmatuki (IMAPin kautta)"
@@ -9329,11 +9273,6 @@
       ],
       "You have successfully unsubscribed": [
         "Tilauksesi on lopetettu"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Palaute lähetettiin"
       ]
     },
     "Suffix": {
@@ -9720,9 +9659,6 @@
       "Failed": [
         "Epäonnistuneet"
       ],
-      "Feedback": [
-        "Palaute"
-      ],
       "File details": [
         "Tiedoston tiedot"
       ],
@@ -9931,9 +9867,6 @@
       ],
       "Select link expiration time": [
         "Valitse linkin erääntymisaika"
-      ],
-      "Send feedback": [
-        "Lähetä palautetta"
       ],
       "Set recovery phrase": [
         "Aseta palautuslauseke"

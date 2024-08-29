@@ -90,9 +90,6 @@
       "Add to group": [
         "Dodaj v skupino"
       ],
-      "Adds it below your existing message": [
-        "Dodaj ga pod obstoječe sporočilo"
-      ],
       "Align center": [
         "Poravnaj na sredino"
       ],
@@ -831,10 +828,10 @@
       "Not saved": [
         "Ni shranjeno"
       ],
-      "Ok": [
+      "OK": [
         "V redu"
       ],
-      "OK": [
+      "Ok": [
         "V redu"
       ],
       "Open": [
@@ -1088,9 +1085,6 @@
       ],
       "send auto-reply email": [
         "pošlji samodejni odgovor"
-      ],
-      "Send feedback": [
-        "Pošlji povratne informacije"
       ],
       "Send read receipt": [
         "Pošlji potrdilo o branju"
@@ -4549,11 +4543,6 @@
         "Izbrana ni nobena slika"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Ocena je obvezna"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Povabila na ${ email } ni bilo mogoče poslati. ${ errorMessage }"
@@ -4745,11 +4734,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zaščitite vaše datoteke s šifrirano shrambo v oblaku. Vključuje samodejno sinhronizacijo, šifrirano delitev datotek in drugo."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Vaše povratne informacije"
       ]
     },
     "fido2: Error": {
@@ -6481,9 +6465,6 @@
       "Learn more": [
         "Več o tem"
       ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Izvedite več o pomočniku pri pisanju ${ BRAND_NAME }"
-      ],
       "Left to Right": [
         "Z leve proti desni"
       ],
@@ -7951,12 +7932,6 @@
       "Automatically save contacts": [
         "Samodejno shrani stike"
       ],
-      "Awful": [
-        "Neznosno"
-      ],
-      "Bad": [
-        "Slabo"
-      ],
       "BCC": [
         "Skp"
       ],
@@ -8140,14 +8115,8 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
-      "Good": [
-        "Dobro"
-      ],
       "Hide password": [
         "Skrij geslo"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Kako bi opisali svojo izkušnjo z novo storitvijo ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Razumem tveganje"
@@ -8247,9 +8216,6 @@
       ],
       "Notification": [
         "Obvestilo"
-      ],
-      "OK": [
-        "V redu"
       ],
       "Open in a new tab": [
         "Odpri v novem zavihku"
@@ -8418,9 +8384,6 @@
       ],
       "Without attachment": [
         "Brez priponk"
-      ],
-      "Wonderful": [
-        "Čudovito"
       ],
       "Your alias": [
         "Vaš vzdevek"
@@ -9086,15 +9049,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Zmanjšanje paketa na ${ downgradedPlanName }."
       ],
-      "Get started for $1": [
-        "Začnite za 1 USD"
-      ],
-      "Get started for 1 €": [
-        "Začnite za 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Začnite za 1 CHF"
-      ],
       "Upgrade now": [
         "Nadgradi zdaj"
       ]
@@ -9345,9 +9299,6 @@
       "GDPR data processing agreement": [
         "GDPR pogodba o obdelavi podatkov"
       ],
-      "Generate emails with only a prompt": [
-        "Ustvarite e-pošto samo s pozivom"
-      ],
       "Group management (coming soon)": [
         "Upravljanje skupin (kmalu)"
       ],
@@ -9401,9 +9352,6 @@
       ],
       "Priority support & live chat": [
         "Prednostna podpora in klepet v živo"
-      ],
-      "Proofread and refine your texts": [
-        "Lektorirajte in izboljšajte svoja besedila"
       ],
       "Protect ${ n } device at a time": [
         "Zaščitite ${ n } napravo hkrati.",
@@ -9626,16 +9574,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Uživate v promocijski ceni na vašem trenutnem paketu. Če boste zmanjšali svoj paket, boste izgubili promocijsko ceno in ta ne bo na voljo, če se poskusite ponovno naročiti."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Povejte nam o svojih izkušnjah. (Neobvezno)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Povratne informacije"
       ]
     },
     "new_plans: title": {
@@ -12080,11 +12018,6 @@
         "${ label.Name } odstranjen"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Povratne informacije so poslane"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/mesec"
@@ -12577,9 +12510,6 @@
       "External encryption": [
         "Zunanje šifriranje"
       ],
-      "Feedback": [
-        "Povratne informacije"
-      ],
       "Filter name cannot contain only spaces": [
         "Ime filtra ne more biti sestavljeno le iz presledkov"
       ],
@@ -12870,9 +12800,6 @@
       ],
       "Send email": [
         "Pošlji sporočilo"
-      ],
-      "Send feedback": [
-        "Pošlji povratne informacije"
       ],
       "Send with changed preferences?": [
         "Pošlji s spremenjenimi nastavitvami?"

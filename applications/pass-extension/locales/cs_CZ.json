@@ -933,6 +933,9 @@
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Při spouštění ${ PASS_SHORT_APP_NAME } jsme narazili na problém. Pokud tento problém přetrvává, kontaktujte prosím naši zákaznickou podporu."
       ],
+      "Wrong extra password": [
+        "Chybné dodatečné heslo"
+      ],
       "Wrong password": [
         "Nesprávné heslo"
       ],
@@ -1052,6 +1055,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky, platební karty a identity."
+      ],
       "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
         "${ PASS_APP_NAME } vás vyzve, jakmile se vygenerovaná hesla automaticky vyplní."
       ],
@@ -1096,6 +1102,9 @@
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Přístup k ${ PASS_APP_NAME } bude vždy vyžadovat vaše ${ BRAND_NAME } heslo."
+      ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Přístup k ${ PASS_APP_NAME } bude vyžadovat váš otisk prstu nebo PIN zařízení."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Pomocí našich mobilních aplikací přistupujte ke svým heslům i na cestách."
@@ -1147,6 +1156,12 @@
       ],
       "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
         "Před exportem dat v tomto formátu otevřete nastavení Safari -> záložku \"Obecné\" -> vypněte možnost \"Bezpečné soubory po stažení otevírat\". Tím zabráníte tomu, aby Safari nesprávně extrahoval exportovaný soubor."
+      ],
+      "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "Zamykání pomocí biometrie bylo úspěšně registrováno. Použijte ji k odemknutí ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometrie bude deaktivována a bude potřeba ji znovu povolit."
       ],
       "Built in 2FA authenticator": [
         "Vestavěný autentizátor 2FA"
@@ -1252,6 +1267,12 @@
       ],
       "Enable auto-locking to secure your data": [
         "Povolte automatické zamykání pro ochranu vašich dat"
+      ],
+      "Enabling biometrics auto-lock": [
+        "Povolení automatického zamykání biometrií"
+      ],
+      "Enabling biometrics lock failed": [
+        "Povolování zamykání biometrií selhalo"
       ],
       "Enabling offline mode...": [
         "Povolování režimu offline..."
@@ -1460,6 +1481,9 @@
       "Offline support successfully disabled": [
         "Podpora offline byla úspěšně vypnuta"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Online přístup k ${ PASS_APP_NAME } bude vyžadovat PIN kód. Budete odhlášeni po 3 neúspěšných pokusech."
+      ],
       "Open the Extensions menu": [
         "Otevřít menu rozšíření"
       ],
@@ -1505,8 +1529,20 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Potvrďte prosím své ${ BRAND_NAME } heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }."
       ],
+      "Please confirm your extra password": [
+        "Prosím potvrďte vaše dodatečné heslo"
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Pro automatické zamykání vaším dodatečným heslem prosím potvrďte své dodatečné heslo."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Pro aktualizaci času automatického zamykání prosím potvrďte své dodatečné heslo."
+      ],
       "Please confirm your password": [
         "Potvrďte prosím své heslo"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Pro automatické zamykání pomocí biometrie prosím potvrďte své heslo."
       ],
       "Please confirm your password in order to auto-lock with your password.": [
         "Pro automatické zamykání vaším heslem prosím potvrďte své heslo."
@@ -1546,6 +1582,12 @@
       ],
       "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
         "Chráněno naším pokročilým programem na ochranu účtů ${ PROTON_SENTINEL_LINK }"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "Rychlé vyplnění vašich tokenů 2FA."
+      ],
+      "Quickly autofill your identities.": [
+        "Rychlé vyplnění vašich identit."
       ],
       "Registering extra password...": [
         "Registrování dodatečného hesla..."
@@ -1603,6 +1645,9 @@
       ],
       "Session timed out": [
         "Relace vypršela"
+      ],
+      "Set by your organization": [
+        "Nastaveno vaší organizací"
       ],
       "Settings successfully updated": [
         "Nastavení bylo úspěšně aktualizováno"
@@ -1667,6 +1712,9 @@
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
         "Tento export bude nešifrovaný a kdokoli s přístupem k exportovanému souboru bude moci zobrazit vaše hesla. Z bezpečnostních důvodů jej po ukončení používání odstraňte."
       ],
+      "This option is currently not available on your device.": [
+        "Tato možnost není ve vašem zařízení aktuálně k dispozici."
+      ],
       "This setting is disabled on the organization level": [
         "Tato volba je na úrovni organizace deaktivována"
       ],
@@ -1694,6 +1742,9 @@
       "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
         "Pro uložení tohoto přístupového klíče, odemkněte ${ PASS_APP_NAME } pomocí vašeho PIN kódu"
       ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí biometrie"
+      ],
       "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
         "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí vašeho hesla ${ BRAND_NAME }"
       ],
@@ -1702,6 +1753,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Odemkněte ji pomocí PIN kódu pro přístup k nastavením"
+      ],
+      "Unlock with biometrics": [
+        "Odemykání pomocí biometrie"
       ],
       "Unpinning item...": [
         "Odepínání položky..."
@@ -1801,6 +1855,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Vaše organizace vyžaduje, abyste zabezpečili svůj přístup k ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
@@ -1855,8 +1912,14 @@
       "15 minutes": [
         "15 minut"
       ],
+      "2 minutes": [
+        "2 minuty"
+      ],
       "24 hours": [
         "24 hodin"
+      ],
+      "2FA autofill": [
+        "Automatické vyplnění 2FA"
       ],
       "2FA secret key (TOTP)": [
         "Klíč 2FA secret (TOTP)"
@@ -1939,6 +2002,9 @@
       "Autosuggest": [
         "Automatické doporučení"
       ],
+      "Biometrics": [
+        "Biometrie"
+      ],
       "Birthdate": [
         "Datum narození"
       ],
@@ -2019,6 +2085,9 @@
       ],
       "Display": [
         "Zobrazení"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Zobrazit ikonu ${ PASS_APP_NAME } v automaticky vyplnitelných polích"
       ],
       "Domain": [
         "Doména"
@@ -2109,6 +2178,9 @@
       ],
       "Identity": [
         "Identita"
+      ],
+      "Identity autofill": [
+        "Automatické vyplnění identity"
       ],
       "Import": [
         "Import"
@@ -2416,8 +2488,14 @@
       "Unlock ${ PASS_APP_NAME }": [
         "Odemknout ${ PASS_APP_NAME }"
       ],
+      "Unlock with": [
+        "Odemknout pomocí"
+      ],
       "Unnamed Credit Card": [
         "Nepojmenovaná platební karta"
+      ],
+      "Unnamed identity": [
+        "Nepojmenovaná identita"
       ],
       "Unnamed item": [
         "Nepojmenovaná položka"
@@ -2662,6 +2740,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Užíváte si ${ PASS_APP_NAME }?"
       ],
+      "Enter your extra password": [
+        "Zadejte své dodatečné heslo"
+      ],
       "Enter your password": [
         "Zadejte Vaše heslo"
       ],
@@ -2876,6 +2957,9 @@
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Je vyžadováno heslo ${ BRAND_NAME }"
+      ],
       "A description of the problem is required": [
         "Je vyžadován popis problému"
       ],
@@ -2914,6 +2998,9 @@
       ],
       "Extra password cannot be empty": [
         "Dodatečné heslo nemůže být prázdné"
+      ],
+      "Extra password is required": [
+        "Je vyžadováno dodatečné heslo"
       ],
       "Extra password should have at least 8 characters": [
         "Dodatečné heslo by mělo mít alespoň 8 znaků"

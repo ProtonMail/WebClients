@@ -6161,15 +6161,6 @@
       "From ${ price }": [
         "Ад ${ price }"
       ],
-      "Get started for $1": [
-        "Пачніце за 1 $"
-      ],
-      "Get started for 1 €": [
-        "Пачніце за 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Пачніце за 1 CHF"
-      ],
       "Upgrade": [
         "Палепшыць"
       ],
@@ -6465,9 +6456,6 @@
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Генерыраваць лісты толькі з запытам"
-      ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
       ],
@@ -6530,9 +6518,6 @@
       ],
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
-      ],
-      "Proofread and refine your texts": [
-        "Вычытка і ўдасканаленне вашага тэксту"
       ],
       "Protect ${ n } device at a time": [
         "Абараніць ${ n } прыладу адначасова",
@@ -6822,14 +6807,6 @@
         "ўмовамі выкарыстання"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -6842,6 +6819,14 @@
       ],
       "Switch plans?": [
         "Змяніць тарыфны план?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {

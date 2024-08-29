@@ -93,9 +93,6 @@
       "Add to group": [
         "Добавить в группу"
       ],
-      "Adds it below your existing message": [
-        "Добавляет его под вашим сообщением"
-      ],
       "Align center": [
         "Выровнять по центру"
       ],
@@ -840,10 +837,10 @@
       "Not saved": [
         "Не сохранено"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1097,9 +1094,6 @@
       ],
       "send auto-reply email": [
         "отправить автоответ"
-      ],
-      "Send feedback": [
-        "Отправить отзыв"
       ],
       "Send read receipt": [
         "Отправить уведомление о прочтении"
@@ -3505,9 +3499,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Перетаскивайте контакты, чтобы задавать им приоритет при объединении. Снимите галочку с контактов, которые вы не хотите объединять."
       ],
-      "Use the writing assistant to:": [
-        "Используйте помощник по написанию для:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Мы не нашли никаких известных трекеров и отслеживающих ссылок в этом сообщении."
       ],
@@ -4625,11 +4616,6 @@
         "Изображение не выбрано"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Оценка обязательна"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Не могу отправить уведомление на ${ email }. ${ errorMessage }"
@@ -4833,11 +4819,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Используйте автоматическую синхронизацию, зашифрованный обмен файлами и многое другое."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Ваш отзыв"
       ]
     },
     "fido2: Error": {
@@ -6182,9 +6163,6 @@
       "Country code": [
         "Код страны"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Пишите письма лучше, быстро и просто. Попробуйте сейчас."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Создать ${ calendarsToBeCreatedCount } новый календарь",
         "Создать ${ calendarsToBeCreatedCount } новых календаря",
@@ -6440,9 +6418,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Для получения дополнительных результатов поиска попробуйте искать это ключевое слово в содержимом ваших электронных сообщений."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Бесплатно ${ ASSISTANT_TRIAL_TIME_DAYS } дней"
-      ],
       "From": [
         "От"
       ],
@@ -6592,9 +6567,6 @@
       ],
       "Learn more": [
         "Узнать больше"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Подробнее о помощнике по написанию ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Слева направо"
@@ -8086,12 +8058,6 @@
       "Automatically save contacts": [
         "Автоматическое сохранение контактов"
       ],
-      "Awful": [
-        "Ужасно"
-      ],
-      "Bad": [
-        "Плохо"
-      ],
       "BCC": [
         "Cкрытая копия"
       ],
@@ -8278,14 +8244,8 @@
       "From: ${ fromEmail }": [
         "От: ${ fromEmail }"
       ],
-      "Good": [
-        "Хорошо"
-      ],
       "Hide password": [
         "Скрыть пароль"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Как бы вы описали свой опыт использования нового ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Я понимаю риск"
@@ -8388,9 +8348,6 @@
       ],
       "Notification": [
         "Уведомление"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Открыть в новой вкладке"
@@ -8562,9 +8519,6 @@
       ],
       "Without attachment": [
         "Без вложения"
-      ],
-      "Wonderful": [
-        "Прекрасно"
       ],
       "Writing assistant": [
         "Помощник по написанию"
@@ -9236,15 +9190,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Начать с $1"
-      ],
-      "Get started for 1 €": [
-        "Начать с 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Начните с CHF 1"
-      ],
       "Upgrade now": [
         "Улучшить сейчас"
       ]
@@ -9525,9 +9470,6 @@
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Генерировать письма только с запросом"
-      ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
@@ -9584,9 +9526,6 @@
       ],
       "Priority support & live chat": [
         "Приоритетная поддержка и живой чат"
-      ],
-      "Proofread and refine your texts": [
-        "Вычитывайте и дорабатывайте свои тексты"
       ],
       "Protect ${ n } device at a time": [
         "Защитите ${ n } устройство за раз",
@@ -9830,16 +9769,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Расскажите нам о вашем опыте (необязательно)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Обратная связь"
       ]
     },
     "new_plans: title": {
@@ -12443,11 +12372,6 @@
         "${ label.Name } удалён"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Отзыв отправлен"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/месяц"
@@ -12943,9 +12867,6 @@
       "External encryption": [
         "Внешнее шифрование"
       ],
-      "Feedback": [
-        "Отзыв"
-      ],
       "Filter name cannot contain only spaces": [
         "В имени фильтра не могут быть только пробелы"
       ],
@@ -13239,9 +13160,6 @@
       ],
       "Send email": [
         "Отправить электронное письмо"
-      ],
-      "Send feedback": [
-        "Отправить отзыв"
       ],
       "Send with changed preferences?": [
         "Отправить с изменёнными настройками?"

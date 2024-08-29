@@ -93,9 +93,6 @@
       "Add to group": [
         "Lisää ryhmään"
       ],
-      "Adds it below your existing message": [
-        "Lisää sen olemassa olevan viestin alle"
-      ],
       "Align center": [
         "Keskitä"
       ],
@@ -689,7 +686,7 @@
         "Hallitse tunnisteita"
       ],
       "Manage Snooze": [
-        "Hallinnoi torkutusta"
+        "Hallitse torkutusta"
       ],
       "Mark as read": [
         "Merkitse luetuksi"
@@ -832,10 +829,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1089,9 +1086,6 @@
       ],
       "send auto-reply email": [
         "lähetä automaattivastaus"
-      ],
-      "Send feedback": [
-        "Lähetä palautetta"
       ],
       "Send read receipt": [
         "Lähetä lukukuittaus"
@@ -3467,9 +3461,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
-      "Use the writing assistant to:": [
-        "Käytä kirjoitusavustajaa:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Emme löytäneet tästä sähköpostiviestistä mitään tunnettuja seurantoja tai seurantaan käytettäviä URL-osoitteita."
       ],
@@ -4559,11 +4550,6 @@
         "Kuvaa ei valittu"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Pisteytys vaaditaan"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Kutsua ei voida lähettää osoitteeseen ${ email }. ${ errorMessage }"
@@ -4767,11 +4753,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. automaattisen synkronoinnin ja salatun tiedostojen jakamisen."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Palautteesi"
       ]
     },
     "fido2: Error": {
@@ -5827,7 +5808,7 @@
         "Toinen vinkki näytetään seuraavalla kerralla, kun avaat Mailin"
       ],
       "Any scheduled or snoozed messages will be canceled.": [
-        "Kaikki ajoitetut tai torkutetut viestit perutaan."
+        "Kaikki viestien ajoitetut lähetykset tai torkutukset perutaan."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Myös kaikki alikansiot poistetaan. Kansioon ${ nameDeleted } tallennettuja sähköpostiviestejä ei kuitenkaan poisteta, vaan ne löytyvät \"Kaikki viestit\" -kansiosta."
@@ -5987,9 +5968,6 @@
       ],
       "Country code": [
         "Maakoodi"
-      ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Laadi parempia sähköposteja nopeasti ja vaivattomasti. Kokeile sitä nyt."
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Luo ${ calendarsToBeCreatedCount } uusi kalenteri",
@@ -6230,9 +6208,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Jos haluat enemmän hakutuloksia, kokeile etsiä tätä avainsanaa myös sähköpostiviestien sisällöstä"
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Ilmainen ${ ASSISTANT_TRIAL_TIME_DAYS } päivän ajan"
-      ],
       "From": [
         "Lähettäjä"
       ],
@@ -6378,9 +6353,6 @@
       ],
       "Learn more": [
         "Lue lisää"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Lue lisää ${ BRAND_NAME } -kirjoitusavustajasta"
       ],
       "Left to Right": [
         "Vasemmalta oikealle"
@@ -6805,16 +6777,16 @@
         "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
       ],
       "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Torkutettu ${ dateString } kello ${ formattedTime } asti"
+        "Torkutettu: ${ dateString } klo ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
-        "Torkutettu tähän päivään asti, ${ formattedTime }"
+        "Torkutettu: tänään klo ${ formattedTime }"
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
-        "Torkutettu huomiseen asti, ${ formattedTime }"
+        "Torkutettu: huomenna klo ${ formattedTime }"
       ],
       "Snoozing this conversation will be canceled.": [
-        "Tämän keskustelun torkuttaminen perutaan."
+        "Tämän keskustelun torkutus perutaan."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Valitettavasti viestiä ei ole olemassa tai se on jo tuhoutunut."
@@ -7051,7 +7023,7 @@
         "Käyttääksesi osoitteen vahvistusta, sinun on luotettava yhteen tai useampaan käytettävissä olevaan julkiseen avaimeen, mukaan lukien se, jota haluat käyttää lähetykseen. Tämä estää salausavainten väärennyksen."
       ],
       "Tomorrow, ${ formattedTime }": [
-        "Huomenna, ${ formattedTime }"
+        "huomenna, ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Lähetysjonossa on liikaa viestejä. Odota, kunnes seuraava viesti on lähetetty ajoittaaksesi tämän lähetyksen."
@@ -7228,7 +7200,7 @@
         "Milloin haluat viestisi tuhoutuvan automaattisesti vastaanottajan postilaatikosta ja omista lähetetyistä viesteistäsi?"
       ],
       "When do you want your message to be sent?": [
-        "Milloin haluat viestin lähtevän?"
+        "Milloin haluat viestin lähtevän? "
       ],
       "When do you want your message to self-destruct?": [
         "Milloin haluat viestisi tuhoutuvan automaattisesti vastaanottajan postilaatikosta ja omista lähetetyistä viesteistäsi?"
@@ -7820,12 +7792,6 @@
       "Automatically save contacts": [
         "Tallenna yhteystiedot automaattisesti"
       ],
-      "Awful": [
-        "Surkea"
-      ],
-      "Bad": [
-        "Huono"
-      ],
       "BCC": [
         "Piilokopio"
       ],
@@ -8012,14 +7978,8 @@
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
       ],
-      "Good": [
-        "Hyvä"
-      ],
       "Hide password": [
         "Piilota salasana"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Miten kuvailisit kokemustasi uuden ${ BRAND_NAME }in parissa?"
       ],
       "I understand the risk": [
         "Ymmärrän riskin"
@@ -8122,9 +8082,6 @@
       ],
       "Notification": [
         "Ilmoitus"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Avaa uudessa välilehdessä"
@@ -8296,9 +8253,6 @@
       ],
       "Without attachment": [
         "Liitteittä"
-      ],
-      "Wonderful": [
-        "Erinomainen"
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
@@ -8520,7 +8474,7 @@
         "Torkuta"
       ],
       "Snoozed": [
-        "Torkutettu"
+        "Torkutetut"
       ],
       "Spam": [
         "Roskaposti"
@@ -8695,7 +8649,7 @@
         "Tyhjennä roskaposti ja roskakori automaattisesti"
       ],
       "Custom schedule send and snooze times": [
-        "Aseta mukautetut lähetys- ja torkutusajat"
+        "Omat lähetys- ja torkutusajat"
       ],
       "Support for 1 custom email domain": [
         "1 oma sähköpostiverkkotunnus"
@@ -8954,15 +8908,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Aloitushinta: $1"
-      ],
-      "Get started for 1 €": [
-        "Aloitushinta: 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Aloitushinta: CHF 1"
-      ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
       ]
@@ -9209,9 +9154,6 @@
       "GDPR data processing agreement": [
         "GDPR-tietojenkäsittelysopimus"
       ],
-      "Generate emails with only a prompt": [
-        "Luo sähköposteja pelkällä kehotteella"
-      ],
       "Group management (coming soon)": [
         "Ryhmähallinta (tulossa pian)"
       ],
@@ -9267,9 +9209,6 @@
       "Priority support & live chat": [
         "Ensisijainen tuki ja live-chat"
       ],
-      "Proofread and refine your texts": [
-        "Oikolue ja paranna kirjoitustasi"
-      ],
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
@@ -9290,7 +9229,7 @@
         "Tee sähköpostittelusta nopeampaa"
       ],
       "Schedule and snooze emails for any time": [
-        "Ajoita ja torkuta sähköpostit milloin tahansa"
+        "Ajoita viestien lähetys tai torkutus mihin tahansa"
       ],
       "Schedule messages at any time": [
         "Ajoita viestit lähtemään milloin tahansa"
@@ -9411,7 +9350,7 @@
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain2 } uutiskirjeille"
       ],
       "Snooze messages and get reminded when you want": [
-        "Torkuta viestejä ja saa muistutuksia kun haluat"
+        "Torkuta viestejä ja saa muistutus haluamaasi aikaan"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
@@ -9506,16 +9445,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Kerro kokemuksestasi. (Valinnainen)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Palaute"
       ]
     },
     "new_plans: title": {
@@ -10443,7 +10372,7 @@
         "Tuloksia ei löytynyt"
       ],
       "No snoozed messages": [
-        "Ei torkutettuja viestejä"
+        "Torkutettuja viestejä ei ole"
       ],
       "No unread messages found": [
         "Lukemattomia viestejä ei löytynyt"
@@ -10844,7 +10773,7 @@
         "Torkuta viesti"
       ],
       "When should the message reappear in your inbox?": [
-        "Milloin viestin pitäisi ilmestyä uudelleen saapuneisiin?"
+        "Milloin viestin tulee palautua saapuneisiin?"
       ]
     },
     "Sort option": {
@@ -11283,7 +11212,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Käyttöjärjestelmä: ${ totalPrice }"
+        "Hintaan ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -11436,7 +11365,7 @@
         "Kattava yksityisyys ja suojaus"
       ],
       "Custom schedule send and snooze times": [
-        "Mukautetut lähetys- ja torkutusajat"
+        "Vapaavalintaiset lähetys- ja torkutusajat"
       ],
       "Desktop app and email client support (via IMAP)": [
         "Työpöytäsovellus- ja sähköpostiohjelmatuki (IMAPin kautta)"
@@ -11728,12 +11657,12 @@
         "${ elementsCount } keskustelulta poistettiin tunniste ${ labelName }."
       ],
       "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } keskustelu torkutettu",
-        "${ elementsCount } keskustelua torkutettu"
+        "${ elementsCount } keskustelu torkutettiin",
+        "${ elementsCount } keskustelua torkutettiin"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } keskustelun torkutus poistettu",
-        "${ elementsCount } keskustelun torkutus poistettu"
+        "${ elementsCount } keskustelun torkutus peruttiin",
+        "${ elementsCount } keskustelun torkutus peruttiin"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } viesti merkittiin tunnisteella ${ labelName }.",
@@ -11979,11 +11908,6 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } poistettiin"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Palaute lähetettiin"
       ]
     },
     "Suffix": {
@@ -12453,9 +12377,6 @@
       "External encryption": [
         "Ulkoinen salaus"
       ],
-      "Feedback": [
-        "Palaute"
-      ],
       "Filter name cannot contain only spaces": [
         "Suodattimen nimi ei voi sisältää pelkkiä välilyöntejä"
       ],
@@ -12611,10 +12532,10 @@
         "Siirrä roskakoriin"
       ],
       "Moving a scheduled message": [
-        "Ajoitettua viestiä siirretään"
+        "Siirretään ajoitettua viestiä"
       ],
       "Moving a snoozed message": [
-        "Torkutettua viestiä siirretään"
+        "Siirretään torkutettua viestiä"
       ],
       "Need more aliases?": [
         "Tarvitsetko lisää aliaksia?"
@@ -12747,9 +12668,6 @@
       ],
       "Send email": [
         "Lähetä viesti"
-      ],
-      "Send feedback": [
-        "Lähetä palautetta"
       ],
       "Send with changed preferences?": [
         "Lähetetäänkö muuttuneilla asetuksilla?"

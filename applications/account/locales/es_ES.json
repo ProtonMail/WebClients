@@ -1234,6 +1234,9 @@
       "View plans details": [
         "Ver detalles de los planes"
       ],
+      "View recovery settings": [
+        "Ver los ajustes de recuperación"
+      ],
       "Void": [
         "Anular"
       ],
@@ -10556,6 +10559,9 @@
       "Time zone": [
         "Zona horaria"
       ],
+      "Tips and insights": [
+        "Consejos e informaciones"
+      ],
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
       ],
@@ -11560,15 +11566,6 @@
       "From ${ price }": [
         "Desde ${ price }"
       ],
-      "Get started for $1": [
-        "Comenzar por 1$"
-      ],
-      "Get started for 1 €": [
-        "Comenzar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Comenzar por 1 CHF"
-      ],
       "Upgrade": [
         "Mejorar"
       ],
@@ -11795,6 +11792,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Compatibilidad con clientes de correo electrónico (por IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grupos de correos electrónicos"
+      ],
       "Enables HIPAA compliance": [
         "Facilita el cumplimiento con la ley HIPAA"
       ],
@@ -11821,9 +11821,6 @@
       ],
       "GDPR data processing agreement": [
         "Acuerdo para el tratamiento de datos conforme al RGPD"
-      ],
-      "Generate emails with only a prompt": [
-        "Generar correos electrónicos con un solo prompt"
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
@@ -11885,9 +11882,6 @@
       ],
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
-      ],
-      "Proofread and refine your texts": [
-        "Revisar y perfeccionar tus textos"
       ],
       "Protect ${ n } device at a time": [
         "Protege ${ n } dispositivo a la vez",
@@ -12243,18 +12237,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Prueba de ${ shortPlan.title }"
-      ],
-      "Get Mail Plus": [
-        "Obtén Mail Plus"
-      ],
-      "Get Mail Plus for $1": [
-        "Obtén Mail Plus por 1$"
-      ],
-      "Get Mail Plus for 1 €": [
-        "Obtén Mail Plus por 1€"
-      ],
-      "Get Mail Plus for CHF 1": [
-        "Obtén Mail Plus por 1CHF"
       ],
       "Your account's usage": [
         "Uso de la cuenta"
@@ -17554,6 +17536,9 @@
       "Feature in early access": [
         "Funcionalidad en acceso anticipado"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "Obtén consejos de productividad y seguridad para ayudarte a aprovechar al máximo de ${ MAIL_APP_NAME } y mucho más."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail asigna categorías automáticamente a algunos correos como Redes Sociales o Promociones. Puedes seleccionar a dónde importar estos correos."
       ],
@@ -17751,6 +17736,86 @@
         "Esta versión del navegador Tor no es compatible. Actualiza a la última ${ stableRelease }."
       ]
     },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Los administradores no pueden acceder a los datos de usuarios privados y no pueden restablecer sus contraseñas."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "Un administrador de ${ orgName } quiere activar el acceso de administrador para tu cuenta."
+      ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "Un administrador de la organización **${ orgName }** (**${ adminEmail }**) quiere activar el acceso de administrador para tu cuenta."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Al hacer privado al usuario, no podrás ayudarle a recuperar el acceso a sus datos o cuenta."
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Delete request": [
+        "Eliminar la solicitud"
+      ],
+      "Delete request to access user data?": [
+        "¿Eliminar la solicitud de acceso a los datos del usuario?"
+      ],
+      "Enable admin access?": [
+        "¿Activar el acceso de administrador?"
+      ],
+      "Enable administrator access": [
+        "Activar el acceso de administrador"
+      ],
+      "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
+        "Si pierdes acceso a sus credenciales, los administradores de la organización pueden restablecer tu contraseña y restaurar el acceso a tu cuenta."
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Una vez que el usuario acepte, podrás ayudarle a recuperar el acceso a la cuenta o gestionar sus datos."
+      ],
+      "Organization key must be activated to request data access": [
+        "La clave de la organización debe activarse para solicitar acceso a los datos."
+      ],
+      "Pending admin access": [
+        "Acceso de administrador pendiente"
+      ],
+      "Private user": [
+        "Usuario privado"
+      ],
+      "reject": [
+        "rechazar"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Se ha enviado la solicitud para administrar la cuenta. Se está esperando la aprobación del usuario."
+      ],
+      "Request user permission for data access": [
+        "Solicitar el permiso del usuario para el acceso a los datos"
+      ],
+      "Revoke access": [
+        "Revocar el acceso"
+      ],
+      "Revoke administrator access?": [
+        "¿Revocar el acceso de administrador?"
+      ],
+      "Send request": [
+        "Enviar una solicitud"
+      ],
+      "The user must have an address to request data access": [
+        "El usuario debe tener una dirección para solicitar acceso a los datos"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Esto eliminará la solicitud pendiente para el acceso de administrador a los datos del usuario o restablecimiento de contraseña."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Esto revocará el permiso de administrador para gestionar la cuenta de este usuario."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Para continuar, necesitarás solicitar el permiso del usuario para acceder a sus datos o restablecer su contraseña."
+      ],
+      "View request": [
+        "Ver la solicitud"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "Puedes ${ reject } esta solicitud si no deseas continuar."
+      ]
+    },
     "Update font modal": {
       "Today is a good day to write an email": [
         "¡Hoy es un buen día para escribir un correo!"
@@ -17879,6 +17944,9 @@
       ],
       "It's you": [
         "Eres tú"
+      ],
+      "Pending admin access": [
+        "Acceso de administrador pendiente"
       ],
       "Private": [
         "Privado"

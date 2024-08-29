@@ -738,9 +738,6 @@
       "Select country": [
         "Seleccioneu el país"
       ],
-      "Send feedback": [
-        "Enviar comentaris"
-      ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
       ],
@@ -3181,11 +3178,6 @@
         "No s'ha seleccionat cap imatge"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Es requereix la valoració"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "No es pot desxifrar l'arxiu ICS adjuntat"
@@ -3369,11 +3361,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Els teus comentaris"
       ]
     },
     "fido2: Error": {
@@ -5542,12 +5529,6 @@
       "Automatically save contacts": [
         "Desar contactes automàticament"
       ],
-      "Awful": [
-        "Horrible"
-      ],
-      "Bad": [
-        "Dolenta"
-      ],
       "Beta Access": [
         "Accés beta"
       ],
@@ -5747,14 +5728,8 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
-      "Good": [
-        "Bona"
-      ],
       "Hide password": [
         "Amaga la contrasenya"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Com descriuríeu la vostra experiència amb ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Entenc el risc"
@@ -5845,9 +5820,6 @@
       ],
       "Notification": [
         "Notificació"
-      ],
-      "OK": [
-        "D'acord"
       ],
       "Operating system": [
         "Sistema operatiu"
@@ -6034,9 +6006,6 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Quin és el vostre principal motiu per cancel·lar o reduir la subscripció?"
-      ],
-      "Wonderful": [
-        "Meravellosa"
       ],
       "Yes, I want to permanently delete my old files": [
         "Sí, vull eliminar permanentment els meus fitxers antics."
@@ -6532,12 +6501,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Comenceu per $1"
-      ],
-      "Get started for 1 €": [
-        "Comenceu per 1€"
-      ],
       "Upgrade now": [
         "Millora ara"
       ]
@@ -6643,6 +6606,9 @@
       ],
       "1 user": [
         "1 usuari"
+      ],
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
       ],
       "24/7 account management support": [
         "Suport per a la gestió de comptes 24/7"
@@ -6758,9 +6724,6 @@
       "GDPR data processing agreement": [
         "Acord de processament de dades RGPD"
       ],
-      "Generate emails with only a prompt": [
-        "Genera correus electrònics només amb una indicació"
-      ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
       ],
@@ -6795,6 +6758,9 @@
       "Password health": [
         "Estat de la contrasenya"
       ],
+      "Password manager": [
+        "Gestor de contrasenyes"
+      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
@@ -6806,9 +6772,6 @@
       ],
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
-      ],
-      "Proofread and refine your texts": [
-        "Corregiu i refineu els textos"
       ],
       "Protect ${ n } device at a time": [
         "Protegiu ${ n } dispositiu alhora",
@@ -7028,16 +6991,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Expliqueu-nos la vostra experiència. (Opcional)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Comentaris"
       ]
     },
     "new_plans: title": {
@@ -7597,6 +7550,9 @@
       "Introducing ${ DOCS_APP_NAME }": [
         "Presentem ${ DOCS_APP_NAME }"
       ],
+      "Manage access": [
+        "Gestiona l'accés"
+      ],
       "Set a recovery method": [
         "Configura un mètode de recuperació"
       ],
@@ -7810,6 +7766,9 @@
       ],
       "E.g., ": [
         "Ex., "
+      ],
+      "Email": [
+        "Corrreu electrònic"
       ],
       "Enter a new file name": [
         "Introduïu un nom de fitxer nou"
@@ -9145,11 +9104,6 @@
         "Heu anul·lat la subscripció amb èxit"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "S'ha enviat l'opinió"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/mes"
@@ -9531,9 +9485,6 @@
       "Failed": [
         "Error"
       ],
-      "Feedback": [
-        "Comentaris"
-      ],
       "File details": [
         "Detalls del fitxer"
       ],
@@ -9742,9 +9693,6 @@
       ],
       "Select link expiration time": [
         "Selecciona el temps de caducitat de l'enllaç"
-      ],
-      "Send feedback": [
-        "Enviar comentaris"
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"

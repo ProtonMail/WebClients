@@ -6059,15 +6059,6 @@
       "From ${ price }": [
         "A partir de ${ price }"
       ],
-      "Get started for $1": [
-        "Começar por 1$"
-      ],
-      "Get started for 1 €": [
-        "Começar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Começar por CHF 1"
-      ],
       "Upgrade": [
         "Fazer upgrade"
       ],
@@ -6329,9 +6320,6 @@
       "GDPR data processing agreement": [
         "Acordo de processamento de dados do RGPD"
       ],
-      "Generate emails with only a prompt": [
-        "Gere e-mail com apenas um prompt"
-      ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
       ],
@@ -6392,9 +6380,6 @@
       ],
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
-      ],
-      "Proofread and refine your texts": [
-        "Revise e otimize seus textos"
       ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
@@ -6676,17 +6661,6 @@
         "termos de condições"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -6699,6 +6673,17 @@
       ],
       "Switch plans?": [
         "Mudar de plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -10170,11 +10155,17 @@
       "Admins can't access the data of private users and can't reset their password.": [
         "Os administradores não podem acessar os dados de usuários privados e não podem redefinir suas senhas."
       ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Ao tornar o usuário privado, você não poderá ajudá-lo a recuperar o acesso aos seus dados ou conta."
+      ],
       "Delete request": [
         "Excluir solicitação"
       ],
       "Delete request to access user data?": [
         "Deletar requisição de acesso aos dados do usuário?"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Após o consentimento do usuário, você poderá ajudá-lo a recuperar o acesso à conta ou gerenciar seus dados."
       ],
       "Organization key must be activated to request data access": [
         "A chave da organização precisa ser ativada para solicitar o acesso aos dados"
@@ -10202,6 +10193,15 @@
       ],
       "The user must have an address to request data access": [
         "O usuário deve ter um endereço para solicitar o acesso aos dados"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Isso excluirá a solicitação pendente de acesso de administrador aos dados do usuário ou redefinição de senha."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Isso revogará a permissão do administrador para gerenciar a conta deste usuário."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Para continuar, você precisará solicitar a permissão do usuário para acessar seus dados ou redefinir sua senha."
       ]
     },
     "upsell panel": {

@@ -6047,15 +6047,6 @@
       "From ${ price }": [
         "${ price }-დან"
       ],
-      "Get started for $1": [
-        "დაწყება $1-ით"
-      ],
-      "Get started for 1 €": [
-        "დაწყება 1 €-ით"
-      ],
-      "Get started for CHF 1": [
-        "დაწყება 1 CHF-ით"
-      ],
       "Upgrade": [
         "ტარიფის აწევა"
       ],
@@ -6317,9 +6308,6 @@
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
       ],
-      "Generate emails with only a prompt": [
-        "ელფოსტების გენერაცია, მხოლოდ, მოთხოვნით"
-      ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
@@ -6380,9 +6368,6 @@
       ],
       "Priority support & live chat": [
         "პრიორიტეტული დახმარება და ცოცხალი ჩატი"
-      ],
-      "Proofread and refine your texts": [
-        "თქვენი ტექსტების კორექტურა და ოპტიმიზაცია"
       ],
       "Protect ${ n } device at a time": [
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
@@ -6664,14 +6649,6 @@
         "პირობები და წესები"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } საცდელი"
-      ],
-      "Your account's usage": [
-        "თქვენი ანგარიშის გამოყენება"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -6684,6 +6661,14 @@
       ],
       "Switch plans?": [
         "გადავრთო სატარიფო გეგმა?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } საცდელი"
+      ],
+      "Your account's usage": [
+        "თქვენი ანგარიშის გამოყენება"
       ]
     },
     "new_plans: tooltip": {
@@ -10137,17 +10122,56 @@
       ]
     },
     "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "მომხმარებლის კონფიდენციალურად გამოცხადებით მათ თავის ანგარიშზე არსებულ მონაცემების აღდგენაში ვეღარ დაეხმარებით."
+      ],
       "Delete request": [
         "მოთხოვნის წაშლა"
+      ],
+      "Delete request to access user data?": [
+        "წავშალო მოთხოვნა მომხმარებლის მონაცემებთან წვდომაზე?"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "მომხმარებლის თანხმობის შემდეგ საშუალება გექნებათ, დაეხმაროთ მათ, დაიბრუნონ წვდომა ან მართონ თავიანთი მონაცემები"
+      ],
+      "Organization key must be activated to request data access": [
+        "მონაცემებთან წვდომის გამოსათხოვად ორგანიზაციის გასაღები აქტიური უნდა იყოს"
+      ],
+      "Pending admin access": [
+        "ველოდები ადმინისტრატორის წვდომას"
       ],
       "Private user": [
         "კონფიდენციალური მომხმარებელი"
       ],
+      "Request to manage account sent, awaiting user approval": [
+        "მოთხოვნა ანგარიშის მართვაზე გაიგზავნა. ველოდებით მომხმარებლის დასტურს"
+      ],
+      "Request user permission for data access": [
+        "მომხმარებლის წვდომების მოთხოვნა მონაემებთან წვდომისთვის"
+      ],
       "Revoke access": [
         "წვდომის გაუქმება"
       ],
+      "Revoke administrator access?": [
+        "გავაუქმო ადმინისტრატორის წვდომა?"
+      ],
       "Send request": [
         "მოთხოვნის გაგზავნა"
+      ],
+      "The user must have an address to request data access": [
+        "მომხმარებელს მონაცემებზე წვდომის მოსათხოვად მისამართი უნდა გააჩნდეს"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "ეს წაშლის ყველა დარჩენილ მოთხოვნას ადმინის წვდომისთვის მომხმარებლის მონაცემებზე ან მისი პაროლი ჩამოყრაზე წვდომისთვის."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "ეს გააუქმებს ადმინისტრატორის წვდომებს, რომ ეს მომხმრებლის ანგარიში მართონ"
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "გასაგრძელებლად მომხმარებლის მონაცემებთან წვდომისთვის და მათი პაროლის ჩამოსაყრელად მათგან უფლების თხოვნა მოგიწევთ"
       ]
     },
     "upsell panel": {
@@ -10243,6 +10267,9 @@
       ],
       "It's you": [
         "თქვენ"
+      ],
+      "Pending admin access": [
+        "ველოდები ადმინისტრატორის წვდომას"
       ],
       "Private": [
         "პირადი"
