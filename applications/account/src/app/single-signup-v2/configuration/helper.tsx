@@ -43,13 +43,6 @@ export const getGenericBenefits = (): BenefitItem[] => {
                 name: 'magnifier',
             },
         },
-        {
-            key: 12,
-            text: c('pass_signup_2023: Info').t`Works on all devices`,
-            icon: {
-                name: 'mobile',
-            },
-        },
     ];
 };
 
