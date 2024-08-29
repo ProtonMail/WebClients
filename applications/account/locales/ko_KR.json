@@ -6539,7 +6539,7 @@
         "${ protonSubdomain }은(는) ${ BRAND_NAME }에서 호스팅됩니다. 빠른 하위 도매인 설정을 도와드립니다. ${ learnMoreLink }"
       ],
       "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "커스텀 도메인은 그룹 생성이 필요합니다. 커스텀 도메인 설정이 되어 있지 않다면, 먼저 아래 링크에서 설정하세요. ${ linkToDomainPage }"
+        "그룹 생성에 커스텀 도메인이 요구됩니다. 커스텀 도메인 설정이 되어 있지 않다면, 먼저 ${ linkToDomainPage } 아래에서 설정하세요."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "나중에 쉽게 취소하거나 확장할 수 있도록 사용 위치를 식별하는 데 도움이 되는 이름이에요."
@@ -10458,6 +10458,9 @@
       "Time zone": [
         "시간대"
       ],
+      "Tips and insights": [
+        "팁 및 인사이트"
+      ],
       "To: ${ toEmail }": [
         "받는 사람: ${ toEmail }"
       ],
@@ -11454,15 +11457,6 @@
       "From ${ price }": [
         "시작 가격: ${ price }"
       ],
-      "Get started for $1": [
-        "$1로 시작하기"
-      ],
-      "Get started for 1 €": [
-        "1€로 시작하기"
-      ],
-      "Get started for CHF 1": [
-        "1 CHF로 시작하기"
-      ],
       "Upgrade": [
         "업그레이드"
       ],
@@ -11690,9 +11684,6 @@
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
       ],
-      "Generate emails with only a prompt": [
-        "프롬포트만으로 이메일을 생성하세요"
-      ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
@@ -11752,9 +11743,6 @@
       ],
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
-      ],
-      "Proofread and refine your texts": [
-        "문장 교정 및 다듬기"
       ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
@@ -15173,7 +15161,7 @@
     },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "${ BRAND_NAME }의 유일한 수익원은 사용자의 구독입니다. 당신의 지지로 저희는 독립적일 수 있고, 프라이버시가 기본인 온라인을 만들어나가는 사명을 위해 나아갈 수 있으며, 프라이버시와 자유를 위해 싸우는 활동가들과 조직을 지원해나갈 수 있습니다."
+        "${ BRAND_NAME }의 유일한 수익원은 사용자의 구독입니다. 회원님의 지지로 저희는 독립적일 수 있고, 프라이버시가 기본인 온라인을 만들어나가는 사명을 위해 나아갈 수 있으며, 프라이버시와 자유를 위해 싸우는 활동가들과 조직을 지원해나갈 수 있습니다."
       ],
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }과 캘린더 공유 기능"
@@ -17343,6 +17331,9 @@
       "Feature in early access": [
         "얼리 엑세스 기능"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "${ MAIL_APP_NAME }과 그 너머를 최대한 활용하는 데 도움이 되는 생산성 및 보안 팁을 얻어보세요."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail은 자동으로 일부 이메일을 소셜 및 프로모션 등으로 카테코리화 합니다. 이 이메일을 어디에 불러올지 선택하실 수 있습니다."
       ],
@@ -17540,6 +17531,86 @@
         "이 버전의 Tor 브라우저가 지원되지 않습니다. 최신 ${ stableRelease } 으로 업데이트 해주세요"
       ]
     },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "관리자가 비공개 사용자의 데이터 접근이 불가하며 비밀번호 또한 재설정이 불가합니다."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "${ orgName }의 관리자가 사용자의 계정에 대한 도메인 활성화를 요청 중입니다."
+      ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "**${ orgName }** 조직의 관리자(**${ adminEmail }**)가 사용자의 계정에 대한 관리자 권한 활성화를 요청했습니다."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "사용자를 비공개로 전환하면 해당 사용자가 데이터나 계정을 손실하면 지원할 수 없게 됩니다."
+      ],
+      "Cancel": [
+        "취소"
+      ],
+      "Delete request": [
+        "삭제 요청"
+      ],
+      "Delete request to access user data?": [
+        "사용자 데이터 접근 요청을 삭제합니까?"
+      ],
+      "Enable admin access?": [
+        "관리자 권한을 활성화합니까?"
+      ],
+      "Enable administrator access": [
+        "관리자 권환 활성화"
+      ],
+      "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
+        "만약 회원님의 자격 증명에 접근할 수 없는 상황이 발생한다면, 조직의 관리자가 회원님 계정의 비밀번호를 재설정하고 접근을 복원할 수 있습니다."
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "사용자가 동의하면, 해당 사용자가 계정 접근 권한을 되찾거나 데이터를 관리할 수 있도록 도울 수 있습니다."
+      ],
+      "Organization key must be activated to request data access": [
+        "데이터 접근을 요청하려면 조직 키가 반드시 활성화되어야 합니다."
+      ],
+      "Pending admin access": [
+        "관리자 권한 대기 중"
+      ],
+      "Private user": [
+        "비공개 사용자"
+      ],
+      "reject": [
+        "거절"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "계정 관리 요청 전송, 승인 대기 중"
+      ],
+      "Request user permission for data access": [
+        "데이터 접근을 위한 사용자 권한 요청"
+      ],
+      "Revoke access": [
+        "접근 권한 회수"
+      ],
+      "Revoke administrator access?": [
+        "관리자 접근을 회수할까요?"
+      ],
+      "Send request": [
+        "요청 전송"
+      ],
+      "The user must have an address to request data access": [
+        "데이터 접근을 요청하려면 사용자가 주소를 소유해야 합니다."
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "이 작업은 사용자의 데이터 또는 비밀번호 재설정에 대한 관리자 접근 보류 중인 요청을 삭제합니다."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "이 작업은 사용자의 계정을 관리할 관리자 권한을 회수하게 됩니다."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "계속하려면 데이터 접근을 하거나 비밀번호 재설정을 위해 사용자 권한 요청이 필요합니다."
+      ],
+      "View request": [
+        "요청 보기"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "원치 않는다면 ${ reject } 가능합니다."
+      ]
+    },
     "Update font modal": {
       "Today is a good day to write an email": [
         "오늘은 이메일을 작성하기에 좋은 날입니다."
@@ -17667,6 +17738,9 @@
       ],
       "It's you": [
         "나"
+      ],
+      "Pending admin access": [
+        "도메인 접근 대기"
       ],
       "Private": [
         "개인"
