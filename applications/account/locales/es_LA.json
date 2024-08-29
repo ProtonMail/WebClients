@@ -1234,6 +1234,9 @@
       "View plans details": [
         "Ver detalles de planes"
       ],
+      "View recovery settings": [
+        "Ver los ajustes de recuperación"
+      ],
       "Void": [
         "Nula"
       ],
@@ -10557,7 +10560,7 @@
         "Zona horaria"
       ],
       "Tips and insights": [
-        "Consejos y perspectivas"
+        "Consejos e informaciones"
       ],
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
@@ -11563,15 +11566,6 @@
       "From ${ price }": [
         "Desde ${ price }"
       ],
-      "Get started for $1": [
-        "Comenzar por $1"
-      ],
-      "Get started for 1 €": [
-        "Comenzar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Comenzar por CHF 1"
-      ],
       "Upgrade": [
         "Mejorar"
       ],
@@ -11798,6 +11792,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Soporte de clientes de correo electrónico (por IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grupos de correos electrónicos"
+      ],
       "Enables HIPAA compliance": [
         "Facilita el cumplimiento con la ley HIPAA"
       ],
@@ -11824,9 +11821,6 @@
       ],
       "GDPR data processing agreement": [
         "Acuerdo para el procesamiento de datos conforme al RGPD"
-      ],
-      "Generate emails with only a prompt": [
-        "Generar correos electrónicos con un solo prompt"
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
@@ -11888,9 +11882,6 @@
       ],
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
-      ],
-      "Proofread and refine your texts": [
-        "Revisar y perfeccionar sus textos"
       ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo a la vez",
@@ -12246,18 +12237,6 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "Prueba de ${ shortPlan.title }"
-      ],
-      "Get Mail Plus": [
-        "Obtenga Mail Plus"
-      ],
-      "Get Mail Plus for $1": [
-        "Obtenga Mail Plus por $1"
-      ],
-      "Get Mail Plus for 1 €": [
-        "Obtenga Mail Plus por €1"
-      ],
-      "Get Mail Plus for CHF 1": [
-        "Obtenga Mail Plus por CHF1"
       ],
       "Your account's usage": [
         "Uso de la cuenta"
@@ -17558,7 +17537,7 @@
         "Funcionalidad en acceso anticipado"
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
-        "Obtenga consejos de productividad y seguridad para ayudarle a aprovechar al máximo ${ MAIL_APP_NAME } y más allá."
+        "Obtenga consejos de productividad y seguridad para ayudarle a aprovechar al máximo de ${ MAIL_APP_NAME } y mucho más."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail asigna categorías automáticamente a algunos correos como redes sociales o promociones. Puede seleccionar adónde importar estos correos."
@@ -17795,7 +17774,7 @@
         "La clave de la organización debe activarse para solicitar acceso a los datos"
       ],
       "Pending admin access": [
-        "Pendiente el acceso de administrador"
+        "Acceso de administrador pendiente"
       ],
       "Private user": [
         "Usuario privado"
@@ -17828,7 +17807,7 @@
         "Esto revocará el permiso de administrador para gestionar la cuenta de este usuario."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
-        "Para proceder, necesitará solicitar el permiso del usuario para acceder a sus datos o restablecer su contraseña."
+        "Para continuar, necesitará solicitar el permiso del usuario para acceder a sus datos o restablecer su contraseña."
       ],
       "View request": [
         "Ver la solicitud"

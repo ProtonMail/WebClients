@@ -1234,6 +1234,9 @@
       "View plans details": [
         "Voir le détail des abonnements"
       ],
+      "View recovery settings": [
+        "Voir les paramètres de récupération"
+      ],
       "Void": [
         "Annulée"
       ],
@@ -3383,6 +3386,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Supprimez automatiquement les messages indésirables et ceux dans la corbeille, et débloquez davantage de fonctionnalités premium lorsque vous améliorez votre abonnement."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Bravo ! Vous avez gagné le maximum de ${ rewardsLimit } mois gratuits de ${ plusPlanName }."
       ],
@@ -11563,15 +11569,6 @@
       "From ${ price }": [
         "À partir de ${ price }"
       ],
-      "Get started for $1": [
-        "Lancez-vous pour 1 $"
-      ],
-      "Get started for 1 €": [
-        "Lancez-vous pour 1  €"
-      ],
-      "Get started for CHF 1": [
-        "Lancez-vous pour 1  CHF"
-      ],
       "Upgrade": [
         "Changer d'abonnement"
       ],
@@ -11798,6 +11795,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Prise en charge des clients de messagerie (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Groupes d'e-mails"
+      ],
       "Enables HIPAA compliance": [
         "Conformité avec la loi HIPAA"
       ],
@@ -11824,9 +11824,6 @@
       ],
       "GDPR data processing agreement": [
         "Accord de traitement des données RGPD"
-      ],
-      "Generate emails with only a prompt": [
-        "Générez des messages à partir d'un seul prompt."
       ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
@@ -11888,9 +11885,6 @@
       ],
       "Priority support & live chat": [
         "Assistance prioritaire et chat en direct"
-      ],
-      "Proofread and refine your texts": [
-        "Relisez et peaufinez vos textes."
       ],
       "Protect ${ n } device at a time": [
         "Protégez ${ n } appareil à la fois",
@@ -12247,18 +12241,6 @@
       "${ shortPlan.title } Trial": [
         "Essai de ${ shortPlan.title }"
       ],
-      "Get Mail Plus": [
-        "Je choisis Mail Plus"
-      ],
-      "Get Mail Plus for $1": [
-        "Obtenir Mail Plus pour 1 $"
-      ],
-      "Get Mail Plus for 1 €": [
-        "Obtenir Mail Plus pour 1 €"
-      ],
-      "Get Mail Plus for CHF 1": [
-        "Obtenir Mail Plus pour 1 CHF"
-      ],
       "Your account's usage": [
         "Utilisation de votre compte"
       ]
@@ -12324,6 +12306,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partagez facilement vos calendriers avec votre famille, vos amis ou vos collègues."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envoyez un message à chaque membre d'un groupe depuis une seule adresse e-mail."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Recevez tous les messages envoyés à votre domaine, y compris ceux envoyés à une adresse qui n'existe pas (ou plus) ou contenant une faute de frappe."
@@ -17767,6 +17752,9 @@
       "An administrator of ${ orgName } wants to enable admin access for your account.": [
         "Un administrateur de ${ orgName } souhaite activer l'accès administrateur pour votre compte."
       ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "Un administrateur de l'organisation **${ orgName }** (**${ adminEmail }**) souhaite activer l'accès administrateur pour votre compte."
+      ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "En rendant l'utilisateur privé, vous ne pourrez pas l'aider à retrouver l'accès à ses données ou à son compte."
       ],
@@ -17804,7 +17792,7 @@
         "refuser"
       ],
       "Request to manage account sent, awaiting user approval": [
-        "Demande de gestion du compte envoyée, en attente de l'approbation de l'utilisateur"
+        "La demande de gestion du compte a été envoyée. L'approbation de l'utilisateur est attente."
       ],
       "Request user permission for data access": [
         "Demander l'autorisation de l'utilisateur pour l'accès aux données"

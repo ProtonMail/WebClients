@@ -7890,7 +7890,7 @@
         "Outros usuários da sua organização verão seus horários ocupados. Nenhum detalhe do evento é compartilhado."
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Nossos alertas são mais cautelosos. Se você não reconhece nenhuma das informações violadas, pode ignorar este relatório com segurança."
+        "Nossos alertas pecam por excesso de precaução. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Arquivo de recuperação desatualizado. Atualize para garantir acesso aos seus dados"
@@ -11581,15 +11581,6 @@
       "From ${ price }": [
         "A partir de ${ price }"
       ],
-      "Get started for $1": [
-        "Começar por 1$"
-      ],
-      "Get started for 1 €": [
-        "Começar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Começar por CHF 1"
-      ],
       "Upgrade": [
         "Fazer upgrade"
       ],
@@ -11834,9 +11825,6 @@
       "GDPR data processing agreement": [
         "Acordo de processamento de dados do RGPD"
       ],
-      "Generate emails with only a prompt": [
-        "Gere e-mail com apenas um prompt"
-      ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
       ],
@@ -11897,9 +11885,6 @@
       ],
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
-      ],
-      "Proofread and refine your texts": [
-        "Revise e otimize seus textos"
       ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
@@ -17590,6 +17575,9 @@
       "Feature in early access": [
         "Recurso em acesso antecipado"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "Obtenha dicas de produtividade e segurança para ajudar você a aproveitar ao máximo o ${ MAIL_APP_NAME } e muito mais."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticamente categoriza alguns e-mails como Social e Promoções. Você pode selecionar para onde importar esses e-mails."
       ],
@@ -17794,6 +17782,12 @@
       "An administrator of ${ orgName } wants to enable admin access for your account.": [
         "Um administrador da ${ orgName } deseja ativar o acesso de administrador para sua conta."
       ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "Um administrador da organização **${ orgName }** (**${ adminEmail }**) deseja habilitar o acesso de administrador para sua conta."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Ao tornar o usuário privado, você não poderá ajudá-lo a recuperar o acesso aos seus dados ou conta."
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -17811,6 +17805,9 @@
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Se você perder o acesso às suas credenciais, o administrador da sua organização conseguirá redefinir a sua senha e reestabelecer o acesso à sua conta."
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Após o consentimento do usuário, você poderá ajudá-lo a recuperar o acesso à conta ou gerenciar seus dados."
       ],
       "Organization key must be activated to request data access": [
         "A chave da organização precisa ser ativada para solicitar o acesso aos dados"
@@ -17841,6 +17838,15 @@
       ],
       "The user must have an address to request data access": [
         "O usuário deve ter um endereço para solicitar o acesso aos dados"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Isso excluirá a solicitação pendente de acesso de administrador aos dados do usuário ou redefinição de senha."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Isso revogará a permissão do administrador para gerenciar a conta deste usuário."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Para continuar, você precisará solicitar a permissão do usuário para acessar seus dados ou redefinir sua senha."
       ],
       "View request": [
         "Ver solicitação"
