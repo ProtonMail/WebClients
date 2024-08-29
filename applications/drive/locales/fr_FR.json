@@ -570,6 +570,9 @@
       "Open navigation": [
         "Ouvrir la navigation"
       ],
+      "Open scan and download info": [
+        "Ouvrir les informations d'analyse et de téléchargement"
+      ],
       "Pause all": [
         "Tout mettre en pause"
       ],
@@ -705,6 +708,9 @@
       "Save changes": [
         "Enregistrer les modifications"
       ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "Enregistrer dans ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Scan & Download": [
         "Scanner et télécharger"
       ],
@@ -743,9 +749,6 @@
       ],
       "Select country": [
         "Sélectionnez un pays"
-      ],
-      "Send feedback": [
-        "Envoyer un avis"
       ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
@@ -2299,6 +2302,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts en cours, ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette fenêtre."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Gagnez du temps en envoyant des e-mails à tout le monde en une seule fois grâce aux groupes de contacts. Débloquez cette fonctionnalité et d'autres fonctionnalités premium lorsque vous passez à un abonnement supérieur."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Définissez une méthode de récupération pour éviter la perte de données."
       ],
@@ -3220,11 +3226,6 @@
         "Aucune image n'est sélectionnée."
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "La note est nécessaire."
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Le fichier ICS joint n'a pas pu être déchiffré."
@@ -3429,11 +3430,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Votre retour d'expérience"
       ]
     },
     "fido2: Error": {
@@ -4447,6 +4443,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Pour de meilleurs résultats, évitez les activités de streaming et gourmandes en mémoire ou réduisez la taille de votre envoi."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "5 Go d'espace de stockage chiffré gratuit pour démarrer"
+      ],
       "from the version history?": [
         "de l'historique des versions ?"
       ],
@@ -4561,6 +4560,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Gardez vos fichiers en sécurité avec le chiffrement de bout en bout."
       ],
       "Key fingerprint": [
         "Empreinte de la clé"
@@ -4897,6 +4899,9 @@
       ],
       "Retry now": [
         "Réessayer maintenant"
+      ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "Enregistré sur ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan issue": [
         "Problème d'analyse"
@@ -5612,12 +5617,6 @@
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
       ],
-      "Awful": [
-        "Affreux"
-      ],
-      "Bad": [
-        "Mauvaise"
-      ],
       "Beta Access": [
         "Accès à la version bêta"
       ],
@@ -5817,14 +5816,8 @@
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
       ],
-      "Good": [
-        "Bonne"
-      ],
       "Hide password": [
         "Masquer le mot de passe"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Comment décririez-vous votre expérience avec le nouveau ${ BRAND_NAME } ?"
       ],
       "I understand the risk": [
         "Je comprends le risque."
@@ -5871,6 +5864,9 @@
       "Location": [
         "Lieu"
       ],
+      "Log in or sign up ": [
+        "Se connecter ou s'inscrire "
+      ],
       "Mail Server (IMAP)": [
         "Serveur de messagerie (IMAP)"
       ],
@@ -5915,9 +5911,6 @@
       ],
       "Notification": [
         "Notification"
-      ],
-      "OK": [
-        "OK"
       ],
       "Operating system": [
         "Système d'exploitation"
@@ -6104,9 +6097,6 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Quelle est la principale raison pour laquelle vous annulez votre abonnement ou passez à un abonnement inférieur ?"
-      ],
-      "Wonderful": [
-        "Merveilleux"
       ],
       "Yes, I want to permanently delete my old files": [
         "Oui, je veux supprimer définitivement mes anciens fichiers."
@@ -6602,15 +6592,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Lancez-vous pour 1 $"
-      ],
-      "Get started for 1 €": [
-        "Lancez-vous pour 1  €"
-      ],
-      "Get started for CHF 1": [
-        "Lancez-vous pour 1  CHF"
-      ],
       "Upgrade now": [
         "Changer d'abonnement"
       ]
@@ -6839,6 +6820,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Prise en charge des clients de messagerie (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Groupes d'e-mails"
+      ],
       "Enables HIPAA compliance": [
         "Conformité avec la loi HIPAA"
       ],
@@ -6865,9 +6849,6 @@
       ],
       "GDPR data processing agreement": [
         "Accord de traitement des données RGPD"
-      ],
-      "Generate emails with only a prompt": [
-        "Générez des messages à partir d'un seul prompt."
       ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
@@ -6923,9 +6904,6 @@
       ],
       "Priority support & live chat": [
         "Assistance prioritaire et chat en direct"
-      ],
-      "Proofread and refine your texts": [
-        "Relisez et peaufinez vos textes."
       ],
       "Protect ${ n } device at a time": [
         "Protégez ${ n } appareil à la fois",
@@ -7168,30 +7146,6 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Parlez-nous de votre expérience. (facultatif)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Commentaires"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus": [
-        "Je choisis Mail Plus"
-      ],
-      "Get Mail Plus for $1": [
-        "Obtenir Mail Plus pour 1 $"
-      ],
-      "Get Mail Plus for 1 €": [
-        "Obtenir Mail Plus pour 1 €"
-      ],
-      "Get Mail Plus for CHF 1": [
-        "Obtenir Mail Plus pour 1 CHF"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -7267,6 +7221,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partagez facilement vos calendriers avec votre famille, vos amis ou vos collègues."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envoyez un message à chaque membre d'un groupe depuis une seule adresse e-mail."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Recevez tous les messages envoyés à votre domaine, y compris ceux envoyés à une adresse qui n'existe pas (ou plus) ou contenant une faute de frappe."
@@ -8016,6 +7973,9 @@
       ],
       "E.g., ": [
         "Par exemple, "
+      ],
+      "Email": [
+        "Adresse e-mail"
       ],
       "Enter a new file name": [
         "Saisissez un nouveau nom de fichier."
@@ -9362,11 +9322,6 @@
         "La désinscription a été effectuée."
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Votre commentaire a été envoyé."
-      ]
-    },
     "Suffix": {
       "/month": [
         "/mois"
@@ -9751,9 +9706,6 @@
       "Failed": [
         "Échec"
       ],
-      "Feedback": [
-        "Votre avis"
-      ],
       "File details": [
         "Informations sur le fichier"
       ],
@@ -9939,6 +9891,9 @@
       "Restore your files": [
         "Restaurer vos fichiers"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "L'enregistrer pour plus tard dans ${ DRIVE_APP_NAME }"
+      ],
       "Search results": [
         "Résultats de la recherche"
       ],
@@ -9962,9 +9917,6 @@
       ],
       "Select link expiration time": [
         "Sélectionner le délai d'expiration du lien"
-      ],
-      "Send feedback": [
-        "Envoyer un avis"
       ],
       "Set recovery phrase": [
         "Définir une phrase de récupération"
@@ -10131,6 +10083,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Ajoutez ce fichier partagé à votre ${ DRIVE_APP_NAME } pour y accéder facilement plus tard."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatique : le format utilisé dans l'éditeur est utilisé pour l'envoi à cet utilisateur. Texte brut : le message sera toujours converti en texte brut lors de l'envoi."
       ],

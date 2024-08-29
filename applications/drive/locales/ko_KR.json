@@ -741,9 +741,6 @@
       "Select country": [
         "국가 선택"
       ],
-      "Send feedback": [
-        "의견 제출"
-      ],
       "Set recovery phrase": [
         "복구 코드 설정"
       ],
@@ -3198,11 +3195,6 @@
         "선택된 이미지가 없음"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "점수가 필요함"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "첨부도니 ICS 파일을 복호화할 수 없음"
@@ -3406,11 +3398,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "귀하의 피드백"
       ]
     },
     "fido2: Error": {
@@ -5524,12 +5511,6 @@
       "Automatically save contacts": [
         "자동으로 연락처 저장"
       ],
-      "Awful": [
-        "끔찍"
-      ],
-      "Bad": [
-        "나쁨"
-      ],
       "Beta Access": [
         "베타 참여"
       ],
@@ -5728,14 +5709,8 @@
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
       ],
-      "Good": [
-        "좋음"
-      ],
       "Hide password": [
         "비밀번호 숨기기"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "새로운 ${ BRAND_NAME }에 대한 당신의 느낌은 어떠신가요?"
       ],
       "I understand the risk": [
         "위험 사항을 이해했어요."
@@ -5826,9 +5801,6 @@
       ],
       "Notification": [
         "알림"
-      ],
-      "OK": [
-        "확인"
       ],
       "Operating system": [
         "운영체제"
@@ -6015,9 +5987,6 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "취소하거나 다운그레이드 하는 주요한 이유가 무엇이신가요?"
-      ],
-      "Wonderful": [
-        "최고"
       ],
       "Yes, I want to permanently delete my old files": [
         "네, 저는 이전 파일을 완전히 삭제하고 싶습니다"
@@ -6508,15 +6477,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
       ],
-      "Get started for $1": [
-        "$1로 시작하기"
-      ],
-      "Get started for 1 €": [
-        "1€로 시작하기"
-      ],
-      "Get started for CHF 1": [
-        "1 CHF로 시작하기"
-      ],
       "Upgrade now": [
         "지금 업그레이드"
       ]
@@ -6746,9 +6706,6 @@
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
       ],
-      "Generate emails with only a prompt": [
-        "프롬포트만으로 이메일을 생성하세요"
-      ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
@@ -6802,9 +6759,6 @@
       ],
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
-      ],
-      "Proofread and refine your texts": [
-        "문장 교정 및 다듬기"
       ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
@@ -7039,16 +6993,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "당신의 경험에 대해 알려주세요. (선택사항)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "피드백"
       ]
     },
     "new_plans: title": {
@@ -8682,7 +8626,7 @@
     },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "${ BRAND_NAME }의 유일한 수익원은 사용자의 구독입니다. 당신의 지지로 저희는 독립적일 수 있고, 프라이버시가 기본인 온라인을 만들어나가는 사명을 위해 나아갈 수 있으며, 프라이버시와 자유를 위해 싸우는 활동가들과 조직을 지원해나갈 수 있습니다."
+        "${ BRAND_NAME }의 유일한 수익원은 사용자의 구독입니다. 회원님의 지지로 저희는 독립적일 수 있고, 프라이버시가 기본인 온라인을 만들어나가는 사명을 위해 나아갈 수 있으며, 프라이버시와 자유를 위해 싸우는 활동가들과 조직을 지원해나갈 수 있습니다."
       ],
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }과 캘린더 공유 기능"
@@ -9160,11 +9104,6 @@
         "성공적으로 구독 취소했습니다."
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "피드백 전송"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/월"
@@ -9536,9 +9475,6 @@
       "Failed": [
         "실패"
       ],
-      "Feedback": [
-        "피드백"
-      ],
       "File details": [
         "파일 세부 정보"
       ],
@@ -9745,9 +9681,6 @@
       ],
       "Select link expiration time": [
         "링크 만료 시간 선택"
-      ],
-      "Send feedback": [
-        "의견 전송"
       ],
       "Set recovery phrase": [
         "복구 키 설정"

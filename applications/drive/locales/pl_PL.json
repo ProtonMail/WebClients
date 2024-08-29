@@ -538,7 +538,7 @@
         "Przenieś do Kosza"
       ],
       "New": [
-        "Nowość"
+        "Nowy"
       ],
       "New document": [
         "Nowy dokument"
@@ -749,9 +749,6 @@
       ],
       "Select country": [
         "Wybierz kraj"
-      ],
-      "Send feedback": [
-        "Wyślij opinię"
       ],
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
@@ -2429,6 +2426,9 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Płatne co 2 lata ${ amountBilled }. Rabaty są obliczane na podstawie standardowych cen miesięcznych."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Płatne rocznie ${ amountBilled }. Zaoszczędź ${ amountSave } na rocznej subskrypcji 2 indywidualnych kont ${ BRAND_NAME } Unlimited."
       ]
@@ -3255,11 +3255,6 @@
         "Nie wybrano obrazu"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Ocena jest wymagana"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Dołączony plik ICS nie może zostać odszyfrowany"
@@ -3466,11 +3461,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Twoja opinia"
       ]
     },
     "fido2: Error": {
@@ -5773,12 +5763,6 @@
       "Automatically save contacts": [
         "Automatyczne zapisywanie kontaktów"
       ],
-      "Awful": [
-        "Okropnie"
-      ],
-      "Bad": [
-        "Źle"
-      ],
       "Beta Access": [
         "Dostęp beta"
       ],
@@ -5980,14 +5964,8 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
-      "Good": [
-        "Dobrze"
-      ],
       "Hide password": [
         "Ukryj hasło"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Jak oceniasz nową aplikację ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Rozumiem ryzyko"
@@ -6078,9 +6056,6 @@
       ],
       "Notification": [
         "Powiadomienie"
-      ],
-      "OK": [
-        "OK"
       ],
       "Operating system": [
         "System operacyjny"
@@ -6267,9 +6242,6 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Jaki jest główny powód anulowania lub obniżenia planu?"
-      ],
-      "Wonderful": [
-        "Wspaniale"
       ],
       "Yes, I want to permanently delete my old files": [
         "Tak, chcę trwale usunąć stare pliki"
@@ -6832,15 +6804,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Rozpocznij od 1 $"
-      ],
-      "Get started for 1 €": [
-        "Rozpocznij od 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Rozpocznij od 1 CHF"
-      ],
       "Upgrade now": [
         "Ulepsz teraz"
       ]
@@ -7121,9 +7084,6 @@
       "GDPR data processing agreement": [
         "Umowa przetwarzania danych zgodnie z RODO"
       ],
-      "Generate emails with only a prompt": [
-        "Generowanie wiadomości z zadania"
-      ],
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
@@ -7181,9 +7141,6 @@
       "Priority support & live chat": [
         "Priorytetowe wsparcie i czat"
       ],
-      "Proofread and refine your texts": [
-        "Sprawdzaj i poprawiaj teksty"
-      ],
       "Protect ${ n } device at a time": [
         "Ochrona ${ n } urządzenia jednocześnie",
         "Ochrona ${ n } urządzeń jednocześnie",
@@ -7222,6 +7179,9 @@
       ],
       "Send & receive invitations": [
         "Wysyłaj i otrzymuj zaproszenia"
+      ],
+      "Share files with no size limit": [
+        "Udostępniaj pliki bez limitów rozmiaru"
       ],
       "Sign in as user": [
         "Zaloguj się jako użytkownik"
@@ -7425,16 +7385,6 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Opowiedz nam o swoich wrażeniach. (opcjonalnie)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Opinia"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -7566,6 +7516,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizuj swój podpis za pomocą logo, obrazów, ikon mediów społecznościowych, linków do szczegółów kontaktu i innych elementów"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej 20 użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta ${ BRAND_NAME }"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zapobiega dostępowi do wiadomości przez ${ BRAND_NAME } lub strony trzecie. Wiadomości mogą zostać odczytane tylko przez nadawcę i odbiorcę."
@@ -8026,6 +7979,9 @@
       ]
     },
     "Onboarding Info": {
+      "Collaborate on documents": [
+        "Współpracuj nad dokumentami"
+      ],
       "Create and collaborate on documents. It's all protected by end-to-end encryption.": [
         "Twórz i współpracuj nad dokumentami. Wszystko jest chronione za pomocą szyfrowania end-to-end."
       ],
@@ -8038,11 +7994,17 @@
       "Manage access": [
         "Zarządzaj dostępem"
       ],
+      "Securely store, manage, and share your business-critical files with confidence.": [
+        "Bezpiecznie przechowuj, zarządzaj i udostępniaj pliki o krytycznym znaczeniu dla biznesu."
+      ],
       "Set a recovery method": [
         "Ustaw metodę odzyskiwania"
       ],
       "Share a file": [
         "Udostępnij plik"
+      ],
+      "Share files & folders": [
+        "Udostępniaj pliki i foldery"
       ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Ukończ następujące kroki w ciągu najbliższego dnia:",
@@ -8052,6 +8014,9 @@
       ],
       "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
         "Przechowuj i udostępniaj pliki w bezpieczny sposób. Rozpocznij od zabezpieczenia swoich najbardziej prywatnych plików, takich jak dokumenty tożsamości, umowy i osobiste zdjęcia."
+      ],
+      "The owner needs to confirm sharing access. You'll get an email once it's done.": [
+        "Właściciel musi potwierdzić dostęp. Po zatwierdzeniu dostępu otrzymasz wiadomość."
       ],
       "Upload a file": [
         "Prześlij plik"
@@ -8086,6 +8051,9 @@
       ],
       "Hang tight!": [
         "Trzymaj się!"
+      ],
+      "Invite team members": [
+        "Zaproś użytkowników zespołu"
       ],
       "Upload and protect your important files": [
         "Prześlij i chroń ważne pliki"
@@ -9691,11 +9659,6 @@
         "Subskrypcja została anulowana"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Opinia została wysłana"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/ miesiąc"
@@ -10106,9 +10069,6 @@
       "Failed": [
         "Niepowodzenie"
       ],
-      "Feedback": [
-        "Opinia"
-      ],
       "File details": [
         "Szczegóły pliku"
       ],
@@ -10321,9 +10281,6 @@
       ],
       "Select link expiration time": [
         "Wybierz czas wygaśnięcia linku"
-      ],
-      "Send feedback": [
-        "Wyślij opinię"
       ],
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
@@ -10684,6 +10641,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoiny przez e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bezpieczniejsza i łatwiejsza metoda przechowywania i wysyłania Bitcoinów"
       ]
     },
     "wallet_signup_2024:Bug category": {
