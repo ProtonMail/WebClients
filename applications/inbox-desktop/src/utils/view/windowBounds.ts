@@ -1,25 +1,32 @@
 import { Rectangle, screen } from "electron";
 
+function safeCoordinate(
+    [workAreaPosition, workAreaSize]: [number, number],
+    [windowPosition, windowSize]: [number, number],
+) {
+    const safeSize = Math.min(workAreaSize, windowSize);
+    let safePosition = windowPosition;
+
+    if (windowPosition < workAreaPosition) {
+        safePosition = workAreaPosition;
+    } else if (windowPosition + windowSize > workAreaPosition + workAreaSize) {
+        safePosition = workAreaPosition + workAreaSize - safeSize;
+    }
+
+    return [safePosition, safeSize];
+}
+
 export const ensureWindowIsVisible = (bounds: Rectangle) => {
-    const { width, height, x, y } = bounds;
-    const primaryDisplay = screen.getPrimaryDisplay();
-    const { workArea } = primaryDisplay;
+    const { workArea } = screen.getDisplayMatching(bounds) || screen.getPrimaryDisplay();
 
     // Ensure the window is not larger than the work area
-    const safeWidth = Math.min(width, workArea.width);
-    const safeHeight = Math.min(height, workArea.height);
+    const [safeX, safeWidth] = safeCoordinate([workArea.x, workArea.width], [bounds.x, bounds.width]);
+    const [safeY, safeHeight] = safeCoordinate([workArea.y, workArea.height], [bounds.y, bounds.height]);
 
-    // Ensure the window is within the horizontal bounds of the work area
-    let safeX = x;
-    if (x < workArea.x || x > workArea.x + workArea.width) {
-        safeX = workArea.x;
-    }
-
-    // Ensure the window is within the vertical bounds of the work area
-    let safeY = y;
-    if (y < workArea.y || y > workArea.y + workArea.height) {
-        safeY = workArea.y;
-    }
-
-    return { x: safeX, y: safeY, width: safeWidth, height: safeHeight };
+    return {
+        x: safeX,
+        y: safeY,
+        width: safeWidth,
+        height: safeHeight,
+    };
 };
