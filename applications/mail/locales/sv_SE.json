@@ -93,9 +93,6 @@
       "Add to group": [
         "Lägg till i grupp"
       ],
-      "Adds it below your existing message": [
-        "Lägger till det under ditt befintliga meddelande"
-      ],
       "Align center": [
         "Centrera"
       ],
@@ -835,11 +832,11 @@
       "Not saved": [
         "Inte sparad"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Öppna"
@@ -1092,9 +1089,6 @@
       ],
       "send auto-reply email": [
         "skicka automatiskt svar"
-      ],
-      "Send feedback": [
-        "Skicka feedback"
       ],
       "Send read receipt": [
         "Skicka läskvitto"
@@ -3465,9 +3459,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Använd dra och släpp för att ange prioritet vid sammanslagning av kontakter. Avmarkera kontakterna du inte vill sammanfoga."
       ],
-      "Use the writing assistant to:": [
-        "Använd skrivassistenten för att:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Vi hittade inga kända spårare och spårnings-URL:er i detta e-postmeddelande."
       ],
@@ -4546,11 +4537,6 @@
         "Ingen bild vald"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Poäng krävs"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Kan inte skicka inbjudan till ${ email }. ${ errorMessage }"
@@ -4754,11 +4740,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar automatisk synkronisering, krypterad fildelning och mer."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Din feedback"
       ]
     },
     "fido2: Error": {
@@ -5989,9 +5970,6 @@
       "Country code": [
         "Landskod"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Utforma bättre e-postmeddelanden, snabbt och lätt. Pröva det nu."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Skapa ${ calendarsToBeCreatedCount } ny kalender",
         "Skapa ${ calendarsToBeCreatedCount } nya kalendrar"
@@ -6231,9 +6209,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "För fler sökresultat, prova att söka efter detta nyckelord i innehållet i dina e-postmeddelanden."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Gratis i ${ ASSISTANT_TRIAL_TIME_DAYS } dagar"
-      ],
       "From": [
         "Från"
       ],
@@ -6379,9 +6354,6 @@
       ],
       "Learn more": [
         "Lär dig mer"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Lär dig mer om skrivassistent för ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Vänster till höger"
@@ -7824,12 +7796,6 @@
       "Automatically save contacts": [
         "Spara kontakter automatiskt"
       ],
-      "Awful": [
-        "Förfärlig"
-      ],
-      "Bad": [
-        "Dålig"
-      ],
       "BCC": [
         "Hemlig kopia"
       ],
@@ -8016,14 +7982,8 @@
       "From: ${ fromEmail }": [
         "Från: ${ fromEmail }"
       ],
-      "Good": [
-        "Bra"
-      ],
       "Hide password": [
         "Dölj lösenord"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Hur skulle du beskriva din upplevelse med nya ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Jag förstår risken"
@@ -8126,9 +8086,6 @@
       ],
       "Notification": [
         "Avisering"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Öppna i en ny flik"
@@ -8300,9 +8257,6 @@
       ],
       "Without attachment": [
         "Utan bilagor"
-      ],
-      "Wonderful": [
-        "Underbar"
       ],
       "Writing assistant": [
         "Skrivassistent"
@@ -8955,15 +8909,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Kom igång för $1"
-      ],
-      "Get started for 1 €": [
-        "Kom igång för 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Kom igång för CHF 1"
-      ],
       "Upgrade now": [
         "Uppgradera nu"
       ]
@@ -9204,9 +9149,6 @@
       "GDPR data processing agreement": [
         "GDPR databehandlingsavtal"
       ],
-      "Generate emails with only a prompt": [
-        "Generera e-post med endast en prompt"
-      ],
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
       ],
@@ -9261,9 +9203,6 @@
       ],
       "Priority support & live chat": [
         "Prioriterad support och livechatt"
-      ],
-      "Proofread and refine your texts": [
-        "Korrekturläs och finjustera dina texter"
       ],
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
@@ -9501,16 +9440,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Berätta om dina upplevelse. (valfritt)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Feedback"
       ]
     },
     "new_plans: Title": {
@@ -11966,11 +11895,6 @@
         "${ label.Name } borttagen"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Feedback skickad"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/månad"
@@ -12438,9 +12362,6 @@
       "External encryption": [
         "Extern kryptering"
       ],
-      "Feedback": [
-        "Feedback"
-      ],
       "Filter name cannot contain only spaces": [
         "Filternamn kan inte bara innehålla mellanslag"
       ],
@@ -12732,9 +12653,6 @@
       ],
       "Send email": [
         "Skicka e-post"
-      ],
-      "Send feedback": [
-        "Skicka feedback"
       ],
       "Send with changed preferences?": [
         "Skicka med ändrade preferenser?"

@@ -93,9 +93,6 @@
       "Add to group": [
         "Legg til gruppe"
       ],
-      "Adds it below your existing message": [
-        "Legger den til under den eksisterende meldingen"
-      ],
       "Align center": [
         "Midtstill"
       ],
@@ -832,10 +829,10 @@
       "Not saved": [
         "Ikke lagret"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1089,9 +1086,6 @@
       ],
       "send auto-reply email": [
         "send e-post med autosvar"
-      ],
-      "Send feedback": [
-        "Send tilbakemelding"
       ],
       "Send read receipt": [
         "Send lesebekreftelse"
@@ -3467,9 +3461,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Bruk 'dra' og 'slipp' til å rangere sammenslåingsprioritet mellom kontakter. Fjern merket for kontaktene du ikke vil slå sammen."
       ],
-      "Use the writing assistant to:": [
-        "Bruk skriveassistenten til å:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Vi fant ingen kjente sporere og sporingsnettadresser i denne e-posten."
       ],
@@ -4559,11 +4550,6 @@
         "Ingen bilde valgt"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Poengsum kreves"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Kan ikke sende invitasjon til ${ email }. ${ errorMessage }"
@@ -4767,11 +4753,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sikre filene dine med kryptert skylagring. Inkluderer automatisk synkronisering, kryptert fildeling og mer."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Din tilbakemelding"
       ]
     },
     "fido2: Error": {
@@ -5988,9 +5969,6 @@
       "Country code": [
         "Landskode"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Lag bedre e-poster, raskt og enkelt. Prøv det nå."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Opprett ${ calendarsToBeCreatedCount } ny kalender",
         "Opprett ${ calendarsToBeCreatedCount } nye kalendere"
@@ -6230,9 +6208,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "For flere søkeresultater, prøv å søke etter dette nøkkelordet i innholdet til dine e-postmeldinger."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Gratis i ${ ASSISTANT_TRIAL_TIME_DAYS } dager"
-      ],
       "From": [
         "Fra"
       ],
@@ -6378,9 +6353,6 @@
       ],
       "Learn more": [
         "Lær mer"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Lær mer om ${ BRAND_NAME }s skriveassistent"
       ],
       "Left to Right": [
         "Venstre til høyre"
@@ -7820,12 +7792,6 @@
       "Automatically save contacts": [
         "Lagre automatisk kontakter"
       ],
-      "Awful": [
-        "Forferdelig"
-      ],
-      "Bad": [
-        "Dårlig"
-      ],
       "BCC": [
         "Blindkopi"
       ],
@@ -8012,14 +7978,8 @@
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
-      "Good": [
-        "Bra"
-      ],
       "Hide password": [
         "Skjul passord"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Hvordan vil du beskrive din opplevelse med det nye ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Jeg forstår risikoen"
@@ -8122,9 +8082,6 @@
       ],
       "Notification": [
         "Varsel"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Åpne i en ny fane"
@@ -8296,9 +8253,6 @@
       ],
       "Without attachment": [
         "Uten vedlegg"
-      ],
-      "Wonderful": [
-        "Fantastisk"
       ],
       "Writing assistant": [
         "Skriveassistent"
@@ -8954,15 +8908,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Kom i gang for $1"
-      ],
-      "Get started for 1 €": [
-        "Kom i gang for 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Kom i gang for 1 CHF"
-      ],
       "Upgrade now": [
         "Oppgrader nå"
       ]
@@ -9209,9 +9154,6 @@
       "GDPR data processing agreement": [
         "Avtale om GDPR-databehandling"
       ],
-      "Generate emails with only a prompt": [
-        "Generer e-postmeldinger med bare en ledetekst"
-      ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
       ],
@@ -9266,9 +9208,6 @@
       ],
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
-      ],
-      "Proofread and refine your texts": [
-        "Korrekturles og finjuster tekstene dine"
       ],
       "Protect ${ n } device at a time": [
         "Beskytt ${ n } enhet om gangen",
@@ -9506,16 +9445,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Fortell oss om din opplevelse (valgfritt)."
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Tilbakemelding"
       ]
     },
     "new_plans: title": {
@@ -11981,11 +11910,6 @@
         "${ label.Name } fjernet"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Tilbakemelding sendt"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/måned"
@@ -12453,9 +12377,6 @@
       "External encryption": [
         "Ekstern kryptering"
       ],
-      "Feedback": [
-        "Tilbakemelding"
-      ],
       "Filter name cannot contain only spaces": [
         "Filternavnet kan ikke kun inneholde mellomrom"
       ],
@@ -12747,9 +12668,6 @@
       ],
       "Send email": [
         "Send e-post"
-      ],
-      "Send feedback": [
-        "Send tilbakemelding"
       ],
       "Send with changed preferences?": [
         "Sende med endrede innstillinger?"

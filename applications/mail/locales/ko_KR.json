@@ -93,9 +93,6 @@
       "Add to group": [
         "그룹에 추가"
       ],
-      "Adds it below your existing message": [
-        "작성된 메시지 아래에 추가하기"
-      ],
       "Align center": [
         "중앙 정렬"
       ],
@@ -828,10 +825,10 @@
       "Not saved": [
         "저장되지 않음"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
       "Open": [
@@ -1085,9 +1082,6 @@
       ],
       "send auto-reply email": [
         "자동응답 이메일 보내기"
-      ],
-      "Send feedback": [
-        "의견 제출"
       ],
       "Send read receipt": [
         "수신 확인 보내기"
@@ -3448,9 +3442,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "드래그 앤 드롭을 사용하여 연락처 간의 병합 우선 순위를 매기세요. 병합하고 싶지 않은 연락처는 선택 취소하세요."
       ],
-      "Use the writing assistant to:": [
-        "다음으로 글쓰기 도우미 사용하기:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "이 이메일에서 알려진 추적기와 추적 URL을 찾지 못했습니다."
       ],
@@ -4526,11 +4517,6 @@
         "선택된 이미지가 없음"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "점수가 필요함"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "${ email } 로 초대 전송 실패. ${ errorMessage }"
@@ -4734,11 +4720,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "자동 동기화, 암호화 파일 공유 등을 포함한 암호화된 클라우드 저장공간으로 파일을 보호하세요."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "귀하의 피드백"
       ]
     },
     "fido2: Error": {
@@ -5891,9 +5872,6 @@
       "Country code": [
         "국가 코드"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "더 나은, 빠른, 효율적인 이메일 작성하기. 지금 시도해 보세요."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount }개의 새 달력 만들기"
       ],
@@ -6125,9 +6103,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "더 많은 검색 결과를 보려면 이메일 내용에서 이 단어를 검색해 보세요."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "${ ASSISTANT_TRIAL_TIME_DAYS }일 무료 체험"
-      ],
       "From": [
         "보낸 사람"
       ],
@@ -6271,9 +6246,6 @@
       ],
       "Learn more": [
         "더 알아보기"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "${ BRAND_NAME } 글쓰기 도우미에 대해 더 알아보기"
       ],
       "Left to Right": [
         "왼쪽에서 오른쪽으로"
@@ -7687,12 +7659,6 @@
       "Automatically save contacts": [
         "자동으로 연락처 저장"
       ],
-      "Awful": [
-        "끔찍"
-      ],
-      "Bad": [
-        "나쁨"
-      ],
       "BCC": [
         "숨은참조"
       ],
@@ -7879,14 +7845,8 @@
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
       ],
-      "Good": [
-        "좋음"
-      ],
       "Hide password": [
         "비밀번호 숨기기"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "새로운 ${ BRAND_NAME }에 대한 당신의 느낌은 어떠신가요?"
       ],
       "I understand the risk": [
         "위험 사항을 이해했어요."
@@ -7989,9 +7949,6 @@
       ],
       "Notification": [
         "알림"
-      ],
-      "OK": [
-        "확인"
       ],
       "Open in a new tab": [
         "새 탭에서 열기"
@@ -8163,9 +8120,6 @@
       ],
       "Without attachment": [
         "첨부 파일 없음"
-      ],
-      "Wonderful": [
-        "최고"
       ],
       "Writing assistant": [
         "글쓰기 도우미"
@@ -8813,15 +8767,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
       ],
-      "Get started for $1": [
-        "$1로 시작하기"
-      ],
-      "Get started for 1 €": [
-        "1€로 시작하기"
-      ],
-      "Get started for CHF 1": [
-        "1 CHF로 시작하기"
-      ],
       "Upgrade now": [
         "지금 업그레이드"
       ]
@@ -9051,9 +8996,6 @@
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
       ],
-      "Generate emails with only a prompt": [
-        "프롬포트만으로 이메일을 생성하세요"
-      ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
       ],
@@ -9107,9 +9049,6 @@
       ],
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
-      ],
-      "Proofread and refine your texts": [
-        "문장 교정 및 다듬기"
       ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
@@ -9344,16 +9283,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "당신의 경험에 대해 알려주세요. (선택사항)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "피드백"
       ]
     },
     "new_plans: title": {
@@ -11087,7 +11016,7 @@
     },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "${ BRAND_NAME }의 유일한 수익원은 사용자의 구독입니다. 당신의 지지로 저희는 독립적일 수 있고, 프라이버시가 기본인 온라인을 만들어나가는 사명을 위해 나아갈 수 있으며, 프라이버시와 자유를 위해 싸우는 활동가들과 조직을 지원해나갈 수 있습니다."
+        "${ BRAND_NAME }의 유일한 수익원은 사용자의 구독입니다. 회원님의 지지로 저희는 독립적일 수 있고, 프라이버시가 기본인 온라인을 만들어나가는 사명을 위해 나아갈 수 있으며, 프라이버시와 자유를 위해 싸우는 활동가들과 조직을 지원해나갈 수 있습니다."
       ],
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME }과 캘린더 공유 기능"
@@ -11750,11 +11679,6 @@
         "${ label.Name } 삭제됨"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "피드백 전송"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/월"
@@ -12208,9 +12132,6 @@
       "External encryption": [
         "외부 암호화"
       ],
-      "Feedback": [
-        "피드백"
-      ],
       "Filter name cannot contain only spaces": [
         "필터 이름이 공백을 포함할 수 없습니다."
       ],
@@ -12501,9 +12422,6 @@
       ],
       "Send email": [
         "이메일 발송"
-      ],
-      "Send feedback": [
-        "의견 전송"
       ],
       "Send with changed preferences?": [
         "변경된 설정으로 보내시겠습니까?"

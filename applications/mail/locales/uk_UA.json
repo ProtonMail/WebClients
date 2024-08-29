@@ -93,9 +93,6 @@
       "Add to group": [
         "Додати до групи"
       ],
-      "Adds it below your existing message": [
-        "Додає його під вашим наявним повідомленням"
-      ],
       "Align center": [
         "Вирівняти по центру"
       ],
@@ -837,11 +834,11 @@
       "Not saved": [
         "Не збережено"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "Застосувати"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open": [
         "Відкрити"
@@ -1094,9 +1091,6 @@
       ],
       "send auto-reply email": [
         "надіслати лист з автоматичною відповіддю"
-      ],
-      "Send feedback": [
-        "Надіслати відгук"
       ],
       "Send read receipt": [
         "Надіслати підтвердження прочитання"
@@ -3486,9 +3480,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Використовуйте перетягування для пріоритету об'єднання між контактами. Приберіть позначку з тих контактів, які ви не хочете об'єднувати."
       ],
-      "Use the writing assistant to:": [
-        "Використовуйте помічника з написання для:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "У цьому електронному листі не знайдено відомих вистежувачів чи URL-адрес із вбудованими елементами стеження."
       ],
@@ -4563,11 +4554,6 @@
         "Жодного зображення не вибрано"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Оцінка обов'язкова"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Неможливо надіслати запрошення на ${ email }. ${ errorMessage }"
@@ -4756,11 +4742,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з автоматичною синхронізацією, зашифрованим спільним доступом та іншими можливостями."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Ваш відгук"
       ]
     },
     "fido2: Error": {
@@ -6105,9 +6086,6 @@
       "Country code": [
         "Код країни"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Пишіть кращі листи, швидко та без зусиль. Спробуйте зараз."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Створити ${ calendarsToBeCreatedCount } новий календар",
         "Створити ${ calendarsToBeCreatedCount } нові календарі",
@@ -6363,9 +6341,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Щоб отримати більше результатів пошуку, спробуйте шукати за цим ключовим словом у вмісті повідомлень вашої пошти."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Безплатно протягом ${ ASSISTANT_TRIAL_TIME_DAYS } днів"
-      ],
       "From": [
         "Від"
       ],
@@ -6515,9 +6490,6 @@
       ],
       "Learn more": [
         "Докладніше"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Докладніше про помічника з написання ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Зліва направо"
@@ -8006,12 +7978,6 @@
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
       ],
-      "Awful": [
-        "Жахливо"
-      ],
-      "Bad": [
-        "Погано"
-      ],
       "BCC": [
         "Прихована копія"
       ],
@@ -8198,14 +8164,8 @@
       "From: ${ fromEmail }": [
         "Від: ${ fromEmail }"
       ],
-      "Good": [
-        "Добре"
-      ],
       "Hide password": [
         "Приховати пароль"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Як би ви описали свої враження від нового ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Я розумію ризик"
@@ -8308,9 +8268,6 @@
       ],
       "Notification": [
         "Сповіщення"
-      ],
-      "OK": [
-        "Нормально"
       ],
       "Open in a new tab": [
         "Відкрити у новій вкладці"
@@ -8482,9 +8439,6 @@
       ],
       "Without attachment": [
         "Без вкладення"
-      ],
-      "Wonderful": [
-        "Дивовижно"
       ],
       "Writing assistant": [
         "Помічник з написання"
@@ -9156,15 +9110,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Понизити до ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Почати за 1 $"
-      ],
-      "Get started for 1 €": [
-        "Почати за 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Почати за 1 CHF"
-      ],
       "Upgrade now": [
         "Покращити"
       ]
@@ -9409,9 +9354,6 @@
       "GDPR data processing agreement": [
         "Угода про обробку даних GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Генерування листів лише за запитом"
-      ],
       "Group management (coming soon)": [
         "Керування групами (незабаром)"
       ],
@@ -9459,9 +9401,6 @@
       ],
       "Priority support & live chat": [
         "Пріоритетна підтримка і чат"
-      ],
-      "Proofread and refine your texts": [
-        "Рецензування і вдосконалення ваших текстів"
       ],
       "Protect ${ n } device at a time": [
         "Захист ${ n } пристрою",
@@ -9687,16 +9626,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Розкажіть нам про своє враження. (Необов'язково)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Відгук"
       ]
     },
     "new_plans: title": {
@@ -12165,11 +12094,6 @@
         "${ label.Name } вилучено"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Відгук надіслано"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/місяць"
@@ -12647,9 +12571,6 @@
       "External encryption": [
         "Зовнішнє шифрування"
       ],
-      "Feedback": [
-        "Відгук"
-      ],
       "Filter name cannot contain only spaces": [
         "Назва фільтра не може містити лише пробіли"
       ],
@@ -12943,9 +12864,6 @@
       ],
       "Send email": [
         "Надіслати лист"
-      ],
-      "Send feedback": [
-        "Надіслати відгук"
       ],
       "Send with changed preferences?": [
         "Надіслати зі зміненими налаштуваннями?"

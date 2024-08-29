@@ -93,9 +93,6 @@
       "Add to group": [
         "Afegeix al grup"
       ],
-      "Adds it below your existing message": [
-        "Afegeix-lo sota el missatge existent"
-      ],
       "Align center": [
         "Alinea al centre"
       ],
@@ -829,10 +826,10 @@
       "Not saved": [
         "No s'ha desat"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
       "Open": [
@@ -1086,9 +1083,6 @@
       ],
       "send auto-reply email": [
         "enviar correu d’auto-resposta"
-      ],
-      "Send feedback": [
-        "Enviar comentaris"
       ],
       "Send read receipt": [
         "Enviar confirmació de lectura"
@@ -3458,9 +3452,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arrossegueu i solteu per a classificar la prioritat de combinació entre els contactes. Desmarqueu els contactes que no vulgueu combinar."
       ],
-      "Use the writing assistant to:": [
-        "Useu l'assistent d'escriptura per a:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "No hem trobat cap rastrejador ni URL de seguiment conegut en aquest correu electrònic."
       ],
@@ -4517,11 +4508,6 @@
         "No s'ha seleccionat cap imatge"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Es requereix la valoració"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "No es pot enviar la invitació a ${ email }. ${ errorMessage }"
@@ -4704,11 +4690,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge al núvol xifrat. Inclou sincronització automàtica, compartició de fitxers xifrats i més."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Els teus comentaris"
       ]
     },
     "fido2: Error": {
@@ -5922,9 +5903,6 @@
       "Country code": [
         "Codi de país"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Milloreu els vostres correus electrònics, de manera ràpida i sense esforç. Proveu-ho ara."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Crea ${ calendarsToBeCreatedCount } calendari",
         "Crea ${ calendarsToBeCreatedCount } calendaris"
@@ -6160,9 +6138,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Per obtenir més resultats de cerca, proveu de cercar aquesta paraula clau al contingut dels vostres missatges de correu electrònic."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Gratuït durant ${ ASSISTANT_TRIAL_TIME_DAYS } dies"
-      ],
       "From": [
         "De"
       ],
@@ -6308,9 +6283,6 @@
       ],
       "Learn more": [
         "Més informació"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Més informació sobre l'assistent d'escriptura ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Esquerra a Dreta"
@@ -7744,12 +7716,6 @@
       "Automatically save contacts": [
         "Desar contactes automàticament"
       ],
-      "Awful": [
-        "Horrible"
-      ],
-      "Bad": [
-        "Dolenta"
-      ],
       "BCC": [
         "CCO"
       ],
@@ -7936,14 +7902,8 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
-      "Good": [
-        "Bona"
-      ],
       "Hide password": [
         "Amaga la contrasenya"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Com descriuríeu la vostra experiència amb ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Entenc el risc"
@@ -8046,9 +8006,6 @@
       ],
       "Notification": [
         "Notificació"
-      ],
-      "OK": [
-        "D'acord"
       ],
       "Open in a new tab": [
         "Obre en una pestanya nova"
@@ -8220,9 +8177,6 @@
       ],
       "Without attachment": [
         "Sense fitxers adjunts"
-      ],
-      "Wonderful": [
-        "Meravellosa"
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
@@ -8878,12 +8832,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Comenceu per $1"
-      ],
-      "Get started for 1 €": [
-        "Comenceu per 1€"
-      ],
       "Upgrade now": [
         "Millora ara"
       ]
@@ -8989,6 +8937,9 @@
       ],
       "1 user": [
         "1 usuari"
+      ],
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
       ],
       "24/7 account management support": [
         "Suport per a la gestió de comptes 24/7"
@@ -9104,9 +9055,6 @@
       "GDPR data processing agreement": [
         "Acord de processament de dades RGPD"
       ],
-      "Generate emails with only a prompt": [
-        "Genera correus electrònics només amb una indicació"
-      ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
       ],
@@ -9141,6 +9089,9 @@
       "Password health": [
         "Estat de la contrasenya"
       ],
+      "Password manager": [
+        "Gestor de contrasenyes"
+      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
@@ -9152,9 +9103,6 @@
       ],
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
-      ],
-      "Proofread and refine your texts": [
-        "Corregiu i refineu els textos"
       ],
       "Protect ${ n } device at a time": [
         "Protegiu ${ n } dispositiu alhora",
@@ -9374,16 +9322,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Expliqueu-nos la vostra experiència. (Opcional)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Comentaris"
       ]
     },
     "new_plans: title": {
@@ -11804,11 +11742,6 @@
         "${ label.Name } esborrat"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "S'ha enviat l'opinió"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/mes"
@@ -11953,6 +11886,9 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
+      ],
+      "Download Desktop app": [
+        "Descarregueu l'aplicació d'escriptori"
       ],
       "Enable Dark Web Monitoring": [
         "Activa la supervisió de la web fosca"
@@ -12261,9 +12197,6 @@
       "External encryption": [
         "Xifrat extern"
       ],
-      "Feedback": [
-        "Comentaris"
-      ],
       "Filter name cannot contain only spaces": [
         "El nom del filtre no pot contenir només espais"
       ],
@@ -12552,9 +12485,6 @@
       ],
       "Send email": [
         "Enviar correu"
-      ],
-      "Send feedback": [
-        "Enviar comentaris"
       ],
       "Send with changed preferences?": [
         "Enviar amb preferències canviades?"

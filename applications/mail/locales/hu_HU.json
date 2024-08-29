@@ -755,10 +755,10 @@
       "Not saved": [
         "Nincs mentve"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -988,9 +988,6 @@
       ],
       "send auto-reply email": [
         "automatikus válasz küldése"
-      ],
-      "Send feedback": [
-        "Visszajelzés küldése"
       ],
       "Send read receipt": [
         "Olvasási visszaigazolás küldése"
@@ -1394,6 +1391,11 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } alkalmazások"
+      ]
+    },
+    "Assistant option": {
+      "Run on servers": [
+        "Futtatás a szervereken"
       ]
     },
     "Attached ics file error": {
@@ -4089,11 +4091,6 @@
         "Nincs kép kiválasztva"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "A pont megadása kötelező"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Meghívó elküldése nem sikerült: ${ email }. ${ errorMessage }"
@@ -4267,11 +4264,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Automatikus szinkronizálást, titkosított megosztás és további lehetőségeket tartalmaz."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Az ön visszajelzése"
       ]
     },
     "fido2: Error": {
@@ -7063,12 +7055,6 @@
       "Automatically save contacts": [
         "Névjegyek automatikus mentése"
       ],
-      "Awful": [
-        "Szörnyű"
-      ],
-      "Bad": [
-        "Rossz"
-      ],
       "BCC": [
         "Titkos másolat"
       ],
@@ -7246,14 +7232,8 @@
       "From: ${ fromEmail }": [
         "Feladó: ${ fromEmail }"
       ],
-      "Good": [
-        "Jó"
-      ],
       "Hide password": [
         "Jelszó elrejtése"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Hogyan értékelné a tapasztalatait az új ${ BRAND_NAME }lel kapcsolatban?"
       ],
       "I understand the risk": [
         "Megértettem a kockázatot"
@@ -7353,9 +7333,6 @@
       ],
       "Notification": [
         "Értesítés"
-      ],
-      "OK": [
-        "Megfelelő"
       ],
       "Open in a new tab": [
         "Megnyitás új lapon"
@@ -7521,9 +7498,6 @@
       ],
       "Without attachment": [
         "Nem tartalmaz mellékletet"
-      ],
-      "Wonderful": [
-        "Csodás"
       ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
@@ -8254,6 +8228,9 @@
       "Automatic email forwarding": [
         "Automatikus e-mail továbbítás"
       ],
+      "Available on all platforms": [
+        "Minden platformon elérhető"
+      ],
       "Calendar sharing": [
         "Naptár megosztás"
       ],
@@ -8320,8 +8297,14 @@
       "Fast P2P/BitTorrent downloads": [
         "Gyors P2P/BitTorrent letöltések"
       ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "A ${ BRAND_NAME }${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } és ${ DRIVE_SHORT_APP_NAME } ingyenes funkciói"
+      ],
       "Free VPN on a single device": [
         "Ingyenes VPN egy eszközön"
+      ],
+      "Fully refundable for 30 days": [
+        "30 napig teljesen visszaigényelhető"
       ],
       "GDPR data processing agreement": [
         "GDPR adatfeldolgozói megállapodás"
@@ -8545,16 +8528,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Küldjön visszajelzést a tapasztalatairól. (Opcionális)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Visszajelzés"
       ]
     },
     "new_plans: title": {
@@ -8923,11 +8896,17 @@
       ]
     },
     "passwordless": {
+      "Organization key does not exist.": [
+        "A szervezeti kulcs nem létezik."
+      ],
       "Permission denied, administrator privileges have been restricted.": [
         "Hozzáférés megtagadva, adminisztrátori jogok korlátozásra kerültek."
       ],
       "The organization key must be activated first.": [
         "Először a szervezeti kulcs aktiválása szükséges."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "A művelet végrehajtásához a szervezeti kulcs elérésére van szüksége."
       ]
     },
     "Payment method option": {
@@ -10297,11 +10276,6 @@
         "${ label.Name } törölve"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Visszajelzés elküldve"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/hó"
@@ -10715,9 +10689,6 @@
       "External encryption": [
         "Külső titkosítás"
       ],
-      "Feedback": [
-        "Visszajelzés"
-      ],
       "Filter on...": [
         "Szűrés..."
       ],
@@ -10964,9 +10935,6 @@
       ],
       "Send email": [
         "E-mail küldése"
-      ],
-      "Send feedback": [
-        "Visszajelzés küldése"
       ],
       "Send with changed preferences?": [
         "Elküldi a megváltoztatott beállításokkal?"

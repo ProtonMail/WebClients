@@ -93,9 +93,6 @@
       "Add to group": [
         "Pridať do skupiny"
       ],
-      "Adds it below your existing message": [
-        "Pridá ju pod existujúcu správu"
-      ],
       "Align center": [
         "Zarovnať na stred"
       ],
@@ -837,11 +834,11 @@
       "Not saved": [
         "Neuložené"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Otvoriť"
@@ -1094,9 +1091,6 @@
       ],
       "send auto-reply email": [
         "odoslať automatickú odpoveď"
-      ],
-      "Send feedback": [
-        "Odoslať spätnú väzbu"
       ],
       "Send read receipt": [
         "Odoslať potvrdenie o prečítaní"
@@ -3502,9 +3496,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocou myši ťahajte a pustite pre zmenu priority spojenie kontaktov. Odškrtnite kontakty, ktoré nechcete zlúčiť."
       ],
-      "Use the writing assistant to:": [
-        "Pomocou asistenta písania môžete:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "V tomto emaily sme nenašli žiadne známe sledovače ani sledovacie URL adresy."
       ],
@@ -3610,8 +3601,17 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB úložného priestoru"
+      ],
       "2 users": [
         "2 používatelia"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Plný prístup k všetkým produktom ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Ušetríte ${ amountSave }"
       ]
     },
     "duoplan2024: SubTitle": {
@@ -4588,11 +4588,6 @@
         "Nie je vybraný žiadny obrázok"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Skóre je potrebné vyplniť"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Nie je možné odoslať pozvánku na adresu ${ email }. ${ errorMessage }"
@@ -4781,11 +4776,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Vaša spätná väzba"
       ]
     },
     "fido2: Error": {
@@ -6127,9 +6117,6 @@
       "Country code": [
         "Kód krajiny"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Vytvárajte lepšie emaily rýchlo a bez námahy. Vyskúšajte to teraz."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Vytvoriť ${ calendarsToBeCreatedCount } nový kalendár",
         "Vytvoriť ${ calendarsToBeCreatedCount } nové kalendáre",
@@ -6379,9 +6366,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pre viac výsledkov skúste toto kľúčové slovo vyhľadať v obsahu vašich emailových správ."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Free na ${ ASSISTANT_TRIAL_TIME_DAYS } dní"
-      ],
       "From": [
         "Od"
       ],
@@ -6531,9 +6515,6 @@
       ],
       "Learn more": [
         "Zistiť viac"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Ďalšie informácie o asistentovi písania spoločnosti ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Zľava Doprava"
@@ -8019,12 +8000,6 @@
       "Automatically save contacts": [
         "Automaticky ukladať kontakty"
       ],
-      "Awful": [
-        "Hrozné"
-      ],
-      "Bad": [
-        "Zlé"
-      ],
       "BCC": [
         "Skrytá kópia (BCC)"
       ],
@@ -8211,14 +8186,8 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
-      "Good": [
-        "Dobré"
-      ],
       "Hide password": [
         "Skryť heslo"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Ako by ste popísali svoju skúsenosť s novým ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Rozumiem rizikám"
@@ -8321,9 +8290,6 @@
       ],
       "Notification": [
         "Notifikácia"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Otvoriť na novej karte"
@@ -8495,9 +8461,6 @@
       ],
       "Without attachment": [
         "Bez prílohy"
-      ],
-      "Wonderful": [
-        "Úžasné"
       ],
       "Writing assistant": [
         "Asistent písania"
@@ -9169,15 +9132,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Prejsť na nižší plán ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Začnite teraz za $1"
-      ],
-      "Get started for 1 €": [
-        "Začnite teraz za 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Začnite teraz za CHF 1"
-      ],
       "Upgrade now": [
         "Aktualizovať teraz"
       ]
@@ -9274,6 +9228,12 @@
         "${ n } správy za deň",
         "${ n } správ za deň",
         "${ n } správ za deň"
+      ],
+      "${ n } user": [
+        "${ n } používateľ",
+        "Až ${ n } používatelia",
+        "Až ${ n } používateľov",
+        "Až ${ n } používateľov"
       ],
       "${ n } vault": [
         "${ n } trezor",
@@ -9422,9 +9382,6 @@
       "GDPR data processing agreement": [
         "Dohoda o spracovaní údajov v zmysle GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Generovať emaily len pomocou podnetu"
-      ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
       ],
@@ -9461,6 +9418,9 @@
       "Password health": [
         "Zdravie hesla"
       ],
+      "Password manager": [
+        "Správca hesiel"
+      ],
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
@@ -9472,9 +9432,6 @@
       ],
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
-      ],
-      "Proofread and refine your texts": [
-        "Korigovať a zdokonaľovať svoje texty"
       ],
       "Protect ${ n } device at a time": [
         "Chráňte súčasne ${ n } zariadenie",
@@ -9703,16 +9660,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Povedzte nám o svojich skúsenostiach. (Nepovinné)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Spätná väzba"
       ]
     },
     "new_plans: title": {
@@ -12310,11 +12257,6 @@
         "Štítok ${ label.Name } bol odstránený"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Spätná väzba bola odoslaná"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/mesiac"
@@ -12795,6 +12737,9 @@
       "Enable message content search": [
         "Povoliť vyhľadávanie v obsahu správy"
       ],
+      "Enter 2FA code": [
+        "Zadajte 2FA kód"
+      ],
       "Enter your password": [
         "Zadajte Vaše heslo"
       ],
@@ -12806,9 +12751,6 @@
       ],
       "External encryption": [
         "Externé šifrovanie"
-      ],
-      "Feedback": [
-        "Spätná väzba"
       ],
       "Filter name cannot contain only spaces": [
         "Názov filtra nesmie obsahovať iba medzery"
@@ -13100,9 +13042,6 @@
       ],
       "Send email": [
         "Odoslať email"
-      ],
-      "Send feedback": [
-        "Odoslať spätnú väzbu"
       ],
       "Send with changed preferences?": [
         "Odoslať so zmenenými nastaveniami?"
