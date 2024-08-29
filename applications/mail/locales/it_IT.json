@@ -93,9 +93,6 @@
       "Add to group": [
         "Aggiungi ad un gruppo"
       ],
-      "Adds it below your existing message": [
-        "Viene aggiunto sotto al messaggio esistente"
-      ],
       "Align center": [
         "Allinea al centro"
       ],
@@ -457,7 +454,7 @@
         "Espandi il compositore"
       ],
       "Expand navigation bar to see folders": [
-        "Espandi la barra di navigazione per visualizzare le etichette"
+        "Espandi la barra di navigazione per visualizzare le cartelle"
       ],
       "Expand navigation bar to see labels": [
         "Espandi la barra di navigazione per visualizzare le etichette"
@@ -832,11 +829,11 @@
       "Not saved": [
         "Non salvato"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Apri"
@@ -1089,9 +1086,6 @@
       ],
       "send auto-reply email": [
         "invia email di risposta automatica"
-      ],
-      "Send feedback": [
-        "Invia il tuo feedback"
       ],
       "Send read receipt": [
         "Invia ricevuta di lettura"
@@ -3467,9 +3461,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Usa il Trascina e Rilascia per classificare la priorità di unione tra i contatti. Deseleziona i contatti che non vuoi unire."
       ],
-      "Use the writing assistant to:": [
-        "Utilizza l'assistente alla scrittura per:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Non abbiamo trovato alcun tracker o URL di tracciamento noto in questa email."
       ],
@@ -3583,11 +3574,17 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Fatturato ogni 2 anni a ${ amountBilled }. Gli sconti si basano sul prezzo mensile standard."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Fatturato annualmente a ${ amountBilled }. Risparmia ${ amountSave } su 2 abbonamenti annuali individuali di ${ BRAND_NAME } Unlimited."
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB di spazio di archiviazione"
+      ],
       "2 users": [
         "2 utenti"
       ],
@@ -4553,11 +4550,6 @@
         "Nessuna immagine selezionata"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Il punteggio è necessario"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Impossibile inviare l'invito a ${ email }. ${ errorMessage }"
@@ -4761,11 +4753,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteggi i tuoi file con l'archiviazione cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Il tuo feedback"
       ]
     },
     "fido2: Error": {
@@ -5982,9 +5969,6 @@
       "Country code": [
         "Codice nazione"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Crea email migliori, in modo rapido e semplice. Provalo ora."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Crea ${ calendarsToBeCreatedCount } nuovo calendario",
         "Crea ${ calendarsToBeCreatedCount } nuovi calendari"
@@ -6224,9 +6208,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Per più risultati di ricerca, prova a cercare questa parola chiave nel contenuto dei tuoi messaggi email."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Gratuito per ${ ASSISTANT_TRIAL_TIME_DAYS } giorni"
-      ],
       "From": [
         "Da"
       ],
@@ -6372,9 +6353,6 @@
       ],
       "Learn more": [
         "Scopri di più"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Scopri di più sull'assistente alla scrittura di ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Da sinistra a destra"
@@ -7817,12 +7795,6 @@
       "Automatically save contacts": [
         "Salvataggio automatico dei contatti"
       ],
-      "Awful": [
-        "Terribile"
-      ],
-      "Bad": [
-        "Non buona"
-      ],
       "BCC": [
         "CCN"
       ],
@@ -8009,14 +7981,8 @@
       "From: ${ fromEmail }": [
         "Da: ${ fromEmail }"
       ],
-      "Good": [
-        "Buona"
-      ],
       "Hide password": [
         "Nascondi la password"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Come vorresti descrivere la tua esperienza con il nuovo ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Comprendo i rischi"
@@ -8119,9 +8085,6 @@
       ],
       "Notification": [
         "Notifica"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Apri in una nuova scheda"
@@ -8293,9 +8256,6 @@
       ],
       "Without attachment": [
         "Senza allegato"
-      ],
-      "Wonderful": [
-        "Fantastica"
       ],
       "Writing assistant": [
         "Assistente alla scrittura"
@@ -8951,15 +8911,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Esegui il downgrade a ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Inizia con 1$"
-      ],
-      "Get started for 1 €": [
-        "Inizia con 1€"
-      ],
-      "Get started for CHF 1": [
-        "Inizia con 1 CHF"
-      ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
       ]
@@ -9074,6 +9025,12 @@
       "${ size } storage": [
         "${ size } di archiviazione"
       ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Per ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Per tutti i servizi di ${ BRAND_NAME }"
+      ],
       "1 user": [
         "1 utente"
       ],
@@ -9091,6 +9048,12 @@
       ],
       "Administration Panel": [
         "Pannello di controllo"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tutti i servizi ${ BRAND_NAME } di base (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Tutti i servizi premium di ${ BRAND_NAME }. Un semplice abbonamento"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminazione automatica dello spam e dal cestino"
@@ -9127,6 +9090,9 @@
       ],
       "Contact groups management": [
         "Gestione dei gruppi di contatti"
+      ],
+      "Custom and secure business email": [
+        "Email aziendale protetta e personalizzata"
       ],
       "Custom domains for email aliases": [
         "Domini personalizzati per alias email"
@@ -9191,9 +9157,6 @@
       "GDPR data processing agreement": [
         "Accordo sul trattamento dei dati GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Genera email con un solo comando"
-      ],
       "Group management (coming soon)": [
         "Gestione dei gruppi (in arrivo)"
       ],
@@ -9219,6 +9182,9 @@
       "Multiple admin roles": [
         "Ruoli di amministratore multipli"
       ],
+      "Online document editor": [
+        "Editor di documenti online"
+      ],
       "Organize items with multiple vaults": [
         "Organizza gli elementi con più casseforti"
       ],
@@ -9227,6 +9193,9 @@
       ],
       "Password health": [
         "Stato delle password"
+      ],
+      "Password manager": [
+        "Gestore password"
       ],
       "Password-protected Emails": [
         "Email protette da password"
@@ -9242,9 +9211,6 @@
       ],
       "Priority support & live chat": [
         "Supporto prioritario e chat dal vivo"
-      ],
-      "Proofread and refine your texts": [
-        "Correggi e perfeziona i tuoi testi"
       ],
       "Protect ${ n } device at a time": [
         "Proteggi ${ n } dispositivo alla volta",
@@ -9283,6 +9249,9 @@
       "Send & receive invitations": [
         "Invia e ricevi inviti"
       ],
+      "Share files with no size limit": [
+        "Condividi file senza limiti di dimensione"
+      ],
       "Sign in as user": [
         "Accedi come utente"
       ],
@@ -9300,6 +9269,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sincronizza ed effettua il backup dei file su tutti i tuoi dispositivi"
       ],
       "Tor over VPN": [
         "Tor su VPN"
@@ -9336,6 +9308,9 @@
       ],
       "Unlimited messages per day": [
         "Messaggi illimitati al giorno"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Casseforti ${ PASS_SHORT_APP_NAME } condivise illimitate per utente"
       ],
       "Unlimited shared vaults with access permissions": [
         "Casseforti condivise illimitate con autorizzazioni di accesso"
@@ -9441,6 +9416,9 @@
       "Popular": [
         "Popolare"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Proteggi le informazioni aziendali sensibili e collabora in modo sicuro."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteggi la privacy della tua famiglia con tutti i servizi ${ BRAND_NAME } combinati."
       ],
@@ -9470,16 +9448,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Parlaci della tua esperienza. (Facoltativo)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Suggerimenti"
       ]
     },
     "new_plans: Title": {
@@ -9616,6 +9584,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "L'assistenza telefonica è disponibile dal team di assistenza clienti di ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con 20 o più utenti"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impedisce l'accesso ai messaggi da parte di ${ BRAND_NAME } o di terzi. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."
@@ -11947,11 +11918,6 @@
         "${ label.Name } rimosso"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Feedback inviato"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/mese"
@@ -12419,9 +12385,6 @@
       "External encryption": [
         "Crittografia esterna"
       ],
-      "Feedback": [
-        "Suggerimenti"
-      ],
       "Filter name cannot contain only spaces": [
         "Il nome del filtro non può contenere solo spazi"
       ],
@@ -12713,9 +12676,6 @@
       ],
       "Send email": [
         "Invia email"
-      ],
-      "Send feedback": [
-        "Invia il tuo feedback"
       ],
       "Send with changed preferences?": [
         "Inviare con preferenze modificate?"
@@ -13068,6 +13028,11 @@
     "wallet_signup_2024:Action": {
       "Access Wallet app": [
         "Accedi all'app Wallet"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Un modo più sicuro/facile per conservare e inviare Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

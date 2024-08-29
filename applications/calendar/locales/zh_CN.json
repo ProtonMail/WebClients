@@ -611,9 +611,6 @@
       "Send": [
         "发送​​"
       ],
-      "Send feedback": [
-        "发送反馈"
-      ],
       "Set recovery phrase": [
         "设置恢复密语"
       ],
@@ -1877,8 +1874,11 @@
       "Kiribati": [
         "基里巴斯"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "朝鲜"
+      ],
       "Korea (Republic of)": [
-        "大韩(民国)"
+        "韩国"
       ],
       "Kosovo": [
         "科索沃"
@@ -3348,11 +3348,6 @@
         "没有选择图像"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "请给出评价"
-      ]
-    },
     "esCalendar": {
       "No result": [
         "无结果"
@@ -3568,11 +3563,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "意见反馈"
       ]
     },
     "fido2: Error": {
@@ -5140,12 +5130,6 @@
       "Automatically save contacts": [
         "自动保存联系人"
       ],
-      "Awful": [
-        "非常差"
-      ],
-      "Bad": [
-        "很差"
-      ],
       "Beta Access": [
         "测试版功能"
       ],
@@ -5308,14 +5292,8 @@
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
       ],
-      "Good": [
-        "很好"
-      ],
       "Hide password": [
         "隐藏密码"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "您认为新版 ${ BRAND_NAME } 的使用体验如何？"
       ],
       "I understand the risk": [
         "风险已知悉"
@@ -5385,9 +5363,6 @@
       ],
       "Notifications": [
         "通知"
-      ],
-      "OK": [
-        "还行"
       ],
       "Operating system": [
         "操作系统"
@@ -5523,9 +5498,6 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "您取消或降级订阅的主要原因是什么？"
-      ],
-      "Wonderful": [
-        "非常好"
       ],
       "Your alias": [
         "您的别名"
@@ -6021,15 +5993,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "降级至 ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "1$即可开始"
-      ],
-      "Get started for 1 €": [
-        "1€即可开始"
-      ],
-      "Get started for CHF 1": [
-        "1CHF即可开始"
-      ],
       "Upgrade now": [
         "立即升级账户"
       ]
@@ -6226,9 +6189,6 @@
       "GDPR data processing agreement": [
         "GDPR 数据处理协议"
       ],
-      "Generate emails with only a prompt": [
-        "有一个提示的情形下，写出邮件"
-      ],
       "Group management (coming soon)": [
         "群组管理（即将推出）"
       ],
@@ -6260,7 +6220,7 @@
         "邮件密码保护"
       ],
       "Phone support (20+ users)": [
-        "支持手机(至少20位用户)"
+        "电话客服（20+ 位用户）"
       ],
       "Priority email support": [
         "优先享受邮件客服"
@@ -6270,9 +6230,6 @@
       ],
       "Priority support & live chat": [
         "优先与客服实时沟通"
-      ],
-      "Proofread and refine your texts": [
-        "请校对和完善您的文本"
       ],
       "Protect ${ n } device at a time": [
         "一次性保护 ${ n } 个设备"
@@ -6299,7 +6256,7 @@
         "Secure Core 服务器"
       ],
       "See team's availability": [
-        "看到团队的可得性"
+        "查看团队成员的繁忙状态"
       ],
       "Send & receive invitations": [
         "发送和接收邀请"
@@ -6456,16 +6413,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "您可以详细叙述您的使用体验。（非必填）"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "反馈内容"
       ]
     },
     "new_plans: title": {
@@ -8243,11 +8190,6 @@
         "您已退订成功"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "反馈已发送"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/月"
@@ -8591,9 +8533,6 @@
       "Exporting contacts": [
         "导出联系人"
       ],
-      "Feedback": [
-        "用户反馈"
-      ],
       "Get advanced protection": [
         "进一步提升防护等级"
       ],
@@ -8782,9 +8721,6 @@
       ],
       "Select which calendar to add this event to": [
         "选择要将此事件添加到哪个日历"
-      ],
-      "Send feedback": [
-        "发送反馈"
       ],
       "Send invitation": [
         "发送邀请"

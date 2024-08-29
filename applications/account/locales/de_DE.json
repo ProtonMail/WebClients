@@ -11554,15 +11554,6 @@
       "From ${ price }": [
         "Ab ${ price }"
       ],
-      "Get started for $1": [
-        "Starten Sie für 1 $"
-      ],
-      "Get started for 1 €": [
-        "Starten Sie für 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Starten Sie für 1 CHF"
-      ],
       "Upgrade": [
         "Upgraden"
       ],
@@ -11807,9 +11798,6 @@
       "GDPR data processing agreement": [
         "Vereinbarung zur Datenverarbeitung im Rahmen der DSGVO"
       ],
-      "Generate emails with only a prompt": [
-        "Generiere E-Mails durch nur eine Eingabe"
-      ],
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
       ],
@@ -11870,9 +11858,6 @@
       ],
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
-      ],
-      "Proofread and refine your texts": [
-        "Korrekturlesen und Verbessern deiner Texte"
       ],
       "Protect ${ n } device at a time": [
         "Schütze ${ n } Gerät gleichzeitig",
@@ -17718,6 +17703,38 @@
         "Diese Version des Tor Browsers wird nicht unterstützt. Bitte aktualisiere auf die neueste ${ stableRelease }"
       ]
     },
+    "unprivatization": {
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Delete request": [
+        "Anfrage löschen"
+      ],
+      "Delete request to access user data?": [
+        "Anfrage zum Zugriff auf Benutzerdaten löschen?"
+      ],
+      "Enable admin access?": [
+        "Admin-Zugriff aktivieren?"
+      ],
+      "Enable administrator access": [
+        "Administrator-Zugriff aktivieren"
+      ],
+      "Pending admin access": [
+        "Admin-Zugriff ausstehend"
+      ],
+      "Revoke access": [
+        "Zugriff entfernen"
+      ],
+      "Revoke administrator access?": [
+        "Administrator-Zugriff entziehen?"
+      ],
+      "Send request": [
+        "Anfrage senden"
+      ],
+      "View request": [
+        "Anfrage ansehen"
+      ]
+    },
     "Update font modal": {
       "Today is a good day to write an email": [
         "Heute ist ein guter Tag, um eine E-Mail zu schreiben"
@@ -17846,6 +17863,9 @@
       ],
       "It's you": [
         "Das bist du"
+      ],
+      "Pending admin access": [
+        "Ausstehender Admin-Zugriff"
       ],
       "Private": [
         "Privat"

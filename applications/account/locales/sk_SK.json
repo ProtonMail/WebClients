@@ -3639,8 +3639,17 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB úložného priestoru"
+      ],
       "2 users": [
         "2 používatelia"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Plný prístup k všetkým produktom ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Ušetríte ${ amountSave }"
       ]
     },
     "duoplan2024: SubTitle": {
@@ -11597,15 +11606,6 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
-      "Get started for $1": [
-        "Začnite teraz za $1"
-      ],
-      "Get started for 1 €": [
-        "Začnite teraz za 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Začnite teraz za CHF 1"
-      ],
       "Upgrade": [
         "Upgradovať"
       ],
@@ -11682,6 +11682,12 @@
         "${ n } správy za deň",
         "${ n } správ za deň",
         "${ n } správ za deň"
+      ],
+      "${ n } user": [
+        "${ n } používateľ",
+        "Až ${ n } používatelia",
+        "Až ${ n } používateľov",
+        "Až ${ n } používateľov"
       ],
       "${ n } vault": [
         "${ n } trezor",
@@ -11848,9 +11854,6 @@
       "GDPR data processing agreement": [
         "Dohoda o spracovaní údajov v zmysle GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Generovať emaily len pomocou podnetu"
-      ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
       ],
@@ -11893,6 +11896,9 @@
       "Password health": [
         "Zdravie hesla"
       ],
+      "Password manager": [
+        "Správca hesiel"
+      ],
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
@@ -11904,9 +11910,6 @@
       ],
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
-      ],
-      "Proofread and refine your texts": [
-        "Korigovať a zdokonaľovať svoje texty"
       ],
       "Protect ${ n } device at a time": [
         "Chráňte súčasne ${ n } zariadenie",
@@ -16651,6 +16654,9 @@
       ],
       "Encryption and keys": [
         "Šifrovanie a kľúče"
+      ],
+      "Enter 2FA code": [
+        "Zadajte 2FA kód"
       ],
       "Enter endpoints into your identity provider": [
         "Zadajte koncové body do vášho poskytovateľa identity"

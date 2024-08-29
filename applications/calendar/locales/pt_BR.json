@@ -617,9 +617,6 @@
       "Send": [
         "Enviar"
       ],
-      "Send feedback": [
-        "Enviar comentários"
-      ],
       "Set recovery phrase": [
         "Definir frase de recuperação"
       ],
@@ -3467,7 +3464,7 @@
         "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Quando a senha adicional está ativado, o gerenciamento de alias pode ser feito apenas pelo ${ PASS_APP_NAME }."
+        "Quando a senha extra está ativada, o gerenciamento de alias pode ser feito apenas pelo ${ PASS_APP_NAME }."
       ],
       "You need an active personal calendar to import events": [
         "Você precisa ter um calendário pessoal ativo para importar seus eventos"
@@ -3481,11 +3478,6 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nenhuma imagem selecionada"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "A pontuação é necessária"
       ]
     },
     "esCalendar": {
@@ -3738,11 +3730,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Seu comentário"
       ]
     },
     "fido2: Error": {
@@ -4747,7 +4734,7 @@
         "Outros usuários da sua organização verão seus horários ocupados. Nenhum detalhe do evento é compartilhado."
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Nossos alertas são mais cautelosos. Se você não reconhece nenhuma das informações violadas, pode ignorar este relatório com segurança."
+        "Nossos alertas pecam por excesso de precaução. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
       ],
       "password": [
         "senha"
@@ -5387,12 +5374,6 @@
       "Automatically save contacts": [
         "Salvar contatos automaticamente"
       ],
-      "Awful": [
-        "Horrível"
-      ],
-      "Bad": [
-        "Ruim"
-      ],
       "Beta Access": [
         "Acesso beta"
       ],
@@ -5555,14 +5536,8 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
-      "Good": [
-        "Bom"
-      ],
       "Hide password": [
         "Ocultar senha"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Como você descreveria sua experiência com a nova ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Eu entendo o risco"
@@ -5632,9 +5607,6 @@
       ],
       "Notifications": [
         "Notificações"
-      ],
-      "OK": [
-        "OK"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -5771,9 +5743,6 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Qual é o seu motivo principal do cancelamento ou downgrade?"
-      ],
-      "Wonderful": [
-        "Maravilhoso"
       ],
       "Your alias": [
         "Seu alias"
@@ -6283,15 +6252,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Começar por 1$"
-      ],
-      "Get started for 1 €": [
-        "Começar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Começar por CHF 1"
-      ],
       "Upgrade now": [
         "Fazer upgrade agora"
       ]
@@ -6538,9 +6498,6 @@
       "GDPR data processing agreement": [
         "Acordo de processamento de dados do RGPD"
       ],
-      "Generate emails with only a prompt": [
-        "Gere e-mail com apenas um prompt"
-      ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
       ],
@@ -6595,9 +6552,6 @@
       ],
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
-      ],
-      "Proofread and refine your texts": [
-        "Revise e otimize seus textos"
       ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
@@ -6835,16 +6789,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Nos conte sobre sua experiência. (Opcional)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Comentários"
       ]
     },
     "new_plans: Title": {
@@ -9073,11 +9017,6 @@
         "Você cancelou a inscrição"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Comentário enviado"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/mês"
@@ -9434,9 +9373,6 @@
       "Exporting contacts": [
         "Exportando contatos"
       ],
-      "Feedback": [
-        "Comentários"
-      ],
       "Get advanced protection": [
         "Obter proteção avançada"
       ],
@@ -9626,9 +9562,6 @@
       ],
       "Select which calendar to add this event to": [
         "Selecione o calendário para adicionar este evento ao"
-      ],
-      "Send feedback": [
-        "Enviar comentários"
       ],
       "Send invitation": [
         "Enviar convite"

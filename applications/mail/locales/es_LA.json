@@ -93,9 +93,6 @@
       "Add to group": [
         "Añadir al grupo"
       ],
-      "Adds it below your existing message": [
-        "Lo añade debajo de su mensaje existente"
-      ],
       "Align center": [
         "Alinear al centro"
       ],
@@ -832,10 +829,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1089,9 +1086,6 @@
       ],
       "send auto-reply email": [
         "enviar correo de respuesta automática"
-      ],
-      "Send feedback": [
-        "Enviar comentarios"
       ],
       "Send read receipt": [
         "Enviar acuse de recibo"
@@ -3473,9 +3467,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Use arrastrar y soltar para clasificar la prioridad entre contactos. Desmarque los contactos que no quiere combinar."
       ],
-      "Use the writing assistant to:": [
-        "Use el asistente de escritura para:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "No encontramos ningún rastreador o URL de rastreo conocidos en este correo."
       ],
@@ -4565,11 +4556,6 @@
         "Ninguna imagen seleccionada"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Puntuación requerida"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "No se puede enviar la invitación a ${ email }. ${ errorMessage }"
@@ -4773,11 +4759,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja los archivos con almacenamiento en la nube cifrado. Incluye sincronización automática, uso compartido de archivos cifrados y más."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Sus comentarios"
       ]
     },
     "fido2: Error": {
@@ -5994,9 +5975,6 @@
       "Country code": [
         "Código de país"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Cree mejores correos electrónicos de forma rápida y sin esfuerzo. Pruébelo ahora."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Crear ${ calendarsToBeCreatedCount } calendario nuevo",
         "Crear ${ calendarsToBeCreatedCount } calendarios nuevos"
@@ -6236,9 +6214,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Para más resultados de búsqueda, intente buscar esta palabra clave en el contenido de los mensajes"
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Gratis durante ${ ASSISTANT_TRIAL_TIME_DAYS } días"
-      ],
       "From": [
         "De"
       ],
@@ -6384,9 +6359,6 @@
       ],
       "Learn more": [
         "Más información"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Más información sobre el asistente de escritura de ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Izquierda a derecha"
@@ -7829,12 +7801,6 @@
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
       ],
-      "Awful": [
-        "Pésima"
-      ],
-      "Bad": [
-        "Mala"
-      ],
       "BCC": [
         "CCO"
       ],
@@ -8021,14 +7987,8 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
-      "Good": [
-        "Buena"
-      ],
       "Hide password": [
         "Ocultar contraseña"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "¿Cómo describiría la experiencia con el nuevo ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Entiendo el riesgo"
@@ -8131,9 +8091,6 @@
       ],
       "Notification": [
         "Notificación"
-      ],
-      "OK": [
-        "Aceptar"
       ],
       "Open in a new tab": [
         "Abrir en una pestaña nueva"
@@ -8305,9 +8262,6 @@
       ],
       "Without attachment": [
         "Sin archivo adjunto"
-      ],
-      "Wonderful": [
-        "Excelente"
       ],
       "Writing assistant": [
         "Asistente de escritura"
@@ -8963,15 +8917,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Bajar a ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Comenzar por $1"
-      ],
-      "Get started for 1 €": [
-        "Comenzar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Comenzar por CHF 1"
-      ],
       "Upgrade now": [
         "Mejorar ahora"
       ]
@@ -9200,6 +9145,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Soporte de clientes de correo electrónico (por IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grupos de correos electrónicos"
+      ],
       "Enables HIPAA compliance": [
         "Facilita el cumplimiento con la ley HIPAA"
       ],
@@ -9226,9 +9174,6 @@
       ],
       "GDPR data processing agreement": [
         "Acuerdo para el procesamiento de datos conforme al RGPD"
-      ],
-      "Generate emails with only a prompt": [
-        "Generar correos electrónicos con un solo prompt"
       ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
@@ -9284,9 +9229,6 @@
       ],
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
-      ],
-      "Proofread and refine your texts": [
-        "Revisar y perfeccionar sus textos"
       ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo a la vez",
@@ -9527,30 +9469,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Cuéntenos acerca de la experiencia (opcional)."
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Comentarios"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus": [
-        "Obtenga Mail Plus"
-      ],
-      "Get Mail Plus for $1": [
-        "Obtenga Mail Plus por $1"
-      ],
-      "Get Mail Plus for 1 €": [
-        "Obtenga Mail Plus por €1"
-      ],
-      "Get Mail Plus for CHF 1": [
-        "Obtenga Mail Plus por CHF1"
       ]
     },
     "new_plans: title": {
@@ -11837,6 +11755,9 @@
       "Contacts deleted": [
         "Contactos eliminados"
       ],
+      "Content copied to clipboard": [
+        "Se copió el contenido al portapapeles."
+      ],
       "Conversation added to ${ labelName }.": [
         "Conversación añadida a ${ labelName }."
       ],
@@ -12014,11 +11935,6 @@
       ],
       "${ label.Name } removed": [
         "${ label.Name } borrado"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Comentarios enviados"
       ]
     },
     "Suffix": {
@@ -12488,9 +12404,6 @@
       "External encryption": [
         "Cifrado externo"
       ],
-      "Feedback": [
-        "Comentarios"
-      ],
       "Filter name cannot contain only spaces": [
         "El nombre del filtro no puede contener solo espacios"
       ],
@@ -12678,6 +12591,9 @@
       "No trackers found": [
         "No se encontraron rastreadores."
       ],
+      "No-reply address detected": [
+        "Se detectó una dirección de no responder (no-reply)."
+      ],
       "Notes": [
         "Notas"
       ],
@@ -12782,9 +12698,6 @@
       ],
       "Send email": [
         "Enviar correo"
-      ],
-      "Send feedback": [
-        "Enviar comentarios"
       ],
       "Send with changed preferences?": [
         "¿Enviar con preferencias cambiadas?"

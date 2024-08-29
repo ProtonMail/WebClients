@@ -93,9 +93,6 @@
       "Add to group": [
         "Přidat do skupiny"
       ],
-      "Adds it below your existing message": [
-        "Přidá ho pod vaší stávající zprávu"
-      ],
       "Align center": [
         "Zarovnat na střed"
       ],
@@ -840,11 +837,11 @@
       "Not saved": [
         "Neuloženo"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Otevřít"
@@ -1097,9 +1094,6 @@
       ],
       "send auto-reply email": [
         "odeslat automatickou odpověď"
-      ],
-      "Send feedback": [
-        "Odeslat zpětnou vazbu"
       ],
       "Send read receipt": [
         "Odeslat potvrzení o přečtení"
@@ -3505,9 +3499,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
-      "Use the writing assistant to:": [
-        "Používejte asistenta psaní k:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "V tomto e-mailu jsme nenašli žádné známé sledovací prvky a sledovací adresy URL."
       ],
@@ -4625,11 +4616,6 @@
         "Není vybrán žádný obrázek"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Skóre je potřeba vyplnit"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Nelze odeslat pozvánku na adresu ${ email }. ${ errorMessage }"
@@ -4833,11 +4819,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte své soubory pomocí šifrovaného cloudového úložiště. Zahrnuje automatickou synchronizaci, šifrované sdílení souborů a další funkce."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Vaše zpětná vazba"
       ]
     },
     "fido2: Error": {
@@ -5940,7 +5921,7 @@
         "Uživatelem je účet spojený s jedním uživatelským jménem, poštovní schránkou a osobou"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce Vašeho účtu."
+        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce vašeho účtu."
       ],
       "Account size": [
         "Velikost účtu"
@@ -6181,9 +6162,6 @@
       ],
       "Country code": [
         "Kód země"
-      ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Vytvářejte lepší e-maily rychle a bez námahy. Vyzkoušejte tuto funkci teď."
       ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Vytvořit ${ calendarsToBeCreatedCount } nový kalendář",
@@ -6440,9 +6418,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Chcete-li získat více výsledků vyhledávání, zkuste toto klíčové slovo vyhledat v obsahu e-mailových zpráv."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Free na ${ ASSISTANT_TRIAL_TIME_DAYS } dnů"
-      ],
       "From": [
         "Od"
       ],
@@ -6592,9 +6567,6 @@
       ],
       "Learn more": [
         "Zjistěte více"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Více informací o ${ BRAND_NAME } asistentovi psaní"
       ],
       "Left to Right": [
         "Zleva doprava"
@@ -8086,12 +8058,6 @@
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
       ],
-      "Awful": [
-        "Strašné"
-      ],
-      "Bad": [
-        "Špatné"
-      ],
       "BCC": [
         "Skrytá kopie"
       ],
@@ -8278,14 +8244,8 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
-      "Good": [
-        "Dobré"
-      ],
       "Hide password": [
         "Skrýt heslo"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Jak byste popsal(a) svou zkušenost s novým ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Rozumím rizikům"
@@ -8388,9 +8348,6 @@
       ],
       "Notification": [
         "Oznámení"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Otevřít na nové kartě"
@@ -8562,9 +8519,6 @@
       ],
       "Without attachment": [
         "Bez příloh"
-      ],
-      "Wonderful": [
-        "Úžasné"
       ],
       "Writing assistant": [
         "Asistent psaní"
@@ -9236,15 +9190,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Začít za $1"
-      ],
-      "Get started for 1 €": [
-        "Začít za €1"
-      ],
-      "Get started for CHF 1": [
-        "Začít za 1 CHF"
-      ],
       "Upgrade now": [
         "Navýšit nyní"
       ]
@@ -9525,9 +9470,6 @@
       "GDPR data processing agreement": [
         "GDPR dohoda o správě dat"
       ],
-      "Generate emails with only a prompt": [
-        "Vygenerujte e-maily jen pomocí příkazů"
-      ],
       "Group management (coming soon)": [
         "Správa skupiny (již brzy)"
       ],
@@ -9584,9 +9526,6 @@
       ],
       "Priority support & live chat": [
         "Přednostní podpora a živý chat"
-      ],
-      "Proofread and refine your texts": [
-        "Proveďte korektury a zpřesnění vašich textů"
       ],
       "Protect ${ n } device at a time": [
         "Chránit ${ n } zařízení zároveň",
@@ -9830,16 +9769,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Povězte nám o svých zkušenostech. (Nepovinné)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Zpětná vazba"
       ]
     },
     "new_plans: title": {
@@ -12443,11 +12372,6 @@
         "${ label.Name } byl odstraněn"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Zpětná vazba byla odeslána"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/měsíc"
@@ -12943,9 +12867,6 @@
       "External encryption": [
         "Externí šifrování"
       ],
-      "Feedback": [
-        "Zpětná vazba"
-      ],
       "Filter name cannot contain only spaces": [
         "Název filtru nesmí obsahovat pouze mezery"
       ],
@@ -13239,9 +13160,6 @@
       ],
       "Send email": [
         "Odeslat e-mail"
-      ],
-      "Send feedback": [
-        "Odeslat zpětnou vazbu"
       ],
       "Send with changed preferences?": [
         "Poslat se změněným nastavením?"

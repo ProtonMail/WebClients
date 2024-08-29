@@ -5612,14 +5612,6 @@
         "termos e condições"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminar conta?"
@@ -5632,6 +5624,14 @@
       ],
       "Switch plans?": [
         "Alterar o plano?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -7972,6 +7972,9 @@
       "Processing...": [
         "A processar..."
       ],
+      "QRCode": [
+        "QRCode"
+      ],
       "Recommended": [
         "Recomendado"
       ],
@@ -8080,6 +8083,9 @@
       ],
       "Switch to two-password mode": [
         "Mudar para modo de palavra-passe dupla"
+      ],
+      "Text": [
+        "Texto"
       ],
       "Time": [
         "Hora"

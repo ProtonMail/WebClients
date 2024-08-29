@@ -10550,6 +10550,9 @@
       "Time zone": [
         "Saat dilimi"
       ],
+      "Tips and insights": [
+        "İpuçları ve öngörüler"
+      ],
       "To: ${ toEmail }": [
         "Kime: ${ toEmail }"
       ],
@@ -11554,15 +11557,6 @@
       "From ${ price }": [
         "${ price } ile başlar"
       ],
-      "Get started for $1": [
-        "$1 ile başlayın"
-      ],
-      "Get started for 1 €": [
-        "1 € ile başlayın"
-      ],
-      "Get started for CHF 1": [
-        "1 CHF ile başlayın"
-      ],
       "Upgrade": [
         "Yükselt"
       ],
@@ -11807,9 +11801,6 @@
       "GDPR data processing agreement": [
         "KVKK veri işleme sözleşmesi"
       ],
-      "Generate emails with only a prompt": [
-        "Yalnızca isteğinizi yazarak e-postalar oluşturun"
-      ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
       ],
@@ -11870,9 +11861,6 @@
       ],
       "Priority support & live chat": [
         "Öncelikli destek ve canlı sohbet"
-      ],
-      "Proofread and refine your texts": [
-        "Metinleri düzeltin"
       ],
       "Protect ${ n } device at a time": [
         "Aynı anda ${ n } aygıtı koruyun",
@@ -17521,6 +17509,9 @@
       "Feature in early access": [
         "Erken erişim özelliği"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "${ MAIL_APP_NAME } ve diğer uygulamalardan en iyi şekilde yararlanmanızı sağlayacak üretkenlik ve güvenlik ipuçları alın."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
@@ -17718,6 +17709,86 @@
         "Bu Tor Browser sürümü desteklenmiyor. Lütfen son ${ stableRelease } sürüme güncelleyin"
       ]
     },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Yöneticiler gizli kullanıcıların verilerine erişemez ve parolalarını sıfırlayamaz."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "${ orgName } kuruluşunun bir yöneticisi hesabınıza yönetici erişimine izin vermenizi istiyor."
+      ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "**${ orgName }** kuruluşunun bir yöneticisi (**${ adminEmail }**) hesabınıza yönetici erişimine izin vermenizi istiyor."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Kullanıcıyı gizli kullanıcıya dönüştürdüğünüzde, verilerine veya hesabına erişerek yardımcı olamayacaksınız."
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Delete request": [
+        "İsteği sil"
+      ],
+      "Delete request to access user data?": [
+        "Kullanıcı verilerine erişme isteği silinsin mi?"
+      ],
+      "Enable admin access?": [
+        "Yönetici erişimine izin verilsin mi?"
+      ],
+      "Enable administrator access": [
+        "Yönetici erişimine izin ver"
+      ],
+      "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
+        "Kimlik bilgilerinize erişiminizi kaybederseniz kuruluşunuzun yöneticileri parolanızı sıfırlayabilir ve hesabınıza yeniden erişmenizi sağlayabilir."
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Kullanıcı onay verdiğinde kullanıcının hesabına yeniden erişebilecek ya da verilerini yönetebileceksiniz."
+      ],
+      "Organization key must be activated to request data access": [
+        "Verilere erişme isteğinde bulunmak için kuruluş anahtarı etkinleştirilmelidir"
+      ],
+      "Pending admin access": [
+        "Yönetici erişimine onay verilmesi bekleniyor"
+      ],
+      "Private user": [
+        "Gizli kullanıcı"
+      ],
+      "reject": [
+        "reddet"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Hesap yönetme isteği gönderildi, kullanıcı onayı bekleniyor"
+      ],
+      "Request user permission for data access": [
+        "Verilere erişmek için kullanıcı izni verilmesi isteğinde bulunun"
+      ],
+      "Revoke access": [
+        "Erişimi kaldır"
+      ],
+      "Revoke administrator access?": [
+        "Yönetici erişimi kaldırılsın mı?"
+      ],
+      "Send request": [
+        "İstek gönder"
+      ],
+      "The user must have an address to request data access": [
+        "Veri isteğinde bulunabilmek için kullanıcının bir e-posta adresi olmalıdır"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Bu işlem kullanıcı verilerine yönetici tarafından erişilmesi ya da kullanıcı parolasını sıfırlama isteğini silecek"
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Bu işlem yöneticinin bu kullanıcının hesabını yönetme iznini kaldıracak."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "İlerlemek için, kullanıcının verilerine erişme izni isteğinde bulunmalı ya da parolasını sıfırlamalısınız."
+      ],
+      "View request": [
+        "İsteği görüntüle"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "Bunu istemiyorsanız ${ reject } üzerine tıklayarak bu isteği reddedin."
+      ]
+    },
     "Update font modal": {
       "Today is a good day to write an email": [
         "Bugün e-posta yazmak için güzel bir gün"
@@ -17846,6 +17917,9 @@
       ],
       "It's you": [
         "Bu sizsiniz"
+      ],
+      "Pending admin access": [
+        "Yönetici erişimi bekleniyor"
       ],
       "Private": [
         "Korunan"

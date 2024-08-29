@@ -617,9 +617,6 @@
       "Send": [
         "გაგზავნა"
       ],
-      "Send feedback": [
-        "უკუკავშირის გაგზავნა"
-      ],
       "Set recovery phrase": [
         "აღსადგენი ფრაზის დაყენება"
       ],
@@ -3480,11 +3477,6 @@
         "გამოსახულება არჩეული არაა"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "შეაფასეთ"
-      ]
-    },
     "esCalendar": {
       "No result": [
         "შედეგების გარეშე"
@@ -3735,11 +3727,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ავტომატურ სინქრონიზაციას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "თქვენი უკუკავშირი"
       ]
     },
     "fido2: Error": {
@@ -5369,12 +5356,6 @@
       "Automatically save contacts": [
         "კონტაქტების ავტომატური შენახვა"
       ],
-      "Awful": [
-        "საშინელი"
-      ],
-      "Bad": [
-        "ცუდი"
-      ],
       "Beta Access": [
         "წვდომა ბეტა ვერსიებზე"
       ],
@@ -5537,14 +5518,8 @@
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
       ],
-      "Good": [
-        "კარგი"
-      ],
       "Hide password": [
         "პაროლის დამალვა"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "როგორ მოგწონთ ახალი ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "მე ვიღებ რისკს"
@@ -5614,9 +5589,6 @@
       ],
       "Notifications": [
         "შეტყობინებები"
-      ],
-      "OK": [
-        "დიახ"
       ],
       "Operating system": [
         "ოპერაციული სისტემა"
@@ -5753,9 +5725,6 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "რა არის მიზეზი სატარიფო გეგმის გაუქმების ან მისი დონის ჩამოწევის?"
-      ],
-      "Wonderful": [
-        "შესანიშნავია"
       ],
       "Your alias": [
         "თქვენი ფსევდონიმი"
@@ -6265,15 +6234,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
       ],
-      "Get started for $1": [
-        "დაწყება $1-ით"
-      ],
-      "Get started for 1 €": [
-        "დაწყება 1 €-ით"
-      ],
-      "Get started for CHF 1": [
-        "დაწყება 1 CHF-ით"
-      ],
       "Upgrade now": [
         "ახლა გაუმჯობესება"
       ]
@@ -6520,9 +6480,6 @@
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
       ],
-      "Generate emails with only a prompt": [
-        "ელფოსტების გენერაცია, მხოლოდ, მოთხოვნით"
-      ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
@@ -6577,9 +6534,6 @@
       ],
       "Priority support & live chat": [
         "პრიორიტეტული დახმარება და ცოცხალი ჩატი"
-      ],
-      "Proofread and refine your texts": [
-        "თქვენი ტექსტების კორექტურა და ოპტიმიზაცია"
       ],
       "Protect ${ n } device at a time": [
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
@@ -6817,16 +6771,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "მოგვიყევით თქვენი გამოცილების შესახებ. (არასავალდებულო)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "უკუკავშირი"
       ]
     },
     "new_plans: title": {
@@ -9044,11 +8988,6 @@
         "გამოწერა წარმატებით გაუქმდა"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "უკუკავშირი გაგზავნილია"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/თვე"
@@ -9405,9 +9344,6 @@
       "Exporting contacts": [
         "კონტაქტების გატანა"
       ],
-      "Feedback": [
-        "უკუკავშირი"
-      ],
       "Get advanced protection": [
         "დამატებითი უსაფრთხოების მიღება"
       ],
@@ -9597,9 +9533,6 @@
       ],
       "Select which calendar to add this event to": [
         "აირჩიეთ, ეს მოვლენა რომელ კალენდარს დაემატება"
-      ],
-      "Send feedback": [
-        "უკუკავშირის გაგზავნა"
       ],
       "Send invitation": [
         "მოსაწვევის გაგზავნა"

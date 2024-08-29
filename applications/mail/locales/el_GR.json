@@ -93,9 +93,6 @@
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
-      "Adds it below your existing message": [
-        "Το προσθέτει κάτω από το υπάρχον μήνυμά σας"
-      ],
       "Align center": [
         "Στοίχιση στο κέντρο"
       ],
@@ -832,11 +829,11 @@
       "Not saved": [
         "Μη αποθηκευμένο"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open": [
         "Άνοιγμα"
@@ -1089,9 +1086,6 @@
       ],
       "send auto-reply email": [
         "αποστολή μηνύματος αυτόματης απάντησης"
-      ],
-      "Send feedback": [
-        "Αποστολή σχολίων"
       ],
       "Send read receipt": [
         "Αποστολή αποδεικτικού ανάγνωσης"
@@ -3467,9 +3461,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Χρησιμοποιήστε την επιλογή \"Drag and Drop\" για να ταξινομήσετε τη προτεραιότητα συγχώνευσης μεταξύ των επαφών. Καταργήστε την επιλογή των επαφών που δεν θέλετε να συγχωνεύσετε."
       ],
-      "Use the writing assistant to:": [
-        "Χρησιμοποιήστε τον βοηθό γραφής για:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Δε βρήκαμε γνωστούς ιχνηλάτες και διευθύνσεις URL παρακολούθησης σε αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου."
       ],
@@ -4559,11 +4550,6 @@
         "Δεν επιλέχθηκε εικόνα"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Απαιτείται βαθμολογία"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Δεν είναι δυνατή η αποστολή πρόσκλησης στο ${ email }. ${ errorMessage }"
@@ -4767,11 +4753,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Ασφαλίστε τα αρχεία σας με κρυπτογραφημένο χώρο αποθήκευσης cloud. Περιλαμβάνει αυτόματο συγχρονισμό, κρυπτογραφημένη κοινή χρήση αρχείων και πολλά άλλα."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Η γνώμη σας"
       ]
     },
     "fido2: Error": {
@@ -5988,9 +5969,6 @@
       "Country code": [
         "Κωδικός χώρας"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Δημιουργήστε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου, γρήγορα και αβίαστα. Δοκιμάστε το τώρα."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Δημιουργήστε ${ calendarsToBeCreatedCount } νέο ημερολόγιο",
         "Δημιουργήστε ${ calendarsToBeCreatedCount } νέα ημερολόγια"
@@ -6230,9 +6208,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Για περισσότερα αποτελέσματα αναζήτησης, δοκιμάστε να αναζητήσετε αυτήν τη λέξη-κλειδί στο περιεχόμενο των μηνυμάτων ηλεκτρονικού ταχυδρομείου σας."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Δωρεάν για ${ ASSISTANT_TRIAL_TIME_DAYS } ημέρες"
-      ],
       "From": [
         "Από"
       ],
@@ -6378,9 +6353,6 @@
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Μάθετε περισσότερα περί του βοηθού γραφής του ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Αριστερά προς τα δεξιά"
@@ -7820,12 +7792,6 @@
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
       ],
-      "Awful": [
-        "Απαίσια"
-      ],
-      "Bad": [
-        "Κακή"
-      ],
       "BCC": [
         "Κρυφή Κοιν."
       ],
@@ -8012,14 +7978,8 @@
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
       ],
-      "Good": [
-        "Καλή"
-      ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Πώς θα περιγράφατε την εμπειρία σας στο νέο ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
@@ -8122,9 +8082,6 @@
       ],
       "Notification": [
         "Ειδοποίηση"
-      ],
-      "OK": [
-        "Αποδεκτή"
       ],
       "Open in a new tab": [
         "Άνοιγμα σε νέα καρτέλα"
@@ -8296,9 +8253,6 @@
       ],
       "Without attachment": [
         "Χωρίς συνημμένα"
-      ],
-      "Wonderful": [
-        "Θαυμάσια"
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
@@ -8954,15 +8908,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Ξεκινήστε με $1"
-      ],
-      "Get started for 1 €": [
-        "Ξεκινήστε με 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Ξεκινήστε με CHF 1"
-      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
       ]
@@ -9209,9 +9154,6 @@
       "GDPR data processing agreement": [
         "Συμφωνία επεξεργασίας δεδομένων GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Δημιουργήστε μηνύματα ηλεκτρονικού ταχυδρομείου μόνο με μια προτροπή"
-      ],
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
       ],
@@ -9266,9 +9208,6 @@
       ],
       "Priority support & live chat": [
         "Υποστήριξη προτεραιότητας & ζωντανή συνομιλία"
-      ],
-      "Proofread and refine your texts": [
-        "Διορθώστε και βελτιώστε τα κείμενά σας"
       ],
       "Protect ${ n } device at a time": [
         "Προστατέψτε ${ n } συσκευή ανά φορά",
@@ -9506,16 +9445,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Πείτε μας για την εμπειρία σας. (Προαιρετικό)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Σχόλια"
       ]
     },
     "new_plans: title": {
@@ -11981,11 +11910,6 @@
         "${ label.Name } αφαιρέθηκε"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Τα σχόλια απεστάλησαν"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/μήνα"
@@ -12453,9 +12377,6 @@
       "External encryption": [
         "Εξωτερική κρυπτογράφηση"
       ],
-      "Feedback": [
-        "Σχόλια"
-      ],
       "Filter name cannot contain only spaces": [
         "Το όνομα φίλτρου δεν μπορεί να περιέχει μόνο κενά διαστήματα"
       ],
@@ -12747,9 +12668,6 @@
       ],
       "Send email": [
         "Αποστολή μηνύματος"
-      ],
-      "Send feedback": [
-        "Αποστολή σχολίων"
       ],
       "Send with changed preferences?": [
         "Αποστολή με αλλαγμένες προτιμήσεις;"

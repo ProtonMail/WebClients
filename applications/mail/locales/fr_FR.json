@@ -93,9 +93,6 @@
       "Add to group": [
         "Ajouter au groupe"
       ],
-      "Adds it below your existing message": [
-        "L'ajouter au-dessous de votre message existant"
-      ],
       "Align center": [
         "Centrer"
       ],
@@ -832,10 +829,10 @@
       "Not saved": [
         "Non enregistré"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1089,9 +1086,6 @@
       ],
       "send auto-reply email": [
         "envoyer un message de réponse automatique"
-      ],
-      "Send feedback": [
-        "Envoyer un avis"
       ],
       "Send read receipt": [
         "Envoyer une confirmation de lecture"
@@ -3391,6 +3385,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "L'authentification A2F ajoute une couche de sécurité supplémentaire, empêchant tout accès non autorisé."
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Supprimez automatiquement les messages indésirables et ceux dans la corbeille, et débloquez davantage de fonctionnalités premium lorsque vous améliorez votre abonnement."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
       ],
@@ -3427,6 +3424,9 @@
       ],
       "No labels": [
         "Aucun label"
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Gagnez du temps en envoyant des e-mails à tout le monde en une seule fois grâce aux groupes de contacts. Débloquez cette fonctionnalité et d'autres fonctionnalités premium lorsque vous passez à un abonnement supérieur."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "En passant à un abonnement supérieur, vous disposez de plusieurs adresses e-mail qui vous permettent de mieux gérer vos différentes activités et vous bénéficiez de fonctionnalités premium."
@@ -3472,9 +3472,6 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Utilisez le glisser-déposer pour classer la priorité de fusion entre les contacts. Décochez les contacts que vous ne voulez pas fusionner."
-      ],
-      "Use the writing assistant to:": [
-        "Utilisez l'assistant d'écriture pour :"
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Nous n'avons trouvé aucun traqueur connu ou URL de suivi dans ce message."
@@ -4565,11 +4562,6 @@
         "Aucune image n'est sélectionnée."
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "La note est nécessaire."
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Il n'est pas possible d'envoyer une invitation à ${ email }. ${ errorMessage }"
@@ -4773,11 +4765,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Cela comprend la synchronisation automatique, le partage de fichiers chiffrés et d'autres fonctionnalités."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Votre retour d'expérience"
       ]
     },
     "fido2: Error": {
@@ -5994,9 +5981,6 @@
       "Country code": [
         "Indicatif du pays"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Améliorez rapidement et facilement la rédaction de vos e-mails Essayez cette fonction dès maintenant."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Créer ${ calendarsToBeCreatedCount } nouveau calendrier",
         "Créer ${ calendarsToBeCreatedCount } nouveaux calendriers"
@@ -6236,9 +6220,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pour avoir plus de résultats, essayez de faire une recherche avec ce mot-clé dans le contenu de vos messages."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Gratuit pendant ${ ASSISTANT_TRIAL_TIME_DAYS } jours"
-      ],
       "From": [
         "De"
       ],
@@ -6384,9 +6365,6 @@
       ],
       "Learn more": [
         "En savoir plus"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "En savoir plus sur l'assistant d'écriture de ${ BRAND_NAME }."
       ],
       "Left to Right": [
         "De gauche à droite"
@@ -6869,6 +6847,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Le nombre de téléchargements comprend les téléchargements et les prévisualisations de fichiers."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "L'adresse e-mail ${ boldNoReplyEmail } ne semble pas accepter de réponses. Êtes-vous sûr de vouloir envoyer votre message ?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Les données chiffrées sont légèrement plus volumineuses en raison du chiffrement et des signatures, qui garantissent la sécurité de vos données."
@@ -7826,12 +7807,6 @@
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
       ],
-      "Awful": [
-        "Affreux"
-      ],
-      "Bad": [
-        "Mauvaise"
-      ],
       "BCC": [
         "Cci"
       ],
@@ -8018,14 +7993,8 @@
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
       ],
-      "Good": [
-        "Bonne"
-      ],
       "Hide password": [
         "Masquer le mot de passe"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Comment décririez-vous votre expérience avec le nouveau ${ BRAND_NAME } ?"
       ],
       "I understand the risk": [
         "Je comprends le risque."
@@ -8128,9 +8097,6 @@
       ],
       "Notification": [
         "Notification"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Ouvrir dans un nouvel onglet"
@@ -8302,9 +8268,6 @@
       ],
       "Without attachment": [
         "Sans pièce jointe"
-      ],
-      "Wonderful": [
-        "Merveilleux"
       ],
       "Writing assistant": [
         "Assistant d'écriture"
@@ -8960,15 +8923,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Lancez-vous pour 1 $"
-      ],
-      "Get started for 1 €": [
-        "Lancez-vous pour 1  €"
-      ],
-      "Get started for CHF 1": [
-        "Lancez-vous pour 1  CHF"
-      ],
       "Upgrade now": [
         "Changer d'abonnement"
       ]
@@ -9197,6 +9151,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Prise en charge des clients de messagerie (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Groupes d'e-mails"
+      ],
       "Enables HIPAA compliance": [
         "Conformité avec la loi HIPAA"
       ],
@@ -9223,9 +9180,6 @@
       ],
       "GDPR data processing agreement": [
         "Accord de traitement des données RGPD"
-      ],
-      "Generate emails with only a prompt": [
-        "Générez des messages à partir d'un seul prompt."
       ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
@@ -9281,9 +9235,6 @@
       ],
       "Priority support & live chat": [
         "Assistance prioritaire et chat en direct"
-      ],
-      "Proofread and refine your texts": [
-        "Relisez et peaufinez vos textes."
       ],
       "Protect ${ n } device at a time": [
         "Protégez ${ n } appareil à la fois",
@@ -9526,30 +9477,6 @@
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
       ]
     },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Parlez-nous de votre expérience. (facultatif)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Commentaires"
-      ]
-    },
-    "new_plans: Title": {
-      "Get Mail Plus": [
-        "Je choisis Mail Plus"
-      ],
-      "Get Mail Plus for $1": [
-        "Obtenir Mail Plus pour 1 $"
-      ],
-      "Get Mail Plus for 1 €": [
-        "Obtenir Mail Plus pour 1 €"
-      ],
-      "Get Mail Plus for CHF 1": [
-        "Obtenir Mail Plus pour 1 CHF"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -9625,6 +9552,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partagez facilement vos calendriers avec votre famille, vos amis ou vos collègues."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envoyez un message à chaque membre d'un groupe depuis une seule adresse e-mail."
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Recevez tous les messages envoyés à votre domaine, y compris ceux envoyés à une adresse qui n'existe pas (ou plus) ou contenant une faute de frappe."
@@ -12021,11 +11951,6 @@
         "${ label.Name } a été retiré."
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Votre commentaire a été envoyé."
-      ]
-    },
     "Suffix": {
       "/month": [
         "/mois"
@@ -12493,9 +12418,6 @@
       "External encryption": [
         "Chiffrement externe"
       ],
-      "Feedback": [
-        "Votre avis"
-      ],
       "Filter name cannot contain only spaces": [
         "Le nom du filtre ne doit pas contenir uniquement des espaces."
       ],
@@ -12683,6 +12605,9 @@
       "No trackers found": [
         "Aucun traqueur n'a été trouvé."
       ],
+      "No-reply address detected": [
+        "Une adresse sans réponse (no-reply) a été détectée."
+      ],
       "Notes": [
         "Notes"
       ],
@@ -12787,9 +12712,6 @@
       ],
       "Send email": [
         "Envoyer un message"
-      ],
-      "Send feedback": [
-        "Envoyer un avis"
       ],
       "Send with changed preferences?": [
         "Envoyer avec les préférences modifiées ?"
