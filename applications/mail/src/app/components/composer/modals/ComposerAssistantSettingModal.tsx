@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
@@ -120,10 +120,16 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
                         {c('Action').t`Get started`}
                     </Button>
                     {trialStatus === 'trial-not-started' && (
-                        <div className="color-weak pt-4 text-center">{
-                            // translator: ASSISTANT_TRIAL_TIME_DAYS will always be more than one. Full sentence: "Free for 14 days".
-                            c('Info').t`Free to try for ${ASSISTANT_TRIAL_TIME_DAYS} days`
-                        }</div>
+                        <div className="color-weak pt-4 text-center">
+                            {
+                                // translator: Full sentence: "Free to try for 14 days".
+                                c('Info').ngettext(
+                                    msgid`Free to try for ${ASSISTANT_TRIAL_TIME_DAYS} day`,
+                                    `Free to try for ${ASSISTANT_TRIAL_TIME_DAYS} days`,
+                                    ASSISTANT_TRIAL_TIME_DAYS
+                                )
+                            }
+                        </div>
                     )}
                 </>
             }
