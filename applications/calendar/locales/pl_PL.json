@@ -623,9 +623,6 @@
       "Send": [
         "Wyślij"
       ],
-      "Send feedback": [
-        "Wyślij opinię"
-      ],
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
       ],
@@ -2658,6 +2655,9 @@
       ]
     },
     "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Płatne co 2 lata ${ amountBilled }. Rabaty są obliczane na podstawie standardowych cen miesięcznych."
+      ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
         "Płatne rocznie ${ amountBilled }. Zaoszczędź ${ amountSave } na rocznej subskrypcji 2 indywidualnych kont ${ BRAND_NAME } Unlimited."
       ]
@@ -3539,11 +3539,6 @@
         "Nie wybrano obrazu"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Ocena jest wymagana"
-      ]
-    },
     "esCalendar": {
       "No result": [
         "Nie znaleziono żadnych wyników"
@@ -3798,11 +3793,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Twoja opinia"
       ]
     },
     "fido2: Error": {
@@ -5516,12 +5506,6 @@
       "Automatically save contacts": [
         "Automatyczne zapisywanie kontaktów"
       ],
-      "Awful": [
-        "Okropnie"
-      ],
-      "Bad": [
-        "Źle"
-      ],
       "Beta Access": [
         "Dostęp beta"
       ],
@@ -5684,14 +5668,8 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
-      "Good": [
-        "Dobrze"
-      ],
       "Hide password": [
         "Ukryj hasło"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Jak oceniasz nową aplikację ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Rozumiem ryzyko"
@@ -5761,9 +5739,6 @@
       ],
       "Notifications": [
         "Powiadomienia"
-      ],
-      "OK": [
-        "OK"
       ],
       "Operating system": [
         "System operacyjny"
@@ -5902,9 +5877,6 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Jaki jest główny powód anulowania lub obniżenia planu?"
-      ],
-      "Wonderful": [
-        "Wspaniale"
       ],
       "Your alias": [
         "Twój alias"
@@ -6430,15 +6402,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Rozpocznij od 1 $"
-      ],
-      "Get started for 1 €": [
-        "Rozpocznij od 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Rozpocznij od 1 CHF"
-      ],
       "Upgrade now": [
         "Ulepsz teraz"
       ]
@@ -6719,9 +6682,6 @@
       "GDPR data processing agreement": [
         "Umowa przetwarzania danych zgodnie z RODO"
       ],
-      "Generate emails with only a prompt": [
-        "Generowanie wiadomości z zadania"
-      ],
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
@@ -6779,9 +6739,6 @@
       "Priority support & live chat": [
         "Priorytetowe wsparcie i czat"
       ],
-      "Proofread and refine your texts": [
-        "Sprawdzaj i poprawiaj teksty"
-      ],
       "Protect ${ n } device at a time": [
         "Ochrona ${ n } urządzenia jednocześnie",
         "Ochrona ${ n } urządzeń jednocześnie",
@@ -6820,6 +6777,9 @@
       ],
       "Send & receive invitations": [
         "Wysyłaj i otrzymuj zaproszenia"
+      ],
+      "Share files with no size limit": [
+        "Udostępniaj pliki bez limitów rozmiaru"
       ],
       "Sign in as user": [
         "Zaloguj się jako użytkownik"
@@ -7023,16 +6983,6 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Opowiedz nam o swoich wrażeniach. (opcjonalnie)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Opinia"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -7164,6 +7114,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizuj swój podpis za pomocą logo, obrazów, ikon mediów społecznościowych, linków do szczegółów kontaktu i innych elementów"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej 20 użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta ${ BRAND_NAME }"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zapobiega dostępowi do wiadomości przez ${ BRAND_NAME } lub strony trzecie. Wiadomości mogą zostać odczytane tylko przez nadawcę i odbiorcę."
@@ -9372,11 +9325,6 @@
         "Subskrypcja została anulowana"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Opinia została wysłana"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/ miesiąc"
@@ -9753,9 +9701,6 @@
       "Exporting contacts": [
         "Eksportowanie kontaktów"
       ],
-      "Feedback": [
-        "Opinia"
-      ],
       "Get advanced protection": [
         "Uzyskaj zaawansowaną ochronę"
       ],
@@ -9947,9 +9892,6 @@
       ],
       "Select which calendar to add this event to": [
         "Wybierz kalendarz, do którego chcesz dodać to wydarzenie"
-      ],
-      "Send feedback": [
-        "Wyślij opinię"
       ],
       "Send invitation": [
         "Wyślij zaproszenie"
@@ -10255,6 +10197,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoiny przez e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bezpieczniejsza i łatwiejsza metoda przechowywania i wysyłania Bitcoinów"
       ]
     },
     "wallet_signup_2024:Bug category": {

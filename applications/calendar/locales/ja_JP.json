@@ -590,9 +590,6 @@
       "Send": [
         "送信"
       ],
-      "Send feedback": [
-        "フィードバックを送信"
-      ],
       "Set recovery phrase": [
         "回復用フレーズを設定"
       ],
@@ -2424,6 +2421,11 @@
         "カレンダーを追加"
       ]
     },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB のストレージ"
+      ]
+    },
     "Duplicate event button tooltip": {
       "Duplicate event": [
         "予定を複製"
@@ -3145,11 +3147,6 @@
         "画像が選択されていません"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "スコアは必須です"
-      ]
-    },
     "esCalendar": {
       "No result": [
         "結果なし"
@@ -3377,11 +3374,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "あなたのご意見"
       ]
     },
     "fido2: Error": {
@@ -4902,12 +4894,6 @@
       "Automatically save contacts": [
         "宛先を連絡先に自動追加"
       ],
-      "Awful": [
-        "ひどい"
-      ],
-      "Bad": [
-        "悪い"
-      ],
       "Beta Access": [
         "ベータ版アクセス"
       ],
@@ -5070,14 +5056,8 @@
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
       ],
-      "Good": [
-        "いい"
-      ],
       "Hide password": [
         "パスワードを隠す"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "新しい ${ BRAND_NAME } の使い心地はいかがでしょうか?"
       ],
       "I understand the risk": [
         "リスクを承知しました"
@@ -5147,9 +5127,6 @@
       ],
       "Notifications": [
         "通知"
-      ],
-      "OK": [
-        "OK"
       ],
       "Operating system": [
         "OS"
@@ -5279,9 +5256,6 @@
       ],
       "What happened?": [
         "どのような問題が発生しましたか?"
-      ],
-      "Wonderful": [
-        "すばらしい"
       ],
       "Your alias": [
         "あなたのエイリアス"
@@ -6182,16 +6156,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "あなたのご意見をお聞かせください (任意)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "フィードバック"
       ]
     },
     "new_plans: title": {
@@ -7930,11 +7894,6 @@
         "サブスクリプションをキャンセルしました"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "フィードバックを送信しました"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/月"
@@ -8272,9 +8231,6 @@
       "Exporting contacts": [
         "連絡先のエクスポート中"
       ],
-      "Feedback": [
-        "フィードバック"
-      ],
       "Get advanced protection": [
         "高度な保護を入手"
       ],
@@ -8460,9 +8416,6 @@
       ],
       "Select which calendar to add this event to": [
         "この予定を追加するカレンダーを選択してください"
-      ],
-      "Send feedback": [
-        "フィードバックを送信"
       ],
       "Send invitation": [
         "招待を送信"
@@ -8720,6 +8673,14 @@
     "wallet_signup_2024: Info": {
       "${ n } email address": [
         "${ n } メールアドレス"
+      ],
+      "Bitcoin via email": [
+        "メールで Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Wallet に関する問題"
       ]
     },
     "Warning": {
