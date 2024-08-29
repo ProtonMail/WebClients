@@ -618,6 +618,9 @@
       "What do I get?": [
         "Co otrzymam?"
       ],
+      "Word count": [
+        "Licznik słów"
+      ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakt",
         "Nie możesz wysyłać plików vCard zawierających więcej niż ${ maxAttachments } kontakty",
@@ -3779,6 +3782,9 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "Display word count": [
+        "Wyświetl liczbę słów"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nie widzisz nic? Wyłącz blokadę wyskakujących okien."
       ],
@@ -5607,15 +5613,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Rozpocznij od 1 $"
-      ],
-      "Get started for 1 €": [
-        "Rozpocznij od 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Rozpocznij od 1 CHF"
-      ],
       "Upgrade now": [
         "Ulepsz teraz"
       ]
@@ -5896,9 +5893,6 @@
       "GDPR data processing agreement": [
         "Umowa przetwarzania danych zgodnie z RODO"
       ],
-      "Generate emails with only a prompt": [
-        "Generowanie wiadomości z zadania"
-      ],
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
       ],
@@ -5956,9 +5950,6 @@
       "Priority support & live chat": [
         "Priorytetowe wsparcie i czat"
       ],
-      "Proofread and refine your texts": [
-        "Sprawdzaj i poprawiaj teksty"
-      ],
       "Protect ${ n } device at a time": [
         "Ochrona ${ n } urządzenia jednocześnie",
         "Ochrona ${ n } urządzeń jednocześnie",
@@ -5997,6 +5988,9 @@
       ],
       "Send & receive invitations": [
         "Wysyłaj i otrzymuj zaproszenia"
+      ],
+      "Share files with no size limit": [
+        "Udostępniaj pliki bez limitów rozmiaru"
       ],
       "Sign in as user": [
         "Zaloguj się jako użytkownik"
@@ -6331,6 +6325,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizuj swój podpis za pomocą logo, obrazów, ikon mediów społecznościowych, linków do szczegółów kontaktu i innych elementów"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej 20 użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta ${ BRAND_NAME }"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zapobiega dostępowi do wiadomości przez ${ BRAND_NAME } lub strony trzecie. Wiadomości mogą zostać odczytane tylko przez nadawcę i odbiorcę."
@@ -8619,6 +8616,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoiny przez e-mail"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bezpieczniejsza i łatwiejsza metoda przechowywania i wysyłania Bitcoinów"
       ]
     },
     "wallet_signup_2024:Bug category": {

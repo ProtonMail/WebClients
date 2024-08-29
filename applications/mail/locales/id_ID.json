@@ -93,9 +93,6 @@
       "Add to group": [
         "Tambah ke grup"
       ],
-      "Adds it below your existing message": [
-        "Ditambahkan di bawah pesan Anda yang sudah ada"
-      ],
       "Align center": [
         "Rata tengah"
       ],
@@ -828,10 +825,10 @@
       "Not saved": [
         "Belum disimpan"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1085,9 +1082,6 @@
       ],
       "send auto-reply email": [
         "kirim pesan balasan otomatis"
-      ],
-      "Send feedback": [
-        "Kirim tanggapan"
       ],
       "Send read receipt": [
         "Kirim bukti baca"
@@ -3448,9 +3442,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Seret-lepas untuk mengurutkan prioritas penggabungan kontak. Tandai kontak yang ingin digabung."
       ],
-      "Use the writing assistant to:": [
-        "Gunakan asisten penulisan ini untuk:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Kami tidak menemukan aplikasi dan URL pelacak apa pun yang diketahui di dalam email ini."
       ],
@@ -4526,11 +4517,6 @@
         "Tidak ada gambar yang dipilih"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Nilai diperlukan"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Tidak dapat mengirim undangan ke ${ email }. ${ errorMessage }"
@@ -4734,11 +4720,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Amankan berkas Anda dengan penyimpanan cloud yang terenkripsi. Meliputi sinkronisasi otomatis, pembagian berkas terenkripsi, dan masih banyak lagi."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Tanggapan Anda"
       ]
     },
     "fido2: Error": {
@@ -5891,9 +5872,6 @@
       "Country code": [
         "Kode negara"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Buat email yang lebih baik dengan cepat dan mudah. Cobalah sekarang."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Buat ${ calendarsToBeCreatedCount } kalender baru"
       ],
@@ -6125,9 +6103,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Untuk hasil pencarian yang lebih banyak, cobalah untuk mencari kata kunci ini pada konten email Anda."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Gratis untuk ${ ASSISTANT_TRIAL_TIME_DAYS } hari"
-      ],
       "From": [
         "Dari"
       ],
@@ -6271,9 +6246,6 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Pelajari lebih lanjut mengenai asisten penulisan ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Kiri ke Kanan"
@@ -7687,12 +7659,6 @@
       "Automatically save contacts": [
         "Simpan kontak secara otomatis"
       ],
-      "Awful": [
-        "Mengecewakan"
-      ],
-      "Bad": [
-        "Buruk"
-      ],
       "BCC": [
         "BCC"
       ],
@@ -7879,14 +7845,8 @@
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
       ],
-      "Good": [
-        "Baik"
-      ],
       "Hide password": [
         "Sembunyikan kata sandi"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Bagaimana Anda menggambarkan pengalaman Anda dengan ${ BRAND_NAME } yang baru?"
       ],
       "I understand the risk": [
         "Saya paham akan risikonya"
@@ -7989,9 +7949,6 @@
       ],
       "Notification": [
         "Pemberitahuan"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Buka di tab baru"
@@ -8163,9 +8120,6 @@
       ],
       "Without attachment": [
         "Tanpa lampiran"
-      ],
-      "Wonderful": [
-        "Luar Biasa"
       ],
       "Writing assistant": [
         "Asisten penulisan"
@@ -8813,15 +8767,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Turunkan jenis akun saya ke ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Mulai dengan harga $1"
-      ],
-      "Get started for 1 €": [
-        "Mulai dengan harga 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Mulai dengan harga CHF 1"
-      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
       ]
@@ -9051,9 +8996,6 @@
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Hasilkan email hanya dengan sebaris perintah"
-      ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
       ],
@@ -9107,9 +9049,6 @@
       ],
       "Priority support & live chat": [
         "Dukungan prioritas & percakapan langsung"
-      ],
-      "Proofread and refine your texts": [
-        "Periksa dan perbaiki tulisan Anda"
       ],
       "Protect ${ n } device at a time": [
         "Lindungi ${ n } perangkat secara bersamaan"
@@ -9344,16 +9283,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Mohon ceritakan pengalaman Anda kepada kami. (Opsional)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Kritik dan saran"
       ]
     },
     "new_plans: title": {
@@ -11750,11 +11679,6 @@
         "${ label.Name } dihapus"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Tanggapan telah dikirim"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/bulan"
@@ -12208,9 +12132,6 @@
       "External encryption": [
         "Enkripsi eksternal"
       ],
-      "Feedback": [
-        "Kritik dan Saran"
-      ],
       "Filter name cannot contain only spaces": [
         "Nama filter tidak boleh diisi hanya dengan spasi"
       ],
@@ -12501,9 +12422,6 @@
       ],
       "Send email": [
         "Kirim email"
-      ],
-      "Send feedback": [
-        "Kirim tanggapan"
       ],
       "Send with changed preferences?": [
         "Kirim dengan preferensi yang telah diubah?"

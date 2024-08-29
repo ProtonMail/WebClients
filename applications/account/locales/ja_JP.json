@@ -391,6 +391,9 @@
       "Discard changes": [
         "変更を破棄"
       ],
+      "Domain name": [
+        "ドメイン名"
+      ],
       "Don't show again": [
         "次回から表示しない"
       ],
@@ -1420,6 +1423,9 @@
       ]
     },
     "Assistant toggle": {
+      "Buy now": [
+        "今すぐ購入"
+      ],
       "New": [
         "新規"
       ]
@@ -3399,6 +3405,11 @@
       ],
       "Priority support": [
         "優先サポート"
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB のストレージ"
       ]
     },
     "Duration": {
@@ -6677,6 +6688,12 @@
       "Gateways": [
         "ゲートウェイ"
       ],
+      "Gateways monitoring is disabled.": [
+        "ゲートウェイモニタリングが無効になりました。"
+      ],
+      "Gateways monitoring is enabled.": [
+        "ゲートウェイモニタリングが有効になりました。"
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "新たな回復用フレーズを生成すると古いものは無効になります。"
       ],
@@ -6973,6 +6990,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } を読み込み中"
+      ],
+      "Loading gateways monitoring current status.": [
+        "ゲートウェイモニタリングの現在の状態を読み込んでいます。"
       ],
       "Loading preview": [
         "プレビューを読み込み中"
@@ -7774,6 +7794,9 @@
       ],
       "Two-factor authentication enabled": [
         "2 要素認証が有効になりました"
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "ゲートウェイモニタリングの現在の状態を確認できません。"
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "回復用ファイルの署名の検証ができませんでした。サポートにお問い合わせください。"
@@ -14288,6 +14311,9 @@
       "Add users": [
         "ユーザー追加"
       ],
+      "Address": [
+        "アドレス"
+      ],
       "Address and key verification": [
         "アドレスとキー認証"
       ],
@@ -15849,6 +15875,9 @@
       "${ n } email address": [
         "${ n } メールアドレス"
       ],
+      "Bitcoin via email": [
+        "メールで Bitcoin"
+      ],
       "Early access waitlist": [
         "早期アクセス待機リスト"
       ],
@@ -15857,6 +15886,11 @@
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "アップグレードして ${ appName } のプレミアム機能をロック解除しましょう"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Wallet に関する問題"
       ]
     },
     "wallet_signup_2024:Info": {

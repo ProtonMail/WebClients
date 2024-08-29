@@ -93,9 +93,6 @@
       "Add to group": [
         "Aan groep toevoegen"
       ],
-      "Adds it below your existing message": [
-        "Voegt het onderaan uw bestaande bericht toe"
-      ],
       "Align center": [
         "Centreren"
       ],
@@ -829,11 +826,11 @@
       "Not saved": [
         "Niet opgeslagen"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Open"
@@ -1086,9 +1083,6 @@
       ],
       "send auto-reply email": [
         "automatisch antwoord versturen"
-      ],
-      "Send feedback": [
-        "Feedback versturen"
       ],
       "Send read receipt": [
         "Leesbevestiging verzenden"
@@ -3464,9 +3458,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Versleep de contactpersonen die u wil samenvoegen om ze op prioriteit te ordenen. Haal het vinkje weg bij de contacten die u niet wilt samenvoegen."
       ],
-      "Use the writing assistant to:": [
-        "Gebruik de schrijfassistent om:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "We hebben geen bekende trackers en tracking URL's in deze e-mail gevonden."
       ],
@@ -4547,11 +4538,6 @@
         "Geen afbeelding geselecteerd"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Score is vereist"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Kan geen uitnodiging versturen naar ${ email }. ${ errorMessage }"
@@ -4749,11 +4735,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Uw feedback"
       ]
     },
     "fido2: Error": {
@@ -5967,9 +5948,6 @@
       "Country code": [
         "Landcode"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Maak betere e-mails, snel en moeiteloos. Probeer het nu."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
         "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
@@ -6209,9 +6187,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Probeer voor meer zoekresultaten op dit trefwoord te zoeken in de inhoud van uw e-mailberichten."
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Beschikbaar voor ${ ASSISTANT_TRIAL_TIME_DAYS } dagen."
-      ],
       "From": [
         "Afzender"
       ],
@@ -6357,9 +6332,6 @@
       ],
       "Learn more": [
         "Meer informatie"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Meer informatie over ${ BRAND_NAME }'s schrijfassistent"
       ],
       "Left to Right": [
         "Van links naar rechts"
@@ -7793,12 +7765,6 @@
       "Automatically save contacts": [
         "Contacten automatisch opslaan"
       ],
-      "Awful": [
-        "Vreselijk"
-      ],
-      "Bad": [
-        "Slecht"
-      ],
       "BCC": [
         "Bcc"
       ],
@@ -7985,14 +7951,8 @@
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
       ],
-      "Good": [
-        "Goed"
-      ],
       "Hide password": [
         "Wachtwoord verbergen"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Hoe zou u uw ervaring met de nieuwe ${ BRAND_NAME } omschrijven?"
       ],
       "I understand the risk": [
         "Ik begrijp het risico"
@@ -8095,9 +8055,6 @@
       ],
       "Notification": [
         "Notificatie"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Openen in een nieuw tabblad"
@@ -8269,9 +8226,6 @@
       ],
       "Without attachment": [
         "Zonder bijlage"
-      ],
-      "Wonderful": [
-        "Uitstekend"
       ],
       "Writing assistant": [
         "Schrijfassistent"
@@ -8927,15 +8881,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Ga aan de slag voor $1"
-      ],
-      "Get started for 1 €": [
-        "Ga aan de slag voor € 1"
-      ],
-      "Get started for CHF 1": [
-        "Ga aan de slag voor CHF 1"
-      ],
       "Upgrade now": [
         "Upgrade nu"
       ]
@@ -9155,9 +9100,6 @@
       "GDPR data processing agreement": [
         "AVG-gegevensverwerkingsovereenkomst"
       ],
-      "Generate emails with only a prompt": [
-        "E-mails genereren met alleen een verzoek"
-      ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
@@ -9209,9 +9151,6 @@
       ],
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
-      ],
-      "Proofread and refine your texts": [
-        "Uw tekst herlezen en verfijnen"
       ],
       "Protect ${ n } device at a time": [
         "Bescherm ${ n } apparaat tegelijkertijd",
@@ -9437,16 +9376,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Vertel ons over uw ervaring. (Optioneel)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Feedback"
       ]
     },
     "new_plans: title": {
@@ -11906,11 +11835,6 @@
         "${ label.Name } verwijderd"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Feedback verzonden"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/maand"
@@ -12378,9 +12302,6 @@
       "External encryption": [
         "Externe versleuteling"
       ],
-      "Feedback": [
-        "Feedback"
-      ],
       "Filter name cannot contain only spaces": [
         "Filternaam mag niet alleen spaties bevatten"
       ],
@@ -12669,9 +12590,6 @@
       ],
       "Send email": [
         "E-mail verzenden"
-      ],
-      "Send feedback": [
-        "Feedback versturen"
       ],
       "Send with changed preferences?": [
         "Versturen met gewijzigde voorkeuren?"
