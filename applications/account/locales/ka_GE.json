@@ -10550,6 +10550,9 @@
       "Time zone": [
         "დროის სარტყელი"
       ],
+      "Tips and insights": [
+        "ჩაი და შიგნეულობა"
+      ],
       "To: ${ toEmail }": [
         "მიმღები: ${ toEmail }"
       ],
@@ -11554,15 +11557,6 @@
       "From ${ price }": [
         "${ price }-დან"
       ],
-      "Get started for $1": [
-        "დაწყება $1-ით"
-      ],
-      "Get started for 1 €": [
-        "დაწყება 1 €-ით"
-      ],
-      "Get started for CHF 1": [
-        "დაწყება 1 CHF-ით"
-      ],
       "Upgrade": [
         "ტარიფის აწევა"
       ],
@@ -11807,9 +11801,6 @@
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
       ],
-      "Generate emails with only a prompt": [
-        "ელფოსტების გენერაცია, მხოლოდ, მოთხოვნით"
-      ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
       ],
@@ -11870,9 +11861,6 @@
       ],
       "Priority support & live chat": [
         "პრიორიტეტული დახმარება და ცოცხალი ჩატი"
-      ],
-      "Proofread and refine your texts": [
-        "თქვენი ტექსტების კორექტურა და ოპტიმიზაცია"
       ],
       "Protect ${ n } device at a time": [
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
@@ -17521,6 +17509,9 @@
       "Feature in early access": [
         "თვისება ადრეულ წვდომაში"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "მიიღეთ წარმადობისა და უსაფრთხოების მინიშნებები, რომ დაგეხმაროთ, ${ MAIL_APP_NAME }-ის ფუნქციონალი ბოლომდე გამოიყენოთ და სხვ."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail-ი ავტომატურად ახდენს ზოგიერთი ელფოსტისთვის კატეგორიების მინიჭებას, როგორიცაა, მაგალითად, სოციალური ან რეკლამები. შეგიძლიათ, აირჩიოთ, ასეთი ელფოსტები სად შემოიტანოთ."
       ],
@@ -17719,11 +17710,44 @@
       ]
     },
     "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "ადმინებს კონფიდენციალური მომხმარებლების მონაცემებთაან წვდომა არ აქვთ და ვერც მათ პაროლს ჩამოყრიან."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "${ orgName }-ის ადმინისტრატორს სურს, თქვენს ანგარიშს ადმინის უფლებები მიანიჭოს"
+      ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "**${ orgName }** ორგანიზაციის ადმინს (**${ adminEmail }**) თქვენს ანგარიშზე ადმინის წვდომის ჩართვა სურს."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "მომხმარებლის კონფიდენციალურად გამოცხადებით მათ თავის ანგარიშზე არსებულ მონაცემების აღდგენაში ვეღარ დაეხმარებით."
+      ],
       "Cancel": [
         "გაუქმება"
       ],
       "Delete request": [
         "მოთხოვნის წაშლა"
+      ],
+      "Delete request to access user data?": [
+        "წავშალო მოთხოვნა მომხმარებლის მონაცემებთან წვდომაზე?"
+      ],
+      "Enable admin access?": [
+        "ჩავრთო ადმინის წვდომა?"
+      ],
+      "Enable administrator access": [
+        "ადმინისტრატორის წვდომის ჩართვა"
+      ],
+      "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
+        "თუ თქვენს ავტორიზაციის დეტალებთან წვდომა დაკარგეთ, ორგანიზაციის ავტორებს თქვენი პაროლის ჩამოყრა და თქვენს მონაცემებთან წვდომის აღდგენა შეეძლებათ."
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "მომხმარებლის თანხმობის შემდეგ საშუალება გექნებათ, დაეხმაროთ მათ, დაიბრუნონ წვდომა ან მართონ თავიანთი მონაცემები"
+      ],
+      "Organization key must be activated to request data access": [
+        "მონაცემებთან წვდომის გამოსათხოვად ორგანიზაციის გასაღები აქტიური უნდა იყოს"
+      ],
+      "Pending admin access": [
+        "ველოდები ადმინისტრატორის წვდომას"
       ],
       "Private user": [
         "კონფიდენციალური მომხმარებელი"
@@ -17731,14 +17755,38 @@
       "reject": [
         "უარყოფა"
       ],
+      "Request to manage account sent, awaiting user approval": [
+        "მოთხოვნა ანგარიშის მართვაზე გაიგზავნა. ველოდებით მომხმარებლის დასტურს"
+      ],
+      "Request user permission for data access": [
+        "მომხმარებლის წვდომების მოთხოვნა მონაემებთან წვდომისთვის"
+      ],
       "Revoke access": [
         "წვდომის გაუქმება"
+      ],
+      "Revoke administrator access?": [
+        "გავაუქმო ადმინისტრატორის წვდომა?"
       ],
       "Send request": [
         "მოთხოვნის გაგზავნა"
       ],
+      "The user must have an address to request data access": [
+        "მომხმარებელს მონაცემებზე წვდომის მოსათხოვად მისამართი უნდა გააჩნდეს"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "ეს წაშლის ყველა დარჩენილ მოთხოვნას ადმინის წვდომისთვის მომხმარებლის მონაცემებზე ან მისი პაროლი ჩამოყრაზე წვდომისთვის."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "ეს გააუქმებს ადმინისტრატორის წვდომებს, რომ ეს მომხმრებლის ანგარიში მართონ"
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "გასაგრძელებლად მომხმარებლის მონაცემებთან წვდომისთვის და მათი პაროლის ჩამოსაყრელად მათგან უფლების თხოვნა მოგიწევთ"
+      ],
       "View request": [
         "მოთხოვნის ნახვა"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "შეგიძლიათ ${ reject } ეს მოთხოვნა. თუ არ გნებავთ, ეს მოხდეს."
       ]
     },
     "Update font modal": {
@@ -17869,6 +17917,9 @@
       ],
       "It's you": [
         "თქვენ"
+      ],
+      "Pending admin access": [
+        "ველოდები ადმინისტრატორის წვდომას"
       ],
       "Private": [
         "პირადი"

@@ -10553,6 +10553,9 @@
       "Time zone": [
         "Tidssone"
       ],
+      "Tips and insights": [
+        "Tips og innsikt"
+      ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
       ],
@@ -11560,15 +11563,6 @@
       "From ${ price }": [
         "Fra ${ price }"
       ],
-      "Get started for $1": [
-        "Kom i gang for $1"
-      ],
-      "Get started for 1 €": [
-        "Kom i gang for 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Kom i gang for 1 CHF"
-      ],
       "Upgrade": [
         "Oppgrader"
       ],
@@ -11813,9 +11807,6 @@
       "GDPR data processing agreement": [
         "Avtale om GDPR-databehandling"
       ],
-      "Generate emails with only a prompt": [
-        "Generer e-postmeldinger med bare en ledetekst"
-      ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
       ],
@@ -11876,9 +11867,6 @@
       ],
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
-      ],
-      "Proofread and refine your texts": [
-        "Korrekturles og finjuster tekstene dine"
       ],
       "Protect ${ n } device at a time": [
         "Beskytt ${ n } enhet om gangen",
@@ -17545,6 +17533,9 @@
       "Feature in early access": [
         "Funksjon i tidlig tilgang"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "Få produktivitets- og sikkerhetstips for å hjelpe deg med å få mest mulig ut av ${ MAIL_APP_NAME } og mer."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk noen e-poster som 'sosialt' eller 'kampanjer'. Du kan velge hvor du vil importere disse e-postene til."
       ],
@@ -17742,6 +17733,86 @@
         "Denne versjonen av Tor-nettleser støttes ikke. Vennligst oppdater til seneste ${ stableRelease }"
       ]
     },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "En administrator av ${ orgName } ønsker å aktivere administratortilgang for kontoen din."
+      ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "En administrator for **${ orgName }**-organisasjonen (**${ adminEmail }**) ønsker å aktivere administratortilgang for kontoen din."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Ved å gjøre brukeren privat vil du ikke kunne hjelpe dem med å få tilgang til dataene eller kontoen sin igjen."
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Delete request": [
+        "Slett forespørsel"
+      ],
+      "Delete request to access user data?": [
+        "Slette forespørsel om tilgang til brukerdata?"
+      ],
+      "Enable admin access?": [
+        "Aktivere administratortilgang?"
+      ],
+      "Enable administrator access": [
+        "Aktiver administratortilgang"
+      ],
+      "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
+        "Hvis du mister tilgangen til legitimasjonen din, kan organisasjonens administratorer tilbakestille passordet og gjenopprette tilgangen til kontoen din."
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Når brukeren samtykker, vil du kunne hjelpe dem med å få kontotilgang eller administrere dataene deres."
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisasjonsnøkkel må være aktivert for å be om datatilgang"
+      ],
+      "Pending admin access": [
+        "Venter på administratortilgang"
+      ],
+      "Private user": [
+        "Privat bruker"
+      ],
+      "reject": [
+        "avvis"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Forespørsel om å administrere kontoen er sendt, venter på brukergodkjenning"
+      ],
+      "Request user permission for data access": [
+        "Be om brukertillatelse for datatilgang"
+      ],
+      "Revoke access": [
+        "Opphev tilgang"
+      ],
+      "Revoke administrator access?": [
+        "Tilbakekalle administratortilgang?"
+      ],
+      "Send request": [
+        "Send forespørsel"
+      ],
+      "The user must have an address to request data access": [
+        "Brukeren må ha en adresse for å be om datatilgang"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Dette vil slette den ventende forespørselen om administratortilgang til brukerens data eller tilbakestilling av passord."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Dette vil tilbakekalle administratortillatelsen til å administrere denne brukerens konto."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "For å fortsette må du be om brukerens tillatelse til å få tilgang til dataene deres eller tilbakestille passordet."
+      ],
+      "View request": [
+        "Vis forespørsel"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "Du kan ${ reject } denne forespørselen hvis du ikke ønsker å fortsette."
+      ]
+    },
     "Update font modal": {
       "Today is a good day to write an email": [
         "I dag er en god dag til å skrive en e-post"
@@ -17870,6 +17941,9 @@
       ],
       "It's you": [
         "Det er deg"
+      ],
+      "Pending admin access": [
+        "Venter på administratortilgang"
       ],
       "Private": [
         "Privat"

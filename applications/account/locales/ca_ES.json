@@ -397,6 +397,9 @@
       "Discard changes": [
         "Descarta els canvis"
       ],
+      "Domain name": [
+        "Nom de domini"
+      ],
       "Don't show again": [
         "No mostrar de nou"
       ],
@@ -1080,6 +1083,9 @@
       ],
       "Test": [
         "Prova"
+      ],
+      "Test SAML configuration": [
+        "Test de la configuració SAML"
       ],
       "Top up": [
         "Recarrega"
@@ -5060,6 +5066,12 @@
       "Leave Duo plan": [
         "Deixa el pla Duo"
       ],
+      "Leave Family plan": [
+        "Deixa el pla familiar"
+      ],
+      "Leave Visionary plan": [
+        "Deixa el pla Visionary"
+      ],
       "Manage addresses.": [
         "Gestiona les adreces."
       ],
@@ -7253,6 +7265,9 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instal·leu un arxiu de configuració de servidor per connectar a un servidor a específic al país que trieu."
       ],
+      "Internal user": [
+        "Usuari intern"
+      ],
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"
       ],
@@ -8982,6 +8997,9 @@
       "Declined": [
         "Rebutjat"
       ],
+      "Paused": [
+        "En pausa"
+      ],
       "Pending": [
         "Pendent"
       ]
@@ -9391,6 +9409,9 @@
       "Activity": [
         "Activitat"
       ],
+      "Add group member": [
+        "Afegeix el membre al grup"
+      ],
       "Address": [
         "Adreça"
       ],
@@ -9742,6 +9763,9 @@
       "Email or username": [
         "Correu electrònic o nom d'usuari"
       ],
+      "Email settings": [
+        "Configuració del correu"
+      ],
       "Emails": [
         "Correus electrònics"
       ],
@@ -9900,6 +9924,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivell de filtratge del bloquejador NetShield"
+      ],
+      "Link label (optional)": [
+        "Etiqueta de l'enllaç (opcional)"
       ],
       "Logo": [
         "Logo"
@@ -10104,6 +10131,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperació"
+      ],
+      "Remove image metadata": [
+        "Esborra les metadades de la imatge"
       ],
       "Repeat password": [
         "Repetir contrasenya"
@@ -11214,12 +11244,6 @@
       "From ${ price }": [
         "Des de ${ price }"
       ],
-      "Get started for $1": [
-        "Comenceu per $1"
-      ],
-      "Get started for 1 €": [
-        "Comenceu per 1€"
-      ],
       "Upgrade": [
         "Millora"
       ],
@@ -11305,6 +11329,9 @@
       ],
       "1 user": [
         "1 usuari"
+      ],
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
       ],
       "24/7 account management support": [
         "Suport per a la gestió de comptes 24/7"
@@ -11438,9 +11465,6 @@
       "GDPR data processing agreement": [
         "Acord de processament de dades RGPD"
       ],
-      "Generate emails with only a prompt": [
-        "Genera correus electrònics només amb una indicació"
-      ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
       ],
@@ -11481,6 +11505,9 @@
       "Password health": [
         "Estat de la contrasenya"
       ],
+      "Password manager": [
+        "Gestor de contrasenyes"
+      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
@@ -11492,9 +11519,6 @@
       ],
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
-      ],
-      "Proofread and refine your texts": [
-        "Corregiu i refineu els textos"
       ],
       "Protect ${ n } device at a time": [
         "Protegiu ${ n } dispositiu alhora",
@@ -12482,6 +12506,9 @@
       "Everyone": [
         "Tothom"
       ],
+      "Group members": [
+        "Membres del grup"
+      ],
       "No one": [
         "Ningú"
       ]
@@ -13301,6 +13328,9 @@
       ]
     },
     "placeholder": {
+      "Add a group name": [
+        "Afegeix nu nom al grup"
+      ],
       "Members": [
         "Membres"
       ]
@@ -13517,6 +13547,12 @@
       "Invalid code": [
         "El codi no és vàlid."
       ],
+      "Recovery email address": [
+        "Correu electrònic de recuperació"
+      ],
+      "Recovery phone number": [
+        "Número de telèfon de recuperació"
+      ],
       "Show more": [
         "Mostra més"
       ],
@@ -13535,6 +13571,11 @@
         "Cancel·la"
       ]
     },
+    "saml: Error": {
+      "Something went wrong": [
+        "S'ha produït un error."
+      ]
+    },
     "saml: Info": {
       "Details": [
         "Detalls"
@@ -13548,6 +13589,9 @@
     "saml: Title": {
       "It works!": [
         "Funciona!"
+      ],
+      "Test SAML configuration": [
+        "Test de la configuració SAML"
       ]
     },
     "scim: Action": {
@@ -14144,6 +14188,11 @@
       ],
       "Verification": [
         "Verificació"
+      ]
+    },
+    "signup: Action": {
+      "Request trial": [
+        "Sol·liciteu una prova"
       ]
     },
     "specialoffer: Action": {
@@ -15506,6 +15555,9 @@
       "Account recovery": [
         "Recuperació de compte"
       ],
+      "Account settings": [
+        "Configuració del compte"
+      ],
       "Account suspended": [
         "Compte suspès"
       ],
@@ -16239,6 +16291,9 @@
       "Privacy and data collection": [
         "Privacitat i recopilació de dades"
       ],
+      "Privacy and security": [
+        "Privacitat i seguretat"
+      ],
       "Processing...": [
         "Processant..."
       ],
@@ -16935,6 +16990,23 @@
         "Aquesta versió del Navegador Tor no està suportada. Actualitzeu a la darrera ${ stableRelease }"
       ]
     },
+    "unprivatization": {
+      "Cancel": [
+        "Cancel·la"
+      ],
+      "Delete request": [
+        "Elimina la sol·licitud"
+      ],
+      "Enable admin access?": [
+        "Voleu activar l'accés fora de línia?"
+      ],
+      "reject": [
+        "rebutjar"
+      ],
+      "Revoke access": [
+        "Revoca l'accés"
+      ]
+    },
     "Update font modal": {
       "Today is a good day to write an email": [
         "Avui és un bon dia per escriure un correu electrònic"
@@ -17258,6 +17330,9 @@
       ]
     },
     "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Autorització"
+      ],
       "Downloads": [
         "Descàrregues"
       ]
