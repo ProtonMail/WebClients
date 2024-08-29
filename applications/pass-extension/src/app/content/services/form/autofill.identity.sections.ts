@@ -15,9 +15,13 @@ const isCriticalType = (type: IdentityFieldType): boolean =>
  * is encountered and already exists in the current section, but not consecutively */
 export const resolveIdentitySections = (fields: FieldHandle[]): IdentitySection[] =>
     fields.reduce<IdentitySection[]>((sections, field: FieldHandle) => {
-        if (field.fieldType !== FieldType.IDENTITY) return sections;
+        const { fieldType } = field;
+        const identityField = fieldType === FieldType.IDENTITY;
+        const emailField = fieldType === FieldType.EMAIL;
 
-        const type = field.identityType ?? getIdentityFieldType(field.element);
+        if (!(identityField || emailField)) return sections;
+
+        const type = emailField ? IdentityFieldType.EMAIL : (field.identityType ?? getIdentityFieldType(field.element));
         if (type === undefined) return sections;
 
         const current = sections[sections.length - 1];
