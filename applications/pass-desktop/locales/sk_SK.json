@@ -224,13 +224,13 @@
         "Vygenerovať heslo"
       ],
       "Generate secure link": [
-        "Generovať bezpečný odkaz"
+        "Vytvoriť bezpečný odkaz"
       ],
       "Generated passwords": [
         "Vygenerované heslá"
       ],
       "Generating secure link...": [
-        "Generovanie bezpečného odkazu..."
+        "Vytváranie bezpečného odkazu..."
       ],
       "Get ${ PASS_APP_NAME }": [
         "Získať ${ PASS_APP_NAME }"
@@ -392,7 +392,7 @@
         "Odstrániť prístup"
       ],
       "Remove all expired links (${ inactiveLinkCount })": [
-        "Odstrániť všetky odkazy, ktorým vypršala platnosť (${ inactiveLinkCount })"
+        "Odstrániť všetky odkazy s vypršanou platnosťou (${ inactiveLinkCount })"
       ],
       "Remove link": [
         "Odstrániť odkaz"
@@ -488,7 +488,7 @@
         "Odhlásiť sa"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Niekto s vami zdieľal položku na ${ PASS_APP_NAME }."
+        "Niekto s vami zdieľal položku v ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Triediť položky trezoru"
@@ -2598,7 +2598,7 @@
         "Pracovné telefónne číslo"
       ],
       "X handle": [
-        "Meno v sieti X"
+        "Používateľské meno X"
       ],
       "Yahoo account": [
         "Yahoo účet"
@@ -2809,7 +2809,7 @@
     },
     "Title": {
       "${ BRAND_NAME } addresses": [
-        "${ BRAND_NAME } adries"
+        "${ BRAND_NAME } adresy"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
@@ -2824,10 +2824,10 @@
         "Zistený únik"
       ],
       "Breaches": [
-        "Úniky údajov"
+        "Úniky informácií"
       ],
       "Breaches detected for": [
-        "Bol zistený únik"
+        "Zistený únik informácií pre"
       ],
       "Confirm extra password": [
         "Potvrďte dodatočné heslo"
@@ -2956,7 +2956,7 @@
         "Žiadne neaktívne 2FA"
       ],
       "No insecure passwords": [
-        "Žiadne nebezpečné heslá"
+        "Žiadne nezabezpečené heslá"
       ],
       "No items selected": [
         "Žiadne vybrané položky"
@@ -2992,7 +2992,7 @@
         "Odporúčané opatrenia"
       ],
       "Remove email address?": [
-        "Odstrániť všetky adresy?"
+        "Odstrániť emailovú adresu?"
       ],
       "Remove extra password": [
         "Odstrániť dodatočné heslo"
@@ -3034,7 +3034,7 @@
         "Nastavte 2FA pre lepšiu bezpečnosť"
       ],
       "Set up 2FA for more security": [
-        "Nastavte 2FA na zvýšenie bezpečnosti"
+        "Nastavte 2FA pre zvýšenie bezpečnosti"
       ],
       "Settings": [
         "Nastavenia"
@@ -3046,7 +3046,7 @@
         "Zdieľať s"
       ],
       "Stay safer online": [
-        "Zostaňte bezpečnejší online"
+        "Zostaňte v bezpečí online"
       ],
       "Suggestions": [
         "Návrhy"
