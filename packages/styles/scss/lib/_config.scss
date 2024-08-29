@@ -107,8 +107,10 @@ $z-indexes: (
 	'floating-frames': 400,
 	'previewer': 500,
 	'transfer-manager': 600,
-	'mobile-navigation': 700,
-	'modals': 800,
-	'notifications': 900,
-	'tooltips': 1000,
+	'spotlights': 700,
+	// Can be overridden to display above modals
+	'mobile-navigation': 800,
+	'modals': 900,
+	'notifications': 1000,
+	'tooltips': 1100,
 );

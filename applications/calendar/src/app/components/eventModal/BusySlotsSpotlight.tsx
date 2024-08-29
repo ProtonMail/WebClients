@@ -56,6 +56,7 @@ const BusySlotsSpotlight = ({ children, view, isDisplayedInPopover }: Props) => 
             anchorRef={anchorRef}
             onClose={onClose}
             size="large"
+            isAboveModal
             content={
                 <div className="flex flex-nowrap my-2">
                     <div className="shrink-0 mr-4">

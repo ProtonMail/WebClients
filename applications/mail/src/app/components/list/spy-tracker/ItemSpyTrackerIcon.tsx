@@ -2,9 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { FeatureCode, Tooltip, useSpotlightOnFeature } from '@proton/components';
-import useUser from '@proton/components/hooks/useUser';
-import { MONTH } from '@proton/shared/lib/constants';
+import { Tooltip } from '@proton/components';
 import { isPlainText, isSent } from '@proton/shared/lib/mail/messages';
 
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
@@ -17,9 +15,7 @@ interface Props {
 }
 
 const ItemSpyTrackerIcon = ({ message }: Props) => {
-    const [user] = useUser();
     const anchorRef = useRef(null);
-
     const sent = isSent(message.data);
 
     const {
@@ -29,15 +25,6 @@ const ItemSpyTrackerIcon = ({ message }: Props) => {
         imageTrackersLoaded,
         canCleanUTMTrackers,
     } = useMessageTrackers(message);
-
-    // Load content spotlight needs to be displayed if account is older than one month
-    const userCreateTime = user.CreateTime || 0;
-    const isAccountOlderThanOneMonth = Date.now() > userCreateTime * 1000 + MONTH;
-
-    const { show: showLoadContentSpotlight, onDisplayed: onLoadContentSpotlightDisplayed } = useSpotlightOnFeature(
-        FeatureCode.SpotlightLoadContent,
-        isAccountOlderThanOneMonth
-    );
 
     const trackerText = needsMoreProtection ? (
         <span>{c('Info').t`Email tracker protection is disabled`}</span>
@@ -66,11 +53,7 @@ const ItemSpyTrackerIcon = ({ message }: Props) => {
 
     return (
         <span className="absolute message-header-security-icons flex flex-row flex-nowrap">
-            <LoadContentSpotlight
-                show={showLoadContentSpotlight}
-                onDisplayed={onLoadContentSpotlightDisplayed}
-                anchorRef={anchorRef}
-            >
+            <LoadContentSpotlight anchorRef={anchorRef}>
                 <div>
                     {/* Need to wrap the Tooltip by a div to avoid ref warning because Spotlight is cloning the element and applying refs on top of it */}
                     <Tooltip title={trackerText} tooltipClassName="tooltip--no-max-width">
