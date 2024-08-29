@@ -54,6 +54,7 @@ import { DocParticipantTracker, ParticipantTrackerEvent } from './DocParticipant
 import type { SerializedEditorState } from 'lexical'
 import { metricsBucketNumberForUpdateCount } from '../../Util/bucketNumberForUpdateCount'
 import { MAX_DOC_SIZE } from '../../Models/Constants'
+import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from '@proton/metrics/types/docs_readonly_mode_documents_total_v1.schema'
 
 /**
  * @TODO DRVDOC-802
@@ -437,7 +438,28 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     } else {
       this.logger.info('Changing editing locked to true')
       void this.editorInvoker.changeLockedState(true)
+      this.incrementMetricsReadonlyState()
     }
+  }
+
+  incrementMetricsReadonlyState(): void {
+    let reason: HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson['Labels']['reason'] = 'unknown'
+
+    if (this.participantTracker.isParticipantLimitReached()) {
+      reason = 'user_limit_reached'
+    } else if (!this.doesUserHaveEditingPermissions()) {
+      reason = 'no_editing_permissions'
+    } else if (this.isExperiencingErroredSync) {
+      reason = 'errored_sync'
+    } else if (this.isLockedDueToSizeContraint) {
+      reason = 'size_limit'
+    } else if (this.websocketStatus !== 'connected') {
+      reason = 'not_connected'
+    }
+
+    metrics.docs_readonly_mode_documents_total.increment({
+      reason: reason,
+    })
   }
 
   doesUserHaveEditingPermissions(): boolean {
