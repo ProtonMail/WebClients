@@ -37,7 +37,7 @@ import { SignupMode } from '../interface';
 import CustomStep from './CustomStep';
 import setupAccount from './account-setup.svg';
 
-export const getMailBenefits = (): BenefitItem[] => {
+export const getMailBenefits = (plan: PLANS | undefined): BenefitItem[] => {
     return [
         {
             key: 1,
@@ -47,6 +47,21 @@ export const getMailBenefits = (): BenefitItem[] => {
             },
         },
         ...getGenericBenefits(),
+        plan === PLANS.DUO || plan === PLANS.FAMILY
+            ? {
+                  key: 12,
+                  text: c('mail_signup_2024: Info').t`${BRAND_NAME} Scribe writing assistant`,
+                  icon: {
+                      name: 'pen-sparks',
+                  },
+              }
+            : {
+                  key: 12,
+                  text: c('pass_signup_2023: Info').t`Works on all devices`,
+                  icon: {
+                      name: 'mobile',
+                  },
+              },
         {
             key: 2,
             text: CALENDAR_APP_NAME,
@@ -251,7 +266,7 @@ export const getMailConfiguration = ({
         };
     }
 
-    const benefitItems = getMailBenefits();
+    const benefitItems = getMailBenefits(plan?.Name as PLANS);
     const benefits = benefitItems && (
         <div>
             <div className="text-lg text-semibold">
