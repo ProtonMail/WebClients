@@ -44,6 +44,7 @@ export interface SpotlightProps {
     innerClassName?: string;
     size?: 'large';
     footer?: ReactNode;
+    isAboveModal?: boolean;
 }
 
 const Spotlight = ({
@@ -61,6 +62,7 @@ const Spotlight = ({
     innerClassName,
     size,
     footer,
+    isAboveModal,
 }: PropsWithChildren<SpotlightProps>) => {
     const [uid] = useState(generateUID('spotlight'));
 
@@ -132,6 +134,7 @@ const Spotlight = ({
                     className={clsx([
                         'spotlight',
                         size && `spotlight--${size}`,
+                        isAboveModal && 'spotlight--is-above-modal',
                         `spotlight--${placement}`,
                         isClosing && 'is-spotlight-out',
                         type && 'spotlight--with-illustration',

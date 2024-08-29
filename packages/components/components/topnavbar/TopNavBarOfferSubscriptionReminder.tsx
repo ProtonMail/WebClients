@@ -8,7 +8,7 @@ import type { Currency } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../modalTwo';
-import { Spotlight } from '../spotlight';
+import { Spotlight, useSpotlightShow } from '../spotlight';
 import TopNavbarUpgradeButton from './TopNavbarUpgradeButton';
 
 interface Props {
@@ -32,13 +32,14 @@ const TopNabarOfferSubscriptionReminder = ({
     const buttonRef = useRef(null);
     const { handleVisit } = useOfferFlags(offerConfig);
     const { onClose: handleCloseModal, open } = modalProps;
+    const show = useSpotlightShow(!!open, 3000);
 
     return (
         <Spotlight
             anchorRef={buttonRef}
             innerClassName="p-6 pt-12"
             hasClose={false}
-            show={!!open}
+            show={show}
             content={
                 <offerConfig.layout
                     currency={currency}
