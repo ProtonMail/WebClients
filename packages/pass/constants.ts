@@ -44,6 +44,9 @@ export const PASS_LINUX_VERSION_URL = 'https://proton.me/download/PassDesktop/li
 export const PASS_LINUX_DOWNLOAD_URL = 'https://proton.me/support/set-up-proton-pass-linux';
 export const PASS_DESKTOP_CHANGELOG_URL =
     'https://github.com/ProtonMail/WebClients/blob/main/applications/pass-desktop/CHANGELOG.md';
+export const WEBSITE_RULES_URL = 'https://proton.me/download/pass/auto-detection/rules.json';
+
+export const WEBSITE_RULES_SUPPORTED_VERSION = '1';
 
 export const ITEM_COUNT_RATING_PROMPT = 10;
 

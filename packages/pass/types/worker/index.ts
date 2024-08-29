@@ -4,6 +4,7 @@ export * from './form';
 export * from './messages';
 export * from './onboarding';
 export * from './otp';
+export * from './rules';
 export * from './runtime';
 export * from './state';
 export * from './storage';
