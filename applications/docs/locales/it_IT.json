@@ -112,6 +112,12 @@
       "Cancel subscription": [
         "Annulla abbonamento"
       ],
+      "characters": [
+        "caratteri"
+      ],
+      "characters out of": [
+        "caratteri senza"
+      ],
       "Chat with us": [
         "Chatta con noi"
       ],
@@ -611,6 +617,15 @@
       ],
       "What do I get?": [
         "Cosa ottengo?"
+      ],
+      "Word count": [
+        "Conteggio delle parole"
+      ],
+      "words": [
+        "parole"
+      ],
+      "words out of": [
+        "parole senza"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatto",
@@ -3583,6 +3598,12 @@
       "Change your password": [
         "Cambia la password"
       ],
+      "characters": [
+        "caratteri"
+      ],
+      "characters without spaces": [
+        "caratteri senza spazi"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Controllo contatto ${ progress } di ${ max }..."
       ],
@@ -3668,6 +3689,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
+      ],
+      "Display word count": [
+        "Visualizza il conteggio delle parole"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "La finestra non si apre? Ricorda di disabilitare qualsiasi blocco pop-up."
@@ -4339,6 +4363,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Quando configuri l'autenticazione a due fattori, forniamo dei codici di recupero che puoi usare per accedere se perdi l'accesso alla tua app di autenticazione."
+      ],
+      "words": [
+        "parole"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
@@ -5467,15 +5494,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Esegui il downgrade a ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Inizia con 1$"
-      ],
-      "Get started for 1 €": [
-        "Inizia con 1€"
-      ],
-      "Get started for CHF 1": [
-        "Inizia con 1 CHF"
-      ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
       ]
@@ -5590,6 +5608,12 @@
       "${ size } storage": [
         "${ size } di archiviazione"
       ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Per ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Per tutti i servizi di ${ BRAND_NAME }"
+      ],
       "1 user": [
         "1 utente"
       ],
@@ -5607,6 +5631,12 @@
       ],
       "Administration Panel": [
         "Pannello di controllo"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tutti i servizi ${ BRAND_NAME } di base (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Tutti i servizi premium di ${ BRAND_NAME }. Un semplice abbonamento"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminazione automatica dello spam e dal cestino"
@@ -5643,6 +5673,9 @@
       ],
       "Contact groups management": [
         "Gestione dei gruppi di contatti"
+      ],
+      "Custom and secure business email": [
+        "Email aziendale protetta e personalizzata"
       ],
       "Custom domains for email aliases": [
         "Domini personalizzati per alias email"
@@ -5707,9 +5740,6 @@
       "GDPR data processing agreement": [
         "Accordo sul trattamento dei dati GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Genera email con un solo comando"
-      ],
       "Group management (coming soon)": [
         "Gestione dei gruppi (in arrivo)"
       ],
@@ -5735,6 +5765,9 @@
       "Multiple admin roles": [
         "Ruoli di amministratore multipli"
       ],
+      "Online document editor": [
+        "Editor di documenti online"
+      ],
       "Organize items with multiple vaults": [
         "Organizza gli elementi con più casseforti"
       ],
@@ -5743,6 +5776,9 @@
       ],
       "Password health": [
         "Stato delle password"
+      ],
+      "Password manager": [
+        "Gestore password"
       ],
       "Password-protected Emails": [
         "Email protette da password"
@@ -5758,9 +5794,6 @@
       ],
       "Priority support & live chat": [
         "Supporto prioritario e chat dal vivo"
-      ],
-      "Proofread and refine your texts": [
-        "Correggi e perfeziona i tuoi testi"
       ],
       "Protect ${ n } device at a time": [
         "Proteggi ${ n } dispositivo alla volta",
@@ -5799,6 +5832,9 @@
       "Send & receive invitations": [
         "Invia e ricevi inviti"
       ],
+      "Share files with no size limit": [
+        "Condividi file senza limiti di dimensione"
+      ],
       "Sign in as user": [
         "Accedi come utente"
       ],
@@ -5816,6 +5852,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
+      ],
+      "Sync and backup all your files across devices": [
+        "Sincronizza ed effettua il backup dei file su tutti i tuoi dispositivi"
       ],
       "Tor over VPN": [
         "Tor su VPN"
@@ -5852,6 +5891,9 @@
       ],
       "Unlimited messages per day": [
         "Messaggi illimitati al giorno"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Casseforti ${ PASS_SHORT_APP_NAME } condivise illimitate per utente"
       ],
       "Unlimited shared vaults with access permissions": [
         "Casseforti condivise illimitate con autorizzazioni di accesso"
@@ -5956,6 +5998,9 @@
       ],
       "Popular": [
         "Popolare"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Proteggi le informazioni aziendali sensibili e collabora in modo sicuro."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Proteggi la privacy della tua famiglia con tutti i servizi ${ BRAND_NAME } combinati."
@@ -6122,6 +6167,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personalizza la tua firma email con loghi, immagini, icone di social media, link ai tuoi dettagli di contatto e molto altro"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "L'assistenza telefonica è disponibile dal team di assistenza clienti di ${ BRAND_NAME } durante l'orario lavorativo europeo, per i clienti con 20 o più utenti"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impedisce l'accesso ai messaggi da parte di ${ BRAND_NAME } o di terzi. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."
@@ -8285,6 +8333,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Un modo più sicuro/facile per conservare e inviare Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {

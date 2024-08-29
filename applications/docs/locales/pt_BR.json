@@ -2812,7 +2812,7 @@
         "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Quando a senha adicional está ativado, o gerenciamento de alias pode ser feito apenas pelo ${ PASS_APP_NAME }."
+        "Quando a senha extra está ativada, o gerenciamento de alias pode ser feito apenas pelo ${ PASS_APP_NAME }."
       ]
     },
     "Error notification": {
@@ -3706,7 +3706,7 @@
         "Logotipo do Discover ProtectBuy"
       ],
       "Display word count": [
-        "Mostrar contagem de palavras"
+        "Exibir contagem de palavras"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não aparece nada? Lembre-se de desativar os bloqueadores de pop-up."
@@ -3787,7 +3787,7 @@
         "Erro ao sincronizar"
       ],
       "Every change you make is automatically and securely saved to Drive.": [
-        "Cada alteração feita é salva automaticamente e com segurança no Drive."
+        "Cada alteração é salva de forma automática e segura no Drive."
       ],
       "Expired": [
         "Expirado"
@@ -4002,7 +4002,7 @@
         "Nenhum histórico de versão disponível"
       ],
       "No version history batches available": [
-        "Nenhum lote de histórico de versão disponíveis"
+        "Não há lotes de histórico de versões disponíveis"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Nenhuma das chaves enviadas é válida para criptografia. Para poder enviar mensagens para este endereço, envie uma chave válida ou desligue \"Criptografar e-mails\"."
@@ -4036,7 +4036,7 @@
         "Tamanho da organização"
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Nossos alertas são mais cautelosos. Se você não reconhece nenhuma das informações violadas, pode ignorar este relatório com segurança."
+        "Nossos alertas pecam por excesso de precaução. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
       ],
       "Owner": [
         "Proprietário"
@@ -4487,7 +4487,7 @@
         "Suas alterações estão sendo sincronizadas com o Drive. Não feche a página web."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
-        "Suas alterações não foram sincronizadas. O Drive tentará salvar as alterações automaticamente. Não feche a página da web."
+        "Suas alterações não foram sincronizadas. O Drive tentará salvar as alterações automaticamente. Não feche esta página."
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Seu navegador atual não suporta o download de arquivos grandes devido à indisponibilidade de agentes de serviços. O download de arquivos grandes pode congelar ou deixar o navegador sem resposta. Use as versões mais recentes de um ${ recommendedBrowser } e tente novamente."
@@ -5521,15 +5521,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Começar por 1$"
-      ],
-      "Get started for 1 €": [
-        "Começar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Começar por CHF 1"
-      ],
       "Upgrade now": [
         "Fazer upgrade agora"
       ]
@@ -5776,9 +5767,6 @@
       "GDPR data processing agreement": [
         "Acordo de processamento de dados do RGPD"
       ],
-      "Generate emails with only a prompt": [
-        "Gere e-mail com apenas um prompt"
-      ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
       ],
@@ -5833,9 +5821,6 @@
       ],
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
-      ],
-      "Proofread and refine your texts": [
-        "Revise e otimize seus textos"
       ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
