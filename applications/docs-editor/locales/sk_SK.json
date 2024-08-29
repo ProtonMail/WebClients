@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
       "Add comment": [
         "Pridať komentár"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "Prispôsobiť veľkosť písma"
+      ],
+      "Alphabetical": [
+        "Abecedne"
       ],
       "and": [
         "a"
@@ -169,6 +184,9 @@
       ],
       "Right align": [
         "Zarovnať vpravo"
+      ],
+      "Roman": [
+        "Rímske"
       ],
       "Save": [
         "Uložiť"
@@ -374,6 +392,12 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Pri načítaní dokumentu došlo k chybe. Aby sa zabránilo poškodeniu dokumentu, editor bol uzamknutý. Znovu načítajte stránku a skúste to znova."
+      ],
+      "Failed to export document.": [
+        "Dokument sa nepodarilo exportovať."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Nepodarilo sa importovať HTML z dôvodu neznámej chyby."
       ],
