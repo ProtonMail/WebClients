@@ -78,9 +78,6 @@
       "Add to group": [
         "加入至群組"
       ],
-      "Adds it below your existing message": [
-        "將其新增至現有訊息下方"
-      ],
       "Align center": [
         "置中"
       ],
@@ -810,11 +807,11 @@
       "Not saved": [
         "尚未儲存"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open": [
         "開啟"
@@ -1067,9 +1064,6 @@
       ],
       "send auto-reply email": [
         "傳送自動回覆電郵"
-      ],
-      "Send feedback": [
-        "傳送意見回饋"
       ],
       "Send read receipt": [
         "傳送已讀回條"
@@ -3430,9 +3424,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
-      "Use the writing assistant to:": [
-        "使用寫作幫手:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "我們沒有在此電郵中發現追蹤程式或追踪網址。"
       ],
@@ -4492,11 +4483,6 @@
         "沒有選擇圖像"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "郵件信譽評分為必要項目"
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "無法將邀請函寄送至 ${ email } 。 ${ errorMessage }"
@@ -4697,11 +4683,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "使用加密的雲端存儲保護您的檔案。包含自動同步、加密檔案分享等。"
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "您的意見回饋"
       ]
     },
     "fido2: Error": {
@@ -5854,9 +5835,6 @@
       "Country code": [
         "國家代碼"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "建構更好的電子郵件，快和省。立即使用。"
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "創建 ${ calendarsToBeCreatedCount } 個新行事曆"
       ],
@@ -6088,9 +6066,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息的關鍵字。"
       ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "免費${ ASSISTANT_TRIAL_TIME_DAYS }天"
-      ],
       "From": [
         "寄件人"
       ],
@@ -6234,9 +6209,6 @@
       ],
       "Learn more": [
         "瞭解詳情"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "進一步了解 ${ BRAND_NAME } 的撰寫幫手"
       ],
       "Left to Right": [
         "由左至右"
@@ -7644,12 +7616,6 @@
       "Automatically save contacts": [
         "自動儲存聯絡人"
       ],
-      "Awful": [
-        "糟透了"
-      ],
-      "Bad": [
-        "壞壞"
-      ],
       "BCC": [
         "密件副本"
       ],
@@ -7836,14 +7802,8 @@
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
       ],
-      "Good": [
-        "很好"
-      ],
       "Hide password": [
         "隱藏密碼"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "衷心期盼新版本的 ${ BRAND_NAME }給您更多不同的體驗，請您跟我們分享，好嗎？"
       ],
       "I understand the risk": [
         "我已了解此可能的風險"
@@ -7946,9 +7906,6 @@
       ],
       "Notification": [
         "通知"
-      ],
-      "OK": [
-        "還不錯"
       ],
       "Open in a new tab": [
         "於新分頁開啟"
@@ -8120,9 +8077,6 @@
       ],
       "Without attachment": [
         "不帶附件"
-      ],
-      "Wonderful": [
-        "太棒了"
       ],
       "Writing assistant": [
         "撰寫幫手"
@@ -8770,15 +8724,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "以 $1 美元開始"
-      ],
-      "Get started for 1 €": [
-        "以 €1 歐元開始"
-      ],
-      "Get started for CHF 1": [
-        "以 CHF1 瑞士法郎開始"
-      ],
       "Upgrade now": [
         "立即升級"
       ]
@@ -8980,9 +8925,6 @@
       ],
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
-      ],
-      "Generate emails with only a prompt": [
-        "只要提示便可生成電子郵件"
       ],
       "Group management (coming soon)": [
         "群組管理(即將推出)"
@@ -9235,16 +9177,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "與我們分享您的使用體驗。（選填）"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "意見回饋"
       ]
     },
     "new_plans: title": {
@@ -11433,11 +11365,6 @@
         "已移除 ${ label.Name }"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "意見回饋已送出"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/月"
@@ -11888,9 +11815,6 @@
       "External encryption": [
         "外部加密"
       ],
-      "Feedback": [
-        "意見反饋"
-      ],
       "Filter name cannot contain only spaces": [
         "篩選欄位不能只包含空白"
       ],
@@ -12181,9 +12105,6 @@
       ],
       "Send email": [
         "傳送電郵"
-      ],
-      "Send feedback": [
-        "傳送意見反饋"
       ],
       "Send with changed preferences?": [
         "要使用已變更的喜好設定傳送嗎？"

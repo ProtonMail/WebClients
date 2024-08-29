@@ -93,9 +93,6 @@
       "Add to group": [
         "Adicionar ao grupo"
       ],
-      "Adds it below your existing message": [
-        "Adiciona-o abaixo de sua mensagem existente"
-      ],
       "Align center": [
         "Centralizar"
       ],
@@ -835,11 +832,11 @@
       "Not saved": [
         "Não salvo"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Abrir"
@@ -962,7 +959,7 @@
         "Substituir"
       ],
       "Replaces the selected text in your message": [
-        "Substitua o texto selecionado em sua mensagem"
+        "Substitua o texto selecionado na sua mensagem"
       ],
       "Reply": [
         "Responder"
@@ -1092,9 +1089,6 @@
       ],
       "send auto-reply email": [
         "enviar e-mail de resposta automática"
-      ],
-      "Send feedback": [
-        "Enviar comentários"
       ],
       "Send read receipt": [
         "Enviar confirmação de leitura"
@@ -3473,9 +3467,6 @@
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e solte para classificar a prioridade de mesclagem dos contatos. Desmarque os contatos que você não deseja mesclar."
       ],
-      "Use the writing assistant to:": [
-        "Use o assistente de escrita para:"
-      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Não encontramos nenhum rasteador conhecido e URLs de rastreamentro nesse e-mail."
       ],
@@ -4549,7 +4540,7 @@
         "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
-        "Quando a senha adicional está ativado, o gerenciamento de alias pode ser feito apenas pelo ${ PASS_APP_NAME }."
+        "Quando a senha extra está ativada, o gerenciamento de alias pode ser feito apenas pelo ${ PASS_APP_NAME }."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Você ainda não tem nenhum contato. Comece criando um novo contato"
@@ -4563,11 +4554,6 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nenhuma imagem selecionada"
-      ]
-    },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "A pontuação é necessária"
       ]
     },
     "Error sending calendar invitation": {
@@ -4773,11 +4759,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Proteja seus arquivos com armazenamento criptografado na nuvem. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Seu comentário"
       ]
     },
     "fido2: Error": {
@@ -6003,9 +5984,6 @@
       "Country code": [
         "Código do país"
       ],
-      "Craft better emails, quickly and effortlessly. Try it now.": [
-        "Crie e-mails melhores de forma rápida e sem esforço. Teste agora."
-      ],
       "Create ${ calendarsToBeCreatedCount } new calendar": [
         "Criar ${ calendarsToBeCreatedCount } novo calendário",
         "Criar ${ calendarsToBeCreatedCount } novos calendários"
@@ -6106,7 +6084,7 @@
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
       ],
       "Downloading assistant… ${ progressDisplay } GB": [
-        "Baixando o assistente…: ${ progressDisplay } GB"
+        "Baixando o assistente… ${ progressDisplay } GB"
       ],
       "Downloading paused": [
         "Download pausado"
@@ -6244,9 +6222,6 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Para obter mais resultados de pesquisa, tente pesquisar essa palavra-chave no conteúdo de suas mensagens de e-mail."
-      ],
-      "Free for ${ ASSISTANT_TRIAL_TIME_DAYS } days": [
-        "Grátis por ${ ASSISTANT_TRIAL_TIME_DAYS } dias"
       ],
       "From": [
         "De"
@@ -6393,9 +6368,6 @@
       ],
       "Learn more": [
         "Saiba mais"
-      ],
-      "Learn more about ${ BRAND_NAME }'s writing assistant": [
-        "Saiba mais sobre o assistente de escrita da ${ BRAND_NAME }"
       ],
       "Left to Right": [
         "Esquerda para direita"
@@ -6566,7 +6538,7 @@
         "Tamanho da organização"
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Nossos alertas são mais cautelosos. Se você não reconhece nenhuma das informações violadas, pode ignorar este relatório com segurança."
+        "Nossos alertas pecam por excesso de precaução. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Verifique se é legítimo."
@@ -7841,12 +7813,6 @@
       "Automatically save contacts": [
         "Salvar contatos automaticamente"
       ],
-      "Awful": [
-        "Horrível"
-      ],
-      "Bad": [
-        "Ruim"
-      ],
       "BCC": [
         "CCO"
       ],
@@ -8033,14 +7999,8 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
-      "Good": [
-        "Bom"
-      ],
       "Hide password": [
         "Ocultar senha"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Como você descreveria sua experiência com a nova ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Eu entendo o risco"
@@ -8143,9 +8103,6 @@
       ],
       "Notification": [
         "Notificação"
-      ],
-      "OK": [
-        "OK"
       ],
       "Open in a new tab": [
         "Abrir em uma nova guia"
@@ -8317,9 +8274,6 @@
       ],
       "Without attachment": [
         "Sem anexo"
-      ],
-      "Wonderful": [
-        "Maravilhoso"
       ],
       "Writing assistant": [
         "Assistente de escrita"
@@ -8975,15 +8929,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Começar por 1$"
-      ],
-      "Get started for 1 €": [
-        "Começar por 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Começar por CHF 1"
-      ],
       "Upgrade now": [
         "Fazer upgrade agora"
       ]
@@ -9230,9 +9175,6 @@
       "GDPR data processing agreement": [
         "Acordo de processamento de dados do RGPD"
       ],
-      "Generate emails with only a prompt": [
-        "Gere e-mail com apenas um prompt"
-      ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
       ],
@@ -9287,9 +9229,6 @@
       ],
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
-      ],
-      "Proofread and refine your texts": [
-        "Revise e otimize seus textos"
       ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
@@ -9527,16 +9466,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Nos conte sobre sua experiência. (Opcional)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Comentários"
       ]
     },
     "new_plans: Title": {
@@ -10273,22 +10202,22 @@
         "Assunto"
       ],
       "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: “Anunciar eventos próximos em um boletim informativo”"
+        "Informe ao assistente de redação o que deve ser escrito. Exemplo: “Anuncie os próximos eventos em um boletim informativo”"
       ],
       "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
-        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: \"Cancelar minha associação da academia\""
+        "Diga ao assistente de redação o que deve ser escrito. Exemplo: “Cancele minha inscrição na academia”"
       ],
       "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
-        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: \"Convidar a Joana para minha festa\""
+        "Diga ao assistente de redação o que deve ser escrito. Exemplo: “Convide a Jane para minha festa”"
       ],
       "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
-        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: ”Agradecer ao meu colega pela ajuda em um projeto”"
+        "Diga ao assistente de redação o que deve ser escrito. Exemplo: “Agradeça ao meu colega de trabalho pela ajuda em um projeto”"
       ],
       "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
-        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: ”Escrever uma carta de apresentação para um estágio”"
+        "Diga ao assistente de redação o que deve ser escrito. Exemplo: “Escreva uma carta de apresentação para um estágio”"
       ],
       "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
-        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: ”Escreva um email de acompanhamento para um cliente”"
+        "Diga ao assistente de redação o que deve ser escrito. Exemplo: “Escreva um email de acompanhamento para um cliente”"
       ],
       "Text": [
         "Texto"
@@ -12013,11 +11942,6 @@
         "${ label.Name } removido"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Comentário enviado"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/mês"
@@ -12485,9 +12409,6 @@
       "External encryption": [
         "Criptografia externa"
       ],
-      "Feedback": [
-        "Comentários"
-      ],
       "Filter name cannot contain only spaces": [
         "O nome do filtro não pode somente espaços"
       ],
@@ -12779,9 +12700,6 @@
       ],
       "Send email": [
         "Enviar e-mail"
-      ],
-      "Send feedback": [
-        "Enviar comentários"
       ],
       "Send with changed preferences?": [
         "Enviar com preferências alteradas?"
