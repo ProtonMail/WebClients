@@ -1,6 +1,7 @@
 import type { Reducer } from 'redux';
 
 import {
+    aliasSyncEnable,
     getUserAccessSuccess,
     getUserFeaturesSuccess,
     getUserSettings,
@@ -40,6 +41,12 @@ export type UserAccessState = {
     plan: MaybeNull<PassPlanResponse>;
     waitingNewUserInvites: number;
     monitor: MaybeNull<UserMonitorStatusResponse>;
+    userData?: {
+        defaultShareId: MaybeNull<string>;
+        aliasSyncEnabled: boolean;
+        /** Back-end will always 0 if aliasSyncEnabled = false */
+        pendingAliasToSync: number;
+    };
 };
 
 export type UserState = {
@@ -62,6 +69,7 @@ const getInitialState = (): UserState => ({
     userSettings: null,
     waitingNewUserInvites: 0,
     monitor: { ProtonAddress: true, Aliases: true },
+    userData: { defaultShareId: null, aliasSyncEnabled: false, pendingAliasToSync: 0 },
 });
 
 export const INITIAL_HIGHSECURITY_SETTINGS = {
@@ -104,14 +112,15 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
 
     if (getUserAccessSuccess.match(action)) {
         /* triggered on each popup wakeup: avoid unnecessary re-renders */
-        const { plan, waitingNewUserInvites, monitor } = action.payload;
+        const { plan, waitingNewUserInvites, monitor, userData } = action.payload;
 
         const didChange =
             waitingNewUserInvites !== state.waitingNewUserInvites ||
             !isDeepEqual(plan, state.plan) ||
-            !isDeepEqual(monitor, state.monitor);
+            !isDeepEqual(monitor, state.monitor) ||
+            !isDeepEqual(userData, state.userData);
 
-        return didChange ? partialMerge(state, { plan, waitingNewUserInvites }) : state;
+        return didChange ? partialMerge(state, { plan, waitingNewUserInvites, userData }) : state;
     }
 
     if (getUserSettings.success.match(action)) {
@@ -139,6 +148,10 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
     if (monitorToggle.success.match(action)) {
         const { ProtonAddress, Aliases } = action.payload;
         return partialMerge(state, { monitor: { ProtonAddress: ProtonAddress ?? false, Aliases: Aliases ?? false } });
+    }
+
+    if (aliasSyncEnable.success.match(action)) {
+        return partialMerge(state, { userData: { aliasSyncEnabled: true } });
     }
 
     return state;

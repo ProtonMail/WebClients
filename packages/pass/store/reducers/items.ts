@@ -3,6 +3,8 @@ import type { Action, Reducer } from 'redux';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { AddressType } from '@proton/pass/lib/monitor/types';
 import {
+    aliasSyncPending,
+    aliasToggleStatus,
     bootSuccess,
     draftDiscard,
     draftSave,
@@ -228,9 +230,8 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return updateItem({ shareId, itemId, data: item, revision: revision + 1 })(state);
         }
 
-        if (itemEditSuccess.match(action)) {
-            const { shareId, item } = action.payload;
-            const { itemId } = item;
+        if (or(itemEditSuccess.match, setItemFlags.success.match, aliasToggleStatus.success.match)(action)) {
+            const { shareId, itemId, item } = action.payload;
             return fullMerge(state, { [shareId]: { [itemId]: item } });
         }
 
@@ -361,17 +362,17 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             )(state);
         }
 
-        if (setItemFlags.success.match(action)) {
-            const { shareId, itemId, item } = action.payload;
-            return fullMerge(state, { [shareId]: { [itemId]: item } });
-        }
-
         if (resolveAddressMonitor.success.match(action)) {
             const dto = action.payload;
             if (dto.type === AddressType.ALIAS) {
                 const { shareId, itemId } = dto;
                 return updateItem({ shareId, itemId, flags: 0 })(state);
             }
+        }
+
+        if (aliasSyncPending.success.match(action)) {
+            const { items, shareId } = action.payload;
+            return partialMerge(state, { [shareId]: toMap(items, 'itemId') });
         }
 
         return state;

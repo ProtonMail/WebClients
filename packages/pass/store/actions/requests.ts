@@ -84,3 +84,7 @@ export const toggleAddressMonitorRequest = withKey(`monitor::toggle::address`);
 export const resolveAddressMonitorRequest = withKey(`monitor::resolve::address`);
 
 export const websiteRulesRequest = () => `rules::get`;
+
+export const aliasSyncEnableRequest = () => `alias::sync::enable`;
+export const aliasSyncRequest = () => `alias::sync::pending`;
+export const aliasStatusToggleRequest = withItemKey(`alias::status::toggle`);
