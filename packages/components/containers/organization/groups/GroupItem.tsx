@@ -41,7 +41,7 @@ const GroupItem = ({
     return (
         <div className="relative">
             <Button
-                className={clsx(['interactive-pseudo w-full pr-2 py-4', active && 'is-active'])}
+                className={clsx(['group-button interactive-pseudo w-full pr-2 py-4', active && 'is-active'])}
                 color="weak"
                 shape="ghost"
                 onClick={onClick}
