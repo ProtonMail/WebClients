@@ -54,6 +54,7 @@ export const IDENTITY_FIELDS_CONFIG: Record<IdentityFieldType, (data: ItemConten
     [IdentityFieldType.STATE]: prop('stateOrProvince'),
     [IdentityFieldType.ZIPCODE]: prop('zipOrPostalCode'),
     [IdentityFieldType.COUNTRY]: prop('countryOrRegion'),
+    [IdentityFieldType.EMAIL]: prop('email'),
 };
 
 /** Autofills identity fields with data while preventing duplicates within a section.
@@ -71,12 +72,12 @@ export const autofillIdentityFields = (
     const sectionFields = fields.filter((field) => field.sectionIndex === selectedField.sectionIndex);
     const selectedFieldIndex = sectionFields.findIndex((field) => field === selectedField);
 
-    const orderedFields =
+    const reorderedFields =
         selectedFieldIndex !== -1
             ? [...sectionFields.slice(selectedFieldIndex), ...sectionFields.slice(0, selectedFieldIndex)]
             : sectionFields;
 
-    orderedFields.forEach((field, idx) => {
+    reorderedFields.forEach((field, idx) => {
         const { identityType } = field;
         if (identityType === undefined || autofilled.has(identityType)) return;
 
@@ -87,7 +88,7 @@ export const autofillIdentityFields = (
          * This helps avoid potential blocking by browsers or websites that may
          * detect and prevent rapid, simultaneous field autofill. The delay increases
          * for each field, mimicking human-like interaction */
-        setTimeout(() => value && field.autofill(value), idx);
+        if (value) setTimeout(() => field.autofill(value), idx);
         autofilled.add(identityType);
     });
 };
