@@ -102,7 +102,11 @@ export const convertExternalAddresses = ({
 
         const domainsToConvert = domains.filter((domain) => {
             const externalAddressesForThatDomain = externalAddressesDomainsMap[domain.DomainName] || [];
-            return domain.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD && externalAddressesForThatDomain.length >= 1;
+            return (
+                domain.Flags['mail-intent'] &&
+                domain.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD &&
+                externalAddressesForThatDomain.length >= 1
+            );
         });
 
         if (!domainsToConvert.length) {
