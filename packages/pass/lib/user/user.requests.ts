@@ -26,7 +26,16 @@ export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
 export const getUserAccess = async (apiOptions: ApiOptions = {}): Promise<HydratedAccessState> => {
     logger.info(`[User] Syncing access & plan`);
     const { Access } = await api({ url: 'pass/v1/user/access', method: 'get', ...apiOptions });
-    return { plan: Access!.Plan, waitingNewUserInvites: Access!.WaitingNewUserInvites, monitor: Access!.Monitor };
+    return {
+        plan: Access!.Plan,
+        waitingNewUserInvites: Access!.WaitingNewUserInvites,
+        monitor: Access!.Monitor,
+        userData: {
+            defaultShareId: Access!.UserData.DefaultShareID,
+            aliasSyncEnabled: Access!.UserData.AliasSyncEnabled,
+            pendingAliasToSync: Access!.UserData.PendingAliasToSync,
+        },
+    };
 };
 
 export const getUserSettings = async (): Promise<UserSettings> => {
