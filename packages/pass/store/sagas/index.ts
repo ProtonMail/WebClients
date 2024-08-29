@@ -4,6 +4,9 @@ import type { PassSaga, RootSagaOptions } from '@proton/pass/store/types';
 
 import aliasDetailsRequest from './alias/alias-details-request.saga';
 import aliasOptionsRequest from './alias/alias-options-request.saga';
+import aliasSyncEnable from './alias/alias-sync-enable.saga';
+import aliasSyncPending from './alias/alias-sync-pending.saga';
+import aliasToggleStatus from './alias/alias-toggle-status.saga';
 import lockCreate from './auth/lock-create.saga';
 import lock from './auth/lock.saga';
 import passwordConfirm from './auth/password-confirm.saga';
@@ -61,6 +64,9 @@ const COMMON_SAGAS = [
     ...secureLinkSagas,
     aliasDetailsRequest,
     aliasOptionsRequest,
+    aliasSyncEnable,
+    aliasSyncPending,
+    aliasToggleStatus,
     boot,
     cache,
     events,
