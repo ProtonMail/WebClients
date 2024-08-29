@@ -202,6 +202,9 @@
       "Discard changes": [
         "Descarta els canvis"
       ],
+      "Domain name": [
+        "Nom de domini"
+      ],
       "Done": [
         "Fet"
       ],
@@ -615,6 +618,9 @@
       ],
       "Test": [
         "Prova"
+      ],
+      "Test SAML configuration": [
+        "Test de la configuració SAML"
       ],
       "Top up": [
         "Recarrega"
@@ -3846,6 +3852,9 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instal·leu un arxiu de configuració de servidor per connectar a un servidor a específic al país que trieu."
       ],
+      "Internal user": [
+        "Usuari intern"
+      ],
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"
       ],
@@ -4933,6 +4942,9 @@
       "Declined": [
         "Rebutjat"
       ],
+      "Paused": [
+        "En pausa"
+      ],
       "Pending": [
         "Pendent"
       ]
@@ -5016,6 +5028,9 @@
       ],
       "Account storage": [
         "Emmagatzematge del compte"
+      ],
+      "Add group member": [
+        "Afegeix el membre al grup"
       ],
       "Address": [
         "Adreça"
@@ -5864,12 +5879,6 @@
       "From ${ price }": [
         "Des de ${ price }"
       ],
-      "Get started for $1": [
-        "Comenceu per $1"
-      ],
-      "Get started for 1 €": [
-        "Comenceu per 1€"
-      ],
       "Upgrade": [
         "Millora"
       ],
@@ -5978,6 +5987,9 @@
       ],
       "1 user": [
         "1 usuari"
+      ],
+      "15 GB storage": [
+        "15 GB d'emmagatzematge"
       ],
       "24/7 account management support": [
         "Suport per a la gestió de comptes 24/7"
@@ -6105,9 +6117,6 @@
       "GDPR data processing agreement": [
         "Acord de processament de dades RGPD"
       ],
-      "Generate emails with only a prompt": [
-        "Genera correus electrònics només amb una indicació"
-      ],
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
       ],
@@ -6148,6 +6157,9 @@
       "Password health": [
         "Estat de la contrasenya"
       ],
+      "Password manager": [
+        "Gestor de contrasenyes"
+      ],
       "Password-protected Emails": [
         "Correus protegits amb contrasenya"
       ],
@@ -6159,9 +6171,6 @@
       ],
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
-      ],
-      "Proofread and refine your texts": [
-        "Corregiu i refineu els textos"
       ],
       "Protect ${ n } device at a time": [
         "Protegiu ${ n } dispositiu alhora",
@@ -6425,14 +6434,6 @@
         "termes i condicions"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -6445,6 +6446,14 @@
       ],
       "Switch plans?": [
         "Voleu canviar de pla?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -6820,6 +6829,9 @@
     "option": {
       "Everyone": [
         "Tothom"
+      ],
+      "Group members": [
+        "Membres del grup"
       ],
       "No one": [
         "Ningú"
@@ -7299,6 +7311,9 @@
       ]
     },
     "placeholder": {
+      "Add a group name": [
+        "Afegeix nu nom al grup"
+      ],
       "Members": [
         "Membres"
       ]
@@ -7434,6 +7449,11 @@
         "Cancel·la"
       ]
     },
+    "saml: Error": {
+      "Something went wrong": [
+        "S'ha produït un error."
+      ]
+    },
     "saml: Info": {
       "Details": [
         "Detalls"
@@ -7447,6 +7467,9 @@
     "saml: Title": {
       "It works!": [
         "Funciona!"
+      ],
+      "Test SAML configuration": [
+        "Test de la configuració SAML"
       ]
     },
     "scim: Action": {
@@ -9764,6 +9787,14 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Aquesta versió del Navegador Tor no està suportada. Actualitzeu a la darrera ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Delete request": [
+        "Elimina la sol·licitud"
+      ],
+      "Revoke access": [
+        "Revoca l'accés"
       ]
     },
     "upsell panel": {

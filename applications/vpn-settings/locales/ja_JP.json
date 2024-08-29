@@ -196,6 +196,9 @@
       "Discard changes": [
         "変更を破棄"
       ],
+      "Domain name": [
+        "ドメイン名"
+      ],
       "Done": [
         "完了"
       ],
@@ -2068,6 +2071,11 @@
         "優先サポート"
       ]
     },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB のストレージ"
+      ]
+    },
     "Email spam notification": {
       "${ name } added": [
         "${ name } が追加されました"
@@ -3491,6 +3499,12 @@
       "Gateways": [
         "ゲートウェイ"
       ],
+      "Gateways monitoring is disabled.": [
+        "ゲートウェイモニタリングが無効になりました。"
+      ],
+      "Gateways monitoring is enabled.": [
+        "ゲートウェイモニタリングが有効になりました。"
+      ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } を入手"
       ],
@@ -3655,6 +3669,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } を読み込み中"
+      ],
+      "Loading gateways monitoring current status.": [
+        "ゲートウェイモニタリングの現在の状態を読み込んでいます。"
       ],
       "Loading preview": [
         "プレビューを読み込み中"
@@ -4135,6 +4152,9 @@
       ],
       "Two-factor authentication enabled": [
         "2 要素認証が有効になりました"
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "ゲートウェイモニタリングの現在の状態を確認できません。"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "このアカウントに回復手段は設定されていません。"
@@ -5861,14 +5881,6 @@
         "利用規約"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -5881,6 +5893,14 @@
       ],
       "Switch plans?": [
         "プランを変更しますか?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -8920,6 +8940,14 @@
     "wallet_signup_2024: Info": {
       "${ n } email address": [
         "${ n } メールアドレス"
+      ],
+      "Bitcoin via email": [
+        "メールで Bitcoin"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Wallet に関する問題"
       ]
     },
     "Warning": {

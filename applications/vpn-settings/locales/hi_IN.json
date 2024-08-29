@@ -5703,14 +5703,6 @@
         "नियम और शर्तें"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } ट्रायल"
-      ],
-      "Your account's usage": [
-        "आपका खाते का इस्तेमाल"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "खाता मिटाएं?"
@@ -5723,6 +5715,14 @@
       ],
       "Switch plans?": [
         "प्लान बदले?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
+      "Your account's usage": [
+        "आपका खाते का इस्तेमाल"
       ]
     },
     "new_plans: tooltip": {

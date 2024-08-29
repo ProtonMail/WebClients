@@ -3442,6 +3442,9 @@
       "30-day money-back guarantee.": [
         "30 dagars pengarna-tillbaka-garanti."
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "En anpassad domän är obligatoriskt för att skapa grupper. Om du inte har ställt in en anpassad domän, gör det först under ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ett namn som hjälper dig att identifiera var du använder det så att du enkelt kan återkalla det eller förlänga det senare."
       ],
@@ -5978,15 +5981,6 @@
       "From ${ price }": [
         "Från ${ price }"
       ],
-      "Get started for $1": [
-        "Kom igång för $1"
-      ],
-      "Get started for 1 €": [
-        "Kom igång för 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Kom igång för CHF 1"
-      ],
       "Upgrade": [
         "Uppgradera"
       ],
@@ -6242,9 +6236,6 @@
       "GDPR data processing agreement": [
         "GDPR databehandlingsavtal"
       ],
-      "Generate emails with only a prompt": [
-        "Generera e-post med endast en prompt"
-      ],
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
       ],
@@ -6305,9 +6296,6 @@
       ],
       "Priority support & live chat": [
         "Prioriterad support och livechatt"
-      ],
-      "Proofread and refine your texts": [
-        "Korrekturläs och finjustera dina texter"
       ],
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
@@ -6589,17 +6577,6 @@
         "användarvillkor"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -6612,6 +6589,17 @@
       ],
       "Switch plans?": [
         "Byt paket?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
