@@ -63,7 +63,7 @@ export type PassCoreContextValue = {
     onB2BEvent: (event: B2BEvent) => void;
     /** Acknowledge an onboarding message*/
     onboardingAcknowledge?: (type: OnboardingMessage) => MaybePromise<void | boolean>;
-    /** Check if an onboarding message should show */
+    /** Returns true if an onboarding message should show */
     onboardingCheck?: (type: OnboardingMessage) => MaybePromise<boolean>;
     /* Will get called when user tries to update a client manually */
     onForceUpdate?: () => void;

@@ -12,6 +12,7 @@ export enum OnboardingMessage {
     EARLY_ACCESS,
     PASS_MONITOR,
     PASS_MONITOR_LEARN_MORE,
+    ALIAS_TRASH_CONFIRM /* confirm moving an alias to trash and suggest to disable it instead */,
 }
 
 export type OnboardingAcknowledgment = {
