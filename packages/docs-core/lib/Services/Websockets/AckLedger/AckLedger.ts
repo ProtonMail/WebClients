@@ -160,7 +160,7 @@ export class AckLedger implements AckLedgerInterface {
           `Received ack for message ${ack.uuid} in ${timeToReceiveAck}ms avg time to ack: ${this.avgTimeToReceiveAck}ms`,
         )
 
-        metrics.docs_realtime_edit_latency_histogram.observe({
+        metrics.docs_realtime_edit_time_to_ack_histogram.observe({
           Labels: {},
           Value: timeToReceiveAck,
         })
