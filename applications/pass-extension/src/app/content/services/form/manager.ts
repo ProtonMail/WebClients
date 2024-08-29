@@ -17,7 +17,7 @@ import {
     removeClassifierFlags,
     removeProcessedFlag,
 } from '@proton/pass/fathom';
-import type { MaybeNull } from '@proton/pass/types';
+import { type MaybeNull } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import debounce from '@proton/utils/debounce';
@@ -113,6 +113,8 @@ export const createFormManager = (options: FormManagerOptions) => {
             /* if there is an on-going detection, early return */
             if (state.detectionRequest !== -1) return false;
             const gcd = garbagecollect();
+
+            ctx?.service.detector.applyRules();
 
             if (await ctx?.service.detector.shouldRunDetection()) {
                 state.detectionRequest = requestIdleCallback(async () => {

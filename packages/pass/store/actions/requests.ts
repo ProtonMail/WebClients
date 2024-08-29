@@ -82,3 +82,5 @@ export const resendCustomAddressCodeRequest = withKey(`monitor::verify::custom::
 export const toggleMonitorRequest = () => `monitor::global::toggle`;
 export const toggleAddressMonitorRequest = withKey(`monitor::toggle::address`);
 export const resolveAddressMonitorRequest = withKey(`monitor::resolve::address`);
+
+export const websiteRulesRequest = () => `rules::get`;

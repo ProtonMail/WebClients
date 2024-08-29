@@ -5,6 +5,8 @@ import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup-icon';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 
 import { clientReady } from '@proton/pass/lib/client';
+import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
+import { getRulesForURL, parseRules } from '@proton/pass/lib/extension/utils/website-rules';
 import browser from '@proton/pass/lib/globals/browser';
 import { intoIdentityItemPreview, intoLoginItemPreview, intoUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
@@ -173,6 +175,16 @@ export const createAutoFillService = () => {
                     await setPopupIconBadge(tabId, items.length);
                 }
             } catch {}
+        })
+    );
+
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.WEBSITE_RULES_REQUEST,
+        withContext<MessageHandlerCallback<WorkerMessageType.WEBSITE_RULES_REQUEST>>(async (ctx, _, sender) => {
+            const rules = parseRules(await ctx.service.storage.local.getItem('websiteRules'));
+            if (!(rules && sender.url)) return { rules: null };
+
+            return { rules: getRulesForURL(rules, new URL(sender.url)) };
         })
     );
 

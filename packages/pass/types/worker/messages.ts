@@ -33,6 +33,7 @@ import type { AutosaveRequest } from './autosave';
 import type { AutosaveFormEntry, FormCredentials, FormStatusPayload, FormSubmitPayload } from './form';
 import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
+import type { ExclusionRules } from './rules';
 import type { TabId } from './runtime';
 import type { AppState, PopupInitialState } from './state';
 
@@ -123,6 +124,7 @@ export enum WorkerMessageType {
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
     UPDATE_AVAILABLE = 'UPDATE_AVAILABLE',
+    WEBSITE_RULES_REQUEST = 'WEBSITE_RULES_REQUEST',
     WORKER_RELOAD = 'WORKER_RELOAD',
     WORKER_STATE_CHANGE = 'WORKER_STATE_CHANGE',
     WORKER_WAKEUP = 'WORKER_WAKEUP',
@@ -192,6 +194,7 @@ export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, {
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
+export type WebsiteRulesMessage = { type: WorkerMessageType.WEBSITE_RULES_REQUEST };
 export type WorkerReloadMessage = { type: WorkerMessageType.WORKER_RELOAD };
 export type WorkerStateChangeMessage = WithPayload<WorkerMessageType.WORKER_STATE_CHANGE, { state: AppState }>;
 export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
@@ -227,6 +230,7 @@ export type WorkerMessage =
     | FormEntryStashMessage
     | FormStatusMessage
     | ImportDecryptMessage
+    | WebsiteRulesMessage
     | LoadContentScriptMessage
     | LocaleRequestMessage
     | LocaleUpdatedMessage
@@ -290,6 +294,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.IMPORT_DECRYPT]: { payload: ImportReaderPayload };
+    [WorkerMessageType.WEBSITE_RULES_REQUEST]: { rules: MaybeNull<ExclusionRules> };
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
