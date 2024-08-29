@@ -301,6 +301,15 @@ describe('DocController', () => {
 
       expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
     })
+
+    it('should report metric if locked', () => {
+      controller.hasEditorRenderingIssue = true
+      controller.incrementMetricsReadonlyState = jest.fn()
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.incrementMetricsReadonlyState).toHaveBeenCalled()
+    })
   })
 
   describe('websocket lifecycle', () => {
