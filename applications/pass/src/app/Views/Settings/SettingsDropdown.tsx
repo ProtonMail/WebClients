@@ -12,11 +12,13 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { AccountPath } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { useOfflineSupported } from '@proton/pass/hooks/useOfflineSupported';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectOfflineEnabled, selectPassPlan } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
 
@@ -28,6 +30,7 @@ export const SettingsDropdown: FC = () => {
     const enhance = useNotificationEnhancer();
     const authService = useAuthService();
     const orgEnabled = useOrganization()?.settings.enabled ?? false;
+    const aliasesEnabled = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
     const plan = useSelector(selectPassPlan);
     const offlineEnabled = useSelector(selectOfflineEnabled);
     const offlineSignaled = useOfflineSupported() && !offlineEnabled && isPaidPlan(plan);
@@ -44,6 +47,7 @@ export const SettingsDropdown: FC = () => {
     const settings = useMemo<SettingAction[]>(
         () => [
             { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel', signaled: offlineSignaled },
+            ...(aliasesEnabled ? [{ key: 'aliases', label: c('Label').t`Aliases`, icon: 'alias' } as const] : []),
             { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
             { key: 'import', label: c('Label').t`Import`, icon: 'arrow-down-line' },
             { key: 'export', label: c('Label').t`Export`, icon: 'arrow-up-line' },
