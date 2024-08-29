@@ -6,7 +6,6 @@ import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/d
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import type { CYCLE } from '@proton/shared/lib/constants';
-import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpgradePath } from '@proton/shared/lib/helpers/upsell';
 import { formatURLForAjaxRequest } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash';
@@ -45,9 +44,8 @@ const useUpsellConfig = ({
     const { APP_NAME } = useConfig();
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
     const hasInAppPayments = APP_NAME === APPS.PROTONMAIL || hasInboxDesktopInAppPayments;
-    const managedExternally = isManagedExternally(subscription);
 
-    if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef && !managedExternally) {
+    if (hasSubscriptionModal && hasInAppPayments && inboxUpsellFlowEnabled && upsellRef) {
         const subscriptionCallBackProps = getUpsellSubscriptionModalConfig({
             coupon,
             cycle,
