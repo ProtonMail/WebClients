@@ -174,23 +174,23 @@ export const WalletImportModal = ({
                     </CollapsibleContent>
                 </Collapsible>
 
+                <div className="w-full flex flex-row gap-2">
+                    <Button
+                        fullWidth
+                        className="block mt-2"
+                        size="large"
+                        shape="solid"
+                        color="norm"
+                        disabled={loadingWalletSubmit}
+                        onClick={() => {
+                            void onWalletSubmit({ isFirstCreation, isImported: true });
+                        }}
+                    >
+                        {c('Wallet setup').t`Import`}
+                        {loadingWalletSubmit && <CircleLoader className="ml-2" />}
+                    </Button>
+                </div>
                 <ModalTwoFooter className="prompt-footer">
-                    <div className="w-full flex flex-row gap-2">
-                        <Button
-                            fullWidth
-                            className="block mt-2"
-                            size="large"
-                            shape="solid"
-                            color="norm"
-                            disabled={loadingWalletSubmit}
-                            onClick={() => {
-                                void onWalletSubmit({ isFirstCreation, isImported: true });
-                            }}
-                        >
-                            {c('Wallet setup').t`Import`}
-                            {loadingWalletSubmit && <CircleLoader className="ml-2" />}
-                        </Button>
-                    </div>
                     {walletSettings?.AcceptTermsAndConditions ? undefined : (
                         <p className="color-weak text-break text-center text-sm">{getTermAndConditionsSentence()}</p>
                     )}
