@@ -22,6 +22,11 @@ RewriteRule (.*) /index.html [L]
 
 ErrorDocument 404 /assets/404.html
 
+<Files index.html>
+    RewriteCond %{HTTP_HOST} join.protonvpn.com
+    RewriteRule (.*)/index.html $1/index.convert.html [L]
+</Files>
+
 <Files ~ "(\.html|version.json)">
     FileETag None
     Header unset ETag

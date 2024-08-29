@@ -202,6 +202,10 @@ export const getIsDohDomain = (origin: string) => {
     return DOH_DOMAINS.some((dohDomain) => origin.endsWith(dohDomain));
 };
 
+export const getIsConvertHostname = (hostname: string) => {
+    return hostname === 'join.protonvpn.com';
+};
+
 const doesHostnameLookLikeIP = (hostname: string) => {
     // Quick helper function to tells us if hostname string seems to be IP address or DNS name.
     // Relies on a fact, that no TLD ever will probably end with a digit. So if last char is
@@ -217,7 +221,10 @@ export const getApiSubdomainUrl = (pathname: string, origin: string) => {
     const url = new URL('', origin);
 
     const usePathPrefix =
-        url.hostname === 'localhost' || getIsDohDomain(url.origin) || doesHostnameLookLikeIP(url.hostname);
+        url.hostname === 'localhost' ||
+        getIsDohDomain(url.origin) ||
+        doesHostnameLookLikeIP(url.hostname) ||
+        getIsConvertHostname(url.hostname);
     if (usePathPrefix) {
         url.pathname = `/api${pathname}`;
         return url;
