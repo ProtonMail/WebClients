@@ -17,6 +17,9 @@ import {
 import type { Fnode } from '@proton/pass/fathom/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { type ExclusionRules, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { compareDomNodes } from '@proton/pass/utils/dom/sort';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { liftSort } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
 import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -170,11 +173,14 @@ const createDetectionRunner =
 
         const fieldMap = groupFields(formPredictions, fieldPredictions);
 
-        const forms = formPredictions.map(({ fnode: formFNode, type: formType }) => ({
-            form: formFNode.element as HTMLElement,
-            formType,
-            fields: fieldMap.get(formFNode.element) ?? [],
-        }));
+        const forms = formPredictions.map(({ fnode: formFNode, type: formType }) => {
+            const fields = fieldMap.get(formFNode.element) ?? [];
+            return {
+                form: formFNode.element as HTMLElement,
+                formType,
+                fields: fields.sort(liftSort(compareDomNodes<HTMLInputElement>, prop('field'))),
+            };
+        });
 
         /* Form / fields flagging :
          * each detected form should be flagged via the `data-protonpass-form` attribute so as to
