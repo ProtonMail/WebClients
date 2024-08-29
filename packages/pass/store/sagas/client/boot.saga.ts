@@ -21,6 +21,7 @@ import {
     stopEventPolling,
 } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
+import { resolveWebsiteRules } from '@proton/pass/store/actions/creators/rules';
 import { isCachingAction } from '@proton/pass/store/actions/enhancers/cache';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
@@ -65,15 +66,16 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
         yield put(passwordHistoryGarbageCollect());
 
         if (online) {
-            yield put(withRevalidate(getOrganizationSettings.intent()));
             yield put(startEventPolling());
             yield put(withRevalidate(getBreaches.intent()));
-            yield put(withRevalidate(secureLinksGet.intent()));
 
             if (fromCache) {
                 yield put(withRevalidate(getUserFeaturesIntent(userID)));
                 yield put(withRevalidate(getUserAccessIntent(userID)));
                 yield put(withRevalidate(getUserSettings.intent(userID)));
+                yield put(withRevalidate(secureLinksGet.intent()));
+                yield put(withRevalidate(getOrganizationSettings.intent()));
+                if (EXTENSION_BUILD) yield put(resolveWebsiteRules.intent());
             }
         }
 
