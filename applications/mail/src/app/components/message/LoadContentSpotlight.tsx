@@ -2,18 +2,28 @@ import type { ReactElement, RefObject } from 'react';
 
 import { c } from 'ttag';
 
-import { SettingsLink, Spotlight } from '@proton/components/components';
-import { APPS } from '@proton/shared/lib/constants';
+import { SettingsLink, Spotlight, useSpotlightShow } from '@proton/components/components';
+import { useSpotlightOnFeature, useUser } from '@proton/components/hooks';
+import { FeatureCode } from '@proton/features/interface';
+import { APPS, MONTH } from '@proton/shared/lib/constants';
 import loadContentImg from '@proton/styles/assets/img/illustrations/spotlight-load-content.svg';
 
 interface Props {
     children: ReactElement;
     anchorRef: RefObject<HTMLElement>;
-    show: boolean;
-    onDisplayed: () => void;
 }
 
-const LoadContentSpotlight = ({ children, anchorRef, show, onDisplayed }: Props) => {
+const LoadContentSpotlight = ({ children, anchorRef }: Props) => {
+    const [user] = useUser();
+    // Load content spotlight needs to be displayed if account is older than one month
+    const userCreateTime = user.CreateTime || 0;
+    const isAccountOlderThanOneMonth = Date.now() > userCreateTime * 1000 + MONTH;
+
+    const { show: showLoadContentSpotlight, onDisplayed } = useSpotlightOnFeature(
+        FeatureCode.SpotlightLoadContent,
+        isAccountOlderThanOneMonth
+    );
+    const show = useSpotlightShow(showLoadContentSpotlight);
     // translator: This string is part of a longer string and is used to redirect the user to the settings
     // Full string for reference: We now load images by default and block senders from tracking you. This can be changed in the settings.
     const settingsLink = (
