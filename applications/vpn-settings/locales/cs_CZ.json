@@ -828,6 +828,9 @@
       "External": [
         "Externí"
       ],
+      "Inactive": [
+        "Neaktivní"
+      ],
       "No E2EE mail": [
         "Žádná E2EE pošta"
       ],
@@ -2918,6 +2921,9 @@
       "An error occurred, please try again": [
         "Došlo k chybě, zkuste to prosím znovu"
       ],
+      "Family name updated": [
+        "Jméno rodiny aktualizováno"
+      ],
       "Member updated": [
         "Člen aktualizován"
       ]
@@ -3517,7 +3523,7 @@
         "Uživatelem je účet spojený s jedním uživatelským jménem, poštovní schránkou a osobou"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce Vašeho účtu."
+        "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce vašeho účtu."
       ],
       "Account size": [
         "Velikost účtu"
@@ -3901,7 +3907,7 @@
         "Zadejte vaši obnovovací e-mailovou adresu a my Vám pošleme Vaše uživatelské jméno nebo e-mailovou adresu."
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "Zadejte Vaše obnovovací telefonní číslo a my Vám pošleme Vaše uživatelské jméno nebo e-mailovou adresu."
+        "Zadejte vaše telefonní číslo pro obnovení a my vám zašleme vaše uživatelské jméno nebo e-mailovou adresu."
       ],
       "Enter your recovery phrase to change your password now.": [
         "Pro změnu hesla zadejte svoji obnovovací frázi."
@@ -3937,7 +3943,7 @@
         "Brány"
       ],
       "Gateways monitoring is disabled.": [
-        "Sledování stavu branami je deaktivován."
+        "Sledování stavu branami je deaktivováno."
       ],
       "Gateways monitoring is enabled.": [
         "Sledování stavu branami je povoleno."
@@ -5195,12 +5201,23 @@
         "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Nejde o platnou e-mailovou adresu"
+      ]
+    },
     "invitation status": {
       "Declined": [
         "Odmítnuto"
       ],
+      "Paused": [
+        "Pozastaveno"
+      ],
       "Pending": [
         "Čeká na vyřízení"
+      ],
+      "Sending invite...": [
+        "Odesílání pozvánky..."
       ]
     },
     "Invoice state display as badge": {
@@ -6150,15 +6167,6 @@
       "From ${ price }": [
         "Od ${ price }"
       ],
-      "Get started for $1": [
-        "Začít za $1"
-      ],
-      "Get started for 1 €": [
-        "Začít za €1"
-      ],
-      "Get started for CHF 1": [
-        "Začít za 1 CHF"
-      ],
       "Upgrade": [
         "Navýšit"
       ],
@@ -6454,9 +6462,6 @@
       "GDPR data processing agreement": [
         "GDPR dohoda o správě dat"
       ],
-      "Generate emails with only a prompt": [
-        "Vygenerujte e-maily jen pomocí příkazů"
-      ],
       "Group management (coming soon)": [
         "Správa skupiny (již brzy)"
       ],
@@ -6519,9 +6524,6 @@
       ],
       "Priority support & live chat": [
         "Přednostní podpora a živý chat"
-      ],
-      "Proofread and refine your texts": [
-        "Proveďte korektury a zpřesnění vašich textů"
       ],
       "Protect ${ n } device at a time": [
         "Chránit ${ n } zařízení zároveň",
@@ -6811,14 +6813,6 @@
         "smluvní podmínky užívání"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -6831,6 +6825,14 @@
       ],
       "Switch plans?": [
         "Změnit tarif?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -7235,6 +7237,17 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všichni"
+      ],
+      "Group members": [
+        "Členové skupiny"
+      ],
+      "No one": [
+        "Nikdo"
       ]
     },
     "Organization capacity error": {
@@ -8822,6 +8835,9 @@
       "1 email address": [
         "1 e-mailová adresa"
       ],
+      "1 email address per user": [
+        "1 e-mailová adresa na uživatele"
+      ],
       "1 VPN connection": [
         "1 VPN připojení"
       ],
@@ -10365,6 +10381,15 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ],
+      "Group membership paused": [
+        "Členství ve skupině pozastaveno"
+      ],
+      "Sending member invitation": [
+        "Odesílání členské pozvánky"
+      ],
+      "User declined invitation": [
+        "Uživatel odmítl pozvání"
+      ],
       "Waiting user to accept the invitation": [
         "Čekání až uživatel přijme pozvánku"
       ]
@@ -10383,6 +10408,59 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Tato verze prohlížeče Tor není podporována. Prosím aktualizujte na poslední ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Správci nemají přístup k datům soukromých uživatelů a nemohou resetovat jejich heslo."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Tím, že nastavíte uživatele jako soukromého, mu nebudete moci pomoci získat zpět přístup k jeho datům nebo účtu."
+      ],
+      "Delete request": [
+        "Smazat žádost"
+      ],
+      "Delete request to access user data?": [
+        "Smazat žádost o přístup k datům uživatele?"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Jakmile uživatel udělí souhlas, můžete mu pomoci obnovit přístup k účtu nebo spravovat jeho data."
+      ],
+      "Organization key must be activated to request data access": [
+        "Pro žádost o přístup k datům musíte aktivovat klíč organizace"
+      ],
+      "Pending admin access": [
+        "Čeká se na vyřízení správcovského přístupu"
+      ],
+      "Private user": [
+        "Soukromý uživatel"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Žádost o správu účtu odeslána, čeká se na schválení uživatelem"
+      ],
+      "Request user permission for data access": [
+        "Požádat uživatele o oprávnění přistupovat k datům"
+      ],
+      "Revoke access": [
+        "Zrušit přístup"
+      ],
+      "Revoke administrator access?": [
+        "Zrušit správcovský přístup?"
+      ],
+      "Send request": [
+        "Odeslat žádost"
+      ],
+      "The user must have an address to request data access": [
+        "Uživatel musí mít adresu, aby mohlo být požádáno o přístup k datům"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Toto smaže nevyřízenou žádost o správcovský přístup k datům uživatele nebo o resetování hesla."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Toto zruší správcovské oprávnění ke správě účtu tohoto uživatele."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Chcete-li pokračovat, musíte požádat uživatele o povolení přístupu k jejich datům nebo resetovat jejich heslo."
       ]
     },
     "upsell panel": {
@@ -10478,6 +10556,9 @@
       ],
       "It's you": [
         "To jsi ty"
+      ],
+      "Pending admin access": [
+        "Čeká se na vyřízení správcovského přístupu"
       ],
       "Private": [
         "Soukromý"

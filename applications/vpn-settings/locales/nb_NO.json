@@ -6053,15 +6053,6 @@
       "From ${ price }": [
         "Fra ${ price }"
       ],
-      "Get started for $1": [
-        "Kom i gang for $1"
-      ],
-      "Get started for 1 €": [
-        "Kom i gang for 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Kom i gang for 1 CHF"
-      ],
       "Upgrade": [
         "Oppgrader"
       ],
@@ -6323,9 +6314,6 @@
       "GDPR data processing agreement": [
         "Avtale om GDPR-databehandling"
       ],
-      "Generate emails with only a prompt": [
-        "Generer e-postmeldinger med bare en ledetekst"
-      ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
       ],
@@ -6386,9 +6374,6 @@
       ],
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
-      ],
-      "Proofread and refine your texts": [
-        "Korrekturles og finjuster tekstene dine"
       ],
       "Protect ${ n } device at a time": [
         "Beskytt ${ n } enhet om gangen",
@@ -6670,14 +6655,6 @@
         "vilkår og betingelser"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } prøveversjon"
-      ],
-      "Your account's usage": [
-        "Kontoens forbruk"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -6690,6 +6667,14 @@
       ],
       "Switch plans?": [
         "Bytte plan?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } prøveversjon"
+      ],
+      "Your account's usage": [
+        "Kontoens forbruk"
       ]
     },
     "new_plans: tooltip": {
@@ -10160,6 +10145,59 @@
         "Denne versjonen av Tor-nettleser støttes ikke. Vennligst oppdater til seneste ${ stableRelease }"
       ]
     },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Administratorer har ikke tilgang til dataene til private brukere og kan ikke tilbakestille passordet deres."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Ved å gjøre brukeren privat vil du ikke kunne hjelpe dem med å få tilgang til dataene eller kontoen sin igjen."
+      ],
+      "Delete request": [
+        "Slett forespørsel"
+      ],
+      "Delete request to access user data?": [
+        "Slette forespørsel om tilgang til brukerdata?"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Når brukeren samtykker, vil du kunne hjelpe dem med å få kontotilgang eller administrere dataene deres."
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisasjonsnøkkel må være aktivert for å be om datatilgang"
+      ],
+      "Pending admin access": [
+        "Venter på administratortilgang"
+      ],
+      "Private user": [
+        "Privat bruker"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Forespørsel om å administrere kontoen er sendt, venter på brukergodkjenning"
+      ],
+      "Request user permission for data access": [
+        "Be om brukertillatelse for datatilgang"
+      ],
+      "Revoke access": [
+        "Opphev tilgang"
+      ],
+      "Revoke administrator access?": [
+        "Tilbakekalle administratortilgang?"
+      ],
+      "Send request": [
+        "Send forespørsel"
+      ],
+      "The user must have an address to request data access": [
+        "Brukeren må ha en adresse for å be om datatilgang"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Dette vil slette den ventende forespørselen om administratortilgang til brukerens data eller tilbakestilling av passord."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Dette vil tilbakekalle administratortillatelsen til å administrere denne brukerens konto."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "For å fortsette må du be om brukerens tillatelse til å få tilgang til dataene deres eller tilbakestille passordet."
+      ]
+    },
     "upsell panel": {
       "Recommended": [
         "Anbefalt"
@@ -10253,6 +10291,9 @@
       ],
       "It's you": [
         "Det er deg"
+      ],
+      "Pending admin access": [
+        "Venter på administratortilgang"
       ],
       "Private": [
         "Privat"

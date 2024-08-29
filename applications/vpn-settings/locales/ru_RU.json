@@ -6050,15 +6050,6 @@
       "From ${ price }": [
         "От: ${ price }"
       ],
-      "Get started for $1": [
-        "Начать с $1"
-      ],
-      "Get started for 1 €": [
-        "Начать с 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Начните с CHF 1"
-      ],
       "Upgrade": [
         "Улучшить"
       ],
@@ -6354,9 +6345,6 @@
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Генерировать письма только с запросом"
-      ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
@@ -6419,9 +6407,6 @@
       ],
       "Priority support & live chat": [
         "Приоритетная поддержка и живой чат"
-      ],
-      "Proofread and refine your texts": [
-        "Вычитывайте и дорабатывайте свои тексты"
       ],
       "Protect ${ n } device at a time": [
         "Защитите ${ n } устройство за раз",
@@ -6711,14 +6696,6 @@
         "условия"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -6731,6 +6708,14 @@
       ],
       "Switch plans?": [
         "Сменить тариф?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
