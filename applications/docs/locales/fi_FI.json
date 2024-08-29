@@ -5182,7 +5182,7 @@
         "Tyhjennä roskaposti ja roskakori automaattisesti"
       ],
       "Custom schedule send and snooze times": [
-        "Aseta mukautetut lähetys- ja torkutusajat"
+        "Omat lähetys- ja torkutusajat"
       ],
       "Support for 1 custom email domain": [
         "1 oma sähköpostiverkkotunnus"
@@ -5443,15 +5443,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Aloitushinta: $1"
-      ],
-      "Get started for 1 €": [
-        "Aloitushinta: 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Aloitushinta: CHF 1"
-      ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
       ]
@@ -5698,9 +5689,6 @@
       "GDPR data processing agreement": [
         "GDPR-tietojenkäsittelysopimus"
       ],
-      "Generate emails with only a prompt": [
-        "Luo sähköposteja pelkällä kehotteella"
-      ],
       "Group management (coming soon)": [
         "Ryhmähallinta (tulossa pian)"
       ],
@@ -5756,9 +5744,6 @@
       "Priority support & live chat": [
         "Ensisijainen tuki ja live-chat"
       ],
-      "Proofread and refine your texts": [
-        "Oikolue ja paranna kirjoitustasi"
-      ],
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
@@ -5779,7 +5764,7 @@
         "Tee sähköpostittelusta nopeampaa"
       ],
       "Schedule and snooze emails for any time": [
-        "Ajoita ja torkuta sähköpostit milloin tahansa"
+        "Ajoita viestien lähetys tai torkutus mihin tahansa"
       ],
       "Schedule messages at any time": [
         "Ajoita viestit lähtemään milloin tahansa"
@@ -5900,7 +5885,7 @@
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain2 } uutiskirjeille"
       ],
       "Snooze messages and get reminded when you want": [
-        "Torkuta viestejä ja saa muistutuksia kun haluat"
+        "Torkuta viestejä ja saa muistutus haluamaasi aikaan"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
@@ -7416,7 +7401,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Käyttöjärjestelmä: ${ totalPrice }"
+        "Hintaan ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
