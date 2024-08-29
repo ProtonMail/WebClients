@@ -55,7 +55,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                 </SettingsParagraph>
             )}
             <Button
-                className="flex flex-row flex-nowrap items-center px-3"
+                className="group-button flex flex-row flex-nowrap items-center px-3"
                 disabled={!hasAtLeastOneVerifiedCustomDomain}
                 onClick={() => {
                     setUiState('new');
