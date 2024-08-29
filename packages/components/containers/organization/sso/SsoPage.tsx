@@ -152,6 +152,8 @@ const SsoPage = () => {
         return <Loader />;
     }
 
+    const ssoDomains = customDomains.filter((domain) => domain.Flags['sso-intent']);
+
     if (organization.PlanName !== PLANS.VPN_BUSINESS) {
         return (
             <SettingsSectionWide>
@@ -198,9 +200,9 @@ const SsoPage = () => {
         );
     }
 
-    const hasSsoDomain = customDomains.length > 0;
+    const hasSsoDomain = ssoDomains.length > 0;
     const hasSsoConfig = samlSSO.configs.length > 0;
-    const domain = customDomains[0];
+    const domain = ssoDomains[0];
 
     return (
         <>
