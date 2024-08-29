@@ -620,9 +620,6 @@
       "Send": [
         "Odoslať"
       ],
-      "Send feedback": [
-        "Odoslať spätnú väzbu"
-      ],
       "Set recovery phrase": [
         "Nastaviť obnovovaciu frázu"
       ],
@@ -2653,8 +2650,17 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB úložného priestoru"
+      ],
       "2 users": [
         "2 používatelia"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Plný prístup k všetkým produktom ${ BRAND_NAME }"
+      ],
+      "You save ${ amountSave }": [
+        "Ušetríte ${ amountSave }"
       ]
     },
     "duoplan2024: SubTitle": {
@@ -3517,11 +3523,6 @@
         "Nie je vybraný žiadny obrázok"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        "Skóre je potrebné vyplniť"
-      ]
-    },
     "esCalendar": {
       "No result": [
         "Žiadne výsledky"
@@ -3761,11 +3762,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa automatickú synchronizáciu, šifrované zdieľanie súborov a ďalšie funkcie."
-      ]
-    },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        "Vaša spätná väzba"
       ]
     },
     "fido2: Error": {
@@ -5476,12 +5472,6 @@
       "Automatically save contacts": [
         "Automaticky ukladať kontakty"
       ],
-      "Awful": [
-        "Hrozné"
-      ],
-      "Bad": [
-        "Zlé"
-      ],
       "Beta Access": [
         "Beta prístup"
       ],
@@ -5644,14 +5634,8 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
-      "Good": [
-        "Dobré"
-      ],
       "Hide password": [
         "Skryť heslo"
-      ],
-      "How would you describe your experience with the new ${ BRAND_NAME }?": [
-        "Ako by ste popísali svoju skúsenosť s novým ${ BRAND_NAME }?"
       ],
       "I understand the risk": [
         "Rozumiem rizikám"
@@ -5721,9 +5705,6 @@
       ],
       "Notifications": [
         "Notifikácie"
-      ],
-      "OK": [
-        "OK"
       ],
       "Operating system": [
         "Operačný systém"
@@ -5862,9 +5843,6 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Aký je váš hlavný dôvod na zrušenie alebo zníženie predplatného?"
-      ],
-      "Wonderful": [
-        "Úžasné"
       ],
       "Your alias": [
         "Váš alias"
@@ -6390,15 +6368,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Prejsť na nižší plán ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Začnite teraz za $1"
-      ],
-      "Get started for 1 €": [
-        "Začnite teraz za 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Začnite teraz za CHF 1"
-      ],
       "Upgrade now": [
         "Aktualizovať teraz"
       ]
@@ -6495,6 +6464,12 @@
         "${ n } správy za deň",
         "${ n } správ za deň",
         "${ n } správ za deň"
+      ],
+      "${ n } user": [
+        "${ n } používateľ",
+        "Až ${ n } používatelia",
+        "Až ${ n } používateľov",
+        "Až ${ n } používateľov"
       ],
       "${ n } vault": [
         "${ n } trezor",
@@ -6643,9 +6618,6 @@
       "GDPR data processing agreement": [
         "Dohoda o spracovaní údajov v zmysle GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Generovať emaily len pomocou podnetu"
-      ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
       ],
@@ -6682,6 +6654,9 @@
       "Password health": [
         "Zdravie hesla"
       ],
+      "Password manager": [
+        "Správca hesiel"
+      ],
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
@@ -6693,9 +6668,6 @@
       ],
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
-      ],
-      "Proofread and refine your texts": [
-        "Korigovať a zdokonaľovať svoje texty"
       ],
       "Protect ${ n } device at a time": [
         "Chráňte súčasne ${ n } zariadenie",
@@ -6924,16 +6896,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        "Povedzte nám o svojich skúsenostiach. (Nepovinné)"
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        "Spätná väzba"
       ]
     },
     "new_plans: title": {
@@ -9275,11 +9237,6 @@
         "Predplatné bolo úspešne zrušené"
       ]
     },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        "Spätná väzba bola odoslaná"
-      ]
-    },
     "Suffix": {
       "/month": [
         "/mesiac"
@@ -9638,6 +9595,9 @@
       "Encrypted event": [
         "Šifrovaná udalosť"
       ],
+      "Enter 2FA code": [
+        "Zadajte 2FA kód"
+      ],
       "Enter your password": [
         "Zadajte Vaše heslo"
       ],
@@ -9652,9 +9612,6 @@
       ],
       "Exporting contacts": [
         "Exportovanie kontaktov"
-      ],
-      "Feedback": [
-        "Spätná väzba"
       ],
       "Get advanced protection": [
         "Získať pokročilú ochranu"
@@ -9847,9 +9804,6 @@
       ],
       "Select which calendar to add this event to": [
         "Vyberte kalendár, do ktorého chcete túto udalosť pridať"
-      ],
-      "Send feedback": [
-        "Odoslať spätnú väzbu"
       ],
       "Send invitation": [
         "Poslať pozvánku"
