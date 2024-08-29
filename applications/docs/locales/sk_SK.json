@@ -114,6 +114,12 @@
       "Cancel subscription": [
         "Zrušiť predplatné"
       ],
+      "characters": [
+        "znakov"
+      ],
+      "characters out of": [
+        "znakov z"
+      ],
       "Chat with us": [
         "Komunikácia s nami"
       ],
@@ -614,6 +620,15 @@
       ],
       "What do I get?": [
         "Čo získam?"
+      ],
+      "Word count": [
+        "Počet slov"
+      ],
+      "words": [
+        "slov"
+      ],
+      "words out of": [
+        "slov z"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktu",
@@ -3677,6 +3692,12 @@
       "Change your password": [
         "Zmeňte si heslo"
       ],
+      "characters": [
+        "znakov"
+      ],
+      "characters without spaces": [
+        "znakov bez medzier"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Vyhľadávanie kontaktu ${ progress } o ${ max }..."
       ],
@@ -3760,6 +3781,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
+      ],
+      "Display word count": [
+        "Zobraziť počet slov"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nič nevidíte? Nezabudnite vypnúť blokovanie automaticky otváraných okien."
@@ -4441,6 +4465,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pri nastavení dvojfázového overovania poskytujeme kódy pre obnovenie, ktoré môžete použiť na prihlásenie, ak stratíte prístup k overovacej aplikácii."
+      ],
+      "words": [
+        "slov"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -5535,15 +5562,6 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Prejsť na nižší plán ${ downgradedPlanName }"
       ],
-      "Get started for $1": [
-        "Začnite teraz za $1"
-      ],
-      "Get started for 1 €": [
-        "Začnite teraz za 1 €"
-      ],
-      "Get started for CHF 1": [
-        "Začnite teraz za CHF 1"
-      ],
       "Upgrade now": [
         "Aktualizovať teraz"
       ]
@@ -5640,6 +5658,12 @@
         "${ n } správy za deň",
         "${ n } správ za deň",
         "${ n } správ za deň"
+      ],
+      "${ n } user": [
+        "${ n } používateľ",
+        "Až ${ n } používatelia",
+        "Až ${ n } používateľov",
+        "Až ${ n } používateľov"
       ],
       "${ n } vault": [
         "${ n } trezor",
@@ -5788,9 +5812,6 @@
       "GDPR data processing agreement": [
         "Dohoda o spracovaní údajov v zmysle GDPR"
       ],
-      "Generate emails with only a prompt": [
-        "Generovať emaily len pomocou podnetu"
-      ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
       ],
@@ -5827,6 +5848,9 @@
       "Password health": [
         "Zdravie hesla"
       ],
+      "Password manager": [
+        "Správca hesiel"
+      ],
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
@@ -5838,9 +5862,6 @@
       ],
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
-      ],
-      "Proofread and refine your texts": [
-        "Korigovať a zdokonaľovať svoje texty"
       ],
       "Protect ${ n } device at a time": [
         "Chráňte súčasne ${ n } zariadenie",
@@ -8046,6 +8067,9 @@
       ],
       "Enable 2FA": [
         "Povoliť 2FA"
+      ],
+      "Enter 2FA code": [
+        "Zadajte 2FA kód"
       ],
       "Enter your password": [
         "Zadajte Vaše heslo"
