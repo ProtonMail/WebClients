@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import { Checkmark } from '@proton/pass/components/Onboarding/Panel/Checkmark';
 import { OnboardingIcon } from '@proton/pass/components/Onboarding/Panel/OnboardingIcon';
 import clsx from '@proton/utils/clsx';

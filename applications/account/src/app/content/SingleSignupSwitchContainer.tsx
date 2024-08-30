@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import type { OnLoginCallback } from '@proton/components/index';
-import { UnAuthenticated } from '@proton/components/index';
+import type { OnLoginCallback } from '@proton/components';
+import { UnAuthenticated } from '@proton/components';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { passApps } from '@proton/shared/lib/authentication/apps';
 import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
 import { Timeline } from '@proton/pass/components/Layout/Timeline/Timeline';

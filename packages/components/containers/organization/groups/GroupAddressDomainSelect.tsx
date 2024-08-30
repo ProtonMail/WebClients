@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 
 import {
     Dropdown,
@@ -9,7 +9,7 @@ import {
     Icon,
     useModalState,
     usePopperAnchor,
-} from '@proton/components/index';
+} from '@proton/components';
 import type { Domain } from '@proton/shared/lib/interfaces';
 
 import AddSubdomainModal from './AddSubdomainModal';

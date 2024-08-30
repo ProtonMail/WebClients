@@ -3,8 +3,8 @@ import { type FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { Time } from '@proton/components';
 import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
-import { Time } from '@proton/components/index';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { PassPlusPromotionButton } from '@proton/pass/components/Upsell/PassPlusPromotionButton';

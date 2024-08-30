@@ -2,7 +2,7 @@ import type { useHistory } from 'react-router-dom';
 
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { mockUseHistory } from '@proton/testing/index';
+import { mockUseHistory } from '@proton/testing';
 
 import { DEFAULT_MAX_ITEMS_PER_PAGE } from './constants';
 import type { VisualSearchItem } from './interface';

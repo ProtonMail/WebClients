@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { render } from '@testing-library/react';
 
 import { CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
-import { applyHOCs, withConfig } from '@proton/testing/index';
+import { applyHOCs, withConfig } from '@proton/testing';
 
 import type { AccountStepProps } from './AccountStep';
 import AccountStep from './AccountStep';
