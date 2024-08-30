@@ -1,3 +1,26 @@
+## August 2024
+
+### Improvements
+
+-   Added the ability to minimize the left side panel for a more customizable interface.
+
+### Fixes
+
+-   Fixed issue with deleted occurrence in an event serie
+
+## July 2024
+
+### Improvements
+
+-   Adjusted font sizes for improved readability across the platform.
+
+## June 2024
+
+### Improvements
+
+-   Implemented general UI updates for a more streamlined user experience.
+-   Enhanced functionality for managing recurring events.
+
 ## Release 5.0.21 — Feb 14th, 2024
 
 ### Improvements
