@@ -368,7 +368,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             pushConvertGoal([
                 'pushRevenue',
                 `${signupFinishEvents.values.amount_charged}`,
-                `${signupFinishEvents.dimensions.plan}`,
+                `${signupFinishEvents.dimensions.plan}-${signupFinishEvents.dimensions.cycle}`,
                 '100464860',
             ]);
         }
