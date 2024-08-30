@@ -32,7 +32,7 @@ import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 export default function useDownloadProvider(initDownload: InitDownloadCallback) {
     const onlineStatus = useOnline();
     const { createNotification } = useNotifications();
-    const { observe } = useDownloadMetrics();
+    const { observe } = useDownloadMetrics('download');
     const { preventLeave } = usePreventLeave();
     const [downloadIsTooBigModal, showDownloadIsTooBigModal] = useDownloadIsTooBigModal();
 
@@ -73,7 +73,9 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
 
     const restartDownloads = useCallback(
         async (idOrFilter: UpdateFilter) => {
-            queue.updateWithData(idOrFilter, TransferState.Pending);
+            queue.updateWithData(idOrFilter, TransferState.Pending, {
+                retry: true,
+            });
         },
         [queue.downloads, queue.updateState]
     );

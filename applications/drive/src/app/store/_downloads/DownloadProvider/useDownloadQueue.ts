@@ -54,7 +54,7 @@ export default function useDownloadQueue(log: LogCallback) {
         (
             idOrFilter: UpdateFilter,
             newStateOrCallback: UpdateState,
-            { size, error, signatureIssueLink, signatureStatus, scanIssueError }: UpdateData = {},
+            { size, error, signatureIssueLink, signatureStatus, scanIssueError, retry }: UpdateData = {},
             callback?: UpdateCallback
         ) => {
             const filter = convertFilterToFunction(idOrFilter);
@@ -63,6 +63,19 @@ export default function useDownloadQueue(log: LogCallback) {
                 if (filter(download)) {
                     callback?.(download);
                     const newState = newStateCallback(download);
+
+                    // download is considering retry if there is a manual retry
+                    // This can be two way:
+                    // - downloads retry restartDownloads()
+                    // - download resume after a failure state resumeDownloads()
+                    // It is considered retry if the download goes from an Error state to a pending/progress state
+                    const downloadIsARetry =
+                        retry ||
+                        ([TransferState.Error, TransferState.NetworkError].includes(download.state) &&
+                        [TransferState.Pending, TransferState.Progress].includes(newState)
+                            ? true
+                            : false);
+
                     // If pause is set twice, prefer resumeState set already before
                     // to not be locked in paused state forever.
                     download.resumeState =
@@ -75,9 +88,12 @@ export default function useDownloadQueue(log: LogCallback) {
                     download.signatureIssueLink = signatureIssueLink;
                     download.signatureStatus = signatureStatus;
                     download.scanIssueError = scanIssueError;
+                    // download is always marked as retried after being set to true once
+                    download.retries = downloadIsARetry ? (download.retries || 0) + 1 : download.retries || 0;
+
                     log(
                         download.id,
-                        `Updated queue (state: ${newState} ${size !== undefined ? `, size: ${size}` : ''} ${error ? `, error: ${error}` : ''})`
+                        `Updated queue (state: ${newState} ${size !== undefined ? `, size: ${size}` : ''} ${error ? `, error: ${error}` : ''}, retries: ${download.retries})`
                     );
                 }
                 return download;
@@ -179,6 +195,7 @@ function generateDownload(links: LinkDownload[], options?: { virusScan?: boolean
         links,
         meta: generateDownloadMeta(links),
         options,
+        retries: 0,
     };
 }
 
