@@ -459,7 +459,7 @@ export const getMailBusinessPlan = (plan: Plan): ShortPlan => {
 
 export const getBundleProPlan = (plan: Plan): ShortPlan => {
     return {
-        plan: PLANS.BUNDLE_PRO_2024,
+        plan: plan.Name === PLANS.BUNDLE_PRO ? PLANS.BUNDLE_PRO : PLANS.BUNDLE_PRO_2024,
         title: plan.Title,
         label: '',
         description: c('new_plans: info')
