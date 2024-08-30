@@ -6,17 +6,21 @@ import type { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { useApi, useCachedModelResult } from '../../../hooks';
 import ContactProviderContext from '../ContactProviderContext';
 
+const fetchStack = new Set<string>();
+
 const useContactConditionally = (contactID?: string) => {
     const cache = useContext(ContactProviderContext);
     const api = useApi();
 
     const miss = useCallback(async () => {
-        if (!contactID) {
+        if (!contactID || fetchStack.has(contactID)) {
             return;
         }
 
-        const { Contact } = await api<{ Contact: Contact[] }>(getContact(contactID));
-        return Contact;
+        fetchStack.add(contactID);
+
+        const result = await api<{ Contact: Contact[] }>(getContact(contactID));
+        return result.Contact;
     }, [contactID]);
 
     return useCachedModelResult(cache, contactID, miss);
