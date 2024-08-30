@@ -10,6 +10,7 @@ export enum TelemetryMeasurementGroups {
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
     accountCancellation = 'account.web.cancellation',
+    settingsHeartBeat = 'any.web.settings_heart_beat',
     /** Not only calendar scope because party crasher on mail and drawer */
     calendarInvite = 'any.web.calendar_invite',
     changelogOpened = 'any.changelog_opened',
@@ -143,6 +144,10 @@ export enum TelemetryMailComposerAssistantEvents {
     incompatible_assistant = 'incompatible_assistant',
 }
 
+export enum TelemetryMailHeartbeatEvents {
+    mail_heartbeat = 'mail_heartbeat',
+}
+
 export enum TelemetryChangelog {
     opened = 'opened',
 }
@@ -196,7 +201,8 @@ export type TelemetryEvents =
     | TelemetryDriveWebFeature
     | TelemetryAccountSecurityCheckupEvents
     | TelemetryCollapsibleLeftSidebarEvents
-    | TelemetryProtonTipsEvents;
+    | TelemetryProtonTipsEvents
+    | TelemetryMailHeartbeatEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

@@ -1,7 +1,7 @@
 import { startListeningToPlanNameChange, startPersistListener } from '@proton/account';
 import { startCalendarEventListener, startHolidaysDirectoryListener } from '@proton/calendar';
 import { startAccountSecurityListener } from '@proton/components/components/drawer/views/SecurityCenter/AccountSecurity/slice/accountSecurityListener';
-import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
+import { mailSettingsHeartbeatListener, startSharedListening } from '@proton/redux-shared-store';
 
 import type { AppStartListening, MailState } from './store';
 
@@ -17,6 +17,7 @@ export const start = ({
     startHolidaysDirectoryListener(startListening);
     startAccountSecurityListener(startListening);
     startListeningToPlanNameChange(startListening);
+    mailSettingsHeartbeatListener(startListening);
     if (persistTransformer) {
         startPersistListener(startListening, persistTransformer);
     }

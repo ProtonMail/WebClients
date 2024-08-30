@@ -1,3 +1,5 @@
+export * from './sharedListeners';
 export * from './sharedProvider';
 export * from './sharedReducers';
-export * from './sharedListeners';
+
+export { mailSettingsHeartbeatListener } from './settingsHeartbeat/mailSettingsHeartbeatListener';
