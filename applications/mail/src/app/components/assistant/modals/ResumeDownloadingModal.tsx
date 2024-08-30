@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/index';
-import type { ModalProps, ModalStateProps } from '@proton/components/index';
-import { Prompt } from '@proton/components/index';
+import { Button } from '@proton/atoms';
+import type { ModalProps, ModalStateProps } from '@proton/components';
+import { Prompt } from '@proton/components';
 
 interface Props extends ModalProps {
     modalProps: ModalStateProps;

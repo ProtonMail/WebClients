@@ -5,7 +5,7 @@ import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAs
 import { getAssistantHasCompatibleBrowser, getAssistantHasCompatibleHardware } from '@proton/llm/lib';
 import useAssistantErrors from '@proton/llm/lib/hooks/useAssistantErrors';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/index';
+import { useFlag } from '@proton/unleash';
 
 const { OFF } = AI_ASSISTANT_ACCESS;
 

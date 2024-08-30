@@ -6,7 +6,7 @@ import { renderWithProviders } from '@proton/components/containers/contacts/test
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
-import { mockUseFolders } from '@proton/testing/index';
+import { mockUseFolders } from '@proton/testing';
 
 import LocationField from './LocationField';
 import { mockUseLocationFieldOptions } from './LocationField.test.utils';

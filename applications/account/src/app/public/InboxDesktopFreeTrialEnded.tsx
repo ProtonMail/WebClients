@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { useTheme } from '@proton/components';
 import { freeTrialUpgradeClick, openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
-import { useTheme } from '@proton/components/index';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import {
     APPS,

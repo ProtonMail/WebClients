@@ -6,8 +6,8 @@ import { noop } from 'lodash';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import { Spotlight } from '@proton/components';
 import { Icon } from '@proton/components/components/icon';
-import { Spotlight } from '@proton/components/index';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { PasswordField } from '@proton/pass/components/Form/Field/PasswordField';

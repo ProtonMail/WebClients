@@ -3,8 +3,8 @@ import type { FC } from 'react';
 import type { WasmPasswordScore } from '@protontech/pass-rust-core';
 import { c } from 'ttag';
 
+import { Tooltip } from '@proton/components';
 import { Icon, type IconName } from '@proton/components/components/icon';
-import { Tooltip } from '@proton/components/index';
 import clsx from '@proton/utils/clsx';
 
 import './PasswordStrength.scss';

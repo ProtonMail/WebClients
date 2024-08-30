@@ -12,7 +12,7 @@ import {
 } from '@proton/components';
 import { useDrawerParent } from '@proton/components/hooks';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
-import { useInstance } from '@proton/hooks/index';
+import { useInstance } from '@proton/hooks';
 import { getVisualCalendars, groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

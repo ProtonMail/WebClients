@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { MAILBOX_LABEL_IDS as IDS } from '@proton/shared/lib/constants';
-import { mockUseFeature, mockUseMailSettings, mockUseUser } from '@proton/testing/index';
+import { mockUseFeature, mockUseMailSettings, mockUseUser } from '@proton/testing';
 
 import { LABEL_IDS_TO_HUMAN as TO_HUMAN } from '../../../../constants';
 import useAutoDeleteBanner from './useAutodeleteBanner';

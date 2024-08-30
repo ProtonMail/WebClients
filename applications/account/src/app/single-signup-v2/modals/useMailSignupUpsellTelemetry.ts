@@ -1,4 +1,4 @@
-import { useApi } from '@proton/components/index';
+import { useApi } from '@proton/components';
 import { TelemetryMailTrial2024UpsellModal, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import noop from '@proton/utils/noop';

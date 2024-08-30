@@ -6,7 +6,7 @@ import { selectOauthImportStateImporterData } from '@proton/activation/src/logic
 import { generateMockAddressArray } from '@proton/activation/src/tests/data/addresses';
 import { prepareState } from '@proton/activation/src/tests/data/prepareState';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
-import type { ModalStateProps } from '@proton/components/index';
+import type { ModalStateProps } from '@proton/components';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import type { CalendarMember, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 

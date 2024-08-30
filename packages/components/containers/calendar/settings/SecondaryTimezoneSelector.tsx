@@ -6,7 +6,7 @@ import type { DropdownSizeUnit } from '@proton/components/components';
 import { TimeZoneSelector } from '@proton/components/components';
 import type { Unit } from '@proton/components/components/dropdown/utils';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
-import { useLoading } from '@proton/hooks/index';
+import { useLoading } from '@proton/hooks';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';
 import { getTimezone } from '@proton/shared/lib/date/timezone';

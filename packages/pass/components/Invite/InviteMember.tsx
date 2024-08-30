@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
