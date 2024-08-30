@@ -1,7 +1,7 @@
-import { ThemeInformation } from '@proton/components/containers/themes/ThemeProvider';
-import { PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { ChargebeeEnabled, User } from '@proton/shared/lib/interfaces';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
+import type { User } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import type { ThemeInformation, ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 export function getMaybeForcePaymentsVersion(user?: User): PaymentsVersion | undefined {
     return user?.ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED ? 'v5' : undefined;
