@@ -3,7 +3,6 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { generateUID } from '@proton/components';
-import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { DS_STORE } from '@proton/shared/lib/drive/constants';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
@@ -153,7 +152,7 @@ export default function useUploadQueue(log: LogCallback) {
                     item.originalIsFolder = originalIsFolder;
                 }
                 item.error = error;
-                if (!!error && !getIsConnectionIssue(error)) {
+                if (!!error) {
                     item.numberOfErrors++;
                 }
                 log(item.id, `Updated queue (state: ${newState}, error: ${error || ''})`);
