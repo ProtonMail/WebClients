@@ -146,6 +146,59 @@ describe('useUploadMetrics::', () => {
         });
     });
 
+    describe('uploadSucceeded', () => {
+        const mockMetricsSuccessRate = jest.fn();
+        const mockMetricsErrors = jest.fn();
+        const mockMetricsErroringUsers = jest.fn();
+        const mockMetricsErrorFileSize = jest.fn();
+        const mockMetricsErrorTransferSize = jest.fn();
+
+        let hook: {
+            current: {
+                uploadSucceeded: (shareId: string, numberOfErrors?: number) => void;
+            };
+        };
+
+        beforeEach(() => {
+            jest.resetAllMocks();
+            const isPaid = true;
+            const { result } = renderHook(() =>
+                useUploadMetrics(isPaid, {
+                    drive_upload_success_rate_total: { increment: mockMetricsSuccessRate },
+                    drive_upload_errors_total: { increment: mockMetricsErrors },
+                    drive_upload_erroring_users_total: { increment: mockMetricsErroringUsers },
+                    drive_upload_errors_file_size_histogram: { observe: mockMetricsErrorFileSize },
+                    drive_upload_errors_transfer_size_histogram: { observe: mockMetricsErrorTransferSize },
+                } as any)
+            );
+            hook = result;
+        });
+
+        it('reports first attemp as not retry', () => {
+            act(() => {
+                hook.current.uploadSucceeded('shareId', 0);
+                expect(mockMetricsSuccessRate).toHaveBeenCalledWith({
+                    status: 'success',
+                    shareType: 'shared',
+                    retry: 'false',
+                    initiator: 'explicit',
+                });
+            });
+        });
+
+        it('reports second attemp as retry', () => {
+            act(() => {
+                hook.current.uploadSucceeded('shareId', 1);
+                expect(mockMetricsSuccessRate).toHaveBeenCalledWith({
+                    status: 'success',
+                    shareType: 'shared',
+                    retry: 'true',
+                    initiator: 'explicit',
+                });
+            });
+        });
+    });
+
     describe('uploadFailed', () => {
         const mockMetricsSuccessRate = jest.fn();
         const mockMetricsErrors = jest.fn();
@@ -172,6 +225,30 @@ describe('useUploadMetrics::', () => {
                 } as any)
             );
             hook = result;
+        });
+
+        it('reports first attemp as not retry', () => {
+            act(() => {
+                hook.current.uploadFailed(mockFailedUploadMetadata(1, 10000), new Error('error'));
+                expect(mockMetricsSuccessRate).toHaveBeenCalledWith({
+                    initiator: 'explicit',
+                    retry: 'false',
+                    shareType: 'shared',
+                    status: 'failure',
+                });
+            });
+        });
+
+        it('reports second attemp as retry', () => {
+            act(() => {
+                hook.current.uploadFailed(mockFailedUploadMetadata(2, 10000), new Error('error'));
+                expect(mockMetricsSuccessRate).toHaveBeenCalledWith({
+                    initiator: 'explicit',
+                    retry: 'true',
+                    shareType: 'shared',
+                    status: 'failure',
+                });
+            });
         });
 
         it('does capture erroring user only every 5 minutes', () => {
