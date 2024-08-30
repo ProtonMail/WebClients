@@ -246,7 +246,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit,
         try {
             await api(reportBug(getParameters(), 'form'));
             onClose?.();
-            createNotification({ text: c('Success').t`Bug reported` });
+            createNotification({ text: c('Success').t`Problem reported` });
         } catch (error) {
             setLoading(false);
         }
