@@ -138,18 +138,19 @@ function useFileViewBase(
         setContentsMimeType(link.mimeType);
 
         if (isPreviewAvailable(link.mimeType, link.size)) {
-            const { stream, controls } = downloadStream([
-                {
-                    ...link,
-                    shareId,
-                    revisionId,
-                },
-            ]);
-            abortSignal.addEventListener('abort', () => {
-                controls.cancel();
+            const { stream, controls } = downloadStream({
+                ...link,
+                shareId,
+                revisionId,
             });
-
-            setContents(await streamToBuffer(stream));
+            const onAbort = () => {
+                controls.cancel();
+            };
+            abortSignal.addEventListener('abort', onAbort);
+            const buffer = await streamToBuffer(stream);
+            setContents(buffer);
+            // The download is done, we do not need to cancel download on abort anymore
+            abortSignal.removeEventListener('abort', onAbort);
             // Fallback is only available for photos in private context
         } else if (!!link.activeRevision?.photo && getPreviewThumbnail && !isVideo(link.mimeType)) {
             // We force jpg type as thumbnails are always jpg for photos

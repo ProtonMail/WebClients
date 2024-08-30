@@ -95,7 +95,10 @@ export function useSharedWithMeLinksListing() {
     /**
      * Loads shared with me links.
      */
-    const loadSharedWithMeLinks = async (signal: AbortSignal, loadLinksMeta: FetchLoadLinksMeta): Promise<{ Count?: number } | void> => {
+    const loadSharedWithMeLinks = async (
+        signal: AbortSignal,
+        loadLinksMeta: FetchLoadLinksMeta
+    ): Promise<{ Count?: number } | void> => {
         const callback = (AnchorID?: string) => fetchSharedLinksNextPage(signal, loadLinksMeta, AnchorID);
         return loadFullListingWithAnchor(callback);
     };

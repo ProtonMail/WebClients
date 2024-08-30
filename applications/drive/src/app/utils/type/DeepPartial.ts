@@ -11,7 +11,7 @@
 export type DeepPartial<T> = T extends (infer E)[]
     ? DeepPartial<E>[]
     : T extends object
-    ? {
-          [K in keyof T]?: DeepPartial<T[K]>;
-      }
-    : T | undefined;
+      ? {
+            [K in keyof T]?: DeepPartial<T[K]>;
+        }
+      : T | undefined;
