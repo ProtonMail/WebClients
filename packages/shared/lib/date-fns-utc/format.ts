@@ -1,4 +1,4 @@
-import formatters from 'date-fns/_lib/format/formatters/index';
+import formatters from 'date-fns/_lib/format/formatters';
 import longFormatters from 'date-fns/_lib/format/longFormatters';
 import defaultLocale from 'date-fns/locale/en-US';
 

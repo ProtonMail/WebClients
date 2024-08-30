@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button';
 import { Button } from '@proton/atoms/Button';
 import { NotificationDot } from '@proton/atoms/NotificationDot';
-import type { DropdownSize } from '@proton/components/components/dropdown/utils';
 import {
     Dropdown,
     DropdownMenu,
@@ -14,7 +13,8 @@ import {
     type IconSize,
     type PopperPlacement,
     usePopperAnchor,
-} from '@proton/components/index';
+} from '@proton/components';
+import type { DropdownSize } from '@proton/components/components/dropdown/utils';
 import clsx from '@proton/utils/clsx';
 
 export type QuickActionsDropdownProps = {

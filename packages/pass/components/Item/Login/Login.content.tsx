@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
 import { OTPValueControl } from '@proton/pass/components/Form/Field/Control/OTPValueControl';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';

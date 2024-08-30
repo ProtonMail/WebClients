@@ -1,4 +1,4 @@
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

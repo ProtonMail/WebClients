@@ -5,7 +5,7 @@ import { Field, Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupField';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { Card } from '@proton/pass/components/Layout/Card/Card';

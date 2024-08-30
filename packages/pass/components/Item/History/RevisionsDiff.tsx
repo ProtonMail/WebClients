@@ -5,7 +5,7 @@ import { Redirect, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Alert, Icon } from '@proton/components/index';
+import { Alert, Icon } from '@proton/components';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { AliasContent } from '@proton/pass/components/Item/Alias/Alias.content';
 import { CreditCardContent } from '@proton/pass/components/Item/CreditCard/CreditCard.content';

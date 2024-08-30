@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Checkbox } from '@proton/components/index';
+import { Checkbox } from '@proton/components';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import { selectCanLoadDomainImages, selectRequestInFlight } from '@proton/pass/store/selectors';

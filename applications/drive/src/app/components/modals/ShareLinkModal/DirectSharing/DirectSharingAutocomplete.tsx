@@ -8,7 +8,7 @@ import {
     InputFieldTwo,
     useContactEmails,
     useContactGroups,
-} from '@proton/components/index';
+} from '@proton/components';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 

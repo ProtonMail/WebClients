@@ -2,7 +2,7 @@ import { type FC, type ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { InputFieldTwo, Option, SelectTwo } from '@proton/components/index';
+import { InputFieldTwo, Option, SelectTwo } from '@proton/components';
 
 type Props = {
     ttl?: number;

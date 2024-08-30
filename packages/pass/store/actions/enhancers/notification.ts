@@ -1,6 +1,6 @@
 import type { Action } from 'redux';
 
-import type { CreateNotificationOptions, NotificationType } from '@proton/components/index';
+import type { CreateNotificationOptions, NotificationType } from '@proton/components';
 import type { ClientEndpoint } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 

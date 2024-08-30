@@ -3,8 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { useSecurityCheckup, useUserSettings } from '@proton/components';
 import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
-import { useSecurityCheckup, useUserSettings } from '@proton/components/index';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 
 import AccountLoaderPage from '../../../../content/AccountLoaderPage';

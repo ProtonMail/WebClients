@@ -4,7 +4,7 @@ import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Collapsible, CollapsibleContent, CollapsibleHeader, Icon, useNotifications } from '@proton/components/index';
+import { Collapsible, CollapsibleContent, CollapsibleHeader, Icon, useNotifications } from '@proton/components';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';

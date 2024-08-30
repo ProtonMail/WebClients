@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import generateUID from '@proton/atoms/generateUID';
 import { Icon, useModalState } from '@proton/components/components';
-import { useLoading } from '@proton/hooks/index';
+import { useLoading } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 import { encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
 
