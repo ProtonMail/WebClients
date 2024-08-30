@@ -55,7 +55,6 @@
 		overflow: auto;
 		block-size: 100%;
 		inline-size: 100%;
-		max-inline-size: rem(1400);
 		margin-inline: auto;
 
 		@include media('>=medium') {
