@@ -11,24 +11,13 @@ import {
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
-import { MetricShareType } from '../../../utils/type/MetricShareType';
+import type { UploadErrorCategoryType } from '../../../utils/type/MetricTypes';
+import { MetricShareType, UploadErrorCategory } from '../../../utils/type/MetricTypes';
 import type { Share } from '../../_shares/interface';
 import { ShareType } from '../../_shares/interface';
 import useShareState from '../../_shares/useSharesState';
 import { isVerificationError } from '../worker/verifier';
 import type { FileUploadReady } from './interface';
-
-export enum UploadErrorCategory {
-    FreeSpaceExceeded = 'free_space_exceeded',
-    TooManyChildren = 'too_many_children',
-    NetworkError = 'network_error',
-    ServerError = 'server_error',
-    IntegrityError = 'integrity_error',
-    Unknown = 'unknown',
-    RateLimited = 'rate_limited',
-    HTTPClientError = '4xx',
-    HTTPServerError = '5xx',
-}
 
 export interface FailedUploadMetadata {
     shareId: string;
@@ -153,7 +142,7 @@ export function getShareType(share?: Share): MetricShareType {
     return MetricShareType.Shared;
 }
 
-export function getErrorCategory(error: any): UploadErrorCategory {
+export function getErrorCategory(error: any): UploadErrorCategoryType {
     const apiError = getApiError(error);
     const statusCode = apiError?.code || error?.statusCode;
 
