@@ -11,11 +11,13 @@ import { updateElectronThemeModeClassnames } from '@proton/shared/lib/helpers/in
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import type { ThemeSetting } from '@proton/shared/lib/themes/themes';
+import type { ThemeInformation, ThemeSetting } from '@proton/shared/lib/themes/themes';
 import {
     ColorScheme,
     MotionModeSetting,
     PROTON_DEFAULT_THEME,
+    PROTON_DEFAULT_THEME_INFORMATION,
+    PROTON_DEFAULT_THEME_SETTINGS,
     PROTON_THEMES_MAP,
     ThemeFeatureSetting,
     ThemeFontFaceSetting,
@@ -34,21 +36,6 @@ import {
 import noop from '@proton/utils/noop';
 
 import { classNames, styles } from './properties';
-
-export interface ThemeInformation {
-    theme: ThemeTypes;
-    dark: boolean;
-    prominentHeader: boolean;
-    default: boolean;
-    style: string;
-    label: string;
-    colorScheme: ColorScheme;
-    motionMode: MotionModeSetting;
-    features: {
-        scrollbars: boolean;
-        animations: boolean;
-    };
-}
 
 interface ThemeContextInterface {
     setTheme: (theme: ThemeTypes, mode?: ThemeModeSetting) => void;
@@ -69,28 +56,8 @@ export const ThemeContext = createContext<ThemeContextInterface>({
     setFontSize: noop,
     setFontFace: noop,
     setFeature: noop,
-    settings: {
-        LightTheme: PROTON_DEFAULT_THEME,
-        DarkTheme: PROTON_DEFAULT_THEME,
-        Mode: ThemeModeSetting.Light,
-        FontSize: ThemeFontSizeSetting.DEFAULT,
-        FontFace: ThemeFontFaceSetting.DEFAULT,
-        Features: ThemeFeatureSetting.DEFAULT,
-    },
-    information: {
-        theme: PROTON_DEFAULT_THEME,
-        dark: false,
-        prominentHeader: false,
-        default: false,
-        style: '',
-        label: '',
-        colorScheme: ColorScheme.Light,
-        motionMode: MotionModeSetting.No_preference,
-        features: {
-            scrollbars: false,
-            animations: false,
-        },
-    },
+    settings: PROTON_DEFAULT_THEME_SETTINGS,
+    information: PROTON_DEFAULT_THEME_INFORMATION,
     addListener: () => noop,
 });
 
