@@ -42,10 +42,11 @@ const TipBox = ({ tips, isDismissed, setIsDismissed }: Props) => {
     const { createNotification } = useNotifications();
     const { randomOption } = useGetRandomTip(tips);
     const { update } = useFeature(FeatureCode.ProtonTipsSnoozeTime);
-    const { sendTipDisplayedReport } = useProtonTipsTelemetry();
+    const { sendTipDisplayedReport, sendTipSnoozedReport, sendCloseButtonClickedReport } = useProtonTipsTelemetry();
 
     const onSnooze = () => {
         void update(Date.now());
+        sendTipSnoozedReport(randomOption.action);
     };
 
     const onCancel = () => {
@@ -55,6 +56,7 @@ const TipBox = ({ tips, isDismissed, setIsDismissed }: Props) => {
             type: 'info',
             isClosing: true,
         });
+        sendCloseButtonClickedReport(randomOption.action);
     };
 
     useEffect(() => sendTipDisplayedReport(randomOption.action), [randomOption]);
