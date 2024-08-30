@@ -2,18 +2,13 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
-import { MetricShareType } from '../../../utils/type/MetricShareType';
+import { MetricShareType, UploadErrorCategory } from '../../../utils/type/MetricTypes';
 import type { Share } from '../../_shares/interface';
 import { ShareType } from '../../_shares/interface';
 import { VerificationError } from '../worker/verifier';
 import type { FileUploadReady } from './interface';
 import type { FailedUploadMetadata } from './useUploadMetrics';
-import useUploadMetrics, {
-    UploadErrorCategory,
-    getErrorCategory,
-    getFailedUploadMetadata,
-    getShareType,
-} from './useUploadMetrics';
+import useUploadMetrics, { getErrorCategory, getFailedUploadMetadata, getShareType } from './useUploadMetrics';
 
 jest.mock('@proton/metrics');
 

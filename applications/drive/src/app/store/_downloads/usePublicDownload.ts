@@ -138,11 +138,11 @@ export default function usePublicDownload() {
     };
 
     const downloadStream = (
-        list: LinkDownload[],
+        link: LinkDownload,
         eventCallbacks?: DownloadEventCallbacks
     ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array> } => {
         const controls = initDownloadStream(
-            list,
+            [link],
             {
                 getChildren,
                 getBlocks,

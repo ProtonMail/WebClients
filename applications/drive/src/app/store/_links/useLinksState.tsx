@@ -265,7 +265,6 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[], o
             links: {},
             tree: {},
         };
-        stateUpdated = true;
     }
 
     links.forEach((link) => {
@@ -328,7 +327,6 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[], o
                 original.decrypted.signatureIssues = newSignatureIssues;
             }
         } else {
-            stateUpdated = true;
             state[shareId].links[linkId] = link;
         }
 
