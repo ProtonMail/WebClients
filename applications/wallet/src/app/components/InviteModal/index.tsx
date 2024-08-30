@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import type { ModalOwnProps } from '@proton/components/components';
 import { Prompt, Tooltip } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
-import { useLoading } from '@proton/hooks/index';
+import { useLoading } from '@proton/hooks';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import walletExclusiveInvites from '@proton/styles/assets/img/wallet/wallet-user.jpg';

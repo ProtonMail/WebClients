@@ -4,9 +4,9 @@ import { Link, Redirect } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
+import { useApi, useEventManager, useSecurityCheckup } from '@proton/components';
 import { getFormattedValue } from '@proton/components/components/v2/phone/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useApi, useEventManager, useSecurityCheckup } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
 import { updateResetPhone } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';

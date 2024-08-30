@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { applyHOCs, withConfig, withPaymentContext } from '@proton/testing/index';
+import { applyHOCs, withConfig, withPaymentContext } from '@proton/testing';
 
 import { useSubscribeEventManager } from '../../hooks';
 import InvoicesSection from './InvoicesSection';

@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms/index';
-import { useLoading } from '@proton/hooks/index';
+import { Button, Href } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { validateSubscription } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_TYPE, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarStatusInfo } from '@proton/shared/lib/calendar/subscribe/helpers';

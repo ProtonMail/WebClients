@@ -2,7 +2,7 @@ import type { ComponentProps } from 'react';
 
 import { render, screen } from '@testing-library/react';
 
-import { mockUseContactEmailsCache } from '@proton/testing/index';
+import { mockUseContactEmailsCache } from '@proton/testing';
 
 import CalendarSubpageHeaderSection from './CalendarSubpageHeaderSection';
 

@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
-import { mockUseApi, mockUseEventManager, mockUseHistory, mockUseUser } from '@proton/testing/index';
+import { mockUseApi, mockUseEventManager, mockUseHistory, mockUseUser } from '@proton/testing';
 
 import { mockUseEncryptedSearchContext } from 'proton-mail/helpers/test/mockUseEncryptedSearchContext';
 import { useMailSelector } from 'proton-mail/store/hooks';

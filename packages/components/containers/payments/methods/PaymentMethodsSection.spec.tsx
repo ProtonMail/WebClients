@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
-import { applyHOCs, mockUseUser, withEventManager } from '@proton/testing/index';
+import { applyHOCs, mockUseUser, withEventManager } from '@proton/testing';
 
 import { Loader } from '../../../components';
 import { usePaymentMethods, useSubscription } from '../../../hooks';

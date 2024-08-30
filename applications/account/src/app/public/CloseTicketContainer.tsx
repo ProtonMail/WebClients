@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { GenericError, useApi, useErrorHandler } from '@proton/components/index';
+import { GenericError, useApi, useErrorHandler } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { closeTicket } from '@proton/shared/lib/api/reports';

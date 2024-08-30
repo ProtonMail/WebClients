@@ -8,10 +8,10 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo } from '@proton/components';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
-import type { ModalProps } from '@proton/components/index';
-import { ModalTwo } from '@proton/components/index';
 
 import GmailSyncModalAnimation from './GmailSyncModalAnimation';
 import SignInWithGoogle from './SignInWithGoogle';

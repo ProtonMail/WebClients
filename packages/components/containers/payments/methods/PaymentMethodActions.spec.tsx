@@ -3,7 +3,7 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 import type { SavedPaymentMethod } from '@proton/components/payments/core';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
-import { mockOnSessionMigration, mockUseSubscription, mockUseUser } from '@proton/testing/index';
+import { mockOnSessionMigration, mockUseSubscription, mockUseUser } from '@proton/testing';
 
 import { DropdownActions } from '../../../components';
 import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';

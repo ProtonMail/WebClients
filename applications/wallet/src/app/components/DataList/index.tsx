@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react';
 
-import type { IconName } from '@proton/components/index';
-import { Icon } from '@proton/components/index';
+import type { IconName } from '@proton/components';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';

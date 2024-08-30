@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
 import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
 

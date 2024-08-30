@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { Icon, type IconName } from '@proton/components/index';
+import { Icon, type IconName } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import './CardIcon.scss';

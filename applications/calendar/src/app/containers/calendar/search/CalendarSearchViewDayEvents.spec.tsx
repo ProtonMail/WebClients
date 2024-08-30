@@ -1,7 +1,7 @@
 import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { mockUseAddresses } from '@proton/testing/index';
+import { mockUseAddresses } from '@proton/testing';
 
 import CalendarSearchViewDayEvents from './CalendarSearchViewDayEvents';
 import type { VisualSearchItem } from './interface';

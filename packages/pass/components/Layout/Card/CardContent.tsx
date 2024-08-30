@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react';
 
-import { Icon, type IconName, type IconProps } from '@proton/components/index';
+import { Icon, type IconName, type IconProps } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import './CardContent.scss';

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Toggle } from '@proton/components/index';
+import { Toggle } from '@proton/components';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { settingsEditRequest } from '@proton/pass/store/actions/requests';
 import { selectBetaEnabled, selectRequestInFlight } from '@proton/pass/store/selectors';

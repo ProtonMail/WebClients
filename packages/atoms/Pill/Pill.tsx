@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import tinycolor from 'tinycolor2';
 
-import { genPillBackgroundColorShades, genPillTextColorShades } from '@proton/colors/index';
+import { genPillBackgroundColorShades, genPillTextColorShades } from '@proton/colors';
 import clsx from '@proton/utils/clsx';
 
 export interface PillProps extends ComponentPropsWithoutRef<'span'> {

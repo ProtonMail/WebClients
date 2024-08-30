@@ -12,7 +12,7 @@ import {
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { PasswordMemorableOptions } from '@proton/pass/components/Password/PasswordMemorableOptions';
 import { PasswordRandomOptions } from '@proton/pass/components/Password/PasswordRandomOptions';
