@@ -73,13 +73,14 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
     const hasReachedDomainsLimit = UsedDomains === MaxDomains;
 
     const handleRefresh = async () => {
-        const domains = await getCustomDomains({ cache: CacheType.None });
         // Fetch all domains individually to trigger a DNS refresh CP-8499
         await Promise.all(
-            domains.map((domain) => {
+            (customDomains || []).map((domain) => {
                 return api(getDomain(domain.ID));
             })
         );
+        // This actually refreshes the list. TODO: Replace this by a redux upsert.
+        await getCustomDomains({ cache: CacheType.None });
     };
 
     const reviewText = c('Action').t`Review`;
