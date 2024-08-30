@@ -18,6 +18,7 @@ import { PassphraseInputModal } from '../components/PassphraseInputModal';
 import { TransactionList } from '../components/TransactionList';
 import { WalletPreferencesModal } from '../components/WalletPreferencesModal';
 import { useBitcoinBlockchainContext } from '../contexts';
+import { useResponsiveContainerContext } from '../contexts/ResponsiveContainerContext';
 import { useWalletDrawerContext } from '../contexts/WalletDrawerContext';
 import { getThemeForWallet } from '../utils';
 
@@ -30,6 +31,8 @@ const generateBitcoinSendKey = () => generateUID(`bitcoin-send`);
 export const AccountContainer = () => {
     const { walletId, accountId } = useParams<{ walletId?: string; accountId?: string }>();
     const history = useHistory();
+
+    const { isNarrow } = useResponsiveContainerContext();
 
     const [bitcoinSendKey, setBitcoinSendKey] = useState(generateBitcoinSendKey());
 
@@ -85,10 +88,10 @@ export const AccountContainer = () => {
             <div
                 className={clsx('wallet-main relative flex flex-row flex-nowrap w-full min-h-full flex-nowrap', theme)}
             >
-                <div className={clsx('flex flex-column flex-1 flex-nowrap grow p-8 pt-8')}>
+                <div className={clsx('flex flex-column flex-1 flex-nowrap grow', isNarrow ? 'p-1 pt-4' : 'p-8 pt-8')}>
                     <div className="flex flex-row justify-space-between m-4 items-center">
-                        <div className="flex flex-row flex-nowrap m-4 items-center">
-                            <h1 className="mr-4 text-semibold text-ellipsis">{walletAccount.Label}</h1>
+                        <div className="flex flex-row flex-nowrap items-center">
+                            <h1 className="mr-4 text-semibold text-ellipsis">{wallet.Wallet.Name}</h1>
 
                             <CoreButton
                                 icon
