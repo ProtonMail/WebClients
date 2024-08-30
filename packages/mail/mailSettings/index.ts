@@ -7,17 +7,18 @@ import { getMailSettings } from '@proton/shared/lib/api/mailSettings';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 
-interface State {
-    mailSettings: ModelState<MailSettings>;
+const name = 'mailSettings' as const;
+
+export interface MailSettingState {
+    [name]: ModelState<MailSettings>;
 }
 
-const name = 'mailSettings';
-type SliceState = State[typeof name];
+type SliceState = MailSettingState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectMailSettings = (state: State) => state[name];
+export const selectMailSettings = (state: MailSettingState) => state[name];
 
-const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
+const modelThunk = createAsyncModelThunk<Model, MailSettingState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
         return extraArgument.api<{ MailSettings: MailSettings }>(getMailSettings()).then(({ MailSettings }) => {
             return MailSettings;
