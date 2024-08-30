@@ -1,9 +1,10 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { addMonths } from 'date-fns';
 
-import { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
+import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
-import { ChargebeeEnabled, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import {
     addApiMock,
     apiMock,
@@ -12,7 +13,7 @@ import {
     withApi,
     withConfig,
     withPaymentContext,
-} from '@proton/testing/index';
+} from '@proton/testing';
 
 import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import { usePaymentsApi } from './usePaymentsApi';

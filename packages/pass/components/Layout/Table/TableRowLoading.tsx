@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { TableCell, TableRow } from '@proton/components/index';
+import { TableCell, TableRow } from '@proton/components';
 
 type Props = { rows: number; cells: number };
 

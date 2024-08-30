@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { LockSetup } from '@proton/pass/components/Settings/LockSetup';

@@ -1,5 +1,5 @@
-import type { OpenCallbackProps } from '@proton/components/index';
-import { SUBSCRIPTION_STEPS } from '@proton/components/index';
+import type { OpenCallbackProps } from '@proton/components';
+import { SUBSCRIPTION_STEPS } from '@proton/components';
 import type { SelectedPlan } from '@proton/components/payments/core';
 import { getScribeAddonNameByPlan } from '@proton/components/payments/core';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';

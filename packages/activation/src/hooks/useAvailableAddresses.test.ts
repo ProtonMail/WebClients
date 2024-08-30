@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { useAddresses } from '@proton/components/index';
+import { useAddresses } from '@proton/components';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 
 import { generateMockAddress, generateMockAddressArray } from '../tests/data/addresses';

@@ -3,7 +3,7 @@ import { type RouteChildrenProps, Switch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components/index';
+import { Icon } from '@proton/components';
 import { Breadcrumb } from '@proton/pass/components/Layout/Breadcrumbs/Breadcrumb';
 import { type BreadcrumbRoute, BreadcrumbSwitch } from '@proton/pass/components/Layout/Breadcrumbs/BreadcrumbSwitch';
 import { getLocalPath, subPath } from '@proton/pass/components/Navigation/routing';

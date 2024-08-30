@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { Button } from '@proton/atoms/index';
-import { Alert, BasicModal, Prompt } from '@proton/components/index';
+import { Button } from '@proton/atoms';
+import { Alert, BasicModal, Prompt } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 import type { InviteActions } from '../../../../interfaces/Invite';

@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { useApi } from '@proton/components/index';
+import { useApi } from '@proton/components';
 import { UnleashFlagProvider } from '@proton/unleash';
 
 import { PublicSessionProvider } from './_api';

@@ -14,7 +14,6 @@ import type { Organization, Plan } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { defaultVPNServersCountData as mockDefaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
-import { buildUser } from '@proton/testing/builders';
 import {
     apiMock,
     applyHOCs,
@@ -25,7 +24,8 @@ import {
     withDeprecatedModals,
     withEventManager,
     withNotifications,
-} from '@proton/testing/index';
+} from '@proton/testing';
+import { buildUser } from '@proton/testing/builders';
 
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';

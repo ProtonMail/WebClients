@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components/index';
+import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
 import { ShareRole } from '@proton/pass/types';
 
 import { DropdownMenuButton } from '../Layout/Dropdown/DropdownMenuButton';

@@ -10,7 +10,7 @@ import {
     mockUseMailSettings,
     mockUseNotifications,
     mockUseUser,
-} from '@proton/testing/index';
+} from '@proton/testing';
 
 import { FeatureCode } from '../features';
 import MessagesSection from './MessagesSection';

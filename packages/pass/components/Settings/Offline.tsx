@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Checkbox } from '@proton/components/index';
+import { Checkbox } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { usePasswordUnlock } from '@proton/pass/components/Lock/PasswordUnlockProvider';

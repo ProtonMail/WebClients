@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
-import metrics, { observeApiError } from '@proton/metrics/index';
+import metrics, { observeApiError } from '@proton/metrics';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
