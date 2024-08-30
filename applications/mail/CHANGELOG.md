@@ -1,3 +1,23 @@
+## August 2024
+
+### Improvements
+
+-   Added the ability to minimize the left side panel for a more customizable interface.
+
+### Fixes
+
+-   Fixed a scroll jump issue on the conversation list
+
+## July 2024
+
+### Improvements
+
+-   Proton Scribe Writing Assistant: Launched for B2B customers to enhance writing productivity.
+
+### Fixes
+
+-   Fixed an issue in the Security Center where Proton Pass encountered problems when an extra password was used.
+
 ## Release 5.0.36 — Feb 21st, 2024
 
 ### Improvements
