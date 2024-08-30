@@ -157,7 +157,7 @@ export const MetricsAndCtas = ({
             {isNarrow ? (
                 <hr className="w-full my-3" />
             ) : (
-                <hr className="metrics-and-ctas-hr-large h-full border-right mx-3 m-0" />
+                <hr className="metrics-and-ctas-hr-large h-full border-right m-0" />
             )}
 
             <div
