@@ -10,6 +10,7 @@ import type {
 } from '@proton/shared/lib/interfaces/drive/file';
 import { useFlag } from '@proton/unleash';
 
+import { TransferState } from '../../components/TransferManager/transfer';
 import { logError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
 import { useDebouncedRequest } from '../_api';
@@ -18,6 +19,7 @@ import type { DecryptedLink, SignatureIssues } from '../_links';
 import { useLink, useLinksListing } from '../_links';
 import { ThumbnailType } from '../_uploads/media';
 import { waitFor } from '../_utils';
+import { useDownloadMetrics } from './DownloadProvider/useDownloadMetrics';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
 import downloadThumbnailPure from './download/downloadThumbnail';
@@ -42,6 +44,8 @@ export default function useDownload() {
     const { getVerificationKey } = useDriveCrypto();
     const { getLink, getLinkPrivateKey, getLinkSessionKey, setSignatureIssues } = useLink();
     const { loadChildren, getCachedChildren } = useLinksListing();
+    const { report } = useDownloadMetrics('preview');
+
     // TODO: DRVWEB-4064 - Clean this up
     const isNewFolderTreeAlgorithmEnabled = useFlag('DriveWebDownloadNewFolderLoaderAlgorithm');
     const api = useApi();
@@ -173,11 +177,11 @@ export default function useDownload() {
     };
 
     const downloadStream = (
-        list: LinkDownload[],
+        link: LinkDownload,
         eventCallbacks?: DownloadEventCallbacks
     ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array> } => {
         const controls = initDownloadStream(
-            list,
+            [link],
             {
                 getChildren,
                 getBlocks,
@@ -186,6 +190,14 @@ export default function useDownload() {
                 onSignatureIssue: async (abortSignal, link, signatureIssues) => {
                     await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
                     return eventCallbacks?.onSignatureIssue?.(abortSignal, link, signatureIssues);
+                },
+                onError: (error: Error) => {
+                    if (error) {
+                        report(link.shareId, TransferState.Error, error);
+                    }
+                },
+                onFinish: () => {
+                    report(link.shareId, TransferState.Done);
                 },
             },
             isNewFolderTreeAlgorithmEnabled,
