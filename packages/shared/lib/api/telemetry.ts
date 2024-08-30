@@ -173,6 +173,8 @@ export enum TelemetryProtonTipsEvents {
     tipDispayed = 'tip_displayed',
     CTAButtonClicked = 'cta_clicked',
     tipChangeState = 'tip_change_state',
+    closeButtonClicked = 'close_button_clicked',
+    tipSnoozed = 'tip_snoozed',
 }
 
 export type TelemetryEvents =
