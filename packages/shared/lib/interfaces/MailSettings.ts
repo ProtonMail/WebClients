@@ -43,6 +43,7 @@ export interface AutoResponder {
     Zone: string;
 }
 
+// Update the useMailSettingsHeartbeat hook when adding a new settings
 export interface MailSettings {
     DisplayName: string;
     Signature: string;
