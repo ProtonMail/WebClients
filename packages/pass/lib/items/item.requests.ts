@@ -1,4 +1,5 @@
 import { api } from '@proton/pass/lib/api/api';
+import { createPageIterator } from '@proton/pass/lib/api/utils';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import type {
     AliasAndItemCreateRequest,
@@ -254,24 +255,19 @@ export const updateItemLastUseTime = async (shareId: string, itemId: string) =>
 export const requestAllItemsForShareId = async (
     options: { shareId: string; OnlyAlias?: boolean },
     onBatch?: (progress: number) => void
-): Promise<ItemRevisionContentsResponse[]> => {
-    const pageIterator = async (count: number, Since?: string): Promise<ItemRevisionContentsResponse[]> => {
-        const { Items } = await api({
-            url: `pass/v1/share/${options.shareId}/item`,
-            method: 'get',
-            params: Since ? { Since, OnlyAlias: options.OnlyAlias } : {},
-        });
+): Promise<ItemRevisionContentsResponse[]> =>
+    createPageIterator({
+        onBatch,
+        request: async (Since) => {
+            const { Items } = await api({
+                url: `pass/v1/share/${options.shareId}/item`,
+                method: 'get',
+                params: Since ? { Since, OnlyAlias: options.OnlyAlias } : {},
+            });
 
-        const nextCount = count + (Items?.RevisionsData.length ?? 0);
-        onBatch?.(nextCount);
-
-        return Items?.LastToken
-            ? Items.RevisionsData.concat(await pageIterator(nextCount, Items.LastToken))
-            : Items?.RevisionsData ?? [];
-    };
-
-    return pageIterator(0);
-};
+            return { data: Items?.RevisionsData ?? [], cursor: Items?.LastToken };
+        },
+    })();
 
 /** Will not throw on decryption errors : this avoids blocking the
  *  user if one item is corrupted or is using a newer proto version */
