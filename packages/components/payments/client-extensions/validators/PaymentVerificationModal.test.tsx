@@ -1,9 +1,10 @@
 import { render, screen, waitFor } from '@testing-library/react';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { applyHOCs, withNotifications } from '@proton/testing/index';
+import { applyHOCs, withNotifications } from '@proton/testing';
 
-import PaymentVerificationModal, { PromiseWithController, Props } from './PaymentVerificationModal';
+import type { PromiseWithController, Props } from './PaymentVerificationModal';
+import PaymentVerificationModal from './PaymentVerificationModal';
 
 jest.mock('@proton/components/components/portal/Portal');
 

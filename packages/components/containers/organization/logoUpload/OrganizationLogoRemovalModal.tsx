@@ -12,7 +12,7 @@ import {
 } from '@proton/components';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
-import metrics, { observeApiError } from '@proton/metrics/index';
+import metrics, { observeApiError } from '@proton/metrics';
 import { deleteOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';

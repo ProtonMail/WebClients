@@ -13,7 +13,7 @@ import {
     selectOauthImportStateProducts,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { FeatureCode, useCalendars, useFeature, useFolders, useLabels, useUser } from '@proton/components/index';
+import { FeatureCode, useCalendars, useFeature, useFolders, useLabels, useUser } from '@proton/components';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 

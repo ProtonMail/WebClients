@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components/index';
+import { useNotifications } from '@proton/components';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';

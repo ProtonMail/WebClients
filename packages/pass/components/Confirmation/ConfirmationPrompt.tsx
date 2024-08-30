@@ -3,7 +3,7 @@ import type { FC, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Prompt } from '@proton/components/index';
+import { Prompt } from '@proton/components';
 
 export type ConfirmationPromptHandles = {
     open: boolean;

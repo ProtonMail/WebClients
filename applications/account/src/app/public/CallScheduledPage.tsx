@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ProtonLogo } from '@proton/components/index';
+import { ProtonLogo } from '@proton/components';
 import illustration from '@proton/styles/assets/img/illustrations/account-call-confirmation-illustration.svg';
 
 const CallScheduledPage = () => {

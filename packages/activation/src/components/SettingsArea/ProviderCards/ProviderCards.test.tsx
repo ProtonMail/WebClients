@@ -4,7 +4,7 @@ import { setupServer } from 'msw/node';
 
 import { headers } from '@proton/activation/msw.header';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
-import { useUser } from '@proton/components/index';
+import { useUser } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import ProviderCards from './ProviderCards';

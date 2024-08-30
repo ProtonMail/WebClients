@@ -1,11 +1,10 @@
 import type { ReactNode } from 'react';
-import React from 'react';
 
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useNotifications } from '@proton/components/hooks';
-import { mockNotifications } from '@proton/testing/index';
+import { mockNotifications } from '@proton/testing';
 
 import PassAliases from './PassAliases';
 import * as passAliasesProvider from './PassAliasesProvider';

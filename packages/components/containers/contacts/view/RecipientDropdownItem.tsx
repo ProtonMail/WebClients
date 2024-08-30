@@ -2,8 +2,8 @@ import type { MouseEvent, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { ContactImage, ProtonBadgeType, useNotifications } from '@proton/components';
 import { Copy } from '@proton/components/components';
-import { ContactImage, ProtonBadgeType, useNotifications } from '@proton/components/index';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 

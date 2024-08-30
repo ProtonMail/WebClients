@@ -5,7 +5,7 @@ import type { CardModel, SavedPaymentMethod, SavedPaymentMethodInternal } from '
 import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import type { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
-import { applyHOCs, withApi, withCache, withConfig } from '@proton/testing/index';
+import { applyHOCs, withApi, withCache, withConfig } from '@proton/testing';
 
 import { PaymentsNoApi } from './Payment';
 

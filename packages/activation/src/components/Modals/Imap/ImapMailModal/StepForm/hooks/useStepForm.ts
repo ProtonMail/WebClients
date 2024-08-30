@@ -15,7 +15,7 @@ import {
     selectImapDraftProvider,
 } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { useApi } from '@proton/components/index';
+import { useApi } from '@proton/components';
 import throttle from '@proton/utils/throttle';
 
 import useAuthInfoByEmail from './useAuthInfoByEmail';
