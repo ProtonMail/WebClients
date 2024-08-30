@@ -29,6 +29,7 @@ import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/enc
 import { canGetInboxDesktopInfo, getInboxDesktopInfo, hasInboxDesktopFeature } from '../desktop/ipcHelpers';
 import { isElectronApp } from '../helpers/desktop';
 
+// Update the allowed values in the settings heartbeat
 export enum ThemeTypes {
     Duotone = 0,
     Carbon = 1,
@@ -377,6 +378,21 @@ export interface ThemeSetting {
     Features: ThemeFeatureSetting;
 }
 
+export interface ThemeInformation {
+    theme: ThemeTypes;
+    dark: boolean;
+    prominentHeader: boolean;
+    default: boolean;
+    style: string;
+    label: string;
+    colorScheme: ColorScheme;
+    motionMode: MotionModeSetting;
+    features: {
+        scrollbars: boolean;
+        animations: boolean;
+    };
+}
+
 export const electronAppTheme = {
     Mode: ThemeModeSetting.Auto,
     LightTheme: ThemeTypes.Snow,
@@ -525,4 +541,28 @@ export const getThemeType = (theme: ThemeSetting, colorScheme: ColorScheme): The
     }
 
     return getValidatedThemeType(value) ?? PROTON_DEFAULT_THEME;
+};
+
+export const PROTON_DEFAULT_THEME_SETTINGS: ThemeSetting = {
+    LightTheme: PROTON_DEFAULT_THEME,
+    DarkTheme: PROTON_DEFAULT_THEME,
+    Mode: ThemeModeSetting.Light,
+    FontSize: ThemeFontSizeSetting.DEFAULT,
+    FontFace: ThemeFontFaceSetting.DEFAULT,
+    Features: ThemeFeatureSetting.DEFAULT,
+};
+
+export const PROTON_DEFAULT_THEME_INFORMATION: ThemeInformation = {
+    theme: PROTON_DEFAULT_THEME,
+    dark: false,
+    prominentHeader: false,
+    default: false,
+    style: '',
+    label: '',
+    colorScheme: ColorScheme.Light,
+    motionMode: MotionModeSetting.No_preference,
+    features: {
+        scrollbars: false,
+        animations: false,
+    },
 };
