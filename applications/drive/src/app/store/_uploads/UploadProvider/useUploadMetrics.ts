@@ -75,7 +75,7 @@ export default function useUploadMetrics(isPaid: boolean, metricsModule = metric
 
     const uploadSucceeded = (shareId: string, numberOfErrors = 0) => {
         const shareType = getShareIdType(shareId);
-        const retry = numberOfErrors > 1;
+        const retry = numberOfErrors > 0;
 
         metricsModule.drive_upload_success_rate_total.increment({
             status: 'success',
