@@ -43,6 +43,10 @@ export const settingsEditRequest = withKey(`settings::edit`);
 
 export const aliasOptionsRequest = withKey(`alias::options`);
 export const aliasDetailsRequest = withKey(`alias::details`);
+export const aliasSyncEnableRequest = () => `alias::sync::enable`;
+export const aliasSyncPendingRequest = () => `alias::sync::pending`;
+export const aliasSyncStatusRequest = () => `alias::sync::status`;
+export const aliasSyncToggleStatusRequest = withItemKey(`alias::sync::status::toggle`);
 
 export const shareRemoveMemberRequest = withKey(`share::members::remove`);
 export const shareEditMemberRoleRequest = withKey(`share::members::edit-role`);
@@ -84,7 +88,3 @@ export const toggleAddressMonitorRequest = withKey(`monitor::toggle::address`);
 export const resolveAddressMonitorRequest = withKey(`monitor::resolve::address`);
 
 export const websiteRulesRequest = () => `rules::get`;
-
-export const aliasSyncEnableRequest = () => `alias::sync::enable`;
-export const aliasSyncRequest = () => `alias::sync::pending`;
-export const aliasStatusToggleRequest = withItemKey(`alias::status::toggle`);

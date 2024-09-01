@@ -12,11 +12,11 @@ import type {
     AliasMailbox,
     AliasOptions,
     AliasPending,
-    AliasSyncStatus,
     AliasToggleStatusDTO,
     CreatePendingAliasRequest,
     EnableSLSyncRequest,
     ItemRevisionContentsResponse,
+    SlSyncStatusOutput,
 } from '@proton/pass/types';
 import chunk from '@proton/utils/chunk';
 
@@ -60,13 +60,9 @@ export const getAliasDetails = async (shareId: string, itemId: string): Promise<
 export const getAliasCount = async (): Promise<number> =>
     (await api({ url: `pass/v1/user/alias/count`, method: 'get' }))?.AliasCount?.Total ?? 0;
 
-export const getAliasSyncStatus = async (): Promise<AliasSyncStatus> => {
-    const result = await api({ url: `pass/v1/alias_sync/status`, method: 'get' });
-
-    return {
-        enabled: result.SyncStatus!.Enabled,
-        pendingAliasCount: result.SyncStatus!.PendingAliasCount,
-    };
+export const getAliasSyncStatus = async (): Promise<SlSyncStatusOutput> => {
+    const result = (await api({ url: `pass/v1/alias_sync/status`, method: 'get' }))?.SyncStatus;
+    return result ?? { PendingAliasCount: 0, Enabled: false };
 };
 
 export const enableAliasSync = async (data: EnableSLSyncRequest) =>
