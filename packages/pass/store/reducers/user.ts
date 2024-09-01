@@ -2,6 +2,8 @@ import type { Reducer } from 'redux';
 
 import {
     aliasSyncEnable,
+    aliasSyncPending,
+    aliasSyncStatus,
     getUserAccessSuccess,
     getUserFeaturesSuccess,
     getUserSettings,
@@ -37,16 +39,17 @@ export type UserSettingsState = {
     };
 };
 
+export type UserData = {
+    defaultShareId: MaybeNull<string>;
+    aliasSyncEnabled: boolean;
+    pendingAliasToSync: number /** Always 0 if alias sync disabled */;
+};
+
 export type UserAccessState = {
     plan: MaybeNull<PassPlanResponse>;
     waitingNewUserInvites: number;
     monitor: MaybeNull<UserMonitorStatusResponse>;
-    userData?: {
-        defaultShareId: MaybeNull<string>;
-        aliasSyncEnabled: boolean;
-        /** Back-end will always 0 if aliasSyncEnabled = false */
-        pendingAliasToSync: number;
-    };
+    userData: UserData;
 };
 
 export type UserState = {
@@ -152,6 +155,17 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
 
     if (aliasSyncEnable.success.match(action)) {
         return partialMerge(state, { userData: { aliasSyncEnabled: true } });
+    }
+
+    if (aliasSyncStatus.success.match(action)) {
+        const { PendingAliasCount, Enabled } = action.payload;
+        return partialMerge(state, { userData: { pendingAliasToSync: PendingAliasCount, aliasSyncEnabled: Enabled } });
+    }
+
+    if (aliasSyncPending.success.match(action)) {
+        /** optimistically update the pending alias count on sync success */
+        const pendingAliasToSync = Math.max(0, state.userData.pendingAliasToSync - action.payload.items.length);
+        return partialMerge(state, { userData: { pendingAliasToSync } });
     }
 
     return state;

@@ -9,9 +9,10 @@ import { withNotification } from '@proton/pass/store/actions/enhancers/notificat
 import {
     aliasDetailsRequest,
     aliasOptionsRequest,
-    aliasStatusToggleRequest,
     aliasSyncEnableRequest,
-    aliasSyncRequest,
+    aliasSyncPendingRequest,
+    aliasSyncStatusRequest,
+    aliasSyncToggleStatusRequest,
 } from '@proton/pass/store/actions/requests';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
@@ -22,8 +23,10 @@ import type {
     ItemRevision,
     SelectedItem,
     ShareId,
+    SlSyncStatusOutput,
 } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
 export const getAliasOptionsIntent = createAction(
     'alias::options::get::intent',
@@ -98,12 +101,17 @@ export const aliasSyncEnable = requestActionsFactory<ShareId, boolean>('alias::s
 
 export const aliasSyncPending = requestActionsFactory<void, { items: ItemRevision[]; shareId: string }>(
     'alias::sync::pending'
-)({ requestId: aliasSyncRequest });
+)({ requestId: aliasSyncPendingRequest });
 
-export const aliasToggleStatus = requestActionsFactory<AliasToggleStatusDTO, SelectedItem & { item: ItemRevision }>(
-    'alias::status::toggle'
+export const aliasSyncStatus = requestActionsFactory<void, SlSyncStatusOutput, void>('alias::sync::status')({
+    requestId: aliasSyncStatusRequest,
+    success: { config: { maxAge: UNIX_MINUTE } },
+});
+
+export const aliasSyncStatusToggle = requestActionsFactory<AliasToggleStatusDTO, SelectedItem & { item: ItemRevision }>(
+    'alias::sync::status::toggle'
 )({
-    requestId: ({ shareId, itemId }) => aliasStatusToggleRequest(shareId, itemId),
+    requestId: ({ shareId, itemId }) => aliasSyncToggleStatusRequest(shareId, itemId),
     success: {
         prepare: ({ shareId, itemId, item }) =>
             pipe(
