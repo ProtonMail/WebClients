@@ -12,7 +12,6 @@ export enum OnboardingMessage {
     EARLY_ACCESS,
     PASS_MONITOR,
     PASS_MONITOR_LEARN_MORE,
-    USERNAME_TOOLTIP /* show once how to add username field when creating/editing a login item */,
 }
 
 export type OnboardingAcknowledgment = {
