@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import metrics from '@proton/metrics';
 import type { HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson } from '@proton/metrics/types/drive_download_errors_total_v2.schema';
@@ -8,6 +8,7 @@ import {
     getIsTimeoutError,
     getIsUnreachableError,
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
@@ -16,6 +17,8 @@ import { DownloadErrorCategory, MetricShareType } from '../../../utils/type/Metr
 import useSharesState from '../../_shares/useSharesState';
 import { getShareType } from '../../_uploads/UploadProvider/useUploadMetrics';
 import type { Download } from './interface';
+
+const REPORT_ERROR_USERS_EVERY = 5 * 60 * 1000; // 5 minutes
 
 export function getErrorCategory(state: TransferState, error: any): DownloadErrorCategoryType {
     if (getIsUnreachableError(error) || getIsTimeoutError(error)) {
@@ -32,18 +35,20 @@ export function getErrorCategory(state: TransferState, error: any): DownloadErro
     return DownloadErrorCategory.Unknown;
 }
 
+const getKey = (downloadId: string, retries: number) => `${downloadId}-${retries}`;
+
 export const useDownloadMetrics = (
-    initiator: HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson['Labels']['initiator']
+    initiator: HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson['Labels']['initiator'],
+    user?: UserModel
 ) => {
     const { getShare } = useSharesState();
     const [processed, setProcessed] = useState<Set<string>>(new Set());
+    const lastErroringUserReport = useRef(0);
 
     const getShareIdType = (shareId: string): MetricShareType => {
         const share = getShare(shareId);
         return getShareType(share);
     };
-
-    const getKey = (downloadId: string, retries: number) => `${downloadId}-${retries}`;
 
     const logDownloadError = (shareType: MetricShareType, state: TransferState, error?: Error) => {
         const errorCategory = getErrorCategory(state, error);
@@ -52,6 +57,34 @@ export const useDownloadMetrics = (
             shareType: shareType === MetricShareType.Own ? 'main' : shareType,
             initiator,
         });
+    };
+
+    const logSuccessRate = (shareType: MetricShareType, state: TransferState) => {
+        metrics.drive_download_success_rate_total.increment({
+            status: state === TransferState.Done ? 'success' : 'failure',
+            retry: 'false',
+            shareType: shareType === MetricShareType.Own ? 'main' : shareType,
+        });
+    };
+
+    const maybeLogUserError = (shareType: MetricShareType, isError: boolean) => {
+        if (isError && Date.now() - lastErroringUserReport.current > REPORT_ERROR_USERS_EVERY) {
+            metrics.drive_download_erroring_users_total.increment({
+                plan: user ? (user.isPaid ? 'paid' : 'free') : 'unknown',
+                shareType: shareType === MetricShareType.Own ? 'main' : shareType,
+            });
+            lastErroringUserReport.current = Date.now();
+        }
+    };
+
+    const logDownloadMetrics = (shareType: MetricShareType, state: TransferState, error?: Error) => {
+        logSuccessRate(shareType, state);
+        // These 2 states are final Error states
+        const isError = [TransferState.Error, TransferState.NetworkError].includes(state);
+        if (isError) {
+            logDownloadError(shareType, state, error);
+        }
+        maybeLogUserError(shareType, isError);
     };
 
     /*
@@ -65,19 +98,7 @@ export const useDownloadMetrics = (
             // These 3 states are final (we omit skipped and cancelled)
             if ([TransferState.Done, TransferState.Error, TransferState.NetworkError].includes(download.state)) {
                 if (!processed.has(key)) {
-                    metrics.drive_download_success_rate_total.increment({
-                        status: download.state === TransferState.Done ? 'success' : 'failure',
-                        retry: download.retries && download.retries > 0 ? 'true' : 'false',
-                        shareType: shareType === MetricShareType.Own ? 'main' : shareType,
-                    });
-
-                    // These 2 states are final Error states
-                    if ([TransferState.Error, TransferState.NetworkError].includes(download.state)) {
-                        if (!processed.has(key)) {
-                            logDownloadError(shareType, download.state, download.error);
-                        }
-                    }
-
+                    logDownloadMetrics(shareType, download.state, download.error);
                     setProcessed((prev) => new Set(prev.add(key)));
                 }
             }
@@ -89,16 +110,7 @@ export const useDownloadMetrics = (
      */
     const report = (shareId: string, state: TransferState.Done | TransferState.Error, error?: Error) => {
         const shareType = getShareIdType(shareId);
-
-        metrics.drive_download_success_rate_total.increment({
-            status: state === TransferState.Done ? 'success' : 'failure',
-            retry: 'false',
-            shareType: shareType === MetricShareType.Own ? 'main' : shareType,
-        });
-
-        if (state === TransferState.Error) {
-            logDownloadError(shareType, state, error);
-        }
+        logDownloadMetrics(shareType, state, error);
     };
 
     return {

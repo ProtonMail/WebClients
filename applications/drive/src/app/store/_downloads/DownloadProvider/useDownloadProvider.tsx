@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications, useOnline, usePreventLeave } from '@proton/components';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
@@ -29,10 +30,10 @@ import useDownloadQueue from './useDownloadQueue';
 import useDownloadScanIssue from './useDownloadScanIssue';
 import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 
-export default function useDownloadProvider(initDownload: InitDownloadCallback) {
+export default function useDownloadProvider(user: UserModel | undefined, initDownload: InitDownloadCallback) {
     const onlineStatus = useOnline();
     const { createNotification } = useNotifications();
-    const { observe } = useDownloadMetrics('download');
+    const { observe } = useDownloadMetrics('download', user);
     const { preventLeave } = usePreventLeave();
     const [downloadIsTooBigModal, showDownloadIsTooBigModal] = useDownloadIsTooBigModal();
 

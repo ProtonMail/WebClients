@@ -51,6 +51,7 @@ import type { HttpsProtonMeDriveUploadErrorsFileSizeHistogramV1SchemaJson } from
 import type { HttpsProtonMeDriveUploadErrorsTotalV2SchemaJson } from './types/drive_upload_errors_total_v2.schema';
 import type { HttpsProtonMeDriveUploadErrorsTransferSizeHistogramV1SchemaJson } from './types/drive_upload_errors_transfer_size_histogram_v1.schema';
 import type { HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson } from './types/drive_upload_success_rate_total_v1.schema';
+import type { HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson } from './types/drive_users_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveVolumeEventsSubscriptionsHistogramV1SchemaJson } from './types/drive_volume_events_subscriptions_histogram_v1.schema';
 import type { WebCoreDeleteAccountTotal } from './types/web_core_delete_account_total_v1.schema';
 import type { WebCoreLightLabellingImageProcessingTotal } from './types/web_core_lightLabelling_imageProcessing_total_v1.schema';
@@ -196,6 +197,8 @@ class Metrics extends MetricsBase {
     public drive_upload_errors_transfer_size_histogram: Histogram<HttpsProtonMeDriveUploadErrorsTransferSizeHistogramV1SchemaJson>;
 
     public drive_upload_success_rate_total: Counter<HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson>;
+
+    public drive_users_success_rate_total: Counter<HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson>;
 
     public drive_volume_events_subscriptions_histogram: Histogram<HttpsProtonMeDriveVolumeEventsSubscriptionsHistogramV1SchemaJson>;
 
@@ -543,6 +546,11 @@ class Metrics extends MetricsBase {
 
         this.drive_upload_success_rate_total = new Counter<HttpsProtonMeDriveUploadSuccessRateTotalV1SchemaJson>(
             { name: 'drive_upload_success_rate_total', version: 1 },
+            this.requestService
+        );
+
+        this.drive_users_success_rate_total = new Counter<HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson>(
+            { name: 'drive_users_success_rate_total', version: 1 },
             this.requestService
         );
 
