@@ -17,7 +17,6 @@ import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { useDisplayEmailUsernameFields } from '@proton/pass/hooks/useDisplayEmailUsernameFields';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
@@ -33,11 +32,11 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
         extraFields,
     } = useDeobfuscatedItem(item);
 
-    const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId) || secureLinkItem;
     const passwordStrength = usePasswordStrength(password);
-    const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername });
-    const showEmptyEmailOrUsername = !emailDisplay && !usernameDisplay;
+
+    const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
+    const showEmptyEmailOrUsername = !(itemEmail || itemUsername);
 
     return (
         <>
@@ -61,17 +60,17 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                     <ValueControl clickToCopy icon="user" label={c('Label').t`Email or username`} />
                 )}
 
-                {!showEmptyEmailOrUsername && (emailDisplay || !usernameDisplay) && (
+                {itemEmail && (
                     <ValueControl
                         clickToCopy
                         icon={relatedAlias ? 'alias' : 'envelope'}
                         label={relatedAlias ? c('Label').t`Email (alias)` : c('Label').t`Email`}
-                        value={emailDisplay}
+                        value={itemEmail}
                     />
                 )}
 
-                {usernameDisplay && (
-                    <ValueControl clickToCopy icon="user" label={c('Label').t`Username`} value={usernameDisplay} />
+                {itemUsername && (
+                    <ValueControl clickToCopy icon="user" label={c('Label').t`Username`} value={itemUsername} />
                 )}
 
                 <ValueControl
