@@ -37,6 +37,7 @@ export interface FileBrowserBaseItem {
     linkId: string;
     isLocked?: boolean;
     isInvitation?: boolean;
+    isBookmark?: boolean;
     itemRowStyle?: React.CSSProperties;
 }
 
