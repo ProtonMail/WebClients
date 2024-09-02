@@ -236,7 +236,7 @@ const ComposerActions = ({
                 </ComposerScheduleSendSpotlight>
 
                 <div className="flex flex-1">
-                    <div className="flex gap-1">
+                    <div className="flex gap-1 md:gap-2">
                         {!isSmallViewport && (
                             <>
                                 <Tooltip title={titleDeleteDraft}>
