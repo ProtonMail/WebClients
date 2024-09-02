@@ -54,7 +54,7 @@ textarea {
 		}
 
 		&:hover::before {
-			background-color: white;
+			background-color: var(--interaction-weak-contrast);
 		}
 
 		&.toggle-container--checked {
@@ -66,7 +66,15 @@ textarea {
 
 			&:hover {
 				&::before {
-					background-color: white;
+					background-color: var(--interaction-weak-contrast);
+				}
+			}
+
+			&.toggle-container--loading {
+				background-color: var(--interaction-norm);
+
+				&::before {
+					background-color: var(--interaction-weak-contrast);
 				}
 			}
 		}
@@ -74,7 +82,11 @@ textarea {
 
 	.toggle-container-text {
 		svg {
-			display: none;
+			color: var(--interaction-norm);
+
+			&:not(.circle-loader) {
+				display: none;
+			}
 		}
 	}
 }
