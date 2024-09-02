@@ -2,7 +2,6 @@ import type { MaybeNull } from '@proton/pass/types/utils';
 
 export enum PassFeature {
     PassEnableDesktopAutoUpdate = 'PassEnableDesktopAutoUpdate',
-    PassUsernameSplit = 'PassUsernameSplit',
     PassWebInternalAlpha = 'PassWebInternalAlpha',
     PassWebOfflineMode = 'PassWebOfflineMode',
     PassIdentityV1 = 'PassIdentityV1',
