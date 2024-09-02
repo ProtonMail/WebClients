@@ -4,7 +4,6 @@ import clsx from '@proton/utils/clsx';
 
 import type { useBookmarksPublicView } from '../../../store';
 import { useDownloadScanFlag } from '../../../store';
-import { useDriveShareURLBookmarkingFeatureFlag } from '../../../store/_bookmarks/useDriveShareURLBookmarking';
 import { useSelection } from '../../FileBrowser';
 import { getSelectedItems } from '../../sections/helpers';
 import { SaveToDriveButton } from '../Bookmarks/SaveToDriveButton';
@@ -15,14 +14,21 @@ interface Props extends DownloadButtonProps {
     children: React.ReactNode;
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     className?: string;
+    hideSaveToDrive?: boolean;
 }
 
-export default function SharedPageHeader({ children, rootItem, items, bookmarksPublicView, className }: Props) {
+export default function SharedPageHeader({
+    children,
+    rootItem,
+    items,
+    bookmarksPublicView,
+    className,
+    hideSaveToDrive = false,
+}: Props) {
     const isDownloadScanEnabled = useDownloadScanFlag();
     const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection();
     const { isLoggedIn, isAlreadyBookmarked, addBookmark, isLoading, urlPassword } = bookmarksPublicView;
-    const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
 
     const selectedItems = getSelectedItems(items || [], selectionControls?.selectedItemIds || []);
 
@@ -44,7 +50,7 @@ export default function SharedPageHeader({ children, rootItem, items, bookmarksP
                         isScanAndDownload={isDownloadScanEnabled}
                         disabled={hasOnlyDocuments}
                     />
-                    {isDriveShareUrlBookmarkingEnabled && (
+                    {!hideSaveToDrive && (
                         <SaveToDriveButton
                             loading={isLoading}
                             onClick={addBookmark}

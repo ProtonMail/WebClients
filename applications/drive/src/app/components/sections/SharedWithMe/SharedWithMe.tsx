@@ -8,7 +8,7 @@ import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
 import type { EncryptedLink, useSharedWithMeView } from '../../../store';
-import { useThumbnailsDownload } from '../../../store';
+import { useBookmarksActions, useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import type { ExtendedInvitationDetails } from '../../../store/_links/useLinksListing/usePendingInvitationsListing';
 import { SortField } from '../../../store/_views/utils/useSorting';
@@ -40,6 +40,7 @@ export interface SharedWithMeItem extends FileBrowserBaseItem {
     sharedBy?: string;
     parentLinkId: string;
     invitationDetails?: ExtendedInvitationDetails;
+    bookmarkDetails?: { token: string; createTime: number; urlPassword: string };
     acceptInvitation?: (invitationId: string) => Promise<void>;
     rejectInvitation?: (invitationId: string) => Promise<void>;
 }
@@ -81,12 +82,14 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
     const { navigateToLink } = useNavigate();
+
     const browserItemContextMenu = useItemContextMenu();
     const thumbnails = useThumbnailsDownload();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
     const { canUseDocs } = useDriveDocsFeatureFlag();
+    const { openBookmark } = useBookmarksActions();
 
     const { layout, items, sortParams, setSorting, isLoading, acceptPendingInvitation, rejectPendingInvitation } =
         sharedWithMeView;
@@ -110,8 +113,14 @@ const SharedWithMe = ({ sharedWithMeView }: Props) => {
     const handleClick = useCallback(
         (id: BrowserItemId) => {
             const item = itemsWithAcceptReject.find((item) => item.id === id);
-
             if (!item || item.isInvitation) {
+                return;
+            }
+            if (item.isBookmark && item.bookmarkDetails) {
+                void openBookmark({
+                    token: item.bookmarkDetails.token,
+                    urlPassword: item.bookmarkDetails.urlPassword,
+                });
                 return;
             }
             document.getSelection()?.removeAllRanges();

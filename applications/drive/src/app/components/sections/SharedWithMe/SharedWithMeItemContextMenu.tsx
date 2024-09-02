@@ -7,9 +7,11 @@ import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
 import { DetailsButton, DownloadButton, OpenInDocsButton, PreviewButton } from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
-import { RemoveMeButton } from './ContextMenuButtons';
 import { AcceptButton } from './ContextMenuButtons/AcceptButton';
 import { DeclineButton } from './ContextMenuButtons/DeclineButton';
+import { OpenBookmarkButton } from './ContextMenuButtons/OpenBookmarkButton';
+import { RemoveBookmarkButton } from './ContextMenuButtons/RemoveBookmarkButton';
+import { RemoveMeButton } from './ContextMenuButtons/RemoveMeButton';
 import type { SharedWithMeItem } from './SharedWithMe';
 
 export function SharedWithMeContextMenu({
@@ -39,7 +41,7 @@ export function SharedWithMeContextMenu({
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
-                {selectedBrowserItem && !selectedBrowserItem.isInvitation && (
+                {selectedBrowserItem && !selectedBrowserItem.isInvitation && !selectedBrowserItem.isBookmark && (
                     <>
                         {hasPreviewAvailable && (
                             <PreviewButton
@@ -68,6 +70,21 @@ export function SharedWithMeContextMenu({
                                 />
                             </>
                         )}
+                    </>
+                )}
+                {selectedBrowserItem?.isBookmark && selectedBrowserItem.bookmarkDetails && (
+                    <>
+                        <OpenBookmarkButton
+                            token={selectedBrowserItem.bookmarkDetails.token}
+                            urlPassword={selectedBrowserItem.bookmarkDetails.urlPassword}
+                            close={close}
+                        />
+                        <RemoveBookmarkButton
+                            token={selectedBrowserItem.bookmarkDetails.token}
+                            linkId={selectedBrowserItem.linkId}
+                            showConfirmModal={showConfirmModal}
+                            close={close}
+                        />
                     </>
                 )}
                 {selectedBrowserItem?.acceptInvitation &&

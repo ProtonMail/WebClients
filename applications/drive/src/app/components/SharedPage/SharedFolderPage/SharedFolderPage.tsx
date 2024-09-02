@@ -7,7 +7,7 @@ import FilePreview from '@proton/components/containers/filePreview/FilePreview';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DecryptedLink } from '../../../store';
-import { useBookmarksPublicView, useDownload, usePublicFolderView } from '../../../store';
+import { type useBookmarksPublicView, useDownload, usePublicFolderView } from '../../../store';
 import { usePublicFileView } from '../../../store/_views/useFileView';
 import type { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
@@ -25,6 +25,8 @@ import SharedFileBrowser from './FileBrowser';
 interface Props {
     token: string;
     rootLink: DecryptedLink;
+    bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
+    hideSaveToDrive?: boolean;
 }
 
 interface PreviewContainerProps {
@@ -87,14 +89,13 @@ function SharedPagePreviewContainer({
     );
 }
 
-export default function SharedFolder({ token, rootLink }: Props) {
+export default function SharedFolder({ bookmarksPublicView, token, rootLink, hideSaveToDrive = false }: Props) {
     const [linkId, setLinkId] = useState(rootLink.linkId);
     const folderView = usePublicFolderView(token, linkId);
     const { downloads, getDownloadsLinksProgresses, download } = useDownload();
     const [fileBrowserItems, setFileBrowserItems] = useState<PublicLink[]>([]);
     const [displayedLink, setDiplayedLink] = useState<DecryptedLink | undefined>();
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
-    const bookmarksPublicView = useBookmarksPublicView();
 
     const onItemOpen = (item: DecryptedLink) => {
         if (item.isFile) {
@@ -205,6 +206,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
                         rootItem={rootLink}
                         items={fileBrowserItems}
                         bookmarksPublicView={bookmarksPublicView}
+                        hideSaveToDrive={hideSaveToDrive}
                     />
                 }
             >
@@ -212,6 +214,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
                     rootItem={rootLink}
                     items={fileBrowserItems}
                     bookmarksPublicView={bookmarksPublicView}
+                    hideSaveToDrive={hideSaveToDrive}
                     className="mt-7 mb-8"
                 >
                     <div className="max-w-full flex items-center">
