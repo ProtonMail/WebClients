@@ -156,6 +156,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                             return [
                                 <Button
                                     color="weak"
+                                    key="button-cancel"
                                     onClick={() => {
                                         if (changeDetected) {
                                             setDiscardChangesModal(true);
@@ -304,6 +305,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     member={member}
                                     handleRemoveNewMember={handleRemoveNewGroupMember}
                                     submitting={loading}
+                                    key={member.Address}
                                 />
                             );
                         })}
