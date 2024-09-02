@@ -26,3 +26,4 @@ export const selectExtraPasswordEnabled = ({ settings }: State) => settings.extr
 export const selectBetaEnabled = ({ settings }: State) => settings.beta ?? false;
 export const selectLockMode = ({ settings }: State) => settings.lockMode ?? LockMode.NONE;
 export const selectLockEnabled = pipe(selectLockMode, (mode) => mode !== LockMode.NONE);
+export const selectShowUsernameField = ({ settings }: State) => settings.showUsernameField;
