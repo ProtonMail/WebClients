@@ -22,7 +22,6 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/p
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useDisplayEmailUsernameFields } from '@proton/pass/hooks/useDisplayEmailUsernameFields';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
@@ -31,7 +30,6 @@ import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { itemCreationIntent } from '@proton/pass/store/actions';
 import { selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { arrayRemove } from '@proton/pass/utils/array/remove';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -44,7 +42,6 @@ const FORM_ID = 'edit-login';
 export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault, onSubmit, onCancel }) => {
     const dispatch = useDispatch();
     const { needsUpgrade } = useSelector(selectTOTPLimits);
-    const usernameSplit = useFeatureFlag(PassFeature.PassUsernameSplit);
 
     const { domain, subdomain } = url ?? {};
     const { shareId } = vault;
@@ -52,7 +49,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
     const { itemEmail, itemUsername } = content;
 
-    const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername }, usernameSplit);
+    const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername });
 
     const initialValues: LoginItemFormValues = {
         aliasPrefix: '',
@@ -155,7 +152,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                 shareId,
             });
         },
-        validate: (values) => validateLoginForm({ values, shouldValidateEmail: usernameSplit }),
+        validate: (values) => validateLoginForm({ values }),
         validateOnChange: true,
         validateOnMount: true,
     });
