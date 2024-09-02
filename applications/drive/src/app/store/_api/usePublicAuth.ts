@@ -24,6 +24,8 @@ export default function usePublicAuth(token: string, urlPassword: string) {
     const [error, setError] = useState<[unknown, string]>([, '']);
 
     const [isPasswordNeeded, setIsPasswordNeeded] = useState(false);
+    const [savedCustomedPassword, setSavedCustomPassword] = useState<string>('');
+    const [isLegacy, setIsLegacy] = useState<boolean>(false);
 
     /**
      * handleInitialLoadError processes error from initializing handshake
@@ -67,7 +69,10 @@ export default function usePublicAuth(token: string, urlPassword: string) {
 
         void withLoading(
             initHandshake(token)
-                .then(({ handshakeInfo, hasCustomPassword }) => {
+                .then(({ handshakeInfo, isLegacySharedUrl, hasCustomPassword }) => {
+                    if (isLegacySharedUrl) {
+                        setIsLegacy(true);
+                    }
                     if (hasCustomPassword) {
                         setIsPasswordNeeded(true);
                         return;
@@ -92,7 +97,12 @@ export default function usePublicAuth(token: string, urlPassword: string) {
             .then(async ({ handshakeInfo, hasGeneratedPasswordIncluded }) => {
                 const password = hasGeneratedPasswordIncluded ? urlPassword + customPassword : customPassword;
                 return initSession(token, password, handshakeInfo)
-                    .then(() => setIsPasswordNeeded(false))
+                    .then(() => {
+                        setIsPasswordNeeded(false);
+                        if (customPassword) {
+                            setSavedCustomPassword(customPassword);
+                        }
+                    })
                     .catch((error) => {
                         const apiError = getApiError(error);
                         if (apiError.code === ERROR_CODE_INVALID_SRP_PARAMS) {
@@ -112,7 +122,9 @@ export default function usePublicAuth(token: string, urlPassword: string) {
 
     return {
         isLoading,
+        customPassword: savedCustomedPassword,
         error,
+        isLegacy,
         isPasswordNeeded,
         submitPassword,
     };

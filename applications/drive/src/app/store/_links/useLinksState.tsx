@@ -162,6 +162,7 @@ export function useLinksStateProvider() {
         getTrashed,
         getSharedByLink,
         getSharedWithMeByLink,
+        getAllShareLinks, // This should be use only in specific case when you know the links you need (Ex: Bookmarks)
         removeLinkForMigration,
         removeLinkForSharedWithMe,
     };
