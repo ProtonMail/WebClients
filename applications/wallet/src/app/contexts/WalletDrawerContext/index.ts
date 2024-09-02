@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react';
 
-import { noop } from 'lodash';
+import noop from 'lodash/noop';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import type { IWasmApiWalletData } from '@proton/wallet';
