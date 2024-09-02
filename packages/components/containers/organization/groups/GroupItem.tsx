@@ -9,8 +9,6 @@ import clsx from '@proton/utils/clsx';
 
 import GroupItemMoreOptionsDropdown from './GroupItemMoreOptionsDropdown';
 
-import './GroupItem.scss';
-
 interface Props {
     active: boolean;
     groupData: Group;
@@ -48,7 +46,7 @@ const GroupItem = ({
             >
                 <div className="text-left flex items-start flex-nowrap">
                     <div
-                        className="mr-2 mb-2 rounded flex w-custom h-custom group-item-avatar shrink-0 "
+                        className="mr-2 mb-2 rounded flex w-custom h-custom shrink-0 "
                         style={{
                             '--w-custom': '1.75rem',
                             '--h-custom': '1.75rem',

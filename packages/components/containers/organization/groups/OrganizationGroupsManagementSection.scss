@@ -10,12 +10,3 @@
 section:has(> .groups-management) {
 	flex-grow: 1;
 }
-
-.groups-management .pass-field-box {
-	border: 1px solid var(--border-norm);
-	background-color: var(--sidebar-background-color);
-}
-
-.groups-management form > fieldset {
-	margin-block-start: var(--space-2);
-}
