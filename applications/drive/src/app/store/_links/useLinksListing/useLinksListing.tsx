@@ -231,7 +231,6 @@ export function useLinksListingProvider() {
                     pageLinkIds,
                     options.loadThumbnails
                 );
-
                 const cached = await cacheLoadedLinks(abortSignal, shareId, links, parents);
 
                 if (cached.errors.length > 0) {
@@ -333,6 +332,11 @@ export function useLinksListingProvider() {
                 links.forEach((link) => {
                     if (!link.shareId) {
                         return;
+                    }
+                    // TODO: This a hack to make shared with me section work when we receive parentLinkId on links.
+                    // This should be removed with this ticket: DRVWEB-4195
+                    if (options.removeParentLinkId) {
+                        link.parentLinkId = '';
                     }
                     const value = shareIdsWithLinks.get(link.shareId);
                     if (value) {
