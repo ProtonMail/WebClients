@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { first } from 'lodash';
+import first from 'lodash/first';
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';

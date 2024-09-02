@@ -2,7 +2,6 @@ import { type FC, type ReactElement, useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import type { FormikContextType } from 'formik';
-import { noop } from 'lodash';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
@@ -25,6 +24,7 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import { merge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { parseUrl } from '@proton/pass/utils/url/parser';
+import noop from '@proton/utils/noop';
 
 import './Login.edit.credentials.scss';
 

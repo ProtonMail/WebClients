@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { groupBy } from 'lodash';
+import groupBy from 'lodash/groupBy';
 import { c, msgid } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';

@@ -1,4 +1,4 @@
-import { round } from 'lodash';
+import round from 'lodash/round';
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmBitcoinUnit, WasmFiatCurrencySymbol, WasmNetwork } from '@proton/andromeda';

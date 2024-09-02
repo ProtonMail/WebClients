@@ -1,16 +1,17 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+// eslint-disable-next-line lodash/import-scope
 import template from 'lodash.template';
 import path from 'path';
-import webpack from 'webpack';
+import type webpack from 'webpack';
 import 'webpack-dev-server';
 
 import getConfig from '@proton/pack/webpack.config';
 import CopyIndexHtmlWebpackPlugin from '@proton/pack/webpack/copy-index-html-webpack-plugin';
 import { addDevEntry, getIndexChunks, getSupportedEntry } from '@proton/pack/webpack/entries';
 
-import { HrefLang } from './pages/interface';
+import type { HrefLang } from './pages/interface';
 import { getPages } from './pages/pages';
-import { Parameters } from './src/pages/interface';
+import type { Parameters } from './src/pages/interface';
 
 const getTemplateParameters = (
     originalTemplateParameters: any,
