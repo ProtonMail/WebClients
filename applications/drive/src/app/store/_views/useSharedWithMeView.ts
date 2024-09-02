@@ -10,6 +10,7 @@ import type { SortParams } from '../../components/FileBrowser';
 import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
 import { useLink, useLinksListing } from '../_links';
 import { usePendingInvitationsListing } from '../_links/useLinksListing/usePendingInvitationsListing';
 import { useUserSettings } from '../_settings';
@@ -36,6 +37,8 @@ const DEFAULT_SORT = {
 export default function useSharedWithMeView(shareId: string) {
     const [isLoading, withLoading] = useLoading(true);
     const [isPendingLoading, withPendingLoading] = useLoading(true);
+    const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
+    const [isBookmarksLoading, withBookmarksLoading] = useLoading(isDriveShareUrlBookmarkingEnabled);
     const linksListing = useLinksListing();
     const { setVolumeShareIds } = useVolumesState();
     const { getLink } = useLink();
@@ -56,8 +59,10 @@ export default function useSharedWithMeView(shareId: string) {
     }, []); //TODO: No deps params as too much work needed in linksListing
     const abortSignal = useAbortSignal([]);
     const { links: sharedLinks, isDecrypting } = linksListing.getCachedSharedWithMeLink(abortSignal);
+    const { links: bookmarksLinks, isDecrypting: isDecryptingBookmarks } =
+        linksListing.getCachedBookmarksLinks(abortSignal);
 
-    const cachedSharedLinks = useMemoArrayNoMatterTheOrder(sharedLinks);
+    const cachedSharedLinks = useMemoArrayNoMatterTheOrder(sharedLinks.concat(bookmarksLinks));
 
     const { layout } = useUserSettings();
 
@@ -72,7 +77,14 @@ export default function useSharedWithMeView(shareId: string) {
     );
 
     const browserItems: SharedWithMeItem[] = sortedList.reduce<SharedWithMeItem[]>((acc, item) => {
-        acc.push({ ...item, id: item.rootShareId });
+        // rootShareId is equivalent of token in this context
+        const bookmarkDetails = linksListing.getCachedBookmarkDetails(item.rootShareId);
+        acc.push({
+            ...item,
+            id: item.rootShareId,
+            isBookmark: !!bookmarkDetails,
+            bookmarkDetails: bookmarkDetails ?? undefined,
+        });
         return acc;
     }, []);
 
@@ -192,8 +204,13 @@ export default function useSharedWithMeView(shareId: string) {
     useEffect(() => {
         // Even if the user is going into a folder, we keep shared with me items decryption ongoing in the background
         // This is due to issue with how we decrypt stuff, to prevent infinite loop
-        void withLoading(async () => loadSharedWithMeLinks(new AbortController().signal)).catch(sendErrorReport);
+        void withLoading(async () => loadSharedWithMeLinks(abortSignal)).catch(sendErrorReport);
         void withPendingLoading(async () => loadPendingInvitations(abortSignal)).catch(sendErrorReport);
+        if (isDriveShareUrlBookmarkingEnabled) {
+            void withBookmarksLoading(async () => linksListing.loadLinksBookmarks(abortSignal, shareId)).catch(
+                sendErrorReport
+            );
+        }
     }, []);
 
     return {
@@ -210,6 +227,12 @@ export default function useSharedWithMeView(shareId: string) {
         },
         acceptPendingInvitation,
         rejectPendingInvitation,
-        isLoading: isLoading || isPendingLoading || isDecrypting || isShareInfoLoading,
+        isLoading:
+            isLoading ||
+            isPendingLoading ||
+            isDecrypting ||
+            isShareInfoLoading ||
+            isBookmarksLoading ||
+            isDecryptingBookmarks,
     };
 }

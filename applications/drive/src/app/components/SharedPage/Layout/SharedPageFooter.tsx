@@ -1,7 +1,7 @@
 import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import type { useBookmarksPublicView } from '../../../store';
-import { useDownload, useDownloadScanFlag, useDriveShareURLBookmarkingFeatureFlag } from '../../../store';
+import { useDownload, useDownloadScanFlag } from '../../../store';
 import { SaveToDriveButton } from '../Bookmarks/SaveToDriveButton';
 import type { DownloadButtonProps } from './DownloadButton';
 import { DownloadButton } from './DownloadButton';
@@ -9,13 +9,13 @@ import ReportAbuseButton from './ReportAbuseButton';
 
 interface Props extends DownloadButtonProps {
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
+    hideSaveToDrive?: boolean;
 }
-const SharedPageFooter = ({ rootItem, items, bookmarksPublicView }: Props) => {
+const SharedPageFooter = ({ rootItem, items, bookmarksPublicView, hideSaveToDrive = false }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
     const { hasDownloads } = useDownload();
     const isDownloadScanEnabled = useDownloadScanFlag();
     const { isLoading, addBookmark, isAlreadyBookmarked, urlPassword, isLoggedIn } = bookmarksPublicView;
-    const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
 
     if (viewportWidth['<=small']) {
         // Hide download button if transfer modal is present
@@ -30,7 +30,7 @@ const SharedPageFooter = ({ rootItem, items, bookmarksPublicView }: Props) => {
                     isScanAndDownload={isDownloadScanEnabled}
                     color="weak"
                 />
-                {isDriveShareUrlBookmarkingEnabled && (
+                {!hideSaveToDrive && (
                     <SaveToDriveButton
                         loading={isLoading}
                         onClick={addBookmark}

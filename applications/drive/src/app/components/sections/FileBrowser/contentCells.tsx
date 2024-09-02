@@ -194,6 +194,26 @@ export const ShareOptionsCell = ({ item }: { item: DriveItem }) => {
 export const SharedByCell = ({ item }: { item: SharedWithMeItem }) => {
     const [contactEmails] = useContactEmails();
 
+    if (item.isBookmark) {
+        return (
+            <TableCell className="flex flex-nowrap items-center m-0 w-1/5" data-testid="column-shared-by">
+                <>
+                    <Avatar
+                        color="weak"
+                        className="mr-2 min-w-custom max-w-custom max-h-custom"
+                        style={{
+                            '--min-w-custom': '1.75rem',
+                            '--max-w-custom': '1.75rem',
+                            '--max-h-custom': '1.75rem',
+                        }}
+                    >
+                        <Icon className="color-weak" name="globe" />
+                    </Avatar>
+                    <span className="text-ellipsis color-weak">{c('Info').t`Public link`}</span>
+                </>
+            </TableCell>
+        );
+    }
     const email = item.sharedBy;
     const contactEmail = contactEmails?.find((contactEmail) => contactEmail.Email === email);
     const displayName = email && contactEmails && contactEmail ? contactEmail.Name : email;
@@ -220,9 +240,16 @@ export const SharedByCell = ({ item }: { item: SharedWithMeItem }) => {
 };
 
 export const SharedOnCell = ({ item }: { item: SharedWithMeItem }) => {
+    const time = item.bookmarkDetails?.createTime || item.sharedOn;
     return (
         <TableCell className="flex items-center m-0 w-1/6" data-testid="column-share-created">
-            {item.sharedOn && <TimeCell time={item.sharedOn} />}
+            {time && (
+                <TimeCell
+                    time={time}
+                    options={item.isBookmark ? { month: 'long', day: 'numeric', year: 'numeric' } : undefined}
+                    sameDayOptions={item.isBookmark ? { month: 'long', day: 'numeric', year: 'numeric' } : undefined}
+                />
+            )}
         </TableCell>
     );
 };
