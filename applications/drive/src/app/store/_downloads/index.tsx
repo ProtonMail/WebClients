@@ -1,5 +1,8 @@
+import { useUser } from '@proton/components/hooks';
 import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 
+import { useUserIfAuthenticated } from '../../hooks/util/useUserIfAuthenticated';
+import { usePublicSession } from '../_api';
 import { DownloadProvider } from './DownloadProvider';
 import { ThumbnailsDownloadProvider } from './ThumbnailDownloadProvider';
 import useDownload from './useDownload';
@@ -12,6 +15,7 @@ export { useDownloadScanFlag } from './useDownloadScanFeatureFlag';
 
 export function DownloadsProvider({ children }: { children: React.ReactNode }) {
     const { initDownload, downloadThumbnail } = useDownload();
+    const [user] = useUser();
 
     const downloadThumbnailsCb = async (
         signal: AbortSignal,
@@ -40,7 +44,7 @@ export function DownloadsProvider({ children }: { children: React.ReactNode }) {
     };
 
     return (
-        <DownloadProvider initDownload={initDownload}>
+        <DownloadProvider user={user} initDownload={initDownload}>
             <ThumbnailsDownloadProvider downloadThumbnail={downloadThumbnailsCb}>{children}</ThumbnailsDownloadProvider>
         </DownloadProvider>
     );
@@ -48,6 +52,8 @@ export function DownloadsProvider({ children }: { children: React.ReactNode }) {
 
 export function PublicDownloadsProvider({ children }: { children: React.ReactNode }) {
     const { initDownload, downloadThumbnail } = usePublicDownload();
+    const { getSessionInfo, isSessionProtonUser } = usePublicSession();
+    const { user } = useUserIfAuthenticated(isSessionProtonUser(), getSessionInfo()?.sessionUid);
 
     const downloadThumbnailsCb = async (
         signal: AbortSignal,
@@ -65,7 +71,7 @@ export function PublicDownloadsProvider({ children }: { children: React.ReactNod
     };
 
     return (
-        <DownloadProvider initDownload={initDownload}>
+        <DownloadProvider user={user} initDownload={initDownload}>
             <ThumbnailsDownloadProvider downloadThumbnail={downloadThumbnailsCb}>{children}</ThumbnailsDownloadProvider>
         </DownloadProvider>
     );

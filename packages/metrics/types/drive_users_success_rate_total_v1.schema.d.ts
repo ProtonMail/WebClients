@@ -6,12 +6,15 @@
  */
 
 /**
- * Measures how many users experienced download error in the past 10 minutes
+ * Users success rate (every 5min)
  */
-export interface HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson {
+export interface HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson {
   Labels: {
     plan: "free" | "paid" | "unknown";
-    shareType: "main" | "device" | "photo" | "shared" | "shared_public";
+    coreFeatureError: "true" | "false";
+    recoveredError: "true" | "false";
+    handledError: "true" | "false";
+    unhandledError: "true" | "false";
   };
   Value: number;
 }
