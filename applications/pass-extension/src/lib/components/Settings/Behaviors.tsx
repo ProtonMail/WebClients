@@ -156,6 +156,13 @@ const getSettings =
                         checked: settings.loadDomainImages,
                         onChange: (loadDomainImages) => onSettingsUpdate({ loadDomainImages }),
                     },
+                    {
+                        label: c('Label').t`Always show username field`,
+                        description: c('Info')
+                            .t`When creating/editing a Login on ${PASS_APP_NAME} the 'username' input will always be visible.`,
+                        checked: Boolean(settings.showUsernameField),
+                        onChange: (showUsernameField) => onSettingsUpdate({ showUsernameField }),
+                    },
                 ],
             },
         ];
