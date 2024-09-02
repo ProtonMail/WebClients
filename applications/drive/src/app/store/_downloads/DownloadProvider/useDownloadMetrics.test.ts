@@ -15,6 +15,9 @@ jest.mock('@proton/metrics', () => ({
     drive_download_errors_total: {
         increment: jest.fn(),
     },
+    drive_download_erroring_users_total: {
+        increment: jest.fn(),
+    },
 }));
 
 jest.mock('../../_shares/useSharesState', () => ({
@@ -210,5 +213,54 @@ describe('useDownloadMetrics', () => {
             initiator: 'download',
             shareType: 'main',
         });
+    });
+
+    it('should only report failed users every 5min', () => {
+        jest.useFakeTimers().setSystemTime(new Date('2020-01-01 10:00:00'));
+        mockGetShare.mockReturnValue({ type: ShareType.default });
+        const { result } = renderHook(() => useDownloadMetrics('download'));
+
+        act(() => {
+            result.current.observe([
+                {
+                    id: '2',
+                    state: TransferState.Error,
+                    links: [{ shareId: 'share2' }],
+                    error: { statusCode: 500 },
+                },
+            ] as unknown as Download[]);
+        });
+        expect(metrics.drive_download_erroring_users_total.increment).toHaveBeenCalledWith({
+            plan: 'unknown',
+            shareType: 'main',
+        });
+
+        // 1 min passed
+        jest.useFakeTimers().setSystemTime(new Date('2020-01-01 10:01:00'));
+        act(() => {
+            result.current.observe([
+                {
+                    id: '234',
+                    state: TransferState.Error,
+                    links: [{ shareId: 'share234' }],
+                    error: { statusCode: 500 },
+                },
+            ] as unknown as Download[]);
+        });
+        expect(metrics.drive_download_erroring_users_total.increment).toHaveBeenCalledTimes(1);
+
+        // 4min and 1 second passed
+        jest.useFakeTimers().setSystemTime(new Date('2020-01-01 10:05:01'));
+        act(() => {
+            result.current.observe([
+                {
+                    id: '789',
+                    state: TransferState.Error,
+                    links: [{ shareId: 'abc' }],
+                    error: { statusCode: 500 },
+                },
+            ] as unknown as Download[]);
+        });
+        expect(metrics.drive_download_erroring_users_total.increment).toHaveBeenCalledTimes(2);
     });
 });
