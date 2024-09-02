@@ -221,10 +221,7 @@ export const getApiSubdomainUrl = (pathname: string, origin: string) => {
     const url = new URL('', origin);
 
     const usePathPrefix =
-        url.hostname === 'localhost' ||
-        getIsDohDomain(url.origin) ||
-        doesHostnameLookLikeIP(url.hostname) ||
-        getIsConvertHostname(url.hostname);
+        url.hostname === 'localhost' || getIsDohDomain(url.origin) || doesHostnameLookLikeIP(url.hostname);
     if (usePathPrefix) {
         url.pathname = `/api${pathname}`;
         return url;
