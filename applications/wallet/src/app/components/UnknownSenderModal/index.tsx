@@ -1,7 +1,7 @@
 import type { ChangeEvent } from 'react';
 import { useCallback, useEffect, useState } from 'react';
 
-import { compact } from 'lodash';
+import compact from 'lodash/compact';
 import { c } from 'ttag';
 
 import type { WasmApiWalletTransaction } from '@proton/andromeda';

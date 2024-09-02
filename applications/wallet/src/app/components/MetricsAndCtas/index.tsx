@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 import { Line } from 'react-chartjs-2';
 
 import { type ChartOptions } from 'chart.js';
-import { first, last } from 'lodash';
+import first from 'lodash/first';
+import last from 'lodash/last';
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount, WasmPriceGraph } from '@proton/andromeda';

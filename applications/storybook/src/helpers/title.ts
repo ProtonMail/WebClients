@@ -1,7 +1,7 @@
-import _startcase from 'lodash.startcase';
+import startCase from 'lodash/startCase';
 
 const caseString = (str: string, caseFilename: boolean = true) => {
-    // avoid _startcase stripping the '/'
+    // avoid startCase stripping the '/'
     return str
         .split('/')
         .map((item, index, arr) => {
@@ -9,7 +9,7 @@ const caseString = (str: string, caseFilename: boolean = true) => {
                 return item;
             }
 
-            return _startcase(item);
+            return startCase(item);
         })
         .join('/');
 };

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { uniqBy } from 'lodash';
+import uniqBy from 'lodash/uniqBy';
 import { c } from 'ttag';
 
 import type { WasmApiCountry } from '@proton/andromeda';

@@ -23,6 +23,7 @@ module.exports = {
         'no-only-tests',
         'jsx-a11y',
         'custom-rules',
+        'lodash',
     ],
     rules: {
         '@typescript-eslint/array-type': [
@@ -200,6 +201,7 @@ module.exports = {
         'custom-rules/deprecate-classes': 'warn',
         'custom-rules/no-template-in-translator-context': 'error',
         '@typescript-eslint/consistent-type-imports': 'error',
+        'lodash/import-scope': [2, 'method'],
     },
     settings: {
         'import/resolver': {

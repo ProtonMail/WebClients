@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { groupBy } from 'lodash';
+import groupBy from 'lodash/groupBy';
 
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 import clsx from '@proton/utils/clsx';

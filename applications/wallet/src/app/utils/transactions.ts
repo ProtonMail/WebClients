@@ -1,5 +1,5 @@
 import { format, isSameWeek, isToday } from 'date-fns';
-import { compact } from 'lodash';
+import compact from 'lodash/compact';
 import { c } from 'ttag';
 
 import type { WasmTransactionDetails, WasmTxOut } from '@proton/andromeda';

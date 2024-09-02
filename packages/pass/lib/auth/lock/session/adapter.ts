@@ -1,4 +1,3 @@
-import { noop } from 'lodash';
 import { c } from 'ttag';
 
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
@@ -9,6 +8,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import {
     checkSessionLock,

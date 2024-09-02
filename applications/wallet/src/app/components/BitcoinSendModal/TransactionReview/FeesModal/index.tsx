@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { noop } from 'lodash';
+import noop from 'lodash/noop';
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';

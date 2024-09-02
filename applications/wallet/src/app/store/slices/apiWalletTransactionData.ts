@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { uniqBy } from 'lodash';
+import uniqBy from 'lodash/uniqBy';
 
 import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';

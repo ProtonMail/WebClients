@@ -1,4 +1,3 @@
-import { noop } from 'lodash';
 import { c } from 'ttag';
 
 import { type LockAdapter, LockMode } from '@proton/pass/lib/auth/lock/types';
@@ -11,6 +10,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
+import noop from '@proton/utils/noop';
 
 /** Password locking involves the offline configuration. As such,
  * we can only password lock if we have a valid offline config in

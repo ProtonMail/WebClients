@@ -1,7 +1,7 @@
 import type { ChangeEvent } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { noop } from 'lodash';
+import noop from 'lodash/noop';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
