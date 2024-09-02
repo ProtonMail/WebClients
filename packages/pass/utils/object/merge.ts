@@ -31,6 +31,10 @@ const merge = <Original extends Obj, Overwrite extends Obj>(
     ) as any;
 };
 
+export const withMerge =
+    <T extends {}>(next: Partial<T>) =>
+    (current: T) => ({ ...current, ...next });
+
 /* Type safe merge functions that preserve the original input type */
 const fullMerge: <T extends Obj>(original: T, overwrite: T, options?: MergeOptions) => T = merge;
 const partialMerge: <T extends Obj>(original: T, overwrite: RecursivePartial<T>, opts?: MergeOptions) => T = merge;
