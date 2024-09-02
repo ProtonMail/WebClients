@@ -8,6 +8,7 @@ import sharingOnboardingWelcome from '@proton/styles/assets/img/onboarding/drive
 
 import useActiveShare from '../../hooks/drive/useActiveShare';
 import { useDocumentActions } from '../../store/_documents';
+import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 
 const DriveDocsOnboardingModal = (props: ModalProps) => {
     const { activeFolder } = useActiveShare();
@@ -45,7 +46,10 @@ const DriveDocsOnboardingModal = (props: ModalProps) => {
                         color="norm"
                         shape="ghost"
                         fullWidth
-                        onClick={onNext}
+                        onClick={() => {
+                            countActionWithTelemetry(Actions.DismissDocsOnboardingModal);
+                            onNext();
+                        }}
                         data-testid="drive-onboarding-dismiss"
                     >
                         {c('Onboarding Action').t`Try it later`}
