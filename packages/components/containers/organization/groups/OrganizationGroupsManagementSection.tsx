@@ -69,7 +69,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                 {c('Action').t`New group`}
             </Button>
             {hasAtLeastOneVerifiedCustomDomain && (
-                <div className="content flex-1 overflow-hidden h-full mt-4">
+                <div className="content flex-1 overflow-hidden h-full mt-4 h-custom" style={{ '--h-custom': '85%' }}>
                     <div className="flex flex-nowrap flex-column h-full">
                         <div className="flex items-center justify-start flex-nowrap w-full h-full">
                             <DualPaneSidebar>
