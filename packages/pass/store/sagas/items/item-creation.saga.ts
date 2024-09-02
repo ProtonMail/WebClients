@@ -52,10 +52,10 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
         onItemCreationIntentProcessed?.(itemCreationSuccessAction);
         onItemsUpdated?.();
     } catch (e) {
-        const itemCreationfailureAction = itemCreationFailure({ optimisticId, shareId }, e);
-        yield put(itemCreationfailureAction);
+        const itemCreationFailureAction = itemCreationFailure({ optimisticId, shareId }, e);
+        yield put(itemCreationFailureAction);
 
-        onItemCreationIntentProcessed?.(itemCreationfailureAction);
+        onItemCreationIntentProcessed?.(itemCreationFailureAction);
     }
 }
 
@@ -87,8 +87,8 @@ function* withAliasCreationWorker(
 
         onItemsUpdated?.();
     } catch (err: unknown) {
-        const itemCreationfailureAction = itemCreationFailure({ optimisticId, shareId }, err);
-        yield put(itemCreationfailureAction);
+        const itemCreationFailureAction = itemCreationFailure({ optimisticId, shareId }, err);
+        yield put(itemCreationFailureAction);
     }
 }
 
