@@ -123,11 +123,3 @@ export const createMonitorLearnMoreRule = () =>
         onAcknowledge: (ack) => merge(ack, { extraData: { expanded: !ack.extraData?.expanded } }),
         when: (previous) => !previous || !previous.extraData?.expanded,
     });
-
-export const createUsernameTooltipRule = () =>
-    createOnboardingRule({
-        message: OnboardingMessage.USERNAME_TOOLTIP,
-        when: (previous) => {
-            return !previous;
-        },
-    });
