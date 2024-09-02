@@ -62,8 +62,8 @@ describe('getLastPersistedLocalID', () => {
         jest.clearAllMocks();
     });
 
-    test('returns 0 when localStorage is empty', () => {
-        expect(getLastPersistedLocalID()).toBe(0);
+    test('returns null when localStorage is empty', () => {
+        expect(getLastPersistedLocalID()).toBe(null);
     });
 
     test('returns the correct ID for a single item', () => {
@@ -86,7 +86,7 @@ describe('getLastPersistedLocalID', () => {
 
     test('handles non-numeric IDs correctly', () => {
         localStorage.setItem(`${STORAGE_PREFIX}abc`, JSON.stringify({ persistedAt: Date.now() }));
-        expect(getLastPersistedLocalID()).toBe(0);
+        expect(getLastPersistedLocalID()).toBe(null);
     });
 
     it('returns correct ID if valid session data exists from last ping', () => {
