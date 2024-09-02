@@ -2,7 +2,7 @@ import type { KeyboardEvent } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { QRCode } from 'jsqr';
-import { compact } from 'lodash';
+import compact from 'lodash/compact';
 import { c } from 'ttag';
 
 import type { WasmNetwork } from '@proton/andromeda';

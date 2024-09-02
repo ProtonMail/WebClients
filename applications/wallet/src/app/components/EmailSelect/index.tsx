@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 
-import { keyBy } from 'lodash';
+import keyBy from 'lodash/keyBy';
 import { c } from 'ttag';
 
 import { Icon, Tooltip } from '@proton/components/components';

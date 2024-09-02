@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { compact } from 'lodash';
+import compact from 'lodash/compact';
 
 import { type WasmApiWalletAccount } from '@proton/andromeda';
 import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';

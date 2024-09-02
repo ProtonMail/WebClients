@@ -1,7 +1,7 @@
 import type { SetStateAction } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { compact } from 'lodash';
+import compact from 'lodash/compact';
 import { c } from 'ttag';
 
 import type { WasmApiClients, WasmApiWalletTransaction, WasmTransactionDetails } from '@proton/andromeda';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { omit } from 'lodash';
+import omit from 'lodash/omit';
 
 import type { PublicKeyReference } from '@proton/crypto/lib';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';

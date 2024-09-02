@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { first } from 'lodash';
+import first from 'lodash/first';
 import { c } from 'ttag';
 
 import type {
