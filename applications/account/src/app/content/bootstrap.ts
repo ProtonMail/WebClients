@@ -11,6 +11,7 @@ import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { createCalendarModelEventManager } from '@proton/calendar';
 import { initMainHost } from '@proton/cross-storage';
 import { FeatureCode, fetchFeatures } from '@proton/features';
+import { CacheType } from '@proton/redux-utilities';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
@@ -72,7 +73,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const loadUser = async () => {
             const [user, userSettings, features] = await Promise.all([
                 dispatch(userThunk()),
-                dispatch(userSettingsThunk()),
+                // Unfortunately the apps doesn't support changing locale dynamically and can't bootstrap user settings from cache
+                dispatch(userSettingsThunk({ cache: CacheType.None })),
                 dispatch(fetchFeatures([FeatureCode.EarlyAccessScope])),
             ]);
 
