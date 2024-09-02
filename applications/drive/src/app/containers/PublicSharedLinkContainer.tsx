@@ -12,7 +12,7 @@ import { useSignupFlowModal } from '../components/modals/SignupFlowModal/SignupF
 import { useUpsellFloatingModal } from '../components/modals/UpsellFloatingModal';
 import usePublicToken from '../hooks/drive/usePublicToken';
 import type { DecryptedLink } from '../store';
-import { PublicDriveProvider, useDownload, usePublicAuth, usePublicShare } from '../store';
+import { PublicDriveProvider, useBookmarksPublicView, useDownload, usePublicAuth, usePublicShare } from '../store';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_bookmarks/useDriveShareURLBookmarking';
 import { sendErrorReport } from '../utils/errorHandling';
 import { getErrorMetricType } from '../utils/errorHandling/apiErrors';
@@ -39,10 +39,13 @@ function PublicShareLinkInitContainer() {
     const { token, urlPassword } = usePublicToken();
     const {
         isLoading,
+        customPassword,
         error: [authError, authErrorMessage],
+        isLegacy,
         isPasswordNeeded,
         submitPassword,
     } = usePublicAuth(token, urlPassword);
+    const bookmarksPublicView = useBookmarksPublicView(customPassword);
     const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
     const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);
     const [[publicShareError, publicShareErrorMessage], setError] = useState<ErrorTuple>([, '']);
@@ -135,9 +138,19 @@ function PublicShareLinkInitContainer() {
     return (
         <>
             {link.isFile ? (
-                <SharedFilePage token={token} link={link} />
+                <SharedFilePage
+                    bookmarksPublicView={bookmarksPublicView}
+                    token={token}
+                    link={link}
+                    hideSaveToDrive={!isDriveShareUrlBookmarkingEnabled || isLegacy}
+                />
             ) : (
-                <SharedFolderPage token={token} rootLink={link} />
+                <SharedFolderPage
+                    bookmarksPublicView={bookmarksPublicView}
+                    token={token}
+                    rootLink={link}
+                    hideSaveToDrive={!isDriveShareUrlBookmarkingEnabled || isLegacy}
+                />
             )}
             {isDriveShareUrlBookmarkingEnabled && !isLoggedIn ? signUpFlowModal : renderUpsellFloatingModal}
         </>

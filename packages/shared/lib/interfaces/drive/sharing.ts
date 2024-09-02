@@ -133,8 +133,10 @@ export enum SharedURLFlags {
     // easier detection whether user should be asked for the password.
     // All new shares should use new logic, and the legacy mode should be
     // removed when all old shares are cancelled.
+    Legacy = 0,
     CustomPassword = 1,
     GeneratedPasswordIncluded = 2,
+    GeneratedPasswordWithCustom = 3,
 }
 
 export interface AbuseReportPayload {

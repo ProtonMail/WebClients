@@ -9,7 +9,6 @@ export const queryCreateShareURLBookmark = (
     return {
         method: 'post',
         url: `drive/v2/urls/${token}/bookmark`,
-        silence: true,
         data,
     };
 };
