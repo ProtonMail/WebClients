@@ -1,10 +1,12 @@
 import { createContext, useContext } from 'react';
 import * as React from 'react';
 
+import type { UserModel } from '@proton/shared/lib/interfaces';
+
 import type { TransferProgresses } from '../../../components/TransferManager/transfer';
 import type { InitDownloadCallback, LinkDownload } from '../interface';
 import type { Download, DownloadLinksProgresses, UpdateFilter } from './interface';
-import useDownload from './useDownloadProvider';
+import downloadProvider from './useDownloadProvider';
 
 interface DownloadProviderState {
     downloads: Download[];
@@ -24,9 +26,11 @@ interface DownloadProviderState {
 const DownloadContext = createContext<DownloadProviderState | null>(null);
 
 export const DownloadProvider = ({
+    user,
     initDownload,
     children,
 }: {
+    user: UserModel | undefined;
     initDownload: InitDownloadCallback;
     children: React.ReactNode;
 }) => {
@@ -44,7 +48,7 @@ export const DownloadProvider = ({
         clearDownloads,
         downloadDownloadLogs,
         modals,
-    } = useDownload(initDownload);
+    } = downloadProvider(user, initDownload);
 
     return (
         <DownloadContext.Provider
