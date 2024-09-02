@@ -1,4 +1,4 @@
-import { pick } from 'lodash';
+import pick from 'lodash/pick';
 
 import type { WasmApiWallet, WasmApiWalletAccount, WasmPagination, WasmSortOrder } from '@proton/andromeda';
 import isTruthy from '@proton/utils/isTruthy';

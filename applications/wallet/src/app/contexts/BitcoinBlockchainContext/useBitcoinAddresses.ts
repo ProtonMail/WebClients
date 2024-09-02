@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import { compact, keyBy, uniq } from 'lodash';
+import compact from 'lodash/compact';
+import keyBy from 'lodash/keyBy';
+import uniq from 'lodash/uniq';
 
 import {
     type WasmAccount,

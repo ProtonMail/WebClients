@@ -1,19 +1,19 @@
 import type { ChangeEvent } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
-import { last } from 'lodash';
+import last from 'lodash/last';
 import { c } from 'ttag';
 
 import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href';
-import type { ModalOwnProps} from '@proton/components/components';
-import { Tooltip } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components/components';
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
+    Tooltip,
 } from '@proton/components/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';

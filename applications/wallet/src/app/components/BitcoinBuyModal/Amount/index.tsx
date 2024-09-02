@@ -1,7 +1,11 @@
 import type { ChangeEvent } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
-import { compact, orderBy, pick, uniq, uniqBy } from 'lodash';
+import compact from 'lodash/compact';
+import orderBy from 'lodash/orderBy';
+import pick from 'lodash/pick';
+import uniq from 'lodash/uniq';
+import uniqBy from 'lodash/uniqBy';
 import { c } from 'ttag';
 
 import type {

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import type { ChartDataset } from 'chart.js';
 import { format, sub } from 'date-fns';
-import { groupBy } from 'lodash';
+import groupBy from 'lodash/groupBy';
 
 import type { WasmApiWalletAccount, WasmTransactionDetails } from '@proton/andromeda';
 import type { IWasmApiWalletData } from '@proton/wallet';

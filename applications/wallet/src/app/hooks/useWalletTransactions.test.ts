@@ -1,6 +1,7 @@
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
-import { noop, omit } from 'lodash';
+import noop from 'lodash/noop';
+import omit from 'lodash/omit';
 import type { Mock } from 'vitest';
 
 import type {

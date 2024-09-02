@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 
-import { debounce } from 'lodash';
+import debounce from 'lodash/debounce';
 
 import useLatest from './useLatest';
 
