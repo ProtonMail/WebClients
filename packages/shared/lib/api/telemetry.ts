@@ -27,6 +27,7 @@ export enum TelemetryMeasurementGroups {
     paymentsFlow = 'payments.flow',
     /** Drive Web */
     driveWebFeaturePerformance = 'drive.web.feature_performance',
+    driveWebActions = 'drive.web.actions',
     /** Shared */
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
 }
@@ -168,6 +169,7 @@ export enum TelemetryPaymentsEvents {
 
 export enum TelemetryDriveWebFeature {
     performance = 'drive_web_feature_performance',
+    actions = 'drive_web_actions',
 }
 
 export enum TelemetryCollapsibleLeftSidebarEvents {
