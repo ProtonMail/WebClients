@@ -17,31 +17,20 @@ import {
   StandardLoadErrorPage,
   StandardPrivateApp,
 } from '@proton/components'
-import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import metrics from '@proton/metrics'
 import { ProtonStoreProvider } from '@proton/redux-shared-store'
-import { getClientID } from '@proton/shared/lib/apps/helper'
-import { newVersionUpdater } from '@proton/shared/lib/busy'
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error'
-import { setTtagLocales } from '@proton/shared/lib/i18n/locales'
 import type { UserModel } from '@proton/shared/lib/interfaces'
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces'
 
 import { bootstrapApp } from './bootstrap'
 import * as config from './config'
-import locales from './locales'
 import type { DocsStore } from './ReduxStore/store'
 import { extraThunkArguments } from './ReduxStore/thunk'
 import type { AvailabilityReport } from '@proton/utils/availability'
 import { Availability, AvailabilityTypes } from '@proton/utils/availability'
 import { DocsThemeProvider } from './DocsThemeProvider'
-
-setTtagLocales(locales)
-setupGuestCrossStorage()
-newVersionUpdater(config)
-
-metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION)
 
 const defaultState: {
   initialUser?: UserModel
