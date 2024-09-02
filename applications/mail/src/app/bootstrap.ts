@@ -13,6 +13,7 @@ import { createCalendarModelEventManager } from '@proton/calendar';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import { categoriesThunk, contactEmailsThunk, mailSettingsThunk } from '@proton/mail';
+import { CacheType } from '@proton/redux-utilities';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -87,7 +88,8 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const loadUser = async () => {
             const [user, userSettings, features] = await Promise.all([
                 dispatch(userThunk()),
-                dispatch(userSettingsThunk()),
+                // Unfortunately the apps doesn't support changing locale dynamically and can't bootstrap user settings from cache
+                dispatch(userSettingsThunk({ cache: CacheType.None })),
                 dispatch(
                     fetchFeatures([
                         FeatureCode.EarlyAccessScope,
