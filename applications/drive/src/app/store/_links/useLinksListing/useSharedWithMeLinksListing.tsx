@@ -54,6 +54,7 @@ export function useSharedWithMeLinksListing() {
         for (const shareId in transformedResponse) {
             await loadLinksMeta(signal, 'sharedWithMeLink', shareId, transformedResponse[shareId], {
                 fetchMeta: fetchMeta.current,
+                removeParentLinkId: true,
             });
         }
     };
