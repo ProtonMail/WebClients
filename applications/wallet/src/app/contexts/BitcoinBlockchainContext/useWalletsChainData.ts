@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { isBefore, sub } from 'date-fns';
-import { pick, set } from 'lodash';
+import pick from 'lodash/pick';
+import set from 'lodash/set';
 import { c } from 'ttag';
 
 import { WasmWallet, getDefaultStopGap } from '@proton/andromeda';

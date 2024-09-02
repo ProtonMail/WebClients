@@ -1,4 +1,4 @@
-import { uniqueId } from 'lodash';
+import uniqueId from 'lodash/uniqueId';
 
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import type { ItemRevision } from '@proton/pass/types';
