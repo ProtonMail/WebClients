@@ -54,6 +54,7 @@ export function useSharedWithMeLinksListingByVolume() {
         for (const volumeId in transformedResponse) {
             await loadLinksMetaByVolume(signal, volumeId, transformedResponse[volumeId], {
                 fetchMeta: fetchMeta.current,
+                removeParentLinkId: true,
             });
         }
     };
