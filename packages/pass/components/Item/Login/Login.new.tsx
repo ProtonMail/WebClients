@@ -20,7 +20,6 @@ import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreate
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
@@ -30,7 +29,6 @@ import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues } from '@proton/pass/types';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -42,7 +40,6 @@ const FORM_ID = 'new-login';
 export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel, onSubmit }) => {
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
-    const usernameSplit = useFeatureFlag(PassFeature.PassUsernameSplit);
 
     const { domain, subdomain } = url ?? {};
     const { search } = useLocation();
@@ -76,7 +73,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
 
     const form = useFormik<LoginItemFormValues>({
         initialValues,
-        initialErrors: validateLoginForm({ values: initialValues, shouldValidateEmail: usernameSplit }),
+        initialErrors: validateLoginForm({ values: initialValues }),
         onSubmit: ({
             name,
             note,
@@ -165,7 +162,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                 extraData,
             });
         },
-        validate: (values) => validateLoginForm({ values, shouldValidateEmail: usernameSplit }),
+        validate: (values) => validateLoginForm({ values }),
         validateOnBlur: true,
     });
 
