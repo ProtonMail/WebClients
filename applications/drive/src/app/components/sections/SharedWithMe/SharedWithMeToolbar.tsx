@@ -5,8 +5,11 @@ import { Toolbar } from '@proton/components';
 
 import { useSelection } from '../../FileBrowser';
 import { DetailsButton, DownloadButton, LayoutButton, OpenInDocsButton, PreviewButton } from '../ToolbarButtons';
+import { hasBookmarkSelected, hasInvitationSelected } from '../ToolbarButtons/utils';
 import { getSelectedSharedWithMeItems } from '../helpers';
 import type { SharedWithMeItem } from './SharedWithMe';
+import { OpenBookmarkButton } from './ToolbarButtons/OpenBookmarkButton';
+import { RemoveBookmarkButton } from './ToolbarButtons/RemoveBookmarkButton';
 
 interface Props {
     shareId: string;
@@ -22,9 +25,16 @@ const SharedWithMeToolbar = ({ items }: Props) => {
     );
 
     const renderSelectionActions = () => {
-        const haveInvitationInSelection = selectedItems.find((selectedItem) => selectedItem.isInvitation);
-        if (haveInvitationInSelection) {
+        if (hasInvitationSelected(selectedItems)) {
             return;
+        }
+        if (hasBookmarkSelected(selectedItems)) {
+            return (
+                <>
+                    <OpenBookmarkButton selectedBrowserItems={selectedItems} />
+                    <RemoveBookmarkButton selectedBrowserItems={selectedItems} />
+                </>
+            );
         }
         return (
             <>

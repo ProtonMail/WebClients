@@ -11,7 +11,7 @@ import { srpAuth } from '@proton/shared/lib/srp';
 
 import { getLastActivePersistedUserSessionUID } from '../../utils/lastActivePersistedUserSession';
 import retryOnError from '../../utils/retryOnError';
-import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
+import { hasCustomPassword, hasGeneratedPasswordIncluded, isLegacySharedUrl } from '../_shares';
 import useDebouncedRequest from './useDebouncedRequest';
 
 export const ERROR_CODE_INVALID_SRP_PARAMS = 2026;
@@ -51,6 +51,7 @@ function usePublicSessionProvider() {
         return api<SRPHandshakeInfo>(queryInitSRPHandshake(token)).then((handshakeInfo) => {
             return {
                 handshakeInfo,
+                isLegacySharedUrl: isLegacySharedUrl({ flags: handshakeInfo.Flags }),
                 hasCustomPassword: hasCustomPassword({ flags: handshakeInfo.Flags }),
                 hasGeneratedPasswordIncluded: hasGeneratedPasswordIncluded({ flags: handshakeInfo.Flags }),
             };

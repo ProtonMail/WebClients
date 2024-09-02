@@ -5,7 +5,7 @@ import { FilePreviewContent } from '@proton/components/containers/filePreview/Fi
 import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import type { DecryptedLink } from '../../store';
-import { useBookmarksPublicView, useDownloadScanFlag } from '../../store';
+import { type useBookmarksPublicView, useDownloadScanFlag } from '../../store';
 import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
 import HeaderSecureLabel from './Layout/HeaderSecureLabel';
@@ -18,13 +18,14 @@ import SharedPageTransferManager from './TransferModal/SharedPageTransferManager
 interface Props {
     token: string;
     link: DecryptedLink;
+    bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
+    hideSaveToDrive?: boolean;
 }
 
-export default function SharedFilePage({ token, link }: Props) {
+export default function SharedFilePage({ bookmarksPublicView, token, link, hideSaveToDrive = false }: Props) {
     const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(token, link.linkId);
     const isDownloadScanEnabled = useDownloadScanFlag();
     const { viewportWidth } = useActiveBreakpoint();
-    const bookmarksPublicView = useBookmarksPublicView();
 
     return (
         <FileBrowserStateProvider itemIds={[link.linkId]}>
@@ -34,6 +35,7 @@ export default function SharedFilePage({ token, link }: Props) {
                         rootItem={link}
                         items={[{ id: link.linkId, ...link }]}
                         bookmarksPublicView={bookmarksPublicView}
+                        hideSaveToDrive={hideSaveToDrive}
                     />
                 }
             >
@@ -41,6 +43,7 @@ export default function SharedFilePage({ token, link }: Props) {
                     rootItem={link}
                     items={[{ id: link.linkId, ...link }]}
                     bookmarksPublicView={bookmarksPublicView}
+                    hideSaveToDrive={hideSaveToDrive}
                     className="mt-3 mb-4"
                 >
                     <div className="w-full flex flex-nowrap flex-column md:items-center md:flex-row">
