@@ -16,6 +16,7 @@ import { PublicDriveProvider, useBookmarksPublicView, useDownload, usePublicAuth
 import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_bookmarks/useDriveShareURLBookmarking';
 import { sendErrorReport } from '../utils/errorHandling';
 import { getErrorMetricType } from '../utils/errorHandling/apiErrors';
+import { Actions, countActionWithTelemetry } from '../utils/telemetry';
 import type { ErrorTuple } from '../utils/type/ErrorTuple';
 import { deleteStoredUrlPassword } from '../utils/url/password';
 
@@ -97,6 +98,7 @@ function PublicShareLinkInitContainer() {
                             type: link.isFile ? 'file' : 'folder',
                             plan: user?.isPaid ? 'paid' : user?.isFree ? 'free' : 'not_recognized',
                         });
+                        countActionWithTelemetry(Actions.PublicLinkVisit);
                     })
                     .catch((error) => {
                         console.error(error);
