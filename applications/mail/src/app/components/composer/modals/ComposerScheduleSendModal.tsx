@@ -4,7 +4,8 @@ import { addDays, endOfToday, getUnixTime, isToday } from 'date-fns';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { DateInputTwo, InputFieldTwo, TimeInput, generateUID, useUserSettings } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
+import { DateInputTwo, InputFieldTwo, TimeInput, useUserSettings } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 

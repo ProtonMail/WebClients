@@ -1,5 +1,5 @@
+import generateUID from '@proton/atoms/generateUID';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
-import generateUID from '@proton/shared/lib/helpers/generateUID';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import unique from '@proton/utils/unique';
 

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
 import {
     Field,
     Icon,
@@ -13,7 +14,6 @@ import {
     Prompt,
     Row,
     Tooltip,
-    generateUID,
     useAddresses,
     useApi,
     useEventManager,

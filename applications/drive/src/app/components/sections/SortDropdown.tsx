@@ -3,14 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Dropdown,
-    DropdownCaret,
-    DropdownMenu,
-    DropdownMenuButton,
-    generateUID,
-    usePopperAnchor,
-} from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
+import { Dropdown, DropdownCaret, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortParams } from '../FileBrowser/interface';

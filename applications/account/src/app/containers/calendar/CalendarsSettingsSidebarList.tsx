@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
 import type { SectionConfig } from '@proton/components';
 import {
     Icon,
@@ -13,7 +14,6 @@ import {
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
-    generateUID,
     useCalendars,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';

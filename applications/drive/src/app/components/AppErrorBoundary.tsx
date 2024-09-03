@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 
+import generateUID from '@proton/atoms/generateUID';
 import {
     AccessDeniedError,
     ErrorBoundary,
@@ -9,7 +10,6 @@ import {
     InternalServerError,
     NotFoundError,
     PrivateMainArea,
-    generateUID,
 } from '@proton/components';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';

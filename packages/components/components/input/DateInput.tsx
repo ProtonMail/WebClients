@@ -5,9 +5,9 @@ import type { Locale } from 'date-fns';
 import { addDays, format, parse } from 'date-fns';
 import { c } from 'ttag';
 
+import generateUID from '@proton/atoms/generateUID';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { generateUID } from '../../helpers';
 import { useHotkeys } from '../../hooks';
 import Dropdown from '../dropdown/Dropdown';
 import LocalizedMiniCalendar from '../miniCalendar/LocalizedMiniCalendar';

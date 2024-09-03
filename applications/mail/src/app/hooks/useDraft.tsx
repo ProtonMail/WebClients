@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from 'react';
 
+import generateUID from '@proton/atoms/generateUID';
 import {
-    generateUID,
     useAddresses,
     useCache,
     useGetAddresses,

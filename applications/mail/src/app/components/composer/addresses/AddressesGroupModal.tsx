@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
 import {
     Checkbox,
     Form,
@@ -13,7 +14,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     PrimaryButton,
-    generateUID,
 } from '@proton/components';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';

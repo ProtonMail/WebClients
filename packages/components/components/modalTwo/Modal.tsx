@@ -1,12 +1,12 @@
 import { type ElementType, createContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
+import generateUID from '@proton/atoms/generateUID';
 import useInstance from '@proton/hooks/useInstance';
 import usePrevious from '@proton/hooks/usePrevious';
 import { type PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
 
-import { generateUID } from '../../helpers';
 import { useHotkeys } from '../../hooks/useHotkeys';
 import Dialog from '../dialog/Dialog';
 import { useFocusTrap } from '../focus';

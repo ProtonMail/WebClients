@@ -1,5 +1,5 @@
+import generateUID from '@proton/atoms/generateUID';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import generateUID from '@proton/shared/lib/helpers/generateUID';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasShowRemote } from '@proton/shared/lib/mail/images';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';

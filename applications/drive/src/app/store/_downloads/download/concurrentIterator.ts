@@ -1,4 +1,4 @@
-import { generateUID } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
 
 import { waitUntil } from '../../../utils/async';
 import type { DownloadCallbacks, DownloadStreamControls, LogCallback } from '../interface';

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
 import type { Breakpoints, IconName } from '@proton/components';
 import {
     Checkbox,
@@ -14,7 +15,6 @@ import {
     Radio,
     SearchInput,
     Tooltip,
-    generateUID,
     useFolders,
     useModalState,
     useUser,

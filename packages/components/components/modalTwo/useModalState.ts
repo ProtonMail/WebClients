@@ -1,9 +1,8 @@
 import type { Key } from 'react';
 import { useCallback, useMemo, useState } from 'react';
 
+import generateUID from '@proton/atoms/generateUID';
 import useControlled from '@proton/hooks/useControlled';
-
-import { generateUID } from '../../helpers';
 
 export interface ModalStateProps {
     open: boolean;

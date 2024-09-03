@@ -4,9 +4,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
 import type { VCardAddress, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-
-import { generateUID } from '../../../../helpers';
 
 interface Props {
     vCardProperty: VCardProperty<VCardAddress>;
