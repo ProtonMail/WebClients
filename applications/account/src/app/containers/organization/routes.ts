@@ -2,8 +2,7 @@ import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components/containers/layout';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
-import { PLANS } from '@proton/shared/lib/constants';
+import { APPS, ORGANIZATION_STATE, ORGANIZATION_TWOFA_SETTING, PLANS } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import {
     getHasExternalMemberCapableB2BPlan,
@@ -24,6 +23,14 @@ interface Props {
     isUserGroupsFeatureEnabled: boolean;
 }
 
+const groupsCompatiblePlans = new Set([
+    PLANS.MAIL_BUSINESS,
+    PLANS.BUNDLE_PRO,
+    PLANS.BUNDLE_PRO_2024,
+    PLANS.VISIONARY,
+    PLANS.ENTERPRISE,
+]);
+
 export const getOrganizationAppRoutes = ({
     app,
     user,
@@ -36,8 +43,9 @@ export const getOrganizationAppRoutes = ({
 
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
-    const hasActiveOrganizationKey = organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganizationKey;
-    const hasActiveOrganization = organization?.State === ORGANIZATION_STATE.ACTIVE && hasOrganization;
+    const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
+    const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
+    const hasActiveOrganization = isOrgActive && hasOrganization;
     const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
 
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
@@ -60,9 +68,15 @@ export const getOrganizationAppRoutes = ({
         isUserGroupsFeatureEnabled &&
         !!organization &&
         hasActiveOrganizationKey &&
-        [PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.VISIONARY, PLANS.ENTERPRISE].includes(
-            organization?.PlanName
-        );
+        groupsCompatiblePlans.has(organization?.PlanName);
+
+    const canShowUsersAndAddressesSection =
+        // The user must have a plan that supports multi-user
+        hasMemberCapablePlan &&
+        // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete sub users
+        (isOrgActive || (!isOrgActive && (organization?.UsedMembers ?? 0) > 1)) &&
+        // The org must be setup to allow users to access this page
+        (hasOrganizationKey || hasOrganization);
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
@@ -84,7 +98,7 @@ export const getOrganizationAppRoutes = ({
                 text: hasExternalMemberCapableB2BPlan ? c('Title').t`Users` : c('Title').t`Users and addresses`,
                 to: '/users-addresses',
                 icon: 'users',
-                available: hasMemberCapablePlan && (hasOrganizationKey || hasOrganization),
+                available: canShowUsersAndAddressesSection,
                 subsections: [
                     {
                         id: 'schedule-call',

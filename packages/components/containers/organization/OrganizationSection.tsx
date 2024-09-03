@@ -7,19 +7,10 @@ import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import innerMutatePassword from '@proton/shared/lib/authentication/mutate';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import {
-    APPS,
-    BRAND_NAME,
-    DRIVE_APP_NAME,
-    MAIL_APP_NAME,
-    SHARED_UPSELL_PATHS,
-    UPSELL_COMPONENT,
-} from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, DRIVE_APP_NAME, MAIL_APP_NAME, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { getHasMemberCapablePlan, hasDuo, hasFamily } from '@proton/shared/lib/helpers/subscription';
-import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
-import { Audience } from '@proton/shared/lib/interfaces';
 import { createPreAuthKTVerifier } from '@proton/shared/lib/keyTransparency';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
@@ -55,13 +46,12 @@ import {
     SettingsLayoutRight,
     SettingsParagraph,
     SettingsSection,
-    SettingsSectionWide,
-    UpgradeBanner,
 } from '../account';
 import DomainModal from '../domains/DomainModal';
 import AuthModal from '../password/AuthModal';
 import EditOrganizationIdentityModal from './EditOrganizationIdentityModal';
 import OrganizationNameModal from './OrganizationNameModal';
+import OrganizationSectionUpsell from './OrganizationSectionUpsell';
 import SetupOrganizationModal from './SetupOrganizationModal';
 import OrganizationLogoModal from './logoUpload/OrganizationLogoModal';
 import OrganizationLogoRemovalModal from './logoUpload/OrganizationLogoRemovalModal';
@@ -104,6 +94,8 @@ const OrganizationSection = ({ app, organization }: Props) => {
     const canAccessLightLabelling = organizationTheme.access && APP_NAME === APPS.PROTONACCOUNT;
     const organizationIdentity = useOrganizationIdentity();
 
+    const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
+
     if (!organization || !user || !subscription || !customDomains) {
         return <Loader />;
     }
@@ -143,26 +135,8 @@ const OrganizationSection = ({ app, organization }: Props) => {
             )}
 
             {(() => {
-                if (!hasMemberCapablePlan) {
-                    return (
-                        <SettingsSectionWide>
-                            <SettingsParagraph>
-                                {c('new_plans: info')
-                                    .t`${BRAND_NAME} lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.`}
-                            </SettingsParagraph>
-
-                            <UpgradeBanner
-                                audience={Audience.B2B}
-                                upsellPath={getUpsellRefFromApp({
-                                    app: APP_NAME,
-                                    feature: SHARED_UPSELL_PATHS.MULTI_USER,
-                                    component: UPSELL_COMPONENT.BANNER,
-                                    fromApp: app,
-                                })}
-                            >{c('new_plans: upgrade')
-                                .t`Included with multiple users ${BRAND_NAME} for Business plans.`}</UpgradeBanner>
-                        </SettingsSectionWide>
-                    );
+                if (!hasMemberCapablePlan || !isOrgActive) {
+                    return <OrganizationSectionUpsell app={app} />;
                 }
 
                 if (organization.RequiresDomain && customDomains.length === 0) {
