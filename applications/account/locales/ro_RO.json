@@ -254,7 +254,7 @@
         "Confirmare"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        "Confirmați deschiderea legăturii ${ linkToShow }"
+        "Confirmați deschiderea legăturii web ${ linkToShow }"
       ],
       "Contact sales": [
         "Contactare serviciu comercial"
@@ -296,7 +296,7 @@
         "Copiere cheie în memorie"
       ],
       "Copy link": [
-        "Copiere legătură"
+        "Copiere legătură web"
       ],
       "Copy version number to clipboard": [
         "Copiere număr versiune în memorie"
@@ -305,7 +305,7 @@
         "Creare"
       ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
-        "Creați o legătură pentru a partaja cu oricine în afara ${ BRAND_NAME }"
+        "Creați o legătură web pentru a partaja cu oricine în afara ${ BRAND_NAME }"
       ],
       "Create account": [
         "Creare cont"
@@ -323,7 +323,7 @@
         "Creare etichetă"
       ],
       "Create link": [
-        "Creare legătură"
+        "Creare legătură web"
       ],
       "Create users": [
         "Creare utilizatori"
@@ -365,7 +365,7 @@
         "Ștergere grup"
       ],
       "Delete link": [
-        "Ștergere legătură"
+        "Ștergere legătură web"
       ],
       "Delete logo": [
         "Ștergere logo"
@@ -644,7 +644,7 @@
         "Inserare imagine"
       ],
       "Insert link": [
-        "Inserare legătură"
+        "Inserare legătură web"
       ],
       "Invite": [
         "Invitare"
@@ -811,11 +811,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "refresh the page": [
-        "Împrospătați pagina"
-      ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "refresh the page": [
+        "Împrospătați pagina"
       ],
       "Reload": [
         "Reîncărcare"
@@ -1019,7 +1019,7 @@
         "Partajare"
       ],
       "Share via link": [
-        "Partajare prin legătură"
+        "Partajare prin legătură web"
       ],
       "Sharing options": [
         "Opțiuni de partajare"
@@ -1233,6 +1233,9 @@
       ],
       "View plans details": [
         "Afișare detalii planuri"
+      ],
+      "View recovery settings": [
+        "Afișare setări de recuperare"
       ],
       "Void": [
         "Nulă"
@@ -1626,6 +1629,14 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1647,14 +1658,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -1844,7 +1847,7 @@
     },
     "Button": {
       "Add link to your email footer": [
-        "Adăugare legătură la subsol"
+        "Adăugare legătură web la subsol"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
@@ -1929,7 +1932,7 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Creați o legătură către calendar și partajați-o cu oricine din afara ${ BRAND_NAME }. Numai dvs. puteți adăuga sau elimina evenimente."
+        "Creați o legătură web către calendar și partajați-o cu oricine din afara ${ BRAND_NAME }. Numai dvs. puteți adăuga sau elimina evenimente."
       ]
     },
     "Calendar settings private share description": {
@@ -3397,6 +3400,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Ștergeți automat mesajele nedorite și din gunoi și deblocați mai multe funcții premium trecând la un tip de plan cu plată."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Felicitări! Ați câștigat maximul de ${ rewardsLimit } luni gratuite pentru ${ plusPlanName }."
       ],
@@ -4642,7 +4648,7 @@
         "Acest nume de etichetă nu este disponibil. Alegeți un alt nume."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
+        "Acest mesaj poate conține unele legături web care nu pot fi deschise corect de către navigatorul actual."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Pentru a crea conturi de utilizator neprivate și pentru a le accesa, va trebui să vă restabiliți privilegiile de administrator."
@@ -6833,13 +6839,13 @@
         "Va fi șters și orice subfolder. Totuși, mesajele stocate în folderul ${ nameDeleted } nu vor fi șterse și pot fi găsite în folderul «Toate mesajele»."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Oricine are această legătură poate vedea toate detaliile evenimentului din acest calendar, cum ar fi titlul, locul sau participanții."
+        "Oricine are această legătură web poate vedea toate detaliile evenimentului din acest calendar, cum ar fi titlul, locul sau participanții."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Oricine are această legătură poate vedea dacă aveți sau nu timp liber în calendar. Nu pot vedea detaliile evenimentului, cum ar fi titlul, locul sau participanții."
+        "Oricine are această legătură web poate vedea dacă aveți sau nu timp liber în calendar. Nu pot vedea detaliile evenimentului, cum ar fi titlul, locul sau participanții."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Oricine cu această legătură nu va putea sincroniza sau obține actualizări viitoare pentru calendar. Dacă doriți să le oferiți acces din nou, va trebui să creați o legătură nouă."
+        "Oricine cu această legătură web nu va putea sincroniza sau obține actualizări viitoare pentru calendar. Dacă doriți să le oferiți acces din nou, va trebui să creați o legătură web nouă."
       ],
       "Are you sure you want to cancel editing the group?": [
         "Sigur doriți să anulați editarea grupului?"
@@ -7040,7 +7046,7 @@
         "Copiați parola sugerată în memorie."
       ],
       "Copy your referral link": [
-        "Copiere legătură de recomandare"
+        "Copiere legătură web de recomandare"
       ],
       "Country code": [
         "Cod țară"
@@ -7120,11 +7126,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "Dedicated servers": [
-        "Servere dedicate"
-      ],
       "dedicated servers": [
         "servere dedicate"
+      ],
+      "Dedicated servers": [
+        "Servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -7230,7 +7236,7 @@
         "Editare etichetă"
       ],
       "Edit link": [
-        "Editare legătură"
+        "Editare legătură web"
       ],
       "email": [
         "e-mail"
@@ -7541,7 +7547,7 @@
         "Inserare imagine"
       ],
       "Insert link": [
-        "Inserare legătură"
+        "Inserare legătură web"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instalați un fișier de configurare al țării pentru a vă conecta la un server aleatoriu din țara aleasă."
@@ -7571,7 +7577,7 @@
         "Legătura web a invitației a expirat."
       ],
       "Invitation link used": [
-        "Legătură web a invitației a fost folosită."
+        "Legătura web a invitației a fost folosită."
       ],
       "Invite Accepted": [
         "Invitație acceptată."
@@ -7684,7 +7690,7 @@
         "este imperativ"
       ],
       "I’ve been using @ProtonMail and thought you might like it. It’s a secure email service that protects your privacy. Sign up with my referral link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Am folosit @ProtonMail și mi s-a părut practic și sigur. Este un serviciu de e-mail securizat care protejează confidențialitatea. Înscrierea prin această legătură de recomandare oferă o lună gratuită: ${ referrerLink }"
+        "Am folosit @ProtonMail și mi s-a părut practic și sigur. Este un serviciu de e-mail securizat care protejează confidențialitatea. Înscrierea prin această legătură web de recomandare oferă o lună gratuită: ${ referrerLink }"
       ],
       "JCB logo": [
         "Logo JCB"
@@ -7744,16 +7750,16 @@
         "Legătura a fost copiată în memorie."
       ],
       "Link created": [
-        "Legătură a fost creată."
+        "Legătura web a fost creată."
       ],
       "Link deleted": [
         "Legătura a fost ștearsă."
       ],
       "Link expired": [
-        "Legătură expirată."
+        "legătură web expirată."
       ],
       "Link type": [
-        "Tip legătură"
+        "Tip legătură web"
       ],
       "Live chat": [
         "conversație live"
@@ -8062,7 +8068,7 @@
         "Selectați folderele pe care doriți să le importați:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Selectați tipul de legătură pe care doriți să o inserați și completați toate câmpurile."
+        "Selectați tipul de legătură web pe care doriți să o inserați și completați toate câmpurile."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Reîncercați folosind o metodă de plată diferită sau contactați-vă banca."
@@ -8116,7 +8122,7 @@
         "Persoanele publice, jurnaliștii, directorii și alții care pot fi ținta atacurilor cibernetice sunt foarte încurajați să activeze ${ PROTON_SENTINEL_NAME }."
       ],
       "Public link invite": [
-        "Legătură publică invitație"
+        "legătură web publică invitație"
       ],
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
@@ -8173,7 +8179,7 @@
         "Eliminați unul din calendare pentru a vă alătura acestuia"
       ],
       "Report link expired": [
-        "Legătură de raportare expirată."
+        "legătură web de raportare expirată."
       ],
       "Request a phone call": [
         "Solicitați un apel telefonic"
@@ -8388,7 +8394,7 @@
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
       ],
       "Test link": [
-        "Testare legătură"
+        "Testare legătură web"
       ],
       "Text color": [
         "Culoare text"
@@ -8523,13 +8529,13 @@
         "Aceasta este parola pe care ați utilizat-o înainte de resetarea parolei."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
+        "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Această legătură ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
+        "Această legătură web ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
+        "Această legătură web ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Acest mesaj nu va ajunge la echipa de asistență. Dacă aveți o problemă cu serviciul nostru sau aveți nevoie de acțiuni suplimentare din partea noastră ${ supportLink }."
@@ -8541,7 +8547,7 @@
         "Acest cod de acces nu va fi disponibil după ce închideți această fereastră și nu ar trebui să-l partajați cu nimeni."
       ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
-        "Această legătură de dezabonare a expirat. Redeschideți un mesaj mai recent de la această listă."
+        "Această legătură web de dezabonare a expirat. Redeschideți un mesaj mai recent de la această listă."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Acest utilizator este în prezent responsabil pentru plăţile organizaţiei. Retrogradând acest membru, veți deveni responsabil pentru plăţile organizaţiei."
@@ -8628,7 +8634,7 @@
         "Pentru a asigura cea mai mare securitate posibilă a contului"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "Pentru a vă asigura că nu pierdeți date importante, ${ DRIVE_APP_NAME } salvează versiuni mai vechi ale fișierelor pe măsură ce acestea sunt modificate. Selectați cât timp ${ BRAND_NAME } ar trebui să păstreze versiunile anterioare."
+        "Pentru a vă asigura că nu pierdeți date importante, ${ DRIVE_APP_NAME } salvează versiuni mai vechi ale fișierelor pe măsură ce acestea sunt modificate. Selectați cât timp ar trebui ca ${ BRAND_NAME } să păstreze versiunile anterioare."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
@@ -8757,7 +8763,7 @@
         "Fișierul încărcat nu este o cheie privată validă. Verificați reîncercați."
       ],
       "URL link": [
-        "URL legătură"
+        "URL legătură web"
       ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Utilizați un manager de parole pentru a vă genera și stoca în siguranță parolele, asigurând parole puternice și conectări mai ușoare."
@@ -8874,7 +8880,7 @@
         "Vi s-a generat o parolă puternică"
       ],
       "We just sent you a new link.": [
-        "Vi s-a trimis o nouă legătură."
+        "Vi s-a trimis o nouă legătură web."
       ],
       "We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised.": [
         "Monitorizăm internetul ascuns pentru cazurile în care informațiile personale (cum ar fi o adresă de e-mail sau o parolă folosită pe un site terță parte) vă sunt divulgate sau compromise."
@@ -9062,14 +9068,14 @@
         "Puteți importa un singur tip de date la un moment dat."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
       ],
       "You can now access and manage the account as an administrator.": [
         "Acum puteți accesa și gestiona contul ca administrator."
@@ -9184,7 +9190,7 @@
         "Contul ${ BRAND_NAME } este asociat cu ${ externalEmailAddress }."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
@@ -9202,7 +9208,7 @@
         "Acest cont are cel puțin o factură scadentă. Contul este restricționat, iar toate serviciile sunt acum blocate până la plata datoriilor. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Acest cont are cel puțin o factură scadentă. Contul este restricționat. Neplata continuă va bloca mesajele și legăturile partajate. ${ payInvoiceLink }"
+        "Acest cont are cel puțin o factură scadentă. Contul este restricționat. Neplata continuă va bloca mesajele și legăturile web partajate. ${ payInvoiceLink }"
       ],
       "Your account has been successfully updated": [
         "Contul a fost actualizat."
@@ -9547,7 +9553,7 @@
         "Accesare folder «Gunoi»"
       ],
       "Insert link": [
-        "Inserare legătură"
+        "Inserare legătură web"
       ],
       "Jump to first": [
         "Salt la primul"
@@ -10739,7 +10745,7 @@
         "Parola dvs. (administrator)"
       ],
       "Your referral link": [
-        "Legătură de recomandare"
+        "legătură web de recomandare"
       ]
     },
     "label": {
@@ -11275,9 +11281,9 @@
     },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } legătură per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos.",
-        "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } legături per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos.",
-        "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } de legături per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos."
+        "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } legătură web per calendar. Pentru a crea o legătură web nouă către acest calendar, ștergeți una din lista de mai jos.",
+        "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } legături web per calendar. Pentru a crea o legătură web nouă către acest calendar, ștergeți una din lista de mai jos.",
+        "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } de legături web per calendar. Pentru a crea o legătură web nouă către acest calendar, ștergeți una din lista de mai jos."
       ]
     },
     "Maximum shared calendar members reached alert": {
@@ -11376,7 +11382,7 @@
         "Conectați-vă la contul ${ BRAND_NAME } pentru a accesa toate serviciile ${ BRAND_NAME } criptate, cum ar fi ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și altele. NU aveți un cont? Creați unul GRATUIT."
       ],
       "Try ${ planName } for free with this link": [
-        "Încercați ${ planName } gratuit cu această legătură"
+        "Încercați ${ planName } gratuit cu această legătură web"
       ]
     },
     "Modal title": {
@@ -11630,6 +11636,26 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Începeți cu ${ price }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11659,24 +11685,10 @@
         "Trecere la ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ]
-    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } și ${ PROTON_SENTINEL_NAME }"
       ],
@@ -11786,8 +11798,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Pentru toate serviciile ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TiB stocare securizată"
+      ],
       "1 user": [
         "Un utilizator"
+      ],
+      "10 email addresses/aliases": [
+        "10 adrese de e-mail/aliasuri"
+      ],
+      "10-year file version history": [
+        "10 ani istoric versiuni fișiere"
+      ],
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
       ],
       "24/7 account management support": [
         "Asistență pentru gestionarea contului 24/7"
@@ -11809,6 +11833,9 @@
       ],
       "Advanced network security": [
         "Securitate avansată a rețelei"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Toate produsele și funcțiile ${ BRAND_NAME }"
       ],
       "All ${ BRAND_NAME } services": [
         "Toate serviciile ${ BRAND_NAME }"
@@ -11903,6 +11930,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Suport client de e-mail (prin IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grupuri de contacte"
+      ],
       "Enables HIPAA compliance": [
         "Se conformează regulilor HIPAA"
       ],
@@ -11929,6 +11959,9 @@
       ],
       "GDPR data processing agreement": [
         "Acordul de prelucrare a datelor GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Generați mesaje cu o solicitare"
       ],
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
@@ -11992,10 +12025,16 @@
       "Priority support & live chat": [
         "Asistență prioritară și conversații live"
       ],
+      "Proofread and refine your emails": [
+        "Corectați și cizelați mesajele"
+      ],
       "Protect ${ n } device at a time": [
         "Protejare ${ n } dispozitiv",
         "Protejare ${ n } dispozitive simultan",
         "Protejare ${ n } de dispozitive simultan"
+      ],
+      "Quickly craft replies": [
+        "Redactați rapid răspunsuri"
       ],
       "Recover previous file versions": [
         "Recuperați versiunile anterioare ale fișierelor"
@@ -12061,6 +12100,9 @@
       ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
+      ],
+      "Support for up to 2 users": [
+        "Acceptare până la doi utilizatori"
       ],
       "Sync and backup all your files across devices": [
         "Sincronizați fișierele între dispozitive și păstrați copii de rezervă"
@@ -12146,6 +12188,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "Un domeniu de e-mail personal"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Creați adrese de e-mail multiple pentru identitățile personale online, de ex. ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain2 } pentru abonamentul la știri."
       ],
@@ -12324,6 +12369,17 @@
         "Planul selectat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -12342,14 +12398,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -12415,6 +12463,9 @@
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partajați calendarele ușor cu familia, prietenii sau colegii."
       ],
+      "Email everyone in a group with a single email address": [
+        "Trimiteți mesaje tuturor dintr-un grup cu o singură adresă de e-mail"
+      ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Se asigură că primiți toate e-mailurile trimise către domeniul dvs., chiar dacă adresa de e-mail nu a existat, nu mai există sau e scrisă greșit."
       ],
@@ -12467,7 +12518,7 @@
         "Gestionare parole și protejare identitate"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături către datele de contact și multe altele."
+        "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături web către datele de contact și multe altele."
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
         "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu 20 sau mai mulți utilizatori."
@@ -12518,7 +12569,7 @@
         "Configurați filtre pentru a răspunde automat, sorta și/sau eticheta e-mailurile."
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
-        "Partajați fișierele sau folderele cu oricine utilizând legături sigure și partajabile."
+        "Partajați fișierele sau folderele cu oricine utilizând legături web securizate și partajabile."
       ],
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
         "SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME }."
@@ -14200,6 +14251,9 @@
       "Recovery phone number": [
         "Numărul de telefon de recuperare"
       ],
+      "Review your account safety": [
+        "Revizuire securitate cont"
+      ],
       "Safeguard account now": [
         "Protejați-vă contul acum"
       ],
@@ -14939,7 +14993,7 @@
     },
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
-        "Pentru a invita utilizatori non-${ BRAND_NAME } partajați calendarul cu o legătură."
+        "Pentru a invita utilizatori non-${ BRAND_NAME } partajați calendarul cu o legătură web."
       ]
     },
     "Share calendar max shares reached error": {
@@ -15378,7 +15432,7 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "Aflați cum să obțineți o legătură la un calendar privat."
+        "Aflați cum să obțineți o legătură web la un calendar privat."
       ]
     },
     "Subscribed calendar section description": {
@@ -15968,9 +16022,6 @@
       ],
       "Auto-reply updated": [
         "Autorăspuns actualizat."
-      ],
-      "Bug reported": [
-        "Eroare raportată"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."
@@ -16579,10 +16630,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
       "Change login password": [
@@ -16681,7 +16732,7 @@
         "Creare cheie organizație"
       ],
       "Create public link": [
-        "Creare legătură publică"
+        "Creare legătură web publică"
       ],
       "Create user accounts": [
         "Creare conturi de utilizator"
@@ -17092,7 +17143,7 @@
         "Părăsiți ${ organisationName }?"
       ],
       "Link confirmation": [
-        "Legătură de confirmare"
+        "legătură web de confirmare"
       ],
       "Main password": [
         "Parola principală"
@@ -17538,7 +17589,7 @@
         "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
       ],
       "Your calendar link": [
-        "Legătură calendar"
+        "legătură web calendar"
       ],
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"

@@ -811,11 +811,11 @@
       "Refresh status": [
         "Obnovit stav"
       ],
-      "refresh the page": [
-        "obnovit stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "obnovit stránku"
       ],
       "Reload": [
         "Znovu načíst"
@@ -1234,6 +1234,9 @@
       "View plans details": [
         "Zobrazit detaily tarifu"
       ],
+      "View recovery settings": [
+        "Zobrazit nastavení obnovení"
+      ],
       "Void": [
         "Neplatné"
       ],
@@ -1630,6 +1633,14 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB úložiště (2x více než jakýkoli jiný tarif)"
@@ -1651,14 +1662,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Tarif ${ plan } je zpět pouze po omezenou dobu"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3411,6 +3414,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Po navýšení je možné automaticky mazat zprávy ze složky nevyžádaná pošta a koš a odemknout další prémiové funkce."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Blahopřejeme! Získali jste maximálního počtu ${ rewardsLimit } měsíců zdarma ${ plusPlanName }."
       ],
@@ -7189,11 +7195,11 @@
       "Data locked": [
         "Data uzamčena"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "K soukromým branám lze přidat dedikované servery s vyhrazenými IP adresami, které umožňují podrobnější nastavení přístupu."
@@ -7403,7 +7409,7 @@
         "vyprší ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
-        "Načtení záznamů selhalo."
+        "Získání logů selhalo."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
         "Rychlost a praktičnost. E-mail a kalendář přímo na vaší ploše."
@@ -10327,7 +10333,7 @@
         "Skupinová adresa"
       ],
       "Group conversations": [
-        "Skupinové konverzace"
+        "Seskupit konverzace"
       ],
       "Group members": [
         "Členové skupiny"
@@ -11736,6 +11742,26 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Začněte za ${ price }"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovat s bezplatným tarifem"
@@ -11765,24 +11791,10 @@
         "Přejít na ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ]
-    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
       ],
@@ -11909,8 +11921,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Pro všechny služby ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TB bezpečného úložiště"
+      ],
       "1 user": [
         "1 uživatel"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailových adres/aliasů"
+      ],
+      "10-year file version history": [
+        "10letá historie verzí souborů"
+      ],
+      "15 GB storage": [
+        "15 GB úložiště"
       ],
       "24/7 account management support": [
         "24/7 podpora správy účtu"
@@ -11932,6 +11956,9 @@
       ],
       "Advanced network security": [
         "Pokročilé zabezpečení sítě"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Všechny ${ BRAND_NAME } produkty a funkce"
       ],
       "All ${ BRAND_NAME } services": [
         "Všechny ${ BRAND_NAME } služby"
@@ -12026,6 +12053,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Podpora e-mailových klientů (přes IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-mailové skupiny"
+      ],
       "Enables HIPAA compliance": [
         "Umožňuje dodržování předpisů HIPAA"
       ],
@@ -12052,6 +12082,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR dohoda o správě dat"
+      ],
+      "Generate emails with a prompt": [
+        "Vygenerujte e-maily pomocí příkazů"
       ],
       "Group management (coming soon)": [
         "Správa skupiny (již brzy)"
@@ -12116,11 +12149,17 @@
       "Priority support & live chat": [
         "Přednostní podpora a živý chat"
       ],
+      "Proofread and refine your emails": [
+        "Proveďte korektury a zpřesnění vašich e-mailů"
+      ],
       "Protect ${ n } device at a time": [
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň"
+      ],
+      "Quickly craft replies": [
+        "Rychle vytvářejte odpovědi"
       ],
       "Recover previous file versions": [
         "Obnova předchozích verzí souborů"
@@ -12187,6 +12226,9 @@
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
+      ],
+      "Support for up to 2 users": [
+        "Podpora pro až 2 uživatele"
       ],
       "Sync and backup all your files across devices": [
         "Synchronizace a zálohování všech vašich souborů mezi zařízeními"
@@ -12274,6 +12316,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 vlastní e-mailová doména"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain2 } pro odběry zpráv"
       ],
@@ -12452,6 +12497,17 @@
         "Váš vybraný tarif: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Zkušební verze ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Získejte Mail Plus za ${ price }"
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -12470,14 +12526,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Zkušební verze ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -12543,6 +12591,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Snadno sdílejte své kalendáře s rodinou, přáteli nebo kolegy"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Odešlete e-mail všem členům skupiny pomocí jediné e-mailové adresy"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zajistí, že dostanete všechny e-maily odeslané na vaší doménu, dokonce i když jsou odeslány na adresu, která neexistuje a nebo má chybu"
@@ -14342,6 +14393,9 @@
       ],
       "Recovery phone number": [
         "Telefonní číslo pro obnovení"
+      ],
+      "Review your account safety": [
+        "Zkontrolujte bezpečnost svého účtu"
       ],
       "Safeguard account now": [
         "Zabezpečte nyní svůj účet"
@@ -16151,9 +16205,6 @@
       "Auto-reply updated": [
         "Automatická odpověď aktualizována"
       ],
-      "Bug reported": [
-        "Chyba nahlášena"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalendář je vytvořen. Synchronizace zabere pár minut."
       ],
@@ -16767,10 +16818,10 @@
       "Card verification": [
         "Ověření karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koše"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koše"
       ],
       "Change login password": [

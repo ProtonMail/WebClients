@@ -361,6 +361,9 @@
       "Delete logo": [
         "Elimina el logo"
       ],
+      "Delete member": [
+        "Elimina el membre"
+      ],
       "Delete permanently": [
         "Elimina de manera permanent"
       ],
@@ -646,6 +649,9 @@
       "Keep logo": [
         "Manté el logo"
       ],
+      "Keep my subscription": [
+        "Mantén la subscripció"
+      ],
       "label emails as": [
         "etiquetar correus electrònics com"
       ],
@@ -790,11 +796,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -1595,6 +1601,14 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1616,14 +1630,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3592,9 +3598,14 @@
         "Suport prioritari"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtingueu ${ BRAND_NAME } Duo"
+      ]
+    },
     "duoplan2024: Info": {
       "1 TB storage": [
-        "1 TB d'emmagatzemament"
+        "1 TB d'emmagatzematge"
       ],
       "2 users": [
         "2 usuaris"
@@ -6857,11 +6868,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -6948,6 +6959,9 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Cada domini només pot tenir un registre SPF (TXT). Si voleu mantenir el registre SPF (TXT) existent, podeu afegir ${ spf } al registre actual (poseu-ho després de ${ spfValue })."
+      ],
+      "Early access": [
+        "Accés anticipat"
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
@@ -9844,6 +9858,9 @@
       "Group address": [
         "Adreça del grup"
       ],
+      "Group conversations": [
+        "Converses de grup"
+      ],
       "Group members": [
         "Membres del grup"
       ],
@@ -11205,6 +11222,23 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11232,23 +11266,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -11496,6 +11513,9 @@
       "No-logs policy": [
         "Política de no registres"
       ],
+      "Online document editor": [
+        "Editor de documents en línia"
+      ],
       "Organize items with multiple vaults": [
         "Organitzeu els elements amb múltiples caixes fortes"
       ],
@@ -11658,6 +11678,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domini de correu electrònic personalitzat"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
       ],
@@ -11830,6 +11853,14 @@
         "El vostre pla seleccionat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -11848,14 +11879,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -13544,6 +13567,15 @@
       ]
     },
     "Safety review": {
+      "Download ${ size }": [
+        "Descarrega ${ size }"
+      ],
+      "Enable recovery by email": [
+        "Activa la recuperació per correu electrònic"
+      ],
+      "Enable recovery by phone": [
+        "Activa la recuperació per telèfon"
+      ],
       "Invalid code": [
         "El codi no és vàlid."
       ],
@@ -13553,14 +13585,23 @@
       "Recovery phone number": [
         "Número de telèfon de recuperació"
       ],
+      "Send a new code": [
+        "Envia un altre codi"
+      ],
       "Show more": [
         "Mostra més"
       ],
       "Verify": [
         "Verifica"
       ],
+      "Your recovery email": [
+        "El vostre correu electrònic de recuperació"
+      ],
       "Your Recovery Kit": [
         "Kit de recuperació"
+      ],
+      "Your recovery methods": [
+        "Els vostres mètodes de recuperació"
       ],
       "Your recovery phone": [
         "El vostre telèfon de recuperació"
@@ -14627,6 +14668,9 @@
       "1 email address": [
         "1 adreça de correu"
       ],
+      "1 email address per user": [
+        "1 adreça de correu electrònic per usuari"
+      ],
       "1 VPN connection": [
         "1 connexió VPN"
       ],
@@ -15107,9 +15151,6 @@
       "Auto-reply updated": [
         "S'ha actualitzat la resposta automàtica."
       ],
-      "Bug reported": [
-        "Error notificat"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."
       ],
@@ -15175,6 +15216,9 @@
       ],
       "Import record deleted": [
         "S'ha suprimit el registre d'importació"
+      ],
+      "Invitation rejected": [
+        "S'ha rebutjat la invitació."
       ],
       "Invitation sent": [
         "S'ha enviat la invitació"
@@ -15336,6 +15380,9 @@
       ],
       "Preference updated": [
         "S'ha actualitzat la preferència"
+      ],
+      "Preferences updated": [
+        "S'han actualitzat les preferències."
       ],
       "Status updated": [
         "S'ha actualitzat l'estat"
@@ -15690,10 +15737,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -15988,6 +16035,9 @@
       ],
       "Encryption and keys": [
         "Xifratge i claus"
+      ],
+      "Enter 2FA code": [
+        "Introduïu el codi 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Introduïu els punts finals al vostre proveïdor d'identitat"
@@ -16324,6 +16374,9 @@
       "Refer a friend": [
         "Recomana a un amic"
       ],
+      "Remove all members?": [
+        "Voleu suprimir tots els membres?"
+      ],
       "Remove calendar": [
         "Esborra el calendari"
       ],
@@ -16519,6 +16572,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "There are no groups": [
+        "No hi han grups."
       ],
       "This field cannot be empty": [
         "Aquest camp no pot estar buit"
@@ -16944,6 +17000,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ],
+      "User declined invitation": [
+        "L'usuari ha rebutjat la invitació."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -17000,11 +17059,20 @@
       "Enable admin access?": [
         "Voleu activar l'accés fora de línia?"
       ],
+      "Private user": [
+        "Usuari privat"
+      ],
       "reject": [
         "rebutjar"
       ],
       "Revoke access": [
         "Revoca l'accés"
+      ],
+      "Send request": [
+        "Envia una sol·licitud"
+      ],
+      "View request": [
+        "Mostra la sol·licitud"
       ]
     },
     "Update font modal": {
@@ -17307,8 +17375,14 @@
       "Get started": [
         "Comenceu"
       ],
+      "Invite Friends": [
+        "Convideu amics"
+      ],
       "Unlock ${ appName } premium features by upgrading": [
         "Desbloquegeu característiques prèmium de ${ appName } millorant la subscripció"
+      ],
+      "You're Invited.": [
+        "Heu estat convidat."
       ]
     },
     "wallet_signup_2024:Bug category": {

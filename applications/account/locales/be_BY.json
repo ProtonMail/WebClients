@@ -811,11 +811,11 @@
       "Refresh status": [
         "Абнавіць статус"
       ],
-      "refresh the page": [
-        "абнавіць старонку"
-      ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "refresh the page": [
+        "абнавіць старонку"
       ],
       "Reload": [
         "Перазагрузіць"
@@ -1234,6 +1234,9 @@
       "View plans details": [
         "Паглядзець падрабязнасці тарыфных планаў"
       ],
+      "View recovery settings": [
+        "Паглядзець налады аднаўлення"
+      ],
       "Void": [
         "Анулявана"
       ],
@@ -1630,6 +1633,14 @@
         "Выберыце прапанову прысвечаную канцу года"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Сховішча памерам у 6 ТБ (у 2 разы больш, чым на іншых тарыфных планах)"
@@ -1651,14 +1662,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тарыфны план ${ plan } вярнуўся на абмежаваны час."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры **${ discountPercentage } на тарыфны план ${ plan.Title }** пры падпісцы на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3411,6 +3414,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Аўтаматычнае выдаленне спама і паведамленняў, якія былі перамешчаны ў сметніцу, а таксама разблакіроўка яшчэ большай колькасці прэміяльных функцый пасля паляпшэння тарыфнага плана."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Віншуем! Вы зарабілі максімальную колькасць з ${ rewardsLimit } бясплатных месяцаў тарыфнага плана ${ plusPlanName }."
       ],
@@ -6716,7 +6722,7 @@
         "Субдамен ${ protonSubdomain } размешчаны на ${ BRAND_NAME }, які дазваляе вам хутка наладжваць субдамены. ${ learnMoreLink }"
       ],
       "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Для стварэння групы патрабуецца карыстальніцкі дамен. Калі ў вас адсутнічае наладжаны карыстальніцкі дамен, то спачатку стварыце яго па спасылцы ${ linkToDomainPage }."
+        "Для стварэння груп патрабуецца карыстальніцкі дамен. Калі ў вас адсутнічае наладжаны карыстальніцкі дамен, то спачатку стварыце яго па спасылцы ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Назва, якая дапаможа вам вызначыць, дзе вы яго выкарыстоўваеце, каб вы маглі лёгка адклікаць яго або падоўжыць яго пазней."
@@ -7189,11 +7195,11 @@
       "Data locked": [
         "Даныя заблакіраваны"
       ],
-      "Dedicated servers": [
-        "Вылучаныя серверы"
-      ],
       "dedicated servers": [
         "вылучаныя серверы"
+      ],
+      "Dedicated servers": [
+        "Вылучаныя серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Вылучаныя серверы з вылучаным(-і) IP-адрасам(-і) могуць быць дададзены ў прыватныя шлюзы для ўключэння дакладнага кантролю доступу."
@@ -7844,7 +7850,7 @@
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
       "Loading gateways monitoring current status.": [
-        "Бягучы статус назірання загрузкі шлюзоў."
+        "Бягучы статус назірання загрузкі за шлюзамі."
       ],
       "Loading preview": [
         "Загрузка папярэдняга прагляду"
@@ -11730,6 +11736,26 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Пачніце з коштам у памеры ${ price }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Працягнуць бясплатнае выкарыстанне"
@@ -11759,24 +11785,10 @@
         "Палепшыць да ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ]
-    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } і ${ PROTON_SENTINEL_NAME }"
       ],
@@ -11903,8 +11915,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - для ўсіх сэрвісаў ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 ТБ бяспечнага сховішча"
+      ],
       "1 user": [
         "1 карыстальнік"
+      ],
+      "10 email addresses/aliases": [
+        "10 адрасоў электроннай пошты/псеўданімаў"
+      ],
+      "10-year file version history": [
+        "Гісторыя версій файлаў за 10 гадоў"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховішча"
       ],
       "24/7 account management support": [
         "Падтрымка 24/7 па кіраванні ўліковым запісам"
@@ -11926,6 +11950,9 @@
       ],
       "Advanced network security": [
         "Пашыраная бяспека сеткі"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Усе прадукты і функцыі ${ BRAND_NAME }"
       ],
       "All ${ BRAND_NAME } services": [
         "Усе сэрвісы ${ BRAND_NAME }"
@@ -12020,6 +12047,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Падтрымка паштовых кліентаў (праз IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Групы электроннай пошты"
+      ],
       "Enables HIPAA compliance": [
         "Забеспячэнне адпаведнасці HIPAA"
       ],
@@ -12046,6 +12076,9 @@
       ],
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Генерыраваць лісты з запытам"
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
@@ -12110,11 +12143,17 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
+      "Proofread and refine your emails": [
+        "Правярайце і ўдакладняйце свае электронныя лісты"
+      ],
       "Protect ${ n } device at a time": [
         "Абараніць ${ n } прыладу адначасова",
         "Абараніць ${ n } прылады адначасова",
         "Абараніць ${ n } прылад адначасова",
         "Абараніць ${ n } прылады адначасова"
+      ],
+      "Quickly craft replies": [
+        "Хутка стварайце адказы"
       ],
       "Recover previous file versions": [
         "Аднавіць папярэднія версіі файла"
@@ -12181,6 +12220,9 @@
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
+      ],
+      "Support for up to 2 users": [
+        "Падтрымка да 2 карыстальнікаў"
       ],
       "Sync and backup all your files across devices": [
         "Сінхранізацыя і рэзервовае капіяванне ўсіх вашых файлаў паміж прыладамі"
@@ -12268,6 +12310,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 карыстальніцкі дамен электроннай пошты"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
       ],
@@ -12446,6 +12491,17 @@
         "Выбраны тарыфны план: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Выпрабавальны перыяд ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Атрымайце Mail Plus за ${ price }"
+      ],
+      "Your account's usage": [
+        "Выкарыстанне вашага ўліковага запісу"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -12464,14 +12520,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Палепшыце свой тарыфны план і разблакіруйце прэміяльныя функцыі"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Выпрабавальны перыяд ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Выкарыстанне вашага ўліковага запісу"
       ]
     },
     "new_plans: tooltip": {
@@ -12537,6 +12585,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Адпраўка паведамлення кожнаму ў групе з адзінага адраса электроннай пошты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
@@ -14315,6 +14366,9 @@
       ],
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
+      ],
+      "Review your account safety": [
+        "Агляд бяспекі вашага ўліковага запісу"
       ],
       "Safeguard account now": [
         "Абараніце ўліковы запіс зараз"
@@ -16124,9 +16178,6 @@
       "Auto-reply updated": [
         "Аўтаматычны адказ абноўлены"
       ],
-      "Bug reported": [
-        "Справаздача аб памылцы адпраўлена"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Каляндар дададзены. Сінхранізацыя можа заняць некалькі хвілін."
       ],
@@ -16740,10 +16791,10 @@
       "Card verification": [
         "Праверка карткі"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрас для ўсёй пошты дамена"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрас для ўсёй пошты дамена"
       ],
       "Change login password": [
@@ -18163,7 +18214,7 @@
         "Гэта дзеянне выдаліць незавершаны запыт правоў адміністратара да даных карыстальніка або скіданне пароля."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
-        "Гэта дзеянне прывядзе да адклікання правоў адміністратара для кіравання ўліковым запісам карыстальніка."
+        "Гэта дзеянне адклікае правы адміністратара для кіравання гэтым уліковым запісам карыстальніка."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Для працягу, вам неабходна запытаць правы ў карыстальніка на доступ да яго даных або скінуць яго пароль."

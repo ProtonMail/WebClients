@@ -811,11 +811,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1121,10 +1121,10 @@
         "Tente salvar novamente. Erro ao salvar devido a: ${ saveError }"
       ],
       "Turn off": [
-        "Desligar"
+        "Desativar"
       ],
       "Turn on": [
-        "Ligar"
+        "Ativar"
       ],
       "Underline": [
         "Sublinhado"
@@ -1233,6 +1233,9 @@
       ],
       "View plans details": [
         "Ver detalhes dos planos"
+      ],
+      "View recovery settings": [
+        "Ver configurações de recuperação"
       ],
       "Void": [
         "Vazio"
@@ -1622,6 +1625,14 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1643,14 +1654,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3386,6 +3389,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Exclua automaticamente mensagens de spam e lixeira e desbloqueie mais recursos premium ao fazer upgrade."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Parabéns! Você ganhou um máximo de ${ rewardsLimit } meses gratuitos de ${ plusPlanName }."
       ],
@@ -5161,7 +5167,7 @@
         "suporte ao cliente"
       ],
       "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Atualmente, os grupos não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
+        "Os planos de grupo não oferecem suporte a contas externas no momento. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -5182,7 +5188,7 @@
         "Sair do plano Visionary"
       ],
       "Lifetime accounts cannot join a group plan.": [
-        "As contas Lifetime não podem participar de um plano de grupo."
+        "Contas vitalícias não podem ingressar em um plano de grupo."
       ],
       "Manage addresses.": [
         "Gerenciar endereços."
@@ -5242,7 +5248,7 @@
         "Você entrou com sucesso no grupo familiar"
       ],
       "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Você tem faturas não pagas. Pague antes de juntar-se ao grupo."
+        "Você tem faturas não pagas. Pague-as antes de entrar em um plano de grupo."
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "Você precisa configurar um domínio personalizado antes de adicionar usuários."
@@ -7066,11 +7072,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -7890,7 +7896,7 @@
         "Outros usuários da sua organização verão seus horários ocupados. Nenhum detalhe do evento é compartilhado."
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Nossos alertas pecam por excesso de precaução. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
+        "Os nossos alertas pecam por excesso de precaução. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Arquivo de recuperação desatualizado. Atualize para garantir acesso aos seus dados"
@@ -11542,6 +11548,26 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11571,24 +11597,10 @@
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ]
-    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
       ],
@@ -11681,8 +11693,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Para todos os serviços da ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TB de armazenamento seguro"
+      ],
       "1 user": [
         "1 usuário"
+      ],
+      "10 email addresses/aliases": [
+        "10 endereços de e-mail/aliases"
+      ],
+      "10-year file version history": [
+        "Histórico de versões de arquivos por 10 anos"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
       ],
       "24/7 account management support": [
         "Suporte de administração de conta 24/7"
@@ -11704,6 +11728,9 @@
       ],
       "Advanced network security": [
         "Segurança de rede avançada"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Todos os produtos e recursos da ${ BRAND_NAME }"
       ],
       "All ${ BRAND_NAME } services": [
         "Todos os serviços da ${ BRAND_NAME }"
@@ -11798,6 +11825,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Suporte a clientes de e-mail (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grupos de e-mail"
+      ],
       "Enables HIPAA compliance": [
         "Permite a conformidade com a HIPAA"
       ],
@@ -11824,6 +11854,9 @@
       ],
       "GDPR data processing agreement": [
         "Acordo de processamento de dados do RGPD"
+      ],
+      "Generate emails with a prompt": [
+        "Gere e-mails com um prompt"
       ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
@@ -11886,9 +11919,15 @@
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
       ],
+      "Proofread and refine your emails": [
+        "Revise e otimize seus e-mails"
+      ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
+      ],
+      "Quickly craft replies": [
+        "Elabore respostas rapidamente"
       ],
       "Recover previous file versions": [
         "Recuperar versões anteriores de arquivos"
@@ -11953,6 +11992,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
+      ],
+      "Support for up to 2 users": [
+        "Suporte para até 2 usuários"
       ],
       "Sync and backup all your files across devices": [
         "Sincronize e faça backup dos seus arquivos em todos os dispositivos"
@@ -12036,6 +12078,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domínio de e-mail personalizado"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crie vários endereços de e-mail para suas identidades on-line, por exemplo: JoaoLojas@${ domain } para contas de lojas e JoaoNoticias@${ domain2 } para assinaturas de notícias"
       ],
@@ -12214,6 +12259,20 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Obtenha Mail Plus por ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -12232,17 +12291,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -12306,6 +12354,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envie e-mails para todos em um grupo com um único endereço de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -14084,6 +14135,9 @@
       "Recovery phone number": [
         "Número de telefone de recuperação"
       ],
+      "Review your account safety": [
+        "Revise a segurança de sua conta"
+      ],
       "Safeguard account now": [
         "Proteja sua conta agora"
       ],
@@ -15814,9 +15868,6 @@
       "Auto-reply updated": [
         "Resposta automática atualizada"
       ],
-      "Bug reported": [
-        "Relatório de erros enviado"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendário adicionado. Pode levar alguns minutos para sincronizar."
       ],
@@ -16421,11 +16472,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço catch-all"
-      ],
       "Catch-All address": [
         "Endereço Catch-All (captura tudo)"
+      ],
+      "Catch-all address": [
+        "Endereço catch-all"
       ],
       "Change login password": [
         "Alterar a senha de login"
