@@ -33,7 +33,6 @@ export const PASS_ANDROID_URL = 'https://play.google.com/store/apps/details?id=p
 export const PASS_IOS_URL = 'https://apps.apple.com/us/app/proton-pass-password-manager/id6443490629';
 export const PASS_X_URL = 'https://x.com/Proton_Pass';
 export const PASS_REDDIT_URL = 'https://www.reddit.com/r/ProtonPass/';
-export const PASS_GITHUB_URL = 'https://github.com/ProtonMail/WebClients/tree/main/applications/pass-extension';
 export const PASS_REQUEST_URL = 'https://protonmail.uservoice.com/forums/953584-proton-pass';
 export const PASS_BLOG_TRIAL_URL = 'https://proton.me/support/pass-trial';
 export const PASS_BLOG_MONITORING_URL = 'https://proton.me/support/dark-web-monitoring';
