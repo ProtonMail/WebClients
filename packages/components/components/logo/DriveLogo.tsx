@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { useState } from 'react';
 
-import { generateUID } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
