@@ -567,6 +567,9 @@
       "Open navigation": [
         "탐색 열기"
       ],
+      "Open scan and download info": [
+        "스캔 열고 정보 다운로드"
+      ],
       "Pause all": [
         "모두 일시 정지"
       ],
@@ -652,7 +655,7 @@
         "기능 요청"
       ],
       "Request new code": [
-        "새 코드를 요청합니다."
+        "새로운 코드 받기"
       ],
       "Resend code": [
         "코드 다시 보내기"
@@ -701,6 +704,9 @@
       ],
       "Save changes": [
         "변경 사항 저장"
+      ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }에 저장"
       ],
       "Scan & Download": [
         "검사하고 다운로드"
@@ -2282,6 +2288,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "연락처 병합 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "연락처 그룹으로 모두에게 한 번의 클릭으로 이메일을 전송하여 시간을 절약하세요. 업그레이드하여 이 기능과 다른 프리미엄 기능도 경험하세요."
       ],
       "Set a data recovery method to prevent data loss.": [
         "데이터 손실을 방지하려면 데이터 복구 방법을 설정하세요."
@@ -4360,6 +4369,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "최상의 결과를 얻으려면 스트리밍 및 메모리를 많이 사용하는 활동을 피하거나 파일을 나누어 업로드하세요."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "시작하기 위한 5GB 무료 암호화 스토리지"
+      ],
       "from the version history?": [
         "을(를) 버전 기록에서 영구적으로 삭제하시겠습니까?"
       ],
@@ -4473,6 +4485,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "선택만 확인하시면 나머지는 저희가 하겠습니다."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "종단간 암호화로 파일을 안전하게 보관하세요."
       ],
       "Key fingerprint": [
         "지문 키"
@@ -4807,6 +4822,9 @@
       "Retry now": [
         "지금 다시 시도"
       ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }에 저장됨"
+      ],
       "Scan issue": [
         "스캔 문제 발생"
       ],
@@ -5018,7 +5036,7 @@
         "비공개 검색을 진정으로 활성화하려면, 로컬에서 사용자의 파일을 인덱싱해야 합니다. 계속 ${ DRIVE_APP_NAME }를 사용할 수 있습니다 - 인덱싱이 완료되면 알려 드리겠습니다."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "스팸 및 남용을 방지하려면 사람임을 확인하세요."
+        "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
       ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan and block malicious files. You should still only download files from people you trust.": [
         "${ DRIVE_APP_NAME }가 회원님을 보호하기 위해 의심스러운 파일을 검사하고 차단합니다. 하지만 여전히 신뢰하는 사용자의 파일만 다운로드해야 합니다."
@@ -5757,6 +5775,9 @@
       "Location": [
         "위치"
       ],
+      "Log in or sign up ": [
+        "로그인하거나 회원 가입하세요 "
+      ],
       "Mail Server (IMAP)": [
         "메일 서버 (IMAP)"
       ],
@@ -6477,6 +6498,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
       ],
+      "Get started for ${ price }": [
+        "${ price }로 시작하세요."
+      ],
       "Upgrade now": [
         "지금 업그레이드"
       ]
@@ -6505,6 +6529,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 와(과) ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6580,8 +6607,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - 전체 ${ BRAND_NAME } 서비스용"
       ],
+      "1 TB secure storage": [
+        "1 TB 보안 저장공간"
+      ],
       "1 user": [
         "사용자 1명"
+      ],
+      "10 email addresses/aliases": [
+        "10개 이메일 주소"
+      ],
+      "10-year file version history": [
+        "10년 파일 버전 기록"
+      ],
+      "15 GB storage": [
+        "저장공간 15GB"
       ],
       "24/7 account management support": [
         "24/7 계정 관리 지원"
@@ -6597,6 +6636,9 @@
       ],
       "Administration Panel": [
         "관리 패널"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "모든 ${ BRAND_NAME } 제품 및 기능"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 ${ BRAND_NAME } 베이직 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6679,6 +6721,9 @@
       "Email client support (via IMAP/SMTP)": [
         "이메일 클라이언트 지원 (IMAP/SMTP)"
       ],
+      "Email groups": [
+        "이메일 그룹"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA 자격 활성화"
       ],
@@ -6705,6 +6750,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
+      ],
+      "Generate emails with a prompt": [
+        "프롬프트로 이메일 생성하기"
       ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
@@ -6760,8 +6808,14 @@
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
       ],
+      "Proofread and refine your emails": [
+        "이메일 교정 및 수정하기"
+      ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
+      ],
+      "Quickly craft replies": [
+        "신속하게 답변 작성하기"
       ],
       "Recover previous file versions": [
         "이전 파일 버전 복구"
@@ -6816,6 +6870,9 @@
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
+      ],
+      "Support for up to 2 users": [
+        "최대 2명 지원"
       ],
       "Sync and backup all your files across devices": [
         "기기를 넘나들며 파일을 동기화 및 백업하세요"
@@ -6894,6 +6951,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1개 커스텀 이메일 도메인"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
@@ -6995,6 +7055,11 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -7069,6 +7134,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
+      ],
+      "Email everyone in a group with a single email address": [
+        "그룹 내의 모두에게 하나의 주소로 이메일을 전송하기"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "이메일 주소가 존재하지 않거나, 더 이상 존재하지 않거나, 오타가 있더라도 도메인으로 전송된 모든 이메일을 받을 수 있습니다."
@@ -7800,6 +7868,9 @@
       "E.g., ": [
         "예, "
       ],
+      "Email": [
+        "이메일"
+      ],
       "Enter a new file name": [
         "새 파일 이름을 입력하세요"
       ],
@@ -7966,6 +8037,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } 의 공식 이메일"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "내 계정 보안 검토하기"
       ]
     },
     "Security Center": {
@@ -9028,9 +9104,6 @@
       "Alias saved and copied": [
         "별칭이 저장 및 복사되었습니다"
       ],
-      "Bug reported": [
-        "버그 신고됨"
-      ],
       "Canceling import": [
         "가져오기 취소 중"
       ],
@@ -9658,6 +9731,9 @@
       "Restore your files": [
         "내 파일 복구"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "나중에 ${ DRIVE_APP_NAME }에 저장하기"
+      ],
       "Search results": [
         "검색 결과"
       ],
@@ -9847,6 +9923,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "추후 간편하게 접근할 수 있도록 내 ${ DRIVE_APP_NAME }에 공유된 파일을 추가하세요."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "자동은 작성기의 형식이 이 사용자에게 보내는 데 사용됨을 나타냅니다. 일반 텍스트는 발송 시 메시지가 항상 일반 텍스트로 변환됨을 나타냅니다."
       ],

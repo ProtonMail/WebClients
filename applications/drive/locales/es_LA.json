@@ -570,6 +570,9 @@
       "Open navigation": [
         "Abrir navegación"
       ],
+      "Open scan and download info": [
+        "Abrir el escáner y descargar la información"
+      ],
       "Pause all": [
         "Pausar todo"
       ],
@@ -2298,6 +2301,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Ahorre tiempo al enviar correos a todos de una vez con grupos de contactos. Desbloquee esta y otras funciones premium cuando mejore el plan."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Establezca un método de recuperación para evitar pérdida de datos."
@@ -4436,6 +4442,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para mejores resultados, evite las actividades de streaming o demandantes de memoria, o divida la carga de archivos en lotes más pequeños."
+      ],
+      "Free 5GB encrypted storage to get started": [
+        "5 GB de almacenamiento cifrado gratuito para comenzar"
       ],
       "from the version history?": [
         "del historial de versiones?"
@@ -6643,6 +6652,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Bajar a ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Empiece por ${ price }"
+      ],
       "Upgrade now": [
         "Mejorar ahora"
       ]
@@ -6671,6 +6683,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6763,6 +6778,9 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Para todos los servicios de ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TB de almacenamiento seguro"
+      ],
       "1 user": [
         "1 usuario"
       ],
@@ -6789,6 +6807,9 @@
       ],
       "Administration Panel": [
         "Panel de administración"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Todos los productos y funciones de ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6901,6 +6922,9 @@
       "GDPR data processing agreement": [
         "Acuerdo para el procesamiento de datos conforme al RGPD"
       ],
+      "Generate emails with a prompt": [
+        "Genere correos electrónicos con un aviso"
+      ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
       ],
@@ -6956,9 +6980,15 @@
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
       ],
+      "Proofread and refine your emails": [
+        "Revise y refine sus correos electrónicos"
+      ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo a la vez",
         "Proteja ${ n } dispositivos a la vez"
+      ],
+      "Quickly craft replies": [
+        "Redacte rápidamente respuestas"
       ],
       "Recover previous file versions": [
         "Recuperar versiones previas de archivos"
@@ -7013,6 +7043,9 @@
       ],
       "Strict no-logs policy": [
         "Política estricta de no registros"
+      ],
+      "Support for up to 2 users": [
+        "Soporte para hasta 2 usuarios"
       ],
       "Sync and backup all your files across devices": [
         "Sincronice todas las copias de seguridad y todos los archivos en sus distintos dispositivos"
@@ -7197,6 +7230,11 @@
         "Está disfrutando de un precio promocional en el plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Obtenga Mail Plus por ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7272,6 +7310,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Comparta calendarios con familiares, amistades y colegas fácilmente"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envíe correos a todos en un grupo con una sola dirección de correo"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garantiza que reciba todos los correos enviados al dominio, incluso si la dirección de correo no existe, ya no existe o tiene un error tipográfico"
@@ -8196,6 +8237,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Correo oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Compruebe la seguridad de la cuenta"
       ]
     },
     "Security Center": {
@@ -9287,9 +9333,6 @@
       "Alias saved and copied": [
         "Alias guardado y copiado"
       ],
-      "Bug reported": [
-        "Error reportado"
-      ],
       "Canceling import": [
         "Cancelando la importación"
       ],
@@ -9342,6 +9385,9 @@
       ],
       "Preferences saved": [
         "Preferencias guardadas"
+      ],
+      "Problem reported": [
+        "Se notificó el problema."
       ],
       "Recovery has started": [
         "La recuperación ha comenzado"
@@ -9934,6 +9980,9 @@
       "Restore your files": [
         "Restaure los archivos"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Guardarlo para después en ${ DRIVE_APP_NAME }"
+      ],
       "Search results": [
         "Buscar resultados"
       ],
@@ -10123,6 +10172,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Añada este archivo compartido a su ${ DRIVE_APP_NAME } para un acceso fácil después."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automático indica que el formato en el editor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
