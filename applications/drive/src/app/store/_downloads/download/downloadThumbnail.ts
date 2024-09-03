@@ -7,6 +7,7 @@ import { CryptoProxy } from '@proton/crypto';
 
 import { streamToBuffer } from '../../../utils/stream';
 import type { DecryptFileKeys } from '../interface';
+import { markErrorAsCrypto } from '../markErrorAsCrypto';
 import downloadBlock from './downloadBlock';
 
 type GetKeysCallback = () => Promise<DecryptFileKeys>;
@@ -29,12 +30,18 @@ async function decryptThumbnail(
 ): Promise<{ data: ReadableStream<Uint8Array>; verifiedPromise: Promise<VERIFICATION_STATUS> }> {
     const { sessionKeys, addressPublicKeys } = await getKeys();
 
-    const { data, verified } = await CryptoProxy.decryptMessage({
-        binaryMessage: await readToEnd(stream),
-        sessionKeys,
-        verificationKeys: addressPublicKeys,
-        format: 'binary',
-    });
+    const { data, verified } = await markErrorAsCrypto<{ data: Uint8Array; verified: VERIFICATION_STATUS }>(
+        async () => {
+            const { data, verified } = await CryptoProxy.decryptMessage({
+                binaryMessage: await readToEnd(stream),
+                sessionKeys,
+                verificationKeys: addressPublicKeys,
+                format: 'binary',
+            });
+            return { data, verified };
+        }
+    );
+
     return {
         data: toStream(data) as ReadableStream<Uint8Array>,
         verifiedPromise: Promise.resolve(verified), // TODO lara/michal: refactor this since we no longer use streaming on decryption, hence verified is no longer a promise

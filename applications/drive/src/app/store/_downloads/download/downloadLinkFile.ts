@@ -16,6 +16,7 @@ import type {
     LinkDownload,
     LogCallback,
 } from '../interface';
+import { markErrorAsCrypto } from '../markErrorAsCrypto';
 import initDownloadBlocks from './downloadBlocks';
 
 /**
@@ -44,22 +45,31 @@ export default function initDownloadLinkFile(
         }
 
         const keys = await keysPromise;
-        const { data: decryptedSignature } = await CryptoProxy.decryptMessage({
-            armoredMessage: encSignature,
-            decryptionKeys: keys.privateKey,
-            format: 'binary',
+
+        const decryptedSignature = await markErrorAsCrypto<Uint8Array>(async () => {
+            const { data: decryptedSignature } = await CryptoProxy.decryptMessage({
+                armoredMessage: encSignature,
+                decryptionKeys: keys.privateKey,
+                format: 'binary',
+            });
+            return decryptedSignature;
         });
 
         const binaryMessage = await readToEnd<Uint8Array>(stream);
         const hash = (await generateContentHash(binaryMessage)).BlockHash;
 
-        const { data, verified } = await CryptoProxy.decryptMessage({
-            binaryMessage,
-            binarySignature: decryptedSignature,
-            sessionKeys: keys.sessionKeys,
-            verificationKeys: keys.addressPublicKeys,
-            format: 'binary',
-        });
+        const { data, verified } = await markErrorAsCrypto<{ data: Uint8Array; verified: VERIFICATION_STATUS }>(
+            async () => {
+                const { data, verified } = await CryptoProxy.decryptMessage({
+                    binaryMessage,
+                    binarySignature: decryptedSignature,
+                    sessionKeys: keys.sessionKeys,
+                    verificationKeys: keys.addressPublicKeys,
+                    format: 'binary',
+                });
+                return { data, verified };
+            }
+        );
 
         if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
             await callbacks.onSignatureIssue?.(abortSignal, link, { blocks: verified });
