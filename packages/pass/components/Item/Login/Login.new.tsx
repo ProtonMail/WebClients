@@ -23,6 +23,7 @@ import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal'
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { usePortal } from '@proton/pass/hooks/usePortal';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { getSanitizedUserIdentifiers } from '@proton/pass/lib/items/item.utils';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
@@ -126,6 +127,8 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                 issuer: name || undefined,
             });
 
+            const { email, username } = getSanitizedUserIdentifiers({ itemEmail, itemUsername });
+
             onSubmit({
                 type: 'login',
                 optimisticId,
@@ -137,8 +140,8 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
                     itemUuid: optimisticId,
                 },
                 content: {
-                    itemEmail: obfuscate(itemEmail),
-                    itemUsername: obfuscate(itemUsername),
+                    itemEmail: obfuscate(email),
+                    itemUsername: obfuscate(username),
                     password: obfuscate(password),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
                     totpUri: obfuscate(normalizedOtpUri),
