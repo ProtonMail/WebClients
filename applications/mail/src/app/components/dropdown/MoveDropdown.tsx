@@ -3,7 +3,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import type { Breakpoints, IconName } from '@proton/components';
 import {
     Checkbox,
@@ -29,6 +28,7 @@ import { normalize } from '@proton/shared/lib/helpers/string';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 

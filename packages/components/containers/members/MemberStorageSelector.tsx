@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { Donut } from '@proton/atoms';
 import Slider from '@proton/atoms/Slider/Slider';
-import generateUID from '@proton/atoms/generateUID';
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
 import { PLANS } from '@proton/shared/lib/constants';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
@@ -13,6 +12,7 @@ import { sizeUnits } from '@proton/shared/lib/helpers/size';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 import clamp from '@proton/utils/clamp';
+import generateUID from '@proton/utils/generateUID';
 
 import { Tooltip } from '../../components';
 import InputField from '../../components/v2/field/InputField';

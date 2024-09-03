@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import { Copy, Info, InputFieldTwo, PasswordInputTwo, useNotifications } from '@proton/components';
 import { minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import generateUID from '@proton/utils/generateUID';
 
 import './PasswordInnerModal.scss';
 

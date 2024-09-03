@@ -8,7 +8,6 @@ import { c } from 'ttag';
 import { signoutAction } from '@proton/account';
 import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { Button, ButtonLike, CircleLoader, NotificationDot } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import { ThemeColor } from '@proton/colors';
 import {
     AppLink,
@@ -72,6 +71,7 @@ import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import ProductLink from '../../containers/app/ProductLink';
 import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';

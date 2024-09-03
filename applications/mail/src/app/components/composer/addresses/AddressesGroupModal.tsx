@@ -4,7 +4,6 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import {
     Checkbox,
     Form,
@@ -19,6 +18,7 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import type { MessageSendInfo } from '../../../hooks/useSendInfo';
 import type { RecipientGroup } from '../../../models/address';

@@ -5,7 +5,6 @@ import compact from 'lodash/compact';
 import { c } from 'ttag';
 
 import type { WasmApiClients, WasmApiWalletTransaction, WasmTransactionDetails } from '@proton/andromeda';
-import generateUID from '@proton/atoms/generateUID';
 import { useAddressesKeys } from '@proton/components/hooks/useAddressesKeys';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { PrivateKeyReference } from '@proton/crypto/lib';
@@ -13,6 +12,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { SECOND } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import type { IWasmApiWalletData } from '@proton/wallet';

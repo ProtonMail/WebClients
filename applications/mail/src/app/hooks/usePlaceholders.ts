@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
+import generateUID from '@proton/utils/generateUID';
 import range from '@proton/utils/range';
 
 import type { Element } from '../models/element';

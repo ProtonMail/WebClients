@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import type { Location } from 'history';
 
-import generateUID from '@proton/atoms/generateUID';
 import type { Breakpoints } from '@proton/components';
 import {
     FeatureCode,
@@ -15,6 +14,7 @@ import {
     useToggle,
     useUser,
 } from '@proton/components';
+import generateUID from '@proton/utils/generateUID';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';

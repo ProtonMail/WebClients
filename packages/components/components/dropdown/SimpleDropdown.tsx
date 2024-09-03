@@ -1,8 +1,8 @@
 import type { ElementType, ForwardedRef, HTMLAttributes, MouseEventHandler, ReactNode, RefObject } from 'react';
 import { forwardRef, useEffect, useState } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
 import { useCombinedRefs } from '@proton/hooks';
+import generateUID from '@proton/utils/generateUID';
 
 import { usePopperAnchor } from '../popper';
 import type { DropdownProps } from './Dropdown';

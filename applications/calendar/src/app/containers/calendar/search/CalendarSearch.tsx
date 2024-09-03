@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
 import { usePopperAnchor } from '@proton/components';
+import generateUID from '@proton/utils/generateUID';
 
 import { useEncryptedSearchLibrary } from '../../EncryptedSearchLibraryProvider';
 import CalendarSearchActivation from './CalendarSearchActivation';

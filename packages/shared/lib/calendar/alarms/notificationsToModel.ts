@@ -1,4 +1,4 @@
-import generateUID from '@proton/atoms/generateUID';
+import generateUID from '@proton/utils/generateUID';
 
 import type { Nullable } from '../../interfaces';
 import type { CalendarNotificationSettings, CalendarSettings } from '../../interfaces/calendar';

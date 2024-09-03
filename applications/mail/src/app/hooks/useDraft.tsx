@@ -1,6 +1,5 @@
 import { useCallback, useEffect } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
 import {
     useAddresses,
     useCache,
@@ -11,6 +10,7 @@ import {
 } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { isPaid } from '@proton/shared/lib/user/helpers';
+import generateUID from '@proton/utils/generateUID';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';

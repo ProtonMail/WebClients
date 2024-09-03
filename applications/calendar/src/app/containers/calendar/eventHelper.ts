@@ -1,6 +1,5 @@
 import { differenceInHours, fromUnixTime } from 'date-fns';
 
-import generateUID from '@proton/atoms/generateUID';
 import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { addDays, max } from '@proton/shared/lib/date-fns-utc';
@@ -12,6 +11,7 @@ import {
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
 import type { EventModel, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import generateUID from '@proton/utils/generateUID';
 
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
 import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';

@@ -1,11 +1,11 @@
 import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import { genAccentShades } from '@proton/colors';
 import useInstance from '@proton/hooks/useInstance';
 import capitalize from '@proton/utils/capitalize';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 interface Props {
     selected: string;

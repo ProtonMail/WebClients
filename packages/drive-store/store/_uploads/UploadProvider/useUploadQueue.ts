@@ -2,9 +2,9 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { DS_STORE } from '@proton/shared/lib/drive/constants';
+import generateUID from '@proton/utils/generateUID';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import {

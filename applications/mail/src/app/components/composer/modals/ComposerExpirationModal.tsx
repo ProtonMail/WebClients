@@ -18,7 +18,6 @@ import {
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import {
     Checkbox,
     DateInputTwo,
@@ -33,6 +32,7 @@ import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
+import generateUID from '@proton/utils/generateUID';
 
 import { useMailDispatch } from 'proton-mail/store/hooks';
 

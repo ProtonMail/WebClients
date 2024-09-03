@@ -4,10 +4,10 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import { Icon, Label, Tooltip } from '@proton/components';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
