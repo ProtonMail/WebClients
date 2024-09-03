@@ -93,6 +93,9 @@
       "Add to group": [
         "Добавить в группу"
       ],
+      "Adds it above your existing message": [
+        "Добавляет это выше вашего существующего сообщения"
+      ],
       "Align center": [
         "Выровнять по центру"
       ],
@@ -506,6 +509,9 @@
       ],
       "Generate text": [
         "Сгенерировать текст"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Оформить ${ BRAND_NAME } Duo"
       ],
       "Get in touch": [
         "Связаться с нами"
@@ -1553,17 +1559,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Данные остаются на устройстве для защиты вашей конфиденциальности. Требуется загрузка и совместимое оборудование."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Данные остаются на вашем устройстве, но потребуются единоразовая загрузка и совместимое оборудование."
       ],
       "Fast and secure. No logs are kept.": [
         "Быстро и безопасно. Журналы не сохраняются."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Журналы не сохраняются для защиты вашей конфиденциальности. Быстрая обработка."
+      ],
       "Run on device": [
         "Запуск на устройстве"
       ],
       "Run on servers": [
         "Выполнять на серверах"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Безопасно работает на серверах ${ BRAND_NAME }"
+      ],
+      "Securely run on device": [
+        "Безопасно работает на устройстве"
       ]
     },
     "Assistant toggle": {
@@ -3436,6 +3454,9 @@
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Для импорта через CSV- и VCF-файл убедитесь, что файл не превышает ${ MAX_IMPORT_FILE_SIZE_STRING } или ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, пожалуйста, разделите его на более мелкие файлы. ${ learnMoreLink }."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Для неограниченного доступа к помощнику по написанию и другим функциям обновите до ${ BRAND_NAME } Duo."
+      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Получите неограниченное количество псевдонимов и 500 ГБ в облачном хранилище с ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -3468,6 +3489,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Установите метод восстановления, чтобы не потерять доступ к своему аккаунту."
+      ],
+      "Starting from ${ price }": [
+        "Начальная цена ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Чтобы продолжить пользоваться помощником по написанию, добавьте его к своей подписке."
@@ -5614,6 +5638,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe помогает вам быстро и легко составлять лучшие электронные письма."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Помощник по написанию ${ BRAND_NAME } Scribe"
       ],
@@ -6418,6 +6445,12 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Для получения дополнительных результатов поиска попробуйте искать это ключевое слово в содержимом ваших электронных сообщений."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Бесплатно на пробный период ${ ASSISTANT_TRIAL_TIME_DAYS } день",
+        "Бесплатно на пробный период ${ ASSISTANT_TRIAL_TIME_DAYS } дня",
+        "Бесплатно на пробный период ${ ASSISTANT_TRIAL_TIME_DAYS } дней",
+        "Бесплатно на пробный период ${ ASSISTANT_TRIAL_TIME_DAYS } дней"
+      ],
       "From": [
         "От"
       ],
@@ -6567,6 +6600,9 @@
       ],
       "Learn more": [
         "Узнать больше"
+      ],
+      "Learn more about the writing assistant": [
+        "Узнайте больше о помощнике по написанию"
       ],
       "Left to Right": [
         "Слева направо"
@@ -7053,6 +7089,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Количество загрузок включает как фактические загрузки, так и случаи предварительного просмотра файлов."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Похоже, что адрес электронной почты ${ boldNoReplyEmail } не принимает ответы. Вы уверены, что хотите отправить сообщение?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Размер зашифрованных данных увеличивается за счет дополнительной информации о шифровании и подписях, обеспечивающих безопасность ваших данных."
@@ -7698,6 +7737,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
+      ],
+      "Your private writing assistant": [
+        "Ваш конфиденциальный помощник по написанию"
       ]
     },
     "info": {
@@ -9190,6 +9232,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Начните с ${ price }"
+      ],
       "Upgrade now": [
         "Улучшить сейчас"
       ]
@@ -9218,6 +9263,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } и ${ PROTON_SENTINEL_NAME }"
       ],
@@ -9344,8 +9392,14 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } — для всех сервисов ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 ТБ защищенного хранения"
+      ],
       "1 user": [
         "1 пользователь"
+      ],
+      "10-year file version history": [
+        "10-летняя история версий файла"
       ],
       "24/7 account management support": [
         "Постоянная круглосуточная поддержка управления аккаунтом"
@@ -9361,6 +9415,9 @@
       ],
       "Administration Panel": [
         "Панель администратора"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Все продукты и функции ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Все основные сервисы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9470,6 +9527,9 @@
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
       ],
+      "Generate emails with a prompt": [
+        "Генерируйте электронные письма с помощью подсказки"
+      ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
@@ -9527,11 +9587,17 @@
       "Priority support & live chat": [
         "Приоритетная поддержка и живой чат"
       ],
+      "Proofread and refine your emails": [
+        "Проверьте и уточните ваши электронные письма"
+      ],
       "Protect ${ n } device at a time": [
         "Защитите ${ n } устройство за раз",
         "Защитите ${ n } устройства одновременно",
         "Защитите ${ n } устройств одновременно",
         "Защитите ${ n } устройств одновременно"
+      ],
+      "Quickly craft replies": [
+        "Быстро составляйте ответы"
       ],
       "Recover previous file versions": [
         "Восстановить предыдущие версии файла"
@@ -9586,6 +9652,9 @@
       ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
+      ],
+      "Support for up to 2 users": [
+        "Поддержка до 2 пользователей"
       ],
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
@@ -10705,6 +10774,11 @@
         "Повторное шифрование приглашения не удалось. Попробуйте еще раз."
       ]
     },
+    "Safety review": {
+      "Review your account safety": [
+        "Просмотрите безопасность вашего аккаунта"
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Сообщений не найдено"
@@ -11614,7 +11688,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Для ${ totalPrice }"
+        "За ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -12162,9 +12236,6 @@
       "Alias saved and copied": [
         "Псевдоним сохранён и скопирован"
       ],
-      "Bug reported": [
-        "Отчёт об ошибке отправлен"
-      ],
       "Canceling import": [
         "Отмена импорта"
       ],
@@ -12707,6 +12778,9 @@
       ],
       "Coupon": [
         "Купон"
+      ],
+      "Craft better emails": [
+        "Составляйте лучшие электронные письма"
       ],
       "Create contact": [
         "Создать контакт"

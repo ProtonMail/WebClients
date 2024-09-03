@@ -93,6 +93,9 @@
       "Add to group": [
         "Føj til gruppe"
       ],
+      "Adds it above your existing message": [
+        "Tilføjer den over din eksisterende besked"
+      ],
       "Align center": [
         "Centrer"
       ],
@@ -500,6 +503,9 @@
       ],
       "Generate text": [
         "Generer tekst"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Hent ${ BRAND_NAME } Duo"
       ],
       "Get in touch": [
         "Kontakt os"
@@ -1535,17 +1541,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Data forbliver på enheden for at beskytte dit privatliv. Kræver download og kompatibel hardware."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Data forbliver på din enhed, men kræver en engangsoverførsel og kompatibel hardware"
       ],
       "Fast and secure. No logs are kept.": [
         "Hurtig og sikker. Ingen logføring."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Ingen logs opbevares for at beskytte dit privatliv. Hurtigere behandling."
+      ],
       "Run on device": [
         "Kør på enhed"
       ],
       "Run on servers": [
         "Kør på servere"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Sikre, der kører på ${ BRAND_NAME } servere"
+      ],
+      "Securely run on device": [
+        "Sikre, der kører på enheden"
       ]
     },
     "Assistant toggle": {
@@ -3385,6 +3403,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA tilføjer et ekstra sikkerheds lag, der forhindrer uautoriseret adgang."
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Auto-slet spam og kasserede beskeder, og lås op for flere premium-funktioner, når du opgraderer."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du downloade filen med alle dine eksporterede kontakter."
       ],
@@ -3399,6 +3420,9 @@
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "For ubegrænset adgang til skriveassistenten og mere, opgradér til ${ BRAND_NAME } Duo."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Få ubegrænsede aliasser og 500 GB lagerplads med ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3422,6 +3446,9 @@
       "No labels": [
         "Ingen etiketter"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Spar tid ved at sende mails til alle på én gang med kontaktgrupper. Lås op for denne og andre premium-funktioner, når du opgraderer."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
       ],
@@ -3430,6 +3457,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Indstil en gendannelsesmetode for at forhindre, at du mister adgang til din konto."
+      ],
+      "Starting from ${ price }": [
+        "Starter fra ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Du kan fortsætte med at bruge skriveassistenten ved at tilføje den til dit abonnement."
@@ -3445,6 +3475,12 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå e-mail-trackerbeskyttelse til for at forhindre annoncører og andre i at spore din placering og onlineaktivitet."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Lås op for tilpasset beskedplanlægning og flere premium-funktioner, når du opgraderer."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Lås op for tilpassede udsættelsestider og flere premium-funktioner, når du opgraderer."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Lås op for kortere e-mailadresser og andre premium-funktioner ved at opgradere."
@@ -5516,6 +5552,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe hjælper dig med hurtigt og ubesværet at skrive bedre e-mails."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
@@ -6208,6 +6247,10 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Hvis du ønsker flere søgeresultater, kan du prøve at søge efter dette nøgleord i indholdet af dine e-mails."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Gratis at prøve i ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
+        "Gratis at prøve i ${ ASSISTANT_TRIAL_TIME_DAYS } dage"
+      ],
       "From": [
         "Fra"
       ],
@@ -6353,6 +6396,9 @@
       ],
       "Learn more": [
         "Få mere at vide"
+      ],
+      "Learn more about the writing assistant": [
+        "Få mere at vide om skriveassistenten"
       ],
       "Left to Right": [
         "Venstre mod højre"
@@ -6835,6 +6881,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antallet af downloads omfatter både faktiske downloads og tilfælde, hvor filer forhåndsvises."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "E-mailadressen ${ boldNoReplyEmail } ser ikke ud til at acceptere svar. Er du sikker på, at du vil sende din besked?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "De krypterede data er en smule større på grund af overheadomkostningerne ved krypteringen og signaturerne, som garanterer sikkerheden for dine data."
@@ -7444,6 +7493,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
+      ],
+      "Your private writing assistant": [
+        "Din private skriveassistent"
       ]
     },
     "info": {
@@ -8908,6 +8960,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
       "Upgrade now": [
         "Opgradér nu"
       ]
@@ -8936,6 +8991,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
       ],
@@ -9028,8 +9086,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Til alle ${ BRAND_NAME }-tjenester"
       ],
+      "1 TB secure storage": [
+        "1 TB sikker lagerplads"
+      ],
       "1 user": [
         "1 bruger"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailadresser/aliasser"
+      ],
+      "10-year file version history": [
+        "10-års fil-versionshistorik"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
       ],
       "24/7 account management support": [
         "24/7 kontoadministreringssupport"
@@ -9045,6 +9115,9 @@
       ],
       "Administration Panel": [
         "Administrationspanel"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } produkter og funktioner"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9127,6 +9200,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Understøttelse af e-mailklient (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Mail-grupper"
+      ],
       "Enables HIPAA compliance": [
         "Aktiverer HIPAA-overholdelse"
       ],
@@ -9153,6 +9229,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
+      ],
+      "Generate emails with a prompt": [
+        "Generer e-mails med et prompt"
       ],
       "Group management (coming soon)": [
         "Gruppe administration (kommer snart)"
@@ -9209,9 +9288,15 @@
       "Priority support & live chat": [
         "Prioriteret support & live chat"
       ],
+      "Proofread and refine your emails": [
+        "Korrekturlæs og forfin dine e-mails"
+      ],
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
+      ],
+      "Quickly craft replies": [
+        "Skrive hurtigt svar"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -9266,6 +9351,9 @@
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
+      ],
+      "Support for up to 2 users": [
+        "Support for op til 2 brugere"
       ],
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
@@ -9346,6 +9434,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 tilpasset e-maildomæne"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Opret flere e-mailadresser for dine online identiteter, f.eks. JensShopper@${ domain } for shoppingkonto, JensNyheder@${ domain2 } til nyhedsabonnementer."
       ],
@@ -9447,6 +9538,11 @@
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -9522,6 +9618,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Del nemt dine kalendere med din familie, venner eller kollegaer"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Send en mail til alle i en gruppe med en enkelt mailadresse"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Sikrer at du modtager alle e-mails sendt til dit domæne, selvom e-mailadressen ikke eksisterer, ikke længere eksisterer eller har en tastefejl"
@@ -10359,6 +10458,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Genkryptering af invitation mislykkedes. Prøv igen."
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Gennemgå din kontos sikkerhed"
       ]
     },
     "Search - no results": {
@@ -11708,9 +11812,6 @@
       "Alias saved and copied": [
         "Alias gemt og kopieret"
       ],
-      "Bug reported": [
-        "Fejl anmeldt"
-      ],
       "Canceling import": [
         "Annullerer import"
       ],
@@ -11730,6 +11831,9 @@
       ],
       "Contacts deleted": [
         "Kontakter slettet"
+      ],
+      "Content copied to clipboard": [
+        "Indhold kopieret til udklipsholder"
       ],
       "Conversation added to ${ labelName }.": [
         "Samtale føjet til ${ labelName }."
@@ -12228,6 +12332,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "Craft better emails": [
+        "Skriv bedre e-mails"
+      ],
       "Create contact": [
         "Opret kontakt"
       ],
@@ -12563,6 +12670,9 @@
       ],
       "No trackers found": [
         "Ingen trackere fundet"
+      ],
+      "No-reply address detected": [
+        "Ingen svar-adresse fundet"
       ],
       "Notes": [
         "Noter"

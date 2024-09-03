@@ -4251,6 +4251,9 @@
       ]
     },
     "familyOffer_2023:Title": {
+      "Delete family group?": [
+        "Törli a családi csoportot?"
+      ],
       "Delete organization?": [
         "Szervezet törlése?"
       ]
@@ -10089,9 +10092,6 @@
       "Address verification disabled": [
         "Cím ellenőrzés kikapcsolva"
       ],
-      "Bug reported": [
-        "Hiba bejelentve"
-      ],
       "Canceling import": [
         "Importálás megszakítása"
       ],
@@ -11138,6 +11138,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Az új előfizetési ciklus ekkor indul: ${ formattedTime }"
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
         "A kiválasztott téma akkor lesz aktív, ha a rendszer \"sötét üzemmódba\" van állítva."
