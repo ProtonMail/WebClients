@@ -30,6 +30,7 @@ export enum TelemetryEventName {
     PassMonitorItemDetailFromMissing2FA = 'pass_monitor.item_detail_from_missing_2fa',
     PassMonitorItemDetailFromReusedPassword = 'pass_monitor.item_detail_from_reused_password',
     PassMonitorItemDetailFromWeakPassword = 'pass_monitor.item_detail_from_weak_password',
+    PassSettingsDisplayUsername = 'pass_settings.display_username',
     SearchClick = 'search.click',
     SearchTriggered = 'search.triggered',
     TwoFAAutofill = '2fa.autofill',
@@ -57,6 +58,7 @@ type ImportValues = { item_count: number; vaults: number };
 type ImportDimensions = { source: ImportProvider };
 type ItemDimensions = { type: TelemetryItemType };
 type AutofillDimensions = { location: 'source' | 'app' };
+type SettingValues = { checked: boolean };
 
 type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.AutofillDisplay, {}, AutofillDimensions>
@@ -85,6 +87,7 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromMissing2FA>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromReusedPassword>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromWeakPassword>
+    | BaseTelemetryEvent<TelemetryEventName.PassSettingsDisplayUsername, SettingValues>
     | BaseTelemetryEvent<TelemetryEventName.SearchClick>
     | BaseTelemetryEvent<TelemetryEventName.SearchTriggered>
     | BaseTelemetryEvent<TelemetryEventName.TwoFAAutofill>
