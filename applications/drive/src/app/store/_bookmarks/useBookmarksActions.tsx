@@ -6,6 +6,7 @@ import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import { useLinksListing } from '../_links';
 import { getSharedLink, splitGeneratedAndCustomPassword } from '../_shares';
 import { useBookmarks } from './useBookmarks';
@@ -34,17 +35,25 @@ export const useBookmarksActions = () => {
                 "Can't get url"
             );
         }
+        countActionWithTelemetry(Actions.OpenPublicLinkFromSharedWithMe);
         openNewTab(url);
+    };
+
+    const deleteBookmarks = async (abortSignal: AbortSignal, tokensWithLinkId: { token: string; linkId: string }[]) => {
+        for (let { token, linkId } of tokensWithLinkId) {
+            await deleteBookmark(abortSignal, token);
+            linksListing.removeCachedBookmarkLink(token, linkId);
+        }
+        countActionWithTelemetry(Actions.DeleteBookmarkFromSharedWithMe, tokensWithLinkId.length);
     };
 
     const handleDeleteBookmark = async (
         abortSignal: AbortSignal,
-        { token, linkId }: { token: string; linkId: string }
+        tokenWithLinkId: { token: string; linkId: string }
     ) => {
         try {
             // TODO: remove when we will have events for bookmarks
-            await deleteBookmark(abortSignal, token);
-            linksListing.removeCachedBookmarkLink(token, linkId);
+            await deleteBookmarks(abortSignal, [tokenWithLinkId]);
             createNotification({
                 type: 'success',
                 text: c('Notification').t`This item was succefully removed from your list`,
@@ -63,10 +72,7 @@ export const useBookmarksActions = () => {
         tokensWithLinkId: { token: string; linkId: string }[]
     ) => {
         try {
-            for (let { token, linkId } of tokensWithLinkId) {
-                await deleteBookmark(abortSignal, token);
-                linksListing.removeCachedBookmarkLink(token, linkId);
-            }
+            await deleteBookmarks(abortSignal, tokensWithLinkId);
             createNotification({
                 type: 'success',
                 text: c('Notification').t`All items were succefully removed from your list`,

@@ -4,6 +4,7 @@ import { useApi } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
+import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import { usePublicSession } from '../_api';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
 import { useBookmarks } from '../_bookmarks/useBookmarks';
@@ -48,6 +49,7 @@ export const useBookmarksPublicView = (customPassword?: string) => {
         const abortSignal = new AbortController().signal;
         await addBookmark(abortSignal, { token, urlPassword: urlPassword + customPassword });
         setBookmarksTokens((prevState) => new Set([...prevState, token]));
+        countActionWithTelemetry(Actions.AddToBookmark);
     };
 
     return {
