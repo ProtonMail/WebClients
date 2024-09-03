@@ -9,55 +9,57 @@ import type {
 } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 
-const VersionMismatchError = () => {
-    const error = new Error();
-    error.message = 'Extension version mismatch';
-    error.name = 'VersionMismatch';
-    return error;
-};
+export class MessageVersionMismatchError extends Error {
+    name = 'MessageVersionMismatchError';
 
-/**
- * This function is essential for maintaining consistent communication between
+    message = 'Extension version mismatch';
+}
+
+export class CriticalMessageResponseError extends Error {
+    name = 'CriticalMessageResponseError';
+
+    message = 'Worker failed to respond';
+}
+
+export type MessageWithSenderFactory = <T extends WorkerMessage>(message: T) => WorkerMessageWithSender<T>;
+
+/** This function is essential for maintaining consistent communication between
  * extension components, ensuring they all use the correct app version. It
  * prevents potential discrepancies that can occur during an extension update,
  * where components like the service worker, popup, and content scripts may differ
- * due to the unique way service workers are updated in MV3.
- */
+ * due to the unique way service workers are updated in MV3. */
 export const assertMessageVersion = (message: WorkerMessageWithSender) => {
-    if (message.version !== VERSION) throw VersionMismatchError();
+    if (message.version !== VERSION) throw new MessageVersionMismatchError();
 };
 
-/**
- * Wraps the untyped browser.runtime.sendMessage
- * with our message/response types to avoid manually
- * casting the response types every time we use extension
- * messaging
- */
+/** Wraps the untyped `browser.runtime.sendMessage` with our message/response types
+ * to avoid manually casting the response types every time we use extension messaging.
+ * NOTE: if message response is undefined - which can happen if the service-worker is
+ * in a corrupted state - flag the error as being critical so as to reload the runtime. */
 export const sendMessage = async <T extends WorkerMessageWithSender>(
     message: T
 ): Promise<WorkerResponse<T> | MessageFailure> => {
     try {
-        return (await browser.runtime.sendMessage(browser.runtime.id, message)) as WorkerResponse<typeof message>;
-    } catch (error: any) {
-        return { type: 'error', error: error instanceof Error ? error.message : 'Unknown error' };
+        const res = await browser.runtime.sendMessage(browser.runtime.id, message);
+        if (res === undefined) throw new CriticalMessageResponseError();
+        return res;
+    } catch (error) {
+        return {
+            type: 'error',
+            error: error instanceof Error ? error.message : 'Unknown error',
+            critical: error instanceof CriticalMessageResponseError,
+        };
     }
 };
 
-/**
- * Allows mapping over the response type via
- * an onReponse callback instead of manually
- * awaiting the sendMessage response and handling
- * it imperatively
- */
+/** Allows mapping over the response type via an `onReponse` callback instead of
+ * manually awaiting the `sendMessage` response and handling it imperatively */
 sendMessage.on = async <R, T extends WorkerMessageWithSender>(
     message: T,
     onResponse: (res: WorkerResponse<T> | MessageFailure) => R
 ): Promise<R> => onResponse(await sendMessage(message));
 
-/**
- * Allows triggering an effect only if the
- * worker response is of type "success"
- */
+/* Allows triggering an effect only if the worker response is of type "success" */
 sendMessage.onSuccess = async <T extends WorkerMessageWithSender>(
     message: T,
     onSuccess: (res: Exclude<WorkerResponse<T>, MessageFailure>) => void
@@ -68,9 +70,7 @@ sendMessage.onSuccess = async <T extends WorkerMessageWithSender>(
         }
     });
 
-export type MessageWithSenderFactory = <T extends WorkerMessage>(message: T) => WorkerMessageWithSender<T>;
-
-const messageCreator =
+export const resolveMessageFactory =
     (sender: ClientEndpoint): MessageWithSenderFactory =>
     (message) => ({
         ...message,
@@ -78,10 +78,10 @@ const messageCreator =
         version: VERSION,
     });
 
-export const backgroundMessage = messageCreator('background');
-export const popupMessage = messageCreator('popup');
-export const pageMessage = messageCreator('page');
-export const contentScriptMessage = messageCreator('contentscript');
+export const backgroundMessage = resolveMessageFactory('background');
+export const popupMessage = resolveMessageFactory('popup');
+export const pageMessage = resolveMessageFactory('page');
+export const contentScriptMessage = resolveMessageFactory('contentscript');
 
 export const portForwardingMessage = <T extends { sender: ClientEndpoint }>(
     forwardTo: string,
@@ -93,5 +93,3 @@ export const portForwardingMessage = <T extends { sender: ClientEndpoint }>(
     type: WorkerMessageType.PORT_FORWARDING_MESSAGE,
     version: VERSION,
 });
-
-export const resolveMessageFactory = messageCreator;

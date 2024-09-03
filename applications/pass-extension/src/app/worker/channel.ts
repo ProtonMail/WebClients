@@ -1,6 +1,6 @@
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientReady } from '@proton/pass/lib/client';
-import { createMessageBroker } from '@proton/pass/lib/extension/message';
+import { MessageVersionMismatchError, createMessageBroker } from '@proton/pass/lib/extension/message';
 import { cacheRequest } from '@proton/pass/store/actions';
 import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -39,7 +39,7 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.POPUP_INIT,
     ],
     onError: withContext((ctx, err) => {
-        if (err instanceof Error && err.name === 'VersionMismatch') void ctx.service.activation.reload();
+        if (err instanceof MessageVersionMismatchError) void ctx.service.activation.reload();
     }),
     onDisconnect: withContext((ctx, portName) => {
         const isPopup = portName.startsWith('popup');
