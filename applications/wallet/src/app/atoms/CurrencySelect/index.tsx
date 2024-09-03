@@ -2,11 +2,11 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import type { DropdownSize } from '@proton/components/components/dropdown/utils';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 import type { BITCOIN_CURRENCY } from '@proton/wallet';
 
 import { SearchableSelect } from '../Select';
@@ -115,7 +115,7 @@ export const CurrencySelect = <S extends string, T extends { Symbol: S; Name: st
         <SearchableSelect<string | undefined>
             id="currency-selector"
             placeholder={placeholder ?? c('Placeholder').t`Search`}
-            label={dense ? '' : label ?? c('Label').t`Currency`}
+            label={dense ? '' : (label ?? c('Label').t`Currency`)}
             value={getSerialisedOption(detailledValue)}
             onChange={handleSelectOption}
             search={currencyFilterFunction}

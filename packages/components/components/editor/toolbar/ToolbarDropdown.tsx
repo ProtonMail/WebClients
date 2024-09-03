@@ -1,8 +1,8 @@
 import type { ReactNode, Ref } from 'react';
 import { forwardRef, useImperativeHandle, useState } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import type { PopperPlacement } from '../../../components/popper';
 import type { DropdownProps } from '../../dropdown/Dropdown';

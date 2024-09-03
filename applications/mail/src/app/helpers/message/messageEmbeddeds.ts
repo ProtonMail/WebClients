@@ -1,6 +1,6 @@
-import generateUID from '@proton/atoms/generateUID';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
 import { ENCRYPTED_STATUS } from '../../constants';

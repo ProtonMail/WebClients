@@ -1,8 +1,8 @@
 import type { ElementType } from 'react';
 import { Children, useState } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
 import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
+import generateUID from '@proton/utils/generateUID';
 
 import type { CollapsibleContextValue } from './CollapsibleContext';
 import CollapsibleContext from './CollapsibleContext';

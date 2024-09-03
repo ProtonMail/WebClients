@@ -7,8 +7,8 @@ import { c } from 'ttag';
 
 import type { InputProps } from '@proton/atoms';
 import { Input } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import generateUID from '@proton/utils/generateUID';
 
 import { useHotkeys } from '../../../hooks';
 import Dropdown from '../../dropdown/Dropdown';

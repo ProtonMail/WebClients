@@ -3,7 +3,6 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import { InputFieldTwo, Option, SearchableSelect } from '@proton/components/components';
 import type { CountryOption } from '@proton/components/components/country/helpers';
 import {
@@ -17,6 +16,7 @@ import {
 import type { Props as OptionProps } from '@proton/components/components/option/Option';
 import type { Props as SearchableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
 import { getFlagSvg } from '@proton/components/components/v2/phone/flagSvgs';
+import generateUID from '@proton/utils/generateUID';
 
 import { defaultFilterFunction } from '../selectTwo/helpers';
 

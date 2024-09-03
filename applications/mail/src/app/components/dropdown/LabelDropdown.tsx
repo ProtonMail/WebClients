@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import type { Breakpoints } from '@proton/components';
 import {
     Checkbox,
@@ -27,6 +26,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import { getLabelIDs } from '../../helpers/elements';
 import { getStandardFolders, isCustomLabel } from '../../helpers/labels';

@@ -1,8 +1,8 @@
-import generateUID from '@proton/atoms/generateUID';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import generateUID from '@proton/utils/generateUID';
 
 import {
     getCanDisplaySelectAllBanner,

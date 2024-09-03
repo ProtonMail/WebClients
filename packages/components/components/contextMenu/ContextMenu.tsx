@@ -1,7 +1,7 @@
 import type { ReactNode, RefObject } from 'react';
 import { useEffect, useState } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
+import generateUID from '@proton/utils/generateUID';
 
 import type { DropdownProps } from '../dropdown';
 import { Dropdown } from '../dropdown';

@@ -1,9 +1,9 @@
 import { Button, ButtonLike } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
 import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import addItem from '@proton/utils/addItem';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 import removeItem from '@proton/utils/removeIndex';
 import updateItem from '@proton/utils/updateItem';
 

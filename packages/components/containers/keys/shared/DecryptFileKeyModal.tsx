@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import generateUID from '@proton/utils/generateUID';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components';

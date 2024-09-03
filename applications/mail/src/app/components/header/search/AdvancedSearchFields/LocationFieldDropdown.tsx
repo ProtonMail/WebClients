@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import {
     Dropdown,
     DropdownButton,
@@ -15,6 +14,7 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import type { ItemsGroup } from './useLocationFieldOptions';
 import { useLocationFieldOptions } from './useLocationFieldOptions';

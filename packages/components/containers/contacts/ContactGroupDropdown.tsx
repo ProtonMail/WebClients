@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import {
     getContactGroupsDelayedSaveChanges,
     hasReachedContactGroupMembersLimit,
@@ -15,6 +14,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import { DropdownButton, DropdownSizeUnit } from '../../components';
 import Dropdown from '../../components/dropdown/Dropdown';
