@@ -1086,6 +1086,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zobrazí webové ikony položiek prostredníctvom anonymizovaného ${ BRAND_NAME } proxy servera."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } naimportuje len prihlasovacie údaje, poznámky, platobné karty a identity."
+      ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } bude vyžadovať vaše ${ BRAND_NAME } heslo na prístup k údajom offline."
       ],
@@ -1512,6 +1515,9 @@
       "Offline support successfully disabled": [
         "Podpora offline bola úspešne vypnutá"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Online prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód. Po troch neúspešných pokusoch dôjde k odhláseniu."
+      ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Naše upozornenia sú skôr opatrné. Ak nepoznáte žiadnu z narušených informácií, môžete túto správu pokojne ignorovať."
       ],
@@ -1560,8 +1566,14 @@
       "Please confirm your extra password": [
         "Potvrďte vaše dodatočné heslo, prosím"
       ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Potvrďte, prosím, vaše dodatočné heslo pre automatické uzamknutie pomocou biometrie."
+      ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Pre automatické uzamknutie pomocou dodatočného hesla potvrďte svoje dodatočné heslo, prosím."
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Potvrďte, prosím, vaše dodatočné heslo pre zrušenie vášho aktuálneho zámku."
       ],
       "Please confirm your extra password in order to update the auto-lock time.": [
         "Pre aktualizovanie času automatického uzamknutia potvrďte svoje dodatočné heslo, prosím."
@@ -1661,6 +1673,9 @@
       ],
       "Session timed out": [
         "Relácia vypršala"
+      ],
+      "Set by your organization": [
+        "Nastavené vašou organizáciou"
       ],
       "Settings successfully updated": [
         "Nastavenia boli úspešne aktualizované"
@@ -1931,6 +1946,9 @@
       "15 minutes": [
         "15 minútach"
       ],
+      "2 minutes": [
+        "2 minúty"
+      ],
       "24 hours": [
         "24 hodín"
       ],
@@ -2171,6 +2189,12 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "ID Card": [
+        "ID karta"
+      ],
+      "ID Card number": [
+        "Číslo občianskeho preukazu"
+      ],
       "Identities": [
         "Identity"
       ],
@@ -2236,6 +2260,9 @@
       ],
       "Learn more": [
         "Zistiť viac"
+      ],
+      "License": [
+        "Licencia"
       ],
       "License number": [
         "Licenčné číslo"
@@ -2327,6 +2354,9 @@
       "Passphrase": [
         "Prístupová fráza"
       ],
+      "Passport": [
+        "Cestovný pas"
+      ],
       "Passport number": [
         "Číslo pasu"
       ],
@@ -2414,6 +2444,9 @@
       "Show website favicons": [
         "Zobraziť ikony webových stránok"
       ],
+      "Social security": [
+        "Rodné číslo (číslo sociálneho poistenia)"
+      ],
       "Social security number": [
         "Číslo poistenca sociálnej poisťovne"
       ],
@@ -2440,6 +2473,9 @@
       ],
       "Support": [
         "Podpora"
+      ],
+      "Tax number": [
+        "Daňové identifikačné číslo"
       ],
       "Text": [
         "Text"
@@ -2482,6 +2518,9 @@
       ],
       "Unnamed Credit Card": [
         "Nepomenovaná platobná karta"
+      ],
+      "Unnamed identity": [
+        "Nepomenovaná identita"
       ],
       "Unnamed item": [
         "Nepomenovaná položka"
