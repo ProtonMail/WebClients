@@ -33,18 +33,20 @@ const ERROR_TIMEOUT = 60_000;
 type Props = {
     error?: string;
     status: AppStatus;
+    warning?: string;
     onFork: () => void;
     onLogin: (options: AuthOptions) => void;
     onLogout: (options: { soft: boolean }) => void;
     onOffline: () => void;
     onRegister: () => void;
-    renderError: () => ReactNode;
+    renderError: (error: string) => ReactNode;
     renderFooter?: () => ReactNode;
 };
 
 export const LobbyContent: FC<Props> = ({
     error,
     status,
+    warning,
     onFork,
     onLogin,
     onLogout,
@@ -55,7 +57,7 @@ export const LobbyContent: FC<Props> = ({
 }) => {
     const { getOfflineEnabled } = usePassCore();
     const online = useConnectivity();
-    const [timeoutError, setTimeoutError] = useState(false);
+    const [criticalError, setCriticalError] = useState<Maybe<string>>(undefined);
     const [unlocking, setUnlocking] = useState(false);
     const [offlineEnabled, setOfflineEnabled] = useState<Maybe<boolean>>(undefined);
 
@@ -69,10 +71,14 @@ export const LobbyContent: FC<Props> = ({
     const hasExtraPassword = Boolean(useAuthStore()?.getExtraPassword());
 
     useEffect(() => {
-        setTimeoutError(false);
-        let timer: Maybe<NodeJS.Timeout> = stale ? setTimeout(() => setTimeoutError(true), ERROR_TIMEOUT) : undefined;
-        return () => clearTimeout(timer);
-    }, [stale]);
+        if (error) return setCriticalError(error);
+        if (stale) {
+            const staleErrorText = c('Warning')
+                .t`Something went wrong while starting ${PASS_APP_NAME}. Please try refreshing or reloading the extension`;
+            const timer = setTimeout(() => setCriticalError(staleErrorText), ERROR_TIMEOUT);
+            return () => clearTimeout(timer);
+        }
+    }, [stale, error]);
 
     useEffect(() => {
         (async () => {
@@ -92,10 +98,10 @@ export const LobbyContent: FC<Props> = ({
         />
     );
 
+    if (criticalError) return renderError(criticalError);
+
     if (busy) {
-        return timeoutError ? (
-            <>{renderError()}</>
-        ) : (
+        return (
             <div
                 key="lobby-loading"
                 className="flex flex-column items-center gap-3 mt-12 w-full anime-fade-in"
@@ -148,9 +154,9 @@ export const LobbyContent: FC<Props> = ({
                 </span>
             </div>
 
-            {error && (
+            {warning && (
                 <Card type="danger" className="mt-6 text-sm">
-                    {error}
+                    {warning}
                 </Card>
             )}
 
