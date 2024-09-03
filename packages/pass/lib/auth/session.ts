@@ -25,9 +25,11 @@ export const SESSION_VERSION: AuthSessionVersion = 1;
 export type AuthSession = {
     AccessToken: string;
     cookies?: boolean;
+    email?: string;
     extraPassword?: boolean;
     encryptedOfflineKD?: string;
     keyPassword: string;
+    lastUsedDate?: number;
     LocalID?: number;
     lockMode: LockMode;
     lockTTL?: number;

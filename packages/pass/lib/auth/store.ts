@@ -33,6 +33,8 @@ const PASS_UID_KEY = 'pass:uid';
 const PASS_UNLOCK_RETRY_KEY = 'pass:unlock_retry_count';
 const PASS_USER_ID_KEY = 'pass:user_id';
 const PASS_ENCRYPTED_OFFLINE_KD = 'pass:encrypted_offline_kd';
+const PASS_LAST_USED_DATE = 'pass:last_used_date';
+const PASS_USER_EMAIL = 'pass:user_email';
 
 export const createAuthStore = (store: Store) => {
     const authStore = {
@@ -64,6 +66,8 @@ export const createAuthStore = (store: Store) => {
             unlockRetryCount: authStore.getUnlockRetryCount(),
             UserID: authStore.getUserID() ?? '',
             encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
+            email: authStore.getUserEmail(),
+            lastUsedDate: authStore.getLastUsedDate(),
         }),
 
         shouldCookieUpgrade: (data: Partial<AuthSession>) => AUTH_MODE === AuthMode.COOKIE && !data.cookies,
@@ -145,6 +149,13 @@ export const createAuthStore = (store: Store) => {
         getLockTTL: (): Maybe<number> => store.get(PASS_LOCK_TTL_KEY),
         setLockLastExtendTime: (extendTime: Maybe<number>): void => store.set(PASS_LOCK_EXTEND_TIME_KEY, extendTime),
         getLockLastExtendTime: (): Maybe<number> => store.get(PASS_LOCK_EXTEND_TIME_KEY),
+
+        /** Last successful login / resuming */
+        setLastUsedDate: (lastUsedAt: number): void => store.set(PASS_LAST_USED_DATE, lastUsedAt),
+        getLastUsedDate: (): number => store.get(PASS_LAST_USED_DATE) ?? 0,
+
+        setUserEmail: (email: string): void => store.set(PASS_USER_EMAIL, email),
+        getUserEmail: (): Maybe<string> => store.get(PASS_USER_EMAIL),
 
         setUnlockRetryCount: (count: number): void => store.set(PASS_UNLOCK_RETRY_KEY, count),
         getUnlockRetryCount: (): number => store.get(PASS_UNLOCK_RETRY_KEY) ?? 0,
