@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useMemo, useRef } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
 import { useApi, useEventManager } from '@proton/components';
 import { queryLatestVolumeEvent, queryVolumeEvents } from '@proton/shared/lib/api/drive/volume';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
@@ -9,6 +8,7 @@ import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
+import generateUID from '@proton/utils/generateUID';
 
 import { logError } from '../../utils/errorHandling';
 import { driveEventsResultToDriveEvents } from '../_api';

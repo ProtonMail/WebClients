@@ -12,11 +12,11 @@ import { Children, cloneElement, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import { useCombinedRefs } from '@proton/hooks';
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import { useIsClosing } from '../../hooks';
 import { Icon } from '../icon';

@@ -3,8 +3,8 @@ import { cloneElement, forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import Icon from '../icon/Icon';
 import ErrorZone from '../text/ErrorZone';

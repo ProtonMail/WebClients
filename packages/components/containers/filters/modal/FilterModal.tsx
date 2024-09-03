@@ -2,12 +2,12 @@ import React, { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import { useLoading } from '@proton/hooks';
 import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
+import generateUID from '@proton/utils/generateUID';
 
 import type { ModalProps } from '../../../components';
 import {

@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import { Icon, Option, SelectTwo, SettingsLink, useAddresses, useUser } from '@proton/components';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { APPS } from '@proton/shared/lib/constants';
+import generateUID from '@proton/utils/generateUID';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 

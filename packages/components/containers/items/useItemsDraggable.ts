@@ -1,7 +1,7 @@
 import type { DragEvent } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
+import generateUID from '@proton/utils/generateUID';
 
 import useHandler from '../../hooks/useHandler';
 import { DRAG_ITEM_ID_KEY, DRAG_ITEM_KEY } from './constants';

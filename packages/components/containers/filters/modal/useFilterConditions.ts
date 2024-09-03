@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
+import generateUID from '@proton/utils/generateUID';
 
 import type { Condition } from '../interfaces';
 import { ConditionComparator, ConditionType } from '../interfaces';

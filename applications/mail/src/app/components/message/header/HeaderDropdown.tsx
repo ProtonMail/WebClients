@@ -2,10 +2,10 @@ import type { MutableRefObject, ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { Button } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import type { DropdownProps } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownSizeUnit, Tooltip, usePopperAnchor } from '@proton/components';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
+import generateUID from '@proton/utils/generateUID';
 
 export interface DropdownRenderProps {
     onClose: () => void;

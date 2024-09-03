@@ -3,10 +3,10 @@ import { useState } from 'react';
 import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import { ACCENT_COLORS_MAP, getColorName } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import ColorSelector from '../color/ColorSelector';
 import { Dropdown, DropdownButton, DropdownSizeUnit } from '../dropdown';

@@ -1,8 +1,8 @@
-import generateUID from '@proton/atoms/generateUID';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasShowEmbedded } from '@proton/shared/lib/mail/images';
 import { getAttachments, hasProtonSender, isDraft } from '@proton/shared/lib/mail/messages';
+import generateUID from '@proton/utils/generateUID';
 
 import type { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../store/messages/messagesTypes';
 import {

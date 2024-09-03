@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import {
     Field,
     Icon,
@@ -28,6 +27,7 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AUTO_SAVE_CONTACTS } from '@proton/shared/lib/mail/mailSettings';
 import { getOriginalTo, hasProtonSender, hasSimpleLoginSender, isUnsubscribed } from '@proton/shared/lib/mail/messages';
+import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useOnCompose } from '../../../containers/ComposeProvider';

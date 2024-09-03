@@ -1,7 +1,7 @@
 import type { DependencyList, EffectCallback } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
+import generateUID from '@proton/utils/generateUID';
 
 import useDebouncedCallback from './useDebouncedCallback';
 

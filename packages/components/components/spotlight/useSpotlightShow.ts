@@ -1,8 +1,8 @@
 import { useContext, useEffect } from 'react';
 
-import generateUID from '@proton/atoms/generateUID';
 import useInstance from '@proton/hooks/useInstance';
 import { isDialogOpen, isDropdownOpen, isModalOpen } from '@proton/shared/lib/busy';
+import generateUID from '@proton/utils/generateUID';
 
 import { useActiveBreakpoint } from '../../hooks';
 import { SpotlightContext } from './Provider';

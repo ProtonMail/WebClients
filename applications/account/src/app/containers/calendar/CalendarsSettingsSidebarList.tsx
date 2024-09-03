@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import type { SectionConfig } from '@proton/components';
 import {
     Icon,
@@ -22,6 +21,7 @@ import { getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/c
 import { getIsCalendarSubpage } from '@proton/shared/lib/calendar/settingsRoutes';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 const MAX_CALENDARS = 10;
 

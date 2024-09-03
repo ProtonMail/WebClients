@@ -1,5 +1,5 @@
-import generateUID from '@proton/atoms/generateUID';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
+import generateUID from '@proton/utils/generateUID';
 
 import { waitUntil } from '../../../utils/async';
 import { MAX_DOWNLOADING_BLOCKS_LOAD, MAX_DOWNLOADING_FILES_LOAD } from '../constants';

@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import { Dropdown, DropdownCaret, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import generateUID from '@proton/utils/generateUID';
 
 import type { SortParams } from '../FileBrowser/interface';
 

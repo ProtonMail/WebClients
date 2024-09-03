@@ -7,9 +7,9 @@ import { c, msgid } from 'ttag';
 
 import type { InputProps } from '@proton/atoms';
 import { Input } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import { findLongestMatchingIndex } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import generateUID from '@proton/utils/generateUID';
 import noop from '@proton/utils/noop';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 

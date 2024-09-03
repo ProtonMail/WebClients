@@ -2,8 +2,8 @@ import { useCallback, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+import generateUID from '@proton/utils/generateUID';
 
 import type { TransferMeta } from '../../../components/TransferManager/transfer';
 import { TransferState } from '../../../components/TransferManager/transfer';
