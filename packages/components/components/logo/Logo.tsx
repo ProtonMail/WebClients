@@ -1,7 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
 import type { IconSize } from '../icon';
 import CalendarLogo from './CalendarLogo';
