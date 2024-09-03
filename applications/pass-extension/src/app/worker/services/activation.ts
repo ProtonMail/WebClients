@@ -1,3 +1,10 @@
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { EXTENSION_KEY } from 'proton-pass-extension/app/worker/constants';
+import { withContext } from 'proton-pass-extension/app/worker/context';
+import store from 'proton-pass-extension/app/worker/store';
+import { checkExtensionPermissions } from 'proton-pass-extension/lib/utils/permissions';
+import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
+import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import { type Runtime } from 'webextension-polyfill';
 
 import { MIN_CACHE_VERSION } from '@proton/pass/constants';
@@ -18,12 +25,6 @@ import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
-import { checkExtensionPermissions } from '../../../lib/utils/permissions';
-import { isPopupPort } from '../../../lib/utils/port';
-import { isVivaldiBrowser } from '../../../lib/utils/vivaldi';
-import WorkerMessageBroker from '../channel';
-import { withContext } from '../context';
-import store from '../store';
 import { getSessionResumeAlarm, getSessionResumeDelay, shouldForceLock } from './auth';
 
 type ActivationServiceState = {
@@ -302,6 +303,7 @@ export const createActivationService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_TAB, (_, { tab }) => ({ tab }));
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_RELOAD, reload);
     WorkerMessageBroker.registerMessage(WorkerMessageType.PING, () => Promise.resolve(true));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));
 
     void checkAvailableUpdate();
     void checkPermissionsUpdate();

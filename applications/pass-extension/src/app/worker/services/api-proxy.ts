@@ -18,7 +18,7 @@ export type APIProxyOptions = {
 };
 
 export const API_PROXY_PATH = '/api-proxy';
-export const API_PROXY_URL = browser.runtime.getURL(API_PROXY_PATH);
+export const API_PROXY_URL = browser?.runtime.getURL(API_PROXY_PATH);
 export const API_PROXY_IMAGE_ENDPOINT = '/core/v4/images/logo';
 
 export const createApiProxyService = () => {

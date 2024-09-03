@@ -108,7 +108,7 @@ void (async () => {
             });
         }
 
-        if (BUILD_TARGET === 'chrome') await unloadClient();
+        if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') await unloadClient();
 
         if (!isMainFrame()) {
             /* FIXME: apply iframe specific heuristics here :

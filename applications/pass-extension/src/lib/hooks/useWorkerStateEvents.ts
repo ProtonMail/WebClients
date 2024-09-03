@@ -29,6 +29,7 @@ const wakeup = (options: WakeupOptions): Promise<WorkerMessageResponse<WorkerMes
             if (response.type === 'success') return response;
 
             logger.warn(`[Endpoint::${options.endpoint}] wakeup failed`, response.error);
+
             if (response.critical) throw new CriticalMessageResponseError();
             else throw new Error();
         }
