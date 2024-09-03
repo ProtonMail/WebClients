@@ -570,6 +570,9 @@
       "Open navigation": [
         "Öppna navigering"
       ],
+      "Open scan and download info": [
+        "Öppna skanning och ladda ner information"
+      ],
       "Pause all": [
         "Pausa alla"
       ],
@@ -704,6 +707,9 @@
       ],
       "Save changes": [
         "Spara ändringar"
+      ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "Spara till ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Skanna och ladda ner"
@@ -2294,6 +2300,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sammanfogar kontakter... Detta kan ta några minuter. När processen är slutförd kan du stänga detta fönster."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Spara tid genom att skicka e-post till alla på en gång med kontaktgrupper. Lås upp denna och andra premiumfunktioner när du uppgraderar."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Ställ in en dataåterställningsmetod för att förhindra dataförlust."
@@ -4434,6 +4443,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Gratis 5 GB krypterat lagringsutrymme för att komma igång"
+      ],
       "from the version history?": [
         "från versionshistoriken?"
       ],
@@ -4548,6 +4560,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bekräfta bara ditt val och vi gör resten."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Håll dina filer säkra med end-to-end-kryptering."
       ],
       "Key fingerprint": [
         "Nyckelfingeravtryck"
@@ -4881,6 +4896,9 @@
       ],
       "Retry now": [
         "Försök igen nu"
+      ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "Sparad i ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan issue": [
         "Skanningsproblem"
@@ -5849,6 +5867,9 @@
       "Location": [
         "Plats"
       ],
+      "Log in or sign up ": [
+        "Logga in eller registrera "
+      ],
       "Mail Server (IMAP)": [
         "E-postserver (IMAP)"
       ],
@@ -6628,6 +6649,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Kom igång för ${ price }"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
       ]
@@ -6748,8 +6772,17 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - För alla ${ BRAND_NAME }-tjänster"
       ],
+      "1 TB secure storage": [
+        "1 TB säkert lagringsutrymme"
+      ],
       "1 user": [
         "1 användare"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-postadresser/alias"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
       ],
       "99.95% SLA": [
         "99.95 % SLA"
@@ -6762,6 +6795,9 @@
       ],
       "Administration Panel": [
         "Administrationspanel"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alla ${ BRAND_NAME } produkter och funktioner"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6841,6 +6877,9 @@
       "Email client support (via IMAP/SMTP)": [
         "E-postklient-stöd (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-postgrupper"
+      ],
       "Enables HIPAA compliance": [
         "Aktiverar HIPAA-efterlevnad"
       ],
@@ -6867,6 +6906,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR databehandlingsavtal"
+      ],
+      "Generate emails with a prompt": [
+        "Generera e-post med en prompt"
       ],
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
@@ -6927,6 +6969,9 @@
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
       ],
+      "Quickly craft replies": [
+        "Skapa svar snabbt"
+      ],
       "Recover previous file versions": [
         "Återställ tidigare filversioner"
       ],
@@ -6980,6 +7025,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
+      ],
+      "Support for up to 2 users": [
+        "Stöd för upp till 2 användare"
       ],
       "Sync and backup all your files across devices": [
         "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
@@ -7060,6 +7108,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 anpassad e-postdomän"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain2 } för nyhetsprenumeration"
       ],
@@ -7162,6 +7213,9 @@
       ]
     },
     "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -7241,6 +7295,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Dela enkelt dina kalendrar med din familj, vänner eller kollegor"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Skicka e-post till alla i en grupp med en enda e-postadress"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Säkerställer att du får all e-post som skickas till din domän, även om e-postadressen inte finns, inte längre finns eller har ett stavfel"
@@ -7988,6 +8045,9 @@
       "E.g., ": [
         "T.ex., "
       ],
+      "Email": [
+        "E-post"
+      ],
       "Enter a new file name": [
         "Ange ett nytt filnamn"
       ],
@@ -8159,6 +8219,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiell e-post från ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Granska din kontosäkerhet"
       ]
     },
     "Security Center": {
@@ -9235,9 +9300,6 @@
       "Alias saved and copied": [
         "Alias sparat och kopierat"
       ],
-      "Bug reported": [
-        "Fel rapporterat"
-      ],
       "Canceling import": [
         "Avbryter import"
       ],
@@ -9884,6 +9946,9 @@
       ],
       "Restore your files": [
         "Återställ dina filer"
+      ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Spara det till senare i ${ DRIVE_APP_NAME }"
       ],
       "Search results": [
         "Sökresultat"

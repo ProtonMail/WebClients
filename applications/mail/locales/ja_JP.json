@@ -87,6 +87,9 @@
       "Add to group": [
         "グループに追加"
       ],
+      "Adds it above your existing message": [
+        "既存のメッセージの上に追加します"
+      ],
       "Align center": [
         "中央揃え"
       ],
@@ -479,6 +482,9 @@
       ],
       "Generate text": [
         "テキストを生成"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duoを入手"
       ],
       "Get in touch": [
         "連絡する"
@@ -1443,17 +1449,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "データはお客様のプライバシーを保護するためにデバイスに残ります。ダウンロードと互換性のあるハードウェアが必要です。"
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "データはデバイスに保存されます。一度限りのダウンロードと互換性のあるハードウェアが必要です。"
       ],
       "Fast and secure. No logs are kept.": [
         "高速で安全です。ログは保持されません。"
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "お客様のプライバシーを保護するためにログは保持されません。処理が速くなります。"
+      ],
       "Run on device": [
         "デバイス上で実行"
       ],
       "Run on servers": [
         "サーバー上で実行"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } サーバー上で安全に実行"
+      ],
+      "Securely run on device": [
+        "デバイス上で安全に実行"
       ]
     },
     "Attached ics file error": {
@@ -3212,6 +3230,9 @@
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV および VCF ファイル経由でインポートする場合は、ファイルが ${ MAX_IMPORT_FILE_SIZE_STRING } または ${ MAX_IMPORT_CONTACTS_STRING } の連絡先を超えないようにしてください。 ファイルが大きい場合は、より小さいファイルに分割してください。 ${ learnMoreLink }。"
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "書き込みアシスタントとその他のために、${ BRAND_NAME } Duoにアップグレードしてください。"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
@@ -3238,6 +3259,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "アカウントへのアクセスが失われないように回復手段を設定してください。"
+      ],
+      "Starting from ${ price }": [
+        "${ price } から"
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "電子メール トラッカー保護をオンにして、広告主などがあなたの位置情報やオンライン アクティビティを追跡しないようにします。"
@@ -5040,6 +5064,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribeは、より良いメールを迅速かつ簡単に作成するのを手助けします。"
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
       ],
@@ -5637,6 +5664,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "さらに検索結果を表示するには、メッセージ内容の検索をお試しください。"
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "無料で${ ASSISTANT_TRIAL_TIME_DAYS }日間お試しいただけます"
+      ],
       "From": [
         "差出人"
       ],
@@ -5762,6 +5792,9 @@
       ],
       "Learn more": [
         "詳細"
+      ],
+      "Learn more about the writing assistant": [
+        "書き込みアシスタントについてより詳しく学ぶ"
       ],
       "Left to Right": [
         "左から右"
@@ -6722,6 +6755,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
+      ],
+      "Your private writing assistant": [
+        "あなたのプライベートな書き込みアシスタント"
       ]
     },
     "info": {
@@ -8137,6 +8173,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } へダウングレード"
       ],
+      "Get started for ${ price }": [
+        "${ price } で始めましょう"
+      ],
       "Upgrade now": [
         "今すぐアップグレード"
       ]
@@ -8165,6 +8204,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }と${ PROTON_SENTINEL_NAME }"
       ],
@@ -8222,6 +8264,9 @@
       "${ size } storage": [
         "${ size } のストレージ"
       ],
+      "1 TB secure storage": [
+        "1 TBの安全なストレージ"
+      ],
       "1 user": [
         "1ユーザー"
       ],
@@ -8239,6 +8284,9 @@
       ],
       "Administration Panel": [
         "管理パネル"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "${ BRAND_NAME } のすべての製品と機能"
       ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
@@ -8330,6 +8378,9 @@
       "GDPR data processing agreement": [
         "GDPR データ処理契約"
       ],
+      "Generate emails with a prompt": [
+        "プロンプトを使ってメールを生成"
+      ],
       "Group management (coming soon)": [
         "グループ管理 (近日公開)"
       ],
@@ -8375,8 +8426,14 @@
       "Priority support & live chat": [
         "優先サポートとライブチャット"
       ],
+      "Proofread and refine your emails": [
+        "メールを校正し、洗練させる"
+      ],
       "Protect ${ n } device at a time": [
         "${ n }台のデバイスを同時に保護"
+      ],
+      "Quickly craft replies": [
+        "素早く返信を作成"
       ],
       "Require 2FA for organization": [
         "組織には 2FA が必要です"
@@ -8416,6 +8473,9 @@
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
+      ],
+      "Support for up to 2 users": [
+        "最大2ユーザーのサポート"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -10294,9 +10354,6 @@
       "Alias saved and copied": [
         "エイリアスを保存してコピーしました"
       ],
-      "Bug reported": [
-        "バグの報告が送信されました"
-      ],
       "Canceling import": [
         "インポートをキャンセル中"
       ],
@@ -10767,6 +10824,9 @@
       ],
       "Coupon": [
         "クーポン"
+      ],
+      "Craft better emails": [
+        "より良いメールを作成する"
       ],
       "Create contact": [
         "連絡先の作成"
@@ -11322,6 +11382,9 @@
       ],
       "Your exposed information": [
         "あなたの暴露された情報"
+      ],
+      "Your free trial has ended": [
+        "無料トライアルが終了しました"
       ]
     },
     "Title subscription": {

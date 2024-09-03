@@ -5973,6 +5973,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } へダウングレード"
       ],
+      "Get started for ${ price }": [
+        "${ price } で始めましょう"
+      ],
       "Upgrade now": [
         "今すぐアップグレード"
       ]
@@ -6001,6 +6004,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }と${ PROTON_SENTINEL_NAME }"
       ],
@@ -6058,6 +6064,9 @@
       "${ size } storage": [
         "${ size } のストレージ"
       ],
+      "1 TB secure storage": [
+        "1 TBの安全なストレージ"
+      ],
       "1 user": [
         "1ユーザー"
       ],
@@ -6075,6 +6084,9 @@
       ],
       "Administration Panel": [
         "管理パネル"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "${ BRAND_NAME } のすべての製品と機能"
       ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
@@ -6166,6 +6178,9 @@
       "GDPR data processing agreement": [
         "GDPR データ処理契約"
       ],
+      "Generate emails with a prompt": [
+        "プロンプトを使ってメールを生成"
+      ],
       "Group management (coming soon)": [
         "グループ管理 (近日公開)"
       ],
@@ -6211,8 +6226,14 @@
       "Priority support & live chat": [
         "優先サポートとライブチャット"
       ],
+      "Proofread and refine your emails": [
+        "メールを校正し、洗練させる"
+      ],
       "Protect ${ n } device at a time": [
         "${ n }台のデバイスを同時に保護"
+      ],
+      "Quickly craft replies": [
+        "素早く返信を作成"
       ],
       "Require 2FA for organization": [
         "組織には 2FA が必要です"
@@ -6252,6 +6273,9 @@
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
+      ],
+      "Support for up to 2 users": [
+        "最大2ユーザーのサポート"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -7929,9 +7953,6 @@
       ],
       "Alias saved and copied": [
         "エイリアスを保存してコピーしました"
-      ],
-      "Bug reported": [
-        "バグの報告が送信されました"
       ],
       "Canceling import": [
         "インポートをキャンセル中"

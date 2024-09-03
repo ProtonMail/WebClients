@@ -2296,6 +2296,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται συγχώνευση επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Εξοικονομήστε χρόνο στέλνοντας μηνύματα ηλεκτρονικού ταχυδρομείου σε όλους ταυτόχρονα με ομάδες επαφών. Ξεκλειδώστε αυτήν και άλλες premium λειτουργίες κατά την αναβάθμιση."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Ορίστε μια μέθοδο ανάκτησης δεδομένων για να αποτρέψετε την απώλεια δεδομένων."
       ],
@@ -4885,6 +4888,9 @@
       "Retry now": [
         "Επανάληψη τώρα"
       ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "Αποθηκεύτηκε στο ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Scan issue": [
         "Πρόβλημα σάρωσης"
       ],
@@ -5846,6 +5852,9 @@
       "Location": [
         "Τοποθεσία"
       ],
+      "Log in or sign up ": [
+        "Σύνδεση ή Eγγραφή "
+      ],
       "Mail Server (IMAP)": [
         "Διακομιστής Αλληλογραφίας (IMAP)"
       ],
@@ -6599,6 +6608,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } και ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6691,8 +6703,17 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Για όλες τις ${ BRAND_NAME } υπηρεσίες"
       ],
+      "1 TB secure storage": [
+        "Ασφαλής χώρος αποθήκευσης 1 TB"
+      ],
       "1 user": [
         "1 χρήστης"
+      ],
+      "10 email addresses/aliases": [
+        "10 διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
       ],
       "24/7 account management support": [
         "24/7 υποστήριξη διαχείρισης λογαριασμού"
@@ -6816,6 +6837,9 @@
       ],
       "GDPR data processing agreement": [
         "Συμφωνία επεξεργασίας δεδομένων GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Δημιουργήστε μηνύματα ηλεκτρονικού ταχυδρομείου με μια προτροπή"
       ],
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
@@ -7009,6 +7033,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain2 } για συνδρομή ειδήσεων"
       ],
@@ -7934,6 +7961,9 @@
       ],
       "E.g., ": [
         "Για παράδειγμα, "
+      ],
+      "Email": [
+        "Ηλεκτρονικό ταχυδρομείο"
       ],
       "Enter a new file name": [
         "Εισάγετε ένα νέο όνομα αρχείου"
@@ -9196,9 +9226,6 @@
       ],
       "Alias saved and copied": [
         "Το ψευδώνυμο αποθηκεύτηκε και αντιγράφηκε"
-      ],
-      "Bug reported": [
-        "Το σφάλμα αναφέρθηκε"
       ],
       "Canceling import": [
         "Ακύρωση εισαγωγής"

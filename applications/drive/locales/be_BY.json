@@ -576,6 +576,9 @@
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
+      "Open scan and download info": [
+        "Адкрыйце сканер і спампуйце звесткі"
+      ],
       "Pause all": [
         "Прыпыніць усе"
       ],
@@ -710,6 +713,9 @@
       ],
       "Save changes": [
         "Захаваць змены"
+      ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "Захаваць у ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Сканіраваць і спампаваць"
@@ -2321,6 +2327,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Аб'яднанне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Ашчаджайце час, адпраўляючы электронныя лісты ўсім адначасова з групамі кантактаў. Разблакіруйце гэту і іншыя прэміяльныя функцыі пасля паляпшэння."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Задаць спосаб аднаўлення, каб прадухіліць страту даных."
@@ -4582,6 +4591,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Абмяжуйце аперацыі, якія звязаны з праглядам трансляцый і інтэнсіўным спажываннем памяці, або запампоўвайце свае даныя пакетамі меншага аб'ёму."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Бясплатнае зашыфраванае сховішча аб'ёмам 5 ГБ, каб пачаць працу"
+      ],
       "from the version history?": [
         "з гісторыі версій?"
       ],
@@ -4698,6 +4710,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Проста пацвердзіце свой выбар, а мы зробім усё астатняе."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Бяспечна захоўвайце свае файлы з дапамогай скразнога шыфравання."
       ],
       "Key fingerprint": [
         "Адбітак ключа"
@@ -5040,6 +5055,9 @@
       ],
       "Retry now": [
         "Паўтарыць зараз"
+      ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "Захавана ў ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan issue": [
         "Сканіраванне праблемы"
@@ -6024,6 +6042,9 @@
       "Location": [
         "Размяшчэнне"
       ],
+      "Log in or sign up ": [
+        "Уваход або рэгістрацыя "
+      ],
       "Mail Server (IMAP)": [
         "Паштовы сервер (IMAP)"
       ],
@@ -6810,6 +6831,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Пачніце з коштам у памеры ${ price }"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
       ]
@@ -6838,6 +6862,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } і ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6964,8 +6991,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - для ўсіх сэрвісаў ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 ТБ бяспечнага сховішча"
+      ],
       "1 user": [
         "1 карыстальнік"
+      ],
+      "10 email addresses/aliases": [
+        "10 адрасоў электроннай пошты/псеўданімаў"
+      ],
+      "10-year file version history": [
+        "Гісторыя версій файлаў за 10 гадоў"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховішча"
       ],
       "24/7 account management support": [
         "Падтрымка 24/7 па кіраванні ўліковым запісам"
@@ -6981,6 +7020,9 @@
       ],
       "Administration Panel": [
         "Панэль адміністратара"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Усе прадукты і функцыі ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -7063,6 +7105,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Падтрымка паштовых кліентаў (праз IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Групы электроннай пошты"
+      ],
       "Enables HIPAA compliance": [
         "Забеспячэнне адпаведнасці HIPAA"
       ],
@@ -7089,6 +7134,9 @@
       ],
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Генерыраваць лісты з запытам"
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
@@ -7147,11 +7195,17 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
+      "Proofread and refine your emails": [
+        "Правярайце і ўдакладняйце свае электронныя лісты"
+      ],
       "Protect ${ n } device at a time": [
         "Абараніць ${ n } прыладу адначасова",
         "Абараніць ${ n } прылады адначасова",
         "Абараніць ${ n } прылад адначасова",
         "Абараніць ${ n } прылады адначасова"
+      ],
+      "Quickly craft replies": [
+        "Хутка стварайце адказы"
       ],
       "Recover previous file versions": [
         "Аднавіць папярэднія версіі файла"
@@ -7206,6 +7260,9 @@
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
+      ],
+      "Support for up to 2 users": [
+        "Падтрымка да 2 карыстальнікаў"
       ],
       "Sync and backup all your files across devices": [
         "Сінхранізацыя і рэзервовае капіяванне ўсіх вашых файлаў паміж прыладамі"
@@ -7290,6 +7347,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 карыстальніцкі дамен электроннай пошты"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
       ],
@@ -7391,6 +7451,11 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Атрымайце Mail Plus за ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -7468,6 +7533,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Адпраўка паведамлення кожнаму ў групе з адзінага адраса электроннай пошты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
@@ -8256,6 +8324,9 @@
       "E.g., ": [
         "Напрыклад, "
       ],
+      "Email": [
+        "Электронная пошта"
+      ],
       "Enter a new file name": [
         "Увядзіце новую назву файла"
       ],
@@ -8437,6 +8508,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Афіцыйныя лісты ад ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Агляд бяспекі вашага ўліковага запісу"
       ]
     },
     "Security Center": {
@@ -9586,9 +9662,6 @@
       "Alias saved and copied": [
         "Псеўданімы захаваны і скапіяваны"
       ],
-      "Bug reported": [
-        "Справаздача аб памылцы адпраўлена"
-      ],
       "Canceling import": [
         "Скасаванне імпартавання"
       ],
@@ -10267,6 +10340,9 @@
       "Restore your files": [
         "Аднавіць вашы файлы"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Захаванне для пазнейшага разгляду ў ${ DRIVE_APP_NAME }"
+      ],
       "Search results": [
         "Пошук вынікаў"
       ],
@@ -10456,6 +10532,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Дадаць гэты абагулены файл у свой ${ DRIVE_APP_NAME } для лёгкага доступу да яго ў будучыні."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "“Аўтаматычна” азначае, што для адпраўкі гэтаму карыстальніку выкарыстоўваецца фармат рэдактара. “Звычайны тэкст” азначае, што пры адпраўцы паведамленне заўсёды будзе ператварацца ў звычайны тэкст."
       ],

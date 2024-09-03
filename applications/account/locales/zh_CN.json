@@ -721,10 +721,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
       "Reload": [
@@ -996,6 +996,9 @@
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "保存失败，请重试。失败原因：${ saveError }"
+      ],
+      "Turn off": [
+        "关闭"
       ],
       "Underline": [
         "下划线"
@@ -1269,6 +1272,11 @@
         "${ BRAND_NAME } 应用"
       ]
     },
+    "Assistant option": {
+      "Run on device": [
+        "在设备上运行"
+      ]
+    },
     "Assistant toggle": {
       "New": [
         "新"
@@ -1394,6 +1402,14 @@
         "选择您的年终优惠"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 存储空间 (是其他套餐的 2 倍)"
@@ -1415,14 +1431,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "套餐 ${ plan } 限时回归"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此优惠不适用于您当前的套餐。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
       ]
     },
     "bf2023: Offers": {
@@ -1545,6 +1553,9 @@
       ],
       "Custom domain problem": [
         "自有域名问题"
+      ],
+      "Docs problem": [
+        "Docs 问题"
       ],
       "Drive problem": [
         "网盘问题"
@@ -3256,6 +3267,11 @@
         "临时需要退订，以后可能会重新开通"
       ]
     },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "帮助我们改进"
+      ]
+    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         "Debian / Ubuntu (.deb)"
@@ -3300,6 +3316,11 @@
       ],
       "Priority support": [
         "优先支持"
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB 存储空间"
       ]
     },
     "Duration": {
@@ -6042,10 +6063,10 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6113,6 +6134,9 @@
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "每个域名只能有一个SPF (TXT) 记录。 如果您想保留现有的 SPF (TXT) 记录， 您可以添加 ${ spf } 到您当前的记录 (放在 ${ spfValue } 之后)。"
+      ],
+      "Early access": [
+        "抢先访问"
       ],
       "Edit email address": [
         "编辑邮箱地址"
@@ -7822,6 +7846,11 @@
     "Input placeholder": {
       "Add label": [
         "添加标签"
+      ]
+    },
+    "invitation status": {
+      "Pending": [
+        "待处理"
       ]
     },
     "Invoice state display as badge": {
@@ -9775,6 +9804,23 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -9802,23 +9848,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
       ]
     },
     "new_plans: feature": {
@@ -9881,6 +9910,9 @@
       ],
       "1 user": [
         "1 位用户"
+      ],
+      "15 GB storage": [
+        "15 GB 存储空间"
       ],
       "24/7 account management support": [
         "7×24 小时账户管理客服"
@@ -10314,6 +10346,14 @@
         "您所选的账户等级：${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -10332,14 +10372,6 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -11520,6 +11552,27 @@
         "用户"
       ]
     },
+    "Safety review": {
+      "Invalid code": [
+        "无效的验证码"
+      ],
+      "Show more": [
+        "显示更多"
+      ],
+      "Verify": [
+        "验证"
+      ]
+    },
+    "saml: Action": {
+      "Cancel": [
+        "取消"
+      ]
+    },
+    "saml: Info": {
+      "Details": [
+        "详细信息"
+      ]
+    },
     "scim: Action": {
       "Generate token": [
         "生成专用密码"
@@ -12565,9 +12618,6 @@
       "Auto-reply updated": [
         "自动回复已保存"
       ],
-      "Bug reported": [
-        "问题已反馈"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "已新增日历，可能需要几分钟才能同步"
       ],
@@ -13037,6 +13087,9 @@
       "Add user accounts": [
         "添加用户账户"
       ],
+      "Address": [
+        "联络地址"
+      ],
       "Address and key verification": [
         "地址和密钥验证"
       ],
@@ -13100,10 +13153,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -13438,6 +13491,9 @@
       ],
       "Gift code": [
         "礼品码"
+      ],
+      "Group": [
+        "群组"
       ],
       "Groups": [
         "群组"
@@ -14217,6 +14273,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "不支持此版本的 Tor 浏览器，请升级至最新的${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Cancel": [
+        "取消"
       ]
     },
     "Update font modal": {

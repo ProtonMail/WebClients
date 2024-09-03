@@ -570,6 +570,9 @@
       "Open navigation": [
         "Abrir navegação"
       ],
+      "Open scan and download info": [
+        "Abrir a varredura e baixar informações"
+      ],
       "Pause all": [
         "Pausar todos"
       ],
@@ -704,6 +707,9 @@
       ],
       "Save changes": [
         "Salvar alterações"
+      ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "Salvar no ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Escanear e Baixar"
@@ -2299,6 +2305,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mesclando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Economize tempo enviando e-mails para todos de uma vez com os grupos de contatos. Desbloqueie esse e outros recursos premium ao fazer o upgrade."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Defina um método de recuperação para prevenir a perda de dados."
       ],
@@ -3326,7 +3335,7 @@
         "suporte ao cliente"
       ],
       "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Atualmente, os grupos não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
+        "Os planos de grupo não oferecem suporte a contas externas no momento. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -3335,7 +3344,7 @@
         "Convidado por: ${ inviteEmail }"
       ],
       "Lifetime accounts cannot join a group plan.": [
-        "As contas Lifetime não podem participar de um plano de grupo."
+        "Contas vitalícias não podem ingressar em um plano de grupo."
       ],
       "Manage addresses.": [
         "Gerenciar endereços."
@@ -3365,7 +3374,7 @@
         "Você entrou com sucesso no grupo familiar"
       ],
       "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Você tem faturas não pagas. Pague antes de juntar-se ao grupo."
+        "Você tem faturas não pagas. Pague-as antes de entrar em um plano de grupo."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
@@ -4446,6 +4455,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para obter melhores resultados, evite streaming e atividades que consomem muita memória ou divida seu carregamento em lotes menores."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Armazenamento criptografado gratuito de 5 Gb para começar"
+      ],
       "from the version history?": [
         "do histórico de versões?"
       ],
@@ -4560,6 +4572,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Apenas confirme sua seleção e faremos o restante."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Mantenha seus arquivos seguros com criptografia de ponta a ponta."
       ],
       "Key fingerprint": [
         "Chave de impressão digital"
@@ -4723,7 +4738,7 @@
         "Tamanho da organização"
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Nossos alertas pecam por excesso de precaução. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
+        "Os nossos alertas pecam por excesso de precaução. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
       ],
       "Owner": [
         "Proprietário"
@@ -4896,6 +4911,9 @@
       ],
       "Retry now": [
         "Tente novamente agora"
+      ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "Salvo no ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan issue": [
         "Problema ao escanear"
@@ -5864,6 +5882,9 @@
       "Location": [
         "Localização"
       ],
+      "Log in or sign up ": [
+        "Iniciar sessão ou criar conta "
+      ],
       "Mail Server (IMAP)": [
         "Servidor de e-mail (IMAP)"
       ],
@@ -6589,6 +6610,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
       "Upgrade now": [
         "Fazer upgrade agora"
       ]
@@ -6617,6 +6641,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6709,8 +6736,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Para todos os serviços da ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TB de armazenamento seguro"
+      ],
       "1 user": [
         "1 usuário"
+      ],
+      "10 email addresses/aliases": [
+        "10 endereços de e-mail/aliases"
+      ],
+      "10-year file version history": [
+        "Histórico de versões de arquivos por 10 anos"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
       ],
       "24/7 account management support": [
         "Suporte de administração de conta 24/7"
@@ -6726,6 +6765,9 @@
       ],
       "Administration Panel": [
         "Painel de Administração"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Todos os produtos e recursos da ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6808,6 +6850,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Suporte a clientes de e-mail (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grupos de e-mail"
+      ],
       "Enables HIPAA compliance": [
         "Permite a conformidade com a HIPAA"
       ],
@@ -6834,6 +6879,9 @@
       ],
       "GDPR data processing agreement": [
         "Acordo de processamento de dados do RGPD"
+      ],
+      "Generate emails with a prompt": [
+        "Gere e-mails com um prompt"
       ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
@@ -6890,9 +6938,15 @@
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
       ],
+      "Proofread and refine your emails": [
+        "Revise e otimize seus e-mails"
+      ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
+      ],
+      "Quickly craft replies": [
+        "Elabore respostas rapidamente"
       ],
       "Recover previous file versions": [
         "Recuperar versões anteriores de arquivos"
@@ -6947,6 +7001,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
+      ],
+      "Support for up to 2 users": [
+        "Suporte para até 2 usuários"
       ],
       "Sync and backup all your files across devices": [
         "Sincronize e faça backup dos seus arquivos em todos os dispositivos"
@@ -7027,6 +7084,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domínio de e-mail personalizado"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crie vários endereços de e-mail para suas identidades on-line, por exemplo: JoaoLojas@${ domain } para contas de lojas e JoaoNoticias@${ domain2 } para assinaturas de notícias"
       ],
@@ -7129,6 +7189,9 @@
       ]
     },
     "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Obtenha Mail Plus por ${ price }"
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -7208,6 +7271,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envie e-mails para todos em um grupo com um único endereço de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -7964,6 +8030,9 @@
       "E.g., ": [
         "Ex., "
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Enter a new file name": [
         "Digite um nome para o novo arquivo"
       ],
@@ -8135,6 +8204,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "E-mail oficial da ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Revise a segurança de sua conta"
       ]
     },
     "Security Center": {
@@ -9226,9 +9300,6 @@
       "Alias saved and copied": [
         "Alias salvo e copiado"
       ],
-      "Bug reported": [
-        "Relatório de erros enviado"
-      ],
       "Canceling import": [
         "Cancelando a importação"
       ],
@@ -9876,6 +9947,9 @@
       "Restore your files": [
         "Restaurar seus arquivos"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Salve-o para mais tarde em ${ DRIVE_APP_NAME }"
+      ],
       "Search results": [
         "Resultados da pesquisa"
       ],
@@ -10065,6 +10139,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Adicione esse arquivo compartilhado ao seu ${ DRIVE_APP_NAME } para facilitar o acesso posteriormente."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indica automaticamente o formato no compositor que é usado para enviar para este usuário. Texto simples indica que a mensagem será sempre convertida em texto simples (sem formatação) no envio."
       ],

@@ -6078,6 +6078,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } y ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6170,6 +6173,9 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Para todos los servicios de ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TB de almacenamiento seguro"
+      ],
       "1 user": [
         "1 usuario"
       ],
@@ -6202,6 +6208,9 @@
       ],
       "Advanced network security": [
         "Seguridad de red avanzada"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Todos los productos y funciones de ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6320,6 +6329,9 @@
       "GDPR data processing agreement": [
         "Acuerdo para el procesamiento de datos conforme al RGPD"
       ],
+      "Generate emails with a prompt": [
+        "Genere correos electrónicos con un aviso"
+      ],
       "Group management (coming soon)": [
         "Administración de grupos (muy pronto)"
       ],
@@ -6381,9 +6393,15 @@
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
       ],
+      "Proofread and refine your emails": [
+        "Revise y refine sus correos electrónicos"
+      ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo a la vez",
         "Proteja ${ n } dispositivos a la vez"
+      ],
+      "Quickly craft replies": [
+        "Redacte rápidamente respuestas"
       ],
       "Recover previous file versions": [
         "Recuperar versiones previas de archivos"
@@ -6448,6 +6466,9 @@
       ],
       "Strict no-logs policy": [
         "Política estricta de no registros"
+      ],
+      "Support for up to 2 users": [
+        "Soporte para hasta 2 usuarios"
       ],
       "Sync and backup all your files across devices": [
         "Sincronice todas las copias de seguridad y todos los archivos en sus distintos dispositivos"
@@ -6747,6 +6768,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Comparta calendarios con familiares, amistades y colegas fácilmente"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envíe correos a todos en un grupo con una sola dirección de correo"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garantiza que reciba todos los correos enviados al dominio, incluso si la dirección de correo no existe, ya no existe o tiene un error tipográfico"
@@ -7705,6 +7729,11 @@
       ],
       "User": [
         "Usuario"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Compruebe la seguridad de la cuenta"
       ]
     },
     "saml: Action": {
@@ -9056,9 +9085,6 @@
       "Administrator privileges restored": [
         "Privilegios de administrador restaurados"
       ],
-      "Bug reported": [
-        "Error reportado"
-      ],
       "Catch-all address updated": [
         "Dirección catch-all actualizada"
       ],
@@ -9154,6 +9180,9 @@
       ],
       "Preference saved": [
         "Preferencia guardada"
+      ],
+      "Problem reported": [
+        "Se notificó el problema."
       ],
       "SPF value copied to clipboard": [
         "Valor SPF copiado al portapapeles"

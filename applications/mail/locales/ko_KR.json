@@ -93,6 +93,9 @@
       "Add to group": [
         "그룹에 추가"
       ],
+      "Adds it above your existing message": [
+        "기존 메시지 위에 추가합니다."
+      ],
       "Align center": [
         "중앙 정렬"
       ],
@@ -497,6 +500,9 @@
       ],
       "Generate text": [
         "텍스트 생성"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo 플랜 받기"
       ],
       "Get in touch": [
         "연락하기"
@@ -979,7 +985,7 @@
         "기능 요청"
       ],
       "Request new code": [
-        "새 코드를 요청합니다."
+        "새로운 코드 받기"
       ],
       "Resend code": [
         "코드 다시 보내기"
@@ -1526,17 +1532,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "데이터가 사용자의 개인정보를 보호하기 위해 장치에 유지됩니다. 다운로드 및 호환 가능한 하드웨어가 필요합니다."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "데이터는 기기 내에서만 존재합니다. 1회 다운로드 및 호환 기기가 필요합니다."
       ],
       "Fast and secure. No logs are kept.": [
         "안전하고 빠르게. 로그 없이."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "개인정보를 보호하기 위해 로그가 저장되지 않습니다. 장치 기반 대비 더 빠르게 처리합니다."
+      ],
       "Run on device": [
         "디바이스에서 실행"
       ],
       "Run on servers": [
         "서버에서 실행"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } 서버에서 안전하게 실행"
+      ],
+      "Securely run on device": [
+        "장치에서 안전하게 실행"
       ]
     },
     "Assistant toggle": {
@@ -3367,6 +3385,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2단계 인증은 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "휴지통 내 메시지 및 스팸을 자동 삭제하고 더 많은 프리미엄 기능도 함께 경험하세요."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
       ],
@@ -3381,6 +3402,9 @@
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 ${ MAX_IMPORT_CONTACTS_STRING } 연락처를 초과하지 않도록 하십시오. 파일이 더 크면, 더 작은 파일로 나누세요. ${ learnMoreLink }."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "글쓰기 도우미 및 기타 서비스에 대한 무제한 액세스를 원하시면 ${ BRAND_NAME } Duo로 업그레이드하십시오."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] }으로 무제한 별칭과 500 GB 스토리지 공간을 받으세요."
@@ -3403,6 +3427,9 @@
       "No labels": [
         "레이블 없음"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "연락처 그룹으로 모두에게 한 번의 클릭으로 이메일을 전송하여 시간을 절약하세요. 업그레이드하여 이 기능과 다른 프리미엄 기능도 경험하세요."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
       ],
@@ -3411,6 +3438,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "계정 접근 불가 상황을 막기 위해선 복구 방법을 설정하십시오."
+      ],
+      "Starting from ${ price }": [
+        "${ price }부터 시작합니다."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "글쓰기 도우미를 계속 사용하기 위해, 구독에 추가해 주세요."
@@ -3426,6 +3456,12 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "위치와 온라인 활동을 추적하는 광고주와 기타 사람들로부터의 추적을 방지하기 위해 이메일 추적기 보호 기능을 활성화하세요."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "업그레이드하여 커스텀 메시지 예약과 더 많은 프리미엄 기능을 경험해 보세요."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "사용자 지정 방해 금지 시간과 프리미엄 기능을 업그레이드하여 경험하세요."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "업그레이드하여 더 짧은 이메일 주소와 기타 프리미엄 기능을 잠금 해제하세요."
@@ -5467,6 +5503,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe가 이메일을 신속하고 수월하게 작성할 수 있도록 도와줍니다."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
@@ -6103,6 +6142,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "더 많은 검색 결과를 보려면 이메일 내용에서 이 단어를 검색해 보세요."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "무료로 ${ ASSISTANT_TRIAL_TIME_DAYS }일 동안 사용해 보십시오"
+      ],
       "From": [
         "보낸 사람"
       ],
@@ -6246,6 +6288,9 @@
       ],
       "Learn more": [
         "더 알아보기"
+      ],
+      "Learn more about the writing assistant": [
+        "글쓰기 도우미에 대해 더 알아보기"
       ],
       "Left to Right": [
         "왼쪽에서 오른쪽으로"
@@ -6727,6 +6772,9 @@
       "The download count includes both actual downloads and instances when files are previewed.": [
         "다운로드 횟수에는 실제 다운로드와 파일을 미리보는 경우도 포함됩니다."
       ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "이 이메일 ${ boldNoReplyEmail }은(는) 회신에 응답하지 않는 주소로 추정됩니다. 정말 이 주소로 메시지를 보내시겠어요?"
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "암호화된 데이터가 데이터의 보안을 보장하는 암호화 및 서명의 오버헤드로 인해 약간 더 큽니다."
       ],
@@ -6890,7 +6938,7 @@
         "결제를 완료하기 위해서, 아래 주소로 ${ btcAmountBold } 를 송금해 주시기 바랍니다."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "스팸 및 남용을 방지하려면 사람임을 확인하세요."
+        "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
@@ -7317,6 +7365,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "귀하의 전화번호는 이번 인증에만 사용돼요."
+      ],
+      "Your private writing assistant": [
+        "나만의 개인 글쓰기 도우미"
       ]
     },
     "info": {
@@ -8767,6 +8818,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
       ],
+      "Get started for ${ price }": [
+        "${ price }로 시작하세요."
+      ],
       "Upgrade now": [
         "지금 업그레이드"
       ]
@@ -8795,6 +8849,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 와(과) ${ PROTON_SENTINEL_NAME }"
       ],
@@ -8870,8 +8927,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - 전체 ${ BRAND_NAME } 서비스용"
       ],
+      "1 TB secure storage": [
+        "1 TB 보안 저장공간"
+      ],
       "1 user": [
         "사용자 1명"
+      ],
+      "10 email addresses/aliases": [
+        "10개 이메일 주소"
+      ],
+      "10-year file version history": [
+        "10년 파일 버전 기록"
+      ],
+      "15 GB storage": [
+        "저장공간 15GB"
       ],
       "24/7 account management support": [
         "24/7 계정 관리 지원"
@@ -8887,6 +8956,9 @@
       ],
       "Administration Panel": [
         "관리 패널"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "모든 ${ BRAND_NAME } 제품 및 기능"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 ${ BRAND_NAME } 베이직 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -8969,6 +9041,9 @@
       "Email client support (via IMAP/SMTP)": [
         "이메일 클라이언트 지원 (IMAP/SMTP)"
       ],
+      "Email groups": [
+        "이메일 그룹"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA 자격 활성화"
       ],
@@ -8995,6 +9070,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
+      ],
+      "Generate emails with a prompt": [
+        "프롬프트로 이메일 생성하기"
       ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
@@ -9050,8 +9128,14 @@
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
       ],
+      "Proofread and refine your emails": [
+        "이메일 교정 및 수정하기"
+      ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
+      ],
+      "Quickly craft replies": [
+        "신속하게 답변 작성하기"
       ],
       "Recover previous file versions": [
         "이전 파일 버전 복구"
@@ -9106,6 +9190,9 @@
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
+      ],
+      "Support for up to 2 users": [
+        "최대 2명 지원"
       ],
       "Sync and backup all your files across devices": [
         "기기를 넘나들며 파일을 동기화 및 백업하세요"
@@ -9184,6 +9271,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1개 커스텀 이메일 도메인"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
@@ -9285,6 +9375,11 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -9359,6 +9454,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
+      ],
+      "Email everyone in a group with a single email address": [
+        "그룹 내의 모두에게 하나의 주소로 이메일을 전송하기"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "이메일 주소가 존재하지 않거나, 더 이상 존재하지 않거나, 오타가 있더라도 도메인으로 전송된 모든 이메일을 받을 수 있습니다."
@@ -10187,6 +10285,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "초대 재암호화 실패. 다시 시도해주세요."
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "내 계정 보안 검토하기"
       ]
     },
     "Search - no results": {
@@ -11481,9 +11584,6 @@
       "Alias saved and copied": [
         "별칭이 저장 및 복사되었습니다"
       ],
-      "Bug reported": [
-        "버그 신고됨"
-      ],
       "Canceling import": [
         "가져오기 취소 중"
       ],
@@ -11501,6 +11601,9 @@
       ],
       "Contacts deleted": [
         "콘텐츠 삭제됨"
+      ],
+      "Content copied to clipboard": [
+        "콘텐츠 클립보드에 복사되었습니다."
       ],
       "Conversation added to ${ labelName }.": [
         "대화가 ${ labelName } 으로 추가되었습니다."
@@ -11987,6 +12090,9 @@
       ],
       "Coupon": [
         "쿠폰"
+      ],
+      "Craft better emails": [
+        "더 나은 이메일을 작성하세요."
       ],
       "Create contact": [
         "연락처 추가"

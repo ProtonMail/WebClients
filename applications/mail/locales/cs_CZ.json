@@ -93,6 +93,9 @@
       "Add to group": [
         "Přidat do skupiny"
       ],
+      "Adds it above your existing message": [
+        "Přidá ho nad vaší stávající zprávu"
+      ],
       "Align center": [
         "Zarovnat na střed"
       ],
@@ -506,6 +509,9 @@
       ],
       "Generate text": [
         "Vygenerovat text"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Získejte ${ BRAND_NAME } Duo"
       ],
       "Get in touch": [
         "Kontaktujte nás"
@@ -1553,17 +1559,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Data zůstávají v zařízení kvůli ochraně vašeho soukromí. Vyžaduje stažení a kompatibilní hardware."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Data zůstávají na vašem zařízení, vyžadují ale jednorázové stažení a kompatibilní hardware."
       ],
       "Fast and secure. No logs are kept.": [
         "Rychlé a bezpečné. Nejsou uchovávány logy."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Žádné logy nejsou uchovávány pro ochranu vašeho soukromí. Rychlejší zpracování."
+      ],
       "Run on device": [
         "Spusťte na zařízení"
       ],
       "Run on servers": [
         "Provozovat na serverech"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Bezpečně běží na serverech ${ BRAND_NAME }"
+      ],
+      "Securely run on device": [
+        "Bezpečně spusťte na zařízení"
       ]
     },
     "Assistant toggle": {
@@ -3421,6 +3439,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA přidává další úroveň zabezpečení a zabraňuje neoprávněnému přístupu."
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Po navýšení je možné automaticky mazat zprávy ze složky nevyžádaná pošta a koš a odemknout další prémiové funkce."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
       ],
@@ -3435,6 +3456,9 @@
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Při importování prostřednictvím souborů CSV a VCF zajistěte, aby velikost souboru nepřesáhla ${ MAX_IMPORT_FILE_SIZE_STRING } nebo ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory. ${ learnMoreLink }."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Pro neomezený přístup k asistentovi psaní a dalším možnostem přejděte na ${ BRAND_NAME } Duo."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Získejte neomezený počet aliasů a 500 GB úložiště s ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3460,6 +3484,9 @@
       "No labels": [
         "Bez štítků"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Ušetřete čas odesláním e-mailů všem najednou pomocí skupin kontaktů. Odemkněte si tuto a další prémiové funkce navýšením tarifu."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
       ],
@@ -3468,6 +3495,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Nastavte metodu obnovení, abyste zabránili ztrátě přístupu k účtu."
+      ],
+      "Starting from ${ price }": [
+        "Cena od ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pro pokračování v používání asistenta psaní, ho přidejte k vašemu předplatnému."
@@ -3483,6 +3513,12 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Zapnutím ochrany proti sledování e-mailů zabráníte inzerentům a dalším subjektům sledovat vaši polohu a online aktivity."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Navýšením si odemkněte vlastní plánování zpráv a další prémiové funkce."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Navýšením si odemkněte vlastní čas odložení zpráv a další prémiové funkce."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Navýšením tarifu odemknete kratší e-mailové adresy a další prémiové funkce."
@@ -5614,6 +5650,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe vám pomáhá rychle a snadno vytvářet lepší e-maily."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
       ],
@@ -6418,6 +6457,12 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Chcete-li získat více výsledků vyhledávání, zkuste toto klíčové slovo vyhledat v obsahu e-mailových zpráv."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "${ ASSISTANT_TRIAL_TIME_DAYS } den na vyzkoušení zdarma",
+        "${ ASSISTANT_TRIAL_TIME_DAYS } dny na vyzkoušení zdarma",
+        "${ ASSISTANT_TRIAL_TIME_DAYS } dnů na vyzkoušení zdarma",
+        "${ ASSISTANT_TRIAL_TIME_DAYS } dnů na vyzkoušení zdarma"
+      ],
       "From": [
         "Od"
       ],
@@ -6567,6 +6612,9 @@
       ],
       "Learn more": [
         "Zjistěte více"
+      ],
+      "Learn more about the writing assistant": [
+        "Zjistit více o asistentovi psaní"
       ],
       "Left to Right": [
         "Zleva doprava"
@@ -7053,6 +7101,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Počet stahování zahrnuje jak skutečná stažení, tak případy, kdy jsou soubory zobrazeny v náhledu."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "E-mailová adresa ${ boldNoReplyEmail } zřejmě nepřijímá odpovědi. Jste si jisti, že chcete zprávu odeslat?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Šifrovaná data jsou o něco větší kvůli režii šifrování a podpisů, které zajišťují bezpečnost vašich dat."
@@ -7698,6 +7749,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
+      ],
+      "Your private writing assistant": [
+        "Váš soukromý asistent psaní"
       ]
     },
     "info": {
@@ -9190,6 +9244,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Začněte za ${ price }"
+      ],
       "Upgrade now": [
         "Navýšit nyní"
       ]
@@ -9218,6 +9275,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
       ],
@@ -9344,8 +9404,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Pro všechny služby ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TB bezpečného úložiště"
+      ],
       "1 user": [
         "1 uživatel"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailových adres/aliasů"
+      ],
+      "10-year file version history": [
+        "10letá historie verzí souborů"
+      ],
+      "15 GB storage": [
+        "15 GB úložiště"
       ],
       "24/7 account management support": [
         "24/7 podpora správy účtu"
@@ -9361,6 +9433,9 @@
       ],
       "Administration Panel": [
         "Panel správce"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Všechny ${ BRAND_NAME } produkty a funkce"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9443,6 +9518,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Podpora e-mailových klientů (přes IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-mailové skupiny"
+      ],
       "Enables HIPAA compliance": [
         "Umožňuje dodržování předpisů HIPAA"
       ],
@@ -9469,6 +9547,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR dohoda o správě dat"
+      ],
+      "Generate emails with a prompt": [
+        "Vygenerujte e-maily pomocí příkazů"
       ],
       "Group management (coming soon)": [
         "Správa skupiny (již brzy)"
@@ -9527,11 +9608,17 @@
       "Priority support & live chat": [
         "Přednostní podpora a živý chat"
       ],
+      "Proofread and refine your emails": [
+        "Proveďte korektury a zpřesnění vašich e-mailů"
+      ],
       "Protect ${ n } device at a time": [
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň"
+      ],
+      "Quickly craft replies": [
+        "Rychle vytvářejte odpovědi"
       ],
       "Recover previous file versions": [
         "Obnova předchozích verzí souborů"
@@ -9586,6 +9673,9 @@
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
+      ],
+      "Support for up to 2 users": [
+        "Podpora pro až 2 uživatele"
       ],
       "Sync and backup all your files across devices": [
         "Synchronizace a zálohování všech vašich souborů mezi zařízeními"
@@ -9670,6 +9760,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 vlastní e-mailová doména"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain2 } pro odběry zpráv"
       ],
@@ -9771,6 +9864,11 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Získejte Mail Plus za ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -9848,6 +9946,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Snadno sdílejte své kalendáře s rodinou, přáteli nebo kolegy"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Odešlete e-mail všem členům skupiny pomocí jediné e-mailové adresy"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zajistí, že dostanete všechny e-maily odeslané na vaší doménu, dokonce i když jsou odeslány na adresu, která neexistuje a nebo má chybu"
@@ -10703,6 +10804,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Znovu-zašifrování pozvánky selhalo. Prosíme zkuste to znovu."
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Zkontrolujte bezpečnost svého účtu"
       ]
     },
     "Search - no results": {
@@ -12162,9 +12268,6 @@
       "Alias saved and copied": [
         "Alias uložen a zkopírován"
       ],
-      "Bug reported": [
-        "Chyba nahlášena"
-      ],
       "Canceling import": [
         "Ruším import"
       ],
@@ -12188,6 +12291,9 @@
       ],
       "Contacts deleted": [
         "Kontakty byly smazány"
+      ],
+      "Content copied to clipboard": [
+        "Obsah zkopírován do schránky"
       ],
       "Conversation added to ${ labelName }.": [
         "Konverzace přidána k ${ labelName }."
@@ -12708,6 +12814,9 @@
       "Coupon": [
         "Kupón"
       ],
+      "Craft better emails": [
+        "Vytvářejte lepší e-maily"
+      ],
       "Create contact": [
         "Vytvořit kontakt"
       ],
@@ -13055,6 +13164,9 @@
       ],
       "No trackers found": [
         "Bez sledovacích prvků"
+      ],
+      "No-reply address detected": [
+        "Rozpoznána adresa nepřijímající odpovědi"
       ],
       "Notes": [
         "Poznámky"

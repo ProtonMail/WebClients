@@ -374,6 +374,9 @@
       "Keep current time zone": [
         "維持目前時區"
       ],
+      "Keep my subscription": [
+        "保持訂閱"
+      ],
       "Later": [
         "稍後"
       ],
@@ -2574,6 +2577,9 @@
       ]
     },
     "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB 儲存空間"
+      ],
       "2 users": [
         "2 位使用者"
       ],
@@ -2590,6 +2596,11 @@
       ],
       "Double your storage": [
         "加倍您的儲存空間"
+      ]
+    },
+    "duoplan2024: Title": {
+      "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
+        "介紹 ${ PLAN_NAMES[PLANS.DUO] } "
       ]
     },
     "Duplicate event button tooltip": {
@@ -4979,6 +4990,9 @@
       "You previously rejected this invitation. Ask the owner for a re-invite": [
         "您先前回絕了此邀請。請要求擁有者重新邀請"
       ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "您將於此日失去存取${ planTitle }功能"
+      ],
       "You will lose all unsaved changes.": [
         "您所有未儲存的變更將會消失。"
       ],
@@ -6095,6 +6109,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "降級後的方案為 ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "使用${ price }取得"
+      ],
       "Upgrade now": [
         "立即升級"
       ]
@@ -6123,6 +6140,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME }Scribe撰寫幫手"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }和${ PROTON_SENTINEL_NAME }"
       ],
@@ -6159,11 +6179,20 @@
       "${ n } message per day": [
         "${ n } 封郵件 / 每天"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "每位使用者${ n }個共享${ PASS_SHORT_APP_NAME }保管庫"
+      ],
+      "${ n } user": [
+        "多達 ${ n } 位使用者"
+      ],
       "${ n } vault": [
         "${ n } 個保險櫃"
       ],
       "${ n } VPN connection": [
         "${ n } 個 VPN 連線"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-天的檔案版本紀錄"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
@@ -6177,11 +6206,26 @@
       "${ size } attachment size": [
         "${ size } 的附件大小"
       ],
+      "${ size } of secure storage per user": [
+        "每位使用者${ size }安全空間"
+      ],
       "${ size } storage": [
         "${ size } 儲存空間"
       ],
+      "1 TB secure storage": [
+        "1TB安全儲存空間"
+      ],
       "1 user": [
         "1 位使用者"
+      ],
+      "10 email addresses/aliases": [
+        "10 組電子郵件地址/別名"
+      ],
+      "10-year file version history": [
+        "10年的檔案版本紀錄"
+      ],
+      "15 GB storage": [
+        "15 GB 儲存空間"
       ],
       "24/7 account management support": [
         "24/7 帳戶管理支援"
@@ -6197,6 +6241,12 @@
       ],
       "Administration Panel": [
         "管理介面"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "全部${ BRAND_NAME }產品及功能"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "全部頂級版${ BRAND_NAME }服務。一個簡單的訂購授權。"
       ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
@@ -6270,6 +6320,9 @@
       "Email client support (via IMAP/SMTP)": [
         "電子郵件客戶端支援（透過 IMAP/SMTP）"
       ],
+      "Email groups": [
+        "電子郵件群組"
+      ],
       "Enables HIPAA compliance": [
         "啟用符合 HIPAA 條例"
       ],
@@ -6296,6 +6349,9 @@
       ],
       "GDPR data processing agreement": [
         "GDRP資料處理協議"
+      ],
+      "Generate emails with a prompt": [
+        "透過提示生成電子郵件"
       ],
       "Group management (coming soon)": [
         "群組管理(即將推出)"
@@ -6330,8 +6386,14 @@
       "Password health": [
         "密碼穩固性"
       ],
+      "Password manager": [
+        "密碼管理員"
+      ],
       "Password-protected Emails": [
         "密碼 - 安全防護的電子郵件"
+      ],
+      "Phone support (20+ users)": [
+        "電話支援 (20+ 使用者)"
       ],
       "Priority email support": [
         "優先電子郵件支援"
@@ -6344,6 +6406,9 @@
       ],
       "Protect ${ n } device at a time": [
         "同時保護 ${ n } 台裝置"
+      ],
+      "Recover previous file versions": [
+        "復原先前的檔案版本"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "請定期檢查你的帳戶安全。我們會通知你是否有任何需要更改的弱密碼或重複使用的密碼。"
@@ -6393,6 +6458,9 @@
       "Strict no-logs policy": [
         "嚴格的無日誌政策"
       ],
+      "Support for up to 2 users": [
+        "支援最多2位使用者"
+      ],
       "Tor over VPN": [
         "Tor 經由 VPN"
       ],
@@ -6429,6 +6497,9 @@
       "Unlimited messages per day": [
         "每日郵件無上限"
       ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "每位使用者無限共享${ PASS_SHORT_APP_NAME }保管庫"
+      ],
       "Unlimited shared vaults with access permissions": [
         "無限共享保管庫與存取權限"
       ],
@@ -6464,6 +6535,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1個自訂電子郵件網域"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "創建多重電子郵件位址身分，如JohnShopper@${ domain }給購物用途， JohnNews@${ domain2 }給訂閱新聞使用"
       ],
@@ -7382,6 +7456,11 @@
     "Reload event button tooltip": {
       "Reload event": [
         "重新載入事件"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "查看您的帳號安全"
       ]
     },
     "Security Center": {
@@ -8350,9 +8429,6 @@
       "Answer sent and event deleted": [
         "回答已送出，事件已刪除"
       ],
-      "Bug reported": [
-        "錯誤已回報"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "行事曆已加入。同步或需時幾分鐘。"
       ],
@@ -8816,6 +8892,9 @@
       ],
       "Encrypted event": [
         "已加密的事件"
+      ],
+      "Enter 2FA code": [
+        "輸入雙重驗證碼"
       ],
       "Enter your password": [
         "請輸入您的密碼"
