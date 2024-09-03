@@ -3350,6 +3350,9 @@
       ]
     },
     "familyOffer_2023:Title": {
+      "Delete family group?": [
+        "Törli a családi csoportot?"
+      ],
       "Delete organization?": [
         "Szervezet törlése?"
       ]
@@ -7621,9 +7624,6 @@
       "Answer sent and event deleted": [
         "Válasz elküldve és az esemény törölve"
       ],
-      "Bug reported": [
-        "Hiba bejelentve"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Naptár létrehozva. Egy pár percbe telhet a szinkronizálás."
       ],
@@ -8427,6 +8427,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Az új előfizetési ciklus ekkor indul: ${ formattedTime }"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Töltsön fel egy nyilvános kulcsot, hogy erre a címre lehetővé tegye végpontok közt titkosított üzenetek küldését"
