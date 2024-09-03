@@ -1970,6 +1970,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa scalanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Zaoszczędź czas, wysyłając wiadomości do grup kontaktów. Odblokuj tę i inne funkcje premium po ulepszeniu konta."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Ustaw metodę odzyskiwania danych, aby uniknąć utraty danych."
       ],
@@ -5613,6 +5616,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Obniż plan do wersji ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Od ${ price }"
+      ],
       "Upgrade now": [
         "Ulepsz teraz"
       ]
@@ -5641,6 +5647,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asystent pisania ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
       ],
@@ -5756,7 +5765,7 @@
         "${ size } rozmiaru załącznika"
       ],
       "${ size } of secure storage per user": [
-        "${ size } przestrzeni dyskowej na użytkownika"
+        "${ size } bezpiecznej przestrzeni dyskowej na użytkownika"
       ],
       "${ size } storage": [
         "${ size } przestrzeni dyskowej"
@@ -5767,8 +5776,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } do wszystkich usług ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TB bezpiecznej przestrzeni dyskowej"
+      ],
       "1 user": [
         "1 użytkownik"
+      ],
+      "10 email addresses/aliases": [
+        "10 adresów e-mail / aliasów"
+      ],
+      "10-year file version history": [
+        "10-letnia historia wersji plików"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
       ],
       "24/7 account management support": [
         "Wsparcie zarządzania kontem 24/7"
@@ -5784,6 +5805,9 @@
       ],
       "Administration Panel": [
         "Panel administratora"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Wszystkie usługi i funkcje ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Wszystkie podstawowe usługi ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -5866,6 +5890,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Wsparcie aplikacji pocztowych (przez IMAP / SMTP)"
       ],
+      "Email groups": [
+        "Grupy kontaktów"
+      ],
       "Enables HIPAA compliance": [
         "Zgodność z wymogami HIPAA"
       ],
@@ -5892,6 +5919,9 @@
       ],
       "GDPR data processing agreement": [
         "Umowa przetwarzania danych zgodnie z RODO"
+      ],
+      "Generate emails with a prompt": [
+        "Generowanie wiadomości z zadania"
       ],
       "Group management (coming soon)": [
         "Zarządzanie grupami (wkrótce)"
@@ -5950,11 +5980,17 @@
       "Priority support & live chat": [
         "Priorytetowe wsparcie i czat"
       ],
+      "Proofread and refine your emails": [
+        "Sprawdzaj i poprawiaj teksty"
+      ],
       "Protect ${ n } device at a time": [
         "Ochrona ${ n } urządzenia jednocześnie",
         "Ochrona ${ n } urządzeń jednocześnie",
         "Ochrona ${ n } urządzeń jednocześnie",
         "Ochrona ${ n } urządzenia jednocześnie"
+      ],
+      "Quickly craft replies": [
+        "Twórz szybsze wiadomości"
       ],
       "Recover previous file versions": [
         "Odzyskaj poprzednie wersje pliku"
@@ -5990,7 +6026,7 @@
         "Wysyłaj i otrzymuj zaproszenia"
       ],
       "Share files with no size limit": [
-        "Udostępniaj pliki bez limitów rozmiaru"
+        "Udostępniaj pliki bez limitów"
       ],
       "Sign in as user": [
         "Zaloguj się jako użytkownik"
@@ -6009,6 +6045,9 @@
       ],
       "Strict no-logs policy": [
         "Polityka braku przechowywania logów"
+      ],
+      "Support for up to 2 users": [
+        "Wsparcie do 2 użytkowników"
       ],
       "Sync and backup all your files across devices": [
         "Synchronizuj wszystkie pliki i wykonuj ich kopie zapasowe na różnych urządzeniach"
@@ -6093,6 +6132,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 niestandardowa domena"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@${ domain } dla kont zakupowych i JanWiadomości@${ domain2 } dla subskrybowania wiadomości"
       ],
@@ -6194,6 +6236,11 @@
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Wybierz plan Mail Plus za ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Usunąć konto?"
@@ -6271,6 +6318,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Udostępnij swoje kalendarze rodzinie, znajomym i współpracownikom"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Wysyłaj wiadomości do wszystkich członków grupy za pomocą jednego adresu e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zapewnia odbieranie wszystkich wiadomości wysyłanych do domeny, nawet jeśli adres e-mail nie istnieje, przestał istnieć lub zawiera literówkę"
@@ -7061,6 +7111,11 @@
         "Oficjalna wiadomość od ${ BRAND_NAME }"
       ]
     },
+    "Safety review": {
+      "Review your account safety": [
+        "Sprawdź bezpieczeństwo konta"
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Wszystkie aliasy"
@@ -7752,9 +7807,6 @@
       ],
       "Alias saved and copied": [
         "Alias został zapisany i skopiowany"
-      ],
-      "Bug reported": [
-        "Błąd został zgłoszony"
       ],
       "Canceling import": [
         "Anulowanie procesu importowania"
