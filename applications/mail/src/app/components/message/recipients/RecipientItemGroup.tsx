@@ -3,13 +3,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import generateUID from '@proton/atoms/generateUID';
 import {
     Dropdown,
     DropdownMenu,
     DropdownMenuButton,
     DropdownSizeUnit,
     Icon,
-    generateUID,
     useModals,
     useNotifications,
     usePopperAnchor,

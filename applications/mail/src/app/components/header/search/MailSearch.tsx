@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 
 import type { Location } from 'history';
 
+import generateUID from '@proton/atoms/generateUID';
 import type { Breakpoints } from '@proton/components';
 import {
     FeatureCode,
     TopNavbarListItemSearchButton,
-    generateUID,
     useAddresses,
     useFolders,
     useLabels,

@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox, FormModal, Label, generateUID } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
+import { Checkbox, FormModal, Label } from '@proton/components';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 

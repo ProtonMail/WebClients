@@ -1,9 +1,9 @@
 import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
+import generateUID from '@proton/atoms/generateUID';
 import { genAccentShades } from '@proton/colors';
 import useInstance from '@proton/hooks/useInstance';
-import generateUID from '@proton/shared/lib/helpers/generateUID';
 import capitalize from '@proton/utils/capitalize';
 import clsx from '@proton/utils/clsx';
 

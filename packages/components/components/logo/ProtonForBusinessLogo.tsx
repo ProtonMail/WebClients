@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { useState } from 'react';
 
-import { generateUID } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
 
 import type { LogoProps } from './Logo';
 

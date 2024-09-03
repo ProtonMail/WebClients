@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import generateUID from '@proton/atoms/generateUID';
 import { useLoading } from '@proton/hooks';
 import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -19,7 +20,6 @@ import {
     ModalTwoHeader,
     useModalState,
 } from '../../../components';
-import { generateUID } from '../../../helpers';
 import { useApi, useEventManager, useFilters, useFolders, useLabels, useNotifications } from '../../../hooks';
 import { getDefaultFolders, noFolderValue } from '../constants';
 import type {

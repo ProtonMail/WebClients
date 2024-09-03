@@ -1,9 +1,9 @@
 import { useMemo, useRef } from 'react';
 
+import generateUID from '@proton/atoms/generateUID';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 
-import { generateUID } from '../../helpers';
 import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';

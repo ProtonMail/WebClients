@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { generateUID } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
 
 import { toLinkURLType } from '../../components/sections/helpers';
 

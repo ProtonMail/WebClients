@@ -18,12 +18,12 @@ import {
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
 import {
     Checkbox,
     DateInputTwo,
     InputFieldTwo,
     TimeInput,
-    generateUID,
     useNotifications,
     useUserSettings,
 } from '@proton/components';

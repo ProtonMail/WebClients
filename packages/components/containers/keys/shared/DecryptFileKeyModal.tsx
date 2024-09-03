@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
@@ -21,7 +22,6 @@ import {
     PasswordInputTwo,
     useFormErrors,
 } from '../../../components';
-import { generateUID } from '../../../helpers';
 
 interface Props extends ModalProps {
     privateKeyInfo: ArmoredKeyWithInfo;

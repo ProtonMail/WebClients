@@ -1,4 +1,5 @@
 import { Button } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
 import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
 import NotificationInputInDrawer from '@proton/components/containers/calendar/notifications/inputs/NotificationInputInDrawer';
 import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
@@ -9,7 +10,6 @@ import updateItem from '@proton/utils/updateItem';
 
 import type { IconName } from '../../../components';
 import { Icon } from '../../../components';
-import { generateUID } from '../../../helpers';
 
 export const NOTIFICATION_ID = 'notifications';
 

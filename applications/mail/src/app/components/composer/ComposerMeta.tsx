@@ -4,7 +4,8 @@ import { forwardRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
-import { Label, generateUID } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
+import { Label } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import type { MessageSendInfo } from '../../hooks/useSendInfo';

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
 import {
     getContactGroupsDelayedSaveChanges,
     hasReachedContactGroupMembersLimit,
@@ -23,7 +24,6 @@ import SearchInput from '../../components/input/SearchInput';
 import { usePopperAnchor } from '../../components/popper';
 import Mark from '../../components/text/Mark';
 import Tooltip from '../../components/tooltip/Tooltip';
-import { generateUID } from '../../helpers';
 import { useContactEmails, useContactGroups, useMailSettings, useUser } from '../../hooks';
 import type { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
