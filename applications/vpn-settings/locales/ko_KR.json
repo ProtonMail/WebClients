@@ -479,7 +479,7 @@
         "기능 요청"
       ],
       "Request new code": [
-        "새 코드를 요청합니다."
+        "새로운 코드 받기"
       ],
       "Resend code": [
         "코드 다시 보내기"
@@ -4591,7 +4591,7 @@
         "${ product }(으)로 계속하기"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "스팸 및 남용을 방지하려면 사람임을 확인하세요."
+        "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "${ BRAND_NAME } 제품의 최신 개발을 알고 싶다면 저희의 다양한 이메일을 구독하거나 가끔씩 ${ blogLink }를 방문해 보세요."
@@ -6027,6 +6027,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 와(과) ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6102,8 +6105,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - 전체 ${ BRAND_NAME } 서비스용"
       ],
+      "1 TB secure storage": [
+        "1 TB 보안 저장공간"
+      ],
       "1 user": [
         "사용자 1명"
+      ],
+      "10 email addresses/aliases": [
+        "10개 이메일 주소"
+      ],
+      "10-year file version history": [
+        "10년 파일 버전 기록"
+      ],
+      "15 GB storage": [
+        "저장공간 15GB"
       ],
       "24/7 account management support": [
         "24/7 계정 관리 지원"
@@ -6125,6 +6140,9 @@
       ],
       "Advanced network security": [
         "향상된 네트워크 보안"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "모든 ${ BRAND_NAME } 제품 및 기능"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 ${ BRAND_NAME } 베이직 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6213,6 +6231,9 @@
       "Email client support (via IMAP/SMTP)": [
         "이메일 클라이언트 지원 (IMAP/SMTP)"
       ],
+      "Email groups": [
+        "이메일 그룹"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA 자격 활성화"
       ],
@@ -6239,6 +6260,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
+      ],
+      "Generate emails with a prompt": [
+        "프롬프트로 이메일 생성하기"
       ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
@@ -6300,8 +6324,14 @@
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
       ],
+      "Proofread and refine your emails": [
+        "이메일 교정 및 수정하기"
+      ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
+      ],
+      "Quickly craft replies": [
+        "신속하게 답변 작성하기"
       ],
       "Recover previous file versions": [
         "이전 파일 버전 복구"
@@ -6365,6 +6395,9 @@
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
+      ],
+      "Support for up to 2 users": [
+        "최대 2명 지원"
       ],
       "Sync and backup all your files across devices": [
         "기기를 넘나들며 파일을 동기화 및 백업하세요"
@@ -6443,6 +6476,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1개 커스텀 이메일 도메인"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
@@ -6658,6 +6694,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
+      ],
+      "Email everyone in a group with a single email address": [
+        "그룹 내의 모두에게 하나의 주소로 이메일을 전송하기"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "이메일 주소가 존재하지 않거나, 더 이상 존재하지 않거나, 오타가 있더라도 도메인으로 전송된 모든 이메일을 받을 수 있습니다."
@@ -7628,6 +7667,11 @@
       ],
       "User": [
         "사용자"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "내 계정 보안 검토하기"
       ]
     },
     "saml: Action": {
@@ -8940,9 +8984,6 @@
       ],
       "Administrator privileges restored": [
         "관리자 권한 재설정됨"
-      ],
-      "Bug reported": [
-        "버그 신고됨"
       ],
       "Catch-all address updated": [
         "Catch-all 주소 업데이트됨"

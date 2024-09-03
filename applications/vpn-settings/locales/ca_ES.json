@@ -181,6 +181,9 @@
       "Delete logo": [
         "Elimina el logo"
       ],
+      "Delete member": [
+        "Elimina el membre"
+      ],
       "Delete user": [
         "Elimina un usuari"
       ],
@@ -345,6 +348,9 @@
       ],
       "Keep logo": [
         "Manté el logo"
+      ],
+      "Keep my subscription": [
+        "Mantén la subscripció"
       ],
       "Let's talk": [
         "Parlem-ne"
@@ -2236,9 +2242,14 @@
         "Suport prioritari"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtingueu ${ BRAND_NAME } Duo"
+      ]
+    },
     "duoplan2024: Info": {
       "1 TB storage": [
-        "1 TB d'emmagatzemament"
+        "1 TB d'emmagatzematge"
       ],
       "2 users": [
         "2 usuaris"
@@ -6148,6 +6159,9 @@
       "No-logs policy": [
         "Política de no registres"
       ],
+      "Online document editor": [
+        "Editor de documents en línia"
+      ],
       "Organize items with multiple vaults": [
         "Organitzeu els elements amb múltiples caixes fortes"
       ],
@@ -6307,6 +6321,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domini de correu electrònic personalitzat"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia. Per exemple: JoanComprador@${ domain } per a comptes de compres, JoanNoticies@${ domain2 } per a la subscripció a notícies"
       ],
@@ -8295,6 +8312,9 @@
       "1 email address": [
         "1 adreça de correu"
       ],
+      "1 email address per user": [
+        "1 adreça de correu electrònic per usuari"
+      ],
       "1 VPN connection": [
         "1 connexió VPN"
       ],
@@ -8766,9 +8786,6 @@
       "Administrator privileges restored": [
         "S'han restaurat els privilegis de l'administrador"
       ],
-      "Bug reported": [
-        "Error notificat"
-      ],
       "Catch-all address updated": [
         "S'ha actualitzat l'adreça d'arreplega"
       ],
@@ -8807,6 +8824,9 @@
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
         "Si heu introduït un telèfon de recuperació vàlid, en breu us enviarem un sms amb els vostres noms d'usuari."
+      ],
+      "Invitation rejected": [
+        "S'ha rebutjat la invitació."
       ],
       "Invitation sent": [
         "S'ha enviat la invitació"
@@ -8913,6 +8933,9 @@
       ],
       "Preference updated": [
         "S'ha actualitzat la preferència"
+      ],
+      "Preferences updated": [
+        "S'han actualitzat les preferències."
       ]
     },
     "Suffix": {
@@ -9316,6 +9339,9 @@
       "Email subscriptions": [
         "Subscripcions per correu electrònic"
       ],
+      "Enter 2FA code": [
+        "Introduïu el codi 2FA"
+      ],
       "Enter endpoints into your identity provider": [
         "Introduïu els punts finals al vostre proveïdor d'identitat"
       ],
@@ -9470,6 +9496,9 @@
       "Recovery": [
         "Recuperació"
       ],
+      "Remove all members?": [
+        "Voleu suprimir tots els membres?"
+      ],
       "Remove domain": [
         "Esborra el domini"
       ],
@@ -9578,6 +9607,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "There are no groups": [
+        "No hi han grups."
       ],
       "Time": [
         "Hora"
@@ -9771,6 +9803,9 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats, compartició, A2F integrada, etc."
+      ],
+      "User declined invitation": [
+        "L'usuari ha rebutjat la invitació."
       ]
     },
     "Tooltip for news": {
@@ -9793,8 +9828,14 @@
       "Delete request": [
         "Elimina la sol·licitud"
       ],
+      "Private user": [
+        "Usuari privat"
+      ],
       "Revoke access": [
         "Revoca l'accés"
+      ],
+      "Send request": [
+        "Envia una sol·licitud"
       ]
     },
     "upsell panel": {

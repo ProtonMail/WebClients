@@ -3511,7 +3511,7 @@
         "Субдамен ${ protonSubdomain } размешчаны на ${ BRAND_NAME }, які дазваляе вам хутка наладжваць субдамены. ${ learnMoreLink }"
       ],
       "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
-        "Для стварэння групы патрабуецца карыстальніцкі дамен. Калі ў вас адсутнічае наладжаны карыстальніцкі дамен, то спачатку стварыце яго па спасылцы ${ linkToDomainPage }."
+        "Для стварэння груп патрабуецца карыстальніцкі дамен. Калі ў вас адсутнічае наладжаны карыстальніцкі дамен, то спачатку стварыце яго па спасылцы ${ linkToDomainPage }."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Назва, якая дапаможа вам вызначыць, дзе вы яго выкарыстоўваеце, каб вы маглі лёгка адклікаць яго або падоўжыць яго пазней."
@@ -4198,7 +4198,7 @@
         "Пачакайце, адбываецца загрузка календара. Вы будзеце перанакіраваны на нашу платформу планавання Calendly, якая адкрыецца ў новай укладцы."
       ],
       "Loading gateways monitoring current status.": [
-        "Бягучы статус назірання загрузкі шлюзоў."
+        "Бягучы статус назірання загрузкі за шлюзамі."
       ],
       "Loading preview": [
         "Загрузка папярэдняга прагляду"
@@ -6192,6 +6192,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } і ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6318,8 +6321,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - для ўсіх сэрвісаў ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 ТБ бяспечнага сховішча"
+      ],
       "1 user": [
         "1 карыстальнік"
+      ],
+      "10 email addresses/aliases": [
+        "10 адрасоў электроннай пошты/псеўданімаў"
+      ],
+      "10-year file version history": [
+        "Гісторыя версій файлаў за 10 гадоў"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховішча"
       ],
       "24/7 account management support": [
         "Падтрымка 24/7 па кіраванні ўліковым запісам"
@@ -6341,6 +6356,9 @@
       ],
       "Advanced network security": [
         "Пашыраная бяспека сеткі"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Усе прадукты і функцыі ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6429,6 +6447,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Падтрымка паштовых кліентаў (праз IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Групы электроннай пошты"
+      ],
       "Enables HIPAA compliance": [
         "Забеспячэнне адпаведнасці HIPAA"
       ],
@@ -6455,6 +6476,9 @@
       ],
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Генерыраваць лісты з запытам"
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
@@ -6519,11 +6543,17 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
+      "Proofread and refine your emails": [
+        "Правярайце і ўдакладняйце свае электронныя лісты"
+      ],
       "Protect ${ n } device at a time": [
         "Абараніць ${ n } прыладу адначасова",
         "Абараніць ${ n } прылады адначасова",
         "Абараніць ${ n } прылад адначасова",
         "Абараніць ${ n } прылады адначасова"
+      ],
+      "Quickly craft replies": [
+        "Хутка стварайце адказы"
       ],
       "Recover previous file versions": [
         "Аднавіць папярэднія версіі файла"
@@ -6590,6 +6620,9 @@
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
+      ],
+      "Support for up to 2 users": [
+        "Падтрымка да 2 карыстальнікаў"
       ],
       "Sync and backup all your files across devices": [
         "Сінхранізацыя і рэзервовае капіяванне ўсіх вашых файлаў паміж прыладамі"
@@ -6674,6 +6707,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 карыстальніцкі дамен электроннай пошты"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
       ],
@@ -6892,6 +6928,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Адпраўка паведамлення кожнаму ў групе з адзінага адраса электроннай пошты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
@@ -7868,6 +7907,11 @@
       ],
       "User": [
         "Карыстальнік"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Агляд бяспекі вашага ўліковага запісу"
       ]
     },
     "saml: Action": {
@@ -9295,9 +9339,6 @@
       "Administrator privileges restored": [
         "Прывілеі адміністратара адноўлены"
       ],
-      "Bug reported": [
-        "Справаздача аб памылцы адпраўлена"
-      ],
       "Catch-all address updated": [
         "Адрас для ўсёй пошты дамена абноўлены"
       ],
@@ -10430,7 +10471,7 @@
         "Гэта дзеянне выдаліць незавершаны запыт правоў адміністратара да даных карыстальніка або скіданне пароля."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
-        "Гэта дзеянне прывядзе да адклікання правоў адміністратара для кіравання ўліковым запісам карыстальніка."
+        "Гэта дзеянне адклікае правы адміністратара для кіравання гэтым уліковым запісам карыстальніка."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Для працягу, вам неабходна запытаць правы ў карыстальніка на доступ да яго даных або скінуць яго пароль."
