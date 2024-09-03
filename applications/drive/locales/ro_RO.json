@@ -180,7 +180,7 @@
         "Confirmare"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        "Confirmați deschiderea legăturii ${ linkToShow }"
+        "Confirmați deschiderea legăturii web ${ linkToShow }"
       ],
       "Contact group": [
         "Grup contacte"
@@ -210,7 +210,7 @@
         "Copiere legătură web invitație"
       ],
       "Copy link": [
-        "Copiere legătură"
+        "Copiere legătură web"
       ],
       "Copy version number to clipboard": [
         "Copiere număr versiune în memorie"
@@ -225,7 +225,7 @@
         "Creare și copiere alias"
       ],
       "Create link": [
-        "Creare legătură"
+        "Creare legătură web"
       ],
       "Create new folder": [
         "Creare folder"
@@ -382,7 +382,7 @@
         "Contactați-ne"
       ],
       "Get link": [
-        "Obțineținere legătură"
+        "Obținere legătură web"
       ],
       "Get started": [
         "Să începem"
@@ -490,7 +490,7 @@
         "Gestionare etichete"
       ],
       "Manage link": [
-        "Gestionare legătură"
+        "Gestionare legătură web"
       ],
       "Manage share": [
         "Gestionare partajări"
@@ -572,6 +572,9 @@
       ],
       "Open navigation": [
         "Deschidere navigare"
+      ],
+      "Open scan and download info": [
+        "Deschidere scanare și informații de descărcare"
       ],
       "Pause all": [
         "Suspendare toate"
@@ -708,6 +711,9 @@
       "Save changes": [
         "Salvare modificări"
       ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "Salvare în ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Scan & Download": [
         "Scanare și descărcare"
       ],
@@ -763,7 +769,7 @@
         "Partajare articol"
       ],
       "Share via link": [
-        "Partajare prin legătură"
+        "Partajare prin legătură web"
       ],
       "Sharing options": [
         "Opțiuni de partajare"
@@ -2309,6 +2315,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Economisiți timp trimițând simultan mesaje tuturor folosind grupurile de contacte. Deblocați această funcție și altele trecând la un plan cu plată."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Setați o metodă de recuperare a datelor pentru a preveni pierderea lor."
       ],
@@ -2972,7 +2981,7 @@
         "Acest nume de etichetă nu este disponibil. Alegeți un alt nume."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
+        "Acest mesaj poate conține unele legături web care nu pot fi deschise corect de către navigatorul actual."
       ],
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
@@ -4132,10 +4141,10 @@
         "Și îl accesați de oriunde"
       ],
       "Anyone with this link can access your file.": [
-        "Oricine are această legătură vă poate accesa fișierul."
+        "Oricine are această legătură web vă poate accesa fișierul."
       ],
       "Anyone with this link can access your folder.": [
-        "Oricine are această legătură vă poate accesa folderul."
+        "Oricine are această legătură web vă poate accesa folderul."
       ],
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
@@ -4268,7 +4277,7 @@
         "Creare în"
       ],
       "Create links and share your files with others.": [
-        "Creați legături şi partajați fişierele cu alții."
+        "Creați legături web şi partajați fişierele cu alții."
       ],
       "Create public link": [
         "Creare legătură publică"
@@ -4458,13 +4467,13 @@
         "Eșuat"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
-        "Generarea unei legături securizate a eșuat. Motivul este: ${ error }"
+        "Generarea unei legături web securizate a eșuat. Motivul este: ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
-        "Generarea legăturii securizate a eșuat. Reîncercați mai târziu"
+        "Generarea legăturii web securizate a eșuat. Reîncercați mai târziu."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        "A eșuat deschiderea unei legături securizate. Motivul este: ${ error }"
+        "A eșuat deschiderea unei legături web securizate. Motivul este: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "Fișierul „${ name }” a fost șters în timpul descărcării."
@@ -4507,6 +4516,9 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Pentru cele mai bune rezultate, evitați activitățile de redare în flux și cele care necesită multă memorie sau împărțiți încărcarea în mai puține fișiere."
+      ],
+      "Free 5GB encrypted storage to get started": [
+        "5 GiB spațiu de stocare gratuit pentru început"
       ],
       "from the version history?": [
         "din istoricul versiunilor?"
@@ -4624,6 +4636,9 @@
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
       ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Păstrați fișierele în siguranță cu criptarea bilaterală."
+      ],
       "Key fingerprint": [
         "Amprentă cheie"
       ],
@@ -4649,7 +4664,7 @@
         "Legătura a fost copiată în memorie."
       ],
       "Link owner has the password": [
-        "Proprietarul legăturii are parola"
+        "Proprietarul legăturii web are parola"
       ],
       "Loading": [
         "Se încarcă"
@@ -4664,7 +4679,7 @@
         "Se încarcă legătura."
       ],
       "Loading links": [
-        "Se încarcă legăturile."
+        "Se încarcă legăturile web."
       ],
       "Loading preview": [
         "Se încarcă previzualizarea"
@@ -4940,7 +4955,7 @@
         "Raportul a fost trimis."
       ],
       "Report link": [
-        "Raportare legătură"
+        "Raportare legătură web"
       ],
       "Request access, or switch to an account with access.": [
         "Solicitați accesul sau comutați la un cont care are acces."
@@ -4962,6 +4977,9 @@
       ],
       "Retry now": [
         "Reîncercare"
+      ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "Salvat în ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan issue": [
         "Probleme scanare"
@@ -4993,7 +5011,7 @@
         "Selectare toate fotografiile din"
       ],
       "Select an uploaded file or folder and create a link to it.": [
-        "Selectaţi un fişier sau folder încărcat şi creaţi o legătură la acesta."
+        "Selectaţi un fişier sau folder încărcat şi creaţi o legătură web la acesta."
       ],
       "Select item": [
         "Selectare articol"
@@ -5017,16 +5035,16 @@
         "Setând criptarea PGP veți putea cripta mesajele bilateral cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
       "Share files with links": [
-        "Partajare fișiere prin legături"
+        "Partajare fișiere prin legături web"
       ],
       "Share via link settings": [
         "Setări partajare prin legătură web"
       ],
       "Shareable link for ${ boldNameText }": [
-        "Legătură partajabilă pentru ${ boldNameText }"
+        "legătură web partajabilă pentru ${ boldNameText }"
       ],
       "Shared link not found": [
-        "Legătură partajată negăsită"
+        "legătură web partajată negăsită"
       ],
       "Shared with me": [
         "Partajate cu mine"
@@ -5128,22 +5146,22 @@
         "Articolul există deja în librăria proprie."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
+        "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Această legătură ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
+        "Această legătură web ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
+        "Această legătură web ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Această legătură a fost creată într-o versiune Drive mai veche și nu poate fi modificată. Ștergeți-o și creați una nouă pentru a schimba setările."
+        "Această legătură web a fost creată într-o versiune Drive mai veche și nu poate fi modificată. Ștergeți-o și creați una nouă pentru a schimba setările."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Această legătură va fi dezactivată definitiv. Oricine are această legătură nu va mai putea accesa fişierul. Pentru a repartaja fișierul, veți avea nevoie de o legătură nouă."
+        "Această legătură web va fi dezactivată definitiv. Oricine are această legătură web nu va mai putea accesa fişierul. Pentru a repartaja fișierul, veți avea nevoie de o legătură web nouă."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Această legătură va fi dezactivată definitiv. Oricine are această legătură nu va mai putea accesa folderul. Pentru a repartaja folderul, veți avea nevoie de o legătură nouă."
+        "Această legătură web va fi dezactivată definitiv. Oricine are această legătură web nu va mai putea accesa folderul. Pentru a repartaja folderul, veți avea nevoie de o legătură web nouă."
       ],
       "This month": [
         "Luna curentă"
@@ -5406,14 +5424,14 @@
         "Puteți importa un singur tip de date la un moment dat."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
       ],
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
@@ -5466,7 +5484,7 @@
         "Ați atins numărul maxim de adrese din grupul de contacte."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
@@ -5478,7 +5496,7 @@
         "Acest cont are cel puțin o factură scadentă. Contul este restricționat, iar toate serviciile sunt acum blocate până la plata datoriilor. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Acest cont are cel puțin o factură scadentă. Contul este restricționat. Neplata continuă va bloca mesajele și legăturile partajate. ${ payInvoiceLink }"
+        "Acest cont are cel puțin o factură scadentă. Contul este restricționat. Neplata continuă va bloca mesajele și legăturile web partajate. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
@@ -5934,6 +5952,9 @@
       ],
       "Location": [
         "Loc"
+      ],
+      "Log in or sign up ": [
+        "Conectare sau înscriere"
       ],
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
@@ -6665,6 +6686,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Începeți cu ${ price }"
+      ],
       "Upgrade now": [
         "Modificare"
       ]
@@ -6693,6 +6717,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } și ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6802,8 +6829,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Pentru toate serviciile ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TiB stocare securizată"
+      ],
       "1 user": [
         "Un utilizator"
+      ],
+      "10 email addresses/aliases": [
+        "10 adrese de e-mail/aliasuri"
+      ],
+      "10-year file version history": [
+        "10 ani istoric versiuni fișiere"
+      ],
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
       ],
       "24/7 account management support": [
         "Asistență pentru gestionarea contului 24/7"
@@ -6819,6 +6858,9 @@
       ],
       "Administration Panel": [
         "Panou de administrare"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Toate produsele și funcțiile ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6901,6 +6943,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Suport client de e-mail (prin IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grupuri de contacte"
+      ],
       "Enables HIPAA compliance": [
         "Se conformează regulilor HIPAA"
       ],
@@ -6927,6 +6972,9 @@
       ],
       "GDPR data processing agreement": [
         "Acordul de prelucrare a datelor GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Generați mesaje cu o solicitare"
       ],
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
@@ -6984,10 +7032,16 @@
       "Priority support & live chat": [
         "Asistență prioritară și conversații live"
       ],
+      "Proofread and refine your emails": [
+        "Corectați și cizelați mesajele"
+      ],
       "Protect ${ n } device at a time": [
         "Protejare ${ n } dispozitiv",
         "Protejare ${ n } dispozitive simultan",
         "Protejare ${ n } de dispozitive simultan"
+      ],
+      "Quickly craft replies": [
+        "Redactați rapid răspunsuri"
       ],
       "Recover previous file versions": [
         "Recuperați versiunile anterioare ale fișierelor"
@@ -7042,6 +7096,9 @@
       ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
+      ],
+      "Support for up to 2 users": [
+        "Acceptare până la doi utilizatori"
       ],
       "Sync and backup all your files across devices": [
         "Sincronizați fișierele între dispozitive și păstrați copii de rezervă"
@@ -7124,6 +7181,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "Un domeniu de e-mail personal"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Creați adrese de e-mail multiple pentru identitățile personale online, de ex. ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain2 } pentru abonamentul la știri."
       ],
@@ -7225,6 +7285,11 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -7302,6 +7367,9 @@
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partajați calendarele ușor cu familia, prietenii sau colegii."
       ],
+      "Email everyone in a group with a single email address": [
+        "Trimiteți mesaje tuturor dintr-un grup cu o singură adresă de e-mail"
+      ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Se asigură că primiți toate e-mailurile trimise către domeniul dvs., chiar dacă adresa de e-mail nu a existat, nu mai există sau e scrisă greșit."
       ],
@@ -7354,7 +7422,7 @@
         "Gestionare parole și protejare identitate"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături către datele de contact și multe altele."
+        "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături web către datele de contact și multe altele."
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
         "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu 20 sau mai mulți utilizatori."
@@ -7405,7 +7473,7 @@
         "Configurați filtre pentru a răspunde automat, sorta și/sau eticheta e-mailurile."
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
-        "Partajați fișierele sau folderele cu oricine utilizând legături sigure și partajabile."
+        "Partajați fișierele sau folderele cu oricine utilizând legături web securizate și partajabile."
       ],
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
         "SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME }."
@@ -7594,14 +7662,14 @@
         "${ numberOfItems } de articole au fost mutate cu succes."
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "O legătură către element nu a putut fi ștearsă.",
-        "Nu s-au putut șterge ${ numberOfItems } legături către element.",
-        "Nu s-au putut șterge ${ numberOfItems } de legături către element."
+        "Nu s-a putut șterge ${ numberOfItems } legătură web către articol.",
+        "Nu s-au putut șterge ${ numberOfItems } legături web către element.",
+        "Nu s-au putut șterge ${ numberOfItems } de legături web către element."
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "O legătură către element a fost șters.",
-        "S-au șters ${ numberOfItems } legături către element.",
-        "S-au șters ${ numberOfItems } de legături către element."
+        "S-a șters ${ numberOfItems } legătură web către articol.",
+        "S-au șters ${ numberOfItems } legături web către articol.",
+        "S-au șters ${ numberOfItems } de legături web către articol."
       ],
       "${ reason } has been disabled": [
         "${ reason } a fost dezactivat"
@@ -8070,6 +8138,9 @@
       "E.g., ": [
         "Ex.: "
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Enter a new file name": [
         "Introducere nume fișier"
       ],
@@ -8246,6 +8317,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Mesaj oficial de la ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Revizuire securitate cont"
       ]
     },
     "Security Center": {
@@ -9366,9 +9442,6 @@
       "Alias saved and copied": [
         "Alias salvat și copiat"
       ],
-      "Bug reported": [
-        "Eroare raportată"
-      ],
       "Canceling import": [
         "Se anulează importarea"
       ],
@@ -9899,13 +9972,13 @@
         "Editat de către"
       ],
       "Link confirmation": [
-        "Legătură de confirmare"
+        "legătură web de confirmare"
       ],
       "Location": [
         "Amplasare"
       ],
       "Manage secure link": [
-        "Gestionare legătură securizată"
+        "Gestionare legătură web securizată"
       ],
       "Merge contacts": [
         "Îmbinare contacte"
@@ -10030,6 +10103,9 @@
       "Restore your files": [
         "Restaurare fișiere"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Salvare pentru mai târziu în ${ DRIVE_APP_NAME }"
+      ],
       "Search results": [
         "Rezultate căutare"
       ],
@@ -10049,10 +10125,10 @@
         "Selectare grup contacte"
       ],
       "Select link expiration date": [
-        "Selectați data expirării legăturii"
+        "Selectați data expirării legăturii web"
       ],
       "Select link expiration time": [
-        "Selectați ora expirării legăturii"
+        "Selectați ora expirării legăturii web"
       ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
@@ -10064,7 +10140,7 @@
         "Partajare ${ name }"
       ],
       "Share via link": [
-        "Partajare prin legătură"
+        "Partajare prin legătură web"
       ],
       "Shared": [
         "Partajat"
@@ -10219,6 +10295,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Adăugați acest fișier partajat în ${ DRIVE_APP_NAME } pentru a-l accesa mai ușor mai târziu."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "«Automat» înseamnă că mesajul va fi trimis acestui contact în formatul din modul de compunere. «Text simplu» înseamnă că mesajul trimis va fi întotdeauna convertit în text simplu fără formatări."
       ],
