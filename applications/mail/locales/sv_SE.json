@@ -54,9 +54,6 @@
       "Add birthday": [
         "Lägg till födelsedag"
       ],
-      "Add Cc recipients": [
-        "Lägg till mottagare"
-      ],
       "Add condition": [
         "Lägg till villkor"
       ],
@@ -92,6 +89,9 @@
       ],
       "Add to group": [
         "Lägg till i grupp"
+      ],
+      "Adds it above your existing message": [
+        "Lägger till det ovan ditt befintliga meddelande"
       ],
       "Align center": [
         "Centrera"
@@ -500,6 +500,9 @@
       ],
       "Generate text": [
         "Generera text"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Skaffa ${ BRAND_NAME } Duo"
       ],
       "Get in touch": [
         "Kontakta oss"
@@ -1534,11 +1537,17 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Data blir kvar på enhet för att skydda din integritet. Kräver en nedladdning och kompatibel hårdvara."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Data finns kvar på din enhet men kräver en engångsnedladdning och kompatibel hårdvara"
       ],
       "Fast and secure. No logs are kept.": [
         "Snabbt och säkert. Inga loggar förs."
+      ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Inga loggar förs för att skydda din integritet. Snabbare bearbetning."
       ],
       "Run on device": [
         "Kör på enhet"
@@ -3383,6 +3392,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA lägger till ett extra säkerhetslager som förhindrar obehörig åtkomst."
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Ta bort skräppost och meddelanden i papperskorgen automatiskt och lås upp fler premiumfunktioner när du uppgraderar."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
       ],
@@ -3397,6 +3409,9 @@
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "För import via CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "För obegränsad åtkomst till skrivassistenten och mer, uppgradera till ${ BRAND_NAME } Duo."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ PLAN_NAMES[PLANS.BUNDLE] }"
@@ -3419,6 +3434,9 @@
       ],
       "No labels": [
         "Inga etiketter"
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Spara tid genom att skicka e-post till alla på en gång med kontaktgrupper. Lås upp denna och andra premiumfunktioner när du uppgraderar."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
@@ -6209,6 +6227,10 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "För fler sökresultat, prova att söka efter detta nyckelord i innehållet i dina e-postmeddelanden."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Gratis att prova i ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
+        "Gratis att prova i ${ ASSISTANT_TRIAL_TIME_DAYS } dagar"
+      ],
       "From": [
         "Från"
       ],
@@ -6354,6 +6376,9 @@
       ],
       "Learn more": [
         "Lär dig mer"
+      ],
+      "Learn more about the writing assistant": [
+        "Lär dig mer om skrivassistenten"
       ],
       "Left to Right": [
         "Vänster till höger"
@@ -6833,6 +6858,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antalet nedladdningar inkluderar både faktiska nedladdningar och tillfällen när filer förhandsgranskas."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "E-postadressen ${ boldNoReplyEmail } verkar inte acceptera svar. Är du säker på att du vill skicka ditt meddelande?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Den krypterade datan är något större på grund av överbelastningen av krypteringen och signaturerna, som säkerställer säkerheten för dina data."
@@ -7442,6 +7470,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
+      ],
+      "Your private writing assistant": [
+        "Din privata skrivassistent"
       ]
     },
     "info": {
@@ -8909,6 +8940,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgradera till ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Kom igång för ${ price }"
+      ],
       "Upgrade now": [
         "Uppgradera nu"
       ]
@@ -9029,8 +9063,17 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - För alla ${ BRAND_NAME }-tjänster"
       ],
+      "1 TB secure storage": [
+        "1 TB säkert lagringsutrymme"
+      ],
       "1 user": [
         "1 användare"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-postadresser/alias"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
       ],
       "99.95% SLA": [
         "99.95 % SLA"
@@ -9043,6 +9086,9 @@
       ],
       "Administration Panel": [
         "Administrationspanel"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alla ${ BRAND_NAME } produkter och funktioner"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9122,6 +9168,9 @@
       "Email client support (via IMAP/SMTP)": [
         "E-postklient-stöd (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-postgrupper"
+      ],
       "Enables HIPAA compliance": [
         "Aktiverar HIPAA-efterlevnad"
       ],
@@ -9148,6 +9197,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR databehandlingsavtal"
+      ],
+      "Generate emails with a prompt": [
+        "Generera e-post med en prompt"
       ],
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
@@ -9208,6 +9260,9 @@
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
       ],
+      "Quickly craft replies": [
+        "Skapa svar snabbt"
+      ],
       "Recover previous file versions": [
         "Återställ tidigare filversioner"
       ],
@@ -9261,6 +9316,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
+      ],
+      "Support for up to 2 users": [
+        "Stöd för upp till 2 användare"
       ],
       "Sync and backup all your files across devices": [
         "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
@@ -9341,6 +9399,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 anpassad e-postdomän"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain2 } för nyhetsprenumeration"
       ],
@@ -9443,6 +9504,9 @@
       ]
     },
     "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -9522,6 +9586,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Dela enkelt dina kalendrar med din familj, vänner eller kollegor"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Skicka e-post till alla i en grupp med en enda e-postadress"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Säkerställer att du får all e-post som skickas till din domän, även om e-postadressen inte finns, inte längre finns eller har ett stavfel"
@@ -10359,6 +10426,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Misslyckades att kryptera inbjudan igen. Försök igen."
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Granska din kontosäkerhet"
       ]
     },
     "Search - no results": {
@@ -11693,9 +11765,6 @@
       "Alias saved and copied": [
         "Alias sparat och kopierat"
       ],
-      "Bug reported": [
-        "Fel rapporterat"
-      ],
       "Canceling import": [
         "Avbryter import"
       ],
@@ -11715,6 +11784,9 @@
       ],
       "Contacts deleted": [
         "Kontakter borttagna"
+      ],
+      "Content copied to clipboard": [
+        "Innehåll kopierat till urklipp"
       ],
       "Conversation added to ${ labelName }.": [
         "Konversation tillagd till ${ labelName }."

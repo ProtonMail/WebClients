@@ -93,6 +93,9 @@
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
+      "Adds it above your existing message": [
+        "დაამატებს მას თქვენი არსებული შეტყობინების ზემოთ"
+      ],
       "Align center": [
         "ცენტრზე სწორება"
       ],
@@ -500,6 +503,9 @@
       ],
       "Generate text": [
         "ტექსტის გენერაცია"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "მიიღეთ ${ BRAND_NAME } Duo"
       ],
       "Get in touch": [
         "დაგვიკავშირდით"
@@ -1535,17 +1541,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "მონაცემები დარჩება თქვენს მოწყობილობაზე, რომ თქენი კონფიდენციალობა დავიცვათ. საჭიროებს გადმოწერას და თავსებად აპარატურას."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "მონაცემები დარჩება თქვენს მოწყობილობაზე, მაგრამ მას ერთჯერად გადმოწერა და თავსებადი აპარატურა სჭირდება"
       ],
       "Fast and secure. No logs are kept.": [
         "სწრაფი და უსაფრთხო. ჟურნალს არ ვინახავთ."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "თქვენი კონფიდენციალობის შესანახად ჩვენ ჟურნალს არ ვინახავთ. ყელაფერი უფრო სწრაფია."
+      ],
       "Run on device": [
         "გაშვება მოწყობილობაზე"
       ],
       "Run on servers": [
         "გაშვება სერვერებზე"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "უსაფრთხოდ გაშვება ${ BRAND_NAME }-ის სერვერებზე"
+      ],
+      "Securely run on device": [
+        "უსაფრთხოდ მოწყობილობაზე"
       ]
     },
     "Assistant toggle": {
@@ -3385,6 +3403,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA ამატებს უსაფრთხოების ფენას, რითიც ხელს უშლის არაავტორიზებულ წვდომას."
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "განბლოკეთ სპამისა და სანაგვე ყუთის ავტომატური წაშლა და სხვა ფასიანი ფუნქციები, როცა სატარიფო გეგმას ასწევთ."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "მიმდინარეობს კონტაქტების გაშიფვრა… ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, თქვენ შეგეძლებათ, გადმოწეროთ ფაილი ყველა თქვენი კონტაქტით."
       ],
@@ -3399,6 +3420,9 @@
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV და VCF ფაილების შემოსატანად დარწმუნდით, რომ ფაილი ${ MAX_IMPORT_FILE_SIZE_STRING }-ზე დიდი არაა და არ შეიცავს ${ MAX_IMPORT_CONTACTS_STRING }-ზე მეტ კონტაქტს. თუ თქვენი ფაილი უფრო დიდია, დაყავით ის უფრო პატარა ფაილებად. ${ learnMoreLink }."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "შეუზღუდავი წვდომისთვის წერის დამხმარესთან ასწიეთ სატარიფო გეგმა ${ BRAND_NAME } Duo-მდე."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "მიიღეთ შეუზღუდავი ფსევდონიმები და 500 გბ საცავი ${ PLAN_NAMES[PLANS.BUNDLE] }-სთან ერთად."
@@ -3422,6 +3446,9 @@
       "No labels": [
         "ჭდეების გარეშე"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "დაზოგეთ დრო ელფოსტის კონტაქტების ჯგუფისთვის გაგზავნით. განბლოკეთ ეს და სხვა ფასიანი ფუნქციები, როცა სატარიფო გეგმას აწევთ."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
       ],
@@ -3430,6 +3457,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "დააყენეთ აღდგენის მეთოდი, რომ თავიდან აიცილოთ თქვენს ანგარიშზე წვდომის დაკარგვა."
+      ],
+      "Starting from ${ price }": [
+        "${ price }-დან"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "იმისათვის, რომ გააგრძელოთ წერის დამხმარის გამოყენება, დაამატეთ ის თქვენს გამოწერაში."
@@ -3445,6 +3475,12 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "ჩართეთ ელფოსტის ტრეკრებისგან დაცვა, რათა თავიდან აიცილოთ რეკლამისა და სხვების მიერ თქვენი მდებარეობის და ონლაინ აქტივობების ტრეკინგი."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "აწიეთ სატარიფო გეგმა და მიიღეთ მორგებული შეტყობინებების დაგეგმვა და სხვა ფასიანი ფუნქციები."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "აწიეთ სატარიფო გეგმა და მიიღეთ მორგებული დადუმების დრო და სხვა ფასიანი ფუნქციები."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "ასწიეთ სატარიფო გეგმა და იქონით წვდომა უფრო მოკლე ელფოსტის მისამართებთან და სხვა ფასიან ფუნქციებთან."
@@ -5516,6 +5552,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe დაგეხმარებათ, ელფოსტები სწრაფად და ეფექტურად დაწეროთ."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe წერის დამხმარე"
       ],
@@ -6208,6 +6247,10 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "მეტი ძებნის შედეგისთვის სცადეთ, თქვენი საკვანძო სიტყვა თქვენი ელფოსტის შეტყობინებებში მოძებნოთ."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "სცადეთ უფასოდ ${ ASSISTANT_TRIAL_TIME_DAYS } დღით",
+        "სცადეთ უფასოდ ${ ASSISTANT_TRIAL_TIME_DAYS } დღით"
+      ],
       "From": [
         "გამომგზავნელი"
       ],
@@ -6353,6 +6396,9 @@
       ],
       "Learn more": [
         "მეტის ნახვა"
+      ],
+      "Learn more about the writing assistant": [
+        "გაიგეთ მეტი წერის დამხმარის შესახებ"
       ],
       "Left to Right": [
         "მარცხნიდან მარჯვნივ"
@@ -6835,6 +6881,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "გადმოწერების რიცხვი მოიცავს როგორც მიმდინარე გადმოწერებს, ასევე ფაილების წინასწარ გადახედვის შემთხვევებს."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "ელფოსტის მისამართი ${ boldNoReplyEmail } პასუხებს არ იღებს. მართლა გნებავთ თქვენი შეტყობინების გაგზავნა?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "დაშიფრული მონაცემები ოდნავ უფრო დიდია დაშიფვრისა და ხელმოწერების ზედმეტი ხარჯის გამო, რაც უზრუნველყოფს თქვენი მონაცემების უსაფრთხოებას."
@@ -7444,6 +7493,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "თქვენი ტელეფონის ნომერი, მხოლოდ, ერთხელ, შესამოწმებლად იქნება გამოყენებული."
+      ],
+      "Your private writing assistant": [
+        "თქვენი პირადი წერის დამხმარე"
       ]
     },
     "info": {
@@ -8908,6 +8960,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
       ],
+      "Get started for ${ price }": [
+        "დაწყება ${ price }-დან"
+      ],
       "Upgrade now": [
         "ახლა გაუმჯობესება"
       ]
@@ -8936,6 +8991,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } და ${ PROTON_SENTINEL_NAME }"
       ],
@@ -9028,8 +9086,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - ყველა ${ BRAND_NAME } სერვისისთვის"
       ],
+      "1 TB secure storage": [
+        "1 ტბ დაცული საცავი"
+      ],
       "1 user": [
         "1 მომხმარებელი"
+      ],
+      "10 email addresses/aliases": [
+        "10 ელ ფოსტა/ფსევდონიმი"
+      ],
+      "10-year file version history": [
+        "10-წლიანი ფაილის ვერსიის ისტორია"
+      ],
+      "15 GB storage": [
+        "15 გბ საცავი"
       ],
       "24/7 account management support": [
         "24/7 ანგარიშის მართვის მხარდაჭერა."
@@ -9045,6 +9115,9 @@
       ],
       "Administration Panel": [
         "ადმინისტრატორის პანელი"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "${ BRAND_NAME }-ის ყველა პროდუქტი და ფუნქცია"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "ყველა ${ BRAND_NAME }-ის სერვისი (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9127,6 +9200,9 @@
       "Email client support (via IMAP/SMTP)": [
         "ელფოსტის კლიენტის მხარდაჭერა (IMAP/SMTP-ით)"
       ],
+      "Email groups": [
+        "ელფოსტის ჯგუფები"
+      ],
       "Enables HIPAA compliance": [
         "ჩართავს HIPAA-სთან თავსებადობას"
       ],
@@ -9153,6 +9229,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
+      ],
+      "Generate emails with a prompt": [
+        "ელფოსტების გენერაცია მოთხოვნით"
       ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
@@ -9209,9 +9288,15 @@
       "Priority support & live chat": [
         "პრიორიტეტული დახმარება და ცოცხალი ჩატი"
       ],
+      "Proofread and refine your emails": [
+        "თქვენი ელფოსტების კორექტურა და ოპტიმიზაცია"
+      ],
       "Protect ${ n } device at a time": [
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
+      ],
+      "Quickly craft replies": [
+        "უცებ შექმენით პასუხები"
       ],
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
@@ -9266,6 +9351,9 @@
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
+      ],
+      "Support for up to 2 users": [
+        "მხარდაჭერა 2 მომხმარებლამდე"
       ],
       "Sync and backup all your files across devices": [
         "დაასინქრონეთ და დაამარქაფეთ ყველა თქვენი ფაილი ყველა თქვენს მოწყობილობაზე"
@@ -9346,6 +9434,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 ელფოსტის ხელით მითითებული დომენი"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain2 } ახალი ამბების გამოწერებისთვის"
       ],
@@ -9447,6 +9538,11 @@
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "მიიღეთ Mail Plus ფასით ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -9522,6 +9618,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "გაუზიარეთ კალენდარი თქვენს ოჯახს, მეგობრებს და კოლეგებს"
+      ],
+      "Email everyone in a group with a single email address": [
+        "მიწერეთ ყველას ჯგუფში ერთი ელფოსტის მისამართით"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "იძლევა გარანტიას, რომ მიიღებთ ყველა ელფოსტას, რომელიც თქვენს დომენზე იქნება გამოგზავნილი მაშინაც კი, თუ მომხმარებელი არ არსებობს, აღარ არსებობს ან აკრეფის შეცდომაა"
@@ -10359,6 +10458,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "მოწვევის ხელახლა დაშიფვრა ვერ მოხერხდა. გთხოვთ, ისევ სცადოთ."
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "თქვენი ანგარიშის უსაფრთხოების გადახედვა"
       ]
     },
     "Search - no results": {
@@ -11708,9 +11812,6 @@
       "Alias saved and copied": [
         "ფსევდონიმი შენახული და კოპირებულია"
       ],
-      "Bug reported": [
-        "შეცდომა გადაგზავნილია"
-      ],
       "Canceling import": [
         "შემოტანის გაუქმება"
       ],
@@ -11730,6 +11831,9 @@
       ],
       "Contacts deleted": [
         "კონტაქტებ წაიშალა"
+      ],
+      "Content copied to clipboard": [
+        "შემცველობა დაკოპირდა გაცვლის ბუფერში"
       ],
       "Conversation added to ${ labelName }.": [
         "საუბარი დაემატა ${ labelName }-ში."
@@ -12228,6 +12332,9 @@
       "Coupon": [
         "კუპონი"
       ],
+      "Craft better emails": [
+        "შექმენით უკეთესი ელფოსტები"
+      ],
       "Create contact": [
         "კონტაქტის შექმნა"
       ],
@@ -12563,6 +12670,9 @@
       ],
       "No trackers found": [
         "ტრეკერები ვერ ვიპოვე"
+      ],
+      "No-reply address detected": [
+        "აღმოჩენილია უპასუხო (no-reply) მისამართი"
       ],
       "Notes": [
         "შენიშვნები"

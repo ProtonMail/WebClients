@@ -93,6 +93,9 @@
       "Add to group": [
         "Adăugare la grup"
       ],
+      "Adds it above your existing message": [
+        "Îl adaugă deasupra mesajului existent"
+      ],
       "Align center": [
         "Centrare"
       ],
@@ -255,7 +258,7 @@
         "Confirmare"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        "Confirmați deschiderea legăturii ${ linkToShow }"
+        "Confirmați deschiderea legăturii web ${ linkToShow }"
       ],
       "Contact group": [
         "Grup contacte"
@@ -504,6 +507,9 @@
       "Generate text": [
         "Generare text"
       ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Luați ${ BRAND_NAME } Duo"
+      ],
       "Get in touch": [
         "Contactați-ne"
       ],
@@ -633,7 +639,7 @@
         "Inserare imagine"
       ],
       "Insert link": [
-        "Inserare legătură"
+        "Inserare legătură web"
       ],
       "Italic": [
         "Înclinat"
@@ -753,7 +759,7 @@
         "Mai multe informații: ${ safeTitle }"
       ],
       "More refine actions": [
-        "Mai multe acțiuni de rafinare"
+        "Mai multe acțiuni de cizelare"
       ],
       "More search options": [
         "Mai multe opțiuni de căutare"
@@ -927,7 +933,7 @@
         "Recomandați pe cineva"
       ],
       "Refine it": [
-        "Redefiniți-o"
+        "Cizelare"
       ],
       "Refresh the page": [
         "Împrospătare pagină"
@@ -1071,7 +1077,7 @@
         "Selectare țară"
       ],
       "Select date and time": [
-        "Selectați data și ora"
+        "Selectare dată și oră"
       ],
       "Self-destruct in 7 days": [
         "Autodistrugere în 7 zile"
@@ -1119,7 +1125,7 @@
         "Partajare"
       ],
       "Share via link": [
-        "Partajare prin legătură"
+        "Partajare prin legătură web"
       ],
       "Sharing options": [
         "Opțiuni de partajare"
@@ -1544,17 +1550,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Datele rămân pe dispozitiv pentru a vă proteja confidențialitatea. Necesită o descărcare și hardware compatibil."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Datele rămân pe dispozitiv, dar necesită o descărcare unică și hardware compatibil."
       ],
       "Fast and secure. No logs are kept.": [
         "Rapid și sigur. Nu se păstrează jurnale."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Nu se păstrează jurnale pentru a vă proteja confidențialitatea. Procesare mai rapidă."
+      ],
       "Run on device": [
         "Rulare pe dispozitiv"
       ],
       "Run on servers": [
         "Rulare pe servere."
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Funcționează în siguranță pe serverele ${ BRAND_NAME }"
+      ],
+      "Securely run on device": [
+        "Funcționează în siguranță pe dispozitiv"
       ]
     },
     "Assistant toggle": {
@@ -3403,6 +3421,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A2F adaugă un nivel de securitate suplimentar, prevenind accesul neautorizat."
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Ștergeți automat mesajele nedorite și din gunoi și deblocați mai multe funcții premium trecând la un tip de plan cu plată."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Se decriptează contactele… Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
       ],
@@ -3417,6 +3438,9 @@
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ MAX_IMPORT_CONTACTS_STRING } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Pentru acces nelimitat la asistentul de scriere și nu numai, achiziționați ${ BRAND_NAME } Duo."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obțineți aliasuri nelimitate și 500 GIB spațiu de stocare cu ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3441,6 +3465,9 @@
       "No labels": [
         "Nu sunt etichete."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Economisiți timp trimițând simultan mesaje tuturor folosind grupurile de contacte. Deblocați această funcție și altele trecând la un plan cu plată."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
       ],
@@ -3449,6 +3476,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Setați o metodă de recuperare pentru a preveni pierderea accesului la cont."
+      ],
+      "Starting from ${ price }": [
+        "Începând de la ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pentru a continua să utilizați asistentul de scriere, adăugați-l la abonament."
@@ -3464,6 +3494,12 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activați protecția împotriva monitorizării prin e-mail pentru a împiedica agenții de publicitate și alții să vă urmărească locul și activitatea online."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Deblocați programarea personalizată a mesajelor și mai multe funcții premium trecând la un plan cu plată."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Deblocați amânarea trimiterii programate a mesajelor și mai multe funcții premium trecând la un plan cu plată."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Deblocați adrese de e-mail mai scurte și alte funcții premium modificându-vă contul."
@@ -4198,7 +4234,7 @@
         "Filă închisă."
       ],
       "Text is too long to refine": [
-        "Textul este prea lung pentru a fi prelucrat."
+        "Textul este prea lung pentru a fi cizelat."
       ],
       "Thanks for the feedback!": [
         "Mulțumim pentru informare!"
@@ -4275,7 +4311,7 @@
         "Acest mesaj a fost deja trimis. A fost salvată o ciornă nouă."
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
-        "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
+        "Acest mesaj poate conține unele legături web care nu pot fi deschise corect de către navigatorul actual."
       ],
       "Trusted keys are not valid for sending": [
         "Cheile de încredere nu sunt valide pentru trimitere"
@@ -5565,6 +5601,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe vă ajută să redactați mesaje mai bine, rapid și fără efort."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
@@ -5704,9 +5743,9 @@
         "S-au blocat ${ numberOfImageTrackers } de funcții de urmărire."
       ],
       "${ numberOfUTMTrackers } link cleaned": [
-        "S-a curățat ${ numberOfUTMTrackers } legătură.",
-        "S-au curățat ${ numberOfUTMTrackers } legături.",
-        "S-au curățat ${ numberOfUTMTrackers } de legături."
+        "S-a curățat ${ numberOfUTMTrackers } legătură web.",
+        "S-au curățat ${ numberOfUTMTrackers } legături web.",
+        "S-au curățat ${ numberOfUTMTrackers } de legături web."
       ],
       "${ NumMessages } message in conversation": [
         "Un mesaj în conversație",
@@ -6208,7 +6247,7 @@
         "Editare dată de expirare"
       ],
       "Edit link": [
-        "Editare legătură"
+        "Editare legătură web"
       ],
       "email": [
         "e-mail"
@@ -6312,6 +6351,11 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pentru mai multe rezultate, încercați să căutați în conținutul mesajelor."
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Probare gratuită ${ ASSISTANT_TRIAL_TIME_DAYS } zi",
+        "Probare gratuită ${ ASSISTANT_TRIAL_TIME_DAYS } zile",
+        "Probare gratuită ${ ASSISTANT_TRIAL_TIME_DAYS } de zile"
       ],
       "From": [
         "De la"
@@ -6417,7 +6461,7 @@
         "Inserare imagine"
       ],
       "Insert link": [
-        "Inserare legătură"
+        "Inserare legătură web"
       ],
       "Internet connection lost": [
         "Conexiunea la internet s-a întrerupt"
@@ -6461,11 +6505,14 @@
       "Learn more": [
         "Detalii"
       ],
+      "Learn more about the writing assistant": [
+        "Aflați mai multe despre asistentul de scriere"
+      ],
       "Left to Right": [
         "De la stânga la dreapta"
       ],
       "Link type": [
-        "Tip legătură"
+        "Tip legătură web"
       ],
       "Links cleaned:": [
         "Legături curățate:"
@@ -6555,7 +6602,7 @@
         "Lunar, ${ onDayString }"
       ],
       "More refine actions": [
-        "Mai multe acțiuni de rafinare"
+        "Mai multe acțiuni de cizelare"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
@@ -6588,7 +6635,7 @@
         "Nicio etichetă selectată"
       ],
       "No links cleaned": [
-        "Nu au fost curățate legături"
+        "Nu au fost curățate legături web"
       ],
       "No more results found": [
         "Nu s-au mai găsit rezultate"
@@ -6636,7 +6683,7 @@
         "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
       ],
       "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
-        "Sistemul nostru a etichetat acest mesaj ca fiind suspect. Verificați legitimitatea acestuia înainte de a accesa orice legătură sau fișier atașat."
+        "Sistemul nostru a etichetat acest mesaj ca fiind suspect. Verificați legitimitatea acestuia înainte de a accesa orice legătură web sau fișier atașat."
       ],
       "password": [
         "parola"
@@ -6693,7 +6740,7 @@
         "Selectați folderele pe care doriți să le importați:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Selectați tipul de legătură pe care doriți să o inserați și completați toate câmpurile."
+        "Selectați tipul de legătură web pe care doriți să o inserați și completați toate câmpurile."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selectați adresa sau adresele de e-mail de adăugat la un grup.",
@@ -6868,7 +6915,7 @@
         "Sesiunea a expirat"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest navigaror. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură de e-mail."
+        "Setați ${ MAIL_APP_NAME } ca aplicație de e-mail implicită pentru acest navigaror. ${ MAIL_APP_NAME } se va deschide automat atunci când faceți clic pe o legătură web de e-mail."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Setând criptarea PGP veți putea cripta mesajele bilateral cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
@@ -6928,7 +6975,7 @@
         "Temporar indisponibil. Vă rugăm să reveniți mai târziu."
       ],
       "Test link": [
-        "Testare legătură"
+        "Testare legătură web"
       ],
       "Text color": [
         "Culoare text"
@@ -6944,6 +6991,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Numărul de descărcări include atât descărcările reale, cât și cazuri când fișierele sunt examinate."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Adresa de e-mail ${ boldNoReplyEmail } nu pare să accepte răspunsuri. Sigur doriți să trimiteți mesajul?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Datele criptate ocupă puțin mai mult spațiu datorită criptării și a semnăturilor, ceea ce asigură securitatea acestora."
@@ -7028,13 +7078,13 @@
         "Acesta este conceput ca un ajutor de scris. Verificați textul sugerat pentru acuratețe. ${ learnMoreResult }"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
+        "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
       "This link may be a homograph attack and cannot be opened by the Edge browser. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Această legătură ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
+        "Această legătură web ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
+        "Această legătură web ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Acest mesaj a fost adaptat pentru a se potrivi la fundalul întunecat."
@@ -7231,7 +7281,7 @@
         "Încărcare imagine"
       ],
       "URL link": [
-        "URL legătură"
+        "URL legătură web"
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
@@ -7285,7 +7335,7 @@
         "Trebuie să autentificăm plata cu banca dvs."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "S-au eliminat informațiile de urmărire din următoarele legături pentru a vă proteja de agenții de publicitate și de alții care încearcă să vă urmărească activitatea online."
+        "S-au eliminat informațiile de urmărire din următoarele legături web pentru a vă proteja de agenții de publicitate și de alții care încearcă să vă urmărească activitatea online."
       ],
       "We use 3-D Secure to protect your payments": [
         "Folosim 3-D Secure pentru a proteja plățile"
@@ -7330,7 +7380,7 @@
         "Când vă înscrieți pentru un buletin informativ, utilizați un alias în loc de adresa de e-mail reală. Identitatea vă va rămâne ascunsă și puteți dezactiva oricând aliasul."
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
-        "Când călătoriți sau folosiți WiFi public, conectați-vă la ${ VPN_APP_NAME } pentru a împiedica pe cineva să vă urmărească activitatea online sau să vă fure datele. Este gratis."
+        "Când călătoriți sau folosiți Wi-Fi public, conectați-vă la ${ VPN_APP_NAME } pentru a împiedica pe cineva să vă urmărească activitatea online sau să vă fure datele. Este gratis."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -7381,14 +7431,14 @@
         "Puteți importa un singur tip de date la un moment dat."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
       ],
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
@@ -7508,7 +7558,7 @@
         "Ați atins numărul maxim de adrese din grupul de contacte."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
-        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
+        "Acest cont ${ BRAND_NAME } este în prezent suspendat. După 28 de zile, nu veți mai putea primi mesaje, legăturile web de partajare din Drive vor fi blocate și nu veți mai putea încărca fișiere noi. Pentru repornirea serviciului, vă rugăm să plătiți toate facturile restante."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Acest cont ${ BRAND_NAME } este în prezent suspendat. Nu mai puteți primi mesaje. Legăturile de partajare din Drive nu mai sunt active și nu mai puteți încărca fișiere noi. Pentru putea să utilizați din nou contul, vă rugăm să plătiți toate facturile restante."
@@ -7520,7 +7570,7 @@
         "Acest cont are cel puțin o factură scadentă. Contul este restricționat, iar toate serviciile sunt acum blocate până la plata datoriilor. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Acest cont are cel puțin o factură scadentă. Contul este restricționat. Neplata continuă va bloca mesajele și legăturile partajate. ${ payInvoiceLink }"
+        "Acest cont are cel puțin o factură scadentă. Contul este restricționat. Neplata continuă va bloca mesajele și legăturile web partajate. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
@@ -7571,6 +7621,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
+      ],
+      "Your private writing assistant": [
+        "Asistentul personal privat de scriere"
       ]
     },
     "info": {
@@ -7725,7 +7778,7 @@
         "Accesare folder «Gunoi»"
       ],
       "Insert link": [
-        "Inserare legătură"
+        "Inserare legătură web"
       ],
       "Jump to first": [
         "Salt la primul"
@@ -7893,10 +7946,10 @@
         "Și arhivare"
       ],
       "Always label sender's emails": [
-        "Etichetare întotdeauna mesaje expeditori"
+        "Etichetare întotdeauna mesajele expeditorului"
       ],
       "Always move sender's emails": [
-        "Mutare întotdeauna mesaje expeditori"
+        "Mutare întotdeauna mesajele expeditorului"
       ],
       "AND": [
         "ȘI"
@@ -9049,6 +9102,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Retrogradare la ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Începeți cu ${ price }"
+      ],
       "Upgrade now": [
         "Modificare"
       ]
@@ -9077,6 +9133,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } și ${ PROTON_SENTINEL_NAME }"
       ],
@@ -9186,8 +9245,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Pentru toate serviciile ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TiB stocare securizată"
+      ],
       "1 user": [
         "Un utilizator"
+      ],
+      "10 email addresses/aliases": [
+        "10 adrese de e-mail/aliasuri"
+      ],
+      "10-year file version history": [
+        "10 ani istoric versiuni fișiere"
+      ],
+      "15 GB storage": [
+        "15 GiB spațiu de stocare"
       ],
       "24/7 account management support": [
         "Asistență pentru gestionarea contului 24/7"
@@ -9203,6 +9274,9 @@
       ],
       "Administration Panel": [
         "Panou de administrare"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Toate produsele și funcțiile ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9285,6 +9359,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Suport client de e-mail (prin IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grupuri de contacte"
+      ],
       "Enables HIPAA compliance": [
         "Se conformează regulilor HIPAA"
       ],
@@ -9311,6 +9388,9 @@
       ],
       "GDPR data processing agreement": [
         "Acordul de prelucrare a datelor GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Generați mesaje cu o solicitare"
       ],
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
@@ -9368,10 +9448,16 @@
       "Priority support & live chat": [
         "Asistență prioritară și conversații live"
       ],
+      "Proofread and refine your emails": [
+        "Corectați și cizelați mesajele"
+      ],
       "Protect ${ n } device at a time": [
         "Protejare ${ n } dispozitiv",
         "Protejare ${ n } dispozitive simultan",
         "Protejare ${ n } de dispozitive simultan"
+      ],
+      "Quickly craft replies": [
+        "Redactați rapid răspunsuri"
       ],
       "Recover previous file versions": [
         "Recuperați versiunile anterioare ale fișierelor"
@@ -9426,6 +9512,9 @@
       ],
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
+      ],
+      "Support for up to 2 users": [
+        "Acceptare până la doi utilizatori"
       ],
       "Sync and backup all your files across devices": [
         "Sincronizați fișierele între dispozitive și păstrați copii de rezervă"
@@ -9508,6 +9597,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "Un domeniu de e-mail personal"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Creați adrese de e-mail multiple pentru identitățile personale online, de ex. ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain2 } pentru abonamentul la știri."
       ],
@@ -9609,6 +9701,11 @@
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -9686,6 +9783,9 @@
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partajați calendarele ușor cu familia, prietenii sau colegii."
       ],
+      "Email everyone in a group with a single email address": [
+        "Trimiteți mesaje tuturor dintr-un grup cu o singură adresă de e-mail"
+      ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Se asigură că primiți toate e-mailurile trimise către domeniul dvs., chiar dacă adresa de e-mail nu a existat, nu mai există sau e scrisă greșit."
       ],
@@ -9738,7 +9838,7 @@
         "Gestionare parole și protejare identitate"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături către datele de contact și multe altele."
+        "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături web către datele de contact și multe altele."
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
         "Asistența telefonică este disponibilă de la echipa de asistență pentru clienți ${ BRAND_NAME } în timpul programului de lucru european, pentru clienții cu 20 sau mai mulți utilizatori."
@@ -9789,7 +9889,7 @@
         "Configurați filtre pentru a răspunde automat, sorta și/sau eticheta e-mailurile."
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
-        "Partajați fișierele sau folderele cu oricine utilizând legături sigure și partajabile."
+        "Partajați fișierele sau folderele cu oricine utilizând legături web securizate și partajabile."
       ],
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
         "SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME }."
@@ -10533,6 +10633,11 @@
         "Recriptarea invitației a eșuat. Mai încercați."
       ]
     },
+    "Safety review": {
+      "Review your account safety": [
+        "Revizuire securitate cont"
+      ]
+    },
     "Search - no results": {
       "No messages found": [
         "Nu au fost găsite mesaje"
@@ -10959,7 +11064,7 @@
     },
     "Snooze message": {
       "Snooze Message": [
-        "Mesaj amânare"
+        "Amânare mesaj"
       ],
       "When should the message reappear in your inbox?": [
         "Când ar trebui să reapară acest mesaj în mesajele primite?"
@@ -11935,9 +12040,6 @@
       "Alias saved and copied": [
         "Alias salvat și copiat"
       ],
-      "Bug reported": [
-        "Eroare raportată"
-      ],
       "Canceling import": [
         "Se anulează importarea"
       ],
@@ -11959,6 +12061,9 @@
       ],
       "Contacts deleted": [
         "Contacte șterse"
+      ],
+      "Content copied to clipboard": [
+        "Conținutul a fost copiat în memorie."
       ],
       "Conversation added to ${ labelName }.": [
         "Conversație adăugată la ${ labelName }."
@@ -12468,6 +12573,9 @@
       "Coupon": [
         "Cupon"
       ],
+      "Craft better emails": [
+        "Redactați mesaje mai bune"
+      ],
       "Create contact": [
         "Creare contact"
       ],
@@ -12691,7 +12799,7 @@
         "Opțiuni etichetă"
       ],
       "Link confirmation": [
-        "Legătură de confirmare"
+        "legătură web de confirmare"
       ],
       "Load embedded images": [
         "Încărcare imagini incluse"
@@ -12809,6 +12917,9 @@
       ],
       "No trackers found": [
         "Nu s-au găsit funcții de urmărire"
+      ],
+      "No-reply address detected": [
+        "Adresă ce nu acceptă răspunsuri detectată"
       ],
       "Notes": [
         "Note"
