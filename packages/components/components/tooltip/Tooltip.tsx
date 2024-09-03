@@ -5,9 +5,9 @@ import { useCombinedRefs } from '@proton/hooks';
 import useInstance from '@proton/hooks/useInstance';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { generateUID } from '../../helpers';
 import type { PopperPlacement } from '../popper';
 import { Popper, usePopper } from '../popper';
 import useTooltipHandlers from './useTooltipHandlers';

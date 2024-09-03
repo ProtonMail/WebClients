@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { generateUID } from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import type { WorkerDecryptionResult } from '@proton/crypto';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -22,6 +21,7 @@ import {
     isSent,
     isSentAndReceived,
 } from '@proton/shared/lib/mail/messages';
+import generateUID from '@proton/utils/generateUID';
 import unique from '@proton/utils/unique';
 
 import { MESSAGE_ACTIONS } from '../../constants';

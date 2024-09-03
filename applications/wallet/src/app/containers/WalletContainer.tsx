@@ -3,10 +3,10 @@ import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import generateUID from '@proton/atoms/generateUID';
 import { Icon, useModalState } from '@proton/components/components';
 import { useLoading } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 import { encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
 
 import { Button, CoreButton } from '../atoms';

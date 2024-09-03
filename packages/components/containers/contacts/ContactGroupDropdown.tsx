@@ -14,6 +14,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import { DropdownButton, DropdownSizeUnit } from '../../components';
 import Dropdown from '../../components/dropdown/Dropdown';
@@ -23,7 +24,6 @@ import SearchInput from '../../components/input/SearchInput';
 import { usePopperAnchor } from '../../components/popper';
 import Mark from '../../components/text/Mark';
 import Tooltip from '../../components/tooltip/Tooltip';
-import { generateUID } from '../../helpers';
 import { useContactEmails, useContactGroups, useMailSettings, useUser } from '../../hooks';
 import type { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';

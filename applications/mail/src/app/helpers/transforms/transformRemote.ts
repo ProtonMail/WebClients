@@ -1,9 +1,9 @@
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import generateUID from '@proton/shared/lib/helpers/generateUID';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasShowRemote } from '@proton/shared/lib/mail/images';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
+import generateUID from '@proton/utils/generateUID';
 
 import { removeLineBreaks } from 'proton-mail/helpers/string';
 

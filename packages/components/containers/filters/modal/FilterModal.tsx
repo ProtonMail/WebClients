@@ -7,6 +7,7 @@ import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/ap
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
+import generateUID from '@proton/utils/generateUID';
 
 import type { ModalProps } from '../../../components';
 import {
@@ -19,7 +20,6 @@ import {
     ModalTwoHeader,
     useModalState,
 } from '../../../components';
-import { generateUID } from '../../../helpers';
 import { useApi, useEventManager, useFilters, useFolders, useLabels, useNotifications } from '../../../hooks';
 import { getDefaultFolders, noFolderValue } from '../constants';
 import type {

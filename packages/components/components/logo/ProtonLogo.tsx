@@ -2,9 +2,9 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { useState } from 'react';
 
 import type { LogoProps } from '@proton/components';
-import { generateUID } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 type Version = 'full' | 'glyph-only';
 type Color = 'brand' | 'invert';

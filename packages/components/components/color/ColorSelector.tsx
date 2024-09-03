@@ -3,9 +3,9 @@ import { c } from 'ttag';
 
 import { genAccentShades } from '@proton/colors';
 import useInstance from '@proton/hooks/useInstance';
-import generateUID from '@proton/shared/lib/helpers/generateUID';
 import capitalize from '@proton/utils/capitalize';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 interface Props {
     selected: string;

@@ -71,9 +71,9 @@ import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import ProductLink from '../../containers/app/ProductLink';
-import { generateUID } from '../../helpers';
 import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
 import { AuthenticatedBugModal } from '../support';
 import type { Props as UserDropdownButtonProps } from './UserDropdownButton';
