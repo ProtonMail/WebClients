@@ -1,4 +1,4 @@
-import { type FC, type ReactElement, useEffect, useMemo, useState } from 'react';
+import { type FC, type ReactElement, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 
@@ -30,28 +30,46 @@ type Props = {
     isNew?: boolean;
 };
 
-export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
-    const passwordContext = usePasswordContext();
-    const { search } = useLocation();
-    const history = useHistory();
-    const showUsernameFieldByDefault = useSelector(selectShowUsernameField);
+/**
+ *
+ * @param param0 If only email or username is available or nothing available at all:
+No expansion
+Populate the value under "Email or username" label
+If both email and username are available:
+Expand to separate "Email" and "Username" by default
+Populate email under "Email" label
+Populate username under "Username" label
+ * @returns
+ */
 
+export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
+    const history = useHistory();
+    const { search } = useLocation();
+    const passwordContext = usePasswordContext();
     const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
 
-    const [usernameExpanded, setUsernameExpanded] = useState(
-        () => showUsernameFieldByDefault || Boolean(form.values.itemEmail && form.values.itemUsername)
-    );
-    const itemHasUsername = useMemo(() => form.values.itemUsername.length > 0, [form]);
+    const { itemEmail, itemUsername } = form.values;
 
-    const showUsername = usernameExpanded || itemHasUsername;
-    const searchParams = new URLSearchParams(search);
-    const iconWithUsername = showUsername ? 'envelope' : 'user';
+    const showUsernameField = useSelector(selectShowUsernameField);
+    const hasEmail = Boolean(itemEmail);
+    const hasUsername = Boolean(itemUsername);
+    const bothUsernameAndEmail = hasEmail && hasUsername;
+
+    /** On initial mount: expand username field by default IIF:
+     * - user has enabled the `showUsernameField` setting
+     * - both username & field are populated */
+    const [usernameExpanded, setUsernameExpanded] = useState(showUsernameField || bothUsernameAndEmail);
+    const itemEmailFieldIcon = usernameExpanded ? 'envelope' : 'user';
 
     const handleAddUsernameClick = async () => {
-        // Update the form setting the "email" as the username only if it's a non-valid email
-        if (!validateEmailAddress(form.values.itemEmail) && !form.values.itemUsername) {
+        /** When enabling the username field set the `itemEmail` as
+         * the `itemUsername` only if it's a non-valid email */
+        if (!validateEmailAddress(itemEmail)) {
             await form.setValues(
-                withMerge<LoginItemFormValues>({ itemEmail: '', itemUsername: form.values.itemEmail })
+                withMerge<LoginItemFormValues>({
+                    itemEmail: '',
+                    itemUsername: itemEmail,
+                })
             );
         }
 
@@ -59,15 +77,25 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
     };
 
     useEffect(() => {
-        // Handle email or username input virtually only if user didn't activate default option.
-        if (!showUsernameFieldByDefault && form.values.itemUsername && !form.values.itemEmail) {
-            form.resetForm({ values: { ...form.values, itemEmail: form.values.itemUsername, itemUsername: '' } });
+        /** On mount, if username field is not expanded, use the `itemEmail` as
+         * the virtual `Email or username` field value. This should be sanitized
+         * on save by checking if the provided value is a valid email.  */
+        if (!usernameExpanded) {
+            form.resetForm({
+                values: {
+                    ...form.values,
+                    itemEmail: itemUsername || itemEmail,
+                    itemUsername: '',
+                },
+            });
         }
 
         return () => {
-            if (!isNew) return;
-            searchParams.delete('email');
-            history.replace({ search: searchParams.toString() });
+            if (isNew) {
+                const searchParams = new URLSearchParams(search);
+                searchParams.delete('email');
+                history.replace({ search: searchParams.toString() });
+            }
         };
     }, []);
 
@@ -78,19 +106,19 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                 label={(() => {
                     if (aliasModal.willCreate) return c('Label').t`Email (new alias)`;
                     if (aliasModal.relatedAlias) return c('Label').t`Email (alias)`;
-                    return showUsername ? c('Label').t`Email` : c('Label').t`Email or username`;
+                    return usernameExpanded ? c('Label').t`Email` : c('Label').t`Email or username`;
                 })()}
-                placeholder={showUsername ? c('Placeholder').t`Enter email` : c('Label').t`Enter email or username`}
+                placeholder={usernameExpanded ? c('Placeholder').t`Enter email` : c('Label').t`Enter email or username`}
                 component={TextField}
                 itemType="login"
                 icon={
                     <>
                         <Icon
-                            name={aliasModal.usernameIsAlias ? 'alias' : iconWithUsername}
+                            name={aliasModal.usernameIsAlias ? 'alias' : itemEmailFieldIcon}
                             size={5}
                             className="mt-2"
                         />
-                        {!showUsername && (
+                        {!usernameExpanded && (
                             <ButtonLike
                                 as="div"
                                 icon
@@ -162,7 +190,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                     ].filter(Boolean) as ReactElement[]
                 }
             />
-            {showUsername && (
+            {usernameExpanded && (
                 <Field
                     name="itemUsername"
                     label={c('Label').t`Username`}
