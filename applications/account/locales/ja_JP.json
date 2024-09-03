@@ -784,10 +784,10 @@
       "Refresh status": [
         "状態を更新"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Reload": [
@@ -1192,6 +1192,9 @@
       "View plans details": [
         "プランの詳細を表示"
       ],
+      "View recovery settings": [
+        "リカバリ設定を表示"
+      ],
       "Void": [
         "無効"
       ],
@@ -1547,6 +1550,14 @@
         "年末オファーを選択してください"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB のストレージ (他のプランの 2 倍以上)"
@@ -1568,14 +1579,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } プランが期間限定で復活します"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
       ]
     },
     "bf2023: Offers": {
@@ -6460,10 +6463,10 @@
       "Data locked": [
         "ロックされたデータ"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "専用サーバー"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "専用サーバー"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -10444,6 +10447,26 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Get started for ${ price }": [
+        "${ price } で始めましょう"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Free で続行"
@@ -10473,24 +10496,10 @@
         "${ upsellPlanHumanSize } へアップグレード"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ]
-    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 執筆アシスタント"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }と${ PROTON_SENTINEL_NAME }"
       ],
@@ -10548,6 +10557,9 @@
       "${ size } storage": [
         "${ size } のストレージ"
       ],
+      "1 TB secure storage": [
+        "1 TBの安全なストレージ"
+      ],
       "1 user": [
         "1ユーザー"
       ],
@@ -10571,6 +10583,9 @@
       ],
       "Advanced network security": [
         "高度なネットワークセキュリティ"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "${ BRAND_NAME } のすべての製品と機能"
       ],
       "Auto-delete Spam and Trash": [
         "迷惑メールとごみ箱を自動削除"
@@ -10668,6 +10683,9 @@
       "GDPR data processing agreement": [
         "GDPR データ処理契約"
       ],
+      "Generate emails with a prompt": [
+        "プロンプトを使ってメールを生成"
+      ],
       "Group management (coming soon)": [
         "グループ管理 (近日公開)"
       ],
@@ -10719,8 +10737,14 @@
       "Priority support & live chat": [
         "優先サポートとライブチャット"
       ],
+      "Proofread and refine your emails": [
+        "メールを校正し、洗練させる"
+      ],
       "Protect ${ n } device at a time": [
         "${ n }台のデバイスを同時に保護"
+      ],
+      "Quickly craft replies": [
+        "素早く返信を作成"
       ],
       "Require 2FA for organization": [
         "組織には 2FA が必要です"
@@ -10769,6 +10793,9 @@
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
+      ],
+      "Support for up to 2 users": [
+        "最大2ユーザーのサポート"
       ],
       "Tor over VPN": [
         "Tor over VPN"
@@ -10992,6 +11019,14 @@
         "選択中のプラン: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }トライアル"
+      ],
+      "Your account's usage": [
+        "アカウントの使用率"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -11010,14 +11045,6 @@
       ],
       "Unlock premium features by upgrading": [
         "アップグレードしてプレミアム機能の制限を解除"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }トライアル"
-      ],
-      "Your account's usage": [
-        "アカウントの使用率"
       ]
     },
     "new_plans: tooltip": {
@@ -13815,9 +13842,6 @@
       "Auto-reply updated": [
         "自動返信が更新されました"
       ],
-      "Bug reported": [
-        "バグの報告が送信されました"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "カレンダーが追加されました。同期には数分かかることがあります。"
       ],
@@ -14380,10 +14404,10 @@
       "Card verification": [
         "カードの検証"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch-All アドレス"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch-All アドレス"
       ],
       "Change login password": [

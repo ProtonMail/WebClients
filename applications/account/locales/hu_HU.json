@@ -752,11 +752,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "refresh the page": [
-        "frissítse az oldalt"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "frissítse az oldalt"
       ],
       "Reload": [
         "Újratöltés"
@@ -1150,6 +1150,9 @@
       ],
       "View plans details": [
         "Csomag részletei"
+      ],
+      "View recovery settings": [
+        "Helyreállítási beállítások megjelenítése"
       ],
       "Void": [
         "Sztornó"
@@ -4447,6 +4450,11 @@
         "3 TB teljes tárhely"
       ]
     },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "A fiókja előnyei"
+      ]
+    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "A tárhely közösen osztoznak a családtagok, és megoszlik a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } közt."
@@ -4571,17 +4579,29 @@
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
         "Felhasználó hozzáadása a ${ PLAN_NAMES.visionary2022 } fiókjához"
       ],
+      "Change family name": [
+        "A család nevének megváltoztatása"
+      ],
+      "Delete family group?": [
+        "Törli a családi csoportot?"
+      ],
       "Delete organization?": [
         "Szervezet törlése?"
       ],
       "Edit user storage": [
         "Felhasználó tárhelyének szerkesztése"
       ],
+      "Family name": [
+        "Család neve"
+      ],
       "Invite a user": [
         "Felhasználó meghívása"
       ],
       "Manage family group": [
         "Családi csoport szerkesztése"
+      ],
+      "Set family name": [
+        "Család nevének beállítása"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -9627,11 +9647,17 @@
       ]
     },
     "Link": {
+      "Activity log": [
+        "Tevékenységnapló"
+      ],
       "Add a gift code": [
         "Ajándék kód hozzáadása"
       ],
       "Add gift code": [
         "Ajándék kód hozzáadása"
+      ],
+      "Add to your subscription": [
+        "Hozzáadás az előfizetéshez"
       ],
       "Apps and extensions": [
         "Alkalmazások és bővítmények"
@@ -9660,6 +9686,9 @@
       "Create account": [
         "Fiók létrehozása"
       ],
+      "Create an alias": [
+        "E-mail álnév létrehozása"
+      ],
       "Encryption and keys": [
         "Titkosítás és kulcsok"
       ],
@@ -9671,6 +9700,9 @@
       ],
       "General": [
         "Általános"
+      ],
+      "Get ${ BRAND_NAME } Pass": [
+        "${ BRAND_NAME } Pass beszerzése"
       ],
       "Get ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } beszerzése"
@@ -10178,6 +10210,23 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Folytatás az ingyenessel"
@@ -10205,23 +10254,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -10302,6 +10334,9 @@
       "24/7 account management support": [
         "Non-stop fiókkezelési támogatás"
       ],
+      "24/7 support": [
+        "24/7 támogatás"
+      ],
       "99.95% SLA": [
         "99.95% SLA"
       ],
@@ -10347,6 +10382,9 @@
       "Centralized billing": [
         "Központosított számlázás"
       ],
+      "Centralized settings and billings": [
+        "Központosított beállítások és számlázás"
+      ],
       "Collaborate and share large files": [
         "Együttműködés és nagyméretű fájlok megosztása"
       ],
@@ -10376,6 +10414,9 @@
       ],
       "Dedicated account manager": [
         "Kijelölt fiókmenedzser"
+      ],
+      "Dedicated servers and IP": [
+        "Dedikált szerverek és IP"
       ],
       "Desktop app": [
         "Asztali alkalmazás"
@@ -10424,6 +10465,9 @@
       ],
       "High-speed streaming": [
         "Nagy sebességű videózás"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Nagy sebességű, svájci VPN, amely védi az adatait"
       ],
       "High-speed VPN on ${ n } device": [
         "Nagysebességű VPN ${ n } eszközön",
@@ -10508,6 +10552,12 @@
       ],
       "SSO integration (coming soon)": [
         "SSO integráció (hamarosan elérhető)"
+      ],
+      "Start protecting your organization": [
+        "Kezdje meg a szervezet védelmét"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Két egyszerű lépéssel kezdje meg a védelmét online"
       ],
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"
@@ -10727,6 +10777,14 @@
         "A választott csomagja: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -10745,14 +10803,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -11968,6 +12018,254 @@
         "Felhasználó"
       ]
     },
+    "Safety review": {
+      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
+        " **Kapcsolja be az telefonszám alapú helyreállítást**, hogy visszaszerezhesse a fiókja elérését, ha elfelejtené a jelszavát."
+      ],
+      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
+        "A ${ BRAND_NAME } erre az e-mail címre fog küldeni egy visszaállító kódot, ha a jelszava visszaállítását kéri."
+      ],
+      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
+        "A ${ BRAND_NAME } erre az telefonszámra fog küldeni egy visszaállító kódot SMS-ben, ha a jelszava visszaállítását kéri."
+      ],
+      "${ enableDeviceRecovery } to ensure your data can be recovered.": [
+        "${ enableDeviceRecovery }, ahhoz hogy az adatait is biztosan helyreállíthassa."
+      ],
+      "**Enable recovery by email** to regain access to your account if you forget your password.": [
+        "**Kapcsolja be az e-mail alapú helyreállítást**, hogy visszaszerezhesse a fiókja elérését, ha elfelejtené a jelszavát."
+      ],
+      "Account safety review": [
+        "Fiókbiztonsági áttekintés"
+      ],
+      "Add a recovery email": [
+        "Helyreállítási e-mail hozzáadása"
+      ],
+      "Add a recovery email address": [
+        "Helyreállítási e-mail cím hozzáadása"
+      ],
+      "Add a recovery phone number": [
+        "Helyreállítási telefonszám hozzáadása"
+      ],
+      "Back to Safety Review": [
+        "Vissza a Biztonsági áttekintésre"
+      ],
+      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
+        "Mivel visszaállította a jelszavát, a jelenlegi Helyreállító csomag csak azon adatok helyreállítására alkalmas, amik a jelszó visszaállítása előtt jöttek létre."
+      ],
+      "Can be used to regain access to your account and data": [
+        "A fiókjához és az adataihoz való hozzáférés helyreállítására használható"
+      ],
+      "Check account security": [
+        "A fiók biztonságának ellenőrzése"
+      ],
+      "Code sent to ${ boldValue }": [
+        "Kód elküldve: ${ boldValue }"
+      ],
+      "Continue to Safety Review": [
+        "Folytatás a Biztonsági áttekintésre"
+      ],
+      "Device-based recovery enabled": [
+        "Eszköz alapú helyreállítás bekapcsolva"
+      ],
+      "Download ${ size }": [
+        "Letöltés ${ size }"
+      ],
+      "Download your Recovery Kit": [
+        "Helyreállító csomag letöltése"
+      ],
+      "Enable device-based recovery": [
+        "Eszköz alapú helyreállítás bekapcsolása"
+      ],
+      "Enable recovery by email": [
+        "Helyreállítás engedélyezése e-mail címmel"
+      ],
+      "Enable recovery by phone": [
+        "Helyreállítás engedélyezése telefonnal"
+      ],
+      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
+        "Megértettem, hogy a jelenleg zárolt adatokat nem fogom tudni helyreállítani ezzel a Helyreállító csomaggal"
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Ha elfelejti a ${ BRAND_NAME } jelszavát, és vissza kell állítania, az ezen az eszközön az új jelszavával való következő bejelentkezéskor, a ${ BRAND_NAME } fiókjához való teljes hozzáférése helyreáll."
+      ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Ha elfelejti a ${ BRAND_NAME } jelszavát, és vissza kell állítania, az ezen az eszközön az új jelszavával való következő bejelentkezéskor, a ${ BRAND_NAME } fiókjához való teljes hozzáférése helyreáll."
+      ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
+        "A kizáródna a ${ BRAND_NAME } fiókjából, akkor a Helyreállító csomag segít ismét belépni és az adatait helyreállítani."
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Ha elveszíti a belépéshez szükséges adatait és vissza kell állítania a fiókját, **feltétlenül szükséges**, hogy legyen **mind fiók, mind pedig adat helyreállítási módszere** beállítva, különben megeshet, hogy nem fogja tudni többé elérni az e-mailjeit, névjegyeit, fájljait vagy jelszavait."
+      ],
+      "Invalid code": [
+        "Érvénytelen kód"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Ez az egyetlen lehetősége a fiókja teljes helyreállításához, tehát tartsa biztonságos helyen."
+      ],
+      "Recovery email address": [
+        "Helyreállítási e-mail cím"
+      ],
+      "Recovery phone number": [
+        "Helyreállítási telefonszám"
+      ],
+      "Safeguard account now": [
+        "A fiók biztonságának növelése"
+      ],
+      "Safeguard your account": [
+        "Tartsa biztonságban a fiókját"
+      ],
+      "Safeguard your account further": [
+        "Növelje a fiókja védelmét"
+      ],
+      "Safety review": [
+        "Biztonsági áttekintés"
+      ],
+      "Send a new code": [
+        "Új kód küldése"
+      ],
+      "Show more": [
+        "További információk"
+      ],
+      "Take action to secure your account": [
+        "Tegyen lépéseket a fióka biztonságáért"
+      ],
+      "There was an error generating your Recovery Kit": [
+        "Hiba történt a Helyreállító csomag létrehozásakor"
+      ],
+      "There was an error verifying your recovery email": [
+        "Hiba történt a helyreállítási e-mail cím ellenőrzése során"
+      ],
+      "There was an error verifying your recovery phone": [
+        "Hiba történt a helyreállítási telefonszám ellenőrzése során"
+      ],
+      "to automatically recover your data when you log into a trusted device": [
+        "az adatok automatikus helyreállításához, amikor belép egy megbízható eszközre"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Annak ellenőrzéséhez, hogy az e-mail cím az öné, írja be a ${ boldEmail } címre küldött ellenőrző kódot."
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Annak ellenőrzéséhez, hogy a telefonszám az öné, írja be a ${ boldPhoneNumber } számra küldött ellenőrző kódot."
+      ],
+      "to recover your account and data if you're ever locked out": [
+        "a fiók és az adatok helyreállításához, ha esetleg kizáródna"
+      ],
+      "to recover your account if you're ever locked out": [
+        "a fiók helyreállításához, ha esetleg kizáródna"
+      ],
+      "Update your Recovery Kit": [
+        "Helyreállító csomag frissítése"
+      ],
+      "Update your Recovery Kit?": [
+        "Frissíti a Helyreállító csomagját?"
+      ],
+      "Verify": [
+        "Ellenőrzés"
+      ],
+      "Verify your recovery email address": [
+        "Erősítse meg a helyreállítási e-mail címet"
+      ],
+      "Verify your recovery phone number": [
+        "Erősítse meg a helyreállítási telefonszámot"
+      ],
+      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
+        "Hiba történt a helyreállító csomag létrehozása során. Próbálja meg később, vagy ha a probléma továbbra is fennáll, lépjen kapcsolatba az ügyfélszolgálattal."
+      ],
+      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
+        "Hiba történt a helyreállítási e-mail cím ellenőrzése során. Próbálja meg később, vagy ha a probléma továbbra is fennáll, lépjen kapcsolatba az ügyfélszolgálattal."
+      ],
+      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
+        "Hiba történt a helyreállítási telefonszám ellenőrzése során. Próbálja meg később, vagy ha a probléma továbbra is fennáll, lépjen kapcsolatba az ügyfélszolgálattal."
+      ],
+      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
+        "Az eszköz alapú helyreállítás bekapcsolásakor, a ${ BRAND_NAME } egy titkosított biztonsági mentést tárol a kulcskarikájáról, a böngésző tárolójában."
+      ],
+      "You are at risk of losing access to your account and data.": [
+        "Fennáll a kockázata a fiókjához és az adataihoz való hozzáférés elvesztésének."
+      ],
+      "You are at risk of losing access to your data.": [
+        "Fennáll a kockázata az adataihoz való hozzáférés elvesztésének."
+      ],
+      "You can disable this at any time.": [
+        "Ezt bármikor kikapcsolhatja."
+      ],
+      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "A helyreállító csomagban található helyreállító jelmondattal teljesen helyreállíthatja a fiókját, ha visszaállítaná a jelszavát, szóval feltétlenül tartsa biztonságos helyen."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "A helyreállítási e-mail címét használhatja, a fiókja elérésének visszaszerzéséhez, ha elfelejtené a jelszavát."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "A helyreállítási telefonszámát használhatja, a fiókja elérésének visszaszerzéséhez, ha elfelejtené a jelszavát."
+      ],
+      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
+        "Már letöltötte a Helyreállító csomagját. Ha egy újat tölt le, az **érvényteleníti a régit**."
+      ],
+      "You have recommended actions.": [
+        "Javasolt műveletek érhetők el."
+      ],
+      "You recovery email address is:": [
+        "A helyreállító e-mail címe:"
+      ],
+      "You recovery phone number is:": [
+        "Helyreállítási telefonszáma:"
+      ],
+      "Your account and data can be recovered": [
+        "A fiók és adatai helyreállíthatók"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "A fiók és adatai helyreállíthatók. Győződjön meg róla, hogy továbbra is hozzáfér a helyreállítási módszereihez."
+      ],
+      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
+        "A fiók és adatai helyreállíthatók. Javasolt műveletek érhetők el, a fiókja biztonságának növeléséhez."
+      ],
+      "Your account and data can be recovered. You have recommended actions.": [
+        "A fiókja és az adatai helyreállíthatóak. Javasolt műveletek érhetők el."
+      ],
+      "Your account is fully secure.": [
+        "A fiókja teljesen biztonságban van."
+      ],
+      "Your account is secure.": [
+        "A fiókja biztonságban van."
+      ],
+      "Your recovery email": [
+        "Helyreállítási e-mail címe"
+      ],
+      "Your recovery email and phone can **only recover access to your account**.": [
+        "A helyreállítási e-mail és telefon **csak a fiókhoz való hozzáférés helyreállítására alkalmas**."
+      ],
+      "Your recovery email can **only recover access to your account**.": [
+        "A helyreállítási e-mail **csak a fiókhoz való hozzáférés helyreállítására alkalmas**."
+      ],
+      "Your recovery email has been enabled": [
+        "A helyreállítási e-mail bekapcsolva"
+      ],
+      "Your recovery email is set": [
+        "A helyreállítási e-mail címe meg van adva"
+      ],
+      "Your Recovery Kit": [
+        "Helyreállítási csomag"
+      ],
+      "Your Recovery Kit is set": [
+        "A Helyreállító csomagja készen van"
+      ],
+      "Your recovery methods": [
+        "Helyreállítási módszerek megjelenítése"
+      ],
+      "Your recovery phone": [
+        "Helyreállítási telefonszáma"
+      ],
+      "Your recovery phone can **only recover access to your account**.": [
+        "A helyreállítási telefon **csak a fiókhoz való hozzáférés helyreállítására alkalmas**."
+      ],
+      "Your recovery phone has been enabled": [
+        "A helyreállítási telefon bekapcsolva"
+      ],
+      "Your recovery phone is set": [
+        "A helyreállítási telefonszáma meg van adva"
+      ]
+    },
     "scim: Action": {
       "Generate token": [
         "Token létrehozása"
@@ -12243,6 +12541,14 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Jelszó visszaállítási kérés"
+      ]
+    },
+    "Settings description": {
+      "Complete the transition to privacy with our secure importing and forwarding tools.": [
+        "Tegye teljessé az átállást a magánszféra védelmére az importáló és továbbító eszközeinkkel."
+      ],
+      "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
+        "Rendszerezze a leveleit mappák és címkék használatával. ${ learnMoreLink }"
       ]
     },
     "Settings section title": {
@@ -12869,9 +13175,6 @@
       "Auto-reply updated": [
         "Automatikus válasz frissítve"
       ],
-      "Bug reported": [
-        "Hiba bejelentve"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Naptár létrehozva. Egy pár percbe telhet a szinkronizálás."
       ],
@@ -13429,10 +13732,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -14451,6 +14754,9 @@
       "Customize import to reduce the number of labels": [
         "Módosítsa az importálás beállításait hogy kevesebb címkére legyen szükség"
       ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "A 30 napnál régebbi üzenetek törlése a levélszemét és a lomtár mappából. Az automatikus törlés bekapcsolása, a már ezekben a mappákban lévő üzeneteknek a belekerülésük dátuma alapján ad meg törlési időpontot."
+      ],
       "Device information such as operating system": [
         "Eszközinformáció, mint például az operációs rendszer"
       ],
@@ -14466,6 +14772,9 @@
       "Enable/disable desktop and mobile notifications": [
         "Mobil és asztali értesítések ki- és bekapcsolása"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "Hatékonysági és biztonsági tippek, hogy a legtöbbet hozhassa ki a ${ MAIL_APP_NAME } alkalmazásból."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
       ],
@@ -14475,8 +14784,14 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Azok a tagok akinek nincs bekapcsolva a kétlépcsős hitelesítés, egy e-mailt fognak kapni, hogy minél előbb kapcsolják be."
+      ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Az üzenetek továbbra is megjelennek az Elküldött elemek és a Piszkozatok közt, akkor is, ha áthelyezi őket egy másik mappába."
+      ],
+      "See number of unread messages in the tab icon": [
+        "Az olvasatlan üzenetek számának megjelenítése a lap ikonján"
       ],
       "Set how your list of messages looks like by default.": [
         "Kiválasztja, hogy alapértelmezetten hogyan jelenjen meg az üzenetek listája."
@@ -14490,6 +14805,9 @@
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Beállítja az alábbi láblécet az elküldött üzeneteiben: ${ signature } A hivatkozás az ajánló hivatkozására mutat. A lábléc az aláírása alatt fog megjelenni. Az aláírását személyre szabhatja a beállítások között."
       ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "A feladók képének megjelenítése az üzenetek listáján. A feladó monogramja fog megjelenni, ha nincs kép."
+      ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Az ezzel a kulccsal készült aláírások érvénytelenként lesznek kezelve és a kulcs nem használható titkosításra"
       ],
@@ -14498,6 +14816,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Az új előfizetési ciklus ekkor indul: ${ formattedTime }"
       ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
         "A kiválasztott téma akkor lesz aktív, ha a rendszer \"sötét üzemmódba\" van állítva."
@@ -14508,11 +14829,20 @@
       "This address has been disabled": [
         "Ez a cím van letiltva"
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Ez lehet jelszó visszaállítás következménye, vagy a felhasználó még sosem lépett be."
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Ez az e-mail cím a szervezet minden tagjának megjelenik, amikor fiókkezelési műveleteket végez."
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Ezzel késleltetheti az e-mailek elüldését, lehetőséget kapva, a kiválasztott időtartamon belül, a küldés visszavonására."
       ],
       "This feature is only available for paid users": [
         "Ez a lehetőség csak előfizetéses csomagokban érhető el"
+      ],
+      "This feature is only available on Beta": [
+        "Ez a lehetőség csak a béta változaton érhető el"
       ],
       "This key cannot be used for encryption": [
         "Ez a kulcs nem használható titkosításhoz"
@@ -14523,8 +14853,17 @@
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "Ezt a kulcsot használja a ${ MAIL_APP_NAME } a névjegyek adatainak titkosításához"
       ],
+      "This key is used for email forwarding": [
+        "Ez a kulcs e-mail továbbításkor van használatban"
+      ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
         "A böngésző alapértelmezett görgetősávjainak használata. Ezek általában nagyobbak és könnyebben használhatóak"
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "A felhasználók a logót fogják látni a ${ BRAND_NAME } ikon helyet, amikor a webes alkalmazást használják."
+      ],
+      "Verified email address": [
+        "Ellenőrzött e-mail cím"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Probléma van a DNS beállításaival. Kérjük, javítsa, hogy minden az alábbiak szerint legyen beállítva. Ha a probléma továbbra is fennáll, ki kell kapcsolnunk a DKIM aláírást."
@@ -14605,6 +14944,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
+        "Váltson ${ passPlusPlanName } csomagra korlátlan számú hide-my-email e-mail álnévhez"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re",
         "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re"
