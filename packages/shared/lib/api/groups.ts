@@ -91,6 +91,11 @@ export const deleteGroupMember = (groupMemberID: string) => ({
     url: `core/v4/groups/members/${groupMemberID}`,
 });
 
+export const resumeGroupMember = (groupMemberID: string) => ({
+    method: 'put',
+    url: `core/v4/groups/members/${groupMemberID}/resume`,
+});
+
 export const deleteAllGroupMembers = (groupID: string) => ({
     method: 'delete',
     url: `core/v4/groups/members/${groupID}`,
