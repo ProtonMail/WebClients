@@ -157,6 +157,12 @@
       "Allow": [
         "Povoliť"
       ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Povoliť end-to-end šifrovanú poštu pre túto skupinu"
+      ],
+      "Always allow sending": [
+        "Vždy povoliť odosielanie"
+      ],
       "Apply": [
         "Použiť"
       ],
@@ -655,6 +661,9 @@
       "Keep logo": [
         "Ponechať logo"
       ],
+      "Keep my subscription": [
+        "Ponechať moje predplatné"
+      ],
       "label emails as": [
         "označiť emaily ako"
       ],
@@ -802,11 +811,11 @@
       "Refresh status": [
         "Obnoviť stav"
       ],
-      "refresh the page": [
-        "obnoviť stránku"
-      ],
       "Refresh the page": [
         "Obnoviť stránku"
+      ],
+      "refresh the page": [
+        "obnoviť stránku"
       ],
       "Reload": [
         "Obnoviť"
@@ -1183,6 +1192,9 @@
       "Use authentication code": [
         "Použiť overovací kód"
       ],
+      "Use group permissions": [
+        "Použiť oprávnenia skupiny"
+      ],
       "Use recovery code": [
         "Použiť kód pre obnovenie"
       ],
@@ -1221,6 +1233,9 @@
       ],
       "View plans details": [
         "Zobraziť detaily plánu"
+      ],
+      "View recovery settings": [
+        "Zobraziť nastavenia obnovy"
       ],
       "Void": [
         "Neplatné"
@@ -1615,6 +1630,14 @@
         "Vyberte si svoju koncoročnú ponuku"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Úložisko s kapacitou 6 TB (2x viac ako akýkoľvek iný plán)"
@@ -1636,14 +1659,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plán ${ plan } je späť len na obmedzený čas"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3396,6 +3411,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Po navýšení je možné automaticky mazať správy zo zložky nevyžiadanej pošty a kôš a odomknúť ďalšie prémiové funkcie."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulujeme! Získali ste maximum ${ rewardsLimit } bezplatných mesiacov ${ plusPlanName }."
       ],
@@ -3630,12 +3648,36 @@
         "Dostali ste pozvanie na prístup k súboru v ${ DRIVE_APP_NAME }"
       ]
     },
+    "drive_signup_2024: Info": {
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "Pridajte sa k viac ako 50 000 organizáciám, ktoré už využívajú výhody zabezpečenia od spoločnosti ${ BRAND_NAME }"
+      ],
+      "Tailored made solutions for larger organizations with custom needs": [
+        "Riešenia šité na mieru pre väčšie organizácie s vlastnými potrebami"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Rozšírená história verzií"
       ],
       "Priority support": [
         "Prioritná podpora"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Získajte ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Získajte za ${ price }"
+      ]
+    },
+    "duoplan2024: Footer": {
+      "Billed every 2 years at ${ amountBilled }. Discounts are based on the standard monthly pricing.": [
+        "Fakturované každé 2 roky za sumu ${ amountBilled }. Zľavy sú založené na štandardných mesačných cenách."
+      ],
+      "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
+        "Fakturované ročne sumou ${ amountBilled }. Ušetrite ${ amountSave } za 2 jednotlivé ${ BRAND_NAME } Unlimited ročné predplatné."
       ]
     },
     "duoplan2024: Info": {
@@ -3653,6 +3695,9 @@
       ]
     },
     "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Všetko od ${ BRAND_NAME } pre 2."
+      ],
       "Double your storage": [
         "Zdvojnásobte svoje úložisko"
       ]
@@ -5119,8 +5164,14 @@
       "*Only one free trial per customer.": [
         "*Len jedna skúšobná verzia zdarma na zákazníka."
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Účty s vlastnými doménami sa nemôžu pripojiť do skupinového plánu."
+      ],
       "customer support": [
         "zákaznícka podpora"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Skupinové plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
@@ -5139,6 +5190,9 @@
       ],
       "Leave Visionary plan": [
         "Opustiť plán Visionary"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Doživotné účty nemôžu byť pripojené do skupinového predplatného."
       ],
       "Manage addresses.": [
         "Spravovať adresy."
@@ -5203,6 +5257,9 @@
       "You have successfully joined the family group": [
         "Úspešne ste sa pripojili do rodinnej skupiny"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Máte nezaplatené faktúry. Pred pripojením do skupinového plánu ich zaplaťte, prosím."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "Pred pridaním viacerých používateľov, musíte nakonfigurovať vlastnú doménu."
       ],
@@ -5217,6 +5274,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "S vaším aktuálnym plánom nemôžete prijať túto pozvánku."
       ]
     },
     "familyOffer_2023:Info": {
@@ -6620,6 +6680,9 @@
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } hosťuje ${ BRAND_NAME }, čo umožňuje rýchle sprevádzkovanie subdomény. ${ learnMoreLink }"
       ],
+      "A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${ linkToDomainPage }.": [
+        "Na vytvorenie skupín je potrebná vlastná doména. Ak nemáte nastavenú vlastnú doménu, urobte tak najprv v časti ${ linkToDomainPage }."
+      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Názov, ktorý vám pomôže identifikovať, kde ho používate, aby ste ho mohli neskôr jednoducho odvolať alebo predĺžiť."
       ],
@@ -7025,6 +7088,12 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Vytvorte štítok pre importované správy, časový rozsah pre tento import a štítky, ktoré chcete importovať."
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Vytvorte bezpečný cloud pre ${ n } člena",
+        "Vytvorte bezpečný cloud pre ${ n } členov",
+        "Vytvorte bezpečný cloud pre ${ n } členov",
+        "Vytvorte bezpečný cloud pre ${ n } členov"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Vytvorte a spravujte podúčty a priraďte im emailové adresy vo vlastnej doméne."
       ],
@@ -7085,11 +7154,11 @@
       "Data locked": [
         "Dáta uzamknuté"
       ],
-      "Dedicated servers": [
-        "Dedikované servery"
-      ],
       "dedicated servers": [
         "dedikované servery"
+      ],
+      "Dedicated servers": [
+        "Dedikované servery"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
@@ -7336,6 +7405,12 @@
       ],
       "Gateways": [
         "Brány"
+      ],
+      "Gateways monitoring is disabled.": [
+        "Monitorovanie brán je vypnuté."
+      ],
+      "Gateways monitoring is enabled.": [
+        "Monitorovanie brán je zapnuté."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Vygenerovaním novej obnovovacej fráze sa stará deaktivuje."
@@ -7732,6 +7807,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Načítanie kalendára, počkajte, prosím. V novej karte budete presmerovaní na našu plánovaciu platformu Calendly."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Načítanie brán sledujúcich aktuálny stav."
       ],
       "Loading preview": [
         "Načítanie náhľadu"
@@ -8450,6 +8528,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "V závislosti na vašom zariadení to môže trvať niekoľko sekúnd alebo minút"
       ],
+      "This change will be fully reflected across your infrastructure in about 1 hour": [
+        "Táto zmena sa plne prejaví vo vašej infraštruktúre približne o 1 hodinu."
+      ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Môže to trvať nejaký čas. Nezatvárajte prosím túto stránku, ani sa neodpájajte od internetu."
       ],
@@ -8647,6 +8728,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "Režim dvoch hesiel používa samostatné heslá na prihlásenie a dešifrovanie údajov. V niektorých situáciách to poskytuje menšiu bezpečnostnú výhodu, avšak väčšine používateľov odporúčame režim jedného hesla. Ak chcete prepnúť do režimu dvoch hesiel, najprv nastavte prihlasovacie heslo a potom nastavte druhé heslo."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "Nie je možné skontrolovať aktuálny stav monitorovania brán."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nie je možné overiť podpis súboru pre obnovenie. Kontaktujte podporu."
@@ -8936,6 +9020,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "So šifrovanou ${ BRAND_NAME } adresou môžete používať všetky služby ${ BRAND_NAME }"
       ],
+      "With groups, you can quickly and easily send emails to all the people in a specified group.": [
+        "Pomocou skupín môžete rýchlo a jednoducho posielať emaily všetkým ľuďom v určitej skupine."
+      ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "S vašim súčasným plánom môžete dostávať správy iba s vašou @pm.me adresou. Upgradujte ho, aby ste mohli správy odosielať a vytvárať ďalšie adresy použitím @pm.me."
       ],
@@ -8986,6 +9073,9 @@
         "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií.",
         "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií.",
         "Teraz využívate ${ usedMembers } z ${ maxMembers } dostupných používateľských licencií."
+      ],
+      "You are not currently in any groups and there are no pending invitations": [
+        "Momentálne nie ste v žiadnej skupine a nemáte žiadne čakajúce pozvánky."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Ste prihlásení do účtu ${ memberAddress }."
@@ -9121,6 +9211,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po prihlásení dôjde k presmerovaniu na ${ destination }."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "V tento deň stratíte prístup k funkciám ${ planTitle }."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Ak chcete používať ${ MAIL_APP_NAME } a ${ CALENDAR_APP_NAME }, budete potrebovať adresu ${ BRAND_NAME }"
@@ -9724,6 +9817,9 @@
       ],
       "15 minutes": [
         "15 minútach"
+      ],
+      "2 minutes": [
+        "2 minúty"
       ],
       "30 minutes": [
         "30 minútach"
@@ -11567,6 +11663,26 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Začnite za ${ price }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Pokračovať s bezplatným tarifom"
@@ -11596,24 +11712,10 @@
         "Prejsť na ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ]
-    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
       ],
@@ -11683,6 +11785,12 @@
         "${ n } správ za deň",
         "${ n } správ za deň"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } zdieľaný trezor ${ PASS_SHORT_APP_NAME } na používateľa",
+        "${ n } zdieľané trezory ${ PASS_SHORT_APP_NAME } na používateľa",
+        "${ n } zdieľaných trezorov ${ PASS_SHORT_APP_NAME } na používateľa",
+        "${ n } zdieľaných trezorov ${ PASS_SHORT_APP_NAME } na používateľa"
+      ],
       "${ n } user": [
         "${ n } používateľ",
         "Až ${ n } používatelia",
@@ -11701,6 +11809,12 @@
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
+      "${ options }-day file version history": [
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasom",
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
@@ -11716,11 +11830,32 @@
       "${ size } attachment size": [
         "${ size } veľkosť prílohy"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } bezpečného úložiska na používateľa"
+      ],
       "${ size } storage": [
         "${ size } úložisko"
       ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Pre ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Pre všetky služby ${ BRAND_NAME }"
+      ],
+      "1 TB secure storage": [
+        "1 TB bezpečného úložiska"
+      ],
       "1 user": [
         "1 používateľ"
+      ],
+      "10 email addresses/aliases": [
+        "10 emailových adries/aliasov"
+      ],
+      "10-year file version history": [
+        "-ročná história verzií súborov"
+      ],
+      "15 GB storage": [
+        "15 GB úložisko"
       ],
       "24/7 account management support": [
         "Podpora správy účtu 24/7"
@@ -11743,8 +11878,17 @@
       "Advanced network security": [
         "Pokročilá bezpečnosť siete"
       ],
+      "All ${ BRAND_NAME } products and features": [
+        "Všetky ${ BRAND_NAME } produkty a funkcie"
+      ],
       "All ${ BRAND_NAME } services": [
         "Všetky služby ${ BRAND_NAME }"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Všetky prémiové služby ${ BRAND_NAME }. Jedno jednoduché predplatné"
       ],
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
@@ -11784,6 +11928,9 @@
       ],
       "Contact groups management": [
         "Správa skupín kontaktov"
+      ],
+      "Custom and secure business email": [
+        "Zákaznícky prispôsobený a zabezpečený firemný email"
       ],
       "Custom domains for email aliases": [
         "Vlastné domény pre emailové aliasy"
@@ -11827,6 +11974,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Podpora emailových klientov (cez IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Emailové skupiny"
+      ],
       "Enables HIPAA compliance": [
         "Umožňuje súlad s HIPAA"
       ],
@@ -11853,6 +12003,9 @@
       ],
       "GDPR data processing agreement": [
         "Dohoda o spracovaní údajov v zmysle GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Generujte emaily len pomocou podnetu"
       ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
@@ -11887,6 +12040,9 @@
       "No-logs policy": [
         "Politika žiadnych logov"
       ],
+      "Online document editor": [
+        "Online editor dokumentov"
+      ],
       "Organize items with multiple vaults": [
         "Usporiadanie položiek pomocou viacerých trezorov"
       ],
@@ -11902,6 +12058,9 @@
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
+      "Phone support (20+ users)": [
+        "Telefonická podpora (20+ používateľov)"
+      ],
       "Priority email support": [
         "Prioritná emailová podpora"
       ],
@@ -11911,11 +12070,20 @@
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
       ],
+      "Proofread and refine your emails": [
+        "Korigujte a zdokonaľujte vaše emaily"
+      ],
       "Protect ${ n } device at a time": [
         "Chráňte súčasne ${ n } zariadenie",
         "Chráňte súčasne ${ n } zariadenia",
         "Chráňte súčasne ${ n } zariadení",
         "Chráňte súčasne ${ n } zariadení"
+      ],
+      "Quickly craft replies": [
+        "Rýchlo vytvárajte odpovede"
+      ],
+      "Recover previous file versions": [
+        "Obnova predchádzajúcich verzií súborov"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečenia vášho účtu. Upozorníme vás, ak máte slabé alebo opakovane používané heslá, ktoré je potrebné aktualizovať."
@@ -11953,6 +12121,9 @@
         "Servery v ${ vpnServersCountData.paid.countries }+ krajinách",
         "Servery v ${ vpnServersCountData.paid.countries }+ krajinách"
       ],
+      "Share files with no size limit": [
+        "Zdieľanie súborov bez obmedzenia na ich veľkosť"
+      ],
       "Sign in as user": [
         "Prihlásiť sa ako používateľ"
       ],
@@ -11976,6 +12147,12 @@
       ],
       "Strict no-logs policy": [
         "Prísna politika neuchovávania záznamov"
+      ],
+      "Support for up to 2 users": [
+        "Podpora až pre 2 používateľov"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchronizácia a zálohovanie všetkých vašich súborov medzi zariadeniami"
       ],
       "Tailored to your needs": [
         "Ušité na mieru"
@@ -12015,6 +12192,9 @@
       ],
       "Unlimited messages per day": [
         "Neobmedzený počet správ za deň"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Neobmedzený počet zdieľaných ${ PASS_SHORT_APP_NAME } trezorov na používateľa"
       ],
       "Unlimited shared vaults with access permissions": [
         "Neobmedzené zdieľané trezory s prístupovými právami"
@@ -12057,6 +12237,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 vlastná emailová doména"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JohnShopper@${ domain } pre nákupné účty, JohnNews@${ domain2 } pre odber noviniek"
       ],
@@ -12145,6 +12328,9 @@
       "Popular": [
         "Populárne"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Chráňte citlivé obchodné informácie a bezpečne spolupracujte."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
       ],
@@ -12232,6 +12418,17 @@
         "Váš zvolený plán: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Skúšobná verzia ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Získajte Mail Plus za ${ price }"
+      ],
+      "Your account's usage": [
+        "Využitie vášho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Vymazať účet?"
@@ -12250,14 +12447,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odomknite prémiové funkcie navýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Skúšobná verzia ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Využitie vášho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -12324,6 +12513,9 @@
       "Easily share your calendars with your family, friends, or colleagues": [
         "Svoje kalendáre zdieľajte jednoducho s rodinou, priateľmi alebo kolegami"
       ],
+      "Email everyone in a group with a single email address": [
+        "Pošlite email všetkým v skupine pomocou jednej emailovej adresy"
+      ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zabezpečuje, aby ste dostávali všetky emaily odoslané na vašu doménu, aj keď emailová adresa neexistuje, už viac neexistuje alebo má preklep"
       ],
@@ -12377,6 +12569,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov so 20 a viac používateľmi"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -14001,6 +14196,9 @@
       "Account safety review": [
         "Kontrola bezpečnosti účtu"
       ],
+      "Add a recovery email": [
+        "Pridať email pre obnovenie"
+      ],
       "Add a recovery email address": [
         "Pridajte emailovú adresu pre obnovenie"
       ],
@@ -14012,6 +14210,9 @@
       ],
       "Code sent to ${ boldValue }": [
         "Kód zaslaný na ${ boldValue }"
+      ],
+      "Continue to Safety Review": [
+        "Pokračovať na kontrolu bezpečnosti"
       ],
       "Device-based recovery enabled": [
         "Obnovenie založené na zariadení je povolené"
@@ -14034,8 +14235,20 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Ak zabudnete svoje heslo ${ BRAND_NAME } a bude ho nutné resetovať, môžete sa prihlásiť k účtu pomocou tohto zariadenia a nového hesla a obnoviť tým plný prístup k svojmu účtu ${ BRAND_NAME }."
       ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Ak zabudnete svoje heslo ${ BRAND_NAME } a bude ho nutné resetovať, môžete sa prihlásiť k účtu pomocou tohto zariadenia a nového hesla a obnoviť tým plný prístup k svojmu účtu ${ BRAND_NAME }."
+      ],
       "Invalid code": [
         "Neplatný kód"
+      ],
+      "Recovery email address": [
+        "Emailová adresa na obnovu"
+      ],
+      "Recovery phone number": [
+        "Telefónne číslo pre obnovenie"
+      ],
+      "Review your account safety": [
+        "Skontrolujte bezpečnosť svojho účtu"
       ],
       "Safeguard your account further": [
         "Zvýšte zabezpečenie svojho účtu ešte viac"
@@ -14049,8 +14262,17 @@
       "Take action to secure your account": [
         "Podniknite kroky na zabezpečenie účtu"
       ],
+      "There was an error generating your Recovery Kit": [
+        "Pri generovaní sady na obnovu došlo k chybe"
+      ],
+      "There was an error verifying your recovery phone": [
+        "Pri overovaní vášho telefónu na obnovenie došlo k chybe"
+      ],
       "to automatically recover your data when you log into a trusted device": [
         "pre automatické obnovenie vašich dát, keď sa prihlásite do dôveryhodného zariadenia"
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Ak chcete mať istotu, že telefónne číslo je vaše, zadajte overovací kód zaslaný na ${ boldPhoneNumber }."
       ],
       "to recover your account and data if you're ever locked out": [
         "pre obnovenie vášho účtu a dát, ak kedykoľvek stratíte prístup"
@@ -14070,11 +14292,26 @@
       "Verify your recovery phone number": [
         "Overte svoje telefónne číslo určené na obnovenie"
       ],
+      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
+        "Pri generovaní vašej sady na obnovu sme narazili na chybu. Skúste to neskôr alebo ak problém pretrváva, kontaktujte podporu."
+      ],
+      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
+        "Pri overovaní vášho telefónu na obnovenie sme narazili na chybu. Skúste to neskôr alebo ak problém pretrváva, kontaktujte podporu."
+      ],
+      "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
+        "Keď povolíte obnovenie na základe zariadenia, ${ BRAND_NAME } uloží zašifrovanú zálohu kľúčenky ako súbor do webového úložiska prehliadača."
+      ],
       "You are at risk of losing access to your account and data.": [
         "Hrozí, že stratíte prístup k svojmu účtu a dátam."
       ],
       "You are at risk of losing access to your data.": [
         "Hrozí, že stratíte prístup k svojim dátam."
+      ],
+      "You can disable this at any time.": [
+        "Túto funkciu môžete kedykoľvek vypnúť."
+      ],
+      "You recovery email address is:": [
+        "Vaša emailová adresa na obnovenie je:"
       ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Váš účet a dáta môžu byť obnovené. Sú tu niektoré odporúčané akcie."
@@ -14091,8 +14328,17 @@
       "Your recovery email can **only recover access to your account**.": [
         "Iba váš email pre obnovenie môže **obnoviť prístup k vášmu účtu**."
       ],
+      "Your recovery email has been enabled": [
+        "Váš email na obnovu bol povolený"
+      ],
+      "Your recovery email is set": [
+        "Váš email pre obnovenie je nastavený"
+      ],
       "Your Recovery Kit": [
         "Vaša sada pre obnovenie"
+      ],
+      "Your Recovery Kit is set": [
+        "Vaša sada na obnovu je nastavená"
       ],
       "Your recovery methods": [
         "Vaše metódy obnovenia"
@@ -14102,6 +14348,9 @@
       ],
       "Your recovery phone can **only recover access to your account**.": [
         "Iba váš telefón pre obnovenie môže **obnoviť prístup k vášmu účtu**."
+      ],
+      "Your recovery phone is set": [
+        "Váš telefón pre obnovenie je nastavený"
       ]
     },
     "saml: Action": {
@@ -15742,9 +15991,6 @@
       "Auto-reply updated": [
         "Automatická odpoveď aktualizovaná"
       ],
-      "Bug reported": [
-        "Chyba nahlásená"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalendár je pridaný. Synchronizácia zaberie pár minút."
       ],
@@ -15837,6 +16083,18 @@
       ],
       "Organization activated": [
         "Organizácia bola aktivovaná"
+      ],
+      "Organization identity updated": [
+        "Identita organizácie aktualizovaná"
+      ],
+      "Organization logo removed": [
+        "Logo organizácie odstránené"
+      ],
+      "Organization logo updated": [
+        "Logo organizácie aktualizované"
+      ],
+      "Organization name updated": [
+        "Názov organizácie aktualizovaný"
       ],
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
@@ -16346,10 +16604,10 @@
       "Card verification": [
         "Overenie karty"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresa doménového koša"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresa doménového koša"
       ],
       "Change login password": [
@@ -16408,6 +16666,12 @@
       ],
       "Connection events": [
         "Udalosti pripojenia"
+      ],
+      "Connection monitor disabled": [
+        "Monitor pripojenia vypnutý"
+      ],
+      "Connection monitor enabled": [
+        "Monitor pripojenia zapnutý"
       ],
       "Contact us": [
         "Kontaktujte nás"
@@ -18041,6 +18305,11 @@
       ],
       "You're Invited.": [
         "Ste pozvaný!"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bezpečnejší/jednoduchší spôsob držania a posielania Bitcoinu"
       ]
     },
     "wallet_signup_2024:Bug category": {

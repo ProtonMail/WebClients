@@ -671,7 +671,7 @@
         "Nalaganje preverjanja"
       ],
       "Make admin": [
-        "Ustvari administratorja"
+        "Naredite za skrbnika"
       ],
       "Manage communication preferences": [
         "Upravljanje nastavitev za komunikacijo"
@@ -796,11 +796,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "refresh the page": [
-        "Osvežite stran"
-      ],
       "Refresh the page": [
         "Osveži stran"
+      ],
+      "refresh the page": [
+        "Osvežite stran"
       ],
       "Reload": [
         "Osveži"
@@ -1588,6 +1588,14 @@
         "Izberite ponudbo ob koncu leta"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB prostora za shranjevanje (dvakrat več kot kateri koli drug paket)"
@@ -1609,14 +1617,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } je nazaj samo za omejen čas."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6976,11 +6976,11 @@
       "Data locked": [
         "Podatki so zaklenjeni."
       ],
+      "dedicated servers": [
+        "namenske strežnike"
+      ],
       "Dedicated servers": [
         "Namenski strežniki"
-      ],
-      "dedicated servers": [
-        "namenski strežniki"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -7208,7 +7208,7 @@
         "sprostite prostor tako, da izbrišete starejša sporočila ali druge podatke"
       ],
       "Gateways": [
-        "Prehod"
+        "prehode"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Ustvarjanje nove obnovitvene fraze bo razveljavilo vašo staro frazo."
@@ -7988,7 +7988,7 @@
         "Nekateri ključi so uspešno ponovno aktivirani."
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Nekatere od vaših razpoložljivih strežnikov je mogoče uporabljati samo v določenih državah zaradi nedavnih odstranitev"
+        "Nekatere od vaših razpoložljivih strežnikov je mogoče uporabljati samo v določenih državah zaradi nedavnih odstranitev."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Določite domeno, ki ima dovoljenje za preverjanje pristnosti s SAML SSO."
@@ -10080,7 +10080,7 @@
         "Ponovi geslo"
       ],
       "Reply (ACS) URL": [
-        "URL za odgovor (ACS)."
+        "URL za odgovor (ACS)"
       ],
       "Require 2FA for administrators": [
         "Za skrbnike zahteva dvojno preverjanje pristnosti."
@@ -10580,7 +10580,7 @@
         "Trezor"
       ],
       "View guide": [
-        "Ogled vodnika."
+        "Ogled vodnika"
       ],
       "visit our blog": [
         "obiščite naš blog"
@@ -10803,7 +10803,7 @@
         "Aktivirajte uporabnika"
       ],
       "Add address": [
-        "Dodajte naslov"
+        "Dodaj naslov"
       ],
       "Change password": [
         "Spremeni geslo"
@@ -10845,7 +10845,7 @@
         "${ appName }: Prijava"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: Prijava"
+        "${ appName }: Registracija"
       ],
       "${ BRAND_NAME } Account": [
         "Račun ${ BRAND_NAME }"
@@ -10863,7 +10863,7 @@
         "Poiščite uporabniško ime za svoj račun ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Ste pozabili geslo za račun ${ BRAND_NAME }? Ponastavite ga tukaj z obnovitveno kodo, e-pošto ali SMS-om in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
+        "Ste pozabili geslo za račun ${ BRAND_NAME }? Ponastavite ga tukaj z obnovitveno kodo, e-pošto ali SMS in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Ste pozabili uporabniško ime za račun ${ BRAND_NAME }? Poiščite ga z obnovitvenim e-poštnim naslovom ali telefonsko številko in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
@@ -11138,6 +11138,23 @@
         "Srednja hitrost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Raziščite vse pakete ${ BRAND_NAME }."
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Nadaljujte z brezplačnim paketom"
@@ -11165,23 +11182,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadgradi na ${ upsellPlanHumanSize }."
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Raziščite vse pakete ${ BRAND_NAME }."
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
       ]
     },
     "new_plans: feature": {
@@ -11791,6 +11791,14 @@
         "Izbrali ste: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -11809,14 +11817,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Omogočite premijske funkcije z nadgradnjo računa"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {
@@ -12092,7 +12092,7 @@
         "Obvezno 2FA"
       ],
       "Support for ${ n } custom email domains": [
-        "Podpora za ${ n } e-poštni domeni po meri"
+        "Podpora za ${ n } e-poštnih domen po meri"
       ]
     },
     "Notification": {
@@ -12133,7 +12133,7 @@
         "Povezava je kopirana v odložišče"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
-        "OdpriteVPN/IKEv2 ponovno ustvarjene poverilnice"
+        "Poverilnice OpenVPN/IKEv2 so bile ponovno ustvarjene."
       ],
       "Reminder has been sent": [
         "Opomnik je bil poslan."
@@ -14985,7 +14985,7 @@
         "15 GB prostora za shranjevanje"
       ],
       "and 15 more premium features": [
-        "in še 15 vrhunskih funkcij"
+        "in še 15 premijskih funkcij"
       ],
       "Automatic email forwarding ${ strongText }": [
         "Samodejno posredovanje e-pošte ${ strongText }"
@@ -15078,9 +15078,6 @@
       ],
       "Auto-reply updated": [
         "Samodejni odgovor je posodobljen"
-      ],
-      "Bug reported": [
-        "Napaka je prijavljena"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Koledar je dodan. Sinhronizacija lahko traja nekaj minut."
@@ -15286,7 +15283,7 @@
         "Certifikat je podaljšan do ${ formattedExpirationDate }."
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "Konfiguracija \"${ name }\" je bila ustvarjena, upoštevajte, da zasebni ključ ni shranjen in ne bo več prikazan, kopirajte ali prenesite to konfiguracijo."
+        "Konfiguracija \"${ name }\" je bila ustvarjena. Upoštevajte, da zasebni ključ ni shranjen in ne bo več prikazan, zato rajši kopirajte ali prenesite to konfiguracijo."
       ],
       "Creating config file for ${ serverName }": [
         "Ustvarjanje konfiguracijske datoteke za ${ serverName }"
@@ -15558,7 +15555,7 @@
         "Dodaj vrsto PayPal plačila"
       ],
       "Add servers": [
-        "Dodajte strežnike"
+        "Dodaj strežnike"
       ],
       "Add Sieve filter": [
         "Dodaj Sieve filter"
@@ -15576,7 +15573,7 @@
         "Dodaj uporabniške račune"
       ],
       "Add users": [
-        "Dodajte uporabnike"
+        "Dodaj uporabnike"
       ],
       "Address": [
         "Naslov"
@@ -15647,10 +15644,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [
@@ -15918,7 +15915,7 @@
         "Uredi Sieve filter"
       ],
       "Edit the list of servers of the gateway": [
-        "Uredite seznam prehodnih strežnikov"
+        "Uredi seznam prehodnih strežnikov"
       ],
       "Edit user": [
         "Urejanje uporabnika"
@@ -15927,7 +15924,7 @@
         "Uredi uporabnike"
       ],
       "Edit who can access the gateway": [
-        "Uredite, kdo lahko dostopa do prehoda"
+        "Uredi dostop do prehoda"
       ],
       "Email": [
         "E-pošta"
@@ -16026,7 +16023,7 @@
         "Prehod"
       ],
       "Gateways": [
-        "Prehod"
+        "Prehodi"
       ],
       "General": [
         "Splošno"
@@ -16296,7 +16293,7 @@
         "Odstranite uporabnika?"
       ],
       "Rename the gateway": [
-        "Preimenujte prehod"
+        "Preimenuj prehod"
       ],
       "Report a problem": [
         "Poročanje o težavi"
@@ -16389,7 +16386,7 @@
         "Nastavitve"
       ],
       "Setup dedicated servers by upgrading to Business": [
-        "Nastavite namenske strežnike z nadgradnjo na Business"
+        "Nastavi namenske strežnike z nadgradnjo na Business"
       ],
       "Short domain (@pm.me)": [
         "Kratka domena (@pm.me)"
