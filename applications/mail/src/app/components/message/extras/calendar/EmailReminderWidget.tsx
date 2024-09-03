@@ -33,7 +33,7 @@ import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { getParticipant } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';
-import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
+import { escapeInvalidHtmlTags, restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import urlify from '@proton/shared/lib/calendar/urlify';
 import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
 import { APPS, CALENDAR_APP_NAME, SECOND } from '@proton/shared/lib/constants';
@@ -321,8 +321,9 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
         if (!trimmedLocation) {
             return null;
         }
-
-        return restrictedCalendarSanitize(urlify(trimmedLocation));
+        const urlified = urlify(trimmedLocation);
+        const escaped = escapeInvalidHtmlTags(urlified);
+        return restrictedCalendarSanitize(escaped);
     }, [vevent]);
 
     if (isLoading) {
