@@ -21,8 +21,8 @@ import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { useDisplayEmailUsernameFields } from '@proton/pass/hooks/useDisplayEmailUsernameFields';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { useSanitizeUserIdentifiers } from '@proton/pass/hooks/useSanitizeUserIdentifiers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
@@ -47,9 +47,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
-    const { itemEmail, itemUsername } = content;
-
-    const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername });
+    const { itemEmail, itemUsername } = useSanitizeUserIdentifiers(content);
 
     const initialValues: LoginItemFormValues = {
         aliasPrefix: '',
@@ -64,8 +62,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
         totpUri: getSecretOrUri(content.totpUri),
         url: '',
         urls: content.urls.map(createNewUrl),
-        itemEmail: emailDisplay,
-        itemUsername: usernameDisplay,
+        itemEmail,
+        itemUsername,
         withAlias: false,
     };
 
