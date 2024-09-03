@@ -1,5 +1,6 @@
 export interface OrganizationSettings {
     GatewayMonitoring: boolean;
+    GatewayMonitoringLastUpdate?: number | null;
 }
 
 export const getMonitoringSetting = () => ({
