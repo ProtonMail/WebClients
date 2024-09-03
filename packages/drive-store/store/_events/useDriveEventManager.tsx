@@ -1,15 +1,18 @@
-import { ReactNode, createContext, useContext, useRef } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useRef } from 'react';
 
-import { generateUID, useApi, useEventManager } from '@proton/components';
+import { useApi, useEventManager } from '@proton/components';
 import { queryLatestVolumeEvent, queryVolumeEvents } from '@proton/shared/lib/api/drive/volume';
-import createEventManager, { EventManager } from '@proton/shared/lib/eventManager/eventManager';
+import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
+import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Api } from '@proton/shared/lib/interfaces';
-import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
+import type { Api } from '@proton/shared/lib/interfaces';
+import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
+import generateUID from '@proton/utils/generateUID';
 
 import { logError } from '../../utils/errorHandling';
 import { driveEventsResultToDriveEvents } from '../_api';
-import { EventHandler } from './interface';
+import type { EventHandler } from './interface';
 
 const DRIVE_EVENT_HANDLER_ID_PREFIX = 'drive-event-handler';
 

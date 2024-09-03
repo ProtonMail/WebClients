@@ -2,8 +2,8 @@ import type { ChangeEvent, DetailedHTMLProps, Ref, TextareaHTMLAttributes } from
 import { useEffect, useRef, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
-import { generateUID } from '../../helpers';
 import useAutoGrow from '../../hooks/useAutoGrow';
 import ErrorZone from '../text/ErrorZone';
 import useInput from './useInput';

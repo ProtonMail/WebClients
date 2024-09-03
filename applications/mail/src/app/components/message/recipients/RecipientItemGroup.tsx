@@ -9,13 +9,13 @@ import {
     DropdownMenuButton,
     DropdownSizeUnit,
     Icon,
-    generateUID,
     useModals,
     useNotifications,
     usePopperAnchor,
 } from '@proton/components';
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import generateUID from '@proton/utils/generateUID';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';

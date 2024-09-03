@@ -9,10 +9,10 @@ import type { InputProps } from '@proton/atoms';
 import { Input } from '@proton/atoms';
 import { findLongestMatchingIndex } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import generateUID from '@proton/utils/generateUID';
 import noop from '@proton/utils/noop';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
-import { generateUID } from '../../helpers';
 import { useHotkeys } from '../../hooks';
 import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';

@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms';
 import { Button, Vr } from '@proton/atoms';
-import generateUID from '@proton/atoms/generateUID';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';

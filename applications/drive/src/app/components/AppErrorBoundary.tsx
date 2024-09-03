@@ -9,11 +9,11 @@ import {
     InternalServerError,
     NotFoundError,
     PrivateMainArea,
-    generateUID,
 } from '@proton/components';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
+import generateUID from '@proton/utils/generateUID';
 
 import useActiveShare from '../hooks/drive/useActiveShare';
 

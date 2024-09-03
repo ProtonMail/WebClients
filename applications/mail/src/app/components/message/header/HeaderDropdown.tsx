@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 
 import { Button } from '@proton/atoms';
 import type { DropdownProps } from '@proton/components';
-import { Dropdown, DropdownButton, DropdownSizeUnit, Tooltip, generateUID, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownButton, DropdownSizeUnit, Tooltip, usePopperAnchor } from '@proton/components';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
+import generateUID from '@proton/utils/generateUID';
 
 export interface DropdownRenderProps {
     onClose: () => void;

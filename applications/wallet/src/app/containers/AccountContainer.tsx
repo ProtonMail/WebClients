@@ -4,9 +4,9 @@ import { Redirect, useHistory, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import generateUID from '@proton/atoms/generateUID';
 import { Icon, useModalState } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import { CoreButton } from '../atoms';
 import { Balance } from '../components/Balance';

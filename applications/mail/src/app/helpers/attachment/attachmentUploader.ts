@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { uploadAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
-import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import type { Packets } from '@proton/shared/lib/interfaces/mail/crypto';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
+import generateUID from '@proton/utils/generateUID';
 
 import {
     ATTACHMENT_MAX_SIZE,

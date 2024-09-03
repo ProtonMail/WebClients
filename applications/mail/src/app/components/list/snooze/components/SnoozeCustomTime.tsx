@@ -6,9 +6,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { DateInputTwo, InputFieldTwo, PrimaryButton, TimeInput } from '@proton/components/components';
-import { generateUID } from '@proton/components/helpers';
 import { useUserSettings } from '@proton/components/hooks';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
+import generateUID from '@proton/utils/generateUID';
 
 import { getSnoozeTimeFromSnoozeLabel } from 'proton-mail/helpers/snooze';
 import type { Element } from 'proton-mail/models/element';

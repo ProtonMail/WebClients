@@ -4,12 +4,12 @@ import NotificationInputInDrawer from '@proton/components/containers/calendar/no
 import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import addItem from '@proton/utils/addItem';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 import removeItem from '@proton/utils/removeIndex';
 import updateItem from '@proton/utils/updateItem';
 
 import type { IconName } from '../../../components';
 import { Icon } from '../../../components';
-import { generateUID } from '../../../helpers';
 
 export const NOTIFICATION_ID = 'notifications';
 
