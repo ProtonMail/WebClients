@@ -24,8 +24,22 @@ export enum Features {
     sharingLoadLinksByVolume = 'sharingLoadLinksByVolume',
 }
 
+/**
+ * At the present time, these metrics will only work when user is authenticated
+ */
 export enum Actions {
     DismissDocsOnboardingModal = 'dismissDocsOnboardingModal',
+    AddToBookmark = 'addToBookmark',
+    ViewSignUpFlowModal = 'viewSignUpFlowModal',
+    DismissSignUpFlowModal = 'dismissSignUpFlowModal',
+    SubmitSignUpFlowModal = 'submitSignUpFlowModal',
+    SignUpFlowModal = 'signUpFlowModal',
+    SignInFlowModal = 'signInFlowModal',
+    OpenPublicLinkFromSharedWithMe = 'openPublicLinkFromSharedWithMe',
+    PublicScanAndDownload = 'publicScanAndDownload',
+    PublicDownload = 'publicDownload',
+    PublicLinkVisit = 'publicLinkVisit',
+    DeleteBookmarkFromSharedWithMe = 'DeleteBookmarkFromSharedWithMe',
 }
 
 type PerformanceTelemetryAdditionalValues = {

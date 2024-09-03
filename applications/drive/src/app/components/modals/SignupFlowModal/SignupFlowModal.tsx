@@ -24,6 +24,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 
+import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { deleteStoredUrlPassword, saveUrlPasswordForRedirection } from '../../../utils/url/password';
 
 export const SignupFlowModal = ({ urlPassword, onClose, ...modalProps }: { urlPassword: string } & ModalStateProps) => {
@@ -33,6 +34,7 @@ export const SignupFlowModal = ({ urlPassword, onClose, ...modalProps }: { urlPa
 
     useEffect(() => {
         deleteStoredUrlPassword();
+        countActionWithTelemetry(Actions.ViewSignUpFlowModal);
     }, []);
 
     const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,11 +44,13 @@ export const SignupFlowModal = ({ urlPassword, onClose, ...modalProps }: { urlPa
 
     const handleSubmit = async () => {
         try {
+            countActionWithTelemetry(Actions.SubmitSignUpFlowModal);
             const { Code } = await api({ ...queryCheckEmailAvailability(email) });
             // Email is verified and available to use
             // We redirect to DRIVE_SIGNUP
             if (Code === 1000) {
                 saveUrlPasswordForRedirection(urlPassword);
+                countActionWithTelemetry(Actions.SignUpFlowModal);
                 replaceUrl(DRIVE_SIGNUP);
             }
         } catch (err) {
@@ -54,6 +58,7 @@ export const SignupFlowModal = ({ urlPassword, onClose, ...modalProps }: { urlPa
             if (API_CUSTOM_ERROR_CODES.ALREADY_USED === code) {
                 // Email is already in use, we redirect to SIGN_IN
                 saveUrlPasswordForRedirection(urlPassword);
+                countActionWithTelemetry(Actions.SignInFlowModal);
                 replaceUrl(DRIVE_SIGNIN);
             }
             // Other errors we show the error message
@@ -65,7 +70,10 @@ export const SignupFlowModal = ({ urlPassword, onClose, ...modalProps }: { urlPa
         <ModalTwo
             as={Form}
             onSubmit={handleSubmit}
-            onClose={onClose}
+            onClose={() => {
+                countActionWithTelemetry(Actions.DismissSignUpFlowModal);
+                onClose();
+            }}
             size="small"
             {...modalProps}
             data-testid="download-page-sign-in"
