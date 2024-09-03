@@ -5,21 +5,19 @@ import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import type { IconName } from '@proton/components/components';
 import {
     Block,
-    Icon,
     Pagination,
+    TimeIntl,
+    Toggle,
     usePaginationAsync,
     useModalState,
-} from '@proton/components/components';
-import { useApi, useErrorHandler, useNotifications } from '@proton/components/hooks';
+} from '@proton/components';
+import { useApi, useErrorHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useUserSettings } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { getVPNLogs } from '@proton/shared/lib/api/b2blogs';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
-import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { GenericError, SettingsSectionWide } from '../..';
@@ -56,18 +54,6 @@ const getQueryParams = (filter: FilterModel, searchType: 'ip' | 'email' | 'empty
     return { Email, Ip, Event, StartTime, EndTime };
 };
 
-const PreReq = ({ data, action, icon, className }: { data: ReactNode; action: ReactNode, icon: IconName, className?: string }) => {
-    return (
-        <div className="rounded border bg-weak p-4 flex justify-space-between gap-2 items-center mb-10 lg:flex-nowrap">
-            <div className={clsx(['flex gap-2 items-start flex-nowrap', className || ''])}>
-                <Icon name={icon} className="shrink-0" size={5} />
-                <p className="m-0">{data}</p>
-            </div>
-            {action}
-        </div>
-    );
-};
-
 const VPNEvents = () => {
     const api = useApi();
     const handleError = useErrorHandler();
@@ -86,6 +72,7 @@ const VPNEvents = () => {
     const [monitoringLoading, setMonitoringLoading] = useState<boolean>(true);
     const [monitoringEnabling, setMonitoringEnabling] = useState<boolean>(false);
     const [monitoring, setMonitoring] = useState<boolean>(false);
+    const [monitoringLastChange, setMonitoringLastChange] = useState<number|null>(null);
     const [togglingMonitoringModalProps, setTogglingMonitoringModalOpen, togglingMonitoringModalRender] = useModalState();
     const [businessSettingsAvailable, setBusinessSettingsAvailable] = useState<boolean>(true);
     const [togglingMonitoringLoading, setTogglingMonitoringLoading] = useState<boolean>(false);
@@ -114,16 +101,22 @@ const VPNEvents = () => {
         withMonitoringInitializing(new Promise(async resolve => {
             const timeout = setTimeout(() => {
                 setMonitoringLoading(false);
+                setMonitoringLastChange(null);
                 setBusinessSettingsAvailable(false);
                 resolve();
             }, 10_000);
 
             try {
-                if ((await api<OrganizationSettings>(getMonitoringSetting())).GatewayMonitoring) {
+                const organizationSettings = await api<OrganizationSettings>(getMonitoringSetting());
+
+                if (organizationSettings.GatewayMonitoring) {
                     setMonitoring(true);
                 }
+
+                setMonitoringLastChange(organizationSettings.GatewayMonitoringLastUpdate || null);
             } catch (e) {
                 setBusinessSettingsAvailable(false);
+                setMonitoringLastChange(null);
             } finally {
                 setMonitoringLoading(false);
                 clearTimeout(timeout);
@@ -212,9 +205,10 @@ const VPNEvents = () => {
         setTogglingMonitoringLoading(true);
 
         try {
-            await api(updateMonitoringSetting(enabling));
+            const newSettings = await api<OrganizationSettings>(updateMonitoringSetting(enabling));
 
             setMonitoring(enabling);
+            setMonitoringLastChange(newSettings.GatewayMonitoringLastUpdate || Date.now() / 1000);
         } catch (e) {
             setTogglingMonitoringModalOpen(false);
 
@@ -223,45 +217,6 @@ const VPNEvents = () => {
             setTogglingMonitoringLoading(false);
         }
     };
-
-    const getMonitoringToggleButton = (): ReactNode|undefined => {
-        if (monitoringLoading) {
-            return <Button
-                loading={true}
-                color="weak"
-                shape="solid"
-                size="small"
-                className="shrink-0"
-            >-</Button>;
-        }
-
-        if (!businessSettingsAvailable) {
-            return undefined;
-        }
-
-        return <Button
-            loading={togglingMonitoringLoading || togglingMonitoringInitializing}
-            color={monitoring ? 'weak' : 'norm'}
-            shape="solid"
-            size="small"
-            className="shrink-0"
-            onClick={toggleMonitoring}
-        >
-            {monitoring ? c('Action').t`Turn off` : c('Action').t`Turn on`}
-        </Button>;
-    }
-
-    const getMonitoringInfoIcon = (): IconName => {
-        if (monitoringLoading) {
-            return 'circle';
-        }
-
-        if (!businessSettingsAvailable) {
-            return 'bug';
-        }
-
-        return monitoring ? 'checkmark-circle-filled' : 'info-circle';
-    }
 
     const getMonitoringInfoText = (): string => {
         if (monitoringLoading) {
@@ -275,7 +230,31 @@ const VPNEvents = () => {
         return monitoring
             ? c('Info').t`Gateways monitoring is enabled.`
             : c('Info').t`Gateways monitoring is disabled.`;
-    }
+    };
+
+    const getMonitoringLastChangeText = (): ReactNode => {
+        if (!monitoringLastChange) {
+            return <>&nbsp;</>;
+        }
+
+        const formattedDateAndTime = (
+            <TimeIntl
+                options={{
+                    year: 'numeric',
+                    day: 'numeric',
+                    month: 'short',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                }}
+            >
+                {monitoringLastChange}
+            </TimeIntl>
+        );
+
+        return monitoring
+            ? /** translator: formattedDateAndTime be like "25 Sep 2023, 15:37" or just "15:37" if it's on the same day */ c('Info').jt`Enabled since ${formattedDateAndTime}`
+            : /** translator: formattedDateAndTime be like "25 Sep 2023, 15:37" or just "15:37" if it's on the same day */ c('Info').jt`Disabled since ${formattedDateAndTime}`;
+    };
 
     return (
         <SettingsSectionWide>
@@ -283,12 +262,21 @@ const VPNEvents = () => {
                 {...togglingMonitoringModalProps}
                 enabling={monitoringEnabling}
             />}
-            <PreReq
-                icon={getMonitoringInfoIcon()}
-                className={monitoring ? 'color-primary' : 'color-weak'}
-                data={getBoldFormattedText(getMonitoringInfoText())}
-                action={getMonitoringToggleButton()}
-            />
+            <div className="mb-8">
+                <Toggle
+                    loading={togglingMonitoringLoading || togglingMonitoringInitializing}
+                    checked={monitoring}
+                    disabled={!togglingMonitoringLoading && !togglingMonitoringInitializing && !businessSettingsAvailable}
+                    onChange={toggleMonitoring}
+                >
+                    <span className="pl-2">
+                        {getBoldFormattedText(getMonitoringInfoText())}
+                        <span className="block color-weak text-sm">
+                            {getMonitoringLastChangeText()}
+                        </span>
+                    </span>
+                </Toggle>
+            </div>
             <FilterAndSortEventsBlock
                 filter={filter}
                 keyword={keyword}
