@@ -3,8 +3,10 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useActiveBreakpoint } from '@proton/components/hooks';
 import { useUserKeys } from '@proton/components/hooks/useUserKeys';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
+import isTruthy from '@proton/utils/isTruthy';
 
 import type { OrderableTableBody } from '../../../../components';
 import { DropdownActions, OrderableTableRow, TableRow } from '../../../../components';
@@ -47,6 +49,8 @@ const MergeTableBodyRow = (
     const [contact] = useContactConditionally(isIntersecting ? ID : undefined);
     const { vCardContact } = useVCardContact({ contact, userKeysList });
 
+    const { viewportWidth } = useActiveBreakpoint();
+
     const deleted = beDeleted[ID];
     const options = [
         !deleted && {
@@ -77,8 +81,12 @@ const MergeTableBodyRow = (
             greyedOut={deleted}
             onToggle={onClickCheckbox}
         />,
-        <span className="max-w-full inline-block text-ellipsis">{givenName}</span>,
-        <span className="max-w-full inline-block text-ellipsis">{familyName}</span>,
+        !(givenName === '-' && viewportWidth['<=medium']) && (
+            <span className="max-w-full inline-block text-ellipsis">{givenName}</span>
+        ),
+        !(familyName === '-' && viewportWidth['<=medium']) && (
+            <span className="max-w-full inline-block text-ellipsis">{familyName}</span>
+        ),
         <EmailsTableCell
             key="email"
             contactID={ID}
@@ -87,7 +95,7 @@ const MergeTableBodyRow = (
             greyedOut={deleted}
         />,
         <DropdownActions key="options" size="small" list={options} data-testid="merge-model:action-button" />,
-    ];
+    ].filter((cell) => (viewportWidth['<=medium'] ? isTruthy(cell) : true));
 
     return deleted ? (
         <TableRow key={`${ID}`} cells={[null, ...cells]} />
