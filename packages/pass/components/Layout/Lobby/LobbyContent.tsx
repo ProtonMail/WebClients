@@ -71,6 +71,8 @@ export const LobbyContent: FC<Props> = ({
     const canSignOut = errored || locked || passwordLocked || missingScope;
     const hasExtraPassword = Boolean(useAuthStore()?.getExtraPassword());
 
+    const email = useAuthStore()?.getUserEmail();
+
     useEffect(() => {
         if (error) return setCriticalError(error);
         if (stale) {
@@ -163,7 +165,12 @@ export const LobbyContent: FC<Props> = ({
                 </Card>
             )}
 
-            <div className="flex-1 mt-8 flex flex-column gap-2">
+            <div className={clsx('flex-1 flex flex-column gap-2', email ? 'mt-6' : 'mt-8')}>
+                {email && (
+                    <div className="text-lg text-semibold mb-2 text-ellipsis max-w-full" title={email}>
+                        {email}
+                    </div>
+                )}
                 {(() => {
                     switch (status) {
                         case AppStatus.MISSING_SCOPE:
