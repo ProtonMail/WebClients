@@ -6,7 +6,7 @@ import { IconRow } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
-import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
+import { escapeInvalidHtmlTags, restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import urlify from '@proton/shared/lib/calendar/urlify';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -43,10 +43,11 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     const { modal: linkModal } = useLinkHandler(eventDetailsRef, mailSettings);
 
     const trimmedLocation = vevent.location?.value?.trim();
-    const sanitizedAndUrlifiedLocation = useMemo(
-        () => restrictedCalendarSanitize(urlify(trimmedLocation || '')),
-        [trimmedLocation]
-    );
+    const sanitizedAndUrlifiedLocation = useMemo(() => {
+        const urlified = urlify(trimmedLocation || '');
+        const escaped = escapeInvalidHtmlTags(urlified);
+        return restrictedCalendarSanitize(escaped);
+    }, [trimmedLocation]);
     const frequencyString = rrule
         ? getFrequencyString(rrule.value, dtstart, {
               weekStartsOn,
