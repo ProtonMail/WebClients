@@ -1,11 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { useApi, useAuthentication } from '@proton/components/hooks';
+import { useApi } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
-import { getLastPersistedLocalID } from '../../utils/lastActivePersistedUserSession';
 import { usePublicSession } from '../_api';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
 import { useBookmarks } from '../_bookmarks/useBookmarks';
@@ -20,13 +18,10 @@ export const useBookmarksPublicView = (customPassword?: string) => {
     const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
     const api = useApi();
     const { token, urlPassword } = usePublicToken();
-    const auth = useAuthentication();
 
     useEffect(() => {
         if (!user || !isDriveShareUrlBookmarkingEnabled) {
-            if (!isUserLoading) {
-                setIsLoading(false);
-            }
+            setIsLoading(isUserLoading && !user);
             return;
         }
         const UID = getSessionInfo()?.sessionUid;
@@ -37,12 +32,6 @@ export const useBookmarksPublicView = (customPassword?: string) => {
         void withLoading(async () => {
             // TODO: We need to find a better way of doing this
             (api as any).UID = UID;
-
-            const resumedSession = await resumeSession({ api, localID: getLastPersistedLocalID() });
-            if (resumedSession.keyPassword) {
-                auth.setPassword(resumedSession.keyPassword);
-            }
-
             const bookmarks = await listBookmarks(abortControler.signal);
             setBookmarksTokens(new Set(bookmarks.map((bookmark) => bookmark.token.Token)));
         });
