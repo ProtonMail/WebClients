@@ -1,12 +1,14 @@
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { onContextReady } from 'proton-pass-extension/app/worker/context';
+import store, { runSagas } from 'proton-pass-extension/app/worker/store';
+
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import { selectUser } from '@proton/pass/store/selectors';
 import { WorkerMessageType } from '@proton/pass/types';
 
-import WorkerMessageBroker from '../channel';
-import { onContextReady } from '../context';
-import store from '../store';
-
 export const createStoreService = () => {
+    runSagas();
+
     const handleStoreDispatch: MessageHandlerCallback<WorkerMessageType.STORE_DISPATCH> = onContextReady(
         (_, message) => {
             store.dispatch(message.payload.action);

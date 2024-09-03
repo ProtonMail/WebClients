@@ -149,6 +149,10 @@ const options: RootSagaOptions = {
     onSettingsUpdated: withContext((ctx, update) => ctx.service.settings.sync(update)),
 };
 
-sagaMiddleware.run(rootSagaFactory(EXTENSION_SAGAS).bind(null, options));
+/** Redux Saga emits a `@@redux-saga/INIT` action when running the middleware.
+ * This triggers browser API side-effects. To avoid service worker registration
+ * errors, this should only be called after the worker has successfully activated.
+ * (see `applications/pass-extension/src/app/worker/services/store.ts`) */
+export const runSagas = () => sagaMiddleware.run(rootSagaFactory(EXTENSION_SAGAS).bind(null, options));
 
 export default store;
