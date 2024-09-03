@@ -275,7 +275,11 @@ describe('AutosaveService [worker]', () => {
                 })
             );
 
-            expect(response).toEqual({ type: 'error', error: 'Item does not exist' });
+            expect(response).toEqual({
+                type: 'error',
+                error: 'Item does not exist',
+                critical: false,
+            });
         });
 
         test('should handle item update', async () => {
