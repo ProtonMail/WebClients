@@ -54,5 +54,5 @@
             "@proton/wallet": ["./packages/wallet/*"]
         }
     },
-    "exclude": ["**/node_modules", "**/.*/", "./packages/wallet/tests"]
+    "exclude": ["**/node_modules/*", "**/dist/*", "**/.*/", "./packages/wallet/tests"]
 }
