@@ -1962,6 +1962,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Unione dei contatti in corso... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Risparmia tempo inviando email a tutti contemporaneamente con i gruppi di contatti. Sblocca questa e altre funzionalità premium effettuando l'upgrade."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Imposta un metodo di recupero dei dati per evitare la perdita dei dati."
       ],
@@ -5214,16 +5217,16 @@
     },
     "Mimetype": {
       "3GPP audio/video container": [
-        "Contenitore 3GPP"
+        "File 3GPP"
       ],
       "3GPP2 audio/video container": [
-        "Contenitore 3GPP2"
+        "File 3GPP2"
       ],
       "7-zip archive": [
         "Archivio 7z"
       ],
       "AAC audio": [
-        "Audio AAC"
+        "File AAC"
       ],
       "AbiWord document": [
         "File ABW"
@@ -5247,10 +5250,10 @@
         "Documento di archivio"
       ],
       "Audio file": [
-        "Audio"
+        "File audio"
       ],
       "AV1 Image File Format (AVIF)": [
-        "Formato file immagine AV1 (AVIF)"
+        "File AVIF"
       ],
       "AVI video": [
         "Video AVI"
@@ -5280,10 +5283,10 @@
         "File EPUB"
       ],
       "Flash Video": [
-        "Video Flash"
+        "File FLV"
       ],
       "Graphics Interchange Format (GIF)": [
-        "Formato di interscambio grafico (GIF)"
+        "File GIF"
       ],
       "GZip Compressed Archive": [
         "Archivio Gzip"
@@ -5295,13 +5298,13 @@
         "File PHP"
       ],
       "iCalendar format": [
-        "Formato iCalendar"
+        "File iCalendar"
       ],
       "Icon format": [
         "File ICO"
       ],
       "Image": [
-        "Immagine"
+        "File immagine"
       ],
       "Java Archive (JAR)": [
         "Archivio JAR"
@@ -5310,7 +5313,7 @@
         "JavaScript"
       ],
       "JPEG images": [
-        "Immagini JPEG"
+        "File JPEG"
       ],
       "JSON": [
         "JSON"
@@ -5340,28 +5343,28 @@
         "Microsoft Word (OpenXML)"
       ],
       "MP3 audio": [
-        "Audio MP3"
+        "File MP3"
       ],
       "MPEG transport stream": [
-        "Flusso di trasporto MPEG"
+        "File MPEG"
       ],
       "MPEG Video": [
-        "Video MPEG"
+        "File video MPEG"
       ],
       "MS Embedded OpenType fonts": [
-        "Caratteri OpenType MS Incorporati"
+        "Caratteri EOT"
       ],
       "Musical Instrument Digital Interface (MIDI)": [
-        "Musical Instrument Digital Interface (MIDI)"
+        "File MIDI"
       ],
       "OGG": [
         "OGG"
       ],
       "OGG audio": [
-        "Audio OGG"
+        "File audio OGG"
       ],
       "OGG video": [
-        "Video OGG"
+        "File video OGG"
       ],
       "OpenDocument presentation document": [
         "File ODP"
@@ -5373,10 +5376,10 @@
         "File ODT"
       ],
       "OpenType font": [
-        "Carattere OpenType"
+        "Caratteri OTF"
       ],
       "Opus audio": [
-        "Audio Opus"
+        "File Opus"
       ],
       "Portable Network Graphics": [
         "File PNG"
@@ -5391,13 +5394,13 @@
         "File RTF"
       ],
       "Scalable Vector Graphics (SVG)": [
-        "Grafica vettoriale scalabile (SVG)"
+        "File SVG"
       ],
       "Small web format (SWF)": [
         "File SWF"
       ],
       "Tagged Image File Format (TIFF)": [
-        "Tagged Image File Format (TIFF)"
+        "File TIFF"
       ],
       "Tape Archive (TAR)": [
         "Archivio TAR"
@@ -5406,7 +5409,7 @@
         "Testo"
       ],
       "TrueType Font": [
-        "Caratteri TrueType"
+        "Caratteri TTF"
       ],
       "TypeScript": [
         "TypeScript"
@@ -5415,25 +5418,25 @@
         "File sconosciuto"
       ],
       "Video file": [
-        "Video"
+        "File video"
       ],
       "Waveform Audio Format": [
-        "Formato audio Waveform"
+        "File WAV"
       ],
       "Web Open Font Format (WOFF)": [
-        "Web Open Font Format (WOFF)"
+        "Caratteri WOFF"
       ],
       "WEBM audio": [
-        "Audio WEBM"
+        "File audio WEBM"
       ],
       "WEBM video": [
-        "Video WEBM"
+        "File video WEBM"
       ],
       "WEBP image": [
-        "Immagine WEBP"
+        "File WEBP"
       ],
       "Windows OS/2 Bitmap Graphics": [
-        "Grafica bitmap di Windows OS/2"
+        "File BMP"
       ],
       "XHTML": [
         "XHTML"
@@ -5494,6 +5497,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Esegui il downgrade a ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Inizia per ${ price }"
+      ],
       "Upgrade now": [
         "Effettua l'upgrade ora"
       ]
@@ -5522,6 +5528,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
       ],
@@ -5614,8 +5623,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Per tutti i servizi di ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TB di archiviazione sicura"
+      ],
       "1 user": [
         "1 utente"
+      ],
+      "10 email addresses/aliases": [
+        "10 indirizzi email/alias"
+      ],
+      "10-year file version history": [
+        "Cronologia delle versioni dei file per 10 anni"
+      ],
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
       ],
       "24/7 account management support": [
         "Supporto 24/7 per la gestione dell'account"
@@ -5631,6 +5652,9 @@
       ],
       "Administration Panel": [
         "Pannello di controllo"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Tutti i prodotti e le funzionalità di ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tutti i servizi ${ BRAND_NAME } di base (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -5713,6 +5737,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Supporto del client di posta (tramite IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Gruppi email"
+      ],
       "Enables HIPAA compliance": [
         "Permette la conformità all'HIPAA"
       ],
@@ -5739,6 +5766,9 @@
       ],
       "GDPR data processing agreement": [
         "Accordo sul trattamento dei dati GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Genera email con un prompt"
       ],
       "Group management (coming soon)": [
         "Gestione dei gruppi (in arrivo)"
@@ -5795,9 +5825,15 @@
       "Priority support & live chat": [
         "Supporto prioritario e chat dal vivo"
       ],
+      "Proofread and refine your emails": [
+        "Correggi e affina le tue email"
+      ],
       "Protect ${ n } device at a time": [
         "Proteggi ${ n } dispositivo alla volta",
         "Proteggi ${ n } dispositivi alla volta"
+      ],
+      "Quickly craft replies": [
+        "Crea velocemente risposte"
       ],
       "Recover previous file versions": [
         "Recuperare versioni precedenti del file"
@@ -5852,6 +5888,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
+      ],
+      "Support for up to 2 users": [
+        "Supporto per un massimo di 2 utenti"
       ],
       "Sync and backup all your files across devices": [
         "Sincronizza ed effettua il backup dei file su tutti i tuoi dispositivi"
@@ -5932,6 +5971,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 dominio email personalizzato"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crea più indirizzi email per le tue identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping, LuigiNotizie@${ domain2 } per gli abbonamenti alle notizie."
       ],
@@ -6034,6 +6076,9 @@
       ]
     },
     "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Ottieni Mail Plus per ${ price }"
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -6113,6 +6158,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Condividi facilmente i tuoi calendari con famigliari, amici o colleghi"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Invia un'email a tutti i membri di un gruppo con un unico indirizzo email"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Ti assicura la ricezione di tutte le email inviate al tuo dominio, anche se l'indirizzo email non esiste, non esiste più o ha un errore di battitura"
@@ -6866,6 +6914,11 @@
         "Email ufficiale da ${ BRAND_NAME }"
       ]
     },
+    "Safety review": {
+      "Review your account safety": [
+        "Controlla la sicurezza del tuo account"
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Tutti gli alias"
@@ -7517,9 +7570,6 @@
       ],
       "Alias saved and copied": [
         "Alias salvato e copiato"
-      ],
-      "Bug reported": [
-        "Bug segnalato"
       ],
       "Canceling import": [
         "Annullamento dell'importazione"

@@ -6078,6 +6078,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6170,6 +6173,9 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Tüm ${ BRAND_NAME } hizmetleri için"
       ],
+      "1 TB secure storage": [
+        "1 TB güvenli depolama alanı"
+      ],
       "1 user": [
         "1 kullanıcı"
       ],
@@ -6193,6 +6199,9 @@
       ],
       "Advanced network security": [
         "Gelişmiş ağ güvenliği"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Tüm ${ BRAND_NAME } ürünleri ve özellikleri"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6308,6 +6317,9 @@
       "GDPR data processing agreement": [
         "KVKK veri işleme sözleşmesi"
       ],
+      "Generate emails with a prompt": [
+        "Bir istem ile e-posta oluşturun"
+      ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
       ],
@@ -6369,9 +6381,15 @@
       "Priority support & live chat": [
         "Öncelikli destek ve canlı sohbet"
       ],
+      "Proofread and refine your emails": [
+        "E-postalarınızı düzeltin ve düzenleyin"
+      ],
       "Protect ${ n } device at a time": [
         "Aynı anda ${ n } aygıtı koruyun",
         "Aynı anda ${ n } aygıtı koruyun"
+      ],
+      "Quickly craft replies": [
+        "Yanıtları hızlıca oluşturun"
       ],
       "Recover previous file versions": [
         "Önceki dosya sürümlerine dönün"
@@ -6436,6 +6454,9 @@
       ],
       "Strict no-logs policy": [
         "Sıkı kayıt tutmama ilkesi"
+      ],
+      "Support for up to 2 users": [
+        "2 kullanıcıya kadar destek"
       ],
       "Sync and backup all your files across devices": [
         "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
@@ -9040,9 +9061,6 @@
       ],
       "Administrator privileges restored": [
         "Yönetici yetkileri geri yüklendi"
-      ],
-      "Bug reported": [
-        "Hata bildirildi"
       ],
       "Catch-all address updated": [
         "Tümünü toplama adresi güncellendi"

@@ -2214,7 +2214,7 @@
         "Les alias n'ont pu être chargés."
       ],
       "Already a member of this share": [
-        "Vous êtes déjà membre de ce partage."
+        "Déjà membre de ce partage"
       ],
       "Amount above the maximum.": [
         "Le montant est supérieur au maximum."
@@ -5446,6 +5446,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Commencez pour ${ price }"
+      ],
       "Upgrade now": [
         "Changer d'abonnement"
       ]
@@ -5474,6 +5477,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } et ${ PROTON_SENTINEL_NAME }"
       ],
@@ -5566,6 +5572,9 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Pour tous les services ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 To d'espace de stockage sécurisé"
+      ],
       "1 user": [
         "1 utilisateur"
       ],
@@ -5592,6 +5601,9 @@
       ],
       "Administration Panel": [
         "Panneau d'administration"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Tous les produits et fonctionnalités ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tous les services de base de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -5704,6 +5716,9 @@
       "GDPR data processing agreement": [
         "Accord de traitement des données RGPD"
       ],
+      "Generate emails with a prompt": [
+        "Générez des messages avec un prompt"
+      ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
       ],
@@ -5759,9 +5774,15 @@
       "Priority support & live chat": [
         "Assistance prioritaire et chat en direct"
       ],
+      "Proofread and refine your emails": [
+        "Relisez et peaufinez vos messages"
+      ],
       "Protect ${ n } device at a time": [
         "Protégez ${ n } appareil à la fois",
         "Protégez ${ n } appareils en même temps"
+      ],
+      "Quickly craft replies": [
+        "Rédigez rapidement des réponses"
       ],
       "Recover previous file versions": [
         "Récupérer les versions précédentes des fichiers"
@@ -5816,6 +5837,9 @@
       ],
       "Strict no-logs policy": [
         "Politique stricte de non-journalisation (no log)"
+      ],
+      "Support for up to 2 users": [
+        "Prise en charge jusqu'à 2 utilisateurs"
       ],
       "Sync and backup all your files across devices": [
         "Synchronisez et sauvegardez tous vos fichiers entre plusieurs appareils."
@@ -5998,6 +6022,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Profitez de Mail Plus pour ${ price }"
       ]
     },
     "new_plans: title": {
@@ -6833,7 +6862,7 @@
     },
     "Safety review": {
       "Review your account safety": [
-        "Vérifier la sécurité du compte"
+        "Vérifier la sécurité de votre compte"
       ]
     },
     "Security Center": {
@@ -7488,9 +7517,6 @@
       "Alias saved and copied": [
         "L'alias a été enregistré et copié."
       ],
-      "Bug reported": [
-        "Le bug a été signalé."
-      ],
       "Canceling import": [
         "Annulation de l'importation"
       ],
@@ -7543,6 +7569,9 @@
       ],
       "Preferences saved": [
         "Les préférences ont été enregistrées."
+      ],
+      "Problem reported": [
+        "Le problème a été signalé."
       ],
       "Secure link copied": [
         "Le lien sécurisé a été copié."

@@ -93,6 +93,9 @@
       "Add to group": [
         "Ajouter au groupe"
       ],
+      "Adds it above your existing message": [
+        "L'ajoute au-dessus de votre message existant"
+      ],
       "Align center": [
         "Centrer"
       ],
@@ -500,6 +503,9 @@
       ],
       "Generate text": [
         "Générer du texte"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Je choisis ${ BRAND_NAME } Duo"
       ],
       "Get in touch": [
         "Nous contacter"
@@ -1535,17 +1541,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Les données restent sur l'appareil pour protéger votre vie privée. Nécessite un téléchargement et un matériel compatible."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Les données restent sur votre appareil mais ceci nécessite un seul téléchargement et un matériel compatible."
       ],
       "Fast and secure. No logs are kept.": [
         "Rapide et sécurisé. Aucune trace de vos activités n'est conservée."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Aucun journal n'est conservé pour protéger votre vie privée. Traitement plus rapide."
+      ],
       "Run on device": [
         "Exécuter sur l'appareil"
       ],
       "Run on servers": [
         "Exécuter sur les serveurs"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Fonctionne de manière sécurisée sur les serveurs ${ BRAND_NAME }"
+      ],
+      "Securely run on device": [
+        "Fonctionne de manière sécurisée sur l'appareil"
       ]
     },
     "Assistant toggle": {
@@ -3403,6 +3421,9 @@
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Pour importer à partir d'un fichier CSV ou VCF, assurez-vous que le fichier ne dépasse pas ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus volumineux, divisez-le en plusieurs fichiers plus petits. ${ learnMoreLink }"
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Pour un accès illimité à l'assistant d'écriture et plus encore, changez d'abonnement pour ${ BRAND_NAME } Duo."
+      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obtenez un nombre illimité d'alias et 500 Go d'espace de stockage avec l'offre groupée ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -3436,6 +3457,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Définissez une méthode de récupération pour éviter de perdre l'accès à votre compte."
+      ],
+      "Starting from ${ price }": [
+        "À partir de ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pour continuer à utiliser l'assistant d'écriture, ajoutez-le à votre abonnement"
@@ -5528,6 +5552,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe vous aide à rédiger de meilleurs messages rapidement et sans effort."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
@@ -6220,6 +6247,10 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pour avoir plus de résultats, essayez de faire une recherche avec ce mot-clé dans le contenu de vos messages."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Essai gratuit pendant ${ ASSISTANT_TRIAL_TIME_DAYS } jour",
+        "Essai gratuit pendant ${ ASSISTANT_TRIAL_TIME_DAYS } jours"
+      ],
       "From": [
         "De"
       ],
@@ -6365,6 +6396,9 @@
       ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "Learn more about the writing assistant": [
+        "En savoir plus sur l'assistant d'écriture"
       ],
       "Left to Right": [
         "De gauche à droite"
@@ -7459,6 +7493,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
+      ],
+      "Your private writing assistant": [
+        "Votre assistant d'écriture privé"
       ]
     },
     "info": {
@@ -8923,6 +8960,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passer à ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Commencez pour ${ price }"
+      ],
       "Upgrade now": [
         "Changer d'abonnement"
       ]
@@ -8951,6 +8991,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } et ${ PROTON_SENTINEL_NAME }"
       ],
@@ -9043,6 +9086,9 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Pour tous les services ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 To d'espace de stockage sécurisé"
+      ],
       "1 user": [
         "1 utilisateur"
       ],
@@ -9069,6 +9115,9 @@
       ],
       "Administration Panel": [
         "Panneau d'administration"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Tous les produits et fonctionnalités ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tous les services de base de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9181,6 +9230,9 @@
       "GDPR data processing agreement": [
         "Accord de traitement des données RGPD"
       ],
+      "Generate emails with a prompt": [
+        "Générez des messages avec un prompt"
+      ],
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
       ],
@@ -9236,9 +9288,15 @@
       "Priority support & live chat": [
         "Assistance prioritaire et chat en direct"
       ],
+      "Proofread and refine your emails": [
+        "Relisez et peaufinez vos messages"
+      ],
       "Protect ${ n } device at a time": [
         "Protégez ${ n } appareil à la fois",
         "Protégez ${ n } appareils en même temps"
+      ],
+      "Quickly craft replies": [
+        "Rédigez rapidement des réponses"
       ],
       "Recover previous file versions": [
         "Récupérer les versions précédentes des fichiers"
@@ -9293,6 +9351,9 @@
       ],
       "Strict no-logs policy": [
         "Politique stricte de non-journalisation (no log)"
+      ],
+      "Support for up to 2 users": [
+        "Prise en charge jusqu'à 2 utilisateurs"
       ],
       "Sync and backup all your files across devices": [
         "Synchronisez et sauvegardez tous vos fichiers entre plusieurs appareils."
@@ -9475,6 +9536,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Profitez de Mail Plus pour ${ price }"
       ]
     },
     "new_plans: title": {
@@ -10396,7 +10462,7 @@
     },
     "Safety review": {
       "Review your account safety": [
-        "Vérifier la sécurité du compte"
+        "Vérifier la sécurité de votre compte"
       ]
     },
     "Search - no results": {
@@ -11746,9 +11812,6 @@
       "Alias saved and copied": [
         "L'alias a été enregistré et copié."
       ],
-      "Bug reported": [
-        "Le bug a été signalé."
-      ],
       "Canceling import": [
         "Annulation de l'importation"
       ],
@@ -11905,6 +11968,9 @@
       ],
       "Preferences saved": [
         "Les préférences ont été enregistrées."
+      ],
+      "Problem reported": [
+        "Le problème a été signalé."
       ],
       "Public key trusted": [
         "La clé publique a été approuvée."
@@ -12268,6 +12334,9 @@
       ],
       "Coupon": [
         "Coupon"
+      ],
+      "Craft better emails": [
+        "Rédigez de meilleurs messages"
       ],
       "Create contact": [
         "Créer un contact"

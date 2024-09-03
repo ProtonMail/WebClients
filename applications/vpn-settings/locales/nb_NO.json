@@ -6084,6 +6084,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6176,8 +6179,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - for alle ${ BRAND_NAME }-tjenester"
       ],
+      "1 TB secure storage": [
+        "1 TB sikker lagring"
+      ],
       "1 user": [
         "1 bruker"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-postadresser/aliaser"
+      ],
+      "10-year file version history": [
+        "10-år filversjonshistorikk"
+      ],
+      "15 GB storage": [
+        "15 GB lagring"
       ],
       "24/7 account management support": [
         "24/7 støtte for kontoadministrasjon"
@@ -6199,6 +6214,9 @@
       ],
       "Advanced network security": [
         "Avansert nettverkssikkerhet"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME }-produkter og tjenester"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6287,6 +6305,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Støtte for e-postklienter (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-postgrupper"
+      ],
       "Enables HIPAA compliance": [
         "Aktiverer HIPAA-overholdelse"
       ],
@@ -6313,6 +6334,9 @@
       ],
       "GDPR data processing agreement": [
         "Avtale om GDPR-databehandling"
+      ],
+      "Generate emails with a prompt": [
+        "Generer e-poster med en ledetekst"
       ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
@@ -6375,9 +6399,15 @@
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
       ],
+      "Proofread and refine your emails": [
+        "Korrekturles og finjuster e-postene dine"
+      ],
       "Protect ${ n } device at a time": [
         "Beskytt ${ n } enhet om gangen",
         "Beskytt ${ n } enheter om gangen"
+      ],
+      "Quickly craft replies": [
+        "Lag svar raskt"
       ],
       "Recover previous file versions": [
         "Gjenopprett tidligere filversjoner"
@@ -6442,6 +6472,9 @@
       ],
       "Strict no-logs policy": [
         "Streng ingen-loggførings-praksis"
+      ],
+      "Support for up to 2 users": [
+        "Støtte for opptil 2 brukere"
       ],
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhetskopier alle filene dine på tvers av enheter"
@@ -6522,6 +6555,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 egendefinert e-postdomene"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Opprett flere e-postadresser for dine nettbaserte identiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer, alexnyheter@${ domain2 } for nyhetsabonnement."
       ],
@@ -6738,6 +6774,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Del kalenderne dine med familie, venner eller kolleger på en enkel måte."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Send e-post til alle i en gruppe med én enkelt e-postadresse"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Sikrer at du mottar alle e-postmeldinger som sendes til domenet ditt, selv om e-postadressen ikke eksisterer, ikke lenger eksisterer eller har en skrivefeil."
@@ -7717,6 +7756,11 @@
       ],
       "User": [
         "Bruker"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Gjennomgå kontosikkerheten din"
       ]
     },
     "saml: Action": {
@@ -9067,9 +9111,6 @@
       ],
       "Administrator privileges restored": [
         "Administratorrettigheter gjenopprettet"
-      ],
-      "Bug reported": [
-        "Feil rapportert"
       ],
       "Catch-all address updated": [
         "Catch-all-adresse oppdatert"

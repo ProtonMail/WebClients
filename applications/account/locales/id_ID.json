@@ -158,10 +158,10 @@
         "Izinkan"
       ],
       "Allow end-to-end encrypted mail for this group": [
-        "Perbolehkan email terenkripsi ujung ke ujung untuk grup ini"
+        "Izinkan email yang terenkripsi end-to-end untuk grup ini"
       ],
       "Always allow sending": [
-        "Selalu memperbolehkan pengiriman"
+        "Selalu izinkan pengiriman"
       ],
       "Apply": [
         "Terapkan"
@@ -811,11 +811,11 @@
       "Refresh status": [
         "Muat ulang status"
       ],
-      "refresh the page": [
-        "muat ulang halaman"
-      ],
       "Refresh the page": [
         "Muat ulang halaman"
+      ],
+      "refresh the page": [
+        "muat ulang halaman"
       ],
       "Reload": [
         "Muat ulang"
@@ -1234,6 +1234,9 @@
       "View plans details": [
         "Lihat rincian paket"
       ],
+      "View recovery settings": [
+        "Tampilkan pengaturan pemulihan"
+      ],
       "Void": [
         "Batal"
       ],
@@ -1618,6 +1621,14 @@
         "Pilih penawaran Akhir Tahun Anda"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Ruang penyimpanan 6 TB (2x lebih besar dari paket lainnya)"
@@ -1639,14 +1650,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } kembali dalam waktu yang terbatas"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Tetapi, Anda bisa mendapatkan **diskon ${ discountPercentage } untuk ${ plan.Title }** jika Anda berlangganan selama **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3369,6 +3372,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Hapus pesan spam dan sampah secara otomatis dan buka lebih banyak fitur premium saat Anda meningkatkan."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Selamat! Anda telah memperoleh langganan ${ plusPlanName } gratis selama ${ rewardsLimit } bulan."
       ],
@@ -4199,7 +4205,7 @@
         "Kesalahan autentikasi."
       ],
       "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
-        "Pesan pembalasan otomatis melebihi panjang yang diperbolehkan. Silakan singkatkan supaya tidak melebihi batas."
+        "Panjang pesan balasan otomatis melebihi batas yang diizinkan. Silakan persingkat pesan ini agar tidak melebihi batas."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Pesan balasan otomatis merupakan fitur berbayar. Silakan tingkatkan akun Anda ke paket berbayar untuk menggunakan fitur ini."
@@ -6982,11 +6988,11 @@
       "Data locked": [
         "Data terkunci"
       ],
-      "Dedicated servers": [
-        "Server khusus"
-      ],
       "dedicated servers": [
         "server khusus"
+      ],
+      "Dedicated servers": [
+        "Server khusus"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Server terdedikasi dengan alamat IP dapat ditambahkan ke gateway privat untuk mengaktifkan pengendalian akses yang sesuai."
@@ -7868,7 +7874,7 @@
         "Silakan tambahkan alamat email pengguna pada baris berikut"
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "Silakan mina pemilik dokumen untuk mengundang Anda secara langsung ke dokumen ini."
+        "Silakan minta pemilik dokumen untuk mengundang Anda secara langsung ke dokumen ini."
       ],
       "Please authenticate your card in the verification tab.": [
         "Silakan autentikasi kartu Anda pada tab verifikasi."
@@ -7943,7 +7949,7 @@
         "Pratinjau untuk tipe berkas ini tidak didukung"
       ],
       "Preview of documents is not yet supported.": [
-        "Pratinjau dokumen bleum didukung."
+        "Pratinjau dokumen saat ini belum didukung."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
@@ -8324,7 +8330,7 @@
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
       ],
       "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "Perubahan ini akan diterapkan pada seluruh infrastruktur Anda dalam sekitar 1 jam"
+        "Perubahan ini akan sepenuhnya diterapkan pada infrastruktur Anda dalam sekitar 1 jam"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Proses ini dapat memakan waktu sejenak. Mohon untuk tidak menutup halaman ini atau memutuskan koneksi internet Anda."
@@ -8858,7 +8864,7 @@
         "Anda sedang menggunakan ${ usedMembers } dari ${ maxMembers } lisensi pengguna yang Anda miliki."
       ],
       "You are not currently in any groups and there are no pending invitations": [
-        "Anda saat ini tidak dalam grup dan tidak ada undangan tertunda"
+        "Anda saat ini tidak berada dalam grup mana pun dan tidak ada undangan yang tertunda"
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Anda terdaftar masuk dengan akun ${ memberAddress }."
@@ -10456,7 +10462,7 @@
         "Zona waktu"
       ],
       "Tips and insights": [
-        "Tip dan wawasan"
+        "Tips dan wawasan"
       ],
       "To: ${ toEmail }": [
         "Kepada: ${ toEmail }"
@@ -11409,6 +11415,26 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Mulai dengan harga ${ price }"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Lanjut dengan akun Free"
@@ -11438,24 +11464,10 @@
         "Tingkatkan ke ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ]
-    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } dan ${ PROTON_SENTINEL_NAME }"
       ],
@@ -11531,8 +11543,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Untuk semua layanan ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "Ruang penyimpanan aman 1 TB"
+      ],
       "1 user": [
         "1 pengguna"
+      ],
+      "10 email addresses/aliases": [
+        "10 alamat email/alias"
+      ],
+      "10-year file version history": [
+        "Riwayat versi berkas 10 tahun"
+      ],
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
       ],
       "24/7 account management support": [
         "Layanan pengelolaan akun 24/7"
@@ -11554,6 +11578,9 @@
       ],
       "Advanced network security": [
         "Keamanan jaringan lanjutan"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Seluruh produk dan fitur ${ BRAND_NAME }"
       ],
       "All ${ BRAND_NAME } services": [
         "Seluruh layanan ${ BRAND_NAME }"
@@ -11648,6 +11675,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Dukungan klien email (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grup email"
+      ],
       "Enables HIPAA compliance": [
         "Tunduk terhadap undang-undang HIPAA"
       ],
@@ -11674,6 +11704,9 @@
       ],
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Hasilkan email hanya dengan sebaris perintah"
       ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
@@ -11735,8 +11768,14 @@
       "Priority support & live chat": [
         "Dukungan prioritas & percakapan langsung"
       ],
+      "Proofread and refine your emails": [
+        "Periksa dan sempurnakan email Anda"
+      ],
       "Protect ${ n } device at a time": [
         "Lindungi ${ n } perangkat secara bersamaan"
+      ],
+      "Quickly craft replies": [
+        "Tulis pesan balasan dengan cepat"
       ],
       "Recover previous file versions": [
         "Pulihkan versi berkas sebelumnya"
@@ -11800,6 +11839,9 @@
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
+      ],
+      "Support for up to 2 users": [
+        "Dukungan hingga 2 pengguna"
       ],
       "Sync and backup all your files across devices": [
         "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
@@ -11881,6 +11923,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domain email khusus"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
@@ -12059,6 +12104,17 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Uji Coba ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -12077,14 +12133,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Uji Coba ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -12147,6 +12195,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Email seluruh anggota grup dengan satu alamat email"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"
@@ -13870,7 +13921,7 @@
         "Jika Anda terkunci dari Akun ${ BRAND_NAME } Anda, Kit Pemulihan Anda akan memungkinkan Anda untuk masuk dan memulihkan data Anda."
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
-        "Apabila Anda kehilangan rincian entri msuk Anda dan perlu untuk mengatur ulang akun, **sangat penting** bagi Anda untuk memiliki **metode pemulhan akun dan data** yang aktif. Apabila tidak, Anda berisiko untuk tidak lagi dapat mengakses email, kontak, berkas, atau kata sandi yang Anda miliki."
+        "Apabila Anda kehilangan rincian entri masuk Anda dan perlu untuk mengatur ulang akun, **sangat penting** bagi Anda untuk memiliki **metode pemulhan akun dan data** yang aktif. Apabila tidak, Anda berisiko untuk tidak lagi dapat mengakses email, kontak, berkas, atau kata sandi yang Anda miliki."
       ],
       "Invalid code": [
         "Kode tidak valid"
@@ -13883,6 +13934,9 @@
       ],
       "Recovery phone number": [
         "Nomor telepon pemulihan"
+      ],
+      "Review your account safety": [
+        "Tinjau keamanan akun Anda"
       ],
       "Safeguard account now": [
         "Amankan akun sekarang juga"
@@ -15575,9 +15629,6 @@
       "Auto-reply updated": [
         "Pesan balasan otomatis diperbarui"
       ],
-      "Bug reported": [
-        "Bug berhasil dilaporkan"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender ditambahkan. Proses sinkronisasi dapat memakan waktu hingga beberapa menit."
       ],
@@ -15821,7 +15872,7 @@
         "Preferensi diperbarui"
       ],
       "Preferences updated": [
-        "Preferensi telah diperbarui"
+        "Preferensi diperbarui"
       ],
       "Status updated": [
         "Status diperbarui"
@@ -16173,11 +16224,11 @@
       "Card verification": [
         "Verifikasi kartu"
       ],
-      "Catch-all address": [
-        "Alamat catch-all"
-      ],
       "Catch-All address": [
         "Alamat Catch-All"
+      ],
+      "Catch-all address": [
+        "Alamat catch-all"
       ],
       "Change login password": [
         "Ubah kata sandi masuk"
@@ -17314,7 +17365,7 @@
         "Fitur dalam masa akses dini"
       ],
       "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
-        "Dapatkan tip produktivitas dan keamaanan untuk membantu Anda memanfaatkan ${ MAIL_APP_NAME } semaksimal mungkin dan seterusnya."
+        "Dapatkan berbagai tips produktivitas dan keamanan untuk membantu Anda memperoleh manfaat yang maksimal dari ${ MAIL_APP_NAME } dan masih banyak lagi."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
@@ -17542,7 +17593,7 @@
         "Aktifkan akses administrator"
       ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
-        "Apabila Anda kehilangan akses kredensial Anda, para administrator organisasi Anda dapat mengatur ulang kata sandi dan memulihkan akses ke akun Anda."
+        "Apabila Anda kehilangan akses ke kredensial Anda, para administrator organisasi Anda akan dapat mengatur ulang kata sandi dan memulihkan akses ke akun Anda."
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Setelah pengguna menyetujui, Anda akan dapat membantunya mendapatkan kembali akses akun atau mengelola datanya."
@@ -17551,7 +17602,7 @@
         "Kunci organisasi harus diaktifkan untuk meminta pengaksesan data"
       ],
       "Pending admin access": [
-        "Akses admin tertunda"
+        "Menunggu akses admin"
       ],
       "Private user": [
         "Pengguna pribadi"
@@ -17560,7 +17611,7 @@
         "tolak"
       ],
       "Request to manage account sent, awaiting user approval": [
-        "Permintaan pengelolaan akun terkirin, menunggu kesetujuan pengguna"
+        "Permintaan untuk mengelola akun terkirim, menunggu persetujuan pengguna"
       ],
       "Request user permission for data access": [
         "Minta izin pengguna untuk pengaksesan data"
@@ -17581,7 +17632,7 @@
         "Ini akan menghapus permintaan tertunda untuk pengaksesan administrator pada data pengguna atau pengaturan ulang kata sandi."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
-        "Ini akan mencabut perizinan administrator untuk mengelola akun pengguna ini."
+        "Tindakan ini akan mencabut perizinan administrator untuk mengelola akun pengguna ini."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Untuk melanjutkan, Anda harus meminta perizinan pengguna untuk mengakses datanya atau mengatur ulang kata sandinya."
@@ -17722,7 +17773,7 @@
         "Ini Anda"
       ],
       "Pending admin access": [
-        "Akses admin tertunda"
+        "Menunggu akses admin"
       ],
       "Private": [
         "Privat"

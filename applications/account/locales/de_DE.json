@@ -811,11 +811,11 @@
       "Refresh status": [
         "Status aktualisieren"
       ],
-      "refresh the page": [
-        "aktualisiere die Seite"
-      ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "refresh the page": [
+        "aktualisiere die Seite"
       ],
       "Reload": [
         "Neu laden"
@@ -1622,6 +1622,14 @@
         "Wähle dein Jahresendangebot"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB Speicherplatz (2x mehr als jedes andere Abonnement)"
@@ -1643,14 +1651,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Das ${ plan }-Abonnement ist nur für eine begrenzte Zeit wieder verfügbar"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber **${ discountPercentage } auf ${ plan.Title }** erhalten, wenn du dich für **${ months }** anmeldest."
       ]
     },
     "bf2023: Offers": {
@@ -7051,11 +7051,11 @@
       "Data locked": [
         "Daten gesperrt"
       ],
-      "Dedicated servers": [
-        "Dezidierte Server"
-      ],
       "dedicated servers": [
         "dedizierte Server"
+      ],
+      "Dedicated servers": [
+        "Dezidierte Server"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedizierte Server mit dedizierter(n) IP-Adresse(n) können zu privaten Gateways hinzugefügt werden, um eine fein abgestimmte Zugangskontrolle zu ermöglichen."
@@ -11515,6 +11515,26 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Starte für ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Mit Free fortfahren"
@@ -11544,24 +11564,10 @@
         "Umsteigen auf ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ]
-    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } und ${ PROTON_SENTINEL_NAME }"
       ],
@@ -11654,8 +11660,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - für alle ${ BRAND_NAME }-Dienste"
       ],
+      "1 TB secure storage": [
+        "1 TB sicherer Speicher"
+      ],
       "1 user": [
         "1 Benutzer"
+      ],
+      "10 email addresses/aliases": [
+        "10 E-Mail-Adressen/Aliasse"
+      ],
+      "10-year file version history": [
+        "Dateiversionsverlauf für 10 Jahre"
+      ],
+      "15 GB storage": [
+        "15 GB Speicherplatz"
       ],
       "24/7 account management support": [
         "24/7-Kundenbetreuung"
@@ -11677,6 +11695,9 @@
       ],
       "Advanced network security": [
         "Fortgeschrittene Netzwerksicherheit"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } Produkte und Funktionen"
       ],
       "All ${ BRAND_NAME } services": [
         "Alle ${ BRAND_NAME }-Dienste"
@@ -11771,6 +11792,9 @@
       "Email client support (via IMAP/SMTP)": [
         "E-Mail-Client-Unterstützung (über IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-Mail-Gruppen"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA-Konformität sicherstellen"
       ],
@@ -11797,6 +11821,9 @@
       ],
       "GDPR data processing agreement": [
         "Vereinbarung zur Datenverarbeitung im Rahmen der DSGVO"
+      ],
+      "Generate emails with a prompt": [
+        "Generiere E-Mails mit einem Prompt"
       ],
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
@@ -11859,9 +11886,15 @@
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
       ],
+      "Proofread and refine your emails": [
+        "Korrigiere und verfeinere deine E-Mails"
+      ],
       "Protect ${ n } device at a time": [
         "Schütze ${ n } Gerät gleichzeitig",
         "Schütze ${ n } Geräte gleichzeitig"
+      ],
+      "Quickly craft replies": [
+        "Schnell Antworten erstellen"
       ],
       "Recover previous file versions": [
         "Stelle vorherige Dateiversionen wieder her"
@@ -11926,6 +11959,9 @@
       ],
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
+      ],
+      "Support for up to 2 users": [
+        "Unterstützung für bis zu 2 Benutzer"
       ],
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
@@ -12009,6 +12045,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 eigene E-Mail-Domain"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain2 } für Nachrichten-Abonnements."
       ],
@@ -12187,6 +12226,17 @@
         "Das von dir ausgewählte Abonnement: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-Testversion"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Hol dir Mail Plus für ${ price }"
+      ],
+      "Your account's usage": [
+        "Verbrauch deines Kontos"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Konto löschen?"
@@ -12205,14 +12255,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Schalte die Premium-Funktionen durch ein Upgrade frei"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-Testversion"
-      ],
-      "Your account's usage": [
-        "Verbrauch deines Kontos"
       ]
     },
     "new_plans: tooltip": {
@@ -14027,6 +14069,9 @@
       "Recovery phone number": [
         "Wiederherstellung-Telefonnummer"
       ],
+      "Review your account safety": [
+        "Überprüfe deine Kontosicherheit"
+      ],
       "Safeguard account now": [
         "Konto jetzt absichern"
       ],
@@ -15757,9 +15802,6 @@
       "Auto-reply updated": [
         "Automatische Antwort aktualisiert"
       ],
-      "Bug reported": [
-        "Fehler gemeldet"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender hinzugefügt. Die Synchronisierung kann einige Minuten dauern."
       ],
@@ -16361,11 +16403,11 @@
       "Card verification": [
         "Kartenprüfung"
       ],
-      "Catch-all address": [
-        "Catch-all-Weiterleitungsadresse"
-      ],
       "Catch-All address": [
         "Catch-all-Adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-Weiterleitungsadresse"
       ],
       "Change login password": [
         "Anmeldepasswort ändern"
@@ -17704,6 +17746,9 @@
       ]
     },
     "unprivatization": {
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "Ein Administrator von ${ orgName } möchte Admin-Zugriff für dein Konto aktivieren."
+      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -17722,6 +17767,12 @@
       "Pending admin access": [
         "Admin-Zugriff ausstehend"
       ],
+      "Private user": [
+        "Privater Benutzer"
+      ],
+      "reject": [
+        "ablehnen"
+      ],
       "Revoke access": [
         "Zugriff entfernen"
       ],
@@ -17733,6 +17784,9 @@
       ],
       "View request": [
         "Anfrage ansehen"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "Du kannst diese Anfrage ${ reject }, wenn du nicht fortfahren möchtest."
       ]
     },
     "Update font modal": {

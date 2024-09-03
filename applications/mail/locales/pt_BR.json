@@ -93,6 +93,9 @@
       "Add to group": [
         "Adicionar ao grupo"
       ],
+      "Adds it above your existing message": [
+        "Adiciona-o acima de sua mensagem existente"
+      ],
       "Align center": [
         "Centralizar"
       ],
@@ -501,6 +504,9 @@
       "Generate text": [
         "Gerar texto"
       ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obter ${ BRAND_NAME } Duo"
+      ],
       "Get in touch": [
         "Entre em contato"
       ],
@@ -568,7 +574,7 @@
         "aliases do Hide-my-email"
       ],
       "I like this response": [
-        "Goste da resposta"
+        "Gostei da resposta"
       ],
       "Image could not be loaded with tracker protection.": [
         "Não foi possível carregar a imagem devido à proteção de rastreamento."
@@ -1538,17 +1544,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Os dados permanecem no dispositivo para proteger sua privacidade. Requer um download e hardware compatível."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Os dados permanecem no seu dispositivo, mas exigem um download único e hardware compatível"
       ],
       "Fast and secure. No logs are kept.": [
         "Rápido e seguro. Nenhum registro é mantido."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Nenhum registro é mantido para proteger sua privacidade. Processamento mais rápido."
+      ],
       "Run on device": [
         "Executar no dispositivo"
       ],
       "Run on servers": [
         "Executar nos servidores"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Executa de forma segura nos servidores ${ BRAND_NAME }"
+      ],
+      "Securely run on device": [
+        "Executa de forma segura no dispositivo"
       ]
     },
     "Assistant toggle": {
@@ -3391,6 +3409,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "A A2F adiciona uma camada extra de segurança, prevenindo acesso não autorizado."
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Exclua automaticamente mensagens de spam e lixeira e desbloqueie mais recursos premium ao fazer upgrade."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descriptografando contatos... Isso pode levar alguns minutos. Quando o processo for concluído, você poderá baixar o arquivo com todos seus contatos exportados."
       ],
@@ -3405,6 +3426,9 @@
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importação via arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Para acesso ilimitado ao assistente de escrita e muito mais, faça upgrade para ${ BRAND_NAME } Duo."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Obtenha infinitos aliases e 500 GB de armazenamento com ${ PLAN_NAMES[PLANS.BUNDLE] }"
@@ -3428,6 +3452,9 @@
       "No labels": [
         "Nenhum marcador"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Economize tempo enviando e-mails para todos de uma vez com os grupos de contatos. Desbloqueie esse e outros recursos premium ao fazer o upgrade."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separe diferentes aspectos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
       ],
@@ -3436,6 +3463,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Defina um método de recuperação para prevenir a perda de acesso à sua conta."
+      ],
+      "Starting from ${ price }": [
+        "Iniciando a partir de ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Para continuar usando o assistente de escrita, adicione-o à sua assinatura."
@@ -3451,6 +3481,12 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ative a proteção do rastreador de e-mail para evitar que anunciantes e outras pessoas rastreiem sua localização e atividade online."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Desbloqueie o agendamento de mensagens personalizadas e mais recursos premium ao fazer o upgrade."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Desbloqueie tempos de adiamento de e-mail personalizados e mais recursos premium ao fazer o upgrade."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Consiga endereços de e-mail mais curtos e outras funcionalidades premium ao fazer upgrade do seu plano"
@@ -4661,7 +4697,7 @@
         "suporte ao cliente"
       ],
       "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Atualmente, os grupos não oferecem suporte a contas externas. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
+        "Os planos de grupo não oferecem suporte a contas externas no momento. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -4670,7 +4706,7 @@
         "Convidado por: ${ inviteEmail }"
       ],
       "Lifetime accounts cannot join a group plan.": [
-        "As contas Lifetime não podem participar de um plano de grupo."
+        "Contas vitalícias não podem ingressar em um plano de grupo."
       ],
       "Manage addresses.": [
         "Gerenciar endereços."
@@ -4700,7 +4736,7 @@
         "Você entrou com sucesso no grupo familiar"
       ],
       "You have unpaid invoices. Please pay them before joining a group plan.": [
-        "Você tem faturas não pagas. Pague antes de juntar-se ao grupo."
+        "Você tem faturas não pagas. Pague-as antes de entrar em um plano de grupo."
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Você foi convidado a vincular sua conta da ${ BRAND_NAME } a este plano de grupo e aproveitar juntos de todos os recursos premium da ${ BRAND_NAME_TWO }."
@@ -5531,6 +5567,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe ajuda você a elaborar melhores e-mails de forma rápida e sem esforço."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
       ],
@@ -5662,7 +5701,7 @@
         "${ numOccurrences } ocorrências encontradas no conteúdo do e-mail"
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "O ${ PASS_APP_NAME } fornece uma maneira simples de cadastrar-se em sites de terceiros não de confiança nos quais você não quer expor o seu endereço de e-mail real."
+        "O ${ PASS_APP_NAME } fornece uma maneira simples de se cadastrar em sites de terceiros não confiáveis, onde você não deseja expor seu endereço de e-mail real."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -6223,6 +6262,10 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Para obter mais resultados de pesquisa, tente pesquisar essa palavra-chave no conteúdo de suas mensagens de e-mail."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Gratuito para experimentar por ${ ASSISTANT_TRIAL_TIME_DAYS } dia",
+        "Gratuito para experimentar por ${ ASSISTANT_TRIAL_TIME_DAYS } dias"
+      ],
       "From": [
         "De"
       ],
@@ -6368,6 +6411,9 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Learn more about the writing assistant": [
+        "Saiba mais sobre o assistente de escrita"
       ],
       "Left to Right": [
         "Esquerda para direita"
@@ -6538,7 +6584,7 @@
         "Tamanho da organização"
       ],
       "Our alerts err on the side of caution. If you don’t recognize any of the breached information, you can safely ignore this report.": [
-        "Nossos alertas pecam por excesso de precaução. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
+        "Os nossos alertas pecam por excesso de precaução. Se você não reconhece nenhum comprometimento dessas informações, pode ignorar este relatório com segurança."
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Verifique se é legítimo."
@@ -6850,6 +6896,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "A contagem de downloads inclui downloads reais e instâncias em que os arquivos são visualizados."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "O endereço de e-mail ${ boldNoReplyEmail } parece não aceitar respostas. Tem certeza de que deseja enviar sua mensagem?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Os dados criptografados são levemente maiores devido à sobrecarga da criptografia e assinaturas, que garantem a segurança dos seus dados."
@@ -7459,6 +7508,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
+      ],
+      "Your private writing assistant": [
+        "Seu assistente de escrita privado"
       ]
     },
     "info": {
@@ -8929,6 +8981,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Fazer o downgrade para o ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
       "Upgrade now": [
         "Fazer upgrade agora"
       ]
@@ -8957,6 +9012,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
       ],
@@ -9049,8 +9107,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Para todos os serviços da ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TB de armazenamento seguro"
+      ],
       "1 user": [
         "1 usuário"
+      ],
+      "10 email addresses/aliases": [
+        "10 endereços de e-mail/aliases"
+      ],
+      "10-year file version history": [
+        "Histórico de versões de arquivos por 10 anos"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
       ],
       "24/7 account management support": [
         "Suporte de administração de conta 24/7"
@@ -9066,6 +9136,9 @@
       ],
       "Administration Panel": [
         "Painel de Administração"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Todos os produtos e recursos da ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9148,6 +9221,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Suporte a clientes de e-mail (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grupos de e-mail"
+      ],
       "Enables HIPAA compliance": [
         "Permite a conformidade com a HIPAA"
       ],
@@ -9174,6 +9250,9 @@
       ],
       "GDPR data processing agreement": [
         "Acordo de processamento de dados do RGPD"
+      ],
+      "Generate emails with a prompt": [
+        "Gere e-mails com um prompt"
       ],
       "Group management (coming soon)": [
         "Gerenciamento de grupo (em breve)"
@@ -9230,9 +9309,15 @@
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
       ],
+      "Proofread and refine your emails": [
+        "Revise e otimize seus e-mails"
+      ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo por vez",
         "Proteja ${ n } dispositivos por vez"
+      ],
+      "Quickly craft replies": [
+        "Elabore respostas rapidamente"
       ],
       "Recover previous file versions": [
         "Recuperar versões anteriores de arquivos"
@@ -9287,6 +9372,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa política de inexistência de registros"
+      ],
+      "Support for up to 2 users": [
+        "Suporte para até 2 usuários"
       ],
       "Sync and backup all your files across devices": [
         "Sincronize e faça backup dos seus arquivos em todos os dispositivos"
@@ -9367,6 +9455,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domínio de e-mail personalizado"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crie vários endereços de e-mail para suas identidades on-line, por exemplo: JoaoLojas@${ domain } para contas de lojas e JoaoNoticias@${ domain2 } para assinaturas de notícias"
       ],
@@ -9469,6 +9560,9 @@
       ]
     },
     "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Obtenha Mail Plus por ${ price }"
+      ],
       "VPN Enterprise": [
         "VPN Enterprise"
       ]
@@ -9548,6 +9642,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Envie e-mails para todos em um grupo com um único endereço de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -10202,22 +10299,22 @@
         "Assunto"
       ],
       "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
-        "Informe ao assistente de redação o que deve ser escrito. Exemplo: “Anuncie os próximos eventos em um boletim informativo”"
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: “Anuncie os próximos eventos em um boletim informativo”"
       ],
       "Tell the writing assistant what to write. Example: “Cancel my gym membership”": [
-        "Diga ao assistente de redação o que deve ser escrito. Exemplo: “Cancele minha inscrição na academia”"
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: “Cancele minha inscrição na academia”"
       ],
       "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
-        "Diga ao assistente de redação o que deve ser escrito. Exemplo: “Convide a Jane para minha festa”"
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: \"Convidar a Joana para minha festa\""
       ],
       "Tell the writing assistant what to write. Example: “Thank my coworker for help on a project”": [
-        "Diga ao assistente de redação o que deve ser escrito. Exemplo: “Agradeça ao meu colega de trabalho pela ajuda em um projeto”"
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: “Agradeça ao meu colega de trabalho pela ajuda em um projeto”"
       ],
       "Tell the writing assistant what to write. Example: “Write a cover letter for an internship”": [
-        "Diga ao assistente de redação o que deve ser escrito. Exemplo: “Escreva uma carta de apresentação para um estágio”"
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: ”Escrever uma carta de apresentação para um estágio”"
       ],
       "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
-        "Diga ao assistente de redação o que deve ser escrito. Exemplo: “Escreva um email de acompanhamento para um cliente”"
+        "Diga ao assistente de escrita o que deve ser escrito. Exemplo: ”Escreva um email de acompanhamento para um cliente”"
       ],
       "Text": [
         "Texto"
@@ -10391,6 +10488,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Erro ao criptografar o convite. Tente novamente."
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Revise a segurança de sua conta"
       ]
     },
     "Search - no results": {
@@ -11740,9 +11842,6 @@
       "Alias saved and copied": [
         "Alias salvo e copiado"
       ],
-      "Bug reported": [
-        "Relatório de erros enviado"
-      ],
       "Canceling import": [
         "Cancelando a importação"
       ],
@@ -11762,6 +11861,9 @@
       ],
       "Contacts deleted": [
         "Contatos excluídos"
+      ],
+      "Content copied to clipboard": [
+        "Conteúdo copiado para a área de transferência"
       ],
       "Conversation added to ${ labelName }.": [
         "Conversa adiciona a ${ labelName }."
@@ -12260,6 +12362,9 @@
       "Coupon": [
         "Cupom"
       ],
+      "Craft better emails": [
+        "Elabore e-mails melhores"
+      ],
       "Create contact": [
         "Criar contato"
       ],
@@ -12595,6 +12700,9 @@
       ],
       "No trackers found": [
         "Nenhum rastreador encontrado"
+      ],
+      "No-reply address detected": [
+        "Endereço não-responda detectado"
       ],
       "Notes": [
         "Notas"

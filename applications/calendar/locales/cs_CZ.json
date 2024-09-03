@@ -2523,6 +2523,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slučování kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Ušetřete čas odesláním e-mailů všem najednou pomocí skupin kontaktů. Odemkněte si tuto a další prémiové funkce navýšením tarifu."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Nastavte metodu obnovy dat, abyste zabránili jejich ztrátě."
       ],
@@ -6414,6 +6417,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Snížit na ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Začněte za ${ price }"
+      ],
       "Upgrade now": [
         "Navýšit nyní"
       ]
@@ -6442,6 +6448,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6568,8 +6577,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Pro všechny služby ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TB bezpečného úložiště"
+      ],
       "1 user": [
         "1 uživatel"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailových adres/aliasů"
+      ],
+      "10-year file version history": [
+        "10letá historie verzí souborů"
+      ],
+      "15 GB storage": [
+        "15 GB úložiště"
       ],
       "24/7 account management support": [
         "24/7 podpora správy účtu"
@@ -6585,6 +6606,9 @@
       ],
       "Administration Panel": [
         "Panel správce"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Všechny ${ BRAND_NAME } produkty a funkce"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6667,6 +6691,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Podpora e-mailových klientů (přes IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-mailové skupiny"
+      ],
       "Enables HIPAA compliance": [
         "Umožňuje dodržování předpisů HIPAA"
       ],
@@ -6693,6 +6720,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR dohoda o správě dat"
+      ],
+      "Generate emails with a prompt": [
+        "Vygenerujte e-maily pomocí příkazů"
       ],
       "Group management (coming soon)": [
         "Správa skupiny (již brzy)"
@@ -6751,11 +6781,17 @@
       "Priority support & live chat": [
         "Přednostní podpora a živý chat"
       ],
+      "Proofread and refine your emails": [
+        "Proveďte korektury a zpřesnění vašich e-mailů"
+      ],
       "Protect ${ n } device at a time": [
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň",
         "Chránit ${ n } zařízení zároveň"
+      ],
+      "Quickly craft replies": [
+        "Rychle vytvářejte odpovědi"
       ],
       "Recover previous file versions": [
         "Obnova předchozích verzí souborů"
@@ -6810,6 +6846,9 @@
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
+      ],
+      "Support for up to 2 users": [
+        "Podpora pro až 2 uživatele"
       ],
       "Sync and backup all your files across devices": [
         "Synchronizace a zálohování všech vašich souborů mezi zařízeními"
@@ -6894,6 +6933,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 vlastní e-mailová doména"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain2 } pro odběry zpráv"
       ],
@@ -6995,6 +7037,11 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Získejte Mail Plus za ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -7072,6 +7119,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Snadno sdílejte své kalendáře s rodinou, přáteli nebo kolegy"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Odešlete e-mail všem členům skupiny pomocí jediné e-mailové adresy"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zajistí, že dostanete všechny e-maily odeslané na vaší doménu, dokonce i když jsou odeslány na adresu, která neexistuje a nebo má chybu"
@@ -7983,6 +8033,11 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Znovu načíst událost"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Zkontrolujte bezpečnost svého účtu"
       ]
     },
     "Security Center": {
@@ -9197,9 +9252,6 @@
       ],
       "Answer sent and event deleted": [
         "Odpověď byla odeslána a událost smazána"
-      ],
-      "Bug reported": [
-        "Chyba nahlášena"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalendář je vytvořen. Synchronizace zabere pár minut."

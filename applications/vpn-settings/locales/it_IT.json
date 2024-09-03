@@ -6084,6 +6084,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente alla scrittura ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6176,8 +6179,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Per tutti i servizi di ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 TB di archiviazione sicura"
+      ],
       "1 user": [
         "1 utente"
+      ],
+      "10 email addresses/aliases": [
+        "10 indirizzi email/alias"
+      ],
+      "10-year file version history": [
+        "Cronologia delle versioni dei file per 10 anni"
+      ],
+      "15 GB storage": [
+        "15 GB di spazio di archiviazione"
       ],
       "24/7 account management support": [
         "Supporto 24/7 per la gestione dell'account"
@@ -6199,6 +6214,9 @@
       ],
       "Advanced network security": [
         "Sicurezza di rete avanzata"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Tutti i prodotti e le funzionalità di ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tutti i servizi ${ BRAND_NAME } di base (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6287,6 +6305,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Supporto del client di posta (tramite IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Gruppi email"
+      ],
       "Enables HIPAA compliance": [
         "Permette la conformità all'HIPAA"
       ],
@@ -6313,6 +6334,9 @@
       ],
       "GDPR data processing agreement": [
         "Accordo sul trattamento dei dati GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Genera email con un prompt"
       ],
       "Group management (coming soon)": [
         "Gestione dei gruppi (in arrivo)"
@@ -6375,9 +6399,15 @@
       "Priority support & live chat": [
         "Supporto prioritario e chat dal vivo"
       ],
+      "Proofread and refine your emails": [
+        "Correggi e affina le tue email"
+      ],
       "Protect ${ n } device at a time": [
         "Proteggi ${ n } dispositivo alla volta",
         "Proteggi ${ n } dispositivi alla volta"
+      ],
+      "Quickly craft replies": [
+        "Crea velocemente risposte"
       ],
       "Recover previous file versions": [
         "Recuperare versioni precedenti del file"
@@ -6442,6 +6472,9 @@
       ],
       "Strict no-logs policy": [
         "Rigorosa politica di non conservazione dei log"
+      ],
+      "Support for up to 2 users": [
+        "Supporto per un massimo di 2 utenti"
       ],
       "Sync and backup all your files across devices": [
         "Sincronizza ed effettua il backup dei file su tutti i tuoi dispositivi"
@@ -6522,6 +6555,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 dominio email personalizzato"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Crea più indirizzi email per le tue identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping, LuigiNotizie@${ domain2 } per gli abbonamenti alle notizie."
       ],
@@ -6741,6 +6777,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Condividi facilmente i tuoi calendari con famigliari, amici o colleghi"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Invia un'email a tutti i membri di un gruppo con un unico indirizzo email"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Ti assicura la ricezione di tutte le email inviate al tuo dominio, anche se l'indirizzo email non esiste, non esiste più o ha un errore di battitura"
@@ -7720,6 +7759,11 @@
       ],
       "User": [
         "Utente"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Controlla la sicurezza del tuo account"
       ]
     },
     "saml: Action": {
@@ -9070,9 +9114,6 @@
       ],
       "Administrator privileges restored": [
         "Privilegi di amministratore ripristinati"
-      ],
-      "Bug reported": [
-        "Bug segnalato"
       ],
       "Catch-all address updated": [
         "Indirizzo catch-all aggiornato"

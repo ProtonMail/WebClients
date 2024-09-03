@@ -6078,6 +6078,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } und ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6170,8 +6173,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - für alle ${ BRAND_NAME }-Dienste"
       ],
+      "1 TB secure storage": [
+        "1 TB sicherer Speicher"
+      ],
       "1 user": [
         "1 Benutzer"
+      ],
+      "10 email addresses/aliases": [
+        "10 E-Mail-Adressen/Aliasse"
+      ],
+      "10-year file version history": [
+        "Dateiversionsverlauf für 10 Jahre"
+      ],
+      "15 GB storage": [
+        "15 GB Speicherplatz"
       ],
       "24/7 account management support": [
         "24/7-Kundenbetreuung"
@@ -6193,6 +6208,9 @@
       ],
       "Advanced network security": [
         "Fortgeschrittene Netzwerksicherheit"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } Produkte und Funktionen"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle ${ BRAND_NAME } Standarddienste (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6281,6 +6299,9 @@
       "Email client support (via IMAP/SMTP)": [
         "E-Mail-Client-Unterstützung (über IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-Mail-Gruppen"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA-Konformität sicherstellen"
       ],
@@ -6307,6 +6328,9 @@
       ],
       "GDPR data processing agreement": [
         "Vereinbarung zur Datenverarbeitung im Rahmen der DSGVO"
+      ],
+      "Generate emails with a prompt": [
+        "Generiere E-Mails mit einem Prompt"
       ],
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
@@ -6369,9 +6393,15 @@
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
       ],
+      "Proofread and refine your emails": [
+        "Korrigiere und verfeinere deine E-Mails"
+      ],
       "Protect ${ n } device at a time": [
         "Schütze ${ n } Gerät gleichzeitig",
         "Schütze ${ n } Geräte gleichzeitig"
+      ],
+      "Quickly craft replies": [
+        "Schnell Antworten erstellen"
       ],
       "Recover previous file versions": [
         "Stelle vorherige Dateiversionen wieder her"
@@ -6436,6 +6466,9 @@
       ],
       "Strict no-logs policy": [
         "Strenge No-Logs-Richtlinie"
+      ],
+      "Support for up to 2 users": [
+        "Unterstützung für bis zu 2 Benutzer"
       ],
       "Sync and backup all your files across devices": [
         "Synchronisiere und sichere alle deine Dateien auf all deinen Geräten"
@@ -6516,6 +6549,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 eigene E-Mail-Domain"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain2 } für Nachrichten-Abonnements."
       ],
@@ -7690,6 +7726,11 @@
       ],
       "User": [
         "Benutzer"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Überprüfe deine Kontosicherheit"
       ]
     },
     "saml: Action": {
@@ -9041,9 +9082,6 @@
       "Administrator privileges restored": [
         "Administratorrechte wiederhergestellt"
       ],
-      "Bug reported": [
-        "Fehler gemeldet"
-      ],
       "Catch-all address updated": [
         "Catch-all-Weiterleitungsadresse aktualisiert"
       ],
@@ -10130,6 +10168,9 @@
       ],
       "Pending admin access": [
         "Admin-Zugriff ausstehend"
+      ],
+      "Private user": [
+        "Privater Benutzer"
       ],
       "Revoke access": [
         "Zugriff entfernen"

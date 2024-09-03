@@ -2459,17 +2459,29 @@
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
         "Felhasználó hozzáadása a ${ PLAN_NAMES.visionary2022 } fiókjához"
       ],
+      "Change family name": [
+        "A család nevének megváltoztatása"
+      ],
+      "Delete family group?": [
+        "Törli a családi csoportot?"
+      ],
       "Delete organization?": [
         "Szervezet törlése?"
       ],
       "Edit user storage": [
         "Felhasználó tárhelyének szerkesztése"
       ],
+      "Family name": [
+        "Család neve"
+      ],
       "Invite a user": [
         "Felhasználó meghívása"
       ],
       "Manage family group": [
         "Családi csoport szerkesztése"
+      ],
+      "Set family name": [
+        "Család nevének beállítása"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -4947,6 +4959,9 @@
       "Add gift code": [
         "Ajándék kód hozzáadása"
       ],
+      "Add to your subscription": [
+        "Hozzáadás az előfizetéshez"
+      ],
       "clearing your browser cache": [
         "böngésző gyorsítótárának ürítése"
       ],
@@ -5273,6 +5288,9 @@
       "24/7 account management support": [
         "Non-stop fiókkezelési támogatás"
       ],
+      "24/7 support": [
+        "24/7 támogatás"
+      ],
       "99.95% SLA": [
         "99.95% SLA"
       ],
@@ -5315,6 +5333,9 @@
       "Centralized billing": [
         "Központosított számlázás"
       ],
+      "Centralized settings and billings": [
+        "Központosított beállítások és számlázás"
+      ],
       "Collaborate and share large files": [
         "Együttműködés és nagyméretű fájlok megosztása"
       ],
@@ -5341,6 +5362,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Adatvédelmi incidensek figyelése (hamarosan)"
+      ],
+      "Dedicated servers and IP": [
+        "Dedikált szerverek és IP"
       ],
       "Desktop app": [
         "Asztali alkalmazás"
@@ -5389,6 +5413,9 @@
       ],
       "High-speed streaming": [
         "Nagy sebességű videózás"
+      ],
+      "High-speed Swiss VPN that protects your privacy": [
+        "Nagy sebességű, svájci VPN, amely védi az adatait"
       ],
       "High-speed VPN on ${ n } device": [
         "Nagysebességű VPN ${ n } eszközön",
@@ -5473,6 +5500,12 @@
       ],
       "SSO integration (coming soon)": [
         "SSO integráció (hamarosan elérhető)"
+      ],
+      "Start protecting your organization": [
+        "Kezdje meg a szervezet védelmét"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Két egyszerű lépéssel kezdje meg a védelmét online"
       ],
       "Strict no-logs policy": [
         "Szigorú nincs-naplózás irányelv"
@@ -7055,9 +7088,6 @@
       "Administrator privileges restored": [
         "Adminisztrátor jogok helyreállítva"
       ],
-      "Bug reported": [
-        "Hiba bejelentve"
-      ],
       "Catch-all address updated": [
         "Gyűjtő e-mail cím frissítve"
       ],
@@ -7945,11 +7975,29 @@
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
       ],
+      "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
+        "Azok a tagok akinek nincs bekapcsolva a kétlépcsős hitelesítés, egy e-mailt fognak kapni, hogy minél előbb kapcsolják be."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Az új előfizetési ciklus ekkor indul: ${ formattedTime }"
+      ],
       "The selected theme will be active when your system is set to \"dark mode\"": [
         "A kiválasztott téma akkor lesz aktív, ha a rendszer \"sötét üzemmódba\" van állítva."
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "A kiválasztott téma akkor lesz aktív, ha a rendszer \"világos üzemmódba\" van állítva."
+      ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Ez lehet jelszó visszaállítás következménye, vagy a felhasználó még sosem lépett be."
+      ],
+      "This email address will be shown to all organization members when performing account management operations.": [
+        "Ez az e-mail cím a szervezet minden tagjának megjelenik, amikor fiókkezelési műveleteket végez."
+      ],
+      "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
+        "A felhasználók a logót fogják látni a ${ BRAND_NAME } ikon helyet, amikor a webes alkalmazást használják."
+      ],
+      "Verified email address": [
+        "Ellenőrzött e-mail cím"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Probléma van a DNS beállításaival. Kérjük, javítsa, hogy minden az alábbiak szerint legyen beállítva. Ha a probléma továbbra is fennáll, ki kell kapcsolnunk a DKIM aláírást."

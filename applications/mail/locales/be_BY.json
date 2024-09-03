@@ -93,6 +93,9 @@
       "Add to group": [
         "Дадаць у групу"
       ],
+      "Adds it above your existing message": [
+        "Дадае яго вышэй вашага існуючага паведамлення"
+      ],
       "Align center": [
         "Выраўнаваць па цэнтры"
       ],
@@ -506,6 +509,9 @@
       ],
       "Generate text": [
         "Згенерыраваць тэкст"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Атрымаць ${ BRAND_NAME } Duo"
       ],
       "Get in touch": [
         "Звязацца з намі"
@@ -1553,17 +1559,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Даныя застаюцца на вашай прыладзе, каб абараніць вашу прыватнасць. Патрабуецца спампоўванне і сумяшчальнае абсталяванне."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Даныя застануцца на вашай прыладзе, але неабходна будзе аднаразовая спампоўка і сумяшчальнае абсталяванне"
       ],
       "Fast and secure. No logs are kept.": [
         "Хуткі і бяспечны. Не пакідае журналаў."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Журналы не захоўваюцца, каб абараніць вашу прыватнасць. Хутчэйшая апрацоўка."
+      ],
       "Run on device": [
         "Выканаць на прыладзе"
       ],
       "Run on servers": [
         "Выканаць на серверах"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Бяспечна працуе на серверах ${ BRAND_NAME }"
+      ],
+      "Securely run on device": [
+        "Бяспечна працуе на прыладзе"
       ]
     },
     "Assistant toggle": {
@@ -3421,6 +3439,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2ФА дадае дадатковы слой бяспекі, каб прадухіліць неаўтарызаваны доступ."
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Аўтаматычнае выдаленне спама і паведамленняў, якія былі перамешчаны ў сметніцу, а таксама разблакіроўка яшчэ большай колькасці прэміяльных функцый пасля паляпшэння тарыфнага плана."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
       ],
@@ -3435,6 +3456,9 @@
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ MAX_IMPORT_CONTACTS_STRING } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя часткі, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Палепшыце да ${ BRAND_NAME } Duo, каб атрымаць безлімітны доступ да памочніка ў напісанні і іншыя функцыі."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Атрымайце неабмежаваную колькасць псеўданімаў і сховішча аб'ёмам у 500 ГБ з тарыфным планам ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3460,6 +3484,9 @@
       "No labels": [
         "Няма метак"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Ашчаджайце час, адпраўляючы электронныя лісты ўсім адначасова з групамі кантактаў. Разблакіруйце гэту і іншыя прэміяльныя функцыі пасля паляпшэння."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
       ],
@@ -3468,6 +3495,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Задаць спосаб аднаўлення, каб прадухіліць страту доступу да вашага ўліковага запісу."
+      ],
+      "Starting from ${ price }": [
+        "Пачатковы кошт ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Дадайце памочніка ў апісанні ў сваю падпіску, каб працягнуць карыстацца ім."
@@ -3483,6 +3513,12 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Уключыце абарону ад праграм сачэння электроннай пошты, каб прадухіліць рэкламу і іншыя спосабы вызначэння вашага месцазнаходжання і актыўнасці ў інтэрнэце."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Разблакіруйце магчымасць ствараць карыстальніцкі расклад адпраўкі паведамленняў і іншыя прэміяльныя функцыі пасля паляпшэння свайго тарыфнага плана."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Разблакіруйце карыстальніцкі час адкладання і іншыя прэміяльныя функцыі пасля паляпшэння свайго тарыфнага плана."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Палепшыце бягучы тарыфны план і атрымайце кароткі адрас электроннай пошты разам з іншымі прэміяльнымі функцыямі."
@@ -5614,6 +5650,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe дапаможа вам хутка і лёгка ствараць лепшыя электронныя лісты."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
       ],
@@ -5801,7 +5840,7 @@
         "Знойдзены ${ numOccurrences } паўтарэнні ў змесціве пошты"
       ],
       "${ PASS_APP_NAME } provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "${ PASS_APP_NAME } забяспечвае просты спосаб для стварэння запісаў уваходу на старонніх сайтах, якім вы не надта давяраеце і не хочаце раскрываць свой сапраўдны адрас электроннай пошты."
+        "${ PASS_APP_NAME } забяспечвае просты спосаб стварэння запісаў уваходу на старонніх сайтах, якім вы не надта давяраеце і не хочаце раскрываць свой сапраўдны адрас электроннай пошты."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
@@ -6418,6 +6457,12 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Паспрабуйце пашукаць па гэтым ключавым слове ў змесціве вашых лістоў, каб атрымаць больш вынікаў пошуку."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дня",
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дзён",
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дзён",
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дзён"
+      ],
       "From": [
         "Ад"
       ],
@@ -6567,6 +6612,9 @@
       ],
       "Learn more": [
         "Даведацца больш"
+      ],
+      "Learn more about the writing assistant": [
+        "Даведацца больш аб памочніку ў напісанні"
       ],
       "Left to Right": [
         "Злева направа"
@@ -7053,6 +7101,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Колькасць спампоўванняў уключае як фактычныя спампоўванні, так і папярэдні прагляд файлаў."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Здаецца, што адрас электроннай пошты ${ boldNoReplyEmail } не прызначаны для атрымання адказаў. Вы сапраўды хочаце адправіць паведамленне?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Зашыфраваныя даныя крыху большыя па прычыне службовых даных шыфравання і подпісаў, якія забяспечваюць бяспеку вашых даных."
@@ -7698,6 +7749,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ],
+      "Your private writing assistant": [
+        "Ваш прыватны памочнік у напісанні"
       ]
     },
     "info": {
@@ -9190,6 +9244,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Панізіць да ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Пачніце з коштам у памеры ${ price }"
+      ],
       "Upgrade now": [
         "Палепшыць зараз"
       ]
@@ -9218,6 +9275,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } і ${ PROTON_SENTINEL_NAME }"
       ],
@@ -9344,8 +9404,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - для ўсіх сэрвісаў ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 ТБ бяспечнага сховішча"
+      ],
       "1 user": [
         "1 карыстальнік"
+      ],
+      "10 email addresses/aliases": [
+        "10 адрасоў электроннай пошты/псеўданімаў"
+      ],
+      "10-year file version history": [
+        "Гісторыя версій файлаў за 10 гадоў"
+      ],
+      "15 GB storage": [
+        "15 ГБ сховішча"
       ],
       "24/7 account management support": [
         "Падтрымка 24/7 па кіраванні ўліковым запісам"
@@ -9361,6 +9433,9 @@
       ],
       "Administration Panel": [
         "Панэль адміністратара"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Усе прадукты і функцыі ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9443,6 +9518,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Падтрымка паштовых кліентаў (праз IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Групы электроннай пошты"
+      ],
       "Enables HIPAA compliance": [
         "Забеспячэнне адпаведнасці HIPAA"
       ],
@@ -9469,6 +9547,9 @@
       ],
       "GDPR data processing agreement": [
         "Пагадненне аб апрацоўцы даных GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Генерыраваць лісты з запытам"
       ],
       "Group management (coming soon)": [
         "Кіраванне групай (неўзабаве)"
@@ -9527,11 +9608,17 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
+      "Proofread and refine your emails": [
+        "Правярайце і ўдакладняйце свае электронныя лісты"
+      ],
       "Protect ${ n } device at a time": [
         "Абараніць ${ n } прыладу адначасова",
         "Абараніць ${ n } прылады адначасова",
         "Абараніць ${ n } прылад адначасова",
         "Абараніць ${ n } прылады адначасова"
+      ],
+      "Quickly craft replies": [
+        "Хутка стварайце адказы"
       ],
       "Recover previous file versions": [
         "Аднавіць папярэднія версіі файла"
@@ -9586,6 +9673,9 @@
       ],
       "Strict no-logs policy": [
         "Палітыка строгай адсутнасці журналаў актыўнасці"
+      ],
+      "Support for up to 2 users": [
+        "Падтрымка да 2 карыстальнікаў"
       ],
       "Sync and backup all your files across devices": [
         "Сінхранізацыя і рэзервовае капіяванне ўсіх вашых файлаў паміж прыладамі"
@@ -9670,6 +9760,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 карыстальніцкі дамен электроннай пошты"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain2 } для падпіскі на навіны"
       ],
@@ -9771,6 +9864,11 @@
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Атрымайце Mail Plus за ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Выдаліць уліковы запіс?"
@@ -9848,6 +9946,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Адпраўка паведамлення кожнаму ў групе з адзінага адраса электроннай пошты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантуе, што вы атрымаеце ўсе лісты, якія адпраўлены на ваш дамен, нават калі адрас электроннай пошты не існуе, больш не існуе або ў напісанні адраса зроблена памылка"
@@ -10703,6 +10804,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Не ўдалося выканаць паўторную спробу шыфравання запрашэння. Паспрабуйце яшчэ раз."
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Агляд бяспекі вашага ўліковага запісу"
       ]
     },
     "Search - no results": {
@@ -12162,9 +12268,6 @@
       "Alias saved and copied": [
         "Псеўданімы захаваны і скапіяваны"
       ],
-      "Bug reported": [
-        "Справаздача аб памылцы адпраўлена"
-      ],
       "Canceling import": [
         "Скасаванне імпартавання"
       ],
@@ -12188,6 +12291,9 @@
       ],
       "Contacts deleted": [
         "Кантакты выдалены"
+      ],
+      "Content copied to clipboard": [
+        "Змесціва скапіявана ў буфер абмену"
       ],
       "Conversation added to ${ labelName }.": [
         "Размова дададзена ў ${ labelName }."
@@ -12708,6 +12814,9 @@
       "Coupon": [
         "Купон"
       ],
+      "Craft better emails": [
+        "Стварайце лепшыя электронныя лісты"
+      ],
       "Create contact": [
         "Стварэнне кантакту"
       ],
@@ -13055,6 +13164,9 @@
       ],
       "No trackers found": [
         "Праграмы сачэння не знойдзены"
+      ],
+      "No-reply address detected": [
+        "Выяўлены адрас без адказу"
       ],
       "Notes": [
         "Нататкі"

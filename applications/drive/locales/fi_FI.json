@@ -570,6 +570,9 @@
       "Open navigation": [
         "Avaa navigaatio"
       ],
+      "Open scan and download info": [
+        "Avaa skannaus ja lataa tiedot"
+      ],
       "Pause all": [
         "Keskeytä kaikki"
       ],
@@ -704,6 +707,9 @@
       ],
       "Save changes": [
         "Tallenna muutokset"
+      ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "Tallenna ${ DRIVE_SHORT_APP_NAME }en"
       ],
       "Scan & Download": [
         "Skannaa ja lataa"
@@ -2296,6 +2302,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja yhdistetään... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Säästä aikaa lähettämällä sähköposteja kaikille samanaikaisesti yhteystietoryhmien avulla. Avaa tämä ja muita premium-ominaisuuksia päivittämällä tilauksesi."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Aseta tiedoillesi palautustapa, jottet menetä niitä."
       ],
@@ -2465,7 +2474,7 @@
         "Tämä tapahtuma päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
       ],
       "This event was updated.": [
-        "Tämä tapahtuma päivitettiin."
+        "Tapahtumaa muokattiin."
       ],
       "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
         "Tämä tapahtuma päivitettiin. Muutokset:\n\n${ updateEventDetailsText }"
@@ -4434,6 +4443,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Parasta lopputulosta varten, vältä suoratoistoa ja keskusmuistia kuormittavia toimintoja tai jaa tallennuksesi pienempiin eriin."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "5 Gt ilmaista salattua tallennustilaa aluksi"
+      ],
       "from the version history?": [
         "versiohistoriasta?"
       ],
@@ -4548,6 +4560,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Vahvista vain valintasi niin me teemme loput."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Suojaa tiedostosi päästä päähän -salauksella."
       ],
       "Key fingerprint": [
         "Avaimen sormenjälki"
@@ -4884,6 +4899,9 @@
       ],
       "Retry now": [
         "Yritä uudelleen nyt"
+      ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "Tallennettu ${ DRIVE_SHORT_APP_NAME }en"
       ],
       "Scan issue": [
         "Skannausongelma"
@@ -5846,6 +5864,9 @@
       "Location": [
         "Sijainti"
       ],
+      "Log in or sign up ": [
+        "Kirjaudu tai rekisteröidy "
+      ],
       "Mail Server (IMAP)": [
         "Sähköpostipalvelin (IMAP)"
       ],
@@ -6571,6 +6592,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Alenna tilaukseen ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Aloita hintaan ${ price }"
+      ],
       "Upgrade now": [
         "Päivitä tilaus nyt"
       ]
@@ -6599,6 +6623,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ja ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6691,8 +6718,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Kaikille ${ BRAND_NAME }-palveluille"
       ],
+      "1 TB secure storage": [
+        "1 Tt turvallista tallennustilaa"
+      ],
       "1 user": [
         "1 käyttäjä"
+      ],
+      "10 email addresses/aliases": [
+        "10 sähköpostiosoitetta/aliasta"
+      ],
+      "10-year file version history": [
+        "10 vuoden tiedostojen versiohistoria"
+      ],
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
       ],
       "24/7 account management support": [
         "24/7 tilin hallinnan tuki"
@@ -6708,6 +6747,9 @@
       ],
       "Administration Panel": [
         "Hallintapaneeli"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Kaikki ${ BRAND_NAME } tuotteet ja ominaisuudet"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6790,6 +6832,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Sähköpostisovellusten tuki (IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Sähköpostiryhmät"
+      ],
       "Enables HIPAA compliance": [
         "Mahdollistaa HIPAA-vaatimustenmukaisuuden"
       ],
@@ -6816,6 +6861,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR-tietojenkäsittelysopimus"
+      ],
+      "Generate emails with a prompt": [
+        "Luo sähköposteja kehotteella"
       ],
       "Group management (coming soon)": [
         "Ryhmähallinta (tulossa pian)"
@@ -6872,9 +6920,15 @@
       "Priority support & live chat": [
         "Ensisijainen tuki ja live-chat"
       ],
+      "Proofread and refine your emails": [
+        "Oikolue ja hiovi sähköpostisi"
+      ],
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
+      ],
+      "Quickly craft replies": [
+        "Laadi nopeasti vastauksia"
       ],
       "Recover previous file versions": [
         "Palauta aiempia tiedostoversioita"
@@ -6929,6 +6983,9 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
+      ],
+      "Support for up to 2 users": [
+        "Tuki jopa 2 käyttäjälle"
       ],
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
@@ -7009,6 +7066,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 oma sähköpostiverkkotunnus"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain2 } uutiskirjeille"
       ],
@@ -7110,6 +7170,11 @@
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Hanki Mail Plus hintaan ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -7185,6 +7250,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Jaa kalentereita helposti perheenjäsenille, kavereille tai kollegoille"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Lähetä sähköpostia kaikille ryhmän jäsenille yhdellä sähköpostiosoitteella"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Varmistaa, että saat kaikki verkkotunnukseesi lähetetyt viestit, vaikka sähköpostiosoitetta ei olisi olemassa, se olisi poistettu tai siinä olisi kirjoitusvirhe."
@@ -7935,6 +8003,9 @@
       "E.g., ": [
         "Esim. "
       ],
+      "Email": [
+        "Sähköposti"
+      ],
       "Enter a new file name": [
         "Syötä tiedoston uusi nimi"
       ],
@@ -8106,6 +8177,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Virallinen viesti ${ BRAND_NAME }ilta"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Tarkista tilisi turvallisuus"
       ]
     },
     "Security Center": {
@@ -9197,9 +9273,6 @@
       "Alias saved and copied": [
         "Alias tallennettiin ja kopioitiin"
       ],
-      "Bug reported": [
-        "Vikailmoitus lähetettiin"
-      ],
       "Canceling import": [
         "Perutaan tuontia"
       ],
@@ -9844,6 +9917,9 @@
       "Restore your files": [
         "Palauta tiedostoja"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Tallenna myöhemmäksi ${ DRIVE_APP_NAME }en"
+      ],
       "Search results": [
         "Hakutulokset"
       ],
@@ -10033,6 +10109,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Lisää tämä jaettu tiedosto ${ DRIVE_APP_NAME }esi myöhempää käyttöä varten."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automaattiasetuksella viestit lähetetään tälle käyttäjälle käyttäen kirjoituksessa käytettyä muotoilua. Käytettäessä pelkkä teksti -asetusta poistetaan viestistä lähetettäessä mahdolliset muotoilut."
       ],
