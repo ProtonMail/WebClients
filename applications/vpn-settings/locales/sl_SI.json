@@ -359,7 +359,7 @@
         "Nalaganje preverjanja"
       ],
       "Make admin": [
-        "Ustvari administratorja"
+        "Naredite za skrbnika"
       ],
       "Mark as default": [
         "Označi kot privzeto"
@@ -3640,7 +3640,7 @@
         "Prilagodite prikaz aplikacij ${ BRAND_NAME }."
       ],
       "dedicated servers": [
-        "namenski strežniki"
+        "namenske strežnike"
       ],
       "Dedicated servers": [
         "Namenski strežniki"
@@ -3814,7 +3814,7 @@
         "Brezplačno za vedno."
       ],
       "Gateways": [
-        "Prehod"
+        "prehode"
       ],
       "Get ${ upsellPlanName }": [
         "Pridobi ${ upsellPlanName }."
@@ -4258,7 +4258,7 @@
         "​Enotna prijava je odstranjena"
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
-        "Nekatere od vaših razpoložljivih strežnikov je mogoče uporabljati samo v določenih državah zaradi nedavnih odstranitev"
+        "Nekatere od vaših razpoložljivih strežnikov je mogoče uporabljati samo v določenih državah zaradi nedavnih odstranitev."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Določite domeno, ki ima dovoljenje za preverjanje pristnosti s SAML SSO."
@@ -4705,7 +4705,7 @@
         "Zdaj se lahko vrnete v aplikacijo in nadaljujete"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Naenkrat je lahko odprt samo en primerek klepeta. Pred začetkom novega pogovora zaprite prejšnje pogovore."
+        "Naenkrat je lahko odprt samo eno okno klepeta. Pred začetkom novega pogovora zaprite prejšnje pogovore."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Uporabite lahko naslednje poverilnice, da se povežete v strežnik ${ VPN_APP_NAME } z uporabo zunanje odprtokodne VPN aplikacije, kot je Tunnelblick za macOS ali OpenVPN za GNU/Linux."
@@ -5291,7 +5291,7 @@
         "Obnovitvena fraza"
       ],
       "Reply (ACS) URL": [
-        "URL za odgovor (ACS)."
+        "URL za odgovor (ACS)"
       ],
       "Require 2FA for administrators": [
         "Za skrbnike zahteva dvojno preverjanje pristnosti."
@@ -5537,7 +5537,7 @@
         "Nadgradite trenutni paket"
       ],
       "View guide": [
-        "Ogled vodnika."
+        "Ogled vodnika"
       ],
       "visit our blog": [
         "obiščite naš blog"
@@ -5661,7 +5661,7 @@
         "Aktivirajte uporabnika"
       ],
       "Add address": [
-        "Dodajte naslov"
+        "Dodaj naslov"
       ],
       "Change password": [
         "Spremeni geslo"
@@ -5700,7 +5700,7 @@
         "${ appName }: Prijava"
       ],
       "${ appName }: Sign-up": [
-        "${ appName }: Prijava"
+        "${ appName }: Registracija"
       ],
       "Create a new ${ appName } account": [
         "Ustvarite nov račun ${ appName }."
@@ -5709,7 +5709,7 @@
         "Poiščite uporabniško ime za svoj račun ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Ste pozabili geslo za račun ${ BRAND_NAME }? Ponastavite ga tukaj z obnovitveno kodo, e-pošto ali SMS-om in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
+        "Ste pozabili geslo za račun ${ BRAND_NAME }? Ponastavite ga tukaj z obnovitveno kodo, e-pošto ali SMS in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Ste pozabili uporabniško ime za račun ${ BRAND_NAME }? Poiščite ga z obnovitvenim e-poštnim naslovom ali telefonsko številko in znova pridobite dostop do svojih ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } in drugih storitev."
@@ -6651,7 +6651,7 @@
         "Obvezno 2FA"
       ],
       "Support for ${ n } custom email domains": [
-        "Podpora za ${ n } e-poštni domeni po meri"
+        "Podpora za ${ n } e-poštnih domen po meri"
       ]
     },
     "Notification": {
@@ -6677,7 +6677,7 @@
         "Ključ je kopiran v odložišče"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
-        "OdpriteVPN/IKEv2 ponovno ustvarjene poverilnice"
+        "Poverilnice OpenVPN/IKEv2 so bile ponovno ustvarjene."
       ],
       "Reminder has been sent": [
         "Opomnik je bil poslan."
@@ -8595,7 +8595,7 @@
         "15 GB prostora za shranjevanje"
       ],
       "and 15 more premium features": [
-        "in še 15 vrhunskih funkcij"
+        "in še 15 premijskih funkcij"
       ],
       "Automatic email forwarding ${ strongText }": [
         "Samodejno posredovanje e-pošte ${ strongText }"
@@ -8679,9 +8679,6 @@
       ],
       "Administrator privileges restored": [
         "Skrbniške pravice so obnovljene"
-      ],
-      "Bug reported": [
-        "Napaka je prijavljena"
       ],
       "Catch-all address updated": [
         "Posodobljen splošen naslov."
@@ -8817,7 +8814,7 @@
         "Certifikat je podaljšan do ${ formattedExpirationDate }."
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "Konfiguracija \"${ name }\" je bila ustvarjena, upoštevajte, da zasebni ključ ni shranjen in ne bo več prikazan, kopirajte ali prenesite to konfiguracijo."
+        "Konfiguracija \"${ name }\" je bila ustvarjena. Upoštevajte, da zasebni ključ ni shranjen in ne bo več prikazan, zato rajši kopirajte ali prenesite to konfiguracijo."
       ],
       "Creating config file for ${ serverName }": [
         "Ustvarjanje konfiguracijske datoteke za ${ serverName }"
@@ -8983,7 +8980,7 @@
         "Dodaj vrsto PayPal plačila"
       ],
       "Add servers": [
-        "Dodajte strežnike"
+        "Dodaj strežnike"
       ],
       "Add to allow list": [
         "Dodaj v seznam dovoljenih"
@@ -8998,7 +8995,7 @@
         "Dodaj uporabniške račune"
       ],
       "Add users": [
-        "Dodajte uporabnike"
+        "Dodaj uporabnike"
       ],
       "Allocate storage": [
         "Dodeljevanje shrambe"
@@ -9205,7 +9202,7 @@
         "Uredi strežnike"
       ],
       "Edit the list of servers of the gateway": [
-        "Uredite seznam prehodnih strežnikov"
+        "Uredi seznam prehodnih strežnikov"
       ],
       "Edit user": [
         "Urejanje uporabnika"
@@ -9214,7 +9211,7 @@
         "Uredi uporabnike"
       ],
       "Edit who can access the gateway": [
-        "Uredite, kdo lahko dostopa do prehoda"
+        "Uredi dostop do prehoda"
       ],
       "Email": [
         "E-pošta"
@@ -9259,7 +9256,7 @@
         "Prehod"
       ],
       "Gateways": [
-        "Prehod"
+        "Prehodi"
       ],
       "Generate missing keys": [
         "Ustvarite manjkajoče ključe"
@@ -9355,7 +9352,7 @@
         "Telefon"
       ],
       "Plans": [
-        "Naročnine"
+        "Paketi"
       ],
       "Preview": [
         "Predogled"
@@ -9388,7 +9385,7 @@
         "Odstranite uporabnika?"
       ],
       "Rename the gateway": [
-        "Preimenujte prehod"
+        "Preimenuj prehod"
       ],
       "Report a problem": [
         "Poročanje o težavi"
@@ -9439,7 +9436,7 @@
         "Nastavitve"
       ],
       "Setup dedicated servers by upgrading to Business": [
-        "Nastavite namenske strežnike z nadgradnjo na Business"
+        "Nastavi namenske strežnike z nadgradnjo na Business"
       ],
       "Sign in": [
         "Prijava"

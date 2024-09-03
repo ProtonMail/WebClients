@@ -570,6 +570,9 @@
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
+      "Open scan and download info": [
+        "სკანირების გახსნა და ინფორმაციის გადმოწერა"
+      ],
       "Pause all": [
         "ყველას შეჩერება"
       ],
@@ -704,6 +707,9 @@
       ],
       "Save changes": [
         "ცვლილებების შენახვა"
+      ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }-ზე შენახვა"
       ],
       "Scan & Download": [
         "სკანირება & გადმოწერა"
@@ -2295,6 +2301,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "მიმდინარეობს კონტაქტების შერწყმა... ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, ეს ფანჯარა შეგეძლებათ, დახუროთ."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "დაზოგეთ დრო ელფოსტის კონტაქტების ჯგუფისთვის გაგზავნით. განბლოკეთ ეს და სხვა ფასიანი ფუნქციები, როცა სატარიფო გეგმას აწევთ."
       ],
       "Set a data recovery method to prevent data loss.": [
         "დააყენეთ მონაცემების აღდგენის მეთოდი, მისი დაკარგვის თავიდან ასაცილებლად."
@@ -4434,6 +4443,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "საუკეთესო შედეგისთვის, მოერიდეთ სტრიმინგს და მეხსიერების ინტენსიურ აქტივობებს, ან დაყავით თქვენი ატვირთვა მცირე ნაკრებებად."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "უფასო 5გბ დაშიფრული საცავი დასაწყისისთვის"
+      ],
       "from the version history?": [
         "ვერსიის ისტორიიდან?"
       ],
@@ -4548,6 +4560,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "დაადასტურეთ თქვენი არჩევანი. დანარჩენს ჩვენ გავაკეთებთ."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "იქონიეთ თქვენი ფაილები დაცულად, გამჭოლი დაშიფვრით."
       ],
       "Key fingerprint": [
         "გასაღებს ანაბეჭდი"
@@ -4884,6 +4899,9 @@
       ],
       "Retry now": [
         "თავიდან ცდა ახლავე"
+      ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "შენახულია ${ DRIVE_SHORT_APP_NAME }-ში"
       ],
       "Scan issue": [
         "სკანირების შეცდომა"
@@ -5846,6 +5864,9 @@
       "Location": [
         "მდებარეობა"
       ],
+      "Log in or sign up ": [
+        "შედით, ან დარეგისტრირდით "
+      ],
       "Mail Server (IMAP)": [
         "მეილსერვერი (IMAP)"
       ],
@@ -6571,6 +6592,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
       ],
+      "Get started for ${ price }": [
+        "დაწყება ${ price }-დან"
+      ],
       "Upgrade now": [
         "ახლა გაუმჯობესება"
       ]
@@ -6599,6 +6623,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } და ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6691,8 +6718,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - ყველა ${ BRAND_NAME } სერვისისთვის"
       ],
+      "1 TB secure storage": [
+        "1 ტბ დაცული საცავი"
+      ],
       "1 user": [
         "1 მომხმარებელი"
+      ],
+      "10 email addresses/aliases": [
+        "10 ელ ფოსტა/ფსევდონიმი"
+      ],
+      "10-year file version history": [
+        "10-წლიანი ფაილის ვერსიის ისტორია"
+      ],
+      "15 GB storage": [
+        "15 გბ საცავი"
       ],
       "24/7 account management support": [
         "24/7 ანგარიშის მართვის მხარდაჭერა."
@@ -6708,6 +6747,9 @@
       ],
       "Administration Panel": [
         "ადმინისტრატორის პანელი"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "${ BRAND_NAME }-ის ყველა პროდუქტი და ფუნქცია"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "ყველა ${ BRAND_NAME }-ის სერვისი (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6790,6 +6832,9 @@
       "Email client support (via IMAP/SMTP)": [
         "ელფოსტის კლიენტის მხარდაჭერა (IMAP/SMTP-ით)"
       ],
+      "Email groups": [
+        "ელფოსტის ჯგუფები"
+      ],
       "Enables HIPAA compliance": [
         "ჩართავს HIPAA-სთან თავსებადობას"
       ],
@@ -6816,6 +6861,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR მონაცემების დამუშავების შეთანხმება"
+      ],
+      "Generate emails with a prompt": [
+        "ელფოსტების გენერაცია მოთხოვნით"
       ],
       "Group management (coming soon)": [
         "ჯგუფების მართვა (მალე)"
@@ -6872,9 +6920,15 @@
       "Priority support & live chat": [
         "პრიორიტეტული დახმარება და ცოცხალი ჩატი"
       ],
+      "Proofread and refine your emails": [
+        "თქვენი ელფოსტების კორექტურა და ოპტიმიზაცია"
+      ],
       "Protect ${ n } device at a time": [
         "დაიცავით ${ n } მოწყობილობა ერთდროულად",
         "დაიცავით ${ n } მოწყობილობა ერთდროულად"
+      ],
+      "Quickly craft replies": [
+        "უცებ შექმენით პასუხები"
       ],
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
@@ -6929,6 +6983,9 @@
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
+      ],
+      "Support for up to 2 users": [
+        "მხარდაჭერა 2 მომხმარებლამდე"
       ],
       "Sync and backup all your files across devices": [
         "დაასინქრონეთ და დაამარქაფეთ ყველა თქვენი ფაილი ყველა თქვენს მოწყობილობაზე"
@@ -7009,6 +7066,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 ელფოსტის ხელით მითითებული დომენი"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain2 } ახალი ამბების გამოწერებისთვის"
       ],
@@ -7110,6 +7170,11 @@
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "მიიღეთ Mail Plus ფასით ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "წავშალო ანგარიში?"
@@ -7185,6 +7250,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "გაუზიარეთ კალენდარი თქვენს ოჯახს, მეგობრებს და კოლეგებს"
+      ],
+      "Email everyone in a group with a single email address": [
+        "მიწერეთ ყველას ჯგუფში ერთი ელფოსტის მისამართით"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "იძლევა გარანტიას, რომ მიიღებთ ყველა ელფოსტას, რომელიც თქვენს დომენზე იქნება გამოგზავნილი მაშინაც კი, თუ მომხმარებელი არ არსებობს, აღარ არსებობს ან აკრეფის შეცდომაა"
@@ -7935,6 +8003,9 @@
       "E.g., ": [
         "მაგ. "
       ],
+      "Email": [
+        "ელფოსტა"
+      ],
       "Enter a new file name": [
         "შეიყვანეთ ახალი ფაილის სახელი"
       ],
@@ -8106,6 +8177,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "ოფიციალური ელფოსტა ${ BRAND_NAME }-სგან"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "თქვენი ანგარიშის უსაფრთხოების გადახედვა"
       ]
     },
     "Security Center": {
@@ -9197,9 +9273,6 @@
       "Alias saved and copied": [
         "ფსევდონიმი შენახული და კოპირებულია"
       ],
-      "Bug reported": [
-        "შეცდომა გადაგზავნილია"
-      ],
       "Canceling import": [
         "შემოტანის გაუქმება"
       ],
@@ -9844,6 +9917,9 @@
       "Restore your files": [
         "თქვენი ფაილების აღდგენა"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "შეინახეთ ის მოგვიანებით სამუშაოდ ${ DRIVE_APP_NAME }-ზე"
+      ],
       "Search results": [
         "ძებნის შედეგები"
       ],
@@ -10033,6 +10109,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "დაამატეთ ეს გაზიარებული ფაილი თქვენს ${ DRIVE_APP_NAME }-ზე მოგვიანებით იოლი წვდომისთვის."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "ავტომატური ნიშნავს ფორმატს, რომლითაც ელფოსტა ამ მომხმარებელთან იგზავნება. უბრალო ტექსტი ნიშნავს, რომ შეტყობინების ტექსტი გაგზავნის წინ მაინც გარდაიქმება უბრალო ტექსტად."
       ],

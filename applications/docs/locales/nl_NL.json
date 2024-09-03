@@ -5416,6 +5416,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Begin voor ${ price }"
+      ],
       "Upgrade now": [
         "Upgrade nu"
       ]
@@ -5444,6 +5447,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
       ],
@@ -5491,6 +5497,14 @@
         "${ n } bericht per dag",
         "${ n } berichten per dag"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } heeft een ${ PASS_SHORT_APP_NAME } kluis gedeeld per gebruiker",
+        "${ n } heeft ${ PASS_SHORT_APP_NAME } kluizen gedeeld per gebruiker"
+      ],
+      "${ n } user": [
+        "${ n } gebruiker",
+        "Tot ${ n } gebruikers"
+      ],
       "${ n } vault": [
         "${ n } kluis",
         "${ n } kluizen"
@@ -5498,6 +5512,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
+      ],
+      "${ options }-day file version history": [
+        "Bestandsversiegeschiedenis van ${ options } dagen",
+        "Bestandsversiegeschiedenis van ${ options } dagen"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
@@ -5518,8 +5536,14 @@
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
+      "1 TB secure storage": [
+        "1 TB veilige opslag"
+      ],
       "1 user": [
         "1 gebruiker"
+      ],
+      "15 GB storage": [
+        "15 GB opslagruimte"
       ],
       "24/7 account management support": [
         "24/7 ondersteuning voor accountbeheer"
@@ -5535,6 +5559,9 @@
       ],
       "Administration Panel": [
         "Beheerderspaneel"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } producten en functies"
       ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
@@ -5635,6 +5662,9 @@
       "GDPR data processing agreement": [
         "AVG-gegevensverwerkingsovereenkomst"
       ],
+      "Generate emails with a prompt": [
+        "Genereer e-mails met een prompt"
+      ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
@@ -5687,9 +5717,15 @@
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
       ],
+      "Proofread and refine your emails": [
+        "Controleer en verfijn uw e-mails"
+      ],
       "Protect ${ n } device at a time": [
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
+      ],
+      "Quickly craft replies": [
+        "Snel antwoorden opstellen"
       ],
       "Recover previous file versions": [
         "Herstel vorige bestandsversies"
@@ -5741,6 +5777,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
+      ],
+      "Support for up to 2 users": [
+        "Ondersteuning voor maximaal 2 gebruikers"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -7389,9 +7428,6 @@
       ],
       "Alias saved and copied": [
         "Alias opgeslagen en gekopieerd"
-      ],
-      "Bug reported": [
-        "Bug gemeld"
       ],
       "Canceling import": [
         "Importeren annuleren"

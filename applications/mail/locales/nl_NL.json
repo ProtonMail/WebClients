@@ -93,6 +93,9 @@
       "Add to group": [
         "Aan groep toevoegen"
       ],
+      "Adds it above your existing message": [
+        "Voegt het boven uw bestaande bericht toe"
+      ],
       "Align center": [
         "Centreren"
       ],
@@ -500,6 +503,9 @@
       ],
       "Generate text": [
         "Genereer tekst"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Neem ${ BRAND_NAME } Duo"
       ],
       "Get in touch": [
         "Neem contact op"
@@ -1532,17 +1538,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Gegevens blijven op apparaat om uw privacy te beschermen. Vereist een download en compatibele hardware."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Gegevens blijven op uw apparaat, maar vereisen een eenmalige download en compatibele hardware"
       ],
       "Fast and secure. No logs are kept.": [
         "Snel en veilig. Er worden geen logboeken opgeslagen."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Geen logboeken worden bewaard om uw privacy te beschermen. Snellere verwerking."
+      ],
       "Run on device": [
         "Uitgevoerd op het apparaat zelf"
       ],
       "Run on servers": [
         "Uitvoeren op servers"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Veilig draaien op ${ BRAND_NAME } servers"
+      ],
+      "Securely run on device": [
+        "Veilig draaien op apparaat"
       ]
     },
     "Assistant toggle": {
@@ -3397,6 +3415,9 @@
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Voor importeren via CSV- en VCF-bestand, zorg ervoor dat het bestand niet ${ MAX_IMPORT_FILE_SIZE_STRING } of ${ MAX_IMPORT_CONTACTS_STRING } contacten overschrijdt. Als uw bestand groter is, splits het dan in kleinere bestanden. ${ learnMoreLink }."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Voor onbeperkte toegang tot de schrijfhulp en meer, upgrade naar ${ BRAND_NAME } Duo."
+      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Krijg onbeperkte aliassen en 500 GB opslagruimte met ${ PLAN_NAMES[PLANS.BUNDLE] }."
       ],
@@ -3427,6 +3448,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Stel een herstelmethode in om te voorkomen dat u de toegang tot uw account verliest."
+      ],
+      "Starting from ${ price }": [
+        "Beginnen vanaf ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Voeg de schrijfassistent toe aan uw abonnement om deze te blijven gebruiken."
@@ -5498,6 +5522,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe helpt u om betere e-mails snel en moeiteloos te maken."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Schrijfassistent"
       ],
@@ -6187,6 +6214,10 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Probeer voor meer zoekresultaten op dit trefwoord te zoeken in de inhoud van uw e-mailberichten."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Gratis te proberen voor ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
+        "Gratis te proberen voor ${ ASSISTANT_TRIAL_TIME_DAYS } dagen"
+      ],
       "From": [
         "Afzender"
       ],
@@ -6332,6 +6363,9 @@
       ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "Learn more about the writing assistant": [
+        "Leer meer over de schrijfhulp"
       ],
       "Left to Right": [
         "Van links naar rechts"
@@ -7417,6 +7451,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your private writing assistant": [
+        "Uw privé schrijfhulp"
       ]
     },
     "info": {
@@ -8881,6 +8918,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Downgrade naar ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Begin voor ${ price }"
+      ],
       "Upgrade now": [
         "Upgrade nu"
       ]
@@ -8909,6 +8949,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
       ],
@@ -8956,6 +8999,14 @@
         "${ n } bericht per dag",
         "${ n } berichten per dag"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } heeft een ${ PASS_SHORT_APP_NAME } kluis gedeeld per gebruiker",
+        "${ n } heeft ${ PASS_SHORT_APP_NAME } kluizen gedeeld per gebruiker"
+      ],
+      "${ n } user": [
+        "${ n } gebruiker",
+        "Tot ${ n } gebruikers"
+      ],
       "${ n } vault": [
         "${ n } kluis",
         "${ n } kluizen"
@@ -8963,6 +9014,10 @@
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
+      ],
+      "${ options }-day file version history": [
+        "Bestandsversiegeschiedenis van ${ options } dagen",
+        "Bestandsversiegeschiedenis van ${ options } dagen"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
@@ -8983,8 +9038,14 @@
       "${ size } storage": [
         "${ size } opslagruimte"
       ],
+      "1 TB secure storage": [
+        "1 TB veilige opslag"
+      ],
       "1 user": [
         "1 gebruiker"
+      ],
+      "15 GB storage": [
+        "15 GB opslagruimte"
       ],
       "24/7 account management support": [
         "24/7 ondersteuning voor accountbeheer"
@@ -9000,6 +9061,9 @@
       ],
       "Administration Panel": [
         "Beheerderspaneel"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } producten en functies"
       ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
@@ -9100,6 +9164,9 @@
       "GDPR data processing agreement": [
         "AVG-gegevensverwerkingsovereenkomst"
       ],
+      "Generate emails with a prompt": [
+        "Genereer e-mails met een prompt"
+      ],
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
@@ -9152,9 +9219,15 @@
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
       ],
+      "Proofread and refine your emails": [
+        "Controleer en verfijn uw e-mails"
+      ],
       "Protect ${ n } device at a time": [
         "Bescherm ${ n } apparaat tegelijkertijd",
         "Bescherm ${ n } apparaten tegelijkertijd"
+      ],
+      "Quickly craft replies": [
+        "Snel antwoorden opstellen"
       ],
       "Recover previous file versions": [
         "Herstel vorige bestandsversies"
@@ -9206,6 +9279,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
+      ],
+      "Support for up to 2 users": [
+        "Ondersteuning voor maximaal 2 gebruikers"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -11633,9 +11709,6 @@
       "Alias saved and copied": [
         "Alias opgeslagen en gekopieerd"
       ],
-      "Bug reported": [
-        "Bug gemeld"
-      ],
       "Canceling import": [
         "Importeren annuleren"
       ],
@@ -12152,6 +12225,9 @@
       ],
       "Coupon": [
         "Kortingscode"
+      ],
+      "Craft better emails": [
+        "Maak betere e-mails"
       ],
       "Create contact": [
         "Contact aanmaken"

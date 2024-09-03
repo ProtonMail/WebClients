@@ -113,7 +113,7 @@
         "Copiere și închidere"
       ],
       "Copy link": [
-        "Copiere legătură"
+        "Copiere legătură web"
       ],
       "Copy to clipboard": [
         "Copiere în memorie"
@@ -1457,7 +1457,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its history and all secure links.": [
-        "Mutarea unui articol într-un alt seif va șterge istoricul acestuia și toate legăturile securizate."
+        "Mutarea unui articol într-un alt seif va șterge istoricul acestuia și toate legăturile web securizate."
       ],
       "Moving an item to another vault will erase its history.": [
         "Mutarea unui articol în alt seif îi va șterge istoricul."
@@ -1466,7 +1466,7 @@
         "Se mută articolele."
       ],
       "Moving items to another vault will erase their history and all secure links.": [
-        "Mutarea articolelor într-un alt seif le va șterge istoricul și toate legăturile securizate."
+        "Mutarea articolelor într-un alt seif le va șterge istoricul și toate legăturile web securizate."
       ],
       "Moving items to another vault will erase their history.": [
         "Mutarea articolelor în alt seif le va șterge istoricul."
@@ -2163,6 +2163,12 @@
       "https://example.com": [
         "https://example.com"
       ],
+      "ID Card": [
+        "Carte de identitate"
+      ],
+      "ID Card number": [
+        "Număr card de identitate"
+      ],
       "Identities": [
         "Identități"
       ],
@@ -2228,6 +2234,9 @@
       ],
       "Learn more": [
         "Detalii"
+      ],
+      "License": [
+        "Permis de conducere"
       ],
       "License number": [
         "Permis de conducere"
@@ -2319,6 +2328,9 @@
       "Passphrase": [
         "Frază de acces"
       ],
+      "Passport": [
+        "Pașaport"
+      ],
       "Passport number": [
         "Număr pașaport"
       ],
@@ -2406,6 +2418,9 @@
       "Show website favicons": [
         "Afișare pictogramă site web"
       ],
+      "Social security": [
+        "Card de sănătate"
+      ],
       "Social security number": [
         "Cod numeric personal"
       ],
@@ -2432,6 +2447,9 @@
       ],
       "Support": [
         "Asistență"
+      ],
+      "Tax number": [
+        "Număr identificare fiscală"
       ],
       "Text": [
         "Text"

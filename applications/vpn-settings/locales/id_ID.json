@@ -65,10 +65,10 @@
         "Izinkan"
       ],
       "Allow end-to-end encrypted mail for this group": [
-        "Perbolehkan email terenkripsi ujung ke ujung untuk grup ini"
+        "Izinkan email yang terenkripsi end-to-end untuk grup ini"
       ],
       "Always allow sending": [
-        "Selalu memperbolehkan pengiriman"
+        "Selalu izinkan pengiriman"
       ],
       "Apply": [
         "Terapkan"
@@ -4231,7 +4231,7 @@
         "Silakan tambahkan alamat email pengguna pada baris berikut"
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "Silakan mina pemilik dokumen untuk mengundang Anda secara langsung ke dokumen ini."
+        "Silakan minta pemilik dokumen untuk mengundang Anda secara langsung ke dokumen ini."
       ],
       "Please authenticate your card in the verification tab.": [
         "Silakan autentikasi kartu Anda pada tab verifikasi."
@@ -4288,7 +4288,7 @@
         "Pratinjau untuk tipe berkas ini tidak didukung"
       ],
       "Preview of documents is not yet supported.": [
-        "Pratinjau dokumen bleum didukung."
+        "Pratinjau dokumen saat ini belum didukung."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
@@ -4522,7 +4522,7 @@
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
       ],
       "This change will be fully reflected across your infrastructure in about 1 hour": [
-        "Perubahan ini akan diterapkan pada seluruh infrastruktur Anda dalam sekitar 1 jam"
+        "Perubahan ini akan sepenuhnya diterapkan pada infrastruktur Anda dalam sekitar 1 jam"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Proses ini dapat memakan waktu sejenak. Mohon untuk tidak menutup halaman ini atau memutuskan koneksi internet Anda."
@@ -6018,6 +6018,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } dan ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6093,8 +6096,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Untuk semua layanan ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "Ruang penyimpanan aman 1 TB"
+      ],
       "1 user": [
         "1 pengguna"
+      ],
+      "10 email addresses/aliases": [
+        "10 alamat email/alias"
+      ],
+      "10-year file version history": [
+        "Riwayat versi berkas 10 tahun"
+      ],
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
       ],
       "24/7 account management support": [
         "Layanan pengelolaan akun 24/7"
@@ -6116,6 +6131,9 @@
       ],
       "Advanced network security": [
         "Keamanan jaringan lanjutan"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Seluruh produk dan fitur ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Seluruh layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6204,6 +6222,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Dukungan klien email (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grup email"
+      ],
       "Enables HIPAA compliance": [
         "Tunduk terhadap undang-undang HIPAA"
       ],
@@ -6230,6 +6251,9 @@
       ],
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Hasilkan email hanya dengan sebaris perintah"
       ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
@@ -6291,8 +6315,14 @@
       "Priority support & live chat": [
         "Dukungan prioritas & percakapan langsung"
       ],
+      "Proofread and refine your emails": [
+        "Periksa dan sempurnakan email Anda"
+      ],
       "Protect ${ n } device at a time": [
         "Lindungi ${ n } perangkat secara bersamaan"
+      ],
+      "Quickly craft replies": [
+        "Tulis pesan balasan dengan cepat"
       ],
       "Recover previous file versions": [
         "Pulihkan versi berkas sebelumnya"
@@ -6356,6 +6386,9 @@
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
+      ],
+      "Support for up to 2 users": [
+        "Dukungan hingga 2 pengguna"
       ],
       "Sync and backup all your files across devices": [
         "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
@@ -6434,6 +6467,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domain email khusus"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
@@ -6649,6 +6685,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Email seluruh anggota grup dengan satu alamat email"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"
@@ -7598,6 +7637,11 @@
       ],
       "User": [
         "Pengguna"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Tinjau keamanan akun Anda"
       ]
     },
     "saml: Action": {
@@ -8911,9 +8955,6 @@
       "Administrator privileges restored": [
         "Hak administrator dipulihkan"
       ],
-      "Bug reported": [
-        "Bug berhasil dilaporkan"
-      ],
       "Catch-all address updated": [
         "Alamat catch-all diperbarui"
       ],
@@ -9075,7 +9116,7 @@
         "Preferensi diperbarui"
       ],
       "Preferences updated": [
-        "Preferensi telah diperbarui"
+        "Preferensi diperbarui"
       ]
     },
     "Suffix": {
@@ -10007,13 +10048,13 @@
         "Kunci organisasi harus diaktifkan untuk meminta pengaksesan data"
       ],
       "Pending admin access": [
-        "Akses admin tertunda"
+        "Menunggu akses admin"
       ],
       "Private user": [
         "Pengguna pribadi"
       ],
       "Request to manage account sent, awaiting user approval": [
-        "Permintaan pengelolaan akun terkirin, menunggu kesetujuan pengguna"
+        "Permintaan untuk mengelola akun terkirim, menunggu persetujuan pengguna"
       ],
       "Request user permission for data access": [
         "Minta izin pengguna untuk pengaksesan data"
@@ -10034,7 +10075,7 @@
         "Ini akan menghapus permintaan tertunda untuk pengaksesan administrator pada data pengguna atau pengaturan ulang kata sandi."
       ],
       "This will revoke the administrator permission to manage this user's account.": [
-        "Ini akan mencabut perizinan administrator untuk mengelola akun pengguna ini."
+        "Tindakan ini akan mencabut perizinan administrator untuk mengelola akun pengguna ini."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
         "Untuk melanjutkan, Anda harus meminta perizinan pengguna untuk mengakses datanya atau mengatur ulang kata sandinya."
@@ -10135,7 +10176,7 @@
         "Ini Anda"
       ],
       "Pending admin access": [
-        "Akses admin tertunda"
+        "Menunggu akses admin"
       ],
       "Private": [
         "Privat"

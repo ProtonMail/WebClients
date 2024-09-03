@@ -811,11 +811,11 @@
       "Refresh status": [
         "Opdater status"
       ],
-      "refresh the page": [
-        "opdater siden"
-      ],
       "Refresh the page": [
         "Opdater siden"
+      ],
+      "refresh the page": [
+        "opdater siden"
       ],
       "Reload": [
         "Genindlæs"
@@ -1234,6 +1234,9 @@
       "View plans details": [
         "Vis abonnementdetaljer"
       ],
+      "View recovery settings": [
+        "Se indstillinger for gendannelse"
+      ],
       "Void": [
         "Ugyldig"
       ],
@@ -1622,6 +1625,14 @@
         "Vælg dit årsafslutnings-tilbud"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagerplads (2x mere end noget andet abonnement)"
@@ -1643,14 +1654,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan }-abonnementet er tilbage for en begrænset periode"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3383,6 +3386,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Auto-slet spam og kasserede beskeder, og lås op for flere premium-funktioner, når du opgraderer."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Tillykke! Du har optjent de maksimale ${ rewardsLimit } gratis måneder med ${ plusPlanName }."
       ],
@@ -7054,11 +7060,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerede servere"
-      ],
       "dedicated servers": [
         "dedikerede servere"
+      ],
+      "Dedicated servers": [
+        "Dedikerede servere"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen."
@@ -8338,7 +8344,7 @@
         "Legitimationsoplysningerne fra din identitetsudbyder vil blive slettet."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
-        "Det mørke net (engelsk: dark web) er en skjult del af internettet, hvor stjålne personlige oplysninger, f.eks. identiteter, kan købes og sælges."
+        "Det mørke net er en skjult del af internettet, hvor stjålne personlige oplysninger, f.eks. identiteter, kan købes og sælges."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Antallet af downloads omfatter både faktiske downloads og tilfælde, hvor filer forhåndsvises."
@@ -8863,7 +8869,7 @@
         "Når deaktiveret, forhindrer dette billedfiler i at blive indlæst på din enhed uden din viden.\t"
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
-        "Når du aktiverer SAML for ${ appName } i din identitetsudbyder, bliver du muligvis bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Du skal blot kopiere og indsætte nedenstående data i din identitetsudbyders felter."
+        "Ved aktivering af SAML for ${ appName } i din identitetsudbyder, kan du blive bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Kopier og indsæt blot nedenstående data i din identitetsudbyders felter."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Når notifikationer er aktiveret, sender vi en advisering til din gendannelses-adresse, hvis du har nye beskeder på din ${ MAIL_APP_NAME }-konto."
@@ -10977,7 +10983,7 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } af din organisations medlem bruger to-faktor-godkendelse.",
+        "${ twoFAMembers.length }/${ members.length } af din organisations medlem bruger totrins-godkendelse.",
         "${ twoFAMembers.length }/${ members.length } af din organisations medlemmer bruger totrins-godkendelse."
       ],
       "Almost there": [
@@ -11521,6 +11527,26 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsæt med Free"
@@ -11550,24 +11576,10 @@
         "Opgrader til ${ upsellPlanHumanSize }"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ]
-    },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
       ],
@@ -11660,8 +11672,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Til alle ${ BRAND_NAME }-tjenester"
       ],
+      "1 TB secure storage": [
+        "1 TB sikker lagerplads"
+      ],
       "1 user": [
         "1 bruger"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailadresser/aliasser"
+      ],
+      "10-year file version history": [
+        "10-års fil-versionshistorik"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
       ],
       "24/7 account management support": [
         "24/7 kontoadministreringssupport"
@@ -11683,6 +11707,9 @@
       ],
       "Advanced network security": [
         "Avanceret netværkssikkerhed"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } produkter og funktioner"
       ],
       "All ${ BRAND_NAME } services": [
         "Alle ${ BRAND_NAME }-tjenester"
@@ -11777,6 +11804,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Understøttelse af e-mailklient (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Mail-grupper"
+      ],
       "Enables HIPAA compliance": [
         "Aktiverer HIPAA-overholdelse"
       ],
@@ -11803,6 +11833,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
+      ],
+      "Generate emails with a prompt": [
+        "Generer e-mails med et prompt"
       ],
       "Group management (coming soon)": [
         "Gruppe administration (kommer snart)"
@@ -11865,9 +11898,15 @@
       "Priority support & live chat": [
         "Prioriteret support & live chat"
       ],
+      "Proofread and refine your emails": [
+        "Korrekturlæs og forfin dine e-mails"
+      ],
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
+      ],
+      "Quickly craft replies": [
+        "Skrive hurtigt svar"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -11932,6 +11971,9 @@
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
+      ],
+      "Support for up to 2 users": [
+        "Support for op til 2 brugere"
       ],
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
@@ -12015,6 +12057,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 tilpasset e-maildomæne"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Opret flere e-mailadresser for dine online identiteter, f.eks. JensShopper@${ domain } for shoppingkonto, JensNyheder@${ domain2 } til nyhedsabonnementer."
       ],
@@ -12193,6 +12238,17 @@
         "Dit valgte abonnement: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prøveversion"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -12211,14 +12267,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås op for premium-funktioner ved at opgradere"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prøveversion"
-      ],
-      "Your account's usage": [
-        "Din kontos forbrug"
       ]
     },
     "new_plans: tooltip": {
@@ -12282,6 +12330,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Del nemt dine kalendere med din familie, venner eller kollegaer"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Send en mail til alle i en gruppe med en enkelt mailadresse"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Sikrer at du modtager alle e-mails sendt til dit domæne, selvom e-mailadressen ikke eksisterer, ikke længere eksisterer eller har en tastefejl"
@@ -14033,6 +14084,9 @@
       "Recovery phone number": [
         "Telefonnummer til gendannelse"
       ],
+      "Review your account safety": [
+        "Gennemgå din kontos sikkerhed"
+      ],
       "Safeguard account now": [
         "Beskyt din konto nu"
       ],
@@ -15763,9 +15817,6 @@
       "Auto-reply updated": [
         "Autosvar opdateret"
       ],
-      "Bug reported": [
-        "Fejl anmeldt"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender oprettet. Det kan tage et par minutter at synkronisere."
       ],
@@ -16367,11 +16418,11 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
-      "Catch-all address": [
-        "Catch-all-adresse"
-      ],
       "Catch-All address": [
         "Catch-All-adresse"
+      ],
+      "Catch-all address": [
+        "Catch-all-adresse"
       ],
       "Change login password": [
         "Skift login-adgangskode"

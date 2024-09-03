@@ -5565,6 +5565,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Перейти на более дешевую версию ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Начните с ${ price }"
+      ],
       "Upgrade now": [
         "Улучшить сейчас"
       ]
@@ -5593,6 +5596,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } и ${ PROTON_SENTINEL_NAME }"
       ],
@@ -5719,8 +5725,14 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } — для всех сервисов ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "1 ТБ защищенного хранения"
+      ],
       "1 user": [
         "1 пользователь"
+      ],
+      "10-year file version history": [
+        "10-летняя история версий файла"
       ],
       "24/7 account management support": [
         "Постоянная круглосуточная поддержка управления аккаунтом"
@@ -5736,6 +5748,9 @@
       ],
       "Administration Panel": [
         "Панель администратора"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Все продукты и функции ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Все основные сервисы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -5845,6 +5860,9 @@
       "GDPR data processing agreement": [
         "Соглашение об обработке данных в соответствии с GDPR"
       ],
+      "Generate emails with a prompt": [
+        "Генерируйте электронные письма с помощью подсказки"
+      ],
       "Group management (coming soon)": [
         "Управление группами (скоро)"
       ],
@@ -5902,11 +5920,17 @@
       "Priority support & live chat": [
         "Приоритетная поддержка и живой чат"
       ],
+      "Proofread and refine your emails": [
+        "Проверьте и уточните ваши электронные письма"
+      ],
       "Protect ${ n } device at a time": [
         "Защитите ${ n } устройство за раз",
         "Защитите ${ n } устройства одновременно",
         "Защитите ${ n } устройств одновременно",
         "Защитите ${ n } устройств одновременно"
+      ],
+      "Quickly craft replies": [
+        "Быстро составляйте ответы"
       ],
       "Recover previous file versions": [
         "Восстановить предыдущие версии файла"
@@ -5961,6 +5985,9 @@
       ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
+      ],
+      "Support for up to 2 users": [
+        "Поддержка до 2 пользователей"
       ],
       "Sync and backup all your files across devices": [
         "Синхронизируйте файлы на всех устройствах и создавайте резервные копии"
@@ -7016,6 +7043,11 @@
         "Официальное письмо от ${ BRAND_NAME }"
       ]
     },
+    "Safety review": {
+      "Review your account safety": [
+        "Просмотрите безопасность вашего аккаунта"
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Все псевдонимы"
@@ -7645,7 +7677,7 @@
     },
     "Subscription price": {
       "For ${ totalPrice }": [
-        "Для ${ totalPrice }"
+        "За ${ totalPrice }"
       ]
     },
     "Subscription reminder": {
@@ -7707,9 +7739,6 @@
       ],
       "Alias saved and copied": [
         "Псевдоним сохранён и скопирован"
-      ],
-      "Bug reported": [
-        "Отчёт об ошибке отправлен"
       ],
       "Canceling import": [
         "Отмена импорта"

@@ -811,11 +811,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "refresh the page": [
-        "uppdatera sidan"
-      ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "refresh the page": [
+        "uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
@@ -1234,6 +1234,9 @@
       "View plans details": [
         "Visa paketdetaljer"
       ],
+      "View recovery settings": [
+        "Visa återställningsinställningar"
+      ],
       "Void": [
         "Annullera"
       ],
@@ -1618,6 +1621,14 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1639,14 +1650,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3378,6 +3381,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Ta bort skräppost och meddelanden i papperskorgen automatiskt och lås upp fler premiumfunktioner när du uppgraderar."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Grattis! Du har tjänat det maximala antalet ${ rewardsLimit } gratis månader av ${ plusPlanName }."
       ],
@@ -7034,11 +7040,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "Dedicated servers": [
-        "Dedikerade servrar"
-      ],
       "dedicated servers": [
         "dedikerade servrar"
+      ],
+      "Dedicated servers": [
+        "Dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -11448,6 +11454,26 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom igång för ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11475,23 +11501,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -11587,8 +11596,17 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - För alla ${ BRAND_NAME }-tjänster"
       ],
+      "1 TB secure storage": [
+        "1 TB säkert lagringsutrymme"
+      ],
       "1 user": [
         "1 användare"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-postadresser/alias"
+      ],
+      "15 GB storage": [
+        "15 GB lagringsutrymme"
       ],
       "24/7 support": [
         "Support dygnet runt"
@@ -11607,6 +11625,9 @@
       ],
       "Advanced network security": [
         "Avancerad nätverkssäkerhet"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alla ${ BRAND_NAME } produkter och funktioner"
       ],
       "All ${ BRAND_NAME } services": [
         "Alla ${ BRAND_NAME }-tjänster"
@@ -11698,6 +11719,9 @@
       "Email client support (via IMAP/SMTP)": [
         "E-postklient-stöd (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-postgrupper"
+      ],
       "Enables HIPAA compliance": [
         "Aktiverar HIPAA-efterlevnad"
       ],
@@ -11724,6 +11748,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR databehandlingsavtal"
+      ],
+      "Generate emails with a prompt": [
+        "Generera e-post med en prompt"
       ],
       "Group management (coming soon)": [
         "Grupphantering (kommer snart)"
@@ -11790,6 +11817,9 @@
         "Skydda ${ n } enhet åt gången",
         "Skydda ${ n } enheter åt gången"
       ],
+      "Quickly craft replies": [
+        "Skapa svar snabbt"
+      ],
       "Recover previous file versions": [
         "Återställ tidigare filversioner"
       ],
@@ -11853,6 +11883,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
+      ],
+      "Support for up to 2 users": [
+        "Stöd för upp till 2 användare"
       ],
       "Sync and backup all your files across devices": [
         "Synkronisera och säkerhetskopiera alla dina filer mellan enheter"
@@ -11936,6 +11969,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 anpassad e-postdomän"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Skapa flera e-postadresser för dina onlineidentiteter, t.ex. JohnShopper@${ domain } för shoppingkonton, JohnNews@${ domain2 } för nyhetsprenumeration"
       ],
@@ -12114,6 +12150,20 @@
         "Ditt valda paket: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -12132,17 +12182,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -12206,6 +12245,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Dela enkelt dina kalendrar med din familj, vänner eller kollegor"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Skicka e-post till alla i en grupp med en enda e-postadress"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Säkerställer att du får all e-post som skickas till din domän, även om e-postadressen inte finns, inte längre finns eller har ett stavfel"
@@ -13972,6 +14014,9 @@
       "Recovery phone number": [
         "Telefonnummer för återställning"
       ],
+      "Review your account safety": [
+        "Granska din kontosäkerhet"
+      ],
       "Safeguard account now": [
         "Skydda konto nu"
       ],
@@ -15655,9 +15700,6 @@
       "Auto-reply updated": [
         "Autosvar uppdaterat"
       ],
-      "Bug reported": [
-        "Fel rapporterat"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender har lagts till. Det kan ta några minuter att synkronisera."
       ],
@@ -16262,10 +16304,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
       "Change login password": [
@@ -17372,7 +17414,7 @@
         "En ungefärlig plats för IP-adressen"
       ],
       "Any protection applied to suspicious activity": [
-        "Alla skydd som tillämpas på misstänkt aktivitet"
+        "Allt skydd tillämpat till misstänkt aktivitet"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
@@ -17655,6 +17697,9 @@
       ],
       "reject": [
         "avvisa"
+      ],
+      "Request user permission for data access": [
+        "Begär användarbehörighet för dataåtkomst"
       ],
       "Revoke access": [
         "Återkalla åtkomst"

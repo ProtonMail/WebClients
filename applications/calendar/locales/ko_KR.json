@@ -564,7 +564,7 @@
         "기능 요청"
       ],
       "Request new code": [
-        "새 코드를 요청합니다."
+        "새로운 코드 받기"
       ],
       "Resend code": [
         "코드 다시 보내기"
@@ -2459,6 +2459,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "연락처 병합 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "연락처 그룹으로 모두에게 한 번의 클릭으로 이메일을 전송하여 시간을 절약하세요. 업그레이드하여 이 기능과 다른 프리미엄 기능도 경험하세요."
       ],
       "Set a data recovery method to prevent data loss.": [
         "데이터 손실을 방지하려면 데이터 복구 방법을 설정하세요."
@@ -4837,7 +4840,7 @@
         "결제를 완료하기 위해서, 아래 주소로 ${ btcAmountBold } 를 송금해 주시기 바랍니다."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "스팸 및 남용을 방지하려면 사람임을 확인하세요."
+        "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
@@ -6144,6 +6147,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName }(으)로 다운그래이드"
       ],
+      "Get started for ${ price }": [
+        "${ price }로 시작하세요."
+      ],
       "Upgrade now": [
         "지금 업그레이드"
       ]
@@ -6172,6 +6178,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 와(과) ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6247,8 +6256,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - 전체 ${ BRAND_NAME } 서비스용"
       ],
+      "1 TB secure storage": [
+        "1 TB 보안 저장공간"
+      ],
       "1 user": [
         "사용자 1명"
+      ],
+      "10 email addresses/aliases": [
+        "10개 이메일 주소"
+      ],
+      "10-year file version history": [
+        "10년 파일 버전 기록"
+      ],
+      "15 GB storage": [
+        "저장공간 15GB"
       ],
       "24/7 account management support": [
         "24/7 계정 관리 지원"
@@ -6264,6 +6285,9 @@
       ],
       "Administration Panel": [
         "관리 패널"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "모든 ${ BRAND_NAME } 제품 및 기능"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 ${ BRAND_NAME } 베이직 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6346,6 +6370,9 @@
       "Email client support (via IMAP/SMTP)": [
         "이메일 클라이언트 지원 (IMAP/SMTP)"
       ],
+      "Email groups": [
+        "이메일 그룹"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA 자격 활성화"
       ],
@@ -6372,6 +6399,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR 데이터 처리 동의서"
+      ],
+      "Generate emails with a prompt": [
+        "프롬프트로 이메일 생성하기"
       ],
       "Group management (coming soon)": [
         "조직 관리 (출시 예정)"
@@ -6427,8 +6457,14 @@
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
       ],
+      "Proofread and refine your emails": [
+        "이메일 교정 및 수정하기"
+      ],
       "Protect ${ n } device at a time": [
         "동시에 최대 ${ n }개까지 장치 보호"
+      ],
+      "Quickly craft replies": [
+        "신속하게 답변 작성하기"
       ],
       "Recover previous file versions": [
         "이전 파일 버전 복구"
@@ -6483,6 +6519,9 @@
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
+      ],
+      "Support for up to 2 users": [
+        "최대 2명 지원"
       ],
       "Sync and backup all your files across devices": [
         "기기를 넘나들며 파일을 동기화 및 백업하세요"
@@ -6561,6 +6600,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1개 커스텀 이메일 도메인"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "쇼핑 계정의 경우 JohnShopper@${ domain }, 뉴스 구독의 경우 JohnNews@${ domain2 } 와 같이 온라인 신원에 대한 다중 이메일 주소를 만들어 보세요"
       ],
@@ -6662,6 +6704,11 @@
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -6736,6 +6783,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
+      ],
+      "Email everyone in a group with a single email address": [
+        "그룹 내의 모두에게 하나의 주소로 이메일을 전송하기"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "이메일 주소가 존재하지 않거나, 더 이상 존재하지 않거나, 오타가 있더라도 도메인으로 전송된 모든 이메일을 받을 수 있습니다."
@@ -7545,6 +7595,11 @@
     "Reload event button tooltip": {
       "Reload event": [
         "이벤트 다시 불러오기"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "내 계정 보안 검토하기"
       ]
     },
     "Security Center": {
@@ -8672,9 +8727,6 @@
       ],
       "Answer sent and event deleted": [
         "대답 전송과 이벤트가 삭제되었습니다"
-      ],
-      "Bug reported": [
-        "버그 신고됨"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "캘린더가 생성되었습니다. 동기화 되는데 시간이 걸릴 수 있습니다."

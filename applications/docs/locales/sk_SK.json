@@ -336,6 +336,9 @@
       "Increase": [
         "Zvýšiť"
       ],
+      "Keep my subscription": [
+        "Ponechať moje predplatné"
+      ],
       "Learn more": [
         "Zistiť viac"
       ],
@@ -1985,6 +1988,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Zlučovanie kontaktov... Tento proces môže trvať niekoľko minút. Po dokončení môžete okno zavrieť."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Ušetrite čas odosielaním emailov všetkým naraz pomocou skupín kontaktov. Odomknite si túto a ďalšie prémiové funkcie navýšením predplatného."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Nastavte metódu obnovy údajov, aby ste zabránili strate údajov."
       ],
@@ -2953,14 +2959,23 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
+      "Accounts with custom domains cannot join a group plan.": [
+        "Účty s vlastnými doménami sa nemôžu pripojiť do skupinového plánu."
+      ],
       "customer support": [
         "zákaznícka podpora"
+      ],
+      "Group plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Skupinové plány v súčasnosti nepodporujú externé účty. Pred pripojením si vytvorte ${ BRAND_NAME } adresu. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ak pozvánku prijmete, zameníme váš aktuálny plán a zostávajúcu čiastku pripíšeme k vášmu účtu ako kredit."
       ],
       "Invited by: ${ inviteEmail }": [
         "Pozvánka od: ${ inviteEmail }"
+      ],
+      "Lifetime accounts cannot join a group plan.": [
+        "Doživotné účty nemôžu byť pripojené do skupinového predplatného."
       ],
       "Manage addresses.": [
         "Spravovať adresy."
@@ -2989,6 +3004,9 @@
       "You have successfully joined the family group": [
         "Úspešne ste sa pripojili do rodinnej skupiny"
       ],
+      "You have unpaid invoices. Please pay them before joining a group plan.": [
+        "Máte nezaplatené faktúry. Pred pripojením do skupinového plánu ich zaplaťte, prosím."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Dostali ste pozvánku na pripojenie vášho účtu ${ BRAND_NAME } k tomuto skupinovému plánu, kde si môžete užívať všetky ${ BRAND_NAME_TWO } prémiové funkcie."
       ],
@@ -2997,6 +3015,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Váš účet využíva ${ usedSpace } úložiska, čo presahuje pridelený priestor ${ inviteSpace }. Odstráňte niektoré údaje alebo požiadajte správcu plánu o navýšenie úložiska."
+      ],
+      "Your cannot accept this invitation with your current plan.": [
+        "S vaším aktuálnym plánom nemôžete prijať túto pozvánku."
       ]
     },
     "familyOffer_2023:Label": {
@@ -3739,6 +3760,12 @@
       ],
       "Create a new contact group": [
         "Vytvoriť novú skupinu kontaktov"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Vytvorte bezpečný cloud pre ${ n } člena",
+        "Vytvorte bezpečný cloud pre ${ n } členov",
+        "Vytvorte bezpečný cloud pre ${ n } členov",
+        "Vytvorte bezpečný cloud pre ${ n } členov"
       ],
       "Create in": [
         "Vytvoriť v"
@@ -4540,6 +4567,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Váš PayPal účet musí byť prepojený s platobnou kartou alebo bankovým účtom. Ak váš PayPal prepojený nie je, kliknite na tlačidlo nižšie."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "V tento deň stratíte prístup k funkciám ${ planTitle }."
       ],
       "You will lose all unsaved changes.": [
         "Stratíte všetky neuložené zmeny."
@@ -5562,6 +5592,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Prejsť na nižší plán ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Začnite za ${ price }"
+      ],
       "Upgrade now": [
         "Aktualizovať teraz"
       ]
@@ -5590,6 +5623,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
       ],
@@ -5659,6 +5695,12 @@
         "${ n } správ za deň",
         "${ n } správ za deň"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } zdieľaný trezor ${ PASS_SHORT_APP_NAME } na používateľa",
+        "${ n } zdieľané trezory ${ PASS_SHORT_APP_NAME } na používateľa",
+        "${ n } zdieľaných trezorov ${ PASS_SHORT_APP_NAME } na používateľa",
+        "${ n } zdieľaných trezorov ${ PASS_SHORT_APP_NAME } na používateľa"
+      ],
       "${ n } user": [
         "${ n } používateľ",
         "Až ${ n } používatelia",
@@ -5677,6 +5719,12 @@
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
+      "${ options }-day file version history": [
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov"
+      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasom",
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
@@ -5692,11 +5740,32 @@
       "${ size } attachment size": [
         "${ size } veľkosť prílohy"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } bezpečného úložiska na používateľa"
+      ],
       "${ size } storage": [
         "${ size } úložisko"
       ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - Pre ${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Pre všetky služby ${ BRAND_NAME }"
+      ],
+      "1 TB secure storage": [
+        "1 TB bezpečného úložiska"
+      ],
       "1 user": [
         "1 používateľ"
+      ],
+      "10 email addresses/aliases": [
+        "10 emailových adries/aliasov"
+      ],
+      "10-year file version history": [
+        "-ročná história verzií súborov"
+      ],
+      "15 GB storage": [
+        "15 GB úložisko"
       ],
       "24/7 account management support": [
         "Podpora správy účtu 24/7"
@@ -5712,6 +5781,15 @@
       ],
       "Administration Panel": [
         "Panel administrácie"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Všetky ${ BRAND_NAME } produkty a funkcie"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Všetky prémiové služby ${ BRAND_NAME }. Jedno jednoduché predplatné"
       ],
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
@@ -5749,6 +5827,9 @@
       "Contact groups management": [
         "Správa skupín kontaktov"
       ],
+      "Custom and secure business email": [
+        "Zákaznícky prispôsobený a zabezpečený firemný email"
+      ],
       "Custom domains for email aliases": [
         "Vlastné domény pre emailové aliasy"
       ],
@@ -5785,6 +5866,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Podpora emailových klientov (cez IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Emailové skupiny"
+      ],
       "Enables HIPAA compliance": [
         "Umožňuje súlad s HIPAA"
       ],
@@ -5811,6 +5895,9 @@
       ],
       "GDPR data processing agreement": [
         "Dohoda o spracovaní údajov v zmysle GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Generujte emaily len pomocou podnetu"
       ],
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
@@ -5839,6 +5926,9 @@
       "Multiple admin roles": [
         "Viacero správcovských rolí"
       ],
+      "Online document editor": [
+        "Online editor dokumentov"
+      ],
       "Organize items with multiple vaults": [
         "Usporiadanie položiek pomocou viacerých trezorov"
       ],
@@ -5854,6 +5944,9 @@
       "Password-protected Emails": [
         "Heslom chránené emaily"
       ],
+      "Phone support (20+ users)": [
+        "Telefonická podpora (20+ používateľov)"
+      ],
       "Priority email support": [
         "Prioritná emailová podpora"
       ],
@@ -5863,11 +5956,20 @@
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
       ],
+      "Proofread and refine your emails": [
+        "Korigujte a zdokonaľujte vaše emaily"
+      ],
       "Protect ${ n } device at a time": [
         "Chráňte súčasne ${ n } zariadenie",
         "Chráňte súčasne ${ n } zariadenia",
         "Chráňte súčasne ${ n } zariadení",
         "Chráňte súčasne ${ n } zariadení"
+      ],
+      "Quickly craft replies": [
+        "Rýchlo vytvárajte odpovede"
+      ],
+      "Recover previous file versions": [
+        "Obnova predchádzajúcich verzií súborov"
       ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Pravidelné kontroly zabezpečenia vášho účtu. Upozorníme vás, ak máte slabé alebo opakovane používané heslá, ktoré je potrebné aktualizovať."
@@ -5899,6 +6001,9 @@
       "Send & receive invitations": [
         "Odosielanie a prijímanie pozvánok"
       ],
+      "Share files with no size limit": [
+        "Zdieľanie súborov bez obmedzenia na ich veľkosť"
+      ],
       "Sign in as user": [
         "Prihlásiť sa ako používateľ"
       ],
@@ -5916,6 +6021,12 @@
       ],
       "Strict no-logs policy": [
         "Prísna politika neuchovávania záznamov"
+      ],
+      "Support for up to 2 users": [
+        "Podpora až pre 2 používateľov"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchronizácia a zálohovanie všetkých vašich súborov medzi zariadeniami"
       ],
       "Tor over VPN": [
         "TOR cez VPN"
@@ -5952,6 +6063,9 @@
       ],
       "Unlimited messages per day": [
         "Neobmedzený počet správ za deň"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Neobmedzený počet zdieľaných ${ PASS_SHORT_APP_NAME } trezorov na používateľa"
       ],
       "Unlimited shared vaults with access permissions": [
         "Neobmedzené zdieľané trezory s prístupovými právami"
@@ -5994,6 +6108,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 vlastná emailová doména"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JohnShopper@${ domain } pre nákupné účty, JohnNews@${ domain2 } pre odber noviniek"
       ],
@@ -6061,6 +6178,9 @@
       "Popular": [
         "Populárne"
       ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Chráňte citlivé obchodné informácie a bezpečne spolupracujte."
+      ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Chráňte súkromie svojej rodiny spolu so všetkými službami ${ BRAND_NAME }."
       ],
@@ -6090,6 +6210,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Získajte Mail Plus za ${ price }"
       ]
     },
     "new_plans: title": {
@@ -6170,6 +6295,9 @@
       "Easily share your calendars with your family, friends, or colleagues": [
         "Svoje kalendáre zdieľajte jednoducho s rodinou, priateľmi alebo kolegami"
       ],
+      "Email everyone in a group with a single email address": [
+        "Pošlite email všetkým v skupine pomocou jednej emailovej adresy"
+      ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zabezpečuje, aby ste dostávali všetky emaily odoslané na vašu doménu, aj keď emailová adresa neexistuje, už viac neexistuje alebo má preklep"
       ],
@@ -6223,6 +6351,9 @@
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov so 20 a viac používateľmi"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -6959,6 +7090,11 @@
         "Oficiálny email od ${ BRAND_NAME }"
       ]
     },
+    "Safety review": {
+      "Review your account safety": [
+        "Skontrolujte bezpečnosť svojho účtu"
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Všetky aliasy"
@@ -7650,9 +7786,6 @@
       ],
       "Alias saved and copied": [
         "Alias ​​uložený a skopírovaný"
-      ],
-      "Bug reported": [
-        "Chyba nahlásená"
       ],
       "Canceling import": [
         "Prebieha zrušenie importu"
@@ -8514,6 +8647,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin cez email"
+      ]
+    },
+    "wallet_signup_2024:app-switcher": {
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bezpečnejší/jednoduchší spôsob držania a posielania Bitcoinu"
       ]
     },
     "wallet_signup_2024:Bug category": {

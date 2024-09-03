@@ -93,6 +93,9 @@
       "Add to group": [
         "Gruba ekle"
       ],
+      "Adds it above your existing message": [
+        "Bunu var olan iletinizin üzerine ekler"
+      ],
       "Align center": [
         "Ortaya hizala"
       ],
@@ -500,6 +503,9 @@
       ],
       "Generate text": [
         "Metin oluştur"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "${ BRAND_NAME } Duo edinin"
       ],
       "Get in touch": [
         "Bizimle görüşün"
@@ -1535,17 +1541,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Gizliliğinizi korumak için veriler aygıt üzerinde kalır. İndirmek ve uyumlu donanıma sahip olmak gerekir."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Veriler aygıtınızda kalır ancak bir seferlik indirme ve uyumlu donanım gerekir"
       ],
       "Fast and secure. No logs are kept.": [
         "Hızlı ve güvenli. Herhangi bir kayıt tutulmaz."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Gizliliğinizi korumak için herhangi bir kayıt tutulmaz. İşlemler daha hızlı yapılır."
+      ],
       "Run on device": [
         "Aygıt üzerinde çalışsın"
       ],
       "Run on servers": [
         "Sunucular üzerinde çalışır"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } sunucularında güvende kalarak çalıştırın"
+      ],
+      "Securely run on device": [
+        "Aygıt üzerinde güvenli kalarak çalıştırın"
       ]
     },
     "Assistant toggle": {
@@ -3400,6 +3418,9 @@
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV ve VCF dosyası ile içe aktarma için, ${ MAX_IMPORT_FILE_SIZE_STRING } dosya boyutunu ya da ${ MAX_IMPORT_CONTACTS_STRING } kişiyi aşmadığınızdan emin olun. Dosyanız büyükse lütfen daha küçük dosyalara bölün. ${ learnMoreLink }."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Yazma yardımcısına ve diğer hizmetlere sınırsız erişim için ${ BRAND_NAME } Duo tarifesine yükseltin."
+      ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] } ile sınırsız takma ad ve 500 GB depolama alanı edinin."
       ],
@@ -3430,6 +3451,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Hesabınıza erişimi kaybetmemek için bir kurtarma yöntemi belirleyin."
+      ],
+      "Starting from ${ price }": [
+        "${ price } tutarından başlayan fiyatlarla"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Yazma yardımcısını kullanmayı sürdürmek için aboneliğinize ekleyin."
@@ -5516,6 +5540,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe, hızlı ve kolayca daha iyi e-postalar oluşturmanızı sağlar."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
       ],
@@ -6208,6 +6235,10 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Daha fazla sonuç bulmak için e-posta iletilerinizin içeriğini bu sözcük ile aramayı deneyin."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "${ ASSISTANT_TRIAL_TIME_DAYS } gün süreyle ücretsiz denemek için",
+        "${ ASSISTANT_TRIAL_TIME_DAYS } gün süreyle ücretsiz denemek için"
+      ],
       "From": [
         "Kimden"
       ],
@@ -6353,6 +6384,9 @@
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
+      ],
+      "Learn more about the writing assistant": [
+        "Yazma yardımcısı hakkında ayrıntılı bilgi alın"
       ],
       "Left to Right": [
         "Soldan sağa"
@@ -6835,6 +6869,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "İndirme sayısına hem güncel indirmeler hem de dosya ön izlemeleri katılır."
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Görünüşe göre ${ boldNoReplyEmail } adresi, e-posta yanıtlarını kabul etmiyor. İletinizi göndermek istediğinize emin misiniz?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Şifrelenmiş veriler, verilerinizin güvenliğini sağlayan şifreleme ve imzaların ek yükü nedeniyle biraz daha büyüktür."
@@ -7444,6 +7481,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your private writing assistant": [
+        "Kişisel yazma yardımcınız"
       ]
     },
     "info": {
@@ -8908,6 +8948,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "${ downgradedPlanName } tarifesine düşür"
       ],
+      "Get started for ${ price }": [
+        "${ price } ile başlayın"
+      ],
       "Upgrade now": [
         "Şimdi yükselt"
       ]
@@ -8936,6 +8979,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
       ],
@@ -9028,6 +9074,9 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Tüm ${ BRAND_NAME } hizmetleri için"
       ],
+      "1 TB secure storage": [
+        "1 TB güvenli depolama alanı"
+      ],
       "1 user": [
         "1 kullanıcı"
       ],
@@ -9045,6 +9094,9 @@
       ],
       "Administration Panel": [
         "Yönetim panosu"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Tüm ${ BRAND_NAME } ürünleri ve özellikleri"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9154,6 +9206,9 @@
       "GDPR data processing agreement": [
         "KVKK veri işleme sözleşmesi"
       ],
+      "Generate emails with a prompt": [
+        "Bir istem ile e-posta oluşturun"
+      ],
       "Group management (coming soon)": [
         "Grup yönetimi (yakında gelecek)"
       ],
@@ -9209,9 +9264,15 @@
       "Priority support & live chat": [
         "Öncelikli destek ve canlı sohbet"
       ],
+      "Proofread and refine your emails": [
+        "E-postalarınızı düzeltin ve düzenleyin"
+      ],
       "Protect ${ n } device at a time": [
         "Aynı anda ${ n } aygıtı koruyun",
         "Aynı anda ${ n } aygıtı koruyun"
+      ],
+      "Quickly craft replies": [
+        "Yanıtları hızlıca oluşturun"
       ],
       "Recover previous file versions": [
         "Önceki dosya sürümlerine dönün"
@@ -9266,6 +9327,9 @@
       ],
       "Strict no-logs policy": [
         "Sıkı kayıt tutmama ilkesi"
+      ],
+      "Support for up to 2 users": [
+        "2 kullanıcıya kadar destek"
       ],
       "Sync and backup all your files across devices": [
         "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
@@ -11708,9 +11772,6 @@
       "Alias saved and copied": [
         "Takma ad kaydedildi ve kopyalandı"
       ],
-      "Bug reported": [
-        "Hata bildirildi"
-      ],
       "Canceling import": [
         "İçe aktarma iptal ediliyor"
       ],
@@ -11730,6 +11791,9 @@
       ],
       "Contacts deleted": [
         "Kişiler silindi"
+      ],
+      "Content copied to clipboard": [
+        "İçerik panoya kopyalandı"
       ],
       "Conversation added to ${ labelName }.": [
         "Yazışmaya ${ labelName } etiketi eklendi."
@@ -12228,6 +12292,9 @@
       "Coupon": [
         "Kupon"
       ],
+      "Craft better emails": [
+        "Daha iyi e-postalar oluşturun"
+      ],
       "Create contact": [
         "Kişi ekle"
       ],
@@ -12563,6 +12630,9 @@
       ],
       "No trackers found": [
         "Herhangi bir izleyici bulunamadı"
+      ],
+      "No-reply address detected": [
+        "No-reply adresi bulundu"
       ],
       "Notes": [
         "Notlar"

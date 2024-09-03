@@ -1965,6 +1965,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Spar tid ved at sende mails til alle på én gang med kontaktgrupper. Lås op for denne og andre premium-funktioner, når du opgraderer."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Indstil en datagendannelsesmetode for at forhindre datatab."
       ],
@@ -5446,6 +5449,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
       "Upgrade now": [
         "Opgradér nu"
       ]
@@ -5474,6 +5480,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
       ],
@@ -5566,8 +5575,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Til alle ${ BRAND_NAME }-tjenester"
       ],
+      "1 TB secure storage": [
+        "1 TB sikker lagerplads"
+      ],
       "1 user": [
         "1 bruger"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailadresser/aliasser"
+      ],
+      "10-year file version history": [
+        "10-års fil-versionshistorik"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
       ],
       "24/7 account management support": [
         "24/7 kontoadministreringssupport"
@@ -5583,6 +5604,9 @@
       ],
       "Administration Panel": [
         "Administrationspanel"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } produkter og funktioner"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -5665,6 +5689,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Understøttelse af e-mailklient (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Mail-grupper"
+      ],
       "Enables HIPAA compliance": [
         "Aktiverer HIPAA-overholdelse"
       ],
@@ -5691,6 +5718,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
+      ],
+      "Generate emails with a prompt": [
+        "Generer e-mails med et prompt"
       ],
       "Group management (coming soon)": [
         "Gruppe administration (kommer snart)"
@@ -5747,9 +5777,15 @@
       "Priority support & live chat": [
         "Prioriteret support & live chat"
       ],
+      "Proofread and refine your emails": [
+        "Korrekturlæs og forfin dine e-mails"
+      ],
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
+      ],
+      "Quickly craft replies": [
+        "Skrive hurtigt svar"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -5804,6 +5840,9 @@
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
+      ],
+      "Support for up to 2 users": [
+        "Support for op til 2 brugere"
       ],
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
@@ -5884,6 +5923,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 tilpasset e-maildomæne"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Opret flere e-mailadresser for dine online identiteter, f.eks. JensShopper@${ domain } for shoppingkonto, JensNyheder@${ domain2 } til nyhedsabonnementer."
       ],
@@ -5985,6 +6027,11 @@
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slet konto?"
@@ -6060,6 +6107,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Del nemt dine kalendere med din familie, venner eller kollegaer"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Send en mail til alle i en gruppe med en enkelt mailadresse"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Sikrer at du modtager alle e-mails sendt til dit domæne, selvom e-mailadressen ikke eksisterer, ikke længere eksisterer eller har en tastefejl"
@@ -6813,6 +6863,11 @@
         "Officiel e-mail fra ${ BRAND_NAME }"
       ]
     },
+    "Safety review": {
+      "Review your account safety": [
+        "Gennemgå din kontos sikkerhed"
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Alle aliasser"
@@ -7464,9 +7519,6 @@
       ],
       "Alias saved and copied": [
         "Alias gemt og kopieret"
-      ],
-      "Bug reported": [
-        "Fejl anmeldt"
       ],
       "Canceling import": [
         "Annullerer import"

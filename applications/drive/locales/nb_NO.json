@@ -570,6 +570,9 @@
       "Open navigation": [
         "Åpne navigasjonsmeny"
       ],
+      "Open scan and download info": [
+        "Åpne skann og last ned informasjon"
+      ],
       "Pause all": [
         "Sett alle på pause"
       ],
@@ -704,6 +707,9 @@
       ],
       "Save changes": [
         "Lagre endringer"
+      ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "Lagre i ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Skann og last ned"
@@ -2295,6 +2301,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slår sammen kontakter... Dette kan ta noen få minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Spar tid ved å sende e-post til alle samtidig med kontaktgrupper. Lås opp denne og andre premiumfunksjoner når du oppgraderer."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Angi en datagjenopprettingsmetode for å forhindre tap av data."
@@ -4434,6 +4443,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Du får best resultat hvis du unngår strømming og minneintensive oppgaver, eller deler opp opplastingen i mindre grupper."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Gratis 5 GB kryptert lagring for å komme i gang"
+      ],
       "from the version history?": [
         "fra versjonshistorikken?"
       ],
@@ -4548,6 +4560,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bare bekreft valget ditt og vi vil gjøre resten."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Hold filene dine sikre med ende-til-ende-kryptering."
       ],
       "Key fingerprint": [
         "Nøkkelfingeravtrykk"
@@ -4884,6 +4899,9 @@
       ],
       "Retry now": [
         "Prøv igjen nå"
+      ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "Lagret i ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan issue": [
         "Skanningsproblem"
@@ -5846,6 +5864,9 @@
       "Location": [
         "Plassering"
       ],
+      "Log in or sign up ": [
+        "Logg på eller registrer deg "
+      ],
       "Mail Server (IMAP)": [
         "E-posttjener (IMAP)"
       ],
@@ -6628,6 +6649,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Nedgrader til ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Kom i gang for ${ price }"
+      ],
       "Upgrade now": [
         "Oppgrader nå"
       ]
@@ -6656,6 +6680,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skriveassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6748,8 +6775,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - for alle ${ BRAND_NAME }-tjenester"
       ],
+      "1 TB secure storage": [
+        "1 TB sikker lagring"
+      ],
       "1 user": [
         "1 bruker"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-postadresser/aliaser"
+      ],
+      "10-year file version history": [
+        "10-år filversjonshistorikk"
+      ],
+      "15 GB storage": [
+        "15 GB lagring"
       ],
       "24/7 account management support": [
         "24/7 støtte for kontoadministrasjon"
@@ -6765,6 +6804,9 @@
       ],
       "Administration Panel": [
         "Administrasjonspanel"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME }-produkter og tjenester"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6847,6 +6889,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Støtte for e-postklienter (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-postgrupper"
+      ],
       "Enables HIPAA compliance": [
         "Aktiverer HIPAA-overholdelse"
       ],
@@ -6873,6 +6918,9 @@
       ],
       "GDPR data processing agreement": [
         "Avtale om GDPR-databehandling"
+      ],
+      "Generate emails with a prompt": [
+        "Generer e-poster med en ledetekst"
       ],
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
@@ -6929,9 +6977,15 @@
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
       ],
+      "Proofread and refine your emails": [
+        "Korrekturles og finjuster e-postene dine"
+      ],
       "Protect ${ n } device at a time": [
         "Beskytt ${ n } enhet om gangen",
         "Beskytt ${ n } enheter om gangen"
+      ],
+      "Quickly craft replies": [
+        "Lag svar raskt"
       ],
       "Recover previous file versions": [
         "Gjenopprett tidligere filversjoner"
@@ -6986,6 +7040,9 @@
       ],
       "Strict no-logs policy": [
         "Streng ingen-loggførings-praksis"
+      ],
+      "Support for up to 2 users": [
+        "Støtte for opptil 2 brukere"
       ],
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhetskopier alle filene dine på tvers av enheter"
@@ -7066,6 +7123,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 egendefinert e-postdomene"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Opprett flere e-postadresser for dine nettbaserte identiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer, alexnyheter@${ domain2 } for nyhetsabonnement."
       ],
@@ -7167,6 +7227,11 @@
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Få Mail Plus for ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Slett konto?"
@@ -7242,6 +7307,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Del kalenderne dine med familie, venner eller kolleger på en enkel måte."
+      ],
+      "Email everyone in a group with a single email address": [
+        "Send e-post til alle i en gruppe med én enkelt e-postadresse"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Sikrer at du mottar alle e-postmeldinger som sendes til domenet ditt, selv om e-postadressen ikke eksisterer, ikke lenger eksisterer eller har en skrivefeil."
@@ -7992,6 +8060,9 @@
       "E.g., ": [
         "F.eks. "
       ],
+      "Email": [
+        "E-post"
+      ],
       "Enter a new file name": [
         "Angi et nytt filnavn"
       ],
@@ -8163,6 +8234,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Offisiell e-post fra ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Gjennomgå kontosikkerheten din"
       ]
     },
     "Security Center": {
@@ -9254,9 +9330,6 @@
       "Alias saved and copied": [
         "Alias lagret og kopiert"
       ],
-      "Bug reported": [
-        "Feil rapportert"
-      ],
       "Canceling import": [
         "Avbryter import"
       ],
@@ -9901,6 +9974,9 @@
       "Restore your files": [
         "Gjenopprett filene dine"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Lagre den til senere i ${ DRIVE_APP_NAME }"
+      ],
       "Search results": [
         "Søkeresultater"
       ],
@@ -10090,6 +10166,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Legg til denne delte filen i din ${ DRIVE_APP_NAME } for enkel tilgang senere."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Automatisk angir at formatet i skrivevinduet brukes til å sende til denne brukeren. Ren tekst indikerer at meldingen alltid konverteres til ren tekst ved sending."
       ],
