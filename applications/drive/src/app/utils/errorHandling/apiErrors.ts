@@ -6,6 +6,12 @@ export const is4xx = (status: number) => status >= 400 && status < 500;
 
 export const is5xx = (status: number) => status >= 500 && status < 600;
 
+export const isCryptoEnrichedError = (error: unknown) =>
+    error instanceof EnrichedError &&
+    typeof error.context === 'object' &&
+    error.context.extra &&
+    error.context.extra.crypto;
+
 export const getErrorMetricType = (error: unknown) => {
     const apiError = getApiError(error);
     if (apiError.status && typeof apiError.status === 'number') {
@@ -17,12 +23,7 @@ export const getErrorMetricType = (error: unknown) => {
         }
     }
 
-    if (
-        error instanceof EnrichedError &&
-        typeof error.context === 'object' &&
-        error.context.extra &&
-        error.context.extra.crypto
-    ) {
+    if (isCryptoEnrichedError(error)) {
         return 'crypto';
     }
 
