@@ -1,4 +1,4 @@
-import { generateUID } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
 import { filterFutureNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { triggerToModel } from '@proton/shared/lib/calendar/alarms/notificationModel';
 import { ICAL_ALARM_ACTION, NOTIFICATION_TYPE_API } from '@proton/shared/lib/calendar/constants';

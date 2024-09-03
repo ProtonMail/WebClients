@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import generateUID from '@proton/atoms/generateUID';
 import {
     Dropdown,
     DropdownButton,
@@ -11,7 +12,6 @@ import {
     Icon,
     Mark,
     SearchInput,
-    generateUID,
     usePopperAnchor,
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';

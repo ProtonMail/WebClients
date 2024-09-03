@@ -1,3 +1,4 @@
+import generateUID from '@proton/atoms/generateUID';
 import type { MaybeArray, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
@@ -31,7 +32,6 @@ import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys } from '@pro
 import { fromSieveTree, toSieveTree } from '@proton/sieve';
 import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
 
-import { generateUID } from '../..';
 import { COMPARATORS, OPERATORS, TYPES } from '../filters/constants';
 import type { Condition, FilterCondition, FilterOperator } from '../filters/interfaces';
 import { FilterStatement } from '../filters/interfaces';

@@ -3,9 +3,9 @@ import { cloneElement, forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import generateUID from '@proton/atoms/generateUID';
 import clsx from '@proton/utils/clsx';
 
-import { generateUID } from '../../helpers';
 import Icon from '../icon/Icon';
 import ErrorZone from '../text/ErrorZone';
 import useInput from './useInput';

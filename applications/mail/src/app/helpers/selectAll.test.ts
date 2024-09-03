@@ -1,4 +1,4 @@
-import { generateUID } from '@proton/components/helpers';
+import generateUID from '@proton/atoms/generateUID';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';

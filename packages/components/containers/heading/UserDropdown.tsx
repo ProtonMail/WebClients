@@ -8,6 +8,7 @@ import { c } from 'ttag';
 import { signoutAction } from '@proton/account';
 import { useGetScheduleCall } from '@proton/account/scheduleCall/hooks';
 import { Button, ButtonLike, CircleLoader, NotificationDot } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
 import { ThemeColor } from '@proton/colors';
 import {
     AppLink,
@@ -73,7 +74,6 @@ import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import ProductLink from '../../containers/app/ProductLink';
-import { generateUID } from '../../helpers';
 import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
 import { AuthenticatedBugModal } from '../support';
 import type { Props as UserDropdownButtonProps } from './UserDropdownButton';

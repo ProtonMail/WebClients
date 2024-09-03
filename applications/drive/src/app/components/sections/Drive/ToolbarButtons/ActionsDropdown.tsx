@@ -2,16 +2,9 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import generateUID from '@proton/atoms/generateUID';
 import type { IconName } from '@proton/components';
-import {
-    Dropdown,
-    DropdownMenu,
-    DropdownMenuButton,
-    Icon,
-    ToolbarButton,
-    generateUID,
-    usePopperAnchor,
-} from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 

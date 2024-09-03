@@ -1,4 +1,4 @@
-import { generateUID } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { waitUntil } from '../../../utils/async';

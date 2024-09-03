@@ -1,7 +1,8 @@
 import type { Dispatch, DragEvent, RefObject, SetStateAction } from 'react';
 import { useEffect, useState } from 'react';
 
-import { generateUID, useCache, useDragOver, useHandler } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
+import { useCache, useDragOver, useHandler } from '@proton/components';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 
 import { DRAG_ADDRESS_KEY } from '../constants';

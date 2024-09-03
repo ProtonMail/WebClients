@@ -1,4 +1,5 @@
-import generateUID from '../helpers/generateUID';
+import generateUID from '@proton/atoms/generateUID';
+
 import type { ContactValue } from '../interfaces/contacts';
 import type { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import { UID_PREFIX } from './constants';

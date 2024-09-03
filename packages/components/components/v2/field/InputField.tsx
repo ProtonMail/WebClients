@@ -4,12 +4,12 @@ import React, { forwardRef, useContext, useRef, useState } from 'react';
 import { isFocusable } from 'tabbable';
 
 import { Input } from '@proton/atoms';
+import generateUID from '@proton/atoms/generateUID';
 import useInstance from '@proton/hooks/useInstance';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import { FormContext } from '../../../components/form';
-import { generateUID } from '../../../helpers';
 import Icon from '../../icon/Icon';
 import { Tooltip } from '../../tooltip';
 

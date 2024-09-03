@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useMemo, useRef } from 'react';
 
-import { generateUID, useApi, useEventManager } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
+import { useApi, useEventManager } from '@proton/components';
 import { queryLatestVolumeEvent, queryVolumeEvents } from '@proton/shared/lib/api/drive/volume';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';

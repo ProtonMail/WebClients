@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { generateUID } from '@proton/components';
+import generateUID from '@proton/atoms/generateUID';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import type { WorkerDecryptionResult } from '@proton/crypto';
 import type { MIME_TYPES } from '@proton/shared/lib/constants';
