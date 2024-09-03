@@ -6078,6 +6078,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ja ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6170,8 +6173,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Kaikille ${ BRAND_NAME }-palveluille"
       ],
+      "1 TB secure storage": [
+        "1 Tt turvallista tallennustilaa"
+      ],
       "1 user": [
         "1 käyttäjä"
+      ],
+      "10 email addresses/aliases": [
+        "10 sähköpostiosoitetta/aliasta"
+      ],
+      "10-year file version history": [
+        "10 vuoden tiedostojen versiohistoria"
+      ],
+      "15 GB storage": [
+        "15 Gt tallennustilaa"
       ],
       "24/7 account management support": [
         "24/7 tilin hallinnan tuki"
@@ -6193,6 +6208,9 @@
       ],
       "Advanced network security": [
         "Edistynyt verkon suojaus"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Kaikki ${ BRAND_NAME } tuotteet ja ominaisuudet"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6281,6 +6299,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Sähköpostisovellusten tuki (IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Sähköpostiryhmät"
+      ],
       "Enables HIPAA compliance": [
         "Mahdollistaa HIPAA-vaatimustenmukaisuuden"
       ],
@@ -6307,6 +6328,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR-tietojenkäsittelysopimus"
+      ],
+      "Generate emails with a prompt": [
+        "Luo sähköposteja kehotteella"
       ],
       "Group management (coming soon)": [
         "Ryhmähallinta (tulossa pian)"
@@ -6369,9 +6393,15 @@
       "Priority support & live chat": [
         "Ensisijainen tuki ja live-chat"
       ],
+      "Proofread and refine your emails": [
+        "Oikolue ja hiovi sähköpostisi"
+      ],
       "Protect ${ n } device at a time": [
         "Suojaa samanaikaisesti ${ n } laite",
         "Suojaa samanaikaisesti ${ n } laitetta"
+      ],
+      "Quickly craft replies": [
+        "Laadi nopeasti vastauksia"
       ],
       "Recover previous file versions": [
         "Palauta aiempia tiedostoversioita"
@@ -6436,6 +6466,9 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
+      ],
+      "Support for up to 2 users": [
+        "Tuki jopa 2 käyttäjälle"
       ],
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
@@ -6516,6 +6549,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 oma sähköpostiverkkotunnus"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain2 } uutiskirjeille"
       ],
@@ -6732,6 +6768,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Jaa kalentereita helposti perheenjäsenille, kavereille tai kollegoille"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Lähetä sähköpostia kaikille ryhmän jäsenille yhdellä sähköpostiosoitteella"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Varmistaa, että saat kaikki verkkotunnukseesi lähetetyt viestit, vaikka sähköpostiosoitetta ei olisi olemassa, se olisi poistettu tai siinä olisi kirjoitusvirhe."
@@ -7690,6 +7729,11 @@
       ],
       "User": [
         "Käyttäjä"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Tarkista tilisi turvallisuus"
       ]
     },
     "saml: Action": {
@@ -9041,9 +9085,6 @@
       "Administrator privileges restored": [
         "Ylläpitäjän oikeudet palautettiin"
       ],
-      "Bug reported": [
-        "Vikailmoitus lähetettiin"
-      ],
       "Catch-all address updated": [
         "Nappaa kaikki -osoite päivitettiin"
       ],
@@ -10128,14 +10169,17 @@
       "Private user": [
         "Yksityinen käyttäjä"
       ],
+      "Request to manage account sent, awaiting user approval": [
+        "Tilinhallintapyyntö lähetetty, odotetaan käyttäjän hyväksyntää"
+      ],
       "Revoke access": [
         "Mitätöi käyttöoikeus"
       ],
-      "Revoke administrator access?": [
-        "Mitätöidäänkö ylläpitäjän käyttöoikeus?"
-      ],
       "Send request": [
         "Lähetä pyyntö"
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Tämä mitätöi ylläpitäjän oikeuden hallita tämän käyttäjän tiliä."
       ]
     },
     "upsell panel": {

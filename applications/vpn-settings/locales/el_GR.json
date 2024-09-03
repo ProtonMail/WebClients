@@ -6078,6 +6078,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } και ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6170,8 +6173,17 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Για όλες τις ${ BRAND_NAME } υπηρεσίες"
       ],
+      "1 TB secure storage": [
+        "Ασφαλής χώρος αποθήκευσης 1 TB"
+      ],
       "1 user": [
         "1 χρήστης"
+      ],
+      "10 email addresses/aliases": [
+        "10 διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "15 GB storage": [
+        "15 GB αποθηκευτικός χώρος"
       ],
       "24/7 account management support": [
         "24/7 υποστήριξη διαχείρισης λογαριασμού"
@@ -6307,6 +6319,9 @@
       ],
       "GDPR data processing agreement": [
         "Συμφωνία επεξεργασίας δεδομένων GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Δημιουργήστε μηνύματα ηλεκτρονικού ταχυδρομείου με μια προτροπή"
       ],
       "Group management (coming soon)": [
         "Διαχείριση ομάδας (σύντομα κοντά σας)"
@@ -6516,6 +6531,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain2 } για συνδρομή ειδήσεων"
       ],
@@ -9040,9 +9058,6 @@
       ],
       "Administrator privileges restored": [
         "Επαναφορά δικαιωμάτων διαχειριστή"
-      ],
-      "Bug reported": [
-        "Το σφάλμα αναφέρθηκε"
       ],
       "Catch-all address updated": [
         "Έγινε ενημέρωση της διεύθυνσης catch-all"
