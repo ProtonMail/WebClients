@@ -22,8 +22,8 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/p
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import { useSanitizeUserIdentifiers } from '@proton/pass/hooks/useSanitizeUserIdentifiers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { getSanitizedUserIdentifiers } from '@proton/pass/lib/items/item.utils';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
@@ -47,7 +47,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
-    const { itemEmail, itemUsername } = useSanitizeUserIdentifiers(content);
+    const { email, username } = getSanitizedUserIdentifiers(content);
 
     const initialValues: LoginItemFormValues = {
         aliasPrefix: '',
@@ -62,8 +62,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
         totpUri: getSecretOrUri(content.totpUri),
         url: '',
         urls: content.urls.map(createNewUrl),
-        itemEmail,
-        itemUsername,
+        itemEmail: email,
+        itemUsername: username,
         withAlias: false,
     };
 
@@ -118,6 +118,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                 );
             }
 
+            const { email, username } = getSanitizedUserIdentifiers({ itemEmail, itemUsername });
+
             onSubmit({
                 ...uneditable,
                 content: {
@@ -126,8 +128,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                     password: obfuscate(password),
                     totpUri: obfuscate(normalizedOtpUri),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
-                    itemEmail: obfuscate(itemEmail),
-                    itemUsername: obfuscate(itemUsername),
+                    itemEmail: obfuscate(email),
+                    itemUsername: obfuscate(username),
                 },
                 extraFields: obfuscateExtraFields(
                     extraFields.map((field) =>
