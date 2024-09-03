@@ -567,6 +567,9 @@
       "Open navigation": [
         "Buka navigasi"
       ],
+      "Open scan and download info": [
+        "Buka pindai dan unduh informasi"
+      ],
       "Pause all": [
         "Jeda semua"
       ],
@@ -701,6 +704,9 @@
       ],
       "Save changes": [
         "Simpan perubahan"
+      ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "Simpan ke ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Pindai & Unduh"
@@ -2282,6 +2288,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Penggabungan kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Hemat waktu Anda dengan mengirim email ke seluruh pengguna yang memiliki grup kontak secara sekaligus. Dapatkan fitur ini dan berbagai fitur premium lainnya pada saat Anda meningkatkan akun."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Tentukan metode pemulihan untuk mencegah hilangnya data."
@@ -4360,6 +4369,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Untuk hasil yang maksimal, hindari streaming serta berbagai kegiatan lainnya yang boros akan memori atau pisah unggahan Anda ke dalam beberapa kelompok berkas kecil."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Ruang penyimpanan terenkripsi 5GB gratis untuk memulai"
+      ],
       "from the version history?": [
         "dari riwayat versi secara permanen?"
       ],
@@ -4473,6 +4485,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Jaga berkas Anda tetap aman dengen enkripsi end-to-end."
       ],
       "Key fingerprint": [
         "Sidik jari kunci"
@@ -4664,7 +4679,7 @@
         "Foto telah berhasi dipulihkan."
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "Silakan mina pemilik dokumen untuk mengundang Anda secara langsung ke dokumen ini."
+        "Silakan minta pemilik dokumen untuk mengundang Anda secara langsung ke dokumen ini."
       ],
       "Please authenticate your card in the verification tab.": [
         "Silakan autentikasi kartu Anda pada tab verifikasi."
@@ -4721,10 +4736,10 @@
         "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Mohon tunggu selagi kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
+        "Silakan tunggu selagi kami mencari kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Mohon tunggu selagi kami memeriksa kontak yang mengandung data yang terenkripsi dengan kunci yang sudah tidak lagi aktif."
+        "Silakan tunggu selagi kami mencari kontak yang mengandung data yang terenkripsi dengan kunci yang tidak aktif."
       ],
       "Preparing link to file": [
         "Mempersiapkan tautan berkas"
@@ -4742,7 +4757,7 @@
         "Pratinjau untuk tipe berkas ini tidak didukung"
       ],
       "Preview of documents is not yet supported.": [
-        "Pratinjau dokumen bleum didukung."
+        "Pratinjau dokumen saat ini belum didukung."
       ],
       "Previous versions are kept for ${ retentionLabel }": [
         "Versi sebelumnya disimpan selama ${ retentionLabel }"
@@ -4806,6 +4821,9 @@
       ],
       "Retry now": [
         "Coba lagi sekarang"
+      ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "Tersimpan di ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan issue": [
         "Masalah pemindaian"
@@ -5757,6 +5775,9 @@
       "Location": [
         "Lokasi"
       ],
+      "Log in or sign up ": [
+        "Masuk atau daftar "
+      ],
       "Mail Server (IMAP)": [
         "Server Mail (IMAP)"
       ],
@@ -6534,6 +6555,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Turunkan jenis akun saya ke ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Mulai dengan harga ${ price }"
+      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
       ]
@@ -6562,6 +6586,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } dan ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6637,8 +6664,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Untuk semua layanan ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "Ruang penyimpanan aman 1 TB"
+      ],
       "1 user": [
         "1 pengguna"
+      ],
+      "10 email addresses/aliases": [
+        "10 alamat email/alias"
+      ],
+      "10-year file version history": [
+        "Riwayat versi berkas 10 tahun"
+      ],
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
       ],
       "24/7 account management support": [
         "Layanan pengelolaan akun 24/7"
@@ -6654,6 +6693,9 @@
       ],
       "Administration Panel": [
         "Panel Administrasi"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Seluruh produk dan fitur ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Seluruh layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6736,6 +6778,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Dukungan klien email (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grup email"
+      ],
       "Enables HIPAA compliance": [
         "Tunduk terhadap undang-undang HIPAA"
       ],
@@ -6762,6 +6807,9 @@
       ],
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Hasilkan email hanya dengan sebaris perintah"
       ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
@@ -6817,8 +6865,14 @@
       "Priority support & live chat": [
         "Dukungan prioritas & percakapan langsung"
       ],
+      "Proofread and refine your emails": [
+        "Periksa dan sempurnakan email Anda"
+      ],
       "Protect ${ n } device at a time": [
         "Lindungi ${ n } perangkat secara bersamaan"
+      ],
+      "Quickly craft replies": [
+        "Tulis pesan balasan dengan cepat"
       ],
       "Recover previous file versions": [
         "Pulihkan versi berkas sebelumnya"
@@ -6873,6 +6927,9 @@
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
+      ],
+      "Support for up to 2 users": [
+        "Dukungan hingga 2 pengguna"
       ],
       "Sync and backup all your files across devices": [
         "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
@@ -6951,6 +7008,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domain email khusus"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
@@ -7052,6 +7112,11 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -7126,6 +7191,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Email seluruh anggota grup dengan satu alamat email"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"
@@ -7857,6 +7925,9 @@
       "E.g., ": [
         "Misalnya "
       ],
+      "Email": [
+        "Email"
+      ],
       "Enter a new file name": [
         "Masukkan nama berkas baru"
       ],
@@ -8023,6 +8094,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Email resmi dari ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Tinjau keamanan akun Anda"
       ]
     },
     "Security Center": {
@@ -9085,9 +9161,6 @@
       "Alias saved and copied": [
         "Alias disimpan dan disalin"
       ],
-      "Bug reported": [
-        "Bug berhasil dilaporkan"
-      ],
       "Canceling import": [
         "Membatalkan impor"
       ],
@@ -9715,6 +9788,9 @@
       "Restore your files": [
         "Pulihkan berkas Anda"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Simpan untuk nanti di ${ DRIVE_APP_NAME }"
+      ],
       "Search results": [
         "Hasil pencarian"
       ],
@@ -9904,6 +9980,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Tambahkan berkas bersama ini ke ${ DRIVE_APP_NAME } anda untuk akses mudah nanti."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
       ],
