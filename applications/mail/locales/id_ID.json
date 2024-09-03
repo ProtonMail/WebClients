@@ -93,6 +93,9 @@
       "Add to group": [
         "Tambah ke grup"
       ],
+      "Adds it above your existing message": [
+        "Ditambahkan di atas pesan Anda yang sudah ada"
+      ],
       "Align center": [
         "Rata tengah"
       ],
@@ -497,6 +500,9 @@
       ],
       "Generate text": [
         "Hasilkan teks"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Dapatkan ${ BRAND_NAME } Duo"
       ],
       "Get in touch": [
         "Hubungi kami"
@@ -1526,17 +1532,29 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Data tetap pada perangkat Anda demi melindungi privasi Anda. Memerlukan unduhan dan perangkat keras yang kompatibel."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Data akan tetap tersimpan pada perangkat Anda, namun memerlukan unduhan satu kali dan perangkat keras yang kompatibel"
       ],
       "Fast and secure. No logs are kept.": [
         "Cepat dan aman. Tanpa log apa pun yang disimpan."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Tidak ada log yang disimpan demi melindungi privasi Anda. Pemrosesan lebih cepat."
+      ],
       "Run on device": [
         "Jalankan pada perangkat"
       ],
       "Run on servers": [
         "Jalankan pada server"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Jalankan secara aman di server ${ BRAND_NAME }"
+      ],
+      "Securely run on device": [
+        "Berjalan secara aman pada perangkat"
       ]
     },
     "Assistant toggle": {
@@ -3367,6 +3385,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2FA memberikan lapisan keamanan tambahan, yang mencegah akses masuk yang tidak diinginkan."
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Hapus pesan spam dan sampah secara otomatis dan buka lebih banyak fitur premium saat Anda meningkatkan."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Mendekripsi kontak… Proses ini dapat memakan waktu hingga beberapa menit. Setelah selesai, Anda akan dapat mengunduh berkas yang berisi seluruh kontak yang Anda ekspor."
       ],
@@ -3381,6 +3402,9 @@
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Untuk mengimpor kontak melalui berkas CSV dan VCF, pastikan berkas Anda tidak melebihi batas ukuran ${ MAX_IMPORT_FILE_SIZE_STRING } atau batas jumlah ${ MAX_IMPORT_CONTACTS_STRING } kontak. Apabila berkas Anda melebihi batas ukuran yang ada, silakan pecahkan berkas Anda ke beberapa berkas yang lebih kecil. ${ learnMoreLink }"
+      ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Untuk akses tanpa batas ke asisten penulisan dan berbagai fitur lainnya, tingkatkan ke ${ BRAND_NAME } Duo."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Dapatkan alias tanpa batasan jumlah dan ruang penyimpanan 500 GB dengan ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -3403,6 +3427,9 @@
       "No labels": [
         "Tidak ada label"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Hemat waktu Anda dengan mengirim email ke seluruh pengguna yang memiliki grup kontak secara sekaligus. Dapatkan fitur ini dan berbagai fitur premium lainnya pada saat Anda meningkatkan akun."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Pisahkan berbagai aspek kehidupan Anda dengan alamat emailnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
       ],
@@ -3411,6 +3438,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Tentukan metode pemulihan untuk mencegah hilangnya akses menuju akun Anda."
+      ],
+      "Starting from ${ price }": [
+        "Mulai dari ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Untuk lanjut menggunakan asisten penulisan, tambahkan fitur ini ke dalam langganan Anda."
@@ -3426,6 +3456,12 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Aktifkan perlindungan pelacak email untuk mencegah pengiklan dan pihak lainnya dari melacak lokasi dan aktivitas online Anda."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Dapatkan penjadwalan pesan khusus dan lebih banyak fitur premium lainnya pada saat Anda meningkatkan akun."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Dapatkan waktu tunda khusus dan lebih banyak fitur premium lainnya pada saat Anda meningkatkan akun."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Dapatkan alamat email yang lebih pendek dan berbagai fitur premium lainnya dengan meningkatkan akun."
@@ -5467,6 +5503,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe membantu Anda menulis email yang lebih baik secara cepat dan mudah."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asisten penulisan ${ BRAND_NAME } Scribe"
       ],
@@ -5744,10 +5783,10 @@
         "Apakah Anda yakin ingin membuang impor Anda?"
       ],
       "Are you sure you want to move all messages in this location to archive?": [
-        "Apakah Anda yakin untuk memindahkan seluruh pesan yang terdapat pada lokasi ini ke arsip?"
+        "Apakah Anda yakin ingin memindahkan seluruh pesan yang terdapat pada lokasi ini ke arsip?"
       ],
       "Are you sure you want to move all messages in this location to trash?": [
-        "Apakah Anda yakin untuk memindahkan seluruh pesan yang terdapat pada lokasi ini ke sampah?"
+        "Apakah Anda yakin ingin memindahkan seluruh pesan yang terdapat pada lokasi ini ke sampah?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Apakah Anda yakin untuk menghapus ${ count } percakapan secara permanen?"
@@ -5759,13 +5798,13 @@
         "Apakah Anda yakin untuk menghapus ${ count } pesan secara permanen?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "Yakin ingin menghapus percakapan ini secara permanen?"
+        "Apakah Anda yakin ingin menghapus percakapan ini secara permanen?"
       ],
       "Are you sure you want to permanently delete this draft?": [
-        "Yakin ingin menghapus draf ini secara permanen?"
+        "Apakah Anda yakin ingin menghapus draf ini secara permanen?"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "Yakin ingin menghapus pesan ini secara permanen?"
+        "Apakah Anda yakin ingin menghapus pesan ini secara permanen?"
       ],
       "Attach public key": [
         "Lampirkan kunci publik"
@@ -6103,6 +6142,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Untuk hasil pencarian yang lebih banyak, cobalah untuk mencari kata kunci ini pada konten email Anda."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Coba gratis untuk ${ ASSISTANT_TRIAL_TIME_DAYS } hari"
+      ],
       "From": [
         "Dari"
       ],
@@ -6246,6 +6288,9 @@
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "Learn more about the writing assistant": [
+        "Pelajari lebih lanjut mengenai asisten penulisan"
       ],
       "Left to Right": [
         "Kiri ke Kanan"
@@ -6446,7 +6491,7 @@
         "Silakan tambahkan setidaknya satu penerima."
       ],
       "Please ask the owner to directly invite you to the document.": [
-        "Silakan mina pemilik dokumen untuk mengundang Anda secara langsung ke dokumen ini."
+        "Silakan minta pemilik dokumen untuk mengundang Anda secara langsung ke dokumen ini."
       ],
       "Please authenticate your card in the verification tab.": [
         "Silakan autentikasi kartu Anda pada tab verifikasi."
@@ -6509,10 +6554,10 @@
         "Mohon tunggu hingga perubahan Anda disinkronkan dengan server."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Mohon tunggu selagi kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
+        "Silakan tunggu selagi kami mencari kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Mohon tunggu selagi kami memeriksa kontak yang mengandung data yang terenkripsi dengan kunci yang sudah tidak lagi aktif."
+        "Silakan tunggu selagi kami mencari kontak yang mengandung data yang terenkripsi dengan kunci yang tidak aktif."
       ],
       "Preview failed to be loaded": [
         "Pratinjau gagal dimuat"
@@ -6524,7 +6569,7 @@
         "Pratinjau untuk tipe berkas ini tidak didukung"
       ],
       "Preview of documents is not yet supported.": [
-        "Pratinjau dokumen bleum didukung."
+        "Pratinjau dokumen saat ini belum didukung."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Harga termasuk seluruh diskon berbasis siklus yang berlaku dan kupon tanpa tanggal berakhir yang disimpan di akun Anda."
@@ -6727,6 +6772,9 @@
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Jumlah unduhan meliputi berapa kali berkas telah diunduh dan berapa kali berkas telah dipratinjau"
       ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "Alamat email ${ boldNoReplyEmail } sepertinya tidak menerima email balasan. Aakan Anda yakin ingin mengirim pesan Anda?"
+      ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Data yang terenkripsi akan berukuran sedikit lebih besar berkat sisipan overhead enkripsi dan tanda tangan digital yang memastikan keamanan data Anda."
       ],
@@ -6914,7 +6962,7 @@
         "Besok, ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Pesan yang akan dikirim sudah terlalu banyak. Mohon tunggu sejenak sebelum Anda menjadwalkan pengiriman pesan ini."
+        "Terlalu banyak pesan yang menunggu untuk dikirim. Silakan tunggu hingga pesan lain telah dikirim untuk menjadwalkan pengiriman pesan ini."
       ],
       "Total email addresses": [
         "Total alamat email"
@@ -7317,6 +7365,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai satu kali ini untuk keperluan verifikasi."
+      ],
+      "Your private writing assistant": [
+        "Asisten penulisan pribadi Anda"
       ]
     },
     "info": {
@@ -8767,6 +8818,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Turunkan jenis akun saya ke ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Mulai dengan harga ${ price }"
+      ],
       "Upgrade now": [
         "Tingkatkan sekarang"
       ]
@@ -8795,6 +8849,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } dan ${ PROTON_SENTINEL_NAME }"
       ],
@@ -8870,8 +8927,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Untuk semua layanan ${ BRAND_NAME }"
       ],
+      "1 TB secure storage": [
+        "Ruang penyimpanan aman 1 TB"
+      ],
       "1 user": [
         "1 pengguna"
+      ],
+      "10 email addresses/aliases": [
+        "10 alamat email/alias"
+      ],
+      "10-year file version history": [
+        "Riwayat versi berkas 10 tahun"
+      ],
+      "15 GB storage": [
+        "Ruang penyimpanan 15 GB"
       ],
       "24/7 account management support": [
         "Layanan pengelolaan akun 24/7"
@@ -8887,6 +8956,9 @@
       ],
       "Administration Panel": [
         "Panel Administrasi"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Seluruh produk dan fitur ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Seluruh layanan ${ BRAND_NAME } dasar (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -8969,6 +9041,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Dukungan klien email (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Grup email"
+      ],
       "Enables HIPAA compliance": [
         "Tunduk terhadap undang-undang HIPAA"
       ],
@@ -8995,6 +9070,9 @@
       ],
       "GDPR data processing agreement": [
         "Persetujuan pemrosesan data GDPR"
+      ],
+      "Generate emails with a prompt": [
+        "Hasilkan email hanya dengan sebaris perintah"
       ],
       "Group management (coming soon)": [
         "Pengelolaan grup (segera hadir)"
@@ -9050,8 +9128,14 @@
       "Priority support & live chat": [
         "Dukungan prioritas & percakapan langsung"
       ],
+      "Proofread and refine your emails": [
+        "Periksa dan sempurnakan email Anda"
+      ],
       "Protect ${ n } device at a time": [
         "Lindungi ${ n } perangkat secara bersamaan"
+      ],
+      "Quickly craft replies": [
+        "Tulis pesan balasan dengan cepat"
       ],
       "Recover previous file versions": [
         "Pulihkan versi berkas sebelumnya"
@@ -9106,6 +9190,9 @@
       ],
       "Strict no-logs policy": [
         "Kebijakan tanpa log yang ketat"
+      ],
+      "Support for up to 2 users": [
+        "Dukungan hingga 2 pengguna"
       ],
       "Sync and backup all your files across devices": [
         "Sinkronkan dan cadangkan seluruh berkas Anda antar berbagai perangkat"
@@ -9184,6 +9271,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 domain email khusus"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Buat berbagai alamat email untuk masing-masing identitas online Anda, mis. JohnShopper@${ domain } untuk akun belanja dan JohnNews@${ domain2 } untuk akun langganan berita"
       ],
@@ -9285,6 +9375,11 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Dapatkan Mail Plus dengan harga ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -9359,6 +9454,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Email seluruh anggota grup dengan satu alamat email"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Memastikan Anda tetap dapat menerima seluruh email yang terkirim ke domain Anda, bahkan yang terkirim ke alamat yang fiktif, tidak lagi ada, atau salah ketik sekalipun"
@@ -10187,6 +10285,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Proses enkripsi ulang undangan gagal. Silakan coba lagi."
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Tinjau keamanan akun Anda"
       ]
     },
     "Search - no results": {
@@ -11481,9 +11584,6 @@
       "Alias saved and copied": [
         "Alias disimpan dan disalin"
       ],
-      "Bug reported": [
-        "Bug berhasil dilaporkan"
-      ],
       "Canceling import": [
         "Membatalkan impor"
       ],
@@ -11501,6 +11601,9 @@
       ],
       "Contacts deleted": [
         "Kontak dihapus"
+      ],
+      "Content copied to clipboard": [
+        "Konten disalin ke papan klip"
       ],
       "Conversation added to ${ labelName }.": [
         "Percakapan ditambahkan ke ${ labelName }."
@@ -11539,7 +11642,7 @@
         "Disalin ke papan klip"
       ],
       "Draft deleted": [
-        "Draf terhapus"
+        "Draf dihapus"
       ],
       "Email address copied to clipboard": [
         "Alamat email disalin ke clipboard"
@@ -11828,7 +11931,7 @@
         "Unduh aplikasi Desktop"
       ],
       "Enable Dark Web Monitoring": [
-        "Aktifkan Pengawasan Web Gelap"
+        "Aktifkan Pemantauan Dark Web"
       ],
       "Get my “@${ PM_DOMAIN }“ address": [
         "Dapatkan alamat \"@${ PM_DOMAIN }\" saya"
@@ -11987,6 +12090,9 @@
       ],
       "Coupon": [
         "Kupon"
+      ],
+      "Craft better emails": [
+        "Susun email yang lebih baik"
       ],
       "Create contact": [
         "Buat kontak"
@@ -12317,6 +12423,9 @@
       ],
       "No trackers found": [
         "Tidak ada pelacak yang ditemukan"
+      ],
+      "No-reply address detected": [
+        "Alamat yang tidak menerima balasan terdeteksi"
       ],
       "Notes": [
         "Catatan"

@@ -75,6 +75,9 @@
       "Add to group": [
         "Adicionar ao grupo"
       ],
+      "Adds it above your existing message": [
+        "Adiciona acima da sua mensagem existente"
+      ],
       "Align center": [
         "Centrar"
       ],
@@ -470,6 +473,9 @@
       ],
       "Generate text": [
         "Gerar texto"
+      ],
+      "Get ${ BRAND_NAME } Duo": [
+        "Obtenha ${ BRAND_NAME } Duo"
       ],
       "Get in touch": [
         "Entrar em contacto"
@@ -1435,8 +1441,20 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Os dados permanecem no dispositivo para proteger sua privacidade. Requer um download e hardware compatível."
+      ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Nenhum registro é mantido para proteger sua privacidade. Processamento mais rápido."
+      ],
       "Run on servers": [
         "Executar em servidores"
+      ],
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Executado de forma segura nos servidores ${ BRAND_NAME }"
+      ],
+      "Securely run on device": [
+        "Executado de forma segura no dispositivo"
       ]
     },
     "Attached ics file error": {
@@ -3200,6 +3218,9 @@
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar via ficheiro CSV e VCF, certifique-se de que o ficheiro não excede ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro for maior, divida-o em ficheiros mais pequenos. ${ learnMoreLink }."
       ],
+      "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
+        "Para acesso ilimitado ao assistente de escrita e mais, atualize para ${ BRAND_NAME } Duo."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
       ],
@@ -3224,6 +3245,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Defina um método de recuperação para evitar a perda de acesso à sua conta."
+      ],
+      "Starting from ${ price }": [
+        "A partir de ${ price }"
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Para importar os seus contactos do Google e Outlook, ${ easySwitchLink }."
@@ -5153,6 +5177,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe ajuda você a criar e-mails melhores de forma rápida e sem esforço."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de encriptação da ${ BRAND_NAME } significa que ninguém pode aceder à sua palavra-passe - nem mesmo nós."
       ],
@@ -5797,6 +5824,10 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Para obter mais resultados de pesquisa, tente pesquisar esta palavra-chave no conteúdo das suas mensagens de e-mail."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Grátis para testar por ${ ASSISTANT_TRIAL_TIME_DAYS } dia",
+        "Grátis para testar por ${ ASSISTANT_TRIAL_TIME_DAYS } dias"
+      ],
       "From": [
         "De"
       ],
@@ -5924,6 +5955,9 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "Learn more about the writing assistant": [
+        "Saiba mais sobre o assistente de escrita"
       ],
       "Left to Right": [
         "Da esquerda para a direita"
@@ -6933,6 +6967,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "O seu telefone só será utilizado para esta verificação única."
+      ],
+      "Your private writing assistant": [
+        "Seu assistente de escrita privado"
       ]
     },
     "info": {
@@ -8342,6 +8379,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Mudar para ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
       "Upgrade now": [
         "Actualizar agora"
       ]
@@ -8370,6 +8410,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
       ],
@@ -8441,6 +8484,9 @@
       "${ size } storage": [
         "${ size } de armazenamento"
       ],
+      "1 TB secure storage": [
+        "1 TB de armazenamento seguro"
+      ],
       "1 user": [
         "1 utilizador"
       ],
@@ -8455,6 +8501,9 @@
       ],
       "Administration Panel": [
         "Painel de administração"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Todos os produtos e funcionalidades ${ BRAND_NAME }"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminação automática das pastas Spam e Lixeira"
@@ -8549,6 +8598,9 @@
       "GDPR data processing agreement": [
         "Acordo de tratamento de dados do RGPD"
       ],
+      "Generate emails with a prompt": [
+        "Gere e-mails com um prompt"
+      ],
       "Group management (coming soon)": [
         "Gestão de grupos (em breve)"
       ],
@@ -8595,9 +8647,15 @@
       "Priority support & live chat": [
         "Apoio prioritário e chat em direto"
       ],
+      "Proofread and refine your emails": [
+        "Revise e refine seus e-mails"
+      ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo ao mesmo tempo",
         "Proteja ${ n } dispositivos ao mesmo tempo"
+      ],
+      "Quickly craft replies": [
+        "Crie respostas rapidamente"
       ],
       "Require 2FA for organization": [
         "Exigir A2F para a organização"
@@ -8631,6 +8689,9 @@
       ],
       "Strict no-logs policy": [
         "Política rigorosa de não registo"
+      ],
+      "Support for up to 2 users": [
+        "Suporte para até 2 usuários"
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
@@ -10536,9 +10597,6 @@
       "Alias saved and copied": [
         "Alias guardado e copiado"
       ],
-      "Bug reported": [
-        "Erro reportado"
-      ],
       "Canceling import": [
         "A cancelar importação"
       ],
@@ -11016,6 +11074,9 @@
       ],
       "Conversation list": [
         "Lista de conversas"
+      ],
+      "Craft better emails": [
+        "Crie e-mails melhores"
       ],
       "Create contact": [
         "Criar contacto"
@@ -11588,6 +11649,9 @@
       ],
       "Your exposed information": [
         "As suas informações expostas"
+      ],
+      "Your free trial has ended": [
+        "Sua avaliação gratuita terminou"
       ]
     },
     "Title subscription": {
