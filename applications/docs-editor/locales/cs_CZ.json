@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
       "Add comment": [
         "Přidat komentář"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "Upravit velikost písma"
+      ],
+      "Alphabetical": [
+        "Abecedně"
       ],
       "and": [
         "a"
@@ -169,6 +184,9 @@
       ],
       "Right align": [
         "Zarovnat vpravo"
+      ],
+      "Roman": [
+        "Roman"
       ],
       "Save": [
         "Uložit"
@@ -374,6 +392,12 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Při načítání dokumentu došlo k chybě. Aby se zabránilo poškození dokumentu, byl editor uzamčen. Znovu načtěte stránku a zkuste to znovu."
+      ],
+      "Failed to export document.": [
+        "Export dokumentu selhal."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Selhal import HTML kvůli neznámé chybě."
       ],
