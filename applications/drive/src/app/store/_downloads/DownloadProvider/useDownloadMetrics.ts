@@ -11,7 +11,7 @@ import {
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
-import { is4xx, is5xx } from '../../../utils/errorHandling/apiErrors';
+import { is4xx, is5xx, isCryptoEnrichedError } from '../../../utils/errorHandling/apiErrors';
 import type { DownloadErrorCategoryType } from '../../../utils/type/MetricTypes';
 import { DownloadErrorCategory, MetricShareType } from '../../../utils/type/MetricTypes';
 import useSharesState from '../../_shares/useSharesState';
@@ -27,6 +27,8 @@ export function getErrorCategory(state: TransferState, error: any): DownloadErro
         return DownloadErrorCategory.NetworkError;
     } else if (error?.statusCode && error?.statusCode === 429) {
         return DownloadErrorCategory.RateLimited;
+    } else if (isCryptoEnrichedError(error)) {
+        return DownloadErrorCategory.DecryptionError;
     } else if (error?.statusCode && is4xx(error?.statusCode)) {
         return DownloadErrorCategory.HTTPClientError;
     } else if (error?.statusCode && is5xx(error?.statusCode)) {
