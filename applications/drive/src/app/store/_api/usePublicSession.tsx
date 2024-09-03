@@ -1,15 +1,19 @@
 import { createContext, useContext, useRef, useState } from 'react';
 
-import { useApi } from '@proton/components';
+import { useApi, useAuthentication } from '@proton/components';
 import metrics from '@proton/metrics';
 import { queryInitSRPHandshake, queryShareURLAuth } from '@proton/shared/lib/api/drive/sharing';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getUIDHeaders, withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import type { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { srpAuth } from '@proton/shared/lib/srp';
 
-import { getLastActivePersistedUserSessionUID } from '../../utils/lastActivePersistedUserSession';
+import {
+    getLastActivePersistedUserSessionUID,
+    getLastPersistedLocalID,
+} from '../../utils/lastActivePersistedUserSession';
 import retryOnError from '../../utils/retryOnError';
 import { hasCustomPassword, hasGeneratedPasswordIncluded, isLegacySharedUrl } from '../_shares';
 import useDebouncedRequest from './useDebouncedRequest';
@@ -36,6 +40,7 @@ function usePublicSessionProvider() {
     const debouncedRequest = useDebouncedRequest();
     const [hasSession, setHasSession] = useState(false);
     const sessionInfo = useRef<SessionInfo>();
+    const auth = useAuthentication();
 
     const initHandshake = async (token: string) => {
         /*
@@ -46,6 +51,14 @@ function usePublicSessionProvider() {
         const UID = getLastActivePersistedUserSessionUID();
         if (UID) {
             metrics.setAuthHeaders(UID);
+        }
+
+        const localID = getLastPersistedLocalID();
+        if (localID !== null) {
+            const resumedSession = await resumeSession({ api, localID });
+            if (resumedSession.keyPassword) {
+                auth.setPassword(resumedSession.keyPassword);
+            }
         }
 
         return api<SRPHandshakeInfo>(queryInitSRPHandshake(token)).then((handshakeInfo) => {

@@ -23,7 +23,7 @@ const getLastActiveUserId = () => {
     return lastActiveUserId || null;
 };
 
-export const getLastPersistedLocalID = (): number => {
+export const getLastPersistedLocalID = () => {
     try {
         const storageKeys = Object.keys(localStorage);
         // Get localID from last active session
@@ -55,7 +55,7 @@ export const getLastPersistedLocalID = (): number => {
             }
         }
 
-        return lastLocalID?.ID || 0;
+        return lastLocalID?.ID || null;
     } catch (e) {
         sendErrorReport(
             new EnrichedError('Failed to parse JSON from localStorage', {
@@ -64,7 +64,7 @@ export const getLastPersistedLocalID = (): number => {
                 },
             })
         );
-        return 0;
+        return null;
     }
 };
 
