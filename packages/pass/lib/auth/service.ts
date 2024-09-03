@@ -153,6 +153,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             logger.info(`[AuthService] Initialization start`);
             return config.onInit(options).catch((err) => {
                 logger.warn(`[AuthService] Initialization failure`, err);
+                config.onNotification?.({ type: 'error', text: getErrorMessage(err) });
                 return false;
             });
         }),
