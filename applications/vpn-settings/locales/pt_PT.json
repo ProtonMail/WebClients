@@ -5152,6 +5152,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
       ],
@@ -5223,6 +5226,9 @@
       "${ size } storage": [
         "${ size } de armazenamento"
       ],
+      "1 TB secure storage": [
+        "1 TB de armazenamento seguro"
+      ],
       "1 user": [
         "1 utilizador"
       ],
@@ -5243,6 +5249,9 @@
       ],
       "Advanced network security": [
         "Segurança de rede avançada"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Todos os produtos e funcionalidades ${ BRAND_NAME }"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminação automática das pastas Spam e Lixeira"
@@ -5343,6 +5352,9 @@
       "GDPR data processing agreement": [
         "Acordo de tratamento de dados do RGPD"
       ],
+      "Generate emails with a prompt": [
+        "Gere e-mails com um prompt"
+      ],
       "Group management (coming soon)": [
         "Gestão de grupos (em breve)"
       ],
@@ -5395,9 +5407,15 @@
       "Priority support & live chat": [
         "Apoio prioritário e chat em direto"
       ],
+      "Proofread and refine your emails": [
+        "Revise e refine seus e-mails"
+      ],
       "Protect ${ n } device at a time": [
         "Proteja ${ n } dispositivo ao mesmo tempo",
         "Proteja ${ n } dispositivos ao mesmo tempo"
+      ],
+      "Quickly craft replies": [
+        "Crie respostas rapidamente"
       ],
       "Require 2FA for organization": [
         "Exigir A2F para a organização"
@@ -5441,6 +5459,9 @@
       ],
       "Strict no-logs policy": [
         "Política rigorosa de não registo"
+      ],
+      "Support for up to 2 users": [
+        "Suporte para até 2 usuários"
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
@@ -7300,9 +7321,6 @@
       ],
       "Address added": [
         "Endereço adicionado"
-      ],
-      "Bug reported": [
-        "Erro reportado"
       ],
       "Catch-all address updated": [
         "Endereço Catch-all atualizado"

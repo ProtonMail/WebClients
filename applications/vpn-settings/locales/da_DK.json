@@ -4847,7 +4847,7 @@
         "Vi sender en nulstillingskode til det telefonnummer, du angav til kontogendannelse."
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
-        "Når du aktiverer SAML for ${ appName } i din identitetsudbyder, bliver du muligvis bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Du skal blot kopiere og indsætte nedenstående data i din identitetsudbyders felter."
+        "Ved aktivering af SAML for ${ appName } i din identitetsudbyder, kan du blive bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Kopier og indsæt blot nedenstående data i din identitetsudbyders felter."
       ],
       "When you cancel your current paid subscription, the balance of your subscription will be returned as account credits and you will be downgraded to the ${ BRAND_NAME } ${ PLANS.FREE } plan.": [
         "Når du opsiger dit nuværende betalte abonnement, returneres restbeløbet af abonnementet som kontokredit, og du nedgraderes til ${ BRAND_NAME }. ${ PLANS.FREE }-abonnementet"
@@ -5838,7 +5838,7 @@
     },
     "Loading info": {
       "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
-        "${ twoFAMembers.length }/${ members.length } af din organisations medlem bruger to-faktor-godkendelse.",
+        "${ twoFAMembers.length }/${ members.length } af din organisations medlem bruger totrins-godkendelse.",
         "${ twoFAMembers.length }/${ members.length } af din organisations medlemmer bruger totrins-godkendelse."
       ]
     },
@@ -6078,6 +6078,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6170,8 +6173,20 @@
       "${ textType } - For all ${ BRAND_NAME } services": [
         "${ textType } - Til alle ${ BRAND_NAME }-tjenester"
       ],
+      "1 TB secure storage": [
+        "1 TB sikker lagerplads"
+      ],
       "1 user": [
         "1 bruger"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailadresser/aliasser"
+      ],
+      "10-year file version history": [
+        "10-års fil-versionshistorik"
+      ],
+      "15 GB storage": [
+        "15 GB lagerplads"
       ],
       "24/7 account management support": [
         "24/7 kontoadministreringssupport"
@@ -6193,6 +6208,9 @@
       ],
       "Advanced network security": [
         "Avanceret netværkssikkerhed"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Alle ${ BRAND_NAME } produkter og funktioner"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6281,6 +6299,9 @@
       "Email client support (via IMAP/SMTP)": [
         "Understøttelse af e-mailklient (via IMAP/SMTP)"
       ],
+      "Email groups": [
+        "Mail-grupper"
+      ],
       "Enables HIPAA compliance": [
         "Aktiverer HIPAA-overholdelse"
       ],
@@ -6307,6 +6328,9 @@
       ],
       "GDPR data processing agreement": [
         "GDPR databehandleraftale"
+      ],
+      "Generate emails with a prompt": [
+        "Generer e-mails med et prompt"
       ],
       "Group management (coming soon)": [
         "Gruppe administration (kommer snart)"
@@ -6369,9 +6393,15 @@
       "Priority support & live chat": [
         "Prioriteret support & live chat"
       ],
+      "Proofread and refine your emails": [
+        "Korrekturlæs og forfin dine e-mails"
+      ],
       "Protect ${ n } device at a time": [
         "Beskyt ${ n } enhed ad gangen",
         "Beskyt ${ n } enheder ad gangen"
+      ],
+      "Quickly craft replies": [
+        "Skrive hurtigt svar"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -6436,6 +6466,9 @@
       ],
       "Strict no-logs policy": [
         "Streng politik om ingen logger"
+      ],
+      "Support for up to 2 users": [
+        "Support for op til 2 brugere"
       ],
       "Sync and backup all your files across devices": [
         "Synkroniser og sikkerhedskopier alle dine filer mellem enheder"
@@ -6516,6 +6549,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 tilpasset e-maildomæne"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Opret flere e-mailadresser for dine online identiteter, f.eks. JensShopper@${ domain } for shoppingkonto, JensNyheder@${ domain2 } til nyhedsabonnementer."
       ],
@@ -6732,6 +6768,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Del nemt dine kalendere med din familie, venner eller kollegaer"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Send en mail til alle i en gruppe med en enkelt mailadresse"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Sikrer at du modtager alle e-mails sendt til dit domæne, selvom e-mailadressen ikke eksisterer, ikke længere eksisterer eller har en tastefejl"
@@ -7690,6 +7729,11 @@
       ],
       "User": [
         "Bruger"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Gennemgå din kontos sikkerhed"
       ]
     },
     "saml: Action": {
@@ -9040,9 +9084,6 @@
       ],
       "Administrator privileges restored": [
         "Administratorrettigheder gendannet"
-      ],
-      "Bug reported": [
-        "Fejl anmeldt"
       ],
       "Catch-all address updated": [
         "Catch-all-adresse opdateret"
