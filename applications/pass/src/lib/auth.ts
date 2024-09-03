@@ -35,7 +35,9 @@ import { AppStatus, type Maybe, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { getLocalSessions } from '@proton/shared/lib/api/auth';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import {
     getBasename,
     getLocalIDFromPathname,
@@ -137,16 +139,24 @@ export const createAuthService = ({
                 authStore.setSession(persistedSession);
                 const cookieUpgrade = authStore.shouldCookieUpgrade(persistedSession);
 
-                /** If no cookie upgrade is required, then the persisted session is now
-                 * cookie-based. As such, if the user is online, resolve the `clientKey`
-                 * as soon as possible in order to make an authenticated API call before
-                 * applying the `forceLock` option. This allows detecting stale sessions
-                 * before allowing the user to password unlock. */
-                if (!cookieUpgrade && getOnline()) {
-                    await getPersistedSessionKey(api, authStore).catch((err) => {
-                        app.setStatus(AppStatus.ERROR);
-                        throw err;
-                    });
+                if (getOnline()) {
+                    /** If no cookie upgrade is required, then the persisted session is now
+                     * cookie-based. As such, if the user is online, resolve the `clientKey`
+                     * as soon as possible in order to make an authenticated API call before
+                     * applying the `forceLock` option. This allows detecting stale sessions
+                     * before allowing the user to password unlock. */
+                    if (!cookieUpgrade) {
+                        await getPersistedSessionKey(api, authStore).catch((err) => {
+                            app.setStatus(AppStatus.ERROR);
+                            throw err;
+                        });
+                    }
+
+                    const sessions = await api<{ Sessions: LocalSessionResponse[] }>(getLocalSessions());
+                    const session = sessions.Sessions.find((session) => session.LocalID === persistedSession.LocalID);
+                    if (session?.PrimaryEmail) {
+                        authStore.setUserEmail(session.PrimaryEmail);
+                    }
                 }
             }
 
