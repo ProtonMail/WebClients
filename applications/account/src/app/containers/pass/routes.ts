@@ -21,7 +21,7 @@ export const getPassAppRoutes = ({ app, user, organization, subscription, canDis
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
     const hasPassBusinessPlan = hasPassBusiness(subscription);
-    const hasPassB2BPlanWithEventLogging = hasPassBusinessPlan || hasBundlePro2024(subscription); //passbiz2024 and bundlepro2024
+    const hasPassOrBundleB2B = hasPassBusinessPlan || hasBundlePro2024(subscription); //passbiz2024 and bundlepro2024
 
     return <const>{
         available: app === APPS.PROTONPASS,
@@ -43,7 +43,7 @@ export const getPassAppRoutes = ({ app, user, organization, subscription, canDis
                 icon: 'text-title',
                 available:
                     canDisplayB2BLogsPass &&
-                    hasPassB2BPlanWithEventLogging &&
+                    hasPassOrBundleB2B &&
                     canHaveOrganization &&
                     (hasOrganizationKey || hasOrganization),
                 subsections: [
@@ -56,7 +56,7 @@ export const getPassAppRoutes = ({ app, user, organization, subscription, canDis
                 text: c('Title').t`Policies`,
                 to: '/policies',
                 icon: 'checkmark-triple',
-                available: (hasOrganizationKey || hasOrganization) && isAdmin && hasPassBusinessPlan,
+                available: (hasOrganizationKey || hasOrganization) && isAdmin && hasPassOrBundleB2B,
                 subsections: [
                     {
                         id: 'policies',
