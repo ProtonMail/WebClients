@@ -20,6 +20,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import usePublicToken from '../../../hooks/drive/usePublicToken';
 import type { DecryptedLink } from '../../../store';
 import { useDownload } from '../../../store';
+import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { isTransferActive, isTransferPaused } from '../../../utils/transfer';
 import { useSelection } from '../../FileBrowser';
 import { getSelectedItems } from '../../sections/helpers';
@@ -99,6 +100,7 @@ export function DownloadButton({ items, rootItem, isScanAndDownload, disabled }:
     const count = selectedItems.length;
 
     const handleDownload = () => {
+        countActionWithTelemetry(Actions.PublicDownload);
         // To keep always only one download around.
         clearDownloads();
 
@@ -110,6 +112,7 @@ export function DownloadButton({ items, rootItem, isScanAndDownload, disabled }:
     };
 
     const handleScanAndDownload = () => {
+        countActionWithTelemetry(Actions.PublicScanAndDownload);
         // To keep always only one download around.
         clearDownloads();
 
