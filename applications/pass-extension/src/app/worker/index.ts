@@ -29,7 +29,7 @@ if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {
          * in a broken state after an update or a manual refresh, force the
          * incoming service worker to skip its waiting state
          * https://bugs.chromium.org/p/chromium/issues/detail?id=1271154#c66 */
-        return globalScope.skipWaiting();
+        if (BUILD_TARGET === 'chrome') return globalScope.skipWaiting();
     };
 }
 
