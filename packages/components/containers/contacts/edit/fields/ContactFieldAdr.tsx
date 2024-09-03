@@ -5,8 +5,7 @@ import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
 import type { VCardAddress, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-
-import { generateUID } from '../../../../helpers';
+import generateUID from '@proton/utils/generateUID';
 
 interface Props {
     vCardProperty: VCardProperty<VCardAddress>;

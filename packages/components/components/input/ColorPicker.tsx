@@ -6,8 +6,8 @@ import { c } from 'ttag';
 import { ACCENT_COLORS_MAP, getColorName } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
-import { generateUID } from '../../helpers';
 import ColorSelector from '../color/ColorSelector';
 import { Dropdown, DropdownButton, DropdownSizeUnit } from '../dropdown';
 import type { DropdownButtonProps } from '../dropdown/DropdownButton';

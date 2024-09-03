@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
-import { generateUID } from '../../helpers';
 import type { IconProps } from '../icon/Icon';
 import Icon from '../icon/Icon';
 import Tooltip from '../tooltip/Tooltip';

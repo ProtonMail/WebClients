@@ -2,8 +2,8 @@ import type { DetailedHTMLProps, OptionHTMLAttributes, Ref, SelectHTMLAttributes
 import { forwardRef, useState } from 'react';
 
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
-import { generateUID } from '../../helpers';
 import Icon from '../icon/Icon';
 import useInput from '../input/useInput';
 import ErrorZone from '../text/ErrorZone';

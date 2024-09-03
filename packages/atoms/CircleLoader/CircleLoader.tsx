@@ -3,8 +3,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
-
-import generateUID from '../generateUID';
+import generateUID from '@proton/utils/generateUID';
 
 import './CircleLoader.scss';
 

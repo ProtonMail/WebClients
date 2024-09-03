@@ -2,8 +2,9 @@ import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import type { DropdownButtonProps, DropdownProps } from '@proton/components';
-import { Dropdown, DropdownButton, Tooltip, generateUID, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownButton, Tooltip, usePopperAnchor } from '@proton/components';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 interface Props extends Omit<DropdownButtonProps<'button'>, 'title' | 'content'> {
     autoClose?: boolean;

@@ -1,5 +1,5 @@
 import useInstance from '@proton/hooks/useInstance';
-import generateUID from '@proton/shared/lib/helpers/generateUID';
+import generateUID from '@proton/utils/generateUID';
 
 /* Persists same uid accross component lifetime. */
 const useUid = (prefix?: string) => {

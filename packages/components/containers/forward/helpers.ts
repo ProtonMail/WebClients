@@ -30,8 +30,8 @@ import {
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { fromSieveTree, toSieveTree } from '@proton/sieve';
 import type { SIEVE_VERSION, SieveBranch } from '@proton/sieve/src/interface';
+import generateUID from '@proton/utils/generateUID';
 
-import { generateUID } from '../..';
 import { COMPARATORS, OPERATORS, TYPES } from '../filters/constants';
 import type { Condition, FilterCondition, FilterOperator } from '../filters/interfaces';
 import { FilterStatement } from '../filters/interfaces';

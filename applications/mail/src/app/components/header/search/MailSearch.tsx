@@ -6,7 +6,6 @@ import type { Breakpoints } from '@proton/components';
 import {
     FeatureCode,
     TopNavbarListItemSearchButton,
-    generateUID,
     useAddresses,
     useFolders,
     useLabels,
@@ -15,6 +14,7 @@ import {
     useToggle,
     useUser,
 } from '@proton/components';
+import generateUID from '@proton/utils/generateUID';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';

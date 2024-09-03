@@ -13,7 +13,6 @@ import {
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
-    generateUID,
     useCalendars,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
@@ -22,6 +21,7 @@ import { getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/c
 import { getIsCalendarSubpage } from '@proton/shared/lib/calendar/settingsRoutes';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 const MAX_CALENDARS = 10;
 

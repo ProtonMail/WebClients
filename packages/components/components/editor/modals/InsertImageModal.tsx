@@ -6,8 +6,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import debounce from '@proton/utils/debounce';
+import generateUID from '@proton/utils/generateUID';
 
-import { generateUID } from '../../../helpers';
 import { PrimaryButton } from '../../button';
 import FileButton from '../../button/FileButton';
 import { Form } from '../../form';

@@ -6,8 +6,8 @@ import { addDays, format, parse } from 'date-fns';
 import { c } from 'ttag';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
+import generateUID from '@proton/utils/generateUID';
 
-import { generateUID } from '../../helpers';
 import { useHotkeys } from '../../hooks';
 import Dropdown from '../dropdown/Dropdown';
 import LocalizedMiniCalendar from '../miniCalendar/LocalizedMiniCalendar';

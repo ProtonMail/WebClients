@@ -3,8 +3,9 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownMenu, generateUID, usePopperAnchor } from '@proton/components';
+import { Dropdown, DropdownMenu, usePopperAnchor } from '@proton/components';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import SupportDropdownButton from './SupportDropdownButton';
 

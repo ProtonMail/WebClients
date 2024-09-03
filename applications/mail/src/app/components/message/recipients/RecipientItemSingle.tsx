@@ -1,9 +1,10 @@
 import type { ReactNode, RefObject } from 'react';
 import { useState } from 'react';
 
-import { Dropdown, DropdownMenu, DropdownSizeUnit, generateUID } from '@proton/components';
+import { Dropdown, DropdownMenu, DropdownSizeUnit } from '@proton/components';
 import RecipientDropdownItem from '@proton/components/containers/contacts/view/RecipientDropdownItem';
 import type { Recipient } from '@proton/shared/lib/interfaces';
+import generateUID from '@proton/utils/generateUID';
 
 import type { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import type { MessageState } from '../../../store/messages/messagesTypes';
