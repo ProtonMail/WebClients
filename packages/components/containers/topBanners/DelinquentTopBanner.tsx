@@ -42,7 +42,7 @@ const DelinquentTopBanner = () => {
             </TopBanner>
         );
     }
-    if (user.isMember) {
+    if (user.isMember && user.Delinquent >= UNPAID_STATE.DELINQUENT) {
         return (
             <TopBanner className="bg-danger">
                 {c('Info').t`Account access restricted due to unpaid invoices. Please contact your administrator.`}
