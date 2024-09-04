@@ -21,17 +21,15 @@ import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { useDisplayEmailUsernameFields } from '@proton/pass/hooks/useDisplayEmailUsernameFields';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { getSanitizedUserIdentifiers } from '@proton/pass/lib/items/item.utils';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { itemCreationIntent } from '@proton/pass/store/actions';
 import { selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { arrayRemove } from '@proton/pass/utils/array/remove';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -44,15 +42,12 @@ const FORM_ID = 'edit-login';
 export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault, onSubmit, onCancel }) => {
     const dispatch = useDispatch();
     const { needsUpgrade } = useSelector(selectTOTPLimits);
-    const usernameSplit = useFeatureFlag(PassFeature.PassUsernameSplit);
 
     const { domain, subdomain } = url ?? {};
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
-    const { itemEmail, itemUsername } = content;
-
-    const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername }, usernameSplit);
+    const { email, username } = getSanitizedUserIdentifiers(content);
 
     const initialValues: LoginItemFormValues = {
         aliasPrefix: '',
@@ -67,8 +62,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
         totpUri: getSecretOrUri(content.totpUri),
         url: '',
         urls: content.urls.map(createNewUrl),
-        itemEmail: emailDisplay,
-        itemUsername: usernameDisplay,
+        itemEmail: email,
+        itemUsername: username,
         withAlias: false,
     };
 
@@ -123,6 +118,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                 );
             }
 
+            const { email, username } = getSanitizedUserIdentifiers({ itemEmail, itemUsername });
+
             onSubmit({
                 ...uneditable,
                 content: {
@@ -131,8 +128,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                     password: obfuscate(password),
                     totpUri: obfuscate(normalizedOtpUri),
                     urls: Array.from(new Set(urls.map(({ url }) => url).concat(isEmptyString(url) ? [] : [url]))),
-                    itemEmail: obfuscate(itemEmail),
-                    itemUsername: obfuscate(itemUsername),
+                    itemEmail: obfuscate(email),
+                    itemUsername: obfuscate(username),
                 },
                 extraFields: obfuscateExtraFields(
                     extraFields.map((field) =>
@@ -155,7 +152,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                 shareId,
             });
         },
-        validate: (values) => validateLoginForm({ values, shouldValidateEmail: usernameSplit }),
+        validate: (values) => validateLoginForm({ values }),
         validateOnChange: true,
         validateOnMount: true,
     });

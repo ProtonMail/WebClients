@@ -24,17 +24,15 @@ import { OnePassLoginDesignation } from './1pux.types';
 
 const ENTRY_SEPARATOR_1PIF = '***';
 
-const processLoginItem = (item: OnePassLegacyItem, importUsername?: boolean): ItemImportIntent<'login'> => {
+const processLoginItem = (item: OnePassLegacyItem): ItemImportIntent<'login'> => {
     const fields = item.secureContents.fields;
 
     return importLoginItem({
         name: item.title,
         note: item.secureContents?.notesPlain,
-        ...(importUsername
-            ? getEmailOrUsername(
-                  fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value
-              )
-            : { email: fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value }),
+        ...getEmailOrUsername(
+            fields?.find(({ designation }) => designation === OnePassLoginDesignation.USERNAME)?.value
+        ),
         password: fields?.find(({ designation }) => designation === OnePassLoginDesignation.PASSWORD)?.value,
         urls: extract1PasswordLegacyURLs(item),
         extraFields: extract1PasswordLegacyExtraFields(item),
@@ -94,20 +92,14 @@ export const parse1PifData = (data: string): OnePassLegacyItem[] =>
         .filter((line) => !line.startsWith(ENTRY_SEPARATOR_1PIF) && Boolean(line))
         .map((rawItem) => JSON.parse(rawItem));
 
-export const read1Password1PifData = async ({
-    data,
-    importUsername,
-}: {
-    data: string;
-    importUsername?: boolean;
-}): Promise<ImportPayload> => {
+export const read1Password1PifData = async ({ data }: { data: string }): Promise<ImportPayload> => {
     try {
         const ignored: string[] = [];
         const items: ItemImportIntent[] = parse1PifData(data)
             .map((item) => {
                 switch (item.typeName) {
                     case OnePassLegacyItemType.LOGIN:
-                        return processLoginItem(item, importUsername);
+                        return processLoginItem(item);
                     case OnePassLegacyItemType.NOTE:
                         return processNoteItem(item);
                     case OnePassLegacyItemType.PASSWORD:

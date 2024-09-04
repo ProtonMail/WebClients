@@ -92,7 +92,4 @@ export type ValidDashlaneItemKeys =
     | keyof DashlaneIdItem
     | keyof DashlanePersonalInfoItem;
 
-export type DashlaneItemParser<T extends DashlaneItem = DashlaneItem> = (
-    item: T,
-    importUsername?: boolean
-) => ItemImportIntent;
+export type DashlaneItemParser<T extends DashlaneItem = DashlaneItem> = (item: T) => ItemImportIntent;

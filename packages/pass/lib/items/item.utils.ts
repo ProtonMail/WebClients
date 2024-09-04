@@ -13,12 +13,14 @@ import type {
     MaybeNull,
     SelectedItem,
     UniqueItem,
+    UnsafeItem,
 } from '@proton/pass/types';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import chunk from '@proton/utils/chunk';
 
 import { hasUserIdentifier, isEditItemDraft } from './item.predicates';
@@ -125,7 +127,7 @@ export const sortItems =
 export const matchDraftsForShare = (drafts: Draft[], shareId: string, itemIds?: string[]) =>
     drafts.filter((draft) => {
         if (isEditItemDraft(draft) && draft.shareId === shareId) {
-            return itemIds === undefined || itemIds.includes(draft.shareId);
+            return itemIds === undefined || itemIds.includes(draft.itemId);
         }
 
         return false;
@@ -169,3 +171,23 @@ export const intoIdentityItemPreview = (item: ItemRevision<'identity'>): Identit
     name: item.data.metadata.name,
     fullName: item.data.content.fullName,
 });
+
+export const getSanitizedUserIdentifiers = ({
+    itemEmail,
+    itemUsername,
+}: Pick<UnsafeItem<'login'>['content'], 'itemEmail' | 'itemUsername'>) => {
+    const validEmail = validateEmailAddress(itemEmail);
+    const emailUsername = validateEmailAddress(itemUsername);
+
+    if (itemUsername) {
+        /* `itemEmail` is empty and `itemUsername` is a valid email: Move username to email field */
+        if (!itemEmail && emailUsername) return { email: itemUsername, username: '' };
+        /* `itemEmail` is invalid but `itemUsername` is a valid email: Swap email and username */
+        if (!validEmail && emailUsername) return { email: itemUsername, username: itemEmail };
+        /* All other cases, return in-place */
+        return { email: itemEmail, username: itemUsername };
+    }
+
+    /* If `itemEmail` is valid, keep it; otherwise, move it to username field */
+    return validEmail ? { email: itemEmail, username: '' } : { email: '', username: itemEmail };
+};

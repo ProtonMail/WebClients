@@ -1,13 +1,12 @@
 import { type FC, type ReactElement, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { Spotlight } from '@proton/components';
 import { Icon } from '@proton/components/components/icon';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { PasswordField } from '@proton/pass/components/Form/Field/PasswordField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
@@ -15,16 +14,14 @@ import { AliasModal } from '@proton/pass/components/Item/Alias/Alias.modal';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
-import { type LoginItemFormValues, OnboardingMessage } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
-import { merge } from '@proton/pass/utils/object/merge';
+import { selectShowUsernameField } from '@proton/pass/store/selectors';
+import { type LoginItemFormValues } from '@proton/pass/types';
+import { merge, withMerge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { parseUrl } from '@proton/pass/utils/url/parser';
-import noop from '@proton/utils/noop';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 import './Login.edit.credentials.scss';
 
@@ -33,45 +30,72 @@ type Props = {
     isNew?: boolean;
 };
 
+/**
+ *
+ * @param param0 If only email or username is available or nothing available at all:
+No expansion
+Populate the value under "Email or username" label
+If both email and username are available:
+Expand to separate "Email" and "Username" by default
+Populate email under "Email" label
+Populate username under "Username" label
+ * @returns
+ */
+
 export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
-    const { onboardingCheck } = usePassCore();
-    const usernameSplit = useFeatureFlag(PassFeature.PassUsernameSplit);
-    const passwordContext = usePasswordContext();
-    const { search } = useLocation();
     const history = useHistory();
-
-    const searchParams = new URLSearchParams(search);
-
+    const { search } = useLocation();
+    const passwordContext = usePasswordContext();
     const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
 
-    const [usernameExpanded, setUsernameExpanded] = useState(false);
-    const [showUsernameOnboarding, setShowUsernameOnboarding] = useState(false);
-    const [itemHasUsername, setItemHasUsername] = useState(false);
-    const showUsername = usernameExpanded || itemHasUsername;
+    const { itemEmail, itemUsername } = form.values;
 
-    const { acknowledge } = useSpotlight();
+    const showUsernameField = useSelector(selectShowUsernameField);
+    const hasEmail = Boolean(itemEmail);
+    const hasUsername = Boolean(itemUsername);
+    const bothUsernameAndEmail = hasEmail && hasUsername;
 
-    const iconWithFeatureFlag = usernameSplit ? 'envelope' : 'user';
-    const labelWithFeatureFlag = usernameSplit ? c('Label').t`Email` : c('Label').t`Username`;
+    /** On initial mount: expand username field by default IIF:
+     * - user has enabled the `showUsernameField` setting
+     * - both username & field are populated */
+    const [usernameExpanded, setUsernameExpanded] = useState(showUsernameField || bothUsernameAndEmail);
+    const itemEmailFieldIcon = usernameExpanded ? 'envelope' : 'user';
 
-    const handleAddUsernameClick = () => {
+    const handleAddUsernameClick = async () => {
+        /** When enabling the username field set the `itemEmail` as
+         * the `itemUsername` only if it's a non-valid email */
+        if (!validateEmailAddress(itemEmail)) {
+            await form.setValues(
+                withMerge<LoginItemFormValues>({
+                    itemEmail: '',
+                    itemUsername: itemEmail,
+                })
+            );
+        }
+
         setUsernameExpanded(true);
-        if (showUsernameOnboarding) acknowledge(OnboardingMessage.USERNAME_TOOLTIP);
     };
 
     useEffect(() => {
-        (async () => usernameSplit && (await onboardingCheck?.(OnboardingMessage.USERNAME_TOOLTIP)))()
-            .then((show) => setShowUsernameOnboarding(Boolean(show)))
-            .catch(noop);
-    }, [usernameSplit]);
-
-    useEffect(() => {
-        if (form.values.itemUsername.length > 0) setItemHasUsername(true);
+        /** On mount, if username field is not expanded, use the `itemEmail` as
+         * the virtual `Email or username` field value. This should be sanitized
+         * on save by checking if the provided value is a valid email.  */
+        if (!usernameExpanded) {
+            form.resetForm({
+                values: {
+                    ...form.values,
+                    itemEmail: itemUsername || itemEmail,
+                    itemUsername: '',
+                },
+            });
+        }
 
         return () => {
-            if (!isNew) return;
-            searchParams.delete('email');
-            history.replace({ search: searchParams.toString() });
+            if (isNew) {
+                const searchParams = new URLSearchParams(search);
+                searchParams.delete('email');
+                history.replace({ search: searchParams.toString() });
+            }
         };
     }, []);
 
@@ -82,50 +106,35 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                 label={(() => {
                     if (aliasModal.willCreate) return c('Label').t`Email (new alias)`;
                     if (aliasModal.relatedAlias) return c('Label').t`Email (alias)`;
-                    return labelWithFeatureFlag;
+                    return usernameExpanded ? c('Label').t`Email` : c('Label').t`Email or username`;
                 })()}
-                placeholder={
-                    usernameSplit ? c('Placeholder').t`Enter email` : c('Placeholder').t`Enter email or username`
-                }
+                placeholder={usernameExpanded ? c('Placeholder').t`Enter email` : c('Label').t`Enter email or username`}
                 component={TextField}
                 itemType="login"
                 icon={
                     <>
                         <Icon
-                            name={aliasModal.usernameIsAlias ? 'alias' : iconWithFeatureFlag}
+                            name={aliasModal.usernameIsAlias ? 'alias' : itemEmailFieldIcon}
                             size={5}
                             className="mt-2"
                         />
-                        {usernameSplit && !showUsername && (
-                            <Spotlight
-                                content={
-                                    <>
-                                        <div className="text-bold">{c('Info').t`Add a username field`}</div>
-                                        <div className="color-weak">{c('Info')
-                                            .t`Click here to add a field for a username.`}</div>
-                                    </>
-                                }
-                                originalPlacement="bottom-start"
-                                onClose={() => acknowledge(OnboardingMessage.USERNAME_TOOLTIP)}
-                                show={showUsernameOnboarding}
+                        {!usernameExpanded && (
+                            <ButtonLike
+                                as="div"
+                                icon
+                                pill
+                                size="small"
+                                onClick={handleAddUsernameClick}
+                                shape="solid"
+                                title={c('Action').t`Add username field`}
+                                className="pass-username-add-button absolute top-custom left-custom flex items-center justify-center relative pr-4"
+                                style={{
+                                    '--top-custom': '8px',
+                                    '--left-custom': '16px',
+                                }}
                             >
-                                <ButtonLike
-                                    as="div"
-                                    icon
-                                    pill
-                                    size="small"
-                                    onClick={handleAddUsernameClick}
-                                    shape="solid"
-                                    title={c('Action').t`Add username field`}
-                                    className="pass-username-add-button absolute top-custom left-custom flex items-center justify-center relative pr-4"
-                                    style={{
-                                        '--top-custom': '8px',
-                                        '--left-custom': '16px',
-                                    }}
-                                >
-                                    <Icon name="plus" size={4} className="shrink-0" />
-                                </ButtonLike>
-                            </Spotlight>
+                                <Icon name="plus" size={4} className="shrink-0" />
+                            </ButtonLike>
                         )}
                     </>
                 }
@@ -181,7 +190,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                     ].filter(Boolean) as ReactElement[]
                 }
             />
-            {showUsername && (
+            {usernameExpanded && (
                 <Field
                     name="itemUsername"
                     label={c('Label').t`Username`}

@@ -19,11 +19,11 @@ import { logger } from '@proton/pass/utils/logger';
 import { type NordPassItem, NordPassType } from './nordpass.types';
 import { NORDPASS_EXPECTED_HEADERS, extractNordPassIdentity } from './nordpass.utils';
 
-const processLoginItem = (item: NordPassItem, importUsername?: boolean): ItemImportIntent<'login'> =>
+const processLoginItem = (item: NordPassItem): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.name,
         note: item.note,
-        ...(importUsername ? getEmailOrUsername(item.username) : { email: item.username }),
+        ...getEmailOrUsername(item.username),
         password: item.password,
         urls: [item.url],
     });
@@ -57,13 +57,7 @@ const processCreditCardItem = (item: NordPassItem): ItemImportIntent<'creditCard
     });
 };
 
-export const readNordPassData = async ({
-    data,
-    importUsername,
-}: {
-    data: string;
-    importUsername?: boolean;
-}): Promise<ImportPayload> => {
+export const readNordPassData = async ({ data }: { data: string }): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -91,7 +85,7 @@ export const readNordPassData = async ({
                                 case NordPassType.IDENTITY:
                                     return processIdentityItem(item);
                                 case NordPassType.LOGIN:
-                                    return processLoginItem(item, importUsername);
+                                    return processLoginItem(item);
                                 case NordPassType.NOTE:
                                     return processNoteItem(item);
                                 default:
