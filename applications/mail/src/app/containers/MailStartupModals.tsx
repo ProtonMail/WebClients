@@ -11,7 +11,6 @@ import {
     useModalState,
     useShowLightLabellingFeatureModal,
     useSubscription,
-    useUser,
     useWelcomeFlags,
 } from '@proton/components';
 import type { ReminderFlag } from '@proton/components/containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
@@ -25,7 +24,6 @@ const MailStartupModals = () => {
     const [subscription, subscriptionLoading] = useSubscription();
 
     // Onboarding modal
-    const [user] = useUser();
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
 
     // Cancellation reminder modals
@@ -44,10 +42,9 @@ const MailStartupModals = () => {
     const [lightLabellingFeatureModalProps, setLightLabellingFeatureModal, renderLightLabellingFeatureModal] =
         useModalState();
 
-    const showInboxDesktopOnboarding = isElectronMail && !user.hasPaidMail;
     const onceRef = useRef(false);
     useEffect(() => {
-        if (onceRef.current || showInboxDesktopOnboarding) {
+        if (onceRef.current || isElectronMail) {
             return;
         }
 
@@ -72,7 +69,7 @@ const MailStartupModals = () => {
     return (
         <>
             {renderReminderModal && <CancellationReminderModal {...reminderModal} />}
-            {showInboxDesktopOnboarding && <InboxDesktopFreeTrialOnboardingModal />}
+            {isElectronMail && <InboxDesktopFreeTrialOnboardingModal />}
             {renderOnboardingModal && (
                 <EasySwitchProvider>
                     <MailOnboardingModal
