@@ -1,4 +1,6 @@
-import { c, msgid } from 'ttag';
+import { useMemo } from 'react';
+
+import { c } from 'ttag';
 
 import { Icon, ToolbarButton, useConfirmActionModal } from '@proton/components';
 
@@ -10,36 +12,32 @@ interface Props {
 export const RemoveBookmarkButton = ({ selectedBrowserItems }: Props) => {
     const { deleteBookmarks } = useBookmarksActions();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const handleRemoveMe = () => {
-        void showConfirmModal({
-            title: c('Info').ngettext(
-                msgid`Are you sure you want to remove this item from your list?`,
-                `Are you sure you want to remove those items from your list?`,
-                selectedBrowserItems.length
+
+    // Even if the RemoveBookmarkButton toolbar button is only showed if only bookmarks are selected,
+    // it's safer to dobule check
+    const itemsToDelete = useMemo(
+        () =>
+            selectedBrowserItems.reduce(
+                (acc, selectedBrowserItem) => {
+                    if (selectedBrowserItem.bookmarkDetails) {
+                        acc.push({
+                            token: selectedBrowserItem.bookmarkDetails.token,
+                            linkId: selectedBrowserItem.linkId,
+                        });
+                    }
+                    return acc;
+                },
+                [] as { token: string; linkId: string }[]
             ),
-            message: c('Info').t`You will need to save it again from the public link page`,
-            submitText: c('Action').t`Confirm`,
-            onSubmit: async () => {
-                const abortSignal = new AbortController().signal;
-                return deleteBookmarks(
-                    abortSignal,
-                    selectedBrowserItems.map((selectedBrowserItem) => ({
-                        // We filter it above so we can force the presence of bookmarkDetails
-                        token: selectedBrowserItem.bookmarkDetails!.token,
-                        linkId: selectedBrowserItem.linkId,
-                    }))
-                );
-            },
-            canUndo: true, // Just to hide the undo message
-        });
-    };
+        [selectedBrowserItems]
+    );
 
     return (
         <>
             <ToolbarButton
                 title={c('Action').t`Remove`}
                 icon={<Icon name="cross-big" alt={c('Action').t`Remove`} />}
-                onClick={() => handleRemoveMe()}
+                onClick={() => deleteBookmarks(new AbortController().signal, showConfirmModal, itemsToDelete)}
                 data-testid="toolbar-delete-bookmark"
             />
             {confirmModal}
