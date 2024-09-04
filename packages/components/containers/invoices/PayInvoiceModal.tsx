@@ -149,7 +149,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         }
 
         if (
-            paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL &&
+            paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL &&
             // if the invoice is internal, then we don't render the CB paypal button and fallback to the regular pay
             // button
             !forceInhouseSavedMethodProcessors
