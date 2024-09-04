@@ -10,7 +10,6 @@ import {
     PrivateAppContainer,
     SmartBanner,
     TopBanners,
-    useUser,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
@@ -38,10 +37,8 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
 
-    const [user] = useUser();
-
     const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
-        onCompose({
+        void onCompose({
             type: ComposeTypes.newMessage,
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: emails }, draftFlags: { initialAttachments: attachments } },
@@ -55,7 +52,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
     const top = (
         <>
             {isElectronMail && <InboxDesktopOutdatedAppTopBanner />}
-            {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
+            {isElectronMail && <InboxDesktopFreeTrialTopBanner />}
             <TopBanners app={APPS.PROTONMAIL}>
                 <SmartBanner app={APPS.PROTONMAIL} />
             </TopBanners>

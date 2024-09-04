@@ -34,7 +34,6 @@ import {
     useNotifications,
     useOpenDrawerOnLoad,
     useToggle,
-    useUser,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
@@ -146,7 +145,6 @@ const CalendarContainerView = ({
     const [groups = []] = useContactGroups();
     const isCalendarEncryptedSearchEnabled = !!useFeature(FeatureCode.CalendarEncryptedSearch).feature?.Value;
     const searchSpotlightAnchorRef = useRef<HTMLButtonElement>(null);
-    const [user] = useUser();
 
     useOpenDrawerOnLoad();
     const { appInView, showDrawerSidebar } = useDrawer();
@@ -387,7 +385,7 @@ const CalendarContainerView = ({
     const top = !isDrawerApp && (
         <>
             {isElectronMail && <InboxDesktopOutdatedAppTopBanner />}
-            {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
+            {isElectronMail && <InboxDesktopFreeTrialTopBanner />}
             <TopBanners app={APPS.PROTONCALENDAR} />
         </>
     );
