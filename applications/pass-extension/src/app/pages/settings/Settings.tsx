@@ -21,6 +21,7 @@ import { OrganizationProvider, useOrganization } from '@proton/pass/components/O
 import { ApplicationLogs } from '@proton/pass/components/Settings/ApplicationLogs';
 import { Import } from '@proton/pass/components/Settings/Import';
 import { AccountPath, UpsellRef } from '@proton/pass/constants';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { clientSessionLocked } from '@proton/pass/lib/client';
@@ -33,8 +34,10 @@ import {
     selectUser,
 } from '@proton/pass/store/selectors';
 import { type Unpack, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
+import { Aliases } from './Views/Aliases';
 import { Developer } from './Views/Developer';
 import { Export } from './Views/Export';
 import { General } from './Views/General';
@@ -46,8 +49,9 @@ import './Settings.scss';
 type Tab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>>;
 type SettingTab = Tab & { path: string; hidden?: boolean };
 
-const getSettingsTabs = (orgEnabled: boolean = false): SettingTab[] => [
+const getSettingsTabs = (orgEnabled: boolean = false, aliasesEnabled: boolean): SettingTab[] => [
     { path: '/', title: c('Label').t`General`, content: <General /> },
+    ...(aliasesEnabled ? [{ path: '/aliases', title: c('Label').t`Aliases`, content: <Aliases /> }] : []),
     { path: '/security', title: c('Label').t`Security`, content: <Security /> },
     { path: '/import', title: c('Label').t`Import`, content: <Import /> },
     { path: '/export', title: c('Label').t`Export`, content: <Export /> },
@@ -75,12 +79,13 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const context = useExtensionConnect();
     const user = useSelector(selectUser);
     const organization = useOrganization();
+    const aliasesEnabled = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
 
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const trialDaysLeft = useSelector(selectTrialDaysRemaining);
 
-    const tabs = useMemo(() => getSettingsTabs(organization?.settings.enabled), [organization]);
+    const tabs = useMemo(() => getSettingsTabs(organization?.settings.enabled, aliasesEnabled), [organization]);
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
 

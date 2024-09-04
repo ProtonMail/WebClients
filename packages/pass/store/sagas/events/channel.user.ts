@@ -16,6 +16,7 @@ import { notIn } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import type { Address, UserSettings } from '@proton/shared/lib/interfaces';
+import identity from '@proton/utils/identity';
 
 import { eventChannelFactory } from './channel.factory';
 import { channelEventsWorker, channelInitWorker } from './channel.worker';
@@ -51,9 +52,6 @@ function* onUserEvent(
         if (Locale !== userSettings?.Locale) yield onLocaleUpdated?.(Locale);
     }
 
-    /* if the subscription/invoice changes, refetch the user Plan and check Organization */
-    if (event.Subscription || event.Invoices) yield put(withRevalidate(getUserAccessIntent(userId)));
-
     /* if we get the user model from the event, check if
      * any new active user keys are available. We might be
      * dealing with a user re-activating a disabled user key
@@ -76,9 +74,12 @@ function* onUserEvent(
         }
     }
 
+    /* if the subscription/invoice changes, refetch the user Plan and check Organization */
+    const revalidateUserAccess = event.Subscription || event.Invoices;
+
     /* Synchronize user access, feature flags & organization whenever polling
      * for core user events. These actions are throttled via `maxAge` metadata */
-    yield put(getUserAccessIntent(userId));
+    yield put((revalidateUserAccess ? withRevalidate : identity)(getUserAccessIntent(userId)));
     yield put(getUserFeaturesIntent(userId));
     yield put(getOrganizationSettings.intent());
 }
