@@ -198,6 +198,16 @@ export const useBitcoinAddresses = ({
         [completeBitcoinAddressPool, fillBitcoinAddressPool, getAddressKeys]
     );
 
+    const updateBitcoinAddressHelper = useCallback((accountId: string, update: Partial<BitcoinAddressHelper>) => {
+        setBitcoinAddressHelperByWalletAccountId((prev) => {
+            const prevAccount = prev[accountId];
+            return {
+                ...prev,
+                ...(prevAccount && { [accountId]: { ...prevAccount, ...update } }),
+            };
+        });
+    }, []);
+
     useEffect(() => {
         return subscribe(
             async ({
@@ -260,30 +270,21 @@ export const useBitcoinAddresses = ({
                         continue;
                     }
 
+                    // Naming is wrong but LastUsedIndex is actually the next index to use
+                    const nextIndexToUse = walletAccount.WalletAccount.LastUsedIndex;
+
                     // Mark all addresses below in range [0, LastUsedIndex] as used to avoid reusing them
-                    await accountChainData.account.markReceiveAddressesUsedTo(
-                        0,
-                        walletAccount.WalletAccount.LastUsedIndex + 1
-                    );
+                    await accountChainData.account.markReceiveAddressesUsedTo(0, nextIndexToUse);
 
                     // Check if current displayed address is still ok
                     const currentHelpers = bitcoinAddressHelperByWalletAccountId[walletAccount.WalletAccount.ID];
 
                     if (
                         currentHelpers?.receiveBitcoinAddress.index &&
-                        currentHelpers.receiveBitcoinAddress.index <= walletAccount.WalletAccount.LastUsedIndex
+                        currentHelpers.receiveBitcoinAddress.index <= nextIndexToUse - 1
                     ) {
                         const receiveBitcoinAddress = await accountChainData.account.getNextReceiveAddress();
-
-                        setBitcoinAddressHelperByWalletAccountId((prev) => {
-                            const prevAccount = prev[walletAccount.WalletAccount.ID];
-                            return {
-                                ...prev,
-                                ...(prevAccount && {
-                                    [walletAccount.WalletAccount.ID]: { ...prevAccount, receiveBitcoinAddress },
-                                }),
-                            };
-                        });
+                        updateBitcoinAddressHelper(walletAccount.WalletAccount.ID, { receiveBitcoinAddress });
                     }
                 }
             }
@@ -292,19 +293,10 @@ export const useBitcoinAddresses = ({
         bitcoinAddressHelperByWalletAccountId,
         manageBitcoinAddressPool,
         subscribe,
+        updateBitcoinAddressHelper,
         walletAccountById,
         walletsChainData,
     ]);
-
-    const updateBitcoinAddressHelper = useCallback((accountId: string, update: Partial<BitcoinAddressHelper>) => {
-        setBitcoinAddressHelperByWalletAccountId((prev) => {
-            const prevAccount = prev[accountId];
-            return {
-                ...prev,
-                ...(prevAccount && { [accountId]: { ...prevAccount, ...update } }),
-            };
-        });
-    }, []);
 
     useItemEffect(
         (accountData) => {
@@ -326,8 +318,8 @@ export const useBitcoinAddresses = ({
                     return;
                 }
 
-                // Mark all addresses below in range [0, LastUsedIndex] as used to avoid reusing them
-                await accountChainData.account.markReceiveAddressesUsedTo(0, account.LastUsedIndex + 1);
+                // Mark all addresses below in range [0, LastUsedIndex[ as used to avoid reusing them
+                await accountChainData.account.markReceiveAddressesUsedTo(0, account.LastUsedIndex);
 
                 await manageBitcoinAddressPool({ wallet, account, accountChainData });
 
@@ -341,15 +333,17 @@ export const useBitcoinAddresses = ({
 
                     updateBitcoinAddressHelper(account.ID, { isLoading: true });
 
+                    const newReceiveBitcoinAddress = await accountChainData.account.getNextReceiveAddress();
+
                     try {
+                        // Update last used index to avoid reusing the new address
+                        // LastUsedIndex is actually the next index to use in case of a refresh
                         await api.wallet.updateWalletAccountLastUsedIndex(
                             wallet.ID,
                             account.ID,
-                            receiveBitcoinAddress.index
+                            newReceiveBitcoinAddress.index
                         );
                     } catch {}
-
-                    const newReceiveBitcoinAddress = await accountChainData.account.getNextReceiveAddress();
 
                     updateBitcoinAddressHelper(account.ID, {
                         receiveBitcoinAddress: newReceiveBitcoinAddress,
