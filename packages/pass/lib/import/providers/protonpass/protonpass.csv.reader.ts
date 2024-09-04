@@ -43,11 +43,9 @@ const processIdentityItem = (item: ProtonPassCSVItem): ItemImportIntent<'identit
 
 export const readProtonPassCSV = async ({
     data,
-    importUsername,
     isGenericCSV = false,
 }: {
     data: string;
-    importUsername?: boolean;
     isGenericCSV?: boolean;
 }): Promise<ImportPayload> => {
     const ignored: string[] = [];
@@ -81,7 +79,7 @@ export const readProtonPassCSV = async ({
                                     note: item.note,
                                     // If the email column is missing then it's an old CSV format where the username column is actually the email
                                     email: hasNoEmailColumn ? item.username : item.email,
-                                    username: hasNoEmailColumn || !importUsername ? undefined : item.username,
+                                    username: hasNoEmailColumn ? undefined : item.username,
                                     password: item.password,
                                     urls: item.url?.split(', '),
                                     totp: item.totp,

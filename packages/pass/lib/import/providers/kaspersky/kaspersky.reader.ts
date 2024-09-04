@@ -60,13 +60,7 @@ const processLine = (state: LineReaderState, line: string): LineReaderState => {
     return state;
 };
 
-export const readKasperskyData = ({
-    data,
-    importUsername,
-}: {
-    data: string;
-    importUsername?: boolean;
-}): ImportPayload => {
+export const readKasperskyData = ({ data }: { data: string }): ImportPayload => {
     type KasperskyReaderResult = { items: ItemImportIntent[]; warnings: string[]; ignored: string[] };
 
     try {
@@ -89,7 +83,7 @@ export const readKasperskyData = ({
 
                     result.items.push(
                         importLoginItem({
-                            ...(importUsername ? getEmailOrUsername(email) : { email }),
+                            ...getEmailOrUsername(email),
                             name: app ? `${app} ${name}`.trim() : name,
                             note,
                             password,

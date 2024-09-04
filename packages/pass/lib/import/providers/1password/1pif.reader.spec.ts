@@ -14,11 +14,11 @@ describe('Import 1password 1pif', () => {
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/1password.private.1pif', 'utf8');
-        payload = await read1Password1PifData({ data: sourceData, importUsername: true });
+        payload = await read1Password1PifData({ data: sourceData });
     });
 
     test('should throw on invalid file content', async () => {
-        await expect(read1Password1PifData({ data: 'not-a-1pif-file', importUsername: true })).rejects.toThrow();
+        await expect(read1Password1PifData({ data: 'not-a-1pif-file' })).rejects.toThrow();
     });
 
     it('should correctly parse items', () => {

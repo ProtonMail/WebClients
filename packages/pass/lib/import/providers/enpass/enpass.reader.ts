@@ -27,8 +27,7 @@ import {
 } from './enpass.utils';
 
 const processLoginItem = (
-    item: EnpassItem<EnpassCategory.LOGIN> | EnpassItem<EnpassCategory.PASSWORD>,
-    importUsername?: boolean
+    item: EnpassItem<EnpassCategory.LOGIN> | EnpassItem<EnpassCategory.PASSWORD>
 ): ItemImportIntent<'login'> => {
     const { extracted, remaining } = extractEnpassLogin(item.fields ?? []);
 
@@ -44,7 +43,7 @@ const processLoginItem = (
                 : []
         ),
         email: extracted.email,
-        username: importUsername ? extracted.username : '',
+        username: extracted.username,
         password: extracted.password,
         totp: extracted.totp,
         urls: extracted.url ? [extracted.url] : [],
@@ -60,10 +59,7 @@ const processNoteItem = (item: EnpassItem<EnpassCategory.NOTE>): ItemImportInten
         modifyTime: item.updated_at,
     });
 
-const processCreditCardItem = (
-    item: EnpassItem<EnpassCategory.CREDIT_CARD>,
-    importUsername?: boolean
-): ItemImportIntent[] => {
+const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): ItemImportIntent[] => {
     const { extracted: extractedCCData, remaining } = extractEnpassCC(item.fields ?? []);
 
     const ccItem = importCreditCardItem({
@@ -88,7 +84,7 @@ const processCreditCardItem = (
             fields: remaining,
         };
 
-        const loginItem = processLoginItem(enpassLoginItem, importUsername);
+        const loginItem = processLoginItem(enpassLoginItem);
         return [ccItem, loginItem];
     }
 
@@ -105,7 +101,7 @@ const processIdentityItem = (item: EnpassItem<EnpassCategory.IDENTITY>): ItemImp
 const validateEnpassData = (data: any): data is EnpassData =>
     isObject(data) && 'items' in data && Array.isArray(data.items);
 
-export const readEnpassData = ({ data, importUsername }: { data: string; importUsername?: boolean }): ImportPayload => {
+export const readEnpassData = ({ data }: { data: string }): ImportPayload => {
     try {
         const result = JSON.parse(data);
         const valid = validateEnpassData(result);
@@ -124,11 +120,11 @@ export const readEnpassData = ({ data, importUsername }: { data: string; importU
                         switch (item.category) {
                             case EnpassCategory.LOGIN:
                             case EnpassCategory.PASSWORD:
-                                return processLoginItem(item, importUsername);
+                                return processLoginItem(item);
                             case EnpassCategory.NOTE:
                                 return processNoteItem(item);
                             case EnpassCategory.CREDIT_CARD:
-                                return processCreditCardItem(item, importUsername);
+                                return processCreditCardItem(item);
                             case EnpassCategory.IDENTITY:
                                 return processIdentityItem(item);
                             default:

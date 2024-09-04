@@ -9,7 +9,6 @@ import {
     createTrialRule,
     createUpdateRule,
     createUserRatingRule,
-    createUsernameTooltipRule,
 } from '@proton/pass/lib/onboarding/rules';
 import type { OnboardingStorageData } from '@proton/pass/lib/onboarding/service';
 import { createOnboardingService as createCoreOnboardingService } from '@proton/pass/lib/onboarding/service';
@@ -36,7 +35,6 @@ export const createOnboardingService = (storage: ExtensionStorage<OnboardingStor
             createSecurityRule(store),
             createUserRatingRule(store),
             createMonitorRule(),
-            createUsernameTooltipRule(),
         ],
     });
 

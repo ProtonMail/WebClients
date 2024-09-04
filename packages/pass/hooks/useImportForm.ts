@@ -10,7 +10,6 @@ import type { Dropzone, FileInput } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import { extractFileExtension, fileReader } from '@proton/pass/lib/import/reader';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
@@ -20,7 +19,6 @@ import { itemsImportRequest } from '@proton/pass/store/actions/requests';
 import type { ImportState } from '@proton/pass/store/reducers';
 import { selectAliasItems, selectLatestImport, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { first } from '@proton/pass/utils/array/first';
 import { fileToTransferable } from '@proton/pass/utils/file/transferable-file';
 import { orThrow, pipe } from '@proton/pass/utils/fp/pipe';
@@ -91,7 +89,6 @@ export const useImportForm = ({
 }: UseImportFormOptions): ImportFormContext => {
     const { prepareImport } = usePassCore();
     const { createNotification } = useNotifications();
-    const usernameSplitEnabled = useFeatureFlag(PassFeature.PassUsernameSplit);
 
     const [busy, setBusy] = useState(false);
     const [dropzoneHovered, setDropzoneHovered] = useState(false);
@@ -129,7 +126,6 @@ export const useImportForm = ({
                         passphrase: values.passphrase,
                         userId: user?.ID,
                         options: {
-                            importUsername: usernameSplitEnabled,
                             currentAliases:
                                 values.provider === ImportProvider.PROTONPASS
                                     ? aliases.reduce((acc: string[], { aliasEmail }) => {

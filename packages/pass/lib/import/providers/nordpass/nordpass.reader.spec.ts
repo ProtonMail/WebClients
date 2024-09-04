@@ -15,13 +15,13 @@ describe('Import NordPass csv', () => {
 
     beforeAll(async () => {
         sourceData = await fs.promises.readFile(__dirname + '/mocks/nordpass.csv', 'utf8');
-        payload = await readNordPassData({ data: sourceData, importUsername: true });
+        payload = await readNordPassData({ data: sourceData });
     });
 
     afterAll(() => dateMock.mockRestore());
 
     it('should throw on corrupted files', async () => {
-        await expect(readNordPassData({ data: 'not-a-csv-file', importUsername: true })).rejects.toThrow();
+        await expect(readNordPassData({ data: 'not-a-csv-file' })).rejects.toThrow();
     });
 
     it('converts NordPass folders to vaults correctly', () => {

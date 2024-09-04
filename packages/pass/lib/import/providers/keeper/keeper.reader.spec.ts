@@ -13,13 +13,13 @@ describe('Import Keeper CSV', () => {
 
     beforeAll(async () => {
         const sourceData = await fs.promises.readFile(__dirname + '/mocks/keeper.csv', 'utf8');
-        payload = await readKeeperData({ data: sourceData, importUsername: true });
+        payload = await readKeeperData({ data: sourceData });
     });
 
     afterAll(() => dateMock.mockRestore());
 
     it('should handle corrupted files', async () => {
-        await expect(readKeeperData({ data: '', importUsername: true })).rejects.toThrow();
+        await expect(readKeeperData({ data: '' })).rejects.toThrow();
     });
 
     it('converts Keeper folders to vaults correctly', () => {

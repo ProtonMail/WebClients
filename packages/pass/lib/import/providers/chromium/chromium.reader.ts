@@ -13,13 +13,7 @@ import type { ChromiumItem } from './chromium.types';
 
 const CHROME_EXPECTED_HEADERS: (keyof ChromiumItem)[] = ['name', 'url', 'username', 'password'];
 
-export const readChromiumData = async ({
-    data,
-    importUsername,
-}: {
-    data: string;
-    importUsername?: boolean;
-}): Promise<ImportPayload> => {
+export const readChromiumData = async ({ data }: { data: string }): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -40,7 +34,7 @@ export const readChromiumData = async ({
                             importLoginItem({
                                 name: item.name,
                                 note: item.note,
-                                ...(importUsername ? getEmailOrUsername(item.username) : { email: item.username }),
+                                ...getEmailOrUsername(item.username),
                                 password: item.password,
                                 urls: [item.url],
                             })

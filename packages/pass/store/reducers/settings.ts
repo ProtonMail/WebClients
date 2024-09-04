@@ -41,6 +41,7 @@ export type SettingsState = {
     offlineEnabled?: boolean;
     passkeys: PasskeySettings;
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
+    showUsernameField?: boolean;
 };
 
 export const EXCLUDED_SETTINGS_KEYS = ['createdItemsCount', 'lockMode', 'extraPassword'] as const;
@@ -59,6 +60,7 @@ export const getInitialSettings = (): ProxiedSettings => ({
     loadDomainImages: true,
     passkeys: { get: true, create: true },
     passwordOptions: null,
+    showUsernameField: false,
 });
 
 const getInitialState = (): SettingsState => ({
