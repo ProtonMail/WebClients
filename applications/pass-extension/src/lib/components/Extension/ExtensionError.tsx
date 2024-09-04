@@ -65,7 +65,7 @@ export const PromptForReload: FC<Props> = ({ autoReload, browserError, message }
     return reloadCTA ? (
         <div
             key="prompt-for-reload"
-            className="w-full flex-1 items-center flex flex-column items-center gap-2 anime-fade-in"
+            className="w-full flex-1 flex-nowrap items-center flex flex-column items-center gap-5 anime-fade-in"
         >
             {browserError && (
                 <div className="relative">
@@ -79,7 +79,14 @@ export const PromptForReload: FC<Props> = ({ autoReload, browserError, message }
                 </div>
             )}
 
-            <span className="block text-sm text-weak mt-2 mb-4">{message}</span>
+            <div>
+                {message.split('\n').map((part, idx) => (
+                    <span key={`message-${idx}`} className="block text-sm text-weak mt-1">
+                        {part}
+                    </span>
+                ))}
+            </div>
+
             <Button pill shape="solid" color="weak" className="ui-red w-full" onClick={onForceUpdate}>
                 {c('Action').t`Reload extension`}
             </Button>
