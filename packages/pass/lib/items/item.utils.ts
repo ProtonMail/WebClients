@@ -127,7 +127,7 @@ export const sortItems =
 export const matchDraftsForShare = (drafts: Draft[], shareId: string, itemIds?: string[]) =>
     drafts.filter((draft) => {
         if (isEditItemDraft(draft) && draft.shareId === shareId) {
-            return itemIds === undefined || itemIds.includes(draft.shareId);
+            return itemIds === undefined || itemIds.includes(draft.itemId);
         }
 
         return false;
