@@ -1,20 +1,13 @@
 {
+    "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "target": "ES6",
-        "allowJs": true,
-        "module": "commonjs",
-        "skipLibCheck": true,
-        "esModuleInterop": true,
-        "noImplicitAny": true,
         "sourceMap": true,
-        "baseUrl": ".",
+        "module": "commonjs",
         "outDir": "dist",
         "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "strict": true,
-        "paths": {
-            "*": ["node_modules/*"]
-        }
+        "lib": ["WebWorker", "DOM", "DOM.Iterable", "ESNext"],
+        "types": ["webpack-env", "jest"]
     },
-    "include": ["src/**/*"]
+    "include": ["src/**/*"],
+    "exclude": ["src/**/*.test.ts", "src/**/*.spec.ts"]
 }

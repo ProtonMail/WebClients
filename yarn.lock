@@ -11134,10 +11134,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimist@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "@types/minimist@npm:1.2.2"
-  checksum: 10c0/f220f57f682bbc3793dab4518f8e2180faa79d8e2589c79614fd777d7182be203ba399020c3a056a115064f5d57a065004a32b522b2737246407621681b24137
+"@types/minimist@npm:^1.2.2, @types/minimist@npm:^1.2.5":
+  version: 1.2.5
+  resolution: "@types/minimist@npm:1.2.5"
+  checksum: 10c0/3f791258d8e99a1d7d0ca2bda1ca6ea5a94e5e7b8fc6cde84dd79b0552da6fb68ade750f0e17718f6587783c24254bbca0357648dd59dc3812c150305cabdc46
   languageName: node
   linkType: hard
 
@@ -19707,20 +19707,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-winstaller@npm:^5.3.0":
-  version: 5.3.0
-  resolution: "electron-winstaller@npm:5.3.0"
+"electron-winstaller@npm:^5.4.0":
+  version: 5.4.0
+  resolution: "electron-winstaller@npm:5.4.0"
   dependencies:
     "@electron/asar": "npm:^3.2.1"
     "@electron/windows-sign": "npm:^1.1.2"
     debug: "npm:^4.1.1"
     fs-extra: "npm:^7.0.1"
-    lodash.template: "npm:^4.2.2"
+    lodash: "npm:^4.17.21"
     temp: "npm:^0.9.0"
   dependenciesMeta:
     "@electron/windows-sign":
       optional: true
-  checksum: 10c0/00a95144c35128dbebfafe4682e372e8922b75a6ec16addaf8f9f18ddf447e12c6685df22f44bd932dc09dcc3de89728a509d42eaf2ef344a34853d00c053480
+  checksum: 10c0/57e705060adefe7c307d6be0ae1931d2c74e58622eac725c335ba1eff126ceb1516d75aedae5ec64953053f63a9330d67abe39e3530524fedbacaa32169f544a
   languageName: node
   linkType: hard
 
@@ -28557,7 +28557,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.template@npm:^4.2.2, lodash.template@npm:^4.5.0":
+"lodash.template@npm:^4.5.0":
   version: 4.5.0
   resolution: "lodash.template@npm:4.5.0"
   dependencies:
@@ -34119,8 +34119,10 @@ __metadata:
     "@electron-forge/plugin-webpack": "npm:^7.3.0"
     "@electron-forge/publisher-github": "npm:^7.3.0"
     "@electron/fuses": "npm:^1.7.0"
+    "@proton/shared": "workspace:^"
     "@types/jest": "npm:^29.5.12"
     "@types/lodash": "npm:^4.17.7"
+    "@types/minimist": "npm:^1.2.5"
     "@types/node": "npm:^20"
     "@typescript-eslint/eslint-plugin": "npm:^7.1.0"
     "@typescript-eslint/parser": "npm:^7.1.0"
@@ -34140,6 +34142,7 @@ __metadata:
     jest: "npm:^29.7.0"
     lodash: "npm:^4.17.21"
     mac-appify: "npm:^2019.4.13"
+    minimist: "npm:^1.2.8"
     node-loader: "npm:^2.0.0"
     prettier: "npm:3.2.5"
     style-loader: "npm:^3.3.4"
