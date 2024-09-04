@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -19,9 +19,10 @@ export interface LogoProps extends Omit<ComponentPropsWithoutRef<'svg'>, 'size'>
     size?: IconSize;
     variant?: LogoVariant;
     hasTitle?: boolean;
+    fallback?: ReactNode;
 }
 
-const Logo = ({ appName, variant, ...rest }: LogoProps) => {
+const Logo = ({ appName, variant, fallback = null, ...rest }: LogoProps) => {
     if (appName === PROTONMAIL) {
         return <MailLogo variant={variant} {...rest} />;
     }
@@ -51,7 +52,7 @@ const Logo = ({ appName, variant, ...rest }: LogoProps) => {
         return <WalletLogo variant={variant} {...rest} />;
     }
 
-    return null;
+    return fallback;
 };
 
 export default Logo;
