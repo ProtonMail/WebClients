@@ -1,5 +1,6 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
+import type { useConfirmActionModal } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
@@ -47,44 +48,54 @@ export const useBookmarksActions = () => {
         countActionWithTelemetry(Actions.DeleteBookmarkFromSharedWithMe, tokensWithLinkId.length);
     };
 
-    const handleDeleteBookmark = async (
+    const handleDeleteBookmarks = async (
         abortSignal: AbortSignal,
-        tokenWithLinkId: { token: string; linkId: string }
+        showConfirmModal: ReturnType<typeof useConfirmActionModal>[1],
+        tokensWithLinkId: { token: string; linkId: string }[]
     ) => {
         try {
-            // TODO: remove when we will have events for bookmarks
-            await deleteBookmarks(abortSignal, [tokenWithLinkId]);
+            showConfirmModal({
+                title: c('Title').ngettext(
+                    msgid`Are you sure you want to remove this item from your list?`,
+                    `Are you sure you want to remove those items from your list?`,
+                    tokensWithLinkId.length
+                ),
+                message: c('Info').ngettext(
+                    msgid`You will need to save it again from the public link page.`,
+                    `You will need to save them again from the public link page`,
+                    tokensWithLinkId.length
+                ),
+                submitText: c('Action').t`Confirm`,
+                onSubmit: () => deleteBookmarks(abortSignal, tokensWithLinkId),
+                canUndo: true, // Just to hide the undo message
+            });
+
             createNotification({
                 type: 'success',
-                text: c('Notification').t`This item was succefully removed from your list`,
+                text: c('Notification').ngettext(
+                    msgid`This item was succefully removed from your list`,
+                    `All items were succefully removed from your list`,
+                    tokensWithLinkId.length
+                ),
             });
         } catch (e) {
             createNotification({
-                type: 'error',
-                text: c('Notification').t`This item was not removed from your list`,
+                type: 'success',
+                text: c('Notification').ngettext(
+                    msgid`This item was not removed from your list`,
+                    `Some items failed to be removed from your list`,
+                    tokensWithLinkId.length
+                ),
             });
             sendErrorReport(e);
         }
     };
 
-    const handleDeleteBookmarks = async (
+    const handleDeleteBookmark = async (
         abortSignal: AbortSignal,
-        tokensWithLinkId: { token: string; linkId: string }[]
-    ) => {
-        try {
-            await deleteBookmarks(abortSignal, tokensWithLinkId);
-            createNotification({
-                type: 'success',
-                text: c('Notification').t`All items were succefully removed from your list`,
-            });
-        } catch (e) {
-            createNotification({
-                type: 'error',
-                text: c('Notification').t`Some items failed to be removed from your list`,
-            });
-            sendErrorReport(e);
-        }
-    };
+        showConfirmModal: ReturnType<typeof useConfirmActionModal>[1],
+        tokenWithLinkId: { token: string; linkId: string }
+    ) => handleDeleteBookmarks(abortSignal, showConfirmModal, [tokenWithLinkId]);
 
     return {
         openBookmark: handleOpenBookmark,
