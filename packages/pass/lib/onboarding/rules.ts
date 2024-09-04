@@ -123,3 +123,9 @@ export const createMonitorLearnMoreRule = () =>
         onAcknowledge: (ack) => merge(ack, { extraData: { expanded: !ack.extraData?.expanded } }),
         when: (previous) => !previous || !previous.extraData?.expanded,
     });
+
+export const createAliasTrashConfirmRule = () =>
+    createOnboardingRule({
+        message: OnboardingMessage.ALIAS_TRASH_CONFIRM,
+        when: (previous) => !previous,
+    });

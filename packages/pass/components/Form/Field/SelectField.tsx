@@ -13,6 +13,8 @@ export type SelectFieldProps = FieldProps &
     InputFieldProps<typeof SelectTwo> &
     Omit<FieldBoxProps, 'actions' | 'actionsContainerClassName'> & { selectClassName?: string };
 
+const Loader: FC = () => <div className="pass-skeleton pass-skeleton--select" />;
+
 export const SelectField: FC<SelectFieldProps> = ({
     children,
     className,
@@ -23,6 +25,7 @@ export const SelectField: FC<SelectFieldProps> = ({
     meta,
     selectClassName,
     onValue,
+    renderSelected,
     ...props
 }) => {
     const { error } = useFieldControl({ field, form, meta });
@@ -36,7 +39,7 @@ export const SelectField: FC<SelectFieldProps> = ({
                 error={error}
                 labelContainerClassName="expand-click-area color-weak m-0 text-normal text-sm"
                 originalPlacement="bottom"
-                renderSelected={loading ? () => <div className="pass-skeleton pass-skeleton--select" /> : undefined}
+                renderSelected={() => (loading ? <Loader /> : renderSelected?.())}
                 anchorRef={fieldBoxRef as MutableRefObject<any>}
                 unstyled
                 {...field}
