@@ -5,6 +5,7 @@ import type {
   RtsMessagePayload,
   DataTypesThatDocumentCanBeExportedAs,
   DocumentRole,
+  DocTrashState,
 } from '@proton/docs-shared'
 import type { DocLoadSuccessResult } from './DocLoadSuccessResult'
 import type { UserState } from '@lexical/yjs'
@@ -32,11 +33,14 @@ export interface DocControllerInterface {
   getEditorJSON(): Promise<SerializedEditorState | undefined>
   getSureDocument(): DocumentMetaInterface
   getVersionHistory(): NativeVersionHistory | undefined
+  getTrashState(): DocTrashState | undefined
   handleAwarenessStateUpdate(states: UserState[]): Promise<void>
   initialize(): Promise<Result<DocLoadSuccessResult>>
   openDocumentSharingModal(): void
   printAsPDF(): Promise<void>
   renameDocument(newName: string): Promise<TranslatedResult<void>>
+  trashDocument(): Promise<void>
+  restoreDocument(): Promise<void>
   showCommentsPanel(): void
   squashDocument(): Promise<void>
   toggleDebugTreeView(): Promise<void>
