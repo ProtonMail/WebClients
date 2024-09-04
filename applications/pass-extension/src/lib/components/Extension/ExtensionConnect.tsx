@@ -7,7 +7,7 @@ import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerS
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientReady } from '@proton/pass/lib/client';
+import { clientErrored, clientReady } from '@proton/pass/lib/client';
 import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message/send-message';
 import { lock, signoutIntent, syncIntent } from '@proton/pass/store/actions';
 import { wakeupRequest } from '@proton/pass/store/actions/requests';
@@ -15,6 +15,7 @@ import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { AppState, ClientEndpoint, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
@@ -60,7 +61,8 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
     children,
 }: ExtensionConnectProps<T>) => {
     const { tabId, url } = ExtensionContext.get();
-    usePassCore().setCurrentTabUrl?.(url);
+    const { setCurrentTabUrl, onTelemetry } = usePassCore();
+    setCurrentTabUrl?.(url);
 
     const dispatch = useDispatch();
     const activityProbe = useExtensionActivityProbe(messageFactory);
@@ -77,6 +79,16 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
             setSentryUID(workerState.UID);
             setState((prevState) => ({ ...prevState, ...workerState }));
             authStore.setLocalID(workerState.localID);
+            if (clientErrored(workerState.status) || workerState.criticalRuntimeError) {
+                onTelemetry(
+                    TelemetryEventName.ErrorResumingSession,
+                    {},
+                    {
+                        extensionBrowser: BUILD_TARGET,
+                        extensionReloadRequired: Boolean(workerState.criticalRuntimeError),
+                    }
+                );
+            }
         },
     });
 
