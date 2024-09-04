@@ -4,6 +4,7 @@ export enum DocControllerEvent {
   UnableToResolveCommitIdConflict = 'UnableToResolveCommitIdConflict',
   DidLoadInitialEditorContent = 'DidLoadInitialEditorContent',
   DidLoadDocumentTitle = 'DidLoadDocumentTitle',
+  DocumentTrashStateUpdated = 'DocumentTrashStateUpdated',
 }
 
 export type DocControllerEventPayloads = {
@@ -14,4 +15,5 @@ export type DocControllerEventPayloads = {
   [DocControllerEvent.UnableToResolveCommitIdConflict]: {}
   [DocControllerEvent.DidLoadInitialEditorContent]: {}
   [DocControllerEvent.DidLoadDocumentTitle]: { title: string }
+  [DocControllerEvent.DocumentTrashStateUpdated]: undefined
 }

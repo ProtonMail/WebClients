@@ -1,3 +1,9 @@
+import { useCallback, useEffect, useState } from 'react'
+
+import { mergeRegister } from '@lexical/utils'
+import { c } from 'ttag'
+
+import { CircleLoader } from '@proton/atoms/CircleLoader'
 import {
   Dropdown,
   DropdownButton,
@@ -12,22 +18,21 @@ import {
   useAuthentication,
   usePopperAnchor,
 } from '@proton/components'
-import { useCallback, useEffect, useState } from 'react'
 import type { DocControllerEventPayloads, DocControllerInterface } from '@proton/docs-core'
 import { DocControllerEvent, PostApplicationError } from '@proton/docs-core'
-import { useHistoryViewerModal } from '../HistoryViewer'
-import { c } from 'ttag'
-import { useApplication } from '../../Containers/ApplicationProvider'
-import { CircleLoader } from '@proton/atoms/CircleLoader'
+import { type DocTrashState, isWordCountSupported } from '@proton/docs-shared'
 import type { DocumentAction } from '@proton/drive-store'
-import { AutoGrowingInput } from '../AutoGrowingInput'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { useWordCount } from '../WordCount/useWordCount'
-import { useFloatingWordCount } from '../WordCount/useFloatingWordCount'
+
+import { useApplication } from '../../Containers/ApplicationProvider'
 import WordCountIcon from '../../Icons/WordCountIcon'
-import { isWordCountSupported } from '@proton/docs-shared'
+import { AutoGrowingInput } from '../AutoGrowingInput'
+import { useHistoryViewerModal } from '../HistoryViewer'
+import { TrashedDocumentModal } from '../TrashedDocumentModal'
+import { useFloatingWordCount } from '../WordCount/useFloatingWordCount'
+import { useWordCount } from '../WordCount/useWordCount'
 
 const DocumentTitleDropdown = ({
   controller,
@@ -42,6 +47,7 @@ const DocumentTitleDropdown = ({
   const { floatingUIIsEnabled, setFloatingUIIsEnabled } = useFloatingWordCount()
   const [title, setTitle] = useState<string | undefined>()
   const [isDuplicating, setIsDuplicating] = useState<boolean>(false)
+  const [trashState, setTrashState] = useState<DocTrashState | undefined>(controller?.getTrashState())
   const [isMakingNewDocument, setIsMakingNewDocument] = useState<boolean>(false)
   const [isExportingPDF, setIsExportingPDF] = useState<boolean>(false)
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
@@ -113,10 +119,18 @@ const DocumentTitleDropdown = ({
   )
 
   useEffect(() => {
-    return application.eventBus.addEventCallback<DocControllerEventPayloads['DidLoadDocumentTitle']>((payload) => {
-      setTitle(payload.title)
-    }, DocControllerEvent.DidLoadDocumentTitle)
-  }, [application.eventBus])
+    return mergeRegister(
+      application.eventBus.addEventCallback<DocControllerEventPayloads['DidLoadDocumentTitle']>((payload) => {
+        setTitle(payload.title)
+      }, DocControllerEvent.DidLoadDocumentTitle),
+      application.eventBus.addEventCallback(() => {
+        if (!controller) {
+          return
+        }
+        setTrashState(controller.getTrashState())
+      }, DocControllerEvent.DocumentTrashStateUpdated),
+    )
+  }, [application.eventBus, controller])
 
   const onNewDocument = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -138,6 +152,7 @@ const DocumentTitleDropdown = ({
     }
 
     setTitle(controller.getSureDocument().name)
+    setTrashState(controller.getTrashState())
 
     if (action === 'history') {
       showHistoryModal({
@@ -178,6 +193,10 @@ const DocumentTitleDropdown = ({
 
   if (!title) {
     return
+  }
+
+  const openProtonDrive = (to = '/', target = '_blank') => {
+    window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()), target)
   }
 
   return (
@@ -331,6 +350,25 @@ const DocumentTitleDropdown = ({
               </DropdownMenu>
             </SimpleDropdown>
           )}
+          {controller && controller?.role.isAdmin() && (
+            <DropdownMenuButton
+              disabled={trashState === 'trashing' || trashState === 'trashed'}
+              data-testid="dropdown-trash"
+              onClick={(event) => {
+                event.preventDefault()
+                event.stopPropagation()
+
+                void controller.trashDocument().finally(() => {
+                  close()
+                })
+              }}
+              className="flex items-center text-left"
+            >
+              <Icon name="trash" className="color-weak mr-2" />
+              {c('Action').t`Move to trash`}
+              {trashState === 'trashing' && <CircleLoader size="small" className="ml-auto" />}
+            </DropdownMenuButton>
+          )}
           <hr className="my-1 min-h-px" />
 
           {controller && (
@@ -432,9 +470,7 @@ const DocumentTitleDropdown = ({
 
           <DropdownMenuButton
             className="flex items-center text-left"
-            onClick={() => {
-              window.open(getAppHref('/', APPS.PROTONDRIVE, getLocalID()), '_blank')
-            }}
+            onClick={() => openProtonDrive()}
             data-testid="dropdown-open-drive"
           >
             <Icon name="brand-proton-drive" className="color-weak mr-2" />
@@ -465,6 +501,14 @@ const DocumentTitleDropdown = ({
       </Dropdown>
 
       {historyModal}
+      {controller && (
+        <TrashedDocumentModal
+          documentTitle={title}
+          onOpenProtonDrive={() => openProtonDrive('/trash', '_self')}
+          controller={controller}
+          trashedState={trashState}
+        />
+      )}
     </>
   )
 }
