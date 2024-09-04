@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { ProtonLogo, PublicTopBanners, getAppVersion, useConfig, useTheme } from '@proton/components';
+import Logo from '@proton/components/components/logo/Logo';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
@@ -33,6 +34,27 @@ export interface Props {
     toApp: APP_NAMES | undefined;
 }
 
+const getStaticAppUrl = (appName: APP_NAMES | undefined) => {
+    switch (appName) {
+        case APPS.PROTONVPN_SETTINGS:
+            return 'https://protonvpn.com';
+        case APPS.PROTONMAIL:
+            return getStaticURL('/mail');
+        case APPS.PROTONCALENDAR:
+            return getStaticURL('/calendar');
+        case APPS.PROTONDRIVE:
+            return getStaticURL('/drive');
+        case APPS.PROTONWALLET:
+            return getStaticURL('/wallet');
+        case APPS.PROTONDOCS:
+            return getStaticURL('/drive');
+        case APPS.PROTONPASS:
+            return getStaticURL('/pass');
+        default:
+            return getStaticURL('');
+    }
+};
+
 const Layout = ({
     toApp,
     children,
@@ -51,13 +73,24 @@ const Layout = ({
 
     const theme = useTheme();
 
-    const protonLogoBrand = (
+    const protonLogo = (
         <ProtonLogo
             variant="full"
             color={isElectronApp && theme.information.dark ? 'invert' : undefined}
             className={clsx(onBack && 'ml-4 md:ml-0')}
         />
-    ); // for the future: color="invert" will change color to white
+    );
+
+    const protonLogoBrand = toApp ? (
+        <Logo
+            appName={toApp}
+            color={isElectronApp && theme.information.dark ? 'invert' : undefined}
+            className={clsx(onBack && 'ml-4 md:ml-0')}
+            fallback={protonLogo}
+        />
+    ) : (
+        protonLogo
+    );
 
     return (
         <div
@@ -83,7 +116,7 @@ const Layout = ({
                                 'shrink-0 relative interactive-pseudo-protrude rounded interactive--no-background',
                                 isElectronOnMac && 'md:pl-14 lg:pl-8'
                             )}
-                            href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}
+                            href={getStaticAppUrl(toApp)}
                         >
                             {protonLogoBrand}
                         </Href>
@@ -116,7 +149,7 @@ const Layout = ({
                     {children}
                     {hasDecoration && (
                         <div className="shrink-0 text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
-                            <LayoutLogos size={12} />
+                            <LayoutLogos size={7} />
                         </div>
                     )}
                 </main>
