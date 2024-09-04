@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
 import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
-import { sendMessage } from '@proton/pass/lib/extension/message';
+import { CriticalMessageResponseError, sendMessage } from '@proton/pass/lib/extension/message';
 import type {
     AppState,
     ClientEndpoint,
@@ -27,10 +27,10 @@ const wakeup = (options: WakeupOptions): Promise<WorkerMessageResponse<WorkerMes
         }),
         (response) => {
             if (response.type === 'success') return response;
-            else {
-                logger.warn(`[Endpoint::${options.endpoint}] wakeup failed`, response.error);
-                throw new Error();
-            }
+
+            logger.warn(`[Endpoint::${options.endpoint}] wakeup failed`, response.error);
+            if (response.critical) throw new CriticalMessageResponseError();
+            else throw new Error();
         }
     );
 
@@ -48,10 +48,11 @@ export const useWorkerStateEvents = ({ onWorkerStateChange, ...options }: UseWor
 
         wakeup(options)
             .then(({ state }) => onWorkerStateChange(state))
-            .catch(() =>
+            .catch((err) =>
                 onWorkerStateChange({
                     authorized: false,
                     booted: false,
+                    criticalRuntimeError: err instanceof CriticalMessageResponseError,
                     localID: undefined,
                     status: AppStatus.ERROR,
                     UID: undefined,

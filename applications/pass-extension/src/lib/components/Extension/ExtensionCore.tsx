@@ -125,7 +125,10 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
                 .then(() => endpoint === 'popup' && BUILD_TARGET === 'firefox' && window.close())
                 .catch(noop),
 
-        onForceUpdate: () => sendMessage(messageFactory({ type: WorkerMessageType.WORKER_RELOAD })),
+        onForceUpdate: () =>
+            sendMessage(messageFactory({ type: WorkerMessageType.WORKER_RELOAD }))
+                .then((res) => res.type === 'error' && res.critical && browser.runtime.reload())
+                .catch(noop),
 
         openSettings: (page) => {
             const settingsUrl = browser.runtime.getURL('/settings.html');
