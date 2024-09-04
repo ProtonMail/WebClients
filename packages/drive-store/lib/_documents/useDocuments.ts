@@ -28,7 +28,7 @@ export const useDocuments = () => {
     const { getLink, getLinkPrivateKey, getLinkHashKey, getLinkSessionKey } = useLink();
     const { removeLinkForDriveCompat } = useLinksState();
     const { getShareCreatorKeys } = useShare();
-    const { renameLink } = useActions();
+    const { renameLink, trashLinks, restoreLinks } = useActions();
     const { getLocalID } = useAuthentication();
 
     const getDocumentSigningKeys = async (shareId: string) => {
@@ -156,6 +156,18 @@ export const useDocuments = () => {
         void getLink(abortSignal, shareId, linkId);
     };
 
+    const trashDocument = async ({ shareId, linkId }: LegacyNodeMeta, parentLinkId: string): Promise<void> => {
+        await trashLinks(abortSignal, [{ linkId, rootShareId: shareId, parentLinkId, isFile: true }], false);
+        removeLinkForDriveCompat(shareId, linkId);
+        await getLink(abortSignal, shareId, linkId);
+    };
+
+    const restoreDocument = async ({ shareId, linkId }: LegacyNodeMeta, parentLinkId: string): Promise<void> => {
+        await restoreLinks(abortSignal, [{ linkId, parentLinkId, rootShareId: shareId, isFile: true }], false);
+        removeLinkForDriveCompat(shareId, linkId);
+        await getLink(abortSignal, shareId, linkId);
+    };
+
     const getDocumentUrl = ({ volumeId, linkId }: NodeMeta): URL => {
         const href = getAppHref(`/doc`, APPS.PROTONDOCS, getLocalID());
         const url = new URL(href);
@@ -171,5 +183,7 @@ export const useDocuments = () => {
         getDocumentKeys,
         renameDocument,
         getDocumentUrl,
+        trashDocument,
+        restoreDocument,
     };
 };

@@ -7,7 +7,7 @@ import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLi
 import { useDriveCrypto } from '../store/_crypto';
 import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
 import { getNewWindow } from '../utils/window';
-import type { DocumentKeys, DocumentNodeMeta} from './_documents';
+import type { DocumentKeys, DocumentNodeMeta } from './_documents';
 import { useDocuments } from './_documents';
 import type { DecryptedNode } from './_nodes/interface';
 import useNode from './_nodes/useNode';
@@ -64,6 +64,8 @@ export interface DriveCompat {
      */
     renameDocument: (meta: NodeMeta, newName: string) => Promise<void>;
 
+    trashDocument: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
+    restoreDocument: (meta: NodeMeta, parentLinkId: string) => Promise<void>;
     /**
      * Gets the URL for a given document.
      */
@@ -100,7 +102,8 @@ export interface DriveCompat {
 export const useDriveCompat = (): DriveCompat => {
     const { withResolve } = useResolveShareId();
 
-    const { createDocumentNode, getDocumentKeys, renameDocument, getDocumentUrl } = useDocuments();
+    const { createDocumentNode, getDocumentKeys, renameDocument, getDocumentUrl, trashDocument, restoreDocument } =
+        useDocuments();
     const { getNode, getNodeContents, getNodePermissions, findAvailableNodeName } = useNode();
     const { getMyFilesNodeMeta } = useMyFiles();
     const { openDocumentWindow } = useOpenDocument();
@@ -122,6 +125,8 @@ export const useDriveCompat = (): DriveCompat => {
         getNodePermissions: withResolve(getNodePermissions),
         findAvailableNodeName: withResolve(findAvailableNodeName),
         renameDocument: withResolve(renameDocument),
+        trashDocument: withResolve(trashDocument),
+        restoreDocument: withResolve(restoreDocument),
         getDocumentUrl,
         openDocument,
         openDocumentSharingModal: withResolve(showLinkSharingModal),

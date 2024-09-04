@@ -15,6 +15,7 @@ import type {
   InternalEventInterface,
   BroadcastSource,
   DataTypesThatDocumentCanBeExportedAs,
+  DocTrashState,
 } from '@proton/docs-shared'
 import {
   DocAwarenessEvent,
@@ -72,7 +73,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   entitlements: DocumentEntitlements | null = null
   private decryptedNode?: DecryptedNode
   editorInvoker?: ClientRequiresEditorMethods
-  private docMeta!: DocumentMetaInterface
+  docMeta!: DocumentMetaInterface
   private initialCommit?: DecryptedCommit
   lastCommitIdReceivedFromRtsOrApi?: string
   private initialSyncTimer: ReturnType<typeof setTimeout> | null = null
@@ -90,6 +91,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   sizeTracker: DocSizeTracker = new DocSizeTracker()
   abortWebsocketConnectionAttempt = false
   isDestroyed = false
+  trashState?: DocTrashState
 
   public userAddress?: string
   readonly participantTracker = new DocParticipantTracker(this.eventBus)
@@ -431,7 +433,8 @@ export class DocController implements DocControllerInterface, InternalEventHandl
       !this.isExperiencingErroredSync &&
       !this.isLockedDueToSizeContraint &&
       !this.hasEditorRenderingIssue &&
-      this.websocketStatus === 'connected'
+      this.websocketStatus === 'connected' &&
+      this.trashState !== 'trashed'
     ) {
       this.logger.info('Changing editing locked to false')
       void this.editorInvoker.changeLockedState(false)
@@ -590,15 +593,16 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     return url.toString()
   }
 
-  private async refreshNodeAndDocMeta(): Promise<void> {
+  async refreshNodeAndDocMeta(): Promise<void> {
     this.decryptedNode = await this.driveCompat.getNode(this.nodeMeta)
     const newDoc = this.docMeta.copyWithNewValues({ name: this.decryptedNode.name })
     this.docMeta = newDoc
   }
 
-  private async loadDecryptedNode(): Promise<void> {
+  async loadDecryptedNode(): Promise<void> {
     try {
       await this.refreshNodeAndDocMeta()
+      this.setTrashState(this.decryptedNode?.trashed ? 'trashed' : 'not_trashed')
       this.eventBus.publish<DocControllerEventPayloads['DidLoadDocumentTitle']>({
         type: DocControllerEvent.DidLoadDocumentTitle,
         payload: { title: this.docMeta.name },
@@ -856,6 +860,30 @@ export class DocController implements DocControllerInterface, InternalEventHandl
     }
   }
 
+  publishDocumentTrashStateUpdated() {
+    this.eventBus.publish({ type: DocControllerEvent.DocumentTrashStateUpdated, payload: undefined })
+  }
+
+  public async trashDocument(): Promise<void> {
+    this.setTrashState('trashing')
+    const node = await this.driveCompat.getNode(this.nodeMeta)
+    const parentLinkId = node.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
+    await this.driveCompat.trashDocument(this.docMeta, parentLinkId)
+    await this.refreshNodeAndDocMeta()
+    this.setTrashState('trashed')
+    this.reloadEditingLockedState()
+  }
+
+  public async restoreDocument(): Promise<void> {
+    this.setTrashState('restoring')
+    const node = await this.driveCompat.getNode(this.nodeMeta)
+    const parentLinkId = node.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
+    await this.driveCompat.restoreDocument(this.docMeta, parentLinkId)
+    await this.refreshNodeAndDocMeta()
+    this.setTrashState('not_trashed')
+    this.reloadEditingLockedState()
+  }
+
   public openDocumentSharingModal(): void {
     void this.driveCompat.openDocumentSharingModal(this.nodeMeta)
   }
@@ -971,6 +999,15 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
     const json = await this.editorInvoker.getCurrentEditorState()
     return json
+  }
+
+  getTrashState(): DocTrashState | undefined {
+    return this.trashState
+  }
+
+  setTrashState(newState: DocTrashState): void {
+    this.trashState = newState
+    this.publishDocumentTrashStateUpdated()
   }
 
   async toggleDebugTreeView(): Promise<void> {
