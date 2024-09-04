@@ -24,6 +24,7 @@ import {
 } from '@proton/pass/lib/client';
 import { AppStatus, type Maybe } from '@proton/pass/types';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import './LobbyContent.scss';
@@ -147,6 +148,8 @@ export const LobbyContent: FC<Props> = ({
                                 return c('Info').t`Unlock ${PASS_SHORT_APP_NAME} with biometrics`;
                             case AppStatus.MISSING_SCOPE:
                                 return c('Info').t`Enter your extra password`;
+                            case AppStatus.ERROR:
+                                return;
                             default:
                                 return c('Info').jt`Sign in to your account`;
                         }
@@ -155,7 +158,7 @@ export const LobbyContent: FC<Props> = ({
             </div>
 
             {warning && (
-                <Card type="danger" className="mt-6 text-sm">
+                <Card type="danger" className={clsx('text-sm', EXTENSION_BUILD ? 'mt-4' : 'mt-6')}>
                     {warning}
                 </Card>
             )}
@@ -196,7 +199,7 @@ export const LobbyContent: FC<Props> = ({
                                     onClick={() => (errored ? onLogin({ forceLock: true }) : onFork())}
                                     disabled={!online && (errored || !offlineEnabled)}
                                 >
-                                    {errored ? c('Action').t`Sign back in` : c('Action').t`Sign in with ${BRAND_NAME}`}
+                                    {errored ? c('Action').t`Retry` : c('Action').t`Sign in with ${BRAND_NAME}`}
                                 </Button>
                             );
                     }
