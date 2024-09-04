@@ -4,6 +4,7 @@ import type { PassSaga, RootSagaOptions } from '@proton/pass/store/types';
 
 import aliasDetailsRequest from './alias/alias-details-request.saga';
 import aliasOptionsRequest from './alias/alias-options-request.saga';
+import aliasSyncSagas from './alias/alias-sync.sagas';
 import lockCreate from './auth/lock-create.saga';
 import lock from './auth/lock.saga';
 import passwordConfirm from './auth/password-confirm.saga';
@@ -58,6 +59,7 @@ import vaultMoveAllItems from './vaults/vault-move-all-items.saga';
 import vaultTransferOwner from './vaults/vault-transfer-owner.saga';
 
 const COMMON_SAGAS = [
+    ...aliasSyncSagas,
     ...secureLinkSagas,
     aliasDetailsRequest,
     aliasOptionsRequest,

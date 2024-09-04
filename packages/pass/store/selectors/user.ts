@@ -10,10 +10,14 @@ import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { type Address, SETTINGS_STATUS, UserType } from '@proton/shared/lib/interfaces';
 
+import { selectDefaultVault } from './shares';
+
 export const selectUserState = ({ user }: State) => user;
 export const selectUser = ({ user: { user } }: State) => user;
 export const selectUserPlan = ({ user: { plan } }: State) => plan;
 export const selectUserSettings = ({ user: { userSettings } }: State) => userSettings;
+export const selectUserData = ({ user: { userData } }: State) => userData;
+
 export const selectSentinelEligible = ({ user }: State) => Boolean(user.userSettings?.HighSecurity.Eligible ?? false);
 export const selectSentinelEnabled = ({ user }: State) => Boolean(user.userSettings?.HighSecurity.Value ?? false);
 export const selectTelemetryEnabled = ({ user }: State) => user.userSettings?.Telemetry === 1;
@@ -60,3 +64,10 @@ export const selectFeatureFlag =
     (feature: PassFeature) =>
     ({ user: { features } }: State): boolean =>
         features?.[feature] ?? false;
+
+/* User default vault shareId, currently used for SimpleLogin aliases sync.
+ * If the user data has not been synced yet - fallback to the default share. */
+export const selectUserDefaultShareId = createSelector(
+    [selectUserData, selectDefaultVault],
+    (userData, defaultShare) => userData?.defaultShareId ?? defaultShare.shareId
+);

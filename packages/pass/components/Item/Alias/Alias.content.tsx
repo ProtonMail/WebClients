@@ -10,9 +10,13 @@ import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaRe
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { getAliasDetailsIntent, notification } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails } from '@proton/pass/store/selectors';
+import { PassFeature } from '@proton/pass/types/api/features';
+
+import { AliasSyncToggle } from './AliasSyncToggle';
 
 export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; actions: ReactNode }>> = ({
     revision,
@@ -24,6 +28,8 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const { data: item, shareId, itemId } = revision;
     const aliasEmail = revision.aliasEmail!;
     const note = useDeobfuscatedValue(item.metadata.note);
+    const mailboxesForAlias = useSelector(selectAliasDetails(aliasEmail!));
+    const canToggleStatus = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
 
     const getAliasDetails = useActionRequest(getAliasDetailsIntent, {
         initialRequestId: aliasDetailsRequest(aliasEmail),
@@ -38,8 +44,8 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
         },
     });
 
-    const mailboxesForAlias = useSelector(selectAliasDetails(aliasEmail!));
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
+    const aliasActions = canToggleStatus ? <AliasSyncToggle disabled={optimistic} revision={revision} /> : undefined;
 
     useEffect(() => {
         if (!optimistic) getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
@@ -54,6 +60,9 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
                     label={c('Label').t`Alias address`}
                     value={aliasEmail ?? undefined}
                     extra={actions}
+                    valueClassName="mr-12"
+                    actions={aliasActions}
+                    actionsContainerClassName="self-center"
                 />
 
                 <ValueControl as="ul" loading={!ready} icon="arrow-up-and-right-big" label={c('Label').t`Forwards to`}>

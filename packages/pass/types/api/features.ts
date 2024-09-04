@@ -6,6 +6,7 @@ export enum PassFeature {
     PassWebOfflineMode = 'PassWebOfflineMode',
     PassIdentityV1 = 'PassIdentityV1',
     PassDesktopBiometrics = 'PassDesktopBiometrics',
+    PassSimpleLoginAliasesSync = 'PassSimpleLoginAliasesSync',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);

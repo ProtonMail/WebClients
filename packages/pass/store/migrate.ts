@@ -15,7 +15,8 @@ export const migrate = (state: State) => {
     const user = selectUser(state);
     const plan = selectPassPlan(state);
 
-    /** Sanitize the item state to ensure we have no invalid item
+    /** Sanity migration :
+     * Sanitize the item state to ensure we have no invalid item
      * data - FIXME: remove when pin-pointing the faulty partial
      * item update causing this edge-case error */
     state.items.byShareId = {
@@ -25,6 +26,7 @@ export const migrate = (state: State) => {
         ),
     };
 
+    /** v1.13.0 migration */
     if ('organization' in state.user) {
         const organization = state.user.organization as MaybeNull<Organization>;
         delete state.user.organization;
@@ -40,19 +42,28 @@ export const migrate = (state: State) => {
         }
     }
 
+    /** v1.17.2 migration */
     if (state.user.userSettings && !state.user.userSettings.HighSecurity) {
         state.user.userSettings.HighSecurity = INITIAL_HIGHSECURITY_SETTINGS;
     }
 
-    const loginItems = selectLoginItems(state);
-
-    loginItems.forEach(({ data: { content: item } }) => {
+    /** v1.20.0 migration */
+    selectLoginItems(state).forEach(({ data: { content: item } }) => {
         if ('username' in item) {
             item.itemEmail = item.username as XorObfuscation;
             item.itemUsername = obfuscate('');
             delete item.username;
         }
     });
+
+    /** v1.23.0 migration */
+    if (!state.user.userData) {
+        state.user.userData = {
+            defaultShareId: null,
+            aliasSyncEnabled: false,
+            pendingAliasToSync: 0,
+        };
+    }
 
     return state;
 };
