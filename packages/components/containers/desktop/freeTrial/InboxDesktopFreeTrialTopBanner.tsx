@@ -39,11 +39,10 @@ const getTopBannerMessage = (daysDifference: number, endDate: Date) => {
 };
 
 export const InboxDesktopFreeTrialTopBanner = () => {
-    const { freeTrialDates, firstLogin, updateReminderFlag, displayReminder } = useInboxFreeTrial();
-    const today = startOfDay(new Date());
+    const { freeTrialDates, updateReminderFlag, shouldDisplayReminder } = useInboxFreeTrial();
 
     // Do not display if first reminder or no reminders to display
-    if (firstLogin || !displayReminder) {
+    if (!shouldDisplayReminder) {
         return null;
     }
     // Do not display if the dates are missing
@@ -51,6 +50,7 @@ export const InboxDesktopFreeTrialTopBanner = () => {
         return null;
     }
 
+    const today = startOfDay(new Date());
     const endDate = startOfDay(new Date(freeTrialDates.Value.trialEndDate));
     const daysDifference = differenceInDays(endDate, today);
     const message = getTopBannerMessage(daysDifference, new Date(freeTrialDates.Value.trialEndDate));

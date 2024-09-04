@@ -15,7 +15,7 @@ import { freeTrialUpgradeClick } from '../openExternalLink';
 import useInboxFreeTrial from './useInboxFreeTrial';
 
 export const InboxDesktopFreeTrialOnboardingModal = () => {
-    const { firstLogin, startFreeTrial } = useInboxFreeTrial();
+    const { shouldShowTrialDialog, shouldAutoStartFreeTrial, startFreeTrial } = useInboxFreeTrial();
     const [modalState, setModalState, render] = useModalState();
 
     const upsellRef = getUpsellRef({
@@ -25,10 +25,16 @@ export const InboxDesktopFreeTrialOnboardingModal = () => {
     });
 
     useEffect(() => {
-        if (firstLogin) {
+        if (shouldAutoStartFreeTrial) {
+            startFreeTrial();
+        }
+    }, [shouldAutoStartFreeTrial]);
+
+    useEffect(() => {
+        if (shouldShowTrialDialog) {
             setModalState(true);
         }
-    }, [firstLogin]);
+    }, [shouldShowTrialDialog]);
 
     const handleClose = () => {
         setModalState(false);

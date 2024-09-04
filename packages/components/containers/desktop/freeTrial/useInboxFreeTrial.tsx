@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 
-import { addDays, isBefore, startOfDay } from 'date-fns';
+import { addDays, startOfDay } from 'date-fns';
 
-import { useFeature } from '@proton/components/hooks';
+import { useFeature, useUser } from '@proton/components/hooks';
 import type {
     InboxDesktopFreeTrialDates,
     InboxDesktopFreeTrialReminders,
 } from '@proton/shared/lib/desktop/desktopTypes';
 
 import { FeatureCode } from '../../features';
-import { shouldDisplayReminder } from './shouldDisplayReminder';
+import { shouldDisplayReminder as checkShouldDisplayReminder } from './shouldDisplayReminder';
 
 export const DEFAULT_TRIAL_DAYS = 14;
 export const FIRST_REMINDER_DAYS = 14;
@@ -19,17 +19,21 @@ export const THIRD_REMINDER_DAYS = 2;
 const { InboxDesktopFreeTrialDates: DatesFlag, InboxDesktopFreeTrialReminders: RemindersFlag } = FeatureCode;
 
 const useInboxFreeTrial = () => {
+    const [user] = useUser();
     const { feature: datesFlag, update: updateDates } = useFeature<InboxDesktopFreeTrialDates>(DatesFlag);
     const { feature: remindFlag, update: updateReminders } = useFeature<InboxDesktopFreeTrialReminders>(RemindersFlag);
 
-    const [displayReminder, setDisplayReminder] = useState(false);
-
-    useEffect(() => {
-        if (datesFlag?.Value.trialEndDate && remindFlag?.Value) {
-            const shouldDisplay = shouldDisplayReminder(datesFlag.Value.trialEndDate, remindFlag.Value);
-            setDisplayReminder(shouldDisplay);
+    const shouldDisplayReminder = useMemo(() => {
+        if (user.hasPaidMail || !user.canPay) {
+            return false;
         }
-    }, [remindFlag, datesFlag]);
+
+        if (datesFlag?.Value.trialEndDate && remindFlag?.Value) {
+            return checkShouldDisplayReminder(datesFlag.Value.trialEndDate, remindFlag.Value);
+        }
+
+        return false;
+    }, [user, remindFlag, datesFlag]);
 
     const startFreeTrial = () => {
         const today = new Date();
@@ -45,43 +49,19 @@ const useInboxFreeTrial = () => {
         });
     };
 
-    const updateDatesFlag = (flag: InboxDesktopFreeTrialDates) => {
-        void updateDates(flag);
-    };
-
     const updateReminderFlag = (flag: InboxDesktopFreeTrialReminders) => {
         void updateReminders(flag);
     };
 
-    const isUserInFreeTrial = () => {
-        const today = new Date();
-        return !!(
-            datesFlag &&
-            datesFlag.Value.trialStartDate &&
-            datesFlag.Value.trialEndDate &&
-            isBefore(today, new Date(datesFlag.Value.trialEndDate))
-        );
-    };
-
     const firstLogin = !!(datesFlag && !datesFlag.Value.trialEndDate && !datesFlag.Value.trialStartDate);
 
-    const allReminderShown = !!(
-        remindFlag &&
-        remindFlag.Value.first &&
-        remindFlag.Value.second &&
-        remindFlag.Value.third
-    );
-
     return {
+        shouldShowTrialDialog: firstLogin && !user.hasPaidMail && user.canPay,
+        shouldAutoStartFreeTrial: firstLogin && !user.hasPaidMail && !user.canPay,
         freeTrialDates: datesFlag,
-        freeTrialReminders: remindFlag,
-        updateDatesFlag,
-        updateReminderFlag,
         startFreeTrial,
-        displayReminder,
-        firstLogin,
-        allReminderShown,
-        isUserInFreeTrial,
+        updateReminderFlag,
+        shouldDisplayReminder,
     };
 };
 
