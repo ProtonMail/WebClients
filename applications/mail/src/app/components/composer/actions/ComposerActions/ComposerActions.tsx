@@ -183,7 +183,13 @@ const ComposerActions = ({
     };
 
     const assistantTooltipText = (() => {
-        return !assistantSpotlight.show ? c('Action').t`${BRAND_NAME} Scribe writing assistant` : '';
+        if (assistantSpotlight.show) {
+            return '';
+        }
+
+        return isAssistantOpened
+            ? c('Action').t`Show ${BRAND_NAME} Scribe writing assistant`
+            : c('Action').t`Hide ${BRAND_NAME} Scribe writing assistant`;
     })();
 
     return (
