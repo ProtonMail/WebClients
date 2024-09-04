@@ -2,7 +2,18 @@ import { app } from "electron";
 import { spawn } from "node:child_process";
 import { appendFileSync, copyFileSync, existsSync, openSync } from "node:fs";
 import { resolve } from "node:path";
-import { squirrelLogger } from "../utils/log";
+
+import {
+    SQUIRREL_INSTALL,
+    SQUIRREL_UPDATED,
+    SQUIRREL_UNINSTALL,
+    SQUIRREL_OBSOLETE,
+    isSquirrelStartup,
+    handleInstallShortcuts,
+    handleUpdatedShortcuts,
+    handleUninstallShortcuts,
+    squirrelLogger,
+} from "@proton/shared/lib/squirrel/squirrel";
 
 async function spawnUninstallProcess() {
     const uninstallLogPath = resolve(app.getPath("temp"), "proton-mail-uninstall.log");
@@ -60,34 +71,36 @@ async function spawnUninstallProcess() {
 }
 
 export async function handleSquirrelEvents() {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const squirrelStartup: boolean = require("electron-squirrel-startup");
+    if (!isSquirrelStartup()) return;
 
-    if (squirrelStartup) {
-        squirrelLogger.info("startup");
+    squirrelLogger.info("Startup");
 
-        const squirrelCommand = process.argv[1] ?? null;
+    const squirrelCommand = process.argv[1] ?? null;
 
-        switch (squirrelCommand) {
-            case "--squirrel-install":
-                squirrelLogger.info("install");
-                break;
-            case "--squirrel-updated":
-                squirrelLogger.info("updated");
-                break;
-            case "--squirrel-uninstall": {
-                squirrelLogger.info("uninstall");
-                await spawnUninstallProcess();
-                break;
-            }
-            case "--squirrel-obsolete":
-                squirrelLogger.info("obsolete");
-                break;
+    switch (squirrelCommand) {
+        case SQUIRREL_INSTALL:
+            squirrelLogger.info("Install:", process.argv);
+            await handleInstallShortcuts();
+            break;
+        case SQUIRREL_UPDATED:
+            squirrelLogger.info("Updated:", process.argv);
+            // During update the path to exe can change. Therefore we want to
+            // update the lnk if they exists.
+            await handleUpdatedShortcuts();
+            break;
+        case SQUIRREL_UNINSTALL: {
+            squirrelLogger.info("Uninstall:", process.argv);
+            await handleUninstallShortcuts();
+            await spawnUninstallProcess();
+            break;
         }
-
-        // WARN: App quit gracefully stops all electron processes asynchronously,
-        // so unless we block the execution before this point (like we do during the
-        // uninstall process) the app startup will continue.
-        app.quit();
+        case SQUIRREL_OBSOLETE:
+            squirrelLogger.info("Obsolete:", process.argv);
+            break;
     }
+
+    // WARN: App quit gracefully stops all electron processes asynchronously,
+    // so unless we block the execution before this point (like we do during the
+    // uninstall process) the app startup will continue.
+    app.quit();
 }

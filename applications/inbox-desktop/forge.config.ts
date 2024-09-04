@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-require("dotenv").config({ path: [".env", ".env.default"] });
+import { config as dotenvConf } from "dotenv";
+dotenvConf({ path: [".env", ".env.default"] });
 
 import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-natives";
 import { FusesPlugin } from "@electron-forge/plugin-fuses";
@@ -61,6 +62,7 @@ const config: ForgeConfig = {
                 iconUrl: `${__dirname}/assets/icons/${getIco()}`,
                 setupIcon: `${__dirname}/assets/icons/${getIco()}`,
                 loadingGif: `${__dirname}/assets/windows/install-spinner.gif`,
+                vendorDirectory: `${__dirname}/../../packages/shared/lib/squirrel/assets`,
                 signWithParams:
                     process.env.WINDOWS_PACKAGE_SIGNING === "yes"
                         ? `/a /d "Proton Mail Desktop" /t "http://timestamp.sectigo.com" /fd SHA256`
