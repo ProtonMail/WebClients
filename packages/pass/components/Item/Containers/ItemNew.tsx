@@ -12,7 +12,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import type { ItemNewRouteParams } from '@proton/pass/components/Navigation/routing';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { itemCreationIntent } from '@proton/pass/store/actions';
-import { selectDefaultVault, selectVaultLimits } from '@proton/pass/store/selectors';
+import { selectDefaultVault, selectMostRecentVault, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
 
 const itemNewMap: { [T in ItemType]: FC<ItemNewViewProps<T>> } = {
@@ -36,7 +36,8 @@ export const ItemNew: FC = () => {
 
     /* if user downgraded - always auto-select the default vault id */
     const defaultVault = useSelector(selectDefaultVault);
-    const shareId = didDowngrade ? defaultVault.shareId : selectedShareId ?? defaultVault.shareId;
+    const mostRecentVault = useSelector(selectMostRecentVault);
+    const shareId = didDowngrade ? defaultVault.shareId : (selectedShareId ?? mostRecentVault);
 
     const ItemNewComponent = itemNewMap[type];
 
