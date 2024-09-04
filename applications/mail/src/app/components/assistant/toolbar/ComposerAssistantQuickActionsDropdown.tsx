@@ -14,10 +14,10 @@ import type { ActionType } from '@proton/llm/lib/types';
 
 interface Props {
     onClickRefineAction: (actionType: ActionType) => void;
-    disabled?: boolean;
+    disableActions?: boolean;
 }
 
-const ComposerAssistantQuickActionsDropdown = ({ onClickRefineAction, disabled }: Props) => {
+const ComposerAssistantQuickActionsDropdown = ({ onClickRefineAction, disableActions }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const { viewportWidth } = useActiveBreakpoint();
@@ -35,7 +35,6 @@ const ComposerAssistantQuickActionsDropdown = ({ onClickRefineAction, disabled }
                     size="small"
                     shape="ghost"
                     icon
-                    disabled={disabled}
                 >
                     <Icon name="three-dots-horizontal" alt={c('Action').t`More refine actions`} />
                 </DropdownButton>
@@ -48,6 +47,7 @@ const ComposerAssistantQuickActionsDropdown = ({ onClickRefineAction, disabled }
                             onClick={() => {
                                 onClickRefineAction('proofread');
                             }}
+                            disabled={disableActions}
                         >
                             {c('Action').t`Proofread`}
                         </DropdownMenuButton>
@@ -60,6 +60,7 @@ const ComposerAssistantQuickActionsDropdown = ({ onClickRefineAction, disabled }
                             onClick={() => {
                                 onClickRefineAction('expand');
                             }}
+                            disabled={disableActions}
                         >
                             {c('Action').t`Expand`}
                         </DropdownMenuButton>
@@ -78,6 +79,7 @@ const ComposerAssistantQuickActionsDropdown = ({ onClickRefineAction, disabled }
                     onClick={() => {
                         onClickRefineAction('formal');
                     }}
+                    disabled={disableActions}
                 >
                     {c('Action').t`Formalize`}
                 </DropdownMenuButton>
@@ -86,6 +88,7 @@ const ComposerAssistantQuickActionsDropdown = ({ onClickRefineAction, disabled }
                     onClick={() => {
                         onClickRefineAction('friendly');
                     }}
+                    disabled={disableActions}
                 >
                     {c('Action').t`Make it friendly`}
                 </DropdownMenuButton>
