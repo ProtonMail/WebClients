@@ -4,6 +4,7 @@ import { Info, RadioGroup } from '@proton/components';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -18,7 +19,7 @@ const EnvironmentOption = ({ runtime }: { runtime: AI_ASSISTANT_ACCESS }) => {
     if (runtime === SERVER_ONLY) {
         return (
             <>
-                <div className="text-rg mr-2 inline-flex">{c('Assistant option').t`Run on servers`}</div>
+                <div className="text-rg mr-2 inline-flex">{c('Assistant option').t`Run on ${BRAND_NAME} servers`}</div>
                 <span className="shrink-0">
                     <Info title={c('Assistant option').t`Fast and secure. No logs are kept.`} />
                 </span>
