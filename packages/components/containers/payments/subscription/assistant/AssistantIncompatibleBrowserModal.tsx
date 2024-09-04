@@ -5,6 +5,7 @@ import type { ModalProps } from '@proton/components';
 import { Prompt, useApi, useEventManager, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 
@@ -49,7 +50,7 @@ const AssistantIncompatibleBrowserModal = ({ modalProps, onReject, onResolve }: 
     const buttons: [JSX.Element, JSX.Element] | [JSX.Element, JSX.Element, JSX.Element] = (() => {
         return [
             <Button color="norm" onClick={handleUpdateSetting} loading={loading}>{c('Action')
-                .t`Run on servers`}</Button>,
+                .t`Run on ${BRAND_NAME} servers`}</Button>,
             <Button onClick={handleRejectThenClose}>{c('Action').t`Cancel`}</Button>,
         ];
     })();
