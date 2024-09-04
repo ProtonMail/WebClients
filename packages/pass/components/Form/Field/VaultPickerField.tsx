@@ -8,8 +8,7 @@ import type { VaultIconName } from '@proton/pass/components/Vault/VaultIcon';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import type { ShareItem } from '@proton/pass/store/reducers';
 import { selectVaultLimits, selectWritableVaults } from '@proton/pass/store/selectors';
-import type { ShareType } from '@proton/pass/types';
-import { type Maybe } from '@proton/pass/types';
+import type { Maybe, ShareType } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { prop } from '@proton/pass/utils/fp/lens';
 import clsx from '@proton/utils/clsx';
@@ -20,7 +19,10 @@ import { SelectField, type SelectFieldProps } from './SelectField';
 import './VaultPickerField.scss';
 
 type VaultPickerSelection = { title: string; icon?: VaultIconName; color?: VaultColor };
-type VaultPickerFieldProps = Omit<SelectFieldProps, 'children'> & { placeholder?: string; legacy?: boolean };
+type VaultPickerFieldProps = Omit<SelectFieldProps, 'children'> & {
+    placeholder?: string;
+    legacy?: boolean;
+};
 
 export const VaultPickerField: FC<VaultPickerFieldProps> = ({ placeholder, legacy, ...props }) => {
     const vaults = useSelector(selectWritableVaults);
