@@ -10,7 +10,10 @@
         "NO_PROXY",
         "WEBPACK_PARALLELISM",
         "CI_COMMIT_SHA",
-        "CI_COMMIT_REF_NAME"
+        "CI_COMMIT_REF_NAME",
+        "SENTRY_ORG",
+        "SENTRY_URL",
+        "SENTRY_AUTH_TOKEN"
     ],
     "tasks": {
         "@proton/i18n#build": {},
