@@ -7,7 +7,6 @@ export const ipcLogger = Logger.scope("ipc");
 export const netLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
     viewID ? Logger.scope(`net/${viewID}`) : Logger.scope("net");
 export const settingsLogger = Logger.scope("settings");
-export const squirrelLogger = Logger.scope("squirrel");
 export const updateLogger = Logger.scope("update");
 export const viewLogger = (viewID: CHANGE_VIEW_TARGET) => Logger.scope(viewID);
 
