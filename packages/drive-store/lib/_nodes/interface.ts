@@ -25,4 +25,6 @@ export type DecryptedNode = {
      * If present, this node's metadata could be corrupted / undecryptable in some way.
      */
     isCorruptedNode?: DecryptedLink['corruptedLink'];
+    trashed?: DecryptedLink['trashed'];
+    trashedByParent?: DecryptedLink['trashedByParent'];
 };

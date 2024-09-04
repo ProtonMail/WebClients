@@ -16,7 +16,7 @@ import { useShareActions, useShareUrl } from '../_shares';
 import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
 import { TransferConflictStrategy } from '../_uploads/interface';
 import { useErrorHandler } from '../_utils';
-import { LinkInfo } from './interface';
+import type { LinkInfo } from './interface';
 import useListNotifications from './useListNotifications';
 
 /**
@@ -251,7 +251,10 @@ export default function useActions() {
         createMovedItemsNotifications(linksToMove, result.successes, result.failures, undoAction);
     };
 
-    const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[]) => {
+    /**
+     * @param [notify] - whether notification popover should be displayed upon successful trash. Disabled on Docs
+     */
+    const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[], notify = true) => {
         if (!linksToTrash.length) {
             return;
         }
@@ -264,6 +267,10 @@ export default function useActions() {
                 parentLinkId,
             }))
         );
+
+        if (!notify) {
+            return;
+        }
 
         // This is a bit ugly, but the photo linkId cache is not connected
         // very well to the rest of our state.
@@ -282,7 +289,10 @@ export default function useActions() {
         createTrashedItemsNotifications(linksToTrash, result.successes, result.failures, undoAction);
     };
 
-    const restoreLinks = async (abortSignal: AbortSignal, linksToRestore: LinkInfo[]) => {
+    /**
+     * @param [notify] - whether notification popover should be displayed upon successful trash. Disabled on Docs
+     */
+    const restoreLinks = async (abortSignal: AbortSignal, linksToRestore: LinkInfo[], notify = true) => {
         if (!linksToRestore.length) {
             return;
         }
@@ -291,7 +301,9 @@ export default function useActions() {
             abortSignal,
             linksToRestore.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
         );
-
+        if (!notify) {
+            return;
+        }
         const undoAction = async () => {
             const linksToTrash = result.successes
                 .map((linkId) => linksToRestore.find((link) => link.linkId === linkId))
