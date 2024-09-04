@@ -32,7 +32,7 @@ type ActivationServiceState = {
     permissionsGranted: boolean;
 };
 
-const RUNTIME_RELOAD_TIME = 10; /* seconds */
+export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */
 const UPDATE_ALARM_NAME = 'PassUpdateAlarm';
 
 export const createActivationService = () => {
@@ -257,14 +257,15 @@ export const createActivationService = () => {
      * Ensure Pass never reloads the runtime suspiciously to avoid being disabled.
      * see: https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc;l=54 */
     const reload = asyncLock(
-        withContext(async (ctx) => {
+        withContext<() => Promise<boolean>>(async (ctx) => {
             const now = getEpoch();
             const lastReload = (await ctx.service.storage.local.getItem('lastReload')) ?? 0;
-            if (lastReload + RUNTIME_RELOAD_TIME > now) return;
+            if (lastReload + RUNTIME_RELOAD_THROTTLE > now) return false;
 
             await api.idle(); /* wait for API idle before reloading in case a refresh was ongoing */
             await ctx.service.storage.local.setItem('lastReload', now);
             browser.runtime.reload();
+            return true;
         })
     );
 
