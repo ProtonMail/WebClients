@@ -11,11 +11,11 @@ import 'proton-pass-extension/lib/utils/polyfills';
 import { createActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
-import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { waitForPageReady } from '@proton/pass/utils/dom/state';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import debounce from '@proton/utils/debounce';
 
 import { DOMCleanUp } from './injections/cleanup';
@@ -43,6 +43,8 @@ const unloadClient = async () => {
     await sendMessage(contentScriptMessage({ type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT }));
 };
 
+const ping = () => sendMessage(contentScriptMessage({ type: WorkerMessageType.PING }));
+
 /** The `registerClient` function ensures that the client content-script is loaded
  * and started within the current frame. This prevents multiple injections of the
  * content-script when the user rapidly switches tabs by unloading it on visibility
@@ -50,7 +52,7 @@ const unloadClient = async () => {
  * regulate the execution frequency and avoid starting the script unnecessarily */
 const registerClient = debounce(
     asyncLock(async () => {
-        probe.start(() => sendMessage(contentScriptMessage({ type: WorkerMessageType.PING })), 25_000);
+        probe.start(ping, 25_000);
 
         clientLoaded = await Promise.resolve(
             clientLoaded ||
@@ -59,7 +61,8 @@ const registerClient = debounce(
                     .catch(() => false)
         );
 
-        await sendMessage(contentScriptMessage({ type: WorkerMessageType.START_CONTENT_SCRIPT }));
+        if (clientLoaded) return sendMessage(contentScriptMessage({ type: WorkerMessageType.START_CONTENT_SCRIPT }));
+        else return unregister('Client could not load');
     }),
     1_000,
     { leading: true }
@@ -98,24 +101,22 @@ void (async () => {
 
         await waitForPageReady();
 
-        /** In Firefox, stale content-scripts are automatically disabled and
-         * new ones are re-injected as needed. Consequently, the destroy sequence
+        /** In Firefox & Safari, stale content-scripts are automatically disabled
+         * and new ones are re-injected as needed. Consequently, the destroy sequence
          * triggered by the disconnection of a stale port will not be executed */
-        if (BUILD_TARGET === 'firefox') {
-            DOMCleanUp({
-                root: '[data-protonpass-role="root"]',
-                control: '[data-protonpass-role="icon"]',
-            });
+        if (BUILD_TARGET === 'firefox' || BUILD_TARGET === 'safari') {
+            DOMCleanUp({ root: '[data-protonpass-role="root"]', control: '[data-protonpass-role="icon"]' });
+        }
+
+        if (BUILD_TARGET === 'safari') {
+            /** Perform a sanity check before initiating the client registration sequence.
+             * If a critical error message is detected, introduce a brief delay to mitigate
+             * a potential race condition in Safari's service worker registration process. */
+            await ping().then<any>((res) => res.type === 'error' && res.critical && wait(1_000));
         }
 
         if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') await unloadClient();
 
-        if (!isMainFrame()) {
-            /* FIXME: apply iframe specific heuristics here :
-             * we want to avoid injecting into frames that have
-             * an src element starting with "about:" or "javascript:"
-             * + only one "iframe depth" should be supported */
-        }
         listeners.addListener(document, 'visibilitychange', handleFrameVisibilityChange);
         await (document.visibilityState === 'visible' && registerClient());
     } catch (err) {
