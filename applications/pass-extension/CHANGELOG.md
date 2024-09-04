@@ -1,3 +1,8 @@
+### Version 1.22.3
+
+-   Improve importing identities from other password managers
+-   Fix Pass Monitor missing details section
+
 ### Version 1.22.2
 
 -   Support for importing identities from other password managers
