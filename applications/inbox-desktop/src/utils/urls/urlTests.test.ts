@@ -1,5 +1,7 @@
 import { trimLocalID } from "./urlTests";
 
+jest.mock("../config", () => {});
+
 describe("urlTests", () => {
     describe("trimLocalID", () => {
         it("should keep urls without localID as they are", () => {
