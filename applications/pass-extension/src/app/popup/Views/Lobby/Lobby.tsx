@@ -46,6 +46,7 @@ export const Lobby: FC = () => {
             <LobbyContent
                 error={criticalError}
                 status={state.status}
+                warning={errored ? c('Warning').t`An error occurred while resuming your session` : undefined}
                 onFork={requestFork}
                 onLogin={(options) => sendMessage(popupMessage({ type: WorkerMessageType.AUTH_INIT, options }))}
                 onLogout={logout}
