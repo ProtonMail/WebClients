@@ -5,11 +5,12 @@ import { Toolbar } from '@proton/components';
 
 import { useSelection } from '../../FileBrowser';
 import { DetailsButton, DownloadButton, LayoutButton, OpenInDocsButton, PreviewButton } from '../ToolbarButtons';
-import { hasBookmarkSelected, hasInvitationSelected } from '../ToolbarButtons/utils';
+import { hasBookmarkSelected, hasInvitationSelected, isMultiSelect } from '../ToolbarButtons/utils';
 import { getSelectedSharedWithMeItems } from '../helpers';
 import type { SharedWithMeItem } from './SharedWithMe';
 import { OpenBookmarkButton } from './ToolbarButtons/OpenBookmarkButton';
 import { RemoveBookmarkButton } from './ToolbarButtons/RemoveBookmarkButton';
+import { RemoveMeButton } from './ToolbarButtons/RemoveMeButton';
 
 interface Props {
     shareId: string;
@@ -41,8 +42,9 @@ const SharedWithMeToolbar = ({ items }: Props) => {
                 <PreviewButton selectedBrowserItems={selectedItems} />
                 <OpenInDocsButton selectedBrowserItems={selectedItems} />
                 <DownloadButton selectedBrowserItems={selectedItems} />
-                {selectedItems.length ? <Vr /> : null}
                 <DetailsButton selectedBrowserItems={selectedItems} />
+                {!isMultiSelect(selectedItems) ? <Vr /> : null}
+                <RemoveMeButton selectedBrowserItems={selectedItems} />
             </>
         );
     };

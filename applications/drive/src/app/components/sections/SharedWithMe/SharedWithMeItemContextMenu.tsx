@@ -1,6 +1,7 @@
 import { ContextSeparator, useConfirmActionModal } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
+import { useSharedWithMeActions } from '../../../store';
 import { useOpenInDocs } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser';
 import { useDetailsModal } from '../../modals/DetailsModal';
@@ -35,8 +36,9 @@ export function SharedWithMeContextMenu({
 
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
-    const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { showOpenInDocs } = useOpenInDocs(selectedBrowserItem);
+    const { removeMe } = useSharedWithMeActions();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
 
     return (
         <>
@@ -65,6 +67,7 @@ export function SharedWithMeContextMenu({
                                 <ContextSeparator />
                                 <RemoveMeButton
                                     rootShareId={selectedBrowserItem.rootShareId}
+                                    removeMe={removeMe}
                                     showConfirmModal={showConfirmModal}
                                     close={close}
                                 />
