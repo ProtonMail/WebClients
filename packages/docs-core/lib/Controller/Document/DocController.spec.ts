@@ -1,38 +1,46 @@
-import type { DriveCompat, NodeMeta } from '@proton/drive-store'
-import { DocController } from './DocController'
-import type { SquashDocument } from '../../UseCase/SquashDocument'
-import type { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
-import type { LoadDocument } from '../../UseCase/LoadDocument'
-import type { DuplicateDocument } from '../../UseCase/DuplicateDocument'
-import type { CreateNewDocument } from '../../UseCase/CreateNewDocument'
-import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
-import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
+import { ConnectionCloseReason } from '@proton/docs-proto'
 import type {
   BroadcastSource,
   ClientRequiresEditorMethods,
+  DocTrashState,
   InternalEventBusInterface,
   RtsMessagePayload,
 } from '@proton/docs-shared'
 import { DecryptedMessage } from '@proton/docs-shared'
+import type { DriveCompat, NodeMeta } from '@proton/drive-store'
 import type { LoggerInterface } from '@proton/utils/logs'
-import type { LoadCommit } from '../../UseCase/LoadCommit'
-import { ConnectionCloseReason } from '@proton/docs-proto'
-import type { DecryptedCommit } from '../../Models/DecryptedCommit'
+
 import { Result } from '../../Domain/Result/Result'
-import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
-import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
-import type { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
-import type { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
-import { DocControllerEvent } from './DocControllerEvent'
 import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../../Models/Constants'
+import type { DecryptedCommit } from '../../Models/DecryptedCommit'
+import type { WebsocketConnectionEvent } from '../../Realtime/WebsocketEvent/WebsocketConnectionEvent'
+import type { WebsocketConnectionEventPayloads } from '../../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
+import type { WebsocketServiceInterface } from '../../Services/Websockets/WebsocketServiceInterface'
+import type { DocumentEntitlements } from '../../Types/DocumentEntitlements'
+import type { CreateNewDocument } from '../../UseCase/CreateNewDocument'
+import type { DuplicateDocument } from '../../UseCase/DuplicateDocument'
+import type { ExportAndDownload } from '../../UseCase/ExportAndDownload'
+import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
+import type { LoadCommit } from '../../UseCase/LoadCommit'
+import type { LoadDocument } from '../../UseCase/LoadDocument'
+import type { SeedInitialCommit } from '../../UseCase/SeedInitialCommit'
+import type { SquashDocument } from '../../UseCase/SquashDocument'
+import { DocController } from './DocController'
+import { DocControllerEvent } from './DocControllerEvent'
+import { DocumentMeta } from '../../Models/DocumentMeta'
 
 describe('DocController', () => {
   let controller: DocController
+  let driveCompat = {
+    getNode: jest.fn(),
+    trashDocument: jest.fn(),
+    restoreDocument: jest.fn(),
+  }
 
   beforeEach(() => {
     controller = new DocController(
       {} as NodeMeta,
-      {} as jest.Mocked<DriveCompat>,
+      driveCompat as unknown as jest.Mocked<DriveCompat>,
       {} as jest.Mocked<SquashDocument>,
       {} as jest.Mocked<SeedInitialCommit>,
       {
@@ -296,6 +304,22 @@ describe('DocController', () => {
 
     it('should lock if editor has rendering issue', () => {
       controller.hasEditorRenderingIssue = true
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
+    })
+
+    it('should lock if trashedState is trashed', () => {
+      controller.trashState = 'trashed'
+
+      controller.reloadEditingLockedState()
+
+      expect(controller.editorInvoker!.changeLockedState).toHaveBeenCalledWith(true)
+    })
+
+    it('should lock if trashedState is trashed', () => {
+      controller.trashState = 'trashed'
 
       controller.reloadEditingLockedState()
 
@@ -629,6 +653,134 @@ describe('DocController', () => {
       controller.editorIsRequestingToLockAfterRenderingIssue()
 
       expect(controller.reloadEditingLockedState).toHaveBeenCalled()
+    })
+  })
+
+  describe('trashDocument', () => {
+    let publishDocumentTrashStateUpdated: jest.SpyInstance
+
+    beforeEach(() => {
+      controller.docMeta = new DocumentMeta('abc', 'def', ['ghi'], 123, 456, 'jkl')
+
+      driveCompat.getNode.mockResolvedValue({ parentNodeId: '123' })
+      publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
+    })
+
+    it('trashState should be trashing initially', () => {
+      const promise = controller.trashDocument()
+      expect(controller.getTrashState()).toBe('trashing')
+      expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(1)
+      return promise
+    })
+
+    it('trashState should be trashed when complete', async () => {
+      const publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
+      await controller.trashDocument()
+      expect(controller.getTrashState()).toBe('trashed')
+      expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(2)
+    })
+
+    it('should refreshNodeAndDocMeta', async () => {
+      const refreshNodeAndDocMeta = jest.spyOn(controller, 'refreshNodeAndDocMeta')
+
+      await controller.trashDocument()
+      expect(refreshNodeAndDocMeta).toHaveBeenCalled()
+    })
+
+    it('should reload editor locked state', async () => {
+      const reloadEditingLockedState = jest.spyOn(controller, 'reloadEditingLockedState')
+
+      await controller.trashDocument()
+      expect(reloadEditingLockedState).toHaveBeenCalled()
+    })
+  })
+
+  describe('restoreDocument', () => {
+    let publishDocumentTrashStateUpdated: jest.SpyInstance
+
+    beforeEach(() => {
+      controller.docMeta = new DocumentMeta('abc', 'def', ['ghi'], 123, 456, 'jkl')
+
+      driveCompat.getNode.mockResolvedValue({ parentNodeId: '123' })
+      publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
+    })
+
+    it('trashState should be restoring initially', () => {
+      controller.trashState = 'trashed'
+      const promise = controller.restoreDocument()
+      expect(controller.getTrashState()).toBe('restoring')
+      expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(1)
+      return promise
+    })
+
+    it('trashState should be restored when complete', async () => {
+      controller.trashState = 'trashed'
+      const publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
+      await controller.restoreDocument()
+      expect(controller.getTrashState()).toBe('not_trashed')
+      expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(2)
+    })
+
+    it('should refreshNodeAndDocMeta', async () => {
+      const refreshNodeAndDocMeta = jest.spyOn(controller, 'refreshNodeAndDocMeta')
+
+      await controller.restoreDocument()
+      expect(refreshNodeAndDocMeta).toHaveBeenCalled()
+    })
+    it('should reload editor locked state', async () => {
+      const reloadEditingLockedState = jest.spyOn(controller, 'reloadEditingLockedState')
+
+      await controller.restoreDocument()
+      expect(reloadEditingLockedState).toHaveBeenCalled()
+    })
+  })
+
+  describe.each(['trashed', 'not_trashed', 'restoring', 'trashing'])('setTrashState', (state) => {
+    it(`will set the trashState ${state}`, () => {
+      controller.setTrashState(state as DocTrashState)
+      expect(controller.getTrashState()).toBe(state)
+    })
+
+    it(`will publish that the state has updated ${state}`, () => {
+      const publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
+
+      controller.setTrashState(state as DocTrashState)
+      expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('loadDecryptedNode', () => {
+    it('trashed state will be not_trashed if DecryptedNode trashed property is null', async () => {
+      controller.docMeta = new DocumentMeta('abc', 'def', ['ghi'], 123, 456, 'jkl')
+
+      driveCompat.getNode.mockResolvedValueOnce({ parentNodeId: 123, trashed: null })
+      const publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
+
+      await controller.loadDecryptedNode()
+      expect(controller.getTrashState()).toBe('not_trashed')
+      expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(1)
+    })
+
+    it('trashed state will be not_trashed if DecryptedNode trashed property is omitted', async () => {
+      controller.docMeta = new DocumentMeta('abc', 'def', ['ghi'], 123, 456, 'jkl')
+
+      driveCompat.getNode.mockResolvedValueOnce({ parentNodeId: 123 })
+      const publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
+
+      await controller.loadDecryptedNode()
+      expect(controller.getTrashState()).toBe('not_trashed')
+      expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(1)
+    })
+
+    it('trashed state will be trashed if DecryptedNode trashed property is populated', async () => {
+      controller.docMeta = new DocumentMeta('abc', 'def', ['ghi'], 123, 456, 'jkl')
+
+      driveCompat.getNode.mockResolvedValueOnce({ parentNodeId: 123, trashed: 123 })
+      const publishDocumentTrashStateUpdated = jest.spyOn(controller, 'publishDocumentTrashStateUpdated')
+
+      await controller.loadDecryptedNode()
+      expect(controller.getTrashState()).toBe('trashed')
+      expect(publishDocumentTrashStateUpdated).toHaveBeenCalledTimes(1)
     })
   })
 })

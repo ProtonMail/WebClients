@@ -17,5 +17,7 @@ export const decryptedLinkToNode = (link: DecryptedLink, volumeId: string): Decr
         signatureAddress: link.signatureAddress,
         nameSignatureAddress: link.nameSignatureAddress,
         isCorruptedNode: link.corruptedLink,
+        trashed: link.trashed,
+        trashedByParent: link.trashedByParent,
     } satisfies DecryptedNode;
 };
