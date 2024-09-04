@@ -39,13 +39,7 @@ const addCustomFieldsWarning = (ignored: string[], item: BitwardenItem) => {
     }
 };
 
-export const readBitwardenData = ({
-    data,
-    importUsername,
-}: {
-    data: string;
-    importUsername?: boolean;
-}): ImportPayload => {
+export const readBitwardenData = ({ data }: { data: string }): ImportPayload => {
     try {
         const parsedData = JSON.parse(data) as BitwardenData;
         const { items, encrypted, folders = [], collections = [] } = parsedData;
@@ -75,9 +69,7 @@ export const readBitwardenData = ({
                             return importLoginItem({
                                 name: item.name,
                                 note: item.notes,
-                                ...(importUsername
-                                    ? getEmailOrUsername(item.login.username)
-                                    : { email: item.login.username }),
+                                ...getEmailOrUsername(item.login.username),
                                 password: item.login.password,
                                 urls: urls.web,
                                 totp: item.login.totp,

@@ -100,7 +100,6 @@ export const BIOMETRICS_KEY = 'offlineKey_biometrics';
  * FIXME: Remove feature flags that are permanently enabled */
 export const DEFAULT_PASS_FEATURES: FeatureFlagState = {
     [PassFeature.PassEnableDesktopAutoUpdate]: false,
-    [PassFeature.PassUsernameSplit]: false,
     [PassFeature.PassWebInternalAlpha]: false,
     [PassFeature.PassWebOfflineMode]: false,
     [PassFeature.PassIdentityV1]: false,

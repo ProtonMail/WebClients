@@ -6,6 +6,7 @@ import type { Dispatch } from 'redux';
 import { c } from 'ttag';
 
 import { Checkbox } from '@proton/components/components';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { settingsEditIntent } from '@proton/pass/store/actions';
@@ -14,6 +15,7 @@ import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings, selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { RecursivePartial } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -39,6 +41,7 @@ type SettingsSection = {
 const getSettings =
     (settings: ProxiedSettings, identityEnabled: boolean) =>
     (dispatch: Dispatch): SettingsSection[] => {
+        const { onTelemetry } = usePassCore();
         const onSettingsUpdate = (update: RecursivePartial<ProxiedSettings>) =>
             dispatch(settingsEditIntent('behaviors', update));
 
@@ -155,6 +158,20 @@ const getSettings =
                             .t`${PASS_APP_NAME} will display the item favicon via ${BRAND_NAME} anonymized image proxy.`,
                         checked: settings.loadDomainImages,
                         onChange: (loadDomainImages) => onSettingsUpdate({ loadDomainImages }),
+                    },
+                    {
+                        label: c('Label').t`Always show username field`,
+                        description: c('Info')
+                            .t`When creating/editing a Login on ${PASS_APP_NAME} the 'username' input will always be visible.`,
+                        checked: Boolean(settings.showUsernameField),
+                        onChange: (showUsernameField) => {
+                            onSettingsUpdate({ showUsernameField });
+                            onTelemetry(
+                                TelemetryEventName.PassSettingsDisplayUsername,
+                                { checked: showUsernameField },
+                                {}
+                            );
+                        },
                     },
                 ],
             },

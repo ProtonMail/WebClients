@@ -46,13 +46,7 @@ const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
         : [];
 };
 
-export const readDashlaneDataZIP = async ({
-    data,
-    importUsername,
-}: {
-    data: ArrayBuffer;
-    importUsername?: boolean;
-}): Promise<ImportPayload> => {
+export const readDashlaneDataZIP = async ({ data }: { data: ArrayBuffer }): Promise<ImportPayload> => {
     const ignored: string[] = [];
     const warnings: string[] = [];
 
@@ -65,7 +59,7 @@ export const readDashlaneDataZIP = async ({
                 headers: DASHLANE_LOGINS_EXPECTED_HEADERS,
                 warnings,
             })
-        ).map((item) => processDashlaneLogin(item, importUsername));
+        ).map((item) => processDashlaneLogin(item));
 
         /* notes */
         const noteItems = (

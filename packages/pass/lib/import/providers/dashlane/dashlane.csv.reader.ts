@@ -48,13 +48,7 @@ const getItemParser = (item: DashlaneItem): DashlaneItemParser => {
     throw new Error(c('Error').t`Unknown item`);
 };
 
-export const readDashlaneDataCSV = async ({
-    data,
-    importUsername,
-}: {
-    data: string;
-    importUsername?: boolean;
-}): Promise<ImportPayload> => {
+export const readDashlaneDataCSV = async ({ data }: { data: string }): Promise<ImportPayload> => {
     const warnings: string[] = [];
 
     try {
@@ -66,7 +60,7 @@ export const readDashlaneDataCSV = async ({
         });
 
         const parser = getItemParser(items[0]);
-        const vaultItems = items.map((item) => parser(item, importUsername));
+        const vaultItems = items.map((item) => parser(item));
         const vaults: ImportVault[] = [{ name: getImportedVaultName(), shareId: null, items: vaultItems }];
 
         return { vaults, ignored: [], warnings };

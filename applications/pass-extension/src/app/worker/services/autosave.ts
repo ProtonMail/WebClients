@@ -10,13 +10,11 @@ import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSucces
 import {
     selectAutosaveCandidate,
     selectAutosaveVault,
-    selectFeatureFlag,
     selectItem,
     selectWritableVaults,
 } from '@proton/pass/store/selectors';
 import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -83,10 +81,8 @@ export const createAutoSaveService = () => {
                 .set('urls', valid ? [url] : [])
                 .set('passkeys', payload.passkey ? [payload.passkey] : []);
 
-            const usernameSplitEnabled = selectFeatureFlag(PassFeature.PassUsernameSplit)(state);
-
             // TODO: migrate to use Rust's email validation
-            if (validateEmailAddress(payload.userIdentifier) || !usernameSplitEnabled) {
+            if (validateEmailAddress(payload.userIdentifier)) {
                 item.get('content').set('itemEmail', payload.userIdentifier);
             } else {
                 item.get('content').set('itemUsername', payload.userIdentifier);
@@ -125,8 +121,7 @@ export const createAutoSaveService = () => {
                 .set('passkeys', (passkeys) => (passkey ? [...passkeys, passkey] : passkeys));
 
             // TODO: migrate to use Rust's email validation
-            const usernameSplitEnabled = selectFeatureFlag(PassFeature.PassUsernameSplit)(state);
-            const isEmail = usernameSplitEnabled && validateEmailAddress(payload.userIdentifier);
+            const isEmail = validateEmailAddress(payload.userIdentifier);
             const userIdKey = isEmail ? 'itemEmail' : 'itemUsername';
 
             item.get('content').set(userIdKey, (value) => (passkey ? value : payload.userIdentifier));

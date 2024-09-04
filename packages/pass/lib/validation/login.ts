@@ -3,8 +3,6 @@ import { c } from 'ttag';
 
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { LoginItemFormValues } from '@proton/pass/types';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 import { validateAliasForm } from './alias';
 import { validateExtraFields } from './extra-field';
@@ -20,30 +18,18 @@ const validateTotpUri = (values: LoginItemFormValues) => {
     }
 };
 
-// TODO: migrate to use Rust's email validation
-const validateEmail = (email: string) => {
-    if (!isEmptyString(email) && !validateEmailAddress(email)) {
-        return { itemEmail: c('Validation').t`Email address is invalid` };
-    }
-    return {};
-};
-
 type ValidateLoginForm = {
     values: LoginItemFormValues;
     shouldValidateEmail?: boolean;
 };
 
-export const validateLoginForm = ({
-    values,
-    shouldValidateEmail = false,
-}: ValidateLoginForm): FormikErrors<LoginItemFormValues> => {
+export const validateLoginForm = ({ values }: ValidateLoginForm): FormikErrors<LoginItemFormValues> => {
     const errors: FormikErrors<LoginItemFormValues> = validateItemErrors(values);
     const urlError = validateUrl(values);
     const urlsErrors = validateUrls(values);
     const totpUriErrors = validateTotpUri(values);
     const aliasErrors = values.withAlias && validateAliasForm(values);
     const extraFieldsErrors = validateExtraFields(values);
-    const itemUsernameErrors = shouldValidateEmail ? validateEmail(values.itemEmail) : {};
 
     return {
         ...errors,
@@ -52,6 +38,5 @@ export const validateLoginForm = ({
         ...totpUriErrors,
         ...aliasErrors,
         ...extraFieldsErrors,
-        ...itemUsernameErrors,
     };
 };

@@ -192,14 +192,11 @@ export const extractDashlaneIdentity = (
     return item.data.content;
 };
 
-export const processDashlaneLogin: DashlaneItemParser<DashlaneLoginItem> = (
-    item,
-    importUsername
-): ItemImportIntent<'login'> =>
+export const processDashlaneLogin: DashlaneItemParser<DashlaneLoginItem> = (item): ItemImportIntent<'login'> =>
     importLoginItem({
         name: item.title,
         note: item.note,
-        ...(importUsername ? getEmailOrUsername(item.username) : { email: item.username }),
+        ...getEmailOrUsername(item.username),
         password: item.password,
         urls: [item.url],
         totp: item.otpSecret,

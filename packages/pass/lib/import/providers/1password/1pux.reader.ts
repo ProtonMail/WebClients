@@ -39,8 +39,7 @@ const processNoteItem = (
     });
 
 const processLoginItem = (
-    item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>,
-    importUsername?: boolean
+    item: Extract<OnePassItem, { categoryUuid: OnePassCategory.LOGIN }>
 ): ItemImportIntent<'login'> => {
     const [totp, extraFields] = extractFirst(
         extract1PasswordExtraFields(item),
@@ -50,9 +49,7 @@ const processLoginItem = (
     return importLoginItem({
         name: item.overview.title,
         note: item.details.notesPlain,
-        ...(importUsername
-            ? getEmailOrUsername(extract1PasswordLoginField(item, OnePassLoginDesignation.USERNAME))
-            : { email: extract1PasswordLoginField(item, OnePassLoginDesignation.USERNAME) }),
+        ...getEmailOrUsername(extract1PasswordLoginField(item, OnePassLoginDesignation.USERNAME)),
         password: extract1PasswordLoginField(item, OnePassLoginDesignation.PASSWORD),
         urls: extract1PasswordURLs(item),
         totp: totp?.data.totpUri,
@@ -117,13 +114,7 @@ const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePas
     });
 };
 
-export const read1Password1PuxData = async ({
-    data,
-    importUsername,
-}: {
-    data: ArrayBuffer;
-    importUsername?: boolean;
-}): Promise<ImportPayload> => {
+export const read1Password1PuxData = async ({ data }: { data: ArrayBuffer }): Promise<ImportPayload> => {
     try {
         const zipFile = await jszip.loadAsync(data);
         const zipObject = zipFile.file('export.data');
@@ -144,7 +135,7 @@ export const read1Password1PuxData = async ({
                         .map((item): Maybe<ItemImportIntent> => {
                             switch (item.categoryUuid) {
                                 case OnePassCategory.LOGIN:
-                                    return processLoginItem(item, importUsername);
+                                    return processLoginItem(item);
                                 case OnePassCategory.NOTE:
                                     return processNoteItem(item);
                                 case OnePassCategory.CREDIT_CARD:

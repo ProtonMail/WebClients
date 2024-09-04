@@ -17,18 +17,14 @@ import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { useDisplayEmailUsernameFields } from '@proton/pass/hooks/useDisplayEmailUsernameFields';
-import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
-import { PassFeature } from '@proton/pass/types/api/features';
 
 export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLinkItem = false }) => {
     const { data: item, shareId, itemId } = revision;
     const [passkey, setPasskey] = useState<MaybeNull<SanitizedPasskey>>(null);
-    const usernameSplit = useFeatureFlag(PassFeature.PassUsernameSplit) || secureLinkItem;
 
     const {
         metadata: { note },
@@ -36,12 +32,11 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
         extraFields,
     } = useDeobfuscatedItem(item);
 
-    const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId) || secureLinkItem;
     const passwordStrength = usePasswordStrength(password);
-    const { emailDisplay, usernameDisplay } = useDisplayEmailUsernameFields({ itemEmail, itemUsername }, usernameSplit);
-    const iconWithFeatureFlag = usernameSplit ? 'envelope' : 'user';
-    const labelWithFeatureFlag = usernameSplit ? c('Label').t`Email` : c('Label').t`Username`;
+
+    const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
+    const showEmptyEmailOrUsername = !(itemEmail || itemUsername);
 
     return (
         <>
@@ -61,17 +56,21 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
             {passkey && <PasskeyContentModal passkey={passkey} onClose={() => setPasskey(null)} open size="small" />}
 
             <FieldsetCluster mode="read" as="div">
-                {(emailDisplay || !usernameDisplay) && (
+                {showEmptyEmailOrUsername && (
+                    <ValueControl clickToCopy icon="user" label={c('Label').t`Email or username`} />
+                )}
+
+                {itemEmail && (
                     <ValueControl
                         clickToCopy
-                        icon={relatedAlias ? 'alias' : iconWithFeatureFlag}
-                        label={relatedAlias ? c('Label').t`Email (alias)` : labelWithFeatureFlag}
-                        value={emailDisplay}
+                        icon={relatedAlias ? 'alias' : 'envelope'}
+                        label={relatedAlias ? c('Label').t`Email (alias)` : c('Label').t`Email`}
+                        value={itemEmail}
                     />
                 )}
 
-                {usernameDisplay && (
-                    <ValueControl clickToCopy icon="user" label={c('Label').t`Username`} value={usernameDisplay} />
+                {itemUsername && (
+                    <ValueControl clickToCopy icon="user" label={c('Label').t`Username`} value={itemUsername} />
                 )}
 
                 <ValueControl
