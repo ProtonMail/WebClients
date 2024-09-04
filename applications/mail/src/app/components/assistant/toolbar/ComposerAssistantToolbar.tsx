@@ -167,7 +167,7 @@ const ComposerAssistantToolbar = ({
 
                         <ComposerAssistantQuickActionsDropdown
                             onClickRefineAction={handleGenerate}
-                            disabled={!canUseRefineButtons || disableActions}
+                            disableActions={!canUseRefineButtons || disableActions}
                         />
                     </div>
                 )}
