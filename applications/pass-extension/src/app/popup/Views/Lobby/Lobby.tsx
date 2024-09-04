@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { PromptForReload } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
@@ -16,17 +16,19 @@ import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-const getCriticalRuntimeErrorMessage = () => {
+const getCriticalRuntimeErrorMessage = (): string => {
+    const base = c('Error').t`Your browser is having difficulties activating ${PASS_APP_NAME}.`;
+    const note = c('Info')
+        .t`Try reloading or reinstalling the extension and make sure your browser and ${PASS_SHORT_APP_NAME} are up-to-date.`;
+
     if (BUILD_TARGET === 'safari') {
-        return c('Error').t`Your browser is having difficulties activating ${PASS_APP_NAME}.
-            This may occur after a long time of not using ${PASS_SHORT_APP_NAME}, or clearing
-            your Safari history. Try reloading or reinstalling the extension and make sure
-            your browser and Pass are up-to-date.`;
+        const warning = c('Error')
+            .t`This may occur after a long time of not using ${PASS_SHORT_APP_NAME}, or clearing your Safari history.`;
+
+        return `${base} ${warning}\n${note}`;
     }
 
-    return c('Error').t`Your browser is having difficulties activating
-        ${PASS_APP_NAME}. Try reloading or reinstalling the extension
-        and make sure your browser and Pass are up-to-date.`;
+    return `${base}\n${note}`;
 };
 
 export const Lobby: FC = () => {
