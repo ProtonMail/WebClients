@@ -80,7 +80,7 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
 
             const { authorized } = ctx.getState();
             const { url } = ctx.getExtensionContext();
-            const domain = url.subdomain ?? url.domain ?? '';
+            const domain = url?.subdomain ?? url?.domain ?? '';
 
             switch (action) {
                 case DropdownAction.AUTOFILL_IDENTITY: {
@@ -96,7 +96,8 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
                     return { action, domain };
                 }
                 case DropdownAction.AUTOSUGGEST_ALIAS: {
-                    return { action, domain, prefix: deriveAliasPrefix(url.displayName!) };
+                    if (!url?.displayName) throw new Error();
+                    return { action, domain, prefix: deriveAliasPrefix(url.displayName) };
                 }
                 case DropdownAction.AUTOSUGGEST_PASSWORD: {
                     return sendMessage.on(

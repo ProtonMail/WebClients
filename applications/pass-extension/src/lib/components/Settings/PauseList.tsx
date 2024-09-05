@@ -24,7 +24,7 @@ import { selectDisallowedDomains } from '@proton/pass/store/selectors';
 import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
 import { CRITERIAS_SETTING_CREATE, CRITERIA_MASKS } from '@proton/pass/types/worker/settings';
 import { merge } from '@proton/pass/utils/object/merge';
-import { parseUrl } from '@proton/pass/utils/url/parser';
+import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import './PauseList.scss';
@@ -39,10 +39,9 @@ export const PauseList: FC = () => {
     const [url, setUrl] = useState<string>('');
 
     const addDisallowedUrl = (url: string) => {
-        const { subdomain, domain } = parseUrl(url);
-        const hostname = subdomain ?? domain;
+        const { valid, hostname } = isValidURL(url);
 
-        if (!hostname) return createNotification({ text: c('Error').t`Invalid URL`, type: 'error' });
+        if (!(valid && hostname)) return createNotification({ text: c('Error').t`Invalid URL`, type: 'error' });
 
         if (disallowedDomains[hostname]) {
             return createNotification({

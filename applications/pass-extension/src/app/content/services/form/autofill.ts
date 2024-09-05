@@ -97,9 +97,10 @@ export const createAutofillService = () => {
     };
 
     const autofillPassword = withContext<(form: FormHandle, password: string) => void>((ctx, form, password) => {
-        if (!ctx) return;
+        const url = ctx?.getExtensionContext().url;
+        if (!url) return;
 
-        const { domain, subdomain, hostname } = ctx.getExtensionContext().url;
+        const { domain, subdomain, hostname } = url;
         form.getFieldsFor(FieldType.PASSWORD_NEW).forEach((field) => field.autofill(password));
 
         void sendMessage(
@@ -170,11 +171,11 @@ export const createAutofillService = () => {
 
         return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
             if (res.type === 'success' && res.shouldPrompt) {
-                const { subdomain, domain } = ctx?.getExtensionContext().url;
+                const url = ctx.getExtensionContext().url;
                 ctx?.service.iframe.attachNotification()?.open({
                     action: NotificationAction.OTP,
                     item: { shareId: res.shareId, itemId: res.itemId },
-                    hostname: subdomain ?? domain ?? '',
+                    hostname: url?.subdomain ?? url?.domain ?? '',
                 });
 
                 return true;
