@@ -20,6 +20,8 @@ import {
     resetHiddenViews,
     getZoom,
     showView,
+    NET_ERROR_CODE,
+    showErrorPage,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
 import { mainLogger, viewLogger } from "../log";
@@ -89,6 +91,17 @@ export function handleWebContents(contents: WebContents) {
     });
 
     contents.on("will-attach-webview", preventDefault);
+
+    contents.on("did-fail-load", (event, errorCode) => {
+        if (!isCurrentContent()) {
+            return;
+        }
+
+        if (errorCode === NET_ERROR_CODE.CONNECTION_REFUSED) {
+            const viewName = getWebContentsViewName(contents);
+            if (viewName) showErrorPage(viewName);
+        }
+    });
 
     contents.on("will-navigate", (details) => {
         log("will-navigate", details.url);
