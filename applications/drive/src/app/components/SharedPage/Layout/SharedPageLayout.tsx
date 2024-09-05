@@ -23,6 +23,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
     const { APP_NAME } = useConfig();
 
     // This does not allow to get any user information but allow us to know if the user was already logged in Proton
+    // DUMMY
     const isProtonUser = isProtonUserFromCookie();
 
     const containerClassname = clsx([
