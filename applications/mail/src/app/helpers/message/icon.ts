@@ -34,6 +34,7 @@ const {
     ON_COMPOSE,
     ON_DELIVERY,
 } = X_PM_HEADERS;
+const API_NO_ADDRESS_ERROR = 'This address does not exist. Please try again';
 
 export interface MessageViewIcons {
     globalIcon?: StatusIcon;
@@ -358,6 +359,20 @@ const getReceivedStatusIconInternalWithKT = (
     };
 
     if (apiKeysErrors?.length) {
+        if (apiKeysErrors[0] === API_NO_ADDRESS_ERROR) {
+            // If the API returns an error indicating a non-existent address,
+            // it likely means the address has been disabled or deleted.
+            // Rather than displaying a warning icon, convey this status in the tooltip.
+            // Note: This approach has security implications. The user will see the same lock icon
+            // as in the secure case and must check the tooltip to notice the error.
+            // TODO: Enhance the UI for key transparency locks to make this distinction clearer.
+            return {
+                ...result,
+                text: c('loc_nightly: Signature verification warning no address')
+                    .t`This email is end-to-end encrypted, but the email address is inactive, so we cannot verify its signature.`,
+                fill: PLAIN,
+            };
+        }
         // Special text for KT errors in message details
         const errorMessage =
             apiKeysErrors[0] === KEY_VERIFICATION_ERROR_MESSAGE
