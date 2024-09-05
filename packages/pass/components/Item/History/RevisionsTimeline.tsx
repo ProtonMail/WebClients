@@ -9,11 +9,11 @@ import { Icon } from '@proton/components';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
 import { Timeline } from '@proton/pass/components/Layout/Timeline/Timeline';
-import { useItemRoute } from '@proton/pass/components/Navigation/ItemSwitch';
+import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { epochToRelativeDate } from '@proton/pass/utils/time/format';
 
-import { useItemHistory } from './ItemHistoryProvider';
+import { useItemHistory } from './ItemHistoryContext';
 import { RevisionItem } from './RevisionItem';
 
 export const RevisionsTimeline: FC<RouteChildrenProps> = ({ location }) => {

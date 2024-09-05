@@ -11,7 +11,7 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { CardIcon } from '@proton/pass/components/Layout/Card/CardIcon';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
+import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';

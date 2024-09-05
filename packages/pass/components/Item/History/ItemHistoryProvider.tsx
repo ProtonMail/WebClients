@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import { type FC, createContext, useContext, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
@@ -8,17 +8,9 @@ import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useItemRevisions } from '@proton/pass/hooks/useItemRevisions';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectItem, selectPassPlan } from '@proton/pass/store/selectors';
-import type { ItemRevision, MaybeNull, SelectedItem } from '@proton/pass/types';
+import type { MaybeNull, SelectedItem } from '@proton/pass/types';
 
-type ItemHistoryContextValue = {
-    item: ItemRevision;
-    loading: boolean;
-    more: boolean;
-    revisions: ItemRevision[];
-    loadMore: () => void;
-};
-
-const ItemHistoryContext = createContext<MaybeNull<ItemHistoryContextValue>>(null);
+import { ItemHistoryContext, type ItemHistoryContextValue } from './ItemHistoryContext';
 
 export const ItemHistoryProvider: FC<PropsWithChildren<SelectedItem>> = ({ itemId, shareId, children }) => {
     const { preserveSearch } = useNavigation();
@@ -46,10 +38,4 @@ export const ItemHistoryProvider: FC<PropsWithChildren<SelectedItem>> = ({ itemI
     ) : (
         <ItemHistoryContext.Provider value={value}>{children}</ItemHistoryContext.Provider>
     );
-};
-
-export const useItemHistory = () => {
-    const itemHistory = useContext(ItemHistoryContext);
-    if (!itemHistory) throw new Error('Item history context not initialized');
-    return itemHistory;
 };

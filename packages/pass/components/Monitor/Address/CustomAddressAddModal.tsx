@@ -11,7 +11,7 @@ import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
+import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { intoCustomMonitorAddress } from '@proton/pass/lib/monitor/monitor.utils';
 import { addCustomAddress } from '@proton/pass/store/actions';

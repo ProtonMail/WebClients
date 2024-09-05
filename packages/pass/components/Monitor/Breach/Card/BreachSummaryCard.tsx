@@ -9,7 +9,7 @@ import shieldDanger from '@proton/pass/assets/monitor/shield-bolt-danger.svg';
 import { ButtonCard, type ButtonCardProps } from '@proton/pass/components/Layout/Card/ButtonCard';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
+import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 
 type Props = { className?: string; onClick: () => void };
 
