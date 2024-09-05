@@ -14,6 +14,7 @@ import type {
 import { WorkerMessageType } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { notIn } from '@proton/pass/utils/fp/predicates';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 
 export const successMessage = <T extends {}>(message?: T) =>
@@ -41,7 +42,7 @@ export const createMessageBroker = (options: {
     const handlers: Map<WorkerMessageType, MessageHandlerCallback> = new Map();
     const ports: Map<string, Runtime.Port> = new Map();
     const buffer: Set<WorkerMessageWithSender> = new Set();
-    const extensionOrigin = new URL(browser.runtime.getURL('/')).origin;
+    const extensionOrigin = safeCall(() => new URL(browser.runtime.getURL('/')).origin)();
 
     const broadcast = <M extends WorkerMessage>(message: M, matchPort?: string | ((name: string) => boolean)) => {
         ports.forEach(
