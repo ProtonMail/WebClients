@@ -10,7 +10,7 @@ import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator'
 import type { PasswordHistoryEntry } from '@proton/pass/store/reducers';
 import { epochToDateTime } from '@proton/pass/utils/time/format';
 
-import { usePasswordContext } from './PasswordProvider';
+import { usePasswordContext } from './PasswordContext';
 
 export const PasswordHistoryItem: FC<PasswordHistoryEntry> = ({ value, origin, id, createTime }) => {
     const passwordContext = usePasswordContext();

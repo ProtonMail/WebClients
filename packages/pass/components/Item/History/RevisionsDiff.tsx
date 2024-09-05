@@ -14,7 +14,7 @@ import { LoginContent } from '@proton/pass/components/Item/Login/Login.content';
 import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
 import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';
-import { useItemRoute } from '@proton/pass/components/Navigation/ItemSwitch';
+import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getItemHistoryRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
@@ -23,7 +23,7 @@ import { itemEditIntent } from '@proton/pass/store/actions';
 import type { ItemEditIntent, ItemRevision, ItemType } from '@proton/pass/types';
 import { epochToRelativeDate } from '@proton/pass/utils/time/format';
 
-import { useItemHistory } from './ItemHistoryProvider';
+import { useItemHistory } from './ItemHistoryContext';
 
 const itemTypeContentMap: { [T in ItemType]: FC<ItemContentProps<T>> } = {
     login: LoginContent,

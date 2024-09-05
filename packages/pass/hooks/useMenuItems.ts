@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { IconName } from '@proton/components';
 import { syncIntent } from '@proton/pass//store/actions';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
+import { usePasswordContext } from '@proton/pass/components/Password/PasswordContext';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_REDDIT_URL, PASS_REQUEST_URL, PASS_X_URL } from '@proton/pass/constants';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { withTap } from '@proton/pass/utils/fp/pipe';

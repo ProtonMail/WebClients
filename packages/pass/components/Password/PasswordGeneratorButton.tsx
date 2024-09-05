@@ -6,7 +6,7 @@ import { Button, type ButtonProps } from '@proton/atoms';
 import { Icon } from '@proton/components/components';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 
-import { usePasswordContext } from './PasswordProvider';
+import { usePasswordContext } from './PasswordContext';
 
 type Props = Omit<ButtonProps, 'onSubmit'> & { onSubmit: (password: string) => void };
 

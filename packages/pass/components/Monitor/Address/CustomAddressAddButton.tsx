@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
+import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
 
 export const CustomAddressAddButton: FC = () => {

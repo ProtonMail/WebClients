@@ -12,11 +12,16 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { usePasswordGenerator } from '@proton/pass/hooks/usePasswordGenerator';
 import { passwordOptionsEdit } from '@proton/pass/store/actions';
 
+import { usePasswordContext } from './PasswordContext';
 import { PasswordGenerator } from './PasswordGenerator';
-import { usePasswordContext } from './PasswordProvider';
 
-export type BaseProps = { actionLabel?: string; className?: string; onSubmit?: (password: string) => void };
-export type Props = Omit<ModalProps, 'onSubmit'> & BaseProps;
+export type BaseProps = {
+    actionLabel?: string;
+    className?: string;
+    onSubmit?: (password: string) => void;
+};
+
+type Props = Omit<ModalProps, 'onSubmit'> & BaseProps;
 
 export const PasswordGeneratorModal: FC<Props> = ({ onSubmit, actionLabel, ...props }) => {
     const dispatch = useDispatch();

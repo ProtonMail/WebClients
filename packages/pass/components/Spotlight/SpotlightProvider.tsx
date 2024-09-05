@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 import { c } from 'ttag';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
+import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
 import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingShareAccessModal';
 import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
