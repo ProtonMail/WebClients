@@ -3,6 +3,8 @@ import { forwardRef } from 'react';
 import type { IconName, IconSize } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
+export type { IconName, IconSize } from '@proton/icons';
+
 export interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
     /** Determines which icon to render based on its name */
     name: IconName;
