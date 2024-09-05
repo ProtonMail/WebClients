@@ -48,13 +48,14 @@ let mainWindow: undefined | BrowserWindow = undefined;
  * @see https://www.electronjs.org/docs/latest/api/web-contents#event-did-fail-load
  * @see https://source.chromium.org/chromium/chromium/src/+/main:net/base/net_error_list.h
  */
-export const NET_ERROR_CODE = {
+const NET_ERROR_CODE = {
     ABORTED: -3,
     CONNECTION_REFUSED: -102,
+    ERR_NAME_NOT_RESOLVED: -105,
     INVALID_URL: -300,
 };
 
-const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED, NET_ERROR_CODE.INVALID_URL];
+export const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED];
 
 export const viewCreationAppStartup = (session: Session) => {
     mainWindow = createBrowserWindow(session);
