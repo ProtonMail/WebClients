@@ -7,7 +7,7 @@ import {
     validateFormCredentials,
 } from 'proton-pass-extension/lib/utils/form-entry';
 
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { AutosaveFormEntry } from '@proton/pass/types';
 import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';

@@ -1,11 +1,8 @@
 import type { Runtime } from 'webextension-polyfill';
 
-import { assertMessageVersion, backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import type {
     Maybe,
-    MessageFailure,
-    MessageSuccess,
     WorkerMessage,
     WorkerMessageResponse,
     WorkerMessageWithSender,
@@ -17,14 +14,7 @@ import { notIn } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 
-export const successMessage = <T extends {}>(message?: T) =>
-    ({ type: 'success', ...(message ?? {}) }) as MessageSuccess<T>;
-
-export const errorMessage = (error?: string): MessageFailure => ({
-    type: 'error',
-    error: error ?? 'unknown error',
-    payload: error /* needed for Proton Account auth-ext page */,
-});
+import { assertMessageVersion, backgroundMessage, errorMessage, successMessage } from './send-message';
 
 export type MessageHandlerCallback<
     T extends WorkerMessageType = WorkerMessageType,

@@ -1,3 +1,6 @@
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import { createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
@@ -6,10 +9,6 @@ import type { ExtensionStorage } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import type { EventDispatcherAlarm } from '@proton/pass/utils/event/dispatcher';
 import noop from '@proton/utils/noop';
-
-import WorkerMessageBroker from '../channel';
-import { withContext } from '../context';
-import store from '../store';
 
 export const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
 export const TELEMETRY_STORAGE_KEY = 'telemetry';
@@ -26,9 +25,9 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<typeof T
     const { push, send, start, stop } = createCoreTelemetryService({
         alarm: createAlarmHandles(TELEMETRY_ALARM_NAME),
         storage,
-        getEnabled: () => selectTelemetryEnabled(store.getState()),
+        getEnabled: withContext((ctx) => selectTelemetryEnabled(ctx.service.store.getState())),
         getStorageKey: () => TELEMETRY_STORAGE_KEY,
-        getUserTier: () => selectUserTier(store.getState()),
+        getUserTier: withContext((ctx) => selectUserTier(ctx.service.store.getState())),
     });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.TELEMETRY_EVENT, ({ payload: { event } }) => push(event));

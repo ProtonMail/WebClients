@@ -8,7 +8,7 @@ import { Button } from '@proton/atoms/Button';
 import Icon from '@proton/components/components/icon/Icon';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { CACHE_KEY } from '@proton/pass/lib/api/cache';
-import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { WorkerMessageType } from '@proton/pass/types';
 
 export const Developer: FC = () => (

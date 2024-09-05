@@ -1,12 +1,12 @@
+import locales from 'proton-pass-extension/app/locales';
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+
 import { clientReady } from '@proton/pass/lib/client';
-import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { createI18nService as createCoreI18nService } from '@proton/pass/lib/i18n/service';
 import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
-
-import locales from '../../locales';
-import WorkerMessageBroker from '../channel';
-import { withContext } from '../context';
 
 export const createI18nService = () => {
     const service = createCoreI18nService({
