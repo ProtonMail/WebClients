@@ -387,11 +387,11 @@
       "Get link": [
         "Получить ссылку"
       ],
-      "Get started": [
-        "Приступить к работе"
-      ],
       "Get Started": [
         "Начать"
+      ],
+      "Get started": [
+        "Приступить к работе"
       ],
       "Get verification code": [
         "Получить проверочный код"
@@ -470,6 +470,9 @@
       ],
       "Learn more": [
         "Подробнее"
+      ],
+      "Leave": [
+        "Оставить"
       ],
       "Let's talk": [
         "Свяжитесь с нами"
@@ -558,10 +561,10 @@
       "Not now": [
         "Не сейчас"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -575,6 +578,9 @@
       ],
       "Open navigation": [
         "Открыть панель навигации"
+      ],
+      "Open scan and download info": [
+        "Открыть информацию о сканировании и скачивании"
       ],
       "Pause all": [
         "Приостановить все"
@@ -710,6 +716,9 @@
       ],
       "Save changes": [
         "Сохранить изменения"
+      ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "Сохранить в ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Сканировать и скачать"
@@ -4582,6 +4591,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Для достижения наилучших результатов избегайте просмотра трансляций и действий, требующих большого объема памяти, или разделите загрузку на более мелкие пакеты."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Бесплатное зашифрованное хранилище объемом 5ГБ для начала работы"
+      ],
       "from the version history?": [
         "из истории версий?"
       ],
@@ -4698,6 +4710,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Обеспечьте защиту своих файлов с помощью сквозного шифрования."
       ],
       "Key fingerprint": [
         "Отпечаток ключа"
@@ -4848,9 +4863,6 @@
         "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символа",
         "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов",
         "Разрешены только ${ MAX_CUSTOM_PASSWORD_LENGTH } символов"
-      ],
-      "Only the owner of the share will be able to invite you again.": [
-        "Только владелец общего ресурса сможет пригласить вас снова."
       ],
       "Only the people with the link and the password can access this file.": [
         "Только люди со ссылкой и паролем могут получить доступ к этому файлу."
@@ -5040,6 +5052,9 @@
       ],
       "Retry now": [
         "Повторить попытку сейчас"
+      ],
+      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
+        "Сохранено в ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan issue": [
         "Проблема сканирования"
@@ -5536,9 +5551,6 @@
       "You will lose all unsaved changes.": [
         "Вы потеряете все несохраненные изменения."
       ],
-      "You will not be able to join again after.": [
-        "Вы не сможете присоединиться снова после этого."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
@@ -6023,6 +6035,9 @@
       ],
       "Location": [
         "Место"
+      ],
+      "Log in or sign up ": [
+        "Войти или зарегистрироваться "
       ],
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
@@ -6928,6 +6943,9 @@
       "10-year file version history": [
         "10-летняя история версий файла"
       ],
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
       "24/7 account management support": [
         "Постоянная круглосуточная поддержка управления аккаунтом"
       ],
@@ -7026,6 +7044,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Поддержка почтовых клиентов (через IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Группы адресов электронной почты"
       ],
       "Enables HIPAA compliance": [
         "Обеспечение соответствия HIPAA"
@@ -7367,6 +7388,11 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -7444,6 +7470,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Легко делитесь своими календарями с семьей, друзьями или коллегами"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Отправляйте сообщения всем членам группы с помощью одного адреса электронной почты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантирует, что вы получите все письма, отправленные на ваш домен, даже если адрес электронной почты не существует, его больше нет или в нем допущена ошибка"
@@ -8231,6 +8260,9 @@
       ],
       "E.g., ": [
         "Например, "
+      ],
+      "Email": [
+        "Электронная почта"
       ],
       "Enter a new file name": [
         "Введите новое имя файла"
@@ -9858,9 +9890,6 @@
       "Are you sure you want to close the preview?": [
         "Вы уверены, что хотите закрыть предпросмотр?"
       ],
-      "Are you sure you want to leave this share?": [
-        "Вы уверены, что хотите оставить этот общий ресурс?"
-      ],
       "Billing cycle": [
         "Период оплаты"
       ],
@@ -10245,6 +10274,9 @@
       "Restore your files": [
         "Восстановить файлы"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Сохранить позже в ${ DRIVE_APP_NAME }"
+      ],
       "Search results": [
         "Результаты поиска"
       ],
@@ -10434,6 +10466,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Добавьте этот общий файл к вашему ${ DRIVE_APP_NAME } для легкого доступа к нему в дальнейшем."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Значение \"Автоматический\" обозначает формат содержимого редактора, применяемый при отправке этому пользователю. \"Простой текст\" означает, что при отправке сообщение всегда будет преобразовываться в простой текст."
       ],
