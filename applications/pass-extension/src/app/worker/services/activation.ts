@@ -1,3 +1,10 @@
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { EXTENSION_KEY } from 'proton-pass-extension/app/worker/constants';
+import { withContext } from 'proton-pass-extension/app/worker/context';
+import store from 'proton-pass-extension/app/worker/store';
+import { checkExtensionPermissions } from 'proton-pass-extension/lib/utils/permissions';
+import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
+import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import { type Runtime } from 'webextension-polyfill';
 
 import { MIN_CACHE_VERSION } from '@proton/pass/constants';
@@ -18,12 +25,6 @@ import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
-import { checkExtensionPermissions } from '../../../lib/utils/permissions';
-import { isPopupPort } from '../../../lib/utils/port';
-import { isVivaldiBrowser } from '../../../lib/utils/vivaldi';
-import WorkerMessageBroker from '../channel';
-import { withContext } from '../context';
-import store from '../store';
 import { getSessionResumeAlarm, getSessionResumeDelay, shouldForceLock } from './auth';
 
 type ActivationServiceState = {
@@ -32,7 +33,7 @@ type ActivationServiceState = {
     permissionsGranted: boolean;
 };
 
-const RUNTIME_RELOAD_TIME = 10; /* seconds */
+export const RUNTIME_RELOAD_THROTTLE = 10; /* seconds */
 const UPDATE_ALARM_NAME = 'PassUpdateAlarm';
 
 export const createActivationService = () => {
@@ -257,14 +258,15 @@ export const createActivationService = () => {
      * Ensure Pass never reloads the runtime suspiciously to avoid being disabled.
      * see: https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc;l=54 */
     const reload = asyncLock(
-        withContext(async (ctx) => {
+        withContext<() => Promise<boolean>>(async (ctx) => {
             const now = getEpoch();
             const lastReload = (await ctx.service.storage.local.getItem('lastReload')) ?? 0;
-            if (lastReload + RUNTIME_RELOAD_TIME > now) return;
+            if (lastReload + RUNTIME_RELOAD_THROTTLE > now) return false;
 
             await api.idle(); /* wait for API idle before reloading in case a refresh was ongoing */
             await ctx.service.storage.local.setItem('lastReload', now);
             browser.runtime.reload();
+            return true;
         })
     );
 
@@ -301,6 +303,7 @@ export const createActivationService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_TAB, (_, { tab }) => ({ tab }));
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_RELOAD, reload);
     WorkerMessageBroker.registerMessage(WorkerMessageType.PING, () => Promise.resolve(true));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));
 
     void checkAvailableUpdate();
     void checkPermissionsUpdate();

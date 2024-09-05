@@ -269,7 +269,7 @@ export type WorkerMessage =
     | WorkerStateChangeMessage
     | WorkerWakeUpMessage;
 
-export type MessageFailure = { type: 'error'; error: string; payload?: string };
+export type MessageFailure = { type: 'error'; error: string; critical?: boolean; payload?: string };
 export type MessageSuccess<T> = T extends { [key: string]: any } ? T & { type: 'success' } : { type: 'success' };
 export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
 export type Result<T = {}, F = {}> = ({ ok: true } & T) | ({ ok: false; error: MaybeNull<string> } & F);
