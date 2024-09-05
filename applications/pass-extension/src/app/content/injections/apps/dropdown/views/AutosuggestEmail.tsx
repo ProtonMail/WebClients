@@ -18,7 +18,7 @@ import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { AliasState } from '@proton/pass/store/reducers';
 import type { AliasOptions } from '@proton/pass/types';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';

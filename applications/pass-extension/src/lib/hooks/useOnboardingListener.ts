@@ -6,7 +6,7 @@ import { useExtensionConnect } from 'proton-pass-extension/lib/components/Extens
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useOnboardingMessages } from '@proton/pass/hooks/useOnboardingMessages';
-import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { selectCreatedItemsCount } from '@proton/pass/store/selectors';
 import type { WorkerMessageWithSender } from '@proton/pass/types';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
@@ -40,7 +40,7 @@ export const useOnboardingListener = () => {
                 await wait(200);
                 if (message === OnboardingMessage.PENDING_SHARE_ACCESS) setPendingShareAccess(true);
 
-                setOnboardingMessage(message ? definitions[message] ?? null : null);
+                setOnboardingMessage(message ? (definitions[message] ?? null) : null);
             }
         );
 

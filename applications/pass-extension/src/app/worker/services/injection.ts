@@ -1,7 +1,7 @@
 import { captureMessage as sentryCaptureMessage } from '@sentry/browser';
 import type { Runtime } from 'webextension-polyfill';
 
-import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types';
 import { type TabId, WorkerMessageType } from '@proton/pass/types';

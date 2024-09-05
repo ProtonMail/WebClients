@@ -25,7 +25,7 @@ import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { clientSessionLocked } from '@proton/pass/lib/client';
-import { pageMessage } from '@proton/pass/lib/extension/message';
+import { pageMessage } from '@proton/pass/lib/extension/message/send-message';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import {
     selectPassPlan,

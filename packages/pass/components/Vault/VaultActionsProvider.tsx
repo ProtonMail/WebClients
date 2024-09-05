@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
+import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath, getTrashRoute } from '@proton/pass/components/Navigation/routing';
 import { VaultDelete } from '@proton/pass/components/Vault/Vault.delete';

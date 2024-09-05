@@ -1,3 +1,6 @@
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
+
 import { isExtraOTPField } from '@proton/pass/lib/items/item.predicates';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectItem, selectOTPCandidate } from '@proton/pass/store/selectors';
@@ -8,10 +11,6 @@ import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseSender } from '@proton/pass/utils/url/parser';
 
-import WorkerMessageBroker from '../channel';
-import { onContextReady } from '../context';
-import store from '../store';
-
 /* Although clients should store a complete OTP URI in the `totpUri` field.
  * We take this with a grain of salt to account from possible faulty imports.
  * And treat the `totpUri` field value as if it was user input, either:
@@ -20,13 +19,14 @@ import store from '../store';
  * - an invalid string
  * Each of the following OTP-related operations may throw. */
 export const createOTPService = () => {
-    const handleTOTPRequest = (payload: OtpRequest): OtpCode => {
+    const handleTOTPRequest = withContext<(payload: OtpRequest) => OtpCode>((ctx, payload) => {
         try {
             const totpUri: Maybe<string> = (() => {
                 if (payload.type === 'uri') return payload.totpUri;
                 if (payload.type === 'item') {
                     const { shareId, itemId } = payload.item;
-                    const item = selectItem<'login'>(shareId, itemId)(store.getState());
+                    const state = ctx.service.store.getState();
+                    const item = selectItem<'login'>(shareId, itemId)(state);
 
                     /** First check if we have a top-level totp URI */
                     if (item?.data.content.totpUri.v) return deobfuscate(item.data.content.totpUri);
@@ -47,7 +47,7 @@ export const createOTPService = () => {
             logger.error(`[Worker::OTP] OTP generation error`);
             throw err;
         }
-    };
+    });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.OTP_CODE_GENERATE, withPayload(handleTOTPRequest));
 
@@ -56,7 +56,8 @@ export const createOTPService = () => {
         onContextReady((ctx, _, sender) => {
             const { url, tabId } = parseSender(sender);
             const submission = ctx.service.formTracker.get(tabId, url?.domain ?? '');
-            const match = selectOTPCandidate({ ...url, submission })(store.getState());
+            const state = ctx.service.store.getState();
+            const match = selectOTPCandidate({ ...url, submission })(state);
             return match
                 ? { shouldPrompt: true, shareId: match.shareId, itemId: match.itemId }
                 : { shouldPrompt: false };

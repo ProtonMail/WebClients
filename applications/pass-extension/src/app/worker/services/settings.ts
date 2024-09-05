@@ -1,14 +1,12 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import { withContext } from 'proton-pass-extension/app/worker/context';
-import store from 'proton-pass-extension/app/worker/store';
+import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 
-import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { createSettingsService as createCoreSettingsService } from '@proton/pass/lib/settings/service';
 import { updatePauseListItem } from '@proton/pass/store/actions';
 import { type ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import { WorkerMessageType } from '@proton/pass/types';
-import { withPayload } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 
 export const createSettingsService = () => {
@@ -39,14 +37,14 @@ export const createSettingsService = () => {
     /* on extension install : Set the initial proxied
      * locally stored settings with the results */
     const onInstall = withContext<() => Promise<void>>(async ({ service }) => {
-        const initialSettings = selectProxiedSettings(store.getState());
+        const initialSettings = selectProxiedSettings(service.store.getState());
         return service.storage.local.setItem('settings', JSON.stringify(initialSettings));
     });
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.PAUSE_WEBSITE,
-        withPayload(async ({ criteria, hostname }) => {
-            store.dispatch(updatePauseListItem({ criteria, hostname }));
+        withContext(async (ctx, { payload: { criteria, hostname } }) => {
+            ctx.service.store.dispatch(updatePauseListItem({ criteria, hostname }));
             return true;
         })
     );

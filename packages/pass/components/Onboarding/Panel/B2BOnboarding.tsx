@@ -10,7 +10,7 @@ import onboardingShare from '@proton/pass/assets/b2b-onboarding/icons/share-icon
 import onboardingVault from '@proton/pass/assets/b2b-onboarding/icons/vault-icon.svg';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
-import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
+import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
 import { OnboardingArrow } from '@proton/pass/components/Onboarding/Panel/OnboardingArrow';
 import type { OnboardingCardProps } from '@proton/pass/components/Onboarding/Panel/OnboardingCard';
 import { OnboardingCard } from '@proton/pass/components/Onboarding/Panel/OnboardingCard';

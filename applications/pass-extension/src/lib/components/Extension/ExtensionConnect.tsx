@@ -8,7 +8,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
-import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
+import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message/send-message';
 import { lock, signoutIntent, syncIntent } from '@proton/pass/store/actions';
 import { wakeupRequest } from '@proton/pass/store/actions/requests';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';

@@ -9,7 +9,7 @@ import { Icon } from '@proton/components/components/icon';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
+import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
 import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTable';

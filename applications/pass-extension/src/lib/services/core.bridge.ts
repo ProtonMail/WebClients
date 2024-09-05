@@ -1,5 +1,5 @@
 import type { PassCoreMethod, PassCoreParams, PassCoreResult, PassCoreService } from '@proton/pass/lib/core/types';
-import { type MessageWithSenderFactory, sendMessage } from '@proton/pass/lib/extension/message';
+import { type MessageWithSenderFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { WorkerMessageType } from '@proton/pass/types';
 
 export const createCoreServiceBridge = (messageFactory: MessageWithSenderFactory): PassCoreService => ({

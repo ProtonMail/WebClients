@@ -1,7 +1,7 @@
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { type Middleware, isAction } from 'redux';
 
-import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
+import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { isSynchronousAction } from '@proton/pass/store/actions/enhancers/client';
 import { acceptActionWithReceiver, withSender } from '@proton/pass/store/actions/enhancers/endpoint';
 import type { ClientEndpoint, TabId, WorkerMessageWithSender } from '@proton/pass/types';

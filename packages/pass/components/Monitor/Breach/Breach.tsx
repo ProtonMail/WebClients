@@ -2,7 +2,7 @@ import { type FC } from 'react';
 import { Redirect, type RouteChildrenProps } from 'react-router-dom';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
+import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { AddressType } from '@proton/pass/lib/monitor/types';

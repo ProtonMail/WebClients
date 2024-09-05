@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-throw-literal */
 import { SSO_URL } from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
-import store from 'proton-pass-extension/app/worker/store';
+import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 import { c } from 'ttag';
 
@@ -18,7 +18,7 @@ import {
     clientSessionLocked,
     clientUnauthorized,
 } from '@proton/pass/lib/client';
-import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
+import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
 import browser from '@proton/pass/lib/globals/browser';
 import {
     cacheCancel,
@@ -38,8 +38,6 @@ import { FIBONACCI_LIST, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
-
-import { withContext } from '../context';
 
 export const SESSION_LOCK_ALARM = 'alarm::session-lock';
 export const SESSION_RESUME_ALARM = 'alarm::session-resume';
@@ -107,9 +105,9 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
              * clients currently consuming the store data */
             ctx.setStatus(AppStatus.UNAUTHORIZED);
 
-            store.dispatch(cacheCancel());
-            store.dispatch(stopEventPolling());
-            store.dispatch(stateDestroy());
+            ctx.service.store.dispatch(cacheCancel());
+            ctx.service.store.dispatch(stopEventPolling());
+            ctx.service.store.dispatch(stateDestroy());
 
             setSentryUID(undefined);
 
@@ -141,7 +139,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
         onLockUpdate: withContext(async (ctx, lock) => {
             try {
-                store.dispatch(lockSync(lock));
+                ctx.service.store.dispatch(lockSync(lock));
 
                 const { ttl, mode } = lock;
                 await browser.alarms.clear(SESSION_LOCK_ALARM);
@@ -162,9 +160,9 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             ctx.setStatus(AppStatusFromLockMode[mode]);
             ctx.service.autofill.clear();
 
-            store.dispatch(cacheCancel());
-            store.dispatch(stopEventPolling());
-            store.dispatch(stateDestroy());
+            ctx.service.store.dispatch(cacheCancel());
+            ctx.service.store.dispatch(stopEventPolling());
+            ctx.service.store.dispatch(stateDestroy());
 
             /** set the `forceLock` flag for subsequent auth inits and
              * clear the in-memory session storage */
@@ -209,8 +207,16 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             }
         }),
 
-        onNotification: (data) =>
-            store.dispatch(notification({ ...data, type: 'error', key: data.key ?? 'authservice', deduplicate: true })),
+        onNotification: withContext((ctx, data) =>
+            ctx.service.store.dispatch(
+                notification({
+                    ...data,
+                    type: 'error',
+                    key: data.key ?? 'authservice',
+                    deduplicate: true,
+                })
+            )
+        ),
 
         onMissingScope: withContext((ctx) => ctx.setStatus(AppStatus.MISSING_SCOPE)),
 
@@ -262,20 +268,22 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }
     );
 
-    const handleUnlock: MessageHandlerCallback<WorkerMessageType.AUTH_UNLOCK> = ({ payload }) =>
-        new Promise<WorkerMessageResponse<WorkerMessageType.AUTH_UNLOCK>>((resolve) => {
-            store.dispatch(
-                unlock.intent(payload, (action) => {
-                    if (unlock.success.match(action)) resolve({ ok: true });
-                    if (unlock.failure.match(action)) {
-                        resolve({
-                            ok: false,
-                            error: action.meta.notification.text?.toString() ?? null,
-                        });
-                    }
-                })
-            );
-        });
+    const handleUnlock: MessageHandlerCallback<WorkerMessageType.AUTH_UNLOCK> = withContext(
+        (ctx, { payload }) =>
+            new Promise<WorkerMessageResponse<WorkerMessageType.AUTH_UNLOCK>>((resolve) => {
+                ctx.service.store.dispatch(
+                    unlock.intent(payload, (action) => {
+                        if (unlock.success.match(action)) resolve({ ok: true });
+                        if (unlock.failure.match(action)) {
+                            resolve({
+                                ok: false,
+                                error: action.meta.notification.text?.toString() ?? null,
+                            });
+                        }
+                    })
+                );
+            })
+    );
 
     /* only extend the session lock if a lock is registered and we've reached at least 50%
      * of the lock TTL since the last extension. Calling `AuthService::checkLock` will extend

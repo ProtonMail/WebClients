@@ -2,7 +2,7 @@ import WorkerMessageBroker from 'proton-pass-extension/__mocks__/app/worker/chan
 import store from 'proton-pass-extension/__mocks__/app/worker/store';
 import { getMockItem, getMockPasskey, getMockState, mockShareId } from 'proton-pass-extension/__mocks__/mocks';
 
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
 import type { FormEntry, ItemCreateIntent, ItemEditIntent } from '@proton/pass/types';
@@ -10,13 +10,21 @@ import { AutosaveMode, FormEntryStatus, WorkerMessageType } from '@proton/pass/t
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
+import { WorkerContext } from '../context/inject';
 import { createAutoSaveService } from './autosave';
 
 describe('AutosaveService [worker]', () => {
     const autosave = createAutoSaveService();
 
-    beforeEach(() => store.getState.mockReturnValue(getMockState()));
-    afterEach(() => store.getState.mockClear());
+    beforeEach(() => {
+        WorkerContext.set({ service: { store } } as any);
+        store.getState.mockReturnValue(getMockState());
+    });
+
+    afterEach(() => {
+        WorkerContext.clear();
+        store.getState.mockClear();
+    });
 
     describe('resolve', () => {
         const submission: FormEntry<FormEntryStatus.COMMITTED> = {
