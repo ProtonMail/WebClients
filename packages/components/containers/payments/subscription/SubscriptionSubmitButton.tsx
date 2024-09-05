@@ -1,15 +1,16 @@
 import { c } from 'ttag';
 
+import { Price, PrimaryButton, useConfig, useModalState } from '@proton/components';
 import type { PaymentMethodType, PlainPaymentMethodType } from '@proton/components/payments/core';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { isChargebeePaymentMethod } from '@proton/components/payments/core/helpers';
 import { isChargebeePaymentProcessor } from '@proton/components/payments/react-extensions/helpers';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
+import { APPS } from '@proton/shared/lib/constants';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { Currency, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
-import { Price, PrimaryButton, useModalState } from '../../../components';
 import type { ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
 import { ChargebeePaypalWrapper } from '../../../payments/chargebee/ChargebeeWrapper';
 import EditCardModal from '../EditCardModal';
@@ -54,6 +55,7 @@ const SubscriptionSubmitButton = ({
     paymentProcessorType,
 }: Props) => {
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
+    const { APP_NAME } = useConfig();
 
     if (noPaymentNeeded) {
         if (isTrial(subscription) && !hasPaymentMethod) {
@@ -71,6 +73,14 @@ const SubscriptionSubmitButton = ({
                         <EditCardModal enableRenewToggle={false} onMethodAdded={onDone} {...creditCardModalProps} />
                     )}
                 </>
+            );
+        }
+
+        // If the user is on the ProtonAccountLite app, the user should not be able to close the modal
+        if (APP_NAME === APPS.PROTONACCOUNTLITE) {
+            return (
+                <PrimaryButton className={className} disabled={true} loading={loading}>{c('Action')
+                    .t`Done`}</PrimaryButton>
             );
         }
 
