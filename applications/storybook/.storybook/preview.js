@@ -1,13 +1,13 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import {
-    Icons,
     ModalsChildren,
     ModalsProvider,
     NotificationsChildren,
     NotificationsProvider,
     ThemeProvider,
 } from '@proton/components';
+import Icons from '@proton/icons/Icons';
 import { APPS } from '@proton/shared/lib/constants';
 import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP, getThemes } from '@proton/shared/lib/themes/themes';
 

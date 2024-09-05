@@ -28,6 +28,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/icons": "workspace:^",
         "@proton/pass": "workspace:^",
         "@redux-devtools/remote": "^0.9.3",
         "react-helmet": "^6.1.0",

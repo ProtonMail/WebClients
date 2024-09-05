@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { IFrameApp } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ExtensionCore } from 'proton-pass-extension/lib/components/Extension/ExtensionCore';
 
-import { Icons } from '@proton/components';
+import Icons from '@proton/icons/Icons';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 
 import { Dropdown } from './Dropdown';
