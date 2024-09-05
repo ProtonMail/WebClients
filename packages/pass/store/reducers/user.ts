@@ -154,7 +154,8 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
     }
 
     if (aliasSyncEnable.success.match(action)) {
-        return partialMerge(state, { userData: { aliasSyncEnabled: true } });
+        const { shareId } = action.payload;
+        return partialMerge(state, { userData: { aliasSyncEnabled: true, defaultShareId: shareId } });
     }
 
     if (aliasSyncStatus.success.match(action)) {
