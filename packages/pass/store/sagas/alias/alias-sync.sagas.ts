@@ -24,7 +24,7 @@ const aliasSyncEnableSaga = createRequestSaga({
         yield enableAliasSync({ DefaultShareID });
         yield put(requestInvalidate(userAccessRequest(getAuthStore().getUserID()!)));
 
-        return true;
+        return DefaultShareID;
     },
 });
 
