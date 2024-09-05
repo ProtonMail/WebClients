@@ -1,9 +1,8 @@
+import { mkdir, readFile, rm, writeFile } from 'fs/promises';
 import { JSDOM } from 'jsdom';
-import fs from 'node:fs';
-
-const icons = fs.readFileSync('./assets/sprite-icons.svg', 'utf8');
-
-const iconNodes = Array.from(new JSDOM(icons).window.document.querySelectorAll('g[id]'));
+import mustache from 'mustache';
+import path from 'path';
+import * as prettier from 'prettier';
 
 function capitalize(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -31,42 +30,62 @@ function convertToJsx(html: string): string {
     });
 }
 
-const iconPropsType = `
-import React from 'react';
-type IconProps = React.SVGProps<SVGSVGElement>;
+const disclaimer = `
+/*
+ * This file is auto-generated. Do not modify it manually!
+ * Run 'yarn workspace @proton/icons build' to update the icons react components.
+*/
 `;
 
-const disclaimer = `/*
- * This file is auto-generated. Do not modify it manually!
- * Run 'yarn generate-icons' to update the icons react components.
-*/`;
+const iconsDir = path.join(__dirname, '../icons');
 
-const modules = iconNodes.map((node) => {
-    const iconName = camelize(node.id);
+async function run() {
+    const iconTemplate = await readFile(path.join(__dirname, './IconTemplate.tsx.mustache'), { encoding: 'utf-8' });
 
-    return {
-        name: iconName,
-        content: [
+    const iconFile = await readFile('./assets/sprite-icons.svg', 'utf8');
+    const iconNodes = Array.from(new JSDOM(iconFile).window.document.querySelectorAll('g[id]'));
+
+    const icons = iconNodes.map((node) => {
+        const iconName = capitalize(camelize(node.id));
+
+        const renderedContent = mustache.render(iconTemplate, { iconName, innerHTML: convertToJsx(node.innerHTML) });
+
+        return {
+            name: iconName,
+            content: [disclaimer, renderedContent].join('\n'),
+        };
+    });
+
+    await rm(iconsDir, { recursive: true, force: true });
+    await mkdir(iconsDir);
+
+    const prettierOptions = (await prettier.resolveConfig(path.join(__dirname, '../../../prettier.config.mjs'))) || {};
+
+    const writeFilesPromises = icons.map(async (icon) => {
+        await writeFile(
+            `${iconsDir}/${icon.name}.tsx`,
+            await prettier.format(icon.content, { ...prettierOptions, parser: 'typescript' })
+        );
+    });
+
+    const generateIndex = async () => {
+        const index = [
             disclaimer,
-            iconPropsType,
-            `export const ${capitalize(iconName)} = (props: IconProps) => {
-    return <svg aria-hidden="true" {...props}>
-      ${convertToJsx(node.innerHTML)}
-      </svg>;
-  };`,
-        ].join('\n'),
+            `export * from './types';`,
+            '',
+            `export type IconName = ${iconNodes.map((node) => `'${node.id.replace('ic-', '')}'`).join('|')}`,
+            '',
+            ...icons.map((icon) => `export { ${icon.name} } from './icons/${icon.name}';`),
+        ].join('\n');
+
+        await writeFile(
+            path.join(__dirname, '../index.ts'),
+            await prettier.format(index, { ...prettierOptions, parser: 'typescript' })
+        );
     };
-});
+    writeFilesPromises.push(generateIndex());
 
-const dest = 'tmp';
-
-if (!fs.existsSync(dest)) {
-    fs.mkdirSync(dest);
+    await Promise.all(writeFilesPromises);
 }
-modules.forEach((module) => {
-    fs.writeFileSync(`${dest}/${module.name}.tsx`, module.content);
-});
 
-const index = modules.map((module) => `export * from './${module.name}';`).join('\n');
-
-fs.writeFileSync(`${dest}/all.tsx`, index);
+void run();

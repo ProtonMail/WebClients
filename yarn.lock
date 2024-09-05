@@ -7009,9 +7009,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/icons@workspace:packages/icons"
   dependencies:
+    "@types/mustache": "npm:^4.2.5"
     "@types/react": "npm:^18.3.3"
     jsdom: "npm:^24.1.1"
+    mustache: "npm:^4.2.0"
+    prettier: "npm:^3.3.3"
     react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
     tsx: "npm:^4.17.0"
     typescript: "npm:^5.5.4"
   languageName: unknown
