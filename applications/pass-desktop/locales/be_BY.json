@@ -247,9 +247,6 @@
       "Get Started": [
         "Пачаць працу"
       ],
-      "Help us improve": [
-        "Дапамажыце нам палепшыць наш сэрвіс"
-      ],
       "Hide": [
         "Схаваць"
       ],
@@ -1173,9 +1170,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Для доступу да ${ PASS_APP_NAME } спатрэбіцца ваш адбітак пальца або PIN-код прылады."
       ],
-      "Add a username field": [
-        "Дадаць поле імя карыстальніка"
-      ],
       "Add your custom email address to monitor :": [
         "Дадайце карыстальніцкі адрас электроннай пошты для назірання:"
       ],
@@ -1184,9 +1178,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Вы можаце выдаліць файл CSV, які змяшчае вашы паролі ў мэтах бяспекі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Псеўданім \"${ item.aliasEmail }\" перамешчаны ў сметніцу. Ён перастане перасылаць лісты ў вашу паштовую скрыню"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Псеўданімы з карыстальніцкіх даменаў не адсочваюцца. Дадайце іх як карыстальніцкія адрасы электроннай пошты для назірання."
@@ -1256,9 +1247,6 @@
       ],
       "Change your password": [
         "Змяніць свой пароль"
-      ],
-      "Click here to add a field for a username.": [
-        "Націсніце тут, каб дадаць поле для імя карыстальніка."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Пацвердзіце свой дадатковы пароль, каб працягнуць яго выдаленне."
@@ -2183,6 +2171,9 @@
       "Email address": [
         "Адрас электроннай пошты"
       ],
+      "Email or username": [
+        "Электронная пошта або імя карыстальніка"
+      ],
       "Empty trash": [
         "Ачысціць сметніцу"
       ],
@@ -2757,9 +2748,6 @@
       "Enter email": [
         "Увядзіце электронную пошту"
       ],
-      "Enter email or username": [
-        "Увядзіце электронную пошту або імя карыстальніка"
-      ],
       "Enter password": [
         "Увядзіце пароль"
       ],
@@ -3146,9 +3134,6 @@
       "Duplicated URL": [
         "Дубліраваны URL-адрас"
       ],
-      "Email address is invalid": [
-        "Памылковы адрас электроннай пошты"
-      ],
       "Field name is required": [
         "Патрабуецца назва поля"
       ],
@@ -3180,9 +3165,6 @@
       ],
       "A description of the problem is required": [
         "Патрабуецца апісанне праблемы"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Псеўданім з назвай \"${ name }\" зараз выкарыстоўваецца ў элеменце ўваходу \"${ relatedLoginName }\". Вы таксама можаце спыніць атрыманне лістоў, якія адпраўляюцца на \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Усе элементы са сметніцы будуць незваротна выдалены. Вы не зможаце адрабіць гэта дзеянне."
@@ -3324,9 +3306,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Перадаць правы ўласнасці гэтага сховішча ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Перамясціць псеўданім у сметніцу?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Немагчыма ўвайсці ў ${ PASS_APP_NAME }. ${ additionalMessage }"

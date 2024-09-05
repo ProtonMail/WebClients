@@ -181,6 +181,9 @@
       "Deselect": [
         "Odznacz"
       ],
+      "Disable instead": [
+        "Wyłącz"
+      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -246,9 +249,6 @@
       ],
       "Get Started": [
         "Rozpocznij"
-      ],
-      "Help us improve": [
-        "Pomóż nam ulepszyć usługę"
       ],
       "Hide": [
         "Ukryj"
@@ -1170,9 +1170,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Dostęp do ${ PASS_APP_NAME } będzie wymagał odcisku palca lub kodu PIN."
       ],
-      "Add a username field": [
-        "Dodaj pole nazwy użytkownika"
-      ],
       "Add your custom email address to monitor :": [
         "Dodaj niestandardowy adres e-mail do monitoringu:"
       ],
@@ -1181,9 +1178,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" został przeniesiony do Kosza. Spowoduje to zatrzymanie przekierowywania wiadomości"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasy z niestandardowymi domenami nie są monitorowane. Dodaj je jako niestandardowy adres e-mail do monitorowania."
@@ -1253,9 +1247,6 @@
       ],
       "Change your password": [
         "Zmień hasło"
-      ],
-      "Click here to add a field for a username.": [
-        "Kliknij, aby dodać pole nazwy użytkownika."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Potwierdź dodatkowe hasło, aby je usunąć."
@@ -1949,6 +1940,12 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliasy",
+        "${ aliasCount } aliasów",
+        "${ aliasCount } aliasów"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } znak",
         "${ config.options.length } znaki",
@@ -2176,6 +2173,9 @@
       ],
       "Email address": [
         "Adres e-mail"
+      ],
+      "Email or username": [
+        "Adres e-mail lub nazwa użytkownika"
       ],
       "Empty trash": [
         "Opróżnij Kosz"
@@ -2748,9 +2748,6 @@
       "Enter email": [
         "Wpisz adres e-mail"
       ],
-      "Enter email or username": [
-        "Wpisz adres e-mail lub nazwę użytkownika"
-      ],
       "Enter password": [
         "Wpisz hasło"
       ],
@@ -3081,6 +3078,9 @@
       "Suggestions": [
         "Sugestie"
       ],
+      "Sync alias": [
+        "Synchronizuj alias"
+      ],
       "Transfer ownership": [
         "Zmień właściciela"
       ],
@@ -3137,9 +3137,6 @@
       "Duplicated URL": [
         "Adres URL został zduplikowany"
       ],
-      "Email address is invalid": [
-        "Adres e-mail jest nieprawidłowy"
-      ],
       "Field name is required": [
         "Nazwa pola jest wymagana"
       ],
@@ -3171,9 +3168,6 @@
       ],
       "A description of the problem is required": [
         "Opis problemu jest wymagany"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias \"${ name }\" jest obecnie używany w danych logowania \"${ relatedLoginName }\". Przestaniesz otrzymywać wiadomości wysyłane na \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Wszystkie elementy zostaną trwale usunięte. Tej akcji nie można cofnąć."
@@ -3315,9 +3309,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Zmienić właściciela sejfu na ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Usunąć alias?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Nie można zalogować się do ${ PASS_APP_NAME }. ${ additionalMessage }"
