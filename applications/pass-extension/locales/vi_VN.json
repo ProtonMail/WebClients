@@ -173,6 +173,12 @@
       "Disable autosave on this website": [
         "Tắt tự động điền trên trang web này"
       ],
+      "Disable instead": [
+        "Vô hiệu hóa thay thế"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Vô hiệu hóa bí danh này để ngừng nhận email gửi đến địa chỉ này."
+      ],
       "Discard": [
         "Bỏ"
       ],
@@ -196,6 +202,9 @@
       ],
       "Edit vault": [
         "Sửa kho lưu trữ"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Kích hoạt bí danh này để nhận email gửi đến địa chỉ này."
       ],
       "Exclude from monitoring": [
         "Bỏ qua theo dõi"
@@ -229,9 +238,6 @@
       ],
       "Get Pass Plus": [
         "Nâng cấp Pass Plus"
-      ],
-      "Help us improve": [
-        "Giúp chúng tôi cải thiện"
       ],
       "Hide": [
         "Ẩn"
@@ -455,6 +461,9 @@
       "Submitting report...": [
         "Đang nộp báo cáo..."
       ],
+      "Sync aliases": [
+        "Đồng bộ bí danh"
+      ],
       "Transfer ownership": [
         "Chuyển quyền sở hữu"
       ],
@@ -568,6 +577,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Tệp ${ provider } không thể phân tích cú pháp được. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Hiện tại, chúng tôi không thể cập nhật bí danh. Vui lòng thử lại sau một lát."
+      ],
       "Alias options could not be resolved": [
         "Không thể lấy được tùy chọn bí danh"
       ],
@@ -666,6 +678,9 @@
       ],
       "Failed to restore items from trash": [
         "Lỗi khi khôi phục nội dung từ thùng rác"
+      ],
+      "Failed to sync aliases": [
+        "Đồng bộ bí danh không thành công"
       ],
       "Failed to transfer this vault's ownership.": [
         "Không thể chuyển chủ sở hửu của kho lưu trữ."
@@ -858,6 +873,9 @@
       ],
       "Megabyte": [
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabytes"
       ]
     },
     "Info": {
@@ -927,17 +945,29 @@
       "Access your passwords on the go with our mobile apps.": [
         "Truy cập các mật khẩu của bạn khi di chuyển với các ứng dụng di động của chúng tôi."
       ],
-      "Add a username field": [
-        "Thêm một tên tài khoản"
-      ],
       "Admin": [
         "Quản trị viên"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Sau khi nhập thành công dữ liệu của bạn, bạn có thể xóa tệp CSV chứa mật khẩu của mình để bảo đảm an toàn."
       ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Bí danh \"${ item.aliasEmail }\" đã được chuyển vào thùng rác - nó sẽ dừng chuyển tiếp email đến hộp thư đến của bạn"
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Bí danh \"${ item.aliasEmail }\" đã bị vô hiệu hóa. Bạn sẽ không nhận được email nào gửi đến địa chỉ này nữa."
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Bí danh \"${ item.aliasEmail }\" đã được kích hoạt! Bây giờ bạn có thể nhận email gửi đến địa chỉ này."
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Đồng bộ bí danh giữa tài khoản ${ BRAND_NAME } và SimpleLogin của bạn đang hoạt động."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Bí danh trong thùng rác vẫn sẽ tiếp tục nhận email. Nếu bạn muốn ngừng nhận email tại địa chỉ này, hãy vô hiệu hóa nó thay vì xóa."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "(${ aliasCount }) Bí danh không đồng bộ"
+      ],
+      "All aliases are synced": [
+        "Tất cả các bí danh đã đồng bộ"
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Tất cả nội dung từ \"${ payload.content.name }\" đã được chuyển"
@@ -986,9 +1016,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Chọn một khóa đăng nhập đã lưu để đăng nhập vào ${ domain }"
-      ],
-      "Click here to add a field for a username.": [
-        "Bấm vào đây để thêm một trường cho tên tài khoản."
       ],
       "Click the icon to open it anytime.": [
         "Nhấn vào biểu tượng để mở nó bất kỳ lúc nào."
@@ -1449,6 +1476,12 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Chúng tôi gặp sự cố khi đồng bộ dữ liệu vào bộ nhớ của bạn. Vui lòng đảm bảo bạn có đủ bộ nhớ trống để ${ PASS_SHORT_APP_NAME } hoạt động mượt mà."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Chúng tôi nhận thấy bạn có ${ aliasCount } bí danh trong SimpleLogin nhưng chưa có trong ${ PASS_APP_NAME }. Bạn muốn nhập không?"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Khi bạn tạo hoặc chỉnh sửa tài khoản đăng nhập trên ${ PASS_APP_NAME }, trường \"tên người dùng\" sẽ luôn hiển thị."
+      ],
       "You are about to create:": [
         "Bạn đang chuẩn bị tạo:"
       ],
@@ -1496,6 +1529,9 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } bí danh"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } ký tự"
       ],
@@ -1582,6 +1618,9 @@
       ],
       "Alphabetical": [
         "Thứ tự chữ cái"
+      ],
+      "Always show username field": [
+        "Luôn hiển thị trường tên người dùng"
       ],
       "Application logs": [
         "Nhật ký ứng dụng"
@@ -1688,6 +1727,9 @@
       "Domains": [
         "Tên miền"
       ],
+      "Don't remind me again": [
+        "Không nhắc lại nữa"
+      ],
       "Download logs": [
         "Tải xuống nhật ký"
       ],
@@ -1703,8 +1745,14 @@
       "Email aliases": [
         "Email bí danh"
       ],
+      "Email or username": [
+        "Email hoặc tên người dùng"
+      ],
       "Empty trash": [
         "Làm trống thùng rác"
+      ],
+      "Enter email or username": [
+        "Nhập email hoặc tên người dùng"
       ],
       "Expiration date": [
         "Ngày hết hạn"
@@ -1955,6 +2003,9 @@
       "Select preferred language": [
         "Chọn ngôn ngữ ưa thích"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Chọn kho lưu trữ để nhập bí danh SimpleLogin"
+      ],
       "Select your password manager": [
         "Chọn trình quản lý mật khẩu của bạn"
       ],
@@ -1993,6 +2044,9 @@
       ],
       "Support": [
         "Hỗ trợ"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Đồng bộ bí danh với SimpleLogin"
       ],
       "Text": [
         "Văn bản"
@@ -2149,9 +2203,6 @@
       "Enter email": [
         "Nhập email"
       ],
-      "Enter email or username": [
-        "Nhập email hoặc tên người dùng"
-      ],
       "Enter password": [
         "Nhập mật khẩu"
       ],
@@ -2214,6 +2265,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Đồng bộ bí danh đã hoàn tất! Bí danh SimpleLogin của bạn sẽ được cập nhật trong vài phút nữa."
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Kho lưu trữ không thể có hơn ${ vault.targetMaxMembers } thành viên."
       ]
@@ -2372,6 +2426,9 @@
       "Switching to ${ PASS_APP_NAME }?": [
         "Chuyển tới ${ PASS_APP_NAME }?"
       ],
+      "Sync alias": [
+        "Đồng bộ hoá alias"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Cảm ơn vì đã cài đặt ${ PASS_APP_NAME }"
       ],
@@ -2422,9 +2479,6 @@
       "Duplicated URL": [
         "URL bị trùng lập"
       ],
-      "Email address is invalid": [
-        "Địa chỉ email không hợp lệ"
-      ],
       "Field name is required": [
         "Tên trường là bắt buộc"
       ],
@@ -2450,9 +2504,6 @@
     "Warning": {
       "A description of the problem is required": [
         "Yêu cầu mô tả về vấn đề"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Bí danh \"${ name }\" đang được dùng trong thông tin đăng nhập \"${ relatedLoginName }\". Bạn sẽ ngừng nhận các email được gửi tới \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tất cả nội dung trong thùng rác của bạn sẽ bị xóa vĩnh viễn. Bạn không thể hoàn tác hành động này."
@@ -2489,6 +2540,9 @@
       ],
       "Missing alias suffix": [
         "Thiếu hậu tố bí danh"
+      ],
+      "Move to trash": [
+        "Di chuyển vào thùng rác"
       ],
       "No items": [
         "Không có nội dung nào"
@@ -2529,14 +2583,14 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Tiền tố bí danh không thể dài hơn 40 ký tự"
       ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Bí danh \"${ aliasEmail }\" này đang được sử dụng cho tài khoản đăng nhập \"${ relatedLoginName }\"."
+      ],
       "Title is required": [
         "Yêu cầu có tiêu đề"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Chuyển quyền sở hữu của kho lưu trữ này cho ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Chuyển bí danh vào thùng rác?"
       ],
       "Unable to save": [
         "Không thể lưu"

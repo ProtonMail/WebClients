@@ -182,6 +182,9 @@
       "Disable autosave on this website": [
         "Inaktivera spara automatiskt på denna webbplats"
       ],
+      "Disable instead": [
+        "Inaktivera istället"
+      ],
       "Discard": [
         "Avfärda"
       ],
@@ -205,6 +208,9 @@
       ],
       "Edit vault": [
         "Redigera valv"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Aktivera detta alias för att ta emot e-post skickat till detta alias"
       ],
       "Entire vault": [
         "Hela valvet"
@@ -247,9 +253,6 @@
       ],
       "Get Pass Plus": [
         "Skaffa Pass Plus"
-      ],
-      "Help us improve": [
-        "Hjälp oss att förbättra"
       ],
       "Hide": [
         "Dölj"
@@ -500,6 +503,9 @@
       "Submitting report...": [
         "Skickar rapport..."
       ],
+      "Sync aliases": [
+        "Synkronisera alias"
+      ],
       "Transfer ownership": [
         "Överför ägarskap"
       ],
@@ -621,6 +627,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunde inte analyseras. ${ errorDetail }"
+      ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Alias ​​kunde inte uppdateras just nu. Försök igen senare"
       ],
       "Alias options could not be resolved": [
         "Alternativ för alias kunde inte lösas"
@@ -746,6 +755,9 @@
       ],
       "Failed to restore items from trash": [
         "Misslyckades att återställa objekt från papperskorg"
+      ],
+      "Failed to sync aliases": [
+        "Misslyckades att synkronisera alias"
       ],
       "Failed to transfer this vault's ownership.": [
         "Misslyckades att överföra detta valvs äganderätt."
@@ -1078,17 +1090,14 @@
       "Access your passwords on the go with our mobile apps.": [
         "Kom åt dina lösenord när du är på språng med våra mobilappar."
       ],
-      "Add a username field": [
-        "Lägg till ett fält för användarnamn"
-      ],
       "Admin": [
         "Admin"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Efter att ha lyckats importera dina data kan du ta bort CSV-filen som innehåller dina lösenord för säkerhet."
       ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias “${ item.aliasEmail }“ har flyttats till papperskorg – den kommer stoppa vidarebefordra e-post till din brevlåda"
+      "All aliases are synced": [
+        "Alla alias är synkroniserade"
       ],
       "All breaches for this address were resolved": [
         "Alla intrång för denna adress löstes"
@@ -1152,9 +1161,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Välj en sparad passkey för att logga in på ${ domain }"
-      ],
-      "Click here to add a field for a username.": [
-        "Klicka här för att lägga till ett fält för ett användarnamn."
       ],
       "Click the icon to open it anytime.": [
         "Klicka på ikonen för att öppna den när som helst."
@@ -1803,6 +1809,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } alias"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } tecken",
         "${ config.options.length } tecken"
@@ -1903,6 +1913,9 @@
       ],
       "Alphabetical": [
         "Alfabetiskt"
+      ],
+      "Always show username field": [
+        "Visa alltid fält för användarnamn"
       ],
       "Application logs": [
         "Applikationsloggar"
@@ -2021,6 +2034,9 @@
       "Domains": [
         "Domäner"
       ],
+      "Don't remind me again": [
+        "Påminn mig inte igen"
+      ],
       "Download logs": [
         "Ladda ner loggar"
       ],
@@ -2036,8 +2052,14 @@
       "Email aliases": [
         "E-postalias"
       ],
+      "Email or username": [
+        "E-post eller användarnamn"
+      ],
       "Empty trash": [
         "Töm papperskorg"
+      ],
+      "Enter email or username": [
+        "Ange e-post eller användarnamn"
       ],
       "Expiration date": [
         "Utgångsdatum"
@@ -2345,6 +2367,9 @@
       "Select preferred language": [
         "Välj föredraget språk"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Välj valvet där SimpleLogin-alias kommer att importeras till"
+      ],
       "Select your password manager": [
         "Välj din lösenordshanterare"
       ],
@@ -2392,6 +2417,9 @@
       ],
       "Support": [
         "Support"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Synkronisera alias med SimpleLogin"
       ],
       "Tax number": [
         "Momsnummer"
@@ -2567,9 +2595,6 @@
       ],
       "Enter email": [
         "Ange e-post"
-      ],
-      "Enter email or username": [
-        "Ange e-post eller användarnamn"
       ],
       "Enter password": [
         "Ange lösenord"
@@ -2813,6 +2838,9 @@
       "Switching to ${ PASS_APP_NAME }?": [
         "Byta till ${ PASS_APP_NAME }?"
       ],
+      "Sync alias": [
+        "Synkronisera alias"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Tack för att du installerar ${ PASS_APP_NAME }"
       ],
@@ -2866,9 +2894,6 @@
       "Duplicated URL": [
         "Duplicerad URL"
       ],
-      "Email address is invalid": [
-        "E-postadress är ogiltig"
-      ],
       "Field name is required": [
         "Fältnamn är obligatoriskt"
       ],
@@ -2900,9 +2925,6 @@
       ],
       "A description of the problem is required": [
         "En beskrivning av problemet är obligatoriskt"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias ”${ name }” används för närvarande i inloggningsobjekt ”${ relatedLoginName }”. Du kommer också sluta ta emot e-post som skickas till ”${ aliasEmail }”"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alla dina kastade objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd."
@@ -2965,6 +2987,9 @@
       "Missing alias suffix": [
         "Alias-suffix saknas"
       ],
+      "Move to trash": [
+        "Flytta till papperskorg"
+      ],
       "No items": [
         "Inga objekt"
       ],
@@ -3018,9 +3043,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Vill du överföra äganderätten till detta valv till ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Kasta alias?"
       ],
       "Unable to save": [
         "Kan inte spara"

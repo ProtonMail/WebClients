@@ -182,6 +182,9 @@
       "Disable autosave on this website": [
         "Απενεργοποιήστε την αυτόματη αποθήκευση σε αυτόν τον ιστότοπο"
       ],
+      "Disable instead": [
+        "Απενεργοποιήστε αντ 'αυτού"
+      ],
       "Discard": [
         "Απόρριψη"
       ],
@@ -247,9 +250,6 @@
       ],
       "Get Pass Plus": [
         "Αποκτήστε το Pass Plus"
-      ],
-      "Help us improve": [
-        "Βοηθήστε μας να βελτιωθούμε"
       ],
       "Hide": [
         "Απόκρυψη"
@@ -499,6 +499,9 @@
       ],
       "Submitting report...": [
         "Υποβολή αναφοράς..."
+      ],
+      "Sync aliases": [
+        "Συγχρονισμός ψευδωνύμων"
       ],
       "Transfer ownership": [
         "Μεταβίβαση κυριότητας"
@@ -1081,17 +1084,14 @@
       "Access your passwords on the go with our mobile apps.": [
         "Αποκτήστε πρόσβαση στους κωδικούς πρόσβασής σας εν κινήσει με τις εφαρμογές μας για κινητά."
       ],
-      "Add a username field": [
-        "Προσθήκη πεδίου ονόματος χρήστη"
-      ],
       "Admin": [
         "Διαχειριστής"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
       ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Το ψευδώνυμο \"${ item.aliasEmail }\" μετακινήθηκε στα διαγραμμένα - θα σταματήσει να προωθεί μηνύματα ηλεκτρονικού ταχυδρομείου στο γραμματοκιβώτιό σας"
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Τα ψευδώνυμα στον κάδο απορριμάτων θα συνεχίσουν να προωθούν μηνύματα ηλεκτρονικού ταχυδρομείου. Εάν θέλετε να σταματήσετε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, απενεργοποιήστε την."
       ],
       "All breaches for this address were resolved": [
         "Επιλύθηκαν όλες οι παραβιάσεις για αυτήν τη διεύθυνση"
@@ -1155,9 +1155,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Επιλέξτε ένα αποθηκευμένο κλειδί πρόσβασης για είσοδο στο ${ domain }"
-      ],
-      "Click here to add a field for a username.": [
-        "Κάντε κλικ εδώ για να προσθέσετε ένα πεδίο για ένα όνομα χρήστη."
       ],
       "Click the icon to open it anytime.": [
         "Κάντε κλικ στο εικονίδιο για να το ανοίξετε ανά πάσα στιγμή."
@@ -1767,6 +1764,10 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Αντιμετωπίζουμε προβλήματα συγχρονισμού δεδομένων στον τοπικό σας χώρο αποθήκευσης. Βεβαιωθείτε ότι έχετε αρκετό χώρο στο δίσκο για να λειτουργεί ομαλά το ${ PASS_SHORT_APP_NAME }."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Εντοπίσαμε ότι έχετε ${ aliasCount } ψευδώνυμο που υπάρχει στο SimpleLogin αλλά λείπει στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;",
+        "Εντοπίσαμε ότι έχετε ${ aliasCount } ψευδώνυμα που υπάρχουν στο SimpleLogin αλλά λείπουν στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;"
+      ],
       "You are about to create:": [
         "Είστε έτοιμοι να δημιουργήσετε:"
       ],
@@ -1827,6 +1828,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } ψευδώνυμο",
+        "${ aliasCount } ψευδώνυμα"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } χαρακτήρας",
         "${ config.options.length } χαρακτήρες"
@@ -2066,6 +2071,9 @@
       "Email aliases": [
         "Ψευδώνυμα email"
       ],
+      "Email or username": [
+        "Διεύθυνση ή όνομα χρήστη"
+      ],
       "Empty trash": [
         "Άδειασμα Διαγραμμένων"
       ],
@@ -2128,6 +2136,9 @@
       ],
       "https://example.com": [
         "https://example.com"
+      ],
+      "ID Card": [
+        "Δελτίο Ταυτότητας"
       ],
       "ID Card number": [
         "Αριθμός δελτίου ταυτότητας"
@@ -2393,6 +2404,9 @@
       "Show website favicons": [
         "Εμφάνιση favicons ιστότοπου"
       ],
+      "Social security": [
+        "Α.Φ.Μ."
+      ],
       "Social security number": [
         "Αριθμός κοινωνικής ασφάλισης"
       ],
@@ -2591,9 +2605,6 @@
       ],
       "Enter email": [
         "Εισάγετε ηλεκτρονική διεύθυνση"
-      ],
-      "Enter email or username": [
-        "Εισαγάγετε email ή όνομα χρήστη"
       ],
       "Enter password": [
         "Εισάγετε κωδικό πρόσβασης"
@@ -2837,6 +2848,9 @@
       "Switching to ${ PASS_APP_NAME }?": [
         "Μετάβαση στο ${ PASS_APP_NAME };"
       ],
+      "Sync alias": [
+        "Συγχρονισμός ψευδώνυμου"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Σας ευχαριστούμε που εγκαταστήσατε το ${ PASS_APP_NAME }"
       ],
@@ -2890,9 +2904,6 @@
       "Duplicated URL": [
         "Διπλότυπη διεύθυνση URL"
       ],
-      "Email address is invalid": [
-        "Η διεύθυνση email δεν είναι έγκυρη"
-      ],
       "Field name is required": [
         "Το όνομα πεδίου είναι υποχρεωτικό"
       ],
@@ -2924,9 +2935,6 @@
       ],
       "A description of the problem is required": [
         "Απαιτείται περιγραφή του προβλήματος"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Το ψευδώνυμο \"${ name }\" χρησιμοποιείται αυτήν τη στιγμή στο στοιχείο σύνδεσης \"${ relatedLoginName }\". Θα σταματήσετε επίσης να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Όλα τα απορριφθέντα στοιχεία σας θα διαγραφούν οριστικά. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
@@ -2989,6 +2997,9 @@
       "Missing alias suffix": [
         "Λείπει το επίθημα ψευδωνύμου"
       ],
+      "Move to trash": [
+        "Μετακίνηση στα Διαγραμμένα"
+      ],
       "No items": [
         "Δεν υπάρχουν στοιχεία"
       ],
@@ -3042,9 +3053,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Μεταφέρετε την ιδιοκτησία αυτής της κρύπτης στο ${ email };"
-      ],
-      "Trash alias ?": [
-        "Διαγραφή ψευδώνυμου;"
       ],
       "Unable to save": [
         "Δεν ήταν δυνατή η αποθήκευση"
