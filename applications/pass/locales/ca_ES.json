@@ -247,9 +247,6 @@
       "Get Started": [
         "Comença"
       ],
-      "Help us improve": [
-        "Ajudeu-nos a millorar"
-      ],
       "Hide": [
         "Amaga"
       ],
@@ -1082,9 +1079,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
       ],
-      "Add a username field": [
-        "Afegiu un camp de nom d'usuari"
-      ],
       "Add your custom email address to monitor :": [
         "Afegeixi la seva adreça electrònica personalitzada per supervisar:"
       ],
@@ -1093,9 +1087,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "S'ha mogut l'àlies \"${ item.aliasEmail }\" a la paperera - deixarà de reenviar correus electrònics a la vostra bústia"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Els àlies amb dominis personalitzats no se supervisen; afegeixi'ls com a correu electrònic personalitzat per al seguiment."
@@ -1159,9 +1150,6 @@
       ],
       "Change your password": [
         "Canvieu la vostra contrasenya"
-      ],
-      "Click here to add a field for a username.": [
-        "Feu clic aquí per afegir un camp per a un nom d'usuari."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmeu la vostra contrasenya addicional per procedir a la seva eliminació."
@@ -1999,6 +1987,9 @@
       "Email address": [
         "Adreça de correu electrònic"
       ],
+      "Email or username": [
+        "Correu electrònic o nom d'usuari"
+      ],
       "Empty trash": [
         "Buida la paperera"
       ],
@@ -2552,9 +2543,6 @@
       "Enter email": [
         "Introduïu el correu electrònic"
       ],
-      "Enter email or username": [
-        "Introduïu el correu electrònic o el nom d’usuari"
-      ],
       "Enter password": [
         "Introduïu la contrasenya"
       ],
@@ -2928,9 +2916,6 @@
       "Duplicated URL": [
         "L'URL està duplicat."
       ],
-      "Email address is invalid": [
-        "L'adreça de correu electrònic no és vàlida."
-      ],
       "Field name is required": [
         "Es requereix el nom del camp."
       ],
@@ -2956,9 +2941,6 @@
     "Warning": {
       "A description of the problem is required": [
         "Es requereix una descripció del problema"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "L'àlies \"${ name }\" s'utilitza actualment a l'element d'inici de sessió \"${ relatedLoginName }\". També deixareu de rebre correus electrònics enviats a \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tots els elements de la paperera s'eliminaran permanentment. No podeu desfer aquesta acció."
@@ -3095,9 +3077,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transferir la propietat d'aquesta caixa forta a ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Voleu moure l'àlies a la paperera?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No s'ha pogut iniciar la sessió a ${ PASS_APP_NAME }. ${ additionalMessage }"

@@ -238,9 +238,6 @@
       "Get Started": [
         "Začnite"
       ],
-      "Help us improve": [
-        "Pomagajte nam izboljšati"
-      ],
       "Hide": [
         "Skrij"
       ],
@@ -1046,9 +1043,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po uvozu vaših podatkov lahko zaradi varnosti izbrišete datoteko CSV, ki vsebuje vaša gesla."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Vzdevek »${ item.aliasEmail }« premaknjen v smetnjak – ne bo več posredoval e-pošte v vaš nabiralnik"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Vzdevki z domenami po meri se ne nadzorujejo, dodajte jih kot e-poštni naslov po meri za spremljanje."
@@ -1898,6 +1892,9 @@
       "Email address": [
         "E-poštni naslov"
       ],
+      "Email or username": [
+        "E-pošta ali uporabniško ime"
+      ],
       "Empty trash": [
         "Izprazni smetnjak"
       ],
@@ -2401,9 +2398,6 @@
       "Enter email": [
         "Vnesite e-pošto"
       ],
-      "Enter email or username": [
-        "Vnesite e-pošto ali uporabniško ime"
-      ],
       "Enter password": [
         "Vnesite geslo"
       ],
@@ -2769,9 +2763,6 @@
       "Duplicated URL": [
         "Podvojeni URL"
       ],
-      "Email address is invalid": [
-        "E-poštni naslov ni veljaven"
-      ],
       "Field name is required": [
         "Ime polja je obvezno"
       ],
@@ -2800,9 +2791,6 @@
     "Warning": {
       "A description of the problem is required": [
         "Potreben je opis težave"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Vzdevek »${ name }« se trenutno uporablja v elementu prijave »${ relatedLoginName }«. Prav tako ne boste več prejemali e-poštnih sporočil, poslanih na »${ aliasEmail }«"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Vsi vaši predmeti v smetnjaku bodo trajno izbrisani. Tega dejanja ne morete razveljaviti."
@@ -2935,9 +2923,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Želite prenesti lastništvo tega trezorja na ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Vzdevke v smetnjak?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Ni se mogoče prijaviti v ${ PASS_APP_NAME }. ${ additionalMessage }"
