@@ -649,12 +649,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokúste sa znova uložiť. Uloženie zlyhalo z dôvodu: ${ saveError }"
       ],
-      "Turn off": [
-        "Vypnúť"
-      ],
-      "Turn on": [
-        "Zapnúť"
-      ],
       "Unlock": [
         "Odomknúť"
       ],
@@ -827,6 +821,9 @@
       ],
       "External": [
         "Externá"
+      ],
+      "Inactive": [
+        "Neaktívne"
       ],
       "No E2EE mail": [
         "Žiadna E2EE pošta"
@@ -2917,6 +2914,9 @@
       ],
       "An error occurred, please try again": [
         "Vyskytla sa chyba, skúste to znova, prosím"
+      ],
+      "Family name updated": [
+        "Meno rodiny aktualizované"
       ],
       "Member updated": [
         "Člen aktualizovaný"
@@ -5192,12 +5192,23 @@
         "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Neplatná emailová adresa"
+      ]
+    },
     "invitation status": {
       "Declined": [
         "Odmietnuté"
       ],
+      "Paused": [
+        "Pozastavené"
+      ],
       "Pending": [
         "Čakajúce"
+      ],
+      "Sending invite...": [
+        "Odosielanie pozvánky..."
       ]
     },
     "Invoice state display as badge": {
@@ -5285,6 +5296,12 @@
       ],
       "Account storage": [
         "Úložisko účtu"
+      ],
+      "Add all organization members": [
+        "Pridať všetkých členov organizácie"
+      ],
+      "Add group member": [
+        "Pridať člena skupiny"
       ],
       "Address": [
         "Adresa"
@@ -6296,7 +6313,7 @@
         "${ textType } - Pre ${ DRIVE_APP_NAME }"
       ],
       "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pre všetky služby ${ BRAND_NAME }"
+        "${ textType } - Pre všetky ${ BRAND_NAME } služby"
       ],
       "1 TB secure storage": [
         "1 TB bezpečného úložiska"
@@ -6308,7 +6325,7 @@
         "10 emailových adries/aliasov"
       ],
       "10-year file version history": [
-        "-ročná história verzií súborov"
+        "10-ročná história verzií súborov"
       ],
       "15 GB storage": [
         "15 GB úložisko"
@@ -6572,7 +6589,7 @@
         "Servery v ${ vpnServersCountData.paid.countries }+ krajinách"
       ],
       "Share files with no size limit": [
-        "Zdieľanie súborov bez obmedzenia na ich veľkosť"
+        "Zdieľanie súborov bez obmedzenia veľkosti"
       ],
       "Sign in as user": [
         "Prihlásiť sa ako používateľ"
@@ -6964,7 +6981,7 @@
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov so 20 a viac používateľmi"
+        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov s 20 a viac používateľmi"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -7134,6 +7151,9 @@
       "An external address cannot be default": [
         "Externá adresa nemôže byť predvolená"
       ],
+      "Downloaded 2FA recovery codes": [
+        "Stiahnuté obnovovacie kódy 2FA"
+      ],
       "Invalid code": [
         "Neplatný kód"
       ],
@@ -7223,6 +7243,17 @@
       ],
       "The whole organization": [
         "Celá organizácia"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
       ]
     },
     "Organization capacity error": {
@@ -8815,6 +8846,9 @@
       "1 email address": [
         "1 emailová adresa"
       ],
+      "1 email address per user": [
+        "1 emailová adresa na používateľa"
+      ],
       "1 VPN connection": [
         "1 VPN pripojenie"
       ],
@@ -10326,6 +10360,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Vybraný motív bude aktívny, kým je systém nastavený na „svetlý režim“"
       ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Toto môže byť spôsobené resetovaním hesla alebo tým, že sa používateľ ešte neprihlásil."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Táto emailová adresa sa zobrazí všetkým členom organizácie pri vykonávaní operácií správy účtu."
       ],
@@ -10352,6 +10389,15 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ],
+      "Group membership paused": [
+        "Členstvo v skupine pozastavené"
+      ],
+      "Sending member invitation": [
+        "Odosielanie členskej pozvánky"
+      ],
+      "User declined invitation": [
+        "Používateľ odmietol pozvánku"
+      ],
       "Waiting user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"
       ]
@@ -10370,6 +10416,59 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na poslednú ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Vytvorením súkromného používateľského účtu mu nebudete môcť pomôcť získať späť prístup k jeho údajom alebo účtu."
+      ],
+      "Delete request": [
+        "Vymazať žiadosť"
+      ],
+      "Delete request to access user data?": [
+        "Vymazať žiadosť na prístup k dátam používateľa?"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Akonáhle používateľ súhlasí, budete mu môcť pomôcť obnoviť prístup k účtu alebo spravovať jeho údaje."
+      ],
+      "Organization key must be activated to request data access": [
+        "Kľúč organizácie musí byť aktivovaný, aby bolo možné požiadať o prístup k údajom"
+      ],
+      "Pending admin access": [
+        "Čaká sa na prístup správcu"
+      ],
+      "Private user": [
+        "Súkromný používateľ"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Žiadosť o správu účtu odoslaná, čaká sa na schválenie používateľom"
+      ],
+      "Request user permission for data access": [
+        "Požiadať používateľa o povolenie na prístup k údajom"
+      ],
+      "Revoke access": [
+        "Zrušiť prístup"
+      ],
+      "Revoke administrator access?": [
+        "Zrušiť prístup správcu?"
+      ],
+      "Send request": [
+        "Odoslať žiadosť"
+      ],
+      "The user must have an address to request data access": [
+        "Používateľ musí mať adresu, aby mohol požiadať o prístup k údajom"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Tento krok odstráni čakajúcu požiadavku na prístup správcu k údajom používateľa alebo na resetovanie hesla."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Týmto zrušíte oprávnenie správcu spravovať tento používateľský účet."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Ak chcete pokračovať, musíte používateľov požiadať o povolenie na prístup k ich dátam alebo resetovať ich heslo."
       ]
     },
     "upsell panel": {
@@ -10465,6 +10564,9 @@
       ],
       "It's you": [
         "Ste to vy"
+      ],
+      "Pending admin access": [
+        "Čaká sa na prístup správcu"
       ],
       "Private": [
         "Súkromné"
