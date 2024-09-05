@@ -23,6 +23,7 @@ const {
     RUNTIME_RELOAD_PORT,
     RUNTIME_RELOAD,
     WEBPACK_DEV_PORT,
+    WEBPACK_CIRCULAR_DEPS,
 } = require('./tools/env');
 
 const SUPPORTED_TARGETS = ['chrome', 'firefox', 'safari'];
@@ -234,6 +235,17 @@ module.exports = {
                 },
             ],
         }),
+        ...(WEBPACK_CIRCULAR_DEPS
+            ? [
+                  new CircularDependencyPlugin({
+                      exclude: /node_modules/,
+                      include: /(packages\/pass|applications\/pass-extension)/,
+                      failOnError: false,
+                      allowAsyncCycles: false,
+                      cwd: process.cwd(),
+                  }),
+              ]
+            : []),
     ],
     experiments: {
         asyncWebAssembly: true,

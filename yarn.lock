@@ -7197,6 +7197,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-router-dom": "npm:^5.3.3"
     "@types/webextension-polyfill": "npm:^0.10.7"
+    circular-dependency-plugin: "npm:^5.2.2"
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.57.0"
     formik: "npm:^2.4.6"
@@ -16516,6 +16517,15 @@ __metadata:
     inherits: "npm:^2.0.1"
     safe-buffer: "npm:^5.0.1"
   checksum: 10c0/d8d005f8b64d8a77b3d3ce531301ae7b45902c9cab4ec8b66bdbd2bf2a1d9fceb9a2133c293eb3c060b2d964da0f14c47fb740366081338aa3795dd1faa8984b
+  languageName: node
+  linkType: hard
+
+"circular-dependency-plugin@npm:^5.2.2":
+  version: 5.2.2
+  resolution: "circular-dependency-plugin@npm:5.2.2"
+  peerDependencies:
+    webpack: ">=4.0.1"
+  checksum: 10c0/a2227a7d76c6110f818d364d280406d9dc79c99f7d18f7c643b0a72a2694399195e68ace32115b2bb2da6e53328fda0cadd4fa9535dd67c884567daa3e5a9560
   languageName: node
   linkType: hard
 
