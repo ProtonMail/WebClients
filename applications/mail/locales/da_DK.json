@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-skriveassistent"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
@@ -1018,9 +1015,6 @@
       "Revert to original display": [
         "Vend tilbage til oprindelig visning"
       ],
-      "Run on servers": [
-        "Kør på servere"
-      ],
       "Save": [
         "Gem"
       ],
@@ -1239,6 +1233,10 @@
       ],
       "Trust": [
         "Hav tillid til"
+      ],
+      "Trust key": [
+        "Stol på nøgle",
+        "Stol på nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -1555,9 +1553,6 @@
       ],
       "Run on device": [
         "Kør på enhed"
-      ],
-      "Run on servers": [
-        "Kør på servere"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Sikre, der kører på ${ BRAND_NAME } servere"

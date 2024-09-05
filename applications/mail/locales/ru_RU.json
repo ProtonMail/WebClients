@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Помощник по написанию ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } shop": [
         "Магазин «${ BRAND_NAME }»"
       ],
@@ -1026,9 +1023,6 @@
       "Revert to original display": [
         "Вернуться к исходному отображению"
       ],
-      "Run on servers": [
-        "Выполнять на серверах"
-      ],
       "Save": [
         "Сохранить"
       ],
@@ -1247,6 +1241,12 @@
       ],
       "Trust": [
         "Доверять"
+      ],
+      "Trust key": [
+        "Доверять ключу",
+        "Доверять ключам",
+        "Доверять ключам",
+        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -1573,9 +1573,6 @@
       ],
       "Run on device": [
         "Запуск на устройстве"
-      ],
-      "Run on servers": [
-        "Выполнять на серверах"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Безопасно работает на серверах ${ BRAND_NAME }"
@@ -3438,6 +3435,9 @@
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "Двухфакторная аутентификация (2FA) делает вашу учетную запись более защищенной, предотвращая несанкционированный доступ."
+      ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Автоматически удаляйте спам и сообщения в Корзине, а также откройте дополнительные платные функции при обновлении."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
@@ -6446,10 +6446,10 @@
         "Для получения дополнительных результатов поиска попробуйте искать это ключевое слово в содержимом ваших электронных сообщений."
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
-        "Бесплатно на пробный период ${ ASSISTANT_TRIAL_TIME_DAYS } день",
-        "Бесплатно на пробный период ${ ASSISTANT_TRIAL_TIME_DAYS } дня",
-        "Бесплатно на пробный период ${ ASSISTANT_TRIAL_TIME_DAYS } дней",
-        "Бесплатно на пробный период ${ ASSISTANT_TRIAL_TIME_DAYS } дней"
+        "Попробуйте бесплатно в течение ${ ASSISTANT_TRIAL_TIME_DAYS } дня",
+        "Попробуйте бесплатно в течение ${ ASSISTANT_TRIAL_TIME_DAYS } дней",
+        "Попробуйте бесплатно в течение ${ ASSISTANT_TRIAL_TIME_DAYS } дней",
+        "Попробуйте бесплатно в течение ${ ASSISTANT_TRIAL_TIME_DAYS } дней"
       ],
       "From": [
         "От"
@@ -9401,6 +9401,9 @@
       "10-year file version history": [
         "10-летняя история версий файла"
       ],
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
       "24/7 account management support": [
         "Постоянная круглосуточная поддержка управления аккаунтом"
       ],
@@ -9499,6 +9502,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Поддержка почтовых клиентов (через IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Группы адресов электронной почты"
       ],
       "Enables HIPAA compliance": [
         "Обеспечение соответствия HIPAA"
@@ -9840,6 +9846,11 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -9917,6 +9928,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Легко делитесь своими календарями с семьей, друзьями или коллегами"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Отправляйте сообщения всем членам группы с помощью одного адреса электронной почты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантирует, что вы получите все письма, отправленные на ваш домен, даже если адрес электронной почты не существует, его больше нет или в нем допущена ошибка"
@@ -12259,6 +12273,9 @@
       ],
       "Contacts deleted": [
         "Контакты удалены"
+      ],
+      "Content copied to clipboard": [
+        "Содержание скопировано в буфер обмена"
       ],
       "Conversation added to ${ labelName }.": [
         "Цепочка добавлена в ${ labelName }."

@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asistent psaní ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
@@ -1026,9 +1023,6 @@
       "Revert to original display": [
         "Návrat k původnímu zobrazení"
       ],
-      "Run on servers": [
-        "Spustit na serverech"
-      ],
       "Save": [
         "Uložit"
       ],
@@ -1247,6 +1241,12 @@
       ],
       "Trust": [
         "Důvěřovat"
+      ],
+      "Trust key": [
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1573,9 +1573,6 @@
       ],
       "Run on device": [
         "Spusťte na zařízení"
-      ],
-      "Run on servers": [
-        "Provozovat na serverech"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Bezpečně běží na serverech ${ BRAND_NAME }"

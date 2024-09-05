@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asystent pisania ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } shop": [
         "Sklep ${ BRAND_NAME }"
       ],
@@ -1026,9 +1023,6 @@
       "Revert to original display": [
         "Przywróć oryginalny widok"
       ],
-      "Run on servers": [
-        "Uruchom na serwerach"
-      ],
       "Save": [
         "Zapisz"
       ],
@@ -1247,6 +1241,12 @@
       ],
       "Trust": [
         "Zaufaj"
+      ],
+      "Trust key": [
+        "Zaufaj kluczowi",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom",
+        "Zaufaj kluczom"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -1573,9 +1573,6 @@
       ],
       "Run on device": [
         "Uruchom na urządzeniu"
-      ],
-      "Run on servers": [
-        "Uruchom na serwerach"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Uruchom bezpiecznie na serwerach ${ BRAND_NAME }"

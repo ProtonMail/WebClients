@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe წერის დამხმარე"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
       ],
@@ -1018,9 +1015,6 @@
       "Revert to original display": [
         "თავდაპირველ ეკრანზე დაბრუნება"
       ],
-      "Run on servers": [
-        "გაშვება სერვერებზე"
-      ],
       "Save": [
         "შენახვა"
       ],
@@ -1239,6 +1233,10 @@
       ],
       "Trust": [
         "ნდობა"
+      ],
+      "Trust key": [
+        "ნდობის გასაღები",
+        "ნდობის გასაღებები"
       ],
       "Trust public key": [
         "ამ საჯარო გასაღების ნდობა"
@@ -1555,9 +1553,6 @@
       ],
       "Run on device": [
         "გაშვება მოწყობილობაზე"
-      ],
-      "Run on servers": [
-        "გაშვება სერვერებზე"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "უსაფრთხოდ გაშვება ${ BRAND_NAME }-ის სერვერებზე"
