@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { PromptForReload } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
@@ -13,8 +13,23 @@ import { clientErrored } from '@proton/pass/lib/client';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
+
+const getCriticalRuntimeErrorMessage = (): string => {
+    const base = c('Error').t`Your browser is having difficulties activating ${PASS_APP_NAME}.`;
+    const note = c('Info')
+        .t`Try reloading or reinstalling the extension and make sure your browser and ${PASS_SHORT_APP_NAME} are up-to-date.`;
+
+    if (BUILD_TARGET === 'safari') {
+        const warning = c('Error')
+            .t`This may occur after a long time of not using ${PASS_SHORT_APP_NAME}, or clearing your Safari history.`;
+
+        return `${base} ${warning}\n${note}`;
+    }
+
+    return `${base}\n${note}`;
+};
 
 export const Lobby: FC = () => {
     const { openSettings } = usePassCore();
@@ -23,21 +38,20 @@ export const Lobby: FC = () => {
 
     const requestFork = useRequestForkWithPermissions({ autoClose: true });
 
+    const criticalError = state.criticalRuntimeError ? getCriticalRuntimeErrorMessage() : undefined;
+    const autoReload = BUILD_TARGET === 'safari' && state.criticalRuntimeError;
+
     return (
         <LobbyLayout overlay>
             <LobbyContent
+                error={criticalError}
                 status={state.status}
                 onFork={requestFork}
                 onLogin={(options) => sendMessage(popupMessage({ type: WorkerMessageType.AUTH_INIT, options }))}
                 onLogout={logout}
                 onOffline={noop}
                 onRegister={() => requestFork(ForkType.SIGNUP)}
-                renderError={() => (
-                    <PromptForReload
-                        message={c('Warning')
-                            .t`Something went wrong while starting ${PASS_APP_NAME}. Please try refreshing or reloading the extension`}
-                    />
-                )}
+                renderError={(message) => <PromptForReload message={message} autoReload={autoReload} browserError />}
                 renderFooter={() =>
                     errored ? (
                         <div className="absolute bottom-0 right-0 mb-2 mr-2">

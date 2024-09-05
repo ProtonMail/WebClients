@@ -27,6 +27,11 @@ export type AppState = {
     /** Indicates user state has been successfully hydrated
      * and client is fully initialized and ready. */
     booted: boolean;
+    /** Boolean flag indicating a critical runtime error making
+     * the client unusable. This should only be used in the context
+     * of the extension to detect stale service worker errors such
+     * as the infamous MV3 worker registration error on Safari */
+    criticalRuntimeError?: boolean;
     /** LocalID of the current active session. Primarily relevant
      * in the extension context. For web/desktop, prefer using
      * the `authStore` directly. */

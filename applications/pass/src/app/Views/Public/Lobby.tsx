@@ -31,7 +31,7 @@ export const Lobby: FC = () => {
         hidden: online || clientBusy(status),
     }));
 
-    const error = useMemo(() => {
+    const warning = useMemo(() => {
         const err = history.location.state?.error;
         if (err) {
             switch (err) {
@@ -46,10 +46,10 @@ export const Lobby: FC = () => {
     return (
         <LobbyLayout overlay>
             <LobbyContent
-                error={error}
                 status={status}
+                warning={warning}
                 onLogin={(options) => {
-                    if (error) history.replace({ ...history.location, state: null });
+                    if (warning) history.replace({ ...history.location, state: null });
                     return authService.init(options);
                 }}
                 onLogout={() => authService.logout({ soft: false })}

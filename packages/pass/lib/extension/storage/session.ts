@@ -38,4 +38,4 @@ const browserSessionStorage: StorageInterface = {
     clear,
 };
 
-export default browser.storage?.session === undefined ? createMemoryStorage() : browserSessionStorage;
+export default browser?.storage?.session === undefined ? createMemoryStorage() : browserSessionStorage;
