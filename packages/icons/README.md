@@ -1,48 +1,31 @@
 # @proton/icons
 
-This package contains the base icons used across Proton's products.
+This package contains [icon set](https://design-system.protontech.ch/?path=/docs/core-concepts-icons--icons) used across Proton's products.
 
 There are 2 ways of consuming this package:
 
--   using the raw `sprite-icons.svg` file (legacy way)
--   using the auto-generated React components (recommended)
+-   Using the auto-generated React components (recommended)
+-   Using the sprite file
 
 ## Consuming the Icon React components
 
 ```js
-import { IcGlobe } from '@proton/icons/lib/IcGlobe';
+import { IcGlobe } from '@proton/icons';
 
-const MyComponent = () => <IcGlobe className="size-6" />;
+const MyComponent = () => <IcGlobe size={6} />;
 ```
 
-## Directly using the SVG sprite
+Icons are tree shaken, so any icons you do not use will not be included in the bundle.
 
-```js
-import sprite from '@proton/icons/assets/sprite-icons.svg';
-```
+## Using the SVG sprite
 
-## Listing all the available icons
+You can use the `Icons.tsx` component to import the sprite.
 
-In case you need to loop over all the icons that exists, there is a special export `all` that exports all the icons
-
-```jsx
-import * as Icons from '@proton/icons/lib/all';
-
-const MyComponent = () => {
-    return (
-        <div>
-            {Object.keys(Icons).map((key) => {
-                const Icon = Icons[key];
-                return <Icon key={key} className="size-6" />;
-            })}
-        </div>
-    );
-};
-```
+Then you can use the [Icon component](https://design-system.protontech.ch/?path=/docs/components-icon--basic).
 
 ## Update the icons
 
 In case some icons need to be changed/added, the process is:
 
 -   edit the `assets/sprite-icons.svg` file (making the relevant changes there)
--   run `yarn build` to generate the React components
+-   run `yarn workspace @proton/icons build` to generate the React components
