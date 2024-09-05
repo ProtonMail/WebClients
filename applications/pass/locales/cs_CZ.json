@@ -181,6 +181,9 @@
       "Deselect": [
         "Zrušit výběr"
       ],
+      "Disable instead": [
+        "Místo toho deaktivovat"
+      ],
       "Discard": [
         "Zahodit"
       ],
@@ -246,9 +249,6 @@
       ],
       "Get Started": [
         "Začínáme"
-      ],
-      "Help us improve": [
-        "Pomozte nám se zlepšit"
       ],
       "Hide": [
         "Skrýt"
@@ -495,6 +495,9 @@
       ],
       "Submitting report...": [
         "Odesílání hlášení..."
+      ],
+      "Sync aliases": [
+        "Synchronizovat aliasy"
       ],
       "Transfer ownership": [
         "Převod vlastnictví"
@@ -1119,9 +1122,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Přístup k ${ PASS_APP_NAME } bude vyžadovat váš otisk prstu nebo PIN zařízení."
       ],
-      "Add a username field": [
-        "Přidat pole uživatelského jména"
-      ],
       "Add your custom email address to monitor :": [
         "Přidejte vlastní e-mailovou adresu pro sledování :"
       ],
@@ -1131,8 +1131,8 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspěšném importu vašich dat můžete z bezpečnostních důvodů smazat CSV soubor obsahující vaše hesla."
       ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" přesunut do koše - přestane přeposílat e-maily do vaší schránky"
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Aliasy v koši budou nadále přeposílat e-maily. Pokud chcete přestat dostávat e-maily na tuto adresu, zakažte ji."
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasy s vlastními doménami nejsou sledovány, pro sledování je prosím přidejte jako vlastní e-mail."
@@ -1202,9 +1202,6 @@
       ],
       "Change your password": [
         "Změňte své heslo"
-      ],
-      "Click here to add a field for a username.": [
-        "Zde klikněte pro přidání pole pro uživatelské jméno."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Potvrďte své dodatečné heslo pro pokračování v jeho odebrání."
@@ -1892,6 +1889,12 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliasy",
+        "${ aliasCount } aliasů",
+        "${ aliasCount } aliasů"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } znak",
         "${ config.options.length } znaky",
@@ -2105,6 +2108,9 @@
       "Domain": [
         "Doména"
       ],
+      "Don't remind me again": [
+        "Znovu nepřipomínat"
+      ],
       "Download logs": [
         "Stáhnout logy"
       ],
@@ -2120,11 +2126,17 @@
       "Email address": [
         "E-mailová adresa"
       ],
+      "Email or username": [
+        "E-mail nebo uživatelské jméno"
+      ],
       "Empty trash": [
         "Vyprázdnit koš"
       ],
       "Enable offline access": [
         "Povolit přístup offline"
+      ],
+      "Enter email or username": [
+        "Zadejte e-mail nebo uživatelské jméno"
       ],
       "Expiration date": [
         "Konec platnosti"
@@ -2680,9 +2692,6 @@
       "Enter email": [
         "Zadejte e-mail"
       ],
-      "Enter email or username": [
-        "Zadejte e-mail nebo uživatelské jméno"
-      ],
       "Enter password": [
         "Zadejte heslo"
       ],
@@ -3013,6 +3022,9 @@
       "Suggestions": [
         "Návrhy"
       ],
+      "Sync alias": [
+        "Synchronizovat alias"
+      ],
       "Transfer ownership": [
         "Převod vlastnictví"
       ],
@@ -3069,9 +3081,6 @@
       "Duplicated URL": [
         "Duplicitní URL adresa"
       ],
-      "Email address is invalid": [
-        "E-mailová adresa je neplatná"
-      ],
       "Field name is required": [
         "Název pole je povinný"
       ],
@@ -3103,9 +3112,6 @@
       ],
       "A description of the problem is required": [
         "Je vyžadován popis problému"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias \"${ name }\" je aktuálně použit v přihlašovací položce \"${ relatedLoginName }\". Přestanete také dostávat e-maily zaslané na adresu \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Všechny položky v koši budou trvale smazány. Tuto akci nelze vrátit zpět."
@@ -3182,6 +3188,9 @@
       "Missing alias suffix": [
         "Chybějící přípona aliasu"
       ],
+      "Move to trash": [
+        "Přesunout do koše"
+      ],
       "No items": [
         "Žádné položky"
       ],
@@ -3247,9 +3256,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Převést vlastnictví tohoto trezoru na ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Smazat alias?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Nelze se přihlásit do ${ PASS_APP_NAME }. ${ additionalMessage }"
