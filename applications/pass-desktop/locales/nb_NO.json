@@ -247,9 +247,6 @@
       "Get Started": [
         "Kom i gang"
       ],
-      "Help us improve": [
-        "Hjelp oss å bli bedre"
-      ],
       "Hide": [
         "Skjul"
       ],
@@ -1145,9 +1142,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Tilgang til ${ PASS_APP_NAME } krever fingeravtrykk eller PIN-kode for enheten."
       ],
-      "Add a username field": [
-        "Legg til brukernavnfelt"
-      ],
       "Add your custom email address to monitor :": [
         "Legg til den tilpassede e-postadressen din for å overvåke:"
       ],
@@ -1156,9 +1150,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" flyttet til papirkurven - det vil slutte å videresende e-post til postkassen din."
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliaser med egendefinerte domener overvåkes ikke, vennligst legg dem til som en tilpasset e-post for overvåking."
@@ -1228,9 +1219,6 @@
       ],
       "Change your password": [
         "Endre passordet ditt"
-      ],
-      "Click here to add a field for a username.": [
-        "Trykk her for å legge til et felt for et brukernavn."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Bekreft det ekstra passordet ditt for å fortsette med fjerningen."
@@ -2131,6 +2119,9 @@
       "Email address": [
         "E-postadresse"
       ],
+      "Email or username": [
+        "E-post eller brukernavn"
+      ],
       "Empty trash": [
         "Tøm papirkurven"
       ],
@@ -2701,9 +2692,6 @@
       "Enter email": [
         "Angi e-post"
       ],
-      "Enter email or username": [
-        "Skriv inn e-post eller brukernavn"
-      ],
       "Enter password": [
         "Skriv inn passord"
       ],
@@ -3086,9 +3074,6 @@
       "Duplicated URL": [
         "Duplisert nettadresse"
       ],
-      "Email address is invalid": [
-        "E-postadresse er ugyldig"
-      ],
       "Field name is required": [
         "Feltnavn er obligatorisk"
       ],
@@ -3120,9 +3105,6 @@
       ],
       "A description of the problem is required": [
         "En beskrivelse av problemet er nødvendig"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias \"${ name }\" brukes for øyeblikket i påloggingselement \"${ relatedLoginName }\". Du vil også slutte å motta e-poster sendt til \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle dine elementer i papirkurven blir slettet permanent. Du kan ikke angre denne handlingen."
@@ -3262,9 +3244,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Overføre eierskap av dette hvelvet til ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Slette alias?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Ikke i stand til å logge på ${ PASS_APP_NAME }. ${ additionalMessage }"

@@ -248,9 +248,6 @@
       "Get Pass Plus": [
         "Få Pass Plus"
       ],
-      "Help us improve": [
-        "Hjelp oss å bli bedre"
-      ],
       "Hide": [
         "Skjul"
       ],
@@ -1081,17 +1078,11 @@
       "Access your passwords on the go with our mobile apps.": [
         "Få tilgang til passordene dine mens du er på farten med mobilappene våre."
       ],
-      "Add a username field": [
-        "Legg til brukernavnfelt"
-      ],
       "Admin": [
         "Administrator"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" flyttet til papirkurven - det vil slutte å videresende e-post til postkassen din."
       ],
       "All breaches for this address were resolved": [
         "Alle brudd for denne adressen ble løst"
@@ -1155,9 +1146,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Velg en lagret tilgangsnøkkel for å logge på ${ domain }"
-      ],
-      "Click here to add a field for a username.": [
-        "Trykk her for å legge til et felt for et brukernavn."
       ],
       "Click the icon to open it anytime.": [
         "Klikk på ikonet for å åpne det når som helst."
@@ -2066,6 +2054,9 @@
       "Email aliases": [
         "E-postaliaser"
       ],
+      "Email or username": [
+        "E-post eller brukernavn"
+      ],
       "Empty trash": [
         "Tøm papirkurven"
       ],
@@ -2598,9 +2589,6 @@
       "Enter email": [
         "Angi e-post"
       ],
-      "Enter email or username": [
-        "Skriv inn e-post eller brukernavn"
-      ],
       "Enter password": [
         "Skriv inn passord"
       ],
@@ -2896,9 +2884,6 @@
       "Duplicated URL": [
         "Duplisert nettadresse"
       ],
-      "Email address is invalid": [
-        "E-postadresse er ugyldig"
-      ],
       "Field name is required": [
         "Feltnavn er obligatorisk"
       ],
@@ -2930,9 +2915,6 @@
       ],
       "A description of the problem is required": [
         "En beskrivelse av problemet er nødvendig"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias \"${ name }\" brukes for øyeblikket i påloggingselement \"${ relatedLoginName }\". Du vil også slutte å motta e-poster sendt til \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle dine elementer i papirkurven blir slettet permanent. Du kan ikke angre denne handlingen."
@@ -3048,9 +3030,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Overføre eierskap av dette hvelvet til ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Slette alias?"
       ],
       "Unable to save": [
         "Ikke i stand til å lagre"

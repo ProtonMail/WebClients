@@ -369,11 +369,11 @@
       "Get link": [
         "リンクを作成"
       ],
-      "Get started": [
-        "利用開始"
-      ],
       "Get Started": [
         "始めましょう"
+      ],
+      "Get started": [
+        "利用開始"
       ],
       "Get verification code": [
         "認証コードを取得"
@@ -446,6 +446,9 @@
       ],
       "Learn more": [
         "詳細"
+      ],
+      "Leave": [
+        "退出"
       ],
       "Let's talk": [
         "話をしよう"
@@ -531,11 +534,11 @@
       "Not now": [
         "後で"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "開く"
@@ -623,6 +626,9 @@
       ],
       "Report an issue": [
         "問題を報告"
+      ],
+      "Request a call": [
+        "通話をリクエストする"
       ],
       "Request a feature": [
         "機能を提案"
@@ -4131,6 +4137,9 @@
       "Last week": [
         "先週"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "${ staySaferOnlineLink } の使い方を学ぶ"
+      ],
       "Learn more": [
         "詳細"
       ],
@@ -4145,6 +4154,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } を読み込み中"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "カレンダーを読み込み中です。お待ちください。スケジューリングプラットフォームの Calendly へ新しいタブでリダイレクトされます。"
       ],
       "Loading link": [
         "リンクを読み込み中"
@@ -4833,6 +4845,12 @@
       "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
         "${ expiresInDays } 日以内に、3 GB のウェルカムボーナスを受け取り、"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "試用版 ${ planTitle } のサブスクリプションが有効です。試用期間後にサブスクリプションを継続したい場合は、支払い方法を追加してください。"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "試用版 ${ planTitle } のサブスクリプションが有効です。現時点での支払いは必要ありません。 サブスクリプションは試用期間の終了時に自動的に更新されます。"
+      ],
       "You may be redirected to your bank’s website.": [
         "銀行のウェブサイトに移動する場合があります。"
       ],
@@ -4898,6 +4916,9 @@
       ],
       "Your files will be encrypted and then saved.": [
         "あなたのファイルは暗号化して保存されます。"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "あなたの情報は ${ displayedDate }で見つかりました。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
@@ -6420,6 +6441,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price }で Mail Plus を入手する"
       ]
     },
     "new_plans: title": {

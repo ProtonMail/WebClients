@@ -381,11 +381,11 @@
       "Get link": [
         "Λάβετε σύνδεσμο"
       ],
-      "Get started": [
-        "Ας ξεκινήσουμε"
-      ],
       "Get Started": [
         "Ξεκινήστε"
+      ],
+      "Get started": [
+        "Ας ξεκινήσουμε"
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
@@ -464,6 +464,9 @@
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "Leave": [
+        "Αποχώρηση"
       ],
       "Let's talk": [
         "Ας μιλήσουμε"
@@ -552,11 +555,11 @@
       "Not now": [
         "Όχι τώρα"
       ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open": [
         "Άνοιγμα"
@@ -569,6 +572,9 @@
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
+      ],
+      "Open scan and download info": [
+        "Άνοιγμα πληροφοριών σάρωσης και λήψης"
       ],
       "Pause all": [
         "Παύση όλων"
@@ -704,6 +710,9 @@
       ],
       "Save changes": [
         "Αποθήκευση αλλαγών"
+      ],
+      "Save to ${ DRIVE_SHORT_APP_NAME }": [
+        "Αποθήκευση στο ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Σάρωση & Λήψη"
@@ -4437,6 +4446,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή εντατικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
       ],
+      "Free 5GB encrypted storage to get started": [
+        "Δωρεάν κρυπτογραφημένη αποθήκευση 5GB για να ξεκινήσετε"
+      ],
       "from the version history?": [
         "από το ιστορικό εκδόσεων;"
       ],
@@ -4551,6 +4563,9 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
+      ],
+      "Keep your files secure with end-to-end encryption.": [
+        "Διατηρήστε τα αρχεία σας ασφαλή με διατερματική κρυπτογράφηση."
       ],
       "Key fingerprint": [
         "Κλειδί δακτυλικού αποτυπώματος"
@@ -4697,9 +4712,6 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "Επιτρέπεται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρας",
         "Επιτρέπονται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρες"
-      ],
-      "Only the owner of the share will be able to invite you again.": [
-        "Μόνο ο κάτοχος της κοινοποίησης θα μπορεί να σας προσκαλέσει ξανά."
       ],
       "Only the people with the link and the password can access this file.": [
         "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
@@ -5375,9 +5387,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
-      ],
-      "You will not be able to join again after.": [
-        "Δεν θα μπορείτε να συμμετάσχετε ξανά μετά."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
@@ -6580,6 +6589,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Ξεκινήστε με ${ price }"
+      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
       ]
@@ -6712,6 +6724,9 @@
       "10 email addresses/aliases": [
         "10 διεύθυνσεις email/ψευδώνυμα"
       ],
+      "10-year file version history": [
+        "Ιστορικό εκδόσεων αρχείων 10 ετών"
+      ],
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
       ],
@@ -6729,6 +6744,9 @@
       ],
       "Administration Panel": [
         "Πίνακας Διαχείρισης"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Όλα τα προϊόντα και χαρακτηριστικά ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6810,6 +6828,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Υποστήριξη προγράμματος-πελάτη ηλεκτρονικού ταχυδρομείου (μέσω IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Ομάδες ηλεκτρονικού ταχυδρομείου"
       ],
       "Enables HIPAA compliance": [
         "Επιτρέπει τη συμμόρφωση με το HIPAA"
@@ -6896,9 +6917,15 @@
       "Priority support & live chat": [
         "Υποστήριξη προτεραιότητας & ζωντανή συνομιλία"
       ],
+      "Proofread and refine your emails": [
+        "Διορθώστε και βελτιώστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας"
+      ],
       "Protect ${ n } device at a time": [
         "Προστατέψτε ${ n } συσκευή ανά φορά",
         "Προστατέψτε ${ n } συσκευές ανά φορά"
+      ],
+      "Quickly craft replies": [
+        "Δημιουργήστε γρήγορα απαντήσεις"
       ],
       "Recover previous file versions": [
         "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
@@ -6953,6 +6980,9 @@
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
+      ],
+      "Support for up to 2 users": [
+        "Υποστήριξη για έως 2 χρήστες"
       ],
       "Sync and backup all your files across devices": [
         "Συγχρονίστε και δημιουργήστε αντίγραφα ασφαλείας όλων των αρχείων σας σε όλες τις συσκευές"
@@ -7137,6 +7167,11 @@
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Αποκτήστε το Mail Plus για ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -7212,6 +7247,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Μοιραστείτε εύκολα τα ημερολόγιά σας με την οικογένεια, τους φίλους ή τους συναδέλφους σας"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Στείλτε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα μέλη μιας ομάδας με μία μόνο διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Διασφαλίζει ότι λαμβάνετε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στον τομέα σας, ακόμα και αν η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν υπάρχει, δεν υπάρχει πλέον ή έχει τυπογραφικό λάθος"
@@ -8136,6 +8174,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Επίσημο email από ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Ελέγξτε την ασφάλεια του λογαριασμού σας"
       ]
     },
     "Security Center": {
@@ -9492,9 +9535,6 @@
       "Are you sure you want to close the preview?": [
         "Είστε βέβαιοι ότι θέλετε να κλείσετε την προεπισκόπηση;"
       ],
-      "Are you sure you want to leave this share?": [
-        "Είστε βέβαιοι ότι θέλετε να αφήσετε αυτή την κοινοποίηση;"
-      ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
@@ -9871,6 +9911,9 @@
       "Restore your files": [
         "Ανακτήστε τα αρχεία σας"
       ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "Αποθηκεύστε το για αργότερα στο ${ DRIVE_APP_NAME }"
+      ],
       "Search results": [
         "Αποτελέσματα αναζήτησης"
       ],
@@ -10060,6 +10103,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Προσθέστε αυτό το κοινόχρηστο αρχείο στο ${ DRIVE_APP_NAME } για εύκολη πρόσβαση αργότερα."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Η επιλογή \"Αυτόματο\" υποδεικνύει ότι θα χρησιμοποιηθεί η μορφή κειμένου στην σύνταξη, για την αποστολή του μηνύματος στον συγκεκριμένο χρήστη. Το \"απλό κείμενο\" υποδηλώνει ότι το μήνυμα θα μετατρέπεται πάντα σε απλό κείμενο κατά την αποστολή."
       ],

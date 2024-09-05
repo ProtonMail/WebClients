@@ -448,6 +448,9 @@
       "Report a problem": [
         "問題を報告"
       ],
+      "Request a call": [
+        "通話をリクエストする"
+      ],
       "Request a feature": [
         "機能を提案"
       ],
@@ -3670,6 +3673,9 @@
       "Loading ${ appName }": [
         "${ appName } を読み込み中"
       ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "カレンダーを読み込み中です。お待ちください。スケジューリングプラットフォームの Calendly へ新しいタブでリダイレクトされます。"
+      ],
       "Loading gateways monitoring current status.": [
         "ゲートウェイモニタリングの現在の状態を読み込んでいます。"
       ],
@@ -4383,6 +4389,12 @@
       ],
       "You have ${ availableCount } dedicated server available.": [
         "${ availableCount } 個の専用サーバーが利用可能です。"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "試用版 ${ planTitle } のサブスクリプションが有効です。試用期間後にサブスクリプションを継続したい場合は、支払い方法を追加してください。"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "試用版 ${ planTitle } のサブスクリプションが有効です。現時点での支払いは必要ありません。 サブスクリプションは試用期間の終了時に自動的に更新されます。"
       ],
       "You have no invoices.": [
         "請求書はありません。"

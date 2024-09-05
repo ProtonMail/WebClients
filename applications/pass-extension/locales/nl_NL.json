@@ -233,9 +233,6 @@
       "Get Pass Plus": [
         "Neem Pass Plus"
       ],
-      "Help us improve": [
-        "Help ons verbeteren"
-      ],
       "Hide": [
         "Verbergen"
       ],
@@ -1011,17 +1008,11 @@
       "Access your passwords on the go with our mobile apps.": [
         "Krijg onderweg toegang tot uw wachtwoorden met onze mobiele apps."
       ],
-      "Add a username field": [
-        "Veld gebruikersnaam toevoegen"
-      ],
       "Admin": [
         "Beheerder"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Na het importeren van uw gegevens kunt u het CSV-bestand verwijderen dat uw wachtwoorden voor beveiliging bevat."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" verplaatst naar prullenbak - het zal stoppen met het doorsturen van e-mails naar uw mailbox"
       ],
       "All breaches for this address were resolved": [
         "Alle inbreuken op dit adres zijn opgelost"
@@ -1831,6 +1822,9 @@
       "Email aliases": [
         "E-mailaliassen"
       ],
+      "Email or username": [
+        "E-mailadres of gebruikersnaam"
+      ],
       "Empty trash": [
         "Prullenbak leegmaken"
       ],
@@ -2296,9 +2290,6 @@
       "Enter a prefix": [
         "Voorvoegsel invoeren"
       ],
-      "Enter email or username": [
-        "Voer e-mail of gebruikersnaam in"
-      ],
       "Enter password": [
         "Vul wachtwoord in"
       ],
@@ -2576,9 +2567,6 @@
       "Duplicated URL": [
         "Dubbele URL"
       ],
-      "Email address is invalid": [
-        "E-mailadres is ongeldig"
-      ],
       "Field name is required": [
         "Veldnaam is verplicht"
       ],
@@ -2604,9 +2592,6 @@
     "Warning": {
       "A description of the problem is required": [
         "Een beschrijving van het probleem is vereist"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias \"${ name }\" wordt momenteel gebruikt in login-item \"${ relatedLoginName }\". U ontvangt ook geen e-mails meer die zijn verzonden naar \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Al uw weggegooide items worden permanent verwijderd. U kunt deze actie niet ongedaan maken."
@@ -2707,9 +2692,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Eigendom van deze kluis overdragen aan ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Prullenbak alias?"
       ],
       "Unable to save": [
         "Kan niet opslaan"

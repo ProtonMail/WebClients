@@ -1120,12 +1120,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Yeniden kaydetmeyi deneyin. Şu sorun nedeniyle kaydedilemedi: ${ saveError }"
       ],
-      "Turn off": [
-        "Kapat"
-      ],
-      "Turn on": [
-        "Aç"
-      ],
       "Underline": [
         "Altı çizili"
       ],
@@ -1233,6 +1227,9 @@
       ],
       "View plans details": [
         "Tarife ayrıntılarını görüntüle"
+      ],
+      "View recovery settings": [
+        "Kurtarma ayarlarını görüntüle"
       ],
       "Void": [
         "Geçersiz"
@@ -1472,9 +1469,6 @@
       ],
       "Run on device": [
         "Aygıt üzerinde çalışsın"
-      ],
-      "Run on servers": [
-        "Sunucular üzerinde çalışır"
       ]
     },
     "Assistant toggle": {
@@ -3383,6 +3377,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Tarifenizi yükselterek, çöp kutusundaki ve istenmeyen iletilerin otomatik olarak silinmesi gibi ücretli pek çok özelliğe erişebilirsiniz."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Tebrikler! En yüksek hediye sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız."
       ],
@@ -10446,7 +10443,7 @@
         "İki adımlı doğrulama herkes için zorunlu olsun"
       ],
       "Reveal password": [
-        "Parolayı göster"
+        "Parolayı görüntüle"
       ],
       "Second password": [
         "İkinci parola"
@@ -11669,6 +11666,15 @@
       "1 user": [
         "1 kullanıcı"
       ],
+      "10 email addresses/aliases": [
+        "10 e-posta adresi/takma adı"
+      ],
+      "10-year file version history": [
+        "10 yıllık dosya sürümü geçmişi"
+      ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
       "24/7 account management support": [
         "7/24 hesap yönetimi desteği"
       ],
@@ -11785,6 +11791,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "E-posta istemcisi desteği (IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-posta grupları"
       ],
       "Enables HIPAA compliance": [
         "HIPAA uyumluluğu"
@@ -12036,6 +12045,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 özel e-posta etki alanı"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
       ],
@@ -12218,6 +12230,9 @@
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title } deneme"
       ],
+      "Get Mail Plus for ${ price }": [
+        "${ price } ile Mail Plus edinin"
+      ],
       "Your account's usage": [
         "Hesap kullanımınız"
       ]
@@ -12303,6 +12318,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Gruptaki herkese tek bir e-posta adresinden e-posta gönderin"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
@@ -14054,6 +14072,9 @@
       "Recovery phone number": [
         "Kurtarma telefon numarası"
       ],
+      "Review your account safety": [
+        "Hesabınızın güvenliğini değerlendirin"
+      ],
       "Safeguard account now": [
         "Hesabınızı koruyun"
       ],
@@ -15057,7 +15078,7 @@
         "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Aileler veya küçük ekipler için mükemmel. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
+        "Aileler veya küçük ekipler için kusursuz. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Gelecekte yayınlayacağımız tüm yeni gizlilik hizmetlerinin ücretli sürümlerine ve tüm özelliklere erkenden erişerek ek ücret ödemeden kullanın."

@@ -247,9 +247,6 @@
       "Get Started": [
         "Začíname"
       ],
-      "Help us improve": [
-        "Pomôžte nám zlepšiť sa"
-      ],
       "Hide": [
         "Skryť"
       ],
@@ -631,7 +628,7 @@
         "Dark web je skrytá časť internetu, kde sa dajú kúpiť a predať ukradnuté osobné údaje, ako napríklad identita."
       ],
       "These items remain at risk": [
-        "Tieto položky sú aj naďalej ohrozené"
+        "Tieto položky zostávajú ohrozené"
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Tento účet je zraniteľný. Navštívte službu a zmeňte si heslo."
@@ -1119,9 +1116,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Prístup k ${ PASS_APP_NAME } bude vyžadovať váš odtlačok prsta alebo PIN zariadenia."
       ],
-      "Add a username field": [
-        "Pridať pole mena používateľa"
-      ],
       "Add your custom email address to monitor :": [
         "Pridajte vašu vlastnú emailovú adresu na monitorovanie:"
       ],
@@ -1130,9 +1124,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspešnom importe údajov môžete z bezpečnostných dôvodov odstrániť CSV súbor obsahujúci vaše heslá."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" presunutý do koša – prestanú sa preposielať emaily do vašej poštovej schránky"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasy s vlastnými doménami nie sú monitorované, pridajte ich na monitorovanie ako vlastný email."
@@ -1202,9 +1193,6 @@
       ],
       "Change your password": [
         "Zmeňte si heslo"
-      ],
-      "Click here to add a field for a username.": [
-        "Kliknite sem pre pridanie poľa s používateľským menom"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Potvrdením dodatočného hesla pokračujte v jeho odstraňovaní."
@@ -2120,6 +2108,9 @@
       "Email address": [
         "Emailová adresa"
       ],
+      "Email or username": [
+        "Email alebo používateľské meno"
+      ],
       "Empty trash": [
         "Vyprázdniť kôš"
       ],
@@ -2680,9 +2671,6 @@
       "Enter email": [
         "Zadajte email"
       ],
-      "Enter email or username": [
-        "Zadajte email alebo používateľské meno"
-      ],
       "Enter password": [
         "Zadajte heslo"
       ],
@@ -3069,9 +3057,6 @@
       "Duplicated URL": [
         "Duplicitná URL"
       ],
-      "Email address is invalid": [
-        "Emailová adresa je neplatná"
-      ],
       "Field name is required": [
         "Názov poľa je povinný"
       ],
@@ -3103,9 +3088,6 @@
       ],
       "A description of the problem is required": [
         "Vyžaduje sa opis problému"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias \"${ name }\" sa momentálne používa v prihlasovacej položke \"${ relatedLoginName }\". Prestanete tiež prijímať emaily odoslané na \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Všetky položky v koši budú natrvalo odstránené. Túto akciu nie je možné vrátiť späť."
@@ -3247,9 +3229,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Preniesť vlastníctvo tohto trezora na ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Odstrániť alias?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Nemožno sa prihlásiť do ${ PASS_APP_NAME }. ${ additionalMessage }"

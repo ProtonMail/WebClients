@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe-Schreibassistent"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
       ],
@@ -1018,9 +1015,6 @@
       "Revert to original display": [
         "Zurück zur ursprünglichen Darstellung"
       ],
-      "Run on servers": [
-        "Auf Servern ausführen"
-      ],
       "Save": [
         "Speichern"
       ],
@@ -1239,6 +1233,10 @@
       ],
       "Trust": [
         "Vertrauen"
+      ],
+      "Trust key": [
+        "Schlüssel vertrauen",
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1555,9 +1553,6 @@
       ],
       "Run on device": [
         "Auf dem Gerät ausführen"
-      ],
-      "Run on servers": [
-        "Auf Servern ausführen"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Sicher auf ${ BRAND_NAME } Servern laufen"
@@ -6969,7 +6964,7 @@
         "Diese Nachricht wurde automatisch als Antwort auf eine vorherige Nachricht erzeugt."
       ],
       "This message is from a mailing list.": [
-        "Diese Nachricht wurde an eine Verteilerliste gesendet."
+        "Diese Nachricht wurde von einer Verteilerliste gesendet."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Diese Nachricht ist mit einem Schlüssel signiert, dem noch nicht vertraut wurde."
@@ -11112,7 +11107,7 @@
     },
     "Status": {
       "This message is from a mailing list.": [
-        "Diese Nachricht wurde an eine Verteilerliste gesendet."
+        "Diese Nachricht wurde von einer Verteilerliste gesendet."
       ],
       "Unsubscribed": [
         "Abbestellt"

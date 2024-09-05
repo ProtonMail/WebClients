@@ -181,6 +181,12 @@
       "Deselect": [
         "Deselectare"
       ],
+      "Disable instead": [
+        "Dezactivare"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Dezactivare acest alias pentru a opri primirea mesajelor trimise către acesta"
+      ],
       "Discard": [
         "Renunțare"
       ],
@@ -198,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Activare monitorizare pe internetul ascuns"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Activare acest alias pentru a primi mesajele trimise către acesta"
       ],
       "Entire vault": [
         "Întreg seiful"
@@ -246,9 +255,6 @@
       ],
       "Get Started": [
         "Începeți"
-      ],
-      "Help us improve": [
-        "Ajutați-ne să se îmbunătățim"
       ],
       "Hide": [
         "Ascundere"
@@ -496,6 +502,9 @@
       "Submitting report...": [
         "Se trimite raportul…"
       ],
+      "Sync aliases": [
+        "Sincronizare aliasuri"
+      ],
       "Transfer ownership": [
         "Transfer proprietar"
       ],
@@ -655,6 +664,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } nu a putut fi analizat. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Aliasurile nu au putut fi actualizate momentan. Reîncercați mai târziu."
+      ],
       "Alias options could not be resolved": [
         "Opțiunile pentru alias nu au putu fi rezolvate."
       ],
@@ -778,6 +790,9 @@
       ],
       "Failed to restore items from trash": [
         "Restaurarea articolelor din gunoi a eșuat."
+      ],
+      "Failed to sync aliases": [
+        "Sincronizarea aliasurilor a eșuat."
       ],
       "Failed to transfer this vault's ownership.": [
         "Eșuare transfer proprietar pentru acest seif."
@@ -1105,9 +1120,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "Accesul la ${ PASS_APP_NAME } va necesita amprenta digitală sau codul PIN al dispozitivului."
       ],
-      "Add a username field": [
-        "Adăugare câmp nume utilizator"
-      ],
       "Add your custom email address to monitor :": [
         "Adăugați-vă adresa personală la monitorizare:"
       ],
@@ -1117,11 +1129,26 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "După reușirea importării datelor, puteți șterge fișierul CSV care conține parolele pentru a vă păstra securitatea."
       ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Aliasul „${ item.aliasEmail }” a fost mutat în gunoi - nu va mai redirecționa mesajele către adresa principală de e-mail."
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Aliasul a fost dezactivat. Nu veți mai primi mesaje trimise către ${ item.aliasEmail }."
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Aliasul a fost activat. Acum veți primi mesaje trimise către ${ item.aliasEmail }."
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Sincronizarea aliasurilor dintre ${ BRAND_NAME } și SimpleLogin este activată."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Aliasurile din gunoi vor continua să redirecționeze mesajele primite. Dacă doriți să nu mai primiți mesaje la această adresă, dezactivați-o."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Aliasuri nesincronizate (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasurile cu domenii personale nu sunt monitorizate. Adăugați-le ca e-mail personal pentru monitorizare."
+      ],
+      "All aliases are synced": [
+        "Toate aliasurile sunt sincronizate"
       ],
       "All breaches for this address were resolved": [
         "Toate divulgările pentru această adresă s-au rezolvat."
@@ -1188,9 +1215,6 @@
       ],
       "Change your password": [
         "Schimbare parolă"
-      ],
-      "Click here to add a field for a username.": [
-        "Faceți clic aici pentru a adăuga un câmp pentru nume de utilizator."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmați parola suplimentară pentru a continua eliminarea sa."
@@ -1802,8 +1826,16 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Există probleme la sincronizarea datelor cu stocarea locală. Asigurați-vă că aveți suficient spațiu pe disc pentru ca ${ PASS_SHORT_APP_NAME } să funcționeze fără probleme."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Am detectat că aveți ${ aliasCount } alias care există în SimpleLogin, dar lipsește în ${ PASS_APP_NAME }. Doriți să-l importați?",
+        "Am detectat că aveți ${ aliasCount } aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?",
+        "Am detectat că aveți ${ aliasCount } de aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Vi s-a trimis un cod de verificare la ${ email }. Introduceți codul primit mai jos:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Când creați/editați date de autentificare în ${ PASS_APP_NAME } câmpul „nume utilizator” va fi întotdeauna vizibil."
       ],
       "You are about to create:": [
         "Sunteți pe cale să creați:"
@@ -1872,6 +1904,11 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliasuri",
+        "${ aliasCount } de aliasuri"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } caracter",
         "${ config.options.length } caractere",
@@ -1980,6 +2017,9 @@
       "Alphabetical": [
         "Alfabetic"
       ],
+      "Always show username field": [
+        "Afișare permanentă câmp nume utilizator"
+      ],
       "Application logs": [
         "Jurnale aplicație"
       ],
@@ -2079,6 +2119,9 @@
       "Domain": [
         "Domeniu"
       ],
+      "Don't remind me again": [
+        "Nu-mi mai reaminti"
+      ],
       "Download logs": [
         "Descărcare jurnale"
       ],
@@ -2094,11 +2137,17 @@
       "Email address": [
         "Adresă e-mail"
       ],
+      "Email or username": [
+        "E-mail sau utilizator"
+      ],
       "Empty trash": [
         "Golire «Gunoi»"
       ],
       "Enable offline access": [
         "Activare acces deconectat"
+      ],
+      "Enter email or username": [
+        "Introduceți e-mail sau utilizator"
       ],
       "Expiration date": [
         "Dată expirare"
@@ -2400,6 +2449,9 @@
       "Select preferred language": [
         "Selectați limba preferată"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Selectați seiful unde să fie importate aliasurile SimpleLogin"
+      ],
       "Select your password manager": [
         "Selectare manager de parole"
       ],
@@ -2447,6 +2499,9 @@
       ],
       "Support": [
         "Asistență"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Sincronizare aliasuri cu SimpleLogin"
       ],
       "Tax number": [
         "Număr identificare fiscală"
@@ -2652,9 +2707,6 @@
       "Enter email": [
         "Introduceți adresa de e-mail"
       ],
-      "Enter email or username": [
-        "Introduceți e-mail sau utilizator"
-      ],
       "Enter password": [
         "Introduceți parola"
       ],
@@ -2734,6 +2786,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Sincronizarea aliasurilor s-a activat. Sincronizarea aliasurilor SimpleLogin ar putea dura ceva timp."
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizator.",
         "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizatori.",
@@ -2983,6 +3038,9 @@
       "Suggestions": [
         "Sugestii"
       ],
+      "Sync alias": [
+        "Sincronizare alias"
+      ],
       "Transfer ownership": [
         "Transfer proprietar"
       ],
@@ -3039,9 +3097,6 @@
       "Duplicated URL": [
         "Adresă URL duplicată."
       ],
-      "Email address is invalid": [
-        "Adresa de e-mail nu este validă."
-      ],
       "Field name is required": [
         "Numele câmpului este obligatoriu."
       ],
@@ -3073,9 +3128,6 @@
       ],
       "A description of the problem is required": [
         "Este necesară o descriere a problemei."
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Aliasul „${ name }” este utilizat în prezent în articolul de conectare „${ relatedLoginName }”. De asemenea, nu veți primi mesaje trimise la „${ aliasEmail }”"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Toate articolele trimise în gunoi vor fi șterse definitiv. Nu puteți anula această acțiune."
@@ -3151,6 +3203,9 @@
       "Missing alias suffix": [
         "Lipsește sufixul aliasului."
       ],
+      "Move to trash": [
+        "Mutare în gunoi"
+      ],
       "No items": [
         "Nu există articole."
       ],
@@ -3205,6 +3260,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Prefixul aliasului nu poate fi mai lung de 40 de caractere."
       ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Acest alias „${ aliasEmail }” este folosit acum la conectarea cu „${ relatedLoginName }”."
+      ],
       "This email address will no longer be monitored for data breaches.": [
         "Această adresă de e-mail nu va mai fi monitorizată pentru divulgări."
       ],
@@ -3216,9 +3274,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transferați proprietatea acestui seif către ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Trimiteți la gunoi aliasul?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Nu se poate conecta la ${ PASS_APP_NAME }. ${ additionalMessage }"

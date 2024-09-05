@@ -182,6 +182,9 @@
       "Disable autosave on this website": [
         "Wyłącz automatyczne zapisywanie na tej stronie"
       ],
+      "Disable instead": [
+        "Wyłącz"
+      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -247,9 +250,6 @@
       ],
       "Get Pass Plus": [
         "Wybierz plan Pass Plus"
-      ],
-      "Help us improve": [
-        "Pomóż nam ulepszyć usługę"
       ],
       "Hide": [
         "Ukryj"
@@ -1106,17 +1106,11 @@
       "Access your passwords on the go with our mobile apps.": [
         "Dostęp do haseł z aplikacji mobilnej."
       ],
-      "Add a username field": [
-        "Dodaj pole nazwy użytkownika"
-      ],
       "Admin": [
         "Administrator"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" został przeniesiony do Kosza. Spowoduje to zatrzymanie przekierowywania wiadomości"
       ],
       "All breaches for this address were resolved": [
         "Wszystkie wycieki dla tego adresu zostały oznaczone jako rozwiązane"
@@ -1180,9 +1174,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Wybierz zapisany klucz dostępu, aby zalogować się do ${ domain }"
-      ],
-      "Click here to add a field for a username.": [
-        "Kliknij, aby dodać pole nazwy użytkownika."
       ],
       "Click the icon to open it anytime.": [
         "Kliknij ikonę, aby otworzyć."
@@ -1864,6 +1855,12 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliasy",
+        "${ aliasCount } aliasów",
+        "${ aliasCount } aliasów"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } znak",
         "${ config.options.length } znaki",
@@ -2112,6 +2109,9 @@
       ],
       "Email aliases": [
         "Aliasy"
+      ],
+      "Email or username": [
+        "Adres e-mail lub nazwa użytkownika"
       ],
       "Empty trash": [
         "Opróżnij Kosz"
@@ -2646,9 +2646,6 @@
       "Enter email": [
         "Wpisz adres e-mail"
       ],
-      "Enter email or username": [
-        "Wpisz adres e-mail lub nazwę użytkownika"
-      ],
       "Enter password": [
         "Wpisz hasło"
       ],
@@ -2893,6 +2890,9 @@
       "Switching to ${ PASS_APP_NAME }?": [
         "Przechodzisz na ${ PASS_APP_NAME }?"
       ],
+      "Sync alias": [
+        "Synchronizuj alias"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Dziękujemy za instalację ${ PASS_APP_NAME }"
       ],
@@ -2946,9 +2946,6 @@
       "Duplicated URL": [
         "Adres URL został zduplikowany"
       ],
-      "Email address is invalid": [
-        "Adres e-mail jest nieprawidłowy"
-      ],
       "Field name is required": [
         "Nazwa pola jest wymagana"
       ],
@@ -2980,9 +2977,6 @@
       ],
       "A description of the problem is required": [
         "Opis problemu jest wymagany"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias \"${ name }\" jest obecnie używany w danych logowania \"${ relatedLoginName }\". Przestaniesz otrzymywać wiadomości wysyłane na \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Wszystkie elementy zostaną trwale usunięte. Tej akcji nie można cofnąć."
@@ -3100,9 +3094,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Zmienić właściciela sejfu na ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Usunąć alias?"
       ],
       "Unable to save": [
         "Nie można zapisać"
