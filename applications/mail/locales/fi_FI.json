@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe kirjoitusavustaja"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-kauppa"
       ],
@@ -1018,9 +1015,6 @@
       "Revert to original display": [
         "Palauta alkuperäinen näkymä"
       ],
-      "Run on servers": [
-        "Suorita palvelimilla"
-      ],
       "Save": [
         "Tallenna"
       ],
@@ -1239,6 +1233,10 @@
       ],
       "Trust": [
         "Luota"
+      ],
+      "Trust key": [
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -1555,9 +1553,6 @@
       ],
       "Run on device": [
         "Suorita laitteella"
-      ],
-      "Run on servers": [
-        "Suorita palvelimilla"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Turvallisesti ${ BRAND_NAME } palvelimilla"

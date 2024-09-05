@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Asisten penulisan ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
       ],
@@ -1014,9 +1011,6 @@
       "Revert to original display": [
         "Kembalikan ke mode tampilan semula"
       ],
-      "Run on servers": [
-        "Jalankan pada server"
-      ],
       "Save": [
         "Simpan"
       ],
@@ -1235,6 +1229,9 @@
       ],
       "Trust": [
         "Percayai"
+      ],
+      "Trust key": [
+        "Percayai kunci"
       ],
       "Trust public key": [
         "Percayai kunci publik"
@@ -1546,9 +1543,6 @@
       ],
       "Run on device": [
         "Jalankan pada perangkat"
-      ],
-      "Run on servers": [
-        "Jalankan pada server"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Jalankan secara aman di server ${ BRAND_NAME }"
