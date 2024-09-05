@@ -649,12 +649,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Spróbuj zapisać ponownie. Zapisanie nie powiodło się: ${ saveError }"
       ],
-      "Turn off": [
-        "Wyłącz"
-      ],
-      "Turn on": [
-        "Włącz"
-      ],
       "Unlock": [
         "Odblokuj"
       ],
@@ -10416,6 +10410,9 @@
       "Admins can't access the data of private users and can't reset their password.": [
         "Administratorzy nie mają dostępu do danych prywatnych użytkowników i nie mogą zresetować ich haseł."
       ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Ustawiając użytkownika jako prywatnego, nie będziesz w stanie pomóc mu odzyskać dostępu do jego danych lub konta."
+      ],
       "Delete request": [
         "Usuń żądanie"
       ],
@@ -10427,6 +10424,9 @@
       ],
       "Organization key must be activated to request data access": [
         "Musisz aktywować klucz organizacji, aby uzyskać dostęp do danych"
+      ],
+      "Pending admin access": [
+        "Oczekiwanie na dostęp administratora"
       ],
       "Request to manage account sent, awaiting user approval": [
         "Żądanie do zarządzania kontem zostało wysłane. Oczekiwanie na jego zaakceptowanie"
@@ -10442,6 +10442,9 @@
       ],
       "Send request": [
         "Wyślij żądanie"
+      ],
+      "The user must have an address to request data access": [
+        "Użytkownik musi mieć adres, aby żądać dostępu do danych"
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Spowoduje to unieważnienie dostępu administratora do zarządzania kontem użytkownika."

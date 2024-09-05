@@ -649,12 +649,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Réessayez d'enregistrer. L'enregistrement n'a pas abouti pour la raison suivante : ${ saveError }"
       ],
-      "Turn off": [
-        "Désactiver"
-      ],
-      "Turn on": [
-        "Activer"
-      ],
       "Unlock": [
         "Déverrouiller"
       ],
@@ -3702,6 +3696,9 @@
         "Suppression de ${ deletedServerCount } serveur de Passerelle",
         "Suppression de ${ deletedServerCount } serveurs de Passerelle"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Désactivation depuis ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "La désactivation de l'authentification à deux facteurs rendra votre compte moins sécurisé. Ne procédez que si c'est absolument nécessaire."
       ],
@@ -3783,6 +3780,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Activez l'authentification unique afin d'assurer la sécurité de votre organisation."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Activation depuis ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "L'URL des points de terminaison reçue de votre fournisseur d'identité (par ex. https://idp.exemple.fr/sso/saml)."
