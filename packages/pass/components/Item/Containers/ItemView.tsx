@@ -2,7 +2,7 @@ import { type FC, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
-import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
+import { useInviteContext } from '@proton/pass/components/Invite/InviteContext';
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
 import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
@@ -10,7 +10,7 @@ import { IdentityView } from '@proton/pass/components/Item/Identity/Identity.vie
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
-import { useItemRoute } from '@proton/pass/components/Navigation/ItemSwitch';
+import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getItemRoute, getLocalPath, maybeTrash, subPath } from '@proton/pass/components/Navigation/routing';
 import { SecureLinkModal } from '@proton/pass/components/SecureLink/SecureLinkModal';

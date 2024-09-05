@@ -13,8 +13,8 @@ import { MAX_PASSWORD_HISTORY_RETENTION_WEEKS } from '@proton/pass/constants';
 import { selectPasswordHistory } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
+import { usePasswordContext } from './PasswordContext';
 import { PasswordHistoryItem } from './PasswordHistoryItem';
-import { usePasswordContext } from './PasswordProvider';
 
 export const PasswordHistoryModal: FC<ModalProps> = (props) => {
     const passwordContext = usePasswordContext();

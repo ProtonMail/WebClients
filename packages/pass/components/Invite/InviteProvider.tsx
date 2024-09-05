@@ -1,38 +1,16 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
 import type { MaybeNull } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
-import noop from '@proton/utils/noop';
 
+import { InviteContext, type InviteContextValue } from './InviteContext';
 import { VaultAccessManager } from './VaultAccessManager';
 import { VaultInviteCreate, type VaultInviteCreateValues } from './VaultInviteCreate';
 import { VaultInviteRespond } from './VaultInviteRespond';
-
-export type InviteContextValue = {
-    latestInvite: MaybeNull<Invite>;
-    close: () => void;
-    createInvite: (props: VaultInviteCreateValues<false>) => void;
-    createSharedVault: (props: VaultInviteCreateValues<true>) => void;
-    manageAccess: (shareId: string) => void;
-    onInviteResponse: () => void;
-    onShareDisabled: (disabledShareId: string) => void;
-    respondToInvite: (invite: Invite) => void;
-};
-
-const InviteContext = createContext<InviteContextValue>({
-    latestInvite: null,
-    close: noop,
-    createInvite: noop,
-    createSharedVault: noop,
-    manageAccess: noop,
-    onInviteResponse: noop,
-    onShareDisabled: noop,
-    respondToInvite: noop,
-});
 
 type InviteContextState =
     | ({ view: 'invite' } & VaultInviteCreateValues<false>)
@@ -115,5 +93,3 @@ export const InviteProvider: FC<PropsWithChildren> = ({ children }) => {
         </InviteContext.Provider>
     );
 };
-
-export const useInviteContext = () => useContext(InviteContext);
