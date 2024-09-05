@@ -357,11 +357,11 @@
       "Get link": [
         "取得連結"
       ],
-      "Get started": [
-        "開始使用"
-      ],
       "Get Started": [
         "入門指南"
+      ],
+      "Get started": [
+        "開始使用"
       ],
       "Get verification code": [
         "取得驗證碼"
@@ -440,6 +440,9 @@
       ],
       "Learn more": [
         "瞭解詳情"
+      ],
+      "Leave": [
+        "離開"
       ],
       "Let's talk": [
         "我們一起聊聊！"
@@ -528,11 +531,11 @@
       "Not now": [
         "現在不要"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open": [
         "開啟"
@@ -4571,9 +4574,6 @@
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "僅允許 ${ MAX_CUSTOM_PASSWORD_LENGTH } 個字元"
       ],
-      "Only the owner of the share will be able to invite you again.": [
-        "只有這個共享資料的擁有人能再次邀請您"
-      ],
       "Only the people with the link and the password can access this file.": [
         "僅同時擁有連結與密碼的人才能存取此檔案。"
       ],
@@ -5230,9 +5230,6 @@
       ],
       "You will lose all unsaved changes.": [
         "您所有未儲存的變更將會消失。"
-      ],
-      "You will not be able to join again after.": [
-        "你稍後將無法重新加入"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
@@ -6716,6 +6713,9 @@
       "Priority support & live chat": [
         "優先支援與即時真人對話"
       ],
+      "Proofread and refine your emails": [
+        "校閱與修飾你的電子郵件"
+      ],
       "Protect ${ n } device at a time": [
         "同時保護 ${ n } 台裝置"
       ],
@@ -6995,6 +6995,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "輕鬆與您的家人、好友或同事分享您的行事曆"
+      ],
+      "Email everyone in a group with a single email address": [
+        "使用一個電子郵件地址給群組中的每位使用者"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "確保您接收所有傳送至您的網域的電子郵件，即使電子郵件位址並不存在、不復存在，或是拼寫有誤"
@@ -8516,6 +8519,9 @@
       "${ planName } gives you unlimited privacy and more storage for up to 2 people.": [
         "${ planName }提供無限隱私及更多儲存給至多兩人。"
       ],
+      "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, and files. You are also eligible for yearly storage bonuses.": [
+        "${ planName } 提供每位使用者 ${ planMaxSpace } 儲存空間用於電子郵件、其附件、行事曆與檔案。您還有資格獲得年度儲存空間獎勵。"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } 方案"
       ],
@@ -8540,6 +8546,9 @@
       "Add any new files": [
         "新增任何檔案"
       ],
+      "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "在 ${ planName } 訂閱過期後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
+      ],
       "All you need for your business": [
         "這是您公司只須要的"
       ],
@@ -8548,6 +8557,9 @@
       ],
       "Automatic email forwarding": [
         "自動郵件轉寄"
+      ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "為您的品牌建立可信與具識別性的專業電子郵件地址，使用你的專屬網域。"
       ],
       "Calendar sharing": [
         "行事曆分享"
@@ -8638,6 +8650,9 @@
       ],
       "Watch the interview": [
         "瀏覽訪談"
+      ],
+      "When you cancel ${ planName }, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. Your team will experience interruptions in their work since additional users are not supported on the free plan.": [
+        "當你取消 ${ planName } 後，您將會被降級至 ${ BRAND_NAME } 免費方案，提供最多 1GB 信箱與 5GB Drive 儲存空間。您的團隊將面臨業務中斷，因為免費方案不支援額外的使用者。"
       ],
       "Yearly free storage bonuses": [
         "年度免費儲存加成"
@@ -8996,9 +9011,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "您確定要關閉預覽嗎？"
-      ],
-      "Are you sure you want to leave this share?": [
-        "您確定您要繼續此分享？"
       ],
       "Billing cycle": [
         "繳款單週期"
