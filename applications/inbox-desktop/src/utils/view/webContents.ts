@@ -20,8 +20,8 @@ import {
     resetHiddenViews,
     getZoom,
     showView,
-    NET_ERROR_CODE,
     showErrorPage,
+    IGNORED_NET_ERROR_CODES,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
 import { mainLogger, viewLogger } from "../log";
@@ -99,7 +99,7 @@ export function handleWebContents(contents: WebContents) {
             return;
         }
 
-        if (errorCode === NET_ERROR_CODE.CONNECTION_REFUSED) {
+        if (!IGNORED_NET_ERROR_CODES.includes(errorCode)) {
             const viewName = getWebContentsViewName(contents);
             if (viewName) showErrorPage(viewName);
         }
