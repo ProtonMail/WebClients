@@ -9,6 +9,7 @@ export enum TelemetryEventName {
     AutosaveDisplay = 'autosave.display',
     AutosaveDone = 'autosave.done',
     AutosuggestAliasCreated = 'autosuggest.alias_created',
+    ErrorResumingSession = 'error.resuming_session',
     ImportCompletion = 'import.complete',
     ItemCreation = 'item.creation',
     ItemDeletion = 'item.deletion',
@@ -59,6 +60,7 @@ type ImportDimensions = { source: ImportProvider };
 type ItemDimensions = { type: TelemetryItemType };
 type AutofillDimensions = { location: 'source' | 'app' };
 type SettingValues = { checked: boolean };
+type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: boolean };
 
 type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.AutofillDisplay, {}, AutofillDimensions>
@@ -66,6 +68,7 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.AutosaveDisplay>
     | BaseTelemetryEvent<TelemetryEventName.AutosaveDone>
     | BaseTelemetryEvent<TelemetryEventName.AutosuggestAliasCreated>
+    | BaseTelemetryEvent<TelemetryEventName.ErrorResumingSession, {}, ErrorResumingSessionDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ImportCompletion, ImportValues, ImportDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ItemCreation, {}, ItemDimensions>
     | BaseTelemetryEvent<TelemetryEventName.ItemDeletion, {}, ItemDimensions>
