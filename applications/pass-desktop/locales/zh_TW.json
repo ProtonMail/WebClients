@@ -193,9 +193,6 @@
       "Get Started": [
         "入門指南"
       ],
-      "Help us improve": [
-        "幫助我們改善"
-      ],
       "Hide": [
         "隱藏"
       ],
@@ -856,9 +853,6 @@
       "Admin": [
         "管理員"
       ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "別名${ item.aliasEmail }移至垃圾桶 - 將會停止轉寄電子郵件到信箱"
-      ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "全部保管庫${ payload.content.name }已成功移動"
       ],
@@ -1473,6 +1467,9 @@
       "Email address": [
         "電郵位址"
       ],
+      "Email or username": [
+        "電郵位址或使用者名稱"
+      ],
       "Empty trash": [
         "清空垃圾桶"
       ],
@@ -1921,9 +1918,6 @@
       "Enter a prefix": [
         "輸入前綴"
       ],
-      "Enter email or username": [
-        "輸入您的電子信箱或使用者名稱"
-      ],
       "Enter password": [
         "輸入密碼"
       ],
@@ -2271,9 +2265,6 @@
       "Duplicated URL": [
         "複製網址"
       ],
-      "Email address is invalid": [
-        "電子郵件位址無效"
-      ],
       "Field name is required": [
         "欄位名稱必填"
       ],
@@ -2299,9 +2290,6 @@
     "Warning": {
       "A description of the problem is required": [
         "需要解釋錯誤"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "別名${ name }目前使用於登入項目${ relatedLoginName }。您將停止收到寄至${ aliasEmail }的電子郵件"
       ],
       "An error occured while exporting your data": [
         "匯出資料時發生錯誤"
@@ -2395,9 +2383,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "轉移此保管庫擁有權給 ${ email }？"
-      ],
-      "Trash alias ?": [
-        "刪除別名?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "無法登入至${ PASS_APP_NAME }。${ additionalMessage }"
