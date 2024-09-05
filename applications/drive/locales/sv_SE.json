@@ -381,10 +381,10 @@
       "Get link": [
         "Få länk"
       ],
-      "Get started": [
+      "Get Started": [
         "Kom igång"
       ],
-      "Get Started": [
+      "Get started": [
         "Kom igång"
       ],
       "Get verification code": [
@@ -464,6 +464,9 @@
       ],
       "Learn more": [
         "Lär dig mer"
+      ],
+      "Leave": [
+        "Lämna"
       ],
       "Let's talk": [
         "Låt oss prata!"
@@ -552,11 +555,11 @@
       "Not now": [
         "Inte nu"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Öppna"
@@ -4710,9 +4713,6 @@
         "Endast ${ MAX_CUSTOM_PASSWORD_LENGTH } tecken är tillåtet",
         "Endast ${ MAX_CUSTOM_PASSWORD_LENGTH } tecken är tillåtna"
       ],
-      "Only the owner of the share will be able to invite you again.": [
-        "Endast ägaren av delningen kommer att kunna bjuda in dig igen."
-      ],
       "Only the people with the link and the password can access this file.": [
         "Endast personer med länken och lösenordet kan komma åt denna fil."
       ],
@@ -5384,9 +5384,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Du kommer att förlora alla osparade ändringar."
-      ],
-      "You will not be able to join again after.": [
-        "Du kommer inte att kunna gå med igen efter."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
@@ -6680,6 +6677,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } och ${ PROTON_SENTINEL_NAME }"
       ],
@@ -6780,6 +6780,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-postadresser/alias"
+      ],
+      "10-year file version history": [
+        "10-års filversionshistorik"
       ],
       "15 GB storage": [
         "15 GB lagringsutrymme"
@@ -6964,6 +6967,9 @@
       ],
       "Priority support & live chat": [
         "Prioriterad support och livechatt"
+      ],
+      "Proofread and refine your emails": [
+        "Korrekturläs och finjustera din e-post"
       ],
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
@@ -9565,9 +9571,6 @@
       "Are you sure you want to close the preview?": [
         "Är du säker på att du vill stänga förhandsgranskningen?"
       ],
-      "Are you sure you want to leave this share?": [
-        "Är du säker på att du vill lämna denna delning?"
-      ],
       "Billing cycle": [
         "Faktureringscykel"
       ],
@@ -10139,6 +10142,9 @@
       ]
     },
     "Tooltip": {
+      "Add this shared file to your ${ DRIVE_APP_NAME } for easy access later.": [
+        "Lägg till denna delade fil på din ${ DRIVE_APP_NAME } för enkel åtkomst senare."
+      ],
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
         "Indikerar automatisk att formatet i skrivfönstret används för att skicka till denna användare. Oformaterad text indikerar att meddelandet alltid kommer att konverteras till oformaterad text vid sändning."
       ],
