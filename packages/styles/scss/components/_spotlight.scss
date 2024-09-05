@@ -6,11 +6,6 @@
 
 	position: fixed;
 	z-index: map.get($z-indexes, 'spotlights');
-
-	&--is-above-modal {
-		z-index: calc(#{map.get($z-indexes, 'modals')} + 1);
-	}
-
 	min-inline-size: 10em;
 	max-inline-size: 25em;
 	transform: scale(1);
@@ -21,6 +16,10 @@
 	text-align: start;
 	word-break: break-word;
 	animation: 0.15s ease-out both anime-spotlight-in;
+
+	&--is-above-modal {
+		z-index: calc(#{map.get($z-indexes, 'modals')} + 1);
+	}
 
 	@keyframes anime-spotlight-in {
 		from {
