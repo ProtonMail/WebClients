@@ -48,10 +48,13 @@ let mainWindow: undefined | BrowserWindow = undefined;
  * @see https://www.electronjs.org/docs/latest/api/web-contents#event-did-fail-load
  * @see https://source.chromium.org/chromium/chromium/src/+/main:net/base/net_error_list.h
  */
-const IGNORED_NET_ERROR_CODES = [
-    -3, // ABORTED
-    -300, // INVALID_URL
-];
+export const NET_ERROR_CODE = {
+    ABORTED: -3,
+    CONNECTION_REFUSED: -102,
+    INVALID_URL: -300,
+};
+
+const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED, NET_ERROR_CODE.INVALID_URL];
 
 export const viewCreationAppStartup = (session: Session) => {
     mainWindow = createBrowserWindow(session);
@@ -350,6 +353,25 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
 
     await loadingViewMap[viewID];
     return;
+}
+
+export async function showErrorPage(viewID: ViewID): Promise<void> {
+    const view = browserViewMap[viewID];
+
+    if (!view) {
+        viewLogger(viewID).warn("cannot show error page, view is null");
+        return;
+    }
+
+    await view.webContents.loadFile(join(app.getAppPath(), "assets/error/error.html"), {
+        query: {
+            theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+            title: c("error screen").t`Something went wrong`,
+            description: c("error screen").t`Please restart the application or try again later.`,
+            button: c("error screen").t`Restart the application`,
+            buttonTarget: getConfig().url[viewID],
+        },
+    });
 }
 
 async function showLoadingPage(viewID: ViewID): Promise<void> {
