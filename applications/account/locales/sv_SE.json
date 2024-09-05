@@ -1120,12 +1120,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Försök att spara igen. Det gick inte att spara på grund av: ${ saveError }"
       ],
-      "Turn off": [
-        "Stäng av"
-      ],
-      "Turn on": [
-        "Slå på"
-      ],
       "Underline": [
         "Understruken"
       ],
@@ -1471,9 +1465,6 @@
       ],
       "Run on device": [
         "Kör på enhet"
-      ],
-      "Run on servers": [
-        "Kör på servrar"
       ]
     },
     "Assistant toggle": {
@@ -11504,6 +11495,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } och ${ PROTON_SENTINEL_NAME }"
       ],
@@ -11604,6 +11598,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-postadresser/alias"
+      ],
+      "10-year file version history": [
+        "10-års filversionshistorik"
       ],
       "15 GB storage": [
         "15 GB lagringsutrymme"
@@ -11812,6 +11809,9 @@
       ],
       "Priority support & live chat": [
         "Prioriterad support och livechatt"
+      ],
+      "Proofread and refine your emails": [
+        "Korrekturläs och finjustera din e-post"
       ],
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
@@ -17458,6 +17458,9 @@
       "Feature in early access": [
         "Funktion i förhandstillgång"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "Få produktivitets- och säkerhetstips som hjälper dig att få ut det mesta av ${ MAIL_APP_NAME } och mer."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserar automatiskt vissa e-postmeddelanden som sociala eller kampanjer. Du kan välja var du vill importera dessa e-postmeddelanden till."
       ],
@@ -17697,6 +17700,9 @@
       ],
       "reject": [
         "avvisa"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Begäran att hantera konto skickat, inväntar användargodkännande"
       ],
       "Request user permission for data access": [
         "Begär användarbehörighet för dataåtkomst"

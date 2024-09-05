@@ -241,9 +241,6 @@
       "Get Started": [
         "Начать"
       ],
-      "Help us improve": [
-        "Помогите нам совершенствоваться"
-      ],
       "Hide": [
         "Скрыть"
       ],
@@ -1146,9 +1143,6 @@
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Для доступа к ${ PASS_APP_NAME } всегда потребуется ваш пароль ${ BRAND_NAME }."
       ],
-      "Add a username field": [
-        "Добавить поле имени пользователя"
-      ],
       "Add your custom email address to monitor :": [
         "Добавьте свой пользовательский адрес электронной почты для мониторинга:"
       ],
@@ -1157,9 +1151,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "После успешного импорта данных вы можете удалить файл CSV, содержащий ваши пароли, для безопасности."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Псевдоним \"${ item.aliasEmail }\" перемещен в корзину - это остановит пересылку писем в ваш почтовый ящик"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Псевдонимы с пользовательскими доменами не отслеживаются, добавьте их в качестве пользовательского электронного адреса для мониторинга."
@@ -1223,9 +1214,6 @@
       ],
       "Change your password": [
         "Измените пароль"
-      ],
-      "Click here to add a field for a username.": [
-        "Нажмите здесь, чтобы добавить поле для имени пользователя."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Подтвердите дополнительный пароль, чтобы продолжить его удаление."
@@ -2084,6 +2072,9 @@
       "Email address": [
         "Адрес эл. почты"
       ],
+      "Email or username": [
+        "Эл. почта или имя пользователя"
+      ],
       "Empty trash": [
         "Очистить корзину"
       ],
@@ -2143,6 +2134,12 @@
       ],
       "Hide password": [
         "Скрыть пароль"
+      ],
+      "ID Card": [
+        "ID-карта"
+      ],
+      "ID Card number": [
+        "Номер ID-карты"
       ],
       "Identities": [
         "Личные данные"
@@ -2209,6 +2206,9 @@
       ],
       "Learn more": [
         "Подробнее"
+      ],
+      "License": [
+        "Лицензия"
       ],
       "License number": [
         "Номер лицензии"
@@ -2297,6 +2297,9 @@
       "Passphrase": [
         "Кодовая фраза"
       ],
+      "Passport": [
+        "Паспорт"
+      ],
       "Passport number": [
         "Номер паспорта"
       ],
@@ -2381,6 +2384,9 @@
       "Show website favicons": [
         "Показать значки сайтов"
       ],
+      "Social security": [
+        "Социальное страхование"
+      ],
       "Social security number": [
         "Номер социального страхования"
       ],
@@ -2407,6 +2413,9 @@
       ],
       "Support": [
         "Поддержка"
+      ],
+      "Tax number": [
+        "Налоговый номер"
       ],
       "Text": [
         "Текст"
@@ -2615,9 +2624,6 @@
       ],
       "Enter email": [
         "Введите адрес электронной почты"
-      ],
-      "Enter email or username": [
-        "Введите эл. почту или имя пользователя"
       ],
       "Enter password": [
         "Введите пароль"
@@ -2996,9 +3002,6 @@
       "Duplicated URL": [
         "Дублированный URL"
       ],
-      "Email address is invalid": [
-        "Недействительный адрес эл. почты"
-      ],
       "Field name is required": [
         "Имя поля является обязательным"
       ],
@@ -3024,9 +3027,6 @@
     "Warning": {
       "A description of the problem is required": [
         "Требуется описание проблемы"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Псевдоним \"${ name }\" в настоящее время используется в элементе входа \"${ relatedLoginName }\". Вы также перестанете получать электронные письма, отправленные на \"${ aliasEmail }\"."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Все ваши объекты, попавшие в корзину, будут удалены безвозвратно. Отменить это действие невозможно."
@@ -3165,9 +3165,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transfer ownership of this vault to ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Переместить псевдоним в корзину?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Не могу войти в ${ PASS_APP_NAME }. ${ additionalMessage }"

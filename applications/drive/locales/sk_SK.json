@@ -387,10 +387,10 @@
       "Get link": [
         "Získať odkaz"
       ],
-      "Get started": [
+      "Get Started": [
         "Začíname"
       ],
-      "Get Started": [
+      "Get started": [
         "Začíname"
       ],
       "Get verification code": [
@@ -470,6 +470,9 @@
       ],
       "Learn more": [
         "Zistiť viac"
+      ],
+      "Leave": [
+        "Opustiť"
       ],
       "Let's talk": [
         "Porozprávajme sa"
@@ -558,11 +561,11 @@
       "Not now": [
         "Teraz nie"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open": [
         "Otvoriť"
@@ -4864,9 +4867,6 @@
         "Iba ${ MAX_CUSTOM_PASSWORD_LENGTH } znakov je povolených",
         "Iba ${ MAX_CUSTOM_PASSWORD_LENGTH } znakov je povolených"
       ],
-      "Only the owner of the share will be able to invite you again.": [
-        "Opätovne vás bude môcť pozvať len vlastník zdieľaného priestoru."
-      ],
       "Only the people with the link and the password can access this file.": [
         "Iba ľudia s odkazom a heslom majú prístup k tomuto súboru."
       ],
@@ -5553,9 +5553,6 @@
       ],
       "You will lose all unsaved changes.": [
         "Stratíte všetky neuložené zmeny."
-      ],
-      "You will not be able to join again after.": [
-        "Potom sa už nebudete môcť pripojiť."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelom overenia platby budete presmerovaný na PayPal."
@@ -6938,7 +6935,7 @@
         "${ textType } - Pre ${ DRIVE_APP_NAME }"
       ],
       "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pre všetky služby ${ BRAND_NAME }"
+        "${ textType } - Pre všetky ${ BRAND_NAME } služby"
       ],
       "1 TB secure storage": [
         "1 TB bezpečného úložiska"
@@ -6950,7 +6947,7 @@
         "10 emailových adries/aliasov"
       ],
       "10-year file version history": [
-        "-ročná história verzií súborov"
+        "10-ročná história verzií súborov"
       ],
       "15 GB storage": [
         "15 GB úložisko"
@@ -7190,7 +7187,7 @@
         "Odosielanie a prijímanie pozvánok"
       ],
       "Share files with no size limit": [
-        "Zdieľanie súborov bez obmedzenia na ich veľkosť"
+        "Zdieľanie súborov bez obmedzenia veľkosti"
       ],
       "Sign in as user": [
         "Prihlásiť sa ako používateľ"
@@ -7541,7 +7538,7 @@
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov so 20 a viac používateľmi"
+        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov s 20 a viac používateľmi"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -9901,9 +9898,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Naozaj chcete zatvoriť náhľad?"
-      ],
-      "Are you sure you want to leave this share?": [
-        "Ste si istý, že chcete opustiť toto zdieľanie?"
       ],
       "Billing cycle": [
         "Fakturačné obdobie"

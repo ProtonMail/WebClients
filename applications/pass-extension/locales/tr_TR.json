@@ -182,6 +182,12 @@
       "Disable autosave on this website": [
         "Bu sitede otomatik kayıt kullanılmasın"
       ],
+      "Disable instead": [
+        "Onun yerine kullanımdan kaldırın"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Bu takma adı kullanımdan kaldırarak bu takma ada gönderilen e-postaları almayı durdurun"
+      ],
       "Discard": [
         "Sil"
       ],
@@ -205,6 +211,9 @@
       ],
       "Edit vault": [
         "Kasayı düzenle"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Bu takma adı kullanıma alarak bu takma ada gönderilen e-postaları alın"
       ],
       "Entire vault": [
         "Tüm kasa"
@@ -247,9 +256,6 @@
       ],
       "Get Pass Plus": [
         "Pass Plus edinin"
-      ],
-      "Help us improve": [
-        "Kendimizi geliştirmemize yardımcı olun"
       ],
       "Hide": [
         "Gizle"
@@ -500,6 +506,9 @@
       "Submitting report...": [
         "Rapor gönderiliyor..."
       ],
+      "Sync aliases": [
+        "Takma adları eşitle"
+      ],
       "Transfer ownership": [
         "Sahipliği aktar"
       ],
@@ -621,6 +630,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } dosyası işlenemedi. ${ errorDetail }"
+      ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Takma ad şu anda güncellenemedi. Lütfen bir süre sonra yeniden deneyin"
       ],
       "Alias options could not be resolved": [
         "Takma ad seçenekleri çözümlenemedi"
@@ -749,6 +761,9 @@
       ],
       "Failed to restore items from trash": [
         "Ögeler çöpten çıkarılamadı"
+      ],
+      "Failed to sync aliases": [
+        "Takma adlar eşitlenemedi"
       ],
       "Failed to transfer this vault's ownership.": [
         "Bu kasanın sahipliği aktarılamadı"
@@ -1081,17 +1096,29 @@
       "Access your passwords on the go with our mobile apps.": [
         "Mobil uygulamamız ile hareket halindeyken parolalarınıza erişin."
       ],
-      "Add a username field": [
-        "Bir kullanıcı adı alanı ekleyin"
-      ],
       "Admin": [
         "Yönetici"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "İçe aktarma işlemi tamamlandığında, güvende kalmak için parolalarınızın bulunduğu dosyayı silebilirsiniz."
       ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "\"${ item.aliasEmail }\" takma adı çöpe atıldı. Artık e-postaları gelen kutunuza iletmeyecek"
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Takma ad kullanımdan kaldırıldı. Artık ${ item.aliasEmail } adresine gönderilen e-postaları almayacaksınız"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Takma ad kullanıma alındı. Artık ${ item.aliasEmail } adresine gönderilen e-postaları alacaksınız"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "${ BRAND_NAME } ile SimpleLogin hesaplarındaki takma adlar eşitleniyor."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Çöp kutusundaki takma adlar e-postaları iletmeyi sürdürür. Bu adreslere e-posta almayı durdurmak istiyorsanız, çöpe atmak yerine kullanımdan kaldırın."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Takma adlar eşitlenmemiş (${ aliasCount })"
+      ],
+      "All aliases are synced": [
+        "Tüm takma adlar eşitlendi"
       ],
       "All breaches for this address were resolved": [
         "Bu adres için tüm verilerin ele geçirilmesi olayları çözümlendi"
@@ -1155,9 +1182,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain } oturumu açmak için kaydedilmiş bir geçiş anahtarı seçin"
-      ],
-      "Click here to add a field for a username.": [
-        "Kullanıcı adı alanı eklemek için buraya tıklayın."
       ],
       "Click the icon to open it anytime.": [
         "İstediğiniz zaman açmak için simgeye tıklayın."
@@ -1767,6 +1791,13 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Verileri yerel depolamanızla eşitlerken sorun çıktı. ${ PASS_SHORT_APP_NAME } uygulamasının sorunsuz çalışması için lütfen yeterli boş disk alanınızın olduğundan emin olun."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunu içe aktarmak ister misiniz?",
+        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunları içe aktarmak ister misiniz?"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "${ PASS_APP_NAME } üzerinde bir kayıt oluştururken ya da düzenlerken 'kullanıcı adı' alanı her zaman görüntülenir."
+      ],
       "You are about to create:": [
         "Şunu oluşturmak üzeresiniz:"
       ],
@@ -1827,6 +1858,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } takma ad",
+        "${ aliasCount } takma ad"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } karakter",
         "${ config.options.length } karakter"
@@ -1930,6 +1965,9 @@
       ],
       "Alphabetical": [
         "Alfabetik"
+      ],
+      "Always show username field": [
+        "Kullanıcı adı alanı her zaman görüntülensin"
       ],
       "Application logs": [
         "Uygulama günlükleri"
@@ -2051,6 +2089,9 @@
       "Domains": [
         "Etki alanları"
       ],
+      "Don't remind me again": [
+        "Bir daha hatırlatma"
+      ],
       "Download logs": [
         "Günlükleri indir"
       ],
@@ -2066,8 +2107,14 @@
       "Email aliases": [
         "E-posta takma adları"
       ],
+      "Email or username": [
+        "E-posta adresi ya da kullanıcı adı"
+      ],
       "Empty trash": [
         "Çöp kutusunu boşalt"
+      ],
+      "Enter email or username": [
+        "E-posta adresi ya da kullanıcı adı yazın"
       ],
       "Expiration date": [
         "Son kullanma tarihi"
@@ -2128,6 +2175,12 @@
       ],
       "https://example.com": [
         "https://ornek.com"
+      ],
+      "ID Card": [
+        "Kimlik kartı"
+      ],
+      "ID Card number": [
+        "Kimlik kartı numarası"
       ],
       "Identities": [
         "Kimlikler"
@@ -2194,6 +2247,9 @@
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
+      ],
+      "License": [
+        "Ehliyet"
       ],
       "License number": [
         "Ehliyet numarası"
@@ -2282,6 +2338,9 @@
       "Passphrase": [
         "Parola ifadesi"
       ],
+      "Passport": [
+        "Pasaport"
+      ],
       "Passport number": [
         "Pasaport numarası"
       ],
@@ -2346,7 +2405,7 @@
         "Tüm ögeleri geri yükle"
       ],
       "Reveal password": [
-        "Parolayı göster"
+        "Parolayı görüntüle"
       ],
       "Save passkeys": [
         "Geçiş anahtarlarını kaydet"
@@ -2362,6 +2421,9 @@
       ],
       "Select preferred language": [
         "Kullanılacak dili seçin"
+      ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "SimpleLogin takma adlarının içe aktarılacağı kasayı seçin"
       ],
       "Select your password manager": [
         "Parola yöneticinizi seçin"
@@ -2383,6 +2445,9 @@
       ],
       "Show website favicons": [
         "Site simgeleri görüntülensin"
+      ],
+      "Social security": [
+        "Sosyal güvenlik"
       ],
       "Social security number": [
         "Sosyal güvenlik numarası"
@@ -2407,6 +2472,12 @@
       ],
       "Support": [
         "Destek"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Takma adları SimpleLogin ile eşitle"
+      ],
+      "Tax number": [
+        "Vergi numarası"
       ],
       "Text": [
         "Metin"
@@ -2580,9 +2651,6 @@
       "Enter email": [
         "E-posta adresini yazın"
       ],
-      "Enter email or username": [
-        "E-posta adresi ya da kullanıcı adı yazın"
-      ],
       "Enter password": [
         "Parolayı yazın"
       ],
@@ -2645,6 +2713,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Takma adların eşitlenmesi açıldı. SimpleLogin takma adlarının eşitlenmesi biraz zaman alabilir"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz.",
         "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz."
@@ -2825,6 +2896,9 @@
       "Switching to ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } uygulamasına geçilsin mi?"
       ],
+      "Sync alias": [
+        "Takma adı eşitle"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını kurduğunuz için teşekkürler"
       ],
@@ -2878,9 +2952,6 @@
       "Duplicated URL": [
         "Çift adres"
       ],
-      "Email address is invalid": [
-        "E-posta adresi geçersiz"
-      ],
       "Field name is required": [
         "Alan adının yazılması zorunludur"
       ],
@@ -2912,9 +2983,6 @@
       ],
       "A description of the problem is required": [
         "Sorunun açıklamasının yazılması zorunludur"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "\"${ name }\" e-posta takma adı şu anda \"${ relatedLoginName }\" oturum açma ögesi için kullanılıyor. \"${ aliasEmail }\" adresine gönderilen e-postaların alınmasını da durdurabilirsiniz"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Çöpe attığınız tüm ögeler kalıcı olarak silinecek. Bu işlem geri alınamaz."
@@ -2977,6 +3045,9 @@
       "Missing alias suffix": [
         "Takma ad son eki eksik"
       ],
+      "Move to trash": [
+        "Çöpe at"
+      ],
       "No items": [
         "Herhangi bir öge yok"
       ],
@@ -3025,14 +3096,14 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Takma ad ön ekiniz 40 karakterden uzun olamaz"
       ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "\"${ aliasEmail }\" takma adı şu anda \"${ relatedLoginName }\" oturumu açmak için kullanılıyor."
+      ],
       "Title is required": [
         "Başlığın yazılması zorunludur"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Bu kasanın sahipliğini ${ email } kişisine aktarmak istediğinize emin misiniz?"
-      ],
-      "Trash alias ?": [
-        "Takma ad çöpe atılsın mı?"
       ],
       "Unable to save": [
         "Kaydedilemedi"

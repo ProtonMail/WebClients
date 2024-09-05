@@ -44,6 +44,9 @@
       ]
     },
     "Account Settings - Info": {
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Foi detetada uma potencial fuga de ${ name }. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
       ]
@@ -97,6 +100,9 @@
       "Add domain": [
         "Adicionar domínio"
       ],
+      "Add email address": [
+        "Adicionar endereço de email"
+      ],
       "Add filter": [
         "Adicionar filtro"
       ],
@@ -138,6 +144,12 @@
       ],
       "Allow": [
         "Permitir"
+      ],
+      "Allow end-to-end encrypted mail for this group": [
+        "Permitir correio encriptado de ponta a ponta para este grupo"
+      ],
+      "Always allow sending": [
+        "Sempre permitir o envio"
       ],
       "Apply": [
         "Aplicar"
@@ -231,6 +243,9 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmar a abertura da hiperligação ${ linkToShow }"
+      ],
+      "Contact sales": [
+        "Contacto de vendas"
       ],
       "Contact support": [
         "Contactar o suporte"
@@ -334,11 +349,17 @@
       "Delete Gateway": [
         "Eliminar o gateway"
       ],
+      "Delete group": [
+        "Apagar grupo"
+      ],
       "Delete link": [
         "Eliminar ligação"
       ],
       "Delete logo": [
         "Eliminar o logo"
+      ],
+      "Delete member": [
+        "Eliminar membro"
       ],
       "Delete permanently": [
         "Eliminar permanentemente"
@@ -372,6 +393,12 @@
       ],
       "Discard": [
         "Descartar"
+      ],
+      "Discard changes": [
+        "Descartar alterações"
+      ],
+      "Domain name": [
+        "Nome do domínio"
       ],
       "Don't show again": [
         "Não mostrar novamente"
@@ -415,6 +442,9 @@
       "Edit Gateway": [
         "Editar o gateway"
       ],
+      "Edit group": [
+        "Editar grupo"
+      ],
       "Edit invoice details": [
         "Editar os detalhes da fatura"
       ],
@@ -457,6 +487,9 @@
       "enable desktop notifications": [
         "ativar as notificações"
       ],
+      "Enable device-based recovery": [
+        "Ativar recuperação baseada no dispositivo"
+      ],
       "Enable multi-user support": [
         "Ativar o suporte a múltiplos utilizadores"
       ],
@@ -489,6 +522,9 @@
       ],
       "Forgot password?": [
         "Esqueceu-se da palavra-passe?"
+      ],
+      "Forgot recovery method?": [
+        "Esqueceu-se do método de recuperação?"
       ],
       "Generate": [
         "Gerar"
@@ -628,6 +664,9 @@
       "Loading verification": [
         "A carregar verificação"
       ],
+      "Lost access to your 2FA device?": [
+        "Perdeu o acesso ao seu dispositivo de A2F?"
+      ],
       "Make admin": [
         "Tornar administrador"
       ],
@@ -763,6 +802,9 @@
       "Remove": [
         "Remover"
       ],
+      "Remove all members": [
+        "Remover todos os membros"
+      ],
       "Remove bonuses": [
         "Remover bónus"
       ],
@@ -846,6 +888,9 @@
       ],
       "Revoke all other sessions": [
         "Revogar todas as outras sessões"
+      ],
+      "Revoke invitation": [
+        "Revogar convite"
       ],
       "Revoke this invitation": [
         "Revogar este convite"
@@ -1030,6 +1075,12 @@
       "Switch or add account": [
         "Trocar ou adicionar conta"
       ],
+      "Test": [
+        "Teste"
+      ],
+      "Test SAML configuration": [
+        "Testar a configuração SAML"
+      ],
       "Top up": [
         "Recarregar"
       ],
@@ -1108,6 +1159,9 @@
       "Use authentication code": [
         "Usar código de autenticação"
       ],
+      "Use group permissions": [
+        "Utilizar permissões de grupo"
+      ],
       "Use recovery code": [
         "Usar código de recuperação"
       ],
@@ -1146,6 +1200,9 @@
       ],
       "View plans details": [
         "Ver detalhes do plano"
+      ],
+      "View recovery settings": [
+        "Ver definições de recuperação"
       ],
       "Void": [
         "Anulada"
@@ -1351,11 +1408,6 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicações ${ BRAND_NAME }"
-      ]
-    },
-    "Assistant option": {
-      "Run on servers": [
-        "Executar em servidores"
       ]
     },
     "Assistant toggle": {
@@ -4708,6 +4760,10 @@
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Foi convidado a juntar-se a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Atingiu o limite de ${ n } convite aceite em 6 meses.",
+        "Atingiu o limite de ${ n } convites aceites em 6 meses."
+      ],
       "You need to configure a custom domain before adding multiple users.": [
         "É necessário configurar um domínio personalizado antes de adicionar vários utilizadores."
       ],
@@ -6279,6 +6335,10 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crie uma etiqueta para as mensagens importadas, um intervalo de tempo para esta importação e as etiquetas que deseja importar."
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Criar uma nuvem segura para ${ n } membro",
+        "Criar uma nuvem segura para ${ n } membros"
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Crie e gira sub-contas e atribua-lhes endereços de e-mail no seu domínio personalizado."
       ],
@@ -6408,6 +6468,9 @@
       "Each code can only be used once": [
         "Cada código só pode ser utilizado uma vez"
       ],
+      "Early access": [
+        "Acesso antecipado"
+      ],
       "Edit email address": [
         "Editar endereço de e-mail"
       ],
@@ -6515,6 +6578,9 @@
       ],
       "finance": [
         "finanças"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Para um histórico de versões de 10 anos, contacte a nossa equipa de vendas."
       ],
       "for choosing ${ product }": [
         "por escolher ${ product }"
@@ -6700,6 +6766,15 @@
       "Invite Deleted": [
         "O convite foi eliminado."
       ],
+      "Invite for new user deleted": [
+        "Convite para novo utilizador eliminado"
+      ],
+      "Invite for organization accepted": [
+        "Convite para a organização aceite"
+      ],
+      "Invite for organization created": [
+        "Convite para a organização criado"
+      ],
       "Invite rejected": [
         "O convite foi rejeitado."
       ],
@@ -6713,17 +6788,41 @@
       "It appears some of your data is encrypted and locked.": [
         "Parece que alguns dos seus dados estão encriptados e bloqueados."
       ],
+      "Item autofilled in vault": [
+        "Item auto-preenchimento no cofre"
+      ],
       "Item Created": [
         "O item foi criado."
+      ],
+      "Item created in ${ vaultLink }": [
+        "Item criado em ${ vaultLink }"
+      ],
+      "Item created in vault": [
+        "Item criado no cofre"
       ],
       "Item Deleted": [
         "O item foi eliminado."
       ],
+      "Item deleted from vault": [
+        "Item apagado do cofre"
+      ],
+      "Item flags changed in vault": [
+        "Sinalizadores de itens alterados no cofre"
+      ],
       "Item Read": [
         "O item foi lido."
       ],
+      "Item read in vault": [
+        "Item lido no cofre"
+      ],
       "Item Updated": [
         "O item foi atualizado."
+      ],
+      "Item updated in ${ vaultLink }": [
+        "Item atualizado em ${ vaultLink }"
+      ],
+      "Item updated in vault": [
+        "Item atualizado no cofre"
       ],
       "it’s imperative": [
         "é obrigatório"
@@ -6866,6 +6965,9 @@
       "New": [
         "Novo"
       ],
+      "New user invited to organization": [
+        "Novo utilizador convidado para a organização"
+      ],
       "No account keys exist": [
         "Não existem chaves de conta."
       ],
@@ -6977,6 +7079,15 @@
       ],
       "Paid for a monthly plan": [
         "Pago para o plano mensal"
+      ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - e-mail personalizado confirmado"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - e-mail personalizado criado"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - e-mail personalizado apagado"
       ],
       "password": [
         "palavra-passe"
@@ -7237,6 +7348,12 @@
       ],
       "Share Updated": [
         "A partilha foi atualizada."
+      ],
+      "Shared vault deleted": [
+        "Cofre partilhado apagado"
+      ],
+      "Shared vault updated": [
+        "Cofre partilhado atualizado"
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "Mostrar a imagem de cada remetente na lista de mensagens. As iniciais do remetente serão mostradas se uma fotografia não estiver disponível."
@@ -7643,6 +7760,12 @@
       ],
       "Vault deleted": [
         "O cofre foi eliminado."
+      ],
+      "Vault either deleted or requires access permissions": [
+        "O cofre foi eliminado ou necessita de permissões de acesso"
+      ],
+      "Vault shared with email": [
+        "Cofre partilhado com o e-mail"
       ],
       "Vault updated": [
         "O cofre foi atualizado."
@@ -8106,6 +8229,11 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Ver apenas"
+      ]
+    },
+    "Input label": {
+      "Link label (optional)": [
+        "Etiqueta de ligação (opcional)"
       ]
     },
     "Input placeholder": {
@@ -10246,6 +10374,14 @@
         "${ n } mensagem por dia",
         "${ n } mensagens por dia"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } cofre partilhado de ${ PASS_SHORT_APP_NAME } por utilizador",
+        "${ n } cofres partilhados de ${ PASS_SHORT_APP_NAME } por utilizador"
+      ],
+      "${ n } user": [
+        "${ n } utilizador",
+        "Até ${ n } utilizadores"
+      ],
       "${ n } vault": [
         "${ n } cofre",
         "${ n } cofres"
@@ -10521,6 +10657,9 @@
       ],
       "Unlimited devices": [
         "Número ilimitado de dispositivos"
+      ],
+      "Unlimited devices and aliases": [
+        "Dispositivos e aliases ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -12107,6 +12246,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } administrador da sua organização precisa de ter acesso à chave da organização.",
+        "${ n } administradores da sua organização precisam de ter acesso à chave da organização."
+      ],
       "Changing organization keys": [
         "Alterar as chaves da organização"
       ],
@@ -12322,6 +12465,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar a reposição da palavra-passe?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Pedido de reposição de palavra-passe cancelado (${ user.Email }). Se não tiver efetuado este pedido, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -12715,6 +12863,11 @@
         "Apoiar a privacidade online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Esta subscrição será renovada automaticamente a cada 2 anos ao mesmo preço até ser cancelada."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ir para os planos de subscrição"
@@ -12886,6 +13039,10 @@
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Atualize o seu plano para continuar a utilizar a sua conta sem interrupções."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Ainda lhe resta **${ daysRemaining }** dia no seu plano **${ currentPlanName }**.",
+        "Ainda lhe restam **${ daysRemaining }** dias no seu plano **${ currentPlanName }**."
+      ],
       "Your ${ appStorage } is almost full": [
         "O seu ${ appStorage } está quase cheio"
       ],
@@ -12955,6 +13112,10 @@
       "${ n } calendar per user": [
         "${ n } calendário por utilizador",
         "${ n } calendários por utilizador"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } ligação VPN gratuita por utilizador",
+        "${ n } ligações VPN gratuitas por utilizador"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } ligação VPN de alta velocidade",
@@ -15196,6 +15357,12 @@
         "${ numberOfServers } em ${ numberOfCountries } países"
       ]
     },
+    "vpn_2024: renew": {
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "A sua subscrição será renovada automaticamente dentro de ${ cycle } mês.",
+        "A sua subscrição será renovada automaticamente em ${ cycle } meses."
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Faturação mensal"
@@ -15265,9 +15432,17 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } conta por carteira",
+        "${ n } contas por carteira"
+      ],
       "${ n } email address": [
         "${ n } endereço de e-mail ",
         "${ n } endereços de e-mail "
+      ],
+      "${ n } wallet": [
+        "${ n } carteira",
+        "${ n } carteiras"
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"

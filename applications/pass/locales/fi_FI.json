@@ -247,9 +247,6 @@
       "Get Started": [
         "Aloita"
       ],
-      "Help us improve": [
-        "Auta meitä parantamaan"
-      ],
       "Hide": [
         "Piilota"
       ],
@@ -1091,9 +1088,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }:n käyttäminen vaatii sormenjälkesi tai laitteen PIN-koodin"
       ],
-      "Add a username field": [
-        "Lisää käyttäjätunnus-kenttä"
-      ],
       "Add your custom email address to monitor :": [
         "Lisää ulkoinen sähköpostiosoitteesi valvontaan:"
       ],
@@ -1102,9 +1096,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Kun tietosi on tuotu, on suositeltavaa suojata tietosi poistamalla salasanasi sisältävän CSV-tiedosto."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi."
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Omia verkkotunnuksiasi käyttäviä aliaksia ei valvota. Lisää ne valvontaan ulkoisina sähköpostiosoitteina."
@@ -1174,9 +1165,6 @@
       ],
       "Change your password": [
         "Vaihda salasanasi"
-      ],
-      "Click here to add a field for a username.": [
-        "Lisää kenttä käyttäjätunnukselle panamalla tästä."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Vahvista lisäsalasanasi jatkaaksesi sen poistamista."
@@ -2068,6 +2056,9 @@
       "Email address": [
         "Sähköpostiosoite"
       ],
+      "Email or username": [
+        "Sähköpostiosoite tai käyttäjätunnus"
+      ],
       "Empty trash": [
         "Tyhjennä roskakori"
       ],
@@ -2624,9 +2615,6 @@
       "Enter email": [
         "Syötä sähköpostiosoite"
       ],
-      "Enter email or username": [
-        "Syötä sähköpostiosoite tai käyttäjätunnus"
-      ],
       "Enter password": [
         "Syötä salasana"
       ],
@@ -3009,9 +2997,6 @@
       "Duplicated URL": [
         "Kahdennettu URL"
       ],
-      "Email address is invalid": [
-        "Sähköpostiosoite on virheellinen"
-      ],
       "Field name is required": [
         "Kentän nimi vaaditaan"
       ],
@@ -3043,9 +3028,6 @@
       ],
       "A description of the problem is required": [
         "Ongelman kuvaus vaaditaan"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Aliasta \"${ name }\" käytetään tällä hetkellä kirjautumistiedossa \"${ relatedLoginName }\". Lisäksi osoitteeseen \"${ aliasEmail }\" lähetettyjen viestien vastaanotto loppuu."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Kaikki roskakorin kohteet poistetaan pysyvästi. Et voi kumota toimintoa."
@@ -3185,9 +3167,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Siirretäänkö holvin omistajuus tunnukselle ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Siirretäänkö alias roskakoriin?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }iin kirjautuminen ei onnistu. ${ additionalMessage }"

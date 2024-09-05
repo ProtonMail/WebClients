@@ -226,9 +226,6 @@
       "Get Started": [
         "始めましょう"
       ],
-      "Help us improve": [
-        "改善にご協力ください"
-      ],
       "Hide": [
         "非表示"
       ],
@@ -1014,9 +1011,6 @@
       "Access successfully confirmed": [
         "アクセスが正常に確認されました"
       ],
-      "Add a username field": [
-        "ユーザー名フィールドを追加"
-      ],
       "Add your custom email address to monitor :": [
         "監視するカスタム電子メール アドレスを追加します。"
       ],
@@ -1025,9 +1019,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "エイリアス「${ item.aliasEmail }」はごみ箱に移動されました - メールボックスへのメールの転送は停止されます"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "カスタム ドメインを持つエイリアスは監視されません。監視用のカスタム電子メールとして追加してください。"
@@ -1271,6 +1262,9 @@
       ],
       "Latest breach on ${ formattedDate }": [
         "${ formattedDate } の最新の侵害"
+      ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "${ staySaferOnlineLink } の使い方を学ぶ"
       ],
       "Leaving vault...": [
         "保管庫を退出しています..."
@@ -1613,6 +1607,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "ファイルは暗号化して保存されます"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "あなたの情報は ${ displayedDate }で見つかりました。"
       ]
     },
     "Label": {
@@ -1789,6 +1786,9 @@
       ],
       "Email address": [
         "メールアドレス"
+      ],
+      "Email or username": [
+        "メールアドレスまたはユーザー名"
       ],
       "Empty trash": [
         "ごみ箱を空にする"
@@ -2247,9 +2247,6 @@
       "Enter email": [
         "メールアドレスを入力"
       ],
-      "Enter email or username": [
-        "メールアドレスまたはユーザー名を入力"
-      ],
       "Enter password": [
         "パスワードを入力"
       ],
@@ -2606,9 +2603,6 @@
       "Duplicated URL": [
         "重複した URL"
       ],
-      "Email address is invalid": [
-        "メールアドレスが無効です"
-      ],
       "Field name is required": [
         "フィールド名は必須です"
       ],
@@ -2634,9 +2628,6 @@
     "Warning": {
       "A description of the problem is required": [
         "問題の説明が必要"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "エイリアス「${ name }」は現在、ログイン項目「${ relatedLoginName }」で使用されています。 また、「${ aliasEmail }」に送信されたメールの受信も停止されます。"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "ごみ箱に入れられたすべてのアイテムは完全に削除されます。 この操作を元に戻すことはできません。"
@@ -2751,9 +2742,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "このフォルダーの所有権を${ email }に移転しますか？"
-      ],
-      "Trash alias ?": [
-        "ごみ箱の別名?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME } にサインインできません。 ${ additionalMessage }"

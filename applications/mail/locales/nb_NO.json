@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe skriveassistent"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
@@ -1018,9 +1015,6 @@
       "Revert to original display": [
         "Vend tilbake til opprinnelig visning"
       ],
-      "Run on servers": [
-        "Kjør på tjenere"
-      ],
       "Save": [
         "Lagre"
       ],
@@ -1239,6 +1233,10 @@
       ],
       "Trust": [
         "Klarér"
+      ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1555,9 +1553,6 @@
       ],
       "Run on device": [
         "Kjør på enhet"
-      ],
-      "Run on servers": [
-        "Kjør på tjenere"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Kjører sikkert på ${ BRAND_NAME }-tjenere"

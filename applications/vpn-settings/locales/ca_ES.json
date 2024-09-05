@@ -640,12 +640,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Intenteu tornar a desar. No s'ha pogut desar a causa de: ${ saveError }"
       ],
-      "Turn off": [
-        "Desactiva"
-      ],
-      "Turn on": [
-        "Activa"
-      ],
       "Unlock": [
         "Desbloquejar"
       ],
@@ -2245,6 +2239,9 @@
     "duoplan2024: Action": {
       "Get ${ BRAND_NAME } Duo": [
         "Obtingueu ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Obteniu-lo per ${ price }"
       ]
     },
     "duoplan2024: Info": {
@@ -2253,6 +2250,9 @@
       ],
       "2 users": [
         "2 usuaris"
+      ],
+      "You save ${ amountSave }": [
+        "Estalvieu ${ amountSave }"
       ]
     },
     "duoplan2024: SubTitle": {
@@ -3772,6 +3772,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Aneu al vostre proveïdor d'identitat, obteniu les metadades SAML per a ${ appName } i importeu-les aquí."
+      ],
+      "Group deleted": [
+        "S'ha eliminat el grup."
       ],
       "here": [
         "aquí"
@@ -5993,11 +5996,23 @@
       "${ size } attachment size": [
         "${ size } en fitxers adjunts"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } d'emmagatzematge segur per usuari"
+      ],
       "${ size } storage": [
         "${ size } d'emmagatzematge"
       ],
+      "1 TB secure storage": [
+        "1 TB d'emmagatzematge segur"
+      ],
       "1 user": [
         "1 usuari"
+      ],
+      "10 email addresses/aliases": [
+        "10 adreces de correu electrònic/àlies"
+      ],
+      "10-year file version history": [
+        "Historial de versions de fitxers de 10 anys"
       ],
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -6062,6 +6077,9 @@
       "Contact groups management": [
         "Gestió de grups de contactes"
       ],
+      "Custom and secure business email": [
+        "Correu electrònic empresarial personalitzat i segur"
+      ],
       "Custom domains for email aliases": [
         "Dominis personalitzats per a àlies de correu electrònic"
       ],
@@ -6100,6 +6118,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Compatibilitat amb clients de correu electrònic (per IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grups de correu electrònic"
       ],
       "Enables HIPAA compliance": [
         "Permet el compliment de la llei HIPAA"
@@ -6190,6 +6211,12 @@
         "Protegiu ${ n } dispositiu alhora",
         "Protegiu ${ n } dispositius alhora"
       ],
+      "Quickly craft replies": [
+        "Crea ràpidament les respostes"
+      ],
+      "Recover previous file versions": [
+        "Recupera les versions anteriors del fitxer"
+      ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
       ],
@@ -6223,6 +6250,9 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "Servidors en més d'${ vpnServersCountData.paid.countries } país",
         "Servidors en més de ${ vpnServersCountData.paid.countries } països"
+      ],
+      "Share files with no size limit": [
+        "Compartiu fitxers sense límit de mida"
       ],
       "Sign in as user": [
         "Inicia la sessió com a usuari"
@@ -7176,11 +7206,17 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
+      "Please select billing country": [
+        "Seleccioneu el país de facturació"
+      ],
       "Please select billing state": [
         "Seleccioneu l'estat de facturació"
       ],
       "Processing payment": [
         "S'està processant el pagament."
+      ],
+      "Select billing country to pay": [
+        "Seleccioneu el país de facturació per pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ months }. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ price } durant ${ months } mesos. Podeu cancel·lar-ho en qualsevol moment."
@@ -7459,6 +7495,11 @@
       ],
       "User": [
         "Usuari"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Reviseu la seguretat del compte"
       ]
     },
     "saml: Action": {
@@ -10088,6 +10129,9 @@
       "${ n } wallet": [
         "${ n } cartera",
         "${ n } carteres"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Una manera més segura de mantenir el vostre Bitcoin"
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"

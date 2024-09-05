@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Помічник з написання ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
@@ -1017,9 +1014,6 @@
       "Revert to original display": [
         "Повернути оригінальний вигляд"
       ],
-      "Run on servers": [
-        "Запустити на серверах"
-      ],
       "Save": [
         "Зберегти"
       ],
@@ -1238,6 +1232,12 @@
       ],
       "Trust": [
         "Довіряти"
+      ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -1553,9 +1553,6 @@
       ],
       "Run on device": [
         "Запустити на пристрої"
-      ],
-      "Run on servers": [
-        "Запустити на серверах"
       ]
     },
     "Assistant toggle": {

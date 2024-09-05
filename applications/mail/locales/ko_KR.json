@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe 글쓰기 도우미"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
       ],
@@ -1014,9 +1011,6 @@
       "Revert to original display": [
         "원래 모양으로 되돌리기"
       ],
-      "Run on servers": [
-        "서버에서 실행"
-      ],
       "Save": [
         "저장"
       ],
@@ -1235,6 +1229,9 @@
       ],
       "Trust": [
         "신뢰"
+      ],
+      "Trust key": [
+        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -1546,9 +1543,6 @@
       ],
       "Run on device": [
         "디바이스에서 실행"
-      ],
-      "Run on servers": [
-        "서버에서 실행"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "${ BRAND_NAME } 서버에서 안전하게 실행"

@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe βοηθός γραφής"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
       ],
@@ -1018,9 +1015,6 @@
       "Revert to original display": [
         "Επαναφορά αρχικής εμφάνισης"
       ],
-      "Run on servers": [
-        "Εκτέλεση σε διακομιστές"
-      ],
       "Save": [
         "Αποθήκευση"
       ],
@@ -1239,6 +1233,10 @@
       ],
       "Trust": [
         "Αξιόπιστο"
+      ],
+      "Trust key": [
+        "Εμπιστοσύνη στο κλειδί",
+        "Εμπιστοσύνη στα κλειδιά"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -1541,17 +1539,26 @@
       ]
     },
     "Assistant option": {
+      "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
+        "Τα δεδομένα παραμένουν στη συσκευή για την προστασία του απορρήτου σας. Απαιτεί λήψη και συμβατό υλικό."
+      ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
         "Τα δεδομένα παραμένουν στη συσκευή σας, αλλά απαιτείται εφάπαξ λήψη και συμβατό υλικό"
       ],
       "Fast and secure. No logs are kept.": [
         "Γρήγορα και με ασφάλεια. Δεν τηρούνται αρχεία καταγραφής."
       ],
+      "No logs are kept to protect your privacy. Faster processing.": [
+        "Δεν τηρούνται αρχεία καταγραφής για την προστασία του απορρήτου σας. Ταχύτερη επεξεργασία."
+      ],
       "Run on device": [
         "Εκτέλεση στη συσκευή"
       ],
-      "Run on servers": [
-        "Εκτέλεση σε διακομιστές"
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Ασφαλής εκτέλεση στους διακομιστές ${ BRAND_NAME }"
+      ],
+      "Securely run on device": [
+        "Ασφαλής εκτέλεση στη συσκευή"
       ]
     },
     "Assistant toggle": {
@@ -3466,6 +3473,9 @@
       ],
       "Unlock custom message scheduling and more premium features when you upgrade.": [
         "Ξεκλειδώστε προσαρμοσμένο προγραμματισμό μηνυμάτων και περισσότερες premium λειτουργίες κατά την αναβάθμιση."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "Ξεκλειδώστε προσαρμοσμένους χρόνους αναβολής και περισσότερες premium λειτουργίες κατά την αναβάθμιση."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Αναβαθμίζοντας, θα ξεκλειδώστε μικρότερες διευθύνσεις email και άλλες premium λειτουργίες."
@@ -5536,6 +5546,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "Το ${ BRAND_NAME } Scribe σας βοηθά να δημιουργείτε καλύτερα μηνύματα ηλεκτρονικού ταχυδρομείου γρήγορα και αβίαστα."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
@@ -8942,6 +8955,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Ξεκινήστε με ${ price }"
+      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
       ]
@@ -9074,6 +9090,9 @@
       "10 email addresses/aliases": [
         "10 διεύθυνσεις email/ψευδώνυμα"
       ],
+      "10-year file version history": [
+        "Ιστορικό εκδόσεων αρχείων 10 ετών"
+      ],
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
       ],
@@ -9091,6 +9110,9 @@
       ],
       "Administration Panel": [
         "Πίνακας Διαχείρισης"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Όλα τα προϊόντα και χαρακτηριστικά ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -9172,6 +9194,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Υποστήριξη προγράμματος-πελάτη ηλεκτρονικού ταχυδρομείου (μέσω IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Ομάδες ηλεκτρονικού ταχυδρομείου"
       ],
       "Enables HIPAA compliance": [
         "Επιτρέπει τη συμμόρφωση με το HIPAA"
@@ -9258,9 +9283,15 @@
       "Priority support & live chat": [
         "Υποστήριξη προτεραιότητας & ζωντανή συνομιλία"
       ],
+      "Proofread and refine your emails": [
+        "Διορθώστε και βελτιώστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας"
+      ],
       "Protect ${ n } device at a time": [
         "Προστατέψτε ${ n } συσκευή ανά φορά",
         "Προστατέψτε ${ n } συσκευές ανά φορά"
+      ],
+      "Quickly craft replies": [
+        "Δημιουργήστε γρήγορα απαντήσεις"
       ],
       "Recover previous file versions": [
         "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
@@ -9315,6 +9346,9 @@
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
+      ],
+      "Support for up to 2 users": [
+        "Υποστήριξη για έως 2 χρήστες"
       ],
       "Sync and backup all your files across devices": [
         "Συγχρονίστε και δημιουργήστε αντίγραφα ασφαλείας όλων των αρχείων σας σε όλες τις συσκευές"
@@ -9499,6 +9533,11 @@
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Αποκτήστε το Mail Plus για ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -9574,6 +9613,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Μοιραστείτε εύκολα τα ημερολόγιά σας με την οικογένεια, τους φίλους ή τους συναδέλφους σας"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Στείλτε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα μέλη μιας ομάδας με μία μόνο διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Διασφαλίζει ότι λαμβάνετε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στον τομέα σας, ακόμα και αν η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν υπάρχει, δεν υπάρχει πλέον ή έχει τυπογραφικό λάθος"
@@ -10411,6 +10453,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "Αποτυχία επανακρυπτογράφησης της πρόσκλησης. Παρακαλούμε δοκιμάστε ξανά."
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Ελέγξτε την ασφάλεια του λογαριασμού σας"
       ]
     },
     "Search - no results": {
@@ -12618,6 +12665,9 @@
       ],
       "No trackers found": [
         "Δεν βρέθηκαν ιχνηλάτες"
+      ],
+      "No-reply address detected": [
+        "Δεν εντοπίστηκε διεύθυνση χωρίς απάντηση"
       ],
       "Notes": [
         "Σημειώσεις"

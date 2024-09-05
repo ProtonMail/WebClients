@@ -1120,12 +1120,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Попробуйте сохранить еще раз. Не удалось сохранить из-за: ${ saveError }"
       ],
-      "Turn off": [
-        "Выключить"
-      ],
-      "Turn on": [
-        "Включить"
-      ],
       "Underline": [
         "Подчёркнутый"
       ],
@@ -1477,9 +1471,6 @@
       ],
       "Run on device": [
         "Запуск на устройстве"
-      ],
-      "Run on servers": [
-        "Выполнять на серверах"
       ]
     },
     "Assistant toggle": {
@@ -3408,6 +3399,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "Автоматически удаляйте спам и сообщения в Корзине, а также откройте дополнительные платные функции при обновлении."
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Поздравляем! Вы заработали максимальное количество из ${ rewardsLimit } бесплатных месяцев ${ plusPlanName }."
       ],
@@ -7305,6 +7299,12 @@
       "Gateways": [
         "Шлюзы"
       ],
+      "Gateways monitoring is disabled.": [
+        "Отслеживание шлюзов выключено"
+      ],
+      "Gateways monitoring is enabled.": [
+        "Отслеживание шлюзов включено"
+      ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Генерирование новой фразы восстановления приведет к деактивации старой."
       ],
@@ -7694,6 +7694,9 @@
       ],
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Подождите пока загружается календарь. Вы будете перенаправлены на нашу платформу для составления расписаний Calendly в новой вкладке."
+      ],
+      "Loading gateways monitoring current status.": [
+        "Загрузка текущего состояния отслеживания шлюзов."
       ],
       "Loading preview": [
         "Загрузка предпросмотра"
@@ -8588,6 +8591,9 @@
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
         "В режиме двух паролей используются отдельные пароли для входа в систему и расшифровки данных. В некоторых ситуациях это дает незначительный выигрыш в безопасности, однако для большинства пользователей мы рекомендуем использовать режим с одним паролем. Чтобы переключиться в режим двух паролей, сначала установите пароль для входа в систему, а затем второй пароль."
+      ],
+      "Unable to check gateways monitoring current status.": [
+        "Невозможно проверить текущее состояние отслеживания шлюзов."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Невозможно проверить подпись файла восстановления. Обратитесь в службу поддержки."
@@ -10536,6 +10542,9 @@
       "Time zone": [
         "Часовой пояс"
       ],
+      "Tips and insights": [
+        "Советы и идеи"
+      ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
       ],
@@ -11699,6 +11708,9 @@
       "10-year file version history": [
         "10-летняя история версий файла"
       ],
+      "15 GB storage": [
+        "15 ГБ хранилища"
+      ],
       "24/7 account management support": [
         "Постоянная круглосуточная поддержка управления аккаунтом"
       ],
@@ -11815,6 +11827,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Поддержка почтовых клиентов (через IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Группы адресов электронной почты"
       ],
       "Enables HIPAA compliance": [
         "Обеспечение соответствия HIPAA"
@@ -12258,6 +12273,9 @@
       "${ shortPlan.title } Trial": [
         "Пробная версия ${ shortPlan.title }"
       ],
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ],
       "Your account's usage": [
         "Использование вашего аккаунта"
       ]
@@ -12345,6 +12363,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Легко делитесь своими календарями с семьей, друзьями или коллегами"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Отправляйте сообщения всем членам группы с помощью одного адреса электронной почты"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Гарантирует, что вы получите все письма, отправленные на ваш домен, даже если адрес электронной почты не существует, его больше нет или в нем допущена ошибка"
@@ -16496,6 +16517,12 @@
       "Connect ${ name }": [
         "Подключить ${ name }"
       ],
+      "Connection monitor disabled": [
+        "Отслеживание подключения выключено"
+      ],
+      "Connection monitor enabled": [
+        "Отслеживание подключения включено"
+      ],
       "Contact us": [
         "Свяжитесь с нами"
       ],
@@ -17573,6 +17600,9 @@
       "Feature in early access": [
         "Функция раннего доступа"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "Получите советы по производительности и безопасности, которые помогут вам максимально эффективно использовать ${ MAIL_APP_NAME } и не только."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
@@ -17764,6 +17794,14 @@
         "Эта версия браузера Tor не поддерживается. Пожалуйста, обновите до последней версии ${ stableRelease }"
       ]
     },
+    "unprivatization": {
+      "Delete request": [
+        "Удалить запрос"
+      ],
+      "Send request": [
+        "Отправить запрос"
+      ]
+    },
     "Update font modal": {
       "Today is a good day to write an email": [
         "Сегодня хороший день, чтобы написать письмо"
@@ -17894,6 +17932,9 @@
       ],
       "It's you": [
         "Это вы"
+      ],
+      "Pending admin access": [
+        "Ожидание доступа администратора"
       ],
       "Private": [
         "Частный"
