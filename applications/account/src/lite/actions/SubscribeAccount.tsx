@@ -130,19 +130,31 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
 
     const { bgClassName, logo } = (() => {
         if ([PLANS.VPN, PLANS.VPN2024].includes(plan as any)) {
-            return { bgClassName: 'subscribe-account--vpn-bg', logo: <Logo appName={APPS.PROTONVPN_SETTINGS} /> };
+            return {
+                bgClassName: 'subscribe-account--vpn-bg',
+                logo: <Logo className="subscribe-account-logo" appName={APPS.PROTONVPN_SETTINGS} />,
+            };
         }
 
         if ([PLANS.DRIVE, PLANS.DRIVE_PRO].includes(plan as any)) {
-            return { bgClassName: 'subscribe-account--drive-bg', logo: <Logo appName={APPS.PROTONDRIVE} /> };
+            return {
+                bgClassName: 'subscribe-account--drive-bg',
+                logo: <Logo className="subscribe-account-logo" appName={APPS.PROTONDRIVE} />,
+            };
         }
 
         if ([PLANS.PASS, PLANS.PASS_PRO, PLANS.PASS_BUSINESS].includes(plan as any)) {
-            return { bgClassName: 'subscribe-account--pass-bg', logo: <Logo appName={APPS.PROTONPASS} /> };
+            return {
+                bgClassName: 'subscribe-account--pass-bg',
+                logo: <Logo className="subscribe-account-logo" appName={APPS.PROTONPASS} />,
+            };
         }
 
         if ([PLANS.MAIL, PLANS.MAIL_PRO].includes(plan as any)) {
-            return { bgClassName: 'subscribe-account--mail-bg', logo: <Logo appName={APPS.PROTONMAIL} /> };
+            return {
+                bgClassName: 'subscribe-account--mail-bg',
+                logo: <Logo className="subscribe-account-logo" appName={APPS.PROTONMAIL} />,
+            };
         }
 
         return {
