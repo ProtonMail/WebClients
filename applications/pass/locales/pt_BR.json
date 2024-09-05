@@ -181,6 +181,9 @@
       "Deselect": [
         "Desmarcar"
       ],
+      "Disable instead": [
+        "Desativar em vez disso"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -246,9 +249,6 @@
       ],
       "Get Started": [
         "Começar"
-      ],
-      "Help us improve": [
-        "Ajude-nos a melhorar"
       ],
       "Hide": [
         "Ocultar"
@@ -495,6 +495,9 @@
       ],
       "Submitting report...": [
         "Enviando relatório..."
+      ],
+      "Sync aliases": [
+        "Sincronizar alias"
       ],
       "Transfer ownership": [
         "Transferir a propriedade"
@@ -1091,9 +1094,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "O acesso a ${ PASS_APP_NAME } exigirá sua impressão digital ou o PIN do dispositivo."
       ],
-      "Add a username field": [
-        "Adicionar um campo de nome de usuário"
-      ],
       "Add your custom email address to monitor :": [
         "Adicione seu endereço de e-mail personalizado para monitoramento:"
       ],
@@ -1103,8 +1103,8 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Após importar seus dados com sucesso, você pode excluir o arquivo CSV que contém suas senhas por segurança."
       ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "O alias \"${ item.aliasEmail }\" foi movido para a lixeira - ele deixará de encaminhar e-mails para a sua caixa de correio."
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Os aliases na lixeira continuarão encaminhando e-mails. Se você quiser parar de receber e-mails nesse endereço, desative-o."
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Os e-mails aliases com domínios personalizados não são monitorados, por favor adicione-os como um e-mail personalizado para monitoramento."
@@ -1174,9 +1174,6 @@
       ],
       "Change your password": [
         "Alterar sua senha"
-      ],
-      "Click here to add a field for a username.": [
-        "Clique aqui para adicionar um campo para um nome de usuário."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme sua senha adicional para prosseguir com a remoção."
@@ -1783,6 +1780,10 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estamos tendo problemas em sincronizar seus dados para o seu armazenamento local. Verifique se você tem espaço livre em seu disco para que o ${ PASS_SHORT_APP_NAME } funcione corretamente."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Detectamos que você tem o alias ${ aliasCount } que está presente no SimpleLogin, mas ausente no ${ PASS_APP_NAME }. Gostaria de importá-lo?",
+        "Detectamos que você tem ${ aliasCount } aliases que estão presentes no SimpleLogin, mas ausentes no ${ PASS_APP_NAME }. Gostaria de importá-los?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Enviamos um código de verificação para ${ email }. Por favor, insira-o abaixo:"
       ],
@@ -2053,6 +2054,9 @@
       "Domain": [
         "Domínio"
       ],
+      "Don't remind me again": [
+        "Não lembrar novamente"
+      ],
       "Download logs": [
         "Registros de downloads"
       ],
@@ -2068,11 +2072,17 @@
       "Email address": [
         "Endereço de e-mail"
       ],
+      "Email or username": [
+        "E-mail ou nome de usuário"
+      ],
       "Empty trash": [
         "Esvaziar lixeira"
       ],
       "Enable offline access": [
         "Ativar acesso off-line"
+      ],
+      "Enter email or username": [
+        "Digite o e-mail ou nome de usuário"
       ],
       "Expiration date": [
         "Data de expiração"
@@ -2627,9 +2637,6 @@
       "Enter email": [
         "Digitar e-mail"
       ],
-      "Enter email or username": [
-        "Digite o e-mail ou nome de usuário"
-      ],
       "Enter password": [
         "Insira a senha"
       ],
@@ -2956,6 +2963,9 @@
       "Suggestions": [
         "Sugestões"
       ],
+      "Sync alias": [
+        "Sincronizar alias"
+      ],
       "Transfer ownership": [
         "Transferir a propriedade"
       ],
@@ -3012,9 +3022,6 @@
       "Duplicated URL": [
         "URL duplicado"
       ],
-      "Email address is invalid": [
-        "O endereço de e-mail não é válido."
-      ],
       "Field name is required": [
         "O nome do campo é obrigatório"
       ],
@@ -3046,9 +3053,6 @@
       ],
       "A description of the problem is required": [
         "Uma descrição do problema é necessária"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "O alias \"${ name }\" está sendo usado atualmente no item de login \"${ relatedLoginName }\". Você também deixará de receber e-mails enviados para \"${ aliasEmail }"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Todos os itens na lixeira serão excluídos permanentemente. Não é possível desfazer esta ação."
@@ -3123,6 +3127,9 @@
       "Missing alias suffix": [
         "Faltando sufixo de alias"
       ],
+      "Move to trash": [
+        "Mover para a lixeira"
+      ],
       "No items": [
         "Nenhum item"
       ],
@@ -3188,9 +3195,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transferir propriedade deste cofre para ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Excluir alias ?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Não foi possível fazer login no ${ PASS_APP_NAME }. ${ additionalMessage }"

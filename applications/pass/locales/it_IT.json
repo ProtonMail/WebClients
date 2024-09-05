@@ -181,6 +181,12 @@
       "Deselect": [
         "Deseleziona"
       ],
+      "Disable instead": [
+        "Disabilita invece"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Disabilita questo alias per non ricevere più le email gli vengono inviate"
+      ],
       "Discard": [
         "Scarta"
       ],
@@ -198,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Abilita Dark Web Monitoring"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Abilita questo alias per ricevere le email che gli vengono inviate"
       ],
       "Entire vault": [
         "Intera cassaforte"
@@ -246,9 +255,6 @@
       ],
       "Get Started": [
         "Inizia ora"
-      ],
-      "Help us improve": [
-        "Aiutaci a migliorare"
       ],
       "Hide": [
         "Nascondi"
@@ -496,6 +502,9 @@
       "Submitting report...": [
         "Invio della segnalazione..."
       ],
+      "Sync aliases": [
+        "Sincronizza gli alias"
+      ],
       "Transfer ownership": [
         "Trasferisci proprietà"
       ],
@@ -654,6 +663,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Impossibile analizzare il file di ${ provider }. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Al momento non è possibile aggiornare l'alias. Per favore riprova più tardi"
+      ],
       "Alias options could not be resolved": [
         "Impossibile determinare le opzioni alias"
       ],
@@ -775,6 +787,9 @@
       ],
       "Failed to restore items from trash": [
         "Impossibile recuperare gli elementi dal cestino"
+      ],
+      "Failed to sync aliases": [
+        "Impossibile sincronizzare gli alias"
       ],
       "Failed to transfer this vault's ownership.": [
         "Trasferimento della proprietà dalla cassaforte non riuscita."
@@ -1091,9 +1106,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà l'impronta digitale o il PIN del dispositivo."
       ],
-      "Add a username field": [
-        "Aggiungi il campo nome utente"
-      ],
       "Add your custom email address to monitor :": [
         "Aggiungi il tuo indirizzo email personalizzato da monitorare:"
       ],
@@ -1103,11 +1115,26 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Dopo aver importato i tuoi dati, puoi eliminare questo file CSV contenente le tue password per questioni di sicurezza."
       ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "L'alias \"${ item.aliasEmail }\" è stato spostato nel cestino - non inoltrerà più alla tua casella di posta"
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias ​​disabilitato con successo. Non riceverai più email inviate a ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias ​​abilitato con successo. Ora puoi ricevere le email inviate a ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "La sincronizzazione dell'alias tra i tuoi account ${ BRAND_NAME } e SimpleLogin è attiva."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Gli alias nel cestino continueranno a inoltrare le email. Se non vuoi più ricevere email su questo indirizzo, disabilitalo."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Alias ​​non sincronizzati (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Gli alias con domini personalizzati non vengono monitorati, aggiungili come email personalizzata per il monitoraggio."
+      ],
+      "All aliases are synced": [
+        "Tutti gli alias sono sincronizzati"
       ],
       "All breaches for this address were resolved": [
         "Tutte le violazioni di dati relative a questo indirizzo sono state risolte"
@@ -1174,9 +1201,6 @@
       ],
       "Change your password": [
         "Cambia la password"
-      ],
-      "Click here to add a field for a username.": [
-        "Clicca qui per aggiungere un campo per il nome utente."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Conferma la password aggiuntiva per procedere con la sua rimozione."
@@ -1783,8 +1807,15 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Stiamo avendo problemi nel sincronizzare i dati con la tua archiviazione locale. Assicurati di avere abbastanza spazio sul disco per eseguire ${ PASS_SHORT_APP_NAME } correttamente."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Abbiamo rilevato che hai ${ aliasCount } alias presente in SimpleLogin ma mancante in ${ PASS_APP_NAME }. Desideri importarlo?",
+        "Abbiamo rilevato che hai ${ aliasCount } alias presenti in SimpleLogin ma mancanti in ${ PASS_APP_NAME }. Desideri importarli?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Abbiamo inviato un codice di verifica a ${ email }. Inseriscilo qui sotto:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Quando crei/modifichi un accesso su ${ PASS_APP_NAME } l'input 'nome utente' sarà sempre visibile."
       ],
       "You are about to create:": [
         "Stai per creare:"
@@ -1852,6 +1883,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } alias"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } carattere",
         "${ config.options.length } caratteri"
@@ -1954,6 +1989,9 @@
       "Alphabetical": [
         "Alfabetico"
       ],
+      "Always show username field": [
+        "Mostra sempre il campo nome utente"
+      ],
       "Application logs": [
         "Log dell'applicazione"
       ],
@@ -2053,6 +2091,9 @@
       "Domain": [
         "Dominio"
       ],
+      "Don't remind me again": [
+        "Non ricordarmelo di nuovo"
+      ],
       "Download logs": [
         "Scarica i log"
       ],
@@ -2068,11 +2109,17 @@
       "Email address": [
         "Indirizzo email"
       ],
+      "Email or username": [
+        "Email o nome utente"
+      ],
       "Empty trash": [
         "Svuota il cestino"
       ],
       "Enable offline access": [
         "Abilita l'accesso offline"
+      ],
+      "Enter email or username": [
+        "Inserisci email o nome utente"
       ],
       "Expiration date": [
         "Data di scadenza"
@@ -2374,6 +2421,9 @@
       "Select preferred language": [
         "Seleziona la lingua preferita"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Seleziona la cassaforte in cui verranno importati gli alias SimpleLogin"
+      ],
       "Select your password manager": [
         "Seleziona il tuo gestore di password"
       ],
@@ -2421,6 +2471,9 @@
       ],
       "Support": [
         "Supporto"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Sincronizza gli alias con SimpleLogin"
       ],
       "Tax number": [
         "Partita IVA"
@@ -2624,9 +2677,6 @@
       "Enter email": [
         "Inserisci l'email"
       ],
-      "Enter email or username": [
-        "Inserisci email o nome utente"
-      ],
       "Enter password": [
         "Inserisci la password"
       ],
@@ -2706,6 +2756,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Sincronizzazione degli alias abilitata correttamente. La sincronizzazione degli alias SimpleLogin potrebbe richiedere del tempo"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Le casseforti non possono contenere più di ${ vault.targetMaxMembers } utente.",
         "Le casseforti non possono contenere più di ${ vault.targetMaxMembers } utenti."
@@ -2953,6 +3006,9 @@
       "Suggestions": [
         "Suggerimenti"
       ],
+      "Sync alias": [
+        "Sincronizza l'alias"
+      ],
       "Transfer ownership": [
         "Trasferisci proprietà"
       ],
@@ -3009,9 +3065,6 @@
       "Duplicated URL": [
         "URL duplicato"
       ],
-      "Email address is invalid": [
-        "Indirizzo email non valido"
-      ],
       "Field name is required": [
         "Il nome campo è obbligatorio"
       ],
@@ -3043,9 +3096,6 @@
       ],
       "A description of the problem is required": [
         "È richiesta una descrizione del problema"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "L'alias \"${ name }\" è attualmente utilizzato nell'elemento di accesso \"${ relatedLoginName }\". Non riceverai più le email inviate a \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tutti gli elementi nel cestino verranno eliminati definitivamente. Non puoi annullare questa azione."
@@ -3120,6 +3170,9 @@
       "Missing alias suffix": [
         "Suffisso alias mancante"
       ],
+      "Move to trash": [
+        "Sposta nel cestino"
+      ],
       "No items": [
         "Nessun elemento"
       ],
@@ -3174,6 +3227,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Il prefisso alias non può essere più lungo di 40 caratteri"
       ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Questo alias \"${ aliasEmail }\" è attualmente utilizzato nel login \"${ relatedLoginName }\"."
+      ],
       "This email address will no longer be monitored for data breaches.": [
         "Questo indirizzo email non sarà più monitorato per eventuali violazioni di dati."
       ],
@@ -3185,9 +3241,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Trasferire la proprietà di questa cassaforte a ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Spostare l'alias nel cestino?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Impossibile accedere a ${ PASS_APP_NAME }. ${ additionalMessage }"

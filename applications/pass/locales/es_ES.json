@@ -247,9 +247,6 @@
       "Get Started": [
         "Comenzar"
       ],
-      "Help us improve": [
-        "Ayúdanos a mejorar"
-      ],
       "Hide": [
         "Ocultar"
       ],
@@ -1091,9 +1088,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "El acceso a ${ PASS_APP_NAME } requerirá tu huella dactilar o el código PIN del dispositivo."
       ],
-      "Add a username field": [
-        "Añadir un campo de nombre de usuario"
-      ],
       "Add your custom email address to monitor :": [
         "Añade tu dirección de correo personalizado para monitorear:"
       ],
@@ -1102,9 +1096,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar tus datos, puedes eliminar el archivo CSV que contiene tus contraseñas por seguridad."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a tu buzón."
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Los alias con dominios personalizados no son monitoreados. Añádelos como correo electrónico personalizado para monitorearlos."
@@ -1174,9 +1165,6 @@
       ],
       "Change your password": [
         "Cambia tu contraseña"
-      ],
-      "Click here to add a field for a username.": [
-        "Haz clic aquí para añadir un campo para el nombre de usuario."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirma tu contraseña adicional para proceder con la eliminación."
@@ -2068,6 +2056,9 @@
       "Email address": [
         "Dirección de correo electrónico"
       ],
+      "Email or username": [
+        "Dirección de correo electrónico o nombre de usuario"
+      ],
       "Empty trash": [
         "Vaciar la papelera"
       ],
@@ -2624,9 +2615,6 @@
       "Enter email": [
         "Ingresar un correo electrónico"
       ],
-      "Enter email or username": [
-        "Introducir un correo o un nombre de usuario"
-      ],
       "Enter password": [
         "Introducir una contraseña"
       ],
@@ -3009,9 +2997,6 @@
       "Duplicated URL": [
         "La URL es duplicada."
       ],
-      "Email address is invalid": [
-        "La dirección de correo electrónico no es válida."
-      ],
       "Field name is required": [
         "El nombre del campo es obligatorio."
       ],
@@ -3043,9 +3028,6 @@
       ],
       "A description of the problem is required": [
         "Se requiere una descripción del problema."
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "El alias \"${ name }\" se utiliza actualmente en \"${ relatedLoginName }\". También dejarás de recibir correos enviados a \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Todos tus elementos en la papelera serán eliminados permanentemente. No puedes deshacer esta acción."
@@ -3185,9 +3167,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "¿Transferir la propiedad de esta caja fuerte a ${ email }?"
-      ],
-      "Trash alias ?": [
-        "¿Eliminar el alias?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No se puede iniciar sesión en ${ PASS_APP_NAME }. ${ additionalMessage }"
