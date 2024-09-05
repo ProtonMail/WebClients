@@ -181,6 +181,12 @@
       "Deselect": [
         "선택 해제"
       ],
+      "Disable instead": [
+        "대신 비활성화"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "이 별칭으로 전송된 이메일 수신을 중단하려면 별칭을 비활성화하십시오."
+      ],
       "Discard": [
         "저장 안함"
       ],
@@ -198,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "다크 웹 모니터링 활성화"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "이 이메일로 이메일을 전송하려면 이 별칭을 활성화하십시오."
       ],
       "Entire vault": [
         "전체 금고 공유"
@@ -246,9 +255,6 @@
       ],
       "Get Started": [
         "시작하기"
-      ],
-      "Help us improve": [
-        "저희를 도와주세요"
       ],
       "Hide": [
         "숨기기"
@@ -496,6 +502,9 @@
       "Submitting report...": [
         "보고서 제출 중..."
       ],
+      "Sync aliases": [
+        "별칭 동기화"
+      ],
       "Transfer ownership": [
         "소유권 이전"
       ],
@@ -653,6 +662,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } 파일을 분석할 수 없습니다. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "현재 별칭을 업데이트할 수 없습니다. 다시 시도해주세요."
+      ],
       "Alias options could not be resolved": [
         "별칭 옵션을 확인할 수 없습니다."
       ],
@@ -772,6 +784,9 @@
       ],
       "Failed to restore items from trash": [
         "휴지통 내의 항목 복구 실패"
+      ],
+      "Failed to sync aliases": [
+        "별칭 동기화 실패"
       ],
       "Failed to transfer this vault's ownership.": [
         "금고 소유권 이전 실패."
@@ -1077,9 +1092,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }에 접근하려면 지문 인식 및 기기 PIN코드가 필요합니다."
       ],
-      "Add a username field": [
-        "사용자 이름 입력란 추가"
-      ],
       "Add your custom email address to monitor :": [
         "모니터링할 사용자 지정 이메일 주소를 추가하세요 :"
       ],
@@ -1089,11 +1101,26 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "데이터를 성공적으로 불러오면, 보안을 위해 비밀번호를 포함하는 CSV 파일을 지울 수 있습니다."
       ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "별명 \"${ item.aliasEmail }\" 이(가) 휴지통으로 이동됨 - 사용자의 메일함에 대한 모든 포워딩이 중단됩니다."
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "별칭이 성공적으로 비활성화되었습니다. 더 이상 ${ item.aliasEmail }(으)로 이메일을 전송할 수 없게 됩니다."
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "별칭이 성공적으로 활성화되었습니다. 이제 ${ item.aliasEmail }(으)로 이메일 전송이 가능합니다."
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "${ BRAND_NAME }과 SimpleLogin 계정간의 별칭 동기화가 활성 상태입니다."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "휴지통 내 별칭이 계속 이메일 가져오기를 진행합니다. 이 주소에 대한 수신을 중단하려면 별칭을 비활성화하십시오."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "동기화되지 않은 별칭 (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "커스텀 도메인을 사용한 별칭은 모니터링 대상이 아니므로, 커스텀 이메일로 모니터링에 추가해 주세요."
+      ],
+      "All aliases are synced": [
+        "모든 별칭이 동기화되었습니다."
       ],
       "All breaches for this address were resolved": [
         "이 주소의 모든 침해가 해결되었습니다"
@@ -1160,9 +1187,6 @@
       ],
       "Change your password": [
         "비밀번호를 변경하십시오"
-      ],
-      "Click here to add a field for a username.": [
-        "사용자 이름에 대한 입력란을 추가하려면 여기를 탭하세요."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "삭제를 하려면 추가 비밀번호를 확인하십시오."
@@ -1764,8 +1788,14 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "사용자의 로컬 스토리지로 데이터를 동기화 하는데 문제가 있습니다. ${ PASS_SHORT_APP_NAME }가 원활히 동기화할 수 있도록 저장 공간이 여유 있는지 확인하세요."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "SimpleLogin에 ${ aliasCount }개의 별칭이 존재하지만 ${ PASS_APP_NAME }에는 누락된 별칭이 있음이 발견되었어요. 해당 별명을 불러오시겠어요?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "${ email }(으)로 인증 코드를 발송해 드렸습니다. 아래에 코드를 입력해 주세요:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "${ PASS_APP_NAME }에서 로그인을 생성/편집할 때 '사용자 이름' 입력이 항상 표시됩니다."
       ],
       "You are about to create:": [
         "생성하려고 하는 주소:"
@@ -1832,6 +1862,9 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount }개 별칭"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length }글자"
       ],
@@ -1927,6 +1960,9 @@
       ],
       "Alphabetical": [
         "알파벳 순"
+      ],
+      "Always show username field": [
+        "사용자 이름 입력란 항상 표시"
       ],
       "Application logs": [
         "어플리케이션 로그"
@@ -2027,6 +2063,9 @@
       "Domain": [
         "도메인"
       ],
+      "Don't remind me again": [
+        "다시 보지 않기"
+      ],
       "Download logs": [
         "로그 다운로드"
       ],
@@ -2042,11 +2081,17 @@
       "Email address": [
         "이메일 주소"
       ],
+      "Email or username": [
+        "이메일 또는 사용자 이름"
+      ],
       "Empty trash": [
         "휴지통 비우기"
       ],
       "Enable offline access": [
         "오프라인 접근 허용"
+      ],
+      "Enter email or username": [
+        "이메일 및 사용자 이름 입력"
       ],
       "Expiration date": [
         "만료 시간"
@@ -2348,6 +2393,9 @@
       "Select preferred language": [
         "선호하는 언어 선택"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "SimpleLogin 별칭을 불러올 금고 위치를 선택하세요."
+      ],
       "Select your password manager": [
         "비밀 번호 관리자를 선택하세요"
       ],
@@ -2395,6 +2443,9 @@
       ],
       "Support": [
         "지원"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "SimpleLogin으로 별칭 동기화"
       ],
       "Tax number": [
         "세금 번호"
@@ -2596,9 +2647,6 @@
       "Enter email": [
         "이메일 입력"
       ],
-      "Enter email or username": [
-        "이메일 및 사용자 이름 입력"
-      ],
       "Enter password": [
         "비밀번호 입력"
       ],
@@ -2678,6 +2726,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "별칭 동기화를 성공적으로 활성화했습니다. SimpleLoin 별칭 동기화에 시간이 조금 소요될 수 있습니다."
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "금고에 ${ vault.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
       ]
@@ -2923,6 +2974,9 @@
       "Suggestions": [
         "제안"
       ],
+      "Sync alias": [
+        "별칭 동기화"
+      ],
       "Transfer ownership": [
         "소유권 이전"
       ],
@@ -2979,9 +3033,6 @@
       "Duplicated URL": [
         "URL 복사됨."
       ],
-      "Email address is invalid": [
-        "올바르지 않은 이메일 주소입니다"
-      ],
       "Field name is required": [
         "필드의 이름이 필요합니다."
       ],
@@ -3013,9 +3064,6 @@
       ],
       "A description of the problem is required": [
         "문제의 셜명이 필요합니다."
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "별칭 \"${ name }\"이 로그인 항목 \"${ relatedLoginName }\"에서 사용중입니다. 또한 \"${ aliasEmail }\"로 보내지는 이메일을 받을 수 없게 됩니다."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "모든 휴지통에 있는 항목이 완전히 삭제됩니다. 이 동작을 취소할 수 없습니다."
@@ -3089,6 +3137,9 @@
       "Missing alias suffix": [
         "별칭 접미사가 빠져있습니다"
       ],
+      "Move to trash": [
+        "휴지통으로 이동"
+      ],
       "No items": [
         "항목 없음"
       ],
@@ -3143,6 +3194,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "별칭 접두사는 40자를 초과할 수 없습니다"
       ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "최근 해당 별칭 \"${ aliasEmail }\"이(가) 로그인 \"${ relatedLoginName }\"(에)서 사용되었습니다."
+      ],
       "This email address will no longer be monitored for data breaches.": [
         "데이터 침해에 대한 이 이메일 주소가 더 이상 모니터링되지 않습니다."
       ],
@@ -3154,9 +3208,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "금고의 소유권을 ${ email }으로 이동하시겠어요?"
-      ],
-      "Trash alias ?": [
-        "별칭을 휴지통으로 보내시겠습니까?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }에 로그인할 수 없습니다. ${ additionalMessage }"

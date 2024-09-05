@@ -378,10 +378,10 @@
       "Get link": [
         "Obtén l'enllaç"
       ],
-      "Get started": [
+      "Get Started": [
         "Comença"
       ],
-      "Get Started": [
+      "Get started": [
         "Comença"
       ],
       "Get verification code": [
@@ -461,6 +461,9 @@
       ],
       "Learn more": [
         "Més informació"
+      ],
+      "Leave": [
+        "Surt"
       ],
       "Let's talk": [
         "Parlem-ne"
@@ -549,10 +552,10 @@
       "Not now": [
         "Ara no"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
       "Open": [
@@ -2394,6 +2397,9 @@
     "duoplan2024: Action": {
       "Get ${ BRAND_NAME } Duo": [
         "Obtingueu ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Obteniu-lo per ${ price }"
       ]
     },
     "duoplan2024: Info": {
@@ -2402,6 +2408,9 @@
       ],
       "2 users": [
         "2 usuaris"
+      ],
+      "You save ${ amountSave }": [
+        "Estalvieu ${ amountSave }"
       ]
     },
     "duoplan2024: SubTitle": {
@@ -4639,9 +4648,6 @@
         "Només es permet ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcter",
         "Només es permeten ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcters"
       ],
-      "Only the owner of the share will be able to invite you again.": [
-        "Només el propietari de la compartició us podrà tornar a convidar."
-      ],
       "Only the people with the link and the password can access this file.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest fitxer."
       ],
@@ -4777,6 +4783,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "La cerca privada està habilitada. Ara ja podeu tancar aquest diàleg i cercar fitxers i carpetes."
+      ],
+      "Public link": [
+        "Enllaç públic"
       ],
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
@@ -5308,9 +5317,6 @@
       "You will lose all unsaved changes.": [
         "Perdreu tots els canvis sense desar."
       ],
-      "You will not be able to join again after.": [
-        "No us hi podreu tornar a unir després."
-      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
@@ -5783,6 +5789,9 @@
       ],
       "Location": [
         "Ubicació"
+      ],
+      "Log in or sign up ": [
+        "Inicieu sessió o registreu-vos "
       ],
       "Mail Server (IMAP)": [
         "Servidor de correu (IMAP)"
@@ -6509,6 +6518,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Comenceu per ${ price }"
+      ],
       "Upgrade now": [
         "Millora ara"
       ]
@@ -6609,11 +6621,23 @@
       "${ size } attachment size": [
         "${ size } en fitxers adjunts"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } d'emmagatzematge segur per usuari"
+      ],
       "${ size } storage": [
         "${ size } d'emmagatzematge"
       ],
+      "1 TB secure storage": [
+        "1 TB d'emmagatzematge segur"
+      ],
       "1 user": [
         "1 usuari"
+      ],
+      "10 email addresses/aliases": [
+        "10 adreces de correu electrònic/àlies"
+      ],
+      "10-year file version history": [
+        "Historial de versions de fitxers de 10 anys"
       ],
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -6669,6 +6693,9 @@
       "Contact groups management": [
         "Gestió de grups de contactes"
       ],
+      "Custom and secure business email": [
+        "Correu electrònic empresarial personalitzat i segur"
+      ],
       "Custom domains for email aliases": [
         "Dominis personalitzats per a àlies de correu electrònic"
       ],
@@ -6704,6 +6731,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Compatibilitat amb clients de correu electrònic (per IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grups de correu electrònic"
       ],
       "Enables HIPAA compliance": [
         "Permet el compliment de la llei HIPAA"
@@ -6788,6 +6818,12 @@
         "Protegiu ${ n } dispositiu alhora",
         "Protegiu ${ n } dispositius alhora"
       ],
+      "Quickly craft replies": [
+        "Crea ràpidament les respostes"
+      ],
+      "Recover previous file versions": [
+        "Recupera les versions anteriors del fitxer"
+      ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
       ],
@@ -6817,6 +6853,9 @@
       ],
       "Send & receive invitations": [
         "Enviament i recepció d'invitacions"
+      ],
+      "Share files with no size limit": [
+        "Compartiu fitxers sense límit de mida"
       ],
       "Sign in as user": [
         "Inicia la sessió com a usuari"
@@ -7555,6 +7594,9 @@
       ],
       "Start using ${ DRIVE_APP_NAME }": [
         "Comenceu a utilitzar ${ DRIVE_APP_NAME }"
+      ],
+      "Try it later": [
+        "Prova-ho més tard"
       ]
     },
     "Onboarding Info": {
@@ -7573,9 +7615,15 @@
       "Share a file": [
         "Comparteix un fitxer"
       ],
+      "Share files & folders": [
+        "Comparteix fitxers i carpetes"
+      ],
       "Simply complete the following in the next ${ expiresInDays } day:": [
         "Completeu els següents passos abans d'${ expiresInDays } dia:",
         "Completeu els següents passos abans de ${ expiresInDays } dies:"
+      ],
+      "Store your files and share them securely. Get started by securing your most private files, like IDs, contracts, and personal photos.": [
+        "Emmagatzemeu els vostres fitxers i compartiu-los de forma segura. Comenceu per assegurar els vostres fitxers més privats, com ara identificadors, contractes i fotos personals."
       ],
       "Upload a file": [
         "Puja un fitxer"
@@ -7605,6 +7653,15 @@
       ]
     },
     "Onboarding Title": {
+      "Final approval in progress": [
+        "Aprovació final en curs"
+      ],
+      "Hang tight!": [
+        "Espereu un moment."
+      ],
+      "Invite team members": [
+        "Convida els membres de l'equip"
+      ],
       "Your welcome bonus": [
         "Bonificació de benvinguda"
       ]
@@ -7702,8 +7759,14 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
+      "Please select billing country": [
+        "Seleccioneu el país de facturació"
+      ],
       "Please select billing state": [
         "Seleccioneu l'estat de facturació"
+      ],
+      "Select billing country to pay": [
+        "Seleccioneu el país de facturació per pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ months }. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ price } durant ${ months } mesos. Podeu cancel·lar-ho en qualsevol moment."
@@ -7955,6 +8018,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Missatge oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Reviseu la seguretat del compte"
       ]
     },
     "Security Center": {
@@ -9308,9 +9376,6 @@
       "Are you sure you want to close the preview?": [
         "Segur que voleu tancar la previsualització?"
       ],
-      "Are you sure you want to leave this share?": [
-        "Segur que voleu deixar aquesta compartició?"
-      ],
       "Billing cycle": [
         "Cicle de facturació"
       ],
@@ -10042,6 +10107,9 @@
       "${ n } wallet": [
         "${ n } cartera",
         "${ n } carteres"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Una manera més segura de mantenir el vostre Bitcoin"
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"

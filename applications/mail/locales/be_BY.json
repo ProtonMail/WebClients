@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe памочнік у напісанні"
-      ],
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
       ],
@@ -1026,9 +1023,6 @@
       "Revert to original display": [
         "Вярнуць арыгінальны выгляд"
       ],
-      "Run on servers": [
-        "Выканаць на серверах"
-      ],
       "Save": [
         "Захаваць"
       ],
@@ -1247,6 +1241,12 @@
       ],
       "Trust": [
         "Давяраць"
+      ],
+      "Trust key": [
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць публічнаму ключу"
@@ -1573,9 +1573,6 @@
       ],
       "Run on device": [
         "Выканаць на прыладзе"
-      ],
-      "Run on servers": [
-        "Выканаць на серверах"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Бяспечна працуе на серверах ${ BRAND_NAME }"

@@ -247,9 +247,6 @@
       "Get Started": [
         "დაიწყეთ"
       ],
-      "Help us improve": [
-        "დაგვეხმარეთ, გავუმჯობესდეთ"
-      ],
       "Hide": [
         "დამალვა"
       ],
@@ -1145,9 +1142,6 @@
       "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
         "${ PASS_APP_NAME }-სთან წვდომისთვის თქვენი თითის ანაბეჭდი, ან მოწყობილობის PIN-კოდი დაგჭირდებათ."
       ],
-      "Add a username field": [
-        "მომხმარებლის სახელის ველის დამატება"
-      ],
       "Add your custom email address to monitor :": [
         "დაამატეთ თქვენი ელფოსტის მისამართი მონიტორინგისთვის :"
       ],
@@ -1156,9 +1150,6 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "თქვენი მონაცემების წარმატებით შემოტანის შემდეგ, შეგიძლიათ CSV ფაილი, რომელიც თქვენს პაროლებს შეიცავს, უსაფრთხოებისთვის წაშალოთ."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "ფსევდონიმი \"${ item.aliasEmail }\" გადატანილია ნაგვის ყუთში. ეს ელფოსტების თქვენს საფოსტო ყუთში გადამისამართებას შეწყვეტს"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "მორგებული დომენების მქონე ფსევდონიმების მონიტორინგი არ ხდება. მათი მონიტორინგისთვის ისინი მორგებული ელფოსტის სახით დაამატეთ."
@@ -1228,9 +1219,6 @@
       ],
       "Change your password": [
         "შეცვალეთ თქვენი პაროლი"
-      ],
-      "Click here to add a field for a username.": [
-        "დააწკაპუნეთ აქ მომხმარებლის სახელისთვის ველის დასამატებლად."
       ],
       "Confirm your extra password to proceed with its removal.": [
         "დაადასტურეთ თქვენი დამატებითი პაროლი, რომ ის წაშალოთ."
@@ -2131,6 +2119,9 @@
       "Email address": [
         "ელფოსტის მისამართი"
       ],
+      "Email or username": [
+        "ელფოსტა ან მომხმარებლის სახელი"
+      ],
       "Empty trash": [
         "ნაგვის ყუთის გასუფთავება"
       ],
@@ -2701,9 +2692,6 @@
       "Enter email": [
         "შეიყვანეთ ელფოსტა"
       ],
-      "Enter email or username": [
-        "შეყვანეთ ელფოსტა ან მომხმარებლის სახელი"
-      ],
       "Enter password": [
         "შეიყვანეთ პაროლი"
       ],
@@ -3086,9 +3074,6 @@
       "Duplicated URL": [
         "დუბლირებული URL"
       ],
-      "Email address is invalid": [
-        "ელფოსტის მისამართი არასწორია"
-      ],
       "Field name is required": [
         "ველის სახელი აუცილებელია"
       ],
@@ -3120,9 +3105,6 @@
       ],
       "A description of the problem is required": [
         "პრობლემის აღწერა აუცილებელია"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "ფსევდონიმი '${ name }' ამჟამად გამოიყენება შესვლის დეტალის ჩანაწერში '${ relatedLoginName }'. ასევე აღარ მიიღებთ ელფოსტებს, რომლებიც '${ aliasEmail }'-ზე მოვა"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "ყველა თქვენი ნაგვის ყუთში გადაყრილი ელემენტი სამუდამოდ წაიშლება. ეს ქმედება შეუქცევადია."
@@ -3262,9 +3244,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "გადავცე ამ საცავს ფლობის უფლება ${ email }-ს?"
-      ],
-      "Trash alias ?": [
-        "წავშალო ფსევდონიმები?"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }-ში შესვლა შეუძლებელია. ${ additionalMessage }"

@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
@@ -1015,9 +1012,6 @@
       "Revert to original display": [
         "Torna a la vista original"
       ],
-      "Run on servers": [
-        "Executa als servidors"
-      ],
       "Save": [
         "Desa"
       ],
@@ -1236,6 +1230,10 @@
       ],
       "Trust": [
         "De confiança"
+      ],
+      "Trust key": [
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1544,8 +1542,8 @@
       "Run on device": [
         "Executa al dispositiu"
       ],
-      "Run on servers": [
-        "Executa als servidors"
+      "Securely run on device": [
+        "Executa de manera segura al dispositiu"
       ]
     },
     "Assistant toggle": {
@@ -3431,6 +3429,9 @@
       "Set a recovery method to prevent losing access to your account.": [
         "Definiu un mètode de recuperació per evitar perdre l'accés al compte."
       ],
+      "Starting from ${ price }": [
+        "Comenceu des de ${ price }"
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Per a continuar utilitzant l'assistent d'escriptura, afegiu-lo a la vostra subscripció."
       ],
@@ -3565,6 +3566,9 @@
     "duoplan2024: Action": {
       "Get ${ BRAND_NAME } Duo": [
         "Obtingueu ${ BRAND_NAME } Duo"
+      ],
+      "Get it for ${ price }": [
+        "Obteniu-lo per ${ price }"
       ]
     },
     "duoplan2024: Info": {
@@ -3573,6 +3577,9 @@
       ],
       "2 users": [
         "2 usuaris"
+      ],
+      "You save ${ amountSave }": [
+        "Estalvieu ${ amountSave }"
       ]
     },
     "duoplan2024: SubTitle": {
@@ -6295,6 +6302,9 @@
       "Learn more": [
         "Més informació"
       ],
+      "Learn more about the writing assistant": [
+        "Més informació sobre l'assistent d'escriptura"
+      ],
       "Left to Right": [
         "Esquerra a Dreta"
       ],
@@ -7379,6 +7389,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your private writing assistant": [
+        "El vostre assistent d'escriptura privat"
       ]
     },
     "info": {
@@ -8843,6 +8856,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Passar a ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Comenceu per ${ price }"
+      ],
       "Upgrade now": [
         "Millora ara"
       ]
@@ -8943,11 +8959,23 @@
       "${ size } attachment size": [
         "${ size } en fitxers adjunts"
       ],
+      "${ size } of secure storage per user": [
+        "${ size } d'emmagatzematge segur per usuari"
+      ],
       "${ size } storage": [
         "${ size } d'emmagatzematge"
       ],
+      "1 TB secure storage": [
+        "1 TB d'emmagatzematge segur"
+      ],
       "1 user": [
         "1 usuari"
+      ],
+      "10 email addresses/aliases": [
+        "10 adreces de correu electrònic/àlies"
+      ],
+      "10-year file version history": [
+        "Historial de versions de fitxers de 10 anys"
       ],
       "15 GB storage": [
         "15 GB d'emmagatzematge"
@@ -9003,6 +9031,9 @@
       "Contact groups management": [
         "Gestió de grups de contactes"
       ],
+      "Custom and secure business email": [
+        "Correu electrònic empresarial personalitzat i segur"
+      ],
       "Custom domains for email aliases": [
         "Dominis personalitzats per a àlies de correu electrònic"
       ],
@@ -9038,6 +9069,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Compatibilitat amb clients de correu electrònic (per IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Grups de correu electrònic"
       ],
       "Enables HIPAA compliance": [
         "Permet el compliment de la llei HIPAA"
@@ -9122,6 +9156,12 @@
         "Protegiu ${ n } dispositiu alhora",
         "Protegiu ${ n } dispositius alhora"
       ],
+      "Quickly craft replies": [
+        "Crea ràpidament les respostes"
+      ],
+      "Recover previous file versions": [
+        "Recupera les versions anteriors del fitxer"
+      ],
       "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
         "Comprovacions periòdiques de la seguretat del vostre compte. Us avisem si teniu contrasenyes febles o reutilitzades que cal actualitzar."
       ],
@@ -9151,6 +9191,9 @@
       ],
       "Send & receive invitations": [
         "Enviament i recepció d'invitacions"
+      ],
+      "Share files with no size limit": [
+        "Compartiu fitxers sense límit de mida"
       ],
       "Sign in as user": [
         "Inicia la sessió com a usuari"
@@ -9867,8 +9910,14 @@
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
+      "Please select billing country": [
+        "Seleccioneu el país de facturació"
+      ],
       "Please select billing state": [
         "Seleccioneu l'estat de facturació"
+      ],
+      "Select billing country to pay": [
+        "Seleccioneu el país de facturació per pagar"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ months }. El cupó és vàlid per a renovacions de ${ couponRedemptions }. Aleshores, es renovarà automàticament a ${ price } durant ${ months } mesos. Podeu cancel·lar-ho en qualsevol moment."
@@ -10217,6 +10266,11 @@
       ],
       "Re-encrypting invitation failed. Please try again.": [
         "No s'ha pogut tornar a xifrar la invitació. Proveu de nou."
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Reviseu la seguretat del compte"
       ]
     },
     "Search - no results": {
@@ -12071,6 +12125,9 @@
       "Coupon": [
         "Cupó"
       ],
+      "Craft better emails": [
+        "Crea millors correus electrònics"
+      ],
       "Create contact": [
         "Crea un contacte"
       ],
@@ -12849,6 +12906,9 @@
       "${ n } wallet": [
         "${ n } cartera",
         "${ n } carteres"
+      ],
+      "A safer way to hold your Bitcoin": [
+        "Una manera més segura de mantenir el vostre Bitcoin"
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"

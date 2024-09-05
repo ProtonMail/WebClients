@@ -1120,12 +1120,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Réessayez d'enregistrer. L'enregistrement n'a pas abouti pour la raison suivante : ${ saveError }"
       ],
-      "Turn off": [
-        "Désactiver"
-      ],
-      "Turn on": [
-        "Activer"
-      ],
       "Underline": [
         "Souligner"
       ],
@@ -1475,9 +1469,6 @@
       ],
       "Run on device": [
         "Exécuter sur l'appareil"
-      ],
-      "Run on servers": [
-        "Exécuter sur les serveurs"
       ]
     },
     "Assistant toggle": {
@@ -7082,6 +7073,9 @@
       "Disable recovery by ${ type }": [
         "Désactiver la récupération par ${ type }"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Désactivation depuis ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "La désactivation de l'authentification à deux facteurs rendra votre compte moins sécurisé. Ne procédez que si c'est absolument nécessaire."
       ],
@@ -7196,6 +7190,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Activez TLS ou SSL sur le service externe s'il est pris en charge."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Activation depuis ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Réactiver la récupération par phrase générera une nouvelle phrase de récupération."

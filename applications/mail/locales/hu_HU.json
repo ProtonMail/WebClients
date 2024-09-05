@@ -1118,6 +1118,10 @@
       "Trust": [
         "Megbízható"
       ],
+      "Trust key": [
+        "Megbízható kulcs",
+        "Kulcsok megjelölése megbízhatóként"
+      ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
       ],
@@ -1391,11 +1395,6 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } alkalmazások"
-      ]
-    },
-    "Assistant option": {
-      "Run on servers": [
-        "Futtatás a szervereken"
       ]
     },
     "Attached ics file error": {

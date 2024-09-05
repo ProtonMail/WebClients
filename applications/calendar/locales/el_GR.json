@@ -6237,6 +6237,9 @@
       "Downgrade to ${ downgradedPlanName }": [
         "Υποβάθμιση σε ${ downgradedPlanName }"
       ],
+      "Get started for ${ price }": [
+        "Ξεκινήστε με ${ price }"
+      ],
       "Upgrade now": [
         "Αναβάθμιση τώρα"
       ]
@@ -6369,6 +6372,9 @@
       "10 email addresses/aliases": [
         "10 διεύθυνσεις email/ψευδώνυμα"
       ],
+      "10-year file version history": [
+        "Ιστορικό εκδόσεων αρχείων 10 ετών"
+      ],
       "15 GB storage": [
         "15 GB αποθηκευτικός χώρος"
       ],
@@ -6386,6 +6392,9 @@
       ],
       "Administration Panel": [
         "Πίνακας Διαχείρισης"
+      ],
+      "All ${ BRAND_NAME } products and features": [
+        "Όλα τα προϊόντα και χαρακτηριστικά ${ BRAND_NAME }"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
@@ -6467,6 +6476,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Υποστήριξη προγράμματος-πελάτη ηλεκτρονικού ταχυδρομείου (μέσω IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "Ομάδες ηλεκτρονικού ταχυδρομείου"
       ],
       "Enables HIPAA compliance": [
         "Επιτρέπει τη συμμόρφωση με το HIPAA"
@@ -6553,9 +6565,15 @@
       "Priority support & live chat": [
         "Υποστήριξη προτεραιότητας & ζωντανή συνομιλία"
       ],
+      "Proofread and refine your emails": [
+        "Διορθώστε και βελτιώστε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας"
+      ],
       "Protect ${ n } device at a time": [
         "Προστατέψτε ${ n } συσκευή ανά φορά",
         "Προστατέψτε ${ n } συσκευές ανά φορά"
+      ],
+      "Quickly craft replies": [
+        "Δημιουργήστε γρήγορα απαντήσεις"
       ],
       "Recover previous file versions": [
         "Ανάκτηση προηγούμενων εκδόσεων αρχείων"
@@ -6610,6 +6628,9 @@
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
+      ],
+      "Support for up to 2 users": [
+        "Υποστήριξη για έως 2 χρήστες"
       ],
       "Sync and backup all your files across devices": [
         "Συγχρονίστε και δημιουργήστε αντίγραφα ασφαλείας όλων των αρχείων σας σε όλες τις συσκευές"
@@ -6794,6 +6815,11 @@
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "Αποκτήστε το Mail Plus για ${ price }"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -6869,6 +6895,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Μοιραστείτε εύκολα τα ημερολόγιά σας με την οικογένεια, τους φίλους ή τους συναδέλφους σας"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Στείλτε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα μέλη μιας ομάδας με μία μόνο διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Διασφαλίζει ότι λαμβάνετε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στον τομέα σας, ακόμα και αν η διεύθυνση ηλεκτρονικού ταχυδρομείου δεν υπάρχει, δεν υπάρχει πλέον ή έχει τυπογραφικό λάθος"
@@ -7711,6 +7740,11 @@
     "Reload event button tooltip": {
       "Reload event": [
         "Επαναφόρτωση εκδήλωσης"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Ελέγξτε την ασφάλεια του λογαριασμού σας"
       ]
     },
     "Security Center": {

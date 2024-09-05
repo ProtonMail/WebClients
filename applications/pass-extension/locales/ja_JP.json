@@ -230,9 +230,6 @@
       "Get Pass Plus": [
         "Pass Plusを入手"
       ],
-      "Help us improve": [
-        "改善にご協力ください"
-      ],
       "Hide": [
         "非表示"
       ],
@@ -971,17 +968,11 @@
       "Access your passwords on the go with our mobile apps.": [
         "モバイルアプリで外出先からパスワードにアクセス。"
       ],
-      "Add a username field": [
-        "ユーザー名フィールドを追加"
-      ],
       "Admin": [
         "管理者"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "エイリアス「${ item.aliasEmail }」はごみ箱に移動されました - メールボックスへのメールの転送は停止されます"
       ],
       "All breaches for this address were resolved": [
         "このアドレスの侵害はすべて解決されました"
@@ -1738,6 +1729,9 @@
       "Email aliases": [
         "メールエイリアス"
       ],
+      "Email or username": [
+        "メールアドレスまたはユーザー名"
+      ],
       "Empty trash": [
         "ごみ箱を空にする"
       ],
@@ -2160,9 +2154,6 @@
       "Enter email": [
         "メールアドレスを入力"
       ],
-      "Enter email or username": [
-        "メールアドレスまたはユーザー名を入力"
-      ],
       "Enter password": [
         "パスワードを入力"
       ],
@@ -2427,9 +2418,6 @@
       "Duplicated URL": [
         "重複した URL"
       ],
-      "Email address is invalid": [
-        "メールアドレスが無効です"
-      ],
       "Field name is required": [
         "フィールド名は必須です"
       ],
@@ -2455,9 +2443,6 @@
     "Warning": {
       "A description of the problem is required": [
         "問題の説明が必要"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "エイリアス「${ name }」は現在、ログイン項目「${ relatedLoginName }」で使用されています。 また、「${ aliasEmail }」に送信されたメールの受信も停止されます。"
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "ごみ箱に入れられたすべてのアイテムは完全に削除されます。 この操作を元に戻すことはできません。"
@@ -2557,9 +2542,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "このフォルダーの所有権を${ email }に移転しますか？"
-      ],
-      "Trash alias ?": [
-        "ごみ箱の別名?"
       ],
       "Unable to save": [
         "保存できません"

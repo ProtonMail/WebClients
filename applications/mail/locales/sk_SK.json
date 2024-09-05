@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Asistent písania Scribe"
-      ],
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
       ],
@@ -1026,9 +1023,6 @@
       "Revert to original display": [
         "Návrat na pôvodné zobrazenie"
       ],
-      "Run on servers": [
-        "Beží na serveroch"
-      ],
       "Save": [
         "Uložiť"
       ],
@@ -1247,6 +1241,12 @@
       ],
       "Trust": [
         "Dôverovať"
+      ],
+      "Trust key": [
+        "Dôveryhodný kľúč",
+        "Dôveryhodný kľúč",
+        "Dôverovať kľúčom",
+        "Dôverovať novým kľúčom"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1574,11 +1574,8 @@
       "Run on device": [
         "Spustiť na zariadení"
       ],
-      "Run on servers": [
-        "Beží na serveroch"
-      ],
       "Securely run on ${ BRAND_NAME } servers": [
-        "Bezpečne spustiť na serveroch ${ BRAND_NAME }"
+        "Bezpečne spustiť na ${ BRAND_NAME } serveroch"
       ],
       "Securely run on device": [
         "Bezpečne spustite na zariadení"
@@ -3440,7 +3437,7 @@
         "2FA pridáva ďalšiu úroveň zabezpečenia a zabraňuje neoprávnenému prístupu."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Po navýšení je možné automaticky mazať správy zo zložky nevyžiadanej pošty a kôš a odomknúť ďalšie prémiové funkcie."
+        "Po navýšení je možné automaticky mazať správy zo zložky nevyžiadanej pošty a koša a odomknúť ďalšie prémiové funkcie."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrovanie kontaktov… Táto akcia môže trvať niekoľko minút. Akonáhle bude proces ukončený, budete si môcť stiahnuť súbor s vašimi exportovanými kontaktmi."
@@ -9402,7 +9399,7 @@
         "${ textType } - Pre ${ DRIVE_APP_NAME }"
       ],
       "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pre všetky služby ${ BRAND_NAME }"
+        "${ textType } - Pre všetky ${ BRAND_NAME } služby"
       ],
       "1 TB secure storage": [
         "1 TB bezpečného úložiska"
@@ -9414,7 +9411,7 @@
         "10 emailových adries/aliasov"
       ],
       "10-year file version history": [
-        "-ročná história verzií súborov"
+        "10-ročná história verzií súborov"
       ],
       "15 GB storage": [
         "15 GB úložisko"
@@ -9654,7 +9651,7 @@
         "Odosielanie a prijímanie pozvánok"
       ],
       "Share files with no size limit": [
-        "Zdieľanie súborov bez obmedzenia na ich veľkosť"
+        "Zdieľanie súborov bez obmedzenia veľkosti"
       ],
       "Sign in as user": [
         "Prihlásiť sa ako používateľ"
@@ -10005,7 +10002,7 @@
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov so 20 a viac používateľmi"
+        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov s 20 a viac používateľmi"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."

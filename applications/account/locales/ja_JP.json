@@ -829,6 +829,9 @@
       "Report a problem": [
         "問題を報告"
       ],
+      "Request a call": [
+        "通話をリクエストする"
+      ],
       "Request a feature": [
         "機能を提案"
       ],
@@ -1413,16 +1416,13 @@
     },
     "Assistant option": {
       "Data stay on your device but requires a one-time download and compatible hardware": [
-        "データはデバイスに保存されます。一度限りのダウンロードと互換性のあるハードウェアが必要です。"
+        "データはデバイスに保存されます。初回のダウンロードと互換性のあるハードウェアが必要です。"
       ],
       "Fast and secure. No logs are kept.": [
         "高速で安全です。ログは保持されません。"
       ],
       "Run on device": [
         "デバイス上で実行"
-      ],
-      "Run on servers": [
-        "サーバー上で実行"
       ]
     },
     "Assistant toggle": {
@@ -6952,6 +6952,9 @@
       "Lean more about single sign-on": [
         "シングル サインオンについて詳しく見る"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "${ staySaferOnlineLink } の使い方を学ぶ"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "サードパーティの VPN アプリを使用して、${ VPN_APP_NAME } にサインインする方法を学ぶ"
       ],
@@ -6993,6 +6996,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } を読み込み中"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "カレンダーを読み込み中です。お待ちください。スケジューリングプラットフォームの Calendly へ新しいタブでリダイレクトされます。"
       ],
       "Loading gateways monitoring current status.": [
         "ゲートウェイモニタリングの現在の状態を読み込んでいます。"
@@ -7158,6 +7164,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "組織に他の管理者がいる場合、あなたの責任で新しいパスワードを伝えてください。"
+      ],
+      "Other users within your organization will see your busy slots. No event details are shared.": [
+        "組織内の他のユーザーには、あなたの埋まっているスロットが表示されます。イベントの詳細は共有されません。"
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "古い回復用ファイルです。アップデートして確実にデータにアクセスできるようにしてください"
@@ -8155,6 +8164,12 @@
       "You have ${ availableCount } dedicated server available.": [
         "${ availableCount } 個の専用サーバーが利用可能です。"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "試用版 ${ planTitle } のサブスクリプションが有効です。試用期間後にサブスクリプションを継続したい場合は、支払い方法を追加してください。"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "試用版 ${ planTitle } のサブスクリプションが有効です。現時点での支払いは必要ありません。 サブスクリプションは試用期間の終了時に自動的に更新されます。"
+      ],
       "You have no calendars to export.": [
         "エクスポートするカレンダーがありません。"
       ],
@@ -8259,6 +8274,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "あなたの情報は安全です。 サービスの提供に必要な場合にのみ、お客様に連絡します。"
+      ],
+      "Your information was found on ${ displayedDate }": [
+        "あなたの情報は ${ displayedDate }で見つかりました。"
       ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
@@ -9498,6 +9516,9 @@
       ],
       "Send in": [
         "次の言語で送信:"
+      ],
+      "Show others when I'm busy": [
+        "自分が埋まっている場合に他の候補を表示する"
       ],
       "Show secondary time zone": [
         "2 つ目のタイムゾーンを表示"
@@ -11022,6 +11043,9 @@
     "new_plans: Title": {
       "${ shortPlan.title } Trial": [
         "${ shortPlan.title }トライアル"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price }で Mail Plus を入手する"
       ],
       "Your account's usage": [
         "アカウントの使用率"

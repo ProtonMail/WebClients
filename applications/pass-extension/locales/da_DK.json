@@ -182,6 +182,12 @@
       "Disable autosave on this website": [
         "Deaktivér autogem på dette websted"
       ],
+      "Disable instead": [
+        "Deaktiver i stedet for"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Deaktiver dette alias for at stoppe modtagne mails sendt til dette alias"
+      ],
       "Discard": [
         "Kassér"
       ],
@@ -205,6 +211,9 @@
       ],
       "Edit vault": [
         "Redigér boks"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Aktiver dette alias for at modtage mails sendt til dette alias"
       ],
       "Entire vault": [
         "Hele boksen"
@@ -247,9 +256,6 @@
       ],
       "Get Pass Plus": [
         "Få Pass Plus"
-      ],
-      "Help us improve": [
-        "Hjælp os med at blive bedre"
       ],
       "Hide": [
         "Skjul"
@@ -500,6 +506,9 @@
       "Submitting report...": [
         "Indsender rapport..."
       ],
+      "Sync aliases": [
+        "Synkroniser aliasser"
+      ],
       "Transfer ownership": [
         "Overfør ejerskab"
       ],
@@ -621,6 +630,9 @@
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke fortolkes. ${ errorDetail }"
+      ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Alias kunne ikke opdateres i øjeblikket. Prøv igen senere."
       ],
       "Alias options could not be resolved": [
         "Alias-indstillinger kunne ikke hentes"
@@ -749,6 +761,9 @@
       ],
       "Failed to restore items from trash": [
         "Kunne ikke gendanne elementer fra papirkurven"
+      ],
+      "Failed to sync aliases": [
+        "Kunne ikke synkronisere aliasser"
       ],
       "Failed to transfer this vault's ownership.": [
         "Kunne ikke at overføre ejerskabet af denne boks."
@@ -1081,17 +1096,29 @@
       "Access your passwords on the go with our mobile apps.": [
         "Tilgå dine adgangskoder på farten med vores mobil-apps."
       ],
-      "Add a username field": [
-        "Tilføj et brugernavn-felt"
-      ],
       "Admin": [
         "Admin"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importeret dine data, kan du slette CSV-filen med dine adgangskoder for en sikkerheds skyld."
       ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Aliasset \"${ item.aliasEmail }\" blev flyttet til papirkurven - det vil stoppe med at videresende e-mails til din indbakke"
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias er blevet deaktiveret. Du vil ikke længere modtage mails sendt til ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias er blevet aktiveret. Du kan nu modtage mails sendt til ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Alias-synkronisering mellem dine ${ BRAND_NAME }- og SimpleLogin-konti er aktiv."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Aliasser i papirkurven vil fortsat videresende mails. Hvis du vil stoppe med at modtage mails på denne adresse, bedes du deaktivere dem i stedet."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Usynkroniserede aliasser (${ aliasCount })"
+      ],
+      "All aliases are synced": [
+        "Alle aliasser er synkroniseret"
       ],
       "All breaches for this address were resolved": [
         "Alle databrud for denne adresse blev håndteret"
@@ -1155,9 +1182,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vælg en gemt adgangsnøgle til at logge ind på ${ domain }"
-      ],
-      "Click here to add a field for a username.": [
-        "Klik her for at tilføje et felt til brugernavn."
       ],
       "Click the icon to open it anytime.": [
         "Du kan åbne den når som helst ved at klikke på ikonet."
@@ -1767,6 +1791,13 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problemer med at synkronisere data til dit lokale lager. Sørg for, at du har tilstrækkelig diskplads til, at ${ PASS_SHORT_APP_NAME } kan fungere optimalt."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Vi har opdaget, at du har ${ aliasCount } alias, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere det?",
+        "Vi har opdaget, at du har ${ aliasCount } aliasser, som findes i SimpleLogin, men som mangler i ${ PASS_APP_NAME }. Vil du gerne importere dem?"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Ved oprettelse/redigering af et login på ${ PASS_APP_NAME } vil 'brugernavn'-inputtet altid være synligt."
+      ],
       "You are about to create:": [
         "Du er ved at oprette:"
       ],
@@ -1827,6 +1858,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliasser"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } tegn",
         "${ config.options.length } tegn"
@@ -1930,6 +1965,9 @@
       ],
       "Alphabetical": [
         "Alfabetisk"
+      ],
+      "Always show username field": [
+        "Vis altid brugernavn-feltet"
       ],
       "Application logs": [
         "Applikationslogs"
@@ -2051,6 +2089,9 @@
       "Domains": [
         "Domæner"
       ],
+      "Don't remind me again": [
+        "Påmind mig ikke igen"
+      ],
       "Download logs": [
         "Hent logfiler"
       ],
@@ -2066,8 +2107,14 @@
       "Email aliases": [
         "E-mail-aliasser"
       ],
+      "Email or username": [
+        "E-mail eller brugernavn"
+      ],
       "Empty trash": [
         "Tøm papirkurv"
+      ],
+      "Enter email or username": [
+        "Indtast e-mail eller brugernavn"
       ],
       "Expiration date": [
         "Udløbsdato"
@@ -2375,6 +2422,9 @@
       "Select preferred language": [
         "Vælg dit foretrukne sprog"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Vælg den boks, hvor SimpleLogin-alias skal importeres til"
+      ],
       "Select your password manager": [
         "Vælg din adgangskodeadministrator"
       ],
@@ -2422,6 +2472,9 @@
       ],
       "Support": [
         "Support"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Synkroniser aliasser med SimpleLogin"
       ],
       "Tax number": [
         "Afgiftsnummer"
@@ -2598,9 +2651,6 @@
       "Enter email": [
         "Indtast e-mail"
       ],
-      "Enter email or username": [
-        "Indtast e-mail eller brugernavn"
-      ],
       "Enter password": [
         "Indtast adgangskode"
       ],
@@ -2663,6 +2713,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Synkronisering af aliasser er aktiveret. SimpleLogin-alias kan tage lidt tid at synkronisere"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } bruger.",
         "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } brugere."
@@ -2843,6 +2896,9 @@
       "Switching to ${ PASS_APP_NAME }?": [
         "Skifter du til ${ PASS_APP_NAME }?"
       ],
+      "Sync alias": [
+        "Synkroniser alias"
+      ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Tak fordi du installerede ${ PASS_APP_NAME }"
       ],
@@ -2896,9 +2952,6 @@
       "Duplicated URL": [
         "Duplikeret URL"
       ],
-      "Email address is invalid": [
-        "E-mailadressen er ugyldig"
-      ],
       "Field name is required": [
         "Feltet skal have et navn"
       ],
@@ -2930,9 +2983,6 @@
       ],
       "A description of the problem is required": [
         "En beskrivelse af problemet er påkrævet"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Aliasset \"${ name }\" bruges i øjeblikket i login-elementet \"${ relatedLoginName }\". Du vil også stoppe med at modtage e-mails sendt til \"${ aliasEmail }\"."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle dine elementer i papirkurven vil blive slettet permanent. Du kan ikke fortryde denne handling."
@@ -2995,6 +3045,9 @@
       "Missing alias suffix": [
         "Mangler alias-suffiks"
       ],
+      "Move to trash": [
+        "Flyt til papirkurv"
+      ],
       "No items": [
         "Ingen elementer"
       ],
@@ -3043,14 +3096,14 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Alias-præfikset må højest være 40 tegn langt."
       ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Dette alias \"${ aliasEmail }\" indgår i øjeblikket i login'et \"${ relatedLoginName }\"."
+      ],
       "Title is required": [
         "Titel er påkrævet"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Overdrag ejerskabet af denne boks til ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Flyt alias til papirkurven?"
       ],
       "Unable to save": [
         "Kunne ikke gemme"
