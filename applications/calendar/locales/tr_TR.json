@@ -2481,6 +2481,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Kişi gruplarını kullanarak herkese aynı anda e-posta gönderin ve zaman kazanın. Tarifenizi yükselterek bunun gibi diğer ücretli özelliklere erişin."
+      ],
       "Set a data recovery method to prevent data loss.": [
         "Veri kaybını önlemek için bir veri kurtarma yöntemi belirleyin."
       ],
@@ -5637,7 +5640,7 @@
         "Posta kodu"
       ],
       "Primary": [
-        "Birincil"
+        "Birincil saat dilimi"
       ],
       "Proration": [
         "Hesap bakiyesi"
@@ -5655,7 +5658,7 @@
         "Yinelenme zamanı"
       ],
       "Reveal password": [
-        "Parolayı göster"
+        "Parolayı görüntüle"
       ],
       "Secondary": [
         "İkincil"
@@ -6366,6 +6369,15 @@
       "1 user": [
         "1 kullanıcı"
       ],
+      "10 email addresses/aliases": [
+        "10 e-posta adresi/takma adı"
+      ],
+      "10-year file version history": [
+        "10 yıllık dosya sürümü geçmişi"
+      ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
       "24/7 account management support": [
         "7/24 hesap yönetimi desteği"
       ],
@@ -6464,6 +6476,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "E-posta istemcisi desteği (IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-posta grupları"
       ],
       "Enables HIPAA compliance": [
         "HIPAA uyumluluğu"
@@ -6696,6 +6711,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 özel e-posta etki alanı"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain2 } gibi takma adlar oluşturabilirsiniz"
       ],
@@ -6797,6 +6815,11 @@
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price } ile Mail Plus edinin"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -6872,6 +6895,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Gruptaki herkese tek bir e-posta adresinden e-posta gönderin"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
@@ -7716,6 +7742,11 @@
         "Etkinliği yeniden yükle"
       ]
     },
+    "Safety review": {
+      "Review your account safety": [
+        "Hesabınızın güvenliğini değerlendirin"
+      ]
+    },
     "Security Center": {
       "All aliases": [
         "Tüm takma adlar"
@@ -8234,7 +8265,7 @@
         "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
       ],
       "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Aileler veya küçük ekipler için mükemmel. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
+        "Aileler veya küçük ekipler için kusursuz. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
         "Gelecekte yayınlayacağımız tüm yeni gizlilik hizmetlerinin ücretli sürümlerine ve tüm özelliklere erkenden erişerek ek ücret ödemeden kullanın."
