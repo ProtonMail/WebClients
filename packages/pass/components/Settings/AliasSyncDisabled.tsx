@@ -1,4 +1,4 @@
-import { type FC, useEffect, useState } from 'react';
+import { type FC, useEffect, useId, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -14,6 +14,7 @@ import { selectUserData } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 export const AliasSyncDisabled: FC = () => {
+    const aliasSyncId = useId();
     const [confirm, setConfirm] = useState(false);
     const { pendingAliasToSync: aliasCount } = useSelector(selectUserData);
     const { dispatch, loading } = useRequest(aliasSyncStatus, {});
@@ -23,7 +24,7 @@ export const AliasSyncDisabled: FC = () => {
     return (
         <SettingsPanel
             title={c('Label').t`Sync aliases with SimpleLogin`}
-            actions={loading ? [<CircleLoader size="small" />] : undefined}
+            actions={loading ? [<CircleLoader key={aliasSyncId} size="small" />] : undefined}
         >
             <Card type="primary">
                 {aliasCount > 0 ? (
