@@ -18,9 +18,11 @@ export const Onboarding: FC = () => (
                 <Localized>
                     <HashRouter>
                         <Switch>
-                            <Route path="/resume">
-                                <ResumeSession />
-                            </Route>
+                            {ENV === 'development' && (
+                                <Route path="/resume">
+                                    <ResumeSession />
+                                </Route>
+                            )}
                             <Route path="/success">
                                 <InstallationSuccess />
                             </Route>
