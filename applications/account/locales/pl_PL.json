@@ -1120,12 +1120,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Spróbuj zapisać ponownie. Zapisanie nie powiodło się: ${ saveError }"
       ],
-      "Turn off": [
-        "Wyłącz"
-      ],
-      "Turn on": [
-        "Włącz"
-      ],
       "Underline": [
         "Podkreślenie"
       ],
@@ -1233,6 +1227,9 @@
       ],
       "View plans details": [
         "Pokaż szczegóły planów"
+      ],
+      "View recovery settings": [
+        "Pokaż ustawienia odzyskiwania"
       ],
       "Void": [
         "Unieważnij"
@@ -1480,9 +1477,6 @@
       ],
       "Run on device": [
         "Uruchom na urządzeniu"
-      ],
-      "Run on servers": [
-        "Uruchom na serwerach"
       ]
     },
     "Assistant toggle": {
@@ -3654,6 +3648,9 @@
       ],
       "**Secure:** end-to-end encryption": [
         "**Bezpieczeństwo:** szyfrowanie end-to-end"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**Prosty i przyjazny dla użytkownika:** Importuj pliki i konfigurację w kilka minut"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Zaawansowana ochrona, która wykracza poza standardy"
@@ -14383,6 +14380,9 @@
       "You recovery email address is:": [
         "Twój adres pomocniczy:"
       ],
+      "You recovery phone number is:": [
+        "Twój numer pomocniczy to:"
+      ],
       "Your account and data can be recovered": [
         "Konto i dane mogą zostać odzyskane"
       ],
@@ -18067,6 +18067,9 @@
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Administrator organizacji **${ orgName }** (**${ adminEmail }**) chce włączyć dostęp administratora do Twojego konta."
       ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Ustawiając użytkownika jako prywatnego, nie będziesz w stanie pomóc mu odzyskać dostępu do jego danych lub konta."
+      ],
       "Cancel": [
         "Anuluj"
       ],
@@ -18091,6 +18094,9 @@
       "Organization key must be activated to request data access": [
         "Musisz aktywować klucz organizacji, aby uzyskać dostęp do danych"
       ],
+      "Pending admin access": [
+        "Oczekiwanie na dostęp administratora"
+      ],
       "reject": [
         "odrzucić"
       ],
@@ -18108,6 +18114,9 @@
       ],
       "Send request": [
         "Wyślij żądanie"
+      ],
+      "The user must have an address to request data access": [
+        "Użytkownik musi mieć adres, aby żądać dostępu do danych"
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Spowoduje to unieważnienie dostępu administratora do zarządzania kontem użytkownika."
