@@ -4,7 +4,6 @@ import type { CreateNotificationOptions } from '@proton/components';
 import {
     ApiProvider,
     ConfigProvider,
-    Icons,
     ModalsChildren,
     ModalsProvider,
     NotificationsChildren,
@@ -13,6 +12,7 @@ import {
     RightToLeftProvider,
     ThemeProvider,
 } from '@proton/components';
+import Icons from '@proton/icons/Icons';
 import createApi from '@proton/shared/lib/api/createApi';
 
 import Verify from './Verify';

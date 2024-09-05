@@ -28,6 +28,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/icons": "workspace:^",
         "electron-log": "^5.1.7",
         "electron-store": "^8.2.0",
         "proton-pass-web": "workspace:applications/pass"

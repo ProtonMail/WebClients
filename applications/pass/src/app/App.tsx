@@ -14,7 +14,6 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 import {
     CompatibilityCheck,
     ErrorBoundary,
-    Icons,
     ModalsChildren,
     ModalsProvider,
     NotificationsChildren,
@@ -22,6 +21,7 @@ import {
     StandardErrorPage,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
+import Icons from '@proton/icons/Icons';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
