@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Schrijfassistent"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
@@ -1015,9 +1012,6 @@
       "Revert to original display": [
         "Terugkeren naar originele weergave"
       ],
-      "Run on servers": [
-        "Uitvoeren op servers"
-      ],
       "Save": [
         "Opslaan"
       ],
@@ -1236,6 +1230,10 @@
       ],
       "Trust": [
         "Vertrouwen"
+      ],
+      "Trust key": [
+        "Sleutel vertrouwen",
+        "Vertrouwde sleutels"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1552,9 +1550,6 @@
       ],
       "Run on device": [
         "Uitgevoerd op het apparaat zelf"
-      ],
-      "Run on servers": [
-        "Uitvoeren op servers"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "Veilig draaien op ${ BRAND_NAME } servers"

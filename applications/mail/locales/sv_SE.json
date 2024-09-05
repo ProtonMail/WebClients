@@ -33,9 +33,6 @@
       ]
     },
     "Action": {
-      "${ BRAND_NAME } Scribe writing assistant": [
-        "${ BRAND_NAME } Scribe skrivassistent"
-      ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
@@ -1018,9 +1015,6 @@
       "Revert to original display": [
         "Återgå till originalvisning"
       ],
-      "Run on servers": [
-        "Kör på servrar"
-      ],
       "Save": [
         "Spara"
       ],
@@ -1239,6 +1233,10 @@
       ],
       "Trust": [
         "Lita på"
+      ],
+      "Trust key": [
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1552,8 +1550,11 @@
       "Run on device": [
         "Kör på enhet"
       ],
-      "Run on servers": [
-        "Kör på servrar"
+      "Securely run on ${ BRAND_NAME } servers": [
+        "Kör säkert på ${ BRAND_NAME }-servrar"
+      ],
+      "Securely run on device": [
+        "Kör säkert på enhet"
       ]
     },
     "Assistant toggle": {
@@ -3446,6 +3447,9 @@
       ],
       "Set a recovery method to prevent losing access to your account.": [
         "Ställ in en återställningsmetod för att förhindra att du förlorar åtkomst till ditt konto."
+      ],
+      "Starting from ${ price }": [
+        "Startar från ${ price }"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "För att fortsätta använda skrivassistenten, lägg till den i din prenumeration."
@@ -5534,6 +5538,9 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
+      ],
+      "${ BRAND_NAME } Scribe helps you craft better emails quickly and effortlessly.": [
+        "${ BRAND_NAME } Scribe hjälper dig att skapa bättre e-post snabbt och enkelt."
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
@@ -8971,6 +8978,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } och ${ PROTON_SENTINEL_NAME }"
       ],
@@ -9071,6 +9081,9 @@
       ],
       "10 email addresses/aliases": [
         "10 e-postadresser/alias"
+      ],
+      "10-year file version history": [
+        "10-års filversionshistorik"
       ],
       "15 GB storage": [
         "15 GB lagringsutrymme"
@@ -9255,6 +9268,9 @@
       ],
       "Priority support & live chat": [
         "Prioriterad support och livechatt"
+      ],
+      "Proofread and refine your emails": [
+        "Korrekturläs och finjustera din e-post"
       ],
       "Protect ${ n } device at a time": [
         "Skydda ${ n } enhet åt gången",
@@ -12284,6 +12300,9 @@
       ],
       "Coupon": [
         "Kupong"
+      ],
+      "Craft better emails": [
+        "Skapa bättre e-post"
       ],
       "Create contact": [
         "Skapa kontakt"

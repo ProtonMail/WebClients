@@ -927,6 +927,9 @@
       "Report phishing": [
         "フィッシングを報告"
       ],
+      "Request a call": [
+        "通話をリクエストする"
+      ],
       "Request a feature": [
         "機能を提案"
       ],
@@ -959,9 +962,6 @@
       ],
       "Revert to original display": [
         "元の表示に戻す"
-      ],
-      "Run on servers": [
-        "サーバー上で実行"
       ],
       "Save": [
         "保存"
@@ -1128,6 +1128,9 @@
       "Stay": [
         "終了しない"
       ],
+      "Stop downloading assistant": [
+        "アシスタントのダウンロードを停止"
+      ],
       "Stop generating result": [
         "結果の生成を停止"
       ],
@@ -1166,6 +1169,9 @@
       ],
       "Trust": [
         "信頼する"
+      ],
+      "Trust key": [
+        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -1450,10 +1456,10 @@
     },
     "Assistant option": {
       "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
-        "データはお客様のプライバシーを保護するためにデバイスに残ります。ダウンロードと互換性のあるハードウェアが必要です。"
+        "プライバシーを保護するため、データはデバイス上に保存されます。ダウンロードと互換性のあるハードウェアが必要です。"
       ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
-        "データはデバイスに保存されます。一度限りのダウンロードと互換性のあるハードウェアが必要です。"
+        "データはデバイスに保存されます。初回のダウンロードと互換性のあるハードウェアが必要です。"
       ],
       "Fast and secure. No logs are kept.": [
         "高速で安全です。ログは保持されません。"
@@ -1463,9 +1469,6 @@
       ],
       "Run on device": [
         "デバイス上で実行"
-      ],
-      "Run on servers": [
-        "サーバー上で実行"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "${ BRAND_NAME } サーバー上で安全に実行"
@@ -3231,7 +3234,7 @@
         "CSV および VCF ファイル経由でインポートする場合は、ファイルが ${ MAX_IMPORT_FILE_SIZE_STRING } または ${ MAX_IMPORT_CONTACTS_STRING } の連絡先を超えないようにしてください。 ファイルが大きい場合は、より小さいファイルに分割してください。 ${ learnMoreLink }。"
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
-        "書き込みアシスタントとその他のために、${ BRAND_NAME } Duoにアップグレードしてください。"
+        "執筆アシスタントなどを無制限に利用するために、${ BRAND_NAME } Duo にアップグレードしてください。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
@@ -3743,6 +3746,12 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME }ユーザーに割り当てた鍵は送信用ではありません"
+      ],
+      "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
+        "執筆アシスタントのダウンロード中に問題が発生しました。プライベートモードを使用している場合は、通常のブラウジングモードを使用するか、サーバー上で執筆アシスタントを実行してください。"
+      ],
+      "Problem downloading the writing assistant. Please try again.": [
+        "執筆アシスタントのダウンロード中に問題が発生しました。もう一度やり直してください。"
       ],
       "Process aborted": [
         "処理が中断されました"
@@ -5541,8 +5550,14 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
       ],
+      "Downloading assistant… ${ progressDisplay } GB": [
+        "アシスタントをダウンロード中… ${ progressDisplay } GB"
+      ],
       "Downloading paused": [
         "ダウンロード一時停止"
+      ],
+      "Downloading paused: ${ progressDisplay } GB": [
+        "ダウンロードを一時停止: ${ progressDisplay } GB"
       ],
       "Draft": [
         "下書き"
@@ -5790,11 +5805,14 @@
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
       ],
+      "Learn how to ${ staySaferOnlineLink }": [
+        "${ staySaferOnlineLink } の使い方を学ぶ"
+      ],
       "Learn more": [
         "詳細"
       ],
       "Learn more about the writing assistant": [
-        "書き込みアシスタントについてより詳しく学ぶ"
+        "執筆アシスタントの詳細"
       ],
       "Left to Right": [
         "左から右"
@@ -5810,6 +5828,9 @@
       ],
       "Loading ${ appName }": [
         "${ appName } を読み込み中"
+      ],
+      "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
+        "カレンダーを読み込み中です。お待ちください。スケジューリングプラットフォームの Calendly へ新しいタブでリダイレクトされます。"
       ],
       "Loading message": [
         "メッセージを読み込み中です"
@@ -6237,6 +6258,9 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "公開された情報は第三者サービスから漏洩しました。あなたの ${ BRAND_NAME } アカウント情報は安全で暗号化されたままです。${ learnMoreLink }"
       ],
+      "The initial setup may take a few minutes.": [
+        "初期設定には数分かかる場合があります。"
+      ],
       "The local database is being prepared": [
         "ローカルのデータベースを準備しています"
       ],
@@ -6257,6 +6281,9 @@
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "認証プロセスは、新しいブラウザのタブを開きます。アクティブなポップアップブロッカーは無効にしてください。"
+      ],
+      "The writing assistant needs to finish downloading before it can be used.": [
+        "執筆アシスタントを使用するには、ダウンロードを完了する必要があります。"
       ],
       "Themes can give your inbox a new look.": [
         "テーマで受信トレイを新しい見た目に変更できます。"
@@ -6642,6 +6669,12 @@
       "You have **${ count } message** tagged with this label": [
         "このラベルがついた **${ count } 件のメッセージ**があります"
       ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "試用版 ${ planTitle } のサブスクリプションが有効です。試用期間後にサブスクリプションを継続したい場合は、支払い方法を追加してください。"
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "試用版 ${ planTitle } のサブスクリプションが有効です。現時点での支払いは必要ありません。 サブスクリプションは試用期間の終了時に自動的に更新されます。"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "この電子メールには件名がありません。このままメッセージを送信しますか？"
       ],
@@ -6735,6 +6768,9 @@
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "あなたのハードウェアはローカルでの執筆アシスタントの実行をサポートしていません。サーバーでの実行をお試しください。"
       ],
+      "Your information was found on ${ displayedDate }": [
+        "あなたの情報は ${ displayedDate }で見つかりました。"
+      ],
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
       ],
@@ -6757,7 +6793,7 @@
         "電話番号は、この一度限りの認証にのみ使用されます。"
       ],
       "Your private writing assistant": [
-        "あなたのプライベートな書き込みアシスタント"
+        "あなたのプライベートな執筆アシスタント"
       ]
     },
     "info": {
@@ -8622,6 +8658,11 @@
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
       ]
     },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "${ price }で Mail Plus を入手する"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "アカウントの削除しますか?"
@@ -9236,6 +9277,15 @@
       ],
       "Subject": [
         "件名"
+      ],
+      "Tell the writing assistant what to write. Example: “Announce upcoming events in a newsletter”": [
+        "執筆アシスタントに何を書くか伝えてください。(例: ニュースレターで今後のイベントをお知らせします)"
+      ],
+      "Tell the writing assistant what to write. Example: “Invite Jane to my party”": [
+        "執筆アシスタントに何を書くか伝えてください。(例: ジェーンをパーティーに詳細してください)"
+      ],
+      "Tell the writing assistant what to write. Example: “Write a follow-up email to a client”": [
+        "執筆アシスタントに何を書くか伝えてください。(例: 顧客へのフォローアップメールを書いてください)"
       ],
       "Text": [
         "テキスト"
