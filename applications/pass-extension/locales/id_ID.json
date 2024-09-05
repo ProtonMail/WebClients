@@ -248,9 +248,6 @@
       "Get Pass Plus": [
         "Dapatkan Pass Plus"
       ],
-      "Help us improve": [
-        "Bantu kami untuk berkembang"
-      ],
       "Hide": [
         "Sembunyikan"
       ],
@@ -1067,17 +1064,11 @@
       "Access your passwords on the go with our mobile apps.": [
         "Akses kata sandi Anda di mana saja dengan aplikasi mobile kami."
       ],
-      "Add a username field": [
-        "Tambah kolom nama pengguna"
-      ],
       "Admin": [
         "Admin"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Setelah data Anda berhasil diimpor, Anda dapat menghapus berkas CSV yang mengandung kata sandi ini demi keamanan Anda."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan email ke kotak surat Anda"
       ],
       "All breaches for this address were resolved": [
         "Seluruh kebocoran untuk alamat ini telah terselesaikan"
@@ -1141,9 +1132,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Pilih passkey yang tersimpan untuk masuk ke ${ domain }"
-      ],
-      "Click here to add a field for a username.": [
-        "Klik di sini untuk menambahkan kolom bagi nama pengguna."
       ],
       "Click the icon to open it anytime.": [
         "Klik pada ikon untuk membukanya kapan pun."
@@ -2041,6 +2029,9 @@
       "Email aliases": [
         "Alias email"
       ],
+      "Email or username": [
+        "Email atau nama pengguna"
+      ],
       "Empty trash": [
         "Kosongkan sampah"
       ],
@@ -2571,9 +2562,6 @@
       "Enter email": [
         "Masukkan email"
       ],
-      "Enter email or username": [
-        "Masukkan email atau nama pengguna"
-      ],
       "Enter password": [
         "Masukkan kata sandi"
       ],
@@ -2868,9 +2856,6 @@
       "Duplicated URL": [
         "URL terduplikat"
       ],
-      "Email address is invalid": [
-        "Alamat surel tidak valid"
-      ],
       "Field name is required": [
         "Nama kolom wajib diisi"
       ],
@@ -2902,9 +2887,6 @@
       ],
       "A description of the problem is required": [
         "Penjelasan masalah diperlukan"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias \"${ name }\" saat ini digunakan pada item entri masuk \"${ relatedLoginName }\". Anda juga tidak lagi akan menerima email yang dikirim ke \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Seluruh item yang telah Anda buang ke sampah akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan."
@@ -3019,9 +3001,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Transfer kepemilikan brankas ini ke ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Buang alias?"
       ],
       "Unable to save": [
         "Tidak dapat menyimpan"
