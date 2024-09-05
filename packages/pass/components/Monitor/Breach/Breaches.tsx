@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href';
 import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
 import { CustomAddressAddButton } from '@proton/pass/components/Monitor/Address/CustomAddressAddButton';
-import { useMonitor } from '@proton/pass/components/Monitor/MonitorProvider';
+import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { PASS_BLOG_MONITORING_URL } from '@proton/pass/constants';
 import { useBreachesTable } from '@proton/pass/hooks/monitor/useBreachesTable';

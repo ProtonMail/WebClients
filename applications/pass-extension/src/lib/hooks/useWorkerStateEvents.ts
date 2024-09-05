@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
-import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
-import { CriticalMessageResponseError, sendMessage } from '@proton/pass/lib/extension/message';
+import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message/send-message';
+import { CriticalMessageResponseError, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type {
     AppState,
     ClientEndpoint,

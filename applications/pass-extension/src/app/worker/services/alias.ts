@@ -1,3 +1,5 @@
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { onContextReady } from 'proton-pass-extension/app/worker/context/inject';
 import { c } from 'ttag';
 
 import {
@@ -15,22 +17,19 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-import WorkerMessageBroker from '../channel';
-import { onContextReady } from '../context';
-import store from '../store';
-
 export const createAliasService = () => {
     /* when resolving alias options for this message type, set the
      * the `needsUpgrade` accordingly for content-scripts to display
      * the upselling UI when alias limits have been reached */
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.ALIAS_OPTIONS,
-        onContextReady((_) => {
-            const { needsUpgrade } = selectAliasLimits(store.getState());
-            const { shareId } = selectAutosaveVault(store.getState());
+        onContextReady((ctx) => {
+            const state = ctx.service.store.getState();
+            const { needsUpgrade } = selectAliasLimits(state);
+            const { shareId } = selectAutosaveVault(state);
 
             return new Promise((resolve) => {
-                store.dispatch(
+                ctx.service.store.dispatch(
                     withRevalidate(
                         getAliasOptionsIntent({ shareId }, (result) => {
                             if (getAliasOptionsSuccess.match(result)) {
@@ -39,7 +38,7 @@ export const createAliasService = () => {
                             }
 
                             const error =
-                                result.error instanceof Error ? getApiErrorMessage(result.error) ?? null : null;
+                                result.error instanceof Error ? (getApiErrorMessage(result.error) ?? null) : null;
                             return resolve({ ok: false, error });
                         })
                     )
@@ -50,8 +49,8 @@ export const createAliasService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.ALIAS_CREATE,
-        onContextReady(async (_, message) => {
-            const { shareId } = selectAutosaveVault(store.getState());
+        onContextReady(async (ctx, message) => {
+            const { shareId } = selectAutosaveVault(ctx.service.store.getState());
             const { url, alias } = message.payload;
             const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
             const optimisticId = uniqueId();
@@ -77,11 +76,11 @@ export const createAliasService = () => {
             };
 
             return new Promise((resolve) =>
-                store.dispatch(
+                ctx.service.store.dispatch(
                     itemCreationIntent(aliasCreationIntent, (result) => {
                         if (itemCreationSuccess.match(result)) return resolve({ ok: true });
 
-                        const error = result.error instanceof Error ? getApiErrorMessage(result.error) ?? null : null;
+                        const error = result.error instanceof Error ? (getApiErrorMessage(result.error) ?? null) : null;
                         return resolve({ ok: false, error });
                     })
                 )

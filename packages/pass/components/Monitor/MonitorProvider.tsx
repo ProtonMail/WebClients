@@ -1,11 +1,11 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useInsecurePasswords } from '@proton/pass/hooks/monitor/useInsecurePasswords';
 import { useMissing2FAs } from '@proton/pass/hooks/monitor/useMissing2FAs';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
-import type { AddressType, CustomAddressID, MonitorAddress } from '@proton/pass/lib/monitor/types';
+import type { AddressType, MonitorAddress } from '@proton/pass/lib/monitor/types';
 import { deleteCustomAddress, getBreaches } from '@proton/pass/store/actions';
 import { breachesRequest } from '@proton/pass/store/actions/requests';
 import {
@@ -17,37 +17,15 @@ import {
     selectProtonBreaches,
     selectTotalBreaches,
 } from '@proton/pass/store/selectors';
-import type { MaybeNull, UniqueItem } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 
 import { CustomAddressAddModal } from './Address/CustomAddressAddModal';
 import { CustomAddressVerifyModal } from './Address/CustomAddressVerifyModal';
+import { MonitorContext, type MonitorContextValue } from './MonitorContext';
 
 type MonitorAction =
     | { type: 'add' }
     | { type: 'verify'; data: MonitorAddress<AddressType.CUSTOM> & { sentAt?: number } };
-
-export interface MonitorContextValue {
-    didLoad: boolean;
-    breaches: {
-        data: {
-            alias: MonitorAddress<AddressType.ALIAS>[];
-            proton: MonitorAddress<AddressType.PROTON>[];
-            custom: MonitorAddress<AddressType.CUSTOM>[];
-        };
-        count: number;
-        loading: boolean;
-    };
-    insecure: { data: UniqueItem[]; count: number };
-    duplicates: { data: UniqueItem[][]; count: number };
-    missing2FAs: { data: UniqueItem[]; count: number };
-    excluded: { data: UniqueItem[]; count: number };
-    addAddress: () => void;
-    verifyAddress: (address: MonitorAddress<AddressType.CUSTOM>, sentAt?: number) => void;
-    deleteAddress: (addressId: CustomAddressID) => void;
-    sync: () => void;
-}
-
-const MonitorContext = createContext<MaybeNull<MonitorContextValue>>(null);
 
 export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
     const dispatch = useDispatch();
@@ -97,10 +75,4 @@ export const MonitorProvider: FC<PropsWithChildren> = ({ children }) => {
             {action?.type === 'verify' && <CustomAddressVerifyModal {...action.data} onClose={onClose} />}
         </MonitorContext.Provider>
     );
-};
-
-export const useMonitor = (): MonitorContextValue => {
-    const ctx = useContext(MonitorContext);
-    if (!ctx) throw new Error('MonitorContext not initialized');
-    return ctx;
 };

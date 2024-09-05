@@ -17,7 +17,7 @@ import type { ExtensionContextType } from 'proton-pass-extension/lib/context/ext
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';

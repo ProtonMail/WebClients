@@ -2,6 +2,7 @@ import browser from '@proton/pass/lib/globals/browser';
 import type {
     ClientEndpoint,
     MessageFailure,
+    MessageSuccess,
     PortFrameForwardingMessage,
     WorkerMessage,
     WorkerMessageWithSender,
@@ -69,6 +70,15 @@ sendMessage.onSuccess = async <T extends WorkerMessageWithSender>(
             onSuccess(response as Exclude<WorkerResponse<typeof message>, MessageFailure>);
         }
     });
+
+export const successMessage = <T extends {}>(message?: T) =>
+    ({ type: 'success', ...(message ?? {}) }) as MessageSuccess<T>;
+
+export const errorMessage = (error?: string): MessageFailure => ({
+    type: 'error',
+    error: error ?? 'unknown error',
+    payload: error /* needed for Proton Account auth-ext page */,
+});
 
 export const resolveMessageFactory =
     (sender: ClientEndpoint): MessageWithSenderFactory =>
