@@ -1120,12 +1120,6 @@
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Pokúste sa znova uložiť. Uloženie zlyhalo z dôvodu: ${ saveError }"
       ],
-      "Turn off": [
-        "Vypnúť"
-      ],
-      "Turn on": [
-        "Zapnúť"
-      ],
       "Underline": [
         "Podčiarknuté"
       ],
@@ -1390,6 +1384,9 @@
       "External": [
         "Externá"
       ],
+      "Inactive": [
+        "Neaktívne"
+      ],
       "No E2EE mail": [
         "Žiadna E2EE pošta"
       ],
@@ -1480,9 +1477,6 @@
       ],
       "Run on device": [
         "Spustiť na zariadení"
-      ],
-      "Run on servers": [
-        "Beží na serveroch"
       ]
     },
     "Assistant toggle": {
@@ -3412,7 +3406,7 @@
     },
     "Description": {
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "Po navýšení je možné automaticky mazať správy zo zložky nevyžiadanej pošty a kôš a odomknúť ďalšie prémiové funkcie."
+        "Po navýšení je možné automaticky mazať správy zo zložky nevyžiadanej pošty a koša a odomknúť ďalšie prémiové funkcie."
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "Gratulujeme! Získali ste maximum ${ rewardsLimit } bezplatných mesiacov ${ plusPlanName }."
@@ -3649,11 +3643,40 @@
       ]
     },
     "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**Kolektívny:** online editor dokumentov"
+      ],
+      "**GDPR** and **HIPAA** compliant": [
+        "V súlade s **GDPR** a **HIPAA**"
+      ],
+      "**ISO 27001** certified": [
+        "Certifikát **ISO 27001**"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**Bezpečný:** end-to-end šifrovanie"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**Jednoduchý a používateľsky prívetivý:** importujte svoje súbory a nastavte ich za niekoľko minút"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Pokročilá ochrana presahujúca priemyselné štandardy"
+      ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
         "Pridajte sa k viac ako 50 000 organizáciám, ktoré už využívajú výhody zabezpečenia od spoločnosti ${ BRAND_NAME }"
       ],
+      "Protect sensitive business information and collaborate securely": [
+        "Chráňte citlivé obchodné informácie a bezpečne spolupracujte"
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "Bezpečné cloudové úložisko, ktoré vám dáva kontrolu nad vašimi dátami"
+      ],
       "Tailored made solutions for larger organizations with custom needs": [
         "Riešenia šité na mieru pre väčšie organizácie s vlastnými potrebami"
+      ]
+    },
+    "drive_signup_2024: TitleB2B": {
+      "The only business solution that is:": [
+        "Jediné firemné riešenie, ktoré je:"
       ]
     },
     "driveplus2024: Deal details": {
@@ -4213,6 +4236,9 @@
       ],
       "Authentication error.": [
         "Chyba prihlásenia."
+      ],
+      "Auto-reply message exceeds the allowed length. Please shorten it to fit within the limit.": [
+        "Správa automatickej odpovede prekračuje povolenú dĺžku. Skráťte, prosím, správu tak, aby sa vošla do limitu."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automatické odpovede je platená funkcia. Ak chcete túto funkciu používať, prejdite na platený účet."
@@ -5266,6 +5292,9 @@
       "You need to configure a custom domain before creating a new user.": [
         "Pred vytvorením nového používateľa, musíte nakonfigurovať vlastnú doménu."
       ],
+      "You will lose access to all premium features and storage space included with ${ plan }.": [
+        "Stratíte prístup ku všetkým prémiovým funkciám a úložnému priestoru, ktoré sú súčasťou ${ plan }."
+      ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "Dostali ste pozvánku na pripojenie vášho účtu ${ BRAND_NAME } k tomuto skupinovému plánu, kde si môžete užívať všetky ${ BRAND_NAME_TWO } prémiové funkcie."
       ],
@@ -5346,6 +5375,9 @@
       ],
       "An error occurred, please try again": [
         "Vyskytla sa chyba, skúste to znova, prosím"
+      ],
+      "Family name updated": [
+        "Meno rodiny aktualizované"
       ],
       "Member updated": [
         "Člen aktualizovaný"
@@ -9408,6 +9440,11 @@
         "Asistent s umelou inteligenciou vám pomôže tvoriť lepšie emaily, rýchlo a jednoducho."
       ]
     },
+    "Input Error": {
+      "Not a valid email address": [
+        "Neplatná emailová adresa"
+      ]
+    },
     "Input label": {
       "Link label (optional)": [
         "Štítok odkazu (voliteľné)"
@@ -9422,8 +9459,14 @@
       "Declined": [
         "Odmietnuté"
       ],
+      "Paused": [
+        "Pozastavené"
+      ],
       "Pending": [
         "Čakajúce"
+      ],
+      "Sending invite...": [
+        "Odosielanie pozvánky..."
       ]
     },
     "Invoice state display as badge": {
@@ -9838,6 +9881,12 @@
       ],
       "Activity": [
         "Aktivita"
+      ],
+      "Add all organization members": [
+        "Pridať všetkých členov organizácie"
+      ],
+      "Add group member": [
+        "Pridať člena skupiny"
       ],
       "Address": [
         "Adresa"
@@ -10361,6 +10410,9 @@
       "Link label (optional)": [
         "Štítok odkazu (voliteľné)"
       ],
+      "Lock app after inactivity": [
+        "Uzamknúť aplikáciu pri neaktivite"
+      ],
       "Logo": [
         "Logo"
       ],
@@ -10684,6 +10736,9 @@
       ],
       "Time zone": [
         "Časové pásmo"
+      ],
+      "Tips and insights": [
+        "Odporúčania a postrehy"
       ],
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
@@ -11168,6 +11223,12 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Povoliť ${ reason }"
+      ],
+      "Enable detailed events": [
+        "Povoliť podrobné udalosti"
+      ],
+      "Enable security events": [
+        "Povoliť bezpečnostné udalosti"
       ]
     },
     "Mail import summary": {
@@ -11228,6 +11289,9 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Časovo obmedzená ponuka: **Získajte až 35% z** ročných plánov"
+      ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Časovo obmedzená ponuka: **Ušetrite ${ discount } za ${ name } s 1-ročným plánom**"
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Boli ste pozvaní vyskúšať ${ MAIL_APP_NAME }"
@@ -11840,7 +11904,7 @@
         "${ textType } - Pre ${ DRIVE_APP_NAME }"
       ],
       "${ textType } - For all ${ BRAND_NAME } services": [
-        "${ textType } - Pre všetky služby ${ BRAND_NAME }"
+        "${ textType } - Pre všetky ${ BRAND_NAME } služby"
       ],
       "1 TB secure storage": [
         "1 TB bezpečného úložiska"
@@ -11852,7 +11916,7 @@
         "10 emailových adries/aliasov"
       ],
       "10-year file version history": [
-        "-ročná história verzií súborov"
+        "10-ročná história verzií súborov"
       ],
       "15 GB storage": [
         "15 GB úložisko"
@@ -12122,7 +12186,7 @@
         "Servery v ${ vpnServersCountData.paid.countries }+ krajinách"
       ],
       "Share files with no size limit": [
-        "Zdieľanie súborov bez obmedzenia na ich veľkosť"
+        "Zdieľanie súborov bez obmedzenia veľkosti"
       ],
       "Sign in as user": [
         "Prihlásiť sa ako používateľ"
@@ -12571,7 +12635,7 @@
         "Prispôsobte si svoj emailový podpis pomocou log, obrázkov, ikon sociálnych médií, odkazov na vaše kontaktné údaje a ďalších"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov so 20 a viac používateľmi"
+        "Telefonická podpora je k dispozícii od tímu zákazníckej podpory ${ BRAND_NAME } počas európskych pracovných hodín, pre zákazníkov s 20 a viac používateľmi"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zabraňuje prístupu ${ BRAND_NAME } alebo tretím stranám k správam. Jediní ľudia, ktorí môžu čítať správy, sú odosielateľ a zamýšľaný príjemca."
@@ -12752,6 +12816,9 @@
       ],
       "Dark Web Monitoring has been enabled": [
         "Monitorovanie Dark Webu bolo zapnuté"
+      ],
+      "Downloaded 2FA recovery codes": [
+        "Stiahnuté obnovovacie kódy 2FA"
       ],
       "Invalid code": [
         "Neplatný kód"
@@ -13114,6 +13181,17 @@
       ],
       "Trash": [
         "Kôš"
+      ]
+    },
+    "option": {
+      "Everyone": [
+        "Všetci"
+      ],
+      "Group members": [
+        "Členovia skupiny"
+      ],
+      "No one": [
+        "Nikto"
       ]
     },
     "Option delay send seconds": {
@@ -14190,8 +14268,20 @@
       ]
     },
     "Safety review": {
+      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
+        " **Povolením obnovy telefónom** získate späť prístup k svojmu kontu, ak zabudnete heslo."
+      ],
+      "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
+        "${ BRAND_NAME } použije túto adresu na odoslanie kódu na obnovenie hesla prostredníctvom emailu pri obnovení hesla."
+      ],
+      "${ BRAND_NAME } will use this phone number to send a reset code by SMS when you reset your password.": [
+        "${ BRAND_NAME } použije toto telefónne číslo na odoslanie kódu na obnovenie hesla prostredníctvom SMS pri obnovení hesla."
+      ],
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } pre zaistenie možnosti obnovy vašich dát."
+      ],
+      "**Enable recovery by email** to regain access to your account if you forget your password.": [
+        "**Povolením obnovy emailom** získate späť prístup k svojmu kontu, ak zabudnete heslo."
       ],
       "Account safety review": [
         "Kontrola bezpečnosti účtu"
@@ -14205,8 +14295,17 @@
       "Add a recovery phone number": [
         "Pridajte telefónne číslo určené na obnovenie"
       ],
+      "Back to Safety Review": [
+        "Späť ku kontrole bezpečnosti"
+      ],
+      "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
+        "Keďže ste obnovili heslo, aktuálnu obnovovaciu sadu možno použiť len na obnovu údajov vytvorených pred obnovením hesla."
+      ],
       "Can be used to regain access to your account and data": [
         "Môže byť použité pre obnovenie prístupu k vášmu účtu a dátam"
+      ],
+      "Check account security": [
+        "Skontrolujte zabezpečenie účtu"
       ],
       "Code sent to ${ boldValue }": [
         "Kód zaslaný na ${ boldValue }"
@@ -14232,14 +14331,26 @@
       "Enable recovery by phone": [
         "Povoľte obnovenie telefónom"
       ],
+      "I understand that I will not be able to recover currently locked data with this Recovery Kit": [
+        "Beriem na vedomie, že pomocou tejto sady na obnovu nebudem môcť obnoviť aktuálne zablokované údaje."
+      ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Ak zabudnete svoje heslo ${ BRAND_NAME } a bude ho nutné resetovať, môžete sa prihlásiť k účtu pomocou tohto zariadenia a nového hesla a obnoviť tým plný prístup k svojmu účtu ${ BRAND_NAME }."
       ],
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Ak zabudnete svoje heslo ${ BRAND_NAME } a bude ho nutné resetovať, môžete sa prihlásiť k účtu pomocou tohto zariadenia a nového hesla a obnoviť tým plný prístup k svojmu účtu ${ BRAND_NAME }."
       ],
+      "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
+        "Ak stratíte prístup k svojmu ${ BRAND_NAME } účtu, vaša sada na obnovenie vám umožní prihlásiť sa a obnoviť vaše údaje."
+      ],
+      "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
+        "Ak stratíte prihlasovacie údaje a potrebujete obnoviť svoj účet, **je nevyhnutné**, aby ste mali k dispozícii metódu **obnovenia účtu aj obnovenia údajov**, inak sa môže stať, že nebudete mať prístup k žiadnym svojim emailom, kontaktom, súborom alebo heslám."
+      ],
       "Invalid code": [
         "Neplatný kód"
+      ],
+      "It’s the only way to fully restore your account, so make sure you keep it somewhere safe.": [
+        "Je to jediný spôsob, ako úplne obnoviť svoj účet, takže ho majte niekde v bezpečí."
       ],
       "Recovery email address": [
         "Emailová adresa na obnovu"
@@ -14250,8 +14361,17 @@
       "Review your account safety": [
         "Skontrolujte bezpečnosť svojho účtu"
       ],
+      "Safeguard account now": [
+        "Zabezpečte svoj účet teraz"
+      ],
+      "Safeguard your account": [
+        "Zabezpečte svoj účet"
+      ],
       "Safeguard your account further": [
         "Zvýšte zabezpečenie svojho účtu ešte viac"
+      ],
+      "Safety review": [
+        "Kontrola bezpečnosti"
       ],
       "Send a new code": [
         "Poslať nový kód"
@@ -14265,11 +14385,17 @@
       "There was an error generating your Recovery Kit": [
         "Pri generovaní sady na obnovu došlo k chybe"
       ],
+      "There was an error verifying your recovery email": [
+        "Pri overovaní vášho emailu na obnovenie došlo k chybe"
+      ],
       "There was an error verifying your recovery phone": [
         "Pri overovaní vášho telefónu na obnovenie došlo k chybe"
       ],
       "to automatically recover your data when you log into a trusted device": [
         "pre automatické obnovenie vašich dát, keď sa prihlásite do dôveryhodného zariadenia"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Ak chcete mať istotu, že emailová adresa je vaša, zadajte overovací kód zaslaný na ${ boldEmail }."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Ak chcete mať istotu, že telefónne číslo je vaše, zadajte overovací kód zaslaný na ${ boldPhoneNumber }."
@@ -14283,6 +14409,9 @@
       "Update your Recovery Kit": [
         "Aktualizujte si svoju sadu pre obnovenie"
       ],
+      "Update your Recovery Kit?": [
+        "Aktualizovať vašu sadu pre obnovenie?"
+      ],
       "Verify": [
         "Overiť"
       ],
@@ -14294,6 +14423,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Pri generovaní vašej sady na obnovu sme narazili na chybu. Skúste to neskôr alebo ak problém pretrváva, kontaktujte podporu."
+      ],
+      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
+        "Pri overovaní vášho emailu na obnovenie sme narazili na chybu. Skúste to neskôr alebo ak problém pretrváva, kontaktujte podporu."
       ],
       "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
         "Pri overovaní vášho telefónu na obnovenie sme narazili na chybu. Skúste to neskôr alebo ak problém pretrváva, kontaktujte podporu."
@@ -14310,11 +14442,41 @@
       "You can disable this at any time.": [
         "Túto funkciu môžete kedykoľvek vypnúť."
       ],
+      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Frázu na obnovenie v tejto obnovovacej sade môžete použiť na úplné obnovenie svojho konta po obnovení hesla, preto si ju nezabudnite uschovať na bezpečnom mieste."
+      ],
+      "You can use your recovery email to regain access to your account if you forget your password.": [
+        "Ak zabudnete heslo, môžete na obnovenie prístupu k svojmu kontu použiť svoj obnovovací email."
+      ],
+      "You can use your recovery phone to regain access to your account if you forget your password.": [
+        "Ak zabudnete heslo, môžete na obnovenie prístupu k svojmu kontu použiť svoj obnovovací telefón."
+      ],
+      "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
+        "Predtým ste si stiahli sadu na obnovu. Stiahnutím novej sady sa **stará deaktivuje**."
+      ],
+      "You have recommended actions.": [
+        "Máte odporúčané opatrenia."
+      ],
       "You recovery email address is:": [
         "Vaša emailová adresa na obnovenie je:"
       ],
+      "You recovery phone number is:": [
+        "Vaše telefónne číslo na obnovenie je:"
+      ],
+      "Your account and data can be recovered": [
+        "Váš účet a dáta je možné obnoviť"
+      ],
+      "Your account and data can be recovered. Check if you can still access your recovery methods.": [
+        "Váš účet a dáta je možné obnoviť. Skontrolujte, či stále máte prístup k metódam obnovenia."
+      ],
+      "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
+        "Váš účet a údaje možno obnoviť. Máte odporúčané opatrenia na ďalšie zabezpečenie svojho účtu."
+      ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Váš účet a dáta môžu byť obnovené. Sú tu niektoré odporúčané akcie."
+      ],
+      "Your account is fully secure.": [
+        "Váš účet je plne zabezpečený."
       ],
       "Your account is secure.": [
         "Váš účet je zabezpečený."
@@ -14348,6 +14510,9 @@
       ],
       "Your recovery phone can **only recover access to your account**.": [
         "Iba váš telefón pre obnovenie môže **obnoviť prístup k vášmu účtu**."
+      ],
+      "Your recovery phone has been enabled": [
+        "Váš telefón na obnovu bol povolený"
       ],
       "Your recovery phone is set": [
         "Váš telefón pre obnovenie je nastavený"
@@ -15026,6 +15191,16 @@
         "Overenie"
       ]
     },
+    "signup: Action": {
+      "Request trial": [
+        "Požiadať o skúšobnú verziu"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR and HIPAA compliant": [
+        "V súlade s GDPR a HIPAA"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Zavrieť"
@@ -15497,6 +15672,9 @@
       ],
       "1 email address": [
         "1 emailová adresa"
+      ],
+      "1 email address per user": [
+        "1 emailová adresa na používateľa"
       ],
       "1 VPN connection": [
         "1 VPN pripojenie"
@@ -17750,11 +17928,17 @@
       "Enable/disable desktop and mobile notifications": [
         "Povoliť/zakázať hlásenia pre počítače a mobilné zariadenia"
       ],
+      "Enabling detailed events records the IP address for each event.": [
+        "Povolením podrobných udalostí zaznamenáva IP adresu pre každú udalost."
+      ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Adresa URL koncového bodu od poskytovateľa identity (napr. https://idp.example.com/sso/saml)"
       ],
       "Feature in early access": [
         "Funkcia v predbežnom prístupe"
+      ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "Získajte tipy na zvýšenie produktivity a zabezpečenia, ktoré vám pomôžu čo najlepšie využiť ${ MAIL_APP_NAME } a ďalšie."
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail automaticky triedi niektoré emaily do kategórií ako Siete alebo Reklamy. Môžete si vybrať, kam chcete importovať tieto emaily."
@@ -17821,6 +18005,9 @@
       ],
       "This address has been disabled": [
         "Táto adresa bola deaktivovaná"
+      ],
+      "This can be caused by a password reset or the user not logging in yet.": [
+        "Toto môže byť spôsobené resetovaním hesla alebo tým, že sa používateľ ešte neprihlásil."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Táto emailová adresa sa zobrazí všetkým členom organizácie pri vykonávaní operácií správy účtu."
@@ -17893,6 +18080,15 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ],
+      "Group membership paused": [
+        "Členstvo v skupine pozastavené"
+      ],
+      "Sending member invitation": [
+        "Odosielanie členskej pozvánky"
+      ],
+      "User declined invitation": [
+        "Používateľ odmietol pozvánku"
+      ],
       "Waiting user to accept the invitation": [
         "Čakanie na prijatie pozvania zo strany používateľa"
       ]
@@ -17939,6 +18135,86 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Táto verzia prehliadača Tor nie je podporovaná. Prosím aktualizujte na poslednú ${ stableRelease }"
+      ]
+    },
+    "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "Správca ${ orgName } chce povoliť administrátorský prístup pre vaše konto."
+      ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "Správca organizácie **${ orgName }** (**${ adminEmail }**) chce povoliť prístup správcu pre vaše konto."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Vytvorením súkromného používateľského účtu mu nebudete môcť pomôcť získať späť prístup k jeho údajom alebo účtu."
+      ],
+      "Cancel": [
+        "Zrušiť"
+      ],
+      "Delete request": [
+        "Vymazať žiadosť"
+      ],
+      "Delete request to access user data?": [
+        "Vymazať žiadosť na prístup k dátam používateľa?"
+      ],
+      "Enable admin access?": [
+        "Povoliť správcovský prístup?"
+      ],
+      "Enable administrator access": [
+        "Povoliť prístup správcu"
+      ],
+      "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
+        "Ak niekedy stratíte prístup k svojim povereniam, správcovia vašej organizácie budú môcť obnoviť vaše heslo a obnoviť prístup k vášmu účtu."
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Akonáhle používateľ súhlasí, budete mu môcť pomôcť obnoviť prístup k účtu alebo spravovať jeho údaje."
+      ],
+      "Organization key must be activated to request data access": [
+        "Kľúč organizácie musí byť aktivovaný, aby bolo možné požiadať o prístup k údajom"
+      ],
+      "Pending admin access": [
+        "Čaká sa na prístup správcu"
+      ],
+      "Private user": [
+        "Súkromný používateľ"
+      ],
+      "reject": [
+        "odmietnuť"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Žiadosť o správu účtu odoslaná, čaká sa na schválenie používateľom"
+      ],
+      "Request user permission for data access": [
+        "Požiadať používateľa o povolenie na prístup k údajom"
+      ],
+      "Revoke access": [
+        "Zrušiť prístup"
+      ],
+      "Revoke administrator access?": [
+        "Zrušiť prístup správcu?"
+      ],
+      "Send request": [
+        "Odoslať žiadosť"
+      ],
+      "The user must have an address to request data access": [
+        "Používateľ musí mať adresu, aby mohol požiadať o prístup k údajom"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Tento krok odstráni čakajúcu požiadavku na prístup správcu k údajom používateľa alebo na resetovanie hesla."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Týmto zrušíte oprávnenie správcu spravovať tento používateľský účet."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Ak chcete pokračovať, musíte používateľov požiadať o povolenie na prístup k ich dátam alebo resetovať ich heslo."
+      ],
+      "View request": [
+        "Zobraziť žiadosť"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "Ak si neželáte pokračovať, môžete túto žiadosť ${ reject }."
       ]
     },
     "Update font modal": {
@@ -18071,6 +18347,9 @@
       ],
       "It's you": [
         "Ste to vy"
+      ],
+      "Pending admin access": [
+        "Čaká sa na prístup správcu"
       ],
       "Private": [
         "Súkromné"
@@ -18365,6 +18644,9 @@
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Vymazaním tohto telefónneho čísla už nebudete môcť obnovit svoj účet."
+      ],
+      "By disabling security events monitoring, you will also clear your entire history. Are you sure you want to disable this?": [
+        "Deaktiváciou sledovania bezpečnostných udalostí vymažete aj celú históriu. Naozaj chcete záznamy deaktivovať?"
       ],
       "Expiration Date is not in the format MM/YY": [
         "Koniec platnosti nie je vo formáte MM/RR"
