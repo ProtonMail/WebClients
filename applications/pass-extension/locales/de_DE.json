@@ -248,9 +248,6 @@
       "Get Pass Plus": [
         "Pass Plus holen"
       ],
-      "Help us improve": [
-        "Hilf uns, besser zu werden"
-      ],
       "Hide": [
         "Ausblenden"
       ],
@@ -1081,17 +1078,11 @@
       "Access your passwords on the go with our mobile apps.": [
         "Greife mit unseren mobilen Apps auch unterwegs auf deine Passwörter zu."
       ],
-      "Add a username field": [
-        "Benutzername-Feld hinzufügen"
-      ],
       "Admin": [
         "Administrator"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Nachdem du deine Daten erfolgreich importiert hast, kannst du die CSV-Datei mit deinen Passwörtern zur Sicherheit löschen."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Alias \"${ item.aliasEmail }\" wurde in den Papierkorb verschoben - er wird keine E-Mails mehr an dein Postfach weiterleiten."
       ],
       "All breaches for this address were resolved": [
         "Alle Datenlecks für diese Adresse wurden behoben."
@@ -1155,9 +1146,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Wähle einen gespeicherten Passkey für die Anmeldung bei ${ domain }"
-      ],
-      "Click here to add a field for a username.": [
-        "Klicke hier, um ein Feld für einen Benutzernamen hinzuzufügen."
       ],
       "Click the icon to open it anytime.": [
         "Klicke auf das Symbol, um es jederzeit zu öffnen."
@@ -2066,6 +2054,9 @@
       "Email aliases": [
         "E-Mail-Aliasse"
       ],
+      "Email or username": [
+        "E‐Mail‐Adresse oder Benutzername"
+      ],
       "Empty trash": [
         "Papierkorb leeren"
       ],
@@ -2595,9 +2586,6 @@
       "Enter email": [
         "E-Mail-Adresse eingeben"
       ],
-      "Enter email or username": [
-        "E-Mail-Adresse oder Benutzername eingeben"
-      ],
       "Enter password": [
         "Passwort eingeben"
       ],
@@ -2893,9 +2881,6 @@
       "Duplicated URL": [
         "Doppelte URL"
       ],
-      "Email address is invalid": [
-        "E-Mail-Adresse ist ungültig"
-      ],
       "Field name is required": [
         "Feldname ist erforderlich."
       ],
@@ -2927,9 +2912,6 @@
       ],
       "A description of the problem is required": [
         "Eine Beschreibung des Problems ist erforderlich."
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Der Alias \"${ name }\" wird derzeit im Zugangsdaten-Eintrag \"${ relatedLoginName }\" verwendet. Du wirst auch keine E-Mails mehr erhalten, die an \"${ aliasEmail }\" gesendet werden."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle deine im Papierkorb befindlichen Einträge werden dauerhaft gelöscht. Du kannst diese Aktion nicht rückgängig machen."
@@ -3045,9 +3027,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Inhaberschaft dieses Tresors auf ${ email } übertragen?"
-      ],
-      "Trash alias ?": [
-        "Alias in den Papierkorb verschieben?"
       ],
       "Unable to save": [
         "Speichern nicht möglich"

@@ -248,9 +248,6 @@
       "Get Pass Plus": [
         "Отримати Pass Plus"
       ],
-      "Help us improve": [
-        "Допоможіть нам вдосконалитися"
-      ],
       "Hide": [
         "Сховати"
       ],
@@ -1085,17 +1082,11 @@
       "Access your passwords on the go with our mobile apps.": [
         "Отримуйте доступ до своїх паролів на ходу за допомогою наших програм для мобільних пристроїв."
       ],
-      "Add a username field": [
-        "Додати поле імені користувача"
-      ],
       "Admin": [
         "Адміністратор"
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Після успішного імпорту даних ви можете видалити файл CSV, що містить ваші паролі, з міркувань безпеки."
-      ],
-      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
-        "Псевдонім \"${ item.aliasEmail }\" переміщено у смітник - він перестане пересилати електронні листи на вашу поштову скриньку"
       ],
       "All breaches for this address were resolved": [
         "Всі витоки за цією адресою були усунені"
@@ -1150,9 +1141,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Оберіть збережений ключ доступу для входу до ${ domain }"
-      ],
-      "Click here to add a field for a username.": [
-        "Натисніть тут, щоби додати поле для імені користувача."
       ],
       "Click the icon to open it anytime.": [
         "Клацніть на іконку щоб відкрити його будь-коли."
@@ -1966,6 +1954,9 @@
       "Email aliases": [
         "Псевдоніми електронної пошти"
       ],
+      "Email or username": [
+        "Е-пошта чи ім'я користувача"
+      ],
       "Empty trash": [
         "Очистити смітник"
       ],
@@ -2439,9 +2430,6 @@
       "Enter email": [
         "Введіть пошту"
       ],
-      "Enter email or username": [
-        "Введіть адресу електронної пошти або ім'я користувача"
-      ],
       "Enter password": [
         "Введіть пароль"
       ],
@@ -2730,9 +2718,6 @@
       "Duplicated URL": [
         "Дублювати посилання"
       ],
-      "Email address is invalid": [
-        "Недійсна адреса е-пошти"
-      ],
       "Field name is required": [
         "Назва поля обов'язкова"
       ],
@@ -2761,9 +2746,6 @@
     "Warning": {
       "A description of the problem is required": [
         "Потрібен опис проблеми"
-      ],
-      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Псевдонім \"${ name }\" зараз використовується в елементі входу \"${ relatedLoginName }\". Ви також припините отримувати електронні листи, надіслані \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Всі ваші видалені елементи будуть безповоротно видалені. Ви не можете скасувати дану дію."
@@ -2878,9 +2860,6 @@
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "Передати право власності на сховище ${ email }?"
-      ],
-      "Trash alias ?": [
-        "Перемістити псевдонім до Смітника ?"
       ],
       "Unable to save": [
         "Не вдалося зберегти"
