@@ -52,6 +52,7 @@ type Props = {
     showTaxCountry?: boolean;
     onBillingAddressChange?: OnBillingAddressChange;
     subscription: SubscriptionModel;
+    paymentNeeded: boolean;
 } & CheckoutModifiers;
 
 const SubscriptionCheckout = ({
@@ -75,6 +76,7 @@ const SubscriptionCheckout = ({
     isAddonDowngrade,
     isProration,
     isCustomBilling,
+    paymentNeeded,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
@@ -97,7 +99,9 @@ const SubscriptionCheckout = ({
         return null;
     }
 
-    const isFreePlanSelected = !hasPlanIDs(planIDs);
+    const isPaidPlanSelected = hasPlanIDs(planIDs);
+    const isFreePlanSelected = !isPaidPlanSelected;
+
     const hasGuarantee =
         !!planIDs?.[PLANS.VPN] ||
         !!planIDs?.[PLANS.VPN_PRO] ||
@@ -115,6 +119,8 @@ const SubscriptionCheckout = ({
     const hasBFDiscount = getHas2023OfferCoupon(checkResult.Coupon?.Code);
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
+
+    const displayRenewNotice = isPaidPlanSelected && paymentNeeded;
 
     return (
         <Checkout
@@ -138,7 +144,7 @@ const SubscriptionCheckout = ({
                 )
             }
             renewNotice={
-                !isFreePlanSelected
+                displayRenewNotice
                     ? getCheckoutRenewNoticeText({
                           cycle,
                           plansMap,
@@ -165,7 +171,7 @@ const SubscriptionCheckout = ({
                     )}
                 </span>
 
-                {!isFreePlanSelected && !isSpecialRenewPlan(planIDs) && <BilledText cycle={cycle} />}
+                {isPaidPlanSelected && !isSpecialRenewPlan(planIDs) && <BilledText cycle={cycle} />}
             </div>
             <CheckoutRow
                 title={usersTitle}
@@ -196,7 +202,7 @@ const SubscriptionCheckout = ({
                     />
                 );
             })}
-            {!isFreePlanSelected && (
+            {isPaidPlanSelected && (
                 <>
                     <div className="mb-4">
                         <hr />
@@ -264,7 +270,7 @@ const SubscriptionCheckout = ({
             <div className="mb-4">
                 <hr />
             </div>
-            {showTaxCountry && !isFreePlanSelected && (
+            {showTaxCountry && isPaidPlanSelected && (
                 <WrappedTaxCountrySelector
                     statusExtended={statusExtended}
                     onBillingAddressChange={onBillingAddressChange}

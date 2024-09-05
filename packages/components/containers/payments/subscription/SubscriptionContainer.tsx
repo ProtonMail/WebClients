@@ -1167,6 +1167,7 @@ const SubscriptionContainer = ({
                                 statusExtended={paymentFacade.statusExtended}
                                 onBillingAddressChange={handleBillingAddressChange}
                                 showPlanDescription={!hasPlanCustomizer}
+                                paymentNeeded={!model.noPaymentNeeded}
                                 {...checkoutModifiers}
                             />
                         </div>
