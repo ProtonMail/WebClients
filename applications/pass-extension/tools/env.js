@@ -23,6 +23,7 @@ const RESUME_FALLBACK = parseEnvVar('RESUME_FALLBACK', false, parseBool);
 const RUNTIME_RELOAD = parseEnvVar('RUNTIME_RELOAD', false, parseBool);
 const RUNTIME_RELOAD_PORT = parseEnvVar('RUNTIME_RELOAD_PORT', 8089, parseInt);
 const WEBPACK_DEV_PORT = parseEnvVar('WEBPACK_DEV_PORT', 8090, Number);
+const WEBPACK_CIRCULAR_DEPS = parseEnvVar('WEBPACK_CIRCULAR_DEPS', false, Boolean);
 
 const HOT_MANIFEST_UPDATE = RUNTIME_RELOAD && parseEnvVar('HOT_MANIFEST_UPDATE', false, parseBool);
 
@@ -38,4 +39,5 @@ module.exports = {
     RUNTIME_RELOAD_PORT,
     RUNTIME_RELOAD,
     WEBPACK_DEV_PORT,
+    WEBPACK_CIRCULAR_DEPS,
 };
