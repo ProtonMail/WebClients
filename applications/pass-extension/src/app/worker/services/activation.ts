@@ -16,6 +16,7 @@ import { bootIntent, wakeupIntent } from '@proton/pass/store/actions';
 import { selectFeatureFlags, selectItem, selectPopupFilters, selectPopupTabState } from '@proton/pass/store/selectors';
 import type { MaybeNull, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
+import { first } from '@proton/pass/utils/array/first';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
@@ -293,13 +294,27 @@ export const createActivationService = () => {
         }
     };
 
+    /** If the `current` flag is passed : resolve the active tab for the
+     * current window (ie when requesting the active tab for the popup).
+     * Else parse the sender data (ie: content-script) */
+    const handleResolveTab: MessageHandlerCallback<WorkerMessageType.TABS_QUERY> = async ({ payload }, sender) => {
+        if (payload.current) {
+            const tab = first(await browser.tabs.query({ active: true, currentWindow: true }));
+            if (!(tab && tab?.id)) throw new Error('No active tabs');
+            return { tabId: tab.id, url: parseUrl(tab.url) };
+        }
+
+        if (!sender.tab?.id) throw new Error('Invalid sender tab');
+        return { tabId: sender.tab.id, url: parseUrl(sender.tab.url) };
+    };
+
     browser.permissions.onAdded.addListener(checkPermissionsUpdate);
     browser.permissions.onRemoved.addListener(checkPermissionsUpdate);
     browser.alarms.onAlarm.addListener(({ name }) => name === UPDATE_ALARM_NAME && checkAvailableUpdate());
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_WAKEUP, handleWakeup);
     WorkerMessageBroker.registerMessage(WorkerMessageType.POPUP_INIT, handlePopupInit);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_TAB, (_, { tab }) => ({ tab }));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.TABS_QUERY, handleResolveTab);
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_RELOAD, reload);
     WorkerMessageBroker.registerMessage(WorkerMessageType.PING, () => Promise.resolve(true));
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_EXTENSION_KEY, () => ({ key: EXTENSION_KEY }));
