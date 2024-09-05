@@ -21,6 +21,9 @@
       ]
     },
     "Account Settings - Info": {
+      "A potential leak from ${ name } was detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
+        "Foi detetada uma potencial fuga de ${ name }. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
+      ],
       "Your information was found in at least one data leak. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "As suas informações foram encontradas em pelo menos uma fuga de dados. Ative ${ DARK_WEB_MONITORING_NAME } para ver os detalhes e tomar medidas. ${ link }"
       ]
@@ -2214,6 +2217,9 @@
       ]
     },
     "Custom frequency option": {
+      "After…": [
+        "Após…"
+      ],
       "Never": [
         "Nunca"
       ],
@@ -4152,6 +4158,10 @@
       "Create a new contact group": [
         "Criar novo grupo de contactos"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Criar uma nuvem segura para ${ n } membro",
+        "Criar uma nuvem segura para ${ n } membros"
+      ],
       "Create in": [
         "Criar em"
       ],
@@ -5006,6 +5016,11 @@
       ],
       "Creating invites in a shared calendar is not allowed": [
         "Não é permitido criar convites num calendário partilhado."
+      ]
+    },
+    "Input label": {
+      "Link label (optional)": [
+        "Etiqueta de ligação (opcional)"
       ]
     },
     "Input placeholder": {
@@ -6000,6 +6015,14 @@
         "${ n } mensagem por dia",
         "${ n } mensagens por dia"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } cofre partilhado de ${ PASS_SHORT_APP_NAME } por utilizador",
+        "${ n } cofres partilhados de ${ PASS_SHORT_APP_NAME } por utilizador"
+      ],
+      "${ n } user": [
+        "${ n } utilizador",
+        "Até ${ n } utilizadores"
+      ],
       "${ n } vault": [
         "${ n } cofre",
         "${ n } cofres"
@@ -6241,6 +6264,9 @@
       ],
       "Unlimited devices": [
         "Número ilimitado de dispositivos"
+      ],
+      "Unlimited devices and aliases": [
+        "Dispositivos e aliases ilimitados"
       ],
       "Unlimited filters": [
         "Filtros ilimitados"
@@ -7202,6 +7228,11 @@
         "Ver os registos"
       ]
     },
+    "Security Center - Info": {
+      "Get notified if your password or other data was leaked from a third-party service. ${ learnMoreLink }": [
+        "Seja notificado se a sua palavra-passe ou outros dados tiverem sido divulgados por um serviço de terceiros. ${ learnMoreLink }"
+      ]
+    },
     "Select files": {
       "Upload": [
         "Enviar"
@@ -7310,6 +7341,11 @@
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Cancelar a reposição da palavra-passe?"
+      ]
+    },
+    "session_recovery:cancelled:info": {
+      "Password reset request canceled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
+        "Pedido de reposição de palavra-passe cancelado (${ user.Email }). Se não tiver efetuado este pedido, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
@@ -7534,6 +7570,11 @@
         "Apoiar a privacidade online"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is canceled.": [
+        "Esta subscrição será renovada automaticamente a cada 2 anos ao mesmo preço até ser cancelada."
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Ir para os planos de subscrição"
@@ -7657,6 +7698,12 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convidar amigos para ${ BRAND_NAME }"
+      ],
+      "No more scheduling conflicts": [
+        "Sem conflitos de agendamento"
+      ],
+      "Now you can see when participants are free to attend your meeting.": [
+        "Agora pode ver quando os participantes estão livres para participar na sua reunião."
       ]
     },
     "Storage": {
@@ -7690,6 +7737,10 @@
       ],
       "upgrade for more storage": [
         "atualize para obter mais armazenamento"
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Ainda lhe resta **${ daysRemaining }** dia no seu plano **${ currentPlanName }**.",
+        "Ainda lhe restam **${ daysRemaining }** dias no seu plano **${ currentPlanName }**."
       ],
       "Your ${ appStorage } is almost full": [
         "O seu ${ appStorage } está quase cheio"
@@ -7744,6 +7795,10 @@
       ]
     },
     "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "${ n } ligação VPN gratuita por utilizador",
+        "${ n } ligações VPN gratuitas por utilizador"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } ligação VPN de alta velocidade",
         "${ n } ligações VPN de alta velocidade"
@@ -8896,6 +8951,12 @@
         "${ numberOfServers } em ${ numberOfCountries } países"
       ]
     },
+    "vpn_2024: renew": {
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "A sua subscrição será renovada automaticamente dentro de ${ cycle } mês.",
+        "A sua subscrição será renovada automaticamente em ${ cycle } meses."
+      ]
+    },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
         "Personalizações avançadas de VPN"
@@ -8910,9 +8971,17 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } account per wallet": [
+        "${ n } conta por carteira",
+        "${ n } contas por carteira"
+      ],
       "${ n } email address": [
         "${ n } endereço de e-mail ",
         "${ n } endereços de e-mail "
+      ],
+      "${ n } wallet": [
+        "${ n } carteira",
+        "${ n } carteiras"
       ],
       "Bitcoin via email": [
         "Bitcoin via e-mail"
