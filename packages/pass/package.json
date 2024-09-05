@@ -2,11 +2,7 @@
     "name": "@proton/pass",
     "description": "Proton Pass shared codebase",
     "license": "GPL-3.0",
-    "sideEffects": [
-        "./src/lib/api/api.ts",
-        "./src/lib/auth/authentication.ts",
-        "./src/lib/globals/browser.ts"
-    ],
+    "sideEffects": false,
     "scripts": {
         "check-types": "tsc",
         "docs": "docsify serve ./docs",
