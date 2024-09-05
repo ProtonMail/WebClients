@@ -13,7 +13,7 @@ import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { AliasModal } from '@proton/pass/components/Item/Alias/Alias.modal';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
+import { usePasswordContext } from '@proton/pass/components/Password/PasswordContext';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { selectShowUsernameField } from '@proton/pass/store/selectors';

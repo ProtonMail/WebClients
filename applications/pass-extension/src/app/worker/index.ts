@@ -8,14 +8,14 @@ import * as config from 'proton-pass-extension/app/config';
 import { createDevReloader } from 'proton-pass-extension/lib/utils/dev-reload';
 import 'proton-pass-extension/lib/utils/polyfills';
 
-import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from './channel';
-import { createWorkerContext } from './context';
+import { createWorkerContext } from './context/factory';
 
 if (typeof browser !== 'undefined') {
     if (BUILD_TARGET === 'chrome' || BUILD_TARGET === 'safari') {

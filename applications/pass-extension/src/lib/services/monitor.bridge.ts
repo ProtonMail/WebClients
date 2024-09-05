@@ -1,4 +1,4 @@
-import { type MessageWithSenderFactory, sendMessage } from '@proton/pass/lib/extension/message';
+import { type MessageWithSenderFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { MonitorService } from '@proton/pass/lib/monitor/service';
 import { WorkerMessageType } from '@proton/pass/types';
 

@@ -10,7 +10,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { clientErrored } from '@proton/pass/lib/client';
-import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';

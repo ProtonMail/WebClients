@@ -5,7 +5,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Alert, Icon, Prompt } from '@proton/components/components';
-import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
@@ -23,6 +22,8 @@ import type { NewUserPendingInvite, PendingInvite, ShareType } from '@proton/pas
 import { type ShareMember as ShareMemberType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { sortOn } from '@proton/pass/utils/fp/sort';
+
+import { useInviteContext } from './InviteContext';
 
 type Props = { shareId: string };
 

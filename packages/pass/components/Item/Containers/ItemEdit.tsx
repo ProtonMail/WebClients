@@ -8,7 +8,7 @@ import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCa
 import { IdentityEdit } from '@proton/pass/components/Item/Identity/Identity.edit';
 import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
 import { NoteEdit } from '@proton/pass/components/Item/Note/Note.edit';
-import { useItemRoute } from '@proton/pass/components/Navigation/ItemSwitch';
+import { useItemRoute } from '@proton/pass/components/Navigation/ItemRouteContext';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';

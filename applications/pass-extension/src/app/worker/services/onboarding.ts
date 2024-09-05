@@ -1,3 +1,7 @@
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import type { Store } from 'redux';
+
 import browser from '@proton/pass/lib/globals/browser';
 import {
     createAliasTrashConfirmRule,
@@ -13,17 +17,14 @@ import {
 } from '@proton/pass/lib/onboarding/rules';
 import type { OnboardingStorageData } from '@proton/pass/lib/onboarding/service';
 import { createOnboardingService as createCoreOnboardingService } from '@proton/pass/lib/onboarding/service';
+import type { State } from '@proton/pass/store/types';
 import type { ExtensionStorage, TabId } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { withPayloadLens } from '@proton/pass/utils/fp/lens';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
-import WorkerMessageBroker from '../channel';
-import { withContext } from '../context';
-import store from '../store';
-
-export const createOnboardingService = (storage: ExtensionStorage<OnboardingStorageData>) => {
+export const createOnboardingService = (storage: ExtensionStorage<OnboardingStorageData>, store: Store<State>) => {
     const { acknowledge, init, setState, getMessage, checkMessage } = createCoreOnboardingService({
         storage,
         rules: [

@@ -1,7 +1,7 @@
 import { NotificationAction } from 'proton-pass-extension/app/content/types';
 
 import { clientHasSession, clientNeedsSession } from '@proton/pass/lib/client';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { SanitizedPublicKeyRequest } from '@proton/pass/lib/passkeys/types';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';

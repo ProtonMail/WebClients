@@ -24,7 +24,7 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { SanitizedPublicKeyCreate } from '@proton/pass/lib/passkeys/types';
 import { sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
 import { validateItemName } from '@proton/pass/lib/validation/item';

@@ -11,7 +11,7 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { type Maybe, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { createStyleCompute, getComputedHeight } from '@proton/pass/utils/dom/computed-styles';

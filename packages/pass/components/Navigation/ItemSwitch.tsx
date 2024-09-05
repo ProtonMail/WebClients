@@ -1,4 +1,4 @@
-import { type FC, createContext, useContext } from 'react';
+import { type FC } from 'react';
 import type { RouteChildrenProps, RouteProps } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
 
@@ -9,13 +9,12 @@ import { ItemHistory } from '@proton/pass/components/Item/Containers/ItemHistory
 import { ItemNew } from '@proton/pass/components/Item/Containers/ItemNew';
 import { ItemView } from '@proton/pass/components/Item/Containers/ItemView';
 
+import { ItemRouteContext } from './ItemRouteContext';
+
 type Props = RouteChildrenProps & {
     fallback: RouteProps['component'];
     prefix?: string;
 };
-
-export const ItemRouteContext = createContext<{ prefix?: string }>({});
-export const useItemRoute = () => useContext(ItemRouteContext);
 
 const ItemRoutes: FC<Props> = ({ match, fallback }) => {
     const sub = (path: string) => `${match?.path}/${path}`;

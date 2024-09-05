@@ -24,7 +24,7 @@ import { BitField, type Callback, type InviteFormValues, type SelectedItem } fro
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
 import noop from '@proton/utils/noop';
 
-import { useInviteContext } from './InviteProvider';
+import { useInviteContext } from './InviteContext';
 import { FORM_ID, VaultInviteForm } from './VaultInviteForm';
 
 export type VaultInviteCreateProps =

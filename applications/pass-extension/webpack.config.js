@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 const getCssLoaders = require('@proton/pack/webpack/css.loader');
 const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
@@ -23,6 +24,7 @@ const {
     RUNTIME_RELOAD_PORT,
     RUNTIME_RELOAD,
     WEBPACK_DEV_PORT,
+    WEBPACK_CIRCULAR_DEPS,
 } = require('./tools/env');
 
 const SUPPORTED_TARGETS = ['chrome', 'firefox', 'safari'];
@@ -234,6 +236,17 @@ module.exports = {
                 },
             ],
         }),
+        ...(WEBPACK_CIRCULAR_DEPS
+            ? [
+                  new CircularDependencyPlugin({
+                      exclude: /node_modules/,
+                      include: /(packages\/pass|applications\/pass-extension)/,
+                      failOnError: false,
+                      allowAsyncCycles: false,
+                      cwd: process.cwd(),
+                  }),
+              ]
+            : []),
     ],
     experiments: {
         asyncWebAssembly: true,

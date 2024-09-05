@@ -15,7 +15,7 @@ import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { createPassCoreProxy } from '@proton/pass/lib/core/proxy';
-import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
+import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
 import { createI18nService } from '@proton/pass/lib/i18n/service';
