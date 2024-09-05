@@ -92,7 +92,9 @@ export function handleWebContents(contents: WebContents) {
 
     contents.on("will-attach-webview", preventDefault);
 
-    contents.on("did-fail-load", (event, errorCode) => {
+    contents.on("did-fail-load", (_event, errorCode, validatedURL) => {
+        log("did-fail-load", errorCode, validatedURL);
+
         if (!isCurrentContent()) {
             return;
         }
