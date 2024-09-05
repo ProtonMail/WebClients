@@ -80,14 +80,14 @@ export const aliasDetailsSync = createAction(
     (payload: { aliasEmail: string; mailboxes: AliasMailbox[] }) => withCache({ payload })
 );
 
-export const aliasSyncEnable = requestActionsFactory<ShareId, boolean>('alias::sync::enable')({
+export const aliasSyncEnable = requestActionsFactory<ShareId, ShareId>('alias::sync::enable')({
     requestId: aliasSyncEnableRequest,
     success: {
-        prepare: () =>
+        prepare: (shareId) =>
             withNotification({
                 text: c('Success').t`Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync`,
                 type: 'success',
-            })({ payload: null }),
+            })({ payload: { shareId } }),
     },
     failure: {
         prepare: (error) =>
