@@ -14,7 +14,7 @@
  * By controlling the lifecycle of the `ContentScriptClientService` instance in this
  * way, we can ensure that only one instance of the client content-script is running
  * at a time, and that it is properly cleaned up when no longer needed */
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';

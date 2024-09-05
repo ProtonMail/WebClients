@@ -2,7 +2,7 @@ import { generatePortName } from 'proton-pass-extension/lib/utils/port';
 import type { Runtime } from 'webextension-polyfill';
 
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
-import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
+import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { getCurrentTab } from '@proton/pass/lib/extension/utils/tabs';
 import browser from '@proton/pass/lib/globals/browser';
 import { type ClientEndpoint, type TabId, WorkerMessageType } from '@proton/pass/types';

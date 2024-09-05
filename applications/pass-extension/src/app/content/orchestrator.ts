@@ -9,7 +9,7 @@
 import 'proton-pass-extension/lib/utils/polyfills';
 
 import { createActivityProbe } from '@proton/pass/hooks/useActivityProbe';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { waitForPageReady } from '@proton/pass/utils/dom/state';
 import { asyncLock } from '@proton/pass/utils/fp/promises';

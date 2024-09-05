@@ -23,8 +23,8 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { BreachPreviewCard } from './Breach/Card/BreachPreviewCard';
+import { useMonitor } from './MonitorContext';
 import { MonitorLearnMore } from './MonitorLearnMore';
-import { useMonitor } from './MonitorProvider';
 
 import './MonitorSummary.scss';
 

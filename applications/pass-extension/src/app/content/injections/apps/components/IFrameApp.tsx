@@ -18,7 +18,11 @@ import type { Runtime } from 'webextension-polyfill';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { clientReady } from '@proton/pass/lib/client';
-import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import {
+    contentScriptMessage,
+    portForwardingMessage,
+    sendMessage,
+} from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';

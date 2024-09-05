@@ -13,7 +13,7 @@ import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
-import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';

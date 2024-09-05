@@ -11,7 +11,7 @@ import type { InjectedNotification, NotificationActions } from 'proton-pass-exte
 import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension/app/content/types';
 
 import { FieldType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { asyncQueue } from '@proton/pass/utils/fp/promises';

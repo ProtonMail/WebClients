@@ -1,7 +1,6 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { EXTENSION_KEY } from 'proton-pass-extension/app/worker/constants';
-import { withContext } from 'proton-pass-extension/app/worker/context';
-import store from 'proton-pass-extension/app/worker/store';
+import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { checkExtensionPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
@@ -10,8 +9,8 @@ import { type Runtime } from 'webextension-polyfill';
 import { MIN_CACHE_VERSION } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/client';
-import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
-import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message/message-broker';
+import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import { bootIntent, wakeupIntent } from '@proton/pass/store/actions';
 import { selectFeatureFlags, selectItem, selectPopupFilters, selectPopupTabState } from '@proton/pass/store/selectors';
@@ -44,7 +43,7 @@ export const createActivationService = () => {
     const handleBoot = withContext((ctx) => {
         if (clientCanBoot(ctx.status)) {
             ctx.setStatus(AppStatus.BOOTING);
-            store.dispatch(bootIntent());
+            ctx.service.store.dispatch(bootIntent());
         }
     });
 
@@ -205,7 +204,7 @@ export const createActivationService = () => {
              * no need for any redux operations on content-script wakeup
              * as it doesn't hold any store. */
             if (message.sender === 'popup' || message.sender === 'page') {
-                store.dispatch(wakeupIntent({ status }, { endpoint, tabId }));
+                ctx.service.store.dispatch(wakeupIntent({ status }, { endpoint, tabId }));
             }
 
             if (message.sender === 'popup') {
@@ -218,7 +217,7 @@ export const createActivationService = () => {
 
             return {
                 state: ctx.getState(),
-                features: selectFeatureFlags(store.getState()) ?? {},
+                features: selectFeatureFlags(ctx.service.store.getState()) ?? {},
                 settings: await ctx.service.settings.resolve(),
             };
         }
@@ -237,7 +236,7 @@ export const createActivationService = () => {
         const items = ctx.service.autofill.getLoginCandidates(parsedUrl);
         const hasAutofillCandidates = items.length > 0;
 
-        const state = store.getState();
+        const state = ctx.service.store.getState();
         const tabState = selectPopupTabState(tabId)(state);
         const filters = selectPopupFilters(state);
         const pushTabState = tabState !== undefined && [subdomain, domain].includes(tabState.domain);

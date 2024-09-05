@@ -3,7 +3,7 @@ import { type FieldHandle, type FormHandle, NotificationAction } from 'proton-pa
 import { sendTelemetryEvent } from 'proton-pass-extension/app/content/utils/telemetry';
 
 import { FieldType, FormType, isIgnored } from '@proton/pass/fathom';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';

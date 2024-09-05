@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
-import { type MessageWithSenderFactory, sendMessage } from '@proton/pass/lib/extension/message';
+import { type MessageWithSenderFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { WorkerMessageType } from '@proton/pass/types';
 
 export const useExtensionActivityProbe = (messageFactory: MessageWithSenderFactory) => {

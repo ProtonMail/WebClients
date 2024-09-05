@@ -1,5 +1,5 @@
 import type { FormType } from '@proton/pass/fathom';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { AutosaveFormEntry, FormCredentials, FormSubmitPayload } from '@proton/pass/types';
 import { type FormEntry, FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 
