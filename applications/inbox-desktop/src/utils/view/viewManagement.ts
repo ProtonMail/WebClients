@@ -1,4 +1,4 @@
-import { BrowserView, BrowserWindow, Event, Input, Rectangle, Session, WebContents, app } from "electron";
+import { BrowserView, BrowserWindow, Event, Input, Rectangle, Session, WebContents, app, nativeTheme } from "electron";
 import { debounce } from "lodash";
 import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
@@ -16,6 +16,8 @@ import { getWindowConfig } from "../view/windowHelpers";
 import { handleBeforeHandle } from "./dialogs";
 import { macOSExitEvent, windowsAndLinuxExitEvent } from "./windowClose";
 import { handleBeforeInput } from "./windowShortcuts";
+import { join } from "node:path";
+import { c } from "ttag";
 
 type ViewID = keyof ReturnType<typeof getConfig>["url"];
 
@@ -31,6 +33,12 @@ const loadingViewMap: Record<ViewID, Promise<void> | undefined> = {
     mail: undefined,
     calendar: undefined,
     account: undefined,
+};
+
+const viewTitleMap: Record<ViewID, string> = {
+    mail: "Proton Mail",
+    calendar: "Proton Calendar",
+    account: "Proton",
 };
 
 const PRELOADED_VIEWS: ViewID[] = ["mail", "calendar"];
@@ -245,51 +253,34 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
         throw new Error("mainWindow is undefined");
     }
 
-    const internalShowView = async (windowTitle: string) => {
-        const view = browserViewMap[viewID]!;
-        updateViewBounds(viewID);
-        view.webContents.setZoomFactor(getWindowBounds().zoom);
+    const view = browserViewMap[viewID]!;
+    updateViewBounds(viewID);
+    view.webContents.setZoomFactor(getWindowBounds().zoom);
 
-        if (viewID === currentViewID) {
-            viewLogger(viewID).info("showView loading in current view", url);
-            await loadURL(viewID, url);
-            return;
-        }
+    if (viewID === currentViewID) {
+        viewLogger(viewID).info("showView loading in current view", url);
+        await loadURL(viewID, url);
+        return;
+    }
 
-        currentViewID = viewID;
-        mainWindow!.title = windowTitle;
+    currentViewID = viewID;
+    mainWindow!.title = viewTitleMap[viewID];
 
-        if (url && urlHasMailto(url)) {
-            viewLogger(viewID).debug(`showView loading mailto ${url} from`, await getViewURL(viewID));
-            const loadPromise = loadURL(viewID, url);
-            mainWindow!.setBrowserView(view);
-            await loadPromise;
-        } else if (url && !isSameURL(url, await getViewURL(viewID))) {
-            viewLogger(viewID).debug("showView current url is different", await getViewURL(viewID));
-            viewLogger(viewID).info("showView loading", url);
-            await loadURL(viewID, "about:blank");
-            const loadPromise = loadURL(viewID, url);
-            mainWindow!.setBrowserView(view);
-            await loadPromise;
-        } else {
-            viewLogger(viewID).info("showView showing view for ", url);
-            mainWindow!.setBrowserView(view);
-        }
-    };
-
-    switch (viewID) {
-        case "mail":
-            await internalShowView("Proton Mail");
-            break;
-        case "calendar":
-            await internalShowView("Proton Calendar");
-            break;
-        case "account":
-            await internalShowView("Proton");
-            break;
-        default:
-            viewLogger(viewID).error("showView unsupported view");
-            break;
+    if (url && urlHasMailto(url)) {
+        viewLogger(viewID).debug(`showView loading mailto ${url} from`, await getViewURL(viewID));
+        const loadPromise = loadURL(viewID, url);
+        mainWindow!.setBrowserView(view);
+        await loadPromise;
+    } else if (url && !isSameURL(url, await getViewURL(viewID))) {
+        viewLogger(viewID).debug("showView current url is different", await getViewURL(viewID));
+        viewLogger(viewID).info("showView loading", url);
+        await loadURL(viewID, "about:blank");
+        const loadPromise = loadURL(viewID, url);
+        mainWindow!.setBrowserView(view);
+        await loadPromise;
+    } else {
+        viewLogger(viewID).info("showView showing view for ", url);
+        mainWindow!.setBrowserView(view);
     }
 }
 
@@ -361,6 +352,22 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
     return;
 }
 
+async function showLoadingPage(viewID: ViewID): Promise<void> {
+    const view = browserViewMap[viewID];
+
+    if (!view) {
+        viewLogger(viewID).warn("cannot show blank page, view is null");
+        return;
+    }
+
+    await view.webContents.loadFile(join(app.getAppPath(), "assets/loading/loading.html"), {
+        query: {
+            message: c("loading screen").t`Loading ${viewTitleMap[viewID]}…`,
+            theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
+        },
+    });
+}
+
 async function getViewURL(viewID: ViewID): Promise<string> {
     await loadingViewMap[viewID];
     return browserViewMap[viewID]!.webContents.getURL();
@@ -388,7 +395,7 @@ export async function resetHiddenViews({ toHomepage } = { toHomepage: false }) {
                 loadPromises.push(loadURL(viewID as ViewID, homepageURL));
             } else {
                 viewLogger(viewID as ViewID).info("reset to blank");
-                loadPromises.push(loadURL(viewID as ViewID, "about:blank"));
+                loadPromises.push(showLoadingPage(viewID as ViewID));
             }
         }
     }
