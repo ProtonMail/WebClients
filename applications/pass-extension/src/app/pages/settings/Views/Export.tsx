@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Exporter } from '@proton/pass/components/Export/Exporter';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
-import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { WorkerMessageType } from '@proton/pass/types';
 import { throwError } from '@proton/pass/utils/fp/throw';
 

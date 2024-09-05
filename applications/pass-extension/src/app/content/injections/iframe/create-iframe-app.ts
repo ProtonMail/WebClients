@@ -16,7 +16,11 @@ import type {
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import type { Runtime } from 'webextension-polyfill';
 
-import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import {
+    contentScriptMessage,
+    portForwardingMessage,
+    sendMessage,
+} from '@proton/pass/lib/extension/message/send-message';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import type { Dimensions, Rect } from '@proton/pass/types/utils/dom';

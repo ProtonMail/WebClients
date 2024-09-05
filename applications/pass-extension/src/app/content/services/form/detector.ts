@@ -15,7 +15,7 @@ import {
     shouldRunClassifier,
 } from '@proton/pass/fathom';
 import type { Fnode } from '@proton/pass/fathom/fathom';
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { type ExclusionRules, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
 import { prop } from '@proton/pass/utils/fp/lens';

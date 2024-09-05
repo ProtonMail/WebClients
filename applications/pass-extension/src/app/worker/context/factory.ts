@@ -33,7 +33,7 @@ import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { clientBooted, clientDisabled, clientLocked, clientReady, clientStatusResolved } from '@proton/pass/lib/client';
 import { exposePassCrypto } from '@proton/pass/lib/crypto';
 import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
-import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { backgroundMessage } from '@proton/pass/lib/extension/message/send-message';
 import { registerStoreEffect } from '@proton/pass/store/connect/effect';
 import { selectLockSetupRequired } from '@proton/pass/store/selectors';
 import { type AppState, AppStatus, WorkerMessageType } from '@proton/pass/types';
@@ -43,8 +43,7 @@ import createStore from '@proton/shared/lib/helpers/store';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import store from '../store';
-import { WorkerContext } from './context';
+import { WorkerContext } from './inject';
 
 export const createWorkerContext = (config: ProtonConfig) => {
     const api = exposeApi(createApi({ config, threshold: API_CONCURRENCY_TRESHOLD }));
@@ -52,6 +51,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const storage = createStorageService();
     const core = createPassCoreProxyService();
     const auth = createAuthService(api, authStore);
+    const store = createStoreService();
 
     auth.registerLockAdapter(LockMode.SESSION, sessionLockAdapterFactory(auth));
     exposePassCrypto(createPassCrypto());
@@ -75,7 +75,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             auth,
             autofill: createAutoFillService(),
             autosave: createAutoSaveService(),
-            b2bEvents: createB2BEventsService(storage.local),
+            b2bEvents: createB2BEventsService(storage.local, store),
             core,
             export: createExportService(),
             formTracker: createFormTrackerService(),
@@ -84,12 +84,12 @@ export const createWorkerContext = (config: ProtonConfig) => {
             injection: createInjectionService(),
             logger: createLoggerService(storage.local),
             monitor: createMonitorService(core, store),
-            onboarding: createOnboardingService(storage.local),
+            onboarding: createOnboardingService(storage.local, store),
             otp: createOTPService(),
             passkey: createPasskeyService(),
             settings: createSettingsService(),
             storage,
-            store: createStoreService(),
+            store,
             telemetry: BUILD_TARGET !== 'firefox' ? createTelemetryService(storage.local) : null,
         },
 

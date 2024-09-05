@@ -14,7 +14,7 @@ import { NotificationsContext } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { clientReady } from '@proton/pass/lib/client';
-import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { syncRequest } from '@proton/pass/store/actions/requests';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { AppState, MaybeNull, PopupInitialState } from '@proton/pass/types';

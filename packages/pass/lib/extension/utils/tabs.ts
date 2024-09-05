@@ -1,6 +1,6 @@
 import type { Tabs } from 'webextension-polyfill';
 
-import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe, TabId } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
