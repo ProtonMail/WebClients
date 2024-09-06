@@ -356,7 +356,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
     return;
 }
 
-export async function showErrorPage(viewID: ViewID): Promise<void> {
+export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
     const view = browserViewMap[viewID];
 
     if (!view) {
@@ -364,7 +364,7 @@ export async function showErrorPage(viewID: ViewID): Promise<void> {
         return;
     }
 
-    await view.webContents.loadFile(join(app.getAppPath(), "assets/error/error.html"), {
+    await view.webContents.loadFile(join(app.getAppPath(), "assets/error-network/error.html"), {
         query: {
             theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
             title: c("error screen").t`Something went wrong`,
