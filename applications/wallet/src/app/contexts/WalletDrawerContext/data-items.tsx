@@ -291,19 +291,17 @@ export const LinkToBlockchainDataItem = ({ tx, network }: TxDataListItemProps & 
             <hr className="my-4" />
             <div className="flex w-full justify-center">
                 <span className="block color-hint text-rg"></span>
-                <p className="my-0 mt-1 text-lg">
-                    <ButtonLike
-                        as={Href}
-                        href={`${url}/${tx.networkData.txid}`}
-                        target="_blank"
-                        fullWidth
-                        shape="solid"
-                        color="norm"
-                        style={{ 'padding-left': '4rem', 'padding-right': '4rem' }}
-                    >
-                        {c('Link').t`View on blockchain`}
-                    </ButtonLike>
-                </p>
+                <ButtonLike
+                    as={Href}
+                    href={`${url}/${tx.networkData.txid}`}
+                    target="_blank"
+                    fullWidth
+                    shape="solid"
+                    color="norm"
+                    className="wallet-button"
+                >
+                    {c('Link').t`View on blockchain`}
+                </ButtonLike>
             </div>
         </>
     );
