@@ -5,13 +5,8 @@ import { c } from 'ttag';
 import { useApi, useNotifications, useUser } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import useStateRef from '@proton/hooks/useStateRef';
-import type {
-    AssistantContextType,
-    AssistantRunningActions,
-    GenerateAssistantResult} from '@proton/llm/lib';
-import {
-    MODEL_UNLOADED,
-} from '@proton/llm/lib';
+import type { AssistantHooksProps, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
+import { MODEL_UNLOADED } from '@proton/llm/lib';
 import {
     CACHING_FAILED,
     FAILED_TO_DOWNLOAD,
@@ -23,7 +18,6 @@ import {
 } from '@proton/llm/lib';
 import { GpuLlmManager } from '@proton/llm/lib/actions';
 import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
-import type useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';
 import type {
     AssistantConfig,
     DownloadProgressInfo,
@@ -38,22 +32,10 @@ import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 interface Props {
     commonState: ReturnType<typeof useAssistantCommons>;
-    openedAssistantsState: ReturnType<typeof useOpenedAssistants>;
     active: boolean;
 }
 
-export const useAssistantLocal = ({
-    commonState,
-    openedAssistantsState,
-    active,
-}: Props): Omit<
-    AssistantContextType,
-    | 'getIsStickyAssistant'
-    | 'handleCheckHardwareCompatibility'
-    | 'cleanSpecificErrors'
-    | 'addSpecificError'
-    | 'canKeepFormatting'
-> => {
+export const useAssistantLocal = ({ commonState, active }: Props): AssistantHooksProps => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [user] = useUser();
@@ -95,9 +77,7 @@ export const useAssistantLocal = ({
     const generatedTokensNumber = useRef(0);
     const initPromise = useRef<Promise<void>>();
 
-    const { openedAssistants, openAssistant, setAssistantStatus, closeAssistant } = openedAssistantsState;
     const {
-        errors,
         addSpecificError,
         cleanSpecificErrors,
         addGlobalError,
@@ -105,8 +85,8 @@ export const useAssistantLocal = ({
         hasCompatibleBrowser,
         hasCompatibleHardware,
         canShowAssistant,
-        canUseAssistant,
         assistantSubscriptionStatus,
+        closeAssistant,
     } = commonState;
 
     const {
@@ -570,31 +550,32 @@ export const useAssistantLocal = ({
 
     return {
         assistantConfig: assistantConfigRef.current,
-        cancelDownloadModel,
-        cancelRunningAction: cleanRunningActions,
-        canShowAssistant,
-        canUseAssistant,
-        closeAssistant: closeAssistant(cleanRunningActions),
-        downloadModelSize,
-        downloadPaused,
-        downloadReceivedBytes,
-        errors,
-        generateResult,
-        hasCompatibleBrowser,
-        hasCompatibleHardware,
+
         initAssistant,
-        isCheckingCache,
+
+        // download related
+        downloadModelSize,
+        downloadReceivedBytes,
+        downloadPaused,
         isModelDownloaded,
         isModelDownloading,
+        cancelDownloadModel,
+        resumeDownloadModel,
+        isCheckingCache,
+
+        // GPU loading related
         isModelLoadedOnGPU,
         isModelLoadingOnGPU,
-        openAssistant,
-        openedAssistants,
-        resetAssistantState,
-        resumeDownloadModel,
-        runningActions,
-        setAssistantStatus,
         unloadModelOnGPU,
+
+        // Generate related
+        generateResult,
+        runningActions,
+        cancelRunningAction: cleanRunningActions,
+
+        closeAssistant: closeAssistant(cleanRunningActions),
+
+        resetAssistantState,
     };
 };
 
