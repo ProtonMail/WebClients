@@ -86,6 +86,7 @@ export const createIFrameService = (elements: PassElementsConfig) => {
             listeners.removeAll();
             state.apps.dropdown?.destroy();
             state.apps.notification?.destroy();
+            state.root = null; /* reset in-case we recycle the content-script */
         },
 
         attachDropdown: withContext((ctx) => {

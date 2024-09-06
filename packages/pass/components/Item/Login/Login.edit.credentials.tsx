@@ -20,7 +20,7 @@ import { selectShowUsernameField } from '@proton/pass/store/selectors';
 import { type LoginItemFormValues } from '@proton/pass/types';
 import { merge, withMerge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { parseUrl } from '@proton/pass/utils/url/parser';
+import { intoCleanHostname } from '@proton/pass/utils/url/is-valid-url';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 import './Login.edit.credentials.scss';
@@ -209,8 +209,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                 onPasswordGenerated={(value: string) => {
                     const { urls, url } = form.values;
                     const baseUrl = urls?.[0]?.url ?? url;
-                    const { subdomain, domain, hostname } = parseUrl(baseUrl);
-                    const origin = subdomain ?? domain ?? hostname;
+                    const origin = intoCleanHostname(baseUrl);
                     passwordContext.history.add({ value, origin });
                 }}
             />
