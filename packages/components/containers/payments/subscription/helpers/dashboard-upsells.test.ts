@@ -1,3 +1,4 @@
+import { getPlansMap } from '@proton/components/payments/core';
 import { APPS, COUPON_CODES, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import type { Subscription } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -28,9 +29,7 @@ describe('resolveUpsellsToDisplay', () => {
         mockedOpenSubscriptionModal = jest.fn();
         base = {
             app: APPS.PROTONMAIL,
-            currency: 'EUR',
             subscription,
-            plans: getTestPlans(),
             freePlan: FREE_PLAN,
             serversCount: {
                 paid: {
@@ -46,6 +45,7 @@ describe('resolveUpsellsToDisplay', () => {
             isFree: true,
             hasPaidMail: false,
             openSubscriptionModal: mockedOpenSubscriptionModal,
+            plansMap: getPlansMap(getTestPlans('EUR'), 'EUR'),
         };
     });
 

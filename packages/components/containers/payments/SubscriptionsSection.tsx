@@ -6,7 +6,6 @@ import { useLoading } from '@proton/hooks';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
 import { PLANS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { getOptimisticRenewCycleAndPrice } from '@proton/shared/lib/helpers/renew';
 import {
     getHas2023OfferCoupon,
@@ -33,7 +32,7 @@ import {
 } from '../../components';
 import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
-import { useApi, useEventManager, usePlans, useSubscription, useUser } from '../../hooks';
+import { useApi, useEventManager, usePlans, usePreferredPlansMap, useSubscription, useUser } from '../../hooks';
 import { SettingsSectionWide } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { useCancellationTelemetry } from './subscription/cancellationFlow';
@@ -55,6 +54,8 @@ const SubscriptionsSection = () => {
     const searchParams = new URLSearchParams(location.search);
     const reactivationSource = searchParams.get('source');
 
+    const { plansMap } = usePreferredPlansMap();
+
     if (!current || !plans || loadingSubscription || loadingPlans) {
         return <Loader />;
     }
@@ -63,7 +64,6 @@ const SubscriptionsSection = () => {
         return <MozillaInfoPanel />;
     }
 
-    const plansMap = toMap(plans, 'Name');
     const planTitle = getPlanTitle(current);
 
     const { renewEnabled, subscriptionExpiresSoon } = subscriptionExpires(current);
@@ -113,6 +113,7 @@ const SubscriptionsSection = () => {
                     planIDs: latestPlanIDs,
                     plansMap,
                     cycle: nextCycle,
+                    currency: latestSubscription.Currency,
                 }),
             });
             return {
@@ -132,6 +133,7 @@ const SubscriptionsSection = () => {
                 plansMap,
                 planIDs: latestPlanIDs,
                 cycle: latestSubscription.Cycle,
+                currency: latestSubscription.Currency,
             })!;
             return {
                 renewPrice: (

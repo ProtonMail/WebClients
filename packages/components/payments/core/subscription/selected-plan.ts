@@ -1,13 +1,19 @@
-import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, FreeSubscription, PLANS } from '@proton/shared/lib/constants';
-import { AddonGuard, isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from '@proton/shared/lib/helpers/addons';
-import { toMap } from '@proton/shared/lib/helpers/object';
+import { type ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, type FreeSubscription, PLANS } from '@proton/shared/lib/constants';
+import {
+    type AddonGuard,
+    isDomainAddon,
+    isIpAddon,
+    isMemberAddon,
+    isScribeAddon,
+} from '@proton/shared/lib/helpers/addons';
 import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
-import { getIsB2BAudienceFromPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import { Currency, MaxKeys, Plan, PlanIDs, PlansMap, Subscription, getMaxValue } from '@proton/shared/lib/interfaces';
+import { getIsB2BAudienceFromPlan, getMaxValue, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import type { Currency, MaxKeys, Plan, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getScribeAddonNameByPlan } from './helpers';
+import { getPlansMap } from './plans-map-wrapper';
 
 export class SelectedPlan {
     private _planIDs: PlanIDs;
@@ -69,7 +75,7 @@ export class SelectedPlan {
         this._planIDs = { ...planIDs };
 
         if (Array.isArray(plans)) {
-            this._plansMap = toMap(plans, 'Name');
+            this._plansMap = getPlansMap(plans, this.currency, false);
         } else {
             this._plansMap = plans;
         }

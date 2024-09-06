@@ -4,11 +4,12 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { ReferralFeaturesList, useConfig } from '@proton/components';
+import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
 import {
+    type BillingAddress,
     DEFAULT_TAX_BILLING_ADDRESS,
-    WrappedTaxCountrySelector,
-} from '@proton/components/containers/payments/TaxCountrySelector';
-import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
+    type PaymentMethodStatusExtended,
+} from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';

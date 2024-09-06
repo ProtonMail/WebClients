@@ -1,11 +1,12 @@
 import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_CURRENCY, PLANS } from '@proton/shared/lib/constants';
+import type { Currency } from '@proton/shared/lib/interfaces';
 
 import { defaultSignupModel } from '../single-signup-v2/SingleSignupContainerV2';
 import type { VPNSignupModel } from './interface';
 
-export const getCycleData = ({ plan, coupon }: { plan: PLANS; coupon?: string }) => {
-    if (getIsVPNPassPromotion(plan, coupon)) {
+export const getCycleData = ({ plan, coupon, currency }: { plan: PLANS; coupon?: string; currency: Currency }) => {
+    if (getIsVPNPassPromotion(coupon, currency)) {
         return {
             upsellCycle: CYCLE.YEARLY,
             cycles: [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
@@ -27,6 +28,6 @@ export const getCycleData = ({ plan, coupon }: { plan: PLANS; coupon?: string })
 
 export const defaultVPNSignupModel: VPNSignupModel = {
     ...defaultSignupModel,
-    cycleData: getCycleData({ plan: PLANS.VPN }),
+    cycleData: getCycleData({ plan: PLANS.VPN, currency: DEFAULT_CURRENCY }),
     signupType: 'default',
 };

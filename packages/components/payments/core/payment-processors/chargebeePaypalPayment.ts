@@ -1,18 +1,17 @@
-import { PaymentIntent, chargebeeValidationErrorName, isMessageBusResponseFailure } from '@proton/chargebee/lib';
+import { type PaymentIntent, chargebeeValidationErrorName, isMessageBusResponseFailure } from '@proton/chargebee/lib';
 import { getTokenStatusV5 } from '@proton/shared/lib/api/payments';
-import { Api } from '@proton/shared/lib/interfaces';
+import { type Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
-import { PaymentVerificatorV5, createPaymentTokenV5Paypal } from '../createPaymentToken';
-import {
+import { type PaymentVerificatorV5, createPaymentTokenV5Paypal } from '../createPaymentToken';
+import type {
     AmountAndCurrency,
     ChargeableV5PaymentParameters,
     ChargeableV5PaymentToken,
     ChargebeeFetchedPaymentToken,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
-    ChargebeeKillSwitch,
     ForceEnableChargebee,
     RemoveEventListener,
 } from '../interface';
@@ -43,7 +42,6 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
         private handles: ChargebeeIframeHandles,
         private events: ChargebeeIframeEvents,
         private isCredit: boolean,
-        private chargebeeKillSwitch: ChargebeeKillSwitch,
         private forceEnableChargebee: ForceEnableChargebee,
         public paypalModalHandles: ChargebeePaypalModalHandles | undefined,
         public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
@@ -83,15 +81,6 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
             // if that's not a form validation error, then we have something unexpected,
             // and we need to switch back to the old flow
             if (!this.mustIgnoreError(error)) {
-                this.chargebeeKillSwitch({
-                    error,
-                    reason: 'Chargebee token creation failed',
-                    data: {
-                        amountAndCurrency: this.amountAndCurrency,
-                        isCredit: this.isCredit,
-                        type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
-                    },
-                });
                 throw error;
             }
         }

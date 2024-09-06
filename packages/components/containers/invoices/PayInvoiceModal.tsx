@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
@@ -8,7 +9,6 @@ import type { PaymentProcessorHook } from '@proton/components/payments/react-ext
 import { useLoading } from '@proton/hooks';
 import { checkInvoice, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { toPrice } from '@proton/shared/lib/helpers/string';
 import { getHasSomeVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
@@ -224,7 +224,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             <Input
                                 className="field--highlight pointer-events-none text-strong text-right"
                                 readOnly
-                                value={toPrice(amountDue, currency)}
+                                value={getSimplePriceString(currency, amountDue)}
                             />
                         </Field>
                     </Row>

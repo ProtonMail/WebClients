@@ -58,7 +58,6 @@ const SelectTwo = <V extends any>({
     clearSearchAfter = 500,
     size = defaultSize,
     originalPlacement,
-    loading,
     anchorRef: maybeAnchorRef,
     onClose,
     onOpen,

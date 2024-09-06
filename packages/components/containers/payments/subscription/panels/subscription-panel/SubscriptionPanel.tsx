@@ -27,7 +27,6 @@ import {
 } from '@proton/shared/lib/helpers/subscription';
 import type {
     Address,
-    Currency,
     Organization,
     SubscriptionModel,
     UserModel,
@@ -80,7 +79,6 @@ import { SubscriptionItems } from './SubscriptionItems';
 interface Props {
     app: APP_NAMES;
     user: UserModel;
-    currency: Currency;
     subscription?: SubscriptionModel;
     organization?: Organization;
     vpnServers: VPNServersCountData;
@@ -88,16 +86,7 @@ interface Props {
     upsells: Upsell[];
 }
 
-const SubscriptionPanel = ({
-    app,
-    currency,
-    vpnServers,
-    subscription,
-    organization,
-    user,
-    addresses,
-    upsells,
-}: Props) => {
+const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, addresses, upsells }: Props) => {
     const primaryPlan = getPrimaryPlan(subscription);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
     const isPassB2bPlan = getIsPassB2BPlan(primaryPlan?.Name);
@@ -376,7 +365,7 @@ const SubscriptionPanel = ({
     const planPriceElement = (user.hasPaidMail || user.hasPaidVpn) && (
         <Price
             className="h3 color-weak"
-            currency={currency}
+            currency={subscription?.Currency}
             suffix={subscription && amount ? c('Suffix').t`/month` : ''}
             data-testid="plan-price"
         >

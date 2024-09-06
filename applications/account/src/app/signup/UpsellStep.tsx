@@ -13,6 +13,7 @@ import {
     getFreeVPNPlan,
     getShortPlan,
 } from '@proton/components/containers/payments/features/plan';
+import { mainCurrencies } from '@proton/components/payments/core/helpers';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
@@ -298,7 +299,14 @@ const UpsellStep = ({
                         title={upsellShortPlan.title}
                         right={
                             <div className="inline-block">
-                                <CurrencySelector mode="select-two" currency={currency} onSelect={onChangeCurrency} />
+                                <CurrencySelector
+                                    mode="select-two"
+                                    // this is a placeholder, so there isn't support for regional currencies in this view,
+                                    // because this view might be removed soon.
+                                    currencies={mainCurrencies}
+                                    currency={currency}
+                                    onSelect={onChangeCurrency}
+                                />
                             </div>
                         }
                     />

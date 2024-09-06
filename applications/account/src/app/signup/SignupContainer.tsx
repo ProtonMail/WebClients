@@ -8,10 +8,9 @@ import type { OnLoginCallback } from '@proton/components/containers';
 import { HumanVerificationSteps } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import { useApi, useConfig, useErrorHandler, useLocalState, useMyCountry } from '@proton/components/hooks';
+import { useApi, useConfig, useErrorHandler, useGetPlans, useLocalState, useMyCountry } from '@proton/components/hooks';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import type { BillingAddress } from '@proton/components/payments/core';
+import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/payments/core';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
@@ -19,7 +18,6 @@ import metrics, { observeApiError } from '@proton/metrics';
 import type { WebCoreSignupBackButtonTotal } from '@proton/metrics/types/web_core_signup_backButton_total_v1.schema';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getHasAppExternalSignup, getIsVPNApp } from '@proton/shared/lib/authentication/apps';
@@ -41,7 +39,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, Cycle, HumanVerificationMethodType, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle, HumanVerificationMethodType, PlansMap } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
@@ -170,6 +168,8 @@ const SignupContainer = ({
             ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
         });
     const { getPaymentsApi } = usePaymentsApi();
+    const paymentsSilentApi = getPaymentsApi(silentApi);
+    const getPlans = useGetPlans();
     const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
         flow: 'signup',
     });
@@ -263,7 +263,7 @@ const SignupContainer = ({
 
             getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const [{ Domains: domains }, referralData, Plans, freePlan] = await Promise.all([
+            const [{ Domains: domains }, referralData, plansResult] = await Promise.all([
                 normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                 referrer
                     ? await silentApi(checkReferrer(referrer))
@@ -273,32 +273,25 @@ const SignupContainer = ({
                           }))
                           .catch(() => undefined)
                     : undefined,
-                silentApi<{ Plans: Plan[] }>(
-                    queryPlans(
-                        signupParameters.currency
-                            ? {
-                                  Currency: signupParameters.currency,
-                              }
-                            : undefined
-                    )
-                ).then(({ Plans }) => Plans),
-                getFreePlan({ api: silentApi }),
+                getPlans({ api: silentApi }),
             ]);
+
+            const { plans: Plans, freePlan } = plansResult;
 
             if ((location.pathname === SSO_PATHS.REFER || location.pathname === SSO_PATHS.TRIAL) && !referralData) {
                 history.replace(SSO_PATHS.SIGNUP);
             }
 
             const plansMap = toMap(Plans, 'Name') as PlansMap;
-            const planParameters = getPlanIDsFromParams(Plans, signupParameters, {
+            const currency = signupParameters.currency || Plans?.[0]?.Currency || DEFAULT_CURRENCY;
+            const planParameters = getPlanIDsFromParams(Plans, currency, signupParameters, {
                 plan: PLANS.FREE,
             });
-            const currency = signupParameters.currency || Plans?.[0]?.Currency || DEFAULT_CURRENCY;
             const cycle = signupParameters.cycle || DEFAULT_CYCLE;
             const billingAddress = DEFAULT_TAX_BILLING_ADDRESS;
             const coupon = signupParameters.coupon;
 
-            const subscriptionData = await getSubscriptionData(getPaymentsApi(silentApi), {
+            const subscriptionData = await getSubscriptionData(paymentsSilentApi, {
                 plansMap,
                 planIDs: planParameters.planIDs,
                 currency,
@@ -368,7 +361,7 @@ const SignupContainer = ({
 
     const handleChangeCurrency = async (currency: Currency) => {
         const checkResult = await getSubscriptionPrices(
-            getPaymentsApi(silentApi),
+            paymentsSilentApi,
             model.subscriptionData.planIDs,
             currency,
             model.subscriptionData.cycle,
@@ -386,7 +379,7 @@ const SignupContainer = ({
 
     const handleChangeCycle = async (cycle: Cycle) => {
         const checkResult = await getSubscriptionPrices(
-            getPaymentsApi(silentApi),
+            paymentsSilentApi,
             model.subscriptionData.planIDs,
             model.subscriptionData.currency,
             cycle,
@@ -404,7 +397,7 @@ const SignupContainer = ({
 
     const handleChangePlanIDs = async (planIDs: PlanIDs) => {
         const checkResult = await getSubscriptionPrices(
-            getPaymentsApi(silentApi),
+            paymentsSilentApi,
             planIDs,
             model.subscriptionData.currency,
             model.subscriptionData.cycle,
@@ -422,7 +415,7 @@ const SignupContainer = ({
 
     const handleChangeBillingAddress = async (billingAddress: BillingAddress) => {
         const checkResult = await getSubscriptionPrices(
-            getPaymentsApi(silentApi),
+            paymentsSilentApi,
             model.subscriptionData.planIDs,
             model.subscriptionData.currency,
             model.subscriptionData.cycle,
@@ -811,7 +804,7 @@ const SignupContainer = ({
                             const validateFlow = createFlow();
                             const newCycle = cycle || model.subscriptionData.cycle;
                             const checkResult = await getSubscriptionPrices(
-                                getPaymentsApi(silentApi),
+                                paymentsSilentApi,
                                 planIDs,
                                 model.subscriptionData.currency,
                                 newCycle,

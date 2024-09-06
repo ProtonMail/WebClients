@@ -1,20 +1,20 @@
-import { RefObject, useEffect, useRef, useState } from 'react';
+import { type RefObject, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import {
-    CardFormRenderMode,
-    CbCardConfig,
-    CbIframeConfig,
-    ChargebeeCssVariable,
-    ChargebeeSavedCardAuthorizationSuccess,
-    ChargebeeSubmitEventPayload,
-    ChargebeeVerifySavedCardEventPayload,
-    PaymentIntent,
-    PaypalAuthorizedPayload,
-    SetPaypalPaymentIntentPayload,
-    ThreeDsChallengePayload,
-    UpdateFieldsPayload,
+    type CardFormRenderMode,
+    type CbCardConfig,
+    type CbIframeConfig,
+    type ChargebeeCssVariable,
+    type ChargebeeSavedCardAuthorizationSuccess,
+    type ChargebeeSubmitEventPayload,
+    type ChargebeeVerifySavedCardEventPayload,
+    type PaymentIntent,
+    type PaypalAuthorizedPayload,
+    type SetPaypalPaymentIntentPayload,
+    type ThreeDsChallengePayload,
+    type UpdateFieldsPayload,
     chargebeeCssVariables,
     isPaypalCancelledMessage,
     isPaypalClickedMessage,
@@ -29,10 +29,10 @@ import {
 } from '@proton/chargebee/lib';
 import { ModalTwo, ModalTwoContent, useModalState } from '@proton/components/components';
 import { useApi, useNotifications } from '@proton/components/hooks';
-import { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
-import { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
+import { type ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
+import { type ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import {
-    GetChargebeeConfigurationResponse,
+    type GetChargebeeConfigurationResponse,
     getChargebeeConfiguration,
     getPaymentsVersion,
 } from '@proton/shared/lib/api/payments';
@@ -40,14 +40,13 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { ThemeCode } from '../client-extensions';
+import { type ThemeCode } from '../client-extensions';
 import { useChargebeeContext } from '../client-extensions/useChargebeeContext';
-import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import {
-    ChargebeeIframeEvents,
-    ChargebeeIframeHandles,
-    InitializeCreditCardOptions,
-    RemoveEventListener,
+    type ChargebeeIframeEvents,
+    type ChargebeeIframeHandles,
+    type InitializeCreditCardOptions,
+    type RemoveEventListener,
 } from '../core';
 
 /**
@@ -423,7 +422,6 @@ export const useCbIframe = (): CbIframeHandles => {
     const [iframeConfigured, setIframeConfigured] = useState(false);
 
     const chargebeeContext = useChargebeeContext();
-    const { chargebeeKillSwitch } = useChargebeeKillSwitch();
 
     const markConfigured = <T,>(promise: Promise<T>) =>
         promise.then((result) => {
@@ -542,9 +540,6 @@ export const useCbIframe = (): CbIframeHandles => {
                     level: 'error',
                     extra: { error, context, rawError, messagePayload, checkpoints },
                 });
-
-                // No params on purpose to make sure we don't trigger Sentry again
-                chargebeeKillSwitch();
             }
         });
     }, []);

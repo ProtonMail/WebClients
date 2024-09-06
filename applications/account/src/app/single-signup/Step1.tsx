@@ -60,6 +60,7 @@ import { useApi } from '@proton/components/hooks';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
+import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import type { BillingAddress, ExtendedTokenPayment, TokenPayment } from '@proton/components/payments/core';
 import {
     PAYMENT_METHOD_TYPES,
@@ -87,14 +88,21 @@ import {
     VPN_CONNECTIONS,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
+import type { RequiredCheckResponse, SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHas2023OfferCoupon, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
-import type { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type {
+    Currency,
+    Cycle,
+    CycleMapping,
+    Plan,
+    StrictPlan,
+    VPNServersCountData,
+} from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getFreeServers, getPlusServers, getVpnServers } from '@proton/shared/lib/vpn/features';
@@ -362,6 +370,7 @@ const Step1 = ({
     isB2bPlan,
     background,
     onComplete,
+    onCurrencyChange,
     model,
     setModel,
     upsellShortPlan,
@@ -373,11 +382,12 @@ const Step1 = ({
     onChallengeLoaded,
     className,
     loading,
+    currencyUrlParam,
 }: {
     activeBreakpoint: Breakpoints;
     defaultEmail?: string;
     mode: 'signup' | 'pricing' | 'vpn-pass-promotion';
-    selectedPlan: Plan;
+    selectedPlan: StrictPlan;
     cycleData: { cycles: Cycle[]; upsellCycle: Cycle };
     isVpn2024Deal: boolean;
     isB2bPlan: boolean;
@@ -389,6 +399,7 @@ const Step1 = ({
         subscriptionData: SignupCacheResult['subscriptionData'];
         type: 'signup';
     }) => void;
+    onCurrencyChange: (currency: Currency) => Promise<unknown>;
     model: VPNSignupModel;
     setModel: Dispatch<SetStateAction<VPNSignupModel>>;
     hideFreePlan: boolean;
@@ -398,6 +409,7 @@ const Step1 = ({
     onChallengeLoaded: () => void;
     className?: string;
     loading: boolean;
+    currencyUrlParam?: Currency;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const [loadingChallenge, setLoadingChallenge] = useState(false);
@@ -413,6 +425,8 @@ const Step1 = ({
 
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
+    const [changingCurrency, withChangingCurrency] = useLoading();
+    const { getAvailableCurrencies } = useCurrencies('vpn');
 
     const { plansMap } = model;
 
@@ -486,11 +500,18 @@ const Step1 = ({
                 plansMap: model.plansMap,
                 planIDs: newPlanIDs,
                 cycle: newCycle,
+                currency: newCurrency,
             });
+
+        // Taxes shouldn't be part of optimistic updated because it can be misleading.
+        const optimisticCheckResultWithoutTaxes: RequiredCheckResponse = {
+            ...optimisticCheckResult,
+            Taxes: [],
+        };
 
         const newOptimistic = {
             ...optimistic,
-            checkResult: optimisticCheckResult,
+            checkResult: optimisticCheckResultWithoutTaxes,
         };
 
         try {
@@ -550,21 +571,24 @@ const Step1 = ({
             event: TelemetryAccountSignupEvents.currencySelect,
             dimensions: { currency: currency },
         });
-        handleOptimistic({ currency })
-            .then(() => {
-                metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
-                    status: 'success',
-                    flow: isB2bPlan ? 'b2b' : 'b2c',
-                });
-            })
-            .catch((error) => {
-                observeApiError(error, (status) =>
+
+        void withChangingCurrency(
+            onCurrencyChange(currency)
+                .then(() => {
                     metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
-                        status,
+                        status: 'success',
                         flow: isB2bPlan ? 'b2b' : 'b2c',
-                    })
-                );
-            });
+                    });
+                })
+                .catch((error) => {
+                    observeApiError(error, (status) =>
+                        metrics.core_vpn_single_signup_step1_currencyChange_2_total.increment({
+                            status,
+                            flow: isB2bPlan ? 'b2b' : 'b2c',
+                        })
+                    );
+                })
+        );
     };
 
     const handleChangeCycle = async ({
@@ -673,6 +697,7 @@ const Step1 = ({
         checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
         currency: options.currency,
+        api: silentApi,
         selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
         onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion, paymentProcessorType }) => {
             return withLoadingSignup(async () => {
@@ -1057,6 +1082,23 @@ const Step1 = ({
 
     const hasSomeVpnPlan = getIsVpnPlan(options.plan.Name);
 
+    const showCycleAndSelectors =
+        !hasSelectedFree && (mode === 'pricing' || mode === 'vpn-pass-promotion') && checkoutMappingPlanIDs;
+
+    const currencySelector = (
+        <CurrencySelector
+            currencies={getAvailableCurrencies({
+                status: model.paymentMethodStatusExtended,
+                plans: model.plans,
+                selectedPlanName: selectedPlan.Name,
+                paramCurrency: currencyUrlParam,
+            })}
+            mode="select-two"
+            currency={options.currency}
+            loading={changingCurrency}
+            onSelect={(currency) => withLoadingPaymentDetails(handleChangeCurrency(currency)).catch(noop)}
+        />
+    );
     return (
         <Layout
             hasDecoration
@@ -1120,117 +1162,104 @@ const Step1 = ({
                         })}
                     </div>
                 )}
-                {!hasSelectedFree &&
-                    (mode === 'pricing' || mode === 'vpn-pass-promotion') &&
-                    checkoutMappingPlanIDs && (
-                        <Box className={`mt-8 w-full ${padding}`}>
-                            <BoxHeader
-                                step={showStepLabel ? step++ : undefined}
-                                title={(() => {
-                                    if (isVpn2024Deal || upsellToVPNPassBundle) {
-                                        return c('Header').t`Select your deal`;
-                                    }
-
-                                    if (isBlackFriday) {
-                                        if (isBlackFridayPeriod) {
-                                            return c('bf2023: header').t`Select your Black Friday offer`;
-                                        }
-                                        if (isCyberWeekPeriod) {
-                                            return c('bf2023: header').t`Select your Cyber Week offer`;
-                                        }
-                                        return c('bf2023: header').t`Select your End of Year offer`;
-                                    }
-                                    return c('Header').t`Select your pricing plan`;
-                                })()}
-                                right={
-                                    <CurrencySelector
-                                        mode="select-two"
-                                        currency={options.currency}
-                                        onSelect={(currency) =>
-                                            withLoadingPaymentDetails(handleChangeCurrency(currency)).catch(noop)
-                                        }
-                                    />
+                {showCycleAndSelectors && (
+                    <Box className={`mt-8 w-full ${padding}`}>
+                        <BoxHeader
+                            step={showStepLabel ? step++ : undefined}
+                            title={(() => {
+                                if (isVpn2024Deal || upsellToVPNPassBundle) {
+                                    return c('Header').t`Select your deal`;
                                 }
-                            />
-                            <BoxContent>
-                                {checkoutMappingPlanIDs && (
-                                    <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
-                                        <CycleSelector
-                                            mode={mode}
-                                            onGetTheDeal={({ cycle, planIDs }) => {
-                                                handleUpdate('plan');
-                                                setToggleUpsell(undefined);
-                                                withLoadingPaymentDetails(
-                                                    handleChangeCycle({
-                                                        cycle,
-                                                        planIDs,
-                                                    })
-                                                ).catch(noop);
-                                                accountDetailsRef.current?.scrollInto('email');
+
+                                if (isBlackFriday) {
+                                    if (isBlackFridayPeriod) {
+                                        return c('bf2023: header').t`Select your Black Friday offer`;
+                                    }
+                                    if (isCyberWeekPeriod) {
+                                        return c('bf2023: header').t`Select your Cyber Week offer`;
+                                    }
+                                    return c('bf2023: header').t`Select your End of Year offer`;
+                                }
+                                return c('Header').t`Select your pricing plan`;
+                            })()}
+                            right={currencySelector}
+                        />
+                        <BoxContent>
+                            <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
+                                <CycleSelector
+                                    mode={mode}
+                                    onGetTheDeal={({ cycle, planIDs }) => {
+                                        handleUpdate('plan');
+                                        setToggleUpsell(undefined);
+                                        withLoadingPaymentDetails(
+                                            handleChangeCycle({
+                                                cycle,
+                                                planIDs,
+                                            })
+                                        ).catch(noop);
+                                        accountDetailsRef.current?.scrollInto('email');
+                                    }}
+                                    upsell={(() => {
+                                        if (mode === 'vpn-pass-promotion') {
+                                            const cycle = CYCLE.YEARLY;
+                                            const mapping = checkoutMappingPlanIDs[cycle];
+                                            if (mapping?.planIDs[PLANS.VPN_PASS_BUNDLE]) {
+                                                return {
+                                                    mapping,
+                                                    cycle,
+                                                };
+                                            }
+                                            return;
+                                        }
+                                        const mapping = checkoutMappingPlanIDs[cycleData.upsellCycle];
+                                        if (mapping) {
+                                            return {
+                                                cycle: cycleData.upsellCycle,
+                                                mapping,
+                                            };
+                                        }
+                                    })()}
+                                    cycle={options.cycle}
+                                    cycles={cycleData.cycles}
+                                    onChangeCycle={({ cycle, upsellFrom, planIDs }) => {
+                                        handleUpdate('plan');
+                                        setToggleUpsell(undefined);
+                                        return withLoadingPaymentDetails(
+                                            handleChangeCycle({
+                                                planIDs,
+                                                cycle,
+                                                mode: upsellFrom !== undefined ? 'upsell' : undefined,
+                                            })
+                                        ).catch(noop);
+                                    }}
+                                    checkoutMapping={checkoutMappingPlanIDs}
+                                />
+                            </div>
+                            <div className="flex flex-column items-center gap-1 lg:flex-row lg:justify-space-between mt-10">
+                                <span className="text-sm">
+                                    <Guarantee />
+                                </span>
+                                {!hideFreePlan && (
+                                    <div className="color-weak">
+                                        {c('Action').t`Or`}{' '}
+                                        <InlineLinkButton
+                                            className="color-weak"
+                                            onClick={() => {
+                                                void measure({
+                                                    event: TelemetryAccountSignupEvents.planSelect,
+                                                    dimensions: { plan: PLANS.FREE },
+                                                });
+                                                setUpsellModal(true);
                                             }}
-                                            upsell={(() => {
-                                                if (mode === 'vpn-pass-promotion') {
-                                                    const cycle = CYCLE.YEARLY;
-                                                    const mapping = checkoutMappingPlanIDs[cycle];
-                                                    if (mapping?.planIDs[PLANS.VPN_PASS_BUNDLE]) {
-                                                        return {
-                                                            mapping,
-                                                            cycle,
-                                                        };
-                                                    }
-                                                    return;
-                                                }
-                                                const mapping = checkoutMappingPlanIDs[cycleData.upsellCycle];
-                                                if (mapping) {
-                                                    return {
-                                                        cycle: cycleData.upsellCycle,
-                                                        mapping,
-                                                    };
-                                                }
-                                            })()}
-                                            cycle={options.cycle}
-                                            currency={options.currency}
-                                            cycles={cycleData.cycles}
-                                            onChangeCycle={({ cycle, upsellFrom, planIDs }) => {
-                                                handleUpdate('plan');
-                                                setToggleUpsell(undefined);
-                                                return withLoadingPaymentDetails(
-                                                    handleChangeCycle({
-                                                        planIDs,
-                                                        cycle,
-                                                        mode: upsellFrom !== undefined ? 'upsell' : undefined,
-                                                    })
-                                                ).catch(noop);
-                                            }}
-                                            checkoutMapping={checkoutMappingPlanIDs}
-                                        />
+                                        >
+                                            {c('Action').t`sign up for free`}
+                                        </InlineLinkButton>
                                     </div>
                                 )}
-                                <div className="flex flex-column items-center gap-1 lg:flex-row lg:justify-space-between mt-10">
-                                    <span className="text-sm">
-                                        <Guarantee />
-                                    </span>
-                                    {!hideFreePlan && (
-                                        <div className="color-weak">
-                                            {c('Action').t`Or`}{' '}
-                                            <InlineLinkButton
-                                                className="color-weak"
-                                                onClick={() => {
-                                                    void measure({
-                                                        event: TelemetryAccountSignupEvents.planSelect,
-                                                        dimensions: { plan: PLANS.FREE },
-                                                    });
-                                                    setUpsellModal(true);
-                                                }}
-                                            >
-                                                {c('Action').t`sign up for free`}
-                                            </InlineLinkButton>
-                                        </div>
-                                    )}
-                                </div>
-                            </BoxContent>
-                        </Box>
-                    )}
+                            </div>
+                        </BoxContent>
+                    </Box>
+                )}
                 <Box className="mt-8 w-full">
                     <div className="flex justify-space-between flex-column lg:flex-row ">
                         <div className={`lg:flex-1 ${padding}`}>
@@ -1376,7 +1405,11 @@ const Step1 = ({
                 </Box>
                 {!hasSelectedFree && (
                     <Box className={`mt-8 w-full ${padding}`}>
-                        <BoxHeader step={showStepLabel ? step++ : undefined} title={c('Header').t`Checkout`} />
+                        <BoxHeader
+                            step={showStepLabel ? step++ : undefined}
+                            title={c('Header').t`Checkout`}
+                            right={!showCycleAndSelectors ? currencySelector : null}
+                        />
                         <BoxContent>
                             <div className="flex justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
                                 <div className="lg:flex-1 md:pr-1 order-1 lg:order-0">
@@ -1485,6 +1518,7 @@ const Step1 = ({
                                                             loadingPaymentDetails
                                                         }
                                                         color="norm"
+                                                        data-testid="pay"
                                                         fullWidth
                                                     >
                                                         {options.checkResult.AmountDue > 0
@@ -1523,14 +1557,12 @@ const Step1 = ({
 
                                                 const pricePerMonth = getSimplePriceString(
                                                     options.currency,
-                                                    actualCheckout.withDiscountPerMonth,
-                                                    ''
+                                                    actualCheckout.withDiscountPerMonth
                                                 );
 
                                                 const regularPrice = getSimplePriceString(
                                                     options.currency,
-                                                    actualCheckout.withoutDiscountPerMonth,
-                                                    ''
+                                                    actualCheckout.withoutDiscountPerMonth
                                                 );
                                                 const free = hasSelectedFree;
 

@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon, Price } from '@proton/components/components';
-import { usePlans, useUser } from '@proton/components/hooks';
+import { usePreferredPlansMap, useUser } from '@proton/components/hooks';
+import type { AmountAndCurrency } from '@proton/components/payments/core';
 import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import percentage from '@proton/utils/percentage';
@@ -37,21 +38,30 @@ const Layout = (props: OfferLayoutProps) => {
     const isUsingMoreThan80PercentStorage = percentage(maxSpace, usedSpace) > 80;
     const { offer, currency, onSelectDeal } = props;
     const [deal] = offer?.deals || [];
-    const [plansResult] = usePlans();
-    const plans = plansResult?.plans || [];
+    const { getPlansMap, plansMapLoading } = usePreferredPlansMap();
     const isCycleTwoYear = deal.cycle === CYCLE.TWO_YEARS;
 
-    const savedAmount = useMemo(() => {
+    const { Amount: savedAmount, Currency: savedCurrency }: AmountAndCurrency = useMemo(() => {
+        const { plansMap } = getPlansMap({
+            paramCurrency: currency,
+        });
+
         if (isCycleTwoYear) {
-            const duoPlan = plans.find((plan) => plan.Name === PLANS.DUO);
+            const duoPlan = plansMap[PLANS.DUO];
             const savedAmount2y = (duoPlan?.Pricing[CYCLE.MONTHLY] || 0) * deal.cycle - deal.prices?.withCoupon;
-            return roundAmount(savedAmount2y);
+            return {
+                Amount: roundAmount(savedAmount2y),
+                Currency: duoPlan.Currency,
+            };
         }
 
-        const bundlePlan = plans.find((plan) => plan.Name === PLANS.BUNDLE); // Bundle = unlimited
+        const bundlePlan = plansMap[PLANS.BUNDLE]; // Bundle = unlimited
         const savedAmount = (bundlePlan?.Pricing[deal.cycle] || 0) * 2 - deal.prices?.withCoupon;
-        return roundAmount(savedAmount);
-    }, [deal, plans, isCycleTwoYear]);
+        return {
+            Amount: roundAmount(savedAmount),
+            Currency: bundlePlan.Currency,
+        };
+    }, [deal, isCycleTwoYear, plansMapLoading]);
 
     const monthlyPrice = (
         <Price
@@ -65,7 +75,7 @@ const Layout = (props: OfferLayoutProps) => {
     );
 
     const savedPrice = (
-        <Price key="saved-price" currency={currency} isDisplayedInSentence>
+        <Price key="saved-price" currency={savedCurrency} isDisplayedInSentence>
             {savedAmount}
         </Price>
     );

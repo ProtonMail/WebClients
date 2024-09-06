@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { useGetPaymentStatus } from '@proton/components/hooks';
 import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import type { Api, BillingPlatform, ChargebeeEnabled, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
 
@@ -13,7 +14,8 @@ import type {
     PlainPaymentMethodType,
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
-    SavedPaymentMethodInternal} from '../core';
+    SavedPaymentMethodInternal,
+} from '../core';
 import {
     PAYMENT_METHOD_TYPES,
     canUseChargebee,
@@ -182,10 +184,12 @@ export const useMethods = (
     });
     const [selectedMethod, setSelectedMethod] = useState<AvailablePaymentMethod | undefined>();
 
-    const [status, setStatus] = useState<PaymentMethodStatusExtended | undefined>();
+    const [status, setStatus] = useState<PaymentMethodStatusExtended | undefined>(paymentMethodStatusExtended);
     const [savedMethods, setSavedMethods] = useState<SavedPaymentMethod[] | undefined>();
 
     const [overrideChargebeeUserExists, setOverrideChargebeeUserExists] = useState<ChargebeeUserExists | undefined>();
+
+    const getPaymentStatus = useGetPaymentStatus();
 
     const getComputedMethods = (availableMethodsParam?: UsedAndNewMethods) => {
         const { usedMethods, newMethods } = availableMethodsParam ?? availableMethods;
@@ -213,9 +217,11 @@ export const useMethods = (
 
     useEffect(() => {
         async function run() {
+            const paymentStatus = paymentMethodStatusExtended ?? (await getPaymentStatus({ api }));
+
             paymentMethodsRef.current = await initializePaymentMethods(
                 api,
-                paymentMethodStatusExtended,
+                paymentStatus,
                 paymentMethods,
                 isAuthenticated,
                 amount,

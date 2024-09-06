@@ -24,7 +24,11 @@ import type {
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { apiMock } from '@proton/testing/lib/api';
 import { mockCache } from '@proton/testing/lib/cache';
-import { getOrganizationState, getSubscriptionState } from '@proton/testing/lib/initialReduxState';
+import {
+    getOrganizationState,
+    getPaymentStatusState,
+    getSubscriptionState,
+} from '@proton/testing/lib/initialReduxState';
 
 import ApiContext from '../../api/apiContext';
 import AuthenticationProvider from '../../authentication/Provider';
@@ -125,6 +129,7 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             userSettings: getModelState({} as UserSettings),
             mailSettings: getModelState({} as MailSettings),
             subscription: getSubscriptionState(),
+            paymentStatus: getPaymentStatusState(),
             organization: getOrganizationState(),
             organizationKey: getModelState({} as CachedOrganizationKey),
             userInvitations: getModelState([]),
@@ -174,7 +179,7 @@ export const getCard = (cards: any[], encrypted = false) => {
     ).Data;
 };
 
-const componentsHookWrapper = ({ children }: { children: any }) => {
+export const componentsHookWrapper = ({ children }: { children: any }) => {
     const { Wrapper } = getStoreWrapper();
     return (
         <Wrapper>
@@ -183,4 +188,5 @@ const componentsHookWrapper = ({ children }: { children: any }) => {
     );
 };
 
-export const componentsHookRenderer = (hook: any) => renderHook(() => hook(), { wrapper: componentsHookWrapper });
+export const componentsHookRenderer = (hook: any, options?: Parameters<typeof renderHook>[1]) =>
+    renderHook((...args) => hook(...args), { ...options, wrapper: componentsHookWrapper });

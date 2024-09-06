@@ -26,7 +26,7 @@ const MailTrial2024UpsellModal = ({ onConfirm, onContinue, onClose, currency, ..
     const telemetry = useMailSignupUpsellTelemetry();
     const planName = PLAN_NAMES[PLANS.MAIL];
 
-    const priceString = getSimplePriceString(currency, 100, '');
+    const priceString = getSimplePriceString(currency, 100);
     const price = (
         <span key="price" className="text-bold">
             {priceString}
@@ -80,7 +80,7 @@ const MailTrial2024UpsellModal = ({ onConfirm, onContinue, onClose, currency, ..
                                 <SaveLabel percent={80} />
                             </span>
                             <span className="text-strike text-sm color-weak">
-                                {getSimplePriceString(currency, 499, '')}
+                                {getSimplePriceString(currency, 499)}
                             </span>
                         </div>
                     </div>

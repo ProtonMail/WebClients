@@ -1,6 +1,6 @@
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import type { Cycle, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
 
 // This is currently hardcoded. Once the payments backend supports renewals at different cycles,
 // it will be changed to more generic code. Currently there is no way to tell which plan renews at which cycle,
@@ -23,10 +23,12 @@ export const getOptimisticRenewCycleAndPrice = ({
     planIDs,
     plansMap,
     cycle,
+    currency,
 }: {
     cycle: Cycle;
     planIDs: PlanIDs;
     plansMap: PlansMap;
+    currency: Currency;
 }): {
     renewPrice: number;
     renewalLength: CYCLE;
@@ -39,6 +41,7 @@ export const getOptimisticRenewCycleAndPrice = ({
             planIDs,
             plansMap,
             cycle: nextCycle,
+            currency,
         }),
     });
 

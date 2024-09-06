@@ -18,7 +18,7 @@ export const useCheckoutModifiers = (
     model: Model,
     subscription: SubscriptionModel,
     plansMap: PlansMap,
-    checkResult?: SubscriptionCheckResponse
+    checkResult: SubscriptionCheckResponse
 ) => {
     const isProration = useMemo(() => {
         const checkout = getCheckout({

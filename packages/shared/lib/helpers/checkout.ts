@@ -1,13 +1,22 @@
 import { c, msgid } from 'ttag';
 
 import { ADDON_NAMES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_TYPES, VPN_PASS_PROMOTION_COUPONS } from '../constants';
-import type { MaxKeys, Plan, PlanIDs, PlansMap, Pricing, Subscription, SubscriptionCheckResponse } from '../interfaces';
-import { getMaxValue } from '../interfaces';
+import type {
+    Currency,
+    MaxKeys,
+    Plan,
+    PlanIDs,
+    PlansMap,
+    Pricing,
+    Subscription,
+    SubscriptionCheckResponse,
+} from '../interfaces';
 import { isDomainAddon, isIpAddon, isMemberAddon, isScribeAddon } from './addons';
 import { getPlanFromCheckout } from './planIDs';
 import {
     INCLUDED_IP_PRICING,
     customCycles,
+    getMaxValue,
     getMembersFromPlanIDs,
     getPricePerCycle,
     getPricingPerMember,
@@ -91,6 +100,7 @@ export type RequiredCheckResponse = Pick<
     | 'Taxes'
     | 'TaxInclusive'
     | 'optimistic'
+    | 'Currency'
 >;
 
 export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {
@@ -163,14 +173,14 @@ export const getCheckout = ({
 }: {
     planIDs: PlanIDs;
     plansMap: PlansMap;
-    checkResult?: RequiredCheckResponse;
+    checkResult: RequiredCheckResponse;
 }) => {
     const usersAndAddons = getUsersAndAddons(planIDs, plansMap);
 
-    const amount = checkResult?.Amount || 0;
-    const cycle = checkResult?.Cycle || CYCLE.MONTHLY;
-    const couponDiscount = Math.abs(checkResult?.CouponDiscount || 0);
-    const coupon = checkResult?.Coupon?.Code;
+    const amount = checkResult.Amount || 0;
+    const cycle = checkResult.Cycle || CYCLE.MONTHLY;
+    const couponDiscount = Math.abs(checkResult.CouponDiscount || 0);
+    const coupon = checkResult.Coupon?.Code;
     const isVpnPassPromotion = !!planIDs[PLANS.VPN_PASS_BUNDLE] && VPN_PASS_PROMOTION_COUPONS.includes(coupon as any);
 
     const withDiscountPerCycle = amount - couponDiscount;
@@ -210,7 +220,7 @@ export const getCheckout = ({
         membersPerCycle !== null ? (membersPerCycle / cycle) * usersAndAddons.users : amount / cycle - addonsPerMonth;
 
     return {
-        couponDiscount: checkResult?.CouponDiscount,
+        couponDiscount: checkResult.CouponDiscount,
         planIDs,
         planName: usersAndAddons.planName,
         planTitle: usersAndAddons.planTitle,
@@ -223,6 +233,7 @@ export const getCheckout = ({
         membersPerMonth,
         discountPerCycle,
         discountPercent,
+        currency: checkResult.Currency,
     };
 };
 
@@ -245,10 +256,12 @@ export const getOptimisticCheckResult = ({
     planIDs,
     plansMap,
     cycle,
+    currency,
 }: {
     cycle: CYCLE;
     planIDs: PlanIDs | undefined;
     plansMap: PlansMap;
+    currency: Currency;
 }): RequiredCheckResponse => {
     const { amount } = Object.entries(planIDs || {}).reduce(
         (acc, [planName, quantity]) => {
@@ -273,6 +286,7 @@ export const getOptimisticCheckResult = ({
         Coupon: null,
         Gift: 0,
         optimistic: true,
+        Currency: currency,
     };
 };
 
@@ -282,6 +296,7 @@ export const getCheckResultFromSubscription = (
     const Amount = subscription?.Amount || 0;
     const Discount = subscription?.Discount || 0;
     const Cycle = subscription?.Cycle || DEFAULT_CYCLE;
+    const Currency = subscription?.Currency || 'USD';
 
     // In subscription, Amount includes discount, which is different from the check call.
     // Here we add them together to be like the check call.
@@ -296,6 +311,7 @@ export const getCheckResultFromSubscription = (
         Credit: 0,
         Coupon: null,
         Gift: 0,
+        Currency,
     };
 };
 

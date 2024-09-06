@@ -31,6 +31,7 @@ import {
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
+import { mainCurrencies } from '@proton/components/payments/core/helpers';
 import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
@@ -219,6 +220,7 @@ const PaymentStep = ({
         plansMap,
         defaultCycles,
         subscription: undefined,
+        currency: subscriptionData.currency,
         planIDs: subscriptionData.planIDs,
         minimumCycle: subscriptionData.minimumCycle,
     });
@@ -233,6 +235,9 @@ const PaymentStep = ({
                         <div className="inline-block mt-4 md:mt-8">
                             <CurrencySelector
                                 mode="select-two"
+                                // this is a placeholder, so there isn't support for regional currencies in this view,
+                                // because this view might be removed soon.
+                                currencies={mainCurrencies}
                                 currency={subscriptionData.currency}
                                 onSelect={onChangeCurrency}
                             />

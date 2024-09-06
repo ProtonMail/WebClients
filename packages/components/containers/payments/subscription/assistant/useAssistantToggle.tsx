@@ -1,4 +1,5 @@
-import { useOrganization, usePlans, useSubscription, useUser } from '@proton/components/hooks';
+import { useOrganization, usePreferredPlansMap, useSubscription, useUser } from '@proton/components/hooks';
+import { type AmountAndCurrency } from '@proton/components/payments/core';
 import { ADDON_NAMES, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { isScribeAddon } from '@proton/shared/lib/helpers/addons';
 import { hasAIAssistant } from '@proton/shared/lib/helpers/subscription';
@@ -7,10 +8,10 @@ import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 
 const useAssistantToggle = () => {
     const [user, userLoading] = useUser();
-    const [plans, plansLoading] = usePlans();
+    const { plansMap, plansMapLoading, preferredCurrency } = usePreferredPlansMap();
     const [organization] = useOrganization();
     const [subscription, subscriptionLoading] = useSubscription();
-    const addonPlan = plans?.plans.find((plan) => plan.Name === ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS);
+    const addonPlan = plansMap?.[ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS];
     const isOrgAdmin = user.isAdmin && isOrganizationB2B(organization);
     const currentAddonSubscription = subscription?.Plans?.filter((plan) => {
         if (plan.Type === PLAN_TYPES.ADDON && isScribeAddon(plan.Name)) {
@@ -20,15 +21,18 @@ const useAssistantToggle = () => {
         return null;
     }).filter(Boolean);
 
-    const loading = userLoading || plansLoading || subscriptionLoading;
+    const loading = userLoading || plansMapLoading || subscriptionLoading;
 
-    const getMinimalAssistantPrice = () => {
+    const getMinimalAssistantPrice = (): AmountAndCurrency => {
         if (!addonPlan) {
-            return 0;
+            return { Amount: 0, Currency: preferredCurrency };
         }
 
         const monthlyPrices = Object.entries(addonPlan.Pricing).map(([key, value]) => value / +key);
-        return Math.min(...monthlyPrices);
+        return {
+            Amount: Math.min(...monthlyPrices),
+            Currency: addonPlan.Currency,
+        };
     };
 
     return {

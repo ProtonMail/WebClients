@@ -1,23 +1,23 @@
 import type { Location } from 'history';
 
+import { getPlan, planToPlanIDs } from '@proton/components/payments/core';
 import type { OtherProductParam, ProductParam } from '@proton/shared/lib/apps/product';
 import { otherProductParamValues } from '@proton/shared/lib/apps/product';
 import type { ADDON_NAMES, APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
     AddonLimit,
+    CURRENCIES,
     MAX_DOMAIN_PRO_ADDON,
     MAX_IPS_ADDON,
     MAX_MEMBER_ADDON,
     PLANS,
-    PLAN_TYPES,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { getSupportedAddons, isDomainAddon, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import { getHas2023OfferCoupon, getValidCycle } from '@proton/shared/lib/helpers/subscription';
+import { getHas2023OfferCoupon, getPlanMaxIPs, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import type { Currency, Plan } from '@proton/shared/lib/interfaces';
-import { getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import clamp from '@proton/utils/clamp';
@@ -103,7 +103,7 @@ export const getSignupSearchParams = (
     defaults?: Partial<SignupDefaults>
 ) => {
     const maybeCurrency = searchParams.get('currency')?.toUpperCase() as Currency | undefined;
-    const currency = maybeCurrency && ['EUR', 'CHF', 'USD'].includes(maybeCurrency) ? maybeCurrency : undefined;
+    const currency = maybeCurrency && CURRENCIES.includes(maybeCurrency) ? maybeCurrency : undefined;
 
     const maybeCycle = Number(searchParams.get('billing')) || Number(searchParams.get('cycle'));
     const cycle = getValidCycle(maybeCycle);
@@ -184,6 +184,7 @@ export const getThemeFromLocation = (location: Location, searchParams: URLSearch
 };
 export const getPlanIDsFromParams = (
     plans: Plan[],
+    currency: Currency,
     signupParameters: {
         preSelectedPlan?: string;
         domains?: number;
@@ -193,12 +194,16 @@ export const getPlanIDsFromParams = (
     defaults: { plan: PLANS }
 ): PlanParameters => {
     const freePlanIDs = {};
+
+    const defaultPlan =
+        defaults.plan === FREE_PLAN.Name
+            ? FREE_PLAN
+            : (getPlan(plans, defaults.plan, currency, undefined, false) ?? FREE_PLAN);
+    const defaultPlanIDs = planToPlanIDs(defaultPlan);
+
     const defaultResponse = {
-        planIDs: defaults.plan === PLANS.FREE ? freePlanIDs : { [defaults.plan]: 1 },
-        plan:
-            defaults.plan === FREE_PLAN.Name
-                ? FREE_PLAN
-                : plans.find((plan) => plan.Name === defaults.plan) || FREE_PLAN,
+        planIDs: defaultPlanIDs,
+        plan: defaultPlan,
         defined: false,
     };
 
@@ -210,9 +215,7 @@ export const getPlanIDsFromParams = (
         return { planIDs: freePlanIDs, defined: true, plan: FREE_PLAN };
     }
 
-    const plan = plans.find((plan) => {
-        return plan.Name === signupParameters.preSelectedPlan && plan.Type === PLAN_TYPES.PLAN;
-    });
+    const plan = getPlan(plans, signupParameters.preSelectedPlan, currency, undefined, false);
 
     if (!plan) {
         return defaultResponse;

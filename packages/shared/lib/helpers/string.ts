@@ -1,9 +1,3 @@
-enum CURRENCIES {
-    USD = '$',
-    EUR = '€',
-    CHF = 'CHF',
-}
-
 export const normalize = (value = '', removeDiacritics = false) => {
     let normalized = value.toLowerCase().trim();
     if (removeDiacritics) {
@@ -15,19 +9,6 @@ export const normalize = (value = '', removeDiacritics = false) => {
 export const replaceLineBreak = (content = '') => content.replace(/(?:\r\n|\r|\n)/g, '<br />');
 
 export const toCRLF = (str: string) => str.replace(/\n/g, '\r\n');
-
-export const toPrice = (amount = 0, currency: keyof typeof CURRENCIES = 'EUR', divisor = 100) => {
-    const symbol = CURRENCIES[currency] || currency;
-    const value = Number(amount / divisor).toFixed(2);
-    const prefix = +value < 0 ? '-' : '';
-    const absValue = Math.abs(+value);
-
-    if (currency === 'USD') {
-        return `${prefix}${symbol}${absValue}`;
-    }
-
-    return `${prefix}${absValue} ${symbol}`;
-};
 
 export const addPlus = ([first = '', ...rest] = []) => {
     return [first, rest.length && `+${rest.length}`].filter(Boolean).join(', ');

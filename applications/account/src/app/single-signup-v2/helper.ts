@@ -11,7 +11,7 @@ import type {
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import type { ADDON_NAMES, APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
+import { APPS, COUPON_CODES, CYCLE, DEFAULT_CURRENCY, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
 import { getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs, getPricingFromPlanIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
@@ -24,10 +24,12 @@ import {
 import type {
     Api,
     Currency,
+    Cycle,
     CycleMapping,
     Organization,
     Plan,
     PlansMap,
+    StrictPlan,
     Subscription,
     SubscriptionCheckResponse,
     SubscriptionPlan,
@@ -46,7 +48,7 @@ import {
 import { getSubscriptionPrices } from '../signup/helper';
 import type { PlanIDs, SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import type { PlanCard } from './PlanCardSelector';
-import type { Options, PlanParameters, SignupParameters2, Upsell } from './interface';
+import type { Options, PlanParameters, SignupConfiguration, SignupParameters2, Upsell } from './interface';
 import { UpsellTypes } from './interface';
 
 export const getFreeTitle = (appName: string) => {
@@ -520,7 +522,7 @@ export const getUserInfo = async ({
             ...options,
             // TODO: make this more generic
             cycle: signupParameters.cycle || subscription.Cycle || options.cycle,
-            currency: signupParameters.currency || subscription.Currency || options.currency,
+            currency: options.currency,
             coupon: subscription.CouponCode || options.coupon,
         };
 
@@ -660,7 +662,6 @@ export const getPlanCardSubscriptionData = async ({
     plansMap,
     paymentsApi,
     coupon: maybeCoupon,
-    currency,
     cycles,
     billingAddress,
 }: {
@@ -669,7 +670,6 @@ export const getPlanCardSubscriptionData = async ({
     plansMap: PlansMap;
     paymentsApi: PaymentsApi;
     coupon?: string;
-    currency: Currency;
     billingAddress: BillingAddress;
 }): Promise<SubscriptionDataCycleMapping> => {
     const result = await Promise.all(
@@ -679,10 +679,14 @@ export const getPlanCardSubscriptionData = async ({
                 .map(async ([planIDs, cycle]): Promise<SubscriptionData> => {
                     const coupon = getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle });
 
+                    // make sure that the plan and all its addons exist
                     const plansToCheck = Object.keys(planIDs) as (PLANS | ADDON_NAMES)[];
                     const plansExist = plansToCheck.every(
                         (planName) => plansMap[planName]?.Pricing?.[cycle] !== undefined
                     );
+
+                    // we extract the currency of the currently selected plan in plansMap.
+                    const currency = plansMap[plansToCheck[0]]?.Currency ?? DEFAULT_CURRENCY;
 
                     // If there's no coupon we can optimistically calculate the price.
                     // Also always exclude Enterprise (price never shown).
@@ -693,13 +697,14 @@ export const getPlanCardSubscriptionData = async ({
                             currency,
                             cycle,
                             checkResult: {
-                                ...getOptimisticCheckResult({ planIDs, plansMap, cycle }),
+                                ...getOptimisticCheckResult({ planIDs, plansMap, cycle, currency }),
                                 Currency: currency,
                                 PeriodEnd: 0,
                             },
                             billingAddress,
                         };
                     }
+
                     const subscriptionData = await getSubscriptionData(paymentsApi, {
                         plansMap,
                         planIDs,
@@ -731,6 +736,30 @@ export const getPlanCardSubscriptionData = async ({
     }, {});
 };
 
+export const swapCurrency = (
+    subscriptionDataCycleMapping: SubscriptionDataCycleMapping,
+    currency: Currency
+): SubscriptionDataCycleMapping => {
+    return (
+        Object.entries(subscriptionDataCycleMapping) as [PLANS, CycleMapping<SubscriptionData>][]
+    ).reduce<SubscriptionDataCycleMapping>((acc, [planName, cycleMapping]) => {
+        acc[planName] = (Object.entries(cycleMapping) as [string, SubscriptionData][]).reduce<
+            CycleMapping<SubscriptionData>
+        >((acc, [cycle, subscriptionData]) => {
+            acc[+cycle as Cycle] = {
+                ...subscriptionData,
+                currency,
+                checkResult: {
+                    ...subscriptionData.checkResult,
+                    Currency: currency,
+                },
+            };
+            return acc;
+        }, {});
+        return acc;
+    }, {});
+};
+
 export const getSubscriptionMapping = ({
     subscriptionDataCycleMapping,
     planName,
@@ -751,4 +780,18 @@ export const getSubscriptionMapping = ({
         subscriptionMapping = undefined;
     }
     return subscriptionMapping;
+};
+
+export const getAccessiblePlans = (
+    planCards: SignupConfiguration['planCards'],
+    audience: Audience,
+    plans: Plan[]
+): StrictPlan[] => {
+    if (audience !== Audience.B2C && audience !== Audience.B2B) {
+        return [];
+    }
+
+    const accessiblePlanNames = planCards[audience].map(({ plan }) => plan) as PLANS[];
+
+    return plans.filter(({ Name }) => accessiblePlanNames.includes(Name as PLANS)) as StrictPlan[];
 };

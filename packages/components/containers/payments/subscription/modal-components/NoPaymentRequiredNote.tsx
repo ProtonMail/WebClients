@@ -1,34 +1,42 @@
 import { c } from 'ttag';
 
+import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { useUser } from '@proton/components/hooks';
 import { getPlanTitle, isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
-    amountDue: number;
-    creditsRemaining: number;
     checkResult: SubscriptionCheckResponse | undefined;
     subscription: SubscriptionModel | undefined;
     hasPaymentMethod: boolean;
 }
 
-export const NoPaymentRequiredNote = ({
-    amountDue,
-    checkResult,
-    creditsRemaining,
-    subscription,
-    hasPaymentMethod,
-}: Props) => {
+export const NoPaymentRequiredNote = ({ checkResult, subscription, hasPaymentMethod }: Props) => {
+    const [user] = useUser();
+
+    const currencyConversion = user.Currency !== checkResult?.Currency;
+
     const trial = isTrial(subscription);
     const planTitle = getPlanTitle(subscription);
+    const creditsRemaining = user.Credit + (checkResult?.Credit ?? 0);
+
+    const amountDue = checkResult?.AmountDue;
+
+    if (amountDue || !checkResult) {
+        return null;
+    }
+
+    const remainingCreditsFormatted = getSimplePriceString(checkResult.Currency, creditsRemaining);
+    const showReaminingCredits = checkResult?.Credit && creditsRemaining && !currencyConversion && false;
 
     return (
-        <div className={amountDue || !checkResult ? 'hidden' : undefined}>
+        <div>
             {!trial && (
                 <>
                     <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
-                    {checkResult?.Credit && creditsRemaining ? (
+                    {showReaminingCredits ? (
                         <div className="mb-4">{c('Info')
-                            .t`Please note that upon clicking the Confirm button, your account will have ${creditsRemaining} credits remaining.`}</div>
+                            .t`Please note that upon clicking the Confirm button, your account will have ${remainingCreditsFormatted} credits remaining.`}</div>
                     ) : null}
                 </>
             )}

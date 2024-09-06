@@ -18,7 +18,13 @@ import { getShortBillingText } from '@proton/components/containers/payments/help
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useHandler from '@proton/components/hooks/useHandler';
-import type { BillingAddress } from '@proton/components/payments/core';
+import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
+import {
+    type BillingAddress,
+    getFallbackCurrency,
+    getPlansMap,
+    isRegionalCurrency,
+} from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -37,6 +43,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import {
+    getPlanFromCheckout,
     getPlanFromPlanIDs,
     getPricingFromPlanIDs,
     getTotalFromPricing,
@@ -56,6 +63,7 @@ import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { usePublicTheme } from '../containers/PublicThemeProvider';
@@ -80,7 +88,7 @@ import Layout from './Layout';
 import { PlanCardSelector, UpsellCardSelector } from './PlanCardSelector';
 import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
-import { getFreeSubscriptionData, getFreeTitle } from './helper';
+import { type SubscriptionDataCycleMapping, getAccessiblePlans, getFreeSubscriptionData, getFreeTitle } from './helper';
 import type {
     Measure,
     OnOpenLogin,
@@ -132,6 +140,7 @@ const Step1 = ({
     activeSessions,
     measure,
     mode,
+    onChangeCurrency,
 }: {
     signupConfiguration: SignupConfiguration;
     signupParameters: SignupParameters2;
@@ -164,6 +173,7 @@ const Step1 = ({
     className?: string;
     step1Ref: MutableRefObject<Step1Rref | undefined>;
     activeSessions?: LocalSessionPersisted[];
+    onChangeCurrency: (newCurrency: Currency) => Promise<SubscriptionDataCycleMapping>;
 }) => {
     const mailTrialOfferEnabled = useFlag('MailTrialOffer');
     const driveTrialOfferEnabled = useFlag('DriveTrialOffer');
@@ -180,6 +190,15 @@ const Step1 = ({
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
     const theme = usePublicTheme();
+    const { getAvailableCurrencies } = useCurrencies('v2-signup');
+
+    const availableCurrencies = getAvailableCurrencies({
+        status: model.paymentMethodStatusExtended,
+        plans: getAccessiblePlans(planCards, audience, model.plans),
+        user: model.session?.user,
+        subscription: model.session?.subscription,
+        paramCurrency: signupParameters.currency,
+    });
 
     const history = useHistory();
 
@@ -195,6 +214,9 @@ const Step1 = ({
         ...subscriptionCheckOptions,
         ...model.optimistic,
     };
+
+    const [selectedB2CCurrency, setSelectedB2CCurrency] = useState<Currency>();
+
     const selectedPlan = getPlanFromPlanIDs(model.plansMap, options.planIDs) || FREE_PLAN;
 
     const latestRef = useRef<any>();
@@ -278,23 +300,44 @@ const Step1 = ({
             plansMap: model.plansMap,
             planIDs: completeCheckOptions.planIDs,
             cycle: completeCheckOptions.cycle,
+            currency: completeCheckOptions.currency,
         });
-        setModel((old) => ({
-            ...old,
-            optimistic: {
-                ...mergedCheckOptions,
-                checkResult: optimisticCheckResult,
-            },
-        }));
+
+        setModel((old) => {
+            const result = {
+                ...old,
+                optimistic: {
+                    ...mergedCheckOptions,
+                    checkResult: optimisticCheckResult,
+                },
+            };
+
+            if (checkOptions.currency && old.subscriptionData.currency !== checkOptions.currency) {
+                const plansMap = getPlansMap(model.plans, checkOptions.currency, false);
+                result.plansMap = plansMap;
+            }
+
+            return result;
+        });
         const latest = {};
         latestRef.current = latest;
         setLoadingPaymentDetails(true);
         debouncedCheck(completeCheckOptions, latest);
     };
 
-    const handleChangeCurrency = (currency: Currency) => {
-        measure({ event: TelemetryAccountSignupEvents.currencySelect, dimensions: { currency } });
-        return handleOptimistic({ currency });
+    const handleChangeCurrency = async (currency: Currency): Promise<Currency> => {
+        void measure({ event: TelemetryAccountSignupEvents.currencySelect, dimensions: { currency } });
+
+        const subscriptionDataCycleMapping = await onChangeCurrency(currency);
+        const hasCurrentPlanInNewCurrency = !!subscriptionDataCycleMapping[selectedPlan.Name];
+
+        if (!hasCurrentPlanInNewCurrency) {
+            handleOptimistic({ currency, planIDs: {} });
+        } else {
+            handleOptimistic({ currency });
+        }
+
+        return currency;
     };
 
     const handleChangeCycle = (cycle: Cycle) => {
@@ -302,8 +345,17 @@ const Step1 = ({
         return handleOptimistic({ cycle });
     };
 
-    const handleChangePlan = (planIDs: PlanIDs, planName: PLANS) => {
+    const handleChangePlan = (planIDs: PlanIDs, planName: PLANS, currencyOverride?: Currency) => {
         measure({ event: TelemetryAccountSignupEvents.planSelect, dimensions: { plan: planName } });
+
+        const currency = currencyOverride ?? getPlanFromCheckout(planIDs, model.plansMap)?.Currency;
+        const checkOptions: Partial<OptimisticOptions> = {
+            planIDs,
+        };
+
+        if (currency) {
+            checkOptions.currency = currency;
+        }
 
         if (model.session?.subscription && model.session.organization && model.plansMap[planName]) {
             const switchedPlanIds = switchPlan({
@@ -313,10 +365,11 @@ const Step1 = ({
                 plans: model.plans,
                 user: model.session.user,
             });
-            return handleOptimistic({ planIDs: switchedPlanIds });
+
+            checkOptions.planIDs = switchedPlanIds;
         }
 
-        return handleOptimistic({ planIDs });
+        return handleOptimistic(checkOptions);
     };
 
     useImperativeHandle(step1Ref, () => ({
@@ -416,19 +469,71 @@ const Step1 = ({
         </div>
     );
 
+    /**
+     * If there is a regional currency then B2C plans can have plans in this currency while B2B plans do not.
+     * In that case, we need to automatically select the fallback currency for B2B plans.
+     */
+    const handleCurrencyChangeOnAudienceChange = async (newAudience: Audience): Promise<Currency | undefined> => {
+        if (audience === newAudience) {
+            return;
+        }
+
+        // optionally switch B2C currency back to regional when the audience changes
+        {
+            const oldAudience = audience;
+            // if user previously selected regional currency for B2C audience, then use it
+            // if the previously selected currency isn't regional then preserve the current currency choice in B2B tab
+            if (selectedB2CCurrency && isRegionalCurrency(selectedB2CCurrency) && newAudience === Audience.B2C) {
+                return handleChangeCurrency(selectedB2CCurrency);
+            }
+
+            // save the user choice for future use
+            if (oldAudience === Audience.B2C) {
+                setSelectedB2CCurrency(options.currency);
+            }
+        }
+
+        const newAudiencePlans = getAccessiblePlans(planCards, newAudience, model.plans);
+
+        const newAudienceHasPlansWithSelectedCurrency =
+            newAudiencePlans.map((plan) => model.subscriptionDataCycleMapping[plan.Name]).filter(isTruthy).length > 0;
+
+        // If the currently selected currency is available for the new audience, we don't need to artificially
+        // change the currency
+        if (newAudienceHasPlansWithSelectedCurrency) {
+            return;
+        }
+
+        const newAvailableCurrency = getFallbackCurrency(options.currency);
+
+        return handleChangeCurrency(newAvailableCurrency);
+    };
+
     const audienceTabs =
         hasPlanSelector && location.pathname !== SSO_PATHS.BUSINESS_SIGNUP ? (
             <AudienceTabs
                 audience={audience}
                 audiences={audiences}
-                onChangeAudience={(audience) => {
-                    handleChangePlan({ [audience.defaultPlan]: 1 }, audience.defaultPlan);
-                    history.push(audience.locationDescriptor);
+                onChangeAudience={async (newAudience) => {
+                    const newCurrency = await handleCurrencyChangeOnAudienceChange(newAudience.value);
+                    handleChangePlan({ [newAudience.defaultPlan]: 1 }, newAudience.defaultPlan, newCurrency);
+                    history.push(newAudience.locationDescriptor);
                 }}
             />
         ) : undefined;
 
     const boxWidth = { '--max-w-custom': planCards[audience].length === 4 && hasPlanSelector ? '74rem' : '57rem' };
+
+    const currencySelector = (
+        <CurrencySelector
+            currencies={availableCurrencies}
+            mode="select-two"
+            className="h-full ml-auto px-3 color-primary relative interactive-pseudo interactive--no-background"
+            currency={options.currency}
+            onSelect={handleChangeCurrency}
+            unstyled
+        />
+    );
 
     return (
         <Layout
@@ -575,7 +680,7 @@ const Step1 = ({
                         const title = selectedPlan.Title;
                         const price = (
                             <strong key="price">
-                                {getSimplePriceString(options.currency, checkout.withDiscountPerMonth, '')}
+                                {getSimplePriceString(options.currency, checkout.withDiscountPerMonth)}
                             </strong>
                         );
                         return wrap(
@@ -602,7 +707,7 @@ const Step1 = ({
                         });
                         const price = (
                             <strong key="price">
-                                {getSimplePriceString(options.currency, checkout.withDiscountPerMonth, '')}
+                                {getSimplePriceString(options.currency, checkout.withDiscountPerMonth)}
                             </strong>
                         );
                         const title = model.plansMap[PLANS.PASS_BUSINESS]?.Title || '';
@@ -670,55 +775,56 @@ const Step1 = ({
                                 }
                             />
                             <BoxContent>
-                                {model.upsell.mode === UpsellTypes.PLANS ? (
-                                    <PlanCardSelector
-                                        subscriptionDataCycleMapping={model.subscriptionDataCycleMapping}
-                                        audience={audience}
-                                        plansMap={model.plansMap}
-                                        plan={selectedPlan.Name}
-                                        cycle={options.cycle}
-                                        currency={options.currency}
-                                        dark={theme.dark}
-                                        planCards={planCards[audience]}
-                                        onSelect={handleChangePlan}
-                                        onSelectedClick={() => {
-                                            accountDetailsRef.current?.scrollInto('email');
-                                        }}
-                                    />
-                                ) : (
-                                    <UpsellCardSelector
-                                        audience={audience}
-                                        relativePrice={relativePrice}
-                                        plansMap={model.plansMap}
-                                        currentPlan={currentPlan}
-                                        freePlan={model.freePlan}
-                                        subscription={model.session?.subscription}
-                                        checkout={checkout}
-                                        plan={selectedPlan}
-                                        cycle={options.cycle}
-                                        currency={options.currency}
-                                        coupon={options.checkResult?.Coupon?.Code}
-                                        vpnServersCountData={vpnServersCountData}
-                                        onSelect={() => {
-                                            accountStepPaymentRef.current?.scrollIntoView();
-                                        }}
-                                        onKeep={async () => {
-                                            await handleCompletion(getFreeSubscriptionData(model.subscriptionData));
-                                        }}
-                                    />
-                                )}
+                                {(() => {
+                                    const oneOfCurrenciesIsRegional =
+                                        isRegionalCurrency(selectedPlan.Currency) ||
+                                        (currentPlan && isRegionalCurrency(currentPlan?.Currency));
+
+                                    const cantDisplayUpsell =
+                                        selectedPlan.Currency !== currentPlan?.Currency && oneOfCurrenciesIsRegional;
+
+                                    return model.upsell.mode === UpsellTypes.PLANS || cantDisplayUpsell ? (
+                                        <PlanCardSelector
+                                            subscriptionDataCycleMapping={model.subscriptionDataCycleMapping}
+                                            audience={audience}
+                                            plansMap={model.plansMap}
+                                            selectedPlanName={selectedPlan.Name}
+                                            cycle={options.cycle}
+                                            currency={options.currency}
+                                            dark={theme.dark}
+                                            planCards={planCards[audience]}
+                                            onSelect={handleChangePlan}
+                                            onSelectedClick={() => {
+                                                accountDetailsRef.current?.scrollInto('email');
+                                            }}
+                                        />
+                                    ) : (
+                                        <UpsellCardSelector
+                                            audience={audience}
+                                            relativePrice={relativePrice}
+                                            plansMap={model.plansMap}
+                                            currentPlan={currentPlan}
+                                            freePlan={model.freePlan}
+                                            subscription={model.session?.subscription}
+                                            checkout={checkout}
+                                            plan={selectedPlan}
+                                            cycle={options.cycle}
+                                            currency={options.currency}
+                                            coupon={options.checkResult?.Coupon?.Code}
+                                            vpnServersCountData={vpnServersCountData}
+                                            onSelect={() => {
+                                                accountStepPaymentRef.current?.scrollIntoView();
+                                            }}
+                                            onKeep={async () => {
+                                                await handleCompletion(getFreeSubscriptionData(model.subscriptionData));
+                                            }}
+                                        />
+                                    );
+                                })()}
                                 {model.upsell.mode === UpsellTypes.PLANS && (
                                     <>
                                         <div className="flex justify-center lg:justify-end">
-                                            <div className="inline-block mt-3 mb-2">
-                                                <CurrencySelector
-                                                    mode="select-two"
-                                                    className="h-full ml-auto px-3 color-primary relative interactive-pseudo interactive--no-background"
-                                                    currency={options.currency}
-                                                    onSelect={handleChangeCurrency}
-                                                    unstyled
-                                                />
-                                            </div>
+                                            <div className="inline-block mt-3 mb-2">{currencySelector}</div>
                                         </div>
                                         <div
                                             className={clsx(
@@ -743,8 +849,8 @@ const Step1 = ({
                             <RightSummary variant="gradientBorder" className="mx-auto md:mx-0 rounded-xl">
                                 <RightPlanSummary
                                     title={getFreeTitle(shortAppName)}
-                                    price={getSimplePriceString(options.currency, 0, '')}
-                                    regularPrice={getSimplePriceString(options.currency, 0, '')}
+                                    price={getSimplePriceString(options.currency, 0)}
+                                    regularPrice={getSimplePriceString(options.currency, 0)}
                                     logo={<FreeLogo app={app} dark={theme.dark} />}
                                     discount={0}
                                     free
@@ -1055,7 +1161,11 @@ const Step1 = ({
                 </Box>
                 {!hasSelectedFree && (
                     <Box className="mt-12 w-full max-w-custom" style={boxWidth}>
-                        <BoxHeader step={step++} title={c('pass_signup_2023: Header').t`Checkout`} />
+                        <BoxHeader
+                            step={step++}
+                            title={c('pass_signup_2023: Header').t`Checkout`}
+                            right={!hasPlanSelector ? currencySelector : null}
+                        />
                         <BoxContent>
                             <AccountStepPayment
                                 selectedPlan={selectedPlan}

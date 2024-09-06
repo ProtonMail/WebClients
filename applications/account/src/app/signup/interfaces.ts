@@ -3,7 +3,7 @@ import type { VerificationModel } from '@proton/components/containers/api/humanV
 import type { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
 import type { PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
-import type { BillingAddress, ExtendedTokenPayment } from '@proton/components/payments/core/interface';
+import type { BillingAddress, ExtendedTokenPayment } from '@proton/components/payments/core';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { OfflineKey } from '@proton/shared/lib/authentication/offlineKey';

@@ -12,7 +12,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '../../../components';
-import { useOrganization, usePlans, useSubscription, useUser } from '../../../hooks';
+import { useOrganization, usePaymentStatus, usePlans, useSubscription, useUser } from '../../../hooks';
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import InAppPurchaseModal from './InAppPurchaseModal';
@@ -64,7 +64,6 @@ interface Props {
     children: ReactNode;
     app: APP_NAMES;
     onClose?: () => void;
-    // mode?: string
 }
 
 const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
@@ -77,13 +76,15 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
     const [user] = useUser();
 
-    const loading = loadingSubscription || loadingPlans || loadingOrganization;
+    const [status, statusLoading] = usePaymentStatus();
+
+    const loading = loadingSubscription || loadingPlans || loadingOrganization || statusLoading;
 
     const subscriptionProps = useRef<OpenCallbackProps | null>(null);
     const [modalState, setModalState, render] = useModalState();
 
     let subscriptionModal: Nullable<JSX.Element> = null;
-    if (organization && subscription && render && subscriptionProps.current) {
+    if (organization && subscription && render && subscriptionProps.current && status) {
         if (isManagedExternally(subscription)) {
             subscriptionModal = <InAppPurchaseModal subscription={subscription} {...modalState} />;
         } else if (isBilledUser(user)) {
@@ -97,6 +98,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 onSubscribed,
                 onUnsubscribed,
                 mode,
+                currency,
                 ...rest
             } = subscriptionProps.current;
 
@@ -132,6 +134,8 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                     }}
                     onCancel={handleClose}
                     mode={mode}
+                    currency={currency}
+                    paymentsStatus={status}
                     {...rest}
                     render={({ onSubmit, title, content, footer, step }) => {
                         return (

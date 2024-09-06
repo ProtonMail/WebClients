@@ -106,6 +106,16 @@ describe('SubscriptionContainer', () => {
             organization: organizationDefaultResponse.Organization as any as Organization,
             plans: plansDefaultResponse.Plans as any as Plan[],
             freePlan: FREE_PLAN,
+            paymentsStatus: {
+                CountryCode: 'US',
+                VendorStates: {
+                    Card: true,
+                    Cash: true,
+                    Bitcoin: true,
+                    Apple: true,
+                    Paypal: true,
+                },
+            },
         };
     });
 

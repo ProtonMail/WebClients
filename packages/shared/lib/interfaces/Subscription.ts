@@ -1,9 +1,8 @@
-import type { CYCLE, PLAN_TYPES } from '../constants';
-import { ADDON_NAMES, PLANS } from '../constants';
-import { isScribeAddon } from '../helpers/addons';
+import type { CURRENCIES, CYCLE, PLAN_TYPES } from '../constants';
+import type { ADDON_NAMES, PLANS } from '../constants';
 import type { Nullable } from './utils';
 
-export type Currency = 'EUR' | 'CHF' | 'USD';
+export type Currency = (typeof CURRENCIES)[number];
 export type Cycle =
     | CYCLE.MONTHLY
     | CYCLE.YEARLY
@@ -71,6 +70,11 @@ export interface Plan {
     Offers: Offer[];
 }
 
+export interface StrictPlan extends Plan {
+    Type: PLAN_TYPES.PLAN;
+    Name: PLANS;
+}
+
 export interface Addon extends Plan {
     Type: PLAN_TYPES.ADDON;
     Name: ADDON_NAMES;
@@ -85,32 +89,6 @@ export interface FreePlanDefault extends Plan {
     MaxDriveRewardSpace: number;
     MaxBaseRewardSpace: number;
 }
-
-export const getPlanMaxIPs = (plan: Plan) => {
-    if (plan.Name === PLANS.VPN_BUSINESS || plan.Name === ADDON_NAMES.IP_VPN_BUSINESS) {
-        return 1;
-    }
-
-    return 0;
-};
-
-const getPlanMaxAIs = (plan: Plan) => {
-    return isScribeAddon(plan.Name) ? 1 : 0;
-};
-
-export const getMaxValue = (plan: Plan, key: MaxKeys): number => {
-    let result: number;
-
-    if (key === 'MaxIPs') {
-        result = getPlanMaxIPs(plan);
-    } else if (key === 'MaxAI') {
-        result = getPlanMaxAIs(plan);
-    } else {
-        result = plan[key];
-    }
-
-    return result ?? 0;
-};
 
 export enum Renew {
     Disabled = 0,
@@ -169,9 +147,11 @@ export type PlanIDs = Partial<{
     [planName in PLANS | ADDON_NAMES]: Quantity;
 }>;
 
-export type PlansMap = Partial<{
-    [planName in PLANS | ADDON_NAMES]: Plan;
-}>;
+export type BasePlansMap<T extends Plan> = {
+    [planName in PLANS | ADDON_NAMES]: T;
+};
+
+export type PlansMap = Partial<BasePlansMap<Plan>>;
 
 export interface Tax {
     Name: string;
@@ -219,10 +199,6 @@ export interface SubscriptionCheckResponse {
     TaxInclusive?: TaxInclusive;
     SubscriptionMode?: SubscriptionMode;
     optimistic?: boolean;
-}
-
-export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
-    return checkResponse?.TaxInclusive === TaxInclusive.INCLUSIVE;
 }
 
 export enum Audience {

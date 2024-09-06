@@ -8,7 +8,8 @@
         "check-types": "tsc",
         "lint": "true",
         "test": "jest",
-        "test:ci": "jest --runInBand"
+        "test:ci": "jest --runInBand",
+        "test:watch": "jest --watch"
     },
     "dependencies": {
         "@proton/crypto": "workspace:^",

@@ -57,6 +57,9 @@ enum AccountFlag {
     PassB2BForceLock = 'PassB2BForceLock',
     SignedInForgot2FAFlow = 'SignedInForgot2FAFlow',
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
+    VpnSignupRegionalCurrency = 'VpnSignupRegionalCurrency',
+    V2SignupRegionalCurrency = 'V2SignupRegionalCurrency',
+    DashboardRegionalCurrency = 'DashboardRegionalCurrency',
 }
 
 enum CalendarFeatureFlag {

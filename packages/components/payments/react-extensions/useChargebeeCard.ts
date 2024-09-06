@@ -1,21 +1,20 @@
 import { useEffect, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
-import { Api } from '@proton/shared/lib/interfaces';
+import { type Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import {
-    AmountAndCurrency,
-    ChargeableV5PaymentParameters,
+    type AmountAndCurrency,
+    type ChargeableV5PaymentParameters,
     ChargebeeCardPaymentProcessor,
-    ChargebeeCardPaymentProcessorState,
-    ChargebeeIframeEvents,
-    ChargebeeIframeHandles,
-    ChargebeeKillSwitch,
-    ForceEnableChargebee,
-    PaymentVerificatorV5,
+    type ChargebeeCardPaymentProcessorState,
+    type ChargebeeIframeEvents,
+    type ChargebeeIframeHandles,
+    type ForceEnableChargebee,
+    type PaymentVerificatorV5,
 } from '../core';
-import { PaymentProcessorHook, PaymentProcessorType } from './interface';
+import type { PaymentProcessorHook, PaymentProcessorType } from './interface';
 import { usePaymentProcessor } from './usePaymentProcessor';
 
 export interface Props {
@@ -31,7 +30,6 @@ export interface Dependencies {
     verifyPayment: PaymentVerificatorV5;
     handles: ChargebeeIframeHandles;
     events: ChargebeeIframeEvents;
-    chargebeeKillSwitch: ChargebeeKillSwitch;
     forceEnableChargebee: ForceEnableChargebee;
 }
 
@@ -53,7 +51,7 @@ export type ChargebeeCardProcessorHook = Omit<PaymentProcessorHook, keyof Overri
 
 export const useChargebeeCard = (
     { amountAndCurrency, onChargeable, verifyOnly, onProcessPaymentToken, onProcessPaymentTokenFailed }: Props,
-    { api, verifyPayment, handles, events, chargebeeKillSwitch, forceEnableChargebee }: Dependencies
+    { api, verifyPayment, handles, events, forceEnableChargebee }: Dependencies
 ): ChargebeeCardProcessorHook => {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [submitted, setSubmitted] = useState(false);
@@ -74,7 +72,6 @@ export const useChargebeeCard = (
                 handles,
                 events,
                 !!verifyOnly,
-                chargebeeKillSwitch,
                 forceEnableChargebee,
                 onChargeable
             )

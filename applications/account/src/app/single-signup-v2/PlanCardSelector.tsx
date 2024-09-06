@@ -8,11 +8,10 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import type { ADDON_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckoutData } from '@proton/shared/lib/helpers/checkout';
 import { getCheckResultFromSubscription, getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromCheckout, getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/planIDs';
 import { getPlanIDs, getPlanOffer } from '@proton/shared/lib/helpers/subscription';
 import type {
     Currency,
@@ -261,7 +260,7 @@ const getDiscount = ({
                 <SaveLabel percent={discountPercent} />
             </span>
             <span className="text-strike text-sm color-weak">
-                {getSimplePriceString(currency, standardMonthlyPrice, '')}
+                {getSimplePriceString(currency, standardMonthlyPrice)}
             </span>
         </>
     ) : null;
@@ -274,7 +273,7 @@ export const PlanCardSelector = ({
     plansMap,
     onSelect,
     currency,
-    plan,
+    selectedPlanName,
     onSelectedClick,
     planCards,
     dark,
@@ -284,10 +283,10 @@ export const PlanCardSelector = ({
     plansMap: PlansMap;
     cycle: CYCLE;
     currency: Currency;
-    plan: PLANS | ADDON_NAMES;
+    selectedPlanName: PLANS;
     planCards: PlanCard[];
     dark?: boolean;
-    onSelect: (planIDs: PlanIDs, plan: PLANS, upsellFrom?: PLANS) => void;
+    onSelect: (planIDs: PlanIDs, plan: PLANS) => void;
     onSelectedClick?: () => void;
 }) => {
     const planCount = planCards.length;
@@ -298,12 +297,16 @@ export const PlanCardSelector = ({
                 const isFreePlan = planCard.plan === PLANS.FREE;
                 const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
                 const pricing = getPricingFromPlanIDs(planIDs, plansMap);
+                const plan = getPlanFromCheckout(planIDs, plansMap);
+                const freePlanCurrency = Object.values(plansMap)[0]?.Currency ?? plan?.Currency ?? currency;
+
+                const planCurrency = isFreePlan ? freePlanCurrency : (plan?.Currency ?? currency);
 
                 const planFromCard = isFreePlan ? FREE_PLAN : plansMap[planCard.plan];
                 const billedText = isFreePlan
                     ? c('pass_signup_2023: Info').t`Free forever`
                     : getBilledText({ audience, cycle });
-                const selected = isFreePlan && !plan ? true : plan === planCard.plan;
+                const selected = isFreePlan && !selectedPlanName ? true : selectedPlanName === planCard.plan;
 
                 if (!planFromCard) {
                     return null;
@@ -372,11 +375,11 @@ export const PlanCardSelector = ({
                                   }
                                 : onSelectedClick
                         }
-                        price={getSimplePriceString(currency, priceToDisplay.monthlyPrice, '')}
+                        price={getSimplePriceString(planCurrency, priceToDisplay.monthlyPrice)}
                         discount={getDiscount({
                             discountPercent: priceToDisplay.discountPercentage,
                             standardMonthlyPrice: priceToDisplay.standardMonthlyPrice,
-                            currency,
+                            currency: planCurrency,
                         })}
                         text={planFromCard.Title}
                         billedText={billedText}
@@ -410,7 +413,7 @@ export const UpsellCardSelector = ({
     audience?: Audience;
     checkout: SubscriptionCheckoutData;
     relativePrice: string | undefined;
-    plan: Plan | undefined;
+    plan: Plan;
     currentPlan: SubscriptionPlan | undefined;
     subscription: Subscription | undefined;
     freePlan: FreePlanDefault;
@@ -490,11 +493,11 @@ export const UpsellCardSelector = ({
                             selected={false}
                             text={currentPlan.Title || ''}
                             billedText={billedText}
-                            price={getSimplePriceString(currency, totals.monthlyPrice, '')}
+                            price={getSimplePriceString(currentPlan.Currency ?? currency, totals.monthlyPrice)}
                             discount={getDiscount({
                                 discountPercent: totals.discountPercent,
                                 standardMonthlyPrice: totals.standardMonthlyPrice,
-                                currency,
+                                currency: currentPlan.Currency ?? currency,
                             })}
                             subsection={
                                 shortPlan && (
@@ -562,11 +565,11 @@ export const UpsellCardSelector = ({
                             selected={true}
                             text={plan.Title || ''}
                             billedText={billedText}
-                            price={getSimplePriceString(currency, totals.monthlyPrice, '')}
+                            price={getSimplePriceString(plan.Currency, totals.monthlyPrice)}
                             discount={getDiscount({
                                 discountPercent: totals.discountPercent,
                                 standardMonthlyPrice: totals.standardMonthlyPrice,
-                                currency,
+                                currency: plan.Currency,
                             })}
                             subsection={
                                 <>

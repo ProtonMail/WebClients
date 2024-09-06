@@ -131,7 +131,7 @@ const CycleItemView = ({
                             {discountPercentage > 0 && (
                                 <div className="flex gap-1">
                                     <span className="text-strike color-hint">
-                                        {getSimplePriceString(currency, totalWithoutPerMonth, '')}
+                                        {getSimplePriceString(currency, totalWithoutPerMonth)}
                                     </span>
                                     <SaveLabel2
                                         highlightPrice
@@ -145,7 +145,7 @@ const CycleItemView = ({
 
                             <div id={`${cycle}-price`}>
                                 <span className={clsx(highlightPrice && 'color-primary', 'text-bold h2')}>
-                                    {getSimplePriceString(currency, totalPerMonth, '')}
+                                    {getSimplePriceString(currency, totalPerMonth)}
                                 </span>
                             </div>
 
@@ -170,7 +170,6 @@ const CycleSelector = ({
     cycle,
     cycles,
     onChangeCycle,
-    currency,
     onGetTheDeal,
     checkoutMapping,
     bg,
@@ -179,7 +178,6 @@ const CycleSelector = ({
     onGetTheDeal: (data: { cycle: CYCLE; planIDs: PlanIDs }) => void;
     cycle: CYCLE;
     mode: 'vpn-pass-promotion' | 'signup' | 'pricing';
-    currency: Currency;
     cycles: CYCLE[];
     onChangeCycle: (data: { cycle: CYCLE; upsellFrom?: CYCLE; planIDs: PlanIDs }) => void;
     checkoutMapping: CycleMapping<SubscriptionCheckoutData>;
@@ -206,6 +204,9 @@ const CycleSelector = ({
                     orderGroup = 0;
                     firstNonBestOffer = true;
                 }
+
+                const currency = cycleMapping.currency;
+
                 return (
                     <CycleItemView
                         bg={bg}
@@ -219,7 +220,7 @@ const CycleSelector = ({
                         selected={cycle === cycleItem}
                         text={getShortBillingText(cycleItem)}
                         billedText={getBilledAtPerMonthText(
-                            getSimplePriceString(currency, currentCheckout.withDiscountPerCycle, ''),
+                            getSimplePriceString(currency, currentCheckout.withDiscountPerCycle),
                             cycleItem
                         )}
                         key={cycleItem}

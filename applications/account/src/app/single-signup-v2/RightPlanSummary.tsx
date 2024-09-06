@@ -137,7 +137,7 @@ export const RightPlanSummaryAddons = ({
         {
             key: 'users',
             left: checkout?.usersTitle,
-            right: getPrice(getSimplePriceString(currency, checkout.membersPerMonth, '')),
+            right: getPrice(getSimplePriceString(currency, checkout.membersPerMonth)),
         },
         ...checkout.addons.map((addon) => {
             const price = (addon.quantity * (addon.pricing[cycle] || 0)) / cycle;
@@ -147,7 +147,7 @@ export const RightPlanSummaryAddons = ({
             return {
                 key: addon.name,
                 left: <span>{addon.title}</span>,
-                right: getPrice(getSimplePriceString(currency, price, '')),
+                right: getPrice(getSimplePriceString(currency, price)),
             };
         }),
     ]

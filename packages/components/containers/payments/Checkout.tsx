@@ -8,6 +8,7 @@ import { Icon } from '../../components';
 import CurrencySelector from './CurrencySelector';
 
 interface Props {
+    currencies: readonly Currency[];
     currency: Currency;
     onChangeCurrency: (newCurrency: Currency) => void;
     loading?: boolean;
@@ -19,6 +20,7 @@ interface Props {
 }
 
 const Checkout = ({
+    currencies,
     currency,
     onChangeCurrency,
     loading,
@@ -34,6 +36,7 @@ const Checkout = ({
                 <h2 className="h3 text-bold mt-1 mb-0 text-cut flex-1">{c('Title').t`Summary`}</h2>
                 <span className="shrink-0" data-testid="checkoutCurrencyDropdown">
                     <CurrencySelector
+                        currencies={currencies}
                         currency={currency}
                         onSelect={onChangeCurrency}
                         className=""

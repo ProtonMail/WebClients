@@ -2,9 +2,10 @@ import { render } from '@testing-library/react';
 import { addMonths } from 'date-fns';
 
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { getCheckout } from '@proton/shared/lib/helpers/checkout';
+import { type RequiredCheckResponse, getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
 import { getCheckoutRenewNoticeText } from './RenewalNotice';
 
@@ -182,15 +183,19 @@ const getDefaultPlansMap = (): PlansMap => {
 
 const defaultPlansMap = getDefaultPlansMap();
 
-const getProps = ({
-    plansMap = defaultPlansMap,
-    planIDs = { [PLANS.MAIL]: 1 },
-    checkResult,
-}: {
-    planIDs?: PlanIDs;
-    plansMap?: PlansMap;
-    checkResult?: Parameters<typeof getCheckout>[0]['checkResult'];
-} = {}): Pick<
+const getProps = (
+    {
+        plansMap = defaultPlansMap,
+        planIDs = { [PLANS.MAIL]: 1 },
+        checkResult,
+    }: {
+        planIDs?: PlanIDs;
+        plansMap?: PlansMap;
+        checkResult: RequiredCheckResponse;
+    } = {
+        checkResult: getFreeCheckResult(),
+    }
+): Pick<
     Parameters<typeof getCheckoutRenewNoticeText>[0],
     'planIDs' | 'checkout' | 'plansMap' | 'coupon' | 'currency'
 > => {
@@ -574,7 +579,10 @@ describe('<RenewalNotice />', () => {
         [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.FIFTEEN, CYCLE.THIRTY].forEach((cycle) => {
             it(`should display special renewal notice for vpn2024 ${cycle} months`, () => {
                 const { container } = render(
-                    <RenewalNotice {...getProps({ planIDs: { [PLANS.VPN2024]: 1 } })} cycle={cycle} />
+                    <RenewalNotice
+                        {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
+                        cycle={cycle}
+                    />
                 );
 
                 expect(container).toHaveTextContent(
@@ -586,7 +594,10 @@ describe('<RenewalNotice />', () => {
         [CYCLE.THREE, CYCLE.MONTHLY].forEach((cycle) => {
             it(`should display special renewal notice for vpn2024 ${cycle} months`, () => {
                 const { container } = render(
-                    <RenewalNotice {...getProps({ planIDs: { [PLANS.VPN2024]: 1 } })} cycle={cycle} />
+                    <RenewalNotice
+                        {...getProps({ planIDs: { [PLANS.VPN2024]: 1 }, checkResult: getFreeCheckResult() })}
+                        cycle={cycle}
+                    />
                 );
 
                 if (cycle != CYCLE.MONTHLY) {
@@ -631,6 +642,7 @@ describe('<RenewalNotice />', () => {
                                         Amount: 807,
                                     },
                                 ],
+                                Currency: 'CHF',
                             },
                         })}
                         cycle={cycle}
@@ -669,6 +681,7 @@ describe('<RenewalNotice />', () => {
                                     Amount: 359,
                                 },
                             ],
+                            Currency: 'CHF',
                         },
                     })}
                     cycle={CYCLE.YEARLY}
@@ -706,6 +719,7 @@ describe('<RenewalNotice />', () => {
                                     Amount: 7,
                                 },
                             ],
+                            Currency: 'CHF',
                         },
                     })}
                     cycle={CYCLE.MONTHLY}

@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button';
 import type { ModalStateProps } from '@proton/components/components';
 import { Loader, Price, UpsellModal } from '@proton/components/components';
 import { useSubscriptionModal } from '@proton/components/containers';
-import { useAssistantUpsellConfig, usePlans, useSubscription, useUser } from '@proton/components/hooks';
+import { useAssistantUpsellConfig, usePlans, usePreferredPlansMap, useSubscription } from '@proton/components/hooks';
 import { getScribeAddonNameByPlan } from '@proton/components/payments/core';
 import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, PLAN_TYPES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -19,8 +19,8 @@ interface Props {
 const ComposerAssistantB2BUpsellModal = ({ modalProps, isOrgUser }: Props) => {
     const [openSubscriptionModal] = useSubscriptionModal();
 
-    const [user, loadingUser] = useUser();
     const [plans, loadingPlans] = usePlans();
+    const { plansMap } = usePreferredPlansMap();
     const [subscription, loadingSubscription] = useSubscription();
 
     const upsellRef = getUpsellRef({
@@ -30,7 +30,7 @@ const ComposerAssistantB2BUpsellModal = ({ modalProps, isOrgUser }: Props) => {
     });
     const { assistantUpsellConfig } = useAssistantUpsellConfig({ upsellRef, plans: plans?.plans ?? [] });
 
-    if (loadingPlans || loadingUser || loadingSubscription) {
+    if (loadingPlans || loadingSubscription) {
         return <Loader />;
     }
 
@@ -42,8 +42,10 @@ const ComposerAssistantB2BUpsellModal = ({ modalProps, isOrgUser }: Props) => {
         }
         return acc;
     }, undefined);
-    const monthlyPrice = plans?.plans && addonPlanName ? getAIAddonMonthlyPrice(plans.plans, addonPlanName) : undefined;
-    const addonPriceWithCurrency = monthlyPrice ? <Price currency={user.Currency}>{monthlyPrice}</Price> : null;
+    const monthlyPrice = plansMap && addonPlanName ? getAIAddonMonthlyPrice(plansMap, addonPlanName) : undefined;
+    const addonPriceWithCurrency = monthlyPrice ? (
+        <Price currency={monthlyPrice.Currency}>{monthlyPrice.Amount}</Price>
+    ) : null;
     const title = c('Title').t`Your free trial has ended`;
 
     return (

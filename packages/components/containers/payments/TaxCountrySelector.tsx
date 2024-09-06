@@ -4,7 +4,11 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import {
+    type BillingAddress,
+    DEFAULT_TAX_BILLING_ADDRESS,
+    type PaymentMethodStatusExtended,
+} from '@proton/components/payments/core';
 import clsx from '@proton/utils/clsx';
 
 import { Option, Tooltip } from '../../components';
@@ -117,12 +121,6 @@ interface HookResult {
     federalStateCode: string | null;
     setFederalStateCode: (federalStateCode: string) => void;
 }
-
-const DEFAULT_TAX_COUNTRY_CODE = 'CH';
-export const DEFAULT_TAX_BILLING_ADDRESS: BillingAddress = {
-    CountryCode: DEFAULT_TAX_COUNTRY_CODE,
-    State: null,
-};
 
 export const useTaxCountry = (props: HookProps): HookResult => {
     const billingAddress: BillingAddress = props.statusExtended

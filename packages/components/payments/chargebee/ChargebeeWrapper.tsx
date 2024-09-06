@@ -1,4 +1,5 @@
-import { ChangeEvent, useRef, useState } from 'react';
+import type { ChangeEvent} from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,19 +7,20 @@ import { Input } from '@proton/atoms';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Label } from '@proton/components/components';
 import { useElementBreakpoints } from '@proton/components/hooks';
-import {
+import type {
     ChargeableV5PaymentToken,
     NonChargeableV5PaymentToken,
     PAYMENT_METHOD_TYPES,
 } from '@proton/components/payments/core';
-import { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
-import { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
+import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
+import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
 import CountriesDropdown from '../../containers/payments/CountriesDropdown';
-import { ThemeCode } from '../client-extensions';
-import { CbIframeHandles, ChargebeeIframe } from './ChargebeeIframe';
+import type { ThemeCode } from '../client-extensions';
+import type { CbIframeHandles} from './ChargebeeIframe';
+import { ChargebeeIframe } from './ChargebeeIframe';
 
 import './ChargebeeWrapper.scss';
 
@@ -49,13 +51,19 @@ export type PaymentIntentHookResult = (
 export interface ChargebeeCardWrapperProps extends ChargebeeWrapperProps {
     chargebeeCard: ChargebeeCardProcessorHook;
     themeCode: ThemeCode;
+    initialCountryCode: string | undefined;
 }
 
 const WarningIcon = ({ className }: { className?: string }) => {
     return <Icon name="exclamation-circle-filled" className={clsx('shrink-0 color-danger', className)} size={4.5} />;
 };
 
-export const ChargebeeCreditCardWrapper = ({ chargebeeCard, onInitialized, ...rest }: ChargebeeCardWrapperProps) => {
+export const ChargebeeCreditCardWrapper = ({
+    chargebeeCard,
+    onInitialized,
+    initialCountryCode,
+    ...rest
+}: ChargebeeCardWrapperProps) => {
     const formWrapperRef = useRef<HTMLDivElement>(null);
     const narrow = 'narrow';
     const wide = 'wide';
@@ -87,6 +95,12 @@ export const ChargebeeCreditCardWrapper = ({ chargebeeCard, onInitialized, ...re
     const [initialized, setInitialized] = useState(false);
 
     const postalCodeError = chargebeeCard.errors.postalCode;
+
+    useEffect(() => {
+        if (initialCountryCode) {
+            chargebeeCard.setCountryCode(initialCountryCode);
+        }
+    }, []);
 
     return (
         <div ref={formWrapperRef}>

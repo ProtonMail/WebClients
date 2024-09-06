@@ -1,23 +1,28 @@
-import type { FreeSubscription, PLANS } from '@proton/shared/lib/constants';
-import { ADDON_NAMES, CYCLE } from '@proton/shared/lib/constants';
+import { isRegionalCurrency } from '@proton/components/payments/core';
+import type { FreeSubscription} from '@proton/shared/lib/constants';
+import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
 import { getPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
-import type { PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
+import type { Currency, PlanIDs, PlansMap, Subscription } from '@proton/shared/lib/interfaces';
 
 import { notHigherThanAvailableOnBackend } from './payment';
 
-// todo: that's not a long-term solution, because we already have cycles like 3, 15, 18, 30
-// which might appear for certain promotions.
 function capMaximumCycle(
     maximumCycle: CYCLE,
     planIDs: PlanIDs,
+    currency: Currency,
     plansMap: PlansMap,
     subscription: Subscription | FreeSubscription | undefined
 ): CYCLE {
-    const cappedPlans: {
+    type PlanCapRule = {
         plan: PLANS | ADDON_NAMES;
         cycle: CYCLE;
-    }[] = [
+        currencyPredicate?: Currency | ((currency: Currency) => boolean);
+    };
+
+    const rules: PlanCapRule[] = [
+        { plan: ADDON_NAMES.MEMBER_MAIL_BUSINESS, cycle: CYCLE.YEARLY },
+
         { plan: ADDON_NAMES.MEMBER_SCRIBE_MAILPLUS, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_DRIVEPLUS, cycle: CYCLE.YEARLY },
@@ -29,21 +34,38 @@ function capMaximumCycle(
         { plan: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024, cycle: CYCLE.YEARLY },
-        { plan: ADDON_NAMES.MEMBER_MAIL_BUSINESS, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_PASS_PRO, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_VPN_BIZ, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_PASS_BIZ, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_VPN_PRO, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_FAMILY, cycle: CYCLE.YEARLY },
         { plan: ADDON_NAMES.MEMBER_SCRIBE_DUO, cycle: CYCLE.YEARLY },
+
+        { plan: PLANS.PASS, cycle: CYCLE.YEARLY },
+
+        { plan: PLANS.DUO, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
+        { plan: PLANS.MAIL, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
+        { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
     ];
 
+    const currencyMatches = (rule: PlanCapRule) => {
+        if (!rule.currencyPredicate) {
+            return true;
+        }
+
+        if (typeof rule.currencyPredicate === 'function') {
+            return rule.currencyPredicate(currency);
+        }
+
+        return rule.currencyPredicate === currency;
+    };
+
     // filter a capped plan from the list of capped plans if it is present in planIDs
-    const plan = cappedPlans.find((cappedPlan) => planIDs[cappedPlan.plan]);
+    const planCapRule = rules.find((cappedPlan) => planIDs[cappedPlan.plan]);
 
     let result: CYCLE = maximumCycle;
-    if (plan) {
-        result = Math.min(maximumCycle, plan.cycle);
+    if (planCapRule && currencyMatches(planCapRule)) {
+        result = Math.min(maximumCycle, planCapRule.cycle);
     }
 
     // if user already has a subscription or upcoming subscription with higher cycle, then we let user see it
@@ -58,6 +80,7 @@ export const getAllowedCycles = ({
     minimumCycle = CYCLE.MONTHLY,
     maximumCycle = CYCLE.TWO_YEARS,
     planIDs,
+    currency,
     defaultCycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
     plansMap,
     disableUpcomingCycleCheck,
@@ -67,6 +90,7 @@ export const getAllowedCycles = ({
     minimumCycle?: CYCLE;
     maximumCycle?: CYCLE;
     planIDs: PlanIDs;
+    currency: Currency;
     defaultCycles?: CYCLE[];
     plansMap: PlansMap;
     disableUpcomingCycleCheck?: boolean;
@@ -78,7 +102,7 @@ export const getAllowedCycles = ({
     const newPlanName: PLANS | undefined = getPlanFromIds(planIDs);
     const isSamePlan = currentPlanName === newPlanName;
 
-    const adjustedMaximumCycle = capMaximumCycle(maximumCycle, planIDs, plansMap, subscription);
+    const adjustedMaximumCycle = capMaximumCycle(maximumCycle, planIDs, currency, plansMap, subscription);
 
     const result = sortedCycles.filter((cycle) => {
         const isHigherThanCurrentSubscription: boolean = cycle >= (subscription?.Cycle ?? 0);

@@ -9,7 +9,6 @@ import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/
 import type { PLANS } from '@proton/shared/lib/constants';
 import { PLAN_SERVICES, isFreeSubscription } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import {
     getPlan,
@@ -32,6 +31,7 @@ import {
     useNotifications,
     useOrganization,
     usePlans,
+    usePreferredPlansMap,
     useSubscription,
     useUser,
     useVPNServersCount,
@@ -85,9 +85,8 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     const getCalendars = useGetCalendars();
     const [vpnServers] = useVPNServersCount();
     const api = useApi();
-    const plans = plansResult?.plans || [];
     const freePlan = plansResult?.freePlan || FREE_PLAN;
-    const plansMap = toMap(plans, 'Name');
+    const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
     const [cancelSubscriptionModal, showCancelSubscriptionModal] = useModalTwoPromise<
         undefined,
@@ -309,7 +308,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     };
 
     return {
-        loadingCancelSubscription: loadingOrganization || loadingSubscription || loadingPlans,
+        loadingCancelSubscription: loadingOrganization || loadingSubscription || loadingPlans || plansMapLoading,
         cancelSubscriptionModals: modals,
         cancelSubscription: async (subscriptionReminderFlow?: boolean) => {
             const [subscription, user] = await Promise.all([getSubscription(), getUser()]);

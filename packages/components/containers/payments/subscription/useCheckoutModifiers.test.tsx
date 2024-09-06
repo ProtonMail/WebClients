@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/payments/core';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import type { PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';
 
-import { DEFAULT_TAX_BILLING_ADDRESS } from '../TaxCountrySelector';
 import type { Model } from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';
 import { useCheckoutModifiers } from './useCheckoutModifiers';
@@ -177,7 +177,7 @@ describe('useCheckoutModifiers', () => {
     });
 
     it('should return isProration === true when checkResult is undefined', () => {
-        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap));
+        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
         expect(result.current.isProration).toEqual(true);
     });
 
@@ -211,7 +211,7 @@ describe('useCheckoutModifiers', () => {
     });
 
     it('should return isScheduledSubscription === false if checkResult is undefined', () => {
-        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap));
+        const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
         expect(result.current.isScheduledSubscription).toEqual(false);
     });
 
@@ -259,7 +259,7 @@ describe('useCheckoutModifiers', () => {
         });
 
         it('should return isCustomBilling === false if checkResult is undefined', () => {
-            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap));
+            const { result } = renderHook(() => useCheckoutModifiers(model, subscriptionModel, plansMap, checkResult));
             expect(result.current.isCustomBilling).toEqual(false);
         });
 

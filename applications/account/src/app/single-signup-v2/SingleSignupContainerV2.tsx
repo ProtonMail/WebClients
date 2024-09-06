@@ -12,24 +12,25 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
+    useGetPaymentStatus,
+    useGetPlans,
     useModalState,
 } from '@proton/components';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
-import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
+import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import type { PaymentMethodFlows } from '@proton/components/payments/core';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import type { FullPlansMap, PaymentMethodFlows, PaymentsApi } from '@proton/components/payments/core';
+import { DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES, getPlansMap } from '@proton/components/payments/core';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getUser } from '@proton/shared/lib/api/user';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -51,17 +52,15 @@ import {
     REFERRER_CODE_MAIL_TRIAL,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
-import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
-import type { Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
-import { hasPaidPass } from '@proton/shared/lib/user/helpers';
+import { formatUser, hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { defaultVPNServersCountData, getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
@@ -94,6 +93,8 @@ import SwitchModal from './SwitchModal';
 import { getDriveConfiguration } from './drive/configuration';
 import { getGenericConfiguration } from './generic/configuration';
 import {
+    type SubscriptionDataCycleMapping,
+    getAccessiblePlans,
     getFreeSubscriptionData,
     getHasBusinessUpsell,
     getPlanCardSubscriptionData,
@@ -151,6 +152,7 @@ export const defaultSignupModel: SignupModelV2 = {
     domains: [],
     subscriptionData: subscriptionDataCycleMapping[PLANS.FREE][CYCLE.YEARLY],
     subscriptionDataCycleMapping,
+    subscriptionDataCycleMappingByCurrency: [],
     paymentMethodStatusExtended: {
         VendorStates: {
             Card: false,
@@ -159,6 +161,7 @@ export const defaultSignupModel: SignupModelV2 = {
             Cash: false,
             Bitcoin: false,
         },
+        CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
     },
     humanVerificationMethods: [],
     humanVerificationToken: '',
@@ -249,6 +252,9 @@ const SingleSignupContainerV2 = ({
 
     const unauthApi = useApi();
     const { getPaymentsApi } = usePaymentsApi();
+    const getPlans = useGetPlans();
+    const getPaymentStatus = useGetPaymentStatus();
+    const { getPreferredCurrency } = useCurrencies('v2-signup');
     const isChargebeeEnabled = useIsChargebeeEnabled();
     const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
         flow: 'signup-pass',
@@ -591,6 +597,48 @@ const SingleSignupContainerV2 = ({
         }
     };
 
+    const getSubscriptionDataCycleMapping = async (
+        paymentsApi: PaymentsApi,
+        plansMap: FullPlansMap,
+        coupon: string | undefined
+    ) => {
+        const [b2c, b2b] = await Promise.all(
+            ([Audience.B2C, Audience.B2B] as const).map((audienceToFetch) => {
+                const planIDs = planCards[audienceToFetch].map(({ plan }) => ({ [plan]: 1 }));
+                return getPlanCardSubscriptionData({
+                    planIDs,
+                    plansMap,
+                    cycles: signupConfiguration.cycles,
+                    paymentsApi,
+                    coupon,
+                    billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+                });
+            })
+        );
+        return { ...b2b, ...b2c };
+    };
+
+    const changeCurrency = async (newCurrency: Currency): Promise<SubscriptionDataCycleMapping> => {
+        const plansMap = getPlansMap(model.plans, newCurrency, false);
+
+        // if there is session, then use auth api, if there is no, then use unauth
+        const silentApi = getSilentApi(model.session ? getUIDApi(model.session.UID, unauthApi) : unauthApi);
+        const paymentsApi = getPaymentsApi(silentApi);
+
+        const subscriptionDataCycleMapping = await getSubscriptionDataCycleMapping(
+            paymentsApi,
+            plansMap,
+            signupParameters.coupon
+        );
+
+        setModelDiff({
+            plansMap,
+            subscriptionDataCycleMapping,
+        });
+
+        return subscriptionDataCycleMapping;
+    };
+
     useEffect(() => {
         const fetchDependencies = async () => {
             await startUnAuthFlow().catch(noop);
@@ -625,37 +673,32 @@ const SingleSignupContainerV2 = ({
             }
             const paymentsApi = getPaymentsApi(silentApi, chargebeeEnabled?.result);
 
-            const forcePaymentsVersion = getMaybeForcePaymentsVersion(resumedSession?.User);
-            const plans = await silentApi<{ Plans: Plan[] }>(
-                queryPlans(
-                    signupParameters.currency
-                        ? {
-                              Currency: signupParameters.currency,
-                          }
-                        : undefined,
-                    forcePaymentsVersion
-                )
-            ).then(({ Plans }) => Plans);
-            const planParameters = getPlanIDsFromParams(plans, signupParameters, defaults);
-            const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
+            const { plans, freePlan } = await getPlans({ api: silentApi });
+            const paymentMethodStatus = await getPaymentStatus({ api: silentApi });
+
+            const currency = getPreferredCurrency({
+                status: paymentMethodStatus,
+                plans: getAccessiblePlans(planCards, audience, plans),
+                paramCurrency: signupParameters.currency,
+                user: resumedSession?.User ? formatUser(resumedSession?.User) : undefined,
+            });
+
+            const planParameters = getPlanIDsFromParams(plans, currency, signupParameters, defaults);
             const cycle = signupParameters.cycle || defaults.cycle;
             const invite = signupParameters.invite;
             const coupon = signupParameters.coupon;
 
-            const plansMap = toMap(plans, 'Name') as PlansMap;
+            const plansMap = getPlansMap(plans, currency, false);
 
-            getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
+            void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
             const [
                 { Domains: domains },
-                paymentMethodStatus,
                 referralData,
                 { subscriptionData, upsell, ...userInfo },
-                freePlan,
                 subscriptionDataCycleMapping,
             ] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
-                paymentsApi.statusExtendedAutomatic(),
                 invite?.type === 'mail'
                     ? await silentApi(checkReferrer(invite.data.referrer))
                           .then(() => ({
@@ -684,24 +727,7 @@ const SingleSignupContainerV2 = ({
                     },
                     toApp: product,
                 }),
-                getFreePlan({ api: silentApi }),
-                (async () => {
-                    const [b2b, b2c] = await Promise.all(
-                        ([Audience.B2C, Audience.B2B] as const).map((audienceToFetch) => {
-                            const planIDs = planCards[audienceToFetch].map(({ plan }) => ({ [plan]: 1 }));
-                            return getPlanCardSubscriptionData({
-                                planIDs,
-                                plansMap,
-                                cycles: signupConfiguration.cycles,
-                                paymentsApi,
-                                coupon,
-                                currency,
-                                billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
-                            });
-                        })
-                    );
-                    return { ...b2b, ...b2c };
-                })(),
+                getSubscriptionDataCycleMapping(paymentsApi, plansMap, coupon),
             ]);
 
             let session: SessionData | undefined;
@@ -1037,10 +1063,7 @@ const SingleSignupContainerV2 = ({
     );
     const relativePrice =
         relativePricePerMonth > 0
-            ? humanPriceWithCurrency(
-                  relativePricePerMonth,
-                  model.optimistic.currency || model.subscriptionData.currency
-              )
+            ? getSimplePriceString(model.optimistic.currency || model.subscriptionData.currency, relativePricePerMonth)
             : undefined;
 
     const getMnemonicSetup = async () => {
@@ -1281,6 +1304,7 @@ const SingleSignupContainerV2 = ({
                         model={model}
                         setModel={setModel}
                         onSignOut={handleSignOut}
+                        onChangeCurrency={changeCurrency}
                         onChallengeError={() => {
                             // Ignore errors that were caused when there's a user and it's not being signed out
                             if (model.session?.user && !accountRef.current.signingOut) {

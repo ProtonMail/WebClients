@@ -7,9 +7,8 @@ import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/c
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import type {
     PaymentMethodFlows,
-    PaymentMethodStatus,
+    PaymentMethodStatusExtended,
     PaymentMethodType,
-    SavedPaymentMethod,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
 } from '@proton/components/payments/core';
@@ -42,7 +41,6 @@ export interface Props {
     type: PaymentMethodFlows;
     amount?: number;
     currency?: Currency;
-    coupon?: string;
     method?: PaymentMethodType;
     onMethod: (value: PaymentMethodType | undefined) => void;
     paypal: any;
@@ -51,8 +49,7 @@ export interface Props {
     onCard: (key: keyof CardModel, value: string) => void;
     cardErrors: Partial<CardModel>;
     noMaxWidth?: boolean;
-    paymentMethodStatus?: PaymentMethodStatus;
-    paymentMethods?: SavedPaymentMethod[];
+    paymentStatus: PaymentMethodStatusExtended | undefined;
     creditCardTopRef?: Ref<HTMLDivElement>;
     disabled?: boolean;
     cardFieldStatus: CardFieldStatus;
@@ -126,6 +123,7 @@ export const PaymentsNoApi = ({
     isChargebeeEnabled,
     user,
     billingAddressStatus = BILLING_ADDRESS_VALID,
+    paymentStatus,
 }: NoApiProps) => {
     const { APP_NAME } = useConfig();
 
@@ -241,7 +239,11 @@ export const PaymentsNoApi = ({
                     )}
                     {method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
                         <>
-                            <ChargebeeCreditCardWrapper {...sharedCbProps} themeCode={themeCode} />
+                            <ChargebeeCreditCardWrapper
+                                {...sharedCbProps}
+                                themeCode={themeCode}
+                                initialCountryCode={paymentStatus?.CountryCode}
+                            />
                             {!isSignup && <Alert3DS />}
                         </>
                     )}

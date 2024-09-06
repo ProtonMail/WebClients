@@ -1,7 +1,7 @@
 import type { enums } from '@proton/crypto';
 
 import { sizeUnits } from './helpers/size';
-import type { KeyGenConfig, MaxKeys } from './interfaces';
+import type { Currency, KeyGenConfig, MaxKeys } from './interfaces';
 
 export const DEFAULT_TIMEOUT = 30000; // default fetch timeout
 export const RETRY_DELAY_MAX = 10; // seconds
@@ -410,8 +410,16 @@ export enum INVOICE_OWNER {
     ORGANIZATION = 1,
 }
 
-export const DEFAULT_CURRENCY = 'EUR';
-export const CURRENCIES = ['EUR', 'USD', 'CHF'] as const;
+export enum CurrencySymbols {
+    USD = 'US$',
+    EUR = '€',
+    CHF = 'CHF',
+    BRL = 'BRL',
+}
+
+export const CURRENCIES = Object.keys(CurrencySymbols) as readonly (keyof typeof CurrencySymbols)[];
+
+export const DEFAULT_CURRENCY = 'EUR' as Currency;
 export const MIN_CREDIT_AMOUNT = 500;
 export const MAX_CREDIT_AMOUNT = 4000000;
 export const MIN_BITCOIN_AMOUNT = 499;

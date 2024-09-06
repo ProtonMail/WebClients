@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
+import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
@@ -25,8 +26,13 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { AddonGuard } from '@proton/shared/lib/helpers/addons';
 import { hasScribeAddon } from '@proton/shared/lib/helpers/addons';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
-import { toMap } from '@proton/shared/lib/helpers/object';
-import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import {
+    getPlanCurrencyFromPlanIDs,
+    getPlanFromPlanIDs,
+    getPlanNameFromIDs,
+    hasPlanIDs,
+    switchPlan,
+} from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     getHas2023OfferCoupon,
@@ -60,11 +66,12 @@ import noop from '@proton/utils/noop';
 import { usePaymentFacade } from '../../../../components/payments/client-extensions';
 import { useChargebeeContext } from '../../../../components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '../../../../components/payments/client-extensions/usePollEvents';
-import type { MultiCheckSubscriptionData } from '../../../../components/payments/core';
+import type { MultiCheckSubscriptionData, PaymentMethodStatusExtended } from '../../../../components/payments/core';
 import {
     type BillingAddress,
     type CheckWithAutomaticOptions,
     PAYMENT_METHOD_TYPES,
+    getPlansMap,
     isOnSessionMigration,
 } from '../../../../components/payments/core';
 import type { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
@@ -90,7 +97,6 @@ import { isSubscriptionUnchanged } from '../../payments/helper';
 import InclusiveVatText from '../InclusiveVatText';
 import PaymentGiftCode from '../PaymentGiftCode';
 import PaymentWrapper from '../PaymentWrapper';
-import { DEFAULT_TAX_BILLING_ADDRESS } from '../TaxCountrySelector';
 import { ProtonPlanCustomizer } from '../planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '../planCustomizer/helpers';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
@@ -104,7 +110,7 @@ import { SUBSCRIPTION_STEPS } from './constants';
 import { SubscriptionCheckoutCycleItem } from './cycle-selector';
 import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelector';
 import type { SelectedProductPlans } from './helpers';
-import { exclude24Months, getAutoCoupon, getCurrency, getDefaultSelectedProductPlans } from './helpers';
+import { exclude24Months, getAutoCoupon, getDefaultSelectedProductPlans } from './helpers';
 import { getAllowedCycles } from './helpers/getAllowedCycles';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
 import { getBillingAddressStatus, notHigherThanAvailableOnBackend } from './helpers/payment';
@@ -186,6 +192,7 @@ export interface SubscriptionContainerProps {
      * If none specified, then shows all addons
      */
     allowedAddonTypes?: AddonGuard[];
+    paymentsStatus: PaymentMethodStatusExtended;
 }
 
 // that's temporary solution to avoid merge conflicts with Mail B2B plans.
@@ -227,6 +234,7 @@ const SubscriptionContainer = ({
     parent,
     withB2CAddons,
     allowedAddonTypes,
+    paymentsStatus,
 }: SubscriptionContainerProps) => {
     const allowDowncycling = useFlag('AllowDowncycling');
 
@@ -258,7 +266,6 @@ const SubscriptionContainer = ({
     const [visionaryWarningModal, showVisionaryWarningModal] = useModalTwoPromise<VisionaryWarningModalOwnProps>();
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
     const { createNotification } = useNotifications();
-    const plansMap = toMap(plans, 'Name');
     const { cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({ app });
     const [vpnServers] = useVPNServersCount();
     const getCalendars = useGetCalendars();
@@ -269,7 +276,6 @@ const SubscriptionContainer = ({
     const [blockCycleSelector, withBlockCycleSelector] = useLoading();
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
     const [loadingGift, withLoadingGift] = useLoading();
-    const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>();
     const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionCheckResponse[]>();
     const chargebeeContext = useChargebeeContext();
     const scribeEnabled = useAssistantFeatureEnabled();
@@ -284,6 +290,19 @@ const SubscriptionContainer = ({
     const { reportSubscriptionModalInitialization, reportSubscriptionModalPayment } = useSubscriptionModalTelemetry();
 
     const latestSubscription = subscription.UpcomingSubscription ?? subscription;
+
+    const { getPreferredCurrency } = useCurrencies();
+    const [preferredCurrency, setPreferredCurrency] = useState(() =>
+        getPreferredCurrency({
+            user,
+            subscription,
+            plans,
+            paramCurrency: maybeCurrency,
+            status: paymentsStatus,
+        })
+    );
+
+    const plansMap = getPlansMap(plans, preferredCurrency);
 
     const planIDs = useMemo(() => {
         const subscriptionPlanIDs = getPlanIDs(latestSubscription);
@@ -351,13 +370,7 @@ const SubscriptionContainer = ({
         );
         cycle = notHigherThanAvailableOnBackend(planIDs, plansMap, cycle);
 
-        const currency = (() => {
-            if (maybeCurrency) {
-                return maybeCurrency;
-            }
-
-            return getCurrency(user, subscription, plans);
-        })();
+        const currency = getPlanCurrencyFromPlanIDs(plansMap, planIDs) ?? preferredCurrency;
 
         const model: Model = {
             step,
@@ -366,12 +379,19 @@ const SubscriptionContainer = ({
             coupon,
             planIDs,
             initialCheckComplete: false,
-            taxBillingAddress: DEFAULT_TAX_BILLING_ADDRESS,
+            taxBillingAddress: {
+                CountryCode: paymentsStatus.CountryCode,
+                State: paymentsStatus.State,
+            },
             noPaymentNeeded: false,
         };
 
         return model;
     });
+
+    const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>(
+        getFreeCheckResult(model.currency, model.cycle)
+    );
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
@@ -419,7 +439,6 @@ const SubscriptionContainer = ({
     const amountDue = checkResult?.AmountDue || 0;
     const couponCode = checkResult?.Coupon?.Code;
     const couponDescription = checkResult?.Coupon?.Description;
-    const creditsRemaining = (user.Credit + (checkResult?.Credit ?? 0)) / 100;
 
     const subscriptionCouponCode = subscription?.CouponCode;
     const latestValidCouponCodeRef = useRef('');
@@ -429,8 +448,6 @@ const SubscriptionContainer = ({
     const abortControllerRef = useRef<AbortController>();
 
     const amount = model.step === SUBSCRIPTION_STEPS.CHECKOUT ? amountDue : 0;
-
-    const currency = checkResult?.Currency || DEFAULT_CURRENCY;
 
     const handlePlanWarnings = async (planIDs: PlanIDs) => {
         const newPlanName = Object.keys(planIDs).find((planName) =>
@@ -549,14 +566,16 @@ const SubscriptionContainer = ({
         paymentProcessorType: PaymentProcessorType;
     };
 
+    const selectedPlanCurrency = checkResult?.Currency ?? DEFAULT_CURRENCY;
     const paymentFacade = usePaymentFacade({
         checkResult,
         amount,
-        currency,
+        currency: selectedPlanCurrency,
         selectedPlanName: getPlanFromPlanIDs(plansMap, model.planIDs)?.Name,
         billingAddress: model.taxBillingAddress,
         billingPlatform: subscription?.BillingPlatform,
         chargebeeUserExists: user.ChargebeeUserExists,
+        paymentMethodStatusExtended: paymentsStatus,
         onChargeable: (operations, { sourceType, paymentProcessorType }) => {
             const context: SubscriptionContext = {
                 operationsSubscriptionData: {
@@ -592,6 +611,7 @@ const SubscriptionContainer = ({
             minimumCycle,
             maximumCycle,
             defaultCycles,
+            currency: selectedPlanCurrency,
             planIDs,
             plansMap,
             allowDowncycling,
@@ -604,6 +624,8 @@ const SubscriptionContainer = ({
         checkResult: SubscriptionCheckResponse,
         signal: AbortSignal
     ) => {
+        setAdditionalCheckResults([]);
+
         const codes = checkPayload.Codes;
 
         const noCodes = !codes || codes.length === 0;
@@ -641,7 +663,7 @@ const SubscriptionContainer = ({
         newModel: Model = model,
         wantToApplyNewGiftCode: boolean = false,
         selectedMethod?: string
-    ): Promise<boolean> => {
+    ): Promise<void> => {
         const copyNewModel = {
             ...newModel,
             initialCheckComplete: true,
@@ -651,7 +673,7 @@ const SubscriptionContainer = ({
         if (!hasPlanIDs(newModel.planIDs)) {
             setCheckResult(getFreeCheckResult(model.currency, model.cycle));
             setModel(copyNewModel);
-            return true;
+            return;
         }
 
         const dontQueryCheck = copyNewModel.step === SUBSCRIPTION_STEPS.PLAN_SELECTION;
@@ -662,12 +684,13 @@ const SubscriptionContainer = ({
                     plansMap,
                     cycle: copyNewModel.cycle,
                     planIDs: copyNewModel.planIDs,
+                    currency: copyNewModel.currency,
                 }),
                 Currency: copyNewModel.currency,
                 PeriodEnd: 0,
             });
             setModel(copyNewModel);
-            return true;
+            return;
         }
 
         const isInhouseForcedUser =
@@ -683,6 +706,7 @@ const SubscriptionContainer = ({
                     plansMap,
                     cycle: copyNewModel.cycle,
                     planIDs: copyNewModel.planIDs,
+                    currency: copyNewModel.currency,
                 }),
                 Currency: copyNewModel.currency,
                 PeriodEnd: 0,
@@ -692,7 +716,7 @@ const SubscriptionContainer = ({
                 ...copyNewModel,
                 noPaymentNeeded: true,
             });
-            return true;
+            return;
         }
 
         try {
@@ -778,14 +802,17 @@ const SubscriptionContainer = ({
             setModel(copyNewModel);
             onCheck?.({ model, newModel, type: 'success', result: checkResult });
         } catch (error: any) {
+            if (error?.name === 'AbortError') {
+                return;
+            }
+
             if (error.name === 'OfflineError') {
                 setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
             }
             onCheck?.({ model, newModel, type: 'error', error });
-            return false;
         }
 
-        return true;
+        return;
     };
 
     useEffect(() => {
@@ -884,10 +911,14 @@ const SubscriptionContainer = ({
     };
 
     const handleChangeCurrency = (currency: Currency) => {
-        if (loadingCheck || currency === model.currency) {
+        if (loadingCheck || currency === preferredCurrency) {
             return;
         }
-        void withLoadingCheck(check({ ...model, currency }));
+        setPreferredCurrency(currency);
+
+        const planCurrency = getPlanCurrencyFromPlanIDs(getPlansMap(plans, currency), model.planIDs) ?? currency;
+
+        void withLoadingCheck(check({ ...model, currency: planCurrency }));
     };
 
     const handleBillingAddressChange = (billingAddress: BillingAddress) => {
@@ -950,7 +981,7 @@ const SubscriptionContainer = ({
             {paymentFacade.showInclusiveTax && (
                 <InclusiveVatText
                     tax={checkResult?.Taxes?.[0]}
-                    currency={currency}
+                    currency={selectedPlanCurrency}
                     className="text-sm color-weak text-center mt-1"
                 />
             )}
@@ -1021,9 +1052,8 @@ const SubscriptionContainer = ({
                     freePlan={freePlan}
                     loading={loadingCheck}
                     plans={plans}
-                    plansMap={plansMap}
+                    currency={preferredCurrency}
                     vpnServers={vpnServers}
-                    currency={model.currency}
                     cycle={model.cycle}
                     maximumCycle={maximumCycle}
                     minimumCycle={minimumCycle}
@@ -1031,12 +1061,13 @@ const SubscriptionContainer = ({
                     mode={modeType}
                     hasFreePlan={showFreePlan}
                     subscription={subscription}
-                    onChangePlanIDs={(planIDs, cycle) =>
+                    onChangePlanIDs={(planIDs, cycle, currency) =>
                         withLoadingCheck(
                             check({
                                 ...model,
                                 planIDs,
                                 cycle,
+                                currency,
                                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                             })
                         )
@@ -1048,6 +1079,7 @@ const SubscriptionContainer = ({
                     selectedProductPlans={selectedProductPlans}
                     onChangeSelectedProductPlans={setSelectedProductPlans}
                     organization={organization}
+                    paymentsStatus={paymentsStatus}
                 />
             )}
 
@@ -1136,9 +1168,7 @@ const SubscriptionContainer = ({
                                 />
                             </div>
                             <NoPaymentRequiredNote
-                                amountDue={amountDue}
                                 checkResult={checkResult}
-                                creditsRemaining={creditsRemaining}
                                 subscription={subscription}
                                 hasPaymentMethod={hasPaymentMethod}
                             />

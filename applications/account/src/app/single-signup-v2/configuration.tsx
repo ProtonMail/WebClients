@@ -50,7 +50,7 @@ export const getSummaryPlan = ({
     const iconSize: IconSize = 6;
     const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
 
-    if (plan && plan?.Name === PLANS.VPN) {
+    if (plan && (plan.Name === PLANS.VPN || plan.Name === PLANS.VPN2024)) {
         const shortPlan = getVPNPlan(plan, vpnServersCountData);
         return {
             logo: <VpnLogo variant="glyph-only" size={iconSize} />,

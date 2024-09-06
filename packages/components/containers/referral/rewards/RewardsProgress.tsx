@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Meter, usePlans, useUser } from '@proton/components';
+import { Meter, usePreferredPlansMap } from '@proton/components';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 
 interface Props {
     rewards: number;
@@ -10,13 +10,12 @@ interface Props {
 }
 
 const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
-    const [user] = useUser();
-    const [plansResult] = usePlans();
+    const { plansMap } = usePreferredPlansMap();
 
-    const mailPlusPlan = plansResult?.plans.find(({ Name }) => Name === PLANS.MAIL);
+    const mailPlusPlan = plansMap[PLANS.MAIL];
     const price = Math.round((mailPlusPlan?.Pricing[CYCLE.MONTHLY] || 0) / 100) * 100; // Price rounded to 500
-    const current = humanPriceWithCurrency(rewards * price, user.Currency);
-    const total = humanPriceWithCurrency(rewardsLimit * price, user.Currency);
+    const current = getSimplePriceString(mailPlusPlan.Currency, rewards * price);
+    const total = getSimplePriceString(mailPlusPlan.Currency, rewardsLimit * price);
 
     return (
         <div className="flex justify-space-between items-stretch lg:items-center gap-4 flex-column lg:flex-row">

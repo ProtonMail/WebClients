@@ -1,8 +1,12 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
-import { isSplittedUser, onSessionMigrationChargebeeStatus } from '@proton/components/payments/core';
+import {
+    isRegionalCurrency,
+    isSplittedUser,
+    onSessionMigrationChargebeeStatus,
+} from '@proton/components/payments/core';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getSupportedAddons, isIpAddon, isMemberAddon } from '@proton/shared/lib/helpers/addons';
+import { getSupportedAddons, isIpAddon, isMemberAddon, isScribeAddon } from '@proton/shared/lib/helpers/addons';
 
 import type { FreeSubscription } from '../constants';
 import {
@@ -17,17 +21,20 @@ import {
     isFreeSubscription,
 } from '../constants';
 import type {
+    Currency,
+    MaxKeys,
     Organization,
     Plan,
     PlanIDs,
     PlansMap,
     Pricing,
     Subscription,
+    SubscriptionCheckResponse,
     SubscriptionModel,
     SubscriptionPlan,
     UserModel,
 } from '../interfaces';
-import { Audience, ChargebeeEnabled, External } from '../interfaces';
+import { Audience, ChargebeeEnabled, External, TaxInclusive } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -798,7 +805,7 @@ export function hasMaximumCycle(subscription?: SubscriptionModel | FreeSubscript
     );
 }
 
-export const getMaximumCycleForApp = (app: ProductParam) => {
+export const getMaximumCycleForApp = (app: ProductParam, currency?: Currency) => {
     if (app === APPS.PROTONPASS || app === APPS.PROTONWALLET) {
         return CYCLE.YEARLY;
     }
@@ -806,5 +813,36 @@ export const getMaximumCycleForApp = (app: ProductParam) => {
     if (app === APPS.PROTONVPN_SETTINGS) {
         return CYCLE.TWO_YEARS;
     }
-    return CYCLE.TWO_YEARS;
+
+    return currency && isRegionalCurrency(currency) ? CYCLE.YEARLY : CYCLE.TWO_YEARS;
 };
+
+export const getPlanMaxIPs = (plan: Plan) => {
+    if (plan.Name === PLANS.VPN_BUSINESS || plan.Name === ADDON_NAMES.IP_VPN_BUSINESS) {
+        return 1;
+    }
+
+    return 0;
+};
+
+const getPlanMaxAIs = (plan: Plan) => {
+    return isScribeAddon(plan.Name) ? 1 : 0;
+};
+
+export const getMaxValue = (plan: Plan, key: MaxKeys): number => {
+    let result: number;
+
+    if (key === 'MaxIPs') {
+        result = getPlanMaxIPs(plan);
+    } else if (key === 'MaxAI') {
+        result = getPlanMaxAIs(plan);
+    } else {
+        result = plan[key];
+    }
+
+    return result ?? 0;
+};
+
+export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
+    return checkResponse?.TaxInclusive === TaxInclusive.INCLUSIVE;
+}

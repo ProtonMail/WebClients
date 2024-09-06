@@ -1,23 +1,22 @@
 import { useEffect, useRef } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
-import { Api } from '@proton/shared/lib/interfaces';
+import { type Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import {
-    AmountAndCurrency,
-    ChargeableV5PaymentParameters,
-    ChargebeeIframeEvents,
-    ChargebeeIframeHandles,
-    ChargebeeKillSwitch,
-    ForceEnableChargebee,
-    PaymentVerificatorV5,
+    type AmountAndCurrency,
+    type ChargeableV5PaymentParameters,
+    type ChargebeeIframeEvents,
+    type ChargebeeIframeHandles,
+    type ForceEnableChargebee,
+    type PaymentVerificatorV5,
 } from '../core';
 import {
-    ChargebeePaypalModalHandles,
+    type ChargebeePaypalModalHandles,
     ChargebeePaypalPaymentProcessor,
 } from '../core/payment-processors/chargebeePaypalPayment';
-import { PaymentProcessorHook } from './interface';
+import { type PaymentProcessorHook } from './interface';
 import { usePaymentProcessor } from './usePaymentProcessor';
 
 export interface Props {
@@ -32,7 +31,6 @@ export interface Dependencies {
     handles: ChargebeeIframeHandles;
     events: ChargebeeIframeEvents;
     chargebeePaypalModalHandles: ChargebeePaypalModalHandles | undefined;
-    chargebeeKillSwitch: ChargebeeKillSwitch;
     forceEnableChargebee: ForceEnableChargebee;
 }
 
@@ -52,15 +50,7 @@ export type ChargebeePaypalProcessorHook = Omit<PaymentProcessorHook, keyof Over
 
 export const useChargebeePaypal = (
     { amountAndCurrency, isCredit, onChargeable }: Props,
-    {
-        api,
-        verifyPayment,
-        handles,
-        events,
-        chargebeePaypalModalHandles,
-        chargebeeKillSwitch,
-        forceEnableChargebee,
-    }: Dependencies
+    { api, verifyPayment, handles, events, chargebeePaypalModalHandles, forceEnableChargebee }: Dependencies
 ): ChargebeePaypalProcessorHook => {
     const paypalIframeLoadedRef = useRef(false);
 
@@ -73,7 +63,6 @@ export const useChargebeePaypal = (
                 handles,
                 events,
                 isCredit,
-                chargebeeKillSwitch,
                 forceEnableChargebee,
                 chargebeePaypalModalHandles,
                 onChargeable

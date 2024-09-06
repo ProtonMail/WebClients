@@ -4,33 +4,42 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
+import { getPlansMap } from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DEFAULT_CYCLE, FREE_SUBSCRIPTION, isStringPLAN } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { toMap } from '@proton/shared/lib/helpers/object';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromCheckout, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import {
     getIsB2BAudienceFromPlan,
     getPlanIDs,
     getValidAudience,
     getValidCycle,
 } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, Cycle, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Icon, Loader } from '../../components';
-import { useApi, useLoad, useOrganization, usePlans, useSubscription, useUser, useVPNServersCount } from '../../hooks';
+import {
+    useApi,
+    useLoad,
+    useOrganization,
+    usePaymentStatus,
+    usePlans,
+    useSubscription,
+    useVPNServersCount,
+} from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopInAppPayments';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
-import { getCurrency, getDefaultSelectedProductPlans } from './subscription/helpers';
+import { getDefaultSelectedProductPlans } from './subscription/helpers';
 
 const getSearchParams = (search: string) => {
     const params = new URLSearchParams(search);
@@ -51,17 +60,24 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [plansResult, loadingPlans] = usePlans();
+    const [status, statusLoading] = usePaymentStatus();
     const plans = plansResult?.plans || [];
     const freePlan = plansResult?.freePlan || FREE_PLAN;
-    const plansMap = toMap(plans, 'Name') as PlansMap;
     const [vpnServers] = useVPNServersCount();
-    const [user] = useUser();
     const api = useApi();
     const { paymentsApi } = usePaymentsApi(api);
     const location = useLocation();
+    const preferredCurrency = useAutomaticCurrency();
     const currentPlanIDs = getPlanIDs(subscription);
     const searchParams = getSearchParams(location.search);
     const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
+
+    const [open] = useSubscriptionModal();
+    const isLoading = loadingPlans || loadingSubscription || loadingOrganization || statusLoading || !status;
+    const [selectedCurrency, setCurrency] = useState<Currency>();
+    const currency = selectedCurrency || preferredCurrency;
+    const plansMap = getPlansMap(plans, currency);
+
     const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
         return getDefaultSelectedProductPlans({
             appName: app,
@@ -71,10 +87,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             plansMap,
         });
     });
-    const [open] = useSubscriptionModal();
-    const isLoading = Boolean(loadingPlans || loadingSubscription || loadingOrganization);
-    const [selectedCurrency, setCurrency] = useState<Currency>();
-    const currency = selectedCurrency || getCurrency(user, subscription, plans);
+
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
 
     const [cycle, setCycle] = useState(searchParams.cycle ?? DEFAULT_CYCLE);
@@ -82,7 +95,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
 
     useLoad();
 
-    const handleModal = async (newPlanIDs: PlanIDs, newCycle: Cycle) => {
+    const handleModal = async (newPlanIDs: PlanIDs, newCycle: Cycle, currency: Currency) => {
         if (!hasPlanIDs(newPlanIDs)) {
             throw new Error('Downgrade not supported');
         }
@@ -95,13 +108,15 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             CouponCode: couponCode,
         });
 
+        const plan = getPlanFromCheckout(newPlanIDs, plansMap);
+
         open({
             defaultSelectedProductPlans: selectedProductPlans,
             planIDs: newPlanIDs,
             coupon: Coupon?.Code,
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             cycle: newCycle,
-            currency,
+            currency: plan?.Currency,
             defaultAudience: Object.keys(newPlanIDs).some((planID) => getIsB2BAudienceFromPlan(planID as any))
                 ? Audience.B2B
                 : Audience.B2C,
@@ -112,7 +127,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     };
 
     // Clicking the "Select Plan" button opens the browser on Electron or the modal on the web
-    const handlePlanChange = (newPlanIDs: PlanIDs, newCycle: Cycle) => {
+    const handlePlanChange = (newPlanIDs: PlanIDs, newCycle: Cycle, currency: Currency) => {
         const newPlanName = Object.keys(newPlanIDs)[0];
         const isNewPlanCorrect = isStringPLAN(newPlanName);
         if (isElectronApp && !hasInboxDesktopInAppPayments && newPlanName && isNewPlanCorrect) {
@@ -120,7 +135,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
             return;
         }
 
-        void withLoading(handleModal(newPlanIDs, newCycle));
+        void withLoading(handleModal(newPlanIDs, newCycle, currency));
     };
 
     useEffect(() => {
@@ -159,9 +174,9 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 loading={loading}
                 freePlan={freePlan}
                 plans={plans}
-                plansMap={plansMap}
                 vpnServers={vpnServers}
                 currency={currency}
+                paymentsStatus={status}
                 cycle={cycle}
                 onChangeCycle={setCycle}
                 planIDs={currentPlanIDs}
