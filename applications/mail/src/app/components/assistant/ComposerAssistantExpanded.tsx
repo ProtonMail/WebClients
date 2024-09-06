@@ -119,7 +119,7 @@ const ComposerAssistantExpanded = ({
                     >
                         <div
                             className={clsx([
-                                'mt-4 border border-weak color-weak rounded-xl p-7 relative',
+                                'mt-2 border border-weak color-weak rounded-xl p-7 relative',
                                 isGeneratingResult && 'pointer-events-none',
                             ])}
                             aria-busy={isGeneratingResult ? true : undefined}

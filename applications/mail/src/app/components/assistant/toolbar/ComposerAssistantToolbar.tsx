@@ -93,7 +93,7 @@ const ComposerAssistantToolbar = ({
         <div
             ref={containerRef}
             tabIndex={-1}
-            className="outline-none--at-all"
+            className="outline-none--at-all mb-2"
             aria-labelledby={`heading-${assistantID}`}
         >
             <h1 id={`heading-${assistantID}`} className="sr-only">{c('Info').t`Scribe panel`}</h1>
