@@ -8,6 +8,7 @@ const CircularDependencyPlugin = require('circular-dependency-plugin');
 const getCssLoaders = require('@proton/pack/webpack/css.loader');
 const getAssetsLoaders = require('@proton/pack/webpack/assets.loader');
 const getOptimizations = require('@proton/pack/webpack/optimization');
+const ProtonIconsTreeShakePlugin = require('@proton/pass/utils/webpack/icons/plugin');
 const { excludeNodeModulesExcept, excludeFiles, createRegex } = require('@proton/pack/webpack/helpers/regex');
 const { BABEL_EXCLUDE_FILES, BABEL_INCLUDE_NODE_MODULES } = require('@proton/pack/webpack/constants');
 const fs = require('fs');
@@ -244,6 +245,14 @@ module.exports = {
                       failOnError: false,
                       allowAsyncCycles: false,
                       cwd: process.cwd(),
+                  }),
+              ]
+            : []),
+        ...(production
+            ? [
+                  new ProtonIconsTreeShakePlugin({
+                      entries: ['dropdown', 'notification', 'onboarding', 'popup', 'settings'],
+                      excludeMimeIcons: true,
                   }),
               ]
             : []),

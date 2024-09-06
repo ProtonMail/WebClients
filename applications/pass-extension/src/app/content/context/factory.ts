@@ -61,11 +61,11 @@ export const createContentScriptContext = (options: {
         getFeatureFlags: () => featureFlags,
         getFeatures: () => {
             const disallowed = settings.disallowedDomains ?? {};
-            const { domain, subdomain } = context.getExtensionContext().url;
+            const url = context.getExtensionContext().url;
 
             /* merge domain and subdomain masks if we have both in the pause-list */
-            const domainMask = domain ? disallowed[domain] : 0;
-            const subDomainMask = subdomain ? disallowed[subdomain] : 0;
+            const domainMask = url?.domain ? disallowed[url.domain] : 0;
+            const subDomainMask = url?.subdomain ? disallowed[url.subdomain] : 0;
             const mask = domainMask | subDomainMask;
 
             const { autofill, autosuggest, autosave, passkeys } = settings;

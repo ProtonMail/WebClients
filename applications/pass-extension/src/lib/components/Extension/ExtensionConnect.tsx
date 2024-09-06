@@ -62,7 +62,6 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
 }: ExtensionConnectProps<T>) => {
     const { tabId, url } = ExtensionContext.get();
     const { setCurrentTabUrl, onTelemetry } = usePassCore();
-    setCurrentTabUrl?.(url);
 
     const dispatch = useDispatch();
     const activityProbe = useExtensionActivityProbe(messageFactory);
@@ -93,9 +92,11 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
     });
 
     useEffect(() => {
-        if (!onWorkerMessage) return;
-        ExtensionContext.get().port.onMessage.addListener(onWorkerMessage);
-        return () => ExtensionContext.get().port.onMessage.removeListener(onWorkerMessage);
+        if (url) setCurrentTabUrl?.(url);
+        if (onWorkerMessage) {
+            ExtensionContext.get().port.onMessage.addListener(onWorkerMessage);
+            return () => ExtensionContext.get().port.onMessage.removeListener(onWorkerMessage);
+        }
     }, []);
 
     useVisibleEffect(
