@@ -15,7 +15,14 @@ export type TrialStatus = 'trial-ongoing' | 'trial-ended' | 'trial-not-started' 
 // Prevent multiple starts in case of multiple start calls
 let started = false;
 
-const useAssistantSubscriptionStatus = () => {
+export interface AssistantSubscriptionStatus {
+    canUseAssistant: boolean;
+    trialEndDate: Date | null;
+    trialStatus: TrialStatus;
+    start: () => void;
+}
+
+const useAssistantSubscriptionStatus = (): AssistantSubscriptionStatus => {
     const [user] = useUser();
     const { createNotification } = useNotifications();
     const { sendFreeTrialStart } = useAssistantTelemetry();
