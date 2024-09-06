@@ -69,7 +69,9 @@ export const RecipientsDataItem = ({
                                         {isBtcAddress ? (
                                             <MiddleEllipsis text={recipient} className="w-2/3" />
                                         ) : (
-                                            <span className="block text-left w-full text-ellipsis">{recipient}</span>
+                                            <span className="block text-left w-full text-ellipsis my-1">
+                                                {recipient}
+                                            </span>
                                         )}
                                     </Tooltip>
                                 </div>
@@ -118,7 +120,7 @@ export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps &
             <div className="flex flex-column items-start grow mr-4">
                 <span className="block color-hint text-rg">{c('Wallet transaction').t`From`}</span>
 
-                <ul className="unstyled my-1 text-lg w-full">
+                <ul className="unstyled my-0 text-lg w-full">
                     <li className="flex flex-column my-1">
                         <Tooltip title={senderName}>
                             <span className="block w-full text-ellipsis">{senderName}</span>
@@ -239,9 +241,11 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
 
 export const MessageDataItem = ({ tx }: TxDataListItemProps) => {
     return (
-        <div className="w-full">
-            <span className="block color-hint text-rg">{c('Wallet transaction').t`Message to recipient`}</span>
-            <span className="text-pre-wrap text-left text-break text-lg">{tx.apiData?.Body}</span>
+        <div className="flex flex-row items-center w-full">
+            <div className="flex flex-column items-start grow mr-4">
+                <span className="block color-hint text-rg">{c('Wallet transaction').t`Message to recipient`}</span>
+                <span className="block w-full text-pre-wrap text-left text-break text-lg my-1">{tx.apiData?.Body}</span>
+            </div>
         </div>
     );
 };
