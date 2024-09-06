@@ -138,7 +138,7 @@ export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps &
                         data-testid="modal:edit"
                         onClick={() => onClickEditSender()}
                     >
-                        <Icon name="pen" alt={c('Action').t`Edit`} />
+                        <Icon name="pencil" size={5} alt={c('Action').t`Edit`} />
                     </CoreButton>
                 </Tooltip>
             )}
@@ -215,7 +215,7 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
                                 data-testid="modal:edit"
                                 onClick={() => onClick(tx)}
                             >
-                                <Icon name="pen" alt={c('Action').t`Edit`} />
+                                <Icon name="pencil" size={5} alt={c('Action').t`Edit`} />
                             </CoreButton>
                         </Tooltip>
                     </>
