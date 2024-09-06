@@ -1,9 +1,10 @@
+import React from 'react';
+
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
-
-import { CoreButton } from '../../atoms';
 
 interface Props {
     title?: string;
@@ -13,16 +14,18 @@ interface Props {
 
 export const DrawerHeader = ({ title, bg, onClose }: Props) => {
     return (
-        <div className="flex flex-row mb-3 px-6 pt-3">
+        <div className="flex flex-row mb-3 px-6 pt-6">
             {title && <div>{title}</div>}
             <div className="ml-auto">
-                <CoreButton
-                    onClick={() => onClose()}
-                    icon
+                <Button
                     className={clsx('rounded-full border-none', bg === 'bg-norm' ? 'bg-weak' : 'bg-norm')}
+                    icon
+                    shape="ghost"
+                    data-testid="modal:close"
+                    onClick={onClose}
                 >
-                    <Icon name="cross" alt={c('Action').t`Close`} className="color-hint" size={5} />
-                </CoreButton>
+                    <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                </Button>
             </div>
         </div>
     );
