@@ -17,7 +17,7 @@ interface VPNPassPromotionButtonProps {
 
 const VPNPassPromotionButton = ({ onClick, currency, cycle }: VPNPassPromotionButtonProps) => {
     const price = getSimplePriceString(currency, 100, c('Suffix').t`/month`);
-    const priceNoSuffix = getSimplePriceString(currency, 100, '');
+    const priceNoSuffix = getSimplePriceString(currency, 100);
     return (
         <PromotionBanner
             mode="banner"

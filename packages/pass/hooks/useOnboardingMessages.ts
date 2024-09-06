@@ -136,8 +136,7 @@ export const useOnboardingMessages = () => {
                 message: (() => {
                     const relativePrice = getSimplePriceString(
                         user?.Currency ?? DEFAULT_CURRENCY,
-                        PASS_BF_MONTHLY_PRICE,
-                        ''
+                        PASS_BF_MONTHLY_PRICE
                     );
                     return c('bf2023: Info')
                         .t`Save Smart. Get a year of Pass Plus for only ${relativePrice} per month.`;

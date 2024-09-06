@@ -13,6 +13,7 @@ import {
     useOrganization,
     usePendingUserInvitations,
     usePlans,
+    usePreferredPlansMap,
     useSubscription,
     useUser,
     useVPNServersCount,
@@ -20,7 +21,7 @@ import {
 import { SettingsSectionExtraWide, SettingsSectionWide } from '../../account';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
-import { getCurrency, resolveUpsellsToDisplay } from './helpers';
+import { resolveUpsellsToDisplay } from './helpers';
 import { SubscriptionPanel, UpsellPanels, UsagePanel } from './panels';
 import PendingInvitationsPanel from './panels/PendingInvitationsPanel';
 
@@ -43,10 +44,12 @@ const YourPlanSection = ({ app }: Props) => {
     const [invites = []] = usePendingUserInvitations();
     const [openSubscriptionModal] = useSubscriptionModal();
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
+    const { plansMap } = usePreferredPlansMap();
 
     useLoad();
 
     const loading = loadingSubscription || loadingOrganization || loadingPlans || serversCountLoading;
+
     if (!subscription || !plans || loading) {
         return <Loader />;
     }
@@ -56,12 +59,10 @@ const YourPlanSection = ({ app }: Props) => {
         return <MozillaInfoPanel />;
     }
 
-    const currency = getCurrency(user, subscription, plans);
     const upsells = resolveUpsellsToDisplay({
         app,
-        currency,
         subscription,
-        plans,
+        plansMap,
         freePlan,
         serversCount,
         openSubscriptionModal,
@@ -102,7 +103,6 @@ const YourPlanSection = ({ app }: Props) => {
                 {shouldRenderSubscription && (
                     <SubscriptionPanel
                         app={app}
-                        currency={currency}
                         subscription={subscription}
                         organization={organization}
                         user={user}

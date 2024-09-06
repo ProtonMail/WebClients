@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { SelectedPlan } from '@proton/components/payments/core';
-import type { ADDON_NAMES } from '@proton/shared/lib/constants';
 import type { CYCLE } from '@proton/shared/lib/constants';
+import { type ADDON_NAMES } from '@proton/shared/lib/constants';
 import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/addons';
 import { type PricingMode, type TotalPricings, getTotals } from '@proton/shared/lib/helpers/planIDs';
 import type { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';

@@ -1,6 +1,6 @@
 import { useMemo, useRef } from 'react';
 
-import type { PaymentsVersion} from '@proton/shared/lib/api/payments';
+import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
@@ -29,7 +29,8 @@ import type {
     PaymentVerificator,
     PaymentVerificatorV5,
     PlainPaymentMethodType,
-    SavedPaymentMethod} from '../core';
+    SavedPaymentMethod,
+} from '../core';
 import {
     PAYMENT_METHOD_TYPES,
     canUseChargebee,
@@ -42,7 +43,7 @@ import useBitcoin from './useBitcoin';
 import { useCard } from './useCard';
 import { useChargebeeCard } from './useChargebeeCard';
 import { useChargebeePaypal } from './useChargebeePaypal';
-import type { OnMethodChangedHandler} from './useMethods';
+import type { OnMethodChangedHandler } from './useMethods';
 import { useMethods } from './useMethods';
 import { usePaymentsApi } from './usePaymentsApi';
 import { usePaypal } from './usePaypal';
@@ -427,7 +428,6 @@ export const usePaymentFacade = (
             verifyPayment: verifyPaymentChargebeeCard,
             handles: chargebeeHandles,
             events: chargebeeEvents,
-            chargebeeKillSwitch,
             forceEnableChargebee,
         }
     );
@@ -455,7 +455,6 @@ export const usePaymentFacade = (
             handles: chargebeeHandles,
             events: chargebeeEvents,
             chargebeePaypalModalHandles,
-            chargebeeKillSwitch,
             forceEnableChargebee,
         }
     );

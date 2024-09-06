@@ -2,11 +2,13 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import type { PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import { useCurrencies } from '@proton/components/payments/client-extensions';
+import type { FullPlansMap, MappedPlan, PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import { isRegionalCurrency, mainCurrencies } from '@proton/components/payments/core/helpers';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
-import { hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helpers/planIDs';
+import { getPlanFromCheckout, hasPlanIDs, planIDsPositiveDifference } from '@proton/shared/lib/helpers/planIDs';
 import { isSpecialRenewPlan } from '@proton/shared/lib/helpers/renew';
 import { getHas2023OfferCoupon, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -15,13 +17,12 @@ import type {
     Cycle,
     FreePlanDefault,
     PlanIDs,
-    PlansMap,
     SubscriptionModel,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
 import { Badge, Info } from '../../../../components';
-import { useConfig } from '../../../../hooks';
+import { useConfig, useUser } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
@@ -40,10 +41,10 @@ type Props = {
     submit?: ReactNode;
     loading?: boolean;
     planIDs: PlanIDs;
-    plansMap: PlansMap;
+    plansMap: FullPlansMap;
     cycle: Cycle;
     currency: Currency;
-    checkResult: RequiredCheckResponse | undefined;
+    checkResult: RequiredCheckResponse;
     vpnServers: VPNServersCountData;
     gift?: ReactNode;
     onChangeCurrency: (currency: Currency) => void;
@@ -54,6 +55,19 @@ type Props = {
     subscription: SubscriptionModel;
     paymentNeeded: boolean;
 } & CheckoutModifiers;
+
+export const useAvailableCurrenciesForPlan = (plan: MappedPlan | null, subscription: SubscriptionModel) => {
+    const [user] = useUser();
+    const { dashboardRegionalCurrencyEnabled } = useCurrencies();
+
+    return (plan?.availableCurrencies ?? mainCurrencies).filter(
+        (currency) =>
+            dashboardRegionalCurrencyEnabled ||
+            !isRegionalCurrency(currency) ||
+            subscription?.Currency === currency ||
+            user.Currency === currency
+    );
+};
 
 const SubscriptionCheckout = ({
     freePlan,
@@ -95,6 +109,9 @@ const SubscriptionCheckout = ({
     });
     const { planTitle, usersTitle, withDiscountPerCycle, addons, membersPerMonth, couponDiscount } = checkout;
 
+    const plan = getPlanFromCheckout(planIDs, plansMap);
+    const currencies = useAvailableCurrenciesForPlan(plan, subscription);
+
     if (!checkResult) {
         return null;
     }
@@ -125,6 +142,7 @@ const SubscriptionCheckout = ({
     return (
         <Checkout
             currency={currency}
+            currencies={currencies}
             onChangeCurrency={onChangeCurrency}
             loading={loading}
             hasGuarantee={hasGuarantee}

@@ -1,19 +1,13 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { renderHook, waitFor } from '@testing-library/react';
 
+import { componentsHookRenderer, componentsHookWrapper } from '@proton/components/containers/contacts/tests/render';
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock } from '@proton/testing';
 
-import type {
-    PaymentMethodStatusExtended,
-    PaymentsApi,
-    SavedPaymentMethod} from '../core';
-import {
-    Autopay,
-    MethodStorage,
-    PAYMENT_METHOD_TYPES
-} from '../core';
+import type { PaymentMethodStatusExtended, PaymentsApi, SavedPaymentMethod } from '../core';
+import { Autopay, MethodStorage, PAYMENT_METHOD_TYPES } from '../core';
 import { useMethods } from './useMethods';
 
 let paymentMethodStatusExtended: PaymentMethodStatusExtended;
@@ -63,7 +57,7 @@ beforeEach(() => {
 });
 
 it('should render', () => {
-    const { result } = renderHook(() =>
+    const { result } = componentsHookRenderer(() =>
         useMethods(
             {
                 paymentMethodStatusExtended,
@@ -87,7 +81,7 @@ it('should render', () => {
 });
 
 it('should initialize payment methods (no chargebee)', async () => {
-    const { result, waitForNextUpdate } = renderHook(() =>
+    const { result } = componentsHookRenderer(() =>
         useMethods(
             {
                 paymentMethodStatusExtended,
@@ -109,9 +103,10 @@ it('should initialize payment methods (no chargebee)', async () => {
 
     expect(result.current.loading).toBe(true);
 
-    await waitForNextUpdate();
+    await waitFor(() => {
+        expect(result.current.loading).toBe(false);
+    });
 
-    expect(result.current.loading).toBe(false);
     expect(result.current.savedMethods).toEqual(paymentMethods);
     expect(result.current.selectedMethod).toEqual({
         isExpired: false,
@@ -181,7 +176,7 @@ it('should initialize payment methods (no chargebee)', async () => {
 });
 
 it('should initialize payment methods (with chargebee)', async () => {
-    const { result, waitForNextUpdate } = renderHook(() =>
+    const { result } = componentsHookRenderer(() =>
         useMethods(
             {
                 paymentMethodStatusExtended,
@@ -203,9 +198,9 @@ it('should initialize payment methods (with chargebee)', async () => {
 
     expect(result.current.loading).toBe(true);
 
-    await waitForNextUpdate();
-
-    expect(result.current.loading).toBe(false);
+    await waitFor(() => {
+        expect(result.current.loading).toBe(false);
+    });
     expect(result.current.savedMethods).toEqual(paymentMethods);
 
     expect(result.current.selectedMethod).toEqual({
@@ -305,7 +300,7 @@ it('should filter out external payment methods', async () => {
         ...paymentMethods,
     ];
 
-    const { result, waitForNextUpdate } = renderHook(() =>
+    const { result } = componentsHookRenderer(() =>
         useMethods(
             {
                 paymentMethodStatusExtended,
@@ -325,9 +320,10 @@ it('should filter out external payment methods', async () => {
         )
     );
 
-    await waitForNextUpdate();
+    await waitFor(() => {
+        expect(result.current.loading).toBe(false);
+    });
 
-    expect(result.current.loading).toBe(false);
     expect(result.current.savedMethods).toEqual([
         {
             ID: '2',
@@ -364,25 +360,29 @@ it('should filter out external payment methods', async () => {
     ]);
 
     result.current.selectMethod('1');
-    expect(result.current.savedInternalSelectedMethod).toEqual({
-        ID: '1',
-        Type: PAYMENT_METHOD_TYPES.CARD,
-        Order: 500,
-        Autopay: Autopay.ENABLE,
-        Details: {
-            Name: 'Arthur Morgan',
-            ExpMonth: '12',
-            ExpYear: '2030',
-            ZIP: '12345',
-            Country: 'US',
-            Last4: '1234',
-            Brand: 'Visa',
-        },
-        External: MethodStorage.INTERNAL,
+    await waitFor(() => {
+        expect(result.current.savedInternalSelectedMethod).toEqual({
+            ID: '1',
+            Type: PAYMENT_METHOD_TYPES.CARD,
+            Order: 500,
+            Autopay: Autopay.ENABLE,
+            Details: {
+                Name: 'Arthur Morgan',
+                ExpMonth: '12',
+                ExpYear: '2030',
+                ZIP: '12345',
+                Country: 'US',
+                Last4: '1234',
+                Brand: 'Visa',
+            },
+            External: MethodStorage.INTERNAL,
+        });
     });
 
     result.current.selectMethod('2');
-    expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
+    await waitFor(() => {
+        expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
+    });
 });
 
 it('should consider methods without External property internal', async () => {
@@ -407,7 +407,7 @@ it('should consider methods without External property internal', async () => {
         ...paymentMethods,
     ];
 
-    const { result, waitForNextUpdate } = renderHook(() =>
+    const { result } = componentsHookRenderer(() =>
         useMethods(
             {
                 paymentMethodStatusExtended,
@@ -427,9 +427,10 @@ it('should consider methods without External property internal', async () => {
         )
     );
 
-    await waitForNextUpdate();
+    await waitFor(() => {
+        expect(result.current.loading).toBe(false);
+    });
 
-    expect(result.current.loading).toBe(false);
     expect(result.current.savedMethods).toEqual([
         {
             ID: '2',
@@ -466,24 +467,28 @@ it('should consider methods without External property internal', async () => {
 
     result.current.selectMethod('1');
 
-    expect(result.current.savedInternalSelectedMethod).toEqual({
-        ID: '1',
-        Type: PAYMENT_METHOD_TYPES.CARD,
-        Order: 500,
-        Autopay: Autopay.ENABLE,
-        Details: {
-            Name: 'Arthur Morgan',
-            ExpMonth: '12',
-            ExpYear: '2030',
-            ZIP: '12345',
-            Country: 'US',
-            Last4: '1234',
-            Brand: 'Visa',
-        },
+    await waitFor(() => {
+        expect(result.current.savedInternalSelectedMethod).toEqual({
+            ID: '1',
+            Type: PAYMENT_METHOD_TYPES.CARD,
+            Order: 500,
+            Autopay: Autopay.ENABLE,
+            Details: {
+                Name: 'Arthur Morgan',
+                ExpMonth: '12',
+                ExpYear: '2030',
+                ZIP: '12345',
+                Country: 'US',
+                Last4: '1234',
+                Brand: 'Visa',
+            },
+        });
     });
 
     result.current.selectMethod('2');
-    expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
+    await waitFor(() => {
+        expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
+    });
 });
 
 it('should filter out internal payment methods', async () => {
@@ -507,13 +512,13 @@ it('should filter out internal payment methods', async () => {
         ...paymentMethods,
     ];
 
-    const { result, waitForNextUpdate } = renderHook(() =>
+    const { result } = componentsHookRenderer(() =>
         useMethods(
             {
                 paymentMethodStatusExtended,
                 amount: 1000,
                 flow: 'credit',
-                isChargebeeEnabled: () => ChargebeeEnabled.INHOUSE_FORCED,
+                isChargebeeEnabled: () => ChargebeeEnabled.CHARGEBEE_FORCED,
                 paymentsApi: {
                     status: () => paymentMethodStatusExtended,
                 } as any as PaymentsApi,
@@ -527,9 +532,9 @@ it('should filter out internal payment methods', async () => {
         )
     );
 
-    await waitForNextUpdate();
-
-    expect(result.current.loading).toBe(false);
+    await waitFor(() => {
+        expect(result.current.loading).toBe(false);
+    });
     expect(result.current.savedMethods).toEqual([
         {
             ID: '2',
@@ -566,28 +571,32 @@ it('should filter out internal payment methods', async () => {
     ]);
 
     result.current.selectMethod('2');
-    expect(result.current.savedExternalSelectedMethod).toEqual({
-        ID: '2',
-        Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
-        Order: 499,
-        Autopay: Autopay.ENABLE,
-        Details: {
-            Name: 'Arthur Morgan',
-            ExpMonth: '12',
-            ExpYear: '2030',
-            ZIP: '12345',
-            Country: 'US',
-            Last4: '1234',
-            Brand: 'Visa',
-        },
-        External: MethodStorage.EXTERNAL,
+    await waitFor(() => {
+        expect(result.current.savedExternalSelectedMethod).toEqual({
+            ID: '2',
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            Order: 499,
+            Autopay: Autopay.ENABLE,
+            Details: {
+                Name: 'Arthur Morgan',
+                ExpMonth: '12',
+                ExpYear: '2030',
+                ZIP: '12345',
+                Country: 'US',
+                Last4: '1234',
+                Brand: 'Visa',
+            },
+            External: MethodStorage.EXTERNAL,
+        });
     });
     result.current.selectMethod('1');
-    expect(result.current.savedExternalSelectedMethod).toEqual(undefined);
+    await waitFor(() => {
+        expect(result.current.savedExternalSelectedMethod).toEqual(undefined);
+    });
 });
 
 it('should update methods when amount changes', async () => {
-    const { result, waitForNextUpdate, rerender } = renderHook(
+    const { result, rerender } = renderHook(
         ({ amount }) =>
             useMethods(
                 {
@@ -610,34 +619,37 @@ it('should update methods when amount changes', async () => {
             initialProps: {
                 amount: 1000,
             },
+            wrapper: componentsHookWrapper,
         }
     );
 
-    await waitForNextUpdate();
-
-    expect(result.current.loading).toBe(false);
+    await waitFor(() => {
+        expect(result.current.loading).toBe(false);
+    });
     expect(result.current.savedMethods).toEqual(paymentMethods);
 
     rerender({
         amount: 100,
     });
 
-    expect(result.current.newMethods).toEqual([
-        {
-            isSaved: false,
-            type: PAYMENT_METHOD_TYPES.CARD,
-            value: PAYMENT_METHOD_TYPES.CARD,
-        },
-        {
-            isSaved: false,
-            type: PAYMENT_METHOD_TYPES.CASH,
-            value: PAYMENT_METHOD_TYPES.CASH,
-        },
-    ]);
+    await waitFor(() => {
+        expect(result.current.newMethods).toEqual([
+            {
+                isSaved: false,
+                type: PAYMENT_METHOD_TYPES.CARD,
+                value: PAYMENT_METHOD_TYPES.CARD,
+            },
+            {
+                isSaved: false,
+                type: PAYMENT_METHOD_TYPES.CASH,
+                value: PAYMENT_METHOD_TYPES.CASH,
+            },
+        ]);
+    });
 });
 
 it('should get saved method by its ID', async () => {
-    const { result, waitForNextUpdate } = renderHook(() =>
+    const { result } = componentsHookRenderer(() =>
         useMethods(
             {
                 paymentMethodStatusExtended,
@@ -657,28 +669,28 @@ it('should get saved method by its ID', async () => {
         )
     );
 
-    await waitForNextUpdate();
-
-    expect(result.current.getSavedMethodByID('1')).toEqual({
-        ID: '1',
-        Type: PAYMENT_METHOD_TYPES.CARD,
-        Order: 500,
-        Autopay: Autopay.ENABLE,
-        Details: {
-            Name: 'Arthur Morgan',
-            ExpMonth: '12',
-            ExpYear: '2030',
-            ZIP: '12345',
-            Country: 'US',
-            Last4: '1234',
-            Brand: 'Visa',
-        },
-        External: MethodStorage.INTERNAL,
+    await waitFor(() => {
+        expect(result.current.getSavedMethodByID('1')).toEqual({
+            ID: '1',
+            Type: PAYMENT_METHOD_TYPES.CARD,
+            Order: 500,
+            Autopay: Autopay.ENABLE,
+            Details: {
+                Name: 'Arthur Morgan',
+                ExpMonth: '12',
+                ExpYear: '2030',
+                ZIP: '12345',
+                Country: 'US',
+                Last4: '1234',
+                Brand: 'Visa',
+            },
+            External: MethodStorage.INTERNAL,
+        });
     });
 });
 
 it('should set selected method', async () => {
-    const { result, waitForNextUpdate } = renderHook(() =>
+    const { result } = componentsHookRenderer(() =>
         useMethods(
             {
                 paymentMethodStatusExtended,
@@ -698,32 +710,36 @@ it('should set selected method', async () => {
         )
     );
 
-    await waitForNextUpdate();
-
-    expect(result.current.selectedMethod).toEqual({
-        isExpired: false,
-        isSaved: true,
-        paymentMethodId: '1',
-        type: PAYMENT_METHOD_TYPES.CARD,
-        value: '1',
+    await waitFor(() => {
+        expect(result.current.selectedMethod).toEqual({
+            isExpired: false,
+            isSaved: true,
+            paymentMethodId: '1',
+            type: PAYMENT_METHOD_TYPES.CARD,
+            value: '1',
+        });
     });
 
     result.current.selectMethod('card');
 
-    expect(result.current.selectedMethod).toEqual({
-        isSaved: false,
-        type: PAYMENT_METHOD_TYPES.CARD,
-        value: PAYMENT_METHOD_TYPES.CARD,
+    await waitFor(() => {
+        expect(result.current.selectedMethod).toEqual({
+            isSaved: false,
+            type: PAYMENT_METHOD_TYPES.CARD,
+            value: PAYMENT_METHOD_TYPES.CARD,
+        });
     });
 
     expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
     expect(result.current.isNewPaypal).toBe(false);
 
     result.current.selectMethod('paypal');
-    expect(result.current.selectedMethod).toEqual({
-        isSaved: false,
-        type: PAYMENT_METHOD_TYPES.PAYPAL,
-        value: PAYMENT_METHOD_TYPES.PAYPAL,
+    await waitFor(() => {
+        expect(result.current.selectedMethod).toEqual({
+            isSaved: false,
+            type: PAYMENT_METHOD_TYPES.PAYPAL,
+            value: PAYMENT_METHOD_TYPES.PAYPAL,
+        });
     });
 
     expect(result.current.savedInternalSelectedMethod).toEqual(undefined);
@@ -740,7 +756,7 @@ it('should update amount correctly even if the initialization is slow', async ()
         return paymentMethodStatusExtended;
     });
 
-    const { result, waitForNextUpdate, rerender } = renderHook(
+    const { result, rerender } = renderHook(
         ({ amount }) =>
             useMethods(
                 {
@@ -763,6 +779,7 @@ it('should update amount correctly even if the initialization is slow', async ()
             initialProps: {
                 amount: 0,
             },
+            wrapper: componentsHookWrapper,
         }
     );
 
@@ -771,9 +788,9 @@ it('should update amount correctly even if the initialization is slow', async ()
         amount: 10000,
     });
 
-    await waitForNextUpdate();
-
-    expect(result.current.loading).toBe(false);
+    await waitFor(() => {
+        expect(result.current.loading).toBe(false);
+    });
     expect(result.current.newMethods.length).toBe(4);
     expect(result.current.newMethods).toEqual([
         {

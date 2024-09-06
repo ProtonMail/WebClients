@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Loader, type ModalStateProps, Price, UpsellModal, useUpsellConfig } from '@proton/components/components';
-import { usePlans, useUser } from '@proton/components/hooks';
+import { usePreferredPlansMap, useUser } from '@proton/components/hooks';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
@@ -18,7 +18,7 @@ interface Props {
 
 const ComposerAssistantB2CUpsellModal = ({ modalProps }: Props) => {
     const [user, loadingUser] = useUser();
-    const [plans, loadingPlans] = usePlans();
+    const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
@@ -27,14 +27,14 @@ const ComposerAssistantB2CUpsellModal = ({ modalProps }: Props) => {
     });
     const upsellConfig = useUpsellConfig({ upsellRef, planIDs: { [PLANS.DUO]: 1 }, cycle: CYCLE.YEARLY });
 
-    if (loadingUser || loadingPlans) {
+    if (loadingUser || plansMapLoading) {
         return <Loader />;
     }
-    const duoPlan = plans?.plans.find((plan) => plan.Name === PLANS.DUO);
+    const duoPlan = plansMap[PLANS.DUO];
     const monthlyAmount = (duoPlan?.Pricing[CYCLE.YEARLY] || 0) / CYCLE.YEARLY;
 
     const price = (
-        <Price currency={user.Currency} suffix={c('Suffix').t`/month`} key="monthlyAmount">
+        <Price currency={duoPlan.Currency} suffix={c('Suffix').t`/month`} key="monthlyAmount">
             {monthlyAmount}
         </Price>
     );

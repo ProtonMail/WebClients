@@ -1,19 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
-import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { useAutomaticCurrency, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, type PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import {
     APPS,
     DEFAULT_CREDITS_AMOUNT,
-    DEFAULT_CURRENCY,
     MAX_BITCOIN_AMOUNT,
     MIN_BITCOIN_AMOUNT,
     MIN_CREDIT_AMOUNT,
@@ -35,6 +34,7 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
+    Price,
     PrimaryButton,
     useDebounceInput,
 } from '../../components';
@@ -48,16 +48,22 @@ import StyledPayPalButton from './StyledPayPalButton';
 const getCurrenciesI18N = () => ({
     EUR: c('Monetary unit').t`Euro`,
     CHF: c('Monetary unit').t`Swiss franc`,
-    USD: c('Monetary unit').t`Dollar`,
+    USD: c('Monetary unit').t`US Dollar`,
+    BRL: c('Monetary unit').t`Brazilian real`,
 });
 
-const CreditsModal = (props: ModalProps) => {
+type Props = {
+    status: PaymentMethodStatusExtended;
+} & ModalProps;
+
+const CreditsModal = ({ status, ...props }: Props) => {
     const { APP_NAME } = useConfig();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
-    const [currency, setCurrency] = useState<Currency>(DEFAULT_CURRENCY);
+    const preferredCurrency = useAutomaticCurrency();
+    const [currency, setCurrency] = useState<Currency>(preferredCurrency);
     const [amount, setAmount] = useState(DEFAULT_CREDITS_AMOUNT);
     const debouncedAmount = useDebounceInput(amount);
     const amountLoading = debouncedAmount !== amount;
@@ -73,6 +79,7 @@ const CreditsModal = (props: ModalProps) => {
         currency,
         billingPlatform: subscription?.BillingPlatform,
         chargebeeUserExists: user.ChargebeeUserExists,
+        paymentMethodStatusExtended: status,
         onChargeable: (operations, data) => {
             const run = async () => {
                 await operations.buyCredit();
@@ -100,11 +107,6 @@ const CreditsModal = (props: ModalProps) => {
         flow: 'credit',
         user,
     });
-
-    useEffect(() => {
-        const currency = subscription?.Currency ?? user.Currency ?? DEFAULT_CURRENCY;
-        setCurrency(currency);
-    }, [user, subscription]);
 
     if (loadingSubscription || loadingUser) {
         return <Loader />;
@@ -222,6 +224,8 @@ const CreditsModal = (props: ModalProps) => {
         chargebeeContext.enableChargebeeRef.current !== ChargebeeEnabled.INHOUSE_FORCED &&
         !isFreeSubscription(subscription);
 
+    const amountToCharge = amountLoading ? null : <Price currency={currency}>{debouncedAmount}</Price>;
+
     return (
         <ModalTwo
             className="credits-modal"
@@ -249,6 +253,7 @@ const CreditsModal = (props: ModalProps) => {
                     </Href>
                 </div>
                 <AmountRow
+                    status={status}
                     paymentMethodType={paymentFacade.selectedMethodType}
                     amount={amount}
                     onChangeAmount={setAmount}
@@ -263,6 +268,18 @@ const CreditsModal = (props: ModalProps) => {
                     triggersDisabled={amountLoading}
                     hasSomeVpnPlan={getHasSomeVpnPlan(subscription)}
                 />
+                {
+                    <p
+                        className="text-sm text-center color-weak min-h-custom"
+                        style={{
+                            '--min-h-custom': '1.5rem',
+                        }}
+                    >
+                        {amountToCharge
+                            ? c('Payments').jt`You will be charged ${amountToCharge} from your selected payment method.`
+                            : null}
+                    </p>
+                }
             </ModalTwoContent>
 
             <ModalTwoFooter>

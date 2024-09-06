@@ -1,8 +1,8 @@
 import type { ADDON_NAMES } from '@proton/shared/lib/constants';
 import { AddonKey, AddonLimit } from '@proton/shared/lib/constants';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/addons';
+import { getMaxValue, getPlanMaxIPs } from '@proton/shared/lib/helpers/subscription';
 import type { Cycle, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
-import { getMaxValue, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 export default function getAddonsPricing({

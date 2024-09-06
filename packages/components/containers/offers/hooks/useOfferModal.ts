@@ -1,18 +1,16 @@
 import { useState } from 'react';
 
 import { useModalState } from '@proton/components/components';
-import { useUser } from '@proton/components/hooks';
-import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
+import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
 import type { OfferConfig } from '../interface';
 import useFetchOffer from './useFetchOffer';
 
 const useOfferModal = (offerConfig: OfferConfig) => {
-    const [user] = useUser();
     const [offerModalProps, setOfferModalOpen, renderOfferModal] = useModalState();
     const [fetchOffer, setFetchOffer] = useState(false);
-    const defaultCurrency = user?.Currency || DEFAULT_CURRENCY;
+    const defaultCurrency = useAutomaticCurrency();
     const [currency, setCurrency] = useState<Currency>(defaultCurrency);
 
     const [offer, loadingOffer] = useFetchOffer({

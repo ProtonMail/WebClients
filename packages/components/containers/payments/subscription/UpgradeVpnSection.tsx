@@ -3,10 +3,10 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Loader } from '../../../components';
-import { useLoad, usePlans, useSubscription, useUser, useVPNServersCount } from '../../../hooks';
+import { useLoad, usePlans, usePreferredPlansMap, useSubscription, useUser, useVPNServersCount } from '../../../hooks';
 import { SettingsSectionWide } from '../../account';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
-import { getCurrency, resolveUpsellsToDisplay } from './helpers';
+import { resolveUpsellsToDisplay } from './helpers';
 import { UpsellPanels } from './panels';
 
 import './YourPlanSection.scss';
@@ -18,11 +18,11 @@ interface Props {
 const UpgradeVpnSection = ({ app }: Props) => {
     const [user] = useUser();
     const [plansResult, loadingPlans] = usePlans();
-    const plans = plansResult?.plans || [];
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [subscription, loadingSubscription] = useSubscription();
     const [openSubscriptionModal] = useSubscriptionModal();
     const [serversCount, serversCountLoading] = useVPNServersCount();
+    const { plansMap } = usePreferredPlansMap();
 
     useLoad();
 
@@ -32,12 +32,10 @@ const UpgradeVpnSection = ({ app }: Props) => {
         return <Loader />;
     }
 
-    const currency = getCurrency(user, subscription, plans);
     const upsells = resolveUpsellsToDisplay({
         app,
-        currency,
         subscription,
-        plans,
+        plansMap,
         freePlan,
         serversCount,
         openSubscriptionModal,

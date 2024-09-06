@@ -1,24 +1,17 @@
 import type { BillingAddress } from '@proton/components/payments/core';
+import { isRegionalCurrency } from '@proton/components/payments/core/helpers';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import {
     APPS,
     COUPON_CODES,
     CYCLE,
-    DEFAULT_CURRENCY,
     PLANS,
     VPN_PASS_PROMOTION_COUPONS,
     isFreeSubscription,
 } from '@proton/shared/lib/constants';
 import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
-import type {
-    Plan,
-    PlanIDs,
-    PlansMap,
-    Subscription,
-    SubscriptionModel,
-    UserModel,
-} from '@proton/shared/lib/interfaces';
+import type { Currency, PlanIDs, PlansMap, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { Audience, Renew } from '@proton/shared/lib/interfaces';
 
 export const getVPNPlanToUse = ({
@@ -49,16 +42,8 @@ export const getBundleProPlanToUse = ({ plansMap, planIDs }: { plansMap: PlansMa
     return PLANS.BUNDLE_PRO_2024;
 };
 
-export const getCurrency = (
-    user: UserModel | undefined,
-    subscription: Subscription | FreeSubscription | undefined,
-    plans: Plan[] | undefined
-) => {
-    return user?.Currency || subscription?.Currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
-};
-
-export const getIsVPNPassPromotion = (planName: string | undefined, coupon: string | undefined) => {
-    return VPN_PASS_PROMOTION_COUPONS.includes(coupon as any);
+export const getIsVPNPassPromotion = (coupon: string | undefined, currency: Currency | undefined) => {
+    return VPN_PASS_PROMOTION_COUPONS.includes(coupon as any) && (!currency || !isRegionalCurrency(currency));
 };
 
 export const getIsVpn2024Deal = (planName: PLANS, coupon: string | undefined) => {
