@@ -46,7 +46,7 @@ export const RecipientsDataItem = ({
 
     return (
         <div className="w-full">
-            <ul className="unstyled my-1 text-lg flex gap-3">
+            <ul className="unstyled my-1 flex gap-3">
                 {/*
                  * On receive, filter will remove all addresses that do not belong to user.
                  * On send, filter will remove all addresses that belong to user.
@@ -67,9 +67,11 @@ export const RecipientsDataItem = ({
 
                                     <Tooltip title={recipient}>
                                         {isBtcAddress ? (
-                                            <MiddleEllipsis text={recipient} className="w-2/3" />
+                                            <MiddleEllipsis text={recipient} className="w-2/3 text-lg" />
                                         ) : (
-                                            <span className="block text-left w-full text-ellipsis">{recipient}</span>
+                                            <span className="block text-left w-full text-ellipsis my-1 text-lg">
+                                                {recipient}
+                                            </span>
                                         )}
                                     </Tooltip>
                                 </div>
@@ -116,9 +118,9 @@ export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps &
     return (
         <div className="flex flex-row flex-nowrap items-center w-full">
             <div className="flex flex-column items-start grow mr-4">
-                <span className="block color-hint text-rg">{c('Wallet transaction').t`From`}</span>
+                <span className="block color-weak">{c('Wallet transaction').t`From`}</span>
 
-                <ul className="unstyled my-1 text-lg w-full">
+                <ul className="unstyled my-0 text-lg w-full">
                     <li className="flex flex-column my-1">
                         <Tooltip title={senderName}>
                             <span className="block w-full text-ellipsis">{senderName}</span>
@@ -136,7 +138,7 @@ export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps &
                         data-testid="modal:edit"
                         onClick={() => onClickEditSender()}
                     >
-                        <Icon name="pen" alt={c('Action').t`Edit`} />
+                        <Icon name="pencil" size={5} alt={c('Action').t`Edit`} />
                     </CoreButton>
                 </Tooltip>
             )}
@@ -161,7 +163,7 @@ export const DateDataItem = ({ tx }: TxDataListItemProps) => {
             <hr className="my-4" />
             <div className="flex flex-row items-center w-full">
                 <div className="flex flex-column items-start grow mr-4">
-                    <span className="block color-hint text-rg">{c('Wallet transaction').t`Date`}</span>
+                    <span className="block color-weak">{c('Wallet transaction').t`Date`}</span>
 
                     <Tooltip title={confirmedDate}>
                         <span className="block w-full text-lg my-1 text-ellipsis">{confirmedDate}</span>
@@ -178,7 +180,7 @@ export const StatusDataItem = ({ tx }: TxDataListItemProps) => {
     return (
         <div className="flex flex-row items-center w-full">
             <div className="flex flex-column items-start grow mr-4">
-                <span className="block color-hint text-rg">{c('Wallet transaction').t`Status`}</span>
+                <span className="block color-weak">{c('Wallet transaction').t`Status`}</span>
 
                 <span
                     className={clsx(
@@ -197,12 +199,14 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
     return (
         <div className="w-full max-h-custom overflow-auto">
             <div className="flex flex-row items-center">
-                <span className="block color-hint text-rg">{c('Wallet transaction').t`Private note to myself`}</span>
+                <span className="block color-weak">{c('Wallet transaction').t`Private note to myself`}</span>
             </div>
             <div className="w-full flex flex-row flex-nowrap items-center">
                 {tx.apiData?.Label ? (
                     <>
-                        <span className="text-pre-wrap text-break text-left text-lg grow mr-4">{tx.apiData.Label}</span>
+                        <span className="text-pre-wrap text-break text-left text-lg grow mr-4 my-1">
+                            {tx.apiData.Label}
+                        </span>
                         <Tooltip title={c('Action').t`Edit`}>
                             <CoreButton
                                 className="rounded-full bg-norm shrink-0"
@@ -211,7 +215,7 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
                                 data-testid="modal:edit"
                                 onClick={() => onClick(tx)}
                             >
-                                <Icon name="pen" alt={c('Action').t`Edit`} />
+                                <Icon name="pencil" size={5} alt={c('Action').t`Edit`} />
                             </CoreButton>
                         </Tooltip>
                     </>
@@ -239,9 +243,11 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
 
 export const MessageDataItem = ({ tx }: TxDataListItemProps) => {
     return (
-        <div className="w-full">
-            <span className="block color-hint text-rg">{c('Wallet transaction').t`Message to recipient`}</span>
-            <span className="text-pre-wrap text-left text-break text-lg">{tx.apiData?.Body}</span>
+        <div className="flex flex-row items-center w-full">
+            <div className="flex flex-column items-start grow mr-4">
+                <span className="block color-weak">{c('Wallet transaction').t`Message to recipient`}</span>
+                <span className="block w-full text-pre-wrap text-left text-break my-1 text-lg">{tx.apiData?.Body}</span>
+            </div>
         </div>
     );
 };
@@ -261,14 +267,12 @@ export const AmountDataItem = ({
 
     return (
         <div className="w-full">
-            <span className="block color-hint text-rg flex items-center gap-2">
+            <span className="color-weak flex items-center gap-2 my-1">
                 {label}
                 {infoTitle && <Info title={infoTitle} className="color-hint" />}
             </span>
-            <div className="flex flex-row flex-nowrap items-center mt-1 text-lg">
-                <div className="text-semibold">
-                    <Price unit={exchangeRate ?? settings.BitcoinUnit} satsAmount={amount ?? 0} />
-                </div>
+            <div className="flex flex-row flex-nowrap items-center text-lg my-1">
+                <Price unit={exchangeRate ?? settings.BitcoinUnit} satsAmount={amount ?? 0} />
             </div>
             {exchangeRate && (
                 <div className="color-weak">
@@ -291,19 +295,17 @@ export const LinkToBlockchainDataItem = ({ tx, network }: TxDataListItemProps & 
             <hr className="my-4" />
             <div className="flex w-full justify-center">
                 <span className="block color-hint text-rg"></span>
-                <p className="my-0 mt-1 text-lg">
-                    <ButtonLike
-                        as={Href}
-                        href={`${url}/${tx.networkData.txid}`}
-                        target="_blank"
-                        fullWidth
-                        shape="solid"
-                        color="norm"
-                        style={{ 'padding-left': '4rem', 'padding-right': '4rem' }}
-                    >
-                        {c('Link').t`View on blockchain`}
-                    </ButtonLike>
-                </p>
+                <ButtonLike
+                    as={Href}
+                    href={`${url}/${tx.networkData.txid}`}
+                    target="_blank"
+                    fullWidth
+                    shape="solid"
+                    color="norm"
+                    className="wallet-button"
+                >
+                    {c('Link').t`View on blockchain`}
+                </ButtonLike>
             </div>
         </>
     );
