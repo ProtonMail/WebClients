@@ -57,6 +57,11 @@ export const enum Steps {
     SetupOrg,
 }
 
+export type SubscriptionDataCycleMappingByCurrency = {
+    currency: Currency;
+    mapping: SubscriptionDataCycleMapping;
+}[];
+
 export interface SignupModelV2 {
     freePlan: FreePlanDefault;
     session: SessionData | undefined;
@@ -64,6 +69,7 @@ export interface SignupModelV2 {
     referralData: ReferralData | undefined;
     subscriptionData: SubscriptionData;
     subscriptionDataCycleMapping: SubscriptionDataCycleMapping;
+    subscriptionDataCycleMappingByCurrency: SubscriptionDataCycleMappingByCurrency;
     domains: string[];
     plans: Plan[];
     plansMap: PlansMap;

@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button';
+import { type FullPlansMap } from '@proton/components/payments/core';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -17,7 +18,6 @@ import {
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import {
     getHasConsumerVpnPlan,
     getIsB2BAudienceFromPlan,
@@ -74,6 +74,7 @@ import {
 import type { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
 import VpnEnterpriseAction from './VpnEnterpriseAction';
+import { notHigherThanAvailableOnBackend } from './payment';
 
 const defaultUpsellCycleB2C = CYCLE.TWO_YEARS;
 const defaultUpsellCycleB2B = CYCLE.YEARLY;
@@ -141,7 +142,6 @@ type GetUpsellArgs = {
     freePlan: FreePlanDefault;
     plan: PLANS;
     plansMap: { [key in PLANS]: Plan };
-    currency: Currency;
     app: APP_NAMES;
     upsellPath: DASHBOARD_UPSELL_PATHS;
     serversCount: VPNServersCountData;
@@ -175,7 +175,6 @@ const getUpsell = ({
     plan,
     plansMap,
     serversCount,
-    currency,
     upsellPath,
     freePlan,
     app,
@@ -185,7 +184,7 @@ const getUpsell = ({
     const fullPlan = plansMap[plan];
     const shortPlan = getShortPlan(plan, plansMap, { vpnServers: serversCount, freePlan });
 
-    if (!shortPlan) {
+    if (!shortPlan || !fullPlan) {
         return null;
     }
 
@@ -200,7 +199,13 @@ const getUpsell = ({
         ? defaultUpsellCycleB2B
         : defaultUpsellCycleB2C;
 
-    const cycle = customCycle ?? defaultCycleForSelectedAudience;
+    const cycle = notHigherThanAvailableOnBackend(
+        { [plan]: 1 },
+        plansMap,
+        customCycle ?? defaultCycleForSelectedAudience
+    );
+
+    const currency = fullPlan.Currency;
 
     return {
         plan,
@@ -212,6 +217,7 @@ const getUpsell = ({
         features: (upsellFields.features ?? shortPlan.features).filter((item) => isTruthy(item)),
         onUpgrade: () => {},
         otherCtas: [],
+        currency,
         ...upsellFields,
     };
 };
@@ -365,7 +371,6 @@ const getDuoUpsell = ({
     plansMap,
     freePlan,
     openSubscriptionModal,
-    currency,
     app,
     serversCount,
     ...rest
@@ -391,7 +396,6 @@ const getDuoUpsell = ({
         plan: PLANS.DUO,
         plansMap,
         freePlan,
-        currency,
         serversCount,
         app,
         upsellPath: DASHBOARD_UPSELL_PATHS.DUO,
@@ -414,7 +418,6 @@ const getFamilyUpsell = ({
     plansMap,
     freePlan,
     openSubscriptionModal,
-    currency,
     app,
     serversCount,
     ...rest
@@ -440,7 +443,6 @@ const getFamilyUpsell = ({
         plan: PLANS.FAMILY,
         plansMap,
         freePlan,
-        currency,
         serversCount,
         app,
         upsellPath: DASHBOARD_UPSELL_PATHS.FAMILY,
@@ -594,7 +596,7 @@ const hasOnePlusSubscription = (subscription: Subscription) => {
 export const resolveUpsellsToDisplay = ({
     app,
     subscription,
-    plans,
+    plansMap,
     serversCount,
     freePlan,
     canPay,
@@ -603,9 +605,8 @@ export const resolveUpsellsToDisplay = ({
     ...rest
 }: {
     app: APP_NAMES;
-    currency: Currency;
     subscription?: Subscription;
-    plans: Plan[];
+    plansMap: FullPlansMap;
     freePlan: FreePlanDefault;
     serversCount: VPNServersCountData;
     canPay?: boolean;
@@ -621,7 +622,7 @@ export const resolveUpsellsToDisplay = ({
 
         const upsellsPayload = {
             app,
-            plansMap: toMap(plans, 'Name'),
+            plansMap,
             hasVPN: getHasConsumerVpnPlan(subscription),
             serversCount,
             freePlan,

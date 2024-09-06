@@ -11,6 +11,7 @@ import {
     useLastSubscriptionEnd,
     useLoad,
     useModalState,
+    usePaymentStatus,
     usePlans,
     useSubscription,
     useSubscriptionModal,
@@ -59,23 +60,24 @@ import {
 import { getMonths } from '@proton/components/containers/payments/SubscriptionsSection';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
+import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/components/payments/core';
 import type { PLANS } from '@proton/shared/lib/constants';
 import { CURRENCIES, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, Plan, PlansMap, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import type { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getCurrency } from './helpers';
 import type { Eligibility, PlanCombinationWithDiscount } from './subscriptionEligbility';
 import { getEligibility } from './subscriptionEligbility';
 
 const getParameters = (
     search: string,
-    plansMap: PlansMap,
     plans: Plan[],
     subscription: Subscription,
-    user: UserModel
+    user: UserModel,
+    getPreferredCurrency: ReturnType<typeof useCurrencies>['getPreferredCurrency'],
+    paymentStatus: PaymentMethodStatusExtended
 ) => {
     const params = new URLSearchParams(search);
 
@@ -102,16 +104,29 @@ const getParameters = (
     const parsedCurrency =
         currencyParam && CURRENCIES.includes(currencyParam as any) ? (currencyParam as Currency) : undefined;
 
+    const plansMap = getPlansMap(
+        plans,
+        getPreferredCurrency({
+            paramCurrency: parsedCurrency,
+            user,
+            subscription,
+            plans,
+            status: paymentStatus,
+        }),
+        true
+    );
     const plan = plansMap?.[planName as PLANS];
 
     return {
         plan,
         coupon,
         cycle: parsedCycle || subscription?.Cycle || DEFAULT_CYCLE,
-        currency: parsedCurrency || getCurrency(user, subscription, plans),
+        // todo: add status
+        currency: parsedCurrency,
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: type === 'offer' || edit === 'disable',
         disableCycleSelector: edit === 'enable' ? false : type === 'offer' || Boolean(offer),
+        plansMap,
     };
 };
 
@@ -192,6 +207,8 @@ const AutomaticSubscriptionModal = () => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const [unavailableModalProps, setUnavailableModal, renderUnavailableModal] = useModalState();
     const [promotionAppliedProps, setPromotionAppliedModal, renderPromotionAppliedModal] = useModalState();
+    const { getPreferredCurrency } = useCurrencies();
+    const [paymentStatus, loadingPaymentStatus] = usePaymentStatus();
 
     useLoad();
 
@@ -202,20 +219,16 @@ const AutomaticSubscriptionModal = () => {
             loadingPlans ||
             loadingSubscription ||
             loadingModal ||
-            loadingLastSubscriptionEnd
+            loadingLastSubscriptionEnd ||
+            loadingPaymentStatus ||
+            !paymentStatus
         ) {
             return;
         }
 
-        const plansMap = toMap(plans, 'Name') as PlansMap;
+        const { plan, currency, cycle, coupon, step, disablePlanSelection, disableCycleSelector, plansMap } =
+            getParameters(location.search, plans, subscription, user, getPreferredCurrency, paymentStatus);
 
-        const { plan, currency, cycle, coupon, step, disablePlanSelection, disableCycleSelector } = getParameters(
-            location.search,
-            plansMap,
-            plans,
-            subscription,
-            user
-        );
         if (!plan) {
             return;
         }

@@ -158,7 +158,6 @@ describe('Payment', () => {
                 paypal={{}}
                 paypalCredit={{}}
                 cardFieldStatus={cardFieldStatus}
-                paymentMethods={paymentMethods}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
@@ -174,6 +173,7 @@ describe('Payment', () => {
                 paymentComponentLoaded={jest.fn()}
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
+                paymentStatus={undefined}
             />
         );
     });
@@ -191,7 +191,6 @@ describe('Payment', () => {
                 paypal={{}}
                 paypalCredit={{}}
                 cardFieldStatus={cardFieldStatus}
-                paymentMethods={paymentMethods}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
@@ -207,6 +206,7 @@ describe('Payment', () => {
                 paymentComponentLoaded={jest.fn()}
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
+                paymentStatus={undefined}
             />
         );
 
@@ -228,7 +228,6 @@ describe('Payment', () => {
                 paypal={{}}
                 paypalCredit={{}}
                 cardFieldStatus={cardFieldStatus}
-                paymentMethods={paymentMethods}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
@@ -244,6 +243,7 @@ describe('Payment', () => {
                 paymentComponentLoaded={jest.fn()}
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
+                paymentStatus={undefined}
             />
         );
 
@@ -301,7 +301,6 @@ describe('Payment', () => {
                 paypal={{}}
                 paypalCredit={{}}
                 cardFieldStatus={cardFieldStatus}
-                paymentMethods={paymentMethods}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
@@ -317,6 +316,7 @@ describe('Payment', () => {
                 paymentComponentLoaded={jest.fn()}
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
+                paymentStatus={undefined}
             />
         );
 
@@ -369,7 +369,6 @@ describe('Payment', () => {
                 paypal={{}}
                 paypalCredit={{}}
                 cardFieldStatus={cardFieldStatus}
-                paymentMethods={paymentMethods}
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
@@ -385,6 +384,7 @@ describe('Payment', () => {
                 paymentComponentLoaded={jest.fn()}
                 isChargebeeEnabled={() => ChargebeeEnabled.INHOUSE_FORCED}
                 user={undefined}
+                paymentStatus={undefined}
             />
         );
 

@@ -33,10 +33,10 @@ import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getIsB2BAudienceFromPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
+import { getIsB2BAudienceFromPlan, getIsVpnPlan, isTaxInclusive } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
-import { Audience, isBilledUser, isTaxInclusive } from '@proton/shared/lib/interfaces';
+import { Audience, isBilledUser } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -498,11 +498,10 @@ const AccountStepPayment = ({
                         <RightPlanSummary
                             cycle={options.cycle}
                             title={summaryPlan.title}
-                            price={getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth, '')}
+                            price={getSimplePriceString(options.currency, currentCheckout.withDiscountPerMonth)}
                             regularPrice={getSimplePriceString(
                                 options.currency,
-                                currentCheckout.withoutDiscountPerMonth,
-                                ''
+                                currentCheckout.withoutDiscountPerMonth
                             )}
                             addons={
                                 <RightPlanSummaryAddons

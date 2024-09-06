@@ -18,6 +18,7 @@ import type { CheckSubscriptionData, PaymentsVersion } from '@proton/shared/lib/
 import type { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import type { PaymentProcessorType } from '../react-extensions/interface';
+import { DEFAULT_TAX_BILLING_ADDRESS } from './billing-address';
 import type { PAYMENT_TOKEN_STATUS } from './constants';
 import { PAYMENT_METHOD_TYPES } from './constants';
 
@@ -116,15 +117,6 @@ export interface PaymentTokenResult {
 
 export type PlainPaymentMethodType = `${PAYMENT_METHOD_TYPES}`;
 
-export type BillingAddress = {
-    CountryCode: string;
-    State?: string | null;
-};
-
-export type BillingAddressProperty = {
-    BillingAddress: BillingAddress;
-};
-
 export type ChargeablePaymentParameters = Partial<V5PaymentToken> &
     AmountAndCurrency & {
         type:
@@ -165,7 +157,7 @@ export interface PaymentMethodStatus {
 }
 
 export interface PaymentMethodStatusExtended {
-    CountryCode?: string | null;
+    CountryCode: string;
     State?: string | null;
     VendorStates: PaymentMethodStatus;
 }
@@ -182,6 +174,7 @@ export function extendStatus(status: PaymentMethodStatus | PaymentMethodStatusEx
     if (!isPaymentMethodStatusExtended(status)) {
         return {
             VendorStates: status,
+            CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
         };
     }
 
@@ -418,6 +411,10 @@ export type RequestOptions = {
 export type MultiCheckOptions = {
     cached?: boolean;
 } & RequestOptions;
+
+export type GetPlansData = {
+    currency?: Currency;
+};
 
 export interface PaymentsApi {
     checkWithAutomaticVersion: (

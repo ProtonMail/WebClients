@@ -2,21 +2,19 @@ import { useRef, useState } from 'react';
 
 import { addMonths } from 'date-fns';
 
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { isSubscriptionUnchanged } from '@proton/components/containers/payments/helper';
 import { type CheckSubscriptionData, type PaymentsVersion, getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 import { type Api, ChargebeeEnabled, type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { useApi, useConfig, usePlans, useSubscription } from '../../hooks';
+import { useApi, useConfig, usePreferredPlansMap, useSubscription } from '../../hooks';
 import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
-import { useChargebeeKillSwitch } from '../client-extensions/useChargebeeKillSwitch';
 import {
     type CheckWithAutomaticOptions,
+    DEFAULT_TAX_BILLING_ADDRESS,
     type MultiCheckOptions,
     type MultiCheckSubscriptionData,
     type PaymentMethodStatus,
@@ -27,16 +25,12 @@ import {
     isCheckWithAutomaticOptions,
     isPaymentMethodStatusExtended,
 } from '../core';
+import { queryPaymentMethodStatus } from '../core/api';
 
 const checkSubscription = (data: CheckSubscriptionData, version: PaymentsVersion) => ({
     url: `payments/${version}/subscription/check`,
     method: 'post',
     data,
-});
-
-const queryPaymentMethodStatus = (version: PaymentsVersion) => ({
-    url: `payments/${version}/status`,
-    method: 'get',
 });
 
 export const useReportRoutingError = () => {
@@ -135,7 +129,6 @@ export const usePaymentsApi = (
 } => {
     const regularApi = useApi();
     const apiHook = apiOverride ?? regularApi;
-    const { chargebeeKillSwitch } = useChargebeeKillSwitch();
     const chargebeeEnabledCache = useChargebeeEnabledCache();
     const { APP_NAME } = useConfig();
     const reportRoutingError = useReportRoutingError();
@@ -196,24 +189,7 @@ export const usePaymentsApi = (
                 return statusExtended('v4');
             }
 
-            if (chargebeeEnabled === ChargebeeEnabled.CHARGEBEE_FORCED) {
-                return statusExtended('v5');
-            }
-
-            try {
-                return await statusExtended('v5');
-            } catch (error) {
-                if (
-                    chargebeeKillSwitch({
-                        reason: 'status call failed',
-                        error,
-                    })
-                ) {
-                    return statusExtended('v4');
-                }
-
-                throw error;
-            }
+            return statusExtended('v5');
         };
 
         const checkV4 = async (
@@ -292,24 +268,7 @@ export const usePaymentsApi = (
                 });
             }
 
-            try {
-                return await checkV5(data, requestOptions, { system: 'chargebee', reason: 'default' });
-            } catch (error) {
-                if (
-                    chargebeeKillSwitch({
-                        reason: 'check call failed',
-                        data,
-                        error,
-                    })
-                ) {
-                    return checkV4(data, requestOptions, {
-                        reason: 'killswitch',
-                        system: 'inhouse',
-                    });
-                }
-
-                throw error;
-            }
+            return checkV5(data, requestOptions, { system: 'chargebee', reason: 'default' });
         };
 
         const multiCheck = (
@@ -389,8 +348,8 @@ export const usePaymentsApi = (
  * an optimistic result.
  */
 export const usePaymentsApiWithCheckFallback = () => {
-    const [plansResult] = usePlans();
     const [subscription] = useSubscription();
+    const { plansMap } = usePreferredPlansMap();
 
     const checkV5Fallback = (data: CheckSubscriptionData): SubscriptionCheckResponse | null => {
         const { Cycle, Currency, Plans } = data;
@@ -405,7 +364,6 @@ export const usePaymentsApiWithCheckFallback = () => {
             return null;
         }
 
-        const plansMap = toMap(plansResult?.plans, 'Name');
         const plan = plansMap[planName];
 
         const result: SubscriptionCheckResponse = {

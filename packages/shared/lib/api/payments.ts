@@ -14,7 +14,7 @@ import type {
     V5PaymentToken,
     WrappedCardPayment,
     WrappedPaypalPayment,
-} from '@proton/components/payments/core/interface';
+} from '@proton/components/payments/core';
 import { isTokenPaymentMethod, isV5PaymentToken } from '@proton/components/payments/core/interface';
 import type { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -210,8 +210,8 @@ export interface QueryPlansParams {
     Currency?: Currency;
 }
 
-export const queryPlans = (params?: QueryPlansParams, forceVersion?: PaymentsVersion) => ({
-    url: `payments/${forceVersion ?? paymentsVersion}/plans`,
+export const queryPlans = (params?: QueryPlansParams) => ({
+    url: `payments/${paymentsVersion}/plans`,
     method: 'get',
     params,
 });

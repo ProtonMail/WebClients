@@ -1,22 +1,25 @@
 import { c } from 'ttag';
 
 import {
-    FormValidationErrors,
+    type FormValidationErrors,
     chargebeeValidationErrorName,
     isMessageBusResponseFailure,
     paymentAttemptRefusedChargebeeErrorName,
 } from '@proton/chargebee/lib';
-import { Api } from '@proton/shared/lib/interfaces';
+import { type Api } from '@proton/shared/lib/interfaces';
 
-import { ChargebeeIframeEvents, ChargebeeIframeHandles } from '../../core';
+import { type ChargebeeIframeEvents, type ChargebeeIframeHandles } from '../../core';
 import { isPostalCode } from '../cardDetails';
 import { PAYMENT_METHOD_TYPES } from '../constants';
-import { ChargebeeCardParams, PaymentVerificatorV5, createPaymentTokenV5CreditCard } from '../createPaymentToken';
 import {
+    type ChargebeeCardParams,
+    type PaymentVerificatorV5,
+    createPaymentTokenV5CreditCard,
+} from '../createPaymentToken';
+import type {
     AmountAndCurrency,
     ChargeableV5PaymentParameters,
     ChargebeeFetchedPaymentToken,
-    ChargebeeKillSwitch,
     ForceEnableChargebee,
     V5PaymentToken,
 } from '../interface';
@@ -60,7 +63,6 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
         private handles: ChargebeeIframeHandles,
         private events: ChargebeeIframeEvents,
         private verifyOnly: boolean,
-        private chargebeeKillSwitch: ChargebeeKillSwitch,
         private forceEnableChargebee: ForceEnableChargebee,
         public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
     ) {
@@ -99,11 +101,6 @@ export class ChargebeeCardPaymentProcessor extends PaymentProcessor<ChargebeeCar
             // if that's not a form validation error, then we have something unexpected,
             // and we need to switch back to the old flow
             if (!this.mustIgnoreError(error)) {
-                this.chargebeeKillSwitch({
-                    error,
-                    reason: 'Chargebee token creation failed',
-                    data: { ...chargebeeParams },
-                });
                 throw error;
             }
         }

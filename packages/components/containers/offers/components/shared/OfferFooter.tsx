@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 
 import { CurrencySelector, useUser } from '@proton/components';
+import { mainCurrencies } from '@proton/components/payments/core/helpers';
 
 import type { OfferProps } from '../../interface';
 import OfferDisableButton from './OfferDisableButton';
@@ -18,6 +19,9 @@ const OfferFooter = forwardRef<HTMLDivElement, Props>((props, ref) => {
             {user.isFree ? (
                 <div className="my-4 text-center offers-currency-selector">
                     <CurrencySelector
+                        // essentially, that's a placeholder. If/when you need the regional currencies in offers,
+                        // then it should be extended
+                        currencies={mainCurrencies}
                         id="offers-currency-selector"
                         mode="buttons"
                         currency={currency}
