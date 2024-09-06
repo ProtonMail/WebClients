@@ -1,5 +1,6 @@
 import { createContext, useContext, useMemo } from 'react';
 
+import type { AssistantSubscriptionStatus } from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
 import type { AssistantError } from '@proton/llm/lib/hooks/useAssistantErrors';
 import { AssistantErrorTypes } from '@proton/llm/lib/hooks/useAssistantErrors';
 import type { ASSISTANT_TYPE, ERROR_TYPE } from '@proton/shared/lib/assistant';
@@ -15,57 +16,29 @@ export interface GenerateAssistantResult {
 
 export type AssistantRunningActions = Record<string, () => void>;
 
-/**
- * Warning: this is a POC, so several parts of this code have been implemented using "shortcuts"
- * The first phase is to go in alpha, but the code will need to be improved before the beta.
- *
- * The generation is limited to one composer, so we assume only one generation will happen at the time.
- * Later, we will need to introduce a queue, identify the generation with the component that started it,
- * improve error state, etc...
- *
- * We also need a proper FF mechanism. It would be possible to have two features using the assistant on the same app.
- * In that case, we will have to start initializing the model, but depending on where the assistant is used, the hasAccessToAssistant
- * might be false.
- */
-export interface AssistantContextType {
+export interface AssistantHooksProps {
     /**
-     * All assistant instances opened in the context
+     * Config of the model used by the assistant
      */
-    openedAssistants: OpenedAssistant[];
+    assistantConfig?: AssistantConfig;
     /**
-     * Add assistant instance to the context
-     * `manual` has to be set to true when the user is manually opening the assistant.
-     * This will set the sticky value in the localstorage
+     * Initialise the assistant:
+     *  - Starts by downloading the model (if necessary)
+     *  - Then loads it on the GPU (if necessary)
      */
-    openAssistant: (assistantID: string, manual?: boolean) => void;
+    initAssistant?: () => void;
     /**
-     * Remove assistant instance from the context
-     * `manual` has to be set to true when the user is manually closing the assistant.
-     * This will set the sticky value in the localstorage
+     * The full model size, when downloading it
      */
-    closeAssistant: (assistantID: string, manual?: boolean) => void;
+    downloadModelSize: number;
     /**
-     * Set the status of an assistant in the context
+     * The model download progress in bytes, when downloading it
      */
-    setAssistantStatus: (assistantID: string, status: OpenedAssistantStatus) => void;
+    downloadReceivedBytes: number;
     /**
-     * Can the user see the assistant in the UI if:
-     * - Feature flag is on
-     * - AIAssistant setting not set to OFF
+     * Is the model downloading paused
      */
-    canShowAssistant: boolean;
-    /**
-     * Can the user run the assistant on his machine
-     */
-    hasCompatibleHardware: boolean;
-    /**
-     * Can the user run the assistant in the browser
-     */
-    hasCompatibleBrowser: boolean;
-    /**
-     * Can the user run the assistant (based on the plan and trial state)
-     */
-    canUseAssistant: boolean;
+    downloadPaused: boolean;
     /**
      * Has the user downloaded the model
      */
@@ -75,17 +48,13 @@ export interface AssistantContextType {
      */
     isModelDownloading: boolean;
     /**
-     * The model download progress in bytes, when downloading it
+     * Manually cancel the model download
      */
-    downloadReceivedBytes: number;
+    cancelDownloadModel?: () => void;
     /**
-     * The full model size, when downloading it
+     * Manually resume the model download
      */
-    downloadModelSize: number;
-    /**
-     * Is the model downloading paused
-     */
-    downloadPaused: boolean;
+    resumeDownloadModel?: () => void;
     /**
      * We are checking if user has all files in cache
      */
@@ -99,53 +68,81 @@ export interface AssistantContextType {
      */
     isModelLoadingOnGPU: boolean;
     /**
-     * Potential error that occurred while using the assistant
-     */
-    errors: AssistantError[];
-    /**
-     * Manually cancel the model download
-     */
-    cancelDownloadModel?: () => void;
-    /**
-     * Manually resume the model download
-     */
-    resumeDownloadModel?: () => void;
-    /**
      * Manually unload the model from the GPU
      */
     unloadModelOnGPU?: () => Promise<void>;
-    /**
-     * Initialise the assistant:
-     *  - Starts by downloading the model (if necessary)
-     *  - Then loads it on the GPU (if necessary)
-     */
-    initAssistant?: () => void;
-    /** TODO: Temporary fix - initAssistant copy
-     * Needed to call `initAssistant` on composer assistant inner modal submit
-     * In this case assistant context is still set to server mode so initAssistant was undefined.
-     * In order to call initAssistant with no side effects i made a duplicate
-     */
-    handleSettingChange?: () => void;
     /**
      * Generate a result from a prompt
      */
     generateResult: (generateAssistantResult: GenerateAssistantResult) => Promise<void>;
     /**
-     * Cancel the current running action (result generation)
-     */
-    cancelRunningAction: (assistantID: string) => void;
-    /**
      * All running actions in the assistant
      */
     runningActions: AssistantRunningActions;
     /**
-     * Config of the model used by the assistant
+     * Cancel the current running action (result generation)
      */
-    assistantConfig?: AssistantConfig;
+    cancelRunningAction: (assistantID: string) => void;
+    /**
+     * Remove assistant instance from the context
+     * `manual` has to be set to true when the user is manually closing the assistant.
+     * This will set the sticky value in the localstorage
+     */
+    closeAssistant: (assistantID: string, manual?: boolean) => void;
+    /**
+     * Reset all assistant states (download, load on GPU, running actions, etc...)
+     */
     resetAssistantState: () => void;
-    getIsStickyAssistant: (assistantID: string, canShowAssistant: boolean, canRunAssistant: boolean) => boolean;
+}
+
+export interface AssistantCommonProps {
+    /**
+     * All assistant instances opened in the context
+     */
+    openedAssistants: OpenedAssistant[];
+    /**
+     * Add assistant instance to the context
+     * `manual` has to be set to true when the user is manually opening the assistant.
+     * This will set the sticky value in the localstorage
+     */
+    openAssistant: (assistantID: string, manual?: boolean) => void;
+    /**
+     * Set the status of an assistant in the context
+     */
+    setAssistantStatus: (assistantID: string, status: OpenedAssistantStatus) => void;
+    /**
+     * Can the user see the assistant in the UI if:
+     * - Feature flag is on
+     * - AIAssistant setting not set to OFF
+     */
+    canShowAssistant: boolean;
+    /**
+     * Can the user run the assistant (based on the plan and trial state)
+     */
+    canUseAssistant: boolean;
+    /**
+     * Can the user run the assistant on his machine
+     */
+    hasCompatibleHardware: boolean;
+    /**
+     * Can the user run the assistant in the browser
+     */
+    hasCompatibleBrowser: boolean;
+    /**
+     * Runs the hardware compatibility check on demand
+     */
     handleCheckHardwareCompatibility: () => Promise<{ hasCompatibleBrowser: boolean; hasCompatibleHardware: boolean }>;
-    cleanSpecificErrors: (assistantID: string) => void;
+    /**
+     * Checks if the assistant can be opened by default in the composer
+     */
+    getIsStickyAssistant: (assistantID: string, canShowAssistant: boolean, canRunAssistant: boolean) => boolean;
+    /**
+     * Potential error that occurred while using the assistant
+     */
+    errors: AssistantError[];
+    /**
+     * Add an error that is assistant specific
+     */
     addSpecificError: ({
         assistantID,
         assistantType,
@@ -156,10 +153,42 @@ export interface AssistantContextType {
         errorType: ERROR_TYPE;
     }) => void;
     /**
+     * Remove error that is assistant specific
+     */
+    cleanSpecificErrors: (assistantID: string) => void;
+    /**
+     * Add an error that is applied to all assistants
+     */
+    addGlobalError: (assistantType: ASSISTANT_TYPE, errorType: ERROR_TYPE) => string;
+    /**
+     * Close errors that are applied to all assistants
+     */
+    cleanGlobalErrors: () => void;
+    /**
      * Feature flag that allows to use the logic to keep HTML formatting
      */
     canKeepFormatting: boolean;
+    /**
+     * Close the assistant. Warning use the one that is coming from assistant hooks instead, it is also cleaning running actions
+     */
+    closeAssistant: (
+        cancelRunningAction: (assistantId: string) => void
+    ) => (assistantID: string, manual?: boolean) => void;
+    /**
+     * All data related to the assistant subscription and trial state
+     */
+    assistantSubscriptionStatus: AssistantSubscriptionStatus;
 }
+
+export type AssistantContextType = AssistantHooksProps &
+    Omit<AssistantCommonProps, 'closeAssistant'> & {
+        /**
+         * Needed to call `initAssistant` on composer assistant inner modal submit
+         * In this case assistant context is still set to server mode so initAssistant was undefined.
+         * In order to call initAssistant with no side effects i made a duplicate
+         */
+        handleSettingChange?: () => void;
+    };
 
 export const AssistantContext = createContext<AssistantContextType | null>(null);
 
