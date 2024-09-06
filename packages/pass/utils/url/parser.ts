@@ -22,8 +22,6 @@ export type ParsedUrl = {
     isPrivate: boolean;
     /* matches `https:` protocol */
     isSecure: boolean;
-    /* is an unknown or reserved TLD, eg. localhost */
-    isUnknownOrReserved: boolean;
 };
 
 export const parseUrl = (url?: string): ParsedUrl => {
@@ -39,11 +37,10 @@ export const parseUrl = (url?: string): ParsedUrl => {
             isTopLevelDomain: false,
             isPrivate: false,
             isSecure: false,
-            isUnknownOrReserved: true,
         };
     }
 
-    const { domain, subdomain, domainWithoutSuffix, hostname, isPrivate, isIcann } = parse(url ?? '', {
+    const { domain, subdomain, domainWithoutSuffix, hostname, isPrivate } = parse(url ?? '', {
         allowIcannDomains: true,
         allowPrivateDomains: true,
         detectIp: true,
@@ -58,8 +55,6 @@ export const parseUrl = (url?: string): ParsedUrl => {
         isTopLevelDomain: !subdomain || subdomain === 'www',
         isPrivate: isPrivate ?? subdomain !== null,
         isSecure: check.url.startsWith('https://'),
-        isUnknownOrReserved:
-            (!isIcann && !isPrivate) || !!hostname?.match(/(\.?arpa|\.?onion|\.?example\.(com|org|net))$/),
     };
 };
 
