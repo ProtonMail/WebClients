@@ -165,7 +165,7 @@ function updateViewBounds(viewID: ViewID) {
 
     if (isWindows) {
         horizontalMargin = 16;
-        verticalMargin = 40;
+        verticalMargin = 39;
     } else if (isLinux) {
         verticalMargin = 24;
     }
@@ -261,11 +261,11 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
     }
 }
 
-export async function loadURL(viewID: ViewID, url: string) {
+export async function loadURL(viewID: ViewID, url: string, { force } = { force: false }) {
     const view = browserViewMap[viewID]!;
     const viewURL = await getViewURL(viewID);
 
-    if (isSameURL(viewURL, url)) {
+    if (isSameURL(viewURL, url) && !force) {
         viewLogger(viewID).info("loadURL already in given url", url);
         return;
     }
@@ -323,7 +323,7 @@ export async function reloadHiddenViews() {
     for (const [viewID, view] of Object.entries(browserViewMap)) {
         if (viewID !== currentViewID && view) {
             viewLogger(viewID as ViewID).info("Reloading hidden view");
-            loadPromises.push(loadURL(viewID as ViewID, await getViewURL(viewID as ViewID)));
+            loadPromises.push(loadURL(viewID as ViewID, await getViewURL(viewID as ViewID), { force: true }));
         }
     }
     await Promise.all(loadPromises);
