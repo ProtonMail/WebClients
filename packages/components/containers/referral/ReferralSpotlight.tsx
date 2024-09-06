@@ -3,8 +3,8 @@ import type { ReactElement, RefObject } from 'react';
 import { c } from 'ttag';
 
 import { SettingsLink, Spotlight } from '@proton/components';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { APPS, BRAND_NAME, DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
-import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import starImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
@@ -18,7 +18,7 @@ interface Props {
 }
 
 const ReferralSpotlight = ({ children, show, onDisplayed, anchorRef, user }: Props) => {
-    const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, user?.Currency || DEFAULT_CURRENCY);
+    const credits = getSimplePriceString(user?.Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
     return (
         <Spotlight
             show={show}

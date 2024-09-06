@@ -13,7 +13,7 @@ import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces
 
 import { Loader, Price, useModalTwoStatic } from '../../components';
 import { useModalState } from '../../components/modalTwo';
-import { useSubscription, useUser } from '../../hooks';
+import { usePaymentStatus, useSubscription, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import { openLinkInBrowser } from '../desktop/openExternalLink';
 import CreditsModal from './CreditsModal';
@@ -27,17 +27,22 @@ const CreditsSection = () => {
     const [subscription] = useSubscription();
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
     const [externalSubscriptionModal, showExternalSubscriptionModal] = useModalTwoStatic(InAppPurchaseModal);
+    const [paymentStatus, paymentStatusLoading] = usePaymentStatus();
 
     const [{ Credit, Currency, ChargebeeUser }] = useUser();
+
+    const openCreditModal = () => {
+        setCreditModalOpen(true);
+    };
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         if (searchParams.get('open') === 'credit-modal') {
-            setCreditModalOpen(true);
+            void openCreditModal();
         }
     }, [location.search]);
 
-    if (!subscription) {
+    if (!subscription || paymentStatusLoading) {
         return <Loader />;
     }
 
@@ -86,7 +91,7 @@ const CreditsSection = () => {
                                 return;
                             }
 
-                            setCreditModalOpen(true);
+                            void openCreditModal();
                         }}
                     >{c('Action').t`Add credits`}</Button>
                 </div>
@@ -94,7 +99,7 @@ const CreditsSection = () => {
             <div className="px-4 mb-4 flex justify-space-between">
                 <span className="text-bold" data-testid="unused-credits">{c('Credits').t`Available credits`}</span>
                 <span className="text-bold" data-testid="avalaible-credits">
-                    {ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED ? (
+                    {ChargebeeUser === ChargebeeEnabled.CHARGEBEE_FORCED && availableCredits > 0 ? (
                         <Price currency={Currency}>{availableCredits}</Price>
                     ) : (
                         availableCredits / 100
@@ -102,7 +107,7 @@ const CreditsSection = () => {
                 </span>
             </div>
             <hr />
-            {renderCreditModal && <CreditsModal {...creditModalProps} />}
+            {renderCreditModal && paymentStatus && <CreditsModal status={paymentStatus} {...creditModalProps} />}
             {externalSubscriptionModal}
         </SettingsSection>
     );

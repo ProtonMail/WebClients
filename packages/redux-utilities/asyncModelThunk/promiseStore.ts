@@ -1,5 +1,5 @@
 import { defaultExpiry, getFetchedEphemeral as defaultGetFetchedEphemeral, isNotStale } from './fetchedAt';
-import { CacheType, ReducerValue } from './interface';
+import { CacheType, type ReducerValue } from './interface';
 
 const context: { cache?: CacheType; fetchedEphemeral: ReturnType<typeof defaultGetFetchedEphemeral> } = {
     cache: CacheType.StaleRefetch,

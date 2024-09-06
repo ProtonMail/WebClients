@@ -2,10 +2,9 @@ import type { RenderResult } from '@testing-library/react';
 import { act, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import * as paymentsDataUtilsModule from '@proton/components/payments/client-extensions/data-utils';
 import type { PaymentMethodStatus } from '@proton/components/payments/core';
-import { PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
+import { DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import {
     addApiMock,
@@ -129,6 +128,27 @@ beforeEach(() => {
 });
 
 jest.mock('@proton/components/hooks/useElementRect');
+jest.mock('@proton/components/hooks/usePlans', () => ({
+    __esModule: true,
+    useGetPlans: jest.fn(),
+}));
+
+jest.mock('@proton/components/hooks/usePaymentStatus', () => ({
+    __esModule: true,
+    usePaymentStatus: jest.fn(),
+    useGetPaymentStatus: jest.fn().mockReturnValue(() => ({
+        CountryCode: 'US',
+        State: 'CA',
+        VendorStates: {
+            Card: true,
+            Paypal: true,
+            Apple: true,
+            Cash: true,
+            Bitcoin: true,
+        },
+    })),
+}));
+
 it('should render', async () => {
     let container;
     await act(async () => {

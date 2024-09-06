@@ -9,31 +9,33 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
+    useGetPaymentStatus,
+    useGetPlans,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
+import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
+import { isMainCurrency } from '@proton/components/payments/core';
+import { getPlansMap } from '@proton/components/payments/core/subscription';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { CYCLE, DEFAULT_CURRENCY, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { CURRENCIES, CYCLE, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, getPlanNameFromIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getHas2023OfferCoupon, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Currency, Plan } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
@@ -41,7 +43,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
 
-import type { SignupCacheResult } from '../signup/interfaces';
+import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
 import {
@@ -53,8 +55,8 @@ import {
 } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import type { SubscriptionDataCycleMapping } from '../single-signup-v2/helper';
-import { getPlanCardSubscriptionData } from '../single-signup-v2/helper';
-import type { SignupDefaults } from '../single-signup-v2/interface';
+import { getPlanCardSubscriptionData, swapCurrency } from '../single-signup-v2/helper';
+import type { SignupDefaults, SubscriptionDataCycleMappingByCurrency } from '../single-signup-v2/interface';
 import { Steps } from '../single-signup-v2/interface';
 import { getPaymentMethodsAvailable, getSignupTelemetryData } from '../single-signup-v2/measure';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
@@ -92,19 +94,41 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     const [error, setError] = useState<any>();
     const handleError = useErrorHandler();
     const location = useLocationWithoutLocale();
+    const getPaymentStatus = useGetPaymentStatus();
     const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
         flow: 'signup-vpn',
     });
     const activeBreakpoint = useActiveBreakpoint();
+
+    const getPlans = useGetPlans();
+
+    const { getPreferredCurrency } = useCurrencies('vpn');
 
     useMetaTags(metaTags);
 
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
     const [loadingChallenge, setLoadingChallenge] = useState(true);
 
-    const [signupParameters] = useState(() => {
-        const searchParams = new URLSearchParams(location.search);
-        const result = getSignupSearchParams(location.pathname, searchParams);
+    const getSearchParams = () => {
+        return new URLSearchParams(location.search);
+    };
+
+    const getSignupMode = (coupon: string | undefined, currency: Currency | undefined) => {
+        const searchParams = getSearchParams();
+
+        if (searchParams?.get('plan') && (searchParams?.get('cycle') || searchParams?.get('billing'))) {
+            return 'signup' as const;
+        }
+
+        if (getIsVPNPassPromotion(coupon, currency)) {
+            return 'vpn-pass-promotion' as const;
+        }
+
+        return 'pricing' as const;
+    };
+
+    const [signupParameters, setSignupParameters] = useState(() => {
+        const result = getSignupSearchParams(location.pathname, getSearchParams());
 
         const validValues = [
             'free',
@@ -119,22 +143,20 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
             delete result.preSelectedPlan;
         }
 
-        const mode = (() => {
-            if (searchParams.get('plan') && (searchParams.get('cycle') || searchParams.get('billing'))) {
-                return 'signup' as const;
-            }
-            if (getIsVPNPassPromotion(result.preSelectedPlan, result.coupon)) {
-                return 'vpn-pass-promotion' as const;
-            }
-            return 'pricing' as const;
-        })();
-
-        return {
-            ...result,
-            hideFreePlan: result.hideFreePlan || mode === 'vpn-pass-promotion',
-            mode,
-        };
+        return { ...result, mode: 'signup' as ReturnType<typeof getSignupMode> };
     });
+
+    const setMode = (mode: ReturnType<typeof getSignupMode>) => {
+        setSignupParameters((params) => ({
+            ...params,
+            mode,
+            hideFreePlan: params.hideFreePlan || mode === 'vpn-pass-promotion',
+        }));
+    };
+
+    const updateMode = (currency: Currency | undefined) => {
+        setMode(getSignupMode(signupParameters.coupon, currency));
+    };
 
     const measure = (data: TelemetryMeasurementData) => {
         const values = 'values' in data ? data.values : {};
@@ -174,91 +196,194 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
         }
     })();
 
+    const checkPlans = async (
+        plans: Plan[],
+        preferredCurrency: Currency,
+        subscriptionDataCycleMappingByCurrency: SubscriptionDataCycleMappingByCurrency,
+        withModel = false
+    ) => {
+        const vpnPlanName = PLANS.VPN2024;
+
+        let coupon = withModel ? model.subscriptionData.checkResult.Coupon?.Code : signupParameters.coupon;
+
+        const cycleData = getCycleData({
+            plan: vpnPlanName,
+            coupon,
+            currency: preferredCurrency,
+        });
+
+        const defaults: SignupDefaults = {
+            plan: vpnPlanName,
+            cycle: cycleData.upsellCycle,
+        };
+        const { plan, planIDs } = getPlanIDsFromParams(plans, preferredCurrency, signupParameters, defaults) || {};
+
+        const selectedPlanCurrency = plan.Currency;
+
+        const plansMap = getPlansMap(plans, selectedPlanCurrency, true);
+
+        const modelCycle = withModel ? model.subscriptionData.cycle : undefined;
+        const cycle = modelCycle || signupParameters.cycle || defaults.cycle;
+
+        const isVpnPassPromotion = getIsVPNPassPromotion(coupon, selectedPlanCurrency);
+
+        const getSubscriptionDataCycleMapping = async () => {
+            const originalCoupon = coupon;
+
+            // Remove this coupon since it's only valid for VPN+Pass bundle 12M
+            if (isVpnPassPromotion) {
+                coupon = undefined;
+            }
+
+            const sharedOptions = {
+                plansMap,
+                paymentsApi,
+                billingAddress: model.subscriptionData.billingAddress,
+            };
+
+            const subscriptionDataCycleMappingPromise = getPlanCardSubscriptionData({
+                ...sharedOptions,
+                planIDs: [planIDs, !planIDs[vpnPlanName] ? { [vpnPlanName]: 1 } : undefined].filter(isTruthy),
+                cycles: unique([cycle, ...cycleData.cycles]),
+                coupon,
+            });
+
+            let vpnPassPromotionMapping: SubscriptionDataCycleMapping = {};
+            if (cycle === CYCLE.YEARLY && isVpnPassPromotion) {
+                const vpnPassPromotionMappingPromise = getPlanCardSubscriptionData({
+                    ...sharedOptions,
+                    planIDs: [{ [PLANS.VPN_PASS_BUNDLE]: 1 }],
+                    cycles: [CYCLE.YEARLY],
+                    coupon: originalCoupon,
+                });
+                vpnPassPromotionMapping = await vpnPassPromotionMappingPromise;
+            }
+
+            const result = await subscriptionDataCycleMappingPromise;
+            if (vpnPassPromotionMapping[PLANS.VPN_PASS_BUNDLE]?.[CYCLE.YEARLY]) {
+                result[PLANS.VPN_PASS_BUNDLE] = {
+                    ...result[PLANS.VPN_PASS_BUNDLE],
+                    [CYCLE.YEARLY]: vpnPassPromotionMapping[PLANS.VPN_PASS_BUNDLE][CYCLE.YEARLY],
+                };
+            }
+
+            return result;
+        };
+
+        const updatedSubscriptionDataCycleMappingByCurrency = [...subscriptionDataCycleMappingByCurrency];
+        const subscriptionDataCycleMapping = await (async () => {
+            const savedMapping = subscriptionDataCycleMappingByCurrency.find(
+                (it) => it.currency === selectedPlanCurrency
+            );
+            if (savedMapping) {
+                return savedMapping.mapping;
+            }
+
+            const result = await getSubscriptionDataCycleMapping();
+
+            updatedSubscriptionDataCycleMappingByCurrency.push({
+                currency: selectedPlanCurrency,
+                mapping: result,
+            });
+
+            if (isMainCurrency(selectedPlanCurrency)) {
+                const otherMissingMainCurrencies = CURRENCIES.filter(
+                    (currency) => isMainCurrency(currency) && currency !== selectedPlanCurrency
+                );
+
+                for (const mainCurrency of otherMissingMainCurrencies) {
+                    updatedSubscriptionDataCycleMappingByCurrency.push({
+                        currency: mainCurrency,
+                        mapping: swapCurrency(result, mainCurrency),
+                    });
+                }
+            }
+
+            return result;
+        })();
+
+        const subscriptionData = (() => {
+            if (
+                cycle === CYCLE.YEARLY &&
+                isVpnPassPromotion &&
+                subscriptionDataCycleMapping[PLANS.VPN_PASS_BUNDLE]?.[cycle]
+            ) {
+                return subscriptionDataCycleMapping[PLANS.VPN_PASS_BUNDLE]?.[CYCLE.YEARLY];
+            }
+            return (
+                subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle] ||
+                subscriptionDataCycleMapping[vpnPlanName]?.[cycleData.upsellCycle]
+            );
+        })();
+
+        const selectedPlan = getPlanFromPlanIDs(plansMap, subscriptionData?.planIDs) || FREE_PLAN;
+
+        return {
+            plansMap,
+            subscriptionData,
+            cycleData,
+            subscriptionDataCycleMapping,
+            coupon,
+            selectedPlan,
+            updatedSubscriptionDataCycleMappingByCurrency,
+        };
+    };
+
+    const getSignupType = (
+        selectedPlan: Plan,
+        subscriptionData: SubscriptionData | undefined,
+        coupon: string | undefined
+    ) => {
+        return getIsVpn2024Deal(selectedPlan.Name as PLANS, subscriptionData?.checkResult.Coupon?.Code || coupon)
+            ? 'vpn2024'
+            : 'default';
+    };
+
+    const updatePlans = async (currency: Currency) => {
+        const plansResult = await getPlans({ api: silentApi });
+        const plans = plansResult.plans;
+
+        const preferredCurrency = getPreferredCurrency({
+            paramCurrency: currency,
+            status: model.paymentMethodStatusExtended,
+            plans: plans,
+        });
+
+        const {
+            plansMap,
+            subscriptionData,
+            cycleData,
+            subscriptionDataCycleMapping,
+            coupon,
+            selectedPlan,
+            updatedSubscriptionDataCycleMappingByCurrency,
+        } = await checkPlans(plans, preferredCurrency, model.subscriptionDataCycleMappingByCurrency, true);
+
+        updateMode(preferredCurrency);
+
+        setModelDiff({
+            plans,
+            plansMap,
+            subscriptionData,
+            cycleData,
+            subscriptionDataCycleMapping,
+            subscriptionDataCycleMappingByCurrency: updatedSubscriptionDataCycleMappingByCurrency,
+            signupType: getSignupType(selectedPlan, subscriptionData, coupon),
+        });
+    };
+
     useEffect(() => {
         const fetchDependencies = async () => {
             await startUnAuthFlow().catch(noop);
 
             void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const [{ Domains: domains }, paymentMethodStatusExtended, Plans, freePlan] = await Promise.all([
+            const [{ Domains: domains }, { plans, freePlan }] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
-                paymentsApi.statusExtendedAutomatic(),
-                silentApi<{ Plans: Plan[] }>(
-                    queryPlans(
-                        signupParameters.currency
-                            ? {
-                                  Currency: signupParameters.currency,
-                              }
-                            : undefined
-                    )
-                ).then(({ Plans }) => Plans),
-                getFreePlan({ api: silentApi }),
+                getPlans({ api: silentApi }),
             ]);
 
-            const plansMap = toMap(Plans, 'Name') as PlansMap;
-            const vpnPlanName = PLANS.VPN2024;
-
-            let coupon = signupParameters.coupon;
-
-            const cycleData = getCycleData({
-                plan: vpnPlanName,
-                coupon,
-            });
-
-            const defaults: SignupDefaults = {
-                plan: vpnPlanName,
-                cycle: cycleData.upsellCycle,
-            };
-
-            const cycle = signupParameters.cycle || defaults.cycle;
-            const currency = signupParameters.currency || Plans?.[0]?.Currency || DEFAULT_CURRENCY;
-            const { plan, planIDs } = getPlanIDsFromParams(Plans, signupParameters, defaults) || {};
-
-            const isVpnPassPromotion = getIsVPNPassPromotion(plan.Name, coupon);
-
-            const subscriptionDataCycleMapping = await (async () => {
-                const originalCoupon = coupon;
-
-                // Remove this coupon since it's only valid for VPN+Pass bundle 12M
-                if (isVpnPassPromotion) {
-                    coupon = undefined;
-                }
-
-                const sharedOptions = {
-                    plansMap,
-                    paymentsApi,
-                    currency,
-                    billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
-                };
-
-                const subscriptionDataCycleMappingPromise = getPlanCardSubscriptionData({
-                    ...sharedOptions,
-                    planIDs: [planIDs, !planIDs[vpnPlanName] ? { [vpnPlanName]: 1 } : undefined].filter(isTruthy),
-                    cycles: unique([cycle, ...cycleData.cycles]),
-                    coupon,
-                });
-
-                let vpnPassPromotionMapping: SubscriptionDataCycleMapping = {};
-                if (cycle === CYCLE.YEARLY && isVpnPassPromotion) {
-                    const vpnPassPromotionMappingPromise = getPlanCardSubscriptionData({
-                        ...sharedOptions,
-                        planIDs: [{ [PLANS.VPN_PASS_BUNDLE]: 1 }],
-                        cycles: [CYCLE.YEARLY],
-                        coupon: originalCoupon,
-                    });
-                    vpnPassPromotionMapping = await vpnPassPromotionMappingPromise;
-                }
-
-                const result = await subscriptionDataCycleMappingPromise;
-                if (vpnPassPromotionMapping[PLANS.VPN_PASS_BUNDLE]?.[CYCLE.YEARLY]) {
-                    result[PLANS.VPN_PASS_BUNDLE] = {
-                        ...result[PLANS.VPN_PASS_BUNDLE],
-                        [CYCLE.YEARLY]: vpnPassPromotionMapping[PLANS.VPN_PASS_BUNDLE][CYCLE.YEARLY],
-                    };
-                }
-
-                return result;
-            })();
+            const paymentMethodStatusExtended = await getPaymentStatus({ api: silentApi });
 
             void measure({
                 event: TelemetryAccountSignupEvents.pageLoad,
@@ -269,40 +394,37 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                 dimensions: getPaymentMethodsAvailable(paymentMethodStatusExtended.VendorStates),
             });
 
-            // Disable bitcoin in this signup because it doesn't handle signed in state
-            paymentMethodStatusExtended.VendorStates.Bitcoin = false;
+            const preferredCurrency = getPreferredCurrency({
+                status: paymentMethodStatusExtended,
+                plans,
+                paramCurrency: signupParameters.currency,
+                paramPlanName: signupParameters.preSelectedPlan,
+            });
 
-            const subscriptionData = (() => {
-                if (
-                    cycle === CYCLE.YEARLY &&
-                    isVpnPassPromotion &&
-                    subscriptionDataCycleMapping[PLANS.VPN_PASS_BUNDLE]?.[cycle]
-                ) {
-                    return subscriptionDataCycleMapping[PLANS.VPN_PASS_BUNDLE]?.[CYCLE.YEARLY];
-                }
-                return (
-                    subscriptionDataCycleMapping[plan.Name as PLANS]?.[cycle] ||
-                    subscriptionDataCycleMapping[vpnPlanName]?.[cycleData.upsellCycle]
-                );
-            })();
+            const mode = getSignupMode(signupParameters.coupon, preferredCurrency);
+            setMode(mode);
 
-            const selectedPlan = getPlanFromPlanIDs(plansMap, subscriptionData?.planIDs) || FREE_PLAN;
+            const {
+                plansMap,
+                subscriptionData,
+                cycleData,
+                subscriptionDataCycleMapping,
+                coupon,
+                selectedPlan,
+                updatedSubscriptionDataCycleMappingByCurrency,
+            } = await checkPlans(plans, preferredCurrency, model.subscriptionDataCycleMappingByCurrency);
 
             setModelDiff({
                 domains,
-                plans: Plans,
+                plans,
                 freePlan,
                 plansMap,
                 paymentMethodStatusExtended,
                 subscriptionData,
                 subscriptionDataCycleMapping,
+                subscriptionDataCycleMappingByCurrency: updatedSubscriptionDataCycleMappingByCurrency,
                 cycleData,
-                signupType: getIsVpn2024Deal(
-                    selectedPlan.Name as PLANS,
-                    subscriptionData?.checkResult.Coupon?.Code || coupon
-                )
-                    ? 'vpn2024'
-                    : 'default',
+                signupType: getSignupType(selectedPlan, subscriptionData, coupon),
             });
         };
 
@@ -433,6 +555,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         model={model}
                         setModel={setModel}
                         measure={measure}
+                        currencyUrlParam={signupParameters.currency}
                         onChallengeError={() => {
                             setError(new Error('Challenge error'));
                         }}
@@ -488,6 +611,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                                 );
                             }
                         }}
+                        onCurrencyChange={updatePlans}
                         hideFreePlan={signupParameters.hideFreePlan}
                         upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
                     />

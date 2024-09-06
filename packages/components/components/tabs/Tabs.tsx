@@ -99,7 +99,12 @@ export const Tabs = ({
     }, [variant, containerRef.current, selectedTabEl, tabs?.map((tab) => tab.title).join('')]);
 
     if (tabs?.length === 1) {
-        return <>{content}</>;
+        return (
+            <>
+                {gap}
+                {content}
+            </>
+        );
     }
 
     if (!tabs?.length) {

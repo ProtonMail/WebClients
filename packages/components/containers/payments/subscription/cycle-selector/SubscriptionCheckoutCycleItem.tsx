@@ -13,7 +13,7 @@ const SubscriptionCheckoutCycleItem = ({
     planIDs,
     loading,
 }: {
-    checkResult: SubscriptionCheckResponse | undefined;
+    checkResult: SubscriptionCheckResponse;
     plansMap: PlansMap;
     planIDs: PlanIDs;
     loading?: boolean;

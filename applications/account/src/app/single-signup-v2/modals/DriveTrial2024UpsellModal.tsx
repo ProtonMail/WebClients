@@ -23,7 +23,7 @@ const DriveTrial2024UpsellModal = ({ onConfirm, onContinue, onClose, currency, .
     const [loading, withLoading] = useLoading();
     const planName = PLAN_NAMES[PLANS.DRIVE];
 
-    const priceString = getSimplePriceString(currency, 100, '');
+    const priceString = getSimplePriceString(currency, 100);
     const price = (
         <span key="price" className="text-bold">
             {priceString}
@@ -76,7 +76,7 @@ const DriveTrial2024UpsellModal = ({ onConfirm, onContinue, onClose, currency, .
                                 <SaveLabel percent={80} />
                             </span>
                             <span className="text-strike text-sm color-weak">
-                                {getSimplePriceString(currency, 499, '')}
+                                {getSimplePriceString(currency, 499)}
                             </span>
                         </div>
                     </div>

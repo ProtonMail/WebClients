@@ -10,6 +10,7 @@ import { getSubscriptionState } from '@proton/testing/lib/initialReduxState';
 import {
     mockOrganizationApi,
     mockPlansApi,
+    mockStatusApi,
     mockSubscriptionApi,
     subscriptionDefaultResponse,
     userDefault,
@@ -28,6 +29,7 @@ beforeEach(() => {
     mockSubscriptionApi();
     mockOrganizationApi();
     mockPlansApi();
+    mockStatusApi();
 });
 
 it('should render', async () => {

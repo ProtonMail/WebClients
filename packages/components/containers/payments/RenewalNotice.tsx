@@ -114,7 +114,12 @@ const getSpecialLengthRenewNoticeText = ({
     plansMap: PlansMap;
     currency: Currency;
 }) => {
-    const { renewPrice: renewAmount, renewalLength } = getOptimisticRenewCycleAndPrice({ planIDs, plansMap, cycle })!;
+    const { renewPrice: renewAmount, renewalLength } = getOptimisticRenewCycleAndPrice({
+        planIDs,
+        plansMap,
+        cycle,
+        currency,
+    });
 
     if (renewalLength === CYCLE.YEARLY) {
         const first = c('vpn_2024: renew').ngettext(
@@ -162,7 +167,7 @@ const getRenewNoticeTextForLimitedCoupons = ({
         </Price>
     );
 
-    const { renewPrice } = getOptimisticRenewCycleAndPrice({ planIDs, plansMap, cycle });
+    const { renewPrice } = getOptimisticRenewCycleAndPrice({ planIDs, plansMap, cycle, currency });
     const months = getMonths(cycle);
 
     const price = (
