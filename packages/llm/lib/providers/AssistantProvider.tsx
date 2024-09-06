@@ -7,7 +7,6 @@ import { AssistantContext } from '../hooks/useAssistant';
 import useAssistantCommons from '../hooks/useAssistantCommons';
 import { useAssistantLocal } from '../hooks/useAssistantLocal';
 import { useAssistantServer } from '../hooks/useAssistantServer';
-import useOpenedAssistants from '../hooks/useOpenedAssistants';
 
 export interface AssistantProviderProps {
     children: ReactNode;
@@ -19,9 +18,8 @@ const AssistantProvider = ({ children }: AssistantProviderProps) => {
     const isAssistantLocal = assistantMode === AI_ASSISTANT_ACCESS.CLIENT_ONLY;
 
     const commonState = useAssistantCommons();
-    const openedAssistantsState = useOpenedAssistants({ cleanSpecificErrors: commonState.cleanSpecificErrors });
-    const assistantServerState = useAssistantServer({ commonState, openedAssistantsState });
-    const assistantLocalState = useAssistantLocal({ commonState, openedAssistantsState, active: isAssistantLocal });
+    const assistantServerState = useAssistantServer({ commonState });
+    const assistantLocalState = useAssistantLocal({ commonState, active: isAssistantLocal });
 
     /**
      * Use the local provider in case setting is CLIENT_ONLY
@@ -38,17 +36,12 @@ const AssistantProvider = ({ children }: AssistantProviderProps) => {
     return (
         <AssistantContext.Provider
             value={{
+                ...commonState,
                 ...assistantState,
-                // TODO: Temporary fix
                 // Needed to call initAssistant on composer assistant inner modal submit
                 // In this case assistant context is still set to server mode so initAssistant was undefined.
-                // in order to call initAssistant with no side effects i made a duplicate
+                // in order to call initAssistant with no side effects I made a duplicate
                 handleSettingChange: assistantLocalState.initAssistant,
-                getIsStickyAssistant: openedAssistantsState.getIsStickyAssistant,
-                handleCheckHardwareCompatibility: commonState.handleCheckHardwareCompatibility,
-                cleanSpecificErrors: commonState.cleanSpecificErrors,
-                addSpecificError: commonState.addSpecificError,
-                canKeepFormatting: commonState.canKeepFormatting,
             }}
         >
             {children}

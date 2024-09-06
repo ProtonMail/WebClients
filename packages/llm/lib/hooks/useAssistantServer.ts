@@ -2,7 +2,7 @@ import { useApi } from '@proton/components/hooks';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { utf8ArrayToString } from '@proton/crypto/lib/utils';
 import useStateRef from '@proton/hooks/useStateRef';
-import type { AssistantContextType, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
+import type { AssistantHooksProps, AssistantRunningActions, GenerateAssistantResult } from '@proton/llm/lib';
 import {
     ASSISTANT_SERVER_THROTTLE_TIMEOUT,
     PromptRejectedError,
@@ -11,7 +11,6 @@ import {
 } from '@proton/llm/lib';
 import { prepareServerAssistantInteraction } from '@proton/llm/lib/actions';
 import type useAssistantCommons from '@proton/llm/lib/hooks/useAssistantCommons';
-import type useOpenedAssistants from '@proton/llm/lib/hooks/useOpenedAssistants';
 import { ASSISTANT_TYPE, ERROR_TYPE, GENERATION_SELECTION_TYPE } from '@proton/shared/lib/assistant';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
@@ -20,35 +19,14 @@ import throttle from '@proton/utils/throttle';
 
 interface Props {
     commonState: ReturnType<typeof useAssistantCommons>;
-    openedAssistantsState: ReturnType<typeof useOpenedAssistants>;
 }
 
-export const useAssistantServer = ({
-    commonState,
-    openedAssistantsState,
-}: Props): Omit<
-    AssistantContextType,
-    | 'getIsStickyAssistant'
-    | 'handleCheckHardwareCompatibility'
-    | 'cleanSpecificErrors'
-    | 'addSpecificError'
-    | 'canKeepFormatting'
-> => {
+export const useAssistantServer = ({ commonState }: Props): AssistantHooksProps => {
     const api = useApi();
     const { sendRequestAssistantReport, sendAssistantErrorReport } = useAssistantTelemetry();
     const [runningActions, setRunningActions, runningActionsRef] = useStateRef<AssistantRunningActions>({});
 
-    const { openAssistant, setAssistantStatus, closeAssistant, openedAssistants } = openedAssistantsState;
-    const {
-        addSpecificError,
-        assistantSubscriptionStatus,
-        canShowAssistant,
-        canUseAssistant,
-        cleanSpecificErrors,
-        errors,
-        hasCompatibleBrowser,
-        hasCompatibleHardware,
-    } = commonState;
+    const { addSpecificError, assistantSubscriptionStatus, cleanSpecificErrors, closeAssistant } = commonState;
 
     const cleanRunningActionPromises = (assistantID: string) => {
         setRunningActions((runningActions) => {
@@ -220,8 +198,8 @@ export const useAssistantServer = ({
         cleanRunningActionPromises(assistantID);
     };
 
-    // TODO, remove set values once we removed the "duplicated" context for server and local modes
     return {
+        // Fake values that we need for the local mode
         downloadModelSize: 0,
         downloadPaused: false,
         downloadReceivedBytes: 0,
@@ -230,18 +208,14 @@ export const useAssistantServer = ({
         isModelDownloading: false,
         isModelLoadedOnGPU: true,
         isModelLoadingOnGPU: false,
-        cancelRunningAction,
-        canShowAssistant,
-        canUseAssistant,
-        closeAssistant: closeAssistant(cancelRunningAction),
-        errors,
+
+        // Generate related
         generateResult,
-        hasCompatibleBrowser,
-        hasCompatibleHardware,
-        openAssistant,
-        openedAssistants,
-        resetAssistantState: noop,
         runningActions,
-        setAssistantStatus,
+        cancelRunningAction,
+
+        closeAssistant: closeAssistant(cancelRunningAction),
+
+        resetAssistantState: noop,
     };
 };
