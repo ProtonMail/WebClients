@@ -161,6 +161,7 @@ const EditCardModal = ({
                     iframeHandles={paymentFacade.iframeHandles}
                     chargebeeCard={paymentFacade.chargebeeCard}
                     themeCode={paymentFacade.themeCode}
+                    initialCountryCode={paymentFacade.methods.status?.CountryCode}
                 />
             )}
             {enableRenewToggle && formFullyLoaded && (

@@ -86,7 +86,7 @@ export { useGetOrganizationKey, default as useOrganizationKey } from './useOrgan
 export { default as useIsPaidUserCookie } from './useIsPaidUserCookie';
 export { default as useIsProtonUserCookie } from './useIsProtonUserCookie';
 export { default as usePaymentMethods } from './usePaymentMethods';
-export { default as usePlans } from './usePlans';
+export { default as usePlans, useGetPlans } from './usePlans';
 export { default as useProtonDomains } from './useProtonDomains';
 export { default as usePreventLeave, PreventLeaveProvider } from './usePreventLeave';
 export { default as usePrimaryRecoverySecret } from './usePrimaryRecoverySecret';
@@ -128,3 +128,5 @@ export { default as useGroups, useGetGroups } from './useGroups';
 export { default as useIsSentinelUser } from './useIsSentinelUser';
 export { default as useGroupMemberships } from './useGroupMemberships';
 export * from './drive';
+export * from './usePaymentStatus';
+export * from './usePreferredPlansMap';

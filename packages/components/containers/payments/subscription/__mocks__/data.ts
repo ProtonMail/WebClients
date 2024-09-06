@@ -378,7 +378,8 @@ export const drivePlusUpsell = {
     ],
     otherCtas: [],
     price: {
-        value: 349,
+        value: 399, // the price 399 is price-per-month calculated fron 12-month cycle (not 24!).
+        // That's because the plans test data don't have the 24 cycle for drive plan
         currency: 'EUR',
     },
 };

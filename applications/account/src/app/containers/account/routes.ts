@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -12,7 +13,6 @@ import {
     PROTON_SENTINEL_NAME,
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
-import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { getIsRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import {
     getHasExternalMemberCapableB2BPlan,
@@ -64,7 +64,7 @@ export const getAccountAppRoutes = ({
     memberships: GroupMembershipReturn[] | undefined;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type } = user;
-    const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
+    const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
 
     // Used to determine if a user is on a family plan or a duo plan
     const isFamilyOrg = !!organization && getOrganizationDenomination(organization) === 'familyGroup';

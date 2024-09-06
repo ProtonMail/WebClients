@@ -1,16 +1,12 @@
 import type { ReactNode } from 'react';
 
-import humanPrice from '@proton/shared/lib/helpers/humanPrice';
+import { CurrencySymbols } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import './Price.scss';
+import { humanPrice } from './helper';
 
-const CURRENCIES = {
-    USD: '$',
-    EUR: '€',
-    CHF: 'CHF',
-};
+import './Price.scss';
 
 export interface Props {
     children: number | string;
@@ -45,63 +41,58 @@ const Price = ({
 }: Props) => {
     const value = typeof amount === 'string' ? amount : humanPrice(amount, divisor);
     const [integer, decimal] = `${value}`.split('.');
-    const p = typeof amount === 'number' && amount < 0 ? <span className="prefix">-</span> : null;
-    const v = (
+
+    const signElement = typeof amount === 'number' && amount < 0 ? <span className="prefix">-</span> : null;
+    const valueElement = (
         <span className={clsx(['amount', 'amount--large', amountClassName])} data-testid={dataTestId}>
             <span className="integer">{integer}</span>
             {decimal ? <span className="decimal">.{decimal}</span> : null}
         </span>
     );
-    const s = suffix ? (
+    const suffixElement = suffix ? (
         <span className={clsx(['suffix', suffixClassName, !isDisplayedInSentence && 'ml-1'])}>{suffix}</span>
     ) : null;
-    const pr = prefix ? <span className={clsx(['prefix', isDisplayedInSentence && 'mr-1'])}>{prefix}</span> : null;
+    const prefixElement = prefix ? (
+        <span className={clsx(['prefix', isDisplayedInSentence && 'mr-1'])}>{prefix}</span>
+    ) : null;
 
-    if (currency === 'CHF') {
-        return (
-            <span
-                className={clsx(['price', wrapperClassName, large && 'price--large', className])}
-                data-currency={currency}
-            >
-                {pr}
-                {p}
-                <span className={clsx(['currency', currencyClassName])}>CHF&nbsp;</span>
-                {v}
-                {s}
-            </span>
-        ); // -CHF 2/month
-    }
+    const currencyAndValueElement = (() => {
+        if (!currency) {
+            return valueElement;
+        }
 
-    if (currency === 'EUR') {
+        if (currency === 'EUR') {
+            return (
+                <>
+                    {valueElement}
+                    <span className={clsx(['currency', currencyClassName])}>&nbsp;€</span>
+                </>
+            );
+        }
+
+        const hasSpace = currency !== 'USD';
         return (
-            <span
-                className={clsx(['price', wrapperClassName, large && 'price--large', className])}
-                data-currency={currency}
-            >
-                {pr}
-                {p}
-                {v}
-                <span className={clsx(['currency', currencyClassName])}>&nbsp;€</span>
-                {s}
-            </span>
-        ); // -2 €/month
-    }
+            <>
+                <span className={clsx(['currency', currencyClassName])}>
+                    {CurrencySymbols[currency as Currency] || currency}
+                    {hasSpace && <>&nbsp;</>}
+                </span>
+                {valueElement}
+            </>
+        );
+    })();
+
     return (
         <span
             className={clsx(['price', wrapperClassName, large && 'price--large', className])}
             data-currency={currency}
         >
-            {pr}
-            {p}
-            {!!currency && (
-                <span className={clsx(['currency', currencyClassName])}>
-                    {CURRENCIES[currency as Currency] || currency}
-                </span>
-            )}
-            {v}
-            {s}
+            {prefixElement}
+            {signElement}
+            {currencyAndValueElement}
+            {suffixElement}
         </span>
-    ); // -$2/month
+    ); // -$2/month, -CHF 2/month, -BRL 2/month, -2 €/month
 };
 
 export default Price;

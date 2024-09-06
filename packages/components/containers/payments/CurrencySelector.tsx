@@ -2,32 +2,36 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
-import { CURRENCIES, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
+import { mainCurrencies } from '@proton/components/payments/core/helpers';
+import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { ButtonGroup, Option, SelectTwo } from '../../components';
 
-interface SelectTwoProps extends Omit<SelectProps<Currency>, 'onSelect' | 'children'> {
-    mode: 'select-two';
-    currency?: Currency;
+interface SharedProps {
     onSelect: (newCurrency: Currency) => void;
+    currency?: Currency;
+    currencies: readonly Currency[];
 }
 
-interface ButtonGroupProps {
+type SelectTwoProps = Omit<SelectProps<Currency>, 'onSelect' | 'children'> &
+    SharedProps & {
+        mode: 'select-two';
+    };
+
+type ButtonGroupProps = {
     mode: 'buttons';
-    onSelect: (newCurrency: Currency) => void;
-    currency?: Currency;
     loading?: boolean;
     className?: string;
     id?: string;
     disabled?: boolean;
-}
+} & SharedProps;
 
 type Props = ButtonGroupProps | SelectTwoProps;
 
 const CurrencySelector = (props: Props) => {
-    const options = CURRENCIES.map((c) => ({ text: c, value: c }));
+    const options = (props.currencies ?? mainCurrencies).map((c) => ({ text: c, value: c }));
 
     if (props.mode === 'buttons') {
         const { currency = DEFAULT_CURRENCY, onSelect, loading, ...rest } = props;

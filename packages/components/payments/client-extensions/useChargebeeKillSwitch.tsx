@@ -4,7 +4,7 @@ import { setPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { ChargebeeKillSwitch, ChargebeeKillSwitchData } from '../core';
+import { type ChargebeeKillSwitch, type ChargebeeKillSwitchData } from '../core';
 import { useChargebeeContext } from './useChargebeeContext';
 
 export const useChargebeeKillSwitch = () => {
