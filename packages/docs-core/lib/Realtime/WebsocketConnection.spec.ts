@@ -287,6 +287,30 @@ describe('WebsocketConnection', () => {
     })
   })
 
+  describe('isConnected', () => {
+    it('should return false if socket is not open', () => {
+      connection.socket = {
+        readyState: 0,
+        close: jest.fn(),
+      } as unknown as WebSocket
+
+      connection.state.didOpen()
+
+      expect(connection.isConnected()).toBe(false)
+    })
+
+    it('should return true if socket is open', () => {
+      connection.socket = {
+        readyState: 1,
+        close: jest.fn(),
+      } as unknown as WebSocket
+
+      connection.state.didOpen()
+
+      expect(connection.isConnected()).toBe(true)
+    })
+  })
+
   describe('getWebSocketServerURL', () => {
     test('should add docs-rts subdomain if there is no subdomain', () => {
       setWindowLocationHref('https://proton.me')

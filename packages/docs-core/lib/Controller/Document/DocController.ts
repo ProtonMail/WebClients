@@ -92,6 +92,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   abortWebsocketConnectionAttempt = false
   isDestroyed = false
   trashState?: DocTrashState
+  didTrashDocInCurrentSession = false
 
   public userAddress?: string
   readonly participantTracker = new DocParticipantTracker(this.eventBus)
@@ -861,27 +862,59 @@ export class DocController implements DocControllerInterface, InternalEventHandl
   }
 
   publishDocumentTrashStateUpdated() {
-    this.eventBus.publish({ type: DocControllerEvent.DocumentTrashStateUpdated, payload: undefined })
+    this.eventBus.publish<DocControllerEventPayloads['DocumentTrashStateUpdated']>({
+      type: DocControllerEvent.DocumentTrashStateUpdated,
+      payload: undefined,
+    })
   }
 
   public async trashDocument(): Promise<void> {
     this.setTrashState('trashing')
-    const node = await this.driveCompat.getNode(this.nodeMeta)
-    const parentLinkId = node.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
-    await this.driveCompat.trashDocument(this.docMeta, parentLinkId)
-    await this.refreshNodeAndDocMeta()
-    this.setTrashState('trashed')
-    this.reloadEditingLockedState()
+
+    try {
+      const node = await this.driveCompat.getNode(this.nodeMeta)
+      const parentLinkId = node.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
+      await this.driveCompat.trashDocument(this.docMeta, parentLinkId)
+      await this.refreshNodeAndDocMeta()
+
+      this.didTrashDocInCurrentSession = true
+
+      this.setTrashState('trashed')
+      this.reloadEditingLockedState()
+    } catch (error) {
+      PostApplicationError(this.eventBus, {
+        translatedError: c('Error').t`An error occurred while attempting to trash the document. Please try again.`,
+      })
+
+      this.logger.error(getErrorString(error) ?? 'Failed to trash document')
+
+      this.setTrashState('not_trashed')
+    }
   }
 
   public async restoreDocument(): Promise<void> {
     this.setTrashState('restoring')
-    const node = await this.driveCompat.getNode(this.nodeMeta)
-    const parentLinkId = node.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
-    await this.driveCompat.restoreDocument(this.docMeta, parentLinkId)
-    await this.refreshNodeAndDocMeta()
-    this.setTrashState('not_trashed')
-    this.reloadEditingLockedState()
+
+    try {
+      const node = await this.driveCompat.getNode(this.nodeMeta)
+      const parentLinkId = node.parentNodeId || (await this.driveCompat.getMyFilesNodeMeta()).linkId
+      await this.driveCompat.restoreDocument(this.docMeta, parentLinkId)
+
+      await this.refreshNodeAndDocMeta()
+
+      this.setTrashState('not_trashed')
+      this.reloadEditingLockedState()
+
+      void this.websocketService.reconnectToDocumentWithoutDelay(this.nodeMeta)
+    } catch (error) {
+      PostApplicationError(this.eventBus, {
+        translatedError: c('Error').t`An error occurred while attempting to restore the document. Please try again.`,
+      })
+
+      this.logger.error(getErrorString(error) ?? 'Failed to restore document')
+
+      this.setTrashState('trashed')
+    }
   }
 
   public openDocumentSharingModal(): void {
@@ -1007,6 +1040,7 @@ export class DocController implements DocControllerInterface, InternalEventHandl
 
   setTrashState(newState: DocTrashState): void {
     this.trashState = newState
+
     this.publishDocumentTrashStateUpdated()
   }
 

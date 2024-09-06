@@ -17,6 +17,7 @@ import type { SerializedEditorState } from 'lexical'
 export interface DocControllerInterface {
   userAddress?: string
   role: DocumentRole
+  didTrashDocInCurrentSession: boolean
 
   createInitialCommit(): Promise<Result<unknown>>
   createNewDocument(): Promise<void>
