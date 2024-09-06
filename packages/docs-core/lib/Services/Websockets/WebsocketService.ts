@@ -286,6 +286,11 @@ export class WebsocketService implements WebsocketServiceInterface {
       throw new Error('Connection not found')
     }
 
+    if (record.connection.isConnected()) {
+      this.logger.info(`Connection is already connected`)
+      return
+    }
+
     this.logger.info(`Reconnecting to document without delay`)
 
     await record.connection.connect()
