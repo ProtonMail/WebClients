@@ -83,6 +83,7 @@ enum DriveFeatureFlag {
     DriveDocs = 'DriveDocs',
     DriveDocsDisabled = 'DriveDocsDisabled',
     DocsAppSwitcher = 'DocsAppSwitcher',
+    DriveDocsSuggestionModeEnabled = 'DriveDocsSuggestionModeEnabled',
     // Bookmarks
     DriveShareURLBookmarking = 'DriveShareURLBookmarking',
     DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
