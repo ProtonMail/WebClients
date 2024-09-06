@@ -3,7 +3,7 @@ import { type CSSProperties, type FC, useEffect, useRef, useState } from 'react'
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
 import type { Maybe } from '@proton/pass/types';
-import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
+import { intoDomainImageHostname } from '@proton/pass/utils/url/is-valid-url';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -31,13 +31,12 @@ export const DomainIcon: FC<Props> = ({ className, status, style = {}, url, onSt
 
     useEffect(() => {
         const controller = new AbortController();
-        const { hostname, valid } = isValidURL(url);
-
-        if (!(valid && hostname)) return statusChange.current(ImageStatus.ERROR);
+        const domain = intoDomainImageHostname(url);
+        if (!domain) return statusChange.current(ImageStatus.ERROR);
 
         (async () => {
             statusChange.current(ImageStatus.LOADING);
-            const maybeSrc = await getDomainImage(hostname, controller.signal);
+            const maybeSrc = await getDomainImage(domain, controller.signal);
             if (maybeSrc) ensureMounted(() => setSrc(maybeSrc))();
         })().catch(noop);
 
