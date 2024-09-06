@@ -6,5 +6,6 @@ export interface WebsocketConnectionInterface {
   disconnect(code: number): void
   markAsReadyToAcceptMessages(): void
   canBroadcastMessages(): boolean
+  isConnected(): boolean
   broadcastMessage(data: Uint8Array, source: BroadcastSource): Promise<void>
 }

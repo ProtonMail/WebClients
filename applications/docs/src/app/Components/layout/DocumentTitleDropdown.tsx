@@ -93,7 +93,7 @@ const DocumentTitleDropdown = ({
 
       setIsDuplicating(true)
 
-      void controller.duplicateDocument().then(() => {
+      void controller.duplicateDocument().finally(() => {
         setIsDuplicating(false)
       })
     },
@@ -111,7 +111,7 @@ const DocumentTitleDropdown = ({
 
       setIsExportingPDF(true)
 
-      void controller.exportAndDownload('pdf').then(() => {
+      void controller.exportAndDownload('pdf').finally(() => {
         setIsExportingPDF(false)
       })
     },
@@ -139,7 +139,7 @@ const DocumentTitleDropdown = ({
 
       setIsMakingNewDocument(true)
 
-      void controller?.createNewDocument().then(() => {
+      void controller?.createNewDocument().finally(() => {
         setIsMakingNewDocument(false)
       })
     },
@@ -504,7 +504,7 @@ const DocumentTitleDropdown = ({
       {controller && (
         <TrashedDocumentModal
           documentTitle={title}
-          onOpenProtonDrive={() => openProtonDrive('/trash', '_self')}
+          onOpenProtonDrive={() => openProtonDrive('/', '_self')}
           controller={controller}
           trashedState={trashState}
         />
