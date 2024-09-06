@@ -693,6 +693,14 @@ describe('DocController', () => {
       await controller.trashDocument()
       expect(reloadEditingLockedState).toHaveBeenCalled()
     })
+
+    it('should set didTrashDocInCurrentSession to true', async () => {
+      expect(controller.didTrashDocInCurrentSession).toBe(false)
+
+      await controller.trashDocument()
+
+      expect(controller.didTrashDocInCurrentSession).toBe(true)
+    })
   })
 
   describe('restoreDocument', () => {
@@ -727,11 +735,21 @@ describe('DocController', () => {
       await controller.restoreDocument()
       expect(refreshNodeAndDocMeta).toHaveBeenCalled()
     })
+
     it('should reload editor locked state', async () => {
       const reloadEditingLockedState = jest.spyOn(controller, 'reloadEditingLockedState')
 
       await controller.restoreDocument()
       expect(reloadEditingLockedState).toHaveBeenCalled()
+    })
+
+    it('should reconnect socket', async () => {
+      controller.trashState = 'trashed'
+      const mock = (controller.websocketService.reconnectToDocumentWithoutDelay = jest.fn())
+
+      await controller.restoreDocument()
+
+      expect(mock).toHaveBeenCalled()
     })
   })
 

@@ -290,10 +290,10 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
                 .t`This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.`}
         </div>
         <div className="mt-4 flex gap-2">
-          <Button onClick={() => window.open(getAppHref('/', APPS.PROTONDOCS, getLocalID()), '_blank')}>
+          <Button onClick={() => window.open(getAppHref('/', APPS.PROTONDOCS, getLocalID()), '_self')}>
             {c('Action').t`Create new document`}
           </Button>
-          <Button color="norm" onClick={() => window.open(getAppHref('/', APPS.PROTONDRIVE, getLocalID()), '_blank')}>
+          <Button color="norm" onClick={() => window.open(getAppHref('/', APPS.PROTONDRIVE, getLocalID()), '_self')}>
             {c('Action').t`Open ${DRIVE_APP_NAME}`}
           </Button>
         </div>
