@@ -4,7 +4,7 @@ import { c } from 'ttag'
 import { Button } from '@proton/atoms/Button'
 import { CircleLoader } from '@proton/atoms/CircleLoader'
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components'
-import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 import type { DocTrashState } from 'packages/docs-shared'
 
 type TrashedDocumentModalProps = {
@@ -20,26 +20,53 @@ export function TrashedDocumentModal({
   onOpenProtonDrive,
   controller,
 }: TrashedDocumentModalProps) {
+  const { didTrashDocInCurrentSession } = controller
+
   return (
     <ModalTwo className="!rounded-t-xl" open={trashedState === 'trashed'}>
-      <ModalTwoHeader title="Document moved to trash" hasClose={false} />
-      <ModalTwoContent>{c('Info')
-        .t`"${documentTitle}" will stay in trash until you delete it permanently.`}</ModalTwoContent>
+      <ModalTwoHeader
+        title={didTrashDocInCurrentSession ? c('Info').t`Document moved to trash` : c('Info').t`Document is in trash`}
+        hasClose={false}
+      />
+      <ModalTwoContent>
+        {didTrashDocInCurrentSession
+          ? c('Info')
+              .t`"${documentTitle}" has been moved to the trash. It will stay there until you restore it or delete it permanently.`
+          : c('Info').t`"${documentTitle}" is in trash and will stay there until you delete it permanently.`}
+      </ModalTwoContent>
       <ModalTwoFooter>
         {controller && controller.role.isAdmin() && (
           <>
-            <Button
-              onClick={() => {
-                void controller.restoreDocument()
-              }}
-              className="flex items-center"
-            >
-              {c('Action').t`Undo`}
-              {trashedState === 'restoring' && <CircleLoader size="small" className="ml-2" />}
-            </Button>
-            <Button color="norm" onClick={onOpenProtonDrive}>
-              {c('Action').t`Open ${DRIVE_APP_NAME}`}
-            </Button>
+            {didTrashDocInCurrentSession ? (
+              <>
+                <Button
+                  onClick={() => {
+                    void controller.restoreDocument()
+                  }}
+                  className="flex items-center"
+                >
+                  {c('Action').t`Undo`}
+                  {trashedState === 'restoring' && <CircleLoader size="small" className="ml-2" />}
+                </Button>
+                <Button color="norm" onClick={onOpenProtonDrive}>
+                  {c('Action').t`Go to ${DRIVE_SHORT_APP_NAME}`}
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button onClick={onOpenProtonDrive}>{c('Action').t`Go to ${DRIVE_SHORT_APP_NAME}`}</Button>
+                <Button
+                  color="norm"
+                  onClick={() => {
+                    void controller.restoreDocument()
+                  }}
+                  className="flex items-center"
+                >
+                  {c('Action').t`Take out of trash`}
+                  {trashedState === 'restoring' && <CircleLoader size="small" className="ml-2" />}
+                </Button>
+              </>
+            )}
           </>
         )}
       </ModalTwoFooter>
