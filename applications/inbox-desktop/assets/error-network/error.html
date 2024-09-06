@@ -32,6 +32,10 @@
                 margin: 0 auto;
             }
 
+            #description {
+                max-width: 50ch;
+            }
+
             #button {
                 display: flex;
                 gap: 2rem;
@@ -43,6 +47,7 @@
                 border: solid thin #ccc;
                 background: transparent;
                 cursor: pointer;
+                color: inherit;
             }
 
             #button:hover {
@@ -61,7 +66,7 @@
     </head>
     <body>
         <div id="wrapper" aria-hidden="true" aria-live="assertive" aria-atomic="true">
-            <img id="spinner" src="./error-generic.svg" />
+            <img id="spinner" src="./error-network.svg" />
             <header id="header">
                 <h1 id="title"></h1>
                 <p id="description"></p>
@@ -93,8 +98,25 @@
                 window.location.href = buttonTarget;
             });
 
+            const maxCooldown = 300;
+            const retryCooldownList = [1, 2, 5, 10, 30, 60, 180, maxCooldown];
+
             buttonElement.style.display = "block";
             wrapperElement.removeAttribute("aria-hidden");
+
+            (async () => {
+                while (true) {
+                    await new Promise((resolve) => {
+                        const cooldown = retryCooldownList.length ? retryCooldownList.shift() : maxCooldown;
+                        setTimeout(resolve, cooldown * 1000);
+                    });
+
+                    try {
+                        const response = await fetch(buttonTarget);
+                        if (response.ok) buttonElement.click();
+                    } catch {}
+                }
+            })();
         </script>
     </body>
 </html>
