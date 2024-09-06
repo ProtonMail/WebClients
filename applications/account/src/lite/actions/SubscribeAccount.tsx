@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -23,6 +23,8 @@ import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitc
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { type PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import {
@@ -88,10 +90,28 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [organization, loadingOrganization] = useOrganization();
     const [error, setError] = useState({ title: '', message: '', error: '' });
+    const [paymentsStatus, setStatus] = useState<PaymentMethodStatusExtended>();
+    const { paymentsApi } = usePaymentsApi();
 
     const canEdit = canPay(user);
 
-    if (!organization || !subscription || loadingSubscription || loadingPlans || loadingOrganization) {
+    useEffect(() => {
+        async function run() {
+            const status = await paymentsApi.statusExtendedAutomatic();
+            setStatus(status);
+        }
+
+        void run();
+    }, []);
+
+    if (
+        !organization ||
+        !subscription ||
+        loadingSubscription ||
+        loadingPlans ||
+        loadingOrganization ||
+        !paymentsStatus
+    ) {
         return loader;
     }
 
@@ -295,6 +315,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout }: Props
                                 onSubscribed={handleSuccess}
                                 onUnsubscribed={handleSuccess}
                                 onCancel={handleClose}
+                                paymentsStatus={paymentsStatus}
                                 onCheck={(data) => {
                                     // If the initial check completes, it's handled by the container itself
                                     if (data.model.initialCheckComplete) {

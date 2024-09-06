@@ -1,1 +1,1 @@
-export { usePlans as default } from '@proton/account/plans/hooks';
+export { usePlans as default, useGetPlans } from '@proton/account/plans/hooks';

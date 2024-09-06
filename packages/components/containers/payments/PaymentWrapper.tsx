@@ -92,6 +92,7 @@ const PaymentWrapper = ({
             isChargebeeEnabled={isChargebeeEnabled}
             user={user}
             billingAddressStatus={billingAddressStatus}
+            paymentStatus={methods.status}
         />
     );
 };

@@ -17,9 +17,14 @@ import {
     isScribeAddon,
 } from '@proton/shared/lib/helpers/addons';
 import { setQuantity } from '@proton/shared/lib/helpers/planIDs';
-import { getVPNDedicatedIPs, hasVpnBusiness } from '@proton/shared/lib/helpers/subscription';
+import {
+    getMaxValue,
+    getPlanMaxIPs,
+    getVPNDedicatedIPs,
+    hasVpnBusiness,
+} from '@proton/shared/lib/helpers/subscription';
 import type { Audience, Currency, Cycle, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
-import { Renew, getMaxValue, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
+import { Renew } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Price } from '../../../components';

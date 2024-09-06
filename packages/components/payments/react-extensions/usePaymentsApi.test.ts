@@ -24,6 +24,11 @@ jest.mock('../client-extensions/useChargebeeKillSwitch', () => ({
     useChargebeeKillSwitch: jest.fn().mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(true) }),
 }));
 
+jest.mock('@proton/components/hooks/usePlans', () => ({
+    __esModule: true,
+    useGetPlans: jest.fn(),
+}));
+
 const getWrapper = (chargebeeEnabled?: ChargebeeEnabled) =>
     hookWrapper(withApi(), withConfig(), withPaymentContext(chargebeeEnabled));
 
@@ -96,35 +101,6 @@ describe('usePaymentsApi', () => {
         });
     });
 
-    it('should trigger kill switch when status failes for chargebee allowed user', async () => {
-        apiMock.mockRejectedValueOnce(new Error('status call failed in the unit test'));
-
-        const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
-        });
-
-        await expect(result.current.paymentsApi.statusExtendedAutomatic()).resolves.toEqual({
-            VendorStates: {
-                Apple: true,
-                Bitcoin: true,
-                Card: true,
-                InApp: false,
-                Paypal: true,
-                Cash: true, // the Cash property is synthetically added after fetching the status
-                // other props are converted from 0s and 1s to booleans
-            },
-        });
-        expect(apiMock).toHaveBeenCalledWith({
-            url: `payments/v5/status`,
-            method: 'get',
-        });
-        expect(apiMock).toHaveBeenCalledWith({
-            url: `payments/v4/status`,
-            method: 'get',
-        });
-        expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
-    });
-
     it('should not call v4 if kill switch was not triggered and returned false', async () => {
         apiMock.mockRejectedValueOnce(new Error('status call failed in the unit test'));
         mockUseChargebeeKillSwitch.mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(false) });
@@ -143,7 +119,8 @@ describe('usePaymentsApi', () => {
             (call) => call[0].url.includes('payments/v4/status') && call[0].method === 'get'
         );
         expect(wasV4Called).toBe(false);
-        expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
+        // not relevant after kill switch is removed
+        // expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
     });
 
     const getCheckSubscriptionData = (): CheckSubscriptionData => {
@@ -203,29 +180,6 @@ describe('usePaymentsApi', () => {
         });
     });
 
-    it('should trigger kill switch when check failes for chargebee allowed user', async () => {
-        apiMock.mockRejectedValueOnce(new Error('check call failed in the unit test'));
-        mockUseChargebeeKillSwitch.mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(true) });
-        const { result } = renderHook(() => usePaymentsApi(), {
-            wrapper: getWrapper(ChargebeeEnabled.CHARGEBEE_ALLOWED),
-        });
-
-        const data = getCheckSubscriptionData();
-        await result.current.paymentsApi.checkWithAutomaticVersion(data);
-        expect(apiMock).toHaveBeenCalledWith({
-            url: `payments/v5/subscription/check`,
-            method: 'post',
-            data,
-            silence: false,
-        });
-        expect(apiMock).toHaveBeenCalledWith({
-            url: `payments/v4/subscription/check`,
-            method: 'post',
-            data,
-        });
-        expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
-    });
-
     it('should not call v4 if kill switch was not triggered and returned false', async () => {
         apiMock.mockRejectedValueOnce(new Error('check call failed in the unit test'));
         mockUseChargebeeKillSwitch.mockReturnValue({ chargebeeKillSwitch: jest.fn().mockReturnValue(false) });
@@ -247,7 +201,8 @@ describe('usePaymentsApi', () => {
             (call) => call[0].url.includes('payments/v4/subscription/check') && call[0].method === 'post'
         );
         expect(wasV4Called).toBe(false);
-        expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
+        // not relevant after kill switch is removed
+        // expect(mockUseChargebeeKillSwitch).toHaveBeenCalled();
     });
 
     it('should return fallback value if it is available and if v5 check fails', async () => {

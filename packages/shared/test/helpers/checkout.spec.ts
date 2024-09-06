@@ -113,6 +113,7 @@ describe('should get checkout result', () => {
                     AmountDue: 999,
                     Cycle: CYCLE.MONTHLY,
                     Coupon: null,
+                    Currency: 'USD',
                 },
                 plansMap: {
                     [PLANS.VPN]: getPlan(vpnPlan),
@@ -132,6 +133,7 @@ describe('should get checkout result', () => {
             discountPerCycle: 0,
             discountPercent: 0,
             membersPerMonth: 999,
+            currency: 'USD',
         });
     });
 
@@ -146,6 +148,7 @@ describe('should get checkout result', () => {
                     AmountDue: 1199,
                     Cycle: CYCLE.MONTHLY,
                     Coupon: null,
+                    Currency: 'USD',
                 },
                 plansMap: {
                     [PLANS.VPN]: {
@@ -185,6 +188,7 @@ describe('should get checkout result', () => {
             discountPerCycle: 0,
             discountPercent: 0,
             membersPerMonth: 1199,
+            currency: 'USD',
         });
     });
 
@@ -199,6 +203,7 @@ describe('should get checkout result', () => {
                     AmountDue: 799,
                     Cycle: CYCLE.MONTHLY,
                     Coupon: null,
+                    Currency: 'USD',
                 },
                 plansMap: {
                     [PLANS.VPN]: {
@@ -236,6 +241,7 @@ describe('should get checkout result', () => {
             discountPerCycle: 200,
             discountPercent: 20,
             membersPerMonth: 799,
+            currency: 'USD',
         });
     });
 
@@ -255,6 +261,7 @@ describe('should get checkout result', () => {
                         Description: '',
                         MaximumRedemptionsPerUser: null,
                     },
+                    Currency: 'USD',
                 },
                 plansMap: {
                     [PLANS.VISIONARY]: getPlan(visionaryPlan),
@@ -274,6 +281,7 @@ describe('should get checkout result', () => {
             discountPerCycle: 28776,
             discountPercent: 40,
             membersPerMonth: 1999,
+            currency: 'USD',
         });
     });
 
@@ -293,6 +301,7 @@ describe('should get checkout result', () => {
                         Description: '',
                         MaximumRedemptionsPerUser: null,
                     },
+                    Currency: 'USD',
                 },
                 plansMap: {
                     [PLANS.VPN]: getPlan(vpnPlan),
@@ -312,6 +321,7 @@ describe('should get checkout result', () => {
             discountPerCycle: 17994,
             discountPercent: 60,
             membersPerMonth: 999,
+            currency: 'USD',
         });
     });
 
@@ -329,6 +339,7 @@ describe('should get checkout result', () => {
                     CouponDiscount: 0,
                     Cycle: CYCLE.TWO_YEARS,
                     Coupon: null,
+                    Currency: 'USD',
                 },
                 plansMap: {
                     [PLANS.BUNDLE_PRO]: getPlan(bundleProPlan),
@@ -365,6 +376,7 @@ describe('should get checkout result', () => {
             discountPerCycle: 23040,
             discountPercent: 22,
             membersPerMonth: 2997,
+            currency: 'USD',
         });
     });
 
@@ -387,6 +399,7 @@ describe('should get checkout result', () => {
                     CouponDiscount: 0,
                     Cycle: CYCLE.TWO_YEARS,
                     Coupon: null,
+                    Currency: 'USD',
                 },
                 plansMap: {
                     [PLANS.VPN_PRO]: getPlan(vpnProPlan),
@@ -410,6 +423,7 @@ describe('should get checkout result', () => {
             discountPerCycle: cost24MonthlyCycles3Members - twoYearPrice3Members,
             discountPercent: 33,
             membersPerMonth: twoYearPrice3Members / 24,
+            currency: 'USD',
         });
     });
 
@@ -433,6 +447,7 @@ describe('should get checkout result', () => {
                     CouponDiscount: 0,
                     Cycle: CYCLE.TWO_YEARS,
                     Coupon: null,
+                    Currency: 'USD',
                 },
                 plansMap: {
                     [PLANS.VPN_BUSINESS]: getPlan(vpnBusinessPlan),
@@ -463,6 +478,7 @@ describe('should get checkout result', () => {
             discountPerCycle: cost24MonthlyCycles3Members - twoYearPrice3Members,
             discountPercent: 17,
             membersPerMonth: twoYearPrice3Members / 24,
+            currency: 'USD',
         });
     });
 
@@ -482,6 +498,7 @@ describe('should get checkout result', () => {
                         Description: '',
                         MaximumRedemptionsPerUser: null,
                     },
+                    Currency: 'USD',
                 },
                 plansMap: {
                     [PLANS.VISIONARY]: getPlan(visionaryPlan),
@@ -503,6 +520,7 @@ describe('should get checkout result', () => {
             discountPerCycle: 71976,
             discountPercent: 100,
             membersPerMonth: 1999,
+            currency: 'USD',
         });
     });
 });

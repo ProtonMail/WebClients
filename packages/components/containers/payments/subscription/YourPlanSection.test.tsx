@@ -9,15 +9,17 @@ import {
     useFeature,
     useGetUserInvitations,
     useOrganization,
+    usePaymentStatus,
     usePendingUserInvitations,
     usePlans,
     useSubscription,
     useUser,
     useVPNServersCount,
 } from '@proton/components/hooks';
+import { type PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import { APPS, ORGANIZATION_STATE, PLANS } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import { getTestPlans } from '@proton/testing/data';
+import { getLongTestPlans } from '@proton/testing/data';
 import { mockUseFlag } from '@proton/testing/lib/mockUseFlag';
 
 import YourPlanSection from './YourPlanSection';
@@ -42,7 +44,17 @@ const mockUseUser = useUser as jest.MockedFunction<any>;
 
 jest.mock('@proton/components/hooks/usePlans');
 const mockUsePlans = usePlans as jest.MockedFunction<any>;
-mockUsePlans.mockReturnValue([{ plans: getTestPlans(), freePlan: FREE_PLAN }, false]);
+mockUsePlans.mockReturnValue([{ plans: getLongTestPlans(), freePlan: FREE_PLAN }, false]);
+
+jest.mock('@proton/components/hooks/usePaymentStatus');
+const mockUsePaymentStatus = usePaymentStatus as jest.MockedFunction<any>;
+mockUsePaymentStatus.mockReturnValue([
+    {
+        CountryCode: 'US',
+        VendorStates: {} as any,
+    } as PaymentMethodStatusExtended,
+    false,
+]);
 
 jest.mock('@proton/components/hooks/useAddresses');
 const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
