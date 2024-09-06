@@ -44,8 +44,8 @@ export const createAutosaveService = () => {
             if (!submission) return false;
 
             const { status, domain, type, data, formId, submittedAt } = submission;
-            const currentDomain = ctx?.getExtensionContext().url.domain;
-            const domainmatch = currentDomain === domain;
+            const currentDomain = ctx?.getExtensionContext().url?.domain;
+            const domainmatch = currentDomain !== undefined && currentDomain === domain;
 
             /** Check if any of the currently tracked forms match the
              * submission's form type and are not currently submitting.

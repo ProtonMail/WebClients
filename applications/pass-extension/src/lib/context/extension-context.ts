@@ -3,14 +3,14 @@ import type { Runtime } from 'webextension-polyfill';
 
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import { getCurrentTab } from '@proton/pass/lib/extension/utils/tabs';
 import browser from '@proton/pass/lib/globals/browser';
-import { type ClientEndpoint, type TabId, WorkerMessageType } from '@proton/pass/types';
+import type { ClientEndpoint, MaybeNull, TabId } from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { contextHandlerFactory } from '@proton/pass/utils/context';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
-import { parseUrl } from '@proton/pass/utils/url/parser';
 import createStore from '@proton/shared/lib/helpers/store';
 
 import.meta.webpackHot?.decline();
@@ -19,7 +19,7 @@ export type ExtensionContextType = {
     endpoint: ClientEndpoint;
     tabId: TabId;
     port: Runtime.Port;
-    url: ParsedUrl;
+    url: MaybeNull<ParsedUrl>;
     destroy: () => void;
 };
 
@@ -33,48 +33,44 @@ export const ExtensionContext = contextHandlerFactory<ExtensionContextType>('ext
 
 export const setupExtensionContext = async (options: ExtensionContextOptions): Promise<ExtensionContextType> => {
     const { endpoint, onDisconnect, onRecycle } = options;
+    const message = resolveMessageFactory(endpoint);
+
+    /* Expose an authentication store for utilities requiring it.
+     * FIXME: decouple these utilities from the `authStore` global */
+    exposeAuthStore(createAuthStore(createStore()));
+
     try {
-        /* Expose an authentication store for utilities requiring it.
-         * FIXME: decouple these utilities from the `authStore` global */
-        exposeAuthStore(createAuthStore(createStore()));
+        const { tabId, url } = await sendMessage.on(
+            message({ type: WorkerMessageType.TABS_QUERY, payload: { current: endpoint === 'popup' } }),
+            (res) => {
+                if (res.type === 'error') return { tabId: -1, url: null };
+                return { tabId: res.tabId, url: res.url };
+            }
+        );
 
-        const tab = await getCurrentTab();
-        if (tab !== undefined && tab.id !== undefined) {
-            const name = generatePortName(endpoint, tab.id);
-            const port = browser.runtime.connect(browser.runtime.id, { name });
+        const name = generatePortName(endpoint, tabId);
+        const port = browser.runtime.connect(browser.runtime.id, { name });
+        const disconnectPort = safeCall(() => port.disconnect());
+        const destroy = pipe(disconnectPort, ExtensionContext.clear);
+        const ctx = ExtensionContext.set({ endpoint, port, tabId, url, destroy });
 
-            const ctx = ExtensionContext.set({
-                endpoint,
-                port,
-                tabId: tab.id,
-                url: parseUrl(tab.url ?? ''),
-                destroy: () => {
-                    safeCall(() => port.disconnect())();
-                    ExtensionContext.clear();
-                },
-            });
+        ctx.port.onDisconnect.addListener(async () => {
+            logger.info('[Context::Extension] port disconnected - reconnecting');
+            const { recycle } = onDisconnect?.(ExtensionContext.read());
+            return recycle && onRecycle(await setupExtensionContext(options));
+        });
 
-            registerLoggerEffect((log) => {
-                void sendMessage(
-                    resolveMessageFactory(endpoint)({
-                        type: WorkerMessageType.LOG_EVENT,
-                        payload: { log },
-                    })
-                );
-            });
+        registerLoggerEffect((log) =>
+            sendMessage(
+                resolveMessageFactory(endpoint)({
+                    type: WorkerMessageType.LOG_EVENT,
+                    payload: { log },
+                })
+            )
+        );
 
-            logger.info('[Context::Extension] tabId resolved & port opened');
-
-            ctx.port.onDisconnect.addListener(async () => {
-                logger.info('[Context::Extension] port disconnected - reconnecting');
-                const { recycle } = onDisconnect?.(ExtensionContext.read());
-                return recycle && onRecycle(await setupExtensionContext(options));
-            });
-
-            return ctx;
-        }
-
-        throw new Error('Invalid runtime');
+        logger.info('[Context::Extension] tabId resolved & port opened');
+        return ctx;
     } catch (e) {
         logger.warn('[Context::Extension]', e);
         throw new Error('Initalization failed');

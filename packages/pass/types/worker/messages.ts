@@ -1,5 +1,4 @@
 import type { Action } from 'redux';
-import type { Tabs } from 'webextension-polyfill';
 
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
@@ -34,7 +33,7 @@ import type { AutosaveFormEntry, FormCredentials, FormStatusPayload, FormSubmitP
 import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
 import type { ExclusionRules } from './rules';
-import type { TabId } from './runtime';
+import type { TabId, TabInfo } from './runtime';
 import type { AppState, PopupInitialState } from './state';
 
 export type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
@@ -115,12 +114,12 @@ export enum WorkerMessageType {
     PORT_UNAUTHORIZED = 'PORT_UNAUTHORIZED',
     REGISTER_ELEMENTS = 'REGISTER_ELEMENTS',
     RESOLVE_EXTENSION_KEY = 'RESOLVE_EXTENSION_KEY',
-    RESOLVE_TAB = 'RESOLVE_TAB',
     RESOLVE_USER = 'RESOLVE_USER',
     SENTRY_CS_EVENT = 'SENTRY_CS_EVENT',
     SETTINGS_UPDATE = 'SETTINGS_UPDATE',
     START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
     STORE_DISPATCH = 'STORE_DISPATCH',
+    TABS_QUERY = 'TABS_QUERY',
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
     UPDATE_AVAILABLE = 'UPDATE_AVAILABLE',
@@ -185,12 +184,12 @@ export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
 export type RegisterElementsMessage = { type: WorkerMessageType.REGISTER_ELEMENTS };
 export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
-export type ResolveTabIdMessage = { type: WorkerMessageType.RESOLVE_TAB };
 export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
 export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
 export type StartContentScriptMessage = { type: WorkerMessageType.START_CONTENT_SCRIPT };
 export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: Action }>;
+export type TabsQueryMessage = WithPayload<WorkerMessageType.TABS_QUERY, { current?: boolean }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
@@ -256,12 +255,12 @@ export type WorkerMessage =
     | PortUnauthorizedMessage
     | RegisterElementsMessage
     | ResolveExtensionKeyMessage
-    | ResolveTabIdMessage
     | ResolveUserDataMessage
     | SentryCSEventMessage
     | SettingsUpdateMessage
     | StartContentScriptMessage
     | StoreActionMessage
+    | TabsQueryMessage
     | TelemetryEventMessage
     | UnloadContentScriptMessage
     | UpdateAvailableMessage
@@ -310,8 +309,8 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.POPUP_INIT]: PopupInitialState;
     [WorkerMessageType.REGISTER_ELEMENTS]: { hash: string };
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
-    [WorkerMessageType.RESOLVE_TAB]: { tab: Maybe<Tabs.Tab> };
     [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
+    [WorkerMessageType.TABS_QUERY]: TabInfo;
     [WorkerMessageType.WORKER_WAKEUP]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
 };
 
