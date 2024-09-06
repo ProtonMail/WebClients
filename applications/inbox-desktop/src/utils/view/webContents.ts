@@ -20,7 +20,7 @@ import {
     resetHiddenViews,
     getZoom,
     showView,
-    showErrorPage,
+    showNetworkErrorPage,
     IGNORED_NET_ERROR_CODES,
 } from "./viewManagement";
 import { resetBadge } from "../../ipc/notification";
@@ -101,7 +101,7 @@ export function handleWebContents(contents: WebContents) {
 
         if (!IGNORED_NET_ERROR_CODES.includes(errorCode)) {
             const viewName = getWebContentsViewName(contents);
-            if (viewName) showErrorPage(viewName);
+            if (viewName) showNetworkErrorPage(viewName);
         }
     });
 
