@@ -8,7 +8,7 @@ import { isSplittedUser } from '@proton/components/payments/core';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, isFreeSubscription } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import { getHasVpnB2BPlan, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
+import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { Loader, Price, useModalTwoStatic } from '../../components';
@@ -59,12 +59,9 @@ const CreditsSection = () => {
         availableCredits = 0;
     }
 
-    const hasVpnB2B = getHasVpnB2BPlan(subscription);
-    const splittedUser = isSplittedUser(user.ChargebeeUser, user.ChargebeeUserExists, subscription.BillingPlatform);
-
     // Splitted users can't add credits in both v4 and v5 APIs, so we hide this option for them until the migration is
     // completed.
-    const hideAddCredits = hasVpnB2B || splittedUser;
+    const hideAddCredits = isSplittedUser(user.ChargebeeUser, user.ChargebeeUserExists, subscription.BillingPlatform);
 
     return (
         <SettingsSection>
