@@ -1,5 +1,12 @@
-import { ADDON_NAMES, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
-import type { Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import {
+    ADDON_NAMES,
+    COUPON_CODES,
+    CYCLE,
+    DEFAULT_CURRENCY,
+    FREE_SUBSCRIPTION,
+    PLANS,
+} from '@proton/shared/lib/constants';
+import type { Currency, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
 import { PLANS_MAP, getSubscriptionMock } from '@proton/testing/data';
 
 import { getAllowedCycles } from './getAllowedCycles';
@@ -11,7 +18,14 @@ describe('getAllowedCycles', () => {
         const maximumCycle = CYCLE.TWO_YEARS;
         const planIDs: PlanIDs = {};
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
@@ -26,7 +40,14 @@ describe('getAllowedCycles', () => {
         const minimumCycle = CYCLE.MONTHLY;
         const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
@@ -41,7 +62,14 @@ describe('getAllowedCycles', () => {
         const minimumCycle = CYCLE.MONTHLY;
         const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
@@ -56,7 +84,14 @@ describe('getAllowedCycles', () => {
         const minimumCycle = CYCLE.MONTHLY;
         const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
 
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
@@ -75,7 +110,14 @@ describe('getAllowedCycles', () => {
         const minimumCycle = CYCLE.MONTHLY;
         const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
@@ -91,7 +133,14 @@ describe('getAllowedCycles', () => {
         const minimumCycle = CYCLE.MONTHLY;
         const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
@@ -107,7 +156,14 @@ describe('getAllowedCycles', () => {
         const minimumCycle = CYCLE.MONTHLY;
         const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
@@ -123,7 +179,14 @@ describe('getAllowedCycles', () => {
         const minimumCycle = CYCLE.MONTHLY;
         const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
@@ -139,7 +202,14 @@ describe('getAllowedCycles', () => {
         const minimumCycle = CYCLE.YEARLY;
         const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
 
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
@@ -155,7 +225,14 @@ describe('getAllowedCycles', () => {
         const minimumCycle = CYCLE.TWO_YEARS;
         const maximumCycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
 
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
@@ -178,6 +255,7 @@ describe('getAllowedCycles', () => {
             defaultCycles,
             planIDs,
             plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
         });
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
@@ -207,6 +285,7 @@ describe('getAllowedCycles', () => {
             defaultCycles,
             planIDs,
             plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
         });
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
@@ -229,6 +308,7 @@ describe('getAllowedCycles', () => {
             defaultCycles,
             planIDs,
             plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
         });
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
@@ -251,6 +331,7 @@ describe('getAllowedCycles', () => {
             defaultCycles,
             planIDs,
             plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
         });
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
@@ -265,7 +346,14 @@ describe('getAllowedCycles', () => {
 
         subscription.Cycle = CYCLE.MONTHLY;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
         expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
 
@@ -279,7 +367,14 @@ describe('getAllowedCycles', () => {
 
         subscription.Cycle = CYCLE.TWO_YEARS;
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
 
@@ -295,7 +390,14 @@ describe('getAllowedCycles', () => {
             [PLANS.BUNDLE]: 1,
         };
 
-        const result = getAllowedCycles({ subscription, minimumCycle, maximumCycle, planIDs, plansMap: PLANS_MAP });
+        const result = getAllowedCycles({
+            subscription,
+            minimumCycle,
+            maximumCycle,
+            planIDs,
+            plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
+        });
         expect(result).toEqual([CYCLE.TWO_YEARS]);
     });
 
@@ -318,6 +420,7 @@ describe('getAllowedCycles', () => {
             planIDs,
             disableUpcomingCycleCheck,
             plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
         });
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
@@ -332,6 +435,7 @@ describe('getAllowedCycles', () => {
             } as any,
             // this test assumes that wallet2024 does not have 24 cycle in PLANS_MAP
             plansMap: PLANS_MAP,
+            currency: DEFAULT_CURRENCY,
         });
 
         expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
@@ -354,6 +458,7 @@ describe('getAllowedCycles', () => {
                 defaultCycles,
                 planIDs,
                 plansMap: PLANS_MAP,
+                currency: DEFAULT_CURRENCY,
             });
 
             expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
@@ -375,6 +480,7 @@ describe('getAllowedCycles', () => {
                 defaultCycles,
                 planIDs,
                 plansMap: PLANS_MAP,
+                currency: DEFAULT_CURRENCY,
             });
 
             expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
@@ -396,6 +502,7 @@ describe('getAllowedCycles', () => {
                 defaultCycles,
                 planIDs,
                 plansMap: PLANS_MAP,
+                currency: DEFAULT_CURRENCY,
             });
 
             expect(result).toEqual([CYCLE.THIRTY, CYCLE.FIFTEEN, CYCLE.MONTHLY]);
@@ -420,6 +527,7 @@ describe('getAllowedCycles', () => {
                 planIDs,
                 plansMap: PLANS_MAP,
                 allowDowncycling: true,
+                currency: DEFAULT_CURRENCY,
             });
 
             expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
@@ -442,6 +550,7 @@ describe('getAllowedCycles', () => {
                 planIDs,
                 plansMap: PLANS_MAP,
                 allowDowncycling: true,
+                currency: DEFAULT_CURRENCY,
             });
 
             expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
@@ -468,6 +577,7 @@ describe('getAllowedCycles', () => {
                 planIDs,
                 plansMap: PLANS_MAP,
                 allowDowncycling: true,
+                currency: DEFAULT_CURRENCY,
             });
 
             expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
@@ -490,9 +600,45 @@ describe('getAllowedCycles', () => {
                 planIDs,
                 plansMap: PLANS_MAP,
                 allowDowncycling: true,
+                currency: DEFAULT_CURRENCY,
             });
 
             expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
         });
+
+        const dimensions = {
+            plans: [PLANS.DUO, PLANS.MAIL, PLANS.DRIVE],
+            currencies: ['JPY', 'BRL'] as Currency[],
+        };
+
+        const allCombinations = dimensions.plans.reduce(
+            (acc, plan) => {
+                return acc.concat(dimensions.currencies.map((currency) => ({ plan, currency })));
+            },
+            [] as { plan: PLANS; currency: Currency }[]
+        );
+
+        it.each(allCombinations)(
+            'should return 1 year cap for plans with regional currencies - $plan $currency',
+            ({ plan, currency }) => {
+                const subscription = undefined;
+                const minimumCycle = CYCLE.MONTHLY;
+                const maximumCycle = CYCLE.TWO_YEARS;
+                const planIDs: PlanIDs = {
+                    [plan]: 1,
+                };
+
+                const result = getAllowedCycles({
+                    subscription,
+                    minimumCycle,
+                    maximumCycle,
+                    planIDs,
+                    plansMap: PLANS_MAP,
+                    currency,
+                });
+
+                expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+            }
+        );
     });
 });

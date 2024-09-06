@@ -1,8 +1,25 @@
-import type { ReactElement } from 'react';
+import { type ReactElement, useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import {
+    CalendarLogo,
+    DriveLogo,
+    Icon,
+    Info,
+    MailLogo,
+    Option,
+    PassLogo,
+    Price,
+    SelectTwo,
+    Tabs,
+    VpnLogo,
+    WalletLogo,
+} from '@proton/components';
 import { useUser } from '@proton/components/hooks';
+import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
+import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/components/payments/core';
+import { isRegionalCurrency, mainCurrencies } from '@proton/components/payments/core/helpers';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import {
@@ -34,25 +51,14 @@ import {
     type PlansMap,
     Renew,
     type SubscriptionModel,
+    type SubscriptionPlan,
+    type User,
     type VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { useFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    CalendarLogo,
-    DriveLogo,
-    Icon,
-    MailLogo,
-    Option,
-    PassLogo,
-    Price,
-    SelectTwo,
-    Tabs,
-    VpnLogo,
-    WalletLogo,
-} from '../../../components';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector, { getRestrictedCycle } from '../CycleSelector';
 import { getAllFeatures } from '../features';
@@ -74,26 +80,6 @@ export interface SelectedProductPlans {
     [Audience.FAMILY]: PLANS;
 }
 
-const getPlansList = (enabledProductPlans: PLANS[], plansMap: PlansMap) => {
-    return enabledProductPlans
-        .map((planName) => {
-            const plan = plansMap[planName];
-            if (plan) {
-                return {
-                    planName,
-                    label: plan.Title,
-                };
-            }
-        })
-        .filter(isTruthy);
-};
-
-const getPlanPanel = (enabledProductPlans: PLANS[], planName: PLANS, plansMap: PlansMap) => {
-    if (enabledProductPlans.includes(planName)) {
-        return plansMap[planName];
-    }
-};
-
 interface Tab {
     title: string;
     content: ReactElement;
@@ -110,12 +96,11 @@ interface Props {
     minimumCycle?: Cycle;
     maximumCycle?: Cycle;
     plans: Plan[];
-    plansMap: PlansMap;
     freePlan: FreePlanDefault;
     vpnServers: VPNServersCountData;
     loading?: boolean;
     mode: 'signup' | 'settings' | 'modal' | 'upsell-modal';
-    onChangePlanIDs: (newPlanIDs: PlanIDs, cycle: Cycle) => void;
+    onChangePlanIDs: (newPlanIDs: PlanIDs, cycle: Cycle, currency: Currency) => void;
     onChangeCurrency: (newCurrency: Currency) => void;
     onChangeCycle: (newCyle: Cycle) => void;
     audience: Audience;
@@ -125,6 +110,7 @@ interface Props {
     subscription?: SubscriptionModel | FreeSubscription;
     organization?: Organization;
     filter?: Audience[];
+    paymentsStatus: PaymentMethodStatusExtended;
 }
 
 export const getPrice = (plan: Plan, cycle: Cycle, plansMap: PlansMap): number | null => {
@@ -185,78 +171,11 @@ const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency
     );
 };
 
-const PlanSelection = ({
-    app,
-    mode,
-    hasFreePlan,
-    planIDs,
-    plans,
-    plansMap,
-    freePlan,
-    vpnServers,
-    cycle: cycleProp,
-    minimumCycle: maybeMinimumCycle,
-    maximumCycle: maybeMaximumCycle,
-    currency,
-    loading,
-    subscription,
-    organization,
-    onChangePlanIDs,
-    onChangeCurrency,
-    onChangeCycle,
-    audience,
-    onChangeAudience,
-    selectedProductPlans,
-    onChangeSelectedProductPlans,
-    filter,
-}: Props) => {
-    const canAccessWalletPlan = useFlag('WalletPlan');
-    const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
-    const canAccessDistributionListFeature = useFlag('UserGroupsPermissionCheck');
-
-    const [user] = useUser();
-    const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
-    const isPassSettingsApp = app == APPS.PROTONPASS;
-    const isDriveSettingsApp = app == APPS.PROTONDRIVE;
-    const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
-    const isFreeSubscription = getIsFreeSubscription(subscription);
-    const renderCycleSelector = isFreeSubscription;
-    const enabledProductB2CPlans = [
-        PLANS.MAIL,
-        getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
-        PLANS.DRIVE,
-        PLANS.PASS,
-        canAccessWalletPlan && PLANS.WALLET,
-    ].filter(isTruthy);
-
-    const bundleProPlan = getBundleProPlanToUse({ plansMap, planIDs });
-
-    const { b2bAccess, b2cAccess, redirectToCancellationFlow } = useCancellationFlow();
-    const { sendStartCancellationPricingReport } = useCancellationTelemetry();
-
-    const alreadyHasMaxCycle = hasMaximumCycle(subscription);
-
-    let maximumCycle: Cycle | undefined = maybeMaximumCycle;
-    if (audience === Audience.B2B) {
-        if (maybeMaximumCycle !== undefined) {
-            maximumCycle = Math.min(maybeMaximumCycle, CYCLE.YEARLY);
-        } else {
-            maximumCycle = CYCLE.YEARLY;
-        }
-    }
-    if (maximumCycle === undefined) {
-        maximumCycle = getMaximumCycleForApp(app);
-    }
-
-    const cycleSelectorOptions = getCycleSelectorOptions();
-    const { cycle: restrictedCycle } = getRestrictedCycle({
-        cycle: cycleProp,
-        minimumCycle: maybeMinimumCycle,
-        maximumCycle,
-        options: cycleSelectorOptions,
-    });
-
-    function excludingCurrentPlanWithMaxCycle(plan: Plan | ShortPlanLike): boolean {
+function excludingCurrentPlanWithMaxCycle(
+    currentPlan: SubscriptionPlan | null | undefined,
+    alreadyHasMaxCycle: boolean
+) {
+    return (plan: Plan | ShortPlanLike): boolean => {
         if (isShortPlanLike(plan)) {
             return true;
         }
@@ -264,25 +183,74 @@ const PlanSelection = ({
         const isCurrentPlan = currentPlan?.ID === plan.ID;
         const shouldNotRenderCurrentPlan = isCurrentPlan && alreadyHasMaxCycle;
         return !shouldNotRenderCurrentPlan;
-    }
+    };
+}
 
-    function excludingTheOnlyFreePlan(
-        plan: Plan | ShortPlanLike,
-        _: number,
-        allPlans: (Plan | ShortPlanLike)[]
-    ): boolean {
-        return !(plan === FREE_PLAN && allPlans.length === 1);
-    }
+function excludingTheOnlyFreePlan(plan: Plan | ShortPlanLike, _: number, allPlans: (Plan | ShortPlanLike)[]): boolean {
+    return !(plan === FREE_PLAN && allPlans.length === 1);
+}
+
+export type AccessiblePlansHookProps = {
+    user: User;
+} & Pick<
+    Props,
+    | 'app'
+    | 'vpnServers'
+    | 'selectedProductPlans'
+    | 'subscription'
+    | 'planIDs'
+    | 'hasFreePlan'
+    | 'paymentsStatus'
+    | 'plans'
+    | 'currency'
+>;
+
+export function useAccessiblePlans({
+    hasFreePlan,
+    selectedProductPlans,
+    subscription,
+    planIDs,
+    app,
+    vpnServers,
+    paymentsStatus,
+    user,
+    plans,
+    currency,
+}: AccessiblePlansHookProps) {
+    const plansMap = getPlansMap(plans, currency, false);
+
+    const canAccessWalletPlan = useFlag('WalletPlan');
+    const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
+    const { getAvailableCurrencies } = useCurrencies();
+
+    const enabledProductB2CPlanNames = [
+        PLANS.MAIL,
+        getVPNPlanToUse({ plansMap, planIDs, cycle: subscription?.Cycle }),
+        PLANS.DRIVE,
+        PLANS.PASS,
+        canAccessWalletPlan && PLANS.WALLET,
+    ].filter(isTruthy);
+
+    let enabledProductB2CPlans = enabledProductB2CPlanNames.map((planName) => plansMap[planName]).filter(isTruthy);
+
+    const alreadyHasMaxCycle = hasMaximumCycle(subscription);
+
+    const currentPlan = subscription ? subscription.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN) : null;
 
     function filterPlans(plans: (Plan | null | undefined)[]): Plan[];
     function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[];
     function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[] {
-        return plans.filter(isTruthy).filter(excludingCurrentPlanWithMaxCycle).filter(excludingTheOnlyFreePlan);
+        return plans
+            .filter(isTruthy)
+            .filter(excludingCurrentPlanWithMaxCycle(currentPlan, alreadyHasMaxCycle))
+            .filter(excludingTheOnlyFreePlan);
     }
 
     let IndividualPlans = filterPlans([
         hasFreePlan ? FREE_PLAN : null,
-        getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
+        enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
+            enabledProductB2CPlans[0] ??
+            plansMap[PLANS.MAIL],
         plansMap[PLANS.BUNDLE],
         // Special condition to hide Pass plus in the individual tab if it's the current plan
         canAccessDuoPlan && !hasPass(subscription) ? plansMap[PLANS.DUO] : null,
@@ -294,12 +262,16 @@ const PlanSelection = ({
         plansMap[PLANS.FAMILY],
     ]);
 
+    // some new regional currencies might support VPN enterprise too
+    const hasVpnEnterprise = mainCurrencies.includes(currency);
+
     const vpnB2BPlans = filterPlans([
         plansMap[PLANS.VPN_PRO],
         plansMap[PLANS.VPN_BUSINESS],
-        getVPNEnterprisePlan(vpnServers),
+        hasVpnEnterprise ? getVPNEnterprisePlan(vpnServers) : null,
     ]);
 
+    const bundleProPlan = getBundleProPlanToUse({ plansMap, planIDs });
     const passB2BPlans = filterPlans([
         plansMap[PLANS.PASS_PRO],
         plansMap[PLANS.PASS_BUSINESS],
@@ -308,8 +280,9 @@ const PlanSelection = ({
 
     const driveB2BPlans = filterPlans([plansMap[PLANS.DRIVE_BUSINESS], plansMap[bundleProPlan]]);
 
-    let B2BPlans: (Plan | ShortPlanLike)[] = [];
-
+    const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
+    const isPassSettingsApp = app == APPS.PROTONPASS;
+    const isDriveSettingsApp = app == APPS.PROTONDRIVE;
     /**
      * The VPN B2B plans should be displayed only in the ProtonVPN Settings app (protonvpn.com).
      *
@@ -320,6 +293,7 @@ const PlanSelection = ({
     const isPassB2bPlans = isPassSettingsApp && passB2BPlans.length !== 0;
     const isDriveB2bPlans = isDriveSettingsApp && driveB2BPlans.length !== 0;
 
+    let B2BPlans: (Plan | ShortPlanLike)[] = [];
     if (isVpnB2bPlans) {
         B2BPlans = vpnB2BPlans;
     } else if (isPassB2bPlans) {
@@ -334,7 +308,121 @@ const PlanSelection = ({
         IndividualPlans = filterPlans([plansMap[PLANS.VISIONARY]]);
         FamilyPlans = [];
         B2BPlans = [];
+        enabledProductB2CPlans = [];
     }
+
+    const accessiblePlans = [...IndividualPlans, ...FamilyPlans, ...B2BPlans, ...enabledProductB2CPlans]
+        .filter(isTruthy)
+        .filter((it): it is Plan => !isShortPlanLike(it));
+
+    const accessiblePlansWithAllCurrencies = filterPlans(
+        accessiblePlans.flatMap((renderedPlan) =>
+            plans.filter((availablePlan) => availablePlan.Name === renderedPlan.Name)
+        )
+    );
+
+    const availableCurrencies = getAvailableCurrencies({
+        status: paymentsStatus,
+        user,
+        subscription,
+        plans: accessiblePlansWithAllCurrencies,
+    });
+
+    const result = {
+        enabledProductB2CPlans,
+        IndividualPlans,
+        FamilyPlans,
+        B2BPlans,
+        currentPlan,
+        alreadyHasMaxCycle,
+        isVpnSettingsApp,
+        isVpnB2bPlans,
+        canAccessWalletPlan,
+        availableCurrencies,
+    };
+
+    return result;
+}
+
+export function getMaximumCycle(
+    maybeMaximumCycle: CYCLE | undefined,
+    audience: Audience,
+    app: ProductParam,
+    currency: Currency
+) {
+    let maximumCycle: Cycle | undefined = maybeMaximumCycle;
+    if (audience === Audience.B2B) {
+        maximumCycle = Math.min(maximumCycle ?? CYCLE.YEARLY, CYCLE.YEARLY);
+    }
+
+    maximumCycle = Math.min(maximumCycle ?? CYCLE.TWO_YEARS, getMaximumCycleForApp(app, currency));
+    return maximumCycle;
+}
+
+const PlanSelection = (props: Props) => {
+    const {
+        app,
+        mode,
+        planIDs,
+        plans,
+        freePlan,
+        vpnServers,
+        cycle: cycleProp,
+        minimumCycle: maybeMinimumCycle,
+        maximumCycle: maybeMaximumCycle,
+        currency,
+        loading,
+        subscription,
+        organization,
+        onChangePlanIDs,
+        onChangeCurrency,
+        onChangeCycle,
+        audience,
+        onChangeAudience,
+        selectedProductPlans,
+        onChangeSelectedProductPlans,
+        filter,
+    } = props;
+
+    // strict plans map doens't have plan fallback if currency is missing. If there is no plan for specified currency,
+    // then it will be exluded from the plans map. This way we display only plans with the selected currency.
+    const plansMap = getPlansMap(plans, currency, false);
+
+    const [user] = useUser();
+
+    const {
+        IndividualPlans,
+        FamilyPlans,
+        B2BPlans,
+        enabledProductB2CPlans,
+        currentPlan,
+        alreadyHasMaxCycle,
+        isVpnSettingsApp,
+        isVpnB2bPlans,
+        canAccessWalletPlan,
+        availableCurrencies,
+    } = useAccessiblePlans({
+        ...props,
+        user,
+    });
+
+    const isFreeSubscription = getIsFreeSubscription(subscription);
+    const renderCycleSelector = isFreeSubscription;
+
+    const { b2bAccess, b2cAccess, redirectToCancellationFlow } = useCancellationFlow();
+    const { sendStartCancellationPricingReport } = useCancellationTelemetry();
+
+    const canAccessDistributionListFeature = useFlag('UserGroupsPermissionCheck');
+
+    const maximumCycle: Cycle | undefined = getMaximumCycle(maybeMaximumCycle, audience, app, currency);
+
+    const cycleSelectorOptions = getCycleSelectorOptions();
+    const { cycle: restrictedCycle } = getRestrictedCycle({
+        cycle: cycleProp,
+        minimumCycle: maybeMinimumCycle,
+        maximumCycle,
+        options: cycleSelectorOptions,
+    });
 
     const isSignupMode = mode === 'signup';
     const features = getAllFeatures({
@@ -343,8 +431,6 @@ const PlanSelection = ({
         freePlan,
         canAccessDistributionListFeature,
     });
-
-    const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
 
     const b2cRecommendedPlans = [
         hasSomeAddonOrPlan(subscription, [PLANS.BUNDLE, PLANS.VISIONARY, PLANS.FAMILY]) ? undefined : PLANS.BUNDLE,
@@ -396,9 +482,19 @@ const PlanSelection = ({
         const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
         const action = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
         const actionLabel =
-            plan.Name === PLANS.VPN_BUSINESS ? <ActionLabel plan={plan} currency={currency} cycle={cycle} /> : null;
+            plan.Name === PLANS.VPN_BUSINESS ? (
+                <ActionLabel plan={plan} currency={plan.Currency} cycle={cycle} />
+            ) : null;
 
-        const plansList = audience === Audience.B2C ? plansListB2C : [];
+        const plansList =
+            audience === Audience.B2C
+                ? enabledProductB2CPlans.map(({ Name, Title }) => {
+                      return {
+                          planName: Name,
+                          label: Title,
+                      };
+                  })
+                : [];
         const isSelectable = plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name);
         const selectedPlan = plansList.some(
             ({ planName: otherPlanName }) => otherPlanName === selectedProductPlans[audience]
@@ -445,7 +541,7 @@ const PlanSelection = ({
                     )
                 }
                 recommended={isRecommended}
-                currency={currency}
+                currency={plan.Currency}
                 disabled={
                     loading ||
                     (isFree && !isSignupMode && isCurrentPlan) ||
@@ -471,7 +567,8 @@ const PlanSelection = ({
                             plans,
                             user,
                         }),
-                        cycle
+                        cycle,
+                        plan.Currency
                     );
                 }}
             />
@@ -555,8 +652,27 @@ const PlanSelection = ({
         return filter?.includes(tab.audience) ?? true;
     });
 
+    useEffect(() => {
+        if (!availableCurrencies.includes(currency)) {
+            onChangeCurrency(availableCurrencies[0]);
+        }
+    }, [availableCurrencies, currency]);
+
     const currencyItem = (
-        <CurrencySelector mode="select-two" currency={currency} onSelect={onChangeCurrency} disabled={loading} />
+        <div className="flex flex-row flex-nowrap items-center">
+            {isRegionalCurrency(currency) && (
+                <Info className="mx-2" title={c('Payments').t`More plans are available in other currencies`} />
+            )}
+            <div className="w-8">
+                <CurrencySelector
+                    mode="select-two"
+                    currencies={availableCurrencies}
+                    currency={currency}
+                    onSelect={onChangeCurrency}
+                    disabled={loading}
+                />
+            </div>
+        </div>
     );
     const currencySelectorRow = (
         <div className="flex justify-space-between flex-column md:flex-row">
@@ -574,7 +690,7 @@ const PlanSelection = ({
                     />
                 )}
             </div>
-            <div className="flex mx-auto lg:mx-0 mt-4 lg:mt-0">{currencyItem}</div>
+            <div className="mx-auto lg:mx-0 mt-4 lg:mt-0">{currencyItem}</div>
         </div>
     );
 

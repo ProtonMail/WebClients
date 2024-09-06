@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react';
-
+import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { CYCLE } from '@proton/shared/lib/constants';
 import type { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -7,8 +6,9 @@ import { buildSubscription } from '@proton/testing/builders';
 
 import SubscriptionCheckout from './SubscriptionCheckout';
 
-jest.mock('../../../../hooks', () => ({
-    useConfig: jest.fn().mockReturnValue({
+jest.mock('../../../../hooks/useConfig', () => ({
+    __esModule: true,
+    default: jest.fn().mockReturnValue({
         APP_NAME: 'proton-account',
     }),
 }));
@@ -35,11 +35,11 @@ describe('SubscriptionCheckout', () => {
     it('should display Proration if it is available and isProration is true', () => {
         checkResult.Proration = -451;
 
-        let { container } = render(
+        let { container } = renderWithProviders(
             <SubscriptionCheckout
                 freePlan={freePlan}
                 checkResult={checkResult}
-                plansMap={{}}
+                plansMap={{} as any}
                 vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
@@ -61,11 +61,11 @@ describe('SubscriptionCheckout', () => {
     it('should display Proration if it is available and isProration is true', () => {
         checkResult.Proration = -451;
 
-        let { container } = render(
+        let { container } = renderWithProviders(
             <SubscriptionCheckout
                 freePlan={freePlan}
                 checkResult={checkResult}
-                plansMap={{}}
+                plansMap={{} as any}
                 vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
@@ -87,11 +87,11 @@ describe('SubscriptionCheckout', () => {
     it('should not display proration if isProration is false', () => {
         checkResult.Proration = -451;
 
-        let { container } = render(
+        let { container } = renderWithProviders(
             <SubscriptionCheckout
                 freePlan={freePlan}
                 checkResult={checkResult}
-                plansMap={{}}
+                plansMap={{} as any}
                 vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
@@ -113,11 +113,11 @@ describe('SubscriptionCheckout', () => {
     it('should display next start date if proration must be hidden', () => {
         checkResult.Proration = 0;
 
-        let { container } = render(
+        let { container } = renderWithProviders(
             <SubscriptionCheckout
                 freePlan={freePlan}
                 checkResult={checkResult}
-                plansMap={{}}
+                plansMap={{} as any}
                 vpnServers={dummyServers}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
@@ -153,11 +153,11 @@ describe('SubscriptionCheckout', () => {
             Coupon: null,
         };
 
-        let { container } = render(
+        let { container } = renderWithProviders(
             <SubscriptionCheckout
                 freePlan={freePlan}
                 checkResult={checkResult}
-                plansMap={{}}
+                plansMap={{} as any}
                 vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
@@ -200,11 +200,11 @@ describe('SubscriptionCheckout', () => {
             Coupon: null,
         };
 
-        let { container } = render(
+        let { container } = renderWithProviders(
             <SubscriptionCheckout
                 freePlan={freePlan}
                 checkResult={checkResult}
-                plansMap={{}}
+                plansMap={{} as any}
                 vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}
@@ -247,11 +247,11 @@ describe('SubscriptionCheckout', () => {
             Coupon: null,
         };
 
-        let { container } = render(
+        let { container } = renderWithProviders(
             <SubscriptionCheckout
                 freePlan={freePlan}
                 checkResult={checkResult}
-                plansMap={{}}
+                plansMap={{} as any}
                 vpnServers={{ free: { countries: 0, servers: 0 }, paid: { countries: 0, servers: 0 } }}
                 currency="CHF"
                 cycle={CYCLE.MONTHLY}

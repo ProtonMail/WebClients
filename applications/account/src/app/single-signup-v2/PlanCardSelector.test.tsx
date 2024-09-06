@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
-import type { PlansMap } from '@proton/shared/lib/interfaces';
+import type { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 
 import type { PlanCard } from './PlanCardSelector';
 import { PlanCardSelector } from './PlanCardSelector';
@@ -12,39 +12,41 @@ beforeEach(() => {
     jest.clearAllMocks();
 });
 
-const defaultPlansMap: PlansMap = {
-    [PLANS.PASS]: {
-        ID: 'id-123',
-        ParentMetaPlanID: '123',
-        Type: 1,
-        Name: PLANS.PASS,
-        Title: 'Pass Plus',
-        MaxDomains: 0,
-        MaxAddresses: 0,
-        MaxCalendars: 0,
-        MaxSpace: 0,
-        MaxMembers: 0,
-        MaxVPN: 0,
-        MaxTier: 0,
-        Services: 8,
-        Features: 0,
-        State: 1,
-        Pricing: {
-            '1': 499,
-            '12': 4788,
-            '24': 7176,
-        },
-        PeriodEnd: {
-            '1': 1678452604,
-            '12': 1707569404,
-            '24': 1739191804,
-        },
-        Currency: 'CHF',
-        Quantity: 1,
-        Offers: [],
-        Cycle: 1,
-        Amount: 499,
+const passPlan: Plan = {
+    ID: 'id-123',
+    ParentMetaPlanID: '123',
+    Type: 1,
+    Name: PLANS.PASS,
+    Title: 'Pass Plus',
+    MaxDomains: 0,
+    MaxAddresses: 0,
+    MaxCalendars: 0,
+    MaxSpace: 0,
+    MaxMembers: 0,
+    MaxVPN: 0,
+    MaxTier: 0,
+    Services: 8,
+    Features: 0,
+    State: 1,
+    Pricing: {
+        '1': 499,
+        '12': 4788,
+        '24': 7176,
     },
+    PeriodEnd: {
+        '1': 1678452604,
+        '12': 1707569404,
+        '24': 1739191804,
+    },
+    Currency: 'CHF',
+    Quantity: 1,
+    Offers: [],
+    Cycle: 1,
+    Amount: 499,
+};
+
+const defaultPlansMap: PlansMap = {
+    [PLANS.PASS]: passPlan,
 };
 
 const defaultPlanCards: PlanCard[] = [
@@ -62,7 +64,7 @@ it('should render', () => {
             subscriptionDataCycleMapping={{}}
             cycle={CYCLE.MONTHLY}
             currency="CHF"
-            plan={PLANS.PASS}
+            selectedPlanName={PLANS.PASS}
             onSelect={onSelect}
             plansMap={defaultPlansMap}
             planCards={defaultPlanCards}
@@ -78,7 +80,7 @@ it('should display the discount price comparing against the monthly price', () =
             subscriptionDataCycleMapping={{}}
             cycle={CYCLE.YEARLY}
             currency="CHF"
-            plan={PLANS.PASS}
+            selectedPlanName={PLANS.PASS}
             onSelect={onSelect}
             plansMap={defaultPlansMap}
             planCards={defaultPlanCards}
@@ -94,7 +96,7 @@ it('should display the discount price against the same cycle if it is discounted
     const plansMap: PlansMap = {
         ...defaultPlansMap,
         [PLANS.PASS]: {
-            ...defaultPlansMap[PLANS.PASS],
+            ...passPlan,
             Pricing: {
                 '1': 499,
                 '12': 1200,
@@ -108,7 +110,7 @@ it('should display the discount price against the same cycle if it is discounted
             subscriptionDataCycleMapping={{}}
             cycle={CYCLE.YEARLY}
             currency="CHF"
-            plan={PLANS.PASS}
+            selectedPlanName={PLANS.PASS}
             onSelect={onSelect}
             plansMap={plansMap}
             planCards={defaultPlanCards}

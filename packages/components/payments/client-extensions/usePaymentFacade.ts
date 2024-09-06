@@ -4,6 +4,7 @@ import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
+import { isTaxInclusive } from '@proton/shared/lib/helpers/subscription';
 import type {
     Api,
     BillingPlatform,
@@ -12,7 +13,6 @@ import type {
     Currency,
     User,
 } from '@proton/shared/lib/interfaces';
-import { isTaxInclusive } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
