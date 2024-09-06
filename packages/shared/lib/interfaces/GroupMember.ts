@@ -12,8 +12,9 @@ export enum GROUP_MEMBER_TYPE {
 }
 
 export enum GROUP_MEMBER_PERMISSIONS {
-    None = 0, // 0000
-    OverrideGroupPermissions = 1 << 0, // 0001
+    NONE = 0, // 0000
+    SEND = 1 << 0, // 0001
+    LEAVE = 1 << 1, // 0010
 }
 
 export enum GROUP_MEMBERSHIP_STATUS {
@@ -48,6 +49,7 @@ export interface GroupMembership {
     Keys: GroupMemberAddressPendingKey;
     AddressID: string;
     ID: string;
+    Permissions: number;
 }
 
 export interface GroupMembershipReturn {
@@ -59,4 +61,5 @@ export interface GroupMembershipReturn {
     ForwardingKeys: GroupMemberAddressPendingKey;
     AddressId: string;
     ID: string;
+    Permissions: number;
 }

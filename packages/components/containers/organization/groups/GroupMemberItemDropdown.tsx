@@ -58,10 +58,10 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
     const dispatch = baseUseDispatch();
 
     const memberPermissionOptions: PermissionOption[] = [
-        { label: c('Action').t`Use group permissions`, value: GROUP_MEMBER_PERMISSIONS.None },
+        { label: c('Action').t`Use group permissions`, value: GROUP_MEMBER_PERMISSIONS.NONE },
         {
             label: c('Action').t`Always allow sending`,
-            value: GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions,
+            value: GROUP_MEMBER_PERMISSIONS.SEND,
         },
     ];
 
@@ -72,10 +72,7 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
 
     const handleOverrideGroupPermissions = async (value: number) => {
         try {
-            const newPermissions = setBit(
-                clearBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions),
-                value
-            );
+            const newPermissions = setBit(clearBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.SEND), value);
             await api(
                 updateGroupMember(member.ID, {
                     GroupID: group.ID,
@@ -94,12 +91,9 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
         }
     };
 
-    const overrideGroupPermissions: GROUP_MEMBER_PERMISSIONS = hasBit(
-        member.Permissions,
-        GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions
-    )
-        ? GROUP_MEMBER_PERMISSIONS.OverrideGroupPermissions
-        : GROUP_MEMBER_PERMISSIONS.None;
+    const overrideGroupPermissions: GROUP_MEMBER_PERMISSIONS = hasBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.SEND)
+        ? GROUP_MEMBER_PERMISSIONS.SEND
+        : GROUP_MEMBER_PERMISSIONS.NONE;
 
     return (
         <>
