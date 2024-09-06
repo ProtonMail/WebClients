@@ -61,9 +61,13 @@ export const ConfirmationTimeDataListItem = ({ tx, loading }: TxDataListItemProp
             bottomNode={
                 <div className={clsx(loading && 'skeleton-loader')}>
                     {confirmedDate ? (
-                        <Tooltip title={confirmedDate}>
+                        isNarrow ? (
+                            <Tooltip title={confirmedDate}>
+                                <span className="color-hint block text-ellipsis">{confirmedDate}</span>
+                            </Tooltip>
+                        ) : (
                             <span className="color-hint block text-ellipsis">{confirmedDate}</span>
-                        </Tooltip>
+                        )
                     ) : (
                         <div className="flex flex-row flex-nowrap items-center color-primary">
                             <CircleLoader className="shrink-0" />
@@ -99,9 +103,7 @@ export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemPro
         <DataListItem
             label={
                 <div className={clsx('block text-ellipsis', loading && 'skeleton-loader')}>
-                    <Tooltip title={senderOrRecipientLabel}>
-                        <span>{senderOrRecipientLabel}</span>
-                    </Tooltip>
+                    <span>{senderOrRecipientLabel}</span>
                 </div>
             }
             bottomNode={
@@ -182,13 +184,7 @@ export const AmountDataListItem = ({
             align="end"
             label={
                 <div className={clsx('ml-auto flex flex-row flex-nowrap', loadingLabel && 'skeleton-loader')}>
-                    {loadingLabel ? (
-                        <span>{c('Wallet transaction').t`Loading`}</span>
-                    ) : (
-                        <Tooltip title={primaryAmount}>
-                            <div>{primaryAmount}</div>
-                        </Tooltip>
-                    )}
+                    {loadingLabel ? <span>{c('Wallet transaction').t`Loading`}</span> : <div>{primaryAmount}</div>}
                 </div>
             }
             bottomNode={
@@ -200,9 +196,7 @@ export const AmountDataListItem = ({
                             loading && 'skeleton-loader'
                         )}
                     >
-                        <Tooltip title={secondaryAmount}>
-                            <div>{secondaryAmount}</div>
-                        </Tooltip>
+                        <div>{secondaryAmount}</div>
                     </div>
                 )
             }
