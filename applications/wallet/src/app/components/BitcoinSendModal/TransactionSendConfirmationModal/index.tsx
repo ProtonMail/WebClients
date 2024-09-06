@@ -34,25 +34,30 @@ export const TransactionSendConfirmationModal = ({
                     size="large"
                     shape="solid"
                     color="norm"
-                    onClick={() => onClickDone()}
-                >
-                    {c('Wallet setup').t`Done`}
-                </Button>,
+                    onClick={() => onClickInviteAFriend()}
+                >{c('Wallet setup').t`Invite a friend`}</Button>,
                 <Button
                     fullWidth
                     className="block text-semibold"
                     shape="ghost"
                     color="weak"
                     size="large"
-                    onClick={() => onClickInviteAFriend()}
-                >{c('Wallet setup').t`Invite a friend`}</Button>,
+                    onClick={() => onClickDone()}
+                >
+                    {c('Wallet setup').t`Done`}
+                </Button>,
             ]}
         >
             <div className="flex flex-column items-center">
-                <img src={walletSendingPlane} alt="" />
-                <h1 className={clsx('text-bold text-break text-2xl')}>{c('Wallet send')
+                <img
+                    className="h-custom w-custom"
+                    src={walletSendingPlane}
+                    alt=""
+                    style={{ '--w-custom': '15rem', '--h-custom': '10.438rem' }}
+                />
+                <h1 className={clsx('text-semibold text-break text-3xl')}>{c('Wallet send')
                     .t`Your Bitcoin is on its way!`}</h1>
-                <p className="text-center color-weak">{c('Wallet send')
+                <p className="text-center color-weak mb-0">{c('Wallet send')
                     .t`Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.`}</p>
 
                 <p className="text-center color-weak">{c('Wallet send')
