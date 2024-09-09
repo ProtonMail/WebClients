@@ -8,9 +8,18 @@ import type { OnLoginCallback } from '@proton/components/containers';
 import { HumanVerificationSteps } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import { useApi, useConfig, useErrorHandler, useGetPlans, useLocalState, useMyCountry } from '@proton/components/hooks';
+import {
+    useApi,
+    useConfig,
+    useErrorHandler,
+    useGetPaymentStatus,
+    useGetPlans,
+    useLocalState,
+    useMyCountry,
+} from '@proton/components/hooks';
+import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/payments/core';
+import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, getPlansMap } from '@proton/components/payments/core';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
@@ -26,7 +35,6 @@ import {
     APPS,
     BRAND_NAME,
     CYCLE,
-    DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
     MAIL_APP_NAME,
     PLANS,
@@ -35,11 +43,10 @@ import {
 } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Currency, Cycle, HumanVerificationMethodType, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Currency, Cycle, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getLocalPart } from '@proton/shared/lib/keys/setupAddress';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { getVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
@@ -168,8 +175,10 @@ const SignupContainer = ({
             ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
         });
     const { getPaymentsApi } = usePaymentsApi();
+    const { getPreferredCurrency } = useCurrencies('v2-signup');
     const paymentsSilentApi = getPaymentsApi(silentApi);
     const getPlans = useGetPlans();
+    const getPaymentStatus = useGetPaymentStatus();
     const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
         flow: 'signup',
     });
@@ -276,14 +285,21 @@ const SignupContainer = ({
                 getPlans({ api: silentApi }),
             ]);
 
+            const paymentStatus = await getPaymentStatus({ api: silentApi });
+
             const { plans: Plans, freePlan } = plansResult;
 
             if ((location.pathname === SSO_PATHS.REFER || location.pathname === SSO_PATHS.TRIAL) && !referralData) {
                 history.replace(SSO_PATHS.SIGNUP);
             }
 
-            const plansMap = toMap(Plans, 'Name') as PlansMap;
-            const currency = signupParameters.currency || Plans?.[0]?.Currency || DEFAULT_CURRENCY;
+            const currency = getPreferredCurrency({
+                status: paymentStatus,
+                plans: Plans,
+                paramCurrency: signupParameters.currency,
+            });
+            const plansMap = getPlansMap(Plans, currency, false);
+
             const planParameters = getPlanIDsFromParams(Plans, currency, signupParameters, {
                 plan: PLANS.FREE,
             });
@@ -309,6 +325,7 @@ const SignupContainer = ({
                 referralData,
                 subscriptionData,
                 inviteData: location.state?.invite,
+                paymentStatus,
             });
 
             void measure({
@@ -795,10 +812,12 @@ const SignupContainer = ({
                     currency={model.subscriptionData.currency}
                     cycle={model.subscriptionData.cycle}
                     plans={model.plans}
+                    paymentStatus={model.paymentStatus}
                     mostPopularPlanName={mostPopularPlanName}
                     upsellPlanName={upsellPlanName}
                     onChangeCurrency={handleChangeCurrency}
                     vpnServers={vpnServers}
+                    currencySignupParam={signupParameters.currency}
                     onPlan={async ({ planIDs, cycle, coupon }) => {
                         try {
                             const validateFlow = createFlow();
@@ -839,6 +858,7 @@ const SignupContainer = ({
                     api={normalApi}
                     onBack={handleBackStep}
                     plans={model.plans}
+                    paymentStatus={model.paymentStatus}
                     plan={plan}
                     planName={planName}
                     subscriptionData={model.subscriptionData}
@@ -883,6 +903,7 @@ const SignupContainer = ({
                             );
                         }
                     }}
+                    currencySignupParam={signupParameters.currency}
                 />
             )}
             {step === CreatingAccount && (
