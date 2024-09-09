@@ -1,13 +1,14 @@
-import { DragEvent, useCallback } from 'react';
+import type { DragEvent } from 'react';
+import { useCallback } from 'react';
 
 import { useDragMove } from '@proton/components';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
-import { DecryptedLink } from '../../../store';
+import type { DecryptedLink } from '../../../store';
 import { getMovedFiles } from '../../../utils/moveTexts';
 import { selectMessageForItemList } from '../../sections/helpers';
-import { DragMoveControls, FileBrowserBaseItem } from '../interface';
+import type { DragMoveControls, FileBrowserBaseItem } from '../interface';
 import { useSelection } from '../state/useSelection';
 
 interface Options {
@@ -36,7 +37,8 @@ function useDragAndDrop({ item, dragMoveControls }: Options) {
         texts
     );
 
-    const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (item.isLocked ? undefined : fn);
+    const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) =>
+        item.isLocked || item.isInvitation ? undefined : fn;
 
     const handleDragStart = unlessDisabled(
         useCallback(
@@ -58,7 +60,7 @@ function useDragAndDrop({ item, dragMoveControls }: Options) {
         [dragMove.handleDragEnd]
     );
 
-    const draggable = dragMoveControls && !item.isLocked;
+    const draggable = dragMoveControls && !item.isLocked && !item.isInvitation;
 
     return {
         dragMoveItems,

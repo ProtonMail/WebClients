@@ -1,13 +1,16 @@
 import { c } from 'ttag';
 import type { ReadableStream } from 'web-streams-polyfill';
 
+import { useApi } from '@proton/components/hooks';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import type {
     DriveFileBlock,
     DriveFileRevisionResult,
     DriveFileRevisionThumbnailResult,
 } from '@proton/shared/lib/interfaces/drive/file';
+import { useFlag } from '@proton/unleash';
 
+import { TransferState } from '../../components/TransferManager/transfer';
 import { logError } from '../../utils/errorHandling';
 import { streamToBuffer } from '../../utils/stream';
 import { useDebouncedRequest } from '../_api';
@@ -16,6 +19,7 @@ import type { DecryptedLink, SignatureIssues } from '../_links';
 import { useLink, useLinksListing } from '../_links';
 import { ThumbnailType } from '../_uploads/media';
 import { waitFor } from '../_utils';
+import { useDownloadMetrics } from './DownloadProvider/useDownloadMetrics';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
 import downloadThumbnailPure from './download/downloadThumbnail';
@@ -40,6 +44,11 @@ export default function useDownload() {
     const { getVerificationKey } = useDriveCrypto();
     const { getLink, getLinkPrivateKey, getLinkSessionKey, setSignatureIssues } = useLink();
     const { loadChildren, getCachedChildren } = useLinksListing();
+    const { report } = useDownloadMetrics('preview');
+
+    // TODO: DRVWEB-4064 - Clean this up
+    const isNewFolderTreeAlgorithmEnabled = useFlag('DriveWebDownloadNewFolderLoaderAlgorithm');
+    const api = useApi();
 
     const getChildren = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<DecryptedLink[]> => {
         await loadChildren(abortSignal, shareId, linkId, false, false);
@@ -161,24 +170,39 @@ export default function useDownload() {
                     return eventCallbacks.onSignatureIssue?.(abortSignal, link, signatureIssues);
                 },
             },
-            log
+            log,
+            isNewFolderTreeAlgorithmEnabled,
+            api
         );
     };
 
     const downloadStream = (
-        list: LinkDownload[],
+        link: LinkDownload,
         eventCallbacks?: DownloadEventCallbacks
     ): { controls: DownloadStreamControls; stream: ReadableStream<Uint8Array> } => {
-        const controls = initDownloadStream(list, {
-            getChildren,
-            getBlocks,
-            getKeys: getKeysGenerator(eventCallbacks?.onSignatureIssue),
-            ...eventCallbacks,
-            onSignatureIssue: async (abortSignal, link, signatureIssues) => {
-                await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
-                return eventCallbacks?.onSignatureIssue?.(abortSignal, link, signatureIssues);
+        const controls = initDownloadStream(
+            [link],
+            {
+                getChildren,
+                getBlocks,
+                getKeys: getKeysGenerator(eventCallbacks?.onSignatureIssue),
+                ...eventCallbacks,
+                onSignatureIssue: async (abortSignal, link, signatureIssues) => {
+                    await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
+                    return eventCallbacks?.onSignatureIssue?.(abortSignal, link, signatureIssues);
+                },
+                onError: (error: Error) => {
+                    if (error) {
+                        report(link.shareId, TransferState.Error, error);
+                    }
+                },
+                onFinish: () => {
+                    report(link.shareId, TransferState.Done);
+                },
             },
-        });
+            isNewFolderTreeAlgorithmEnabled,
+            api
+        );
         const stream = controls.start();
         return { controls, stream };
     };

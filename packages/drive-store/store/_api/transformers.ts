@@ -48,7 +48,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
 
     return {
         linkId: link.LinkID,
-        parentLinkId: link.ParentLinkID,
+        parentLinkId: link.ParentLinkID ?? '',
         // API recognises only file and folder at this moment. In the future,
         // it might include hard- and soft-links, but still, for our case we
         // will differenciate only between files and folders, so we can convert
@@ -83,6 +83,8 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
                             contentHash: link.FileProperties.ActiveRevision.Photo.ContentHash ?? undefined,
                             mainPhotoLinkId: link.FileProperties.ActiveRevision.Photo.MainPhotoLinkID ?? undefined,
                             hash: link.FileProperties.ActiveRevision.Photo.Hash ?? undefined,
+                            relatedPhotosLinkIds:
+                                link.FileProperties.ActiveRevision.Photo.RelatedPhotosLinkIDs ?? undefined,
                         }
                       : undefined,
               }
@@ -131,6 +133,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL, shareId: str
         contentKeyPacketSignature: link.FileProperties?.ContentKeyPacketSignature,
         signatureAddress: link.SignatureAddress,
         xAttr: link.XAttr,
+        volumeId: link.VolumeID,
     };
 }
 

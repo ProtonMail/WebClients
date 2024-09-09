@@ -1,6 +1,6 @@
 import { AddressesInputItem } from '@proton/components/components';
 
-import { ShareInvitee } from '../../../../store';
+import type { ShareInvitee } from '../../../../store';
 import { getAddressInputItemAttributes } from './helpers/getAddressInputItemAttributes';
 
 interface Props {

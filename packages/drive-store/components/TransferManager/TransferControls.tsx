@@ -11,8 +11,9 @@ import {
     isTransferSkipped,
 } from '../../utils/transfer';
 import Buttons from './Buttons';
-import { TransferManagerButtonProps, TransferProps } from './interfaces';
-import { TransferType, Upload } from './transfer';
+import type { TransferManagerButtonProps, TransferProps } from './interfaces';
+import type { Upload } from './transfer';
+import { TransferType } from './transfer';
 import useTransferControls from './useTransferControls';
 
 function TransferControls<T extends TransferType>({ transfer, type }: TransferProps<T>) {

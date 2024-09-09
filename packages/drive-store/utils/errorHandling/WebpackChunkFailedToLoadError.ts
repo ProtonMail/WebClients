@@ -1,4 +1,4 @@
-import type { CaptureContext } from '@sentry/types';
+import type { ScopeContext } from '@sentry/types';
 
 import { EnrichedError } from './EnrichedError';
 import { ERROR_REQUIRE_PAGE_REFRESH } from './errorStrings';
@@ -35,7 +35,7 @@ export const getWebpackChunkFailedToLoadError = (e: Error, chunkName: string) =>
  *
  */
 export class WebpackChunkFailedToLoad extends EnrichedError {
-    constructor(message: string, context: CaptureContext) {
+    constructor(message: string, context: Partial<ScopeContext>) {
         super(message, context);
         this.name = 'WebpackChunkFailedToLoad';
     }

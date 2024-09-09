@@ -187,4 +187,27 @@ describe('useDownloadQueue', () => {
             },
         ]);
     });
+
+    it('set downloads as retried using data', () => {
+        act(() => {
+            hook.current.updateWithData(fileTransferId, TransferState.Pending, {
+                retry: true,
+            });
+        });
+        expect(hook.current.downloads[0].retries).toEqual(1);
+        act(() => {
+            hook.current.updateWithData(fileTransferId, TransferState.Progress, {});
+        });
+        expect(hook.current.downloads[0].retries).toEqual(1);
+    });
+    it('set downloads as retried if resumed after error', () => {
+        act(() => {
+            hook.current.updateWithData(fileTransferId, TransferState.Error, {});
+        });
+        expect(hook.current.downloads[0].retries).toEqual(0);
+        act(() => {
+            hook.current.updateWithData(fileTransferId, TransferState.Pending, {});
+        });
+        expect(hook.current.downloads[0].retries).toEqual(1);
+    });
 });

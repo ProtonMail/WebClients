@@ -119,3 +119,33 @@
 	-o-user-drag: none;
 	user-drag: none; // stylelint-disable-line property-no-unknown
 }
+
+.file-browser-list-item--invitation .file-browser-list-item--icon,
+.file-browser-grid-item--invitation .file-browser-grid-item--icon {
+	filter: grayscale(100%);
+}
+
+.file-browser-list-item--accept-decline-cell {
+	inline-size: calc(100% / 6);
+}
+
+.file-browser-list-item--decline {
+	display: none;
+}
+
+// This is the size where Accept / Decline buttons can fit in the list view
+@include media('>=#{em(1280, 16)}') {
+	body:not(.drawer-is-open) {
+		.file-browser-list-item--accept-decline-cell {
+			inline-size: calc(100% / 6 + 3rem);
+		}
+
+		.file-browser-list-item--decline {
+			display: block;
+		}
+
+		.file-browser-list-item--invitation .file-browser-list--context-menu-column {
+			display: none;
+		}
+	}
+}

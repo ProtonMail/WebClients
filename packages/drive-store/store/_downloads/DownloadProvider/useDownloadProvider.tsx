@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useNotifications, useOnline, usePreventLeave } from '@proton/components';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
-import { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
+import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { useDownloadIsTooBigModal } from '../../../components/modals/DownloadIsTooBigModal';
@@ -16,21 +17,23 @@ import {
     isTransferPausedByConnection,
     isTransferProgress,
 } from '../../../utils/transfer';
-import { SignatureIssues } from '../../_links';
+import type { SignatureIssues } from '../../_links';
 import { useTransferLog } from '../../_transfer';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import FileSaver from '../fileSaver/fileSaver';
-import { InitDownloadCallback, LinkDownload } from '../interface';
-import { UpdateFilter } from './interface';
+import type { InitDownloadCallback, LinkDownload } from '../interface';
+import type { UpdateFilter } from './interface';
 import useDownloadContainsDocument from './useDownloadContainsDocument';
 import useDownloadControl from './useDownloadControl';
+import { useDownloadMetrics } from './useDownloadMetrics';
 import useDownloadQueue from './useDownloadQueue';
 import useDownloadScanIssue from './useDownloadScanIssue';
 import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 
-export default function useDownloadProvider(initDownload: InitDownloadCallback) {
+export default function useDownloadProvider(user: UserModel | undefined, initDownload: InitDownloadCallback) {
     const onlineStatus = useOnline();
     const { createNotification } = useNotifications();
+    const { observe } = useDownloadMetrics('download', user);
     const { preventLeave } = usePreventLeave();
     const [downloadIsTooBigModal, showDownloadIsTooBigModal] = useDownloadIsTooBigModal();
 
@@ -71,7 +74,9 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
 
     const restartDownloads = useCallback(
         async (idOrFilter: UpdateFilter) => {
-            queue.updateWithData(idOrFilter, TransferState.Pending);
+            queue.updateWithData(idOrFilter, TransferState.Pending, {
+                retry: true,
+            });
         },
         [queue.downloads, queue.updateState]
     );
@@ -188,6 +193,10 @@ export default function useDownloadProvider(initDownload: InitDownloadCallback) 
             control.resumeDownloads(({ id }) => ids.includes(id));
         }
     }, [onlineStatus]);
+
+    useEffect(() => {
+        observe(queue.downloads);
+    }, [queue.downloads]);
 
     return {
         downloads: queue.downloads,
