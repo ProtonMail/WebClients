@@ -36,7 +36,6 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -56,7 +55,6 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -75,7 +73,6 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -93,7 +90,6 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -123,7 +119,6 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -141,7 +136,6 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -159,7 +153,6 @@ describe('getNewMethods()', () => {
             BLACK_FRIDAY.COUPON_CODE,
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -179,7 +172,6 @@ describe('getNewMethods()', () => {
                 '',
                 flow,
                 undefined,
-                true,
                 undefined,
                 undefined,
                 false
@@ -198,7 +190,6 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -216,7 +207,6 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -234,7 +224,6 @@ describe('getNewMethods()', () => {
             BLACK_FRIDAY.COUPON_CODE,
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -254,7 +243,6 @@ describe('getNewMethods()', () => {
                 '',
                 flow,
                 undefined,
-                true,
                 undefined,
                 undefined,
                 false
@@ -273,7 +261,6 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -296,7 +283,6 @@ describe('getNewMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -366,7 +352,6 @@ describe('getUsedMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -435,7 +420,6 @@ describe('getAvailablePaymentMethods()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -510,7 +494,6 @@ describe('getLastUsedMethod()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -600,7 +583,6 @@ describe('getSavedMethodById()', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -705,8 +687,7 @@ describe('initializePaymentMethods()', () => {
             {
                 statusExtendedAutomatic: () => paymentMethodStatus,
             } as any as PaymentsApi,
-            undefined,
-            true
+            undefined
         );
 
         expect(methods).toBeDefined();
@@ -748,8 +729,7 @@ describe('initializePaymentMethods()', () => {
             {
                 statusExtendedAutomatic: () => paymentMethodStatus,
             } as any as PaymentsApi,
-            undefined,
-            true
+            undefined
         );
 
         expect(methods).toBeDefined();
@@ -773,7 +753,6 @@ describe('Cash', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -795,7 +774,6 @@ describe('Cash', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -816,7 +794,6 @@ describe('Cash', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -836,7 +813,6 @@ describe('Cash', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -859,7 +835,6 @@ describe('Chargebee Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -881,7 +856,6 @@ describe('Chargebee Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -909,7 +883,6 @@ describe('Chargebee Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -930,7 +903,6 @@ describe('Chargebee Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -951,7 +923,6 @@ describe('Chargebee Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -974,7 +945,6 @@ describe('Chargebee Bitcoin', () => {
                 coupon,
                 flow,
                 plan,
-                true,
                 undefined,
                 undefined,
                 false
@@ -996,7 +966,6 @@ describe('Chargebee Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1020,7 +989,6 @@ describe('Chargebee Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            false,
             BillingPlatform.Proton,
             chargebeeUserExists,
             false
@@ -1044,7 +1012,6 @@ describe('Chargebee Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            false,
             BillingPlatform.Proton,
             chargebeeUserExists,
             false
@@ -1064,7 +1031,6 @@ describe('Bitcoin', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1083,7 +1049,6 @@ describe('Bitcoin', () => {
             '',
             'subscription',
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1108,7 +1073,6 @@ describe('Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            false,
             BillingPlatform.Proton,
             chargebeeUserExists,
             false
@@ -1130,7 +1094,6 @@ describe('Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1158,7 +1121,6 @@ describe('Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1179,7 +1141,6 @@ describe('Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1200,7 +1161,6 @@ describe('Bitcoin', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1223,7 +1183,6 @@ describe('Bitcoin', () => {
                 coupon,
                 flow,
                 plan,
-                true,
                 undefined,
                 undefined,
                 false
@@ -1247,7 +1206,6 @@ describe('Chargebee card', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1268,7 +1226,6 @@ describe('Chargebee card', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1292,7 +1249,6 @@ describe('Chargebee card', () => {
             coupon,
             flow as PaymentMethodFlows,
             undefined,
-            false,
             BillingPlatform.Proton,
             chargebeeUserExists,
             false
@@ -1316,7 +1272,6 @@ describe('Chargebee card', () => {
             coupon,
             flow as PaymentMethodFlows,
             undefined,
-            false,
             BillingPlatform.Proton,
             chargebeeUserExists,
             false
@@ -1338,7 +1293,6 @@ describe('Chargebee card', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1359,7 +1313,6 @@ describe('Chargebee card', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1369,7 +1322,6 @@ describe('Chargebee card', () => {
     });
 
     it('should display the chargebee card if CHARGEBEE_FORCED even if disabled for B2B', () => {
-        const enableChargebeeB2B = false;
         const flow: PaymentMethodFlows = 'subscription';
         const coupon = '';
 
@@ -1381,7 +1333,6 @@ describe('Chargebee card', () => {
             coupon,
             flow,
             undefined,
-            enableChargebeeB2B,
             undefined,
             undefined,
             false
@@ -1404,7 +1355,6 @@ describe('Chargebee PayPal', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1425,7 +1375,6 @@ describe('Chargebee PayPal', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1450,7 +1399,6 @@ describe('Chargebee PayPal', () => {
             coupon,
             flow,
             undefined,
-            false,
             BillingPlatform.Proton,
             chargebeeUserExists,
             false
@@ -1474,7 +1422,6 @@ describe('Chargebee PayPal', () => {
             coupon,
             flow as PaymentMethodFlows,
             undefined,
-            false,
             BillingPlatform.Proton,
             chargebeeUserExists,
             false
@@ -1507,7 +1454,6 @@ describe('Chargebee PayPal', () => {
             coupon,
             flow,
             undefined,
-            true,
             BillingPlatform.Chargebee,
             1,
             false
@@ -1528,7 +1474,6 @@ describe('Chargebee PayPal', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1549,7 +1494,6 @@ describe('Chargebee PayPal', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1571,7 +1515,6 @@ describe('Chargebee PayPal', () => {
             coupon,
             flow,
             undefined,
-            true,
             undefined,
             undefined,
             false
@@ -1595,7 +1538,6 @@ it('should not have new payment methods if they are disabled', () => {
         coupon,
         flow,
         undefined,
-        true,
         undefined,
         undefined,
         disableNewPaymentMethods

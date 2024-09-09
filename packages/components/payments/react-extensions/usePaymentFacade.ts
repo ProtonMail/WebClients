@@ -183,7 +183,6 @@ export const usePaymentFacade = (
         selectedPlanName,
         onProcessPaymentToken,
         onProcessPaymentTokenFailed,
-        enableChargebeeB2B,
         billingAddress,
         billingPlatform,
         chargebeeUserExists,
@@ -214,7 +213,6 @@ export const usePaymentFacade = (
         selectedPlanName: PLANS | ADDON_NAMES | undefined;
         onProcessPaymentToken: (paymentMethodType: PaymentProcessorType) => void;
         onProcessPaymentTokenFailed: (paymentMethodType: PaymentProcessorType) => void;
-        enableChargebeeB2B: boolean;
         billingAddress?: BillingAddress;
         billingPlatform?: BillingPlatform;
         chargebeeUserExists?: ChargebeeUserExists;
@@ -263,7 +261,6 @@ export const usePaymentFacade = (
             isChargebeeEnabled,
             paymentsApi,
             selectedPlanName,
-            enableChargebeeB2B,
             billingPlatform,
             chargebeeUserExists,
             disableNewPaymentMethods,
