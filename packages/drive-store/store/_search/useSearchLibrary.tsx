@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,7 +20,7 @@ import { useDefaultShare, useShare } from '../_shares';
 import convertDriveEventsToSearchEvents from './indexing/processEvent';
 import useFetchShareMap from './indexing/useFetchShareMap';
 import { migrate } from './migration';
-import { ESDriveSearchParams, ESLink, EncryptedSearchFunctionsDrive } from './types';
+import type { ESDriveSearchParams, ESLink, EncryptedSearchFunctionsDrive } from './types';
 import { useESCallbacks } from './useESCallbacks';
 
 const SearchLibraryContext = createContext<EncryptedSearchFunctionsDrive | null>(null);
@@ -103,7 +104,7 @@ export const SearchLibraryProvider = ({ children }: Props) => {
             return;
         }
 
-        const callbackId = driveEventManager.eventHandlers.register(async (volumeId, events) => {
+        const callbackId = driveEventManager.eventHandlers.register(async (volumeId, events, processedEventCounter) => {
             // The store is updated via volume events which includes all shares
             // including my files or devices. Encrypted search works only for
             // my files and thus we need to filter for events affecting only
@@ -137,6 +138,9 @@ export const SearchLibraryProvider = ({ children }: Props) => {
                             event.eventType === EVENT_TYPES.DELETE || event.encryptedLink.rootShareId === defaultShareId
                     ),
             };
+            defaultShareEvents.events.forEach((event) => {
+                processedEventCounter(events.eventId, event);
+            });
             const searchEvents = await convertDriveEventsToSearchEvents(
                 defaultShareId,
                 defaultShareEvents,

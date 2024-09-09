@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { FixedSizeList, ListChildComponentProps } from 'react-window';
+import type { ListChildComponentProps } from 'react-window';
+import { FixedSizeList } from 'react-window';
 
 import { c, msgid } from 'ttag';
 
@@ -22,7 +23,8 @@ import { isTransferFailed } from '../../utils/transfer';
 import Header from './Header';
 import HeaderButtons from './HeaderButtons';
 import Transfer from './TransferItem';
-import { Download, STATE_TO_GROUP_MAP, TransferGroup, TransferType, TransfersStats, Upload } from './transfer';
+import type { Download, TransfersStats, Upload } from './transfer';
+import { STATE_TO_GROUP_MAP, TransferGroup, TransferType } from './transfer';
 import useTransferControls from './useTransferControls';
 
 interface TransferListEntry<T extends TransferType> {

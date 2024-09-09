@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { fromUnixTime, getDate, getHours, getMinutes, getMonth, getUnixTime, getYear } from 'date-fns';
 import { c } from 'ttag';
 
-import { InputProps } from '@proton/atoms/Input';
+import type { InputProps } from '@proton/atoms/Input';
 import { DateInputTwo, TimeInput } from '@proton/components';
 
 interface Props extends Omit<InputProps, 'min' | 'max' | 'value' | 'onChange'> {

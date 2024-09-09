@@ -7,9 +7,9 @@ import { logError } from '../../utils/errorHandling';
 import { useLinksListing } from '../_links';
 import { usePublicLinksListingProvider } from '../_links/useLinksListing/usePublicLinksListing';
 import { useUserSettings } from '../_settings';
-import { UserSortParams } from '../_settings/sorting';
+import type { UserSortParams } from '../_settings/sorting';
 import { useAbortSignal, useControlledSorting, useMemoArrayNoMatterTheOrder } from './utils';
-import { SortParams } from './utils/useSorting';
+import type { SortParams } from './utils/useSorting';
 
 export function useFileViewNavigation(
     useNavigation: boolean,

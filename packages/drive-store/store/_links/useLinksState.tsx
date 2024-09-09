@@ -3,8 +3,9 @@ import { createContext, useCallback, useContext, useEffect, useState } from 'rea
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DriveEvents, useDriveEventManager } from '../_events';
-import { DecryptedLink, EncryptedLink, LinkShareUrl, SignatureIssues } from './interface';
+import type { DriveEvent, DriveEvents } from '../_events';
+import { useDriveEventManager } from '../_events';
+import type { DecryptedLink, EncryptedLink, LinkShareUrl, SignatureIssues } from './interface';
 import { isDecryptedLinkSame, isEncryptedLinkSame } from './link';
 
 export type LinksState = {
@@ -43,16 +44,23 @@ export function isLinkDecrypted(link: Link | undefined): link is Required<Link> 
  * useLinksStateProvider provides a storage to cache links.
  */
 export function useLinksStateProvider() {
-    const events = useDriveEventManager();
+    const eventsManager = useDriveEventManager();
 
     const [state, setState] = useState<LinksState>({});
 
+    const removeLinkForDriveCompat = useCallback(
+        (shareId: string, linkId: string) => {
+            setState((state) => deleteLinks(state, shareId, [linkId]));
+        },
+        [state]
+    );
+
     useEffect(() => {
-        const callbackId = events.eventHandlers.register((_volumeId, events) =>
-            setState((state) => updateByEvents(state, events))
+        const callbackId = eventsManager.eventHandlers.register((_volumeId, events, processedEventCounter) =>
+            setState((state) => updateByEvents(state, events, processedEventCounter))
         );
         return () => {
-            events.eventHandlers.unregister(callbackId);
+            eventsManager.eventHandlers.unregister(callbackId);
         };
     }, []);
 
@@ -150,13 +158,6 @@ export function useLinksStateProvider() {
         [state]
     );
 
-    const removeLinkForDriveCompat = useCallback(
-        (shareId: string, linkId: string) => {
-            setState((state) => deleteLinks(state, shareId, [linkId]));
-        },
-        [state]
-    );
-
     return {
         setLinks,
         lockLinks,
@@ -168,6 +169,7 @@ export function useLinksStateProvider() {
         getTrashed,
         getSharedByLink,
         getSharedWithMeByLink,
+        getAllShareLinks, // This should be use only in specific case when you know the links you need (Ex: Bookmarks)
         removeLinkForMigration,
         removeLinkForSharedWithMe,
         /** Should never be used outside of `drive-store`. */
@@ -175,7 +177,11 @@ export function useLinksStateProvider() {
     };
 }
 
-export function updateByEvents(state: LinksState, { events }: DriveEvents): LinksState {
+export function updateByEvents(
+    state: LinksState,
+    { events, eventId }: DriveEvents,
+    processedEventcounter: (eventId: string, event: DriveEvent) => void
+): LinksState {
     events.forEach((event) => {
         if (event.eventType === EVENT_TYPES.DELETE) {
             // Delete event does not contain context share ID because
@@ -188,7 +194,9 @@ export function updateByEvents(state: LinksState, { events }: DriveEvents): Link
             // we will have storage mapped with volumes instead removing
             // the problem altogether.
             Object.keys(state).forEach((shareId) => {
-                state = deleteLinks(state, shareId, [event.encryptedLink.linkId]);
+                state = deleteLinks(state, shareId, [event.encryptedLink.linkId], () => {
+                    processedEventcounter(eventId, event);
+                });
             });
             return;
         }
@@ -203,19 +211,23 @@ export function updateByEvents(state: LinksState, { events }: DriveEvents): Link
             event.encryptedLink.rootShareId !== event.originShareId &&
             state[event.originShareId]
         ) {
-            state = deleteLinks(state, event.originShareId, [event.encryptedLink.linkId]);
+            state = deleteLinks(state, event.originShareId, [event.encryptedLink.linkId], () => {
+                processedEventcounter(eventId, event);
+            });
         }
 
         if (!state[event.encryptedLink.rootShareId]) {
             return state;
         }
-        state = addOrUpdate(state, event.encryptedLink.rootShareId, [{ encrypted: event.encryptedLink }]);
+        state = addOrUpdate(state, event.encryptedLink.rootShareId, [{ encrypted: event.encryptedLink }], () => {
+            processedEventcounter(eventId, event);
+        });
     });
 
     return state;
 }
 
-export function deleteLinks(state: LinksState, shareId: string, linkIds: string[]): LinksState {
+export function deleteLinks(state: LinksState, shareId: string, linkIds: string[], onDelete?: () => void): LinksState {
     if (!state[shareId]) {
         return state;
     }
@@ -231,6 +243,9 @@ export function deleteLinks(state: LinksState, shareId: string, linkIds: string[
 
         // Delete the link itself from links and tree.
         delete state[shareId].links[linkId];
+
+        onDelete?.();
+
         const originalParentChildren = state[shareId].tree[original.encrypted.parentLinkId];
         if (originalParentChildren) {
             state[shareId].tree[original.encrypted.parentLinkId] = originalParentChildren.filter(
@@ -248,10 +263,12 @@ export function deleteLinks(state: LinksState, shareId: string, linkIds: string[
     return updated ? { ...state } : state;
 }
 
-export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): LinksState {
+export function addOrUpdate(state: LinksState, shareId: string, links: Link[], onAddOrUpdate?: () => void): LinksState {
     if (!links.length) {
         return state;
     }
+
+    let stateUpdated = false;
 
     if (!state[shareId]) {
         state[shareId] = {
@@ -303,6 +320,7 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): 
             if (originalParentId !== parentLinkId) {
                 const originalParentChildren = state[shareId].tree[originalParentId];
                 if (originalParentChildren) {
+                    stateUpdated = true;
                     state[shareId].tree[originalParentId] = originalParentChildren.filter(
                         (childLinkId) => childLinkId !== linkId
                     );
@@ -340,24 +358,33 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): 
                 // parent is restored.
                 if (link.encrypted.trashedByParent) {
                     if (!parentChildIds.includes(linkId)) {
+                        stateUpdated = true;
                         state[shareId].tree[parentLinkId] = [...parentChildIds, linkId];
                     }
                 } else if (link.encrypted.trashed) {
+                    stateUpdated = true;
                     state[shareId].tree[parentLinkId] = parentChildIds.filter((childId) => childId !== linkId);
                     recursivelyTrashChildren(state, shareId, linkId, link.encrypted.trashed);
                 } else {
                     if (!parentChildIds.includes(linkId)) {
+                        stateUpdated = true;
                         state[shareId].tree[parentLinkId] = [...parentChildIds, linkId];
                     }
                     if (originalTrashed) {
+                        stateUpdated = true;
                         recursivelyRestoreChildren(state, shareId, linkId, originalTrashed);
                     }
                 }
             } else {
+                stateUpdated = true;
                 state[shareId].tree[parentLinkId] = [linkId];
             }
         }
     });
+
+    if (stateUpdated && onAddOrUpdate) {
+        onAddOrUpdate();
+    }
 
     return { ...state };
 }

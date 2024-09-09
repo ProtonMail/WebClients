@@ -35,12 +35,10 @@ export const useNode = () => {
     }> => {
         const link = await getLink(abortSignal, shareId, linkId);
 
-        const { stream, controls } = downloadStream([
-            {
-                ...link,
-                shareId,
-            },
-        ]);
+        const { stream, controls } = downloadStream({
+            ...link,
+            shareId,
+        });
         const cancelListener = () => {
             controls.cancel();
         };

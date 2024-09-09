@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { LinkURLType, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DecryptedLink } from '../../store';
+import type { DecryptedLink } from '../../store';
+import type { SharedWithMeItem } from './SharedWithMe/SharedWithMe';
 
 export const selectMessageForItemList = (
     isFiles: boolean[],
@@ -115,6 +116,7 @@ export const getLocalizedDescription = (mimeType: string): string | undefined =>
         case SupportedMimeTypes.pages:
             return c('Mimetype').t`Apple Pages`;
         case SupportedMimeTypes.pdf:
+        case 'application/x-pdf':
             return c('Mimetype').t`Adobe Portable Document Format (PDF)`;
         case SupportedMimeTypes.rtf:
             return c('Mimetype').t`Rich Text Format (RTF)`;
@@ -228,11 +230,30 @@ export const getMimeTypeDescription = (mimeType: string) => {
     return c('Mimetype').t`Unknown file`;
 };
 
-export const getSelectedItems = (items: DecryptedLink[], selectedItemIds: string[]): DecryptedLink[] => {
+export const getSelectedItems = (
+    items: DecryptedLink[],
+    selectedItemIds: string[],
+    key: 'linkId' | 'rootShareId' = 'linkId'
+): DecryptedLink[] => {
     if (items) {
         return selectedItemIds
-            .map((selectedItemId) => items.find(({ linkId, isLocked }) => !isLocked && selectedItemId === linkId))
+            .map((selectedItemId) => items.find(({ isLocked, ...item }) => !isLocked && selectedItemId === item[key]))
             .filter(isTruthy) as DecryptedLink[];
+    }
+
+    return [];
+};
+
+export const getSelectedSharedWithMeItems = (
+    items: SharedWithMeItem[],
+    selectedItemIds: string[]
+): SharedWithMeItem[] => {
+    if (items) {
+        return selectedItemIds
+            .map((selectedItemId) =>
+                items.find(({ isLocked, ...item }) => !isLocked && selectedItemId === item.rootShareId)
+            )
+            .filter(isTruthy) as SharedWithMeItem[];
     }
 
     return [];

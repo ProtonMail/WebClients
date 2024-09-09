@@ -9,7 +9,7 @@ import { getNumAccessesTooltipMessage } from '@proton/shared/lib/drive/translati
 import { stopPropagation } from '../../../utils/stopPropagation';
 import SortDropdown from '../../sections/SortDropdown';
 import { SelectionState } from '../hooks/useSelectionControls';
-import { SortParams } from '../interface';
+import type { SortParams } from '../interface';
 import { useSelection } from '../state/useSelection';
 
 interface Props<T> {

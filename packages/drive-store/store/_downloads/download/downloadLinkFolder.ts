@@ -3,9 +3,11 @@ import { c } from 'ttag';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
+import { ExperimentGroup, Features, measureFeaturePerformance } from '../../../utils/telemetry';
 import { WAIT_TIME } from '../constants';
 import type {
     ChildrenLinkMeta,
@@ -36,22 +38,32 @@ export default function initDownloadLinkFolder(
     link: LinkDownload,
     callbacks: DownloadCallbacks,
     log: LogCallback,
+    isNewAlgorithmEnabled: boolean,
+    api: Api,
     options?: { virusScan?: boolean }
 ): DownloadStreamControls {
-    const folderLoader = new FolderTreeLoader(link, log);
+    const folderLoader = new FolderTreeLoader(link, log, isNewAlgorithmEnabled);
     const concurrentIterator = new ConcurrentIterator();
     const archiveGenerator = new ArchiveGenerator();
+    const measureTotalSizeComputation = measureFeaturePerformance(
+        api,
+        Features.totalSizeComputation,
+        isNewAlgorithmEnabled ? ExperimentGroup.treatment : ExperimentGroup.control
+    );
 
     const cancel = () => {
         folderLoader.cancel();
         archiveGenerator.cancel();
         concurrentIterator.cancel();
+        measureTotalSizeComputation.clear();
     };
 
     const start = () => {
+        measureTotalSizeComputation.start();
         folderLoader
             .load(callbacks.getChildren, callbacks.onSignatureIssue, callbacks.onProgress, callbacks.onContainsDocument)
             .then(({ size, linkSizes }) => {
+                measureTotalSizeComputation.end({ quantity: Object.keys(linkSizes).length });
                 linkSizes[link.linkId] = size;
                 callbacks.onInit?.(size, linkSizes);
             })
@@ -96,12 +108,15 @@ export class FolderTreeLoader {
 
     private log: LogCallback;
 
-    constructor(link: LinkDownload, log: LogCallback) {
+    private isNewAlgorithmEnabled: boolean;
+
+    constructor(link: LinkDownload, log: LogCallback, isNewAlgorithmEnabled: boolean) {
         this.rootLink = link;
         this.done = false;
         this.links = [];
         this.abortController = new AbortController();
         this.log = (message) => log(`traversal: ${message}`);
+        this.isNewAlgorithmEnabled = isNewAlgorithmEnabled;
     }
 
     async load(
@@ -175,6 +190,45 @@ export class FolderTreeLoader {
                 signatureIssues: link.signatureIssues,
             })),
         ];
+
+        if (this.isNewAlgorithmEnabled) {
+            return this.generateFolderResultsNew(
+                shareId,
+                children,
+                getChildren,
+                parentLinkIds,
+                parent,
+                onSignatureIssue,
+                onProgress
+            );
+        }
+        return this.generateFolderResultsOld(
+            shareId,
+            children,
+            getChildren,
+            parentLinkIds,
+            parent,
+            onSignatureIssue,
+            onProgress
+        );
+    }
+
+    // TODO: DRVWEB-4064 - Clean this up
+    /**
+     * Old algorithm for recursively calling the loadHelper.
+     * Will map over every child and recursively call the loadHelper down to the deepest level
+     * without awaiting for the completion for previous branches
+     */
+    private async generateFolderResultsOld(
+        shareId: LinkDownload['shareId'],
+        children: ChildrenLinkMeta[],
+        getChildren: GetChildrenCallback,
+        parentLinkIds: string[],
+        parent: string[],
+        onSignatureIssue?: OnSignatureIssueCallback,
+        onProgress?: OnProgressCallback,
+        onContainsDocument?: OnContainsDocumentCallback
+    ) {
         return Promise.all(
             children.map(async (item: ChildrenLinkMeta) => {
                 // To get link into progresses right away so potentially loader can be displayed.
@@ -204,6 +258,50 @@ export class FolderTreeLoader {
                 linkSizes,
             };
         });
+    }
+
+    /**
+     * New algorithm for recursively calling the loadHelper.
+     * Will await one branch of nested children to complete recursion before
+     * moving onto the next
+     */
+    private async generateFolderResultsNew(
+        shareId: LinkDownload['shareId'],
+        children: ChildrenLinkMeta[],
+        getChildren: GetChildrenCallback,
+        parentLinkIds: string[],
+        parent: string[],
+        onSignatureIssue?: OnSignatureIssueCallback,
+        onProgress?: OnProgressCallback,
+        onContainsDocument?: OnContainsDocumentCallback
+    ): Promise<FolderLoadInfo> {
+        const results = [];
+        for (const item of children) {
+            onProgress?.([...parentLinkIds, item.linkId], 0);
+            if (!item.isFile) {
+                const result = await this.loadHelper(
+                    { ...item, shareId },
+                    [...parentLinkIds, item.linkId],
+                    getChildren,
+                    onSignatureIssue,
+                    onProgress,
+                    onContainsDocument,
+                    [...parent, item.name]
+                );
+                result.linkSizes[item.linkId] = result.size;
+                results.push(result);
+            }
+            this.log(`File ${item.linkId}, parent: ${parentLinkIds.at(-1)}`);
+            results.push({ size: item.size, linkSizes: Object.fromEntries([[item.linkId, item.size]]) });
+        }
+        return results.reduce(
+            (acc, { size, linkSizes }) => {
+                acc.size += size;
+                acc.linkSizes = { ...acc.linkSizes, ...linkSizes };
+                return acc;
+            },
+            { size: 0, linkSizes: {} }
+        );
     }
 
     async *iterateAllChildren(): AsyncGenerator<NestedLinkDownload> {
