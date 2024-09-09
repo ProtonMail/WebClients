@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { VolumesStateProvider } from '../_volumes/useVolumesState';
-import { Device } from './interface';
+import type { Device } from './interface';
 import { useDevicesListingProvider } from './useDevicesListing';
 
 const SHARE_ID_0 = 'shareId0';

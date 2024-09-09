@@ -4,7 +4,7 @@ import type { DecryptedLink } from '../_links';
 import { useDocumentActions } from './useDocumentActions';
 import { useDriveDocsFeatureFlag } from './useDriveDocsFeatureFlag';
 
-export const useOpenInDocs = (link: DecryptedLink | undefined) => {
+export const useOpenInDocs = (link: Pick<DecryptedLink, 'mimeType' | 'parentLinkId'> | undefined) => {
     const { openDocument, convertDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
 

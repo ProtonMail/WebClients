@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { createContext, useContext, useRef } from 'react';
+import { createContext, useContext, useMemo, useRef } from 'react';
 
 import { useApi, useEventManager } from '@proton/components';
 import { queryLatestVolumeEvent, queryVolumeEvents } from '@proton/shared/lib/api/drive/volume';
@@ -12,7 +12,9 @@ import generateUID from '@proton/utils/generateUID';
 
 import { logError } from '../../utils/errorHandling';
 import { driveEventsResultToDriveEvents } from '../_api';
-import type { EventHandler } from './interface';
+import type { VolumeType } from '../_volumes';
+import { EventsMetrics, countEventsPerType } from './driveEventsMetrics';
+import type { DriveEvent, EventHandler } from './interface';
 
 const DRIVE_EVENT_HANDLER_ID_PREFIX = 'drive-event-handler';
 
@@ -42,22 +44,33 @@ const DRIVE_EVENT_MANAGER_FUNCTIONS_STUB = {
 export function useDriveEventManagerProvider(api: Api, generalEventManager: EventManager) {
     const eventHandlers = useRef(new Map<string, EventHandler>());
     const eventManagers = useRef(new Map<string, EventManager>());
+    const eventsMetrics = useMemo(() => new EventsMetrics(), [api, generalEventManager]);
 
-    const genericHandler = (volumeId: string, driveEvents: DriveEventsResult) => {
+    const genericHandler = (volumeId: string, type: VolumeType, driveEvents: DriveEventsResult) => {
+        countEventsPerType(type, driveEvents);
+
         if (!driveEvents.Events?.length) {
             return;
         }
 
+        eventsMetrics.batchStart(volumeId, driveEvents);
+
         const handlerPromises: unknown[] = [];
         eventHandlers.current.forEach((handler) => {
-            handlerPromises.push(handler(volumeId, driveEventsResultToDriveEvents(driveEvents)));
+            handlerPromises.push(
+                handler(volumeId, driveEventsResultToDriveEvents(driveEvents), (eventId: string, event: DriveEvent) => {
+                    eventsMetrics.processed(eventId, event);
+                })
+            );
         });
 
         /*
             forcing .poll function's returned Promise to be resolved
             *after* event processin is finished
         */
-        return Promise.all(handlerPromises);
+        return Promise.all(handlerPromises).then(() => {
+            eventsMetrics.batchCompleted(volumeId, driveEvents.EventID, type);
+        });
     };
 
     const createVolumeEventManager = async (volumeId: string) => {
@@ -77,9 +90,9 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
     /**
      * Creates event manager for a specified volume and starts interval polling of event.
      */
-    const subscribeToVolume = async (volumeId: string) => {
+    const subscribeToVolume = async (volumeId: string, type: VolumeType) => {
         const eventManager = await createVolumeEventManager(volumeId);
-        eventManager.subscribe((payload: DriveEventsResult) => genericHandler(volumeId, payload));
+        eventManager.subscribe((payload: DriveEventsResult) => genericHandler(volumeId, type, payload));
         eventManagers.current.set(volumeId, eventManager);
     };
 
@@ -87,9 +100,9 @@ export function useDriveEventManagerProvider(api: Api, generalEventManager: Even
      * Creates an event manager for a specified volume if doesn't exist,
      * and starts event polling
      */
-    const startVolumeSubscription = async (volumeId: string) => {
+    const startVolumeSubscription = async (volumeId: string, type: VolumeType) => {
         if (!eventManagers.current.get(volumeId)) {
-            await subscribeToVolume(volumeId);
+            await subscribeToVolume(volumeId, type);
         }
         eventManagers.current.get(volumeId)!.start();
     };

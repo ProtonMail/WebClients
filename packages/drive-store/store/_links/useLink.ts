@@ -20,7 +20,7 @@ import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/ke
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { linkMetaToEncryptedLink, revisionPayloadToRevision, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
-import { ShareType, useShare } from '../_shares';
+import { type Share, ShareType, type ShareWithKey, useShare } from '../_shares';
 import { useDebouncedFunction } from '../_utils';
 import { decryptExtendedAttributes } from './extendedAttributes';
 import type { DecryptedLink, EncryptedLink, SignatureIssueLocation, SignatureIssues } from './interface';
@@ -31,7 +31,6 @@ import useLinksState from './useLinksState';
 // Interval should not be too low to not cause spikes on the server but at the
 // same time not too high to not overflow available memory on the device.
 const FAILING_FETCH_BACKOFF_MS = 10 * 60 * 1000; // 10 minutes.
-// TODO: Remove all useShareKey occurrence when BE issue with parentLinkId is fixed
 const generateCorruptDecryptedLink = (encryptedLink: EncryptedLink, name: string): DecryptedLink => ({
     encryptedName: encryptedLink.name,
     name,
@@ -57,6 +56,7 @@ const generateCorruptDecryptedLink = (encryptedLink: EncryptedLink, name: string
         width: 0,
     },
     trashed: encryptedLink.trashed,
+    volumeId: encryptedLink.volumeId,
 });
 
 export default function useLink() {
@@ -171,19 +171,14 @@ export function useLinkInner(
      */
     const debouncedFunctionDecorator = <T>(
         cacheKey: string,
-        callback: (abortSignal: AbortSignal, shareId: string, linkId: string, useShareKey?: boolean) => Promise<T>
-    ): ((abortSignal: AbortSignal, shareId: string, linkId: string, useShareKey?: boolean) => Promise<T>) => {
-        const wrapper = async (
-            abortSignal: AbortSignal,
-            shareId: string,
-            linkId: string,
-            useShareKey?: boolean
-        ): Promise<T> => {
+        callback: (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<T>
+    ): ((abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<T>) => {
+        const wrapper = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<T> => {
             return debouncedFunction(
                 async (abortSignal: AbortSignal) => {
-                    return callback(abortSignal, shareId, linkId, useShareKey);
+                    return callback(abortSignal, shareId, linkId);
                 },
-                [cacheKey, shareId, linkId, useShareKey],
+                [cacheKey, shareId, linkId],
                 abortSignal
             );
         };
@@ -212,9 +207,8 @@ export function useLinkInner(
         async (
             abortSignal: AbortSignal,
             shareId: string,
-            linkId: string,
-            useShareKey: boolean = false
-        ): Promise<{ passphrase: string; passphraseSessionKey: SessionKey }> => {
+            linkId: string
+        ): Promise<{ passphrase: string; passphraseSessionKey: SessionKey; encryptedLink?: EncryptedLink }> => {
             const passphrase = linksKeys.getPassphrase(shareId, linkId);
             const sessionKey = linksKeys.getPassphraseSessionKey(shareId, linkId);
             if (passphrase && sessionKey) {
@@ -223,11 +217,10 @@ export function useLinkInner(
 
             const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
 
-            const parentPrivateKeyPromise =
-                encryptedLink.parentLinkId && !useShareKey
-                    ? // eslint-disable-next-line @typescript-eslint/no-use-before-define
-                      getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId, useShareKey)
-                    : getSharePrivateKey(abortSignal, shareId);
+            const parentPrivateKeyPromise = encryptedLink.parentLinkId
+                ? // eslint-disable-next-line @typescript-eslint/no-use-before-define
+                  getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId)
+                : getSharePrivateKey(abortSignal, shareId);
             const [parentPrivateKey, addressPublicKey] = await Promise.all([
                 parentPrivateKeyPromise,
                 getVerificationKey(encryptedLink.signatureAddress),
@@ -254,6 +247,7 @@ export function useLinkInner(
                 return {
                     passphrase: decryptedPassphrase,
                     passphraseSessionKey,
+                    encryptedLink,
                 };
             } catch (e) {
                 throw new EnrichedError('Failed to decrypt link passphrase', {
@@ -261,7 +255,7 @@ export function useLinkInner(
                         shareId,
                         linkId,
                     },
-                    extra: { e },
+                    extra: { e, crypto: true },
                 });
             }
         }
@@ -272,19 +266,15 @@ export function useLinkInner(
      */
     const getLinkPrivateKey = debouncedFunctionDecorator(
         'getLinkPrivateKey',
-        async (
-            abortSignal: AbortSignal,
-            shareId: string,
-            linkId: string,
-            useShareKey: boolean = false
-        ): Promise<PrivateKeyReference> => {
+        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<PrivateKeyReference> => {
             let privateKey = linksKeys.getPrivateKey(shareId, linkId);
             if (privateKey) {
                 return privateKey;
             }
 
-            const encryptedLink = await getEncryptedLink(abortSignal, shareId, linkId);
-            const { passphrase } = await getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId, useShareKey);
+            // getLinkPassphraseAndSessionKey already call getEncryptedLink, prevent to call fetchLink twice
+            let { passphrase, encryptedLink } = await getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId);
+            encryptedLink = encryptedLink || (await getEncryptedLink(abortSignal, shareId, linkId));
 
             try {
                 privateKey = await importPrivateKey({ armoredKey: encryptedLink.nodeKey, passphrase });
@@ -294,7 +284,7 @@ export function useLinkInner(
                         shareId,
                         linkId,
                     },
-                    extra: { e },
+                    extra: { e, crypto: true },
                 });
             }
 
@@ -334,7 +324,7 @@ export function useLinkInner(
                         shareId,
                         linkId,
                     },
-                    extra: { e },
+                    extra: { e, crypto: true },
                 });
             }
 
@@ -424,7 +414,7 @@ export function useLinkInner(
                         shareId,
                         linkId,
                     },
-                    extra: { e },
+                    extra: { e, crypto: true },
                 });
             }
         }
@@ -449,7 +439,8 @@ export function useLinkInner(
         abortSignal: AbortSignal,
         shareId: string,
         encryptedLink: EncryptedLink,
-        revisionId?: string
+        revisionId?: string,
+        share?: ShareWithKey | Share
     ): Promise<DecryptedLink> => {
         return debouncedFunction(
             async (abortSignal: AbortSignal): Promise<DecryptedLink> => {
@@ -544,12 +535,14 @@ export function useLinkInner(
                 }
 
                 // Share will already be in cache due to getSharePrivateKey above
-                const share = !encryptedLink.parentLinkId ? await getShare(abortSignal, shareId) : undefined;
+                const shareResult = !encryptedLink.parentLinkId
+                    ? share || (await getShare(abortSignal, shareId))
+                    : undefined;
 
                 let displayName = name;
-                if (share?.type === ShareType.default) {
+                if (shareResult?.type === ShareType.default) {
                     displayName = c('Title').t`My files`;
-                } else if (share?.type === ShareType.photos) {
+                } else if (shareResult?.type === ShareType.photos) {
                     displayName = c('Title').t`Photos`;
                 }
 
@@ -579,7 +572,12 @@ export function useLinkInner(
      */
     const getLink = debouncedFunctionDecorator(
         'getLink',
-        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<DecryptedLink> => {
+        async (
+            abortSignal: AbortSignal,
+            shareId: string,
+            linkId: string,
+            share?: ShareWithKey | Share
+        ): Promise<DecryptedLink> => {
             const cachedLink = linksState.getLink(shareId, linkId);
             if (cachedLink && cachedLink.decrypted && !cachedLink.decrypted.isStale) {
                 return cachedLink.decrypted;
@@ -588,7 +586,7 @@ export function useLinkInner(
             const encrypted = await getEncryptedLink(abortSignal, shareId, linkId);
 
             try {
-                const decrypted = await decryptLink(abortSignal, shareId, encrypted);
+                const decrypted = await decryptLink(abortSignal, shareId, encrypted, undefined, share);
 
                 linksState.setLinks(shareId, [{ encrypted, decrypted }]);
 
@@ -599,7 +597,7 @@ export function useLinkInner(
                         shareId,
                         linkId,
                     },
-                    extra: { e },
+                    extra: { e, crypto: true },
                 });
             }
         }
@@ -630,7 +628,7 @@ export function useLinkInner(
                     shareId,
                     linkId,
                 },
-                extra: { e },
+                extra: { e, crypto: true },
             });
         }
     };

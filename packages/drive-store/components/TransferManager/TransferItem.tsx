@@ -17,7 +17,7 @@ import {
 import ProgressBar from './ProgressBar';
 import TransferControls from './TransferControls';
 import TransferStateIndicator from './TransferStateIndicator';
-import { TransferProps } from './interfaces';
+import type { TransferProps } from './interfaces';
 import { TransferType } from './transfer';
 
 type Props<T extends TransferType> = React.HTMLAttributes<HTMLDivElement> &
@@ -39,7 +39,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
 
     const fileSize = transfer.meta.size;
     const progressLimit = fileSize || 1;
-    const percentageDone = isDone ? 100 : Math.floor(100 * (stats.progress / progressLimit));
+    const percentageDone = isDone ? 100 : !fileSize ? 0 : Math.floor(100 * (stats.progress / fileSize));
 
     const progress = isDone ? progressLimit : stats.progress;
     const speed = humanSize({ bytes: stats.speed });

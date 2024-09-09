@@ -77,6 +77,11 @@ class FileSaver {
                 if (isValidationError(err)) {
                     throw err;
                 }
+
+                if (err instanceof EnrichedError) {
+                    throw err;
+                }
+
                 throw new EnrichedError(`Download failed: ${err.message || err}`, {
                     extra: { err },
                 });

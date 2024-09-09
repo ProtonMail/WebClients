@@ -1,5 +1,6 @@
 import { useRef } from 'react';
-import { FixedSizeList, ListChildComponentProps } from 'react-window';
+import type { ListChildComponentProps } from 'react-window';
+import { FixedSizeList } from 'react-window';
 
 import {
     Table,
@@ -13,8 +14,8 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import clsx from '@proton/utils/clsx';
 
 import { Features, useMeasureFeaturePerformanceOnMount } from '../../../utils/telemetry';
-import { FileBrowserProps } from '../FileBrowser';
-import { BrowserItemId, DragMoveControls, FileBrowserBaseItem } from '../interface';
+import type { FileBrowserProps } from '../FileBrowser';
+import type { BrowserItemId, DragMoveControls, FileBrowserBaseItem } from '../interface';
 import { useSelection } from '../state/useSelection';
 import ItemRow from './ItemRow';
 import ListHeader from './ListHeader';
@@ -202,7 +203,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
                         outerRef={scrollAreaRef}
                         innerElementType={TableBodyRenderer}
                         itemKey={(index, data) =>
-                            loading && index === itemCount - 1 ? 'loader' : `${data.items[index].id}`
+                            loading && index === itemCount - 1 ? 'loader' : `${data.items[index].id}+${index}`
                         }
                     >
                         {ListItemRow}

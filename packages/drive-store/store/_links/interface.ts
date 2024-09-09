@@ -71,6 +71,7 @@ interface Link {
     nameSignatureAddress?: string; // Address used for name signature.
     // If there is no issue, the value should be undefined.
     signatureIssues?: SignatureIssues;
+    volumeId: string;
 }
 
 export interface LinkShareUrl {
