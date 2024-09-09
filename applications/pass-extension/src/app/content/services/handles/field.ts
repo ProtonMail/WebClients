@@ -93,7 +93,7 @@ export const createFieldHandles = ({
         icon: null,
         action: null,
         value: element.value,
-        autofilled: false,
+        autofilled: null,
         tracked: false,
         zIndex,
         getFormHandle,
@@ -102,7 +102,7 @@ export const createFieldHandles = ({
             return field.boxElement;
         },
         setValue: (value) => {
-            field.autofilled = false;
+            field.autofilled = null;
             return (field.value = value);
         },
         setAction: (action) => (field.action = action),
@@ -131,7 +131,7 @@ export const createFieldHandles = ({
 
         autofill: (value, options) => {
             withActionTrap(element, createAutofill(element))(value, options);
-            field.autofilled = Boolean(value);
+            field.autofilled = options?.type ?? field.fieldType;
         },
 
         /* if an icon is already attached recycle it */
