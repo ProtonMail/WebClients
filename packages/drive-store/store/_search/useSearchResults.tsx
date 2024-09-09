@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 
-import { ESLink } from './types';
+import type { ESLink } from './types';
 import useSearchLibrary from './useSearchLibrary';
 
 function useSearchResultsProvider() {

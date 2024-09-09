@@ -6,7 +6,7 @@ import clsx from '@proton/utils/clsx';
 import { stopPropagation } from '../../../../utils/stopPropagation';
 import { useFileBrowserCheckbox } from '../../hooks/useFileBrowserCheckbox';
 import { SelectionState } from '../../hooks/useSelectionControls';
-import { FileBrowserBaseItem } from '../../interface';
+import type { FileBrowserBaseItem } from '../../interface';
 import { useSelection } from '../../state/useSelection';
 
 interface Props {

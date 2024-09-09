@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 
-import { VERIFICATION_STATUS } from '@proton/crypto';
+import type { VERIFICATION_STATUS } from '@proton/crypto';
 import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
 
 import useNavigate from '../../hooks/drive/useNavigate';

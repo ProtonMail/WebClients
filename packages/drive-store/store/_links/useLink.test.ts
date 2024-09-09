@@ -153,9 +153,7 @@ describe('useLink', () => {
             'link', // Called by getLink.
             'link', // Called by getEncryptedLink.
             'parent', // Called by getLinkPrivateKey.
-            'parent', // Called by getLinkPassphraseAndSessionKey.
             'root', // Called by getLinkPrivateKey.
-            'root', // Called by getLinkPassphraseAndSessionKey.
         ]);
         // Decrypt passphrases so we can decrypt private keys for the root and the parent.
         // @ts-ignore

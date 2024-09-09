@@ -6,11 +6,13 @@ import { useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
-import { SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { DecryptedLink, useLink } from '../_links';
-import { ShareURL, getSharedLink, splitGeneratedAndCustomPassword, useShareActions, useShareUrl } from '../_shares';
+import type { DecryptedLink } from '../_links';
+import { useLink } from '../_links';
+import type { ShareURL } from '../_shares';
+import { getSharedLink, splitGeneratedAndCustomPassword, useShareActions, useShareUrl } from '../_shares';
 
 const getLoadingMessage = (isLinkLoading: boolean, haveShareUrl: boolean, isFile: boolean) => {
     if (isLinkLoading) {

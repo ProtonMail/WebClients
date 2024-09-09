@@ -10,6 +10,7 @@ type WithSRPPayload<T extends any> = T & {
     srpVerifier: string;
     urlPasswordSalt: string;
 };
+
 export enum ShareType {
     default = 1,
     standard,

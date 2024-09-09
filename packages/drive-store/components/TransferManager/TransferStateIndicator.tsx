@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, IconName, Tooltip } from '@proton/components';
+import type { IconName } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import {
@@ -10,7 +11,8 @@ import {
     isTransferManuallyPaused,
     isTransferProgress,
 } from '../../utils/transfer';
-import { Download, TransferState, TransferType, Upload } from './transfer';
+import type { Download, Upload } from './transfer';
+import { TransferState, TransferType } from './transfer';
 
 interface Props {
     transfer: Upload | Download;
@@ -116,7 +118,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             <span className="hidden md:inline-flex text-ellipsis" data-testid="transfer-item-status">
                 {errorText && (
                     <Tooltip title={errorText} originalPlacement="top">
-                        <span className="flex flex-align-items-center mr-2">
+                        <span className="flex items-center mr-2">
                             <Icon name="info-circle" />
                         </span>
                     </Tooltip>

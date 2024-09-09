@@ -9,7 +9,7 @@ import { useDebouncedRequest } from '../../_api';
 import type { DecryptedLink } from '../interface';
 import useLinksState from '../useLinksState';
 import type { FetchLoadLinksMeta } from './interface';
-import type { FetchMeta, SortParams} from './useLinksListingHelpers';
+import type { FetchMeta, SortParams } from './useLinksListingHelpers';
 import { DEFAULT_SORTING, PAGE_SIZE, useLinksListingHelpers } from './useLinksListingHelpers';
 
 interface FetchSharedLinksMeta extends FetchMeta {
@@ -161,7 +161,7 @@ export function useSharedLinksListing() {
         signal: AbortSignal,
         volumeId: string,
         loadLinksMeta: FetchLoadLinksMeta
-    ): Promise<void> => {
+    ): Promise<{ Count?: number } | void> => {
         const callback = (AnchorID?: string) => fetchSharedByMeLinksNextPage(signal, volumeId, loadLinksMeta, AnchorID);
         return loadFullListingWithAnchor(callback);
     };

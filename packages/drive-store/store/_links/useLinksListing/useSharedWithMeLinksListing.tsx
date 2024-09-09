@@ -1,14 +1,15 @@
 import { useCallback, useRef } from 'react';
 
 import { querySharedWithMeLinks } from '@proton/shared/lib/api/drive/sharing';
-import { ListDriveSharedWithMeLinksPayload } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { ListDriveSharedWithMeLinksPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { useDebouncedRequest } from '../../_api';
 import { useVolumesState } from '../../_volumes';
-import { DecryptedLink } from '../interface';
+import type { DecryptedLink } from '../interface';
 import useLinksState from '../useLinksState';
-import { FetchLoadLinksMeta } from './interface';
-import { DEFAULT_SORTING, FetchMeta, SortParams, useLinksListingHelpers } from './useLinksListingHelpers';
+import type { FetchLoadLinksMeta } from './interface';
+import type { FetchMeta, SortParams } from './useLinksListingHelpers';
+import { DEFAULT_SORTING, useLinksListingHelpers } from './useLinksListingHelpers';
 
 interface FetchSharedLinksMeta extends FetchMeta {
     lastPage: number;
@@ -32,6 +33,7 @@ export function useSharedWithMeLinksListing() {
         }
 
         shareIdsState.current = shareIdsSet;
+        return shareIdsState.current;
     };
 
     const getShareIdsState = (): string[] => Array.from(shareIdsState.current || new Set());
@@ -52,6 +54,7 @@ export function useSharedWithMeLinksListing() {
         for (const shareId in transformedResponse) {
             await loadLinksMeta(signal, 'sharedWithMeLink', shareId, transformedResponse[shareId], {
                 fetchMeta: fetchMeta.current,
+                removeParentLinkId: true,
             });
         }
     };
@@ -60,11 +63,12 @@ export function useSharedWithMeLinksListing() {
         signal: AbortSignal,
         loadLinksMeta: FetchLoadLinksMeta,
         AnchorID?: string
-    ): Promise<{ AnchorID: string; More: boolean }> => {
+    ): Promise<{ AnchorID: string; More: boolean; Count?: number }> => {
         if (fetchMeta.current.isEverythingFetched) {
             return {
                 AnchorID: '',
                 More: false,
+                Count: shareIdsState.current?.size,
             };
         }
 
@@ -75,7 +79,7 @@ export function useSharedWithMeLinksListing() {
             volumesState.setVolumeShareIds(link.VolumeID, [link.ShareID]);
             return link.ShareID;
         });
-        setShareIdsState(shareIds);
+        const newShareIdsState = setShareIdsState(shareIds);
 
         const transformedResponse = transformSharedLinksResponseToLinkMap(response);
         await loadSharedLinksMeta(signal, transformedResponse, loadLinksMeta);
@@ -85,13 +89,17 @@ export function useSharedWithMeLinksListing() {
         return {
             AnchorID: response.AnchorID,
             More: response.More,
+            Count: newShareIdsState.size,
         };
     };
 
     /**
      * Loads shared with me links.
      */
-    const loadSharedWithMeLinks = async (signal: AbortSignal, loadLinksMeta: FetchLoadLinksMeta): Promise<void> => {
+    const loadSharedWithMeLinks = async (
+        signal: AbortSignal,
+        loadLinksMeta: FetchLoadLinksMeta
+    ): Promise<{ Count?: number } | void> => {
         const callback = (AnchorID?: string) => fetchSharedLinksNextPage(signal, loadLinksMeta, AnchorID);
         return loadFullListingWithAnchor(callback);
     };
@@ -130,6 +138,7 @@ export function useSharedWithMeLinksListing() {
     return {
         loadSharedWithMeLinks,
         getCachedSharedWithMeLinks,
+        setShareIdsState,
     };
 }
 

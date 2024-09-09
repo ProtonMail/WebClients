@@ -2,11 +2,10 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
-import { DriveEvents } from '../_events';
-import { DecryptedLink, EncryptedLink, LinkShareUrl } from './interface';
+import type { DriveEvents } from '../_events';
+import type { DecryptedLink, EncryptedLink, LinkShareUrl } from './interface';
+import type { Link, LinksState } from './useLinksState';
 import {
-    Link,
-    LinksState,
     addOrUpdate,
     deleteLinks,
     setCachedThumbnailUrl,
@@ -603,7 +602,8 @@ describe('useLinksState', () => {
                     EVENT_TYPES.UPDATE,
                     { linkId: 'linkId7', name: 'new name', parentLinkId: 'linkId0', rootShareId: 'shareId' },
                 ],
-            ])
+            ]),
+            jest.fn()
         );
 
         expect(Object.keys(result.shareId.links)).toMatchObject([
@@ -628,7 +628,8 @@ describe('useLinksState', () => {
                     EVENT_TYPES.CREATE,
                     { linkId: 'newLink', name: 'newLink', parentLinkId: 'linkId0', rootShareId: 'shareId2' },
                 ],
-            ])
+            ]),
+            jest.fn()
         );
 
         expect(Object.keys(result)).toMatchObject(['shareId']);

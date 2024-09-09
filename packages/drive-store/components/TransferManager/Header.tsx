@@ -15,7 +15,7 @@ import {
     isTransferManuallyPaused,
     isTransferSkipped,
 } from '../../utils/transfer';
-import { Download, TransfersStats, Upload } from './transfer';
+import type { Download, TransfersStats, Upload } from './transfer';
 
 interface Props {
     downloads: Download[];

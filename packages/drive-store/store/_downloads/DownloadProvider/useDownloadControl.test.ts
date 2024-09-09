@@ -18,6 +18,7 @@ function makeDownload(id: string, state: TransferState, links: LinkDownload[], s
             mimeType: links.length === 1 ? links[0].mimeType : SupportedMimeTypes.zip,
             size: setSize ? links.reduce((sum, link) => sum + link.size, 0) : undefined,
         },
+        retries: 0,
     };
 }
 

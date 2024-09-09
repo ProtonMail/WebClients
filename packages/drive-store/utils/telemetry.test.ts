@@ -6,7 +6,14 @@ import {
 } from '@proton/shared/lib/api/telemetry';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 
-import { ExperimentGroup, Features, measureExperimentalPerformance, measureFeaturePerformance } from './telemetry';
+import {
+    Actions,
+    ExperimentGroup,
+    Features,
+    countActionWithTelemetry,
+    measureExperimentalPerformance,
+    measureFeaturePerformance,
+} from './telemetry';
 
 jest.mock('@proton/shared/lib/api/telemetry');
 jest.mock('@proton/components/hooks/useApi');
@@ -26,7 +33,7 @@ describe('Performance Telemetry', () => {
     });
 
     it('measureExperimentalPerformance: executes the control function when flag is false', async () => {
-        const feature = Features.optimisticFileUploads;
+        const feature = 'testFeature' as Features;
         const flag = false;
         const controlFunction = jest.fn(() => Promise.resolve('control result'));
         const treatmentFunction = jest.fn(() => Promise.resolve('treatment result'));
@@ -53,7 +60,7 @@ describe('Performance Telemetry', () => {
     });
 
     it('measureExperimentalPerformance: executes the treatment function when flag is true', async () => {
-        const feature = Features.optimisticFileUploads;
+        const feature = 'testFeature' as Features;
         const flag = true;
         const controlFunction = jest.fn(() => Promise.resolve('control result'));
         const treatmentFunction = jest.fn(() => Promise.resolve('treatment result'));
@@ -97,6 +104,46 @@ describe('Performance Telemetry', () => {
             Dimensions: {
                 experimentGroup: ExperimentGroup.control,
                 featureName: Features.mountToFirstItemRendered,
+            },
+        });
+    });
+});
+
+describe('countActionWithTelemetry', () => {
+    beforeEach(() => {
+        setMetricsEnabled(true);
+    });
+
+    afterEach(() => {
+        jest.resetAllMocks();
+    });
+
+    it('countActionWithTelemetry: should send telemetry report with a count', () => {
+        countActionWithTelemetry(Actions.DismissDocsOnboardingModal);
+        expect(sendTelemetryData).toHaveBeenCalledTimes(1);
+        expect(sendTelemetryData).toHaveBeenCalledWith({
+            MeasurementGroup: TelemetryMeasurementGroups.driveWebActions,
+            Event: TelemetryDriveWebFeature.actions,
+            Values: {
+                count: 1,
+            },
+            Dimensions: {
+                name: Actions.DismissDocsOnboardingModal,
+            },
+        });
+    });
+
+    it('countActionWithTelemetry: should send telemetry report with custom count', () => {
+        countActionWithTelemetry(Actions.DismissDocsOnboardingModal, 15);
+        expect(sendTelemetryData).toHaveBeenCalledTimes(1);
+        expect(sendTelemetryData).toHaveBeenCalledWith({
+            MeasurementGroup: TelemetryMeasurementGroups.driveWebActions,
+            Event: TelemetryDriveWebFeature.actions,
+            Values: {
+                count: 15,
+            },
+            Dimensions: {
+                name: Actions.DismissDocsOnboardingModal,
             },
         });
     });

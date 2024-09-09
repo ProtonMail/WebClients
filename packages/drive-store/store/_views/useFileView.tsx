@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
+import metrics from '@proton/metrics';
 import { SHARE_MEMBER_PERMISSIONS, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { isProtonDocument, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
@@ -10,11 +11,12 @@ import { streamToBuffer } from '../../utils/stream';
 import { useDocumentActions } from '../_documents';
 import { useDownload, useDownloadProvider } from '../_downloads';
 import usePublicDownload from '../_downloads/usePublicDownload';
-import { DecryptedLink, useLink } from '../_links';
+import type { DecryptedLink } from '../_links';
+import { useLink } from '../_links';
 import { useDirectSharingInfo } from '../_shares/useDirectSharingInfo';
 import { useFileViewNavigation, usePublicFileViewNavigation } from './useFileNavigation';
 import { DEFAULT_SORT } from './usePublicFolderView';
-import { SortParams } from './utils/useSorting';
+import type { SortParams } from './utils/useSorting';
 
 /**
  * useFileView provides data for file preview.
@@ -85,6 +87,14 @@ export function usePublicFileView(
     );
     const navigation = usePublicFileViewNavigation(useNavigation, shareId, sortParams, link?.parentLinkId, linkId);
 
+    useEffect(() => {
+        if (error) {
+            metrics.drive_file_preview_errors_total.increment({
+                type: !link ? 'unknown' : link.isFile ? 'file' : 'folder',
+            });
+        }
+    }, [error]);
+
     return {
         permissions: SHARE_MEMBER_PERMISSIONS.READ,
         navigation,
@@ -128,18 +138,19 @@ function useFileViewBase(
         setContentsMimeType(link.mimeType);
 
         if (isPreviewAvailable(link.mimeType, link.size)) {
-            const { stream, controls } = downloadStream([
-                {
-                    ...link,
-                    shareId,
-                    revisionId,
-                },
-            ]);
-            abortSignal.addEventListener('abort', () => {
-                controls.cancel();
+            const { stream, controls } = downloadStream({
+                ...link,
+                shareId,
+                revisionId,
             });
-
-            setContents(await streamToBuffer(stream));
+            const onAbort = () => {
+                controls.cancel();
+            };
+            abortSignal.addEventListener('abort', onAbort);
+            const buffer = await streamToBuffer(stream);
+            setContents(buffer);
+            // The download is done, we do not need to cancel download on abort anymore
+            abortSignal.removeEventListener('abort', onAbort);
             // Fallback is only available for photos in private context
         } else if (!!link.activeRevision?.photo && getPreviewThumbnail && !isVideo(link.mimeType)) {
             // We force jpg type as thumbnails are always jpg for photos

@@ -252,7 +252,7 @@ export default function useActions() {
     };
 
     /**
-     * @param [notify] - whether notification popover should be displayed upon successful trash. Disabled on Docs
+     * @param [notify] - whether notification popover should be displayed upon successful trash. Disabled
      */
     const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[], notify = true) => {
         if (!linksToTrash.length) {
@@ -301,9 +301,11 @@ export default function useActions() {
             abortSignal,
             linksToRestore.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
         );
+
         if (!notify) {
             return;
         }
+
         const undoAction = async () => {
             const linksToTrash = result.successes
                 .map((linkId) => linksToRestore.find((link) => link.linkId === linkId))

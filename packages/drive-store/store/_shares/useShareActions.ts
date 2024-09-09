@@ -173,12 +173,10 @@ export default function useShareActions() {
                     for (const shareId of shareIdsBatch) {
                         const share = await getShare(abortSignal, shareId);
                         const [linkPrivateKey, shareSessionKey] = await Promise.all([
-                            getLinkPrivateKey(abortSignal, share.shareId, share.rootLinkId, true).then(
-                                (linkPrivateKey) => {
-                                    removeLinkForMigration(share.shareId, share.rootLinkId);
-                                    return linkPrivateKey;
-                                }
-                            ),
+                            getLinkPrivateKey(abortSignal, share.shareId, share.rootLinkId).then((linkPrivateKey) => {
+                                removeLinkForMigration(share.shareId, share.rootLinkId);
+                                return linkPrivateKey;
+                            }),
                             getShareSessionKey(abortSignal, share.shareId).catch((e) => {
                                 sendErrorReport(
                                     new EnrichedError('Failed to get the share session key during share migration', {
