@@ -7156,6 +7156,7 @@ __metadata:
     sass: "npm:^1.77.8"
     sass-loader: "npm:^14.2.1"
     speed-measure-webpack-plugin: "npm:^1.5.0"
+    svgo-loader: "npm:^4.0.0"
     swc-loader: "npm:^0.2.6"
     terser-webpack-plugin: "npm:^5.3.10"
     webpack: "npm:^5.93.0"
@@ -39707,7 +39708,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svgo@npm:^3.2.0, svgo@npm:^3.3.2":
+"svgo-loader@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "svgo-loader@npm:4.0.0"
+  dependencies:
+    svgo: "npm:^3.0.0"
+  checksum: 10c0/0aac17bc7d81744b02b65e125fef14590aad6e10e4ce95a5d674b18de1fe2c1768c3356ae2ddf60fda033830bcf98d004db7c13a51527641a699ddfd9d10eea5
+  languageName: node
+  linkType: hard
+
+"svgo@npm:^3.0.0, svgo@npm:^3.2.0, svgo@npm:^3.3.2":
   version: 3.3.2
   resolution: "svgo@npm:3.3.2"
   dependencies:
