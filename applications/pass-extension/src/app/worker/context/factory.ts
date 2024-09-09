@@ -21,6 +21,7 @@ import { createSettingsService } from 'proton-pass-extension/app/worker/services
 import { createStorageService } from 'proton-pass-extension/app/worker/services/storage';
 import { createStoreService } from 'proton-pass-extension/app/worker/services/store';
 import { createTelemetryService } from 'proton-pass-extension/app/worker/services/telemetry';
+import { createVaultsService } from 'proton-pass-extension/app/worker/services/vaults';
 import { setPopupIcon } from 'proton-pass-extension/lib/utils/popup-icon';
 import { getExtensionVersion } from 'proton-pass-extension/lib/utils/version';
 
@@ -91,6 +92,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             storage,
             store,
             telemetry: BUILD_TARGET !== 'firefox' ? createTelemetryService(storage.local) : null,
+            vaults: createVaultsService(),
         },
 
         async ensureReady() {

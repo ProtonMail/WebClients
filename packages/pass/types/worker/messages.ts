@@ -15,8 +15,9 @@ import type {
 } from '@proton/pass/lib/passkeys/types';
 import type { PasswordAutosuggestOptions } from '@proton/pass/lib/password/types';
 import type { Notification } from '@proton/pass/store/actions/enhancers/notification';
-import type { FeatureFlagState } from '@proton/pass/store/reducers';
+import type { FeatureFlagState, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type { ShareId } from '@proton/pass/types/crypto/pass-types';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
@@ -123,6 +124,7 @@ export enum WorkerMessageType {
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
     UPDATE_AVAILABLE = 'UPDATE_AVAILABLE',
+    VAULTS_QUERY = 'VAULTS_QUERY',
     WEBSITE_RULES_REQUEST = 'WEBSITE_RULES_REQUEST',
     WORKER_RELOAD = 'WORKER_RELOAD',
     WORKER_STATE_CHANGE = 'WORKER_STATE_CHANGE',
@@ -193,6 +195,7 @@ export type TabsQueryMessage = WithPayload<WorkerMessageType.TABS_QUERY, { curre
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
+export type VaultsQueryMessage = { type: WorkerMessageType.VAULTS_QUERY };
 export type WebsiteRulesMessage = { type: WorkerMessageType.WEBSITE_RULES_REQUEST };
 export type WorkerReloadMessage = { type: WorkerMessageType.WORKER_RELOAD };
 export type WorkerStateChangeMessage = WithPayload<WorkerMessageType.WORKER_STATE_CHANGE, { state: AppState }>;
@@ -264,6 +267,7 @@ export type WorkerMessage =
     | TelemetryEventMessage
     | UnloadContentScriptMessage
     | UpdateAvailableMessage
+    | VaultsQueryMessage
     | WorkerReloadMessage
     | WorkerStateChangeMessage
     | WorkerWakeUpMessage;
@@ -312,6 +316,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
     [WorkerMessageType.TABS_QUERY]: TabInfo;
     [WorkerMessageType.WORKER_WAKEUP]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
+    [WorkerMessageType.VAULTS_QUERY]: { vaults: VaultShareItem[]; defaultShareId: ShareId };
 };
 
 export type WorkerMessageResponse<MessageType> = MessageType extends keyof WorkerMessageResponseMap
