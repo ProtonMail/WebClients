@@ -6,19 +6,11 @@ import { c } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import { PanelHeader } from '@proton/atoms/Panel';
 import { Panel } from '@proton/atoms/Panel/Panel';
-import {
-    InputFieldTwo,
-    Option,
-    SelectTwo,
-    TextAreaTwo,
-    useFormErrors,
-    useModalState,
-} from '@proton/components/components';
+import { InputFieldTwo, Option, SelectTwo, TextAreaTwo, useModalState } from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
-import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Group } from '@proton/shared/lib/interfaces';
 import { GroupPermissions } from '@proton/shared/lib/interfaces';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
@@ -71,9 +63,8 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         members,
     } = groupsManagement;
 
-    const { resetForm, dirty, values: formValues, setFieldValue } = form;
+    const { resetForm, dirty, values: formValues, setFieldValue, isValid, errors } = form;
     const { loadingCustomDomains, selectedDomain, setSelectedDomain, customDomains } = domainData;
-    const { validator, onFormSubmit } = useFormErrors();
     const [discardChangesModalProps, setDiscardChangesModal, renderDiscardChangesModal] = useModalState();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
@@ -86,6 +77,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
     const sortedNewGroupMembers = useMemo(() => [...newGroupMembers].reverse(), [newGroupMembers]);
 
     const changeDetected = dirty || !!newGroupMembers.length;
+
 
     useTriggerDiscardModal(() => {
         if (changeDetected) {
@@ -173,8 +165,9 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     disabled={!changeDetected}
                                     loading={loading}
                                     onClick={() => {
-                                        onFormSubmit();
-                                        void withLoading(handleSaveGroup(newEmailsToAdd));
+                                        if (isValid) {
+                                            void withLoading(handleSaveGroup(newEmailsToAdd));
+                                        }
                                     }}
                                 >
                                     {c('Action').t`Save`}
@@ -207,7 +200,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                             setFieldValue('address', suggestedLocalPart);
                                         }
                                     }}
-                                    error={validator([requiredValidator(formValues.name)])}
+                                    error={errors.name}
                                 />
                             </InputFieldStacked>
                             <InputFieldStacked isGroupElement icon="text-align-left">
@@ -242,11 +235,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                     onValue={(address: string) => {
                                         setFieldValue('address', address);
                                     }}
-                                    error={
-                                        uiState === 'new'
-                                            ? validator([emailValidator(`${formValues.address}@${selectedDomain}`)])
-                                            : false
-                                    }
+                                    error={errors.address}
                                     disabled={uiState === 'edit'} // disable until BE supports address change
                                     suffix={(() => {
                                         if (loadingCustomDomains) {
