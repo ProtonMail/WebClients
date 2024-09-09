@@ -125,8 +125,8 @@ module.exports = function (config) {
             jasmine: {
                 // Run tests in serial so that endpoint release don't interfere
                 random: false,
-                // timeout for mocha tests, default is 2 seconds. Some streaming tests can take longer.
-                timeout: 30000,
+                // timeout for tests, default is 2 seconds. Some streaming tests can take longer.
+                timeoutInterval: 30000,
             },
         },
     });
