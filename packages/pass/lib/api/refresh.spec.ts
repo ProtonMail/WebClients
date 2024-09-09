@@ -28,7 +28,7 @@ describe('Refresh handlers', () => {
 
     test('should throw InactiveSession error if no auth', async () => {
         const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
-        await expect(refresh(getMockResponse())).rejects.toThrow('Inactive session');
+        await expect(refresh(getMockResponse(), {})).rejects.toThrow('Inactive session');
     });
 
     test('should call refresh in `AuthMode.TOKEN`', async () => {
@@ -43,7 +43,7 @@ describe('Refresh handlers', () => {
             mockAPIResponse({ UID: 'id-000', AccessToken: 'access-001', RefreshToken: 'refresh-001' })
         );
         const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
-        await refresh(getMockResponse(TEST_SERVER_TIME));
+        await refresh(getMockResponse(TEST_SERVER_TIME), {});
 
         expect(call).toHaveBeenCalledTimes(1);
         const [args] = call.mock.calls[0];
@@ -67,14 +67,11 @@ describe('Refresh handlers', () => {
     });
 
     test('should call refresh in `AuthMode.COOKIE`', async () => {
-        getAuth.mockReturnValue({
-            type: AuthMode.COOKIE,
-            UID: 'id-000',
-        });
+        getAuth.mockReturnValue({ type: AuthMode.COOKIE, UID: 'id-000' });
 
         call.mockResolvedValue(mockAPIResponse({ UID: 'id-000' }));
         const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
-        await refresh(getMockResponse(TEST_SERVER_TIME));
+        await refresh(getMockResponse(TEST_SERVER_TIME), {});
 
         expect(call).toHaveBeenCalledTimes(1);
         const [args] = call.mock.calls[0];
@@ -85,6 +82,30 @@ describe('Refresh handlers', () => {
         expect(onRefresh).toHaveBeenCalledTimes(1);
         expect(onRefresh).toHaveBeenCalledWith({
             UID: 'id-000',
+            AccessToken: '',
+            RefreshToken: '',
+            RefreshTime: +TEST_SERVER_TIME,
+            cookies: true,
+        });
+    });
+
+    test('should use underlying api call `auth` option if provided', async () => {
+        getAuth.mockReturnValue({ type: AuthMode.COOKIE, UID: 'id-000' });
+        const auth = { type: AuthMode.COOKIE, UID: 'id-001' } as const;
+
+        call.mockResolvedValue(mockAPIResponse({ UID: 'id-001' }));
+        const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
+        await refresh(getMockResponse(TEST_SERVER_TIME), { auth });
+
+        expect(call).toHaveBeenCalledTimes(1);
+        const [args] = call.mock.calls[0];
+
+        expect(args.data).toBeUndefined();
+        expect(args.headers['x-pm-uid']).toEqual('id-001');
+
+        expect(onRefresh).toHaveBeenCalledTimes(1);
+        expect(onRefresh).toHaveBeenCalledWith({
+            UID: 'id-001',
             AccessToken: '',
             RefreshToken: '',
             RefreshTime: +TEST_SERVER_TIME,
@@ -104,11 +125,11 @@ describe('Refresh handlers', () => {
         const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
         const res = getMockResponse(TEST_SERVER_TIME);
 
-        await Promise.all([refresh(res), refresh(res), refresh(res)]);
+        await Promise.all([refresh(res, {}), refresh(res, {}), refresh(res, {})]);
         expect(call).toHaveBeenCalledTimes(1);
         expect(onRefresh).toHaveBeenCalledTimes(1);
 
-        await refresh(res);
+        await refresh(res, {});
         expect(call).toHaveBeenCalledTimes(2);
         expect(onRefresh).toHaveBeenCalledTimes(2);
     });
@@ -124,7 +145,7 @@ describe('Refresh handlers', () => {
 
         call.mockResolvedValue(mockAPIResponse({ RefreshToken: 'refresh-001' }));
         const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
-        await refresh(getMockResponse(TEST_SERVER_TIME));
+        await refresh(getMockResponse(TEST_SERVER_TIME), {});
 
         expect(call).not.toHaveBeenCalled();
         expect(onRefresh).not.toHaveBeenCalled();
@@ -142,7 +163,7 @@ describe('Refresh handlers', () => {
         call.mockRejectedValueOnce(timeoutError);
 
         const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
-        await expect(refresh(getMockResponse())).rejects.toThrow();
+        await expect(refresh(getMockResponse(), {})).rejects.toThrow();
 
         expect(call).toHaveBeenCalledTimes(1);
         expect(onRefresh).not.toHaveBeenCalled();
@@ -160,7 +181,7 @@ describe('Refresh handlers', () => {
         call.mockRejectedValueOnce(offlineError);
 
         const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
-        await expect(refresh(getMockResponse())).rejects.toThrow();
+        await expect(refresh(getMockResponse(), {})).rejects.toThrow();
 
         expect(call).toHaveBeenCalledTimes(1);
         expect(onRefresh).not.toHaveBeenCalled();
@@ -178,7 +199,7 @@ describe('Refresh handlers', () => {
         call.mockResolvedValueOnce(mockAPIResponse({ RefreshToken: 'refresh-001' }));
 
         const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
-        await refresh(getMockResponse());
+        await refresh(getMockResponse(), {});
 
         expect(call).toHaveBeenCalledTimes(2);
         expect(onRefresh).toHaveBeenCalledTimes(1);
@@ -196,7 +217,7 @@ describe('Refresh handlers', () => {
         call.mockRejectedValue(mockAPIResponse({}, TOO_MANY_REQUESTS, { 'retry-after': '10' }));
 
         const refresh = refreshHandlerFactory({ call, getAuth, onRefresh });
-        await expect(refresh(getMockResponse())).rejects.toBeTruthy();
+        await expect(refresh(getMockResponse(), {})).rejects.toBeTruthy();
         expect(call).toHaveBeenCalledTimes(RETRY_ATTEMPTS_MAX);
         expect(onRefresh).not.toHaveBeenCalled();
     });
