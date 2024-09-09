@@ -36,12 +36,13 @@ export const useLoadLinksShareInfo = ({
         async (signal: AbortSignal) => {
             const newState = new Map();
             for (const link of links) {
-                if (linksWithShareInfo.has(link.linkId)) {
-                    newState.set(link.linkId, linksWithShareInfo.get(link.linkId));
+                const uniqueId = `${link.volumeId}${link.linkId}`;
+                if (linksWithShareInfo.has(uniqueId)) {
+                    newState.set(uniqueId, linksWithShareInfo.get(uniqueId));
                 } else {
                     const linkShareId = link.sharingDetails?.shareId;
                     const directSharingInfo = linkShareId ? await getDirectSharingInfo(signal, linkShareId) : {};
-                    newState.set(link.linkId, {
+                    newState.set(uniqueId, {
                         ...link,
                         ...directSharingInfo,
                     });

@@ -1,4 +1,5 @@
-import { RenderResult, renderHook } from '@testing-library/react-hooks';
+import type { RenderResult } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-hooks';
 
 import { useVolumesStateProvider } from './useVolumesState';
 

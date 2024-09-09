@@ -13,8 +13,8 @@ import {
 } from '../../utils/transfer';
 import Buttons from './Buttons';
 import DownloadLogsButton from './DownloadLogsButton';
-import { TransferManagerButtonProps } from './interfaces';
-import { Download, TransferType, Upload } from './transfer';
+import type { TransferManagerButtonProps } from './interfaces';
+import type { Download, TransferType, Upload } from './transfer';
 import useTransferControls from './useTransferControls';
 
 type TransferManagerEntry = { transfer: Upload | Download; type: TransferType };

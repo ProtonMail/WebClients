@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { NotificationButton, useNotifications } from '@proton/components';
 
 import { useErrorHandler } from '../_utils';
-import { LinkInfo } from './interface';
+import type { LinkInfo } from './interface';
 
 export default function useListNotifications() {
     const { createNotification } = useNotifications();

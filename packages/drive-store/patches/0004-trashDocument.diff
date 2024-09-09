@@ -1,23 +1,14 @@
 diff --git a/packages/drive-store/store/_actions/useActions.tsx b/packages/drive-store/store/_actions/useActions.tsx
-index 969d703d6f..6201cbe197 100644
+index c34027f30d..2e6b22f640 100644
 --- a/packages/drive-store/store/_actions/useActions.tsx
 +++ b/packages/drive-store/store/_actions/useActions.tsx
-@@ -16,7 +16,7 @@ import { useShareActions, useShareUrl } from '../_shares';
- import useUploadFile from '../_uploads/UploadProvider/useUploadFile';
- import { TransferConflictStrategy } from '../_uploads/interface';
- import { useErrorHandler } from '../_utils';
--import { LinkInfo } from './interface';
-+import type { LinkInfo } from './interface';
- import useListNotifications from './useListNotifications';
- 
- /**
 @@ -251,7 +251,10 @@ export default function useActions() {
          createMovedItemsNotifications(linksToMove, result.successes, result.failures, undoAction);
      };
  
 -    const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[]) => {
 +    /**
-+     * @param [notify] - whether notification popover should be displayed upon successful trash. Disabled on Docs
++     * @param [notify] - whether notification popover should be displayed upon successful trash. Disabled
 +     */
 +    const trashLinks = async (abortSignal: AbortSignal, linksToTrash: LinkInfo[], notify = true) => {
          if (!linksToTrash.length) {
@@ -46,14 +37,14 @@ index 969d703d6f..6201cbe197 100644
          if (!linksToRestore.length) {
              return;
          }
-@@ -291,7 +301,9 @@ export default function useActions() {
-             abortSignal,
+@@ -292,6 +302,10 @@ export default function useActions() {
              linksToRestore.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
          );
--
+ 
 +        if (!notify) {
 +            return;
 +        }
++
          const undoAction = async () => {
              const linksToTrash = result.successes
                  .map((linkId) => linksToRestore.find((link) => link.linkId === linkId))

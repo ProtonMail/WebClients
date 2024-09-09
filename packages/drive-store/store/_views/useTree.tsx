@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 
-import { DecryptedLink, useLink, useLinksListing } from '../_links';
+import type { DecryptedLink } from '../_links';
+import { useLink, useLinksListing } from '../_links';
 import { ShareType, useShare } from '../_shares';
 import { useErrorHandler } from '../_utils';
 import { useAbortSignal } from './utils';

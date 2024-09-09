@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import type { ModalStateProps } from '@proton/components';
 import {
     Checkbox,
     Form,
-    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

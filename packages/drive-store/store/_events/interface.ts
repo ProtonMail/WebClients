@@ -2,7 +2,11 @@ import type { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
 import type { EncryptedLink } from '../_links';
 
-export type EventHandler = (volumeId: string, events: DriveEvents) => Promise<void> | void;
+export type EventHandler = (
+    volumeId: string,
+    events: DriveEvents,
+    processedEventCounter: (eventId: string, event: DriveEvent) => void
+) => Promise<void> | void;
 
 export interface DriveEvents {
     eventId: string;
