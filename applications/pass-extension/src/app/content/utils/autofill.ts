@@ -1,4 +1,9 @@
-export type AutofillOptions = { paste?: boolean };
+import type { FieldType } from '@proton/pass/fathom';
+
+export type AutofillOptions = {
+    paste?: boolean;
+    type?: FieldType;
+};
 
 const isFocused = (el: HTMLElement) => el === document.activeElement;
 const dispatchEvents = (el: HTMLElement) => (events: Event[]) => events.forEach((event) => el.dispatchEvent(event));
