@@ -49,14 +49,15 @@ export type Api = {
 export type ApiOptions<U extends string = string, M extends string = string> = {
     [option: string]: any;
 } & {
+    auth?: ApiAuth;
     headers?: { [key: string]: string };
     method?: M;
     output?: 'json' | 'raw' | 'stream';
     params?: { [key: string]: any };
     sideEffects?: boolean;
-    unauthenticated?: boolean;
     signal?: AbortSignal;
     silence?: boolean | (string | number)[];
+    unauthenticated?: boolean;
     url?: U;
 };
 
