@@ -1,5 +1,4 @@
-import { type FC, type ReactElement, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { type FC, type ReactElement, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import type { FormikContextType } from 'formik';
@@ -16,9 +15,8 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { usePasswordContext } from '@proton/pass/components/Password/PasswordContext';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
-import { selectShowUsernameField } from '@proton/pass/store/selectors';
 import { type LoginItemFormValues } from '@proton/pass/types';
-import { merge } from '@proton/pass/utils/object/merge';
+import { merge, withMerge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { intoCleanHostname } from '@proton/pass/utils/url/is-valid-url';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -48,41 +46,30 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
     const passwordContext = usePasswordContext();
     const { aliasOptions, ...aliasModal } = useAliasForLoginModal(form);
 
-    const { itemEmail, itemUsername } = form.values;
+    const { itemEmail, itemUsername, withUsername } = form.values;
 
-    const showUsernameField = useSelector(selectShowUsernameField);
-    const hasEmail = Boolean(itemEmail);
-    const hasUsername = Boolean(itemUsername);
-    const bothUsernameAndEmail = hasEmail && hasUsername;
+    const itemEmailFieldIcon = withUsername ? 'envelope' : 'user';
 
-    /** On initial mount: expand username field by default IIF:
-     * - user has enabled the `showUsernameField` setting
-     * - both username & field are populated */
-    const [usernameExpanded, setUsernameExpanded] = useState(showUsernameField || bothUsernameAndEmail);
-    const itemEmailFieldIcon = usernameExpanded ? 'envelope' : 'user';
-
-    const handleAddUsernameClick = async () => {
-        /** When enabling the username field set the `itemEmail` as
-         * the `itemUsername` only if it's a non-valid email */
-        if (!validateEmailAddress(itemEmail)) {
-            form.resetForm({
-                ...form,
-                values: {
-                    ...form.values,
-                    itemEmail: '',
-                    itemUsername: itemEmail,
-                },
-            });
-        }
-
-        setUsernameExpanded(true);
-    };
+    /** When enabling the username field set the `itemEmail` as
+     * the `itemUsername` only if it's a non-valid email */
+    const handleAddUsernameClick = () =>
+        form.setValues(
+            withMerge<LoginItemFormValues>({
+                withUsername: true,
+                ...(!validateEmailAddress(itemEmail)
+                    ? {
+                          itemEmail: '',
+                          itemUsername: itemEmail,
+                      }
+                    : {}),
+            })
+        );
 
     useEffect(() => {
         /** On mount, if username field is not expanded, use the `itemEmail` as
          * the virtual `Email or username` field value. This should be sanitized
          * on save by checking if the provided value is a valid email.  */
-        if (!usernameExpanded) {
+        if (!withUsername) {
             form.resetForm({
                 values: {
                     ...form.values,
@@ -108,9 +95,9 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                 label={(() => {
                     if (aliasModal.willCreate) return c('Label').t`Email (new alias)`;
                     if (aliasModal.relatedAlias) return c('Label').t`Email (alias)`;
-                    return usernameExpanded ? c('Label').t`Email` : c('Label').t`Email or username`;
+                    return withUsername ? c('Label').t`Email` : c('Label').t`Email or username`;
                 })()}
-                placeholder={usernameExpanded ? c('Placeholder').t`Enter email` : c('Label').t`Enter email or username`}
+                placeholder={withUsername ? c('Placeholder').t`Enter email` : c('Label').t`Enter email or username`}
                 component={TextField}
                 itemType="login"
                 icon={
@@ -120,7 +107,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                             size={5}
                             className="mt-2"
                         />
-                        {!usernameExpanded && (
+                        {!withUsername && (
                             <ButtonLike
                                 as="div"
                                 icon
@@ -192,7 +179,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                     ].filter(Boolean) as ReactElement[]
                 }
             />
-            {usernameExpanded && (
+            {withUsername && (
                 <Field
                     name="itemUsername"
                     label={c('Label').t`Username`}
