@@ -27,7 +27,7 @@ import { getSanitizedUserIdentifiers } from '@proton/pass/lib/items/item.utils';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
-import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
+import { selectShowUsernameField, selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues } from '@proton/pass/types';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -48,6 +48,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
     const { ParentPortal, openPortal } = usePortal();
 
     const searchParams = new URLSearchParams(search);
+    const showUsernameField = useSelector(selectShowUsernameField);
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const maybeUrl = subdomain ?? domain ?? '';
@@ -57,6 +58,8 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
             aliasPrefix: '',
             aliasSuffix: undefined,
             extraFields: [],
+            itemEmail: searchParams.get('email') ?? '',
+            itemUsername: '',
             mailboxes: [],
             name: maybeUrl,
             note: '',
@@ -66,9 +69,8 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
             totpUri: '',
             url: valid ? createNewUrl(url).url : '',
             urls: [],
-            itemEmail: searchParams.get('email') ?? '',
-            itemUsername: '',
             withAlias: false,
+            withUsername: showUsernameField,
         };
     }, []);
 
