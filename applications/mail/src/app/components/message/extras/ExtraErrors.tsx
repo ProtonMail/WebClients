@@ -64,7 +64,7 @@ const ExtraErrors = ({ message }: Props) => {
                     >
                         <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0">
                             <Icon name="exclamation-circle-filled" className="shrink-0 mt-1 ml-0.5 color-danger" />
-                            <span className="px-2 mt-1 flex-1" data-testid="errors-banner:content">
+                            <span className="px-2 mt-0.5 flex-1" data-testid="errors-banner:content">
                                 {getTranslations(errorType, alreadyTried)}
                             </span>
                         </div>
