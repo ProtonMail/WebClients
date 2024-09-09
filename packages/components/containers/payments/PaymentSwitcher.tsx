@@ -8,14 +8,11 @@ import {
 } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { setPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import { getItem } from '@proton/shared/lib/helpers/storage';
-import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import type { User } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
 
 import { useAuthentication, useConfig, useGetUser } from '../../hooks';
 
@@ -40,8 +37,6 @@ const forceInHouseInDev = (): boolean => {
 export async function isChargebeeEnabled(
     UID: string | undefined,
     getUser: () => Promise<User>,
-    chargebeeSignupsFlag: boolean,
-    chargebeeFreeToPaidUpgradeFlag: boolean,
     isAccountLite: boolean
 ): Promise<{
     result: ChargebeeEnabled;
@@ -73,10 +68,7 @@ export async function isChargebeeEnabled(
             };
         }
 
-        const isInhouseForced =
-            chargebeeUser === ChargebeeEnabled.INHOUSE_FORCED ||
-            isAccountLite ||
-            (!chargebeeFreeToPaidUpgradeFlag && chargebeeUser === ChargebeeEnabled.CHARGEBEE_ALLOWED);
+        const isInhouseForced = chargebeeUser === ChargebeeEnabled.INHOUSE_FORCED || isAccountLite;
 
         if (isInhouseForced) {
             return {
@@ -84,7 +76,6 @@ export async function isChargebeeEnabled(
                 reason: 'user forced',
                 params: {
                     isAccountLite,
-                    chargebeeFreeToPaidUpgradeFlag,
                     chargebeeUser,
                 },
             };
@@ -98,37 +89,31 @@ export async function isChargebeeEnabled(
     }
 
     // signups
-    if (!chargebeeSignupsFlag || isAccountLite) {
+    if (isAccountLite) {
         return {
             result: ChargebeeEnabled.INHOUSE_FORCED,
-            reason: !chargebeeSignupsFlag ? 'signups disabled' : 'account lite',
+            reason: 'account lite',
             params: {
                 isAccountLite,
-                chargebeeSignupsFlag,
             },
         };
     }
 
     return {
-        result: ChargebeeEnabled.CHARGEBEE_ALLOWED,
+        result: ChargebeeEnabled.CHARGEBEE_FORCED,
         reason: 'fallback',
         params: {
             authenticated: !!UID,
-            chargebeeSignupsFlag,
             isAccountLite,
-            chargebeeFreeToPaidUpgradeFlag,
         },
     };
 }
 
 export const useIsChargebeeEnabled = () => {
-    const chargebeeSignupsFlag = useFlag('ChargebeeSignups');
-    const chargebeeFreeToPaidUpgradeFlag = useFlag('ChargebeeFreeToPaid');
     const { APP_NAME } = useConfig();
     const isAccountLite = APP_NAME === APPS.PROTONACCOUNTLITE;
 
-    return (UID: string | undefined, getUser: () => Promise<User>) =>
-        isChargebeeEnabled(UID, getUser, chargebeeSignupsFlag, chargebeeFreeToPaidUpgradeFlag, isAccountLite);
+    return (UID: string | undefined, getUser: () => Promise<User>) => isChargebeeEnabled(UID, getUser, isAccountLite);
 };
 
 export const useIsChargebeeEnabledWithoutParams = () => {
@@ -146,46 +131,19 @@ export const useChargebeeFeature = () => {
     const getUser = useGetUser();
     const { UID } = useAuthentication();
     const [chargebeeFeatureLoaded, setLoaded] = useState(false);
-    const chargebeeSignupsFlag = useFlag('ChargebeeSignups');
-    const chargebeeFreeToPaidUpgradeFlag = useFlag('ChargebeeFreeToPaid');
     const [chargebeeEnabled, setChargebeeEnabled] = useState(ChargebeeEnabled.INHOUSE_FORCED);
     const { APP_NAME } = useConfig();
     const isAccountLite = APP_NAME === APPS.PROTONACCOUNTLITE;
 
-    // mirroring the feature flags is required by the telemetry
-    useEffect(() => {
-        setCookie({
-            cookieName: 'ChargebeeSignupsFlag',
-            cookieValue: chargebeeSignupsFlag ? '1' : '0',
-            cookieDomain: getSecondLevelDomain(window.location.hostname),
-            path: '/',
-            expirationDate: 'max',
-        });
-
-        setCookie({
-            cookieName: 'ChargebeeFreeToPaidFlag',
-            cookieValue: chargebeeFreeToPaidUpgradeFlag ? '1' : '0',
-            cookieDomain: getSecondLevelDomain(window.location.hostname),
-            path: '/',
-            expirationDate: 'max',
-        });
-    }, []);
-
     useEffect(() => {
         async function run() {
-            const chargebeeEnabled = await isChargebeeEnabled(
-                UID,
-                getUser,
-                chargebeeSignupsFlag,
-                chargebeeFreeToPaidUpgradeFlag,
-                isAccountLite
-            );
+            const chargebeeEnabled = await isChargebeeEnabled(UID, getUser, isAccountLite);
             setChargebeeEnabled(chargebeeEnabled.result);
             setLoaded(true);
         }
 
         void run();
-    }, [UID, chargebeeSignupsFlag, chargebeeFreeToPaidUpgradeFlag]);
+    }, [UID]);
 
     return {
         chargebeeEnabled,
