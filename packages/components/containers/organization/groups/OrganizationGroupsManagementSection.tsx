@@ -26,16 +26,16 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
         return <Loader />;
     }
     const { form, setUiState, domainData, setSelectedGroup } = groupsManagement;
-    const { selectedDomain, customDomains } = domainData;
+    const { customDomains } = domainData;
     const { resetForm, values: formValues } = form;
     const hasAtLeastOneVerifiedCustomDomain = customDomains?.some(getIsDomainActive);
 
     const newGroupData = {
         ID: 'new',
-        Name: formValues.name === '' ? c('Empty group name').t`Unnamed` : formValues.name,
+        Name: formValues.name || c('Empty group name').t`Unnamed`,
         Description: formValues.description,
         Address: {
-            Email: formValues.address !== '' ? `${formValues.address}@${selectedDomain}` : '',
+            Email: formValues.address || '',
         },
         MemberCount: undefined,
     };
