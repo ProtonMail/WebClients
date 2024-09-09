@@ -124,6 +124,18 @@ beforeEach(() => {
         plan: plans[0],
         planName: plans[0].Name,
         onChangeBillingAddress: jest.fn(),
+        currencySignupParam: undefined,
+        paymentStatus: {
+            CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
+            State: DEFAULT_TAX_BILLING_ADDRESS.State,
+            VendorStates: {
+                Card: true,
+                Paypal: true,
+                Apple: true,
+                Cash: true,
+                Bitcoin: true,
+            },
+        },
     };
 });
 
