@@ -37,7 +37,6 @@ export interface Props {
     isChargebeeEnabled: () => ChargebeeEnabled;
     paymentsApi: PaymentsApi;
     selectedPlanName: PLANS | ADDON_NAMES | undefined;
-    enableChargebeeB2B: boolean;
     billingPlatform?: BillingPlatform;
     chargebeeUserExists?: ChargebeeUserExists;
     disableNewPaymentMethods?: boolean;
@@ -158,7 +157,6 @@ export const useMethods = (
         isChargebeeEnabled,
         paymentsApi,
         selectedPlanName,
-        enableChargebeeB2B,
         billingPlatform,
         chargebeeUserExists,
         disableNewPaymentMethods,
@@ -230,7 +228,6 @@ export const useMethods = (
                 isChargebeeEnabled(),
                 paymentsApi,
                 selectedPlanName,
-                enableChargebeeB2B,
                 billingPlatform,
                 overrideChargebeeUserExists ?? chargebeeUserExists,
                 !!disableNewPaymentMethods
