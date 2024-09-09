@@ -324,12 +324,6 @@ $height-for-mobile: 8em !default;
 	}
 }
 
-.main-full {
-	block-size: 100%;
-	overflow: auto;
-	background-color: var(--background-norm);
-}
-
 .main-area--no-header {
 	@extend .main-area;
 
