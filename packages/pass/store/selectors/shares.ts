@@ -13,7 +13,6 @@ import type { ShareItem, VaultShareItem } from '../reducers';
 import type { State } from '../types';
 import { SelectorError } from './errors';
 import { selectAllItems, selectItems } from './items';
-import { selectProxiedSettings } from './settings';
 
 export const selectShares = ({ shares }: State) => shares;
 
@@ -26,7 +25,6 @@ export const selectAllVaults = createSelector([selectAllShares], (shares) =>
 );
 
 export const selectWritableVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(isWritableVault));
-export const selectOwnVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(isOwnVault));
 export const selectNonOwnedVaults = createSelector([selectAllVaults], (vaults) => vaults.filter(not(isOwnVault)));
 export const selectOwnWritableVaults = createSelector([selectAllVaults], (vaults) =>
     vaults.filter(and(isWritableVault, isOwnVault))
@@ -55,21 +53,6 @@ export const selectWritableSharedVaultsWithItemsCount = createVaultsWithItemsCou
 export const selectDefaultVault = createSelector(
     selectOwnWritableVaults,
     (ownWritableVaults) => ownWritableVaults.filter((share) => share.owner).sort(sortOn('createTime', 'ASC'))[0]
-);
-
-/* If autosave vault is not set, fallback to default vault */
-export const selectAutosaveVault = createSelector(
-    [selectShares, selectProxiedSettings, selectDefaultVault],
-    (shares, settings, defaultVault): ShareItem<ShareType.Vault> => {
-        const autosaveVaultId = settings.autosave.shareId;
-
-        if (autosaveVaultId) {
-            const share = shares[autosaveVaultId];
-            if (share && isVaultShare(share)) return share;
-        }
-
-        return defaultVault;
-    }
 );
 
 export const selectShare =
