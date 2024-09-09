@@ -99,13 +99,20 @@
             });
 
             const maxCooldown = 300;
+            const cooldownDuration = 1000 * 60 * 60 * 2; // 2 hours
             const retryCooldownList = [1, 2, 5, 10, 30, 60, 180, maxCooldown];
 
             buttonElement.style.display = "block";
             wrapperElement.removeAttribute("aria-hidden");
 
             (async () => {
+                const firstCheckDatetime = Date.now();
+
                 while (true) {
+                    if (Date.now() - firstCheckDatetime > cooldownDuration) {
+                        return;
+                    }
+
                     await new Promise((resolve) => {
                         const cooldown = retryCooldownList.length ? retryCooldownList.shift() : maxCooldown;
                         setTimeout(resolve, cooldown * 1000);
