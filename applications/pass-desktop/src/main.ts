@@ -2,7 +2,6 @@ import { BrowserWindow, Menu, type Session, Tray, app, nativeImage, nativeTheme,
 import logger from 'electron-log/main';
 import { join } from 'path';
 
-import type { MaybeNull } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
@@ -11,24 +10,16 @@ import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
 import { WINDOWS_APP_ID } from './constants';
-import biometrics from './lib/biometrics';
-import clipboard from './lib/clipboard';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { ARCH } from './lib/env';
-import navigation from './lib/navigation';
 import { setApplicationMenu } from './menu-view/application-menu';
 import { startup } from './startup';
 import { certificateVerifyProc } from './tls';
+import type { PassElectronContext } from './types';
 import { SourceType, updateElectronApp } from './update';
 import { isMac, isProdEnv, isWindows } from './utils/platform';
 
-export type PassElectronContext = { window: MaybeNull<BrowserWindow>; quitting: boolean };
-export const ctx: PassElectronContext = { window: null, quitting: false };
-
-biometrics(() => ctx.window);
-navigation(() => ctx.window);
-clipboard();
-void startup();
+const ctx: PassElectronContext = { window: null, quitting: false };
 
 const DOMAIN = getSecondLevelDomain(new URL(config.API_URL).hostname);
 
@@ -193,6 +184,8 @@ const onActivate = (secureSession: Session) => () => {
 };
 
 if (!app.requestSingleInstanceLock()) app.quit();
+
+await startup(ctx);
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
