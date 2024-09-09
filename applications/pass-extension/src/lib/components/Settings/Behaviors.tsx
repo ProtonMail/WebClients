@@ -20,7 +20,6 @@ import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { PauseList } from './PauseList';
-import { VaultSetting } from './VaultSetting';
 
 type SettingDefinition = {
     label: string;
@@ -104,7 +103,6 @@ const getSettings =
                         onChange: (checked) => onSettingsUpdate({ autosave: { passwordSuggest: checked } }),
                     },
                 ],
-                extra: <VaultSetting onSubmit={({ shareId }) => onSettingsUpdate({ autosave: { shareId } })} />,
             },
             {
                 label: c('Label').t`Autosuggest`,
