@@ -23,26 +23,25 @@ import { getAllowedCycles, getBillingAddressStatus } from '@proton/components/co
 import { useConfig, useHandler } from '@proton/components/hooks';
 import { useAssistantAddonEnabledSignup } from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
-import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { useCurrencies, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import type { ExtendedTokenPayment, TokenPayment } from '@proton/components/payments/core';
+import type { ExtendedTokenPayment, PaymentMethodStatusExtended, TokenPayment } from '@proton/components/payments/core';
 import {
     PAYMENT_METHOD_TYPES,
+    getPlansMap,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/components/payments/core';
-import { mainCurrencies } from '@proton/components/payments/core/helpers';
 import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout, getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan, getIsConsumerVpnPlan, getIsVpnPlan } from '@proton/shared/lib/helpers/subscription';
-import type { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import type { Api, Currency, Cycle, Plan } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -64,6 +63,8 @@ export interface Props {
     onChangeBillingAddress: OnBillingAddressChange;
     plan: Plan | undefined;
     planName: string | undefined;
+    currencySignupParam: Currency | undefined;
+    paymentStatus: PaymentMethodStatusExtended;
 }
 
 const PaymentStep = ({
@@ -77,11 +78,13 @@ const PaymentStep = ({
     plans,
     planName: planNameString,
     subscriptionData,
+    currencySignupParam,
+    paymentStatus,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const [loading, withLoading] = useLoading();
 
-    const plansMap = toMap(plans, 'Name') as PlansMap;
+    const plansMap = getPlansMap(plans, subscriptionData.currency, false);
     const hasGuarantee = getIsConsumerVpnPlan(plan?.Name);
     const hasSomeVpnPlan = getIsVpnPlan(plan?.Name);
 
@@ -225,6 +228,14 @@ const PaymentStep = ({
         minimumCycle: subscriptionData.minimumCycle,
     });
 
+    const { getAvailableCurrencies } = useCurrencies('v2-signup');
+
+    const availableCurrencies = getAvailableCurrencies({
+        status: paymentStatus,
+        plans,
+        paramCurrency: currencySignupParam,
+    });
+
     return (
         <div className="sign-layout-mobile-columns w-full flex items-start justify-center gap-7">
             <Main center={false}>
@@ -235,9 +246,7 @@ const PaymentStep = ({
                         <div className="inline-block mt-4 md:mt-8">
                             <CurrencySelector
                                 mode="select-two"
-                                // this is a placeholder, so there isn't support for regional currencies in this view,
-                                // because this view might be removed soon.
-                                currencies={mainCurrencies}
+                                currencies={availableCurrencies}
                                 currency={subscriptionData.currency}
                                 onSelect={onChangeCurrency}
                             />
