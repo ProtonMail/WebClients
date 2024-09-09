@@ -71,7 +71,7 @@ export const Exporter: FC<Props> = ({ onConfirm }) => {
                         }
                     }
 
-                    return c('Warning').t`An error occured while exporting your data`;
+                    return c('Warning').t`An error occurred while exporting your data`;
                 })();
 
                 logger.warn(`[Settings::Exporter] export failed`, error);
