@@ -47,7 +47,14 @@ const GroupMemberList = ({ groupMembers, loading, group, edit = false }: Props) 
                         const memberName = members?.find(({ Addresses }) =>
                             Addresses?.some(({ ID }) => ID === (memberData?.AddressID ?? memberData?.AddressId))
                         )?.Name;
-                        return <GroupMemberItem groupMember={memberData} memberName={memberName} group={group} />;
+                        return (
+                            <GroupMemberItem
+                                groupMember={memberData}
+                                memberName={memberName}
+                                group={group}
+                                key={memberData.ID}
+                            />
+                        );
                     })}
                 </div>
             </Scroll>
