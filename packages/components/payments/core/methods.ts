@@ -72,7 +72,6 @@ export class PaymentMethods {
         private _coupon: string,
         private _flow: PaymentMethodFlows,
         private _selectedPlanName: PLANS | ADDON_NAMES | undefined,
-        public enableChargebeeB2B: boolean,
         public billingPlatform: BillingPlatform | undefined,
         public chargebeeUserExists: ChargebeeUserExists | undefined,
         public disableNewPaymentMethods: boolean
@@ -266,7 +265,7 @@ export class PaymentMethods {
         const isCredit = this.flow === 'credit';
         const isAllowedFlow = isSignupFlow(this.flow) || isAddCard || isSubscription || isCredit;
 
-        return cardAvailable && isAllowedFlow && !this.disableForB2B();
+        return cardAvailable && isAllowedFlow;
     }
 
     private isPaypalAvailable(): boolean {
@@ -306,11 +305,7 @@ export class PaymentMethods {
         const isCredit = this.flow === 'credit';
         const isAllowedFlow = isSubscription || isSignupFlow(this.flow) || isCredit;
 
-        return paypalAvailable && isAllowedFlow && !this.disableForB2B();
-    }
-
-    private disableForB2B(): boolean {
-        return this.isB2BPlan() && !this.enableChargebeeB2B;
+        return paypalAvailable && isAllowedFlow;
     }
 
     private isB2BPlan(): boolean {
@@ -351,7 +346,6 @@ export async function initializePaymentMethods(
     chargebeeEnabled: ChargebeeEnabled,
     paymentsApi: PaymentsApi,
     selectedPlanName: PLANS | ADDON_NAMES | undefined,
-    enableChargebeeB2B: boolean,
     billingPlatform?: BillingPlatform,
     chargebeeUserExists?: ChargebeeUserExists,
     disableNewPaymentMethods?: boolean
@@ -400,7 +394,6 @@ export async function initializePaymentMethods(
         coupon,
         flow,
         selectedPlanName,
-        enableChargebeeB2B,
         billingPlatform,
         chargebeeUserExists,
         !!disableNewPaymentMethods

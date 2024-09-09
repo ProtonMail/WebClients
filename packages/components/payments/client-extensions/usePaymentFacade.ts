@@ -13,7 +13,6 @@ import type {
     Currency,
     User,
 } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useConfig, useModals } from '../../hooks';
@@ -141,8 +140,6 @@ export const usePaymentFacade = ({
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
 
-    const enableChargebeeB2B = useFlag('ChargebeeFreeToPaidB2B');
-
     const iframeHandles = useCbIframe();
     const chargebeeHandles: ChargebeeIframeHandles = iframeHandles.handles;
     const chargebeeEvents: ChargebeeIframeEvents = iframeHandles.events;
@@ -195,7 +192,6 @@ export const usePaymentFacade = ({
                     throw error;
                 }
             },
-            enableChargebeeB2B,
             billingPlatform,
             chargebeeUserExists,
             forceInhouseSavedMethodProcessors,
