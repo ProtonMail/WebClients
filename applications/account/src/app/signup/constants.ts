@@ -29,4 +29,15 @@ export const DEFAULT_SIGNUP_MODEL: SignupModel = {
     plansMap: {},
     referralData: undefined,
     vpnServersCountData: defaultVPNServersCountData,
+    paymentStatus: {
+        CountryCode: DEFAULT_TAX_BILLING_ADDRESS.CountryCode,
+        State: undefined,
+        VendorStates: {
+            Card: false,
+            Paypal: false,
+            Bitcoin: false,
+            Apple: false,
+            Cash: false,
+        },
+    },
 };

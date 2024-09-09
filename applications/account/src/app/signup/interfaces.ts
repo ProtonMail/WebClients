@@ -2,7 +2,11 @@ import type { ChallengeResult } from '@proton/components';
 import type { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import type { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import type { PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
+import type {
+    PAYMENT_METHOD_TYPES,
+    PaymentMethodStatusExtended,
+    SavedPaymentMethod,
+} from '@proton/components/payments/core';
 import type { BillingAddress, ExtendedTokenPayment } from '@proton/components/payments/core';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
@@ -109,6 +113,7 @@ export interface SignupModel {
     humanVerificationToken: string;
     selectedProductPlans: SelectedProductPlans;
     vpnServersCountData: VPNServersCountData;
+    paymentStatus: PaymentMethodStatusExtended;
 }
 
 export type SignupInviteParameters =

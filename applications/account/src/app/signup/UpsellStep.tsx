@@ -13,12 +13,13 @@ import {
     getFreeVPNPlan,
     getShortPlan,
 } from '@proton/components/containers/payments/features/plan';
-import { mainCurrencies } from '@proton/components/payments/core/helpers';
+import { useCurrencies } from '@proton/components/payments/client-extensions';
+import type { PaymentMethodStatusExtended} from '@proton/components/payments/core';
+import { getPlansMap } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import type {
     Currency,
     Cycle,
@@ -51,6 +52,8 @@ interface Props {
     vpnServers: VPNServersCountData;
     mostPopularPlanName?: PLANS;
     upsellPlanName: PLANS;
+    currencySignupParam: Currency | undefined;
+    paymentStatus: PaymentMethodStatusExtended;
 }
 
 const getFooterNotes = (planName: PLANS, cycle: Cycle): string => {
@@ -92,6 +95,8 @@ const UpsellStep = ({
     mostPopularPlanName,
     upsellPlanName,
     onBack,
+    currencySignupParam,
+    paymentStatus,
 }: Props) => {
     const { APP_NAME } = useConfig();
 
@@ -107,7 +112,7 @@ const UpsellStep = ({
         });
     }, []);
 
-    const plansMap = toMap(plans, 'Name');
+    const plansMap = getPlansMap(plans, currency, false);
 
     const shortFreePlan = (() => {
         if (upsellPlanName === PLANS.VPN) {
@@ -138,6 +143,14 @@ const UpsellStep = ({
 
     // If there's a feature with a checkmark, don't show any icons
     const noIcon = hasNoIcon(shortFreePlan?.features || []) || hasNoIcon(upsellShortPlan?.features || []);
+
+    const { getAvailableCurrencies } = useCurrencies('v2-signup');
+
+    const availableCurrencies = getAvailableCurrencies({
+        status: paymentStatus,
+        plans,
+        paramCurrency: currencySignupParam,
+    });
 
     const mostPopularPlan = (() => {
         if (!mostPopularPlanName) {
@@ -301,9 +314,7 @@ const UpsellStep = ({
                             <div className="inline-block">
                                 <CurrencySelector
                                     mode="select-two"
-                                    // this is a placeholder, so there isn't support for regional currencies in this view,
-                                    // because this view might be removed soon.
-                                    currencies={mainCurrencies}
+                                    currencies={availableCurrencies}
                                     currency={currency}
                                     onSelect={onChangeCurrency}
                                 />
