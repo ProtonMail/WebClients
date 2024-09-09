@@ -1,4 +1,4 @@
-import type { DecryptedLink } from '../interface';
+import type { DecryptedLink, EncryptedLink } from '../interface';
 import type { FetchMeta } from './useLinksListingHelpers';
 
 type LoadLinksMetaOptions = {
@@ -35,7 +35,8 @@ export type FetchLoadLinksMetaByVolume = (
         removeParentLinkId?: boolean;
     }
 ) => Promise<{
-    links: DecryptedLink[];
-    parents: DecryptedLink[];
-    errors: any[];
+    [shareId: string]: {
+        links: EncryptedLink[];
+        parents: EncryptedLink[];
+    };
 }>;

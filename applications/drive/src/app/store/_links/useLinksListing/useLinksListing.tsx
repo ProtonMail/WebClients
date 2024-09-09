@@ -3,8 +3,7 @@ import { createContext, useCallback, useContext, useRef } from 'react';
 import { useApi } from '@proton/components/hooks';
 import { queryFolderChildren } from '@proton/shared/lib/api/drive/folder';
 import { queryLinkMetaBatch, queryVolumeLinkMetaBatch } from '@proton/shared/lib/api/drive/link';
-import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
-import runInQueue from '@proton/shared/lib/helpers/runInQueue';
+import { BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
 import type { LinkChildrenResult, LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
 import { useFlag } from '@proton/unleash';
 import chunk from '@proton/utils/chunk';
@@ -301,9 +300,7 @@ export function useLinksListingProvider() {
         await waitFor(() => !fetchMeta.isInProgress, { abortSignal });
         fetchMeta.isInProgress = true;
 
-        const linksAcc: DecryptedLink[] = [];
-        const parentsAcc: DecryptedLink[] = [];
-        const errorsAcc: any[] = [];
+        const resultAcc: { [shareId: string]: { links: EncryptedLink[]; parents: EncryptedLink[] } } = {};
 
         const load = async () => {
             const missingLinkIds: string[] = [];
@@ -312,9 +309,7 @@ export function useLinksListingProvider() {
             linkIdsWithShareId.forEach(({ linkId, shareId }) => {
                 const link = linksState.getLink(shareId, linkId);
 
-                if (isLinkDecrypted(link)) {
-                    linksAcc.push(link.decrypted);
-                } else {
+                if (!isLinkDecrypted(link)) {
                     missingLinkIds.push(linkId);
                 }
             });
@@ -346,29 +341,9 @@ export function useLinksListingProvider() {
                     }
                 });
 
-                // Because we have one link per shareId, links length will always be 1.
-                // So we run this in queue like it's done in decryptLinks when you have multiple links
-                const queue = Array.from(shareIdsWithLinks.entries()).map(([shareId, links]) => async () => {
-                    const cached = await cacheLoadedLinks(abortSignal, shareId, links, parents);
-                    if (cached.errors.length > 0) {
-                        errorsAcc.push(...cached.errors);
-                    }
-
-                    for (const { decrypted } of cached.links) {
-                        // Links should not include parents because parents need to be
-                        // processed first otherwise links would do fetch automatically
-                        // again before parents are properly handled. Normally loading
-                        // should focus on links only, but for example, not all endpoints
-                        // gives us clear separation (like listing per shared links where
-                        // we don't have info what link is parent and what is child).
-                        if (parents.find((link) => link.linkId === decrypted.linkId)) {
-                            parentsAcc.push(decrypted);
-                        } else {
-                            linksAcc.push(decrypted);
-                        }
-                    }
+                Array.from(shareIdsWithLinks.entries()).map(([shareId, links]) => {
+                    resultAcc[shareId] = { links, parents };
                 });
-                await runInQueue(queue, MAX_THREADS_PER_REQUEST);
             }
         };
 
@@ -376,11 +351,7 @@ export function useLinksListingProvider() {
             fetchMeta.isInProgress = false;
         });
 
-        return {
-            links: linksAcc,
-            parents: parentsAcc,
-            errors: errorsAcc,
-        };
+        return resultAcc;
     };
 
     const loadChildren = async (
