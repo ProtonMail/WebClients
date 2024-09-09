@@ -22,6 +22,10 @@ module.exports = () => [
             {
                 test: new RegExp(`${DESIGN_SYSTEM_ICONS_SVG}$`),
                 type: 'asset/source',
+                loader: 'svgo-loader',
+                options: {
+                    plugins: [],
+                },
             },
             {
                 test: /\.(bmp|png|jpg|jpeg|gif|svg)$/,
