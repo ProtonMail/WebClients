@@ -18,7 +18,7 @@ import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal'
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';
 import { selectShowUsernameField } from '@proton/pass/store/selectors';
 import { type LoginItemFormValues } from '@proton/pass/types';
-import { merge, withMerge } from '@proton/pass/utils/object/merge';
+import { merge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { intoCleanHostname } from '@proton/pass/utils/url/is-valid-url';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -65,12 +65,14 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
         /** When enabling the username field set the `itemEmail` as
          * the `itemUsername` only if it's a non-valid email */
         if (!validateEmailAddress(itemEmail)) {
-            await form.setValues(
-                withMerge<LoginItemFormValues>({
+            form.resetForm({
+                ...form,
+                values: {
+                    ...form.values,
                     itemEmail: '',
                     itemUsername: itemEmail,
-                })
-            );
+                },
+            });
         }
 
         setUsernameExpanded(true);
