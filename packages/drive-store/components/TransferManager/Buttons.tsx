@@ -2,7 +2,7 @@ import { Button } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { TransfersManagerButtonsProps } from './interfaces';
+import type { TransfersManagerButtonsProps } from './interfaces';
 
 const Buttons = ({ className, buttons, id, children }: TransfersManagerButtonsProps) => {
     const elClassName = clsx(['flex flex-nowrap justify-end', className]);

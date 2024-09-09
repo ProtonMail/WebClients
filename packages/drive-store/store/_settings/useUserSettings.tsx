@@ -1,17 +1,19 @@
-import { ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
 import { useApi } from '@proton/components';
 import { queryUpdateUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
-import { UserModel } from '@proton/shared/lib/interfaces';
-import {
+import type { UserModel } from '@proton/shared/lib/interfaces';
+import type {
     LayoutSetting,
     RevisionRetentionDaysSetting,
     UserSettings,
     UserSettingsResponse,
 } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { UserSortParams, getSetting, parseSetting } from './sorting';
+import type { UserSortParams } from './sorting';
+import { getSetting, parseSetting } from './sorting';
 
 const UserSettingsContext = createContext<{
     sort: UserSortParams;

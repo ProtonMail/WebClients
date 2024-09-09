@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, Loader } from '@proton/components/components';
 
-import { ShareInvitee } from '../../../../../store';
+import type { ShareInvitee } from '../../../../../store';
 
 /**
  * Generates attributes for an address input item based on the loading state, error state, and email.
@@ -11,7 +11,7 @@ import { ShareInvitee } from '../../../../../store';
 export const getAddressInputItemAttributes = ({ isLoading, error, email, isExternal }: ShareInvitee) => {
     if (isLoading) {
         return {
-            icon: <Loader className="icon-16p pl-2 m-auto flex shrink-0" />,
+            icon: <Loader className="icon-size-4 pl-2 m-auto flex shrink-0" />,
         };
     }
     if (error) {

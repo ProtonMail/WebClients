@@ -1,10 +1,10 @@
 diff --git a/packages/drive-store/store/_links/useLinksState.tsx b/packages/drive-store/store/_links/useLinksState.tsx
-index 3462807f0f..f1f5fce1ed 100644
+index a6ac0b3fb2..2c287e8203 100644
 --- a/packages/drive-store/store/_links/useLinksState.tsx
 +++ b/packages/drive-store/store/_links/useLinksState.tsx
-@@ -150,6 +150,13 @@ export function useLinksStateProvider() {
-         [state]
-     );
+@@ -48,6 +48,13 @@ export function useLinksStateProvider() {
+ 
+     const [state, setState] = useState<LinksState>({});
  
 +    const removeLinkForDriveCompat = useCallback(
 +        (shareId: string, linkId: string) => {
@@ -13,11 +13,11 @@ index 3462807f0f..f1f5fce1ed 100644
 +        [state]
 +    );
 +
-     return {
-         setLinks,
-         lockLinks,
-@@ -163,6 +170,8 @@ export function useLinksStateProvider() {
-         getSharedWithMeByLink,
+     useEffect(() => {
+         const callbackId = eventsManager.eventHandlers.register((_volumeId, events, processedEventCounter) =>
+             setState((state) => updateByEvents(state, events, processedEventCounter))
+@@ -165,6 +172,8 @@ export function useLinksStateProvider() {
+         getAllShareLinks, // This should be use only in specific case when you know the links you need (Ex: Bookmarks)
          removeLinkForMigration,
          removeLinkForSharedWithMe,
 +        /** Should never be used outside of `drive-store`. */

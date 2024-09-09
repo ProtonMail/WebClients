@@ -1,12 +1,13 @@
-import { MouseEvent, useMemo, useState } from 'react';
+import type { MouseEvent } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components';
 import {
     ContactEmailsProvider,
     Icon,
-    ModalStateProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -15,10 +16,11 @@ import {
     useModalTwoStatic,
     useToggle,
 } from '@proton/components';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
-import { ShareMember, useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
+import type { ShareMember } from '../../../store';
+import { useDriveSharingFlags, useShareMemberView, useShareURLView } from '../../../store';
 import ModalContentLoader from '../ModalContentLoader';
 import { DirectSharingAutocomplete, DirectSharingListing, useShareInvitees } from './DirectSharing';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
@@ -222,7 +224,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                         </ModalTwoContent>
                         {!isShareUrlEnabled ? (
                             <>
-                                <hr className="mb-0.5" />
+                                <hr className="mb-0.5 min-h-px" />
                                 <ModalTwoFooter>
                                     <PublicSharing
                                         createSharedLink={createSharedLink}

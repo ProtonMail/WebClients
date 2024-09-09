@@ -1,14 +1,17 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { Avatar, CircleLoader } from '@proton/atoms';
-import { useContactEmails, useUser } from '@proton/components/hooks';
+import { useContactEmails, useSortedList, useUser } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { ShareExternalInvitation, ShareInvitation, ShareMember } from '../../../../store';
+import type { ShareExternalInvitation, ShareInvitation, ShareMember } from '../../../../store';
 import { DirectSharingListInvitation } from './DirectSharingListInvitation';
 import { MemberDropdownMenu } from './MemberDropdownMenu';
 
@@ -111,6 +114,21 @@ export const DirectSharingListing = ({
     const [user] = useUser();
     const [contactEmails] = useContactEmails();
 
+    const displayName = user.DisplayName || user.Name;
+
+    const membersWithName = useMemo(
+        () =>
+            members.map((member) => {
+                const { contactName, contactEmail } = getContactNameAndEmail(member.email, contactEmails);
+                return { member, contactName, contactEmail };
+            }),
+        [members, contactEmails]
+    );
+    const { sortedList: sortedMembersWithName } = useSortedList(membersWithName, {
+        key: 'contactName',
+        direction: SORT_DIRECTION.ASC,
+    });
+
     if (isLoading) {
         return <CircleLoader size="medium" className="mx-auto my-6 w-full" />;
     }
@@ -119,11 +137,11 @@ export const DirectSharingListing = ({
             <div className="flex my-4 justify-space-between items-center" data-testid="share-owner">
                 <div className={'flex items-center'}>
                     <Avatar color="weak" className="mr-2">
-                        {getInitials(user.DisplayName)}
+                        {getInitials(displayName || user.Email)}
                     </Avatar>
                     <p className="flex flex-column p-0 m-0">
                         <span className="text-semibold">
-                            {user.DisplayName} ({c('Info').t`you`})
+                            {displayName} ({c('Info').t`you`})
                         </span>
                         <span className="color-weak">{user.Email}</span>
                     </p>
@@ -133,7 +151,10 @@ export const DirectSharingListing = ({
 
             {volumeId &&
                 externalInvitations.map((externalInvitation) => {
-                    const { contactName, contactEmail } = getContactNameAndEmail(externalInvitation.inviteeEmail);
+                    const { contactName, contactEmail } = getContactNameAndEmail(
+                        externalInvitation.inviteeEmail,
+                        contactEmails
+                    );
                     return (
                         <DirectSharingListInvitation
                             key={externalInvitation.externalInvitationId}
@@ -172,8 +193,7 @@ export const DirectSharingListing = ({
                     );
                 })}
 
-            {members.map((member) => {
-                const { contactName, contactEmail } = getContactNameAndEmail(member.email, contactEmails);
+            {sortedMembersWithName.map(({ member, contactName, contactEmail }) => {
                 return (
                     <MemberItem
                         key={member.memberId}

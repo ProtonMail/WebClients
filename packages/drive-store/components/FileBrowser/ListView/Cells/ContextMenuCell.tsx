@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon, TableCell } from '@proton/components';
 
-import { FileBrowserBaseItem } from '../../interface';
+import type { FileBrowserBaseItem } from '../../interface';
 import { useItemContextMenu } from '../../state/useItemContextMenu';
 import { useSelection } from '../../state/useSelection';
 

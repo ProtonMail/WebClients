@@ -7,7 +7,7 @@ import shallowEqual from '@proton/utils/shallowEqual';
 
 import useDragAndDrop from '../hooks/useDragAndDrop';
 import useFileBrowserItem from '../hooks/useFileBrowserItem';
-import { DragMoveControls, FileBrowserBaseItem } from '../interface';
+import type { DragMoveControls, FileBrowserBaseItem } from '../interface';
 
 export interface ListItemProps<T extends FileBrowserBaseItem> {
     Cells: React.FC<{ item: any }>[];
@@ -70,6 +70,7 @@ const ItemRow = <T extends FileBrowserBaseItem>({
                     'file-browser-list-item flex user-select-none group-hover-opacity-container',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.isLocked) && 'bg-strong',
                     (dragging || item.isLocked) && 'opacity-50',
+                    item.isInvitation && 'file-browser-list-item--invitation',
                 ])}
                 aria-disabled={item.isLocked}
                 {...itemHandlers}

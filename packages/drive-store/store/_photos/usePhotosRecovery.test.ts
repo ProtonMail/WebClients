@@ -27,6 +27,7 @@ function generateDecryptedLink(linkId = 'linkId'): DecryptedLink {
         hasThumbnail: false,
         isShared: false,
         rootShareId: 'rootShareId',
+        volumeId: 'volumeId',
     };
 }
 

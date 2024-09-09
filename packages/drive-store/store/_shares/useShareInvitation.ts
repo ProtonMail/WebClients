@@ -12,6 +12,7 @@ import {
     queryInvitationList,
     queryInviteExternalUser,
     queryInviteProtonUser,
+    queryRejectShareInvite,
     queryResendExternalInvitation,
     queryResendInvitation,
     queryShareInvitationDetails,
@@ -45,6 +46,11 @@ import type { ShareInvitationDetails, ShareInvitationEmailDetails } from './inte
 import useDefaultShare from './useDefaultShare';
 import { useDriveSharingFlags } from './useDriveSharingFlags';
 import useShare from './useShare';
+
+export enum EXTERNAL_INVITATIONS_ERROR_NAMES {
+    NOT_FOUND = 'ExternalInvitationsNotFound',
+    DISABLED = 'ExternalInvitationsDisabled',
+}
 
 export const useShareInvitation = () => {
     const debouncedRequest = useDebouncedRequest();
@@ -155,7 +161,12 @@ export const useShareInvitation = () => {
         const link = await getLink(abortSignal, shareId, linkId);
 
         if (!link.shareId) {
-            throw new EnrichedError('Cannot load the share');
+            throw new EnrichedError('Failed to load share for external invite', {
+                tags: {
+                    linkId,
+                    shareId,
+                },
+            });
         }
         const linkPrivateKey = await getLinkPrivateKey(abortSignal, shareId, linkId);
         const sessionKey = await getShareSessionKey(abortSignal, link.shareId, linkPrivateKey);
@@ -194,10 +205,10 @@ export const useShareInvitation = () => {
                     err.status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY &&
                     err.data?.Code === API_CUSTOM_ERROR_CODES.FEATURE_DISABLED
                 ) {
-                    const error = new Error(
+                    const error = new EnrichedError(
                         c('Error').t`External invitations are temporarily disabled. Please try again later`
                     );
-                    error.name = 'ExternalInvtationsDisabled';
+                    error.name = EXTERNAL_INVITATIONS_ERROR_NAMES.DISABLED;
                     throw error;
                 }
                 throw err;
@@ -335,6 +346,10 @@ export const useShareInvitation = () => {
         );
     };
 
+    const rejectInvitation = async (abortSignal: AbortSignal, invitationId: string) => {
+        return debouncedRequest<{ Code: number }>(queryRejectShareInvite(invitationId), abortSignal);
+    };
+
     const convertExternalInvitation = async (
         abortSignal: AbortSignal,
         {
@@ -346,10 +361,10 @@ export const useShareInvitation = () => {
         }
     ) => {
         if (isSharingExternalInviteDisabled) {
-            const error = new Error(
+            const error = new EnrichedError(
                 c('Error').t`External invitations are temporarily disabled. Please try again later`
             );
-            error.name = 'ExternalInvtationsDisabled';
+            error.name = EXTERNAL_INVITATIONS_ERROR_NAMES.DISABLED;
             throw error;
         }
         const { shareId: contextShareId, volumeId } = await getDefaultShare();
@@ -372,7 +387,9 @@ export const useShareInvitation = () => {
         );
 
         if (!currentExternalInvitation) {
-            throw new Error(c('Error').t`The invitation doesn't exist anymore`);
+            const error = new EnrichedError(c('Error').t`The invitation doesn't exist anymore`);
+            error.name = EXTERNAL_INVITATIONS_ERROR_NAMES.NOT_FOUND;
+            throw error;
         }
 
         if (currentExternalInvitation.state !== SHARE_EXTERNAL_INVITATION_STATE.USER_REGISTERED) {
@@ -460,6 +477,7 @@ export const useShareInvitation = () => {
         listExternalInvitations,
         deleteInvitation,
         acceptInvitation,
+        rejectInvitation,
         resendInvitationEmail,
         resendExternalInvitationEmail,
         updateInvitationPermissions,

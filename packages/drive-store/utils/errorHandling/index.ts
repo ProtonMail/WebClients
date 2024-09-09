@@ -39,8 +39,6 @@ export function sendErrorReport(error: Error | EnrichedError | unknown) {
         return;
     }
 
-    console.warn(error);
-
     let errorForReporting = error as Error;
 
     if (hasSentryMessage(error)) {
@@ -50,5 +48,7 @@ export function sendErrorReport(error: Error | EnrichedError | unknown) {
     }
 
     const context = isEnrichedError(error) ? error.context : undefined;
+
+    console.warn(error, context);
     traceError(errorForReporting, context);
 }

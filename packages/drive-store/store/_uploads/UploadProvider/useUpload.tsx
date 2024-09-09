@@ -10,7 +10,8 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 
 import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
-import { FileThresholdModalType, useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
+import type { FileThresholdModalType } from '../../../components/modals/FileThresholdModal';
+import { useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import {
     isPhotosDisabledUploadError,
@@ -24,15 +25,15 @@ import {
 import { useDirectSharingInfo } from '../../_shares/useDirectSharingInfo';
 import { useTransferLog } from '../../_transfer';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
-import { UploadFileItem, UploadFileList } from '../interface';
-import { UploadModalContainer } from './UploadModalContainer';
-import { UploadProviderState } from './UploadProviderState';
-import { UpdateFilter } from './interface';
+import type { UploadFileItem, UploadFileList } from '../interface';
+import type { UploadModalContainer } from './UploadModalContainer';
+import type { UploadProviderState } from './UploadProviderState';
+import type { UpdateFilter } from './interface';
 import useUploadConflict from './useUploadConflict';
 import useUploadControl from './useUploadControl';
 import useUploadFile from './useUploadFile';
 import useUploadFolder from './useUploadFolder';
-import useUploadMetrics from './useUploadMetrics';
+import useUploadMetrics, { getFailedUploadMetadata } from './useUploadMetrics';
 import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
 
 export default function useUpload(): [UploadProviderState, UploadModalContainer] {
@@ -266,7 +267,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
                         sendErrorReport(error);
-                        metrics.uploadFailed(nextFileUpload.shareId, error, nextFileUpload.numberOfErrors);
+                        metrics.uploadFailed(getFailedUploadMetadata(nextFileUpload, control.getProgresses()), error);
                     }
 
                     // If the error is 429 (rate limited), we should not continue

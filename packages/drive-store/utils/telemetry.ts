@@ -1,13 +1,17 @@
 import { useEffect, useMemo } from 'react';
 
 import { useApi } from '@proton/components/hooks';
+import createApi from '@proton/shared/lib/api/createApi';
 import { TelemetryDriveWebFeature, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { randomHexString4 } from '@proton/shared/lib/helpers/uid';
 import type { Api } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
+import * as config from '../config';
 import { sendErrorReport } from './errorHandling';
 import { EnrichedError } from './errorHandling/EnrichedError';
+import { getLastActivePersistedUserSessionUID } from './lastActivePersistedUserSession';
 
 export enum ExperimentGroup {
     control = 'control',
@@ -15,16 +19,39 @@ export enum ExperimentGroup {
 }
 
 export enum Features {
-    optimisticFileUploads = 'optimisticFileUploads',
-    optimisticFolderUploads = 'optimisticFolderUploads',
     mountToFirstItemRendered = 'mountToFirstItemRendered',
+    totalSizeComputation = 'totalSizeComputation',
+    sharingLoadLinksByVolume = 'sharingLoadLinksByVolume',
 }
+
+/**
+ * At the present time, these metrics will only work when user is authenticated
+ */
+export enum Actions {
+    DismissDocsOnboardingModal = 'dismissDocsOnboardingModal',
+    AddToBookmark = 'addToBookmark',
+    ViewSignUpFlowModal = 'viewSignUpFlowModal',
+    DismissSignUpFlowModal = 'dismissSignUpFlowModal',
+    SubmitSignUpFlowModal = 'submitSignUpFlowModal',
+    SignUpFlowModal = 'signUpFlowModal',
+    SignInFlowModal = 'signInFlowModal',
+    OpenPublicLinkFromSharedWithMe = 'openPublicLinkFromSharedWithMe',
+    PublicScanAndDownload = 'publicScanAndDownload',
+    PublicDownload = 'publicDownload',
+    PublicLinkVisit = 'publicLinkVisit',
+    DeleteBookmarkFromSharedWithMe = 'DeleteBookmarkFromSharedWithMe',
+}
+
+type PerformanceTelemetryAdditionalValues = {
+    quantity?: number;
+};
 
 export const sendTelemetryFeaturePerformance = (
     api: Api,
     featureName: Features,
     timeInMs: number,
-    treatment: ExperimentGroup
+    treatment: ExperimentGroup,
+    additionalValues: PerformanceTelemetryAdditionalValues = {}
 ) => {
     void sendTelemetryReport({
         api: api,
@@ -32,6 +59,7 @@ export const sendTelemetryFeaturePerformance = (
         event: TelemetryDriveWebFeature.performance,
         values: {
             milliseconds: timeInMs,
+            ...additionalValues,
         },
         dimensions: {
             experimentGroup: treatment,
@@ -46,13 +74,14 @@ const measureAndReport = (
     group: ExperimentGroup,
     measureName: string,
     startMark: string,
-    endMark: string
+    endMark: string,
+    additionalValues?: PerformanceTelemetryAdditionalValues
 ) => {
     try {
         const measure = performance.measure(measureName, startMark, endMark);
         // it can be undefined on browsers below Safari below 14.1 and Firefox 103
         if (measure) {
-            sendTelemetryFeaturePerformance(api, feature, measure.duration, group);
+            sendTelemetryFeaturePerformance(api, feature, measure.duration, group, additionalValues);
         }
     } catch (e) {
         sendErrorReport(
@@ -90,27 +119,29 @@ export const measureExperimentalPerformance = <T>(
     performance.mark(startMark);
     const result = applyTreatment ? treatmentFunction() : controlFunction();
 
-    result.finally(() => {
-        performance.mark(endMark);
+    result
+        .finally(() => {
+            performance.mark(endMark);
 
-        measureAndReport(
-            api,
-            feature,
-            applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control,
-            measureName,
-            startMark,
-            endMark
-        );
+            measureAndReport(
+                api,
+                feature,
+                applyTreatment ? ExperimentGroup.treatment : ExperimentGroup.control,
+                measureName,
+                startMark,
+                endMark
+            );
 
-        performance.clearMarks(endMark);
-        performance.clearMeasures(measureName);
-        performance.clearMarks(startMark);
-    });
+            performance.clearMarks(endMark);
+            performance.clearMeasures(measureName);
+            performance.clearMarks(startMark);
+        })
+        .catch(noop);
 
     return result;
 };
 
-export const measureFeaturePerformance = (api: Api, feature: Features) => {
+export const measureFeaturePerformance = (api: Api, feature: Features, experimentGroup = ExperimentGroup.control) => {
     const startMark = `start-${feature}-${randomHexString4()}`;
     const endMark = `end-${feature}-${randomHexString4()}`;
     const measureName = `measure-${feature}-${randomHexString4()}`;
@@ -133,11 +164,11 @@ export const measureFeaturePerformance = (api: Api, feature: Features) => {
                 performance.mark(startMark);
             }
         },
-        end: () => {
+        end: (additionalValues?: PerformanceTelemetryAdditionalValues) => {
             if (!ended && started) {
                 ended = true;
                 performance.mark(endMark);
-                measureAndReport(api, feature, ExperimentGroup.control, measureName, startMark, endMark);
+                measureAndReport(api, feature, experimentGroup, measureName, startMark, endMark, additionalValues);
                 clear();
             }
         },
@@ -160,4 +191,27 @@ export const useMeasureFeaturePerformanceOnMount = (features: Features) => {
     }, [measure]);
 
     return measure.end;
+};
+
+const apiInstance = createApi({ config, sendLocaleHeaders: true });
+
+export const countActionWithTelemetry = (action: Actions, count: number = 1): void => {
+    const uid = getLastActivePersistedUserSessionUID();
+
+    if (uid) {
+        // API calls will now be Authenticated with x-pm-uid header
+        apiInstance.UID = uid;
+    }
+
+    void sendTelemetryReport({
+        api: apiInstance,
+        measurementGroup: TelemetryMeasurementGroups.driveWebActions,
+        event: TelemetryDriveWebFeature.actions,
+        values: {
+            count,
+        },
+        dimensions: {
+            name: action,
+        },
+    });
 };

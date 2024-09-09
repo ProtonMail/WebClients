@@ -9,7 +9,8 @@
         "sync": "node scripts/sync.mjs",
         "test": "jest",
         "test:ci": "jest --coverage --runInBand --ci",
-        "test:watch": "jest --watch"
+        "test:watch": "jest --watch",
+        "copy": "sh -c 'src_path=\"$1\"; dest_path=$(echo \"$1\" | sed \"s|applications/drive/src/app|packages/drive-store|\"); mkdir -p $(dirname \"$dest_path\"); cp \"$src_path\" \"$dest_path\"' --"
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",

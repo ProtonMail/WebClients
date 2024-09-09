@@ -29,6 +29,11 @@ export default function useTransferLog(transferType: TransferType) {
     };
 
     const downloadLogs = () => {
+        // Add info about how much time passed since last log to understand how long user waited before giving up.
+        if (logs.current.length > 0) {
+            log('', 'Downloading logs');
+        }
+
         const logData = getLogs();
         if (!logData) {
             return;
