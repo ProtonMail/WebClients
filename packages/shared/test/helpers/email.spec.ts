@@ -4,6 +4,7 @@ import {
     canonicalizeEmailByGuess,
     canonicalizeInternalEmail,
     getEmailTo,
+    isNoReplyEmail,
     parseMailtoURL,
     validateDomain,
     validateEmailAddress,
@@ -226,6 +227,19 @@ describe('email', () => {
     describe('getEmailTo', () => {
         it('should always return a string', () => {
             expect(getEmailTo('mailto:')).toBeInstanceOf(String);
+        });
+    });
+
+    describe('isNoReplyEmail', () => {
+        it('should detect no-reply emails', () => {
+            const emails = [
+                'no-reply@example.com',
+                'do.not.reply@example.com',
+                'noreply@example.com',
+                'no_reply@example.com',
+                'example@noreply.com', // Only the local part is checked
+            ];
+            expect(emails.map((email) => isNoReplyEmail(email))).toEqual([true, true, true, true, false]);
         });
     });
 });

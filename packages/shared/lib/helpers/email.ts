@@ -122,14 +122,14 @@ export const canonicalizeEmail = (email: string, scheme = CANONICALIZE_SCHEME.DE
     const at = email[email.length - domain.length - 1] === '@' ? '@' : '';
     if (scheme === CANONICALIZE_SCHEME.PROTON) {
         const cleanLocalPart = removePlusAliasLocalPart(localPart);
-        const normalizedLocalPart = cleanLocalPart.replace(/[._-]/g, '').toLowerCase();
+        const normalizedLocalPart = cleanLocalPart.replace(/[._-]/g, '').toLowerCase(); // Remove dots, underscores, and hyphens
         const normalizedDomain = domain.toLowerCase();
 
         return `${normalizedLocalPart}${at}${normalizedDomain}`;
     }
     if (scheme === CANONICALIZE_SCHEME.GMAIL) {
         const cleanLocalPart = removePlusAliasLocalPart(localPart);
-        const normalizedLocalPart = cleanLocalPart.replace(/[.]/g, '').toLowerCase();
+        const normalizedLocalPart = cleanLocalPart.replace(/[.]/g, '').toLowerCase(); // Remove dots
         const normalizedDomain = domain.toLowerCase();
 
         return `${normalizedLocalPart}${at}${normalizedDomain}`;
@@ -228,5 +228,6 @@ export function extractEmailFromUserID(userID: string): string | undefined {
 export const isNoReplyEmail = (email: string) => {
     const normalizedEmail = canonicalizeEmailByGuess(email);
     const [localPart] = getEmailParts(normalizedEmail);
-    return localPart.includes('noreply') || localPart.includes('no-reply') || localPart.includes('donotreply');
+    const normalizedLocalPart = localPart.replace(/[._-]/g, ''); // Remove dots, underscores, and hyphens
+    return normalizedLocalPart.includes('noreply') || normalizedLocalPart.includes('donotreply');
 };
