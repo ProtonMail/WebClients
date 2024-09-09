@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import type { FormikErrors } from 'formik';
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
@@ -21,6 +22,7 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { deleteGroup } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
+import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Address, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 
@@ -29,6 +31,14 @@ import useAddGroupMember from './useAddGroupMember';
 import usePmMeDomain from './usePmMeDomain';
 
 export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';
+
+type FormValues = {
+    name: string;
+    description: string;
+    address: string;
+    permissions: number;
+    members: string;
+};
 
 export const INITIAL_FORM_VALUES = {
     name: '',
@@ -103,10 +113,21 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const form = useFormik({
         initialValues: INITIAL_FORM_VALUES,
         onSubmit: () => {},
-        validateOnChange: false,
+        validateOnChange: true,
         validateOnMount: false,
+        validate: ({ name, address }) => {
+            const errors: FormikErrors<FormValues> = {};
+            const nameError = requiredValidator(name);
+            const addressError = emailValidator(`${address}@${selectedDomain}`);
+            if (requiredValidator(name)) {
+                errors.name = nameError;
+            }
+            if (uiState === 'new' && addressError) {
+                errors.address = addressError;
+            }
+            return errors;
+        },
     });
-
     /*
     useEffect(() => {
         void withLoadingGroupMembers(fetchGroupMembers(selectedGroup?.ID));
