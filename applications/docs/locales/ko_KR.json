@@ -325,7 +325,7 @@
         "증가"
       ],
       "Keep my subscription": [
-        "나의 구독 유지"
+        "내 구독 유지하기"
       ],
       "Learn more": [
         "더 알아보기"
@@ -343,7 +343,7 @@
         "인증 정보 불러오는 중"
       ],
       "Make a copy": [
-        "복사본 생성"
+        "복사본 만들기"
       ],
       "Manage folders": [
         "폴더 관리"
@@ -451,7 +451,7 @@
         "기프트 코드 삭제"
       ],
       "Rename document": [
-        "문서 이름 변경"
+        "문서 이름 바꾸기"
       ],
       "Replace file": [
         "파일 대체"
@@ -616,7 +616,7 @@
         "무엇을 받게 되나요?"
       ],
       "Word count": [
-        "단어 수"
+        "단어 개수"
       ],
       "words": [
         "개 (단어)"
@@ -1947,7 +1947,7 @@
         "연락처 병합 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
       "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "연락처 그룹으로 모두에게 한 번의 클릭으로 이메일을 전송하여 시간을 절약하세요. 업그레이드하여 이 기능과 다른 프리미엄 기능도 경험하세요."
+        "연락처 그룹으로 모두에게 한 번에 이메일을 보내 시간을 절약하십시오. 이 외에도 다른 프리미엄 기능이 업그레이드시 해제됩니다."
       ],
       "Set a data recovery method to prevent data loss.": [
         "데이터 손실을 방지하려면 데이터 복구 방법을 설정하세요."
@@ -4001,9 +4001,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "확인 버튼을 누르면 계정에는 ${ creditsRemaining } 크레딧이 남습니다."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "그룹을 생성하기 위해서 이름과 이메일 주소를 입력해주세요."
       ],
@@ -5444,7 +5441,7 @@
         "사용자 당 ${ n }개 공유된 ${ PASS_SHORT_APP_NAME } 금고"
       ],
       "${ n } user": [
-        "최대 ${ n }명 사용자"
+        "사용자 최대 ${ n }명"
       ],
       "${ n } vault": [
         "${ n }개 금고"
@@ -6335,8 +6332,14 @@
       "External invitation's email was sent again": [
         "외부 초대 이메일을 다시 전송했습니다."
       ],
+      "Failed to accept share invitation": [
+        "초대장 공유 수락 실패"
+      ],
       "Failed to download files: ${ err }": [
         "파일 다운로드 실패: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "초대장 공유 거절 실패"
       ],
       "Failed to upload files: ${ err }": [
         "파일 업로드 실패: ${ err }"
@@ -6358,6 +6361,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal }을(를) 업로드할 공간이 없습니다"
+      ],
+      "Share invitation accepted successfully": [
+        "초대장 공유가 성공적으로 수락되었습니다."
+      ],
+      "Share invitation declined": [
+        "캘린더 공유 거부됨"
       ],
       "Stopping to share this item has failed": [
         "이 항목의 공유 정지가 실패했습니다."

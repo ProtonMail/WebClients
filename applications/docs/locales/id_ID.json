@@ -4007,9 +4007,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Mohon sediakan nama dan alamat email untuk membuat grup."
       ],
@@ -4404,7 +4401,7 @@
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Kelalaian membayar yang terus-menerus akan membuat email dan tautan berbagi Anda diblokir. ${ payInvoiceLink }"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
@@ -6398,8 +6395,14 @@
       "External invitation's email was sent again": [
         "Email undangan eksternal telah dikirim ulang"
       ],
+      "Failed to accept share invitation": [
+        "Gagal menerima undangan pembagian"
+      ],
       "Failed to download files: ${ err }": [
         "Gagal mengunduh berkas: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Undangan untuk berbagi gagal ditolak"
       ],
       "Failed to upload files: ${ err }": [
         "Gagal mengunggah berkas: ${ err }"
@@ -6421,6 +6424,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Kapasitas penyimpanan tidak cukup untuk menampung ${ formattedTotal }"
+      ],
+      "Share invitation accepted successfully": [
+        "Undangan pembagian berhasil diterima"
+      ],
+      "Share invitation declined": [
+        "Undangan untuk berbagi ditolak"
       ],
       "Stopping to share this item has failed": [
         "Gagal menghentikan pembagian item"

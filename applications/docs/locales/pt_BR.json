@@ -4083,9 +4083,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo, dependendo do tamanho da sua lista de contatos."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Forneça um nome e um endereço de e-mail para criar um grupo."
       ],
@@ -4229,7 +4226,7 @@
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
       ],
       "This document has lots of activity. Some features may be temporarily unavailable.": [
-        "Este documento tem muita atividade. Alguns recursos podem estar temporariamente indisponíveis."
+        "Este documento tem muitas atividades. Alguns recursos podem estar temporariamente indisponíveis."
       ],
       "This document may not exist, or you may not have permission to view it. You may try reloading the page to see if the issue persists.": [
         "É possível que esse documento não exista ou que você não tenha permissão para visualizá-lo. Você pode tentar recarregar a página para ver se o problema persiste."
@@ -6529,8 +6526,14 @@
       "External invitation's email was sent again": [
         "O e-mail do convite externo foi enviado novamente"
       ],
+      "Failed to accept share invitation": [
+        "Falha ao aceitar convite de compartilhamento"
+      ],
       "Failed to download files: ${ err }": [
         "Erro ao baixar arquivos: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Falha ao rejeitar convite de compartilhamento"
       ],
       "Failed to upload files: ${ err }": [
         "Erro ao enviar arquivos: ${ err }"
@@ -6553,6 +6556,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Não há espaço suficiente para fazer o envio de ${ formattedTotal }"
+      ],
+      "Share invitation accepted successfully": [
+        "Convite de compartilhamento aceito com sucesso"
+      ],
+      "Share invitation declined": [
+        "Convite para compartilhamento recusado"
       ],
       "Stopping to share this item has failed": [
         "Falha ao parar de compartilhar este item"
