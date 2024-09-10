@@ -840,10 +840,10 @@
       "Not saved": [
         "Не сохранено"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -1241,12 +1241,6 @@
       ],
       "Trust": [
         "Доверять"
-      ],
-      "Trust key": [
-        "Доверять ключу",
-        "Доверять ключам",
-        "Доверять ключам",
-        "Доверять ключам"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -3481,6 +3475,9 @@
       "No labels": [
         "Нет ярлыков"
       ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Экономьте время, отправляя электронные письма всем сразу с помощью групп контактов. Разблокируйте эти и другие платные функции при обновлении."
+      ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
       ],
@@ -3507,6 +3504,12 @@
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Включите защиту от отслеживания электронной почты, чтобы предотвратить слежку рекламодателей и других лиц за вашим местоположением и активностью в сети."
+      ],
+      "Unlock custom message scheduling and more premium features when you upgrade.": [
+        "Разблокируйте настраиваемое расписание сообщений и другие платные функции при обновлении."
+      ],
+      "Unlock custom snooze times and more premium features when you upgrade.": [
+        "При обновлении вы сможете настроить время пробуждения и получить дополнительные платные функции."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Обновите тариф, чтобы разблокировать более короткие адреса электронной почты и другие премиум-функции."
@@ -5788,7 +5791,7 @@
       "${ n } unread conversation": [
         "${ n } непрочитанная цепочка писем",
         "${ n } непрочитанные цепочки писем",
-        "${ n } непрочитанной цепочки писем",
+        "${ n } непрочитанных цепочек писем",
         "${ n } непрочитанных цепочек писем"
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
@@ -6822,9 +6825,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Пожалуйста, обратите внимание, что этот процесс может занять некоторое время в зависимости от размера вашей адресной книги."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету."
       ],
       "Please open the document to view it.": [
         "Откройте документ для просмотра."
@@ -9398,6 +9398,9 @@
       "1 user": [
         "1 пользователь"
       ],
+      "10 email addresses/aliases": [
+        "10 адресов электронной почты или псевдонимов"
+      ],
       "10-year file version history": [
         "10-летняя история версий файла"
       ],
@@ -9745,6 +9748,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 пользовательский домен электронной почты"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
       ],
@@ -13146,6 +13152,9 @@
       ],
       "No trackers found": [
         "Трекеров не обнаружено"
+      ],
+      "No-reply address detected": [
+        "Обнаружен адрес, не принимающий ответы"
       ],
       "Notes": [
         "Заметки"
