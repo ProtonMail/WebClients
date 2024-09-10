@@ -146,7 +146,8 @@ export const useAttachments = ({
             } else if (error?.message === STORAGE_QUOTA_EXCEEDED_INTERNAL_ERROR) {
                 createNotification({
                     type: 'error',
-                    text: c('Error').t`Sending attachments is restricted until you meet your plan limits or upgrade.`,
+                    text: c('Error')
+                        .t`Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.`,
                 });
             }
 
