@@ -4270,6 +4270,15 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "В вашей организации есть другие администраторы, ответственность сообщить им новый пароль лежит на вас."
       ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - пользовательский адрес эл. почты подтверждён"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - создан пользовательский адрес эл. почты"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - пользовательский адрес эл. почты удален"
+      ],
       "password": [
         "пароль"
       ],
@@ -4323,9 +4332,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введите фразу восстановления из 12 слов, связанную с вашим аккаунтом."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету."
       ],
       "please open a support ticket": [
         "откройте заявку в службу поддержки"
@@ -6034,9 +6040,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "Доллар"
-      ],
       "Euro": [
         "Евро"
       ],
@@ -6244,6 +6247,9 @@
       ],
       "1 user": [
         "1 пользователь"
+      ],
+      "10 email addresses/aliases": [
+        "10 адресов электронной почты или псевдонимов"
       ],
       "10-year file version history": [
         "10-летняя история версий файла"
@@ -6622,6 +6628,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 пользовательский домен электронной почты"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
       ],
@@ -10283,11 +10292,56 @@
       ]
     },
     "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Сделав пользователя частным, вы не сможете помочь ему восстановить доступ к своим данным или аккаунту."
+      ],
       "Delete request": [
         "Удалить запрос"
       ],
+      "Delete request to access user data?": [
+        "Удалить запрос на доступ к данным пользователя?"
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Как только пользователь даст согласие, вы сможете помочь ему восстановить доступ к аккаунту или управлять его данными."
+      ],
+      "Organization key must be activated to request data access": [
+        "Для запроса доступа к данным необходимо активировать ключ организации"
+      ],
+      "Pending admin access": [
+        "Ожидание доступа администратора"
+      ],
+      "Private user": [
+        "Частный пользователь"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Запрос на управление аккаунтом отправлен, ожидается одобрение пользователя"
+      ],
+      "Request user permission for data access": [
+        "Запрос разрешения пользователя на доступ к данным"
+      ],
+      "Revoke access": [
+        "Отозвать доступ"
+      ],
+      "Revoke administrator access?": [
+        "Отозвать доступ администратора?"
+      ],
       "Send request": [
         "Отправить запрос"
+      ],
+      "The user must have an address to request data access": [
+        "Пользователь должен иметь адрес, чтобы запросить доступ к данным"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Это приведет к удалению ожидающего запроса на доступ администратора к данным пользователя или сброс пароля."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Это отменит разрешение администратора на управление аккаунтом этого пользователя."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Чтобы продолжить, вам нужно будет запросить у пользователя разрешение на доступ к его данным или сброс пароля."
       ]
     },
     "upsell panel": {
