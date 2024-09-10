@@ -1,7 +1,6 @@
-import { Icon, usePopper, usePopperAnchor } from '@proton/components/components'
+import { usePopper, usePopperAnchor } from '@proton/components/components'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Pill from './Pill'
-import { c } from 'ttag'
 
 const POPOVER_CLOSE_DELAY = 250
 const POPOVER_FOCUS_EVENT_NAME = 'popover:focus'
@@ -32,13 +31,11 @@ const PopoverPill = ({
   children,
   title,
   content,
-  footer,
   onToggle,
 }: {
   children: React.ReactNode
   title: React.ReactNode
   content: React.ReactNode
-  footer?: React.ReactNode
   onToggle?: (isOpen: boolean) => void
 }) => {
   const { anchorRef, position, floating, toggle, isOpen } = usePopover()
@@ -90,24 +87,6 @@ const PopoverPill = ({
     setUpdateFlag(!updateFlag)
   }, [updateFlag, setUpdateFlag])
 
-  let ownFooter = footer || (
-    <div className="flex gap-2 py-1 text-[--text-hint]">
-      <Icon name="lock-check" />
-      <span>
-        {c('Info').t`End-to-end encrypted.`}{' '}
-        <a
-          data-connection-popover
-          ref={linkRef}
-          className="underline hover:underline"
-          href="https://proton.me/security/end-to-end-encryption"
-          target="_blank"
-        >
-          {c('Info').t`Learn more`}
-        </a>
-      </span>
-    </div>
-  )
-
   return (
     <div
       ref={containerRef}
@@ -139,7 +118,6 @@ const PopoverPill = ({
             <span className="text-rg text-bold">{title}</span>
             <span className="text-sm">{content}</span>
           </div>
-          <div className="bg-[--primary-minor-2] px-6 py-3 text-xs">{ownFooter}</div>
         </div>
       )}
     </div>
