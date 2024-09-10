@@ -181,6 +181,12 @@
       "Deselect": [
         "Tyhjennä valinnat"
       ],
+      "Disable instead": [
+        "Poista käytöstä sen sijaan"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Poista alias käytöstä, jottet enää vastaanota sille lähetettyjä sähköposteja."
+      ],
       "Discard": [
         "Hylkää"
       ],
@@ -198,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Käytä Pimeän verkon valvontaa"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Ota alias käyttöön, jotta voit vastaanottaa sille lähetetyt sähköpostit."
       ],
       "Entire vault": [
         "Koko holvi"
@@ -475,9 +484,6 @@
       "Show": [
         "Näytä"
       ],
-      "Sign back in": [
-        "Kirjaudu takaisin sisään"
-      ],
       "Sign in with ${ BRAND_NAME }": [
         "Kirjaudu ${ BRAND_NAME }illa"
       ],
@@ -495,6 +501,9 @@
       ],
       "Submitting report...": [
         "Lähetetään raporttia..."
+      ],
+      "Sync aliases": [
+        "Synkronoi aliakset"
       ],
       "Transfer ownership": [
         "Siirrä omistajuus"
@@ -677,6 +686,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Aliasta ei voitu päivittää tällä hetkellä. Yritä uudelleen myöhemmin"
+      ],
       "Alias options could not be resolved": [
         "Aliasvaihtoehtoja ei voitu selvittää"
       ],
@@ -801,6 +813,9 @@
       ],
       "Failed to restore items from trash": [
         "Kohteiden palautus roskakorista epäonnistui"
+      ],
+      "Failed to sync aliases": [
+        "Aliasten synkronointi epäonnistui"
       ],
       "Failed to transfer this vault's ownership.": [
         "Tämän holvin omistajuuden siirto epäonnistui."
@@ -1150,6 +1165,21 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Kun tietosi on tuotu, on suositeltavaa suojata tietosi poistamalla salasanasi sisältävän CSV-tiedosto."
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias on poistettu käytöstä. Et enää vastaanota osoitteeseen ${ item.aliasEmail } lähetettyjä sähköposteja"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias on käytössä. Voit nyt vastaanottaa osoitteeseen ${ item.aliasEmail } lähetettyjä sähköposteja"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Aliastesi synkronointi ${ BRAND_NAME }in ja SimpleLoginin välillä on käytössä."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Roskakorissa olevat aliakset jatkavat sähköpostien välittämistä. Jos haluat lopettaa sähköpostien vastaanottamisen tähän osoitteeseen, poista se sen sijaan käytöstä."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Synkronoimattomat aliakset (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Omia verkkotunnuksiasi käyttäviä aliaksia ei valvota. Lisää ne valvontaan ulkoisina sähköpostiosoitteina."
@@ -1834,8 +1864,15 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Tietojen synkronoinnissa laitteelle on ongelmia. Varmista, että vapaata tilaa on riittävästi, jotta ${ PASS_SHORT_APP_NAME } toimii sujuvasti."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } alias, joka puuttuu ${ PASS_APP_NAME }ista. Haluaisitko tuoda sen?",
+        "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } aliasta, jotka puuttuvat ${ PASS_APP_NAME }ista. Haluaisitko tuoda ne?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Osoitteeseen ${ email } on lähetetty vahvistuskoodi. Syötä se alle:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Käyttäjätunnus-kenttä näytetään aina, kun luot/muokkaat kirjautumistietoja ${ PASS_APP_NAME }issa."
       ],
       "You are about to create:": [
         "Luot aliasta:"
@@ -1903,6 +1940,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliasta"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } merkki",
         "${ config.options.length } merkkiä"
@@ -2005,6 +2046,9 @@
       "Alphabetical": [
         "Aakkosellisesti"
       ],
+      "Always show username field": [
+        "Näytä käyttäjätunnuskenttä aina"
+      ],
       "Application logs": [
         "Sovelluslokit"
       ],
@@ -2104,6 +2148,9 @@
       "Domain": [
         "Verkkotunnus"
       ],
+      "Don't remind me again": [
+        "Älä muistuta uudelleen"
+      ],
       "Download logs": [
         "Lataa lokitiedot"
       ],
@@ -2127,6 +2174,9 @@
       ],
       "Enable offline access": [
         "Käytä yhteydetöntä tilaa"
+      ],
+      "Enter email or username": [
+        "Syötä sähköpostiosoite tai käyttäjätunnus"
       ],
       "Expiration date": [
         "Voimassaolo päättyy"
@@ -2428,6 +2478,9 @@
       "Select preferred language": [
         "Valitse ensisijainen kieli"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Valitse holvi, johon SimpleLogin-aliakset tuodaan"
+      ],
       "Select your password manager": [
         "Valitse salasanahallintasi"
       ],
@@ -2475,6 +2528,9 @@
       ],
       "Support": [
         "Tuki"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Synkronoi aliakset SimpleLoginiin"
       ],
       "Tax number": [
         "Veronumero"
@@ -2771,6 +2827,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Aliasten synkronointi on käytössä. SimpleLogin-aliasten synkronointi voi kestää jonkin aikaa."
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsenen.",
         "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsentä."
@@ -3018,6 +3077,9 @@
       "Suggestions": [
         "Ehdotukset"
       ],
+      "Sync alias": [
+        "Synkronoi alias"
+      ],
       "Transfer ownership": [
         "Siirrä omistajuus"
       ],
@@ -3179,6 +3241,9 @@
       "Missing alias suffix": [
         "Aliaksen jälkiliite puuttuu"
       ],
+      "Move to trash": [
+        "Siirrä roskakoriin"
+      ],
       "No items": [
         "Kohteita ei ole"
       ],
@@ -3230,8 +3295,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."
       ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Jokin meni pieleen ${ PASS_APP_NAME } -laajennusta käynnistettäessä. Yritä päivittää tai ladata se uudelleen"
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Aliaksen etuliite voi sisältää enintään 40 merkkiä"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Alias \"${ aliasEmail }\" on tällä hetkellä käytössä kirjautumistiedolle \"${ relatedLoginName }\"."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Sähköpostiosoitetta ei enää valvota tietomurtojen varalta."
