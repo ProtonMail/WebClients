@@ -93,6 +93,7 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
                         key={field.name}
                         component={field.component ?? TextField}
                         mask={field.mask}
+                        hidden={field.hidden}
                         type="text"
                         {...field}
                     />
