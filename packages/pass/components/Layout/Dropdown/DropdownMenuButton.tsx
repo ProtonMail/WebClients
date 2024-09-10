@@ -13,7 +13,7 @@ import {
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import type { IconName } from '@proton/components';
+import type { IconName, PopperPlacement } from '@proton/components';
 import { Dropdown, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
 import type { Props as DropdownMenuButtonCoreProps } from '@proton/components/components/dropdown/DropdownMenuButton';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
@@ -21,8 +21,9 @@ import clsx from '@proton/utils/clsx';
 
 type QuickActionChildProp = { onClick: (evt: MouseEvent) => void };
 type QuickActionChild = ReactElement<QuickActionChildProp>;
+type Props = { children: QuickActionChild[]; originalPlacement?: PopperPlacement };
 
-const QuickActionsDropdown: FC<{ children: QuickActionChild[] }> = ({ children }) => {
+const QuickActionsDropdown: FC<Props> = ({ children, originalPlacement }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const handleClick = (evt: MouseEvent) => {
@@ -45,7 +46,7 @@ const QuickActionsDropdown: FC<{ children: QuickActionChild[] }> = ({ children }
                 <Icon name="three-dots-vertical" alt={c('Action').t`More options`} color="var(--text-weak)" />
             </Button>
 
-            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
+            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement={originalPlacement}>
                 <DropdownMenu>
                     {Children.toArray(children).map((child) =>
                         isValidElement<QuickActionChildProp>(child)
@@ -102,9 +103,11 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
 interface DropdownMenuButtonProps extends DropdownMenuButtonCoreProps, DropdownMenuButtonLabelProps {
     children?: ReactNode;
     className?: string;
-    parentClassName?: string;
     isSelected?: boolean;
+    parentClassName?: string;
     quickActions?: QuickActionChild[];
+    quickActionsClassname?: string;
+    quickActionsPlacement?: PopperPlacement;
     size?: 'small' | 'medium';
 }
 
@@ -112,16 +115,18 @@ const DropdownMenuButtonRender: ForwardRefRenderFunction<HTMLDivElement, Dropdow
     {
         children,
         className,
-        parentClassName,
-        isSelected,
-        quickActions,
-        size = 'medium',
-        icon,
         danger,
+        ellipsis = true,
+        extra,
+        icon,
+        isSelected,
         label,
         labelClassname,
-        extra,
-        ellipsis = true,
+        parentClassName,
+        quickActions,
+        quickActionsClassname,
+        quickActionsPlacement,
+        size = 'medium',
         style,
         ...rest
     },
@@ -156,8 +161,12 @@ const DropdownMenuButtonRender: ForwardRefRenderFunction<HTMLDivElement, Dropdow
                 />
             </DropdownMenuButtonCore>
 
-            <div className="absolute flex items-center h-full right-0 top-0">
-                {quickActions && <QuickActionsDropdown>{quickActions}</QuickActionsDropdown>}
+            <div className={clsx('absolute flex items-center h-full right-0 top-0', quickActionsClassname)}>
+                {quickActions && (
+                    <QuickActionsDropdown originalPlacement={quickActionsPlacement}>
+                        {quickActions}
+                    </QuickActionsDropdown>
+                )}
             </div>
         </div>
     );
