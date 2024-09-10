@@ -184,6 +184,9 @@
       "Disable instead": [
         "Απενεργοποιήστε αντ 'αυτού"
       ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Απενεργοποιήστε αυτό το ψευδώνυμο για να σταματήσετε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται σε αυτό το ψευδώνυμο"
+      ],
       "Discard": [
         "Απόρριψη"
       ],
@@ -201,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Ενεργοποιήστε Παρακολούθηση Dark Web"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Ενεργοποιήστε αυτό το ψευδώνυμο για να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται σε αυτό το ψευδώνυμο"
       ],
       "Entire vault": [
         "Ολόκληρη κρύπτη"
@@ -370,6 +376,9 @@
       "Pin item": [
         "Καρφίτσωμα στοιχείου"
       ],
+      "Please retry": [
+        "Παρακαλούμε προσπαθήστε ξανά"
+      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
@@ -477,9 +486,6 @@
       ],
       "Show": [
         "Εμφάνιση"
-      ],
-      "Sign back in": [
-        "Συνδεθείτε ξανά"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Σύνδεση με ${ BRAND_NAME }"
@@ -683,6 +689,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου ${ provider }. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Δεν ήταν δυνατή η ενημέρωση του ψευδωνύμου προς το παρόν. Παρακαλούμε προσπαθήστε ξανά αργότερα"
+      ],
       "Alias options could not be resolved": [
         "Δεν ήταν δυνατή η επίλυση των επιλογών ψευδωνύμου"
       ],
@@ -807,6 +816,9 @@
       ],
       "Failed to restore items from trash": [
         "Αποτυχία επαναφοράς στοιχείων από τα διαγραμμένα"
+      ],
+      "Failed to sync aliases": [
+        "Αποτυχία συγχρονισμού ψευδώνυμων"
       ],
       "Failed to transfer this vault's ownership.": [
         "Αποτυχία μεταβίβασης της ιδιοκτησίας αυτής της κρύπτης."
@@ -1157,8 +1169,20 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Μετά την επιτυχή εισαγωγή των δεδομένων σας, μπορείτε να διαγράψετε το αρχείο CSV που περιέχει τους κωδικούς πρόσβασής σας για λόγους ασφαλείας."
       ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Το ψευδώνυμο απενεργοποιήθηκε με επιτυχία. Δε θα λαμβάνετε πλέον μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Το ψευδώνυμο ενεργοποιήθηκε με επιτυχία. Τώρα μπορείτε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Ο συγχρονισμός ψευδωνύμων μεταξύ των λογαριασμών ${ BRAND_NAME } και SimpleLogin είναι ενεργός."
+      ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
         "Τα ψευδώνυμα στον κάδο απορριμάτων θα συνεχίσουν να προωθούν μηνύματα ηλεκτρονικού ταχυδρομείου. Εάν θέλετε να σταματήσετε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, απενεργοποιήστε την."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Ψευδώνυμα εκτός συγχρονισμού (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Τα ψευδώνυμα με προσαρμοσμένους τομείς δεν παρακολουθούνται, προσθέστε τα ως προσαρμοσμένο email για παρακολούθηση."
@@ -1850,6 +1874,9 @@
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Στείλαμε έναν κωδικό επαλήθευσης στη διεύθυνση ${ email }. Παρακαλούμε εισάγετε τον παρακάτω:"
       ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Κατά τη δημιουργία/επεξεργασία μιας σύνδεσης στο ${ PASS_APP_NAME } η είσοδος 'όνομα χρήστη' θα είναι πάντα ορατή."
+      ],
       "You are about to create:": [
         "Είστε έτοιμοι να δημιουργήσετε:"
       ],
@@ -2022,6 +2049,9 @@
       "Alphabetical": [
         "Αλφαβητικά"
       ],
+      "Always show username field": [
+        "Να εμφανίζεται πάντα το πεδίο ονόματος χρήστη"
+      ],
       "Application logs": [
         "Αρχείο καταγραφών"
       ],
@@ -2121,6 +2151,9 @@
       "Domain": [
         "Τομέας (Domain)"
       ],
+      "Don't remind me again": [
+        "Μη μου υπενθυμίσεις ξανά"
+      ],
       "Download logs": [
         "Λήψη αρχείων καταγραφής"
       ],
@@ -2144,6 +2177,9 @@
       ],
       "Enable offline access": [
         "Ενεργοποίηση πρόσβασης εκτός σύνδεσης"
+      ],
+      "Enter email or username": [
+        "Εισαγάγετε email ή όνομα χρήστη"
       ],
       "Expiration date": [
         "Ημερομηνία λήξης"
@@ -2445,6 +2481,9 @@
       "Select preferred language": [
         "Επιλέξτε την προτιμώμενη γλώσσα"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Επιλέξτε την κρύπτη στην οποία θα εισαχθούν τα ψευδώνυμα SimpleLogin"
+      ],
       "Select your password manager": [
         "Επιλέξτε τον διαχειριστή κωδικών πρόσβασης"
       ],
@@ -2492,6 +2531,9 @@
       ],
       "Support": [
         "Υποστήριξη"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Συγχρονισμός ψευδωνύμων με το SimpleLogin"
       ],
       "Tax number": [
         "Α.Φ.Μ."
@@ -2788,6 +2830,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Ο συγχρονισμός ψευδωνύμων ενεργοποιήθηκε με επιτυχία. Τα ψευδώνυμα SimpleLogin ενδέχεται να χρειαστούν λίγο χρόνο για να συγχρονιστούν"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστη.",
         "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστες."
@@ -3253,8 +3298,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Οι αναφορές δεν είναι διατερματικά κρυπτογραφημένες, παρακαλούμε μη στέλνετε ευαίσθητες πληροφορίες."
       ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά την εκκίνηση του ${ PASS_APP_NAME }. Δοκιμάστε να ανανεώσετε ή να φορτώσετε ξανά την προέκταση"
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Το πρόθεμα ψευδωνύμου δεν μπορεί να υπερβαίνει τους 40 χαρακτήρες"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Αυτό το ψευδώνυμο \"${ aliasEmail }\" χρησιμοποιείται αυτήν τη στιγμή στη σύνδεση \"${ relatedLoginName }\"."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου δε θα παρακολουθείται πλέον για παραβιάσεις δεδομένων."

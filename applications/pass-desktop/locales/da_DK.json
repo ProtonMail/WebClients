@@ -376,6 +376,9 @@
       "Pin item": [
         "Fastgør element"
       ],
+      "Please retry": [
+        "Prøv igen"
+      ],
       "Refresh the page": [
         "Opdater siden"
       ],
@@ -483,9 +486,6 @@
       ],
       "Show": [
         "Vis"
-      ],
-      "Sign back in": [
-        "Log ind igen"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Log ind på ${ BRAND_NAME }"
@@ -1186,9 +1186,6 @@
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasser med brugerdefinerede domæner monitoreres ikke, tilføj dem som en brugerdefineret e-mail for monitorering."
-      ],
-      "All aliases are synced": [
-        "Alle aliasser er synkroniseret"
       ],
       "All breaches for this address were resolved": [
         "Alle databrud for denne adresse blev håndteret"
@@ -3300,6 +3297,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Noget gik galt under opstarten af ${ PASS_APP_NAME }. Prøv at genopfriske eller genindlæse udvidelsen"
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Alias-præfikset må højest være 40 tegn langt."

@@ -424,9 +424,6 @@
       "Show": [
         "表示"
       ],
-      "Sign back in": [
-        "再度サインインする"
-      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } でログインします"
       ],
@@ -871,6 +868,9 @@
       "Vault name does not match": [
         "保管庫名が一致しません"
       ],
+      "Wrong extra password": [
+        "追加パスワードが間違っています"
+      ],
       "Wrong password": [
         "パスワードが正しくありません"
       ],
@@ -980,6 +980,9 @@
       ],
       "${ count } time": [
         "${ count } 回"
+      ],
+      "${ count } view": [
+        "${ count } 回表示"
       ],
       "${ memberCount } member": [
         "${ memberCount }人のメンバー"
@@ -1139,6 +1142,9 @@
       ],
       "Enabling password auto-lock": [
         "パスワードの自動ロックを有効にしています"
+      ],
+      "Enabling password lock failed": [
+        "パスワードロックを有効にできませんでした"
       ],
       "Enabling PIN auto-lock": [
         "PIN の自動ロックを有効にしています"
@@ -1332,6 +1338,9 @@
       "Offline mode": [
         "オフラインモード"
       ],
+      "Offline mode could not be disabled at the moment": [
+        "今はオフラインモードを無効化できません"
+      ],
       "Offline mode could not be enabled at the moment": [
         "現時点ではオフライン モードを有効にできませんでした"
       ],
@@ -1349,6 +1358,9 @@
       ],
       "password": [
         "パスワード"
+      ],
+      "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "パスワードロックが正常に登録されました。 ${ PASS_APP_NAME }のロック解除に使用してください"
       ],
       "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
         "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 週間より古いパスワードは履歴から自動的に削除されます。"
@@ -1400,6 +1412,9 @@
       ],
       "Reconnecting": [
         "再接続中"
+      ],
+      "Registering PIN lock failed": [
+        "PINロックを登録できませんでした"
       ],
       "Restoring items from trash": [
         "ゴミ箱からアイテムを復元する"
@@ -1554,6 +1569,9 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "ローカルストレージとのデータ同期で問題が生じています。${ PASS_SHORT_APP_NAME } の動作に必要なディスクの空き容量があることを確認してください。"
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "SimpleLogin に ${ aliasCount } 個のエイリアスが存在しますが、 ${ PASS_APP_NAME }に見つかりませんでした。インポートしますか？"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "確認コードを ${ email } に送信しました。以下に入力してください。"
       ],
@@ -1613,6 +1631,9 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } 個のエイリアス"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } 文字"
       ],
@@ -2071,6 +2092,9 @@
       ],
       "Text": [
         "テキスト"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "アイテムの保管庫は現在 ${ targetMembers } 人と共有されています"
       ],
       "Title": [
         "タイトル"
@@ -2641,6 +2665,9 @@
       "Cannot retrieve mailboxes for this alias right now": [
         "現在、このエイリアスのメールボックスを取得できません。"
       ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "注意: このパスワードを紛失すると、 ${ PASS_APP_NAME } の アカウントにアクセスできなくなります。"
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "保管庫「${ vaultName }」を作成できませんでした"
       ],
@@ -2689,6 +2716,9 @@
       "Missing alias suffix": [
         "エイリアスのサフィックスがありません"
       ],
+      "Move to trash": [
+        "ごみ箱に移動"
+      ],
       "No items": [
         "アイテムがありません"
       ],
@@ -2731,8 +2761,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されません。機密情報を送信しないでください。"
       ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "${ PASS_APP_NAME } の起動中に問題が発生しました。 拡張機能を更新または再読み込みしてください"
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "エイリアスのプレフィックスは40文字より長くすることはできません。"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "このエイリアス \"${ aliasEmail }\" はログイン \"${ relatedLoginName } \" で現在使用されています。"
       ],
       "This email address will no longer be monitored for data breaches.": [
         "この電子メール アドレスは、データ侵害について監視されなくなります。"

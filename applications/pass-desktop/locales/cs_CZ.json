@@ -184,6 +184,9 @@
       "Disable instead": [
         "Místo toho deaktivovat"
       ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Deaktivujte tento alias, abyste přestali dostávat e-maily odeslané na tento alias"
+      ],
       "Discard": [
         "Zahodit"
       ],
@@ -201,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Povolit sledování Dark webu"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Povolte tento alias pro příjem e-mailů odesílaných na tento alias"
       ],
       "Entire vault": [
         "Celý trezor"
@@ -370,6 +376,9 @@
       "Pin item": [
         "Připnout položku"
       ],
+      "Please retry": [
+        "Zkuste to znovu"
+      ],
       "Refresh the page": [
         "Obnovit stránku"
       ],
@@ -477,9 +486,6 @@
       ],
       "Show": [
         "Zobrazit"
-      ],
-      "Sign back in": [
-        "Přihlásit se zpět"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Přihlaste se pomocí ${ BRAND_NAME }"
@@ -685,6 +691,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } soubor se nepodařilo zpracovat. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Alias nelze v současné době aktualizovat. Zkuste to prosím později"
+      ],
       "Alias options could not be resolved": [
         "Možnosti aliasu nelze vyřešit"
       ],
@@ -813,6 +822,9 @@
       ],
       "Failed to restore items from trash": [
         "Selhalo obnovení položek z koše"
+      ],
+      "Failed to sync aliases": [
+        "Synchronizace aliasů selhala"
       ],
       "Failed to transfer this vault's ownership.": [
         "Nepodařilo se přenést vlastnictví tohoto trezoru."
@@ -1185,8 +1197,20 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po úspěšném importu vašich dat můžete z bezpečnostních důvodů smazat CSV soubor obsahující vaše hesla."
       ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias byl úspěšně deaktivován. E-maily odeslané na adresu ${ item.aliasEmail } již nebudete dostávat."
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias byl úspěšně povolen. Nyní můžete přijímat e-maily odeslané na adresu ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Synchronizace aliasů mezi účty ${ BRAND_NAME } a SimpleLogin je aktivní."
+      ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
         "Aliasy v koši budou nadále přeposílat e-maily. Pokud chcete přestat dostávat e-maily na tuto adresu, zakažte ji."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Nesynchronizované aliasy (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasy s vlastními doménami nejsou sledovány, pro sledování je prosím přidejte jako vlastní e-mail."
@@ -1881,8 +1905,17 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Máme potíže se synchronizací dat do místního úložiště. Ujistěte se prosím, že máte dostatek místa na disku, aby ${ PASS_SHORT_APP_NAME } mohl bez problémů fungovat."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Zjistili jsme, že máte ${ aliasCount } alias, který je přítomen v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete jej importovat?",
+        "Zjistili jsme, že máte ${ aliasCount } aliasy, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je importovat?",
+        "Zjistili jsme, že máte ${ aliasCount } aliasů, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je importovat?",
+        "Zjistili jsme, že máte ${ aliasCount } aliasů, které jsou přítomné v SimpleLogin, ale chybí v ${ PASS_APP_NAME }. Chcete je importovat?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Ověřovací kód jsme poslali na ${ email }. Zadejte jej prosím níže:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Při vytváření/úpravě přihlášení na ${ PASS_APP_NAME } bude vždy viditelné vstupní 'uživatelské jméno'."
       ],
       "You are about to create:": [
         "Chystáte se vytvořit:"
@@ -2071,6 +2104,9 @@
       ],
       "Alphabetical": [
         "Abecedně"
+      ],
+      "Always show username field": [
+        "Vždy zobrazovat pole uživatelského jména"
       ],
       "Application logs": [
         "Logy aplikace"
@@ -2501,6 +2537,9 @@
       "Select preferred language": [
         "Vyberte preferovaný jazyk"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Vyberte trezor, do kterého budou importovány aliasy SimpleLogin"
+      ],
       "Select your password manager": [
         "Zvolte si svého správce hesel"
       ],
@@ -2548,6 +2587,9 @@
       ],
       "Support": [
         "Podpora"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Synchronizace aliasů se SimpleLogin"
       ],
       "Tax number": [
         "Daňové identifikační číslo"
@@ -2848,6 +2890,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Synchronizace aliasů byla úspěšně povolena. Synchronizace aliasů SimpleLogin může nějakou dobu trvat"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
         "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
@@ -3319,8 +3364,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Při spouštění ${ PASS_APP_NAME } se něco pokazilo. Zkuste prosím rozšíření znovu načíst nebo obnovit"
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Předpona aliasu nesmí být delší než 40 znaků"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Tento alias \"${ aliasEmail }\" je používán v přihlášení \"${ relatedLoginName }\"."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Tato e-mailová adresa již nebude sledována v únicích informací."
