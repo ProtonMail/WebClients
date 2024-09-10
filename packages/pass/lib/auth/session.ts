@@ -1,14 +1,15 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
 import { stringToUtf8Array } from '@proton/crypto/lib/utils';
 import { type OfflineConfig, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
-import type { Api, Maybe } from '@proton/pass/types';
+import type { Api, Maybe, MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
-import { getLocalKey, setCookies } from '@proton/shared/lib/api/auth';
+import { prop } from '@proton/pass/utils/fp/lens';
+import { getLocalKey, getLocalSessions, setCookies } from '@proton/shared/lib/api/auth';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import type { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
+import type { LocalKeyResponse, LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getDecryptedBlob, getEncryptedBlob } from '@proton/shared/lib/authentication/sessionBlobCryptoHelper';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
@@ -25,11 +26,10 @@ export const SESSION_VERSION: AuthSessionVersion = 1;
 export type AuthSession = {
     AccessToken: string;
     cookies?: boolean;
-    email?: string;
-    extraPassword?: boolean;
     encryptedOfflineKD?: string;
+    extraPassword?: boolean;
     keyPassword: string;
-    lastUsedDate?: number;
+    lastUsedAt?: number;
     LocalID?: number;
     lockMode: LockMode;
     lockTTL?: number;
@@ -43,6 +43,7 @@ export type AuthSession = {
     sessionLockToken?: string;
     UID: string;
     unlockRetryCount?: number;
+    userData?: string;
     UserID: string;
 };
 
@@ -214,6 +215,11 @@ export const resumeSession = async (
         throw error;
     }
 };
+
+export const getActiveSessions = (api: Api): Promise<MaybeNull<LocalSessionResponse[]>> =>
+    api<{ Sessions: LocalSessionResponse[] }>(getLocalSessions())
+        .then(prop('Sessions'))
+        .catch(() => null);
 
 export const migrateSession = async (authStore: AuthStore): Promise<boolean> => {
     let migrated = false;
