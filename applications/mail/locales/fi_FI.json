@@ -832,10 +832,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -1233,10 +1233,6 @@
       ],
       "Trust": [
         "Luota"
-      ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -4637,7 +4633,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "3 Tt kokonaistallennustila"
+        "Yhteensä 3 Tt tallennustilaa"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -6066,7 +6062,7 @@
         "Sähköpostin oletussovellus"
       ],
       "Did you know you have encrypted cloud storage included with your ${ BRAND_NAME } Account? Head over to ${ DRIVE_APP_NAME } and make the most of your space. It's free.": [
-        "Tiesitkö, että ${ BRAND_NAME } -tiliisi sisältyy salattu pilvitallennustila? Avaa ${ DRIVE_APP_NAME } ja ota kaikki irti ilmaisesta tallennustilastasi."
+        "Tiesitkö, että ${ BRAND_NAME }-tiliisi sisältyy salattu pilvitallennustila? Avaa ${ DRIVE_APP_NAME } ja ota kaikki irti ilmaisesta tallennustilastasi."
       ],
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Tiesitkö, että olemme varanneet sinulle myös lyhyemmän sähköpostiosoitteen? Se muodostuu käyttäjätunnuksestasi, jota seuraa ”@${ PM_DOMAIN }”."
@@ -6613,9 +6609,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
       "Please open the document to view it.": [
         "Avaa dokumentti tarkastellaksesi sitä."
@@ -7364,7 +7357,7 @@
         "Et ole täyttänyt viestin aihetta. Haluatko silti lähettää sen?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "Olet käyttänyt tallennustilastasi 100 % . Pyri vapauttamaan tilaa tai harkitse tilauksesi kapasiteetin korotusta kirjoittaaksesi uusia viestejä."
+        "Tallennustilastasi on käytössä 100 %. Pyri vapauttamaan tilaa tai harkitse tilisi päivitystä kirjoittaaksesi uusia viestejä."
       ],
       "You have reached the maximum number of 5 replies.": [
         "Olet saavuttanut 5 vastauksen enimmäismäärän."
@@ -8617,7 +8610,7 @@
         "${ driveStorage }si on täynnä. Tallentaaksesi ja synkronoidaksesi tiedostoja, vapauta tilaa tai ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "${ mailStorage } -tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
+        "${ mailStorage }si on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Tilisi on vaarassa poistua. Pyydä ylläpitäjääsi päivittämään tilauksesi, jotta vältät tietojen menettämisen. ${ cta }"
@@ -10836,7 +10829,7 @@
     },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
-        "Hakanut ${ ownerName }"
+        "Jakanut ${ ownerName }"
       ]
     },
     "Signature verification warning": {
@@ -11171,7 +11164,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } tallennustila"
+        "${ app }-tallennustila"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage }stasi on käytetty ${ percentage } %"
@@ -11186,16 +11179,16 @@
         "Kaikille ${ BRAND_NAME }-palveluille"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Jatkaaksesi tiedostojen tallennusta ja synkronointia, vapauta tilaa tai hanki tilaukseesi lisää tallennustilaa."
+        "Jatkaaksesi tiedostojen tallennusta ja synkronointia, vapauta tilaa tai hanki lisää päivittämällä tilauksesi."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "Jos haluat lähettää tai vastaanottaa sähköposteja, vapauta tilaa tai ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Jos haluat lähettää tai vastaanottaa sähköposteja, vapauta tilaa tai hanki tilaukseesi lisää tallennustilaa."
+        "Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai hanki lisää päivittämällä tilauksesi."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Jos haluat lähettää tai synkronoida tiedostoja, vapauta tilaa tai ${ upgrade }"
+        "Tallentaaksesi ja synkronoidaksesi lisää tiedostoja, vapauta tilaa tai ${ upgrade }."
       ],
       "upgrade for more storage": [
         "hanki lisää päivittämällä tilauksesi"
@@ -11214,13 +11207,13 @@
         "${ appStorage }si on täynnä"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } on ${ percentage }% täynnä. ${ cta }."
+        "${ storage }stasi on käytössä ${ percentage } %. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "${ storage } on täynnä. ${ cta }."
+        "${ storage }si on täynnä. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Tallennustilasi on ${ percentage }% täynnä. ${ cta }."
+        "Tallennustilastasi on käytössä ${ percentage } %. ${ cta }."
       ],
       "Your storage is full": [
         "Tallennustilasi on täynnä"

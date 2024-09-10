@@ -813,11 +813,11 @@
       "Not saved": [
         "尚未儲存"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open": [
         "開啟"
@@ -1214,9 +1214,6 @@
       ],
       "Trust": [
         "信任"
-      ],
-      "Trust key": [
-        "信任金鑰"
       ],
       "Trust public key": [
         "信任公開金鑰"
@@ -3355,6 +3352,9 @@
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "雙重驗證可以增加一層安全保障，防止盜用。"
       ],
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "當您升級以自動刪除垃圾郵件和垃圾訊息及解鎖更多頂級功能"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "解密聯絡人資料中… 此步驟將耗時數分鐘。當作業完成時，您就可以下載所有已匯出的聯絡人檔案。"
       ],
@@ -3393,6 +3393,9 @@
       ],
       "No labels": [
         "沒有標籤"
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "透過傳送電子郵件給通訊群組每一人以節省時間。當您升級以解鎖次頂級功能。"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "使用多個電子郵件位址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
@@ -6458,9 +6461,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
-      ],
       "Please open the document to view it.": [
         "請開啟文件以瀏覽。"
       ],
@@ -6718,6 +6718,9 @@
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "下載數量包含實際下載與預覽檔案時的實體。"
+      ],
+      "The email address ${ boldNoReplyEmail } does not seem to accept replies. Are you sure you want to send your message?": [
+        "此電子郵件地址${ boldNoReplyEmail }看起來不接收回復。您確定要傳送您的訊息嗎?"
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "因為加密與簽章的開銷，加密後的資料會較大，保證了您資料的安全。"
@@ -8865,6 +8868,12 @@
       "${ size } storage": [
         "${ size } 儲存空間"
       ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType }-於${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType }-於全部${ BRAND_NAME }服務"
+      ],
       "1 TB secure storage": [
         "1TB安全儲存空間"
       ],
@@ -8897,6 +8906,9 @@
       ],
       "All ${ BRAND_NAME } products and features": [
         "全部${ BRAND_NAME }產品及功能"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "全部頂級版${ BRAND_NAME }服務。一個簡單的訂購授權。"
@@ -8936,6 +8948,9 @@
       ],
       "Contact groups management": [
         "聯絡人群組管理"
+      ],
+      "Custom and secure business email": [
+        "自訂和自訂商用電子郵件"
       ],
       "Custom domains for email aliases": [
         "電子郵件別名的自訂網域"
@@ -9030,6 +9045,9 @@
       "Multiple admin roles": [
         "多重管理員角色"
       ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
       ],
@@ -9063,6 +9081,9 @@
       "Protect ${ n } device at a time": [
         "同時保護 ${ n } 台裝置"
       ],
+      "Quickly craft replies": [
+        "快速替回復打草稿"
+      ],
       "Recover previous file versions": [
         "復原先前的檔案版本"
       ],
@@ -9095,6 +9116,9 @@
       ],
       "Send & receive invitations": [
         "傳送並接收邀請"
+      ],
+      "Share files with no size limit": [
+        "分享檔案無大小限制"
       ],
       "Sign in as user": [
         "登入為使用者"
@@ -9278,6 +9302,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "使用${ price }取得Mail Plus"
       ]
     },
     "new_plans: title": {

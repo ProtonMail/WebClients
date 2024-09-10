@@ -502,7 +502,7 @@
         "Generer tekst"
       ],
       "Get ${ BRAND_NAME } Duo": [
-        "Hent ${ BRAND_NAME } Duo"
+        "Få ${ BRAND_NAME } Duo"
       ],
       "Get in touch": [
         "Kontakt os"
@@ -832,10 +832,10 @@
       "Not saved": [
         "Ikke gemt"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
       "Open": [
@@ -1234,10 +1234,6 @@
       "Trust": [
         "Hav tillid til"
       ],
-      "Trust key": [
-        "Stol på nøgle",
-        "Stol på nøgler"
-      ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
@@ -1555,10 +1551,10 @@
         "Kør på enhed"
       ],
       "Securely run on ${ BRAND_NAME } servers": [
-        "Sikre, der kører på ${ BRAND_NAME } servere"
+        "Kør sikkert på ${ BRAND_NAME } servere"
       ],
       "Securely run on device": [
-        "Sikre, der kører på enheden"
+        "Kør sikkert på enheden"
       ]
     },
     "Assistant toggle": {
@@ -3417,7 +3413,7 @@
         "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
-        "For ubegrænset adgang til skriveassistenten og mere, opgradér til ${ BRAND_NAME } Duo."
+        "Opgradér til ${ BRAND_NAME } Duo for ubegrænset adgang til skriveassistenten og mere."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "Få ubegrænsede aliasser og 500 GB lagerplads med ${ PLAN_NAMES[PLANS.BUNDLE] }."
@@ -6243,8 +6239,8 @@
         "Hvis du ønsker flere søgeresultater, kan du prøve at søge efter dette nøgleord i indholdet af dine e-mails."
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
-        "Gratis at prøve i ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
-        "Gratis at prøve i ${ ASSISTANT_TRIAL_TIME_DAYS } dage"
+        "Prøv gratis i ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
+        "Prøv gratis i ${ ASSISTANT_TRIAL_TIME_DAYS } dage"
       ],
       "From": [
         "Fra"
@@ -6613,9 +6609,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Bemærk at når du klikker på Bekræft-knappen vil din konto have ${ creditsRemaining } kreditter tilbage."
       ],
       "Please open the document to view it.": [
         "Åbn venligst dokumentet for at se det."
@@ -9291,7 +9284,7 @@
         "Beskyt ${ n } enheder ad gangen"
       ],
       "Quickly craft replies": [
-        "Skrive hurtigt svar"
+        "Skriv hurtigt svar"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"

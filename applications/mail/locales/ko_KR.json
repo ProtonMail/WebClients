@@ -565,7 +565,7 @@
         "Hide-my-email 별칭"
       ],
       "I like this response": [
-        "이 결과물이 마음에 들어요"
+        "이 결과물이 마음에 듭니다"
       ],
       "Image could not be loaded with tracker protection.": [
         "트래커 보호로 인하여 이미지가 불러오지 않을 수 있습니다."
@@ -634,7 +634,7 @@
         "기울임"
       ],
       "Keep my subscription": [
-        "나의 구독 유지"
+        "내 구독 유지하기"
       ],
       "Label as": [
         "라벨 추가"
@@ -828,10 +828,10 @@
       "Not saved": [
         "저장되지 않음"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
       "Open": [
@@ -1186,7 +1186,7 @@
         "기다리기"
       ],
       "Stop downloading assistant": [
-        "글쓰기 도우미 다운로드 중단"
+        "도우미 다운로드 중단"
       ],
       "Stop generating result": [
         "생성 중단"
@@ -1229,9 +1229,6 @@
       ],
       "Trust": [
         "신뢰"
-      ],
-      "Trust key": [
-        "키 신뢰하기"
       ],
       "Trust public key": [
         "공개 키 신뢰하기"
@@ -3380,7 +3377,7 @@
         "2단계 인증은 추가적인 보안 계층, 접근 불가 상황 방지에 도움을 줍니다."
       ],
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "휴지통 내 메시지 및 스팸을 자동 삭제하고 더 많은 프리미엄 기능도 함께 경험하세요."
+        "업그레이드시 스펨 메일함과 휴지통 내 메시지를 자동으로 삭제하며 더 많은 프리미엄 기능이 해제됩니다."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
@@ -3422,7 +3419,7 @@
         "레이블 없음"
       ],
       "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
-        "연락처 그룹으로 모두에게 한 번의 클릭으로 이메일을 전송하여 시간을 절약하세요. 업그레이드하여 이 기능과 다른 프리미엄 기능도 경험하세요."
+        "연락처 그룹으로 모두에게 한 번에 이메일을 보내 시간을 절약하십시오. 이 외에도 다른 프리미엄 기능이 업그레이드시 해제됩니다."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
@@ -6002,7 +5999,7 @@
         "당신이 가장 좋아하는 앱을 다운받고 어디서나 보안을 유지하세요."
       ],
       "Downloading assistant… ${ progressDisplay } GB": [
-        "글쓰기 도우미 다운로드 중… ${ progressDisplay } GB"
+        "도우미를 다운로드하는 중… ${ progressDisplay } GB"
       ],
       "Downloading paused": [
         "다운로드 일시정지됨"
@@ -6505,9 +6502,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "확인 버튼을 누르면 계정에는 ${ creditsRemaining } 크레딧이 남습니다."
-      ],
       "Please open the document to view it.": [
         "문서를 확인하려면 열어주세요."
       ],
@@ -6926,7 +6920,7 @@
         "(${ destinationElement } 폴더)"
       ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
-        "브라우저의 여러 창이 방해가 되신다면, 데스크톱 앱을 이용해 주세요."
+        "브라우저의 열린 탭들이 주는 혼란을 피하고 싶다면, 데스크톱 앱을 이용하십시오."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "결제를 완료하기 위해서, 아래 주소로 ${ btcAmountBold } 를 송금해 주시기 바랍니다."
@@ -8886,7 +8880,7 @@
         "사용자 당 ${ n }개 공유된 ${ PASS_SHORT_APP_NAME } 금고"
       ],
       "${ n } user": [
-        "최대 ${ n }명 사용자"
+        "사용자 최대 ${ n }명"
       ],
       "${ n } vault": [
         "${ n }개 금고"
@@ -11597,7 +11591,7 @@
         "콘텐츠 삭제됨"
       ],
       "Content copied to clipboard": [
-        "콘텐츠 클립보드에 복사되었습니다."
+        "내용을 클립보드로 복사했습니다"
       ],
       "Conversation added to ${ labelName }.": [
         "대화가 ${ labelName } 으로 추가되었습니다."
