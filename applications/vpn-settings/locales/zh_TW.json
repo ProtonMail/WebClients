@@ -4071,9 +4071,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "請輸入與您的帳號關連的12字復原短語。"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
-      ],
       "please open a support ticket": [
         "請開啟支援票卷"
       ],
@@ -5660,9 +5657,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "美元"
-      ],
       "Euro": [
         "歐元"
       ],
@@ -5808,6 +5802,12 @@
       "${ size } storage": [
         "${ size } 儲存空間"
       ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType }-於${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType }-於全部${ BRAND_NAME }服務"
+      ],
       "1 TB secure storage": [
         "1TB安全儲存空間"
       ],
@@ -5846,6 +5846,9 @@
       ],
       "All ${ BRAND_NAME } products and features": [
         "全部${ BRAND_NAME }產品及功能"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "全部頂級版${ BRAND_NAME }服務。一個簡單的訂購授權。"
@@ -5888,6 +5891,9 @@
       ],
       "Contact groups management": [
         "聯絡人群組管理"
+      ],
+      "Custom and secure business email": [
+        "自訂和自訂商用電子郵件"
       ],
       "Custom domains for email aliases": [
         "電子郵件別名的自訂網域"
@@ -5991,6 +5997,9 @@
       "No-logs policy": [
         "零日誌政策"
       ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
       ],
@@ -6023,6 +6032,9 @@
       ],
       "Protect ${ n } device at a time": [
         "同時保護 ${ n } 台裝置"
+      ],
+      "Quickly craft replies": [
+        "快速替回復打草稿"
       ],
       "Recover previous file versions": [
         "復原先前的檔案版本"
@@ -6059,6 +6071,9 @@
       ],
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "於${ vpnServersCountData.paid.countries }+國家的伺服器"
+      ],
+      "Share files with no size limit": [
+        "分享檔案無大小限制"
       ],
       "Sign in as user": [
         "登入為使用者"
