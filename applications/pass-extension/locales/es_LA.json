@@ -5,626 +5,8 @@
   },
   "contexts": {
     "Action": {
-      "Account": [
-        "Cuenta"
-      ],
-      "Account settings": [
-        "Ajustes de la cuenta"
-      ],
-      "Add": [
-        "Añadir"
-      ],
-      "Add current URL": [
-        "Añadir la URL actual"
-      ],
-      "Add domain": [
-        "Añadir dominio"
-      ],
-      "Add more": [
-        "Añadir más"
-      ],
-      "Add new item": [
-        "Añadir elemento nuevo"
-      ],
-      "Add section": [
-        "Añadir sección"
-      ],
-      "Add username field": [
-        "Añadir un campo de nombre de usuario"
-      ],
-      "Advanced": [
-        "Avanzado"
-      ],
-      "Advanced options": [
-        "Opciones avanzadas"
-      ],
-      "Authenticate": [
-        "Autenticar"
-      ],
-      "Back": [
-        "Atrás"
-      ],
-      "Bulk delete items from trash": [
-        "Eliminar un grupo de elementos de la papelera"
-      ],
-      "Bulk move items to another vault": [
-        "Mover un grupo de elementos a otra bóveda"
-      ],
-      "Bulk move items to trash": [
-        "Mover un grupo de elementos a la papelera"
-      ],
-      "Bulk restore items from trash": [
-        "Restaurar un grupo de elementos de la papelera"
-      ],
-      "Bulk select items": [
-        "Seleccionar un grupo de elementos"
-      ],
-      "Cancel": [
-        "Cancelar"
-      ],
-      "Change": [
-        "Cambiar"
-      ],
-      "Choose a file or drag it here": [
-        "Elija un archivo o arrástrelo aquí"
-      ],
-      "Clear": [
-        "Borrar"
-      ],
-      "Clear search": [
-        "Limpiar búsqueda"
-      ],
-      "Close": [
-        "Cerrar"
-      ],
-      "Close advanced options": [
-        "Cerrar opciones avanzadas"
-      ],
-      "Close navigation": [
-        "Cerrar navegación"
-      ],
-      "Confirm": [
-        "Confirmar"
-      ],
-      "Confirm access": [
-        "Confirmar acceso"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Conecte la cuenta de ${ BRAND_NAME }"
-      ],
-      "Continue": [
-        "Continuar"
-      ],
-      "Continue offline": [
-        "Continuar sin conexión"
-      ],
-      "Continue without pinning": [
-        "Continuar sin fijar"
-      ],
-      "Copy & fill in": [
-        "Copiar y llenar"
-      ],
-      "Copy and close": [
-        "Copiar y cerrar"
-      ],
-      "Copy link": [
-        "Copiar enlace"
-      ],
-      "Copy to clipboard": [
-        "Copiar al portapapeles"
-      ],
-      "Create": [
-        "Crear"
-      ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Crear una cuenta de ${ BRAND_NAME }"
-      ],
-      "Create a ${ BRAND_NAME } account": [
-        "Crear una cuenta de ${ BRAND_NAME }"
-      ],
-      "Create a new vault to share": [
-        "Crear una bóveda para compartir"
-      ],
-      "Create alias": [
-        "Crear alias"
-      ],
-      "Create an account": [
-        "Crear una cuenta"
-      ],
-      "Create card": [
-        "Crear una tarjeta"
-      ],
-      "Create identity": [
-        "Crear una identidad"
-      ],
-      "Create login": [
-        "Crear inicio de sesión"
-      ],
-      "Create new login": [
-        "Crear un inicio de sesión"
-      ],
-      "Create note": [
-        "Crear nota"
-      ],
-      "Create vault": [
-        "Crear bóveda"
-      ],
-      "Creating vault": [
-        "Creando bóveda"
-      ],
-      "Custom section": [
-        "Sección personalizada"
-      ],
-      "Customize": [
-        "Personalizar"
-      ],
-      "Delete": [
-        "Eliminar"
-      ],
-      "Delete alias": [
-        "Eliminar alias"
-      ],
-      "Delete all": [
-        "Eliminar todo"
-      ],
-      "Delete password": [
-        "Eliminar contraseña"
-      ],
-      "Delete permanently": [
-        "Eliminar permanentemente"
-      ],
-      "Delete vault": [
-        "Eliminar bóveda"
-      ],
-      "Deselect": [
-        "Anular la selección"
-      ],
-      "Disable autosave on this website": [
-        "Desactivar el autoguardado en este sitio web"
-      ],
-      "Disable instead": [
-        "Desactivar en su lugar"
-      ],
-      "Disable this alias to stop receiving emails sent to this alias": [
-        "Desactivar este alias y dejar de recibir correos enviados al mismo"
-      ],
-      "Discard": [
-        "Descartar"
-      ],
-      "Dismiss": [
-        "Descartar"
-      ],
-      "Do not show on this website": [
-        "No mostrar en este sitio web"
-      ],
-      "Do not suggest on this website": [
-        "No sugerir en este sitio web"
-      ],
-      "Done": [
-        "Hecho"
-      ],
-      "Download this CSV template": [
-        "Descargar esta plantilla CSV"
-      ],
-      "Edit": [
-        "Editar"
-      ],
-      "Edit vault": [
-        "Editar bóveda"
-      ],
-      "Enable this alias to receive emails sent to this alias": [
-        "Activar este alias para recibir correos enviados al mismo"
-      ],
-      "Entire vault": [
-        "Bóveda completa"
-      ],
-      "Exclude from monitoring": [
-        "Excluir del monitoreo"
-      ],
-      "Export": [
-        "Exportar"
-      ],
-      "Feedback & Help": [
-        "Comentarios y ayuda"
-      ],
-      "Fill password": [
-        "Completar contraseña"
-      ],
-      "Filter vault items": [
-        "Filtrar elementos de la bóveda"
-      ],
-      "Generate alias": [
-        "Generar alias"
-      ],
-      "Generate password": [
-        "Generar contraseña"
-      ],
-      "Generate secure link": [
-        "Generar un enlace seguro"
-      ],
-      "Generated passwords": [
-        "Contraseñas generadas"
-      ],
-      "Generating secure link...": [
-        "Generando un enlace seguro..."
-      ],
-      "Get mobile apps": [
-        "Descargar aplicaciones móviles"
-      ],
-      "Get Pass Business": [
-        "Obtener Pass Business"
-      ],
-      "Get Pass Plus": [
-        "Obtener Pass Plus"
-      ],
-      "Hide": [
-        "Ocultar"
-      ],
-      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
-        "¿Cómo exporto mis datos desde ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
-      ],
-      "How to use ${ PASS_APP_NAME }": [
-        "Cómo usar ${ PASS_APP_NAME }"
-      ],
-      "Import": [
-        "Importar"
-      ],
-      "Import your passwords": [
-        "Importe sus contraseñas"
-      ],
-      "Importing": [
-        "Importando"
-      ],
-      "Include in monitoring": [
-        "Incluir en el monitoreo"
-      ],
-      "Invite others": [
-        "Invitar a otros"
-      ],
-      "Join shared vault": [
-        "Unirse a la bóveda compartida"
-      ],
-      "Learn more": [
-        "Más información"
-      ],
-      "Leave": [
-        "Salir"
-      ],
-      "Leave vault": [
-        "Dejar la bóveda"
-      ],
-      "Link copied to clipboard": [
-        "Enlace copiado al portapapeles"
-      ],
-      "Link expires after": [
-        "El enlace expira después de"
-      ],
-      "Lock extension": [
-        "Bloquear extensión"
-      ],
-      "Make admin": [
-        "Dar permisos para administrar"
-      ],
-      "Make editor": [
-        "Hacer editor"
-      ],
-      "Make viewer": [
-        "Dar permisos para ver"
-      ],
-      "Manage access": [
-        "Gestionar acceso"
-      ],
-      "Manage vault access": [
-        "Gestionar el acceso a la bóveda"
-      ],
-      "Manually sync your data": [
-        "Sincronizar los datos manualmente"
-      ],
-      "Maximum views": [
-        "Número máximo de vistas"
-      ],
-      "More info: ${ safeTitle }": [
-        "Más información: ${ safeTitle }"
-      ],
-      "More options": [
-        "Más opciones"
-      ],
-      "Move": [
-        "Mover"
-      ],
-      "Move all items": [
-        "Mover todos los elementos"
-      ],
-      "Move to a shared vault": [
-        "Mover a una bóveda compartida"
-      ],
-      "Move to another vault": [
-        "Mover a otra bóveda"
-      ],
-      "Move to Trash": [
-        "Mover a la papelera"
-      ],
-      "Move to trash": [
-        "Mover a la papelera"
-      ],
-      "Multiple select": [
-        "Selección múltiple"
-      ],
-      "No expired links": [
-        "No hay enlaces expirados"
-      ],
-      "Not now": [
-        "Ahora no"
-      ],
-      "OK": [
-        "OK"
-      ],
-      "Open in a window": [
-        "Abrir en una ventana"
-      ],
-      "Open navigation": [
-        "Abrir navegación"
-      ],
-      "Open web app": [
-        "Abrir aplicación web"
-      ],
-      "Pass for Android": [
-        "Pass para Android"
-      ],
-      "Pass for iOS": [
-        "Pass para iOS"
-      ],
-      "Pin item": [
-        "Anclar elemento"
-      ],
-      "Refresh the page": [
-        "Refrescar la página"
-      ],
-      "Regenerate": [
-        "Regenerar"
-      ],
-      "Reject": [
-        "Rechazar"
-      ],
-      "Reject invitation": [
-        "Rechazar invitación"
-      ],
-      "Reload extension": [
-        "Recargar extensión"
-      ],
-      "Remove": [
-        "Borrar"
-      ],
-      "Remove access": [
-        "Borrar el acceso"
-      ],
-      "Remove all expired links (${ inactiveLinkCount })": [
-        "Eliminar todos los enlaces expirados (${ inactiveLinkCount })"
-      ],
-      "Remove link": [
-        "Borrar el enlace"
-      ],
-      "Remove member": [
-        "Quitar este miembro"
-      ],
-      "Request a feature": [
-        "Solicitar una característica"
-      ],
-      "Resend invitation": [
-        "Reenviar invitación"
-      ],
-      "Restore": [
-        "Restaurar"
-      ],
-      "Restore item": [
-        "Restaurar elemento"
-      ],
-      "Restrict number of views": [
-        "Restringir el número de vistas"
-      ],
-      "Retry": [
-        "Reintentar"
-      ],
-      "Right click and download this CSV": [
-        "Haga clic derecho y descargue este archivo CSV."
-      ],
-      "Save": [
-        "Guardar"
-      ],
-      "Save passkey": [
-        "Guardar clave de acceso"
-      ],
-      "Saving": [
-        "Guardando"
-      ],
-      "Saving passkey...": [
-        "Guardando clave de acceso..."
-      ],
-      "Section name": [
-        "Nombre de la sección"
-      ],
-      "Secure links": [
-        "Enlaces seguros"
-      ],
-      "See all": [
-        "Ver todo"
-      ],
-      "See members": [
-        "Ver miembros"
-      ],
-      "Send invite": [
-        "Enviar invitación"
-      ],
-      "Send us a message": [
-        "Envíenos un mensaje"
-      ],
-      "Set access level": [
-        "Configurar nivel de acceso"
-      ],
-      "Set extra password": [
-        "Configurar la contraseña adicional"
-      ],
-      "Setup 2FA": [
-        "Configurar 2FA"
-      ],
-      "Share": [
-        "Compartir"
-      ],
-      "Share secure link": [
-        "Compartir enlace seguro"
-      ],
-      "Share this vault": [
-        "Compartir esta bóveda"
-      ],
-      "Share vault": [
-        "Compartir bóveda"
-      ],
-      "Show": [
-        "Mostrar"
-      ],
-      "Show advanced options": [
-        "Mostrar las opciones avanzadas"
-      ],
-      "Sign back in": [
-        "Volver a iniciar sesión"
-      ],
-      "Sign in": [
-        "Iniciar sesión"
-      ],
-      "Sign in with ${ BRAND_NAME }": [
-        "Iniciar sesión con ${ BRAND_NAME }"
-      ],
-      "Sign out": [
-        "Cerrar sesión"
-      ],
-      "Sort vault items": [
-        "Ordenar elementos de la bóveda"
-      ],
-      "Submit": [
-        "Enviar"
-      ],
-      "Submitting report...": [
-        "Enviando informe..."
-      ],
-      "Sync aliases": [
-        "Sincronizar alias"
-      ],
-      "Transfer ownership": [
-        "Transferir la propiedad"
-      ],
-      "Trash": [
-        "Enviar a papelera"
-      ],
-      "Try again": [
-        "Volver a intentar"
-      ],
-      "Unlock": [
-        "Desbloquear"
-      ],
-      "Unlock offline with password": [
-        "Desbloquear el modo sin conexión con contraseña"
-      ],
-      "Unpin item": [
-        "Desanclar elemento"
-      ],
-      "Update": [
-        "Actualizar"
-      ],
-      "Update vault": [
-        "Actualizar la bóveda"
-      ],
-      "Updating": [
-        "Actualizando"
-      ],
-      "Upgrade": [
-        "Actualizar"
-      ],
-      "Upgrade now": [
-        "Actualizar ahora"
-      ],
-      "Upgrade now to share with more people": [
-        "Mejore ahora para compartir con más personas."
-      ],
-      "Via secure link": [
-        "Vía enlace seguro"
-      ],
-      "View app logs": [
-        "Ver registros de la aplicación"
-      ],
-      "View history": [
-        "Mostrar historial"
-      ],
-      "View item history": [
-        "Mostrar el historial del elemento"
-      ],
-      "View older history": [
-        "Mostrar historial más antiguo"
-      ],
-      "Write us on Reddit": [
-        "Escríbanos en Reddit"
-      ],
-      "Write us on Twitter": [
-        "Escríbanos en Twitter"
-      ],
-      "Your password manager not here? Request it.": [
-        "¿No aparece su gestor de contraseñas? Solicítelo."
-      ]
-    },
-    "bf2023: Info": {
-      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Ahorro inteligente. Obtenga Pass Plus durante un año por solo ${ relativePrice } al mes."
-      ]
-    },
-    "bf2023: Label": {
-      "Get the deal": [
-        "Obtener la oferta"
-      ]
-    },
-    "bf2023: Title": {
-      "Black Friday offer": [
-        "Oferta de Black Friday"
-      ]
-    },
-    "Browser": {
-      "${ MAIL_APP_NAME } Desktop application": [
-        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
-      ]
-    },
-    "Button": {
-      "More info": [
-        "Más información"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Collapse": [
-        "Minimizar"
-      ],
-      "Expand": [
-        "Expandir"
-      ]
-    },
-    "Description": {
-      "${ total } other login uses the same password": [
-        "${ total } otro inicio de sesión usa la misma contraseña.",
-        "Otros ${ total } inicios de sesión usan la misma contraseña."
-      ],
-      "A checked box means the feature is disabled.": [
-        "Una casilla marcada significa que la función está desactivada."
-      ],
-      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
-        "El monitoreo de la Dark Web está disponible con un plan de pago. Mejore el plan para un acceso inmediato."
-      ],
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "Lista de dominios donde ciertas funciones automáticas en ${ PASS_SHORT_APP_NAME } (completado automático, sugerencia automática, guardado automático) no deberían de ejecutarse. ${ infoText }"
-      ],
-      "This account is vulnerable, visit the service and change your password.": [
-        "Esta cuenta es vulnerable. Visite el servicio y cambie la contraseña."
-      ],
-      "This service offers 2FA. Enable it for added account security.": [
-        "Este servicio ofrece 2FA. Actívelo para añadir seguridad a la cuenta."
-      ],
-      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
-        "Desbloquee funciones de seguridad avanzadas y registros detallados para proteger su presencia en línea."
+      "Please retry": [
+        "Intente de nuevo"
       ]
     },
     "Error": {
@@ -640,20 +22,8 @@
       "Authentication error": [
         "Error de autenticación"
       ],
-      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
-        "Error en la autenticación. Confirme la contraseña de ${ BRAND_NAME } para continuar con la exportación."
-      ],
-      "Authentication failure: ${ message }": [
-        "Error de la autenticación: ${ message }"
-      ],
-      "Cannot create alias (${ error }).": [
-        "No se puede crear el alias (${ error })."
-      ],
       "Cannot send invitation at the moment": [
         "No se puede enviar la invitación por el momento",
-        "No se pueden enviar las invitaciones por el momento"
-      ],
-      "Cannot send invitations at the moment": [
         "No se pueden enviar las invitaciones por el momento"
       ],
       "Could not confirm this invite at the moment": [
@@ -680,9 +50,6 @@
       "Could not validate addresses at the moment.": [
         "No se pudieron validar las direcciones por el momento."
       ],
-      "CSV file is missing expected headers: ${ missingHeaders }": [
-        "Faltan los encabezados esperados del archivo CSV: ${ missingHeaders }"
-      ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Error al descifrar el archivo de exportación de ${ PASS_APP_NAME }. ${ errorDetail }"
       ],
@@ -692,21 +59,11 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Error al eliminar la bóveda \"${ payload.content.name }\""
       ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Se detectó ${ errors.length } fila CSV dañada.",
-        "Se detectaron ${ errors.length } filas CSV dañadas."
-      ],
       "Editing item failed": [
         "Error al editar el elemento"
       ],
-      "Empty CSV file": [
-        "Archivo CSV vacío"
-      ],
       "Emptying trash failed": [
         "Error al vaciar la papelera"
-      ],
-      "Encrypted JSON not supported": [
-        "JSON cifrado no soportado"
       ],
       "Error reporting problem": [
         "Error al reportar el problema"
@@ -789,12 +146,6 @@
       "File could not be parsed": [
         "No se pudo analizar el archivo"
       ],
-      "File could not be read": [
-        "No se pudo leer el archivo"
-      ],
-      "File does not match expected format": [
-        "El archivo no coincide con el formato esperado"
-      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Error de importación para la bóveda \"${ vaultData.name }\": ${ description }"
       ],
@@ -806,9 +157,6 @@
       ],
       "Invalid password manager": [
         "Contraseña del gestor inválida"
-      ],
-      "Invalid URL": [
-        "La URL no es válida."
       ],
       "Invitation could not be accepted": [
         "No se pudo aceptar la invitación"
@@ -825,9 +173,6 @@
       "Item does not exist": [
         "El elemento no existe"
       ],
-      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "LastPass exportará un archivo CSV corrupto si alguno de los campos contienen comas inesperadas, citas o líneas múltiples"
-      ],
       "Missing passkey": [
         "Falta la clave de acceso"
       ],
@@ -839,18 +184,6 @@
       ],
       "Passphrase is incorrect": [
         "La frase contraseña es incorrecta"
-      ],
-      "PIN codes do not match": [
-        "Los códigos PIN no coinciden"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Conceda a ${ PASS_APP_NAME } los permisos de extensión necesarios para continuar"
-      ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Fije la extensión o seleccione Continuar sin fijar."
-      ],
-      "Registration failure: ${ message }": [
-        "Error del registro: ${ message }"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -876,20 +209,8 @@
       "Signature verification failed": [
         "Error en la verificación de la firma"
       ],
-      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
-        "Algunas bóvedas ya no son accesibles debido a un restablecimiento de contraseña. Reactive las claves de la cuenta para recuperar el acceso. ${ reactivateLink }"
-      ],
       "Something went wrong": [
         "Ocurrió un error."
-      ],
-      "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
-        "Ocurrió un error. Recargue la extensión ${ PASS_APP_NAME }. Este problema ha sido registrado."
-      ],
-      "The file you are trying to import is empty": [
-        "El archivo que intenta importar está vacío"
-      ],
-      "The URL is in the list": [
-        "La URL está en la lista."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Hubo un error al eliminar el enlace seguro. Intente de nuevo en unos minutos."
@@ -899,9 +220,6 @@
       ],
       "Trashing item failed": [
         "Error al eliminar el elemento"
-      ],
-      "Unable to generate an OTP code for this item": [
-        "No se puede generar un código OTP para este elemento"
       ],
       "Unable to sync": [
         "No se puede sincronizar"
@@ -936,9 +254,6 @@
       "Vault \"${ vaultData.name }\" could not be created": [
         "No se pudo crear la bóveda \"${ vaultData.name }\""
       ],
-      "Vault name does not match": [
-        "El nombre de la bóveda no coincide"
-      ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Hemos encontrado un problema al iniciar ${ PASS_SHORT_APP_NAME }. Si este problema persiste, contacte a nuestro servicio de atención al cliente para obtener ayuda."
       ],
@@ -951,65 +266,11 @@
       "Wrong PIN code. Try again.": [
         "Código PIN incorrecto. Intente de nuevo."
       ],
-      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
-        "No hay conexión. Reanude la conectividad para desbloquear ${ PASS_SHORT_APP_NAME }."
-      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "El código PIN fue eliminado por otro cliente de ${ PASS_APP_NAME }"
       ]
     },
-    "Error message": {
-      "Please refresh the page or try again later.": [
-        "Actualice la página o intente nuevamente."
-      ],
-      "Something went wrong": [
-        "Hubo un problema"
-      ]
-    },
-    "file size format": {
-      "byte": [
-        "byte",
-        "bytes"
-      ],
-      "GB": [
-        "GB"
-      ],
-      "KB": [
-        "KB"
-      ],
-      "MB": [
-        "MB"
-      ],
-      "TB": [
-        "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
-      ]
-    },
     "Info": {
-      " Upgrade to a paid plan to create multiple vaults.": [
-        "Mejore a un plan de pago para crear varias bóvedas."
-      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "El elemento \"${ payload.item.data.metadata.name }\" fue descartado."
       ],
@@ -1019,106 +280,20 @@
       "${ count } invites successfully sent": [
         "${ count } invitaciones enviadas"
       ],
-      "${ count } time": [
-        "${ count } vez",
-        "${ count } veces"
-      ],
-      "${ count } view": [
-        "${ count } vista",
-        "${ count } vistas"
-      ],
-      "${ count }/${ maxReads } views": [
-        "${ count }/${ maxReads } vistas"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } miembro",
-        "${ memberCount } miembros"
-      ],
-      "${ n } item": [
-        "${ n } elemento",
-        "${ n } elementos"
-      ],
-      "${ PASS_APP_NAME } will always be accessible": [
-        "${ PASS_APP_NAME } siempre será accesible"
-      ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
-        "${ PASS_APP_NAME } mostrará el favicono del elemento a través del proxy de imagen anónimo de ${ BRAND_NAME }."
-      ],
-      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
-        "${ PASS_APP_NAME } solo importará inicios de sesión, notas, tarjetas de crédito e identidades."
-      ],
-      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
-        "${ PASS_APP_NAME } le avisará tan pronto como las contraseñas generadas se completen automáticamente."
-      ],
-      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
-        "${ PASS_APP_NAME } le avisará de guardar o actualizar las credenciales."
-      ],
-      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
-        "${ PASS_APP_NAME } sugerirá la autenticación con claves de acceso guardadas."
-      ],
-      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
-        "${ PASS_APP_NAME } sugerirá crear un alias de correo en formularios de registro."
-      ],
-      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
-        "${ PASS_APP_NAME } sugerirá crear contraseñas fuertes en formularios de registro."
-      ],
-      "${ PASS_APP_NAME } will suggest saving passkeys.": [
-        "${ PASS_APP_NAME } sugerirá guardar las claves de acceso."
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } desactivado"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } activado"
       ],
-      "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } día restante",
-        "${ trialDaysLeft } días restantes"
-      ],
-      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
-        "Pruebe gratis las funciones premium durante 7 días, solo durante la primera semana en ${ BRAND_NAME }."
-      ],
-      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
-        "Hay una versión nueva disponible de ${ PASS_APP_NAME }. Actualícela para disfrutar de las últimas funciones y errores corregidos."
-      ],
-      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
-        "Se guardará una clave de acceso para \"${ username }\" y estará disponible en dispositivos donde ${ PASS_APP_NAME } está instalado."
-      ],
       "Access successfully confirmed": [
         "El acceso fue confirmado."
-      ],
-      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
-        "El acceso a ${ PASS_APP_NAME } siempre requerirá su contraseña de ${ BRAND_NAME }."
-      ],
-      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
-        "El acceso a ${ PASS_APP_NAME } requerirá su huella dactilar o el código PIN del dispositivo."
-      ],
-      "Access your passwords on the go with our mobile apps.": [
-        "Acceda a sus contraseñas sobre la marcha con nuestras aplicaciones móviles."
-      ],
-      "Admin": [
-        "Administrador"
-      ],
-      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
-        "Después de importar los datos, puede eliminar el archivo CSV que contiene sus contraseñas por seguridad."
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias desactivado con éxito. Ya no recibirá correos enviados a ${ item.aliasEmail }."
       ],
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "Alias activado con éxito. Ahora recibirá correos enviados a ${ item.aliasEmail }."
-      ],
-      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
-        "La sincronización de alias entre las cuentas de ${ BRAND_NAME } y SimpleLogin está activa."
-      ],
-      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
-        "Los alias en la papelera continuarán reenviando correos. Si desea dejar de recibir correos en esta dirección, desactívela en su lugar."
-      ],
-      "Aliases out of sync (${ aliasCount })": [
-        "Alias no sincronizados (${ aliasCount })"
-      ],
-      "All aliases are synced": [
-        "Todos los alias están sincronizados"
       ],
       "All breaches for this address were resolved": [
         "Todas las vulneraciones fueron resueltas para esta dirección."
@@ -1141,80 +316,14 @@
       "An item previously shared with you was removed": [
         "Se borró un elemento previamente compartido con usted."
       ],
-      "Are you sure you want to remove the link?": [
-        "¿En verdad desea eliminar el enlace?"
-      ],
       "Auto-lock successfully disabled.": [
         "Bloqueo automático desactivado con éxito."
-      ],
-      "Automatically copy the generated password to the clipboard": [
-        "Copiar automáticamente la contraseña generada al portapapeles"
       ],
       "Autosaved on ${ payload.domain }": [
         "Guardado automáticamente en ${ payload.domain }"
       ],
-      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
-        "Antes de exportar tus datos con este formato, abra y desactive Ajustes de Safari -> General -> Abrir archivos seguros al descargarlos. Esto evitará que Safari extraiga el archivo exportado de manera incorrecta."
-      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Se registró el bloqueo automático biométrico. Úselo para desbloquear ${ PASS_APP_NAME }."
-      ],
-      "Biometrics will be disabled and will need to be enabled again.": [
-        "Los datos biométricos se desactivarán y será necesario activarlos nuevamente."
-      ],
-      "Built in 2FA authenticator": [
-        "Autenticador de 2FA integrado"
-      ],
-      "Can be viewed": [
-        "Puede ser visto"
-      ],
-      "Can create, edit, delete, and export items in this vault.": [
-        "Permite crear, editar, eliminar y exportar los elementos en esta bóveda."
-      ],
-      "Can grant and revoke access to this vault, and delete it.": [
-        "Puede conceder y revocar acceso a esta bóveda y eliminarla."
-      ],
-      "Can grant and revoke access to this vault.": [
-        "Puede conceder y revocar acceso a esta bóveda."
-      ],
-      "Can view items in this vault.": [
-        "Permite ver los elementos en esta bóveda."
-      ],
-      "Choose a saved passkey to sign-in to ${ domain }": [
-        "Seleccione una clave de acceso guardada para iniciar sesión en ${ domain }"
-      ],
-      "Click the icon to open it anytime.": [
-        "Pulse el ícono para abrirlo en cualquier momento."
-      ],
-      "Close this window in order to use a security key or another passkey.": [
-        "Cierre esta ventana para usar una clave de seguridad u otra clave de acceso."
-      ],
-      "Close this window in order to use another passkey manager.": [
-        "Cierre esta ventana para usar otro gestor de claves de acceso."
-      ],
-      "Confirm your extra password to proceed with its removal.": [
-        "Confirme su contraseña adicional para proceder con la eliminación."
-      ],
-      "Congratulations, your access has been confirmed": [
-        "Felicitaciones, se ha confirmado su acceso"
-      ],
-      "Copied to clipboard": [
-        "Copiado al portapapeles"
-      ],
-      "Creating alias...": [
-        "Creando alias..."
-      ],
-      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
-        "El formato CSV es conveniente para visualizar los datos. Por su simpleza, algunos datos no serán incluidos (campos personalizados, claves de acceso...). Para exportar datos de manera completa un formato distinto."
-      ],
-      "Current version": [
-        "Versión actual"
-      ],
-      "Decrypting your data": [
-        "Descifrando los datos"
-      ],
-      "Deleted items will be moved here first": [
-        "Los elementos eliminados serán movidos aquí primero"
       ],
       "Deleting \"${ payload.content.name }\"": [
         "Eliminando \"${ payload.content.name }\""
@@ -1228,24 +337,6 @@
       "Disabling offline mode...": [
         "Desactivando el modo sin conexión..."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Descubra el video de ${ PASS_APP_NAME } en YouTube"
-      ],
-      "Drop file here to upload": [
-        "Suelte los archivos aquí para cargarlos"
-      ],
-      "Drop to import": [
-        "Suelte aquí para importar"
-      ],
-      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
-        "Debido a una limitación de las extensiones en el navegador Safari, perderá la extensión de archivo «*.pgp» después de exportar los datos. Cambie el nombre del archivo para incluir la extensión «*.pgp» (p. ej. archivo.pgp) después de exportarlo."
-      ],
-      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Importe fácilmente sus contraseñas existentes a ${ PASS_APP_NAME }."
-      ],
-      "Editor": [
-        "Editor"
-      ],
       "Email address successfully deleted from monitoring": [
         "La dirección de correo electrónico fue eliminada del monitoreo."
       ],
@@ -1257,12 +348,6 @@
       ],
       "Emptying trash...": [
         "Vaciando la papelera..."
-      ],
-      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Active ${ PASS_APP_NAME } al conectar la cuenta de ${ BRAND_NAME }"
-      ],
-      "Enable auto-locking to secure your data": [
-        "Active el bloqueo automático para asegurar sus datos"
       ],
       "Enabling biometrics auto-lock": [
         "Activando el bloqueo automático biométrico"
@@ -1282,60 +367,11 @@
       "Enabling PIN auto-lock": [
         "Activando el bloqueo automático por código PIN"
       ],
-      "Enter verification code. Digit ${ digit }.": [
-        "Ingrese el código de verificación. Digite ${ digit }."
-      ],
-      "Enter your extra password": [
-        "Ingrese su contraseña adicional"
-      ],
-      "Enter your PIN code": [
-        "Ingrese el código PIN"
-      ],
-      "Expires in": [
-        "Expira en"
-      ],
-      "Expires in ${ remainingTime }": [
-        "Expira en ${ remainingTime }"
-      ],
       "Extra password successfuly created": [
         " Se creó la contraseña adicional."
       ],
       "Extra password successfuly removed": [
         "Se eliminó la contraseña adicional."
-      ],
-      "Fill in the CSV with your data": [
-        "Complete el CSV con los datos"
-      ],
-      "Follow those steps to import your data with a generic CSV :": [
-        "Siga estos pasos para importar los datos con un CSV genérico:"
-      ],
-      "For easy access to your passwords and more.": [
-        "Para acceder fácilmente a sus contraseñas y más."
-      ],
-      "For security reason, your access needs to be confirmed": [
-        "Por razones de seguridad, es necesario confirmar su acceso"
-      ],
-      "For security reasons, your access needs to be confirmed": [
-        "Por razones de seguridad, es necesario confirmar su acceso"
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Las contraseñas generadas se almacenarán por un periodo de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana.",
-        "Las contraseñas generadas se almacenarán por un periodo de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas."
-      ],
-      "Generating alias...": [
-        "Generando alias..."
-      ],
-      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
-        "Obtenga alias ilimitados, disfrute funciones exclusivas y apóyenos al suscribirse a Pass Plus."
-      ],
-      "Here you will find all the necessary information to get you started.": [
-        "Aquí encontrará la información necesaria para comenzar."
-      ],
-      "Import in progress:": [
-        "Importación en progreso:"
-      ],
-      "Import the CSV file below.": [
-        "Importe el archivo CSV a continuación."
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } elemento importado",
@@ -1344,17 +380,8 @@
       "Imported on ${ date }": [
         "Importado el ${ date }"
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Para obtener la mejor experiencia de ${ PASS_APP_NAME }, conceda los permisos necesarios de la extensión"
-      ],
       "Internet connection lost": [
         "Sin conexión a Internet"
-      ],
-      "Internet connection lost. Please check your device's connectivity.": [
-        "No hay conexión a internet. Compruebe la conectividad del dispositivo."
-      ],
-      "Invitation sent": [
-        "Invitación enviada"
       ],
       "Invite successfully removed": [
         "Invitación borrada"
@@ -1365,15 +392,8 @@
       "Invite successfully sent": [
         "La invitación fue enviada."
       ],
-      "invites you to access items in": [
-        "le invita a acceder a elementos de"
-      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que ya había iniciado sesión en ${ PASS_APP_NAME }. Si quiere iniciar sesión con una cuenta diferente, cierre previamente la sesión actual."
-      ],
-      "item": [
-        "elemento",
-        "elementos"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Elemento \"${ payload.item.data.metadata.name }\" creado"
@@ -1408,21 +428,6 @@
       "Leaving vault...": [
         "Dejando la bóveda..."
       ],
-      "Let's get you started by creating your first item": [
-        "Comencemos creando el primer elemento"
-      ],
-      "Loading": [
-        "Cargando"
-      ],
-      "Loading ${ PASS_APP_NAME }": [
-        "Cargando ${ PASS_APP_NAME }"
-      ],
-      "Loading...": [
-        "Cargando..."
-      ],
-      "me": [
-        "conmigo"
-      ],
       "Monitoring settings successfully updated": [
         "Ajustes de monitoreo actualizados"
       ],
@@ -1432,35 +437,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its history and all secure links.": [
-        "Mover un elemento a otra bóveda eliminará el historial y todos los enlaces seguros."
-      ],
-      "Moving an item to another vault will erase its history.": [
-        "Mover un elemento a otra bóveda eliminará el historial."
-      ],
       "Moving items": [
         "Moviendo los elementos"
       ],
-      "Moving items to another vault will erase their history and all secure links.": [
-        "Mover los elementos a otra bóveda eliminará el historial y todos los enlaces seguros."
-      ],
-      "Moving items to another vault will erase their history.": [
-        "Mover los elementos a otra bóveda eliminará el historial."
-      ],
       "Moving items to trash": [
         "Moviendo los elementos a la papelera"
-      ],
-      "Never": [
-        "Nunca"
-      ],
-      "No identity item found": [
-        "No se encontró ningún elemento de identidad"
-      ],
-      "No login found": [
-        "Ningún inicio de sesión fue encontrado."
-      ],
-      "None": [
-        "Ninguno"
       ],
       "Offline mode could not be disabled at the moment": [
         "No se pudo desactivar el modo sin conexión por ahora"
@@ -1471,42 +452,17 @@
       "Offline support successfully disabled": [
         "El modo sin conexión está desactivado."
       ],
-      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
-        "El acceso en línea a ${ PASS_APP_NAME } requerirá un código PIN. Se cerrará la sesión después de 3 intentos incorrectos."
-      ],
-      "Open the Extensions menu": [
-        "Abra el menú de extensiones"
-      ],
-      "Owner": [
-        "Propietario"
-      ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "La propiedad fue transferida. Ya no tiene la propiedad de esta bóveda."
       ],
       "Pass Plus trial": [
         "Prueba de Proton Pass Plus"
       ],
-      "Passkey sign-in": [
-        "Inicio de sesión con clave de acceso"
-      ],
-      "Password copied": [
-        "La contraseña fue copiada."
-      ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Se registró el bloqueo por contraseña. Úsela para desbloquear ${ PASS_APP_NAME }"
       ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semana se eliminarán automáticamente del historial.",
-        "Las contraseñas de más de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas se eliminarán automáticamente del historial."
-      ],
-      "Pending access to the shared data": [
-        "Acceso pendiente a los datos compartidos"
-      ],
       "Permanently deleting selected items": [
         "Eliminando permanentemente los elementos selecionados"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Fije ${ PASS_APP_NAME } en la barra de herramientas"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Código PIN registrado con éxito. Úselo para desbloquear ${ PASS_APP_NAME }"
@@ -1514,74 +470,8 @@
       "Pinning item...": [
         "Fijando elemento..."
       ],
-      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
-        "Confirme la contraseña de ${ BRAND_NAME } para exportar los datos de ${ PASS_APP_NAME }"
-      ],
-      "Please confirm your extra password": [
-        "Confirme su contraseña adicional"
-      ],
-      "Please confirm your extra password in order to auto-lock with biometrics.": [
-        "Confirme la contraseña adicional para bloquear automáticamente con datos biométricos."
-      ],
-      "Please confirm your extra password in order to auto-lock with your extra password.": [
-        "Confirme su contraseña adicional para bloquear automáticamente con su contraseña adicional."
-      ],
-      "Please confirm your extra password in order to unregister your current lock.": [
-        "Confirme la contraseña adicional para cancelar el registro del bloqueo actual."
-      ],
-      "Please confirm your extra password in order to update the auto-lock time.": [
-        "Confirme su contraseña adicional para actualizar el tiempo del bloqueo automático."
-      ],
-      "Please confirm your password": [
-        "Confirme su contraseña"
-      ],
-      "Please confirm your password in order to auto-lock with biometrics.": [
-        "Confirme la contraseña para bloquear automáticamente con datos biométricos."
-      ],
-      "Please confirm your password in order to auto-lock with your password.": [
-        "Confirme su contraseña para bloquear automáticamente con su contraseña."
-      ],
-      "Please confirm your password in order to unregister your current lock.": [
-        "Confirme su contraseña para cancelar el registro de su bloqueo actual."
-      ],
-      "Please confirm your password in order to update the auto-lock time.": [
-        "Confirme su contraseña para actualizar el tiempo del bloqueo automático."
-      ],
-      "Please confirm your PIN code in order to unregister your current lock.": [
-        "Confirme el código PIN para cancelar el registro del bloqueo actual."
-      ],
-      "Please confirm your PIN code to edit this setting.": [
-        "Confirme el código PIN para editar este ajuste."
-      ],
-      "Please consider leaving a review.": [
-        "Considere dejar una reseña."
-      ],
       "Please do not close this window": [
         "No cierre esta ventana"
-      ],
-      "Please enter your current PIN code to continue": [
-        "Ingrese el código PIN actual para continuar"
-      ],
-      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
-        "Ingrese su contraseña adicional para empezar a usar ${ PASS_SHORT_APP_NAME }."
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Mejore el plan para obtener acceso anticipado a la aplicación web de ${ PASS_APP_NAME }"
-      ],
-      "Press Enter to copy": [
-        "Presione Enter para copiar"
-      ],
-      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
-        "La privacidad es una gran preocupación para nosotros. Descubra por qué ${ PASS_APP_NAME } es diferente."
-      ],
-      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
-        "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
-      ],
-      "Quickly autofill your 2FA tokens.": [
-        "Complete rápidamente sus tokens 2FA."
-      ],
-      "Quickly autofill your identities.": [
-        "Complete rápidamente sus identidades."
       ],
       "Registering extra password...": [
         "Registrando la contraseña adicional..."
@@ -1604,27 +494,6 @@
       "Restoring trashed items...": [
         "Restaurando elementos de la papelera..."
       ],
-      "Save login": [
-        "Guardar el inicio de sesión"
-      ],
-      "Save passkey": [
-        "Guardar clave de acceso"
-      ],
-      "Secure links": [
-        "Enlaces seguros"
-      ],
-      "Select an existing login item to update.": [
-        "Seleccione un elemento de inicio de sesión existente para actualizar."
-      ],
-      "Select an existing login or create a new one.": [
-        "Seleccione un inicio de sesión existente o cree uno."
-      ],
-      "Select destination vault": [
-        "Seleccione la bóveda de destino"
-      ],
-      "Select where you want your imported vault(s) to be saved.": [
-        "Seleccione dónde quiere guardar sus bóvedas importadas."
-      ],
       "Selected items permanently deleted": [
         "Los elementos seleccionados fueron eliminados permanentemente"
       ],
@@ -1640,26 +509,8 @@
       "Session timed out": [
         "Sesión agotada"
       ],
-      "Set by your organization": [
-        "Configurado por su organización"
-      ],
       "Settings successfully updated": [
         "Ajustes actualizados con éxito"
-      ],
-      "Share your logins, secure notes, with up to 10 people": [
-        "Comparta sus inicios de sesión y notas con hasta 10 personas"
-      ],
-      "Sign in or create an account to continue.": [
-        "Inicie sesión o cree una cuenta para continuar."
-      ],
-      "Sign in to your account": [
-        "Iniciar sesión en su cuenta"
-      ],
-      "Signing you in": [
-        "Iniciando sesión"
-      ],
-      "Successfully exported all your items": [
-        "Todos sus elementos exportados con éxito."
       ],
       "Successfully left the vault": [
         "Ha dejado la bóveda."
@@ -1667,102 +518,17 @@
       "Successfully synced all vaults": [
         "Todas las bóvedas sincronizadas con éxito"
       ],
-      "Switch to another vault or create an item in this vault": [
-        "Cambie a otra bóveda o cree un elemento en esta bóveda"
-      ],
       "Syncing your vaults…": [
         "Sincronizando sus bóvedas…"
       ],
       "Thank you, the problem has been reported": [
         "Gracias, el problema ha sido reportado"
       ],
-      "The autofill dropdown will automatically open when you click or focus on the field.": [
-        "El menú desplegable de completado automático se abrirá cuando haga clic o se centre en el campo."
-      ],
-      "The export will only contain vaults that you own.": [
-        "La exportación solo contendrá las bóvedas que le pertenecen a usted."
-      ],
-      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
-        "El archivo de exportación está cifrado con PGP y requiere una frase de contraseña segura."
-      ],
-      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
-        "La contraseña adicional se requerirá para usar ${ PASS_APP_NAME }. Funciona como una contraseña extra por encima de su contraseña de ${ BRAND_NAME }."
-      ],
-      "The following ${ result.ignored.length } item could not be imported:": [
-        "${ result.ignored.length } elemento no pudo importarse:",
-        "Los siguientes ${ result.ignored.length } elementos no pudieron importarse:"
-      ],
       "The secure link has been removed": [
         "El enlace seguro fue eliminado"
       ],
-      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
-        "El texto que intenta pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
-      ],
-      "The user did not accept the invitation yet.": [
-        "El usuario aún no aceptó la invitación."
-      ],
-      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Esta exportación no estará cifrada y cualquier persona con acceso al archivo exportado podrá ver sus contraseñas. Por seguridad, elimínelo una vez que haya terminado de usarlo."
-      ],
-      "This option is currently not available on your device.": [
-        "Esta opción no está disponible en su dispositivo."
-      ],
-      "This setting is disabled on the organization level": [
-        "Este ajuste está desactivado para la organización."
-      ],
-      "This vault is not currently shared with anyone. Invite people to share it with others.": [
-        "Esta bóveda ya no se comparte con nadie. Invite a personas para compartirla con otros."
-      ],
-      "This version will be added to the history as the newest version.": [
-        "Esta versión será añadida al historial como la versión nueva."
-      ],
-      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "Para migrar los datos desde otro gestor de contraseñas, vaya al gestor, exporte los datos y luego cárguelos en ${ PASS_APP_NAME }. Una vez que los datos se han importado, elimine el archivo exportado."
-      ],
-      "To review your imported data, click on the Pass icon in your browser toolbar.": [
-        "Para verificar los datos importados, pulse el ícono de Proton Pass en la barra de herramientas del navegador."
-      ],
-      "Unable to copy to clipboard": [
-        "No se puede copiar al portapapeles"
-      ],
-      "Unlimited hide-my-email aliases": [
-        "Alias de hide-my-email ilimitados"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Desbloquee ${ PASS_APP_NAME } con el código PIN para acceder a las claves de acceso"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Desbloquee ${ PASS_APP_NAME } con el código PIN para guardar esta clave de acceso"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
-        "Desbloquee ${ PASS_SHORT_APP_NAME } con datos biométricos"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
-        "Desbloquee ${ PASS_SHORT_APP_NAME } con su contraseña de ${ BRAND_NAME }"
-      ],
-      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
-        "Desbloquee ${ PASS_SHORT_APP_NAME } con su contraseña adicional"
-      ],
-      "Unlock it with your PIN to access the settings": [
-        "Desbloquéela con su PIN para acceder a los ajustes"
-      ],
-      "Unlock with biometrics": [
-        "Desbloquear usando datos biométricos"
-      ],
       "Unpinning item...": [
         "Desfijando elemento..."
-      ],
-      "Update login": [
-        "Actualizar el inicio de sesión"
-      ],
-      "Upgrade ${ PASS_APP_NAME }": [
-        "Actualizar ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Mejore el plan ahora para desbloquear funciones premium"
-      ],
-      "Use vaults to share this item with others.": [
-        "Use las bóvedas para compartir este elemento con otras personas."
       ],
       "User's access removed": [
         "El acceso del usuario fue borrado."
@@ -1782,453 +548,13 @@
       "Vault \"${ share.content.name }\" was removed": [
         "La bóveda \"${ share.content.name }\" fue borrada."
       ],
-      "Verification code": [
-        "Código de verificación"
-      ],
-      "Viewer": [
-        "Visor"
-      ],
-      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
-        "Estamos teniendo problemas en sincronizar los datos a el almacenamiento local. Asegúrese de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione corectamente."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Hemos detectado que tiene ${ aliasCount } alias en SimpleLogin pero no aparece en ${ PASS_APP_NAME }. ¿Desea importarlo?",
-        "Hemos detectado que tiene ${ aliasCount } alias en SimpleLogin pero no aparecen en ${ PASS_APP_NAME }. ¿Desea importarlos?"
-      ],
-      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
-        "Cuando se cree o edite un inicio de sesión en ${ PASS_APP_NAME }, la entrada de «nombre de usuario» siempre estará visible."
-      ],
-      "You are about to create:": [
-        "Está por crear:"
-      ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ahora puede usar la contraseña de ${ BRAND_NAME } para acceder sin conexión a ${ PASS_SHORT_APP_NAME }"
-      ],
-      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
-        "Puede rellenar automáticamente las credenciales al pulsar el icono de ${ PASS_APP_NAME }."
-      ],
-      "You cannot change the mailboxes for this alias.": [
-        "No puede cambiar los buzones para este alias."
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Tiene ${ daysRemaining } día restante para probar esta y otras funciones premium.",
-        "Tiene ${ daysRemaining } días restantes para probar esta y otras funciones premium."
-      ],
-      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
-        "Ha superado el número de bóvedas incluidas en la suscripción. Los elementos solo se pueden mover a sus primeras dos bóvedas. Para mover elementos entre todas las bóvedas, mejore la suscripción."
-      ],
-      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
-        "Ha superado el número de bóvedas incluidas en la suscripción. Los elementos nuevos solo se pueden crear en sus primeras dos bóvedas. Para crear elementos nuevos en todas las bóvedas, mejore la suscripción."
-      ],
-      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
-        "Ha alcanzado el límite de alias que puede crear. Cree alias ilimitados al actualizar la suscripción."
-      ],
-      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
-        "Ha alcanzado el límite de tarjetas de crédito que puede crear. Cree una cantidad de tarjetas de crédito ilimitadas al mejorar la suscripción."
-      ],
-      "You have reached the limit of vaults you can create.": [
-        "Ha alcanzado el límite de bóvedas que puede crear."
-      ],
-      "You have reached the maximum allowed length of ${ maxLength } characters.": [
-        "Ha alcanzado el número máximo de ${ maxLength } caracteres."
-      ],
-      "You will be logged out and need to log in again on all of your other devices.": [
-        "Se cerrará la sesión y tendrá que volver a iniciarla en todos los dispositivos."
-      ],
-      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
-        "Usará este PIN para desbloquear ${ PASS_APP_NAME } automáticamente una vez que pase el tiempo de inactividad."
-      ],
-      "You're about to create": [
-        "Está por crear"
-      ],
-      "You're invited to a vault.": [
-        "Se le invitó a una bóveda."
-      ],
-      "Your ${ PASS_APP_NAME } session is locked": [
-        "La sesión de ${ PASS_APP_NAME } está bloqueada"
-      ],
-      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
-        "Su cuenta está restringida porque su organización ha aplicado la autenticación de dos factores. Active la autenticación de dos factores en los ajustes de su cuenta o contacte con su administrador."
-      ],
-      "Your files will be encrypted and then saved": [
-        "Los archivos serán cifrados y luego guardados."
-      ],
-      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
-        "Su organización requiere que asegure su acceso a ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } alias",
-        "${ aliasCount } alias"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } caracter",
-        "${ config.options.length } caracteres"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } palabra",
-        "${ config.options.wordCount } palabras"
-      ],
-      "${ days } day": [
-        "${ days } día",
-        "${ days } días"
-      ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } horas"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minutos"
-      ],
-      "${ PASS_SHORT_APP_NAME } monitor": [
-        "Monitoreo de ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ PASS_SHORT_APP_NAME } version": [
-        "Versión de ${ PASS_SHORT_APP_NAME }"
-      ],
-      "1 hour": [
-        "1 hora"
-      ],
-      "1 minute": [
-        "1 minuto"
-      ],
-      "10 minutes": [
-        "10 minutos"
-      ],
-      "14 days": [
-        "14 días"
-      ],
-      "15 minutes": [
-        "15 minutos"
-      ],
-      "2 minutes": [
-        "2 minutos"
-      ],
-      "24 hours": [
-        "24 horas"
-      ],
-      "2FA autofill": [
-        "Completado automático 2FA"
-      ],
-      "2FA secret key (TOTP)": [
-        "Clave secreta 2FA (TOTP)"
-      ],
-      "2FA token (TOTP)": [
-        "Token 2FA (TOTP)"
-      ],
-      "30 days": [
-        "30 días"
-      ],
-      "30 minutes": [
-        "30 minutos"
-      ],
-      "30 seconds": [
-        "30 segundos"
-      ],
-      "5 minutes": [
-        "5 minutos"
-      ],
-      "7 days": [
-        "7 días"
-      ],
-      "A-Z": [
-        "A-Z"
-      ],
-      "Account": [
-        "Cuenta"
-      ],
-      "Add section": [
-        "Añadir sección"
-      ],
-      "Additional details": [
-        "Detalles adicionales"
-      ],
-      "Address details": [
-        "Detalles de la dirección"
-      ],
-      "Alias": [
-        "Alias"
-      ],
-      "Alias address": [
-        "Dirección de alias"
-      ],
-      "Aliases": [
-        "Alias"
-      ],
-      "All": [
-        "Todos"
-      ],
-      "All vaults": [
-        "Todas las bóvedas"
-      ],
-      "Alphabetical": [
-        "Por orden alfabético"
-      ],
-      "Always show username field": [
-        "Mostrar siempre el campo nombre de usuario"
-      ],
-      "Application logs": [
-        "Registros de la aplicación"
-      ],
-      "Authenticate with passkeys": [
-        "Autenticación con claves de acceso"
-      ],
-      "Auto-lock after": [
-        "Bloqueo automático después de"
-      ],
-      "Autofill": [
-        "Completar automáticamente"
-      ],
-      "Autofill 2FA": [
-        "Autocompletar 2FA"
-      ],
-      "Automatically open autofill when a login field is focused": [
-        "Abrir el completado automático cuando un campo de inicio de sesión está enfocado."
-      ],
-      "Autosave": [
-        "Guardar automáticamente"
-      ],
-      "Autosave vault": [
-        "Guardar automáticamente la bóveda"
-      ],
-      "Autosuggest": [
-        "Sugerencias automáticas"
-      ],
-      "Biometrics": [
-        "Datos biométricos"
-      ],
-      "Birthdate": [
-        "Fecha de nacimiento"
-      ],
-      "Capital letters (A-Z)": [
-        "Letras mayúsculas (A-Z)"
-      ],
-      "Capitalise": [
-        "Mayúsculas"
-      ],
-      "Card": [
-        "Tarjeta"
-      ],
-      "Card number": [
-        "Número de tarjeta"
-      ],
-      "Cards": [
-        "Tarjetas"
-      ],
-      "City": [
-        "Ciudad"
-      ],
-      "Company": [
-        "Compañía"
-      ],
-      "Confirm vault name": [
-        "Confirmar nombre de la bóveda"
-      ],
-      "Contact details": [
-        "Detalles de contacto"
-      ],
-      "Copy": [
-        "Copiar"
-      ],
-      "Copy password": [
-        "Copiar la contraseña"
-      ],
-      "Country or Region": [
-        "País o región"
-      ],
-      "County": [
-        "Condado"
-      ],
-      "Create a credit card": [
-        "Crear una tarjeta de crédito"
-      ],
-      "Create a hide-my-email alias": [
-        "Crear un alias de Hide-my-email"
-      ],
-      "Create a login": [
-        "Crear inicio de sesión"
-      ],
-      "Create an encrypted note": [
-        "Crear una nota cifrada"
-      ],
-      "Create an Identity": [
-        "Crear una identidad"
-      ],
-      "Create lock": [
-        "Crear un bloqueo"
-      ],
-      "Create new vault": [
-        "Crear bóveda"
-      ],
-      "Created": [
-        "Creado"
-      ],
-      "Created at": [
-        "Creada a las"
-      ],
-      "Custom hidden field": [
-        "Campo oculto personalizado"
-      ],
-      "Custom text field": [
-        "Campo de texto personalizado"
-      ],
-      "Device": [
-        "Dispositivo"
-      ],
-      "Display": [
-        "Mostrar"
-      ],
-      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
-        "Mostrar ícono de ${ PASS_APP_NAME } en campos de completado automático"
-      ],
-      "Domain": [
-        "Dominio"
-      ],
-      "Domains": [
-        "Dominios"
-      ],
-      "Don't remind me again": [
-        "No volver a recordarme"
-      ],
-      "Download logs": [
-        "Descargar registros"
-      ],
-      "Email": [
-        "Correo"
-      ],
-      "Email (alias)": [
-        "Correo electrónico (alias)"
-      ],
-      "Email (new alias)": [
-        "Correo electrónico (alias nuevo)"
-      ],
-      "Email aliases": [
-        "Alias de correo"
-      ],
-      "Email or username": [
-        "Correo o nombre de usuario"
-      ],
-      "Empty trash": [
-        "Vaciar la papelera"
-      ],
-      "Enter email or username": [
-        "Ingresar correo o nombre de usuario"
-      ],
-      "Expiration date": [
-        "Fecha de expiración"
-      ],
-      "Expired": [
-        "Expirado"
-      ],
-      "Expired link": [
-        "Enlace expirado"
-      ],
-      "Export": [
-        "Exportar"
-      ],
-      "Extra password": [
-        "Contraseña adicional"
-      ],
-      "Facebook account": [
-        "Cuenta de Facebook"
-      ],
-      "Field name": [
-        "Nombre del campo"
-      ],
-      "File format": [
-        "Formato de archivo"
-      ],
-      "First name": [
-        "Nombre"
-      ],
-      "Floor, apartment, building": [
-        "Piso, apartamento, edificio"
-      ],
-      "Forwards to": [
-        "Reenvía a"
-      ],
-      "Full Name": [
-        "Nombre completo"
-      ],
-      "Gender": [
-        "Género"
-      ],
-      "General": [
-        "General"
-      ],
-      "Generate a secure link for this item": [
-        "Genere un enlace seguro para este elemento"
-      ],
       "Generic CSV": [
         "CSV genérico"
-      ],
-      "Grant": [
-        "Conceder"
-      ],
-      "Hidden": [
-        "Oculto"
-      ],
-      "Hide password": [
-        "Ocultar contraseña"
-      ],
-      "https://example.com": [
-        "https://ejemplo.com"
-      ],
-      "ID Card": [
-        "Cédula de identidad"
-      ],
-      "ID Card number": [
-        "Número de identificación"
-      ],
-      "Identities": [
-        "Identidades"
-      ],
-      "Identity": [
-        "Identidad"
-      ],
-      "Identity autofill": [
-        "Completado automático de identidad"
-      ],
-      "Import": [
-        "Importar"
-      ],
-      "Import passwords": [
-        "Importar contraseñas"
-      ],
-      "Imported from : ": [
-        "Importado desde: "
-      ],
-      "Imported on : ": [
-        "Importado en: "
-      ],
-      "Include numbers": [
-        "Incluir números"
-      ],
-      "Include numbers (0-9)": [
-        "Incluir números (0-9)"
-      ],
-      "Instagram handle": [
-        "Nombre de usuario de Instagram"
-      ],
-      "Invitations": [
-        "Invitaciones"
-      ],
-      "Item ID": [
-        "ID del elemento"
-      ],
-      "Job title": [
-        "Puesto laboral"
-      ],
-      "Key": [
-        "Clave"
-      ],
-      "Keyboard shortcut: ${ shortcut }": [
-        "Atajo de teclado: ${ shortcut }"
-      ],
-      "Language": [
-        "Idioma"
       ],
       "Last 2 weeks": [
         "Últimas 2 semanas"
@@ -2236,360 +562,14 @@
       "Last month": [
         "Último mes"
       ],
-      "Last name": [
-        "Apellido"
-      ],
       "Last week": [
         "La semana pasada"
-      ],
-      "Latest import": [
-        "Última importación"
-      ],
-      "Learn more": [
-        "Más información"
-      ],
-      "License": [
-        "Licencia de conducir"
-      ],
-      "License number": [
-        "Número de licencia"
-      ],
-      "LinkedIn account": [
-        "Cuenta de LinkedIn"
-      ],
-      "Login": [
-        "Inicio de sesión"
-      ],
-      "Logins": [
-        "Inicios de sesión"
-      ],
-      "Make all admins": [
-        "Promover a todos como administradores"
-      ],
-      "Make all editors": [
-        "Promover a todos como editores"
-      ],
-      "Make all viewers": [
-        "Promover a todos como lectores"
-      ],
-      "max views reached": [
-        "vistas máximas alcanzadas"
-      ],
-      "Members": [
-        "Miembros"
-      ],
-      "Middle name": [
-        "Segundo nombre"
-      ],
-      "Modified": [
-        "Modificado"
       ],
       "More than a month": [
         "Más de un mes"
       ],
-      "Most recent": [
-        "Más reciente"
-      ],
-      "Name": [
-        "Nombre"
-      ],
-      "Name on card": [
-        "Titular de la tarjeta"
-      ],
-      "Need help ?": [
-        "¿Necesita ayuda?"
-      ],
-      "New vault": [
-        "Bóveda nueva"
-      ],
-      "New-Old": [
-        "Del más reciente al más antiguo"
-      ],
-      "Newest to oldest": [
-        "De más reciente a más antiguo"
-      ],
-      "No history": [
-        "Sin historial"
-      ],
-      "None": [
-        "Ninguna"
-      ],
-      "Note": [
-        "Nota"
-      ],
-      "Notes": [
-        "Notas"
-      ],
-      "Old-New": [
-        "Del más antiguo al más reciente"
-      ],
-      "Oldest to newest": [
-        "De más antiguo a más reciente"
-      ],
-      "Organization": [
-        "Organización"
-      ],
-      "Passkey": [
-        "Clave de acceso"
-      ],
-      "Passkeys": [
-        "Claves de acceso"
-      ],
-      "Passphrase": [
-        "Frase de contraseña"
-      ],
-      "Passport": [
-        "Pasaporte"
-      ],
-      "Passport number": [
-        "Número de pasaporte"
-      ],
-      "Password": [
-        "Contraseña"
-      ],
-      "Password history": [
-        "Historial de contraseña"
-      ],
-      "Passwords": [
-        "Contraseñas"
-      ],
-      "Pause list": [
-        "Lista de pausa"
-      ],
-      "Personal details": [
-        "Detalles personales"
-      ],
-      "Personal website": [
-        "Sitio web personal"
-      ],
-      "PGP-encrypted JSON (recommended)": [
-        "JSON cifrado con PGP (recomendado)"
-      ],
-      "Phone number": [
-        "Número telefónico"
-      ],
-      "PIN": [
-        "Código PIN"
-      ],
-      "PIN code": [
-        "Código PIN"
-      ],
-      "Prefix": [
-        "Prefijo"
-      ],
-      "Prompt for auto-save": [
-        "Avisar para guardar automáticamente"
-      ],
-      "Prompt for auto-save when generating passwords": [
-        "Solicitar el guardado automático al generar contraseñas"
-      ],
-      "Protect ${ PASS_APP_NAME } with an extra password": [
-        "Proteja ${ PASS_APP_NAME } con una contraseña adicional"
-      ],
-      "Rate us": [
-        "Evalúenos"
-      ],
-      "Recent": [
-        "Reciente"
-      ],
-      "Reddit handle": [
-        "Nombre de usuario de Reddit"
-      ],
-      "Remove link": [
-        "Eliminar enlace"
-      ],
-      "Report a problem": [
-        "Reportar un problema"
-      ],
-      "Restore all items": [
-        "Restaurar todos los elementos"
-      ],
-      "Reveal password": [
-        "Mostrar contraseña"
-      ],
-      "Save passkeys": [
-        "Guardar las claves de acceso"
-      ],
-      "Security": [
-        "Seguridad"
-      ],
-      "Security code": [
-        "Código de seguridad"
-      ],
-      "Select an email address": [
-        "Seleccionar una dirección de correo"
-      ],
-      "Select preferred language": [
-        "Seleccionar idioma preferido"
-      ],
-      "Select the vault where SimpleLogin aliases will be imported into": [
-        "Seleccione la bóveda donde se importarán los alias de SimpleLogin"
-      ],
-      "Select your password manager": [
-        "Seleccione su gestor de contraseña"
-      ],
-      "Selected": [
-        "Seleccionado"
-      ],
-      "Settings": [
-        "Ajustes"
-      ],
-      "Share": [
-        "Compartir"
-      ],
-      "Share this vault or create a new vault": [
-        "Comparta esta bóveda o cree una"
-      ],
-      "Shared link": [
-        "Enlace compartido"
-      ],
-      "Show website favicons": [
-        "Mostrar faviconos de sitios web"
-      ],
-      "Social security": [
-        "Seguridad social"
-      ],
-      "Social security number": [
-        "Número de seguro social"
-      ],
-      "Special characters (!&*)": [
-        "Caracteres especiales (!&*)"
-      ],
-      "State or province": [
-        "Estado o provincia"
-      ],
-      "Street address": [
-        "Dirección de calle"
-      ],
-      "Street address, P.O. box": [
-        "Dirección de calle, apartado postal"
-      ],
-      "Strong": [
-        "Fuerte"
-      ],
-      "Suffix": [
-        "Sufijo"
-      ],
-      "Support": [
-        "Soporte"
-      ],
-      "Sync aliases with SimpleLogin": [
-        "Sincronizar alias con SimpleLogin"
-      ],
-      "Tax number": [
-        "Número de identificación fiscal"
-      ],
-      "Text": [
-        "Texto"
-      ],
-      "The item's vault is currently shared with ${ targetMembers } person": [
-        "La bóveda del elemento se comparte con ${ targetMembers } persona",
-        "La bóveda del elemento se comparte con ${ targetMembers } personas"
-      ],
-      "The URL has been copied to the clipboard": [
-        "URL copiada al portapapeles"
-      ],
-      "Title": [
-        "Título"
-      ],
       "Today": [
         "Hoy"
-      ],
-      "Total imported items : ": [
-        "Elementos totales importados: "
-      ],
-      "Total items : ": [
-        "Elementos totales: "
-      ],
-      "TOTP": [
-        "TOTP"
-      ],
-      "Trash": [
-        "Papelera"
-      ],
-      "Type": [
-        "Tipo"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Desbloquear ${ PASS_APP_NAME }"
-      ],
-      "Unlock with": [
-        "Desbloquear con"
-      ],
-      "Unnamed Credit Card": [
-        "Tarjeta de crédito sin nombre"
-      ],
-      "Unnamed identity": [
-        "Identidad sin nombre"
-      ],
-      "Unnamed item": [
-        "Elemento sin nombre"
-      ],
-      "Unnamed note": [
-        "Nota sin nombre"
-      ],
-      "Untitled": [
-        "Sin título"
-      ],
-      "Update": [
-        "Actualizar"
-      ],
-      "Username": [
-        "Nombre de usuario"
-      ],
-      "Username/email": [
-        "Nombre de usuario/correo electrónico"
-      ],
-      "Vault ID": [
-        "ID de bóveda"
-      ],
-      "View details": [
-        "Mostrar detalles"
-      ],
-      "View logs": [
-        "Ver registros"
-      ],
-      "Vulnerable": [
-        "Vulnerable"
-      ],
-      "Weak": [
-        "Débil"
-      ],
-      "Website": [
-        "Sitio web"
-      ],
-      "Websites": [
-        "Sitios web"
-      ],
-      "Work details": [
-        "Detalles del trabajo"
-      ],
-      "Work email": [
-        "Correo electrónico del trabajo"
-      ],
-      "Work phone number": [
-        "Número telefónico laboral"
-      ],
-      "X handle": [
-        "Nombre de usuario de X"
-      ],
-      "Yahoo account": [
-        "Cuenta de Yahoo"
-      ],
-      "You are about to create": [
-        "Está por crear"
-      ],
-      "ZIP or Postal code": [
-        "Código postal"
-      ]
-    },
-    "Message": {
-      "${ count } item": [
-        "${ count } elemento",
-        "${ count } elementos"
-      ],
-      "You selected ${ semiboldText } in this vault": [
-        "Seleccionó ${ semiboldText } en esta bóveda."
       ]
     },
     "Onboarding": {
@@ -2597,447 +577,28 @@
         "Le damos la bienvenida a ${ appName }"
       ]
     },
-    "Option": {
-      "Commas": [
-        "Comas"
-      ],
-      "Hyphens": [
-        "Guiones"
-      ],
-      "Memorable Password": [
-        "Contraseña memorizable"
-      ],
-      "Numbers": [
-        "Números"
-      ],
-      "Numbers and Symbols": [
-        "Números y símbolos"
-      ],
-      "Periods": [
-        "Puntos"
-      ],
-      "Random Password": [
-        "Contraseña aleatoria"
-      ],
-      "Spaces": [
-        "Espacios"
-      ],
-      "Underscores": [
-        "Guiones bajos"
-      ]
-    },
     "Placeholder": {
-      "Add 2FA secret key": [
-        "Añadir una clave secreta 2FA"
-      ],
-      "Add hidden text": [
-        "Añadir texto oculto"
-      ],
-      "Add note": [
-        "Añadir nota"
-      ],
-      "Add text": [
-        "Añadir texto"
-      ],
-      "Email address": [
-        "Dirección de correo"
-      ],
-      "Enter a note...": [
-        "Ingresar una nota..."
-      ],
-      "Enter a prefix": [
-        "Ingresar un prefijo"
-      ],
-      "Enter email": [
-        "Ingresar un correo electrónico"
-      ],
-      "Enter password": [
-        "Ingresar contraseña"
-      ],
-      "Enter username": [
-        "Ingrese el nombre de usuario"
-      ],
-      "Full Name": [
-        "Nombre completo"
-      ],
-      "MM/YY": [
-        "MM/AA"
-      ],
-      "Other": [
-        "Otro"
-      ],
-      "Password": [
-        "Contraseña"
-      ],
-      "Pick a vault": [
-        "Elegir una bóveda"
-      ],
-      "Please describe the problem and include any error messages": [
-        "Describa el problema e incluya cualquier mensaje de error"
-      ],
-      "Retype \"${ vaultName }\" to confirm deletion": [
-        "Reescriba \"${ vaultName }\" para confirmar la eliminación"
-      ],
-      "Search ${ pluralItemType } in ${ vaultName }": [
-        "Buscar ${ pluralItemType } en ${ vaultName }"
-      ],
-      "Search ${ pluralItemType } in all vaults": [
-        "Buscar ${ pluralItemType } en todas las bóvedas"
-      ],
-      "Search in ${ vaultName }": [
-        "Buscar en ${ vaultName }"
-      ],
-      "Search in all vaults": [
-        "Buscar en todas las bóvedas"
-      ],
-      "Search in Trash": [
-        "Buscar en la papelera"
-      ],
-      "Select a suffix": [
-        "Seleccionar un sufijo"
-      ],
-      "Shared vault": [
-        "Bóveda compartida"
-      ],
-      "Unknown origin": [
-        "Origen desconocido"
-      ],
-      "Untitled": [
-        "Sin título"
-      ],
       "Used on ${ url }": [
         "Usado en ${ url }"
-      ],
-      "Write your note": [
-        "Escriba su nota"
       ]
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Sincronización de alias activada con éxito. Los alias de SimpleLogin puede tomar un tiempo en sincronizarse."
-      ],
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Las bóvedas no pueden contener más de ${ vault.targetMaxMembers } usuario.",
-        "Las bóvedas no pueden contener más de ${ vault.targetMaxMembers } usuarios."
-      ]
-    },
-    "Title": {
-      "${ PASS_APP_NAME } Settings": [
-        "Ajustes de ${ PASS_APP_NAME }"
-      ],
-      "Auto-lock update": [
-        "Actualización de bloqueo automático"
-      ],
-      "Autofill": [
-        "Completado automático"
-      ],
-      "Confirm extra password": [
-        "Confirmar la contraseña adicional"
-      ],
-      "Confirm PIN code": [
-        "Confirmar código PIN"
-      ],
-      "Connect your ${ BRAND_NAME } Account": [
-        "Conecte la cuenta de ${ BRAND_NAME }"
-      ],
-      "Create PIN code": [
-        "Crear código PIN"
-      ],
-      "Created": [
-        "Creado"
-      ],
-      "Current version": [
-        "Versión actual"
-      ],
-      "Delete vault \"${ vaultName }\" ?": [
-        "¿Eliminar la bóveda \"${ vaultName }\"?"
-      ],
-      "Discard changes?": [
-        "¿Descartar cambios?"
-      ],
-      "Email": [
-        "Correo"
-      ],
-      "Enjoying ${ PASS_APP_NAME }?": [
-        "¿Disfrutando ${ PASS_APP_NAME }?"
-      ],
-      "Enter your extra password": [
-        "Ingrese su contraseña adicional"
-      ],
-      "Enter your password": [
-        "Ingrese la contraseña"
-      ],
-      "Enter your PIN": [
-        "Ingrese el código PIN"
-      ],
-      "Fill & copy password": [
-        "Completar y copiar la contraseña"
-      ],
-      "Fill password": [
-        "Completar la contraseña"
-      ],
-      "Get Started": [
-        "Comenzar"
-      ],
-      "Get the mobile apps": [
-        "Obtenga las aplicaciones móviles"
-      ],
-      "Grant permissions": [
-        "Conceder permisos"
-      ],
-      "Hide my email": [
-        "Hide-my-email"
-      ],
-      "History": [
-        "Historial"
-      ],
-      "Identity": [
-        "Identidad"
-      ],
-      "Import - ${ date }": [
-        "Importación - ${ date }"
-      ],
-      "Import to vault(s)": [
-        "Importar a las bóvedas"
-      ],
-      "Last autofill": [
-        "Último completado automático"
-      ],
-      "Last modified": [
-        "Última modificación"
-      ],
-      "Leave vault ?": [
-        "¿Dejar la bóveda?"
-      ],
-      "Log in as...": [
-        "Iniciar sesión como..."
-      ],
-      "Low disk space": [
-        "Poco espacio en disco"
-      ],
-      "Member limit": [
-        "Límite de miembros"
-      ],
-      "Members": [
-        "Miembros"
-      ],
-      "Modified": [
-        "Modificado"
-      ],
-      "Move all items to \"${ vaultName }\"?": [
-        "¿Mover todos los elementos a «${ vaultName }»?"
-      ],
-      "Move item to \"${ vaultName }\"?": [
-        "¿Mover elemento a «${ vaultName }»?"
-      ],
-      "Move items to \"${ vaultName }\"?": [
-        "¿Mover elementos a «${ vaultName }»?"
-      ],
-      "No items selected": [
-        "No hay elementos seleccionados."
-      ],
-      "No shared secure links": [
-        "No hay enlaces seguros compartidos"
-      ],
-      "Our welcome gift to you": [
-        "Nuestro regalo de bienvenida para usted"
-      ],
-      "Passkey": [
-        "Clave de acceso"
-      ],
-      "Password": [
-        "Contraseña"
-      ],
-      "Pending access to the shared data": [
-        "Acceso pendiente a los datos compartidos"
-      ],
-      "Permanently remove all items ?": [
-        "¿Borrar todos los elementos permanentemente?"
-      ],
-      "Pin the extension": [
-        "Fije la extensión"
-      ],
-      "Pinned (${ items.length })": [
-        "Anclados (${ items.length })"
-      ],
-      "Remove extra password": [
-        "Eliminar la contraseña adicional"
-      ],
-      "Remove secure link?": [
-        "¿Eliminar el enlace seguro?"
-      ],
-      "Restore this version?": [
-        "¿Restaurar esta versión?"
-      ],
-      "Review and share": [
-        "Revisar y compartir"
-      ],
-      "Secure your data": [
-        "Asegure los datos"
-      ],
-      "Set access level": [
-        "Configurar el nivel de acceso"
-      ],
-      "Set extra password": [
-        "Configurar la contraseña adicional"
-      ],
-      "Set up 2FA for more security": [
-        "Configure 2FA para más seguridad"
-      ],
-      "Share with": [
-        "Compartir con"
-      ],
-      "Stay safer online": [
-        "Más seguridad en línea"
-      ],
-      "Suggestions": [
-        "Sugerencias"
-      ],
-      "Switching to ${ PASS_APP_NAME }?": [
-        "¿Cambiar a ${ PASS_APP_NAME }?"
-      ],
-      "Sync alias": [
-        "Sincronizar alias"
-      ],
-      "Thank you for installing ${ PASS_APP_NAME }": [
-        "Gracias por instalar ${ PASS_APP_NAME }"
-      ],
-      "The extension is now ready to use.": [
-        "Ya puede usar la extensión."
-      ],
-      "Transfer ownership": [
-        "Transferir la propiedad"
-      ],
-      "Trash empty": [
-        "Papelera vacía"
-      ],
-      "Unlock ${ brandNameJSX }": [
-        "Desbloquear ${ brandNameJSX }"
-      ],
-      "Update available": [
-        "Actualización disponible"
-      ],
-      "Upgrade to Unlock Premium Features": [
-        "Mejore el plan para desbloquear funciones premium"
-      ],
-      "Use my email": [
-        "Usar mi correo"
-      ],
-      "Vault": [
-        "Bóveda"
-      ],
-      "Vault shared with you": [
-        "Bóveda compartida con usted"
-      ],
-      "Weak password": [
-        "Contraseña débil"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Le damos la bienvenida a ${ brandNameJSX }"
-      ],
-      "Welcome to your new password manager!": [
-        "¡Le damos la bienvenida a su nuevo gestor de contraseñas!"
-      ],
-      "Why ${ PASS_APP_NAME }?": [
-        "¿Por qué elegir ${ PASS_APP_NAME }?"
-      ],
-      "Your vault is empty": [
-        "La bóveda está vacía"
-      ],
-      "Your welcome gift": [
-        "Su regalo de bienvenida"
-      ]
-    },
-    "Validation": {
-      "Duplicated URL": [
-        "La URL es duplicada."
-      ],
-      "Field name is required": [
-        "El nombre del campo es obligatorio."
-      ],
-      "OTP secret or URI is invalid": [
-        "Clave secreta OTP o URL inválida"
-      ],
-      "OTP secret or URI required": [
-        "Se requiere una clave secreta OTP o una URL."
-      ],
-      "Section name cannot be empty": [
-        "El nombre de la sección no puede estar vacío"
-      ],
-      "Url already exists": [
-        "La URL ya existe"
-      ],
-      "URL cannot be empty": [
-        "La URL no puede estar vacía."
-      ],
-      "Url is invalid": [
-        "URL inválida"
-      ],
-      "URL is invalid": [
-        "La URL no es válida."
       ]
     },
     "Warning": {
-      "${ BRAND_NAME } password is required": [
-        "Se requiere la contraseña de ${ BRAND_NAME }"
-      ],
-      "A description of the problem is required": [
-        "Se requiere una descripción del problema"
-      ],
-      "All your trashed items will be permanently deleted. You cannot undo this action.": [
-        "Todos sus elementos en papelera serán eliminados permanentemente. No puede deshacer esta acción."
-      ],
-      "An error occured while exporting your data": [
-        "Se produjo un error al exportar los datos"
-      ],
-      "At least one email address is required": [
-        "Al menos se requiere una dirección de correo electrónico"
-      ],
-      "Cannot retrieve mailboxes for this alias right now": [
-        "No se pueden recuperar buzones para este alias en este momento"
-      ],
-      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
-        "Precaución: No podrá acceder a su cuenta de ${ PASS_APP_NAME } si pierde esta contraseña."
-      ],
       "Could not create vault \"${ vaultName }\"": [
         "No se pudo crear la bóveda \"${ vaultName }\""
       ],
       "Could not send invitations to the following addresses :": [
         "No se pudieron enviar las invitaciones a las siguientes direcciones:"
       ],
-      "Duplicate email addresses.": [
-        "Direcciones de correo duplicadas."
-      ],
-      "Empty note": [
-        "Nota vacía"
-      ],
       "Expiration Date is not in the format MM/YY": [
         "La fecha de expiración no está en formato MM/AA"
       ],
-      "Extra password cannot be empty": [
-        "La contraseña adicional no puede estar vacía"
-      ],
-      "Extra password is required": [
-        "Se requiere la contraseña adicional"
-      ],
-      "Extra password should have at least 8 characters": [
-        "La contraseña adicional debe tener al menos 8 caracteres"
-      ],
       "Invalid alias prefix": [
         "Prefijo de alias inválido"
-      ],
-      "Invalid email addresses.": [
-        "Direcciones de correo inválidas."
-      ],
-      "Inviting email addresses outside organization is not allowed.": [
-        "No se permiten invitar direcciones de correo fuera de la organización."
-      ],
-      "item was imported without custom fields": [
-        "el elemento fue importado sin campos personalizados"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "El número máximo de caracteres es ${ maxLength }.",
-        "El número máximo de caracteres es ${ maxLength }."
       ],
       "Missing alias prefix": [
         "Falta el prefijo de alias"
@@ -3045,104 +606,20 @@
       "Missing alias suffix": [
         "Falta el sufijo de alias"
       ],
-      "Move to trash": [
-        "Mover a la papelera"
-      ],
-      "No items": [
-        "No hay elementos"
-      ],
-      "No items in trash matching": [
-        "No hay elementos en la papelera que coincidan"
-      ],
-      "No items matching": [
-        "No hay elementos que coincidan"
-      ],
-      "No password manager selected": [
-        "Ningún gestor de contraseñas seleccionado"
-      ],
-      "No results": [
-        "Sin resultados"
-      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Solo se permiten caracteres alfanuméricos, puntos, guiones y guiones bajos"
-      ],
-      "Passphrase is required": [
-        "Frase de contraseña requerida"
-      ],
-      "Passwords do not match": [
-        "Las contraseñas no coinciden"
-      ],
-      "PGP encrypted export file requires passphrase": [
-        "El archivo de exportación cifrado con PGP requiere una frase de contraseña"
       ],
       "Please contact us for investigating the issue": [
         "Contacte con nosotros para investigar el problema"
       ],
-      "Please verify your email address in order to use email aliases": [
-        "Verifique la dirección de correo para poder usar alias de correo."
-      ],
-      "Please verify your email address in order to use vault sharing": [
-        "Verifique la dirección de correo para poder compartir la bóveda."
-      ],
-      "Removing your extra password will log you out from all devices and end all active sessions.": [
-        "Al eliminar la contraseña adicional, se cerrará la sesión en todos sus dispositivos y terminarán todas las sesiones activas."
-      ],
-      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Los informes no están cifrados de extremo a extremo, no envíe ninguna información confidencial."
-      ],
-      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
-        "Ocurrió un error al iniciar ${ PASS_APP_NAME }. Intente refrescar o recargar la extensión."
-      ],
       "The alias prefix cannot be longer than 40 characters": [
         "El prefijo del alias no puede tener más de 40 caracteres."
-      ],
-      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
-        "Este alias \"${ aliasEmail }\" actualmente se usa en el inicio de sesión \"${ relatedLoginName }\"."
-      ],
-      "Title is required": [
-        "El título es requerido"
-      ],
-      "Transfer ownership of this vault to ${ email }?": [
-        "¿Transferir la propiedad de esta bóveda a ${ email }?"
-      ],
-      "Unable to save": [
-        "No se puede guardar."
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No se puede iniciar sesión en ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "La bóveda \"${ vaultName }\" y todos sus elementos serán eliminados permanentemente. No puede deshacer esta acción."
-      ],
-      "Vault name is required": [
-        "El nombre de la bóveda es requerido"
-      ],
-      "You cannot create more vaults than your subscription allows.": [
-        "No puede crear más bóvedas de las que permite la suscripción."
-      ],
-      "You have reached the limit of members who can access this vault.": [
-        "Ha alcanzado el límite de miembros que pueden acceder a esta bóveda."
-      ],
-      "You have reached the limit of users in this vault. ${ upgradeLink }": [
-        "Ha alcanzado el límite de usuarios en esta bóveda. ${ upgradeLink }"
-      ],
-      "You have reached the limit of vaults you can have in your plan.": [
-        "Ha alcanzado el límite de bóvedas que puede tener en el plan."
-      ],
-      "You have unsaved changes.": [
-        "Tiene cambios sin guardar."
-      ],
       "You must select at least one mailbox": [
         "Debe seleccionar al menos un buzón"
-      ],
-      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
-        "Ya no tendrá acceso a esta bóveda. Para unirse de nuevo necesitará una invitación."
-      ],
-      "Your plan does not allow you to create more aliases": [
-        "El plan no le permite crear más alias"
-      ],
-      "Your plan only allows you to autofill from your first two vaults": [
-        "El plan solo le permite completar automáticamente desde sus primeras dos bóvedas"
       ],
       "Your session could not be authorized.": [
         "La sesión no ha podido ser autorizada."
@@ -3155,9 +632,6 @@
       ],
       "Your session was locked.": [
         "La sesión está bloqueada."
-      ],
-      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
-        "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
       ]
     }
   }
