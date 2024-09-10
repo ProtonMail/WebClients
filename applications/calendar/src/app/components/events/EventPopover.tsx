@@ -1,20 +1,8 @@
-import React, { useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 
-import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
-import {
-    AppLink,
-    Badge,
-    CalendarInviteButtons,
-    Icon,
-    Loader,
-    ReloadSpinner,
-    Tooltip,
-    useReadCalendarBootstrap,
-    useUser,
-} from '@proton/components';
+import { Badge, CalendarInviteButtons, Loader, useReadCalendarBootstrap, useUser } from '@proton/components';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { useLoading } from '@proton/hooks';
 import {
@@ -25,16 +13,14 @@ import {
     getIsUnknownCalendar,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
-import { getLinkToCalendarEvent, naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
+import { naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { CalendarEventSharedData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 import type {
     CalendarViewEvent,
@@ -50,6 +36,13 @@ import PopoverEventContent from './PopoverEventContent';
 import PopoverFooter from './PopoverFooter';
 import PopoverHeader from './PopoverHeader';
 import { getEventErrorMessage } from './error';
+import {
+    EventReloadErrorAction,
+    PopoverDeleteButton,
+    PopoverDuplicateButton,
+    PopoverEditButton,
+    PopoverViewButton,
+} from './eventPopoverButtons/EventPopoverButtons';
 import getEventInformation from './getEventInformation';
 import useReadEvent from './useReadEvent';
 
@@ -124,16 +117,6 @@ const EventPopover = ({
 
     const isSearchView = view === VIEWS.SEARCH;
 
-    const recurrenceDate = toLocalDate(fromUTCDate(start));
-    const recurrenceTimestamp = getUnixTime(recurrenceDate);
-    const linkTo =
-        eventData &&
-        getLinkToCalendarEvent({
-            calendarID: eventData.CalendarID,
-            eventID: eventData.ID,
-            recurrenceID: recurrenceTimestamp,
-        });
-
     const model = useReadEvent(eventReadResult?.result, tzid, calendarBootstrap?.CalendarSettings);
     const {
         eventReadError,
@@ -161,38 +144,40 @@ const EventPopover = ({
     const handleDelete = () => {
         const sendCancellationNotice =
             !eventReadError && !isCalendarDisabled && !isCancelled && [ACCEPTED, TENTATIVE].includes(userPartstat);
-        const inviteActions = model.isAttendee
-            ? {
-                  type: isSelfAddressActive
-                      ? INVITE_ACTION_TYPES.DECLINE_INVITATION
-                      : INVITE_ACTION_TYPES.DECLINE_DISABLED,
-                  isProtonProtonInvite: model.isProtonProtonInvite,
-                  sendCancellationNotice,
-                  selfAddress: model.selfAddress,
-                  selfAttendeeIndex: model.selfAttendeeIndex,
-                  partstat: ICAL_ATTENDEE_STATUS.DECLINED,
-              }
-            : {
-                  type: isSelfAddressActive
-                      ? INVITE_ACTION_TYPES.CANCEL_INVITATION
-                      : INVITE_ACTION_TYPES.CANCEL_DISABLED,
-                  isProtonProtonInvite: model.isProtonProtonInvite,
-                  selfAddress: model.selfAddress,
-                  selfAttendeeIndex: model.selfAttendeeIndex,
-              };
-        return withLoadingDelete(onDelete(inviteActions));
+
+        if (model.isAttendee) {
+            return withLoadingDelete(
+                onDelete({
+                    type: isSelfAddressActive
+                        ? INVITE_ACTION_TYPES.DECLINE_INVITATION
+                        : INVITE_ACTION_TYPES.DECLINE_DISABLED,
+                    isProtonProtonInvite: model.isProtonProtonInvite,
+                    sendCancellationNotice,
+                    selfAddress: model.selfAddress,
+                    selfAttendeeIndex: model.selfAttendeeIndex,
+                    partstat: ICAL_ATTENDEE_STATUS.DECLINED,
+                })
+            );
+        }
+
+        return withLoadingDelete(
+            onDelete({
+                type: isSelfAddressActive ? INVITE_ACTION_TYPES.CANCEL_INVITATION : INVITE_ACTION_TYPES.CANCEL_DISABLED,
+                isProtonProtonInvite: model.isProtonProtonInvite,
+                selfAddress: model.selfAddress,
+                selfAttendeeIndex: model.selfAttendeeIndex,
+            })
+        );
     };
 
     const handleChangePartstat = (partstat: ICAL_ATTENDEE_STATUS) => {
-        const inviteActions = {
+        return onChangePartstat({
             isProtonProtonInvite: model.isProtonProtonInvite,
             type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
             partstat,
             selfAddress: model.selfAddress,
             selfAttendeeIndex: model.selfAttendeeIndex,
-        };
-
-        return onChangePartstat(inviteActions);
+        });
     };
 
     const dateHeader = useMemo(
@@ -210,111 +195,11 @@ const EventPopover = ({
         [start, end, isAllDay, isAllPartDay, formatTime]
     );
 
-    const editText = c('Edit event button tooltip').t`Edit event`;
-    const deleteText = c('Delete event button tooltip').t`Delete event`;
-    const duplicateText = c('Duplicate event button tooltip').t`Duplicate event`;
-    const reloadText = c('Reload event button tooltip').t`Reload event`;
-    const viewText = isSearchView
-        ? c('View event button tooltip').t`Navigate to event`
-        : c('View event button tooltip').t`Open in a new tab`;
+    const showEditButton = !isSearchView && getCanEditEvent({ isUnknownCalendar, isCalendarDisabled });
+    const showDeleteButton = !isSearchView && getCanDeleteEvent({ isOwnedCalendar, isCalendarWritable, isInvitation });
+    const showDuplicateButton = !!canDuplicateEvent;
+    const showViewEventButton = isSearchView || isDrawerApp;
 
-    const editButton = !isSearchView && getCanEditEvent({ isUnknownCalendar, isCalendarDisabled }) && (
-        <Tooltip title={editText}>
-            <ButtonLike
-                data-testid="event-popover:edit"
-                shape="ghost"
-                onClick={() => {
-                    onEdit(!!canDuplicateEvent);
-                }}
-                disabled={loadingDelete}
-                icon
-                size="small"
-            >
-                <Icon name="pen" alt={editText} />
-            </ButtonLike>
-        </Tooltip>
-    );
-    const deleteButton = !isSearchView && getCanDeleteEvent({ isOwnedCalendar, isCalendarWritable, isInvitation }) && (
-        <Tooltip title={deleteText}>
-            <ButtonLike
-                data-testid="event-popover:delete"
-                shape="ghost"
-                onClick={loadingDelete ? noop : handleDelete}
-                loading={loadingDelete}
-                icon
-                size="small"
-            >
-                <Icon name="trash" alt={deleteText} />
-            </ButtonLike>
-        </Tooltip>
-    );
-    const duplicateButton = canDuplicateEvent && (
-        <Tooltip title={duplicateText}>
-            <ButtonLike
-                data-testid="event-popover:duplicate"
-                shape="ghost"
-                onClick={onDuplicate}
-                disabled={loadingDelete}
-                icon
-                size="small"
-            >
-                <Icon name="squares" alt={duplicateText} />
-            </ButtonLike>
-        </Tooltip>
-    );
-
-    const reloadButton = !isSearchView && (
-        <Tooltip title={reloadText}>
-            <ButtonLike
-                data-testid="event-popover:refresh"
-                shape="ghost"
-                onClick={loadingRefresh ? noop : () => withLoadingRefresh(onRefresh())}
-                icon
-                size="small"
-            >
-                <ReloadSpinner refreshing={loadingRefresh} alt={reloadText} />
-            </ButtonLike>
-        </Tooltip>
-    );
-    const viewEventButton = (isSearchView || isDrawerApp) && (
-        <Tooltip title={viewText}>
-            {isSearchView ? (
-                <ButtonLike
-                    data-test-id="event-popover:open"
-                    shape="ghost"
-                    onClick={() => {
-                        if (!eventData || !veventComponent) {
-                            return;
-                        }
-                        onNavigateToEventFromSearch?.(eventData, veventComponent, eventRecurrence);
-                    }}
-                    icon
-                    size="small"
-                >
-                    <Icon name="arrow-out-square" size={3.5} />
-                </ButtonLike>
-            ) : (
-                <AppLink
-                    data-testid="event-popover:open-in-new-tab"
-                    to={linkTo || '/'}
-                    reloadDocument
-                    className="mr-2 button button-small button-ghost-weak button-for-icon"
-                >
-                    <Icon name="arrow-out-square" size={3.5} />
-                </AppLink>
-            )}
-        </Tooltip>
-    );
-
-    const actions = {
-        accept: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.ACCEPTED),
-        acceptTentatively: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.TENTATIVE),
-        decline: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.DECLINED),
-        retryCreateEvent: () => wait(0),
-        retryUpdateEvent: () => wait(0),
-    };
-
-    const containerClassName = 'eventpopover flex flex-column flex-nowrap';
     const mergedStyle = isSmallViewport ? undefined : style;
     const frequencyString = useMemo(() => {
         if (!veventComponent) {
@@ -338,19 +223,22 @@ const EventPopover = ({
     };
 
     if (eventReadError) {
-        const showReload = !naiveGetIsDecryptionError(eventReadError);
-
-        const actions =
-            deleteButton || showReload ? (
-                <>
-                    {showReload && <div className="flex flex-nowrap justify-end">{reloadButton}</div>}
-                    {deleteButton && <div className="flex flex-nowrap justify-end">{deleteButton}</div>}
-                </>
-            ) : null;
-
+        const showReload = !isSearchView && !naiveGetIsDecryptionError(eventReadError);
         return (
-            <PopoverContainer {...commonContainerProps} className={containerClassName}>
-                <PopoverHeader {...commonHeaderProps} actions={actions}>
+            <PopoverContainer {...commonContainerProps} className="eventpopover flex flex-column flex-nowrap">
+                <PopoverHeader
+                    {...commonHeaderProps}
+                    actions={
+                        <EventReloadErrorAction
+                            showDeleteButton={showDeleteButton}
+                            showReloadButton={showReload}
+                            loadingDelete={loadingDelete}
+                            loadingRefresh={loadingRefresh}
+                            onDelete={handleDelete}
+                            onRefresh={() => withLoadingRefresh(onRefresh())}
+                        />
+                    }
+                >
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
                 <span>{getEventErrorMessage(eventReadError)}</span>
@@ -368,21 +256,40 @@ const EventPopover = ({
         );
     }
 
-    const hasPopoverButtons = editButton || duplicateButton || deleteButton || viewEventButton;
-
     return (
-        <PopoverContainer {...commonContainerProps} className={containerClassName}>
+        <PopoverContainer {...commonContainerProps} className="eventpopover flex flex-column flex-nowrap">
             <PopoverHeader
                 {...commonHeaderProps}
                 actions={
-                    hasPopoverButtons && (
-                        <>
-                            {editButton}
-                            {duplicateButton}
-                            {deleteButton}
-                            {viewEventButton}
-                        </>
-                    )
+                    <>
+                        <PopoverEditButton
+                            showButton={showEditButton}
+                            loading={loadingDelete}
+                            onEdit={() => onEdit(!!canDuplicateEvent)}
+                        />
+                        <PopoverDuplicateButton
+                            showButton={showDuplicateButton}
+                            loading={loadingDelete}
+                            onDuplicate={onDuplicate}
+                        />
+                        <PopoverDeleteButton
+                            showButton={showDeleteButton}
+                            loading={loadingDelete}
+                            onDelete={handleDelete}
+                        />
+                        <PopoverViewButton
+                            showButton={showViewEventButton}
+                            start={start}
+                            isSearchView={isSearchView}
+                            eventData={eventData}
+                            onViewClick={() => {
+                                if (!eventData || !veventComponent) {
+                                    return;
+                                }
+                                onNavigateToEventFromSearch?.(eventData, veventComponent, eventRecurrence);
+                            }}
+                        />
+                    </>
                 }
             >
                 {isCancelled && (
@@ -434,7 +341,13 @@ const EventPopover = ({
                     </div>
                     <div className="ml-0 md:ml-auto">
                         <CalendarInviteButtons
-                            actions={actions}
+                            actions={{
+                                accept: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.ACCEPTED),
+                                acceptTentatively: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.TENTATIVE),
+                                decline: () => handleChangePartstat(ICAL_ATTENDEE_STATUS.DECLINED),
+                                retryCreateEvent: () => wait(0),
+                                retryUpdateEvent: () => wait(0),
+                            }}
                             partstat={userPartstat}
                             disabled={isCalendarDisabled || !isSelfAddressActive || isSearchView}
                         />
