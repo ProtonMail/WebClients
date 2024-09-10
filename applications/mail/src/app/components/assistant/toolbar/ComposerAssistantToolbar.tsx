@@ -121,7 +121,7 @@ const ComposerAssistantToolbar = ({
                             isAssistantExpanded={isAssistantExpanded}
                             prompt={prompt}
                             setPrompt={setPrompt}
-                            onSubmit={() => handleGenerate(undefined)}
+                            onSubmit={() => handleGenerate(isAssistantExpanded ? 'customRefine' : undefined)}
                             disabled={disableActions}
                             onCloseSpotlight={() => composerAssistantInitialSetupSpotlightRef.current?.hideSpotlight()}
                         />
