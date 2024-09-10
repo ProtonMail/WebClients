@@ -5,6 +5,18 @@
   },
   "contexts": {
     "Action": {
+      "A) B) C) D)": [
+        "A) B) C)"
+      ],
+      "a) b) c) d)": [
+        "a) b) c)"
+      ],
+      "A. B. C. D.": [
+        "ABC"
+      ],
+      "a. b. c. d.": [
+        "abc"
+      ],
       "Add comment": [
         "Dodaj komentar"
       ],
@@ -16,6 +28,9 @@
       ],
       "Adjust font size": [
         "Prilagodi velikost pisave"
+      ],
+      "Alphabetical": [
+        "Po abecednem redu"
       ],
       "and": [
         "in"
@@ -169,6 +184,9 @@
       ],
       "Right align": [
         "Poravnava na desno"
+      ],
+      "Roman": [
+        "Rimske številke"
       ],
       "Save": [
         "Shrani"
@@ -374,6 +392,12 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Pri nalaganju dokumenta je prišlo do napake. Urejevalnik je bil zaklenjen, da ne bi prišlo do okvare dokumenta. Ponovno naložite stran in poskusite znova."
+      ],
+      "Failed to export document.": [
+        "Izvoz dokumenta ni uspel."
+      ],
       "Failed to import HTML due to unknown error.": [
         "Zaradi neznane napake ni bilo mogoče uvoziti HTML."
       ],
