@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { ARGON2_PARAMS } from '@proton/crypto/lib';
 import { type Api, AuthMode, type MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { pullForkSession, setRefreshCookies as refreshTokens, setCookies } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -23,6 +24,7 @@ import getRandomString from '@proton/utils/getRandomString';
 import { AUTH_MODE } from './flags';
 import { LockMode } from './lock/types';
 import { type AuthSession, type AuthSessionVersion, SESSION_VERSION } from './session';
+import { encodeUserData } from './store';
 
 export type RequestForkOptions = {
     app: APP_NAMES;
@@ -55,7 +57,7 @@ export const requestFork = ({
         searchParams.append(ForkSearchParameters.PromptType, 'offline'); /* compute offline params */
     }
     if (payloadType === 'offline') {
-        searchParams.append(ForkSearchParameters.PayloadType, payloadType); /*offline payload */
+        searchParams.append(ForkSearchParameters.PayloadType, payloadType); /* offline payload */
     }
     if (payloadVersion === 2) searchParams.append(ForkSearchParameters.PayloadVersion, `${payloadVersion}`);
     if (localID !== undefined) searchParams.append(ForkSearchParameters.LocalID, `${localID}`);
@@ -159,6 +161,8 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<{ sessio
         UID,
         LocalID,
         UserID: User.ID,
+        userData: encodeUserData(User.Email, User.DisplayName),
+        lastUsedAt: getEpoch(),
         AccessToken: cookies ? '' : refresh.AccessToken,
         RefreshToken: cookies ? '' : refresh.RefreshToken,
         lockMode: LockMode.NONE,
