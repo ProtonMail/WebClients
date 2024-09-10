@@ -1,10 +1,10 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
-import { IdentityFieldType } from '@proton/pass/fathom';
+import { FieldType, IdentityFieldType } from '@proton/pass/fathom';
 import type { ItemContent, Maybe } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+import { oneOf, truthy } from '@proton/pass/utils/fp/predicates';
 import lastItem from '@proton/utils/lastItem';
 
 export interface IdentityFieldConfig {
@@ -79,7 +79,11 @@ export const autofillIdentityFields = (
 
     reorderedFields.forEach((field, idx) => {
         const { identityType } = field;
-        if (identityType === undefined || autofilled.has(identityType)) return;
+        const shouldAutofill = oneOf(null, FieldType.IDENTITY)(field.autofilled);
+
+        /** Autofill only for valid identity fields not yet filled in this sequence
+         * and not autofilled by another field type (ie: email via alias suggestion). */
+        if (!identityType || autofilled.has(identityType) || !shouldAutofill) return;
 
         const getValue = IDENTITY_FIELDS_CONFIG[identityType];
         const value = getValue(data);
@@ -88,7 +92,7 @@ export const autofillIdentityFields = (
          * This helps avoid potential blocking by browsers or websites that may
          * detect and prevent rapid, simultaneous field autofill. The delay increases
          * for each field, mimicking human-like interaction */
-        if (value) setTimeout(() => field.autofill(value), idx);
+        if (value) setTimeout(() => field.autofill(value, { type: FieldType.IDENTITY }), idx);
         autofilled.add(identityType);
     });
 };
