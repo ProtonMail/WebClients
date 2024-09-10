@@ -781,10 +781,10 @@
       "Refresh status": [
         "重新整理狀態"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "重新整理此頁面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "重新整理此頁面"
       ],
       "Reload": [
@@ -1549,14 +1549,6 @@
         "選擇你的年終優惠"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6TB 的儲存空間 (比其他方案多兩倍)"
@@ -1572,6 +1564,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "此${ plan }方案為時間限定"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
       ]
     },
     "bf2023: Offers": {
@@ -3285,6 +3285,9 @@
       ]
     },
     "Description": {
+      "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
+        "當您升級以自動刪除垃圾郵件和垃圾訊息及解鎖更多頂級功能"
+      ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "恭喜！您已賺取上限 ${ rewardsLimit } 個月免費 ${ plusPlanName }."
       ],
@@ -6665,10 +6668,10 @@
       "Data locked": [
         "資料已上鎖"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "專用伺服器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "專用伺服器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -7516,9 +7519,6 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "請知悉，若您刪除 ${ nameDeleted } 篩選器，我們將會停止處理任何有關於此篩選器的自動化操作。"
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
       ],
       "please open a support ticket": [
         "請開啟支援票卷"
@@ -10588,9 +10588,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "美元"
-      ],
       "Euro": [
         "歐元"
       ],
@@ -10798,26 +10795,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Get started for ${ price }": [
-        "使用${ price }取得"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "繼續使用免費方案"
@@ -10845,6 +10822,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Get started for ${ price }": [
+        "使用${ price }取得"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -10920,6 +10917,12 @@
       "${ size } storage": [
         "${ size } 儲存空間"
       ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType }-於${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType }-於全部${ BRAND_NAME }服務"
+      ],
       "1 TB secure storage": [
         "1TB安全儲存空間"
       ],
@@ -10962,6 +10965,9 @@
       "All ${ BRAND_NAME } services": [
         "全部${ BRAND_NAME }服務"
       ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
+      ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "全部頂級版${ BRAND_NAME }服務。一個簡單的訂購授權。"
       ],
@@ -11003,6 +11009,9 @@
       ],
       "Contact groups management": [
         "聯絡人群組管理"
+      ],
+      "Custom and secure business email": [
+        "自訂和自訂商用電子郵件"
       ],
       "Custom domains for email aliases": [
         "電子郵件別名的自訂網域"
@@ -11109,6 +11118,9 @@
       "No-logs policy": [
         "零日誌政策"
       ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
       ],
@@ -11141,6 +11153,9 @@
       ],
       "Protect ${ n } device at a time": [
         "同時保護 ${ n } 台裝置"
+      ],
+      "Quickly craft replies": [
+        "快速替回復打草稿"
       ],
       "Recover previous file versions": [
         "復原先前的檔案版本"
@@ -11177,6 +11192,9 @@
       ],
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
         "於${ vpnServersCountData.paid.countries }+國家的伺服器"
+      ],
+      "Share files with no size limit": [
+        "分享檔案無大小限制"
       ],
       "Sign in as user": [
         "登入為使用者"
@@ -11445,14 +11463,6 @@
         "您選擇的方案：${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }滿意體驗"
-      ],
-      "Your account's usage": [
-        "您帳號的使用情況"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "要刪除帳號？"
@@ -11471,6 +11481,17 @@
       ],
       "Unlock premium features by upgrading": [
         "透過升級來解鎖高級功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }滿意體驗"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "使用${ price }取得Mail Plus"
+      ],
+      "Your account's usage": [
+        "您帳號的使用情況"
       ]
     },
     "new_plans: tooltip": {
@@ -14855,10 +14876,10 @@
       "Card verification": [
         "信用卡驗證"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "全部擷取電郵位址"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "全部擷取電郵位址"
       ],
       "Change login password": [

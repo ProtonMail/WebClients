@@ -811,11 +811,11 @@
       "Refresh status": [
         "Обновить статус"
       ],
-      "Refresh the page": [
-        "Обновить страницу"
-      ],
       "refresh the page": [
         "обновить страницу"
+      ],
+      "Refresh the page": [
+        "Обновить страницу"
       ],
       "Reload": [
         "Перезагрузить"
@@ -1228,6 +1228,9 @@
       "View plans details": [
         "Посмотреть детали тарифа"
       ],
+      "View recovery settings": [
+        "Просмотреть настройки восстановления"
+      ],
       "Void": [
         "Аннулировать"
       ],
@@ -1618,14 +1621,6 @@
         "Выберите Новогоднее предложение"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Хранилище размером 6 ТБ (в 2 раза больше, чем с другими тарифами)"
@@ -1647,6 +1642,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Тариф ${ plan } вернулся на ограниченное время"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Извини, это предложение недоступно с твоим текущим планом."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Извини, это предложение недоступно с твоим текущим планом. Но ты можешь получить **${ discountPercentage } на ${ plan.Title }** при подписке на **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6642,6 +6645,9 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"Напиши мне в ${ MAIL_APP_NAME }\" или \"Отправь мне личное сообщение\"."
       ],
+      "Add a recovery ${ type }": [
+        "Добавить ${ type } для восстановления"
+      ],
       "Add a recovery email address": [
         "Добавить адрес эл. почты для восстановления доступа"
       ],
@@ -7053,11 +7059,11 @@
       "Data locked": [
         "Данные заблокированы"
       ],
-      "dedicated servers": [
-        "выделенные серверы"
-      ],
       "Dedicated servers": [
         "Выделенные серверы"
+      ],
+      "dedicated servers": [
+        "выделенные серверы"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
@@ -7073,6 +7079,9 @@
         "Удаление ${ deletedServerCount } шлюзовых серверов",
         "Удаление ${ deletedServerCount } шлюзовых серверов",
         "Удаление ${ deletedServerCount } шлюзовых серверов"
+      ],
+      "Disable recovery by ${ type }": [
+        "Отключить восстановление с помощью ${ type }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Отключение двухфакторной аутентификации сделает вашу учетную запись менее защищенной. Продолжайте только при крайней необходимости."
@@ -7896,6 +7905,15 @@
       "Paid for a monthly plan": [
         "Оплачен тариф на месяц"
       ],
+      "Pass Monitor - custom email confirmed": [
+        "Pass Monitor - пользовательский адрес эл. почты подтверждён"
+      ],
+      "Pass Monitor - custom email created": [
+        "Pass Monitor - создан пользовательский адрес эл. почты"
+      ],
+      "Pass Monitor - custom email deleted": [
+        "Pass Monitor - пользовательский адрес эл. почты удален"
+      ],
       "password": [
         "пароль"
       ],
@@ -7964,9 +7982,6 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Обратите внимание, что если вы удалите этот фильтр ${ nameDeleted }, мы перестанем обрабатывать все автоматические действия, которые он запускает."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету."
       ],
       "please open a support ticket": [
         "откройте заявку в службу поддержки"
@@ -8726,6 +8741,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Проверка будет происходить в новой вкладке. Отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
+      ],
+      "Verify ${ type }": [
+        "Проверить ${ type }"
       ],
       "Verify domain": [
         "Проверить домен"
@@ -11301,9 +11319,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "Доллар"
-      ],
       "Euro": [
         "Евро"
       ],
@@ -11520,26 +11535,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Начните с ${ price }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Продолжить с Free"
@@ -11567,6 +11562,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Начните с ${ price }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -11704,6 +11719,9 @@
       ],
       "1 user": [
         "1 пользователь"
+      ],
+      "10 email addresses/aliases": [
+        "10 адресов электронной почты или псевдонимов"
       ],
       "10-year file version history": [
         "10-летняя история версий файла"
@@ -12091,6 +12109,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 пользовательский домен электронной почты"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
       ],
@@ -12269,17 +12290,6 @@
         "Вы выбрали тариф: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Пробная версия ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Оформите Mail Plus за ${ price }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -12298,6 +12308,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Пробная версия ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Оформите Mail Plus за ${ price }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -14133,8 +14154,14 @@
       "There was an error verifying your recovery email": [
         "Произошла ошибка при подтверждении резервного адреса электронной почты"
       ],
+      "There was an error verifying your recovery phone": [
+        "Произошла ошибка при подтверждении резервного номера телефона"
+      ],
       "to automatically recover your data when you log into a trusted device": [
         "чтобы автоматически восстановить данные при входе на доверенное устройство"
+      ],
+      "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
+        "Чтобы подтвердить, что номер телефона принадлежит вам, введите код подтверждения, отправленный на номер ${ boldPhoneNumber }."
       ],
       "to recover your account and data if you're ever locked out": [
         "чтобы восстановить аккаунт и данные, если вы когда-нибудь потеряете доступ"
@@ -14156,6 +14183,9 @@
       ],
       "Verify your recovery phone number": [
         "Подтвердите номер телефона для восстановления"
+      ],
+      "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
+        "Мы столкнулись с ошибкой при подтверждении резервного номера телефона. Попробуйте еще раз позднее или свяжитесь со службой поддержки, если проблема сохраняется."
       ],
       "When you enable device-based recovery, ${ BRAND_NAME } will store an encrypted backup keychain as a file in your browser’s web storage.": [
         "Когда вы включаете восстановление на базе устройств, ${ BRAND_NAME } сохраняет зашифрованный резервный ключ как файл в хранилище вашего браузера."
@@ -14228,6 +14258,9 @@
       ],
       "Your recovery phone has been enabled": [
         "Резервный номер телефона включен"
+      ],
+      "Your recovery phone is set": [
+        "Резервный номер телефона настроен"
       ]
     },
     "saml: Action": {
@@ -16457,10 +16490,10 @@
       "Card verification": [
         "Проверка карты"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Адрес для приема всей почты домена"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Адрес для приема всей почты домена"
       ],
       "Change login password": [
@@ -17795,11 +17828,83 @@
       ]
     },
     "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Администраторы не могут получить доступ к данным частных пользователей и не могут сбросить их пароль."
+      ],
+      "An administrator of ${ orgName } wants to enable admin access for your account.": [
+        "Администратор ${ orgName } хочет включить доступ администратора к вашей учетной записи."
+      ],
+      "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
+        "Администратор организации **${ orgName }** (**${ adminEmail }**) хочет включить доступ администратора к своему аккаунту."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Сделав пользователя частным, вы не сможете помочь ему восстановить доступ к своим данным или аккаунту."
+      ],
+      "Cancel": [
+        "Отменить"
+      ],
       "Delete request": [
         "Удалить запрос"
       ],
+      "Delete request to access user data?": [
+        "Удалить запрос на доступ к данным пользователя?"
+      ],
+      "Enable admin access?": [
+        "Включить доступ администратора?"
+      ],
+      "Enable administrator access": [
+        "Включите доступ администратора"
+      ],
+      "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
+        "Если вы потеряете доступ к своим учетным данным, администраторы вашей организации смогут сбросить пароль и восстановить доступ к вашему аккаунту."
+      ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Как только пользователь даст согласие, вы сможете помочь ему восстановить доступ к аккаунту или управлять его данными."
+      ],
+      "Organization key must be activated to request data access": [
+        "Для запроса доступа к данным необходимо активировать ключ организации"
+      ],
+      "Pending admin access": [
+        "Ожидание доступа администратора"
+      ],
+      "Private user": [
+        "Частный пользователь"
+      ],
+      "reject": [
+        "отказать"
+      ],
+      "Request to manage account sent, awaiting user approval": [
+        "Запрос на управление аккаунтом отправлен, ожидается одобрение пользователя"
+      ],
+      "Request user permission for data access": [
+        "Запрос разрешения пользователя на доступ к данным"
+      ],
+      "Revoke access": [
+        "Отозвать доступ"
+      ],
+      "Revoke administrator access?": [
+        "Отозвать доступ администратора?"
+      ],
       "Send request": [
         "Отправить запрос"
+      ],
+      "The user must have an address to request data access": [
+        "Пользователь должен иметь адрес, чтобы запросить доступ к данным"
+      ],
+      "This will delete the pending request for administrator access to the user’s data or password reset.": [
+        "Это приведет к удалению ожидающего запроса на доступ администратора к данным пользователя или сброс пароля."
+      ],
+      "This will revoke the administrator permission to manage this user's account.": [
+        "Это отменит разрешение администратора на управление аккаунтом этого пользователя."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Чтобы продолжить, вам нужно будет запросить у пользователя разрешение на доступ к его данным или сброс пароля."
+      ],
+      "View request": [
+        "Просмотр запроса"
+      ],
+      "You can ${ reject } this request if you do not wish to proceed.": [
+        "Вы можете ${ reject } этот запрос, если не хотите продолжать."
       ]
     },
     "Update font modal": {
