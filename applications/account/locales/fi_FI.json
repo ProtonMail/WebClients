@@ -811,10 +811,10 @@
       "Refresh status": [
         "Päivitä tila"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "Päivitä sivu"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "Päivitä sivu"
       ],
       "Reload": [
@@ -1616,14 +1616,6 @@
         "Valitse vuoden lopun tarjouksesi"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 Tt tallennustilaa (2 kertaa enemmän kuin missään muussa tilauksessa)"
@@ -1645,6 +1637,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } -tilaus on taas saatavilla vain rajoitetun ajan"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Valitettavasti tätä tarjousta ei ole saatavilla nykyiseen tilaukseesi. Voit kuitenkin saada **${ discountPercentage } alennuksen ${ plan.Title }**, kun tilaat **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -4635,7 +4635,7 @@
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
       ],
       "Unable to upload file": [
-        "Tiedostoa ei voida lähettää"
+        "Tiedoston lähetys ei onnistu"
       ],
       "Unexpected error, we can't import the contacts": [
         "Odottamaton virhe, emme voi tuoda yhteystietoja"
@@ -5083,7 +5083,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "3 Tt kokonaistallennustila"
+        "Yhteensä 3 Tt tallennustilaa"
       ]
     },
     "familyOffer_2023: Title": {
@@ -7048,11 +7048,11 @@
       "Data locked": [
         "Tiedot on lukittu"
       ],
-      "dedicated servers": [
-        "omia palvelimia"
-      ],
       "Dedicated servers": [
         "Omat palvelimet"
+      ],
+      "dedicated servers": [
+        "omia palvelimia"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Omat palvelimet kiinteillä IP-osoitteilla voidaan lisätä yksityisiin yhdyskäytäviin tarkkaa käytönvalvontaa varten."
@@ -7966,9 +7966,6 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Huomioithan, että suodattimen ${ nameDeleted } poisto lopettaa myös kaikkien sen käynnistämien automaattisten toimintojen käsittelyn."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
       "please open a support ticket": [
         "avaa tukipyyntö"
@@ -11011,7 +11008,7 @@
         "${ driveStorage }si on täynnä. Tallentaaksesi ja synkronoidaksesi tiedostoja, vapauta tilaa tai ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "${ mailStorage } -tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
+        "${ mailStorage }si on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Tilisi on vaarassa poistua. Pyydä ylläpitäjääsi päivittämään tilauksesi, jotta vältät tietojen menettämisen. ${ cta }"
@@ -11302,9 +11299,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "dollaria"
-      ],
       "Euro": [
         "euroa"
       ],
@@ -11515,26 +11509,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Aloita hintaan ${ price }"
-      ],
-      "Upgrade": [
-        "Päivitä tilaus"
-      ],
-      "Upgrade now": [
-        "Päivitä tilaus nyt"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Jatka ilmaisella"
@@ -11562,6 +11536,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Aloita hintaan ${ price }"
+      ],
+      "Upgrade": [
+        "Päivitä tilaus"
+      ],
+      "Upgrade now": [
+        "Päivitä tilaus nyt"
       ]
     },
     "new_plans: feature": {
@@ -12226,17 +12220,6 @@
         "Valitsemasi tilaus: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title }-kokeilu"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Hanki Mail Plus hintaan ${ price }"
-      ],
-      "Your account's usage": [
-        "Tilisi käyttö"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Poistetaanko tili?"
@@ -12255,6 +12238,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Avaa premium-ominaisuudet päivittämällä tilauksesi"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title }-kokeilu"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Hanki Mail Plus hintaan ${ price }"
+      ],
+      "Your account's usage": [
+        "Tilisi käyttö"
       ]
     },
     "new_plans: tooltip": {
@@ -14832,7 +14826,7 @@
     },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
-        "Hakanut ${ ownerName }"
+        "Jakanut ${ ownerName }"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -15140,7 +15134,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } tallennustila"
+        "${ app }-tallennustila"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage }stasi on käytetty ${ percentage } %"
@@ -15167,10 +15161,10 @@
         "Jos haluat lähettää tai vastaanottaa sähköposteja, vapauta tilaa tai ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Jos haluat lähettää tai synkronoida tiedostoja, vapauta tilaa tai ${ upgrade }"
+        "Tallentaaksesi ja synkronoidaksesi lisää tiedostoja, vapauta tilaa tai ${ upgrade }."
       ],
       "Try out ${ app } to its full potential": [
-        "Kokeile ${ app } -sovelluksen kaikkia ominaisuuksia"
+        "Kokeile ${ app }-sovelluksen kaikkia ominaisuuksia"
       ],
       "upgrade for more storage": [
         "hanki lisää päivittämällä tilauksesi"
@@ -15195,13 +15189,13 @@
         "${ appStorage }si on täynnä"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } on ${ percentage }% täynnä. ${ cta }."
+        "${ storage }stasi on käytössä ${ percentage } %. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "${ storage } on täynnä. ${ cta }."
+        "${ storage }si on täynnä. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Tallennustilasi on ${ percentage }% täynnä. ${ cta }."
+        "Tallennustilastasi on käytössä ${ percentage } %. ${ cta }."
       ],
       "Your storage is full": [
         "Tallennustilasi on täynnä"
@@ -16406,10 +16400,10 @@
       "Card verification": [
         "Kortin vahvistus"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Nappaa kaikki -osoite"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Nappaa kaikki -osoite"
       ],
       "Change login password": [
@@ -17749,11 +17743,17 @@
       ]
     },
     "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
+      ],
       "An administrator of ${ orgName } wants to enable admin access for your account.": [
         "${ orgName }:n ylläpitäjä haluaa antaa tilillesi ylläpitäjän oikeudet."
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
         "Organisaation **${ orgName }** ylläpitäjä (**${ adminEmail }**) haluaa antaa tilillesi ylläpitäjän oikeudet."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Jos teet käyttäjästä yksityisen, et voi enää auttaa häntä tietojen tai käyttäjätilin palautuksessa."
       ],
       "Cancel": [
         "Peruuta"
@@ -17761,8 +17761,17 @@
       "Delete request": [
         "Poista pyyntö"
       ],
+      "Delete request to access user data?": [
+        "Poistetaanko käyttäjän tietojen käsittelyoikeuspyyntö?"
+      ],
+      "Enable admin access?": [
+        "Myönnetäänkö ylläpito-oikeudet?"
+      ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Jos menetät kirjautumistietosi, organisaatiosi ylläpitäjä voi nollata salasanasi ja palauttaa pääsysi tilillesi."
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisaatioavain on aktivoitava tietojen käyttöoikeuden anomiseksi"
       ],
       "Private user": [
         "Yksityinen käyttäjä"
@@ -17773,11 +17782,20 @@
       "Request to manage account sent, awaiting user approval": [
         "Tilinhallintapyyntö lähetetty, odotetaan käyttäjän hyväksyntää"
       ],
+      "Request user permission for data access": [
+        "Pyydä käyttäjältä tietojen käsittelyoikeutta"
+      ],
       "Revoke access": [
         "Mitätöi käyttöoikeus"
       ],
+      "Revoke administrator access?": [
+        "Mitätöidäänkö ylläpito-oikeus?"
+      ],
       "Send request": [
         "Lähetä pyyntö"
+      ],
+      "The user must have an address to request data access": [
+        "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tämä mitätöi ylläpitäjän oikeuden hallita tämän käyttäjän tiliä."
@@ -17917,6 +17935,9 @@
       ],
       "It's you": [
         "Sinä"
+      ],
+      "Pending admin access": [
+        "Odottaa ylläpito-oikeutta"
       ],
       "Private": [
         "Yksityinen"
