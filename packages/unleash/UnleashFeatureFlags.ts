@@ -98,6 +98,7 @@ enum MailFeatureFlag {
     ComposerAssistantFormatting = 'ComposerAssistantFormatting',
     WalletRightSidebarLink = 'WalletRightSidebarLink',
     ProtonTips = 'ProtonTips',
+    MailOnboarding = 'MailOnboarding',
 }
 
 enum AdminFeatureFlag {

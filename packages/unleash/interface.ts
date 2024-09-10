@@ -1,21 +1,12 @@
-export type FeatureFlagPayload = {
-    type: string;
-    value: string;
-};
-
-export type FeatureFlagVariant = {
+type FeatureFlagVariant = {
     name: string;
     enabled: boolean;
-    payload?: FeatureFlagPayload;
+    // Type when we will want to play with payloads
+    payload?: unknown;
 };
 
 export type FeatureFlagToggle = {
     name: string;
     enabled: boolean;
-    variant: FeatureFlagVariant;
-};
-
-export type FeatureFlagsResponse = {
-    Code: number;
-    toggles: FeatureFlagToggle[];
+    variant?: FeatureFlagVariant | null;
 };

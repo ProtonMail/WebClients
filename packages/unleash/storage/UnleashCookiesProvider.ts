@@ -1,62 +1,58 @@
-import { addDays } from 'date-fns';
+import { addDays, endOfDay } from 'date-fns';
 
 import { deleteCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 
-import type { FeatureFlag } from '../UnleashFeatureFlags';
 import type { FeatureFlagToggle } from '../interface';
 
-const WHITELISTED_COOKIES_FLAGS: FeatureFlag[] = [];
-
-const getFlagData = (data?: FeatureFlagToggle) => {
-    if (!data) {
-        return undefined;
-    }
-
-    const { name } = data;
-    const variant = data.variant;
-    const variantValue = variant.payload?.value;
-
-    return {
-        name,
-        enabledVariant: !!(variant.enabled && variantValue),
-        hasVariant: !!variantValue,
-        variantValue,
-    };
-};
+export const UNLEASH_FLAG_COOKIE_NAME = 'Features';
 
 /**
- * Some flags needs to be stored in cookies to be available for the data team
- * This function will save the whitelisted flags in the cookie.
- * The data is stored in a comma separated list, and is as follow:
- *    - featureName:[variantName], if the flag has a variant
- *    - featureName, if the flag doesn't have a variant
- * @param data - Unleash flags data
+ * Invalid characters list
+ * ",": Cookies don't support commas
+ * " ": Cookies don't support spaces
+ * ":": We already use colon to differentiate our flag name and variant
  */
-const saveWhitelistedFlagInCookies = (data: FeatureFlagToggle[]) => {
-    const flagCookieName = 'unleashFlags';
+const UNLEASH_FLAG_INVALID_CHARS = [',', ':', ' '];
 
-    let cookieValue = [];
-    for (const flag of WHITELISTED_COOKIES_FLAGS) {
-        const value = data.find((item: FeatureFlagToggle) => item.name === flag);
-        const flagData = getFlagData(value);
+const isValidString = (value: string) => UNLEASH_FLAG_INVALID_CHARS.every((char) => !value.includes(char));
 
-        if (flagData && flagData.enabledVariant) {
-            cookieValue.push(`${flagData.name}:[${flagData.variantValue}]`);
-        } else if (flagData && !flagData.hasVariant) {
-            cookieValue?.push(flagData.name);
+/**
+ * @description Stores whitelisted feature flags in a cookie for the data team.
+ * Data is stored in a comma-separated list with the following format: `flagName:variantName`
+ *
+ * @param data - List of flags fetched by the Unleash client
+ * @param whitelistedFlags - List of whitelisted flags defined in the app
+ */
+const saveWhitelistedFlagInCookies = (data: FeatureFlagToggle[], whitelistedFlags: string[]) => {
+    const enabledFlags = [];
+
+    for (const flagName of whitelistedFlags) {
+        // Map whitelisted flags to valid cookie entries
+        const flagData = data.find((flag) => flag.name === flagName);
+
+        // If variant is enabled, save flag name + variant
+        if (
+            flagData?.enabled &&
+            flagData?.variant?.enabled &&
+            isValidString(flagData.name) &&
+            isValidString(flagData.variant.name)
+        ) {
+            enabledFlags.push(`${flagData.name}:${flagData.variant.name}`);
         }
     }
 
-    if (cookieValue?.length) {
-        setCookie({
-            cookieName: flagCookieName,
-            cookieValue: cookieValue.join(','),
+    if (enabledFlags.length > 0) {
+        const cookie = {
+            domain: window.location.hostname,
+            cookieName: UNLEASH_FLAG_COOKIE_NAME,
+            cookieValue: enabledFlags.join(','),
             path: '/',
             secure: true,
-            expirationDate: addDays(new Date(), 30).toUTCString(),
-        });
+            expirationDate: endOfDay(addDays(new Date(), 30)).toUTCString(),
+        };
+        setCookie(cookie);
     } else {
-        deleteCookie(flagCookieName);
+        deleteCookie(UNLEASH_FLAG_COOKIE_NAME);
     }
 };
 
