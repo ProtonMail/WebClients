@@ -181,6 +181,12 @@
       "Deselect": [
         "Anular la selección"
       ],
+      "Disable instead": [
+        "Desactivar en su lugar"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Deshabilitar este alias para dejar de recibir correos electrónicos enviados a este alias"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -198,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Activar el monitoreo de la Dark Web"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Habilitar este alias para recibir correos electrónicos enviados a este alias"
       ],
       "Entire vault": [
         "Caja fuerte completa"
@@ -367,6 +376,9 @@
       "Pin item": [
         "Anclar elemento"
       ],
+      "Please retry": [
+        "Inténtalo de nuevo."
+      ],
       "Refresh the page": [
         "Actualizar la página"
       ],
@@ -475,9 +487,6 @@
       "Show": [
         "Mostrar"
       ],
-      "Sign back in": [
-        "Volver a iniciar sesión"
-      ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sesión con ${ BRAND_NAME }"
       ],
@@ -495,6 +504,9 @@
       ],
       "Submitting report...": [
         "Enviando informe..."
+      ],
+      "Sync aliases": [
+        "Sincronizar alias"
       ],
       "Transfer ownership": [
         "Transferir la propiedad"
@@ -677,6 +689,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No se ha podido analizar el archivo de ${ provider }. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Los alias no se pueden actualizar en este momento. Inténtalo más tarde"
+      ],
       "Alias options could not be resolved": [
         "No se han podido resolver las opciones de alias."
       ],
@@ -801,6 +816,9 @@
       ],
       "Failed to restore items from trash": [
         "Error al restaurar elementos en la papelera"
+      ],
+      "Failed to sync aliases": [
+        "Error al sincronizar alias"
       ],
       "Failed to transfer this vault's ownership.": [
         "Error al transferir la propiedad de esta caja fuerte."
@@ -1150,6 +1168,21 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Después de importar tus datos, puedes eliminar el archivo CSV que contiene tus contraseñas por seguridad."
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias deshabilitado satisfactoriamente. No recibirás correos electrónicos de ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias habilitado satisfactoriamente. Ahora puedes recibir correos electrónicos de ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "La sincronización de alias entre ${ BRAND_NAME } y SimpleLogin está activa."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Los alias en la papelera seguirán reenviando correos electrónicos. Si quieres dejar de recibir correos electrónicos de esta dirección, deshabilítala."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "(${ aliasCount }) alias sin sincronizar"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Los alias con dominios personalizados no son monitoreados. Añádelos como correo electrónico personalizado para monitorearlos."
@@ -1834,8 +1867,15 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estamos teniendo problemas en sincronizar los datos a tu almacenamiento local. Asegúrate de tener suficiente espacio en el disco para que ${ PASS_SHORT_APP_NAME } funcione correctamente."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Hemos detectado que tienes ${ aliasCount }  alias en SimpleLogin pero no aparece en ${ PASS_APP_NAME }. ¿Quieres importarlo?",
+        "Hemos detectado que tienes ${ aliasCount }  alias en SimpleLogin pero no aparecen en ${ PASS_APP_NAME }. ¿Quieres importarlos?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Hemos enviado un código de verificación a ${ email }. Ingresa el código abajo:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Cuando creas/editas un inicio de sesión en ${ PASS_APP_NAME } el campo 'nombre de usuario' siempre es visible."
       ],
       "You are about to create:": [
         "Vas a crear:"
@@ -1903,6 +1943,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } alias"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } carácter",
         "${ config.options.length } caracteres"
@@ -2005,6 +2049,9 @@
       "Alphabetical": [
         "Por orden alfabético"
       ],
+      "Always show username field": [
+        "Mostrar el nombre de usuario siempre"
+      ],
       "Application logs": [
         "Registros de la aplicación"
       ],
@@ -2104,6 +2151,9 @@
       "Domain": [
         "Dominio"
       ],
+      "Don't remind me again": [
+        "No volver a recordarme"
+      ],
       "Download logs": [
         "Descargar los registros"
       ],
@@ -2127,6 +2177,9 @@
       ],
       "Enable offline access": [
         "Activar el acceso sin conexión"
+      ],
+      "Enter email or username": [
+        "Introduzca correo electrónico o nombre de usuario"
       ],
       "Expiration date": [
         "Fecha de expiración"
@@ -2428,6 +2481,9 @@
       "Select preferred language": [
         "Seleccionar el idioma preferido"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Seleccionar la bóveda de SimpleLogin donde se importarán los alias"
+      ],
       "Select your password manager": [
         "Selecciona tu gestor de contraseñas"
       ],
@@ -2475,6 +2531,9 @@
       ],
       "Support": [
         "Soporte"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Sincronizar alias con SimpleLogin"
       ],
       "Tax number": [
         "Número de identificación fiscal"
@@ -2771,6 +2830,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Sincronización de alias habilitado satisfactoriamente. Los alias de SimpleLogin pueden tardar un tiempo en sincronizarse"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Las cajas fuertes no pueden contener más de ${ vault.targetMaxMembers } usuario.",
         "Las cajas fuertes no pueden contener más de ${ vault.targetMaxMembers } usuarios."
@@ -3018,6 +3080,9 @@
       "Suggestions": [
         "Sugerencias"
       ],
+      "Sync alias": [
+        "Sincronizar alias"
+      ],
       "Transfer ownership": [
         "Transferir la propiedad"
       ],
@@ -3179,6 +3244,9 @@
       "Missing alias suffix": [
         "Falta el sufijo del alias."
       ],
+      "Move to trash": [
+        "Mover a la papelera"
+      ],
       "No items": [
         "No hay elementos."
       ],
@@ -3230,8 +3298,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo. No envíes ninguna información confidencial."
       ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Se ha producido un error al iniciar ${ PASS_APP_NAME }. Intenta refrescar o recargar la extensión."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "El prefijo del alias no puede tener más de 40 caracteres."
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "El alias ${ aliasEmail } está siendo usado por el inicio de sesión ${ relatedLoginName }."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Esta dirección de correo ya no será monitoreada para vulneraciones de datos."

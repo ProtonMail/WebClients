@@ -181,6 +181,12 @@
       "Deselect": [
         "Зняць выбар"
       ],
+      "Disable instead": [
+        "Адключыць"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Адключыць гэты псеўданім каб спыніць атрыманне лістоў, якія адпраўляюцца на яго"
+      ],
       "Discard": [
         "Адхіліць"
       ],
@@ -198,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Уключыць Dark Web Monitoring"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Уключыць гэты псеўданім каб зноў пачаць атрымліваць лісты, якія адпраўляюцца на яго"
       ],
       "Entire vault": [
         "Усё сховішча"
@@ -367,6 +376,9 @@
       "Pin item": [
         "Замацаваць элемент"
       ],
+      "Please retry": [
+        "Паспрабуйце яшчэ раз"
+      ],
       "Refresh the page": [
         "Абнавіць старонку"
       ],
@@ -475,9 +487,6 @@
       "Show": [
         "Паказаць"
       ],
-      "Sign back in": [
-        "Увайсці яшчэ раз"
-      ],
       "Sign in with ${ BRAND_NAME }": [
         "Увайсці з ${ BRAND_NAME }"
       ],
@@ -495,6 +504,9 @@
       ],
       "Submitting report...": [
         "Адпраўка справаздачы..."
+      ],
+      "Sync aliases": [
+        "Сінхранізаваць псеўданімы"
       ],
       "Transfer ownership": [
         "Перадаць права ўласнасці"
@@ -679,6 +691,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Не атрымалася прааналізаваць файл ${ provider }. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "У цяперашні момант немагчыма абнавіць псеўданім. Паспрабуйце яшчэ раз пазней"
+      ],
       "Alias options could not be resolved": [
         "Не атрымалася вызначыць параметры псеўданіма"
       ],
@@ -807,6 +822,9 @@
       ],
       "Failed to restore items from trash": [
         "Не ўдалося аднавіць элементы са сметніцы"
+      ],
+      "Failed to sync aliases": [
+        "Не ўдалося сінхранізаваць псеўданімы"
       ],
       "Failed to transfer this vault's ownership.": [
         "Збой перадачы права ўласнасці гэтага сховішча"
@@ -1178,6 +1196,21 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Вы можаце выдаліць файл CSV, які змяшчае вашы паролі ў мэтах бяспекі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Псеўданім паспяхова адключаны. Вы больш не будзеце атрымліваць лісты адпраўленыя на ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Псеўданім паспяхова ўключаны. Цяпер вы зноў можаце атрымліваць лісты адпраўленыя на ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Сінхранізацыя псеўданімаў паміж вашымі ўліковымі запісамі ${ BRAND_NAME } і SimpleLogin знаходзіцца ў актыўным стане."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Псеўданімы перамешчаныя ў сметніцу працягнуць перасылаць лісты. Спачатку адключыце псеўданім, калі хочаце спыніць атрыманне лістоў на гэты адрас."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Псеўданімы не сінхранізаваныя (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Псеўданімы з карыстальніцкіх даменаў не адсочваюцца. Дадайце іх як карыстальніцкія адрасы электроннай пошты для назірання."
@@ -1872,8 +1905,17 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Узніклі праблемы сінхранізацыі даных з вашым лакальным сховішчам. Пераканайцеся, што ў вас дастаткова месца на дыску для бесперабойнай працы ${ PASS_SHORT_APP_NAME }."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданім, які прысутнічае ў SimpleLogin, але адсутнічае ў ${ PASS_APP_NAME }. Хочаце імпартаваць яго?",
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімы, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Мы адправілі вам праверачны код на ${ email }. Увядзіце яго ніжэй:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Пры стварэнні або рэдагаванні запісу ўваходу ў ${ PASS_APP_NAME } поле ўводу 'імя карыстальніка' заўсёды будзе бачным."
       ],
       "You are about to create:": [
         "Вы збіраецеся стварыць:"
@@ -1943,6 +1985,12 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } псеўданім",
+        "${ aliasCount } псеўданімы",
+        "${ aliasCount } псеўданімаў",
+        "${ aliasCount } псеўданімаў"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } сімвал",
         "${ config.options.length } сімвалы",
@@ -2057,6 +2105,9 @@
       "Alphabetical": [
         "Па алфавіце"
       ],
+      "Always show username field": [
+        "Заўсёды паказваць поле імя карыстальніка"
+      ],
       "Application logs": [
         "Журналы праграмы"
       ],
@@ -2156,6 +2207,9 @@
       "Domain": [
         "Дамен"
       ],
+      "Don't remind me again": [
+        "Больш не нагадваць"
+      ],
       "Download logs": [
         "Спампаваць журналы"
       ],
@@ -2179,6 +2233,9 @@
       ],
       "Enable offline access": [
         "Уключыць доступ па-за сеткай"
+      ],
+      "Enter email or username": [
+        "Увядзіце электронную пошту або імя карыстальніка"
       ],
       "Expiration date": [
         "Тэрмін дзеяння"
@@ -2480,6 +2537,9 @@
       "Select preferred language": [
         "Выберыце пажаданую мову"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Выберыце сховішча ў якое будуць імпартаваны псеўданімы SimpleLogin"
+      ],
       "Select your password manager": [
         "Выберыце менеджар пароляў"
       ],
@@ -2527,6 +2587,9 @@
       ],
       "Support": [
         "Падтрымка"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Сінхранізаваць псеўданімы з SimpleLogin"
       ],
       "Tax number": [
         "Нумар падаткаплацельшчыка"
@@ -2827,6 +2890,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Сінхранізацыя псеўданімаў паспяхова ўключана. Можа спатрэбіцца некаторы час, каб сінхранізаваць псеўданімы SimpleLogin"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальніка.",
         "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў.",
@@ -3078,6 +3144,9 @@
       "Suggestions": [
         "Прапановы"
       ],
+      "Sync alias": [
+        "Сінхранізацыя псеўданімаў"
+      ],
       "Transfer ownership": [
         "Перадаць права ўласнасці"
       ],
@@ -3241,6 +3310,9 @@
       "Missing alias suffix": [
         "Памылковы суфікс псеўданіма"
       ],
+      "Move to trash": [
+        "Перамясціць у сметніцу"
+      ],
       "No items": [
         "Элементы адсутнічаюць"
       ],
@@ -3292,8 +3364,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
       ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Нешта пайшло не так падчас запуску ${ PASS_APP_NAME }. Паспрабуйце абнавіць або перазагрузіць пашырэнне"
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Прэфікс псеўданіма не можа быць даўжэй за 40 сімвалаў"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Псеўданім \"${ aliasEmail }\" у цяперашні час выкарыстоўваецца ў запісе ўваходу \"${ relatedLoginName }\"."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Гэты адрас электроннай пошты больш не будзе адсочвацца на прадмет уцечкі даных."
