@@ -1,6 +1,6 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/types';
 
-import { IdentityFieldType } from '@proton/pass/fathom';
+import { FieldType, IdentityFieldType } from '@proton/pass/fathom';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 
 import { autofillIdentityFields, getFirstName, getFullName, getLastName, getMiddleName } from './autofill.identity';
@@ -10,9 +10,10 @@ let MOCK_FIELDS: FieldHandle[] = [];
 
 const createField = (identityType: IdentityFieldType, sectionIndex: number = 1, value: string = '') =>
     ({
-        sectionIndex,
-        identityType,
+        autofilled: null,
         element: { value },
+        identityType,
+        sectionIndex,
         autofill: jest.fn(),
     }) as any as FieldHandle;
 
@@ -127,6 +128,7 @@ describe('Identity', () => {
                 createField(IdentityFieldType.ADDRESS),
                 createField(IdentityFieldType.ZIPCODE)
             );
+
             MOCK_ITEM.set('content', (content) => {
                 content.set('firstName', 'John');
                 content.set('lastName', 'Doe');
@@ -138,19 +140,20 @@ describe('Identity', () => {
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
             jest.runAllTimers();
 
-            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
-            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('Doe');
-            expect(MOCK_FIELDS[2]?.autofill).toHaveBeenCalledWith('123 Main St');
-            expect(MOCK_FIELDS[3]?.autofill).toHaveBeenCalledWith('12345');
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John', { type: FieldType.IDENTITY });
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('Doe', { type: FieldType.IDENTITY });
+            expect(MOCK_FIELDS[2]?.autofill).toHaveBeenCalledWith('123 Main St', { type: FieldType.IDENTITY });
+            expect(MOCK_FIELDS[3]?.autofill).toHaveBeenCalledWith('12345', { type: FieldType.IDENTITY });
         });
 
-        test('it skips fields that have already been autofilled', () => {
+        test('it skips consecutive fields when autofilling', () => {
             MOCK_FIELDS.push(
                 createField(IdentityFieldType.FIRSTNAME),
                 createField(IdentityFieldType.FIRSTNAME),
                 createField(IdentityFieldType.LASTNAME),
                 createField(IdentityFieldType.LASTNAME)
             );
+
             MOCK_ITEM.set('content', (content) => {
                 content.set('firstName', 'John');
                 content.set('lastName', 'Doe');
@@ -160,10 +163,23 @@ describe('Identity', () => {
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
             jest.runAllTimers();
 
-            expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('John');
+            expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('John', { type: FieldType.IDENTITY });
             expect(MOCK_FIELDS[1].autofill).not.toHaveBeenCalled();
-            expect(MOCK_FIELDS[2].autofill).toHaveBeenCalledWith('Doe');
+            expect(MOCK_FIELDS[2].autofill).toHaveBeenCalledWith('Doe', { type: FieldType.IDENTITY });
             expect(MOCK_FIELDS[3].autofill).not.toHaveBeenCalled();
+        });
+
+        test('it skips already autofilled fields', () => {
+            const field = createField(IdentityFieldType.EMAIL);
+            field.autofilled = FieldType.EMAIL;
+
+            MOCK_FIELDS.push(field);
+            MOCK_ITEM.set('content', (content) => content.set('email', 'test@proton.me'));
+
+            autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
+            jest.runAllTimers();
+
+            expect(MOCK_FIELDS[0].autofill).not.toHaveBeenCalled();
         });
 
         test('it does not autofill fields when no matching data is available', () => {
@@ -187,14 +203,15 @@ describe('Identity', () => {
                 createField(IdentityFieldType.MIDDLENAME),
                 createField(IdentityFieldType.LASTNAME)
             );
+
             MOCK_ITEM.set('content', (content) => content.set('fullName', 'John Middle Doe'));
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
             jest.runAllTimers();
 
-            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
-            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('Middle');
-            expect(MOCK_FIELDS[2]?.autofill).toHaveBeenCalledWith('Doe');
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John', { type: FieldType.IDENTITY });
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('Middle', { type: FieldType.IDENTITY });
+            expect(MOCK_FIELDS[2]?.autofill).toHaveBeenCalledWith('Doe', { type: FieldType.IDENTITY });
         });
 
         test('it handles single-word fullName', () => {
@@ -203,12 +220,13 @@ describe('Identity', () => {
                 createField(IdentityFieldType.MIDDLENAME),
                 createField(IdentityFieldType.LASTNAME)
             );
+
             MOCK_ITEM.set('content', (content) => content.set('fullName', 'John'));
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
             jest.runAllTimers();
 
-            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John');
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('John', { type: FieldType.IDENTITY });
             expect(MOCK_FIELDS[1]?.autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[2]?.autofill).not.toHaveBeenCalled();
         });
@@ -226,8 +244,8 @@ describe('Identity', () => {
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
             jest.runAllTimers();
 
-            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('123 Main St');
-            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('12345');
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('123 Main St', { type: FieldType.IDENTITY });
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('12345', { type: FieldType.IDENTITY });
         });
 
         test('it autofills only the first occurrence of address fields with the same type', () => {
@@ -242,7 +260,7 @@ describe('Identity', () => {
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
             jest.runAllTimers();
 
-            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('123 Main St');
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('123 Main St', { type: FieldType.IDENTITY });
             expect(MOCK_FIELDS[1]?.autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[2]?.autofill).not.toHaveBeenCalled();
         });
@@ -254,12 +272,13 @@ describe('Identity', () => {
                 createField(IdentityFieldType.TELEPHONE),
                 createField(IdentityFieldType.TELEPHONE)
             );
+
             MOCK_ITEM.set('content', (content) => content.set('phoneNumber', '1234567890'));
 
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
             jest.runAllTimers();
 
-            expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('1234567890');
+            expect(MOCK_FIELDS[0].autofill).toHaveBeenCalledWith('1234567890', { type: FieldType.IDENTITY });
             expect(MOCK_FIELDS[1].autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[2].autofill).not.toHaveBeenCalled();
             expect(MOCK_FIELDS[3].autofill).not.toHaveBeenCalled();
@@ -272,7 +291,7 @@ describe('Identity', () => {
             autofillIdentityFields(MOCK_FIELDS, MOCK_FIELDS[0], MOCK_ITEM.data.content);
             jest.runAllTimers();
 
-            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('Proton');
+            expect(MOCK_FIELDS[0]?.autofill).toHaveBeenCalledWith('Proton', { type: FieldType.IDENTITY });
         });
 
         test('it handles partial address data', () => {
@@ -288,7 +307,7 @@ describe('Identity', () => {
             jest.runAllTimers();
 
             expect(MOCK_FIELDS[0]?.autofill).not.toHaveBeenCalled();
-            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('92190');
+            expect(MOCK_FIELDS[1]?.autofill).toHaveBeenCalledWith('92190', { type: FieldType.IDENTITY });
         });
     });
 });
