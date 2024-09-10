@@ -56,21 +56,6 @@ class ProtonIconsTreeShakePlugin {
     }
 
     /**
-     * Optimizes SVG content by removing newlines and extra whitespace
-     * This can save around 10kb for Icons.tsx alone
-     * @param {string} content File content
-     * @returns {string} Optimized content
-     */
-    optimizeSVG(content) {
-        return content.replace(/<svg[\s\S]*?<\/svg>/g, (match) =>
-            match
-                .split('\n')
-                .map((line) => line.trim())
-                .join(' ')
-        );
-    }
-
-    /**
      * Processes a single file to remove unused icons and optimize SVG content
      * @param {webpack.Compilation} compilation Webpack compilation object
      * @param {Object} assets Compilation assets
@@ -89,7 +74,6 @@ class ProtonIconsTreeShakePlugin {
 
         if (unused.size > 0) {
             content = this.removeUnusedIcons(content, unused);
-            content = this.optimizeSVG(content);
 
             if (content.length !== originalLength) {
                 compilation.updateAsset(filename, new webpack.sources.RawSource(content));
