@@ -356,7 +356,7 @@
         "로고 유지"
       ],
       "Keep my subscription": [
-        "나의 구독 유지"
+        "내 구독 유지하기"
       ],
       "Let's talk": [
         "상담 및 계약 필요"
@@ -4245,9 +4245,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "회원님의 계정과 연계된 12자리 복구 구문을 입력해 주세요."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "확인 버튼을 누르면 계정에는 ${ creditsRemaining } 크레딧이 남습니다."
-      ],
       "please open a support ticket": [
         "지원 티켓을 만들어 주세요"
       ],
@@ -5945,9 +5942,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "달러"
-      ],
       "Euro": [
         "유로"
       ],
@@ -6064,7 +6058,7 @@
         "사용자 당 ${ n }개 공유된 ${ PASS_SHORT_APP_NAME } 금고"
       ],
       "${ n } user": [
-        "최대 ${ n }명 사용자"
+        "사용자 최대 ${ n }명"
       ],
       "${ n } vault": [
         "${ n }개 금고"

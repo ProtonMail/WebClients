@@ -4290,8 +4290,8 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Saisissez la phrase de récupération de 12 mots associée à votre compte."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Après avoir cliqué sur le bouton Confirmer, il restera ${ creditsRemaining } crédits sur votre compte."
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Après avoir cliqué sur le bouton Confirmer, il restera ${ remainingCreditsFormatted } crédits sur votre compte."
       ],
       "please open a support ticket": [
         "ouvrez un ticket de support"
@@ -6002,14 +6002,17 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "Dollar"
+      "Brazilian real": [
+        "Real brésilien (BRL)"
       ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franc suisse"
+      ],
+      "US Dollar": [
+        "Dollar américain (USD)"
       ]
     },
     "Navigation": {
@@ -7416,6 +7419,9 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "D'autres abonnements sont disponibles dans d'autres devises."
+      ],
       "Payment Processing": [
         "Traitement des paiements"
       ],
@@ -7460,6 +7466,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Nous traitons le paiement de la facture. Veuillez attendre que le paiement soit effectué avant de modifier votre abonnement ou de mettre à jour vos informations de paiement. Merci pour votre patience."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Un montant de ${ amountToCharge } sera débité selon votre méthode de paiement sélectionnée."
       ]
     },
     "Payments.Error": {

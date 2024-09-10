@@ -3696,6 +3696,9 @@
         "Eliminando ${ deletedServerCount } servidor de puerta de enlace",
         "Eliminando ${ deletedServerCount } servidores de puerta de enlace"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Desactivado desde el ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Desactivar la autenticación de dos factores hará su cuenta menos segura. Proceda solo si es absolutamente necesario."
       ],
@@ -3777,6 +3780,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Active el inicio de sesión único para mantener segura la organización"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Activado desde el ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL del punto final recibida del proveedor de identidad (por ejemplo, https://idp.ejemplo.com/sso/saml)."
@@ -4283,9 +4289,6 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Ingrese la frase de recuperación de 12 palabras asociada con la cuenta."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ creditsRemaining } créditos restantes."
       ],
       "please open a support ticket": [
         "abra un tiquete de soporte"
@@ -5996,9 +5999,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "Dólar USD"
-      ],
       "Euro": [
         "Euro"
       ],

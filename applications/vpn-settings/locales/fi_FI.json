@@ -2584,7 +2584,7 @@
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
       ],
       "Unable to upload file": [
-        "Tiedostoa ei voida lähettää"
+        "Tiedoston lähetys ei onnistu"
       ],
       "Unknown error": [
         "Tuntematon virhe"
@@ -2675,7 +2675,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "3 Tt kokonaistallennustila"
+        "Yhteensä 3 Tt tallennustilaa"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -4284,9 +4284,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Syötä tilillesi kuuluva 12-sanainen palautuslauseke."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
-      ],
       "please open a support ticket": [
         "avaa tukipyyntö"
       ],
@@ -5850,7 +5847,7 @@
         "${ driveStorage }si on täynnä. Tallentaaksesi ja synkronoidaksesi tiedostoja, vapauta tilaa tai ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "${ mailStorage } -tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
+        "${ mailStorage }si on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Tilisi on vaarassa poistua. Pyydä ylläpitäjääsi päivittämään tilauksesi, jotta vältät tietojen menettämisen. ${ cta }"
@@ -5996,9 +5993,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "dollaria"
-      ],
       "Euro": [
         "euroa"
       ],
@@ -8203,7 +8197,7 @@
     },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
-        "Hakanut ${ ownerName }"
+        "Jakanut ${ ownerName }"
       ]
     },
     "Signup label": {
@@ -8459,7 +8453,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } tallennustila"
+        "${ app }-tallennustila"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage }stasi on käytetty ${ percentage } %"
@@ -8477,7 +8471,7 @@
         "Jos haluat lähettää tai vastaanottaa sähköposteja, vapauta tilaa tai ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Jos haluat lähettää tai synkronoida tiedostoja, vapauta tilaa tai ${ upgrade }"
+        "Tallentaaksesi ja synkronoidaksesi lisää tiedostoja, vapauta tilaa tai ${ upgrade }."
       ],
       "upgrade for more storage": [
         "hanki lisää päivittämällä tilauksesi"
@@ -8496,13 +8490,13 @@
         "${ appStorage }si on täynnä"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } on ${ percentage }% täynnä. ${ cta }."
+        "${ storage }stasi on käytössä ${ percentage } %. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "${ storage } on täynnä. ${ cta }."
+        "${ storage }si on täynnä. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Tallennustilasi on ${ percentage }% täynnä. ${ cta }."
+        "Tallennustilastasi on käytössä ${ percentage } %. ${ cta }."
       ],
       "Your storage is full": [
         "Tallennustilasi on täynnä"
@@ -10157,8 +10151,20 @@
       ]
     },
     "unprivatization": {
+      "Admins can't access the data of private users and can't reset their password.": [
+        "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
+      ],
+      "By making the user private you won't be able to help them regain access to their data or account.": [
+        "Jos teet käyttäjästä yksityisen, et voi enää auttaa häntä tietojen tai käyttäjätilin palautuksessa."
+      ],
       "Delete request": [
         "Poista pyyntö"
+      ],
+      "Delete request to access user data?": [
+        "Poistetaanko käyttäjän tietojen käsittelyoikeuspyyntö?"
+      ],
+      "Organization key must be activated to request data access": [
+        "Organisaatioavain on aktivoitava tietojen käyttöoikeuden anomiseksi"
       ],
       "Private user": [
         "Yksityinen käyttäjä"
@@ -10166,11 +10172,20 @@
       "Request to manage account sent, awaiting user approval": [
         "Tilinhallintapyyntö lähetetty, odotetaan käyttäjän hyväksyntää"
       ],
+      "Request user permission for data access": [
+        "Pyydä käyttäjältä tietojen käsittelyoikeutta"
+      ],
       "Revoke access": [
         "Mitätöi käyttöoikeus"
       ],
+      "Revoke administrator access?": [
+        "Mitätöidäänkö ylläpito-oikeus?"
+      ],
       "Send request": [
         "Lähetä pyyntö"
+      ],
+      "The user must have an address to request data access": [
+        "Käyttäjällä on oltava osoite tietojen käyttöoikeuden anomiseksi"
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tämä mitätöi ylläpitäjän oikeuden hallita tämän käyttäjän tiliä."
@@ -10269,6 +10284,9 @@
       ],
       "It's you": [
         "Sinä"
+      ],
+      "Pending admin access": [
+        "Odottaa ylläpito-oikeutta"
       ],
       "Private": [
         "Yksityinen"

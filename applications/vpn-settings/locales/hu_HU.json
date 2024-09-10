@@ -3672,9 +3672,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Írja be a fiókhoz tartozó, 12 szóból álló, helyreállítási jelmondatát."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "A megerősítés gombra kattintva a fiókban ${ creditsRemaining } kredit marad."
-      ],
       "please open a support ticket": [
         "kérjük, nyisson egy ügyfélszolgálati jegyet"
       ],
@@ -5129,9 +5126,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "Dollár"
-      ],
       "Euro": [
         "Euró"
       ],
@@ -5590,17 +5584,32 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "A ${ BRAND_NAME } e-mail címek és al-felhasználók létrehozására biztosít lehetőséget. Ideális családoknak vagy szervezeteknek."
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Fejlett hálózati biztonság és hozzáférés-kezelés dedikált biztonságos átjárókkal"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Fejlett védelem csapatok számára, amely túlmutat az iparági szabványokon."
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Minden ${ BRAND_NAME } alkalmazás és prémium lehetőségeik"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Minden ${ BRAND_NAME } üzleti alkalmazás és prémium funkció az ön egész vállalkozását védi"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Széleskörű adatvédelem és biztonság az összes ${ BRAND_NAME } szolgáltatással."
       ],
+      "Early access to new apps and features": [
+        "Korai hozzáférés az új alkalmazásokhoz és lehetőségekhez"
+      ],
       "Encrypted email and calendar to get you started.": [
         "Kezdésként titkosított e-mail és naptár"
       ],
       "Enhanced security and premium features for teams.": [
         "Megnövelt biztonság és prémium funkciók a csoportok számára"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Alapvető védelem és biztonságos együttműködés korlátlan számú felhasználó számára."
       ],
       "For next-level password management and identity protection.": [
         "Új szint a jelszókezelésben és a személyi adatok védelmében."
@@ -5623,11 +5632,17 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Védje a családja adatait az összes ${ BRAND_NAME } szolgáltatás kombinációjával."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Biztonságos internetelérés bárhonnan az alapvető hálózati felügyelet segítségével"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Biztonságos felhőtárolás, mely lehetővé teszi, hogy könnyedén és biztonságosan tároljon, szinkronizáljon és osszon meg fájlokat."
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Biztonságos e-mail, fejlett lehetőségekkel a mindennapi kommunikációjához."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Testre szabott megoldások nagyobb szervezetek számára, egyedi biztonsági igényekkel"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "A külön VPN megoldás, amely biztonságos, korlátlan és nagysebességű internet elérést biztosít."
@@ -6009,20 +6024,53 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "${ relativePrice } havonta"
+      ],
+      "/month /user": [
+        "/hó /felhasználó"
+      ],
+      "/month /user, billed annually": [
+        "/hó /felhasználó, évente számlázva"
+      ],
+      "/month /user, billed biennially": [
+        "/hó /felhasználó, kétévente számlázva"
+      ],
       "Creating your account": [
         "Fiók létrehozása"
       ],
       "Current plan": [
         "Jelenlegi csomag"
       ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Mindössze további **${ relativePrice } havonta**, és elérheti a ${ BRAND_NAME } prémium jelszókezelőjét!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Mindössze további **${ relativePrice } havonta**, és elérheti a ${ BRAND_NAME } prémium VPN szolgáltatását!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Mindössze további **${ relativePrice } havonta**, és elérheti a ${ BRAND_NAME } összes prémium szolgáltatását!"
+      ],
       "Free forever": [
         "Örökre ingyenes"
+      ],
+      "Get in touch with our sales team": [
+        "Írjon az értékesítési csoportnak"
       ],
       "Includes:": [
         "Tartalma:"
       ],
       "per month": [
         "havonta"
+      ],
+      "per month, billed annually": [
+        "havonta, évente számlázva"
+      ],
+      "per month, billed every month": [
+        "havonta, havonta számlázva"
+      ],
+      "per month, billed every two years": [
+        "havonta, kétévente számlázva"
       ],
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
@@ -6040,8 +6088,14 @@
       ]
     },
     "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Minden meglévő adata** (e-mailek, események, névjegyek, fájlok, ${ PASS_APP_NAME } adatok stb.) **zárolásra kerül** és csak a **régi jelszavával** tudja majd feloldani."
+      ],
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
         "**Minden meglévő adata** (e-mailek, események, névjegyek, fájlok, ${ PASS_APP_NAME } adatok stb.) **zárolásra kerül** és csak a **helyreállító jelmondattal** vagy a **régi jelszavával** tudja majd feloldani."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Ha van bármilyen **kétlépcsős hitelesítés** a fiókján, az kikapcsolásra kerül."
       ]
     },
     "passwordless": {

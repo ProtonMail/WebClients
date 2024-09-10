@@ -4242,9 +4242,6 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Harap masukkan frasa pemulihan (12 kata) yang terhubung dengan akun Anda."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
-      ],
       "please open a support ticket": [
         "silakan buka tiket layanan dukungan"
       ],
@@ -4948,7 +4945,7 @@
         "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi dan seluruh layanan telah diblokir hingga Anda melunasi tagihan. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Apabila Anda terus-menerus lalai membayar, email dan tautan berbagi Anda akan diblokir. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang tertunggak. Oleh karenanya, akun Anda telah dibatasi. Kelalaian membayar yang terus-menerus akan membuat email dan tautan berbagi Anda diblokir. ${ payInvoiceLink }"
       ],
       "Your account was successfully updated with this promotion": [
         "Akun Anda berhasil diperbarui dengan promosi ini"
@@ -5936,9 +5933,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "Dolar"
-      ],
       "Euro": [
         "Euro"
       ],
