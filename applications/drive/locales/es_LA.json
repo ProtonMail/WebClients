@@ -381,10 +381,10 @@
       "Get link": [
         "Obtener enlace"
       ],
-      "Get Started": [
+      "Get started": [
         "Comenzar"
       ],
-      "Get started": [
+      "Get Started": [
         "Comenzar"
       ],
       "Get verification code": [
@@ -555,10 +555,10 @@
       "Not now": [
         "Ahora no"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -4097,6 +4097,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "¿Está seguro que quiere eliminar permanentemente los elementos seleccionados de la papelera?"
       ],
+      "Are you sure you want to proceed?": [
+        "¿Está seguro de que quiere continuar?"
+      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -4779,9 +4782,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tome en cuenta que este proceso puede tardar algún tiempo dependiendo del tamaño de su libreta de direcciones."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ creditsRemaining } créditos restantes."
-      ],
       "Please open the document to view it.": [
         "Abra el documento para verlo."
       ],
@@ -4851,6 +4851,9 @@
       ],
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Búsqueda privada activada. Puede cerrar esta ventana y buscar archivos y carpetas."
+      ],
+      "Public link": [
+        "Enlace publico"
       ],
       "Public sharing of documents is not yet supported.": [
         "El intercambio público de documentos aún no está admitido."
@@ -5322,6 +5325,9 @@
       "You already have a free account": [
         "Ya tiene una cuenta gratuita"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Está a punto de abandonar el elemento compartido. No podrá volver a acceder a él hasta que el propietario lo comparta con usted nuevamente."
+      ],
       "You are about to open another browser tab and visit:": [
         "Está a punto de abrir otra pestaña del navegador y visitar:"
       ],
@@ -5387,6 +5393,10 @@
       ],
       "You will lose all unsaved changes.": [
         "Perderá todos los cambios sin guardar."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Necesitará guardarlo de nuevo desde la página del enlace público.",
+        "Necesitará guardarlos de nuevo desde la página del enlace público."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto será redirigido a PayPal para verificar el pago."
@@ -7739,6 +7749,14 @@
       "The link to your item was deleted": [
         "El enlace al elemento fue eliminado"
       ],
+      "This item was not removed from your list": [
+        "No se borró este elemento de su lista.",
+        "No se borraron algunos elementos de su lista."
+      ],
+      "This item was succefully removed from your list": [
+        "Se borró este elemento de su lista.",
+        "Se borraro estos elementos de su lista."
+      ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
       ],
@@ -9598,6 +9616,10 @@
       "Are you sure you want to close the preview?": [
         "¿Está seguro de que quiere cerrar la vista previa?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "¿Seguro que quiere borrar este elemento de su lista?",
+        "¿Seguro que quiere borrar estos elementos de su lista?"
+      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -9642,6 +9664,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmar pérdida de beneficios de ${ BRAND_NAME }"
+      ],
+      "Confirmation required?": [
+        "¿Se necesita confirmación?"
       ],
       "Contact Details": [
         "Datos del contacto"

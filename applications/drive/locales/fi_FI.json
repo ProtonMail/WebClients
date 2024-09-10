@@ -381,10 +381,10 @@
       "Get link": [
         "Hanki linkki"
       ],
-      "Get Started": [
+      "Get started": [
         "Aloita"
       ],
-      "Get started": [
+      "Get Started": [
         "Aloita"
       ],
       "Get verification code": [
@@ -397,7 +397,7 @@
         "Siirry tunnisteeseen"
       ],
       "Go to my files": [
-        "Mene omiin tiedostoihin"
+        "Avaa omat tiedostot"
       ],
       "Go to panel ${ index }": [
         "Siirry paneeliin ${ index }"
@@ -555,10 +555,10 @@
       "Not now": [
         "Ei nyt"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -3286,7 +3286,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "3 Tt kokonaistallennustila"
+        "Yhteensä 3 Tt tallennustilaa"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -4420,7 +4420,7 @@
         "Tiedostoa ei tallenneta"
       ],
       "Files and folders that others shared with you will appear here": [
-        "Muiden kanssasi jakamat tiedostot ja kansiot näkyvät tässä"
+        "Muiden sinulle jakamat tiedostot ja kansiot näkyvät tässä"
       ],
       "Finalizing": [
         "Viimeistellään"
@@ -4456,7 +4456,7 @@
         "Hanki sovellus varmuuskopioidaksesi mobiililaitteesi kuvia."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Hanki työpöytäsovellus synkronoidaksesi tiedostoja tietokoneeltasi."
+        "Hanki työpöytäsovellus synkronoidaksesi tietokoneesi tiedostoja."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Tutustu ${ DRIVE_APP_NAME }en ja ansaitse 3 Gt tallennustilakorotuksesi! Toimi tänään."
@@ -4741,7 +4741,7 @@
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
       ],
       "People with access": [
-        "Käyttöoikeuden omaavat henkilöt"
+        "Käyttöoikeuden omaavat tahot"
       ],
       "Permanently delete all files in your locked drive": [
         "Poista kaikki lukitun levysi tiedostot"
@@ -4778,9 +4778,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
       "Please open the document to view it.": [
         "Avaa dokumentti tarkastellaksesi sitä."
@@ -4874,7 +4871,7 @@
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
       ],
       "Report has been sent": [
-        "Ilmoitus on lähetetty"
+        "Ilmoitus lähetettiin"
       ],
       "Report link": [
         "Ilmoita linkistä"
@@ -4889,7 +4886,7 @@
         "Palautus on käynnissä. Tämä voi kestää muutamia sekunteja."
       ],
       "Restore Photos": [
-        "Palauta kuvat"
+        "Palauta kuvia"
       ],
       "Restored files ${ formattedDate }": [
         "${ formattedDate } palautetut tiedostot"
@@ -4959,7 +4956,7 @@
         "Jaa tiedostoja linkeillä"
       ],
       "Share via link settings": [
-        "Linkkijaon asetukset"
+        "Jakolinkin asetukset"
       ],
       "Shareable link for ${ boldNameText }": [
         "Jaettava linkki kohteeseen ${ boldNameText }"
@@ -5555,7 +5552,7 @@
     },
     "Label": {
       "# of downloads": [
-        "Latausten määrä"
+        "Latausmäärä"
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
@@ -5588,7 +5585,7 @@
         "Lisää ryhmään"
       ],
       "Anyone on the Internet with the link can view": [
-        "Linkin välityksellä kuka tahansa Internetissä voi tarkastella"
+        "Linkin välityksellä kuka tahansa voi tarkastella"
       ],
       "Anyone with the link": [
         "Kuka tahansa linkin omaava"
@@ -6003,7 +6000,7 @@
         "Jakanut"
       ],
       "Shared on": [
-        "Jaettu:"
+        "Jaettu"
       ],
       "Show indexing progress of Encrypted Search": [
         "Näytä salatun haun indeksoinnin edistyminen"
@@ -6245,7 +6242,7 @@
         "${ driveStorage }si on täynnä. Tallentaaksesi ja synkronoidaksesi tiedostoja, vapauta tilaa tai ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "${ mailStorage } -tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
+        "${ mailStorage }si on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Tilisi on vaarassa poistua. Pyydä ylläpitäjääsi päivittämään tilauksesi, jotta vältät tietojen menettämisen. ${ cta }"
@@ -6375,13 +6372,13 @@
         "PDF (Adobe Portable Document Format)"
       ],
       "Amazon Kindle eBook format": [
-        "Amazon Kindle eBook format"
+        "Amazon Kindle eBook"
       ],
       "Android Package": [
         "Android-paketti"
       ],
       "Animated Portable Network Graphics": [
-        "APNG (Animated Portable Network Graphics)"
+        "Animated Portable Network Graphics (APNG)"
       ],
       "Apple Installer Package": [
         "Apple Installer -paketti"
@@ -6393,31 +6390,31 @@
         "Ääni"
       ],
       "AV1 Image File Format (AVIF)": [
-        "AVIF (AV1 Image File Format)"
+        "AV1-kuva (AVIF)"
       ],
       "AVI video": [
         "AVI-video"
       ],
       "Binary data": [
-        "Binaaritiedot"
+        "Binääritiedosto"
       ],
       "Bourne shell script": [
-        "Bourne shell -komentojono"
+        "Bourne shell -komentosarja"
       ],
       "BZip archive": [
-        "BZip-arkisto"
+        "Bzip-arkisto"
       ],
       "BZip2 archive": [
-        "BZip2-arkisto"
+        "Bzip2-arkisto"
       ],
       "C-Shell script": [
-        "C-Shell-komentojono"
+        "C-Shell-komentosarja"
       ],
       "Cascading Style Sheets (CSS)": [
-        "CSS (Cascading Style Sheets)"
+        "Cascading Style Sheets (CSS)"
       ],
       "Comma-separated values (CSV)": [
-        "CSV (Comma-separated values)"
+        "Pilkuilla erotellut arvot (CSV)"
       ],
       "Electronic publication (EPUB)": [
         "EPUB (Electronic publication)"
@@ -6426,22 +6423,22 @@
         "Flash-video"
       ],
       "Graphics Interchange Format (GIF)": [
-        "GIF (Graphics Interchange Format)"
+        "Graphics Interchange Format (GIF)"
       ],
       "GZip Compressed Archive": [
-        "GZip-arkisto"
+        "Gzip-arkisto"
       ],
       "HyperText Markup Language (HTML)": [
-        "HTML (HyperText Markup Language)"
+        "Hypertekstin merkintäkieli (HTML)"
       ],
       "Hypertext Preprocessor (Personal Home Page)": [
-        "PHP (Hypertext Preprocessor)"
+        "PHP: Hypertext Preprocessor"
       ],
       "iCalendar format": [
         "iCalendar"
       ],
       "Icon format": [
-        "Kuvake"
+        "Kuvake (ICO)"
       ],
       "Image": [
         "Kuva"
@@ -6456,16 +6453,16 @@
         "MP3-ääni"
       ],
       "MPEG transport stream": [
-        "MPEG-TS (MPEG transport stream)"
+        "MPEG transport stream (MPEG-TS)"
       ],
       "MPEG Video": [
         "MPEG-video"
       ],
       "MS Embedded OpenType fonts": [
-        "MS Embedded OpenType -kirjasin"
+        "MS Embedded OpenType (EOT) -kirjasin"
       ],
       "Musical Instrument Digital Interface (MIDI)": [
-        "MIDI (Musical Instrument Digital Interface)"
+        "Musical Instrument Digital Interface (MIDI)"
       ],
       "OGG audio": [
         "OGG-ääni"
@@ -6489,22 +6486,22 @@
         "Opus-ääni"
       ],
       "Portable Network Graphics": [
-        "PNG (Portable Network Graphics)"
+        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "RAR-arkisto"
       ],
       "Rich Text Format (RTF)": [
-        "RTF (Rich Text Format)"
+        "Rich Text Format (RTF)"
       ],
       "Scalable Vector Graphics (SVG)": [
-        "SVG (Scalable Vector Graphics)"
+        "Scalable Vector Graphics (SVG)"
       ],
       "Small web format (SWF)": [
         "Small Web Format (SWF)"
       ],
       "Tagged Image File Format (TIFF)": [
-        "TIFF (Tagged Image File Format)"
+        "Tagged Image File Format (TIFF)"
       ],
       "Tape Archive (TAR)": [
         "TAR-arkisto"
@@ -6516,16 +6513,16 @@
         "TrueType-kirjasin"
       ],
       "Unknown file": [
-        "Tuntematon tiedosto"
+        "Tuntematon"
       ],
       "Video file": [
         "Video"
       ],
       "Waveform Audio Format": [
-        "WAV (Waveform Audio Format)"
+        "Waveform Audio Format (WAV)"
       ],
       "Web Open Font Format (WOFF)": [
-        "WOFF (Web Open Font Format)"
+        "Web Open Font Format (WOFF) -kirjasin"
       ],
       "WEBM audio": [
         "WebM-ääni"
@@ -6537,7 +6534,7 @@
         "WebP-kuva"
       ],
       "Windows OS/2 Bitmap Graphics": [
-        "BMP (Windows OS/2 Bitmap Graphics)"
+        "Windows OS/2 -bittikartta (BMP)"
       ],
       "ZIP archive": [
         "ZIP-arkisto"
@@ -7807,7 +7804,7 @@
         "Malta hetki!"
       ],
       "Invite team members": [
-        "Kutsu ryhmäjäseniä"
+        "Kutsu ryhmään jäseniä"
       ],
       "Upload and protect your important files": [
         "Tallenna ja suojaa tärkeät tiedostosi"
@@ -8450,7 +8447,7 @@
     },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
-        "Hakanut ${ ownerName }"
+        "Jakanut ${ ownerName }"
       ]
     },
     "Signing preference for emails": {
@@ -8717,7 +8714,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } tallennustila"
+        "${ app }-tallennustila"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage }stasi on käytetty ${ percentage } %"
@@ -8732,16 +8729,16 @@
         "Kaikille ${ BRAND_NAME }-palveluille"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Jatkaaksesi tiedostojen tallennusta ja synkronointia, vapauta tilaa tai hanki tilaukseesi lisää tallennustilaa."
+        "Jatkaaksesi tiedostojen tallennusta ja synkronointia, vapauta tilaa tai hanki lisää päivittämällä tilauksesi."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "Jos haluat lähettää tai vastaanottaa sähköposteja, vapauta tilaa tai ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Jos haluat lähettää tai vastaanottaa sähköposteja, vapauta tilaa tai hanki tilaukseesi lisää tallennustilaa."
+        "Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai hanki lisää päivittämällä tilauksesi."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Jos haluat lähettää tai synkronoida tiedostoja, vapauta tilaa tai ${ upgrade }"
+        "Tallentaaksesi ja synkronoidaksesi lisää tiedostoja, vapauta tilaa tai ${ upgrade }."
       ],
       "upgrade for more storage": [
         "hanki lisää päivittämällä tilauksesi"
@@ -8760,13 +8757,13 @@
         "${ appStorage }si on täynnä"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } on ${ percentage }% täynnä. ${ cta }."
+        "${ storage }stasi on käytössä ${ percentage } %. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "${ storage } on täynnä. ${ cta }."
+        "${ storage }si on täynnä. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Tallennustilasi on ${ percentage }% täynnä. ${ cta }."
+        "Tallennustilastasi on käytössä ${ percentage } %. ${ cta }."
       ],
       "Your storage is full": [
         "Tallennustilasi on täynnä"
@@ -9474,7 +9471,7 @@
     },
     "Title": {
       "# of downloads": [
-        "Latausten määrä"
+        "Latausmäärä"
       ],
       "${ emailsCount } email address": [
         "${ emailsCount } sähköpostiosoite",

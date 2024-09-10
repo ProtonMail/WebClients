@@ -369,11 +369,11 @@
       "Get link": [
         "リンクを作成"
       ],
-      "Get Started": [
-        "始めましょう"
-      ],
       "Get started": [
         "利用開始"
+      ],
+      "Get Started": [
+        "始めましょう"
       ],
       "Get verification code": [
         "認証コードを取得"
@@ -534,11 +534,11 @@
       "Not now": [
         "後で"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "開く"
@@ -2528,6 +2528,9 @@
       "Process aborted": [
         "処理が中断されました"
       ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "重複した招待者を削除しました： ${ joinedInvitee }"
+      ],
       "Report failed to be sent": [
         "レポートの送信に失敗しました"
       ],
@@ -3876,6 +3879,9 @@
       "Download paused due to connection issue; it will resume automatically": [
         "接続に問題が発生したためダウンロードが一時停止されました。問題が解消すると自動的に再開します。"
       ],
+      "Download was canceled": [
+        "ダウンロードはキャンセルされました。"
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
       ],
@@ -4104,6 +4110,9 @@
       "Internet connection restored.": [
         "インターネット接続が回復しました。"
       ],
+      "Invite link copied": [
+        "招待リンクをコピーしました"
+      ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
         "最近、${ uploadName } のアップロードを試みたようです。アップロードが失敗した場合、${ replaceFile } してください。アップロードが進行中の場合、置き換えると進行中のアップロードがキャンセルされます。"
       ],
@@ -4178,6 +4187,9 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode ロゴ"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "文字数の上限は ${ MAX_SHARED_URL_PASSWORD_LENGTH } です。"
       ],
       "Medium Priority": [
         "優先度：中"
@@ -4317,9 +4329,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "確認ボタンをクリックすると、アカウントに ${ creditsRemaining } クレジットが残ります。"
-      ],
       "Please provide a name and an email address for creating a group.": [
         "グループ作成のため、お名前とEメールアドレスをご記入ください。"
       ],
@@ -4421,6 +4430,9 @@
       ],
       "Retry now": [
         "リトライ"
+      ],
+      "Scan issue": [
+        "スキャン中の問題"
       ],
       "Search cannot be enabled in this browser": [
         "このブラウザーでは検索を使用することができません。"
@@ -4550,6 +4562,9 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "まだ転送されていないファイルがあります。転送マネージャーを閉じるとすべての転送が中止されます。"
+      ],
+      "This action will delete the link and revoke access for all users.": [
+        "この操作はリンクを削除し、すべてのユーザーがアクセスできなくなります。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
