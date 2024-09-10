@@ -1,4 +1,5 @@
-import { type FC, useCallback, useMemo } from 'react';
+import type { FC, MouseEventHandler, ReactNode } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
@@ -21,15 +22,16 @@ import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectOfflineEnabled, selectPassPlan } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 
-type SettingAction = {
+type MenuAction = {
     icon: IconName;
     key: string;
     label: string;
+    subMenu?: ReactNode;
     signaled?: boolean;
-    onClick?: () => void;
+    onClick?: MouseEventHandler;
 };
 
-export const SettingsDropdown: FC = () => {
+export const MenuActions: FC = () => {
     const { navigate } = useNavigation();
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
@@ -49,7 +51,7 @@ export const SettingsDropdown: FC = () => {
         clearNotifications();
     }, []);
 
-    const settings = useMemo<SettingAction[]>(
+    const settings = useMemo<MenuAction[]>(
         () => [
             { key: 'general', label: c('Label').t`General`, icon: 'cog-wheel', signaled: offlineSignaled },
             ...(aliasesEnabled ? [{ key: 'aliases', label: c('Label').t`Aliases`, icon: 'alias' } as const] : []),
@@ -74,28 +76,30 @@ export const SettingsDropdown: FC = () => {
     );
 
     return (
-        <QuickActionsDropdown
-            icon="cog-wheel"
-            size="small"
-            shape="ghost"
-            className="shrink-0 ml-1"
-            signaled={offlineSignaled}
-        >
-            {settings.map((setting) => (
-                <DropdownMenuButton
-                    key={setting.key}
-                    onClick={setting.onClick ?? (() => navigate(getLocalPath('settings'), { hash: setting.key }))}
-                    label={
-                        <div className="flex items-center gap-3">
-                            <span className="flex-1">{setting.label}</span>
-                            {setting.signaled && <NotificationDot className="w-2 h-2" />}
-                        </div>
-                    }
-                    ellipsis={false}
-                    icon={setting.icon}
-                    className="relative"
-                ></DropdownMenuButton>
-            ))}
-        </QuickActionsDropdown>
+        <>
+            <QuickActionsDropdown
+                icon="cog-wheel"
+                size="small"
+                shape="ghost"
+                className="shrink-0"
+                signaled={offlineSignaled}
+            >
+                {settings.map((setting) => (
+                    <DropdownMenuButton
+                        key={setting.key}
+                        className="relative"
+                        ellipsis={false}
+                        icon={setting.icon}
+                        onClick={setting.onClick ?? (() => navigate(getLocalPath('settings'), { hash: setting.key }))}
+                        label={
+                            <div className="flex items-center gap-3">
+                                <span className="flex-1 flex-nowrap">{setting.label}</span>
+                                {setting.signaled && <NotificationDot className="w-2 h-2" />}
+                            </div>
+                        }
+                    />
+                ))}
+            </QuickActionsDropdown>
+        </>
     );
 };
