@@ -1,5 +1,7 @@
+import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 import type { OfflineConfig } from '@proton/pass/lib/cache/crypto';
 import { AuthMode, type Maybe, type Store } from '@proton/pass/types';
+import { deobfuscate, obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isObject } from '@proton/pass/utils/object/is-object';
 import { encodedGetter, encodedSetter } from '@proton/pass/utils/store';
 
@@ -33,8 +35,27 @@ const PASS_UID_KEY = 'pass:uid';
 const PASS_UNLOCK_RETRY_KEY = 'pass:unlock_retry_count';
 const PASS_USER_ID_KEY = 'pass:user_id';
 const PASS_ENCRYPTED_OFFLINE_KD = 'pass:encrypted_offline_kd';
-const PASS_LAST_USED_DATE = 'pass:last_used_date';
+const PASS_LAST_USED_AT = 'pass:last_used_at';
+const PASS_USER_DISPLAY_NAME = 'pass:user_display_name';
 const PASS_USER_EMAIL = 'pass:user_email';
+
+export const encodeUserData = (email: string = '', displayName: string = '') => {
+    const encodedEmail = JSON.stringify(obfuscate(email));
+    const encodedDisplayName = JSON.stringify(obfuscate(displayName));
+    return encodeUtf8Base64(`${encodedEmail}.${encodedDisplayName}`);
+};
+
+export const decodeUserData = (userData: string): { PrimaryEmail?: string; DisplayName?: string } => {
+    try {
+        const [encodedEmail, encodedDisplayName] = decodeUtf8Base64(userData).split('.');
+        return {
+            PrimaryEmail: deobfuscate(JSON.parse(encodedEmail)),
+            DisplayName: deobfuscate(JSON.parse(encodedDisplayName)),
+        };
+    } catch {
+        return {};
+    }
+};
 
 export const createAuthStore = (store: Store) => {
     const authStore = {
@@ -49,8 +70,10 @@ export const createAuthStore = (store: Store) => {
         getSession: (): AuthSession => ({
             AccessToken: authStore.getAccessToken() ?? '',
             cookies: authStore.getCookieAuth() ?? false,
+            encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
             extraPassword: authStore.getExtraPassword(),
             keyPassword: authStore.getPassword() ?? '',
+            lastUsedAt: authStore.getLastUsedDate(),
             LocalID: authStore.getLocalID(),
             lockMode: authStore.getLockMode(),
             lockTTL: authStore.getLockTTL(),
@@ -64,10 +87,8 @@ export const createAuthStore = (store: Store) => {
             sessionLockToken: authStore.getLockToken(),
             UID: authStore.getUID() ?? '',
             unlockRetryCount: authStore.getUnlockRetryCount(),
+            userData: authStore.getUserData(),
             UserID: authStore.getUserID() ?? '',
-            encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
-            email: authStore.getUserEmail(),
-            lastUsedDate: authStore.getLastUsedDate(),
         }),
 
         shouldCookieUpgrade: (data: Partial<AuthSession>) => AUTH_MODE === AuthMode.COOKIE && !data.cookies,
@@ -94,8 +115,11 @@ export const createAuthStore = (store: Store) => {
 
         setSession: (session: Partial<AuthSession>) => {
             if (session.AccessToken) authStore.setAccessToken(session.AccessToken);
+            if (session.cookies) authStore.setCookieAuth(session.cookies);
+            if (session.encryptedOfflineKD) authStore.setEncryptedOfflineKD(session.encryptedOfflineKD);
             if (session.extraPassword) authStore.setExtraPassword(true);
             if (session.keyPassword) authStore.setPassword(session.keyPassword);
+            if (session.lastUsedAt !== undefined) authStore.setLastUsedDate(session.lastUsedAt);
             if (session.LocalID !== undefined) authStore.setLocalID(session.LocalID);
             if (session.lockMode) authStore.setLockMode(session.lockMode);
             if (session.lockTTL) authStore.setLockTTL(session.lockTTL);
@@ -104,14 +128,13 @@ export const createAuthStore = (store: Store) => {
             if (session.offlineVerifier) authStore.setOfflineVerifier(session.offlineVerifier);
             if (session.payloadVersion !== undefined) authStore.setSessionVersion(session.payloadVersion);
             if (session.persistent) authStore.setPersistent(session.persistent);
+            if (session.userData !== undefined) authStore.setUserData(session.userData);
             if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
             if (session.RefreshToken) authStore.setRefreshToken(session.RefreshToken);
             if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
             if (session.UID) authStore.setUID(session.UID);
             if (session.unlockRetryCount !== undefined) authStore.setUnlockRetryCount(session.unlockRetryCount);
             if (session.UserID) authStore.setUserID(session.UserID);
-            if (session.cookies) authStore.setCookieAuth(session.cookies);
-            if (session.encryptedOfflineKD) authStore.setEncryptedOfflineKD(session.encryptedOfflineKD);
         },
 
         setAccessToken: (accessToken: Maybe<string>): void => store.set(PASS_ACCESS_TOKEN_KEY, accessToken),
@@ -125,6 +148,20 @@ export const createAuthStore = (store: Store) => {
         getUID: (): Maybe<string> => store.get(PASS_UID_KEY),
         setUserID: (UserID: Maybe<string>): void => store.set(PASS_USER_ID_KEY, UserID),
         getUserID: (): Maybe<string> => store.get(PASS_USER_ID_KEY),
+        setUserEmail: encodedSetter(store)(PASS_USER_EMAIL),
+        getUserEmail: encodedGetter(store)(PASS_USER_EMAIL),
+        setUserDisplayName: encodedSetter(store)(PASS_USER_DISPLAY_NAME),
+        getUserDisplayName: encodedGetter(store)(PASS_USER_DISPLAY_NAME),
+
+        getUserData: () => encodeUserData(authStore.getUserEmail(), authStore.getUserDisplayName()),
+        setUserData: (userData: string) => {
+            const data = decodeUserData(userData);
+            if (data) {
+                authStore.setUserEmail(data.PrimaryEmail);
+                authStore.setUserDisplayName(data.DisplayName);
+            }
+        },
+
         setPassword: encodedSetter(store)(PASS_MAILBOX_PWD_KEY),
         getPassword: encodedGetter(store)(PASS_MAILBOX_PWD_KEY),
         setLocalID: (LocalID: Maybe<number>): void => store.set(PASS_LOCAL_ID_KEY, LocalID),
@@ -151,11 +188,8 @@ export const createAuthStore = (store: Store) => {
         getLockLastExtendTime: (): Maybe<number> => store.get(PASS_LOCK_EXTEND_TIME_KEY),
 
         /** Last successful login / resuming */
-        setLastUsedDate: (lastUsedAt: number): void => store.set(PASS_LAST_USED_DATE, lastUsedAt),
-        getLastUsedDate: (): number => store.get(PASS_LAST_USED_DATE) ?? 0,
-
-        setUserEmail: (email: string): void => store.set(PASS_USER_EMAIL, email),
-        getUserEmail: (): Maybe<string> => store.get(PASS_USER_EMAIL),
+        setLastUsedDate: (lastUsedAt: number): void => store.set(PASS_LAST_USED_AT, lastUsedAt),
+        getLastUsedDate: (): number => store.get(PASS_LAST_USED_AT) ?? 0,
 
         setUnlockRetryCount: (count: number): void => store.set(PASS_UNLOCK_RETRY_KEY, count),
         getUnlockRetryCount: (): number => store.get(PASS_UNLOCK_RETRY_KEY) ?? 0,
