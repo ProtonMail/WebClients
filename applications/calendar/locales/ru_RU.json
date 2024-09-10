@@ -488,10 +488,10 @@
       "Not now": [
         "Не сейчас"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -2522,6 +2522,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "Экономьте время, отправляя электронные письма всем сразу с помощью групп контактов. Разблокируйте эти и другие платные функции при обновлении."
       ],
       "Set a data recovery method to prevent data loss.": [
         "Установите метод восстановления данных, чтобы предотвратить их потерю."
@@ -4899,9 +4902,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Пожалуйста, обратите внимание, что этот процесс может занять некоторое время в зависимости от размера вашей адресной книги."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Пожалуйста, предоставьте имя и email-адрес для создания группы"
       ],
@@ -6580,6 +6580,9 @@
       "1 user": [
         "1 пользователь"
       ],
+      "10 email addresses/aliases": [
+        "10 адресов электронной почты или псевдонимов"
+      ],
       "10-year file version history": [
         "10-летняя история версий файла"
       ],
@@ -6927,6 +6930,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 пользовательский домен электронной почты"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, VanyaShopper@${ domain } для учетных записей покупок, VanyaNews@${ domain2 } для подписки на новости"
       ],
