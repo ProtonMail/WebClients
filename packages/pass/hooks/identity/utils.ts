@@ -92,6 +92,7 @@ export const getIdentityFields = (): IdentityFormFields => ({
         name: 'socialSecurityNumber',
         label: c('Label').t`Social security number`,
         placeholder: c('Label').t`Social security number`,
+        hidden: true,
     },
     passportNumber: {
         name: 'passportNumber',
