@@ -4071,9 +4071,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Bemærk at når du klikker på Bekræft-knappen vil din konto have ${ creditsRemaining } kreditter tilbage."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Angiv et navn og en e-mailadresse for at oprette en gruppe."
       ],
@@ -5788,7 +5785,7 @@
         "Beskyt ${ n } enheder ad gangen"
       ],
       "Quickly craft replies": [
-        "Skrive hurtigt svar"
+        "Skriv hurtigt svar"
       ],
       "Recover previous file versions": [
         "Gendan tidligere filversioner"
@@ -6451,8 +6448,14 @@
       "External invitation's email was sent again": [
         "E-mail med ekstern invitation blev sendt igen"
       ],
+      "Failed to accept share invitation": [
+        "Kunne ikke acceptere invitation til at dele"
+      ],
       "Failed to download files: ${ err }": [
         "Kunne ikke downloade filer: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Kunne ikke afvise invitation til at dele"
       ],
       "Failed to upload files: ${ err }": [
         "Kunne ikke uploade filer: ${ err }"
@@ -6475,6 +6478,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ikke nok plads til at uploade ${ formattedTotal }"
+      ],
+      "Share invitation accepted successfully": [
+        "Del-invitation accepteret"
+      ],
+      "Share invitation declined": [
+        "Afvist invitation til at dele"
       ],
       "Stopping to share this item has failed": [
         "Det lykkedes ikke at stoppe med at dele dette element"

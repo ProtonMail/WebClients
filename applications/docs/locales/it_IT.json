@@ -4068,9 +4068,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Fornisci un nome e un indirizzo email per la creazione di un gruppo."
       ],
@@ -6502,8 +6499,14 @@
       "External invitation's email was sent again": [
         "L'email di invito esterno è stata inviata nuovamente"
       ],
+      "Failed to accept share invitation": [
+        "Impossibile accettare l'invito alla condivisione"
+      ],
       "Failed to download files: ${ err }": [
         "Scaricamento dei file non riuscito: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Impossibile rifiutare l'invito alla condivisione"
       ],
       "Failed to upload files: ${ err }": [
         "Caricamento dei file non riuscito: ${ err }"
@@ -6526,6 +6529,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Spazio insufficiente per caricare ${ formattedTotal }"
+      ],
+      "Share invitation accepted successfully": [
+        "Invito alla condivisione accettato con successo"
+      ],
+      "Share invitation declined": [
+        "Invito alla condivisione rifiutato"
       ],
       "Stopping to share this item has failed": [
         "Impossibile interrompere la condivisione di questo elemento"

@@ -4190,9 +4190,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornenie, tento proces môže trvať nejakú dobu v závislosti na veľkosti Vášho adresára."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú kredity vo výške ${ creditsRemaining }."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Na vytvorenie skupiny zadajte meno a emailovú adresu, prosím."
       ],
@@ -6662,8 +6659,14 @@
       "External invitation's email was sent again": [
         "Email s externou pozvánkou bol znova odoslaný"
       ],
+      "Failed to accept share invitation": [
+        "Prijatie pozvania na zdieľanie zlyhalo"
+      ],
       "Failed to download files: ${ err }": [
         "Nepodarilo sa stiahnuť súbory: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Odmietnutie pozvania na zdieľanie zlyhalo"
       ],
       "Failed to upload files: ${ err }": [
         "Nepodarilo sa nahrať súbory: ${ err }"
@@ -6688,6 +6691,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nedostatok miesta na nahratie ${ formattedTotal }"
+      ],
+      "Share invitation accepted successfully": [
+        "Pozvanie na zdieľanie bolo úspešne prijaté"
+      ],
+      "Share invitation declined": [
+        "Pozvánka na zdieľanie odmietnutá"
       ],
       "Stopping to share this item has failed": [
         "Ukončenie zdieľania tejto položky zlyhalo"

@@ -381,10 +381,10 @@
       "Get link": [
         "Obtenir le lien"
       ],
-      "Get Started": [
+      "Get started": [
         "Commencer"
       ],
-      "Get started": [
+      "Get Started": [
         "Commencer"
       ],
       "Get verification code": [
@@ -555,10 +555,10 @@
       "Not now": [
         "Plus tard"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -4097,6 +4097,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Voulez-vous vraiment définitivement supprimer les éléments sélectionnés du dossier Corbeille ?"
       ],
+      "Are you sure you want to proceed?": [
+        "Êtes-vous sûr de vouloir continuer ?"
+      ],
       "Attention required": [
         "Attention requise"
       ],
@@ -4779,8 +4782,8 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Notez que ce processus peut prendre un certain temps selon la taille de votre carnet d'adresses."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Après avoir cliqué sur le bouton Confirmer, il restera ${ creditsRemaining } crédits sur votre compte."
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Après avoir cliqué sur le bouton Confirmer, il restera ${ remainingCreditsFormatted } crédits sur votre compte."
       ],
       "Please open the document to view it.": [
         "Veuillez ouvrir le document pour l'afficher."
@@ -5325,6 +5328,9 @@
       "You already have a free account": [
         "Vous avez déjà un compte gratuit."
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Vous êtes sur le point de quitter l'élément partagé. Vous ne pourrez plus y accéder jusqu'à ce que le propriétaire le partage à nouveau avec vous."
+      ],
       "You are about to open another browser tab and visit:": [
         "Vous êtes sur le point d'ouvrir un autre onglet de navigateur et de visiter :"
       ],
@@ -5390,6 +5396,10 @@
       ],
       "You will lose all unsaved changes.": [
         "Vous perdrez toutes les modifications non enregistrées."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Vous devrez l'enregistrer à nouveau depuis la page du lien public.",
+        "Vous devrez les enregistrer à nouveau depuis la page du lien public."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
@@ -7682,6 +7692,14 @@
       "The link to your item was deleted": [
         "Le lien vers votre élément a été supprimé."
       ],
+      "This item was not removed from your list": [
+        "Cet élément n'a pas été retiré de votre liste.",
+        "Certains éléments n'ont pas été retirés de votre liste."
+      ],
+      "This item was succefully removed from your list": [
+        "Cet élément a été retiré de votre liste.",
+        "Tous les éléments ont été retirés de votre liste."
+      ],
       "Trash failed to be emptied": [
         "Le dossier Corbeille n'a pas pu être vidé."
       ],
@@ -7905,6 +7923,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "D'autres abonnements sont disponibles dans d'autres devises."
       ],
       "Payment Processing": [
         "Traitement des paiements"
@@ -9541,6 +9562,10 @@
       "Are you sure you want to close the preview?": [
         "Voulez-vous vraiment fermer la fenêtre d'aperçu ?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Êtes-vous sûr de vouloir retirer cet élément de votre liste ?",
+        "Êtes-vous sûr de vouloir retirer ces éléments de votre liste ?"
+      ],
       "Billing cycle": [
         "Cycle de facturation"
       ],
@@ -9585,6 +9610,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmer la perte des bonus ${ BRAND_NAME }"
+      ],
+      "Confirmation required?": [
+        "Confirmation requise ?"
       ],
       "Contact Details": [
         "Informations du contact"

@@ -395,9 +395,6 @@
       "Show": [
         "Hiện"
       ],
-      "Sign back in": [
-        "Đăng nhập lại"
-      ],
       "Sign in with ${ BRAND_NAME }": [
         "Đăng nhập bằng ${ BRAND_NAME }"
       ],
@@ -892,9 +889,6 @@
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Các bí danh cho tên miền tùy chọn không được theo dõi, hãy thêm vào danh sách email tùy chọn để có thể theo dõi chúng."
-      ],
-      "All aliases are synced": [
-        "Tất cả các bí danh đã đồng bộ"
       ],
       "All current breaches will be marked as resolved. In case of future data breaches, you'll be notified.": [
         "Đã xử lí tất cả các vụ rò rỉ hiện tại. Bạn sẽ được thông báo khi có các vụ rò rỉ khác trong tương lai."
@@ -2430,6 +2424,9 @@
       ],
       "Please verify your email address in order to use vault sharing": [
         "Vui lòng xác nhận địa chỉ email của bạn để sử dụng tính năng chia sẻ kho lưu trữ"
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Có lỗi xảy ra khi mở ${ PASS_APP_NAME }. Hãy thử tải lại trình mở rộng"
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Tiền tố bí danh không thể dài hơn 40 ký tự"

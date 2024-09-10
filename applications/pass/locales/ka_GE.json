@@ -181,6 +181,9 @@
       "Deselect": [
         "მონიშვნის მოხსნა"
       ],
+      "Disable instead": [
+        "გათიშეთ ის"
+      ],
       "Discard": [
         "მოცილება"
       ],
@@ -364,6 +367,9 @@
       "Pin item": [
         "ელემენტის მიმაგრება"
       ],
+      "Please retry": [
+        "თავიდან სცადეთ"
+      ],
       "Refresh the page": [
         "გვერდის განახლება"
       ],
@@ -472,9 +478,6 @@
       "Show": [
         "ჩვენება"
       ],
-      "Sign back in": [
-        "თავიდან შესვლა"
-      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME }-ით შესვლა"
       ],
@@ -492,6 +495,9 @@
       ],
       "Submitting report...": [
         "ანგარიშის გადაგზავნა..."
+      ],
+      "Sync aliases": [
+        "ფსევდონიმების სინქი"
       ],
       "Transfer ownership": [
         "მფლობელობის გადაცემა"
@@ -1840,6 +1846,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } ფსევდონიმი",
+        "${ aliasCount } ფსევდონიმი"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } სიმბოლო",
         "${ config.options.length } სიმბოლო"
@@ -2040,6 +2050,9 @@
       ],
       "Domain": [
         "დომენი"
+      ],
+      "Don't remind me again": [
+        "აღარ შემახსენო"
       ],
       "Download logs": [
         "ჟურნალის გადმოწერა"
@@ -2941,6 +2954,9 @@
       "Suggestions": [
         "შეთავაზებები"
       ],
+      "Sync alias": [
+        "ფსევდონიმის სინქი"
+      ],
       "Transfer ownership": [
         "მფლობელობის გადაცემა"
       ],
@@ -3102,6 +3118,9 @@
       "Missing alias suffix": [
         "აკლია ფსევდონიმის სუფიქსი"
       ],
+      "Move to trash": [
+        "ნაგვის ყუთში გადატანა"
+      ],
       "No items": [
         "ელემენტების გარეშე"
       ],
@@ -3152,6 +3171,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "ანგარიშები გამჭოლად არაა დაშიფრული. ნუ გააგზავნით კონფიდენციალურ ინფორმაციას."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "${ PASS_APP_NAME }-ის გაშვებისას რაღაც არასწორად წავიდა. სცადეთ, თავიდან ჩატვირთოთ, ან განაახლოთ გაფართოება"
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "ფსევდონიმის პრეფიქსი 40 სიმბოლოზე გრძელი ვერ იქნება"

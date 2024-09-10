@@ -373,6 +373,9 @@
       "Pin item": [
         "Ögeyi sabitle"
       ],
+      "Please retry": [
+        "Lütfen yeniden deneyin"
+      ],
       "Refresh the page": [
         "Sayfayı yenile"
       ],
@@ -480,9 +483,6 @@
       ],
       "Show": [
         "Görüntüle"
-      ],
-      "Sign back in": [
-        "Yeniden oturum aç"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile oturum aç"
@@ -1132,9 +1132,6 @@
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Özel etki alanlarındaki takma adlar izlenmez. Lütfen bunları izlemek için bir özel e-posta olarak ekleyin."
-      ],
-      "All aliases are synced": [
-        "Tüm takma adlar eşitlendi"
       ],
       "All breaches for this address were resolved": [
         "Bu adres için tüm verilerin ele geçirilmesi olayları çözümlendi"
@@ -3223,6 +3220,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "${ PASS_APP_NAME } başlatılırken bir sorun çıktı. Lütfen eklentiyi yenilemeyi ya da yeniden yüklemeyi deneyin"
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Takma ad ön ekiniz 40 karakterden uzun olamaz"

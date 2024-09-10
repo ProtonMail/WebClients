@@ -181,6 +181,12 @@
       "Deselect": [
         "Auswahl aufheben"
       ],
+      "Disable instead": [
+        "Stattdessen deaktivieren"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Deaktiviere diesen Alias, um keine E-Mails mehr zu erhalten, die an diesen Alias gesendet werden."
+      ],
       "Discard": [
         "Verwerfen"
       ],
@@ -198,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Dark Web-Überwachung aktivieren"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Aktiviere diesen Alias, um E-Mails zu empfangen, die an diesen Alias gesendet werden"
       ],
       "Entire vault": [
         "Gesamter Tresor"
@@ -364,6 +373,9 @@
       "Pin item": [
         "Eintrag anheften"
       ],
+      "Please retry": [
+        "Bitte versuche es erneut"
+      ],
       "Refresh the page": [
         "Seite aktualisieren"
       ],
@@ -472,9 +484,6 @@
       "Show": [
         "Anzeigen"
       ],
-      "Sign back in": [
-        "Wieder anmelden"
-      ],
       "Sign in with ${ BRAND_NAME }": [
         "Mit ${ BRAND_NAME } anmelden"
       ],
@@ -492,6 +501,9 @@
       ],
       "Submitting report...": [
         "Bericht wird übermittelt…"
+      ],
+      "Sync aliases": [
+        "Aliasse synchronisieren"
       ],
       "Transfer ownership": [
         "Inhaberschaft übertragen"
@@ -651,6 +663,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Die ${ provider }-Datei konnte nicht geparst werden. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Der Alias kann im Moment nicht aktualisiert werden. Bitte versuche es später erneut."
+      ],
       "Alias options could not be resolved": [
         "Fehler beim Auflösen der Aliasoptionen."
       ],
@@ -772,6 +787,9 @@
       ],
       "Failed to restore items from trash": [
         "Fehler beim Wiederherstellen der Einträge aus dem Papierkorb."
+      ],
+      "Failed to sync aliases": [
+        "Fehler beim Synchronisieren der Aliasse."
       ],
       "Failed to transfer this vault's ownership.": [
         "Fehler beim Übertragen der Tresor-Inhaberschaft."
@@ -1096,6 +1114,21 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Nachdem du deine Daten erfolgreich importiert hast, kannst du die CSV-Datei mit deinen Passwörtern zur Sicherheit löschen."
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Der Alias wurde erfolgreich deaktiviert. Du wirst keine E-Mails mehr erhalten, die an ${ item.aliasEmail } gesendet werden."
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Der Alias wurde erfolgreich aktiviert. Du kannst jetzt E-Mails empfangen, die an ${ item.aliasEmail } gesendet werden."
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Die Alias-Synchronisierung zwischen deinem ${ BRAND_NAME }- und SimpleLogin-Konto ist aktiv."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Aliase im Papierkorb werden weiterhin E-Mails weiterleiten. Wenn du keine E-Mails mehr an diese Adresse erhalten willst, deaktiviere ihn stattdessen."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Aliasse nicht synchronisiert (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasse mit eigenen Domains werden nicht überwacht. Bitte füge diese als eigene E-Mail-Adresse hinzu, um sie zu überwachen."
@@ -1771,8 +1804,15 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Wir haben Probleme bei der Synchronisierung von Daten mit deinem lokalen Speicher. Bitte vergewissere dich, dass du genügend Speicherplatz für ${ PASS_SHORT_APP_NAME } hast, damit die Synchronisation reibungslos funktioniert."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Wir haben festgestellt, dass du ${ aliasCount } Alias hast, der in SimpleLogin vorhanden ist, aber in ${ PASS_APP_NAME } fehlt. Möchtest du ihn importieren?",
+        "Wir haben festgestellt, dass du ${ aliasCount } Aliasse hast, die in SimpleLogin vorhanden sind, aber in ${ PASS_APP_NAME } fehlen. Möchtest du sie importieren?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Wir haben einen Verifizierungscode an ${ email } gesendet. Bitte gib ihn unten ein:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Beim Erstellen/Bearbeiten eines Logins auf ${ PASS_APP_NAME } wird die Eingabe 'Benutzername' immer sichtbar sein."
       ],
       "You are about to create:": [
         "Folgender Alias wird erstellt:"
@@ -1840,6 +1880,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } Alias",
+        "${ aliasCount } Aliasse"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } Zeichen",
         "${ config.options.length } Zeichen"
@@ -1942,6 +1986,9 @@
       "Alphabetical": [
         "Alphabetisch"
       ],
+      "Always show username field": [
+        "Benutzername-Feld immer anzeigen"
+      ],
       "Application logs": [
         "Anwendungsprotokolle"
       ],
@@ -2041,6 +2088,9 @@
       "Domain": [
         "Domain"
       ],
+      "Don't remind me again": [
+        "Nicht erneut erinnern"
+      ],
       "Download logs": [
         "Protokolle herunterladen"
       ],
@@ -2064,6 +2114,9 @@
       ],
       "Enable offline access": [
         "Offline-Zugriff aktivieren"
+      ],
+      "Enter email or username": [
+        "E-Mail-Adresse oder Benutzername eingeben"
       ],
       "Expiration date": [
         "Ablaufdatum"
@@ -2362,6 +2415,9 @@
       "Select preferred language": [
         "Bevorzugte Sprache auswählen"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        " Wähle den Tresor, in den SimpleLogin-Aliasse importiert werden sollen"
+      ],
       "Select your password manager": [
         "Passwort-Manager auswählen"
       ],
@@ -2409,6 +2465,9 @@
       ],
       "Support": [
         "Support"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Aliasse mit SimpleLogin synchronisieren"
       ],
       "Tax number": [
         "Steuernummer"
@@ -2691,6 +2750,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Die Synchronisierung der Aliasse wurde erfolgreich aktiviert. Die Synchronisierung der SimpleLogin-Aliasse kann einige Zeit in Anspruch nehmen."
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten.",
         "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten."
@@ -2938,6 +3000,9 @@
       "Suggestions": [
         "Vorschläge"
       ],
+      "Sync alias": [
+        "Alias synchronisieren"
+      ],
       "Transfer ownership": [
         "Inhaberschaft übertragen"
       ],
@@ -3099,6 +3164,9 @@
       "Missing alias suffix": [
         "Fehlendes Alias-Suffix"
       ],
+      "Move to trash": [
+        "In den Papierkorb verschieben"
+      ],
       "No items": [
         "Keine Einträge"
       ],
@@ -3150,8 +3218,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
       ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Beim Starten von ${ PASS_APP_NAME } ist ein Fehler aufgetreten. Bitte versuche, die Erweiterung zu aktualisieren oder neu zu laden."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Der Alias-Präfix darf nicht länger als 40 Zeichen sein."
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Dieser Alias „${ aliasEmail }“ wird derzeit im Login „${ relatedLoginName }“ verwendet."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Diese E-Mail-Adresse wird nicht länger auf Datenlecks überwacht."
