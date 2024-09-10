@@ -4068,9 +4068,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Παρακαλούμε δώστε ένα όνομα και μια διεύθυνση ηλεκτρονικού ταχυδρομείου για τη δημιουργία μιας ομάδας."
       ],
@@ -6448,8 +6445,14 @@
       "External invitation's email was sent again": [
         "Το μήνυμα ηλεκτρονικού ταχυδρομείου εξωτερικής πρόσκλησης στάλθηκε ξανά"
       ],
+      "Failed to accept share invitation": [
+        "Αποτυχία αποδοχής πρόσκλησης κοινοποίησης"
+      ],
       "Failed to download files: ${ err }": [
         "Αποτυχία λήψης αρχείων: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Αποτυχία απόρριψης πρόσκλησης κοινής χρήσης"
       ],
       "Failed to upload files: ${ err }": [
         "Αποτυχία ανεβάσματος αρχείων: ${ err }"
@@ -6472,6 +6475,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
+      ],
+      "Share invitation accepted successfully": [
+        "Η κοινοποίηση πρόσκλησης έγινε αποδεκτή με επιτυχία"
+      ],
+      "Share invitation declined": [
+        "Η πρόσκληση κοινής χρήσης απορρίφθηκε"
       ],
       "Stopping to share this item has failed": [
         "Η διακοπή της κοινής χρήσης αυτού του στοιχείου απέτυχε"

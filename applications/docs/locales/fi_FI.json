@@ -2876,7 +2876,7 @@
     },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
-        "3 Tt kokonaistallennustila"
+        "Yhteensä 3 Tt tallennustilaa"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -4039,7 +4039,7 @@
         "Maksut on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
       ],
       "People with access": [
-        "Käyttöoikeuden omaavat henkilöt"
+        "Käyttöoikeuden omaavat tahot"
       ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline on yhteensopiva vain pelkkä teksti -muodon kanssa."
@@ -4067,9 +4067,6 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Huomioithan, että painettuasi \"Vahvista\", tilillesi jää ${ creditsRemaining } krediittiä."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Anna nimi ja sähköpostiosoite ryhmän luomista varten."
@@ -4148,7 +4145,7 @@
         "PGP:n määritys mahdollistaa päästä päähän -salatut viestit ${ BRAND_NAME }in ulkopuolisen, PGP-yhteensopivaa palvelua käyttävän käyttäjän kanssa."
       ],
       "Share via link settings": [
-        "Linkkijaon asetukset"
+        "Jakolinkin asetukset"
       ],
       "Shareable link for ${ boldNameText }": [
         "Jaettava linkki kohteeseen ${ boldNameText }"
@@ -4621,7 +4618,7 @@
         "Lisää ryhmään"
       ],
       "Anyone on the Internet with the link can view": [
-        "Linkin välityksellä kuka tahansa Internetissä voi tarkastella"
+        "Linkin välityksellä kuka tahansa voi tarkastella"
       ],
       "Anyone with the link": [
         "Kuka tahansa linkin omaava"
@@ -5131,7 +5128,7 @@
         "${ driveStorage }si on täynnä. Tallentaaksesi ja synkronoidaksesi tiedostoja, vapauta tilaa tai ${ cta }."
       ],
       "Your ${ mailStorage } is full. To send or receive emails, free up space or ${ cta }.": [
-        "${ mailStorage } -tallennustilasi on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
+        "${ mailStorage }si on täynnä. Lähettääksesi ja vastaanottaaksesi viestejä, vapauta tilaa tai ${ cta }."
       ],
       "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
         "Tilisi on vaarassa poistua. Pyydä ylläpitäjääsi päivittämään tilauksesi, jotta vältät tietojen menettämisen. ${ cta }"
@@ -5235,13 +5232,13 @@
         "PDF (Adobe Portable Document Format)"
       ],
       "Amazon Kindle eBook format": [
-        "Amazon Kindle eBook format"
+        "Amazon Kindle eBook"
       ],
       "Android Package": [
         "Android-paketti"
       ],
       "Animated Portable Network Graphics": [
-        "APNG (Animated Portable Network Graphics)"
+        "Animated Portable Network Graphics (APNG)"
       ],
       "Apple Installer Package": [
         "Apple Installer -paketti"
@@ -5253,31 +5250,31 @@
         "Ääni"
       ],
       "AV1 Image File Format (AVIF)": [
-        "AVIF (AV1 Image File Format)"
+        "AV1-kuva (AVIF)"
       ],
       "AVI video": [
         "AVI-video"
       ],
       "Binary data": [
-        "Binaaritiedot"
+        "Binääritiedosto"
       ],
       "Bourne shell script": [
-        "Bourne shell -komentojono"
+        "Bourne shell -komentosarja"
       ],
       "BZip archive": [
-        "BZip-arkisto"
+        "Bzip-arkisto"
       ],
       "BZip2 archive": [
-        "BZip2-arkisto"
+        "Bzip2-arkisto"
       ],
       "C-Shell script": [
-        "C-Shell-komentojono"
+        "C-Shell-komentosarja"
       ],
       "Cascading Style Sheets (CSS)": [
-        "CSS (Cascading Style Sheets)"
+        "Cascading Style Sheets (CSS)"
       ],
       "Comma-separated values (CSV)": [
-        "CSV (Comma-separated values)"
+        "Pilkuilla erotellut arvot (CSV)"
       ],
       "Electronic publication (EPUB)": [
         "EPUB (Electronic publication)"
@@ -5286,22 +5283,22 @@
         "Flash-video"
       ],
       "Graphics Interchange Format (GIF)": [
-        "GIF (Graphics Interchange Format)"
+        "Graphics Interchange Format (GIF)"
       ],
       "GZip Compressed Archive": [
-        "GZip-arkisto"
+        "Gzip-arkisto"
       ],
       "HyperText Markup Language (HTML)": [
-        "HTML (HyperText Markup Language)"
+        "Hypertekstin merkintäkieli (HTML)"
       ],
       "Hypertext Preprocessor (Personal Home Page)": [
-        "PHP (Hypertext Preprocessor)"
+        "PHP: Hypertext Preprocessor"
       ],
       "iCalendar format": [
         "iCalendar"
       ],
       "Icon format": [
-        "Kuvake"
+        "Kuvake (ICO)"
       ],
       "Image": [
         "Kuva"
@@ -5316,16 +5313,16 @@
         "MP3-ääni"
       ],
       "MPEG transport stream": [
-        "MPEG-TS (MPEG transport stream)"
+        "MPEG transport stream (MPEG-TS)"
       ],
       "MPEG Video": [
         "MPEG-video"
       ],
       "MS Embedded OpenType fonts": [
-        "MS Embedded OpenType -kirjasin"
+        "MS Embedded OpenType (EOT) -kirjasin"
       ],
       "Musical Instrument Digital Interface (MIDI)": [
-        "MIDI (Musical Instrument Digital Interface)"
+        "Musical Instrument Digital Interface (MIDI)"
       ],
       "OGG audio": [
         "OGG-ääni"
@@ -5349,22 +5346,22 @@
         "Opus-ääni"
       ],
       "Portable Network Graphics": [
-        "PNG (Portable Network Graphics)"
+        "Portable Network Graphics (PNG)"
       ],
       "RAR archive": [
         "RAR-arkisto"
       ],
       "Rich Text Format (RTF)": [
-        "RTF (Rich Text Format)"
+        "Rich Text Format (RTF)"
       ],
       "Scalable Vector Graphics (SVG)": [
-        "SVG (Scalable Vector Graphics)"
+        "Scalable Vector Graphics (SVG)"
       ],
       "Small web format (SWF)": [
         "Small Web Format (SWF)"
       ],
       "Tagged Image File Format (TIFF)": [
-        "TIFF (Tagged Image File Format)"
+        "Tagged Image File Format (TIFF)"
       ],
       "Tape Archive (TAR)": [
         "TAR-arkisto"
@@ -5376,16 +5373,16 @@
         "TrueType-kirjasin"
       ],
       "Unknown file": [
-        "Tuntematon tiedosto"
+        "Tuntematon"
       ],
       "Video file": [
         "Video"
       ],
       "Waveform Audio Format": [
-        "WAV (Waveform Audio Format)"
+        "Waveform Audio Format (WAV)"
       ],
       "Web Open Font Format (WOFF)": [
-        "WOFF (Web Open Font Format)"
+        "Web Open Font Format (WOFF) -kirjasin"
       ],
       "WEBM audio": [
         "WebM-ääni"
@@ -5397,7 +5394,7 @@
         "WebP-kuva"
       ],
       "Windows OS/2 Bitmap Graphics": [
-        "BMP (Windows OS/2 Bitmap Graphics)"
+        "Windows OS/2 -bittikartta (BMP)"
       ],
       "ZIP archive": [
         "ZIP-arkisto"
@@ -6448,8 +6445,14 @@
       "External invitation's email was sent again": [
         "Ulkoinen kutsusähköposti lähetettiin uudelleen"
       ],
+      "Failed to accept share invitation": [
+        "Jakokutsun hyväksyntä epäonnistui"
+      ],
       "Failed to download files: ${ err }": [
         "Tiedostojen lataus epäonnistui: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Jakokutsusta kieltäytyminen epäonnistui"
       ],
       "Failed to upload files: ${ err }": [
         "Tiedostojen tallennus epäonnistui: ${ err }"
@@ -6472,6 +6475,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Tila ei riitä ${ formattedTotal } tiedoston tallennukseen"
+      ],
+      "Share invitation accepted successfully": [
+        "Jakokutsu hyväksyttiin"
+      ],
+      "Share invitation declined": [
+        "Kieltäydyit jakokutsusta"
       ],
       "Stopping to share this item has failed": [
         "Tämän kohteen jakamisen lopettaminen epäonnistui"
@@ -7137,7 +7146,7 @@
     },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
-        "Hakanut ${ ownerName }"
+        "Jakanut ${ ownerName }"
       ]
     },
     "Signing preference for emails": {
@@ -7325,7 +7334,7 @@
     },
     "storage_split: info": {
       "${ app } storage": [
-        "${ app } tallennustila"
+        "${ app }-tallennustila"
       ],
       "${ storage } ${ percentage }% full": [
         "${ storage }stasi on käytetty ${ percentage } %"
@@ -7343,7 +7352,7 @@
         "Jos haluat lähettää tai vastaanottaa sähköposteja, vapauta tilaa tai ${ upgrade }"
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
-        "Jos haluat lähettää tai synkronoida tiedostoja, vapauta tilaa tai ${ upgrade }"
+        "Tallentaaksesi ja synkronoidaksesi lisää tiedostoja, vapauta tilaa tai ${ upgrade }."
       ],
       "upgrade for more storage": [
         "hanki lisää päivittämällä tilauksesi"
@@ -7362,13 +7371,13 @@
         "${ appStorage }si on täynnä"
       ],
       "Your ${ storage } is ${ percentage }% full. ${ cta }.": [
-        "${ storage } on ${ percentage }% täynnä. ${ cta }."
+        "${ storage }stasi on käytössä ${ percentage } %. ${ cta }."
       ],
       "Your ${ storage } is full. ${ cta }.": [
-        "${ storage } on täynnä. ${ cta }."
+        "${ storage }si on täynnä. ${ cta }."
       ],
       "Your storage is ${ percentage }% full. ${ cta }.": [
-        "Tallennustilasi on ${ percentage }% täynnä. ${ cta }."
+        "Tallennustilastasi on käytössä ${ percentage } %. ${ cta }."
       ],
       "Your storage is full": [
         "Tallennustilasi on täynnä"

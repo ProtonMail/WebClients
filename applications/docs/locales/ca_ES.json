@@ -4031,9 +4031,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tingueu en compte que aquest procés pot trigar una mica depenent de la mida de la vostra llibreta d'adreces."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Tingueu en compte que quan feu clic al botó \"Confirmar\", el vostre compte restarà crèdit de ${ creditsRemaining }."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Proporcioneu un nom i una adreça de correu electrònic per crear un grup."
       ],
@@ -6344,8 +6341,14 @@
       "External invitation's email was sent again": [
         "S'ha tornat a enviar el correu electrònic de la invitació externa."
       ],
+      "Failed to accept share invitation": [
+        "No s'ha pogut acceptar la invitació per a compartir"
+      ],
       "Failed to download files: ${ err }": [
         "No s'han pogut descarregar els fitxers: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "No s'ha pogut rebutjar la invitació per a compartir."
       ],
       "Failed to upload files: ${ err }": [
         "Error carregant fitxers: ${ err }"
@@ -6368,6 +6371,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hi ha prou espai per carregar ${ formattedTotal }"
+      ],
+      "Share invitation accepted successfully": [
+        "S'ha acceptat la invitació per a compartir"
+      ],
+      "Share invitation declined": [
+        "S'ha rebutjat la invitació per a compartir."
       ],
       "Stopping to share this item has failed": [
         "No s'ha pogut deixar de compartir aquest element"

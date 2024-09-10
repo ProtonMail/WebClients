@@ -4038,9 +4038,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Houd er rekening mee dat dit proces enige tijd in beslag kan nemen, afhankelijk van de grootte van uw adresboek."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Voorzie een naam en een e-mailadres voor het aanmaken van een groep"
       ],
@@ -6365,8 +6362,14 @@
       "External invitation's email was sent again": [
         "Externe uitnodigingsmail is opnieuw verzonden"
       ],
+      "Failed to accept share invitation": [
+        "Accepteren van uitnodiging mislukt"
+      ],
       "Failed to download files: ${ err }": [
         "Bestanden downloaden mislukt: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Weigeren van deel-uitnodiging mislukt"
       ],
       "Failed to upload files: ${ err }": [
         "Het uploaden van bestanden is mislukt: ${ err }"
@@ -6389,6 +6392,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
+      ],
+      "Share invitation accepted successfully": [
+        "Uitnodiging met succes geaccepteerd"
+      ],
+      "Share invitation declined": [
+        "Deel-uitnodiging afgewezen"
       ],
       "Stopping to share this item has failed": [
         "Stopping om dit item te delen is mislukt"

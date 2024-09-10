@@ -288,6 +288,9 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Ir a ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Ir a la etiqueta"
       ],
@@ -4068,9 +4071,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Indica un nombre y una dirección de correo para crear un grupo."
       ],
@@ -6451,8 +6451,14 @@
       "External invitation's email was sent again": [
         "Se ha enviado nuevamente el correo de invitación externa."
       ],
+      "Failed to accept share invitation": [
+        "Se ha producido un error al aceptar la invitación compartida"
+      ],
       "Failed to download files: ${ err }": [
         "Error al descargar los archivos: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Se ha producido un error al rechazar la invitación compartida."
       ],
       "Failed to upload files: ${ err }": [
         "Error al cargar los archivos: ${ err }"
@@ -6475,6 +6481,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hay espacio suficiente para cargar ${ formattedTotal }."
+      ],
+      "Share invitation accepted successfully": [
+        "La invitación compartida ha sido aceptada."
+      ],
+      "Share invitation declined": [
+        "Se ha rechazado la invitación compartida."
       ],
       "Stopping to share this item has failed": [
         "Error al dejar de compartir este elemento"
