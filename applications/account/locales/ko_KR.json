@@ -662,7 +662,7 @@
         "로고 유지"
       ],
       "Keep my subscription": [
-        "나의 구독 유지"
+        "내 구독 유지하기"
       ],
       "label emails as": [
         "다음으로 라벨 지정"
@@ -811,11 +811,11 @@
       "Refresh status": [
         "상태 새로고침"
       ],
-      "Refresh the page": [
-        "페이지 새로 고침"
-      ],
       "refresh the page": [
         "페이지 새로고침"
+      ],
+      "Refresh the page": [
+        "페이지 새로 고침"
       ],
       "Reload": [
         "새로고침"
@@ -1612,14 +1612,6 @@
         "연말 할인 선택"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 스토리지 (다른 플랜 보다 두 배 많음)"
@@ -1641,6 +1633,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "${ plan } 플랜은 제한된 시간에만 적용됩니다."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다. 다만 **${ months }**로 구독할 때 **${ plan.Title }을(를) ${ discountPercentage }** 할인된 가격으로 구매 가능합니다."
       ]
     },
     "bf2023: Offers": {
@@ -3364,7 +3364,7 @@
     },
     "Description": {
       "Auto-delete spam and trashed messages and unlock more premium features when you upgrade.": [
-        "휴지통 내 메시지 및 스팸을 자동 삭제하고 더 많은 프리미엄 기능도 함께 경험하세요."
+        "업그레이드시 스펨 메일함과 휴지통 내 메시지를 자동으로 삭제하며 더 많은 프리미엄 기능이 해제됩니다."
       ],
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
         "축하합니다! ${ plusPlanName }의 최대 ${ rewardsLimit }월이 무료로 적립되었습니다."
@@ -6979,10 +6979,10 @@
       "Data locked": [
         "데이터 잠김"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "전용 서버"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "전용 서버"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -7893,9 +7893,6 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "이 필터 (${ nameDeleted }) 삭제시 트리거되는 모든 자동화된 작업이 중단됩니다."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "확인 버튼을 누르면 계정에는 ${ creditsRemaining } 크레딧이 남습니다."
       ],
       "please open a support ticket": [
         "지원 티켓을 만들어 주세요"
@@ -11205,9 +11202,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "달러"
-      ],
       "Euro": [
         "유로"
       ],
@@ -11415,26 +11409,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "${ price }로 시작하세요."
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "무료로 계속하기"
@@ -11462,6 +11436,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "${ price }로 시작하세요."
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -11508,7 +11502,7 @@
         "사용자 당 ${ n }개 공유된 ${ PASS_SHORT_APP_NAME } 금고"
       ],
       "${ n } user": [
-        "최대 ${ n }명 사용자"
+        "사용자 최대 ${ n }명"
       ],
       "${ n } vault": [
         "${ n }개 금고"
@@ -12104,17 +12098,6 @@
         "${ planName } 플랜을 선택하셨습니다"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } 체험"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "${ price }에 Mail Plus를 구독하세요"
-      ],
-      "Your account's usage": [
-        "계정 사용량"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "계정을 삭제할까요?"
@@ -12133,6 +12116,17 @@
       ],
       "Unlock premium features by upgrading": [
         "업그레이드로 프리미엄 기능 해제"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } 체험"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "${ price }에 Mail Plus를 구독하세요"
+      ],
+      "Your account's usage": [
+        "계정 사용량"
       ]
     },
     "new_plans: tooltip": {
@@ -16242,11 +16236,11 @@
       "Card verification": [
         "카드 확인"
       ],
-      "Catch-All address": [
-        "Catch-All 주소"
-      ],
       "Catch-all address": [
         "Catch-all 주소"
+      ],
+      "Catch-All address": [
+        "Catch-All 주소"
       ],
       "Change login password": [
         "로그인 비밀번호 변경"
