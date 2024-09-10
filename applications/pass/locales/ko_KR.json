@@ -481,9 +481,6 @@
       "Show": [
         "보기"
       ],
-      "Sign back in": [
-        "다시 로그인하세요"
-      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME }에 로그인"
       ],
@@ -1118,9 +1115,6 @@
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "커스텀 도메인을 사용한 별칭은 모니터링 대상이 아니므로, 커스텀 이메일로 모니터링에 추가해 주세요."
-      ],
-      "All aliases are synced": [
-        "모든 별칭이 동기화되었습니다."
       ],
       "All breaches for this address were resolved": [
         "이 주소의 모든 침해가 해결되었습니다"
@@ -3190,6 +3184,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "보고서는 종단간 암호화되지 않음으로 민감한 정보를 보내지 마십시오."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "${ PASS_APP_NAME }를 시작하는데 문제가 발생했습니다. 새로고침 하거나 확장 프로그램을 다시 로드해 보세요."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "별칭 접두사는 40자를 초과할 수 없습니다"
