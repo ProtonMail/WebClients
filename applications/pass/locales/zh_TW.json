@@ -382,9 +382,6 @@
       "Show": [
         "顯示"
       ],
-      "Sign back in": [
-        "重新登入"
-      ],
       "Sign in with ${ BRAND_NAME }": [
         "使用 ${ BRAND_NAME } 登入"
       ],
@@ -2321,6 +2318,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "回報未使用端到端加密，請不要傳送任何敏感資訊。"
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "於啟用${ PASS_APP_NAME }時發生錯誤。請重新整理或重新載入擴充功能"
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "別名不能超過40個字元"

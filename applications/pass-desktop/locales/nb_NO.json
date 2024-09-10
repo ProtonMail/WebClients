@@ -181,6 +181,12 @@
       "Deselect": [
         "Fjern markeringen"
       ],
+      "Disable instead": [
+        "Deaktiver i stedet"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Deaktiver dette aliaset for å slutte å motta e-post sendt til dette aliaset"
+      ],
       "Discard": [
         "Forkast"
       ],
@@ -198,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Aktiver overvåking av det mørke nettet"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Aktiver dette aliaset for å motta e-poster sendt til dette aliaset"
       ],
       "Entire vault": [
         "Hele hvelvet"
@@ -367,6 +376,9 @@
       "Pin item": [
         "Fest element"
       ],
+      "Please retry": [
+        "Prøv igjen"
+      ],
       "Refresh the page": [
         "Oppdater siden"
       ],
@@ -475,9 +487,6 @@
       "Show": [
         "Vis"
       ],
-      "Sign back in": [
-        "Logg på igjen"
-      ],
       "Sign in with ${ BRAND_NAME }": [
         "Logg på med ${ BRAND_NAME }"
       ],
@@ -495,6 +504,9 @@
       ],
       "Submitting report...": [
         "Sender inn rapport..."
+      ],
+      "Sync aliases": [
+        "Synkroniser aliaser"
       ],
       "Transfer ownership": [
         "Overfør eierskap"
@@ -677,6 +689,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-fil kunne ikke tolkes. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Alias kunne ikke oppdateres for øyeblikket. Vennligst prøv igjen senere"
+      ],
       "Alias options could not be resolved": [
         "Aliasalternativene kunne ikke løses"
       ],
@@ -801,6 +816,9 @@
       ],
       "Failed to restore items from trash": [
         "Kunne ikke gjenopprette elementer fra papirkurven"
+      ],
+      "Failed to sync aliases": [
+        "Kunne ikke synkronisere aliaser"
       ],
       "Failed to transfer this vault's ownership.": [
         "Kunne ikke overføre hvelvets eierskap."
@@ -1150,6 +1168,21 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Når du har importert dataene dine, kan du av sikkerhetsgrunner slette CSV-filen som inneholder passordene dine."
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias er deaktivert. Du vil ikke lenger motta e-poster sendt til ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias er aktivert. Du kan nå motta e-poster sendt til ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Alias-synkronisering mellom ${ BRAND_NAME }- og SimpleLogin-kontoene dine er aktiv."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Aliaser i papirkurven fortsetter å videresende e-poster. Hvis du vil slutte å motta e-post på denne adressen, deaktiver det i stedet."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Aliaser ute av synkronisering (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliaser med egendefinerte domener overvåkes ikke, vennligst legg dem til som en tilpasset e-post for overvåking."
@@ -1834,8 +1867,15 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problemer med å synkronisere data til din lokale lagring. Forsikre deg om at du har nok diskplass til at ${ PASS_SHORT_APP_NAME } kan fungere problemfritt."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Vi oppdaget at du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere det?",
+        "Vi oppdaget at du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere dem?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Vi har sendt en verifiseringskode til ${ email }. Vennligst angi den nedenfor:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Når du oppretter/redigerer en pålogging på ${ PASS_APP_NAME } vil 'brukernavn'-feltet alltid være synlig."
       ],
       "You are about to create:": [
         "Du er i ferd med å opprette:"
@@ -1903,6 +1943,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliaser"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } tegn",
         "${ config.options.length } tegn"
@@ -2005,6 +2049,9 @@
       "Alphabetical": [
         "Alfabetisk"
       ],
+      "Always show username field": [
+        "Vis alltid brukernavnfeltet"
+      ],
       "Application logs": [
         "Applikasjonslogger"
       ],
@@ -2104,6 +2151,9 @@
       "Domain": [
         "Domene"
       ],
+      "Don't remind me again": [
+        "Ikke minn meg på det igjen"
+      ],
       "Download logs": [
         "Last ned logger"
       ],
@@ -2127,6 +2177,9 @@
       ],
       "Enable offline access": [
         "Aktiver frakoblet tilgang"
+      ],
+      "Enter email or username": [
+        "Skriv inn e-post eller brukernavn"
       ],
       "Expiration date": [
         "Utløpsdato"
@@ -2428,6 +2481,9 @@
       "Select preferred language": [
         "Velg ønsket språk"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Velg hvelvet der SimpleLogin-aliaser skal importeres til"
+      ],
       "Select your password manager": [
         "Velg passordbehandleren din"
       ],
@@ -2475,6 +2531,9 @@
       ],
       "Support": [
         "Brukerstøtte"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Synkroniser aliaser med SimpleLogin"
       ],
       "Tax number": [
         "Avgiftsnummer"
@@ -2771,6 +2830,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Aliassynkronisering aktivert. SimpleLogin-aliaser kan ta litt tid å synkronisere"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Hvelv kan ikke inneholde mer enn ${ vault.targetMaxMembers } bruker.",
         "Hvelv kan ikke inneholde mer enn ${ vault.targetMaxMembers } brukere."
@@ -3018,6 +3080,9 @@
       "Suggestions": [
         "Forslag"
       ],
+      "Sync alias": [
+        "Synkroniser alias"
+      ],
       "Transfer ownership": [
         "Overfør eierskap"
       ],
@@ -3179,6 +3244,9 @@
       "Missing alias suffix": [
         "Mangler aliasprefiks"
       ],
+      "Move to trash": [
+        "Flytt til papirkurven"
+      ],
       "No items": [
         "Ingen elementer"
       ],
@@ -3230,8 +3298,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Feilrapporter er ikke ende-til-ende-kryptert, vennligst ikke send noe sensitiv informasjon."
       ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Noe gikk galt under oppstart av ${ PASS_APP_NAME }. Vennligst prøv å oppdatere eller laste inn utvidelsen på nytt."
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Aliasprefikset kan ikke være lenger enn 40 tegn."
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Dette aliaset \"${ aliasEmail }\" brukes for øyeblikket i påloggingen \"${ relatedLoginName }\"."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Denne e-postadressen vil ikke lenger overvåkes for datainnbrudd."

@@ -464,11 +464,11 @@
       "Not now": [
         "現在不要"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "開啟 ${ CALENDAR_APP_NAME } 設定"
@@ -2438,6 +2438,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
+      ],
+      "Save time by sending emails to everyone at once with contact groups. Unlock this and other premium features when you upgrade.": [
+        "透過傳送電子郵件給通訊群組每一人以節省時間。當您升級以解鎖次頂級功能。"
       ],
       "Set a data recovery method to prevent data loss.": [
         "設定資料救援手段以防資料丟失"
@@ -4642,9 +4645,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
-      ],
       "Please provide a name and an email address for creating a group.": [
         "請提供一個名子和電子郵件位址以創建群組。"
       ],
@@ -6212,6 +6212,12 @@
       "${ size } storage": [
         "${ size } 儲存空間"
       ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType }-於${ DRIVE_APP_NAME }"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType }-於全部${ BRAND_NAME }服務"
+      ],
       "1 TB secure storage": [
         "1TB安全儲存空間"
       ],
@@ -6244,6 +6250,9 @@
       ],
       "All ${ BRAND_NAME } products and features": [
         "全部${ BRAND_NAME }產品及功能"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
       ],
       "All premium ${ BRAND_NAME } services. One easy subscription": [
         "全部頂級版${ BRAND_NAME }服務。一個簡單的訂購授權。"
@@ -6283,6 +6292,9 @@
       ],
       "Contact groups management": [
         "聯絡人群組管理"
+      ],
+      "Custom and secure business email": [
+        "自訂和自訂商用電子郵件"
       ],
       "Custom domains for email aliases": [
         "電子郵件別名的自訂網域"
@@ -6377,6 +6389,9 @@
       "Multiple admin roles": [
         "多重管理員角色"
       ],
+      "Online document editor": [
+        "線上文件編輯器"
+      ],
       "Organize items with multiple vaults": [
         "組織項目與多重保管庫"
       ],
@@ -6410,6 +6425,9 @@
       "Protect ${ n } device at a time": [
         "同時保護 ${ n } 台裝置"
       ],
+      "Quickly craft replies": [
+        "快速替回復打草稿"
+      ],
       "Recover previous file versions": [
         "復原先前的檔案版本"
       ],
@@ -6442,6 +6460,9 @@
       ],
       "Send & receive invitations": [
         "傳送並接收邀請"
+      ],
+      "Share files with no size limit": [
+        "分享檔案無大小限制"
       ],
       "Sign in as user": [
         "登入為使用者"
@@ -6625,6 +6646,11 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的方案中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ]
+    },
+    "new_plans: Title": {
+      "Get Mail Plus for ${ price }": [
+        "使用${ price }取得Mail Plus"
       ]
     },
     "new_plans: title": {

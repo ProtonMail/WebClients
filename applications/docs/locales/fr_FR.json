@@ -288,6 +288,9 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Accéder à ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Afficher le label"
       ],
@@ -545,6 +548,9 @@
       ],
       "Switch or add account": [
         "Basculer vers ou ajouter un compte"
+      ],
+      "Take out of trash": [
+        "Retirer de la corbeille"
       ],
       "Trust": [
         "Faire confiance"
@@ -2231,6 +2237,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Une erreur s'est produite lors de la tentative de duplication du document. Veuillez réessayer."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Une erreur s'est produite lors de la tentative de restauration du document. Veuillez réessayer."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Une erreur s'est produite lors de la tentative de suppression du document. Veuillez réessayer."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Une erreur est survenue lors de la création d'un nouveau document. Veuillez réessayer."
       ],
@@ -3410,6 +3422,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "« ${ documentTitle } » a été déplacé dans la corbeille. Il y restera jusqu'à ce que vous le restauriez ou le supprimiez définitivement."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "« ${ documentTitle } » est dans la corbeille et y restera jusqu'à ce que vous le supprimiez définitivement."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } adresse e-mail",
         "${ addressCount } adresses e-mail"
@@ -3698,6 +3716,12 @@
       ],
       "Display word count": [
         "Afficher le nombre de mots"
+      ],
+      "Document is in trash": [
+        "Le document est dans la corbeille."
+      ],
+      "Document moved to trash": [
+        "Le document a été déplacé dans la corbeille."
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Rien ne s'affiche ? N'oubliez pas de désactiver les bloqueurs de fenêtres pop-up."
@@ -4068,8 +4092,8 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Notez que ce processus peut prendre un certain temps selon la taille de votre carnet d'adresses."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Après avoir cliqué sur le bouton Confirmer, il restera ${ creditsRemaining } crédits sur votre compte."
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Après avoir cliqué sur le bouton Confirmer, il restera ${ remainingCreditsFormatted } crédits sur votre compte."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Indiquez un nom et une adresse e-mail pour créer un groupe."
@@ -6448,8 +6472,14 @@
       "External invitation's email was sent again": [
         "L'e-mail d'invitation externe a été renvoyé."
       ],
+      "Failed to accept share invitation": [
+        "L'invitation au partage n'a pas pu être acceptée."
+      ],
       "Failed to download files: ${ err }": [
         "Les fichiers n'ont pas pu être téléchargés : ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "L'invitation au partage n'a pas pu être refusée."
       ],
       "Failed to upload files: ${ err }": [
         "Les fichiers n'ont pas pu être chargés : ${ err }"
@@ -6472,6 +6502,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "L'espace est insuffisant pour charger ${ formattedTotal }."
+      ],
+      "Share invitation accepted successfully": [
+        "L'invitation partagée a été acceptée."
+      ],
+      "Share invitation declined": [
+        "L'invitation au partage a été refusée."
       ],
       "Stopping to share this item has failed": [
         "L'arrêt du partage de cet élément n'a pas abouti."
@@ -6607,6 +6643,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "D'autres abonnements sont disponibles dans d'autres devises."
       ],
       "Payment Processing": [
         "Traitement des paiements"

@@ -4068,9 +4068,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "ჯგუფის შესაქმნელად შეიყვანეთ სახელი და ელფოსტის მისამართი."
       ],
@@ -6448,8 +6445,14 @@
       "External invitation's email was sent again": [
         "გარე მოსაწვევის ელფოსტა კიდევ გაიგზავნა"
       ],
+      "Failed to accept share invitation": [
+        "ზიარის მოსაწვევზე დათანხმება ჩავარდა"
+      ],
       "Failed to download files: ${ err }": [
         "ფაილების გადმოწერის შეცდომა: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "ზიარის მოსაწვეის უარყოფა ჩავარდა"
       ],
       "Failed to upload files: ${ err }": [
         "ფაილების ატვირთვის შეცდომა: ${ err }"
@@ -6472,6 +6475,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "არასაკმარისი ადგილი ${ formattedTotal }-ის ასატვირთად"
+      ],
+      "Share invitation accepted successfully": [
+        "ზიარის მოსაწვევზე დათანხმება წარმატებულია"
+      ],
+      "Share invitation declined": [
+        "გაზიარების მოსაწვევი უარყოფილია"
       ],
       "Stopping to share this item has failed": [
         "ამ ელემენტის გაზიარების გაჩერება ჩავარდა"

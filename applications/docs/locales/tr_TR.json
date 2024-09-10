@@ -4068,9 +4068,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Bir grup oluşturmak için lütfen bir ad ve bir e-posta adresi belirtin."
       ],
@@ -6448,8 +6445,14 @@
       "External invitation's email was sent again": [
         "Dış davet e-postası yeniden gönderildi"
       ],
+      "Failed to accept share invitation": [
+        "Paylaşma daveti kabul edilemedi"
+      ],
       "Failed to download files: ${ err }": [
         "Dosyalar indirilemedi: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Paylaşma daveti reddedilemedi"
       ],
       "Failed to upload files: ${ err }": [
         "Dosyalar yüklenemedi: ${ err }"
@@ -6472,6 +6475,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal } yüklemek için yeterli alan yok"
+      ],
+      "Share invitation accepted successfully": [
+        "Paylaşma daveti kabul edildi"
+      ],
+      "Share invitation declined": [
+        "Paylaşma daveti reddedildi"
       ],
       "Stopping to share this item has failed": [
         "Bu ögenin paylaşması durdurulamadı"
