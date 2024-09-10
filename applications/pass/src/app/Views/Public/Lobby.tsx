@@ -10,7 +10,7 @@ import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent'
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { type AuthRouteState } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-import { clientBusy } from '@proton/pass/lib/client';
+import { clientBusy, clientErrored } from '@proton/pass/lib/client';
 import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -41,7 +41,10 @@ export const Lobby: FC = () => {
                     return c('Error').t`Something went wrong. Please sign in again.`;
             }
         }
-    }, [history.location.state]);
+        if (clientErrored(status)) {
+            return c('Error').t`An error occurred while resuming your session`;
+        }
+    }, [history.location.state, status]);
 
     return (
         <LobbyLayout overlay>
