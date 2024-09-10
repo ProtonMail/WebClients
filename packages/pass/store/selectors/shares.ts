@@ -12,7 +12,7 @@ import { sortOn } from '@proton/pass/utils/fp/sort';
 import type { ShareItem, VaultShareItem } from '../reducers';
 import type { State } from '../types';
 import { SelectorError } from './errors';
-import { selectItems } from './items';
+import { selectAllItems, selectItems } from './items';
 import { selectProxiedSettings } from './settings';
 
 export const selectShares = ({ shares }: State) => shares;
@@ -53,7 +53,7 @@ export const selectWritableSharedVaultsWithItemsCount = createVaultsWithItemsCou
 
 /* The default vault should be the oldest vault I own and can write to */
 export const selectDefaultVault = createSelector(
-    [selectOwnWritableVaults],
+    selectOwnWritableVaults,
     (ownWritableVaults) => ownWritableVaults.filter((share) => share.owner).sort(sortOn('createTime', 'ASC'))[0]
 );
 
@@ -104,3 +104,8 @@ export const selectVaultSharedWithEmails = (shareId: string) =>
                     .concat(vault?.newUserInvites?.map(prop('invitedEmail')) ?? [])
             )
     );
+
+export const selectMostRecentVault = createSelector(
+    [selectAllItems, selectDefaultVault],
+    (items, defaultVault) => items.slice().sort(sortOn('createTime'))?.[0]?.shareId ?? defaultVault.shareId
+);
