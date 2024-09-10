@@ -1,15 +1,32 @@
 {
     "name": "@proton/unleash",
     "description": "Unleash feature flags",
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "eslint . --ext .js,.ts,.tsx --quiet --cache",
+        "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "test": "jest",
+        "test:ci": "jest --coverage --runInBand --ci",
+        "test:watch": "jest --watch"
+    },
     "dependencies": {
         "@unleash/proxy-client-react": "^4.2.4",
-        "date-fns": "^3.6.0",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
         "unleash-proxy-client": "^3.4.0"
     },
     "devDependencies": {
+        "@babel/preset-env": "^7.25.3",
+        "@babel/preset-typescript": "^7.24.7",
+        "@proton/eslint-config-proton": "workspace:^",
         "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0"
+        "@types/react-dom": "^18.3.0",
+        "eslint": "^8.57.0",
+        "jest": "^29.7.0",
+        "prettier": "^3.3.3",
+        "typescript": "^5.5.4"
+    },
+    "peerDependencies": {
+        "date-fns": "^3.6.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
     }
 }
