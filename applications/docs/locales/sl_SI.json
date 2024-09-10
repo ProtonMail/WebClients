@@ -114,6 +114,12 @@
       "Cancel subscription": [
         "Prekliči naročnino"
       ],
+      "characters": [
+        "znakov"
+      ],
+      "characters out of": [
+        "znakov od"
+      ],
       "Chat with us": [
         "Klepetajte z nami"
       ],
@@ -620,6 +626,15 @@
       ],
       "What do I get?": [
         "Kaj dobim?"
+      ],
+      "Word count": [
+        "Število besed"
+      ],
+      "words": [
+        "besed"
+      ],
+      "words out of": [
+        "besed od"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Pošiljanje datotek vCard z več kot ${ maxAttachments } stikom ni mogoče.",
@@ -3671,6 +3686,12 @@
       "Change your password": [
         "Spremenite vaše geslo"
       ],
+      "characters": [
+        "znakov"
+      ],
+      "characters without spaces": [
+        "znakov brez presledkov"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Preverjanje stika ${ progress } od ${ max } ..."
       ],
@@ -3754,6 +3775,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logotip"
+      ],
+      "Display word count": [
+        "Pokaži število besed"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ne vidite ničesar? Ne pozabite izklopiti prepovedi pojavnih oken."
@@ -4121,9 +4145,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upoštevajte, da lahko ta postopek traja nekaj časa, odvisno od velikosti vašega imenika."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Po kliku na gumb Potrdi bo na vašem računu ostalo še ${ creditsRemaining }."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Za ustvaritev skupine vnesite ime in e-poštni naslov."
       ],
@@ -4426,6 +4447,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
+      ],
+      "words": [
+        "besed"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ali želite prejeti novo kodo za preverjanje ali uporabiti drugačen način preverjanja?"
@@ -5904,10 +5928,10 @@
         "Neomejeni skupni trezorji z dovoljenji za dostop"
       ],
       "Unlimited vault sharing": [
-        "Neomejena souporaba sefov"
+        "Neomejena souporaba trezorjev"
       ],
       "Unlimited vaults": [
-        "Neomejeno število sefov"
+        "Neomejeno število trezorjev"
       ],
       "Unlimited volume/bandwidth": [
         "Neomejena količina/pretočnost podatkov"
@@ -6079,10 +6103,10 @@
         "Omogoča vam, da nastavite samodejne odgovore za vaša vhodna sporočila."
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Samodejni izbris sporočil, ki so več kot 30 dni v mapah Koš in Neželena pošta."
+        "Samodejni izbris sporočil, ki so več kot 30 dni v mapah Smetnjak in Neželena pošta."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Samodejno posredujte e-pošto, poslano na vaš račun ${ MAIL_APP_NAME }, ali na kateri koli drug e-poštni naslov."
+        "Samodejno posredujte e-pošto, poslano na vaš račun ${ MAIL_APP_NAME }, na kateri koli drug e-poštni naslov."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Množično promocijsko ali programsko pošiljanje e-pošte trenutno ni podprto. Za ta primer uporabe priporočamo uporabo namenskega ponudnika e-poštnih storitev."
@@ -6469,6 +6493,9 @@
       "External invitation removed from the share": [
         "Zunanje povabilo je bilo odstranjeno iz skupne rabe."
       ],
+      "Failed to accept share invitation": [
+        "Povabila k skupni rabi ni bilo mogoče sprejeti."
+      ],
       "Failed to download files: ${ err }": [
         "Prenos datotek ni uspel: ${ err }"
       ],
@@ -6492,6 +6519,9 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ni dovolj prostora za nalaganje ${ formattedTotal }"
+      ],
+      "Share invitation accepted successfully": [
+        "Povabilo k skupni rabi je bilo sprejeto."
       ],
       "Stopping to share this item has failed": [
         "Preklic deljenja za ta predmet ni uspel."
@@ -7407,7 +7437,7 @@
         "Izgubili boste dostop do dodatne shrambe, e-poštnih naslovov, vzdevkov, koledarjev in prednostne podpore."
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
-        "Izgubili boste dostop do najvišje hitrosti VPN, zaščite za 10 naprav, hitrega pretakanja, blokiranja oglasov in zaščite pred zlonamerno programsko opremo ter prednostne podpore."
+        "Izgubili boste dostop do VPN z najvišjo hitrostjo, zaščite za 10 naprav, hitrega pretakanja, blokiranja oglasov in zaščite pred zlonamerno programsko opremo ter prednostne podpore."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Izgubili boste dostop do neomejenega števila prijav in opomb, neomejenega števila vzdevkov hide-my-email za skrivanje e-pošte, 20 trezorjev in prednostne podpore."

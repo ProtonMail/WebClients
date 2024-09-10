@@ -184,6 +184,9 @@
       "Disable instead": [
         "Inaktivera istället"
       ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Inaktivera detta alias för att sluta ta emot e-post skickat till detta alias"
+      ],
       "Discard": [
         "Avfärda"
       ],
@@ -370,6 +373,9 @@
       "Pin item": [
         "Fäst objekt"
       ],
+      "Please retry": [
+        "Försök igen"
+      ],
       "Refresh the page": [
         "Uppdatera sidan"
       ],
@@ -477,9 +483,6 @@
       ],
       "Show": [
         "Visa"
-      ],
-      "Sign back in": [
-        "Logga in igen"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Logga in med ${ BRAND_NAME }"
@@ -1106,11 +1109,17 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Efter att ha lyckats importera dina data kan du ta bort CSV-filen som innehåller dina lösenord för säkerhet."
       ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias ​​inaktiverat. Du kommer inte längre att få e-post skickat till ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias ​​aktiverat. Du kan nu ta emot e-post skickat till ${ item.aliasEmail }"
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Alias ​​i papperskorg kommer fortsätta vidarebefordra e-post. Om du vill sluta ta emot e-post på denna adress, inaktivera den istället."
+      ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Alias med anpassade domäner övervakas inte, lägg till dem som en anpassad e-post för övervakning."
-      ],
-      "All aliases are synced": [
-        "Alla alias är synkroniserade"
       ],
       "All breaches for this address were resolved": [
         "Alla intrång för denna adress löstes"
@@ -2704,6 +2713,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Synkronisering av alias aktiverat. SimpleLogin-alias kan ta lite tid att synkronisera"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare.",
         "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare."
@@ -3168,6 +3180,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporter är inte end-to-end-krypterade, skicka ingen känslig information."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Något gick fel när ${ PASS_APP_NAME } startades. Prova att uppdatera eller ladda om tillägget"
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Alias-prefixet får inte vara längre än 40 tecken"

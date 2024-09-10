@@ -4073,9 +4073,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Observera att processen kan ta lite tid beroende på storleken på din adressbok."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Observera att när du klickar på knappen ”Bekräfta” kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Ange ett namn och en e-postadress för att skapa en grupp."
       ],
@@ -6507,8 +6504,14 @@
       "External invitation's email was sent again": [
         "Extern e-postinbjudan skickades igen"
       ],
+      "Failed to accept share invitation": [
+        "Misslyckades att acceptera delningsinbjudan"
+      ],
       "Failed to download files: ${ err }": [
         "Misslyckades att ladda ner filer: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Misslyckades att avvisa delningsinbjudan"
       ],
       "Failed to upload files: ${ err }": [
         "Misslyckades att ladda upp filer: ${ err }"
@@ -6531,6 +6534,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Inte tillräckligt med utrymme för att ladda upp ${ formattedTotal }"
+      ],
+      "Share invitation accepted successfully": [
+        "Delningsinbjudan accepterades"
+      ],
+      "Share invitation declined": [
+        "Delningsinbjudan avböjd"
       ],
       "Stopping to share this item has failed": [
         "Misslyckades att stoppa delning till detta objekt"

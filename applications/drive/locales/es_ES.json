@@ -381,10 +381,10 @@
       "Get link": [
         "Obtener enlace"
       ],
-      "Get Started": [
+      "Get started": [
         "Comenzar"
       ],
-      "Get started": [
+      "Get Started": [
         "Comenzar"
       ],
       "Get verification code": [
@@ -555,10 +555,10 @@
       "Not now": [
         "Ahora no"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
       "Open": [
@@ -4097,6 +4097,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "¿Estás seguro de que quieres eliminar permanentemente los elementos seleccionados de la papelera?"
       ],
+      "Are you sure you want to proceed?": [
+        "¿Estás seguro de que quieres continuar?"
+      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -4779,9 +4782,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ creditsRemaining } créditos restantes."
-      ],
       "Please open the document to view it.": [
         "Abre el documento para verlo."
       ],
@@ -5325,6 +5325,9 @@
       "You already have a free account": [
         "Ya tienes una cuenta gratuita."
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Estás a punto de abandonar el elemento compartido. No podrás volver a acceder a él hasta que el propietario lo comparta contigo nuevamente."
+      ],
       "You are about to open another browser tab and visit:": [
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
       ],
@@ -5390,6 +5393,10 @@
       ],
       "You will lose all unsaved changes.": [
         "Perderás todos los cambios no guardados."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Necesitarás guardarlo de nuevo desde la página del enlace público.",
+        "Necesitarás guardarlos de nuevo desde la página del enlace público."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
@@ -7685,6 +7692,14 @@
       "The link to your item was deleted": [
         "Se ha eliminado el enlace a tu elemento."
       ],
+      "This item was not removed from your list": [
+        "No se ha borrado este elemento de tu lista.",
+        "No se han borrado algunos elementos de tu lista."
+      ],
+      "This item was succefully removed from your list": [
+        "Se ha borrado este elemento de tu lista.",
+        "Se han borrado estos elementos de tu lista."
+      ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
       ],
@@ -9544,6 +9559,10 @@
       "Are you sure you want to close the preview?": [
         "¿Estás seguro de que quieres cerrar la previsualización?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "¿Seguro que quieres borrar este elemento de tu lista?",
+        "¿Seguro que quieres borrar estos elementos de tu lista?"
+      ],
       "Billing cycle": [
         "Ciclo de facturación"
       ],
@@ -9588,6 +9607,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmar la pérdida de beneficios de ${ BRAND_NAME }"
+      ],
+      "Confirmation required?": [
+        "¿Se necesita confirmación?"
       ],
       "Contact Details": [
         "Datos del contacto"

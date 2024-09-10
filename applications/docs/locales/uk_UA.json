@@ -4142,9 +4142,6 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Зверніть увагу, що цей процес може тривати деякий час, залежно від розміру вашої адресної книги."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Зверніть увагу, що натискаючи кнопку Підтвердити, на вашому рахунку залишиться ${ creditsRemaining }."
-      ],
       "Please provide a name and an email address for creating a group.": [
         "Щоб створити групу, вкажіть ім'я та адресу електронної пошти."
       ],
@@ -6495,8 +6492,14 @@
       "External invitation's email was sent again": [
         "Зовнішній лист із запрошенням надіслано знову"
       ],
+      "Failed to accept share invitation": [
+        "Не вдалося прийняти запрошення на спільний доступ"
+      ],
       "Failed to download files: ${ err }": [
         "Не вдалося завантажити файли: ${ err }"
+      ],
+      "Failed to reject share invitation": [
+        "Не вдалося відхилити запрошення, яким поділилися"
       ],
       "Failed to upload files: ${ err }": [
         "Не вдалося вивантажити файли: ${ err }"
@@ -6521,6 +6524,12 @@
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостатньо місця для вивантаження ${ formattedTotal }"
+      ],
+      "Share invitation accepted successfully": [
+        "Запрошення на спільний доступ прийнято"
+      ],
+      "Share invitation declined": [
+        "Запрошення, яким поділилися, відхилено"
       ],
       "Stopping to share this item has failed": [
         "Не вдалося припинити спільний доступ для цього елемента"

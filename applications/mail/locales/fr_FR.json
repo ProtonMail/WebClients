@@ -549,6 +549,9 @@
       "Hide": [
         "Masquer"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Masquer l'assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
       ],
@@ -832,10 +835,10 @@
       "Not saved": [
         "Non enregistré"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open": [
@@ -1015,6 +1018,9 @@
       "Revert to original display": [
         "Revenir à l'affichage d'origine"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Exécuter sur les serveurs ${ BRAND_NAME }"
+      ],
       "Save": [
         "Enregistrer"
       ],
@@ -1126,6 +1132,9 @@
       "Show": [
         "Afficher"
       ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Afficher l'assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
       "Show advanced PGP settings": [
         "Afficher les paramètres PGP avancés"
       ],
@@ -1233,10 +1242,6 @@
       ],
       "Trust": [
         "Faire confiance"
-      ],
-      "Trust key": [
-        "Approuver la clé",
-        "Approuver les clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1550,6 +1555,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "Aucun journal n'est conservé pour protéger votre vie privée. Traitement plus rapide."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Exécuter sur les serveurs ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Exécuter sur l'appareil"
@@ -6614,8 +6622,8 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Notez que ce processus peut prendre un certain temps selon la taille de votre carnet d'adresses."
       ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Après avoir cliqué sur le bouton Confirmer, il restera ${ creditsRemaining } crédits sur votre compte."
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Après avoir cliqué sur le bouton Confirmer, il restera ${ remainingCreditsFormatted } crédits sur votre compte."
       ],
       "Please open the document to view it.": [
         "Veuillez ouvrir le document pour l'afficher."
@@ -10066,6 +10074,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "D'autres abonnements sont disponibles dans d'autres devises."
       ],
       "Payment Processing": [
         "Traitement des paiements"

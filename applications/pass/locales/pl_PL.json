@@ -184,6 +184,9 @@
       "Disable instead": [
         "Wyłącz"
       ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Wyłącz alias, aby zatrzymać otrzymywanie wiadomości na ten adres"
+      ],
       "Discard": [
         "Odrzuć"
       ],
@@ -201,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Włącz monitoring dark web"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Włącz alias, aby otrzymywać wiadomości wysłane na ten adres"
       ],
       "Entire vault": [
         "Cały sejf"
@@ -367,6 +373,9 @@
       "Pin item": [
         "Przypnij element"
       ],
+      "Please retry": [
+        "Spróbuj ponownie"
+      ],
       "Refresh the page": [
         "Odśwież stronę"
       ],
@@ -475,9 +484,6 @@
       "Show": [
         "Pokaż"
       ],
-      "Sign back in": [
-        "Zaloguj się ponownie"
-      ],
       "Sign in with ${ BRAND_NAME }": [
         "Zaloguj się przez ${ BRAND_NAME }"
       ],
@@ -495,6 +501,9 @@
       ],
       "Submitting report...": [
         "Wysyłanie raportu..."
+      ],
+      "Sync aliases": [
+        "Synchronizuj aliasy"
       ],
       "Transfer ownership": [
         "Zmień właściciela"
@@ -656,6 +665,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Plik eksportu danych ${ provider } nie mógł zostać przetworzony. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "Alias nie może zostać zaktualizowany. Spróbuj ponownie później"
+      ],
       "Alias options could not be resolved": [
         "Nie można załadować opcji aliasu"
       ],
@@ -781,6 +793,9 @@
       ],
       "Failed to restore items from trash": [
         "Nie udało się przywrócić elementów z Kosza"
+      ],
+      "Failed to sync aliases": [
+        "Nie udało się zsynchronizować aliasów"
       ],
       "Failed to transfer this vault's ownership.": [
         "Nie udało się zmienić właściciela sejfu."
@@ -1124,6 +1139,21 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Alias został wyłączony. Nie będziesz otrzymywać wiadomości wysłanych na adres ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Alias został włączony. Będziesz otrzymywać wiadomości wysłane na adres ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Synchronizacja aliasów ${ BRAND_NAME } i SimpleLogin jest aktywna."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Aliasy w Koszu będą nadal przekierowywać wiadomości. Wyłącz alias, jeśli chcesz zatrzymać otrzymywanie wiadomości na ten adres."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Aliasy nie są zsynchronizowane (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasy z niestandardowymi domenami nie są monitorowane. Dodaj je jako niestandardowy adres e-mail do monitorowania."
@@ -1806,8 +1836,17 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Mamy problem z synchronizacją danych z magazynem lokalnym. Upewnij się, że masz wystarczającą pamięć wewnętrzną do działania aplikacji ${ PASS_SHORT_APP_NAME }."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Masz ${ aliasCount } alias SimpleLogin, który nie jest widoczny w ${ PASS_APP_NAME } Czy chcesz go zaimportować?",
+        "Masz ${ aliasCount } aliasy SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME } Czy chcesz je zaimportować?",
+        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME } Czy chcesz je zaimportować?",
+        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME } Czy chcesz je zaimportować?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Wyślemy kod weryfikacyjny do ${ email }. Wpisz go poniżej:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Pole 'nazwa użytkownika' będzie zawsze widoczne podczas edytowania danych logowania w ${ PASS_APP_NAME }."
       ],
       "You are about to create:": [
         "Utworzysz:"
@@ -1997,6 +2036,9 @@
       "Alphabetical": [
         "Alfabetycznie"
       ],
+      "Always show username field": [
+        "Zawsze pokazuj pole nazwy użytkownika"
+      ],
       "Application logs": [
         "Logi aplikacji"
       ],
@@ -2096,6 +2138,9 @@
       "Domain": [
         "Domena"
       ],
+      "Don't remind me again": [
+        "Nie pokazuj ponownie"
+      ],
       "Download logs": [
         "Pobierz logi"
       ],
@@ -2119,6 +2164,9 @@
       ],
       "Enable offline access": [
         "Włącz dostęp offline"
+      ],
+      "Enter email or username": [
+        "Wpisz adres e-mail lub nazwę użytkownika"
       ],
       "Expiration date": [
         "Data wygaśnięcia"
@@ -2420,6 +2468,9 @@
       "Select preferred language": [
         "Wybierz język"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Wybierz sejf do zaimportowania aliasów SimpleLogin"
+      ],
       "Select your password manager": [
         "Wybierz menadżer haseł"
       ],
@@ -2464,6 +2515,9 @@
       ],
       "Support": [
         "Wsparcie"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Synchronizuj aliasy z SimpleLogin"
       ],
       "Tax number": [
         "NIP"
@@ -2750,6 +2804,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Synchronizacja aliasów została włączona. Aliasy SimpleLogin mogą chwilę się synchronizować"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkownika.",
         "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
@@ -3167,6 +3224,9 @@
       "Missing alias suffix": [
         "Brak przyrostka aliasu"
       ],
+      "Move to trash": [
+        "Przenieś do Kosza"
+      ],
       "No items": [
         "Brak elementów"
       ],
@@ -3218,8 +3278,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
       ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Coś poszło nie tak podczas uruchamiania rozszerzenia ${ PASS_APP_NAME }. Odśwież rozszerzenie"
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Przedrostek aliasu nie może być dłuższy niż 40 znaków"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Alias \"${ aliasEmail }\" jest wykorzystywany w danych logowania \"${ relatedLoginName }\"."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Adres e-mail nie będzie monitorowany w wyciekach danych."

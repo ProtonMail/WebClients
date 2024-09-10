@@ -796,11 +796,11 @@
       "Refresh status": [
         "Osveži stanje"
       ],
-      "Refresh the page": [
-        "Osveži stran"
-      ],
       "refresh the page": [
         "Osvežite stran"
+      ],
+      "Refresh the page": [
+        "Osveži stran"
       ],
       "Reload": [
         "Osveži"
@@ -1585,14 +1585,6 @@
         "Izberite ponudbo ob koncu leta"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB prostora za shranjevanje (dvakrat več kot kateri koli drug paket)"
@@ -1614,6 +1606,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } je nazaj samo za omejen čas."
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Žal ta ponudba ni na voljo z vašim trenutnim paketom. Lahko pa dobite popust v višini **${ discountPercentage } za ${ plan.Title }**, če se naročite za **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3318,7 +3318,7 @@
         "Izbriši naslov?"
       ],
       "Once deleted, this address ${ address } can't be used again by anyone else.": [
-        "Ko naslov ${ address } enkrat izbrišete, ga nihče ne more ponovno uporabiti"
+        "Ko naslov ${ address } enkrat izbrišete, ga nihče ne more ponovno uporabiti."
       ],
       "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
         "Upoštevajte, da če izbrišete naslov ${ address }, ne boste več mogli pošiljati ali prejemati e-poštnih sporočil s tem naslovom."
@@ -3329,7 +3329,7 @@
     },
     "Delete address tooltip": {
       "You can only delete 1 address per year": [
-        "Na leto lahko izbrišete samo 1 naslov"
+        "Na leto lahko izbrišete samo 1 naslov."
       ],
       "You've reached the limit of address deletions for this user.": [
         "Dosegli ste omejitev brisanja naslovov za tega uporabnika."
@@ -3456,7 +3456,7 @@
         "Ali ste prepričani, da želite onemogočiti ta naslov?"
       ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
-        "Ko onemogočite naslov ${ address } ne boste mogli več pošiljati ali prejemati e-poštnih sporočil z uporabo tega naslova, onemogočeni pa bodo tudi vsi povezani izdelki ${ BRAND_NAME }."
+        "Ko onemogočite naslov ${ address }, ne boste več mogli pošiljati ali prejemati e-poštnih sporočil z uporabo tega naslova, onemogočeni pa bodo tudi vsi povezani izdelki ${ BRAND_NAME }."
       ],
       "Disable address": [
         "Onemogoči naslov"
@@ -4222,7 +4222,7 @@
         "Napačno geslo"
       ],
       "Incorrect second password. Please try again.": [
-        "Nepravilno drugo geslo. Prosim poskusite ponovno."
+        "Nepravilno drugo geslo. Poskusite znova."
       ],
       "Incorrect username": [
         "Nepravilno uporabniško ime"
@@ -4321,10 +4321,10 @@
         "Ključ organizacije ni dešifriran."
       ],
       "Organization key must be activated to create invited users": [
-        "Za ustvarjanje povabljenih uporabnikov mora biti ključ organizacije aktiviran"
+        "Za ustvarjanje povabljenih uporabnikov mora biti ključ organizacije aktiviran."
       ],
       "Organization key must be activated to create non-private users": [
-        "Za ustvarjanje nezasebnih uporabnikov mora biti ključ organizacije aktiviran"
+        "Za ustvarjanje nezasebnih uporabnikov mora biti ključ organizacije aktiviran."
       ],
       "Password is required": [
         "Zahtevano je geslo"
@@ -4462,10 +4462,10 @@
         "E-poštna naslova se ne ujemata"
       ],
       "The file is too big, the maximum size is ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }": [
-        "Datoteka je prevelika, največja velikost je ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }"
+        "Datoteka je prevelika, največja velikost je ${ MAX_FILE_DIMENSIONS }x${ MAX_FILE_DIMENSIONS }."
       ],
       "The file is too small, the minimum size is ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }": [
-        "Datoteka je premajhna, najmanjša velikost je ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }"
+        "Datoteka je premajhna, najmanjša velikost je ${ MIN_FILE_DIMENSIONS }x${ MIN_FILE_DIMENSIONS }."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "To ime mape ni veljavno. Izberite drugačno ime."
@@ -5061,13 +5061,13 @@
         "Vabilo od: ${ inviteEmail }"
       ],
       "Leave Duo plan": [
-        "Zapusti načrt Duo"
+        "Zapustite paket Duo"
       ],
       "Leave Family plan": [
-        "Zapustite družinski načrt"
+        "Zapustite družinski paket"
       ],
       "Leave Visionary plan": [
-        "Zapustite Visionary načrt"
+        "Zapustite paket Visionary"
       ],
       "Manage addresses.": [
         "Upravljanje naslovov"
@@ -5622,7 +5622,7 @@
         "Odprite ${ MAIL_APP_NAME } v ${ webAppMessage }"
       ],
       "Your desktop app free trial has ended": [
-        "Brezplačni preizkus namizne aplikacije je potekel"
+        "Brezplačni preizkus namizne aplikacije je potekel."
       ]
     },
     "Frequency of news": {
@@ -5759,7 +5759,7 @@
     },
     "group_invite_2024: Error message, recovery": {
       "Please try opening the link again.": [
-        "Prosimo, ponovno poskusite odpreti povezavo."
+        "Ponovno poskusite odpreti povezavo."
       ]
     },
     "group_invite_2024: Info": {
@@ -6973,11 +6973,11 @@
       "Data locked": [
         "Podatki so zaklenjeni."
       ],
-      "dedicated servers": [
-        "namenske strežnike"
-      ],
       "Dedicated servers": [
         "Namenski strežniki"
+      ],
+      "dedicated servers": [
+        "namenske strežnike"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Namenske strežnike z namenskimi naslovi IP lahko dodate zasebnim prehodom, da omogočite natančno nastavljen nadzor dostopa."
@@ -7424,7 +7424,7 @@
         "Brisanje ključa je nepovratno!"
       ],
       "Keys created": [
-        "Ključi so bili ustvarjeni"
+        "Ključi so bili ustvarjeni."
       ],
       "Label all imported messages as": [
         "Označi vsa uvožena sporočila kot"
@@ -7691,7 +7691,7 @@
         "Geslo je kopirano v odložišče."
       ],
       "Password must be ${ MIN_PASSWORD_LENGTH } characters or more.": [
-        "Geslo mora imeti ${ MIN_PASSWORD_LENGTH } znakov ali več."
+        "Geslo mora imeti najmanj ${ MIN_PASSWORD_LENGTH } znakov."
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plačila so zaščitena s TLS šifriranjem in švicarskim zakonom o varstvu podatkov."
@@ -7749,9 +7749,6 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Upoštevajte, da če izbrišete ta filter ${ nameDeleted }, bomo prenehali obdelovati vsa samodejna dejanja, ki jih sproži."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Po kliku na gumb Potrdi bo na vašem računu ostalo še ${ creditsRemaining }."
       ],
       "please open a support ticket": [
         "prosimo odprite zahtevek za podporo"
@@ -8225,7 +8222,7 @@
         "S tem boste trajno izbrisali svoj račun in vse njegove podatke. Tega računa ne boste mogli ponovno aktivirati."
       ],
       "This will remove any enabled 2FA methods.": [
-        "To bo odstranilo vse omogočene 2FA načine"
+        "To bo odstranilo vse omogočene 2FA načine."
       ],
       "This will remove SSO for ${ boldDomainName }.": [
         "S tem boste odstranili SSO za ${ boldDomainName }."
@@ -8327,7 +8324,7 @@
         "Način z dvema gesloma zahteva dve gesli: eno za prijavo v vaš račun in drugo za dešifriranje vaših podatkov. (Napredno)"
       ],
       "Two-password mode uses separate passwords for login and data decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a second password.": [
-        "Način z dvema gesloma uporablja ločena gesla za prijavo in dešifriranje podatkov. To v nekaterih situacijah zagotavlja manjšo varnostno prednost, vendar za večino uporabnikov priporočamo način z enim geslom. Če želite preklopiti na način dveh gesel, najprej nastavite geslo za prijavo in nato nastavite drugo geslo."
+        "Način z dvema gesloma uporablja ločeni gesli za prijavo in dešifriranje podatkov. To v nekaterih situacijah zagotavlja manjšo varnostno prednost, vendar za večino uporabnikov priporočamo način z enim geslom. Če želite preklopiti na način dveh gesel, najprej nastavite geslo za prijavo in nato nastavite drugo geslo."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Ni mogoče preveriti podpisa datoteke za obnovitev. Prosim, obrnite se na podporo."
@@ -8411,7 +8408,7 @@
         "Uporabite izbrani e-poštni naslov kot uporabniško ime SMTP v zunanji storitvi, in ustvarjen žeton kot geslo SMTP."
       ],
       "User activated": [
-        "Uporabnik je aktiviran"
+        "Uporabnik je aktiviran."
       ],
       "username": [
         "uporabniško ime"
@@ -8570,10 +8567,10 @@
         "Ko prekličete trenutno plačano naročnino, bo preostanek naročnine vrnjen kot dobroimetje na računu, vi pa boste degradirani na ${ BRAND_NAME } ${ PLANS.FREE } paket."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "Ko prekličete naročnino, se ta ne podaljša, vendar lahko do konca naročniškega obdobja še vedno koristite ugodnosti paketa. o tem boste prešli na brezplačno naročnino ${ BRAND_NAME }."
+        "Ko prekličete naročnino, se ta ne podaljša, vendar lahko do konca naročniškega obdobja še vedno koristite ugodnosti paketa. Potem boste prešli na brezplačni paket ${ BRAND_NAME }."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Ko kliknete povezavo, vas bo ta funkcija za preprečevanje lažnega predstavljanja pozvala, da potrdite URL spletne strani."
+        "Ko kliknete na povezavo, vas bo ta funkcija za preprečevanje lažnega predstavljanja pozvala, da potrdite URL spletne strani."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
@@ -8771,7 +8768,7 @@
         "S prenesenimi datotekami za obnovitev ne boste mogli obnoviti zaklenjenih podatkov."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
-        "S prenesenimi obnovitvenimi datotekami ne boste mogli obnoviti zaklenjenih podatkov. To bo tudi onemogočilo obnovitev na naprave."
+        "S prenesenimi obnovitvenimi datotekami ne boste mogli obnoviti zaklenjenih podatkov. To bo tudi onemogočilo obnovitev na napravi."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }.": [
         "Vaš račun ${ BRAND_NAME } je povezan z ${ externalEmailAddress }."
@@ -8858,7 +8855,7 @@
         "Vaša obnovitvena fraza"
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
-        "Vaš obnovitveni stavek je serija 12 naključno ustvarjenih besed v določenem vrstnem redu"
+        "Vaša obnovitvena fraza je niz 12 naključno ustvarjenih besed v določenem vrstnem redu."
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vašo naročnino upravlja Mozilla. Prosimo, obrnite se na podporo Mozilla."
@@ -8867,7 +8864,7 @@
         "Vaš zahtevek za podporo je bil zaprt. Hvala, ker ste se obrnili na podporo ${ BRAND_NAME }."
       ],
       "Zoom meeting": [
-        "Srečanje Zoom"
+        "sestanek prek Zooma"
       ]
     },
     "info": {
@@ -9030,16 +9027,16 @@
         "Ključ uspešno ustvarjen."
       ],
       "Note: you already have a key with the same algorithm for this address. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Opomba: za ta naslov že imate ključ z istim algoritmom. Razen če ta ključ ni bil ogrožen, morda ne bo treba ustvariti novega ključa, kar lahko upočasni vaš račun."
+        "Opomba: za ta naslov že imate ključ z istim algoritmom. Razen če ta ključ ni bil ogrožen, morda ne bi bilo treba ustvariti novega ključa, kar to lahko upočasni vaš račun."
       ],
       "Note: you already have a key with the same algorithm for this user. Unless that key has been compromised, it may be unnecessary to generate a new key, and doing so may slow down your account.": [
-        "Opomba: za tega uporabnika že imate ključ z enakim algoritmom. Razen če ta ključ ni bil ogrožen, morda ne bo treba ustvariti novega ključa, kar lahko upočasni vaš račun."
+        "Opomba: za tega uporabnika že imate ključ z enakim algoritmom. Razen če ta ključ ni bil ogrožen, morda ni bilo treba ustvariti novega ključa, kar to lahko upočasni vaš račun."
       ],
       "This will generate a new key, which will be used to encrypt future contact details, email encryption keys, and other data.": [
         "To bo ustvarilo nov ključ, ki bo uporabljen za prihodnje šifriranje e-pošte, kontaktnih in drugih podatkov."
       ],
       "This will generate a new key, which will be used to encrypt future emails, among other data.": [
-        "To bo ustvarilo nov ključ, ki bo med drugimi podatki uporabljen za šifriranje prihodnjih e-poštnih sporočil."
+        "To bo ustvarilo nov ključ, ki bo uporabljen tudi za šifriranje prihodnjih e-poštnih sporočil."
       ]
     },
     "Key state badge": {
@@ -10170,10 +10167,10 @@
         "Možnosti naročnine"
       ],
       "Swipe left action": [
-        "Povlecite v levo"
+        "Dejanje, ko povlečete v levo"
       ],
       "Swipe right action": [
-        "Povlecite v desno"
+        "Dejanje, ko povlečete v desno"
       ],
       "Synchronize with system": [
         "Usklajeno s sistemom."
@@ -10499,7 +10496,7 @@
         "Splošno"
       ],
       "Get ${ BRAND_NAME } Pass": [
-        "Pridobite ${ BRAND_NAME } Pass"
+        "Pridobi ${ BRAND_NAME } Pass"
       ],
       "Get ${ VPN_APP_NAME }": [
         "Pridobi ${ VPN_APP_NAME }."
@@ -10514,7 +10511,7 @@
         "tukaj"
       ],
       "How does monitoring work?": [
-        "Kako poteka spremljanje?"
+        "Kako poteka pregledovanje?"
       ],
       "How to pay with Bitcoin?": [
         "Kako plačati z Bitcoinom?"
@@ -10916,9 +10913,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "Dolar"
-      ],
       "Euro": [
         "Evro"
       ],
@@ -11107,7 +11101,7 @@
         "Prejeto"
       ],
       "Pass vaults": [
-        "Trezorji gesel"
+        "Trezorji Pass"
       ],
       "Spam": [
         "Neželena pošta"
@@ -11133,23 +11127,6 @@
       ],
       "Medium VPN speed": [
         "Srednja hitrost VPN"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Zmanjšanje paketa na ${ downgradedPlanName }."
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Raziščite vse pakete ${ BRAND_NAME }."
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Upgrade": [
-        "Nadgradnja"
-      ],
-      "Upgrade now": [
-        "Nadgradi zdaj"
       ]
     },
     "new_plans: action": {
@@ -11179,6 +11156,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadgradi na ${ upsellPlanHumanSize }."
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Zmanjšanje paketa na ${ downgradedPlanName }."
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Raziščite vse pakete ${ BRAND_NAME }."
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Upgrade": [
+        "Nadgradnja"
+      ],
+      "Upgrade now": [
+        "Nadgradi zdaj"
       ]
     },
     "new_plans: feature": {
@@ -11579,10 +11573,10 @@
         "Neomejeni skupni trezorji z dovoljenji za dostop"
       ],
       "Unlimited vault sharing": [
-        "Neomejena souporaba sefov"
+        "Neomejena souporaba trezorjev"
       ],
       "Unlimited vaults": [
-        "Neomejeno število sefov"
+        "Neomejeno število trezorjev"
       ],
       "Unlimited volume/bandwidth": [
         "Neomejena količina/pretočnost podatkov"
@@ -11788,14 +11782,6 @@
         "Izbrali ste: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Preizkus ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Uporaba vašega računa"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Izbriši račun?"
@@ -11814,6 +11800,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Omogočite premijske funkcije z nadgradnjo računa"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Preizkus ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Uporaba vašega računa"
       ]
     },
     "new_plans: tooltip": {
@@ -11845,10 +11839,10 @@
         "Omogoča vam, da nastavite samodejne odgovore za vaša vhodna sporočila."
       ],
       "Automatically clear out messages older than 30 days from Trash and Spam": [
-        "Samodejni izbris sporočil, ki so več kot 30 dni v mapah Koš in Neželena pošta."
+        "Samodejni izbris sporočil, ki so več kot 30 dni v mapah Smetnjak in Neželena pošta."
       ],
       "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
-        "Samodejno posredujte e-pošto, poslano na vaš račun ${ MAIL_APP_NAME }, ali na kateri koli drug e-poštni naslov."
+        "Samodejno posredujte e-pošto, poslano na vaš račun ${ MAIL_APP_NAME }, na kateri koli drug e-poštni naslov."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Množično promocijsko ali programsko pošiljanje e-pošte trenutno ni podprto. Za ta primer uporabe priporočamo uporabo namenskega ponudnika e-poštnih storitev."
@@ -12109,10 +12103,10 @@
         "Zunanji naslov ne more biti privzeti."
       ],
       "Dark Web Monitoring has been disabled": [
-        "Dark Web Monitoring je bil onemogočen"
+        "Pregledovanje temnega spletaje je bilo onemogočeno."
       ],
       "Dark Web Monitoring has been enabled": [
-        "Dark Web Monitoring je omogočen"
+        "Pregledovanje temnega spletaje omogočeno."
       ],
       "Invalid code": [
         "Neveljavna koda"
@@ -12471,7 +12465,7 @@
         "Celotna organizacija"
       ],
       "Trash": [
-        "Smeti"
+        "Smetnjak"
       ]
     },
     "Option delay send seconds": {
@@ -12718,19 +12712,19 @@
         "+ ${ relativePrice } na mesec"
       ],
       "/month /user": [
-        "/mesec/uporabnik"
+        "na mesec na uporabnika"
       ],
       "/month /user, billed annually": [
-        "/mesec /uporabnika, zaračunano letno"
+        "na mesec na uporabnika, zaračunano letno"
       ],
       "/month /user, billed biennially": [
-        "/mesec /uporabnik, zaračunano dve leti"
+        "na mesec na uporabnika, zaračunano na dve leti"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Napredna zaščita, ki presega industrijske standarde"
       ],
       "Alerts for compromised emails and vulnerable passwords": [
-        "Opozorila za ogrožena e-poštna sporočila in ranljiva gesla"
+        "Opozorila za ogrožene e-poštne naslove in ranljiva gesla"
       ],
       "Alerts for vulnerable passwords": [
         "Opozorila za ranljiva gesla"
@@ -12961,10 +12955,10 @@
     },
     "password_reset: info": {
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
-        "**Vsi vaši obstoječi podatki** (e-pošta, dogodki, stiki, datoteke, ${ PASS_APP_NAME } vnosi in podobno) **bodo zaklenjeni** in jih lahko odklenete le s **starim geslom**."
+        "**Vsi vaši obstoječi podatki** (e-pošta, dogodki, stiki, datoteke, vnosi v ${ PASS_APP_NAME } in podobno) **bodo zaklenjeni** in jih lahko odklenete le z vašim **starim geslom**."
       ],
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
-        "**Vsi vaši obstoječi podatki** (e-pošta, dogodki, stiki, datoteke, ${ PASS_APP_NAME } vnosi in podobno) **bodo zaklenjeni** in jih lahko odklenete le s **frazo za obnovitev** ali s **starim geslom**."
+        "**Vsi vaši obstoječi podatki** (e-pošta, dogodki, stiki, datoteke, vnosi v ${ PASS_APP_NAME } in podobno) **bodo zaklenjeni** in jih lahko odklenete le z vašo **obnovitveno frazo** ali z vašim **starim geslom**."
       ],
       "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
         "Vse metode **dvojnega preverjanja pristnosti (2FA)** na vašem računu bodo onemogočene."
@@ -12975,13 +12969,13 @@
         "Vsi skrbniki bodo imeli dostop do ključa."
       ],
       "Are you sure you want to change your organization key?": [
-        "Ali ste prepričani, da želite spremeniti svoj organizacijski ključ?"
+        "Ali ste prepričani, da želite spremeniti svoj ključ organizacije?"
       ],
       "Change organization key": [
-        "Spremenite organizacijski ključ"
+        "Spremenite ključe organizacije"
       ],
       "Non-private users can be promoted to admin when they have setup keys": [
-        "Nezasebni uporabniki se lahko povišajo v skrbnike, če imajo nastavitvene ključe"
+        "Nezasebni uporabniki se lahko povišajo v skrbnike, če imajo nastavitvene ključe."
       ],
       "Organization key activated": [
         "Ključ organizacije aktiviran"
@@ -12990,13 +12984,13 @@
         "Ključ organizacije ne obstaja."
       ],
       "Organization key must be activated to give admin privileges": [
-        "Organizacijski ključ mora biti aktiviran, če želite pridobiti skrbniške pravice"
+        "Ključ organizacije mora biti aktiviran, če želite pridobiti skrbniške pravice."
       ],
       "Organization key restored": [
-        "Organizacijski ključ je obnovljen"
+        "Ključ organizacije je obnovljen."
       ],
       "Organization key updated": [
-        "Ključ organizacije je posodobljen"
+        "Ključ organizacije je posodobljen."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Dovoljenje zavrnjeno, skrbniške pravice so bile omejene."
@@ -13005,28 +12999,28 @@
         "Poskrbite, da imajo omogočen naslov in jih pozneje povabite posebej."
       ],
       "Private users can be promoted to admin when they've signed in for the first time": [
-        "Zasebni uporabniki so lahko povišani v skrbnike, ko se prvič prijavijo"
+        "Zasebni uporabniki so lahko povišani v skrbnike, ko se prvič prijavijo."
       ],
       "Reset organization key": [
-        "Ponastavi organizacijski ključ"
+        "Ponastavi ključ organizacije"
       ],
       "The following administrators could not be restored.": [
         "Naslednjih skrbnikov ni bilo mogoče obnoviti."
       ],
       "The following administrators will get access to the organization key.": [
-        "Naslednji skrbniki bodo dobili dostop do organizacijskega ključa."
+        "Naslednji skrbniki bodo dobili dostop do ključa organizacije."
       ],
       "The organization key must be activated first.": [
         "Najprej je treba aktivirati ključ organizacije."
       ],
       "This will send the latest organization key to the administrators that currently don't have access to it.": [
-        "S tem boste najnovejši organizacijski ključ poslali skrbnikom, ki trenutno nimajo dostopa do njega."
+        "S tem boste najnovejši ključ organizacije poslali skrbnikom, ki trenutno nimajo dostopa do njega."
       ],
       "To create non-private user accounts and access their accounts, you'll need to activate your organization key.": [
-        "Če želite ustvariti nezasebne uporabniške račune in dostopati do njihovih računov, boste morali aktivirati svoj organizacijski ključ."
+        "Če želite ustvariti nezasebne uporabniške račune in dostopati do njihovih računov, boste morali aktivirati svoj ključ organizacije."
       ],
       "To enable administrator rights on your account, activate the organization key.": [
-        "Če želite omogočiti skrbniške pravice za svoj račun, aktivirajte organizacijski ključ."
+        "Če želite omogočiti skrbniške pravice za svoj račun, aktivirajte ključ organizacije."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
         "Uporabite način za obnovitev podatkov ali ponastavite organizacijski ključ, da obnovite skrbniške pravice."
@@ -13038,7 +13032,7 @@
         "Pristnosti tega pošiljatelja ni bilo mogoče preveriti."
       ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
-        "Nismo mogli preveriti varnosti ključa naslova tega pošiljatelja. Včasih pride do zamude pri posodabljanju podatkov o pošiljatelju. Poskusi znova kasneje. Če ne zaupate veljavnosti tega povabila ali pošiljatelja, se obrnite na podporo za stranke ${ BRAND_NAME }."
+        "Nismo mogli preveriti varnosti ključa naslova tega pošiljatelja. Včasih pride do zamude pri posodabljanju podatkov o pošiljatelju. Poskusite znova kasneje. Če ne zaupate veljavnosti tega povabila ali pošiljatelja, se obrnite na podporo za stranke ${ BRAND_NAME }."
       ],
       "We have verified the authenticity of this identity.": [
         "Preverili smo pristnost tega pošiljatelja."
@@ -13047,10 +13041,10 @@
         "Preverili smo pristnost tega pošiljatelja in vabila."
       ],
       "You have been made administrator of the organization **${ organizationName }** by": [
-        "Oseba vas je imenovala za skrbnika organizacije **${ organizationName }**"
+        "Postali ste skrbnik organizacije **${ organizationName }** na zahtevo"
       ],
       "You must privatize all users before generating a new organization key": [
-        "Preden ustvarite nov organizacijski ključ, morate privatizirati vse uporabnike"
+        "Vsi uporabniki morajo biti zasebni pred ustvarjanjem novega ključa organizacije."
       ],
       "You need access to the organization key to perform this operation.": [
         "Za izvedbo te operacije potrebujete dostop do ključa organizacije."
@@ -13503,14 +13497,38 @@
       ]
     },
     "Safety review": {
+      "Account safety review": [
+        "Pregled varnosti računa"
+      ],
+      "Add a recovery email": [
+        "Dodajte e-poštni naslov za obnovitev"
+      ],
+      "Add a recovery email address": [
+        "Dodajte e-poštni naslov za obnovitev"
+      ],
       "Add a recovery phone number": [
         "Dodajte telefonsko številko za obnovitev"
+      ],
+      "Can be used to regain access to your account and data": [
+        "Lahko uporabite za obnovitev dostopa do vašega računa in podatkov."
+      ],
+      "Device-based recovery enabled": [
+        "Obnovitev v napravi je omogočena."
+      ],
+      "Download your Recovery Kit": [
+        "Prenesite vaš komplet za obnovitev"
+      ],
+      "Enable device-based recovery": [
+        "Omogočite obnovitev na podlagi naprave"
       ],
       "Enable recovery by email": [
         "Omogoči obnovitev po e-pošti"
       ],
       "Enable recovery by phone": [
         "Omogoči obnovitev po telefonu"
+      ],
+      "Recovery email address": [
+        "E-poštni naslov za obnovitev"
       ],
       "Safeguard your account further": [
         "Dodatno zavarujte vaš račun"
@@ -13521,6 +13539,21 @@
       "Take action to secure your account": [
         "Ukrepajte za zaščito vašega računa"
       ],
+      "There was an error verifying your recovery email": [
+        "Pri preverjanju vašega e-poštnega naslova za obnovitev je prišlo do napake."
+      ],
+      "to automatically recover your data when you log into a trusted device": [
+        "in tako samodejno obnovitev vaše podatke, ko se vpišete v račun iz zaupanja vredne naprave."
+      ],
+      "to recover your account and data if you're ever locked out": [
+        "ter tako obnovite vaš račun in podatke, če se kdaj zgodi, da ostanete brez dostopa."
+      ],
+      "to recover your account if you're ever locked out": [
+        "ter tako obnovite vaš račun, če se kdaj zgodi, da ostanete brez dostopa."
+      ],
+      "Update your Recovery Kit": [
+        "Posodobite vaš komplet za obnovitev"
+      ],
       "Verify your recovery email address": [
         "Preverite vaš e-poštni naslov za obnovitev"
       ],
@@ -13530,14 +13563,35 @@
       "You have recommended actions.": [
         "Imate priporočila."
       ],
+      "You recovery email address is:": [
+        "Vaš e-poštni naslov za obnovitev je:"
+      ],
+      "You recovery phone number is:": [
+        "Vaša telefonska številka za obnovitev je:"
+      ],
       "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
         "Vaš račun in podatke je mogoče obnoviti. Imate priporočila za dodatno zavarovanje vašega računa."
       ],
       "Your account and data can be recovered. You have recommended actions.": [
         "Vaš račun in podatke je mogoče obnoviti. Imate priporočila."
       ],
+      "Your account is secure.": [
+        "Vaš račun je varen."
+      ],
+      "Your recovery email": [
+        "Vaš e-poštni naslov za obnovitev"
+      ],
+      "Your recovery email is set": [
+        "Vaš e-poštni naslov za obnovitev je nastavljen."
+      ],
+      "Your Recovery Kit": [
+        "Vaš komplet za obnovitev"
+      ],
       "Your recovery methods": [
         "Vaš način obnovitve"
+      ],
+      "Your recovery phone": [
+        "Vaša telefonska številka za obnovitev"
       ]
     },
     "saml: Action": {
@@ -13561,7 +13615,7 @@
         "Podrobnosti"
       ],
       "Test in progress...": [
-        "Test v teku..."
+        "Preizkus poteka ..."
       ],
       "To test this SAML configuration, please enter the login credentials for a user associated with **${ domainName }**": [
         "Če želite preizkusiti to konfiguracijo SAML, vnesite poverilnice za prijavo za uporabnika, povezanega z **${ domainName }**"
@@ -13591,7 +13645,7 @@
     },
     "scim: Action": {
       "Configure SCIM": [
-        "Konfigurirajte SCIM"
+        "Nastavite SCIM"
       ],
       "Disable SCIM": [
         "Onemogoči SCIM"
@@ -13641,7 +13695,7 @@
         "Poenostavlja upravljanje uporabnikov v različnih storitvah. Dodajte, uredite in odstranite uporabnike v svojem ponudniku identitete in te spremembe bodo samodejno uporabljene v vaši organizaciji ${ VPN_APP_NAME }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
-        "Samodejna oskrba SCIM bo onemogočena, dokler ne vnesete novega žetona SCIM v nastavitve svojega ponudnika identitete."
+        "Samodejno zagotavljanje SCIM bo onemogočeno, dokler ne vnesete novega žetona SCIM v nastavitve svojega ponudnika identitete."
       ],
       "The SCIM base URL and token will be deleted.": [
         "Osnovni URL in žeton SCIM bosta izbrisana."
@@ -13674,10 +13728,10 @@
     },
     "scim: Tooltip": {
       "API key of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
-        "Ključ API priključka SCIM, v katerega posreduje podatke SCIM vaš agent za zagotavljanje IdP"
+        "Ključ API priključka SCIM, v katerega vaš agent za zagotavljanje IdP posreduje podatke SCIM"
       ],
       "URL of the SCIM connector to which your IdP Provisioning Agent forwards SCIM data": [
-        "URL konektorja SCIM, na katerega posreduje podatke SCIM vaš agent za zagotavljanje IdP"
+        "URL priključka SCIM, na katerega posreduje podatke SCIM vaš agent za zagotavljanje IdP"
       ]
     },
     "Security Center - Info": {
@@ -14550,7 +14604,7 @@
         "Izgubili boste dostop do dodatne shrambe, e-poštnih naslovov, vzdevkov, koledarjev in prednostne podpore."
       ],
       "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
-        "Izgubili boste dostop do najvišje hitrosti VPN, zaščite za 10 naprav, hitrega pretakanja, blokiranja oglasov in zaščite pred zlonamerno programsko opremo ter prednostne podpore."
+        "Izgubili boste dostop do VPN z najvišjo hitrostjo, zaščite za 10 naprav, hitrega pretakanja, blokiranja oglasov in zaščite pred zlonamerno programsko opremo ter prednostne podpore."
       ],
       "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
         "Izgubili boste dostop do neomejenega števila prijav in opomb, neomejenega števila vzdevkov hide-my-email za skrivanje e-pošte, 20 trezorjev in prednostne podpore."
@@ -14719,7 +14773,7 @@
     },
     "Subscription reminder": {
       "${ BRAND_NAME }'s only source of revenue is user subscriptions. Your support allows us to remain independent, advance our mission to make privacy the default online, and continue supporting activists and organizations fighting for privacy and freedom.": [
-        "Edini vir prihodka ${ BRAND_NAME } so naročnine uporabnikov. Vaša podpora nam omogoča, da ostanemo neodvisni, napredujemo pri našem poslanstvu, da zasebnost postane privzeta spletna naloga, in še naprej podpiramo aktiviste in organizacije, ki se borijo za zasebnost in svobodo."
+        "Edini vir prihodka ${ BRAND_NAME } so naročnine uporabnikov. Vaša podpora nam omogoča, da ostanemo neodvisni, da napredujemo pri našem poslanstvu, da zasebnost na spletu postane privzeta in da še naprej podpiramo aktiviste in organizacije, ki se borijo za zasebnost in svobodo."
       ],
       "${ CALENDAR_APP_NAME } including calendar sharing": [
         "${ CALENDAR_APP_NAME } vključno s skupno rabo koledarja"
@@ -14779,7 +14833,7 @@
         "${ planName } presega osnove in vam pomaga, da ste bolj učinkoviti, organizirani in imate pod nadzorom svoj poštni predal, e-poštno identiteto in še več."
       ],
       "${ planName } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
-        "Paket ${ planName } pomaga zaščititi družinske uporabnike in njihove podatke, kadar koli uporabljajo splet."
+        "Paket ${ planName } pomaga zaščititi družinske člane in njihove podatke, kadar koli uporabljajo splet."
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } ponuja ${ planMaxSpace } prostora za shranjevanje e-poštnih sporočil, priponk, dogodkov, gesel in datotek. Upravičeni ste tudi do letnih bonusov za shrambo."
@@ -14809,13 +14863,13 @@
         "6 uporabnikov"
       ],
       "Add any new files": [
-        "Dodajanje novih datotek"
+        "Dodajati novih datotek"
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 1 GB of Mail storage and up to 5 GB of Drive storage. You will also lose any previously awarded storage bonuses.": [
         "Ko se vaša naročnina ${ planName } zaključi, preidete na brezplačno naročnino ${ BRAND_NAME }. Ta naročnina vključuje le do 1 GB prostora za shranjevanje za pošto in 5 GB prostora za shranjevanje za disk. Prav tako izgubite vse predhodno dodeljene bonuse za shranjevanje."
       ],
       "After your ${ planName } subscription expires, you will be downgraded to ${ BRAND_NAME } Free, which only offers up to 5 GB of Drive storage and up to 1 GB of Mail storage. You will also lose any previously awarded storage bonuses.": [
-        "Ko se vaša naročnina ${ planName } zaključi, preidete na brezplačno naročnino ${ BRAND_NAME }. Ta naročnina vključuje le do 5 GB prostora za shranjevanje za disk in do 1 GB prostora za shranjevanje za pošto. Prav tako izgubite vse predhodno dodeljene bonuse za shranjevanje."
+        "Ko se vaša naročnina za ${ planName } zaključi, preidete na brezplačno naročnino ${ BRAND_NAME }. Ta naročnina vključuje le do 5 GB prostora za shranjevanje za Drive in do 1 GB prostora za shranjevanje za pošto. Prav tako izgubite vse predhodno dodeljene bonuse za shranjevanje."
       ],
       "All you need for your business": [
         "Vse, kar potrebujete za vaš posel"
@@ -14824,7 +14878,7 @@
         "Samodejno posredovanje elektronske pošte"
       ],
       "Back up photos from your devices": [
-        "Varnostno kopiranje fotografij iz naprav"
+        "Varnostno kopirati fotografij iz naprav"
       ],
       "Calendar sharing": [
         "Deljenje koledarja"
@@ -14860,10 +14914,10 @@
         "Pomoč aktivistom v Hongkongu"
       ],
       "How our customer support team got our VPN app directly into people's hands.": [
-        "Kako je ekipa za podporo strankam poskrbela, da je naša aplikacija VPN prišla neposredno v roke ljudi."
+        "Kako je naša ekipa za podporo strankam poskrbela, da je naša aplikacija VPN prišla neposredno v roke ljudi."
       ],
       "How we fought back when ${ BRAND_NAME } was targeted in an aggressive censorship campaign.": [
-        "Kako smo se uprli, ko je ${ BRAND_NAME } postal tarča agresivne cenzurne kampanje."
+        "Kako smo se uprli, ko je ${ BRAND_NAME } postal tarča agresivne cenzure."
       ],
       "How we supported local activists when privacy and free speech were threatened in Hong Kong.": [
         "Kako smo podprli lokalne aktiviste, ko sta bili v Hongkongu ogroženi zasebnost in svoboda govora."
@@ -14872,7 +14926,7 @@
         "Še vedno želim preklicati"
       ],
       "If you exceed the free plan limits when your ${ planName } subscription expires, you will not be able to:": [
-        "Če ob izteku naročnine ${ planName } prekoračite omejitve brezplačnega načrta, ne boste mogli:"
+        "Če ob izteku naročnine na ${ planName } prekoračite omejitve brezplačnega paketa, ne boste mogli:"
       ],
       "Keep ${ config.planName }": [
         "Ohrani ${ config.planName }."
@@ -14884,7 +14938,7 @@
         "Več o našem vplivu"
       ],
       "Manage your calendar": [
-        "Upravljanje koledarjev"
+        "Upravljati koledarjev"
       ],
       "Online privacy, for your whole family": [
         "Zasebnost na spletu za vašo celotno družino"
@@ -14896,7 +14950,7 @@
         "Upoštevajte, da ${ planName } ni več na voljo za nakup. Če svoj račun degradirate, boste izgubili vse ugodnosti paketa in ponovna naročnina ni mogoča."
       ],
       "Premium productivity features": [
-        "Vrhunske funkcije za učinkovitost"
+        "Premijske funkcije za učinkovitost"
       ],
       "Priority support": [
         "Prednostna podpora"
@@ -14911,16 +14965,16 @@
         "Preberite zgodbo"
       ],
       "Receive new emails": [
-        "Prejemanje novih sporočil"
+        "Prejemati novih sporočil"
       ],
       "Send emails with attachments": [
-        "Pošiljanje e-poštnih sporočil s priponkami"
+        "Pošiljati e-poštnih sporočil s priponkami"
       ],
       "Subscription canceled": [
         "Naročnina preklicana"
       ],
       "Sync files on devices": [
-        "Sinhroniziranje datotek v napravah"
+        "Sinhronizirati datotek v napravah"
       ],
       "The best of ${ BRAND_NAME }": [
         "Najboljše od ${ BRAND_NAME }"
@@ -14953,7 +15007,7 @@
         "Ko prekličete ${ planName }, boste degradirani na ${ BRAND_NAME } Free, ki ponuja le do 5 GB prostora za shranjevanje na Drive in do 1 GB prostora za shranjevanje pošte. Prav tako boste izgubili vse predhodno dodeljene bonuse za shranjevanje."
       ],
       "Yearly free storage bonuses": [
-        "Bonus prostor za shranjevanje"
+        "Letni bonusi za prostor za shranjevanje"
       ],
       "You still have ${ expiryDate } left on your ${ planName } subscription. We'll add the credits for the remaining time to your ${ BRAND_NAME } Account. Make sure you do not exceed the free plan limits before canceling. ${ learnMoreLink } ${ unavailablePlan }": [
         "Na paketu ${ planName } vam je preostalo še ${ expiryDate }. Dobroimetje za preostali čas bomo dodali na vaš račun ${ BRAND_NAME }. Pred preklicem naročnine se prepričajte, da niste presegli omejitev brezplačne naročnine. ${ learnMoreLink } ${ unavailablePlan }"
@@ -14965,10 +15019,10 @@
         "Paket ${ planName } je bil preklican."
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you'll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink }": [
-        "Vaša naročnina ${ planName } se konča dne ${ expiryDate }. Po tem boste prešli na ${ BRAND_NAME } brezplačno naročnino. Če vaša uporaba preseže omejitve brezplačne naročnine, se lahko dostop do funkcij izdelka in vaših podatkov omeji. ${ learnMoreLink }"
+        "Vaša naročnina na ${ planName } se konča dne ${ expiryDate }. Po tem datumu boste prešli na brezplačni paket ${ BRAND_NAME }. Če vaša uporaba presega omejitve brezplačnega paketa, se lahko dostop do funkcij izdelka in vaših podatkov omeji. ${ learnMoreLink }"
       ],
       "Your ${ planName } subscription ends on ${ expiryDate }. After that, you’ll be on the ${ BRAND_NAME } Free plan. If your usage exceeds free plan limits, you may experience restricted access to product features and your data. ${ learnMoreLink } ${ unavailablePlan }": [
-        "Vaša naročnina ${ planName } se konča dne ${ expiryDate }. Po tem boste prešli na ${ BRAND_NAME } brezplačno naročnino. Če vaša uporaba preseže omejitve brezplačne naročnine, se lahko dostop do funkcij izdelka in vaših podatkov omeji. ${ learnMoreLink } ${ unavailablePlan }"
+        "Vaša naročnina ${ planName } se konča dne ${ expiryDate }. Po tem boste prešli na brezplačni paket ${ BRAND_NAME }. Če vaša uporaba presega omejitve brezplačnega paketa, se lahko dostop do funkcij izdelka in vaših podatkov omeji. ${ learnMoreLink } ${ unavailablePlan }"
       ],
       "Your own custom email domain": [
         "E-poštna domena po meri"
@@ -15641,10 +15695,10 @@
       "Card verification": [
         "Preverjanje kartice"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Prestreženi naslovi"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Prestreženi naslovi"
       ],
       "Change login password": [
@@ -16194,7 +16248,7 @@
         "Filtri organizacije"
       ],
       "Organization key": [
-        "Organizacijski ključ"
+        "Ključ organizacije"
       ],
       "Organization name": [
         "Ime organizacije"
@@ -17009,7 +17063,7 @@
         "Prekliči"
       ],
       "Confirm password": [
-        "Potrdi geslo."
+        "Potrdi geslo"
       ],
       "Create password": [
         "Ustvarite geslo"
@@ -17044,7 +17098,7 @@
         "2FA"
       ],
       "Invite sent": [
-        "Vabilo uspešno poslano"
+        "Vabilo poslano"
       ],
       "Private": [
         "Zasebno"
@@ -17196,7 +17250,7 @@
         "Vključuje ${ plan } (prvo leto brezplačno!)"
       ],
       "Includes ${ plan }, our premium password manager, free for the first year!": [
-        "Vključuje ${ plan }, našega premium upravitelja gesel, ki je prvo leto brezplačen!"
+        "Vključuje ${ plan }, našega premijskega upravitelja gesel, ki je prvo leto brezplačen!"
       ],
       "Just ${ price }": [
         "Le ${ price }"
@@ -17227,7 +17281,7 @@
         "Začnite"
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "Prijavite se za brezplačen račun ${ BRAND_NAME } in si zagotovite svoje mesto. Prej ko se prijavite, prej boste dobili dostop do ${ appName }. Po prijavi lahko nadgradite tudi na naš ekskluzivni načrt Visionary, da preskočite čakalni seznam in takoj začnete uporabljati ${ appName }."
+        "Prijavite se za brezplačen račun ${ BRAND_NAME } in si zagotovite svoje mesto. Prej ko se prijavite, prej boste dobili dostop do ${ appName }. Po prijavi lahko nadgradite tudi na naš ekskluzivni paket Visionary, da preskočite čakalni seznam in takoj začnete uporabljati ${ appName }."
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "Odklenite premijske funkcije ${ appName } z nadgradnjo"
@@ -17308,7 +17362,7 @@
         "Zaznali smo težavo z vašo nastavitvijo DNS. Prosimo, da preverite, če vaši zapisi ustrezajo spodnjim navodilom. Če bodo težave ostale, bomo morali izklopiti podpisovanje DKIM."
       ],
       "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
-        "Preden dodate e-poštni naslov nezasebnemu članu, morate ${ activateLink } organizacijski ključ."
+        "Preden dodate e-poštni naslov nezasebnemu članu, morate ${ activateLink } ključ organizacije."
       ],
       "You will lose any customization you made so far.": [
         "Izgubili boste vse prilagoditve, ki ste jih doslej naredili."

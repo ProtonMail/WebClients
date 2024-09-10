@@ -376,6 +376,9 @@
       "Pin item": [
         "Fissa l'elemento"
       ],
+      "Please retry": [
+        "Per favore riprova"
+      ],
       "Refresh the page": [
         "Aggiorna la pagina"
       ],
@@ -483,9 +486,6 @@
       ],
       "Show": [
         "Mostra"
-      ],
-      "Sign back in": [
-        "Effettua nuovamente l'accesso"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Accedi con ${ BRAND_NAME }"
@@ -1186,9 +1186,6 @@
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Gli alias con domini personalizzati non vengono monitorati, aggiungili come email personalizzata per il monitoraggio."
-      ],
-      "All aliases are synced": [
-        "Tutti gli alias sono sincronizzati"
       ],
       "All breaches for this address were resolved": [
         "Tutte le violazioni di dati relative a questo indirizzo sono state risolte"
@@ -3300,6 +3297,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Qualcosa è andato storto durante l'avvio di ${ PASS_APP_NAME }. Prova a ricaricare la pagina o a riavviare l'estensione"
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Il prefisso alias non può essere più lungo di 40 caratteri"

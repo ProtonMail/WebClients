@@ -752,11 +752,11 @@
       "Refresh status": [
         "Állapot frissítése"
       ],
-      "Refresh the page": [
-        "Oldal frissítése"
-      ],
       "refresh the page": [
         "frissítse az oldalt"
+      ],
+      "Refresh the page": [
+        "Oldal frissítése"
       ],
       "Reload": [
         "Újratöltés"
@@ -1374,6 +1374,11 @@
         "Jelenlegi munkamenet"
       ]
     },
+    "Baseline in trial plan": {
+      "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "${ mailPlus }: a magánszférát előtérben tartó e-mail és naptár megoldás, a mindennapi kommunikációjához."
+      ]
+    },
     "bf2023: Action": {
       "Cancel": [
         "Mégsem"
@@ -1776,6 +1781,9 @@
     "Call Scheduled Confirmation": {
       "Request sent": [
         "Kérés elküldve"
+      ],
+      "We'll get back to you with more information as soon as we can.": [
+        "Amint tudunk, további információkkal jelentkezünk."
       ],
       "You can safely close this tab.": [
         "Most már nyugodtan bezárhatja ezt az ablakot."
@@ -5203,6 +5211,11 @@
         "Feliratkozva"
       ]
     },
+    "Heading in trial plan": {
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "A ${ MAIL_APP_NAME } legjobb lehetőségeinek kipróbálása ingyen"
+      ]
+    },
     "Headline": {
       "Contact us": [
         "Lépjen velünk kapcsolatba"
@@ -6990,9 +7003,6 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Amennyiben törli ezt a szűrőt (${ nameDeleted }), minden ebből kiinduló automatikus feldolgozás megszűnik."
-      ],
-      "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "A megerősítés gombra kattintva a fiókban ${ creditsRemaining } kredit marad."
       ],
       "please open a support ticket": [
         "kérjük, nyisson egy ügyfélszolgálati jegyet"
@@ -9998,9 +10008,6 @@
       ]
     },
     "Monetary unit": {
-      "Dollar": [
-        "Dollár"
-      ],
       "Euro": [
         "Euró"
       ],
@@ -10158,11 +10165,17 @@
       "Back to calendar": [
         "Vissza a naptárhoz"
       ],
+      "Back to documents": [
+        "Vissza a dokumentumokhoz"
+      ],
       "Back to files": [
         "Vissza a fájlokhoz"
       ],
       "Back to inbox": [
         "Vissza a beérkezett üzenetekhez"
+      ],
+      "Back to vaults": [
+        "Vissza a tárolókhoz"
       ],
       "Block": [
         "Letiltás"
@@ -10170,8 +10183,14 @@
       "Calendar": [
         "Naptár"
       ],
+      "Documents": [
+        "Dokumentumok"
+      ],
       "Inbox": [
         "Beérkezett üzenetek"
+      ],
+      "Pass vaults": [
+        "Pass tárolók"
       ],
       "Spam": [
         "Levélszemét"
@@ -10197,23 +10216,6 @@
       ],
       "Medium VPN speed": [
         "Közepes VPN sebesség"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Upgrade": [
-        "Nagyobb csomagra váltás"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: action": {
@@ -10243,6 +10245,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Upgrade": [
+        "Nagyobb csomagra váltás"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -10655,17 +10674,32 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* 30 havi előfizetéssel. További előfizetési lehetőségek a fizetésnél lesznek elérhetők."
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Fejlett hálózati biztonság és hozzáférés-kezelés dedikált biztonságos átjárókkal"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Fejlett védelem csapatok számára, amely túlmutat az iparági szabványokon."
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Minden ${ BRAND_NAME } alkalmazás és prémium lehetőségeik"
+      ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
         "Minden ${ BRAND_NAME } üzleti alkalmazás és prémium funkció az ön egész vállalkozását védi"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Széleskörű adatvédelem és biztonság az összes ${ BRAND_NAME } szolgáltatással."
       ],
+      "Early access to new apps and features": [
+        "Korai hozzáférés az új alkalmazásokhoz és lehetőségekhez"
+      ],
       "Encrypted email and calendar to get you started.": [
         "Kezdésként titkosított e-mail és naptár"
       ],
       "Enhanced security and premium features for teams.": [
         "Megnövelt biztonság és prémium funkciók a csoportok számára"
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Alapvető védelem és biztonságos együttműködés korlátlan számú felhasználó számára."
       ],
       "For next-level password management and identity protection.": [
         "Új szint a jelszókezelésben és a személyi adatok védelmében."
@@ -10691,6 +10725,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Védje a családja adatait az összes ${ BRAND_NAME } szolgáltatás kombinációjával."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Biztonságos internetelérés bárhonnan az alapvető hálózati felügyelet segítségével"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Biztonságos felhőtárolás, mely lehetővé teszi, hogy könnyedén és biztonságosan tároljon, szinkronizáljon és osszon meg fájlokat."
       ],
@@ -10699,6 +10736,9 @@
       ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
         "Állítson be automatikus válaszokat, hogy tájékoztassa a feladókat arról, hogy jelenleg az irodán kívül tartózkodik vagy nem tud válaszolni."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Testre szabott megoldások nagyobb szervezetek számára, egyedi biztonsági igényekkel"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "A külön VPN megoldás, amely biztonságos, korlátlan és nagysebességű internet elérést biztosít."
@@ -10766,14 +10806,6 @@
         "A választott csomagja: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } próbaváltozat"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -10792,6 +10824,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } próbaváltozat"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
@@ -11500,6 +11540,24 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "A ${ appName } előnyei"
+      ],
+      "+ ${ relativePrice } per month": [
+        "${ relativePrice } havonta"
+      ],
+      "/month /user": [
+        "/hó /felhasználó"
+      ],
+      "/month /user, billed annually": [
+        "/hó /felhasználó, évente számlázva"
+      ],
+      "/month /user, billed biennially": [
+        "/hó /felhasználó, kétévente számlázva"
+      ],
+      "All premium ${ BRAND_NAME } services.": [
+        "Az összes prémium ${ BRAND_NAME } szolgáltatás."
+      ],
       "By continuing, you agree to our ${ termsAndConditionsLink }": [
         "A folytatással elfogadja a ${ termsAndConditionsLink }et"
       ],
@@ -11512,8 +11570,20 @@
       "End-to-end encryption": [
         "Végpontok közti titkosítás"
       ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Mindössze további **${ relativePrice } havonta**, és elérheti a ${ BRAND_NAME } prémium jelszókezelőjét!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Mindössze további **${ relativePrice } havonta**, és elérheti a ${ BRAND_NAME } prémium VPN szolgáltatását!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Mindössze további **${ relativePrice } havonta**, és elérheti a ${ BRAND_NAME } összes prémium szolgáltatását!"
+      ],
       "Free forever": [
         "Örökre ingyenes"
+      ],
+      "Get in touch with our sales team": [
+        "Írjon az értékesítési csoportnak"
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
         "A kizáródna a ${ BRAND_NAME } fiókjából, akkor a **Helyreállító csomag** segít ismét belépni és az adatait a helyreállítani."
@@ -11527,8 +11597,20 @@
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Korlátozott idejű ajánlat: ${ title } felhasználónkénti ${ price } áron havonta!"
       ],
+      "One easy subscription.": [
+        "Egy egyszerű előfizetés."
+      ],
       "per month": [
         "havonta"
+      ],
+      "per month, billed annually": [
+        "havonta, évente számlázva"
+      ],
+      "per month, billed every month": [
+        "havonta, havonta számlázva"
+      ],
+      "per month, billed every two years": [
+        "havonta, kétévente számlázva"
       ],
       "Protected by Swiss privacy laws": [
         "Svájc adatvédelmi törvényei által védve"
@@ -11546,6 +11628,9 @@
       ],
       "Special launch offer: Get ${ title } for ${ price } forever!": [
         "Kiemelt indulási ajánlat: ${ title } ${ price } áron örökre!"
+      ],
+      "Tailored made solutions for larger organizations with custom needs.": [
+        "Testre szabott megoldások nagyobb szervezetek számára, egyedi biztonsági igényekkel."
       ],
       "Verifying your payment": [
         "Fizetés ellenőrzése"
@@ -11571,8 +11656,14 @@
       ]
     },
     "password_reset: info": {
+      "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **old password**.": [
+        "**Minden meglévő adata** (e-mailek, események, névjegyek, fájlok, ${ PASS_APP_NAME } adatok stb.) **zárolásra kerül** és csak a **régi jelszavával** tudja majd feloldani."
+      ],
       "**All your existing data** (emails, events, contacts, files, ${ PASS_APP_NAME } entries, etc.) **will be locked** and can only be unlocked with your **recovery phrase** or your **old password**.": [
         "**Minden meglévő adata** (e-mailek, események, névjegyek, fájlok, ${ PASS_APP_NAME } adatok stb.) **zárolásra kerül** és csak a **helyreállító jelmondattal** vagy a **régi jelszavával** tudja majd feloldani."
+      ],
+      "Any **two-factor authentication (2FA)** method on your account will be disabled.": [
+        "Ha van bármilyen **kétlépcsős hitelesítés** a fiókján, az kikapcsolásra kerül."
       ]
     },
     "passwordless": {
@@ -13721,10 +13812,10 @@
       "Card verification": [
         "Bankkártya ellenőrzése"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Gyűjtő e-mail cím"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Gyűjtő e-mail cím"
       ],
       "Change login password": [
@@ -15160,6 +15251,11 @@
       ],
       "Coming soon": [
         "Hamarosan"
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "Vissza a tárcához"
       ]
     },
     "wallet_signup_2024:Wallet Settings": {
