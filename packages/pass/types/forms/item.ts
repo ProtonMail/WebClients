@@ -15,6 +15,7 @@ export type LoginItemFormValues = BaseItemValues & {
     password: string;
     totpUri: string;
     withAlias: boolean;
+    withUsername: boolean;
 } & AliasFormValues &
     UrlGroupValues &
     ExtraFieldGroupValues;
