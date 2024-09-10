@@ -27,8 +27,10 @@ export interface FormHandle {
 export interface FieldHandle {
     /** action attached for this field */
     action: MaybeNull<DropdownAction>;
-    /** wether the field was autofilled */
-    autofilled: boolean;
+    /** Indicates the autofill status of the field. A value of `null`
+     * means the current field value was a user input. Otherwise, it
+     * stores the FieldType that triggered the autofilled value */
+    autofilled: MaybeNull<FieldType>;
     /** bounding element of input field */
     boxElement: HTMLElement;
     /** underlying input element */

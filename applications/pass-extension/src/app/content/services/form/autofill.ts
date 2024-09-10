@@ -151,7 +151,7 @@ export const createAutofillService = () => {
                 /** If an identity field in the same section was
                  * previously autofilled, clear the previous value. */
                 field.autofill('');
-                field.autofilled = false;
+                field.autofilled = null;
             }
         });
 
