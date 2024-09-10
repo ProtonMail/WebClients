@@ -184,6 +184,9 @@
       "Disable instead": [
         "Desativar em vez disso"
       ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Desativar esse alias para parar de receber e-mails enviados a ele"
+      ],
       "Discard": [
         "Descartar"
       ],
@@ -201,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Ativar monitoramento da Dark Web"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Ativar esse alias para receber e-mails enviados a ele"
       ],
       "Entire vault": [
         "Cofre completo"
@@ -367,6 +373,9 @@
       "Pin item": [
         "Fixar item"
       ],
+      "Please retry": [
+        "Tente novamente."
+      ],
       "Refresh the page": [
         "Atualizar a página"
       ],
@@ -474,9 +483,6 @@
       ],
       "Show": [
         "Mostrar"
-      ],
-      "Sign back in": [
-        "Inicie sessão novamente"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com ${ BRAND_NAME }"
@@ -657,6 +663,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "O arquivo ${ provider } não pôde ser analisado ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "O alias não pôde ser atualizado no momento. Por favor, tente novamente mais tarde"
+      ],
       "Alias options could not be resolved": [
         "Não foi possível resolver as opções de alias."
       ],
@@ -778,6 +787,9 @@
       ],
       "Failed to restore items from trash": [
         "Falha ao restaurar itens da lixeira"
+      ],
+      "Failed to sync aliases": [
+        "Erro ao sincronizar os alíases"
       ],
       "Failed to transfer this vault's ownership.": [
         "Falha ao transferir a propriedade deste cofre."
@@ -1103,8 +1115,20 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "Após importar seus dados com sucesso, você pode excluir o arquivo CSV que contém suas senhas por segurança."
       ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "O alias foi desativado com sucesso. Você não mais receberá e-mails enviados para ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "O alias foi ativado com sucesso. Agora você pode receber e-mails enviados para ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "A sincronização de alíases entre suas contas ${ BRAND_NAME } e SimpleLogin está ativa."
+      ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
         "Os aliases na lixeira continuarão encaminhando e-mails. Se você quiser parar de receber e-mails nesse endereço, desative-o."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Alíases não sincronizados (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Os e-mails aliases com domínios personalizados não são monitorados, por favor adicione-os como um e-mail personalizado para monitoramento."
@@ -1787,6 +1811,9 @@
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Enviamos um código de verificação para ${ email }. Por favor, insira-o abaixo:"
       ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Ao criar/editar um login no(a) ${ PASS_APP_NAME }, a entrada “nome de usuário” estará sempre visível."
+      ],
       "You are about to create:": [
         "Você está prestes a criar:"
       ],
@@ -1853,6 +1880,10 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } alíases"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } caracter",
         "${ config.options.length } caracteres"
@@ -1954,6 +1985,9 @@
       ],
       "Alphabetical": [
         "Em ordem alfabética"
+      ],
+      "Always show username field": [
+        "Sempre mostrar o campo do nome de usuário"
       ],
       "Application logs": [
         "Registros do aplicativo"
@@ -2387,6 +2421,9 @@
       "Select preferred language": [
         "Selecionar idioma preferido"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Selecione o cofre para o qual os alíases do SimpleLogin serão importados"
+      ],
       "Select your password manager": [
         "Selecione o seu gerenciador de senhas"
       ],
@@ -2434,6 +2471,9 @@
       ],
       "Support": [
         "Suporte"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Sincronizar alíases com SimpleLogin"
       ],
       "Tax number": [
         "Número de identificação fiscal"
@@ -2716,6 +2756,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "A sincronização de alíases foi realizada com sucesso. Os alíases do SimpleLogin podem levar algum tempo para serem sincronizados"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Cofres não podem conter mais do que ${ vault.targetMaxMembers } usuários.",
         "Cofres não podem conter mais do que ${ vault.targetMaxMembers } usuários."
@@ -3181,8 +3224,14 @@
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são criptografados de ponta a ponta. Não envie nenhuma informação confidencial."
       ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Ocorreu um erro ao iniciar o ${ PASS_APP_NAME }. Tente atualizar ou recarregar a extensão"
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "O prefixo do alias não pode ter mais de 40 caracteres"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Este alias \"${ aliasEmail }\" é atualmente utilizado no login \"${ relatedLoginName }\""
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Este endereço de e-mail não será mais monitorado para violações de dados."

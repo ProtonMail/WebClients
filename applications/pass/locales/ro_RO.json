@@ -373,6 +373,9 @@
       "Pin item": [
         "Fixare"
       ],
+      "Please retry": [
+        "Reîncercați"
+      ],
       "Refresh the page": [
         "Împrospătare pagină"
       ],
@@ -480,9 +483,6 @@
       ],
       "Show": [
         "Afișare"
-      ],
-      "Sign back in": [
-        "Reconectare"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Conectare cu ${ BRAND_NAME }"
@@ -1146,9 +1146,6 @@
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Aliasurile cu domenii personale nu sunt monitorizate. Adăugați-le ca e-mail personal pentru monitorizare."
-      ],
-      "All aliases are synced": [
-        "Toate aliasurile sunt sincronizate"
       ],
       "All breaches for this address were resolved": [
         "Toate divulgările pentru această adresă s-au rezolvat."
@@ -3256,6 +3253,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Ceva nu a mers bine la pornirea ${ PASS_APP_NAME }. Încercați să reîmprospătați sau să reîncărcați extensia."
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Prefixul aliasului nu poate fi mai lung de 40 de caractere."
