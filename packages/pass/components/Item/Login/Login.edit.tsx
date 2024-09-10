@@ -28,7 +28,7 @@ import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { itemCreationIntent } from '@proton/pass/store/actions';
-import { selectTOTPLimits } from '@proton/pass/store/selectors';
+import { selectShowUsernameField, selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues } from '@proton/pass/types';
 import { arrayRemove } from '@proton/pass/utils/array/remove';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -42,6 +42,7 @@ const FORM_ID = 'edit-login';
 export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault, onSubmit, onCancel }) => {
     const dispatch = useDispatch();
     const { needsUpgrade } = useSelector(selectTOTPLimits);
+    const showUsernameField = useSelector(selectShowUsernameField);
 
     const { domain, subdomain } = url ?? {};
     const { shareId } = vault;
@@ -49,10 +50,15 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
     const { metadata, content, extraFields, ...uneditable } = useDeobfuscatedItem(item);
     const { email, username } = getSanitizedUserIdentifiers(content);
 
+    /** On initial mount: expand username field by default IIF:
+     * - user has enabled the `showUsernameField` setting
+     * - both username & field are populated */
     const initialValues: LoginItemFormValues = {
         aliasPrefix: '',
         aliasSuffix: undefined,
         extraFields,
+        itemEmail: email,
+        itemUsername: username,
         mailboxes: [],
         name: metadata.name,
         note: metadata.note,
@@ -62,9 +68,8 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
         totpUri: getSecretOrUri(content.totpUri),
         url: '',
         urls: content.urls.map(createNewUrl),
-        itemEmail: email,
-        itemUsername: username,
         withAlias: false,
+        withUsername: showUsernameField || Boolean(username && email),
     };
 
     const form = useFormik<LoginItemFormValues>({
