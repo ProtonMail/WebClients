@@ -13,6 +13,7 @@ export type IdentityFormField = {
     component?: ComponentType<any>;
     label: string;
     mask?: FactoryOpts;
+    hidden?: boolean;
     placeholder: string;
 };
 
