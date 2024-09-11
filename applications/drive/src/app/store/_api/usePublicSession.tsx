@@ -55,9 +55,15 @@ function usePublicSessionProvider() {
 
         const localID = getLastPersistedLocalID();
         if (localID !== null) {
-            const resumedSession = await resumeSession({ api, localID });
-            if (resumedSession.keyPassword) {
-                auth.setPassword(resumedSession.keyPassword);
+            try {
+                const resumedSession = await resumeSession({ api, localID });
+                if (resumedSession.keyPassword) {
+                    auth.setPassword(resumedSession.keyPassword);
+                }
+            } catch (e) {
+                // TODO: Probably getLastPersistedLocalID is the source of issue
+                // Investigate why later
+                console.warn('Cannot resume session');
             }
         }
 
