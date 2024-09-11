@@ -1,11 +1,12 @@
+import { useAuthStore } from '@proton/pass//components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-
-import { PASS_UPGRADE_PATH, SAFARI_URL_SCHEME, type UpsellRef, UpsellRefPrefix } from '../constants';
-import { authStore } from '../lib/auth/store';
+import { PASS_UPGRADE_PATH, SAFARI_URL_SCHEME, type UpsellRef, UpsellRefPrefix } from '@proton/pass/constants';
 
 /** `pathRef` will be passed to the upgrade link */
 export const useNavigateToUpgrade = (options: { path?: string; upsellRef: UpsellRef }) => {
     const { onLink, config, endpoint } = usePassCore();
+    const authStore = useAuthStore();
+
     const searchParams = new URLSearchParams();
 
     const refPrefix: UpsellRefPrefix = (() => {
