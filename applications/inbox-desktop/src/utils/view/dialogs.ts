@@ -1,7 +1,7 @@
 import { BrowserView, app, dialog } from "electron";
 import { c } from "ttag";
 import { viewLogger } from "../log";
-import { CHANGE_VIEW_TARGET } from "../external/packages/shared/lib/desktop/desktopTypes";
+import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 
 const beforeUnloadChoice = () => {
     return dialog.showMessageBoxSync({

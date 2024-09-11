@@ -415,7 +415,7 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
     // Electron follow system settings and only Snow and Carbon theme
     if (isElectronApp) {
         if (hasInboxDesktopFeature('ThemeSelection') && canGetInboxDesktopInfo) {
-            return getInboxDesktopInfo('theme');
+            return { ...electronAppTheme, ...getInboxDesktopInfo('theme') };
         } else {
             return electronAppTheme;
         }
