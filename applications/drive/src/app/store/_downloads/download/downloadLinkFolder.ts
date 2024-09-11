@@ -7,7 +7,6 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
-import { ExperimentGroup, Features, measureFeaturePerformance } from '../../../utils/telemetry';
 import { WAIT_TIME } from '../constants';
 import type {
     ChildrenLinkMeta,
@@ -38,32 +37,23 @@ export default function initDownloadLinkFolder(
     link: LinkDownload,
     callbacks: DownloadCallbacks,
     log: LogCallback,
-    isNewAlgorithmEnabled: boolean,
     api: Api,
     options?: { virusScan?: boolean }
 ): DownloadStreamControls {
-    const folderLoader = new FolderTreeLoader(link, log, isNewAlgorithmEnabled);
+    const folderLoader = new FolderTreeLoader(link, log);
     const concurrentIterator = new ConcurrentIterator();
     const archiveGenerator = new ArchiveGenerator();
-    const measureTotalSizeComputation = measureFeaturePerformance(
-        api,
-        Features.totalSizeComputation,
-        isNewAlgorithmEnabled ? ExperimentGroup.treatment : ExperimentGroup.control
-    );
 
     const cancel = () => {
         folderLoader.cancel();
         archiveGenerator.cancel();
         concurrentIterator.cancel();
-        measureTotalSizeComputation.clear();
     };
 
     const start = () => {
-        measureTotalSizeComputation.start();
         folderLoader
             .load(callbacks.getChildren, callbacks.onSignatureIssue, callbacks.onProgress, callbacks.onContainsDocument)
             .then(({ size, linkSizes }) => {
-                measureTotalSizeComputation.end({ quantity: Object.keys(linkSizes).length });
                 linkSizes[link.linkId] = size;
                 callbacks.onInit?.(size, linkSizes);
             })
@@ -108,15 +98,12 @@ export class FolderTreeLoader {
 
     private log: LogCallback;
 
-    private isNewAlgorithmEnabled: boolean;
-
-    constructor(link: LinkDownload, log: LogCallback, isNewAlgorithmEnabled: boolean) {
+    constructor(link: LinkDownload, log: LogCallback) {
         this.rootLink = link;
         this.done = false;
         this.links = [];
         this.abortController = new AbortController();
         this.log = (message) => log(`traversal: ${message}`);
-        this.isNewAlgorithmEnabled = isNewAlgorithmEnabled;
     }
 
     async load(
@@ -191,18 +178,7 @@ export class FolderTreeLoader {
             })),
         ];
 
-        if (this.isNewAlgorithmEnabled) {
-            return this.generateFolderResultsNew(
-                shareId,
-                children,
-                getChildren,
-                parentLinkIds,
-                parent,
-                onSignatureIssue,
-                onProgress
-            );
-        }
-        return this.generateFolderResultsOld(
+        return this.generateFolderResultsNew(
             shareId,
             children,
             getChildren,
@@ -211,53 +187,6 @@ export class FolderTreeLoader {
             onSignatureIssue,
             onProgress
         );
-    }
-
-    // TODO: DRVWEB-4064 - Clean this up
-    /**
-     * Old algorithm for recursively calling the loadHelper.
-     * Will map over every child and recursively call the loadHelper down to the deepest level
-     * without awaiting for the completion for previous branches
-     */
-    private async generateFolderResultsOld(
-        shareId: LinkDownload['shareId'],
-        children: ChildrenLinkMeta[],
-        getChildren: GetChildrenCallback,
-        parentLinkIds: string[],
-        parent: string[],
-        onSignatureIssue?: OnSignatureIssueCallback,
-        onProgress?: OnProgressCallback,
-        onContainsDocument?: OnContainsDocumentCallback
-    ) {
-        return Promise.all(
-            children.map(async (item: ChildrenLinkMeta) => {
-                // To get link into progresses right away so potentially loader can be displayed.
-                onProgress?.([...parentLinkIds, item.linkId], 0);
-
-                if (!item.isFile) {
-                    const result = await this.loadHelper(
-                        { ...item, shareId },
-                        [...parentLinkIds, item.linkId],
-                        getChildren,
-                        onSignatureIssue,
-                        onProgress,
-                        onContainsDocument,
-                        [...parent, item.name]
-                    );
-                    result.linkSizes[item.linkId] = result.size;
-                    return result;
-                }
-                this.log(`File ${item.linkId}, parent: ${parentLinkIds.at(-1)}`);
-                return { size: item.size, linkSizes: Object.fromEntries([[item.linkId, item.size]]) };
-            })
-        ).then((results: FolderLoadInfo[]) => {
-            const size = results.reduce((total, { size }) => total + size, 0);
-            const linkSizes = results.reduce((sum, { linkSizes }) => ({ ...sum, ...linkSizes }), {});
-            return {
-                size,
-                linkSizes,
-            };
-        });
     }
 
     /**
