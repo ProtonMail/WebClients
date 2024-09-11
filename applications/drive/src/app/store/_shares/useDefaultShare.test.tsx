@@ -16,6 +16,23 @@ jest.mock('../_api/useDebouncedRequest', () => {
     return useDebouncedRequest;
 });
 
+jest.mock('../_api/useDebouncedRequest', () => {
+    const useDebouncedRequest = () => {
+        return mockRequest;
+    };
+    return useDebouncedRequest;
+});
+
+jest.mock('../_crypto/useDriveCrypto', () => {
+    const useDriveCrypto = () => {
+        return {
+            getOwnAddressAndPrimaryKeys: () => {},
+        };
+    };
+
+    return useDriveCrypto;
+});
+
 jest.mock('../_utils/useDebouncedFunction', () => {
     const useDebouncedFunction = () => {
         return (wrapper: any) => wrapper();

@@ -124,6 +124,7 @@ export const useDecryptPublicShareLink = () => {
             possibleKeyPackets: [],
             state: ShareState.active,
             memberships: [],
+            createTime: 0,
         };
         setShares([share]);
 
