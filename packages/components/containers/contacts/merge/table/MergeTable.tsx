@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 
-import { Block, OrderableTable, TableCell } from '../../../../components';
+import { OrderableTable, TableCell } from '../../../../components';
 import MergeTableBody from './MergeTableBody';
 
 import '../../../../components/orderableTable/OrderableTableHeader.scss';
@@ -54,7 +54,7 @@ const MergeTable = ({
                 const beMergedIDs = activeIDs.length > 1 ? activeIDs : [];
 
                 return (
-                    <Block key={`${group && group[0].Name}`} className="mb-8 flex flex-column items-center">
+                    <div key={`${group && group[0].Name}`} className="mb-8 flex flex-column items-center">
                         <OrderableTable
                             onSortEnd={onSortEnd(i)}
                             className="mb-4"
@@ -80,7 +80,7 @@ const MergeTable = ({
                         >
                             {c('Action').t`Preview contact`}
                         </Button>
-                    </Block>
+                    </div>
                 );
             })}
         </>
