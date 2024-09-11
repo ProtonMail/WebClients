@@ -8,7 +8,6 @@ import type {
     DriveFileRevisionResult,
     DriveFileRevisionThumbnailResult,
 } from '@proton/shared/lib/interfaces/drive/file';
-import { useFlag } from '@proton/unleash';
 
 import { TransferState } from '../../components/TransferManager/transfer';
 import { logError } from '../../utils/errorHandling';
@@ -46,8 +45,6 @@ export default function useDownload() {
     const { loadChildren, getCachedChildren } = useLinksListing();
     const { report } = useDownloadMetrics('preview');
 
-    // TODO: DRVWEB-4064 - Clean this up
-    const isNewFolderTreeAlgorithmEnabled = useFlag('DriveWebDownloadNewFolderLoaderAlgorithm');
     const api = useApi();
 
     const getChildren = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<DecryptedLink[]> => {
@@ -171,7 +168,6 @@ export default function useDownload() {
                 },
             },
             log,
-            isNewFolderTreeAlgorithmEnabled,
             api
         );
     };
@@ -200,7 +196,6 @@ export default function useDownload() {
                     report(link.shareId, TransferState.Done);
                 },
             },
-            isNewFolderTreeAlgorithmEnabled,
             api
         );
         const stream = controls.start();
