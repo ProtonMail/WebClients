@@ -23,8 +23,8 @@ import { sortItemsWithPositions } from './utils/sortItemsWithPositions';
 import type { SortField } from './utils/useSorting';
 
 const DEFAULT_SORT = {
-    sortField: 'name' as SortField,
-    sortOrder: SORT_DIRECTION.ASC,
+    sortField: 'sharedOn' as SortField,
+    sortOrder: SORT_DIRECTION.DESC,
 };
 
 /**
