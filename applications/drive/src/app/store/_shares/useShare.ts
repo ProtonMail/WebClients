@@ -6,14 +6,17 @@ import type { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { shareMetaToShareWithKey, useDebouncedRequest } from '../_api';
-import { useDriveCrypto } from '../_crypto';
+import { integrityMetrics, useDriveCrypto } from '../_crypto';
+import { useIsPaid } from '../_user';
 import { useDebouncedFunction } from '../_utils';
 import type { Share, ShareWithKey } from './interface';
+import { getShareTypeString } from './shareType';
 import type { ShareKeys } from './useSharesKeys';
 import useSharesKeys from './useSharesKeys';
 import useSharesState from './useSharesState';
 
 export default function useShare() {
+    const isPaid = useIsPaid();
     const debouncedFunction = useDebouncedFunction();
     const debouncedRequest = useDebouncedRequest();
     const driveCrypto = useDriveCrypto();
@@ -101,6 +104,14 @@ export default function useShare() {
                     );
                     return decryptSharePassphrase(true);
                 }
+
+                const shareType = getShareTypeString(share);
+                const options = {
+                    isPaid,
+                    createTime: share.createTime,
+                };
+                integrityMetrics.shareDecryptionError(shareId, shareType, options);
+
                 throw new EnrichedError('Failed to decrypt share passphrase', {
                     tags: {
                         shareId,
