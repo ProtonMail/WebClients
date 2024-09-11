@@ -11,7 +11,7 @@ import {
 } from '@proton/redux-utilities';
 import { getGroupMembers } from '@proton/shared/lib/api/groups';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { GroupMember } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_STATE, type GroupMember } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
@@ -74,6 +74,15 @@ const slice = createSlice({
                 group[memberID].Permissions = newValue;
             }
         },
+        resumeGroupMember: (state, action: PayloadAction<{ groupID: string; memberID: string }>) => {
+            const { groupID, memberID } = action.payload;
+
+            const group = state[groupID]?.value;
+
+            if (group && group[memberID]) {
+                group[memberID].State = GROUP_MEMBER_STATE.ACTIVE;
+            }
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(serverEvent, (state, action) => {
@@ -112,7 +121,7 @@ const slice = createSlice({
         });
     },
 });
-export const { updateOverridePermissions } = slice.actions;
+export const { updateOverridePermissions, resumeGroupMember } = slice.actions;
 const promiseStore = createPromiseMapStore<GroupMembers>();
 
 export const groupMembersThunk = ({
