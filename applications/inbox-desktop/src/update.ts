@@ -5,13 +5,8 @@ import { getPlatform } from "./utils/helpers";
 import { getSettings } from "./store/settingsStore";
 import { verifyDownloadCertificate } from "./utils/keyPinning";
 import { updateLogger } from "./utils/log";
-import { RELEASE_CATEGORIES } from "./utils/external/packages/shared/lib/apps/desktopVersions";
-import { DESKTOP_PLATFORMS } from "./utils/external/packages/shared/lib/constants";
-import {
-    DesktopVersion,
-    VersionFile,
-    VersionFileSchema,
-} from "./utils/external/packages/shared/lib/desktop/DesktopVersion";
+import { RELEASE_CATEGORIES, DESKTOP_PLATFORMS } from "@proton/shared/lib/constants";
+import { DesktopVersion, VersionFile, VersionFileSchema } from "@proton/shared/lib/desktop/DesktopVersion";
 import { semver } from "./utils/external/packages/pass/utils/string/semver";
 
 export type LocalDesktopVersion = {
