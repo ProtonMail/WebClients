@@ -2,16 +2,21 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useApi } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import { usePublicSession } from '../_api';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
 import { useBookmarks } from '../_bookmarks/useBookmarks';
-import { usePublicShare } from '../_shares';
 
-export const useBookmarksPublicView = (customPassword?: string) => {
-    const { user, isUserLoading } = usePublicShare();
+export interface Props {
+    customPassword?: string;
+    user?: UserModel;
+    isAuthLoading: boolean;
+}
+
+export const useBookmarksPublicView = ({ customPassword, user, isAuthLoading }: Props) => {
     const { getSessionInfo } = usePublicSession();
     const { listBookmarks, addBookmark } = useBookmarks();
     const [bookmarksTokens, setBookmarksTokens] = useState<Set<string>>(new Set());
@@ -22,7 +27,7 @@ export const useBookmarksPublicView = (customPassword?: string) => {
 
     useEffect(() => {
         if (!user || !isDriveShareUrlBookmarkingEnabled) {
-            setIsLoading(isUserLoading && !user);
+            setIsLoading(isAuthLoading && !user);
             return;
         }
         const UID = getSessionInfo()?.sessionUid;
@@ -39,7 +44,7 @@ export const useBookmarksPublicView = (customPassword?: string) => {
         return () => {
             abortControler.abort();
         };
-    }, [user, isUserLoading, isDriveShareUrlBookmarkingEnabled]);
+    }, [user, isAuthLoading, isDriveShareUrlBookmarkingEnabled]);
 
     const isAlreadyBookmarked = useMemo(() => {
         return bookmarksTokens.has(token);

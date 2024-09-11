@@ -1,0 +1,22 @@
+.user-info {
+	.user-initials {
+		font-size: 12px;
+		line-height: 17.5px;
+	}
+
+	.rounded {
+		border-radius: var(--border-radius-md);
+	}
+}
+
+@media (width <= 42.5em) {
+	.user-info {
+		padding: 0;
+		inline-size: unset;
+		border: 0;
+
+		& > svg {
+			display: none;
+		}
+	}
+}
