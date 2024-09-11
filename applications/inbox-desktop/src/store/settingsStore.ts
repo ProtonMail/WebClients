@@ -1,8 +1,8 @@
 import Store from "electron-store";
 import { SerializedTheme } from "../utils/themes";
 import { settingsLogger } from "../utils/log";
-import { RELEASE_CATEGORIES } from "../utils/external/packages/shared/lib/apps/desktopVersions";
-import { Environment } from "../utils/external/packages/shared/lib/interfaces/Environment";
+import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
+import { Environment } from "@proton/shared/lib/interfaces/Environment";
 
 const store = new Store<{ settings: SettingsStore }>({
     configFileMode: 0o600,

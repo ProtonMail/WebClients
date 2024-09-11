@@ -1,10 +1,7 @@
 import { IpcMainEvent, ipcMain, shell } from "electron";
 import { setReleaseCategory } from "../store/settingsStore";
 import { cachedLatestVersion } from "../update";
-import {
-    IPCInboxClientUpdateMessage,
-    IPCInboxGetInfoMessage,
-} from "../utils/external/packages/shared/lib/desktop/desktopTypes";
+import { IPCInboxClientUpdateMessage, IPCInboxGetInfoMessage } from "@proton/shared/lib/desktop/desktopTypes";
 import { clearStorage } from "../utils/helpers";
 import { ipcLogger } from "../utils/log";
 import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
