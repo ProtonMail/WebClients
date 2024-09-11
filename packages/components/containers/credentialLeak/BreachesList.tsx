@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Scroll } from '@proton/atoms/Scroll';
 
 import { Tabs } from '../..';
+import { useAddresses } from '../..';
 import BreachListItem from './BreachListItem';
 import BreachListUpgradeLink from './BreachListUpgradeLink';
 import EmptyBreachListCard from './EmptyBreachListCard';
@@ -29,6 +30,7 @@ const BreachesList = ({
     type: listType,
     onViewTypeChange,
 }: BreachesListProps) => {
+    const [addresses] = useAddresses();
     const openBreaches = data?.filter((b) => b.resolvedState !== BREACH_STATE.RESOLVED);
     const resolvedBreaches = data?.filter((b) => b.resolvedState === BREACH_STATE.RESOLVED);
 
@@ -47,16 +49,14 @@ const BreachesList = ({
                             {openBreaches.map((breach) => {
                                 return (
                                     <BreachListItem
-                                        name={breach.name}
+                                        data={breach}
                                         key={breach.id}
-                                        createdAt={breach.createdAt}
                                         disabled={!isPaidUser}
                                         selected={breach.id === selectedID}
                                         handleClick={() => onSelect(breach.id)}
                                         style={getStyle(breach.severity)}
-                                        severity={breach.severity}
-                                        exposedData={breach.exposedData}
                                         unread={breach.resolvedState === BREACH_STATE.UNREAD}
+                                        hasMultipleAddresses={addresses && addresses?.length > 1}
                                     />
                                 );
                             })}
@@ -80,15 +80,13 @@ const BreachesList = ({
                             {resolvedBreaches.map((breach) => {
                                 return (
                                     <BreachListItem
-                                        name={breach.name}
+                                        data={breach}
                                         key={breach.id}
-                                        createdAt={breach.createdAt}
                                         disabled={!isPaidUser}
                                         selected={breach.id === selectedID}
                                         handleClick={() => onSelect(breach.id)}
                                         style={getStyle(breach.severity)}
-                                        severity={breach.severity}
-                                        exposedData={breach.exposedData}
+                                        hasMultipleAddresses={addresses && addresses?.length > 1}
                                         resolved
                                     />
                                 );
