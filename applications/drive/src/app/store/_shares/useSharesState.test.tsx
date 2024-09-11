@@ -22,6 +22,7 @@ function createTestShare(
         creator: 'creator',
         ...flags,
         possibleKeyPackets: [],
+        createTime: 1234,
     };
 }
 
