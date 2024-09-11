@@ -8,12 +8,15 @@ import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
 
+import useInstance from '@proton/hooks/useInstance';
+import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
+import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { createPassCoreProxy } from '@proton/pass/lib/core/proxy';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
@@ -24,6 +27,7 @@ import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import createStore from '@proton/shared/lib/helpers/store';
 import noop from '@proton/utils/noop';
 
 const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): PassCoreProviderProps => {
@@ -164,6 +168,7 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
 export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> = ({ children, endpoint }) => {
     const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
     const coreProps = useMemo(() => getExtensionCoreProps(endpoint, config), []);
+    const authStore = useInstance(() => exposeAuthStore(createAuthStore(createStore())));
 
     return (
         <PassCoreProvider
@@ -171,25 +176,27 @@ export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> 
             getCurrentTabUrl={() => currentTabUrl.current}
             setCurrentTabUrl={(parsedUrl) => (currentTabUrl.current = parsedUrl)}
         >
-            <UnlockProvider
-                unlock={useCallback(
-                    async (payload) => {
-                        const res = await sendMessage(
-                            resolveMessageFactory(endpoint)({
-                                type: WorkerMessageType.AUTH_UNLOCK,
-                                payload,
-                            })
-                        );
+            <AuthStoreProvider store={authStore}>
+                <UnlockProvider
+                    unlock={useCallback(
+                        async (payload) => {
+                            const res = await sendMessage(
+                                resolveMessageFactory(endpoint)({
+                                    type: WorkerMessageType.AUTH_UNLOCK,
+                                    payload,
+                                })
+                            );
 
-                        if (res.type === 'error') throw new Error();
-                        if (!res.ok) throw new Error(res.error ?? '');
-                    },
+                            if (res.type === 'error') throw new Error();
+                            if (!res.ok) throw new Error(res.error ?? '');
+                        },
 
-                    []
-                )}
-            >
-                {children}
-            </UnlockProvider>
+                        []
+                    )}
+                >
+                    {children}
+                </UnlockProvider>
+            </AuthStoreProvider>
         </PassCoreProvider>
     );
 };
