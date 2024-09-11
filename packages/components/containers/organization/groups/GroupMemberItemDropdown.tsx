@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { updateOverridePermissions } from '@proton/account';
+import { resumeGroupMember as resumeGroupMemberAction, updateOverridePermissions } from '@proton/account';
 import { Button } from '@proton/atoms/Button';
 import { useApi, useEventManager } from '@proton/components';
 import {
@@ -12,10 +12,14 @@ import {
     usePopperAnchor,
 } from '@proton/components/components';
 import { baseUseDispatch } from '@proton/react-redux-store';
-import { deleteGroupMember as revokeGroupInvitation, updateGroupMember } from '@proton/shared/lib/api/groups';
+import {
+    resumeGroupMember as resumeGroupMemberApi,
+    deleteGroupMember as revokeGroupInvitation,
+    updateGroupMember,
+} from '@proton/shared/lib/api/groups';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
-import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces';
+import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 
 import { useErrorHandler } from '../../../hooks';
 
@@ -70,6 +74,20 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
         await call();
     };
 
+    const handleResumeInvitation = async () => {
+        try {
+            await api(resumeGroupMemberApi(member.ID));
+            dispatch(
+                resumeGroupMemberAction({
+                    groupID: group.ID,
+                    memberID: member.ID,
+                })
+            );
+        } catch (error) {
+            handleError(error);
+        }
+    };
+
     const handleOverrideGroupPermissions = async (value: number) => {
         try {
             const newPermissions = setBit(clearBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.SEND), value);
@@ -94,6 +112,8 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
     const overrideGroupPermissions: GROUP_MEMBER_PERMISSIONS = hasBit(member.Permissions, GROUP_MEMBER_PERMISSIONS.SEND)
         ? GROUP_MEMBER_PERMISSIONS.SEND
         : GROUP_MEMBER_PERMISSIONS.NONE;
+
+    const isPaused = member.State === GROUP_MEMBER_STATE.PAUSED;
 
     return (
         <>
@@ -127,6 +147,11 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
                         />
                     ))}
                     <hr className="mt-2 mb-0" />
+                    {isPaused && (
+                        <DropdownMenuButton className="text-left" onClick={handleResumeInvitation}>
+                            {c('Action').t`Resume membership`}
+                        </DropdownMenuButton>
+                    )}
                     <DropdownMenuButton className="text-left color-danger" onClick={handleRevokeInvitation}>
                         {c('Action').t`Revoke invitation`}
                     </DropdownMenuButton>
