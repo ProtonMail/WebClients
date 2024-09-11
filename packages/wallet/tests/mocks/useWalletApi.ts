@@ -52,6 +52,7 @@ export const getMockedApi = (mockedValue?: PartiallyMockedWalletApiClient): Wasm
             createWallet: mockedValue?.wallet?.createWallet ?? vi.fn(),
             updateWalletName: mockedValue?.wallet?.updateWalletName ?? vi.fn(),
             deleteWallet: mockedValue?.wallet?.deleteWallet ?? vi.fn(),
+            migrate: mockedValue?.wallet?.migrate ?? vi.fn(),
             getWalletAccounts: mockedValue?.wallet?.getWalletAccounts ?? vi.fn(),
             createWalletAccount: mockedValue?.wallet?.createWalletAccount ?? vi.fn(),
             updateWalletAccountLabel: mockedValue?.wallet?.updateWalletAccountLabel ?? vi.fn(),
