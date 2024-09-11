@@ -15,7 +15,7 @@
     "dependencies": {
         "comlink": "^4.4.1",
         "pmcrypto": "npm:@protontech/pmcrypto@^7.20.0",
-        "pmcrypto-v6-canary": "npm:@protontech/pmcrypto@^8.0.0-canary.5"
+        "pmcrypto-v6-canary": "npm:@protontech/pmcrypto@^8.0.0-canary.5.patch.0"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
