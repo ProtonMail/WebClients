@@ -1,7 +1,13 @@
 import type { Environment } from '@proton/shared/lib/interfaces';
 
-import type { ThemeSetting } from '../themes/themes';
+import type { ThemeModeSetting, ThemeSetting, ThemeTypes } from '../themes/themes';
 import type { DesktopVersion } from './DesktopVersion';
+
+export interface DesktopThemeSetting {
+    Mode: ThemeModeSetting;
+    LightTheme: ThemeTypes;
+    DarkTheme: ThemeTypes;
+}
 
 export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
 export type ElectronNotification = {

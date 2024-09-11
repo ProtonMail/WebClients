@@ -1,7 +1,7 @@
 import { getNewUpdateTestOnly, LocalDesktopVersion, releaseListSchemaTestOnly } from "./update";
 import { describe } from "@jest/globals";
-import { RELEASE_CATEGORIES } from "./utils/external/packages/shared/lib/apps/desktopVersions";
-import { VersionFile } from "./utils/external/packages/shared/lib/desktop/DesktopVersion";
+import { RELEASE_CATEGORIES } from "@proton/shared/lib/constants";
+import { VersionFile } from "@proton/shared/lib/desktop/DesktopVersion";
 
 jest.mock("./utils/view/viewManagement", () => ({
     getCalendarView: () => {},

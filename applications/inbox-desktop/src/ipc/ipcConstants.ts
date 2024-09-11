@@ -2,7 +2,7 @@ import {
     IPCInboxClientUpdateMessage,
     IPCInboxClientUpdateMessageType,
     IPCInboxDesktopFeature,
-} from "../utils/external/packages/shared/lib/desktop/desktopTypes";
+} from "@proton/shared/lib/desktop/desktopTypes";
 
 export const DESKTOP_FEATURES = {
     InAppPayments: true,
