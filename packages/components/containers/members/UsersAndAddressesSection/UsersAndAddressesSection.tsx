@@ -37,7 +37,7 @@ import {
 } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 
-import { Block, Info, SearchInput, Table, TableBody, TableCell, TableRow, useModalState } from '../../../components';
+import { Info, SearchInput, Table, TableBody, TableCell, TableRow, useModalState } from '../../../components';
 import {
     useAddresses,
     useApi,
@@ -351,7 +351,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             <SettingsParagraph large className="flex items-center mb-6 gap-2">
                 <UserAndAddressesSectionIntro />
             </SettingsParagraph>
-            <Block className="flex items-start">
+            <div className="mb-4 flex items-start">
                 {renderUserSetupModal && (
                     <CreateMissingKeysAddressModal
                         member={tmpMember}
@@ -514,7 +514,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                         aria-label={c('Placeholder').t`Search users`}
                     />
                 </div>
-            </Block>
+            </div>
             <span className="sr-only" aria-live="polite" aria-atomic="true">
                 {c('Info').ngettext(msgid`${userFound} user found`, `${userFound} users found`, userFound)}
             </span>

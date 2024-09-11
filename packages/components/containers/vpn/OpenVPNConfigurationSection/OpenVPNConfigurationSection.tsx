@@ -9,7 +9,7 @@ import type { EnhancedLogical } from '@proton/components/containers/vpn/OpenVPNC
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import { Block, Icon, Info, Radio, RadioGroup, SettingsLink } from '../../../components';
+import { Icon, Info, Radio, RadioGroup, SettingsLink } from '../../../components';
 import {
     type CountryOptions,
     correctAbbr,
@@ -259,7 +259,7 @@ const OpenVPNConfigurationSection = ({
                     </div>
                 </>
             )}
-            <Block>
+            <div className="mb-4">
                 {selectedCategory === CATEGORY.SECURE_CORE && (
                     <>
                         <SettingsParagraph learnMoreUrl="https://protonvpn.com/support/secure-core-vpn">
@@ -416,7 +416,7 @@ const OpenVPNConfigurationSection = ({
                         )}
                     </>
                 )}
-            </Block>
+            </div>
         </SettingsSectionWide>
     );
 };

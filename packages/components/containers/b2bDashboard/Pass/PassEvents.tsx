@@ -4,7 +4,7 @@ import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Block, Icon, Pagination } from '@proton/components/components';
+import { Icon, Pagination } from '@proton/components/components';
 import { useApi, useErrorHandler, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { getPassLogs } from '@proton/shared/lib/api/b2blogs';
@@ -190,7 +190,7 @@ const PassEvents = () => {
                     <Icon name="info-circle" size={4.5} className="mr-1 mb-1" />
                     <span>{c('Title').t`Click a value in the table to use it as filter`}</span>
                 </div>
-                <Block className="flex flex-nowrap flex-row-reverse items-end items-center gap-2">
+                <div className="flex flex-nowrap flex-row-reverse items-end items-center gap-2 mb-4">
                     <Button
                         shape="outline"
                         onClick={handleDownloadClick}
@@ -215,7 +215,7 @@ const PassEvents = () => {
                         onNext={onNext}
                         onPrevious={onPrevious}
                     />
-                </Block>
+                </div>
             </div>
             {error ? (
                 <GenericError className="text-center">{error}</GenericError>

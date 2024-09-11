@@ -11,7 +11,6 @@ import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import {
     Alert,
-    Block,
     ButtonGroup,
     Pagination,
     Table,
@@ -201,7 +200,7 @@ const InvoicesSection = () => {
                         )}
                     </ButtonGroup>
                 ) : null}
-                <Block className="flex justify-space-between">
+                <div className="mb-4 flex justify-space-between">
                     <div>
                         <div className="flex items-center">
                             <ButtonGroup className="mr-4 mb-2">
@@ -241,7 +240,7 @@ const InvoicesSection = () => {
                         onPrevious={hook.onPrevious}
                         onSelect={hook.onSelect}
                     />
-                </Block>
+                </div>
                 <InvoiceGroup {...hook} />
             </SettingsSectionWide>
 
