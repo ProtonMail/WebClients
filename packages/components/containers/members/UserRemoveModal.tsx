@@ -58,13 +58,17 @@ const UserRemoveModal = ({ member: initialMember, organization, ...rest }: Props
           c('familyOffer_2023:Info')
               .t`The invitation will be canceled and the user won't be able to join ${organizationName}.`
         : c('familyOffer_2023:Info')
-              .t`The user's account will be moved to a ${BRAND_NAME} Unlimited plan for a 30-day free trial*.`;
+              .t`After leaving your plan, this user will be moved to a ${BRAND_NAME} Unlimited plan with a 30-day free trial.*`;
 
     return (
         <Prompt
             {...rest}
             title={c('Title').t`Remove user?`}
-            footnote={isInvitationPending ? undefined : c('familyOffer_2023:Info').t`*Only one free trial per user.`}
+            footnote={
+                isInvitationPending
+                    ? undefined
+                    : c('familyOffer_2023:Info').t`*Only one free trial per user. Regular pricing applies thereafter.`
+            }
             buttons={[
                 <Button
                     color="danger"
