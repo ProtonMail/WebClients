@@ -1,20 +1,13 @@
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import {
-    Block,
-    Pagination,
-    TimeIntl,
-    Toggle,
-    usePaginationAsync,
-    useModalState,
-} from '@proton/components';
-import { useApi, useErrorHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
+import { Pagination, TimeIntl, Toggle, useModalState, usePaginationAsync } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { useApi, useErrorHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { getVPNLogs } from '@proton/shared/lib/api/b2blogs';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
@@ -25,12 +18,12 @@ import { getCountryOptions } from '../../../helpers/countries';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import FilterAndSortEventsBlock from '../FilterAndSortEventBlock';
 import { ALL_EVENTS_DEFAULT, PAGINATION_LIMIT, getLocalTimeStringFromDate, getSearchType } from '../Pass/helpers';
-import VPNEventsTable from './VPNEventsTable';
-import { downloadVPNEvents, getVPNEventNameText, uniqueVPNEventsArray } from './helpers';
-import type { VPNEvent } from './interface';
 import TogglingMonitoringModal from './TogglingMonitoringModal';
+import VPNEventsTable from './VPNEventsTable';
 import type { OrganizationSettings } from './api';
 import { getMonitoringSetting, updateMonitoringSetting } from './api';
+import { downloadVPNEvents, getVPNEventNameText, uniqueVPNEventsArray } from './helpers';
+import type { VPNEvent } from './interface';
 
 export interface FilterModel {
     eventType: string;
@@ -72,14 +65,14 @@ const VPNEvents = () => {
     const [monitoringLoading, setMonitoringLoading] = useState<boolean>(true);
     const [monitoringEnabling, setMonitoringEnabling] = useState<boolean>(false);
     const [monitoring, setMonitoring] = useState<boolean>(false);
-    const [monitoringLastChange, setMonitoringLastChange] = useState<number|null>(null);
-    const [togglingMonitoringModalProps, setTogglingMonitoringModalOpen, togglingMonitoringModalRender] = useModalState();
+    const [monitoringLastChange, setMonitoringLastChange] = useState<number | null>(null);
+    const [togglingMonitoringModalProps, setTogglingMonitoringModalOpen, togglingMonitoringModalRender] =
+        useModalState();
     const [businessSettingsAvailable, setBusinessSettingsAvailable] = useState<boolean>(true);
     const [togglingMonitoringLoading, setTogglingMonitoringLoading] = useState<boolean>(false);
     const [togglingMonitoringInitializing, withMonitoringInitializing] = useLoading();
     const [query, setQuery] = useState({});
     const [error, setError] = useState<string | null>(null);
-
 
     const fetchVPNLogs = async (params: B2BLogsQuery) => {
         try {
@@ -98,31 +91,33 @@ const VPNEvents = () => {
     }, [page, query]);
 
     useEffect(() => {
-        withMonitoringInitializing(new Promise(async resolve => {
-            const timeout = setTimeout(() => {
-                setMonitoringLoading(false);
-                setMonitoringLastChange(null);
-                setBusinessSettingsAvailable(false);
-                resolve();
-            }, 10_000);
+        withMonitoringInitializing(
+            new Promise(async (resolve) => {
+                const timeout = setTimeout(() => {
+                    setMonitoringLoading(false);
+                    setMonitoringLastChange(null);
+                    setBusinessSettingsAvailable(false);
+                    resolve();
+                }, 10_000);
 
-            try {
-                const organizationSettings = await api<OrganizationSettings>(getMonitoringSetting());
+                try {
+                    const organizationSettings = await api<OrganizationSettings>(getMonitoringSetting());
 
-                if (organizationSettings.GatewayMonitoring) {
-                    setMonitoring(true);
+                    if (organizationSettings.GatewayMonitoring) {
+                        setMonitoring(true);
+                    }
+
+                    setMonitoringLastChange(organizationSettings.GatewayMonitoringLastUpdate || null);
+                } catch (e) {
+                    setBusinessSettingsAvailable(false);
+                    setMonitoringLastChange(null);
+                } finally {
+                    setMonitoringLoading(false);
+                    clearTimeout(timeout);
+                    resolve();
                 }
-
-                setMonitoringLastChange(organizationSettings.GatewayMonitoringLastUpdate || null);
-            } catch (e) {
-                setBusinessSettingsAvailable(false);
-                setMonitoringLastChange(null);
-            } finally {
-                setMonitoringLoading(false);
-                clearTimeout(timeout);
-                resolve();
-            }
-        }));
+            })
+        );
     }, []);
 
     const handleSearchSubmit = () => {
@@ -252,28 +247,31 @@ const VPNEvents = () => {
         );
 
         return monitoring
-            ? /** translator: formattedDateAndTime be like "25 Sep 2023, 15:37" or just "15:37" if it's on the same day */ c('Info').jt`Enabled since ${formattedDateAndTime}`
-            : /** translator: formattedDateAndTime be like "25 Sep 2023, 15:37" or just "15:37" if it's on the same day */ c('Info').jt`Disabled since ${formattedDateAndTime}`;
+            ? /** translator: formattedDateAndTime be like "25 Sep 2023, 15:37" or just "15:37" if it's on the same day */ c(
+                  'Info'
+              ).jt`Enabled since ${formattedDateAndTime}`
+            : /** translator: formattedDateAndTime be like "25 Sep 2023, 15:37" or just "15:37" if it's on the same day */ c(
+                  'Info'
+              ).jt`Disabled since ${formattedDateAndTime}`;
     };
 
     return (
         <SettingsSectionWide>
-            {togglingMonitoringModalRender && <TogglingMonitoringModal
-                {...togglingMonitoringModalProps}
-                enabling={monitoringEnabling}
-            />}
+            {togglingMonitoringModalRender && (
+                <TogglingMonitoringModal {...togglingMonitoringModalProps} enabling={monitoringEnabling} />
+            )}
             <div className="mb-8">
                 <Toggle
                     loading={togglingMonitoringLoading || togglingMonitoringInitializing}
                     checked={monitoring}
-                    disabled={!togglingMonitoringLoading && !togglingMonitoringInitializing && !businessSettingsAvailable}
+                    disabled={
+                        !togglingMonitoringLoading && !togglingMonitoringInitializing && !businessSettingsAvailable
+                    }
                     onChange={toggleMonitoring}
                 >
                     <span className="pl-2">
                         {getBoldFormattedText(getMonitoringInfoText())}
-                        <span className="block color-weak text-sm">
-                            {getMonitoringLastChangeText()}
-                        </span>
+                        <span className="block color-weak text-sm">{getMonitoringLastChangeText()}</span>
                     </span>
                 </Toggle>
             </div>
@@ -288,7 +286,7 @@ const VPNEvents = () => {
                 handleSearchSubmit={handleSearchSubmit}
                 getEventTypeText={getVPNEventTypeText}
             />
-            <Block className="flex flex-nowrap flex-row-reverse items-end items-center gap-2">
+            <div className="mb-4 flex flex-nowrap flex-row-reverse items-end items-center gap-2">
                 <Button shape="outline" onClick={handleDownloadClick} title={c('Action').t`Download`}>
                     {c('Action').t`Download`}
                 </Button>
@@ -308,7 +306,7 @@ const VPNEvents = () => {
                     onNext={onNext}
                     onPrevious={onPrevious}
                 />
-            </Block>
+            </div>
             {error ? (
                 <GenericError className="text-center">{error}</GenericError>
             ) : (

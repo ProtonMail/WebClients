@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Input } from '@proton/atoms/Input';
-import { Block, DateInput, Icon, Option, SelectTwo } from '@proton/components/components';
+import { DateInput, Icon, Option, SelectTwo } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
 
 import type { FilterModel } from './Pass/PassEvents';
@@ -42,7 +42,7 @@ const FilterAndSortEventsBlock = ({
     };
 
     return (
-        <Block>
+        <div className="mb-4">
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-column md:flex-row gap-2 items-start items-center justify-space-between *:min-size-auto"
@@ -84,7 +84,7 @@ const FilterAndSortEventsBlock = ({
                     {c('Action').t`Search`}
                 </Button>
             </form>
-        </Block>
+        </div>
     );
 };
 

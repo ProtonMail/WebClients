@@ -11,7 +11,7 @@ import {
     getOrganizationKeyInfo,
 } from '@proton/shared/lib/organization/helper';
 
-import { Alert, Block, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
+import { Alert, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useAddresses, useOrganizationKey } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import useDisplayOrganizationKey from './useDisplayOrganizationKey';
@@ -55,7 +55,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                             {c('Info')
                                 .t`Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.`}
                         </SettingsParagraph>
-                        <Block>
+                        <div className="mb-4">
                             {organizationKeyInfo.state === OrganizationKeyState.Active && (
                                 <>
                                     {organizationKeyInfo.mode !== OrganizationKeyMode.Passwordless && (
@@ -73,7 +73,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                                 </>
                             )}
                             {info}
-                        </Block>
+                        </div>
                         {displayOrganizationKey.fingerprint && (
                             <Table responsive="cards">
                                 <TableHeader cells={tableHeaders} />
