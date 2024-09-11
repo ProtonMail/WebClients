@@ -1,13 +1,34 @@
 import type { Environment } from '@proton/shared/lib/interfaces';
 
-import type { ThemeModeSetting, ThemeSetting, ThemeTypes } from '../themes/themes';
+import {
+    type ThemeFeatureSetting,
+    type ThemeFontFaceSetting,
+    type ThemeFontSizeSetting,
+    type ThemeModeSetting,
+    type ThemeSetting,
+    ThemeTypes,
+} from '../themes/themes';
 import type { DefaultProtocol } from './DefaultProtocol';
 import type { DesktopVersion } from './DesktopVersion';
 
+export const DESKTOP_THEME_TYPES = {
+    Carbon: ThemeTypes.Carbon,
+    Snow: ThemeTypes.Snow,
+} as const;
+
+export type DesktopThemeType = (typeof DESKTOP_THEME_TYPES)[keyof typeof DESKTOP_THEME_TYPES];
+
+export const isDesktopThemeType = (value: unknown): value is DesktopThemeType => {
+    return Object.values(DESKTOP_THEME_TYPES).includes(value as DesktopThemeType);
+};
+
 export interface DesktopThemeSetting {
     Mode: ThemeModeSetting;
-    LightTheme: ThemeTypes;
-    DarkTheme: ThemeTypes;
+    LightTheme: DesktopThemeType;
+    DarkTheme: DesktopThemeType;
+    FontSize: ThemeFontSizeSetting;
+    FontFace: ThemeFontFaceSetting;
+    Features: ThemeFeatureSetting;
 }
 
 export type CHANGE_VIEW_TARGET = 'mail' | 'calendar' | 'account';
