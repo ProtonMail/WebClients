@@ -17,6 +17,8 @@ import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import { AppStateProvider } from './AppStateProvider';
+
 export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
     /** client configuration */
@@ -103,7 +105,9 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
 
     return (
         <ConfigProvider config={core.config}>
-            <PassCoreContext.Provider value={context}>{children}</PassCoreContext.Provider>
+            <PassCoreContext.Provider value={context}>
+                <AppStateProvider>{children}</AppStateProvider>
+            </PassCoreContext.Provider>
         </ConfigProvider>
     );
 };

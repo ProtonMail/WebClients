@@ -1,5 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useCallback, useContext, useEffect } from 'react';
+import { createContext, useCallback, useEffect } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
@@ -8,34 +8,30 @@ import { createAuthService, getStateKey } from 'proton-pass-web/lib/auth';
 
 import { useNotifications } from '@proton/components/hooks';
 import useInstance from '@proton/hooks/useInstance';
+import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useCheckConnectivity, useConnectivityRef } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { type AuthRouteState, isUnauthorizedPath } from '@proton/pass/components/Navigation/routing';
+import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getConsumeForkParameters } from '@proton/pass/lib/auth/fork';
 import { AppStatusFromLockMode, LockMode, type UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { type AuthService } from '@proton/pass/lib/auth/service';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { type Maybe, type MaybeNull } from '@proton/pass/types';
+import { type MaybeNull } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { useClientRef } from './ClientProvider';
-
-export const AuthServiceContext = createContext<Maybe<AuthService>>(undefined);
-
-export const useAuthService = (): AuthService => {
-    const authService = useContext(AuthServiceContext);
-    if (authService === undefined) throw new Error('authentication service not initialized');
-    return authService;
-};
+export const AuthServiceContext = createContext<MaybeNull<AuthService>>(null);
+export const useAuthService = createUseContext(AuthServiceContext);
 
 /** The only reason we have to wrap the AuthenticationService to a react context is
  * to be able to leverage the history object provided by `react-router-dom` and the
@@ -44,7 +40,7 @@ export const useAuthService = (): AuthService => {
 export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
     const { getOfflineEnabled } = usePassCore();
     const sw = useServiceWorker();
-    const client = useClientRef();
+    const app = useContextProxy(AppStateContext);
     const history = useHistory<MaybeNull<AuthRouteState>>();
     const config = usePassConfig();
     const online = useConnectivityRef();
@@ -58,10 +54,10 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const authService = useInstance(() =>
         createAuthService({
+            app,
             config,
             history,
             sw,
-            getClient: () => client.current,
             getOfflineEnabled,
             getOnline: () => online.current,
             onNotification: (notification) =>
@@ -114,7 +110,7 @@ export const AuthServiceProvider: FC<PropsWithChildren> = ({ children }) => {
         };
 
         const handleLocked: ServiceWorkerClientMessageHandler<'locked'> = ({ localID, mode }) => {
-            const { status } = client.current.state;
+            const { status } = app.state;
 
             if (authStore.hasSession(localID)) {
                 if (mode !== authStore.getLockMode()) return window.location.reload();

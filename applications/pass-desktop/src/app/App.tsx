@@ -2,8 +2,7 @@ import { Router } from 'react-router-dom';
 
 import { createHashHistory } from 'history';
 import { AppGuard } from 'proton-pass-web/app/AppGuard';
-import { AuthServiceProvider } from 'proton-pass-web/app/Context/AuthServiceProvider';
-import { ClientProvider } from 'proton-pass-web/app/Context/ClientProvider';
+import { AuthServiceProvider } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { StoreProvider } from 'proton-pass-web/app/Store/StoreProvider';
 import { store } from 'proton-pass-web/app/Store/store';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
@@ -25,6 +24,7 @@ import {
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import Icons from '@proton/icons/Icons';
+import { ConnectivityProvider } from '@proton/pass/components/Core/ConnectivityProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
@@ -47,6 +47,7 @@ import { selectExportData } from '@proton/pass/store/selectors/export';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -122,7 +123,10 @@ export const App = () => {
                 <NotificationsProvider>
                     <ModalsProvider>
                         <PassExtensionLink>
-                            <ClientProvider>
+                            <ConnectivityProvider
+                                subscribe={api.subscribe}
+                                onPing={() => api({ ...ping(), unauthenticated: true })}
+                            >
                                 <Router history={history}>
                                     <NavigationProvider>
                                         <AuthServiceProvider>
@@ -138,7 +142,7 @@ export const App = () => {
                                         </AuthServiceProvider>
                                     </NavigationProvider>
                                 </Router>
-                            </ClientProvider>
+                            </ConnectivityProvider>
                         </PassExtensionLink>
                     </ModalsProvider>
                 </NotificationsProvider>
