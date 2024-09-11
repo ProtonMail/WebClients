@@ -1,4 +1,4 @@
-import { IpcMainEvent, ipcMain, shell } from "electron";
+import { IpcMainEvent, ipcMain, nativeTheme, shell } from "electron";
 import { setReleaseCategory } from "../store/settingsStore";
 import { cachedLatestVersion } from "../update";
 import { IPCInboxClientUpdateMessage, IPCInboxGetInfoMessage } from "@proton/shared/lib/desktop/desktopTypes";
@@ -16,6 +16,7 @@ import { DESKTOP_FEATURES } from "./ipcConstants";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
 import { setInstallSourceReported, getInstallSource } from "../store/installInfoStore";
 import { checkDefaultMailto, getDefaultMailto, setDefaultMailtoTelemetryReported } from "../utils/protocol/default";
+import { ColorScheme, ThemeSetting } from "@proton/shared/lib/themes/themes";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -42,6 +43,13 @@ export const handleIPCCalls = () => {
             }
             case "defaultMailto": {
                 event.returnValue = getDefaultMailto();
+                break;
+            }
+            case "colorScheme": {
+                const previousThemeSource = nativeTheme.themeSource;
+                nativeTheme.themeSource = "system";
+                event.returnValue = nativeTheme.shouldUseDarkColors ? ColorScheme.Dark : ColorScheme.Light;
+                nativeTheme.themeSource = previousThemeSource;
                 break;
             }
             default:
