@@ -1,4 +1,4 @@
-import { PLANS } from '@proton/shared/lib/constants';
+import { DEFAULT_CURRENCY, PLANS } from '@proton/shared/lib/constants';
 import {
     ChargebeeEnabled,
     type Plan,
@@ -163,7 +163,7 @@ describe('payments core helpers', () => {
             ).toEqual('USD');
         });
 
-        it('should return the plans currency if status is not regional', () => {
+        it('should return the fallback currency if status is not regional', () => {
             const status: PaymentMethodStatusExtended = {
                 CountryCode: 'US',
                 VendorStates: {} as any,
@@ -181,7 +181,55 @@ describe('payments core helpers', () => {
                     plans,
                     regionalCurrenciesEnabled: true,
                 })
-            ).toEqual('JPY');
+            ).toEqual(DEFAULT_CURRENCY);
+        });
+
+        it('should return main currency from the plan as a fallback - regional currencies enabled', () => {
+            const status: PaymentMethodStatusExtended = {
+                CountryCode: 'US',
+                VendorStates: {} as any,
+            };
+
+            const plans = [
+                {
+                    Currency: 'JPY' as any,
+                },
+                {
+                    Currency: 'USD' as any,
+                },
+            ] as Plan[];
+
+            expect(
+                getPreferredCurrency({
+                    status,
+                    plans,
+                    regionalCurrenciesEnabled: true,
+                })
+            ).toEqual('USD');
+        });
+
+        it('should return main currency from the plan as a fallback - regional currencies disabled', () => {
+            const status: PaymentMethodStatusExtended = {
+                CountryCode: 'US',
+                VendorStates: {} as any,
+            };
+
+            const plans = [
+                {
+                    Currency: 'JPY' as any,
+                },
+                {
+                    Currency: 'USD' as any,
+                },
+            ] as Plan[];
+
+            expect(
+                getPreferredCurrency({
+                    status,
+                    plans,
+                    regionalCurrenciesEnabled: false,
+                })
+            ).toEqual('USD');
         });
 
         // user > subscription > plans > default
