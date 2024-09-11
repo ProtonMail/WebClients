@@ -13,7 +13,7 @@ import { getMainWindow, getWebContentsViewName, viewCreationAppStartup } from ".
 import { handleSquirrelEvents } from "./windows/squirrel";
 import pkg from "../package.json";
 import { DESKTOP_FEATURES } from "./ipc/ipcConstants";
-import { getTheme, updateNativeTheme } from "./utils/themes";
+import { getTheme, observeNativeTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
 import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
@@ -94,6 +94,7 @@ import { checkDefaultProtocols } from "./utils/protocol/default";
 
         app.whenReady().then(() => {
             registerLogIPCForwardTransport();
+            observeNativeTheme();
             const settings = getSettings();
 
             if (settings.overrideError) {
