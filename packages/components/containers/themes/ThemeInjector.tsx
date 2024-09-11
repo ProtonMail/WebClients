@@ -60,12 +60,7 @@ export const ThemeInjector = () => {
                     ? getInboxDesktopInfo('theme')
                     : defaultElectronAppTheme;
 
-            return {
-                ...electronAppTheme,
-                FontSize: themeSetting.FontSize,
-                FontFace: themeSetting.FontFace,
-                Features: themeSetting.Features,
-            };
+            return electronAppTheme;
         })();
 
         setThemeSetting(theme);
