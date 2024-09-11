@@ -54,6 +54,20 @@ jest.mocked(useLinksState).mockImplementation(() => ({
 }));
 
 describe('useShareActions', () => {
+    let originalConsoleWarn: Console['warn'];
+
+    beforeAll(() => {
+        // Store the original console.warn
+        originalConsoleWarn = console.warn;
+
+        // Mock console.warn
+        jest.spyOn(console, 'warn').mockImplementation(() => {});
+    });
+
+    afterAll(() => {
+        // Restore the original console.warn
+        console.warn = originalConsoleWarn;
+    });
     afterEach(() => {
         jest.clearAllMocks();
     });

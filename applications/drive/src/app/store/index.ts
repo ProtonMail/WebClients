@@ -2,7 +2,7 @@ export { DriveProvider, PublicDriveProvider } from './DriveProvider';
 export { useActions, useSharedWithMeActions } from './_actions';
 
 export { usePublicAuth } from './_api';
-export { useActivePing, useGetPublicKeysForEmail } from './_user';
+export { useActivePing, useGetPublicKeysForEmail, usePublicSessionUser } from './_user';
 export { useDriveEventManager } from './_events';
 export { validateLinkNameField, formatLinkName, splitLinkName } from './_links';
 export { useRevisions } from './_revisions';
