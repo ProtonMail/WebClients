@@ -35,7 +35,7 @@ export type AppState = {
     /** LocalID of the current active session. Primarily relevant
      * in the extension context. For web/desktop, prefer using
      * the `authStore` directly. */
-    localID: Maybe<number>;
+    localID?: Maybe<number>;
     /** Optional flag indicating whether a user requires B2B lock
      * setup. Relevant only in the extension context to propagate
      * this state to "un-connected" extension components. */
@@ -45,7 +45,7 @@ export type AppState = {
     /** UID of the current active session. Primarily relevant in
      * the extension context. For web/desktop, prefer using the
      * `authStore` directly. */
-    UID: Maybe<string>;
+    UID?: Maybe<string>;
 };
 
 export type SessionStoreData = AuthSession;

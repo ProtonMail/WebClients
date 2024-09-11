@@ -2,8 +2,7 @@ import { type FC, type PropsWithChildren, useEffect } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { useAuthService } from 'proton-pass-web/app/Context/AuthServiceProvider';
-import { useClientRef } from 'proton-pass-web/app/Context/ClientProvider';
+import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { useServiceWorker } from 'proton-pass-web/app/ServiceWorker/client/ServiceWorkerProvider';
 import { type ServiceWorkerClientMessageHandler } from 'proton-pass-web/app/ServiceWorker/client/client';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
@@ -13,10 +12,12 @@ import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
+import { AppStateContext } from '@proton/pass/components/Core/AppStateProvider';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { usePassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
 import { getLocalPath, removeLocalPath } from '@proton/pass/components/Navigation/routing';
+import { useContextProxy } from '@proton/pass/hooks/useContextProxy';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
@@ -43,7 +44,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const { installed } = usePassExtensionLink();
     const online = useConnectivity();
 
-    const client = useClientRef();
+    const app = useContextProxy(AppStateContext);
     const sw = useServiceWorker();
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
@@ -53,8 +54,8 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
             rootSagaFactory(WEB_SAGAS).bind(null, {
                 endpoint: 'web',
 
-                getAppState: () => client.current.state,
-                setAppStatus: client.current.setStatus,
+                getAppState: () => app.state,
+                setAppStatus: app.setStatus,
                 getAuthService: () => authService,
                 getAuthStore: () => authStore,
                 getCache: () => getDBCache(authStore.getUserID()),
@@ -63,7 +64,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 getTelemetry: () => telemetry,
 
                 onBoot: async (res) => {
-                    client.current.setBooted(res.ok);
+                    app.setBooted(res.ok);
                     const userID = authStore.getUserID();
                     const state = store.getState();
 
@@ -97,7 +98,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                 },
 
                 onNotification: (notification) => {
-                    if (notification.type === 'error' && clientOffline(client.current.state.status)) {
+                    if (notification.type === 'error' && clientOffline(app.state.status)) {
                         notification.errorMessage = c('Warning').t`Offline`;
                     }
 
@@ -113,7 +114,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
         );
 
         const handleAction: ServiceWorkerClientMessageHandler<'action'> = ({ action, localID }) => {
-            if (clientBooted(client.current.state.status) && authStore.hasSession(localID)) store.dispatch(action);
+            if (clientBooted(app.state.status) && authStore.hasSession(localID)) store.dispatch(action);
         };
 
         sw?.on('action', handleAction);
@@ -128,7 +129,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
 
     useVisibleEffect(
         (visible: boolean) => {
-            if (visible && online && clientReady(client.current.state.status)) store.dispatch(startEventPolling());
+            if (visible && online && clientReady(app.state.status)) store.dispatch(startEventPolling());
             else if (!visible || !online) store.dispatch(stopEventPolling());
         },
         [online]

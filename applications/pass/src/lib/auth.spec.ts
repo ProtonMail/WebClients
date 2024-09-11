@@ -1,7 +1,7 @@
 import type { History } from 'history';
 import type { ServiceWorkerClient } from 'proton-pass-web/app/ServiceWorker/client/client';
-import type { ClientContextValue } from 'proton-pass-web/src/app/Context/ClientProvider';
 
+import type { AppStateContextValue } from '@proton/pass/components/Core/AppStateProvider';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { exposeApi } from '@proton/pass/lib/api/api';
 import type { AuthService } from '@proton/pass/lib/auth/service';
@@ -20,16 +20,21 @@ describe('AuthService', () => {
     let appState: AppState;
     let history: History<any>;
     let sw: ServiceWorkerClient;
-    let client: ClientContextValue;
+    let app: AppStateContextValue;
 
     const config = { SSO_URL: 'test://' } as PassConfig;
 
     const getOnline = jest.fn(() => true);
     const onNotification = jest.fn();
-    const setStatus = jest.fn();
+    const subscribe = jest.fn();
+
+    const reset = jest.fn();
     const setAuthorized = jest.fn();
     const setBooted = jest.fn();
-    const subscribe = jest.fn();
+    const setLocalID = jest.fn();
+    const setState = jest.fn();
+    const setStatus = jest.fn();
+    const setUID = jest.fn();
 
     exposeAuthStore(createAuthStore(createStore()));
     exposeApi({ subscribe } as any);
@@ -39,14 +44,15 @@ describe('AuthService', () => {
 
     beforeEach(() => {
         authStore.clear();
-        client = { setStatus, setAuthorized, setBooted, state: appState };
+        app = { reset, setAuthorized, setBooted, setLocalID, setState, setStatus, setUID, state: appState };
         history = { replace: jest.fn(), location: { pathname: '/', search: '', state: null, hash: '' } } as any;
         sw = { on: jest.fn(), off: jest.fn() } as any;
+
         authService = auth.createAuthService({
+            app,
             config,
-            sw,
             history,
-            getClient: () => client,
+            sw,
             getOnline,
             onNotification,
         });
