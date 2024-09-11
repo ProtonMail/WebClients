@@ -54,6 +54,7 @@ export const WalletImportModal = ({
         setSelectedCurrency,
         passphrase,
         handlePassphraseChange,
+        handleConfirmedPassphraseChange,
         currencies,
         loadingCurrencies,
         mnemonic,
@@ -79,6 +80,11 @@ export const WalletImportModal = ({
             handleWalletNameChange(inputWalletName);
         }
     }, [inputWalletName, handleWalletNameChange]);
+
+    const handleImportedWalletPassphrase = (passphrase: string) => {
+        handlePassphraseChange(passphrase);
+        handleConfirmedPassphraseChange(passphrase);
+    };
 
     return (
         <>
@@ -158,7 +164,7 @@ export const WalletImportModal = ({
                             as={PasswordInputTwo}
                             value={passphrase}
                             disabled={loadingWalletSubmit}
-                            onValue={handlePassphraseChange}
+                            onValue={handleImportedWalletPassphrase}
                             label={c('Wallet setup').t`Passphrase`}
                             placeholder={c('Placeholder').t`Enter a passphrase or leave empty`}
                         />
