@@ -3,7 +3,11 @@ import { createContext, useCallback, useContext, useEffect, useLayoutEffect, use
 
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import {
+    getInboxDesktopInfo,
+    hasInboxDesktopFeature,
+    invokeInboxDesktopIPC,
+} from '@proton/shared/lib/desktop/ipcHelpers';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { isElectronMail, isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
@@ -107,6 +111,10 @@ const syncStyleToEl = (el: HTMLElement | null, property: string, value: string |
 };
 
 const getColorScheme = (matches: boolean): ColorScheme => {
+    if (hasInboxDesktopFeature('ColorScheme')) {
+        return getInboxDesktopInfo('colorScheme');
+    }
+
     return matches ? ColorScheme.Dark : ColorScheme.Light;
 };
 
