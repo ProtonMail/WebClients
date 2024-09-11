@@ -127,7 +127,24 @@ export function getPreferredCurrency({
 
     const usedCurrencies = [userCurrency, subscription?.Currency, statusCurrency].filter(isTruthy);
 
-    const fallbackResult = plans?.[0]?.Currency ?? DEFAULT_CURRENCY;
+    const fallbackResult = (() => {
+        const planCurrency = plans?.[0]?.Currency;
+        if (!planCurrency) {
+            return DEFAULT_CURRENCY;
+        }
+
+        // we can't fallback to regional currency if they are not enabled and if user doesn't have history with
+        // regional currencies
+        const canFallbackToRegional = usedCurrencies.some(isRegionalCurrency);
+        if (canFallbackToRegional) {
+            return planCurrency;
+        }
+
+        // if we can't user regional currency as a fallback, we fallback to a main currency
+        const plansCurrencies = plans?.map((it) => it.Currency);
+
+        return plansCurrencies.find((it) => isMainCurrency(it)) ?? DEFAULT_CURRENCY;
+    })();
 
     const ifPlanSupportsCurrency = (currency: Currency) => {
         const selectedPlanSupportsCurrency = !selectedPlan || selectedPlan.Currency === currency;
