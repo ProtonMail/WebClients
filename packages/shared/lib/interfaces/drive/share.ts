@@ -44,6 +44,7 @@ export interface ShareMetaShort {
     PossibleKeyPackets?: { KeyPacket: string }[];
     VolumeSoftDeleted: boolean;
     State: number;
+    CreateTime: number;
 }
 
 export interface ShareMeta extends ShareMetaShort {

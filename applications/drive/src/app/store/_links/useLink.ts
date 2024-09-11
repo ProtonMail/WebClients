@@ -19,8 +19,18 @@ import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/ke
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { linkMetaToEncryptedLink, revisionPayloadToRevision, useDebouncedRequest } from '../_api';
-import { useDriveCrypto } from '../_crypto';
-import { type Share, ShareType, type ShareWithKey, useShare } from '../_shares';
+import type { IntegrityMetrics, VerificationKey } from '../_crypto';
+import { integrityMetrics, useDriveCrypto } from '../_crypto';
+import {
+    type Share,
+    ShareType,
+    type ShareTypeString,
+    type ShareWithKey,
+    getShareTypeString,
+    useDefaultShare,
+    useShare,
+} from '../_shares';
+import { useIsPaid } from '../_user';
 import { useDebouncedFunction } from '../_utils';
 import { decryptExtendedAttributes } from './extendedAttributes';
 import type { DecryptedLink, EncryptedLink, SignatureIssueLocation, SignatureIssues } from './interface';
@@ -64,6 +74,8 @@ export default function useLink() {
     const linksState = useLinksState();
     const { getVerificationKey } = useDriveCrypto();
     const { getSharePrivateKey, getShare } = useShare();
+    const { getDefaultShareAddressEmail } = useDefaultShare();
+    const isPaid = useIsPaid();
 
     const debouncedRequest = useDebouncedRequest();
     const fetchLink = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<EncryptedLink> => {
@@ -90,6 +102,9 @@ export default function useLink() {
         getVerificationKey,
         getSharePrivateKey,
         getShare,
+        getDefaultShareAddressEmail,
+        isPaid,
+        integrityMetrics,
         CryptoProxy.importPrivateKey
     );
 }
@@ -113,6 +128,9 @@ export function useLinkInner(
     getVerificationKey: ReturnType<typeof useDriveCrypto>['getVerificationKey'],
     getSharePrivateKey: ReturnType<typeof useShare>['getSharePrivateKey'],
     getShare: ReturnType<typeof useShare>['getShare'],
+    getDefaultShareAddressEmail: ReturnType<typeof useDefaultShare>['getDefaultShareAddressEmail'],
+    userIsPaid: boolean,
+    integrityMetrics: IntegrityMetrics,
     importPrivateKey: typeof CryptoProxy.importPrivateKey // passed as arg for easier mocking when testing
 ) {
     const debouncedFunction = useDebouncedFunction();
@@ -144,6 +162,51 @@ export function useLinkInner(
         });
     };
 
+    const loadShareTypeString = async (shareId: string): Promise<ShareTypeString> => {
+        return (
+            getShare(new AbortController().signal, shareId)
+                .then(getShareTypeString)
+                // getShare should be fast call as share is already cached by this time.
+                // In case of failure, fallback 'shared' is good assumption as it might
+                // mean some edge case for sharing.
+                // After refactor, this should be handled better.
+                .catch(() => 'shared')
+        );
+    };
+
+    const handleDecryptionError = (shareId: string, encryptedLink: EncryptedLink) => {
+        loadShareTypeString(shareId).then((shareType) => {
+            const options = {
+                isPaid: userIsPaid,
+                createTime: encryptedLink.createTime,
+            };
+            integrityMetrics.nodeDecryptionError(encryptedLink.linkId, shareType, options);
+        });
+    };
+
+    const reportSignatureError = (shareId: string, encryptedLink: EncryptedLink, location: SignatureIssueLocation) => {
+        loadShareTypeString(shareId).then(async (shareType) => {
+            const email = await getDefaultShareAddressEmail();
+            const verificationKey = {
+                passphrase: 'SignatureEmail',
+                hash: 'NodeKey',
+                name: 'NameSignatureEmail',
+                xattrs: 'SignatureEmail',
+                contentKeyPacket: 'NodeKey',
+                blocks: 'NodeKey',
+                thumbnail: 'NodeKey',
+                manifest: 'NodeKey',
+            }[location] as VerificationKey;
+
+            const options = {
+                isPaid: userIsPaid,
+                createTime: encryptedLink.createTime,
+                addressMatchingDefaultShare: encryptedLink.signatureAddress === email,
+            };
+            integrityMetrics.signatureVerificationError(encryptedLink.linkId, shareType, verificationKey, options);
+        });
+    };
+
     const handleSignatureCheck = (
         shareId: string,
         encryptedLink: EncryptedLink,
@@ -161,6 +224,8 @@ export function useLinkInner(
                     },
                 },
             ]);
+
+            reportSignatureError(shareId, encryptedLink, location);
         }
     };
 
@@ -509,6 +574,7 @@ export function useLinkInner(
                 const [nameResult, xattrResult] = await Promise.allSettled([namePromise, xattrPromise]);
 
                 if (nameResult.status === 'rejected') {
+                    handleDecryptionError(shareId, encryptedLink);
                     return generateCorruptDecryptedLink(encryptedLink, '�');
                 }
 
@@ -521,16 +587,19 @@ export function useLinkInner(
                     (nameVerified === VERIFICATION_STATUS.NOT_SIGNED &&
                         isAfter(fromUnixTime(encryptedLink.createTime), new Date(2021, 0, 1)))
                 ) {
+                    reportSignatureError(shareId, encryptedLink, 'name');
                     signatureIssues.name = nameVerified;
                 }
 
                 if (xattrResult.status === 'rejected') {
+                    handleDecryptionError(shareId, encryptedLink);
                     return generateCorruptDecryptedLink(encryptedLink, name);
                 }
                 const { fileModifyTimeVerified, fileModifyTime, originalSize, originalDimensions, digests, duration } =
                     xattrResult.value;
 
                 if (fileModifyTimeVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    reportSignatureError(shareId, encryptedLink, 'xattrs');
                     signatureIssues.xattrs = fileModifyTimeVerified;
                 }
 
@@ -727,6 +796,22 @@ export function useLinkInner(
                 },
             },
         ]);
+
+        const locations = Object.keys(signatureIssues) as SignatureIssueLocation[];
+        if (locations.length) {
+            // Signature issues can have multiple sources.
+            // If the problem comes from NodeKey, its more important,
+            // as that is more serious bug than when it comes from
+            // user key.
+            const hasSignatureIssueForNodeKey = (
+                ['hash', 'contentKeyPacket', 'blocks', 'thumbnail', 'manifest'] as SignatureIssueLocation[]
+            ).some((location) => locations.includes(location));
+            // But if its not due to NodeKey, we take random source
+            // of issue, as it doesnt matter that much.
+            const location = hasSignatureIssueForNodeKey ? 'hash' : locations[0];
+
+            reportSignatureError(shareId, link, location);
+        }
     };
 
     return {

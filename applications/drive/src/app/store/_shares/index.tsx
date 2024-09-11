@@ -4,6 +4,7 @@ import { SharesStateProvider } from './useSharesState';
 export * from './interface';
 export * from './shareUrl';
 export * from './utils';
+export { getShareTypeString } from './shareType';
 export { default as useDefaultShare } from './useDefaultShare';
 export { default as usePublicShare } from './usePublicShare';
 export { default as useShare } from './useShare';

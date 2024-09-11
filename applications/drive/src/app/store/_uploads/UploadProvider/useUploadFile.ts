@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useUser } from '@proton/components';
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import {
@@ -30,10 +31,12 @@ import { replaceLocalURL } from '../../../utils/replaceLocalURL';
 import retryOnError from '../../../utils/retryOnError';
 import { isPhotosDisabledUploadError } from '../../../utils/transfer';
 import { useDebouncedRequest } from '../../_api';
+import { integrityMetrics } from '../../_crypto';
 import { useDriveEventManager } from '../../_events';
 import type { DecryptedLink } from '../../_links';
 import { useLink, useLinksActions, validateLinkName } from '../../_links';
-import { useShare } from '../../_shares';
+import type { ShareTypeString } from '../../_shares';
+import { getShareTypeString, useShare } from '../../_shares';
 import { useVolumesState } from '../../_volumes';
 import { MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
 import { initUploadFileWorker } from '../initUploadFileWorker';
@@ -68,11 +71,12 @@ interface FileRevision {
 }
 
 export default function useUploadFile() {
+    const [user] = useUser();
     const debouncedRequest = useDebouncedRequest();
     const queuedFunction = useQueuedFunction();
     const { getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
     const { trashLinks, deleteChildrenLinks } = useLinksActions();
-    const { getShareCreatorKeys } = useShare();
+    const { getShare, getShareCreatorKeys } = useShare();
     const { findAvailableName, getLinkByName, findDuplicateContentHash, findHash } = useUploadHelper();
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
@@ -646,6 +650,22 @@ export default function useUploadFile() {
                         log(`Cleanup failed due to ${err}`);
                         logError(err);
                     }
+                },
+                notifyVerificationError: (retryHelped: boolean) => {
+                    getShare(new AbortController().signal, shareId)
+                        .then(getShareTypeString)
+                        // getShare should be fast call as share is already cached by this time.
+                        // In case of failure, fallback 'shared' is good assumption as it might
+                        // mean some edge case for sharing.
+                        // After refactor, this should be handled better.
+                        .catch(() => 'shared' as ShareTypeString)
+                        .then((shareType: ShareTypeString) => {
+                            const options = {
+                                isPaid: user ? user.isPaid : false,
+                                retryHelped,
+                            };
+                            integrityMetrics.nodeBlockVerificationError(shareType, file.size, options);
+                        });
                 },
             },
             (message) => log(`worker: ${message}`)
