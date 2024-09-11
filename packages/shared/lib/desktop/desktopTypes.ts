@@ -1,6 +1,7 @@
 import type { Environment } from '@proton/shared/lib/interfaces';
 
 import {
+    type ColorScheme,
     type ThemeFeatureSetting,
     type ThemeFontFaceSetting,
     type ThemeFontSizeSetting,
@@ -48,12 +49,14 @@ export type IPCInboxDesktopFeature =
     | 'MultiAccount'
     | 'LatestVersionCheck'
     | 'InstallSource'
-    | 'MailtoTelemetry';
+    | 'MailtoTelemetry'
+    | 'ColorScheme';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }
     | { type: 'installSource'; result: string | null }
-    | { type: 'defaultMailto'; result: DefaultProtocol };
+    | { type: 'defaultMailto'; result: DefaultProtocol }
+    | { type: 'colorScheme'; result: ColorScheme };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
     | { type: 'userLogin'; payload?: undefined }
