@@ -349,8 +349,3 @@ export const selectSecureLinksByItems = (items: BulkSelectionDTO) =>
             return secureLinks[shareId]?.[itemId] ?? [];
         })
     );
-
-export const selectMostRecentVault = createSelector(
-    selectAllItems,
-    (items) => items.slice().sort(sortOn('createTime'))?.[0]?.shareId
-);
