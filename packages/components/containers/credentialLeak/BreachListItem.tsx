@@ -3,41 +3,34 @@ import clsx from '@proton/utils/clsx';
 
 import ReadableDate from './ReadableDate';
 import { getBreachIcon } from './helpers';
+import type { FetchedBreaches } from './models';
 
 import './BreachListItem.scss';
 
 interface Props {
-    name: string | null;
-    createdAt: string;
+    data: FetchedBreaches;
     handleClick?: () => void;
     disabled?: boolean;
     selected?: boolean;
     style: {
         iconAltText: string;
     };
-    severity: number;
-    exposedData:
-        | null
-        | {
-              code: string;
-              name: string;
-          }[];
     resolved?: boolean;
     unread?: boolean;
+    hasMultipleAddresses?: boolean;
 }
 
 const BreachListItem = ({
-    name,
-    createdAt,
+    data,
     handleClick,
     disabled,
     selected,
     style,
-    severity,
-    exposedData,
     resolved = false,
     unread = false,
+    hasMultipleAddresses,
 }: Props) => {
+    const { name, email, createdAt, severity, exposedData } = data;
     const { iconAltText } = style;
 
     const breachIcon = getBreachIcon(severity, { resolved });
@@ -58,6 +51,17 @@ const BreachListItem = ({
                     </span>
                     <span className="flex-1 text-left pl-2 pr-1">
                         <span className={clsx('block max-w-full text-ellipsis', unread && 'text-bold')}>{name}</span>
+                        {hasMultipleAddresses && (
+                            <span
+                                className={clsx(
+                                    'block max-w-full text-ellipsis color-weak text-sm',
+                                    unread && 'text-bold'
+                                )}
+                                title={email}
+                            >
+                                {email}
+                            </span>
+                        )}
                         <ReadableDate
                             value={createdAt}
                             className={clsx(
