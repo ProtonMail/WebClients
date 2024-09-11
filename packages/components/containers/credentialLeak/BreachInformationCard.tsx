@@ -18,9 +18,10 @@ interface Props {
     onResolve?: () => void;
     onOpen?: () => void;
     isMutating?: boolean;
+    loading?: boolean;
 }
 
-const BreachInformationCard = ({ breachData, onResolve, isMutating, onOpen }: Props) => {
+const BreachInformationCard = ({ breachData, onResolve, isMutating, onOpen, loading }: Props) => {
     if (!breachData) {
         return;
     }
@@ -46,9 +47,10 @@ const BreachInformationCard = ({ breachData, onResolve, isMutating, onOpen }: Pr
                 <BreachInfoNote />
 
                 {isResolved ? (
-                    <Button className="mr-auto" onClick={onOpen}>{c('Action').t`Mark as open`}</Button>
+                    <Button className="mr-auto" onClick={onOpen} loading={loading}>{c('Action')
+                        .t`Mark as open`}</Button>
                 ) : (
-                    <Button className="mr-auto" onClick={onResolve} loading={isMutating}>{c('Action')
+                    <Button className="mr-auto" onClick={onResolve} loading={isMutating || loading}>{c('Action')
                         .t`Mark as resolved`}</Button>
                 )}
             </div>

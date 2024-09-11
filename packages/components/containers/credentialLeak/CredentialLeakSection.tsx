@@ -62,6 +62,7 @@ const CredentialLeakSection = () => {
     const [loading, withLoading] = useLoading();
     const [breachesLoading] = useLoading();
     const [toggleLoading, withToggleLoading] = useLoading();
+    const [actionLoading, withActionLoading] = useLoading();
     const [openSubscriptionModal] = useSubscriptionModal();
     const api = useApi();
     const [user] = useUser();
@@ -77,6 +78,7 @@ const CredentialLeakSection = () => {
     const [error, setError] = useState<{ message: string } | null>(null);
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [sample, setSample] = useState<SampleBreach | null>(null);
+    const [hasBeenInteractedWith, setHasBeenInteractedWith] = useState<boolean>(false);
 
     // TODO: change nums to constants
     const [hasAlertsEnabled, setHasAlertsEnabled] = useState<boolean>(
@@ -96,6 +98,9 @@ const CredentialLeakSection = () => {
                 if (IsEligible) {
                     const breaches = toCamelCase(Breaches);
                     actions.load(breaches);
+                    if (Count > 0) {
+                        setSelectedBreachID(breaches[0].id);
+                    }
                 } else {
                     const fetchedSample = toCamelCase(Samples);
                     setSample(fetchedSample[0]);
@@ -128,21 +133,27 @@ const CredentialLeakSection = () => {
     const viewingBreachList = breachList.filter((breach) => LIST_STATES_MAP[listType].includes(breach.resolvedState));
     const viewingBreach = viewingBreachList.find((b) => b.id === selectedBreachID) ?? viewingBreachList[0];
 
+    const isFirstItemUnread =
+        viewingBreachList.length > 0 && viewingBreachList[0].resolvedState === BREACH_STATE.UNREAD;
+    const firstBreach = viewingBreachList[0];
+
     const markAsResolvedBreach = async () => {
         if (!viewingBreach) {
             return;
         }
         try {
-            actions.resolve(viewingBreach);
-            await api(
-                updateBreachState({
-                    ID: viewingBreach.id,
-                    State: BREACH_STATE.RESOLVED,
-                })
+            await withActionLoading(
+                api(
+                    updateBreachState({
+                        ID: viewingBreach.id,
+                        State: BREACH_STATE.RESOLVED,
+                    })
+                )
             );
+            actions.resolve(viewingBreach);
+            setSelectedBreachID(null);
         } catch (e) {
             handleError(e);
-            actions.open(viewingBreach);
         }
     };
 
@@ -151,18 +162,15 @@ const CredentialLeakSection = () => {
             return;
         }
         try {
-            actions.open(viewingBreach);
             await api(
                 updateBreachState({
                     ID: viewingBreach.id,
                     State: BREACH_STATE.READ,
                 })
             );
+            actions.open(viewingBreach);
         } catch (e) {
             handleError(e);
-            if (viewingBreach.resolvedState === BREACH_STATE.RESOLVED) {
-                actions.resolve(viewingBreach);
-            }
         }
     };
 
@@ -201,10 +209,14 @@ const CredentialLeakSection = () => {
     };
 
     useEffect(() => {
-        if (viewingBreach && viewingBreach.resolvedState === BREACH_STATE.UNREAD) {
+        if (viewingBreach === firstBreach && isFirstItemUnread && hasBeenInteractedWith) {
             markAsOpenBreach();
+        } else {
+            if (viewingBreach !== firstBreach && viewingBreach.resolvedState === BREACH_STATE.UNREAD) {
+                markAsOpenBreach();
+            }
         }
-    }, [viewingBreach]);
+    }, [viewingBreach, hasBeenInteractedWith]);
 
     const href = getKnowledgeBaseUrl('/dark-web-monitoring');
     // translator: full sentence is: We monitor the dark web for instances where your personal information (such as an email address or password used on a third-party site) is leaked or compromised. <How does monitoring work?>
@@ -349,6 +361,9 @@ const CredentialLeakSection = () => {
                                             onSelect={(id) => {
                                                 setSelectedBreachID(id);
                                                 setOpenModal(true);
+                                                if (!hasBeenInteractedWith) {
+                                                    setHasBeenInteractedWith(true);
+                                                }
                                             }}
                                             isPaidUser={isPaidUser}
                                             total={total}
@@ -371,12 +386,18 @@ const CredentialLeakSection = () => {
                                                     'relative w-full md:w-2/3',
                                                     viewportWidth['<=medium'] && 'hidden'
                                                 )}
+                                                onMouseEnter={() => {
+                                                    if (!hasBeenInteractedWith) {
+                                                        setHasBeenInteractedWith(true);
+                                                    }
+                                                }}
                                             >
                                                 <BreachInformationCard
                                                     breachData={viewingBreach}
                                                     onResolve={markAsResolvedBreach}
-                                                    onOpen={markAsOpenBreach}
+                                                    onOpen={() => withActionLoading(markAsOpenBreach())}
                                                     isMutating={breachesLoading}
+                                                    loading={actionLoading}
                                                 />
                                             </div>
                                         )}
