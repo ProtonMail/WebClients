@@ -4,7 +4,7 @@ import { getWindowBounds, saveWindowBounds } from "../../store/boundsStore";
 import { getSettings, saveSettings } from "../../store/settingsStore";
 import { updateDownloaded } from "../../update";
 import { getConfig } from "../config";
-import { CHANGE_VIEW_TARGET } from "../external/packages/shared/lib/desktop/desktopTypes";
+import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isLinux, isMac, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";

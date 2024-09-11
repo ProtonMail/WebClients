@@ -1,9 +1,6 @@
 import { contextBridge, ipcRenderer, IpcRendererEvent } from "electron";
 import { ipcLogger } from "./utils/log";
-import {
-    IPCInboxHostUpdateMessage,
-    IPCInboxMessageBroker,
-} from "./utils/external/packages/shared/lib/desktop/desktopTypes";
+import { IPCInboxHostUpdateMessage, IPCInboxMessageBroker } from "@proton/shared/lib/desktop/desktopTypes";
 
 function isValidHostUpdateMessage(message: unknown): message is IPCInboxHostUpdateMessage {
     return !!(message && typeof message === "object" && "type" in message && typeof message.type === "string");

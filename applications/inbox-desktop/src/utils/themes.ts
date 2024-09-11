@@ -1,6 +1,7 @@
 import { nativeTheme } from "electron";
 import { getSettings, saveSettings } from "../store/settingsStore";
-import { ThemeModeSetting, ThemeSetting, ThemeTypes } from "./external/packages/shared/lib/themes/themes";
+import { ThemeModeSetting, ThemeTypes } from "@proton/shared/lib/themes/themes";
+import { DesktopThemeSetting } from "@proton/shared/lib/desktop/desktopTypes";
 
 const SERIALIZED_THEME_MODE = {
     [ThemeModeSetting.Auto]: "auto",
@@ -14,7 +15,7 @@ export type SerializedTheme = {
     mode?: (typeof SERIALIZED_THEME_MODE)[ThemeModeSetting];
 };
 
-const DEFAULT_THEME: ThemeSetting = {
+const DEFAULT_THEME: DesktopThemeSetting = {
     Mode: ThemeModeSetting.Auto,
     LightTheme: ThemeTypes.Snow,
     DarkTheme: ThemeTypes.Carbon,
@@ -51,7 +52,7 @@ export function getTheme() {
     return theme;
 }
 
-export function updateNativeTheme(theme: ThemeSetting) {
+export function updateNativeTheme(theme: DesktopThemeSetting) {
     if (theme.Mode === ThemeModeSetting.Auto) {
         nativeTheme.themeSource = "system";
         const usedTheme = nativeTheme.shouldUseDarkColors ? theme.DarkTheme : theme.LightTheme;
@@ -66,7 +67,7 @@ export function updateNativeTheme(theme: ThemeSetting) {
     }
 }
 
-export function setTheme(theme: ThemeSetting) {
+export function setTheme(theme: DesktopThemeSetting) {
     updateNativeTheme(theme);
 
     const lightTheme = theme.LightTheme in ThemeTypes ? theme.LightTheme : DEFAULT_THEME.LightTheme;
@@ -82,7 +83,7 @@ export function setTheme(theme: ThemeSetting) {
     });
 }
 
-export function isEqualTheme(themeA: ThemeSetting, themeB: ThemeSetting) {
+export function isEqualTheme(themeA: DesktopThemeSetting, themeB: DesktopThemeSetting) {
     return (
         themeA.Mode === themeB.Mode && themeA.LightTheme === themeB.LightTheme && themeA.DarkTheme === themeB.DarkTheme
     );
