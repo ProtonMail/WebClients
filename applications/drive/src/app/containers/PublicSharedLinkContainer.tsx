@@ -46,12 +46,12 @@ function PublicShareLinkInitContainer() {
         isPasswordNeeded,
         submitPassword,
     } = usePublicAuth(token, urlPassword);
-    const bookmarksPublicView = useBookmarksPublicView(customPassword);
     const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
     const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);
     const [[publicShareError, publicShareErrorMessage], setError] = useState<ErrorTuple>([, '']);
     const [link, setLink] = useState<DecryptedLink>();
-    const { loadPublicShare, user, isUserLoading } = usePublicShare();
+    const { loadPublicShare, user } = usePublicShare();
+    const bookmarksPublicView = useBookmarksPublicView({ customPassword, user, isAuthLoading: isLoading });
     const [signUpFlowModal, showSignUpFlowModal] = useSignupFlowModal();
     const [renderUpsellFloatingModal] = useUpsellFloatingModal();
 
@@ -89,7 +89,7 @@ function PublicShareLinkInitContainer() {
     useEffect(() => {
         const abortController = new AbortController();
 
-        if (token && !isLoading && !authErrorMessage && !isPasswordNeeded && !isUserLoading) {
+        if (token && !isLoading && !authErrorMessage && !isPasswordNeeded) {
             void withLoading(
                 loadPublicShare(abortController.signal)
                     .then(({ link }) => {
@@ -113,14 +113,14 @@ function PublicShareLinkInitContainer() {
         return () => {
             abortController.abort();
         };
-    }, [token, isLoading, authErrorMessage, isPasswordNeeded, isUserLoading]);
+    }, [token, isLoading, authErrorMessage, isPasswordNeeded]);
 
     useEffect(() => {
         /** If the navigation appears from a non proton user and the flag is enabled, we display a sign-up flow modal */
-        if (isDriveShareUrlBookmarkingEnabled && !isLoggedIn && !isUserLoading) {
+        if (isDriveShareUrlBookmarkingEnabled && !isLoggedIn) {
             showSignUpFlowModal({ urlPassword });
         }
-    }, [isDriveShareUrlBookmarkingEnabled, isLoggedIn, isUserLoading]);
+    }, [isDriveShareUrlBookmarkingEnabled, isLoggedIn]);
 
     const showLoadingPage = isLoading || isLoadingDecrypt;
     const showErrorPage = errorMessage || (showLoadingPage === false && link === undefined);
