@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { useAuthService } from 'proton-pass-web/app/Context/AuthServiceProvider';
+import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
 import { Exporter } from '@proton/pass/components/Export/Exporter';

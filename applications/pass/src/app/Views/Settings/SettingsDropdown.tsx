@@ -1,6 +1,7 @@
 import { type FC, useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
+import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
 import { NotificationDot } from '@proton/atoms';
@@ -20,9 +21,13 @@ import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { selectOfflineEnabled, selectPassPlan } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 
-import { useAuthService } from '../../Context/AuthServiceProvider';
-
-type SettingAction = { icon: IconName; key: string; label: string; signaled?: boolean; onClick?: () => void };
+type SettingAction = {
+    icon: IconName;
+    key: string;
+    label: string;
+    signaled?: boolean;
+    onClick?: () => void;
+};
 
 export const SettingsDropdown: FC = () => {
     const { navigate } = useNavigation();
