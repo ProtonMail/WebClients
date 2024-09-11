@@ -10,6 +10,7 @@ import {
     useApi,
     useAssistantSubscriptionStatus,
     useEventManager,
+    useNotifications,
     useSpotlightOnFeature,
     useUserSettings,
 } from '@proton/components/hooks';
@@ -49,6 +50,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
     const { handleSettingChange, handleCheckHardwareCompatibility } = useAssistant();
     const { sendShowAssistantReport } = useAssistantTelemetry();
     const { displayAssistantModal } = useComposerAssistantProvider();
+    const { createNotification } = useNotifications();
 
     // Default to server only if unset
     const [inputValue, setInputValue] = useState<AI_ASSISTANT_ACCESS>(
@@ -56,6 +58,8 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
     );
 
     const handleSubmit = async () => {
+        const notificationText = c('Success').t`Writing assistant setting updated`;
+
         const updateSetting = async () => {
             if (AIAssistantFlags !== inputValue) {
                 await api(updateAIAssistant(inputValue));
@@ -72,6 +76,7 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
         if (inputValue === SERVER_ONLY) {
             await closeModal();
             onToggleAssistant(inputValue);
+            createNotification({ text: notificationText });
             return;
         }
 
@@ -82,11 +87,13 @@ const ComposerAssistantSettingModal = ({ composerID, onClose: closeSettingModal,
                 await closeModal();
                 onToggleAssistant(inputValue);
                 void handleSettingChange?.();
+                createNotification({ text: notificationText });
                 return;
             }
 
             onDisplayedComposerSpotlight();
             closeSettingModal();
+            createNotification({ text: notificationText });
 
             if (!canRunLocally) {
                 if (!hasCompatibleBrowser) {
