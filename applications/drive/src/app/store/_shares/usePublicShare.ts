@@ -2,7 +2,6 @@ import { useApi } from '@proton/components';
 import { querySharedURLInformation, querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
 import type { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 
-import { useUserIfAuthenticated } from '../../hooks/util/useUserIfAuthenticated';
 import { usePublicSession } from '../_api';
 import { useLink } from '../_links';
 import { useDecryptPublicShareLink } from './useDecryptPublicShareLink';
@@ -12,11 +11,7 @@ import { useDecryptPublicShareLink } from './useDecryptPublicShareLink';
  */
 export default function usePublicShare() {
     const api = useApi();
-    const { request, getSessionInfo, isSessionProtonUser } = usePublicSession();
-    const { user, isLoading: isUserLoading } = useUserIfAuthenticated(
-        isSessionProtonUser(),
-        getSessionInfo()?.sessionUid
-    );
+    const { user, request, getSessionInfo } = usePublicSession();
     const { decryptPublicShareLink } = useDecryptPublicShareLink();
     const { getLinkPassphraseAndSessionKey } = useLink();
 
@@ -73,6 +68,5 @@ export default function usePublicShare() {
         loadPublicShare,
         submitAbuseReport,
         user,
-        isUserLoading,
     };
 }
