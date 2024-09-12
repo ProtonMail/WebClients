@@ -26,13 +26,23 @@ const {
     ANDROID_VPN,
     ANDROID_TV_VPN,
     APPLE_TV_VPN,
+    ANDROID_CALENDAR,
+    IOS_CALENDAR,
+    ANDROID_MAIL,
+    IOS_MAIL,
 } = USED_CLIENT_FLAGS;
+
+const isAndroidCalendarUser = (usedClientFlags: bigint) => hasBitBigInt(usedClientFlags, ANDROID_CALENDAR);
+const isIOSCalendarUser = (usedClientFlags: bigint) => hasBitBigInt(usedClientFlags, IOS_CALENDAR);
 
 const isWebDriveUser = (usedClientFlags: bigint) => hasBitBigInt(usedClientFlags, WEB_DRIVE);
 const isAndroidDriveUser = (usedClientFlags: bigint) => hasBitBigInt(usedClientFlags, ANDROID_DRIVE);
 const isIOSDriveUser = (usedClientFlags: bigint) => hasBitBigInt(usedClientFlags, IOS_DRIVE);
 const isDesktopDriveUser = (usedClientFlags: bigint) =>
     hasBitBigInt(usedClientFlags, WINDOWS_DRIVE) || hasBitBigInt(usedClientFlags, MACOS_DRIVE);
+
+const isAndroidMailUser = (usedClientFlags: bigint) => hasBitBigInt(usedClientFlags, ANDROID_MAIL);
+const isIOSMailUser = (usedClientFlags: bigint) => hasBitBigInt(usedClientFlags, IOS_MAIL);
 
 const isWebPassUser = (usedClientFlags: bigint) => hasBitBigInt(usedClientFlags, WEB_PASS);
 const isAndroidPassUser = (usedClientFlags: bigint) => hasBitBigInt(usedClientFlags, ANDROID_PASS);
@@ -55,6 +65,12 @@ const isDesktopVPNUser = (usedClientFlags: bigint) =>
     hasBitBigInt(usedClientFlags, LINUX_VPN) ||
     hasBitBigInt(usedClientFlags, MACOS_VPN);
 
+export const isCalendarMobileAppUser = (usedClientFlags: bigint) => {
+  return (
+      isAndroidCalendarUser(usedClientFlags) || isIOSCalendarUser(usedClientFlags)
+  );
+};
+
 export const isDesktopInboxUser = (usedClientFlags: bigint) => {
     return (
         hasBitBigInt(usedClientFlags, WINDOWS_INBOX) ||
@@ -70,6 +86,18 @@ export const isDriveUser = (usedClientFlags: bigint) => {
         isIOSDriveUser(usedClientFlags) ||
         isDesktopDriveUser(usedClientFlags)
     );
+};
+
+export const isDriveMobileAppUser = (usedClientFlags: bigint) => {
+  return (
+      isAndroidDriveUser(usedClientFlags) || isIOSDriveUser(usedClientFlags)
+  );
+};
+
+export const isMailMobileAppUser = (usedClientFlags: bigint) => {
+  return (
+      isAndroidMailUser(usedClientFlags) || isIOSMailUser(usedClientFlags)
+  );
 };
 
 export const isPassUser = (usedClientFlags: bigint) => {

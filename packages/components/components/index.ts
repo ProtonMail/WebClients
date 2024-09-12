@@ -60,6 +60,7 @@ export * from './selectTwo';
 export * from './shortcuts';
 export * from './sidebar';
 export * from './skeletonLoader';
+export { default as SmartBanner } from './smartBanner/SmartBanner';
 export * from './spinner';
 export * from './spotlight';
 export * from './stepDot';
