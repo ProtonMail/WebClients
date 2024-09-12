@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useExtensionConnect } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
+import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
@@ -16,7 +16,7 @@ import noop from '@proton/utils/noop';
 export const useOnboardingListener = () => {
     const { onboardingCheck } = usePassCore();
     const { setOnboardingMessage, setPendingShareAccess } = useSpotlight();
-    const { context: extensionContext } = useExtensionConnect();
+    const { port } = useExtensionContext();
     const createdItemsCount = useSelector(selectCreatedItemsCount);
     const definitions = useOnboardingMessages();
 
@@ -44,9 +44,9 @@ export const useOnboardingListener = () => {
             }
         );
 
-        extensionContext?.port.onMessage.addListener(handleMessage);
-        return () => extensionContext?.port.onMessage.removeListener(handleMessage);
-    }, [extensionContext]);
+        port.onMessage.addListener(handleMessage);
+        return () => port.onMessage.removeListener(handleMessage);
+    }, [port]);
 
     useEffect(() => {
         const check = async () => (await onboardingCheck?.(OnboardingMessage.USER_RATING)) ?? false;
