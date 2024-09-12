@@ -1,12 +1,10 @@
-import { NEXT_MESSAGE_ON_MOVE } from '@proton/shared/lib/mail/mailSettings';
-
 import { Toggle } from '../../components';
 
 interface Props {
     id?: string;
     loading?: boolean;
     nextMessageOnMove?: number;
-    onToggle: (nextMessageOnMove: NEXT_MESSAGE_ON_MOVE) => void;
+    onToggle: (nextMessageOnMove: 1 | 0) => void;
 }
 
 const NextMessageOnMoveToggle = ({ id, nextMessageOnMove, loading, onToggle }: Props) => {
@@ -14,9 +12,7 @@ const NextMessageOnMoveToggle = ({ id, nextMessageOnMove, loading, onToggle }: P
         <Toggle
             id={id}
             checked={Boolean(nextMessageOnMove)}
-            onChange={({ target }) =>
-                onToggle(target.checked ? NEXT_MESSAGE_ON_MOVE.ENABLED : NEXT_MESSAGE_ON_MOVE.DISABLED)
-            }
+            onChange={({ target }) => onToggle(target.checked ? 1 : 0)}
             loading={loading}
         />
     );
