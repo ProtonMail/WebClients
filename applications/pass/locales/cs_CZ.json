@@ -671,6 +671,9 @@
       "Alias options could not be resolved": [
         "Možnosti aliasu nelze vyřešit"
       ],
+      "An error occurred while resuming your session": [
+        "Při obnovování relace došlo k chybě"
+      ],
       "Authentication error": [
         "Ověření selhalo"
       ],
@@ -1592,6 +1595,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Pro automatické zamykání vaším dodatečným heslem prosím potvrďte své dodatečné heslo."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Potvrďte prosím své dodatečné heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }"
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Pro zrušení stávajícího zámku prosím potvrďte své dodatečné heslo."
@@ -3161,8 +3167,8 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Všechny položky v koši budou trvale smazány. Tuto akci nelze vrátit zpět."
       ],
-      "An error occured while exporting your data": [
-        "Při exportu dat došlo k chybě"
+      "An error occurred while exporting your data": [
+        "Při exportu vašich dat došlo k chybě"
       ],
       "At least one email address is required": [
         "Je vyžadována alespoň jedna e-mailová adresa"
