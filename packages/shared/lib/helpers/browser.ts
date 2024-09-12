@@ -95,6 +95,8 @@ export const isAndroid = () => {
     return name.toLowerCase().includes('android');
 };
 
+export const isStandaloneApp = () => window.matchMedia('(display-mode: standalone)').matches;
+
 export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name === 'Mobile Safari';
 export const isSafari11 = () => isSafari() && ua.browser.major === '11';
 export const isMinimumSafariVersion = (version: number) => isSafari() && Number(ua.browser.version) >= version;

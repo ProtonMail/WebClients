@@ -30,6 +30,7 @@ export enum TelemetryMeasurementGroups {
     driveWebActions = 'drive.web.actions',
     /** Shared */
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
+    smartBanner = 'any.web.smart_banner',
 }
 
 export enum TelemetrySubscriptionModalEvents {
@@ -184,6 +185,10 @@ export enum TelemetryProtonTipsEvents {
     tipSnoozed = 'tip_snoozed',
 }
 
+export enum TelemetrySmartBannerEvents {
+    clickAppStoreLink = 'click_app_store_link',
+}
+
 export type TelemetryEvents =
     | TelemetrySubscriptionModalEvents
     | TelemetryMailTrial2024UpsellModal
@@ -204,7 +209,8 @@ export type TelemetryEvents =
     | TelemetryAccountSecurityCheckupEvents
     | TelemetryCollapsibleLeftSidebarEvents
     | TelemetryProtonTipsEvents
-    | TelemetryMailHeartbeatEvents;
+    | TelemetryMailHeartbeatEvents
+    | TelemetrySmartBannerEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
