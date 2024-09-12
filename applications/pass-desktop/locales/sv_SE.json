@@ -1584,6 +1584,9 @@
       "Please confirm your extra password": [
         "Bekräfta ditt extra lösenord"
       ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Bekräfta ditt extra lösenord för att exportera din ${ PASS_APP_NAME }-data"
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Bekräfta ditt extra lösenord för att avregistrera ditt nuvarande lås."
       ],
@@ -3134,8 +3137,8 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alla dina kastade objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd."
       ],
-      "An error occured while exporting your data": [
-        "Ett fel uppstod när din data skulle exporteras"
+      "An error occurred while exporting your data": [
+        "Ett fel uppstod när dina data exporterades"
       ],
       "At least one email address is required": [
         "Minst en e-postadress är obligatoriskt"
