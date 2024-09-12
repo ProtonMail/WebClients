@@ -4,12 +4,26 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "Account upgrade": {
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "U heeft het maximale aantal accounts bereikt die ondersteund worden onder uw huidige abonnement. Upgrade om meer accounts aan te maken. Uw steun is ook essentieel voor ons gevecht voor de bescherming van financiële privacy en vrijheid."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
       ],
       "Activate recovery": [
         "Herstel activeren"
+      ],
+      "Add": [
+        "Voeg toe"
+      ],
+      "Add credit / debit card": [
+        "Krediet / debietkaart toevoegen"
+      ],
+      "Apply": [
+        "Toepassen"
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -22,6 +36,9 @@
       ],
       "Cancel": [
         "Annuleren"
+      ],
+      "Cancel subscription": [
+        "Abonnement opzeggen"
       ],
       "Chat with us": [
         "Chat met ons"
@@ -38,6 +55,9 @@
       "Collapse wallets": [
         "Portemonnees inklappen"
       ],
+      "Confirm": [
+        "Bevestigen"
+      ],
       "Continue": [
         "Doorgaan"
       ],
@@ -46,6 +66,24 @@
       ],
       "Copy version number to clipboard": [
         "Kopieer versienummer naar klembord"
+      ],
+      "Current plan": [
+        "Huidig abonnement"
+      ],
+      "Decrease": [
+        "Verlagen"
+      ],
+      "Delete": [
+        "Verwijderen"
+      ],
+      "Done": [
+        "Klaar"
+      ],
+      "Downgrade": [
+        "Downgraden"
+      ],
+      "Edit": [
+        "Bewerken"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -56,17 +94,41 @@
       "Edit sign-in details": [
         "Bewerk aanmeldgegevens"
       ],
+      "Edit subscription": [
+        "Wijzig abonnement"
+      ],
       "Expand wallets": [
         "Portemonnees uitvouwen"
       ],
       "Forgot password?": [
         "Wachtwoord vergeten?"
       ],
+      "Get in touch": [
+        "Neem contact op"
+      ],
       "Get verification code": [
         "Krijg verificatiecode"
       ],
+      "Got it": [
+        "Begrepen"
+      ],
       "Help": [
         "Hulp"
+      ],
+      "Increase": [
+        "Verhogen"
+      ],
+      "Learn more": [
+        "Meer informatie"
+      ],
+      "Learn more about Bitcoin via Email": [
+        "Meer informatie over Bitcoin via e-mail"
+      ],
+      "Let's talk": [
+        "Laten we praten!"
+      ],
+      "Loading verification": [
+        "Verificatie laden"
       ],
       "More info: ${ safeTitle }": [
         "Meer informatie: ${ safeTitle }"
@@ -74,14 +136,41 @@
       "More options": [
         "Meer opties"
       ],
+      "Next": [
+        "Volgende"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "Open ${ CALENDAR_APP_NAME }-instellingen"
+      ],
       "Open navigation": [
         "Navigatie openen"
+      ],
+      "Open recipient": [
+        "Open ontvanger"
+      ],
+      "Pay": [
+        "Betalen"
+      ],
+      "Pay ${ price } now": [
+        "Betaal nu ${ price }"
+      ],
+      "Previous": [
+        "Vorige"
       ],
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "Remove bonuses": [
+        "Verwijder bonussen"
+      ],
+      "Remove gift code": [
+        "Verwijder geschenkcode"
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -98,14 +187,35 @@
       "Resend code": [
         "Verstuur code opnieuw"
       ],
+      "Retry": [
+        "Opnieuw proberen"
+      ],
+      "Save": [
+        "Opslaan"
+      ],
       "Search countries": [
         "Zoek landen"
+      ],
+      "Secure your wallet": [
+        "Beveilig uw portemonnee"
+      ],
+      "Select ${ planTitle }": [
+        "Selecteer ${ planTitle }"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Selecteer factureringscyclus ${ billingText }"
+      ],
+      "Select country": [
+        "Selecteer land"
       ],
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Show balance": [
+        "Toon saldo"
       ],
       "Sign out": [
         "Uitloggen"
@@ -115,6 +225,9 @@
       ],
       "Switch or add account": [
         "Account toevoegen of wisselen"
+      ],
+      "Try again": [
+        "Opnieuw proberen"
       ],
       "Try another method": [
         "Andere methode proberen"
@@ -127,6 +240,18 @@
       ],
       "Update recovery phrase": [
         "Herstelzin bijwerken"
+      ],
+      "Upgrade now": [
+        "Nu upgraden"
+      ],
+      "Use ${ address.Email }": [
+        "Gebruik ${ address.Email }"
+      ],
+      "Use a different card": [
+        "Gebruik een andere kaart"
+      ],
+      "Use a different payment method": [
+        "Gebruik een andere betaalmethode"
       ],
       "Use authentication code": [
         "Verificatiecode gebruiken"
@@ -142,6 +267,44 @@
       ],
       "View invoice": [
         "Factuur bekijken"
+      ],
+      "Visit knowledge base": [
+        "Bezoek kennisbank"
+      ],
+      "What do I get?": [
+        "Wat krijg ik?"
+      ]
+    },
+    "Action subscription": {
+      "Reactivate": [
+        "Opnieuw activeren"
+      ]
+    },
+    "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } extra aangepast domein",
+        "${ domains } extra aangepaste domeinen"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servers"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } per toegewijde server"
+      ],
+      "${ price } per domain": [
+        "${ price } per domein"
+      ],
+      "${ price } per user": [
+        "${ price } per gebruiker"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } plaats voor schrijfassistent",
+        "${ seats } plaatsen voor schrijfassistent"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "Apps dropdown": {
@@ -149,17 +312,242 @@
         "${ BRAND_NAME }-applicaties"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "Til e-mailproductiviteit naar een hoger niveau. Laat ${ BRAND_NAME } Scribe u helpen bij het schrijven, beantwoorden en proeflezen van uw e-mails."
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } opslagruimte"
+      ],
+      "1 user": [
+        "1 gebruiker"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "Meer dan 3.000 servers in meer dan 65 landen"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "Access content worldwide": [
+        "Wereldwijd toegang tot content"
+      ],
+      "Ad-blocker and malware protection": [
+        "Advertentieblokkering en bescherming tegen malware"
+      ],
+      "Extended version history": [
+        "Uitgebreide versiegeschiedenis bekijken"
+      ],
+      "High speed streaming": [
+        "Streamen met hoge snelheid"
+      ],
+      "Premium Password Manager": [
+        "Premium wachtwoordmanager"
+      ]
+    },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } maand",
+        "de eerste ${ n } maanden"
+      ],
+      "the first month": [
+        "de eerste maand"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ discountedPrice } is ${ discountedMonths } maanden geldig. Daarna wordt uw abonnement automatisch vernieuwd tegen de gereduceerde prijs van ${ nextPrice } voor ${ nextMonths }. U kunt opzeggen wanneer u wilt."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ discountedPrice } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ nextPrice } per maand. U kunt opzeggen wanneer u wilt."
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Bekijk geblokkeerde inhoud en surf privé. Met meer dan 3.000 servers in meer dan 65 landen, de hoogste VPN-snelheid, toegang tot wereldwijde streamingdiensten, malware- en advertentieblokkering, snelle BitTorrent-downloads en meer."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+, Prime Video en meer, waar u maar wilt."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Omzeil plaatselijke internetblokkades en censuur met ons wereldwijde serversnetwerk."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadres, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer.",
+        "Ondersteuning voor ${ domains } aangepaste e-maildomeinen, ${ addresses } e-mailadressen, een ongelimiteerd aantal hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beveilig uw e-mails en plan met end-to-end versleuteling. Inclusief ondersteuning voor aangepaste e-maildomeinen, 15 e-mailadressen, een onbeperkt aantal hide-my-email-aliassen, agenda delen en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestanden delen en meer."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Het speciaal ontworpen NetShield beschermt uw apparaten en versnelt uw browsen door advertenties, trackers en malware te blokkeren."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Opslagruimte wordt gedeeld binnen alle ${ BRAND_NAME }-apps."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Bewaar tot 200 versies van elk bestand tot wel 10 jaar."
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Hernieuwt automatisch aan ${ renewPrice }, voor ${ renewalLength }"
+      ]
+    },
+    "Billing cycle option": {
+      "1 month": [
+        "1 maand"
+      ],
+      "12 months": [
+        "12 maanden"
+      ],
+      "24 months": [
+        "24 maanden"
+      ],
+      "Annually": [
+        "Jaarlijks"
+      ],
+      "Monthly": [
+        "Maandelijks"
+      ],
+      "Two-year": [
+        "Tweejaarlijks"
+      ]
+    },
+    "bitcoin buy": {
+      "${ WALLET_APP_NAME } has partnered with ${ rampLink } and ${ banxaLink }, two registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
+        "${ WALLET_APP_NAME } heeft samengewerkt met ${ rampLink } en ${ banxaLink }, twee geregistreerde crypto-activa diensten, om de aankoop van BTC te vergemakkelijken. Vul uw regio in om de beschikbare aanbieders en betalingsmethoden te zien."
+      ],
+      "Amount": [
+        "Bedrag"
+      ],
+      "Bank transfer": [
+        "Bankoverschrijving"
+      ],
+      "Binance": [
+        "Binance"
+      ],
+      "Buy": [
+        "Kopen"
+      ],
+      "Choose a country": [
+        "Kies een land"
+      ],
+      "Confirm": [
+        "Bevestigen"
+      ],
+      "Continue": [
+        "Ga verder"
+      ],
+      "Continue with ${ selectedPaymentProvider }": [
+        "Ga verder met ${ selectedPaymentProvider }"
+      ],
+      "Credit card": [
+        "Creditcard"
+      ],
+      "Finally, you will complete the Buy process on the provider’s site and any purchased BTC will be sent to a BTC address generated from your wallet account.": [
+        "U voltooit het koopproces op de website van de leverancier en elk aangekochte BTC zal worden verzonden naar een BTC-adres dat is gegenereerd vanuit uw portemonneeaccount."
+      ],
+      "Instant payment": [
+        "Directe betaling"
+      ],
+      "Location": [
+        "Locatie"
+      ],
+      "Pay with": [
+        "Betaald met"
+      ],
+      "Recipients": [
+        "Ontvangers"
+      ],
+      "Review": [
+        "Overzicht"
+      ],
+      "Send": [
+        "Verzenden"
+      ],
+      "You can also buy BTC on exchanges like ${ binanceLink }, ${ coinbaseLink }, or ${ krakenLink } and then send the BTC to your Receive address.": [
+        "U kunt ook BTC kopen op beurzen zoals ${ binanceLink }, ${ coinbaseLink } of ${ krakenLink } en vervolgens de BTC naar uw ontvangstadres sturen."
+      ],
+      "You pay": [
+        "U betaalt"
+      ],
+      "You receive": [
+        "U ontvangt"
+      ],
+      "Your location": [
+        "Uw locatie"
+      ]
+    },
+    "Bitcoin buy": {
+      "${ quote.provider } checkout": [
+        "${ quote.provider } afrekenen"
+      ],
+      "We could not find any quote for this currency/country pair": [
+        "We konden geen offerte vinden voor deze valuta/land combinatie"
+      ]
+    },
     "Bitcoin Script Type": {
       "Legacy": [
         "Legacy"
+      ],
+      "Legacy Segwit": [
+        "Legacy Segwit"
       ],
       "Native Segwit": [
         "Native Segwit"
       ]
     },
+    "Bitcoin Script Type Description": {
+      "Latest format with enhanced privacy but not as widely adopted. Address starts with \"bc1p\".": [
+        "Nieuwste formaat met verbeterde privacy, maar niet zo breed aangenomen. Adres begint met \"bc1p\"."
+      ],
+      "Lower fees and compatible with older systems. Address starts with \"3\".": [
+        "Lagere kosten en compatibel met oudere systemen. Adres begint met \"3\"."
+      ],
+      "Original format. Most widely supported but higher fees. Address starts with \"1\".": [
+        "Oorspronkelijke indeling. Het meest ondersteunde, maar hogere kosten. Adres begint met \"1\"."
+      ],
+      "Recommended format with lowest fees. Address starts with \"bc1q\".": [
+        "Aanbevolen formaat met laagste kosten. Adres begint met \"bc1q\"."
+      ]
+    },
     "Bitcoin send": {
+      "Add recipient": [
+        "Voeg ontvanger toe"
+      ],
+      "Could not send invitation": [
+        "Kan de uitnodiging niet verzenden"
+      ],
+      "Could not send invitation to the recipient": [
+        "Kan de uitnodiging naar de ontvanger niet verzenden"
+      ],
+      "Invitation sent": [
+        "Uitnodiging verzonden"
+      ],
+      "Invitation sent to the recipient": [
+        "Uitnodiging verzonden naar de ontvanger"
+      ],
       "No wallet found": [
         "Geen portemonnee gevonden"
+      ],
+      "Open QR code reader": [
+        "Open QR-codelezer"
       ],
       "Recipient email or BTC address": [
         "E-mailadres of BTC-adres van ontvanger"
@@ -169,6 +557,9 @@
       ],
       "Send invite to ${ email }": [
         "Uitnodiging versturen naar ${ email }"
+      ],
+      "This email is not using a ${ WALLET_APP_NAME } yet. Invite them to create their own wallet for easier transactions.": [
+        "Deze e-mail gebruikt nog geen ${ WALLET_APP_NAME }. Nodig ze uit om hun eigen portemonnee te creëren voor gemakkelijkere transacties."
       ],
       "This user may not have a ${ WALLET_APP_NAME } integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.": [
         "Deze gebruiker heeft mogelijk ${ WALLET_APP_NAME } nog niet in diens e-mail geïntegreerd. Stuur de gebruiker een e-mail om deze te vertellen dat u bitcoin wilt versturen."
@@ -180,6 +571,9 @@
     "Bitcoin Unit": {
       "BTC": [
         "BTC"
+      ],
+      "mBTC": [
+        "mBTC"
       ],
       "Sats": [
         "Sats"
@@ -208,6 +602,9 @@
       ],
       "Custom domain problem": [
         "Probleem met eigen domeinnaam"
+      ],
+      "Docs problem": [
+        "Probleem met Docs"
       ],
       "Drive problem": [
         "Probleem met Drive"
@@ -264,12 +661,84 @@
         "Probleem met toegang tot website"
       ]
     },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
+      ],
+      "Total for ${ n } month": [
+        "Totaal voor ${ n } maand",
+        "Totaal voor ${ n } maanden"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Inklappen"
       ],
       "Expand": [
         "Uitklappen"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "wortel"
+      ],
+      "cerise": [
+        "kers"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "koper"
+      ],
+      "enzian": [
+        "gentiaan"
+      ],
+      "fern": [
+        "varen"
+      ],
+      "forest": [
+        "bos"
+      ],
+      "ocean": [
+        "oceaan"
+      ],
+      "olive": [
+        "olijf"
+      ],
+      "pacific": [
+        "stille oceaan"
+      ],
+      "pickle": [
+        "augurk"
+      ],
+      "pine": [
+        "den"
+      ],
+      "pink": [
+        "roze"
+      ],
+      "plum": [
+        "pruim"
+      ],
+      "purple": [
+        "paars"
+      ],
+      "reef": [
+        "rif"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "leisteenblauw"
+      ],
+      "soil": [
+        "aarde"
+      ],
+      "strawberry": [
+        "aardbei"
       ]
     },
     "Country name": {
@@ -375,6 +844,9 @@
       "British Indian Ocean Territory": [
         "Brits Indische Oceaan Territorium"
       ],
+      "British Virgin Islands": [
+        "Britse Maagdeneilanden"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -429,6 +901,9 @@
       "Congo": [
         "Congo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Congo (Democratische Republiek)"
+      ],
       "Congo, Democratic Republic of the": [
         "Congo, Democratische Republiek"
       ],
@@ -468,6 +943,9 @@
       "Dominican Republic": [
         "Dominicaanse Republiek"
       ],
+      "East Timor": [
+        "Oost-Timor"
+      ],
       "Ecuador": [
         "Ecuador"
       ],
@@ -494,6 +972,9 @@
       ],
       "Falkland Islands": [
         "Falklandeilanden"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Falkland Eilanden (Malvinas)"
       ],
       "Faroe Islands": [
         "Faeröer Eilanden"
@@ -606,6 +1087,9 @@
       "Ireland": [
         "Ierland"
       ],
+      "Islamic Republic of Iran": [
+        "Islamitische Republiek Iran"
+      ],
       "Isle of Man": [
         "Isle of Man"
       ],
@@ -636,6 +1120,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Korea (Democratische Volksrepubliek van)"
+      ],
+      "Korea (Republic of)": [
+        "Korea (Republiek van)"
+      ],
       "Kosovo": [
         "Kosovo"
       ],
@@ -644,6 +1134,9 @@
       ],
       "Kyrgyzstan": [
         "Kirgizië"
+      ],
+      "Lao People's Democratic Republic": [
+        "Lao Democratische Volksrepubliek"
       ],
       "Laos": [
         "Laos"
@@ -663,6 +1156,9 @@
       "Libya": [
         "Libië"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libië"
+      ],
       "Liechtenstein": [
         "Liechtenstein"
       ],
@@ -674,6 +1170,9 @@
       ],
       "Macao": [
         "Macau"
+      ],
+      "Macedonia": [
+        "Noord-Macedonië"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -927,6 +1426,9 @@
       "Svalbard and Jan Mayen": [
         "Spitsbergen en Jan Mayen"
       ],
+      "Swaziland": [
+        "Swaziland"
+      ],
       "Sweden": [
         "Zweden"
       ],
@@ -936,6 +1438,9 @@
       "Syria": [
         "Syrië"
       ],
+      "Syrian Arab Republic": [
+        "Syrische Arabische Republiek"
+      ],
       "Taiwan": [
         "Taiwan"
       ],
@@ -944,6 +1449,9 @@
       ],
       "Tanzania": [
         "Tanzania"
+      ],
+      "Tanzania, United Republic of": [
+        "Tanzania, Verenigde Republiek van"
       ],
       "Thailand": [
         "Thailand"
@@ -1039,6 +1547,11 @@
         "Aland Eilanden"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Gebaseerd op uw tijdzone"
+      ]
+    },
     "Currency select": {
       "Others": [
         "Andere"
@@ -1047,12 +1560,165 @@
         "Populair"
       ]
     },
+    "Cycle": {
+      "/month": [
+        "/maand"
+      ],
+      "/user per month": [
+        "/gebruiker per maand"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Onbekend"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Onbetaalde factuur"
       ]
     },
+    "Discover": {
+      "${ WALLET_APP_NAME } launch": [
+        "${ WALLET_APP_NAME } lancering"
+      ],
+      "${ WALLET_APP_NAME } security model": [
+        "${ WALLET_APP_NAME } beveiligingsmodel"
+      ],
+      "Bitcoin guide for newcomers": [
+        "Bitcoin-gids voor nieuwkomers"
+      ],
+      "Bitcoin is an innovative payment network that leverages peer-to-peer transactions to remove the need for a central bank. Bitcoin has revolutionized the core principles of value exchange by showing that a network of fully independent nodes can operate payments in a trustless and secure way.": [
+        "Bitcoin is een innovatief betalingsnetwerk dat gebruikmaakt van peer-to-peertransacties om de noodzaak van een centrale bank te verwijderen. Bitcoin heeft de basisprincipes van waarde-uitwisseling revolutionair veranderd door te tonen dat een netwerk van volledig onafhankelijke knooppunten betalingen kan uitvoeren op een manier die geen vertrouwen vereist."
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via Email"
+      ],
+      "Bitcoin via Email is a unique feature in ${ WALLET_APP_NAME } that makes sending bitcoin as easy as sending an email. Any ${ WALLET_APP_NAME } user can frictionlessly receive bitcoin with their email.": [
+        "Bitcoin via e-mail is een unieke functie in ${ WALLET_APP_NAME } die het versturen van bitcoin zo eenvoudig maakt als het versturen van een e-mail. Elke gebruiker van ${ WALLET_APP_NAME } kan probleemloos bitcoin ontvangen met zijn e-mail."
+      ],
+      "Discover": [
+        "Ontdek"
+      ],
+      "How to protect your ${ WALLET_APP_NAME }": [
+        "Hoe uw ${ WALLET_APP_NAME } te beschermen"
+      ],
+      "We explain why ${ WALLET_APP_NAME } was created and what benefits it can bring to the ${ BRAND_NAME } community.": [
+        "We leggen uit waarom ${ WALLET_APP_NAME } is gemaakt en welke voordelen het kan bieden aan de ${ BRAND_NAME }-gemeenschap."
+      ],
+      "We review how to secure your wallets and Bitcoin, including important recovery methods in case you ever forget your password.": [
+        "We bekijken hoe u uw portemonnees en Bitcoin kunt beveiligen, inclusief belangrijke herstelmethoden, voor het geval u uw wachtwoord ooit vergeet."
+      ],
+      "We review some important history and features of Bitcoin for newcomers. We also look at how Bitcoin enables financial sovereignty and freedom. Finally, we explore the challenges facing Bitcoin and its future potential.": [
+        "We bekijken enkele belangrijke geschiedenissen en kenmerken van Bitcoin voor nieuwkomers. We kijken ook naar hoe Bitcoin financiële soevereiniteit en vrijheid mogelijk maakt. Ten slotte verkennen we de uitdagingen waarmee Bitcoin wordt geconfronteerd en de toekomstige potentieel."
+      ],
+      "We review the key features and security architecture that make ${ WALLET_APP_NAME } a private and secure wallet that is as easy to use as email.": [
+        "We bekijken de belangrijkste kenmerken en beveiligingsarchitectuur die ${ WALLET_APP_NAME } een privé en veilig portemonnee maken die net zo gemakkelijk te gebruiken is als e-mail."
+      ],
+      "What is Bitcoin?": [
+        "Wat is Bitcoin?"
+      ]
+    },
+    "Downgrade account reason": {
+      "Bugs or quality issue": [
+        "Bugs of kwaliteitsproblemen"
+      ],
+      "I do not wish to share": [
+        "Ik wens dit niet te delen"
+      ],
+      "I found a cheaper VPN": [
+        "Ik vond een goedkopere VPN"
+      ],
+      "I found a VPN with better features": [
+        "Ik heb een VPN gevonden met betere functies"
+      ],
+      "I have not managed to connect": [
+        "Ik kon niet verbinden"
+      ],
+      "I only needed a VPN short-term": [
+        "Ik had enkel een VPN nodig voor korte termijn"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "Ik gebruik een ander ${ BRAND_NAME }-account"
+      ],
+      "It doesn't do what I need": [
+        "Het doet niet wat ik nodig heb"
+      ],
+      "Missing feature(s)": [
+        "Ontbrekend(e) kenmerk(en)"
+      ],
+      "Other reason (please comment)": [
+        "Andere reden (graag verduidelijken)"
+      ],
+      "Subscription is too expensive": [
+        "Abonnement is te duur"
+      ],
+      "Switching to a different provider": [
+        "Overstappen naar een andere aanbieder"
+      ],
+      "Temporary need, may come back in the future": [
+        "Tijdelijke behoefte, kan in de toekomst terugkomen"
+      ],
+      "The VPN is too slow": [
+        "De VPN is te traag"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Help ons verbeteren"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Uitgebreide versiegeschiedenis bekijken"
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Betaalde ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- en ${ PASS_SHORT_APP_NAME }-functies"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Bevat versiegeschiedenis in ${ DRIVE_SHORT_APP_NAME }, toegang tot duizenden snelle ${ VPN_SHORT_APP_NAME } servers, delen in ${ PASS_SHORT_APP_NAME } en meer."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "Early access to new apps and features": [
+        "Vroegtijdige toegang nieuwe applicaties functies"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Vroegtijdige toegang tot de ${ MAIL_APP_NAME }-desktopapp"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Betaalde ${ MAIL_SHORT_APP_NAME }- en ${ CALENDAR_APP_NAME }-functies"
+      ]
+    },
     "Error": {
+      "Amount above the maximum.": [
+        "Bedrag boven het maximum."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Bedrag onder minimum (${ minimumAmount })."
+      ],
+      "Bitcoin via Email to self is not supported": [
+        "Bitcoin via e-mail naar uzelf wordt niet ondersteund"
+      ],
+      "Checkout expired, please try again": [
+        "Checkout is verlopen, probeer het opnieuw"
+      ],
+      "Contact could not be saved": [
+        "Contact kan niet opgeslagen worden"
+      ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
@@ -1062,11 +1728,29 @@
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
+      "Error connecting to the Bitcoin API.": [
+        "Fout bij het verbinden met de Bitcoin API."
+      ],
       "Incorrect username": [
         "Onjuiste gebruikersnaam"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Invoer is geen geldig e-mailadres of bitcoin-adres"
+      ],
+      "Invalid ${ name } code": [
+        "Ongeldig ${ name } code"
+      ],
+      "Invalid card number": [
+        "Ongeldig creditcardnummer"
+      ],
+      "Invalid code": [
+        "Ongeldige code"
+      ],
+      "Invalid expiration date": [
+        "Ongeldige vervaldatum"
+      ],
+      "Invalid postal code": [
+        "Ongeldige postcode"
       ],
       "Invalid verification code": [
         "Ongeldige verificatiecode"
@@ -1077,14 +1761,41 @@
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
+      "Payment process canceled": [
+        "Betalingsverzoek geannuleerd"
+      ],
+      "Payment process consumed": [
+        "Betalingsverzoek verwerkt"
+      ],
+      "Payment process failed": [
+        "Betalingsverzoek geannuleerd"
+      ],
+      "Payment process not supported": [
+        "Betalingsproces niet ondersteund"
+      ],
+      "Process aborted": [
+        "Proces afgebroken"
+      ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
       "Signature verification failed": [
         "Controle van handtekening mislukt"
       ],
+      "Tab closed": [
+        "Tab gesloten"
+      ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
+      ],
+      "The minimum amount of credit that can be added is ${ price }": [
+        "Het minimumbedrag dat kan worden toegevoegd is: ${ price }"
+      ],
+      "The minimum payment we accept is ${ price }": [
+        "De minimale betaling die we accepteren is ${ price }"
+      ],
+      "The passphrases do not match": [
+        "De wachtwoordzinnen komen niet overeen"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dit veld overschrijdt het maximum ${ maximumLength } tekens."
@@ -1100,6 +1811,9 @@
       ],
       "Unknown error": [
         "Onbekende fout"
+      ],
+      "Unknown payment token status": [
+        "Onbekende betalingstoken status"
       ],
       "Username must begin with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer beginnen"
@@ -1137,6 +1851,64 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Geen afbeelding geselecteerd"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3 TB opslagruimte"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Opslagruimte wordt gedeeld tussen familieleden op ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }."
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "Tot 6 gebruikers"
+      ]
+    },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Gezinsgroep niet herkend. Probeer het opnieuw."
+      ],
+      "Organization not recognized. Try again.": [
+        "Organisatie niet herkend. Probeer het opnieuw."
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "Voer de groepsnaam van het gezin in om te bevestigen"
+      ],
+      "Enter organization name to confirm": [
+        "Voer de organisatienaam in om te bevestigen"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Hiermee worden alle subgebruikers, accounts en gegevens die zijn gekoppeld aan uw organisatie, verwijderd."
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "Hiermee worden alle premium functies van ${ BRAND_NAME } verwijderd voor elk gezinslid."
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Delete family group?": [
+        "Gezinsgroep verwijderen?"
+      ],
+      "Delete organization?": [
+        "Organisatie verwijderen?"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Met 2700 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 90 e-mailadressen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
       ]
     },
     "fido2: Error": {
@@ -1222,6 +1994,23 @@
         "Zeer klein"
       ]
     },
+    "Gateway disclaimer": {
+      "Confirm": [
+        "Bevestigen"
+      ],
+      "Disclaimer": [
+        "Disclaimer"
+      ],
+      "I have read and agree to the disclaimer": [
+        "Ik heb de disclaimer gelezen en ga akkoord"
+      ],
+      "Not now": [
+        "Niet nu"
+      ],
+      "You are now leaving ${ WALLET_APP_NAME } for ${ provider } (${ websiteLink }). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${ provider }, a separate third-party platform. By proceeding and procuring services from ${ provider }, you acknowledge that you have read and agreed to ${ provider }'s Terms of Service (${ termOfUseLink }) and Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }). For any questions related to ${ provider }'s services, please contact ${ provider } at ${ supportEmailLink }": [
+        "U verlaat nu ${ WALLET_APP_NAME } voor ${ provider } (${ websiteLink }). Diensten met betrekking tot kaartbetalingen, bankoverschrijvingen en andere fiattransacties worden geleverd door ${ provider }, een afzonderlijk platform van derden. Door door te gaan en diensten van ${ provider } aan te vragen, erkent u dat u de Servicevoorwaarden (${ termOfUseLink }) en het Privacy- en Cookiebeleid (${ privacyAndCookiesPolicyLink }) van ${ provider } heeft gelezen en geaccepteerd. Voor vragen met betrekking tot de diensten van ${ provider }, kunt u ${ provider } bereiken via ${ supportEmailLink }"
+      ]
+    },
     "Group": {
       "Account": [
         "Account"
@@ -1254,18 +2043,76 @@
       ]
     },
     "Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
+      ],
+      "${ storage } storage": [
+        "${ storage } opslag"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
       ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /maand)"
+      ],
+      "+${ bonusSpace } bonus storage": [
+        "+${ bonusSpace } bonus opslag"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
+        "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
+      ],
+      "30-day money-back guarantee.": [
+        "30-dagen geld terug garantie."
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Een telefoonnummer kan gebruikt worden ter verificatie van één ${ BRAND_NAME } account"
+      ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
+      ],
+      "Account size": [
+        "Accountgrootte"
+      ],
+      "Account successfully updated": [
+        "Account succesvol bijgewerkt"
+      ],
+      "Additional options": [
+        "Aanvullende opties"
+      ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey logo"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Bedrag boven maximum (${ amount })."
+      ],
+      "Amount below minimum (${ amount }).": [
+        "Bedrag onder minimum (${ amount })."
       ],
       "Attention required": [
         "Aandacht vereist"
       ],
+      "Awaiting transaction": [
+        "Transactie wordt afgewacht"
+      ],
+      "Balance from your previous subscription": [
+        "Balans van uw vorige abonnement"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
+      ],
+      "Billing cycle: ${ text }": [
+        "Facturatiefrequentie: ${ text }"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "Door het downgraden naar een gratis abonnement verliest u deze voordelen, zelfs als u in de toekomst opnieuw upgrade."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
@@ -1273,11 +2120,48 @@
       "Country code": [
         "Landcode"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Maak een beveiligde cloud voor ${ n } lid",
+        "Maak een beveiligde cloud voor ${ n } leden"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Tegoed voor het ongebruikte deel van uw vorig abonnement"
+      ],
+      "Current plan": [
+        "Huidig abonnement"
+      ],
+      "Custom email domains": [
+        "Aangepaste e-maildomeinen"
+      ],
+      "Dedicated servers": [
+        "Dedicated servers"
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy logo"
+      ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Ziet u niets? Denk eraan om het blokkeren van pop-ups uit te schakelen."
+      ],
+      "Downgrade": [
+        "Downgraden"
+      ],
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
+      ],
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
+      ],
+      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
+        "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via ${ BRAND_NAME }. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
       ],
       "Enter the code from your authenticator app": [
         "Voer de code van uw verificatie-app in"
@@ -1291,14 +2175,38 @@
       "Enter your own password (as organization admin).": [
         "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
       ],
+      "Expired": [
+        "Verlopen"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
+      ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Als u opzegt, zal uw ${ planTitle }-abonnement niet verlengen wanneer het verloopt op ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, controleer dan uw spammap."
       ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "Als u doorgaat met de downgrade, verliest u de toegang tot betaalde functies van ${ MAIL_APP_NAME }, waaronder extra opslag en filters."
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ VPN_APP_NAME }."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
+      ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
+      ],
+      "JCB logo": [
+        "JCB-logo"
       ],
       "Learn more": [
         "Meer informatie"
@@ -1312,11 +2220,44 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Laden van kalender, gelieve te wachten. U wordt automatisch doorverwezen naar onze agendaplanner Calendly in een nieuw tabblad."
       ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode logo"
+      ],
+      "MM/YY": [
+        "MM/JJ"
+      ],
       "New": [
         "Nieuw"
       ],
+      "No payment is required at this time.": [
+        "Er is op dit moment geen betaling vereist."
+      ],
       "No results found": [
         "Geen resultaten"
+      ],
+      "Number of dedicated servers in the organization": [
+        "Aantal toegewijde servers in uw organisatie"
+      ],
+      "Organization size": [
+        "Grootte van de organisatie"
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        "Betalingen worden beschermd met TLS-encryptie en Zwitserse privacywetten."
+      ],
+      "Please authenticate your card in the verification tab.": [
+        "Authenticeer uw kaart in het verificatietabblad."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Authenticeer uw betaling in het verificatietabblad."
+      ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "Probeer opnieuw met een andere betalingsmethode, of neem contact op met uw bank."
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
+      ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "De prijs is inclusief alle toepasselijke cyclusgebonden kortingen en geldige coupons die in uw account zijn opgeslagen."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
@@ -1330,11 +2271,68 @@
       "Session timed out": [
         "Sessie verlopen"
       ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
+      ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
+      ],
+      "Subscription auto-renews every month.": [
+        "Abonnement vernieuwt automatisch elke maand."
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Stuur ${ btcAmountBold } naar het onderstaande adres om uw betaling te voltooien."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
+      "Total email addresses": [
+        "Totaal e-mailadressen"
+      ],
+      "Total storage": [
+        "Totale opslagruimte"
+      ],
+      "Total supported domains": [
+        "Totaal ondersteunde domeinen"
+      ],
+      "Total VPN connections": [
+        "Totale VPN-verbindingen"
+      ],
+      "Users": [
+        "Gebruikers"
+      ],
+      "Verification may take a few minutes.": [
+        "Verificatie kan enkele minuten duren."
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
+      ],
       "Version number successfully copied to clipboard": [
         "Versienummer succesvol gekopieerd naar klembord"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure logo"
+      ],
+      "We couldn’t process your payment.": [
+        "We konden uw betaling niet verwerken."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "We moeten uw betalingsmethode authenticeren met uw bank."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "We moeten uw betaling authenticeren met uw bank."
+      ],
+      "We use 3-D Secure to protect your payments": [
+        "We gebruiken 3-D Secure om uw betalingen te beschermen"
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
       ],
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
@@ -1348,8 +2346,46 @@
       "Would you like to receive a new verification code?": [
         "Wil u graag een nieuwe verificatiecode ontvangen?"
       ],
+      "Writing assistant": [
+        "Schrijfassistent"
+      ],
+      "You already have a free account": [
+        "U heeft al een gratis account"
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "U gebruikt meer opslag dan is inbegrepen in een ${ downgradedPlanName } abonnement. Wis of verwijder gegevens om te kunnen downgraden."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert."
+      ],
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "Je hebt een trial ${ planTitle } abonnement. Er is geen betaling vereist op dit moment. Uw abonnement wordt automatisch verlengd aan het einde van de proefperiode."
+      ],
+      "You may be redirected to your bank’s website.": [
+        "U wordt mogelijk doorverwezen naar de website van uw bank."
+      ],
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "U verliest toegang tot ${ planTitle } functies op deze datum."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
@@ -1357,16 +2393,46 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME }-account is momenteel geblokkeerd. E-mails worden niet langer geleverd in uw inbox. Uw gedeelde Drive-links zijn niet langer actief en u kan geen nieuwe bestanden uploaden. Om uw account te blijven gebruiken dient u de achterstallige facturen te betalen."
       ],
+      "Your account will be updated once the payment is cleared.": [
+        "Uw account zal worden bijgewerkt zodra de betaling is gewist."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Uw volgende facturatiedatum is ${ renewalTime }."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ]
     },
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        "Neem contact met ons op via ${ email } voor instructies over hoe we ons met contant geld kunnen betalen."
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "U kunt het vervallen voorkomen door uw abonnement opnieuw te activeren"
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Alleen bekijken"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
+      ],
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -1374,11 +2440,35 @@
       "Authenticator app": [
         "Authenticator-app"
       ],
+      "Billing address": [
+        "Facturatie adres"
+      ],
+      "Billing cycle": [
+        "Facturatieperiode"
+      ],
       "Browser": [
         "Browser"
       ],
       "Browser version": [
         "Browserversie"
+      ],
+      "BTC address": [
+        "BTC-adres"
+      ],
+      "BTC amount": [
+        "BTC-bedrag"
+      ],
+      "Card details": [
+        "Kaart details"
+      ],
+      "Card holder": [
+        "Kaarthouder"
+      ],
+      "Card number": [
+        "Kaartnummer"
+      ],
+      "Cash": [
+        "Contant"
       ],
       "Category": [
         "Categorie"
@@ -1389,6 +2479,18 @@
       "Copy": [
         "Kopiëren"
       ],
+      "Could you please let us know which provider?": [
+        "Kunt u aangeven om welke provider het gaat?"
+      ],
+      "Could you please specify which streaming service?": [
+        "Kunt u aangeven om welke streamingservice het gaat?"
+      ],
+      "Could you please specify?": [
+        "Kunt u nader specificeren?"
+      ],
+      "Country": [
+        "Land"
+      ],
       "Currency": [
         "Valuta"
       ],
@@ -1398,8 +2500,17 @@
       "Delete recovery-related information.": [
         "Verwijder herstel-gerelateerde informatie."
       ],
+      "Do you have any suggestions for our team?": [
+        "Heeft u suggesties voor ons team?"
+      ],
       "Email address": [
         "E-mailadres"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Verloopdatum (${ patternExpiration })"
+      ],
+      "Expires": [
+        "Verloopt"
       ],
       "Hide password": [
         "Wachtwoord verbergen"
@@ -1416,17 +2527,47 @@
       "Operating system version": [
         "Versie van besturingssysteem"
       ],
+      "Optional": [
+        "Optioneel"
+      ],
       "Password": [
         "Wachtwoord"
+      ],
+      "Payer": [
+        "Betaler"
+      ],
+      "Payment details": [
+        "Betalingsgegevens"
+      ],
+      "Payment method": [
+        "Betalingsmethode"
       ],
       "Phone number": [
         "Telefoonnummer"
       ],
+      "Postal code": [
+        "Postcode"
+      ],
+      "Proration": [
+        "Verrekening"
+      ],
       "Reveal password": [
         "Wachtwoord tonen"
       ],
+      "Security code (${ codeName })": [
+        "Beveiligingscode (${ codeName })"
+      ],
+      "Start date": [
+        "Begindatum"
+      ],
+      "Subscription options": [
+        "Abonnementsopties"
+      ],
       "System information": [
         "Systeeminformatie"
+      ],
+      "VAT": [
+        "BTW"
       ],
       "Verification code": [
         "Verificatiecode"
@@ -1434,13 +2575,30 @@
       "What happened?": [
         "Wat is er gebeurd?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "Wat is uw belangrijkste reden om te annuleren of te downgraden?"
+      ],
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
       ]
     },
+    "Label, credit card": {
+      "ZIP code": [
+        "Postcode"
+      ]
+    },
     "Link": {
+      "Add a gift code": [
+        "Voeg een geschenkcode toe"
+      ],
       "clearing your browser cache": [
         "browsercache legen"
+      ],
+      "click here": [
+        "klik hier"
+      ],
+      "How to pay with Bitcoin?": [
+        "Hoe betalen met Bitcoin?"
       ],
       "Learn more": [
         "Meer informatie"
@@ -1455,14 +2613,938 @@
         "Wat is dit?"
       ]
     },
+    "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "Voeg ${ BRAND_NAME } Scribe schrijfassistent toe"
+      ],
+      "for ${ price }": [
+        "voor ${ price }"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME }-desktopapp"
+      ],
+      "10 email addresses": [
+        "10 e-mailadressen"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Spam en Prullenbak automatisch verwijderen"
+      ],
+      "Custom schedule send and snooze times": [
+        "Aangepaste planning en snooze-tijden voor verzenden"
+      ],
+      "Support for 1 custom email domain": [
+        "Ondersteuning voor 1 aangepast e-maildomein"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Onbeperkt aantal mappen, labels en filters"
+      ]
+    },
+    "new_plans": {
+      "Highest VPN speed": [
+        "Hoogste VPN-snelheid"
+      ],
+      "Keep your inbox organized with folders": [
+        "Houd uw inbox overzichtelijk met mappen"
+      ],
+      "Medium VPN speed": [
+        "Gemiddelde VPN-snelheid"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Account verwijderen"
+      ],
+      "Downgrade account": [
+        "Account downgraden"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Gebruik ${ BRAND_NAME } gratis"
+      ],
+      "Get ${ planName }": [
+        "Kies ${ planName }"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } behouden"
+      ],
+      "Keep account": [
+        "Account behouden"
+      ],
+      "Switch plan": [
+        "Van abonnement wisselen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Schrijfassistent"
+      ],
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
+      ],
+      "${ n } custom email domain": [
+        "${ n } aangepast e-maildomein",
+        "${ n } aangepaste e-maildomeinen"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadres",
+        "${ n } e-mailadressen/aliassen"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mailadres per gebruiker",
+        "${ n } e-mailadressen per gebruiker"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filters"
+      ],
+      "${ n } folder": [
+        "${ n } map",
+        "${ n } mappen"
+      ],
+      "${ n } folder and label": [
+        "${ n } map en label",
+        "${ n } mappen en labels"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email-alias",
+        "${ n } hide-my-email-aliassen"
+      ],
+      "${ n } label": [
+        "${ n } label",
+        "${ n } labels"
+      ],
+      "${ n } message per day": [
+        "${ n } bericht per dag",
+        "${ n } berichten per dag"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } heeft een ${ PASS_SHORT_APP_NAME } kluis gedeeld per gebruiker",
+        "${ n } heeft ${ PASS_SHORT_APP_NAME } kluizen gedeeld per gebruiker"
+      ],
+      "${ n } user": [
+        "${ n } gebruiker",
+        "Tot ${ n } gebruikers"
+      ],
+      "${ n } vault": [
+        "${ n } kluis",
+        "${ n } kluizen"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ options }-day file version history": [
+        "Bestandsversiegeschiedenis van ${ options } dagen",
+        "Bestandsversiegeschiedenis van ${ options } dagen"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
+        "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } met onbeperkte hide-my-email-aliassen"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } programma"
+      ],
+      "${ size } attachment size": [
+        "${ size } bijlagegrootte"
+      ],
+      "${ size } of secure storage per user": [
+        "${ size } veilige opslag per gebruiker"
+      ],
+      "${ size } storage": [
+        "${ size } opslagruimte"
+      ],
+      "1 user": [
+        "1 gebruiker"
+      ],
+      "24/7 account management support": [
+        "24/7 ondersteuning voor accountbeheer"
+      ],
+      "99.95% SLA": [
+        "99,95% SLA"
+      ],
+      "Ad-blocker and malware protection": [
+        "Advertentieblokkering en bescherming tegen malware"
+      ],
+      "Admin console": [
+        "Beheerdersconsole"
+      ],
+      "Administration Panel": [
+        "Beheerderspaneel"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Spam en Prullenbak automatisch verwijderen"
+      ],
+      "Auto-reply": [
+        "Automatisch beantwoorden"
+      ],
+      "Autofill credit cards (coming soon)": [
+        "Autofill creditcards (weldra klaar)"
+      ],
+      "Automatic email forwarding": [
+        "Automatisch e-mail doorsturen"
+      ],
+      "Available on all platforms": [
+        "Beschikbaar op alle platformen"
+      ],
+      "Calendar sharing": [
+        "Agenda-delen"
+      ],
+      "Catch-all": [
+        "Catch-all"
+      ],
+      "Centralized billing": [
+        "Gecentraliseerde facturatie"
+      ],
+      "Collaborate and share large files": [
+        "Samenwerken en grote bestanden delen"
+      ],
+      "Contact groups": [
+        "Contactgroepen"
+      ],
+      "Contact groups management": [
+        "Beheer van contactgroepen"
+      ],
+      "Custom domains for email aliases": [
+        "Aangepaste domeinen voor e-mailalliassen"
+      ],
+      "Custom email domains": [
+        "Aangepaste e-maildomeinen"
+      ],
+      "Custom fields": [
+        "Aangepaste velden"
+      ],
+      "Custom workspace branding": [
+        "Aangepaste workspace branding"
+      ],
+      "Data breach monitoring": [
+        "Monitoring van datalekken"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Monitoring van datalekken (binnenkort beschikbaar)"
+      ],
+      "Desktop app": [
+        "Desktop-app"
+      ],
+      "DNS leak prevention": [
+        "DNS-lekbescherming"
+      ],
+      "Double hop": [
+        "Dubbel hop"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch-importhulp"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Ondersteuning van e-mailclient (via IMAP/SMTP)"
+      ],
+      "Enables HIPAA compliance": [
+        "HIPAA-naleving mogelijk"
+      ],
+      "Encrypted contact details": [
+        "Versleutelde contactpersoonsgegevens"
+      ],
+      "Encrypted VPN servers": [
+        "Versleutelde VPN-servers"
+      ],
+      "End-to-end encryption": [
+        "End-to-end versleuteling"
+      ],
+      "Fast P2P/BitTorrent downloads": [
+        "Snelle P2P/BitTorrent-downloads"
+      ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "Gratis functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Free VPN on a single device": [
+        "Gratis VPN op één apparaat"
+      ],
+      "Fully refundable for 30 days": [
+        "Volledig terugbetaalbaar gedurende 30 dagen"
+      ],
+      "GDPR data processing agreement": [
+        "AVG-gegevensverwerkingsovereenkomst"
+      ],
+      "Group management (coming soon)": [
+        "Groepenbeheer (binnenkort)"
+      ],
+      "High-speed streaming": [
+        "Streamen op hoge snelheid"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "High-speed VPN op ${ n } apparaat",
+        "High-speed VPN op ${ n } apparaten"
+      ],
+      "HTML signatures": [
+        "HTML-handtekeningen"
+      ],
+      "Integrated 2FA authenticator": [
+        "Geïntegreerde 2FA-authenticator"
+      ],
+      "Kill switch/always-on VPN": [
+        "IP-beveiliging/altijd-actieve VPN"
+      ],
+      "Limited support": [
+        "Beperkte ondersteuning"
+      ],
+      "Multiple admin roles": [
+        "Meerdere beheerdersfuncties"
+      ],
+      "Organize items with multiple vaults": [
+        "Organiseer items met meerdere kluizen"
+      ],
+      "Passkeys supported": [
+        "Toegangscodes ondersteund"
+      ],
+      "Password health": [
+        "Wachtwoordgezondheid"
+      ],
+      "Password manager": [
+        "Wachtwoordbeheer"
+      ],
+      "Password-protected Emails": [
+        "E-mails met wachtwoordbeveiliging"
+      ],
+      "Phone support (20+ users)": [
+        "Telefonische ondersteuning (20+ gebruikers)"
+      ],
+      "Priority email support": [
+        "Prioriteitsondersteuning per e-mail"
+      ],
+      "Priority support": [
+        "Prioriteitsondersteuning"
+      ],
+      "Priority support & live chat": [
+        "Prioritaire ondersteuning en live chat"
+      ],
+      "Protect ${ n } device at a time": [
+        "Bescherm ${ n } apparaat tegelijkertijd",
+        "Bescherm ${ n } apparaten tegelijkertijd"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Regelmatige controle van uw accountbeveiliging. We waarschuwen u als uw zwakke of hergebruikte wachtwoorden hebt die moeten worden bijgewerkt."
+      ],
+      "Require 2FA for organization": [
+        "Tweestapsauthenticatie vereist voor organisatie"
+      ],
+      "Router support": [
+        "Routerondersteuning"
+      ],
+      "Schedule and snooze emails for any time": [
+        "E-mails plannen en snoozen wanneer u wilt"
+      ],
+      "Secure Core servers": [
+        "Secure Core-servers"
+      ],
+      "See team's availability": [
+        "Bekijk beschikbaarheid van het team"
+      ],
+      "Send & receive invitations": [
+        "Uitnodigingen verzenden & ontvangen"
+      ],
+      "Sign in as user": [
+        "Inloggen als gebruiker"
+      ],
+      "SMTP submission": [
+        "SMTP-indiening"
+      ],
+      "SMTP submission for select organizations": [
+        "SMTP-indiening voor beperkte organisaties"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "Split tunneling (Android en Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "SSO-integratie (binnenkort beschikbaar)"
+      ],
+      "Strict no-logs policy": [
+        "Strikt geen-logboekbeleid"
+      ],
+      "Tor over VPN": [
+        "Tor via VPN"
+      ],
+      "Two-factor authentication": [
+        "Tweestapsverificatie"
+      ],
+      "Unlimited devices": [
+        "Onbeperkt aantal apparaten"
+      ],
+      "Unlimited devices and aliases": [
+        "Onbeperkte apparaten en aliassen"
+      ],
+      "Unlimited filters": [
+        "Onbeperkt aantal filters"
+      ],
+      "Unlimited folders": [
+        "Onbeperkt aantal mappen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde mappen, labels en filters"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal Hide-My-Email-alliassen"
+      ],
+      "Unlimited labels": [
+        "Onbeperkt aantal labels"
+      ],
+      "Unlimited logins and notes": [
+        "Onbeperkt aantal logins en notities"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Onbeperkt aantal logins, notities en creditcards"
+      ],
+      "Unlimited messages per day": [
+        "Onbeperkt aantal berichten per dag"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Onbeperkt aantal gedeelde kluizen met toegangsmachtigingen"
+      ],
+      "Unlimited vault sharing": [
+        "Onbeperkt kluizen delen"
+      ],
+      "Unlimited vaults": [
+        "Onbeperkt aantal kluizen"
+      ],
+      "Unlimited volume/bandwidth": [
+        "Ongelimiteerd(e) volume/bandbreedte"
+      ],
+      "Up to ${ n } user": [
+        "Tot ${ n } gebruiker",
+        "Tot ${ n } gebruikers"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "Tot ${ totalStorageSize } opslag"
+      ],
+      "User credential management": [
+        "Beheer van inloggegevens van gebruikers"
+      ],
+      "User session management": [
+        "Gebruikerssessiebeheer"
+      ],
+      "User storage management": [
+        "Beheer gebruikersopslag"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Kluis delen (tot ${ n } persoon)",
+        "Kluis delen (tot ${ n } personen)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Ondersteuning"
+      ],
+      "Team management": [
+        "Teambeheer"
+      ]
+    },
+    "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        "${ brand } eindigend met ${ last4 }"
+      ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Geavanceerde bescherming voor teams die verder reikt dan de industriestandaarden."
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Alle ${ BRAND_NAME }-apps en hun premium functies"
+      ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Alle ${ BRAND_NAME } zakelijke apps en premiumfuncties om uw hele bedrijf te beschermen."
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Uitgebreide privacy en beveiliging met alle ${ BRAND_NAME }-services gecombineerd."
+      ],
+      "Early access to new apps and features": [
+        "Vroegtijdige toegang nieuwe applicaties functies"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Versleutelde e-mail en agenda's om mee aan de slag te gaan."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Verbeterde beveiligings- en premiumfuncties voor teams."
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Essentiële bescherming en veilige samenwerking voor een onbeperkt aantal gebruikers."
+      ],
+      "For next-level password management and identity protection.": [
+        "Voor wachtwoordbeheer en identiteitsbescherming op een hoger niveau."
+      ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "Als u uw account verwijdert, raakt u alle voordelen van uw ${ visionary }-abonnement kwijt en kunt u niet meer voor dit abonnement kiezen als u een nieuwe account maakt."
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "Als u uw account downgradet, raakt u alle voordelen van uw ${ visionary }-abonnement kwijt en kunt u niet meer voor dit abonnement kiezen."
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "Als u overstapt op een ander abonnement, raakt u alle voordelen van het ${ visionary }-abonnement kwijt en kunt u niet meer terug naar ${ visionary }."
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "Ons ${ visionary }-abonnement is niet meer beschikbaar voor nieuwe gebruikers; dit is een speciaal abonnement voor originele ${ BRAND_NAME }-gebruikers met speciale functies en voordelen."
+      ],
+      "Popular": [
+        "Populair"
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Bescherm de privacy van uw gezin met alle services van ${ BRAND_NAME } gecombineerd."
+      ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Veilig toegang krijgen tot internet vanaf elke locatie met essentiële netwerkmonitoring."
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Veilige e-mail met geavanceerde functies voor uw dagelijkse communicatie."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Op maat gemaakte oplossingen voor grotere organisaties met specifieke beveiligingsbehoeften."
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "De speciale VPN-oplossing voor veilige, onbeperkte en snelle toegang tot internet."
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "De gratis startersaccount die is ontwikkeld om iedereen standaard te voorzien van privacy."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "Onbeperkte privacy en meer opslagruimte voor maximaal 2 personen."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account verwijdert, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuwe account maakt."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: title": {
+      "Delete account?": [
+        "Account verwijderen?"
+      ],
+      "Downgrade account?": [
+        "Account downgraden?"
+      ],
+      "Review subscription and pay": [
+        "Abonnement controleren en betalen"
+      ],
+      "Switch plans?": [
+        "Van abonnement wisselen?"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Beveilig uw agenda met end-to-end versleuteling. Dit is inclusief ondersteuning voor aangepaste agenda's, agenda-delen en meer."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Beveilig uw bestanden met versleutelde cloud-opslag. Inclusief automatisch synchroniseren, versleutelde bestandsdeling en meer."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Beveilig uw e-mails met end-to-end versleuteling. Dit is inclusief ondersteuning voor eigen e-mail domeinen, 15 e-mailadressen, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Krijg toegang tot geblokkeerde inhoud en browse privé. Dit is inclusief ${ serversAndCountries }, hoogste VPN-snelheden, toegang tot wereldwijde streaming services, malware en advertentie-blokkers, snelle BitTorrent downloads en meer."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Krijg toegang tot ${ MAIL_APP_NAME } en ${ CALENDAR_APP_NAME } via het gemak van uw desktop"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "Bekijk content van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Adressen beschikken over alle functies voor verzenden en ontvangen. Aan één gebruiker kunnen meerdere adressen worden toegewezen; een adres kan echter niet aan meerdere gebruikers worden toegewezen."
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "Hiermee kunt u meerdere netwerken ineens gebruiken. U kunt bijvoorbeeld een film streamen uit een ander land en toch lokale zoekresultaten zien"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Hiermee kunt u automatische antwoorden instellen voor uw ontvangen berichten"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Verwijder automatisch berichten ouder dan 30 dagen uit de Prullenbak en Spam"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "E-mails verzonden naar uw ${ MAIL_APP_NAME }-account kunt u automatisch doorsturen naar elk ander e-mailadres."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Het verzenden van massamails of programmatische e-mails wordt op dit moment niet ondersteund. Voor deze situaties kunt u een hierin gespecialiseerde e-mailserviceprovider gebruiken."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Kies aangepaste tijden om herinnerd te worden aan een e-mail of om uw bericht te ontvangen"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
+        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Toegewijde servers met toegewijde IP-adres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's."
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Zorgt dat u alle e-mails ontvangt die naar uw domein worden verzonden, zelfs als het e-mailadres niet (meer) bestaat of een typfout bevat"
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "Afmelden van gebruikerssessies afdwingen wanneer inloggegevens van gebruikers mogelijk in gevaar zijn gekomen"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP-ondersteuning is beperkt tot het gebruik van desktop-apps (zoals Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. IMAP-integraties in de cloud worden op dit moment niet ondersteund."
+      ],
+      "Increase or reallocate storage for a user": [
+        "Opslag voor een gebruiker vergroten of opnieuw toewijzen"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Houd uw plannen privé voor u en uw gezin met een versleutelde agenda"
+      ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Houdt u veilig door alle netwerkverbindingen te blokkeren als de verbinding met onze VPN-server onverwachts is verbroken."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Zoals een map, is een kluis een handige manier om uw items te organiseren"
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Vergrendel uw bedrijfsbronnen van het openbare internet en maak ze alleen toegankelijk via uw private gateways"
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        "Beheer uw abonnement en pas het zo nodig aan uw wensen aan. De geaccepteerde betaalmethodes zijn creditcard, PayPal, cryptovaluta en bankoverschrijving."
+      ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "Ontvang op werkdagen binnen 24 uur na het indienen van uw verzoek ondersteuning van ${ BRAND_NAME }-klantenondersteuning"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Met één VPN-verbinding kunt u één apparaat per keer verbinden met ${ VPN_APP_NAME }-VPN. Als u bijvoorbeeld tegelijkertijd een telefoon en een laptop met ${ VPN_APP_NAME }-VPN wilt verbinden, hebt u twee VPN-verbindingen nodig."
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
+      ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        "Tool voor organisatiebeheer waarmee beheerders gebruikers kunnen toevoegen en verwijderen, opslagruimte kunnen toewijzen, domeinen kunnen configureren en andere taken kunnen uitvoeren"
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "Dankzij onze robuuste infrastructuur hebt u altijd en overal toegang tot uw account"
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "De harde schijven van onze servers zijn volledig versleuteld met meerdere wachtwoordlagen, zodat uw gegevens ook beveiligd zijn als onze hardware in gevaar komt"
+      ],
+      "Password management and identity protection": [
+        "Wachtwoordbeheer en identiteitsbescherming"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Personaliseer uw e-mailhandtekening met een logo, afbeelding, pictogram van social media, koppeling naar uw contactgegevens en meer"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Voorkomt dat berichten worden gelezen door ${ BRAND_NAME } of derden. De enige personen die de berichten kunnen lezen, zijn de afzender en de beoogde ontvanger."
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "Bescherm elk apparaat dat is verbonden met uw wifinetwerk. Dit is ook handig als u apparaten hebt die niet direct VPN-instellingen ondersteunen."
+      ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Bescherm uw gezin tegen schadelijke websites en krijg toegang tot onze supersnelle VPN-servers om uw favoriete inhoud te streamen"
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Bescherm uw echte e-mailadres tegen openbaarmaking of lekken met aliassen (een willekeurig gegenereerd e-mailadres dat e-mails naar uw hoofdinbox stuurt)."
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Voorziet het hoogste niveau van account beveiliging en gespecialiseerde ondersteuning"
+      ],
+      "Quickly set up out-of-office messages": [
+        "Stel snel afwezigheidsberichten in"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Zet uw e-mails, agenda's of contactpersonen snel over van uw huidige provider"
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        "Vereist een code die naar een mobiele telefoon wordt verzonden om in te loggen. Zo blijft de account veilig, ook als het wachtwoord in gevaar is gebracht."
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        "Gebruikerswachtwoorden resetten en tweestapsverificatie van gebruikers resetten"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Routeer uw internetverkeer door het Tor-netwerk met een enkele klik"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld delen van bestanden en meer."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Sla de gegevens van uw contactpersonen, zoals telefoonnummer, adres, geboortedatum en persoonlijke notities, veilig op. Dankzij zero-access versleuteling heeft zelfs ${ BRAND_NAME } geen toegang tot deze gegevens."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Zie de beschikbaarheid van de deelnemers aan de vergadering en bespaar tijd bij het plannen van vergaderingen"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Stuur snel en eenvoudig e-mails naar grote groepen door zoveel contactgroepen te maken als u wilt (tot 100 contactpersonen per groep)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Stel filters in om uw e-mails automatisch te beantwoorden, te sorteren en/of te labelen"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Deel uw bestanden of mappen via veilige, deelbare koppelingen"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP staat diensten of apparaten van derde partijen toe om e-mail to versturen via ${ MAIL_APP_NAME }."
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "Het speciaal ontworpen NetShield beschermt uw apparaat en versnelt uw browsen door advertenties, trackers en malware te blokkeren"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Opslagruimte wordt gedeeld over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } en ${ PASS_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }. Beheerders kunnen afwijkende opslagruimte toewijzen aan gebruikers binnen de organisatie"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Opslagruimte wordt gedeeld tussen gebruikers over ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } en ${ PASS_APP_NAME }"
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        "Ondersteuning voor filesharingprotocollen zoals BitTorrent"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Upload uw bedrijfslogo om uw teamervaring aan te passen aan de ${ BRAND_NAME } webapps"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "We houden geen sessielogboeken bij van uw online activiteiten en we registreren geen metagegevens die uw privacy in gevaar kunnen brengen"
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "We willen klanten op wie HIPAA-/HITECH-voorschriften van toepassing zijn, helpen beschermde gezondheidsinformatie te beveiligen. Er zijn ondertekende overeenkomsten voor zakelijke partners beschikbaar voor alle gebruikers van ${ BRAND_NAME } voor Bedrijven."
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "Als u verbonden bent met onze VPN, lopen uw DNS-query's via onze versleutelde VPN-tunnel, voor extra online privacy en beveiliging"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Berichten naar andere gebruikers van ${ MAIL_APP_NAME } worden automatisch versleuteld. Voor berichten naar ontvangers zonder ${ MAIL_APP_NAME_TWO } moet u een wachtwoord instellen voordat u het bericht verzendt."
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "U kunt meerdere beheerders hebben. Alle beheerders kunnen gebruikers toevoegen en beheren, maar alleen de primaire beheerder kan de facturatie beheren."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "24/7 ondersteuning"
+      ],
+      "Access advanced VPN features": [
+        "Gebruik geavanceerde VPN-functies"
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Voeg meer personalisatie toe met 15 e-mailadressen en ondersteuning voor 3 aangepaste e-maildomeinen"
+      ],
+      "AES 256-bit VPN encryption": [
+        "256-bit AES-versleuteling VPN"
+      ],
+      "Auto-connect": [
+        "Automatisch verbinden"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Boost uw opslagruimte uit naar ${ bundleStorage } per gebruiker"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Verhoog uw opslagruimte tot ${ bundleStorage }"
+      ],
+      "Browser extension": [
+        "Browserextensie"
+      ],
+      "Censorship circumvention": [
+        "Omzeiling censuur"
+      ],
+      "Central control panel": [
+        "Centraal bedieningspaneel"
+      ],
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } agenda",
+        "Maak tot ${ n } agenda's"
+      ],
+      "Dedicated Account manager": [
+        "Toegewezen account manager"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Toegewijde server locaties in ${ numberOfCountries }+ landen"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Toegewijde server locaties in Noord-Amerika en Europa"
+      ],
+      "Multi-platform support": [
+        "Multi-platformondersteuning"
+      ],
+      "Private gateways": [
+        "Private gateways"
+      ],
+      "Require 2FA": [
+        "2FA vereist"
+      ],
+      "Support for ${ n } custom email domains": [
+        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
+      ]
+    },
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Sommige afbeeldingen zijn niet geüpload vanwege dubbele bestandsnamen in de huidige selectie."
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault and link sharing": [
+        "Veilige kluis en het delen van links"
+      ],
+      "Secure vault sharing": [
+        "Veilig delen van kluis"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Veilig delen van kluis (${ n } kluis)",
+        "Veilig delen van kluis (${ n } kluizen)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Veilig delen van kluis (${ n } kluis) en het delen van links",
+        "Veilig delen van kluis (${ n } kluizen) en het delen van links"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Organisatiesleutel bestaat niet."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "Toegang geweigerd, beheerdersbevoegdheden zijn beperkt."
+      ],
+      "The organization key must be activated first.": [
+        "De organisatiesleutel moet eerst geactiveerd worden."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "U heeft toegang nodig tot de organisatiesleutel om deze bewerking uit te voeren."
+      ]
+    },
+    "Payment method option": {
+      "Credit/debit card": [
+        "Krediet/debetkaart"
+      ],
+      "New credit/debit card": [
+        "Nieuwe krediet-/bankkaart"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Land van facturering"
+      ],
+      "Card number": [
+        "Kaartnummer"
+      ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Momenteel is de automatische verlenging van het abonnement uitgeschakeld. Als u het abonnement nu wijzigt, wordt de automatische verlenging opnieuw ingeschakeld."
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "Got it": [
+        "Begrepen"
+      ],
+      "MM/YY": [
+        "MM/JJ"
+      ],
+      "Payment Processing": [
+        "Betaling wordt verwerkt"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Reactiveer eerst uw abonnement om het aantal add-ons te verminderen."
+      ],
+      "Please select billing country": [
+        "Selecteer factureringsland"
+      ],
+      "Please select billing state": [
+        "Selecteer factureringsstaat"
+      ],
+      "Please select your billing country first.": [
+        "Selecteer eerst uw factureringsland."
+      ],
+      "Please select your billing state first.": [
+        "Selecteer eerst uw factureringsstaat."
+      ],
+      "Select billing country to pay": [
+        "Selecteer factureringsland om te betalen"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ months }. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna zal deze automatisch vernieuwd worden voor ${ price } voor ${ months } maanden. U kunt op ieder moment annuleren."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ months } maanden. Daarna wordt uw abonnement automatisch vernieuwd voor ${ price } voor ${ months } maanden. U kunt opzeggen wanneer u wilt."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ price } per maand. U kunt opzeggen wanneer u wilt."
+      ],
+      "Timeout exceeded": [
+        "Time-out overschreden"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "We verwerken uw betaling voor de factuur. Wacht tot de betaling is voltooid voordat u uw abonnement wijzigt of betalingsgegevens bijwerkt. Dank u voor uw geduld."
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Ongeldig kaartnummer"
+      ],
+      "Invalid expiration date": [
+        "Ongeldige vervaldatum"
+      ],
+      "Invalid security code": [
+        "Ongeldige beveiligingscode"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Er ging iets mis. Probeer het later nog eens."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Wij zijn niet in staat om uw betaalmethode te authenticeren. Kies een andere betaalmethode of probeer het opnieuw."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Een manier om u te contacteren"
+      ],
+      "Confirm passphrase or leave empty": [
+        "Bevestig wachtwoordzin of laat leeg"
+      ],
+      "Enter a passphrase or leave empty": [
+        "Voer een wachtwoordzin in of laat leeg"
+      ],
+      "Gift code": [
+        "Geschenkcode"
       ],
       "Password": [
         "Wachtwoord"
@@ -1470,16 +3552,60 @@
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
       ],
+      "Please select a country": [
+        "Kies een land"
+      ],
       "Search": [
         "Zoeken"
       ],
       "Select": [
         "Selecteer"
+      ],
+      "Select a reason": [
+        "Selecteer een reden"
+      ],
+      "Select state": [
+        "Selecteer provincie"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
+      ]
+    },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } met ons Verkoopteam."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Selecteer het aantal IP-adressen om op te nemen in uw abonnement. Elk extra IP-adres kost ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Indien u meer dan ${ maxIPs } IP-adres nodig hebt, ",
+        "Indien u meer dan ${ maxIPs } IP-adressen nodig hebt, "
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "neem contact op"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Selecteer het aantal gebruikers om op te nemen in uw abonnement. Elke extra gebruiker kost ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Heeft u meer dan ${ maxUsers } gebruiker nodig, ${ contact } met ons Sales team.",
+        "Heeft u meer dan ${ maxUsers } gebruikers nodig, ${ contact } met ons Sales team."
+      ]
+    },
+    "Price": {
+      "Free": [
+        "Gratis"
       ]
     },
     "QRCode Reader": {
       "Could not run QR code reader": [
         "Kan QR-codelezer niet uitvoeren"
+      ],
+      "You need to grant camera permission to be able to activate QRCode scanner": [
+        "U moet camera toestemming geven om de QR-codescanner te kunnen activeren"
       ]
     },
     "QRCode reader": {
@@ -1487,7 +3613,29 @@
         "QR-codelezer wordt geladen"
       ]
     },
+    "Receive bitcoin": {
+      "Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.": [
+        "Hieronder staat het laatst gegenereerde Bitcoin-adres. Gebruik voor betere privacy een ander adres voor elke transactie."
+      ],
+      "Receive Bitcoin": [
+        "Bitcoin ontvangen"
+      ]
+    },
+    "Recipient details": {
+      "Bitcoin address copied to clipboard": [
+        "Bitcoin-adres gekopieerd naar het klembord"
+      ],
+      "BTC address": [
+        "BTC-adres"
+      ],
+      "External recipient": [
+        "Externe ontvanger"
+      ]
+    },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Controleer de spelling of selecteer een land uit de lijst."
+      ],
       "No results found": [
         "Geen resultaten"
       ]
@@ -1528,12 +3676,147 @@
         "Uitloggen zonder wachtwoord reset?"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "Gedeeld door ${ ownerName }"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "1 user": [
+        "1 gebruiker"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 gebruikers"
+      ],
+      "64 countries": [
+        "64 landen"
+      ],
+      "All paid Mail and Calendar features": [
+        "Alle betaalde Mail- en Calendar-kenmerken"
+      ],
+      "High speed VPN": [
+        "High-speed VPN"
+      ],
+      "Highest VPN speed": [
+        "Hoogste VPN-snelheid"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } en ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
+      ],
+      "Premium early access": [
+        "Premium vroege toegang"
+      ],
+      "Secure cloud storage": [
+        "Veilige cloudopslag"
+      ],
+      "Secure streaming": [
+        "Beveiligd streamen"
+      ],
+      "Support online privacy": [
+        "Ondersteun online privacy"
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Naar abonnementen"
       ],
       "Upgrade": [
         "Upgraden"
+      ]
+    },
+    "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "1 year": [
+        "1 jaar"
+      ],
+      "15 months": [
+        "15 maanden"
+      ],
+      "2 years": [
+        "2 jaar"
+      ],
+      "30 months": [
+        "30 maanden"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "U betaalt ${ amount } voor 1 maand"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "U betaalt ${ amount } voor 12 maanden"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "U betaalt ${ amount } voor 15 maanden"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "U betaalt ${ amount } voor 24 maanden"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "U betaalt ${ amount } voor 30 maanden"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Wordt na 1 jaar verlengd tegen de gereduceerde prijs van ${ discountedAmount } in plaats van ${ regularAmount } (${ discount }% korting)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "Wordt na 2 jaar verlengd tegen de gereduceerde prijs van ${ discountedAmount } in plaats van ${ regularAmount } (${ discount }% korting)"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "Standaardprijs ${ amount } voor 1 maand"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "Standaardprijs ${ amount } voor 12 maanden"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "Standaardprijs ${ amount } voor 15 maanden"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "Standaardprijs ${ amount } voor 24 maanden"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "Standaardprijs ${ amount } voor 30 maanden"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen per gebruiker, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Bekijk geblokkeerde inhoud en surf privé. Met 1700 servers in meer dan 60 landen, de hoogste VPN-snelheid, 10 VPN-verbindingen, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Bekijk inhoud van streamingdiensten, waaronder Netflix, Disney+ en Prime Video, waar u maar wilt."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "Al onze premium diensten met hun hoogste limieten: 100 e-mailadressen, ondersteuning voor 10 aangepaste domeinen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's, versleutelde cloudopslag, versleuteld bestanden delen en meer."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, 15 e-mailadressen, onbeperkt Hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Perfect voor gezinnen of kleine teams, met voor iedereen een eigen inbox en aliassen. Vereist een aangepast domein."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Ontvang kostenloos de betaalde versies van alle nieuwe privacyservices die we in de toekomst uitbrengen en krijg vroege toegang tot alle toekomstige kenmerken en producten."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief automatische synchronisatie, versleuteld bestanden delen en meer."
       ]
     },
     "Spotlight": {
@@ -1544,12 +3827,33 @@
         "Nodig vrienden uit voor ${ BRAND_NAME }"
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Uw abonnement wordt geannuleerd, even geduld"
+      ]
+    },
     "Storage": {
       "Upgrade storage": [
         "Opslag upgraden"
       ],
       "Your current storage:": [
         "Uw huidige opslag:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "${ currentPlanName } behouden"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "Opslag voor gegevens gegenereerd door ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "Tot ${ totalStorageSize } Drive opslag"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "Tot ${ totalStorageSize } Mail-opslag"
       ]
     },
     "storage_split: info": {
@@ -1559,6 +3863,19 @@
       "${ storage } ${ percentage }% full": [
         "${ storage } ${ percentage }% vol"
       ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Door te downgraden verliest u de volgende voordelen. Weet u zeker dat u door wilt gaan?"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Voor alle ${ BRAND_NAME }-diensten"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "We zullen de credits voor de resterende tijd toevoegen aan uw ${ BRAND_NAME }-account."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
+        "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
+      ],
       "Your ${ appStorage } is almost full": [
         "Uw ${ appStorage } is bijna vol"
       ],
@@ -1567,25 +3884,261 @@
       ],
       "Your storage is full": [
         "Uw opslagruimte is vol"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "U verliest de toegang tot ${ gb } opslag en prioriteitsondersteuning."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "U verliest de toegang tot extra opslagruimte, e-mailadressen, aliassen, agenda's en prioritaire ondersteuning."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "U verliest de toegang tot de hoogste VPN-snelheid, bescherming voor 10 apparaten, streamen op hoge snelheid, ad-blocker en malware-bescherming, en prioritaire ondersteuning."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "U verliest de toegang tot onbeperkte logins en notities, onbeperkte hide-my-email aliassen, 20 kluizen, en prioritaire ondersteuning."
+      ]
+    },
+    "Subscription": {
+      "Billed every 2 years": [
+        "Wordt om de 2 jaar gefactureerd"
+      ],
+      "Billed for 15 months": [
+        "U betaalt voor 15 maanden"
+      ],
+      "Billed for 18 months": [
+        "Gefactureerd voor 18 maanden"
+      ],
+      "Billed for 3 months": [
+        "Gefactureerd voor 3 maanden"
+      ],
+      "Billed for 30 months": [
+        "Gefactureerd voor 30 maanden"
+      ],
+      "Billed monthly": [
+        "Maandelijks gefactureerd"
+      ],
+      "Billed yearly": [
+        "Jaarlijks gefactureerd"
+      ]
+    },
+    "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "${ n } gratis VPN-verbinding per gebruiker",
+        "${ n } gratis VPN-verbindingen per gebruiker"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } supersnelle VPN-verbinding",
+        "${ n } supersnelle VPN-verbindingen"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } supersnelle VPN-verbinding per gebruiker",
+        "${ n } supersnelle VPN-verbindingen per gebruiker"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN-verbinding per gebruiker",
+        "${ n } VPN-verbindingen per gebruiker"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "Begrepen"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Log in op uw Apple App Store account, druk dan op ${ subscriptions }."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Log in op uw Play Store-account, druk dan op ${ subscriptions }."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Beheer uw abonnement op ${ subscriptionManager }"
+      ],
+      "Subscriptions": [
+        "Abonnementen"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Uw abonnement was gekocht met een Android-app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Google Play Store gaan."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Uw abonnement was gekocht met een iOS-app. Om wijzigingen te maken of uw betaalgegevens bij te werken, moet u naar de Apple App Store gaan."
+      ]
+    },
+    "Subscription price": {
+      "For ${ totalPrice }": [
+        "Voor ${ totalPrice }"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Weet u het zeker?"
+      ],
+      "Auto-pay is disabled": [
+        "Automatische betaling is uitgeschakeld"
+      ],
+      "Auto-pay is enabled": [
+        "Automatische betaling is ingeschakeld"
+      ],
+      "Disable": [
+        "Uitschakelen"
+      ],
+      "Enable auto-pay support": [
+        "Ondersteuning voor automatische betaling inschakelen"
+      ],
+      "Keep auto-pay": [
+        "Automatische betaling houden"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. Aanvullend, als u vergeet om een manuele betaling uit te voeren en automatisch betalen uitgeschakeld is voor alle betaalmethodes, wordt uw account mogelijk gedowngraded, wat zal leiden tot het verliezen van veel functies."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Ons systeem zal u niet langer automatisch aanrekenen met deze betalingsmethode, maar uw abonnement zal nog steeds vernieuwen op het einde van de facturatieperiode. Als u wilt downgraden of uw abonnement wilt wijzigen, moet u dit nog steeds zelf doen vóór het einde van de facturatieperiode. We kunnen u niet downgraden, omdat we bestanden, e-mails en andere date niet automatisch kunnen verwijderen indien de gratis opslagruimte wordt overschreden of u gebruik maakt van andere betalende functies. Als u automatische betaling uitschakelt, mag u niet vergeten om uw volgende abonnementsfactuur te betalen voordat de vervaldatum wordt bereikt om te vermijden dat uw account wordt geschorst."
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "Bespaar"
+      ]
+    },
+    "Subscription status": {
+      "Active": [
+        "Actief"
+      ],
+      "Expiring": [
+        "Verlopen"
       ]
     },
     "Success": {
-      "Bug reported": [
-        "Bug gemeld"
-      ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
+      ],
+      "Copied to clipboard": [
+        "Gekopieerd naar het klembord"
       ],
       "Email address copied to clipboard": [
         "E-mailadres gekopieerd naar het klembord"
       ],
+      "Payment method added": [
+        "Betalingsmethode toegevoegd"
+      ],
+      "Payment method updated": [
+        "Betalingsmethode bijgewerkt"
+      ],
       "Verification successful": [
         "Verificatie gelukt"
+      ],
+      "You have successfully canceled your subscription.": [
+        "U heeft uw abonnement succesvol geannuleerd."
+      ],
+      "You have successfully unsubscribed": [
+        "U bent succesvol afgemeld"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/maand"
+      ],
+      "/user per month": [
+        "/gebruiker per maand"
+      ]
+    },
+    "Suffix for price": {
+      "per month": [
+        "per maand"
+      ],
+      "per user per month": [
+        "per gebruiker per maand"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Maak veilige inloggegevens op al uw apparaten. Inclusief onbeperkte aliassen, 20 kluizen, geïntegreerde 2FA, automatisch invullen van creditcardgegevens en meer."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "Met 2950 servers in meer dan 65 landen, verbinding met maximaal 10 apparaten, wereldwijd toegang tot streamingdiensten, malware- en advertentieblokkering, en meer."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Beveilig uw bestanden met versleutelde cloudopslag. Inclusief versiegeschiedenis, versleuteld bestanden delen en meer."
+      ]
+    },
+    "Tab subscription modal": {
+      "For businesses": [
+        "Voor bedrijven"
+      ],
+      "For families": [
+        "Voor gezinnen"
+      ],
+      "For individuals": [
+        "Voor particulieren"
       ]
     },
     "Title": {
+      "Add credit/debit card": [
+        "Krediet/debietkaart toevoegen"
+      ],
+      "Amount due": [
+        "Verschuldigd bedrag"
+      ],
+      "Apply gift code": [
+        "Geschenkcode toepassen"
+      ],
+      "Billing cycle": [
+        "Factuurperiode"
+      ],
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "${ MAIL_SHORT_APP_NAME }-abonnement annuleren"
+      ],
+      "Cancel subscription?": [
+        "Abonnement opzeggen?"
+      ],
+      "Card verification": [
+        "Kaartverificatie"
+      ],
+      "Confirm downgrade": [
+        "Downgrade bevestigen"
+      ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "Bevestig verlies van ${ BRAND_NAME }-bonussen"
+      ],
+      "Coupon": [
+        "Kortingscode"
+      ],
+      "Credits": [
+        "Tegoed"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Downgrade account": [
+        "Account downgraden"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "Downgrade naar ${ downgradedPlanName }?"
+      ],
+      "Edit credit/debit card": [
+        "Krediet/debietkaart bewerken"
+      ],
+      "Enter 2FA code": [
+        "Voer 2FA code in"
+      ],
       "Enter your password": [
         "Voer uw wachtwoord in"
+      ],
+      "Error": [
+        "Fout"
+      ],
+      "Gift": [
+        "Geschenk"
       ],
       "Human verification": [
         "Menselijke verificatie"
@@ -1593,20 +4146,115 @@
       "Invalid verification code": [
         "Ongeldige verificatiecode"
       ],
+      "Network error": [
+        "Netwerkfout"
+      ],
+      "Payment failed": [
+        "Betaling mislukt"
+      ],
+      "Payment verification": [
+        "Betalingsverificatie"
+      ],
+      "PayPal verification failed": [
+        "PayPal verificatie mislukt"
+      ],
+      "Processing...": [
+        "Wordt verwerkt..."
+      ],
+      "Recommended": [
+        "Aanbevolen"
+      ],
       "Report a problem": [
         "Meld een probleem"
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
       ],
-      "Sign in with 2FA": [
-        "Inloggen met 2FA"
+      "Select a plan": [
+        "Selecteer een abonnement"
       ],
       "Sign out": [
         "Uitloggen"
       ],
+      "Summary": [
+        "Overzicht"
+      ],
+      "Verification failed": [
+        "Verificatie mislukt"
+      ],
+      "Verifying your card...": [
+        "Uw kaart wordt geverifieerd..."
+      ],
+      "Verifying your payment...": [
+        "Uw betaling wordt geverifieerd..."
+      ],
       "Wallet": [
         "Portemonnee"
+      ]
+    },
+    "Title subscription": {
+      "End date": [
+        "Einddatum"
+      ],
+      "Plan": [
+        "Abonnement"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
+    "Tooltip": {
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Als u een geschenkcode heeft gekocht of een heeft ontvangen van ons supportteam, kunt u deze hier invoeren."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "De nieuwe abonnementscyclus start op ${ formattedTime }"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
+      ]
+    },
+    "Unknown sender": {
+      "Add a name so you can remember who it was from.": [
+        "Voeg een naam toe om te onthouden van wie het afkomstig was."
+      ],
+      "Add their email address or leave empty": [
+        "Voeg hun e-mailadres toe of laat leeg"
+      ],
+      "Add their email address to save as contact": [
+        "Voeg hun e-mailadres toe om op te slaan als contactpersoon"
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
+      "Email address is invalid": [
+        "E-mailadres is ongeldig"
+      ],
+      "Give a name to this sender": [
+        "Geef deze afzender een naam"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Not a Bitcoin via Email transaction.": [
+        "Geen Bitcoin via e-mail-transactie."
+      ],
+      "Save as a contact": [
+        "Opslaan als contact"
+      ],
+      "Save sender": [
+        "Afzender opslaan"
+      ],
+      "Transaction sender could not be updated": [
+        "De afzender van de transactie kan niet worden bijgewerkt"
+      ],
+      "Transaction sender has been updated succesfully": [
+        "De afzender van de transactie is succesvol bijgewerkt"
+      ],
+      "Unknown sender": [
+        "Onbekende afzender"
       ]
     },
     "Validation": {
@@ -1619,23 +4267,99 @@
         "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } server",
+        "${ n }+ servers"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries }+ landen"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries } landen"
+      ]
+    },
+    "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "U wordt vervolgens elke 12 maanden ${ renewPrice } aangerekend."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Uw abonnement wordt automatisch verlengd over ${ cycle } maand.",
+        "Uw abonnement wordt automatisch verlengd over ${ cycle } maanden."
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Geavanceerde VPN-aanpassingen"
+      ],
+      "No ads": [
+        "Geen advertenties"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Toegang tot Secure Core-servers, snelle P2P/BitTorrent-downloads, Tor over VPN, en meer."
+      ]
+    },
     "Wallet": {
       "An error occured": [
         "Er is een fout opgetreden."
+      ],
+      "Close": [
+        "Sluiten"
+      ],
+      "Continue": [
+        "Ga verder"
+      ],
+      "Could not fetch wallets data": [
+        "Kon walletsgegevens niet ophalen"
+      ],
+      "Explore other ${ BRAND_NAME } products": [
+        "Ontdek andere ${ BRAND_NAME }-producten"
+      ],
+      "Upgrade to Visionary": [
+        "Kies voor Visionary"
       ]
     },
     "Wallet Account": {
+      "Account index": [
+        "Account-index"
+      ],
+      "Add wallet account": [
+        "Portemonneeaccount toevoegen"
+      ],
+      "Address type": [
+        "Adrestype"
+      ],
       "Cancel": [
         "Annuleren"
       ],
       "Could not add account to wallet": [
         "Kan account niet aan portemonnee toevoegen"
       ],
+      "Create multiple wallet accounts to separate your financial activities for better privacy and organization.": [
+        "Maak meerdere portemonnee-accounts aan om uw financiële activiteiten te scheiden voor betere privacy en organisatie."
+      ],
+      "Create wallet account": [
+        "Portemonneeaccount aanmaken"
+      ],
       "Custom account index": [
         "Aangepaste accountindex"
       ],
       "Custom index": [
         "Aangepaste index"
+      ],
+      "If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.": [
+        "Als u Bitcoin via e-mail wilt ontvangen met meerdere e-mailadressen, moet u voor elk e-mailadres een portemonnee-account aanmaken."
+      ],
+      "Name": [
+        "Naam"
       ],
       "Savings for holiday": [
         "Spaargeld voor vakantie"
@@ -1645,8 +4369,34 @@
       ]
     },
     "Wallet account": {
+      "Account Index": [
+        "Account-index"
+      ],
+      "Address Type": [
+        "Adrestype"
+      ],
+      "Advanced settings": [
+        "Geavanceerde instellingen"
+      ],
       "This account is already created": [
         "Dit account is al aangemaakt"
+      ],
+      "We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.": [
+        "We gaan standaard naar Native Segwit, die de laagste netwerkkosten heeft. U kunt dit wijzigen om bitcoin te ontvangen van andere services die alleen andere typen ondersteunen."
+      ],
+      "We default to the next unused index. You can change this to recover or to skip a previous account.": [
+        "We gaan standaard naar de volgende niet-gebruikte index. U kunt dit wijzigen door de volgorde te veranderen of door naar een vorig account te gaan."
+      ]
+    },
+    "Wallet buy": {
+      "Missing bitcoin address. Please refresh and try again or contact support": [
+        "Ontbrekend Bitcoin-adres. Vernieuw en probeer het opnieuw of neem contact op met ondersteuning"
+      ],
+      "Missing country. Please refresh and try again or contact support": [
+        "Ontbrekend land. Vernieuw en probeer het opnieuw of neem contact op met ondersteuning"
+      ],
+      "Missing quote. Please refresh and try again or contact support": [
+        "Ontbrekende offerte. Vernieuw en probeer het opnieuw of neem contact op met ondersteuning"
       ]
     },
     "Wallet dashboard": {
@@ -1672,14 +4422,63 @@
         "De huidige vingerafdruk komt niet overeen met die is opgeslagen"
       ]
     },
+    "wallet dashboard": {
+      "You need to have a positive balance to send bitcoins": [
+        "U moet een positief saldo hebben om bitcoins te verzenden"
+      ]
+    },
+    "Wallet deletion": {
+      "Are you sure you want to delete \"${ wallet.Wallet.Name }\"": [
+        "Weet u zeker dat u \"${ wallet.Wallet.Name }\" wilt verwijderen?"
+      ]
+    },
     "Wallet discover": {
+      "Backup this wallet's seed phrase": [
+        "Maak een back-up van de seed-phrase van deze portemonnee"
+      ],
+      "Backup your ${ BRAND_NAME } account data": [
+        "Maak een back-up van uw ${ BRAND_NAME } accountgegevens"
+      ],
       "Discover": [
         "Ontdek"
+      ],
+      "Secure your wallet": [
+        "Beveilig uw portemonnee"
+      ],
+      "Set up 2FA to secure your account": [
+        "Stel tweevoudige verificatie in om uw account te beveiligen"
+      ]
+    },
+    "Wallet explore proton": {
+      "An encrypted password manager that protects your online identity.": [
+        "Een versleutelde wachtwoordmanager die uw online identiteit beschermt."
+      ],
+      "Encrypted email that's private by default.": [
+        "Versleutelde e-mail die standaard privé is."
+      ],
+      "Improve the security of your business and comply with data protection laws.": [
+        "Verbeter de beveiliging van uw bedrijf en voldoe aan wetgeving inzake gegevensbescherming."
+      ],
+      "Secure cloud storage that gives you control of your data.": [
+        "Veilige cloudopslag die u de controle geeft over uw gegevens."
+      ],
+      "Your calendar is a record of your life. Keep it safe.": [
+        "Uw agenda is een overzicht van uw leven. Houd het veilig."
       ]
     },
     "Wallet header": {
       "Secure your wallet": [
         "Beveilig uw portemonnee"
+      ]
+    },
+    "Wallet import": {
+      "A wallet with same fingerprint already exists": [
+        "Er bestaat al een portemonnee met dezelfde vingerafdruk"
+      ]
+    },
+    "Wallet info": {
+      "This fee incentivizes Bitcoin miners to include your transaction in the blockchain. None of the fee goes to ${ BRAND_NAME }.": [
+        "Door middel van deze kosten worden Bitcoin-miners gestimuleerd om uw transactie in de blockchain op te nemen. Deze kosten gaan niet naar ${ BRAND_NAME }."
       ]
     },
     "Wallet information": {
@@ -1694,6 +4493,65 @@
       ],
       "What’s a wallet seed phrase?": [
         "Wat is een seed-phrase van een portemonnee?"
+      ]
+    },
+    "Wallet invite": {
+      "${ WALLET_APP_NAME } Early Access is limited to Visionary supporters and invited users.": [
+        "${ WALLET_APP_NAME } Vroegtijdige toegang is beperkt tot Visionary supporters en uitgenodigde gebruikers."
+      ],
+      "Close": [
+        "Sluiten"
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
+      "Email address is not valid": [
+        "E-mailadres is ongeldig"
+      ],
+      "Email address is required": [
+        "E-mailadres is vereist"
+      ],
+      "Exclusive Invites": [
+        "Exclusieve uitnodigingen"
+      ],
+      "Invitation sent to ${ email }": [
+        "Uitnodiging verzonden naar ${ email }"
+      ],
+      "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
+        "Nodig uw vrienden en familie uit, zodat u allemaal Bitcoin via e-mail kunt versturen. U krijgt meer uitnodigingen als we meer servers toevoegen."
+      ],
+      "Not now": [
+        "Niet nu"
+      ],
+      "Please let them know to check their email and follow the instruction to set up their ${ WALLET_APP_NAME } with Bitcoin via Email.": [
+        "Laat ze weten dat ze hun e-mail moeten controleren en de instructies moeten volgen om hun ${ WALLET_APP_NAME } met Bitcoin via e-mail in te stellen."
+      ],
+      "Send invite email now": [
+        "Verzend nu uitnodigingsmail"
+      ],
+      "Thank you for supporting ${ WALLET_APP_NAME }!": [
+        "Bedankt voor het ondersteunen van ${ WALLET_APP_NAME }!"
+      ],
+      "This email can receive Bitcoin via Email": [
+        "Deze e-mail kan via e-mail Bitcoin ontvangen"
+      ],
+      "Warning: the recipient will not be able to send Bitcoin via Email to this email.": [
+        "Waarschuwing: de ontvanger kan geen Bitcoin via e-mail verzenden naar dit e-mailadres."
+      ],
+      "You need to select an email to send from": [
+        "U moet een e-mail selecteren om vanuit te verzenden"
+      ],
+      "Your email (visible to recipient)": [
+        "Uw e-mailadres (zichtbaar voor de ontvanger)"
+      ],
+      "Your friend's email": [
+        "E-mail van uw vriend"
+      ]
+    },
+    "Wallet invites": {
+      "${ availableInvites } invite left": [
+        "${ availableInvites } uitnodiging over",
+        "${ availableInvites } uitnodigingen over"
       ]
     },
     "Wallet passphrase": {
@@ -1711,11 +4569,26 @@
       ]
     },
     "Wallet preference": {
+      "Account name": [
+        "Accountnaam"
+      ],
       "Accounts": [
         "Accounts"
       ],
+      "Cancel": [
+        "Annuleren"
+      ],
       "Clear browser storage": [
         "Browsergegevens wissen"
+      ],
+      "Copy seed phrase": [
+        "Seed-phrase kopiëren"
+      ],
+      "Create email": [
+        "E-mail aanmaken"
+      ],
+      "Create email address": [
+        "Creëer e-mailadres"
       ],
       "Delete account": [
         "Account verwijderen"
@@ -1723,24 +4596,92 @@
       "Delete wallet": [
         "Portemonnee verwijderen"
       ],
+      "Delete wallet now": [
+        "Portemonnee nu verwijderen"
+      ],
+      "Display name (optional)": [
+        "Weergavenaam (optioneel)"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
+      "Email address created": [
+        "E-mailadres is aangemaakt"
+      ],
+      "Email address is invalid": [
+        "E-mailadres is ongeldig"
+      ],
+      "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, we recommend using this primary BTC account without enabling Receive Bitcoin via Email and transacting with your other BTC accounts with Receive Bitcoin via Email enabled. This will improve your blockchain privacy by keeping BTC in this account separate from any BTC that you receive automatically.": [
+        "Voor de meeste mensen maakt het niet uit, omdat zij BTC ontvangen van mensen die zij vertrouwen. Maar als u zich hierover zorgen maakt, raden we aan om dit primaire BTC-account te gebruiken zonder het inschakelen van Bitcoin via e-mail te ontvangen en transacties uit te voeren met uw andere BTC-accounts, met de optie Bitcoin via e-mail ontvangen ingeschakeld. Dit zal uw privacy op de blockchain verbeteren door BTC in dit account gescheiden te houden van alle BTC die u automatisch ontvangt."
+      ],
+      "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, you can create a new BTC account so that the new BTC you receive is separated from your existing BTC.": [
+        "Voor de meeste mensen doet dit er niet toe, omdat zij BTC ontvangen van mensen die zij vertrouwen. Als u hier echter bezorgd over bent, kunt u een nieuwe BTC-account aanmaken zodat de nieuwe BTC die u ontvangt gescheiden zijn van uw bestaande BTC."
+      ],
       "My super account": [
         "Mijn super account"
       ],
       "My super wallet": [
         "Mijn super portemonnee"
+      ],
+      "Name": [
+        "Naam"
+      ],
+      "Not now": [
+        "Niet nu"
+      ],
+      "The Bitcoin blockchain is public, meaning every transaction is publicly visible. However, Bitcoin addresses are pseudonymous, meaning the sender and recipient identities are generally unknown.": [
+        "De Bitcoin-blockchain is openbaar, wat betekent dat elke transactie openbaar zichtbaar is. Bitcoin-adressen zijn echter pseudoniem, wat betekent dat de identiteit van de afzender en ontvanger over het algemeen onbekend is."
+      ],
+      "View more": [
+        "Meer bekijken"
+      ],
+      "View wallet seed phrase": [
+        "Seed-phrase van portemonnee bekijken"
+      ],
+      "Wallet preferences": [
+        "Portemonneevoorkeuren"
+      ],
+      "When you receive Bitcoin via Email, the sender knows one of your Bitcoin addresses as well as your email. Due to Bitcoin's public blockchain, it is theoretically possible for a malicious sender to discover the existence of other BTC that you have if you send BTC from this account.": [
+        "Wanneer u Bitcoin via e-mail ontvangt, weet de afzender een van uw Bitcoin-adressen evenals uw e-mail. Vanwege de openbare blockchain van Bitcoin is het theoretisch mogelijk voor een kwaadwillende afzender om het bestaan van andere BTC die u heeft te ontdekken als u BTC vanuit dit account verzendt."
       ]
     },
     "Wallet preferences": {
+      "creating a new BTC account": [
+        "een nieuw BTC-account aan te maken"
+      ],
+      "Default currency": [
+        "Standaardvaluta"
+      ],
       "Local currency": [
         "Lokale valuta"
+      ],
+      "Receive Bitcoin via Email": [
+        "Ontvang Bitcoin via e-mail"
       ],
       "Select your currency": [
         "Selecteer uw valuta"
       ]
     },
+    "Wallet Receive": {
+      "Bitcoin address": [
+        "Bitcoinadres"
+      ],
+      "For better privacy, generate a new address for each transaction.": [
+        "Gebruik voor meer privacy een ander adres voor elke transactie."
+      ],
+      "Receive to": [
+        "Ontvangen op"
+      ]
+    },
     "Wallet receive": {
       "Address generation in progress": [
         "Adresgeneratie is bezig"
+      ],
+      "Copy Bitcoin address": [
+        "Bitcoinadres kopiëren"
       ],
       "Gap between next address and last used one is too large. Please use one of the address you generate before": [
         "Opening tussen het volgende adres en het laatst gebruikte adres is te groot. Gebruik één van de adressen die u eerder heeft gegenereerd"
@@ -1753,17 +4694,32 @@
       "${ price } available": [
         "${ price } is beschikbaar"
       ],
-      "A user icon with an exclamation mark, meaning that something unexpected happened": [
-        "Een gebruikerspictogram met een uitroepteken. Dit betekent dat er iets onverwachts is gebeurd"
+      "Add a message": [
+        "Voeg een bericht toe"
+      ],
+      "Add a note": [
+        "Voeg een notitie toe"
       ],
       "Add private note to myself": [
         "Privénotitie voor mezelf toevoegen"
       ],
+      "Address is neither a valid bitcoin or email address": [
+        "Adres is geen geldig bitcoin- of e-mailadres"
+      ],
+      "Anonymous sender": [
+        "Anonieme afzender"
+      ],
       "Bitcoin address signature could not be verified": [
         "De handtekening van dit Bitcoin-adres kon niet geverifieerd worden"
       ],
+      "Cannot use QRCode scanner. Please check browser compatibility": [
+        "QR-codescanner kan niet worden gebruikt. Controleer de browsercompatibiliteit"
+      ],
       "Confirm": [
         "Bevestigen"
+      ],
+      "Confirm and send": [
+        "Bevestigen en versturen"
       ],
       "Could not create PSBT": [
         "Kan PSBT niet aanmaken"
@@ -1789,14 +4745,26 @@
       "Median priority": [
         "Middelmatige prioriteit"
       ],
+      "Message to recipient (optional)": [
+        "Bericht aan ontvanger (optioneel)"
+      ],
       "Network fees": [
         "Netwerkkosten"
+      ],
+      "One of recipient's amount is below minimum value": [
+        "Het bedrag van één ontvanger ligt onder de minimumwaarde"
+      ],
+      "Please grant camera permission to use QRCode scanner": [
+        "Geef toestemming voor de camera om de QR-codescanner te gebruiken"
       ],
       "Recent recipients": [
         "Recente ontvangers"
       ],
-      "Recipient amount wasn't updated. Please check you have enough to cover input amount + fees.": [
-        "Het bedrag van de ontvanger is niet bijgewerkt. Controleer of u genoeg saldo heeft om het bedrag + kosten te dekken."
+      "Recipient": [
+        "Ontvanger"
+      ],
+      "Recipient has no bitcoin address available": [
+        "Ontvanger heeft geen beschikbaar bitcoin-adres"
       ],
       "Recipients": [
         "Ontvangers"
@@ -1813,6 +4781,9 @@
       "The transaction could not be sent. Please try again later": [
         "De transactie kon niet worden verstuurd. Probeer het later opnieuw"
       ],
+      "Transaction was successfully sent": [
+        "Transactie is succesvol verzonden"
+      ],
       "Try adding an email address to start sending Bitcoin!": [
         "Probeer een e-mailadres toe te voegen om Bitcoin te versturen!"
       ],
@@ -1825,6 +4796,15 @@
       "You are sending": [
         "U verstuurt"
       ],
+      "You cannot send a message to the recipient because you don't have any address setup on your account": [
+        "U kunt geen bericht naar de ontvanger sturen omdat u geen adres op uw account heeft ingesteld"
+      ],
+      "You do not have enough BTC in this account to fund the transaction and the required network fee of ${ feesToReserveElement }.": [
+        "U heeft niet genoeg BTC op dit account om de transactie te financieren en de vereiste netwerkvergoeding van ${ feesToReserveElement } te betalen."
+      ],
+      "Your Bitcoin is on its way!": [
+        "Uw Bitcoin is onderweg!"
+      ],
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
         "Uw transactie is verzonden naar het Bitcoin-netwerk. Het kan ongeveer een uur duren voordat het netwerk de transactie bevestigt."
       ]
@@ -1835,6 +4815,9 @@
       ],
       "Could not sign transaction": [
         "Kan transactie niet ondertekenen"
+      ],
+      "You must send at least ${ constrainedMinElement } to each recipient": [
+        "U moet minimaal ${ constrainedMinElement } naar elke ontvanger verzenden"
       ]
     },
     "Wallet Settings": {
@@ -1849,6 +4832,9 @@
       ],
       "Account was deleted": [
         "Account is verwijderd"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via e-mail"
       ],
       "Could not add email address": [
         "E-mailadres kan niet toegevoegd worden"
@@ -1865,6 +4851,9 @@
       "Could not remove email address": [
         "E-mailadres kan niet verwijderd worden"
       ],
+      "Create new email address": [
+        "Nieuw e-mailadres aanmaken"
+      ],
       "Email address has been added": [
         "E-mailadres is toegevoegd"
       ],
@@ -1873,6 +4862,9 @@
       ],
       "Email address has been replaced": [
         "E-mailadres is vervangen"
+      ],
+      "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
+        "Koppel een e-mail aan dit portemonneeaccount, zodat andere ${ WALLET_APP_NAME }-gebruikers gemakkelijk bitcoin naar uw e-mail kunnen sturen."
       ],
       "Local storage cleared": [
         "Lokale opslag gewist"
@@ -1888,6 +4880,12 @@
       ],
       "Preferred bitcoin unit was changed": [
         "De voorkeurseenheid voor bitcoin is gewijzigd"
+      ],
+      "Select an available email or create a new email address.": [
+        "Selecteer een beschikbaar e-mailadres of maak een nieuw e-mailadres aan."
+      ],
+      "Select this address": [
+        "Dit adres selecteren"
       ],
       "Wallet could not be deleted": [
         "Portemonnee kan niet verwijderd worden"
@@ -1908,14 +4906,38 @@
       ]
     },
     "Wallet setup": {
+      "A passphrase acts as a second password. It cannot be changed or added later. Back it up safely to unlock your wallet each time you log in.": [
+        "Een wachtwoordzin dient als een tweede wachtwoord. Het kan niet gewijzigd of later toegevoegd worden. Bewaar de zin op een veilige plek om uw portemonnee te openen elke keer dat u inlogt."
+      ],
+      "Add a passphrase": [
+        "Voeg een wachtwoordzin toe"
+      ],
       "Add a passphrase (optional)": [
         "Voeg een wachtwoordzin toe (optioneel)"
+      ],
+      "Choose a name and default currency.": [
+        "Kies een naam en standaardvaluta."
       ],
       "Confirm": [
         "Bevestigen"
       ],
+      "Confirm Passphrase": [
+        "Wachtwoordzin bevestigen"
+      ],
       "Could not create wallet": [
         "Kan portemonnee niet aanmaken"
+      ],
+      "Could not create wallet account": [
+        "Kan portemonnee-account niet aanmaken"
+      ],
+      "Could not link email to wallet account": [
+        "Kan e-mail niet aan portemonnee-account koppelen"
+      ],
+      "Create new wallet": [
+        "Maak een nieuwe portemonnee aan"
+      ],
+      "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. However, you can recover the wallet later if you have its seed phrase.": [
+        "Het verwijderen van deze portemonnee zal al zijn gegevens van de servers van ${ BRAND_NAME } verwijderen. U kunt de portemonnee later echter herstellen als u de seedphrase hebt."
       ],
       "Done": [
         "Klaar"
@@ -1944,14 +4966,35 @@
       "My wallet had a passphrase": [
         "Mijn portemonnee heeft een wachtwoordzin"
       ],
+      "Name": [
+        "Naam"
+      ],
+      "Never give them to anyone else. ${ BRAND_NAME } will never ask you for them. Write them down carefully and hide it in a safe place.": [
+        "Geef ze nooit aan iemand anders. ${ BRAND_NAME } zal u er nooit om vragen. Schrijf ze zorgvuldig op en verstop ze op een veilige plek."
+      ],
+      "Not now": [
+        "Niet nu"
+      ],
       "Passphrase": [
-        "Wachtzin"
+        "Wachtwoordzin"
+      ],
+      "Pick a default currency so we can display the value of your Bitcoin transactions using the latest market data at transaction time.": [
+        "Kies een standaardvaluta zodat wij de waarde van uw Bitcoin-transacties met de nieuwste markgegevens op het moment van de transactie kunnen weergeven."
+      ],
+      "Please transfer them to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. However, you can recover the wallet later if you have its seed phrase.": [
+        "Verhuis ze naar een andere portemonnee voordat u deze verwijdert. Het verwijderen van deze portemonnee zal al zijn gegevens van de servers van ${ BRAND_NAME } verwijderen. U kunt de portemonnee later echter herstellen als u de seedphrase hebt."
       ],
       "Seed phrase (12-24 words)": [
         "Seed-phrase (12-24 woorden)"
       ],
+      "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
+        "Deze 12 woorden mogen alleen als laatste redmiddel worden gebruikt om de activa van deze portemonnee te herstellen, bijvoorbeeld als u de toegang tot uw ${ BRAND_NAME } account verliest."
+      ],
       "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
         "Deze portemonnee kan niet meer ontsleuteld worden. Om deze opnieuw te ontsleutelen, dient u de sleutels te herstellen die tijdens de aanmaak van uw account zijn gebruikt. Anders kunt u het verwijderen om een portemonneeruimte vrij te maken."
+      ],
+      "This wallet seems to still have assets.": [
+        "Deze portemonnee lijkt nog actieve activa te hebben."
       ],
       "View wallet seed phrase": [
         "Seed-phrase van portemonnee bekijken"
@@ -1959,16 +5002,40 @@
       "Wallet seed phrase": [
         "Seed-phrase van portemonnee"
       ],
+      "Wallet seed phrase encode the private key that controls your digital assets.": [
+        "De seed-phrase van een portemonnee codeert de privésleutel die uw digitale activa beheert."
+      ],
       "Wallet setup": [
         "Configuratie van portemonnee"
+      ],
+      "What's a wallet passphrase?": [
+        "Wat is een wachtwoordzin van een portemonnee?"
+      ],
+      "What's a wallet seed phrase?": [
+        "Wat is een seed-phrase van een portemonnee?"
+      ],
+      "What’s a wallet passphrase?": [
+        "Wat is een wachtwoordzin van een portemonnee?"
+      ],
+      "You can use the seed phrase to import your wallet on any wallet app.": [
+        "U kunt de seed-phrase gebruiken om uw portemonnee te importeren in elke portemonnee-app."
       ],
       "Your keys, your coins.": [
         "Uw sleutels, uw coins."
       ]
     },
     "Wallet Sidebar": {
+      "Contact Support": [
+        "Neem contact op met ondersteuning"
+      ],
+      "Create a new wallet": [
+        "Maak een nieuwe portemonnee aan"
+      ],
       "Discover": [
         "Ontdek"
+      ],
+      "Expand user settings": [
+        "Breid de gebruikersinstellingen uit"
       ],
       "Recovery": [
         "Herstel"
@@ -1976,11 +5043,36 @@
       "Security": [
         "Beveiliging"
       ],
+      "Sign out": [
+        "Afmelden"
+      ],
       "Upgrade": [
         "Upgrade"
       ],
+      "User settings": [
+        "Gebruikersinstellingen"
+      ],
       "Wallets": [
         "Portemonnees"
+      ]
+    },
+    "Wallet terms and conditions": {
+      "Could not accept terms and conditions": [
+        "Kan de algemene voorwaarden niet accepteren"
+      ],
+      "Terms and conditions were accepted": [
+        "Algemene voorwaarden zijn geaccepteerd"
+      ]
+    },
+    "Wallet Terms and Conditions": {
+      "This is a self-custodial Bitcoin wallet, meaning any BTC you buy or receive will be fully controlled by you. Not even ${ BRAND_NAME } can seize your assets.": [
+        "Dit is een zelf-beherende Bitcoin-portemonnee, wat betekent dat elke BTC die u koopt of ontvangt volledig door u wordt gecontroleerd. Zelfs ${ BRAND_NAME } kan uw activa niet in beslag nemen."
+      ],
+      "To avoid losing assets due to forgetting your password or other access issues, back up your ${ BRAND_NAME } recovery phrase and wallet seed phrase.": [
+        "Om te voorkomen dat u activa verliest door uw wachtwoord of andere toegangskosten te vergeten, maak een back-up van uw ${ BRAND_NAME } herstelzin en portemonnee seed-phrase."
+      ],
+      "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
+        "We hebben twee BTC-accounts voor u aangemaakt. Een primair account en een tweede account voor het ontvangen van Bitcoin via e-mail (op ${ emailEl }) van andere ${ WALLET_APP_NAME }-gebruikers."
       ]
     },
     "Wallet transaction": {
@@ -1993,14 +5085,32 @@
       "Add bitcoins to your wallet": [
         "Voeg bitcoins aan uw portemonnee toe"
       ],
+      "Add note": [
+        "Notitie toevoegen"
+      ],
       "Amount": [
         "Bedrag"
+      ],
+      "Anonymous sender": [
+        "Anonieme afzender"
+      ],
+      "Bitcoin via Email": [
+        "Bitcoin via e-mail"
       ],
       "Buy": [
         "Kopen"
       ],
+      "Confirmed": [
+        "Bevestigd"
+      ],
+      "Date": [
+        "Datum"
+      ],
       "From": [
         "Afzender"
+      ],
+      "From: ${ senderOrRecipientName }": [
+        "Van: ${ senderOrRecipientName }"
       ],
       "In progress": [
         "In uitvoering"
@@ -2008,8 +5118,17 @@
       "Loading": [
         "Laden"
       ],
+      "Message to recipient": [
+        "Bericht aan ontvanger"
+      ],
       "Network fee": [
         "Netwerkkosten"
+      ],
+      "Note to self": [
+        "Notitie voor uzelf"
+      ],
+      "Private note to myself": [
+        "Privénotitie voor mezelf"
       ],
       "Receive": [
         "Ontvangen"
@@ -2020,8 +5139,17 @@
       "Start your journey": [
         "Begin uw reis"
       ],
+      "Status": [
+        "Status"
+      ],
       "To": [
         "Naar"
+      ],
+      "To: ${ senderOrRecipientName }": [
+        "Aan: ${ senderOrRecipientName }"
+      ],
+      "Total (Amount + fee)": [
+        "Totaal (Bedrag + kosten)"
       ],
       "Total (sent amount + fee)": [
         "Totaal (verstuurd bedrag + kosten)"
@@ -2034,9 +5162,18 @@
       ],
       "View more": [
         "Meer bekijken"
+      ],
+      "You received": [
+        "U hebt ontvangen"
+      ],
+      "You sent": [
+        "U hebt verstuurd"
       ]
     },
     "Wallet Transaction": {
+      "Could not load updated transaction": [
+        "Kan de bijgewerkte transactie niet laden"
+      ],
       "Could not update transaction label": [
         "Kan transactielabel niet bijwerken"
       ],
@@ -2066,11 +5203,54 @@
       ],
       "Sync": [
         "Synchroniseren"
+      ],
+      "Syncing is already in progress": [
+        "Synchronisatie is al bezig"
+      ],
+      "You need to wait 1 minute between each sync": [
+        "U moet 1 minuut wachten tussen elke synchronisatie"
+      ]
+    },
+    "Wallet upgrade": {
+      "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
+        "Een e-mailadres kan alleen aan één portemonneeaccount worden gekoppeld. Om een e-mailadres aan dit portemonneeaccount te koppelen, verwijdert u een e-mailadres van een ander portemonneeaccount of upgrade uw abonnement om meer e-mailadressen te krijgen."
+      ],
+      "Contact your administrator to upgrade": [
+        "Neem contact op met uw beheerder om te upgraden"
+      ],
+      "Unlock more email addresses": [
+        "Ontgrendel meer e-mailadressen"
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "U heeft het maximale aantal portemonnees bereikt die ondersteund worden onder uw huidige abonnement. Upgrade om meer portemonnees aan te maken. Uw steun is ook essentieel voor ons gevecht voor de bescherming van financiële privacy en vrijheid."
       ]
     },
     "Wallet Upgrade": {
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "Door verder te gaan gaat u akkoord met onze ${ termsAndConditionsLink }"
+      ],
+      "Upgrade to support financial freedom": [
+        "Upgrade om financiële vrijheid te ondersteunen"
+      ],
       "Upgrade your privacy": [
         "Upgrade uw privacy"
+      ]
+    },
+    "Wallet Welcome": {
+      "Early Access Waitlist": [
+        "Wachtlijst voor vroege toegang"
+      ],
+      "Invites from active users of ${ WALLET_APP_NAME } will allow you to skip this waiting list.": [
+        "Uitnodigingen van actieve gebruikers van ${ WALLET_APP_NAME } stellen u in staat deze wachtlijst over te slaan."
+      ],
+      "Welcome to ${ WALLET_APP_NAME }": [
+        "Welkom bij ${ WALLET_APP_NAME }"
+      ],
+      "You can also support us and get immediate access by upgrading to ${ BRAND_NAME } Visionary, our most premium plan with paid features in all ${ BRAND_NAME } products.": [
+        "U kunt ons ook steunen en onmiddellijke toegang krijgen door te upgraden naar ${ BRAND_NAME } Visionary, ons meest premium plan met betaalde functies in alle ${ BRAND_NAME }-producten."
+      ],
+      "You have been added to the first come, first serve waiting list. We will notify you at ${ email } once we have more server capacity.": [
+        "U bent toegevoegd aan de wachtlijst op basis van wie het eerst komt, het eerst maalt. We zullen u op ${ email } informeren zodra we meer servercapaciteit hebben."
       ]
     },
     "wallet_signup_2024: Info": {
@@ -2093,11 +5273,6 @@
         "Bitcoin via e-mail"
       ]
     },
-    "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bewaar uw bitcoins en zet ze veilig over"
-      ]
-    },
     "wallet_signup_2024:Bug category": {
       "Wallet problem": [
         "Probleem met Wallet"
@@ -2115,6 +5290,9 @@
       ]
     },
     "Warning": {
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Houd er rekening mee dat door deze betaalmethode te kiezen, uw account niet onmiddellijk kan worden bijgewerkt. We zullen uw account bijwerken zodra de betaling is gewist."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."
       ],
