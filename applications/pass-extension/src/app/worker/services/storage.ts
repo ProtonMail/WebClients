@@ -1,12 +1,12 @@
-import { browserLocalStorage, browserSessionStorage } from '@proton/pass/lib/extension/storage';
+import { getExtensionLocalStorage, getExtensionSessionStorage } from '@proton/pass/lib/extension/storage';
 import type { ExtensionStorage, LocalStoreData, SessionStoreData } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 type StorageState = { storageFull: boolean };
 
 export const createStorageService = () => {
-    const localStorage = browserLocalStorage;
-    const sessionStorage = browserSessionStorage;
+    const localStorage = getExtensionLocalStorage<LocalStoreData>();
+    const sessionStorage = getExtensionSessionStorage<SessionStoreData>();
 
     const state: StorageState = { storageFull: false };
 
