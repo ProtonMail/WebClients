@@ -15,6 +15,7 @@ import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useEx
 import type { Runtime } from 'webextension-polyfill';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { clientReady } from '@proton/pass/lib/client';
 import {
@@ -55,11 +56,12 @@ type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string>
  * the content-script's parent port name through postMessaging */
 export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
     const { i18n, endpoint } = usePassCore();
+    const app = useAppState();
+    const authStore = useAuthStore();
+
     if (!(endpoint === 'dropdown' || endpoint === 'notification')) throw Error('Invalid IFrame endpoint');
 
-    const app = useAppState();
     const [{ port, forwardTo }, setPortContext] = useState<PortContext>({ port: null, forwardTo: null });
-
     const [settings, setSettings] = useState<ProxiedSettings>(getInitialSettings());
     const [features, setFeatures] = useState<RecursivePartial<FeatureFlagState>>({});
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
@@ -169,6 +171,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                     case WorkerMessageType.PORT_UNAUTHORIZED:
                         return destroyFrame();
                     case WorkerMessageType.WORKER_STATE_CHANGE:
+                        authStore?.setLocalID(message.payload.state.localID);
                         return app.setState(message.payload.state);
                 }
             });
