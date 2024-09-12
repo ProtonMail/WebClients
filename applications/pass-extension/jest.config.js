@@ -12,6 +12,7 @@ module.exports = {
     testTimeout: 30000,
     moduleNameMapper: {
         'proton-pass-extension/(.*)$': ['<rootDir>/src/__mocks__/$1', '<rootDir>/src/$1'],
+        '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
     },
     globals: {
         BUILD_TARGET: 'test',
