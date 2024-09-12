@@ -5,6 +5,7 @@ import { Beta } from '@proton/pass/components/Settings/Beta';
 import { Display } from '@proton/pass/components/Settings/Display';
 import { Locale } from '@proton/pass/components/Settings/Locale';
 import { Offline } from '@proton/pass/components/Settings/Offline';
+import { Theme } from '@proton/pass/components/Settings/Theme';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useOfflineSupported } from '@proton/pass/hooks/useOfflineSupported';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -19,6 +20,7 @@ export const General: FC = () => {
     return [
         canEnableBeta && <Beta key="beta-access" />,
         <Locale key="locale" />,
+        <Theme key="theme" />,
         <Display key="display" />,
         offlineSupported && <Offline key="offline" />,
         <ApplicationLogs style={{ '--h-custom': '18.75rem' }} key="logs" />,
