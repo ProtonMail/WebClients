@@ -100,31 +100,60 @@ const config: ThemeConfig[] = [
         ],
     },
     {
-        output: './themes/dist/pass.theme.css',
+        output: './themes/dist/pass-dark.theme.css',
         files: [
             {
-                path: './themes/src/pass/standard-base.css',
+                path: './themes/src/pass-dark/standard-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/src/pass/violet-base.css',
+                path: './themes/src/pass-dark/violet-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/src/pass/teal-base.css',
+                path: './themes/src/pass-dark/teal-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/src/pass/orange-base.css',
+                path: './themes/src/pass-dark/orange-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/src/pass/red-base.css',
+                path: './themes/src/pass-dark/red-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/src/pass/lime-base.css',
+                path: './themes/src/pass-dark/lime-base.css',
                 type: 'dark',
+            },
+        ],
+    },
+    {
+        output: './themes/dist/pass-light.theme.css',
+        files: [
+            {
+                path: './themes/src/pass-light/standard-base.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/pass-light/violet-base.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/pass-light/teal-base.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/pass-light/orange-base.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/pass-light/red-base.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/pass-light/lime-base.css',
+                type: 'light',
             },
         ],
     },

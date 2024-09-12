@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 // @ts-ignore
-import theme from '@proton/colors/themes/dist/pass.theme.css';
+import theme from '@proton/colors/themes/dist/pass-dark.theme.css';
 
 export const THEME_ID = 'theme-root';
 

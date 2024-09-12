@@ -79,6 +79,7 @@
   --shadow-raised-opacity: 0.35;
   --shadow-lifted-opacity: 0.4;
   --backdrop-norm: rgb(0 0 0 / 0.5);
+  --optional-field-placeholder-color: var(--text-weak);
   --focus-outline: var(--interaction-norm-major-2);
   --focus-ring: var(--interaction-norm-minor-1);
   --search-field-focus-background: #0e0e0e;
@@ -105,20 +106,6 @@
   --interaction-weak-major-2: #59536e;
   --interaction-weak-major-3: #6e6980;
   --interaction-weak-contrast: #ffffff;
-  --focus-outline: var(--interaction-norm-major-2);
-  --focus-ring: var(--interaction-norm-minor-1);
-  --interaction-norm-hover: var(--interaction-norm-major-1);
-  --interaction-norm-active: var(--interaction-norm-major-2);
-  --interaction-weak-hover: var(--interaction-weak-major-1);
-  --interaction-weak-active: var(--interaction-weak-major-2);
-  --link-norm: var(--interaction-norm);
-  --link-hover: var(--interaction-norm-hover);
-  --link-active: var(--interaction-norm-active);
-  .button-solid-norm {
-    --button-default-text-color: var(--text-invert);
-    --button-hover-text-color: var(--text-invert);
-    --button-active-text-color: var(--text-invert);
-  }
 }
 
 .ui-teal {
@@ -136,20 +123,6 @@
   --interaction-weak-major-2: #515c64;
   --interaction-weak-major-3: #677077;
   --interaction-weak-contrast: #ffffff;
-  --focus-outline: var(--interaction-norm-major-2);
-  --focus-ring: var(--interaction-norm-minor-1);
-  --interaction-norm-hover: var(--interaction-norm-major-1);
-  --interaction-norm-active: var(--interaction-norm-major-2);
-  --interaction-weak-hover: var(--interaction-weak-major-1);
-  --interaction-weak-active: var(--interaction-weak-major-2);
-  --link-norm: var(--interaction-norm);
-  --link-hover: var(--interaction-norm-hover);
-  --link-active: var(--interaction-norm-active);
-  .button-solid-norm {
-    --button-default-text-color: var(--text-invert);
-    --button-hover-text-color: var(--text-invert);
-    --button-active-text-color: var(--text-invert);
-  }
 }
 
 .ui-orange {
@@ -167,12 +140,6 @@
   --interaction-weak-major-2: #655d5f;
   --interaction-weak-major-3: #787273;
   --interaction-weak-contrast: #ffffff;
-  --interaction-norm-hover: var(--interaction-norm-major-1);
-  --interaction-norm-active: var(--interaction-norm-major-2);
-  --interaction-weak-hover: var(--interaction-weak-major-1);
-  --interaction-weak-active: var(--interaction-weak-major-2);
-  --focus-outline: var(--interaction-norm-major-2);
-  --focus-ring: var(--interaction-norm-minor-1);
 }
 
 .ui-red {
@@ -190,12 +157,6 @@
   --interaction-weak-major-2: #645861;
   --interaction-weak-major-3: #776d75;
   --interaction-weak-contrast: #ffffff;
-  --interaction-norm-hover: var(--interaction-norm-major-1);
-  --interaction-norm-active: var(--interaction-norm-major-2);
-  --interaction-weak-hover: var(--interaction-weak-major-1);
-  --interaction-weak-active: var(--interaction-weak-major-2);
-  --focus-outline: var(--interaction-norm-major-2);
-  --focus-ring: var(--interaction-norm-minor-1);
 }
 
 .ui-lime {
@@ -213,18 +174,4 @@
   --interaction-weak-major-2: #52595d;
   --interaction-weak-major-3: #686e72;
   --interaction-weak-contrast: #ffffff;
-  --focus-outline: var(--interaction-norm-major-2);
-  --focus-ring: var(--interaction-norm-minor-1);
-  --interaction-norm-hover: var(--interaction-norm-major-1);
-  --interaction-norm-active: var(--interaction-norm-major-2);
-  --interaction-weak-hover: var(--interaction-weak-major-1);
-  --interaction-weak-active: var(--interaction-weak-major-2);
-  --link-norm: var(--interaction-norm);
-  --link-hover: var(--interaction-norm-hover);
-  --link-active: var(--interaction-norm-active);
-  .button-solid-norm {
-    --button-default-text-color: var(--text-invert);
-    --button-hover-text-color: var(--text-invert);
-    --button-active-text-color: var(--text-invert);
-  }
 }
