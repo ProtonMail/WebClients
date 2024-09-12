@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { PromotionBanner } from '@proton/components/containers';
+import { PromotionBanner } from '@proton/components';
 import { useApi, useEventManager } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';

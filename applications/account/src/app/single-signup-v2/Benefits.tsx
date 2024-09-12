@@ -1,7 +1,7 @@
 import type { CSSProperties, ComponentPropsWithoutRef, Key, ReactNode } from 'react';
 
-import type { IconName } from '@proton/components/components';
-import { Icon } from '@proton/components/components';
+import type { IconName } from '@proton/components';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 export interface BenefitItem {

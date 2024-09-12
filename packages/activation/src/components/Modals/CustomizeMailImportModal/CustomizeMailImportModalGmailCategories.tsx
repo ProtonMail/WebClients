@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { MailImportDestinationFolder } from '@proton/activation/src/interface';
-import { Field, Icon, Label, Option, Row, SelectTwo, Tooltip } from '@proton/components/components';
+import { Field, Icon, Label, Option, Row, SelectTwo, Tooltip } from '@proton/components';
 
 interface Props {
     hasCategories: boolean;
@@ -18,10 +18,7 @@ const CustomizeMailImportModalGmailCategories = ({ hasCategories, selectedCatego
     return (
         <>
             {hasCategories && (
-                <div
-                    className="mb-4 border-bottom items-center"
-                    data-testid="CustomizeModal:gmailCategories"
-                >
+                <div className="mb-4 border-bottom items-center" data-testid="CustomizeModal:gmailCategories">
                     <Row>
                         <Label className="flex items-center">
                             {c('Label').t`Manage categories`}

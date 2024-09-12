@@ -14,7 +14,7 @@ import {
     ModalTwoHeader,
     PrimaryButton,
     useSettingsLink,
-} from '@proton/components/components';
+} from '@proton/components';
 
 import StepImportingContent from './StepImportingContent';
 

@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { Button } from '@proton/atoms'
 import {
   DropdownMenu,
   DropdownMenuButton,
@@ -6,18 +6,17 @@ import {
   SimpleDropdown,
   ToolbarButton,
   useConfirmActionModal,
-} from '@proton/components/components'
-import clsx from '@proton/utils/clsx'
-import { CommentTime } from './CommentTime'
+} from '@proton/components'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
-import { CommentThreadState } from '@proton/docs-shared'
-import { Button } from '@proton/atoms'
-import { CommentsComposer } from './CommentsComposer'
+import { CommentThreadState, UserAvatar } from '@proton/docs-shared'
+import clsx from '@proton/utils/clsx'
+import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
-import { UserAvatar } from '@proton/docs-shared'
-import { sendErrorMessage } from '../../Utils/errorMessage'
-import { useCommentsContext } from './CommentsContext'
 import { useApplication } from '../../ApplicationProvider'
+import { sendErrorMessage } from '../../Utils/errorMessage'
+import { CommentsComposer } from './CommentsComposer'
+import { useCommentsContext } from './CommentsContext'
+import { CommentTime } from './CommentTime'
 import { CommentViewer } from './CommentViewer'
 
 export function CommentsPanelListComment({

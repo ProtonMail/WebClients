@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import type { ModalProps } from '@proton/components/components';
-import { Prompt } from '@proton/components/components';
+import type { ModalProps } from '@proton/components';
+import { Prompt } from '@proton/components';
 import { useConversationCounts, useFolders, useLabels, useMessageCounts } from '@proton/components/hooks';
 
 import { getLocationElementsCount } from 'proton-mail/helpers/elements';

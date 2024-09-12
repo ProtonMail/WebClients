@@ -4,12 +4,11 @@ import { Suspense, lazy, useCallback, useEffect, useRef, useState } from 'react'
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import type { EditorActions } from '@proton/components/components';
-import { Editor, Icon, Tooltip, useModalState } from '@proton/components/components';
+import type { EditorActions } from '@proton/components';
+import { Editor, ErrorBoundary, Icon, Tooltip, useModalState, useTheme } from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { ErrorBoundary, useTheme } from '@proton/components/containers';
 import { useAddresses, useHandler, useUserSettings } from '@proton/components/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';

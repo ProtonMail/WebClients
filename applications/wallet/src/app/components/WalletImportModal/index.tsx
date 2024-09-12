@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import type { WasmFiatCurrencySymbol } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import type { ModalOwnProps } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components';
 import {
     Collapsible,
     CollapsibleContent,
@@ -17,7 +17,7 @@ import {
     PasswordInputTwo,
     TextAreaTwo,
     useModalStateWithData,
-} from '@proton/components/components';
+} from '@proton/components';
 import { useWalletSettings } from '@proton/wallet';
 
 import { Button, CoreButton, CoreButtonLike, Input, Modal } from '../../atoms';

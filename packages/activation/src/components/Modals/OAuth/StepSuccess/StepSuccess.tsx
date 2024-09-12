@@ -14,7 +14,7 @@ import {
     SettingsLink,
     useModalState,
     useSettingsLink,
-} from '@proton/components/components';
+} from '@proton/components';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import importStartedSvg from '@proton/styles/assets/img/onboarding/import-assistant.svg';
 

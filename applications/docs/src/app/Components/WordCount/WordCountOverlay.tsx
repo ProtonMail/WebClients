@@ -1,7 +1,6 @@
 import { useFloatingWordCount } from './useFloatingWordCount'
 import { useWordCount } from './useWordCount'
 
-import { c } from 'ttag'
 import {
   Dropdown,
   DropdownButton,
@@ -9,8 +8,9 @@ import {
   DropdownMenuButton,
   DropdownSizeUnit,
   usePopperAnchor,
-} from '@proton/components/components'
+} from '@proton/components'
 import { useState } from 'react'
+import { c } from 'ttag'
 const WordCountOverlay = () => {
   const wordCountCollection = useWordCount()
   const { floatingUIIsEnabled } = useFloatingWordCount()

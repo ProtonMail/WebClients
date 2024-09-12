@@ -1,8 +1,12 @@
 import type { ReactNode, RefObject } from 'react';
-import React, { createContext, useContext, useMemo } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 
-import { useModalStateObject, useModalTwoPromise } from '@proton/components/components';
-import { AssistantIncompatibleBrowserModal, AssistantIncompatibleHardwareModal } from '@proton/components/containers';
+import {
+    AssistantIncompatibleBrowserModal,
+    AssistantIncompatibleHardwareModal,
+    useModalStateObject,
+    useModalTwoPromise,
+} from '@proton/components';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { INCOMPATIBILITY_TYPE } from '@proton/shared/lib/assistant';
 

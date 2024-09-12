@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms/Button'
-import type { ModalStateProps } from '@proton/components/components'
+import type { ModalStateProps } from '@proton/components'
 import {
   Icon,
   MimeIcon,
@@ -9,14 +9,14 @@ import {
   ModalTwoHeader,
   Tooltip,
   useModalTwoStatic,
-} from '@proton/components/components'
+} from '@proton/components'
 import type { NativeVersionHistory } from '@proton/docs-core'
+import { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
+import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
+import { Logger } from '@proton/utils/logs'
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
 import { EditorFrame } from './EditorFrame'
-import { EditorInvoker } from '@proton/docs-core/lib/Bridge/EditorInvoker'
-import { Logger } from '@proton/utils/logs'
-import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
 import HistoryTimeline from './HistoryTimeline'
 
 function HistoryViewerModalContent({

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, useModalStateWithData } from '@proton/components/components';
+import { Icon, useModalStateWithData } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';

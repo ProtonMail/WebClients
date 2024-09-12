@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components/components';
-import { PassLogo } from '@proton/components/components';
+import type { IconName } from '@proton/components';
+import { PassLogo } from '@proton/components';
 import { getPassKeys, getPassMonitor } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {

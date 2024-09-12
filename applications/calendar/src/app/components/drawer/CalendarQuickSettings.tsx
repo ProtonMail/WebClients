@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Info, Loader, Toggle, useConfirmActionModal } from '@proton/components/components';
+import { Info, Loader, Toggle, useConfirmActionModal } from '@proton/components';
 import {
     DefaultQuickSettings,
     QuickSettingsButtonSection,

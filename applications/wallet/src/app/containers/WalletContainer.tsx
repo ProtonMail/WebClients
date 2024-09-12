@@ -3,7 +3,7 @@ import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Icon, useModalState } from '@proton/components/components';
+import { Icon, useModalState } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { MINUTE } from '@proton/shared/lib/constants';

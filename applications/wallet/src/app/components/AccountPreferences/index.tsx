@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import { DropdownSizeUnit } from '@proton/components/components';
+import { DropdownSizeUnit } from '@proton/components';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';

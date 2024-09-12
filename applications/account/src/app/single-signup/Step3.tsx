@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms';
 import { Button } from '@proton/atoms/Button';
-import type { ModalProps } from '@proton/components/components';
+import type { ModalProps } from '@proton/components';
 import {
     Copy,
     InputFieldTwo,
@@ -16,7 +16,7 @@ import {
     PasswordInputTwo,
     useFormErrors,
     useModalState,
-} from '@proton/components/components';
+} from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';

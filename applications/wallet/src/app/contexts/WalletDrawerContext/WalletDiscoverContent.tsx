@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { Icon, SettingsLink } from '@proton/components/components';
+import { Icon, SettingsLink } from '@proton/components';
 import { useUser, useUserSettings } from '@proton/components/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

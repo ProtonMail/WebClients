@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon, Tooltip } from '@proton/components/components';
+import { Icon, Tooltip } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { useUserWalletSettings } from '@proton/wallet';
 

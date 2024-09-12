@@ -9,8 +9,7 @@ import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation
 import { deleteSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';
 import { Button } from '@proton/atoms/Button';
-import { Alert, DropdownActions, Prompt, useModalState } from '@proton/components/components';
-import { FeatureCode } from '@proton/components/containers';
+import { Alert, DropdownActions, FeatureCode, Prompt, useModalState } from '@proton/components';
 import { useFeature } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 

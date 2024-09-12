@@ -1,4 +1,4 @@
-import type { PrivateAuthenticationStore } from '@proton/components/containers';
+import type { PrivateAuthenticationStore } from '@proton/components';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import type { Api } from '@proton/shared/lib/interfaces';
 import uniqueBy from '@proton/utils/uniqueBy';

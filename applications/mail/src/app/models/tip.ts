@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import type { IconName } from '@proton/components/components';
+import type { IconName } from '@proton/components';
 
 export enum TipActionType {
     CreateFolder = 'folder',

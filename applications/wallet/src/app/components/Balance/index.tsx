@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import { useToggle } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';

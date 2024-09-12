@@ -12,7 +12,7 @@ import {
     UpsellModal,
     useModalState,
     useUpsellConfig,
-} from '@proton/components/components';
+} from '@proton/components';
 import useOneDollarConfig from '@proton/components/components/upsell/useOneDollarPromo';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { YEAR_REGEX } from '@proton/shared/lib/date/date';

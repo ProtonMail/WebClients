@@ -1,4 +1,4 @@
-import { ProtonLogo } from '@proton/components/components';
+import { ProtonLogo } from '@proton/components';
 import type { Audience, FreePlanDefault, Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
 import type { PublicTheme } from '../../containers/PublicThemeProvider';

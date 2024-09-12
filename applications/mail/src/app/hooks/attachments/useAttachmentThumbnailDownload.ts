@@ -1,4 +1,4 @@
-import { useModalTwo } from '@proton/components/components';
+import { useModalTwo } from '@proton/components';
 import { useApi, useGetVerificationPreferences } from '@proton/components/hooks';
 import type { WorkerDecryptionResult } from '@proton/crypto';
 import { bigIntToNumber } from '@proton/crypto/lib/bigInteger';

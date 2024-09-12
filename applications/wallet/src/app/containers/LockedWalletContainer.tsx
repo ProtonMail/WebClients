@@ -4,7 +4,7 @@ import { Redirect, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Alert, Icon, useModalState } from '@proton/components/components';
+import { Alert, Icon, useModalState } from '@proton/components';
 
 import { CoreButton } from '../atoms';
 import { WalletDeletionModal } from '../components/WalletDeletionModal';

@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback } from 'react';
 
-import { useModalTwo } from '@proton/components/components';
+import { useModalTwo } from '@proton/components';
 import { useApi, useFolders, useNotifications } from '@proton/components/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { useFlag } from '@proton/unleash';

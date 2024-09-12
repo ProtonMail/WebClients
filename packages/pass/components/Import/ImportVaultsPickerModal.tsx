@@ -7,8 +7,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
-import type { ModalProps } from '@proton/components/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { UpsellRef } from '@proton/pass/constants';
 import { type ImportPayload, type ImportVault } from '@proton/pass/lib/import/types';
 import {

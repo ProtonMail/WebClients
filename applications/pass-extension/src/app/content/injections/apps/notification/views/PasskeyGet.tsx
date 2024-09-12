@@ -10,7 +10,7 @@ import { type NotificationActions } from 'proton-pass-extension/app/content/type
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms/Scroll';
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { ContextSeparator } from '@proton/components/components';
+import { ContextSeparator } from '@proton/components';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 
 import type { DriveFileRevision } from '../../store';

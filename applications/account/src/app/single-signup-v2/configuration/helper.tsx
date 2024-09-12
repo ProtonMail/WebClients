@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 

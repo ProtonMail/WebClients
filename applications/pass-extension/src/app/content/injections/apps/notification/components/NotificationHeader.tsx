@@ -4,7 +4,7 @@ import { useIFrameContext } from 'proton-pass-extension/app/content/injections/a
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import { PassIcon } from '@proton/pass/components/Layout/Icon/PassIcon';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 

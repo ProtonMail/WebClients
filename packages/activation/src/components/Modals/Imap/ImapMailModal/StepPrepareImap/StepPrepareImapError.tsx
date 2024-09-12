@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import { MailImportPayloadError } from '@proton/activation/src/interface';
-import { Alert } from '@proton/components/components';
+import { Alert } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 interface Props {

@@ -1,10 +1,9 @@
 import type { FocusEventHandler, MouseEventHandler } from 'react';
-import React from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Tooltip } from '@proton/components/components';
+import { Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import type { RecipientType } from '../../../models/address';

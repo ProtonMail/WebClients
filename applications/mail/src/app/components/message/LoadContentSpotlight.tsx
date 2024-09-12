@@ -2,7 +2,7 @@ import type { ReactElement, RefObject } from 'react';
 
 import { c } from 'ttag';
 
-import { SettingsLink, Spotlight, useSpotlightShow } from '@proton/components/components';
+import { SettingsLink, Spotlight, useSpotlightShow } from '@proton/components';
 import { useSpotlightOnFeature, useUser } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import { APPS, MONTH } from '@proton/shared/lib/constants';

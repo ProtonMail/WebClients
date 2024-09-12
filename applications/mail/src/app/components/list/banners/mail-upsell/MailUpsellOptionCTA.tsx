@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { SettingsLink, useUpsellConfig } from '@proton/components/components';
-import { SUBSCRIPTION_STEPS } from '@proton/components/containers';
+import { SUBSCRIPTION_STEPS, SettingsLink, useUpsellConfig } from '@proton/components';
 import { APP_UPSELL_REF_PATH, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 

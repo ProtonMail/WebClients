@@ -4,8 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Header as CoreHeader } from '@proton/components';
-import { Icon } from '@proton/components/components';
+import { Header as CoreHeader, Icon } from '@proton/components';
 import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';

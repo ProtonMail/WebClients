@@ -13,7 +13,7 @@ import {
     ModalTwoHeader,
     Tooltip,
     useModalStateObject,
-} from '@proton/components/components';
+} from '@proton/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import { useApi, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';

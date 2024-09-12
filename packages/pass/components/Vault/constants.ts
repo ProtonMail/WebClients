@@ -1,4 +1,4 @@
-import type { IconName } from '@proton/components/components';
+import type { IconName } from '@proton/components';
 import type { ColorRGB } from '@proton/pass/types';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
 
