@@ -492,7 +492,7 @@ describe('resolveUpsellsToDisplay', () => {
             upsell.onUpgrade();
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledTimes(1);
             expect(mockedOpenSubscriptionModal).toHaveBeenCalledWith({
-                cycle: CYCLE.TWO_YEARS,
+                cycle: CYCLE.YEARLY,
                 disablePlanSelection: true,
                 plan: PLANS.PASS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,

@@ -1,4 +1,4 @@
-import type { PLANS } from '@proton/shared/lib/constants';
+import type { FreeSubscription, PLANS } from '@proton/shared/lib/constants';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 import type { Cycle, PlanIDs, SubscriptionModel } from '@proton/shared/lib/interfaces';
@@ -8,7 +8,7 @@ import type { Cycle, PlanIDs, SubscriptionModel } from '@proton/shared/lib/inter
  */
 export function exclude24Months(
     planIDs: PlanIDs,
-    subscription: SubscriptionModel,
+    subscription: SubscriptionModel | FreeSubscription,
     plansWithout24Months: PLANS[]
 ): Cycle[] | undefined {
     const selectedPlanWithout24Months = plansWithout24Months.find((plan) => planIDs[plan]);
