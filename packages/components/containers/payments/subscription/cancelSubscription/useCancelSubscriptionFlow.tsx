@@ -14,6 +14,7 @@ import {
     getPlan,
     hasCancellablePlan,
     hasMigrationDiscount,
+    hasPassLaunchOffer,
     hasVisionary,
     isManagedExternally,
 } from '@proton/shared/lib/helpers/subscription';
@@ -39,12 +40,13 @@ import {
 import DowngradeModal from '../../DowngradeModal';
 import LossLoyaltyModal from '../../LossLoyaltyModal';
 import MemberDowngradeModal from '../../MemberDowngradeModal';
+import PassLaunchOfferDowngradeModal from '../../PassLaunchOfferDowngradeModal';
 import { getShortPlan } from '../../features/plan';
 import CalendarDowngradeModal from '../CalendarDowngradeModal';
 import type { FeedbackDowngradeData, FeedbackDowngradeResult } from '../FeedbackDowngradeModal';
 import FeedbackDowngradeModal, { isKeepSubscription } from '../FeedbackDowngradeModal';
 import type { HighlightPlanDowngradeModalOwnProps } from '../HighlightPlanDowngradeModal';
-import HighlightPlanDowngradeModal from '../HighlightPlanDowngradeModal';
+import HighlightPlanDowngradeModal, { planSupportsCancellationDowngradeModal } from '../HighlightPlanDowngradeModal';
 import InAppPurchaseModal from '../InAppPurchaseModal';
 import { DiscountWarningModal, VisionaryWarningModal } from '../PlanLossWarningModal';
 import CancelSubscriptionLoadingModal from './CancelSubscriptionLoadingModal';
@@ -104,6 +106,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
     const [lossLoyaltyModal, showLossLoyaltyModal] = useModalTwoPromise();
     const [memberDowngradeModal, showMemberDowngradeModal] = useModalTwoPromise();
+    const [passLaunchOfferDowngradeModal, showPassLaunchDowngradeModal] = useModalTwoPromise();
     const [downgradeModal, showDowngradeModal] = useModalTwoPromise<{ hasMail: boolean; hasVpn: boolean }>();
     const [cancellationLoadingModal, showCancellationLoadingModal, renderCancellationLoadingModal] = useModalState();
 
@@ -174,6 +177,17 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                     />
                 );
             })}
+            {subscription &&
+                passLaunchOfferDowngradeModal((props) => {
+                    return (
+                        <PassLaunchOfferDowngradeModal
+                            {...props}
+                            subscription={subscription}
+                            onConfirm={props.onResolve}
+                            onClose={props.onReject}
+                        />
+                    );
+                })}
             {renderCancellationLoadingModal && <CancelSubscriptionLoadingModal {...cancellationLoadingModal} />}
             {subscription &&
                 cancelSubscriptionModal((props) => {
@@ -193,6 +207,41 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             const result = await showCancelSubscriptionModal();
 
             if (result.status === 'kept') {
+                return SUBSCRIPTION_KEPT;
+            }
+        }
+
+        const { PeriodEnd = 0 } = subscription || {};
+        const currentPlan = getPlan(subscription);
+        const shortPlan = currentPlan
+            ? getShortPlan(currentPlan.Name as PLANS, plansMap, {
+                  vpnServers,
+                  freePlan,
+              })
+            : undefined;
+
+        // We only show the plan downgrade modal for plans that are defined with features
+        if (shortPlan && !subscriptionReminderFlow && planSupportsCancellationDowngradeModal(shortPlan.plan)) {
+            try {
+                await showHighlightPlanDowngradeModal({
+                    user,
+                    plansMap,
+                    app,
+                    shortPlan,
+                    periodEnd: PeriodEnd,
+                    freePlan,
+                    cancellationFlow: true,
+                    subscription,
+                });
+            } catch {
+                return SUBSCRIPTION_KEPT;
+            }
+        }
+
+        if (hasPassLaunchOffer(subscription)) {
+            try {
+                await showPassLaunchDowngradeModal();
+            } catch {
                 return SUBSCRIPTION_KEPT;
             }
         }
@@ -255,10 +304,6 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             await showVisionaryWarningModal();
         }
 
-        if (isManagedExternally(subscription)) {
-            await showInAppPurchaseModal();
-        }
-
         const { PeriodEnd = 0 } = subscription || {};
         const currentPlan = getPlan(subscription);
         const shortPlan = currentPlan
@@ -277,6 +322,8 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 shortPlan,
                 periodEnd: PeriodEnd,
                 freePlan,
+                cancellationFlow: false,
+                subscription,
             });
         }
 
@@ -315,6 +362,14 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             if (user.isFree || isFreeSubscription(subscription)) {
                 createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
                 return SUBSCRIPTION_KEPT;
+            }
+
+            if (isManagedExternally(subscription)) {
+                try {
+                    await showInAppPurchaseModal();
+                } finally {
+                    return SUBSCRIPTION_KEPT;
+                }
             }
 
             if (hasCancellablePlan(subscription, user)) {

@@ -846,3 +846,19 @@ export const getMaxValue = (plan: Plan, key: MaxKeys): number => {
 export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
     return checkResponse?.TaxInclusive === TaxInclusive.INCLUSIVE;
 }
+
+export function hasPassLaunchOffer(subscription: Subscription | FreeSubscription | undefined): boolean {
+    if (!subscription || isFreeSubscription(subscription)) {
+        return false;
+    }
+
+    const passLaunchOfferAmount = 1200;
+    const passLaunchOfferName = 'passlaunch';
+    const plan = getPlan(subscription);
+
+    const isLaunchOffer =
+        (subscription.RenewAmount === passLaunchOfferAmount && subscription.Amount === passLaunchOfferAmount) ||
+        plan?.Offer === passLaunchOfferName;
+
+    return isLaunchOffer && subscription.Cycle === CYCLE.YEARLY && plan?.Name === PLANS.PASS;
+}

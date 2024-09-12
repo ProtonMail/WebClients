@@ -24,7 +24,7 @@ import {
     getStorageFeatureB2B,
     getVersionHistory,
 } from './drive';
-import { get24x7Support, getAdminPanel, getSentinel, getSupport, getUsersFeature } from './highlights';
+import { get24x7Support, getAdminPanel, getPassMonitor, getSentinel, getSupport, getUsersFeature } from './highlights';
 import type { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './interface';
 import {
     getContactGroupsManagement,
@@ -231,8 +231,8 @@ export const getPassPlan = (plan: Plan): ShortPlan => {
             getVaults(PASS_PLUS_VAULTS),
             getVaultSharing(PASS_PLUS_VAULT_SHARING),
             get2FAAuthenticator(true),
+            getPassMonitor(true),
             getCustomFields(true),
-            getSentinel(true),
             getSupport('priority'),
         ],
     };
@@ -252,6 +252,7 @@ export const getPassProPlan = (plan: Plan): ShortPlan => {
             getVaults(PASS_PRO_VAULTS),
             getVaultSharing(PASS_PRO_VAULT_SHARING),
             get2FAAuthenticator(true),
+            getPassMonitor(true),
             getCustomFields(true),
             getAdminPanel(),
             get24x7Support(),
@@ -275,8 +276,8 @@ export const getPassBusinessPlan = (plan?: Plan): ShortPlan => {
             getVaults(PASS_BIZ_VAULTS),
             getVaultSharing(PASS_BIZ_VAULT_SHARING),
             get2FAAuthenticator(true),
+            getPassMonitor(true),
             getCustomFields(true),
-            getSentinel(true),
             getAdminPanel(),
             get24x7Support(),
             getRequire2FA(true),
@@ -322,9 +323,13 @@ export const getFreePassPlan = (): ShortPlan => {
         features: [
             getLoginsAndNotes('free'),
             getDevices(),
+            getHideMyEmailAliases(FREE_PASS_ALIASES),
             getVaults(FREE_VAULTS),
             getVaultSharing(FREE_VAULT_SHARING),
-            getHideMyEmailAliases(FREE_PASS_ALIASES),
+            get2FAAuthenticator(false),
+            getPassMonitor(false),
+            getCustomFields(false),
+            getSupport('limited'),
         ],
     };
 };
