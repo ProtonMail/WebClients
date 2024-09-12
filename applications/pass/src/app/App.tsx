@@ -29,7 +29,7 @@ import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
-import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath, history } from '@proton/pass/components/Navigation/routing';
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
@@ -138,7 +138,7 @@ export const App = () => (
                 <PassCoreProvider {...getPassCoreProps(sw?.client)}>
                     <CompatibilityCheck compatibilities={PASS_WEB_COMPAT}>
                         <Icons />
-                        <ThemeProvider />
+
                         <ErrorBoundary component={<StandardErrorPage big />}>
                             <NotificationsProvider>
                                 <ModalsProvider>
@@ -153,13 +153,15 @@ export const App = () => (
                                                         <AuthSwitchProvider>
                                                             <AuthServiceProvider>
                                                                 <StoreProvider>
-                                                                    <Localized>
-                                                                        <AppGuard />
-                                                                    </Localized>
-                                                                    <Portal>
-                                                                        <ModalsChildren />
-                                                                        <NotificationsChildren />
-                                                                    </Portal>
+                                                                    <ThemeConnect>
+                                                                        <Localized>
+                                                                            <AppGuard />
+                                                                        </Localized>
+                                                                        <Portal>
+                                                                            <ModalsChildren />
+                                                                            <NotificationsChildren />
+                                                                        </Portal>
+                                                                    </ThemeConnect>
                                                                 </StoreProvider>
                                                             </AuthServiceProvider>
                                                         </AuthSwitchProvider>

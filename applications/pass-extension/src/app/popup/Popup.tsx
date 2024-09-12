@@ -8,6 +8,7 @@ import { usePopupSizeSurgery } from 'proton-pass-extension/lib/hooks/usePopupSiz
 
 import { ErrorBoundary, NotificationsContext, useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
+import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
@@ -39,9 +40,11 @@ export const Popup = () => {
                     <PopupProvider>
                         <Router>
                             <NavigationProvider>
-                                <Localized>
-                                    <AppGuard />
-                                </Localized>
+                                <ThemeConnect>
+                                    <Localized>
+                                        <AppGuard />
+                                    </Localized>
+                                </ThemeConnect>
                             </NavigationProvider>
                         </Router>
                     </PopupProvider>
