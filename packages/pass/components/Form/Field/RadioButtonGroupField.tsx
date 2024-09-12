@@ -5,7 +5,6 @@ import { type FieldProps } from 'formik';
 import { Icon, type IconName, InputButton, InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import type { MaybeArray } from '@proton/pass/types';
-import { type ColorRGB } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import { useFieldControl } from '../../../hooks/useFieldControl';
@@ -22,7 +21,7 @@ type BaseRadioProps<T> = {
     value: T;
 };
 
-type RadioButtonProps<T> = BaseRadioProps<T> & { color?: ColorRGB; icon?: IconName };
+type RadioButtonProps<T> = BaseRadioProps<T> & { color?: string; icon?: IconName };
 
 export const RadioButton = <T,>({ onChange, id, checked, value, name, color, icon }: RadioButtonProps<T>) => {
     return (
@@ -34,7 +33,7 @@ export const RadioButton = <T,>({ onChange, id, checked, value, name, color, ico
             onChange={(e) => e.target.checked && onChange?.(value)}
             labelProps={{
                 className: 'pass-radio-group--button',
-                style: { '--radio-button-background': color ? `rgb(${color})` : 'var(--background-weak)' },
+                style: { '--radio-button-background': color ? `var(${color})` : 'var(--background-weak)' },
             }}
         >
             {icon && <Icon name={icon} size={5} />}
