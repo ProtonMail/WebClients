@@ -109,7 +109,7 @@ export enum BillingPlatform {
 export interface SubscriptionPlan
     extends Omit<Plan, 'ParentMetaPlanID' | 'PeriodEnd' | 'Pricing' | 'DefaultPricing' | 'Offers'> {
     // TODO: improve
-    Offer?: 'default' | null;
+    Offer?: 'default' | string;
 }
 
 export interface Subscription {

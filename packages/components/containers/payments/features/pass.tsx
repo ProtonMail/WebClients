@@ -63,7 +63,6 @@ export const getLoginsAndNotes = (type: Parameters<typeof getLoginsAndNotesText>
         text: getLoginsAndNotesText(type),
         icon: 'note',
         included: true,
-        hideInDowngrade: true,
     };
 };
 
@@ -155,6 +154,7 @@ export const getCustomFields = (included: boolean = false): PlanCardFeatureDefin
         text: c('new_plans: feature').t`Custom fields`,
         included,
         icon: 'pen-square',
+        hideInDowngrade: true,
     };
 };
 
@@ -197,7 +197,6 @@ export const getVaultSharing = (n: number | 'unlimited'): PlanCardFeatureDefinit
         text: getVaultSharingText(n),
         icon: 'arrow-up-from-square',
         included: true,
-        hideInDowngrade: true,
     };
 };
 
