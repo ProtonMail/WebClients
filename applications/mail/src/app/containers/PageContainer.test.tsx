@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/react';
 import { getModelState } from '@proton/account/test';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import type { MailSettings } from '@proton/shared/lib/interfaces';
+import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
@@ -46,6 +46,7 @@ describe('PageContainer', () => {
                     Shortcuts: SHORTCUTS.ENABLED,
                     PageSize: MAIL_PAGE_SIZE.FIFTY,
                 } as MailSettings),
+                userSettings: getModelState({ UsedClientFlags: 0 } as UserSettings),
             },
         });
         const { container } = renderResult;

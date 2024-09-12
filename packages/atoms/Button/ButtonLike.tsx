@@ -111,7 +111,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         className
     );
 
-    const roleProps = restProps.onClick && !restProps.type ? { role: 'button' } : undefined;
+    const roleProps = restProps.onClick && !restProps.type && as !== 'a' ? { role: 'button' } : undefined;
 
     return (
         <Element
