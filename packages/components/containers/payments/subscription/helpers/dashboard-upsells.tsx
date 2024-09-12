@@ -39,7 +39,14 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import type { Currency, FreePlanDefault, Plan, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type {
+    Currency,
+    Cycle,
+    FreePlanDefault,
+    Plan,
+    Subscription,
+    VPNServersCountData,
+} from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -74,7 +81,7 @@ import {
 import type { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
 import VpnEnterpriseAction from './VpnEnterpriseAction';
-import { notHigherThanAvailableOnBackend } from './payment';
+import { getAllowedCycles } from './getAllowedCycles';
 
 const defaultUpsellCycleB2C = CYCLE.TWO_YEARS;
 const defaultUpsellCycleB2B = CYCLE.YEARLY;
@@ -125,7 +132,7 @@ export interface Upsell {
      * It can be used together with ignoreDefaultCta
      */
     price?: Price;
-    onUpgrade: () => void;
+    onUpgrade: (cycle?: Cycle) => void;
     defaultCtaOverrides?: Partial<UpsellCta>;
     otherCtas: (UpsellCta | ReactNode)[];
     upsellRefLink?: string;
@@ -195,17 +202,22 @@ const getUpsell = ({
         component: UPSELL_COMPONENT.BUTTON,
     });
 
+    const currency = fullPlan.Currency;
+
+    const allowedCycles = getAllowedCycles({
+        currency,
+        plansMap,
+        planIDs: { [plan]: 1 },
+        subscription: undefined,
+    });
+
     const defaultCycleForSelectedAudience = getIsB2BAudienceFromPlan(plan)
         ? defaultUpsellCycleB2B
         : defaultUpsellCycleB2C;
 
-    const cycle = notHigherThanAvailableOnBackend(
-        { [plan]: 1 },
-        plansMap,
-        customCycle ?? defaultCycleForSelectedAudience
-    );
+    const preferredCycle = customCycle ?? defaultCycleForSelectedAudience;
 
-    const currency = fullPlan.Currency;
+    const cycle = allowedCycles.includes(preferredCycle) ? preferredCycle : allowedCycles[0];
 
     return {
         plan,
@@ -215,10 +227,10 @@ const getUpsell = ({
         upsellRefLink,
         price: { value: (getPricePerCycle(fullPlan, cycle) || 0) / cycle, currency },
         features: (upsellFields.features ?? shortPlan.features).filter((item) => isTruthy(item)),
-        onUpgrade: () => {},
         otherCtas: [],
         currency,
         ...upsellFields,
+        onUpgrade: () => upsellFields.onUpgrade?.(cycle),
     };
 };
 
@@ -306,9 +318,9 @@ const getPassUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpse
         plan: PLANS.PASS,
         plansMap,
         upsellPath: DASHBOARD_UPSELL_PATHS.PASS,
-        onUpgrade: () =>
+        onUpgrade: (cycle) =>
             openSubscriptionModal({
-                cycle: defaultUpsellCycleB2C,
+                cycle: cycle ?? defaultUpsellCycleB2C,
                 plan: PLANS.PASS,
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
