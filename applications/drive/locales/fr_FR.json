@@ -390,8 +390,8 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
-      "Go to Drive": [
-        "Aller dans Drive"
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Accéder à ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Afficher le label"
@@ -839,9 +839,6 @@
       ],
       "Try another method": [
         "Essayer une autre méthode"
-      ],
-      "Try for free": [
-        "Essayer gratuitement"
       ],
       "Try to save again. Saving failed due to: ${ saveError }": [
         "Réessayez d'enregistrer. L'enregistrement n'a pas abouti pour la raison suivante : ${ saveError }"
