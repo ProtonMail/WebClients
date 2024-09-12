@@ -404,7 +404,7 @@ export const unsupportedTimezoneLinks: { [key: string]: string } = {
     WET: 'Europe/Lisbon',
     // 2022g update
     'America/Ciudad_Juarez': 'America/Ojinaga',
-    'America/Nuuk': 'Atlantic/Stanley',
+    'America/Nuuk': 'America/Scoresbysund',
     'Europe/Kyiv': 'Europe/Kiev',
     'Australia/Currie': 'Australia/Hobart',
     'Pacific/Kanton': 'Pacific/Fakaofo',
