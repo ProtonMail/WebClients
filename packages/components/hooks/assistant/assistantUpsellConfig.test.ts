@@ -41,7 +41,6 @@ describe('getAssistantUpsellConfig', () => {
             cycle: CYCLE.MONTHLY,
             maximumCycle: CYCLE.YEARLY,
             minimumCycle: CYCLE.MONTHLY,
-            withB2CAddons: true,
         });
     });
 
@@ -58,7 +57,6 @@ describe('getAssistantUpsellConfig', () => {
             cycle: CYCLE.MONTHLY,
             maximumCycle: CYCLE.YEARLY,
             minimumCycle: CYCLE.MONTHLY,
-            withB2CAddons: true,
         });
     });
 
@@ -76,7 +74,6 @@ describe('getAssistantUpsellConfig', () => {
             cycle: CYCLE.YEARLY,
             maximumCycle: CYCLE.YEARLY,
             minimumCycle: CYCLE.YEARLY,
-            withB2CAddons: true,
         });
     });
 
@@ -95,7 +92,6 @@ describe('getAssistantUpsellConfig', () => {
             cycle: CYCLE.TWO_YEARS,
             maximumCycle: CYCLE.TWO_YEARS,
             minimumCycle: CYCLE.TWO_YEARS,
-            withB2CAddons: true,
         });
     });
 
@@ -123,7 +119,6 @@ describe('getAssistantUpsellConfig', () => {
             planIDs: { [PLANS.FAMILY]: 1, [ADDON_NAMES.MEMBER_SCRIBE_FAMILY]: 1 },
             maximumCycle: CYCLE.TWO_YEARS,
             minimumCycle: CYCLE.TWO_YEARS,
-            withB2CAddons: true,
         });
     });
 
@@ -151,7 +146,6 @@ describe('getAssistantUpsellConfig', () => {
             planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 4, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 5 },
             maximumCycle: CYCLE.TWO_YEARS,
             minimumCycle: CYCLE.TWO_YEARS,
-            withB2CAddons: true,
         });
     });
 
@@ -180,7 +174,6 @@ describe('getAssistantUpsellConfig', () => {
             planIDs: { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 4, [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2 },
             maximumCycle: CYCLE.TWO_YEARS,
             minimumCycle: CYCLE.TWO_YEARS,
-            withB2CAddons: true,
         });
     });
 
@@ -215,7 +208,6 @@ describe('getAssistantUpsellConfig', () => {
             },
             maximumCycle: CYCLE.TWO_YEARS,
             minimumCycle: CYCLE.TWO_YEARS,
-            withB2CAddons: true,
         });
     });
 });
