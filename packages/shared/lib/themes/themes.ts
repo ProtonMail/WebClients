@@ -15,7 +15,10 @@ import legacyTheme from '@proton/colors/themes/dist/legacy.theme.css';
 // @ts-ignore
 import monokaiTheme from '@proton/colors/themes/dist/monokai.theme.css';
 // @ts-ignore
-import passTheme from '@proton/colors/themes/dist/pass.theme.css';
+import passDarkTheme from '@proton/colors/themes/dist/pass-dark.theme.css';
+// @ts-ignore
+import passLightTheme from '@proton/colors/themes/dist/pass-light.theme.css';
+// @ts-ignore
 // @ts-ignore
 import snowTheme from '@proton/colors/themes/dist/snow.theme.css';
 // @ts-ignore
@@ -39,10 +42,11 @@ export enum ThemeTypes {
     Legacy = 5,
     Classic = 6,
     ContrastDark = 7,
-    Pass = 8,
+    PassDark = 8,
     Storefront = 9,
     WalletLight = 10,
     StorefrontWallet = 11,
+    PassLight = 12,
 }
 
 export const DESKTOP_THEME_TYPES = {
@@ -178,9 +182,9 @@ export const PROTON_THEMES_MAP: Record<ThemeTypes, ThemeDefinition> = {
         },
         theme: classicTheme.toString(),
     },
-    [ThemeTypes.Pass]: {
-        label: 'Pass',
-        identifier: ThemeTypes.Pass,
+    [ThemeTypes.PassDark]: {
+        label: 'Pass Dark',
+        identifier: ThemeTypes.PassDark,
         themeColorMeta: '#191927',
         thumbColors: {
             prominent: '#16141C',
@@ -188,7 +192,7 @@ export const PROTON_THEMES_MAP: Record<ThemeTypes, ThemeDefinition> = {
             primary: '#6D4AFF',
             weak: '#6c6b70',
         },
-        theme: passTheme.toString(),
+        theme: passDarkTheme.toString(),
     },
     [ThemeTypes.Storefront]: {
         label: 'Storefront',
@@ -226,9 +230,26 @@ export const PROTON_THEMES_MAP: Record<ThemeTypes, ThemeDefinition> = {
         },
         theme: storefrontWalletTheme.toString(),
     },
+    [ThemeTypes.PassLight]: {
+        label: 'Pass Light',
+        identifier: ThemeTypes.PassLight,
+        themeColorMeta: '#F6F5F8',
+        thumbColors: {
+            prominent: '#302D45',
+            standard: '#F6F5F8',
+            primary: '#8A6EFF',
+            weak: '#F2EFFF',
+        },
+        theme: passLightTheme.toString(),
+    },
 } as const;
 
-export const getDarkThemes = () => [ThemeTypes.Carbon, ThemeTypes.Monokai, ThemeTypes.ContrastDark, ThemeTypes.Pass];
+export const getDarkThemes = () => [
+    ThemeTypes.Carbon,
+    ThemeTypes.Monokai,
+    ThemeTypes.ContrastDark,
+    ThemeTypes.PassDark,
+];
 
 export const getProminentHeaderThemes = () => [ThemeTypes.Classic, ThemeTypes.Legacy];
 
@@ -248,6 +269,10 @@ export const getThemes = () => {
         ThemeTypes.ContrastDark,
         ThemeTypes.ContrastLight,
     ].map((id) => PROTON_THEMES_MAP[id]);
+};
+
+export const getPassThemes = () => {
+    return [ThemeTypes.PassDark, ThemeTypes.PassLight].map((id) => PROTON_THEMES_MAP[id]);
 };
 
 export enum ThemeModeSetting {

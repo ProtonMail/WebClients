@@ -5,7 +5,6 @@
     --signal-danger: #f08fa4;
     --signal-warning: #ffb84d;
     --signal-success: #4ab89a;
-
     --signal-info: #4ac0ff;
 
     --text-norm: #d1d1d4;
@@ -44,6 +43,8 @@
     --shadow-lifted-opacity: 0.4;
 
     --backdrop-norm: rgb(0 0 0 / 0.5);
+
+    --optional-field-placeholder-color: var(--text-weak);
 
     --focus-outline: var(--interaction-norm-major-2);
     --focus-ring: var(--interaction-norm-minor-1);
