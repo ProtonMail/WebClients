@@ -120,6 +120,7 @@ html:not(.feature-scrollbars-off) {
 html {
 	block-size: 100%;
 	cursor: text;
+	scrollbar-gutter: stable;
 
 	/* Introduce `--setting-font-size` to make the font size setting possible. */
 
