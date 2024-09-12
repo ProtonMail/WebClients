@@ -669,6 +669,9 @@
       "Alias options could not be resolved": [
         "Aliasalternativene kunne ikke løses"
       ],
+      "An error occurred while resuming your session": [
+        "Det oppstod en feil under gjenopptakelse av økten"
+      ],
       "Authentication error": [
         "Autentiseringsfeil"
       ],
@@ -1556,6 +1559,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Vennligst bekreft det ekstra passordet for å kunne låse automatisk med ditt ekstra passord."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Vennligst bekreft ekstra passordet for å eksportere ${ PASS_APP_NAME }-dataene dine."
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Vennligst bekreft det ekstra passordet for å avregistrere din nåværende lås."
@@ -3097,7 +3103,7 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle dine elementer i papirkurven blir slettet permanent. Du kan ikke angre denne handlingen."
       ],
-      "An error occured while exporting your data": [
+      "An error occurred while exporting your data": [
         "Det oppstod en feil under eksport av dataene dine"
       ],
       "At least one email address is required": [
