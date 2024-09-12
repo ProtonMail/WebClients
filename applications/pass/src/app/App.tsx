@@ -33,7 +33,7 @@ import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLin
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath, history } from '@proton/pass/components/Navigation/routing';
-import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
+import { API_CONCURRENCY_TRESHOLD, PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
@@ -53,7 +53,6 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
 import { AppGuard } from './AppGuard';
@@ -118,7 +117,7 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
 
             // Handle case when authService did not init yet so localID and settings can't be resolved
             const fallbackSettings = localStorage.getItem(`settings::${getDefaultLocalID()}`);
-            const fallbackTheme = fallbackSettings ? JSON.parse(fallbackSettings).theme : ThemeTypes.PassDark;
+            const fallbackTheme = fallbackSettings ? JSON.parse(fallbackSettings).theme : PASS_DEFAULT_THEME;
 
             return theme ?? fallbackTheme;
         },

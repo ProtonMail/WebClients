@@ -19,6 +19,7 @@ import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import {
     contentScriptMessage,
@@ -33,7 +34,6 @@ import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
 export type IFrameContextValue = {
@@ -266,7 +266,7 @@ export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
                 resize,
             }}
         >
-            <ThemeProvider theme={settings.theme ?? ThemeTypes.PassDark}>{children}</ThemeProvider>
+            <ThemeProvider theme={settings.theme ?? PASS_DEFAULT_THEME}>{children}</ThemeProvider>
         </IFrameContext.Provider>
     );
 };

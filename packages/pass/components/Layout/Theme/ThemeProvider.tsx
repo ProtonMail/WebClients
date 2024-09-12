@@ -5,6 +5,7 @@ import passDarkTheme from '@proton/colors/themes/dist/pass-dark.theme.css';
 // @ts-ignore
 import passLightTheme from '@proton/colors/themes/dist/pass-light.theme.css';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { Maybe } from '@proton/pass/types';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
@@ -47,9 +48,9 @@ export const ThemeProvider: FC<PropsWithChildren<Props>> = (props) => {
     }, [config]);
 
     useEffect(() => {
-        (async () => (await getInitialTheme?.()) ?? ThemeTypes.PassDark)()
+        (async () => (await getInitialTheme?.()) ?? PASS_DEFAULT_THEME)()
             .then(setTheme)
-            .catch(() => setTheme(ThemeTypes.PassDark));
+            .catch(() => setTheme(PASS_DEFAULT_THEME));
     }, []);
 
     return (

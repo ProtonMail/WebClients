@@ -14,6 +14,7 @@ import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvide
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
+import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
@@ -34,7 +35,6 @@ import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import createStore from '@proton/shared/lib/helpers/store';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
 const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): PassCoreProviderProps => {
@@ -108,7 +108,7 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
         getInitialTheme: () =>
             getExtensionLocalStorage<LocalStoreData>()
                 .getItem('settings')
-                .then((setting) => (setting ? JSON.parse(setting)?.theme : ThemeTypes.PassDark))
+                .then((setting) => (setting ? JSON.parse(setting)?.theme : PASS_DEFAULT_THEME))
                 .catch(noop),
 
         getLogs: () =>
