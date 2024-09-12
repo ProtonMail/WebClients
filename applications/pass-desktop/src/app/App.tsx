@@ -31,7 +31,7 @@ import { Localized } from '@proton/pass/components/Core/Localized';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLink';
-import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
@@ -125,7 +125,6 @@ export const App = () => {
     return (
         <PassCoreProvider {...getPassCoreProps()}>
             <Icons />
-            <ThemeProvider />
             <ErrorBoundary component={<StandardErrorPage big />}>
                 <NotificationsProvider>
                     <ModalsProvider>
@@ -140,13 +139,15 @@ export const App = () => {
                                             <AuthSwitchProvider>
                                                 <AuthServiceProvider>
                                                     <StoreProvider>
-                                                        <Localized>
-                                                            {showWelcome ? <WelcomeScreen /> : <AppGuard />}
-                                                        </Localized>
-                                                        <Portal>
-                                                            <ModalsChildren />
-                                                            <NotificationsChildren />
-                                                        </Portal>
+                                                        <ThemeConnect>
+                                                            <Localized>
+                                                                {showWelcome ? <WelcomeScreen /> : <AppGuard />}
+                                                            </Localized>
+                                                            <Portal>
+                                                                <ModalsChildren />
+                                                                <NotificationsChildren />
+                                                            </Portal>
+                                                        </ThemeConnect>
                                                     </StoreProvider>
                                                 </AuthServiceProvider>
                                             </AuthSwitchProvider>

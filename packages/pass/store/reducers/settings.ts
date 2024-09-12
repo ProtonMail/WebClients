@@ -24,6 +24,7 @@ import type {
 } from '@proton/pass/types/worker/settings';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { partialMerge } from '@proton/pass/utils/object/merge';
+import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 export type SettingsState = {
     autofill: AutoFillSettings;
@@ -41,6 +42,7 @@ export type SettingsState = {
     passkeys: PasskeySettings;
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     showUsernameField?: boolean;
+    theme?: ThemeTypes;
 };
 
 export const EXCLUDED_SETTINGS_KEYS = ['createdItemsCount', 'lockMode', 'extraPassword'] as const;
