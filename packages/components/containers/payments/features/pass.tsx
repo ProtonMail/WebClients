@@ -252,12 +252,9 @@ export const getSecureVaultSharing = (...args: Parameters<typeof getSecureSharin
 
 export const getDataBreachMonitoring = (included: boolean = false): PlanCardFeatureDefinition => {
     return {
-        text: included
-            ? c('new_plans: feature').t`Data breach monitoring (coming soon)`
-            : c('new_plans: feature').t`Data breach monitoring`,
+        text: c('new_plans: feature').t`Data breach monitoring`,
         included,
         icon: 'shield',
-        status: 'coming-soon',
     };
 };
 
