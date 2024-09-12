@@ -18,15 +18,26 @@ import MobileSectionRow from '../components/MobileSectionRow';
 
 import './MobileSettings.scss';
 
-const AccountSettings = ({ layout }: { layout: (children: ReactNode, props?: any) => ReactNode }) => {
-    const [addresses = []] = useAddresses();
+const AccountSettings = ({
+    layout,
+    loader,
+}: {
+    layout: (children: ReactNode, props?: any) => ReactNode;
+    loader: React.ReactNode;
+}) => {
+    const [addresses = [], loadingAddresses] = useAddresses();
     const [firstAddress] = addresses;
     const { Email = '', DisplayName = '', Signature = '' } = firstAddress || {};
     const [profileModalProps, setProfileModal, renderProfileModal] = useModalState();
+    const loading = loadingAddresses;
 
     const handleClickIdentityDetails = () => {
         setProfileModal(true);
     };
+
+    if (loading) {
+        return loader;
+    }
 
     return layout(
         <>
