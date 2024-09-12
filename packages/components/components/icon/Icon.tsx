@@ -3,6 +3,14 @@ import { forwardRef } from 'react';
 import type { IconName, IconSize } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
+/**
+ * FIXME: This export is not ideal and could lead to circular dependencies.
+ * It is a temporary measure to avoid having to make the large change of updating the import usages.
+ *
+ * Please feel free to remove the export and update all usages to import directly from @proton/icons
+ *
+ * Since it is a type export, the worst that could happen is slower ts compiles - but again not ideal.
+ */
 export type { IconName, IconSize } from '@proton/icons';
 
 export interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
