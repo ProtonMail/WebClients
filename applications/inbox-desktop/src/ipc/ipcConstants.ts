@@ -12,7 +12,7 @@ export const DESKTOP_FEATURES = {
     LatestVersionCheck: true,
     InstallSource: true,
     MailtoTelemetry: true,
-    ColorScheme: true,
+    FullTheme: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {
