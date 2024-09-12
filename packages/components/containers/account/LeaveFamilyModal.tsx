@@ -49,7 +49,8 @@ const LeaveFamilyModal = ({ organisationName, ...modalState }: Props) => {
         <Prompt
             {...modalState}
             title={c('Title').t`Leave ${organisationName}?`}
-            footnote={c('familyOffer_2023:Family plan').t`*Only one free trial per customer.`}
+            footnote={c('familyOffer_2023:Family plan')
+                .t`*Only one free trial per user. Regular pricing applies thereafter.`}
             buttons={[
                 <Button color="danger" onClick={handleLeave} loading={loading}>{c('Action').t`Leave`}</Button>,
                 <Button onClick={handleClose} disabled={loading}>{c('Action').t`Cancel`}</Button>,
@@ -57,7 +58,7 @@ const LeaveFamilyModal = ({ organisationName, ...modalState }: Props) => {
         >
             <p className="my-2">{message}</p>
             <p className="my-2">{c('familyOffer_2023:Family plan')
-                .t`To ease the transition, we're giving you a 30-day courtesy trial of ${BRAND_NAME} Unlimited*.`}</p>
+                .t`To ease the transition, we’re giving you a 30-day free trial of ${BRAND_NAME} Unlimited*.`}</p>
         </Prompt>
     );
 };
