@@ -9,6 +9,8 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import type { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
+import { useHasScroll } from 'proton-mail/hooks/useHasScroll';
+
 import { getAttachmentCounts } from '../../helpers/message/messages';
 import { useDownload, useDownloadAll } from '../../hooks/attachments/useDownload';
 import type { PendingUpload } from '../../hooks/composer/useAttachments';
@@ -170,15 +172,11 @@ const AttachmentList = ({
 
     const noPadding = noPaddingTop && !expanded;
 
+    const refAttachments = useRef<HTMLDivElement>(null);
+    const [hasVerticalScroll] = useHasScroll(refAttachments, [expanded]);
+
     return (
-        <div
-            className={clsx([
-                'flex flex-column relative w-full flex-nowrap',
-                className,
-                expanded && 'border-top border-weak',
-            ])}
-            {...rest}
-        >
+        <div className={clsx(['flex flex-column relative w-full flex-nowrap mb-2', className])} {...rest}>
             <AttachmentPreview
                 ref={previewRef}
                 attachments={attachmentsToShow}
@@ -189,7 +187,8 @@ const AttachmentList = ({
             <div
                 className={clsx([
                     'flex flex-row w-full justify-space-between composer-attachment-list-wrapper',
-                    !noPadding && 'pt-2',
+                    !noPadding && 'pb-1',
+                    !expanded && 'mb-2',
                 ])}
                 data-testid="attachment-list:header"
             >
@@ -240,6 +239,7 @@ const AttachmentList = ({
                                 disabled={!message.messageDocument?.initialized}
                                 className="ml-2"
                                 loading={showLoader}
+                                size="small"
                                 data-testid="attachment-list:download-all"
                             >
                                 <Icon name="arrow-down-line" alt={c('Download attachments').t`Download all`} />
@@ -249,7 +249,14 @@ const AttachmentList = ({
                 )}
             </div>
             {expanded && ( // composer-attachments-expand pt-4 pb-2
-                <div tabIndex={-1} className="message-attachmentList py-2">
+                <div
+                    tabIndex={-1}
+                    ref={refAttachments}
+                    className={clsx([
+                        'message-attachmentList scrollbar-gutter-stable py-2',
+                        hasVerticalScroll && 'border-top border-bottom border-weak',
+                    ])}
+                >
                     {attachmentsToShow.map((attachment) => (
                         <AttachmentItem
                             key={attachment.ID}
