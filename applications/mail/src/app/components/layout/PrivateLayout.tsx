@@ -8,6 +8,7 @@ import {
     InboxDesktopFreeTrialTopBanner,
     InboxDesktopOutdatedAppTopBanner,
     PrivateAppContainer,
+    SmartBanner,
     TopBanners,
     useUser,
 } from '@proton/components';
@@ -55,7 +56,9 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
         <>
             {isElectronMail && <InboxDesktopOutdatedAppTopBanner />}
             {isElectronMail && !user.hasPaidMail && <InboxDesktopFreeTrialTopBanner />}
-            <TopBanners app={APPS.PROTONMAIL} />
+            <TopBanners app={APPS.PROTONMAIL}>
+                <SmartBanner app={APPS.PROTONMAIL} />
+            </TopBanners>
         </>
     );
 
