@@ -58,11 +58,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -790,11 +790,11 @@
       "Refresh status": [
         "Atualizar estado"
       ],
-      "refresh the page": [
-        "actualizar a página"
-      ],
       "Refresh the page": [
         "Actualizar a página"
+      ],
+      "refresh the page": [
+        "actualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -6397,11 +6397,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicados podem ser adicionados a gateways privados para ativar controlo de acesso aperfeiçoado."
@@ -10268,6 +10268,26 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano gratuito"
@@ -10295,26 +10315,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -10858,6 +10858,14 @@
         "O seu plano selecionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Utilização da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Eliminar conta?"
@@ -10876,14 +10884,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Aceda a funcionalidades premium alterando a sua subscrição."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Utilização da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -13829,6 +13829,9 @@
       "Account recovery": [
         "Recuperação de conta"
       ],
+      "Account settings": [
+        "Definições de conta"
+      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -13871,6 +13874,9 @@
       "Add PayPal payment method": [
         "Adicionar pagamento com PayPal"
       ],
+      "Add pm.me subdomain": [
+        "Adicionar subdomínio pm.me"
+      ],
       "Add servers": [
         "Adicionar servidores"
       ],
@@ -13891,6 +13897,9 @@
       ],
       "Add users": [
         "Adicionar utilizadores"
+      ],
+      "Address": [
+        "Endereço"
       ],
       "Address and key verification": [
         "Verificação de endereço e chave"
@@ -13958,11 +13967,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço Catch-All"
-      ],
       "Catch-All address": [
         "Endereço captura-tudo"
+      ],
+      "Catch-all address": [
+        "Endereço Catch-All"
       ],
       "Change login password": [
         "Alterar a palavra-passe de início de sessão"
@@ -14014,6 +14023,15 @@
       ],
       "Connect ${ name }": [
         "Conectar ${ name }"
+      ],
+      "Connection events": [
+        "Eventos de conexão"
+      ],
+      "Connection monitor disabled": [
+        "Monitor de ligação desativado"
+      ],
+      "Connection monitor enabled": [
+        "Monitor de ligação ativado"
       ],
       "Contact us": [
         "Contacte-nos"
@@ -14121,6 +14139,9 @@
       "Delete folder?": [
         "Eliminar a pasta?"
       ],
+      "Delete group?": [
+        "Apagar grupo?"
+      ],
       "Delete key permanently?": [
         "Eliminar a chave permanentemente?"
       ],
@@ -14154,6 +14175,9 @@
       ],
       "Disable two-factor authentication": [
         "Desativar a autenticação de dois fatores"
+      ],
+      "Disable two-factor authentication?": [
+        "Desativar a autenticação de dois fatores?"
       ],
       "Discard changes?": [
         "Descartar alterações?"
@@ -14306,6 +14330,9 @@
       "For Windows": [
         "Para Windows"
       ],
+      "Forgot recovery method": [
+        "Esqueceu-se do método de recuperação"
+      ],
       "Forward and auto-reply": [
         "Reencaminhamento e resposta automática"
       ],
@@ -14341,6 +14368,12 @@
       ],
       "Gift code": [
         "Código de oferta"
+      ],
+      "Group": [
+        "Grupo"
+      ],
+      "Group membership": [
+        "Membro do grupo"
       ],
       "Groups": [
         "Grupos"
@@ -14481,6 +14514,9 @@
       "Organization name": [
         "Nome da organização"
       ],
+      "Origin": [
+        "Origem"
+      ],
       "Other calendars": [
         "Outros calendários"
       ],
@@ -14556,6 +14592,9 @@
       "Refer a friend": [
         "Indique um amigo"
       ],
+      "Remove all members?": [
+        "Remover todos os membros?"
+      ],
       "Remove calendar": [
         "Remover um calendário"
       ],
@@ -14606,6 +14645,9 @@
       ],
       "Security and privacy": [
         "Segurança e privacidade"
+      ],
+      "Security events": [
+        "Eventos de segurança"
       ],
       "Security logs": [
         "Registos de segurança"
@@ -14746,6 +14788,9 @@
       "Theme": [
         " Tema"
       ],
+      "There are no groups": [
+        "Não existem grupos"
+      ],
       "This field cannot be empty": [
         "Este campo não pode estar vazio."
       ],
@@ -14776,11 +14821,17 @@
       "Type": [
         "Tipo"
       ],
+      "Unlock your data": [
+        "Desbloquear os seus dados"
+      ],
       "Upgrade plan": [
         "Atualizar o plano"
       ],
       "Upload CSV file to create multiple accounts": [
         "Envie um ficheiro CSV para criar múltiplas contas."
+      ],
+      "Upload your organization’s logo": [
+        "Carregue o logótipo da sua organização"
       ],
       "User": [
         "Utilizador"

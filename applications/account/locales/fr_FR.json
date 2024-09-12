@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "activate": [
-        "activer"
-      ],
       "Activate": [
         "Activer"
+      ],
+      "activate": [
+        "activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -811,11 +811,11 @@
       "Refresh status": [
         "Actualiser le statut"
       ],
-      "refresh the page": [
-        "actualiser la page"
-      ],
       "Refresh the page": [
         "Actualiser la page"
+      ],
+      "refresh the page": [
+        "actualiser la page"
       ],
       "Reload": [
         "Recharger"
@@ -1619,6 +1619,14 @@
         "Choisissez votre offre de fin d'année"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 To d'espace de stockage (2 fois plus que tout autre abonnement)"
@@ -1640,14 +1648,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "L'abonnement ${ plan } est de retour pour une durée limitée."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Cette offre n'est pas disponible avec votre abonnement actuel. Mais vous pouvez profiter de **${ discountPercentage } de réduction sur ${ plan.Title }** en vous abonnant pour **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7054,11 +7054,11 @@
       "Data locked": [
         "Les données sont verrouillées."
       ],
-      "Dedicated servers": [
-        "Serveurs dédiés"
-      ],
       "dedicated servers": [
         "serveurs dédiés"
+      ],
+      "Dedicated servers": [
+        "Serveurs dédiés"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Vous pouvez ajouter des serveurs dédiés avec une ou plusieurs adresses IP dédiées aux passerelles privées pour un contrôle d'accès plus précis."
@@ -11536,6 +11536,26 @@
         "Vitesse VPN moyenne"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passer à ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Découvrir tous les abonnements ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "À partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Commencez pour ${ price }"
+      ],
+      "Upgrade": [
+        "Changer d'abonnement"
+      ],
+      "Upgrade now": [
+        "Changer d'abonnement"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuer avec Free"
@@ -11563,26 +11583,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Passer à ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passer à ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Découvrir tous les abonnements ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "À partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Commencez pour ${ price }"
-      ],
-      "Upgrade": [
-        "Changer d'abonnement"
-      ],
-      "Upgrade now": [
-        "Changer d'abonnement"
       ]
     },
     "new_plans: feature": {
@@ -12247,6 +12247,17 @@
         "L'abonnement que vous avez sélectionné : ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Essai de ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Profitez de Mail Plus pour ${ price }"
+      ],
+      "Your account's usage": [
+        "Utilisation de votre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Supprimer le compte ?"
@@ -12265,17 +12276,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Accédez à des fonctionnalités premium en changeant d'abonnement."
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Essai de ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Profitez de Mail Plus pour ${ price }"
-      ],
-      "Your account's usage": [
-        "Utilisation de votre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -16436,10 +16436,10 @@
       "Card verification": [
         "Vérification de la carte"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresse catch-all"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresse catch-all"
       ],
       "Change login password": [

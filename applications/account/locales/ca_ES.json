@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "activate": [
-        "activar"
-      ],
       "Activate": [
         "Activa"
+      ],
+      "activate": [
+        "activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -796,11 +796,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "refresh the page": [
-        "refresca la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -1592,6 +1592,14 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1613,14 +1621,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -2533,7 +2533,7 @@
         "República del Congo"
       ],
       "Congo (The Democratic Republic of the)": [
-        "Congo, (República Democràtica del)"
+        "República Democràtica del Congo"
       ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democràtica del"
@@ -2719,7 +2719,7 @@
         "Irlanda"
       ],
       "Islamic Republic of Iran": [
-        "República Islàmica de l'Iran"
+        "Iran"
       ],
       "Isle of Man": [
         "Illa de Man"
@@ -2752,7 +2752,7 @@
         "Kiribati"
       ],
       "Korea (Democratic People's Republic of)": [
-        "Corea (República Popular Democràtica)"
+        "Corea del Nord"
       ],
       "Korea (Republic of)": [
         "Corea (República)"
@@ -2788,7 +2788,7 @@
         "Líbia"
       ],
       "Libyan Arab Jamahiriya": [
-        "Líbia (Jamahiriya Àrab)"
+        "Líbia"
       ],
       "Liechtenstein": [
         "Liechtenstein"
@@ -5892,7 +5892,7 @@
     },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
-        "Afegiu aquest registre al domini, al panell de control del registrador de noms de domini"
+        "Afegiu aquest registre al domini, al tauler de control del registrador de noms de domini"
       ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
@@ -6642,7 +6642,7 @@
         "Esteu segur que voleu esborrar els privilegis d'administració d'aquest usuari?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "Esteu segur que voleu esborrar l'element «${ boldDomain }»?"
+        "Segur que voleu esborrar el domini «${ boldDomain }»?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "Demaneu a l'administrador de l'organització que configuri passarel·les."
@@ -6865,11 +6865,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "Dedicated servers": [
-        "Servidors dedicats"
-      ],
       "dedicated servers": [
         "servidors dedicats"
+      ],
+      "Dedicated servers": [
+        "Servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -8098,7 +8098,7 @@
         "El calendari s'esborrarà del vostre compte."
       ],
       "The credentials from your Identity Provider will be deleted.": [
-        "Se suprimiran les credencials del vostre proveïdor d'identitat."
+        "S'eliminaran les credencials del vostre proveïdor d'identitat."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
         "El web fosc és una part amagada d'Internet on es pot comprar i vendre informació personal robada, com ara les identitats."
@@ -8251,7 +8251,7 @@
         "S'esborrarà qualsevol mètode d'A2F activat."
       ],
       "This will remove SSO for ${ boldDomainName }.": [
-        "S'esborrarà l'inici de sessió únic (SSO) per ${ boldDomainName }."
+        "Això esborrarà l'inici de sessió únic (SSO) per a ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Això reemplaçarà la vostra contrasenya temporal. Ho utilitzareu per accedir al vostre compte ${ BRAND_NAME } en el futur."
@@ -11216,6 +11216,26 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comenceu per ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11243,26 +11263,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comenceu per ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -11560,7 +11560,7 @@
         "Protegiu ${ n } dispositius alhora"
       ],
       "Quickly craft replies": [
-        "Crea ràpidament les respostes"
+        "Crea respostes ràpidament"
       ],
       "Recover previous file versions": [
         "Recupera les versions anteriors del fitxer"
@@ -11877,6 +11877,14 @@
         "El vostre pla seleccionat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -11895,14 +11903,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -12691,7 +12691,7 @@
     },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
-        "Aneu a la vostra caixa forta per gestionar les contrasenyes, àlies, etc."
+        "Aneu a la vostra caixa forta per a gestionar les contrasenyes, àlies, etc."
       ],
       "Set up your organization": [
         "Configureu la vostra organització"
@@ -14049,7 +14049,7 @@
         "Ens posarem en contacte de nou quan hi hagi disponible el restabliment de contrasenya."
       ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Podeu comprovar l'estat de la vostra sol·licitud en qualsevol moment en la ${ accountAndPasswordSectionLink } de les preferències."
+        "Podeu comprovar l'estat de la vostra sol·licitud en qualsevol moment ${ accountAndPasswordSectionLink } de les preferències."
       ]
     },
     "session_recovery:initiation:link": {
@@ -15773,10 +15773,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -16094,7 +16094,7 @@
         "Esdeveniment"
       ],
       "Every member of the organization can access": [
-        "Cada membre de l'organització pot accedir."
+        "Tots els membres de l'organització poden accedir."
       ],
       "Export": [
         "Exporta"
@@ -16610,7 +16610,7 @@
         "Tema"
       ],
       "There are no groups": [
-        "No hi han grups."
+        "No hi ha grups."
       ],
       "This field cannot be empty": [
         "Aquest camp no pot estar buit"
@@ -16910,7 +16910,7 @@
         "Agrupeu correus electrònics a la mateixa conversa a la vostra safata d'entrada o mostreu-los separadament."
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
-        "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Obteniu el resum del certificat del proveïdor d'identitat."
+        "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Obteniu l'empremta electrònica del certificat del proveïdor d'identitat."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
@@ -16997,7 +16997,7 @@
         "Els usuaris veuran el vostre logo en comptes de la icona de ${ BRAND_NAME } quan iniciïn sessió a les nostres aplicacions web."
       ],
       "Usually an URL that contains the identity provider's name within": [
-        "Normalment un URL que conté el nom del proveïdor d'identitat dins"
+        "Normalment, un URL que conté el nom del proveïdor d'identitat"
       ],
       "Verified email address": [
         "Adreça de correu electrònic verificada"
@@ -17093,7 +17093,7 @@
         "Elimina la sol·licitud"
       ],
       "Enable admin access?": [
-        "Voleu activar l'accés fora de línia?"
+        "Voleu activar l'accés d'administrador?"
       ],
       "Private user": [
         "Usuari privat"

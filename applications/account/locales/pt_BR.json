@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "activate": [
-        "ativar"
-      ],
       "Activate": [
         "Ativar"
+      ],
+      "activate": [
+        "ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -811,11 +811,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "refresh the page": [
-        "atualizar a página"
-      ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "refresh the page": [
+        "atualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1616,6 +1616,14 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
+      ]
+    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1637,14 +1645,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -7063,11 +7063,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "Dedicated servers": [
-        "Servidores dedicados"
-      ],
       "dedicated servers": [
         "servidores dedicados"
+      ],
+      "Dedicated servers": [
+        "Servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -11533,6 +11533,26 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11560,26 +11580,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
       ]
     },
     "new_plans: feature": {
@@ -12244,6 +12244,20 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Obtenha Mail Plus por ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -12264,26 +12278,12 @@
         "Faça o upgrade para desbloquear recursos premium"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Obtenha Mail Plus por ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
-      ]
-    },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento criptografado em nuvem. Inclui sincronização automática, compartilhamento de arquivo criptografado e muito mais."
+        "${ DRIVE_APP_NAME }: Proteja seus arquivos com armazenamento em nuvem criptografado. Inclui sincronização automática, compartilhamento de arquivos criptografados e muito mais."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Proteja seus e-mails com criptografia de ponta a ponta. Inclui suporte para domínios de e-mail personalizados, 15 endereços de e-mail, aliases ilimitados hide-my-email e muito mais."
@@ -16457,11 +16457,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-all address": [
-        "Endereço catch-all"
-      ],
       "Catch-All address": [
         "Endereço Catch-All (captura tudo)"
+      ],
+      "Catch-all address": [
+        "Endereço catch-all"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -18259,7 +18259,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
-        "Uma maneira segura/fácil de mandar e enviar Bitcoin"
+        "Uma maneira mais segura e fácil de guardar e enviar Bitcoin"
       ]
     },
     "wallet_signup_2024:Bug category": {
