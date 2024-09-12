@@ -41,7 +41,6 @@ export interface OpenCallbackProps
         | 'onSubscribed'
         | 'onUnsubscribed'
         | 'mode'
-        | 'withB2CAddons'
         | 'allowedAddonTypes'
     > {
     hasClose?: boolean;

@@ -101,7 +101,7 @@ export const getAddons = (subscription: Subscription | undefined) =>
 export const hasAddons = (subscription: Subscription | undefined) =>
     (subscription?.Plans || []).some(({ Type }) => Type === ADDON);
 
-export const getPlanName = (subscription: Subscription | undefined, service?: PLAN_SERVICES) => {
+export const getPlanName = (subscription: Subscription | FreeSubscription | undefined, service?: PLAN_SERVICES) => {
     const plan = getPlan(subscription, service);
     return plan?.Name;
 };
