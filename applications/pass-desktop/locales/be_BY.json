@@ -185,7 +185,7 @@
         "Адключыць"
       ],
       "Disable this alias to stop receiving emails sent to this alias": [
-        "Адключыць гэты псеўданім каб спыніць атрыманне лістоў, якія адпраўляюцца на яго"
+        "Адключыць гэты псеўданім і спыніць атрыманне лістоў, якія адпраўляюцца на яго"
       ],
       "Discard": [
         "Адхіліць"
@@ -206,7 +206,7 @@
         "Уключыць Dark Web Monitoring"
       ],
       "Enable this alias to receive emails sent to this alias": [
-        "Уключыць гэты псеўданім каб зноў пачаць атрымліваць лісты, якія адпраўляюцца на яго"
+        "Уключыць гэты псеўданім і зноў пачаць атрымліваць лісты, якія адпраўляюцца на яго"
       ],
       "Entire vault": [
         "Усё сховішча"
@@ -696,6 +696,9 @@
       ],
       "Alias options could not be resolved": [
         "Не атрымалася вызначыць параметры псеўданіма"
+      ],
+      "An error occurred while resuming your session": [
+        "Падчас узнаўлення вашага сеанса адбылася памылка"
       ],
       "Authentication error": [
         "Памылка аўтэнтыфікацыі"
@@ -1652,6 +1655,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Пацвердзіце свой дадатковы пароль, калі вы хочаце прызначыць яго для аўтаблакіроўкі."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Пацвердзіце свой пароль, каб экспартаваць даныя ${ PASS_APP_NAME }"
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Пацвердзіце свой дадатковы пароль для скасавання рэгістрацыі бягучай блакіроўкі."
@@ -3238,7 +3244,7 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Усе элементы са сметніцы будуць незваротна выдалены. Вы не зможаце адрабіць гэта дзеянне."
       ],
-      "An error occured while exporting your data": [
+      "An error occurred while exporting your data": [
         "Падчас экспартавання вашых даных адбылася памылка"
       ],
       "At least one email address is required": [

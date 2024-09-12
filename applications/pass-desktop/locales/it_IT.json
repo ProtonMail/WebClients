@@ -695,6 +695,9 @@
       "Alias options could not be resolved": [
         "Impossibile determinare le opzioni alias"
       ],
+      "An error occurred while resuming your session": [
+        "Si è verificato un errore durante la ripresa della sessione"
+      ],
       "Authentication error": [
         "Errore di autenticazione"
       ],
@@ -1616,6 +1619,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Conferma la tua password aggiuntiva per abilitare il blocco automatico con la password aggiuntiva."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Conferma la tua password aggiuntiva per esportare i dati di ${ PASS_APP_NAME }"
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Conferma la tua password aggiuntiva per disabilitare il blocco attuale."
@@ -3174,7 +3180,7 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tutti gli elementi nel cestino verranno eliminati definitivamente. Non puoi annullare questa azione."
       ],
-      "An error occured while exporting your data": [
+      "An error occurred while exporting your data": [
         "Si è verificato un errore durante l'esportazione dei dati"
       ],
       "At least one email address is required": [

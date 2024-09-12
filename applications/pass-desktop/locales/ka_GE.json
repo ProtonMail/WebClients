@@ -184,6 +184,9 @@
       "Disable instead": [
         "გათიშეთ ის"
       ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "გათიშეთ ეს ფსევდონიმი, რომ შეწყვიტოთ ელფოსტების მიღება ამ ფსევდონიმზე"
+      ],
       "Discard": [
         "მოცილება"
       ],
@@ -201,6 +204,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Dark Web-ის მონიტორინგის ჩართვა"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "ჩართეთ ეს ფსევდონიმი, რომ მიიღოთ მისთვის გაგზავნილი ელფოსტები"
       ],
       "Entire vault": [
         "მთელი საცავი"
@@ -683,8 +689,14 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-ის ფაილის დამუშავების შეცდომა. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "ამჟამად ფსევდონიმის განახლება შეუძლებელია. მოგვიანებით სცადეთ"
+      ],
       "Alias options could not be resolved": [
         "ფსევდონიმის პარამეტრების ამოხსნა შეუძლებელია"
+      ],
+      "An error occurred while resuming your session": [
+        "შეცდომა თქვენი სესიის გაგრძელებისას"
       ],
       "Authentication error": [
         "ავთენტიკაციის შეცდომა"
@@ -807,6 +819,9 @@
       ],
       "Failed to restore items from trash": [
         "ნაგვის ყუთიდან ელემენტების აღდგენა ჩავარდა"
+      ],
+      "Failed to sync aliases": [
+        "ფსევდონიმების სინქრონიზაცია ჩავარდა"
       ],
       "Failed to transfer this vault's ownership.": [
         "ამ საცავის მფლობელობის გადატანა ჩავარდა."
@@ -1156,6 +1171,21 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "თქვენი მონაცემების წარმატებით შემოტანის შემდეგ, შეგიძლიათ CSV ფაილი, რომელიც თქვენს პაროლებს შეიცავს, უსაფრთხოებისთვის წაშალოთ."
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "ფსევდონიმი წარმატებით გაითიშა. ახლა ელფოსტებს, რომელსაც ${ item.aliasEmail }-ზე გააგზავნიან, ვეღარ მიიღებთ"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "ფსევდონიმი წარმატებით ჩაირთო. ახლა შეგძლიათ, მიიღოთ ელფოსტები, რომელსაც ${ item.aliasEmail }-ზე გააგზავნიან"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "ფსევდონიმების სინქრონიზაცია თქვენს ${ BRAND_NAME }-ისა და SimpleLogin-ის ანგარიშებს შორის აქტიურია."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "ნაგვის ყუთში მოთავსებული ფსევდონიმები ელფოსტის გადაგზავნას გააგრძელებენ. თუ გნებავთ, შეწყვიტოთ ამ მისამართზე ელფოსტის მიღება, გათიშეთ ის."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "არადასინქრონებული ფსევდონიმები (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "მორგებული დომენების მქონე ფსევდონიმების მონიტორინგი არ ხდება. მათი მონიტორინგისთვის ისინი მორგებული ელფოსტის სახით დაამატეთ."
@@ -1590,6 +1620,9 @@
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "დაადასტურეთ თქვენი დამატებითიპაროლი, რომ თქვენი დამატებითი პაროლით ავტოდაბლოკვა ჩართოთ."
       ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "დაადასტურეთ თქვნი დამატებითი პაროლი, ${ PASS_APP_NAME }-ის მონაცემების გასატანად"
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "მიმდინარე ბლოკის რეგისტრაციის მოსახსნელად დაადასტურეთ თქვენი დამატებითი პაროლი."
       ],
@@ -1840,6 +1873,10 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "თქვენს ლოკალურ საცავთან მონაცემების სინქრონიზაციის პრობლემა. დარწუნდით, რომ ${ PASS_SHORT_APP_NAME }-ის სამუშაოდ საკმარისი ადგილი გაგაჩნიათ."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "აღმოვაჩინეთ, რომ გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?",
+        "აღმოვაჩინეთ, რომ გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "გადამოწმების კოდი გაგზავნილია მისამართზე ${ email }. შეიყვანეთ ის ქვემოთ:"
       ],
@@ -2015,6 +2052,9 @@
       "Alphabetical": [
         "ანბანით"
       ],
+      "Always show username field": [
+        "მომხმარებლის ველის ყოველთვის ჩვენება"
+      ],
       "Application logs": [
         "აპლიკაციის ჟურნალი"
       ],
@@ -2140,6 +2180,9 @@
       ],
       "Enable offline access": [
         "ქსელის გარეშე წვდომის დაშვება"
+      ],
+      "Enter email or username": [
+        "შეყვანეთ ელფოსტა ან მომხმარებლის სახელი"
       ],
       "Expiration date": [
         "ვადა"
@@ -2441,6 +2484,9 @@
       "Select preferred language": [
         "ამოირჩიეთ სასურველი ენა"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "აირჩიეთ საცავი, სადაც SimpleLogin-ის ფსევდონიმების შემოტანა მოხდება"
+      ],
       "Select your password manager": [
         "აირჩიეთ თქვენი პაროლების მმართველი"
       ],
@@ -2488,6 +2534,9 @@
       ],
       "Support": [
         "მხარდაჭერა"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "ფსევდონიმების სინქრონიზაცია SimpleLogin-თან"
       ],
       "Tax number": [
         "ფისკალური ნომერი"
@@ -2784,6 +2833,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "ფსევდონიმების სინქრონიზაცის ჩართვა წარმატებულია. SimpleLogin-ის ფსევდონიმების სინქრონიზაციას, შეიძლება, რაღაც დრო დასჭირდეს"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
         "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
@@ -3125,7 +3177,7 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "ყველა თქვენი ნაგვის ყუთში გადაყრილი ელემენტი სამუდამოდ წაიშლება. ეს ქმედება შეუქცევადია."
       ],
-      "An error occured while exporting your data": [
+      "An error occurred while exporting your data": [
         "შეცდომა თქვენი მონაცემების გატანისას"
       ],
       "At least one email address is required": [
@@ -3254,6 +3306,9 @@
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "ფსევდონიმის პრეფიქსი 40 სიმბოლოზე გრძელი ვერ იქნება"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "ფსევდონიმი \"${ aliasEmail }\" ამჟამად გამოიყენება შესვლის ჩანაწერში \"${ relatedLoginName }\"."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "ეს ელფოსტის მისამართი მონაცემების გაჟონვებში მოხსენიებული აღარ იქნება."
