@@ -1,14 +1,14 @@
 import type { FC, ReactNode } from 'react';
-import { createContext, useEffect, useMemo } from 'react';
+import { createContext, useCallback, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
-import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerStateEvents';
+import { useExtensionState } from 'proton-pass-extension/lib/hooks/useExtensionState';
 
 import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
-import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { clientErrored, clientReady } from '@proton/pass/lib/client';
 import { lock, signoutIntent, syncIntent } from '@proton/pass/store/actions';
@@ -18,7 +18,7 @@ import { selectRequestInFlight } from '@proton/pass/store/selectors';
 import type { MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
+import sentry, { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 
 import { useExtensionContext } from './ExtensionSetup';
 
@@ -39,34 +39,44 @@ type Props = {
 
 export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
     const { endpoint, setCurrentTabUrl, onTelemetry } = usePassCore();
+    const config = usePassConfig();
     const app = useAppState();
-    const authStore = useAuthStore();
 
     const dispatch = useDispatch();
     const { tabId, url, port } = useExtensionContext();
-    const wakeupLoading = useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));
-    const ready = !wakeupLoading && clientReady(app.state.status);
+    const loading = useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));
+    const ready = !loading && clientReady(app.state.status);
 
     const activityProbe = useExtensionActivityProbe();
 
-    useWorkerStateEvents((workerState) => {
-        setSentryUID(workerState.UID);
-        app.setState(workerState);
-        authStore?.setLocalID(workerState.localID);
-
-        if (clientErrored(workerState.status) || workerState.criticalRuntimeError) {
-            onTelemetry(
-                TelemetryEventName.ErrorResumingSession,
-                {},
-                {
-                    extensionBrowser: BUILD_TARGET,
-                    extensionReloadRequired: Boolean(workerState.criticalRuntimeError),
-                }
-            );
-        }
-    });
+    useExtensionState(
+        useCallback((state) => {
+            setSentryUID(state.UID);
+            if (clientErrored(state.status) || state.criticalRuntimeError) {
+                onTelemetry(
+                    TelemetryEventName.ErrorResumingSession,
+                    {},
+                    {
+                        extensionBrowser: BUILD_TARGET,
+                        extensionReloadRequired: Boolean(state.criticalRuntimeError),
+                    }
+                );
+            }
+        }, [])
+    );
 
     useEffect(() => {
+        sentry({
+            config,
+            sentryConfig: {
+                host: new URL(config.API_URL).host,
+                release: config.APP_VERSION,
+                environment: `browser-pass::${endpoint}`,
+            },
+            ignore: () => false,
+            denyUrls: [],
+        });
+
         if (url) setCurrentTabUrl?.(url);
         if (onWorkerMessage) {
             port.onMessage.addListener(onWorkerMessage);

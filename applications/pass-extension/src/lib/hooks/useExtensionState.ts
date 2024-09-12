@@ -1,7 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { CriticalMessageResponseError, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import type { AppState, WorkerMessageWithSender } from '@proton/pass/types';
@@ -12,16 +14,31 @@ import noop from '@proton/utils/noop';
 
 import { useEndpointMessage } from './useEndpointMessage';
 
-export const useWorkerStateEvents = (onWorkerStateChange: (state: AppState) => void) => {
-    const ready = useRef<Awaiter<void>>(awaiter());
+export const useExtensionState = (onStateChange: (state: AppState) => void) => {
     const { endpoint } = usePassCore();
     const { port, tabId } = useExtensionContext();
+    const app = useAppState();
+    const authStore = useAuthStore();
     const message = useEndpointMessage();
+
+    const ready = useRef<Awaiter<void>>(awaiter());
+
+    const onChange = useCallback((state: AppState) => {
+        app.setState(state);
+        authStore?.setLocalID(state.localID);
+        authStore?.setUID(state.UID);
+        onStateChange(state);
+    }, []);
 
     useEffect(() => {
         const onMessage = (message: WorkerMessageWithSender) => {
-            if (message.sender === 'background' && message.type === WorkerMessageType.WORKER_STATE_CHANGE) {
-                ready.current.then(() => onWorkerStateChange(message.payload.state)).catch(noop);
+            if (message.type === WorkerMessageType.WORKER_STATE_CHANGE) {
+                ready.current
+                    .then(() => {
+                        const { state } = message.payload;
+                        onChange(state);
+                    })
+                    .catch(noop);
             }
         };
 
@@ -37,16 +54,15 @@ export const useWorkerStateEvents = (onWorkerStateChange: (state: AppState) => v
                     if (response.type === 'success') return response;
 
                     logger.warn(`[Endpoint::${endpoint}] wakeup failed`, response.error);
-
                     if (response.critical) throw new CriticalMessageResponseError();
                     else throw new Error();
                 }
             );
 
         wakeup()
-            .then(({ state }) => onWorkerStateChange(state))
+            .then(({ state }) => onChange(state))
             .catch((err) =>
-                onWorkerStateChange({
+                onChange({
                     authorized: false,
                     booted: false,
                     criticalRuntimeError: err instanceof CriticalMessageResponseError,
