@@ -334,6 +334,10 @@
 	.composer-content {
 		min-block-size: 10em;
 
+		&--rich-edition {
+			margin-inline-end: calc(var(--space-6) * -1); // to get scrolling at "full right"
+		}
+
 		// forced to white because HTML edition and not yet Dark mode supported
 		&--rich-edition,
 		.editor--disabled::after {
@@ -394,6 +398,8 @@
 		.message-attachmentList {
 			overflow: auto;
 			max-block-size: 8.5em;
+			margin-inline: -1.75em -1.5em;
+			padding-inline: 1.75em 1.5em;
 		}
 	}
 
