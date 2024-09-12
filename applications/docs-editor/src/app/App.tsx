@@ -22,7 +22,6 @@ import {
   DocAwarenessEvent,
 } from '@proton/docs-shared'
 import type { Doc as YDoc } from 'yjs'
-import { Icons } from '@proton/components'
 import { ApplicationProvider } from './ApplicationProvider'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import locales from './locales'
@@ -35,7 +34,7 @@ import { ThemeStyles } from './Theme'
 import type { DocumentInteractionMode } from './DocumentInteractionMode'
 import debounce from '@proton/utils/debounce'
 import { loadLocales } from '@proton/account/bootstrap'
-
+import Icons from '@proton/icons/Icons'
 type Props = {
   nonInteractiveMode: boolean
 }
