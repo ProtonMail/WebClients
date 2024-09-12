@@ -9,7 +9,7 @@ export const updateElectronThemeModeClassnames = (theme: ThemeSetting) => {
     if (theme.Mode === ThemeModeSetting.Dark) {
         prefersDark = true;
     } else if (theme.Mode === ThemeModeSetting.Auto) {
-        if (hasInboxDesktopFeature('ColorScheme')) {
+        if (canGetInboxDesktopInfo && hasInboxDesktopFeature('FullTheme')) {
             prefersDark = getInboxDesktopInfo('colorScheme') === ColorScheme.Dark;
         } else {
             prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
