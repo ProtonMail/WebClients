@@ -30,11 +30,13 @@ const MainContainer = ({ action, redirect, app, searchParams, loader, layout }: 
     return (
         <>
             {action === SupportedActions.WalletSettings && <WalletSettings loader={loader} layout={layout} />}
-            {action === SupportedActions.AccountSettings && <AccountSettings layout={layout} />}
-            {action === SupportedActions.EmailSettings && <EmailSettings layout={layout} />}
+            {action === SupportedActions.AccountSettings && <AccountSettings layout={layout} loader={loader} />}
+            {action === SupportedActions.EmailSettings && <EmailSettings layout={layout} loader={loader} />}
             {action === SupportedActions.LabelsSettings && <LabelsSettings layout={layout} />}
             {action === SupportedActions.SpamFiltersSettings && <SpamFiltersSettings layout={layout} />}
-            {action === SupportedActions.PrivacySecuritySettings && <PrivacySecuritySettings layout={layout} />}
+            {action === SupportedActions.PrivacySecuritySettings && (
+                <PrivacySecuritySettings layout={layout} loader={loader} />
+            )}
             {action === SupportedActions.DeleteAccount && <DeleteAccount />}
             {(action === SupportedActions.SubscribeAccount || action === SupportedActions.SubscribeAccountLink) && (
                 <SubscribeAccount

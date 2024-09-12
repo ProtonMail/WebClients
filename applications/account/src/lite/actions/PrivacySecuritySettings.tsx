@@ -27,16 +27,18 @@ import './MobileSettings.scss';
 
 const PrivacySecuritySettings = ({
     layout,
+    loader,
 }: {
     layout: (children: React.ReactNode, props?: any) => React.ReactNode;
+    loader: React.ReactNode;
 }) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loadingRemoveImageMetadata, withLoadingRemoveImageMetadata] = useLoading();
     const { createNotification } = useNotifications();
-    const [
-        { ConfirmLink, HideEmbeddedImages, HideRemoteImages, RemoveImageMetadata, ImageProxy } = DEFAULT_MAILSETTINGS,
-    ] = useMailSettings();
+    const [mailSettings = DEFAULT_MAILSETTINGS, loadingMailSettings] = useMailSettings();
+    const { HideRemoteImages, HideEmbeddedImages, ImageProxy, ConfirmLink, RemoveImageMetadata } = mailSettings;
+    const loading = loadingMailSettings;
     const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
     const [hideEmbeddedImages, setHideEmbeddedImages] = useState(HideEmbeddedImages);
     const handleChangeHideEmbedded = (newValue: number) => setHideEmbeddedImages(newValue);
@@ -48,6 +50,10 @@ const PrivacySecuritySettings = ({
         await call();
         notifyPreferenceSaved();
     };
+
+    if (loading) {
+        return loader;
+    }
 
     return layout(
         <div className="mobile-settings">
