@@ -7,7 +7,6 @@ import {
     CacheProvider,
     CompatibilityCheck,
     ConfigProvider,
-    Icons,
     LoaderPage,
     ModalsProvider,
     NotificationsProvider,
@@ -17,6 +16,7 @@ import {
     ThemeProvider,
 } from '@proton/components';
 import useInstance from '@proton/hooks/useInstance';
+import Icons from '@proton/icons/Icons';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import createCache from '@proton/shared/lib/helpers/cache';

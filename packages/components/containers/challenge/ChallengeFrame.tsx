@@ -1,7 +1,8 @@
 import type { DetailedHTMLProps, IframeHTMLAttributes, MutableRefObject, ReactNode } from 'react';
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 
-import { ICONS_ID } from '../../components/icon/Icons';
+import { ICONS_ID } from '@proton/icons/constants';
+
 import { useActiveBreakpoint } from '../../hooks';
 import { THEME_ID } from '../themes/ThemeProvider';
 import { getStyleSrcUrls, getStyleSrcsData, handleEvent } from './challengeHelper';
@@ -144,8 +145,8 @@ const ChallengeFrame = ({
                             handleError();
                         }, errorTimeout);
 
-                        const themeNodeData = empty ? '' : document.querySelector(`#${THEME_ID}`)?.innerHTML ?? '';
-                        const iconsNodeData = empty ? '' : document.querySelector(`#${ICONS_ID}`)?.innerHTML ?? '';
+                        const themeNodeData = empty ? '' : (document.querySelector(`#${THEME_ID}`)?.innerHTML ?? '');
+                        const iconsNodeData = empty ? '' : (document.querySelector(`#${ICONS_ID}`)?.innerHTML ?? '');
 
                         setStage('load');
                         addLog(

@@ -1,4 +1,5 @@
-import { Icons, ModalsChildren, ModalsProvider, NotificationsProvider } from '@proton/components';
+import { ModalsChildren, ModalsProvider, NotificationsProvider } from '@proton/components';
+import Icons from '@proton/icons/Icons';
 
 import './prismjs.js';
 import theme from './theme';
