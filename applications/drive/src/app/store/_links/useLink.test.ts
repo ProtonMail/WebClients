@@ -55,6 +55,7 @@ describe('useLink', () => {
     const mockIntegrityMetricsSignatureVerificationError = jest.fn();
 
     const isPaid = false;
+    const isPublicContext = false;
     const abortSignal = new AbortController().signal;
 
     let hook: {
@@ -102,6 +103,7 @@ describe('useLink', () => {
                     nodeDecryptionError: mockIntegrityMetricsDecryptionError,
                     signatureVerificationError: mockIntegrityMetricsSignatureVerificationError,
                 } as unknown as IntegrityMetrics,
+                isPublicContext,
                 mockDecryptPrivateKey
             )
         );
