@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { Avatar } from '@proton/atoms/Avatar';
+import { Avatar } from '@proton/atoms';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import clsx from '@proton/utils/clsx';
 

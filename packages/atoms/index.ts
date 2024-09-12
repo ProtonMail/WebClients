@@ -1,4 +1,3 @@
-export * from './Avatar';
 export * from './Button';
 export * from './Card';
 export * from './CircleLoader';
@@ -15,3 +14,6 @@ export * from './Slider';
 export * from './Stepper';
 export * from './VerticalSteps';
 export * from './Vr';
+
+export { default as Avatar } from './Avatar/Avatar';
+export type { AvatarProps } from './Avatar/Avatar';

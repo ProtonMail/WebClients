@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms/Avatar';
+import { Avatar } from '@proton/atoms';
 import { Button } from '@proton/atoms/Button';
 import { FileIcon, Icon, TableCell, useActiveBreakpoint, useContactEmails } from '@proton/components';
 import { getInitials } from '@proton/shared/lib/helpers/string';
