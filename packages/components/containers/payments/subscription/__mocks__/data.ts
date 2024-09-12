@@ -395,7 +395,6 @@ export const passPlusUpsell = {
             text: 'Unlimited logins, notes and credit cards',
             icon: 'note',
             included: true,
-            hideInDowngrade: true,
         },
         {
             text: 'Unlimited devices',
@@ -417,7 +416,6 @@ export const passPlusUpsell = {
             icon: 'vault',
         },
         {
-            hideInDowngrade: true,
             icon: 'arrow-up-from-square',
             included: true,
             text: 'Vault sharing (up to 10 people)',
@@ -428,15 +426,14 @@ export const passPlusUpsell = {
             icon: 'key',
         },
         {
+            text: 'Dark Web Monitoring and Proton Sentinel',
+            icon: 'shield',
+            included: true,
+        },
+        {
             text: 'Custom fields',
             included: true,
             icon: 'pen-square',
-        },
-        {
-            icon: 'shield',
-            included: true,
-            text: 'Proton Sentinel program',
-            tooltip: 'Provides the highest level of account security protection and specialist support',
         },
         {
             text: 'Priority support',
