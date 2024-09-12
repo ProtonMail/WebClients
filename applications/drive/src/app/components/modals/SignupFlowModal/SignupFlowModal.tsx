@@ -23,14 +23,17 @@ import { DRIVE_SIGNIN, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
+import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url';
 
+import usePublicToken from '../../../hooks/drive/usePublicToken';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { deleteStoredUrlPassword, saveUrlPasswordForRedirection } from '../../../utils/url/password';
 
-export const SignupFlowModal = ({ urlPassword, onClose, ...modalProps }: { urlPassword: string } & ModalStateProps) => {
+export const SignupFlowModal = ({ onClose, ...modalProps }: ModalStateProps) => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
     const api = useApi();
+    const { token, urlPassword } = usePublicToken();
 
     useEffect(() => {
         deleteStoredUrlPassword();
@@ -42,24 +45,56 @@ export const SignupFlowModal = ({ urlPassword, onClose, ...modalProps }: { urlPa
         setError(emailValidator(e.target.value));
     };
 
+    /*
+     * Sign-up flow: Redirect to /shared-with-me, then auto-add bookmarks in MainContainer.tsx
+     * Sign-in flow: Auto-add bookmarks in MainContainer.tsx and redirect back to public page
+     */
     const handleSubmit = async () => {
         try {
             countActionWithTelemetry(Actions.SubmitSignUpFlowModal);
-            const { Code } = await api({ ...queryCheckEmailAvailability(email) });
+            const { Code } = await api({
+                ...queryCheckEmailAvailability(email),
+                silence: [API_CUSTOM_ERROR_CODES.ALREADY_USED],
+            });
             // Email is verified and available to use
             // We redirect to DRIVE_SIGNUP
             if (Code === 1000) {
                 saveUrlPasswordForRedirection(urlPassword);
                 countActionWithTelemetry(Actions.SignUpFlowModal);
-                replaceUrl(DRIVE_SIGNUP);
+                const returnUrlSearchParams = new URLSearchParams();
+                returnUrlSearchParams.append('token', token);
+                const returnUrl = `/shared-with-me?`.concat(returnUrlSearchParams.toString());
+                const url = new URL(DRIVE_SIGNUP);
+                // This autofill the sign-up email input
+                url.searchParams.append('email', email);
+                replaceUrl(
+                    getUrlWithReturnUrl(url.toString(), {
+                        returnUrl,
+                        context: 'private',
+                    })
+                );
             }
         } catch (err) {
             const { code, message } = getApiError(err);
+            // Email is already in use, we redirect to SIGN_IN
             if (API_CUSTOM_ERROR_CODES.ALREADY_USED === code) {
-                // Email is already in use, we redirect to SIGN_IN
                 saveUrlPasswordForRedirection(urlPassword);
                 countActionWithTelemetry(Actions.SignInFlowModal);
-                replaceUrl(DRIVE_SIGNIN);
+                const returnUrlSearchParams = new URLSearchParams();
+                returnUrlSearchParams.append('token', token);
+                // Always return to public page in case of signin. This will be done in MainContainer.tsx on page loading
+                returnUrlSearchParams.append('redirectToPublic', 'true');
+                const returnUrl = `/shared-with-me?`.concat(returnUrlSearchParams.toString());
+                const url = new URL(DRIVE_SIGNIN);
+                // This autofill the sign-in email input
+                url.searchParams.append('username', email);
+                replaceUrl(
+                    getUrlWithReturnUrl(url.toString(), {
+                        returnUrl,
+                        context: 'private',
+                    })
+                );
+                return;
             }
             // Other errors we show the error message
             setError(message || c('Error').t`Email is not valid`);
