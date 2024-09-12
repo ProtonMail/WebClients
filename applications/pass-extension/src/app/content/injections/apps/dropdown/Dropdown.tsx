@@ -12,6 +12,7 @@ import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { clientBusy, clientErrored, clientMissingScope, clientSessionLocked } from '@proton/pass/lib/client';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
@@ -30,13 +31,14 @@ import { AutosuggestPassword } from './views/AutosuggestPassword';
 import './Dropdown.scss';
 
 export const Dropdown: FC = () => {
-    const { visible, resize, appState, close } = useIFrameContext();
-    const { status } = appState;
+    const { visible, resize, close } = useIFrameContext();
+    const app = useAppState();
+    const accountFork = useRequestFork();
 
     const [state, setState] = useState<MaybeNull<DropdownActions>>(null);
     const ref = useRef<HTMLDivElement>(null);
 
-    const accountFork = useRequestFork();
+    const { status } = app.state;
     const loading = state === null || clientBusy(status);
 
     useRegisterMessageHandler(IFramePortMessageType.DROPDOWN_ACTION, ({ payload }) => setState(payload));
@@ -119,15 +121,15 @@ export const Dropdown: FC = () => {
                         );
                     }
 
-                    if (!appState.authorized) {
+                    if (!app.state.authorized) {
                         return (
                             <ListItem
                                 onClick={() => {
-                                    if (!appState.lockSetup) return accountFork(ForkType.SWITCH);
+                                    if (!app.state.lockSetup) return accountFork(ForkType.SWITCH);
                                     close();
                                 }}
                                 subTitle={
-                                    appState.lockSetup
+                                    app.state.lockSetup
                                         ? c('Info')
                                               .t`Your organization requires you to secure your access to ${PASS_APP_NAME}`
                                         : c('Info').t`Enable ${PASS_APP_NAME} by connecting your ${BRAND_NAME} account`

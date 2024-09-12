@@ -1,42 +1,22 @@
 import { useEffect, useRef } from 'react';
 
-import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
+import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 
-import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message/send-message';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { CriticalMessageResponseError, sendMessage } from '@proton/pass/lib/extension/message/send-message';
-import type {
-    AppState,
-    ClientEndpoint,
-    TabId,
-    WorkerMessageResponse,
-    WorkerMessageWithSender,
-} from '@proton/pass/types';
+import type { AppState, WorkerMessageWithSender } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { type Awaiter, awaiter } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-type WakeupOptions = { tabId: TabId; endpoint: ClientEndpoint; messageFactory: MessageWithSenderFactory };
-type UseWorkerStateEventsOptions = WakeupOptions & { onWorkerStateChange: (state: AppState) => void };
+import { useEndpointMessage } from './useEndpointMessage';
 
-const wakeup = (options: WakeupOptions): Promise<WorkerMessageResponse<WorkerMessageType.WORKER_WAKEUP>> =>
-    sendMessage.on(
-        options.messageFactory({
-            type: WorkerMessageType.WORKER_WAKEUP,
-            payload: { tabId: options.tabId },
-        }),
-        (response) => {
-            if (response.type === 'success') return response;
-
-            logger.warn(`[Endpoint::${options.endpoint}] wakeup failed`, response.error);
-
-            if (response.critical) throw new CriticalMessageResponseError();
-            else throw new Error();
-        }
-    );
-
-export const useWorkerStateEvents = ({ onWorkerStateChange, ...options }: UseWorkerStateEventsOptions) => {
+export const useWorkerStateEvents = (onWorkerStateChange: (state: AppState) => void) => {
     const ready = useRef<Awaiter<void>>(awaiter());
+    const { endpoint } = usePassCore();
+    const { port, tabId } = useExtensionContext();
+    const message = useEndpointMessage();
 
     useEffect(() => {
         const onMessage = (message: WorkerMessageWithSender) => {
@@ -45,9 +25,25 @@ export const useWorkerStateEvents = ({ onWorkerStateChange, ...options }: UseWor
             }
         };
 
-        ExtensionContext.get().port.onMessage.addListener(onMessage);
+        port.onMessage.addListener(onMessage);
 
-        wakeup(options)
+        const wakeup = () =>
+            sendMessage.on(
+                message({
+                    type: WorkerMessageType.WORKER_WAKEUP,
+                    payload: { tabId },
+                }),
+                (response) => {
+                    if (response.type === 'success') return response;
+
+                    logger.warn(`[Endpoint::${endpoint}] wakeup failed`, response.error);
+
+                    if (response.critical) throw new CriticalMessageResponseError();
+                    else throw new Error();
+                }
+            );
+
+        wakeup()
             .then(({ state }) => onWorkerStateChange(state))
             .catch((err) =>
                 onWorkerStateChange({
@@ -61,6 +57,6 @@ export const useWorkerStateEvents = ({ onWorkerStateChange, ...options }: UseWor
             )
             .finally(ready.current.resolve);
 
-        return () => ExtensionContext.get().port.onMessage.removeListener(onMessage);
+        return () => port.onMessage.removeListener(onMessage);
     }, []);
 };

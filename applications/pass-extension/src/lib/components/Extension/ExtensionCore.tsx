@@ -16,6 +16,7 @@ import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { getRequestIDHeaders } from '@proton/pass/lib/api/fetch-controller';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
+import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { createPassCoreProxy } from '@proton/pass/lib/core/proxy';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
@@ -169,6 +170,16 @@ export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> 
     const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
     const coreProps = useMemo(() => getExtensionCoreProps(endpoint, config), []);
     const authStore = useInstance(() => exposeAuthStore(createAuthStore(createStore())));
+    const message = resolveMessageFactory(endpoint);
+
+    const unlock = useCallback(
+        async (payload: UnlockDTO): Promise<void> =>
+            sendMessage(message({ type: WorkerMessageType.AUTH_UNLOCK, payload })).then((res) => {
+                if (res.type === 'error') throw new Error();
+                if (!res.ok) throw new Error(res.error ?? '');
+            }),
+        []
+    );
 
     return (
         <PassCoreProvider
@@ -177,25 +188,7 @@ export const ExtensionCore: FC<PropsWithChildren<{ endpoint: ClientEndpoint }>> 
             setCurrentTabUrl={(parsedUrl) => (currentTabUrl.current = parsedUrl)}
         >
             <AuthStoreProvider store={authStore}>
-                <UnlockProvider
-                    unlock={useCallback(
-                        async (payload) => {
-                            const res = await sendMessage(
-                                resolveMessageFactory(endpoint)({
-                                    type: WorkerMessageType.AUTH_UNLOCK,
-                                    payload,
-                                })
-                            );
-
-                            if (res.type === 'error') throw new Error();
-                            if (!res.ok) throw new Error(res.error ?? '');
-                        },
-
-                        []
-                    )}
-                >
-                    {children}
-                </UnlockProvider>
+                <UnlockProvider unlock={unlock}>{children}</UnlockProvider>
             </AuthStoreProvider>
         </PassCoreProvider>
     );

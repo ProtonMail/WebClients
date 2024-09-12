@@ -4,7 +4,6 @@ import { type FC, createContext, useCallback, useContext, useEffect, useState } 
 import { IFRAME_APP_READY_EVENT } from 'proton-pass-extension/app/content/constants.static';
 import type {
     IFrameCloseOptions,
-    IFrameEndpoint,
     IFrameMessage,
     IFrameMessageType,
     IFrameMessageWithSender,
@@ -12,10 +11,10 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import locales from 'proton-pass-extension/app/locales';
-import { INITIAL_WORKER_STATE } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import type { Runtime } from 'webextension-polyfill';
 
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { clientReady } from '@proton/pass/lib/client';
 import {
@@ -26,7 +25,7 @@ import {
 import browser from '@proton/pass/lib/globals/browser';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
-import type { AppState, Maybe, MaybeNull, RecursivePartial } from '@proton/pass/types';
+import type { Maybe, MaybeNull, RecursivePartial } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
@@ -40,7 +39,6 @@ export type IFrameContextValue = {
     settings: ProxiedSettings;
     userEmail: MaybeNull<string>;
     visible: boolean;
-    appState: AppState;
     close: (options?: IFrameCloseOptions) => void;
     forwardMessage: (message: IFrameMessage) => void;
     postMessage: (message: any) => void;
@@ -49,23 +47,25 @@ export type IFrameContextValue = {
 };
 
 export const IFrameContext = createContext<MaybeNull<IFrameContextValue>>(null);
-
 type PortContext = { port: MaybeNull<Runtime.Port>; forwardTo: MaybeNull<string> };
 
 /* The IFrameContextProvider is responsible for opening a new
  * dedicated port with the service-worker and sending out port-
  * forwarding messages to the content-script's ports. We retrieve
  * the content-script's parent port name through postMessaging */
-export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({ endpoint, children }) => {
-    const { i18n } = usePassCore();
+export const IFrameApp: FC<PropsWithChildren> = ({ children }) => {
+    const { i18n, endpoint } = usePassCore();
+    if (!(endpoint === 'dropdown' || endpoint === 'notification')) throw Error('Invalid IFrame endpoint');
+
+    const app = useAppState();
     const [{ port, forwardTo }, setPortContext] = useState<PortContext>({ port: null, forwardTo: null });
-    const [appState, setAppState] = useState<IFrameContextValue['appState']>(INITIAL_WORKER_STATE);
+
     const [settings, setSettings] = useState<ProxiedSettings>(getInitialSettings());
     const [features, setFeatures] = useState<RecursivePartial<FeatureFlagState>>({});
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [visible, setVisible] = useState<boolean>(false);
 
-    const activityProbe = useExtensionActivityProbe(contentScriptMessage);
+    const activityProbe = useExtensionActivityProbe();
 
     const destroyFrame = () => {
         logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
@@ -122,7 +122,7 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
     );
 
     useEffect(() => {
-        if (userEmail === null && clientReady(appState.status)) {
+        if (userEmail === null && clientReady(app.state.status)) {
             sendMessage
                 .onSuccess(
                     contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER }),
@@ -130,7 +130,7 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
                 )
                 .catch(noop);
         }
-    }, [appState, userEmail]);
+    }, [app.state, userEmail]);
 
     useEffect(() => {
         setTtagLocales(locales);
@@ -143,7 +143,7 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
             port.onMessage.addListener((message: Maybe<IFrameMessage>) => {
                 switch (message?.type) {
                     case IFramePortMessageType.IFRAME_INIT:
-                        setAppState(message.payload.workerState);
+                        app.setState(message.payload.workerState);
                         setSettings(message.payload.settings);
                         setFeatures(message.payload.features);
                         /** immediately set the locale on iframe init : the `IFramContextProvider`
@@ -169,7 +169,7 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
                     case WorkerMessageType.PORT_UNAUTHORIZED:
                         return destroyFrame();
                     case WorkerMessageType.WORKER_STATE_CHANGE:
-                        return setAppState(message.payload.state);
+                        return app.setState(message.payload.state);
                 }
             });
 
@@ -234,7 +234,7 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
     );
 
     useEffect(() => {
-        if (visible && appState.authorized) activityProbe.start();
+        if (visible && app.state.authorized) activityProbe.start();
         else activityProbe.cancel();
     }, [visible]);
 
@@ -247,7 +247,6 @@ export const IFrameApp: FC<PropsWithChildren<{ endpoint: IFrameEndpoint }>> = ({
                 settings,
                 userEmail,
                 visible,
-                appState,
                 close,
                 forwardMessage,
                 postMessage,
