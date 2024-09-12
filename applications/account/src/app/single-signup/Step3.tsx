@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms/Avatar';
+import { Avatar } from '@proton/atoms';
 import { Button } from '@proton/atoms/Button';
 import type { ModalProps } from '@proton/components/components';
 import {
