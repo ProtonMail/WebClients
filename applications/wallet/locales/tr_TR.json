@@ -4,12 +4,26 @@
     "language": "tr_TR"
   },
   "contexts": {
+    "Account upgrade": {
+      "You have reached the maximum number of accounts supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Geçerli tarifeniz tarafından desteklenen en fazla hesap sayısına ulaştınız. Daha fazla cüzdan oluşturmak için tarifenizi yükseltin. Desteğiniz finansal gizliliği ve özgürlüğü korumak için verdiğimiz mücadeleye de destek olacak."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
       "Activate recovery": [
         "Kurtarma özelliğini aç"
+      ],
+      "Add": [
+        "Ekle"
+      ],
+      "Add credit / debit card": [
+        "Kredi ya da banka kartı ekle"
+      ],
+      "Apply": [
+        "Uygula"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -22,6 +36,9 @@
       ],
       "Cancel": [
         "İptal"
+      ],
+      "Cancel subscription": [
+        "Aboneliği iptal et"
       ],
       "Chat with us": [
         "Bizimle canlı görüşün"
@@ -38,6 +55,9 @@
       "Collapse wallets": [
         "Cüzdanları daralt"
       ],
+      "Confirm": [
+        "Onayla"
+      ],
       "Continue": [
         "İlerle"
       ],
@@ -46,6 +66,24 @@
       ],
       "Copy version number to clipboard": [
         "Sürüm numarasını kopyala"
+      ],
+      "Current plan": [
+        "Geçerli tarife"
+      ],
+      "Decrease": [
+        "Azalt"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Done": [
+        "Tamam"
+      ],
+      "Downgrade": [
+        "Tarifeyi düşür"
+      ],
+      "Edit": [
+        "Düzenle"
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
@@ -56,17 +94,44 @@
       "Edit sign-in details": [
         "Oturum açma bilgilerini düzenle"
       ],
+      "Edit subscription": [
+        "Aboneliği düzenle"
+      ],
       "Expand wallets": [
         "Cüzdanları genişlet"
       ],
       "Forgot password?": [
         "Parolanızı mı unuttunuz?"
       ],
+      "Get in touch": [
+        "Bizimle görüşün"
+      ],
       "Get verification code": [
         "Doğrulama kodu al"
       ],
+      "Got it": [
+        "Anladım"
+      ],
       "Help": [
         "Yardım"
+      ],
+      "Increase": [
+        "Artır"
+      ],
+      "Keep my subscription": [
+        "Aboneliğimi sürdür"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "Learn more about Bitcoin via Email": [
+        "E-posta ile Bitcoin hakkında ayrıntılı bilgi alın"
+      ],
+      "Let's talk": [
+        "Hadi konuşalım!"
+      ],
+      "Loading verification": [
+        "Doğrulama yükleniyor"
       ],
       "More info: ${ safeTitle }": [
         "Ayrıntılı bilgi: ${ safeTitle }"
@@ -74,14 +139,41 @@
       "More options": [
         "Diğer seçenekler"
       ],
+      "Next": [
+        "İleri"
+      ],
+      "OK": [
+        "Tamam"
+      ],
+      "Open ${ CALENDAR_APP_NAME } settings": [
+        "${ CALENDAR_APP_NAME } ayarlarını aç"
+      ],
       "Open navigation": [
         "Gezinmeyi aç"
+      ],
+      "Open recipient": [
+        "Alıcıyı aç"
+      ],
+      "Pay": [
+        "Öde"
+      ],
+      "Pay ${ price } now": [
+        "Şimdi ${ price } öde"
+      ],
+      "Previous": [
+        "Önceki"
       ],
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "Remove bonuses": [
+        "Hediyeleri kaldır"
+      ],
+      "Remove gift code": [
+        "Hediye kodunu kaldır"
       ],
       "Report a problem": [
         "Sorun bildireceğim"
@@ -98,14 +190,35 @@
       "Resend code": [
         "Kodu yeniden gönder"
       ],
+      "Retry": [
+        "Yeniden dene"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
       "Search countries": [
         "Ülke ara"
+      ],
+      "Secure your wallet": [
+        "Cüzdanınızı koruyun"
+      ],
+      "Select ${ planTitle }": [
+        "${ planTitle } tarifesini seçin"
+      ],
+      "Select billing cycle ${ billingText }": [
+        "Fatura dönemini seçin ${ billingText }"
+      ],
+      "Select country": [
+        "Ülke seçin"
       ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
       ],
       "Settings": [
         "Ayarlar"
+      ],
+      "Show balance": [
+        "Bakiyeyi görüntüle"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -115,6 +228,9 @@
       ],
       "Switch or add account": [
         "Hesap değiştirin ya da ekleyin"
+      ],
+      "Try again": [
+        "Yeniden dene"
       ],
       "Try another method": [
         "Başka bir yöntem deneyin"
@@ -127,6 +243,18 @@
       ],
       "Update recovery phrase": [
         "Kurtarma ifadesini güncelle"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Use ${ address.Email }": [
+        "${ address.Email } adresini kullan"
+      ],
+      "Use a different card": [
+        "Başka bir kart kullanın"
+      ],
+      "Use a different payment method": [
+        "Başka bir ödeme yöntemi kullanın"
       ],
       "Use authentication code": [
         "Kimlik doğrulama kodu kullan"
@@ -142,6 +270,44 @@
       ],
       "View invoice": [
         "Faturayı görüntüle"
+      ],
+      "Visit knowledge base": [
+        "Bilgi bankasına bak"
+      ],
+      "What do I get?": [
+        "Ne alacağım?"
+      ]
+    },
+    "Action subscription": {
+      "Reactivate": [
+        "Yenile"
+      ]
+    },
+    "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } ek özel etki alanı",
+        "${ domains } ek özel etki alanı"
+      ],
+      "${ ips } server": [
+        "${ ips } sunucu",
+        "${ ips } sunucu"
+      ],
+      "${ price } per dedicated server": [
+        "${ price } size ayrılmış her sunucu için"
+      ],
+      "${ price } per domain": [
+        "her etki alanı için ${ price }"
+      ],
+      "${ price } per user": [
+        "her kullanıcı için ${ price }"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } yazma yardımcısı koltuğu",
+        "${ seats } yazma yardımcısı koltuğu"
+      ],
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
       ]
     },
     "Apps dropdown": {
@@ -149,20 +315,245 @@
         "${ BRAND_NAME } uygulamaları"
       ]
     },
+    "Assistant toggle": {
+      "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
+        "E-posta üretkenliğini yeni bir düzeye çıkarın e-postalarınızı yazmanıza, yanıtlamanıza ve düzeltmenize ${ BRAND_NAME } Scribe tarafından yardım edilmesine izin verin."
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } depolama alanı"
+      ],
+      "1 user": [
+        "1 kullanıcı"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "65 üzerindeki ülkede 3.000 üzerinde sunucu"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "Access content worldwide": [
+        "Dünya'daki tüm içeriklere erişin"
+      ],
+      "Ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
+      ],
+      "Extended version history": [
+        "Genişletilmiş sürüm geçmişi"
+      ],
+      "High speed streaming": [
+        "Yüksek hızlı yayın akışı izleme"
+      ],
+      "Premium Password Manager": [
+        "Ücretli parola yöneticisi"
+      ]
+    },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } ay",
+        "ilk ${ n } ay"
+      ],
+      "the first month": [
+        "ilk ay"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "${ discountedPrice } ay için ${ discountedMonths } özel indirimli fiyat geçerlidir. Ardından ${ nextMonths } süreyle indirimli ${ nextPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "İlk ay için ${ discountedPrice } özel indirimli fiyat geçerlidir. Ardından aylık ${ nextPrice } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. 65 üzerindeki ülkede 3.000 üzerinde sunucu, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Netflix, Disney+ ve Prime Video ve diğer yayın akışı hizmetlerindeki içeriğe her yerden erişin."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Yerel İnternet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve diğer özellikleri içerir.",
+        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve diğer özellikleri içerir."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve diğer özellikler."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "E-postalarınızı ve zaman planınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşma ve diğer özellikler."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek İnternet üzerinde gezinme hızınızı artırır."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Depolama alanı tüm ${ BRAND_NAME } uygulamaları arasında paylaşılır."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Her dosyanın 200 taneye kadar sürümünü 10 yıla kadar tutun."
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "${ renewPrice } tutar ile ${ renewalLength } süre için faturalanır"
+      ]
+    },
+    "Billing cycle option": {
+      "1 month": [
+        "1 ay"
+      ],
+      "12 months": [
+        "12 ay"
+      ],
+      "24 months": [
+        "24 ay"
+      ],
+      "Annually": [
+        "Yıllık"
+      ],
+      "Monthly": [
+        "Aylık"
+      ],
+      "Two-year": [
+        "Iki yıllık"
+      ]
+    },
+    "bitcoin buy": {
+      "${ WALLET_APP_NAME } has partnered with ${ rampLink } and ${ banxaLink }, two registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
+        "${ WALLET_APP_NAME } ${ rampLink } ve ${ banxaLink } ile iş ortaklığı yapıyor ve BTC satın almayı kolaylaştırmak için iki kayıtlı kripto varlık hizmeti sağlıyor. Lütfen var olan hizmet sağlayıcıları ile ödeme yöntemlerini görebilmek için bölgenizi seçin."
+      ],
+      "Amount": [
+        "Tutar"
+      ],
+      "Bank transfer": [
+        "Banka havalesi"
+      ],
+      "Binance": [
+        "Binance"
+      ],
+      "Buy": [
+        "Satın al"
+      ],
+      "Choose a country": [
+        "Bir ülke seçin"
+      ],
+      "Confirm": [
+        "Onayla"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Continue with ${ selectedPaymentProvider }": [
+        "${ selectedPaymentProvider } ile ilerle"
+      ],
+      "Credit card": [
+        "Kredi kartı"
+      ],
+      "Finally, you will complete the Buy process on the provider’s site and any purchased BTC will be sent to a BTC address generated from your wallet account.": [
+        "Sonunda, satın alma işlemini hizmet sağlayıcının sitesinde tamamlayacaksınız ve satın alınan BTC, cüzdan hesabınızdan oluşturulan bir BTC adresine gönderilecek."
+      ],
+      "Instant payment": [
+        "Anında ödeme"
+      ],
+      "Location": [
+        "Konum"
+      ],
+      "Pay with": [
+        "Şununla öde"
+      ],
+      "Recipients": [
+        "Alıcılar"
+      ],
+      "Review": [
+        "İncele"
+      ],
+      "Send": [
+        "Gönder"
+      ],
+      "You can also buy BTC on exchanges like ${ binanceLink }, ${ coinbaseLink }, or ${ krakenLink } and then send the BTC to your Receive address.": [
+        "Ayrıca ${ binanceLink }, ${ coinbaseLink } veya ${ krakenLink } gibi borsa platformlarından BTC satın alabilir ve ardından BTC birikiminizi alıcı adresinize gönderebilirsiniz."
+      ],
+      "You pay": [
+        "Gönderdiğiniz tutar"
+      ],
+      "You receive": [
+        "Aldığınız tutar"
+      ],
+      "Your location": [
+        "Konumunuz"
+      ]
+    },
+    "Bitcoin buy": {
+      "${ quote.provider } checkout": [
+        "${ quote.provider } ödeme"
+      ],
+      "We could not find any quote for this currency/country pair": [
+        "Bu para birimi/ülke çifti için herhangi bir alıntı bulamadık"
+      ]
+    },
     "Bitcoin Script Type": {
       "Legacy": [
-        "Legacy"
+        "Eski"
+      ],
+      "Legacy Segwit": [
+        "Eski Segwit"
       ],
       "Native Segwit": [
-        "Native Segwit"
+        "Doğal Segwit"
+      ]
+    },
+    "Bitcoin Script Type Description": {
+      "Latest format with enhanced privacy but not as widely adopted. Address starts with \"bc1p\".": [
+        "Geliştirilmiş gizlilik ile en güncel biçim. Ancak çok yaygın olarak kullanılmıyor. Adres \"bc1p\" ile başlar."
+      ],
+      "Lower fees and compatible with older systems. Address starts with \"3\".": [
+        "Ücretler daha düşüktür ve eski sistemlerle uyumludur. Adres \"3\" ile başlar."
+      ],
+      "Original format. Most widely supported but higher fees. Address starts with \"1\".": [
+        "Özgün biçim. En çok desteklenen biçim. Ancak ücretler daha yüksektir. Adres \"1\" ile başlar."
+      ],
+      "Recommended format with lowest fees. Address starts with \"bc1q\".": [
+        "En düşük ücretlerle önerilen biçim. Adres \"bc1q\" ile başlar."
       ]
     },
     "Bitcoin send": {
+      "Add recipient": [
+        "Alıcı ekle"
+      ],
+      "Could not send invitation": [
+        "Davet gönderilemedi"
+      ],
+      "Could not send invitation to the recipient": [
+        "Davet alıcıya gönderilemedi"
+      ],
+      "Invitation sent": [
+        "Davet gönderildi"
+      ],
+      "Invitation sent to the recipient": [
+        "Davet alıcıya gönderildi"
+      ],
       "No wallet found": [
         "Cüzdan bulunamadı"
       ],
+      "Open QR code reader": [
+        "QR kod okuyucusunu aç"
+      ],
       "Recipient email or BTC address": [
-        "Alıcı e-postası veya BTC adresi"
+        "Alıcı e-posta adresi veya BTC adresi"
       ],
       "Send invite email": [
         "Davet e-postası gönder"
@@ -170,8 +561,11 @@
       "Send invite to ${ email }": [
         "${ email } adresine davet gönder"
       ],
+      "This email is not using a ${ WALLET_APP_NAME } yet. Invite them to create their own wallet for easier transactions.": [
+        "Bu e-posta henüz ${ WALLET_APP_NAME } kullanmıyor. Onu kendi cüzdanını oluşturmaya davet edin. Böylece hesap işlemlerini daha kolay yapabilir."
+      ],
       "This user may not have a ${ WALLET_APP_NAME } integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.": [
-        "Bu kullanıcının henüz e-postasıyla entegre edilmiş bir ${ WALLET_APP_NAME } olmayabilir. Onlara Bitcoin göndermek istediğinizi bildiren bir e-posta gönderin."
+        "Bu kullanıcının henüz e-postasıyla ilişkilendirilmiş bir ${ WALLET_APP_NAME } hesabı olmayabilir. Ona Bitcoin göndermek istediğinizi bildiren bir e-posta gönderin."
       ],
       "To": [
         "Alıcı"
@@ -181,8 +575,11 @@
       "BTC": [
         "BTC"
       ],
+      "mBTC": [
+        "mBTC"
+      ],
       "Sats": [
-        "Sat"
+        "Sats"
       ]
     },
     "Browser": {
@@ -208,6 +605,9 @@
       ],
       "Custom domain problem": [
         "Özel etki alanı sorunu"
+      ],
+      "Docs problem": [
+        "Docs sorunu"
       ],
       "Drive problem": [
         "Drive sorunu"
@@ -264,12 +664,84 @@
         "Site erişim sorunu"
       ]
     },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
+      ],
+      "Total for ${ n } month": [
+        "${ n } aylık toplam",
+        "${ n } aylık toplam"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Daralt"
       ],
       "Expand": [
         "Genişlet"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "havuç"
+      ],
+      "cerise": [
+        "kiraz"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "bakır"
+      ],
+      "enzian": [
+        "kantaron"
+      ],
+      "fern": [
+        "eğrelti otu"
+      ],
+      "forest": [
+        "orman"
+      ],
+      "ocean": [
+        "okyanus"
+      ],
+      "olive": [
+        "zeytin"
+      ],
+      "pacific": [
+        "pasifik"
+      ],
+      "pickle": [
+        "salatalık"
+      ],
+      "pine": [
+        "çam"
+      ],
+      "pink": [
+        "pembe"
+      ],
+      "plum": [
+        "erik"
+      ],
+      "purple": [
+        "mor"
+      ],
+      "reef": [
+        "resif"
+      ],
+      "sahara": [
+        "çöl"
+      ],
+      "slateblue": [
+        "arduvaz mavisi"
+      ],
+      "soil": [
+        "toprak"
+      ],
+      "strawberry": [
+        "çilek"
       ]
     },
     "Country name": {
@@ -375,6 +847,9 @@
       "British Indian Ocean Territory": [
         "Britanya Hint Okyanusu Toprakları"
       ],
+      "British Virgin Islands": [
+        "Britanya Virjin Adaları"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
       ],
@@ -429,6 +904,9 @@
       "Congo": [
         "Kongo"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongo Demokratik Cumhuriyeti"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongo, Demokratik Cumhuriyeti"
       ],
@@ -468,6 +946,9 @@
       "Dominican Republic": [
         "Dominik Cumhuriyeti"
       ],
+      "East Timor": [
+        "Doğu Timor"
+      ],
       "Ecuador": [
         "Ekvador"
       ],
@@ -494,6 +975,9 @@
       ],
       "Falkland Islands": [
         "Falkland Adaları"
+      ],
+      "Falkland Islands (Malvinas)": [
+        "Falkland Adaları (Malvinas)"
       ],
       "Faroe Islands": [
         "Faroe Adaları"
@@ -606,6 +1090,9 @@
       "Ireland": [
         "İrlanda"
       ],
+      "Islamic Republic of Iran": [
+        "İran İslam Cumhuriyeti"
+      ],
       "Isle of Man": [
         "Man Adası"
       ],
@@ -636,6 +1123,12 @@
       "Kiribati": [
         "Kiribati"
       ],
+      "Korea (Democratic People's Republic of)": [
+        "Kore Demokratik Halk Cumhuriyeti"
+      ],
+      "Korea (Republic of)": [
+        "Kore Cumhuriyeti"
+      ],
       "Kosovo": [
         "Kosova"
       ],
@@ -644,6 +1137,9 @@
       ],
       "Kyrgyzstan": [
         "Kırgızistan"
+      ],
+      "Lao People's Democratic Republic": [
+        "Laos Demokratik Halk Cumhuriyeti"
       ],
       "Laos": [
         "Laos"
@@ -663,6 +1159,9 @@
       "Libya": [
         "Libya"
       ],
+      "Libyan Arab Jamahiriya": [
+        "Libya Arap Cemahiriyesi"
+      ],
       "Liechtenstein": [
         "Lihtenştayn"
       ],
@@ -674,6 +1173,9 @@
       ],
       "Macao": [
         "Makao"
+      ],
+      "Macedonia": [
+        "Makedonya"
       ],
       "Madagascar": [
         "Madagaskar"
@@ -927,6 +1429,9 @@
       "Svalbard and Jan Mayen": [
         "Svalbard ve Jan Mayen"
       ],
+      "Swaziland": [
+        "Svaziland"
+      ],
       "Sweden": [
         "İsveç"
       ],
@@ -936,6 +1441,9 @@
       "Syria": [
         "Suriye"
       ],
+      "Syrian Arab Republic": [
+        "Suriye Arap Cumhuriyeti"
+      ],
       "Taiwan": [
         "Tayvan"
       ],
@@ -944,6 +1452,9 @@
       ],
       "Tanzania": [
         "Tanzanya"
+      ],
+      "Tanzania, United Republic of": [
+        "Birleşik Tanzaya Cumhuriyeti"
       ],
       "Thailand": [
         "Tayland"
@@ -1039,6 +1550,11 @@
         "Aland Adaları"
       ]
     },
+    "Country select label": {
+      "Based on your time zone": [
+        "Saat diliminize göre"
+      ]
+    },
     "Currency select": {
       "Others": [
         "Diğerleri"
@@ -1047,12 +1563,165 @@
         "Beğenilen"
       ]
     },
+    "Cycle": {
+      "/month": [
+        "/ay"
+      ],
+      "/user per month": [
+        "/kullanıcı aylık"
+      ]
+    },
+    "Default display name vcard": {
+      "Unknown": [
+        "Bilinmiyor"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Süresi geçmiş fatura"
       ]
     },
+    "Discover": {
+      "${ WALLET_APP_NAME } launch": [
+        "${ WALLET_APP_NAME } sunumu"
+      ],
+      "${ WALLET_APP_NAME } security model": [
+        "${ WALLET_APP_NAME } güvenlik modeli"
+      ],
+      "Bitcoin guide for newcomers": [
+        "Yeni başlayanlar için Bitcoin rehberi"
+      ],
+      "Bitcoin is an innovative payment network that leverages peer-to-peer transactions to remove the need for a central bank. Bitcoin has revolutionized the core principles of value exchange by showing that a network of fully independent nodes can operate payments in a trustless and secure way.": [
+        "Bitcoin, bir merkez bankasına gerek duymadan hesap işlemlerini gerçekleştirmek için eşler arası işlemlerden yararlanan yenilikçi bir ödeme ağıdır. Bitcoin, tümüyle bağımsız düğümlerin güvenli ve karşınızdakine güvenmeniz gerekmeden ödeme işlemleri yapılabileceğini göstererek değer aktarımının temel ilkelerini devrim niteliğinde değiştirdi."
+      ],
+      "Bitcoin via Email": [
+        "E-posta ile Bitcoin"
+      ],
+      "Bitcoin via Email is a unique feature in ${ WALLET_APP_NAME } that makes sending bitcoin as easy as sending an email. Any ${ WALLET_APP_NAME } user can frictionlessly receive bitcoin with their email.": [
+        "E-posta ile Bitcoin, benzersiz bir ${ WALLET_APP_NAME } özelliğidir. Bitcoin göndermenin bir e-posta göndermek kadar kolay olmasını sağlar. Herhangi bir ${ WALLET_APP_NAME } kullanıcısı, e-posta adresiyle sorun yaşamadan Bitcoin alabilir."
+      ],
+      "Discover": [
+        "Keşfedin"
+      ],
+      "How to protect your ${ WALLET_APP_NAME }": [
+        "${ WALLET_APP_NAME } uygulamanızı nasıl korursunuz"
+      ],
+      "We explain why ${ WALLET_APP_NAME } was created and what benefits it can bring to the ${ BRAND_NAME } community.": [
+        "${ WALLET_APP_NAME } uygulamasının neden oluşturulduğunu ve ${ BRAND_NAME } topluluğuna ne gibi faydalar sağlayabileceğini açıklıyoruz."
+      ],
+      "We review how to secure your wallets and Bitcoin, including important recovery methods in case you ever forget your password.": [
+        "Cüzdanlarınızın ve Bitcoin birikimlerinizin güvenliğini nasıl sağlayacağınızı gözden geçiriyoruz. Ayrıca parolanızı unuttuğunuzda önemli olacak kurtarma yöntemlerini de anlatıyoruz."
+      ],
+      "We review some important history and features of Bitcoin for newcomers. We also look at how Bitcoin enables financial sovereignty and freedom. Finally, we explore the challenges facing Bitcoin and its future potential.": [
+        "Yeni başlayanlar için bazı önemli Bitcoin tarihlerini ve özelliklerini gözden geçiriyoruz. Bitcoin ile finansal egemenliğin ve özgürlüğün nasıl sağlandığını da inceliyoruz. Son olarak, Bitcoin hakkında karşılaşılan zorlukları ve gelecekteki potansiyeli keşfediyoruz."
+      ],
+      "We review the key features and security architecture that make ${ WALLET_APP_NAME } a private and secure wallet that is as easy to use as email.": [
+        "${ WALLET_APP_NAME } uygulamasının özel ve güvenli bir cüzdan olmasını sağlayan temel özellikleri ve güvenlik mimarisini gözden geçiriyoruz."
+      ],
+      "What is Bitcoin?": [
+        "Bitcoin nedir?"
+      ]
+    },
+    "Downgrade account reason": {
+      "Bugs or quality issue": [
+        "Hatalar veya kalite sorunları"
+      ],
+      "I do not wish to share": [
+        "Paylaşmak istemiyorum"
+      ],
+      "I found a cheaper VPN": [
+        "Daha ucuz bir VPN buldum"
+      ],
+      "I found a VPN with better features": [
+        "Daha iyi özellikleri olan bir VPN buldum"
+      ],
+      "I have not managed to connect": [
+        "Bağlantı kuramadım"
+      ],
+      "I only needed a VPN short-term": [
+        "Yalnızca kısa bir süre için VPN gerekliydi"
+      ],
+      "I use a different ${ BRAND_NAME } account": [
+        "Farklı bir ${ BRAND_NAME } hesabı kullanıyorum"
+      ],
+      "It doesn't do what I need": [
+        "Gerek duyduğum şeyi yapmıyor"
+      ],
+      "Missing feature(s)": [
+        "Eksik özellikler"
+      ],
+      "Other reason (please comment)": [
+        "Diğer nedenler (lütfen yazın)"
+      ],
+      "Subscription is too expensive": [
+        "Abonelik çok pahalı"
+      ],
+      "Switching to a different provider": [
+        "Başka bir hizmet sağlayıcıya geçiş"
+      ],
+      "Temporary need, may come back in the future": [
+        "Geçici olarak ayrılıyorum. İleride yeniden kullanabilirim"
+      ],
+      "The VPN is too slow": [
+        "VPN çok yavaş çalışıyor"
+      ]
+    },
+    "Downgrade modal exit survey title": {
+      "Help us improve": [
+        "Kendimizi geliştirmemize yardımcı olun"
+      ]
+    },
+    "driveplus2024: Deal details": {
+      "Extended version history": [
+        "Genişletilmiş sürüm geçmişi"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } özellikleri"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "${ DRIVE_SHORT_APP_NAME } sürüm geçmişi, binlerce yüksek hızlı ${ VPN_SHORT_APP_NAME } sunucusuna erişim, ${ PASS_SHORT_APP_NAME } parola paylaşımı ve diğer özellikler."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "Early access to new apps and features": [
+        "Yeni uygulama ve özelliklere erken erişim"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulamasına erken erişim"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_APP_NAME } özellikleri"
+      ]
+    },
     "Error": {
+      "Amount above the maximum.": [
+        "Tutar en fazla miktarın üstünde."
+      ],
+      "Amount below minimum (${ minimumAmount }).": [
+        "Tutar en az miktarın altında (${ minimumAmount })."
+      ],
+      "Bitcoin via Email to self is not supported": [
+        "Kendinize E-posta ile Bitcoin göndermeniz desteklenmiyor"
+      ],
+      "Checkout expired, please try again": [
+        "Ödemenin geçerlilik süresi dolmuş. Lütfen yeniden deneyin"
+      ],
+      "Contact could not be saved": [
+        "Kişi kaydedilemedi"
+      ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
@@ -1062,11 +1731,29 @@
       "Enter 6 digits": [
         "6 rakam yazın"
       ],
+      "Error connecting to the Bitcoin API.": [
+        "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
+      ],
       "Incorrect username": [
         "Kullanıcı adı yanlış"
       ],
       "Input isn't a valid email or bitcoin address": [
         "Girdi geçerli bir e-posta veya Bitcoin adresi değil"
+      ],
+      "Invalid ${ name } code": [
+        "${ name } kodu geçersiz"
+      ],
+      "Invalid card number": [
+        "Kart numarası geçersiz"
+      ],
+      "Invalid code": [
+        "Kod geçersiz"
+      ],
+      "Invalid expiration date": [
+        "Son kullanma tarihi geçersiz"
+      ],
+      "Invalid postal code": [
+        "Posta kodu geçersiz"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
@@ -1077,14 +1764,41 @@
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
+      "Payment process canceled": [
+        "Ödeme işlemi iptal edildi"
+      ],
+      "Payment process consumed": [
+        "Ödeme işleminin süresi geçmiş"
+      ],
+      "Payment process failed": [
+        "Ödeme işlemi tamamlanamadı"
+      ],
+      "Payment process not supported": [
+        "Ödeme işlemi desteklenmiyor"
+      ],
+      "Process aborted": [
+        "İşlem iptal edildi"
+      ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
       "Signature verification failed": [
         "İmza doğrulanamadı"
       ],
+      "Tab closed": [
+        "Sekme kapatıldı"
+      ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
+      ],
+      "The minimum amount of credit that can be added is ${ price }": [
+        "Eklenebilecek en az kredi tutarı: ${ price }"
+      ],
+      "The minimum payment we accept is ${ price }": [
+        "Kabul ettiğimiz en az ödeme: ${ price }"
+      ],
+      "The passphrases do not match": [
+        "Parolalar eşleşmiyor"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -1100,6 +1814,9 @@
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
+      ],
+      "Unknown payment token status": [
+        "Ödeme kodu durumu bilinmiyor"
       ],
       "Username must begin with a letter or digit": [
         "Kullanıcı adı bir harf ya da rakam ile başlamalı"
@@ -1137,6 +1854,64 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Herhangi bir görsel seçilmemiş"
+      ]
+    },
+    "familyOffer_2023: Deal details": {
+      "3 TB total storage": [
+        "3TB toplam depolama alanı"
+      ]
+    },
+    "familyOffer_2023: Tooltip": {
+      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Depolama alanı aile üyeleri arasında ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } tarafından paylaşılır."
+      ]
+    },
+    "familyOffer_2023:Deal details": {
+      "Up to 6 users": [
+        "6 kullanıcıya kadar"
+      ]
+    },
+    "familyOffer_2023:Error": {
+      "Family group not recognized. Try again.": [
+        "Aile grubu belirlenemedi. Yeniden deneyin."
+      ],
+      "Organization not recognized. Try again.": [
+        "Kuruluş belirlenemedi. Yeniden deneyin."
+      ]
+    },
+    "familyOffer_2023:Label": {
+      "Enter family group name to confirm": [
+        "Onaylamak için aile grubunun adını yazın"
+      ],
+      "Enter organization name to confirm": [
+        "Onaylamak için kuruluş adını yazın"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "Bu işlem, kuruluşunuzla ilgili tüm alt kullanıcıları, hesapları ve verileri kalıcı olarak silecek."
+      ],
+      "This will remove all ${ BRAND_NAME } premium features for every family member.": [
+        "Bu işlem, her aile üyesi için tüm ${ BRAND_NAME } ücretli özelliklerini kaldıracak."
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Delete family group?": [
+        "Aile grubu silinsin mi?"
+      ],
+      "Delete organization?": [
+        "Kuruluş silinsin mi?"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 üzerindeki ülkede 2.700 sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
+      ],
+      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
+        "3 özel e-posta etki alanı, 90 e-posta adresi, sınırsız sayıda hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ]
     },
     "fido2: Error": {
@@ -1222,6 +1997,23 @@
         "Çok küçük"
       ]
     },
+    "Gateway disclaimer": {
+      "Confirm": [
+        "Onayla"
+      ],
+      "Disclaimer": [
+        "Sorumluluk reddi"
+      ],
+      "I have read and agree to the disclaimer": [
+        "Açıklamayı okudum ve kabul ediyorum"
+      ],
+      "Not now": [
+        "Şimdi değil"
+      ],
+      "You are now leaving ${ WALLET_APP_NAME } for ${ provider } (${ websiteLink }). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${ provider }, a separate third-party platform. By proceeding and procuring services from ${ provider }, you acknowledge that you have read and agreed to ${ provider }'s Terms of Service (${ termOfUseLink }) and Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }). For any questions related to ${ provider }'s services, please contact ${ provider } at ${ supportEmailLink }": [
+        "${ WALLET_APP_NAME } üzerinden ${ provider } (${ websiteLink }) üzerine geçiyorsunuz. Kart ödemeleri, banka havaleleri ve diğer herhangi bir fiyat işlemiyle ilgili hizmetler, ayrı bir üçüncü taraf platformu olan ${ provider } tarafından sağlanmaktadır ${ provider } üzerinden hizmet alarak ve ilerleyerek, ${ provider } Hizmet Koşulları (${ termOfUseLink }) ile Gizlilik ve Çerez İlkeleri (${ privacyAndCookiesPolicyLink }) metinlerini okuduğunuzu ve kabul etmiş olursunuz. ${ provider } hizmetleriyle ilgili herhangi bir sorunuz varsa, lütfen ${ provider } ile ${ supportEmailLink } adresinden görüşün."
+      ]
+    },
     "Group": {
       "Account": [
         "Hesap"
@@ -1254,18 +2046,76 @@
       ]
     },
     "Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
+      "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
+        "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
+      ],
+      "${ storage } storage": [
+        "${ storage } depolama alanı"
+      ],
       "(${ memberCount } member)": [
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice } /ay)"
+      ],
+      "+${ bonusSpace } bonus storage": [
+        "+${ bonusSpace } ek depolama alanı"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
+      ],
+      "30-day money-back guarantee.": [
+        "30 gün içinde ücreti geri ödeme garantisi."
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
+      ],
+      "A user is an account associated with a single username, mailbox, and person": [
+        "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
+      ],
+      "Account size": [
+        "Hesap boyutu"
+      ],
+      "Account successfully updated": [
+        "Hesap güncellendi"
+      ],
+      "Additional options": [
+        "Ek seçenekler"
+      ],
+      "American Express SafeKey logo": [
+        "American Express SafeKey logosu"
+      ],
+      "Amount above maximum (${ amount }).": [
+        "Tutar en fazla miktarın üzerinde (${ amount })."
+      ],
+      "Amount below minimum (${ amount }).": [
+        "Tutar en az miktarın altında (${ amount })."
       ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
+      "Awaiting transaction": [
+        "Ödemenin tamamlanması bekleniyor"
+      ],
+      "Balance from your previous subscription": [
+        "Önceki aboneliğinizden kalan tutar"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+      ],
+      "Billing cycle: ${ text }": [
+        "Faturalama dönemi: ${ text }"
+      ],
+      "Bitcoin": [
+        "Bitcoin"
+      ],
+      "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
+        "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu ek faydaları kalıcı olarak kaybedersiniz."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
@@ -1273,11 +2123,48 @@
       "Country code": [
         "Ülke kodu"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "${ n } üye için bir güvenli bulut oluştur",
+        "${ n } üye için bir güvenli bulut oluştur"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
+      ],
+      "Current plan": [
+        "Geçerli tarife"
+      ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Dedicated servers": [
+        "Size ayrılmış sunucular"
+      ],
+      "Discover ProtectBuy logo": [
+        "Discover ProtectBuy logosu"
+      ],
+      "Don’t see anything? Remember to turn off pop-up blockers.": [
+        "Bir şey görmüyor musunuz? Açılır pencere engelleyicilerini kapatmayı unutmayın."
+      ],
+      "Downgrade": [
+        "Tarifeyi düşür"
+      ],
+      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
+        "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } sunucularına yapılan bağlantılar kesilecek."
+      ],
+      "Download your favorite app today and take privacy with you everywhere you go.": [
+        "Kullanmak istediğiniz uygulamayı indirin ve gizliliğinizi gittiğiniz her yere götürün."
+      ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
+      ],
+      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
+        "10 özel etki alanına kadar e-posta barındırması ücretsizdir. Ek etki alanları için ${ price } eklenir."
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
+        "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
@@ -1291,14 +2178,38 @@
       "Enter your own password (as organization admin).": [
         "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
       ],
+      "Expired": [
+        "Geçerlilik süresi dolmuş"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
+      ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "İptal ederseniz, ${ planTitle } aboneliğiniz ${ expiryDate } tarihinde sona erdiğinde yenilenmeyecek."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
       ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
+        "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
+        "Tarifenizi düşürdüğünüzde, ek depolama alanı ve süzgeçler gibi ücretli ${ MAIL_APP_NAME } özelliklerini kullanamayacaksınız."
+      ],
+      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
+        "Tarifenizi düşürdüğünüzde, ücretli ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
+      ],
+      "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
+        "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
+      ],
+      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
+        "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
+      ],
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
+      ],
+      "JCB logo": [
+        "JCB logosu"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -1312,11 +2223,44 @@
       "Loading calendar, please wait. You will be redirected to our scheduling platform Calendly in a new tab.": [
         "Takvim yüklenirken lütfen bekleyin. Yeni bir sekmede zamanla platformumuz Calendly açılacak."
       ],
+      "Mastercard SecureCode logo": [
+        "Mastercard SecureCode logosu"
+      ],
+      "MM/YY": [
+        "AA/YY"
+      ],
       "New": [
         "Yeni"
       ],
+      "No payment is required at this time.": [
+        "Şu anda herhangi bir ödeme gerekmiyor."
+      ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
+      ],
+      "Number of dedicated servers in the organization": [
+        "Kuruluşunuza ayrılmış sunucu sayısı"
+      ],
+      "Organization size": [
+        "Kuruluş boyutu"
+      ],
+      "Payments are protected with TLS encryption and Swiss privacy laws.": [
+        "Ödemeler TLS şifrelemesi ve İsviçre gizlilik yasaları ile korunmaktadır."
+      ],
+      "Please authenticate your card in the verification tab.": [
+        "Lütfen doğrulama sekmesinden kartınızı doğrulayın."
+      ],
+      "Please authenticate your payment in the verification tab.": [
+        "Lütfen doğrulama sekmesinden ödemenizi doğrulayın."
+      ],
+      "Please try again using a different payment method, or contact your bank.": [
+        "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
+      ],
+      "Please try again, use a different payment method, or contact PayPal for assistance.": [
+        "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
+      ],
+      "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
+        "Ücrete, hesabınızda kayıtlı tüm geçerli dönemsel indirimler ve geçerlilik süresi dolmamış kuponlar katılmıştır."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
@@ -1330,11 +2274,68 @@
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
+      "Since you're a loyal user, your account has additional features enabled.": [
+        "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
+      ],
+      "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
+        "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
+      ],
+      "Subscription auto-renews every ${ cycle } months.": [
+        "Abonelik ${ cycle } ayda bir otomatik olarak yenilenir."
+      ],
+      "Subscription auto-renews every month.": [
+        "Abonelik her ay otomatik olarak yenilenir."
+      ],
+      "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
+        "Doğrulama işlemi için yeni bir tarayıcı sekmesi açılacak. Kullanıyorsanız lütfen açılır pencere engelleyicileri kapatın."
+      ],
+      "To complete your payment, please send ${ btcAmountBold } to the address below.": [
+        "Ödemenizi tamamlamak için aşağıdaki adrese ${ btcAmountBold } gönderin."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
+      "Total email addresses": [
+        "Toplam e-posta adresi"
+      ],
+      "Total storage": [
+        "Toplam depolama alanı"
+      ],
+      "Total supported domains": [
+        "Toplam etki alanı"
+      ],
+      "Total VPN connections": [
+        "Toplam VPN bağlantısı"
+      ],
+      "Users": [
+        "Kullanıcılar"
+      ],
+      "Verification may take a few minutes.": [
+        "Doğrulama işlemi birkaç dakika sürebilir."
+      ],
+      "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
+        "Doğrulama için yeni bir sekme açılacak. Lütfen açılır pencere engelleyicileri kapatın. Ödeme alınmayacak. Kartı doğrulamak için kullanılan herhangi bir miktar hemen geri ödenir."
+      ],
       "Version number successfully copied to clipboard": [
         "Sürüm numarası kopyalandı"
+      ],
+      "Visa Secure logo": [
+        "Visa Secure logosu"
+      ],
+      "We couldn’t process your payment.": [
+        "Ödemenizi işleyemedik."
+      ],
+      "We need to authenticate your payment method with your bank.": [
+        "Ödeme yönteminizi bankanızla doğrulamamız gerekiyor."
+      ],
+      "We need to authenticate your payment with your bank.": [
+        "Ödemenizi bankanızla doğrulamamız gerekiyor."
+      ],
+      "We use 3-D Secure to protect your payments": [
+        "Ödemelerinizi korumak için 3-D Secure kullanıyoruz"
+      ],
+      "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
+        "Bu işlemi tamamlamanız için yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. İşlemi tamamlamak için, varsa açılır pencere engelleyicilerinizi kapatın."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
@@ -1348,8 +2349,46 @@
       "Would you like to receive a new verification code?": [
         "Yeni bir doğrulama kodu almak ister misiniz?"
       ],
+      "Writing assistant": [
+        "Yazma yardımcısı"
+      ],
+      "You already have a free account": [
+        "Zaten ücretsiz bir hesabınız var"
+      ],
+      "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
+        "${ downgradedPlanName } tarifesinin depolama alanından fazlasını kullanıyorsunuz. Tarifeyi düşürebilmek için lütfen bazı verileri silin ya da taşıyın."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
+        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
+        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
+      ],
       "You can now return to the application to continue": [
         "Şimdi uygulamaya dönebilirsiniz"
+      ],
+      "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
+        "${ planTitle } deneme aboneliğiniz var. Deneme süresinden sonra aboneliğinizi sürdürmek istiyorsanız lütfen bir ödeme yöntemi ekleyin."
+      ],
+      "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
+        "${ planTitle } deneme aboneliğiniz var. Şu anda herhangi bir ödeme yapmanıza gerek yok. Deneme süresi sonunda aboneliğiniz otomatik olarak yenilenecek."
+      ],
+      "You may be redirected to your bank’s website.": [
+        "Bankanızın sitesine yönlendirilebilirsiniz."
+      ],
+      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
+        "Tarifenizi düşürmeden önce, ek ${ MAIL_APP_NAME } kullanıcılarını, adreslerini ve özel etki alanlarını kullanımdan kaldırmalı ya da silmelisiniz."
+      ],
+      "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
+        "PayPal hesabınızda bağlantılı bir kredi kartı ya da banka hesabı olmalıdır. PayPal hesabınızda bunlar yoksa, aşağıdaki düğmeye tıklayın."
+      ],
+      "You will lose access to ${ planTitle } features on this date.": [
+        "Bu tarihte ${ planTitle } özelliklerine erişiminizi kaybedeceksiniz."
+      ],
+      "You will soon be redirected to PayPal to verify your payment.": [
+        "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. 28 gün sonra e-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hizmeti normal şekilde kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
@@ -1357,16 +2396,46 @@
       "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
         "${ BRAND_NAME } hesabınız şu anda askıya alınmış. E-postalarınız artık gelen kutunuza gönderilmeyecek, Drive paylaşım bağlantılarınız engellenecek ve yeni dosya yükleyemeyeceksiniz. Hesabınızı kullanmayı sürdürebilmek için lütfen süresi geçmiş faturalarınızı ödeyin."
       ],
+      "Your account will be updated once the payment is cleared.": [
+        "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Sonraki fatura zamanınız ${ renewalTime }."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
       ]
     },
+    "Info for cash payment method": {
+      "Please contact us at ${ email } for instructions on how to pay us with cash.": [
+        "Nakit ödemenin nasıl yapılacağı hakkında bilgi almak için bizimle ${ email } adresinden görüşün."
+      ]
+    },
+    "Info subscription": {
+      "You can prevent expiry by reactivating the subscription": [
+        "Aboneliği yenileyerek hizmetin sona ermesini önleyebilirsiniz"
+      ]
+    },
+    "Info; access rights for shared calendar": {
+      "View only": [
+        "Yalnızca görüntüleme"
+      ]
+    },
+    "Infog": {
+      "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
+        "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
+      ]
+    },
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
+      ],
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -1374,11 +2443,35 @@
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
       ],
+      "Billing address": [
+        "Fatura adresi"
+      ],
+      "Billing cycle": [
+        "Fatura dönemi"
+      ],
       "Browser": [
         "Tarayıcı"
       ],
       "Browser version": [
         "Tarayıcı sürümü"
+      ],
+      "BTC address": [
+        "BTC adresi"
+      ],
+      "BTC amount": [
+        "BTC tutarı"
+      ],
+      "Card details": [
+        "Kart bilgileri"
+      ],
+      "Card holder": [
+        "Kart sahibi"
+      ],
+      "Card number": [
+        "Kart numarası"
+      ],
+      "Cash": [
+        "Nakit"
       ],
       "Category": [
         "Kategori"
@@ -1389,6 +2482,18 @@
       "Copy": [
         "Kopyala"
       ],
+      "Could you please let us know which provider?": [
+        "Hangi hizmet sağlayıcı olduğunu belirtebilir misiniz?"
+      ],
+      "Could you please specify which streaming service?": [
+        "Hangi yayın akışı hizmeti olduğunu belirtebilir misiniz?"
+      ],
+      "Could you please specify?": [
+        "Daha açık yazabilir misiniz?"
+      ],
+      "Country": [
+        "Ülke"
+      ],
       "Currency": [
         "Para birimi"
       ],
@@ -1398,8 +2503,17 @@
       "Delete recovery-related information.": [
         "Kurtarma ile ilgili bilgileri sil."
       ],
+      "Do you have any suggestions for our team?": [
+        "Ekibimizden herhangi bir öneri aldınız mı?"
+      ],
       "Email address": [
         "E-posta adresi"
+      ],
+      "Expiration (${ patternExpiration })": [
+        "Geçerlilik süresi (${ patternExpiration })"
+      ],
+      "Expires": [
+        "Geçerlilik sonu"
       ],
       "Hide password": [
         "Parolayı gizle"
@@ -1416,17 +2530,47 @@
       "Operating system version": [
         "İşletim sistemi sürümü"
       ],
+      "Optional": [
+        "İsteğe bağlı"
+      ],
       "Password": [
         "Parola"
+      ],
+      "Payer": [
+        "Ödeyen"
+      ],
+      "Payment details": [
+        "Ödeme ayrıntıları"
+      ],
+      "Payment method": [
+        "Ödeme yöntemi"
       ],
       "Phone number": [
         "Telefon numarası"
       ],
+      "Postal code": [
+        "Posta kodu"
+      ],
+      "Proration": [
+        "Hesap bakiyesi"
+      ],
       "Reveal password": [
         "Parolayı göster"
       ],
+      "Security code (${ codeName })": [
+        "Güvenlik kodu (${ codeName })"
+      ],
+      "Start date": [
+        "Başlangıç tarihi"
+      ],
+      "Subscription options": [
+        "Abonelik seçenekleri"
+      ],
       "System information": [
         "Sistem bilgileri"
+      ],
+      "VAT": [
+        "KDV"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -1434,13 +2578,30 @@
       "What happened?": [
         "Ne oldu?"
       ],
+      "What is your main reason for canceling or downgrading?": [
+        "İptal etmenizin ya da tarifenizi düşürmenizin temel nedeni nedir?"
+      ],
       "Your password (admin)": [
         "Parolanız (yönetici)"
       ]
     },
+    "Label, credit card": {
+      "ZIP code": [
+        "Posta kodu"
+      ]
+    },
     "Link": {
+      "Add a gift code": [
+        "Bir hediye kodu ekleyin"
+      ],
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
+      ],
+      "click here": [
+        "buraya tıklayın"
+      ],
+      "How to pay with Bitcoin?": [
+        "Bitcoin ile nasıl ödeme yapabilirsiniz?"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -1449,10 +2610,853 @@
         "Davet isteğinde bulun"
       ],
       "View on blockchain": [
-        "Blockchain'de görüntüleyin"
+        "Blockchain üzerinde görüntüle"
       ],
       "What’s this?": [
         "Bu nedir?"
+      ]
+    },
+    "mail_signup_2024: Info": {
+      "Add ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
+      ],
+      "for ${ price }": [
+        "${ price }"
+      ]
+    },
+    "mailtrial2024: Deal details": {
+      "${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ],
+      "10 email addresses": [
+        "10 e-posta adresi"
+      ],
+      "Auto-delete Spam and Trash": [
+        "Otomatik olarak istenmeyenleri ve çöpü boşaltma"
+      ],
+      "Custom schedule send and snooze times": [
+        "Özel zamanlanmış gönderim ve erteleme süreleri"
+      ],
+      "Support for 1 custom email domain": [
+        "1 özel e-posta etki alanı desteği"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız klasör, etiket ve süzgeç"
+      ]
+    },
+    "new_plans": {
+      "Highest VPN speed": [
+        "En yüksek VPN hızı"
+      ],
+      "Keep your inbox organized with folders": [
+        "Gelen kutunuzu klasörler ile düzenli tutun"
+      ],
+      "Medium VPN speed": [
+        "Orta VPN hızı"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "Hesabı sil"
+      ],
+      "Downgrade account": [
+        "Hesap tarifesini düşür"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Ücretsiz ${ BRAND_NAME } edinin"
+      ],
+      "Get ${ planName }": [
+        "${ planName } alın"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } tarifesinde kal"
+      ],
+      "Keep account": [
+        "Hesabı tut"
+      ],
+      "Switch plan": [
+        "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ]
+    },
+    "new_plans: feature": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
+      "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
+        "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ n } calendar": [
+        "${ n } takvim",
+        "${ n } takvim"
+      ],
+      "${ n } calendar per user": [
+        "Her kullanıcı için ${ n } takvim",
+        "Her kullanıcı için ${ n } takvim"
+      ],
+      "${ n } custom email domain": [
+        "${ n } özel e-posta etki alanı",
+        "${ n } özel e-posta etki alanı"
+      ],
+      "${ n } email address": [
+        "${ n } e-posta adresi",
+        "${ n } e-posta adresi"
+      ],
+      "${ n } email address per user": [
+        "Her kullanıcı için ${ n } e-posta adresi",
+        "Her kullanıcı için ${ n } e-posta adresi"
+      ],
+      "${ n } filter": [
+        "${ n } süzgeç",
+        "${ n } süzgeç"
+      ],
+      "${ n } folder": [
+        "${ n } klasör",
+        "${ n } klasör"
+      ],
+      "${ n } folder and label": [
+        "${ n } klasör ve etiket",
+        "${ n } klasör ve etiket"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email takma adı",
+        "${ n } hide-my-email takma adı"
+      ],
+      "${ n } label": [
+        "${ n } etiket",
+        "${ n } etiket"
+      ],
+      "${ n } message per day": [
+        "Her gün ${ n } ileti",
+        "Her gün ${ n } ileti"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "Her kullanıcı için ${ n } paylaşılan ${ PASS_SHORT_APP_NAME } kasası",
+        "Her kullanıcı için ${ n } paylaşılan ${ PASS_SHORT_APP_NAME } kasası"
+      ],
+      "${ n } user": [
+        "${ n } kullanıcı",
+        "${ n } kullanıcıya kadar"
+      ],
+      "${ n } vault": [
+        "${ n } kasa",
+        "${ n } kasa"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN bağlantısı",
+        "${ n } VPN bağlantısı"
+      ],
+      "${ options }-day file version history": [
+        "${ options } günlük dosya sürümü geçmişi",
+        "${ options } günlük dosya sürümü geçmişi"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı",
+        "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı"
+      ],
+      "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
+        "${ PASS_APP_NAME } ve sınırsız sayıda hide-my-email takma adı"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "${ PROTON_SENTINEL_NAME } programı"
+      ],
+      "${ size } attachment size": [
+        "${ size } ek dosya boyutu"
+      ],
+      "${ size } of secure storage per user": [
+        "Her kullanıcı için ${ size } güvenli depolama alanı"
+      ],
+      "${ size } storage": [
+        "${ size } depolama alanı"
+      ],
+      "${ textType } - For ${ DRIVE_APP_NAME }": [
+        "${ textType } - ${ DRIVE_APP_NAME } için"
+      ],
+      "${ textType } - For all ${ BRAND_NAME } services": [
+        "${ textType } - Tüm ${ BRAND_NAME } hizmetleri için"
+      ],
+      "1 user": [
+        "1 kullanıcı"
+      ],
+      "10-year file version history": [
+        "10 yıllık dosya sürümü geçmişi"
+      ],
+      "24/7 account management support": [
+        "7/24 hesap yönetimi desteği"
+      ],
+      "99.95% SLA": [
+        "%99.95 hizmet sürekliliği"
+      ],
+      "Ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması"
+      ],
+      "Admin console": [
+        "Yönetici panosu"
+      ],
+      "Administration Panel": [
+        "Yönetim panosu"
+      ],
+      "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
+        "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "All premium ${ BRAND_NAME } services. One easy subscription": [
+        "Tüm ücretli ${ BRAND_NAME } hizmetleri. Tek bir abonelik"
+      ],
+      "Auto-delete Spam and Trash": [
+        "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
+      ],
+      "Auto-reply": [
+        "Otomatik yanıt"
+      ],
+      "Autofill credit cards (coming soon)": [
+        "Otomatik kredi kartı doldurma (yakında)"
+      ],
+      "Automatic email forwarding": [
+        "Otomatik e-posta iletme"
+      ],
+      "Available on all platforms": [
+        "Tüm platformlarda kullanılabilir"
+      ],
+      "Calendar sharing": [
+        "Takvim paylaşımı"
+      ],
+      "Catch-all": [
+        "Tümünü toplama"
+      ],
+      "Centralized billing": [
+        "Tek merkezden faturalama"
+      ],
+      "Collaborate and share large files": [
+        "Büyük dosyaları paylaşın ve iş birliği yapın"
+      ],
+      "Contact groups": [
+        "Kişi grupları"
+      ],
+      "Contact groups management": [
+        "Kişi grupları yönetimi"
+      ],
+      "Custom and secure business email": [
+        "Özel ve güvenli kurumsal e-posta hizmeti"
+      ],
+      "Custom domains for email aliases": [
+        "E-posta takma adları için özel etki alanları"
+      ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "Custom fields": [
+        "Özel alanlar"
+      ],
+      "Custom workspace branding": [
+        "Özel çalışma alanı markası"
+      ],
+      "Data breach monitoring": [
+        "Verilerin ele geçirilmesini izleme"
+      ],
+      "Data breach monitoring (coming soon)": [
+        "Verilerin ele geçirilmesini izleme (yakında)"
+      ],
+      "Desktop app": [
+        "Masaüstü uygulaması"
+      ],
+      "DNS leak prevention": [
+        "DNS sızıntısı önleme"
+      ],
+      "Double hop": [
+        "Double hop"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısı"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "E-posta istemcisi desteği (IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-posta grupları"
+      ],
+      "Enables HIPAA compliance": [
+        "HIPAA uyumluluğu"
+      ],
+      "Encrypted contact details": [
+        "Şifrelenmiş kişi bilgileri"
+      ],
+      "Encrypted VPN servers": [
+        "Şifrelenmiş VPN sunucuları"
+      ],
+      "End-to-end encryption": [
+        "Uçtan uca şifreleme"
+      ],
+      "Fast P2P/BitTorrent downloads": [
+        "Hızlı P2P/BitTorrent indirmeleri"
+      ],
+      "Free features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and ${ DRIVE_SHORT_APP_NAME }": [
+        "Ücretsiz ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME } özellikleri"
+      ],
+      "Free VPN on a single device": [
+        "Tek bir aygıt için ücretsiz VPN"
+      ],
+      "Fully refundable for 30 days": [
+        "30 gün içinde tamamı geri ödenebilir"
+      ],
+      "GDPR data processing agreement": [
+        "KVKK veri işleme sözleşmesi"
+      ],
+      "Group management (coming soon)": [
+        "Grup yönetimi (yakında gelecek)"
+      ],
+      "High-speed streaming": [
+        "Yüksek hızlı yayın akışı izleme"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "${ n } aygıt için yüksek hızlı VPN",
+        "${ n } aygıt için yüksek hızlı VPN"
+      ],
+      "HTML signatures": [
+        "HTML imzalar"
+      ],
+      "Integrated 2FA authenticator": [
+        "Bütünleşik iki adımlı kimlik doğrulayıcı"
+      ],
+      "Kill switch/always-on VPN": [
+        "Bağlantı kesici / Hep açık VPN"
+      ],
+      "Limited support": [
+        "Sınırlı destek"
+      ],
+      "Multiple admin roles": [
+        "Birden çok yönetici rolü"
+      ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
+      "Organize items with multiple vaults": [
+        "Birden çok kasa ile ögeleri gruplayın"
+      ],
+      "Passkeys supported": [
+        "Geçiş anahtarları destekleniyor"
+      ],
+      "Password health": [
+        "Parola sağlığı"
+      ],
+      "Password manager": [
+        "Parola yöneticisi"
+      ],
+      "Password-protected Emails": [
+        "Parola korumalı e-postalar"
+      ],
+      "Phone support (20+ users)": [
+        "Telefon desteği (20+ kullanıcı)"
+      ],
+      "Priority email support": [
+        "Öncelikli e-posta desteği"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ],
+      "Priority support & live chat": [
+        "Öncelikli destek ve canlı sohbet"
+      ],
+      "Protect ${ n } device at a time": [
+        "Aynı anda ${ n } aygıtı koruyun",
+        "Aynı anda ${ n } aygıtı koruyun"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerine dönün"
+      ],
+      "Regular checkups of your account security. We alert you if you have weak or reused passwords that need to be updated.": [
+        "Hesap güvenliğinizi düzenli olarak denetleriz. Güncellenmesi gereken zayıf ya da yeniden kullanılmış parolalarınız varsa sizi uyarırız."
+      ],
+      "Require 2FA for organization": [
+        "Kuruluş için iki adımlı doğrulama gereksin"
+      ],
+      "Router support": [
+        "Yöneltici desteği"
+      ],
+      "Schedule and snooze emails for any time": [
+        "İletileri istediğiniz zamana planlayın veya erteleyin"
+      ],
+      "Secure Core servers": [
+        "Secure Core sunucuları"
+      ],
+      "See team's availability": [
+        "Ekibin uygunluğuna bakın"
+      ],
+      "Send & receive invitations": [
+        "Davetleri alma ve gönderme"
+      ],
+      "Share files with no size limit": [
+        "Dosyaları boyut sınırı olmadan paylaşın"
+      ],
+      "Sign in as user": [
+        "Kullanıcı olarak oturum açma"
+      ],
+      "SMTP submission": [
+        "SMTP gönderim"
+      ],
+      "SMTP submission for select organizations": [
+        "Seçilmiş kuruluşlar için SMTP gönderim"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "Ayrılmış tünelleme (Android ve Windows)"
+      ],
+      "SSO integration (coming soon)": [
+        "Tek oturum açma bütünleştirmesi (yakında)"
+      ],
+      "Strict no-logs policy": [
+        "Sıkı kayıt tutmama ilkesi"
+      ],
+      "Sync and backup all your files across devices": [
+        "Tüm dosyalarınızı aygıtlarınız arasında eşitleyin ve yedekleyin"
+      ],
+      "Tor over VPN": [
+        "VPN üzerinden Tor"
+      ],
+      "Two-factor authentication": [
+        "İki adımlı doğrulama"
+      ],
+      "Unlimited devices": [
+        "Sınırsız sayıda aygıt"
+      ],
+      "Unlimited devices and aliases": [
+        "Sınırsız aygıt ve takma ad"
+      ],
+      "Unlimited filters": [
+        "Sınırsız sayıda süzgeç"
+      ],
+      "Unlimited folders": [
+        "Sınırsız sayıda klasör"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız sayıda klasör, etiket ve süzgeç"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "Unlimited labels": [
+        "Sınırsız etiket"
+      ],
+      "Unlimited logins and notes": [
+        "Sınırsız sayıda oturum açma ve not kaydı"
+      ],
+      "Unlimited logins, notes and credit cards": [
+        "Sınırsız sayıda oturum açma, kredi kartı ve not kaydı"
+      ],
+      "Unlimited messages per day": [
+        "Her gün sınırsız sayıda ileti"
+      ],
+      "Unlimited shared ${ PASS_SHORT_APP_NAME } vaults per user": [
+        "Her kullanıcı için sınırsız paylaşılan ${ PASS_SHORT_APP_NAME } kasası"
+      ],
+      "Unlimited shared vaults with access permissions": [
+        "Erişim izinleri ile sınırsız sayıda paylaşılan kasa"
+      ],
+      "Unlimited vault sharing": [
+        "Sınırsız kasa paylaşımı"
+      ],
+      "Unlimited vaults": [
+        "Sınırsız kasa"
+      ],
+      "Unlimited volume/bandwidth": [
+        "Sınırsız trafik/bant genişliği"
+      ],
+      "Up to ${ n } user": [
+        "${ n } kullanıcıya kadar",
+        "${ n } kullanıcıya kadar"
+      ],
+      "Up to ${ totalStorageSize } storage": [
+        "${ totalStorageSize } boyutuna kadar depolama alanı"
+      ],
+      "User credential management": [
+        "Kullanıcı kimlik doğrulama bilgileri yönetimi"
+      ],
+      "User session management": [
+        "Kullanıcı oturumları yönetimi"
+      ],
+      "User storage management": [
+        "Kullanıcı depolama alanı yönetimi"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Kasa paylaşma (${ n } kişiye kadar)",
+        "Kasa paylaşma (${ n } kişiye kadar)"
+      ],
+      "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
+        "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını kontrol etmek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Destek"
+      ],
+      "Team management": [
+        "Ekip yönetimi"
+      ]
+    },
+    "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        "${ brand }, ${ last4 } içinde sona erecek"
+      ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Size ayrılmış güvenli ağ geçitleri ile gelişmiş ağ güvenliği ve erişim yönetimi"
+      ],
+      "Advanced protection for teams that goes beyond industry standards.": [
+        "Ekipler için endüstri standartlarının ötesine geçen gelişmiş koruma."
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Tüm ${ BRAND_NAME } uygulamaları ve ücretli özellikleri"
+      ],
+      "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
+        "Tüm ${ BRAND_NAME } kurumsal uygulamaları ile kuruluşunuzun tümünü korumak için ücretli özellikler."
+      ],
+      "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
+        "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
+      ],
+      "Early access to new apps and features": [
+        "Yeni uygulama ve özelliklere erken erişim"
+      ],
+      "Encrypted email and calendar to get you started.": [
+        "Başlamanız için şifrelenmiş e-posta ve takvim."
+      ],
+      "Enhanced security and premium features for teams.": [
+        "Ekipler için gelişmiş güvenlik ile ücretli özellikler."
+      ],
+      "Essential protection and secure collaboration for unlimited users.": [
+        "Sınırsız kullanıcılar için temel koruma ve güvenli işbirliği."
+      ],
+      "For next-level password management and identity protection.": [
+        "Gelecek nesil parola yönetimi ve kimlik koruması için."
+      ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "Hesabınızı silerseniz tüm ${ visionary } tarifesi ek faydalarını kaybedersiniz ve daha sonra yeni bir hesap açtığınızda yeniden abone olamazsınız."
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "Hesap tarifenizi düşürürseniz tüm ${ visionary } tarifesi ek faydalarını kaybedersiniz ve daha sonra yeniden abone olamazsınız."
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "Farklı bir tarifeye geçerseniz tüm ${ visionary } tarifesi ek faydalarını kaybedersiniz ve daha sonra ${ visionary } tarifesine yeniden abone olamazsınız."
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve ek faydalar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
+      ],
+      "Popular": [
+        "Beğenilen"
+      ],
+      "Protect sensitive business information and collaborate securely.": [
+        "Önemli iş bilgilerinizi koruyun ve güvende kalarak işbirliği yapın."
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
+      ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Temel ağ izlemesi ile her yerden güvenli İnternet erişimi"
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolama alanı."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "Güvenli, sınırsız ve yüksek hızda İnternet erişimi sağlayan size ayrılmış VPN çözümü."
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "Ücretsiz başlangıç hesabı gizliliğe odaklanmış herkesin gereksinimlerine göre tasarlanmıştır."
+      ],
+      "Unlimited privacy and more storage for up to 2 people.": [
+        "2 kişi için sınırsız gizlilik ve daha fazla depolama alanı."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesabınızı silerseniz, fırsat ücretinizi kaybedersiniz ve yeni bir hesap açtığınızda bu ücreti kullanamazsınız."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: title": {
+      "Delete account?": [
+        "Hesap silinsin mi?"
+      ],
+      "Downgrade account?": [
+        "Hesap tarifesi düşürülsün mü?"
+      ],
+      "Review subscription and pay": [
+        "Aboneliği ve ödemeyi gözden geçirin"
+      ],
+      "Switch plans?": [
+        "Tarifeler değiştirilsin mi?"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: E-postalarınızı uçtan uca şifrelemeyle koruyun. Özel e-posta etki alanları, 15 e-posta adresi, sınırsız hide-my-email takma adları ve diğer özellikler."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. ${ serversAndCountries }, en yüksek VPN hızları, tüm Dünya'daki yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici, hızlı BitTorrent indirmeleri ve diğer özellikler."
+      ],
+      "Access ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME } from the convenience of your desktop": [
+        "Masaüstünüzün rahatlığında ${ MAIL_APP_NAME } ve ${ CALENDAR_APP_NAME } hizmetlerine erişin"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Adreslerin tam gönderme ve alma özelliği vardır. Bir kullanıcının kendisine atanmış birden fazla adresi olabilir. Ancak, tek bir adres birden çok kullanıcıya atanamaz."
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "Aynı anda birden fazla ağa erişmenizi sağlar. Örneğin arama sonuçlarını yerel olarak alırken başka bir ülkeden bir film yayın akışını izleyebilirsiniz"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Gelen iletileriniz için hazır yanıtlar (otomatik yanıt) ayarlamanızı sağlar"
+      ],
+      "Automatically clear out messages older than 30 days from Trash and Spam": [
+        "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri otomatik olarak temizleyin"
+      ],
+      "Automatically forward emails sent to your ${ MAIL_APP_NAME } account to any other email address.": [
+        "${ MAIL_APP_NAME } hesabınıza gönderilen e-postaları otomatik olarak başka bir e-posta adresine iletin."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler için size ayrılmış bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
+      ],
+      "Choose custom times to be reminded about an email or for your message to arrive": [
+        "Bir e-posta hatırlatması ya da iletinizin ulaşması için özelleştirilmiş zamanlar seçin"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
+        "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain } gibi takma adlar oluşturabilirsiniz"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin",
+        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
+      ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Daha iyi erişim denetimi sağlamak için özel ağ geçitlerine size ayrılmış IP adresleri ile size ayrılmış sunucular eklenebilir"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
+      ],
+      "Email everyone in a group with a single email address": [
+        "Gruptaki herkese tek bir e-posta adresinden e-posta gönderin"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "Kullanıcı kimlik doğrulama bilgilerinin ele geçirildiğini düşündüğünüzde kullanıcı oturumlarını zorla kapatın"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden masaüstü uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
+      ],
+      "Increase or reallocate storage for a user": [
+        "Bir kullanıcının depolama alanını artırın ya da yeniden ayarlayın"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Şifrelenmiş bir takvim kullanarak kendinizin ve ailenizin planlarını gizli tutun"
+      ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "VPN sunucumuzla bağlantınız beklenmedik şekilde kesildiğinde tüm ağ bağlantılarını engelleyerek korunmanızı sağlar."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
+      ],
+      "Like a folder, a vault is a convenient way to organize your items": [
+        "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
+      ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Şirket kaynaklarınızın herkese açık İnternet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
+      ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "Çalışma günlerinde, isteklerin ardından 24 saat içinde ${ BRAND_NAME } müşteri destek ekibinden yardım alın"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın ${ VPN_APP_NAME } hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda ${ VPN_APP_NAME } bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
+      ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        "Kuruluş yönetimi aracı yöneticilerin kullanıcı ekleyip silmesini, kullanıcılara depolama alanı atamasını, etki alanlarını yapılandırmasını ve diğer işlemleri yapmasını sağlar"
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "Güçlü altyapımız, gerek duyduğunuzda hesabınıza erişmenizi sağlar"
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "Sunucularımızın sabit diskleri birden çok parola katmanıyla tamamen şifrelenmiştir. Böylece donanımımız ele geçirilse bile verileriniz korunur"
+      ],
+      "Password management and identity protection": [
+        "Parola yönetimi ve kimlik koruması"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
+      ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
+        "20 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde ${ BRAND_NAME } müşteri desteği ekibinden telefonla destek alabilirsiniz"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "Wi-Fi ağınıza bağlı her aygıtı koruyun. Ayrıca doğrudan VPN ayarlarını desteklemeyen aygıtlarınız olduğunda da işe yarar."
+      ],
+      "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
+        "Ailenizi zararlı sitelerden koruyun ve en sevdiğiniz yayın akışlarını izlemek için yüksek hızlı VPN sunucularımıza erişin"
+      ],
+      "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
+        "Takma adlarla (e-postaları asıl gelen kutunuza ileten, rastgele oluşturulmuş bir e-posta adresi) gerçek e-posta adresinizin açığa çıkmasını veya sızdırılmasını engelleyin."
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "En yüksek düzeyde hesap güvenliği koruması ve uzman desteği sağlar"
+      ],
+      "Quickly set up out-of-office messages": [
+        "Ofis dışında iletilerini hızlıca ayarlayın"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Başka bir hizmet sağlayıcı üzerindeki e-postalarınızı, takcimlerinizi ve kişilerinizi hızla aktarın"
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        "Oturum açmak için bir cep telefonuna bir kod gönderilmesi gerekir. Böylece bir parola ele geçirilmiş olsa bile hesap güvende kalır."
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        "Kullanıcı parolalarını ve kullanıcıların iki adımlı doğrulama ayarlarını sıfırla"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even ${ BRAND_NAME } can't access them.": [
+        "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişim şifrelemesi, bu bilgilere ${ BRAND_NAME } tarafından bile erişilememesini sağlar."
+      ],
+      "See the availability of meeting participants and save time scheduling meetings": [
+        "Toplantı katılımcılarının uygunluk durumunu görün ve toplantı planlarken zaman kazanın"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "E-postalarınızı otomatik olarak yanıtlamak, sıralamak ve/veya etiketlemek için süzgeçler ayarlayın"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Güvenli ve paylaşılabilir bağlantılar ile dosya ve klasörlerinizi paylaşın"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP, 3. taraf hizmetlerin veya aygıtların ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar."
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "Özel olarak tasarlanmış NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek İnternet üzerinde gezinme hızınızı artırır"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } arasında paylaşılır"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır. Yöneticiler kuruluşlarındaki kullanıcılara farklı depolama alanları atayabilir"
+      ],
+      "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
+        "Depolama alanı kullanıcılar ile ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } arasında paylaşılır"
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek"
+      ],
+      "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
+        "Ekibinizin deneyimini ${ BRAND_NAME } İnternet uygulamalarına yükleyeceğiniz kuruluş logonuz ile özelleştirin"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "Çevrim içi yaptıklarınızla ilgili oturum kullanım günlükleri tutmuyoruz ve gizliliğinizi tehlikeye atabilecek üst verilerin kaydını tutmuyoruz"
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "HIPAA/HITECH düzenlemelerine tabi olan müşterilere, korunan sağlık bilgilerini (PHI) koruma konusunda yardımcı olmaya kararlıyız. İmzalı BAA sözleşmeleri, tüm ${ BRAND_NAME } for Business müşterileri tarafından kullanılabilir."
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "VPN hizmetimize bağlandığınızda, DNS sorgularınız şifreli VPN tünelimiz üzerinden aktarılır ve çevrim içi gizliliğinizi ve güvenliğinizi artırır"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
+        "Diğer ${ MAIL_APP_NAME } kullanıcılarına gönderilen e-postalar otomatik olarak şifrelenir. ${ MAIL_APP_NAME_TWO } dışındaki kullanıcılara şifrelenmiş e-posta göndermek için, göndermeden önce bir parola ayarlanması gerekir."
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "7/24 Destek"
+      ],
+      "Access advanced VPN features": [
+        "Gelişmiş VPN özelliklerine erişin"
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "15 e-posta adresi ve 3 özel e-posta etki alanı ile daha fazla kişiselleştime sağlayın"
+      ],
+      "AES 256-bit VPN encryption": [
+        "AES 256-bit VPN şifreleme"
+      ],
+      "Auto-connect": [
+        "Otomatik bağlan"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Her kullanıcı için depolama alanınızı ${ bundleStorage } boyutuna kadar artırın"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Toplam depolama alanınızı ${ bundleStorage } boyutuna artırın"
+      ],
+      "Browser extension": [
+        "Tarayıcı eklentisi"
+      ],
+      "Censorship circumvention": [
+        "Sansürü aşma"
+      ],
+      "Central control panel": [
+        "Merkez yönetim panosu"
+      ],
+      "Create up to ${ n } calendar": [
+        "${ n } taneye kadar takvim oluşturun",
+        "${ n } taneye kadar takvim oluşturun"
+      ],
+      "Dedicated Account manager": [
+        "Size ayrılmış hesap yöneticisi"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "${ numberOfCountries } üzerindeki ülkede size ayrılmış sunucu konumları"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Kuzey Amerika ve Avrupa'da size ayrılmış sunucu konumları"
+      ],
+      "Multi-platform support": [
+        "Çeşitli platformları destekler"
+      ],
+      "Private gateways": [
+        "Özel ağ geçitleri"
+      ],
+      "Require 2FA": [
+        "İki adımlı doğrulama gereksin"
+      ],
+      "Support for ${ n } custom email domains": [
+        "${ n } özel e-posta etki alanı desteği"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -1460,9 +3464,132 @@
         "Geçerli seçimdeki yinelenen dosya adları nedeniyle bazı görseller yüklenmedi."
       ]
     },
+    "pass_signup_2023: Info": {
+      "Secure vault and link sharing": [
+        "Güvenli kasa ve bağlantı ile paylaşım"
+      ],
+      "Secure vault sharing": [
+        "Güvenli kasa paylaşımı"
+      ],
+      "Secure vault sharing (${ n } vault)": [
+        "Güvenli kasa paylaşımı (${ n } kasa)",
+        "Güvenli kasa paylaşımı (${ n } kasa)"
+      ],
+      "Secure vault sharing (${ n } vault) and link sharing": [
+        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım",
+        "Güvenli kasa paylaşımı (${ n } kasa) ve bağlantı ile paylaşım"
+      ]
+    },
+    "passwordless": {
+      "Organization key does not exist.": [
+        "Kuruluş anahtarı bulunamadı."
+      ],
+      "Permission denied, administrator privileges have been restricted.": [
+        "İzin verilmedi, yönetici yetkileri kısıtlandı."
+      ],
+      "The organization key must be activated first.": [
+        "Önce kuruluş anahtarı kullanıma alınmalıdır."
+      ],
+      "You need access to the organization key to perform this operation.": [
+        "Bu işlemi gerçekleştirmek için kuruluş anahtarına erişebilmeniz gerekir."
+      ]
+    },
+    "Payment method option": {
+      "Credit/debit card": [
+        "Kredi ya da banka kartı"
+      ],
+      "New credit/debit card": [
+        "Yeni kredi ya da banka kartı"
+      ]
+    },
+    "Payments": {
+      "Billing Country": [
+        "Faturalanacak ülke"
+      ],
+      "Card number": [
+        "Kart numarası"
+      ],
+      "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
+        "Şu anda otomatik abonelik yenilemesi kapalı. Aboneliği değiştirirseniz, otomatik yenileme yeniden açılır."
+      ],
+      "CVC": [
+        "CVC"
+      ],
+      "Got it": [
+        "Anladım"
+      ],
+      "MM/YY": [
+        "AA/YY"
+      ],
+      "Payment Processing": [
+        "Ödeme işleniyor"
+      ],
+      "Please reactivate your subscription first to decrease the number of add-ons.": [
+        "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
+      ],
+      "Please select billing country": [
+        "Lütfen faturanın kesileceği ülkeyi seçin"
+      ],
+      "Please select billing state": [
+        "Lütfen faturanın kesileceği ili seçin"
+      ],
+      "Please select your billing country first.": [
+        "Lütfen önce faturanın kesileceği ülkeyi seçin."
+      ],
+      "Please select your billing state first.": [
+        "Lütfen önce faturanın kesileceği ili seçin."
+      ],
+      "Select billing country to pay": [
+        "Ödeme için fatura ülkesini seçin"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. The coupon is valid for ${ couponRedemptions } renewals. Then it will automatically be renewed at ${ price } for ${ months } months. You can cancel at any time.": [
+        "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Kupon ${ couponRedemptions } yenilemeleri için geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ months }. Then it will automatically be renewed at ${ price } for ${ months }. You can cancel at any time.": [
+        "İlk ${ months } için özel indirimli ${ priceWithDiscount } fiyatı geçerlidir. Ardından aylık ${ price } tutarla ${ months } süreyle otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ price } every month. You can cancel at any time.": [
+        "İlk ay için ${ priceWithDiscount } özel indirimli fiyat geçerlidir. Ardından aylık ${ price } tutarla otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Timeout exceeded": [
+        "Zaman aşımı süresi aşıldı"
+      ],
+      "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
+        "Faturanızın ödemesini işliyoruz. Tarifenizde değişiklik yapmadan veya ödeme bilgilerinizi güncellemeden önce lütfen ödeme işleminin tamamlanmasını bekleyin. Sabrınız için teşekkür ederiz."
+      ]
+    },
+    "Payments.Error": {
+      "Invalid card number": [
+        "Kart numarası geçersiz"
+      ],
+      "Invalid expiration date": [
+        "Son kullanma tarihi geçersiz"
+      ],
+      "Invalid security code": [
+        "Güvenlik kodu geçersiz"
+      ],
+      "Something went wrong. Please try again later.": [
+        "Bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "We are unable to authenticate your payment method. Please choose a different payment method or try again.": [
+        "Ödeme yönteminizi doğrulayamıyoruz. Lütfen başka bir ödeme yöntemi seçin ya da yeniden deneyin."
+      ],
+      "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
+        "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
+      ],
+      "Confirm passphrase or leave empty": [
+        "Parolayı onaylayın veya boş bırakın"
+      ],
+      "Enter a passphrase or leave empty": [
+        "Bir parola girin veya boş bırakın"
+      ],
+      "Gift code": [
+        "Hediye kodu"
       ],
       "Password": [
         "Parola"
@@ -1470,16 +3597,60 @@
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
       ],
+      "Please select a country": [
+        "Lütfen bir ülke seçin"
+      ],
       "Search": [
         "Arama"
       ],
       "Select": [
         "Seçin"
+      ],
+      "Select a reason": [
+        "Bir neden seçin"
+      ],
+      "Select state": [
+        "İl seçin"
+      ],
+      "Share what you think could make ${ BRAND_NAME } better": [
+        "${ BRAND_NAME } uygulamasını iyileştirmek için bir düşünceniz varsa paylaşın"
+      ]
+    },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "lütfen ${ contactHref } satış ekibimizle görüşün."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Tarifenizde bulunacak IP adresi sayısını seçin. Her ek IP adresinin maliyeti ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, ",
+        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, "
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "görüşün"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Tarifenizde bulunacak kullanıcı sayısını seçin. Her ek kullanıcının maliyeti ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }.",
+        "${ maxUsers } kullanıcı hesabından fazlasına gerek duyuyorsanız, lütfen satış ekibimizle ${ contact }."
+      ]
+    },
+    "Price": {
+      "Free": [
+        "Ücretsiz"
       ]
     },
     "QRCode Reader": {
       "Could not run QR code reader": [
         "Kare kod okuyucu çalıştırılamadı"
+      ],
+      "You need to grant camera permission to be able to activate QRCode scanner": [
+        "Kare kod tarayıcıyı kullanabilmek için lütfen kameraya erişme izni verin"
       ]
     },
     "QRCode reader": {
@@ -1487,7 +3658,34 @@
         "Kare kod okuyucu yükleniyor"
       ]
     },
+    "Receive bitcoin": {
+      "Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.": [
+        "Aşağıda son oluşturulmuş Bitcoin adresi bulunuyor.\nGizlilik amacıyla her hesap işleminden önce farklı bir adres kullanın."
+      ],
+      "Receive Bitcoin": [
+        "Bitcoin alın"
+      ]
+    },
+    "Recipient details": {
+      "Bitcoin address copied to clipboard": [
+        "Bitcoin adresi panoya kopyalandı"
+      ],
+      "BTC address": [
+        "BTC adresi"
+      ],
+      "External recipient": [
+        "Dış alıcı"
+      ]
+    },
+    "Safety review": {
+      "Review your account safety": [
+        "Hesabınızın güvenliğini değerlendirin"
+      ]
+    },
     "Select search results": {
+      "Check your spelling or select a country from the list.": [
+        "Yazımınızı denetleyin ya da listeden bir ülke seçin."
+      ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ]
@@ -1528,12 +3726,147 @@
         "Parolayı sıfırlamadan oturum kapatılsın mı?"
       ]
     },
+    "Shared calendar; Info about calendar owner": {
+      "Shared by ${ ownerName }": [
+        "${ ownerName } tarafından paylaşılmış"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } ay ÜCRETSİZ",
+        "${ n } ay ÜCRETSİZ"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "1 user": [
+        "1 kullanıcı"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "64 countries": [
+        "64 ülkede"
+      ],
+      "All paid Mail and Calendar features": [
+        "Tüm ücretli Mail ve Calendar özellikleri"
+      ],
+      "High speed VPN": [
+        "Yüksek hızlı VPN"
+      ],
+      "Highest VPN speed": [
+        "En yüksek VPN hızı"
+      ],
+      "Premium ${ appName1 }": [
+        "Ücretli ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Ücretli ${ appName1 } ve ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Ücretli ${ appName1 } ve ${ appName2 } ve ${ appName3 }"
+      ],
+      "Premium early access": [
+        "Öncelikli erken erişim"
+      ],
+      "Secure cloud storage": [
+        "Güvenli bulut depolama alanı"
+      ],
+      "Secure streaming": [
+        "Güvenli yayın akışı"
+      ],
+      "Support online privacy": [
+        "Çevrim içi gizliliği destekleyin"
+      ]
+    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Abonelik tarifelerini görüntüle"
       ],
       "Upgrade": [
         "Yükselt"
+      ]
+    },
+    "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "1 year": [
+        "1 yıl"
+      ],
+      "15 months": [
+        "15 ay"
+      ],
+      "2 years": [
+        "2 yıl"
+      ],
+      "30 months": [
+        "30 ay"
+      ],
+      "Billed at ${ amount } for 1 month": [
+        "1 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "12 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "15 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "24 aylık ${ amount } olarak faturalanır"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "30 aylık ${ amount } olarak faturalanır"
+      ],
+      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "1 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
+      ],
+      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
+        "2 yıl sonra ${ regularAmount } yerine ${ discountedAmount } olarak yenilenir (${ discount }% indirim ile)"
+      ],
+      "Standard price ${ amount } for 1 month": [
+        "1 aylık standart ücret ${ amount }"
+      ],
+      "Standard price ${ amount } for 12 months": [
+        "12 aylık standart ücret ${ amount }"
+      ],
+      "Standard price ${ amount } for 15 months": [
+        "15 aylık standart ücret ${ amount }"
+      ],
+      "Standard price ${ amount } for 24 months": [
+        "24 aylık standart ücret ${ amount }"
+      ],
+      "Standard price ${ amount } for 30 months": [
+        "30 aylık standart ücret ${ amount }"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. 60 üzerinde ülkede 1.700 sunucu, en yüksek VPN hızı, her kullanıcı için 10 VPN bağlantısı, tüm dünyadaki yayın akış hizmetlerine erişim, kötü amaçlı yazılımları ve reklamları engelleme ve diğer özellikler."
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "Engellenen içeriğe erişin ve gizliliğinizi koruyarak gezinin. 60 üzerinde ülkede 1.700 sunucu, en yüksek VPN hızı, 10 VPN bağlantısı, tüm dünyadaki yayın akış hizmetlerine erişim, kötü amaçlı yazılımları ve reklamları engelleme ve diğer özellikler."
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin."
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "En yüksek sınırları olan tüm ücretli hizmetler: 100 e-posta adresi, 10 özel etki alanı, sınırsız hide-my-email takma adı, takvim gönderisi, şifrelenmiş bulut depolama alanı, dosya paylaşımı ve diğer özellikler."
+      ],
+      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "3 özel e-posta etki alanı, 15 e-posta adresi, sınırsız sayıda hide-my-email takma adı, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
+        "Aileler veya küçük ekipler için kusursuz. Her birinin kendi gelen kutusu ve takma adı olabilir. Özel bir etki alanı kullanılması gerekir."
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "Gelecekte yayınlayacağımız tüm yeni gizlilik hizmetlerinin ücretli sürümlerine ve tüm özelliklere erkenden erişerek ek ücret ödemeden kullanın."
+      ],
+      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Otomatik eşitleme, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ]
     },
     "Spotlight": {
@@ -1544,12 +3877,33 @@
         "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
       ]
     },
+    "State": {
+      "Canceling your subscription, please wait": [
+        "Lütfen aboneliğiniz iptal edilirken bekleyin"
+      ]
+    },
     "Storage": {
       "Upgrade storage": [
         "Depolama alanını artır"
       ],
       "Your current storage:": [
         "Geçerli depolama alanınız:"
+      ]
+    },
+    "storage_split: action": {
+      "Keep ${ currentPlanName }": [
+        "${ currentPlanName } tarifesinde kal"
+      ]
+    },
+    "storage_split: feature": {
+      "Storage for data generated by ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ CONTACTS_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } tarafından oluşturulan verilerin depolama alanı"
+      ],
+      "Up to ${ totalStorageSize } Drive storage": [
+        "${ totalStorageSize } boyutuna kadar Drive depolama alanı"
+      ],
+      "Up to ${ totalStorageSize } Mail storage": [
+        "${ totalStorageSize } boyutuna kadar Mail depolama alanı"
       ]
     },
     "storage_split: info": {
@@ -1559,6 +3913,19 @@
       "${ storage } ${ percentage }% full": [
         "${ storage } %${ percentage } dolu"
       ],
+      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
+        "Tarifenizi düşürdüğünüzde aşağıdaki ek faydaları kaybedeceksiniz. İlerlemek istediğinize emin misiniz?"
+      ],
+      "For all ${ BRAND_NAME } services": [
+        "Tüm ${ BRAND_NAME } hizmetleri için"
+      ],
+      "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
+        "Kalan sürenize karşı gelen krediyi ${ BRAND_NAME } hesabınıza ekleyeceğiz."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var.",
+        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var."
+      ],
       "Your ${ appStorage } is almost full": [
         "Kullandığınız ${ appStorage } dolmak üzere"
       ],
@@ -1567,25 +3934,261 @@
       ],
       "Your storage is full": [
         "Depolama alanınız dolu"
+      ],
+      "You’ll lose access to ${ gb } storage and priority support.": [
+        "${ gb } depolama alanına ve öncelikli desteğe erişiminizi kaybedeceksiniz."
+      ],
+      "You’ll lose access to additional storage, email addresses, aliases, calendars, as well as priority support.": [
+        "Ek depolama alanına, e-posta adreslerine, takma adlara, takvimlere ve öncelikli desteğe erişiminizi kaybedeceksiniz."
+      ],
+      "You’ll lose access to the highest VPN speed, protection for 10 devices, high-speed streaming, ad-blocker and malware protection, as well as priority support.": [
+        "En yüksek VPN hızına, 10 aygıt korumasına, yüksek hızlı yayın akışı izlemeye, reklam engelleyiciye, kötü amaçlı yazılım korumasına ve öncelikli desteğe erişiminizi kaybedeceksiniz."
+      ],
+      "You’ll lose access to unlimited logins and notes, unlimited hide-my-email aliases, 20 vaults, as well as priority support.": [
+        "Sınırsız oturum açma kaydı ve notlara, sınırsız hide-my-email takma adına, 20 kasaya ve öncelikli desteğe erişiminizi kaydedeceksiniz."
+      ]
+    },
+    "Subscription": {
+      "Billed every 2 years": [
+        "2 yılda bir faturalanır"
+      ],
+      "Billed for 15 months": [
+        "15 aylık olarak faturalanır"
+      ],
+      "Billed for 18 months": [
+        "18 aylık olarak faturalanır"
+      ],
+      "Billed for 3 months": [
+        "3 aylık olarak faturalanır"
+      ],
+      "Billed for 30 months": [
+        "30 aylık olarak faturalanır"
+      ],
+      "Billed monthly": [
+        "Ayda bir faturalanır"
+      ],
+      "Billed yearly": [
+        "Yılda bir faturalanır"
+      ]
+    },
+    "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "Her kullanıcı için ${ n } ücretsiz VPN bağlantısı",
+        "Her kullanıcı için ${ n } ücretsiz VPN bağlantısı"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } yüksek hızlı VPN bağlantısı",
+        "${ n } yüksek hızlı VPN bağlantısı"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } yüksek hızlı VPN bağlantısı / kullanıcı",
+        "${ n } yüksek hızlı VPN bağlantısı / kullanıcı"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN bağlantısı",
+        "${ n } VPN bağlantısı"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN bağlantısı / kullanıcı",
+        "${ n } VPN bağlantısı / kullanıcı"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "Anladım"
+      ],
+      "Just sign in to your Apple App Store account, then press ${ subscriptions }.": [
+        "Apple App Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
+      ],
+      "Just sign in to your Play Store account, then press ${ subscriptions }.": [
+        "Play Store hesabınızda oturum açın, ardından ${ subscriptions } üzerine dokunun."
+      ],
+      "Manage your subscription on ${ subscriptionManager }": [
+        "Aboneliğinizi ${ subscriptionManager } üzerinden yönetin"
+      ],
+      "Subscriptions": [
+        "Abonelikler"
+      ],
+      "Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.": [
+        "Tarifeniz bir Android uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Google Play Store uygulamasını kullanmalısınız."
+      ],
+      "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
+        "Tarifeniz bir iOS uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Apple App Store uygulamasını kullanmalısınız."
+      ]
+    },
+    "Subscription price": {
+      "For ${ totalPrice }": [
+        "${ totalPrice } için"
+      ]
+    },
+    "Subscription reminder": {
+      "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
+        "${ planName } size tüm uygulamaları, tüm özellikleri, yeni sürümlere erken erişimi ve verileriniz ile güvenliğinizin kontrolunu sağlamanız için gereken her şeyi sunar."
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "Emin misiniz?"
+      ],
+      "Auto-pay is disabled": [
+        "Otomatik ödeme kapatıldı"
+      ],
+      "Auto-pay is enabled": [
+        "Otomatik ödeme açıldı"
+      ],
+      "Disable": [
+        "Kullanımdan kaldır"
+      ],
+      "Enable auto-pay support": [
+        "Otomatik ödeme desteğini aç"
+      ],
+      "Keep auto-pay": [
+        "Otomatik ödemeyi sürdür"
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
+        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Ayrıca, el ile ödeme yapmayı unutursanız ve tüm ödeme yöntemleri için otomatik ödeme kapatılmışsa, hesabınızın tarifesini otomatik olarak düşürebiliriz ve bu da birçok özelliğin kaybolmasına neden olur."
+      ],
+      "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. We cannot auto-downgrade you because if you are over free plan storage quota or using other paid features, we cannot auto delete files, emails, or other data for you. If you disable automatic payment, remember to pay your next subscription invoice before the due date to prevent account suspension.": [
+        "Sistemimiz artık bu ödeme yöntemini kullanarak sizden otomatik olarak ücret almayacak. Ancak aboneliğiniz fatura döneminin sonunda yine de yenilenecek. Abonelik tarifenizi düşürmek ya da değiştirmek istiyorsanız, fatura dönemi sona ermeden önce bunu sizin yapmanız gerekir. Free tarifesinin depolama kotasını aşarsanız ya da diğer ücretli özellikleri kullanıyorsanız dosyaları, e-postaları veya diğer verileri sizin için otomatik olarak silemeyeceğimizden otomatik olarak tarifenizi düşüremeyiz. Otomatik ödemeyi kapatırsanız, hesabın askıya alınmasını önlemek için bir sonraki faturanızı son ödeme tarihinden önce el ile ödemeyi unutmayın."
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "Kazancınız"
+      ]
+    },
+    "Subscription status": {
+      "Active": [
+        "Etkin"
+      ],
+      "Expiring": [
+        "Sona eriyor"
       ]
     },
     "Success": {
-      "Bug reported": [
-        "Hata bildirildi"
-      ],
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
+      ],
+      "Copied to clipboard": [
+        "Panoya kopyalandı"
       ],
       "Email address copied to clipboard": [
         "E-posta adresi panoya kopyalandı"
       ],
+      "Payment method added": [
+        "Ödeme yöntemi eklendi"
+      ],
+      "Payment method updated": [
+        "Ödeme yöntemi güncellendi"
+      ],
       "Verification successful": [
         "Doğrulandı"
+      ],
+      "You have successfully canceled your subscription.": [
+        "Aboneliğinizi iptal ettiniz."
+      ],
+      "You have successfully unsubscribed": [
+        "Abonelikten ayrıldınız"
+      ]
+    },
+    "Suffix": {
+      "/month": [
+        "/ay"
+      ],
+      "/user per month": [
+        "/kullanıcı aylık"
+      ]
+    },
+    "Suffix for price": {
+      "per month": [
+        "aylık"
+      ],
+      "per user per month": [
+        "bir kullanıcı için aylık"
+      ]
+    },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "Tüm aygıtlarınızda güvenli hesap bilgileri oluşturun. Sınırsız sayıda e-posta takma adı, 20 kasa, bütünleşik 2 adımlı doğrulama, kredi kartı bilgilerini otomatik doldurma ve diğer özellikler."
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "65 üzerindeki ülkede 2950'nin üzerinde sunucu, 10 taneye kadar aygıt bağlayabilme, dünya çapında yayın akışı hizmetlerine erişim, kötü amaçlı yazılım ve reklam engelleyici ile diğer özellikleri içerir."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve diğer özellikler."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
+      ]
+    },
+    "Tab subscription modal": {
+      "For businesses": [
+        "Kurumlar için"
+      ],
+      "For families": [
+        "Aileler için"
+      ],
+      "For individuals": [
+        "Bireyler için"
       ]
     },
     "Title": {
+      "Add credit/debit card": [
+        "Kredi ya da banka kartı ekle"
+      ],
+      "Amount due": [
+        "Ödenecek tutar"
+      ],
+      "Apply gift code": [
+        "Hediye kodunu uygula"
+      ],
+      "Billing cycle": [
+        "Fatura dönemi"
+      ],
+      "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
+        "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
+      ],
+      "Cancel subscription?": [
+        "Abonelik iptal edilsin mi?"
+      ],
+      "Card verification": [
+        "Kart doğrulama"
+      ],
+      "Confirm downgrade": [
+        "Tarife düşürmeyi onayla"
+      ],
+      "Confirm loss of ${ BRAND_NAME } bonuses": [
+        "${ BRAND_NAME } hediyelerinizi kaybedeceğinizi onaylayın"
+      ],
+      "Coupon": [
+        "Kupon"
+      ],
+      "Credits": [
+        "Kredi"
+      ],
+      "Currency": [
+        "Para birimi"
+      ],
+      "Downgrade account": [
+        "Hesap tarifesini düşür"
+      ],
+      "Downgrade to ${ downgradedPlanName }?": [
+        "${ downgradedPlanName } tarifesine düşürülsün mü?"
+      ],
+      "Edit credit/debit card": [
+        "Kredi ya da banka kartını düzenle"
+      ],
+      "Enter 2FA code": [
+        "İki adımlı doğrulama kodunu yazın"
+      ],
       "Enter your password": [
         "Parolanızı yazın"
+      ],
+      "Error": [
+        "Hata"
+      ],
+      "Gift": [
+        "Hediye"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
@@ -1593,20 +4196,115 @@
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
+      "Network error": [
+        "Ağ sorunu"
+      ],
+      "Payment failed": [
+        "Ödeme yapılamadı"
+      ],
+      "Payment verification": [
+        "Ödeme doğrulama"
+      ],
+      "PayPal verification failed": [
+        "PayPal doğrulaması başarısız oldu"
+      ],
+      "Processing...": [
+        "İşleniyor..."
+      ],
+      "Recommended": [
+        "Önerilen"
+      ],
       "Report a problem": [
         "Sorun bildireceğim"
       ],
       "Request new code": [
         "Yeni kod iste"
       ],
-      "Sign in with 2FA": [
-        "2 adımlı doğrulama ile oturum aç"
+      "Select a plan": [
+        "Bir tarife seçin"
       ],
       "Sign out": [
         "Oturumu kapat"
       ],
+      "Summary": [
+        "Özet"
+      ],
+      "Verification failed": [
+        "Doğrulanamadı"
+      ],
+      "Verifying your card...": [
+        "Kartınız doğrulanıyor..."
+      ],
+      "Verifying your payment...": [
+        "Ödemeniz doğrulanıyor..."
+      ],
       "Wallet": [
         "Cüzdan"
+      ]
+    },
+    "Title subscription": {
+      "End date": [
+        "Bitiş tarihi"
+      ],
+      "Plan": [
+        "Tarife"
+      ],
+      "Status": [
+        "Durum"
+      ]
+    },
+    "Tooltip": {
+      "If you purchased a gift code or received one from our support team, you can enter it here.": [
+        "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
+      ],
+      "The new subscription cycle starts on ${ formattedTime }": [
+        "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
+      ]
+    },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Tüm aygıtlarınızda oturum açma işlemlerinin güvenliğini sağlayın. Sınırsız takma ad, paylaşım, bütünleşik iki adımlı doğrulama ve diğer özellikler."
+      ]
+    },
+    "Unknown sender": {
+      "Add a name so you can remember who it was from.": [
+        "Kimden geldiğini hatırlamak için bir ad yazın."
+      ],
+      "Add their email address or leave empty": [
+        "E-posta adresini ekleyin veya boş bırakın"
+      ],
+      "Add their email address to save as contact": [
+        "E-posta adresini ekleyin ve kişi olarak kaydedin"
+      ],
+      "Email address": [
+        "E-posta adresi"
+      ],
+      "Email address is invalid": [
+        "E-posta adresi geçersiz"
+      ],
+      "Give a name to this sender": [
+        "Bu göndericiye bir ad verin"
+      ],
+      "Name": [
+        "Ad"
+      ],
+      "Not a Bitcoin via Email transaction.": [
+        "Bir E-posta ile Bitcoin hesap işlemi değil."
+      ],
+      "Save as a contact": [
+        "Kişi olarak kaydet"
+      ],
+      "Save sender": [
+        "Göndericiyi kaydet"
+      ],
+      "Transaction sender could not be updated": [
+        "Hesap işlemi göndericisi güncellenemedi"
+      ],
+      "Transaction sender has been updated succesfully": [
+        "Hesap işlemi göndericisi güncellendi"
+      ],
+      "Unknown sender": [
+        "Gönderici bilinmiyor"
       ]
     },
     "Validation": {
@@ -1619,17 +4317,90 @@
         "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } sunucu",
+        "${ n } sunucu"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN bağlantısı",
+        "${ n } VPN bağlantısı"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfCountries } ülkede ${ numberOfServers }",
+        "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfCountries } ülkede ${ numberOfServers }",
+        "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ]
+    },
+    "vpn_2024: renew": {
+      "You'll then be billed every 12 months at ${ renewPrice }.": [
+        "Daha sonra faturanız her 12 ayda bir ${ renewPrice } üzerinden hazırlanacak."
+      ],
+      "Your subscription will automatically renew in ${ cycle } month.": [
+        "Aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek.",
+        "Aboneliğiniz ${ cycle } ay sonra otomatik olarak yenilenecek."
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Gelişmiş VPN özelleştirmeleri"
+      ],
+      "No ads": [
+        "Reklamsız"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Secure Core sunucularına erişim, hızlı P2P/BitTorrent indirmeleri, VPN üzerinden Tor ve diğer özellikler"
+      ]
+    },
     "Wallet": {
       "An error occured": [
         "Bir sorun çıktı"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Could not fetch wallets data": [
+        "Cüzdan verileri alınamadı"
+      ],
+      "Explore other ${ BRAND_NAME } products": [
+        "Diğer ${ BRAND_NAME } ürünlerini keşfedin"
+      ],
+      "Upgrade to Visionary": [
+        "Visionary tarifesine yükselt"
+      ],
+      "WebAssembly must be enabled to use ${ WALLET_APP_NAME }": [
+        "${ WALLET_APP_NAME } kullanmak için WebAssembly kullanıma alınmalıdır"
       ]
     },
     "Wallet Account": {
+      "Account index": [
+        "Hesap indeksi"
+      ],
+      "Add wallet account": [
+        "Cüzdan hesabı ekle"
+      ],
+      "Address type": [
+        "Adres türü"
+      ],
       "Cancel": [
         "İptal"
       ],
       "Could not add account to wallet": [
-        "Cüzdana hesap eklenemedi"
+        "Hesap cüzdana eklenemedi"
+      ],
+      "Create multiple wallet accounts to separate your financial activities for better privacy and organization.": [
+        "Finansal faaliyetlerinizi daha iyi gizlilik ve organizasyon için ayırmak üzere birden fazla cüzdan hesabı oluşturun."
+      ],
+      "Create wallet account": [
+        "Cüzdan hesabı oluştur"
       ],
       "Custom account index": [
         "Özel hesap dizini"
@@ -1637,16 +4408,48 @@
       "Custom index": [
         "Özel dizin"
       ],
+      "If you want to receive Bitcoin via Email with multiple email addresses, then you need to create a wallet account for each email.": [
+        "Birden fazla e-posta adresi ile E-posta aracılığıyla Bitcoin almak istiyorsanız, her bir e-posta için bir cüzdan hesabı oluşturmanız gerekir."
+      ],
+      "Name": [
+        "Ad"
+      ],
       "Savings for holiday": [
         "Tatil için birikim"
       ],
       "Your account was successfully created": [
-        "Hesabınız başarıyla oluşturuldu"
+        "Hesabınız oluşturuldu"
       ]
     },
     "Wallet account": {
+      "Account Index": [
+        "Hesap dizini"
+      ],
+      "Address Type": [
+        "Adres türü"
+      ],
+      "Advanced settings": [
+        "Gelişmiş ayarlar"
+      ],
       "This account is already created": [
-        "Bu hesap zaten oluşturuldu"
+        "Bu hesap zaten oluşturulmuş"
+      ],
+      "We default to Native Segwit, which has the lowest network fees. You can change this to receive bitcoin from other services that only support other types.": [
+        "Varsayılan olarak en düşük ağ ücretlerine sahip Native Segwit kullanıyoruz. Yalnızca diğer türleri destekleyen hizmetlerden Bitcoin almak için bunu değiştirebilirsiniz."
+      ],
+      "We default to the next unused index. You can change this to recover or to skip a previous account.": [
+        "Varsayılan olarak bir sonraki kullanılmamış dizin ayarlanır. Bu seçeneği, önceki bir hesabı geri yüklemek veya atlamak için değiştirebilirsiniz."
+      ]
+    },
+    "Wallet buy": {
+      "Missing bitcoin address. Please refresh and try again or contact support": [
+        "Bitcoin adresi eksik. Lütfen yenileyip yeniden deneyin veya destek ekibiyle görüşün"
+      ],
+      "Missing country. Please refresh and try again or contact support": [
+        "Ülke eksik. Lütfen yenileyip yeniden deneyin veya destek ekibiyle görüşün"
+      ],
+      "Missing quote. Please refresh and try again or contact support": [
+        "Alıntı eksik. Lütfen yenileyip yeniden deneyin veya destek ekibiyle görüşün"
       ]
     },
     "Wallet dashboard": {
@@ -1669,53 +4472,176 @@
         "Gönder"
       ],
       "The current fingerprint doesn't match stored one": [
-        "Mevcut parmak izi kayıtlı olanla eşleşmiyor"
+        "Geçerli parmak izi kayıtlı olanla eşleşmiyor"
+      ]
+    },
+    "wallet dashboard": {
+      "You need to have a positive balance to send bitcoins": [
+        "Bitcoin göndermek için bakiyeniz artıda olmalı"
+      ]
+    },
+    "Wallet deletion": {
+      "Are you sure you want to delete \"${ wallet.Wallet.Name }\"": [
+        "\"${ wallet.Wallet.Name }\" cüzdanını silmek istediğinize emin misiniz"
       ]
     },
     "Wallet discover": {
+      "Backup this wallet's seed phrase": [
+        "Bu cüzdanın tohum ifadesini yedekleyin"
+      ],
+      "Backup your ${ BRAND_NAME } account data": [
+        "${ BRAND_NAME } hesap verilerinizi yedekleyin"
+      ],
       "Discover": [
-        "Keşfet"
+        "Keşfedin"
+      ],
+      "Secure your wallet": [
+        "Cüzdanınızı koruyun"
+      ],
+      "Set up 2FA to secure your account": [
+        "Hesabınızı korumak için 2 adımlı doğrulama kurun"
+      ]
+    },
+    "Wallet explore proton": {
+      "An encrypted password manager that protects your online identity.": [
+        "Çevrim içi kimliğinizi koruyan şifrelenmiş parola yöneticisi."
+      ],
+      "Encrypted email that's private by default.": [
+        "Varsayılan olarak gizli şifrelenmiş e-posta."
+      ],
+      "Improve the security of your business and comply with data protection laws.": [
+        "Kurumunuzun güvenliğini geliştirin ve veri koruma kanunlarına uyun."
+      ],
+      "Secure cloud storage that gives you control of your data.": [
+        "Bilgilerinizin kontrolunu size veren güvenli bulut depolama alanı."
+      ],
+      "Your calendar is a record of your life. Keep it safe.": [
+        "Takviminiz hayatınızın bir kaydıdır. Onu güvende tutun."
       ]
     },
     "Wallet header": {
       "Secure your wallet": [
-        "Cüzdanınızı güvenceye alın"
+        "Cüzdanınızı koruyun"
+      ]
+    },
+    "Wallet import": {
+      "A wallet with same fingerprint already exists": [
+        "Aynı parmak izini kullanan bir cüzdan zaten var"
+      ]
+    },
+    "Wallet info": {
+      "This fee incentivizes Bitcoin miners to include your transaction in the blockchain. None of the fee goes to ${ BRAND_NAME }.": [
+        "Bu ücret, Bitcoin madencilerini hesap işleminizi blok zincirine eklemeye özendirir. Ücretin hiçbir bölümü ${ BRAND_NAME } tarafından alınmaz."
       ]
     },
     "Wallet information": {
       "A wallet passphrase is an extra password you create to add security to your cryptocurrency wallet. It works alongside your seed phrase. Store it securely, as losing it can lock you out of your wallet.": [
-        "Cüzdan parola ifadesi, kripto para cüzdanınıza güvenlik eklemek için oluşturduğunuz ek bir şifredir. Bu, kurtarma ifadenizle birlikte çalışır. Onu güvenli bir şekilde saklayın, çünkü kaybetmek cüzdanınıza erişiminizi engelleyebilir."
+        "Cüzdan parola ifadesi, kripto para cüzdanınızın güvenliğini artırmak için oluşturduğunuz bir ek paroladır. Bu parola, kurtarma ifadenizle birlikte kullanılır. Kaybederseniz cüzdanınıza erişmenizi engelleyebileceğinden bu parolayı güvenli bir yerde saklayın."
       ],
       "A wallet seed phrase is a series of 12 or 24 words generated by your wallet. It acts as a master key, allowing you to recover your funds. Keep it safe and never share it, as it grants access to your funds.": [
-        "Cüzdan seed ifadesi, cüzdanınız tarafından oluşturulan 12 veya 24 kelimeden oluşan bir dizi kelimedir. Bu, fonlarınızı kurtarmanıza olanak tanıyan bir anahtar görevi görür. Onu güvende tutun ve asla paylaşmayın, çünkü fonlarınıza erişim sağlar."
+        "Cüzdan tohumlama ifadesi, cüzdanınız tarafından oluşturulan ve 12 ya da 24 sözcükten oluşan bir sözcük grubudur. Bu ifade, birikimlerinizi kurtarmanızı sağlayan bir anahtar görevi görür. Birikimlerinize erişim sağlayacağından bu ifadeyi güvende tutun ve asla kimseyle paylaşmayın."
       ],
       "What’s a wallet passphrase?": [
         "Cüzdan parola ifadesi nedir?"
       ],
       "What’s a wallet seed phrase?": [
-        "Cüzdan seed ifadesi nedir?"
+        "Cüzdan tohumlama ifadesi nedir?"
+      ]
+    },
+    "Wallet invite": {
+      "${ WALLET_APP_NAME } Early Access is limited to Visionary supporters and invited users.": [
+        "${ WALLET_APP_NAME } erken erişimi, Visionary tarifesi ve davet kullanıcıları ile sınırlıdır."
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Email address": [
+        "E-posta adresi"
+      ],
+      "Email address is not valid": [
+        "E-posta adresi geçersiz"
+      ],
+      "Email address is required": [
+        "E-posta adresinin yazılması zorunludur"
+      ],
+      "Exclusive Invites": [
+        "Özel davetler"
+      ],
+      "Invitation sent to ${ email }": [
+        "Davet ${ email } adresine gönderildi"
+      ],
+      "Invite your friends and family so you can all send Bitcoin via Email. You will get more invites as we add more servers.": [
+        "Arkadaşlarınızı ve ailenizi davet edin. Böylece hepiniz E-posta ile Bitcoin gönderebilirsiniz. Yeni sunucular ekledikçe daha fazla davet alacaksınız."
+      ],
+      "Not now": [
+        "Şimdi değil"
+      ],
+      "Please let them know to check their email and follow the instruction to set up their ${ WALLET_APP_NAME } with Bitcoin via Email.": [
+        "Lütfen e-posta adresini kontrol etmesini ve E-posta ile Bitcoin için ${ WALLET_APP_NAME } ayarlama yönergelerini uygulamasını iletin."
+      ],
+      "Send invite email now": [
+        "Şimdi davet e-postası gönder"
+      ],
+      "Thank you for supporting ${ WALLET_APP_NAME }!": [
+        "${ WALLET_APP_NAME } uygulamasına destek olduğunuz için teşekkürler!"
+      ],
+      "This email can receive Bitcoin via Email": [
+        "Bu e-posta adresi, E-posta ile Bitcoin alabilir"
+      ],
+      "Warning: the recipient will not be able to send Bitcoin via Email to this email.": [
+        "Uyarı: Alıcı, bu e-posta adresine E-posta ile Bitcoin gönderemeyecek."
+      ],
+      "You need to select an email to send from": [
+        "Göndermek için bir e-posta adresi seçmelisiniz"
+      ],
+      "Your email (visible to recipient)": [
+        "E-posta adresiniz (alıcıya görünür)"
+      ],
+      "Your friend's email": [
+        "Arkadaşınızın e-posta adresi"
+      ]
+    },
+    "Wallet invites": {
+      "${ availableInvites } invite left": [
+        "${ availableInvites } davet kaldı",
+        "${ availableInvites } davet kaldı"
       ]
     },
     "Wallet passphrase": {
       "Fingerprint doesn't match stored one": [
-        "Mevcut parmak izi kayıtlı olanla eşleşmiyor"
+        "Geçerli parmak izi kayıtlı olanla eşleşmiyor"
       ],
       "My wallet passphrase": [
-        "Cüzdan parola ifadem"
+        "Cüzdanımın parola ifadesi"
       ],
       "To access this wallet, you need to input the passphrase": [
-        "Bu cüzdana erişmek için parola ifadesini girmelisiniz"
+        "Bu cüzdana erişmek için parola ifadesini yazmalısınız"
       ],
       "Wallet passphrase": [
         "Cüzdan parola ifadesi"
       ]
     },
     "Wallet preference": {
+      "Account name": [
+        "Hesap adı"
+      ],
       "Accounts": [
         "Hesaplar"
       ],
+      "Cancel": [
+        "İptal"
+      ],
       "Clear browser storage": [
         "Tarayıcı verilerini temizle"
+      ],
+      "Copy seed phrase": [
+        "Tohumlama ifadesini kopyala"
+      ],
+      "Create email": [
+        "E-posta oluştur"
+      ],
+      "Create email address": [
+        "E-posta adresi oluşturun"
       ],
       "Delete account": [
         "Hesabı sil"
@@ -1723,27 +4649,101 @@
       "Delete wallet": [
         "Cüzdanı sil"
       ],
+      "Delete wallet now": [
+        "Cüzdanı şimdi sil"
+      ],
+      "Display name (optional)": [
+        "Görüntülenecek ad (isteğe bağlı)"
+      ],
+      "Email": [
+        "E-posta adresi"
+      ],
+      "Email address": [
+        "E-posta adresi"
+      ],
+      "Email address created": [
+        "E-posta adresi oluşturuldu"
+      ],
+      "Email address is invalid": [
+        "E-posta adresi geçersiz"
+      ],
+      "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, we recommend using this primary BTC account without enabling Receive Bitcoin via Email and transacting with your other BTC accounts with Receive Bitcoin via Email enabled. This will improve your blockchain privacy by keeping BTC in this account separate from any BTC that you receive automatically.": [
+        "Çoğu insan için bu önemli değildir çünkü güvendikleri insanlardan BTC alırlar. Ancak, bu konuda endişeleriniz varsa, Bİrincil BTC hesabınızı E-posta ile Bitcoin alma seçeneğini kapalı bırakmanızı ve diğer BTC hesaplarınızda E-posta ile Bitcoin alma özelliğini açarak hesap işlemlerini yapmanızı öneririz. Böylece, blockchain gizliliğiniz artırılmış olur ve bu hesapta tutulan BTC birikimleri aldığınız otomatik BTC birikimlerinden ayrı tutulur."
+      ],
+      "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, you can create a new BTC account so that the new BTC you receive is separated from your existing BTC.": [
+        "Çoğu insan için bu önemli değildir çünkü güvendikleri insanlardan BTC alırlar. Ancak, bu konu sizi endişelendiriyorsa, yeni BTC almak için var olan BTC birikimlerinizden ayrı bir yeni BTC hesabı oluşturabilirsiniz."
+      ],
       "My super account": [
         "Süper hesabım"
       ],
       "My super wallet": [
         "Süper cüzdanım"
+      ],
+      "Name": [
+        "Ad"
+      ],
+      "Not now": [
+        "Şimdi değil"
+      ],
+      "The Bitcoin blockchain is public, meaning every transaction is publicly visible. However, Bitcoin addresses are pseudonymous, meaning the sender and recipient identities are generally unknown.": [
+        "Bitcoin blok zinciri herkese açıktır. Yani her işlem herkese açık olarak görülebilir. Ancak, Bitcoin adresleri olarak takma adlar kullanılır, yani gönderici ve alıcı kimlikleri genellikle bilinmez."
+      ],
+      "View more": [
+        "Diğerlerini görüntüle"
+      ],
+      "View wallet seed phrase": [
+        "Cüzdan tohumlama ifadesini görüntüle"
+      ],
+      "Wallet preferences": [
+        "Cüzdan ayarları"
+      ],
+      "When you receive Bitcoin via Email, the sender knows one of your Bitcoin addresses as well as your email. Due to Bitcoin's public blockchain, it is theoretically possible for a malicious sender to discover the existence of other BTC that you have if you send BTC from this account.": [
+        "E-posta ile Bitcoin aldığınızda, gönderici bir Bitcoin adresinizi ve e-posta adresinizi bilir. Bitcoin blok zincirinin herkese açık olması nedeniyle, kötü niyetli bir gönderici teorik olarak bu hesabı kullanarak BTC gönderdiğinizde sahip olduğunuz diğer BTC birikimlerinin varlığını keşfedebilir."
       ]
     },
     "Wallet preferences": {
+      "creating a new BTC account": [
+        "yeni bir BTC hesabı oluşturma"
+      ],
+      "Default currency": [
+        "Varsayılan para birimi"
+      ],
+      "For better privacy, we recommend ${ walletAccountCreation } for receiving Bitcoin via Email. ${ learnMore }.": [
+        "Daha iyi gizlilik ve E-posta ile Bitcoin almak için ${ walletAccountCreation } öneririz. ${ learnMore }"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
       "Local currency": [
         "Yerel para birimi"
+      ],
+      "Receive Bitcoin via Email": [
+        "E-posta ile Bitcoin alın"
       ],
       "Select your currency": [
         "Para biriminizi seçin"
       ]
     },
+    "Wallet Receive": {
+      "Bitcoin address": [
+        "Bitcoin adresi"
+      ],
+      "For better privacy, generate a new address for each transaction.": [
+        "Daha iyi gizlilik sağlamak için, her işlem için yeni bir adres oluşturun."
+      ],
+      "Receive to": [
+        "Şu adrese al"
+      ]
+    },
     "Wallet receive": {
       "Address generation in progress": [
-        "Adres oluşturulma sürecinde"
+        "Adres oluşturuluyor"
+      ],
+      "Copy Bitcoin address": [
+        "Bitcoin adresini kopyala"
       ],
       "Gap between next address and last used one is too large. Please use one of the address you generate before": [
-        "Son kullanılan adres ile sıradaki adres arasındaki boşluk çok büyük. Lütfen daha önce oluşturduğunuz adreslerden birini kullanın"
+        "Son kullanılan adres ile sıradaki adres arasındaki aralık çok büyük. Lütfen daha önce oluşturduğunuz adreslerden birini kullanın"
       ],
       "Generate new address": [
         "Yeni adres oluştur"
@@ -1753,17 +4753,32 @@
       "${ price } available": [
         "${ price } kullanılabilir"
       ],
-      "A user icon with an exclamation mark, meaning that something unexpected happened": [
-        "Beklenmedik bir şey olduğunu belirten ünlem işareti olan bir kullanıcı simgesi"
+      "Add a message": [
+        "Bir ileti ekle"
+      ],
+      "Add a note": [
+        "Not ekle"
       ],
       "Add private note to myself": [
-        "Kendime özel not ekle"
+        "Kendiniz için not ekleyin"
+      ],
+      "Address is neither a valid bitcoin or email address": [
+        "Adres geçerli bir Bitcoin veya e-posta adresi değil"
+      ],
+      "Anonymous sender": [
+        "Anonim gönderici"
       ],
       "Bitcoin address signature could not be verified": [
-        "Bitcoin adresi imzası doğrulanamadı"
+        "Bitcoin adresinin imzası doğrulanamadı"
+      ],
+      "Cannot use QRCode scanner. Please check browser compatibility": [
+        "QR kod tarayıcı kullanılamıyor. Lütfen tarayıcı uyumluluğunu denetleyin"
       ],
       "Confirm": [
         "Onayla"
+      ],
+      "Confirm and send": [
+        "Onayla ve gönder"
       ],
       "Could not create PSBT": [
         "PSBT oluşturulamadı"
@@ -1775,28 +4790,40 @@
         "Alıcıları düzenle"
       ],
       "High priority": [
-        "Yüksek Öncelik"
+        "Yüksek öncelik"
       ],
       "How much are you sending?": [
         "Ne kadar gönderiyorsunuz?"
       ],
       "Low priority": [
-        "Düşük Öncelik"
+        "Düşük öncelik"
       ],
       "Max recipients per transaction limit reached (${ MAX_RECIPIENTS_PER_TRANSACTIONS })": [
-        "Kişi başına işlem limiti aşıldı (${ MAX_RECIPIENTS_PER_TRANSACTIONS })"
+        "Bir kişinin yapabileceği en fazla hesap işlemi sınırına ulaşıldı (${ MAX_RECIPIENTS_PER_TRANSACTIONS })"
       ],
       "Median priority": [
-        "Orta Öncelik"
+        "Orta öncelik"
+      ],
+      "Message to recipient (optional)": [
+        "Alıcıya ileti (isteğe bağlı)"
       ],
       "Network fees": [
         "Ağ ücretleri"
       ],
+      "One of recipient's amount is below minimum value": [
+        "Alıcının birinin tutarı en az değerin altında"
+      ],
+      "Please grant camera permission to use QRCode scanner": [
+        "Lütfen QR kod tarayıcıyı kullanmak için kamerayı kullanma izni verin"
+      ],
       "Recent recipients": [
         "Son alıcılar"
       ],
-      "Recipient amount wasn't updated. Please check you have enough to cover input amount + fees.": [
-        "Alıcı tutarı güncellenemedi. Lütfen giriş tutarını + ücretleri karşılayacak kadar para miktarına sahip olduğunuzu kontrol edin."
+      "Recipient": [
+        "Alıcı"
+      ],
+      "Recipient has no bitcoin address available": [
+        "Alıcının geçerli bir Bitcoin adresi yok"
       ],
       "Recipients": [
         "Alıcılar"
@@ -1811,30 +4838,45 @@
         "Tümünü gönder"
       ],
       "The transaction could not be sent. Please try again later": [
-        "İşlem gönderilemedi. Lütfen daha sonra tekrar deneyin."
+        "Hesap işlemi gönderilemedi. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Transaction was successfully sent": [
+        "Hesap işlemi gönderildi"
       ],
       "Try adding an email address to start sending Bitcoin!": [
         "Bitcoin göndermeye başlamak için bir e-posta adresi eklemeyi deneyin!"
       ],
       "While you are waiting, invite your family and friends to ${ WALLET_APP_NAME } so you can all send Bitcoin via Email.": [
-        "Beklerken, tüm ailenizi ve arkadaşlarınızı ${ WALLET_APP_NAME }  davet edin ki hepinize E-posta yoluyla Bitcoin gönderebilirsin."
+        "Beklerken, tüm ailenizi ve arkadaşlarınızı ${ WALLET_APP_NAME } davet adin. Böylece hepsine E-posta ile Bitcoin gönderebilirsiniz."
       ],
       "Who are you sending Bitcoin to?": [
-        "Bitcoini kime gönderiyorsunuz?"
+        "Kime Bitcoin gönderiyorsunuz?"
       ],
       "You are sending": [
-        "Gönderiyorsunuz"
+        "Gönderilecek"
+      ],
+      "You cannot send a message to the recipient because you don't have any address setup on your account": [
+        "Hesabınızda herhangi bir adres ayarlanmış olmadığından alıcıya ileti gönderemezsiniz."
+      ],
+      "You do not have enough BTC in this account to fund the transaction and the required network fee of ${ feesToReserveElement }.": [
+        "Bu hesapta işlemi tutarı ve gereken ağ ücreti olan ${ feesToReserveElement } için yeterli BTC yok."
+      ],
+      "Your Bitcoin is on its way!": [
+        "Bitcoin işleminiz yolda!"
       ],
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
-        "İşleminiz Bitcoin ağına yayınlandı. Ağın işlemi onaylaması yaklaşık bir saat sürebilir."
+        "Hesap işleminiz Bitcoin ağına gönderildi. Ağın hesap işlemini onaylaması bir saat kadar sürebilir."
       ]
     },
     "Wallet Send": {
       "Could not broadcast transaction": [
-        "İşlem yayınlanamadı"
+        "Hesap işlemi yayınlanamadı"
       ],
       "Could not sign transaction": [
-        "İşlem imzalanamadı"
+        "Hesap işlemi imzalanamadı"
+      ],
+      "You must send at least ${ constrainedMinElement } to each recipient": [
+        "Her alıcıya en az ${ constrainedMinElement } göndermelisiniz"
       ]
     },
     "Wallet Settings": {
@@ -1850,6 +4892,9 @@
       "Account was deleted": [
         "Hesap silindi"
       ],
+      "Bitcoin via Email": [
+        "E-posta ile Bitcoin"
+      ],
       "Could not add email address": [
         "E-posta adresi eklenemedi"
       ],
@@ -1857,13 +4902,16 @@
         "Değiştirilemedi"
       ],
       "Could not fill the pool after email address adition": [
-        "E-posta adresi eklenmesinden sonra havuz doldurulamadı"
+        "E-posta adresi eklendikten sonra havuz doldurulamadı"
       ],
       "Could not fill the pool after email address replacement": [
-        "E-posta adresi değiştirilmesinden sonra havuz doldurulamadı"
+        "E-posta adresi değiştirildikten sonra havuz doldurulamadı"
       ],
       "Could not remove email address": [
         "E-posta adresi kaldırılamadı"
+      ],
+      "Create new email address": [
+        "Yeni bir e-posta adresi oluştur"
       ],
       "Email address has been added": [
         "E-posta adresi eklendi"
@@ -1874,20 +4922,29 @@
       "Email address has been replaced": [
         "E-posta adresi değiştirildi"
       ],
+      "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
+        "Bu cüzdan hesabını bir e-posta ile ilişkilendirerek diğer ${ WALLET_APP_NAME } kullanıcılarının e-posta adresinize kolayca Bitcoin göndermesini sağlayın."
+      ],
       "Local storage cleared": [
         "Yerel depolama alanı temizlendi"
       ],
       "New fiat currency applied": [
-        "Yeni itibari para birimi uygulandı"
+        "Yeni fiyat para birimi uygulandı"
       ],
       "New fiat currency could not be applied": [
-        "Yeni itibari para birimi uygulanamadı"
+        "Yeni fiyat para birimi uygulanamadı"
       ],
       "Preferred bitcoin unit could not be changed": [
-        "Tercih edilen Bitcoin birimi değiştirilemedi"
+        "Yeğlenen Bitcoin birimi değiştirilemedi"
       ],
       "Preferred bitcoin unit was changed": [
-        "Tercih edilen Bitcoin birimi değiştirildi"
+        "Yeğlenen Bitcoin birimi değiştirildi"
+      ],
+      "Select an available email or create a new email address.": [
+        "Var olan bir e-posta adresini seçin veya yeni bir e-posta adresi oluşturun."
+      ],
+      "Select this address": [
+        "Bu adresi seç"
       ],
       "Wallet could not be deleted": [
         "Cüzdan silinemedi"
@@ -1908,20 +4965,44 @@
       ]
     },
     "Wallet setup": {
+      "A passphrase acts as a second password. It cannot be changed or added later. Back it up safely to unlock your wallet each time you log in.": [
+        "Parola ifadesi ikinci bir parola gibi çalışır. Değiştirilemez veya sonradan eklenemez. Her oturum açtığınızda cüzdanınızı açmak için güvenli bir yere yedekleyin."
+      ],
+      "Add a passphrase": [
+        "Parola ifadesi ekleyin"
+      ],
       "Add a passphrase (optional)": [
         "Parola ifadesi ekleyin (isteğe bağlı)"
+      ],
+      "Choose a name and default currency.": [
+        "Bir ad ve varsayılan para birimi seçin."
       ],
       "Confirm": [
         "Onayla"
       ],
+      "Confirm Passphrase": [
+        "Parola ifadesini onayla"
+      ],
       "Could not create wallet": [
         "Cüzdan oluşturulamadı"
+      ],
+      "Could not create wallet account": [
+        "Cüzdan hesabı oluşturulamadı"
+      ],
+      "Could not link email to wallet account": [
+        "E-posta adresi ile cüzdan hesabı ilişkilendirilemedi"
+      ],
+      "Create new wallet": [
+        "Yeni cüzdan oluştur"
+      ],
+      "Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. However, you can recover the wallet later if you have its seed phrase.": [
+        "Bu cüzdanı silmek, verilerini ${ BRAND_NAME } sunucularından kaldırır. Ancak, tohumlama ifadesine sahipseniz cüzdanı daha sonra geri yükleyebilirsiniz."
       ],
       "Done": [
         "Tamam"
       ],
       "Give a name to this wallet": [
-        "Bu cüzdana bir isim verin"
+        "Bu cüzdana bir ad verin"
       ],
       "Import": [
         "İçe aktar"
@@ -1930,45 +5011,90 @@
         "Cüzdanı içe aktar"
       ],
       "Input mnemonic is invalid, please double check.": [
-        "Girdiğiniz anımsatıcı geçersiz, lütfen tekrar kontrol edin."
+        "Yazdığınız anımsatıcı geçersiz. Lütfen yeniden denetleyin."
       ],
       "Invite a friend": [
-        "Bir arkadaş davet et"
+        "Arkadaşınızı davet edin"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
       "Mnemonic length is not valid.": [
-        "Anımsatıcı uzunluğu geçerli değil."
+        "Anımsatıcı uzunluğu geçersiz."
       ],
       "My wallet had a passphrase": [
         "Cüzdanımın bir parola ifadesi vardı"
       ],
+      "Name": [
+        "Ad"
+      ],
+      "Never give them to anyone else. ${ BRAND_NAME } will never ask you for them. Write them down carefully and hide it in a safe place.": [
+        "Bunları asla başka birine vermeyin. ${ BRAND_NAME } asla sizden istemeyecek. Bunları dikkatlice not edin ve güvenli bir yerde saklayın."
+      ],
+      "Not now": [
+        "Şimdi değil"
+      ],
       "Passphrase": [
         "Parola ifadesi"
       ],
+      "Pick a default currency so we can display the value of your Bitcoin transactions using the latest market data at transaction time.": [
+        "Bitcoin işlemlerinizin değerini, işlem zamanına göre en son piyasa verilerini kullanarak görüntüleyebilmemiz için varsayılan bir para birimi seçin."
+      ],
+      "Please transfer them to another wallet before deleting. Deleting this wallet will remove all its data from ${ BRAND_NAME }'s servers. However, you can recover the wallet later if you have its seed phrase.": [
+        "Lütfen silmeden önce varlıkları başka bir cüzdana aktarın. Bu cüzdanı silmek, verilerini ${ BRAND_NAME } sunucularından kaldırır. Ancak, tohumlama ifadesine sahipseniz cüzdanı daha sonra geri yükleyebilirsiniz."
+      ],
       "Seed phrase (12-24 words)": [
-        "Seed ifadesi (12-24 kelime)"
+        "Tohumlama ifadesi (12-24 sözcük)"
+      ],
+      "These 12 words should only be used to recover the assets of this wallet as a last resort, such as if you lose access to your ${ BRAND_NAME } account.": [
+        "Bu 12 sözcük yalnızca bu cüzdanın varlıklarını kurtarmak için son çare olarak kullanılmalıdır. Örneğin ${ BRAND_NAME } hesabınıza erişiminizi kaybederseniz."
       ],
       "This wallet is not decryptable anymore. To get it decryptable again, you need to recover the keys used during its creation in your account. Else you can also remove it to free one wallet space.": [
-        "Bu cüzdan artık şifre çözülemez durumda. Tekrar şifre çözülebilir hale getirmek için, oluşturulması sırasında kullanılan anahtarları hesabınızda geri yüklemeniz gerekir. Aksi takdirde, bir cüzdan alanı boşaltmak için cüzdanı kaldırabilirsiniz."
+        "Bu cüzdanın şifresi artık çözülemez durumda. Şifreyi yeniden çözülebilir kılmak için, cüzdanın oluşturulması sırasında kullanılan anahtarları hesabınızda geri yüklemeniz gerekir. Yoksa, bir cüzdan alanı boşaltmak için cüzdanı kaldırabilirsiniz."
+      ],
+      "This wallet seems to still have assets.": [
+        "Bu cüzdanda hala varlıklar var gibi görünüyor."
       ],
       "View wallet seed phrase": [
-        "Cüzdan seed ifadesini görüntüle"
+        "Cüzdan tohumlama ifadesini görüntüle"
       ],
       "Wallet seed phrase": [
-        "Cüzdan seed ifadesi"
+        "Cüzdan tohumlama ifadesi"
+      ],
+      "Wallet seed phrase encode the private key that controls your digital assets.": [
+        "Cüzdan tohumlama ifadesi, dijital varlıklarınızı yöneten özel anahtarı kodlar."
       ],
       "Wallet setup": [
         "Cüzdan kurulumu"
       ],
+      "What's a wallet passphrase?": [
+        "Cüzdan parola ifadesi nedir?"
+      ],
+      "What's a wallet seed phrase?": [
+        "Cüzdan tohumlama ifadesi nedir?"
+      ],
+      "What’s a wallet passphrase?": [
+        "Cüzdan parola ifadesi nedir?"
+      ],
+      "You can use the seed phrase to import your wallet on any wallet app.": [
+        "Cüzdanınızı herhangi bir cüzdan uygulamasına aktarmak için tohumlama ifadesini kullanabilirsiniz."
+      ],
       "Your keys, your coins.": [
-        "Anahtarlarınız, coinleriniz."
+        "Anahtarlar sizinse, coinler sizindir."
       ]
     },
     "Wallet Sidebar": {
+      "Contact Support": [
+        "Destek ekibimizle görüşün"
+      ],
+      "Create a new wallet": [
+        "Yeni bir cüzdan oluştur"
+      ],
       "Discover": [
-        "Keşfet"
+        "Keşfedin"
+      ],
+      "Expand user settings": [
+        "Kullanıcı ayarlarını genişlet"
       ],
       "Recovery": [
         "Kurtarma"
@@ -1976,11 +5102,36 @@
       "Security": [
         "Güvenlik"
       ],
+      "Sign out": [
+        "Oturumu kapat"
+      ],
       "Upgrade": [
         "Yükselt"
       ],
+      "User settings": [
+        "Kullanıcı ayarları"
+      ],
       "Wallets": [
         "Cüzdanlar"
+      ]
+    },
+    "Wallet terms and conditions": {
+      "Could not accept terms and conditions": [
+        "Hüküm ve koşullar kabul edilemedi"
+      ],
+      "Terms and conditions were accepted": [
+        "Hüküm ve koşullar kabul edildi"
+      ]
+    },
+    "Wallet Terms and Conditions": {
+      "This is a self-custodial Bitcoin wallet, meaning any BTC you buy or receive will be fully controlled by you. Not even ${ BRAND_NAME } can seize your assets.": [
+        "Bu uygulama, kendinden korumalı bir Bitcoin cüzdanıdır. Satın aldığınız veya size gönderilen her BTC biriminin tümüyle sizin kontrolunuzda almasını sağlar. ${ BRAND_NAME } bile varlıklarınıza el koyamaz."
+      ],
+      "To avoid losing assets due to forgetting your password or other access issues, back up your ${ BRAND_NAME } recovery phrase and wallet seed phrase.": [
+        "Parolanızı unutmanız veya başka erişim sorunları nedeniyle varlıklarınızı kaybetmenizi önlemek için, ${ BRAND_NAME } kurtarma ifadenizi ve cüzdan tohum ifadenizi yedekleyin."
+      ],
+      "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
+        "Sizin için iki BTC hesabı oluşturduk. Bir birincil hesap ve diğer ${ WALLET_APP_NAME } kullanıcılarından E-posta ile Bitcoin ( ${ emailEl } adresiyle) almak için ikinci bir hesap."
       ]
     },
     "Wallet transaction": {
@@ -1991,16 +5142,34 @@
         "+ Ekle"
       ],
       "Add bitcoins to your wallet": [
-        "Cüzdanınıza bitcoin ekleyin"
+        "Cüzdanınıza Bitcoin ekleyin"
+      ],
+      "Add note": [
+        "Not ekle"
       ],
       "Amount": [
         "Tutar"
       ],
+      "Anonymous sender": [
+        "Anonim gönderici"
+      ],
+      "Bitcoin via Email": [
+        "E-posta ile Bitcoin"
+      ],
       "Buy": [
         "Satın al"
       ],
+      "Confirmed": [
+        "Doğrulandı"
+      ],
+      "Date": [
+        "Tarih"
+      ],
       "From": [
-        "Gönderen"
+        "Gönderici"
+      ],
+      "From: ${ senderOrRecipientName }": [
+        "Kimden: ${ senderOrRecipientName }"
       ],
       "In progress": [
         "İşleniyor"
@@ -2008,8 +5177,17 @@
       "Loading": [
         "Yükleniyor"
       ],
+      "Message to recipient": [
+        "Alıcıya ileti"
+      ],
       "Network fee": [
         "Ağ ücreti"
+      ],
+      "Note to self": [
+        "Kendime not"
+      ],
+      "Private note to myself": [
+        "Kendime özel not"
       ],
       "Receive": [
         "Al"
@@ -2020,28 +5198,46 @@
       "Start your journey": [
         "Yolculuğunuza başlayın"
       ],
+      "Status": [
+        "Durum"
+      ],
       "To": [
         "Alıcı"
       ],
+      "To: ${ senderOrRecipientName }": [
+        "Kime: ${ senderOrRecipientName }"
+      ],
+      "Total (Amount + fee)": [
+        "Toplam (tutar + ücret)"
+      ],
       "Total (sent amount + fee)": [
-        "Toplam (gönderilen miktar + ücret)"
+        "Toplam (gönderilen tutar + ücret)"
       ],
       "Transaction note": [
-        "İşlem notu"
+        "Hesap işlemi notu"
       ],
       "Unknown": [
         "Bilinmiyor"
       ],
       "View more": [
-        "Daha fazlasını göster"
+        "Diğerlerini görüntüle"
+      ],
+      "You received": [
+        "Aldığınız"
+      ],
+      "You sent": [
+        "Gönderdiğiniz"
       ]
     },
     "Wallet Transaction": {
+      "Could not load updated transaction": [
+        "Güncellenmiş hesap işlemi yüklenemedi"
+      ],
       "Could not update transaction label": [
-        "İşlem etiketi güncellenemedi"
+        "Hesap işlemi etiketi güncellenemedi"
       ],
       "Transaction label successfully updated": [
-        "İşlem etiketi başarıyla güncellendi"
+        "Hesap işlemi etiketi güncellendi"
       ]
     },
     "Wallet Transaction List": {
@@ -2051,10 +5247,10 @@
     },
     "Wallet transactions": {
       "Syncing transactions": [
-        "İşlemler eşitleniyor"
+        "Hesap işlemleri eşitleniyor"
       ],
       "Transactions": [
-        "İşlemler"
+        "Hesap işlemleri"
       ]
     },
     "Wallet transactions list": {
@@ -2066,11 +5262,54 @@
       ],
       "Sync": [
         "Eşitle"
+      ],
+      "Syncing is already in progress": [
+        "Eşitleme zaten sürüyor"
+      ],
+      "You need to wait 1 minute between each sync": [
+        "Eşitlemeler arasında 1 dakika beklemeniz gerekiyor"
+      ]
+    },
+    "Wallet upgrade": {
+      "An email can only be linked to one wallet account. To link an email to this wallet account, please remove an email from another wallet account or upgrade your plan to get more email addresses.": [
+        "Bir e-posta yalnızca bir cüzdan hesabı ile ilişkilendirilebilir. Bu cüzdan hesabını bir e-posta ile ilişkilendirmek için, lütfen e-posta adresini başka bir cüzdan hesabından kaldırın veya daha fazla e-posta adresi elde etmek için tarifenizi yükseltin."
+      ],
+      "Contact your administrator to upgrade": [
+        "Yükseltme için yöneticinizle görüşün"
+      ],
+      "Unlock more email addresses": [
+        "Daha fazla e-posta adresi elde edin"
+      ],
+      "You have reached the maximum number of wallets supported by your current plan. Please upgrade to create more. Your support will also be essential for our fight to protect financial privacy and freedom.": [
+        "Geçerli tarifeniz tarafından desteklenen en fazla cüzdan sayısına ulaştınız. Daha fazla cüzdan oluşturmak için tarifenizi yükseltin. Desteğiniz finansal gizliliği ve özgürlüğü korumak için verdiğimiz mücadeleye de destek olacak."
       ]
     },
     "Wallet Upgrade": {
+      "By continuing, you agree to our ${ termsAndConditionsLink }": [
+        "İlerleyerek ${ termsAndConditionsLink } metnini kabul etmiş olursunuz"
+      ],
+      "Upgrade to support financial freedom": [
+        "Finansal özgürlüğü desteklemek için tarifenizi yükseltin"
+      ],
       "Upgrade your privacy": [
         "Gizlilik düzeyinizi yükseltin"
+      ]
+    },
+    "Wallet Welcome": {
+      "Early Access Waitlist": [
+        "Erken erişim bekleme listesi"
+      ],
+      "Invites from active users of ${ WALLET_APP_NAME } will allow you to skip this waiting list.": [
+        "Etkin ${ WALLET_APP_NAME } kullanıcılarından alınan davetler, bu bekleme listesini aşmanızı sağlar."
+      ],
+      "Welcome to ${ WALLET_APP_NAME }": [
+        "${ WALLET_APP_NAME } uygulamasına hoş geldiniz"
+      ],
+      "You can also support us and get immediate access by upgrading to ${ BRAND_NAME } Visionary, our most premium plan with paid features in all ${ BRAND_NAME } products.": [
+        "${ BRAND_NAME } Visionary tarifesine yükselterek bizi destekleyebilir ve anında erişim elde edebilirsiniz. Bu tarife tüm ${ BRAND_NAME } ürünleri ve ücretli özellikleri ile en kapsamlı tarifemizdir."
+      ],
+      "You have been added to the first come, first serve waiting list. We will notify you at ${ email } once we have more server capacity.": [
+        "İlk gelenin, ilk hizmet alacağı listeye eklendiniz. Sunucu kapasitemizi artırdığımızda ${ email } adresinizden sizi bilgilendireceğiz."
       ]
     },
     "wallet_signup_2024: Info": {
@@ -2094,8 +5333,8 @@
       ]
     },
     "wallet_signup_2024:app-switcher": {
-      "Securely hold and transfer your bitcoins": [
-        "Bitcoin'lerinizi güvenle tutun ve transfer edin"
+      "A safer/easier way to hold & send Bitcoin": [
+        "Bitcoin saklamanın ve göndermenin daha güvenli ve kolay yolu"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -2115,6 +5354,9 @@
       ]
     },
     "Warning": {
+      "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
+        "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
       ],
