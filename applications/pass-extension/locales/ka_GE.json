@@ -13,6 +13,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-ის ფაილის დამუშავების შეცდომა. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "ამჟამად ფსევდონიმის განახლება შეუძლებელია. მოგვიანებით სცადეთ"
+      ],
       "Alias options could not be resolved": [
         "ფსევდონიმის პარამეტრების ამოხსნა შეუძლებელია"
       ],
@@ -115,6 +118,9 @@
       ],
       "Failed to restore items from trash": [
         "ნაგვის ყუთიდან ელემენტების აღდგენა ჩავარდა"
+      ],
+      "Failed to sync aliases": [
+        "ფსევდონიმების სინქრონიზაცია ჩავარდა"
       ],
       "Failed to transfer this vault's ownership.": [
         "ამ საცავის მფლობელობის გადატანა ჩავარდა."
@@ -282,6 +288,12 @@
       ],
       "Access successfully confirmed": [
         "წვდომა წარმატებით დადასტურდა"
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "ფსევდონიმი წარმატებით გაითიშა. ახლა ელფოსტებს, რომელსაც ${ item.aliasEmail }-ზე გააგზავნიან, ვეღარ მიიღებთ"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "ფსევდონიმი წარმატებით ჩაირთო. ახლა შეგძლიათ, მიიღოთ ელფოსტები, რომელსაც ${ item.aliasEmail }-ზე გააგზავნიან"
       ],
       "All breaches for this address were resolved": [
         "ამ მისამართისთვის ყველა გაჟონვა გადაწყვეტილია"
@@ -568,6 +580,11 @@
     "Placeholder": {
       "Used on ${ url }": [
         "გამოიყენება ${ url } -ზე"
+      ]
+    },
+    "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "ფსევდონიმების სინქრონიზაცის ჩართვა წარმატებულია. SimpleLogin-ის ფსევდონიმების სინქრონიზაციას, შეიძლება, რაღაც დრო დასჭირდეს"
       ]
     },
     "Warning": {

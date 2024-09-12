@@ -4,6 +4,11 @@
     "language": "fi_FI"
   },
   "contexts": {
+    "Action": {
+      "Please retry": [
+        "Yritä uudelleen"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
