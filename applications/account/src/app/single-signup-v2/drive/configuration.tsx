@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { DriveLogo } from '@proton/components/components';
+import { DriveLogo } from '@proton/components';
 import { getNCalendarsFeature } from '@proton/components/containers/payments/features/calendar';
 import {
     getDocumentEditor,

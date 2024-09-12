@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Option, SelectTwo } from '@proton/components/components';
+import { Option, SelectTwo } from '@proton/components';
 import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
 import clsx from '@proton/utils/clsx';

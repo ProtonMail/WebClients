@@ -1,10 +1,10 @@
-import { createRoot } from 'react-dom/client'
+import { ErrorBoundary } from '@proton/components'
+import { BridgeOriginProvider, EDITOR_IFRAME_FOCUS_EVENT } from '@proton/docs-shared'
 import '@proton/polyfill'
+import { createRoot } from 'react-dom/client'
 import { App } from './App'
 import './style'
 import { sendErrorMessage } from './Utils/errorMessage'
-import { BridgeOriginProvider, EDITOR_IFRAME_FOCUS_EVENT } from '@proton/docs-shared'
-import { ErrorBoundary } from '@proton/components/containers'
 
 const searchParams = new URLSearchParams(window.location.search)
 

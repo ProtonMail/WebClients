@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiWalletTransaction } from '@proton/andromeda';
-import type { ModalPropsWithData } from '@proton/components/components';
+import type { ModalPropsWithData } from '@proton/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { encryptWalletDataWithWalletKey, useWalletApi } from '@proton/wallet';

@@ -3,8 +3,10 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { signoutAction } from '@proton/account';
-import type { IconProps } from '@proton/components/components';
+import type { IconProps } from '@proton/components';
 import {
+    AuthenticatedBugModal,
+    SUBSCRIPTION_STEPS,
     SettingsLink,
     SidebarExpandButton,
     SidebarListItem,
@@ -14,8 +16,8 @@ import {
     SidebarListItemLink,
     SidebarListItemSettingsLink,
     useModalState,
-} from '@proton/components/components';
-import { AuthenticatedBugModal, SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
+    useSubscriptionModal,
+} from '@proton/components';
 import { useOrganization, useToggle, useUser } from '@proton/components/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { PLANS } from '@proton/shared/lib/constants';

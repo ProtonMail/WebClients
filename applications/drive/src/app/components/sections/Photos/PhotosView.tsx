@@ -3,8 +3,7 @@ import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { NavigationControl, TopBanner, useAppTitle } from '@proton/components';
-import { Loader } from '@proton/components/components';
+import { Loader, NavigationControl, TopBanner, useAppTitle } from '@proton/components';
 import { useFlag } from '@proton/unleash';
 
 import { useShiftKey } from '../../../hooks/util/useShiftKey';

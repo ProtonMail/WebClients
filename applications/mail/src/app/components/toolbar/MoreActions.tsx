@@ -2,8 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components/components';
-import { FeatureCode } from '@proton/components/containers';
+import { DropdownMenu, DropdownMenuButton, FeatureCode, Icon } from '@proton/components';
 import { useFeature } from '@proton/components/hooks';
 import noop from '@proton/utils/noop';
 

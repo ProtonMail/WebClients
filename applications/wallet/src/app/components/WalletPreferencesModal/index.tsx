@@ -2,14 +2,14 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import type { ModalOwnProps } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components';
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
-} from '@proton/components/components';
+} from '@proton/components';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import type { IWasmApiWalletData } from '@proton/wallet';
 

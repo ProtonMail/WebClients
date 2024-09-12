@@ -1,11 +1,9 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import { Button } from '@proton/atoms/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
-import { Icon, Tooltip } from '@proton/components/components';
+import { Icon, Tooltip } from '@proton/components';
 
 interface Props {
     isLabelMapping: boolean;

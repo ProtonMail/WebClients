@@ -20,7 +20,7 @@ import {
     PasswordInputTwo,
     PrimaryButton,
     Row,
-} from '@proton/components/components';
+} from '@proton/components';
 
 import ProviderWrapper from '../ProviderWrapper';
 import StepFormError from './StepFormError';

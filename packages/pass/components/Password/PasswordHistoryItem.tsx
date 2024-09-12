@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';

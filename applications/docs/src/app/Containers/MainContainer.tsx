@@ -1,8 +1,7 @@
+import { GlobalLoader, GlobalLoaderProvider, LocationErrorBoundary } from '@proton/components'
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders'
-import ApplicationContainer from './ApplicationContainer'
 import { DriveStoreProvider } from '@proton/drive-store'
-import { GlobalLoader, GlobalLoaderProvider } from '@proton/components/components'
-import { LocationErrorBoundary } from '@proton/components/containers'
+import ApplicationContainer from './ApplicationContainer'
 
 const MainContainer = () => {
   return (

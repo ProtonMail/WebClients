@@ -5,7 +5,7 @@ import { formatDuration } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import { Checkbox, FileIcon, Icon } from '@proton/components/components';
+import { Checkbox, FileIcon, Icon } from '@proton/components';
 import { isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';

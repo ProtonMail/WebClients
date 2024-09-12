@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { CreateNotificationOptions } from '@proton/components/containers';
+import type { CreateNotificationOptions } from '@proton/components';
 import { DEFAULT_LOCK_TTL } from '@proton/pass/constants';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';

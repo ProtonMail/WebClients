@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { ModalStateProps } from '@proton/components/components';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
+import type { ModalStateProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import { useUser, useUserSettings } from '@proton/components/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';

@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Option, SelectTwo } from '@proton/components/components';
+import { Option, SelectTwo } from '@proton/components';
 import { useConfig } from '@proton/components/hooks';
 
 type Props = {

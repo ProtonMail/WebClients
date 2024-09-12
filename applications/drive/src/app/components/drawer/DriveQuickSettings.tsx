@@ -1,4 +1,4 @@
-import { useConfirmActionModal } from '@proton/components/components';
+import { useConfirmActionModal } from '@proton/components';
 import {
     DefaultQuickSettings,
     QuickSettingsButtonSection,

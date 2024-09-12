@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 
-import { type IconName } from '@proton/components/components';
+import { type IconName } from '@proton/components';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { PassIcon } from '@proton/pass/components/Layout/Icon/PassIcon';

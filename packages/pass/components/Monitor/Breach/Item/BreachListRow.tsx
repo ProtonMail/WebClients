@@ -2,9 +2,9 @@ import type { FC } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 
 import { Button } from '@proton/atoms/Button';
+import type { FetchedBreaches } from '@proton/components';
 import { Icon } from '@proton/components/components/icon';
 import { TableCell, TableRow } from '@proton/components/components/table';
-import type { FetchedBreaches } from '@proton/components/containers';
 import ReadableDate from '@proton/components/containers/credentialLeak/ReadableDate';
 import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';

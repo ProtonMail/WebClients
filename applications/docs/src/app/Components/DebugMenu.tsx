@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
-import { Icon } from '@proton/components/components'
-import type { DocControllerInterface } from '@proton/docs-core'
-import { useApplication } from '../Containers/ApplicationProvider'
-import { useLocalState } from '@proton/components/hooks'
-import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
 import { Button } from '@proton/atoms'
+import { Icon } from '@proton/components'
+import { useLocalState } from '@proton/components/hooks'
+import type { DocControllerInterface } from '@proton/docs-core'
+import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
+import { useEffect, useState } from 'react'
+import { useApplication } from '../Containers/ApplicationProvider'
 
 export const useDebug = () => {
   const [debug] = useLocalState(false, DOCS_DEBUG_KEY)

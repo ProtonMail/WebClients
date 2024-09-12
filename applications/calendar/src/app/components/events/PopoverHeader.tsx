@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import PopoverCloseButton from './PopoverCloseButton';

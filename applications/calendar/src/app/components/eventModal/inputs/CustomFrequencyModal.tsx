@@ -3,14 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import type { ModalStateProps } from '@proton/components/components';
-import {
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PrimaryButton,
-} from '@proton/components/components';
+import type { ModalStateProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton } from '@proton/components';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import type { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
 

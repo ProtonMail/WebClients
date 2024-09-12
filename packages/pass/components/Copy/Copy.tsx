@@ -3,7 +3,7 @@ import type { FC, MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button, type ButtonLikeShape, type ButtonProps } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components/components';
+import { Icon, Tooltip } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 
 type Props = ButtonProps & {

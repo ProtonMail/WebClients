@@ -9,7 +9,7 @@ import {
     ErrorBoundary,
     ProtonApp,
     StandardErrorPage,
-} from '@proton/components/containers';
+} from '@proton/components';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';

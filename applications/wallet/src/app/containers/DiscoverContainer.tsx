@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { ButtonLike } from '../atoms';

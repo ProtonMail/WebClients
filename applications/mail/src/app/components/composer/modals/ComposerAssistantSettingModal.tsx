@@ -4,8 +4,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
-import { Icon } from '@proton/components/components';
-import { FeatureCode } from '@proton/components/containers';
+import { FeatureCode, Icon } from '@proton/components';
 import {
     useApi,
     useAssistantSubscriptionStatus,

@@ -2,7 +2,7 @@ import type { KeyboardEvent, Ref } from 'react';
 
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
 import { MailImportPayloadError } from '@proton/activation/src/interface';
-import { InputFieldTwo } from '@proton/components/components';
+import { InputFieldTwo } from '@proton/components';
 
 interface Props {
     disabled: boolean;

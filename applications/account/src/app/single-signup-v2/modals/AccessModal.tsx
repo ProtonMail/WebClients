@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import type { ModalProps } from '@proton/components/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {

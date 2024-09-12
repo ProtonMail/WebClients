@@ -1,4 +1,4 @@
-import { Tooltip } from '@proton/components/components';
+import { Tooltip } from '@proton/components';
 
 interface Props {
     className?: string;

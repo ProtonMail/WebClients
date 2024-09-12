@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import type { ThemeColorUnion } from '@proton/colors/types';
-import { ButtonGroup, usePopperAnchor } from '@proton/components/components';
+import { ButtonGroup, usePopperAnchor } from '@proton/components';
 import {
     Dropdown,
     DropdownButton,

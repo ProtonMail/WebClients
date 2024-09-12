@@ -4,7 +4,7 @@ import { type FC, type MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import './SpotlightContent.scss';

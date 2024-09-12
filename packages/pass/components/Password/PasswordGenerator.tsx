@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
 import { usePasswordStrength } from '@proton/pass/hooks/monitor/usePasswordStrength';
 import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';

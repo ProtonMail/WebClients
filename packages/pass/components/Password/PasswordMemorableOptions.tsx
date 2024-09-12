@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Slider } from '@proton/atoms/Slider';
-import { Option, SelectTwo, Toggle } from '@proton/components/components';
+import { Option, SelectTwo, Toggle } from '@proton/components';
 import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 import { SeperatorOptions } from '@proton/pass/lib/password/constants';
 import type { MemorablePasswordOptions } from '@proton/pass/lib/password/memorable';

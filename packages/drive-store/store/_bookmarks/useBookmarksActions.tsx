@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import type { useConfirmActionModal } from '@proton/components/components';
+import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';

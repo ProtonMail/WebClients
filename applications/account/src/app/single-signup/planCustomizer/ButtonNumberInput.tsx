@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {

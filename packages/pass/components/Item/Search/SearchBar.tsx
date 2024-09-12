@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { getItemTypeOptions } from '@proton/pass/components/Item/Filters/Type';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
