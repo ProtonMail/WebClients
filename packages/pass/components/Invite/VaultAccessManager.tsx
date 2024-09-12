@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Alert, Icon, Prompt } from '@proton/components/components';
+import { Alert, Icon, Prompt } from '@proton/components';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';

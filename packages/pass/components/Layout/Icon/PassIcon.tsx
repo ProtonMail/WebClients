@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { IconSize } from '@proton/components/components';
+import type { IconSize } from '@proton/components';
 import type { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 
 import { getIconSizePx } from './IconBox';

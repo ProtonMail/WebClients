@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { InputFieldTwo } from '@proton/components/components';
+import { InputFieldTwo } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import type { CountryOption } from '@proton/components/components/country/helpers';
 

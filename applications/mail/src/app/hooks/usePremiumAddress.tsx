@@ -1,4 +1,4 @@
-import { UnlockModal, useKTVerifier } from '@proton/components/containers';
+import { UnlockModal, useKTVerifier } from '@proton/components';
 import {
     useApi,
     useAuthentication,

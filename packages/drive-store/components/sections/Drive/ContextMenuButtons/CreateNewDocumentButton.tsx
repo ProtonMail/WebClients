@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { MimeIcon } from '@proton/components/components';
+import { MimeIcon } from '@proton/components';
 
 import { ContextMenuButton } from '../../ContextMenu';
 

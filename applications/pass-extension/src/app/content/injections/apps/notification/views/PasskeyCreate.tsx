@@ -13,7 +13,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';

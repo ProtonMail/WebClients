@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components/components';
+import { Icon, ToolbarButton } from '@proton/components';
 import { useActiveBreakpoint, useElementBreakpoints } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 

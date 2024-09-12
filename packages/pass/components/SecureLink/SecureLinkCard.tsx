@@ -2,8 +2,7 @@ import { type FC, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Alert, DropdownMenuButton } from '@proton/components';
-import { Icon } from '@proton/components/components';
+import { Alert, DropdownMenuButton, Icon } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { Copy } from '@proton/pass/components/Copy/Copy';

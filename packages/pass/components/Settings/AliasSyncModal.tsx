@@ -6,16 +6,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
-import type { ModalProps } from '@proton/components/components';
-import {
-    Icon,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Option,
-    SelectTwo,
-} from '@proton/components/components';
+import type { ModalProps } from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Option, SelectTwo } from '@proton/components';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { aliasSyncEnable } from '@proton/pass/store/actions';

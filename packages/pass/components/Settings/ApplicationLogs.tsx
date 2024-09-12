@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { type Maybe } from '@proton/pass/types';
 import { download } from '@proton/pass/utils/dom/download';

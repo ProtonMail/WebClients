@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { Loader } from '@proton/components/components';
-import { FeatureCode } from '@proton/components/containers';
+import { FeatureCode, Loader } from '@proton/components';
 import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers/account';
 import type { SettingsAreaConfig } from '@proton/components/containers/layout';
 import { PrivateMainSettingsArea } from '@proton/components/containers/layout';

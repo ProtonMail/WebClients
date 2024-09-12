@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
-import type { ModalStateProps } from '@proton/components/components';
-import { ModalTwo, ModalTwoHeader, StepDot, StepDots } from '@proton/components/components';
+import type { ModalStateProps } from '@proton/components';
+import { ModalTwo, ModalTwoHeader, StepDot, StepDots } from '@proton/components';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import blockEmails from '@proton/styles/assets/img/illustrations/checklist-block-emails.svg';

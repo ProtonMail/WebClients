@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import type { ModalProps } from '@proton/components/components';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import { useErrorHandler } from '@proton/components/hooks';
 import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';

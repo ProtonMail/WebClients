@@ -3,7 +3,7 @@ import { useEffect, useMemo } from 'react';
 import keyBy from 'lodash/keyBy';
 import { c } from 'ttag';
 
-import { Icon, Tooltip } from '@proton/components/components';
+import { Icon, Tooltip } from '@proton/components';
 import { useAddresses } from '@proton/components/hooks';
 import { useDecryptedApiWalletsData } from '@proton/wallet';
 

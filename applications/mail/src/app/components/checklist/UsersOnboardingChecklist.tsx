@@ -10,9 +10,9 @@ import {
     CheckListGmailForward,
     CheckListMobileStores,
     CheckListProtectInbox,
+    GmailSyncModal,
     useModalState,
-} from '@proton/components/components';
-import { GmailSyncModal } from '@proton/components/containers';
+} from '@proton/components';
 import { useActiveBreakpoint, useLocalState, useUser } from '@proton/components/hooks';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';

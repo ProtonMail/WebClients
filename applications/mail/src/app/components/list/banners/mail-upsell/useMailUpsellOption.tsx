@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { useTheme } from '@proton/components/containers';
+import { useTheme } from '@proton/components';
 import { MAIL_APP_NAME, PROTON_SENTINEL_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

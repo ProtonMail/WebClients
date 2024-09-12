@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
-import { Copy } from '@proton/components/components';
+import { Copy } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';

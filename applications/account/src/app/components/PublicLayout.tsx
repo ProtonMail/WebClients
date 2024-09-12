@@ -1,7 +1,6 @@
-import * as React from 'react';
 import type { ReactNode } from 'react';
 
-import { ProtonLogo } from '@proton/components/components';
+import { ProtonLogo } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 interface PublicLayoutProps {

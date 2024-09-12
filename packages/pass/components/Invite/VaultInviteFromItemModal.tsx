@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import type { ModalProps } from '@proton/components/components';
-import { ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import type { ModalProps } from '@proton/components';
+import { ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';

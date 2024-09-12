@@ -2,8 +2,17 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import type { IconName } from '@proton/components/components';
-import { Icon, Info, Option, SelectTwo, Tooltip, useModalState } from '@proton/components/components';
+import type { IconName } from '@proton/components';
+import {
+    Icon,
+    Info,
+    MailShortcutsModal,
+    Option,
+    SelectTwo,
+    Tooltip,
+    useKeyTransparencyContext,
+    useModalState,
+} from '@proton/components';
 import {
     DefaultQuickSettings,
     QuickSettingsButton,
@@ -14,7 +23,6 @@ import DrawerAllSettingsView from '@proton/components/components/drawer/views/qu
 import DrawerDownloadApps from '@proton/components/components/drawer/views/quickSettings/DrawerDownloadApps';
 import { DrawerAppScrollContainer, DrawerAppSection } from '@proton/components/components/drawer/views/shared';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
-import { MailShortcutsModal, useKeyTransparencyContext } from '@proton/components/containers';
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
 import ToggleAssistant from '@proton/components/containers/general/ToggleAssistant/ToggleAssistant';
 import ToggleAssistantEnvironment from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantEnvironment';

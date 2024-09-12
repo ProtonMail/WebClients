@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { Input } from '@proton/atoms/Input';
-import type { AddressesAutocompleteItem } from '@proton/components/components';
+import type { AddressesAutocompleteItem } from '@proton/components';
 import {
     AutocompleteList,
     Marks,
@@ -10,7 +10,7 @@ import {
     getRecipientFromAutocompleteItem,
     useAutocomplete,
     useAutocompleteFilter,
-} from '@proton/components/components';
+} from '@proton/components';
 import { useContactEmails } from '@proton/components/hooks';
 
 interface Props {

@@ -5,9 +5,8 @@ import noop from 'lodash/noop';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import type { ModalOwnProps } from '@proton/components/components';
-import { DropdownSizeUnit, Option, SelectTwo } from '@proton/components/components';
-import { useKTVerifier } from '@proton/components/containers';
+import type { ModalOwnProps } from '@proton/components';
+import { DropdownSizeUnit, Option, SelectTwo, useKTVerifier } from '@proton/components';
 import {
     useAddresses,
     useApi,

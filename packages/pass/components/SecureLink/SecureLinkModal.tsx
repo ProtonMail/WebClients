@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { type ModalProps, ModalTwoHeader } from '@proton/components/components';
+import { type ModalProps, ModalTwoHeader } from '@proton/components';
 import { presentListItem } from '@proton/pass/components/Item/List/utils';
 import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';

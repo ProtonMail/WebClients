@@ -1,4 +1,4 @@
-import { AddressesInputItem } from '@proton/components/components';
+import { AddressesInputItem } from '@proton/components';
 
 import type { ShareInvitee } from '../../../../store';
 import { getAddressInputItemAttributes } from './helpers/getAddressInputItemAttributes';

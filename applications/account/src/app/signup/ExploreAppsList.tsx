@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, Logo } from '@proton/components/components';
+import { Icon, Logo } from '@proton/components';
 import EarlyAccessBadge from '@proton/components/components/earlyAccessBadge/EarlyAccessBadge';
 import useLoading from '@proton/hooks/useLoading';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';

@@ -13,6 +13,7 @@ import {
     AutomaticSubscriptionModal,
     CancelB2bSubscriptionSection,
     CancelSubscriptionSection,
+    CancellationReminderSection,
     CreditsSection,
     DeleteSection,
     DowngradeSubscriptionSection,
@@ -55,7 +56,6 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
-import { CancellationReminderSection } from '@proton/components/containers';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
 import useConvertExternalAddresses from '@proton/components/containers/organization/useConvertExternalAddresses';

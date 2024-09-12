@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
-import type { ModalOwnProps } from '@proton/components/components';
-import { Prompt } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components';
+import { Prompt, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletPlaneImg from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';

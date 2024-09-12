@@ -1,4 +1,4 @@
-import { FeatureCode } from '@proton/components/containers';
+import { FeatureCode } from '@proton/components';
 import { useFeature, useUser } from '@proton/components/hooks';
 
 const useScheduleSendFeature = () => {

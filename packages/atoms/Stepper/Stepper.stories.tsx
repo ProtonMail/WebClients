@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { RadioGroup } from '@proton/components/components';
+import { RadioGroup } from '@proton/components';
 
 import { Button } from '../Button';
 import Step from './Step';

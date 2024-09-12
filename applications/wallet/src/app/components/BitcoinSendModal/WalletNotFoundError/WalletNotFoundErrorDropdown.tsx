@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 
 import './WalletNotFoundErrorDropdown.scss';
 

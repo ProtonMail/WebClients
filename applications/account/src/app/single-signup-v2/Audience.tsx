@@ -1,4 +1,4 @@
-import { Tabs } from '@proton/components/components';
+import { Tabs } from '@proton/components';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import type { SignupConfiguration } from './interface';

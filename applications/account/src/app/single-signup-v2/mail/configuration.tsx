@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { MailLogo } from '@proton/components/components';
+import { MailLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getFreeMailStorageFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getSupport } from '@proton/components/containers/payments/features/highlights';

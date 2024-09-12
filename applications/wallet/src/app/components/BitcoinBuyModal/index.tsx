@@ -4,7 +4,7 @@ import first from 'lodash/first';
 import { c } from 'ttag';
 
 import type { WasmApiCountry, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
-import { Loader, type ModalOwnProps } from '@proton/components/components';
+import { Loader, type ModalOwnProps } from '@proton/components';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { toWalletAccountSelectorOptions } from '@proton/wallet';
 

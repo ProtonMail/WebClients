@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { type WasmInviteNotificationType } from '@proton/andromeda';
-import type { ModalOwnProps } from '@proton/components/components';
-import { Prompt } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components';
+import { Prompt } from '@proton/components';
 import walletUser from '@proton/styles/assets/img/wallet/wallet-user.jpg';
 
 import { Button } from '../../../atoms';

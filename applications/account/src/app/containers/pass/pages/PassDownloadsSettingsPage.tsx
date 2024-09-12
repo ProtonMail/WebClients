@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { ButtonLike, Card } from '@proton/atoms';
-import { DownloadClientCard, SettingsLink } from '@proton/components/components';
-import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
+import { DownloadClientCard, SettingsLink, SettingsParagraph, SettingsSectionWide } from '@proton/components';
 import { usePlans, useUser } from '@proton/components/hooks';
 import { PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { clients } from '@proton/shared/lib/pass/constants';

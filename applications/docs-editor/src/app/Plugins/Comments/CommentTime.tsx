@@ -1,4 +1,4 @@
-import { TimeIntl } from '@proton/components/components'
+import { TimeIntl } from '@proton/components'
 import { ServerTime } from '@proton/docs-shared'
 import { useMemo } from 'react'
 import { c } from 'ttag'

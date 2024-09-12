@@ -2,7 +2,7 @@ import { isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms/Kbd';
-import { EllipsisLoader } from '@proton/components/components';
+import { EllipsisLoader } from '@proton/components';
 import { altKey, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 
 import { formatSimpleDate } from 'proton-mail/helpers/date';

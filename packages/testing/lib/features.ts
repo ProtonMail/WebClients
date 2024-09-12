@@ -1,4 +1,4 @@
-import type { FeatureCode } from '@proton/components/containers';
+import type { FeatureCode } from '@proton/components';
 
 import { addApiMock } from './api';
 

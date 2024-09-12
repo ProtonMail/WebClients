@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Vr } from '@proton/atoms/Vr';
-import { Icon, Tooltip } from '@proton/components/components';
+import { Icon, Tooltip } from '@proton/components';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, useAssistant } from '@proton/llm/lib';
 import type { ActionType } from '@proton/llm/lib/types';

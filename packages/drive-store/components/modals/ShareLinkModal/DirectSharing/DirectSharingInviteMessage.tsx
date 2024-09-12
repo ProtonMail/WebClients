@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Checkbox, Icon, InputFieldTwo, TextAreaTwo, Tooltip } from '@proton/components/components';
+import { Checkbox, Icon, InputFieldTwo, TextAreaTwo, Tooltip } from '@proton/components';
 import { SHARE_INVITE_MESSAGE_MAX_LENGTH } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 

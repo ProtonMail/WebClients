@@ -3,7 +3,7 @@ import { type FC, useMemo, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { type IconName, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
+import { type IconName, ModalTwoContent, ModalTwoFooter } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
