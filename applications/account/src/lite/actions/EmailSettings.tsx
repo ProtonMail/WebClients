@@ -36,7 +36,13 @@ import MobileSectionRow from '../components/MobileSectionRow';
 
 import './MobileSettings.scss';
 
-const EmailSettings = ({ layout }: { layout: (children: React.ReactNode, props?: any) => React.ReactNode }) => {
+const EmailSettings = ({
+    layout,
+    loader,
+}: {
+    layout: (children: React.ReactNode, props?: any) => React.ReactNode;
+    loader: React.ReactNode;
+}) => {
     const api = useApi();
     const { call } = useEventManager();
 
@@ -46,18 +52,19 @@ const EmailSettings = ({ layout }: { layout: (children: React.ReactNode, props?:
     const [loadingSwipeRight, withLoadingSwipeRight] = useLoading();
     const [loadingNextMessageOnMoveToggle, withLoadingNextMessageOnMoveToggle] = useLoading();
 
-    const [
-        {
-            AutoDeleteSpamAndTrashDays,
-            AlmostAllMail,
-            DelaySendSeconds,
-            SwipeLeft,
-            SwipeRight,
-            ViewMode,
-            NextMessageOnMove,
-        } = DEFAULT_MAILSETTINGS,
-    ] = useMailSettings();
-    const [user] = useUser();
+    const [user, loadingUser] = useUser();
+    const [mailSettings = DEFAULT_MAILSETTINGS, loadingMailSettings] = useMailSettings();
+    const {
+        AutoDeleteSpamAndTrashDays,
+        AlmostAllMail,
+        DelaySendSeconds,
+        SwipeLeft,
+        SwipeRight,
+        ViewMode,
+        NextMessageOnMove,
+    } = mailSettings;
+    const loading = loadingMailSettings || loadingUser;
+
     const { createNotification } = useNotifications();
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
@@ -94,6 +101,10 @@ const EmailSettings = ({ layout }: { layout: (children: React.ReactNode, props?:
         await call();
         notifyPreferenceSaved();
     };
+
+    if (loading) {
+        return loader;
+    }
 
     return layout(
         <div className="mobile-settings">
