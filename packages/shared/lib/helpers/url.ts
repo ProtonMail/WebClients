@@ -1,5 +1,7 @@
 import { stripLeadingSlash, stripTrailingSlash } from '@proton/shared/lib/helpers/string';
 
+import { type ReturnUrlContext } from '../authentication/fork';
+import { returnUrlContextKey, returnUrlKey } from '../authentication/fork/constants';
 import type { APP_NAMES } from '../constants';
 import { VPN_HOSTNAME } from '../constants';
 import { APPS, APPS_CONFIGURATION, DOH_DOMAINS, LINK_TYPES } from '../constants';
@@ -420,4 +422,19 @@ export const getVpnAccountUrl = (location = window.location) => {
     }
     const secondLevelDomain = getSecondLevelDomain(location.hostname);
     return `https://vpn.${secondLevelDomain}`;
+};
+
+export const getUrlWithReturnUrl = (
+    url: string,
+    {
+        returnUrl = getPathFromLocation(window.location),
+        context,
+    }: { returnUrl?: string; context?: ReturnUrlContext } = {}
+) => {
+    const urlWithReturnUrl = new URL(url);
+    urlWithReturnUrl.searchParams.append(returnUrlKey, returnUrl);
+    if (context) {
+        urlWithReturnUrl.searchParams.append(returnUrlContextKey, context);
+    }
+    return urlWithReturnUrl.toString();
 };

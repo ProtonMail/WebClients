@@ -57,11 +57,5 @@ export const useBookmarksPublicView = ({ customPassword, user, isAuthLoading }: 
         countActionWithTelemetry(Actions.AddToBookmark);
     };
 
-    return {
-        urlPassword,
-        isLoading,
-        isLoggedIn: !!user,
-        addBookmark: handleAddBookmark,
-        isAlreadyBookmarked,
-    };
+    return { isLoading, isLoggedIn: !!user, addBookmark: handleAddBookmark, isAlreadyBookmarked };
 };
