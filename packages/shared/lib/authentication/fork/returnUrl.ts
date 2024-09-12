@@ -1,6 +1,5 @@
 import { getParsedPathWithoutLocalIDBasename } from '../createAuthenticationStore';
-
-const returnUrlKey = 'returnUrl';
+import { returnUrlContextKey, returnUrlKey } from './constants';
 
 export const getReturnUrlParameter = (searchParams: URLSearchParams) => {
     try {
@@ -15,7 +14,6 @@ export const getReturnUrlParameter = (searchParams: URLSearchParams) => {
     } catch {}
 };
 
-const returnUrlContextKey = 'returnUrlContext';
 export type ReturnUrlContext = 'private' | 'public';
 
 export const getReturnUrlContextParameter = (searchParams: URLSearchParams): ReturnUrlContext => {
