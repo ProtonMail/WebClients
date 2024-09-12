@@ -1,19 +1,27 @@
 {
     "name": "@proton/icons",
+    "version": "0.0.1",
+    "sideEffects": false,
     "files": [
         "lib",
         "assets"
     ],
     "scripts": {
-        "build": "tsx ./bin/generateReactIcons.ts && tsc -P tsconfig.json && rm -rf tmp/",
+        "build": "yarn generate && tsc -P build.tsconfig.json",
+        "generate": "tsx ./bin/generateReactIcons.ts",
         "prepack": "yarn build"
     },
+    "dependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    },
     "devDependencies": {
+        "@types/mustache": "^4.2.5",
         "@types/react": "^18.3.3",
         "jsdom": "^24.1.1",
-        "react": "^18.3.1",
+        "mustache": "^4.2.0",
+        "prettier": "^3.3.3",
         "tsx": "^4.17.0",
         "typescript": "^5.5.4"
-    },
-    "packageManager": "yarn@4.4.0"
+    }
 }

@@ -3,14 +3,9 @@ import { type FC, type ReactNode, useEffect, useState } from 'react';
 import { setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 import { WithExtensionLocale } from 'proton-pass-extension/lib/hooks/useExtensionLocale';
 
-import {
-    Icons,
-    ModalsChildren,
-    ModalsProvider,
-    NotificationsChildren,
-    NotificationsProvider,
-} from '@proton/components';
+import { ModalsChildren, ModalsProvider, NotificationsChildren, NotificationsProvider } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
+import Icons from '@proton/icons/Icons';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { type ClientEndpoint } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
