@@ -669,6 +669,9 @@
       "Alias options could not be resolved": [
         "Les options d'alias n'ont pas pu être obtenues."
       ],
+      "An error occurred while resuming your session": [
+        "Une erreur s'est produite lors de la reprise de votre session."
+      ],
       "Authentication error": [
         "Erreur d'authentification"
       ],
@@ -1557,6 +1560,9 @@
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Veuillez confirmer votre mot de passe supplémentaire afin de permettre le verrouillage automatique avec votre mot de passe supplémentaire."
       ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Veuillez confirmer votre mot de passe supplémentaire afin d'exporter vos données ${ PASS_APP_NAME }."
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Veuillez confirmer votre mot de passe supplémentaire afin d'enlever votre verrouillage actuel."
       ],
@@ -1987,7 +1993,7 @@
         "Ordre alphabétique"
       ],
       "Always show username field": [
-        "Toujours afficher le champ du nom d'utilisateur"
+        "Toujours afficher le champ de nom utilisateur"
       ],
       "Application logs": [
         "Journaux de l'application"
@@ -3097,7 +3103,7 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Tous les éléments dans la corbeille seront définitivement supprimés. Vous ne pouvez pas annuler cette action."
       ],
-      "An error occured while exporting your data": [
+      "An error occurred while exporting your data": [
         "Une erreur s'est produite pendant l'exportation de vos données."
       ],
       "At least one email address is required": [

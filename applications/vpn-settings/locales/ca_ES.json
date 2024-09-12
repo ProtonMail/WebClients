@@ -1382,7 +1382,7 @@
         "República del Congo"
       ],
       "Congo (The Democratic Republic of the)": [
-        "Congo, (República Democràtica del)"
+        "República Democràtica del Congo"
       ],
       "Congo, Democratic Republic of the": [
         "Congo, República Democràtica del"
@@ -1568,7 +1568,7 @@
         "Irlanda"
       ],
       "Islamic Republic of Iran": [
-        "República Islàmica de l'Iran"
+        "Iran"
       ],
       "Isle of Man": [
         "Illa de Man"
@@ -1601,7 +1601,7 @@
         "Kiribati"
       ],
       "Korea (Democratic People's Republic of)": [
-        "Corea (República Popular Democràtica)"
+        "Corea del Nord"
       ],
       "Korea (Republic of)": [
         "Corea (República)"
@@ -1637,7 +1637,7 @@
         "Líbia"
       ],
       "Libyan Arab Jamahiriya": [
-        "Líbia (Jamahiriya Àrab)"
+        "Líbia"
       ],
       "Liechtenstein": [
         "Liechtenstein"
@@ -3243,7 +3243,7 @@
     },
     "Hint": {
       "Add this record to your domain in the control panel of your domain name registrar": [
-        "Afegiu aquest registre al domini, al panell de control del registrador de noms de domini"
+        "Afegiu aquest registre al domini, al tauler de control del registrador de noms de domini"
       ],
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
@@ -3471,7 +3471,7 @@
         "Esteu segur que voleu esborrar els privilegis d'administració d'aquest usuari?"
       ],
       "Are you sure you want to remove the domain ${ boldDomain }?": [
-        "Esteu segur que voleu esborrar l'element «${ boldDomain }»?"
+        "Segur que voleu esborrar el domini «${ boldDomain }»?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "Demaneu a l'administrador de l'organització que configuri passarel·les."
@@ -4389,7 +4389,7 @@
         "Gràcies per donar suport a la nostra missió de construir una Internet millor amb la privacitat i la llibertat en primer lloc."
       ],
       "The credentials from your Identity Provider will be deleted.": [
-        "Se suprimiran les credencials del vostre proveïdor d'identitat."
+        "S'eliminaran les credencials del vostre proveïdor d'identitat."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "El recompte de descàrregues inclou tant les descàrregues reals com les instàncies en què els fitxers es previsualitzen."
@@ -4470,7 +4470,7 @@
         "S'esborrarà qualsevol mètode d'A2F activat."
       ],
       "This will remove SSO for ${ boldDomainName }.": [
-        "S'esborrarà l'inici de sessió únic (SSO) per ${ boldDomainName }."
+        "Això esborrarà l'inici de sessió únic (SSO) per a ${ boldDomainName }."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Això reemplaçarà la vostra contrasenya temporal. Ho utilitzareu per accedir al vostre compte ${ BRAND_NAME } en el futur."
@@ -6206,7 +6206,7 @@
         "Protegiu ${ n } dispositius alhora"
       ],
       "Quickly craft replies": [
-        "Crea ràpidament les respostes"
+        "Crea respostes ràpidament"
       ],
       "Recover previous file versions": [
         "Recupera les versions anteriors del fitxer"
@@ -6946,7 +6946,7 @@
     },
     "Pass B2B onboarding spotlight": {
       "Go to your vault to manage your passwords, aliases, and more.": [
-        "Aneu a la vostra caixa forta per gestionar les contrasenyes, àlies, etc."
+        "Aneu a la vostra caixa forta per a gestionar les contrasenyes, àlies, etc."
       ],
       "Set up your organization": [
         "Configureu la vostra organització"
@@ -7870,7 +7870,7 @@
         "Ens posarem en contacte de nou quan hi hagi disponible el restabliment de contrasenya."
       ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Podeu comprovar l'estat de la vostra sol·licitud en qualsevol moment en la ${ accountAndPasswordSectionLink } de les preferències."
+        "Podeu comprovar l'estat de la vostra sol·licitud en qualsevol moment ${ accountAndPasswordSectionLink } de les preferències."
       ]
     },
     "session_recovery:initiation:link": {
@@ -9396,7 +9396,7 @@
         "Esdeveniment"
       ],
       "Every member of the organization can access": [
-        "Cada membre de l'organització pot accedir."
+        "Tots els membres de l'organització poden accedir."
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "No s'ha pogut crear ${ failedUsers.length } compte d'usuari.",
@@ -9644,7 +9644,7 @@
         "Text"
       ],
       "There are no groups": [
-        "No hi han grups."
+        "No hi ha grups."
       ],
       "Time": [
         "Hora"
@@ -9796,7 +9796,7 @@
         "Característica en accés anticipat"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
-        "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Obteniu el resum del certificat del proveïdor d'identitat."
+        "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Obteniu l'empremta electrònica del certificat del proveïdor d'identitat."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
@@ -9820,7 +9820,7 @@
         "Els usuaris veuran el vostre logo en comptes de la icona de ${ BRAND_NAME } quan iniciïn sessió a les nostres aplicacions web."
       ],
       "Usually an URL that contains the identity provider's name within": [
-        "Normalment un URL que conté el nom del proveïdor d'identitat dins"
+        "Normalment, un URL que conté el nom del proveïdor d'identitat"
       ],
       "Verified email address": [
         "Adreça de correu electrònic verificada"
