@@ -1,15 +1,20 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import type { WasmApiWalletTransaction, WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
+import type { WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
 import { useModalStateWithData } from '@proton/components/components';
 import { useUserKeys } from '@proton/components/hooks';
-import { type IWasmApiWalletData } from '@proton/wallet';
+import {
+    type IWasmApiWalletData,
+    type TransactionData,
+    buildNetworkTransactionByHashedTxId,
+    decryptWalletKeyForHmac,
+} from '@proton/wallet';
+import { type WalletTransactionsThunkArg, useApiWalletTransactionData } from '@proton/wallet/store';
 
 import { ITEMS_PER_PAGE } from '../../../constants';
 import { useBitcoinBlockchainContext } from '../../../contexts';
 import { useWalletDrawerContext } from '../../../contexts/WalletDrawerContext';
 import { useLocalPagination } from '../../../hooks/useLocalPagination';
-import { type TransactionData, useWalletTransactions } from '../../../hooks/useWalletTransactions';
 import { getAccountTransactions, getThemeForWallet, getWalletTransactions } from '../../../utils';
 
 export const useTransactionTable = ({
@@ -22,8 +27,9 @@ export const useTransactionTable = ({
     sortOrder: WasmSortOrder;
 }) => {
     const walletId = wallet.Wallet.ID;
-    const { walletsChainData, getSyncingData, apiWalletsData } = useBitcoinBlockchainContext();
-    const { openDrawer, drawer, setDrawerData } = useWalletDrawerContext();
+    const { walletsChainData, getSyncingData, apiWalletsData, accountIDByDerivationPathByWalletID } =
+        useBitcoinBlockchainContext();
+    const { openDrawer } = useWalletDrawerContext();
 
     const syncingData = getSyncingData(walletId, walletAccountId);
     const isSyncingWalletData = Boolean(syncingData?.syncing || syncingData?.error);
@@ -79,11 +85,49 @@ export const useTransactionTable = ({
     // We display pagination if we aren't on the first page anymore OR if there are transaction
     const shouldDisplayPaginator = currentPage > 0 || canGoNext;
 
-    const { transactionDetails, loadingRecordInit, loadingApiData, handleUpdatedTransaction } = useWalletTransactions({
-        transactions: slicedTransactions,
-        userKeys,
-        wallet,
+    const [apiWalletTransactionDataArg, setApiWalletTransactionDataArg] = useState<WalletTransactionsThunkArg>({
+        networkTransactionByHashedTxId: {},
+        walletId: wallet.Wallet.ID,
+        walletKey: wallet.WalletKey?.DecryptedKey,
+        walletHmacKey: undefined,
+        accountIDByDerivationPathByWalletID,
     });
+
+    const { networkTransactionByHashedTxId } = apiWalletTransactionDataArg;
+
+    useEffect(() => {
+        const run = async () => {
+            const { WalletKey } = wallet;
+
+            if (!userKeys || !WalletKey) {
+                return;
+            }
+
+            const walletHmacKey = await decryptWalletKeyForHmac(
+                WalletKey.WalletKey,
+                WalletKey.WalletKeySignature,
+                userKeys
+            );
+
+            const networkTransactionByHashedTxId = await buildNetworkTransactionByHashedTxId(
+                slicedTransactions,
+                walletHmacKey
+            );
+
+            setApiWalletTransactionDataArg({
+                networkTransactionByHashedTxId,
+                walletId: wallet.Wallet.ID,
+                walletKey: wallet.WalletKey?.DecryptedKey,
+                walletHmacKey,
+                accountIDByDerivationPathByWalletID,
+            });
+        };
+
+        void run();
+    }, [accountIDByDerivationPathByWalletID, wallet, slicedTransactions, userKeys]);
+
+    const [apiWalletTransactionData, loadingApiWalletTransactionData] =
+        useApiWalletTransactionData(apiWalletTransactionDataArg);
 
     const [noteModalState, setNoteModalState] = useModalStateWithData<{ transaction: TransactionData }>();
     const [unknownSenderModal, setUnknownSenderModal] = useModalStateWithData<{ transaction: TransactionData }>();
@@ -108,20 +152,6 @@ export const useTransactionTable = ({
         [apiWalletsData, openDrawer, setNoteModalState, setUnknownSenderModal, wallet.Wallet.ID]
     );
 
-    const handleTxUpdate = useCallback(
-        (tx: WasmApiWalletTransaction, oldTx: TransactionData) => {
-            void handleUpdatedTransaction(tx, oldTx).then((transaction) => {
-                noteModalState.onClose?.();
-                unknownSenderModal.onClose?.();
-
-                if (drawer?.data.kind === 'transaction-data' && transaction) {
-                    setDrawerData({ transaction });
-                }
-            });
-        },
-        [drawer?.data.kind, handleUpdatedTransaction, noteModalState, setDrawerData, unknownSenderModal]
-    );
-
     return {
         isSyncingWalletData,
 
@@ -133,15 +163,13 @@ export const useTransactionTable = ({
         handleNext,
         handlePrev,
 
-        loadingRecordInit,
-        loadingApiData,
-        transactionDetails,
-        handleUpdatedTransaction,
+        apiWalletTransactionData,
+        networkTransactionByHashedTxId,
+        loadingApiWalletTransactionData,
 
         noteModalState,
         unknownSenderModal,
         openNoteModal,
-        handleTxUpdate,
         handleClickRow,
     };
 };

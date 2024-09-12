@@ -1,4 +1,4 @@
-import { WasmAccount, WasmWallet } from '@proton/andromeda';
+import type { WasmAccount, WasmWallet } from '@proton/andromeda';
 
 export type AccountWithChainData = {
     account: WasmAccount;

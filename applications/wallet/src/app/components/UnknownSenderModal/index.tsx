@@ -4,7 +4,6 @@ import { useCallback, useEffect, useState } from 'react';
 import compact from 'lodash/compact';
 import { c } from 'ttag';
 
-import type { WasmApiWalletTransaction } from '@proton/andromeda';
 import type { ModalOwnProps } from '@proton/components';
 import { Checkbox, Tooltip } from '@proton/components';
 import { useSaveVCardContact } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
@@ -15,15 +14,14 @@ import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import walletNotFoundImg from '@proton/styles/assets/img/illustrations/wallet_not_found.svg';
 import clsx from '@proton/utils/clsx';
-import { encryptPgp, useWalletApi } from '@proton/wallet';
+import { type SenderObject, type TransactionData, encryptPgp, useWalletApi } from '@proton/wallet';
+import { updateWalletTransaction, useWalletDispatch } from '@proton/wallet/store';
 
 import { Button, Input, Modal } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
-import type { SenderObject, TransactionData } from '../../hooks/useWalletTransactions';
 
 export interface WalletCreationModalOwnProps {
     walletTransaction: TransactionData;
-    onUpdate: (updated: WasmApiWalletTransaction, oldTransaction: TransactionData) => void;
 }
 
 type Props = ModalOwnProps & WalletCreationModalOwnProps;
@@ -44,9 +42,10 @@ const senderEmail = (tx: TransactionData) => {
     }
 };
 
-export const UnknownSenderModal = ({ walletTransaction, onUpdate, ...modalProps }: Props) => {
+export const UnknownSenderModal = ({ walletTransaction, ...modalProps }: Props) => {
     const [contacts] = useContactEmails();
     const [shouldSaveAsContact, setShouldSaveAsContact] = useState(false);
+    const dispatch = useWalletDispatch();
 
     const [name, setName] = useState(senderName(walletTransaction));
     const [email, setEmail] = useState(senderEmail(walletTransaction));
@@ -128,7 +127,7 @@ export const UnknownSenderModal = ({ walletTransaction, onUpdate, ...modalProps 
 
             const encryptedSender = await encryptPgp(serialisedSender, [primaryUserKey.privateKey]);
 
-            const updatedWalletTransaction = await walletApi
+            await walletApi
                 .clients()
                 .wallet.updateExternalWalletTransactionSender(
                     walletTransaction.apiData.WalletID,
@@ -142,7 +141,16 @@ export const UnknownSenderModal = ({ walletTransaction, onUpdate, ...modalProps 
             }
 
             createNotification({ text: c('Unknown sender').t`Transaction sender has been updated succesfully` });
-            onUpdate(updatedWalletTransaction.Data, walletTransaction);
+
+            // Typeguard
+            if (walletTransaction.apiData.HashedTransactionID) {
+                dispatch(
+                    updateWalletTransaction({
+                        hashedTransactionId: walletTransaction.apiData.HashedTransactionID,
+                        update: { Sender: parsedSender },
+                    })
+                );
+            }
         } catch {
             createNotification({ text: c('Unknown sender').t`Transaction sender could not be updated` });
         }
