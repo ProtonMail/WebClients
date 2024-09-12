@@ -7,6 +7,7 @@ import type { Maybe } from '@proton/pass/types';
 import type { DomainCriterias } from '@proton/pass/types/worker/settings';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { omit } from '@proton/shared/lib/helpers/object';
+import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import { selectState } from './utils';
 
@@ -27,3 +28,4 @@ export const selectBetaEnabled = ({ settings }: State) => settings.beta ?? false
 export const selectLockMode = ({ settings }: State) => settings.lockMode ?? LockMode.NONE;
 export const selectLockEnabled = pipe(selectLockMode, (mode) => mode !== LockMode.NONE);
 export const selectShowUsernameField = ({ settings }: State) => settings.showUsernameField ?? false;
+export const selectTheme = ({ settings }: State): Maybe<ThemeTypes> => settings?.theme;
