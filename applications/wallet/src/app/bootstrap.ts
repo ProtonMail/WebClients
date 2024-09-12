@@ -68,6 +68,7 @@ export const bootstrapApp = async ({
                 : undefined) || (await bootstrap.loadSession({ authentication, api, pathname, searchParams }));
 
         const appVersion = getAppVersionStr(getClientID(config.APP_NAME), config.APP_VERSION);
+
         const walletApi = new WasmProtonWalletApiClient(
             appVersion,
             navigator.userAgent,
