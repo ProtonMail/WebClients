@@ -34,6 +34,7 @@ import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLin
 import { ThemeConnect } from '@proton/pass/components/Layout/Theme/ThemeConnect';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
@@ -52,7 +53,6 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
@@ -98,7 +98,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     getInitialTheme: () => {
         try {
             const settings = localStorage.getItem('settings');
-            return settings ? JSON.parse(settings).theme : ThemeTypes.PassDark;
+            return settings ? JSON.parse(settings).theme : PASS_DEFAULT_THEME;
         } catch {}
     },
 
