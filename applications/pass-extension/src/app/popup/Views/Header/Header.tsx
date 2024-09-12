@@ -1,6 +1,7 @@
 import { type FC } from 'react';
 
-import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
+import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
+import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 import { useOnboardingListener } from 'proton-pass-extension/lib/hooks/useOnboardingListener';
 
 import { Header as CoreHeader } from '@proton/components';
@@ -16,8 +17,9 @@ import type { ItemType } from '@proton/pass/types';
 import { MenuDropdown } from './MenuDropdown';
 
 export const Header: FC = () => {
-    const { ready, context, state } = usePopupContext();
-    const { domain, subdomain, hostname } = context?.url ?? {};
+    const { ready, initial } = usePopupContext();
+    const { url } = useExtensionContext();
+    const { domain, subdomain, hostname } = url ?? {};
 
     const { navigate } = useNavigation();
     const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
@@ -29,7 +31,7 @@ export const Header: FC = () => {
             <CoreHeader className="border-bottom h-auto p-2">
                 <div className="flex items-center gap-x-2 w-full">
                     <MenuDropdown />
-                    <SearchBar disabled={!ready} initial={state.initial.search} />
+                    <SearchBar disabled={!ready} initial={initial.search} />
                     <ItemQuickActions onCreate={onCreate} origin={subdomain ?? domain ?? hostname ?? null} />
                     <Spotlight />
                 </div>

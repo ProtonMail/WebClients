@@ -1,52 +1,53 @@
-import { useRef } from 'react';
-import { Provider as ReduxProvider } from 'react-redux';
+import { useCallback, useContext, useEffect } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 
-import { PopupProvider } from 'proton-pass-extension/lib/components/Context/PopupProvider';
-import { ExtensionApp } from 'proton-pass-extension/lib/components/Extension/ExtensionApp';
+import { ExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { ExtensionError } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
-import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
+import { ExtensionStore } from 'proton-pass-extension/lib/components/Extension/ExtensionStore';
 import { usePopupSizeSurgery } from 'proton-pass-extension/lib/hooks/usePopupSizeSurgery';
-import { createClientStore } from 'proton-pass-extension/lib/store/client-store';
 
-import { ErrorBoundary } from '@proton/components';
+import { ErrorBoundary, NotificationsContext } from '@proton/components';
+import { useNotifications } from '@proton/components/hooks';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
+import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 
 import { AppGuard } from './AppGuard';
+import { PopupProvider } from './PopupProvider';
 
 import './Popup.scss';
 
-const Popup = () => {
+export const Popup = () => {
     usePopupSizeSurgery();
 
-    const store = useRef<ReturnType<typeof createClientStore>>();
+    const notificationsManager = useContext(NotificationsContext);
+    const { createNotification } = useNotifications();
+    const enhance = useNotificationEnhancer();
+
+    const onWorkerMessage = useCallback((message: WorkerMessageWithSender) => {
+        if (message.type === WorkerMessageType.NOTIFICATION) {
+            createNotification(enhance(message.payload.notification));
+        }
+    }, []);
+
+    useEffect(() => notificationsManager.setOffset({ y: 10 }), []);
 
     return (
-        <ExtensionApp endpoint="popup" onDisconnect={() => window.location.reload()}>
-            {(ready) =>
-                ready && (
-                    <ReduxProvider
-                        store={(() =>
-                            store.current ??
-                            (store.current = createClientStore('popup', ExtensionContext.get().tabId)))()}
-                    >
-                        <ErrorBoundary component={<ExtensionError />}>
-                            <PopupProvider>
-                                <Router>
-                                    <NavigationProvider>
-                                        <Localized>
-                                            <AppGuard />
-                                        </Localized>
-                                    </NavigationProvider>
-                                </Router>
-                            </PopupProvider>
-                        </ErrorBoundary>
-                    </ReduxProvider>
-                )
-            }
-        </ExtensionApp>
+        <ExtensionStore>
+            <ExtensionClient onWorkerMessage={onWorkerMessage}>
+                <ErrorBoundary component={<ExtensionError />}>
+                    <PopupProvider>
+                        <Router>
+                            <NavigationProvider>
+                                <Localized>
+                                    <AppGuard />
+                                </Localized>
+                            </NavigationProvider>
+                        </Router>
+                    </PopupProvider>
+                </ErrorBoundary>
+            </ExtensionClient>
+        </ExtensionStore>
     );
 };
-
-export default Popup;

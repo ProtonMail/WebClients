@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
@@ -60,8 +61,7 @@ export const WithPinUnlock: FC<Props & { children: (locked: boolean, input: Reac
     children,
     ...props
 }) => {
-    const { appState } = useIFrameContext();
-    const { status } = appState;
+    const { status } = useAppState().state;
     const locked = clientSessionLocked(status);
     const input = locked ? <PinUnlock {...props} /> : null;
 
