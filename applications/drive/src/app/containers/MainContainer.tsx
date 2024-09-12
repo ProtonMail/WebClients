@@ -17,11 +17,14 @@ import DriveWindow from '../components/layout/DriveWindow';
 import DriveStartupModals from '../components/modals/DriveStartupModals';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
+import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
 import {
     DriveProvider,
     useActivePing,
+    useBookmarksActions,
     useDefaultShare,
     useDriveEventManager,
+    useDriveShareURLBookmarkingFeatureFlag,
     usePhotosFeatureFlag,
     useSearchControl,
 } from '../store';
@@ -29,6 +32,7 @@ import {
 import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
 import { VolumeType } from '../store/_volumes';
+import { getTokenFromSearchParams } from '../utils/url/token';
 import DevicesContainer from './DevicesContainer';
 import FolderContainer from './FolderContainer';
 import NoAccessContainer from './NoAccessContainer';
@@ -54,7 +58,7 @@ const InitContainer = () => {
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const { migrateShares } = useShareActions();
     const [loading, withLoading] = useLoading(true);
-    const [error, setError] = useState();
+    const [error, setError] = useState<Error>();
     const [defaultShareRoot, setDefaultShareRoot] =
         useState<typeof DEFAULT_VOLUME_INITIAL_STATE>(DEFAULT_VOLUME_INITIAL_STATE);
     const { searchEnabled } = useSearchControl();
@@ -63,23 +67,46 @@ const InitContainer = () => {
     const isPhotosEnabled = usePhotosFeatureFlag();
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { convertExternalInvitationsFromEvents } = useShareBackgroundActions();
-
+    const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
+    const { addBookmarkFromPrivateApp } = useBookmarksActions();
+    const { needToRedirectToPublicPage, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     useActivePing();
 
     useEffect(() => {
-        const initPromise = getDefaultShare()
-            .then(({ shareId, rootLinkId: linkId, volumeId }) => {
-                setDefaultShareRoot({ volumeId, shareId, linkId });
-            })
-            // We fetch it after, so we don't make to user share requests
-            .then(() => getDefaultPhotosShare().then((photosShare) => setHasPhotosShare(!!photosShare)))
-            .then(() => {
+        const abortController = new AbortController();
+        const initPromise = async () => {
+            try {
+                // In case the user Sign-in from the public page modal, we will redirect him back after we add the file/folder to his bookmarks
+                // In case the user Sign-up we just let him in the App (in /shared-with-me route)
+                // So we don't even load the app.
+                // See useSharedWithMeView.tsx for Sign-up logic
+
+                const token = isDriveShareUrlBookmarkingEnabled && getTokenFromSearchParams();
+                if (token && needToRedirectToPublicPage) {
+                    await addBookmarkFromPrivateApp(abortController.signal, {
+                        token,
+                        hideNotifications: true,
+                    });
+                    redirectToPublicPage(token);
+                }
+
+                await getDefaultShare().then(({ shareId, rootLinkId: linkId, volumeId }) =>
+                    setDefaultShareRoot({ volumeId, shareId, linkId })
+                );
+
+                // We fetch it after, so we don't make to user share requests
+                await getDefaultPhotosShare().then((photosShare) => setHasPhotosShare(!!photosShare));
                 void migrateShares();
-            })
-            .catch((err) => {
-                setError(err);
-            });
+            } catch (err) {
+                setError(err as unknown as Error);
+                cleanupUrl();
+            }
+        };
         void withLoading(initPromise);
+
+        return () => {
+            abortController.abort();
+        };
     }, []);
 
     useEffect(() => {

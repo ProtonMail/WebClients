@@ -8,9 +8,11 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import type { SortParams } from '../../components/FileBrowser';
 import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
+import { useRedirectToPublicPage } from '../../hooks/util/useRedirectToPublicPage';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
+import { getTokenFromSearchParams } from '../../utils/url/token';
+import { useBookmarksActions, useDriveShareURLBookmarkingFeatureFlag } from '../_bookmarks';
 import { useLink, useLinksListing } from '../_links';
 import { usePendingInvitationsListing } from '../_links/useLinksListing/usePendingInvitationsListing';
 import { useUserSettings } from '../_settings';
@@ -53,6 +55,8 @@ export default function useSharedWithMeView(shareId: string) {
         updatePendingInvitation,
         loadPendingInvitations,
     } = usePendingInvitationsListing();
+    const { addBookmarkFromPrivateApp } = useBookmarksActions();
+    const { cleanupUrl } = useRedirectToPublicPage();
 
     const loadSharedWithMeLinks = useCallback(async (signal: AbortSignal) => {
         await linksListing.loadLinksSharedWithMeLink(signal);
@@ -207,9 +211,17 @@ export default function useSharedWithMeView(shareId: string) {
         void withLoading(async () => loadSharedWithMeLinks(abortSignal)).catch(sendErrorReport);
         void withPendingLoading(async () => loadPendingInvitations(abortSignal)).catch(sendErrorReport);
         if (isDriveShareUrlBookmarkingEnabled) {
-            void withBookmarksLoading(async () => linksListing.loadLinksBookmarks(abortSignal, shareId)).catch(
-                sendErrorReport
-            );
+            void withBookmarksLoading(async () => {
+                // In case the user Sign-up from public page we will add the file to bookmarks and let him on shared-with-me section
+                // For Sign-in with redirection to public page logic, check MainContainer
+                const token = getTokenFromSearchParams();
+                if (token) {
+                    await addBookmarkFromPrivateApp(abortSignal, { token });
+                }
+                // Cleanup if there any token or redirectToPublic key in search params
+                cleanupUrl();
+                await linksListing.loadLinksBookmarks(abortSignal, shareId);
+            }).catch(sendErrorReport);
         }
     }, []);
 
