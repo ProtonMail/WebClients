@@ -6,9 +6,11 @@ import {
     getApiSubdomainUrl,
     getAppUrlFromApiUrl,
     getAppUrlRelativeToOrigin,
+    getPathFromLocation,
     getRelativeApiHostname,
     getSecondLevelDomain,
     getStaticURL,
+    getUrlWithReturnUrl,
     isAppFromURL,
     isValidHttpUrl,
     stringifySearchParams,
@@ -165,5 +167,22 @@ describe('stringifySearchParams()', () => {
                 coupon: 'test',
             })
         ).toBe('coupon=test');
+    });
+});
+
+describe('getUrlWithReturnUrl', () => {
+    it('should get passed url with returnUrl and returnUrlContext as search parameter', () => {
+        const location = { pathname: '/somePath', search: '?search=MySearch', hash: '#hash' } as Location;
+        const expectedUrl = 'https://mail.proton.me/?returnUrl=%2FsomePath%3Fsearch%3DMySearch%23hash';
+        expect(getUrlWithReturnUrl(mailUrl, { returnUrl: getPathFromLocation(location) })).toEqual(expectedUrl);
+    });
+
+    it('should be a URL from the current app with public context', () => {
+        const location = { pathname: '/somePath', search: '?search=MySearch', hash: '#hash' } as Location;
+        const expectedUrl =
+            'https://mail.proton.me/?returnUrl=%2FsomePath%3Fsearch%3DMySearch%23hash&returnUrlContext=public';
+        expect(getUrlWithReturnUrl(mailUrl, { returnUrl: getPathFromLocation(location), context: 'public' })).toEqual(
+            expectedUrl
+        );
     });
 });
