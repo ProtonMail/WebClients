@@ -1,3 +1,7 @@
 .onboarding-card {
-	background-color: var(--interaction-norm-minor-1);
+	background-color: var(--interaction-norm-minor-2);
+
+	&:hover {
+		background-color: var(--interaction-norm-minor-1);
+	}
 }

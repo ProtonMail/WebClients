@@ -1,0 +1,74 @@
+:root {
+	--shadow-raised-opacity: 0.35;
+
+	/* Vault colors */
+	--vault-unspecified: rgb(140 140 147);
+	--vault-custom: rgb(167 121 255);
+	--vault-heliotrope: rgb(167 121 255);
+	--vault-mauvelous: rgb(242 146 146);
+	--vault-marigold-yellow: rgb(247 215 117);
+	--vault-de-york: rgb(145 199 153);
+	--vault-jordy-blue: rgb(146 179 242);
+	--vault-lavender-magenta: rgb(235 141 214);
+	--vault-chestnut-rose: rgb(205 90 111);
+	--vault-porsche: rgb(228 163 103);
+	--vault-mercury: rgb(230 230 230);
+	--vault-water-leaf: rgb(158 226 230);
+	--pass-box-shadow: rgb(0 0 0 / 0.3);
+	--pass-content-box-shadow: rgb(14 14 14 / 0.8);
+	--pass-scroll-color: rgb(14 14 14 / 0.35);
+	--pass-loby-background: radial-gradient(
+			61.86% 61.86% at 50% 0%,
+			rgb(255 255 255 / 0.16) 0%,
+			rgb(255 255 255 / 0) 100%
+		),
+		#191927;
+	--pass-scroll-gradient-start: linear-gradient(180deg, var(--pass-scroll-color), transparent);
+	--pass-scroll-gradient-end: linear-gradient(0deg, var(--pass-scroll-color), transparent);
+}
+
+.pass-light {
+	--shadow-raised-opacity: 0.18;
+
+	/* Vault colors */
+	--vault-unspecified: rgb(140 140 147);
+	--vault-custom: #8849ff;
+	--vault-heliotrope: #8849ff;
+	--vault-mauvelous: #ff4949;
+	--vault-marigold-yellow: #cc6200;
+	--vault-de-york: #067;
+	--vault-jordy-blue: #3b88fc;
+	--vault-lavender-magenta: #dd11b0;
+	--vault-chestnut-rose: #cb0126;
+	--vault-porsche: #ff7a00;
+	--vault-mercury: #757575;
+	--vault-water-leaf: #149aa1;
+	--pass-box-shadow: rgb(0 0 0 / 0.15);
+	--pass-content-box-shadow: rgb(14 14 14 / 0.4);
+	--pass-scroll-color: rgb(14 14 14 / 0.1);
+	--pass-loby-background: radial-gradient(61.86% 61.86% at 50% 0%, rgb(255 255 255 / 0.16) 0%, rgb(48 45 69 / 0.2) 100%),
+		#f6f5f8;
+	--pass-scroll-gradient-start: linear-gradient(180deg, var(--pass-scroll-color), transparent);
+	--pass-scroll-gradient-end: linear-gradient(0deg, var(--pass-scroll-color), transparent);
+}
+
+.ui-lime,
+.ui-orange,
+.ui-red,
+.ui-teal,
+.ui-violet {
+	--focus-outline: var(--interaction-norm-major-2);
+	--focus-ring: var(--interaction-norm-minor-1);
+	--interaction-norm-hover: var(--interaction-norm-major-1);
+	--interaction-norm-active: var(--interaction-norm-major-2);
+	--interaction-weak-hover: var(--interaction-weak-major-1);
+	--interaction-weak-active: var(--interaction-weak-major-2);
+}
+
+.ui-lime,
+.ui-teal,
+.ui-violet {
+	--link-norm: var(--interaction-norm);
+	--link-hover: var(--interaction-norm-hover);
+	--link-active: var(--interaction-norm-active);
+}

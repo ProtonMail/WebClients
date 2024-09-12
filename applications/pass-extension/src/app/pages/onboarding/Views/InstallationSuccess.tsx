@@ -7,7 +7,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
-import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
+import PassTextLogo from '@proton/pass/components/Layout/Logo/PassTextLogo';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { chromeAPI } from '@proton/pass/lib/globals/browser';
 import type { MaybeNull } from '@proton/pass/types';
@@ -33,10 +33,6 @@ const getSteps = () => [
         description: c('Info').t`Click the icon to open it anytime.`,
     },
 ];
-
-const brandNameJSX = (
-    <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '1.75rem' }} key="brand" alt="" />
-);
 
 export const InstallationSuccess: FC = () => {
     const login = useRequestForkWithPermissions({ replace: true });
@@ -86,7 +82,9 @@ export const InstallationSuccess: FC = () => {
                                         alt={PASS_APP_NAME}
                                     />
                                 }
-                                <span>{brandNameJSX}</span>
+                                <span>
+                                    <PassTextLogo className="pass-lobby--brand-text mx-2 shrink-0 logo" />
+                                </span>
                             </div>
                             <h1 className="pass-onboarding--white-text mt-4 mb-8 text-semibold">{c('Title')
                                 .jt`Welcome to your new password manager!`}</h1>

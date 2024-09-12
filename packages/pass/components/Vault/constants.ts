@@ -1,5 +1,4 @@
 import type { IconName } from '@proton/components';
-import type { ColorRGB } from '@proton/pass/types';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
 
 const numericEntries = <T extends Record<number, any>>(
@@ -7,19 +6,19 @@ const numericEntries = <T extends Record<number, any>>(
 ): [number, T extends Record<any, infer U> ? U : never][] =>
     Object.keys(obj).map((key) => [Number(key), obj[Number(key)]]);
 
-export const VAULT_COLOR_MAP: Record<number, ColorRGB> = {
-    [VaultColor.COLOR_UNSPECIFIED]: '140 140 147',
-    [VaultColor.COLOR_CUSTOM]: '167 121 255',
-    [VaultColor.COLOR1]: '167 121 255',
-    [VaultColor.COLOR2]: '242 146 146',
-    [VaultColor.COLOR3]: '247 215 117',
-    [VaultColor.COLOR4]: '145 199 153',
-    [VaultColor.COLOR5]: '146 179 242',
-    [VaultColor.COLOR6]: '235 141 214',
-    [VaultColor.COLOR7]: '205 90 111',
-    [VaultColor.COLOR8]: '228 163 103',
-    [VaultColor.COLOR9]: '230 230 230',
-    [VaultColor.COLOR10]: '158 226 230',
+export const VAULT_COLOR_MAP: Record<number, string> = {
+    [VaultColor.COLOR_UNSPECIFIED]: '--vault-unspecified',
+    [VaultColor.COLOR_CUSTOM]: '--vault-custom',
+    [VaultColor.COLOR1]: '--vault-heliotrope',
+    [VaultColor.COLOR2]: '--vault-mauvelous',
+    [VaultColor.COLOR3]: '--vault-marigold-yellow',
+    [VaultColor.COLOR4]: '--vault-de-york',
+    [VaultColor.COLOR5]: '--vault-jordy-blue',
+    [VaultColor.COLOR6]: '--vault-lavender-magenta',
+    [VaultColor.COLOR7]: '--vault-chestnut-rose',
+    [VaultColor.COLOR8]: '--vault-porsche',
+    [VaultColor.COLOR9]: '--vault-mercury',
+    [VaultColor.COLOR10]: '--vault-water-leaf',
 };
 
 export const VAULT_COLORS = numericEntries(VAULT_COLOR_MAP);

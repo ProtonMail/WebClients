@@ -3,7 +3,7 @@
 	--gradient-end: 20% 280%;
 
 	& &--gradient {
-		color: var(--text-norm) !important;
+		color: var(--text-norm);
 		border-radius: var(--border-radius-md);
 		padding: 1px;
 		background: radial-gradient(
@@ -28,25 +28,24 @@
 
 		> button {
 			border-radius: var(--border-radius-md);
-			color: var(--text-norm) !important;
-			background: rgb(0 0 0 / 0.5);
+			color: var(--text-norm);
+			background: var(--backdrop-norm);
 		}
 
 		svg {
-			color: var(--text-norm) !important;
+			color: var(--text-norm);
 		}
 	}
 
 	& &--active {
-		color: var(--interaction-norm-contrast) !important;
+		color: var(--interaction-norm-contrast);
 
 		> button {
-			color: var(--interaction-norm-contrast) !important;
-			background: rgb(0 0 0 / 0);
+			background: transparent;
 		}
 
 		svg {
-			color: var(--interaction-norm-contrast) !important;
+			color: var(--interaction-norm-contrast);
 		}
 	}
 }
