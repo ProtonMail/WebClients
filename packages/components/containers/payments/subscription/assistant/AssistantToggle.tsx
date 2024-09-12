@@ -82,10 +82,8 @@ const AssistantToggle = () => {
                 <div className="flex gap-2 items-center">
                     <Icon name="pen-sparks" size={6} style={{ color: '#D132EA' }} />
                     <p className="m-0 text-bold text-2xl">{c('Info').t`${BRAND_NAME} Scribe writing assistant`}</p>
-                    {trialStatus === 'trial-ongoing' ? (
+                    {trialStatus === 'trial-ongoing' && (
                         <Badge type="info">{c('Assistant toggle').t`Trial in progress`}</Badge>
-                    ) : (
-                        <Badge type="success">{c('Assistant toggle').t`New`}</Badge>
                     )}
                 </div>
             </div>
