@@ -1,6 +1,7 @@
 import { Router } from 'react-router-dom';
 
 import * as config from 'proton-pass-web/app/config';
+import { getDefaultLocalID } from 'proton-pass-web/lib/auth';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { PASS_WEB_COMPAT } from 'proton-pass-web/lib/compatibility';
 import { core } from 'proton-pass-web/lib/core';
@@ -52,6 +53,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
 import { AppGuard } from './AppGuard';
@@ -109,6 +111,16 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
                     return dataURL;
                 })
                 .catch(noop);
+        },
+
+        getInitialTheme: async () => {
+            const theme = (await settings.resolve()).theme;
+
+            // Handle case when authService did not init yet so localID and settings can't be resolved
+            const fallbackSettings = localStorage.getItem(`settings::${getDefaultLocalID()}`);
+            const fallbackTheme = fallbackSettings ? JSON.parse(fallbackSettings).theme : ThemeTypes.PassDark;
+
+            return theme ?? fallbackTheme;
         },
 
         getLogs: logStore.read,
