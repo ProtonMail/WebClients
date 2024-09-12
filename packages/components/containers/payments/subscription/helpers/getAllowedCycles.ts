@@ -1,5 +1,5 @@
 import { isRegionalCurrency } from '@proton/components/payments/core';
-import type { FreeSubscription} from '@proton/shared/lib/constants';
+import type { FreeSubscription } from '@proton/shared/lib/constants';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';
 import { getPlan, isTrial } from '@proton/shared/lib/helpers/subscription';
@@ -43,9 +43,10 @@ function capMaximumCycle(
 
         { plan: PLANS.PASS, cycle: CYCLE.YEARLY },
 
-        { plan: PLANS.DUO, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
         { plan: PLANS.MAIL, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
         { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
+        { plan: PLANS.DUO, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
+        { plan: PLANS.BUNDLE, cycle: CYCLE.YEARLY, currencyPredicate: (currency) => isRegionalCurrency(currency) },
     ];
 
     const currencyMatches = (rule: PlanCapRule) => {

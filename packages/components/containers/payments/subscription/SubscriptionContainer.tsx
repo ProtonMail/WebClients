@@ -13,18 +13,9 @@ import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
-import {
-    APPS,
-    CYCLE,
-    DEFAULT_CURRENCY,
-    DEFAULT_CYCLE,
-    PLANS,
-    PLAN_TYPES,
-    isFreeSubscription,
-} from '@proton/shared/lib/constants';
+import { APPS, DEFAULT_CURRENCY, PLANS, PLAN_TYPES, isFreeSubscription } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { AddonGuard } from '@proton/shared/lib/helpers/addons';
-import { hasScribeAddon } from '@proton/shared/lib/helpers/addons';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import {
     getPlanCurrencyFromPlanIDs,
@@ -41,7 +32,6 @@ import {
     getIsB2BAudienceFromSubscription,
     getIsVpnPlan,
     getMaximumCycleForApp,
-    getNormalCycleFromCustomCycle,
     getPlanIDs,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
@@ -112,8 +102,9 @@ import SubscriptionCycleSelector from './cycle-selector/SubscriptionCycleSelecto
 import type { SelectedProductPlans } from './helpers';
 import { exclude24Months, getAutoCoupon, getDefaultSelectedProductPlans } from './helpers';
 import { getAllowedCycles } from './helpers/getAllowedCycles';
+import { getInitialCycle } from './helpers/getInitialCycle';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
-import { getBillingAddressStatus, notHigherThanAvailableOnBackend } from './helpers/payment';
+import { getBillingAddressStatus } from './helpers/payment';
 import { NoPaymentRequiredNote } from './modal-components/NoPaymentRequiredNote';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
@@ -187,20 +178,11 @@ export interface SubscriptionContainerProps {
     mode?: 'upsell-modal';
     upsellRef?: string;
     parent?: string;
-    withB2CAddons?: boolean;
     /**
      * If none specified, then shows all addons
      */
     allowedAddonTypes?: AddonGuard[];
     paymentsStatus: PaymentMethodStatusExtended;
-}
-
-// that's temporary solution to avoid merge conflicts with Mail B2B plans.
-// Proper solution should be done by changing getAllowedCycles() in SubscriptionCycleSelector
-function capCycle(showB2CAddons: boolean, cycle: CYCLE): CYCLE;
-function capCycle(showB2CAddons: boolean, cycle: CYCLE | undefined): CYCLE | undefined;
-function capCycle(showB2CAddons: boolean, cycle?: CYCLE): CYCLE | undefined {
-    return showB2CAddons ? Math.min(cycle ?? Number.POSITIVE_INFINITY, CYCLE.YEARLY) : cycle;
 }
 
 const SubscriptionContainer = ({
@@ -232,7 +214,6 @@ const SubscriptionContainer = ({
     freePlan,
     mode,
     parent,
-    withB2CAddons,
     allowedAddonTypes,
     paymentsStatus,
 }: SubscriptionContainerProps) => {
@@ -322,55 +303,35 @@ const SubscriptionContainer = ({
 
     const coupon = maybeCoupon || subscription.CouponCode || undefined;
 
-    const showB2CAddons = withB2CAddons || hasScribeAddon(subscription);
+    const defaultCycles = exclude24Months(planIDs, subscription, [
+        PLANS.VPN_PRO,
+        PLANS.VPN_BUSINESS,
+        PLANS.PASS_PRO,
+        PLANS.PASS_BUSINESS,
+        PLANS.MAIL_PRO,
+        PLANS.MAIL_BUSINESS,
+        PLANS.BUNDLE_PRO,
+        PLANS.BUNDLE_PRO_2024,
+    ]);
 
     const [model, setModel] = useState<Model>(() => {
         const step = getInitialCheckoutStep(planIDs, maybeStep);
 
-        let cycle = (() => {
-            if (step === SUBSCRIPTION_STEPS.PLAN_SELECTION) {
-                if (app === APPS.PROTONPASS) {
-                    return CYCLE.YEARLY;
-                }
-                if (maybeCycle) {
-                    return maybeCycle;
-                }
-                return DEFAULT_CYCLE;
-            }
-
-            if (maybeCycle) {
-                return maybeCycle;
-            }
-
-            if (isFreeSubscription(subscription)) {
-                return DEFAULT_CYCLE;
-            }
-
-            /**
-             * Users that are on the 15 or 30-month cycle should not default to that,
-             * e.g. when clicking "explore other plans".
-             * The condition also includes the cycle of upcoming subscription. The upcoming cycle must be
-             * longer than the current cycle, according to the backend logic. That's why it takes precedence and the
-             * frontend also considers it to be longer.
-             * */
-            const cycle =
-                getNormalCycleFromCustomCycle(subscription.UpcomingSubscription?.Cycle) ??
-                getNormalCycleFromCustomCycle(subscription?.Cycle) ??
-                DEFAULT_CYCLE;
-
-            return cycle;
-        })();
-
-        cycle = getNormalCycleFromCustomCycle(
-            Math.max(
-                capCycle(showB2CAddons, cycle),
-                subscription?.Cycle ?? Number.NEGATIVE_INFINITY,
-                subscription?.UpcomingSubscription?.Cycle ?? Number.NEGATIVE_INFINITY
-            )
-        );
-        cycle = notHigherThanAvailableOnBackend(planIDs, plansMap, cycle);
-
         const currency = getPlanCurrencyFromPlanIDs(plansMap, planIDs) ?? preferredCurrency;
+
+        const cycle = getInitialCycle(
+            maybeCycle,
+            subscription,
+            planIDs,
+            plansMap,
+            step === SUBSCRIPTION_STEPS.PLAN_SELECTION,
+            app,
+            minimumCycle,
+            maximumCycle,
+            currency,
+            allowDowncycling,
+            defaultCycles
+        );
 
         const model: Model = {
             step,
@@ -402,17 +363,6 @@ const SubscriptionContainer = ({
                 cycle: subscription?.Cycle,
             })
     );
-
-    const defaultCycles = exclude24Months(model.planIDs, subscription, [
-        PLANS.VPN_PRO,
-        PLANS.VPN_BUSINESS,
-        PLANS.PASS_PRO,
-        PLANS.PASS_BUSINESS,
-        PLANS.MAIL_PRO,
-        PLANS.MAIL_BUSINESS,
-        PLANS.BUNDLE_PRO,
-        PLANS.BUNDLE_PRO_2024,
-    ]);
 
     const isVpnB2bPlan = !!model.planIDs[PLANS.VPN_PRO] || !!model.planIDs[PLANS.VPN_BUSINESS];
 
