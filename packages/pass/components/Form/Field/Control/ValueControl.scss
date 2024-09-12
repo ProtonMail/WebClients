@@ -13,14 +13,11 @@
 		transition: background-color 250ms;
 
 		&:hover {
-			background-color: var(--background-weak);
+			background-color: var(--interaction-default-hover);
 		}
 
-		/*
-		* remove hard coded color value -> consider 'interactive background` colors in theme
-		*/
 		&:active {
-			background-color: #27273d;
+			background-color: var(--interaction-default-active);
 		}
 
 		&:focus-visible {

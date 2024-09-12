@@ -61,8 +61,7 @@ export const SecureLinkCard: FC<Props> = ({
                 className={clsx('mb-2 cursor-pointer rounded-xl ui-violet')}
                 onClick={onClick}
                 style={{
-                    '--card-background': '#202038',
-                    backgroundColor: `var(${active ? '--card-background' : '--primary-minor-2'})`,
+                    backgroundColor: `var(${active ? '--primary-minor-1' : '--primary-minor-2'})`,
                 }}
             >
                 <div className="flex flex-nowrap items-center justify-space-between">

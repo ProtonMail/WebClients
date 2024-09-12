@@ -1,6 +1,6 @@
 .pass-vault-submenu-vault-item {
 	&--no-actions > button {
-		padding-inline-end: 0.5em !important;
+		padding-inline-end: 0.5em;
 	}
 
 	> button {
@@ -9,15 +9,11 @@
 
 	&.selected {
 		> button {
-			background-color: rgb(var(--vault-icon-color) / 1) !important;
+			background-color: var(--vault-icon-color);
 			color: var(--interaction-norm-contrast);
 
-			&:hover {
-				color: var(--interaction-norm-contrast);
-			}
-
 			.pass-vault-icon {
-				--vault-icon-color: var(--interaction-norm-contrast) !important;
+				--vault-icon-color: var(--interaction-norm-contrast);
 			}
 		}
 
