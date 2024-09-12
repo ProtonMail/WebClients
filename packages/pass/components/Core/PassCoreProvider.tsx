@@ -16,6 +16,7 @@ import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { TelemetryEvent, TelemetryEventName, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
+import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
 import { AppStateProvider } from './AppStateProvider';
@@ -47,6 +48,9 @@ export type PassCoreContextValue = {
      * cancel the image request if the image component is unmounted,
      * applying back-pressure when users scroll rapidly through items */
     getDomainImage: (domain: string, signal: AbortSignal) => Promise<Maybe<string>>;
+    /** Resolves the initial theme. This is required in order to resolve
+     * the proxied theme setting stored locally before state hydration */
+    getInitialTheme?: () => MaybePromise<Maybe<ThemeTypes>>;
     /** Resolves the locally stored app logs */
     getLogs: () => Promise<string[]>;
     /** Returns the URL that should be opened when prompting for rating */

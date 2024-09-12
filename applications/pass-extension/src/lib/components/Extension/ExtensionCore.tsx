@@ -34,6 +34,7 @@ import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 import { prop } from '@proton/pass/utils/fp/lens';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import createStore from '@proton/shared/lib/helpers/store';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
 const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): PassCoreProviderProps => {
@@ -103,6 +104,12 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
             /* Forward the abort signal to the extension service worker. */
             return fetch(requestUrl, { signal, headers }).then(imageResponsetoDataURL);
         },
+
+        getInitialTheme: () =>
+            getExtensionLocalStorage<LocalStoreData>()
+                .getItem('settings')
+                .then((setting) => (setting ? JSON.parse(setting)?.theme : ThemeTypes.PassDark))
+                .catch(noop),
 
         getLogs: () =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.LOG_REQUEST }), (res) =>

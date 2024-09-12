@@ -52,6 +52,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
+import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
@@ -92,6 +93,13 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
         const url = `${PASS_CONFIG.API_URL}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
         const res = await imageProxy(url, signal);
         return imageResponsetoDataURL(res);
+    },
+
+    getInitialTheme: () => {
+        try {
+            const settings = localStorage.getItem('settings');
+            return settings ? JSON.parse(settings).theme : ThemeTypes.PassDark;
+        } catch {}
     },
 
     onLink: (url) => window.open(url, '_blank'),
