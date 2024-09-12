@@ -669,6 +669,9 @@
       "Alias options could not be resolved": [
         "Alias-indstillinger kunne ikke hentes"
       ],
+      "An error occurred while resuming your session": [
+        "Der opstod en fejl under genoptagelse af din session"
+      ],
       "Authentication error": [
         "Godkendelsesfejl"
       ],
@@ -1556,6 +1559,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Bekræft venligst din ekstra adgangskode for at autolåse med din ekstra adgangskode."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Bekræft din ekstra adgangskode for at eksportere dine ${ PASS_APP_NAME }-data."
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Bekræft venligst din ekstra adgangskode for at afregistrere din nuværende lås."
@@ -3097,7 +3103,7 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle dine elementer i papirkurven vil blive slettet permanent. Du kan ikke fortryde denne handling."
       ],
-      "An error occured while exporting your data": [
+      "An error occurred while exporting your data": [
         "Der opstod en fejl under eksport af dine data"
       ],
       "At least one email address is required": [
