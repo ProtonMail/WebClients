@@ -50,7 +50,7 @@ export type IPCInboxDesktopFeature =
     | 'LatestVersionCheck'
     | 'InstallSource'
     | 'MailtoTelemetry'
-    | 'ColorScheme';
+    | 'FullTheme';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
     | { type: 'latestVersion'; result: DesktopVersion | null }

@@ -55,12 +55,15 @@ export const ThemeInjector = () => {
                 return themeSetting;
             }
 
-            let electronAppTheme =
-                canGetInboxDesktopInfo && hasInboxDesktopFeature('ThemeSelection')
-                    ? getInboxDesktopInfo('theme')
-                    : defaultElectronAppTheme;
+            if (canGetInboxDesktopInfo) {
+                if (hasInboxDesktopFeature('FullTheme')) {
+                    return getInboxDesktopInfo('theme');
+                } else if (hasInboxDesktopFeature('ThemeSelection')) {
+                    return { ...defaultElectronAppTheme, ...getInboxDesktopInfo('theme') };
+                }
+            }
 
-            return electronAppTheme;
+            return defaultElectronAppTheme;
         })();
 
         setThemeSetting(theme);
