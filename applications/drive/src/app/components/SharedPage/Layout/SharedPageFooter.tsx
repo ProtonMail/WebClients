@@ -15,7 +15,7 @@ const SharedPageFooter = ({ rootItem, items, bookmarksPublicView, hideSaveToDriv
     const { viewportWidth } = useActiveBreakpoint();
     const { hasDownloads } = useDownload();
     const isDownloadScanEnabled = useDownloadScanFlag();
-    const { isLoading, addBookmark, isAlreadyBookmarked, urlPassword, isLoggedIn } = bookmarksPublicView;
+    const { isLoading, addBookmark, isAlreadyBookmarked, isLoggedIn } = bookmarksPublicView;
 
     if (viewportWidth['<=small']) {
         // Hide download button if transfer modal is present
@@ -35,7 +35,6 @@ const SharedPageFooter = ({ rootItem, items, bookmarksPublicView, hideSaveToDriv
                         loading={isLoading}
                         onClick={addBookmark}
                         alreadyBookmarked={isAlreadyBookmarked}
-                        urlPassword={urlPassword}
                         isLoggedIn={isLoggedIn}
                     />
                 )}

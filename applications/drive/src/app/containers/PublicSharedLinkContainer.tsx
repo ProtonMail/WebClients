@@ -118,7 +118,7 @@ function PublicShareLinkInitContainer() {
     useEffect(() => {
         /** If the navigation appears from a non proton user and the flag is enabled, we display a sign-up flow modal */
         if (isDriveShareUrlBookmarkingEnabled && !isLoggedIn) {
-            showSignUpFlowModal({ urlPassword });
+            showSignUpFlowModal({});
         }
     }, [isDriveShareUrlBookmarkingEnabled, isLoggedIn]);
 
