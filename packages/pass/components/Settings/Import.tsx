@@ -4,7 +4,7 @@ import { Provider as ReduxProvider, useStore } from 'react-redux';
 import { Form, FormikProvider } from 'formik';
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ImportForm } from '@proton/pass/components/Import/ImportForm';

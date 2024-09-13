@@ -1,4 +1,4 @@
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
 import {
     NOTIFICATION_INPUT_ID,

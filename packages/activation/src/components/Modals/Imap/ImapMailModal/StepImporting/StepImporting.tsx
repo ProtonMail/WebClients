@@ -6,7 +6,7 @@ import { IA_PATHNAME_REGEX } from '@proton/activation/src/constants';
 import { resetImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { selectImapDraftMailImport } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import {
     ModalTwo,
     ModalTwoContent,

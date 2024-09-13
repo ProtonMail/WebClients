@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { memberAcceptUnprivatization, memberRejectUnprivatization } from '@proton/account/member/actions';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useApi from '@proton/components/hooks/useApi';

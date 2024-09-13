@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { PassLogo, Radio } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useMemberAddresses } from '@proton/account';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Info, useConfig, useMembers, useModalState } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, StripedItem, StripedList } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

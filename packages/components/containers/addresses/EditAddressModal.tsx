@@ -3,13 +3,14 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
+import type { EditorActions } from '@proton/components/components/editor/interface';
 import { useLoading } from '@proton/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import type { EditorActions } from '../../components';
-import { Editor, Field, FormModal, Input, Label, Row } from '../../components';
+import { Field, FormModal, Input, Label, Row } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 const EMPTY_VALUES = [/^(<div><br><\/div>)+$/, /^(<div>\s*<\/div>)+$/];

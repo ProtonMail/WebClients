@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { EasySwitchProvider } from '@proton/activation';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import {
     CheckListAccountLogin,
     CheckListGmailForward,

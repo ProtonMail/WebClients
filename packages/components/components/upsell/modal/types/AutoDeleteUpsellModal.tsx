@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
+import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 
-import { useUpsellConfig } from '../..';
 import type { ModalStateProps } from '../../../modalTwo';
 import useOneDollarConfig from '../../useOneDollarPromo';
-import { UpsellModal } from '../index';
 
 interface Props {
     modalProps: ModalStateProps;

@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Icon, IllustrationPlaceholder, SkeletonLoader } from '@proton/components';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';

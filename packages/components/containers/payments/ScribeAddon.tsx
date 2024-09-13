@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Href } from '@proton/atoms/Href';
 import { Icon } from '@proton/components/components';
 import { getScribeUpsellLearnMore, getScribeUpsellText } from '@proton/components/containers';

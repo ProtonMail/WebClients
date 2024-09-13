@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { changeOrganizationSignature } from '@proton/account';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components';
 import {
     InputFieldTwo,

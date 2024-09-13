@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { TopBanner } from '@proton/components';
 import clsx from '@proton/utils/clsx';

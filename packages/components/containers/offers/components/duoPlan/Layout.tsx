@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Icon, Price } from '@proton/components/components';
 import { usePreferredPlansMap, useUser } from '@proton/components/hooks';
 import type { AmountAndCurrency } from '@proton/components/payments/core';

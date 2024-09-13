@@ -8,8 +8,7 @@ import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/
 import { NotificationHeader } from 'proton-pass-extension/app/content/injections/apps/notification/components/NotificationHeader';
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms';
-import { Button } from '@proton/atoms/Button';
+import { Button, Scroll } from '@proton/atoms';
 import { useNotifications } from '@proton/components/hooks';
 import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';

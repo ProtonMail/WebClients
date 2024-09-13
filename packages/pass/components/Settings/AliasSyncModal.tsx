@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Card } from '@proton/atoms/Card';
 import type { ModalProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Option, SelectTwo } from '@proton/components';

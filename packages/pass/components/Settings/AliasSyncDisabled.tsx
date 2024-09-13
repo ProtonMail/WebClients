@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { AliasSyncModal } from '@proton/pass/components/Settings/AliasSyncModal';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Href } from '@proton/atoms/Href';
 import type { ModalProps } from '@proton/components';
 import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Tooltip } from '@proton/components';

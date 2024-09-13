@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { AddressesAutocompleteTwo, Alert, Details, Icon, Summary, useMailSettings } from '@proton/components';
 import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';

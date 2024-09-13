@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import brave from '@proton/pass/assets/import/brave-icon-48.png';
 import chrome from '@proton/pass/assets/import/chrome-icon-48.png';
 import edge from '@proton/pass/assets/import/edge-icon-48.png';

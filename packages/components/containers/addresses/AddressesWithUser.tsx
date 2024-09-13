@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import Alert from '@proton/components/components/alert/Alert';
+import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { SettingsParagraph } from '@proton/components/containers';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { APP_UPSELL_REF_PATH, BRAND_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -15,12 +17,10 @@ import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresse
 import move from '@proton/utils/move';
 
 import {
-    MailUpsellButton,
     OrderableTable,
     OrderableTableBody,
     OrderableTableHeader,
     OrderableTableRow,
-    UpsellModal,
     useModalState,
 } from '../../components';
 import { useAddresses, useApi, useEventManager, useNotifications } from '../../hooks';

@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { FetchedBreaches } from '@proton/components';
 import { Icon } from '@proton/components/components/icon';
 import { TableCell, TableRow } from '@proton/components/components/table';

@@ -1,7 +1,7 @@
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components';
 import {
     Icon,

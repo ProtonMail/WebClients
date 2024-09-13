@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms/Button';
+import { Button, ButtonLike } from '@proton/atoms';
 import { Icon, Loader, useModalStateObject } from '@proton/components/components';
 import { ErrorBoundary } from '@proton/components/containers';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
