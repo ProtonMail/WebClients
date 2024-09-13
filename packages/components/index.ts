@@ -59,3 +59,7 @@ export { default as Commander } from './components/commander/Commander';
 
 export type { DropzoneSize, DropzoneShape, DropzoneProps } from './components/dropzone/Dropzone';
 export { default as Dropzone } from './components/dropzone/Dropzone';
+export { default as StripedList } from './components/stripedList/StripedList';
+export type { StripedListProps } from './components/stripedList/StripedList';
+export { default as StripedItem } from './components/stripedList/StripedItem';
+export type { StripedItemProps } from './components/stripedList/StripedItem';

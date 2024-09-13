@@ -2,6 +2,7 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
+import { StripedItem, StripedList } from '@proton/components';
 import type { ModalProps } from '@proton/components/components';
 import {
     Icon,
@@ -10,8 +11,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     SettingsLink,
-    StripedItem,
-    StripedList,
 } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers/features';
 import { useFeature, useSubscription, useUser } from '@proton/components/hooks';

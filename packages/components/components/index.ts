@@ -47,7 +47,6 @@ export * from './shortcuts';
 export * from './sidebar';
 export { default as SmartBanner } from './smartBanner/SmartBanner';
 export * from './spotlight';
-export * from './stripedList';
 export * from './table';
 export * from './tabs';
 export * from './text';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import { StripedItem, StripedList } from '@proton/components';
 import type { ModalProps } from '@proton/components/components';
 import {
     Icon,
@@ -9,8 +10,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     SettingsLink,
-    StripedItem,
-    StripedList,
 } from '@proton/components/components';
 
 import type { ConfirmationModal } from './interface';
