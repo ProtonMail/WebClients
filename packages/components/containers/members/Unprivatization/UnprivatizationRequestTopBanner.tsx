@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { getPendingUnprivatizationRequest } from '@proton/account/member/actions';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { useDispatch } from '@proton/redux-shared-store';
 import { type Member } from '@proton/shared/lib/interfaces';

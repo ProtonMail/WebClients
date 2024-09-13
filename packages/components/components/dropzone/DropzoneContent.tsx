@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
+import type { DropzoneProps } from '@proton/components/components/dropzone/Dropzone';
 import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 import clsx from '@proton/utils/clsx';
-
-import type { DropzoneProps } from './Dropzone';
 
 export interface DropzoneContentProps
     extends Pick<

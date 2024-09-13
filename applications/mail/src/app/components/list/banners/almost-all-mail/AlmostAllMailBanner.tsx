@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import { TotpInput } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';

@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { Button, InlineLinkButton } from '@proton/atoms';
 import { Icon, StripedItem, StripedList } from '@proton/components/components';
 import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
