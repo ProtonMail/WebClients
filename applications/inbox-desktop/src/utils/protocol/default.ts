@@ -6,10 +6,10 @@ import { checkDefaultMailtoClientMac, setDefaultMailtoMac } from "./default_mail
 import { checkDefaultMailtoClientLinux, setDefaultMailtoLinux } from "./default_mailto_linux";
 import { checkDefaultMailtoClientWindows, setDefaultMailtoWindows } from "./default_mailto_windows";
 
-let defaultMailto = {
+let defaultMailto: DefaultProtocol = {
     isDefault: false,
     isChecked: false,
-} as DefaultProtocol;
+};
 
 export function checkDefaultProtocols() {
     if (isMac) defaultMailto = checkDefaultMailtoClientMac();
@@ -25,6 +25,7 @@ export function checkDefaultProtocols() {
     }
 
     // FIXME:jcuth temporary set in settings
+    // - for now just storing hidden settings defaultMailto
     // - only works for macos (need to test)
     // - need to implement logic based on UX
     // - probably need to make it with callback for dialogs and errors
