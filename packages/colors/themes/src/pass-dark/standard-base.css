@@ -7,8 +7,8 @@
     --signal-success: #4ab89a;
     --signal-info: #4ac0ff;
 
-    --text-norm: #d1d1d4;
-    --text-weak: #8c8c93;
+    --text-norm: #ffffff;
+    --text-weak: #bfb9d8;
     --text-hint: #50505b;
     --text-disabled: #50505b;
     --text-invert: #191927;
@@ -17,22 +17,18 @@
     --field-disabled: #4c4c65;
 
     --optional-field-placeholder-color: var(--text-weak);
+    --optional-input-background-color: #1c1c2c;
 
-    --border-norm: #2b2b38;
+    --border-norm: #38384c;
     --border-weak: rgb(255 255 255 / 0.4);
 
-    --background-norm: #191927;
-    --background-weak: #1f1f31;
-    --background-strong: #13131d;
+    --background-norm: #1f1f31;
+    --background-weak: #282839;
+    --background-strong: #191926;
     --background-invert: white;
 
-    --interaction-norm: #9292f9;
-    --interaction-norm-contrast: #191927;
-    --interaction-norm-minor-1: #302d45;
-
-    --interaction-weak: #282848;
-    --interaction-weak-major-1: #32306c;
-    --interaction-weak-major-2: #343187;
+    --interaction-norm: #b6b6ff;
+    --interaction-weak: #302d45;
 
     --interaction-default: transparent;
     --interaction-default-hover: rgb(255 255 255 / 0.04);

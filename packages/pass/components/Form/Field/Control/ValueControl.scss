@@ -1,6 +1,8 @@
 @import '~@proton/styles/scss/lib';
 
 .pass-value-control {
+	background-color: var(--input-background-color);
+
 	&--value {
 		min-block-size: rem(20);
 

@@ -8,30 +8,25 @@
     --signal-success: #007b58;
     --signal-info: #00afe6;
 
-    --text-norm: #333333;
-    --text-weak: #666666;
+    --text-norm: #2b2442;
+    --text-weak: #52527a;
     --text-hint: #999999;
     --text-disabled: #adadad;
-    --text-invert: #ebebeb;
+    --text-invert: #ffffff;
 
     --field-norm: #ffffff;
     --field-disabled: #d0d3da;
 
-    --border-norm: #bdbdbd;
+    --border-norm: #e3dffa;
     --border-weak: #d7d7d7;
 
-    --background-norm: #f6f5f8;
+    --background-norm: #fbf9fe;
     --background-weak: #ffffff;
-    --background-strong: #eae7f0;
-    --background-invert: #302d45;
-    --background-interactive: #8a6eff;
+    --background-strong: #f4f0fe;
+    --background-invert: black;
 
-    --interaction-norm: #8a6eff;
-    --interaction-norm-minor-1: #e2dbff;
-
-    --interaction-weak: #f2efff;
-    --interaction-weak-major-1: #a792ff;
-    --interaction-weak-major-2: #6243e6;
+    --interaction-norm: #5817d1;
+    --interaction-weak: #ece5ff;
 
     --interaction-default: transparent;
     --interaction-default-hover: rgb(194 194 194 / 0.2);
@@ -43,6 +38,7 @@
     --backdrop-norm: rgb(0 0 0 / 0.15);
 
     --optional-field-placeholder-color: var(--text-weak);
+    --optional-input-background-color: #ffffff;
 
     --focus-outline: var(--interaction-norm-major-2);
     --focus-ring: var(--interaction-norm-minor-1);
