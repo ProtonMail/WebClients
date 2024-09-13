@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
-import { Alert, Icon, Tooltip, useModalState } from '@proton/components/components';
+import { Icon, Tooltip, useModalState } from '@proton/components/components';
+import Alert from '@proton/components/components/alert/Alert';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { SettingsSectionWide } from '@proton/components/containers';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';

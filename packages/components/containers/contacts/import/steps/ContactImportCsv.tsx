@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
 import { toVCardContacts } from '@proton/shared/lib/contacts/helpers/csv';
 import { getHasPreVcardsContacts } from '@proton/shared/lib/contacts/helpers/import';
@@ -15,7 +16,7 @@ import {
 import type { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 
-import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Table } from '../../../../components';
+import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Table } from '../../../../components';
 import { useNotifications } from '../../../../hooks';
 import ContactImportCsvTableBody from './ContactImportCsvTableBody';
 import ContactImportCsvTableHeader from './ContactImportCsvTableHeader';

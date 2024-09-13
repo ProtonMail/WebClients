@@ -1,9 +1,10 @@
 import { c, msgid } from 'ttag';
 
+import Alert from '@proton/components/components/alert/Alert';
 import { extractTotals } from '@proton/shared/lib/calendar/import/import';
 import type { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, DynamicProgress } from '../../../components';
+import { DynamicProgress } from '../../../components';
 import ErrorDetails from './ErrorDetails';
 
 interface GetMessageParams {

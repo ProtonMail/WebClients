@@ -4,12 +4,13 @@ import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/export';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components';
-import { Alert, DynamicProgress, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { DynamicProgress, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useApi, useContacts, useGetUserKeys } from '../../../hooks';
 
 const DOWNLOAD_FILENAME = 'protonContacts';

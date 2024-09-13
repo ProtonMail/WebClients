@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import type { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
@@ -16,7 +17,7 @@ import type {
 import { IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 
-import { Alert, DynamicProgress, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../../components';
+import { DynamicProgress, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../../components';
 import { useApi, useBeforeUnload, useEventManager, useGetUserKeys } from '../../../../hooks';
 import { extractTotals, processContactsInBatches } from '../encryptAndSubmit';
 

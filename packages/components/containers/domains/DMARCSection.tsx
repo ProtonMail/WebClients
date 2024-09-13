@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
-import { Alert, Copy, Input, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
+import { Copy, Input, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
 
 const DMARCSection = () => {

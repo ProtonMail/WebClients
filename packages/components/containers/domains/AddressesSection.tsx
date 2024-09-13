@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { Alert, SettingsLink } from '../../components';
+import { SettingsLink } from '../../components';
 import { useOrganization } from '../../hooks';
 
 interface Props {

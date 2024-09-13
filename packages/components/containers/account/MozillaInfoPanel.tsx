@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 
-import { Alert, Icon } from '../../components';
+import { Icon } from '../../components';
 
 const MozillaInfoPanel = () => {
     return (

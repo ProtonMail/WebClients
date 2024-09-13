@@ -3,10 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { resignAllContacts } from '@proton/shared/lib/contacts/globalOperations';
 
 import type { ModalProps } from '../../../components';
-import { Alert, DynamicProgress, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { DynamicProgress, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useApi, useContacts, useEventManager, useGetUserKeys } from '../../../hooks';
 
 const ContactResignExecutionModal = ({ ...rest }: ModalProps) => {
