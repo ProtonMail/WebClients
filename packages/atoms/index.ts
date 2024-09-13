@@ -4,7 +4,6 @@ export * from './CircleLoader';
 export * from './Donut';
 export * from './Href';
 export * from './InlineLinkButton';
-export * from './Kbd';
 
 export { default as Avatar } from './Avatar/Avatar';
 export type { AvatarProps } from './Avatar/Avatar';
@@ -39,3 +38,6 @@ export type { NotificationCounterProps } from './NotificationCounter/Notificatio
 
 export { Input } from './Input/Input';
 export type { InputProps } from './Input/Input';
+
+export { default as Kbd } from './Kbd/Kbd';
+export type { KbdProps } from './Kbd/Kbd';
