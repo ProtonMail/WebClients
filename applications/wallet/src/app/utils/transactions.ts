@@ -16,8 +16,12 @@ const toMsTimestamp = (ts: number | BigInt) => {
     return Number(ts) * SECOND;
 };
 
-export const isSentTransaction = (transaction: TransactionData) => {
-    return transaction.networkData.sent > transaction.networkData.received;
+export const getTransactionValue = (tx?: TransactionData) => {
+    return (tx?.networkData.received ?? 0) - (tx?.networkData.sent ?? 0);
+};
+
+export const isSentTransaction = (transaction?: TransactionData) => {
+    return getTransactionValue(transaction) < 0;
 };
 
 export const transactionTime = (transaction: WasmTransactionDetails) => {

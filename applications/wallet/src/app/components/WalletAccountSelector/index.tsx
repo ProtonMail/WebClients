@@ -14,6 +14,7 @@ import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
 
 import { Price } from '../../atoms/Price';
+import { Skeleton } from '../../atoms/Skeleton';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import type { AccountWithChainData } from '../../types';
@@ -36,18 +37,15 @@ const WalletAccountBalance = ({ walletAccount, balance }: { walletAccount: WasmA
 
     return (
         <div className="shrink-0">
-            <div
-                className={clsx(
-                    'ml-auto flex flex-row flex-nowrap justify-end',
-                    loadingExchangeRate && 'skeleton-loader'
-                )}
+            <Skeleton
+                loading={loadingExchangeRate}
+                placeholder={<span className="block">{c('Wallet transaction').t`Loading balance`}</span>}
             >
-                {!loadingExchangeRate ? (
+                <div className="ml-auto flex flex-row flex-nowrap justify-end">
                     <Price unit={exchangeRate ?? settings.BitcoinUnit} satsAmount={balance} />
-                ) : (
-                    <span>{c('Wallet transaction').t`Loading`}</span>
-                )}
-            </div>
+                </div>
+            </Skeleton>
+
             {(loadingExchangeRate || exchangeRate) && (
                 <div className={clsx('block ml-auto color-hint flex flex-row flex-nowrap justify-end')}>
                     {convertAmountStr(balance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}

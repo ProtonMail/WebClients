@@ -22,7 +22,7 @@ export const DataListItem = ({ leftIcon, label, bottomNode, className, align = '
         <div className="datagrid-cell h-full">
             <div className="flex flex-row items-center flex-nowrap w-full">
                 {leftIcon && typeof leftIcon === 'string' ? <Icon name={leftIcon as IconName} /> : leftIcon}
-                <div className="grow">
+                <div className="grow px-1">
                     <div className={clsx('flex flex-column w-full', `items-${align}`)}>
                         <div className={clsx('w-full flex', className, isNarrow && 'text-sm')}>{label}</div>
                         <div className={clsx('w-full flex mt-1', isNarrow && 'text-sm')}>{bottomNode}</div>

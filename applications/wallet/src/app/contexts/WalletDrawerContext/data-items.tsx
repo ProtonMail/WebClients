@@ -22,6 +22,7 @@ import {
     getLabelByUnit,
     getTransactionRecipientHumanReadableName,
     getTransactionSenderHumanReadableName,
+    isSentTransaction,
 } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 
@@ -29,19 +30,20 @@ export const RecipientsDataItem = ({
     tx,
     onClick,
 }: TxDataListItemProps & { onClick: (email: string, btcAddress: string, index: number) => void }) => {
-    const exchangeRate = tx.apiData?.ExchangeRate;
-    const isSentTx = tx.networkData.sent > tx.networkData.received;
+    const exchangeRate = tx?.apiData?.ExchangeRate;
+    const isSentTx = isSentTransaction(tx);
     const [addresses] = useAddresses();
     const [settings] = useUserWalletSettings();
 
     const { walletMap } = useBitcoinBlockchainContext();
-    const filteredRecipientsList = tx.networkData.outputs.filter(
-        (o) =>
-            (tx.networkData.outputs.filter((o) => isSentTx && !o.is_mine).length === 0
-                ? isSentTx
-                : isSentTx && !o.is_mine) ||
-            (!isSentTx && o.is_mine)
-    );
+    const filteredRecipientsList =
+        tx?.networkData.outputs.filter(
+            (o) =>
+                (tx?.networkData.outputs.filter((o) => isSentTx && !o.is_mine).length === 0
+                    ? isSentTx
+                    : isSentTx && !o.is_mine) ||
+                (!isSentTx && o.is_mine)
+        ) ?? [];
     const isSingleRecipient = filteredRecipientsList.length === 1;
 
     return (
@@ -53,14 +55,20 @@ export const RecipientsDataItem = ({
                  * Current limitation is, when sending to itself, it will display all addresses in To, even change address.
                  */}
                 {filteredRecipientsList.map((output, index) => {
-                    const recipient = getTransactionRecipientHumanReadableName(tx, output, walletMap, addresses);
+                    const recipient = tx
+                        ? getTransactionRecipientHumanReadableName(tx, output, walletMap, addresses)
+                        : null;
                     const isBtcAddress = recipient == output.address;
 
                     return (
                         <li key={index} className="flex flex-row w-full items-center my-1">
                             <button
                                 className="flex flex-row flex-nowrap items-center w-full"
-                                onClick={() => onClick(recipient, output.address, index)}
+                                onClick={() => {
+                                    if (recipient) {
+                                        onClick(recipient, output.address, index);
+                                    }
+                                }}
                             >
                                 <div className="flex flex-column items-start grow mr-2">
                                     <span className="block color-weak">{c('Wallet transaction').t`To`}</span>
@@ -113,7 +121,7 @@ export const RecipientsDataItem = ({
 
 export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps & { onClickEditSender: () => void }) => {
     const { walletMap } = useBitcoinBlockchainContext();
-    const senderName = getTransactionSenderHumanReadableName(tx, walletMap);
+    const senderName = tx ? getTransactionSenderHumanReadableName(tx, walletMap) : null;
 
     return (
         <div className="flex flex-row flex-nowrap items-center w-full">
@@ -129,7 +137,7 @@ export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps &
                 </ul>
             </div>
 
-            {tx.apiData?.Type && ['NotSend', 'ExternalReceive'].includes(tx.apiData?.Type) && (
+            {tx?.apiData?.Type && ['NotSend', 'ExternalReceive'].includes(tx.apiData?.Type) && (
                 <Tooltip title={c('Action').t`Edit`}>
                     <CoreButton
                         className="rounded-full bg-norm"
@@ -149,7 +157,7 @@ export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps &
 export const DateDataItem = ({ tx }: TxDataListItemProps) => {
     const now = useMemo(() => new Date(), []);
 
-    if (!tx.networkData.time.confirmation_time) {
+    if (!tx?.networkData.time.confirmation_time) {
         return null;
     }
 
@@ -175,7 +183,7 @@ export const DateDataItem = ({ tx }: TxDataListItemProps) => {
 };
 
 export const StatusDataItem = ({ tx }: TxDataListItemProps) => {
-    const isConfirmed = !!tx.networkData.time.confirmation_time;
+    const isConfirmed = !!tx?.networkData.time.confirmed;
 
     return (
         <div className="flex flex-row items-center w-full">
@@ -202,7 +210,7 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
                 <span className="block color-weak">{c('Wallet transaction').t`Private note to myself`}</span>
             </div>
             <div className="w-full flex flex-row flex-nowrap items-center">
-                {tx.apiData?.Label ? (
+                {tx?.apiData?.Label ? (
                     <>
                         <span className="text-pre-wrap text-break text-left text-lg grow mr-4 my-1">
                             {tx.apiData.Label}
@@ -229,7 +237,9 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
                         className="px-0 flex items-center"
                         onClick={(e) => {
                             e.stopPropagation();
-                            onClick(tx);
+                            if (tx) {
+                                onClick(tx);
+                            }
                         }}
                     >
                         <Icon name="plus-circle" className="mr-1" />
@@ -243,11 +253,9 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
 
 export const MessageDataItem = ({ tx }: TxDataListItemProps) => {
     return (
-        <div className="flex flex-row items-center w-full">
-            <div className="flex flex-column items-start grow mr-4">
-                <span className="block color-weak">{c('Wallet transaction').t`Message to recipient`}</span>
-                <span className="block w-full text-pre-wrap text-left text-break my-1 text-lg">{tx.apiData?.Body}</span>
-            </div>
+        <div className="w-full">
+            <span className="block color-hint text-rg">{c('Wallet transaction').t`Message to recipient`}</span>
+            <span className="text-pre-wrap text-left text-break text-lg">{tx?.apiData?.Body}</span>
         </div>
     );
 };
@@ -295,17 +303,19 @@ export const LinkToBlockchainDataItem = ({ tx, network }: TxDataListItemProps & 
             <hr className="my-4" />
             <div className="flex w-full justify-center">
                 <span className="block color-hint text-rg"></span>
-                <ButtonLike
-                    as={Href}
-                    href={`${url}/${tx.networkData.txid}`}
-                    target="_blank"
-                    fullWidth
-                    shape="solid"
-                    color="norm"
-                    className="wallet-button"
-                >
-                    {c('Link').t`View on blockchain`}
-                </ButtonLike>
+                <p className="my-0 mt-1 text-lg">
+                    <ButtonLike
+                        as={Href}
+                        href={`${url}/${tx?.networkData.txid}`}
+                        target="_blank"
+                        fullWidth
+                        shape="solid"
+                        color="norm"
+                        style={{ 'padding-left': '4rem', 'padding-right': '4rem' }}
+                    >
+                        {c('Link').t`View on blockchain`}
+                    </ButtonLike>
+                </p>
             </div>
         </>
     );
