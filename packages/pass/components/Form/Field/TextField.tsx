@@ -3,7 +3,7 @@ import { forwardRef, useState } from 'react';
 
 import { type FieldProps } from 'formik';
 
-import type { Input } from '@proton/atoms/Input';
+import type { Input } from '@proton/atoms';
 import { InputFieldTwo } from '@proton/components';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -67,7 +67,7 @@ const BaseTextFieldRender: ForwardRefRenderFunction<HTMLInputElement, BaseTextFi
             onPaste={lengthLimiters && props.maxLength ? pasteLengthLimiter(props.maxLength, onPaste) : onPaste}
             ref={ref}
             type="text"
-            value={hide ? hiddenValue ?? defaultHiddenValue : value}
+            value={hide ? (hiddenValue ?? defaultHiddenValue) : value}
         />
     );
 };
