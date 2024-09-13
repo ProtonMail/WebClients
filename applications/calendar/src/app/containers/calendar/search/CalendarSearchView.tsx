@@ -5,8 +5,7 @@ import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, IllustrationPlaceholder } from '@proton/components';
-import { SkeletonLoader } from '@proton/components/components/skeletonLoader';
+import { Icon, IllustrationPlaceholder, SkeletonLoader } from '@proton/components';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
