@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
@@ -27,7 +28,6 @@ import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/li
 
 import {
     ButtonGroup,
-    Icon,
     Info,
     SettingsLink,
     Table,

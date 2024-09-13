@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,

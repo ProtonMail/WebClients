@@ -4,7 +4,7 @@ import type { WasmPasswordScore } from '@protontech/pass-rust-core';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/components';
-import { Icon, type IconName } from '@proton/components/components/icon';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 import './PasswordStrength.scss';

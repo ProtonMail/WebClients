@@ -4,7 +4,7 @@ import { type RouteChildrenProps, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms/Card';
+import { Card } from '@proton/atoms';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
 import { CustomAddressAddButton } from '@proton/pass/components/Monitor/Address/CustomAddressAddButton';

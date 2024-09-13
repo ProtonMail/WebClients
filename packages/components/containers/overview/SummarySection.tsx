@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import Icon from '@proton/components/components/icon/Icon';
 import { APPS, CALENDAR_APP_NAME, MAIL_APP_NAME, PLAN_SERVICES, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
@@ -12,7 +13,7 @@ import type {
     UserSettings,
 } from '@proton/shared/lib/interfaces';
 
-import { Icon, Loader, SettingsLink } from '../../components';
+import { Loader, SettingsLink } from '../../components';
 import { useConfig } from '../../hooks';
 
 interface Props {

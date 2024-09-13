@@ -3,8 +3,8 @@ import type { ComponentProps } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import type { IconName } from '@proton/components/components';
-import { Icon, SettingsLink } from '@proton/components/components';
+import { SettingsLink } from '@proton/components/components';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 import './AccountSecurityCard.scss';

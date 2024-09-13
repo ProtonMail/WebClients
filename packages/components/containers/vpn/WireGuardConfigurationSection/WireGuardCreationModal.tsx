@@ -1,10 +1,12 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 
 import type { ModalProps } from '../../../components';
 import {
-    Form,
     Loader,
     ModalTwo,
     ModalTwoContent,
@@ -14,7 +16,6 @@ import {
     Tabs,
     TextArea,
 } from '../../../components';
-import {useState} from "react";
 
 export interface WireGuardCreationModalProps extends ModalProps {
     text?: string;
@@ -61,9 +62,9 @@ const WireGuardCreationModal = ({
                                 content: (
                                     <div className="text-center">
                                         <p>{text}</p>
-                                        <TextArea className="block mt-2" value={config} readOnly rows={14}/>
+                                        <TextArea className="block mt-2" value={config} readOnly rows={14} />
                                     </div>
-                                )
+                                ),
                             },
                             {
                                 title: c('Title').t`QRCode`,
@@ -71,8 +72,8 @@ const WireGuardCreationModal = ({
                                     <div className="text-center">
                                         <QRCode value={config} />
                                     </div>
-                                )
-                            }
+                                ),
+                            },
                         ]}
                     />
                 ) : (

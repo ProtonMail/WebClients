@@ -1,11 +1,12 @@
-import type { ChangeEvent} from 'react';
+import type { ChangeEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
 import { CircleLoader } from '@proton/atoms';
-import { Icon, Label } from '@proton/components/components';
+import { Label } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { useElementBreakpoints } from '@proton/components/hooks';
 import type {
     ChargeableV5PaymentToken,
@@ -19,7 +20,7 @@ import clsx from '@proton/utils/clsx';
 
 import CountriesDropdown from '../../containers/payments/CountriesDropdown';
 import type { ThemeCode } from '../client-extensions';
-import type { CbIframeHandles} from './ChargebeeIframe';
+import type { CbIframeHandles } from './ChargebeeIframe';
 import { ChargebeeIframe } from './ChargebeeIframe';
 
 import './ChargebeeWrapper.scss';

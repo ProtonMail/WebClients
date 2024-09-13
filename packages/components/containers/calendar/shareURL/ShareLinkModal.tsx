@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import type { BasicModalProps } from '@proton/components/components/modalTwo/BasicModal';
 import { useApi, useGetCalendarInfo, useNotifications } from '@proton/components/hooks';
 import { createPublicLink } from '@proton/shared/lib/api/calendars';
@@ -18,7 +19,7 @@ import type { CalendarLink, CalendarUrlResponse } from '@proton/shared/lib/inter
 import { ACCESS_LEVEL } from '@proton/shared/lib/interfaces/calendar';
 import { splitKeys } from '@proton/shared/lib/keys';
 
-import { BasicModal, Form, InputFieldTwo, Option, SelectTwo } from '../../../components';
+import { BasicModal, InputFieldTwo, Option, SelectTwo } from '../../../components';
 
 interface Props extends Omit<BasicModalProps, 'children' | 'footer'> {
     calendarID: string;

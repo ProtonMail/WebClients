@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { Icon } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 const SubUserCreateHint = ({ className, children }: { className?: string; children?: ReactNode }) => {

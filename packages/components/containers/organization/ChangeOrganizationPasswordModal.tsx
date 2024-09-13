@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Form from '@proton/components/components/form/Form';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
@@ -13,7 +14,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components';
 import {
-    Form,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

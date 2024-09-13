@@ -9,7 +9,7 @@ import generateUID from '@proton/utils/generateUID';
 
 import { useHotkeys } from '../../hooks/useHotkeys';
 import Dialog from '../dialog/Dialog';
-import { useFocusTrap } from '../focus';
+import useFocusTrap from '../focus/useFocusTrap';
 import { Portal } from '../portal';
 import { useModalPosition } from './modalPositions';
 

@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 
 import { ButtonGroup } from '../button';
-import type { IconName } from '../icon';
-import { Icon } from '../icon';
 
 interface Props {
     title: string;

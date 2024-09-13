@@ -3,9 +3,9 @@ import { forwardRef } from 'react';
 
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
+import { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
-import type { IconName } from '../icon';
 import type { NodeOrBoolean } from '../v2/field/InputField';
 
 interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value'> {

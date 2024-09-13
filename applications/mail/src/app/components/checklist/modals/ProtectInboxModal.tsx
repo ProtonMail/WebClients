@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Href } from '@proton/atoms/Href';
+import { Button, Href } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoHeader, StepDot, StepDots } from '@proton/components';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';

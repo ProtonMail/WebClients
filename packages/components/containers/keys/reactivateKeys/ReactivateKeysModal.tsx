@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
@@ -26,7 +27,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import type { ModalProps } from '../../../components';
 import {
-    Form,
     InputFieldTwo,
     ModalTwo,
     ModalTwoContent,

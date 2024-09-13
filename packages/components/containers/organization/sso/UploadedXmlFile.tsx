@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 interface Props {

@@ -4,6 +4,17 @@ import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import {
+    AddressesAutocompleteTwo,
+    Loader,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    RadioGroup,
+} from '@proton/components/components';
+import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
+import Icon from '@proton/components/components/icon/Icon';
 import InputField from '@proton/components/components/v2/field/InputField';
 import {
     useApi,
@@ -36,18 +47,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components';
-import {
-    AddressesAutocompleteTwo,
-    AddressesInput,
-    AddressesInputItem,
-    Icon,
-    Loader,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    RadioGroup,
-} from '../../../components';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
 import { useKeyTransparencyContext } from '../../keyTransparency';
 

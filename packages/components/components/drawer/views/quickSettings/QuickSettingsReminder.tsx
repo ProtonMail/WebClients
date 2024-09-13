@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ThemeColor } from '@proton/colors/types';
-import { Icon } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import clsx from '@proton/utils/clsx';
 

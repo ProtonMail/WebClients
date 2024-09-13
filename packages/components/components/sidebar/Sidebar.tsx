@@ -22,7 +22,7 @@ import percentage from '@proton/utils/percentage';
 
 import UserDropdown from '../../containers/heading/UserDropdown';
 import { useActiveBreakpoint, useConfig, useSubscription, useUser } from '../../hooks';
-import { useFocusTrap } from '../focus';
+import useFocusTrap from '../focus/useFocusTrap';
 import { SettingsLink } from '../link';
 import { Tooltip } from '../tooltip';
 import Hamburger from './Hamburger';

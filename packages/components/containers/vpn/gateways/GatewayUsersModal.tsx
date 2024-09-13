@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components';
-import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import Form from '@proton/components/components/form/Form';
 
 import type { GatewayDto } from './GatewayDto';
 import type { GatewayModel } from './GatewayModel';

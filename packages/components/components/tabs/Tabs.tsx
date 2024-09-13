@@ -1,14 +1,14 @@
 import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
+import { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 import { equivalentReducer } from '@proton/components/hooks/useElementRect';
 import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
-import type { IconName } from '../icon';
-import { Icon } from '../icon';
 
 import './Tabs.scss';
 

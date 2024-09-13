@@ -3,13 +3,13 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 
 import { useApi, useEventManager } from '../../../hooks';
-import { Form } from '../../form';
 import type { ModalProps, ModalStateProps } from '../../modalTwo';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../modalTwo';
 import LinkConfirmationModalLink from './LinkConfirmationModalLink';

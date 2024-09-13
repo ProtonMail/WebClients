@@ -4,14 +4,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Pill } from '@proton/atoms';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import type { IconName } from '../../components';
-import { Icon, Option, SelectTwo } from '../../components';
+import { Option, SelectTwo } from '../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import useInboxDesktopVersion from './useInboxDesktopVersion';
 

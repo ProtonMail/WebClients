@@ -6,10 +6,10 @@ import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
 import { Button } from '@proton/atoms';
+import TodayIcon from '@proton/components/components/icon/TodayIcon';
 import clsx from '@proton/utils/clsx';
 
 import { createObserver } from '../../hooks/useElementRect';
-import { TodayIcon } from '../icon';
 import Icon from '../icon/Icon';
 import { Tooltip } from '../tooltip';
 import MonthDays from './MonthDays';

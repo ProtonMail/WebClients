@@ -7,10 +7,10 @@ import { c } from 'ttag';
 import { Input } from '@proton/atoms';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import Icon from '@proton/components/components/icon/Icon';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import generateUID from '@proton/utils/generateUID';
 
-import { Icon } from '../../icon';
 import CountrySelectRow from './PhoneCountrySelectRow';
 import type { CountryOptionData } from './helper';
 

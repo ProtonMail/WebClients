@@ -3,6 +3,8 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
+import Icon from '@proton/components/components/icon/Icon';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
@@ -21,8 +23,6 @@ import uniqueBy from '@proton/utils/uniqueBy';
 import { useKTVerifier } from '..';
 import type { ModalProps } from '../../components';
 import {
-    Form,
-    Icon,
     InputFieldTwo,
     ModalTwo,
     ModalTwoContent,

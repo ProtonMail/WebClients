@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
 import { Prompt, UnlockModal } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

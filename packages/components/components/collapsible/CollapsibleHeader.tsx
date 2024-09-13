@@ -8,7 +8,7 @@ import CollapsibleContext from './CollapsibleContext';
 
 import './CollapsibleHeader.scss';
 
-export interface CollapsibleHeaderOwnProps {
+interface CollapsibleHeaderOwnProps {
     /**
      * Component to append to the end of the header
      */
@@ -24,7 +24,7 @@ export interface CollapsibleHeaderOwnProps {
     gap?: number;
 }
 
-export type CollapsibleHeaderProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleHeaderOwnProps, E>;
+type CollapsibleHeaderProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleHeaderOwnProps, E>;
 
 const defaultElement = 'header';
 

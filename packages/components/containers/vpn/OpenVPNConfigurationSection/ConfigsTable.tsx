@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { PLANS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -11,7 +12,7 @@ import type { Logical } from '@proton/shared/lib/vpn/Logical';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Icon, SettingsLink, Table, TableBody, TableCell, TableRow, Tooltip } from '../../../components';
+import { SettingsLink, Table, TableBody, TableCell, TableRow, Tooltip } from '../../../components';
 import type { CountryOptions } from '../../../helpers/countries';
 import { useApi, useUser } from '../../../hooks';
 import Country from './Country';

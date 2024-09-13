@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import { Logo, QRCode } from '@proton/components/components';
 import { CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';

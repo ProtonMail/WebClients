@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import { Dropdown, FeatureCode, Icon, useModalState, usePopperAnchor } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 import { useApi, useSpotlightOnFeature } from '@proton/components/hooks';

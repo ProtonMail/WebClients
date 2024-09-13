@@ -5,6 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import FileNameDisplay from '@proton/components/components/fileNameDisplay/FileNameDisplay';
+import Icon from '@proton/components/components/icon/Icon';
+import MimeIcon from '@proton/components/components/icon/MimeIcon';
 import { useLoading } from '@proton/hooks';
 import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -12,7 +14,7 @@ import { isElectronMail, isElectronOnMac } from '@proton/shared/lib/helpers/desk
 import clsx from '@proton/utils/clsx';
 
 import { TimeIntl, useActiveBreakpoint } from '../../';
-import { FileIcon, Icon, MimeIcon } from '../../components';
+import { FileIcon } from '../../components';
 
 const SHARED_STATUS_TO_COLOR = {
     '': undefined,

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, useUserSettings } from '@proton/components';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

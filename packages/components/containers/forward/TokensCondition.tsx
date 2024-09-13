@@ -2,7 +2,8 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '../../components';
+import Icon from '@proton/components/components/icon/Icon';
+
 import type { Condition } from '../filters/interfaces';
 
 interface TokenProps {

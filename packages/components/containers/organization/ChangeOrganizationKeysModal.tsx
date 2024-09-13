@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { rotateOrganizationKeys } from '@proton/account';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Form from '@proton/components/components/form/Form';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -13,7 +14,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components';
 import {
-    Form,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

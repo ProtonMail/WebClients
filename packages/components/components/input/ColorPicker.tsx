@@ -8,12 +8,12 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Icon from '@proton/components/components/icon/Icon';
 import { ACCENT_COLORS_MAP, getColorName } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { Icon } from '../icon';
 import { usePopperAnchor } from '../popper';
 
 interface OwnProps {

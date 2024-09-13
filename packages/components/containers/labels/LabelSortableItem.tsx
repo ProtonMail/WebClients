@@ -1,6 +1,7 @@
+import Icon from '@proton/components/components/icon/Icon';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 
-import { Icon, OrderableTableRow } from '../../components';
+import { OrderableTableRow } from '../../components';
 import ActionsLabel from './ActionsLabel';
 
 interface Props {

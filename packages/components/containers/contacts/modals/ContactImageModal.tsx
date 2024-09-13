@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
@@ -14,7 +15,6 @@ import {
     ErrorZone,
     Field,
     FileInput,
-    Form,
     Label,
     ModalTwo,
     ModalTwoContent,

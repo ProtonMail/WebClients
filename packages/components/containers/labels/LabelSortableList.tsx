@@ -3,10 +3,11 @@ import type { SortableContainerProps } from 'react-sortable-hoc';
 import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
-import { Icon, OrderableTable, OrderableTableBody, OrderableTableHeader } from '../../components';
+import { OrderableTable, OrderableTableBody, OrderableTableHeader } from '../../components';
 import LabelSortableItem from './LabelSortableItem';
 
 interface Props extends SortableContainerProps {
