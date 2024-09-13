@@ -221,7 +221,7 @@ export function SharingModal({ shareId: rootShareId, linkId, onClose, ...modalPr
                                 onResendExternalInvitationEmail={resendExternalInvitation}
                             />
                         </ModalTwoContent>
-                        {!isShareUrlEnabled ? (
+                        {isShareUrlEnabled ? (
                             <>
                                 <hr className="mb-0.5 min-h-px" />
                                 <ModalTwoFooter>

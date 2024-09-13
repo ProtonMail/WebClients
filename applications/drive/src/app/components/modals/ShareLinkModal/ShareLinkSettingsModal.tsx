@@ -125,7 +125,7 @@ const SharingSettingsModal = ({
             >
                 <ModalTwoHeader title={c('Title').t`Settings`} />
                 <ModalTwoContent>
-                    {!isShareUrlEnabled ? (
+                    {isShareUrlEnabled ? (
                         <>
                             {havePublicSharedLink && modificationDisabled && (
                                 <Alert type="warning">
