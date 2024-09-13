@@ -3,9 +3,10 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 
 import { ButtonGroup } from '../button';
-import { DropdownMenu, SimpleDropdown } from '../dropdown';
 import type { IconName } from '../icon';
 import { Icon } from '../icon';
 

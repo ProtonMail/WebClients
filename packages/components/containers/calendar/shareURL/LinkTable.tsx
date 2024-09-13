@@ -3,6 +3,7 @@ import type { MouseEvent } from 'react';
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import type { CalendarLink } from '@proton/shared/lib/interfaces/calendar';
@@ -11,7 +12,7 @@ import type { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DropdownActions, Icon, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
+import { Icon, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
 
 interface Props {
     links: CalendarLink[];

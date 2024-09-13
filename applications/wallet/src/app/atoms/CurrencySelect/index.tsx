@@ -2,8 +2,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { DropdownSize } from '@proton/components/components/dropdown/utils';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import type { DropdownSize } from '@proton/components';
+import { DropdownSizeUnit } from '@proton/components';
 import Option from '@proton/components/components/option/Option';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';

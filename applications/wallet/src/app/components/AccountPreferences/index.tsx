@@ -1,11 +1,7 @@
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import { DropdownSizeUnit } from '@proton/components';
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, DropdownSizeUnit } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';

@@ -3,14 +3,11 @@ import { c } from 'ttag';
 import { resumeGroupMember as resumeGroupMemberAction, updateOverridePermissions } from '@proton/account';
 import { Button } from '@proton/atoms';
 import { useApi, useEventManager } from '@proton/components';
-import {
-    Dropdown,
-    DropdownMenu,
-    DropdownMenuButton,
-    DropdownSizeUnit,
-    Icon,
-    usePopperAnchor,
-} from '@proton/components/components';
+import { Icon, usePopperAnchor } from '@proton/components/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import {
     resumeGroupMember as resumeGroupMemberApi,

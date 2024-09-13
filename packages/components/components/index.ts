@@ -14,7 +14,6 @@ export * from './contextMenu';
 export * from './downloadClientCard';
 export * from './dragMoveContainer';
 export * from './drawer';
-export * from './dropdown';
 export * from './ellipsis';
 export * from './fileIcon';
 export * from './focus';

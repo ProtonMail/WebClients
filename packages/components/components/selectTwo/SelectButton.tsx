@@ -2,9 +2,9 @@ import type { ComponentPropsWithRef, KeyboardEvent } from 'react';
 import { forwardRef } from 'react';
 
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
+import DropdownCaret from '@proton/components/components/dropdown/DropdownCaret';
 import clsx from '@proton/utils/clsx';
 
-import DropdownCaret from '../dropdown/DropdownCaret';
 import type { IconName } from '../icon';
 import type { NodeOrBoolean } from '../v2/field/InputField';
 

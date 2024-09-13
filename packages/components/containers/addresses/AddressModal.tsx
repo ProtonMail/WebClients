@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { useLoading } from '@proton/hooks';
 import { createAddress } from '@proton/shared/lib/api/addresses';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
@@ -29,7 +30,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components';
 import {
-    DropdownSizeUnit,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

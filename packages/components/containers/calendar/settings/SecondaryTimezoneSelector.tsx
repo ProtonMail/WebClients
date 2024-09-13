@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { DropdownSizeUnit } from '@proton/components/components';
+import type { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { Unit } from '@proton/components/components/dropdown/utils';
 import TimeZoneSelector from '@proton/components/components/timezoneSelector/TimeZoneSelector';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';

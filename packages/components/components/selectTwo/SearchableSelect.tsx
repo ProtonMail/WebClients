@@ -3,11 +3,11 @@ import { useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import type { DropdownSize } from '@proton/components/components/dropdown/utils';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import clsx from '@proton/utils/clsx';
 
-import Dropdown from '../dropdown/Dropdown';
-import type { DropdownSize } from '../dropdown/utils';
-import { DropdownSizeUnit } from '../dropdown/utils';
 import SearchInput from '../input/SearchInput';
 import type { Props as OptionProps } from '../option/Option';
 import Option from '../option/Option';

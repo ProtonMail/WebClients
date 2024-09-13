@@ -2,12 +2,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Tooltip } from '@proton/components/components';
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useLoading from '@proton/hooks/useLoading';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { GROUP_MEMBERSHIP_STATUS, GROUP_MEMBER_PERMISSIONS, type GroupMembership } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import DropdownActions from '../../../components/dropdown/DropdownActions';
 import useGroupActions from './useGroupActions';
 
 const GroupActions = ({ membership }: { membership: GroupMembership }) => {

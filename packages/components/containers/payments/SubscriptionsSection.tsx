@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { onSessionMigrationPaymentsVersion } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
@@ -18,7 +19,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import {
-    DropdownActions,
     Icon,
     Loader,
     Price,
