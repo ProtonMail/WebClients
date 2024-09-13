@@ -79,6 +79,7 @@ export type { DropdownProps } from './components/dropdown/Dropdown';
 export { default as Dropdown } from './components/dropdown/Dropdown';
 export { default as SimpleDropdown } from './components/dropdown/SimpleDropdown';
 export { default as DropdownMenuContainer } from './components/dropdown/DropdownMenuContainer';
+export { DropdownSizeUnit } from './components/dropdown/utils';
 
 // ADDRESS AUCTOCOMPLETE
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
