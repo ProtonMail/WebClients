@@ -11,6 +11,7 @@ const store = new Store<{ settings: SettingsStore }>({
 interface SettingsStore {
     spellChecker: boolean;
     overrideError: boolean;
+    defaultMailto: boolean;
     theme?: SerializedTheme;
     releaseCategory?: RELEASE_CATEGORIES;
     rolloutProportion?: number;
@@ -19,6 +20,7 @@ interface SettingsStore {
 const defaultSettings = {
     spellChecker: true,
     overrideError: false,
+    defaultMailto: false,
     releaseCategory: RELEASE_CATEGORIES.STABLE,
     rolloutProportion: 1 - Math.random(),
 } as const satisfies SettingsStore;

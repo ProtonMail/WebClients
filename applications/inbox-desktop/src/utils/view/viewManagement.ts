@@ -6,6 +6,7 @@ import { updateDownloaded } from "../../update";
 import { getConfig } from "../config";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { isLinux, isMac, isWindows } from "../helpers";
+import { urlHasMailto, readAndClearMailtoArgs } from "../protocol/mailto";
 import { checkKeys } from "../keyPinning";
 import { mainLogger, viewLogger } from "../log";
 import { setApplicationMenu } from "../menus/menuApplication";
@@ -50,7 +51,10 @@ export const viewCreationAppStartup = (session: Session) => {
 
     // We add the delay to avoid blank windows on startup, only mac supports openAtLogin for now
     const delay = isMac && app.getLoginItemSettings().openAtLogin ? 100 : 0;
-    setTimeout(() => showView("mail"), delay);
+
+    setTimeout(() => {
+        showView("mail");
+    }, delay);
 
     const debouncedUpdateWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
     mainWindow.on("move", debouncedUpdateWindowBounds);
@@ -137,7 +141,9 @@ const createViews = (session: Session) => {
     browserViewMap.account.setAutoResize({ width: true, height: true });
 
     const config = getConfig();
-    loadURL("mail", config.url.mail);
+
+    const mailto = readAndClearMailtoArgs();
+    loadURL("mail", config.url.mail + (mailto ? `/inbox#mailto=${mailto}` : ""));
 };
 
 const createBrowserWindow = (session: Session) => {
@@ -232,7 +238,12 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
         currentViewID = viewID;
         mainWindow!.title = windowTitle;
 
-        if (url && !isSameURL(url, await getViewURL(viewID))) {
+        if (url && urlHasMailto(url)) {
+            viewLogger(viewID).debug(`showView loading mailto ${url} from`, await getViewURL(viewID));
+            const loadPromise = loadURL(viewID, url);
+            mainWindow!.setBrowserView(view);
+            await loadPromise;
+        } else if (url && !isSameURL(url, await getViewURL(viewID))) {
             viewLogger(viewID).debug("showView current url is different", await getViewURL(viewID));
             viewLogger(viewID).info("showView loading", url);
             await loadURL(viewID, "about:blank");
@@ -240,7 +251,7 @@ export async function showView(viewID: CHANGE_VIEW_TARGET, targetURL: string = "
             mainWindow!.setBrowserView(view);
             await loadPromise;
         } else {
-            viewLogger(viewID).info("showView showing view");
+            viewLogger(viewID).info("showView showing view for ", url);
             mainWindow!.setBrowserView(view);
         }
     };
@@ -265,9 +276,22 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
     const view = browserViewMap[viewID]!;
     const viewURL = await getViewURL(viewID);
 
-    if (isSameURL(viewURL, url) && !force) {
-        viewLogger(viewID).info("loadURL already in given url", url);
-        return;
+    // NOTE isSameURL will ignore `#mailto` arguments, but we want to load even if it's
+    // same. In some cases this might cause a view reload.
+    if (urlHasMailto(url)) {
+        if (viewURL == url) {
+            const defURL = url.replace(/#mailto=.*$/, "#mailto=default");
+            viewLogger(viewID).info(
+                `loadURL asked to navigate to the same mailto ${url}, first navigating to ${defURL}`,
+            );
+            await view.webContents.loadURL(defURL);
+        }
+    } else if (isSameURL(viewURL, url)) {
+        if (!force) {
+            viewLogger(viewID).info("loadURL already in given url", url);
+            view.webContents.loadURL(url);
+            return;
+        }
     }
 
     viewLogger(viewID).info("loadURL from", viewURL, "to", url);
@@ -282,6 +306,7 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
         const cleanup = () => {
             clearTimeout(loadingTimeoutID);
             view.webContents.off("did-finish-load", handleLoadFinish);
+            view.webContents.off("did-navigate-in-page", handleLoadFinish);
             view.webContents.off("did-fail-load", handleLoadError);
             resolve();
         };
@@ -304,7 +329,19 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
         };
 
         view.webContents.on("did-finish-load", handleLoadFinish);
+        view.webContents.on("did-navigate-in-page", handleLoadFinish);
         view.webContents.on("did-fail-load", handleLoadError);
+
+        // FIXME:jcuth pure hack
+        // - uknown reason why the mailto url don't return `did-finish-load`
+        //   within 30s even when actually composer is loaded.
+        // - it blocks the next url load for view so decided to reduce cooldown time to 5s
+        // - reduce to 500ms
+        //
+        // loadingTimeoutID = setTimeout(handleLoadTimeout, urlHasMailto(url) ? 500 : 30000);
+        //
+        // - try to listen to in page navigation
+        // - seems to work.. adding it to next build for furhter testing
         loadingTimeoutID = setTimeout(handleLoadTimeout, 30000);
         view.webContents.loadURL(url);
     });
