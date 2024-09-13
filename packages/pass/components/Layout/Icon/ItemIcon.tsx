@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { type FC, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import type { IconName, IconSize } from '@proton/components';
 import { Icon } from '@proton/components';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';

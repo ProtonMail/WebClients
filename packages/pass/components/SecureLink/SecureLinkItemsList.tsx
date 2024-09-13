@@ -5,7 +5,7 @@ import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import { DropdownButton, Icon } from '@proton/components';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';

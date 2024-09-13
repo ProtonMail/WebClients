@@ -3,8 +3,7 @@ import type { RouteChildrenProps } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Button, CircleLoader } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
 import { ItemHistoryPanel } from '@proton/pass/components/Layout/Panel/ItemHistoryPanel';

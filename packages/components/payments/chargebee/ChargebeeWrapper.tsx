@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import { Icon, Label } from '@proton/components/components';
 import { useElementBreakpoints } from '@proton/components/hooks';
 import type {

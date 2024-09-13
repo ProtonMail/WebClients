@@ -5,7 +5,7 @@ import type { QRCode } from 'jsqr';
 import jsQR from 'jsqr';
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 

@@ -1,5 +1,4 @@
 export * from './Card';
-export * from './CircleLoader';
 export * from './Href';
 export * from './InlineLinkButton';
 
@@ -28,6 +27,7 @@ export type { VrProps } from './Vr/Vr';
 
 export { default as Scroll } from './Scroll/Scroll';
 export type { ScrollProps } from './Scroll/Scroll';
+export { default as ScrollShadows } from './Scroll/ScrollShadows';
 
 export { default as Pill } from './Pill/Pill';
 export type { PillProps } from './Pill/Pill';
@@ -46,4 +46,6 @@ export type { KbdProps } from './Kbd/Kbd';
 
 export { default as Donut } from './Donut/Donut';
 export type { DonutProps } from './Donut/Donut';
-export { default as ScrollShadows } from './Scroll/ScrollShadows';
+
+export { default as CircleLoader } from './CircleLoader/CircleLoader';
+export type { CircleLoaderProps, CircleLoaderSize } from './CircleLoader/CircleLoader';

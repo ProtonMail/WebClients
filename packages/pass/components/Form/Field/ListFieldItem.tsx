@@ -2,7 +2,7 @@
 import type { KeyboardEventHandler } from 'react';
 import { useRef, useState } from 'react';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import type { ListFieldValue } from './ListField';
