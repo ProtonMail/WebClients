@@ -37,7 +37,7 @@ export interface MailboxHotkeysContext {
     elementIDs: string[];
     checkedIDs: string[];
     selectedIDs: string[];
-    focusIndex?: number;
+    focusID?: string;
     columnLayout: boolean;
     isMessageOpening: boolean;
     location: Location;
@@ -45,9 +45,11 @@ export interface MailboxHotkeysContext {
 
 export interface MailboxHotkeysHandlers {
     handleBack: () => void;
-    getFocusedId: () => string | undefined;
-    setFocusIndex: (index?: number) => void;
-    focusOnLastMessage: () => void;
+    setFocusID: (elementID: string | undefined) => void;
+    focusLastID: () => void;
+    focusFirstID: () => void;
+    focusPreviousID: () => void;
+    focusNextID: () => void;
     handleElement: (ID: string, preventComposer?: boolean) => void;
     handleCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     handleCheckAll: (checked: boolean) => void;
@@ -65,16 +67,18 @@ export const useMailboxHotkeys = (
         elementIDs,
         checkedIDs,
         selectedIDs,
-        focusIndex,
+        focusID,
         columnLayout,
         isMessageOpening,
         location,
     }: MailboxHotkeysContext,
     {
         handleBack,
-        getFocusedId,
-        setFocusIndex,
-        focusOnLastMessage,
+        setFocusID,
+        focusFirstID,
+        focusLastID,
+        focusPreviousID,
+        focusNextID,
         handleElement,
         handleCheck,
         handleCheckAll,
@@ -146,7 +150,7 @@ export const useMailboxHotkeys = (
                 if (columnLayout) {
                     e.preventDefault();
                     e.stopPropagation();
-                    focusOnLastMessage();
+                    focusFirstID();
                 }
             },
         ],
@@ -159,7 +163,7 @@ export const useMailboxHotkeys = (
                 ) as HTMLElement;
                 if (sidebarLink) {
                     sidebarLink.focus();
-                    setFocusIndex(undefined);
+                    setFocusID(undefined);
                 }
             },
         ],
@@ -174,41 +178,38 @@ export const useMailboxHotkeys = (
             ['Meta', 'ArrowUp'],
             (e) => {
                 e.preventDefault();
-                setFocusIndex(0);
+                focusFirstID();
             },
         ],
         [
             'ArrowUp',
             (e) => {
                 e.preventDefault();
-                const previousIndex = focusIndex !== undefined ? Math.max(0, focusIndex - 1) : elementIDs.length - 1;
-                setFocusIndex(previousIndex);
+                focusPreviousID();
             },
         ],
         [
             ['Meta', 'ArrowDown'],
             (e) => {
                 e.preventDefault();
-                setFocusIndex(elementIDs.length - 1);
+                focusLastID();
             },
         ],
         [
             'ArrowDown',
             (e) => {
                 e.preventDefault();
-                const nextIndex = focusIndex !== undefined ? Math.min(elementIDs.length - 1, focusIndex + 1) : 0;
-                setFocusIndex(nextIndex);
+                focusNextID();
             },
         ],
         [
             'Enter',
             (e) => {
-                const id = getFocusedId();
                 const { activeElement } = document;
 
-                if (id && activeElement?.tagName.toLocaleLowerCase() !== 'button') {
+                if (focusID && activeElement?.tagName.toLocaleLowerCase() !== 'button') {
                     e.stopPropagation();
-                    handleElement(id);
+                    handleElement(focusID);
                 }
             },
         ],
@@ -227,10 +228,9 @@ export const useMailboxHotkeys = (
             'X',
             (e) => {
                 if (Shortcuts) {
-                    const id = getFocusedId();
-                    if (id) {
+                    if (focusID) {
                         e.preventDefault();
-                        handleCheckOnlyOne(id);
+                        handleCheckOnlyOne(focusID);
                     }
                 }
             },
@@ -239,10 +239,9 @@ export const useMailboxHotkeys = (
             ['Shift', 'X'],
             (e) => {
                 if (Shortcuts) {
-                    const id = getFocusedId();
-                    if (id) {
+                    if (focusID) {
                         e.preventDefault();
-                        handleCheckRange(id);
+                        handleCheckRange(focusID);
                     }
                 }
             },
@@ -250,21 +249,19 @@ export const useMailboxHotkeys = (
         [
             KeyboardKey.Spacebar,
             (e) => {
-                const id = getFocusedId();
                 const { activeElement } = document;
-                if (id && activeElement?.tagName.toLocaleLowerCase() !== 'button' && canSelectItem) {
+                if (focusID && activeElement?.tagName.toLocaleLowerCase() !== 'button' && canSelectItem) {
                     e.preventDefault();
-                    handleCheckOnlyOne(id);
+                    handleCheckOnlyOne(focusID);
                 }
             },
         ],
         [
             ['Shift', KeyboardKey.Spacebar],
             (e) => {
-                const id = getFocusedId();
-                if (id) {
+                if (focusID) {
                     e.preventDefault();
-                    handleCheckRange(id);
+                    handleCheckRange(focusID);
                 }
             },
         ],
@@ -276,13 +273,11 @@ export const useMailboxHotkeys = (
                     handleCheckAll(false);
                 }
 
-                const tmpIndex = focusIndex;
                 history.push(
                     setParamsInLocation(history.location, {
                         labelID,
                     })
                 );
-                setFocusIndex(tmpIndex);
             },
         ],
         [
@@ -434,7 +429,7 @@ export const useMailboxHotkeys = (
                         return;
                     }
 
-                    setFocusIndex(previousIndex);
+                    focusPreviousID();
                     handleElement(elementIDs[previousIndex], true);
                 }
             },
@@ -455,7 +450,7 @@ export const useMailboxHotkeys = (
                         return;
                     }
 
-                    setFocusIndex(nextIndex);
+                    focusNextID();
                     handleElement(elementIDs[nextIndex], true);
                 }
             },

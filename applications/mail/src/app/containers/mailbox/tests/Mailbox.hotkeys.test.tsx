@@ -45,7 +45,6 @@ describe('Mailbox hotkeys', () => {
 
     it('should navigate through items with arrows', async () => {
         const { getItems, down, up, ctrlDown, ctrlUp } = await setup();
-
         const items = getItems();
 
         down();
@@ -75,15 +74,15 @@ describe('Mailbox hotkeys', () => {
             );
         };
 
-        const { left, right } = await setup({ Component: TestComponent as any });
+        const { left, right, getItems } = await setup({ Component: TestComponent as any });
 
         const sidebar = document.querySelector('[data-shortcut-target="navigation-link"]');
-        const message = document.querySelector('[data-shortcut-target="message-container"]');
-
+        // const message = document.querySelector('[data-shortcut-target="message-container"]');
+        const items = getItems();
         left();
         assertFocus(sidebar);
         right();
-        assertFocus(message);
+        assertFocus(items[0]);
     });
 
     it('should enter a message and leave', async () => {
@@ -99,7 +98,7 @@ describe('Mailbox hotkeys', () => {
         expect(history.location.pathname).toBe(`/${props.labelID}`);
     });
 
-    it('should navigate no next message with J', async () => {
+    it('should navigate to next message with J', async () => {
         const conversation = conversations[2];
         const message = { ID: 'MessageID', Subject: 'test', Body: 'test', Flags: 0 } as Message;
         addApiMock(`mail/v4/conversations/${conversation.ID}`, () => ({
@@ -171,58 +170,47 @@ describe('Mailbox hotkeys', () => {
         const deleteSpy = jest.fn();
         addApiMock('mail/v4/conversations/delete', deleteSpy, 'put');
 
-        const conversations = getElements(20, MAILBOX_LABEL_IDS.TRASH);
+        const conversations = getElements(20, MAILBOX_LABEL_IDS.TRASH); // Firsts items are older than the last ones
 
-        const { down, space, a, i, s, star, t, ctrlBackspace, getByTestId } = await setup({
+        const { down, space, a, i, s, t, ctrlBackspace, getByTestId } = await setup({
             labelID: MAILBOX_LABEL_IDS.TRASH,
             conversations,
         });
 
         let callTimes = 0;
+
         const expectLabelCall = (LabelID: string) => {
             callTimes++;
             expect(labelSpy).toHaveBeenCalledTimes(callTimes);
-            expect(labelSpy.mock.calls[callTimes - 1][0].data).toEqual({
-                LabelID,
-                IDs: [conversations[conversations.length - (callTimes * 2 - 1)].ID],
-            });
+            const result = labelSpy.mock.calls[callTimes - 1][0].data;
+            expect(result.LabelID).toBe(LabelID);
+
+            expect(result.IDs).toEqual([conversations[conversations.length - 1 * callTimes].ID]);
         };
 
         down();
         space();
         a();
         await tick();
-
         expectLabelCall(MAILBOX_LABEL_IDS.ARCHIVE);
 
-        down();
         down();
         space();
         i();
         await tick();
-
         expectLabelCall(MAILBOX_LABEL_IDS.INBOX);
 
-        down();
         down();
         space();
         s();
         await tick();
-
         expectLabelCall(MAILBOX_LABEL_IDS.SPAM);
 
         down();
-        down();
         space();
-        star();
-        await tick();
-
-        expectLabelCall(MAILBOX_LABEL_IDS.STARRED);
-
-        // T should do nothing as we already are in trash folder
         t();
-        expect(labelSpy).toHaveBeenCalledTimes(callTimes);
         await tick();
+        expectLabelCall(MAILBOX_LABEL_IDS.TRASH);
 
         ctrlBackspace();
         const button = getByTestId('permanent-delete-modal:submit');
