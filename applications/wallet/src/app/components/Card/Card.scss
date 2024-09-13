@@ -1,0 +1,9 @@
+.wallet-card {
+	padding-block: 1.5rem;
+	padding-inline: 1rem;
+}
+
+.wallet-card--error {
+	background: var(--signal-danger-minor-2);
+	color: #ed4349;
+}

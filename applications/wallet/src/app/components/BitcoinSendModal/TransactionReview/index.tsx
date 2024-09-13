@@ -16,6 +16,7 @@ import { useBitcoinBlockchainContext } from '../../../contexts';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import { useExchangeRate } from '../../../store/hooks';
 import { isUndefined } from '../../../utils';
+import Card from '../../Card';
 import { EmailListItem } from '../../EmailListItem';
 import type { BtcAddressMap } from '../../EmailOrBitcoinAddressInput/useEmailAndBtcAddressesMaps';
 import { EmailSelect } from '../../EmailSelect';
@@ -86,6 +87,8 @@ export const TransactionReview = ({
         btcAddressMap,
         onSent,
     });
+
+    const hasFeeEstimations = Boolean(getFeesByBlockTarget(1));
 
     return (
         <>
@@ -271,39 +274,49 @@ export const TransactionReview = ({
                 <div className="flex flex-column w-full">
                     <div className="flex flex-row w-full items-center justify-space-between">
                         <div className="flex flex-column items-start">
-                            <div className="color-weak mb-4 mt-3 text-semibold">{c('Wallet transaction')
-                                .t`Network fee`}</div>
-
-                            <div className="mb-1">
-                                {exchangeRate && <Price satsAmount={totalFees} unit={exchangeRate} />}
+                            <div className="color-weak mb-4 mt-3 text-semibold">
+                                {c('Wallet transaction').t`Network fee`}
                             </div>
-
-                            <span className="block color-hint">
-                                {secondaryAmount({
-                                    key: 'hint-fiat-amount',
-                                    settingsBitcoinUnit: settings.BitcoinUnit,
-                                    secondaryExchangeRate: accountExchangeRate,
-                                    primaryExchangeRate: exchangeRate,
-                                    value: totalFees,
-                                })}
-                            </span>
+                            {hasFeeEstimations ? (
+                                <>
+                                    <div className="mb-1">
+                                        {exchangeRate && <Price satsAmount={totalFees} unit={exchangeRate} />}
+                                    </div>
+                                    <span className="block color-hint">
+                                        {secondaryAmount({
+                                            key: 'hint-fiat-amount',
+                                            settingsBitcoinUnit: settings.BitcoinUnit,
+                                            secondaryExchangeRate: accountExchangeRate,
+                                            primaryExchangeRate: exchangeRate,
+                                            value: totalFees,
+                                        })}
+                                    </span>
+                                </>
+                            ) : (
+                                <Card type={'error'}>
+                                    {c('Wallet transaction')
+                                        .t`We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.`}
+                                </Card>
+                            )}
                         </div>
 
-                        <CoreButton
-                            className="ml-4 rounded-full bg-weak"
-                            icon
-                            shape="solid"
-                            color="weak"
-                            onClick={() => {
-                                setFeesModal(true);
-                            }}
-                        >
-                            <Tooltip title={c('Action').t`Edit`}>
-                                <Icon name="chevron-right" alt={c('Action').t`Edit`} />
-                            </Tooltip>
-                        </CoreButton>
+                        {hasFeeEstimations && (
+                            <CoreButton
+                                className="ml-4 rounded-full bg-weak"
+                                icon
+                                shape="solid"
+                                color="weak"
+                                onClick={() => {
+                                    setFeesModal(true);
+                                }}
+                            >
+                                <Tooltip title={c('Action').t`Edit`}>
+                                    <Icon name="chevron-right" alt={c('Action').t`Edit`} />
+                                </Tooltip>
+                            </CoreButton>
+                        )}
 
-                        {!isUndefined(network) && (
+                        {!isUndefined(network) && hasFeeEstimations && (
                             <FeesModal
                                 accountExchangeRate={accountExchangeRate}
                                 exchangeRate={exchangeRate}
@@ -324,7 +337,9 @@ export const TransactionReview = ({
                         </div>
 
                         <div className="mb-1">
-                            {exchangeRate && <Price satsAmount={totalAmount} unit={exchangeRate} />}
+                            {exchangeRate && (
+                                <Price satsAmount={hasFeeEstimations ? totalAmount : 0} unit={exchangeRate} />
+                            )}
                         </div>
 
                         <span className="block color-hint">
@@ -357,6 +372,7 @@ export const TransactionReview = ({
                     shadow
                     className="mt-6"
                     fullWidth
+                    disabled={!hasFeeEstimations}
                     onClick={() => {
                         void withLoadingSend(handleSendTransaction());
                     }}
