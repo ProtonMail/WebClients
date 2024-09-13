@@ -229,7 +229,7 @@ const addMissingHashToWalletTransactions = async ({
             }
         } catch (e) {
             // TODO: do something to avoid creating wallet transaction when error occurs here
-            console.error('An error occured during transactin decryption, we will create a new transaction', e);
+            console.error('An error occurred during transaction decryption, we will create a new transaction', e);
         }
     }
 

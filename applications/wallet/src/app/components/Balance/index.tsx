@@ -11,6 +11,7 @@ import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
 
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
+import { Skeleton } from '../../atoms/Skeleton';
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { convertAmountStr, getLabelByUnit } from '../../utils';
@@ -38,6 +39,8 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
 
     const { totalBalance } = useBalance(apiWalletData, apiAccount);
 
+    const loadingBalance = Boolean((syncingData?.syncing || syncingData?.error) && !totalBalance);
+
     return (
         <div className="wallet-balance flex flex-row flex-nowrap py-2 px-0 m-4 items-center">
             <div key={apiWalletData.Wallet.ID} ref={balanceRef} className="flex flex-column">
@@ -45,11 +48,9 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                     {apiAccount ? apiAccount.Label : c('Wallet dashboard').t`All accounts`}
                 </div>
                 <div className="flex flex-row flex-nowrap items-center my-1">
-                    <div
-                        className={clsx(
-                            'text-semibold',
-                            (loadingExchangeRate || (syncingData?.syncing && !totalBalance)) && 'skeleton-loader'
-                        )}
+                    <Skeleton
+                        loading={loadingExchangeRate || loadingBalance}
+                        placeholder={<div className="h1 text-semibold">{c('Balance').t`Loading balance`}</div>}
                     >
                         <Price
                             className="h1 text-semibold"
@@ -58,7 +59,7 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                             unit={exchangeRate ?? settings.BitcoinUnit}
                             satsAmount={totalBalance}
                         />
-                    </div>
+                    </Skeleton>
 
                     <CoreButton
                         shape="ghost"
@@ -72,17 +73,18 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                     </CoreButton>
                 </div>
                 {!loadingExchangeRate && exchangeRate && (
-                    <div
-                        className={clsx(
-                            'text-lg color-hint',
-                            syncingData?.syncing && !totalBalance && 'skeleton-loader'
-                        )}
+                    <Skeleton
+                        loading={loadingBalance}
+                        placeholder={<div className="text-lg">{c('Balance').t`Loading balance`}</div>}
                     >
-                        <span className={clsx(!showBalance && 'blurred')}>
-                            {convertAmountStr(totalBalance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
-                        </span>
-                        {getLabelByUnit(settings.BitcoinUnit)}
-                    </div>
+                        <div className="text-lg color-hint">
+                            <span className={clsx(!showBalance && 'blurred')}>
+                                {convertAmountStr(totalBalance, COMPUTE_BITCOIN_UNIT, settings.BitcoinUnit)}{' '}
+                            </span>
+
+                            {getLabelByUnit(settings.BitcoinUnit)}
+                        </div>
+                    </Skeleton>
                 )}
             </div>
         </div>

@@ -14,6 +14,7 @@ import { BITCOIN, DEFAULT_FIAT_CURRENCY, type IWasmApiWalletData } from '@proton
 
 import { Button, CoreButton } from '../../atoms/Button';
 import { Price } from '../../atoms/Price';
+import { Skeleton } from '../../atoms/Skeleton';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { usePriceGraphData } from '../../store/hooks/usePriceGraphData';
@@ -64,7 +65,7 @@ export const MetricsAndCtas = ({
     const { totalBalance } = useBalance(apiWalletData, apiAccount);
 
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(account);
-    const [priceGraphData = { GraphData: [] }] = usePriceGraphData(
+    const [priceGraphData = { GraphData: [] }, loadingGraphData] = usePriceGraphData(
         account?.FiatCurrency ?? DEFAULT_FIAT_CURRENCY,
         'OneDay'
     );
@@ -105,24 +106,28 @@ export const MetricsAndCtas = ({
                     <div className="flex flex-column text-right">
                         <div className="block color-hint mb-1">{c('Wallet dashboard').t`Current price`}</div>
                         <div className="w-full grow">
-                            <span className={clsx('block', loadingExchangeRate && 'skeleton-loader')}>
-                                {exchangeRate && <Price unit={exchangeRate} satsAmount={1 * BITCOIN} />}
-                            </span>
+                            <Skeleton
+                                loading={loadingExchangeRate}
+                                placeholder={<span className="block">{c('Loader').t`Loading`}</span>}
+                            >
+                                <span className="block">
+                                    {exchangeRate && <Price unit={exchangeRate} satsAmount={1 * BITCOIN} />}
+                                </span>
+                            </Skeleton>
                         </div>
                     </div>
 
                     <div className="flex-column text-right">
                         <span className="block color-hint mb-1">{c('Wallet dashboard').t`24h change`}</span>
                         <div className="w-full grow">
-                            <span
-                                className={clsx(
-                                    'block',
-                                    loadingExchangeRate && 'skeleton-loader',
-                                    percentChange >= 0 ? 'color-success' : 'color-danger'
-                                )}
+                            <Skeleton
+                                loading={loadingGraphData}
+                                placeholder={<span className="block">{c('Loader').t`Loading`}</span>}
                             >
-                                {percentChange.toFixed(2)}%
-                            </span>
+                                <span className={clsx('block', percentChange >= 0 ? 'color-success' : 'color-danger')}>
+                                    {percentChange.toFixed(2)}%
+                                </span>
+                            </Skeleton>
                         </div>
                     </div>
 
@@ -169,16 +174,11 @@ export const MetricsAndCtas = ({
             >
                 <Tooltip
                     title={
-                        localDisabled || !canSend
-                            ? c('wallet dashboard').t`You need to have a positive balance to send bitcoins`
-                            : null
+                        !canSend ? c('wallet dashboard').t`You need to have a positive balance to send bitcoins` : null
                     }
                 >
-                    <div className="flex grow">
-                        <CtaButton disabled={localDisabled || !canSend} onClick={() => onClickSend()}>{c(
-                            'Wallet dashboard'
-                        ).t`Send`}</CtaButton>
-                    </div>
+                    <CtaButton disabled={localDisabled || !canSend} onClick={() => onClickSend()}>{c('Wallet dashboard')
+                        .t`Send`}</CtaButton>
                 </Tooltip>
 
                 <CtaButton disabled={localDisabled} onClick={() => onClickReceive()}>{c('Wallet dashboard')

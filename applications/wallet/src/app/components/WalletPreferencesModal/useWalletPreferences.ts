@@ -124,7 +124,6 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
 
     const clearBrowserStorage = () => {
         window.localStorage.clear();
-        createNotification({ text: c('Wallet Settings').t`Local storage cleared` });
     };
 
     const [shouldShowBvEWarningByAccountId, setShouldShowBvEWarningByAccountId] = useState<
