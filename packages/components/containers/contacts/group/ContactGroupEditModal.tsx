@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -14,7 +15,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import type { AddressesAutocompleteItem, ModalProps } from '../../../components';
 import {
-    Alert,
     Autocomplete,
     ColorPicker,
     Field,
