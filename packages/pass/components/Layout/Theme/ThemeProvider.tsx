@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren, useEffect, useLayoutEffect, useState } from 'react';
+import { type FC, useEffect, useLayoutEffect, useState } from 'react';
 
 // @ts-ignore
 import passDarkTheme from '@proton/colors/themes/dist/pass-dark.theme.css';
@@ -28,8 +28,8 @@ export const PASS_THEMES_MAP: Partial<Record<ThemeTypes, PassTheme>> = {
     },
 };
 
-export const ThemeProvider: FC<PropsWithChildren<Props>> = (props) => {
-    const { getInitialTheme } = usePassCore();
+export const ThemeProvider: FC<Props> = (props) => {
+    const { getTheme } = usePassCore();
     const [theme, setTheme] = useState<Maybe<ThemeTypes>>(props.theme);
 
     const config = theme ? PASS_THEMES_MAP[theme] : null;
@@ -48,15 +48,10 @@ export const ThemeProvider: FC<PropsWithChildren<Props>> = (props) => {
     }, [config]);
 
     useEffect(() => {
-        (async () => (await getInitialTheme?.()) ?? PASS_DEFAULT_THEME)()
+        (async () => (await getTheme?.()) ?? PASS_DEFAULT_THEME)()
             .then(setTheme)
             .catch(() => setTheme(PASS_DEFAULT_THEME));
     }, []);
 
-    return (
-        <>
-            {config && <style id={THEME_ID}>{config.styles}</style>}
-            {props.children}
-        </>
-    );
+    return <>{config && <style id={THEME_ID}>{config.styles}</style>}</>;
 };

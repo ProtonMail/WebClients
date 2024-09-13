@@ -27,15 +27,13 @@ export const Settings: FC = () => {
     }, []);
 
     return (
-        <ThemeConnect>
-            <ExtensionStore>
-                <ExtensionClient onWorkerMessage={handleWorkerMessage}>
-                    <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
-                    <Localized>
-                        <SettingsRouter />
-                    </Localized>
-                </ExtensionClient>
-            </ExtensionStore>
-        </ThemeConnect>
+        <ExtensionStore>
+            <ExtensionClient onWorkerMessage={handleWorkerMessage}>
+                <ExtensionHead title={c('Title').t`${PASS_APP_NAME} Settings`} />
+                <Localized>
+                    <SettingsRouter />
+                </Localized>
+            </ExtensionClient>
+        </ExtensionStore>
     );
 };

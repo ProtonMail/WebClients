@@ -1,10 +1,16 @@
-import type { FC, PropsWithChildren } from 'react';
+import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { selectTheme } from '@proton/pass/store/selectors';
 
-export const ThemeConnect: FC<PropsWithChildren> = ({ children }) => {
+export const ThemeConnect = () => {
+    const { setTheme } = usePassCore();
     const selectedTheme = useSelector(selectTheme);
-    return <ThemeProvider theme={selectedTheme}>{children}</ThemeProvider>;
+
+    useEffect(() => {
+        if (selectedTheme) setTheme?.(selectedTheme);
+    }, [selectedTheme]);
+
+    return null;
 };
