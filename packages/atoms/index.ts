@@ -4,11 +4,7 @@ export * from './CircleLoader';
 export * from './Donut';
 export * from './Href';
 export * from './InlineLinkButton';
-export * from './Input';
 export * from './Kbd';
-export * from './NotificationCounter';
-export * from './NotificationDot';
-export * from './Pill';
 
 export { default as Avatar } from './Avatar/Avatar';
 export type { AvatarProps } from './Avatar/Avatar';
@@ -31,3 +27,15 @@ export type { VrProps } from './Vr/Vr';
 export { default as Scroll } from './Scroll/Scroll';
 export { default as ScrollShadows } from './Scroll/ScrollShadows';
 export type { ScrollProps } from './Scroll/Scroll';
+
+export { default as Pill } from './Pill/Pill';
+export type { PillProps } from './Pill/Pill';
+
+export { default as NotificationDot } from './NotificationDot/NotificationDot';
+export type { NotificationDotProps } from './NotificationDot/NotificationDot';
+
+export { default as NotificationCounter } from './NotificationCounter/NotificationCounter';
+export type { NotificationCounterProps } from './NotificationCounter/NotificationCounter';
+
+export { Input } from './Input/Input';
+export type { InputProps } from './Input/Input';
