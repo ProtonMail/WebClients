@@ -95,7 +95,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
         return imageResponsetoDataURL(res);
     },
 
-    getInitialTheme: () => {
+    getTheme: () => {
         try {
             const settings = localStorage.getItem('settings');
             return settings ? JSON.parse(settings).theme : PASS_DEFAULT_THEME;
@@ -147,15 +147,14 @@ export const App = () => {
                                             <AuthSwitchProvider>
                                                 <AuthServiceProvider>
                                                     <StoreProvider>
-                                                        <ThemeConnect>
-                                                            <Localized>
-                                                                {showWelcome ? <WelcomeScreen /> : <AppGuard />}
-                                                            </Localized>
-                                                            <Portal>
-                                                                <ModalsChildren />
-                                                                <NotificationsChildren />
-                                                            </Portal>
-                                                        </ThemeConnect>
+                                                        <ThemeConnect />
+                                                        <Localized>
+                                                            {showWelcome ? <WelcomeScreen /> : <AppGuard />}
+                                                        </Localized>
+                                                        <Portal>
+                                                            <ModalsChildren />
+                                                            <NotificationsChildren />
+                                                        </Portal>
                                                     </StoreProvider>
                                                 </AuthServiceProvider>
                                             </AuthSwitchProvider>

@@ -112,7 +112,7 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
                 .catch(noop);
         },
 
-        getInitialTheme: async () => {
+        getTheme: async () => {
             const theme = (await settings.resolve()).theme;
 
             // Handle case when authService did not init yet so localID and settings can't be resolved
@@ -164,15 +164,14 @@ export const App = () => (
                                                         <AuthSwitchProvider>
                                                             <AuthServiceProvider>
                                                                 <StoreProvider>
-                                                                    <ThemeConnect>
-                                                                        <Localized>
-                                                                            <AppGuard />
-                                                                        </Localized>
-                                                                        <Portal>
-                                                                            <ModalsChildren />
-                                                                            <NotificationsChildren />
-                                                                        </Portal>
-                                                                    </ThemeConnect>
+                                                                    <ThemeConnect />
+                                                                    <Localized>
+                                                                        <AppGuard />
+                                                                    </Localized>
+                                                                    <Portal>
+                                                                        <ModalsChildren />
+                                                                        <NotificationsChildren />
+                                                                    </Portal>
                                                                 </StoreProvider>
                                                             </AuthServiceProvider>
                                                         </AuthSwitchProvider>

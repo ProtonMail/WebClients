@@ -13,6 +13,7 @@ import useInstance from '@proton/hooks/useInstance';
 import { AuthStoreProvider } from '@proton/pass/components/Core/AuthStoreProvider';
 import type { PassCoreProviderProps } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
+import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { UnlockProvider } from '@proton/pass/components/Lock/UnlockProvider';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -105,11 +106,16 @@ const getExtensionCoreProps = (endpoint: ClientEndpoint, config: PassConfig): Pa
             return fetch(requestUrl, { signal, headers }).then(imageResponsetoDataURL);
         },
 
-        getInitialTheme: () =>
-            getExtensionLocalStorage<LocalStoreData>()
+        getTheme: () => {
+            /* Always use dark theme for onboarding installation pages */
+            if (window.location.href.includes('/onboarding.html#/')) {
+                return PassThemeOption.PassDark;
+            }
+            return getExtensionLocalStorage<LocalStoreData>()
                 .getItem('settings')
                 .then((setting) => (setting ? JSON.parse(setting)?.theme : PASS_DEFAULT_THEME))
-                .catch(noop),
+                .catch(noop);
+        },
 
         getLogs: () =>
             sendMessage.on(messageFactory({ type: WorkerMessageType.LOG_REQUEST }), (res) =>
