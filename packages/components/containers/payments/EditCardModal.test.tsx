@@ -1,6 +1,6 @@
 // import { fireEvent, waitFor } from '@testing-library/react';
 
-// import { Autopay, CardModel } from '@proton/components/payments/core';
+// import { Autopay, CardModel } from '@proton/payments';
 // import { updatePaymentMethod } from '@proton/shared/lib/api/payments';
 // import {
 //     apiMock,

@@ -18,14 +18,10 @@ import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/Ch
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import type { ExtendedTokenPayment, PaymentMethodFlows, TokenPayment } from '@proton/components/payments/core';
-import {
-    PAYMENT_METHOD_TYPES,
-    isV5PaymentToken,
-    v5PaymentTokenToLegacyPaymentToken,
-} from '@proton/components/payments/core';
 import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import type { WithLoading } from '@proton/hooks/useLoading';
+import type { ExtendedTokenPayment, PaymentMethodFlows, TokenPayment } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, isV5PaymentToken, v5PaymentTokenToLegacyPaymentToken } from '@proton/payments';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { APPS } from '@proton/shared/lib/constants';

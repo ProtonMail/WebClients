@@ -1,22 +1,27 @@
 import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { CreateBitcoinTokenData, PaymentsVersion, createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
-import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { Api } from '@proton/shared/lib/interfaces';
-
 import {
-    AmountAndCurrency,
-    BillingAddress,
-    ChargeablePaymentParameters,
+    type AmountAndCurrency,
+    type BillingAddress,
+    type ChargeablePaymentParameters,
     PAYMENT_METHOD_TYPES,
     PAYMENT_TOKEN_STATUS,
-    TokenPaymentMethod,
+    type TokenPaymentMethod,
     isTokenPaymentMethod,
-} from '../core';
-import { PaymentProcessorHook } from './interface';
+} from '@proton/payments';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import {
+    type CreateBitcoinTokenData,
+    type PaymentsVersion,
+    createToken,
+    getTokenStatus,
+} from '@proton/shared/lib/api/payments';
+import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { type Api } from '@proton/shared/lib/interfaces';
+
+import { type PaymentProcessorHook } from './interface';
 
 export const BITCOIN_POLLING_INTERVAL = 10000;
 

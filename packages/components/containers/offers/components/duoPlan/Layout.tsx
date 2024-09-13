@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { Price } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
 import { usePreferredPlansMap, useUser } from '@proton/components/hooks';
-import type { AmountAndCurrency } from '@proton/components/payments/core';
+import type { AmountAndCurrency } from '@proton/payments';
 import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';
 import percentage from '@proton/utils/percentage';

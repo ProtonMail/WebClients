@@ -3,15 +3,6 @@ import { useRef, useState } from 'react';
 import { addMonths } from 'date-fns';
 
 import { isSubscriptionUnchanged } from '@proton/components/containers/payments/helper';
-import { type CheckSubscriptionData, type PaymentsVersion, getPaymentsVersion } from '@proton/shared/lib/api/payments';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getPlanName } from '@proton/shared/lib/helpers/subscription';
-import { type Api, ChargebeeEnabled, type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { getSentryError } from '@proton/shared/lib/keys';
-
-import { useApi, useConfig, usePreferredPlansMap, useSubscription } from '../../hooks';
-import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
 import {
     type CheckWithAutomaticOptions,
     DEFAULT_TAX_BILLING_ADDRESS,
@@ -24,8 +15,17 @@ import {
     extendStatus,
     isCheckWithAutomaticOptions,
     isPaymentMethodStatusExtended,
-} from '../core';
-import { queryPaymentMethodStatus } from '../core/api';
+    queryPaymentMethodStatus,
+} from '@proton/payments';
+import { type CheckSubscriptionData, type PaymentsVersion, getPaymentsVersion } from '@proton/shared/lib/api/payments';
+import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { getPlanName } from '@proton/shared/lib/helpers/subscription';
+import { type Api, ChargebeeEnabled, type SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { getSentryError } from '@proton/shared/lib/keys';
+
+import { useApi, useConfig, usePreferredPlansMap, useSubscription } from '../../hooks';
+import { useChargebeeContext, useChargebeeEnabledCache } from '../client-extensions/useChargebeeContext';
 
 const checkSubscription = (data: CheckSubscriptionData, version: PaymentsVersion) => ({
     url: `payments/${version}/subscription/check`,

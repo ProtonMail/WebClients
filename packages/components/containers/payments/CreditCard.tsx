@@ -10,13 +10,13 @@ import type { SelectChangeEvent } from '@proton/components/components/selectTwo/
 import { requestAnimationFrameRateLimiter, default as useElementRect } from '@proton/components/hooks/useElementRect';
 import { formatCreditCardNumber, isValidNumber } from '@proton/components/payments/client-extensions/credit-card-type';
 import type { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
+import type { CardModel } from '@proton/payments';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import clsx from '@proton/utils/clsx';
 
 import { Label, Option, SelectTwo } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
-import type { CardModel } from '../../payments/core';
 
 import './CreditCard.scss';
 

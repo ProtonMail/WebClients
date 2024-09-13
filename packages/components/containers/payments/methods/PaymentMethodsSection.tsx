@@ -5,13 +5,8 @@ import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import { useChargebeeEnabledCache } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
-import {
-    MethodStorage,
-    PAYMENT_METHOD_TYPES,
-    isOnSessionMigration,
-    isSplittedUser,
-} from '@proton/components/payments/core';
 import useLoading from '@proton/hooks/useLoading';
+import { MethodStorage, PAYMENT_METHOD_TYPES, isOnSessionMigration, isSplittedUser } from '@proton/payments';
 import { APPS, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';

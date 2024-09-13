@@ -6,14 +6,14 @@ import { Button } from '@proton/atoms';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { ensureTokenChargeable, usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
+import type { PaymentTokenResult } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { createTokenV4, setPaymentMethodV4 } from '@proton/shared/lib/api/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { ModalProps } from '../../components';
 import { useApi, useEventManager, useNotifications, useUser } from '../../hooks';
-import type { PaymentTokenResult } from '../../payments/core/interface';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
 const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';

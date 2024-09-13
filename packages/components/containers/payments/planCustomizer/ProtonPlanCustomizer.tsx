@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { SelectedPlan } from '@proton/components/payments/core';
+import { SelectedPlan } from '@proton/payments';
 import type { ADDON_NAMES } from '@proton/shared/lib/constants';
 import { AddonKey, AddonLimit } from '@proton/shared/lib/constants';
 import type { AddonGuard, SupportedAddons } from '@proton/shared/lib/helpers/addons';

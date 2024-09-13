@@ -1,0 +1,33 @@
+{
+    "name": "@proton/payments",
+    "description": "",
+    "license": "GPL-3.0",
+    "sideEffects": false,
+    "main": "index.ts",
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "eslint index.ts core --ext .js,.ts,.tsx --quiet --cache",
+        "test": "jest",
+        "test:ci": "jest --runInBand",
+        "test:watch": "jest --watch"
+    },
+    "dependencies": {
+        "@proton/shared": "workspace:^",
+        "@reduxjs/toolkit": "^2.2.6",
+        "react": "^18.3.1",
+        "react-redux": "^9.1.2"
+    },
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:^",
+        "@swc/jest": "^0.2.36",
+        "@testing-library/jest-dom": "^6.4.8",
+        "@testing-library/react": "^15.0.7",
+        "eslint": "^8.57.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "ts-jest": "^29.2.4",
+        "typescript": "^5.5.4"
+    }
+}

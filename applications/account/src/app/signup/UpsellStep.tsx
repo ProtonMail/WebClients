@@ -14,10 +14,10 @@ import {
     getShortPlan,
 } from '@proton/components/containers/payments/features/plan';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
-import type { PaymentMethodStatusExtended} from '@proton/components/payments/core';
-import { getPlansMap } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
+import type { PaymentMethodStatusExtended } from '@proton/payments';
+import { getPlansMap } from '@proton/payments';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type {

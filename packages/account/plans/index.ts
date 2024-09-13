@@ -1,7 +1,7 @@
 import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { getAvailableCurrencies, isRegionalCurrency } from '@proton/components/payments/core/helpers';
+import { getAvailableCurrencies, isRegionalCurrency } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     cacheHelper,

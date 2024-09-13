@@ -1,4 +1,4 @@
-import type { SelectedPlan } from '@proton/components/payments/core';
+import type { SelectedPlan } from '@proton/payments';
 
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../constants';
 import type {

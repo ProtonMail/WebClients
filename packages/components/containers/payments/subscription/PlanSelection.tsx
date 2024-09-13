@@ -18,8 +18,7 @@ import {
 } from '@proton/components';
 import { useUser } from '@proton/components/hooks';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/components/payments/core';
-import { isRegionalCurrency, mainCurrencies } from '@proton/components/payments/core/helpers';
+import { type PaymentMethodStatusExtended, getPlansMap, isRegionalCurrency, mainCurrencies } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import {

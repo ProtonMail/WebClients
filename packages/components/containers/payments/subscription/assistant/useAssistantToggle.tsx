@@ -1,5 +1,5 @@
 import { useOrganization, usePreferredPlansMap, useSubscription, useUser } from '@proton/components/hooks';
-import { type AmountAndCurrency } from '@proton/components/payments/core';
+import { type AmountAndCurrency } from '@proton/payments';
 import { ADDON_NAMES, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { isScribeAddon } from '@proton/shared/lib/helpers/addons';
 import { hasAIAssistant } from '@proton/shared/lib/helpers/subscription';

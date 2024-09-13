@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
-import { mainCurrencies } from '@proton/components/payments/core/helpers';
+import { mainCurrencies } from '@proton/payments';
 import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
