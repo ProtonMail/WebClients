@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,6 +6,7 @@ import { LocationErrorBoundary } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import { useSignupFlowModal } from '../components/modals/SignupFlowModal/SignupFlowModal';
@@ -15,6 +16,7 @@ import { usePartialPublicView } from '../hooks/util/usePartialPublicView';
 import type { DecryptedLink } from '../store';
 import { PublicDriveProvider, useBookmarksPublicView, useDownload, usePublicAuth, usePublicShare } from '../store';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_bookmarks/useDriveShareURLBookmarking';
+import { useDriveDocsPublicSharingFF, useOpenDocument } from '../store/_documents';
 import { sendErrorReport } from '../utils/errorHandling';
 import { getErrorMetricType } from '../utils/errorHandling/apiErrors';
 import { Actions, countActionWithTelemetry } from '../utils/telemetry';
@@ -61,6 +63,41 @@ function PublicShareLinkInitContainer() {
     const errorMessage: ErrorTuple[1] = authErrorMessage || publicShareErrorMessage;
 
     const isPartialView = usePartialPublicView();
+
+    const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
+    const { openDocumentWindow } = useOpenDocument();
+
+    const showLoadingPage = isLoading || isLoadingDecrypt;
+    const showErrorPage = errorMessage || (showLoadingPage === false && link === undefined);
+
+    const openInDocs = useCallback(() => {
+        if (!isDocsPublicSharingEnabled || !link || error) {
+            return;
+        }
+
+        // TODO: Handle custom password here
+
+        openDocumentWindow({
+            mode: 'open-url',
+            token,
+            linkId: link.linkId,
+
+            // Target should be a new window when handling custom password,
+            // as communication will need the original tab to stay open.
+            window: window,
+        });
+    }, [isDocsPublicSharingEnabled, link, error, token]);
+
+    // This hook automatically redirects to Docs when opening a document.
+    useEffect(() => {
+        if (!isDocsPublicSharingEnabled || !link || error) {
+            return;
+        }
+
+        if (isProtonDocument(link.mimeType)) {
+            openInDocs();
+        }
+    }, [isDocsPublicSharingEnabled, error, link]);
 
     // If password to the share was changed, page need to reload everything.
     // In such case we need to also clear all downloads to not keep anything
@@ -125,9 +162,6 @@ function PublicShareLinkInitContainer() {
         }
     }, [isDriveShareUrlBookmarkingEnabled, isLoggedIn]);
 
-    const showLoadingPage = isLoading || isLoadingDecrypt;
-    const showErrorPage = errorMessage || (showLoadingPage === false && link === undefined);
-
     if (isPasswordNeeded) {
         return <PasswordPage submitPassword={submitPassword} />;
     }
@@ -140,25 +174,17 @@ function PublicShareLinkInitContainer() {
         return <ErrorPage />;
     }
 
+    const props = {
+        bookmarksPublicView,
+        token,
+        hideSaveToDrive: !isDriveShareUrlBookmarkingEnabled || isLegacy,
+        openInDocs: isDocsPublicSharingEnabled ? openInDocs : undefined,
+        partialView: isPartialView,
+    };
+
     return (
         <>
-            {link.isFile ? (
-                <SharedFilePage
-                    partialView={isPartialView}
-                    bookmarksPublicView={bookmarksPublicView}
-                    token={token}
-                    link={link}
-                    hideSaveToDrive={!isDriveShareUrlBookmarkingEnabled || isLegacy}
-                />
-            ) : (
-                <SharedFolderPage
-                    partialView={isPartialView}
-                    bookmarksPublicView={bookmarksPublicView}
-                    token={token}
-                    rootLink={link}
-                    hideSaveToDrive={!isDriveShareUrlBookmarkingEnabled || isLegacy}
-                />
-            )}
+            {link.isFile ? <SharedFilePage {...props} link={link} /> : <SharedFolderPage {...props} rootLink={link} />}
             {isDriveShareUrlBookmarkingEnabled && !isLoggedIn ? signUpFlowModal : renderUpsellFloatingModal}
         </>
     );

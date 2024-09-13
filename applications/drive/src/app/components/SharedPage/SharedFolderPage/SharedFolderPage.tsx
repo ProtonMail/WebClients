@@ -8,6 +8,7 @@ import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DecryptedLink } from '../../../store';
 import { type useBookmarksPublicView, useDownload, usePublicFolderView } from '../../../store';
+import { useDriveDocsPublicSharingFF } from '../../../store/_documents';
 import { usePublicFileView } from '../../../store/_views/useFileView';
 import type { SortParams } from '../../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../../utils/transfer';
@@ -28,6 +29,7 @@ interface Props {
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     hideSaveToDrive?: boolean;
     partialView?: boolean;
+    openInDocs?: () => void;
 }
 
 interface PreviewContainerProps {
@@ -37,6 +39,7 @@ interface PreviewContainerProps {
     onClose: () => void;
     onNavigate: (linkId: DecryptedLink['linkId']) => void;
     onDownload: () => void;
+    openInDocs?: () => void;
 }
 
 function SharedPagePreviewContainer({
@@ -46,6 +49,7 @@ function SharedPagePreviewContainer({
     onClose,
     onNavigate,
     onDownload,
+    openInDocs,
 }: PreviewContainerProps) {
     const {
         isLinkLoading,
@@ -58,6 +62,7 @@ function SharedPagePreviewContainer({
 
     const rootRef = useRef<HTMLDivElement>(null);
     const hideDownload = isProtonDocument(loadedLink?.mimeType || '');
+    const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
     return (
         <FilePreview
@@ -86,6 +91,8 @@ function SharedPagePreviewContainer({
             }
             onClose={onClose}
             onDownload={hideDownload ? undefined : onDownload}
+            isPublicDocsAvailable={isDocsPublicSharingEnabled}
+            onOpenInDocs={openInDocs}
         />
     );
 }
@@ -96,6 +103,7 @@ export default function SharedFolder({
     rootLink,
     hideSaveToDrive = false,
     partialView = false,
+    openInDocs,
 }: Props) {
     const [linkId, setLinkId] = useState(rootLink.linkId);
     const folderView = usePublicFolderView(token, linkId);
@@ -105,11 +113,17 @@ export default function SharedFolder({
     const [previewDisplayed, setPreviewDisplayed] = useState(false);
 
     const onItemOpen = (item: DecryptedLink) => {
+        if (isProtonDocument(item.mimeType) && openInDocs) {
+            openInDocs();
+            return;
+        }
+
         if (item.isFile) {
             setPreviewDisplayed(true);
             setDiplayedLink(item);
             return;
         }
+
         setLinkId(item.linkId);
     };
 
@@ -248,6 +262,7 @@ export default function SharedFolder({
                         onNavigate={handleNavigationPreview}
                         onClose={handleClose}
                         onDownload={handlePreviewDownload}
+                        openInDocs={openInDocs}
                     />
                 )}
                 <SharedFileBrowser {...folderView} onItemOpen={onItemOpen} items={fileBrowserItems} />
