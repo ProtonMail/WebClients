@@ -2,6 +2,8 @@ import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import ConfigProvider from '@proton/components/containers/config/Provider';
+import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
 import { type AuthStore } from '@proton/pass/lib/auth/store';
@@ -50,7 +52,8 @@ export type PassCoreContextValue = {
     getDomainImage: (domain: string, signal: AbortSignal) => Promise<Maybe<string>>;
     /** Resolves the initial theme. This is required in order to resolve
      * the proxied theme setting stored locally before state hydration */
-    getInitialTheme?: () => MaybePromise<Maybe<ThemeTypes>>;
+    getTheme?: () => MaybePromise<Maybe<ThemeTypes>>;
+    setTheme?: (theme: ThemeTypes) => void;
     /** Resolves the locally stored app logs */
     getLogs: () => Promise<string[]>;
     /** Returns the URL that should be opened when prompting for rating */
@@ -100,7 +103,8 @@ const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
  * dependent on the platform. */
 export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({ children, ...core }) => {
     const [appLocale, setAppLocale] = useState(DEFAULT_LOCALE);
-    const context = useMemo<PassCoreContextValue>(() => ({ ...core, locale: appLocale }), [appLocale]);
+    const [theme, setTheme] = useState<ThemeTypes>(PASS_DEFAULT_THEME);
+    const context = useMemo<PassCoreContextValue>(() => ({ ...core, setTheme, locale: appLocale }), [appLocale]);
 
     useEffect(() => {
         core.i18n.setLocale().catch(noop);
@@ -113,6 +117,7 @@ export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({
     return (
         <ConfigProvider config={core.config}>
             <PassCoreContext.Provider value={context}>
+                <ThemeProvider theme={theme} />
                 <AppStateProvider>{children}</AppStateProvider>
             </PassCoreContext.Provider>
         </ConfigProvider>
