@@ -12,7 +12,7 @@ import {
 } from '@proton/redux-utilities';
 import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { CURRENCIES, DAY, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
-import type { Api, FreePlanDefault, Plan } from '@proton/shared/lib/interfaces';
+import type { Api, Currency, FreePlanDefault, Plan } from '@proton/shared/lib/interfaces';
 
 import { getInitialModelState } from '../initialModelState';
 import type { ModelState } from '../interface';
@@ -62,60 +62,42 @@ const thunk = ({
     api?: Api;
 } = {}): ThunkAction<Promise<Model>, PlansState, ProtonThunkArguments, UnknownAction> => {
     return (dispatch, getState, extraArgument) => {
+        const getRegionalCurrencies: () => Promise<Currency[]> = async () => {
+            const user = selectUser(getState()).value;
+
+            const [status, subscription] = await Promise.all([
+                dispatch(paymentStatusThunk({ api: apiOverride ? apiOverride : undefined })),
+                user ? dispatch(subscriptionThunk()) : undefined,
+            ]);
+
+            const availableCurrencies = getAvailableCurrencies({
+                status,
+                user,
+                subscription,
+                regionalCurrenciesEnabled: true,
+            });
+
+            return availableCurrencies.filter((currency) => isRegionalCurrency(currency));
+        };
+
         const select = () => {
             return previous({ dispatch, getState, extraArgument });
         };
         const cb = async () => {
             try {
-                // Step 0: Before we fetch any plans, we need to know which regional currencies are available
-
-                const user = selectUser(getState()).value;
-
-                const [status, subscription] = await Promise.all([
-                    dispatch(paymentStatusThunk({ api: apiOverride ? apiOverride : undefined })),
-                    user ? dispatch(subscriptionThunk()) : undefined,
-                ]);
-
-                const availableCurrencies = getAvailableCurrencies({
-                    status,
-                    user,
-                    subscription,
-                    regionalCurrenciesEnabled: true,
-                });
-
-                const regionalCurrencies = availableCurrencies.filter((currency) => isRegionalCurrency(currency));
-
-                // Step 1: load the plans with the preferred currencies
-
-                // the first currency is undefined to fetch the list of plans with the default currency set by the
-                // backend
-                const currencies = [
-                    // this can load either main currency or regional currency
-                    undefined,
-
-                    // ---
-                    // then we load all the regional currencies that are NOT user currency. The user currency will be
-                    // loaded without any parameter with the "undefined" case.
-                    ...regionalCurrencies.filter((currency) => user?.Currency !== currency),
-                ];
+                // Step 1: load the plans without any parameters. It can return either main currency or a regional one.
+                // In addition, we fetch the regional currencies that are available for the user
 
                 dispatch(slice.actions.pending());
 
                 const api = apiOverride ?? extraArgument.api;
-                const allPlansPromise = Promise.all(
-                    currencies.map(async (currency) => {
-                        const { Plans } = await api<{ Plans: Plan[] }>(
-                            queryPlans(currency ? { Currency: currency } : undefined)
-                        );
-                        return Plans;
-                    })
-                );
+                const plansPromise: Promise<Plan[]> = api<{ Plans: Plan[] }>(queryPlans()).then(({ Plans }) => Plans);
 
-                const freePlanPromise = getFreePlan({ api });
-
-                const [allPlans, freePlan] = await Promise.all([allPlansPromise, freePlanPromise]);
-                // at this point we can end up with main currency + regional currency or just regional currency
-                const plansResult = allPlans.flat();
+                const [plansResult, freePlan, regionalCurrencies] = await Promise.all([
+                    plansPromise,
+                    getFreePlan({ api }),
+                    getRegionalCurrencies(),
+                ]);
 
                 // Step 2: if some required currencies are missing, then we fetch them separately
 
@@ -133,10 +115,9 @@ const thunk = ({
 
                 const missingPlans: Plan[] = (
                     await Promise.all(
-                        missingCurrencies.map(async (currency) => {
-                            const { Plans } = await api<{ Plans: Plan[] }>(queryPlans({ Currency: currency }));
-                            return Plans;
-                        })
+                        missingCurrencies.map((currency) =>
+                            api<{ Plans: Plan[] }>(queryPlans({ Currency: currency })).then(({ Plans }) => Plans)
+                        )
                     )
                 ).flat();
 
