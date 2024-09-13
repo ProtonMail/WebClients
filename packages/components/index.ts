@@ -39,3 +39,13 @@ export { default as UpsellModal } from './components/upsell/modal/UpsellModal';
 export { default as useUpsellConfig } from './components/upsell/useUpsellConfig';
 export { default as StepDots } from './components/stepDots/StepDots';
 export { default as StepDot } from './components/stepDot/StepDot';
+export { default as ActionCard } from './components/actionCard/ActionCard';
+export { default as CalendarEventDateHeader } from './components/calendarEventDateHeader/CalendarEventDateHeader';
+export {
+    default as ConfirmSignOutModal,
+    shouldShowConfirmSignOutModal,
+} from './components/confirmSignOutModal/ConfirmSignOutModal';
+export {
+    default as confirmActionModal,
+    useConfirmActionModal,
+} from './components/confirmActionModal/ConfirmActionModal';
