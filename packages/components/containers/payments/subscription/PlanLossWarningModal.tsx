@@ -1,11 +1,10 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-
-import type { PromptProps } from '../../../components';
-import { Prompt } from '../../../components';
 
 export type VisionaryWarningModalOwnProps = { type: 'downgrade' | 'switch' | 'delete' };
 

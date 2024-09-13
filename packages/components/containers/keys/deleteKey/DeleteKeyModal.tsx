@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import type { PromptProps } from '../../../components';
-import { Prompt } from '../../../components';
 import { useNotifications } from '../../../hooks';
 
 enum STEPS {

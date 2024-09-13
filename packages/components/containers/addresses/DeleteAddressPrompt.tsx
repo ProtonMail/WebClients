@@ -3,10 +3,10 @@ import type { PropsWithChildren } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 
 import type { ModalProps } from '../../components';
-import { Prompt } from '../../components';
 
 interface Props extends ModalProps, PropsWithChildren {
     onDeleteAddress: () => Promise<void>;

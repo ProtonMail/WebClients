@@ -7,7 +7,6 @@ import { Href } from '@proton/atoms';
 import { Button } from '@proton/atoms/Button';
 import {
     Loader,
-    Prompt,
     SettingsParagraph,
     SettingsSection,
     SettingsSectionWide,
@@ -24,6 +23,7 @@ import {
     useOrganization,
     useUser,
 } from '@proton/components';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import { deleteToken, getTokens, isTokenEligible } from '@proton/shared/lib/api/smtptokens';
 import {

@@ -2,10 +2,9 @@ import DOMPurify from 'dompurify';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { isElement } from '@proton/shared/lib/helpers/dom';
 import { getAbuseURL } from '@proton/shared/lib/helpers/url';
-
-import { Prompt } from '../../components';
 
 interface Props {
     message?: string;

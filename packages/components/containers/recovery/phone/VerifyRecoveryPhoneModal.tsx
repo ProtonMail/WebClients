@@ -3,11 +3,11 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { postVerifyPhone } from '@proton/shared/lib/api/verify';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 import type { ModalProps } from '../../../components';
-import { Prompt } from '../../../components';
 import { useApi } from '../../../hooks';
 
 interface Props extends ModalProps {
