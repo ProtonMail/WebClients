@@ -20,6 +20,7 @@
         "make": "electron-forge make",
         "make:beta": "cross-env RELEASE=beta electron-forge make",
         "negativity": "electronegativity -i ./src",
+        "package": "electron-forge package",
         "start": "electron-forge start",
         "test": "jest"
     },
