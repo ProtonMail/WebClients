@@ -5,7 +5,7 @@ import clsx from '@proton/utils/clsx';
 
 import type { Props as StepDotProps } from '../stepDot/StepDot';
 
-export interface Props extends Omit<HTMLProps<HTMLDivElement>, 'onChange'> {
+interface Props extends Omit<HTMLProps<HTMLDivElement>, 'onChange'> {
     value: number;
     onChange?: (index: number) => void;
     ulClassName?: string;

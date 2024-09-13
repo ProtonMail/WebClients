@@ -37,3 +37,5 @@ export { default as LabelsUpsellModal } from './components/upsell/modal/types/La
 export { default as PmMeUpsellModal } from './components/upsell/modal/types/PmMeUpsellModal';
 export { default as UpsellModal } from './components/upsell/modal/UpsellModal';
 export { default as useUpsellConfig } from './components/upsell/useUpsellConfig';
+export { default as StepDots } from './components/stepDots/StepDots';
+export { default as StepDot } from './components/stepDot/StepDot';
