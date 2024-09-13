@@ -3,11 +3,11 @@ import { createPortal } from 'react-dom';
 
 import { c } from 'ttag';
 
+import DropzoneContent from '@proton/components/components/dropzone/DropzoneContent';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { DropzoneContentProps } from '../../dropzone/DropzoneContent';
-import DropzoneContent from '../../dropzone/DropzoneContent';
 import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID, EDITOR_DROPZONE } from '../constants';
 import type { ModalLinkProps } from '../hooks/interface';
 import type { EditorActions, SetEditorToolbarConfig } from '../interface';

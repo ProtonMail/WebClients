@@ -4,8 +4,7 @@ import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { CircleLoader, InlineLinkButton } from '@proton/atoms';
 import type { ChallengeRef } from '@proton/components';
 import { Challenge, DropdownSizeUnit, Icon, Info, InputFieldTwo, PasswordInputTwo } from '@proton/components';
 import Option from '@proton/components/components/option/Option';

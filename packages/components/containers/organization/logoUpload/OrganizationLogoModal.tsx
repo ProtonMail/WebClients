@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
+import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { updateOrganizationLogo, updateOrganizationSettings } from '@proton/shared/lib/api/organization';
@@ -18,7 +19,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components';
 import {
-    Dropzone,
     FileInput,
     Form,
     Icon,
