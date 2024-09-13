@@ -69,7 +69,6 @@ export * from './table';
 export * from './tabs';
 export * from './text';
 export * from './time';
-export * from './timezoneSelector';
 export * from './title';
 export * from './toggle';
 export * from './toolbar';
