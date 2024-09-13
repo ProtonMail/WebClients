@@ -5,13 +5,13 @@ import { resolve } from "node:path";
 
 import {
     SQUIRREL_INSTALL,
-    SQUIRREL_UPDATED,
-    SQUIRREL_UNINSTALL,
     SQUIRREL_OBSOLETE,
-    isSquirrelStartup,
+    SQUIRREL_UNINSTALL,
+    SQUIRREL_UPDATED,
     handleInstallShortcuts,
-    handleUpdatedShortcuts,
     handleUninstallShortcuts,
+    handleUpdatedShortcuts,
+    isSquirrelStartup,
     squirrelLogger,
 } from "@proton/shared/lib/squirrel/squirrel";
 
