@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Pill } from '@proton/atoms';
 import { Button, ButtonLike } from '@proton/atoms/Button';
-import { Pill } from '@proton/atoms/Pill';
 import { DESKTOP_PLATFORMS } from '@proton/shared/lib/constants';
 import type { DesktopVersion } from '@proton/shared/lib/desktop/DesktopVersion';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';

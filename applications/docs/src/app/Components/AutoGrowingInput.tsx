@@ -1,5 +1,5 @@
-import type { InputProps } from '@proton/atoms/Input'
-import { Input } from '@proton/atoms/Input'
+import type { InputProps } from '@proton/atoms'
+import { Input } from '@proton/atoms'
 import clsx from '@proton/utils/clsx'
 import type { ForwardedRef } from 'react'
 import { forwardRef } from 'react'

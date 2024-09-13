@@ -3,7 +3,7 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationDot } from '@proton/atoms/NotificationDot';
+import { NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors/types';
 import { baseUseSelector } from '@proton/react-redux-store';
 import type { OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
