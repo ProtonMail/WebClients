@@ -47,11 +47,7 @@ export function hasPlan(plans: Plan[], planName: string, currency: Currency, cyc
     return !!getPlan(plans, planName, currency, cycle, false);
 }
 
-export interface MappedPlan extends Plan {
-    availableCurrencies: Currency[];
-}
-
-export type FullPlansMap = BasePlansMap<MappedPlan>;
+export type FullPlansMap = BasePlansMap<Plan>;
 
 export function getPlansMap(plans: Plan[], preferredCurrency: Currency, currencyFallback = true): FullPlansMap {
     const planNames = [...new Set(plans.map(({ Name }) => Name))];
@@ -60,16 +56,7 @@ export function getPlansMap(plans: Plan[], preferredCurrency: Currency, currency
         const plan = getPlan(plans, planName, preferredCurrency, undefined, currencyFallback);
 
         if (plan) {
-            const availableCurrencies = [
-                ...new Set(plans.filter(({ Name }) => Name === planName).map(({ Currency }) => Currency)),
-            ];
-
-            const mappedPlan: MappedPlan = {
-                ...plan,
-                availableCurrencies,
-            };
-
-            acc[plan.Name] = mappedPlan;
+            acc[plan.Name] = plan;
         }
 
         return acc;
