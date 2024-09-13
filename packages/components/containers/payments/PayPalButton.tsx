@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
-import type { PaymentMethodFlows } from '@proton/components/payments/core';
 import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
+import type { PaymentMethodFlows } from '@proton/payments';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
 export type PayPalButtonProps = ButtonProps & {

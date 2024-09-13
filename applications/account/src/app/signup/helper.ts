@@ -1,7 +1,7 @@
 import type { Location } from 'history';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
-import type { BillingAddress, PaymentsApi } from '@proton/components/payments/core';
+import type { BillingAddress, PaymentsApi } from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { PLANS, SSO_PATHS } from '@proton/shared/lib/constants';

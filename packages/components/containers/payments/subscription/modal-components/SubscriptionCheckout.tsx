@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useCurrencies } from '@proton/components/payments/client-extensions';
-import type { FullPlansMap, PaymentMethodStatusExtended } from '@proton/components/payments/core';
-import { getAvailableCurrencies } from '@proton/components/payments/core/helpers';
+import type { FullPlansMap, PaymentMethodStatusExtended } from '@proton/payments';
+import { getAvailableCurrencies } from '@proton/payments';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';

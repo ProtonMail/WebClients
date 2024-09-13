@@ -1,9 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { MAX_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT_INHOUSE } from '@proton/shared/lib/constants';
 import { addTokensResponse, apiMock } from '@proton/testing';
 
-import { PAYMENT_METHOD_TYPES } from '../core';
 import { usePaypal } from './usePaypal';
 
 const onChargeableMock = jest.fn();

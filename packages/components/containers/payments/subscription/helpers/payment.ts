@@ -1,5 +1,5 @@
-import type { BillingAddress } from '@proton/components/payments/core';
-import { isRegionalCurrency } from '@proton/components/payments/core/helpers';
+import type { BillingAddress } from '@proton/payments';
+import { isRegionalCurrency } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import {

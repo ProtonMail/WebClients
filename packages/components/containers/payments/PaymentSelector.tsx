@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { type PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import { type PaymentMethodStatusExtended } from '@proton/payments';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import type { Currency } from '@proton/shared/lib/interfaces';
 

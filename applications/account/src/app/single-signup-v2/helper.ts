@@ -2,12 +2,7 @@ import { c } from 'ttag';
 
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
 import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
-import type {
-    BillingAddress,
-    PAYMENT_METHOD_TYPES,
-    PaymentsApi,
-    SavedPaymentMethod,
-} from '@proton/components/payments/core';
+import type { BillingAddress, PAYMENT_METHOD_TYPES, PaymentsApi, SavedPaymentMethod } from '@proton/payments';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import type { ADDON_NAMES, APP_NAMES } from '@proton/shared/lib/constants';

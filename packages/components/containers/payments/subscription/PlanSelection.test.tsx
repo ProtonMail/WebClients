@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 
-import { getPlan } from '@proton/components/payments/core';
+import { getPlan } from '@proton/payments';
 import { ADDON_NAMES, APPS, CYCLE, DEFAULT_CURRENCY, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import { Audience, type Plan, type User } from '@proton/shared/lib/interfaces';

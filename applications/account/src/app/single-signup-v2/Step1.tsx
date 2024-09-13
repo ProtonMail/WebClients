@@ -16,14 +16,9 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useHandler from '@proton/components/hooks/useHandler';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import {
-    type BillingAddress,
-    getFallbackCurrency,
-    getPlansMap,
-    isRegionalCurrency,
-} from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
+import { type BillingAddress, getFallbackCurrency, getPlansMap, isRegionalCurrency } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';

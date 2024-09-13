@@ -25,16 +25,16 @@ import { useAssistantAddonEnabledSignup } from '@proton/components/hooks/assista
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { useCurrencies, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import type { ExtendedTokenPayment, PaymentMethodStatusExtended, TokenPayment } from '@proton/components/payments/core';
+import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
+import { useLoading } from '@proton/hooks';
+import metrics from '@proton/metrics';
+import type { ExtendedTokenPayment, PaymentMethodStatusExtended, TokenPayment } from '@proton/payments';
 import {
     PAYMENT_METHOD_TYPES,
     getPlansMap,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
-} from '@proton/components/payments/core';
-import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
-import { useLoading } from '@proton/hooks';
-import metrics from '@proton/metrics';
+} from '@proton/payments';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { getCheckout, getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';

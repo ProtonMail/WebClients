@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
-import { Api } from '@proton/shared/lib/interfaces';
+import {
+    type AmountAndCurrency,
+    type CardModel,
+    CardPaymentProcessor,
+    type CardPaymentProcessorState,
+    type ChargeablePaymentParameters,
+    type PaymentVerificator,
+    getErrors,
+} from '@proton/payments';
+import { type Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import {
-    AmountAndCurrency,
-    CardModel,
-    CardPaymentProcessor,
-    CardPaymentProcessorState,
-    ChargeablePaymentParameters,
-    PaymentVerificator,
-    getErrors,
-} from '../core';
-import { PaymentProcessorHook, PaymentProcessorType } from './interface';
+import type { PaymentProcessorHook, PaymentProcessorType } from './interface';
 import { usePaymentProcessor } from './usePaymentProcessor';
 
 export type CardFieldStatus = {

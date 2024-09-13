@@ -1,6 +1,6 @@
 import type { Location } from 'history';
 
-import { getPlan, planToPlanIDs } from '@proton/components/payments/core';
+import { getPlan, planToPlanIDs } from '@proton/payments';
 import type { OtherProductParam, ProductParam } from '@proton/shared/lib/apps/product';
 import { otherProductParamValues } from '@proton/shared/lib/apps/product';
 import type { ADDON_NAMES, APP_NAMES } from '@proton/shared/lib/constants';

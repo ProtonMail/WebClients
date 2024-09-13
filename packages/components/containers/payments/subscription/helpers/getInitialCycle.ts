@@ -1,4 +1,4 @@
-import type { FullPlansMap } from '@proton/components/payments/core';
+import type { FullPlansMap } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS, CYCLE, DEFAULT_CYCLE, type FreeSubscription, isFreeSubscription } from '@proton/shared/lib/constants';
 import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';

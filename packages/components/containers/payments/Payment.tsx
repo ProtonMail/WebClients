@@ -6,18 +6,19 @@ import { c } from 'ttag';
 import Alert from '@proton/components/components/alert/Alert';
 import type { ThemeCode, ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
+import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
+import type { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
+import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
+import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import type {
+    CardModel,
     PaymentMethodFlows,
     PaymentMethodStatusExtended,
     PaymentMethodType,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
-} from '@proton/components/payments/core';
-import { PAYMENT_METHOD_TYPES, canUseChargebee } from '@proton/components/payments/core';
-import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';
-import type { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
-import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
-import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
+} from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, canUseChargebee } from '@proton/payments';
 import { APPS, MIN_CREDIT_AMOUNT } from '@proton/shared/lib/constants';
 import type { ChargebeeEnabled, Currency, User } from '@proton/shared/lib/interfaces';
 import { isBilledUser } from '@proton/shared/lib/interfaces';
@@ -27,7 +28,6 @@ import { Loader, Price } from '../../components';
 import { useConfig } from '../../hooks';
 import type { CbIframeHandles } from '../../payments/chargebee/ChargebeeIframe';
 import { ChargebeeCreditCardWrapper, ChargebeeSavedCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
-import type { CardModel } from '../../payments/core';
 import Alert3DS from './Alert3ds';
 import Cash from './Cash';
 import CreditCard from './CreditCard';

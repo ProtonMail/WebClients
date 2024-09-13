@@ -1,9 +1,9 @@
 import { render, waitFor } from '@testing-library/react';
 
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
-import type { CardModel, SavedPaymentMethod, SavedPaymentMethodInternal } from '@proton/components/payments/core';
-import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import type { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
+import type { CardModel, SavedPaymentMethod, SavedPaymentMethodInternal } from '@proton/payments';
+import { MethodStorage, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { applyHOCs, withApi, withCache, withConfig } from '@proton/testing';
 

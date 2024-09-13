@@ -1,14 +1,14 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { addTokensResponse, apiMock } from '@proton/testing';
-
 import {
-    AmountAndCurrency,
+    type AmountAndCurrency,
     Autopay,
     PAYMENT_METHOD_TYPES,
-    PaymentMethodPaypal,
-    SavedPaymentMethodInternal,
-} from '../core';
+    type PaymentMethodPaypal,
+    type SavedPaymentMethodInternal,
+} from '@proton/payments';
+import { addTokensResponse, apiMock } from '@proton/testing';
+
 import { useSavedMethod } from './useSavedMethod';
 
 const onChargeableMock = jest.fn();

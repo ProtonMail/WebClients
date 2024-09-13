@@ -3,14 +3,20 @@ import { c } from 'ttag';
 import Alert from '@proton/components/components/alert/Alert';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import {
+    type CardModel,
+    PAYMENT_METHOD_TYPES,
+    type PaymentMethodCardDetails,
+    type SavedPaymentMethod,
+    isExpired,
+    paymentMethodPaymentsVersion,
+} from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 
 import { ErrorButton } from '../../../components/button';
 import { ConfirmModal } from '../../../components/modal';
 import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
-import type { CardModel, PaymentMethodCardDetails, SavedPaymentMethod } from '../../../payments/core';
-import { PAYMENT_METHOD_TYPES, isExpired, paymentMethodPaymentsVersion } from '../../../payments/core';
 import EditCardModal from '../../payments/EditCardModal';
 
 const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
