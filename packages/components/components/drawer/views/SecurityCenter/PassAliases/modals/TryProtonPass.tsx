@@ -1,8 +1,6 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms/Button';
+import { Button, ButtonLike } from '@proton/atoms';
 import { Href } from '@proton/atoms/Href';
 import type { ModalProps } from '@proton/components/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';

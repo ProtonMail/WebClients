@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react';
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
-import { Button } from '@proton/atoms/Button';
+import { Button, Href } from '@proton/atoms';
 import {
     Loader,
     SettingsParagraph,

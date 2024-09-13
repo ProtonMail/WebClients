@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { useTheme } from '@proton/components/containers';
 import {
     closeDrawerFromChildApp,

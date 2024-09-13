@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonLikeProps } from '@proton/atoms/Button';
+import type { ButtonLikeProps } from '@proton/atoms';
 import { type FullPlansMap } from '@proton/components/payments/core';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { AutoDeleteUpsellModal, PromotionBanner, useModalState } from '@proton/components';
 
 const AutoDeleteFreeBanner = () => {

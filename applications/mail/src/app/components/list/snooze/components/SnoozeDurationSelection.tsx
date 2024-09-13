@@ -14,7 +14,7 @@ import {
 } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { useUser, useUserSettings } from '@proton/components/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';

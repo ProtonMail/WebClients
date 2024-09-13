@@ -1,6 +1,6 @@
 import { type FC, type ReactNode } from 'react';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 

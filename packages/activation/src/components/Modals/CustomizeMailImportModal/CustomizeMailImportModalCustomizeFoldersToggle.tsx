@@ -1,5 +1,5 @@
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Icon, Label, Row, Tooltip } from '@proton/components';
 
 interface Props {

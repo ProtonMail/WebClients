@@ -3,8 +3,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms';
-import { Button } from '@proton/atoms/Button';
+import { Button, Scroll } from '@proton/atoms';
 import { Href } from '@proton/atoms/Href';
 import { Icon, Tooltip } from '@proton/components';
 import Copy from '@proton/components/components/button/Copy';

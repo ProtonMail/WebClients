@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import type { SamlState } from '@proton/account';
 import { disableSCIMAction, setupSCIMAction } from '@proton/account/samlSSO/actions';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';

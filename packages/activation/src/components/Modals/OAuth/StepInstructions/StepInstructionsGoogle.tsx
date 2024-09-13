@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { displayConfirmLeaveModal } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { changeOAuthStep, resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import {
     ModalTwo,
     ModalTwoContent,

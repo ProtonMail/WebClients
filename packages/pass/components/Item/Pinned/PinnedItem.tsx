@@ -1,7 +1,7 @@
 import { type FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ButtonLike, type ButtonLikeProps } from '@proton/atoms/Button';
+import { ButtonLike, type ButtonLikeProps } from '@proton/atoms';
 import { ItemTag } from '@proton/pass/components/Item/List/ItemTag';
 import type { ItemRevision } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';

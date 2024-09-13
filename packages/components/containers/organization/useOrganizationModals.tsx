@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { getPrivatizeError } from '@proton/account';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Card } from '@proton/atoms/Card';
 import { Href } from '@proton/atoms/Href';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';

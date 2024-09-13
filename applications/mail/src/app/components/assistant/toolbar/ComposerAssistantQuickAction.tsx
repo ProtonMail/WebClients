@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon, Tooltip } from '@proton/components';
 

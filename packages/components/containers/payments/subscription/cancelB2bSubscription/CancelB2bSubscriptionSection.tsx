@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { useModalState } from '@proton/components/components';
 import { SettingsParagraph, SettingsSection } from '@proton/components/containers';
 import { useSubscription } from '@proton/components/hooks';

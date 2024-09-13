@@ -12,7 +12,7 @@ import {
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Dropdown, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
 import type { Props as DropdownMenuButtonCoreProps } from '@proton/components/components/dropdown/DropdownMenuButton';

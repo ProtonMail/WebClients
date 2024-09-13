@@ -2,7 +2,7 @@ import { type FC, memo } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, type LinkProps } from 'react-router-dom';
 
-import { ButtonLike, type ButtonLikeProps } from '@proton/atoms/Button';
+import { ButtonLike, type ButtonLikeProps } from '@proton/atoms';
 import { Icon, Marks } from '@proton/components';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';

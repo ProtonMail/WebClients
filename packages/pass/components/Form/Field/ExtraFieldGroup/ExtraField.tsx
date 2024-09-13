@@ -3,7 +3,7 @@ import type { ChangeEvent, FC } from 'react';
 import type { FieldInputProps, FormikErrors } from 'formik';
 import { c } from 'ttag';
 
-import { Button, type ButtonProps } from '@proton/atoms/Button';
+import { Button, type ButtonProps } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
 import type { ExtraFieldType, UnsafeItemExtraField } from '@proton/pass/types';

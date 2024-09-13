@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Info, Option, SelectTwo, Toggle } from '@proton/components';
 import { QuickSettingsSectionRow } from '@proton/components/components/drawer/views/quickSettings';
 import {

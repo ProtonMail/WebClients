@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
-import { Badge } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Badge, Icon } from '@proton/components/components';
 
 import type { NewGroupMember } from './EditGroup';
 import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';

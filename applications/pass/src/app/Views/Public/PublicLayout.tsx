@@ -2,7 +2,7 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PASS_BLOG_TRIAL_URL } from '@proton/pass/constants';

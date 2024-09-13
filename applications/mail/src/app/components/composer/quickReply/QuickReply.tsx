@@ -3,7 +3,7 @@ import { Suspense, lazy, useCallback, useEffect, useRef, useState } from 'react'
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { EditorActions } from '@proton/components';
 import { Editor, ErrorBoundary, Icon, Tooltip, useModalState, useTheme } from '@proton/components';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';

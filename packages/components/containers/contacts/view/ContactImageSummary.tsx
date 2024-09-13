@@ -3,7 +3,7 @@ import { useImperativeHandle } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import { Tooltip } from '@proton/components/components';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 

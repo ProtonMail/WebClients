@@ -2,8 +2,7 @@ import type { FormEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Input } from '@proton/atoms';
-import { Button } from '@proton/atoms/Button';
+import { Button, Input } from '@proton/atoms';
 import { DateInput, Icon, Option, SelectTwo } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
 

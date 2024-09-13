@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Icon } from '@proton/components';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';

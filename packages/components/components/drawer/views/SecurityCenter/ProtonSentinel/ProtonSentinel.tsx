@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Href } from '@proton/atoms/Href';
 import { Toggle, useModalStateObject, useSettingsLink } from '@proton/components/components';
 import { getDisabledString, getEnabledString } from '@proton/components/containers/credentialLeak/helpers';

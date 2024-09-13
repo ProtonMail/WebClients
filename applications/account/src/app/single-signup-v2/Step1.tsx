@@ -4,8 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
-import { Button } from '@proton/atoms/Button';
+import { Button, Vr } from '@proton/atoms';
 import Href from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import type { IconName } from '@proton/components';

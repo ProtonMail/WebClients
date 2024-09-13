@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { useSecurityCheckup, useUserSettings } from '@proton/components';
 import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';

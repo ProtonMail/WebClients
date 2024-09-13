@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Card } from '@proton/atoms/Card';
 import { Copy } from '@proton/components';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';

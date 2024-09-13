@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Dropdown, DropdownButton, DropdownMenuButton, Icon, Tooltip, usePopperAnchor } from '@proton/components';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import type { ActionType } from '@proton/llm/lib/types';

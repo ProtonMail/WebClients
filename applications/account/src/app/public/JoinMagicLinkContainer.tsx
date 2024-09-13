@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon } from '@proton/components';
 import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components/components';
