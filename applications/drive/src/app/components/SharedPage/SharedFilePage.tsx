@@ -6,6 +6,7 @@ import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import type { DecryptedLink } from '../../store';
 import { type useBookmarksPublicView, useDownloadScanFlag } from '../../store';
+import { useDriveDocsPublicSharingFF } from '../../store/_documents';
 import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
 import HeaderSecureLabel from './Layout/HeaderSecureLabel';
@@ -21,6 +22,7 @@ interface Props {
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     hideSaveToDrive?: boolean;
     partialView?: boolean;
+    openInDocs?: () => void;
 }
 
 export default function SharedFilePage({
@@ -29,10 +31,13 @@ export default function SharedFilePage({
     link,
     hideSaveToDrive = false,
     partialView = false,
+    openInDocs,
 }: Props) {
     const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(token, link.linkId);
     const isDownloadScanEnabled = useDownloadScanFlag();
     const { viewportWidth } = useActiveBreakpoint();
+
+    const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
     return (
         <FileBrowserStateProvider itemIds={[link.linkId]}>
@@ -81,6 +86,8 @@ export default function SharedFilePage({
                     fileSize={link?.size}
                     imgThumbnailUrl={link?.cachedThumbnailUrl}
                     isPublic
+                    isPublicDocsAvailable={isDocsPublicSharingEnabled}
+                    onOpenInDocs={openInDocs}
                 />
             </SharedPageLayout>
             <SharedPageTransferManager rootItem={link} />

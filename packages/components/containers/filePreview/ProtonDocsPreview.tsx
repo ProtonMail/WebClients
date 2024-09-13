@@ -1,6 +1,8 @@
+import type { FC } from 'react';
+
 import { c } from 'ttag';
 
-import corruptedPreviewSvg from '@proton/styles/assets/img/errors/broken-image.svg';
+import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -8,23 +10,23 @@ import { PrimaryButton } from '../../components';
 import { useActiveBreakpoint } from '../../hooks';
 
 interface Props {
-    type?: 'file' | 'image' | 'video' | 'audio';
-    onDownload?: () => void;
-    browser?: boolean;
-    tooLarge?: boolean;
+    isPublic?: boolean;
+    isPublicDocsAvailable?: boolean;
+    onOpenInDocs?: () => void;
 }
 
-const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLarge = false }: Props) => {
+export const ProtonDocsPreview: FC<Props> = ({ isPublic, isPublicDocsAvailable, onOpenInDocs }) => {
     const { viewportWidth } = useActiveBreakpoint();
 
     let message = c('Info').t`Preview for this file type is not supported`;
     let subtext = undefined;
 
-    if (browser) {
-        message = c('Info').t`Preview for this file type is currently not supported on this browser.`;
-        subtext = c('Info').t`Please use another browser or download the file.`;
-    } else if (tooLarge) {
-        message = c('Info').t`This file is too large to preview`;
+    if (isPublic && !isPublicDocsAvailable) {
+        message = c('Info').t`Public sharing of documents is not yet supported.`;
+        subtext = c('Info').t`Please ask the owner to directly invite you to the document.`;
+    } else {
+        message = c('Info').t`Preview of documents is not yet supported.`;
+        subtext = c('Info').t`Please open the document to view it.`;
     }
 
     return (
@@ -32,7 +34,7 @@ const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLar
             <img
                 className="mb-4 w-custom"
                 style={{ '--w-custom': '5rem' }}
-                src={type === 'file' ? unsupportedPreviewSvg : corruptedPreviewSvg}
+                src={unsupportedPreviewSvg}
                 alt={c('Info').t`Unsupported file`}
                 data-testid="file-preview:unsupported-preview-image"
             />
@@ -45,15 +47,15 @@ const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLar
             </h2>
             {subtext && <h3 className="pb-1">{subtext}</h3>}
 
-            {onDownload && (
+            {isPublic && onOpenInDocs && (
                 <PrimaryButton
                     size={!viewportWidth['<=small'] ? 'large' : undefined}
                     className="text-bold mt-8"
-                    onClick={onDownload}
-                >{c('Action').t`Download`}</PrimaryButton>
+                    onClick={onOpenInDocs}
+                >
+                    {getOpenInDocsString()}
+                </PrimaryButton>
             )}
         </div>
     );
 };
-
-export default UnsupportedPreview;
