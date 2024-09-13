@@ -1,7 +1,7 @@
 import { addMonths, format } from 'date-fns';
 import { c } from 'ttag';
 
-import { VerticalStep, VerticalSteps } from '@proton/atoms/VerticalSteps';
+import { VerticalStep, VerticalSteps } from '@proton/atoms';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
