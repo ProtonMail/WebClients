@@ -18,6 +18,7 @@ import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
+import { tokenIsValid } from '../../utils/url/token';
 import { linkMetaToEncryptedLink, revisionPayloadToRevision, useDebouncedRequest } from '../_api';
 import type { IntegrityMetrics, VerificationKey } from '../_crypto';
 import { integrityMetrics, useDriveCrypto } from '../_crypto';
@@ -32,7 +33,6 @@ import {
 } from '../_shares';
 import { useIsPaid } from '../_user';
 import { useDebouncedFunction } from '../_utils';
-import { useIsPublicContext } from '../_utils/useIsPublicContext';
 import { decryptExtendedAttributes } from './extendedAttributes';
 import type { DecryptedLink, EncryptedLink, SignatureIssueLocation, SignatureIssues } from './interface';
 import { isDecryptedLinkSame } from './link';
@@ -77,7 +77,6 @@ export default function useLink() {
     const { getSharePrivateKey, getShare } = useShare();
     const { getDefaultShareAddressEmail } = useDefaultShare();
     const isPaid = useIsPaid();
-    const isPublicContext = useIsPublicContext();
 
     const debouncedRequest = useDebouncedRequest();
     const fetchLink = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<EncryptedLink> => {
@@ -107,7 +106,6 @@ export default function useLink() {
         getDefaultShareAddressEmail,
         isPaid,
         integrityMetrics,
-        isPublicContext,
         CryptoProxy.importPrivateKey
     );
 }
@@ -134,7 +132,6 @@ export function useLinkInner(
     getDefaultShareAddressEmail: ReturnType<typeof useDefaultShare>['getDefaultShareAddressEmail'],
     userIsPaid: boolean,
     integrityMetrics: IntegrityMetrics,
-    isPublicContext: boolean,
     importPrivateKey: typeof CryptoProxy.importPrivateKey // passed as arg for easier mocking when testing
 ) {
     const debouncedFunction = useDebouncedFunction();
@@ -189,7 +186,11 @@ export function useLinkInner(
     };
 
     const reportSignatureError = (shareId: string, encryptedLink: EncryptedLink, location: SignatureIssueLocation) => {
-        if (isPublicContext) {
+        // This means that the shareId is a token for a public link (bookmarking) and does not need signatureCheck
+        // Exemple:
+        // - shareId: D4TVgdFKidFgQWd5IeXYyegjDNV9KWF1HDwjxZlesUo-Wc2NTL8mUQc6IlYwowznc5vHQkTL4iUbn6K0CorrjQ==
+        // - token: 2NR85F8NSC
+        if (tokenIsValid(encryptedLink.rootShareId)) {
             return;
         }
         loadShareTypeString(shareId).then(async (shareType) => {
