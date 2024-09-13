@@ -27,6 +27,7 @@ interface Props {
     rootLink: DecryptedLink;
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     hideSaveToDrive?: boolean;
+    partialView?: boolean;
 }
 
 interface PreviewContainerProps {
@@ -89,7 +90,13 @@ function SharedPagePreviewContainer({
     );
 }
 
-export default function SharedFolder({ bookmarksPublicView, token, rootLink, hideSaveToDrive = false }: Props) {
+export default function SharedFolder({
+    bookmarksPublicView,
+    token,
+    rootLink,
+    hideSaveToDrive = false,
+    partialView = false,
+}: Props) {
     const [linkId, setLinkId] = useState(rootLink.linkId);
     const folderView = usePublicFolderView(token, linkId);
     const { downloads, getDownloadsLinksProgresses, download } = useDownload();
@@ -201,6 +208,7 @@ export default function SharedFolder({ bookmarksPublicView, token, rootLink, hid
     return (
         <FileBrowserStateProvider itemIds={fileBrowserItems.map(({ linkId }) => linkId)}>
             <SharedPageLayout
+                partialView={partialView}
                 FooterComponent={
                     <SharedPageFooter
                         rootItem={rootLink}
@@ -211,6 +219,7 @@ export default function SharedFolder({ bookmarksPublicView, token, rootLink, hid
                 }
             >
                 <SharedPageHeader
+                    partialView={partialView}
                     rootItem={rootLink}
                     items={fileBrowserItems}
                     bookmarksPublicView={bookmarksPublicView}
