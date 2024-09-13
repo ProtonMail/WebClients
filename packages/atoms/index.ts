@@ -1,7 +1,6 @@
 export * from './Button';
 export * from './Card';
 export * from './CircleLoader';
-export * from './Donut';
 export * from './Href';
 export * from './InlineLinkButton';
 
@@ -41,3 +40,6 @@ export type { InputProps } from './Input/Input';
 
 export { default as Kbd } from './Kbd/Kbd';
 export type { KbdProps } from './Kbd/Kbd';
+
+export { default as Donut } from './Donut/Donut';
+export type { DonutProps } from './Donut/Donut';
