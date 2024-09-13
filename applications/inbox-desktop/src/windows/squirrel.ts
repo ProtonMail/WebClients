@@ -2,6 +2,7 @@ import { app } from "electron";
 import { spawn } from "node:child_process";
 import { appendFileSync, copyFileSync, existsSync, openSync } from "node:fs";
 import { resolve } from "node:path";
+import { installProtocols, updateProtocols, uninstallProtocols } from "../utils/protocol/setup";
 
 import {
     SQUIRREL_INSTALL,
@@ -81,16 +82,19 @@ export async function handleSquirrelEvents() {
         case SQUIRREL_INSTALL:
             squirrelLogger.info("Install:", process.argv);
             await handleInstallShortcuts();
+            await installProtocols();
             break;
         case SQUIRREL_UPDATED:
             squirrelLogger.info("Updated:", process.argv);
             // During update the path to exe can change. Therefore we want to
             // update the lnk if they exists.
             await handleUpdatedShortcuts();
+            await updateProtocols();
             break;
         case SQUIRREL_UNINSTALL: {
             squirrelLogger.info("Uninstall:", process.argv);
             await handleUninstallShortcuts();
+            await uninstallProtocols();
             await spawnUninstallProcess();
             break;
         }

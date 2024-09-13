@@ -1,4 +1,4 @@
-import { Notification, app, session } from "electron";
+import { Notification, Event, app, session } from "electron";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
@@ -7,7 +7,6 @@ import { getSettings } from "./store/settingsStore";
 import { performStoreMigrations } from "./store/storeMigrations";
 import { initializeUpdateChecks, updateDownloaded } from "./update";
 import { isLinux, isMac, isWindows } from "./utils/helpers";
-import { handleMailToUrls } from "./utils/urls/mailtoLinks";
 import { isHostAllowed } from "./utils/urls/urlTests";
 import { urlOverrideError } from "./utils/view/dialogs";
 import { getMainWindow, getWebContentsViewName, viewCreationAppStartup } from "./utils/view/viewManagement";
@@ -18,6 +17,8 @@ import { getTheme, updateNativeTheme } from "./utils/themes";
 import { handleWebContents } from "./utils/view/webContents";
 import { connectNetLogger, initializeLog, mainLogger } from "./utils/log";
 import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
+import { handleStartupMailto, handleAppReadyMailto } from "./utils/protocol/mailto";
+import { checkDefaultProtocols } from "./utils/protocol/default";
 
 (async function () {
     initializeLog();
@@ -31,6 +32,8 @@ import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
         isLinux,
         "version:",
         app.getVersion(),
+        "params",
+        process.argv,
     );
 
     mainLogger.info(
@@ -39,6 +42,8 @@ import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
             .map(([key, value]) => `${key}:${value}`)
             .join(", "),
     );
+
+    handleStartupMailto();
 
     // Handle squirrel events at the very top of the application
     // WARN: We need to wait for this promise because we do not want any code to be executed
@@ -64,13 +69,6 @@ import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
     // Used to make the app run on Parallels Desktop
     // app.commandLine.appendSwitch("no-sandbox");
 
-    // Detects if the application is default handler for mailto, works on macOS for now
-    if (app.isDefaultProtocolClient("mailto")) {
-        mainLogger.info("App is default mailto client");
-    } else {
-        mainLogger.info("App is not default mailto client");
-    }
-
     app.setAppUserModelId(pkg.config.appUserModelId);
 
     const gotTheLock = app.requestSingleInstanceLock();
@@ -78,17 +76,20 @@ import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
         mainLogger.info("App is already running");
         app.quit();
     } else {
-        app.on("second-instance", (_ev, commandLine) => {
-            mainLogger.info("Second instance called");
+        checkDefaultProtocols();
+
+        app.on("second-instance", (_ev, argv) => {
+            mainLogger.info("Second instance called", argv);
+
+            // Bring window to focus
             const mainWindow = getMainWindow();
             if (mainWindow) {
                 if (mainWindow.isMinimized()) {
                     mainWindow.restore();
                 }
-                mainWindow.focus();
-            }
 
-            handleMailToUrls(commandLine?.pop() || "");
+                mainWindow.show();
+            }
         });
 
         app.whenReady().then(() => {
@@ -131,10 +132,18 @@ import { registerLogIPCForwardTransport } from "./utils/logIPCForwardTransport";
             // Handle IPC calls coming from the destkop application
             handleIPCCalls();
 
-            // Normally this only works on macOS and is not required for Windows
-            app.on("open-url", (_e, url) => {
-                handleMailToUrls(url);
+            app.on("open-url", (_e: Event, url: string) => {
+                mainLogger.info("Open URL event", url);
+
+                // Bring window to focus
+                const mainWindow = getMainWindow();
+                if (mainWindow.isMinimized()) {
+                    mainWindow.restore();
+                }
+                mainWindow.show();
             });
+
+            handleAppReadyMailto();
 
             // Security addition, reject all permissions except notifications
             secureSession.setPermissionRequestHandler((webContents, permission, callback) => {

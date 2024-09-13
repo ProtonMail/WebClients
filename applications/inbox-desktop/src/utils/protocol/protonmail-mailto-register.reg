@@ -1,0 +1,66 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\ProtonMail.Url.mailto]
+"FriendlyTypeName"="Proton Mail Url mailto"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\ProtonMail.Url.mailto\shell]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\ProtonMail.Url.mailto\shell\open]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\ProtonMail.Url.mailto\shell\open\command]
+@="\"{{TARGET_EXE}}\" %1"
+
+
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail]
+@="ProtonMail"
+"LocalizedString"="ProtonMail"
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\DefaultIcon]
+@="\"{{TARGET_EXE}}\""
+
+
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\Capabilities]
+"ApplicationName"="Proton Mail"
+"ApplicationDescription"="Proton official desktop application for Proton Mail and Proton Calendar."
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\Capabilities\StartMenu]
+"Mail"="ProtonMail"
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\Capabilities\URLAssociations]
+"mailto"="ProtonMail.Url.mailto"
+
+
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\Protocols]
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\Protocols\mailto]
+@="URL:MailTo Protocol"
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\Protocols\mailto\DefaultIcon]
+@="{{TARGET_EXE}},1"
+
+
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\Protocols\mailto\shell]
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\Protocols\mailto\shell\open]
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\Protocols\mailto\shell\open\command]
+@="\"{{TARGET_EXE}}\" %1"
+
+
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\shell]
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\shell\open]
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\Mail\ProtonMail\shell\open\command]
+@="\"{{TARGET_EXE}}\""
+
+
+
+[HKEY_CURRENT_USER\SOFTWARE\RegisteredApplications]
+"ProtonMail"="SOFTWARE\\Clients\\Mail\\ProtonMail\\Capabilities"
+

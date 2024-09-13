@@ -20,11 +20,13 @@ describe("settingsStore", () => {
             saveSettings({
                 spellChecker: true,
                 overrideError: false,
+                defaultMailto: true,
             });
 
             expect(MockedStore.INSTANCE.set).toHaveBeenCalledWith("settings", {
                 spellChecker: true,
                 overrideError: false,
+                defaultMailto: true,
             });
         });
     });

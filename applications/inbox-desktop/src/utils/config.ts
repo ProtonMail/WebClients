@@ -60,7 +60,12 @@ export const getExtraResource = () => {
         case "Darwin":
             return ["./src/macos/Proton Mail Uninstaller.app", "./src/macos/uninstall.sh"];
         case "Windows_NT":
-            return ["./src/windows/uninstall.bat"];
+            return [
+                "./src/windows/uninstall.bat",
+                "./src/utils/protocol/protonmail-mailto-register.reg",
+                "./src/utils/protocol/protonmail-mailto-delete.reg",
+                "./assets/icons/icon.ico",
+            ];
         default:
             return [];
     }

@@ -8,6 +8,7 @@ export const netLogger = (viewID: CHANGE_VIEW_TARGET | null) =>
     viewID ? Logger.scope(`net/${viewID}`) : Logger.scope("net");
 export const settingsLogger = Logger.scope("settings");
 export const updateLogger = Logger.scope("update");
+export const protocolLogger = Logger.scope("protocol");
 export const viewLogger = (viewID: CHANGE_VIEW_TARGET) => Logger.scope(viewID);
 
 export function initializeLog() {
