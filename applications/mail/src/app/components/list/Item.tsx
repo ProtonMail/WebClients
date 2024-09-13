@@ -49,7 +49,7 @@ interface Props {
     dragged: boolean;
     index: number;
     breakpoints: Breakpoints;
-    onFocus: (index: number) => void;
+    onFocus: (elementID: string) => void;
     showAttachmentThumbnails?: boolean;
     userSettings: UserSettings;
     mailSettings: MailSettings;
@@ -134,7 +134,7 @@ const Item = ({
     };
 
     const handleFocus = () => {
-        onFocus(index);
+        onFocus(element.ID);
     };
 
     const senderItem = (
