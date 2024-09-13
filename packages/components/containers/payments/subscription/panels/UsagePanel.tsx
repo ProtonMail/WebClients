@@ -2,6 +2,7 @@ import type { PropsWithChildren } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { StripedItem, StripedList } from '@proton/components';
 import { getHighSpeedVPNConnectionsText } from '@proton/components/containers/payments/features/vpn';
 import { useMember } from '@proton/components/hooks';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -11,7 +12,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
 import type { IconName } from '../../../../components';
-import { Icon, Meter, StripedItem, StripedList } from '../../../../components';
+import { Icon, Meter } from '../../../../components';
 import Panel from './Panel';
 
 interface Item {
