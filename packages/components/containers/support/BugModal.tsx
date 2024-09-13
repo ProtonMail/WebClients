@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';
@@ -19,7 +20,6 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    DropdownSizeUnit,
     Form,
     Icon,
     InputFieldTwo,

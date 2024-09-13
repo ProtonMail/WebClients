@@ -4,13 +4,15 @@ import tinycolor from 'tinycolor2';
 import { c } from 'ttag';
 
 import ColorSelector from '@proton/components/components/color/ColorSelector';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { ACCENT_COLORS_MAP, getColorName } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { Dropdown, DropdownButton, DropdownSizeUnit } from '../dropdown';
-import type { DropdownButtonProps } from '../dropdown/DropdownButton';
 import { Icon } from '../icon';
 import { usePopperAnchor } from '../popper';
 

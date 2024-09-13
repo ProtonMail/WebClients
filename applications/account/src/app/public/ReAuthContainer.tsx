@@ -5,8 +5,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { OnLoginCallback, OnLoginCallbackArguments } from '@proton/components';
-import { DropdownMenu, Icon, InputFieldTwo, PasswordInputTwo, SimpleDropdown, useFormErrors } from '@proton/components';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import {
+    DropdownMenu,
+    DropdownMenuButton,
+    Icon,
+    InputFieldTwo,
+    PasswordInputTwo,
+    SimpleDropdown,
+    useFormErrors,
+} from '@proton/components';
 import { handleReAuthKeyPassword } from '@proton/components/containers/login/loginActions';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';

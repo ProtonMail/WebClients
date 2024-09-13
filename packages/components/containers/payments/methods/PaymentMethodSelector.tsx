@@ -1,9 +1,10 @@
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import type { DropdownSize } from '@proton/components/components/dropdown/utils';
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import type { PaymentMethodType } from '@proton/components/payments/core';
 import clsx from '@proton/utils/clsx';
 
-import { DropdownSizeUnit, Icon, Option, Radio, SelectTwo } from '../../../components';
-import type { DropdownSize } from '../../../components/dropdown/utils';
+import { Icon, Option, Radio, SelectTwo } from '../../../components';
 
 interface Props {
     options: ViewPaymentMethod[];

@@ -4,14 +4,15 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import type { ThemeColorUnion } from '@proton/colors/types';
-import { ButtonGroup, usePopperAnchor } from '@proton/components';
 import {
+    ButtonGroup,
     Dropdown,
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
     DropdownSizeUnit,
-} from '@proton/components/components/dropdown';
+    usePopperAnchor,
+} from '@proton/components';
 import { Icon } from '@proton/components/components/icon';
 import { Spotlight } from '@proton/components/components/spotlight';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';

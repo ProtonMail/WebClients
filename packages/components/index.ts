@@ -50,11 +50,12 @@ export { default as AppVersion } from './components/version/AppVersion';
 export { default as VideoInstructions } from './components/videoInstructions/VideoInstructions';
 
 export { default as ColorSelector } from './components/color/ColorSelector';
-export { default as Commander } from './components/commander/Commander';
 export type { CommanderItemInterface } from './components/commander/Commander';
+export { default as Commander } from './components/commander/Commander';
 
+export type { DropzoneSize, DropzoneShape, DropzoneProps } from './components/dropzone/Dropzone';
 export { default as Dropzone } from './components/dropzone/Dropzone';
-export type { DropzoneProps, DropzoneShape, DropzoneSize } from './components/dropzone/Dropzone';
+
 export { default as CircularProgress } from './components/progress/CircularProgress';
 export { default as DynamicProgress } from './components/progress/DynamicProgress';
 export { default as Meter, getMeterColor } from './components/progress/Meter';
@@ -64,3 +65,17 @@ export { default as StripedItem } from './components/stripedList/StripedItem';
 export type { StripedItemProps } from './components/stripedList/StripedItem';
 export { default as StripedList } from './components/stripedList/StripedList';
 export type { StripedListProps } from './components/stripedList/StripedList';
+
+export type { DropdownActionProps } from './components/dropdown/DropdownActions';
+export { default as DropdownActions } from './components/dropdown/DropdownActions';
+export { default as DropdownMenu } from './components/dropdown/DropdownMenu';
+export { default as DropdownMenuButton } from './components/dropdown/DropdownMenuButton';
+export type { DropdownButtonProps } from './components/dropdown/DropdownButton';
+export { default as DropdownButton } from './components/dropdown/DropdownButton';
+export { default as DropdownCaret } from './components/dropdown/DropdownCaret';
+export type { DropdownMenuLinkProps } from './components/dropdown/DropdownMenuLink';
+export { default as DropdownMenuLink } from './components/dropdown/DropdownMenuLink';
+export type { DropdownProps } from './components/dropdown/Dropdown';
+export { default as Dropdown } from './components/dropdown/Dropdown';
+export { default as SimpleDropdown } from './components/dropdown/SimpleDropdown';
+export { default as DropdownMenuContainer } from './components/dropdown/DropdownMenuContainer';

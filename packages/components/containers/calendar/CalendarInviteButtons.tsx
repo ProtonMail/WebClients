@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import { useLoading } from '@proton/hooks';
 import { TelemetryCalendarEvents } from '@proton/shared/lib/api/telemetry';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
@@ -11,7 +14,7 @@ import move from '@proton/utils/move';
 import noop from '@proton/utils/noop';
 
 import { useApi, useSubscription } from '../..';
-import { ButtonGroup, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../components';
+import { ButtonGroup } from '../../components';
 import { sendCalendarInviteReport } from './CalendarInviteTelemetry';
 
 interface Props {

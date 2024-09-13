@@ -5,11 +5,11 @@ import type { Locale } from 'date-fns';
 import { addDays, format, parse } from 'date-fns';
 import { c } from 'ttag';
 
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
 
 import { useHotkeys } from '../../hooks';
-import Dropdown from '../dropdown/Dropdown';
 import LocalizedMiniCalendar from '../miniCalendar/LocalizedMiniCalendar';
 import { usePopperAnchor } from '../popper';
 import type { Props as InputProps } from './Input';

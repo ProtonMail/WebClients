@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { DropdownSizeUnit } from '@proton/components/components';
 import ColorSelector from '@proton/components/components/color/ColorSelector';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 
 import Icon from '../../icon/Icon';
