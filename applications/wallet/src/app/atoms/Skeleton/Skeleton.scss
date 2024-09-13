@@ -1,0 +1,45 @@
+@keyframes skeleton-loading {
+	to {
+		background-position: left;
+	}
+}
+
+.skeleton {
+	position: relative;
+	width: max-content;
+	height: max-content;
+}
+
+.skeleton::before {
+	content: '';
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: translateX(-1px) translateY(-1px);
+	width: calc(100% + 2px);
+	height: calc(100% + 2px);
+
+	z-index: 100;
+
+	border-radius: 0.4rem;
+
+	background: linear-gradient(
+			90deg,
+			var(--interaction-weak-major-1) 40%,
+			var(--interaction-weak),
+			var(--interaction-weak-major-1) 60%
+		)
+		right / 300% 100%;
+
+	animation: skeleton-loading 1.5s linear infinite !important;
+}
+
+.rounded-skeleton::before {
+	border-radius: 100%;
+}
+
+.default-skeleton-placeholder {
+	width: 10rem;
+	height: 1rem;
+}
