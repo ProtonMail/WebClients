@@ -15,7 +15,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    Progress,
     Table,
     TableBody,
     TableCell,
@@ -32,6 +31,7 @@ import {
     useNotifications,
     useSubscription,
 } from '@proton/components';
+import Progress from '@proton/components/components/progress/Progress';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
