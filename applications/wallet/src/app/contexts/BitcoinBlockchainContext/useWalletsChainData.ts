@@ -6,7 +6,6 @@ import set from 'lodash/set';
 import { c } from 'ttag';
 
 import { WasmWallet, getDefaultStopGap } from '@proton/andromeda';
-import useNotifications from '@proton/components/hooks/useNotifications';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import generateUID from '@proton/utils/generateUID';
@@ -23,7 +22,7 @@ import type {
 } from '../../types';
 import { removeMasterPrefix } from '../../utils';
 
-export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number };
+export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number; error: string | null };
 
 const POLLING_UID_PREFIX = 'polling';
 
@@ -40,8 +39,6 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
     const pollingIdRef = useRef<string>();
 
     const getNetwork = useGetBitcoinNetwork();
-
-    const { createNotification } = useNotifications();
 
     const [walletsChainData, setWalletsChainData] = useState<WalletChainDataByWalletId>();
 
@@ -129,6 +126,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                 syncing: true,
                 lastSyncing: Date.now(),
                 count: (prev[key]?.count ?? 0) + 1,
+                error: null,
             },
         }));
     }, []);
@@ -137,6 +135,10 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
         setSyncingMetatadaByAccountId((prev) =>
             set({ ...prev }, [getKey(walletId, walletAccountID), 'syncing'], false)
         );
+    }, []);
+
+    const syncingFailed = useCallback((walletId: string, walletAccountID: string, error: string) => {
+        setSyncingMetatadaByAccountId((prev) => set({ ...prev }, [getKey(walletId, walletAccountID), 'error'], error));
     }, []);
 
     const syncSingleWalletAccount = useCallback(
@@ -169,22 +171,15 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                     }
 
                     incrementSyncKey(walletId, accountId);
-                } catch (error) {
-                    createNotification({ text: c('Wallet').t`An error occured`, type: 'error' });
+                } catch (error: any) {
+                    const message = error?.error ?? c('Wallet').t`An error occurred`;
+                    syncingFailed(walletId, accountId, message);
                 } finally {
                     removeSyncing(walletId, accountId);
                 }
             }
         },
-
-        [
-            addNewSyncing,
-            createNotification,
-            removeSyncing,
-            incrementSyncKey,
-            syncingMetatadaByAccountIdRef,
-            blockchainClient,
-        ]
+        [addNewSyncing, removeSyncing, incrementSyncKey, syncingFailed, syncingMetatadaByAccountIdRef, blockchainClient]
     );
 
     const syncSingleWallet = useCallback(

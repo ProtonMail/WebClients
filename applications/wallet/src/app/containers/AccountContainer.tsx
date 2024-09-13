@@ -1,10 +1,12 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, useModalState } from '@proton/components/components';
+import { useNotifications } from '@proton/components/hooks';
+import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
@@ -49,6 +51,10 @@ export const AccountContainer = () => {
         useModalState();
 
     const { decryptedApiWalletsData, setPassphrase, syncSingleWallet, isSyncing } = useBitcoinBlockchainContext();
+
+    const { createNotification, removeNotification } = useNotifications();
+    const notificationRef = useRef<number>();
+
     const { openDrawer } = useWalletDrawerContext();
 
     const walletIndex = useMemo(
@@ -56,11 +62,28 @@ export const AccountContainer = () => {
         [walletId, decryptedApiWalletsData]
     );
 
-    const wallet = Number.isFinite(walletIndex) && decryptedApiWalletsData?.[walletIndex as number];
+    const wallet = Number.isFinite(walletIndex) ? decryptedApiWalletsData?.[walletIndex as number] : undefined;
     const otherWallets = [
         ...(decryptedApiWalletsData?.slice(0, walletIndex) ?? []),
         ...(decryptedApiWalletsData?.slice((walletIndex ?? 0) + 1) ?? []),
     ];
+
+    const walletAccount = wallet?.WalletAccounts?.find(({ ID }) => ID === accountId);
+    const isSyncingChainData = Boolean(
+        wallet?.Wallet?.ID && walletAccount?.ID && isSyncing(wallet.Wallet.ID, walletAccount.ID)
+    );
+
+    useEffect(() => {
+        if (isSyncingChainData) {
+            notificationRef.current = createNotification({
+                text: c('Wallet').t`Syncing new data`,
+                expiration: 10 * MINUTE,
+                showCloseButton: false,
+            });
+        } else if (notificationRef.current) {
+            removeNotification(notificationRef.current);
+        }
+    }, [createNotification, isSyncingChainData, removeNotification]);
 
     if (!decryptedApiWalletsData) {
         return <CircleLoader />;
@@ -75,13 +98,9 @@ export const AccountContainer = () => {
 
     const theme = getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID);
 
-    const walletAccount = wallet.WalletAccounts.find(({ ID }) => ID === accountId);
-
     if (!walletAccount) {
         return <Redirect to={`/wallets/${wallet.Wallet.ID}`} />;
     }
-
-    const isSyncingChainData = isSyncing(wallet.Wallet.ID, walletAccount.ID);
 
     return (
         <>
