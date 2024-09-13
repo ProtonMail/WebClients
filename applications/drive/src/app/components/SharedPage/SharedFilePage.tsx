@@ -20,9 +20,16 @@ interface Props {
     link: DecryptedLink;
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     hideSaveToDrive?: boolean;
+    partialView?: boolean;
 }
 
-export default function SharedFilePage({ bookmarksPublicView, token, link, hideSaveToDrive = false }: Props) {
+export default function SharedFilePage({
+    bookmarksPublicView,
+    token,
+    link,
+    hideSaveToDrive = false,
+    partialView = false,
+}: Props) {
     const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(token, link.linkId);
     const isDownloadScanEnabled = useDownloadScanFlag();
     const { viewportWidth } = useActiveBreakpoint();
@@ -30,6 +37,7 @@ export default function SharedFilePage({ bookmarksPublicView, token, link, hideS
     return (
         <FileBrowserStateProvider itemIds={[link.linkId]}>
             <SharedPageLayout
+                partialView={partialView}
                 FooterComponent={
                     <SharedPageFooter
                         rootItem={link}
@@ -40,6 +48,7 @@ export default function SharedFilePage({ bookmarksPublicView, token, link, hideS
                 }
             >
                 <SharedPageHeader
+                    partialView={partialView}
                     rootItem={link}
                     items={[{ id: link.linkId, ...link }]}
                     bookmarksPublicView={bookmarksPublicView}

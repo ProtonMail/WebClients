@@ -11,6 +11,7 @@ import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage 
 import { useSignupFlowModal } from '../components/modals/SignupFlowModal/SignupFlowModal';
 import { useUpsellFloatingModal } from '../components/modals/UpsellFloatingModal';
 import usePublicToken from '../hooks/drive/usePublicToken';
+import { usePartialPublicView } from '../hooks/util/usePartialPublicView';
 import type { DecryptedLink } from '../store';
 import { PublicDriveProvider, useBookmarksPublicView, useDownload, usePublicAuth, usePublicShare } from '../store';
 import { useDriveShareURLBookmarkingFeatureFlag } from '../store/_bookmarks/useDriveShareURLBookmarking';
@@ -58,6 +59,8 @@ function PublicShareLinkInitContainer() {
     const isLoggedIn = !!user;
     const error: ErrorTuple[0] = authError || publicShareError;
     const errorMessage: ErrorTuple[1] = authErrorMessage || publicShareErrorMessage;
+
+    const isPartialView = usePartialPublicView();
 
     // If password to the share was changed, page need to reload everything.
     // In such case we need to also clear all downloads to not keep anything
@@ -130,7 +133,7 @@ function PublicShareLinkInitContainer() {
     }
 
     if (showLoadingPage) {
-        return <LoadingPage />;
+        return <LoadingPage partialView={isPartialView} />;
     }
 
     if (showErrorPage || !link) {
@@ -141,6 +144,7 @@ function PublicShareLinkInitContainer() {
         <>
             {link.isFile ? (
                 <SharedFilePage
+                    partialView={isPartialView}
                     bookmarksPublicView={bookmarksPublicView}
                     token={token}
                     link={link}
@@ -148,6 +152,7 @@ function PublicShareLinkInitContainer() {
                 />
             ) : (
                 <SharedFolderPage
+                    partialView={isPartialView}
                     bookmarksPublicView={bookmarksPublicView}
                     token={token}
                     rootLink={link}
