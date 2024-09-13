@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { enUS, pt } from 'date-fns/locale';
 
-import { CalendarEventDateHeader } from './index';
+import CalendarEventDateHeader from './CalendarEventDateHeader';
 
 describe('CalendarEventDateHeader', () => {
     describe('should format properly all-day events', () => {

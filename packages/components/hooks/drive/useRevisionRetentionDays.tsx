@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';
 import { useLoading } from '@proton/hooks';
 import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/user';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
@@ -11,7 +12,6 @@ import type {
     UserSettingsResponse,
 } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import type { useConfirmActionModal } from '../../components/confirmActionModal';
 import { getRetentionLabel } from '../../containers/drive/settings/retentionLabels';
 import useApi from '../useApi';
 import useNotifications from '../useNotifications';
