@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
+import { Vr } from '@proton/atoms';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Href } from '@proton/atoms/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
-import { Vr } from '@proton/atoms/Vr';
 import type { IconSize } from '@proton/components';
 import {
     CurrencySelector,

@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { Scroll } from '@proton/atoms';
 import { Button } from '@proton/atoms/Button';
-import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
