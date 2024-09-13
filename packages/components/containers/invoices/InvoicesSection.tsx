@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { InvoiceDocument, getInvoice } from '@proton/shared/lib/api/payments';
 import { INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -10,7 +11,6 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import {
-    Alert,
     ButtonGroup,
     Pagination,
     Table,

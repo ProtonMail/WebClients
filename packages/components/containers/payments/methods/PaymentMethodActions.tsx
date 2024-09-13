@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import Alert from '@proton/components/components/alert/Alert';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 
-import { Alert } from '../../../components/alert';
 import { ErrorButton } from '../../../components/button';
 import type { DropdownActionProps } from '../../../components/dropdown/DropdownActions';
 import DropdownActions from '../../../components/dropdown/DropdownActions';

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { useLoading } from '@proton/hooks';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
@@ -28,7 +29,6 @@ import uniqueBy from '@proton/utils/uniqueBy';
 
 import type { ModalProps } from '../../../components';
 import {
-    Alert,
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
