@@ -3,6 +3,7 @@ import { Router } from 'react-router';
 import { render, screen, within } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
+import { type IconName } from '@proton/components/components/icon/Icon';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
     ADDRESS_RECEIVE,
@@ -22,7 +23,6 @@ import {
 } from '@proton/testing/lib/builders';
 import { mockUseAuthentication } from '@proton/testing/lib/mockUseAuthentication';
 
-import type { IconName } from '../../../components';
 import type { CalendarsSettingsSectionProps } from './CalendarsSettingsSection';
 import CalendarsSettingsSection from './CalendarsSettingsSection';
 

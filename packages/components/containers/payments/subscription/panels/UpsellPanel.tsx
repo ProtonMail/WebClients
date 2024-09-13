@@ -4,7 +4,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
-import { Icon } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
+import StripedList from '@proton/components/components/stripedList/StripedList';
 import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useActiveBreakpoint } from '@proton/components/hooks';
@@ -12,15 +14,12 @@ import type { PLANS } from '@proton/shared/lib/constants';
 import { CYCLE } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
-import StripedList from '@proton/components/components/stripedList/StripedList';
-import StripedItem from '@proton/components/components/stripedList/StripedItem';
 
 import type { ButtonColor, ButtonShape, UpsellCta, UpsellFeature } from '../helpers';
 import { isUpsellCta } from '../helpers';
 import Panel from './Panel';
 
 import './UpsellPanel.scss';
-
 
 export interface UpsellPanelProps {
     title: string;

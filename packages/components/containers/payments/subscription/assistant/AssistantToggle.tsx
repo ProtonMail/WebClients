@@ -1,8 +1,7 @@
 import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Href } from '@proton/atoms/Href';
+import { Button, Href } from '@proton/atoms';
 import {
     Badge,
     Icon,

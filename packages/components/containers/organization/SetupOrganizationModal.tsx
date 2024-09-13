@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { OrganizationKeyRotationPayload } from '@proton/account';
 import { MAX_CHARS_API, createPasswordlessOrganizationKeys, getKeyRotationPayload } from '@proton/account';
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -21,7 +22,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components';
 import {
-    Form,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

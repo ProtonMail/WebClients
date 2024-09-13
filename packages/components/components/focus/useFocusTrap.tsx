@@ -16,7 +16,7 @@ const findParentElement = (el: Element | null | undefined, cb: (el: Element) => 
     }
 };
 
-export const getTargetRootElement = (start: Element | null | undefined) => {
+const getTargetRootElement = (start: Element | null | undefined) => {
     const result = findParentElement(start, (el) => {
         const htmlEl = el as HTMLElement;
         return htmlEl.dataset?.focusRoot === '1';

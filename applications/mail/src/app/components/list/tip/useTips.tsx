@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { differenceInDays } from 'date-fns';
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import {
     ErrorBoundary,
     FeatureCode,

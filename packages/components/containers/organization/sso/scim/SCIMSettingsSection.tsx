@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import type { SamlState } from '@proton/account';
 import { disableSCIMAction, setupSCIMAction } from '@proton/account/samlSSO/actions';
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import useLoading from '@proton/hooks/useLoading';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
@@ -14,7 +15,7 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 
-import { Icon, Info, useModalState } from '../../../../components';
+import { Info, useModalState } from '../../../../components';
 import getBoldFormattedText from '../../../../helpers/getBoldFormattedText';
 import { useApi, useNotifications } from '../../../../hooks';
 import {

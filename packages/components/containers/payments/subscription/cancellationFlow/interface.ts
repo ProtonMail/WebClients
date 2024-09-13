@@ -1,4 +1,4 @@
-import type { IconName } from '@proton/components/components';
+import { type IconName } from '@proton/components/components/icon/Icon';
 import type { PLANS } from '@proton/shared/lib/constants';
 
 export interface PlanConfigReminder {

@@ -4,8 +4,8 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 
-import { Icon } from '../icon';
 import type { AppLinkProps } from '../link/AppLink';
 import AppLink from '../link/AppLink';
 

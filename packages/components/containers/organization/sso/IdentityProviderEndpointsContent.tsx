@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';

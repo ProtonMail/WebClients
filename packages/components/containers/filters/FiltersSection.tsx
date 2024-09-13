@@ -4,7 +4,7 @@ import { arrayMove } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

@@ -3,8 +3,7 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Href } from '@proton/atoms/Href';
+import { Button, Href } from '@proton/atoms';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useIncomingAddressForwardings, useOutgoingAddressForwardings } from '@proton/components/hooks';

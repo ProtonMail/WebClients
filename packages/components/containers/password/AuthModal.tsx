@@ -5,6 +5,18 @@ import { flushSync } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
+import {
+    InputFieldTwo,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    type ModalProps,
+    PasswordInputTwo,
+    Tabs,
+    useFormErrors,
+} from '@proton/components/components';
+import Form from '@proton/components/components/form/Form';
 import { useLoading } from '@proton/hooks';
 import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -18,18 +30,6 @@ import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import type { ModalProps } from '../../components';
-import {
-    Form,
-    InputFieldTwo,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    PasswordInputTwo,
-    Tabs,
-    useFormErrors,
-} from '../../components';
 import { useApi, useConfig, useErrorHandler, useUser, useUserSettings } from '../../hooks';
 import AuthSecurityKeyContent from '../account/fido/AuthSecurityKeyContent';
 import TotpInputs from '../account/totp/TotpInputs';

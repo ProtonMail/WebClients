@@ -1,9 +1,7 @@
 import { forwardRef } from 'react';
 
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
-
-import type { IconName } from '../icon';
-import { Icon } from '../icon';
 
 import './InputFieldStacked.scss';
 

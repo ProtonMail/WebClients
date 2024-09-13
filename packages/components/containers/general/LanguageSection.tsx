@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';

@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
-import { GenericError, Icon, Loader, Toggle, useModalStateObject } from '@proton/components';
+import { Href } from '@proton/atoms';
+import { GenericError, Loader, Toggle, useModalStateObject } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import BreachModal from '@proton/components/containers/credentialLeak/BreachModal';
 import {

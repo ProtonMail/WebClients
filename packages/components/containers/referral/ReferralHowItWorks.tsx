@@ -2,10 +2,9 @@ import { addMonths, format } from 'date-fns';
 import { c } from 'ttag';
 
 import { VerticalStep, VerticalSteps } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
-
-import { Icon } from '../../components';
 
 const ReferralHowItWorks = () => {
     // NOTE API plan to return subscription start date with GET /plans route

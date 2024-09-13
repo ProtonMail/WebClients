@@ -12,6 +12,7 @@ import {
     getPrivateText,
 } from '@proton/account';
 import { Button, Card } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -25,7 +26,7 @@ import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton
 import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import { Icon, InputFieldTwo, Toggle, Tooltip, useFormErrors } from '../../components';
+import { InputFieldTwo, Toggle, Tooltip, useFormErrors } from '../../components';
 import {
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

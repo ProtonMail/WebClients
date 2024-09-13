@@ -13,7 +13,7 @@ import {
     DropdownSizeUnit,
     usePopperAnchor,
 } from '@proton/components';
-import { Icon } from '@proton/components/components/icon';
+import Icon from '@proton/components/components/icon/Icon';
 import { Spotlight } from '@proton/components/components/spotlight';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

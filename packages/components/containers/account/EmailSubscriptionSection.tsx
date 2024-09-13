@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
@@ -17,9 +17,7 @@ const EmailSubscriptionSection = () => {
         return <MozillaInfoPanel />;
     }
 
-    const blogLink = (
-        <Href key={`link-to-blog`} href={getStaticURL('/blog')}>{c('Link').t`visit our blog`}</Href>
-    );
+    const blogLink = <Href key={`link-to-blog`} href={getStaticURL('/blog')}>{c('Link').t`visit our blog`}</Href>;
 
     return (
         <SettingsSection>

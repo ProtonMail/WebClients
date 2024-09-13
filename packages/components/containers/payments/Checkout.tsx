@@ -2,9 +2,9 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import Icon from '@proton/components/components/icon/Icon';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
-import { Icon } from '../../components';
 import CurrencySelector from './CurrencySelector';
 
 interface Props {

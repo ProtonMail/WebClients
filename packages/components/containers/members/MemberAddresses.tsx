@@ -3,10 +3,9 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import type { PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
-
-import { Icon } from '../../components';
 
 const amountOfDisplayedAddresses = 3;
 

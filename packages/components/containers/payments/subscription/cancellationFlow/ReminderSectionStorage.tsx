@@ -1,4 +1,4 @@
-import { Icon } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { SettingsParagraph, SettingsSection, SettingsSectionTitle } from '@proton/components/containers/account';
 
 import type { PlanConfigStorage } from './interface';

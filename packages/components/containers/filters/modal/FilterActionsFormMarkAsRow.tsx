@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
-import { Checkbox, Icon } from '../../../components';
+import { Checkbox } from '../../../components';
 import type { Actions } from '../interfaces';
 
 interface Props {

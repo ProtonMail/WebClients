@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Icon, Tooltip } from '../../components';
+import Icon from '@proton/components/components/icon/Icon';
+
+import { Tooltip } from '../../components';
 
 interface Props {
     to: string;

@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/';
+import Icon from '@proton/components/components/icon/Icon';
 
 import useToggle from '../../hooks/useToggle';
-import { Icon } from '../icon';
 import Input from '../input/Input';
 
 const EditableText = ({ icon = 'pen', onSubmit, initialText = '', children, readOnly = false, ...rest }) => {

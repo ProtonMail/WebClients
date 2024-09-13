@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import RegisterSecurityKeyContent from '@proton/components/containers/account/fido/RegisterSecurityKeyContent';
 import { useLoading } from '@proton/hooks';
 import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib/api/settings';
@@ -18,7 +19,6 @@ import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physi
 import type { ModalProps } from '../../../components';
 import {
     Checkbox,
-    Form,
     Info,
     InputFieldTwo,
     ModalTwo as Modal,

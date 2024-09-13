@@ -6,8 +6,6 @@ import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components';
 import {
     Cell,
-    Form,
-    Icon,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -18,6 +16,8 @@ import {
     TableRow,
     useModalTwoStatic,
 } from '@proton/components/components';
+import Form from '@proton/components/components/form/Form';
+import Icon from '@proton/components/components/icon/Icon';
 import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 import range from '@proton/utils/range';
 

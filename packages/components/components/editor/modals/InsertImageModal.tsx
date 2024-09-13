@@ -10,7 +10,7 @@ import generateUID from '@proton/utils/generateUID';
 
 import { PrimaryButton } from '../../button';
 import FileButton from '../../button/FileButton';
-import { Form } from '../../form';
+import Form from '../../form/Form';
 import Input from '../../input/Input';
 import Label from '../../label/Label';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../modalTwo';

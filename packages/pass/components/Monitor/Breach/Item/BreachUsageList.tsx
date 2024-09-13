@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms/Card';
+import { Card } from '@proton/atoms';
 import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '@proton/components/components/table';
 import type { LoginItem } from '@proton/pass/types';
 

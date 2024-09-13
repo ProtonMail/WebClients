@@ -7,6 +7,7 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Icon from '@proton/components/components/icon/Icon';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { readableTime } from '@proton/shared/lib/helpers/time';
@@ -16,7 +17,6 @@ import {
     ConfirmModal,
     Details,
     ErrorButton,
-    Icon,
     Info,
     InputFieldTwo,
     Option,

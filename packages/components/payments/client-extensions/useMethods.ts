@@ -1,15 +1,18 @@
 import { c } from 'ttag';
 
-import { IconName } from '../../components/icon';
+import { type IconName } from '@proton/components/components/icon/Icon';
+
 import { useApi, useAuthentication } from '../../hooks';
-import {
+import type {
     AvailablePaymentMethod,
-    PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
-    SavedPaymentMethod,
+    SavedPaymentMethod} from '../core';
+import {
+    PAYMENT_METHOD_TYPES,
     isSignupFlow,
 } from '../core';
-import { MethodsHook, Props, useMethods as _useMethods } from '../react-extensions/useMethods';
+import type { MethodsHook, Props} from '../react-extensions/useMethods';
+import { useMethods as _useMethods } from '../react-extensions/useMethods';
 
 export interface ViewPaymentMethod extends AvailablePaymentMethod {
     readonly icon: IconName | undefined;

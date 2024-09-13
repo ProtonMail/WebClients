@@ -3,12 +3,13 @@ import { Fragment } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { useUser } from '@proton/components/hooks';
 import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
-import { Checkbox, Icon, LabelStack, useModalState } from '../../../components';
+import { Checkbox, LabelStack, useModalState } from '../../../components';
 import type { LabelModel } from '../../labels/modals/EditLabelModal';
 import EditLabelModal from '../../labels/modals/EditLabelModal';
 import type { Actions } from '../interfaces';

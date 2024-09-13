@@ -5,13 +5,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components';
 import {
-    Form,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
     useFormErrors,
 } from '@proton/components/components';
+import Form from '@proton/components/components/form/Form';
 
 import type { CountryOptions } from '../../../helpers/countries';
 import { GatewayCountrySelection } from './GatewayCountrySelection';

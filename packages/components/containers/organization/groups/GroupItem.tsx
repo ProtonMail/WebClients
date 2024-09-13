@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { useApi } from '@proton/components/hooks';
 import { deleteAllGroupMembers } from '@proton/shared/lib/api/groups';
 import type { Group } from '@proton/shared/lib/interfaces';

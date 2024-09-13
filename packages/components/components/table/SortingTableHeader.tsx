@@ -1,6 +1,7 @@
 import type { HTMLAttributes, ReactNode, ThHTMLAttributes } from 'react';
 
-import { Icon, TableCell } from '@proton/components/components';
+import { TableCell } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
