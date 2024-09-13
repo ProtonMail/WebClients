@@ -8,12 +8,21 @@ export type DocumentAction =
           linkId: string;
           volumeId: string;
           parentLinkId?: never;
+          token?: never;
       }
     | {
           mode: 'create';
           parentLinkId: string;
           volumeId: string;
           linkId?: never;
+          token?: never;
+      }
+    | {
+          mode: 'open-url';
+          linkId: string;
+          token: string;
+          parentLinkId?: never;
+          volumeId?: never;
       };
 
 export const useOpenDocument = () => {
@@ -25,6 +34,7 @@ export const useOpenDocument = () => {
      * In the Drive application, this should not be used directly, prefer `useDocumentActions`.
      */
     const openDocumentWindow = ({
+        token,
         volumeId,
         linkId,
         parentLinkId,
@@ -36,7 +46,12 @@ export const useOpenDocument = () => {
 
         url.searchParams.append('mode', mode);
 
-        url.searchParams.append('volumeId', volumeId);
+        if (volumeId) {
+            url.searchParams.append('volumeId', volumeId);
+        } else if (token) {
+            url.searchParams.append('token', token);
+        }
+
         if (linkId) {
             url.searchParams.append('linkId', linkId);
         } else if (parentLinkId) {
