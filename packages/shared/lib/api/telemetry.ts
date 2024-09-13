@@ -30,6 +30,7 @@ export enum TelemetryMeasurementGroups {
     driveWebActions = 'drive.web.actions',
     /** Shared */
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
+    clientInstalls = 'common.any.client_installs',
 }
 
 export enum TelemetrySubscriptionModalEvents {
@@ -113,6 +114,10 @@ export enum TelemetryAccountSecurityCheckupEvents {
 export enum TelemetryKeyTransparencyErrorEvents {
     self_audit_error = 'self_audit_error',
     key_verification_failure = 'key_verification_failure',
+}
+
+export enum TelemetryDesktopEvents {
+    client_first_launch = 'client_first_launch',
 }
 
 export enum TelemetryMailEvents {
@@ -204,7 +209,8 @@ export type TelemetryEvents =
     | TelemetryAccountSecurityCheckupEvents
     | TelemetryCollapsibleLeftSidebarEvents
     | TelemetryProtonTipsEvents
-    | TelemetryMailHeartbeatEvents;
+    | TelemetryMailHeartbeatEvents
+    | TelemetryDesktopEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
