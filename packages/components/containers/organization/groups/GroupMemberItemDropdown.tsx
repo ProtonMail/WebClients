@@ -62,7 +62,7 @@ const GroupMemberItemDropdown = ({ member, group }: Props) => {
     const dispatch = baseUseDispatch();
 
     const memberPermissionOptions: PermissionOption[] = [
-        { label: c('Action').t`Use group permissions`, value: GROUP_MEMBER_PERMISSIONS.NONE },
+        { label: c('Action').t`Use group sending permissions`, value: GROUP_MEMBER_PERMISSIONS.NONE },
         {
             label: c('Action').t`Always allow sending`,
             value: GROUP_MEMBER_PERMISSIONS.SEND,
