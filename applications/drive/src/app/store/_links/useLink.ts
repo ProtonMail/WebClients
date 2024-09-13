@@ -32,6 +32,7 @@ import {
 } from '../_shares';
 import { useIsPaid } from '../_user';
 import { useDebouncedFunction } from '../_utils';
+import { useIsPublicContext } from '../_utils/useIsPublicContext';
 import { decryptExtendedAttributes } from './extendedAttributes';
 import type { DecryptedLink, EncryptedLink, SignatureIssueLocation, SignatureIssues } from './interface';
 import { isDecryptedLinkSame } from './link';
@@ -76,6 +77,7 @@ export default function useLink() {
     const { getSharePrivateKey, getShare } = useShare();
     const { getDefaultShareAddressEmail } = useDefaultShare();
     const isPaid = useIsPaid();
+    const isPublicContext = useIsPublicContext();
 
     const debouncedRequest = useDebouncedRequest();
     const fetchLink = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<EncryptedLink> => {
@@ -105,6 +107,7 @@ export default function useLink() {
         getDefaultShareAddressEmail,
         isPaid,
         integrityMetrics,
+        isPublicContext,
         CryptoProxy.importPrivateKey
     );
 }
@@ -131,6 +134,7 @@ export function useLinkInner(
     getDefaultShareAddressEmail: ReturnType<typeof useDefaultShare>['getDefaultShareAddressEmail'],
     userIsPaid: boolean,
     integrityMetrics: IntegrityMetrics,
+    isPublicContext: boolean,
     importPrivateKey: typeof CryptoProxy.importPrivateKey // passed as arg for easier mocking when testing
 ) {
     const debouncedFunction = useDebouncedFunction();
@@ -185,6 +189,9 @@ export function useLinkInner(
     };
 
     const reportSignatureError = (shareId: string, encryptedLink: EncryptedLink, location: SignatureIssueLocation) => {
+        if (isPublicContext) {
+            return;
+        }
         loadShareTypeString(shareId).then(async (shareType) => {
             const email = await getDefaultShareAddressEmail();
             const verificationKey = {
