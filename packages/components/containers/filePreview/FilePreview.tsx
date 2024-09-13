@@ -28,6 +28,7 @@ import ImagePreview from './ImagePreview';
 import PDFPreview from './PDFPreview';
 import PreviewError from './PreviewError';
 import PreviewLoader from './PreviewLoader';
+import { ProtonDocsPreview } from './ProtonDocsPreview';
 import SandboxedPreview from './SandboxedPreview';
 import SignatureIssue from './SignatureIssue';
 import TextPreview from './TextPreview';
@@ -42,8 +43,11 @@ interface Props {
     imgThumbnailUrl?: string;
     fileName?: string;
     fileSize?: number;
+
     /** Whether or not we are in a public Drive URL context. */
     isPublic?: boolean;
+    /** Feature flag for public Docs */
+    isPublicDocsAvailable?: boolean;
 
     contents?: Uint8Array[];
     isSharingInviteAvailable?: boolean; // Feature flag for drive direct sharing
@@ -74,11 +78,13 @@ export const FilePreviewContent = ({
     fileSize,
     fileName,
     isPublic,
+    isPublicDocsAvailable,
 
     contents,
 
     onDownload,
     onNewContents,
+    onOpenInDocs,
 
     signatureConfirmation,
 
@@ -92,11 +98,13 @@ export const FilePreviewContent = ({
     fileName?: string;
     fileSize?: number;
     isPublic?: boolean;
+    isPublicDocsAvailable?: boolean;
 
     contents?: Uint8Array[];
 
     onDownload?: () => void;
     onNewContents?: (content: Uint8Array[]) => void;
+    onOpenInDocs?: () => void;
 
     signatureConfirmation?: ReactNode;
 
@@ -123,7 +131,11 @@ export const FilePreviewContent = ({
         if (mimeType && isProtonDocument(mimeType)) {
             return (
                 <div className="file-preview-container">
-                    <UnsupportedPreview isDocument isPublic={isPublic} />
+                    <ProtonDocsPreview
+                        isPublic={isPublic}
+                        isPublicDocsAvailable={isPublicDocsAvailable}
+                        onOpenInDocs={onOpenInDocs}
+                    />
                 </div>
             );
         }
@@ -194,6 +206,7 @@ const FilePreview = (
         contents,
         navigationControls,
         isSharingInviteAvailable,
+        isPublicDocsAvailable,
         sharedStatus,
         signatureStatus,
         signatureConfirmation,
@@ -308,6 +321,8 @@ const FilePreview = (
                 fileSize={fileSize}
                 fileName={fileName}
                 isPublic={isPublic}
+                isPublicDocsAvailable={isPublicDocsAvailable}
+                onOpenInDocs={onOpenInDocs}
                 contents={contents}
                 onDownload={onDownload}
                 onNewContents={
