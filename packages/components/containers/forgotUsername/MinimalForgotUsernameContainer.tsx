@@ -3,10 +3,11 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import Alert from '@proton/components/components/alert/Alert';
 import { useLoading } from '@proton/hooks';
 import { requestUsername } from '@proton/shared/lib/api/reset';
 
-import { Alert, EmailInput, PrimaryButton } from '../../components';
+import { EmailInput, PrimaryButton } from '../../components';
 import { useApi, useNotifications } from '../../hooks';
 
 const MinimalForgotUsernameContainer = () => {

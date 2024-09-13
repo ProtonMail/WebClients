@@ -1,7 +1,6 @@
 export * from './actionCard';
 export * from './addressesAutocomplete';
 export * from './addressesInput';
-export * from './alert';
 export * from './attachedFile';
 export * from './autocomplete';
 export * from './badge';

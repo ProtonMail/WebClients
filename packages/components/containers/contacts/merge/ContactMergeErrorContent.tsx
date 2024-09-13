@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 
-import { Alert, Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 
 interface Props {
     model: {
