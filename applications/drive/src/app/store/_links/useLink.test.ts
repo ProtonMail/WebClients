@@ -4,6 +4,7 @@ import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
+import { tokenIsValid } from '../../utils/url/token';
 import type { IntegrityMetrics } from '../_crypto';
 import { ShareType } from '../_shares';
 import { useLinkInner } from './useLink';
@@ -11,6 +12,9 @@ import { useLinkInner } from './useLink';
 jest.mock('@proton/shared/lib/keys/driveKeys');
 
 jest.mock('@proton/shared/lib/keys/drivePassphrase');
+
+jest.mock('../../utils/url/token');
+const mockedTokenIsValid = jest.mocked(tokenIsValid).mockReturnValue(false);
 
 const mockRequest = jest.fn();
 jest.mock('../_api/useDebouncedRequest', () => {
@@ -55,7 +59,6 @@ describe('useLink', () => {
     const mockIntegrityMetricsSignatureVerificationError = jest.fn();
 
     const isPaid = false;
-    const isPublicContext = false;
     const abortSignal = new AbortController().signal;
 
     let hook: {
@@ -103,7 +106,6 @@ describe('useLink', () => {
                     nodeDecryptionError: mockIntegrityMetricsDecryptionError,
                     signatureVerificationError: mockIntegrityMetricsSignatureVerificationError,
                 } as unknown as IntegrityMetrics,
-                isPublicContext,
                 mockDecryptPrivateKey
             )
         );
@@ -450,6 +452,32 @@ describe('useLink', () => {
                 ]);
             });
             expect(mockIntegrityMetricsSignatureVerificationError).toHaveBeenCalled();
+        });
+
+        it('should not call integrityMetricsSignature in case this is a bookmark', async () => {
+            mockedTokenIsValid.mockReturnValue(true);
+            // @ts-ignore
+            decryptPassphrase.mockReset();
+            // @ts-ignore
+            decryptPassphrase.mockImplementation(({ armoredPassphrase }) =>
+                Promise.resolve({
+                    decryptedPassphrase: `decPass:${armoredPassphrase}`,
+                    sessionKey: `sessionKey:${armoredPassphrase}`,
+                    verified: 2,
+                })
+            );
+            mockGetShare.mockImplementation((_, shareId) =>
+                Promise.resolve({
+                    shareId,
+                    type: ShareType.default,
+                })
+            );
+
+            await act(async () => {
+                await hook.current.getLink(abortSignal, 'shareId', 'link');
+            });
+
+            expect(mockIntegrityMetricsSignatureVerificationError).not.toHaveBeenCalled();
         });
 
         it('decrypts badly signed hash', async () => {
