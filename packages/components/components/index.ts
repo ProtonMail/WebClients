@@ -55,8 +55,6 @@ export * from './sidebar';
 export { default as SmartBanner } from './smartBanner/SmartBanner';
 export * from './spinner';
 export * from './spotlight';
-export * from './stepDot';
-export * from './stepDots';
 export * from './stripedList';
 export * from './table';
 export * from './tabs';
