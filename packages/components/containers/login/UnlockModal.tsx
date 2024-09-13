@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryUnlock } from '@proton/shared/lib/api/user';
@@ -11,7 +12,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components';
 import {
-    Form,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

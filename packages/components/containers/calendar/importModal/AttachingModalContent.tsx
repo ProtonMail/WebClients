@@ -2,7 +2,7 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import {

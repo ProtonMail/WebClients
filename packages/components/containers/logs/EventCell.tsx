@@ -1,7 +1,6 @@
+import Icon from '@proton/components/components/icon/Icon';
 import type { AuthLog } from '@proton/shared/lib/authlog';
 import { AuthLogStatus } from '@proton/shared/lib/authlog';
-
-import { Icon } from '../../components';
 
 interface Props {
     description: AuthLog['Description'];

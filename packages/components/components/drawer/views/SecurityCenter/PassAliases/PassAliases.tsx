@@ -3,7 +3,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { Icon, Loader, useModalStateObject } from '@proton/components/components';
+import { Loader, useModalStateObject } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { ErrorBoundary } from '@proton/components/containers';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import { useApi, useAuthentication } from '@proton/components/hooks';

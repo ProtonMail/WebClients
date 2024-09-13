@@ -6,11 +6,10 @@ import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import type { Props as DropdownMenuButtonProps } from '@proton/components/components/dropdown/DropdownMenuButton';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 import ButtonGroup from '../button/ButtonGroup';
-import type { IconName } from '../icon';
-import { Icon } from '../icon';
 import { Info } from '../link';
 import DropdownMenu from './DropdownMenu';
 import SimpleDropdown from './SimpleDropdown';

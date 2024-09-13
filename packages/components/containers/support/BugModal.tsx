@@ -4,17 +4,6 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import { reportBug } from '@proton/shared/lib/api/reports';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { omit } from '@proton/shared/lib/helpers/object';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import isTruthy from '@proton/utils/isTruthy';
-import noop from '@proton/utils/noop';
-
-import type { ModalProps } from '../../components';
 import {
     Collapsible,
     CollapsibleContent,
@@ -27,11 +16,22 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
+    type ModalProps,
     Option,
     SelectTwo,
     TextAreaTwo,
     useFormErrors,
-} from '../../components';
+} from '@proton/components';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import { reportBug } from '@proton/shared/lib/api/reports';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { omit } from '@proton/shared/lib/helpers/object';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
+
 import { getClientName, getReportInfo } from '../../helpers/report';
 import { useApi, useConfig, useNotifications } from '../../hooks';
 import type { Screenshot } from './AttachScreenshot';

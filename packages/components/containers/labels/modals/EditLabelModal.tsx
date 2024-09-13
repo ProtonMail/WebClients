@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { useLoading } from '@proton/hooks';
 import { checkLabelAvailability, create as createLabel, updateLabel } from '@proton/shared/lib/api/labels';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
@@ -14,7 +15,7 @@ import type { Label } from '@proton/shared/lib/interfaces/Label';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components';
-import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useFormErrors } from '../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useFormErrors } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import NewLabelForm from '../NewLabelForm';
 

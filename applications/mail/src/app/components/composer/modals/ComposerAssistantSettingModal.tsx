@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Href } from '@proton/atoms/Href';
+import { Button, Href } from '@proton/atoms';
 import { FeatureCode, Icon } from '@proton/components';
 import {
     useApi,

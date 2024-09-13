@@ -1,6 +1,3 @@
-export * from './Card';
-export * from './Href';
-
 export { default as Avatar } from './Avatar/Avatar';
 export type { AvatarProps } from './Avatar/Avatar';
 
@@ -10,6 +7,9 @@ export { default as ButtonLike } from './Button/ButtonLike';
 export type { ButtonLikeOwnProps, ButtonLikeProps, ButtonLikeShape, ButtonLikeSize } from './Button/ButtonLike';
 
 export { default as InlineLinkButton } from './InlineLinkButton/InlineLinkButton';
+
+export { default as Card, type CardProps } from './Card/Card';
+export { default as Href, type HrefProps } from './Href/Href';
 
 export { default as Slider } from './Slider/Slider';
 

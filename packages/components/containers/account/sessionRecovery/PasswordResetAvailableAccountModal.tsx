@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import {
     useIsSessionRecoveryInitiatedByCurrentSession,
     useSessionRecoveryInsecureTimeRemaining,
@@ -25,7 +26,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components';
 import {
-    Form,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

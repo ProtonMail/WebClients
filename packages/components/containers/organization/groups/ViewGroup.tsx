@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { PanelHeader } from '@proton/atoms/Panel';
 import { Panel } from '@proton/atoms/Panel/Panel';
-import { Copy, Icon } from '@proton/components/components';
+import { Copy } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { useNotifications } from '@proton/components/hooks';
 import type { Group } from '@proton/shared/lib/interfaces';
 

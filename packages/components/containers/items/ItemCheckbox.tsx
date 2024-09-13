@@ -1,10 +1,10 @@
 import type { ChangeEvent, FocusEventHandler, MouseEventHandler } from 'react';
 
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import { DENSITY } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-import type { IconName } from '../../components';
-import { Checkbox, Icon } from '../../components';
+import { Checkbox } from '../../components';
 import { useUserSettings } from '../../hooks';
 import { ContactImage } from '../contacts';
 

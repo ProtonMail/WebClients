@@ -2,9 +2,9 @@ import type { ReactNode } from 'react';
 import { useRef } from 'react';
 
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
-import { Icon } from '../../components';
 import type { Color } from '../../components/button/ButtonGroup';
 import { useHotkeys } from '../../hooks';
 

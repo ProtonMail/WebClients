@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Organization } from '@proton/shared/lib/interfaces';
@@ -11,7 +12,6 @@ import { getOrganizationDenomination } from '@proton/shared/lib/organization/hel
 
 import type { ModalProps } from '../../components';
 import {
-    Form,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike, CircleLoader, InlineLinkButton } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import useLoading from '@proton/hooks/useLoading';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -18,7 +19,6 @@ import type { Credentials } from '@proton/shared/lib/srp';
 
 import {
     ButtonGroup,
-    Icon,
     Info,
     Label,
     Loader,

@@ -4,6 +4,7 @@ import { Fragment, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import type { ModalTwoPromiseHandlers } from '@proton/components/components/modalTwo/useModalTwo';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
@@ -14,7 +15,6 @@ import shuffle from '@proton/utils/shuffle';
 
 import type { ModalProps } from '../../../components';
 import {
-    Form,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

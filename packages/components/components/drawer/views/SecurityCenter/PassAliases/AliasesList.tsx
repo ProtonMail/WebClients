@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms/Card';
+import { Card } from '@proton/atoms';
 import { Copy, Info } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import type { PassBridgeAliasItem } from '@proton/pass/lib/bridge/types';

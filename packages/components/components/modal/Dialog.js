@@ -2,11 +2,11 @@ import { useEffect, useLayoutEffect, useRef } from 'react';
 
 import PropTypes from 'prop-types';
 
+import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { dialogRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
 
 import { useHotkeys } from '../../hooks';
-import { useFocusTrap } from '../focus';
 import { useModalPosition } from '../modalTwo/modalPositions';
 import Portal from '../portal/Portal';
 

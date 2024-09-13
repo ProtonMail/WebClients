@@ -5,7 +5,7 @@ import last from 'lodash/last';
 import { c } from 'ttag';
 
 import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
 import {
     Collapsible,

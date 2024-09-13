@@ -5,9 +5,10 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Tooltip } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
-import { Icon, Loader } from '../../../components';
+import { Loader } from '../../../components';
 import useLoadContactImage from '../../../hooks/useLoadContactImage';
 
 interface Props {

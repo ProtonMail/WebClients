@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 export const ButtonNumberInput = ({

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import type { WasmGatewayProvider } from '@proton/andromeda';
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
 import { Checkbox, Prompt } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';

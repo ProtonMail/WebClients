@@ -7,8 +7,7 @@ import { EASY_SWITCH_SOURCES, ImportProvider } from '@proton/activation/src/inte
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
-import { Button } from '@proton/atoms';
-import { Href } from '@proton/atoms/Href';
+import { Button, Href } from '@proton/atoms';
 import type { OnboardingStepRenderCallback } from '@proton/components';
 import { OnboardingContent, OnboardingModal, OnboardingStep, useActiveBreakpoint } from '@proton/components';
 import GmailSyncModalAnimation from '@proton/components/containers/gmailSyncModal/GmailSyncModalAnimation';

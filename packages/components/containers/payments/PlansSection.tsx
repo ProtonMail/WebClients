@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { getPlansMap } from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -23,7 +24,7 @@ import type { Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
-import { Icon, Loader } from '../../components';
+import { Loader } from '../../components';
 import {
     useApi,
     useLoad,

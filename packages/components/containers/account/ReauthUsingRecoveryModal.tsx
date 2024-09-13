@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import useLoading from '@proton/hooks/useLoading';
 import { getMnemonicAuthInfo, reauthMnemonic } from '@proton/shared/lib/api/auth';
 import { reauthByEmailVerification, reauthBySmsVerification } from '@proton/shared/lib/api/verify';
@@ -15,7 +16,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import type { ModalProps } from '../../components';
 import {
-    Form,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,

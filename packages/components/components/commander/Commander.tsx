@@ -9,7 +9,7 @@ import DropdownMenuButton from '@proton/components/components/dropdown/DropdownM
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
-import { Form } from '../form';
+import Form from '../form/Form';
 import type { ModalProps } from '../modalTwo';
 import { ModalTwo } from '../modalTwo';
 import { Mark } from '../text';

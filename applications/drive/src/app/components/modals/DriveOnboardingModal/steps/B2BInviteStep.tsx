@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon } from '@proton/components/components/icon';
+import Icon from '@proton/components/components/icon/Icon';
 import { useSettingsLink } from '@proton/components/components/link';
 import { OnboardingContent, OnboardingStep } from '@proton/components/containers/onboarding';
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants';

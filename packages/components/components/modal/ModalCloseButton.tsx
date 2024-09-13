@@ -3,8 +3,7 @@ import * as React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-
-import { Icon } from '../icon';
+import Icon from '@proton/components/components/icon/Icon';
 
 interface ModalCloseButtonProps {
     onClose?: () => void;

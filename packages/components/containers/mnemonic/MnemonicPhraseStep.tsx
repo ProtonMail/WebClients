@@ -3,9 +3,10 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
-import { Copy, Icon, Loader } from '../../components';
+import { Copy, Loader } from '../../components';
 import { useNotifications } from '../../hooks';
 
 export const MnemonicPhraseStepContent = ({

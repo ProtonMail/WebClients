@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Avatar, Button } from '@proton/atoms';
-import { Icon, Option, SelectTwo, Tooltip } from '@proton/components/components';
+import { Option, SelectTwo, Tooltip } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useLoading } from '@proton/hooks';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';

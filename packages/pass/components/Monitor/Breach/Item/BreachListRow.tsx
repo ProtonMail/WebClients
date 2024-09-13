@@ -3,7 +3,7 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 
 import { Button } from '@proton/atoms';
 import type { FetchedBreaches } from '@proton/components';
-import { Icon } from '@proton/components/components/icon';
+import Icon from '@proton/components/components/icon/Icon';
 import { TableCell, TableRow } from '@proton/components/components/table';
 import ReadableDate from '@proton/components/containers/credentialLeak/ReadableDate';
 import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';

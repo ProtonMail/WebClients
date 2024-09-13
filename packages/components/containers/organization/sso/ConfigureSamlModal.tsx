@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
+import Form from '@proton/components/components/form/Form';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
@@ -17,7 +18,6 @@ import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-i
 
 import type { ModalProps } from '../../../components';
 import {
-    Form,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

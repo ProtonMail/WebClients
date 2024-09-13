@@ -3,6 +3,7 @@ import type { PropsWithChildren } from 'react';
 import { c, msgid } from 'ttag';
 
 import { StripedItem, StripedList } from '@proton/components';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import Meter from '@proton/components/components/progress/Meter';
 import { getHighSpeedVPNConnectionsText } from '@proton/components/containers/payments/features/vpn';
 import { useMember } from '@proton/components/hooks';
@@ -12,8 +13,6 @@ import type { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
-import type { IconName } from '../../../../components';
-import { Icon } from '../../../../components';
 import Panel from './Panel';
 
 interface Item {

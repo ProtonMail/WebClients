@@ -1,8 +1,7 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 
+import { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
-
-import type { IconName } from '../icon';
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
     icon?: IconName;

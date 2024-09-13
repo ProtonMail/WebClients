@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import { Icon, SettingsLink } from '@proton/components';
 import { useUser, useUserSettings } from '@proton/components/hooks';
 import { useDispatch } from '@proton/redux-shared-store';

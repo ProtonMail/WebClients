@@ -1,6 +1,6 @@
+import Icon from '@proton/components/components/icon/Icon';
 import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
-import { Icon } from '../../components';
 import type { IconName, IconProps } from '../../components/icon/Icon';
 import { useFolderColor } from '../../hooks';
 

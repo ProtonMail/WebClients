@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
 import {
     Icon,
