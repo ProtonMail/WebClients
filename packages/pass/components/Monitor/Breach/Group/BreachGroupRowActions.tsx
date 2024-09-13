@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, Icon } from '@proton/atoms';
+import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
