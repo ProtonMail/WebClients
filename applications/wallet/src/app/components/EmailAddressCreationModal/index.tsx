@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import noop from 'lodash/noop';
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import type { ModalOwnProps } from '@proton/components';
 import { DropdownSizeUnit, Option, SelectTwo, useKTVerifier } from '@proton/components';
 import {

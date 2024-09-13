@@ -2,7 +2,7 @@ import { type FC, useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Icon, NotificationButton } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';

@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Button, CircleLoader } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components/components';
 import type { OnLoginCallback } from '@proton/components/containers';

@@ -3,7 +3,7 @@ import { Redirect, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import { Alert, Icon, useModalState } from '@proton/components';
 
 import { CoreButton } from '../atoms';

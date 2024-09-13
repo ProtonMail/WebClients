@@ -3,8 +3,7 @@ import { type FC, useEffect, useState } from 'react';
 import { RUNTIME_RELOAD_THROTTLE } from 'proton-pass-extension/app/worker/services/activation';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Button, CircleLoader } from '@proton/atoms';
 import type { IconName } from '@proton/components/components/icon';
 import { Icon } from '@proton/components/components/icon';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';

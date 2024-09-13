@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate } from '@proton/andromeda';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import { Tooltip } from '@proton/components';
 import { useAddresses } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
