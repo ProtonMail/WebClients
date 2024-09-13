@@ -3,6 +3,7 @@ import type { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { FORBIDDEN_LABEL_NAMES } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
@@ -10,7 +11,7 @@ import type { ContactGroup, ImportContactsModel } from '@proton/shared/lib/inter
 import { IMPORT_GROUPS_ACTION } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Alert, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Option, SelectTwo } from '../../../../components';
+import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Option, SelectTwo } from '../../../../components';
 import { useApi, useEventManager } from '../../../../hooks';
 import { submitCategories } from '../encryptAndSubmit';
 

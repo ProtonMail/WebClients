@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -18,7 +19,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components';
 import {
-    Alert,
     Checkbox,
     ErrorButton,
     Form,
