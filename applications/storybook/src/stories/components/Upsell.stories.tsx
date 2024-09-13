@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Checkbox, UpsellModal } from '@proton/components';
 import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
 import type { UpsellModalProps } from '@proton/components/components/upsell/modal/UpsellModal';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { BREACH_STATE } from '@proton/components/containers/credentialLeak/models';
 
 import BreachInfo from './BreachInfo';

@@ -5,7 +5,7 @@ import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/Ex
 import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';

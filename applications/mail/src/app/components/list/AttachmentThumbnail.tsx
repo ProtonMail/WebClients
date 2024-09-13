@@ -1,6 +1,6 @@
 import type { MouseEvent } from 'react';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { FileIcon, MiddleEllipsis } from '@proton/components';
 import type { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Icon, Pagination } from '@proton/components/components';
 import { useApi, useErrorHandler, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
@@ -12,9 +12,8 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
-import { GenericError, SettingsSectionWide } from '../../..';
 import type { PassEvent } from '../../..';
-import { usePaginationAsync } from '../../..';
+import { GenericError, SettingsSectionWide, usePaginationAsync } from '../../..';
 import { toCamelCase } from '../../credentialLeak/helpers';
 import FilterAndSortEventsBlock from '../FilterAndSortEventBlock';
 import PassEventsTable from './PassEventsTable';

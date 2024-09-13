@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { getInviteLimit } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

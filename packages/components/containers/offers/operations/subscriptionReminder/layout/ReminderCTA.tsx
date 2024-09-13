@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 
 interface Props {
     ctaText: string;

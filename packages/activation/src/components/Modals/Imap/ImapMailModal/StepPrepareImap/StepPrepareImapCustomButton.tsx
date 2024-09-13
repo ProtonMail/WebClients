@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { EasyTrans } from '@proton/activation/src/helpers/easyTrans';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Icon, Tooltip } from '@proton/components';
 

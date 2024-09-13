@@ -2,8 +2,7 @@ import { type FC, useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Kbd } from '@proton/atoms';
-import { Button } from '@proton/atoms/Button';
+import { Button, Kbd } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { metaKey } from '@proton/shared/lib/helpers/browser';

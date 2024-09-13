@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import { useSecurityCheckup } from '@proton/components';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 

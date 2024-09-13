@@ -1,4 +1,4 @@
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import { SettingsLink } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';

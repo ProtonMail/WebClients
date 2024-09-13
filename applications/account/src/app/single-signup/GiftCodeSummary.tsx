@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Input } from '@proton/atoms';
-import { Button } from '@proton/atoms/Button';
+import { Button, Input } from '@proton/atoms';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, Info, Price, UnderlineButton } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';

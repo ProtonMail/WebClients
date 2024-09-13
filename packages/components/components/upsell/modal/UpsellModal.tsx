@@ -1,9 +1,8 @@
 import type { ReactNode } from 'react';
-import React from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import type { IconSize, ModalSize, ModalStateProps } from '@proton/components/components';
 import { Icon, Info, ModalTwo, ModalTwoContent, ModalTwoHeader, SettingsLink } from '@proton/components/components';
 import calendarHeaderImage from '@proton/styles/assets/img/illustrations/upsell-calendar-header.svg';

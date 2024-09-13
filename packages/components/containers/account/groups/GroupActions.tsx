@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Tooltip } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

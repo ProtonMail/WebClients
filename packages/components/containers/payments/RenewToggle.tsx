@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { Autopay } from '@proton/components/payments/core';
 import { getHasConsumerVpnPlan } from '@proton/shared/lib/helpers/subscription';

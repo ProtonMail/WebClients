@@ -3,7 +3,7 @@ import type { FC, ReactElement } from 'react';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { PassIcon } from '@proton/pass/components/Layout/Icon/PassIcon';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';

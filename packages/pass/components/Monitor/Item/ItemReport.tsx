@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Dropdown, DropdownMenu, usePopperAnchor } from '@proton/components';
 import { ItemTag } from '@proton/pass/components/Item/List/ItemTag';
 import { Card } from '@proton/pass/components/Layout/Card/Card';

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Field, Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupField';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';

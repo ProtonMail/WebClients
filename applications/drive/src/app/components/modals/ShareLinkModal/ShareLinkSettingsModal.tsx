@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { getUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
     Alert,

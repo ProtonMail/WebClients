@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { resumeGroupMember as resumeGroupMemberAction, updateOverridePermissions } from '@proton/account';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { useApi, useEventManager } from '@proton/components';
 import {
     Dropdown,

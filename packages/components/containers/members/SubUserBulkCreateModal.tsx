@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import SubUserCreateHint from '@proton/components/containers/members/SubUserCreateHint';
 import CreateUserAccountsModal from '@proton/components/containers/members/multipleUserCreation/CreateUserAccountsModal/CreateUserAccountsModal';

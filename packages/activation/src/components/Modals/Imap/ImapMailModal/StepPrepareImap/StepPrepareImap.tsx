@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { MailImportPayloadError } from '@proton/activation/src/interface';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import {
     Form,
     ModalTwo,

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
 import { ImportProvider, ImportType } from '@proton/activation/src/interface';
@@ -8,7 +6,7 @@ import {
     selectImapDraftProvider,
 } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.selector';
 import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 
 import DefaultCalendarInstructions from './Instructions/default/DefaultCalendarInstructions';

@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 
-import type { EditorMetadata } from '@proton/components/components';
 import type {
     ModalDefaultFontProps,
     ModalImageProps,
@@ -8,6 +7,7 @@ import type {
 } from '@proton/components/components/editor/hooks/interface';
 import useEditorModal from '@proton/components/components/editor/hooks/useEditorModal';
 import useToolbarConfig from '@proton/components/components/editor/hooks/useToolbarConfig';
+import type { EditorMetadata } from '@proton/components/components/editor/interface';
 
 interface Props {
     onChangeMetadata?: (metadataChange: Partial<EditorMetadata>) => void;

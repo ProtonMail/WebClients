@@ -1,9 +1,8 @@
 import type { ComponentProps } from 'react';
-import React from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { IconName } from '@proton/components/components';
 import { Icon, SettingsLink } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';

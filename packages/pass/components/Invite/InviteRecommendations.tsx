@@ -4,7 +4,7 @@ import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Checkbox } from '@proton/components';
 import { ButtonBar } from '@proton/pass/components/Layout/Button/ButtonBar';

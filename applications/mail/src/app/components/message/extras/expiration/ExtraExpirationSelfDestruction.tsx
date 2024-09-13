@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { FeatureCode, Icon, Tooltip, useFeature, useNotifications, useUser } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 

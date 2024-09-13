@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import { EmptyViewContainer } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_LANDING_PAGE } from '@proton/shared/lib/drive/urls';

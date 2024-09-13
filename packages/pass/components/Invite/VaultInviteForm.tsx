@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import type { ListFieldValue } from '@proton/pass/components/Form/Field/ListField';
