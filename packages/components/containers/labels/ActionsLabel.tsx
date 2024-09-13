@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 
-import { DropdownActions, useModalState } from '../../components';
+import { useModalState } from '../../components';
 import DeleteLabelModal from './modals/DeleteLabelModal';
 import EditLabelModal from './modals/EditLabelModal';
 

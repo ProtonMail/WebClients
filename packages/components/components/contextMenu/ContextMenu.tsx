@@ -1,10 +1,10 @@
 import type { ReactNode, RefObject } from 'react';
 import { useEffect, useState } from 'react';
 
+import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import generateUID from '@proton/utils/generateUID';
 
-import type { DropdownProps } from '../dropdown';
-import { Dropdown } from '../dropdown';
 import type { PopperPosition } from '../popper';
 import { cornerPopperPlacements } from '../popper';
 

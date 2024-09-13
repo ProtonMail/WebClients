@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import type { DropdownSize } from '@proton/components/components/dropdown/utils';
 import { useCombinedRefs } from '@proton/hooks';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
@@ -24,7 +25,6 @@ import { useFocusTrap } from '../focus';
 import type { PopperPlacement, PopperPosition } from '../popper';
 import { allPopperPlacements, usePopper } from '../popper';
 import Portal from '../portal/Portal';
-import type { DropdownSize } from './utils';
 import { DropdownSizeUnit, getHeightValue, getMaxSizeValue, getProp, getWidthValue } from './utils';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {

@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
+import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
 
 import { ErrorButton } from '../../../components/button';
-import type { DropdownActionProps } from '../../../components/dropdown/DropdownActions';
-import DropdownActions from '../../../components/dropdown/DropdownActions';
 import { ConfirmModal } from '../../../components/modal';
 import { useApi, useEventManager, useModals, useNotifications } from '../../../hooks';
 import type { CardModel, PaymentMethodCardDetails, SavedPaymentMethod } from '../../../payments/core';

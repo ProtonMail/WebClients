@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import { useLoading } from '@proton/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
@@ -15,8 +16,6 @@ import type {
 import { MemberUnprivatizationState } from '@proton/shared/lib/interfaces';
 import { getCanGenerateMemberKeysPermissions, getShouldSetupMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import isTruthy from '@proton/utils/isTruthy';
-
-import { DropdownActions } from '../../components';
 
 export const MagicLinkMemberActions = ({
     state,
