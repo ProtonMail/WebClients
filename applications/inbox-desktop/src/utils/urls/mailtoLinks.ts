@@ -10,5 +10,5 @@ export const handleMailToUrls = (url: string) => {
     const mailView = getMailView();
     if (!mailView) return;
 
-    showView("mail", addHashToCurrentURL(getMailView().webContents.getURL(), `#mailto=${url}`));
+    showView("mail", addHashToCurrentURL(mailView.webContents.getURL(), `#mailto=${url}`));
 };
