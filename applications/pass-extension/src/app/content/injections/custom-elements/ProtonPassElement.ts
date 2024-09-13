@@ -2,6 +2,8 @@ import type { MaybeNull } from '@proton/pass/types';
 
 export const PASS_ELEMENT_ROLE = 'data-protonpass-role';
 
+const ALLOWED_ATTRS = [PASS_ELEMENT_ROLE, 'aria-hidden'];
+
 export class ProtonPassElement extends HTMLElement {
     private mutationObs: MaybeNull<MutationObserver> = null;
 
@@ -21,7 +23,7 @@ export class ProtonPassElement extends HTMLElement {
          * IE: paypal adding `data-focus-on-hidden` when opening a modal */
         this.mutationObs = new MutationObserver((mutationList) => {
             for (const { type, attributeName } of mutationList) {
-                if (type === 'attributes' && attributeName && attributeName !== PASS_ELEMENT_ROLE) {
+                if (type === 'attributes' && attributeName && !ALLOWED_ATTRS.includes(attributeName)) {
                     this.removeAttribute(attributeName);
                 }
             }
