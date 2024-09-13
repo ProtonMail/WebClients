@@ -56,7 +56,7 @@ interface Props {
     onCheck: (ID: string[], checked: boolean, replace: boolean) => void;
     onCheckOne: (event: ChangeEvent, ID: string) => void;
     onClick: (elementID: string | undefined) => void;
-    onFocus: (number: number) => void;
+    onFocus: (elementID: string) => void;
     conversationMode: boolean;
     isSearch: boolean;
     breakpoints: Breakpoints;
@@ -231,7 +231,7 @@ const List = (
                 showContentPanel ? 'is-column' : 'is-row',
             ])}
         >
-            <div ref={ref} className={clsx(['h-full', isCompactView && 'list-compact'])}>
+            <div className={clsx(['h-full', isCompactView && 'list-compact'])}>
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}{' '}
                     {c('Title').ngettext(msgid`${unreads} unread message`, `${unreads} unread messages`, unreads)}
@@ -263,7 +263,10 @@ const List = (
                         canDisplayTaskRunningBanner={canDisplayTaskRunningBanner}
                     />
 
-                    <div className="items-column-list-container h-full overflow-auto flex flex-column flex-nowrap w-full">
+                    <div
+                        className="items-column-list-container h-full overflow-auto flex flex-column flex-nowrap w-full"
+                        ref={ref}
+                    >
                         {elements.length === 0 && !canDisplayTaskRunningBanner && (
                             <EmptyListPlaceholder
                                 labelID={labelID}
