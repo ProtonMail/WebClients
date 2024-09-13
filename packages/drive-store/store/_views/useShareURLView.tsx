@@ -9,6 +9,7 @@ import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { sendErrorReport } from '../../utils/errorHandling';
+import { useDriveDocsPublicSharingFF } from '../_documents';
 import type { DecryptedLink } from '../_links';
 import { useLink } from '../_links';
 import type { ShareURL } from '../_shares';
@@ -74,6 +75,8 @@ export default function useShareURLView(shareId: string, linkId: string) {
     const [isDeleting, withDeleting] = useLoading();
     const [isCreating, withCreating] = useLoading();
     const { createNotification } = useNotifications();
+
+    const { isDocsPublicSharingEnabled } = useDriveDocsPublicSharingFF();
 
     const shareUrl = shareUrlInfo?.shareUrl;
 
@@ -281,7 +284,7 @@ export default function useShareURLView(shareId: string, linkId: string) {
         isDeleting,
         isSaving,
         name: link?.name || '', // If the link is not loaded we will return an error message anyway
-        isShareUrlEnabled: !!link?.mimeType && isProtonDocument(link.mimeType),
+        isShareUrlEnabled: !!link?.mimeType && isProtonDocument(link.mimeType) ? isDocsPublicSharingEnabled : true,
         initialExpiration,
         customPassword,
         sharedLink,
