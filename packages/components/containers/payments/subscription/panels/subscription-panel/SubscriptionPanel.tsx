@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { StripedItem, StripedList } from '@proton/components';
+import Meter from '@proton/components/components/progress/Meter';
 import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -41,7 +42,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
 import type { IconName } from '../../../../../components';
-import { Icon, Meter, Price } from '../../../../../components';
+import { Icon, Price } from '../../../../../components';
 import { getBasicFeatures, getVersionHistory } from '../../../features/drive';
 import { getSentinel } from '../../../features/highlights';
 import {

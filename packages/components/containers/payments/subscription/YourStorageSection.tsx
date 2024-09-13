@@ -8,11 +8,11 @@ import {
     DriveLogo,
     Icon,
     MailLogo,
-    Meter,
     PassLogo,
     SettingsLink,
     WalletLogo,
 } from '@proton/components/components';
+import Meter from '@proton/components/components/progress/Meter';
 import { SettingsSection } from '@proton/components/containers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useSubscription, useUser } from '@proton/components/hooks';
