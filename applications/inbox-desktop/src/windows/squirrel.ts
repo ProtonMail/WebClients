@@ -14,7 +14,9 @@ import {
     handleUpdatedShortcuts,
     handleUninstallShortcuts,
     squirrelLogger,
+    parseInstallArguments,
 } from "@proton/shared/lib/squirrel/squirrel";
+import { setInstallSource } from "../store/installSourceStore";
 
 async function spawnUninstallProcess() {
     const uninstallLogPath = resolve(app.getPath("temp"), "proton-mail-uninstall.log");
@@ -83,6 +85,7 @@ export async function handleSquirrelEvents() {
             squirrelLogger.info("Install:", process.argv);
             await handleInstallShortcuts();
             await installProtocols();
+            setInstallSource(parseInstallArguments(process.argv).source);
             break;
         case SQUIRREL_UPDATED:
             squirrelLogger.info("Updated:", process.argv);

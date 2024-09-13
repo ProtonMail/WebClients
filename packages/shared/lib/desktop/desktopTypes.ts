@@ -24,10 +24,12 @@ export type IPCInboxDesktopFeature =
     | 'InAppPayments'
     | 'EarlyAccess'
     | 'MultiAccount'
-    | 'LatestVersionCheck';
+    | 'LatestVersionCheck'
+    | 'InstallSource';
 export type IPCInboxGetInfoMessage =
     | { type: 'theme'; result: ThemeSetting }
-    | { type: 'latestVersion'; result: DesktopVersion | null };
+    | { type: 'latestVersion'; result: DesktopVersion | null }
+    | { type: 'installSource'; result: string | null };
 export type IPCInboxClientUpdateMessage =
     | { type: 'updateNotification'; payload: number }
     | { type: 'userLogin'; payload?: undefined }

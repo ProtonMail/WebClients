@@ -31,6 +31,7 @@ export enum TelemetryMeasurementGroups {
     /** Shared */
     collapsibleLeftSidebar = 'any.web.collapsible_left_sidebar',
     smartBanner = 'any.web.smart_banner',
+    clientInstalls = 'common.any.client_installs',
 }
 
 export enum TelemetrySubscriptionModalEvents {
@@ -114,6 +115,10 @@ export enum TelemetryAccountSecurityCheckupEvents {
 export enum TelemetryKeyTransparencyErrorEvents {
     self_audit_error = 'self_audit_error',
     key_verification_failure = 'key_verification_failure',
+}
+
+export enum TelemetryDesktopEvents {
+    client_first_launch = 'client_first_launch',
 }
 
 export enum TelemetryMailEvents {
@@ -210,7 +215,8 @@ export type TelemetryEvents =
     | TelemetryCollapsibleLeftSidebarEvents
     | TelemetryProtonTipsEvents
     | TelemetryMailHeartbeatEvents
-    | TelemetrySmartBannerEvents;
+    | TelemetrySmartBannerEvents
+    | TelemetryDesktopEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

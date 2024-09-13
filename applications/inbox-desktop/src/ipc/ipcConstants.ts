@@ -10,6 +10,7 @@ export const DESKTOP_FEATURES = {
     EarlyAccess: true,
     MultiAccount: true,
     LatestVersionCheck: true,
+    InstallSource: true,
 } as const satisfies Record<IPCInboxDesktopFeature, boolean>;
 
 export type IPCHasFeatureMessage = {
