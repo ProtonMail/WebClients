@@ -8,3 +8,4 @@ export * from './containers';
 
 export { default as Alert } from './components/alert/Alert';
 export type { AlertType } from './components/alert/Alert';
+export { default as TimeZoneSelector } from './components/timezoneSelector/TimeZoneSelector';
