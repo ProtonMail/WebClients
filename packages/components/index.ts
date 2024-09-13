@@ -13,3 +13,5 @@ export { default as TimeZoneSelector } from './components/timezoneSelector/TimeZ
 export { default as ProtonBadge } from './components/protonBadge/ProtonBadge';
 export { default as ProtonBadgeType } from './components/protonBadge/ProtonBadgeType';
 export { default as VerifiedBadge } from './components/protonBadge/VerifiedBadge';
+export { default as Prompt } from './components/prompt/Prompt';
+export type { PromptProps } from './components/prompt/Prompt';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useOrganization } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -11,7 +12,6 @@ import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 
 import type { ModalStateProps } from '../../components';
-import { Prompt } from '../../components';
 
 interface Props extends ModalStateProps {
     organisationName: string;

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Card, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { SettingsParagraph } from '@proton/components/containers';
 import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
@@ -16,7 +17,7 @@ import type { Address, Subscription, UserModel } from '@proton/shared/lib/interf
 import type { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { PrimaryButton, Prompt, SettingsLink, useModalState } from '../../../components';
+import { PrimaryButton, SettingsLink, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { PersonalCalendarModal } from '../calendarModal/personalCalendarModal/PersonalCalendarModal';
