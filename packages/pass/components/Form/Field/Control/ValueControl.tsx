@@ -102,6 +102,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
     return (
         <MaybeClickToCopy
             className={clsx(
+                'pass-value-control',
                 interactive && 'pass-value-control--interactive cursor-pointer',
                 !loading && error && 'border-danger'
             )}
