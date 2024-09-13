@@ -1,7 +1,7 @@
 import { type ReactNode, type Ref, forwardRef } from 'react';
 
+import { Scroll } from '@proton/atoms';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Scroll } from '@proton/atoms/Scroll';
 import clsx from '@proton/utils/clsx';
 
 import './Panel.scss';

@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { Vr } from '@proton/atoms/Vr';
+import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
 
 import type { PhotoLink } from '../../../../store';

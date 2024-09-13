@@ -2,7 +2,7 @@ import type { SortableContainerProps } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms/Scroll';
+import { Scroll } from '@proton/atoms';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
