@@ -27,23 +27,21 @@ import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/type
 import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { getPersistedSessionKey } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
+import type { AuthSwitchService } from '@proton/pass/lib/auth/switch';
 import { getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import { canLocalUnlock } from '@proton/pass/lib/cache/utils';
 import { clientBooted, clientOffline } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, type Maybe, type MaybeNull } from '@proton/pass/types';
+import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
-import { getLocalSessions } from '@proton/shared/lib/api/auth';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import {
     getBasename,
     getLocalIDFromPathname,
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
-import { STORAGE_PREFIX } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { APPS } from '@proton/shared/lib/constants';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -53,29 +51,17 @@ import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-export const getSessionKey = (localId?: number) => `${STORAGE_PREFIX}${localId ?? 0}`;
-export const getStateKey = (state: string) => `f${state}`;
-
-export const getDefaultLocalID = (): Maybe<number> => {
-    const defaultKey = Object.keys(localStorage).find((key) => key.startsWith(STORAGE_PREFIX));
-    if (defaultKey) return parseInt(defaultKey.replace(STORAGE_PREFIX, ''), 10);
-};
-
-export const getPersistedSessionsForUserID = (UserID: string): string[] =>
-    Object.keys(localStorage).filter((key) => {
-        if (!key.startsWith(STORAGE_PREFIX)) return false;
-        try {
-            const data = localStorage.getItem(key);
-            if (!data) return false;
-            const session = JSON.parse(data);
-            return session.UserID === UserID;
-        } catch {
-            return false;
-        }
-    });
+import {
+    getDefaultLocalID,
+    getPersistedSession,
+    getPersistedSessionsForUserID,
+    getSessionKey,
+    getStateKey,
+} from './sessions';
 
 type AuthServiceBindings = {
     app: AppStateContextValue;
+    authSwitch: AuthSwitchService;
     config: PassConfig;
     history: History<MaybeNull<AuthRouteState>>;
     sw: MaybeNull<ServiceWorkerClient>;
@@ -86,6 +72,7 @@ type AuthServiceBindings = {
 
 export const createAuthService = ({
     app,
+    authSwitch,
     config,
     history,
     sw,
@@ -99,17 +86,7 @@ export const createAuthService = ({
         api,
         authStore,
 
-        getPersistedSession: (localID) => {
-            const encryptedSession = localStorage.getItem(getSessionKey(localID));
-            if (!encryptedSession) return null;
-
-            try {
-                const persistedSession = JSON.parse(encryptedSession);
-                return authStore.validPersistedSession(persistedSession) ? persistedSession : null;
-            } catch {
-                return null;
-            }
-        },
+        getPersistedSession,
 
         onInit: async (options) => {
             const activeLocalID = authStore.getLocalID();
@@ -146,16 +123,11 @@ export const createAuthService = ({
                      * applying the `forceLock` option. This allows detecting stale sessions
                      * before allowing the user to password unlock. */
                     if (!cookieUpgrade) {
+                        await authSwitch.sync({ revalidate: true });
                         await getPersistedSessionKey(api, authStore).catch((err) => {
                             app.setStatus(AppStatus.ERROR);
                             throw err;
                         });
-                    }
-
-                    const sessions = await api<{ Sessions: LocalSessionResponse[] }>(getLocalSessions());
-                    const session = sessions.Sessions.find((session) => session.LocalID === persistedSession.LocalID);
-                    if (session?.PrimaryEmail) {
-                        authStore.setUserEmail(session.PrimaryEmail);
                     }
                 }
             }
@@ -243,11 +215,13 @@ export const createAuthService = ({
             store.dispatch(stopEventPolling());
         },
 
-        onLogoutComplete: (userID, localID, broadcast) => {
+        onLogoutComplete: async (userID, localID, broadcast) => {
             if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast });
             if (userID) deletePassDB(userID).catch(noop);
 
             localStorage.removeItem(getSessionKey(localID));
+            await authSwitch.sync({ revalidate: false });
+
             setSentryUID(undefined);
 
             flushSync(() => {
@@ -301,6 +275,9 @@ export const createAuthService = ({
                 session.offlineVerifier = await getOfflineVerifier(stringToUint8Array(offlineKD));
                 authStore.setLockLastExtendTime(getEpoch());
             }
+
+            authStore.setSession(session);
+            await authSwitch.sync({ revalidate: false });
         },
 
         onForkInvalid: () => history.replace('/'),
