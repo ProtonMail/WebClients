@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import type { IconName, IconSize } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
 import { useActiveBreakpoint } from '@proton/components/hooks';

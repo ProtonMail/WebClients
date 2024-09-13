@@ -3,8 +3,7 @@ import { useImperativeHandle, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Button, CircleLoader } from '@proton/atoms';
 import { Info, PayPalButton, Price, StyledPayPalButton } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';

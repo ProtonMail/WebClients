@@ -11,7 +11,7 @@ import {
 } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import { AliasPreview } from '@proton/pass/components/Alias/legacy/Alias.preview';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';

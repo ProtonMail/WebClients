@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import type { Input } from '@proton/atoms';
-import { Button } from '@proton/atoms';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Button, CircleLoader } from '@proton/atoms';
 import { Href } from '@proton/atoms/Href';
 import type { ModalProps } from '@proton/components/components';
 import {

@@ -3,7 +3,7 @@ import { useLocation, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import {
     Icon,
     SidebarListItem,

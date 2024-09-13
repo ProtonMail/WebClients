@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';

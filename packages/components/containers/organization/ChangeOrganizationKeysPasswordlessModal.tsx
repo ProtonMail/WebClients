@@ -4,8 +4,7 @@ import { c } from 'ttag';
 
 import type { OrganizationKeyRotationPayload } from '@proton/account';
 import { getKeyRotationPayload, rotatePasswordlessOrganizationKeys } from '@proton/account';
-import { Button } from '@proton/atoms';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Button, CircleLoader } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

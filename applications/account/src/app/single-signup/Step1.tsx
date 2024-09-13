@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { Button, Vr } from '@proton/atoms';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Button, CircleLoader, Vr } from '@proton/atoms';
 import { Href } from '@proton/atoms/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import type { IconSize } from '@proton/components';

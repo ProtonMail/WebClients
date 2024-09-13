@@ -1,4 +1,4 @@
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 
 export const LayoutViewLoader = () => {
     return (
