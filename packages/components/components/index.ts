@@ -53,7 +53,6 @@ export * from './popper';
 export * from './price';
 export * from './progress';
 export * from './prompt';
-export * from './protonBadge';
 export * from './select';
 export * from './selectTwo';
 export * from './shortcuts';
