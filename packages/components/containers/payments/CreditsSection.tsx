@@ -4,7 +4,7 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { isSplittedUser } from '@proton/components/payments/core';
+import { isSplittedUser } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, isFreeSubscription } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';

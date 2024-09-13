@@ -4,7 +4,7 @@ import type { LocationDescriptor } from 'history';
 
 import type { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/payments';
 import type { ExtensionApp } from '@proton/shared/lib/browser/extension';
 import type { APP_NAMES, CYCLE } from '@proton/shared/lib/constants';
 import type { PLANS } from '@proton/shared/lib/constants';

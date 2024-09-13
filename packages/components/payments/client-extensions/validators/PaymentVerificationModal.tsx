@@ -6,9 +6,8 @@ import { Button } from '@proton/atoms';
 import { FormModal, Loader, PrimaryButton } from '@proton/components/components';
 import PaymentVerificationImage from '@proton/components/containers/payments/PaymentVerificationImage';
 import { useNotifications } from '@proton/components/hooks';
+import { type CardPayment, PAYMENT_METHOD_TYPES } from '@proton/payments';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
-
-import { CardPayment, PAYMENT_METHOD_TYPES } from '../../core';
 
 const STEPS = {
     REDIRECT: 'redirect',

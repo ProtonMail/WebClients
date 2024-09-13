@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import {
-    EnsureTokenChargeableInputs,
-    EnsureTokenChargeableTranslations,
+    type EnsureTokenChargeableInputs,
+    type EnsureTokenChargeableTranslations,
     ensureTokenChargeable as innerEnsureTokenChargeable,
-} from '../core';
+} from '@proton/payments';
 
 export const defaultTranslations: EnsureTokenChargeableTranslations = {
     processAbortedError: c('Error').t`Process aborted`,

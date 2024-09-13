@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { PlainPaymentMethodType } from '@proton/components/payments/core';
-import { PAYMENT_METHOD_TYPES, methodMatches } from '@proton/components/payments/core';
+import type { PlainPaymentMethodType } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, methodMatches } from '@proton/payments';
 
 interface Props {
     paymentMethodType?: PlainPaymentMethodType;

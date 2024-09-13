@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
-import { type Api } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
-
 import {
     type AmountAndCurrency,
     type ChargeableV5PaymentParameters,
@@ -13,7 +10,10 @@ import {
     type ChargebeeIframeHandles,
     type ForceEnableChargebee,
     type PaymentVerificatorV5,
-} from '../core';
+} from '@proton/payments';
+import { type Api } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
+
 import type { PaymentProcessorHook, PaymentProcessorType } from './interface';
 import { usePaymentProcessor } from './usePaymentProcessor';
 

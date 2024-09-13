@@ -10,6 +10,14 @@ import { useCurrencies } from '@proton/components/payments/client-extensions/use
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
+import type { MultiCheckSubscriptionData, PaymentMethodStatusExtended } from '@proton/payments';
+import {
+    type BillingAddress,
+    type CheckWithAutomaticOptions,
+    PAYMENT_METHOD_TYPES,
+    getPlansMap,
+    isOnSessionMigration,
+} from '@proton/payments';
 import type { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -57,14 +65,6 @@ import noop from '@proton/utils/noop';
 import { usePaymentFacade } from '../../../../components/payments/client-extensions';
 import { useChargebeeContext } from '../../../../components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '../../../../components/payments/client-extensions/usePollEvents';
-import type { MultiCheckSubscriptionData, PaymentMethodStatusExtended } from '../../../../components/payments/core';
-import {
-    type BillingAddress,
-    type CheckWithAutomaticOptions,
-    PAYMENT_METHOD_TYPES,
-    getPlansMap,
-    isOnSessionMigration,
-} from '../../../../components/payments/core';
 import type { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
 import type {
     PaymentProcessorHook,

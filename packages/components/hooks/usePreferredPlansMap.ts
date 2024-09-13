@@ -1,7 +1,7 @@
+import { type FullPlansMap, getPlansMap as getPlansMapInner } from '@proton/payments';
 import { type Currency } from '@proton/shared/lib/interfaces';
 
 import { type GetPreferredCurrencyParams, useCurrencies } from '../payments/client-extensions/useCurrencies';
-import { type FullPlansMap, getPlansMap as getPlansMapInner } from '../payments/core';
 import { usePaymentStatus } from './usePaymentStatus';
 import usePlans from './usePlans';
 import useSubscription from './useSubscription';
