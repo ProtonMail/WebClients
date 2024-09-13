@@ -1,7 +1,7 @@
 import { isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
 
-import { Kbd } from '@proton/atoms/Kbd';
+import { Kbd } from '@proton/atoms';
 import { EllipsisLoader } from '@proton/components';
 import { altKey, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 
