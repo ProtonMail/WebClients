@@ -16,6 +16,7 @@ import { Icon } from '@proton/components/components/icon';
 import { Spotlight } from '@proton/components/components/spotlight';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import clsx from '@proton/utils/clsx';
 
 import usePublicToken from '../../../hooks/drive/usePublicToken';
 import type { DecryptedLink } from '../../../store';
@@ -34,6 +35,7 @@ export interface DownloadButtonProps {
     isScanAndDownload?: boolean;
     color?: ThemeColorUnion;
     disabled?: boolean;
+    partialView?: boolean;
 }
 
 const SpotlightContent = () => (
@@ -77,18 +79,20 @@ const InfoIcon = ({ className }: { className?: string }) => {
             originalPlacement="bottom-end"
             size="large"
         >
-            <button
+            <Button
+                icon
+                shape="ghost"
                 className={className}
                 onClick={toggleSpotlight}
                 aria-label={c('Action').t`Open scan and download info`}
             >
                 <Icon name="info-circle" size={4} data-testid="scan-and-download-tooltip" />
-            </button>
+            </Button>
         </Spotlight>
     );
 };
 
-export function DownloadButton({ items, rootItem, isScanAndDownload, disabled }: DownloadButtonProps) {
+export function DownloadButton({ items, rootItem, isScanAndDownload, disabled, partialView }: DownloadButtonProps) {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLDivElement>();
     const { token } = usePublicToken();
     const selectionControls = useSelection();
@@ -157,7 +161,7 @@ export function DownloadButton({ items, rootItem, isScanAndDownload, disabled }:
     }
 
     return (
-        <div className="flex flex-nowrap items-center gap-4">
+        <div className={clsx('flex flex-nowrap items-center gap-4', partialView && 'gap-8 flex-row-reverse')}>
             <InfoIcon className="hidden md:block" />
             <div ref={anchorRef}>
                 <ButtonGroup>

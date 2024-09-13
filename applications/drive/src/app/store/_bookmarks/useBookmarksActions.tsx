@@ -2,9 +2,9 @@ import { c, msgid } from 'ttag';
 
 import type { useConfirmActionModal } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
-import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
 
+import { partialPublicViewKey } from '../../hooks/util/usePartialPublicView';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
@@ -67,7 +67,9 @@ export const useBookmarksActions = () => {
             );
         }
         countActionWithTelemetry(Actions.OpenPublicLinkFromSharedWithMe);
-        openNewTab(url);
+        const urlToOpen = new URL(url);
+        urlToOpen.searchParams.append(partialPublicViewKey, 'true');
+        window.location.assign(urlToOpen.toString());
     };
 
     const deleteBookmarks = async (abortSignal: AbortSignal, tokensWithLinkId: { token: string; linkId: string }[]) => {
