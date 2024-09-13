@@ -227,7 +227,7 @@ const MailboxContainer = ({
     const showContentView = showContentPanel && !!elementID;
     const elementIDForList = checkedIDs.length ? undefined : elementID;
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
-    const { focusIndex, getFocusedId, setFocusIndex, handleFocus, focusOnLastMessage } = useMailboxFocus({
+    const { focusID, setFocusID, focusLastID, focusFirstID, focusNextID, focusPreviousID } = useMailboxFocus({
         elementIDs,
         page,
         filter,
@@ -236,7 +236,15 @@ const MailboxContainer = ({
         listRef,
         labelID,
         isComposerOpened,
+        loading,
     });
+
+    const handleFocus = useCallback(
+        (elementID: string) => {
+            setFocusID(elementID);
+        },
+        [setFocusID]
+    );
 
     const handleSort = useCallback(
         (sort: Sort) => {
@@ -349,14 +357,16 @@ const MailboxContainer = ({
             elementIDs,
             checkedIDs,
             selectedIDs,
-            focusIndex,
+            focusID,
             columnLayout,
             isMessageOpening,
             location,
         },
         {
-            focusOnLastMessage,
-            getFocusedId,
+            focusLastID,
+            focusFirstID,
+            focusNextID,
+            focusPreviousID,
             handleBack,
             handleCheck,
             handleCheckOnlyOne,
@@ -364,7 +374,7 @@ const MailboxContainer = ({
             handleElement,
             handleFilter,
             handleCheckAll,
-            setFocusIndex,
+            setFocusID,
             showCommander,
         }
     );
