@@ -1,10 +1,12 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Icon, useModalState } from '@proton/components/components';
+import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
+import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 import { encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
@@ -45,19 +47,38 @@ export const WalletContainer = () => {
     const [walletSendModal, setWalletSendModal] = useModalState();
     const [walletBuyModal, setWalletBuyModal] = useModalState();
 
-    const { decryptedApiWalletsData, setPassphrase, syncSingleWallet, isSyncing } = useBitcoinBlockchainContext();
+    const { decryptedApiWalletsData, setPassphrase, syncSingleWallet, getSyncingData } = useBitcoinBlockchainContext();
+
+    const { createNotification, removeNotification } = useNotifications();
+    const notificationRef = useRef<number>();
 
     const walletIndex = useMemo(
         () => decryptedApiWalletsData?.findIndex(({ Wallet }) => Wallet.ID === walletId),
         [walletId, decryptedApiWalletsData]
     );
 
-    const wallet = Number.isFinite(walletIndex) && decryptedApiWalletsData?.[walletIndex as number];
+    const wallet = Number.isFinite(walletIndex) ? decryptedApiWalletsData?.[walletIndex as number] : undefined;
 
     const otherWallets = [
         ...(decryptedApiWalletsData?.slice(0, walletIndex) ?? []),
         ...(decryptedApiWalletsData?.slice((walletIndex ?? 0) + 1) ?? []),
     ];
+
+    const syncingData = wallet?.Wallet?.ID ? getSyncingData(wallet?.Wallet?.ID) : undefined;
+    const isSyncing = Boolean(syncingData?.syncing);
+    const didFailedSyncing = Boolean(syncingData?.error);
+
+    useEffect(() => {
+        if (isSyncing) {
+            notificationRef.current = createNotification({
+                text: c('Wallet').t`Syncing new data`,
+                expiration: 10 * MINUTE,
+                showCloseButton: false,
+            });
+        } else if (notificationRef.current) {
+            removeNotification(notificationRef.current);
+        }
+    }, [createNotification, isSyncing, removeNotification]);
 
     if (!decryptedApiWalletsData) {
         return <LayoutViewLoader />;
@@ -74,8 +95,6 @@ export const WalletContainer = () => {
     const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);
 
     const theme = getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID);
-
-    const isSyncingChainData = isSyncing(wallet.Wallet.ID);
 
     const loadWalletWithPassphrase = async (passphrase: string) => {
         setPassphrase(wallet.Wallet.ID, passphrase);
@@ -140,7 +159,7 @@ export const WalletContainer = () => {
                     {/* Wallet metrics and cta (send, buy, receive) */}
                     <MetricsAndCtas
                         apiWalletData={wallet}
-                        disabled={isSyncingChainData}
+                        disabled={isSyncing || didFailedSyncing}
                         onClickSend={() => setWalletSendModal(true)}
                         onClickReceive={() => {
                             openDrawer({ kind: 'wallet-receive', wallet, theme });

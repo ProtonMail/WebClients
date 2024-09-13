@@ -16,8 +16,10 @@ interface Props {
 }
 
 export const PrivateWalletLayout = ({ children }: Props) => {
-    const { walletId } = useParams<{ walletId?: string }>();
-    const { decryptedApiWalletsData, loadingApiWalletsData } = useBitcoinBlockchainContext();
+    const { walletId, accountId } = useParams<{ walletId?: string; accountId?: string }>();
+    const { decryptedApiWalletsData, loadingApiWalletsData, getSyncingData } = useBitcoinBlockchainContext();
+
+    const syncingData = walletId ? getSyncingData(walletId, accountId) : undefined;
 
     const { open } = useWalletSetupModalContext();
 
@@ -25,7 +27,13 @@ export const PrivateWalletLayout = ({ children }: Props) => {
 
     return (
         <PrivateAppContainer
-            header={<WalletHeader isHeaderExpanded={expanded} toggleHeaderExpanded={toggleExpanded} />}
+            header={
+                <WalletHeader
+                    isHeaderExpanded={expanded}
+                    toggleHeaderExpanded={toggleExpanded}
+                    syncingError={syncingData?.error}
+                />
+            }
             sidebar={
                 <WalletSidebar
                     expanded={expanded}

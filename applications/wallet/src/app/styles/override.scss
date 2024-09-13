@@ -124,3 +124,15 @@
 		}
 	}
 }
+
+.notification {
+	&#{&} {
+		background-color: var(--interaction-norm);
+
+		&--error,
+		&--warning {
+			background-color: var(--signal-danger);
+			color: var(--signal-danger-contrast);
+		}
+	}
+}
