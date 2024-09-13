@@ -7,6 +7,7 @@ import { useDownloadScanFlag } from '../../../store';
 import { useSelection } from '../../FileBrowser';
 import { getSelectedItems } from '../../sections/helpers';
 import { SaveToDriveButton } from '../Bookmarks/SaveToDriveButton';
+import { ClosePartialPublicViewButton } from './ClosePartialPublicViewButton';
 import type { DownloadButtonProps } from './DownloadButton';
 import { DownloadButton } from './DownloadButton';
 
@@ -15,6 +16,7 @@ interface Props extends DownloadButtonProps {
     bookmarksPublicView: ReturnType<typeof useBookmarksPublicView>;
     className?: string;
     hideSaveToDrive?: boolean;
+    partialView?: boolean;
 }
 
 export default function SharedPageHeader({
@@ -23,7 +25,8 @@ export default function SharedPageHeader({
     items,
     bookmarksPublicView,
     className,
-    hideSaveToDrive = false,
+    hideSaveToDrive,
+    partialView,
 }: Props) {
     const isDownloadScanEnabled = useDownloadScanFlag();
     const { viewportWidth } = useActiveBreakpoint();
@@ -49,8 +52,10 @@ export default function SharedPageHeader({
                         items={items}
                         isScanAndDownload={isDownloadScanEnabled}
                         disabled={hasOnlyDocuments}
+                        partialView={partialView}
                     />
-                    {!hideSaveToDrive && (
+                    {partialView && <ClosePartialPublicViewButton className="ml-5" />}
+                    {!hideSaveToDrive && !partialView && (
                         <SaveToDriveButton
                             loading={isLoading}
                             onClick={addBookmark}
