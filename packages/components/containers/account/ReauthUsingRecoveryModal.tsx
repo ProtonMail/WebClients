@@ -99,7 +99,11 @@ const ReauthUsingRecoveryModal = ({
 
     const toProceed = c('Info').t`To proceed, we must verify the request.`;
     const codeResetString = (value: string) => {
-        const boldValue = <b key="bold-reset-method-value">{value}</b>;
+        const boldValue = (
+            <b data-testid="recovery-modal-code-destination" key="bold-reset-method-value">
+                {value}
+            </b>
+        );
         // translator: boldValue will be the recovery email address or recovery phone number in bold
         return c('Info').jt`We’ll send a reset code to ${boldValue}.`;
     };
