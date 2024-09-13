@@ -10,6 +10,7 @@ import type { AppState } from '@proton/pass/types';
 import createStore from '@proton/shared/lib/helpers/store';
 
 import * as auth from './auth';
+import * as sessions from './sessions';
 
 jest.mock('proton-pass-web/app/Store/store', () => ({ store: { dispatch: jest.fn() } }));
 jest.mock('proton-pass-web/lib/telemetry', () => ({ telemetry: { stop: jest.fn() } }));
@@ -39,8 +40,8 @@ describe('AuthService', () => {
     exposeAuthStore(createAuthStore(createStore()));
     exposeApi({ subscribe } as any);
 
-    jest.spyOn(auth, 'getDefaultLocalID').mockImplementation(() => undefined);
-    jest.spyOn(auth, 'getPersistedSessionsForUserID').mockImplementation(() => []);
+    jest.spyOn(sessions, 'getDefaultLocalID').mockImplementation(() => undefined);
+    jest.spyOn(sessions, 'getPersistedSessionsForUserID').mockImplementation(() => []);
 
     beforeEach(() => {
         authStore.clear();
@@ -50,6 +51,7 @@ describe('AuthService', () => {
 
         authService = auth.createAuthService({
             app,
+            authSwitch: {} as any,
             config,
             history,
             sw,
@@ -109,7 +111,7 @@ describe('AuthService', () => {
         test.each(cases)('should return null if session is $desc', ({ value }) => {
             const getItem = jest.spyOn(Storage.prototype, 'getItem').mockReturnValue(value);
             const result = authService.config.getPersistedSession(0);
-            expect(getItem).toHaveBeenCalledWith(auth.getSessionKey(0));
+            expect(getItem).toHaveBeenCalledWith(sessions.getSessionKey(0));
             expect(result).toBe(null);
         });
 
@@ -117,7 +119,7 @@ describe('AuthService', () => {
             const session = { UID: '42', UserID: '42', blob: 'encrypted-blob', cookies: true };
             const getItem = jest.spyOn(Storage.prototype, 'getItem').mockImplementation(() => JSON.stringify(session));
             const result = authService.config.getPersistedSession(0);
-            expect(getItem).toHaveBeenCalledWith(auth.getSessionKey(0));
+            expect(getItem).toHaveBeenCalledWith(sessions.getSessionKey(0));
             expect(result).toEqual(session);
         });
     });

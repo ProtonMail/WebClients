@@ -54,6 +54,7 @@ import noop from '@proton/utils/noop';
 
 import { AppGuard } from './AppGuard';
 import { AuthServiceProvider } from './Auth/AuthServiceProvider';
+import { AuthSwitchProvider } from './Auth/AuthSwitchProvider';
 import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/client/ServiceWorkerProvider';
 import type { ServiceWorkerClient } from './ServiceWorker/client/client';
 import { StoreProvider } from './Store/StoreProvider';
@@ -146,17 +147,19 @@ export const App = () => (
                                         >
                                             <Router history={history}>
                                                 <NavigationProvider>
-                                                    <AuthServiceProvider>
-                                                        <StoreProvider>
-                                                            <Localized>
-                                                                <AppGuard />
-                                                            </Localized>
-                                                            <Portal>
-                                                                <ModalsChildren />
-                                                                <NotificationsChildren />
-                                                            </Portal>
-                                                        </StoreProvider>
-                                                    </AuthServiceProvider>
+                                                    <AuthSwitchProvider>
+                                                        <AuthServiceProvider>
+                                                            <StoreProvider>
+                                                                <Localized>
+                                                                    <AppGuard />
+                                                                </Localized>
+                                                                <Portal>
+                                                                    <ModalsChildren />
+                                                                    <NotificationsChildren />
+                                                                </Portal>
+                                                            </StoreProvider>
+                                                        </AuthServiceProvider>
+                                                    </AuthSwitchProvider>
                                                 </NavigationProvider>
                                             </Router>
                                         </ConnectivityProvider>
