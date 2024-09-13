@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Card, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { SharedCalendarsSection } from '@proton/components/containers';
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
@@ -20,7 +21,7 @@ import type {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 
-import { PrimaryButton, Prompt, SettingsLink, useModalState } from '../../../components';
+import { PrimaryButton, SettingsLink, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { SettingsParagraph } from '../../account';

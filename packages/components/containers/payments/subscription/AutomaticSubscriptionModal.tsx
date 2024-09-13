@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import type { ModalProps, OpenCallbackProps } from '@proton/components';
 import {
-    Prompt,
     useConfig,
     useLastSubscriptionEnd,
     useLoad,
@@ -17,6 +16,7 @@ import {
     useSubscriptionModal,
     useUser,
 } from '@proton/components';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import {
     blackFriday2023DriveFreeConfig,
     blackFriday2023DriveFreeEligibility,

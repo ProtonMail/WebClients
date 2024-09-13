@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
-
-import { Prompt } from '../../../components';
 
 interface Props {
     edit?: string;
