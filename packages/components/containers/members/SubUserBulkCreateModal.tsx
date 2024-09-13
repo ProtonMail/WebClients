@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { Button, InlineLinkButton } from '@proton/atoms';
 import SubUserCreateHint from '@proton/components/containers/members/SubUserCreateHint';
 import CreateUserAccountsModal from '@proton/components/containers/members/multipleUserCreation/CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from '@proton/components/containers/members/multipleUserCreation/UploadCSVFileButton';

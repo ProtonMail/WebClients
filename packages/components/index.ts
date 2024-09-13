@@ -52,3 +52,10 @@ export {
 export { default as ReloadSpinner } from './components/spinner/ReloadSpinner';
 export { default as Toolbar } from './components/toolbar/Toolbar';
 export { default as ToolbarButton } from './components/toolbar/ToolbarButton';
+
+export { default as ColorSelector } from './components/color/ColorSelector';
+export type { CommanderItemInterface } from './components/commander/Commander';
+export { default as Commander } from './components/commander/Commander';
+
+export type { DropzoneSize, DropzoneShape, DropzoneProps } from './components/dropzone/Dropzone';
+export { default as Dropzone } from './components/dropzone/Dropzone';

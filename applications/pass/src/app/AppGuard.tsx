@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import { useClient, useClientRef } from 'proton-pass-web/app/Context/ClientProvider';
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockProbeProvider } from '@proton/pass/components/Core/LockProbeProvider';
 import { BottomBar } from '@proton/pass/components/Layout/Bar/BottomBar';

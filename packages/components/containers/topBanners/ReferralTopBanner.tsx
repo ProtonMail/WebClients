@@ -1,7 +1,7 @@
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
