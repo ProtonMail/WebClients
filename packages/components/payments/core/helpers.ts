@@ -1,4 +1,10 @@
-import { DEFAULT_CURRENCY, type FreeSubscription, type PLANS, isStringPLAN } from '@proton/shared/lib/constants';
+import {
+    type ADDON_NAMES,
+    DEFAULT_CURRENCY,
+    type FreeSubscription,
+    type PLANS,
+    isStringPLAN,
+} from '@proton/shared/lib/constants';
 import {
     ChargebeeEnabled,
     type Currency,
@@ -69,7 +75,7 @@ export function getSupportedRegionalCurrencies({
 }: {
     status?: PaymentMethodStatusExtended;
     plans?: Plan[];
-    selectedPlanName?: PLANS;
+    selectedPlanName?: PLANS | ADDON_NAMES;
     user?: User;
     subscription?: Subscription | FreeSubscription;
     regionalCurrenciesEnabled: boolean;
@@ -183,11 +189,11 @@ export function getAvailableCurrencies({
     regionalCurrenciesEnabled,
     paramCurrency,
 }: {
-    status: PaymentMethodStatusExtended;
+    status?: PaymentMethodStatusExtended;
     user?: User;
     subscription?: Subscription | FreeSubscription;
     plans?: Plan[];
-    selectedPlanName?: PLANS;
+    selectedPlanName?: PLANS | ADDON_NAMES;
     regionalCurrenciesEnabled: boolean;
     paramCurrency?: Currency;
 }): readonly Currency[] {

@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useCurrencies } from '@proton/components/payments/client-extensions';
-import type { FullPlansMap, MappedPlan, PaymentMethodStatusExtended } from '@proton/components/payments/core';
-import { isRegionalCurrency, mainCurrencies } from '@proton/components/payments/core/helpers';
+import type { FullPlansMap, PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import { getAvailableCurrencies } from '@proton/components/payments/core/helpers';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
 import { getCheckout, getDiscountText } from '@proton/shared/lib/helpers/checkout';
@@ -16,13 +16,14 @@ import type {
     Currency,
     Cycle,
     FreePlanDefault,
+    Plan,
     PlanIDs,
     SubscriptionModel,
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
 import { Badge, Info } from '../../../../components';
-import { useConfig, useUser } from '../../../../hooks';
+import { useConfig, usePaymentStatus, usePlans, useUser } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText } from '../../RenewalNotice';
 import StartDateCheckoutRow from '../../StartDateCheckoutRow';
@@ -56,17 +57,21 @@ type Props = {
     paymentNeeded: boolean;
 } & CheckoutModifiers;
 
-export const useAvailableCurrenciesForPlan = (plan: MappedPlan | null, subscription: SubscriptionModel) => {
+export const useAvailableCurrenciesForPlan = (plan: Plan | null, subscription: SubscriptionModel) => {
     const [user] = useUser();
+    const [paymentStatus] = usePaymentStatus();
     const { dashboardRegionalCurrencyEnabled } = useCurrencies();
+    const [plansResult] = usePlans();
+    const plans: Plan[] = plansResult?.plans ?? [];
 
-    return (plan?.availableCurrencies ?? mainCurrencies).filter(
-        (currency) =>
-            dashboardRegionalCurrencyEnabled ||
-            !isRegionalCurrency(currency) ||
-            subscription?.Currency === currency ||
-            user.Currency === currency
-    );
+    return getAvailableCurrencies({
+        status: paymentStatus,
+        subscription,
+        user,
+        regionalCurrenciesEnabled: dashboardRegionalCurrencyEnabled,
+        plans,
+        selectedPlanName: plan?.Name,
+    });
 };
 
 const SubscriptionCheckout = ({

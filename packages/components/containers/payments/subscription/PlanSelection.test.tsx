@@ -124,7 +124,6 @@ describe('useAccessiblePlans', () => {
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
             canAccessWalletPlan: false,
-            availableCurrencies: ['USD', 'EUR', 'CHF'],
         });
     });
 
@@ -198,7 +197,6 @@ describe('useAccessiblePlans', () => {
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
             canAccessWalletPlan: false,
-            availableCurrencies: ['USD', 'EUR', 'CHF'],
         });
     });
 
@@ -265,7 +263,6 @@ describe('useAccessiblePlans', () => {
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
             canAccessWalletPlan: false,
-            availableCurrencies: ['USD', 'EUR', 'CHF', 'BRL'],
         });
     });
 
@@ -348,7 +345,6 @@ describe('useAccessiblePlans', () => {
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
             canAccessWalletPlan: false,
-            availableCurrencies: ['USD', 'EUR', 'CHF', 'BRL'],
         });
     });
 
@@ -423,7 +419,6 @@ describe('useAccessiblePlans', () => {
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
             canAccessWalletPlan: false,
-            availableCurrencies: ['USD', 'EUR', 'CHF'],
         });
     });
 
@@ -502,7 +497,6 @@ describe('useAccessiblePlans', () => {
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
             canAccessWalletPlan: false,
-            availableCurrencies: ['USD', 'EUR', 'CHF'],
         });
     });
 
@@ -578,7 +572,6 @@ describe('useAccessiblePlans', () => {
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
             canAccessWalletPlan: false,
-            availableCurrencies: ['USD', 'EUR', 'CHF'],
         });
     });
 
@@ -654,7 +647,6 @@ describe('useAccessiblePlans', () => {
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
             canAccessWalletPlan: false,
-            availableCurrencies: ['USD', 'EUR', 'CHF'],
         });
     });
 
@@ -724,7 +716,6 @@ describe('useAccessiblePlans', () => {
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
             canAccessWalletPlan: false,
-            availableCurrencies: ['USD', 'EUR', 'CHF'],
         });
     });
 });
