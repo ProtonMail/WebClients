@@ -1,4 +1,4 @@
-import type { FC, ReactElement } from 'react';
+import type { FC, ReactElement, ReactNode } from 'react';
 
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { c } from 'ttag';
@@ -11,7 +11,7 @@ import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 type Props = {
     discardOnClose?: boolean;
     extra?: ReactElement;
-    title: string;
+    title: ReactNode;
     onClose?: () => void;
 };
 
@@ -20,9 +20,9 @@ export const NotificationHeader: FC<Props> = ({ discardOnClose = true, extra, ti
 
     return (
         <div className="flex flex-nowrap shrink-0 items-center justify-space-between gap-2">
-            <h3 className="flex text-bold text-lg items-center gap-2">
-                <PassIcon status={PassIconStatus.ACTIVE} size={5.5} />
-                <span className="flex-1 text-ellipsis">{title}</span>
+            <h3 className="flex flex-nowrap text-bold text-lg items-center gap-2 w-full">
+                <PassIcon status={PassIconStatus.ACTIVE} size={5.5} className="shrink-0" />
+                <span className="text-ellipsis">{title}</span>
             </h3>
 
             <div className="flex shrink-0 gap-1">
