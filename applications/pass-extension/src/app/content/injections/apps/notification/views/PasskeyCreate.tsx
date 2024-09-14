@@ -35,14 +35,13 @@ import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-type PasskeyCreateStep = 'items' | 'passkey';
-type PasskeyCreateFormValues = { name: string; step: PasskeyCreateStep; selectedItem?: SelectedItem; shareId?: string };
-
+type Step = 'select' | 'passkey';
+type FormValues = { name: string; step: Step; selectedItem?: SelectedItem; shareId?: string };
 const formId = 'create-passkey';
 
 type PasskeyCreateViewProps = {
     domain: string;
-    form: FormikContextType<PasskeyCreateFormValues>;
+    form: FormikContextType<FormValues>;
     loading: boolean;
     username: string;
 };
@@ -50,7 +49,6 @@ type PasskeyCreateViewProps = {
 const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ domain, form, loading, username }) => {
     const { onTelemetry } = usePassCore();
     const { close, settings } = useIFrameContext();
-
     const [items, setItems] = useMountedState<MaybeNull<LoginItemPreview[]>>(null);
 
     useEffect(() => {
@@ -73,7 +71,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ domain, form, loading, 
 
     return items ? (
         <>
-            {form.values.step === 'items' && (
+            {form.values.step === 'select' && (
                 <>
                     <div className="shrink-0 py-1 px-2">
                         {`${c('Label').t`Passkey`} • ${domain}`}
@@ -92,7 +90,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ domain, form, loading, 
                                 url={url}
                                 onClick={() =>
                                     form
-                                        .setValues({ selectedItem: { itemId, shareId }, step: 'items', name })
+                                        .setValues({ selectedItem: { itemId, shareId }, step: 'select', name })
                                         .then(() => form.handleSubmit())
                                 }
                             />
@@ -150,7 +148,7 @@ const PasskeyCreateView: FC<PasskeyCreateViewProps> = ({ domain, form, loading, 
                     <span className="text-ellipsis">
                         {(() => {
                             if (loading) return c('Action').t`Saving passkey...`;
-                            if (form.values.step === 'items') return c('Action').t`Create new login`;
+                            if (form.values.step === 'select') return c('Action').t`Create new login`;
                             if (form.values.step === 'passkey') return c('Action').t`Save passkey`;
                         })()}
                     </span>
@@ -171,16 +169,16 @@ export const PasskeyCreate: FC<Props> = ({ domain, request, token }) => {
     const publicKey = useMemo(() => JSON.parse(request) as SanitizedPublicKeyCreate, [request]);
     const username = publicKey.user.name;
 
-    const form = useFormik<PasskeyCreateFormValues>({
-        initialValues: { name: domain, step: 'items' },
+    const form = useFormik<FormValues>({
+        initialValues: { name: domain, step: 'select' },
         validate: (values) => {
-            const errors: FormikErrors<PasskeyCreateFormValues> = { name: validateItemName(values.name) };
+            const errors: FormikErrors<FormValues> = { name: validateItemName(values.name) };
             if (!errors.name) delete errors.name;
             return errors;
         },
         onSubmit: async ({ name, step, selectedItem, shareId }, { setFieldValue }) => {
             try {
-                if (step === 'items' && !selectedItem) return await setFieldValue('step', 'passkey');
+                if (step === 'select' && !selectedItem) return await setFieldValue('step', 'passkey');
                 else setLoading(true);
 
                 const result = await sendMessage(
@@ -258,7 +256,7 @@ export const PasskeyCreate: FC<Props> = ({ domain, request, token }) => {
                                             name="shareId"
                                         />
                                     );
-                                case 'items':
+                                case 'select':
                                     return c('Info').t`Save passkey`;
                             }
                         })()}

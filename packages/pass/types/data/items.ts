@@ -109,6 +109,7 @@ export type ItemRevisionWithOptimistic<T extends ItemType = ItemType> = ItemRevi
 export type ItemMap<T> = { [type in ItemType]: T };
 
 export type UniqueItem = { shareId: string; itemId: string };
+export type SelectedShare = { shareId: string };
 export type SelectedItem = UniqueItem;
 
 export type ItemSortFilter = 'recent' | 'titleASC' | 'createTimeDESC' | 'createTimeASC';
