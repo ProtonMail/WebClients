@@ -22,30 +22,19 @@ import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { validateItemName } from '@proton/pass/lib/validation/item';
-import type { AutosavePayload, AutosaveRequest, AutosaveType, SelectedItem } from '@proton/pass/types';
+import type { AutosavePayload, AutosaveRequest } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { withMerge } from '@proton/pass/utils/object/merge';
 import noop from '@proton/utils/noop';
 
 type Props = { data: AutosavePayload };
-type PasskeyCreateStep = 'select' | 'edit';
-type AutosaveValues = AutosaveType<SelectedItem> & {
-    step: PasskeyCreateStep;
-    name: string;
-    userIdentifier: string;
-    password: string;
-    shareId: string;
-};
+type AutosaveFormValues = AutosaveRequest & { step: 'select' | 'edit' };
 
-const getInitialValues = ({ userIdentifier, password, domain, type }: AutosavePayload): AutosaveValues =>
+const getInitialValues = ({ userIdentifier, password, domain, type }: AutosavePayload): AutosaveFormValues =>
     type === AutosaveMode.UPDATE
-        ? { type: AutosaveMode.UPDATE, itemId: '', shareId: '', step: 'select', name: domain, userIdentifier, password }
-        : { type: AutosaveMode.NEW, step: 'edit', shareId: '', name: domain, userIdentifier, password };
-
-const getAutosavePayload =
-    ({ domain }: AutosavePayload) =>
-    (values: AutosaveValues): AutosaveRequest =>
-        values.type === AutosaveMode.UPDATE ? { ...values, domain } : { ...values, domain };
+        ? { domain, itemId: '', name: domain, password, shareId: '', step: 'select', type, userIdentifier }
+        : { domain, name: domain, password, shareId: '', step: 'edit', type, userIdentifier };
 
 export const Autosave: FC<Props> = ({ data }) => {
     const { settings, visible, close } = useIFrameContext();
@@ -60,32 +49,48 @@ export const Autosave: FC<Props> = ({ data }) => {
      * submission : do not discard the form data */
     const shouldDiscard = data.submittedAt !== null;
 
-    const form = useFormik<AutosaveValues>({
+    const form = useFormik<AutosaveFormValues>({
         initialValues: getInitialValues(data),
         validateOnChange: true,
         validate: (values) => {
-            const errors: FormikErrors<AutosaveValues> = { name: validateItemName(values.name) };
+            const errors: FormikErrors<AutosaveFormValues> = {};
 
-            if (values.step === 'select') return {};
-            if (values.type === AutosaveMode.UPDATE) {
-                const { itemId, shareId } = values;
-                if (!(itemId && shareId)) errors.type = 'Invalid update request';
+            if (values.step === 'select') return errors;
+
+            switch (values.type) {
+                case AutosaveMode.UPDATE: {
+                    const { itemId, shareId } = values;
+                    if (!(itemId && shareId)) errors.type = 'Invalid update request';
+                    break;
+                }
+                case AutosaveMode.NEW: {
+                    const { shareId } = values;
+                    if (!shareId) errors.type = 'Invalid create request';
+                }
             }
 
-            if (!errors.name) delete errors.name;
+            const nameError = validateItemName(values.name);
+            if (nameError) errors.name = nameError;
+
             return errors;
         },
 
         onSubmit: async (values, { setValues }) => {
             if (values.step === 'select') {
-                return setValues((values) => ({ ...values, step: 'edit', type: AutosaveMode.NEW }));
+                return setValues(
+                    withMerge<AutosaveFormValues>({
+                        step: 'edit',
+                        type: AutosaveMode.NEW,
+                    })
+                );
             }
 
             setBusy(true);
+
             return sendMessage(
                 contentScriptMessage({
                     type: WorkerMessageType.AUTOSAVE_REQUEST,
-                    payload: getAutosavePayload(data)(values),
+                    payload: values,
                 })
             )
                 .then((result) => {
