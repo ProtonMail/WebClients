@@ -7,12 +7,7 @@ import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { hasUserIdentifier } from '@proton/pass/lib/items/item.predicates';
 import { intoLoginItemPreview } from '@proton/pass/lib/items/item.utils';
 import { itemCreationIntent, itemCreationSuccess, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
-import {
-    selectAutosaveCandidate,
-    selectAutosaveVault,
-    selectItem,
-    selectWritableVaults,
-} from '@proton/pass/store/selectors';
+import { selectAutosaveCandidate, selectItem, selectWritableVaults } from '@proton/pass/store/selectors';
 import type { AutosavePrompt, FormEntry } from '@proton/pass/types';
 import { AutosaveMode, WorkerMessageType } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -71,7 +66,6 @@ export const createAutoSaveService = () => {
             const { valid, url } = isValidURL(payload.domain);
 
             if (payload.type === AutosaveMode.NEW) {
-                const selectedVault = selectAutosaveVault(state);
                 const item = itemBuilder('login');
 
                 item.get('metadata')
@@ -98,7 +92,7 @@ export const createAutoSaveService = () => {
                                 createTime: getEpoch(),
                                 extraData: { withAlias: false },
                                 optimisticId: uniqueId(),
-                                shareId: selectedVault.shareId,
+                                shareId: payload.shareId,
                             },
                             (action) => resolve(itemCreationSuccess.match(action))
                         )
