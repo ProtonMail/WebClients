@@ -2,6 +2,7 @@ import { type FC, useEffect } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
+import { AutosaveVaultPicker } from 'proton-pass-extension/app/content/injections/apps/components/AutosaveVaultPicker';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
@@ -33,12 +34,13 @@ type AutosaveValues = AutosaveType<SelectedItem> & {
     name: string;
     userIdentifier: string;
     password: string;
+    shareId: string;
 };
 
 const getInitialValues = ({ userIdentifier, password, domain, type }: AutosavePayload): AutosaveValues =>
     type === AutosaveMode.UPDATE
         ? { type: AutosaveMode.UPDATE, itemId: '', shareId: '', step: 'select', name: domain, userIdentifier, password }
-        : { type: AutosaveMode.NEW, step: 'edit', name: domain, userIdentifier, password };
+        : { type: AutosaveMode.NEW, step: 'edit', shareId: '', name: domain, userIdentifier, password };
 
 const getAutosavePayload =
     ({ domain }: AutosavePayload) =>
@@ -111,7 +113,13 @@ export const Autosave: FC<Props> = ({ data }) => {
                     title={(() => {
                         switch (form.values.type) {
                             case AutosaveMode.NEW:
-                                return c('Info').t`Save login`;
+                                return (
+                                    <Field
+                                        name="shareId"
+                                        component={AutosaveVaultPicker}
+                                        fallback={c('Info').t`Save login`}
+                                    />
+                                );
                             case AutosaveMode.UPDATE:
                                 return c('Info').t`Update login`;
                         }
