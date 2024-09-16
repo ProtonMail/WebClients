@@ -1,5 +1,5 @@
 /**
- * A handle representing a JavaScript `Window`, useful for dealing with
+ * A handle representing a JavaScript {@link Window}, useful for dealing with
  * new windows in async contexts and avoiding popup blockers.
  *
  * @see {@link getNewWindow}
@@ -26,12 +26,18 @@ export const getCurrentTab = (): WindowHandle => ({
 /**
  * Creates a {@link WindowHandle} for a new tab. Falls back to the current tab.
  *
- * Intended usage is as follows:
- * - Create the window handle `w`
- * - Perform async calls
- * - Navigate the window to the URL based on async result
- *     - `w.handle.location = new URL(...)`
- * - Close the window with `w.close()` if the async call fails
+ * @example
+ *
+ * const w = getNewWindow();
+ *
+ * try {
+ *     const result = await somethingAsynchronous();
+ *     w.handle.location = new URL(result);
+ * } catch (e) {
+ *     reportError(e);
+ *     // Close the window if the call fails (edge case)
+ *     w.close();
+ * }
  */
 export const getNewWindow = (): WindowHandle => {
     const handle = window.open('', '_blank');
@@ -39,6 +45,8 @@ export const getNewWindow = (): WindowHandle => {
     if (!handle) {
         // In case we weren't able to open a new window,
         // let's fall back to opening in the current tab.
+
+        // eslint-disable-next-line no-console
         console.warn('Failed to open new window, using current tab');
 
         return getCurrentTab();
