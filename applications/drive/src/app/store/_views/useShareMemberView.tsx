@@ -201,6 +201,7 @@ const useShareMemberView = (rootShareId: string, linkId: string) => {
 
         if (!invitee.publicKey) {
             return inviteExternalUser(abortSignal, {
+                rootShareId,
                 shareId: linkShareId,
                 linkId,
                 inviteeEmail: invitee.email,
