@@ -129,7 +129,7 @@ export const useDocuments = () => {
         };
     };
 
-    const getDocumentKeys = async ({ shareId, linkId }: LegacyNodeMeta): Promise<DocumentKeys> => {
+    const getDocumentKeys = async ({ shareId, linkId }: Omit<LegacyNodeMeta, 'volumeId'>): Promise<DocumentKeys> => {
         const contentKey = await getLinkSessionKey(abortSignal, shareId, linkId);
         const { privateKey: addressKey, address } = await getDocumentSigningKeys(shareId);
 
