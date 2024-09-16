@@ -19,8 +19,10 @@ const UserSettingsContext = createContext<{
     sort: UserSortParams;
     layout: LayoutSetting;
     revisionRetentionDays: RevisionRetentionDaysSetting;
+    b2bPhotosEnabled: boolean;
     changeSort: (sortParams: UserSortParams) => Promise<void>;
     changeLayout: (Layout: LayoutSetting) => Promise<void>;
+    changeB2BPhotosEnabled: (B2BPhotosEnabled: boolean) => Promise<void>;
 } | null>(null);
 
 export function UserSettingsProvider({
@@ -79,12 +81,23 @@ export function UserSettingsProvider({
         );
     }, []);
 
+    const changeB2BPhotosEnabled = useCallback(async (B2BPhotosEnabled: boolean) => {
+        setUserSettings((settings) => ({ ...settings, B2BPhotosEnabled }));
+        await api(
+            queryUpdateUserSettings({
+                B2BPhotosEnabled,
+            })
+        );
+    }, []);
+
     const value = {
         sort,
         layout: userSettings.Layout,
         revisionRetentionDays: userSettings.RevisionRetentionDays,
+        b2bPhotosEnabled: userSettings.B2BPhotosEnabled,
         changeSort,
         changeLayout,
+        changeB2BPhotosEnabled,
     };
 
     return <UserSettingsContext.Provider value={value}>{children}</UserSettingsContext.Provider>;
