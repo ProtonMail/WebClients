@@ -3,7 +3,7 @@ import { type RouteChildrenProps } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Tabs } from '@proton/components/components';
+import { Tabs } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { Import } from '@proton/pass/components/Settings/Import';

@@ -5,7 +5,7 @@ import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { Icon } from '@proton/components/components/icon';
+import Icon from '@proton/components/components/icon/Icon';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { PasswordField } from '@proton/pass/components/Form/Field/PasswordField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';

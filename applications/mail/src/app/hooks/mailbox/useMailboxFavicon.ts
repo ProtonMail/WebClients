@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import type { Location } from 'history';
 
-import { FeatureCode } from '@proton/components/containers';
+import { FeatureCode } from '@proton/components';
 import { useConversationCounts, useDynamicFavicon, useFeature, useMessageCounts } from '@proton/components/hooks';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';

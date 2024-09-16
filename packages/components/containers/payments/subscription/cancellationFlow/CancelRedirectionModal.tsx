@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components';
-import { Prompt, SettingsLink } from '@proton/components/components';
+import { SettingsLink } from '@proton/components/components';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { PLANS } from '@proton/shared/lib/constants';
 
 import useCancellationTelemetry, { REACTIVATE_SOURCE } from './useCancellationTelemetry';

@@ -3,9 +3,9 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Step, Stepper } from '@proton/atoms/Stepper';
-import type { OnLoginCallback } from '@proton/components/containers';
-import { HumanVerificationSteps } from '@proton/components/containers';
+import { Step, Stepper } from '@proton/atoms';
+import type { OnLoginCallback } from '@proton/components';
+import { HumanVerificationSteps } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import {

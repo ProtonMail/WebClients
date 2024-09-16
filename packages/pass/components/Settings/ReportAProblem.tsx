@@ -6,7 +6,7 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { TextAreaTwo } from '@proton/components/components';
+import { TextAreaTwo } from '@proton/components';
 import { getClientName, getReportInfo } from '@proton/components/helpers/report';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';

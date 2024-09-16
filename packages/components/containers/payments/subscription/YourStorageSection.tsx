@@ -2,17 +2,10 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
-import {
-    CalendarLogo,
-    DriveLogo,
-    Icon,
-    MailLogo,
-    Meter,
-    PassLogo,
-    SettingsLink,
-    WalletLogo,
-} from '@proton/components/components';
+import { ButtonLike } from '@proton/atoms';
+import { CalendarLogo, DriveLogo, MailLogo, PassLogo, SettingsLink, WalletLogo } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Meter from '@proton/components/components/progress/Meter';
 import { SettingsSection } from '@proton/components/containers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useSubscription, useUser } from '@proton/components/hooks';

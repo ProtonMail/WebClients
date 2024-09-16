@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { BugModal, useUser } from '@proton/components';
 import { SettingsLink, useModalState } from '@proton/components/components';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';

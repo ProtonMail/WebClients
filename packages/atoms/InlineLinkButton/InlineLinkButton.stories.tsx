@@ -1,4 +1,5 @@
-import { InlineLinkButton } from '.';
+import InlineLinkButton from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+
 import mdx from './InlineLinkButton.mdx';
 
 export default {

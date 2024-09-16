@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { useContext } from 'react';
 
-import { Scroll } from '@proton/atoms/Scroll';
+import { Scroll } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import { ModalContext } from './Modal';

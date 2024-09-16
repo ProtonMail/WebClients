@@ -1,9 +1,8 @@
 import type { DocControllerInterface } from 'packages/docs-core'
 import { c } from 'ttag'
 
-import { Button } from '@proton/atoms/Button'
-import { CircleLoader } from '@proton/atoms/CircleLoader'
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components'
+import { Button, CircleLoader } from '@proton/atoms'
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components'
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants'
 import type { DocTrashState } from 'packages/docs-shared'
 

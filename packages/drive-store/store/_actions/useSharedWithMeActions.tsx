@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { useConfirmActionModal } from '@proton/components/components';
+import type { useConfirmActionModal } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 
 import useLinksState from '../_links/useLinksState';

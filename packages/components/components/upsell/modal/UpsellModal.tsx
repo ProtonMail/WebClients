@@ -1,11 +1,11 @@
 import type { ReactNode } from 'react';
-import React from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
-import type { IconSize, ModalSize, ModalStateProps } from '@proton/components/components';
-import { Icon, Info, ModalTwo, ModalTwoContent, ModalTwoHeader, SettingsLink } from '@proton/components/components';
+import { ButtonLike } from '@proton/atoms';
+import type { ModalSize, ModalStateProps } from '@proton/components/components';
+import { Info, ModalTwo, ModalTwoContent, ModalTwoHeader, SettingsLink } from '@proton/components/components';
+import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
 import calendarHeaderImage from '@proton/styles/assets/img/illustrations/upsell-calendar-header.svg';
 import composerAssistantImage from '@proton/styles/assets/img/illustrations/upsell-composer-assistant.svg';
 import mailHeaderImage from '@proton/styles/assets/img/illustrations/upsell-mail-header.svg';

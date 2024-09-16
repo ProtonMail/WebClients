@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { NotificationDot } from '@proton/atoms/NotificationDot';
-import { type IconName } from '@proton/components/components';
+import { NotificationDot } from '@proton/atoms';
+import { type IconName } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';

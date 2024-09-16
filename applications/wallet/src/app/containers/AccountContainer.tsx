@@ -3,8 +3,8 @@ import { Redirect, useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon, useModalState } from '@proton/components/components';
+import { CircleLoader } from '@proton/atoms';
+import { Icon, useModalState } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

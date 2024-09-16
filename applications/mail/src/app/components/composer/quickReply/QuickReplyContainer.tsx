@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { useAddresses } from '@proton/components/hooks';
 
 import { MESSAGE_ACTIONS } from '../../../constants';

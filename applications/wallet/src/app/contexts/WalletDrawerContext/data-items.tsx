@@ -4,8 +4,8 @@ import isUndefined from 'lodash/isUndefined';
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
-import { Href } from '@proton/atoms/Href';
-import { Icon, Info, MiddleEllipsis, Tooltip } from '@proton/components/components';
+import { Href } from '@proton/atoms';
+import { Icon, Info, MiddleEllipsis, Tooltip } from '@proton/components';
 import { useAddresses } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

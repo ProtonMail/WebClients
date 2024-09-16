@@ -3,11 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
+import DynamicProgress from '@proton/components/components/progress/DynamicProgress';
 import { dropDataEncryptedWithAKey } from '@proton/shared/lib/contacts/globalOperations';
 import type { Key } from '@proton/shared/lib/interfaces';
 
 import type { ModalProps } from '../../../components';
-import { Alert, DynamicProgress, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useApi, useContacts, useEventManager, useGetUserKeys } from '../../../hooks';
 
 export interface ContactClearDataExecutionProps {

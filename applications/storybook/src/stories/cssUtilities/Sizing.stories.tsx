@@ -1,4 +1,4 @@
-import { Table, TableBody, TableCell, TableHeader, TableRow, Tooltip } from '@proton/components/components';
+import { Table, TableBody, TableCell, TableHeader, TableRow, Tooltip } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Sizing.mdx';

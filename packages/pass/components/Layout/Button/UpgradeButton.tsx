@@ -3,8 +3,8 @@ import type { CSSProperties, FC } from 'react';
 import { c } from 'ttag';
 
 import { Button, type ButtonLikeSize, InlineLinkButton } from '@proton/atoms';
-import type { IconSize } from '@proton/components/components';
-import { Icon } from '@proton/components/components';
+import type { IconSize } from '@proton/components';
+import { Icon } from '@proton/components';
 import { type UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { wait } from '@proton/shared/lib/helpers/promise';

@@ -1,12 +1,13 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { ModalProps } from '../../../components';
-import { AppLink, Prompt } from '../../../components';
+import { AppLink } from '../../../components';
 
 const getText = (isDowngrade: boolean) => {
     if (isDowngrade) {

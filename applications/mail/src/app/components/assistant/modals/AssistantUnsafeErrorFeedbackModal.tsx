@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import type { ModalStateProps } from '@proton/components/components';
-import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import { useApi, useNotifications, useUserSettings } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
@@ -44,7 +44,7 @@ const AssistantUnsafeErrorFeedbackModal = ({ result, prompt, ...rest }: Props) =
             Category: 'false-positive-unsafe',
             Sentiment: 'Negative',
             Environment: isServer ? 'Remote' : 'Local',
-            ModelID: isServer ? undefined : assistantConfig?.model_list[0]?.model_id ?? '',
+            ModelID: isServer ? undefined : (assistantConfig?.model_list[0]?.model_id ?? ''),
             Body: body,
             Component: 'Mail',
             Prompt: prompt,

@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import type { IconName, IconSize } from '@proton/components/components';
-import { Icon } from '@proton/components/components';
+import type { IconName, IconSize } from '@proton/components';
+import { Icon } from '@proton/components';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import clsx from '@proton/utils/clsx';
 

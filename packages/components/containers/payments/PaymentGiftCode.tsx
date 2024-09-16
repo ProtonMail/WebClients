@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 
-import { Icon, Info, UnderlineButton } from '../../components';
+import { Info, UnderlineButton } from '../../components';
 import { useToggle } from '../../hooks';
 
 interface Props {

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import type { ModalProps } from '@proton/components/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import storageUnlocked from '@proton/styles/assets/img/illustrations/checklist-storage-reward.svg';
 

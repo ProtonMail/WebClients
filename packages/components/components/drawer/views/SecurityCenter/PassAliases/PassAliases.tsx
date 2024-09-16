@@ -1,9 +1,10 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms/Button';
-import { Icon, Loader, useModalStateObject } from '@proton/components/components';
+import { Button, ButtonLike } from '@proton/atoms';
+import { Loader, useModalStateObject } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { ErrorBoundary } from '@proton/components/containers';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import { useApi, useAuthentication } from '@proton/components/hooks';

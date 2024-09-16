@@ -12,9 +12,6 @@ import { ThemeColor } from '@proton/colors';
 import {
     AppLink,
     ConfirmSignOutModal,
-    Dropdown,
-    DropdownMenu,
-    DropdownSizeUnit,
     FeatureCode,
     Icon,
     Logo,
@@ -41,6 +38,9 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppHref, getAppShortName } from '@proton/shared/lib/apps/helper';

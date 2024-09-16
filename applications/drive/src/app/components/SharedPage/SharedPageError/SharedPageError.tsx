@@ -1,8 +1,6 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import { DRIVE_LANDING_PAGE } from '@proton/shared/lib/drive/urls';
 import notFoundSvg from '@proton/styles/assets/img/illustrations/shared-page-not-found.svg';
 

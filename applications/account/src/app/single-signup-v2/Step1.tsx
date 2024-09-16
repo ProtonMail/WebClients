@@ -4,14 +4,11 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button, Vr, InlineLinkButton } from '@proton/atoms';
 import Href from '@proton/atoms/Href/Href';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
-import { Vr } from '@proton/atoms/Vr';
-import type { IconName } from '@proton/components/components';
-import { Icon, useModalState } from '@proton/components/components';
+import type { IconName } from '@proton/components';
+import { CurrencySelector, CycleSelector, Icon, getCheckoutRenewNoticeText, useModalState } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { CurrencySelector, CycleSelector, getCheckoutRenewNoticeText } from '@proton/components/containers';
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { getBlackFridayRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';

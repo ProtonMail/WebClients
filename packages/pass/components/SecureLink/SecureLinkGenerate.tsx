@@ -2,8 +2,8 @@ import { type FC, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { ModalTwoContent, ModalTwoFooter } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { ModalTwoContent, ModalTwoFooter } from '@proton/components';
 import { ExpirationTimeSelect, ExpireTime } from '@proton/pass/components/Form/Field/Custom/ExpirationTimeSelect';
 import { MaxReadsToggleInput } from '@proton/pass/components/Form/Field/Custom/MaxReadsToggleInput';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';

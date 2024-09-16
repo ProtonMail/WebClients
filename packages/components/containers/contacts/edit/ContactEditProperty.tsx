@@ -3,11 +3,13 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import Icon from '@proton/components/components/icon/Icon';
 import type { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import clsx from '@proton/utils/clsx';
 
-import { DropdownActions, Icon, OrderableHandle } from '../../../components';
+import { OrderableHandle } from '../../../components';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import type { ContactGroupLimitReachedProps } from '../modals/ContactGroupLimitReachedModal';

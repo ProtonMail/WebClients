@@ -3,8 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { CollapsingBreadcrumbs, Icon, Loader, useNotifications } from '@proton/components';
-import type { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
+import { type BreadcrumbInfo, CollapsingBreadcrumbs, Icon, Loader, useNotifications } from '@proton/components';
 import noop from '@proton/utils/noop';
 
 import type { DriveFolder } from '../../hooks/drive/useActiveShare';

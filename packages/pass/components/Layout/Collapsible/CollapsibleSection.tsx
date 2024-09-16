@@ -6,7 +6,7 @@ import {
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
-} from '@proton/components/components';
+} from '@proton/components';
 
 type CollapsibleSectionProps = PropsWithChildren & {
     label: string;

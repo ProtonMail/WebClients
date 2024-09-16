@@ -3,7 +3,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useModalState, useModalStateWithData } from '@proton/components/components';
+import { useModalState, useModalStateWithData } from '@proton/components';
 import { useOrganization } from '@proton/components/hooks';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms/Button';
+import { Button, ButtonLike } from '@proton/atoms';
 import { FeatureCode, useFeature } from '@proton/features';
 import illustration from '@proton/styles/assets/img/illustrations/light-labelling-feature-modal.svg';
 

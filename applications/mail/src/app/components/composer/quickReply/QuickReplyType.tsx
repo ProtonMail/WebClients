@@ -1,11 +1,11 @@
 import type { MutableRefObject } from 'react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import type { EditorActions } from '@proton/components/components';
-import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components/components';
+import type { EditorActions } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
 import { useAddresses } from '@proton/components/hooks';
 
 import { MESSAGE_ACTIONS } from '../../../constants';

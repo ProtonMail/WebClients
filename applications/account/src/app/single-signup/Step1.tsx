@@ -4,21 +4,21 @@ import { Link } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Href } from '@proton/atoms/Href';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
-import { Vr } from '@proton/atoms/Vr';
-import type { IconSize } from '@proton/components/components';
-import { Icon, Price, Toggle, VpnLogo, useModalState } from '@proton/components/components';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { Button, CircleLoader, Href, InlineLinkButton, Vr } from '@proton/atoms';
+import type { IconSize } from '@proton/components';
 import {
     CurrencySelector,
+    Icon,
     PayPalButton,
+    Price,
     StyledPayPalButton,
+    Toggle,
+    VpnLogo,
     getBlackFridayRenewalNoticeText,
     getCheckoutRenewNoticeText,
-} from '@proton/components/containers';
+    useModalState,
+} from '@proton/components';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
 import {
     isBlackFridayPeriod as getIsBlackFridayPeriod,
     isCyberWeekPeriod as getIsCyberWeekPeriod,

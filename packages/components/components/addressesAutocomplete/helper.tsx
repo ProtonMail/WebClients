@@ -25,7 +25,7 @@ export type AddressesAutocompleteItem =
           key: string;
       };
 
-export type GroupWithContacts = { group: ContactGroup; contacts: ContactEmail[] };
+type GroupWithContacts = { group: ContactGroup; contacts: ContactEmail[] };
 export type GroupsWithContactsMap = SimpleMap<GroupWithContacts>;
 
 const compare = (item1: AddressesAutocompleteItem, item2: AddressesAutocompleteItem) => {

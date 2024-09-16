@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Donut } from '@proton/atoms';
-import Slider from '@proton/atoms/Slider/Slider';
+import { Slider } from '@proton/atoms';
 import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
 import { PLANS } from '@proton/shared/lib/constants';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';

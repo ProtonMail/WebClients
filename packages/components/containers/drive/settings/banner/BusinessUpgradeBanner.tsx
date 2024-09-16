@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import { UpgradeBanner } from './UpgradeBanner';

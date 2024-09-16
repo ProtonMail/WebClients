@@ -5,9 +5,8 @@ import type { ThemeColorUnion } from '@proton/colors';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
-import { CircleLoader } from '../CircleLoader';
-
 import './ButtonLike.scss';
+import CircleLoader from '../CircleLoader/CircleLoader';
 
 export type ButtonLikeShape = 'solid' | 'outline' | 'ghost' | 'underline';
 

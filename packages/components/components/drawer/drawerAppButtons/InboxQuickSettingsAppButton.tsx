@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { ThemeColor } from '@proton/colors/types';
-import { Icon } from '@proton/components/components';
 import type { Props } from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
 import DrawerAppButton from '@proton/components/components/drawer/drawerAppButtons/DrawerAppButton';
+import Icon from '@proton/components/components/icon/Icon';
 import { useDrawer } from '@proton/components/hooks';
 import useQuickSettingsReminders from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';

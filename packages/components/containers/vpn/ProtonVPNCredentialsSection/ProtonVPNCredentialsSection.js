@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { BRAND_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Alert, Field, Label, Row } from '../../../components';
+import { Field, Label, Row } from '../../../components';
 import { useUser } from '../../../hooks';
 
 const ProtonVPNCredentialsSection = () => {

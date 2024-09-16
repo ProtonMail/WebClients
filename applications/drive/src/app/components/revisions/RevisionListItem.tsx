@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Icon, TimeIntl } from '@proton/components';
 
 import type { DriveFileRevision } from '../../store';

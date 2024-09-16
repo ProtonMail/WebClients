@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
-import { GenericError } from '@proton/components';
-import { Icon, Loader, Toggle, useModalStateObject, useUpsellConfig } from '@proton/components/components';
+import { Href } from '@proton/atoms';
+import { GenericError, Loader, Toggle, useModalStateObject } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import BreachModal from '@proton/components/containers/credentialLeak/BreachModal';
 import {
     BREACH_API_ERROR,
@@ -39,11 +40,11 @@ import { DrawerAppSection } from '../../shared';
 import BreachCard from './BreachCard';
 import FreeUserBreachToggle from './FreeUserBreachToggle';
 import {
+    decreaseUnreadBreachCount,
     selectShouldBreachAlertsRefresh,
     selectUnreadBreachesCount,
     setUnreadBreachesCount,
 } from './slice/breachNotificationsSlice';
-import { decreaseUnreadBreachCount } from './slice/breachNotificationsSlice';
 
 const BreachAlertsSecurityCenter = () => {
     const handleError = useErrorHandler();

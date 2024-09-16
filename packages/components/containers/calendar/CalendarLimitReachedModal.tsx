@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -8,7 +9,6 @@ import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/
 import type { Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 import { SettingsLink } from '../../components/link';
-import { Prompt } from '../../components/prompt';
 
 interface Props {
     onClose?: () => void;

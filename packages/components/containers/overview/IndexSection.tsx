@@ -1,6 +1,6 @@
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
-import { Icon } from '../../components';
 import type { SectionConfig } from '../layout';
 import Sections from './Sections';
 

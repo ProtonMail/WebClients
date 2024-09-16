@@ -1,6 +1,6 @@
 import type { CSSProperties, FC, PropsWithChildren } from 'react';
 
-import { Card as CoreCard } from '@proton/atoms/Card';
+import { Card as CoreCard } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 import { type CardType, getCardTheme } from './utils';

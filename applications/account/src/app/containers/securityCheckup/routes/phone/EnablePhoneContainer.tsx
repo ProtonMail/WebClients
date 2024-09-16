@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms/Button';
+import { Button, ButtonLike } from '@proton/atoms';
 import { useApi, useEventManager, useSecurityCheckup } from '@proton/components';
 import { getFormattedValue } from '@proton/components/components/v2/phone/helper';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';

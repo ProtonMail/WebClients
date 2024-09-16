@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Loader, type ModalStateProps, Price, UpsellModal, useUpsellConfig } from '@proton/components/components';
+import { Loader, type ModalStateProps, Price } from '@proton/components/components';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
+import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { usePreferredPlansMap, useUser } from '@proton/components/hooks';
 import {
     APP_UPSELL_REF_PATH,

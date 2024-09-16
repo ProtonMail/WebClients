@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ProtonLogo } from '@proton/components/components';
+import { ProtonLogo } from '@proton/components';
 
 import PublicFooter from '../../../app/components/PublicFooter';
 import promotionApplied from './promotionApplied.svg';

@@ -3,11 +3,9 @@ import { useImperativeHandle, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Info, Price } from '@proton/components/components';
+import { Button, CircleLoader } from '@proton/atoms';
+import { Info, PayPalButton, Price, StyledPayPalButton } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { PayPalButton, StyledPayPalButton } from '@proton/components/containers';
 import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import type { OnBillingAddressChange } from '@proton/components/containers/payments/TaxCountrySelector';

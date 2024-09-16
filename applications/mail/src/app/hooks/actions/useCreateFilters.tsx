@@ -2,8 +2,7 @@ import { useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { NotificationButton, useAddresses, useApi, useFilters, useNotifications } from '@proton/components';
-import { useAppLink } from '@proton/components/components';
+import { NotificationButton, useAddresses, useApi, useAppLink, useFilters, useNotifications } from '@proton/components';
 import type { Filter } from '@proton/components/containers/filters/interfaces';
 import { createDefaultLabelsFilter } from '@proton/components/containers/filters/utils';
 import { useGetFolders, useGetLabels } from '@proton/components/hooks/useCategories';

@@ -3,7 +3,7 @@ import {
     ContactDrawerAppButton,
     SecurityCenterDrawerAppButton,
     WalletDrawerAppButton,
-} from '@proton/components/components';
+} from '@proton/components';
 import { useDrawer } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';

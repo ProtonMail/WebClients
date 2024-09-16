@@ -2,7 +2,8 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon } from '../icon';
+import Icon from '@proton/components/components/icon/Icon';
+
 import type { TopNavbarListItemButtonProps } from './TopNavbarListItemButton';
 import TopNavbarListItemButton from './TopNavbarListItemButton';
 

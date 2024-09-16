@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import ButtonLike from '@proton/atoms/Button/ButtonLike';
-import { Icon } from '@proton/components/components/icon';
+import { Button, ButtonLike } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';

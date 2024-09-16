@@ -2,7 +2,7 @@ import { type VFC } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 
 import { useBulkSelect } from './BulkSelectProvider';
 

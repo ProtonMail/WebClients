@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { SettingsLink } from '@proton/components/components';
+import { SettingsLink } from '@proton/components';
 import importStartedSvg from '@proton/styles/assets/img/onboarding/import-assistant.svg';
 
 interface Props {

@@ -4,8 +4,8 @@ import noop from 'lodash/noop';
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
-import type { IconName } from '@proton/components/components';
-import { Icon, Tooltip } from '@proton/components/components';
+import type { IconName } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import { useUserWalletSettings } from '@proton/wallet';
 

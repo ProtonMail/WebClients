@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import type { WasmApiEmailAddress } from '@proton/andromeda';
-import { Href } from '@proton/atoms/Href';
-import type { ModalOwnProps} from '@proton/components/components';
-import { Radio } from '@proton/components/components';
+import { Href } from '@proton/atoms';
+import type { ModalOwnProps } from '@proton/components';
+import { Radio } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

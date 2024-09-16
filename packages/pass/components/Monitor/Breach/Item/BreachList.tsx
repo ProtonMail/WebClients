@@ -2,9 +2,9 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms/Card';
+import { Card } from '@proton/atoms';
+import type { FetchedBreaches } from '@proton/components';
 import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '@proton/components/components/table';
-import type { FetchedBreaches } from '@proton/components/containers';
 import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
 
 import { BreachListRow } from './BreachListRow';

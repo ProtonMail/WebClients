@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms/Scroll';
+import { Scroll } from '@proton/atoms';
 
 import { Tabs } from '../..';
 import { useAddresses } from '../..';

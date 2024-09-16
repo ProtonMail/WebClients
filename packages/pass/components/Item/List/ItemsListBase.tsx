@@ -1,7 +1,7 @@
 import { type FC, type ReactElement, useEffect, useMemo, useRef } from 'react';
 import type { List } from 'react-virtualized';
 
-import { Scroll } from '@proton/atoms/Scroll';
+import { Scroll } from '@proton/atoms';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';

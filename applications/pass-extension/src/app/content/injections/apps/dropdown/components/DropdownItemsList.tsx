@@ -3,7 +3,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { LIST_ITEM_HEIGHT } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
 
 import { Scroll } from '@proton/atoms';
-import { DropdownMenu } from '@proton/components/components';
+import { DropdownMenu } from '@proton/components';
 
 const DROPDOWN_MAX_VISIBLE_ITEMS = 3;
 const DROPDOWN_LIST_MAX_HEIGHT = DROPDOWN_MAX_VISIBLE_ITEMS * LIST_ITEM_HEIGHT;

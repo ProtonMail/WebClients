@@ -3,7 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import type { FetchedBreaches } from '@proton/components/containers';
+import type { FetchedBreaches } from '@proton/components';
 import { useAddressBreaches } from '@proton/pass/hooks/monitor/useAddressBreaches';
 import type { MonitorAddress } from '@proton/pass/lib/monitor/types';
 import type { Maybe } from '@proton/pass/types';

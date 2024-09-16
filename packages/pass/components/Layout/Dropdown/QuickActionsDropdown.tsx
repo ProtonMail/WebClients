@@ -2,9 +2,8 @@ import type { CSSProperties, FC, PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button';
-import { Button } from '@proton/atoms/Button';
-import { NotificationDot } from '@proton/atoms/NotificationDot';
+import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms';
+import { Button, NotificationDot } from '@proton/atoms';
 import {
     Dropdown,
     DropdownMenu,

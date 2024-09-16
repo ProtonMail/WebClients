@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { DropdownSizeUnit, Option, SelectTwo } from '@proton/components/components';
+import { Option, SelectTwo } from '@proton/components/components';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { useLoading } from '@proton/hooks';
 import { updateWeekStart } from '@proton/shared/lib/api/settings';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';

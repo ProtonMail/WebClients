@@ -1,9 +1,6 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
-import { DownloadClientCard, Tooltip } from '@proton/components/components';
-import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
+import { DownloadClientCard, SettingsParagraph, SettingsSectionWide, Tooltip } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { WALLET_CLIENTS } from '@proton/wallet';
 

@@ -3,7 +3,7 @@ import { type FC, type ReactNode } from 'react';
 import { Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Collapsible, CollapsibleContent, CollapsibleHeader, Icon, useNotifications } from '@proton/components';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';

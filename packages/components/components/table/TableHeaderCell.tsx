@@ -1,8 +1,8 @@
 import type { ReactNode, ThHTMLAttributes } from 'react';
 
+import Icon from '@proton/components/components/icon/Icon';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { Icon } from '../icon';
 import { Loader } from '../loader';
 
 import './TableHeaderCell.scss';

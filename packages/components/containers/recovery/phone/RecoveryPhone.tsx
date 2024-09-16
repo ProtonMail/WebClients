@@ -4,13 +4,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import useLoading from '@proton/hooks/useLoading';
 import { updatePhone } from '@proton/shared/lib/api/settings';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Icon, InputFieldTwo, PhoneInput, useFormErrors, useModalState } from '../../../components';
+import { InputFieldTwo, PhoneInput, useFormErrors, useModalState } from '../../../components';
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import ConfirmRemovePhoneModal from './ConfirmRemovePhoneModal';

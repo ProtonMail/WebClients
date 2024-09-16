@@ -2,8 +2,9 @@ import type { MutableRefObject } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon, Tooltip } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { useApi, useDrawer } from '@proton/components/hooks';
 import { updateHideDrawer } from '@proton/shared/lib/api/settings';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';

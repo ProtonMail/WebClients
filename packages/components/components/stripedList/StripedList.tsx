@@ -3,7 +3,7 @@ import { Children, isValidElement } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-interface StripedListProps {
+export interface StripedListProps {
     children: ReactNode;
     alternate?: 'odd' | 'even';
     className?: string;

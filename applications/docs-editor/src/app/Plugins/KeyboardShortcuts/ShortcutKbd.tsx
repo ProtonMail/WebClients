@@ -1,4 +1,4 @@
-import { Kbd } from '@proton/atoms/Kbd'
+import { Kbd } from '@proton/atoms'
 import { isMac } from '@proton/shared/lib/helpers/browser'
 import { type ComponentProps } from 'react'
 

@@ -4,9 +4,9 @@ import { useState } from 'react';
 import tinycolor from 'tinycolor2';
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import genAccentShades from '@proton/colors/gen-accent-shades';
-import { Icon } from '@proton/components/components/icon';
+import Icon from '@proton/components/components/icon/Icon';
 import { Tooltip } from '@proton/components/components/tooltip';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';

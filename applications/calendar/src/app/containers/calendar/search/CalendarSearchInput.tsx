@@ -4,8 +4,8 @@ import { forwardRef, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
-import { Icon } from '@proton/components/components/icon';
-import { ToolbarButton } from '@proton/components/components/toolbar';
+import { ToolbarButton } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 
 import { useCalendarSearch } from './CalendarSearchProvider';

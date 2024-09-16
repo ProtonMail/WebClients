@@ -2,16 +2,16 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import {
     SUBSCRIPTION_STEPS,
     useActiveBreakpoint,
     useConfig,
     useSettingsLink,
     useSubscription,
-    useUpsellConfig,
     useUser,
 } from '@proton/components';
+import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';
 import { freeTrialUpgradeClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useRedirectToAccountApp } from '@proton/components/containers/desktop/useRedirectToAccountApp';

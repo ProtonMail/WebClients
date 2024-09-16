@@ -5,7 +5,8 @@ import data from '@emoji-mart/data';
 import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
-import { DropdownSizeUnit, Icon } from '@proton/components/components';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Icon from '@proton/components/components/icon/Icon';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { locales } from '@proton/shared/lib/i18n/locales';

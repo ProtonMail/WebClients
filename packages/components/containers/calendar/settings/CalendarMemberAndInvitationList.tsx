@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { Alert } from '@proton/components/components';
+import Alert from '@proton/components/components/alert/Alert';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { updateInvitation, updateMemberPermission } from '@proton/shared/lib/api/calendars';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';

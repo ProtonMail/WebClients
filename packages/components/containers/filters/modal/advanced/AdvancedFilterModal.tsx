@@ -4,13 +4,13 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { useLoading } from '@proton/hooks';
 import { addTreeFilter, checkSieveFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import type { ModalProps } from '../../../../components';
 import {
-    Form,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

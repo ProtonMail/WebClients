@@ -3,7 +3,7 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import { Icon, useHotkeys } from '@proton/components';
 
 interface Props {

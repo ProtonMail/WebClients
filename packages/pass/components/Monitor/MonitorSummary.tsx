@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms/Scroll';
+import { Scroll } from '@proton/atoms';
 import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { ButtonCard } from '@proton/pass/components/Layout/Card/ButtonCard';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';

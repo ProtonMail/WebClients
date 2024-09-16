@@ -3,13 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { ExportModal } from '@proton/components/containers/calendar/exportModal';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, PrimaryButton, useModalState } from '../../../components';
+import { PrimaryButton, useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSection } from '../../account';
 
 interface Props {

@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import Icon from '@proton/components/components/icon/Icon';
 import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
-import { Icon } from '../../components';
 import { useNotifications } from '../../hooks';
 import { SettingsSectionTitle } from '../account';
 

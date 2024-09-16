@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { ModalOwnProps } from '@proton/components/components';
-import { Prompt } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components';
+import { Prompt } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces';

@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { ensureTokenChargeable, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
@@ -11,7 +12,6 @@ import { createTokenV4, setPaymentMethodV4 } from '@proton/shared/lib/api/paymen
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { ModalProps } from '../../components';
-import { Prompt } from '../../components';
 import { useApi, useEventManager, useNotifications, useUser } from '../../hooks';
 import type { PaymentTokenResult } from '../../payments/core/interface';
 

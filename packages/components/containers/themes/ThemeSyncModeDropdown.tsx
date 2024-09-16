@@ -1,11 +1,15 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
-import { DropdownMenu, DropdownMenuButton, DropdownSizeUnit, Icon, SimpleDropdown, ThemeCard } from '../..';
+import { Icon, ThemeCard } from '../..';
 import type { Theme } from './ThemeCards';
 
 interface Props {

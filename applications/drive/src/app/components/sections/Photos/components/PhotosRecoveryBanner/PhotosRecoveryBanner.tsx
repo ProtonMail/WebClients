@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { TopBanner } from '@proton/components/containers';
+import { Button, CircleLoader } from '@proton/atoms';
+import { TopBanner } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { usePhotosRecovery } from '../../../../../store';

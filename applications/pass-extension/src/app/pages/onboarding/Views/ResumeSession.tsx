@@ -2,7 +2,7 @@ import { type FC, useEffect } from 'react';
 
 import { SSO_URL } from 'proton-pass-extension/app/config';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import { WorkerMessageType } from '@proton/pass/types';
