@@ -4,9 +4,9 @@ import type { DecryptedNode } from './interface';
 /**
  * Converts a Drive store object to a DecryptedNode.
  */
-export const decryptedLinkToNode = (link: DecryptedLink, volumeId: string): DecryptedNode => {
+export const decryptedLinkToNode = (link: DecryptedLink, volumeId?: string): DecryptedNode => {
     return {
-        volumeId,
+        volumeId: volumeId || link.volumeId,
         nodeId: link.linkId,
         parentNodeId: link.parentLinkId,
 
