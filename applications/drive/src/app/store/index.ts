@@ -19,7 +19,7 @@ export * from './_revisions/interface';
 export * from './_actions/interface';
 export * from './_views';
 export { useSearchLibrary } from './_search';
-export { usePhotos, usePhotosFeatureFlag, usePhotosRecovery, isDecryptedLink } from './_photos';
+export { usePhotos, usePhotosRecovery, isDecryptedLink } from './_photos';
 export * from './_photos/interface';
 export { useDriveShareURLBookmarkingFeatureFlag, useBookmarksActions } from './_bookmarks';
 export * from './_bookmarks/interface';

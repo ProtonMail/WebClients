@@ -25,7 +25,6 @@ import {
     useDefaultShare,
     useDriveEventManager,
     useDriveShareURLBookmarkingFeatureFlag,
-    usePhotosFeatureFlag,
     useSearchControl,
 } from '../store';
 // TODO: This should be removed after rollout phase
@@ -55,7 +54,7 @@ const DEFAULT_VOLUME_INITIAL_STATE: {
 };
 
 const InitContainer = () => {
-    const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
+    const { getDefaultShare } = useDefaultShare();
     const { migrateShares } = useShareActions();
     const [loading, withLoading] = useLoading(true);
     const [error, setError] = useState<Error>();
@@ -63,8 +62,6 @@ const InitContainer = () => {
         useState<typeof DEFAULT_VOLUME_INITIAL_STATE>(DEFAULT_VOLUME_INITIAL_STATE);
     const { searchEnabled } = useSearchControl();
     const driveEventManager = useDriveEventManager();
-    const [hasPhotosShare, setHasPhotosShare] = useState(false);
-    const isPhotosEnabled = usePhotosFeatureFlag();
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { convertExternalInvitationsFromEvents } = useShareBackgroundActions();
     const isDriveShareUrlBookmarkingEnabled = useDriveShareURLBookmarkingFeatureFlag();
@@ -94,8 +91,6 @@ const InitContainer = () => {
                     setDefaultShareRoot({ volumeId, shareId, linkId })
                 );
 
-                // We fetch it after, so we don't make to user share requests
-                await getDefaultPhotosShare().then((photosShare) => setHasPhotosShare(!!photosShare));
                 void migrateShares();
             } catch (err) {
                 setError(err as unknown as Error);
@@ -155,7 +150,7 @@ const InitContainer = () => {
                     <Route path="/no-access" component={NoAccessContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
                     {!isDirectSharingDisabled && <Route path="/shared-with-me" component={SharedWithMeContainer} />}
-                    {(isPhotosEnabled || hasPhotosShare) && <Route path="/photos" component={PhotosContainer} />}
+                    <Route path="/photos" component={PhotosContainer} />
                     {searchEnabled && <Route path="/search" component={SearchContainer} />}
                     <Route path="/:volumeId/:linkId" exact component={VolumeLinkContainer} />
                     <Route path="/:shareId?/:type/:linkId?" component={FolderContainer} />
