@@ -6,6 +6,14 @@ export type NodeMeta = {
     linkId: string;
 };
 
+/**
+ * A unique node identifier pair, for a public shared node.
+ */
+export type PublicNodeMeta = {
+    token: string;
+    linkId: string;
+};
+
 export type LegacyNodeMeta = {
     shareId: string;
     volumeId: string;
