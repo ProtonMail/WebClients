@@ -1,10 +1,6 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import {
-    EmbeddedToggle,
-    RemoteToggle,
     RemoveImageMetadataToggle,
     RequestLinkConfirmationToggle,
     SenderImagesToggle,
@@ -37,12 +33,8 @@ const PrivacySecuritySettings = ({
     const [loadingRemoveImageMetadata, withLoadingRemoveImageMetadata] = useLoading();
     const { createNotification } = useNotifications();
     const [mailSettings = DEFAULT_MAILSETTINGS, loadingMailSettings] = useMailSettings();
-    const { HideRemoteImages, HideEmbeddedImages, ImageProxy, ConfirmLink, RemoveImageMetadata } = mailSettings;
+    const { ImageProxy, ConfirmLink, RemoveImageMetadata } = mailSettings;
     const loading = loadingMailSettings;
-    const [hideRemoteImages, setHideRemoteImages] = useState(HideRemoteImages);
-    const [hideEmbeddedImages, setHideEmbeddedImages] = useState(HideEmbeddedImages);
-    const handleChangeHideEmbedded = (newValue: number) => setHideEmbeddedImages(newValue);
-    const handleChangeShowImage = (newValue: number) => setHideRemoteImages(newValue);
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
 
     const handleRemoveImageMetadata = async (value: REMOVE_IMAGE_METADATA) => {
@@ -58,30 +50,6 @@ const PrivacySecuritySettings = ({
     return layout(
         <div className="mobile-settings">
             <MobileSection title={c('Title').t`Privacy and security`}>
-                <MobileSectionRow>
-                    <MobileSectionLabel
-                        htmlFor="embeddedToggle"
-                        description={c('Info')
-                            .t`When disabled, this prevents image files from loading on your device without your knowledge.`}
-                    >{c('Label').t`Auto-load embedded images`}</MobileSectionLabel>
-                    <EmbeddedToggle
-                        id="embeddedToggle"
-                        hideEmbeddedImages={hideEmbeddedImages}
-                        onChange={handleChangeHideEmbedded}
-                    />
-                </MobileSectionRow>
-                <MobileSectionRow>
-                    <MobileSectionLabel
-                        htmlFor="remoteToggle"
-                        description={c('Info')
-                            .t`Loaded content is being protected by our proxy when tracker protection is activated.`}
-                    >{c('Label').t`Auto-load remote content`}</MobileSectionLabel>
-                    <RemoteToggle
-                        id="remoteToggle"
-                        hideRemoteImages={hideRemoteImages}
-                        onChange={handleChangeShowImage}
-                    />
-                </MobileSectionRow>
                 <MobileSectionRow>
                     <MobileSectionLabel
                         description={c('Info').t`Blocks senders from seeing if and when you opened a message.`}
