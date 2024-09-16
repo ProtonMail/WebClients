@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { SidebarList } from '@proton/components';
 
 import type { ShareWithKey } from '../../../../store';
-import { useDriveSharingFlags, usePhotos, usePhotosFeatureFlag } from '../../../../store';
+import { useDriveSharingFlags, usePhotos } from '../../../../store';
 //TODO: This should be removed after full sharing rollout
 import { useSharedWithMeWithoutFF } from '../../../../store/_shares/useSharedWithMeWithoutFF';
 import DriveSidebarDevices from './DriveSidebarDevices';
@@ -18,8 +18,7 @@ interface Props {
 }
 
 const DriveSidebarList = ({ shareId, userShares }: Props) => {
-    const isPhotosEnabled = usePhotosFeatureFlag();
-    const { hasPhotosShare } = usePhotos();
+    const { showPhotosSection } = usePhotos();
 
     const [sidebarWidth, setSidebarWidth] = useState('100%');
     const setSidebarLevel = (level: number) => {
@@ -42,7 +41,7 @@ const DriveSidebarList = ({ shareId, userShares }: Props) => {
                 />
             ))}
             <DriveSidebarDevices setSidebarLevel={setSidebarLevel} />
-            {(isPhotosEnabled || hasPhotosShare) && (
+            {showPhotosSection && (
                 <DriveSidebarListItem to="/photos" icon="image" isActive={(match) => match?.url === '/photos'}>
                     <span className="text-ellipsis" title={c('Link').t`Photos`}>
                         {c('Link').t`Photos`}
