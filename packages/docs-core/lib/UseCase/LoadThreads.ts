@@ -84,6 +84,7 @@ export class LoadThreads implements UseCaseInterface<void> {
       successfulComments.map((result) => result.getValue()),
       false,
       commentThreadDto.State,
+      commentThreadDto.Type,
     )
 
     dto.commentsState.addThread(localThread)

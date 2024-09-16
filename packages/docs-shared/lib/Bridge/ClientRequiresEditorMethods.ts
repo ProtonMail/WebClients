@@ -34,4 +34,5 @@ export interface ClientRequiresEditorMethods {
   printAsPDF(): Promise<void>
   loadUserSettings(settings: UserSettings): Promise<void>
   toggleDebugTreeView(): Promise<void>
+  handleIsSuggestionsFeatureEnabled(enabled: boolean): Promise<void>
 }

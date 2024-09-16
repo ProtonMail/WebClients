@@ -3,7 +3,7 @@ import clsx from '@proton/utils/clsx'
 import { CommentsPanelListComment } from './CommentsPanelListComment'
 import { CommentsComposer } from './CommentsComposer'
 import type { CommentThreadInterface, LiveCommentsTypeStatusChangeData } from '@proton/docs-shared'
-import { CommentThreadState, LiveCommentsEvent } from '@proton/docs-shared'
+import { CommentThreadState, CommentThreadType, LiveCommentsEvent } from '@proton/docs-shared'
 import { Icon, ToolbarButton } from '@proton/components'
 import { useApplication } from '../../ApplicationProvider'
 import { c, msgid } from 'ttag'
@@ -15,7 +15,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
   const [editor] = useLexicalComposerContext()
   const { controller, getMarkNodes, activeIDs } = useCommentsContext()
 
-  const application = useApplication()
+  const { application } = useApplication()
   const [isDeleting, setIsDeleting] = useState(false)
 
   const [typers, setTypers] = useState<string[]>([])
@@ -24,6 +24,8 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
   const markNodes = useMemo(() => {
     return getMarkNodes(markID) ?? []
   }, [getMarkNodes, markID])
+
+  const isSuggestionThread = thread.type === CommentThreadType.Suggestion
 
   const [element, setElement] = useState<HTMLLIElement | null>(null)
   const [isFocusWithin, setIsFocusWithin] = useState(false)
@@ -68,6 +70,9 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
   }, [controller, application, thread.id])
 
   const quote = useMemo(() => {
+    if (isSuggestionThread) {
+      return null
+    }
     return editor.getEditorState().read(() => {
       const markNode = markNodes[0]
       if (!markNode) {
@@ -75,7 +80,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
       }
       return markNode.getTextContent()
     })
-  }, [editor, markNodes])
+  }, [editor, isSuggestionThread, markNodes])
 
   const handleClickThread = () => {
     controller.markThreadAsRead(thread.id).catch(sendErrorMessage)
@@ -111,7 +116,11 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
   // translator: list of names (eg: "Tom, John and Henry")
   const usersTranslation = typers.length === 1 ? firstTyper : c('Info').t`${allTypersExceptLast} and ${lastTyper}`
 
-  const canShowReplyBox = application.getRole().canComment() && !thread.isPlaceholder && !isDeleting && !isResolved
+  const isSuggestionClosed =
+    thread.state === CommentThreadState.Accepted || thread.state === CommentThreadState.Rejected
+
+  const canShowReplyBox =
+    application.getRole().canComment() && !thread.isPlaceholder && !isDeleting && !isResolved && !isSuggestionClosed
 
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events
@@ -122,7 +131,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
       data-thread-mark-id={markID}
       onClick={handleClickThread}
       className={clsx(
-        'group/thread border-weak bg-norm mb-3.5 list-none overflow-hidden rounded border transition-transform duration-[50ms] last:mb-0 focus:outline-none',
+        'group/thread border-weak bg-norm mb-3.5 list-none overflow-hidden rounded-lg border transition-transform duration-[50ms] last:mb-0 focus:outline-none',
         isActive || isHovering
           ? 'shadow-raised relative translate-x-[-5%] hover:bg-[--optional-background-lowered]'
           : '',
@@ -145,6 +154,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
             comment={comment}
             thread={thread}
             isFirstComment={index === 0}
+            isSuggestionThread={isSuggestionThread}
             setIsDeletingThread={setIsDeleting}
             data-testid={index === 0 ? 'first-comment' : 'thread-comments'}
           />
@@ -187,7 +197,7 @@ export function CommentsPanelListThread({ thread }: { thread: CommentThreadInter
           />
         </div>
       )}
-      {isResolved && (
+      {isResolved && !isSuggestionThread && (
         <div className="my-3 px-3.5">
           <button
             className="rounded border border-[--border-weak] px-2.5 py-1.5 text-sm hover:bg-[--background-weak] disabled:opacity-50"

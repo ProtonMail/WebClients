@@ -1,7 +1,6 @@
 import type { NodeKey } from 'lexical'
 import {
   $createCommentThreadMarkNode,
-  $getCommentThreadMarkIDs,
   $isCommentThreadMarkNode,
   $unwrapCommentThreadMarkNode,
   $wrapSelectionInCommentThreadMarkNode,
@@ -9,7 +8,7 @@ import {
 } from './CommentThreadMarkNode'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { mergeRegister, registerNestedElementResolver } from '@lexical/utils'
-import { $getNodeByKey, $getSelection, $isRangeSelection, $isTextNode, COMMAND_PRIORITY_EDITOR } from 'lexical'
+import { $getNodeByKey, $getSelection, $isElementNode, $isRangeSelection, COMMAND_PRIORITY_EDITOR } from 'lexical'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 
@@ -27,6 +26,7 @@ import { CommentsProvider } from './CommentsContext'
 import { ContextualComments } from './ContextualComments'
 import { useLatestAwarenessStates } from '../../Utils/useLatestAwarenessStates'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
+import { useMarkNodesContext } from '../MarkNodesContext'
 
 export default function CommentPlugin({
   controller,
@@ -35,7 +35,7 @@ export default function CommentPlugin({
   controller: EditorRequiresClientMethods
   username: string
 }): JSX.Element {
-  const application = useApplication()
+  const { application } = useApplication()
   const [editor] = useLexicalComposerContext()
   const isEditorEditable = useLexicalEditable()
   const [threads, setThreads] = useState<CommentThreadInterface[]>([])
@@ -49,12 +49,7 @@ export default function CommentPlugin({
     controller.getAllThreads().then(setThreads).catch(sendErrorMessage)
   }, [controller])
 
-  const markNodeMap = useMemo<Map<string, Set<NodeKey>>>(() => {
-    return new Map()
-  }, [])
-
-  const [activeAnchorKey, setActiveAnchorKey] = useState<NodeKey | null>()
-  const [activeIDs, setActiveIDs] = useState<string[]>([])
+  const { markNodeMap, activeIDs, activeAnchorKey } = useMarkNodesContext()
 
   const [showCommentInput, setShowCommentInput] = useState(false)
   const [showCommentsPanel, setShowCommentsPanel] = useState(false)
@@ -77,29 +72,6 @@ export default function CommentPlugin({
     })
     setShowCommentInput(false)
   }, [editor])
-
-  useEffect(() => {
-    const changedElems: HTMLElement[] = []
-    for (let i = 0; i < activeIDs.length; i++) {
-      const id = activeIDs[i]
-      const keys = markNodeMap.get(id)
-      if (keys !== undefined) {
-        for (const key of keys) {
-          const elem = editor.getElementByKey(key)
-          if (elem !== null) {
-            elem.classList.add('selected')
-            changedElems.push(elem)
-          }
-        }
-      }
-    }
-    return () => {
-      for (let i = 0; i < changedElems.length; i++) {
-        const changedElem = changedElems[i]
-        changedElem.classList.remove('selected')
-      }
-    }
-  }, [activeIDs, editor, markNodeMap])
 
   useEffect(() => {
     const markNodeKeysToIDs: Map<NodeKey, string[]> = new Map()
@@ -153,35 +125,6 @@ export default function CommentPlugin({
                 }
               }
             }
-          }
-        })
-      }),
-      editor.registerUpdateListener(({ editorState, tags }) => {
-        editorState.read(() => {
-          const selection = $getSelection()
-          let hasActiveIds = false
-          let hasAnchorKey = false
-
-          if ($isRangeSelection(selection)) {
-            const anchorNode = selection.anchor.getNode()
-
-            if ($isTextNode(anchorNode)) {
-              const commentIDs = $getCommentThreadMarkIDs(anchorNode, selection.anchor.offset)
-              if (commentIDs !== null) {
-                setActiveIDs(commentIDs)
-                hasActiveIds = true
-              }
-              if (!selection.isCollapsed()) {
-                setActiveAnchorKey(anchorNode.getKey())
-                hasAnchorKey = true
-              }
-            }
-          }
-          if (!hasActiveIds) {
-            setActiveIDs((_activeIds) => (_activeIds.length === 0 ? _activeIds : []))
-          }
-          if (!hasAnchorKey) {
-            setActiveAnchorKey(null)
           }
         })
       }),
@@ -323,7 +266,7 @@ export default function CommentPlugin({
           .map((key) => {
             return $getNodeByKey(key)
           })
-          .filter($isCommentThreadMarkNode)
+          .filter($isElementNode)
       })
     },
     [editor, markNodeMap],
@@ -362,7 +305,6 @@ export default function CommentPlugin({
         controller,
         removeMarkNode,
         activeIDs,
-        setActiveIDs,
         markNodeMap,
         threadToFocus,
         setThreadToFocus,

@@ -58,6 +58,7 @@ describe('CreateThread', () => {
       userOwnAddress: 'foo@bar.com',
     } as unknown as DocumentKeys,
     commentsState: mockCommentsState as unknown as LocalCommentsState,
+    type: 1,
   }
 
   beforeEach(() => {
@@ -98,6 +99,7 @@ describe('CreateThread', () => {
       markId: 'uuid',
       encryptedMainCommentContent: 'encrypted-comment',
       authorEmail: 'foo@bar.com',
+      type: 1,
     })
     expect(mockDecryptComment.execute).toHaveBeenCalledWith('encrypted-response-comment', 'mark-id', {
       userOwnAddress: 'foo@bar.com',

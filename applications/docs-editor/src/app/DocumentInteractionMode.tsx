@@ -1,1 +1,1 @@
-export type DocumentInteractionMode = 'edit' | 'view'
+export type DocumentInteractionMode = 'edit' | 'view' | 'suggest'

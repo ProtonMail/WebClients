@@ -21,7 +21,7 @@ function CommentsPanel({
     () => threads.filter((thread) => thread.state === CommentThreadState.Active).reverse(),
     [threads],
   )
-  const resolved = useMemo(() => threads.filter((thread) => thread.state === CommentThreadState.Resolved), [threads])
+  const resolved = useMemo(() => threads.filter((thread) => thread.state !== CommentThreadState.Active), [threads])
 
   return (
     <div

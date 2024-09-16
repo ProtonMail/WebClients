@@ -35,6 +35,7 @@ import Portal from '../../Components/Portal'
 import { TableAddButtons } from './TableAddButtons'
 import debounce from '@proton/utils/debounce'
 import { TableRowAndColumnMenus } from './TableRowAndColumnMenus'
+import { useApplication } from '../../ApplicationProvider'
 
 export function TablePlugin({
   hasCellMerge = false,
@@ -48,6 +49,8 @@ export function TablePlugin({
   const [editor] = useLexicalComposerContext()
 
   const isEditable = editor.isEditable()
+
+  const { isSuggestionMode } = useApplication()
 
   const [tables, setTables] = useState<TableNode[]>([])
 
@@ -270,26 +273,25 @@ export function TablePlugin({
 
   const editorContainer = editor.getRootElement()?.parentElement
 
-  if (!isEditable) {
+  if (!isEditable || isSuggestionMode) {
     return null
   }
 
   return (
     <Portal container={editorContainer} disabled={!editorContainer}>
       <TableMenu />
-      {isEditable &&
-        tables.map((table) => (
-          <div
-            key={table.getKey()}
-            data-table-actions
-            style={{
-              display: 'contents',
-            }}
-          >
-            <TableAddButtons tableNode={table} />
-            <TableRowAndColumnMenus tableNode={table} />
-          </div>
-        ))}
+      {tables.map((table) => (
+        <div
+          key={table.getKey()}
+          data-table-actions
+          style={{
+            display: 'contents',
+          }}
+        >
+          <TableAddButtons tableNode={table} />
+          <TableRowAndColumnMenus tableNode={table} />
+        </div>
+      ))}
     </Portal>
   )
 }

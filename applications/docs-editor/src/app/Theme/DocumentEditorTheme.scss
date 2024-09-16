@@ -35,6 +35,10 @@
 		background: var(--primary-minor-1);
 		color: var(--text-norm);
 	}
+
+	&.suggestion-mode ::selection {
+		background: rgb(52 145 114 / 0.15);
+	}
 }
 
 .Lexical__paragraph {
@@ -192,4 +196,46 @@
 
 .Lexical__hr {
 	border-block-end: 1px solid var(--border-norm);
+}
+
+.Lexical__Suggestion {
+	border-block-end: 1px dotted rgb(var(--fg));
+
+	--bg: 52 145 114;
+	--fg: 15 107 76;
+
+	background-color: rgb(var(--bg) / 0.05);
+	color: rgb(var(--fg));
+
+	&.selected {
+		background-color: rgb(var(--bg) / 0.1);
+	}
+
+	&.delete,
+	&.join {
+		background-color: transparent;
+		color: var(--text-hint);
+		border-block-end-color: var(--text-hint);
+		text-decoration: line-through;
+
+		&.selected {
+			background-color: var(--background-weak);
+		}
+	}
+
+	&.split,
+	&.join {
+		position: relative;
+
+		&::after {
+			content: '';
+			display: inline-block;
+			inline-size: 1ch;
+			block-size: 100%;
+		}
+	}
+
+	.Lexical__link {
+		color: inherit;
+	}
 }
