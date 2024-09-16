@@ -1,9 +1,8 @@
-
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { WasmSortOrder } from '@proton/andromeda';
-import { Icon, Tooltip } from '@proton/components/components';
+import { Icon, Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
 

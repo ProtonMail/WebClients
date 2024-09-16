@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { useLoading } from '@proton/hooks';
 import { validateSubscription } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_TYPE, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
@@ -14,7 +15,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 
-import { BasicModal, Form, InputFieldTwo, Loader } from '../../../../components';
+import { BasicModal, InputFieldTwo, Loader } from '../../../../components';
 import { useApi } from '../../../../hooks';
 import { GenericError } from '../../../error';
 import useGetCalendarActions from '../../hooks/useGetCalendarActions';

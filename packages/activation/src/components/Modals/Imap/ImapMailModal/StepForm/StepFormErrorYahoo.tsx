@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { IMPORT_ERROR } from '@proton/activation/src/interface';
-import { Href } from '@proton/atoms/Href';
-import { Alert } from '@proton/components/components';
+import { Href } from '@proton/atoms';
+import { Alert } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

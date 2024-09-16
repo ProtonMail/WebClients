@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon, Tooltip } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 
 interface Props {
     onClick: () => void;

@@ -11,9 +11,8 @@ import type { NotificationAction } from 'proton-pass-extension/app/content/types
 import { type NotificationActions } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Scroll } from '@proton/atoms/Scroll';
-import { Icon } from '@proton/components/components';
+import { Button, Scroll } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';

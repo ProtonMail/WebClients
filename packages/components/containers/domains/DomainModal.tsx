@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
+import Icon from '@proton/components/components/icon/Icon';
+import RoundedIcon from '@proton/components/components/icon/RoundedIcon';
 import { useLoading } from '@proton/hooks';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
@@ -21,13 +24,10 @@ import noop from '@proton/utils/noop';
 import type { ModalProps } from '../../components';
 import {
     ButtonGroup,
-    Form,
-    Icon,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    RoundedIcon,
     Tooltip,
     useFormErrors,
 } from '../../components';

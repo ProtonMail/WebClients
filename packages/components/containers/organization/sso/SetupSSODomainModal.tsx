@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
+import Icon from '@proton/components/components/icon/Icon';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
@@ -15,8 +17,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components';
 import {
-    Form,
-    Icon,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

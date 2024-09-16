@@ -1,7 +1,7 @@
 import { type ChangeEvent, useRef } from 'react';
 
 import type { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
-import type { InputProps } from '@proton/atoms/Input/Input';
+import type { InputProps } from '@proton/atoms';
 import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
 

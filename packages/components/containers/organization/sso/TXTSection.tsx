@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import type { Domain } from '@proton/shared/lib/interfaces';
 
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';

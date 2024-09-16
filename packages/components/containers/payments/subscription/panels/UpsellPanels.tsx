@@ -1,7 +1,7 @@
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import type { ButtonLikeShape } from '@proton/atoms/Button';
+import type { ButtonLikeShape } from '@proton/atoms';
 import { Price } from '@proton/components/components';
 import { MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { hasBundle } from '@proton/shared/lib/helpers/subscription';

@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { signoutAction } from '@proton/account';
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { useDispatch } from '@proton/redux-shared-store';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
@@ -25,7 +26,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components';
 import {
-    Form,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

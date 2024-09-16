@@ -10,7 +10,7 @@ import type { DropdownAction, DropdownActions } from 'proton-pass-extension/app/
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import { UpsellRef } from '@proton/pass/constants';
 import { useMountedState } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';

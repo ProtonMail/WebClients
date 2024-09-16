@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 
-import ButtonLike from '@proton/atoms/Button/ButtonLike';
+import { ButtonLike } from '@proton/atoms';
 import type { ImportProvider } from '@proton/pass/lib/import/types';
 
 import { ImportIcon } from './ImportIcon';

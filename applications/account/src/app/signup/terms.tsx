@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { getLocaleTermsURL } from '../content/helper';

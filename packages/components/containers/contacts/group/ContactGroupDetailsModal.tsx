@@ -1,11 +1,12 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components';
-import { Icon, ModalTwo } from '../../../components';
+import { ModalTwo } from '../../../components';
 import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';

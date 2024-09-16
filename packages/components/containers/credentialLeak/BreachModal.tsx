@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
-import { Button } from '@proton/atoms/Button';
+import { Button, ButtonLike } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '@proton/components/components';
 import useLoading from '@proton/hooks/useLoading';

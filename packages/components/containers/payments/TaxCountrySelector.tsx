@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import {
     type BillingAddress,

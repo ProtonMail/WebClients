@@ -1,7 +1,6 @@
+import Icon from '@proton/components/components/icon/Icon';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
-
-import { Icon } from '../../components';
 
 const { DOMAIN_STATE_DEFAULT, DOMAIN_STATE_VERIFIED, DOMAIN_STATE_WARN } = DOMAIN_STATE;
 

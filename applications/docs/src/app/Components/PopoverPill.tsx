@@ -1,4 +1,4 @@
-import { usePopper, usePopperAnchor } from '@proton/components/components'
+import { usePopper, usePopperAnchor } from '@proton/components'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Pill from './Pill'
 

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { MailImportPayloadError } from '@proton/activation/src/interface';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import {
     Form,
     ModalTwo,
@@ -10,7 +10,7 @@ import {
     ModalTwoHeader,
     PrimaryButton,
     useModalState,
-} from '@proton/components/components';
+} from '@proton/components';
 import { useUser } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppSpace, getSpace } from '@proton/shared/lib/user/storage';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import type { FetchedBreaches } from '@proton/components/containers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

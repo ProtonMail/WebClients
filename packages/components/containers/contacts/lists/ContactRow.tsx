@@ -3,8 +3,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon, Tooltip } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { addPlus } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';

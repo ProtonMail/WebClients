@@ -5,11 +5,11 @@ import { c, msgid } from 'ttag';
 import { Button, Kbd, Scroll } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon, InputFieldTwo } from '@proton/components';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
-import { DropdownMenuButton } from '../dropdown';
-import { Form } from '../form';
+import Form from '../form/Form';
 import type { ModalProps } from '../modalTwo';
 import { ModalTwo } from '../modalTwo';
 import { Mark } from '../text';

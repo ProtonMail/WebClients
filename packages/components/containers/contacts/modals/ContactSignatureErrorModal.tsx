@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 
 import type { ModalProps } from '../../../components';
-import { Alert, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 
 export interface ContactSignatureErrorProps {
     contactID: string;

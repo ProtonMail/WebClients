@@ -3,6 +3,7 @@ import { forwardRef, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { useCombinedRefs } from '@proton/hooks';
 import { useLoading } from '@proton/hooks';
 import busy from '@proton/shared/lib/busy';
@@ -18,7 +19,7 @@ import {
 } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable, isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
 
-import { useFocusTrap, useModalState } from '../../components';
+import { useModalState } from '../../components';
 import { useBeforeUnload, useHotkeys } from '../../hooks';
 import AudioPreview from './AudioPreview';
 import CloseModal from './CloseModal';

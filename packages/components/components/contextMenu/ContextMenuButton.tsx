@@ -1,6 +1,6 @@
-import { DropdownMenuButton } from '../dropdown';
-import type { IconName } from '../icon';
-import { Icon } from '../icon';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { type IconName } from '@proton/components/components/icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
 
 interface Props {
     name: string;

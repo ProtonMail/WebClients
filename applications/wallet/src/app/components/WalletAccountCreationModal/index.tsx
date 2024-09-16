@@ -5,8 +5,8 @@ import last from 'lodash/last';
 import { c } from 'ttag';
 
 import { WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
-import { Href } from '@proton/atoms/Href';
-import type { ModalOwnProps } from '@proton/components/components';
+import { Href } from '@proton/atoms';
+import type { ModalOwnProps } from '@proton/components';
 import {
     Collapsible,
     CollapsibleContent,
@@ -14,7 +14,7 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
     Tooltip,
-} from '@proton/components/components';
+} from '@proton/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

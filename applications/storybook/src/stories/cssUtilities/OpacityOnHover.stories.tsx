@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './OpacityOnHover.mdx';

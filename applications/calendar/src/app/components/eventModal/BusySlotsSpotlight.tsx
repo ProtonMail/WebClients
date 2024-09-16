@@ -3,8 +3,8 @@ import { useRef } from 'react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
-import { Spotlight, useSpotlightShow } from '@proton/components/components';
+import { Href } from '@proton/atoms';
+import { Spotlight, useSpotlightShow } from '@proton/components';
 import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
 import { useActiveBreakpoint, useSpotlightOnFeature, useUser, useWelcomeFlags } from '@proton/components/hooks';
 import { FeatureCode } from '@proton/features';

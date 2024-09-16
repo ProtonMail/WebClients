@@ -3,11 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
 import { resetVPNSettings } from '@proton/shared/lib/api/vpn';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Copy, Icon, PrimaryButton } from '../../components';
+import { Copy, PrimaryButton } from '../../components';
 import { useApi, useNotifications, useUserVPN } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';

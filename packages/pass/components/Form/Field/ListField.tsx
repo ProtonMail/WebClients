@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import type { FieldProps, FormikErrors } from 'formik';
 import { FieldArray } from 'formik';
 
-import type { Input } from '@proton/atoms/Input';
+import type { Input } from '@proton/atoms';
 import type { IconName } from '@proton/components/';
 import { Icon, InputFieldTwo } from '@proton/components/';
 import { type InputFieldProps } from '@proton/components/components/v2/field/InputField';

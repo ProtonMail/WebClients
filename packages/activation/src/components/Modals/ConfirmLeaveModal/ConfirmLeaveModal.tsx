@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Prompt } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Prompt } from '@proton/components';
 
 interface Props {
     handleClose: () => void;

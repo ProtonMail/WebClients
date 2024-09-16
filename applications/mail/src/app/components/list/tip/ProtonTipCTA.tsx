@@ -1,4 +1,4 @@
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import { SettingsLink } from '@proton/components/components/link';
 import { APPS } from '@proton/shared/lib/constants';
 

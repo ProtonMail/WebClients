@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button, type ButtonLikeShape } from '@proton/atoms/Button';
-import type { IconName } from '@proton/components/components';
-import { Icon } from '@proton/components/components';
+import { Button, type ButtonLikeShape } from '@proton/atoms';
+import type { IconName } from '@proton/components';
+import { Icon } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';

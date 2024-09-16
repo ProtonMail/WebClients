@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import {
     deleteForwarding,
     pauseForwarding,
@@ -10,7 +11,7 @@ import type { Address, OutgoingAddressForwarding, UserModel } from '@proton/shar
 import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DropdownActions, useModalState, useModalTwoStatic } from '../../components';
+import { useModalState, useModalTwoStatic } from '../../components';
 import {
     useActiveBreakpoint,
     useAddressFlags,

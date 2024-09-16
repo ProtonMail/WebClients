@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
+import Form from '@proton/components/components/form/Form';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import type {
     CalendarBootstrap,
@@ -12,7 +13,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar';
 
 import type { ModalProps } from '../../../../components';
-import { Form, Loader, ModalTwo as Modal, ModalTwoContent, ModalTwoFooter } from '../../../../components';
+import { Loader, ModalTwo as Modal, ModalTwoContent, ModalTwoFooter } from '../../../../components';
 import { useGetCalendarBootstrap } from '../../../../hooks';
 import GenericError from '../../../error/GenericError';
 import HolidaysCalendarModalWithDirectory from './HolidaysCalendarModalWithDirectory';

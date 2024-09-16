@@ -1,4 +1,5 @@
-import { CustomLogo, Icon, Logo } from '@proton/components/components';
+import { CustomLogo, Logo } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import './SidebarPreview.scss';

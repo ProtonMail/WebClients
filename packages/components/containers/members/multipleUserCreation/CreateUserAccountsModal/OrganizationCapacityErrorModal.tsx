@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { Prompt, SettingsLink, useConfig } from '@proton/components';
+import { SettingsLink, useConfig } from '@proton/components';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

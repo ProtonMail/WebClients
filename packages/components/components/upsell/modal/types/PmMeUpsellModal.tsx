@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { ModalStateProps } from '@proton/components/components';
-import { UpsellModal } from '@proton/components/components';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 

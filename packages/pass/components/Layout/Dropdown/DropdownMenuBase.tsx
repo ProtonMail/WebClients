@@ -1,12 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import {
-    Dropdown,
-    DropdownButton,
-    DropdownMenu,
-    DropdownMenuButton,
-    usePopperAnchor,
-} from '@proton/components/components';
+import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 type DropdownMenuBaseProps = PropsWithChildren & {

@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components/components';
+import { Icon, ToolbarButton } from '@proton/components';
 import { PHOTOS_ACCEPTED_INPUT } from '@proton/shared/lib/drive/constants';
 
 import { useFileUploadInput } from '../../../../store';

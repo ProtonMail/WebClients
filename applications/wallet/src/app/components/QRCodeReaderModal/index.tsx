@@ -1,6 +1,6 @@
 import type { QRCode } from 'jsqr';
 
-import type { ModalOwnProps } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components';
 
 import { Modal } from '../../atoms';
 import QRCodeReader from '../QRCodeReader';

@@ -4,12 +4,13 @@ import groupBy from 'lodash/groupBy';
 import { c, msgid } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { SettingsSectionWide } from '@proton/components/containers';
 import type { EnhancedLogical } from '@proton/components/containers/vpn/OpenVPNConfigurationSection/interface';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import { Icon, Info, Radio, RadioGroup, SettingsLink } from '../../../components';
+import { Info, Radio, RadioGroup, SettingsLink } from '../../../components';
 import {
     type CountryOptions,
     correctAbbr,

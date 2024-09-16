@@ -2,8 +2,7 @@ import { type FC, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Button, CircleLoader } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
 import { useConnectivity } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PinCodeInput } from '@proton/pass/components/Lock/PinCodeInput';

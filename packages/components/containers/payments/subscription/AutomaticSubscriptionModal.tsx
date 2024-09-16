@@ -3,10 +3,9 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { ModalProps, OpenCallbackProps } from '@proton/components';
 import {
-    Prompt,
     useConfig,
     useLastSubscriptionEnd,
     useLoad,
@@ -17,6 +16,7 @@ import {
     useSubscriptionModal,
     useUser,
 } from '@proton/components';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import {
     blackFriday2023DriveFreeConfig,
     blackFriday2023DriveFreeEligibility,

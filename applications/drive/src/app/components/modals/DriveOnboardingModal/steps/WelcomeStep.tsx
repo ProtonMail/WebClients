@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { OnboardingContent, OnboardingStep } from '@proton/components/containers/onboarding';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';

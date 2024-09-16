@@ -2,8 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useModalState } from '@proton/components/components';
-import { UnlockModal } from '@proton/components/containers';
+import { UnlockModal, useModalState } from '@proton/components';
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
 import { useErrorHandler } from '@proton/components/hooks';
 import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';

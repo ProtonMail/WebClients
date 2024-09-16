@@ -12,7 +12,7 @@ import {
     ProtonApp,
     StandardErrorPage,
     StandardLoadErrorPage,
-} from '@proton/components/containers';
+} from '@proton/components';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';

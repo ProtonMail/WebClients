@@ -1,15 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import type { ModalProps } from '@proton/components/components';
-import {
-    Icon,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    StripedItem,
-    StripedList,
-} from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, StripedItem, StripedList } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import svg from '../welcome-suite.svg';

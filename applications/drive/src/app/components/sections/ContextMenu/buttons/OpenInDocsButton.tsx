@@ -1,4 +1,4 @@
-import { MimeIcon } from '@proton/components/components';
+import { MimeIcon } from '@proton/components';
 import { getOpenInDocsString } from '@proton/shared/lib/drive/translations';
 
 import { useOpenInDocs } from '../../../../store/_documents';

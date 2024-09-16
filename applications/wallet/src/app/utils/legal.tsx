@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 
 import { APP_NAME } from '../config';

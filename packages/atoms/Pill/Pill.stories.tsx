@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import tinycolor from 'tinycolor2';
 
-import { Checkbox } from '@proton/components/components';
+import { Checkbox } from '@proton/components';
 
 import Pill from './Pill';
 import mdx from './Pill.mdx';

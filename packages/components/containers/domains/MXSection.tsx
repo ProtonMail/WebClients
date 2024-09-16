@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Alert, Copy, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
+import { Copy, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
 
 const MXSection = () => {

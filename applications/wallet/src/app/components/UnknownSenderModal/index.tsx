@@ -5,8 +5,8 @@ import compact from 'lodash/compact';
 import { c } from 'ttag';
 
 import type { WasmApiWalletTransaction } from '@proton/andromeda';
-import type { ModalOwnProps } from '@proton/components/components';
-import { Checkbox, Tooltip } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components';
+import { Checkbox, Tooltip } from '@proton/components';
 import { useSaveVCardContact } from '@proton/components/containers/contacts/hooks/useSaveVCardContact';
 import { useContactEmails, useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import type { RouteComponentProps } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
-import { Loader } from '@proton/components/components';
+import { Loader } from '@proton/components';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import useNavigate from '../hooks/drive/useNavigate';

@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
+import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 
-import type { PromptProps } from '../../components';
-import { Prompt, SettingsLink } from '../../components';
+import { SettingsLink } from '../../components';
 import { useFeature } from '../../hooks';
 import { FeatureCode } from '../features';
 

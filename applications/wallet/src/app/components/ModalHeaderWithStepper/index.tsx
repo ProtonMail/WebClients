@@ -3,7 +3,7 @@ import type { ComponentPropsWithRef } from 'react';
 import { c } from 'ttag';
 
 import { Button, Step, Stepper } from '@proton/atoms';
-import { AppLink, Icon, Tooltip } from '@proton/components/components';
+import { AppLink, Icon, Tooltip } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import protonWalletLogo from '@proton/styles/assets/img/illustrations/proton-wallet-logo.svg';
 

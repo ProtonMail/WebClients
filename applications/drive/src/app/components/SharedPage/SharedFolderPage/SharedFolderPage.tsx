@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { NavigationControl } from '@proton/components/containers';
+import { NavigationControl } from '@proton/components';
 import FilePreview from '@proton/components/containers/filePreview/FilePreview';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 

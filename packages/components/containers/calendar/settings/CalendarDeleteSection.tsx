@@ -3,7 +3,9 @@ import { useHistory } from 'react-router';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Alert, ErrorButton, Prompt, useModalState } from '@proton/components/components';
+import { ErrorButton, useModalState } from '@proton/components/components';
+import Alert from '@proton/components/components/alert/Alert';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { SettingsParagraph } from '@proton/components/containers';
 import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';

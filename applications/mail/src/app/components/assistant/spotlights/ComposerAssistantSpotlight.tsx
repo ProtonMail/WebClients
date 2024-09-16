@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Spotlight, useSpotlightShow } from '@proton/components/components';
+import { Spotlight, useSpotlightShow } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import spotlightImg from '@proton/styles/assets/img/illustrations/ai-assistant-spotlight.svg';
 

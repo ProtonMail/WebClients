@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import type { ModalProps } from '@proton/components/components';
-import { ErrorButton, Prompt } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
+import { ErrorButton, Prompt } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 interface Props extends ModalProps {

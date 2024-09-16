@@ -5,8 +5,8 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import type { FormikHelpers } from 'formik/dist/types';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';

@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import type { FetchedBreaches } from '@proton/components/containers';
+import type { FetchedBreaches } from '@proton/components';
 import { useRequest } from '@proton/pass/hooks/useActionRequest';
 import { type AddressBreachDTO, AddressType } from '@proton/pass/lib/monitor/types';
 import { getAliasBreach, getCustomBreach, getProtonBreach } from '@proton/pass/store/actions';
@@ -45,7 +45,7 @@ export const useAddressBreaches = <T extends AddressType>(dto: AddressBreachDTO<
     }, []);
 
     return useMemo<BreachDetails>(() => {
-        const data = req.loading ? [] : req.data ?? [];
+        const data = req.loading ? [] : (req.data ?? []);
         const [active, resolved] = partition(data, ({ resolvedState }) => resolvedState < 3);
         return { loading: req.loading, active, resolved, usages };
     }, [req, usages]);

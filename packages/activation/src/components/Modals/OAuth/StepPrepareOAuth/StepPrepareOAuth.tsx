@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ImportType } from '@proton/activation/src/interface';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton } from '@proton/components';
 
 import StepProductsRowItem from '../StepProducts/StepProductsRowItem';

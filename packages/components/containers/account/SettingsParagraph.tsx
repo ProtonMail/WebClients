@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 interface SettingsParagraphProps extends ComponentPropsWithoutRef<'p'> {

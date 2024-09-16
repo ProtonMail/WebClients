@@ -1,7 +1,7 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 
-import { FeatureCode } from '@proton/components/containers';
+import { FeatureCode } from '@proton/components';
 import { useFeature } from '@proton/components/hooks';
 import { getIsAutoAddedInvite } from '@proton/shared/lib/calendar/apiModels';
 import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';

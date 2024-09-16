@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { DropdownMenuButton, Icon, SimpleDropdown, Tooltip } from '@proton/components/components';
+import { DropdownMenuButton, Icon, SimpleDropdown, Tooltip } from '@proton/components';
 import type { Label } from '@proton/shared/lib/interfaces';
 
 import { useLabelActionsContext } from './EditLabelContext';

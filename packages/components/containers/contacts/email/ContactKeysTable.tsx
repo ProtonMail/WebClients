@@ -4,6 +4,8 @@ import { Fragment, useEffect, useState } from 'react';
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
 
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import ContactKeyWarningIcon from '@proton/components/components/icon/ContactKeyWarningIcon';
 import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { API_KEY_SOURCE } from '@proton/shared/lib/constants';
@@ -17,7 +19,7 @@ import clsx from '@proton/utils/clsx';
 import move from '@proton/utils/move';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { Badge, ContactKeyWarningIcon, DropdownActions, Table, TableBody, TableRow } from '../../../components';
+import { Badge, Table, TableBody, TableRow } from '../../../components';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 
 interface Props {

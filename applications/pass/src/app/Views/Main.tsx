@@ -6,7 +6,7 @@ import { useClient } from 'proton-pass-web/app/Context/ClientProvider';
 import { Monitor } from 'proton-pass-web/app/Views/Monitor/Monitor';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Hamburger } from '@proton/components';
 import { useToggle } from '@proton/components/hooks';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';

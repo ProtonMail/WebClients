@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { FileNameDisplay } from '@proton/components/components';
+import { FileNameDisplay } from '@proton/components';
 import { FilePreviewContent } from '@proton/components/containers/filePreview/FilePreview';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { CALENDAR_TO_BE_CREATED_PREFIX } from '@proton/activation/src/constants';
 import type { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
-import { LabelStack, Option, SelectTwo } from '@proton/components/components';
+import { LabelStack, Option, SelectTwo } from '@proton/components';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 

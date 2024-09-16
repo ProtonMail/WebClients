@@ -2,7 +2,7 @@
 import type { PropsWithChildren } from 'react';
 import { type FC } from 'react';
 
-import { Logo, PassForBusinessLogo } from '@proton/components/components';
+import { Logo, PassForBusinessLogo } from '@proton/components';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';

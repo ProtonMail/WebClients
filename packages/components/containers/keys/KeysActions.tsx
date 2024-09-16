@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DropdownActions } from '../../components';
 import type { KeyActions } from './shared/interface';
 
 interface Props extends Partial<KeyActions> {

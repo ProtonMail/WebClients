@@ -3,6 +3,7 @@ import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { CryptoProxy } from '@proton/crypto';
 import type { CONTACT_PGP_SCHEMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -11,7 +12,7 @@ import type { ContactPublicKeyModelWithApiKeySource, MailSettings } from '@proto
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 
-import { Alert, Field, Info, Label, Row, Toggle } from '../../../components';
+import { Field, Info, Label, Row, Toggle } from '../../../components';
 import { useNotifications } from '../../../hooks';
 import SelectKeyFiles from '../../keys/shared/SelectKeyFiles';
 import ContactKeysTable from './ContactKeysTable';

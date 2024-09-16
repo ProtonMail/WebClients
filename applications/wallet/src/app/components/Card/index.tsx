@@ -1,10 +1,9 @@
 import type { ReactNode } from 'react';
-import React from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';

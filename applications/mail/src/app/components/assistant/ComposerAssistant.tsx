@@ -1,9 +1,9 @@
 import type { MutableRefObject, RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import type { EditorMetadata } from '@proton/components/components';
-import { useModalStateObject } from '@proton/components/components';
-import  ComposerAssistantUpsellModal from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal';
+import type { EditorMetadata } from '@proton/components';
+import { useModalStateObject } from '@proton/components';
+import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modal/types/ComposerAssistantUpsellModal';
 import { ASSISTANT_SERVER_THROTTLE_TIMEOUT, getHasAssistantStatus, useAssistant } from '@proton/llm/lib';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { ERROR_TYPE } from '@proton/shared/lib/assistant';

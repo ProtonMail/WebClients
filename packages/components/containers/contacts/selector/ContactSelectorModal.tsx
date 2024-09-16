@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -13,7 +14,6 @@ import clsx from '@proton/utils/clsx';
 import type { ModalProps } from '../../../components';
 import {
     Checkbox,
-    Form,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

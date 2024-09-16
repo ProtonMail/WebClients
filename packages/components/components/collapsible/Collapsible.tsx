@@ -7,7 +7,7 @@ import generateUID from '@proton/utils/generateUID';
 import type { CollapsibleContextValue } from './CollapsibleContext';
 import CollapsibleContext from './CollapsibleContext';
 
-export interface CollapsibleOwnProps {
+interface CollapsibleOwnProps {
     /**
      * Disables the collapsible component
      */
@@ -18,7 +18,7 @@ export interface CollapsibleOwnProps {
     expandByDefault?: boolean;
 }
 
-export type CollapsibleProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleOwnProps, E>;
+type CollapsibleProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleOwnProps, E>;
 
 const defaultElement = 'div';
 

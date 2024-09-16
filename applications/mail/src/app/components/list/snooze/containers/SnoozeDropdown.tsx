@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Dropdown, DropdownButton, Icon, Tooltip, useModalState, usePopperAnchor } from '@proton/components/components';
+import { Dropdown, DropdownButton, Icon, Tooltip, useModalState, usePopperAnchor } from '@proton/components';
 import { useApi, useUser } from '@proton/components/hooks';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

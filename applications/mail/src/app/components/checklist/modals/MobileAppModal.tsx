@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoHeader, QRCode } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';

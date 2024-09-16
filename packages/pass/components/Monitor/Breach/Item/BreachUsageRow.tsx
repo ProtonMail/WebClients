@@ -1,7 +1,7 @@
 import type { FC, MouseEvent } from 'react';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components/icon';
+import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { TableCell, TableRow } from '@proton/components/components/table';
 import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';

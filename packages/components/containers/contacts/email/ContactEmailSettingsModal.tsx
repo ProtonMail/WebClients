@@ -3,6 +3,23 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import {
+    Field,
+    Info,
+    Label,
+    type ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    Row,
+} from '@proton/components/components';
+import Alert from '@proton/components/components/alert/Alert';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
@@ -26,23 +43,6 @@ import {
 import clsx from '@proton/utils/clsx';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import type { ModalProps } from '../../../components';
-import {
-    Alert,
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Field,
-    Icon,
-    Info,
-    Label,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Row,
-} from '../../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../../hooks';
 import { useKeyTransparencyContext } from '../../keyTransparency';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';

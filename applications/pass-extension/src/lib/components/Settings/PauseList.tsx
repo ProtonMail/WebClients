@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import {
     Checkbox,
     Icon,
@@ -15,7 +15,7 @@ import {
     TableHeader,
     TableHeaderCell,
     TableRow,
-} from '@proton/components/components';
+} from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { hasCriteria, toggleCriteria } from '@proton/pass/lib/settings/criteria';

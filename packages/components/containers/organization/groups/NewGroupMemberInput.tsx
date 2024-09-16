@@ -1,13 +1,12 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { AddressesAutocompleteTwo } from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { useMembers } from '@proton/components/hooks';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import type { EnhancedMember, GroupMember } from '@proton/shared/lib/interfaces';
-import type { Recipient } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, GroupMember, Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import type { NewGroupMember } from './EditGroup';

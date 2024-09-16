@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import Alert from '@proton/components/components/alert/Alert';
 import type { PaymentMethodFlows, PlainPaymentMethodType } from '@proton/components/payments/core';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
@@ -10,7 +11,7 @@ import {
 } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
-import { Alert, Price } from '../../components';
+import { Price } from '../../components';
 import PayPalButton from './PayPalButton';
 import PayPalInfoMessage from './PayPalInfoMessage';
 

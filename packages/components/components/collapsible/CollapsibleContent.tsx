@@ -5,9 +5,9 @@ import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types
 
 import CollapsibleContext from './CollapsibleContext';
 
-export interface CollapsibleContentOwnProps {}
+interface CollapsibleContentOwnProps {}
 
-export type CollapsibleContentProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleContentOwnProps, E>;
+type CollapsibleContentProps<E extends ElementType> = PolymorphicPropsWithoutRef<CollapsibleContentOwnProps, E>;
 
 const defaultElement = 'div';
 

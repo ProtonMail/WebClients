@@ -3,8 +3,8 @@ import { useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';

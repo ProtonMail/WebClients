@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 
-import { Alert } from '../../components/alert';
 import { useModalState } from '../../components/modalTwo';
 import { BugModal } from '../support';
 

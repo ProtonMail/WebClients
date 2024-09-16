@@ -3,9 +3,9 @@ import { forwardRef, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import type { ModalStateProps } from '@proton/components/components';
+import type { ModalStateProps } from '@proton/components';
+import { FilePreview } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
-import { FilePreview } from '@proton/components/containers';
 
 import { useDriveSharingFlags, useFileView } from '../../store';
 import { getSharedStatus } from '../../utils/share';

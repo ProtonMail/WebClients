@@ -3,7 +3,8 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { useTheme } from '@proton/components/containers';
 import {
     closeDrawerFromChildApp,
@@ -14,7 +15,7 @@ import {
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
-import { Icon, Tooltip } from '../../components';
+import { Tooltip } from '../../components';
 import Header from '../../components/header/Header';
 import { useConfig, useDrawer, useEventManager, useHotkeys } from '../../hooks';
 

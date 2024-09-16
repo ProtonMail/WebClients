@@ -3,13 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isDomain } from '@proton/shared/lib/helpers/validators';
 
 import type { ModalProps } from '../../../../components';
 import {
     Field,
-    Form,
     Label,
     ModalTwo,
     ModalTwoContent,

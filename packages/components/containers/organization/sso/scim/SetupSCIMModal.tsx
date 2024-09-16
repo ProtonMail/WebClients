@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { ModalProps } from '../../../../components';
 import {
-    Icon,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,

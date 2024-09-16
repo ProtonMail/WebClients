@@ -82,3 +82,5 @@ export const ConfirmActionModal = ({
 export const useConfirmActionModal = () => {
     return useModalTwoStatic(ConfirmActionModal);
 };
+
+export default ConfirmActionModal;

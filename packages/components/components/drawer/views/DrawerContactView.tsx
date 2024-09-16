@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { EasySwitchProvider } from '@proton/activation';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { PrimaryButton, useModalTwoStatic } from '@proton/components/components';
 import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import DrawerView from '@proton/components/components/drawer/views/DrawerView';

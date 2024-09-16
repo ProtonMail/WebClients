@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon, Loader } from '@proton/components/components';
+import { Icon, Loader } from '@proton/components';
 
 import type { ShareInvitee } from '../../../../../store';
 

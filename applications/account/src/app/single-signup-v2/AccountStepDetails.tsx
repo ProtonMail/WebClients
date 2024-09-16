@@ -4,13 +4,11 @@ import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
-import { DropdownSizeUnit, Icon, Info, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
+import { CircleLoader, InlineLinkButton } from '@proton/atoms';
+import type { ChallengeRef } from '@proton/components';
+import { Challenge, DropdownSizeUnit, Icon, Info, InputFieldTwo, PasswordInputTwo } from '@proton/components';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import type { ChallengeRef } from '@proton/components/containers';
-import { Challenge } from '@proton/components/containers';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';

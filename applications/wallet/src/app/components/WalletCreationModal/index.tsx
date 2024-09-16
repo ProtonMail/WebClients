@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { WasmMnemonic, WasmWordCount } from '@proton/andromeda';
-import type { ModalOwnProps } from '@proton/components/components';
+import type { ModalOwnProps } from '@proton/components';
 import {
     Collapsible,
     CollapsibleContent,
@@ -15,7 +15,7 @@ import {
     ModalTwoFooter,
     PasswordInputTwo,
     useModalState,
-} from '@proton/components/components';
+} from '@proton/components';
 import { useUserWalletSettings } from '@proton/wallet';
 
 import { Button, CoreButton, Input, Modal } from '../../atoms';

@@ -5,8 +5,7 @@ import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-co
 import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerStateEvents';
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms';
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike, Href } from '@proton/atoms';
 import accountSetupImg from '@proton/pass/assets/protonpass-account.svg';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import ProtonBadge from '../ProtonBadge';
+import ProtonBadge from './ProtonBadge';
 
 interface Props {
     selected?: boolean;

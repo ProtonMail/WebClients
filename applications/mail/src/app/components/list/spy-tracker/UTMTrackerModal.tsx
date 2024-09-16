@@ -1,16 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Href } from '@proton/atoms/Href';
-import type { ModalProps } from '@proton/components/components';
-import {
-    Icon,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Tooltip,
-} from '@proton/components/components';
+import { Button, Href } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Tooltip } from '@proton/components';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import cleanLinkImg from '@proton/styles/assets/img/illustrations/clean-utm-trackers.svg';
 

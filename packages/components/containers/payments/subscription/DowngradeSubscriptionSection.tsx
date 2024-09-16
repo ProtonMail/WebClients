@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';

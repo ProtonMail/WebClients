@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { querySessions, revokeOtherSessions, revokeSession } from '@proton/shared/lib/api/auth';
@@ -11,7 +12,6 @@ import noop from '@proton/utils/noop';
 
 import {
     Pagination,
-    Prompt,
     Table,
     TableBody,
     TableHeader,

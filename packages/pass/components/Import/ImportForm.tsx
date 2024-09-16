@@ -3,9 +3,8 @@ import { type FC, useMemo } from 'react';
 import { Field } from 'formik';
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
-import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components/components';
+import { Href, InlineLinkButton } from '@proton/atoms';
+import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';

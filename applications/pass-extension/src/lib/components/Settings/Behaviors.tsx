@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { Dispatch } from 'redux';
 import { c } from 'ttag';
 
-import { Checkbox } from '@proton/components/components';
+import { Checkbox } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';

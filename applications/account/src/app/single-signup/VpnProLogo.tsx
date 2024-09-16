@@ -1,4 +1,4 @@
-import type { IconSize } from '@proton/components/components';
+import type { IconSize } from '@proton/components';
 
 const VpnProLogo = ({ size }: { size: IconSize }) => {
     return (

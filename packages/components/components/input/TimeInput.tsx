@@ -7,6 +7,9 @@ import { c, msgid } from 'ttag';
 
 import type { InputProps } from '@proton/atoms';
 import { Input } from '@proton/atoms';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { findLongestMatchingIndex } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import generateUID from '@proton/utils/generateUID';
@@ -14,9 +17,6 @@ import noop from '@proton/utils/noop';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
 import { useHotkeys } from '../../hooks';
-import Dropdown from '../dropdown/Dropdown';
-import DropdownMenu from '../dropdown/DropdownMenu';
-import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import { usePopperAnchor } from '../popper';
 
 const toFormatted = (value: Date, locale: Locale) => {

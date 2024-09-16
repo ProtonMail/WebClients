@@ -4,7 +4,8 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Tooltip } from '@proton/components/components';
+import { Tooltip } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 
 import LoadRemoteImageBanner from '../../containers/banner/LoadRemoteImageBanner';
 import useLoadContactImage from '../../hooks/useLoadContactImage';

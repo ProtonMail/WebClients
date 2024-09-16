@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
+import type { OnLoginCallback, OnLoginCallbackArguments } from '@proton/components';
 import {
     DropdownMenu,
+    DropdownMenuButton,
     Icon,
     InputFieldTwo,
     PasswordInputTwo,
     SimpleDropdown,
     useFormErrors,
-} from '@proton/components/components';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import type { OnLoginCallback, OnLoginCallbackArguments } from '@proton/components/containers';
+} from '@proton/components';
 import { handleReAuthKeyPassword } from '@proton/components/containers/login/loginActions';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';

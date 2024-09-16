@@ -1,10 +1,10 @@
-import type { ReactNode } from 'react'
-import React from 'react'
 import type { InitialConfigType } from '@lexical/react/LexicalComposer'
 import { LexicalComposer } from '@lexical/react/LexicalComposer'
-import { sendErrorMessage } from '../Utils/errorMessage'
-import { ErrorBoundary } from '@proton/components/containers'
+import { ErrorBoundary } from '@proton/components'
+import type { ReactNode } from 'react'
+import React from 'react'
 import { c } from 'ttag'
+import { sendErrorMessage } from '../Utils/errorMessage'
 
 export const SafeLexicalComposer: React.FC<{
   initialConfig: InitialConfigType

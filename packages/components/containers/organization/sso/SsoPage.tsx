@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Href } from '@proton/atoms/Href';
+import { Button, Href } from '@proton/atoms';
 import TestSamlModal from '@proton/components/containers/organization/sso/TestSamlModal';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
