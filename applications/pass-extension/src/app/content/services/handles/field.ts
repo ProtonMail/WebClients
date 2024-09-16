@@ -26,14 +26,16 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
         const { action, element } = field;
         if (!action) return;
 
-        const { formType } = field.getFormHandle();
-        const login = formType === FormType.LOGIN;
-
         requestAnimationFrame(async () => {
             if (actionPrevented(element)) return;
 
-            const count = login ? ((await ctx?.service.autofill.getCredentialsCount()) ?? 0) : 0;
-            field.attachIcon({ count });
+            if (ctx?.getSettings().autofill.inject) {
+                const { formType } = field.getFormHandle();
+                const login = formType === FormType.LOGIN;
+                const count = login ? ((await ctx?.service.autofill.getCredentialsCount()) ?? 0) : 0;
+
+                field.attachIcon({ count });
+            }
 
             const target = evt?.target;
             const dropdown = ctx?.service.iframe.dropdown;
