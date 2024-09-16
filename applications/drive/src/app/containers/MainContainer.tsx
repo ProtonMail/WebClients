@@ -31,6 +31,7 @@ import {
 import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
 import { VolumeType } from '../store/_volumes';
+import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { getTokenFromSearchParams } from '../utils/url/token';
 import DevicesContainer from './DevicesContainer';
 import FolderContainer from './FolderContainer';
@@ -84,6 +85,7 @@ const InitContainer = () => {
                         token,
                         hideNotifications: true,
                     });
+                    setPublicRedirectSpotlightToPending();
                     redirectToPublicPage(token);
                 }
 
