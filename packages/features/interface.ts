@@ -117,6 +117,7 @@ export enum FeatureCode {
     SpotlightLoadContent = 'SpotlightLoadContent',
     SpotlightScheduledSend = 'SpotlightScheduledSend',
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
+    SubscriptionLastReminderDate = 'SubscriptionLastReminderDate',
     UnreadFavicon = 'UnreadFavicon',
     UsedContactsImport = 'UsedContactsImport',
     UsedMailMobileApp = 'UsedMailMobileApp',
