@@ -1,5 +1,6 @@
 import type { Reducer } from 'redux';
 
+import { type PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/generator';
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
@@ -24,7 +25,6 @@ import type {
 } from '@proton/pass/types/worker/settings';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { partialMerge } from '@proton/pass/utils/object/merge';
-import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 export type SettingsState = {
     autofill: AutoFillSettings;
@@ -42,7 +42,7 @@ export type SettingsState = {
     passkeys: PasskeySettings;
     passwordOptions: MaybeNull<GeneratePasswordConfig>;
     showUsernameField?: boolean;
-    theme?: ThemeTypes;
+    theme?: PassThemeOption;
 };
 
 export const EXCLUDED_SETTINGS_KEYS = ['createdItemsCount', 'lockMode', 'extraPassword'] as const;
@@ -62,6 +62,7 @@ export const getInitialSettings = (): ProxiedSettings => ({
     passkeys: { get: true, create: true },
     passwordOptions: null,
     showUsernameField: false,
+    theme: PassThemeOptions.OS,
 });
 
 const getInitialState = (): SettingsState => ({
