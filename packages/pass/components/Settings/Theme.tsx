@@ -4,14 +4,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Option, SelectTwo } from '@proton/components/components';
+import { PassThemeOptions } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectTheme } from '@proton/pass/store/selectors';
-import { type ThemeTypes, getPassThemes } from '@proton/shared/lib/themes/themes';
+import { getPassThemes } from '@proton/shared/lib/themes/themes';
 
 import { SettingsPanel } from './SettingsPanel';
 
-const themes = getPassThemes();
+const themes = [
+    ...getPassThemes(),
+    {
+        identifier: PassThemeOptions.OS,
+        label: c('Option').t`System theme`,
+    },
+];
 
 export const Theme: FC = () => {
     const dispatch = useDispatch();
@@ -19,7 +26,7 @@ export const Theme: FC = () => {
 
     return (
         <SettingsPanel title={c('Label').t`Theme`}>
-            <SelectTwo<ThemeTypes>
+            <SelectTwo<PassThemeOptions>
                 placeholder={c('Label').t`Select preferred theme`}
                 onValue={(theme) => dispatch(settingsEditIntent('theme', { theme }, true))}
                 value={theme}

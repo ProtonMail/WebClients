@@ -3,6 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
@@ -18,7 +19,6 @@ import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { TelemetryEvent, TelemetryEventName, TelemetryPlatform } from '@proton/pass/types/data/telemetry';
 import type { ParsedUrl } from '@proton/pass/utils/url/types';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
-import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
 
 import { AppStateProvider } from './AppStateProvider';
@@ -52,8 +52,8 @@ export type PassCoreContextValue = {
     getDomainImage: (domain: string, signal: AbortSignal) => Promise<Maybe<string>>;
     /** Resolves the initial theme. This is required in order to resolve
      * the proxied theme setting stored locally before state hydration */
-    getTheme?: () => MaybePromise<Maybe<ThemeTypes>>;
-    setTheme?: (theme: ThemeTypes) => void;
+    getTheme?: () => MaybePromise<Maybe<PassThemeOption>>;
+    setTheme?: (theme: PassThemeOption) => void;
     /** Resolves the locally stored app logs */
     getLogs: () => Promise<string[]>;
     /** Returns the URL that should be opened when prompting for rating */
@@ -103,7 +103,7 @@ const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
  * dependent on the platform. */
 export const PassCoreProvider: FC<PropsWithChildren<PassCoreProviderProps>> = ({ children, ...core }) => {
     const [appLocale, setAppLocale] = useState(DEFAULT_LOCALE);
-    const [theme, setTheme] = useState<ThemeTypes>(PASS_DEFAULT_THEME);
+    const [theme, setTheme] = useState<PassThemeOption>(PASS_DEFAULT_THEME);
     const context = useMemo<PassCoreContextValue>(() => ({ ...core, setTheme, locale: appLocale }), [appLocale]);
 
     useEffect(() => {

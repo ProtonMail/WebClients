@@ -11,6 +11,7 @@ import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { settings } from 'proton-pass-web/lib/settings';
+import { getSettingsStorageKey } from 'proton-pass-web/lib/storage';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
 import {
@@ -113,13 +114,11 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
         },
 
         getTheme: async () => {
-            const theme = (await settings.resolve()).theme;
+            // Handle case when authService did not init yet so localID isn't set and settings.resolve() can't be used
+            const settings = localStorage.getItem(getSettingsStorageKey(getDefaultLocalID()));
+            const theme = settings ? JSON.parse(settings).theme : PASS_DEFAULT_THEME;
 
-            // Handle case when authService did not init yet so localID and settings can't be resolved
-            const fallbackSettings = localStorage.getItem(`settings::${getDefaultLocalID()}`);
-            const fallbackTheme = fallbackSettings ? JSON.parse(fallbackSettings).theme : PASS_DEFAULT_THEME;
-
-            return theme ?? fallbackTheme;
+            return theme;
         },
 
         getLogs: logStore.read,
