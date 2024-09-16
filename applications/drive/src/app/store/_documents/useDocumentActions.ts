@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+import { getCurrentTab, getNewWindow } from '@proton/shared/lib/helpers/window';
+
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
-import { getCurrentTab, getNewWindow } from '../../utils/window';
 import { useShare } from '../_shares';
 import { useAbortSignal } from '../_views/utils';
 import { useVolumesState } from '../_volumes';
