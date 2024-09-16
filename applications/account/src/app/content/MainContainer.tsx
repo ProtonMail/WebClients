@@ -19,6 +19,7 @@ import {
     useActiveBreakpoint,
     useAddresses,
     useDeviceRecovery,
+    useDrivePlan,
     useFeatures,
     useGroupMemberships,
     useIsDataRecoveryAvailable,
@@ -163,6 +164,8 @@ const MainContainer = () => {
     const organizationTheme = useOrganizationTheme();
     const [memberships, loadingGroupMembership] = useGroupMemberships();
 
+    const { isB2B: isB2BDrive } = useDrivePlan();
+
     const routes = getRoutes({
         app,
         user,
@@ -181,6 +184,7 @@ const MainContainer = () => {
         canDisplayB2BLogsVPN,
         memberships,
         isUserGroupsMembershipFeatureEnabled,
+        isB2BDrive,
     });
 
     useEffect(() => {

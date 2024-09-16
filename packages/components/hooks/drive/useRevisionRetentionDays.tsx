@@ -11,12 +11,12 @@ import type {
     UserSettingsResponse,
 } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import type { useConfirmActionModal } from '../components/confirmActionModal';
-import { getRetentionLabel } from '../containers/drive/settings/retentionLabels';
-import useApi from './useApi';
-import useNotifications from './useNotifications';
+import type { useConfirmActionModal } from '../../components/confirmActionModal';
+import { getRetentionLabel } from '../../containers/drive/settings/retentionLabels';
+import useApi from '../useApi';
+import useNotifications from '../useNotifications';
 
-const useRevisionRetentionDays = (
+export const useRevisionRetentionDays = (
     hasPaidDrive: boolean,
     showConfirmActionModal: ReturnType<typeof useConfirmActionModal>['1']
 ) => {
@@ -112,5 +112,3 @@ const useRevisionRetentionDays = (
         handleSubmit,
     };
 };
-
-export default useRevisionRetentionDays;
