@@ -1,8 +1,9 @@
 import { useRef } from 'react';
 
+import { FeatureCode } from '@proton/components/containers/features';
 import useOfferFlags from '@proton/components/containers/offers/hooks/useOfferFlags';
-import useVisitedOffer from '@proton/components/containers/offers/hooks/useVisitedOffer';
 import type { Offer, OfferConfig } from '@proton/components/containers/offers/interface';
+import useFeature from '@proton/components/hooks/useFeature';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
@@ -28,11 +29,20 @@ const TopNabarOfferSubscriptionReminder = ({
     offer,
     modalProps,
 }: Props) => {
-    useVisitedOffer(offerConfig);
     const buttonRef = useRef(null);
-    const { handleVisit } = useOfferFlags(offerConfig);
+    const { handleVisit, isVisited } = useOfferFlags(offerConfig);
+    const { update } = useFeature(FeatureCode.SubscriptionLastReminderDate);
     const { onClose: handleCloseModal, open } = modalProps;
     const show = useSpotlightShow(!!open, 3000);
+
+    // We want to store the date of the last reminder to remind again in 6 months
+    const handleReminderVisite = () => {
+        if (!isVisited) {
+            return;
+        }
+
+        void update(Math.floor(Date.now() / 1000));
+    };
 
     return (
         <Spotlight
@@ -46,8 +56,9 @@ const TopNabarOfferSubscriptionReminder = ({
                     onChangeCurrency={onChangeCurrency}
                     offer={offer}
                     onCloseModal={() => {
-                        handleVisit();
+                        void handleVisit();
                         handleCloseModal?.();
+                        handleReminderVisite();
                     }}
                     onSelectDeal={noop}
                 />
