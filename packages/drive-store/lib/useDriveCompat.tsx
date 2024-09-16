@@ -2,11 +2,11 @@ import type { ReactNode } from 'react';
 
 import type { PublicKeyReference } from '@proton/crypto/lib';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/constants';
+import { getNewWindow } from '@proton/shared/lib/helpers/window';
 
 import { useLinkSharingModal } from '../components/modals/ShareLinkModal/ShareLinkModal';
 import { useDriveCrypto } from '../store/_crypto';
 import { useDriveDocsFeatureFlag, useOpenDocument } from '../store/_documents';
-import { getNewWindow } from '../utils/window';
 import type { DocumentKeys, DocumentNodeMeta } from './_documents';
 import { useDocuments } from './_documents';
 import type { DecryptedNode } from './_nodes/interface';
