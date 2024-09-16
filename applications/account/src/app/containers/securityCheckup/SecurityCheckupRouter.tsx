@@ -34,6 +34,7 @@ const SecurityCheckupRouter = () => {
 
         return () => {
             dispatch(securityCheckupSlice.actions.clearSession());
+            dispatch(securityCheckupSlice.actions.clearSource());
         };
     }, [user.ID]);
 
