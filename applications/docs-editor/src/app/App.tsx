@@ -35,6 +35,7 @@ import type { DocumentInteractionMode } from './DocumentInteractionMode'
 import debounce from '@proton/utils/debounce'
 import { loadLocales } from '@proton/account/bootstrap'
 import Icons from '@proton/icons/Icons'
+
 type Props = {
   nonInteractiveMode: boolean
 }
@@ -62,6 +63,13 @@ export function App({ nonInteractiveMode = false }: Props) {
   const [editorHidden, setEditorHidden] = useState(true)
   const [editingLocked, setEditingLocked] = useState(true)
   const [interactionMode, setInteractionMode] = useState<DocumentInteractionMode>('edit')
+
+  const [isSuggestionsFeatureEnabled, setIsSuggestionsFeatureEnabled] = useState(false)
+  useEffect(() => {
+    if (interactionMode === 'suggest' && !isSuggestionsFeatureEnabled) {
+      setInteractionMode('view')
+    }
+  }, [interactionMode, isSuggestionsFeatureEnabled])
 
   const [showTreeView, setShowTreeView] = useState(false)
 
@@ -235,6 +243,10 @@ export function App({ nonInteractiveMode = false }: Props) {
         async toggleDebugTreeView() {
           setShowTreeView((show) => !show)
         },
+
+        async handleIsSuggestionsFeatureEnabled(enabled) {
+          setIsSuggestionsFeatureEnabled(enabled)
+        },
       }
 
       bridge.setClientRequestHandler(requestHandler)
@@ -297,13 +309,18 @@ export function App({ nonInteractiveMode = false }: Props) {
 
   const onInteractionModeChange = useCallback(
     (mode: DocumentInteractionMode) => {
-      if (mode === 'edit' && !application.getRole().canEdit()) {
+      const canSwitchToSuggestionMode = isSuggestionsFeatureEnabled
+      if (mode === 'suggest' && !canSwitchToSuggestionMode) {
+        return
+      }
+
+      if ((mode === 'edit' || mode === 'suggest') && !application.getRole().canEdit()) {
         return
       }
 
       setInteractionMode(mode)
     },
-    [setInteractionMode, application],
+    [isSuggestionsFeatureEnabled, application],
   )
 
   useEffect(() => {
@@ -384,7 +401,11 @@ export function App({ nonInteractiveMode = false }: Props) {
       }}
     >
       <ThemeStyles />
-      <ApplicationProvider application={application}>
+      <ApplicationProvider
+        application={application}
+        isSuggestionMode={interactionMode === 'suggest'}
+        isSuggestionsFeatureEnabled={isSuggestionsFeatureEnabled}
+      >
         <Editor
           clientInvoker={bridge.getClientInvoker()}
           docMap={docMap}
@@ -397,6 +418,7 @@ export function App({ nonInteractiveMode = false }: Props) {
           nonInteractiveMode={nonInteractiveMode}
           onEditorError={onEditorError}
           onEditorLoadResult={onEditorLoadResult}
+          interactionMode={interactionMode}
           onInteractionModeChange={onInteractionModeChange}
           setEditorRef={setEditorRef}
           username={initialConfig.username}

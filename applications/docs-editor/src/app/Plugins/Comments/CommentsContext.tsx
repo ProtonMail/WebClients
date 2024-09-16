@@ -1,17 +1,15 @@
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { createContext, useContext } from 'react'
-import type { NodeKey } from 'lexical'
+import type { LexicalNode, NodeKey } from 'lexical'
 import type { UserState } from '@lexical/yjs'
-import type { CommentThreadMarkNode } from './CommentThreadMarkNode'
 
 type CommentsContextValue = {
   username: string
   controller: EditorRequiresClientMethods
   removeMarkNode: (id: string) => void
   activeIDs: string[]
-  setActiveIDs: (ids: string[]) => void
   markNodeMap: Map<string, Set<NodeKey>>
-  getMarkNodes: (id: string) => CommentThreadMarkNode[] | null
+  getMarkNodes: (id: string) => LexicalNode[] | null
   threadToFocus: string | null
   setThreadToFocus: (id: string | null) => void
   awarenessStates: UserState[]

@@ -116,7 +116,7 @@ export function CommentInputBox({ editor, cancelAddComment }: { editor: LexicalE
     (content: string) => {
       if (selectionRef.current) {
         controller
-          .createThread(content)
+          .createCommentThread(content)
           .then((thread) => {
             if (thread) {
               setThreadToFocus(thread.id)

@@ -9,6 +9,7 @@ import { TableCellNode, TableNode, TableRowNode } from '@lexical/table'
 import { ImageNode } from './Plugins/Image/ImageNode'
 import { CommentThreadMarkNode } from './Plugins/Comments/CommentThreadMarkNode'
 import { CustomListNode } from './Plugins/CustomList/CustomListNode'
+import { ProtonNode } from './Plugins/Suggestions/ProtonNode'
 
 const CommonNodes = [
   AutoLinkNode,
@@ -34,8 +35,7 @@ const CommonNodes = [
   TableCellNode,
   TableNode,
   TableRowNode,
+  ProtonNode,
 ]
 
 export const AllNodes = CommonNodes
-
-export const BlockEditorNodes = CommonNodes
