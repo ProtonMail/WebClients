@@ -92,10 +92,10 @@ export const createAliasesFromPending = async ({
 }: AliasCreateFromPendingDTO): Promise<ItemRevisionContentsResponse[]> => {
     const encryptedItems: CreatePendingAliasRequest[] = await Promise.all(
         pendingAliases.map(async (alias) => {
-            const { pendingAliasID: PendingAliasID, aliasEmail: name, aliasNote: note = '' } = alias;
+            const { pendingAliasID: PendingAliasID, aliasEmail: name } = alias;
 
             const item = itemBuilder('alias');
-            item.set('metadata', (metadata) => metadata.merge({ name, note }));
+            item.set('metadata', (metadata) => metadata.merge({ name }));
             const content = serializeItemContent(item.data);
             const aliasItem = await PassCrypto.createItem({ shareId, content });
 
