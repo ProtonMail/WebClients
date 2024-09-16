@@ -7,7 +7,6 @@ import {
     NextMessageOnMoveToggle,
     ShowMovedToggle,
     SwipeActionSelect,
-    ViewModeToggle,
     useApi,
     useEventManager,
     useMailSettings,
@@ -18,17 +17,15 @@ import useLoading from '@proton/hooks/useLoading';
 import {
     updateAutoDelete,
     updateNextMessageOnMove,
-    updateStickyLabels,
     updateSwipeLeft,
     updateSwipeRight,
-    updateViewMode,
 } from '@proton/shared/lib/api/mailSettings';
 import type {
     AUTO_DELETE_SPAM_AND_TRASH_DAYS,
     NEXT_MESSAGE_ON_MOVE,
     SWIPE_ACTION,
 } from '@proton/shared/lib/mail/mailSettings';
-import { DEFAULT_MAILSETTINGS, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import MobileSection from '../components/MobileSection';
 import MobileSectionLabel from '../components/MobileSectionLabel';
@@ -47,36 +44,19 @@ const EmailSettings = ({
     const { call } = useEventManager();
 
     const [loadingAutoDeleteSpamAndTrashDays, withLoadingAutoDeleteSpamAndTrashDays] = useLoading();
-    const [loadingViewMode, withLoadingViewMode] = useLoading();
     const [loadingSwipeLeft, withLoadingSwipeLeft] = useLoading();
     const [loadingSwipeRight, withLoadingSwipeRight] = useLoading();
     const [loadingNextMessageOnMoveToggle, withLoadingNextMessageOnMoveToggle] = useLoading();
 
     const [user, loadingUser] = useUser();
     const [mailSettings = DEFAULT_MAILSETTINGS, loadingMailSettings] = useMailSettings();
-    const {
-        AutoDeleteSpamAndTrashDays,
-        AlmostAllMail,
-        DelaySendSeconds,
-        SwipeLeft,
-        SwipeRight,
-        ViewMode,
-        NextMessageOnMove,
-    } = mailSettings;
+    const { AutoDeleteSpamAndTrashDays, AlmostAllMail, DelaySendSeconds, SwipeLeft, SwipeRight, NextMessageOnMove } =
+        mailSettings;
     const loading = loadingMailSettings || loadingUser;
 
     const { createNotification } = useNotifications();
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
-
-    const handleChangeViewMode = async (mode: VIEW_MODE) => {
-        if (mode === VIEW_MODE.SINGLE) {
-            await api(updateStickyLabels(STICKY_LABELS.DISABLED));
-        }
-        await api(updateViewMode(mode));
-        await call();
-        notifyPreferenceSaved();
-    };
 
     const handleChangeSwipeLeft = async (swipeAction: SWIPE_ACTION) => {
         await api(updateSwipeLeft(swipeAction));
@@ -164,19 +144,6 @@ const EmailSettings = ({
                         {c('Label').t`Keep emails in Sent/Drafts`}
                     </MobileSectionLabel>
                     <ShowMovedToggle id="showMovedToggle" />
-                </MobileSectionRow>
-                <MobileSectionRow>
-                    <MobileSectionLabel
-                        htmlFor="viewMode"
-                        description={c('Info')
-                            .t`Group emails in the same conversation together in your Inbox or display them separately.`}
-                    >{c('Label').t`Group conversations`}</MobileSectionLabel>
-                    <ViewModeToggle
-                        id="viewMode"
-                        viewMode={ViewMode}
-                        loading={loadingViewMode}
-                        onToggle={(value) => withLoadingViewMode(handleChangeViewMode(value))}
-                    />
                 </MobileSectionRow>
                 <MobileSectionRow>
                     <MobileSectionLabel htmlFor="almostAllMail">{c('Label')
