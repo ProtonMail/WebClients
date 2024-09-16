@@ -61,12 +61,32 @@ export class ClientInvoker implements EditorRequiresClientMethods {
     return this.invokeClientMethod('getAllThreads', [])
   }
 
-  async createThread(commentContent: string): Promise<CommentThreadInterface | undefined> {
-    return this.invokeClientMethod('createThread', [commentContent])
+  async createCommentThread(
+    commentContent: string,
+    markID?: string,
+    createMarkNode?: boolean,
+  ): Promise<CommentThreadInterface | undefined> {
+    return this.invokeClientMethod('createCommentThread', [commentContent, markID, createMarkNode])
+  }
+
+  async createSuggestionThread(suggestionID: string): Promise<CommentThreadInterface | undefined> {
+    return this.invokeClientMethod('createSuggestionThread', [suggestionID])
   }
 
   async resolveThread(threadId: string): Promise<boolean> {
     return this.invokeClientMethod('resolveThread', [threadId])
+  }
+
+  async acceptSuggestion(threadId: string): Promise<boolean> {
+    return this.invokeClientMethod('acceptSuggestion', [threadId])
+  }
+
+  async rejectSuggestion(threadId: string): Promise<boolean> {
+    return this.invokeClientMethod('rejectSuggestion', [threadId])
+  }
+
+  async reopenSuggestion(threadId: string): Promise<boolean> {
+    return this.invokeClientMethod('reopenSuggestion', [threadId])
   }
 
   async deleteThread(id: string): Promise<boolean> {

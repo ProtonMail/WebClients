@@ -1,6 +1,7 @@
 import type { CommentInterface } from './CommentInterface'
 import type { CommentThreadInterface } from './CommentThreadInterface'
 import type { InternalEventBusInterface } from './Events/InternalEventBusInterface'
+import type { SuggestionThreadStateAction } from './SuggestionThreadStateAction'
 
 export interface CommentServiceInterface {
   userDisplayName: string
@@ -9,7 +10,13 @@ export interface CommentServiceInterface {
 
   getAllThreads(): CommentThreadInterface[]
 
-  createThread(commentContent: string): Promise<CommentThreadInterface | undefined>
+  createCommentThread(
+    commentContent: string,
+    markID?: string,
+    createMarkNode?: boolean,
+  ): Promise<CommentThreadInterface | undefined>
+
+  createSuggestionThread(suggestionID: string): Promise<CommentThreadInterface | undefined>
 
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>
 
@@ -20,6 +27,8 @@ export interface CommentServiceInterface {
   deleteThread(id: string): Promise<boolean>
 
   resolveThread(threadId: string): Promise<boolean>
+
+  changeSuggestionThreadState(threadId: string, action: SuggestionThreadStateAction): Promise<boolean>
 
   unresolveThread(threadId: string): Promise<boolean>
 

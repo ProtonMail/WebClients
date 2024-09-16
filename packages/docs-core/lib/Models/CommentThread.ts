@@ -6,6 +6,7 @@ import type {
   CommentInterface,
 } from '@proton/docs-shared'
 import { ServerTime } from '@proton/docs-shared'
+import type { CommentThreadType } from '@proton/docs-shared'
 
 export class CommentThread implements CommentThreadInterface {
   constructor(
@@ -16,6 +17,7 @@ export class CommentThread implements CommentThreadInterface {
     public comments: CommentInterface[],
     public isPlaceholder: boolean,
     public state: CommentThreadState,
+    public type: CommentThreadType,
   ) {}
 
   public asPayload(): CommentThreadPayload {
@@ -27,6 +29,7 @@ export class CommentThread implements CommentThreadInterface {
       comments: this.comments.map((comment) => comment.asPayload()),
       isPlaceholder: this.isPlaceholder,
       state: this.state,
+      type: this.type,
     }
   }
 
@@ -39,6 +42,7 @@ export class CommentThread implements CommentThreadInterface {
       payload.comments.map((comment) => Comment.fromPayload(comment)),
       payload.isPlaceholder,
       payload.state,
+      payload.type,
     )
   }
 }
