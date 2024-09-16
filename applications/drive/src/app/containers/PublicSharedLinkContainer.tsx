@@ -6,6 +6,7 @@ import { LocationErrorBoundary } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publicDocsSharing';
 import { isProtonDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
@@ -75,18 +76,15 @@ function PublicShareLinkInitContainer() {
             return;
         }
 
-        // TODO: Handle custom password here
+        const w = handleDocsCustomPassword(customPassword);
 
         openDocumentWindow({
             mode: 'open-url',
             token,
             linkId: link.linkId,
-
-            // Target should be a new window when handling custom password,
-            // as communication will need the original tab to stay open.
-            window: window,
+            window: w.handle,
         });
-    }, [isDocsPublicSharingEnabled, link, error, token]);
+    }, [isDocsPublicSharingEnabled, link, error, token, customPassword]);
 
     // This hook automatically redirects to Docs when opening a document.
     useEffect(() => {
