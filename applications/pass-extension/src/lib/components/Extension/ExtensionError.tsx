@@ -4,8 +4,8 @@ import { RUNTIME_RELOAD_THROTTLE } from 'proton-pass-extension/app/worker/servic
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
-import type { IconName } from '@proton/components/components/icon';
-import { Icon } from '@proton/components/components/icon';
+import type { IconName } from '@proton/components';
+import { Icon } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import browser from '@proton/pass/lib/globals/browser';
