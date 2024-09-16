@@ -17,10 +17,10 @@ const SecurityCheckupRoot = ({
 }) => {
     const api = useApi();
 
-    const { session } = useSecurityCheckup();
+    const { session, source } = useSecurityCheckup();
 
     useEffect(() => {
-        if (!session?.initialCohort || pageLoadOnceRef.current) {
+        if (!session?.initialCohort || !source || pageLoadOnceRef.current) {
             return;
         }
 
@@ -31,9 +31,10 @@ const SecurityCheckupRoot = ({
             event: TelemetryAccountSecurityCheckupEvents.pageLoad,
             dimensions: {
                 initialCohort: session.initialCohort,
+                source,
             },
         });
-    }, [session?.initialCohort]);
+    }, [session?.initialCohort, source]);
 
     return (
         <>

@@ -255,7 +255,11 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
     };
 
     const securityCheckupParams = (() => {
-        return new URLSearchParams({ back: encodeURIComponent(window.location.href) });
+        return new URLSearchParams({
+            back: encodeURIComponent(window.location.href),
+            source: 'user_dropdown',
+            appname: APP_NAME,
+        });
     })();
 
     return (
@@ -380,7 +384,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, dropdownIcon, ...re
                     {!isSentinelUser && isSecurityCheckupAvailable && securityCheckup.actions.length ? (
                         <AppLink
                             toApp={APPS.PROTONACCOUNT}
-                            to={`${SECURITY_CHECKUP_PATHS.ROOT}${securityCheckupParams ? `?${securityCheckupParams.toString()}` : ''}`}
+                            to={`${SECURITY_CHECKUP_PATHS.ROOT}?${securityCheckupParams.toString()}`}
                             className={clsx(
                                 'recommended-actions',
                                 'button button-no-hover',
