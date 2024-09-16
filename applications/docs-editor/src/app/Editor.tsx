@@ -1,5 +1,4 @@
 import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
-import { ContentEditable } from '@lexical/react/LexicalContentEditable'
 import { ListPlugin } from '@lexical/react/LexicalListPlugin'
 import { LinkPlugin } from '@lexical/react/LexicalLinkPlugin'
 import { HorizontalRulePlugin } from '@lexical/react/LexicalHorizontalRulePlugin'
@@ -41,9 +40,13 @@ import { AutoFocusPlugin } from './Plugins/AutoFocusPlugin'
 import type { EditorLoadResult } from './EditorLoadResult'
 import { KeyboardShortcutsPlugin } from './Plugins/KeyboardShortcuts/KeyboardShortcutsPlugin'
 import { PasteLimitPlugin } from './Plugins/PasteLimitPlugin'
+import { SuggestionModePlugin } from './Plugins/Suggestions/SuggestionModePlugin'
 import { CustomOrderedListPlugin } from './Plugins/CustomList/CustomListPlugin'
 import { WordCountPlugin } from './Plugins/WordCount/WordCountPlugin'
 import TreeViewPlugin from './Plugins/TreeView/TreeViewPlugin'
+import { ProtonContentEditable } from './ContentEditable/ProtonContentEditable'
+import { MarkNodesProvider } from './Plugins/MarkNodesContext'
+import clsx from '@proton/utils/clsx'
 
 const TypingBotEnabled = false
 
@@ -60,6 +63,7 @@ type Props = {
   /** Non-interactive mode is used when displaying the editor to show a previous history revision */
   nonInteractiveMode: boolean
   onEditorLoadResult: EditorLoadResult
+  interactionMode: DocumentInteractionMode
   onInteractionModeChange: (mode: DocumentInteractionMode) => void
   setEditorRef: (instance: LexicalEditor | null) => void
   username: string
@@ -79,6 +83,7 @@ export function Editor({
   nonInteractiveMode: nonInteractiveMode,
   onEditorError,
   onEditorLoadResult,
+  interactionMode,
   onInteractionModeChange,
   setEditorRef,
   username,
@@ -110,6 +115,8 @@ export function Editor({
     return getAccentColorForUsername(username)
   }, [username])
 
+  const isSuggestionMode = interactionMode === 'suggest'
+
   return (
     <CollaborationContext.Provider
       value={{
@@ -126,7 +133,11 @@ export function Editor({
       <SafeLexicalComposer initialConfig={BuildInitialEditorConfig({ onError: onEditorError })}>
         <KeyboardShortcutsPlugin />
         {!nonInteractiveMode && (
-          <Toolbar hasEditAccess={hasEditAccess} onInteractionModeChange={onInteractionModeChange} />
+          <Toolbar
+            hasEditAccess={hasEditAccess}
+            interactionMode={interactionMode}
+            onInteractionModeChange={onInteractionModeChange}
+          />
         )}
         <RichTextPlugin
           contentEditable={
@@ -140,8 +151,11 @@ export function Editor({
                 gridTemplateRows: '1fr',
               }}
             >
-              <ContentEditable
-                className="DocumentEditor w-[80%] max-w-[80%] lg:w-[816px] lg:max-w-[816px] print:w-full print:max-w-full"
+              <ProtonContentEditable
+                className={clsx(
+                  'DocumentEditor w-[80%] max-w-[80%] lg:w-[816px] lg:max-w-[816px] print:w-full print:max-w-full',
+                  isSuggestionMode && 'suggestion-mode',
+                )}
                 style={{
                   fontFamily: DefaultFont.value,
                   gridRow: 1,
@@ -149,6 +163,7 @@ export function Editor({
                   // eslint-disable-next-line custom-rules/deprecate-classes
                   justifySelf: 'center',
                 }}
+                isSuggestionMode={isSuggestionMode}
               />
             </div>
           }
@@ -175,7 +190,6 @@ export function Editor({
         />
         <MergeSiblingListsPlugin />
         <CodeHighlightPlugin />
-        <CommentPlugin controller={clientInvoker} username={username} />
         <ImagesPlugin />
         {!nonInteractiveMode && <EditorReadonlyPlugin editingEnabled={!editingLocked} />}
         {!nonInteractiveMode && <PasteLimitPlugin showGenericAlertModal={showGenericAlertModal} />}
@@ -184,6 +198,10 @@ export function Editor({
         <EditorRefPlugin editorRef={setEditorRef} />
         <WordCountPlugin onWordCountChange={(wordCountInfo) => clientInvoker.reportWordCount(wordCountInfo)} />
         {showTreeView && <TreeViewPlugin />}
+        <MarkNodesProvider>
+          <CommentPlugin controller={clientInvoker} username={username} />
+          <SuggestionModePlugin isSuggestionMode={isSuggestionMode} controller={clientInvoker} />
+        </MarkNodesProvider>
       </SafeLexicalComposer>
     </CollaborationContext.Provider>
   )

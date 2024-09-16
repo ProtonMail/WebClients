@@ -14,6 +14,7 @@ import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import { sendErrorMessage } from '../../Utils/errorMessage'
 import { sanitizeUrl } from '../../Utils/sanitizeUrl'
 import { KEYBOARD_SHORTCUT_COMMAND } from '../KeyboardShortcuts/Command'
+import { useApplication } from '../../ApplicationProvider'
 
 type Props = {
   linkNode: LinkNode
@@ -24,6 +25,8 @@ type Props = {
 
 export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }: Props) {
   const isEditorEditable = useLexicalEditable()
+
+  const { isSuggestionMode } = useApplication()
 
   const [position, setPosition] = useState<{
     top: number
@@ -144,7 +147,7 @@ export function LinkInfoViewer({ editor, linkNode, setIsEditingLink, openLink }:
             <Icon name="link" />
           </Button>
         </Tooltip>
-        {!isAutoLink && isEditorEditable && (
+        {!isAutoLink && isEditorEditable && !isSuggestionMode && (
           <>
             <Tooltip title={c('Action').t`Edit link`}>
               <Button

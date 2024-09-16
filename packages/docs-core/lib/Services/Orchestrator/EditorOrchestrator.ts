@@ -103,12 +103,32 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.comments.getAllThreads()
   }
 
-  createThread(commentContent: string): Promise<CommentThreadInterface | undefined> {
-    return this.comments.createThread(commentContent)
+  createCommentThread(
+    commentContent: string,
+    markID?: string,
+    createMarkNode?: boolean,
+  ): Promise<CommentThreadInterface | undefined> {
+    return this.comments.createCommentThread(commentContent, markID, createMarkNode)
+  }
+
+  createSuggestionThread(suggestionID: string): Promise<CommentThreadInterface | undefined> {
+    return this.comments.createSuggestionThread(suggestionID)
   }
 
   resolveThread(threadId: string): Promise<boolean> {
     return this.comments.resolveThread(threadId)
+  }
+
+  acceptSuggestion(threadId: string): Promise<boolean> {
+    return this.comments.changeSuggestionThreadState(threadId, 'accept')
+  }
+
+  rejectSuggestion(threadId: string): Promise<boolean> {
+    return this.comments.changeSuggestionThreadState(threadId, 'reject')
+  }
+
+  reopenSuggestion(threadId: string): Promise<boolean> {
+    return this.comments.changeSuggestionThreadState(threadId, 'reopen')
   }
 
   deleteThread(id: string): Promise<boolean> {

@@ -24,13 +24,21 @@ export interface EditorOrchestratorInterface {
   createComment(content: string, threadID: string): Promise<CommentInterface | undefined>
   beganTypingInThread(threadID: string): void
   stoppedTypingInThread(threadID: string): void
-  unresolveThread(threadId: string): Promise<boolean>
   editComment(threadID: string, commentID: string, content: string): Promise<boolean>
   deleteComment(threadID: string, commentID: string): Promise<boolean>
 
   getAllThreads(): CommentThreadInterface[]
-  createThread(commentContent: string): Promise<CommentThreadInterface | undefined>
+  createCommentThread(
+    commentContent: string,
+    markID?: string,
+    createMarkNode?: boolean,
+  ): Promise<CommentThreadInterface | undefined>
+  createSuggestionThread(suggestionID: string): Promise<CommentThreadInterface | undefined>
   resolveThread(threadId: string): Promise<boolean>
+  unresolveThread(threadId: string): Promise<boolean>
+  acceptSuggestion(threadId: string): Promise<boolean>
+  rejectSuggestion(threadId: string): Promise<boolean>
+  reopenSuggestion(threadId: string): Promise<boolean>
   deleteThread(id: string): Promise<boolean>
   markThreadAsRead(id: string): Promise<void>
 

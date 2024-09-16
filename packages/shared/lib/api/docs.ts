@@ -61,10 +61,12 @@ type CommonCommentData = {
     AuthorEmail: string;
 };
 
+type CommentThreadType = 1 | 2;
+
 export const createThreadInDocument = (
     volumeId: string,
     linkId: string,
-    data: { Mark: string; Comment: CommonCommentData }
+    data: { Mark: string; Comment: CommonCommentData; Type: CommentThreadType }
 ) => ({
     method: 'post',
     url: `docs/volumes/${volumeId}/documents/${linkId}/threads`,
@@ -84,6 +86,16 @@ export const resolveThreadInDocument = (volumeId: string, linkId: string, thread
 export const unresolveThreadInDocument = (volumeId: string, linkId: string, threadId: string) => ({
     method: 'put',
     url: `docs/volumes/${volumeId}/documents/${linkId}/threads/${threadId}/unresolve`,
+});
+
+export const changeSuggestionThreadState = (
+    volumeId: string,
+    linkId: string,
+    threadId: string,
+    action: 'accept' | 'reject' | 'reopen'
+) => ({
+    method: 'put',
+    url: `docs/volumes/${volumeId}/documents/${linkId}/threads/${threadId}/suggestion/${action}`,
 });
 
 export const addCommentToThreadInDocument = (

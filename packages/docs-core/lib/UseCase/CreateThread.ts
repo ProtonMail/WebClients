@@ -10,6 +10,7 @@ import type { DecryptComment } from './DecryptComment'
 import type { LocalCommentsState } from '../Services/Comments/LocalCommentsState'
 import type { DocsApi } from '../Api/DocsApi'
 import metrics from '@proton/metrics'
+import type { CommentThreadType } from '@proton/docs-shared'
 
 /**
  * Creates a new comment thread with the API, supplying and encrypting an initial comment.
@@ -27,8 +28,11 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
     lookup: NodeMeta
     keys: DocumentKeys
     commentsState: LocalCommentsState
+    type: CommentThreadType
+    markID?: string
+    createMarkNode?: boolean
   }): Promise<Result<CommentThreadInterface>> {
-    const markID = GenerateUUID()
+    const markID = dto.markID ?? GenerateUUID()
 
     const comment = new Comment(
       GenerateUUID(),
@@ -49,26 +53,33 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       [comment],
       true,
       CommentThreadState.Active,
+      dto.type,
     )
 
     dto.commentsState.addThread(localThread)
 
-    this.eventBus.publish<CommentMarkNodeChangeData>({
-      type: CommentsEvent.CreateMarkNode,
-      payload: {
-        markID,
-      },
-    })
+    const shouldCreateMark = dto.createMarkNode ?? true
 
-    const onFail = () => {
-      dto.commentsState.deleteThread(localThread.id)
-
+    if (shouldCreateMark) {
       this.eventBus.publish<CommentMarkNodeChangeData>({
-        type: CommentsEvent.RemoveMarkNode,
+        type: CommentsEvent.CreateMarkNode,
         payload: {
           markID,
         },
       })
+    }
+
+    const onFail = () => {
+      dto.commentsState.deleteThread(localThread.id)
+
+      if (shouldCreateMark) {
+        this.eventBus.publish<CommentMarkNodeChangeData>({
+          type: CommentsEvent.RemoveMarkNode,
+          payload: {
+            markID,
+          },
+        })
+      }
     }
 
     const commentEncryptionResult = await this.encryptComment.execute(dto.text, markID, dto.keys)
@@ -85,6 +96,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       markId: markID,
       encryptedMainCommentContent: encryptedCommentContent,
       authorEmail: dto.keys.userOwnAddress,
+      type: dto.type,
     })
 
     if (result.isFailed()) {
@@ -114,6 +126,7 @@ export class CreateThread implements UseCaseInterface<CommentThreadInterface> {
       comments.map((result) => result.getValue()),
       false,
       response.CommentThread.State,
+      response.CommentThread.Type,
     )
 
     dto.commentsState.replacePlaceholderThread(localThread.id, thread)
