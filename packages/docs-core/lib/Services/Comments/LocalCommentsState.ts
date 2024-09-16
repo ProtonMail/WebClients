@@ -68,6 +68,16 @@ export class LocalCommentsState {
     return thread
   }
 
+  changeThreadState(threadId: string, state: CommentThreadState) {
+    const thread = this.findThreadById(threadId)
+    if (!thread) {
+      return
+    }
+    thread.state = state
+    this.sortThreadsAndNotify()
+    return thread
+  }
+
   addComment(comment: CommentInterface, threadID: string, markUnread = false): void {
     const thread = this.findThreadById(threadID)
     if (!thread) {

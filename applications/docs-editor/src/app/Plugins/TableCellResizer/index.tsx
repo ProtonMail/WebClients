@@ -19,6 +19,7 @@ import * as React from 'react'
 import type { MouseEventHandler, ReactPortal } from 'react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
+import { useApplication } from '../../ApplicationProvider'
 
 type MousePosition = {
   x: number
@@ -371,8 +372,10 @@ export default function TableCellResizerPlugin(): null | ReactPortal {
   const [editor] = useLexicalComposerContext()
   const isEditable = useLexicalEditable()
 
+  const { isSuggestionMode } = useApplication()
+
   return useMemo(
-    () => (isEditable ? createPortal(<TableCellResizer editor={editor} />, document.body) : null),
-    [editor, isEditable],
+    () => (isEditable && !isSuggestionMode ? createPortal(<TableCellResizer editor={editor} />, document.body) : null),
+    [editor, isEditable, isSuggestionMode],
   )
 }

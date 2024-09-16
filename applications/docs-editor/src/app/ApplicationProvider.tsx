@@ -1,7 +1,11 @@
 import { createContext, useContext } from 'react'
 import type { Application } from './Application'
 
-const ApplicationContext = createContext<Application | null>(null)
+const ApplicationContext = createContext<{
+  application: Application
+  isSuggestionMode: boolean
+  isSuggestionsFeatureEnabled: boolean
+} | null>(null)
 
 export function useApplication() {
   const value = useContext(ApplicationContext)
@@ -14,9 +18,19 @@ export function useApplication() {
 export function ApplicationProvider({
   children,
   application,
+  isSuggestionMode,
+  isSuggestionsFeatureEnabled,
 }: {
   children: React.ReactNode
   application: Application
+  isSuggestionMode: boolean
+  isSuggestionsFeatureEnabled: boolean
 }) {
-  return <ApplicationContext.Provider value={application}>{children}</ApplicationContext.Provider>
+  return (
+    <ApplicationContext.Provider
+      value={{ application, isSuggestionMode, isSuggestionsFeatureEnabled: isSuggestionsFeatureEnabled }}
+    >
+      {children}
+    </ApplicationContext.Provider>
+  )
 }

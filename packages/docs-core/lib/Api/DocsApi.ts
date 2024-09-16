@@ -1,8 +1,9 @@
 import type { Commit, SquashCommit } from '@proton/docs-proto'
-import type { DocumentMetaInterface } from '@proton/docs-shared'
+import type { DocumentMetaInterface, SuggestionThreadStateAction } from '@proton/docs-shared'
 import type { NodeMeta } from '@proton/drive-store'
 import {
   addCommentToThreadInDocument,
+  changeSuggestionThreadState,
   createDocument,
   createRealtimeValetToken,
   createThreadInDocument,
@@ -39,6 +40,7 @@ import type { ImageProxyParams } from './Types/ImageProxyParams'
 import type { ResolveThreadResponse } from './Types/ResolveThreadResponse'
 import type { SeedInitialCommitApiResponse } from './Types/SeedInitialCommitApiResponse'
 import type { UnresolveThreadResponse } from './Types/UnresolveThreadResponse'
+import type { CommentThreadType } from '@proton/docs-shared'
 
 export class DocsApi {
   constructor(
@@ -207,12 +209,13 @@ export class DocsApi {
     markId: string
     encryptedMainCommentContent: string
     authorEmail: string
+    type: CommentThreadType
   }): Promise<Result<CreateThreadResponse>> {
     if (!this.protonApi) {
       throw new Error('Proton API not set')
     }
 
-    const { volumeId, linkId, markId, encryptedMainCommentContent, authorEmail } = dto
+    const { volumeId, linkId, markId, encryptedMainCommentContent, authorEmail, type } = dto
 
     try {
       this.inflight++
@@ -220,6 +223,7 @@ export class DocsApi {
         createThreadInDocument(volumeId, linkId, {
           Mark: markId,
           Comment: { Content: encryptedMainCommentContent, AuthorEmail: authorEmail },
+          Type: type,
         }),
       )
       return Result.ok(response)
@@ -368,6 +372,27 @@ export class DocsApi {
     try {
       this.inflight++
       const response = await this.protonApi(unresolveThreadInDocument(volumeId, linkId, threadId))
+      return Result.ok(response)
+    } catch (error) {
+      return Result.fail(getErrorString(error) || 'Unknown error')
+    } finally {
+      this.inflight--
+    }
+  }
+
+  async changeSuggestionThreadState(
+    volumeId: string,
+    linkId: string,
+    threadId: string,
+    action: SuggestionThreadStateAction,
+  ): Promise<Result<UnresolveThreadResponse>> {
+    if (!this.protonApi) {
+      throw new Error('Proton API not set')
+    }
+
+    try {
+      this.inflight++
+      const response = await this.protonApi(changeSuggestionThreadState(volumeId, linkId, threadId, action))
       return Result.ok(response)
     } catch (error) {
       return Result.fail(getErrorString(error) || 'Unknown error')

@@ -86,6 +86,8 @@ import { ShortcutLabelContainer } from '../Plugins/KeyboardShortcuts/ShortcutLab
 import { ShortcutLabelText } from '../Plugins/KeyboardShortcuts/ShortcutLabelText'
 import './Toolbar.scss'
 import ToolbarTooltip from './ToolbarTooltip'
+import SpeechBubblePenIcon from '../Icons/SpeechBubblePenIcon'
+import { useApplication } from '../ApplicationProvider'
 
 type BlockType = keyof typeof blockTypeToBlockName
 
@@ -97,14 +99,18 @@ const stepFontSize = (currentFontSize: string, step: number): string => {
 }
 
 export default function DocumentEditorToolbar({
+  interactionMode,
   onInteractionModeChange,
   hasEditAccess,
 }: {
+  interactionMode: DocumentInteractionMode
   onInteractionModeChange: (mode: DocumentInteractionMode) => void
   hasEditAccess: boolean
 }) {
   const [editor] = useLexicalComposerContext()
   const [activeEditor, setActiveEditor] = useState(editor)
+
+  const { isSuggestionsFeatureEnabled } = useApplication()
 
   const isEditable = useLexicalEditable()
 
@@ -211,7 +217,7 @@ export default function DocumentEditorToolbar({
     (type: CustomListStyleType, marker?: CustomListMarker) => {
       editor.dispatchCommand(INSERT_CUSTOM_ORDERED_LIST_COMMAND, { type, marker })
     },
-    [editor, focusEditor, formatParagraph, listType],
+    [editor],
   )
 
   const formatCheckList = useCallback(() => {
@@ -230,7 +236,7 @@ export default function DocumentEditorToolbar({
     } else {
       formatParagraph()
     }
-  }, [editor, focusEditor, formatParagraph, listType])
+  }, [editor, focusEditor, formatParagraph, listStyleType, listType])
 
   const formatQuote = useCallback(() => {
     if (!isQuote) {
@@ -707,6 +713,8 @@ export default function DocumentEditorToolbar({
     },
   }
 
+  const isSuggestionMode = interactionMode === 'suggest'
+
   return (
     <div
       className="bg-norm z-1 flex flex-nowrap items-center gap-1.5 print:hidden"
@@ -757,7 +765,7 @@ export default function DocumentEditorToolbar({
               {blockTypeToBlockName[blockType]}
             </span>
           }
-          disabled={!isEditable}
+          disabled={!isEditable || isSuggestionMode}
           contentProps={DropdownContentProps}
           data-testid="headings-options"
         >
@@ -787,7 +795,7 @@ export default function DocumentEditorToolbar({
               {fontFamilyLabel}
             </span>
           }
-          disabled={!isEditable}
+          disabled={!isEditable || isSuggestionMode}
           contentProps={DropdownContentProps}
           data-testid="font-family"
         >
@@ -829,7 +837,7 @@ export default function DocumentEditorToolbar({
             color="norm"
             className="px-2 text-left text-sm"
             content={fontSize}
-            disabled={!isEditable}
+            disabled={!isEditable || isSuggestionMode}
             contentProps={DropdownContentProps}
             data-testid="font-size"
           >
@@ -896,7 +904,7 @@ export default function DocumentEditorToolbar({
               type="button"
               className="text-[--text-norm]"
               content={<Icon name="palette" />}
-              disabled={!isEditable}
+              disabled={!isEditable || isSuggestionMode}
               contentProps={DropdownContentProps}
               data-testid="font-color-dropdown"
             >
@@ -921,7 +929,7 @@ export default function DocumentEditorToolbar({
               content={
                 AlignmentOptions.find(({ align }) => align === elementFormat)?.icon || <Icon name="text-align-left" />
               }
-              disabled={!isEditable}
+              disabled={!isEditable || isSuggestionMode}
               contentProps={DropdownContentProps}
               data-testid="alignment-button"
             >
@@ -949,7 +957,7 @@ export default function DocumentEditorToolbar({
                   <CheckListIcon className="h-4 w-4 fill-current" />
                 )
               }
-              disabled={!isEditable}
+              disabled={!isEditable || isSuggestionMode}
               contentProps={DropdownContentProps}
               data-testid="list-types-dropdown"
             >
@@ -1088,7 +1096,7 @@ export default function DocumentEditorToolbar({
             <ToolbarButton
               label={<ShortcutLabel shortcut="CODE_BLOCK_TOGGLE_SHORTCUT" label={c('Action').t`Code block`} />}
               active={isCodeBlock}
-              disabled={!isEditable}
+              disabled={!isEditable || isSuggestionMode}
               onClick={formatCode}
               data-testid="code-block-button"
             >
@@ -1097,7 +1105,7 @@ export default function DocumentEditorToolbar({
             <ToolbarButton
               label={<ShortcutLabel shortcut="QUOTE_TOGGLE_SHORTCUT" label={c('Action').t`Quote`} />}
               active={isQuote}
-              disabled={!isEditable}
+              disabled={!isEditable || isSuggestionMode}
               onClick={formatQuote}
               data-testid="quote-button"
             >
@@ -1110,7 +1118,7 @@ export default function DocumentEditorToolbar({
           <>
             <ToolbarButton
               label={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" label={c('Action').t`Insert link`} />}
-              disabled={!isEditable}
+              disabled={!isEditable || isSuggestionMode}
               active={isLink}
               onClick={editLink}
               data-testid="link-button"
@@ -1123,7 +1131,7 @@ export default function DocumentEditorToolbar({
                   <ShortcutLabelText>{c('Action').t`Insert image`}</ShortcutLabelText>
                 </ShortcutLabelContainer>
               }
-              disabled={!isEditable}
+              disabled={!isEditable || isSuggestionMode}
               onClick={insertImage}
               data-testid="image-insert-button"
             >
@@ -1131,7 +1139,7 @@ export default function DocumentEditorToolbar({
             </ToolbarButton>
             <ToolbarButton
               label={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" label={c('Action').t`Insert table`} />}
-              disabled={!isEditable}
+              disabled={!isEditable || isSuggestionMode}
               onClick={insertTable}
               data-testid="table-button"
             >
@@ -1139,7 +1147,7 @@ export default function DocumentEditorToolbar({
             </ToolbarButton>
             <ToolbarButton
               label={<ShortcutLabel shortcut="INSERT_COMMENT_SHORTCUT" label={c('Action').t`Insert comment`} />}
-              disabled={!isEditable}
+              disabled={!isEditable || isSuggestionMode}
               onClick={insertComment}
               data-testid="comment-button"
             >
@@ -1154,7 +1162,7 @@ export default function DocumentEditorToolbar({
           type="button"
           className="text-[--text-norm]"
           content={<Icon name="three-dots-vertical" />}
-          disabled={!isEditable}
+          disabled={!isEditable || isSuggestionMode}
           hasCaret={false}
           contentProps={DropdownContentProps}
           data-testid="content-properties-button"
@@ -1396,23 +1404,43 @@ export default function DocumentEditorToolbar({
             border: '0',
           }}
           caretClassName="-ml-1"
-          content={<>{isEditable ? <Icon name="pencil" /> : <Icon name="eye" />}</>}
+          content={
+            <>
+              {interactionMode === 'edit' && <Icon name="pencil" />}
+              {interactionMode === 'suggest' && <SpeechBubblePenIcon className="h-4 w-4" />}
+              {interactionMode === 'view' && <Icon name="eye" />}
+            </>
+          }
           hasCaret={!viewportWidth['<=small']}
           contentProps={DropdownContentProps}
           data-testid="edit-options-dropdown"
         >
           <DropdownMenu>
             {hasEditAccess && (
-              <DropdownMenuButton
-                className="flex items-center gap-2 text-left text-sm"
-                onClick={() => {
-                  onInteractionModeChange('edit')
-                }}
-                data-testid="edit-dropdown-button"
-              >
-                <Icon name="pencil" size={4.5} />
-                {c('Info').t`Editing`}
-              </DropdownMenuButton>
+              <>
+                <DropdownMenuButton
+                  className="flex items-center gap-2 text-left text-sm"
+                  onClick={() => {
+                    onInteractionModeChange('edit')
+                  }}
+                  data-testid="edit-dropdown-button"
+                >
+                  <Icon name="pencil" size={4.5} />
+                  {c('Info').t`Editing`}
+                </DropdownMenuButton>
+                {isSuggestionsFeatureEnabled && (
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={() => {
+                      onInteractionModeChange('suggest')
+                    }}
+                    data-testid="suggest-dropdown-button"
+                  >
+                    <SpeechBubblePenIcon className="h-4 w-4" />
+                    {c('Info').t`Suggesting`}
+                  </DropdownMenuButton>
+                )}
+              </>
             )}
             <DropdownMenuButton
               className="flex items-center gap-2 text-left text-sm"
