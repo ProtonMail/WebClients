@@ -190,7 +190,7 @@ export function useLinkInner(
         // Exemple:
         // - shareId: D4TVgdFKidFgQWd5IeXYyegjDNV9KWF1HDwjxZlesUo-Wc2NTL8mUQc6IlYwowznc5vHQkTL4iUbn6K0CorrjQ==
         // - token: 2NR85F8NSC
-        if (tokenIsValid(encryptedLink.rootShareId)) {
+        if (tokenIsValid(shareId)) {
             return;
         }
         loadShareTypeString(shareId).then(async (shareType) => {
