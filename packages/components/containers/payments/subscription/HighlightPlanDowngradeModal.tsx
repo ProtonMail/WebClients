@@ -1,6 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
+import Icon from '@proton/components/components/icon/Icon';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { BRAND_NAME, type FreeSubscription, PLANS } from '@proton/shared/lib/constants';
@@ -11,8 +13,6 @@ import { getSpace } from '@proton/shared/lib/user/storage';
 
 import type { ModalProps } from '../../../components';
 import {
-    Form,
-    Icon,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,

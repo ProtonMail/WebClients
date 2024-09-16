@@ -3,12 +3,13 @@ import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { MAX_SIZE_SCREENSHOT } from '@proton/shared/lib/constants';
 import { resize, toBlob } from '@proton/shared/lib/helpers/image';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import removeItem from '@proton/utils/removeIndex';
 
-import { FileInput, Icon, Info, Table, TableBody, TableCell, TableRow } from '../../components';
+import { FileInput, Info, Table, TableBody, TableCell, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
 
 export interface Screenshot {

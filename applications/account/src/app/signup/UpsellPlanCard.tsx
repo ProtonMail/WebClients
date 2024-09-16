@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import { Icon, useActiveBreakpoint } from '@proton/components/';
 import type { ShortPlan } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';

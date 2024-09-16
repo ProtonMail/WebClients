@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon } from '@proton/components/components/icon';
+import { Button } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { OnboardingContent, OnboardingStep } from '@proton/components/containers/onboarding';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import accountSetupSvg from '@proton/styles/assets/img/illustrations/account-setup.svg';

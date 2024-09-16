@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import type { IconName } from '@proton/components/components';
-import { Icon, useModalState } from '@proton/components/components';
+import { useModalState } from '@proton/components/components';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

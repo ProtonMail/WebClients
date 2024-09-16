@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components';
-import { Prompt } from '@proton/components/components';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useContactGroups } from '@proton/components/hooks';
 import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 

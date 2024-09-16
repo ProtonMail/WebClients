@@ -3,8 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Button, CircleLoader } from '@proton/atoms';
 import { GenericError, useApi, useErrorHandler } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';

@@ -2,9 +2,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { Button, CircleLoader, InlineLinkButton } from '@proton/atoms';
 import shieldDanger from '@proton/pass/assets/monitor/shield-bolt-danger.svg';
 import { ButtonCard, type ButtonCardProps } from '@proton/pass/components/Layout/Card/ButtonCard';
 import { Card } from '@proton/pass/components/Layout/Card/Card';

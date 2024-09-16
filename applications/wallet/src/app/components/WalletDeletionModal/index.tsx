@@ -2,9 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { ModalOwnProps } from '@proton/components/components';
-import { Prompt } from '@proton/components/components';
-import { AuthModal } from '@proton/components/containers';
+import type { ModalOwnProps } from '@proton/components';
+import { AuthModal, Prompt } from '@proton/components';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { IWasmApiWalletData } from '@proton/wallet';

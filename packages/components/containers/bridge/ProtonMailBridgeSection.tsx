@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
@@ -16,8 +17,7 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import type { IconName } from '../../components';
-import { Icon, Select } from '../../components';
+import { Select } from '../../components';
 import { useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 

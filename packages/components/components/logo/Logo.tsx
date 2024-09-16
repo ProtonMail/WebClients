@@ -1,8 +1,8 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
+import type { IconSize } from '@proton/components/components/icon/Icon';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 
-import type { IconSize } from '../icon';
 import CalendarLogo from './CalendarLogo';
 import DriveLogo from './DriveLogo';
 import MailLogo from './MailLogo';

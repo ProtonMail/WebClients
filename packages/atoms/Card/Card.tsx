@@ -3,7 +3,7 @@ import type { ElementType } from 'react';
 import type { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
-export interface CardOwnProps {
+interface CardOwnProps {
     bordered?: boolean;
     rounded?: boolean;
     background?: boolean;

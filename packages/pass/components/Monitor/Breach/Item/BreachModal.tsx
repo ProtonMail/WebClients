@@ -1,5 +1,5 @@
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
-import type { FetchedBreaches } from '@proton/components/containers';
+import type { FetchedBreaches } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import BreachInfo from '@proton/components/containers/credentialLeak/BreachInfo';
 import BreachInfoNote from '@proton/components/containers/credentialLeak/BreachInfoNote';
 import BreachRecommendations from '@proton/components/containers/credentialLeak/BreachRecommendations';

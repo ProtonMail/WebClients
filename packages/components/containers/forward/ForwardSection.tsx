@@ -3,15 +3,16 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Href } from '@proton/atoms/Href';
+import { Button, Href } from '@proton/atoms';
+import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useIncomingAddressForwardings, useOutgoingAddressForwardings } from '@proton/components/hooks';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { MailUpsellButton, Tabs, UpsellModal, useModalState, useModalTwoStatic } from '../../components';
+import { Tabs, useModalState, useModalTwoStatic } from '../../components';
 import { useAddresses, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection, SettingsSectionWide } from '../account';
 import ForwardModal from './ForwardModal';

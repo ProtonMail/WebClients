@@ -2,7 +2,9 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, PrimaryButton } from '../../components';
+import Icon from '@proton/components/components/icon/Icon';
+
+import { PrimaryButton } from '../../components';
 import { useActiveBreakpoint } from '../../hooks';
 
 const SignatureIssue = ({

@@ -4,15 +4,15 @@ import { c } from 'ttag';
 
 import { EasySwitchProvider } from '@proton/activation';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import {
     CheckListAccountLogin,
     CheckListGmailForward,
     CheckListMobileStores,
     CheckListProtectInbox,
+    GmailSyncModal,
     useModalState,
-} from '@proton/components/components';
-import { GmailSyncModal } from '@proton/components/containers';
+} from '@proton/components';
 import { useActiveBreakpoint, useLocalState, useUser } from '@proton/components/hooks';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';

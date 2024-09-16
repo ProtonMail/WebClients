@@ -5,6 +5,7 @@ import valid from 'card-validator';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { requestAnimationFrameRateLimiter, default as useElementRect } from '@proton/components/hooks/useElementRect';
 import { formatCreditCardNumber, isValidNumber } from '@proton/components/payments/client-extensions/credit-card-type';
@@ -13,7 +14,7 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import clsx from '@proton/utils/clsx';
 
-import { Icon, Label, Option, SelectTwo } from '../../components';
+import { Label, Option, SelectTwo } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
 import type { CardModel } from '../../payments/core';
 

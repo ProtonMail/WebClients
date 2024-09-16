@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { PromptProps } from '@proton/components/components/prompt/Prompt';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';

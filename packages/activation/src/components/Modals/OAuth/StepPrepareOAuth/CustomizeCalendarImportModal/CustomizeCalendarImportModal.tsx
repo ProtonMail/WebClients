@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import type { ImporterCalendar } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import { PrimaryButton } from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, PrimaryButton } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 

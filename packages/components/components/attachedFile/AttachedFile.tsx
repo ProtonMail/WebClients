@@ -1,4 +1,4 @@
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 

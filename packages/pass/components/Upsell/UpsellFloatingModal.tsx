@@ -3,7 +3,7 @@ import { type FC, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ModalTwoHeader } from '@proton/components/components';
+import { ModalTwoHeader } from '@proton/components';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PASS_BLOG_TRIAL_URL } from '@proton/pass/constants';

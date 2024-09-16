@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Href } from '@proton/atoms/Href';
-import type { Input } from '@proton/atoms/Input';
-import type { ModalProps } from '@proton/components/components';
+import type { Input } from '@proton/atoms';
+import { Button, CircleLoader, Href } from '@proton/atoms';
 import {
-    Form,
     InputFieldTwo,
+    type ModalProps,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -18,6 +15,7 @@ import {
     SelectTwo,
     TextAreaTwo,
 } from '@proton/components/components';
+import Form from '@proton/components/components/form/Form';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { useNotifications } from '@proton/components/hooks';

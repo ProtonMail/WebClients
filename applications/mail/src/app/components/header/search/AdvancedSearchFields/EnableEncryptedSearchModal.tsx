@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Href } from '@proton/atoms/Href';
-import type { ModalProps } from '@proton/components/components';
-import { Prompt } from '@proton/components/components';
+import { Button, Href } from '@proton/atoms';
+import type { ModalProps } from '@proton/components';
+import { Prompt } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components';
-import { Prompt } from '@proton/components';
+import Prompt from '@proton/components/components/prompt/Prompt';
 
 interface Props {
     onConfirm: () => void;

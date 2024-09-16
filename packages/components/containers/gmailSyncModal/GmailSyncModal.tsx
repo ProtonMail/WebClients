@@ -7,7 +7,7 @@ import { ImportProvider } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo } from '@proton/components';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';

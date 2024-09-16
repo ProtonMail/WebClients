@@ -2,8 +2,9 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Icon, Price } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { Price } from '@proton/components/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { usePreferredPlansMap, useUser } from '@proton/components/hooks';
 import type { AmountAndCurrency } from '@proton/components/payments/core';
 import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';

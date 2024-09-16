@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { Time } from '@proton/components';
 import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
 import { Card } from '@proton/pass/components/Layout/Card/Card';

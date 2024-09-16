@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { WasmWallet } from '@proton/andromeda';
-import { PasswordInputTwo } from '@proton/components/components';
+import { PasswordInputTwo } from '@proton/components';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, Input, Modal } from '../../atoms';

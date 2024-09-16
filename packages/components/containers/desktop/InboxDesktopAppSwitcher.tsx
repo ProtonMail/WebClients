@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms/Button';
-import { Icon, SimpleDropdown } from '@proton/components/components';
+import { Button, ButtonLike } from '@proton/atoms';
+import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import Icon from '@proton/components/components/icon/Icon';
 import { useConfig } from '@proton/components/hooks';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';

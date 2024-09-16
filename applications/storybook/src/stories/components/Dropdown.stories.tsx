@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { DropdownProps } from '@proton/components';
 import {
     Collapsible,

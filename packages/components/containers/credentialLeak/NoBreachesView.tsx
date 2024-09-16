@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
 import alias from '@proton/styles/assets/img/breach-alert/img-alias.svg';

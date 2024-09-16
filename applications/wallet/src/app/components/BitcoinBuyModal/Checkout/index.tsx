@@ -4,9 +4,8 @@ import { RampInstantEventTypes } from '@ramp-network/ramp-instant-sdk';
 import { c } from 'ttag';
 
 import type { WasmGatewayProvider, WasmPaymentMethod } from '@proton/andromeda';
-import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon, Tooltip } from '@proton/components/components';
+import { Button, CircleLoader } from '@proton/atoms';
+import { Icon, Tooltip } from '@proton/components';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
 import type { QuoteWithProvider } from '../Amount';

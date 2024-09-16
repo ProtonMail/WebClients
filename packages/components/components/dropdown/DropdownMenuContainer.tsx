@@ -1,10 +1,9 @@
 import type { ReactNode, Ref } from 'react';
 import { forwardRef } from 'react';
 
+import type { Props as DropdownMenuButtonProps } from '@proton/components/components/dropdown/DropdownMenuButton';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import clsx from '@proton/utils/clsx';
-
-import type { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
-import DropdownMenuButton from './DropdownMenuButton';
 
 export interface Props extends DropdownMenuButtonProps {
     buttonContent?: ReactNode;

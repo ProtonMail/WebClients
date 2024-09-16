@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { useModalState } from '@proton/components/components';
 import { useGetUserInvitations } from '@proton/components/hooks';
 import useUid from '@proton/components/hooks/useUid';

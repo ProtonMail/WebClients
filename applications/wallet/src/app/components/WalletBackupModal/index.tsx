@@ -2,10 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
-import type { ModalOwnProps } from '@proton/components/components';
-import { Prompt } from '@proton/components/components';
-import { UnlockModal } from '@proton/components/containers';
+import { Href } from '@proton/atoms';
+import type { ModalOwnProps } from '@proton/components';
+import { Prompt, UnlockModal } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import accessKey from '@proton/styles/assets/img/wallet/wallet-key.jpg';

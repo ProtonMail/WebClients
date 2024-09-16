@@ -1,11 +1,10 @@
 import type { ComponentProps } from 'react';
-import React from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import type { IconName } from '@proton/components/components';
-import { Icon, SettingsLink } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { SettingsLink } from '@proton/components/components';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 import './AccountSecurityCard.scss';

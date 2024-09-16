@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { AppLink } from '../../../../components/link';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { OnboardingContent, OnboardingStep } from '@proton/components/containers/onboarding';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import driveOnboardingPendingInvite from '@proton/styles/assets/img/illustrations/drive-onboarding-pending-invitation.svg';

@@ -1,7 +1,7 @@
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 
 import { Table, TableBody, TableHeader, TableRow, Time } from '../../../components';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';

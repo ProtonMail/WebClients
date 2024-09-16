@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 import { useConfig } from '../../hooks';

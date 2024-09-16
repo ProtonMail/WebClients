@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import type { PhotoLink } from '../../../../store';

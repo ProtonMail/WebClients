@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount, WasmInviteNotificationType } from '@proton/andromeda';
-import { Icon, useModalStateWithData } from '@proton/components/components';
+import { Icon, useModalStateWithData } from '@proton/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';
 import { useApi, useNotifications } from '@proton/components/hooks';

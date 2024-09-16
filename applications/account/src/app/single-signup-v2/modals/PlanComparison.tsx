@@ -2,8 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import type { IconSize } from '@proton/components/components';
-import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components/components';
+import type { IconSize } from '@proton/components';
+import { DriveLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
 import {
     APPS,
     DRIVE_SHORT_APP_NAME,

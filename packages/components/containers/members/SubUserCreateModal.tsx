@@ -12,6 +12,8 @@ import {
     getPrivateText,
 } from '@proton/account';
 import { Button, InlineLinkButton } from '@proton/atoms';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -41,8 +43,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import type { ModalProps } from '../../components';
 import {
-    DropdownSizeUnit,
-    Icon,
     Info,
     InputFieldTwo,
     ModalTwo as Modal,

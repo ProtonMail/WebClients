@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon, WalletLogo } from '@proton/components/components';
+import { Icon, WalletLogo } from '@proton/components';
 import { getSentinel } from '@proton/components/containers/payments/features/highlights';
 import {
     FREE_WALLETS,

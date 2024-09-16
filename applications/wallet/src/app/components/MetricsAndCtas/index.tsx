@@ -7,7 +7,7 @@ import last from 'lodash/last';
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount, WasmPriceGraph } from '@proton/andromeda';
-import { Tooltip } from '@proton/components/components';
+import { Tooltip } from '@proton/components';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
 import { BITCOIN, DEFAULT_FIAT_CURRENCY, type IWasmApiWalletData } from '@proton/wallet';

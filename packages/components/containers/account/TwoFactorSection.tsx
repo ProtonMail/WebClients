@@ -4,6 +4,7 @@ import { useFlag } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
@@ -11,7 +12,7 @@ import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 import clsx from '@proton/utils/clsx';
 
-import { ButtonGroup, Icon, Info, Toggle, Tooltip, useModalState } from '../../components';
+import { ButtonGroup, Info, Toggle, Tooltip, useModalState } from '../../components';
 import { useAvailableRecoveryMethods, useConfig, useNotifications, useUserSettings } from '../../hooks';
 import LostTwoFAModal from './LostTwoFAModal';
 import SettingsLayout from './SettingsLayout';

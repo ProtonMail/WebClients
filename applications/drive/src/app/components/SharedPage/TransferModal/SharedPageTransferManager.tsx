@@ -2,9 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms/Button';
-import { useToggle } from '@proton/components';
-import { FileIcon, Icon, Tooltip } from '@proton/components/components';
+import { Button, ButtonLike } from '@proton/atoms';
+import { FileIcon, Icon, Tooltip, useToggle } from '@proton/components';
 import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';

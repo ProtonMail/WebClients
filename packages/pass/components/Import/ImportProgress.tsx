@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { CircleLoader } from '@proton/atoms';
 import { itemsImportRequest } from '@proton/pass/store/actions/requests';
 import { selectRequest } from '@proton/pass/store/selectors';
 

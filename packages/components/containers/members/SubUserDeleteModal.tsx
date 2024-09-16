@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Card } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 import { useLoading } from '@proton/hooks';
 import { NAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -12,7 +13,6 @@ import type { Member } from '@proton/shared/lib/interfaces/Member';
 
 import type { ModalProps } from '../../components';
 import {
-    Alert,
     InputFieldTwo,
     ModalTwo,
     ModalTwoContent,

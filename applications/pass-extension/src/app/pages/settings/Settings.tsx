@@ -11,7 +11,7 @@ import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-co
 import { createClientStore } from 'proton-pass-extension/lib/store/client-store';
 import { c, msgid } from 'ttag';
 
-import { Avatar } from '@proton/atoms/Avatar';
+import { Avatar } from '@proton/atoms';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';

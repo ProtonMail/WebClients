@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms';
 import { Button, Vr } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
-import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';
 import { ModalContext } from './Modal';
 

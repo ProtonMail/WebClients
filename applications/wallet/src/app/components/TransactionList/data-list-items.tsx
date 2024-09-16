@@ -4,8 +4,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate } from '@proton/andromeda';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Tooltip } from '@proton/components/components';
+import { CircleLoader } from '@proton/atoms';
+import { Tooltip } from '@proton/components';
 import { useAddresses } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';

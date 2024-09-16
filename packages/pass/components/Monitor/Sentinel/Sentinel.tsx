@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import { Toggle } from '@proton/components';
 import sentinel from '@proton/pass/assets/monitor/sentinel.svg';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';

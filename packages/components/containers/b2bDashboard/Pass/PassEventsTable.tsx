@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { AppLink, SortingTableHeader, Table, TableBody, TableRow, Time, Tooltip } from '@proton/components/components';
 import { getShareID } from '@proton/shared/lib/api/b2blogs';
 import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';

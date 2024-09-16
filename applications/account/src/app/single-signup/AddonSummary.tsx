@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 
-import { Price } from '@proton/components/components';
+import { Price } from '@proton/components';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 

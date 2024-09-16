@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { useCombinedRefs } from '@proton/hooks';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
@@ -20,7 +21,6 @@ import useElementRect from '../../hooks/useElementRect';
 import type { HotkeyTuple } from '../../hooks/useHotkeys';
 import { useHotkeys } from '../../hooks/useHotkeys';
 import useIsClosing from '../../hooks/useIsClosing';
-import { useFocusTrap } from '../focus';
 import type { PopperPlacement, PopperPosition } from '../popper';
 import { allPopperPlacements, usePopper } from '../popper';
 import Portal from '../portal/Portal';

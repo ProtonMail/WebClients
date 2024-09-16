@@ -1,5 +1,5 @@
-import type { IconSize } from '@proton/components/components';
-import { DriveLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components/components';
+import type { IconSize } from '@proton/components';
+import { DriveLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';

@@ -1,4 +1,5 @@
-import { Icon, StripedItem, StripedList } from '@proton/components/components';
+import { StripedItem, StripedList } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { SettingsParagraph, SettingsSection, SettingsSectionTitle } from '@proton/components/containers/account';
 
 import type { PlanConfigFeatures } from './interface';

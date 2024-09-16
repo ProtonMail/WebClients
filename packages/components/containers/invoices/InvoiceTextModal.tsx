@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { useLoading } from '@proton/hooks';
 import { updateInvoiceText } from '@proton/shared/lib/api/settings';
 
 import type { ModalProps } from '../../components';
 import {
-    Form,
     InputFieldTwo,
     ModalTwo,
     ModalTwoContent,

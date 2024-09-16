@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { Input } from '@proton/atoms/Input';
+import { Input } from '@proton/atoms';
 
 import './TVCodeInputs.scss';
 

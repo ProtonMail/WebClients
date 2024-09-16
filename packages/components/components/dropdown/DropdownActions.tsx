@@ -4,15 +4,14 @@ import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
+import type { Props as DropdownMenuButtonProps } from '@proton/components/components/dropdown/DropdownMenuButton';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 import ButtonGroup from '../button/ButtonGroup';
-import type { IconName } from '../icon';
-import { Icon } from '../icon';
 import { Info } from '../link';
 import DropdownMenu from './DropdownMenu';
-import type { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
-import DropdownMenuButton from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
 
 const wrapTooltip = (text: string | ReactNode, tooltip?: string, fakeDisabled?: boolean) => {

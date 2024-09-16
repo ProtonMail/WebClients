@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import type { Unit } from '@proton/components/components/dropdown/utils';
 import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';
 import { getAbbreviatedTimezoneName, getTimeZoneOptions, getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
@@ -9,8 +11,6 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../hooks';
-import { DropdownSizeUnit } from '../dropdown';
-import type { Unit } from '../dropdown/utils';
 import { Option } from '../option';
 import { SearchableSelect } from '../selectTwo';
 import type { Props as SearchableSelectProps } from '../selectTwo/SearchableSelect';

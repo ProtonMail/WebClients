@@ -5,7 +5,7 @@ import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';

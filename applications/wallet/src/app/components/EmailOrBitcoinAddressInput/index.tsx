@@ -6,8 +6,8 @@ import compact from 'lodash/compact';
 import { c } from 'ttag';
 
 import type { WasmNetwork } from '@proton/andromeda';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import type { AddressesAutocompleteItem } from '@proton/components/components';
+import { CircleLoader } from '@proton/atoms';
+import type { AddressesAutocompleteItem } from '@proton/components';
 import {
     Dropdown,
     DropdownSizeUnit,
@@ -17,7 +17,7 @@ import {
     getRecipientFromAutocompleteItem,
     useAutocompleteFilter,
     useModalState,
-} from '@proton/components/components';
+} from '@proton/components';
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import { useAddresses } from '@proton/components/hooks';
 import { canonicalizeEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';

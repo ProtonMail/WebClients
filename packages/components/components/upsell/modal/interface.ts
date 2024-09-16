@@ -1,4 +1,4 @@
-import type { IconName } from '../../icon';
+import { type IconName } from '@proton/components/components/icon/Icon';
 
 export interface UpsellFeature {
     getText: () => string;

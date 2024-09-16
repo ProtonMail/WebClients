@@ -4,7 +4,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { securityCheckupSlice } from '@proton/account';
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
 import {
     AppLink,
     Icon,

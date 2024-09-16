@@ -4,7 +4,7 @@ import uniqBy from 'lodash/uniqBy';
 import { c } from 'ttag';
 
 import type { WasmApiCountry } from '@proton/andromeda';
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 

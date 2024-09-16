@@ -1,10 +1,10 @@
 import { Alignment } from 'roosterjs-editor-types';
 import { c } from 'ttag';
 
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 
-import DropdownMenu from '../../dropdown/DropdownMenu';
-import DropdownMenuButton from '../../dropdown/DropdownMenuButton';
 import Icon from '../../icon/Icon';
 import ToolbarDropdown from './ToolbarDropdown';
 

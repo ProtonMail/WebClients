@@ -3,8 +3,9 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import type { ModalStateProps } from '@proton/components/components';
-import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import Form from '@proton/components/components/form/Form';
 
 import type { CountryOptions } from '../../../helpers/countries';
 import { GatewayCountrySelection } from './GatewayCountrySelection';

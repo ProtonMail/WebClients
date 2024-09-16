@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import createItemArrow from '@proton/pass/assets/b2b-onboarding/create-arrow.svg';
 
 export const OnboardingArrow: FC = () => {

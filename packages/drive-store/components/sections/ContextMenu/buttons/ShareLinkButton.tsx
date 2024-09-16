@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useNewFeatureTag } from '@proton/components/components';
+import { useNewFeatureTag } from '@proton/components';
 
 import type { DecryptedLink } from '../../../../store';
 import type { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkModal';

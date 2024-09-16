@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { useModalState } from '@proton/components/components';
 import { Loader } from '@proton/components/components/loader';
 import { useAddresses, useCalendars, useMember, useOrganization, useUser } from '@proton/components/hooks';

@@ -5,7 +5,7 @@ import CollapsibleHeaderButton from './CollapsibleHeaderButton';
 
 import './CollapsibleHeaderIconButton.scss';
 
-export interface CollapsibleHeaderIconButtonProps extends Omit<CollapsibleHeaderButtonProps, 'icon'> {}
+interface CollapsibleHeaderIconButtonProps extends Omit<CollapsibleHeaderButtonProps, 'icon'> {}
 
 /**
  * Icon button which rotates the icon by 180° when collapsible is toggled.

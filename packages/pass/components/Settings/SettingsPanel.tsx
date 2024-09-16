@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 
-import { Card } from '@proton/atoms/Card';
+import { Card } from '@proton/atoms';
 import clsx from '@proton/utils/clsx';
 
 type Props = {

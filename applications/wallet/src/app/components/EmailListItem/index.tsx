@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Marks } from '@proton/components/components';
+import { CircleLoader } from '@proton/atoms';
+import { Marks } from '@proton/components';
 import type { MatchChunk } from '@proton/shared/lib/helpers/regex';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 

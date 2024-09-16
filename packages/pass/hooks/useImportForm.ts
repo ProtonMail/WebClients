@@ -6,7 +6,7 @@ import type { FormikContextType, FormikErrors } from 'formik';
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
-import type { Dropzone, FileInput } from '@proton/components/components';
+import type { Dropzone, FileInput } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';

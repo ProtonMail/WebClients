@@ -2,9 +2,9 @@ import { Fragment, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
-import { Icon } from '../../../components';
 import { getComparatorLabels, getConditionTypeLabels } from '../constants';
 import type { SimpleFilterModalModel } from '../interfaces';
 import { ConditionType, FilterStatement } from '../interfaces';

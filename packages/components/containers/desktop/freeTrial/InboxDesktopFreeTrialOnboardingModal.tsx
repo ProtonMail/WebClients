@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, useModalState } from '@proton/components/components';
 import { useUser } from '@proton/components/hooks';
 import { APP_UPSELL_REF_PATH, MAIL_APP_NAME, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import type { ModalProps } from '../../components';
 import {
-    Icon,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoHeader as ModalHeader,

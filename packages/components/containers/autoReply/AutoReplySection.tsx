@@ -3,7 +3,9 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
+import type { EditorActions } from '@proton/components/components/editor/interface';
 import { useLoading } from '@proton/hooks';
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
 import {
@@ -19,8 +21,7 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
-import type { EditorActions } from '../../components';
-import { Editor, Toggle } from '../../components';
+import { Toggle } from '../../components';
 import {
     useApi,
     useErrorHandler,

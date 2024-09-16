@@ -2,8 +2,8 @@ import { type FC, memo } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, type LinkProps } from 'react-router-dom';
 
-import { ButtonLike, type ButtonLikeProps } from '@proton/atoms/Button';
-import { Icon, Marks } from '@proton/components/components';
+import { ButtonLike, type ButtonLikeProps } from '@proton/atoms';
+import { Icon, Marks } from '@proton/components';
 import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { ItemIcon, ItemIconIndicators, SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';

@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import type { ModalStateProps } from '@proton/components/components';
-import { Loader, Price, UpsellModal } from '@proton/components/components';
+import { Loader, Price } from '@proton/components/components';
+import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useSubscriptionModal } from '@proton/components/containers';
 import { useAssistantUpsellConfig, usePlans, usePreferredPlansMap, useSubscription } from '@proton/components/hooks';
 import { getScribeAddonNameByPlan } from '@proton/components/payments/core';

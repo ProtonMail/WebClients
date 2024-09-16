@@ -4,6 +4,8 @@ import { isValidElement, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import StepDot from '@proton/components/components/stepDot/StepDot';
+import StepDots from '@proton/components/components/stepDots/StepDots';
 import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
 import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
 import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
@@ -13,7 +15,7 @@ import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';
 
 import type { ModalSize } from '../../components';
-import { ModalTwoContent as ModalContent, ModalTwo, StepDot, StepDots } from '../../components';
+import { ModalTwoContent as ModalContent, ModalTwo } from '../../components';
 import {
     useApi,
     useConfig,

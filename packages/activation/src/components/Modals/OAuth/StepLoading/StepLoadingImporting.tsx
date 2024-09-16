@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { Loader, ModalTwo, ModalTwoContent, TextLoader } from '@proton/components/components';
+import { Loader, ModalTwo, ModalTwoContent, TextLoader } from '@proton/components';
 
 import useStepLoadingImporting from './useStepLoadingImporting';
 

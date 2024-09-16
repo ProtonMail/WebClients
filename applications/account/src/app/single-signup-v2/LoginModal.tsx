@@ -1,6 +1,5 @@
-import type { ModalProps } from '@proton/components/components';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
-import type { OnLoginCallback } from '@proton/components/containers';
+import type { ModalProps, OnLoginCallback } from '@proton/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import type { Paths } from '../content/helper';

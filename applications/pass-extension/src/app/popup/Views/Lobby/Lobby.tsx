@@ -5,7 +5,7 @@ import { PromptForReload } from 'proton-pass-extension/lib/components/Extension/
 import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';

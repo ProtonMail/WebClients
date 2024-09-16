@@ -1,9 +1,8 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-import { ButtonLike } from '@proton/atoms/Button';
+import { ButtonLike } from '@proton/atoms';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 
-import type { IconName } from '../icon';
-import { Icon } from '../icon';
 import { Loader } from '../loader';
 
 interface ActionCardProps extends ComponentPropsWithoutRef<'button'> {

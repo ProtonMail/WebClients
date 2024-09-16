@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { InlineLinkButton } from '@proton/atoms';
 import { CalendarInviteButtons, Loader, useDrawer, useNotifications } from '@proton/components';
 import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { useLoading } from '@proton/hooks';

@@ -3,7 +3,7 @@ import { type FC, memo } from 'react';
 import { c } from 'ttag';
 
 import { Button, type ButtonProps } from '@proton/atoms';
-import { Icon } from '@proton/components/components';
+import { Icon } from '@proton/components';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 
 import { usePasswordContext } from './PasswordContext';

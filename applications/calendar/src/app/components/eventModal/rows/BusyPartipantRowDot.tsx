@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon, Tooltip } from '@proton/components/components';
+import { CircleLoader } from '@proton/atoms';
+import { Icon, Tooltip } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 interface Props {

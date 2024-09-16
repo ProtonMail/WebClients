@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components/components';
+import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components';
 import type { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import type { PublicKeyReference } from '@proton/crypto';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

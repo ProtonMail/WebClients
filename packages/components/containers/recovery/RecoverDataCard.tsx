@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
-import { Icon } from '../../components';
 import { SettingsSectionTitle } from '../account';
 
 interface Props {

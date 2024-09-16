@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button';
-import { CalendarLogo, DriveLogo, MailLogo, PassLogo, Tooltip, VpnLogo } from '@proton/components/components';
+import { ButtonLike } from '@proton/atoms';
+import { CalendarLogo, DriveLogo, MailLogo, PassLogo, Tooltip, VpnLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';

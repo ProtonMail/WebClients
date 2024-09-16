@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Form from '@proton/components/components/form/Form';
 import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSettings';
 
-import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import FontFaceSelect from '../../../containers/layouts/FontFaceSelect';
 import FontSizeSelect from '../../../containers/layouts/FontSizeSelect';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../../hooks';

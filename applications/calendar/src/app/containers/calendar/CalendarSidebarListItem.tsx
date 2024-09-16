@@ -3,6 +3,8 @@ import { c } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import {
     Checkbox,
+    DropdownMenu,
+    DropdownMenuButton,
     DropdownMenuLink,
     Icon,
     SettingsLink,
@@ -13,8 +15,6 @@ import {
     Tooltip,
     useUser,
 } from '@proton/components';
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import {
     getIsCalendarDisabled,
     getIsCalendarWritable,

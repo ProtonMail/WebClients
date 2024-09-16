@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Alert from '@proton/components/components/alert/Alert';
 
-import { Alert, ConfirmModal } from '../../components';
+import { ConfirmModal } from '../../components';
 import { useModals } from '../../hooks';
 
 interface Props {

@@ -1,9 +1,19 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
-import { SUBSCRIPTION_STEPS, useAddresses, useSubscriptionModal, useUser } from '@proton/components';
-import type { ModalOwnProps } from '@proton/components/components';
-import { Icon, Logo, Prompt, ProtonForBusinessLogo, Tooltip, useModalState } from '@proton/components/components';
+import { Href } from '@proton/atoms';
+import type { ModalOwnProps } from '@proton/components';
+import {
+    Icon,
+    Logo,
+    Prompt,
+    ProtonForBusinessLogo,
+    SUBSCRIPTION_STEPS,
+    Tooltip,
+    useAddresses,
+    useModalState,
+    useSubscriptionModal,
+    useUser,
+} from '@proton/components';
 import { CacheType } from '@proton/redux-utilities';
 import { APPS, BRAND_NAME, PLANS, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getAppStaticUrl, getStaticURL } from '@proton/shared/lib/helpers/url';

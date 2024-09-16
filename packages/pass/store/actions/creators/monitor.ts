@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { FetchedBreaches } from '@proton/components/containers';
+import type { FetchedBreaches } from '@proton/components';
 import { isMonitored } from '@proton/pass/lib/items/item.predicates';
 import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';
 import type {

@@ -1,7 +1,8 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Prompt, SettingsLink } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { SettingsLink } from '@proton/components/components';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useSessionRecoveryGracePeriodHoursRemaining, useSessionRecoveryState } from '@proton/components/hooks';
 import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 

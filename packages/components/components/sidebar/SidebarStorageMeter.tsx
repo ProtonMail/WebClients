@@ -1,6 +1,5 @@
+import Meter from '@proton/components/components/progress/Meter';
 import clsx from '@proton/utils/clsx';
-
-import { Meter } from '../progress';
 
 import './SidebarStorageMeter.scss';
 

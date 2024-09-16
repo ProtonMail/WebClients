@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Href } from '@proton/atoms/Href';
+import { Href } from '@proton/atoms';
 import { PROTON_WEBSITES } from '@proton/shared/lib/constants';
 
 import TopBanner from './TopBanner';

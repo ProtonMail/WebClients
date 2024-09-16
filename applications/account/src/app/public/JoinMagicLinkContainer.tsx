@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon, InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components/components';
+import { Button, CircleLoader } from '@proton/atoms';
+import { Icon } from '@proton/components';
+import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components/components';
 import type { OnLoginCallback } from '@proton/components/containers';
 import { GenericError } from '@proton/components/containers';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';

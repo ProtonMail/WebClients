@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components/components';
+import { Icon, ToolbarButton } from '@proton/components';
 
 import type { DecryptedLink } from '../../../../store';
 import { useLinkSharingModal } from '../../../modals/ShareLinkModal/ShareLinkModal';

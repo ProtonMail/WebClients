@@ -2,9 +2,8 @@ import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Href } from '@proton/atoms/Href';
-import { Icon } from '@proton/components/components';
+import { Button, Href } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import { getScribeUpsellLearnMore, getScribeUpsellText } from '@proton/components/containers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/interfaces';
