@@ -50,7 +50,7 @@ export interface FieldHandle {
     /** optimal z-index for icon injection */
     zIndex: number;
     attach: (options: { onChange: () => void; onSubmit: () => void }) => void;
-    attachIcon: () => Maybe<FieldIconHandle>;
+    attachIcon: (options: { count: number }) => Maybe<FieldIconHandle>;
     autofill: (value: string, options?: AutofillOptions) => void;
     detach: () => void;
     detachIcon: () => void;

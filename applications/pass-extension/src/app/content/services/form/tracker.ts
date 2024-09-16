@@ -238,8 +238,9 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
                 status.injections.set(type, status.injections.get(type) || attachIcon);
                 status.injected = status.injected || attachIcon;
 
+                /** FIXME: remove icon attachement via FieldInjectionRule properly  */
                 const action = fieldAction && canProcessAction(fieldAction) ? fieldAction : null;
-                results.set(field, { field, action, attachIcon: action !== null && attachIcon });
+                results.set(field, { field, action, attachIcon: false && action !== null && attachIcon });
             });
         });
 
@@ -248,7 +249,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
 
     /** Reconciles form trackers by syncing trackable fields, attaching
      * listeners, and managing icons. Triggers autofill syncing and
-     * handles auto-focus for empty active fields. */
+     * handles auto-focus for empty active fields. Attaches listeners
+     * only if a field is not currently tracked during reconciliation. */
     const reconciliate = withContext<() => void>((ctx) => {
         if (!ctx) return;
 
@@ -259,10 +261,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             if (match === undefined) return field.detach();
 
             field.setAction(match.action);
-
-            /* if the field is not currently tracked, attach listeners */
             if (!field.tracked) field.attach({ onChange, onSubmit });
-            return match.attachIcon ? field.attachIcon() : field.detachIcon();
         });
 
         /* Trigger focus on empty active field to open dropdown :
