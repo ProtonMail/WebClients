@@ -1,9 +1,8 @@
 import type { ElementType, ForwardedRef } from 'react';
 import { forwardRef } from 'react';
 
-import { CircleLoader } from '@proton/atoms';
-import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
-import ButtonLike from '@proton/atoms/Button/ButtonLike';
+import type { ButtonLikeProps } from '@proton/atoms';
+import { ButtonLike, CircleLoader } from '@proton/atoms';
 import Icon, { type IconName, type IconSize } from '@proton/components/components/icon/Icon';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import useUid from '@proton/components/hooks/useUid';
