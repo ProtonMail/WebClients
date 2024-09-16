@@ -20,6 +20,25 @@ export const querySharedURLInformation = (token: string) => {
     };
 };
 
+export const querySharedURLPath = (token: string, linkID: string) => {
+    return {
+        method: 'get',
+        url: `drive/urls/${token}/links/${linkID}/path`,
+        silence: true,
+    };
+};
+
+export const querySharedURLMetadata = (token: string, LinkIDs: string[]) => {
+    return {
+        method: 'get',
+        url: `drive/urls/${token}/links/fetch_metadata`,
+        silence: true,
+        data: {
+            LinkIDs,
+        },
+    };
+};
+
 export const querySharedURLSecurity = (token: string, Hashes: string[]) => {
     return {
         method: 'post',
