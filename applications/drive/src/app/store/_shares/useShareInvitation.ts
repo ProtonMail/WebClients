@@ -144,6 +144,7 @@ export const useShareInvitation = () => {
         abortSignal: AbortSignal,
         {
             shareId,
+            rootShareId,
             linkId,
             inviteeEmail,
             inviter,
@@ -151,6 +152,7 @@ export const useShareInvitation = () => {
             emailDetails,
         }: {
             shareId: string;
+            rootShareId: string;
             linkId: string;
             inviteeEmail: string;
             inviter: { inviterEmail: string; addressKey: PrivateKeyReference; addressId: string };
@@ -158,7 +160,7 @@ export const useShareInvitation = () => {
             emailDetails?: ShareInvitationEmailDetails;
         }
     ) => {
-        const link = await getLink(abortSignal, shareId, linkId);
+        const link = await getLink(abortSignal, rootShareId, linkId);
 
         if (!link.shareId) {
             throw new EnrichedError('Failed to load share for external invite', {
@@ -168,7 +170,7 @@ export const useShareInvitation = () => {
                 },
             });
         }
-        const linkPrivateKey = await getLinkPrivateKey(abortSignal, shareId, linkId);
+        const linkPrivateKey = await getLinkPrivateKey(abortSignal, rootShareId, linkId);
         const sessionKey = await getShareSessionKey(abortSignal, link.shareId, linkPrivateKey);
         const externalInvitationSignature = await CryptoProxy.signMessage({
             textData: inviteeEmail.concat('|').concat(uint8ArrayToBase64String(sessionKey.data)),
