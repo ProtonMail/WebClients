@@ -7,7 +7,7 @@ import type {
     FormTrackerState,
     FormTrackerSyncOptions,
 } from 'proton-pass-extension/app/content/types';
-import { DropdownAction, FieldInjectionRule } from 'proton-pass-extension/app/content/types';
+import { DropdownAction } from 'proton-pass-extension/app/content/types';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 
@@ -23,9 +23,6 @@ import { logger } from '@proton/pass/utils/logger';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import lastItem from '@proton/utils/lastItem';
 import noop from '@proton/utils/noop';
-
-type Field = { action: MaybeNull<DropdownAction>; field: FieldHandle; attachIcon: boolean };
-type FieldsForFormResults = WeakMap<FieldHandle, Field>;
 
 /** Idle timeout check after a submit: this timeout is used
  * to identify a failed submission when we cannot determine it
@@ -200,53 +197,6 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         await sync({ partial: true, submit: true });
     });
 
-    const getTrackableFields = (injectIcon: boolean): FieldsForFormResults => {
-        const results: FieldsForFormResults = new WeakMap();
-        const status = {
-            injections: new Map<FieldType, boolean>(),
-            sections: new Map<FieldType, number>(),
-            injected: false,
-        };
-
-        FORM_TRACKER_CONFIG[form.formType].forEach(({ type, injection, action: fieldAction }) => {
-            form.getFieldsFor(type).forEach((field) => {
-                let attachIcon = false;
-
-                switch (injection) {
-                    case FieldInjectionRule.NEVER:
-                        break;
-                    case FieldInjectionRule.ALWAYS:
-                        attachIcon = injectIcon;
-                        break;
-                    /* inject only if no previous injections */
-                    case FieldInjectionRule.FIRST_OF_FORM:
-                        attachIcon = injectIcon && !status.injected;
-                        break;
-                    /* inject only if no other field of type attached */
-                    case FieldInjectionRule.FIRST_OF_TYPE:
-                        attachIcon = injectIcon && !status.injections.get(type);
-                        break;
-
-                    /** inject only on the first field of each form section */
-                    case FieldInjectionRule.FIRST_OF_SECTION:
-                        if (field.sectionIndex === undefined) break;
-                        attachIcon = injectIcon && status.sections.get(type) !== field.sectionIndex;
-                        status.sections.set(type, field.sectionIndex);
-                        break;
-                }
-
-                status.injections.set(type, status.injections.get(type) || attachIcon);
-                status.injected = status.injected || attachIcon;
-
-                /** FIXME: remove icon attachement via FieldInjectionRule properly  */
-                const action = fieldAction && canProcessAction(fieldAction) ? fieldAction : null;
-                results.set(field, { field, action, attachIcon: false && action !== null && attachIcon });
-            });
-        });
-
-        return results;
-    };
-
     /** Reconciles form trackers by syncing trackable fields, attaching
      * listeners, and managing icons. Triggers autofill syncing and
      * handles auto-focus for empty active fields. Attaches listeners
@@ -254,13 +204,12 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     const reconciliate = withContext<() => void>((ctx) => {
         if (!ctx) return;
 
-        const fieldsToTrack = getTrackableFields(ctx.getSettings().autofill.inject);
-
         form.getFields().forEach((field) => {
-            const match = fieldsToTrack.get(field);
-            if (match === undefined) return field.detach();
+            const config = FORM_TRACKER_CONFIG[form.formType].find(({ type }) => type === field.fieldType);
+            if (!config) return field.detach();
 
-            field.setAction(match.action);
+            const { action } = config;
+            field.setAction(action && canProcessAction(action) ? action : null);
             if (!field.tracked) field.attach({ onChange, onSubmit });
         });
 

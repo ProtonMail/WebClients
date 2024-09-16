@@ -61,17 +61,8 @@ export interface FieldHandle {
     setValue: (value: string) => void;
 }
 
-export enum FieldInjectionRule {
-    ALWAYS /* always inject */,
-    FIRST_OF_TYPE /* first field for field type */,
-    FIRST_OF_FORM /* first field in form */,
-    FIRST_OF_SECTION /* first field in form section */,
-    NEVER /* never inject */,
-}
-
 export type FormTrackerFieldConfig = {
     type: FieldType;
-    injection: FieldInjectionRule;
     action?: DropdownAction;
 };
 
