@@ -273,6 +273,11 @@ const GenericSecurityCheckupCard = ({
     description?: string | ReturnType<typeof getBoldFormattedText>;
     cta: string;
 }) => {
+    const securityCheckupParams = new URLSearchParams({
+        back: encodeURIComponent(window.location.href),
+        source: 'recovery_settings',
+    });
+
     return (
         <div className="rounded border max-w-custom p-8 flex flex-column gap-8" style={{ '--max-w-custom': '46em' }}>
             <div className="flex flex-nowrap items-center gap-4">
@@ -290,7 +295,7 @@ const GenericSecurityCheckupCard = ({
             <ButtonLike
                 className="self-start"
                 as={AppLink}
-                to={`${SECURITY_CHECKUP_PATHS.ROOT}?back=${encodeURIComponent(window.location.href)}`}
+                to={`${SECURITY_CHECKUP_PATHS.ROOT}?${securityCheckupParams.toString()}`}
                 color="norm"
             >
                 {cta}
