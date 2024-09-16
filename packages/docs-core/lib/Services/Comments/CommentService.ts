@@ -7,8 +7,9 @@ import type {
   InternalEventInterface,
   InternalEventBusInterface,
   CommentMarkNodeChangeData,
+  SuggestionThreadStateAction,
 } from '@proton/docs-shared'
-import { CommentsMessageType, CommentsEvent, BroadcastSource } from '@proton/docs-shared'
+import { CommentsMessageType, CommentsEvent, BroadcastSource, CommentThreadState } from '@proton/docs-shared'
 import type { EncryptComment } from '../../UseCase/EncryptComment'
 import type { LoggerInterface } from '@proton/utils/logs'
 import { CreateRealtimeCommentPayload } from './CreateRealtimeCommentPayload'
@@ -25,6 +26,7 @@ import { DocControllerEvent } from '../../Controller/Document/DocControllerEvent
 import metrics from '@proton/metrics'
 import { EventTypeEnum } from '@proton/docs-proto'
 import type { DocsApi } from '../../Api/DocsApi'
+import { CommentThreadType } from '@proton/docs-shared'
 
 export class CommentService implements CommentServiceInterface, InternalEventHandlerInterface {
   private localCommentsState: LocalCommentsState
@@ -109,12 +111,42 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
     return this.localCommentsState.getAllThreads()
   }
 
-  async createThread(commentContent: string): Promise<CommentThreadInterface | undefined> {
+  async createCommentThread(
+    commentContent: string,
+    markID?: string,
+    createMarkNode = true,
+  ): Promise<CommentThreadInterface | undefined> {
     const threadResult = await this._createThread.execute({
       text: commentContent,
       keys: this.keys,
       lookup: this.document,
       commentsState: this.localCommentsState,
+      markID,
+      createMarkNode,
+      type: CommentThreadType.Comment,
+    })
+
+    if (threadResult.isFailed()) {
+      this.logger.error(threadResult.getError())
+      return undefined
+    }
+
+    const thread = threadResult.getValue()
+
+    this.broadcastCommentMessage(CommentsMessageType.AddThread, thread.asPayload())
+
+    return thread
+  }
+
+  async createSuggestionThread(suggestionID: string): Promise<CommentThreadInterface | undefined> {
+    const threadResult = await this._createThread.execute({
+      text: '',
+      keys: this.keys,
+      lookup: this.document,
+      commentsState: this.localCommentsState,
+      markID: suggestionID,
+      createMarkNode: false,
+      type: CommentThreadType.Suggestion,
     })
 
     if (threadResult.isFailed()) {
@@ -250,6 +282,32 @@ export class CommentService implements CommentServiceInterface, InternalEventHan
     })
 
     this.broadcastCommentMessage(CommentsMessageType.UnresolveThread, { threadId })
+
+    return true
+  }
+
+  async changeSuggestionThreadState(threadId: string, action: SuggestionThreadStateAction): Promise<boolean> {
+    const response = await this.api.changeSuggestionThreadState(
+      this.document.volumeId,
+      this.document.linkId,
+      threadId,
+      action,
+    )
+    if (response.isFailed()) {
+      return false
+    }
+
+    let state = CommentThreadState.Active
+    if (action === 'accept') {
+      state = CommentThreadState.Accepted
+    } else if (action === 'reject') {
+      state = CommentThreadState.Rejected
+    }
+
+    const thread = this.localCommentsState.changeThreadState(threadId, state)
+    if (!thread) {
+      return false
+    }
 
     return true
   }

@@ -1,16 +1,17 @@
 import { Button } from '@proton/atoms'
+import { useCallback, useMemo, useState } from 'react'
 import {
   DropdownMenu,
   DropdownMenuButton,
   Icon,
   SimpleDropdown,
   ToolbarButton,
+  Tooltip,
   useConfirmActionModal,
 } from '@proton/components'
 import type { CommentInterface, CommentThreadInterface } from '@proton/docs-shared'
 import { CommentThreadState, UserAvatar } from '@proton/docs-shared'
 import clsx from '@proton/utils/clsx'
-import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '../../ApplicationProvider'
 import { sendErrorMessage } from '../../Utils/errorMessage'
@@ -18,19 +19,26 @@ import { CommentsComposer } from './CommentsComposer'
 import { useCommentsContext } from './CommentsContext'
 import { CommentTime } from './CommentTime'
 import { CommentViewer } from './CommentViewer'
+import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
+import { ACCEPT_SUGGESTION_COMMAND, REJECT_SUGGESTION_COMMAND } from '../Suggestions/Commands'
+import { useSuggestionCommentContent } from './useSuggestionCommentContent'
 
 export function CommentsPanelListComment({
   comment,
   thread,
   isFirstComment,
+  isSuggestionThread,
   setIsDeletingThread,
 }: {
   comment: CommentInterface
   thread: CommentThreadInterface
   isFirstComment: boolean
+  isSuggestionThread: boolean
   setIsDeletingThread: (isDeleting: boolean) => void
 }): JSX.Element {
-  const application = useApplication()
+  const [editor] = useLexicalComposerContext()
+
+  const { application, isSuggestionsFeatureEnabled } = useApplication()
 
   const { username, controller, removeMarkNode, awarenessStates } = useCommentsContext()
 
@@ -41,6 +49,34 @@ export function CommentsPanelListComment({
   const [isEditing, setIsEditing] = useState(false)
 
   const [isOptionsMenuOpen, setIsOptionsMenuOpen] = useState(false)
+
+  const isSuggestionComment = isFirstComment && isSuggestionThread
+
+  const suggestionID = isSuggestionComment ? thread.markID : null
+
+  const suggestionContent = useSuggestionCommentContent(comment, thread, suggestionID, editor)
+
+  const acceptSuggestion = () => {
+    if (!suggestionID) {
+      return
+    }
+    const didAccept = editor.dispatchCommand(ACCEPT_SUGGESTION_COMMAND, suggestionID)
+    if (!didAccept) {
+      return
+    }
+    controller.acceptSuggestion(thread.id).catch(sendErrorMessage)
+  }
+
+  const rejectSuggestion = () => {
+    if (!suggestionID) {
+      return
+    }
+    const didReject = editor.dispatchCommand(REJECT_SUGGESTION_COMMAND, suggestionID)
+    if (!didReject) {
+      return
+    }
+    controller.rejectSuggestion(thread.id).catch(sendErrorMessage)
+  }
 
   const deleteThread = async () => {
     showConfirmModal({
@@ -94,7 +130,7 @@ export function CommentsPanelListComment({
 
   const isThreadActive = thread.state === CommentThreadState.Active
 
-  const showEditButton = (!isFirstComment || isThreadActive) && isAuthorCurrentUser
+  const showEditButton = (!isFirstComment || isThreadActive) && isAuthorCurrentUser && !isSuggestionComment
   const showResolveButton = isFirstComment && isThreadActive
   const showReOpenButton = isFirstComment && !isThreadActive
   const showDeleteButton = isAuthorCurrentUser
@@ -105,7 +141,8 @@ export function CommentsPanelListComment({
     !thread.isPlaceholder &&
     !isDeleting &&
     !isEditing &&
-    (showEditButton || showResolveButton || showReOpenButton || showDeleteButton)
+    (showEditButton || showResolveButton || showReOpenButton || showDeleteButton) &&
+    !isSuggestionComment
 
   const cancelEditing = useCallback(() => {
     setIsEditing(false)
@@ -136,6 +173,20 @@ export function CommentsPanelListComment({
               {comment.createTime.milliseconds !== comment.modifyTime.milliseconds && ' • Edited'}
             </span>
           </div>
+          {isSuggestionComment && isSuggestionsFeatureEnabled && thread.state === CommentThreadState.Active && (
+            <>
+              <Tooltip title={c('Action').t`Decline suggestion`} onClick={rejectSuggestion}>
+                <Button icon pill shape="ghost" size="small">
+                  <Icon size={4.5} name="cross" />
+                </Button>
+              </Tooltip>
+              <Tooltip title={c('Action').t`Accept suggestion`} onClick={acceptSuggestion}>
+                <Button icon pill shape="ghost" size="small">
+                  <Icon size={4.5} name="checkmark" />
+                </Button>
+              </Tooltip>
+            </>
+          )}
           {canShowOptions && (
             <SimpleDropdown
               as={Button}
@@ -192,10 +243,17 @@ export function CommentsPanelListComment({
                 {showDeleteButton && (
                   <DropdownMenuButton
                     className="flex items-center gap-3 text-left text-sm hover:text-[color:--signal-danger]"
-                    onClick={isFirstComment ? deleteThread : deleteComment}
+                    onClick={() => {
+                      if (isFirstComment) {
+                        deleteThread().catch(sendErrorMessage)
+                        return
+                      }
+
+                      deleteComment()
+                    }}
                     data-testid="delete-button"
                   >
-                    <Icon name="trash" size={4.5} />
+                    <Icon name={'trash'} size={4.5} />
                     {isFirstComment ? c('Action').t`Delete thread` : c('Action').t`Delete comment`}
                   </DropdownMenuButton>
                 )}
@@ -203,6 +261,7 @@ export function CommentsPanelListComment({
             </SimpleDropdown>
           )}
         </div>
+        {/* eslint-disable-next-line no-nested-ternary */}
         {isEditing ? (
           <CommentsComposer
             autoFocus
@@ -245,6 +304,8 @@ export function CommentsPanelListComment({
               </>
             )}
           />
+        ) : isSuggestionComment ? (
+          <div className="space-y-0.5">{suggestionContent}</div>
         ) : (
           <CommentViewer
             key={comment.content}

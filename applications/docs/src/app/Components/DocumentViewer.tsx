@@ -11,6 +11,7 @@ import {
   ApplicationEvent,
   SquashVerificationObjectionDecision,
   WebsocketConnectionEvent,
+  isLocalEnvironment,
 } from '@proton/docs-core'
 import { Button, CircleLoader } from '@proton/atoms'
 import DebugMenu, { useDebug } from './DebugMenu'
@@ -34,6 +35,7 @@ import { useAuthentication } from '@proton/components/hooks'
 import { useGetUserSettings } from '@proton/components/hooks/useUserSettings'
 import WordCountOverlay from './WordCount/WordCountOverlay'
 import metrics from '@proton/metrics'
+import { useSuggestionsFeatureFlag } from '../Hooks/useSuggestionsFeatureFlag'
 
 type Props = {
   lookup: NodeMeta
@@ -66,6 +68,14 @@ export function DocumentViewer({ lookup, editorInitializationConfig, action }: P
   const [didLoadEditorContent, setDidLoadEditorContent] = useState(false)
   const debug = useDebug()
   const getUserSettings = useGetUserSettings()
+
+  const { isSuggestionsEnabled } = useSuggestionsFeatureFlag()
+  useEffect(() => {
+    if (!bridge) {
+      return
+    }
+    void bridge.editorInvoker.handleIsSuggestionsFeatureEnabled(isSuggestionsEnabled || isLocalEnvironment())
+  }, [bridge, isSuggestionsEnabled])
 
   useEffect(() => {
     if (action === 'download' && didLoadTitle && didLoadEditorContent && docOrchestrator) {
