@@ -231,7 +231,7 @@ const List = (
                 showContentPanel ? 'is-column' : 'is-row',
             ])}
         >
-            <div className={clsx(['h-full', isCompactView && 'list-compact'])}>
+            <div ref={ref} className={clsx(['h-full', isCompactView && 'list-compact'])}>
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}{' '}
                     {c('Title').ngettext(msgid`${unreads} unread message`, `${unreads} unread messages`, unreads)}
@@ -263,10 +263,7 @@ const List = (
                         canDisplayTaskRunningBanner={canDisplayTaskRunningBanner}
                     />
 
-                    <div
-                        className="items-column-list-container h-full overflow-auto flex flex-column flex-nowrap w-full"
-                        ref={ref}
-                    >
+                    <div className="items-column-list-container h-full overflow-auto flex flex-column flex-nowrap w-full">
                         {elements.length === 0 && !canDisplayTaskRunningBanner && (
                             <EmptyListPlaceholder
                                 labelID={labelID}
