@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import { PrivateMainSettingsArea, RetentionDaysSection } from '@proton/components';
-import { getSectionPath } from '@proton/components/containers/layout/helper';
+import { B2BPhotosSection, PrivateMainSettingsArea, RetentionDaysSection } from '@proton/components';
+import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
 import type { getDriveAppRoutes } from './routes';
 
@@ -16,7 +16,7 @@ const DriveSettingsRouter = ({
     const { path } = useRouteMatch();
 
     const {
-        routes: { revisions },
+        routes: { revisions, photos },
     } = driveAppRoutes;
 
     return (
@@ -26,6 +26,13 @@ const DriveSettingsRouter = ({
                     <RetentionDaysSection />
                 </PrivateMainSettingsArea>
             </Route>
+            {getIsSectionAvailable(photos) && (
+                <Route path={getSectionPath(path, photos)}>
+                    <PrivateMainSettingsArea config={photos}>
+                        <B2BPhotosSection />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
             {redirect}
         </Switch>
     );
