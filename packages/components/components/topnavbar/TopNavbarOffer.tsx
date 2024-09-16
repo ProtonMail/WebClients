@@ -65,18 +65,11 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
         const autoOffer = searchParams.get('offer') === 'auto';
         const plan = searchParams.get('plan');
 
-        const combinedIgnoreVisited = ignoreVisited || autoOffer;
-        // No welcome modal in account
+        // Common conditions that would prevent the offer modal from showing
         if (
             loading ||
             loadingSubscription ||
             !offerConfig.autoPopUp ||
-            (isVisited && !combinedIgnoreVisited) ||
-            onceRef.current ||
-            // Hide for paid mail cycle 12/24
-            (user.hasPaidMail &&
-                [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(subscription?.Cycle as any) &&
-                !combinedIgnoreVisited) ||
             // Hide the autopopup during the welcome flow and re-trigger it when the welcome flow completes.
             (!welcomeFlags.isDone && !ignoreOnboarding) ||
             // If the subscription modal is open. Explicitly not checking if any modal is open since it intereferes with the onboarding modal.
@@ -86,9 +79,30 @@ const TopNavbarOffer = ({ app, offerConfig, ignoreVisited, ignoreOnboarding }: P
         ) {
             return;
         }
+
+        // The subscription reminder offer could be offered again since it runs all the time and is displayed every 6 months
+        if (offerConfig.ID === 'subscription-reminder') {
+            setOfferModalOpen(true);
+            return;
+        }
+
+        const combinedIgnoreVisited = ignoreVisited || autoOffer;
+        if (
+            (isVisited && !combinedIgnoreVisited) ||
+            onceRef.current ||
+            // Hide for paid mail cycle 12/24
+            (user.hasPaidMail &&
+                [CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(subscription?.Cycle as any) &&
+                !combinedIgnoreVisited)
+        ) {
+            return;
+        }
+
         if (autoOffer) {
             history.replace({ search: undefined });
         }
+
+        // If we reach this points, a regular offer modal should be displayed
         onceRef.current = true;
         setFetchOffer(true);
         setOfferModalOpen(true);
