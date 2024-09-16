@@ -18,9 +18,13 @@ export interface UserSettings {
     Sort: SortSetting;
     Layout: LayoutSetting;
     RevisionRetentionDays: RevisionRetentionDaysSetting;
+    B2BPhotosEnabled: boolean;
 }
 
 export interface UserSettingsResponse {
     UserSettings: { [K in keyof UserSettings]: UserSettings[K] | null };
-    Defaults: { RevisionRetentionDays: UserSettings['RevisionRetentionDays'] };
+    Defaults: {
+        RevisionRetentionDays: UserSettings['RevisionRetentionDays'];
+        B2BPhotosEnabled: UserSettings['B2BPhotosEnabled'];
+    };
 }
