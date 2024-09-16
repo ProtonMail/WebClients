@@ -106,6 +106,7 @@ const MailboxContainer = ({
     const getElementsFromIDs = useGetElementsFromIDs();
     const { markAs, selectAllMarkModal } = useMarkAs();
     const listRef = useRef<HTMLDivElement>(null);
+    const listContainerRef = useRef<HTMLDivElement>(null);
     const forceRowMode =
         breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium || breakpoints.viewportWidth.large;
     const columnModeSetting = isColumnMode(mailSettings);
@@ -124,7 +125,7 @@ const MailboxContainer = ({
     const { enableResize, resetWidth, scrollBarWidth, isResizing } = useResizeMessageView(
         mainAreaRef,
         resizeAreaRef,
-        listRef
+        listContainerRef
     );
 
     const page = pageFromUrl(location);
@@ -568,6 +569,7 @@ const MailboxContainer = ({
                 >
                     <List
                         ref={listRef}
+                        listContainerRef={listContainerRef}
                         show={showList}
                         conversationMode={conversationMode}
                         labelID={labelID}
