@@ -8,6 +8,14 @@ import { type FeatureFlag } from './UnleashFeatureFlags';
 export const FLAGS_WITH_VARIANT = ['MailOnboarding', 'ABTestInboxUpsellOneDollar'] satisfies FeatureFlag[];
 
 /**
+ * Flags with variants variants.
+ * @description Union type of the list of feature flags with a variant.
+ *
+ * Naming convention: `${FlagName}Variant`
+ */
+export type MailOnboardingVariant = 'none' | 'old' | 'new';
+
+/**
  * @description Union type of the list of feature flags with a variant.
  *
  * Based on `FLAG_VARIANTS` list.
@@ -23,5 +31,5 @@ type VariantReturnType<TVariantNameValue extends string> = Partial<
  * @description Returns the Unleash variant value based on the declared `FeatureFlagsWithVariant` names
  */
 export type FeatureFlagVariant<FlagName extends FeatureFlagsWithVariant> = FlagName extends 'MailOnboarding'
-    ? VariantReturnType<'none' | 'old' | 'new'>
+    ? VariantReturnType<MailOnboardingVariant>
     : unknown;
