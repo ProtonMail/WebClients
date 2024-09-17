@@ -3,9 +3,8 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
+import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.svg';
-
-import Banner, { BannerBackgroundColor } from '../../../components/banner/Banner';
 
 interface Props {
     loading?: boolean;
