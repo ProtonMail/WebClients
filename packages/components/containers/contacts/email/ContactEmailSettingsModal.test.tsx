@@ -3,7 +3,6 @@ import { fireEvent, screen, waitFor, within } from '@testing-library/react';
 import { CryptoProxy } from '@proton/crypto';
 import { API_CODES, API_KEY_SOURCE, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import type { RequireSome } from '@proton/shared/lib/interfaces';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { addApiMock } from '@proton/testing/lib/api';
@@ -12,7 +11,6 @@ import { clearAll, mockedCryptoApi, notificationManager, renderWithProviders } f
 import type { ContactEmailSettingsProps } from './ContactEmailSettingsModal';
 import ContactEmailSettingsModal from './ContactEmailSettingsModal';
 
-// Fails with React 18 upgrade
 describe('ContactEmailSettingsModal', () => {
     const props: ContactEmailSettingsProps = {
         contactID: 'ContactID',
@@ -53,7 +51,7 @@ END:VCARD`;
             return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText, getByTitle } = renderWithProviders(
+        renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -62,25 +60,24 @@ END:VCARD`;
             />
         );
 
-        const showMoreButton = getByText('Show advanced PGP settings');
+        const showMoreButton = screen.getByRole('button', { name: 'Expand' });
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
-        await wait(0);
         fireEvent.click(showMoreButton);
 
         const encryptToggle = document.getElementById('encrypt-toggle');
         expect(encryptToggle).toBeDisabled();
 
-        const signSelect = getByText("Use global default (Don't sign)", { exact: false });
+        const signSelect = screen.getByText("Use global default (Don't sign)", { exact: false });
         fireEvent.click(signSelect);
-        const signOption = getByTitle('Sign');
+        const signOption = screen.getByTitle('Sign');
         fireEvent.click(signOption);
 
-        const pgpSelect = getByText('Use global default (PGP/MIME)', { exact: false });
+        const pgpSelect = screen.getByText('Use global default (PGP/MIME)', { exact: false });
         fireEvent.click(pgpSelect);
-        const pgpInlineOption = getByTitle('PGP/Inline');
+        const pgpInlineOption = screen.getByTitle('PGP/Inline');
         fireEvent.click(pgpInlineOption);
 
-        const saveButton = getByText('Save');
+        const saveButton = screen.getByText('Save');
         fireEvent.click(saveButton);
 
         await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
@@ -132,7 +129,7 @@ END:VCARD`;
             return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText, getByTitle } = renderWithProviders(
+        renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -141,16 +138,16 @@ END:VCARD`;
             />
         );
 
-        const showMoreButton = getByText('Show advanced PGP settings');
+        const showMoreButton = screen.getByRole('button', { name: 'Expand' });
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
         fireEvent.click(showMoreButton);
 
-        const signSelect = getByText('Sign', { exact: true });
+        const signSelect = screen.getByText('Sign', { exact: true });
         fireEvent.click(signSelect);
-        const signOption = getByTitle("Use global default (Don't sign)");
+        const signOption = screen.getByTitle("Use global default (Don't sign)");
         fireEvent.click(signOption);
 
-        const saveButton = getByText('Save');
+        const saveButton = screen.getByText('Save');
         fireEvent.click(saveButton);
 
         await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
@@ -218,7 +215,7 @@ END:VCARD`;
             return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText } = renderWithProviders(
+        renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -227,12 +224,13 @@ END:VCARD`;
             />
         );
 
-        const showMoreButton = getByText('Show advanced PGP settings');
+        const showMoreButton = screen.getByRole('button', { name: 'Expand' });
+
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
         fireEvent.click(showMoreButton);
 
         const contactKeysTable = await screen.findByTestId('contact-keys-table', undefined, { timeout: 5000 });
-        const contactKeysTableRows = within(contactKeysTable).getAllByRole('row');
+        const contactKeysTableRows = await within(contactKeysTable).findAllByRole('row');
         expect(contactKeysTableRows).toHaveLength(2);
         // test primary key row
         await within(contactKeysTableRows[0]).findByText('dummy-pinned-key-1'); // fingerprint
@@ -244,10 +242,10 @@ END:VCARD`;
         // mark second key as primary
         const dropdownButton = within(contactKeysTableRows[1]).getByTitle('Open actions dropdown');
         fireEvent.click(dropdownButton);
-        const useForSendingButton = getByText('Use for sending');
+        const useForSendingButton = screen.getByText('Use for sending');
         fireEvent.click(useForSendingButton);
 
-        const saveButton = getByText('Save');
+        const saveButton = screen.getByText('Save');
         fireEvent.click(saveButton);
 
         await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
@@ -321,7 +319,7 @@ END:VCARD`;
             return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText } = renderWithProviders(
+        renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -330,24 +328,25 @@ END:VCARD`;
             />
         );
 
-        const showMoreButton = getByText('Show advanced PGP settings');
+        const showMoreButton = screen.getByRole('button', { name: 'Expand' });
+
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
         fireEvent.click(showMoreButton);
 
         await waitFor(() => {
-            const keyFingerprint = getByText('abcdef');
+            const keyFingerprint = screen.getByText('abcdef');
             return expect(keyFingerprint).toBeVisible();
         });
 
-        const warningInvalidKey = getByText(/None of the uploaded keys are valid for encryption/);
+        const warningInvalidKey = screen.getByText(/None of the uploaded keys are valid for encryption/);
         expect(warningInvalidKey).toBeVisible();
 
-        const encryptToggleLabel = getByText('Encrypt emails');
+        const encryptToggleLabel = screen.getByText('Encrypt emails');
         fireEvent.click(encryptToggleLabel);
 
         expect(warningInvalidKey).not.toBeVisible();
 
-        const saveButton = getByText('Save');
+        const saveButton = screen.getByText('Save');
         fireEvent.click(saveButton);
 
         await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
@@ -421,7 +420,7 @@ END:VCARD`;
             return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText } = renderWithProviders(
+        renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -430,7 +429,7 @@ END:VCARD`;
             />
         );
 
-        const showMoreButton = await screen.findByText('Show advanced PGP settings');
+        const showMoreButton = screen.getByRole('button', { name: 'Expand' });
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
         fireEvent.click(showMoreButton);
 
@@ -442,7 +441,7 @@ END:VCARD`;
         expect(signSelectDropdown).toBeDisabled();
         signSelectDropdown?.innerHTML.includes('Sign');
 
-        const saveButton = getByText('Save');
+        const saveButton = screen.getByText('Save');
         fireEvent.click(saveButton);
 
         await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
@@ -524,7 +523,7 @@ END:VCARD`;
             return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText } = renderWithProviders(
+        renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -533,25 +532,25 @@ END:VCARD`;
             />
         );
 
-        const showMoreButton = getByText('Show advanced PGP settings');
+        const showMoreButton = screen.getByRole('button', { name: 'Expand' });
+
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
-        await wait(1);
         fireEvent.click(showMoreButton);
 
         await waitFor(() => {
-            const keyFingerprint = getByText('abcdef');
+            const keyFingerprint = screen.getByText('abcdef');
             return expect(keyFingerprint).toBeVisible();
         });
 
-        const warningInvalidKey = getByText(/None of the uploaded keys are valid for encryption/);
+        const warningInvalidKey = screen.getByText(/None of the uploaded keys are valid for encryption/);
         expect(warningInvalidKey).toBeVisible();
 
-        const encryptToggleLabel = getByText('Encrypt emails');
+        const encryptToggleLabel = screen.getByText('Encrypt emails');
         fireEvent.click(encryptToggleLabel);
 
         expect(warningInvalidKey).not.toBeVisible();
 
-        const saveButton = getByText('Save');
+        const saveButton = screen.getByText('Save');
         fireEvent.click(saveButton);
 
         await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
@@ -616,7 +615,7 @@ END:VCARD`;
             return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText, getByTitle, queryByText } = renderWithProviders(
+        renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -625,29 +624,29 @@ END:VCARD`;
             />
         );
 
-        const showMoreButton = getByText('Show advanced PGP settings');
+        const showMoreButton = screen.getByRole('button', { name: 'Expand' });
+
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
-        await wait(1);
         fireEvent.click(showMoreButton);
 
         await waitFor(() => {
-            const keyFingerprint = getByText('abcdef');
+            const keyFingerprint = screen.getByText('abcdef');
             return expect(keyFingerprint).toBeVisible();
         });
 
-        const infoEncryptionDisabled = getByText(/The owner of this address has disabled end-to-end encryption/);
+        const infoEncryptionDisabled = screen.getByText(/The owner of this address has disabled end-to-end encryption/);
         expect(infoEncryptionDisabled).toBeVisible();
 
-        expect(queryByText('Encrypt emails')).toBeNull();
-        expect(queryByText('Sign emails')).toBeNull();
-        expect(queryByText('Upload keys')).toBeNull();
+        expect(screen.queryByText('Encrypt emails')).toBeNull();
+        expect(screen.queryByText('Sign emails')).toBeNull();
+        expect(screen.queryByText('Upload keys')).toBeNull();
 
-        const dropdownButton = getByTitle('Open actions dropdown');
+        const dropdownButton = screen.getByTitle('Open actions dropdown');
         fireEvent.click(dropdownButton);
-        const trustKeyButton = getByText('Trust');
+        const trustKeyButton = screen.getByText('Trust');
         fireEvent.click(trustKeyButton);
 
-        const saveButton = getByText('Save');
+        const saveButton = screen.getByText('Save');
         fireEvent.click(saveButton);
 
         await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
@@ -716,7 +715,7 @@ END:VCARD`;
             return { Code: API_CODES.SINGLE_SUCCESS };
         });
 
-        const { getByText, getByTitle, queryByText } = renderWithProviders(
+        renderWithProviders(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -725,22 +724,24 @@ END:VCARD`;
             />
         );
 
-        const showMoreButton = getByText('Show advanced PGP settings');
+        const showMoreButton = screen.getByRole('button', { name: 'Expand' });
+
         await waitFor(() => expect(showMoreButton).not.toBeDisabled());
-        await wait(1);
         fireEvent.click(showMoreButton);
 
         await waitFor(() => {
-            const internalAddressKeyFingerprint = queryByText('internal mocked armored key');
+            const internalAddressKeyFingerprint = screen.queryByText('internal mocked armored key');
             return expect(internalAddressKeyFingerprint).toBeNull();
         });
 
         await waitFor(() => {
-            const wkdKeyFingerprint = getByText('wkd mocked armored key');
+            const wkdKeyFingerprint = screen.getByText('wkd mocked armored key');
             return expect(wkdKeyFingerprint).toBeVisible();
         });
 
-        const infoEncryptionDisabled = queryByText(/The owner of this address has disabled end-to-end encryption/);
+        const infoEncryptionDisabled = screen.queryByText(
+            /The owner of this address has disabled end-to-end encryption/
+        );
         expect(infoEncryptionDisabled).toBeNull(); // only shown to internal accounts
 
         // Ensure the UI matches that of external recipients with WKD keys:
@@ -755,14 +756,14 @@ END:VCARD`;
         expect(signSelectDropdown).toBeDisabled();
         signSelectDropdown?.innerHTML.includes('Sign');
 
-        expect(queryByText('Upload keys')).toBeNull();
+        expect(screen.queryByText('Upload keys')).toBeNull();
 
-        const dropdownButton = getByTitle('Open actions dropdown');
+        const dropdownButton = screen.getByTitle('Open actions dropdown');
         fireEvent.click(dropdownButton);
-        const trustKeyButton = getByText('Trust');
+        const trustKeyButton = screen.getByText('Trust');
         fireEvent.click(trustKeyButton);
 
-        const saveButton = getByText('Save');
+        const saveButton = screen.getByText('Save');
         fireEvent.click(saveButton);
 
         await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
@@ -829,9 +830,8 @@ END:VCARD`;
                 />
             );
 
-            const showMoreButton = screen.getByText('Show advanced PGP settings');
+            const showMoreButton = screen.getByRole('button', { name: 'Expand' });
             await waitFor(() => expect(showMoreButton).not.toBeDisabled());
-            await wait(1);
             fireEvent.click(showMoreButton);
 
             await waitFor(() => {
@@ -870,9 +870,9 @@ END:VCARD`;
                 />
             );
 
-            const showMoreButton = screen.getByText('Show advanced PGP settings');
+            const showMoreButton = screen.getByRole('button', { name: 'Expand' });
+
             await waitFor(() => expect(showMoreButton).not.toBeDisabled());
-            await wait(1);
             fireEvent.click(showMoreButton);
 
             await waitFor(() => {
@@ -911,9 +911,8 @@ END:VCARD`;
                 />
             );
 
-            const showMoreButton = screen.getByText('Show advanced PGP settings');
+            const showMoreButton = screen.getByRole('button', { name: 'Expand' });
             await waitFor(() => expect(showMoreButton).not.toBeDisabled());
-            await wait(1);
             fireEvent.click(showMoreButton);
 
             await waitFor(() => {
