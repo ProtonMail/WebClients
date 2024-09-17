@@ -4,8 +4,14 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { CalendarInviteButtons, Loader, useDrawer, useNotifications } from '@proton/components';
-import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
+import {
+    Banner,
+    BannerBackgroundColor,
+    CalendarInviteButtons,
+    Loader,
+    useDrawer,
+    useNotifications,
+} from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
