@@ -47,7 +47,7 @@ const config = {
         }),
         // macOS
         new MakerDMG((arch) => ({
-            name: 'Proton Pass',
+            name: `ProtonPass_${pkg.version}`,
             background: path.join(__dirname, 'assets', 'dmg-background.png'),
             icon: path.join(__dirname, 'assets', 'volume-icon.icns'),
             contents: () => [
