@@ -2,6 +2,7 @@ import { getUnixTime, subMonths, subYears } from 'date-fns';
 
 import type { ApiStartImportParams } from '@proton/activation/src/api/api.interface';
 import { GMAIL_CATEGORIES, MAX_FOLDERS_DEPTH } from '@proton/activation/src/constants';
+import { PROTON_DEFAULT_SEPARATOR } from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import type { MailImportGmailCategories, MailImportMapping } from '@proton/activation/src/interface';
 import { CustomFieldsBitmap, ImportType, TIME_PERIOD } from '@proton/activation/src/interface';
 import type { RequireSome } from '@proton/shared/lib/interfaces';
@@ -80,18 +81,23 @@ export const formatPrepareStepPayload = ({
                     result = fields.importCategoriesDestination;
                 } else if (folder.systemFolder) {
                     result = folder.systemFolder;
-                } else if (folder.protonPath.length < MAX_FOLDERS_DEPTH || folder.separator !== '/') {
+                } else if (
+                    folder.protonPath.length < MAX_FOLDERS_DEPTH ||
+                    folder.separator !== PROTON_DEFAULT_SEPARATOR
+                ) {
                     result = folder.protonPath
                         // Folder name could contain '/' in the name, this is considered as node separator in the API
-                        .map((item) => item.replaceAll('/', '\\/'))
-                        .join(folder.separator);
+                        .map((item) => item.replaceAll(PROTON_DEFAULT_SEPARATOR, '\\/'))
+                        .join(PROTON_DEFAULT_SEPARATOR);
                 }
                 // Here separator is '/'
                 else {
-                    const cleanedPath = folder.protonPath.map((item) => item.replaceAll('/', '\\/'));
+                    const cleanedPath = folder.protonPath.map((item) =>
+                        item.replaceAll(PROTON_DEFAULT_SEPARATOR, '\\/')
+                    );
                     const itemsWithoutLast = cleanedPath.slice(0, -1);
                     const escapedLastItem = cleanedPath.slice(-1).pop() || '';
-                    result = [...itemsWithoutLast, escapedLastItem].join('/');
+                    result = [...itemsWithoutLast, escapedLastItem].join(PROTON_DEFAULT_SEPARATOR);
                 }
                 return { FolderPath: result };
             })();
