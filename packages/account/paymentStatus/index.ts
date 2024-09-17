@@ -6,8 +6,7 @@ import {
     miniSerializeError,
 } from '@reduxjs/toolkit';
 
-import { type PaymentMethodStatusExtended } from '@proton/components/payments/core';
-import { getPaymentMethodStatus } from '@proton/components/payments/core/api';
+import { type PaymentMethodStatusExtended, getPaymentMethodStatus } from '@proton/payments';
 import { type ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
     cacheHelper,

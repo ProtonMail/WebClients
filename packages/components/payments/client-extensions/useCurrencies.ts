@@ -1,6 +1,5 @@
+import { getAvailableCurrencies, getPreferredCurrency } from '@proton/payments';
 import { useFlag } from '@proton/unleash';
-
-import { getAvailableCurrencies, getPreferredCurrency } from '../core';
 
 export type GetPreferredCurrencyParams = Omit<Parameters<typeof getPreferredCurrency>[0], 'regionalCurrenciesEnabled'>;
 

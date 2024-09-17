@@ -1,5 +1,5 @@
 import type { HumanVerificationResult } from '@proton/components/containers/api/humanVerification/interface';
-import { isTokenPayment } from '@proton/components/payments/core';
+import { isTokenPayment } from '@proton/payments';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';

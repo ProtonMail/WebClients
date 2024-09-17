@@ -1,10 +1,10 @@
 import { act, render, waitFor } from '@testing-library/react';
 
+import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments';
 import { createTokenV4, getTokenStatusV4 } from '@proton/shared/lib/api/payments';
 import type { Api, Currency } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock, applyHOCs, flushPromises, withNotifications } from '@proton/testing';
 
-import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../../../payments/core';
 import type { OnBitcoinTokenValidated } from '../../../payments/react-extensions/useBitcoin';
 import useBitcoin, { BITCOIN_POLLING_INTERVAL } from '../../../payments/react-extensions/useBitcoin';
 import Bitcoin from './Bitcoin';

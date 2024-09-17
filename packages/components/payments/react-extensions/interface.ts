@@ -1,4 +1,4 @@
-import type { PaymentProcessor } from '../core';
+import type { PaymentProcessor } from '@proton/payments';
 
 export type PaymentProcessorType =
     | 'paypal'

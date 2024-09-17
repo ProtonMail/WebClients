@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/payments/core';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import type { PlansMap, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';
 import { Renew } from '@proton/shared/lib/interfaces';

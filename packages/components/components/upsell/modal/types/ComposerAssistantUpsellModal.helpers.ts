@@ -1,4 +1,4 @@
-import { type AmountAndCurrency, type FullPlansMap } from '@proton/components/payments/core';
+import { type AmountAndCurrency, type FullPlansMap } from '@proton/payments';
 import type { ADDON_NAMES } from '@proton/shared/lib/constants';
 import { CYCLE, PLANS, isFreeSubscription } from '@proton/shared/lib/constants';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';

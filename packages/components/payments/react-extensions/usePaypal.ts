@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
-import { Api } from '@proton/shared/lib/interfaces';
+import {
+    type AmountAndCurrency,
+    type ChargeablePaymentParameters,
+    type PaymentVerificator,
+    PaypalPaymentProcessor,
+} from '@proton/payments';
+import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { AmountAndCurrency, ChargeablePaymentParameters, PaymentVerificator } from '../core';
-import { PaypalPaymentProcessor } from '../core/payment-processors/paypalPayment';
-import { PaymentProcessorHook, PaymentProcessorType } from './interface';
+import type { PaymentProcessorHook, PaymentProcessorType } from './interface';
 import { usePaymentProcessor } from './usePaymentProcessor';
 
 interface Props {

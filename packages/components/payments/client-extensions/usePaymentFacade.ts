@@ -1,5 +1,17 @@
 import { useEffect, useRef } from 'react';
 
+import type {
+    BillingAddress,
+    ChargeablePaymentParameters,
+    ChargebeeIframeEvents,
+    ChargebeeIframeHandles,
+    PaymentMethodFlows,
+    PaymentMethodStatusExtended,
+    PaymentMethodType,
+    PlainPaymentMethodType,
+    SavedPaymentMethod,
+} from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, canUseChargebee } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -17,18 +29,6 @@ import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useConfig, useModals } from '../../hooks';
 import { useCbIframe } from '../chargebee/ChargebeeIframe';
-import type {
-    BillingAddress,
-    ChargeablePaymentParameters,
-    ChargebeeIframeEvents,
-    ChargebeeIframeHandles,
-    PaymentMethodFlows,
-    PaymentMethodStatusExtended,
-    PaymentMethodType,
-    PlainPaymentMethodType,
-    SavedPaymentMethod,
-} from '../core';
-import { PAYMENT_METHOD_TYPES, canUseChargebee } from '../core';
 import type { OnMethodChangedHandler, Operations, OperationsData } from '../react-extensions';
 import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
 import type { PaymentProcessorType } from '../react-extensions/interface';

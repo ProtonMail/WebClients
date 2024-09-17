@@ -1,4 +1,4 @@
-import { getPlansMap } from '@proton/components/payments/core';
+import { getPlansMap } from '@proton/payments';
 import { APPS, COUPON_CODES, CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import type { Subscription } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';

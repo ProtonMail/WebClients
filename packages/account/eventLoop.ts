@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import type { Filter } from '@proton/components/containers/filters/interfaces';
-import type { SavedPaymentMethod } from '@proton/components/payments/core';
+import type { SavedPaymentMethod } from '@proton/payments';
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 import type {
     Address,
