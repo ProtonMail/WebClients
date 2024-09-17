@@ -70,11 +70,11 @@
       "Accept": [
         "Принять"
       ],
-      "Activate": [
-        "Активировать"
-      ],
       "activate": [
         "включить"
+      ],
+      "Activate": [
+        "Активировать"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
@@ -892,6 +892,9 @@
       "Resume": [
         "Возобновить"
       ],
+      "Resume membership": [
+        "Возобновить членство"
+      ],
       "Retry": [
         "Повторить"
       ],
@@ -1186,8 +1189,8 @@
       "Use authentication code": [
         "Используйте код аутентификации"
       ],
-      "Use group permissions": [
-        "Использовать права группы"
+      "Use group sending permissions": [
+        "Использовать групповые разрешения на отправку"
       ],
       "Use recovery code": [
         "Использовать код восстановления"
@@ -1472,6 +1475,9 @@
       "Fast and secure. No logs are kept.": [
         "Быстро и безопасно. Журналы не сохраняются."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Запускать на серверах ${ BRAND_NAME }"
+      ],
       "Run on device": [
         "Запуск на устройстве"
       ]
@@ -1479,9 +1485,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Купить"
-      ],
-      "New": [
-        "Новый"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Поднимите производительность электронной почты на новый уровень. Пусть ${ BRAND_NAME } Scribe поможет вам в написании, ответах и корректировке писем."
@@ -3411,6 +3414,12 @@
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Включите ${ PROTON_SENTINEL_NAME } для доступа к этим функциям"
       ],
+      "Enable detailed events and ${ PROTON_SENTINEL_NAME } to access these features": [
+        "Включите подробные события и ${ PROTON_SENTINEL_NAME }, чтобы получить доступ к этим функциям."
+      ],
+      "Enable detailed events to access these features": [
+        "Включите подробные события, чтобы получить доступ к этим функциям"
+      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
@@ -3631,6 +3640,38 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Вы приглашены для доступа к файлу в ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "drive_signup_2024: Info": {
+      "**Collaborative:** online document editor": [
+        "**Совместная работа:** в онлайновом редакторе"
+      ],
+      "**GDPR** and **HIPAA** compliant": [
+        "Соответствие требованиям **GDPR** и **HIPAA**."
+      ],
+      "**ISO 27001** certified": [
+        "Сертификат **ISO 27001**"
+      ],
+      "**Secure:** end-to-end encryption": [
+        "**Защищенное:** сквозное шифрование"
+      ],
+      "**Simple and user-friendly:** import your files and setup in minutes": [
+        "**Простой и удобный:** импорт файлов и настройка за несколько минут"
+      ],
+      "Advanced protection that goes beyond industry standards": [
+        "Передовая защита, превосходящая отраслевые стандарты"
+      ],
+      "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
+        "Присоединяйтесь к более чем 50 000 организаций, которые уже пользуются преимуществами безопасности ${ BRAND_NAME }."
+      ],
+      "Protect sensitive business information and collaborate securely": [
+        "Защитите конфиденциальную деловую информацию и обеспечьте безопасную совместную работу"
+      ],
+      "Secure cloud storage that gives you control of your data": [
+        "Защищенное облачное хранилище, обеспечивающее контроль над данными"
+      ],
+      "Tailored made solutions for larger organizations with custom needs": [
+        "Индивидуальные решения для крупных организаций с индивидуальными потребностями"
       ]
     },
     "driveplus2024: Deal details": {
@@ -5141,9 +5182,6 @@
       "${ BRAND_NAME } groups": [
         "Группы ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "*По одной бесплатной пробной версии для каждого клиента."
-      ],
       "Accounts with custom domains cannot join a group plan.": [
         "Аккаунты с пользовательским доменом не могут присоединиться к групповому плану."
       ],
@@ -5198,9 +5236,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Счет за подписку будет выставлен основному администратору этого тарифа."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Для облегчения перехода мы дарим вам 30-дневную пробную версию ${ BRAND_NAME } Unlimited*."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас пригласили присоединиться к организации «${ invite.OrganizationName }»‎"
       ],
@@ -5251,9 +5286,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*По одной бесплатной пробной версии для каждого клиента."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "По умолчанию администратору доступно ${ formattedStorage } хранилища. В дальнейшем вы сможете перераспределить доступный объем между дополнительными пользователями."
       ],
@@ -5265,9 +5297,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Приглашение будет отменено, и пользователь не сможет присоединиться к ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Аккаунт пользователя получит доступ к 30-дневному бесплатному тарифу ${ BRAND_NAME } Unlimited*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Чтобы создать нового пользователя, необходим настроенный пользовательский домен."
@@ -5838,6 +5867,27 @@
         "${ memberCount } члена",
         "${ memberCount } членов",
         "${ memberCount } член"
+      ]
+    },
+    "group_invite_2024: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Попробуйте открыть ссылку снова."
+      ]
+    },
+    "group_invite_2024: Info": {
+      "You can safely close this tab.": [
+        "Вы можете безопасно закрыть эту вкладку."
+      ],
+      "You have declined the group invitation and will not receive any email from this group.": [
+        "Вы отклонили приглашение в группу и не будете получать электронные письма от этой группы."
+      ]
+    },
+    "group_invite_2024: Title": {
+      "Group invitation accepted": [
+        "Приглашение в группу принято"
+      ],
+      "Group invitation declined": [
+        "Приглашение в группу отклонено"
       ]
     },
     "Header": {
@@ -6537,6 +6587,12 @@
       "${ vaultLink } created": [
         "Фильтр ${ vaultLink } создан"
       ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } удалена"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } была предоставлена почтой"
+      ],
       "${ vaultLink } updated": [
         "${ vaultLink } обновлён"
       ],
@@ -6705,6 +6761,9 @@
         "Затронутые пользователи находятся на строках",
         "Затронутые пользователи находятся на строках"
       ],
+      "After being locked, organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
+        "После блокировки члены организации должны будут разблокировать ${ PASS_APP_NAME } с помощью своего пароля, PIN-кода и т. д."
+      ],
       "Align left": [
         "Выровнять по левому краю"
       ],
@@ -6810,6 +6869,9 @@
       "Are you sure you want to delete this folder?": [
         "Вы уверены, что хотите удалить эту папку?"
       ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Вы уверены, что хотите удалить эту группу? Адрес группы больше не будет работать."
+      ],
       "Are you sure you want to delete this label?": [
         "Вы уверены, что хотите удалить этот ярлык?"
       ],
@@ -6908,6 +6970,15 @@
       ],
       "Boost your organization’s brand identity and create a more consistent online experience for your users.": [
         "Расширьте идентификацию бренда вашей организации и создайте более последовательный опыт работы в Интернете для ваших пользователей."
+      ],
+      "Breach Custom Email Created": [
+        "Создан пользовательский адрес эл. почты взломов"
+      ],
+      "Breach Custom Email Deleted": [
+        "Удалён пользовательский адрес эл. почты взломов"
+      ],
+      "Breach Custom Email Validated": [
+        "Подтверждён пользовательский адрес эл. почты взломов"
       ],
       "By default, organization members can only export vaults where they are the owners. If this option is turned on, they won't be able to export any data": [
         "По умолчанию члены организации могут экспортировать только те хранилища, владельцами которых они являются. Если этот параметр включен, они не смогут экспортировать никакие данные"
@@ -7083,6 +7154,9 @@
       "Disable recovery by ${ type }": [
         "Отключить восстановление с помощью ${ type }"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Отключено с момента ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Отключение двухфакторной аутентификации сделает вашу учетную запись менее защищенной. Продолжайте только при крайней необходимости."
       ],
@@ -7200,6 +7274,9 @@
       "Enable TLS or SSL on the external service if it is supported.": [
         "Включите TLS или SSL внешней почтовой службы, если она поддерживает данные протоколы."
       ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Включено с момента ${ formattedDateAndTime }"
+      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Повторное включение восстановления по фразе приведет к созданию новой фразы восстановления."
       ],
@@ -7259,6 +7336,9 @@
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Приглашения на событие и RSVP будут отправлены на этом языке."
+      ],
+      "Events include authentication attempts for all ${ BRAND_NAME } services that use your ${ BRAND_NAME_TWO } credentials.": [
+        "События включают попытки аутентификации для всех служб ${ BRAND_NAME }, которые используют ваши учетные данные ${ BRAND_NAME_TWO }."
       ],
       "Example: ${ spfExample }": [
         "Пример: ${ spfExample }"
@@ -7337,9 +7417,6 @@
       ],
       "Group deleted": [
         "Группа удалена"
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Группировать сообщения из одной цепочки в папке Входящие или отображать их отдельно."
       ],
       "here": [
         "здесь"
@@ -7578,6 +7655,9 @@
       "Item deleted from vault": [
         "Элемент удален из хранилища"
       ],
+      "Item flags changed in ${ vaultLink }": [
+        "Флаги предмета поменялись в ${ vaultLink }"
+      ],
       "Item flags changed in vault": [
         "Флажки предметов изменены в хранилище"
       ],
@@ -7673,6 +7753,9 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Дайте своим контактам знать о том, что вы заботитесь об их конфиденциальности."
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Давайте начнем с нажатия кнопки Новая группа, расположенной выше."
       ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
@@ -7983,6 +8066,9 @@
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Обратите внимание, что если вы удалите этот фильтр ${ nameDeleted }, мы перестанем обрабатывать все автоматические действия, которые он запускает."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Обратите внимание, что после нажатия на «Подтвердить» на вашем счету останется ${ remainingCreditsFormatted }."
+      ],
       "please open a support ticket": [
         "откройте заявку в службу поддержки"
       ],
@@ -8178,6 +8264,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
+      "Session Ended": [
+        "Сеанс окончен"
+      ],
+      "Session Roaming": [
+        "Роуминг сеансов"
+      ],
+      "Session Started": [
+        "Сеанс начат"
+      ],
       "Session timed out": [
         "Время сеанса истекло"
       ],
@@ -8201,6 +8296,12 @@
       ],
       "Share Updated": [
         "Общий ресурс обновлен"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Коллективная ${ vaultLink } удалена"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Коллективная ${ vaultLink } обновлена"
       ],
       "Shared vault deleted": [
         "Общее хранилище удалено"
@@ -8763,6 +8864,9 @@
       "Version number successfully copied to clipboard": [
         "Номер версии скопирован в буфер обмена"
       ],
+      "View and manage your groups.": [
+        "Просмотр и управление группами."
+      ],
       "View, download, and manage your invoices.": [
         "Просматривайте, загружайте и управляйте своими счетами."
       ],
@@ -8975,6 +9079,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Вы можете включить журналы аутентификации, чтобы видеть когда и с какого IP-адреса производился доступ к аккаунту. Мы будем записывать IP-адреса, которые имели доступ к учетной записи, а также время доступа и неудачные попытки войти."
+      ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Вы можете включить раздел Фотографии в интерфейсе с помощью расположенного ниже переключателя."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Вы можете сразу разблокировать описанную выше настройку, добавив ${ specificCountryCount } к количеству IP-адресов в ваше тарифе, или обратиться к нам за индивидуальными решениями."
@@ -9813,12 +9920,6 @@
       "Auto-detect primary time zone": [
         "Автоопределение основного часового пояса"
       ],
-      "Auto-load embedded images": [
-        "Авто-показ встроенных изображений"
-      ],
-      "Auto-load remote content": [
-        "Автозагрузка внешнего содержимого"
-      ],
       "Auto-reply": [
         "Автоответчик"
       ],
@@ -10035,6 +10136,9 @@
       "Disable sharing outside the organization": [
         "Отключить совместное использование вне организации"
       ],
+      "Disabled": [
+        "Отключено"
+      ],
       "Display name": [
         "Отображаемое имя"
       ],
@@ -10149,9 +10253,6 @@
       "Group address": [
         "Адрес группы"
       ],
-      "Group conversations": [
-        "Групповые цепочки писем"
-      ],
       "Group members": [
         "Участники группы"
       ],
@@ -10235,6 +10336,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Уровень для фильтрации блокировщика NetShield"
+      ],
+      "Link label (optional)": [
+        "Ярлык ссылки (необязательно)"
       ],
       "Lock app after inactivity": [
         "Блокировать приложение при отсутствии активности"
@@ -10424,6 +10528,9 @@
       ],
       "Public certificate (X.509)": [
         "Публичный сертификат (X.509)"
+      ],
+      "Purpose": [
+        "Цель"
       ],
       "Read": [
         "Прочитанные"
@@ -10625,6 +10732,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Какова ваша основная причина отказа от или перехода на более дешевую версию?"
+      ],
+      "Who can send to this group address?": [
+        "Кто может отправлять на этот адрес группы?"
       ],
       "Why would you like to cancel?": [
         "Почему вы хотите отменить?"
@@ -11080,6 +11190,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Добавить помощника по написанию ${ BRAND_NAME } Scribe"
       ],
@@ -11103,6 +11216,9 @@
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
         "Предложение ограничено по времени: **Получите скидку до 35%** на годовые тарифы"
+      ],
+      "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
+        "Предложение, ограниченое по времени: **Экономия ${ discount } на ${ name } с планом на 1 год**."
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Вас пригласили попробовать ${ MAIL_APP_NAME }"
@@ -11821,9 +11937,6 @@
       ],
       "Data breach monitoring": [
         "Отслеживание утечек данных"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Отслеживание утечек данных (скоро появится)"
       ],
       "Dedicated account manager": [
         "Выделенный менеджер по работе с аккаунтом"
@@ -13371,6 +13484,9 @@
       "Launching ${ PASS_APP_NAME }": [
         "Запуск ${ PASS_APP_NAME }"
       ],
+      "Limited time offer: ${ title } for ${ price } for the 1st month": [
+        "Ограниченное по времени предложение: ${ title } за ${ price } за 1-ый месяц"
+      ],
       "Limited time offer: Get ${ title } for ${ price } per user monthly!": [
         "Акция: получите ${ title } за ${ price } за пользователя ежемесячно!"
       ],
@@ -13622,6 +13738,9 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "More plans are available in other currencies": [
+        "Другие тарифы доступны в других валютах"
       ],
       "Payment Processing": [
         "Обработка платежа"
@@ -14058,6 +14177,9 @@
       ]
     },
     "Safety review": {
+      " **Enable recovery by phone** to regain access to your account if you forget your password.": [
+        " **Включите функцию восстановления по телефону**, чтобы восстановить доступ к своему аккаунту, если вы забудете пароль."
+      ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } отправит на этот адрес код для сброса пароля, когда вы будете его восстанавливать."
       ],
@@ -14073,11 +14195,17 @@
       "Account safety review": [
         "Проверка безопасности аккаунта"
       ],
+      "Add a recovery email": [
+        "Добавить резервный адрес электронной почты"
+      ],
       "Add a recovery email address": [
         "Добавить адрес эл. почты для восстановления доступа"
       ],
       "Add a recovery phone number": [
         "Добавить номер телефона для восстановления"
+      ],
+      "Back to Safety Review": [
+        "Вернуться к Обзору безопасности"
       ],
       "Because you reset your password, your current Recovery Kit can only be used to recover the data created before your password reset.": [
         "Так как вы сбросили пароль, ваш текущий набор восстановления может быть использован только для восстановления данных, созданных перед сбросом пароля."
@@ -14085,8 +14213,14 @@
       "Can be used to regain access to your account and data": [
         "Может использоваться для восстановления доступа к вашему аккаунту и данным"
       ],
+      "Check account security": [
+        "Проверить безопасность аккаунта"
+      ],
       "Code sent to ${ boldValue }": [
         "Код отправлен на ${ boldValue }"
+      ],
+      "Continue to Safety Review": [
+        "Перейти к Обзору безопасности"
       ],
       "Device-based recovery enabled": [
         "Восстановление на базе устройств включено"
@@ -14112,6 +14246,9 @@
       "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in on this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
         "Если вы забудете пароль от ${ BRAND_NAME } и вам потребуется его сбросить, при следующем входе на этом устройстве с новым паролем будет восстановлен полный доступ к вашему аккаунту ${ BRAND_NAME }."
       ],
+      "If you forget your ${ BRAND_NAME } password and need to reset it, the next time you sign in this device using your new password, full access to your ${ BRAND_NAME } Account will be restored.": [
+        "Если вы забыли свой пароль ${ BRAND_NAME } и вам необходимо его восстановить, то при следующем входе на это устройство с использованием нового пароля полный доступ к вашему аккаунту ${ BRAND_NAME } будет восстановлен."
+      ],
       "If you get locked out of your ${ BRAND_NAME } Account, your Recovery Kit will allow you to sign in and recover your data.": [
         "Если ваш аккаунт ${ BRAND_NAME } будет заблокирован, ваш набор для восстановления позволит вам войти в систему и восстановить данные."
       ],
@@ -14126,6 +14263,9 @@
       ],
       "Recovery email address": [
         "Резервный адрес электронной почты"
+      ],
+      "Recovery phone number": [
+        "Номер телефона для восстановления доступа"
       ],
       "Review your account safety": [
         "Просмотрите безопасность вашего аккаунта"
@@ -14151,6 +14291,9 @@
       "Take action to secure your account": [
         "Примите меры для защиты вашего аккаунта"
       ],
+      "There was an error generating your Recovery Kit": [
+        "Произошла ошибка при создании вашего Пакета восстановления"
+      ],
       "There was an error verifying your recovery email": [
         "Произошла ошибка при подтверждении резервного адреса электронной почты"
       ],
@@ -14159,6 +14302,9 @@
       ],
       "to automatically recover your data when you log into a trusted device": [
         "чтобы автоматически восстановить данные при входе на доверенное устройство"
+      ],
+      "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
+        "Чтобы убедиться, что адрес электронной почты является вашим, введите код подтверждения, отправленный на ${ boldEmail }."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Чтобы подтвердить, что номер телефона принадлежит вам, введите код подтверждения, отправленный на номер ${ boldPhoneNumber }."
@@ -14184,6 +14330,12 @@
       "Verify your recovery phone number": [
         "Подтвердите номер телефона для восстановления"
       ],
+      "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
+        "При создании вашего Пакета восстановления возникла ошибка. Повторите попытку позже или обратитесь в службу поддержки, если проблема сохраняется."
+      ],
+      "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
+        "Мы столкнулись с ошибкой при проверке вашего резервного адреса электронной почты. Повторите попытку позже или обратитесь в службу поддержки, если проблема сохраняется."
+      ],
       "We encountered an error while verifying your recovery phone. Please try again later, or contact support if the issue continues.": [
         "Мы столкнулись с ошибкой при подтверждении резервного номера телефона. Попробуйте еще раз позднее или свяжитесь со службой поддержки, если проблема сохраняется."
       ],
@@ -14199,6 +14351,9 @@
       "You can disable this at any time.": [
         "Вы можете отключить это в любое время."
       ],
+      "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
+        "Вы можете использовать фразу для восстановления, содержащуюся в этом Пакете восстановления, для полного восстановления вашего аккаунта после сброса пароля, поэтому обязательно храните ее в надежном месте."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Вы можете использовать резервный адрес электронной почты, чтобы вернуть доступ к аккаунту, если вы забудете пароль."
       ],
@@ -14210,6 +14365,12 @@
       ],
       "You have recommended actions.": [
         "У вас есть рекомендованные действия."
+      ],
+      "You recovery email address is:": [
+        "Ваш резервный адрес электронной почты:"
+      ],
+      "You recovery phone number is:": [
+        "Номер телефона для восстановления доступа:"
       ],
       "Your account and data can be recovered": [
         "Вы можете восстановить аккаунт и данные"
@@ -14246,6 +14407,9 @@
       ],
       "Your Recovery Kit": [
         "Ваш набор для восстановления"
+      ],
+      "Your Recovery Kit is set": [
+        "Ваш Пакет восстановления готов"
       ],
       "Your recovery methods": [
         "Ваши способы восстановления"
@@ -14910,6 +15074,11 @@
       ],
       "Verification": [
         "Подтверждение"
+      ]
+    },
+    "signup_2024: Feature": {
+      "GDPR and HIPAA compliant": [
+        "Соответствие требованиям GDPR и HIPAA."
       ]
     },
     "specialoffer: Action": {
@@ -16012,6 +16181,9 @@
       "Premium address created": [
         "Платный адрес создан"
       ],
+      "Problem reported": [
+        "О проблеме сообщено"
+      ],
       "Resuming import": [
         "Импорт заканчивается"
       ],
@@ -16550,6 +16722,9 @@
       "Connect ${ name }": [
         "Подключить ${ name }"
       ],
+      "Connection events": [
+        "События подключения"
+      ],
       "Connection monitor disabled": [
         "Отслеживание подключения выключено"
       ],
@@ -16913,6 +17088,9 @@
       "Group": [
         "Группа"
       ],
+      "Group membership": [
+        "Групповая подписка"
+      ],
       "Groups": [
         "Группы"
       ],
@@ -17060,6 +17238,9 @@
       "Organization name": [
         "Название организации"
       ],
+      "Origin": [
+        "Источник"
+      ],
       "Other calendars": [
         "Другие календари"
       ],
@@ -17092,6 +17273,9 @@
       ],
       "Phone": [
         "Телефон"
+      ],
+      "Photos": [
+        "Фото"
       ],
       "Policies": [
         "Политики"
@@ -18262,6 +18446,9 @@
       ],
       "Join ${ appName } early access!": [
         "Присоединитесь к ${ appName } для раннего доступа!"
+      ],
+      "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
+        "Зарегистрируйтесь для получения бесплатного аккаунта ${ BRAND_NAME }, чтобы защитить свое рабочее место. Чем раньше вы зарегистрируетесь, тем быстрее получите доступ к ${ appName }. После регистрации вы также можете перейти на наш эксклюзивный тариф Visionary, минуя список ожидания, и начать использовать ${ appName } прямо сейчас."
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "Разблокируйте платные функции ${ appName }, улучшив тариф"
