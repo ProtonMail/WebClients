@@ -139,6 +139,9 @@
       "More options": [
         "Más opciones"
       ],
+      "Need help?": [
+        "¿Necesitas ayuda?"
+      ],
       "Next": [
         "Siguiente"
       ],
@@ -2253,6 +2256,9 @@
       "Please authenticate your payment in the verification tab.": [
         "Autentica tu pago en la pestaña de verificación."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Inténtalo de nuevo con otro método de pago o ponte en contacto con tu banco."
       ],
@@ -2856,9 +2862,6 @@
       ],
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoreo de vulneración de datos (próximamente)"
       ],
       "Desktop app": [
         "Aplicación de escritorio"
@@ -3520,6 +3523,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Hay más planes disponibles en otras divisas"
       ],
       "Payment Processing": [
         "Procesando el pago"
@@ -4361,9 +4367,6 @@
       ]
     },
     "Wallet": {
-      "An error occured": [
-        "Se ha producido un error"
-      ],
       "Close": [
         "Cerrar"
       ],
@@ -4473,9 +4476,6 @@
       ],
       "Send": [
         "Enviar"
-      ],
-      "The current fingerprint doesn't match stored one": [
-        "La huella digital actual no coincide con la almacenada"
       ]
     },
     "wallet dashboard": {
@@ -4928,9 +4928,6 @@
       "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
         "Vincula un correo electrónico a esta cuenta de cartera para que otros usuarios de ${ WALLET_APP_NAME } puedan enviar Bitcoin a tu correo electrónico fácilmente."
       ],
-      "Local storage cleared": [
-        "Se ha borrado el almacenamiento local"
-      ],
       "New fiat currency applied": [
         "Se ha aplicado una nueva moneda fiduciaria"
       ],
@@ -5243,15 +5240,7 @@
         "Se ha actualizado correctamente la etiqueta de la transacción"
       ]
     },
-    "Wallet Transaction List": {
-      "Page ${ displayedPageNumber }": [
-        "Página ${ displayedPageNumber }"
-      ]
-    },
     "Wallet transactions": {
-      "Syncing transactions": [
-        "Sincronizando transacciones"
-      ],
       "Transactions": [
         "Transacciones"
       ]
