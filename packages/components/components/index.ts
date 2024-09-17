@@ -1,6 +1,5 @@
 export * from './button';
 export * from './container';
-export * from './contextMenu';
 export * from './downloadClientCard';
 export * from './dragMoveContainer';
 export * from './drawer';
