@@ -62,7 +62,10 @@ export const getInitialSettings = (): ProxiedSettings => ({
     passkeys: { get: true, create: true },
     passwordOptions: null,
     showUsernameField: false,
-    theme: PassThemeOptions.OS,
+    /* Theme is set to undefined so we can prompt <ThemeOnboardingModal> for discovery.
+     * Once we decide to no longer display that modal (e.g theme feature is not considered new anymore)
+     * then change value to PassThemeOption.OS */
+    theme: undefined,
 });
 
 const getInitialState = (): SettingsState => ({
