@@ -288,6 +288,9 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Vá para ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Ir para marcador"
       ],
@@ -548,6 +551,9 @@
       ],
       "Switch or add account": [
         "Mudar ou adicionar conta"
+      ],
+      "Take out of trash": [
+        "Retirar da lixeira"
       ],
       "Trust": [
         "Confiar"
@@ -2237,6 +2243,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Ocorreu um erro ao tentar duplicar o documento. Tente novamente."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Ocorreu um erro ao tentar restaurar o documento. Tente novamente."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Ocorreu um erro ao tentar excluir o documento. Tente novamente."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Ocorreu um erro ao criar um novo documento. Tente novamente."
       ],
@@ -3425,6 +3437,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "“${ documentTitle }” foi movido para a lixeira. Ele permanecerá lá até que você o restaure ou o exclua permanentemente."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "“${ documentTitle }” está na lixeira e permanecerá lá até que você o exclua permanentemente."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } endereço de e-mail",
         "${ addressCount } endereços de e-mail"
@@ -3713,6 +3731,12 @@
       ],
       "Display word count": [
         "Exibir contagem de palavras"
+      ],
+      "Document is in trash": [
+        "O documento está na lixeira"
+      ],
+      "Document moved to trash": [
+        "Documento movido para a lixeira"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não aparece nada? Lembre-se de desativar os bloqueadores de pop-up."
@@ -4082,6 +4106,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo, dependendo do tamanho da sua lista de contatos."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Forneça um nome e um endereço de e-mail para criar um grupo."
@@ -5746,9 +5773,6 @@
       "Data breach monitoring": [
         "Monitoramento de violação de dados"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoramento de violação de dados (em breve)"
-      ],
       "Desktop app": [
         "Aplicativo para computador"
       ],
@@ -6187,7 +6211,7 @@
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
       ],
       "Email everyone in a group with a single email address": [
-        "Envie e-mails para todos em um grupo com um único endereço de e-mail"
+        "Envie e-mail a todos em um grupo com um único endereço de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -6244,7 +6268,7 @@
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "O suporte por telefone da equipe de suporte do cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 20 ou mais usuários"
+        "O suporte por telefone está disponível na equipe de Suporte ao Cliente da ${ BRAND_NAME } durante o horário comercial europeu, para clientes com 20 ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
@@ -6703,6 +6727,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Mais planos estão disponíveis em outras moedas"
       ],
       "Payment Processing": [
         "Processando pagamento"
@@ -7668,6 +7695,9 @@
       ],
       "Preferences saved": [
         "Preferências salvas"
+      ],
+      "Problem reported": [
+        "Problema reportado"
       ],
       "Secure link copied": [
         "Link seguro copiado"

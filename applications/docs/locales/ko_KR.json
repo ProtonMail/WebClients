@@ -282,6 +282,9 @@
       "Get verification code": [
         "인증코드 전송"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }로 이동"
+      ],
       "Go to label": [
         "라벨로 이동"
       ],
@@ -539,6 +542,9 @@
       ],
       "Switch or add account": [
         "계정 전환 및 추가"
+      ],
+      "Take out of trash": [
+        "휴지통에서 되돌리기"
       ],
       "Trust": [
         "신뢰"
@@ -2212,6 +2218,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "문서를 복제하는 도중 문제가 발생했습니다. 다시 시도햐세요."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "다운로드된 문서를 복구하는 중에 오류가 발생했습니다. 다시 시도하세요."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "다운로드된 문서를 첨부하는 중에 오류가 발생했습니다. 다시 시도하세요."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "새 문서 생성 도중 문제가 발생했습니다. 다시 시도하세요."
       ],
@@ -3368,6 +3380,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "\"${ documentTitle }\"이(가) 휴지통에 이동되었습니다. 복구하거나 영구적으로 삭제하지 않는 한 휴지통에 계속 보관됩니다."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "\"${ documentTitle }\"이(가) 휴지통 내에 존재하며 영구적으로 삭제하지 않는 한 계속 보관됩니다."
+      ],
       "${ addressCount } email address": [
         "이메일 주소 ${ addressCount }개"
       ],
@@ -3634,6 +3652,12 @@
       ],
       "Display word count": [
         "단어수 표시"
+      ],
+      "Document is in trash": [
+        "문서가 휴지통 내에 존재합니다."
+      ],
+      "Document moved to trash": [
+        "문서를 휴지통으로 이동했습니다"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "아무것도 보지 못하셨나요? 팝업 차단기를 비활성화 하는 것을 잊지 마세요."
@@ -4000,6 +4024,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "확인 버튼을 누르면 계정에는 ${ remainingCreditsFormatted } 크레딧이 남게됩니다."
       ],
       "Please provide a name and an email address for creating a group.": [
         "그룹을 생성하기 위해서 이름과 이메일 주소를 입력해주세요."
@@ -5572,9 +5599,6 @@
       "Data breach monitoring": [
         "데이터 유출 모니터링"
       ],
-      "Data breach monitoring (coming soon)": [
-        "데이터 유출 모니터링 (출시 예정)"
-      ],
       "Desktop app": [
         "데스크톱 앱"
       ],
@@ -6500,6 +6524,9 @@
       ],
       "MM/YY": [
         "MM/YY (월/년)"
+      ],
+      "More plans are available in other currencies": [
+        "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
       "Payment Processing": [
         "결제 처리중"
@@ -7438,6 +7465,9 @@
       ],
       "Preferences saved": [
         "설정 저장됨"
+      ],
+      "Problem reported": [
+        "문제 제보됨"
       ],
       "Secure link copied": [
         "보안 링크 복사함"

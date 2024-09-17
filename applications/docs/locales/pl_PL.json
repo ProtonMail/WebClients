@@ -288,6 +288,9 @@
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Przejdź do ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Przejdź do etykiety"
       ],
@@ -2239,6 +2242,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Wystąpił błąd podczas próby zduplikowania dokumentu. Spróbuj ponownie."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Wystąpił błąd podczas przywracania dokumentu z Kosza. Spróbuj ponownie."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Wystąpił błąd podczas przenoszenia dokumentu do Kosza. Spróbuj ponownie."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Wystąpił błąd podczas tworzenia nowego dokumentu. Spróbuj ponownie."
       ],
@@ -3790,6 +3799,12 @@
       ],
       "Display word count": [
         "Wyświetl liczbę słów"
+      ],
+      "Document is in trash": [
+        "Dokument znajduje się w Koszu"
+      ],
+      "Document moved to trash": [
+        "Dokument został przeniesiony do Kosza"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nie widzisz nic? Wyłącz blokadę wyskakujących okien."
@@ -5872,9 +5887,6 @@
       "Data breach monitoring": [
         "Monitoring wycieku danych"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoring wycieku danych (wkrótce)"
-      ],
       "Desktop app": [
         "Aplikacja desktopowa"
       ],
@@ -6860,6 +6872,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "More plans are available in other currencies": [
+        "Więcej planów jest dostępnych w innych walutach"
       ],
       "Payment Processing": [
         "Przetwarzanie płatności"
@@ -7876,6 +7891,9 @@
       ],
       "Preferences saved": [
         "Ustawienia zostały zapisane"
+      ],
+      "Problem reported": [
+        "Problem został zgłoszony"
       ],
       "Secure link copied": [
         "Link został skopiowany"
