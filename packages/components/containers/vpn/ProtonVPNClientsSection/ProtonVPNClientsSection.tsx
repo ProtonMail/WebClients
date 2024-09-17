@@ -9,7 +9,8 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 
 import type { ModalProps } from '../../../components';
-import { Copy, DownloadClientCard, ModalTwo, ModalTwoContent } from '../../../components';
+import { Copy, ModalTwo, ModalTwoContent } from '../../../components';
+import DownloadClientCard from '../../../components/downloadClientCard/DownloadClientCard';
 import { useNotifications, useWelcomeFlags } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { OnboardingContent } from '../../onboarding';
