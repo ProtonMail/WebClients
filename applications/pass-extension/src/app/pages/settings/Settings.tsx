@@ -77,17 +77,20 @@ const pathnameToIndex = (pathname: string, availableTabs: SettingTab[]) => {
 
 const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const context = useExtensionConnect();
-    const user = useSelector(selectUser);
     const organization = useOrganization();
     const aliasesEnabled = useFeatureFlag(PassFeature.PassSimpleLoginAliasesSync);
+    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
+    const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
 
+    const user = useSelector(selectUser);
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const trialDaysLeft = useSelector(selectTrialDaysRemaining);
 
-    const tabs = useMemo(() => getSettingsTabs(organization?.settings.enabled, aliasesEnabled), [organization]);
-    const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD);
-    const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);
+    const tabs = useMemo(
+        () => getSettingsTabs(organization?.settings.enabled, aliasesEnabled),
+        [organization, aliasesEnabled]
+    );
 
     const history = useHistory();
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname, tabs));
