@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Badge, LoaderIcon, Table, TableBody, TableHeader, TableRow } from '../../../components';
+import { Badge, LoaderIcon, Table, TableBody, TableHeader, TableRow } from '@proton/components';
+
 import type { ImportKey } from './interface';
 import { Status } from './interface';
 

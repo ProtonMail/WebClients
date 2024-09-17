@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { Badge } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Badge } from '../../components';
 import type { KeyStatus } from './shared/interface';
 import { KeyType } from './shared/interface';
 

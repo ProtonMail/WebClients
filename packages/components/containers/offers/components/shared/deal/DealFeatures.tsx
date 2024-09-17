@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { Badge, Icon, Info, StripedItem, StripedList } from '@proton/components/';
+import { Badge, Icon, Info, StripedItem, StripedList } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { useDealContext } from './DealContext';

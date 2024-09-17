@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Avatar, Button } from '@proton/atoms';
+import { Badge } from '@proton/components';
 import Form from '@proton/components/components/form/Form';
 import { useLoading } from '@proton/hooks';
 import { sendEmailReminderTwoFA } from '@proton/shared/lib/api/organization';
@@ -11,7 +12,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components';
 import {
-    Badge,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,

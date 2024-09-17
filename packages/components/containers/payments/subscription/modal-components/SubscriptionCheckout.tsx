@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { Badge, Info } from '@proton/components';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import type { FullPlansMap, PaymentMethodStatusExtended } from '@proton/payments';
 import { getAvailableCurrencies } from '@proton/payments';
@@ -22,7 +23,6 @@ import type {
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 
-import { Badge, Info } from '../../../../components';
 import { useConfig, usePaymentStatus, usePlans, useUser } from '../../../../hooks';
 import Checkout from '../../Checkout';
 import { getBlackFridayRenewalNoticeText, getCheckoutRenewNoticeText } from '../../RenewalNotice';

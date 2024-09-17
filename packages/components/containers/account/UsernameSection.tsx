@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button, Card, CircleLoader, Href, InlineLinkButton } from '@proton/atoms';
 import { PromotionBanner } from '@proton/components';
+import { AppLink, Badge, Info, Tooltip, useModalState } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
@@ -28,7 +29,6 @@ import type { Address } from '@proton/shared/lib/interfaces';
 import { AddressConfirmationState, SessionRecoveryState, UserType } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { AppLink, Badge, Info, Tooltip, useModalState } from '../../components';
 import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import {
