@@ -34,7 +34,7 @@ class ProtonIconsTreeShakePlugin {
             const svgPath = path.resolve(packages, pathname);
             const svg = fs.readFileSync(svgPath, 'utf8');
             const nodes = Array.from(new JSDOM(svg).window.document.querySelectorAll('g[id]'));
-            return nodes.map((node) => node.id.replace(/(ic|mime-(sm|md|lg))-/, ''));
+            return [...new Set(nodes.map((node) => node.id.replace(/(ic|mime-(sm|md|lg))-/, '')))];
         } catch {
             console.warn(`Failed to read SVG file: ${pathname}`);
             return [];
@@ -49,7 +49,7 @@ class ProtonIconsTreeShakePlugin {
      */
     removeUnusedIcons(content, unused) {
         unused.forEach((icon) => {
-            const regex = new RegExp(`<g id="(ic|mime-(sm|md|lg))-${icon}[\\s\\S]*?<\/g>`, 'g');
+            const regex = new RegExp(`<g id="(ic|mime-(sm|md|lg))-${icon}"[\\s\\S]*?<\/g>`, 'g');
             content = content.replace(regex, '');
         });
         return content;
