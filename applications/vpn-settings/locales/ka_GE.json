@@ -496,6 +496,9 @@
       "Restore": [
         "აღდგენა"
       ],
+      "Resume membership": [
+        "წევრობის გაგრძელება"
+      ],
       "Retry": [
         "თავიდან"
       ],
@@ -682,8 +685,8 @@
       "Use authentication code": [
         "ავთენტიკაციის კოდის გამოყენება"
       ],
-      "Use group permissions": [
-        "ჯგუფის წვდომების გამოყენება"
+      "Use group sending permissions": [
+        "ჯგუფის გაგზავნის წვდომების გამოყენება"
       ],
       "Use recovery code": [
         "აღდგენის კოდის გამოყენება"
@@ -2827,8 +2830,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "* მხოლოდ, ერთი საცდელი თითოეული მომხმარებლისთვის."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*მხოლოდ, ერთი უფასო სატესტო დრო ერთი მომხმარებლისთვის. შემდეგ კი ჩვეულებრივი ფასებით გადაიხდით."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "თქვენი სატარიფო გეგმის მიტოვების შემდეგ ეს მომხმრებელი გადატანილი იქნება სატარიფო გეგმაზე ${ BRAND_NAME } Unlimited 30-დღიანი გამოსაცდელი პერიოდით. *"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "ნაგულისხმევად საცავის ${ formattedStorage } ადმინისტრატორის ანგარიშს ეკუთვნის. მინიჭებული საცავი მოგვიანებით დამატებით მომხმარებლებს შეგიძლიათ, გადაუნაწილოთ."
@@ -2841,9 +2847,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "მოსაწვევი გაუქმდება და მომხმარებელს ${ organizationName }-სთან მიერთება აღარ შეეძლება."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "მომხმარებლის ანგარიშს 30 დღით ექნება საცდელი წვდომა ${ BRAND_NAME }-ის შეუზღუდავ ტარიფთან*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "ახალი მომხმარებლის დასამატებლად საჭიროა ჯერ თქვენი დომენი მოირგოთ."
@@ -3696,6 +3699,9 @@
         "${ deletedServerCount } რაუტერი სერვერის წაშლა",
         "${ deletedServerCount } რაუტერი სერვერის წაშლა"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "გათიშვის თარიღი ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2FA-ის გათიშვა თქვენს ანგარიშს ნაკლებად დაცულს გახდის. გააგრძელეთ, თუ ზუსტად იცით, რას აკეთებთ."
       ],
@@ -3777,6 +3783,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "ჩართეთ SSO, რომ თქვენი ორგანიზაცია უსაფრთხოდ გყავდეთ"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "ჩართვის თარიღი ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "ბოლოწერტილის ბმული, რომელიც თქვენი იდენტიფიკატორის მომწოდებლისგან მივიღეთ (მაგ: https://idp.example.com/sso/saml)."
@@ -4283,6 +4292,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "შეიყვანეთ 12-სიტყვიანი აღსადგენი ფრაზა."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ remainingCreditsFormatted } კრედიტი იქნება დარჩენილი."
       ],
       "please open a support ticket": [
         "გახსენით მხარდაჭერის ბილეთი"
@@ -5993,11 +6005,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "ბრაზილიური რეალი"
+      ],
       "Euro": [
         "ევრო"
       ],
       "Swiss franc": [
         "შვედური ფრანკი"
+      ],
+      "US Dollar": [
+        "აშშ დოლარი"
       ]
     },
     "Navigation": {
@@ -6265,9 +6283,6 @@
       ],
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "მონაცემების გაჟონვის თვალყურის დევნება (მალე)"
       ],
       "Dedicated servers and IP": [
         "გამოყოფილი სერვერები და IP"
@@ -7404,6 +7419,9 @@
       "MM/YY": [
         "თთ/წწ"
       ],
+      "More plans are available in other currencies": [
+        "სხვა სატარიფო გეგმები ხელმისაწვდომია სხვა ვალუტებში"
+      ],
       "Payment Processing": [
         "გადახდის დამუშავება"
       ],
@@ -7448,6 +7466,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "ჩვენ ვამუშავებთ თქვენს გადახდას ამ ინვოისისთვის. მოითმინეთ, სანამ გადახდა დასრულდება თქვენი სატარიფო გეგმის შეცვლამდე ან გადახდის დეტალების განახლებამდე. მადლობა მოთმინებისთვის."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "გადაიხდით ${ amountToCharge }-ს თქვენი არჩეული გადახდის მეთოდით."
       ]
     },
     "Payments.Error": {
@@ -9168,6 +9189,9 @@
       ],
       "Preference saved": [
         "პარამეტრები შენახულია"
+      ],
+      "Problem reported": [
+        "პრობლემა შეტყობინებულია"
       ],
       "SPF value copied to clipboard": [
         "SPF-ის მნიშვნელობა დაკოპირდა გაცვლის ბაფერში"

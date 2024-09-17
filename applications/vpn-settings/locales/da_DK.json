@@ -682,8 +682,8 @@
       "Use authentication code": [
         "Brug godkendelseskode"
       ],
-      "Use group permissions": [
-        "Brug gruppetilladelser"
+      "Use group sending permissions": [
+        "Brug tilladelser til gruppeafsendelse"
       ],
       "Use recovery code": [
         "Brug gendannelseskode"
@@ -2827,9 +2827,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Kun én gratis prøveperiode pr. bruger."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Som standard tildeler vi ${ formattedStorage } lagerplads til administratorkontoen. Du kan administrere den tildelte lagerplads, så den fordeles mellem flere brugere senere."
       ],
@@ -2841,9 +2838,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Invitationen vil blive annulleret, og brugeren kan ikke blive medlem af ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Brugerens konto vil blive flyttet til et ${ BRAND_NAME } Unlimited-abonnement i en 30-dages gratis prøveperiode*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "For at oprette en ny bruger kræves et konfigureret brugerdefineret domæne."
@@ -4283,6 +4277,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Indtast 12-ords gendannelsessætningen, der er knyttet til din konto."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Bemærk, i det øjeblik du klikker på knappen 'Bekræft' , vil din konto have ${ remainingCreditsFormatted } kreditter tilbage."
       ],
       "please open a support ticket": [
         "åbn venligst en support-sag"
@@ -6266,9 +6263,6 @@
       "Data breach monitoring": [
         "Overvågning af databrud"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Overvågning af databrud (kommer snart)"
-      ],
       "Dedicated servers and IP": [
         "Dedikerede servere og IP"
       ],
@@ -7403,6 +7397,9 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "More plans are available in other currencies": [
+        "Flere abonnementer er tilgængelige i andre valutaer"
       ],
       "Payment Processing": [
         "Betalingsbehandling"
@@ -9168,6 +9165,9 @@
       ],
       "Preference saved": [
         "Præferencer gemt"
+      ],
+      "Problem reported": [
+        "Problem indberettet"
       ],
       "SPF value copied to clipboard": [
         "SPF-værdi kopieret til udklipsholder"

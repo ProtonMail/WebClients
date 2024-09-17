@@ -496,6 +496,9 @@
       "Restore": [
         "Restaurar"
       ],
+      "Resume membership": [
+        "Reanudar membresía"
+      ],
       "Retry": [
         "Reintentar"
       ],
@@ -682,8 +685,8 @@
       "Use authentication code": [
         "Utilizar código de autenticación"
       ],
-      "Use group permissions": [
-        "Usar los permisos del grupo"
+      "Use group sending permissions": [
+        "Usar los permisos de envío del grupo"
       ],
       "Use recovery code": [
         "Utilizar código de recuperación"
@@ -2827,8 +2830,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "* Solo una prueba gratuita por usuario."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Solo una prueba gratuita por usuario. Después se aplican precios usuales."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Tras abandonar tu plan, este usuario se moverá a ${ BRAND_NAME } Plan ilimitado con una prueba gratuita de 30 días.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Asignamos ${ formattedStorage } de almacenamiento a la cuenta del administrador de forma predeterminada. Podrás gestionar más adelante el almacenamiento asignado para distribuirlo entre más usuarios."
@@ -2841,9 +2847,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "La invitación se cancelará y el usuario no podrá unirse a ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Se moverá la cuenta del usuario a un plan Unlimited de ${ BRAND_NAME } que podrá disfrutar a modo de prueba gratuita durante 30 días*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Se necesita un dominio personalizado configurado para crear un usuario nuevo."
@@ -4289,6 +4292,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Introduce la frase de recuperación de 12 palabras asociada a tu cuenta."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "please open a support ticket": [
         "abre un tiquete de soporte."
@@ -5999,11 +6005,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real Brasileño"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franco suizo"
+      ],
+      "US Dollar": [
+        "Dólar Estadounidense"
       ]
     },
     "Navigation": {
@@ -6271,9 +6283,6 @@
       ],
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoreo de vulneración de datos (próximamente)"
       ],
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"
@@ -7410,6 +7419,9 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "Hay más planes disponibles en otras divisas"
+      ],
       "Payment Processing": [
         "Procesando el pago"
       ],
@@ -7454,6 +7466,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Estamos procesando el pago de la factura. Espera hasta que se complete el pago antes de realizar cambios en tu plan o actualizar tus detalles de pago. Gracias por tu paciencia."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Se te cobrará ${ amountToCharge } a tu método de pago seleccionado."
       ]
     },
     "Payments.Error": {

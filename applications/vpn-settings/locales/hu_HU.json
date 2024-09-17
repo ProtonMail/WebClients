@@ -611,8 +611,8 @@
       "Use authentication code": [
         "Hitelesítő kód használata"
       ],
-      "Use group permissions": [
-        "Csoport jogosultságok használata"
+      "Use group sending permissions": [
+        "Használjon csoport küldési jogosultságokat"
       ],
       "Use recovery code": [
         "Helyreállító kód használata"
@@ -682,6 +682,12 @@
       "Disable": [
         "Letiltás"
       ],
+      "Disable E2EE mail": [
+        "E-mail kikapcsolása"
+      ],
+      "Disallow unsigned mail": [
+        "Az aláíratlan levelek letiltása"
+      ],
       "Edit": [
         "Szerkesztés"
       ],
@@ -690,6 +696,9 @@
       ],
       "Enable": [
         "Engedélyezés"
+      ],
+      "Enable E2EE mail": [
+        "E-mail bekapcsolása"
       ],
       "Generate missing keys": [
         "Hiányzó kulcsok generálása"
@@ -705,6 +714,9 @@
       "Active": [
         "Aktív"
       ],
+      "Allow unsigned mail": [
+        "Az aláíratlan levelek engedélyezése"
+      ],
       "Default": [
         "Alapértelmezett"
       ],
@@ -713,6 +725,12 @@
       ],
       "External": [
         "Külső"
+      ],
+      "Inactive": [
+        "Inaktív"
+      ],
+      "No E2EE mail": [
+        "Nincs végpontok közt titkosított e-mail"
       ],
       "Orphan": [
         "Árva"
@@ -765,6 +783,9 @@
       ],
       "Get the deal": [
         "Érdekel az ajánlat"
+      ],
+      "Save even more with a 12-month plan": [
+        "12 hónapos csomaggal még olcsóbb"
       ]
     },
     "bf2023: Deal details": {
@@ -801,6 +822,25 @@
         "A kedvezmények a standard havi árazás alapján kerülnek kiszámításra."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Takarítson meg a Black Friday ajánlatokkal a nagy-sebességű svájci VPN-en!"
+      ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Takarítson meg a Cyber Week ajánlatokkal a nagy-sebességű svájci VPN-en!"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Takarítson meg az Új évi ajánlatokkal a nagy-sebességű svájci VPN-en!"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Sajnáljuk, de ez az ajánlat nem elérhető az ön előfizetésével"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Sajnos ez a ajánlat nem elérhető a jelenlegi előfizetésével. De megtud takarítani **${ discountPercentage } a ${ plan.Title }** vásárlásakkor ha előfizet **${ months }**"
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 napos pénzvisszatérítési garancia"
@@ -810,6 +850,11 @@
       "${ n } month": [
         "${ n } hónap",
         "az első ${ n } hónapban"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Az előfizetés nem elérhető"
       ]
     },
     "bf2023: Tooltip": {
@@ -1877,6 +1922,12 @@
       "Delete address?": [
         "Cím törlése?"
       ],
+      "Once deleted, this address ${ address } can't be used again by anyone else.": [
+        "Törlés után ezt a címet ${ address } sem Ön, sem más nem használhatja többé."
+      ],
+      "Please note that if you delete this address ${ address }, you will no longer be able to send or receive emails using this address.": [
+        "Amennyiben törli ezt a címet ${ address }, a továbbiakban nem fogadhat és nem küldhet leveleket ezzel a címmel."
+      ],
       "You can only delete 1 address per year.": [
         "Évente csak egy címet törölhet."
       ]
@@ -1907,6 +1958,20 @@
         "Válassza külön élete különböző részeit több e-mail címmel és érjen el még több prémium funkciót, nagyobb csomagra váltással."
       ]
     },
+    "Disable address prompt": {
+      "Are you sure you want to disable this address?": [
+        "Biztos, hogy le szeretné tiltani ezt a címet?"
+      ],
+      "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Ha letiltja ezt a címet ${ address }, akkor már nem lesz képes e-maileket küldeni vagy fogadni és minden ehhez kapcsolt ${ BRAND_NAME } szolgáltatás kikapcsolódik."
+      ],
+      "Disable address": [
+        "Cím letiltása"
+      ],
+      "Disable address?": [
+        "Cím letiltása?"
+      ]
+    },
     "Domain label": {
       "Verified": [
         "Ellenőrizve"
@@ -1923,6 +1988,9 @@
       ],
       "${ name } deletion failed": [
         "${ name } törlése nem sikerült"
+      ],
+      "${ name } failed to move to allow list": [
+        "${ name } áthelyezése nem sikerült az engedélyezettekhez"
       ],
       "${ name } failed to move to block list": [
         "${ name } áthelyezése a tiltott listára nem sikerült"
@@ -2423,9 +2491,20 @@
         "A fiókja ${ usedSpace } tárhelyet foglal el, ami túllépi az önnek biztosított ${ inviteSpace } helyet. Töröljön adatokat vagy kérje meg a csomag adminisztrátorát, hogy növelje a tárhelyét."
       ]
     },
+    "familyOffer_2023:Info": {
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "Alapértelmezés szerint egy adminisztrátor fióknak ${ formattedStorage } tárhelye van. Ön tudja kezelni a tárhely elosztást."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Készítsen és kezelje a család tagjait és ossza el a tárhelyt a ${ DRIVE_APP_NAME } és ${ MAIL_APP_NAME } között."
+      ]
+    },
     "familyOffer_2023:Label": {
       "Enter organization name to confirm": [
         "Írja be a szervezet nevét a jóváhagyáshoz"
+      ],
+      "Family name": [
+        "Család neve"
       ]
     },
     "familyOffer_2023:Member downgrade modal": {
@@ -2444,6 +2523,9 @@
       ],
       "An error occurred, please try again": [
         "Hiba történt, próbálja meg újra"
+      ],
+      "Family name updated": [
+        "Család neve megváltozott"
       ],
       "Member updated": [
         "Tag frissítve"
@@ -2750,8 +2832,14 @@
       "Best deal": [
         "Legjobb üzlet"
       ],
+      "Checkout": [
+        "Fizetés"
+      ],
       "Country": [
         "Ország"
+      ],
+      "Create your account": [
+        "Fiók létrehozása"
       ],
       "IP address": [
         "IP-cím"
@@ -2767,6 +2855,15 @@
       ],
       "Organization key fingerprint": [
         "Szervezeti kulcs ujjlenyomata"
+      ],
+      "Save big on the best ${ VPN_APP_NAME } deals": [
+        "Kapja meg a legjobb ${ VPN_APP_NAME } üzleteket"
+      ],
+      "Select your deal": [
+        "Válassza ki az előfizetést"
+      ],
+      "Select your pricing plan": [
+        "Válasszon előfizetést"
       ],
       "Server": [
         "Szerver"
@@ -3119,6 +3216,10 @@
       ],
       "Country code": [
         "Országkód"
+      ],
+      "Create a secure cloud for ${ n } member": [
+        "Hozzon létre biztonságos felhőt ${ n } tagnak",
+        "Hozzon létre biztonságos felhőt ${ n } tagnak"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Hozzon létre és kezeljen al-fiókokat és rendeljen hozzájuk e-mail címeket a saját domain nevén."
@@ -4207,6 +4308,9 @@
       "Would you like to receive a new verification code?": [
         "Szeretne kapni egy új ellenőrzési kódot?"
       ],
+      "Writing assistant": [
+        "Fogalmazási segéd"
+      ],
       "You already have a free account": [
         "Már van egy ingyenes fiókja"
       ],
@@ -5125,6 +5229,11 @@
         "A ${ appName } új verziója érhető el. ${ reloadButton }."
       ]
     },
+    "Metadata title": {
+      "Find your ${ BRAND_NAME } Account username": [
+        "Keresse meg a ${ BRAND_NAME } fiók felhasználó nevét!"
+      ]
+    },
     "Monetary unit": {
       "Euro": [
         "Euró"
@@ -5246,6 +5355,14 @@
         "${ n } üzenet naponta",
         "${ n } üzenet naponta"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } széf felhasználónként",
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } széf felhasználónként"
+      ],
+      "${ n } user": [
+        "${ n } felhasználó",
+        "${ n } felhasználóig"
+      ],
       "${ n } vault": [
         "${ n } tároló",
         "${ n } tároló"
@@ -5253,6 +5370,10 @@
       "${ n } VPN connection": [
         "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolat"
+      ],
+      "${ options }-day file version history": [
+        "${ options } napos fájl verzió előzmény",
+        "${ options } napos fájl verzió előzmény"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
@@ -5347,9 +5468,6 @@
       ],
       "Data breach monitoring": [
         "Adatvédelmi incidensek figyelése"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Adatvédelmi incidensek figyelése (hamarosan)"
       ],
       "Dedicated servers and IP": [
         "Dedikált szerverek és IP"
@@ -5903,8 +6021,17 @@
       "An external address cannot be default": [
         "Egy külső cím nem lehet alapértelmezett"
       ],
+      "Downloaded 2FA recovery codes": [
+        "2FA visszaállító kódok letöltve"
+      ],
       "Invalid code": [
         "Érvénytelen kód"
+      ],
+      "Invalid input. Search an email or IP address.": [
+        "Hibás bemenet. Keressen egy e-mail vagy IP címet."
+      ],
+      "Key copied to the clipboard": [
+        "A kulcs vágólapra lett másolva"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 azonosító frissítve"
@@ -5954,11 +6081,26 @@
       "My reason isn't listed": [
         "Más okból"
       ],
+      "No permission": [
+        "Nincs engedélye"
+      ],
+      "Organization only": [
+        "Kizárólag szervezeti"
+      ],
+      "Receive from all": [
+        "Kapjon mindenkitől"
+      ],
       "Router": [
         "Router"
       ],
       "Secure Core configs": [
         "Secure Core konfigurációk"
+      ],
+      "Send to all": [
+        "Küldés mindenkinek"
+      ],
+      "Setup incomplete": [
+        "Beállítás sikertelen"
       ],
       "Standard server configs": [
         "Normál szerver konfigurációk"
@@ -6042,6 +6184,9 @@
       "Current plan": [
         "Jelenlegi csomag"
       ],
+      "Enter a display name for **${ username }**. This is what your users will see when you change their permissions or share data with them.": [
+        "Írja be a megjelenítő nevét a **${ username }** fiókhoz. Ezt fogják látni más felhasználók amikor megváltoztatja a jogosultságait vagy megoszt velük adatokat."
+      ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Mindössze további **${ relativePrice } havonta**, és elérheti a ${ BRAND_NAME } prémium jelszókezelőjét!"
       ],
@@ -6060,6 +6205,9 @@
       "Includes:": [
         "Tartalma:"
       ],
+      "Launching ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } indítása"
+      ],
       "per month": [
         "havonta"
       ],
@@ -6072,6 +6220,9 @@
       "per month, billed every two years": [
         "havonta, kétévente számlázva"
       ],
+      "Preparing your Recovery Kit": [
+        "Helyreállító csomag elkészítése"
+      ],
       "Secure vault sharing": [
         "Biztonságos tároló-megosztás"
       ],
@@ -6083,8 +6234,22 @@
         "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás.",
         "Biztonságos tároló megosztás (${ n } tároló) és hivatkozás megosztás."
       ],
+      "Setting up your organization": [
+        "Szervezet beállítása"
+      ],
+      "Signing in to ${ PASS_APP_NAME }": [
+        "Bejelentkezés a ${ PASS_APP_NAME }-be"
+      ],
+      "Updating your account": [
+        "Fiók frissítésé"
+      ],
       "Verifying your payment": [
         "Fizetés ellenőrzése"
+      ]
+    },
+    "pass_signup_2023: Title": {
+      "All ${ BRAND_NAME } Plus services.${ br }One easy subscription.": [
+        "Minden ${ BRAND_NAME } Plus szolgáltatás. ${ br } Egy egyszerű előfizetés."
       ]
     },
     "password_reset: info": {
@@ -6099,8 +6264,14 @@
       ]
     },
     "passwordless": {
+      "All administrators will get access to the key.": [
+        "Minden adminisztrátor kap hozzáférést a kulcsokhoz."
+      ],
       "Are you sure you want to change your organization key?": [
         "Biztos, hogy megváltoztatja a szervezeti kulcsot?"
+      ],
+      "Change organization key": [
+        "Szervezeti kulcsok megváltoztatása"
       ],
       "Non-private users can be promoted to admin when they have setup keys": [
         "Nem-privát felhasználók akkor kaphatnak adminisztrátori jogot, ha van beállítási kulcsuk"
@@ -6110,6 +6281,9 @@
       ],
       "Organization key does not exist.": [
         "A szervezeti kulcs nem létezik."
+      ],
+      "Organization key must be activated to give admin privileges": [
+        "A szervezeti kulcsot aktiválni kell, az adminisztrátorok hozzáadásához."
       ],
       "Organization key restored": [
         "Szervezeti kulcs helyreállítva"
@@ -6153,8 +6327,14 @@
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
         "Az adminisztrátori jogok helyreállításához használjon egy helyreállítási módszert, lépjen kapcsolatba egy másik adminisztrátorral, vagy állítsa vissza a szervezeti kulcsot."
       ],
+      "We couldn't verify authenticity of this identity.": [
+        "Nem tudtuk ellenőrizi ennek a személyazonosságnak a hitelességét."
+      ],
       "We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${ BRAND_NAME } Customer Support.": [
         "Nem sikerült ellenőrizni a feladó cím kulcsának hitelességét. Esetenként késedelem lehet a feladó adatainak frissülésében. Próbálja meg később. Ha nem bízik meg a feladó vagy a meghívó hitelességében, vegye fel a kapcsolatot a ${ BRAND_NAME } ügyfélszolgálattal."
+      ],
+      "We have verified the authenticity of this identity.": [
+        "Ellenőriztük ennek a személyazonosságnak a hitelességét."
       ],
       "We have verified the authenticity of this sender and invitation.": [
         "Ellenőriztük a feladó és a meghívó hitelességét."
@@ -6209,6 +6389,23 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kártya elutasítva. Kérjük, próbálja meg egy másik kártyával, vagy lépjen kapcsolatba a bankjával a terhelés engedélyezéséhez."
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "Nincs engedélye"
+      ],
+      "Organization only": [
+        "Kizárólag szervezeti"
+      ],
+      "Receive from all": [
+        "Kapjon mindenkitől"
+      ],
+      "Send to all": [
+        "Küldés mindenkinek"
+      ],
+      "Setup incomplete": [
+        "Beállítás sikertelen"
       ]
     },
     "Placeholder": {
@@ -6375,6 +6572,9 @@
       "Verify recovery phone?": [
         "Helyreállító telefonszám ellenőrzése?"
       ],
+      "Verify this recovery phone number now: ${ phone.Value }": [
+        "Ellenőrizze ezt a biztonsági visszaállító telefonszámot most: ${ phone.Value }"
+      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "A telefonszámának megerősítése növeli a fiókja biztonságát, illetve több helyreállítási lehetőséget biztosít."
       ]
@@ -6410,6 +6610,28 @@
         "Token létrehozása"
       ]
     },
+    "scim: Info": {
+      "Once SCIM is disabled for your organization, **all SCIM users provided automatically by your identity provider will be converted to SSO users** and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "Amikor SCIM ki lesz kapcsolva az ön szervezetében, **minden SCIM felhasználó automatikusan át lesz állítva SSO felhasználókként** és ön tudja majd kezelni őket közvetlenül a ${ BRAND_NAME } beállításokban."
+      ],
+      "The SCIM base URL and token will be deleted.": [
+        "A SCIM alap link és token törölve lesz."
+      ],
+      "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
+        "Hogy újra engedélyezze a SCIM szinkronizálást újra kell csinálnia a SCIM integrációt."
+      ]
+    },
+    "scim: Title": {
+      "Disable SCIM integration?": [
+        "Letiltja a SCIM integrációt?"
+      ],
+      "Generate new SCIM token?": [
+        "Új SCIM token generálása?"
+      ],
+      "SCIM automatic provisioning": [
+        "SCIM automatikus ellátás"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "CSV fájl feltöltése"
@@ -6440,6 +6662,9 @@
       ],
       "pending": [
         "függőben"
+      ],
+      "to be created": [
+        "létrehozni"
       ]
     },
     "session_recovery:available:action": {
@@ -7255,6 +7480,9 @@
       "Domain deleted": [
         "Domain név törölve"
       ],
+      "Invitation resent": [
+        "Meghívó újraküldve"
+      ],
       "Sessions revoked": [
         "Munkafolyamatok visszavonva"
       ],
@@ -7285,6 +7513,9 @@
         "Beállítás fájl létrehozása ehhez: ${ serverName }"
       ],
       "Preference updated": [
+        "Preferenciák frissítve"
+      ],
+      "Preferences updated": [
         "Preferenciák frissítve"
       ]
     },
@@ -8017,8 +8248,14 @@
       ]
     },
     "Tooltip": {
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Adminisztrátorok meg tudják változtatni az előfizetését, kezelhetik a felhasználói fiókokat és jelszókat, és tudnak adminisztrátor jogokat adni más felhasználóknak."
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatikus váltás az Ön által preferált nappali és éjszakai témák között a rendszer nappali és éjszakai üzemmódjával szinkronban."
+      ],
+      "Feature in early access": [
+        "A funkció korai hozzáférésben van"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
@@ -8195,17 +8432,29 @@
       ]
     },
     "vpn_2step: discount": {
+      "1-year": [
+        "1 év"
+      ],
       "15-month": [
         "15 hónap"
       ],
       "18-month": [
         "18 hónap"
       ],
+      "2-year": [
+        "2 év"
+      ],
       "3-month": [
         "3 hónap"
       ],
       "30-month": [
         "30 hónap"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Takarítson meg ${ discount }-ot a ${ billingCycle } ajánlattal"
+      ],
+      "Get a first year of ${ plan } for free!": [
+        "Az első év a ${ plan } ingyen van."
       ],
       "monthly": [
         "minden hónapban"
@@ -8225,8 +8474,23 @@
         "${ n } év",
         "${ n } év"
       ],
+      "Includes ${ plan } (free for the first year!)": [
+        "Beletartozik a ${ plan } (ingyen az első évben!)"
+      ],
+      "Includes ${ plan }, our premium password manager, free for the first year!": [
+        "Beletartozik a ${ plan }, a mi prémium jelszó kezelőnk, ingyen az első évben!"
+      ],
+      "Just ${ price }": [
+        "Csak ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "${ upsellPlanName } kipróbálása"
+      ],
+      "Your ${ a } and ${ b } bundle": [
+        "Az ön ${ a } és ${ b } kombinált csomagja"
+      ],
+      "Your ${ selected } plan": [
+        "A ${ selected } előfizetés"
       ]
     },
     "wallet_signup_2024: Info": {
@@ -8279,6 +8543,9 @@
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Probléma van a DNS beállításaival. Kérjük, javítsa, hogy minden az alábbiak szerint legyen beállítva. Ha a probléma továbbra is fennáll, ki kell kapcsolnunk a DKIM aláírást."
+      ],
+      "You must ${ activateLink } the organization key before adding an email address to a non-private member.": [
+        "Kötelező ${ activateLink } a szervezeti kulcsok még mielőtt hozzá add egy e-mailt címet egy nem privát felhasználóhoz."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ textDate }. ${ action }"
