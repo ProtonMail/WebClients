@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { type IconName } from '@proton/components/components/icon/Icon';
-import Icon from '@proton/components/components/icon/Icon';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 export enum BannerBackgroundColor {
@@ -14,12 +13,12 @@ export enum BannerBackgroundColor {
     SUCCESS = 'success',
 }
 
-export enum IconColor {
+enum IconColor {
     WARNING = 'warning',
     DANGER = 'danger',
 }
 
-export interface BannerProps {
+interface BannerProps {
     backgroundColor?: BannerBackgroundColor;
     iconColor?: IconColor;
     icon?: IconName;
