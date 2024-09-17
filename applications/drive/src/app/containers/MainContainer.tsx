@@ -55,7 +55,7 @@ const DEFAULT_VOLUME_INITIAL_STATE: {
 };
 
 const InitContainer = () => {
-    const { getDefaultShare } = useDefaultShare();
+    const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const { migrateShares } = useShareActions();
     const [loading, withLoading] = useLoading(true);
     const [error, setError] = useState<Error>();
@@ -92,6 +92,12 @@ const InitContainer = () => {
                 await getDefaultShare().then(({ shareId, rootLinkId: linkId, volumeId }) =>
                     setDefaultShareRoot({ volumeId, shareId, linkId })
                 );
+
+                // This is needed for the usePhotos provider
+                // It should load it's own share, but for some reason
+                // without this the app crashes and devices fail to decrypt.
+                // See DRVWEB-4253
+                await getDefaultPhotosShare();
 
                 void migrateShares();
             } catch (err) {
