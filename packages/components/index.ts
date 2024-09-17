@@ -24,6 +24,7 @@ export type { DataWithMatches } from './components/autocomplete/useAutocomplete'
 export { default as Badge } from './components/badge/Badge';
 export type { BadgeType } from './components/badge/Badge';
 export { default as BetaBadge } from './components/badge/BetaBadge';
+export { default as Breadcrumb } from './components/breadcrumb/Breadcrumb';
 export { default as CalendarEventDateHeader } from './components/calendarEventDateHeader/CalendarEventDateHeader';
 export {
     CheckListAccountLogin,
@@ -114,11 +115,10 @@ export { default as UpsellModal } from './components/upsell/modal/UpsellModal';
 export { default as useUpsellConfig } from './components/upsell/useUpsellConfig';
 export { default as AppVersion } from './components/version/AppVersion';
 export { default as VideoInstructions } from './components/videoInstructions/VideoInstructions';
-
 export { AutoReplySection } from './containers/autoReply/AutoReplySection';
-export { VPNEvents } from './containers/b2bDashboard/VPN/VPNEvents';
-export { PassEvents } from './containers/b2bDashboard/Pass/PassEvents';
 export type { PassEvent } from './containers/b2bDashboard/Pass/interface';
+export { PassEvents } from './containers/b2bDashboard/Pass/PassEvents';
+export { VPNEvents } from './containers/b2bDashboard/VPN/VPNEvents';
 export { PromotionBanner } from './containers/banner/PromotionBanner';
 export { ProtonMailBridgeSection } from './containers/bridge/ProtonMailBridgeSection';
 export { CacheProvider } from './containers/cache/Provider';
