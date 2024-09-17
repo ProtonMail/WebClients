@@ -41,12 +41,16 @@ describe('getPlan', () => {
                 Name: PLANS.MAIL,
                 Currency: 'USD',
             } as Plan,
+            {
+                Name: PLANS.MAIL,
+                Currency: 'EUR',
+            } as Plan,
         ];
 
         const plan = getPlan(plans, PLANS.MAIL, prefferedCurrency);
         expect(plan).toEqual({
             Name: PLANS.MAIL,
-            Currency: 'USD',
+            Currency: 'EUR',
         });
     });
 
@@ -67,7 +71,7 @@ describe('getPlan', () => {
         const plan = getPlan(plans, PLANS.MAIL, prefferedCurrency);
         expect(plan).toEqual({
             Name: PLANS.MAIL,
-            Currency: 'CHF',
+            Currency: 'EUR',
         });
     });
 });

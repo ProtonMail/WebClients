@@ -121,7 +121,6 @@ const getParameters = (
         plan,
         coupon,
         cycle: parsedCycle || subscription?.Cycle || DEFAULT_CYCLE,
-        // todo: add status
         currency: parsedCurrency,
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: type === 'offer' || edit === 'disable',
@@ -197,7 +196,7 @@ const AutomaticSubscriptionModal = () => {
     const location = useLocation();
     const protonConfig = useConfig();
 
-    const [open, loadingModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingModal] = useSubscriptionModal();
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
@@ -303,7 +302,7 @@ const AutomaticSubscriptionModal = () => {
         }
 
         if (eligibility.type === 'pass-through') {
-            open(openProps);
+            openSubscriptionModal(openProps);
         }
     }, [loadingPlans, loadingSubscription, loadingModal, loadingLastSubscriptionEnd, location.search]);
 
@@ -319,7 +318,7 @@ const AutomaticSubscriptionModal = () => {
                     {...upsellModalProps}
                     onConfirm={() => {
                         if (tmp.props) {
-                            open(tmp.props);
+                            openSubscriptionModal(tmp.props);
                         }
                     }}
                 />

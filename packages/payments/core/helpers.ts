@@ -83,7 +83,7 @@ export function mapCountryToRegionalCurrency(countryCode: string): Currency | un
 
 export function getFallbackCurrency(currency: Currency): Currency {
     if (isRegionalCurrency(currency)) {
-        return 'USD';
+        return 'EUR';
     }
 
     return currency;
@@ -176,17 +176,18 @@ export function getPreferredCurrency({
         return plansCurrencies.find((it) => isMainCurrency(it)) ?? DEFAULT_CURRENCY;
     })();
 
-    const ifPlanSupportsCurrency = (currency: Currency) => {
-        const selectedPlanSupportsCurrency = !selectedPlan || selectedPlan.Currency === currency;
-        const plansSupportCurrency = !plans || plans.find((it) => it.Currency === currency);
-        const paramPlanSupportsCurrency =
+    const ifPlanSupportsCurrency = (preferredCurrency: Currency): Currency => {
+        const paramPlanSupportsCurrency: boolean =
             !paramPlanName ||
             !isStringPLAN(paramPlanName) ||
-            plans?.find((it) => it.Name === paramPlanName && it.Currency === currency);
+            !!plans?.find((it) => it.Name === paramPlanName && it.Currency === preferredCurrency);
 
-        return selectedPlanSupportsCurrency && plansSupportCurrency && paramPlanSupportsCurrency
-            ? currency
-            : fallbackResult;
+        const currency = paramPlanSupportsCurrency ? preferredCurrency : getFallbackCurrency(preferredCurrency);
+
+        const selectedPlanSupportsCurrency: boolean = !selectedPlan || selectedPlan.Currency === currency;
+        const plansSupportCurrency: boolean = !plans || !!plans.find((it) => it.Currency === currency);
+
+        return selectedPlanSupportsCurrency && plansSupportCurrency ? currency : fallbackResult;
     };
 
     if (paramCurrency) {
