@@ -125,7 +125,11 @@ const ComposerAssistantCustomInput = ({
                         as={TextArea}
                         autoFocus
                         value={prompt}
-                        placeholder={selectedText ? c('Placeholder').t`Describe what to change` : randomPlaceholder}
+                        placeholder={
+                            selectedText || isAssistantExpanded
+                                ? c('Placeholder').t`Describe what to change`
+                                : randomPlaceholder
+                        }
                         onValue={(value: string) => {
                             setPrompt(value);
                         }}
