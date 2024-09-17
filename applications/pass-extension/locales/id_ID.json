@@ -4,6 +4,11 @@
     "language": "id_ID"
   },
   "contexts": {
+    "Action": {
+      "Please retry": [
+        "Silakan coba lagi"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "Berkas ${ provider } tidak dapat diurai. ${ errorDetail }"
