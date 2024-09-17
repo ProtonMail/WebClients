@@ -288,6 +288,9 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } uygulamasına git"
+      ],
       "Go to label": [
         "Etikete git"
       ],
@@ -546,6 +549,9 @@
       "Switch or add account": [
         "Hesap değiştirin ya da ekleyin"
       ],
+      "Take out of trash": [
+        "Çöpten çıkar"
+      ],
       "Trust": [
         "Güven"
       ],
@@ -772,7 +778,7 @@
         "Netflix, Disney+ ve Prime Video ve diğer yayın akışı hizmetlerindeki içeriğe her yerden erişin."
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Yerel İnternet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
+        "Yerel internet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
       ],
       "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve diğer özellikleri içerir.",
@@ -791,7 +797,7 @@
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek İnternet üzerinde gezinme hızınızı artırır."
+        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek internet üzerinde gezinme hızınızı artırır."
       ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
         "Depolama alanı tüm ${ BRAND_NAME } uygulamaları arasında paylaşılır."
@@ -2231,6 +2237,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Belge kopyalanırken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Belge geri yükleniyrken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Belge çöpe atılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Belge oluşturulurken bir sorun çıktı. Lütfen yeniden deneyin."
       ],
@@ -2806,10 +2818,10 @@
         "Bir şeyler ters gitti"
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
-        "${ MAIL_APP_NAME } ya da ${ CALENDAR_APP_NAME } kullanmak için İnternet sürümüne geçin."
+        "${ MAIL_APP_NAME } ya da ${ CALENDAR_APP_NAME } kullanmak için internet uygulamasına geçin."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya İnternet bağlantınızı denetleyin."
+        "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
       ],
       "When extra password is enabled, alias management can only be done in ${ PASS_APP_NAME }.": [
         "Ek parola kullanıldığında, takma ad yönetimi yalnızca ${ PASS_APP_NAME } içinden yapılabilir."
@@ -3410,6 +3422,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "\"${ documentTitle }\" çöpe atıldı. Siz geri yükleyene ya da kalıcı olarak silene kadar orada kalacak."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "\"${ documentTitle }\" çöp kutusunda ve siz kalıcı olarak silene kadar orada kalacak."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } e-posta adresi",
         "${ addressCount } e-posta adresi"
@@ -3698,6 +3716,12 @@
       ],
       "Display word count": [
         "Sözcük sayısı görüntülensin"
+      ],
+      "Document is in trash": [
+        "Belge çöp kutusunda"
+      ],
+      "Document moved to trash": [
+        "Belge çöpe atıldı"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Bir şey görmüyor musunuz? Açılır pencere engelleyicilerini kapatmayı unutmayın."
@@ -4067,6 +4091,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bu işlemin kişi listenizin boyutuna bağlı olarak uzun sürebileceğini unutmayın."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Onayla düğmesine tıkladığınız zaman hesabınızda ${ remainingCreditsFormatted } kredi kalacağını lütfen unutmayın."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Bir grup oluşturmak için lütfen bir ad ve bir e-posta adresi belirtin."
@@ -5668,9 +5695,6 @@
       "Data breach monitoring": [
         "Verilerin ele geçirilmesini izleme"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Verilerin ele geçirilmesini izleme (yakında)"
-      ],
       "Desktop app": [
         "Masaüstü uygulaması"
       ],
@@ -5997,7 +6021,7 @@
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Temel ağ izlemesi ile her yerden güvenli İnternet erişimi"
+        "Temel ağ izlemesi ile her yerden güvenli internet erişimi"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolama alanı."
@@ -6009,7 +6033,7 @@
         "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Güvenli, sınırsız ve yüksek hızda İnternet erişimi sağlayan size ayrılmış VPN çözümü."
+        "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan size ayrılmış VPN çözümü."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Ücretsiz başlangıç hesabı gizliliğe odaklanmış herkesin gereksinimlerine göre tasarlanmıştır."
@@ -6133,7 +6157,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Şirket kaynaklarınızın herkese açık İnternet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Şirket kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -6217,7 +6241,7 @@
         "SMTP, 3. taraf hizmetlerin veya aygıtların ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        "Özel olarak tasarlanmış NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek İnternet üzerinde gezinme hızınızı artırır"
+        "Özel olarak tasarlanmış NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek internet üzerinde gezinme hızınızı artırır"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } arasında paylaşılır"
@@ -6232,7 +6256,7 @@
         "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Ekibinizin deneyimini ${ BRAND_NAME } İnternet uygulamalarına yükleyeceğiniz kuruluş logonuz ile özelleştirin"
+        "Ekibinizin deneyimini ${ BRAND_NAME } internet uygulamalarına yükleyeceğiniz kuruluş logonuz ile özelleştirin"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
@@ -6616,6 +6640,9 @@
       ],
       "MM/YY": [
         "AA/YY"
+      ],
+      "More plans are available in other currencies": [
+        "Farklı para birimlerinde başka tarifeler de var"
       ],
       "Payment Processing": [
         "Ödeme işleniyor"
@@ -7582,6 +7609,9 @@
       "Preferences saved": [
         "Ayarlar kaydedildi"
       ],
+      "Problem reported": [
+        "Sorun bildirildi"
+      ],
       "Secure link copied": [
         "Güvenli bağlantı kopyalandı"
       ],
@@ -8345,7 +8375,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin saklamanın ve göndermenin daha güvenli ve kolay yolu"
+        "Bitcoin birikimlerinizi kolayca ve güvenle saklayın ve gönderin"
       ]
     },
     "wallet_signup_2024:Bug category": {

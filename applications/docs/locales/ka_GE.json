@@ -288,6 +288,9 @@
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }-ზე გადასვლა"
+      ],
       "Go to label": [
         "ჭდეზე გადასვლა"
       ],
@@ -545,6 +548,9 @@
       ],
       "Switch or add account": [
         "ანგარიშის დამატება ან გადართვა"
+      ],
+      "Take out of trash": [
+        "ნაგვის ყუთიდან გამოტანა"
       ],
       "Trust": [
         "ნდობა"
@@ -2231,6 +2237,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "შეცდომა დოკუმენტის დუბლირების მცდელობისას. მოგვიანებით სცადეთ."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "შეცდომა დოკუმენტის აღდგენის მცდელობისას. მოგვიანებით სცადეთ."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "შეცდომა დოკუმენტის ნაგვის ყუთში გადატანის მცდელობისას. მოგვიანებით სცადეთ."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "შეცდომა ახალი დოკუმენტის შექმნისას. მოგვიანებით სცადეთ."
       ],
@@ -3410,6 +3422,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "\"${ documentTitle }\" გადატანილია ნაგვის ყუთში. იქ ის მანამდე დარჩება, სანამ არ აღადგენთ მას, ან სამუდამოდ არ წაშლით."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "\"${ documentTitle }\" ნაგვის ყუთშია და მანამდე დარჩება იქ, სანამ სამუდამოდ არ წაშლით."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } ელ-ფოსტის მისამართი",
         "${ addressCount } ელ-ფოსტის მისამართი"
@@ -3698,6 +3716,12 @@
       ],
       "Display word count": [
         "სიტყვების რაოდენობის ჩვენება"
+      ],
+      "Document is in trash": [
+        "დოკუმენტი ნაგვის ყუთში"
+      ],
+      "Document moved to trash": [
+        "დოკუმენტი გადატანილია ნაგვის ყუთში"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "ვერაფერს ხედავთ? არ დაგავიწყდეთ, მხტუნარა ფანჯრის დამბლოკველები გამორთოთ."
@@ -4067,6 +4091,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ remainingCreditsFormatted } კრედიტი იქნება დარჩენილი."
       ],
       "Please provide a name and an email address for creating a group.": [
         "ჯგუფის შესაქმნელად შეიყვანეთ სახელი და ელფოსტის მისამართი."
@@ -5668,9 +5695,6 @@
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
       ],
-      "Data breach monitoring (coming soon)": [
-        "მონაცემების გაჟონვის თვალყურის დევნება (მალე)"
-      ],
       "Desktop app": [
         "კომპიუტერის აპი"
       ],
@@ -6616,6 +6640,9 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "More plans are available in other currencies": [
+        "სხვა სატარიფო გეგმები ხელმისაწვდომია სხვა ვალუტებში"
       ],
       "Payment Processing": [
         "გადახდის დამუშავება"
@@ -7581,6 +7608,9 @@
       ],
       "Preferences saved": [
         "პარამეტრები შენახულია"
+      ],
+      "Problem reported": [
+        "პრობლემა შეტყობინებულია"
       ],
       "Secure link copied": [
         "დაცული ბმული დაკოპირდა"
