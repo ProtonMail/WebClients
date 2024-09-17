@@ -1,5 +1,4 @@
 export * from './button';
-export * from './downloadClientCard';
 export * from './dragMoveContainer';
 export * from './drawer';
 export * from './ellipsis';
