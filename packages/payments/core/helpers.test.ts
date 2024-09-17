@@ -60,7 +60,7 @@ describe('payments core helpers', () => {
                     paramCurrency: 'BRL',
                     regionalCurrenciesEnabled: true,
                 })
-            ).toEqual('USD');
+            ).toEqual('EUR');
         });
 
         const regionalCurrencies = ['BRL', 'JPY', 'RANDOM'];
@@ -518,6 +518,67 @@ describe('payments core helpers', () => {
                     paramCurrency: 'BRL',
                 })
             ).toEqual('USD');
+        });
+
+        it('should select the fallback currency in case if selected plan does not support regional currency', () => {
+            // VPN2024 has BRL but bundlepro doesn't
+            const plans = [
+                {
+                    Currency: 'USD',
+                    Name: PLANS.BUNDLE_PRO_2024,
+                },
+                {
+                    Currency: 'EUR',
+                    Name: PLANS.BUNDLE_PRO_2024,
+                },
+                {
+                    Currency: 'CHF',
+                    Name: PLANS.BUNDLE_PRO_2024,
+                },
+                {
+                    Currency: 'USD',
+                    Name: PLANS.VPN2024,
+                },
+                {
+                    Currency: 'EUR',
+                    Name: PLANS.VPN2024,
+                },
+                {
+                    Currency: 'CHF',
+                    Name: PLANS.VPN2024,
+                },
+                {
+                    Currency: 'BRL',
+                    Name: PLANS.VPN2024,
+                },
+            ] as Plan[];
+
+            const status = {
+                CountryCode: 'BR',
+                VendorStates: {} as any,
+            } as PaymentMethodStatusExtended;
+
+            const user = {
+                Currency: 'BRL',
+                isPaid: true,
+            } as UserModel;
+
+            const subscription = {
+                Currency: 'BRL',
+            } as Subscription;
+
+            const paramPlanName = PLANS.BUNDLE_PRO_2024;
+
+            expect(
+                getPreferredCurrency({
+                    status,
+                    subscription,
+                    user,
+                    plans,
+                    paramPlanName,
+                    regionalCurrenciesEnabled: true,
+                })
+            ).toEqual('EUR');
         });
     });
 
