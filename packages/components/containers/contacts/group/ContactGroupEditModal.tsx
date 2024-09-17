@@ -15,7 +15,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     Row,
-} from '@proton/components/components';
+} from '@proton/components';
 import {
     type AddressesAutocompleteItem,
     getContactsAutocompleteItems,

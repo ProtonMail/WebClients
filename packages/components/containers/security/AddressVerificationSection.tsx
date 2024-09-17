@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import { BetaBadge, Info } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash';
 
-import { BetaBadge, Info } from '../../components';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';

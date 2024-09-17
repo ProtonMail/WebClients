@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { BadgeType } from '@proton/components/components/badge/Badge';
+import type { BadgeType } from '@proton/components';
 
 import type { SubscribedCalendar, VisualCalendar } from '../interfaces/calendar';
 import { getIsCalendarDisabled, getIsCalendarProbablyActive, getIsSubscribedCalendar } from './calendar';

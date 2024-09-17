@@ -1,6 +1,3 @@
-export * from './attachedFile';
-export * from './autocomplete';
-export * from './badge';
 export * from './banner';
 export * from './breadcrumb';
 export * from './button';

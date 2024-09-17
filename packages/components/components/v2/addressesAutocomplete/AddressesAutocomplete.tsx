@@ -2,6 +2,7 @@ import type { KeyboardEvent, RefObject } from 'react';
 import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
 import type { Input } from '@proton/atoms';
+import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '@proton/components';
 import { useCombinedRefs } from '@proton/hooks';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
@@ -19,7 +20,6 @@ import {
     getNumberOfMembersText,
     getRecipientFromAutocompleteItem,
 } from '../../addressesAutocomplete/helper';
-import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '../../autocomplete';
 import Icon from '../../icon/Icon';
 import { Option } from '../../option';
 import { Marks } from '../../text';

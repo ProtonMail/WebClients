@@ -3,6 +3,7 @@ import type { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import { AttachedFile, FileInput, Label, Row } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import {
@@ -14,7 +15,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import type { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
-import { AttachedFile, FileInput, Label, Row } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 
 interface Props {

@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Badge } from '@proton/components';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuContainer from '@proton/components/components/dropdown/DropdownMenuContainer';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Badge } from '../../badge';
 import { DEFAULT_FONT_FACE, FONT_FACES } from '../constants';
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '../helpers/fontFace';
 import ToolbarDropdown from './ToolbarDropdown';
