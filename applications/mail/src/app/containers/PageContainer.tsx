@@ -10,7 +10,6 @@ import {
     useModalState,
     useOpenDrawerOnLoad,
     useUserSettings,
-    useWelcomeFlags,
 } from '@proton/components';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
@@ -41,7 +40,6 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
     const [userSettings] = useUserSettings();
     const mailSettings = useMailModel('MailSettings');
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
-    const [welcomeFlags] = useWelcomeFlags();
 
     useOpenDrawerOnLoad();
 
@@ -63,11 +61,9 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
         return <Redirect to="/inbox" />;
     }
 
-    const onboardingOpen = !welcomeFlags.isDone;
-
     return (
         <PrivateLayout ref={ref} labelID={labelID} elementID={elementID} breakpoints={breakpoints}>
-            <MailStartupModals onboardingOpen={onboardingOpen} />
+            <MailStartupModals />
             <LabelActionsContextProvider>
                 <MailboxContainer
                     labelID={labelID}

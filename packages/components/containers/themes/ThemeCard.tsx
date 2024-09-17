@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { Shape } from '@proton/components/components/button/ButtonGroup';
 import clsx from '@proton/utils/clsx';
 
 import type { ThemeSvgColors, ThemeSvgSize } from './ThemeSvg';
@@ -19,6 +20,7 @@ interface Props {
     as?: React.ElementType;
     className?: string;
     borderRadius?: 'sm' | 'md';
+    shapeButton?: Shape;
     'data-testid'?: string;
 }
 
@@ -32,13 +34,14 @@ const ThemeCard = ({
     disabled,
     borderRadius = 'md',
     as: Component = Button,
+    shapeButton = 'outline',
     className,
     'data-testid': dataTestId,
 }: Props) => {
     return (
         <Component
             name="themeCard"
-            shape="outline"
+            shape={shapeButton}
             color={selected ? 'norm' : 'weak'}
             id={id}
             className={clsx(

@@ -23,13 +23,22 @@
 			);
 		}
 
-		&-text {
+		&-text:not(.my-auto) {
 			margin-block-start: rem(-2); // small trick to compensate line-height, for vertical centering
 		}
 
 		&:last-child {
 			background: none;
 		}
+	}
+
+	&--primary &-item {
+		--background-strong: var(--interaction-norm-minor-2);
+	}
+
+	&--primary &-icon-container {
+		color: var(--interaction-norm);
+		font-weight: var(--font-weight-semibold);
 	}
 
 	&-icon-container {

@@ -15,6 +15,8 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ChecklistApiResponse, ChecklistKeyType } from '@proton/shared/lib/interfaces';
 import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
 
+import useMailOnboardingVariant from 'proton-mail/components/onboarding/useMailOnboardingVariant';
+
 import useCanCheckItem from '../hooks/useCanCheckItem';
 import type { GetStartedChecklistApiResponse } from '../hooks/useChecklist';
 import useChecklist from '../hooks/useChecklist';
@@ -45,6 +47,7 @@ const GetStartedChecklistContext = createContext<ContextState>({} as ContextStat
 
 const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const api = useApi();
+    const { variant: onboardingVariant } = useMailOnboardingVariant();
     const silentApi = getSilentApi(api);
     const { call } = useEventManager();
     const [submitting, withSubmitting] = useLoading();
@@ -94,7 +97,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
         setDisplayState(newState);
         void withSubmitting(async () => {
             // Reduce the checklist and mark first checklist item as done
-            if (newState === REDUCED) {
+            if (newState === REDUCED && onboardingVariant !== 'none') {
                 const items = isUserPaid ? paidUserChecklist.Items : freeUserChecklist.Items;
                 if (!items.includes(ChecklistKey.ProtectInbox)) {
                     setDoneItems([...doneItems, ChecklistKey.ProtectInbox]);

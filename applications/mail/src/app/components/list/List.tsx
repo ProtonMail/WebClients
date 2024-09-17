@@ -21,13 +21,12 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { isMessage as testIsMessage } from '../../helpers/elements';
-import { isColumnMode } from '../../helpers/mailSettings';
 import { usePaging } from '../../hooks/usePaging';
 import { PLACEHOLDER_ID_PREFIX, usePlaceholders } from '../../hooks/usePlaceholders';
 import type { Element } from '../../models/element';
 import type { Filter } from '../../models/tools';
 import { pageSize as pageSizeSelector, showLabelTaskRunningBanner } from '../../store/elements/elementsSelectors';
-import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
+import UserOnboardingMessageListPlaceholder from '../onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
 import ListBanners from './ListBanners';
@@ -329,7 +328,7 @@ const List = (
                                 {!loading && !(total > 1) && (
                                     <>
                                         {canDisplayChecklist && displayState === FULL && (
-                                            <UsersOnboardingChecklist displayOnMobile={isColumnMode(mailSettings)} />
+                                            <UserOnboardingMessageListPlaceholder location="list" />
                                         )}
                                     </>
                                 )}

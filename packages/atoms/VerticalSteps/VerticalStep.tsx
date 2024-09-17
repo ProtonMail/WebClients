@@ -4,6 +4,8 @@ import clsx from '@proton/utils/clsx';
 
 export interface VerticalStepProps extends ComponentPropsWithoutRef<'li'> {
     description?: ReactNode;
+    titleCentered?: Boolean;
+    titleBold?: Boolean;
     icon: ReactNode;
     /**
      * 'next': default state
@@ -13,7 +15,16 @@ export interface VerticalStepProps extends ComponentPropsWithoutRef<'li'> {
     status?: 'next' | 'done' | 'passed';
 }
 
-const VerticalStep = ({ title, description, icon, status = 'next', className, ...rest }: VerticalStepProps) => {
+const VerticalStep = ({
+    title,
+    titleCentered = false,
+    titleBold = true,
+    description,
+    icon,
+    status = 'next',
+    className,
+    ...rest
+}: VerticalStepProps) => {
     return (
         <li
             {...rest}
@@ -34,10 +45,13 @@ const VerticalStep = ({ title, description, icon, status = 'next', className, ..
             <div
                 className={clsx(
                     'flex-1 pl-2 flex flex-column flex-nowrap relative vertical-steps-item-text',
-                    status === 'passed' && 'color-disabled'
+                    status === 'passed' && 'color-disabled',
+                    titleCentered && 'my-auto'
                 )}
             >
-                {title ? <span className={clsx([status !== 'passed' && 'text-semibold'])}>{title}</span> : null}
+                {title ? (
+                    <span className={clsx([status !== 'passed' && titleBold && 'text-semibold'])}>{title}</span>
+                ) : null}
                 {description ? (
                     <span className={clsx(['text-sm', status !== 'passed' && 'color-weak'])}>{description}</span>
                 ) : null}
