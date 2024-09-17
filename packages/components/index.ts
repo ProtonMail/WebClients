@@ -62,6 +62,7 @@ export { default as ContextMenu } from './components/contextMenu/ContextMenu';
 export { default as ContextMenuButton } from './components/contextMenu/ContextMenuButton';
 export { default as ContextSeparator } from './components/contextMenu/ContextSeparator';
 export { default as DownloadClientCard } from './components/downloadClientCard/DownloadClientCard';
+export { default as DragMoveContainer } from './components/dragMoveContainer/DragMoveContainer';
 export { default as Dropdown } from './components/dropdown/Dropdown';
 export type { DropdownProps } from './components/dropdown/Dropdown';
 export { default as DropdownActions } from './components/dropdown/DropdownActions';
