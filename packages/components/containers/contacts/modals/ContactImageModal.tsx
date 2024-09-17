@@ -13,15 +13,15 @@ import debounce from '@proton/utils/debounce';
 import type { ModalProps } from '../../../components';
 import {
     ErrorZone,
-    Field,
     FileInput,
     Label,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    Row,
 } from '../../../components';
+import Field from '../../../components/container/Field';
+import Row from '../../../components/container/Row';
 import { useNotifications } from '../../../hooks';
 
 export interface ContactImageProps extends Omit<ModalProps<typeof Form>, 'onSubmit'> {

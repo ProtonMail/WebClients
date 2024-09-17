@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Field, Row } from '@proton/components';
 import {
-    Field,
     Info,
     Label,
     type ModalProps,
@@ -12,7 +12,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    Row,
 } from '@proton/components/components';
 import Alert from '@proton/components/components/alert/Alert';
 import Collapsible from '@proton/components/components/collapsible/Collapsible';

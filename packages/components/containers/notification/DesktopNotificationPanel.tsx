@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms';
 import { Badge } from '@proton/components';
 import { Status, create, getStatus, request } from '@proton/shared/lib/helpers/desktopNotification';
 
-import { Field } from '../../components';
+import Field from '../../components/container/Field';
 
 const testDefaultNotification = () => {
     return create(c('Info').t`You have a new email`, {

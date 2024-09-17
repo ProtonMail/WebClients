@@ -7,7 +7,8 @@ import Alert from '@proton/components/components/alert/Alert';
 import type { Key } from '@proton/shared/lib/interfaces';
 
 import type { ModalProps } from '../../../components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Row } from '../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import Row from '../../../components/container/Row';
 import type { ContactClearDataExecutionProps } from './ContactClearDataExecutionModal';
 
 export interface ContactClearDataConfirmProps {

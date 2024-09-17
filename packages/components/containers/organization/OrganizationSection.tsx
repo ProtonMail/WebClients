@@ -23,11 +23,11 @@ import {
     Label,
     Loader,
     PrimaryButton,
-    Row,
     SettingsLink,
     Tooltip,
     useModalState,
 } from '../../components';
+import Row from '../../components/container/Row';
 import {
     useApi,
     useAuthentication,

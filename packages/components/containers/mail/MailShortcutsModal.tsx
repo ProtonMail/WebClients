@@ -9,15 +9,15 @@ import clsx from '@proton/utils/clsx';
 
 import type { ModalProps } from '../../components';
 import {
-    Field,
     Label,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    Row,
     ShortcutsSectionView,
 } from '../../components';
+import Field from '../../components/container/Field';
+import Row from '../../components/container/Row';
 import { useMailSettings } from '../../hooks';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 

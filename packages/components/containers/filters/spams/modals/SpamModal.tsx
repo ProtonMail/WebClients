@@ -8,16 +8,9 @@ import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isDomain } from '@proton/shared/lib/helpers/validators';
 
 import type { ModalProps } from '../../../../components';
-import {
-    Field,
-    Label,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Radio,
-    Row,
-} from '../../../../components';
+import { Label, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Radio } from '../../../../components';
+import Field from '../../../../components/container/Field';
+import Row from '../../../../components/container/Row';
 import type { SpamLocation } from '../Spams.interfaces';
 
 export type SpamMode = 'email' | 'domain';
