@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import type { LatestSubscription } from '@proton/payments';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 
-import type { LatestSubscription } from '../payments/core';
 import useApi from './useApi';
 import useUser from './useUser';
 

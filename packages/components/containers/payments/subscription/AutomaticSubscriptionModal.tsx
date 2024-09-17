@@ -61,7 +61,7 @@ import { getMonths } from '@proton/components/containers/payments/SubscriptionsS
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/components/payments/core';
+import { type PaymentMethodStatusExtended, getPlansMap } from '@proton/payments';
 import type { PLANS } from '@proton/shared/lib/constants';
 import { CURRENCIES, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';

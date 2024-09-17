@@ -1,19 +1,5 @@
 import { useMemo, useRef } from 'react';
 
-import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
-import { buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
-import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
-import type {
-    Api,
-    BillingPlatform,
-    ChargebeeEnabled,
-    ChargebeeUserExists,
-    Currency,
-    Cycle,
-    PlanIDs,
-} from '@proton/shared/lib/interfaces';
-
 import type {
     AmountAndCurrency,
     BillingAddress,
@@ -30,14 +16,28 @@ import type {
     PaymentVerificatorV5,
     PlainPaymentMethodType,
     SavedPaymentMethod,
-} from '../core';
+} from '@proton/payments';
 import {
     PAYMENT_METHOD_TYPES,
     canUseChargebee,
     isExistingPaymentMethod,
     isOnSessionMigration,
     isSplittedUser,
-} from '../core';
+} from '@proton/payments';
+import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
+import { buyCredit, payInvoice, setPaymentMethodV5, subscribe } from '@proton/shared/lib/api/payments';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import type {
+    Api,
+    BillingPlatform,
+    ChargebeeEnabled,
+    ChargebeeUserExists,
+    Currency,
+    Cycle,
+    PlanIDs,
+} from '@proton/shared/lib/interfaces';
+
 import type { PaymentProcessorType } from './interface';
 import useBitcoin from './useBitcoin';
 import { useCard } from './useCard';

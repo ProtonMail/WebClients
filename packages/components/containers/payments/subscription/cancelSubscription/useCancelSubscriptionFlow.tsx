@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useModalState } from '@proton/components/components';
-import { isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/components/payments/core';
+import { isSplittedUser, onSessionMigrationPaymentsVersion } from '@proton/payments';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { changeRenewState, deleteSubscription } from '@proton/shared/lib/api/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';

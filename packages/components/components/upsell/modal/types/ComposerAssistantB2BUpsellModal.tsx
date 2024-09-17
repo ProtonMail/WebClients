@@ -6,7 +6,7 @@ import { Loader, Price } from '@proton/components/components';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useSubscriptionModal } from '@proton/components/containers';
 import { useAssistantUpsellConfig, usePlans, usePreferredPlansMap, useSubscription } from '@proton/components/hooks';
-import { getScribeAddonNameByPlan } from '@proton/components/payments/core';
+import { getScribeAddonNameByPlan } from '@proton/payments';
 import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, PLAN_TYPES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';

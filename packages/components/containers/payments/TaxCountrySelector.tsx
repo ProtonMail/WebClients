@@ -4,11 +4,7 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import {
-    type BillingAddress,
-    DEFAULT_TAX_BILLING_ADDRESS,
-    type PaymentMethodStatusExtended,
-} from '@proton/components/payments/core';
+import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, type PaymentMethodStatusExtended } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 import { Option, Tooltip } from '../../components';

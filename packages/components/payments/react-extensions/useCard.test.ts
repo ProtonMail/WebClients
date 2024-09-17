@@ -1,9 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { InvalidCardDataError, PAYMENT_TOKEN_STATUS } from '@proton/payments';
 import { addTokensResponse, apiMock } from '@proton/testing';
 
-import { InvalidCardDataError, PAYMENT_TOKEN_STATUS } from '../core';
-import { Props, useCard } from './useCard';
+import { type Props, useCard } from './useCard';
 
 const mockVerifyPayment = jest.fn();
 const onChargeableMock = jest.fn();

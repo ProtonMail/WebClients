@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 
 import { CurrencySelector, useUser } from '@proton/components';
-import { mainCurrencies } from '@proton/components/payments/core/helpers';
+import { mainCurrencies } from '@proton/payments';
 
 import type { OfferProps } from '../../interface';
 import OfferDisableButton from './OfferDisableButton';

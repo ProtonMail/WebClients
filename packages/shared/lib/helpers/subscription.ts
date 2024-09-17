@@ -1,10 +1,6 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
 
-import {
-    isRegionalCurrency,
-    isSplittedUser,
-    onSessionMigrationChargebeeStatus,
-} from '@proton/components/payments/core';
+import { isRegionalCurrency, isSplittedUser, onSessionMigrationChargebeeStatus } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getSupportedAddons, isIpAddon, isMemberAddon, isScribeAddon } from '@proton/shared/lib/helpers/addons';
 

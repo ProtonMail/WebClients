@@ -1,6 +1,6 @@
 import { addWeeks } from 'date-fns';
 
-import { SelectedPlan } from '@proton/components/payments/core';
+import { SelectedPlan } from '@proton/payments';
 import { pick } from '@proton/shared/lib/helpers/object';
 import {
     getPlanFromIds,

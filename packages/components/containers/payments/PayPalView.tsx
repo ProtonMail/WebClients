@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
-import type { PaymentMethodFlows, PlainPaymentMethodType } from '@proton/components/payments/core';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
+import type { PaymentMethodFlows, PlainPaymentMethodType } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import {
     MAX_PAYPAL_AMOUNT,
     MIN_PAYPAL_AMOUNT_CHARGEBEE,

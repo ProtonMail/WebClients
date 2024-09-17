@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useGetPaymentStatus } from '@proton/components/hooks';
-import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
-import type { Api, BillingPlatform, ChargebeeEnabled, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
-
 import type {
     AvailablePaymentMethod,
     PaymentMethodFlows,
@@ -15,7 +12,7 @@ import type {
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,
-} from '../core';
+} from '@proton/payments';
 import {
     PAYMENT_METHOD_TYPES,
     canUseChargebee,
@@ -23,7 +20,9 @@ import {
     isExistingPaymentMethod,
     isSavedPaymentMethodExternal,
     isSavedPaymentMethodInternal,
-} from '../core';
+} from '@proton/payments';
+import type { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
+import type { Api, BillingPlatform, ChargebeeEnabled, ChargebeeUserExists } from '@proton/shared/lib/interfaces';
 
 export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;
 

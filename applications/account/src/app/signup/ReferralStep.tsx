@@ -5,14 +5,10 @@ import { c } from 'ttag';
 import { Button, CircleLoader } from '@proton/atoms';
 import { ReferralFeaturesList, useConfig } from '@proton/components';
 import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
-import {
-    type BillingAddress,
-    DEFAULT_TAX_BILLING_ADDRESS,
-    type PaymentMethodStatusExtended,
-} from '@proton/components/payments/core';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
+import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, type PaymentMethodStatusExtended } from '@proton/payments';
 import { MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import Content from '../public/Content';

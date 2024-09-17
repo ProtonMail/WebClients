@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { SelectedPlan } from '@proton/components/payments/core';
+import { SelectedPlan } from '@proton/payments';
 import type { CYCLE } from '@proton/shared/lib/constants';
 import { type ADDON_NAMES } from '@proton/shared/lib/constants';
 import { getSupportedAddons, isMemberAddon } from '@proton/shared/lib/helpers/addons';

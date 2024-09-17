@@ -32,6 +32,12 @@ import { useApi, useNotifications } from '@proton/components/hooks';
 import { type ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import { type ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import {
+    type ChargebeeIframeEvents,
+    type ChargebeeIframeHandles,
+    type InitializeCreditCardOptions,
+    type RemoveEventListener,
+} from '@proton/payments';
+import {
     type GetChargebeeConfigurationResponse,
     getChargebeeConfiguration,
     getPaymentsVersion,
@@ -42,12 +48,6 @@ import { getSentryError } from '@proton/shared/lib/keys';
 
 import { type ThemeCode } from '../client-extensions';
 import { useChargebeeContext } from '../client-extensions/useChargebeeContext';
-import {
-    type ChargebeeIframeEvents,
-    type ChargebeeIframeHandles,
-    type InitializeCreditCardOptions,
-    type RemoveEventListener,
-} from '../core';
 
 /**
  * Small helper to identify the messages sent to iframe.

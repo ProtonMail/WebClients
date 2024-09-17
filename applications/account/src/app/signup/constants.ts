@@ -1,4 +1,4 @@
-import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/payments/core';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments';
 import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';

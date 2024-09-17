@@ -1,22 +1,22 @@
 import { useEffect, useRef } from 'react';
 
 import { useLoading } from '@proton/hooks';
-import { Api } from '@proton/shared/lib/interfaces';
+import {
+    type AmountAndCurrency,
+    type ChargeablePaymentParameters,
+    type ChargebeeIframeEvents,
+    type ChargebeeIframeHandles,
+    type ExistingPaymentMethod,
+    type PaymentVerificatorV5,
+    SavedChargebeePaymentProcessor,
+    type SavedPaymentMethod,
+    type SavedPaymentMethodExternal,
+    type SavedPaymentMethodInternal,
+} from '@proton/payments';
+import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import {
-    AmountAndCurrency,
-    ChargeablePaymentParameters,
-    ChargebeeIframeEvents,
-    ChargebeeIframeHandles,
-    ExistingPaymentMethod,
-    PaymentVerificatorV5,
-    SavedPaymentMethod,
-    SavedPaymentMethodExternal,
-    SavedPaymentMethodInternal,
-} from '../core';
-import { SavedChargebeePaymentProcessor } from '../core/payment-processors/savedChargebeePayment';
-import { PaymentProcessorHook, PaymentProcessorType } from './interface';
+import type { PaymentProcessorHook, PaymentProcessorType } from './interface';
 
 export interface Props {
     amountAndCurrency: AmountAndCurrency;
