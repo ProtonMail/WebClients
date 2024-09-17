@@ -496,6 +496,9 @@
       "Restore": [
         "Gjenopprett"
       ],
+      "Resume membership": [
+        "Gjenoppta medlemskap"
+      ],
       "Retry": [
         "Prøv på nytt"
       ],
@@ -682,8 +685,8 @@
       "Use authentication code": [
         "Bruk autentiseringskode"
       ],
-      "Use group permissions": [
-        "Bruk gruppetillatelser"
+      "Use group sending permissions": [
+        "Bruk tillatelser for gruppesending"
       ],
       "Use recovery code": [
         "Bruk gjenopprettingskode"
@@ -2827,8 +2830,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Kun en gratis prøveversjon per kunde."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Kun én gratis prøveperiode per bruker. Ordinær pris gjelder deretter."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Etter å ha forlatt planen din, vil denne brukeren bli flyttet til en ${ BRAND_NAME } Unlimited-plan med en 30-dagers gratis prøveperiode.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Som standard tildeler vi ${ formattedStorage } med lagringsplass til administrator kontoen. Du kan administrere den tildelte lagringen til å bli distribuert blant ytterligere brukere senere."
@@ -2841,9 +2847,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Invitasjonen avbrytes, og brukeren kan ikke bli med ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Brukerens konto vil bli flyttet til en ${ BRAND_NAME } Unlimited-plan for en 30-dagers gratis prøveperiode*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "For å opprette en ny bruker, kreves et konfigurert egendefinert domene."
@@ -3696,6 +3699,9 @@
         "Sletter ${ deletedServerCount } mellomtjener",
         "Sletter ${ deletedServerCount } mellomtjenere"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Deaktivert siden ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Deaktivering av tofaktorautentisering vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
       ],
@@ -3777,6 +3783,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktiver enkel pålogging for å holde organisasjonen din trygg"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Aktivert siden ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Nettadresse for endepunkt mottatt fra identitetsleverandøren din (f.eks. https://idp.example.com/sso/saml)."
@@ -4286,6 +4295,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vennligst angi gjenopprettingsfrasen bestående av 12 ord som er tilknyttet din konto."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Vennligst vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ remainingCreditsFormatted } kreditter igjen."
       ],
       "please open a support ticket": [
         "vennligst åpne en støtteforespørsel"
@@ -5999,11 +6011,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Brasiliansk real"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Sveitsisk franc"
+      ],
+      "US Dollar": [
+        "Amerikanske dollar"
       ]
     },
     "Navigation": {
@@ -6271,9 +6289,6 @@
       ],
       "Data breach monitoring": [
         "Overvåking av datainnbrudd"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Overvåking av datainnbrudd (kommer snart)"
       ],
       "Dedicated servers and IP": [
         "Dedikerte tjenere og IP"
@@ -7431,6 +7446,9 @@
       "MM/YY": [
         "MM/ÅÅ"
       ],
+      "More plans are available in other currencies": [
+        "Flere planer er tilgjengelige i andre valutaer"
+      ],
       "Payment Processing": [
         "Betalingsbehandling"
       ],
@@ -7475,6 +7493,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Vi behandler betalingen din for den fakturerte fakturaen. Vent til betalingen er fullført før du gjør endringer i planen din eller oppdaterer betalingsinformasjonen din. Takk for tålmodigheten."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Du vil bli belastet ${ amountToCharge } fra den valgte betalingsmåten."
       ]
     },
     "Payments.Error": {
@@ -9195,6 +9216,9 @@
       ],
       "Preference saved": [
         "Preferanse lagret"
+      ],
+      "Problem reported": [
+        "Problem rapportert"
       ],
       "SPF value copied to clipboard": [
         "SPF-verdi kopiert til utklippstavlen"

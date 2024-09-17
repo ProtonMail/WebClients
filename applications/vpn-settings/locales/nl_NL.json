@@ -2800,9 +2800,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Maximaal één gratis proefversie per gebruiker."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Standaard wijzen we ${ formattedStorage } opslagruimte toe aan het beheerdersaccount. U kunt de toegewezen opslagruimte die moet worden verdeeld onder aanvullende gebruikers later beheren."
       ],
@@ -2814,9 +2811,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "De uitnodiging wordt geannuleerd en de gebruiker zal zich niet kunnen aansluiten bij ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Het account van de gebruiker wordt omgezet naar een ${ BRAND_NAME } Unlimited-abonnement voor een gratis proefperiode van 30 dagen*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Voor het maken van een nieuwe gebruiker is een geconfigureerd aangepast domein vereist."
@@ -6078,6 +6072,9 @@
       "1 user": [
         "1 gebruiker"
       ],
+      "10 email addresses/aliases": [
+        "10 e-mailadressen/aliassen"
+      ],
       "15 GB storage": [
         "15 GB opslagruimte"
       ],
@@ -6162,9 +6159,6 @@
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoring van datalekken (binnenkort beschikbaar)"
-      ],
       "Dedicated servers and IP": [
         "Toegewijde servers en IP"
       ],
@@ -6182,6 +6176,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Ondersteuning van e-mailclient (via IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-mailgroepen"
       ],
       "Enables HIPAA compliance": [
         "HIPAA-naleving mogelijk"
@@ -6243,6 +6240,9 @@
       ],
       "No-logs policy": [
         "Beleid zonder logboeken"
+      ],
+      "Online document editor": [
+        "Online documenteditor"
       ],
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
@@ -6631,6 +6631,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's."
+      ],
+      "Email everyone in a group with a single email address": [
+        "E-mail iedereen in een groep met één e-mailadres"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zorgt dat u alle e-mails ontvangt die naar uw domein worden verzonden, zelfs als het e-mailadres niet (meer) bestaat of een typfout bevat"
@@ -9014,6 +9017,9 @@
       ],
       "Preference saved": [
         "Voorkeur opgeslagen"
+      ],
+      "Problem reported": [
+        "Probleem gerapporteerd"
       ],
       "SPF value copied to clipboard": [
         "SPF-waarde gekopieerd naar klembord"

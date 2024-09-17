@@ -652,6 +652,9 @@
       "Use authentication code": [
         "使用驗證代碼"
       ],
+      "Use group sending permissions": [
+        "使用群組傳送權限"
+      ],
       "Use recovery code": [
         "使用復原代碼"
       ],
@@ -2727,9 +2730,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*每位使用者僅限一次免費滿意體驗。"
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "我們預設分配 ${ formattedStorage } 的儲存空間予管理員帳號。您可稍後管理如何分配儲存空間予額外的使用者。"
       ],
@@ -2738,9 +2738,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "若使用者已有 ${ MAIL_APP_NAME } 電子郵件位址，請在此輸入。否則需先創建帳號。"
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "此使用者的帳號將轉為 30 天滿意體驗* ${ BRAND_NAME } Unlimited 方案。"
       ],
       "To create a new user, a configured custom domain is required.": [
         "要創建新使用者，必須設定自訂網域。"
@@ -3351,6 +3348,9 @@
       "All Events ": [
         "所有事件 "
       ],
+      "All members have been added.": [
+        "全部成員已添加"
+      ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
       ],
@@ -3681,6 +3681,9 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "請前往您的身分提供者，取得 ${ appName } 的 SAML 中繼資料並在此匯入。"
       ],
+      "Group deleted": [
+        "群組刪除"
+      ],
       "here": [
         "這裡"
       ],
@@ -3761,6 +3764,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "安裝伺服器設定檔以連線到您選擇國家的指定伺服器。"
+      ],
+      "Internal user": [
+        "內部使用者"
       ],
       "Internet connection lost": [
         "網際網路連線中斷"
@@ -4070,6 +4076,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "請輸入與您的帳號關連的12字復原短語。"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "請注意，當您點擊確認時，您的帳號將剩${ remainingCreditsFormatted }可用額度。"
       ],
       "please open a support ticket": [
         "請開啟支援票卷"
@@ -5913,9 +5922,6 @@
       "Data breach monitoring": [
         "資料外洩監測"
       ],
-      "Data breach monitoring (coming soon)": [
-        "資料外洩監測 (即將登場)"
-      ],
       "Dedicated servers and IP": [
         "獨立的伺服器及 IP"
       ],
@@ -6101,6 +6107,9 @@
       ],
       "Support for up to 2 users": [
         "支援最多2位使用者"
+      ],
+      "Sync and backup all your files across devices": [
+        "於裝置同步及備份您全部的檔案"
       ],
       "Tor over VPN": [
         "Tor 經由 VPN"
@@ -8288,6 +8297,12 @@
       "Organization identity updated": [
         "組織身分已更新"
       ],
+      "Organization logo removed": [
+        "組織標誌已移除"
+      ],
+      "Organization logo updated": [
+        "組織標誌已上傳"
+      ],
       "Organization name updated": [
         "組織名稱更新"
       ],
@@ -8311,6 +8326,9 @@
       ],
       "Preference saved": [
         "設定已儲存"
+      ],
+      "Problem reported": [
+        "以回報問題"
       ],
       "SPF value copied to clipboard": [
         "SFP 字串已複製到剪貼簿"
@@ -8371,6 +8389,9 @@
         "創建組態檔供用於伺服器 ${ serverName }"
       ],
       "Preference updated": [
+        "偏好設定已更新"
+      ],
+      "Preferences updated": [
         "偏好設定已更新"
       ]
     },
@@ -8638,6 +8659,12 @@
       "Connection events": [
         "連線行程"
       ],
+      "Connection monitor disabled": [
+        "連線監控已關閉"
+      ],
+      "Connection monitor enabled": [
+        "連線監控已啟用"
+      ],
       "Contact us": [
         "聯絡我們"
       ],
@@ -8715,6 +8742,9 @@
       ],
       "Disable two-factor authentication": [
         "停用兩步驟驗證"
+      ],
+      "Disable two-factor authentication?": [
+        "停用兩步驟驗證?"
       ],
       "Discard changes?": [
         "捨棄變更？"
@@ -8923,6 +8953,9 @@
       "Processing...": [
         "處理中..."
       ],
+      "QRCode": [
+        "QRCode"
+      ],
       "Recommended": [
         "推薦"
       ],
@@ -9036,6 +9069,9 @@
       ],
       "Switch to two-password mode": [
         "切換為雙重密碼模式"
+      ],
+      "Text": [
+        "文字"
       ],
       "There are no groups": [
         "沒有小組"
@@ -9421,6 +9457,9 @@
       ],
       "${ n } year": [
         "${ n } 年"
+      ],
+      "Just ${ price }": [
+        "只要 ${ price }"
       ],
       "Try ${ upsellPlanName } risk-free": [
         "嘗試無風險的 ${ upsellPlanName }"

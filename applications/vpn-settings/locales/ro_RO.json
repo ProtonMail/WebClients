@@ -682,8 +682,8 @@
       "Use authentication code": [
         "Folosire cod de autentificare"
       ],
-      "Use group permissions": [
-        "Folosire permisiuni grup"
+      "Use group sending permissions": [
+        "Folosire permisiuni de trimitere pentru grup"
       ],
       "Use recovery code": [
         "Folosire cod de recuperare"
@@ -2839,9 +2839,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "* O singură încercare gratuită per utilizator."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "În mod implicit, sunt atribuiți ${ formattedStorage } de stocare în contul de administrator. Ulterior puteți gestiona spațiul alocat pentru a fi distribuit între utilizatori suplimentari."
       ],
@@ -2853,9 +2850,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Invitația va fi anulată și utilizatorul nu va putea să se alăture organizației ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Contul utilizatorului va fi mutat într-un plan de ${ BRAND_NAME } nelimitat pentru o încercare gratuită de 30 de zile *."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Pentru a crea un utilizator este necesar un domeniu personal configurat."
@@ -4328,6 +4322,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vă rugăm să introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "După apăsarea pe butonul de confirmare, contul va mai avea ${ remainingCreditsFormatted } (de) credite rămase."
       ],
       "please open a support ticket": [
         "deschideți un tichet de asistență"
@@ -5901,7 +5898,7 @@
         "Detalii"
       ],
       "upgrade for more storage": [
-        "treceți la alt tip de plan pentru mai mult spațiu"
+        "treceți la un plan cu plată pentru mai mult spațiu"
       ],
       "Upgrade to restore full access": [
         "Schimbați tipul de abonament pentru a restaura accesul complet"
@@ -6345,9 +6342,6 @@
       ],
       "Data breach monitoring": [
         "Monitorizarea divulgării datelor"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorizarea divulgării datelor (în curând)"
       ],
       "Dedicated servers and IP": [
         "Servere și IP dedicate"
@@ -7517,6 +7511,9 @@
       "MM/YY": [
         "LL/AA"
       ],
+      "More plans are available in other currencies": [
+        "Există alte planuri în monede diferite"
+      ],
       "Payment Processing": [
         "Se procesează plata"
       ],
@@ -8609,7 +8606,7 @@
         "Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }"
       ],
       "upgrade for more storage": [
-        "treceți la alt tip de plan pentru mai mult spațiu"
+        "treceți la un plan cu plată pentru mai mult spațiu"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Vom adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }."
@@ -9322,6 +9319,9 @@
       ],
       "Preference saved": [
         "Preferințe salvate"
+      ],
+      "Problem reported": [
+        "Problemă raportată"
       ],
       "SPF value copied to clipboard": [
         "Valoarea SPF a fost copiată în memorie"

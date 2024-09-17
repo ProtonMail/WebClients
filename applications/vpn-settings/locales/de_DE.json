@@ -682,8 +682,8 @@
       "Use authentication code": [
         "Authentifizierungscode verwenden"
       ],
-      "Use group permissions": [
-        "Verwende Gruppenrechte"
+      "Use group sending permissions": [
+        "Verwende Gruppensenderechte"
       ],
       "Use recovery code": [
         "Wiederherstellungscode verwenden"
@@ -2827,9 +2827,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Nur eine kostenlose Testversion pro Benutzer."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Standardmäßig weisen wir dem Administratorkonto ${ formattedStorage } Speicher zu. Du kannst den zugewiesenen Speicher verwalten, um ihn später auf weitere Benutzer zu verteilen."
       ],
@@ -2841,9 +2838,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Die Einladung wird widerrufen und der Benutzer kann ${ organizationName } nicht beitreten."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf ein ${ BRAND_NAME } Unlimited-Abonnement umgestellt."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Zur Erstellung eines neuen Benutzers ist eine konfigurierte eigene Domain erforderlich."
@@ -6265,9 +6259,6 @@
       ],
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Überwachung von Datenlecks (Demnächst verfügbar)"
       ],
       "Dedicated servers and IP": [
         "Dedizierte Server und IP"

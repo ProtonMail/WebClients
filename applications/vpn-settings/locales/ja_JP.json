@@ -2549,9 +2549,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*無料トライアルは1ユーザーにつき1回のみとなります。"
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "デフォルトでは、ストレージの ${ formattedStorage } が管理者アカウントに割り当てられます。 割り当てられたストレージを管理して、後で追加のユーザーに分散することができます。"
       ],
@@ -2560,9 +2557,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "ユーザーがすでに ${ MAIL_APP_NAME } アドレスを持っている場合は、ここにアドレスを入力します。 それ以外の場合は、最初にアカウントを作成する必要があります。"
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "ユーザーのアカウントは、30 日間の無料トライアル*の ${ BRAND_NAME } Unlimited プランに移行されます。"
       ],
       "To create a new user, a configured custom domain is required.": [
         "新しいユーザーを作成するには、構成されたカスタム ドメインが必要です。"
@@ -5568,9 +5562,6 @@
       ],
       "Data breach monitoring": [
         "情報漏洩のモニタリング"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "情報漏洩のモニタリング (近日公開)"
       ],
       "Dedicated servers and IP": [
         "専用サーバーとIP"
