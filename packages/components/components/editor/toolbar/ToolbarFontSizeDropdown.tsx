@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Badge } from '@proton/components';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuContainer from '@proton/components/components/dropdown/DropdownMenuContainer';
 import clsx from '@proton/utils/clsx';
 
-import { Badge } from '../../badge';
 import { FONT_SIZES } from '../constants';
 import ToolbarDropdown from './ToolbarDropdown';
 

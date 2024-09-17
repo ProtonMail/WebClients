@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Badge } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 
-import { Badge } from '../../components';
 import type { Session } from './interface';
 
 interface Props {

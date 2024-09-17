@@ -12,6 +12,18 @@ export * from './components/addressesAutocomplete/helper';
 export { default as AddressesInput, AddressesInputItem } from './components/addressesInput/AddressesInput';
 export { default as Alert } from './components/alert/Alert';
 export type { AlertType } from './components/alert/Alert';
+export { default as AttachedFile } from './components/attachedFile/AttachedFile';
+export { default as Autocomplete } from './components/autocomplete/Autocomplete';
+export {
+    default as AutocompleteList,
+    default as AutocompleteSuggestions,
+} from './components/autocomplete/AutocompleteList';
+export { default as SimpleAutocomplete } from './components/autocomplete/SimpleAutocomplete';
+export { useAutocomplete, useAutocompleteFilter } from './components/autocomplete/useAutocomplete';
+export type { DataWithMatches } from './components/autocomplete/useAutocomplete';
+export { default as Badge } from './components/badge/Badge';
+export type { BadgeType } from './components/badge/Badge';
+export { default as BetaBadge } from './components/badge/BetaBadge';
 export { default as CalendarEventDateHeader } from './components/calendarEventDateHeader/CalendarEventDateHeader';
 export {
     CheckListAccountLogin,

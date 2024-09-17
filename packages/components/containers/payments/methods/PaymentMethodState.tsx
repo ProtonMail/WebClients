@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
+import { Badge } from '@proton/components';
 import type { SavedPaymentMethod } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES, isExpired } from '@proton/payments';
-
-import { Badge } from '../../../components';
 
 interface Props {
     method: SavedPaymentMethod;

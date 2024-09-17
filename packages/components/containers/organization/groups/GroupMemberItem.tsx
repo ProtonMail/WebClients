@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Badge } from '@proton/components/components';
+import { Badge } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';

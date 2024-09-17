@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { Badge } from '@proton/components';
 import type { BadgeType } from '@proton/components/components/badge/Badge';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import {
@@ -10,8 +11,6 @@ import {
     SPF_STATE,
     VERIFY_STATE,
 } from '@proton/shared/lib/interfaces';
-
-import { Badge } from '../../components';
 
 const VERIFY_TYPES = {
     [VERIFY_STATE.VERIFY_STATE_DEFAULT]: 'origin',
