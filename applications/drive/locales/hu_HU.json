@@ -3760,6 +3760,10 @@
       "Create a new contact group": [
         "Új névjegy csoport"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Hozzon létre biztonságos felhőt ${ n } tagnak",
+        "Hozzon létre biztonságos felhőt ${ n } tagnak"
+      ],
       "Create in": [
         "Létrehozás itt"
       ],
@@ -4371,6 +4375,9 @@
       "Restored files ${ formattedDate }": [
         "Helyreálíltott fájlok ${ formattedDate }"
       ],
+      "Saving...": [
+        "Mentés..."
+      ],
       "Search cannot be enabled in this browser": [
         "A keresés nem engedélyezhető ebben a böngészőben"
       ],
@@ -4719,6 +4726,9 @@
       ],
       "Would you like to restore your files?": [
         "Szeretné helyreállítani a fájljait?"
+      ],
+      "Writing assistant": [
+        "Fogalmazási segéd"
       ],
       "Yes": [
         "Igen"
@@ -5783,6 +5793,14 @@
         "${ n } üzenet naponta",
         "${ n } üzenet naponta"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } széf felhasználónként",
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } széf felhasználónként"
+      ],
+      "${ n } user": [
+        "${ n } felhasználó",
+        "${ n } felhasználóig"
+      ],
       "${ n } vault": [
         "${ n } tároló",
         "${ n } tároló"
@@ -5790,6 +5808,10 @@
       "${ n } VPN connection": [
         "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolat"
+      ],
+      "${ options }-day file version history": [
+        "${ options } napos fájl verzió előzmény",
+        "${ options } napos fájl verzió előzmény"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
@@ -5875,9 +5897,6 @@
       ],
       "Data breach monitoring": [
         "Adatvédelmi incidensek figyelése"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Adatvédelmi incidensek figyelése (hamarosan)"
       ],
       "Desktop app": [
         "Asztali alkalmazás"

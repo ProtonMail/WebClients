@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptare"
       ],
-      "Activate": [
-        "Activare"
-      ],
       "activate": [
         "activare"
+      ],
+      "Activate": [
+        "Activare"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
@@ -1186,8 +1186,8 @@
       "Use authentication code": [
         "Folosire cod de autentificare"
       ],
-      "Use group permissions": [
-        "Folosire permisiuni grup"
+      "Use group sending permissions": [
+        "Folosire permisiuni de trimitere pentru grup"
       ],
       "Use recovery code": [
         "Folosire cod de recuperare"
@@ -1471,6 +1471,9 @@
       "Fast and secure. No logs are kept.": [
         "Rapid și sigur. Nu se păstrează jurnale."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Rulare pe serverele ${ BRAND_NAME }"
+      ],
       "Run on device": [
         "Rulare pe dispozitiv"
       ]
@@ -1478,9 +1481,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Cumpărare"
-      ],
-      "New": [
-        "Nou"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Duceți productivitatea mesageriei la un nou nivel. Lăsați ${ BRAND_NAME } Scribe să vă ajute să scrieți, să răspundeți și să vă corectați mesajele de pe e-mail."
@@ -5166,9 +5166,6 @@
       "${ BRAND_NAME } groups": [
         "Grupuri ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "* O singură încercare gratuită per client."
-      ],
       "Accounts with custom domains cannot join a group plan.": [
         "Conturile cu domenii personale nu se pot alătura unui plan de grup."
       ],
@@ -5231,9 +5228,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonamentul va fi facturat administratorului principal al acestui plan."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Pentru a vă ușura tranziția, vă oferim o perioadă de încercare de 30 de zile pentru ${ BRAND_NAME } nelimitat*."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Ați primit o invitație la ${ invite.OrganizationName }."
       ],
@@ -5285,9 +5279,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "* O singură încercare gratuită per utilizator."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "În mod implicit, sunt atribuiți ${ formattedStorage } de stocare în contul de administrator. Ulterior puteți gestiona spațiul alocat pentru a fi distribuit între utilizatori suplimentari."
       ],
@@ -5299,9 +5290,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Invitația va fi anulată și utilizatorul nu va putea să se alăture organizației ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Contul utilizatorului va fi mutat într-un plan de ${ BRAND_NAME } nelimitat pentru o încercare gratuită de 30 de zile *."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Pentru a crea un utilizator este necesar un domeniu personal configurat."
@@ -7397,9 +7385,6 @@
       "Group deleted": [
         "Grupul s-a șters."
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Grupare mesaje din aceeași conversație sau afișare separată."
-      ],
       "here": [
         "aici"
       ],
@@ -8045,6 +8030,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Dacă ștergeți filtrul ${ nameDeleted } se va opri procesarea tuturor acțiunilor automate pe care le declanșează."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "După apăsarea pe butonul de confirmare, contul va mai avea ${ remainingCreditsFormatted } (de) credite rămase."
       ],
       "please open a support ticket": [
         "deschideți un tichet de asistență"
@@ -9827,7 +9815,7 @@
         "Permitere recuperare prin fraza de recuperare"
       ],
       "Allow recovery using a trusted device": [
-        "Permite recuperarea folosind un dispozitiv de încredere."
+        "Permitere recuperare folosind un dispozitiv de încredere."
       ],
       "Allowed domain": [
         "Domeniu permis"
@@ -9885,12 +9873,6 @@
       ],
       "Auto-detect primary time zone": [
         "Detectare automată fus orar primar"
-      ],
-      "Auto-load embedded images": [
-        "Autoîncărcare imagini incluse"
-      ],
-      "Auto-load remote content": [
-        "Autoîncărcare conținut extern"
       ],
       "Auto-reply": [
         "Răspuns automat"
@@ -10224,9 +10206,6 @@
       ],
       "Group address": [
         "Adresă grup"
-      ],
-      "Group conversations": [
-        "Conversație în grup"
       ],
       "Group members": [
         "Membrii grup"
@@ -11102,7 +11081,7 @@
         "Detalii"
       ],
       "upgrade for more storage": [
-        "treceți la alt tip de plan pentru mai mult spațiu"
+        "treceți la un plan cu plată pentru mai mult spațiu"
       ],
       "Upgrade to restore full access": [
         "Schimbați tipul de abonament pentru a restaura accesul complet"
@@ -11890,9 +11869,6 @@
       ],
       "Data breach monitoring": [
         "Monitorizarea divulgării datelor"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorizarea divulgării datelor (în curând)"
       ],
       "Dedicated account manager": [
         "Manager dedicat al contului"
@@ -13699,6 +13675,9 @@
       "MM/YY": [
         "LL/AA"
       ],
+      "More plans are available in other currencies": [
+        "Există alte planuri în monede diferite"
+      ],
       "Payment Processing": [
         "Se procesează plata"
       ],
@@ -14180,7 +14159,7 @@
         "Deoarece v-ați resetat parola, pachetul de recuperare actual poate fi folosit doar pentru a recupera datele create înainte de resetarea parolei."
       ],
       "Can be used to regain access to your account and data": [
-        "Pot fi folosite pentru a vă recâștiga accesul la cont și date"
+        "Poate fi folosit pentru a vă recâștiga accesul la cont și date."
       ],
       "Check account security": [
         "Verificare securitate cont"
@@ -14870,7 +14849,7 @@
         "Pentru a bloca resetarea parolei, trebuie să aveți o metodă de recuperare activată."
       ],
       "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Pentru a spori securitatea contului și a vă proteja datele, puteți solicita o resetare a parolei din setările contului din aplicația web."
+        "Pentru a vă spori securitatea contului și a vă proteja datele, puteți solicita o resetare a parolei din setările contului din aplicația web."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -15357,7 +15336,7 @@
         "Încercați ${ app } la potențialul său maxim"
       ],
       "upgrade for more storage": [
-        "treceți la alt tip de plan pentru mai mult spațiu"
+        "treceți la un plan cu plată pentru mai mult spațiu"
       ],
       "Upgrade your plan to continue to use your account without interruptions.": [
         "Modificați planul pentru a continua să vă folosiți contul fără întreruperi."
@@ -16139,6 +16118,9 @@
       ],
       "Premium address created": [
         "Adresă premium creată."
+      ],
+      "Problem reported": [
+        "Problemă raportată"
       ],
       "Resuming import": [
         "Reluare importare"
@@ -17222,6 +17204,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Photos": [
+        "Fotografii"
       ],
       "Policies": [
         "Politici"

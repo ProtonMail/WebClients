@@ -682,9 +682,6 @@
       "Use authentication code": [
         "Usa il codice di autenticazione"
       ],
-      "Use group permissions": [
-        "Utilizza i permessi del gruppo"
-      ],
       "Use recovery code": [
         "Usa un codice di recupero"
       ],
@@ -2827,9 +2824,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Una sola prova gratuita a utente."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Per impostazione predefinita assegniamo ${ formattedStorage } di archiviazione all'account dell'amministratore. Puoi gestire lo spazio di archiviazione che ti è stato assegnato, distribuendolo poi tra gli utenti aggiuntivi."
       ],
@@ -2841,9 +2835,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "L'invito verrà annullato e l'utente non potrà unirsi a ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "L'account dell'utente verrà trasferito su un piano ${ BRAND_NAME } Unlimited per una prova gratuita di 30 giorni.*"
       ],
       "To create a new user, a configured custom domain is required.": [
         "Per creare un nuovo utente, è necessario un dominio personalizzato."
@@ -4286,6 +4277,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Inserisci la frase di recupero di 12 parole associata al tuo account."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ remainingCreditsFormatted } crediti rimanenti."
       ],
       "please open a support ticket": [
         "apri un ticket per il supporto"
@@ -6272,9 +6266,6 @@
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoraggio di violazioni di dati (in arrivo)"
-      ],
       "Dedicated servers and IP": [
         "Server e IP dedicati"
       ],
@@ -7433,6 +7424,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Sono disponibili altri piani in altre valute"
       ],
       "Payment Processing": [
         "Elaborazione del pagamento"
@@ -9198,6 +9192,9 @@
       ],
       "Preference saved": [
         "Preferenza salvata"
+      ],
+      "Problem reported": [
+        "Problema segnalato"
       ],
       "SPF value copied to clipboard": [
         "Valore SPF copiato negli appunti"

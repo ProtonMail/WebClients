@@ -496,6 +496,9 @@
       "Restore": [
         "Obnovit"
       ],
+      "Resume membership": [
+        "Obnovit členství"
+      ],
       "Retry": [
         "Opakovat"
       ],
@@ -682,8 +685,8 @@
       "Use authentication code": [
         "Použít ověřovací kód"
       ],
-      "Use group permissions": [
-        "Použít oprávnění skupiny"
+      "Use group sending permissions": [
+        "Použít oprávnění skupiny pro odesílání"
       ],
       "Use recovery code": [
         "Použít kód pro obnovení"
@@ -2851,8 +2854,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Pouze jedna bezplatná zkušební doba na uživatele."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Na jednoho uživatele je k dispozici pouze jedna bezplatná zkušební verze. Poté platí běžné ceny."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Po opuštění vašeho tarifu bude tento uživatel přesunut do ${ BRAND_NAME }. Neomezený tarif s 30denní zkušební dobou zdarma.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Ve výchozím stavu je správci přiřazeno ${ formattedStorage } úložného prostoru. Velikost prostoru přiřazeného dalším uživatelům, můžete později změnit."
@@ -2865,9 +2871,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Pozvánka bude zrušena a uživatel se nebude moci připojit k ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Účet uživatele bude přesunut na tarif ${ BRAND_NAME } Unlimited na 30denní bezplatnou zkušební dobu*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "K vytvoření nového uživatele je nutná nastavená vlastní doména."
@@ -3774,6 +3777,9 @@
         "Mazání ${ deletedServerCount } serverů brány",
         "Mazání ${ deletedServerCount } serverů brány"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Zakázáno od ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Vypnutím dvoufázového ověřování bude váš účet méně bezpečný. Vypněte toto ověřování pouze pokud je to nezbytně nutné."
       ],
@@ -3857,6 +3863,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivujte jednotné přihlášení (SSO), aby byla vaše organizace v bezpečí"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Povoleno od ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa endpointu, kterou jste dostali od vašeho poskytovatele identity (např. https://idp.example.com/sso/saml)."
@@ -4370,6 +4379,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane ${ remainingCreditsFormatted } kreditů."
       ],
       "please open a support ticket": [
         "prosím odešlete požadavek na podporu"
@@ -6113,11 +6125,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Brazilský Reál"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Švýcarský frank"
+      ],
+      "US Dollar": [
+        "Americký dolar"
       ]
     },
     "Navigation": {
@@ -6419,9 +6437,6 @@
       ],
       "Data breach monitoring": [
         "Monitorování narušení bezpečnosti dat"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorování narušení bezpečnosti dat (již brzy)"
       ],
       "Dedicated servers and IP": [
         "Dedikované servery a IP"
@@ -7603,6 +7618,9 @@
       "MM/YY": [
         "MM/RR"
       ],
+      "More plans are available in other currencies": [
+        "Další tarify jsou k dispozici v jiných měnách"
+      ],
       "Payment Processing": [
         "Zpracování platby"
       ],
@@ -7647,6 +7665,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Zpracováváme vaši platbu za vyúčtovanou fakturu. Před provedením změn v tarifu nebo aktualizací platebních údajů vyčkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Z vybrané platební metody vám bude účtována částka ${ amountToCharge }."
       ]
     },
     "Payments.Error": {
@@ -9449,6 +9470,9 @@
       ],
       "Preference saved": [
         "Nastavení uloženo"
+      ],
+      "Problem reported": [
+        "Problém nahlášen"
       ],
       "SPF value copied to clipboard": [
         "Hodnota SPF byla zkopírována do schránky"

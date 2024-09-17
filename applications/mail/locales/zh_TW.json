@@ -531,6 +531,9 @@
       "Hide": [
         "隱藏"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "隱藏${ BRAND_NAME } Scribe 撰寫幫手"
+      ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
       ],
@@ -813,11 +816,11 @@
       "Not saved": [
         "尚未儲存"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open": [
         "開啟"
@@ -996,6 +999,9 @@
       "Revert to original display": [
         "不要用暗黑模式顯示郵件"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "於${ BRAND_NAME }伺服器執行"
+      ],
       "Save": [
         "儲存"
       ],
@@ -1106,6 +1112,9 @@
       ],
       "Show": [
         "顯示"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "展示${ BRAND_NAME } Scribe 撰寫幫手"
       ],
       "Show advanced PGP settings": [
         "顯示進階 PGP 設定"
@@ -1522,6 +1531,9 @@
       ],
       "Securely run on ${ BRAND_NAME } servers": [
         "於伺服器安全執行${ BRAND_NAME }"
+      ],
+      "Securely run on device": [
+        "於裝置安全執行"
       ]
     },
     "Assistant toggle": {
@@ -4088,6 +4100,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "傳送附件以限制直到您符合您方案的限制或升級。"
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "當您超出方案限制時，附件無法使用，直到您升級您的方案。"
+      ],
       "Signature not verified": [
         "簽章尚未驗證"
       ],
@@ -6460,6 +6475,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "請注意，當您點擊確認時，您的帳號將剩${ remainingCreditsFormatted }可用額度。"
       ],
       "Please open the document to view it.": [
         "請開啟文件以瀏覽。"
@@ -8970,9 +8988,6 @@
       "Data breach monitoring": [
         "資料外洩監測"
       ],
-      "Data breach monitoring (coming soon)": [
-        "資料外洩監測 (即將登場)"
-      ],
       "Desktop app": [
         "桌面應用程式"
       ],
@@ -9140,6 +9155,9 @@
       ],
       "Support for up to 2 users": [
         "支援最多2位使用者"
+      ],
+      "Sync and backup all your files across devices": [
+        "於裝置同步及備份您全部的檔案"
       ],
       "Tor over VPN": [
         "Tor 經由 VPN"
@@ -10785,6 +10803,9 @@
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "我們將預設載入所有圖像，並且攔截寄件者進行追蹤。此功能可在 ${ settingsLink } 進行變更。"
       ],
+      "You can now collapse the navigation bar.": [
+        "您現在可以摺疊導航欄。"
+      ],
       "You can now schedule your messages to be sent later": [
         "您現在可以安排稍後傳送訊息"
       ]
@@ -11469,6 +11490,9 @@
       ],
       "Preferences saved": [
         "偏好設定已儲存"
+      ],
+      "Problem reported": [
+        "以回報問題"
       ],
       "Public key trusted": [
         "公開金鑰已信任"

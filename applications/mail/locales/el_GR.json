@@ -549,6 +549,9 @@
       "Hide": [
         "Απόκρυψη"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Αποκρύψτε το ${ BRAND_NAME } Scribe βοηθό γραφής"
+      ],
       "Hide advanced PGP settings": [
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
       ],
@@ -832,11 +835,11 @@
       "Not saved": [
         "Μη αποθηκευμένο"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "ΟΚ"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open": [
         "Άνοιγμα"
@@ -1015,6 +1018,9 @@
       "Revert to original display": [
         "Επαναφορά αρχικής εμφάνισης"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Εκτέλεση σε διακομιστές ${ BRAND_NAME }"
+      ],
       "Save": [
         "Αποθήκευση"
       ],
@@ -1125,6 +1131,9 @@
       ],
       "Show": [
         "Εμφάνιση"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Εμφανίστε το ${ BRAND_NAME } Scribe βοηθό γραφής"
       ],
       "Show advanced PGP settings": [
         "Εμφάνιση προηγμένων ρυθμίσεων PGP"
@@ -1546,6 +1555,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "Δεν τηρούνται αρχεία καταγραφής για την προστασία του απορρήτου σας. Ταχύτερη επεξεργασία."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Εκτέλεση σε διακομιστές ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Εκτέλεση στη συσκευή"
@@ -4154,6 +4166,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Η αποστολή συνημμένων περιορίζεται μέχρι να συμπληρώσετε τα όρια του προγράμματός σας ή να κάνετε αναβάθμιση."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Η αποστολή συνημμένων περιορίζεται όταν υπερβαίνετε τα όρια του προγράμματός σας ή μέχρι να αναβαθμίσετε το πρόγραμμά σας."
+      ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
       ],
@@ -6609,6 +6624,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ remainingCreditsFormatted }."
       ],
       "Please open the document to view it.": [
         "Παρακαλούμε ανοίξτε το έγγραφο για να το δείτε."
@@ -9170,9 +9188,6 @@
       "Data breach monitoring": [
         "Παρακολούθηση παραβίασης δεδομένων"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Παρακολούθηση παραβίασης δεδομένων (σύντομα κοντά σας)"
-      ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
       ],
@@ -10059,6 +10074,9 @@
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "More plans are available in other currencies": [
+        "Περισσότερα προγράμματα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
       "Payment Processing": [
         "Επεξεργασία Πληρωμής"
@@ -11956,6 +11974,9 @@
       ],
       "Preferences saved": [
         "Οι προτιμήσεις αποθηκεύτηκαν"
+      ],
+      "Problem reported": [
+        "Αναφέρθηκε πρόβλημα"
       ],
       "Public key trusted": [
         "Το δημόσιο κλειδί είναι αξιόπιστο"

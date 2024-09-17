@@ -223,6 +223,9 @@
       "Create and copy alias": [
         "Tallenna ja kopioi alias"
       ],
+      "Create free account": [
+        "Luo ilmainen tili"
+      ],
       "Create link": [
         "Luo linkki"
       ],
@@ -389,6 +392,9 @@
       ],
       "Get verification code": [
         "Hanki vahvistuskoodi"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Avaa ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Siirry tunnisteeseen"
@@ -707,9 +713,6 @@
       ],
       "Save changes": [
         "Tallenna muutokset"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Tallenna ${ DRIVE_SHORT_APP_NAME }en"
       ],
       "Scan & Download": [
         "Skannaa ja lataa"
@@ -4091,6 +4094,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Haluatko varmasti poistaa valitut kohteet roskakorista pysyvästi?"
       ],
+      "Are you sure you want to proceed?": [
+        "Haluatko varmasti jatkaa?"
+      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -4773,6 +4779,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Huomioithan, että painettuasi \"Vahvista\"-painiketta, tilillesi jää ${ remainingCreditsFormatted } saldoa."
+      ],
       "Please open the document to view it.": [
         "Avaa dokumentti tarkastellaksesi sitä."
       ],
@@ -4843,6 +4852,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Yksityinen haku otettiin käyttöön. Voit nyt sulkea tämän ilmoituksen ja aloittaa tiedostojen ja kansioiden etsinnän."
       ],
+      "Public link": [
+        "Julkinen linkki"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Dokumenttien julkista jakamista ei vielä tueta."
       ],
@@ -4891,8 +4903,8 @@
       "Retry now": [
         "Yritä uudelleen nyt"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Tallennettu ${ DRIVE_SHORT_APP_NAME }en"
+      "Saving...": [
+        "Tallennetaan..."
       ],
       "Scan issue": [
         "Skannausongelma"
@@ -5313,6 +5325,9 @@
       "You already have a free account": [
         "Sinulla on jo ilmainen tili"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Olet poistumassa jaetusta kohteesta. Et voi käyttää sitä uudelleen, ennen kuin omistaja jakaa sen sinulle."
+      ],
       "You are about to open another browser tab and visit:": [
         "Olet avaamassa uutta selaimen välilehteä sivustolle:"
       ],
@@ -5378,6 +5393,10 @@
       ],
       "You will lose all unsaved changes.": [
         "Menetät kaikki tallentamattomat muutokset."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Sinun on tallennettava se uudestaan julkisen linkin sivulta.",
+        "Sinun on tallennettava ne uudestaan julkisen linkin sivulta."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
@@ -6802,9 +6821,6 @@
       "Data breach monitoring": [
         "Tietomurtovalvonta"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Tietomurtovalvonta (tulossa pian)"
-      ],
       "Desktop app": [
         "Työpöytäsovellus"
       ],
@@ -7670,6 +7686,14 @@
       "The link to your item was deleted": [
         "Kohteen linkki poistettiin"
       ],
+      "This item was not removed from your list": [
+        "Kohdetta ei poistettu luettelostasi",
+        "Joitakin kohteita ei voitu poistaa luettelostasi"
+      ],
+      "This item was succefully removed from your list": [
+        "Kohde poistettiin onnistuneesti luettelostasi",
+        "Kaikki kohteet poistettiin onnistuneesti luettelostasi"
+      ],
       "Trash failed to be emptied": [
         "Roskakorin tyhjennys epäonnistui"
       ],
@@ -7893,6 +7917,9 @@
       ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "More plans are available in other currencies": [
+        "Lisää palvelupaketteja on saatavilla muissa valuutoissa"
       ],
       "Payment Processing": [
         "Maksua käsitellään"
@@ -9314,6 +9341,9 @@
       "Preferences saved": [
         "Asetukset tallennettiin"
       ],
+      "Problem reported": [
+        "Ongelma raportoitu"
+      ],
       "Recovery has started": [
         "Palautus on aloitettu"
       ],
@@ -9526,6 +9556,10 @@
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Haluatko varmasti poistaa tämän kohteen luettelostasi?",
+        "Haluatko varmasti poistaa nämä kohteet luettelostasi?"
+      ],
       "Billing cycle": [
         "Laskutusjakso"
       ],
@@ -9570,6 +9604,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Vahvista ${ BRAND_NAME }-bonusten menetys"
+      ],
+      "Confirmation required?": [
+        "Vaaditaanko vahvistus?"
       ],
       "Contact Details": [
         "Yhteystiedon sisältö"

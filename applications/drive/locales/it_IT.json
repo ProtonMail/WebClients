@@ -223,6 +223,9 @@
       "Create and copy alias": [
         "Crea e copia l'alias"
       ],
+      "Create free account": [
+        "Crea un account gratuito"
+      ],
       "Create link": [
         "Crea link"
       ],
@@ -389,6 +392,9 @@
       ],
       "Get verification code": [
         "Invia il codice di verifica"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Vai a ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Vai all'etichetta"
@@ -707,9 +713,6 @@
       ],
       "Save changes": [
         "Salva le modifiche"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Salva in ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Scansiona e scarica"
@@ -4091,6 +4094,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Sei sicuro di voler eliminare definitivamente gli elementi selezionati dal cestino?"
       ],
+      "Are you sure you want to proceed?": [
+        "Sei sicuro di voler procedere?"
+      ],
       "Attention required": [
         "Attenzione"
       ],
@@ -4773,6 +4779,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ remainingCreditsFormatted } crediti rimanenti."
+      ],
       "Please open the document to view it.": [
         "Apri il documento per visualizzarlo."
       ],
@@ -4843,6 +4852,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Ricerca privata abilitata. Ora puoi chiudere questa finestra di dialogo e cercare file e cartelle."
       ],
+      "Public link": [
+        "Link pubblico"
+      ],
       "Public sharing of documents is not yet supported.": [
         "La condivisione pubblica dei documenti non è ancora supportata."
       ],
@@ -4891,8 +4903,8 @@
       "Retry now": [
         "Riprova ora"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Salvato in ${ DRIVE_SHORT_APP_NAME }"
+      "Saving...": [
+        "Salvataggio..."
       ],
       "Scan issue": [
         "Problema nella scansione"
@@ -5313,6 +5325,9 @@
       "You already have a free account": [
         "Hai già un account gratuito"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Stai per lasciare l'elemento condiviso. Non potrai accedervi nuovamente finché il proprietario non lo condividerà con te."
+      ],
       "You are about to open another browser tab and visit:": [
         "Stai per aprire un'altra scheda del browser e visitare:"
       ],
@@ -5378,6 +5393,10 @@
       ],
       "You will lose all unsaved changes.": [
         "Perderai tutte le modifiche non salvate."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Dovrai salvarlo nuovamente dalla pagina del collegamento pubblico.",
+        "Dovrai salvarli nuovamente dalla pagina del collegamento pubblico."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
@@ -6853,9 +6872,6 @@
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoraggio di violazioni di dati (in arrivo)"
-      ],
       "Desktop app": [
         "Applicazione desktop"
       ],
@@ -7724,6 +7740,14 @@
       "The link to your item was deleted": [
         "Il link al tuo elemento è stato eliminato"
       ],
+      "This item was not removed from your list": [
+        "Questo elemento non è stato rimosso dal tuo elenco",
+        "Questo elementi sono stati rimossi dal tuo elenco"
+      ],
+      "This item was succefully removed from your list": [
+        "Questo elemento è stato rimosso con successo dalla tua lista",
+        "Questi elementi sono stati rimossi con successo dalla tua lista"
+      ],
       "Trash failed to be emptied": [
         "Svuotamento del cestino non riuscito"
       ],
@@ -7947,6 +7971,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Sono disponibili altri piani in altre valute"
       ],
       "Payment Processing": [
         "Elaborazione del pagamento"
@@ -9368,6 +9395,9 @@
       "Preferences saved": [
         "Preferenze salvate"
       ],
+      "Problem reported": [
+        "Problema segnalato"
+      ],
       "Recovery has started": [
         "Il ripristino è iniziato"
       ],
@@ -9580,6 +9610,10 @@
       "Are you sure you want to close the preview?": [
         "Sei sicuro di voler chiudere l'anteprima?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Sei sicuro di voler rimuovere questo elemento dalla tua lista?",
+        "Sei sicuro di voler rimuovere questi elementi dalla tua lista?"
+      ],
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
@@ -9624,6 +9658,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Conferma la perdita dei bonus di ${ BRAND_NAME }"
+      ],
+      "Confirmation required?": [
+        "È necessaria una conferma?"
       ],
       "Contact Details": [
         "Dettagli contatto"

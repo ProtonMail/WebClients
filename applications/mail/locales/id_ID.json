@@ -546,6 +546,9 @@
       "Hide": [
         "Sembunyikan"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Sembunyikan asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
       ],
@@ -828,10 +831,10 @@
       "Not saved": [
         "Belum disimpan"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1011,6 +1014,9 @@
       "Revert to original display": [
         "Kembalikan ke mode tampilan semula"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Jalankan pada server ${ BRAND_NAME }"
+      ],
       "Save": [
         "Simpan"
       ],
@@ -1121,6 +1127,9 @@
       ],
       "Show": [
         "Tampilkan"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Tampilkan asisten penulisan ${ BRAND_NAME } Scribe"
       ],
       "Show advanced PGP settings": [
         "Tampilkan pengaturan PGP lanjutan"
@@ -1537,6 +1546,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "Tidak ada log yang disimpan demi melindungi privasi Anda. Pemrosesan lebih cepat."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Jalankan pada server ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Jalankan pada perangkat"
@@ -4126,6 +4138,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Pengiriman lampiran dibatasi hingga Anda berada pada batas paket Anda atau meningkatkan akun."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Pengiriman lampiran dibatasi pada saat Anda telah melebihi batas paket Anda atau hingga Anda meningkatkan akun."
+      ],
       "Signature not verified": [
         "Tanda tangan tidak terverifikasi"
       ],
@@ -6501,6 +6516,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo yang tersisa pada akun Anda akan menjadi ${ remainingCreditsFormatted }."
       ],
       "Please open the document to view it.": [
         "Silakan buka dokumen ini untuk melihat isinya."
@@ -9011,9 +9029,6 @@
       "Data breach monitoring": [
         "Pemantauan kebocoran data"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Pemantauan kebocoran data (segera hadir)"
-      ],
       "Desktop app": [
         "Aplikasi desktop"
       ],
@@ -9892,6 +9907,9 @@
       ],
       "MM/YY": [
         "BB/TT"
+      ],
+      "More plans are available in other currencies": [
+        "Lebih banyak paket tersedia pada mata uang lainnya"
       ],
       "Payment Processing": [
         "Pembayaran Sedang Diproses"
@@ -11724,6 +11742,9 @@
       ],
       "Preferences saved": [
         "Preferensi disimpan"
+      ],
+      "Problem reported": [
+        "Masalah dilaporkan"
       ],
       "Public key trusted": [
         "Kunci publik berhasil dipercaya"

@@ -555,6 +555,9 @@
       "Hide": [
         "Схаваць"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Схаваць памочніка ў напісанні ${ BRAND_NAME } Scribe"
+      ],
       "Hide advanced PGP settings": [
         "Схаваць дадатковыя налады PGP"
       ],
@@ -840,10 +843,10 @@
       "Not saved": [
         "Не захавана"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open": [
@@ -1023,6 +1026,9 @@
       "Revert to original display": [
         "Вярнуць арыгінальны выгляд"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Выканаць на серверы ${ BRAND_NAME }"
+      ],
       "Save": [
         "Захаваць"
       ],
@@ -1133,6 +1139,9 @@
       ],
       "Show": [
         "Паказаць"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Паказаць памочніка ў напісанні ${ BRAND_NAME } Scribe"
       ],
       "Show advanced PGP settings": [
         "Паказаць дадатковыя налады PGP"
@@ -1564,6 +1573,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "Журналы не захоўваюцца, каб абараніць вашу прыватнасць. Хутчэйшая апрацоўка."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Выканаць на серверах ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Выканаць на прыладзе"
@@ -4210,6 +4222,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Магчымасць адпраўкі далучэнняў абмежавана да таго моманту, пакуль ваш тарыфны план не пачне адпавядаць абмежаванням або ваша падпіска не будзе палепшана."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Магчымасць адпраўкі далучэнняў абмежавана да таго моманту, пакуль вы перавышаеце абмежаванні тарыфнага плана або пакуль ваша падпіска не будзе палепшана."
+      ],
       "Signature not verified": [
         "Подпіс не правераны"
       ],
@@ -6825,6 +6840,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца наступная колькасць крэдытаў: ${ remainingCreditsFormatted }."
       ],
       "Please open the document to view it.": [
         "Адкрыйце дакумент, каб паглядзець яго."
@@ -9488,9 +9506,6 @@
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Назіранне за ўцечкай даных (неўзабаве з'явіцца)"
-      ],
       "Desktop app": [
         "Настольная праграма"
       ],
@@ -10393,6 +10408,9 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "More plans are available in other currencies": [
+        "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
       "Payment Processing": [
         "Апрацоўка плацяжу"
@@ -12420,6 +12438,9 @@
       ],
       "Preferences saved": [
         "Параметры захаваны"
+      ],
+      "Problem reported": [
+        "Паведамлена аб праблеме"
       ],
       "Public key trusted": [
         "Давераны публічны ключ"

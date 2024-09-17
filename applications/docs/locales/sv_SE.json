@@ -288,6 +288,9 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Gå till ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Gå till etikett"
       ],
@@ -2230,6 +2233,9 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Ett fel uppstod vid försök att duplicera dokumentet. Försök igen."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Ett fel uppstod vid försöket att återställa dokumentet. Försök igen."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Ett fel uppstod när ett nytt dokument skapades. Försök igen."
       ],
@@ -3418,6 +3424,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "“${ documentTitle }“ har flyttats till papperskorgen. Det kommer vara kvar där tills du återställer det eller tar bort det permanent."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "”${ documentTitle }” är i papperskorgen och kommer stanna där tills du tar bort det permanent."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } e-postadress",
         "${ addressCount } e-postadresser"
@@ -3706,6 +3718,12 @@
       ],
       "Display word count": [
         "Visa antalet ord"
+      ],
+      "Document is in trash": [
+        "Dokument är i papperskorg"
+      ],
+      "Document moved to trash": [
+        "Dokument flyttat till papperskorg"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du inget? Kom ihåg att stänga av popup-blockerare."
@@ -5727,9 +5745,6 @@
       "Data breach monitoring": [
         "Dataintrångsövervakning"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Dataintrångsövervakning (kommer snart)"
-      ],
       "Desktop app": [
         "App för stationär dator"
       ],
@@ -6681,6 +6696,9 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "More plans are available in other currencies": [
+        "Fler paket är tillgängliga i andra valutor"
       ],
       "Payment Processing": [
         "Betalning behandlas"
@@ -7643,6 +7661,9 @@
       ],
       "Preferences saved": [
         "Preferenser sparade"
+      ],
+      "Problem reported": [
+        "Problem rapporterat"
       ],
       "Secure link copied": [
         "Säker länk kopierad"

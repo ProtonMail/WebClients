@@ -496,6 +496,9 @@
       "Restore": [
         "Аднавіць"
       ],
+      "Resume membership": [
+        "Узнавіць членства"
+      ],
       "Retry": [
         "Паўтарыць"
       ],
@@ -682,8 +685,8 @@
       "Use authentication code": [
         "Выкарыстаць код аўтэнтыфікацыі"
       ],
-      "Use group permissions": [
-        "Выкарыстаць дазволы групы"
+      "Use group sending permissions": [
+        "Выкарыстоўваць дазволы групавой адпраўкі"
       ],
       "Use recovery code": [
         "Выкарыстоўваць код аднаўлення"
@@ -2851,8 +2854,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Толькі адзін бясплатны пробны перыяд для кожнага карыстальніка."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Толькі адзін бясплатны пробны перыяд на карыстальніка. Пасля гэтага перыяду будзе ўжыта стандартная плата."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Пасля адмовы ад вашага бягучага тарыфнага плана наступныя карыстальнікі будуць пераведзены на тарыфны план ${ BRAND_NAME } Unlimited з бясплатным пробным перыядам на працягу 30 дзён."
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Прадвызначана ўліковаму запісу адміністратара даступна ${ formattedStorage } сховішча. Вы можаце пазней пераразмеркаваць сховішча паміж дадатковымі карыстальнікамі."
@@ -2865,9 +2871,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Запрашэнне будзе скасавана і карыстальнік не зможа далучыцца да ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Уліковы запіс карыстальніка будзе пераведзены на тарыфны план ${ BRAND_NAME } Unlimited на 30 дзён бясплатнай пробнай версіі*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Перад стварэннем карыстальніка, вам неабходна наладзіць карыстальніцкі дамен."
@@ -3774,6 +3777,9 @@
         "Выдаленне ${ deletedServerCount } сервераў шлюза",
         "Выдаленне ${ deletedServerCount } сервераў шлюза"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Адключана з ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Адключэнне двухфактарнай аўтэнтыфікацыі зробіць ваш уліковы запіс менш бяспечным. Працягвайце толькі ў тым выпадку, калі гэта сапраўды неабходна."
       ],
@@ -3857,6 +3863,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Уключыць адзіны ўваход, каб абараніць вашу арганізацыю"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Уключана з ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL-адрас канцавога пункта атрыманы ад вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)."
@@ -4367,6 +4376,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Увядзіце фразу аднаўлення з 12 слоў, якая звязана з вашым уліковым запісам."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца наступная колькасць крэдытаў: ${ remainingCreditsFormatted }."
       ],
       "please open a support ticket": [
         "адкрыйце запыт для службы падтрымкі"
@@ -6107,11 +6119,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Бразільскі рэал"
+      ],
       "Euro": [
         "Еўра"
       ],
       "Swiss franc": [
         "Швейцарскі франк"
+      ],
+      "US Dollar": [
+        "Долар ЗША"
       ]
     },
     "Navigation": {
@@ -6413,9 +6431,6 @@
       ],
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Назіранне за ўцечкай даных (неўзабаве з'явіцца)"
       ],
       "Dedicated servers and IP": [
         "Вылучаныя серверы і IP"
@@ -7576,6 +7591,9 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
+      "More plans are available in other currencies": [
+        "Больш тарыфных планаў даступна з іншымі валютамі"
+      ],
       "Payment Processing": [
         "Апрацоўка плацяжу"
       ],
@@ -7620,6 +7638,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Мы апрацоўваем ваш плацеж за выстаўлены рахунак. Перад тым, як уносіць змены ў свой тарыфны план або абнаўляць рэквізіты плацяжу, дачакайцеся завяршэння плацяжу. Дзякуй за цярпенне."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
       ]
     },
     "Payments.Error": {
@@ -9422,6 +9443,9 @@
       ],
       "Preference saved": [
         "Параметр захаваны"
+      ],
+      "Problem reported": [
+        "Паведамлена аб праблеме"
       ],
       "SPF value copied to clipboard": [
         "Значэнне SPF скапіявана ў буфер абмену"

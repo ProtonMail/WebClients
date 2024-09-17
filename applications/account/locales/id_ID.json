@@ -70,11 +70,11 @@
       "Accept": [
         "Terima"
       ],
-      "Activate": [
-        "Aktifkan"
-      ],
       "activate": [
         "aktifkan"
+      ],
+      "Activate": [
+        "Aktifkan"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
@@ -892,6 +892,9 @@
       "Resume": [
         "Lanjutkan"
       ],
+      "Resume membership": [
+        "Lanjutkan keanggotaan"
+      ],
       "Retry": [
         "Coba lagi"
       ],
@@ -1186,8 +1189,8 @@
       "Use authentication code": [
         "Gunakan kode autentikasi"
       ],
-      "Use group permissions": [
-        "Gunakan perizinan grup"
+      "Use group sending permissions": [
+        "Gunakan perizinan pengiriman grup"
       ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
@@ -1463,6 +1466,9 @@
       "Fast and secure. No logs are kept.": [
         "Cepat dan aman. Tanpa log apa pun yang disimpan."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Jalankan pada server ${ BRAND_NAME }"
+      ],
       "Run on device": [
         "Jalankan pada perangkat"
       ]
@@ -1470,9 +1476,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Beli sekarang"
-      ],
-      "New": [
-        "Baru"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Bawa produktivitas email Anda ke tingkatan yang baru. Biarkan ${ BRAND_NAME } Scribe membantu Anda menulis, membalas, dan mengoreksi email Anda."
@@ -5124,8 +5127,8 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "*Hanya satu uji coba gratis per pelanggan."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Terbatas hanya pada satu uji coba gratis per pengguna. Harga normal berlaku setelahnya."
       ],
       "Accounts with custom domains cannot join a group plan.": [
         "Akun dengan domain khusus tidak dapat bergabung ke paket grup."
@@ -5187,8 +5190,8 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Langganan ini akan ditagihkan kepada admin utama paket ini."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Untuk memudahkan transisi, kami memberi Anda uji coba ${ BRAND_NAME } Unlimited selama 30 hari*."
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "Untuk memudahkan proses transisi ini, kami memberikan Anda uji coba ${ BRAND_NAME } Unlimited gratis selama 30 hari*."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Anda diundang untuk bergabung ke ${ invite.OrganizationName }"
@@ -5237,8 +5240,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Hanya satu uji coba gratis per pengguna."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Terbatas hanya pada satu uji coba gratis per pengguna. Harga normal berlaku setelahnya."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Setelah meninggalkan paket Anda, pengguna ini akan dipindahkan ke paket ${ BRAND_NAME } Unlimited dengan masa uji coba gratis 30 hari.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Secara bawaan, kami memberikan ruang penyimpanan sebesar ${ formattedStorage } ke akun administrator. Anda dapat mengelola penyimpanan yang diberikan untuk dibagikan antara pengguna tambahan."
@@ -5251,9 +5257,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Undangan ini akan dibatalkan dan pengguna yang bersangkutan tidak akan dapat bergabung ke ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Akun pengguna akan dipindahkan ke paket ${ BRAND_NAME } Unlimited selama uji coba gratis 30 hari."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Untuk membuat pengguna baru, Anda harus mengatur domain kustom."
@@ -7255,9 +7258,6 @@
       "Group deleted": [
         "Grup dihapus"
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Tentukan apakah email yang terhubung dalam rantai percakapan yang sama akan saling terkelompokkan atau ditampilkan secara terpisah pada kotak masuk Anda."
-      ],
       "here": [
         "di sini"
       ],
@@ -7891,6 +7891,9 @@
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Mohon diperhatikan bahwa apabila Anda menghapus filter ${ nameDeleted }, kami tidak lagi akan memproses segala tindakan otomatis yang dipicu oleh filter tersebut."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo yang tersisa pada akun Anda akan menjadi ${ remainingCreditsFormatted }."
+      ],
       "please open a support ticket": [
         "silakan buka tiket layanan dukungan"
       ],
@@ -8483,7 +8486,7 @@
         "untuk dapat menggunakan ${ toAppName } dan seluruh layanan ${ BRAND_NAME }"
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
-        "Untuk menggunakan ${ toAppName }, Anda butuh alamat ${ MAIL_APP_NAME }."
+        "Untuk menggunakan ${ toAppName }, Anda memerlukan alamat ${ MAIL_APP_NAME }."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Untuk dapat berfungsi sebagaimana mestinya, masing-masing filter harus memiliki setidaknya nama dan kode Sieve yang valid. Anda dapat ${ link }."
@@ -9693,12 +9696,6 @@
       "Auto-detect primary time zone": [
         "Deteksi zona waktu utama secara otomatis"
       ],
-      "Auto-load embedded images": [
-        "Muat gambar yang tersemat secara otomatis"
-      ],
-      "Auto-load remote content": [
-        "Muat remote content secara otomatis"
-      ],
       "Auto-reply": [
         "Balasan otomatis"
       ],
@@ -10031,9 +10028,6 @@
       ],
       "Group address": [
         "Alamat grup"
-      ],
-      "Group conversations": [
-        "Percakapan grup"
       ],
       "Group members": [
         "Anggota grup"
@@ -10957,6 +10951,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asisten penulisan ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Tambah asisten penulisan ${ BRAND_NAME } Scribe"
       ],
@@ -11193,11 +11190,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real Brazil"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franc Swiss"
+      ],
+      "US Dollar": [
+        "Dolar AS"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -11635,9 +11638,6 @@
       ],
       "Data breach monitoring": [
         "Pemantauan kebocoran data"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Pemantauan kebocoran data (segera hadir)"
       ],
       "Dedicated account manager": [
         "Pengelola akun khusus"
@@ -13389,6 +13389,9 @@
       "MM/YY": [
         "BB/TT"
       ],
+      "More plans are available in other currencies": [
+        "Lebih banyak paket tersedia pada mata uang lainnya"
+      ],
       "Payment Processing": [
         "Pembayaran Sedang Diproses"
       ],
@@ -13433,6 +13436,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Kami sedang memproses pembayaran Anda untuk faktur yang tertagih. Silakan tunggu hingga pembayaran selesai sebelum membuat perubahan pada paket Anda atau memperbarui rincian pembayaran Anda. Terima kasih atas kesabaran Anda."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Anda akan ditagihkan ${ amountToCharge } dari metode pembayaran yang Anda pilih."
       ]
     },
     "Payments.Error": {
@@ -14579,6 +14585,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Permintaan pengaturan ulang kata sandi"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Aktifkan bagian Foto"
       ]
     },
     "Settings description": {
@@ -15746,6 +15757,9 @@
       "Premium address created": [
         "Alamat premium dihasilkan"
       ],
+      "Problem reported": [
+        "Masalah dilaporkan"
+      ],
       "Resuming import": [
         "Melanjutkan proses impor"
       ],
@@ -16477,7 +16491,7 @@
         "Sunting rincian faktur"
       ],
       "Edit organization identity": [
-        "Edit identitas organisasi"
+        "Sunting identitas organisasi"
       ],
       "Edit profile": [
         "Sunting profil"
@@ -16808,6 +16822,9 @@
       ],
       "Phone": [
         "Telepon"
+      ],
+      "Photos": [
+        "Foto"
       ],
       "Policies": [
         "Kebijakan"

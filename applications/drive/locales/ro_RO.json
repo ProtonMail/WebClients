@@ -224,6 +224,9 @@
       "Create and copy alias": [
         "Creare și copiere alias"
       ],
+      "Create free account": [
+        "Creare cont gratuit"
+      ],
       "Create link": [
         "Creare legătură web"
       ],
@@ -392,6 +395,9 @@
       ],
       "Get verification code": [
         "Obținere cod de verificare"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Accesare ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Accesare etichetă"
@@ -710,9 +716,6 @@
       ],
       "Save changes": [
         "Salvare modificări"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Salvare în ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Scanare și descărcare"
@@ -4161,6 +4164,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Sigur doriţi să ştergeţi definitiv articolele selectate din «Gunoi»?"
       ],
+      "Are you sure you want to proceed?": [
+        "Sigur doriți să continuați?"
+      ],
       "Attention required": [
         "Necesită atenție"
       ],
@@ -4850,6 +4856,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "După apăsarea pe butonul de confirmare, contul va mai avea ${ remainingCreditsFormatted } (de) credite rămase."
+      ],
       "Please open the document to view it.": [
         "Deschideți documentul pentru a-l vedea."
       ],
@@ -4921,6 +4930,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Căutarea privată este activată. Acum puteți închide acest dialog și căuta fișiere sau foldere."
       ],
+      "Public link": [
+        "Legătură publică"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
       ],
@@ -4969,8 +4981,8 @@
       "Retry now": [
         "Reîncercare"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Salvat în ${ DRIVE_SHORT_APP_NAME }"
+      "Saving...": [
+        "Se salvează..."
       ],
       "Scan issue": [
         "Probleme scanare"
@@ -5393,6 +5405,9 @@
       "You already have a free account": [
         "Deja aveți un cont gratuit"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Sunteți pe cale să renunțați la articolul partajat. Nu îl veți mai putea accesa până când proprietarul nu vi-l va mai partaja."
+      ],
       "You are about to open another browser tab and visit:": [
         "Se va deschide o nouă filă în navigator cu adresa:"
       ],
@@ -5461,6 +5476,11 @@
       ],
       "You will lose all unsaved changes.": [
         "Veți pierde toate modificările nesalvate."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Va trebui să-l salvați din nou de pe pagina cu legături web publice.",
+        "Va trebui să le salvați din nou de pe pagina cu legături web publice.",
+        "Va trebui să le salvați din nou de pe pagina cu legături web publice."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
@@ -6317,7 +6337,7 @@
         "Detalii"
       ],
       "upgrade for more storage": [
-        "treceți la alt tip de plan pentru mai mult spațiu"
+        "treceți la un plan cu plată pentru mai mult spațiu"
       ],
       "Upgrade to restore full access": [
         "Schimbați tipul de abonament pentru a restaura accesul complet"
@@ -6912,9 +6932,6 @@
       ],
       "Data breach monitoring": [
         "Monitorizarea divulgării datelor"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorizarea divulgării datelor (în curând)"
       ],
       "Desktop app": [
         "Aplicația desktop"
@@ -7802,6 +7819,16 @@
       "The link to your item was deleted": [
         "Legătura către element a fost ștearsă."
       ],
+      "This item was not removed from your list": [
+        "Acest articol nu a fost eliminat din listă.",
+        "Aceste articole nu au fost eliminate din listă.",
+        "Aceste articole nu au fost eliminate din listă."
+      ],
+      "This item was succefully removed from your list": [
+        "Acest articol a fost eliminat din listă.",
+        "Aceste articole au fost eliminate din listă.",
+        "Aceste articole au fost eliminate din listă."
+      ],
       "Trash failed to be emptied": [
         "Coșul de gunoi nu s-a putut goli"
       ],
@@ -8028,6 +8055,9 @@
       ],
       "MM/YY": [
         "LL/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Există alte planuri în monede diferite"
       ],
       "Payment Processing": [
         "Se procesează plata"
@@ -8880,19 +8910,19 @@
         "Pentru toate serviciile ${ BRAND_NAME }"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Pentru a continua să încărcați și să sincronizați fișiere, eliberați spațiu sau treceți la alt tip de plan pentru mai mult spațiu de stocare."
+        "Pentru a continua să încărcați și să sincronizați fișiere, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "Pentru a trimite sau a primi mesaje, eliberați spațiu sau ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Pentru a trimite sau primi mesaje, eliberați spațiu sau treceți la alt tip de plan pentru mai mult spațiu de stocare."
+        "Pentru a trimite sau primi mesaje, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }"
       ],
       "upgrade for more storage": [
-        "treceți la alt tip de plan pentru mai mult spațiu"
+        "treceți la un plan cu plată pentru mai mult spațiu"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Vom adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }."
@@ -9485,6 +9515,9 @@
       "Preferences saved": [
         "Preferințe salvate"
       ],
+      "Problem reported": [
+        "Problemă raportată"
+      ],
       "Recovery has started": [
         "A început recuperarea"
       ],
@@ -9708,6 +9741,11 @@
       "Are you sure you want to close the preview?": [
         "Sigur doriți să închideți examinarea?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Sigur doriți să eliminați acest articol din listă?",
+        "Sigur doriți să eliminați aceste articole din listă?",
+        "Sigur doriți să eliminați aceste articole din listă?"
+      ],
       "Billing cycle": [
         "Ciclu de facturare"
       ],
@@ -9752,6 +9790,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmare pierdere bonusuri ${ BRAND_NAME }"
+      ],
+      "Confirmation required?": [
+        "Necesită confirmare?"
       ],
       "Contact Details": [
         "Detalii contact"

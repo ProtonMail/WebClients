@@ -70,10 +70,10 @@
       "Accept": [
         "수락"
       ],
-      "Activate": [
+      "activate": [
         "활성화"
       ],
-      "activate": [
+      "Activate": [
         "활성화"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -892,6 +892,9 @@
       "Resume": [
         "재시작"
       ],
+      "Resume membership": [
+        "구성원 재개"
+      ],
       "Retry": [
         "재시도"
       ],
@@ -1186,7 +1189,7 @@
       "Use authentication code": [
         "인증 코드를 사용"
       ],
-      "Use group permissions": [
+      "Use group sending permissions": [
         "그룹 발송 권한들 사용하기"
       ],
       "Use recovery code": [
@@ -1463,6 +1466,9 @@
       "Fast and secure. No logs are kept.": [
         "안전하고 빠르게. 로그 없이."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } 서버에서 실행"
+      ],
       "Run on device": [
         "디바이스에서 실행"
       ]
@@ -1470,9 +1476,6 @@
     "Assistant toggle": {
       "Buy now": [
         "지금 구매"
-      ],
-      "New": [
-        "신규"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "이메일 생산성을 한 단계 더 높은 경지로. ${ BRAND_NAME } Scribe가 이메일의 작성과 답장, 교정에 도움을 드립니다."
@@ -3376,7 +3379,7 @@
         "이 기능들을 이용하려면 상세 이벤트와 ${ PROTON_SENTINEL_NAME }를 활성화합니다"
       ],
       "Enable detailed events to access these features": [
-        "이 기능들을 이용하려면 상세 이벤트를 활성화합니다"
+        "이 기능들을 사용하기 위해 상세 이벤트를 활성화합니다."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "암호화 및 연락처 불러오기 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
@@ -3666,13 +3669,13 @@
         "1GB 저장공간"
       ],
       "2 users": [
-        "두 사용자들"
+        "두 명의 사용자"
       ],
       "Full access to all ${ BRAND_NAME } products": [
         "모든 ${ BRAND_NAME } 제품들에 대한 모든 접근권한"
       ],
       "You save ${ amountSave }": [
-        "${ amountSave }를 절약했습니다"
+        "${ amountSave }를 절약할 수 있음"
       ]
     },
     "duoplan2024: SubTitle": {
@@ -3685,7 +3688,7 @@
     },
     "duoplan2024: Title": {
       "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "${ PLAN_NAMES[PLANS.DUO] } 를 소개합니다 "
+        "${ PLAN_NAMES[PLANS.DUO] }를 소개합니다 "
       ]
     },
     "Duration": {
@@ -5124,8 +5127,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 그룹"
       ],
-      "*Only one free trial per customer.": [
-        "*사용자 당 1회 무료 체험"
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*사용자 당 1회 무료 체험. 종료 후 정규 가격으로 적용됩니다."
       ],
       "Accounts with custom domains cannot join a group plan.": [
         "커스텀 도메인과 연동된 계정은 그룹 플랜에 합류할 수 없습니다."
@@ -5187,7 +5190,7 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "구독이 해당 플랜의 기본 관리자에게 청구됩니다."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "원활한 플랜 전환을 위해 ${ BRAND_NAME } Unlimited*의 30일간의 무료 체험판을 제공해 드립니다."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
@@ -5237,8 +5240,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*사용자 당 1회 무료 체험"
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*사용자 당 1회 무료 체험. 종료 후 정규 가격으로 적용됩니다."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "해당 플랜을 떠나면 이 사용자는 30일 무료 체험이 포함되는 ${ BRAND_NAME } Unlimited 플랜으로 전환됩니다.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "기본적으로는 관리자 계정에 ${ formattedStorage } 저장공간을 자동 할당합니다. 추가 사용자들 사이에 할당된 저장공간을 이후에 관리할 수 있습니다."
@@ -5251,9 +5257,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "초대가 취소될 것이며 사용자는 ${ organizationName }에 가입할 수 없게 됩니다."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "구성원에서 삭제할 사용자의 계정이 30일 무료 체험판 버전의 ${ BRAND_NAME } Unlimited 플랜으로 자동 전환됩니다."
       ],
       "To create a new user, a configured custom domain is required.": [
         "새 계정을 생성하려면, 커스텀 도메인 구성이 필요합니다."
@@ -6650,7 +6653,7 @@
         "모든 키가 성공적으로 재활성화 되었습니다"
       ],
       "All members have been added.": [
-        "모든 멤버가 추가되었습니다"
+        "모든 구성원이 추가되었습니다"
       ],
       "All your changes will be lost.": [
         "저장하지 않은 변경사항은 손실됩니다."
@@ -7000,6 +7003,9 @@
       "Disable recovery by ${ type }": [
         "${ type }(으)로 복구 비활성화"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "${ formattedDateAndTime }부터 비활성화됨"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2단계 인증을 비활성화하면 계정의 보안이 약해집니다. 꼭 필요한 경우에만 진행하세요."
       ],
@@ -7113,6 +7119,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "지원시 외부 서비스의 TLS 및 SSL을 활성화 하십시오."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "${ formattedDateAndTime }부터 활성화됨"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "복구 키를 다시 활성화하면 새로운 복구 문구가 생성됩니다."
@@ -7254,9 +7263,6 @@
       ],
       "Group deleted": [
         "그룹이 삭제됨"
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "받은 편지함에 있는 동일한 메일을 함께 그룹화하거나 별도로 표시합니다."
       ],
       "here": [
         "여기"
@@ -7893,6 +7899,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "이 필터 (${ nameDeleted }) 삭제시 트리거되는 모든 자동화된 작업이 중단됩니다."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "확인 버튼을 누르면 계정에는 ${ remainingCreditsFormatted } 크레딧이 남게됩니다."
       ],
       "please open a support ticket": [
         "지원 티켓을 만들어 주세요"
@@ -8881,6 +8890,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "인증 로그인을 활성화하여 계정에 액세스하는 시기와 IP를 확인할 수 있습니다. 시스템이 계정에 접근하는 IP 주소와 시간, 그리고 실패한 시도를 기록합니다."
       ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "아래 토글을 통해 인터페이스상의 사진 섹션을 활성화할 수 있습니다."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "요금제의 IP 주소가 있는 경우 번호에 ${ specificCountryCount }을(를) 추가하거나 맞춤형 솔루션을 위해 당사에 연락하여 위의 설정을 즉시 잠금 해제할 수 있습니다."
       ],
@@ -9696,12 +9708,6 @@
       "Auto-detect primary time zone": [
         "시간대 자동 감지"
       ],
-      "Auto-load embedded images": [
-        "자동으로 삽입된 이미지 불러오기"
-      ],
-      "Auto-load remote content": [
-        "자동으로 외부 콘텐츠 불러오기"
-      ],
       "Auto-reply": [
         "자동 응답"
       ],
@@ -10034,9 +10040,6 @@
       ],
       "Group address": [
         "그룹 주소"
-      ],
-      "Group conversations": [
-        "그룹 대화"
       ],
       "Group members": [
         "그룹 구성원"
@@ -10966,6 +10969,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미 추가"
       ],
@@ -10988,7 +10994,7 @@
         "${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
-        "기간 한정 할인: 연간 요금제가 **최대 35% 할인**"
+        "기간 한정 할인: 연간 요금제 **최대 35% 할인**"
       ],
       "Limited time offer: **Save ${ discount } on ${ name } with a 1-year plan**": [
         "기간 한정 세일: **1년 ${ name } 플랜을 ${ discount } 할인받으세요**"
@@ -11202,11 +11208,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "브라질 헤알"
+      ],
       "Euro": [
         "유로"
       ],
       "Swiss franc": [
         "스위스 프랑"
+      ],
+      "US Dollar": [
+        "미국 달러"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -11644,9 +11656,6 @@
       ],
       "Data breach monitoring": [
         "데이터 유출 모니터링"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "데이터 유출 모니터링 (출시 예정)"
       ],
       "Dedicated account manager": [
         "전용 계정 관리자"
@@ -12434,7 +12443,7 @@
         "잘못된 코드입니다."
       ],
       "Invalid input. Search an email or IP address.": [
-        "유효하지 않은 입력임. 이메일 및 IP 주소를 검색해 보세요."
+        "유효하지 않은 입력입니다. 이메일 및 IP 주소를 검색해 보세요."
       ],
       "IP Address copied to clipboard": [
         "IP 주소를 클립보드에 복사했습니다."
@@ -13419,11 +13428,14 @@
       "MM/YY": [
         "MM/YY (월/년)"
       ],
+      "More plans are available in other currencies": [
+        "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
+      ],
       "Payment Processing": [
         "결제 처리중"
       ],
       "Please add a payment method in the dashboard to continue.": [
-        "계속하려면 결제 수단을 대시보드에 추가해 주십시오."
+        "계속하려면 결제 수단을 대시보드에 추가하세요."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
@@ -13463,6 +13475,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "현재 청구서에 대한 결제를 진행 중입니다. 사용자의 플랜이 변경되거나 결제 상세 정보가 업데이트되기 전까지 잠시 기다려주세요. 깊은 이해에 감사드립니다."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "선택된 결제 수단에서 ${ amountToCharge }(으)로 전환됩니다."
       ]
     },
     "Payments.Error": {
@@ -14002,7 +14017,7 @@
         "복구 키트 업데이트"
       ],
       "Update your Recovery Kit?": [
-        "복구 키트 업데이트?"
+        "복구 키트를 업데이트합니까?"
       ],
       "Verify": [
         "인증"
@@ -14059,7 +14074,7 @@
         "계정 및 데이터 복구 가능"
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
-        "계정과 데이터를 복구할 수 있습니다. 복구 방법에 계속 액세스할 수 있는지 확인하세요."
+        "계정과 데이터를 복구할 수 있습니다. 복구 방법에 계속 접근할 수 있는지 확인하세요."
       ],
       "Your account and data can be recovered. You have recommended actions to Safeguard your account further.": [
         "계정과 데이터를 복구할 수 있습니다. 계정을 더욱 안전하게 보호하기 위한 권장 조치가 있습니다."
@@ -14068,7 +14083,7 @@
         "계정과 데이터를 복구할 수 있습니다. 권장 조치가 있습니다."
       ],
       "Your account is fully secure.": [
-        "계정은 완전히 안전합니다."
+        "계정이 완전히 안전합니다."
       ],
       "Your account is secure.": [
         "계정은 안전합니다."
@@ -14609,6 +14624,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "비밀번호 재설정 요청"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "사진 섹션 활성화"
       ]
     },
     "Settings description": {
@@ -15776,6 +15796,9 @@
       "Premium address created": [
         "프리미엄 계정 생성됨"
       ],
+      "Problem reported": [
+        "문제 제보됨"
+      ],
       "Resuming import": [
         "가져오기 일시중지중"
       ],
@@ -16270,7 +16293,7 @@
         "정크 삭제"
       ],
       "Click a value in the table to use it as filter": [
-        "표에서 값을 클릭하여 필터로 사용하려면 다음과 같이 하세요"
+        "표의 값을 클릭하여 필터로 사용하세요"
       ],
       "Close": [
         "닫기"
@@ -16453,7 +16476,7 @@
         "이중 인증 비활성화"
       ],
       "Disable two-factor authentication?": [
-        "이중 인증 비활성화?"
+        "이중 인증을 비활성화하시겠습니까?"
       ],
       "Discard changes?": [
         "변경 사항을 취소할까요?"
@@ -16835,6 +16858,9 @@
       ],
       "Phone": [
         "전화"
+      ],
+      "Photos": [
+        "사진"
       ],
       "Policies": [
         "정책"
@@ -17446,7 +17472,7 @@
         "이 주소는 비활성화되어 있습니다"
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
-        "이것은 비밀번호 재설정 또는 사용자가 아직 로그인하지 않은 경우에 발생할 수 있습니다."
+        "이는 비밀번호 재설정 또는 사용자가 아직 로그인하지 않은 경우에 발생할 수 있습니다."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "이 이메일 주소는 계정 관리 작업을 진행할 때 모든 조직 구성원에게 보여질 것입니다."
@@ -17523,7 +17549,7 @@
         "그룹 구성 권한 중단됨"
       ],
       "Sending member invitation": [
-        "멤버 초대장 발송 중"
+        "구성원 초대장 발송 중"
       ],
       "User declined invitation": [
         "사용자가 초대를 거절함"
@@ -18006,7 +18032,7 @@
         "Visionary 사용자와 초대받은 친구는 다른 사람들과 얼리 액세스를 공유하고 친구를 초대하여 ${ appName }을 무료로 사용해 볼 수 있습니다."
       ],
       "You're Invited.": [
-        "귀하는 초대되었습니다."
+        "사용자가 초대되었습니다."
       ]
     },
     "wallet_signup_2024:app-switcher": {

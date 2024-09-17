@@ -16,11 +16,11 @@
       "Accept": [
         "Prihvati"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -955,9 +955,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Kupi sada"
-      ],
-      "New": [
-        "Novo"
       ]
     },
     "Attached ics file error": {
@@ -4100,9 +4097,6 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Podijelite svoj javni ključ s prijateljima ili ga objavite na mreži kako bi vam svi mogli slati end-to-end šifrirane e-poruke!"
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Grupirajte e-poštu u istom razgovoru u pristigloj pošti ili ih prikažite zasebno."
-      ],
       "here": [
         "ovdje"
       ],
@@ -5086,12 +5080,6 @@
       ],
       "Auto-delete unwanted messages": [
         "Automatsko brisanje neželjenih poruka"
-      ],
-      "Auto-load embedded images": [
-        "Automatsko prikazivanje ugrađenih slika"
-      ],
-      "Auto-load remote content": [
-        "Automatski prikaži udaljeni sadržaj"
       ],
       "Auto-reply": [
         "Automatski odgovor"
@@ -8257,6 +8245,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Photos": [
+        "Fotografije"
       ],
       "Preview": [
         "Pregled"

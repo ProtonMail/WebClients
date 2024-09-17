@@ -555,6 +555,9 @@
       "Hide": [
         "Skryť"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Skryť asistenta písania ${ BRAND_NAME } Scribe"
+      ],
       "Hide advanced PGP settings": [
         "Skryť pokročilé nastavenia PGO"
       ],
@@ -840,11 +843,11 @@
       "Not saved": [
         "Neuložené"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Otvoriť"
@@ -1023,6 +1026,9 @@
       "Revert to original display": [
         "Návrat na pôvodné zobrazenie"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Spustiť na ${ BRAND_NAME } serveroch"
+      ],
       "Save": [
         "Uložiť"
       ],
@@ -1133,6 +1139,9 @@
       ],
       "Show": [
         "Zobraziť"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Zobraziť asistenta písania ${ BRAND_NAME } Scribe"
       ],
       "Show advanced PGP settings": [
         "Zobraziť pokročilé nastavenia PGO"
@@ -1564,6 +1573,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "V záujme ochrany vášho súkromia sa neuchovávajú žiadne protokoly. Rýchlejšie spracovanie."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Spustiť na ${ BRAND_NAME } serveroch"
       ],
       "Run on device": [
         "Spustiť na zariadení"
@@ -4210,6 +4222,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Odosielanie príloh je obmedzené, kým nedosiahnete limity svojho plánu alebo neprejdete na vyššiu verziu."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Odosielanie príloh je obmedzené, kým prekračujete limity svojho plánu alebo kým si plán neupgradujete."
+      ],
       "Signature not verified": [
         "Podpis nebol overený"
       ],
@@ -6308,7 +6323,7 @@
         "Sťahovanie pozastavené: ${ progressDisplay } GB"
       ],
       "Draft": [
-        "Rozpísať"
+        "Koncept"
       ],
       "Draft discarded": [
         "Koncept zmazaný"
@@ -6825,6 +6840,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornenie, tento proces môže trvať nejakú dobu v závislosti na veľkosti Vášho adresára."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú kredity vo výške ${ remainingCreditsFormatted }."
       ],
       "Please open the document to view it.": [
         "Ak si chcete dokument pozrieť, otvorte ho, prosím."
@@ -9488,9 +9506,6 @@
       "Data breach monitoring": [
         "Monitorovanie úniku dát"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorovanie úniku dát (už čoskoro)"
-      ],
       "Desktop app": [
         "Desktopová aplikácia"
       ],
@@ -10393,6 +10408,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "More plans are available in other currencies": [
+        "Ďalšie plány sú k dispozícii v iných menách"
       ],
       "Payment Processing": [
         "Spracovanie platby"
@@ -12420,6 +12438,9 @@
       ],
       "Preferences saved": [
         "Nastavenie bolo uložené"
+      ],
+      "Problem reported": [
+        "Problém nahlásený"
       ],
       "Public key trusted": [
         "Verejný kľúč nastavený ako dôveryhodný"
