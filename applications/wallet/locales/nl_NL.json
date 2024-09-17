@@ -136,6 +136,9 @@
       "More options": [
         "Meer opties"
       ],
+      "Need help?": [
+        "Hulp nodig?"
+      ],
       "Next": [
         "Volgende"
       ],
@@ -2836,9 +2839,6 @@
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoring van datalekken (binnenkort beschikbaar)"
-      ],
       "Desktop app": [
         "Desktop-app"
       ],
@@ -2853,6 +2853,9 @@
       ],
       "Email client support (via IMAP/SMTP)": [
         "Ondersteuning van e-mailclient (via IMAP/SMTP)"
+      ],
+      "Email groups": [
+        "E-mailgroepen"
       ],
       "Enables HIPAA compliance": [
         "HIPAA-naleving mogelijk"
@@ -2905,6 +2908,9 @@
       ],
       "Multiple admin roles": [
         "Meerdere beheerdersfuncties"
+      ],
+      "Online document editor": [
+        "Online documenteditor"
       ],
       "Organize items with multiple vaults": [
         "Organiseer items met meerdere kluizen"
@@ -3214,6 +3220,9 @@
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's."
+      ],
+      "Email everyone in a group with a single email address": [
+        "E-mail iedereen in een groep met één e-mailadres"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zorgt dat u alle e-mails ontvangt die naar uw domein worden verzonden, zelfs als het e-mailadres niet (meer) bestaat of een typfout bevat"
@@ -4031,6 +4040,9 @@
       "Payment method updated": [
         "Betalingsmethode bijgewerkt"
       ],
+      "Problem reported": [
+        "Probleem gerapporteerd"
+      ],
       "Verification successful": [
         "Verificatie gelukt"
       ],
@@ -4308,9 +4320,6 @@
       ]
     },
     "Wallet": {
-      "An error occured": [
-        "Er is een fout opgetreden."
-      ],
       "Close": [
         "Sluiten"
       ],
@@ -4417,9 +4426,6 @@
       ],
       "Send": [
         "Verzenden"
-      ],
-      "The current fingerprint doesn't match stored one": [
-        "De huidige vingerafdruk komt niet overeen met die is opgeslagen"
       ]
     },
     "wallet dashboard": {
@@ -4866,9 +4872,6 @@
       "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
         "Koppel een e-mail aan dit portemonneeaccount, zodat andere ${ WALLET_APP_NAME }-gebruikers gemakkelijk bitcoin naar uw e-mail kunnen sturen."
       ],
-      "Local storage cleared": [
-        "Lokale opslag gewist"
-      ],
       "New fiat currency applied": [
         "Nieuwe fiat-valuta toegepast"
       ],
@@ -5181,15 +5184,7 @@
         "Transactielabel is bijgewerkt"
       ]
     },
-    "Wallet Transaction List": {
-      "Page ${ displayedPageNumber }": [
-        "Pagina ${ displayedPageNumber }"
-      ]
-    },
     "Wallet transactions": {
-      "Syncing transactions": [
-        "Transacties worden gesynchroniseerd"
-      ],
       "Transactions": [
         "Transacties"
       ]
