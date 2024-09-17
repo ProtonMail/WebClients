@@ -139,6 +139,9 @@
       "More options": [
         "Дополнительные параметры"
       ],
+      "Need help?": [
+        "Нужна помощь?"
+      ],
       "Next": [
         "Далее"
       ],
@@ -2037,6 +2040,9 @@
       "I have read and agree to the disclaimer": [
         "Я прочитал(-а) и согласен(-на) с отказом от ответственности"
       ],
+      "Not now": [
+        "Не сейчас"
+      ],
       "You are now leaving ${ WALLET_APP_NAME } for ${ provider } (${ websiteLink }). Services related to card payments, bank transfers, and any other fiat transactions are provided by ${ provider }, a separate third-party platform. By proceeding and procuring services from ${ provider }, you acknowledge that you have read and agreed to ${ provider }'s Terms of Service (${ termOfUseLink }) and Privacy and Cookies Policy (${ privacyAndCookiesPolicyLink }). For any questions related to ${ provider }'s services, please contact ${ provider } at ${ supportEmailLink }": [
         "Вы теперь покидаете ${ WALLET_APP_NAME } для ${ provider } (${ websiteLink }). Услуги, связанные с оплатами по картам, банковскими переводами и любыми другими фиатными транзакциями, предоставляются ${ provider }, отдельной сторонней платформой. Продолжая и получая услуги от ${ provider }, вы подтверждаете, что прочитали и согласны с Условиями обслуживания ${ provider } (${ termOfUseLink }) и Политикой конфиденциальности и использования файлов cookie (${ privacyAndCookiesPolicyLink }). По любым вопросам, связанным с услугами ${ provider }, пожалуйста, свяжитесь с ${ provider } по адресу ${ supportEmailLink }"
       ]
@@ -2285,6 +2291,9 @@
       ],
       "Please authenticate your payment in the verification tab.": [
         "Пожалуйста, подтвердите платёж во вкладке проверки."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Обратите внимание, что после нажатия на «Подтвердить» на вашем счету останется ${ remainingCreditsFormatted }."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Пожалуйста, попробуйте другой способ оплаты или свяжитесь с вашим банком."
@@ -2929,9 +2938,6 @@
       ],
       "Data breach monitoring": [
         "Отслеживание утечек данных"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Отслеживание утечек данных (скоро появится)"
       ],
       "Desktop app": [
         "Приложение для настольного компьютера"
@@ -3610,6 +3616,9 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
+      "More plans are available in other currencies": [
+        "Другие тарифы доступны в других валютах"
+      ],
       "Payment Processing": [
         "Обработка платежа"
       ],
@@ -3752,6 +3761,9 @@
       ]
     },
     "Receive bitcoin": {
+      "Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.": [
+        "Ниже располагается последний созданный адрес Bitcoin. Для усиленной конфиденциальности используйте разные адреса для каждой операции."
+      ],
       "Receive Bitcoin": [
         "Получить Bitcoin"
       ]
@@ -4189,6 +4201,9 @@
       "Payment method updated": [
         "Способ оплаты обновлён"
       ],
+      "Problem reported": [
+        "О проблеме сообщено"
+      ],
       "Verification successful": [
         "Проверка прошла успешно"
       ],
@@ -4480,20 +4495,23 @@
       ]
     },
     "Wallet": {
-      "An error occured": [
-        "Произошла ошибка"
-      ],
       "Close": [
         "Закрыть"
       ],
       "Continue": [
         "Продолжить"
       ],
+      "Could not fetch wallets data": [
+        "Не удалось загрузить данные кошельков"
+      ],
       "Explore other ${ BRAND_NAME } products": [
         "Изучите другие продукты ${ BRAND_NAME }"
       ],
       "Upgrade to Visionary": [
         "Улучшить до Visionary"
+      ],
+      "WebAssembly must be enabled to use ${ WALLET_APP_NAME }": [
+        "WebAssembly должна быть включена для использования ${ WALLET_APP_NAME }"
       ]
     },
     "Wallet Account": {
@@ -4586,9 +4604,6 @@
       ],
       "Send": [
         "Отправить"
-      ],
-      "The current fingerprint doesn't match stored one": [
-        "Текущий отпечаток не совпадает с сохранённым"
       ]
     },
     "wallet dashboard": {
@@ -4826,11 +4841,17 @@
       "Default currency": [
         "Валюта по умолчанию"
       ],
+      "For better privacy, we recommend ${ walletAccountCreation } for receiving Bitcoin via Email. ${ learnMore }.": [
+        "Для усиленной приватности рекомендуется ${ walletAccountCreation } для получения Bitcoin по эл. почте. ${ learnMore }"
+      ],
       "Learn more": [
         "Подробнее"
       ],
       "Local currency": [
         "Местная валюта"
+      ],
+      "Receive Bitcoin via Email": [
+        "Получить Bitcoin по эл. почте"
       ],
       "Select your currency": [
         "Выберите свою валюту"
@@ -5037,9 +5058,6 @@
       "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
         "Свяжите адрес электронной почты с этой учётной записью кошелька, чтобы другие пользователи ${ WALLET_APP_NAME } могли легко отправлять вам биткойны."
       ],
-      "Local storage cleared": [
-        "Локальное хранилище очищено"
-      ],
       "New fiat currency applied": [
         "Применена новая официальная валюта"
       ],
@@ -5054,6 +5072,9 @@
       ],
       "Select an available email or create a new email address.": [
         "Выберите доступный адрес электронной почты или создайте новый адрес"
+      ],
+      "Select this address": [
+        "Выбрать этот адрес"
       ],
       "Wallet could not be deleted": [
         "Не удалось удалить кошелёк"
@@ -5259,6 +5280,9 @@
       "Amount": [
         "Сумма"
       ],
+      "Anonymous sender": [
+        "Анонимный отправитель"
+      ],
       "Bitcoin via Email": [
         "Bitcoin по эл. почте"
       ],
@@ -5346,15 +5370,7 @@
         "Метка транзакции успешно обновлена"
       ]
     },
-    "Wallet Transaction List": {
-      "Page ${ displayedPageNumber }": [
-        "Страница ${ displayedPageNumber }"
-      ]
-    },
     "Wallet transactions": {
-      "Syncing transactions": [
-        "Синхронизируем транзакции"
-      ],
       "Transactions": [
         "Транзакции"
       ]
