@@ -253,9 +253,13 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
 
 export const MessageDataItem = ({ tx }: TxDataListItemProps) => {
     return (
-        <div className="w-full">
-            <span className="block color-hint text-rg">{c('Wallet transaction').t`Message to recipient`}</span>
-            <span className="text-pre-wrap text-left text-break text-lg">{tx?.apiData?.Body}</span>
+        <div className="flex flex-row items-center w-full">
+            <div className="flex flex-column items-start grow mr-4">
+                <span className="block color-weak">{c('Wallet transaction').t`Message to recipient`}</span>
+                <span className="block w-full text-pre-wrap text-left text-break my-1 text-lg">
+                    {tx?.apiData?.Body}
+                </span>
+            </div>
         </div>
     );
 };
@@ -303,19 +307,17 @@ export const LinkToBlockchainDataItem = ({ tx, network }: TxDataListItemProps & 
             <hr className="my-4" />
             <div className="flex w-full justify-center">
                 <span className="block color-hint text-rg"></span>
-                <p className="my-0 mt-1 text-lg">
-                    <ButtonLike
-                        as={Href}
-                        href={`${url}/${tx?.networkData.txid}`}
-                        target="_blank"
-                        fullWidth
-                        shape="solid"
-                        color="norm"
-                        style={{ 'padding-left': '4rem', 'padding-right': '4rem' }}
-                    >
-                        {c('Link').t`View on blockchain`}
-                    </ButtonLike>
-                </p>
+                <ButtonLike
+                    as={Href}
+                    href={`${url}/${tx?.networkData.txid}`}
+                    target="_blank"
+                    fullWidth
+                    shape="solid"
+                    color="norm"
+                    className="wallet-button"
+                >
+                    {c('Link').t`View on blockchain`}
+                </ButtonLike>
             </div>
         </>
     );
