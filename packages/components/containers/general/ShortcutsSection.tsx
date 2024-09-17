@@ -2,7 +2,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 
-import { Field, Label, Row } from '../../components';
+import { Label } from '../../components';
+import Field from '../../components/container/Field';
+import Row from '../../components/container/Row';
 import ShortcutsToggle from './ShortcutsToggle';
 
 interface Props {

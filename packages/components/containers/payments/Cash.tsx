@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 import envelopSvg from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
 
-import { Bordered } from '../../components';
+import Bordered from '../../components/container/Bordered';
 import { useConfig } from '../../hooks';
 
 const Cash = () => {

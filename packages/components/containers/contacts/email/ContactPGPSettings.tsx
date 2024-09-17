@@ -12,7 +12,9 @@ import type { ContactPublicKeyModelWithApiKeySource, MailSettings } from '@proto
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 
-import { Field, Info, Label, Row, Toggle } from '../../../components';
+import { Info, Label, Toggle } from '../../../components';
+import Field from '../../../components/container/Field';
+import Row from '../../../components/container/Row';
 import { useNotifications } from '../../../hooks';
 import SelectKeyFiles from '../../keys/shared/SelectKeyFiles';
 import ContactKeysTable from './ContactKeysTable';

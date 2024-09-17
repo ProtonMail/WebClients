@@ -7,7 +7,8 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
-import { Label, Loader, Row } from '../../components';
+import { Label, Loader } from '../../components';
+import Row from '../../components/container/Row';
 import { SettingsParagraph } from '../account';
 import SendEmailReminderTwoFAModal from './SendEmailReminderTwoFAModal';
 
