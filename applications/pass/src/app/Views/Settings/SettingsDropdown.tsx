@@ -65,7 +65,7 @@ export const SettingsDropdown: FC = () => {
             { key: 'support', label: c('Label').t`Support`, icon: 'speech-bubble' },
             { key: 'logout', label: c('Action').t`Sign out`, icon: 'arrow-out-from-rectangle', onClick: onLogout },
         ],
-        [offlineSignaled, orgEnabled]
+        [offlineSignaled, orgEnabled, aliasesEnabled]
     );
 
     return (
