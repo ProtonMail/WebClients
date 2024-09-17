@@ -10,7 +10,9 @@ import { useLoading } from '@proton/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import { Field, FormModal, Input, Label, Row } from '../../components';
+import { FormModal, Input, Label } from '../../components';
+import Field from '../../components/container/Field';
+import Row from '../../components/container/Row';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 const EMPTY_VALUES = [/^(<div><br><\/div>)+$/, /^(<div>\s*<\/div>)+$/];

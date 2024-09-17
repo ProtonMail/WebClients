@@ -6,7 +6,7 @@ import { getBankSvg } from '@proton/components/payments/client-extensions/credit
 import type { PayPalDetails, SavedCardDetails } from '@proton/payments';
 import { PAYMENT_METHOD_TYPES, isPaypalDetails, isSavedCardDetails } from '@proton/payments';
 
-import { Bordered } from '../../../components';
+import Bordered from '../../../components/container/Bordered';
 import useSvgGraphicsBbox from '../../../hooks/useSvgGraphicsBbox';
 
 import './PaymentMethodDetails.scss';

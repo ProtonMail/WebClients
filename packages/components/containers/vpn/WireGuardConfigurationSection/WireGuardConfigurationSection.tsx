@@ -15,19 +15,19 @@ import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
 import {
     ConfirmModal,
-    Details,
     ErrorButton,
     Info,
     InputFieldTwo,
     Option,
     Radio,
-    Row,
     SelectTwo,
-    Summary,
     TextArea,
     Toggle,
     useModalTwoStatic,
 } from '../../../components';
+import Details from '../../../components/container/Details';
+import Row from '../../../components/container/Row';
+import Summary from '../../../components/container/Summary';
 import { getObjectKeys } from '../../../helpers';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import {

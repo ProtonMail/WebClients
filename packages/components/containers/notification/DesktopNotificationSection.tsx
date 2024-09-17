@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Info, Label, Row } from '../../components';
+import { Info, Label } from '../../components';
+import Row from '../../components/container/Row';
 import type { Props } from './DesktopNotificationPanel';
 import DesktopNotificationPanel from './DesktopNotificationPanel';
 

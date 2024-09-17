@@ -9,16 +9,9 @@ import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contac
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { ModalProps } from '../../../components';
-import {
-    Checkbox,
-    Field,
-    Label,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    Row,
-} from '../../../components';
+import { Checkbox, Label, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import Field from '../../../components/container/Field';
+import Row from '../../../components/container/Row';
 import { useContactGroups } from '../../../hooks';
 import useContactEmails from '../../../hooks/useContactEmails';
 

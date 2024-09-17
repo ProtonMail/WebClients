@@ -6,7 +6,9 @@ import type { SelectChangeEvent } from '@proton/components/components/selectTwo/
 import { vpnEnterpriseContactUrl } from '@proton/components/containers/payments/subscription/helpers';
 import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 
-import { Field, Label, Option, Row, SelectTwo } from '../../../components';
+import { Label, Option, SelectTwo } from '../../../components';
+import Field from '../../../components/container/Field';
+import Row from '../../../components/container/Row';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { ButtonNumberInput } from './ButtonNumberInput';
 import { CountryFlagAndName } from './CountryFlagAndName';

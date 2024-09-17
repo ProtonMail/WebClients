@@ -52,6 +52,12 @@ export {
     default as ConfirmSignOutModal,
     shouldShowConfirmSignOutModal,
 } from './components/confirmSignOutModal/ConfirmSignOutModal';
+export { default as Bordered } from './components/container/Bordered';
+export { default as Details } from './components/container/Details';
+export { default as EditableSection } from './components/container/EditableSection';
+export { default as Field } from './components/container/Field';
+export { default as Row } from './components/container/Row';
+export { default as Summary } from './components/container/Summary';
 export { default as ContextMenu } from './components/contextMenu/ContextMenu';
 export { default as ContextMenuButton } from './components/contextMenu/ContextMenuButton';
 export { default as ContextSeparator } from './components/contextMenu/ContextSeparator';

@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
+import { Field, Row } from '@proton/components';
 import {
     Checkbox,
-    Field,
     Option,
-    Row,
     SelectTwo,
     SortingTableHeader,
     Table,

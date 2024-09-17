@@ -15,7 +15,9 @@ import type { Currency } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { EllipsisLoader, Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
+import { EllipsisLoader, FormModal, Input, Label, Price, PrimaryButton } from '../../components';
+import Field from '../../components/container/Field';
+import Row from '../../components/container/Row';
 import { useApiResult, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
 import PaymentWrapper from '../payments/PaymentWrapper';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
