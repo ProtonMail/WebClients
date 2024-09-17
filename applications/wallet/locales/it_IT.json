@@ -139,6 +139,9 @@
       "More options": [
         "Altre opzioni"
       ],
+      "Need help?": [
+        "Hai bisogno di aiuto?"
+      ],
       "Next": [
         "Avanti"
       ],
@@ -2253,6 +2256,9 @@
       "Please authenticate your payment in the verification tab.": [
         "Verifica il pagamento nella scheda di verifica."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ remainingCreditsFormatted } crediti rimanenti."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Riprova utilizzando un altro metodo di pagamento oppure contatta PayPal per assistenza."
       ],
@@ -2856,9 +2862,6 @@
       ],
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoraggio di violazioni di dati (in arrivo)"
       ],
       "Desktop app": [
         "Applicazione desktop"
@@ -3526,6 +3529,9 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "Sono disponibili altri piani in altre valute"
+      ],
       "Payment Processing": [
         "Elaborazione del pagamento"
       ],
@@ -4086,6 +4092,9 @@
       "Payment method updated": [
         "Metodo di pagamento aggiornato"
       ],
+      "Problem reported": [
+        "Problema segnalato"
+      ],
       "Verification successful": [
         "Verifica riuscita"
       ],
@@ -4363,9 +4372,6 @@
       ]
     },
     "Wallet": {
-      "An error occured": [
-        "Si è verificato un errore."
-      ],
       "Close": [
         "Chiudi"
       ],
@@ -4475,9 +4481,6 @@
       ],
       "Send": [
         "Invia"
-      ],
-      "The current fingerprint doesn't match stored one": [
-        "L'impronta digitale corrente non corrisponde a quella archiviata"
       ]
     },
     "wallet dashboard": {
@@ -4930,9 +4933,6 @@
       "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
         "Collega un'email a questo account del portafoglio in modo che altri utenti ${ WALLET_APP_NAME } possano inviare facilmente Bitcoin alla tua email."
       ],
-      "Local storage cleared": [
-        "Archiviazione locale eliminata"
-      ],
       "New fiat currency applied": [
         "Nuova valuta fiat applicata"
       ],
@@ -5245,15 +5245,7 @@
         "Etichetta della transazione aggiornata correttamente"
       ]
     },
-    "Wallet Transaction List": {
-      "Page ${ displayedPageNumber }": [
-        "Pagina ${ displayedPageNumber }"
-      ]
-    },
     "Wallet transactions": {
-      "Syncing transactions": [
-        "Sincronizzazione delle transazioni"
-      ],
       "Transactions": [
         "Transazioni"
       ]

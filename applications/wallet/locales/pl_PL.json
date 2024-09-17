@@ -139,6 +139,9 @@
       "More options": [
         "Więcej opcji"
       ],
+      "Need help?": [
+        "Potrzebujesz pomocy?"
+      ],
       "Next": [
         "Dalej"
       ],
@@ -2939,9 +2942,6 @@
       "Data breach monitoring": [
         "Monitoring wycieku danych"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoring wycieku danych (wkrótce)"
-      ],
       "Desktop app": [
         "Aplikacja desktopowa"
       ],
@@ -3619,6 +3619,9 @@
       "MM/YY": [
         "MM/RR"
       ],
+      "More plans are available in other currencies": [
+        "Więcej planów jest dostępnych w innych walutach"
+      ],
       "Payment Processing": [
         "Przetwarzanie płatności"
       ],
@@ -4198,6 +4201,9 @@
       "Payment method updated": [
         "Metoda płatności została zaktualizowana"
       ],
+      "Problem reported": [
+        "Problem został zgłoszony"
+      ],
       "Verification successful": [
         "Weryfikacja powiodła się"
       ],
@@ -4489,9 +4495,6 @@
       ]
     },
     "Wallet": {
-      "An error occured": [
-        "Wystąpił błąd"
-      ],
       "Close": [
         "Zamknij"
       ],
@@ -4601,9 +4604,6 @@
       ],
       "Send": [
         "Wyślij"
-      ],
-      "The current fingerprint doesn't match stored one": [
-        "Odcisk palca nie pasuje do zapisanego"
       ]
     },
     "wallet dashboard": {
@@ -5058,9 +5058,6 @@
       "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
         "Połącz e-mail z tym kontem portfela, aby inni użytkownicy ${ WALLET_APP_NAME } mogli łatwo wysyłać bitcoiny na Twój e-mail."
       ],
-      "Local storage cleared": [
-        "Magazyn lokalny został wyczyszczony"
-      ],
       "New fiat currency applied": [
         "Nowa waluta FIAT została zastosowana"
       ],
@@ -5373,15 +5370,7 @@
         "Etykieta transakcji została zaktualizowana"
       ]
     },
-    "Wallet Transaction List": {
-      "Page ${ displayedPageNumber }": [
-        "Strona ${ displayedPageNumber }"
-      ]
-    },
     "Wallet transactions": {
-      "Syncing transactions": [
-        "Synchronizowanie transakcji"
-      ],
       "Transactions": [
         "Transakcje"
       ]
