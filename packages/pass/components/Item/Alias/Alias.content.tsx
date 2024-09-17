@@ -16,7 +16,7 @@ import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 
-import { AliasSyncToggle } from './AliasSyncToggle';
+import { AliasStatusToggle } from './AliasStatusToggle';
 
 export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; actions: ReactNode }>> = ({
     revision,
@@ -49,7 +49,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     const isViewingItemHistory = revisionTime !== modifyTime;
     const aliasActions =
         canToggleStatus && !isViewingItemHistory ? (
-            <AliasSyncToggle disabled={optimistic} revision={revision} />
+            <AliasStatusToggle disabled={optimistic} revision={revision} />
         ) : undefined;
 
     useEffect(() => {
