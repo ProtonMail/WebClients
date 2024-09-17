@@ -31,6 +31,7 @@ export type ItemViewProps<T extends ItemType = ItemType> = {
 export type ItemContentProps<T extends ItemType = ItemType, Extra = {}> = {
     diff?: ItemDiff<T>;
     revision: ItemRevision<T>;
+    history?: boolean;
     secureLinkItem?: boolean;
 } & Partial<Extra>;
 
