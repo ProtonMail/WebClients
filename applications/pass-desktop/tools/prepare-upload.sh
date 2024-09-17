@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 set -euo
 
+echoerr() { echo "$@" 1>&2; }
+
 CWD=$(pwd)
 BUILD_DIR="applications/pass-desktop/out/make"
 PLATFORM="$1"
@@ -10,6 +12,12 @@ if [ -n "${CI_COMMIT_TAG:-}" ] && [ "${CI_COMMIT_TAG#*-}" = "$CI_COMMIT_TAG" ]; 
   CHANNEL="Stable"
 else
   CHANNEL="EarlyAccess"
+fi
+
+# Currently, we're only supporting the stable channel
+if [ "$CHANNEL" != "Stable" ]; then
+  echoerr "Channels other than 'Stable' are currently unsupported"
+  exit 1
 fi
 
 # Copy artefacts
@@ -26,9 +34,6 @@ fi
 cd "$CWD"
 if [ "$CHANNEL" = "Stable" ]; then
   find "$BUILD_DIR" -type f > artifact.list
-else
-  # Omit RELEASES and RELEASES.json on non-stable deploys
-  find "$BUILD_DIR" -type f ! -name "RELEASES*" > artifact.list
 fi
 
 printf "PASS_RELEASE_CHANNEL=%s\nPASS_RELEASE_PLATFORM=%s" "$CHANNEL" "$PLATFORM" > deploy.env
