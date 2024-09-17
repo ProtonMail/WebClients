@@ -223,6 +223,9 @@
       "Create and copy alias": [
         "Opret og kopier et alias"
       ],
+      "Create free account": [
+        "Opret gratis konto"
+      ],
       "Create link": [
         "Opret link"
       ],
@@ -389,6 +392,9 @@
       ],
       "Get verification code": [
         "Få bekræftelseskode"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Gå til ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Gå til etikette"
@@ -707,9 +713,6 @@
       ],
       "Save changes": [
         "Gem ændringer"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Gem på ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Scan og download"
@@ -4091,6 +4094,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Er du sikker på, at du ønsker at slette de valgte elementer permanent fra papirkurven?"
       ],
+      "Are you sure you want to proceed?": [
+        "Er du sikker på, at du vil fortsætte?"
+      ],
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
@@ -4773,6 +4779,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Bemærk, i det øjeblik du klikker på knappen 'Bekræft' , vil din konto have ${ remainingCreditsFormatted } kreditter tilbage."
+      ],
       "Please open the document to view it.": [
         "Åbn venligst dokumentet for at se det."
       ],
@@ -4843,6 +4852,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privat søgning aktiveret. Du kan nu lukke dialogen og søger efter filer og mapper."
       ],
+      "Public link": [
+        "Offentligt link"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
@@ -4891,8 +4903,8 @@
       "Retry now": [
         "Forsøg igen nu"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Gemt i ${ DRIVE_SHORT_APP_NAME }"
+      "Saving...": [
+        "Gemmer..."
       ],
       "Scan issue": [
         "Problem med scanning"
@@ -5313,6 +5325,9 @@
       "You already have a free account": [
         "Du har allerede en gratis konto"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Du er ved at forlade det delte element. Du vil ikke kunne tilgå det igen, indtil ejeren deler det med dig."
+      ],
       "You are about to open another browser tab and visit:": [
         "Du er ved at åbne en anden browserfane og besøge:"
       ],
@@ -5378,6 +5393,10 @@
       ],
       "You will lose all unsaved changes.": [
         "Du vil miste alle ikke-gemte ændringer."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Du skal gemme det igen fra den offentlige linkside.",
+        "Du skal gemme dem igen fra den offentlige linkside."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
@@ -6802,9 +6821,6 @@
       "Data breach monitoring": [
         "Overvågning af databrud"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Overvågning af databrud (kommer snart)"
-      ],
       "Desktop app": [
         "Skrivebordsapp"
       ],
@@ -7670,6 +7686,14 @@
       "The link to your item was deleted": [
         "Linket til dit element blev slettet"
       ],
+      "This item was not removed from your list": [
+        "Elementet blev ikke fjernet fra din liste.",
+        "Nogle elementer kunne ikke fjernes fra din liste"
+      ],
+      "This item was succefully removed from your list": [
+        "Elementet blev fjernet fra din liste.",
+        "Alle elementer blev fjernet fra din liste."
+      ],
       "Trash failed to be emptied": [
         "Papirkurv kunne ikke tømmes"
       ],
@@ -7893,6 +7917,9 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "More plans are available in other currencies": [
+        "Flere abonnementer er tilgængelige i andre valutaer"
       ],
       "Payment Processing": [
         "Betalingsbehandling"
@@ -9314,6 +9341,9 @@
       "Preferences saved": [
         "Præferencer gemt"
       ],
+      "Problem reported": [
+        "Problem indberettet"
+      ],
       "Recovery has started": [
         "Gendannelse er påbegyndt"
       ],
@@ -9526,6 +9556,10 @@
       "Are you sure you want to close the preview?": [
         "Er du sikker på, at du vil lukke forhåndsvisningen?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Er du sikker på, at du vil fjerne dette element fra din liste?",
+        "Er du sikker på, at du vil fjerne disse elementer fra din liste?"
+      ],
       "Billing cycle": [
         "Faktureringscyklus"
       ],
@@ -9570,6 +9604,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bekræft tab af ${ BRAND_NAME }-bonusser"
+      ],
+      "Confirmation required?": [
+        "Bekræftelse påkrævet?"
       ],
       "Contact Details": [
         "Kundeoplysninger"
