@@ -5,6 +5,7 @@ import type {
     BackLink,
     SecurityCheckupAction,
     SecurityCheckupSession,
+    SecurityCheckupSource,
 } from '@proton/shared/lib/interfaces/securityCheckup';
 import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 import type SecurityState from '@proton/shared/lib/interfaces/securityCheckup/SecurityState';
@@ -23,6 +24,7 @@ interface SecurityCheckupState {
     furtherActions: SecurityCheckupAction[];
     loading: boolean;
     backLink?: BackLink;
+    source?: SecurityCheckupSource;
 }
 
 export interface SecurityCheckupReduxState {
@@ -106,6 +108,14 @@ export const securityCheckupSlice = createSlice({
         },
         clearSession: (state) => {
             state.session = undefined;
+        },
+        setSource: (state, action: PayloadAction<{ source: SecurityCheckupSource | undefined }>) => {
+            const { source } = action.payload;
+
+            state.source = source;
+        },
+        clearSource: (state) => {
+            state.source = undefined;
         },
     },
 });

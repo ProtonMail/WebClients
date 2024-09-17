@@ -22,6 +22,7 @@ import type { UserKeysState } from '../userKeys';
 import { selectUserKeys } from '../userKeys';
 import type { UserSettingsState } from '../userSettings';
 import { selectUserSettings } from '../userSettings';
+import getSource from './helpers/getSource';
 import getValidSecurityCheckupSession from './helpers/getValidSecurityCheckupSession';
 import {
     removeSecurityCheckupSessionItem,
@@ -277,6 +278,31 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
                     ...dimensions,
                 },
             });
+        },
+    });
+
+    /**
+     * Get touchpoint source
+     */
+    startListening({
+        predicate: (_, currentState) => {
+            const currentSecurityCheckup = selectSecurityCheckup(currentState);
+
+            return !currentSecurityCheckup.source;
+        },
+        effect: async (action, listenerApi) => {
+            // Only calculate source if we are in the security checkup
+            if (!listenerApi.extra.history.location.pathname.includes(SECURITY_CHECKUP_PATHS.ROOT)) {
+                return;
+            }
+
+            const { pathname, search } = listenerApi.extra.history.location;
+            const source = getSource({ pathname, search: new URLSearchParams(search) });
+            if (!source) {
+                return;
+            }
+
+            listenerApi.dispatch(securityCheckupSlice.actions.setSource({ source }));
         },
     });
 };
