@@ -1371,3 +1371,15 @@ export const RECOVERY_KIT_FILE_NAME = 'proton-recovery-kit.pdf';
 export const RECOVERY_FILE_FILE_NAME = `proton_recovery${KEY_FILE_EXTENSION}`;
 
 export const TWO_FA_RECOVERY_CODES_FILE_NAME = `proton_2FA_recovery_codes.txt`;
+
+export const MAIL_MOBILE_APP_LINKS = {
+    qrCode: 'https://proton.me/mailapp',
+    appStore: 'https://apps.apple.com/app/apple-store/id979659905',
+    playStore: 'https://play.google.com/store/apps/details?id=ch.protonmail.android',
+};
+
+export const CALENDAR_MOBILE_APP_LINKS = {
+    qrCode: 'https://proton.me/calapp',
+    appStore: 'https://apps.apple.com/app/apple-store/id1514709943',
+    playStore: 'https://play.google.com/store/apps/details?id=me.proton.android.calendar',
+};

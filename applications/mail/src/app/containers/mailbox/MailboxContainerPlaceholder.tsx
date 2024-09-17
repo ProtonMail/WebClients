@@ -3,8 +3,8 @@ import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 
 import TipBox from 'proton-mail/components/list/tip/TipBox';
 import useTips from 'proton-mail/components/list/tip/useTips';
+import UserOnboardingMessageListPlaceholder from 'proton-mail/components/onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
 
-import UsersOnboardingChecklist from '../../components/checklist/UsersOnboardingChecklist';
 import PlaceholderView from '../../components/view/PlaceholderView';
 import { useGetStartedChecklist } from '../onboardingChecklist/provider/GetStartedChecklistProvider';
 
@@ -25,7 +25,7 @@ const MailboxContainerPlaceholder = ({ showPlaceholder, welcomeFlag, labelID, ch
     }
 
     if (showPlaceholder && canDisplayChecklist && displayState === CHECKLIST_DISPLAY_TYPE.FULL) {
-        return <UsersOnboardingChecklist />;
+        return <UserOnboardingMessageListPlaceholder location="mailboxContainerPlaceholder" />;
     }
 
     if (showPlaceholder) {

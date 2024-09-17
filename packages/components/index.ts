@@ -584,6 +584,7 @@ export type { OnboardingStepProps, OnboardingStepRenderCallback } from './contai
 export { default as OnboardingContent } from './containers/onboarding/OnboardingContent';
 export { default as OnboardingModal } from './containers/onboarding/OnboardingModal';
 export { default as OnboardingStep } from './containers/onboarding/OnboardingStep';
+export { ONBOARDING_THEMES } from './containers/onboarding/constants';
 export { default as AuthenticationLogs } from './containers/organization/AuthenticationLogs';
 export { default as OrganizationGroupsManagementSection } from './containers/organization/groups/OrganizationGroupsManagementSection';
 export { default as LightLabellingFeatureModal } from './containers/organization/logoUpload/LightLabellingFeatureModal';

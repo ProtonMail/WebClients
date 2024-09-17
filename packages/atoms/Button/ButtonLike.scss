@@ -239,6 +239,14 @@
 	}
 }
 
+// exception for some designs, will see if we introduce a new variant soon
+.button-solid-norm-light {
+	--button-default-background-color: var(--interaction-norm-minor-2);
+	--button-hover-background-color: var(--interaction-norm-minor-2);
+	--button-default-text-color: var(--interaction-norm);
+	--button-hover-text-color: var(--interaction-norm);
+}
+
 /*
  * Modifiers
  */
