@@ -918,6 +918,48 @@ export default function DocumentEditorToolbar({
             <ToolbarSeparator />
           </>
         )}
+        {showInsertOptionsInToolbar && (
+          <>
+            <ToolbarButton
+              label={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" label={c('Action').t`Insert link`} />}
+              disabled={!isEditable || isSuggestionMode}
+              active={isLink}
+              onClick={editLink}
+              data-testid="link-button"
+            >
+              <Icon name="link" className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarButton
+              label={
+                <ShortcutLabelContainer>
+                  <ShortcutLabelText>{c('Action').t`Insert image`}</ShortcutLabelText>
+                </ShortcutLabelContainer>
+              }
+              disabled={!isEditable || isSuggestionMode}
+              onClick={insertImage}
+              data-testid="image-insert-button"
+            >
+              <Icon name="image" className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarButton
+              label={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" label={c('Action').t`Insert table`} />}
+              disabled={!isEditable || isSuggestionMode}
+              onClick={insertTable}
+              data-testid="table-button"
+            >
+              <TableIcon className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarButton
+              label={<ShortcutLabel shortcut="INSERT_COMMENT_SHORTCUT" label={c('Action').t`Insert comment`} />}
+              disabled={!isEditable || isSuggestionMode}
+              onClick={insertComment}
+              data-testid="comment-button"
+            >
+              <AddCommentIcon className="h-4 w-4 fill-current" />
+            </ToolbarButton>
+            <ToolbarSeparator />
+          </>
+        )}
         {showAlignmentOptionsInToolbar && (
           <>
             <SimpleDropdown
@@ -1114,48 +1156,6 @@ export default function DocumentEditorToolbar({
             <ToolbarSeparator />
           </>
         )}
-        {showInsertOptionsInToolbar && (
-          <>
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" label={c('Action').t`Insert link`} />}
-              disabled={!isEditable || isSuggestionMode}
-              active={isLink}
-              onClick={editLink}
-              data-testid="link-button"
-            >
-              <Icon name="link" className="h-4 w-4 fill-current" />
-            </ToolbarButton>
-            <ToolbarButton
-              label={
-                <ShortcutLabelContainer>
-                  <ShortcutLabelText>{c('Action').t`Insert image`}</ShortcutLabelText>
-                </ShortcutLabelContainer>
-              }
-              disabled={!isEditable || isSuggestionMode}
-              onClick={insertImage}
-              data-testid="image-insert-button"
-            >
-              <Icon name="image" className="h-4 w-4 fill-current" />
-            </ToolbarButton>
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" label={c('Action').t`Insert table`} />}
-              disabled={!isEditable || isSuggestionMode}
-              onClick={insertTable}
-              data-testid="table-button"
-            >
-              <TableIcon className="h-4 w-4 fill-current" />
-            </ToolbarButton>
-            <ToolbarButton
-              label={<ShortcutLabel shortcut="INSERT_COMMENT_SHORTCUT" label={c('Action').t`Insert comment`} />}
-              disabled={!isEditable || isSuggestionMode}
-              onClick={insertComment}
-              data-testid="comment-button"
-            >
-              <AddCommentIcon className="h-4 w-4 fill-current" />
-            </ToolbarButton>
-            <ToolbarSeparator />
-          </>
-        )}
         <SimpleDropdown
           as={ToolbarButton}
           shape="ghost"
@@ -1168,8 +1168,50 @@ export default function DocumentEditorToolbar({
           data-testid="content-properties-button"
         >
           <DropdownMenu className="[&>li>hr]:min-h-px">
+            {!showInsertOptionsInToolbar && (
+              <>
+                <ToolbarTooltip
+                  originalPlacement="right"
+                  title={
+                    <ShortcutLabelContainer>
+                      <ShortcutLabelText>Insert image</ShortcutLabelText>
+                    </ShortcutLabelContainer>
+                  }
+                >
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={insertImage}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="image" />
+                    {c('Action').t`Insert image`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={editLink}
+                    disabled={!isEditable}
+                  >
+                    <Icon name="link" />
+                    {c('Action').t`Link`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" />}>
+                  <DropdownMenuButton
+                    className="flex items-center gap-2 text-left text-sm"
+                    onClick={insertTable}
+                    disabled={!isEditable}
+                  >
+                    <TableIcon className="h-4 w-4 fill-current" />
+                    {c('Action').t`Insert table`}
+                  </DropdownMenuButton>
+                </ToolbarTooltip>
+              </>
+            )}
             {!showUndoRedoInToolbar && (
               <>
+                <hr className="my-1" />
                 <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="UNDO_SHORTCUT" />}>
                   <DropdownMenuButton
                     className="flex items-center gap-2 text-left text-sm"
@@ -1243,48 +1285,6 @@ export default function DocumentEditorToolbar({
                   elementFormat={elementFormat}
                   isEditable={isEditable}
                 />
-              </>
-            )}
-            {!showInsertOptionsInToolbar && (
-              <>
-                <hr className="my-1" />
-                <ToolbarTooltip
-                  originalPlacement="right"
-                  title={
-                    <ShortcutLabelContainer>
-                      <ShortcutLabelText>Insert image</ShortcutLabelText>
-                    </ShortcutLabelContainer>
-                  }
-                >
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={insertImage}
-                    disabled={!isEditable}
-                  >
-                    <Icon name="image" />
-                    {c('Action').t`Insert image`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="EDIT_LINK_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={editLink}
-                    disabled={!isEditable}
-                  >
-                    <Icon name="link" />
-                    {c('Action').t`Link`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
-                <ToolbarTooltip originalPlacement="right" title={<ShortcutLabel shortcut="INSERT_TABLE_SHORTCUT" />}>
-                  <DropdownMenuButton
-                    className="flex items-center gap-2 text-left text-sm"
-                    onClick={insertTable}
-                    disabled={!isEditable}
-                  >
-                    <TableIcon className="h-4 w-4 fill-current" />
-                    {c('Action').t`Insert table`}
-                  </DropdownMenuButton>
-                </ToolbarTooltip>
               </>
             )}
             {!showListTypeOptionsInToolbar && (
