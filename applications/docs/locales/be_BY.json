@@ -294,6 +294,9 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Перайсці ў ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Перайсці да меткі"
       ],
@@ -554,6 +557,9 @@
       ],
       "Switch or add account": [
         "Змяніць або дадаць уліковы запіс"
+      ],
+      "Take out of trash": [
+        "Выняць са сметніцы"
       ],
       "Trust": [
         "Давяраць"
@@ -2260,6 +2266,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Адбылася памылка пры спробе дубліравання дакумента. Паспрабуйце яшчэ раз."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Адбылася памылка пры спробе аднаўлення дакумента са сметніцы. Паспрабуйце яшчэ раз."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Адбылася памылка пры спробе перамяшчэння дакумента ў сметніцу. Паспрабуйце яшчэ раз."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Адбылася памылка пры стварэнні новага дакумента. Паспрабуйце яшчэ раз."
       ],
@@ -3485,6 +3497,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "Дакумент \"${ documentTitle }\" быў перамешчаны ў сметніцу. Ён застанецца там пакуль не будзе адноўлены або незваротна выдалены."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "Дакумент \"${ documentTitle }\" знаходзіцца ў сметніцы і застанецца там пакуль вы не выдаліце яго незваротна."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } адрас электроннай пошты",
         "${ addressCount } адрасы электроннай пошты",
@@ -3817,6 +3835,12 @@
       ],
       "Display word count": [
         "Паказваць колькасць слоў"
+      ],
+      "Document is in trash": [
+        "Дакумент знаходзіцца ў сметніцы"
+      ],
+      "Document moved to trash": [
+        "Дакумент перамешчаны ў сметніцу"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Нічога не бачыце? Праверце, ці адключаны блакіроўшчыкі ўсплывальных вокнаў."
@@ -4192,6 +4216,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца наступная колькасць крэдытаў: ${ remainingCreditsFormatted }."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Забяспечце назву і адрас электроннай пошты для стварэння групы."
@@ -5902,9 +5929,6 @@
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Назіранне за ўцечкай даных (неўзабаве з'явіцца)"
-      ],
       "Desktop app": [
         "Настольная праграма"
       ],
@@ -6890,6 +6914,9 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "More plans are available in other currencies": [
+        "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
       "Payment Processing": [
         "Апрацоўка плацяжу"
@@ -7909,6 +7936,9 @@
       ],
       "Preferences saved": [
         "Параметры захаваны"
+      ],
+      "Problem reported": [
+        "Паведамлена аб праблеме"
       ],
       "Secure link copied": [
         "Бяспечная спасылка скапіявана"

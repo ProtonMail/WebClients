@@ -288,6 +288,9 @@
       "Get verification code": [
         "Invia il codice di verifica"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Vai a ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Vai all'etichetta"
       ],
@@ -545,6 +548,9 @@
       ],
       "Switch or add account": [
         "Cambia o aggiungi account"
+      ],
+      "Take out of trash": [
+        "Ripristina dal cestino"
       ],
       "Trust": [
         "Considera attendibile"
@@ -2231,6 +2237,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Si è verificato un errore durante la duplicazione del documento. Riprova."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Si è verificato un errore durante il tentativo di ripristinare il documento. Per favore riprova."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Si è verificato un errore durante il tentativo di eliminare il documento. Per favore riprova."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Si è verificato un errore durante la creazione del documento. Riprova."
       ],
@@ -3410,6 +3422,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "\"${ documentTitle }\" è stato spostato nel cestino. Rimarrà lì finché non lo ripristinerai o lo eliminerai definitivamente."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "\"${ documentTitle }\" è nel cestino e rimarrà lì finché non lo eliminerai definitivamente."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } indirizzo email",
         "${ addressCount } indirizzi email"
@@ -3698,6 +3716,12 @@
       ],
       "Display word count": [
         "Visualizza il conteggio delle parole"
+      ],
+      "Document is in trash": [
+        "Il documento è nel cestino"
+      ],
+      "Document moved to trash": [
+        "Documento spostato nel cestino"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "La finestra non si apre? Ricorda di disabilitare qualsiasi blocco pop-up."
@@ -4067,6 +4091,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ remainingCreditsFormatted } crediti rimanenti."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Fornisci un nome e un indirizzo email per la creazione di un gruppo."
@@ -5719,9 +5746,6 @@
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoraggio di violazioni di dati (in arrivo)"
-      ],
       "Desktop app": [
         "Applicazione desktop"
       ],
@@ -6670,6 +6694,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Sono disponibili altri piani in altre valute"
       ],
       "Payment Processing": [
         "Elaborazione del pagamento"
@@ -7635,6 +7662,9 @@
       ],
       "Preferences saved": [
         "Preferenze salvate"
+      ],
+      "Problem reported": [
+        "Problema segnalato"
       ],
       "Secure link copied": [
         "Link sicuro copiato"

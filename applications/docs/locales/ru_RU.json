@@ -114,6 +114,12 @@
       "Cancel subscription": [
         "Отменить подписку"
       ],
+      "characters": [
+        "символов"
+      ],
+      "characters out of": [
+        "символов из"
+      ],
       "Chat with us": [
         "Поговорите с нами"
       ],
@@ -287,6 +293,9 @@
       ],
       "Get verification code": [
         "Получить проверочный код"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Перейдите в ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Перейти к ярлыку"
@@ -546,6 +555,9 @@
       "Switch or add account": [
         "Переключить или добавить аккаунт"
       ],
+      "Take out of trash": [
+        "Извлечь из Корзины"
+      ],
       "Trust": [
         "Доверять"
       ],
@@ -623,6 +635,12 @@
       ],
       "Word count": [
         "Количество слов"
+      ],
+      "words": [
+        "слов"
+      ],
+      "words out of": [
+        "слов из"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контакта",
@@ -2245,6 +2263,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "При попытке дублирования документа произошла ошибка. Пожалуйста, попробуйте еще раз."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "При попытке восстановить документ произошла ошибка. Попробуйте еще раз."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "При попытке отправить документ в корзину произошла ошибка. Попробуйте еще раз."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "При создании нового документа произошла ошибка. Попробуйте еще раз."
       ],
@@ -3470,6 +3494,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "«${ documentTitle }» был перемещен в Корзину. Он останется там, пока вы не восстановите его или не удалите навсегда."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "«${ documentTitle }» попадает в корзину и будет там находиться до тех пор, пока вы не удалите его окончательно."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } адрес электронной почты",
         "${ addressCount } адреса электронной почты",
@@ -3704,6 +3734,12 @@
       "Change your password": [
         "Измените пароль"
       ],
+      "characters": [
+        "символов"
+      ],
+      "characters without spaces": [
+        "символов без пробелов"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "Проверка контакта ${ progress } из ${ max }..."
       ],
@@ -3796,6 +3832,12 @@
       ],
       "Display word count": [
         "Показывать количество слов"
+      ],
+      "Document is in trash": [
+        "Документ находится в Корзине"
+      ],
+      "Document moved to trash": [
+        "Документ перемещен в Корзину"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ничего не видно? Не забудьте отключить блокировку всплывающих окон."
@@ -4094,6 +4136,9 @@
       "No version history available": [
         "История версий отсутствует"
       ],
+      "No version history batches available": [
+        "Нет доступных пакетов истории версий"
+      ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Ни один из загруженных ключей не действителен для шифрования. Чтобы отправить сообщения по этому адресу, пожалуйста, загрузите действующий ключ или отключите функцию \"Зашифровать электронные письма\"."
       ],
@@ -4168,6 +4213,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Пожалуйста, обратите внимание, что этот процесс может занять некоторое время в зависимости от размера вашей адресной книги."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Обратите внимание, что после нажатия на «Подтвердить» на вашем счету останется ${ remainingCreditsFormatted }."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Пожалуйста, предоставьте имя и email-адрес для создания группы"
@@ -4471,6 +4519,9 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "При настройке двухфакторной аутентификации мы предоставляем коды восстановления, которые можно использовать для входа в систему, если вы потеряете доступ к приложению аутентификатора."
+      ],
+      "words": [
+        "слов"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
@@ -5824,9 +5875,6 @@
       "Data breach monitoring": [
         "Отслеживание утечек данных"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Отслеживание утечек данных (скоро появится)"
-      ],
       "Desktop app": [
         "Приложение для настольного компьютера"
       ],
@@ -6812,6 +6860,9 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "More plans are available in other currencies": [
+        "Другие тарифы доступны в других валютах"
       ],
       "Payment Processing": [
         "Обработка платежа"
@@ -7831,6 +7882,9 @@
       ],
       "Preferences saved": [
         "Настройки сохранены"
+      ],
+      "Problem reported": [
+        "О проблеме сообщено"
       ],
       "Secure link copied": [
         "Защищенная ссылка скопирована"
