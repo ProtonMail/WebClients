@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 80 80">
+    <g clip-path="url(#a)">
+        <rect width="80" height="80" fill="url(#b)" fill-opacity=".09" rx="20" />
+        <g filter="url(#c)">
+            <path
+                fill="url(#d)"
+                fill-rule="evenodd"
+                d="M37.437 19.835a7.5 7.5 0 0 1 5.126 0l14.45 5.255A1.5 1.5 0 0 1 58 26.5v16.876a13.5 13.5 0 0 1-7.035 11.851l-10.247 5.59a1.5 1.5 0 0 1-1.436 0l-10.246-5.59A13.5 13.5 0 0 1 22 43.376V26.499a1.5 1.5 0 0 1 .987-1.41l14.45-5.254Zm4.1 2.82a4.5 4.5 0 0 0-3.075 0L25 27.55v15.826a10.5 10.5 0 0 0 5.472 9.218L40 57.79l9.528-5.197A10.5 10.5 0 0 0 55 43.376V27.55l-13.462-4.895Z"
+                clip-rule="evenodd"
+            />
+            <path fill="url(#e)" d="M40.6 38.5h6.9L37 53.5l2.4-12h-6.9l10.5-15-2.4 12Z" />
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="b" x1="-3.148" x2="99.262" y1="-2.92" y2="34.008" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#ECAAFF" />
+            <stop offset="1" stop-color="#6A48F6" />
+        </linearGradient>
+        <linearGradient id="d" x1="54.667" x2="28.195" y1="7.35" y2="64.909" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#EEBEFF" />
+            <stop offset="1" stop-color="#5228FF" />
+        </linearGradient>
+        <linearGradient id="e" x1="54.667" x2="28.195" y1="7.35" y2="64.909" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#EEBEFF" />
+            <stop offset="1" stop-color="#5228FF" />
+        </linearGradient>
+        <clipPath id="a">
+            <rect width="80" height="80" fill="#fff" rx="20" />
+        </clipPath>
+        <filter
+            id="c"
+            width="66"
+            height="72.109"
+            x="7"
+            y="14.384"
+            color-interpolation-filters="sRGB"
+            filterUnits="userSpaceOnUse"
+        >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dy="2.22" />
+            <feGaussianBlur stdDeviation="1" />
+            <feColorMatrix values="0 0 0 0 0.290196 0 0 0 0 0.176471 0 0 0 0 0.772549 0 0 0 0.04 0" />
+            <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_5889_45576" />
+            <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dy="10.493" />
+            <feGaussianBlur stdDeviation="7.5" />
+            <feColorMatrix values="0 0 0 0 0.290196 0 0 0 0 0.176471 0 0 0 0 0.772549 0 0 0 0.05 0" />
+            <feBlend in2="effect1_dropShadow_5889_45576" result="effect2_dropShadow_5889_45576" />
+            <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dy="5" />
+            <feGaussianBlur stdDeviation="5" />
+            <feColorMatrix values="0 0 0 0 0.290196 0 0 0 0 0.176471 0 0 0 0 0.772549 0 0 0 0.05 0" />
+            <feBlend in2="effect2_dropShadow_5889_45576" result="effect3_dropShadow_5889_45576" />
+            <feBlend in="SourceGraphic" in2="effect3_dropShadow_5889_45576" result="shape" />
+        </filter>
+    </defs>
+</svg>
