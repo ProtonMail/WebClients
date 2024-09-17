@@ -70,11 +70,11 @@
       "Accept": [
         "Aceptar"
       ],
-      "Activate": [
-        "Activar"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activar ${ user.Name }@pm.me"
@@ -892,6 +892,9 @@
       "Resume": [
         "Reanudar"
       ],
+      "Resume membership": [
+        "Reanudar membresía"
+      ],
       "Retry": [
         "Reintentar"
       ],
@@ -1186,8 +1189,8 @@
       "Use authentication code": [
         "Usar código de autenticación"
       ],
-      "Use group permissions": [
-        "Usar los permisos del grupo"
+      "Use group sending permissions": [
+        "Usar permisos de envío del grupo"
       ],
       "Use recovery code": [
         "Usar código de recuperación"
@@ -1477,9 +1480,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Comprar ahora"
-      ],
-      "New": [
-        "Nuevo"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
@@ -5148,8 +5148,8 @@
       "${ BRAND_NAME } groups": [
         "Grupos de ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "*Solo una prueba gratuita por cliente."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "* Solo una prueba gratuita por usuario. El precio regular se aplica después."
       ],
       "Accounts with custom domains cannot join a group plan.": [
         "Las cuentas con dominios personalizados no pueden unirse a un plan grupal."
@@ -5212,8 +5212,8 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "La suscripción se facturará al administrador principal de este plan."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Para facilitar la transición, le ofrecemos una prueba de cortesía de 30 días de ${ BRAND_NAME } Unlimited*."
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "Para facilitar la transición, le daremos una prueba gratuita de 30 días de ${ BRAND_NAME } Unlimited*."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Recibió una invitación para unirse a ${ invite.OrganizationName }"
@@ -5264,8 +5264,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Solo una prueba gratuita por usuario."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "* Solo una prueba gratuita por usuario. El precio regular se aplica después."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Después de abandonar el plan, este usuario se moverá al plan ${ BRAND_NAME } Unlimited con una prueba gratuita de 30 días.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Por defecto, asignamos ${ formattedStorage } de almacenamiento a la cuenta del administrador. Puede gestionar el almacenamiento asignado para que se distribuya entre usuarios adicionales más adelante."
@@ -5278,9 +5281,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "La invitación se cancelará y el usuario no podrá unirse a ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "La cuenta del usuario se moverá a un plan Unlimited de ${ BRAND_NAME } para una prueba gratuita de 30 días*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Se necesita un dominio personalizado configurado para crear un usuario nuevo."
@@ -7338,9 +7338,6 @@
       "Group deleted": [
         "Grupo eliminado"
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Agrupe correos electrónicos en la misma conversación juntos en su bandeja de entrada o muéstrelos por separado."
-      ],
       "here": [
         "aquí"
       ],
@@ -7978,6 +7975,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Tome en cuenta que si elimina este filtro ${ nameDeleted }, dejaremos de procesar todas las acciones automatizadas que lo activa."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "please open a support ticket": [
         "abra un tiquete de soporte"
@@ -8977,6 +8977,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Puede activar el registro de autenticación para ver cuándo se accede a la cuenta y desde qué IP. Registraremos la dirección IP que accede a la cuenta y la hora, así como los intentos que no funcionaron."
       ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Puede activar la sección Fotos desde la interfaz usando el alternador de abajo."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Puede desbloquear inmediatamente la configuración anterior añadiendo ${ specificCountryCount } al número de direcciones IP en el plan o comuníquese con nosotros para obtener soluciones personalizadas."
       ],
@@ -9803,12 +9806,6 @@
       "Auto-detect primary time zone": [
         "Detectar automáticamente la zona horaria principal"
       ],
-      "Auto-load embedded images": [
-        "Cargar automáticamente las imágenes incrustadas"
-      ],
-      "Auto-load remote content": [
-        "Cargar automáticamente el contenido remoto"
-      ],
       "Auto-reply": [
         "Respuesta automática"
       ],
@@ -10141,9 +10138,6 @@
       ],
       "Group address": [
         "Dirección del grupo"
-      ],
-      "Group conversations": [
-        "Conversaciones grupales"
       ],
       "Group members": [
         "Miembros del grupo"
@@ -11317,11 +11311,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real brasileño"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franco suizo"
+      ],
+      "US Dollar": [
+        "Dólar estadounidense"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -11779,9 +11779,6 @@
       ],
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoreo de vulneración de datos (próximamente)"
       ],
       "Dedicated account manager": [
         "Gestor de cuentas dedicado"
@@ -13550,6 +13547,9 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "Más planes disponibles en otras divisas"
+      ],
       "Payment Processing": [
         "Procesando el pago"
       ],
@@ -13594,6 +13594,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Estamos procesando el pago de la factura. Espere hasta que se complete el pago antes de realizar cambios en su plan o actualizar sus detalles de pago. Gracias por su paciencia."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Se le cobrará ${ amountToCharge } de su método de pago seleccionado."
       ]
     },
     "Payments.Error": {
@@ -14756,6 +14759,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Solicitud de restablecimiento de contraseña"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Activar sección Fotos"
       ]
     },
     "Settings description": {
@@ -17027,6 +17035,9 @@
       ],
       "Phone": [
         "Teléfono"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Policies": [
         "Políticas"

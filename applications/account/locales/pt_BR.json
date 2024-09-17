@@ -70,11 +70,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -892,6 +892,9 @@
       "Resume": [
         "Retomar"
       ],
+      "Resume membership": [
+        "Continuar a adesão"
+      ],
       "Retry": [
         "Tentar novamente"
       ],
@@ -1186,8 +1189,8 @@
       "Use authentication code": [
         "Usar código de autenticação"
       ],
-      "Use group permissions": [
-        "Usar permissões de grupo"
+      "Use group sending permissions": [
+        "Usar as permissões de envio de grupo"
       ],
       "Use recovery code": [
         "Usar código de recuperação"
@@ -1467,6 +1470,9 @@
       "Fast and secure. No logs are kept.": [
         "Rápido e seguro. Nenhum registro é mantido."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Executar nos servidores da ${ BRAND_NAME }"
+      ],
       "Run on device": [
         "Executar no dispositivo"
       ]
@@ -1474,9 +1480,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Comprar agora"
-      ],
-      "New": [
-        "Novo"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Leve a produtividade dos e-mails a um novo nível. Deixe ${ BRAND_NAME } Scribe ajudá-lo a escrever, responder e revisar seus e-mails."
@@ -3675,7 +3678,7 @@
         "Cobrado a cada 2 anos a ${ amountBilled }. Os descontos são baseados no preço mensal padrão."
       ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Cobrado anualmente em ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
+        "Cobrado anualmente a ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
       ]
     },
     "duoplan2024: Info": {
@@ -3697,7 +3700,7 @@
         "Todos os recursos da ${ BRAND_NAME }, para 2 pessoas."
       ],
       "Double your storage": [
-        "Dobrar seu armazenamento"
+        "Dobre seu armazenamento"
       ]
     },
     "duoplan2024: Title": {
@@ -5148,8 +5151,8 @@
       "${ BRAND_NAME } groups": [
         "grupos da ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "*Somente uma avaliação gratuita por cliente."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Apenas uma avaliação gratuita por usuário. Depois disso, aplica-se o preço normal."
       ],
       "Accounts with custom domains cannot join a group plan.": [
         "Contas com domínios personalizados não podem participar de um plano de grupo."
@@ -5212,8 +5215,8 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "A assinatura será cobrada do administrador principal desse plano."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Para facilitar a transação, estamos oferecendo a você uma avaliação gratuita de 30 dias do ${ BRAND_NAME } Unlimited*."
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "Para facilitar a transição, oferecemos a você uma avaliação gratuita de 30 dias do ${ BRAND_NAME } Ilimitado*."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Você foi convidado a participar de ${ invite.OrganizationName }"
@@ -5264,8 +5267,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Somente uma avaliação gratuita por usuário."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Apenas uma avaliação gratuita por usuário. Depois disso, aplica-se o preço normal."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Após sair do seu plano, este usuário será movido para o plano ${ BRAND_NAME } Unlimited com 30 dias de avaliação gratuita."
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Por padrão, atribuímos o armazenamento ${ formattedStorage } à conta do administrador. Você pode gerenciar o armazenamento atribuído a ser distribuído entre usuários adicionais posteriormente."
@@ -5278,9 +5284,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "O convite será cancelado e o usuário não conseguirá participar ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "A conta do usuário será transferida para um plano ${ BRAND_NAME } Unlimited por um período de avaliação gratuita de 30 dias*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Para criar um novo usuário, é necessário um domínio personalizado configurado."
@@ -7085,6 +7088,9 @@
       "Disable recovery by ${ type }": [
         "Desativar recuperação por ${ type }"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Desativado desde ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Isso desativará a autenticação de dois fatores, incluindo o aplicativo autenticador e os métodos de chave de segurança."
       ],
@@ -7199,6 +7205,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Ative TLS ou SSL no serviço externo, se houver suporte."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Ativado desde ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Habilitar recuperação por frase novamente irá gerar uma nova frase de recuperação."
@@ -7340,9 +7349,6 @@
       ],
       "Group deleted": [
         "Grupo deletado"
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Agrupe e-mails na mesma conversa junto em sua Caixa de Entrada ou exiba-os separadamente."
       ],
       "here": [
         "aqui"
@@ -7984,6 +7990,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Observe que se você excluir este filtro ${ nameDeleted }, deixaremos de processar todas as ações automatizadas que ele aciona."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "please open a support ticket": [
         "abra um ticket de suporte"
@@ -8980,6 +8989,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Você pode ativar o registro de autenticação para ver quando sua conta e de qual IP ela é acessada. Registramos o endereço IP que acessa a conta e a hora, bem como as tentativas sem êxito."
       ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Você pode ativar a seção Fotos na interface usando o botão de alternância abaixo."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Você pode desbloquear imediatamente a configuração acima adicionando ${ specificCountryCount } ao número de endereços IP do seu plano, ou entrar em contato conosco para obter soluções personalizadas."
       ],
@@ -9806,12 +9818,6 @@
       "Auto-detect primary time zone": [
         "Detecção automática do fuso horário principal"
       ],
-      "Auto-load embedded images": [
-        "Carregar automaticamente imagens incorporadas"
-      ],
-      "Auto-load remote content": [
-        "Carregar automaticamente conteúdo remoto"
-      ],
       "Auto-reply": [
         "Resposta automática"
       ],
@@ -10144,9 +10150,6 @@
       ],
       "Group address": [
         "Endereço do grupo"
-      ],
-      "Group conversations": [
-        "Conversas em grupo"
       ],
       "Group members": [
         "Membros do grupo"
@@ -11082,6 +11085,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adicionar assistente de escrita ${ BRAND_NAME } Scribe"
       ],
@@ -11320,11 +11326,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real brasileiro"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franco suíço"
+      ],
+      "US Dollar": [
+        "Dólar americano"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -11785,9 +11797,6 @@
       ],
       "Data breach monitoring": [
         "Monitoramento de violação de dados"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoramento de violação de dados (em breve)"
       ],
       "Dedicated account manager": [
         "Gerente de conta dedicado"
@@ -12341,7 +12350,7 @@
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
       ],
       "Email everyone in a group with a single email address": [
-        "Envie e-mails para todos em um grupo com um único endereço de e-mail"
+        "Envie e-mail a todos em um grupo com um único endereço de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -12398,7 +12407,7 @@
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "O suporte por telefone da equipe de suporte do cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 20 ou mais usuários"
+        "O suporte por telefone está disponível na equipe de Suporte ao Cliente da ${ BRAND_NAME } durante o horário comercial europeu, para clientes com 20 ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
@@ -13586,6 +13595,9 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "Mais planos estão disponíveis em outras moedas"
+      ],
       "Payment Processing": [
         "Processando pagamento"
       ],
@@ -13630,6 +13642,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Estamos processando o seu pagamento da fatura. Aguarde o pagamento ser completado antes de modificar o seu plano ou atualizar os seus detalhes de pagamento. Agradecemos a sua paciência."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Você será cobrado ${ amountToCharge } do método de pagamento selecionado."
       ]
     },
     "Payments.Error": {
@@ -14792,6 +14807,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Solicitar redefinição de senha"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Ativar a seção Fotos"
       ]
     },
     "Settings description": {
@@ -15985,6 +16005,9 @@
       "Premium address created": [
         "Endereço premium criado"
       ],
+      "Problem reported": [
+        "Problema reportado"
+      ],
       "Resuming import": [
         "Retomando a importação"
       ],
@@ -17066,6 +17089,9 @@
       ],
       "Phone": [
         "Telefone"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Policies": [
         "Políticas"

@@ -70,11 +70,11 @@
       "Accept": [
         "Acceptera"
       ],
-      "Activate": [
-        "Aktivera"
-      ],
       "activate": [
         "aktivera"
+      ],
+      "Activate": [
+        "Aktivera"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
@@ -892,6 +892,9 @@
       "Resume": [
         "Återuppta"
       ],
+      "Resume membership": [
+        "Återuppta medlemskap"
+      ],
       "Retry": [
         "Försök igen"
       ],
@@ -1186,9 +1189,6 @@
       "Use authentication code": [
         "Använd autentiseringskod"
       ],
-      "Use group permissions": [
-        "Använd gruppbehörigheter"
-      ],
       "Use recovery code": [
         "Använd återställningskod"
       ],
@@ -1463,6 +1463,9 @@
       "Fast and secure. No logs are kept.": [
         "Snabbt och säkert. Inga loggar förs."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Kör på ${ BRAND_NAME }-servrar"
+      ],
       "Run on device": [
         "Kör på enhet"
       ]
@@ -1470,9 +1473,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Köp nu"
-      ],
-      "New": [
-        "Nytt"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ta e-postproduktivitet till nya nivåer. Låt ${ BRAND_NAME } Scribe hjälpa dig att skriva, svara på och korrekturläsa din e-post."
@@ -5126,8 +5126,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
-      "*Only one free trial per customer.": [
-        "*Endast en gratis provperiod per kund."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Endast en gratis provperiod per användare. Ordinarie priser tillämpas därefter."
       ],
       "Accounts with custom domains cannot join a group plan.": [
         "Konton med anpassade domäner kan inte gå med i ett gruppaket"
@@ -5190,8 +5190,8 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "För att underlätta övergången ger vi dig en 30-dagars provperiod på ${ BRAND_NAME } Unlimited*."
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "För att underlätta övergången ger vi dig en 30-dagars gratis provperiod på ${ BRAND_NAME } Unlimited*."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du är inbjuden att gå med i ${ invite.OrganizationName }"
@@ -5242,8 +5242,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Endast en gratis provperiod per användare."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Endast en gratis provperiod per användare. Ordinarie priser tillämpas därefter."
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Som standard tilldelar vi ${ formattedStorage } lagringsutrymme till administratörskontot. Du kan hantera det tilldelade lagringsutrymmet för att distribueras mellan ytterligare användare senare."
@@ -5256,9 +5256,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Inbjudan kommer att avbrytas och användaren kommer inte att kunna gå med i ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Användarens konto kommer att flyttas till ett ${ BRAND_NAME } Unlimited-paket för en 30-dagars gratis provperiod*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "För att skapa en ny användare krävs en konfigurerad anpassad domän."
@@ -7053,6 +7050,9 @@
       "Disable recovery by ${ type }": [
         "Inaktivera återställning med ${ type }"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Inaktiverad sedan ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Inaktivering av tvåfaktorsautentisering kommer göra ditt konto mindre säkert. Fortsätt endast om det är absolut nödvändigt."
       ],
@@ -7167,6 +7167,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Aktivera TLS eller SSL på den externa tjänsten om det stöds."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Aktiverad sedan ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Att aktivera återställning med fras igen kommer generera en ny återställningsfras."
@@ -7302,9 +7305,6 @@
       ],
       "Group deleted": [
         "Grupp borttagen"
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Gruppera e-post i samma konversation tillsammans i din inkorg eller visa dem separat."
       ],
       "here": [
         "här"
@@ -9718,12 +9718,6 @@
       "Auto-detect primary time zone": [
         "Upptäckt primär tidszon automatiskt"
       ],
-      "Auto-load embedded images": [
-        "Ladda inbäddade bilder automatiskt"
-      ],
-      "Auto-load remote content": [
-        "Ladda fjärrinnehåll automatiskt"
-      ],
       "Auto-reply": [
         "Autosvar"
       ],
@@ -10056,9 +10050,6 @@
       ],
       "Group address": [
         "Gruppadress"
-      ],
-      "Group conversations": [
-        "Gruppkonversationer"
       ],
       "Group members": [
         "Gruppmedlemmar"
@@ -11226,6 +11217,9 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Brasiliansk real"
+      ],
       "Euro": [
         "Euro"
       ],
@@ -11685,9 +11679,6 @@
       ],
       "Data breach monitoring": [
         "Dataintrångsövervakning"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Dataintrångsövervakning (kommer snart)"
       ],
       "Dedicated account manager": [
         "Dedikerad kontohanterare"
@@ -13483,6 +13474,9 @@
       "MM/YY": [
         "MM/ÅÅ"
       ],
+      "More plans are available in other currencies": [
+        "Fler paket är tillgängliga i andra valutor"
+      ],
       "Payment Processing": [
         "Betalning behandlas"
       ],
@@ -13524,6 +13518,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Vi behandlar din betalning för den fakturerade fakturan. Vänta tills betalningen är slutförd innan du gör ändringar i ditt paket eller uppdaterar dina betalningsuppgifter. Tack för ditt tålamod."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Du kommer att debiteras ${ amountToCharge } från din valda betalningsmetod."
       ]
     },
     "Payments.Error": {
@@ -14648,6 +14645,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Begäran om lösenordsåterställning"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Aktivera sektion för foton"
       ]
     },
     "Settings description": {
@@ -15826,6 +15828,9 @@
       "Premium address created": [
         "Premiumadress skapad"
       ],
+      "Problem reported": [
+        "Problem rapporterat"
+      ],
       "Resuming import": [
         "Återupptar import"
       ],
@@ -16907,6 +16912,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Photos": [
+        "Foton"
       ],
       "Policies": [
         "Policyer"
