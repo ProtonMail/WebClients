@@ -12,7 +12,7 @@ import { not } from '@proton/pass/utils/fp/predicates';
 
 type Props = { disabled?: boolean; revision: ItemRevision };
 
-export const AliasSyncToggle: FC<Props> = ({ disabled, revision }) => {
+export const AliasStatusToggle: FC<Props> = ({ disabled, revision }) => {
     const aliasEnabled = not(isAliasDisabled)(revision);
     const { dispatch, loading } = useRequest(aliasSyncStatusToggle, {});
 
