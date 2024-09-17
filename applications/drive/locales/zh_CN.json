@@ -4102,7 +4102,7 @@
         "下载所有的加密文件"
       ],
       "Drop file here to upload": [
-        "拖至此处即可上传"
+        "拖至此处上传文件"
       ],
       "Drop files here": [
         "将文件拖放到此处"
@@ -4612,7 +4612,7 @@
         "不保存以前的版本"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "价格包括所有适用的基于周期的折扣与保存在您账户中的未过期的优惠券。"
+        "价格已经考虑各种能用得上的周期计费优惠，以及账户中未过期的优惠券。"
       ],
       "Primary": [
         "主要"
@@ -4667,6 +4667,9 @@
       ],
       "Retry now": [
         "立即重试"
+      ],
+      "Saving...": [
+        "保存中..."
       ],
       "Scan issue": [
         "扫描问题"
@@ -5194,10 +5197,10 @@
         "由于密码重置，无法再访问您的文件。请重新上传旧的加密密钥以重新获得访问权限。${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
-        "您的文件将被加密保存。"
+        "文件会加密保存"
       ],
       "Your files will be encrypted and then saved.": [
-        "您的文件将被加密并保存。"
+        "文件会加密保存。"
       ],
       "Your information was found on ${ displayedDate }": [
         "您的信息在 ${ displayedDate } 找到"
@@ -6474,9 +6477,6 @@
       ],
       "Data breach monitoring": [
         "数据泄露监控"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "数据泄露监控（即将推出）"
       ],
       "Desktop app": [
         "桌面应用"
@@ -7902,7 +7902,7 @@
         "6 位用户"
       ],
       "64 countries": [
-        "64 个国家"
+        "64 个国家和地区"
       ],
       "All paid Mail and Calendar features": [
         "享受 Mail 与 Calendar 的所有付费功能"
@@ -7914,13 +7914,13 @@
         "VPN 速度最快"
       ],
       "Premium ${ appName1 }": [
-        "高级 ${ appName1 } 账户"
+        "高级版 ${ appName1 } 账户"
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
-        "高级 ${ appName1 } 与 ${ appName2 } 账户"
+        "高级版 ${ appName1 } 及 ${ appName2 } 账户"
       ],
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
-        "高级版 ${ appName1 } 、 ${ appName2 } 和 ${ appName3 }"
+        "高级版 ${ appName1 }、${ appName2 } 及 ${ appName3 } 账户"
       ],
       "Premium early access": [
         "抢先体验高级功能"

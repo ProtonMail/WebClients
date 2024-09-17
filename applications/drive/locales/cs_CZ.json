@@ -225,6 +225,9 @@
       "Create and copy alias": [
         "Vytvořit a kopírovat alias"
       ],
+      "Create free account": [
+        "Vytvořit účet zdarma"
+      ],
       "Create link": [
         "Vytvořit odkaz"
       ],
@@ -395,6 +398,9 @@
       ],
       "Get verification code": [
         "Odeslat ověřovací kód"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Jít do ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Přejít na štítek"
@@ -713,9 +719,6 @@
       ],
       "Save changes": [
         "Uložit změny"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Uložit na ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Skenovat a stáhnout"
@@ -4231,6 +4234,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Opravdu chcete trvale smazat vybrané položky z koše?"
       ],
+      "Are you sure you want to proceed?": [
+        "Jste si jisti, že chcete pokračovat?"
+      ],
       "Attention required": [
         "Vyžadována pozornost"
       ],
@@ -4927,6 +4933,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane ${ remainingCreditsFormatted } kreditů."
+      ],
       "Please open the document to view it.": [
         "Prosím, otevřete dokument pro jeho zobrazení."
       ],
@@ -4999,6 +5008,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Soukromé vyhledávání zapnuto. Tento dialog můžete zavřít a vyhledávat soubory a složky."
       ],
+      "Public link": [
+        "Veřejný odkaz"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Veřejné sdílení dokumentů ještě není podporováno."
       ],
@@ -5047,8 +5059,8 @@
       "Retry now": [
         "Zkusit znovu"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Uloženo na ${ DRIVE_SHORT_APP_NAME }"
+      "Saving...": [
+        "Ukládání..."
       ],
       "Scan issue": [
         "Problém skenování"
@@ -5473,6 +5485,9 @@
       "You already have a free account": [
         "Již máte bezplatný účet"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Chystáte se opustit sdílenou položku. Nebudete k ní mít přístup, dokud vám ho vlastník nepovolí."
+      ],
       "You are about to open another browser tab and visit:": [
         "Chystáte se otevřít v nové kartě prohlížeče:"
       ],
@@ -5544,6 +5559,12 @@
       ],
       "You will lose all unsaved changes.": [
         "Ztratíte všechny neuložené změny."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Budete ho muset znovu uložit ze stránky s veřejným odkazem",
+        "Budete je muset znovu uložit ze stránky s veřejným odkazem",
+        "Budete je muset znovu uložit ze stránky s veřejným odkazem",
+        "Budete je muset znovu uložit ze stránky s veřejným odkazem"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
@@ -7024,9 +7045,6 @@
       "Data breach monitoring": [
         "Monitorování narušení bezpečnosti dat"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorování narušení bezpečnosti dat (již brzy)"
-      ],
       "Desktop app": [
         "Desktopová aplikace"
       ],
@@ -7934,6 +7952,18 @@
       "The link to your item was deleted": [
         "Odkaz na položku byl odstraněn"
       ],
+      "This item was not removed from your list": [
+        "Tato položka nebyla odebrána ze seznamu",
+        "Odebrání některých položek ze seznamu selhalo",
+        "Odebrání některých položek ze seznamu selhalo",
+        "Odebrání některých položek ze seznamu selhalo"
+      ],
+      "This item was succefully removed from your list": [
+        "Tato položka byla úspěšně odebrána z vašeho seznamu",
+        "Všechny položky byly úspěšně odebrány z vašeho seznamu",
+        "Všechny položky byly úspěšně odebrány z vašeho seznamu",
+        "Všechny položky byly úspěšně odebrány z vašeho seznamu"
+      ],
       "Trash failed to be emptied": [
         "Koš se nepodařilo vyprázdnit"
       ],
@@ -8163,6 +8193,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "More plans are available in other currencies": [
+        "Další tarify jsou k dispozici v jiných měnách"
       ],
       "Payment Processing": [
         "Zpracování platby"
@@ -9656,6 +9689,9 @@
       "Preferences saved": [
         "Nastavení bylo uloženo"
       ],
+      "Problem reported": [
+        "Problém nahlášen"
+      ],
       "Recovery has started": [
         "Obnova právě probíhá"
       ],
@@ -9890,6 +9926,12 @@
       "Are you sure you want to close the preview?": [
         "Jste si jisti, že chcete náhled zavřít?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Opravdu chcete odebrat tuto položku z vašeho seznamu?",
+        "Opravdu chcete odebrat tyto položky z vašeho seznamu?",
+        "Opravdu chcete odebrat tyto položky z vašeho seznamu?",
+        "Opravdu chcete odebrat tyto položky z vašeho seznamu?"
+      ],
       "Billing cycle": [
         "Fakturační cyklus"
       ],
@@ -9934,6 +9976,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Potvrdit ztrátu bonusů ${ BRAND_NAME }"
+      ],
+      "Confirmation required?": [
+        "Je vyžadováno potvrzení?"
       ],
       "Contact Details": [
         "Kontaktní údaje"

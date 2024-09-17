@@ -207,6 +207,9 @@
       "Create and copy alias": [
         "建立及複製別名"
       ],
+      "Create free account": [
+        "建立免費帳號"
+      ],
       "Create link": [
         "創建連結"
       ],
@@ -689,9 +692,6 @@
       ],
       "Save changes": [
         "儲存變更"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "儲存至${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "掃描和下載"
@@ -4646,6 +4646,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "請注意，當您點擊確認時，您的帳號將剩${ remainingCreditsFormatted }可用額度。"
+      ],
       "Please open the document to view it.": [
         "請開啟文件以瀏覽。"
       ],
@@ -4715,6 +4718,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "私密搜尋已啟用。您現可關閉此對話方塊並搜尋檔案和資料夾。"
       ],
+      "Public link": [
+        "公開連結"
+      ],
       "Public sharing of documents is not yet supported.": [
         "公開分享尚未支援。"
       ],
@@ -4759,6 +4765,9 @@
       ],
       "Retry now": [
         "立即重試"
+      ],
+      "Saving...": [
+        "儲存中..."
       ],
       "Scan issue": [
         "掃描出現問題"
@@ -6629,9 +6638,6 @@
       "Data breach monitoring": [
         "資料外洩監測"
       ],
-      "Data breach monitoring (coming soon)": [
-        "資料外洩監測 (即將登場)"
-      ],
       "Desktop app": [
         "桌面應用程式"
       ],
@@ -6799,6 +6805,9 @@
       ],
       "Support for up to 2 users": [
         "支援最多2位使用者"
+      ],
+      "Sync and backup all your files across devices": [
+        "於裝置同步及備份您全部的檔案"
       ],
       "Tor over VPN": [
         "Tor 經由 VPN"
@@ -7338,6 +7347,9 @@
       "External invitation removed from the share": [
         "內部邀請函已從共享移除"
       ],
+      "External invitation's email was sent again": [
+        "外部邀請函電子郵件已重新寄件"
+      ],
       "Failed to accept share invitation": [
         "失敗接受加入邀請"
       ],
@@ -7475,11 +7487,17 @@
       ]
     },
     "Onboarding Info": {
+      "Collaborate on documents": [
+        "於文件上合作"
+      ],
       "Get started using ${ DRIVE_APP_NAME } and we'll upgrade your storage to 5 GB!": [
         "開始使用 ${ DRIVE_APP_NAME }，我們會將您儲存空間升級至 5GB！"
       ],
       "Introducing ${ DOCS_APP_NAME }": [
         "介紹 ${ DOCS_APP_NAME }"
+      ],
+      "Manage access": [
+        "管理存取權限"
       ],
       "Set a recovery method": [
         "設定備援方法"
@@ -7526,6 +7544,9 @@
       ],
       "Hang tight!": [
         "準備好!"
+      ],
+      "Invite team members": [
+        "邀請團隊成員"
       ],
       "Upload and protect your important files": [
         "上傳和保護您的匯入檔案"
@@ -8846,6 +8867,9 @@
       "Preferences saved": [
         "偏好設定已儲存"
       ],
+      "Problem reported": [
+        "以回報問題"
+      ],
       "Recovery has started": [
         "恢復程序已開始"
       ],
@@ -9091,6 +9115,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "確認失去 ${ BRAND_NAME } 獎勵"
+      ],
+      "Confirmation required?": [
+        "確認要求?"
       ],
       "Contact Details": [
         "聯絡人詳細資料"
@@ -9418,6 +9445,9 @@
       ],
       "Restore your files": [
         "還原您的檔案"
+      ],
+      "Save it for later in ${ DRIVE_APP_NAME }": [
+        "稍後儲存於${ DRIVE_APP_NAME }"
       ],
       "Search results": [
         "搜尋結果"

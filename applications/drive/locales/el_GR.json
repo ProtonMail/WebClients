@@ -223,6 +223,9 @@
       "Create and copy alias": [
         "Δημιουργία και αντιγραφή ψευδωνύμου"
       ],
+      "Create free account": [
+        "Δημιουργία δωρεάν λογαριασμού"
+      ],
       "Create link": [
         "Δημιουργία συνδέσμου"
       ],
@@ -389,6 +392,9 @@
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Πηγαίνετε στο ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Μετάβαση στην ετικέτα"
@@ -707,9 +713,6 @@
       ],
       "Save changes": [
         "Αποθήκευση αλλαγών"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Αποθήκευση στο ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Σάρωση & Λήψη"
@@ -4091,6 +4094,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά τα επιλεγμένα στοιχεία από τα Διαγραμμένα;"
       ],
+      "Are you sure you want to proceed?": [
+        "Είστε βέβαιοι ότι θέλετε να συνεχίσετε;"
+      ],
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
@@ -4773,6 +4779,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ remainingCreditsFormatted }."
+      ],
       "Please open the document to view it.": [
         "Παρακαλούμε ανοίξτε το έγγραφο για να το δείτε."
       ],
@@ -4843,6 +4852,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Η ιδιωτική αναζήτηση ενεργοποιήθηκε. Τώρα μπορείτε να κλείσετε αυτόν τον διάλογο και να αναζητήσετε αρχεία και φακέλους."
       ],
+      "Public link": [
+        "Δημόσιος σύνδεσμος"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
       ],
@@ -4891,8 +4903,8 @@
       "Retry now": [
         "Επανάληψη τώρα"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Αποθηκεύτηκε στο ${ DRIVE_SHORT_APP_NAME }"
+      "Saving...": [
+        "Αποθήκευση..."
       ],
       "Scan issue": [
         "Πρόβλημα σάρωσης"
@@ -5313,6 +5325,9 @@
       "You already have a free account": [
         "Έχετε ήδη έναν δωρεάν λογαριασμό"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Πρόκειται να αποχωρήσετε από το κοινόχρηστο στοιχείο. Δε θα μπορείτε να αποκτήσετε ξανά πρόσβαση σε αυτό έως ότου ο κάτοχος το μοιραστεί μαζί σας."
+      ],
       "You are about to open another browser tab and visit:": [
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
       ],
@@ -5378,6 +5393,10 @@
       ],
       "You will lose all unsaved changes.": [
         "Θα χάσετε όλες τις αλλαγές που δεν έχετε αποθηκεύσει."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Θα χρειαστεί να το αποθηκεύσετε ξανά από τη σελίδα δημόσιου συνδέσμου.",
+        "Θα χρειαστεί να τα αποθηκεύσετε ξανά από τη σελίδα δημόσιου συνδέσμου."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
@@ -6802,9 +6821,6 @@
       "Data breach monitoring": [
         "Παρακολούθηση παραβίασης δεδομένων"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Παρακολούθηση παραβίασης δεδομένων (σύντομα κοντά σας)"
-      ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
       ],
@@ -7670,6 +7686,14 @@
       "The link to your item was deleted": [
         "Ο σύνδεσμος προς το στοιχείο σας διαγράφηκε"
       ],
+      "This item was not removed from your list": [
+        "Αυτό το στοιχείο δεν αφαιρέθηκε από τη λίστα σας",
+        "Αυτά τα στοιχεία δεν αφαιρέθηκαν από τη λίστα σας"
+      ],
+      "This item was succefully removed from your list": [
+        "Αυτό το στοιχείο αφαιρέθηκε με επιτυχία από τη λίστα σας",
+        "Όλα τα στοιχεία αφαιρέθηκαν επιτυχώς από τη λίστα σας"
+      ],
       "Trash failed to be emptied": [
         "Αποτυχία εκκαθάρισης Διαγραμμένων"
       ],
@@ -7893,6 +7917,9 @@
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "More plans are available in other currencies": [
+        "Περισσότερα προγράμματα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
       "Payment Processing": [
         "Επεξεργασία Πληρωμής"
@@ -9314,6 +9341,9 @@
       "Preferences saved": [
         "Οι προτιμήσεις αποθηκεύτηκαν"
       ],
+      "Problem reported": [
+        "Αναφέρθηκε πρόβλημα"
+      ],
       "Recovery has started": [
         "Η ανάκτηση έχει ξεκινήσει"
       ],
@@ -9526,6 +9556,10 @@
       "Are you sure you want to close the preview?": [
         "Είστε βέβαιοι ότι θέλετε να κλείσετε την προεπισκόπηση;"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Είστε βέβαιοι ότι θέλετε να καταργήσετε αυτό το στοιχείο από τη λίστα σας;",
+        "Είστε βέβαιοι ότι θέλετε να καταργήσετε αυτά τα στοιχεία από τη λίστα σας;"
+      ],
       "Billing cycle": [
         "Κύκλος χρέωσης"
       ],
@@ -9570,6 +9604,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Επιβεβαιώστε την απώλεια μπόνους ${ BRAND_NAME }"
+      ],
+      "Confirmation required?": [
+        "Απαιτείται Επιβεβαίωση;"
       ],
       "Contact Details": [
         "Στοιχεία Επαφής"
