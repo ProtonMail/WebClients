@@ -682,8 +682,8 @@
       "Use authentication code": [
         "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
       ],
-      "Use group permissions": [
-        "Χρήση δικαιωμάτων ομάδας"
+      "Use group sending permissions": [
+        "Χρήση δικαιωμάτων αποστολής σε ομάδα"
       ],
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
@@ -2827,9 +2827,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Μόνο μία δωρεάν δοκιμή ανά χρήστη."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Από προεπιλογή, εκχωρούμε ${ formattedStorage } αποθηκευτικού χώρου στον λογαριασμό διαχειριστή. Μπορείτε να διαχειριστείτε τον εκχωρημένο χώρο αποθήκευσης που θα διανεμηθεί σε επιπλέον χρήστες αργότερα."
       ],
@@ -2841,9 +2838,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Η πρόσκληση θα ακυρωθεί και ο χρήστης δε θα μπορεί να συμμετάσχει στον οργανισμό ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Ο λογαριασμός του χρήστη θα μετακινηθεί σε ένα Απεριόριστο πρόγραμμα ${ BRAND_NAME } για δωρεάν δοκιμή 30 ημερών*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Για δημιουργία νέου χρήστη, απαιτείται ένας παραμετροποιημένος προσαρμοσμένος τομέας."
@@ -4283,6 +4277,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Παρακαλούμε εισαγάγετε τη 12-λεκτη φράση ανάκτησης που σχετίζεται με τον λογαριασμό σας."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ remainingCreditsFormatted }."
       ],
       "please open a support ticket": [
         "παρακαλούμε ανοίξτε ένα εισιτήριο υποστήριξης"
@@ -5993,11 +5990,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Ρεάλ Βραζιλίας"
+      ],
       "Euro": [
         "Ευρώ"
       ],
       "Swiss franc": [
         "Ελβετικό Φράγκο"
+      ],
+      "US Dollar": [
+        "Δολάριο ΗΠΑ"
       ]
     },
     "Navigation": {
@@ -6265,9 +6268,6 @@
       ],
       "Data breach monitoring": [
         "Παρακολούθηση παραβίασης δεδομένων"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Παρακολούθηση παραβίασης δεδομένων (σύντομα κοντά σας)"
       ],
       "Dedicated servers and IP": [
         "Αποκλειστικοί διακομιστές και IP"
@@ -7403,6 +7403,9 @@
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "More plans are available in other currencies": [
+        "Περισσότερα προγράμματα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
       "Payment Processing": [
         "Επεξεργασία Πληρωμής"
@@ -9168,6 +9171,9 @@
       ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
+      ],
+      "Problem reported": [
+        "Αναφέρθηκε πρόβλημα"
       ],
       "SPF value copied to clipboard": [
         "Η τιμή SPF αντιγράφηκε στο πρόχειρο"

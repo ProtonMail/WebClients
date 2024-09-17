@@ -496,6 +496,9 @@
       "Restore": [
         "Återställ"
       ],
+      "Resume membership": [
+        "Återuppta medlemskap"
+      ],
       "Retry": [
         "Försök igen"
       ],
@@ -681,9 +684,6 @@
       ],
       "Use authentication code": [
         "Använd autentiseringskod"
-      ],
-      "Use group permissions": [
-        "Använd gruppbehörigheter"
       ],
       "Use recovery code": [
         "Använd återställningskod"
@@ -2815,8 +2815,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Endast en gratis provperiod per användare."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Endast en gratis provperiod per användare. Ordinarie priser tillämpas därefter."
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Som standard tilldelar vi ${ formattedStorage } lagringsutrymme till administratörskontot. Du kan hantera det tilldelade lagringsutrymmet för att distribueras mellan ytterligare användare senare."
@@ -2829,9 +2829,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Inbjudan kommer att avbrytas och användaren kommer inte att kunna gå med i ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Användarens konto kommer att flyttas till ett ${ BRAND_NAME } Unlimited-paket för en 30-dagars gratis provperiod*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "För att skapa en ny användare krävs en konfigurerad anpassad domän."
@@ -3683,6 +3680,9 @@
         "Tar bort ${ deletedServerCount } gatewayserver",
         "Tar bort ${ deletedServerCount } gatewayservrar"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Inaktiverad sedan ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Inaktivering av tvåfaktorsautentisering kommer göra ditt konto mindre säkert. Fortsätt endast om det är absolut nödvändigt."
       ],
@@ -3764,6 +3764,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Aktivera enkel inloggning för att hålla din organisation säker"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Aktiverad sedan ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Ändpunkts-URL mottagen från din identitetsleverantör (t.ex. https://idp.example.com/sso/saml)."
@@ -5927,6 +5930,9 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Brasiliansk real"
+      ],
       "Euro": [
         "Euro"
       ],
@@ -6193,9 +6199,6 @@
       ],
       "Data breach monitoring": [
         "Dataintrångsövervakning"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Dataintrångsövervakning (kommer snart)"
       ],
       "Dedicated servers and IP": [
         "Dedikerade servrar och IP"
@@ -7359,6 +7362,9 @@
       "MM/YY": [
         "MM/ÅÅ"
       ],
+      "More plans are available in other currencies": [
+        "Fler paket är tillgängliga i andra valutor"
+      ],
       "Payment Processing": [
         "Betalning behandlas"
       ],
@@ -7400,6 +7406,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Vi behandlar din betalning för den fakturerade fakturan. Vänta tills betalningen är slutförd innan du gör ändringar i ditt paket eller uppdaterar dina betalningsuppgifter. Tack för ditt tålamod."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Du kommer att debiteras ${ amountToCharge } från din valda betalningsmetod."
       ]
     },
     "Payments.Error": {
@@ -9076,6 +9085,9 @@
       ],
       "Preference saved": [
         "Preferens sparad"
+      ],
+      "Problem reported": [
+        "Problem rapporterat"
       ],
       "SPF value copied to clipboard": [
         "SPF-värde kopierat till urklipp"

@@ -496,6 +496,9 @@
       "Restore": [
         "Восстановить"
       ],
+      "Resume membership": [
+        "Возобновить членство"
+      ],
       "Retry": [
         "Повторить"
       ],
@@ -682,8 +685,8 @@
       "Use authentication code": [
         "Используйте код аутентификации"
       ],
-      "Use group permissions": [
-        "Использовать права группы"
+      "Use group sending permissions": [
+        "Использовать групповые разрешения на отправку"
       ],
       "Use recovery code": [
         "Использовать код восстановления"
@@ -2848,9 +2851,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*По одной бесплатной пробной версии для каждого клиента."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "По умолчанию администратору доступно ${ formattedStorage } хранилища. В дальнейшем вы сможете перераспределить доступный объем между дополнительными пользователями."
       ],
@@ -2862,9 +2862,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Приглашение будет отменено, и пользователь не сможет присоединиться к ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Аккаунт пользователя получит доступ к 30-дневному бесплатному тарифу ${ BRAND_NAME } Unlimited*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Чтобы создать нового пользователя, необходим настроенный пользовательский домен."
@@ -3445,6 +3442,12 @@
       "${ vaultLink } created": [
         "Фильтр ${ vaultLink } создан"
       ],
+      "${ vaultLink } deleted": [
+        "${ vaultLink } удалена"
+      ],
+      "${ vaultLink } shared with email": [
+        "${ vaultLink } была предоставлена почтой"
+      ],
       "${ vaultLink } updated": [
         "${ vaultLink } обновлён"
       ],
@@ -3589,6 +3592,9 @@
       "Are you sure you want to cancel editing the group?": [
         "Вы уверены, что хотите отменить редактирование группы?"
       ],
+      "Are you sure you want to delete this group. The group address won't be working anymore.": [
+        "Вы уверены, что хотите удалить эту группу? Адрес группы больше не будет работать."
+      ],
       "Are you sure you want to discard your changes?": [
         "Вы уверены, что хотите отменить изменения?"
       ],
@@ -3645,6 +3651,15 @@
       ],
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
+      ],
+      "Breach Custom Email Created": [
+        "Создан пользовательский адрес эл. почты взломов"
+      ],
+      "Breach Custom Email Deleted": [
+        "Удалён пользовательский адрес эл. почты взломов"
+      ],
+      "Breach Custom Email Validated": [
+        "Подтверждён пользовательский адрес эл. почты взломов"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
@@ -3745,6 +3760,9 @@
         "Удаление ${ deletedServerCount } шлюзовых серверов",
         "Удаление ${ deletedServerCount } шлюзовых серверов"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Отключено с момента ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Отключение двухфакторной аутентификации сделает вашу учетную запись менее защищенной. Продолжайте только при крайней необходимости."
       ],
@@ -3828,6 +3846,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Включите единый вход для обеспечения безопасности вашей организации"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Включено с момента ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL конечной точки, полученный от поставщика идентификационных данных (например, https://idp.example.com/sso/saml)."
@@ -4081,6 +4102,9 @@
       "Item deleted from vault": [
         "Элемент удален из хранилища"
       ],
+      "Item flags changed in ${ vaultLink }": [
+        "Флаги предмета поменялись в ${ vaultLink }"
+      ],
       "Item flags changed in vault": [
         "Флажки предметов изменены в хранилище"
       ],
@@ -4140,6 +4164,9 @@
       ],
       "Learn more": [
         "Узнать больше"
+      ],
+      "Let's get started by pressing the New group button above": [
+        "Давайте начнем с нажатия кнопки Новая группа, расположенной выше."
       ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
@@ -4333,6 +4360,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введите фразу восстановления из 12 слов, связанную с вашим аккаунтом."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Обратите внимание, что после нажатия на «Подтвердить» на вашем счету останется ${ remainingCreditsFormatted }."
+      ],
       "please open a support ticket": [
         "откройте заявку в службу поддержки"
       ],
@@ -4453,6 +4483,15 @@
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
       ],
+      "Session Ended": [
+        "Сеанс окончен"
+      ],
+      "Session Roaming": [
+        "Роуминг сеансов"
+      ],
+      "Session Started": [
+        "Сеанс начат"
+      ],
       "Session timed out": [
         "Время сеанса истекло"
       ],
@@ -4467,6 +4506,12 @@
       ],
       "Share Updated": [
         "Общий ресурс обновлен"
+      ],
+      "Shared ${ vaultLink } deleted": [
+        "Коллективная ${ vaultLink } удалена"
+      ],
+      "Shared ${ vaultLink } updated": [
+        "Коллективная ${ vaultLink } обновлена"
       ],
       "Shared vault deleted": [
         "Общее хранилище удалено"
@@ -5584,6 +5629,9 @@
       "Public certificate (X.509)": [
         "Публичный сертификат (X.509)"
       ],
+      "Purpose": [
+        "Цель"
+      ],
       "Recovery email address": [
         "Резервный адрес электронной почты"
       ],
@@ -5667,6 +5715,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Какова ваша основная причина отказа от или перехода на более дешевую версию?"
+      ],
+      "Who can send to this group address?": [
+        "Кто может отправлять на этот адрес группы?"
       ],
       "Why would you like to cancel?": [
         "Почему вы хотите отменить?"
@@ -6346,9 +6397,6 @@
       ],
       "Data breach monitoring": [
         "Отслеживание утечек данных"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Отслеживание утечек данных (скоро появится)"
       ],
       "Dedicated servers and IP": [
         "Выделенные серверы и адреса IP"
@@ -7508,6 +7556,9 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "More plans are available in other currencies": [
+        "Другие тарифы доступны в других валютах"
       ],
       "Payment Processing": [
         "Обработка платежа"
@@ -9317,6 +9368,9 @@
       "Preference saved": [
         "Настройки сохранены"
       ],
+      "Problem reported": [
+        "О проблеме сообщено"
+      ],
       "SPF value copied to clipboard": [
         "Значение SPF скопировано в буфер обмена"
       ],
@@ -9643,6 +9697,9 @@
       "Confirm phone number": [
         "Подтвердите номер телефона"
       ],
+      "Connection events": [
+        "События подключения"
+      ],
       "Connection monitor disabled": [
         "Отслеживание подключения выключено"
       ],
@@ -9909,6 +9966,9 @@
       ],
       "Organization name": [
         "Название организации"
+      ],
+      "Origin": [
+        "Источник"
       ],
       "Password": [
         "Пароль"

@@ -496,6 +496,9 @@
       "Restore": [
         "Restaurar"
       ],
+      "Resume membership": [
+        "Continuar a adesão"
+      ],
       "Retry": [
         "Tentar novamente"
       ],
@@ -682,8 +685,8 @@
       "Use authentication code": [
         "Usar código de autenticação"
       ],
-      "Use group permissions": [
-        "Usar permissões de grupo"
+      "Use group sending permissions": [
+        "Usar as permissões de envio de grupo"
       ],
       "Use recovery code": [
         "Usar código de recuperação"
@@ -2261,7 +2264,7 @@
         "Cobrado a cada 2 anos a ${ amountBilled }. Os descontos são baseados no preço mensal padrão."
       ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Cobrado anualmente em ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
+        "Cobrado anualmente a ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
       ]
     },
     "duoplan2024: Info": {
@@ -2283,7 +2286,7 @@
         "Todos os recursos da ${ BRAND_NAME }, para 2 pessoas."
       ],
       "Double your storage": [
-        "Dobrar seu armazenamento"
+        "Dobre seu armazenamento"
       ]
     },
     "duoplan2024: Title": {
@@ -2827,8 +2830,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Somente uma avaliação gratuita por usuário."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Apenas uma avaliação gratuita por usuário. Depois disso, aplica-se o preço normal."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Após sair do seu plano, este usuário será movido para o plano ${ BRAND_NAME } Unlimited com 30 dias de avaliação gratuita."
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Por padrão, atribuímos o armazenamento ${ formattedStorage } à conta do administrador. Você pode gerenciar o armazenamento atribuído a ser distribuído entre usuários adicionais posteriormente."
@@ -2841,9 +2847,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "O convite será cancelado e o usuário não conseguirá participar ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "A conta do usuário será transferida para um plano ${ BRAND_NAME } Unlimited por um período de avaliação gratuita de 30 dias*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Para criar um novo usuário, é necessário um domínio personalizado configurado."
@@ -3702,6 +3705,9 @@
         "Deletando ${ deletedServerCount } servidor gateway",
         "Deletando ${ deletedServerCount } servidores gateway"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Desativado desde ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Isso desativará a autenticação de dois fatores, incluindo o aplicativo autenticador e os métodos de chave de segurança."
       ],
@@ -3783,6 +3789,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Ative o início de sessão único para manter a sua organização segura"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Ativado desde ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL do endpoint recebido do seu provedor de identidade (por exemplo, https://idp.example.com/sso/saml)."
@@ -4292,6 +4301,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Digite a frase de recuperação de 12 palavras associada à sua conta."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "please open a support ticket": [
         "abra um ticket de suporte"
@@ -6005,11 +6017,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real brasileiro"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franco suíço"
+      ],
+      "US Dollar": [
+        "Dólar americano"
       ]
     },
     "Navigation": {
@@ -6277,9 +6295,6 @@
       ],
       "Data breach monitoring": [
         "Monitoramento de violação de dados"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoramento de violação de dados (em breve)"
       ],
       "Dedicated servers and IP": [
         "Servidores e IPs dedicados"
@@ -6773,7 +6788,7 @@
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
       ],
       "Email everyone in a group with a single email address": [
-        "Envie e-mails para todos em um grupo com um único endereço de e-mail"
+        "Envie e-mail a todos em um grupo com um único endereço de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -6830,7 +6845,7 @@
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "O suporte por telefone da equipe de suporte do cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 20 ou mais usuários"
+        "O suporte por telefone está disponível na equipe de Suporte ao Cliente da ${ BRAND_NAME } durante o horário comercial europeu, para clientes com 20 ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
@@ -7434,6 +7449,9 @@
       "MM/YY": [
         "MM/AA"
       ],
+      "More plans are available in other currencies": [
+        "Mais planos estão disponíveis em outras moedas"
+      ],
       "Payment Processing": [
         "Processando pagamento"
       ],
@@ -7478,6 +7496,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Estamos processando o seu pagamento da fatura. Aguarde o pagamento ser completado antes de modificar o seu plano ou atualizar os seus detalhes de pagamento. Agradecemos a sua paciência."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Você será cobrado ${ amountToCharge } do método de pagamento selecionado."
       ]
     },
     "Payments.Error": {
@@ -9198,6 +9219,9 @@
       ],
       "Preference saved": [
         "Preferência salva"
+      ],
+      "Problem reported": [
+        "Problema reportado"
       ],
       "SPF value copied to clipboard": [
         "Valor SPF copiado para a área de transferência"

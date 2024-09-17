@@ -2766,9 +2766,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Només una prova gratuïta per usuari."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "De manera predeterminada, assignem ${ formattedStorage } d'emmagatzematge al compte d'administrador. Podeu gestionar l'emmagatzematge assignat per distribuir-lo entre usuaris addicionals més endavant."
       ],
@@ -2780,9 +2777,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "La invitació es cancel·larà i l'usuari no es podrà unir a ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "El compte de l'usuari es traslladarà a un pla de ${ BRAND_NAME } Il·limitat per a una prova gratuïta de 30 dies*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Per a crear un usuari, es requereix un domini personalitzat configurat."
@@ -5492,7 +5486,7 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
-        "Afegeixi un domini propi al seu compte de ${ MAIL_APP_NAME }."
+        "Afegiu un domini propi al vostre compte de ${ MAIL_APP_NAME }."
       ]
     },
     "Label for domain modal": {
@@ -6091,9 +6085,6 @@
       ],
       "Data breach monitoring": [
         "Monitoratge de filtracions de dades"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoratge de filtracions de dades (pròximament)"
       ],
       "Dedicated servers and IP": [
         "Servidors i IP dedicats"
@@ -7503,7 +7494,7 @@
     },
     "saml: Error": {
       "Something went wrong": [
-        "S'ha produït un error."
+        "Alguna cosa ha anat malament."
       ]
     },
     "saml: Info": {
@@ -7885,7 +7876,7 @@
     },
     "session_recovery:initiation:title": {
       "Request password reset?": [
-        "Sol·licita el restabliment de contrasenya?"
+        "Voleu sol·licitar el restabliment de contrasenya?"
       ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Podreu restablir la vostra contrasenya en ${ gracePeriodHoursRemaining } hora.",
