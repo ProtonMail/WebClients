@@ -555,6 +555,9 @@
       "Hide": [
         "Скрыть"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Скрыть помощника по написанию Scribe ${ BRAND_NAME }"
+      ],
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
       ],
@@ -840,10 +843,10 @@
       "Not saved": [
         "Не сохранено"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1023,6 +1026,9 @@
       "Revert to original display": [
         "Вернуться к исходному отображению"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Запустить на серверах ${ BRAND_NAME }"
+      ],
       "Save": [
         "Сохранить"
       ],
@@ -1133,6 +1139,9 @@
       ],
       "Show": [
         "Показать"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Показать помощника по написанию Scribe ${ BRAND_NAME }"
       ],
       "Show advanced PGP settings": [
         "Показать расширенные настройки PGP"
@@ -1564,6 +1573,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "Журналы не сохраняются для защиты вашей конфиденциальности. Быстрая обработка."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Запускать на серверах ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Запуск на устройстве"
@@ -4210,6 +4222,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Отправка вложений ограничена до тех пор, пока вы не достигнете ограничений своего плана или не обновите его."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Отправка вложений ограничена когда вы превышаете ограничения тарифа или пока вы не перейдете на новый тариф."
+      ],
       "Signature not verified": [
         "Подпись подтверждена"
       ],
@@ -6825,6 +6840,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Пожалуйста, обратите внимание, что этот процесс может занять некоторое время в зависимости от размера вашей адресной книги."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Обратите внимание, что после нажатия на «Подтвердить» на вашем счету останется ${ remainingCreditsFormatted }."
       ],
       "Please open the document to view it.": [
         "Откройте документ для просмотра."
@@ -9488,9 +9506,6 @@
       "Data breach monitoring": [
         "Отслеживание утечек данных"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Отслеживание утечек данных (скоро появится)"
-      ],
       "Desktop app": [
         "Приложение для настольного компьютера"
       ],
@@ -10393,6 +10408,9 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "More plans are available in other currencies": [
+        "Другие тарифы доступны в других валютах"
       ],
       "Payment Processing": [
         "Обработка платежа"
@@ -12420,6 +12438,9 @@
       ],
       "Preferences saved": [
         "Настройки сохранены"
+      ],
+      "Problem reported": [
+        "О проблеме сообщено"
       ],
       "Public key trusted": [
         "Доверенный открытый ключ"

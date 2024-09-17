@@ -549,6 +549,9 @@
       "Hide": [
         "Nascondi"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Nascondi l'assistente di scrittura Scribe di ${ BRAND_NAME }"
+      ],
       "Hide advanced PGP settings": [
         "Nascondi impostazioni PGP avanzate"
       ],
@@ -832,11 +835,11 @@
       "Not saved": [
         "Non salvato"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Apri"
@@ -1015,6 +1018,9 @@
       "Revert to original display": [
         "Torna alla visualizzazione originale"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Eseguito sui server ${ BRAND_NAME }"
+      ],
       "Save": [
         "Salva"
       ],
@@ -1125,6 +1131,9 @@
       ],
       "Show": [
         "Mostra"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Mostra l'assistente di scrittura Scribe di ${ BRAND_NAME }"
       ],
       "Show advanced PGP settings": [
         "Mostra impostazioni PGP avanzate"
@@ -1546,6 +1555,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "Nessun log è mantenuto per proteggere la tua privacy. Elaborazione più veloce."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Eseguito sui server ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Eseguito sul dispositivo"
@@ -4154,6 +4166,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "L'invio di allegati è limitato fino al raggiungimento dei limiti del piano o fino a quando effettuerai l'upgrade."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "L'invio di allegati è limitato quando superi i limiti del tuo piano o finché non aggiorni il tuo piano."
+      ],
       "Signature not verified": [
         "Firma non verificata"
       ],
@@ -6609,6 +6624,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Questo processo potrebbe richiedere un po' di tempo a seconda della dimensione della rubrica."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ remainingCreditsFormatted } crediti rimanenti."
       ],
       "Please open the document to view it.": [
         "Apri il documento per visualizzarlo."
@@ -9173,9 +9191,6 @@
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoraggio di violazioni di dati (in arrivo)"
-      ],
       "Desktop app": [
         "Applicazione desktop"
       ],
@@ -10065,6 +10080,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Sono disponibili altri piani in altre valute"
       ],
       "Payment Processing": [
         "Elaborazione del pagamento"
@@ -11962,6 +11980,9 @@
       ],
       "Preferences saved": [
         "Preferenze salvate"
+      ],
+      "Problem reported": [
+        "Problema segnalato"
       ],
       "Public key trusted": [
         "Chiave pubblica attendibile"
