@@ -24,27 +24,25 @@ export const getMailMappingError = (
     isLabelMapping: boolean
 ): MailImportPayloadError[] => {
     const errors: MailImportPayloadError[] = [];
-
     const itemName = item.protonPath[item.protonPath.length - 1];
-    const hasFoldersTooLongError = item.checked && isNameTooLong(itemName);
-    const hasReservedNamesError = item.checked && isNameReserved(itemName);
-    const hasUnavailableNamesError = isNameAlreadyUsed(item, collection, labels, folders, isLabelMapping);
-    const hasEmptyError = isNameEmpty(itemName);
-    const hasMergeWarningError = hasMergeWarning(collection, item, isLabelMapping);
 
-    if (hasFoldersTooLongError) {
-        errors.push(isLabelMapping ? LABEL_NAMES_TOO_LONG : FOLDER_NAMES_TOO_LONG);
+    if (item.checked) {
+        if (isNameTooLong(itemName)) {
+            errors.push(isLabelMapping ? LABEL_NAMES_TOO_LONG : FOLDER_NAMES_TOO_LONG);
+        }
+        if (isNameReserved(itemName)) {
+            errors.push(RESERVED_NAMES);
+        }
     }
-    if (hasReservedNamesError) {
-        errors.push(RESERVED_NAMES);
-    }
-    if (hasUnavailableNamesError) {
+    if (isNameAlreadyUsed(item, collection, labels, folders, isLabelMapping)) {
         errors.push(UNAVAILABLE_NAMES);
     }
-    if (hasEmptyError) {
+
+    if (isNameEmpty(itemName)) {
         errors.push(EMPTY);
     }
-    if (hasMergeWarningError) {
+
+    if (hasMergeWarning(collection, item, isLabelMapping)) {
         errors.push(MERGE_WARNING);
     }
 

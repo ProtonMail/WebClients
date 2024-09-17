@@ -8,6 +8,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import move from '@proton/utils/move';
 
 const DESTINATION_FOLDERS = Object.values(MailImportDestinationFolder);
+export const PROTON_DEFAULT_SEPARATOR = '/';
 
 /**
  * MailImportFolder(s) are the result of provider folders parsing
@@ -107,7 +108,10 @@ class MailImportFoldersParser {
             const childSources = finalSort.reduce<string[]>((acc, folder) => {
                 const path = this.getProviderPath(folder, folder.Separator);
 
-                if (path.length > 1 && path[0] === finalSort[systemFolderIndex].Source) {
+                if (
+                    path.length > 1 &&
+                    path[0].toLocaleLowerCase() === finalSort[systemFolderIndex].Source.toLocaleLowerCase()
+                ) {
                     acc.push(folder.Source);
                 }
                 return acc;
@@ -127,7 +131,7 @@ class MailImportFoldersParser {
         return finalSort;
     };
 
-    private getProviderPath = (folder: ApiMailImporterFolder, separator = '/') => {
+    private getProviderPath = (folder: ApiMailImporterFolder, separator = PROTON_DEFAULT_SEPARATOR) => {
         // Outlook imports contains the hierarchy in the folder object to determine the path
         // If the hierarchy is present, we use it instead of creating the path from the source
         if (folder.Hierarchy) {
@@ -139,13 +143,13 @@ class MailImportFoldersParser {
          */
         const folderSource = folder.Source || '';
         let pathBasedOnSeparator = (() => {
-            if (separator !== '/') {
+            if (separator !== PROTON_DEFAULT_SEPARATOR) {
                 return folderSource.split(separator);
             }
             return folderSource
                 .split('\\/')
                 .join(this.separatorSplitToken)
-                .split('/')
+                .split(PROTON_DEFAULT_SEPARATOR)
                 .map((s) => s.split(this.separatorSplitToken).join('\\/'));
         })();
 
@@ -185,8 +189,11 @@ class MailImportFoldersParser {
                  * ...
                  */
                 const expectedParentSource = isFirstChunk ? pathChunk : acc.join(separator) + separator + pathChunk;
-
-                if (this.providerFoldersSources.includes(expectedParentSource)) {
+                if (
+                    this.providerFoldersSources.some(
+                        (item) => item.toLocaleLowerCase() === expectedParentSource.toLocaleLowerCase()
+                    )
+                ) {
                     return [...acc, pathChunk];
                 } else {
                     isBroken = true;
@@ -288,14 +295,13 @@ class MailImportFoldersParser {
         const result = this.providerFolders
             .filter((folder) => !!folder.Source)
             .map((folder, index) => {
-                const isRootFolder = this.getProviderPath(folder, folder.Separator).length === 1;
+                const providerPath = this.getProviderPath(folder, folder.Separator);
+                const isRootFolder = providerPath.length === 1;
 
                 if (isRootFolder) {
                     // Generate a random color
                     memoizedRootFolderColor = getRandomAccentColor();
                 }
-
-                const providerPath = this.getProviderPath(folder, folder.Separator);
 
                 // System subfolders need to have root parent with a destination.
                 const isSystemFolderChild = this.providerFolders.some((item) => {
