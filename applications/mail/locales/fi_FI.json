@@ -549,6 +549,9 @@
       "Hide": [
         "Piilota"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Piilota ${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
       "Hide advanced PGP settings": [
         "Piilota PGP-lisäasetukset"
       ],
@@ -832,10 +835,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1015,6 +1018,9 @@
       "Revert to original display": [
         "Palauta alkuperäinen näkymä"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Suorita ${ BRAND_NAME } -palvelimilla"
+      ],
       "Save": [
         "Tallenna"
       ],
@@ -1125,6 +1131,9 @@
       ],
       "Show": [
         "Näytä"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Näytä ${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
       "Show advanced PGP settings": [
         "Näytä PGP-lisäasetukset"
@@ -1546,6 +1555,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "Ei lokia säilytetä suojellaksesi yksityisyyttäsi. Nopeampi käsittely."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Suorita ${ BRAND_NAME } -palvelimilla"
       ],
       "Run on device": [
         "Suorita laitteella"
@@ -4154,6 +4166,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Liitetiedostojen lähettämistä on rajoitettu, kunnes saavutat tilauksesi rajoitukset tai päivität sen."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Liitetiedostojen lähettämistä on rajoitettu, kunnes saavutat tilauksesi rajoitukset tai päivität sen."
+      ],
       "Signature not verified": [
         "Allekirjoitusta ei vahvistettu"
       ],
@@ -6609,6 +6624,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Huomioithan, että käsittely saattaa osoitekirjasi koosta riippuen kestää jonkin aikaa."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Huomioithan, että painettuasi \"Vahvista\"-painiketta, tilillesi jää ${ remainingCreditsFormatted } saldoa."
       ],
       "Please open the document to view it.": [
         "Avaa dokumentti tarkastellaksesi sitä."
@@ -9170,9 +9188,6 @@
       "Data breach monitoring": [
         "Tietomurtovalvonta"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Tietomurtovalvonta (tulossa pian)"
-      ],
       "Desktop app": [
         "Työpöytäsovellus"
       ],
@@ -10059,6 +10074,9 @@
       ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "More plans are available in other currencies": [
+        "Lisää palvelupaketteja on saatavilla muissa valuutoissa"
       ],
       "Payment Processing": [
         "Maksua käsitellään"
@@ -11956,6 +11974,9 @@
       ],
       "Preferences saved": [
         "Asetukset tallennettiin"
+      ],
+      "Problem reported": [
+        "Ongelma raportoitu"
       ],
       "Public key trusted": [
         "Julkiseen avaimeen luotettu"

@@ -285,6 +285,9 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Tuju ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Tuju label"
       ],
@@ -542,6 +545,9 @@
       ],
       "Switch or add account": [
         "Ubah atau tambah akun"
+      ],
+      "Take out of trash": [
+        "Keluarkan dari sampah"
       ],
       "Trust": [
         "Percayai"
@@ -2218,6 +2224,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Terdapat kesalahan pada saat mencoba untuk menggandakan dokumen. Silakan coba lagi."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Terjadi kesalahan saat mencoba memulihkan dokumen. Silakan coba lagi."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Terjadi kesalahan saat mencoba membuang dokumen. Silakan coba lagi."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Terdapat kesalahan saat membuat dokumen baru. Silakan coba lagi."
       ],
@@ -3374,6 +3386,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "\"${ documentTitle }\" telah dipindahkan ke sampah. Dokumen ini akan tetap berada di folder tersebut hingga Anda memulihkannya atau menghapusnya secara permanen."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "\"${ documentTitle }\" berada di sampah dan akan tetap berada di folder tersebut hingga Anda menghapusnya secara permanen."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } alamat email"
       ],
@@ -3640,6 +3658,12 @@
       ],
       "Display word count": [
         "Tampilkan jumlah kata"
+      ],
+      "Document is in trash": [
+        "Dokumen berada di sampah"
+      ],
+      "Document moved to trash": [
+        "Dokumen dipindahkan ke sampah"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Tidak melihat layar apapun? Jangan lupa untuk menonaktifkan pemblokir pop-up Anda."
@@ -4006,6 +4030,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo yang tersisa pada akun Anda akan menjadi ${ remainingCreditsFormatted }."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Mohon sediakan nama dan alamat email untuk membuat grup."
@@ -5635,9 +5662,6 @@
       "Data breach monitoring": [
         "Pemantauan kebocoran data"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Pemantauan kebocoran data (segera hadir)"
-      ],
       "Desktop app": [
         "Aplikasi desktop"
       ],
@@ -6563,6 +6587,9 @@
       ],
       "MM/YY": [
         "BB/TT"
+      ],
+      "More plans are available in other currencies": [
+        "Lebih banyak paket tersedia pada mata uang lainnya"
       ],
       "Payment Processing": [
         "Pembayaran Sedang Diproses"
@@ -7501,6 +7528,9 @@
       ],
       "Preferences saved": [
         "Preferensi disimpan"
+      ],
+      "Problem reported": [
+        "Masalah dilaporkan"
       ],
       "Secure link copied": [
         "Tautan aman disalin"

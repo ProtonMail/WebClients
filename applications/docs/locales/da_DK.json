@@ -288,6 +288,9 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Gå til ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Gå til etikette"
       ],
@@ -548,6 +551,9 @@
       ],
       "Switch or add account": [
         "Skift eller tilføj konto"
+      ],
+      "Take out of trash": [
+        "Fjern fra papirkurven"
       ],
       "Trust": [
         "Hav tillid til"
@@ -2234,6 +2240,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Der opstod en fejl under forsøget på at duplikere dokumentet. Prøv da igen."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Der opstod en fejl under forsøget på at gendanne dokumentet. Prøv igen."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Der opstod en fejl under forsøget på at smide dokumentet i papirkurven. Prøv igen."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Der opstod en fejl under oprettelsen af et nyt dokument. Prøv igen."
       ],
@@ -3413,6 +3425,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "\"${ documentTitle }\" er blevet flyttet til papirkurven. Det bliver der, indtil du gendanner det eller sletter det permanent."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "\"${ documentTitle }\" ligger i papirkurven og bliver der, indtil du sletter den permanent."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadresse",
         "${ addressCount } e-mailadresser"
@@ -3701,6 +3719,12 @@
       ],
       "Display word count": [
         "Vis antal ord"
+      ],
+      "Document is in trash": [
+        "Dokumentet er i papirkurven"
+      ],
+      "Document moved to trash": [
+        "Dokument flyttet til papirkurven"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ser du ikke noget? Husk at slå pop-up-blokkere fra."
@@ -4070,6 +4094,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Bemærk at denne proces kan tage lidt tid afhængigt af størrelsen af din adressebog."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Bemærk, i det øjeblik du klikker på knappen 'Bekræft' , vil din konto have ${ remainingCreditsFormatted } kreditter tilbage."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Angiv et navn og en e-mailadresse for at oprette en gruppe."
@@ -5671,9 +5698,6 @@
       "Data breach monitoring": [
         "Overvågning af databrud"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Overvågning af databrud (kommer snart)"
-      ],
       "Desktop app": [
         "Skrivebordsapp"
       ],
@@ -6619,6 +6643,9 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "More plans are available in other currencies": [
+        "Flere abonnementer er tilgængelige i andre valutaer"
       ],
       "Payment Processing": [
         "Betalingsbehandling"
@@ -7584,6 +7611,9 @@
       ],
       "Preferences saved": [
         "Præferencer gemt"
+      ],
+      "Problem reported": [
+        "Problem indberettet"
       ],
       "Secure link copied": [
         "Sikkert link kopieret"

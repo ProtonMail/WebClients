@@ -70,11 +70,11 @@
       "Accept": [
         "Přijmout"
       ],
-      "Activate": [
-        "Aktivovat"
-      ],
       "activate": [
         "aktivovat"
+      ],
+      "Activate": [
+        "Aktivovat"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
@@ -892,6 +892,9 @@
       "Resume": [
         "Pokračovat"
       ],
+      "Resume membership": [
+        "Obnovit členství"
+      ],
       "Retry": [
         "Opakovat"
       ],
@@ -1186,8 +1189,8 @@
       "Use authentication code": [
         "Použít ověřovací kód"
       ],
-      "Use group permissions": [
-        "Použít oprávnění skupiny"
+      "Use group sending permissions": [
+        "Použít oprávnění skupiny pro odesílání"
       ],
       "Use recovery code": [
         "Použít kód pro obnovení"
@@ -1475,6 +1478,9 @@
       "Fast and secure. No logs are kept.": [
         "Rychlé a bezpečné. Nejsou uchovávány logy."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Spustit na serverech ${ BRAND_NAME }"
+      ],
       "Run on device": [
         "Spusťte na zařízení"
       ]
@@ -1482,9 +1488,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Koupit teď"
-      ],
-      "New": [
-        "Nový"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Pozvedněte e-mailovou produktivitu na novou úroveň. Dovolte ${ BRAND_NAME } Scribe pomoci vám se psaním, odpovídáním a korekturami vašich e-mailů."
@@ -5187,8 +5190,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
-      "*Only one free trial per customer.": [
-        "*Pouze jedna bezplatná zkušební verze na zákazníka."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Na jednoho uživatele je k dispozici pouze jedna bezplatná zkušební verze. Poté platí běžné ceny."
       ],
       "Accounts with custom domains cannot join a group plan.": [
         "Účty s vlastními doménami se nemohou připojit ke skupinovému tarifu."
@@ -5253,7 +5256,7 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Předplatné bude účtováno hlavnímu správci tohoto tarifu."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Abychom vám usnadnili přechod, nabízíme vám 30denní zkušební verzi služby ${ BRAND_NAME } Unlimited*."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
@@ -5309,8 +5312,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Pouze jedna bezplatná zkušební doba na uživatele."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Na jednoho uživatele je k dispozici pouze jedna bezplatná zkušební verze. Poté platí běžné ceny."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Po opuštění vašeho tarifu bude tento uživatel přesunut do ${ BRAND_NAME }. Neomezený tarif s 30denní zkušební dobou zdarma.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Ve výchozím stavu je správci přiřazeno ${ formattedStorage } úložného prostoru. Velikost prostoru přiřazeného dalším uživatelům, můžete později změnit."
@@ -5323,9 +5329,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Pozvánka bude zrušena a uživatel se nebude moci připojit k ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Účet uživatele bude přesunut na tarif ${ BRAND_NAME } Unlimited na 30denní bezplatnou zkušební dobu*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "K vytvoření nového uživatele je nutná nastavená vlastní doména."
@@ -7210,6 +7213,9 @@
       "Disable recovery by ${ type }": [
         "Deaktivovat obnovení ${ type }"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Zakázáno od ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Vypnutím dvoufázového ověřování bude váš účet méně bezpečný. Vypněte toto ověřování pouze pokud je to nezbytně nutné."
       ],
@@ -7326,6 +7332,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Povolte TLS nebo SSL u externí služby, pokud je podporováno."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Povoleno od ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Opětovné povolení obnovení pomocí fráze vygeneruje novou frázi pro obnovení."
@@ -7467,9 +7476,6 @@
       ],
       "Group deleted": [
         "Skupina byla smazána"
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Ve vaší doručené poště můžete e-maily stejné konverzace seskupit a nebo je zobrazit samostatně."
       ],
       "here": [
         "zde"
@@ -8121,6 +8127,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Vezměte prosím na vědomí, že pokud smažete filtr ${ nameDeleted }, přestaneme zpracovávat všechny automatické akce, které spouští."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane ${ remainingCreditsFormatted } kreditů."
       ],
       "please open a support ticket": [
         "prosím odešlete požadavek na podporu"
@@ -9133,6 +9142,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Můžete zapnout zaznamenávání přihlášení, abyste měli přehled kdy a ze které IP adresy bylo přistoupeno k vašemu účtu. Budeme zaznamenávat IP adresu a čas přístupu k vašemu účtu, stejně jako nepovedená přihlášení."
       ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Sekci Fotografie můžete povolit v rozhraní pomocí přepínače níže."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Výše uvedené nastavení můžete okamžitě odemknout přidáním ${ specificCountryCount } k počtu IP adres ve vašem tarifu nebo nás kontaktujte pro řešení na míru."
       ],
@@ -9981,12 +9993,6 @@
       "Auto-detect primary time zone": [
         "Automaticky rozpoznat primární časové pásmo"
       ],
-      "Auto-load embedded images": [
-        "Automaticky načíst vložené obrázky"
-      ],
-      "Auto-load remote content": [
-        "Automaticky načíst vzdálený obsah"
-      ],
       "Auto-reply": [
         "Automatická odpověď"
       ],
@@ -10319,9 +10325,6 @@
       ],
       "Group address": [
         "Skupinová adresa"
-      ],
-      "Group conversations": [
-        "Seskupit konverzace"
       ],
       "Group members": [
         "Členové skupiny"
@@ -11269,6 +11272,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Přidat asistenta psaní ${ BRAND_NAME } Scribe"
       ],
@@ -11511,11 +11517,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Brazilský Reál"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Švýcarský frank"
+      ],
+      "US Dollar": [
+        "Americký dolar"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -12013,9 +12025,6 @@
       ],
       "Data breach monitoring": [
         "Monitorování narušení bezpečnosti dat"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorování narušení bezpečnosti dat (již brzy)"
       ],
       "Dedicated account manager": [
         "Dedikovaný správce účtu"
@@ -13839,6 +13848,9 @@
       "MM/YY": [
         "MM/RR"
       ],
+      "More plans are available in other currencies": [
+        "Další tarify jsou k dispozici v jiných měnách"
+      ],
       "Payment Processing": [
         "Zpracování platby"
       ],
@@ -13883,6 +13895,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Zpracováváme vaši platbu za vyúčtovanou fakturu. Před provedením změn v tarifu nebo aktualizací platebních údajů vyčkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Z vybrané platební metody vám bude účtována částka ${ amountToCharge }."
       ]
     },
     "Payments.Error": {
@@ -15077,6 +15092,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Žádost o resetování hesla"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Povolit sekci Fotografie"
       ]
     },
     "Settings description": {
@@ -16322,6 +16342,9 @@
       "Premium address created": [
         "Prémiová adresa byla vytvořena"
       ],
+      "Problem reported": [
+        "Problém nahlášen"
+      ],
       "Resuming import": [
         "Obnovuji import"
       ],
@@ -17414,6 +17437,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Photos": [
+        "Fotografie"
       ],
       "Policies": [
         "Zásady"

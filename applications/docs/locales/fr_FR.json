@@ -2067,6 +2067,17 @@
         "Aidez-nous à nous améliorer"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmation de la perte de la remise spéciale de ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Retirer la réduction"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Votre abonnement ${ PLAN_NAMES[PLANS.PASS] } est au prix réduit de ${ price } par an. En passant à un abonnement gratuit, vous perdrez définitivement cette remise, même si vous décidez ensuite de passer à nouveau à un abonnement payant."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Historique des versions plus détaillé"
@@ -5695,9 +5706,6 @@
       "Data breach monitoring": [
         "Surveillance des fuites de données"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Surveillance des fuites de données (prochainement)"
-      ],
       "Desktop app": [
         "Application de bureau"
       ],
@@ -6904,7 +6912,7 @@
     },
     "Safety review": {
       "Review your account safety": [
-        "Vérifier la sécurité de votre compte"
+        "Vérifier la sécurité du compte"
       ]
     },
     "Security Center": {
@@ -7494,6 +7502,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Votre abonnement a été acheté avec une application iOS. Pour apporter des modifications à votre abonnement ou mettre à jour vos données de paiement, vous devez donc vous rendre sur l'App Store d'Apple."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Vous passerez à un abonnement inférieur à la fin du cycle de facturation."
       ]
     },
     "Subscription price": {

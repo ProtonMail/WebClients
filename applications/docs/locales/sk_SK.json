@@ -294,6 +294,9 @@
       "Get verification code": [
         "Odoslať overovací kód"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Prejsť na ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Prejsť na štítok"
       ],
@@ -551,6 +554,9 @@
       ],
       "Switch or add account": [
         "Prepnúť alebo pridať účet"
+      ],
+      "Take out of trash": [
+        "Vyprázdniť kôš"
       ],
       "Trust": [
         "Dôverovať"
@@ -2257,6 +2263,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Pri pokuse o duplikovanie dokumentu došlo k chybe. Skúste to znova, prosím."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Pri pokuse o obnovenie dokumentu došlo k chybe. Skúste to znova, prosím."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Pri pokuse o vymazanie dokumentu došlo k chybe. Skúste to znova, prosím."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Pri vytváraní dokumentu došlo k chybe. Skúste to znova, prosím."
       ],
@@ -3482,6 +3494,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "Dokument \"${ documentTitle }\" bol presunutý do koša. Zostane tam, kým ho neobnovíte alebo neodstránite natrvalo."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "Dokument \"${ documentTitle }\" je v koši a zostane tam, kým ho natrvalo neodstránite."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } emailová adresa",
         "${ addressCount } emailové adresy",
@@ -3814,6 +3832,12 @@
       ],
       "Display word count": [
         "Zobraziť počet slov"
+      ],
+      "Document is in trash": [
+        "Dokument je v koši"
+      ],
+      "Document moved to trash": [
+        "Dokument bol presunutý do koša"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nič nevidíte? Nezabudnite vypnúť blokovanie automaticky otváraných okien."
@@ -4189,6 +4213,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornenie, tento proces môže trvať nejakú dobu v závislosti na veľkosti Vášho adresára."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú kredity vo výške ${ remainingCreditsFormatted }."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Na vytvorenie skupiny zadajte meno a emailovú adresu, prosím."
@@ -5848,9 +5875,6 @@
       "Data breach monitoring": [
         "Monitorovanie úniku dát"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorovanie úniku dát (už čoskoro)"
-      ],
       "Desktop app": [
         "Desktopová aplikácia"
       ],
@@ -6836,6 +6860,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "More plans are available in other currencies": [
+        "Ďalšie plány sú k dispozícii v iných menách"
       ],
       "Payment Processing": [
         "Spracovanie platby"
@@ -7855,6 +7882,9 @@
       ],
       "Preferences saved": [
         "Nastavenie bolo uložené"
+      ],
+      "Problem reported": [
+        "Problém nahlásený"
       ],
       "Secure link copied": [
         "Bezpečný odkaz skopírovaný"

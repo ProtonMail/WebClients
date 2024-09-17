@@ -939,6 +939,9 @@
       "${ count } view": [
         "${ count } 回表示"
       ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } 表示"
+      ],
       "${ memberCount } member": [
         "${ memberCount }人のメンバー"
       ],
@@ -978,6 +981,9 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
       ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "ゴミ箱に入れてもエイリアスはメールの転送を続けます。メールの受信を停止したい場合は、エイリアスを無効にしてください。"
+      ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "カスタム ドメインを持つエイリアスは監視されません。監視用のカスタム電子メールとして追加してください。"
       ],
@@ -1002,6 +1008,9 @@
       "An item previously shared with you was removed": [
         "以前にあなたと共有したアイテムが削除されました"
       ],
+      "Are you sure you want to remove the link?": [
+        "本当にリンクを削除しますか？"
+      ],
       "Auto-lock successfully disabled.": [
         "自動ロックを無効にしました."
       ],
@@ -1013,6 +1022,9 @@
       ],
       "Built in 2FA authenticator": [
         "2要素認証の認証器を内蔵"
+      ],
+      "Can be viewed": [
+        "表示可能回数"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "このフォルダー内のアイテムを作成、編集、削除、エクスポートすることができます。"
@@ -1107,8 +1119,17 @@
       "Enter verification code. Digit ${ digit }.": [
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
       ],
+      "Enter your extra password": [
+        "追加パスワードを入力してください"
+      ],
       "Enter your PIN code": [
         "PINコードの入力"
+      ],
+      "Expires in": [
+        "有効期限"
+      ],
+      "Expires in ${ remainingTime }": [
+        "${ remainingTime } で期限が切れます"
       ],
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
@@ -1260,11 +1281,17 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべての項目を移動します"
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "アイテムを別の保管庫に移動すると、その履歴とすべてのセキュアリンクが消去されます。"
+      ],
       "Moving an item to another vault will erase its history.": [
         "アイテムを別の保管庫に移動すると、その履歴が消去されます."
       ],
       "Moving items": [
         "アイテムの移動"
+      ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "アイテムを別の保管庫に移動すると、その履歴とすべてのセキュアリンクが消去されます。"
       ],
       "Moving items to another vault will erase their history.": [
         "アイテムを別の保管庫に移動すると、その履歴が消去されます."
@@ -1335,6 +1362,9 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } データをエクスポートするには、${ BRAND_NAME } のパスワードを確認してください"
       ],
+      "Please confirm your password": [
+        "パスワードを確認してください"
+      ],
       "Please confirm your PIN code to edit this setting.": [
         "この設定を編集するには、PINコードを確認してください。"
       ],
@@ -1370,6 +1400,9 @@
       ],
       "Restoring trashed items...": [
         "ごみ箱の項目を復元しています..."
+      ],
+      "Secure links": [
+        "セキュアリンク"
       ],
       "Select destination vault": [
         "移動先の保管庫を選択"
@@ -1415,6 +1448,9 @@
       ],
       "Successfully synced all vaults": [
         "すべての保管庫が正常に同期されました"
+      ],
+      "Suggested": [
+        "提案"
       ],
       "Switch to another vault or create an item in this vault": [
         "別の保管庫に切り替えるか、この保管庫にアイテムを作成"
@@ -1472,6 +1508,18 @@
       ],
       "Unlimited hide-my-email aliases": [
         "無制限の Hide-my-email エイリアス"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "生体認証で ${ PASS_SHORT_APP_NAME } のロックを解除する"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "${ BRAND_NAME } のパスワードで ${ PASS_SHORT_APP_NAME } のロックを解除する"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "追加パスワードで ${ PASS_SHORT_APP_NAME } のロックを解除する"
+      ],
+      "Unlock with biometrics": [
+        "生体認証でロックを解除"
       ],
       "Unpinning item...": [
         "アイテムの固定解除中..."
@@ -1574,6 +1622,9 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "あなたの情報は ${ displayedDate }で見つかりました。"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
       ]
     },
     "Label": {
@@ -2618,6 +2669,12 @@
       "Expiration Date is not in the format MM/YY": [
         "有効期限が MM/YY の形式ではありません"
       ],
+      "Extra password cannot be empty": [
+        "追加パスワードは空にできません"
+      ],
+      "Extra password should have at least 8 characters": [
+        "追加パスワードは8文字以上必要です"
+      ],
       "Failed to load breaches.": [
         "違反をロードできませんでした。"
       ],
@@ -2710,6 +2767,9 @@
       ],
       "Title is required": [
         "タイトルは必須です"
+      ],
+      "Too many attempts": [
+        "パスワード入力の試行が規定回数を超過しました"
       ],
       "Transfer ownership of this vault to ${ email }?": [
         "このフォルダーの所有権を${ email }に移転しますか？"

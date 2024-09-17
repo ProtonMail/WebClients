@@ -2455,9 +2455,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*हर यूज़र पे सिर्फ एक मुफ्त ट्रायल।"
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "डिफ़ॉल्ट रूप से हम व्यवस्थापक खाते को ${ formattedStorage } संग्रहण सौंपते हैं। आप बाद में अतिरिक्त उपयोगकर्ताओं के बीच वितरित करने के लिए निर्दिष्ट संग्रहण का प्रबंधन कर सकते हैं।"
       ],
@@ -2466,9 +2463,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "यदि उपयोगकर्ता के पास पहले से ही ${ MAIL_APP_NAME } पता है, तो उसे यहाँ दर्ज करें। अन्यथा उन्हें पहले एक खाता बनाना होगा।"
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "उपयोगकर्ता का खाता 30-दिन के निःशुल्क परीक्षण* के लिए ${ BRAND_NAME } असीमित योजना में स्थानांतरित कर दिया जाएगा।"
       ],
       "To create a new user, a configured custom domain is required.": [
         "नया उपयोगकर्ता बनाने के लिए, कॉन्फ़िगर किया गया कस्टम डोमेन आवश्यक है।"
@@ -5376,9 +5370,6 @@
       ],
       "Data breach monitoring": [
         "डाटा लीक की निगरानी"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "डाटा लीक की निगरानी (जल्द आ रहा है)"
       ],
       "Dedicated servers and IP": [
         "विशेष सर्वर और IP"

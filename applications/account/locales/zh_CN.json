@@ -61,11 +61,11 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
-        "启用"
-      ],
       "activate": [
         "激活"
+      ],
+      "Activate": [
+        "启用"
       ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
@@ -223,6 +223,9 @@
       "Color": [
         "颜色"
       ],
+      "Configure SAML": [
+        "设置 SAML"
+      ],
       "Confirm": [
         "确定"
       ],
@@ -286,6 +289,9 @@
       "Create folder": [
         "创建文件夹"
       ],
+      "Create Gateway": [
+        "创建网关"
+      ],
       "Create label": [
         "创建标签"
       ],
@@ -324,6 +330,9 @@
       ],
       "Delete and confirm": [
         "删除并确认"
+      ],
+      "Delete Gateway": [
+        "删除网关"
       ],
       "Delete link": [
         "删除链接"
@@ -400,11 +409,17 @@
       "Edit email address": [
         "更改邮箱地址"
       ],
+      "Edit Gateway": [
+        "编辑网关"
+      ],
       "Edit invoice details": [
         "修改账单信息"
       ],
       "Edit label": [
         "编辑标签"
+      ],
+      "Edit name": [
+        "编辑名称"
       ],
       "Edit password": [
         "编辑密码"
@@ -423,6 +438,9 @@
       ],
       "Edit subscription": [
         "修改"
+      ],
+      "Edit users": [
+        "编辑用户"
       ],
       "Emoji": [
         "表情符号"
@@ -555,6 +573,9 @@
       ],
       "Import key": [
         "导入密钥"
+      ],
+      "Import new SAML metadata": [
+        "添加 SAML 元数据"
       ],
       "Increase": [
         "增加"
@@ -739,8 +760,14 @@
       "Remove calendar": [
         "删除日历"
       ],
+      "Remove domain": [
+        "刷新域名"
+      ],
       "Remove gift code": [
         "移除礼品码"
+      ],
+      "Remove single sign-on": [
+        "移除单点登录"
       ],
       "Remove this label": [
         "移除此标签"
@@ -826,6 +853,9 @@
       "Save ICS file": [
         "保存 ICS 文件"
       ],
+      "Save SAML configuration": [
+        "保存对 SAML 的设置"
+      ],
       "Search": [
         "搜索"
       ],
@@ -834,6 +864,9 @@
       ],
       "Search settings": [
         "搜索设置"
+      ],
+      "See DNS TXT record": [
+        "查看 DNS 的 TXT 记录"
       ],
       "See how": [
         "详细了解"
@@ -970,6 +1003,9 @@
       "Stay": [
         "留在此页"
       ],
+      "Stop using single sign-on": [
+        "不再使用单点登录"
+      ],
       "Strikethrough": [
         "删除线"
       ],
@@ -1030,6 +1066,9 @@
       "Upgrade now": [
         "立即升级账户"
       ],
+      "Upgrade to Business": [
+        "升级到 Business 套餐"
+      ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "升级账户即可启用 ${ PROTON_SENTINEL_NAME }"
       ],
@@ -1076,10 +1115,10 @@
         "验证账户"
       ],
       "Verify code": [
-        "验证"
+        "验证码"
       ],
       "Verify code again": [
-        "重新验证"
+        "再次输入验证码"
       ],
       "View": [
         "查看"
@@ -1241,7 +1280,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        "正在使用此证书的所有路由器和客户端都将断开连接。"
+        "使用该证书的所有路由器、客户端，它们的连接都会断开。"
       ]
     },
     "Animation": {
@@ -1272,11 +1311,6 @@
     "Assistant option": {
       "Run on device": [
         "在设备上运行"
-      ]
-    },
-    "Assistant toggle": {
-      "New": [
-        "新"
       ]
     },
     "Attached ics file error": {
@@ -2983,7 +3017,7 @@
     },
     "CountryInfo": {
       "(via ${ entryCountryName })": [
-        "(通过 ${ entryCountryName })"
+        "(经 ${ entryCountryName })"
       ]
     },
     "Create user accounts empty state": {
@@ -3690,7 +3724,7 @@
         "支付超时，请重试"
       ],
       "Code wrong or not valid anymore": [
-        "代码错误或不再有效"
+        "代码错误，或者失效了"
       ],
       "Condition incomplete": [
         "条件不完整"
@@ -3768,10 +3802,19 @@
         "文件夹名称不能为空。"
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
-        "如果电视上的时间已过期，请在电视上单击“重新整理” ，然后再次输入代码。"
+        "如果电视上的时间过期了，点击电视上的“刷新”，重新输入一次代码。"
       ],
       "IMAP server is required": [
         "IMAP 服务器必须填写"
+      ],
+      "Impossible to create the gateway": [
+        "网关不可创建"
+      ],
+      "Impossible to edit the gateway": [
+        "网关不可编辑"
+      ],
+      "Impossible to rename the gateway": [
+        "网关不可重命名"
       ],
       "Incorrect file type. Upload a file in PNG or JPEG format.": [
         "文件类型不正确。上传一个 PNG 或 JPEG 格式的文件。"
@@ -3935,6 +3978,12 @@
       "Please upload a square file": [
         "请上传一个方形文件"
       ],
+      "Please upload an xml file": [
+        "请上传 xml 文件"
+      ],
+      "Please upload only 1 file": [
+        "请只上传 1 个文件"
+      ],
       "Port is required": [
         "端口号必须填写"
       ],
@@ -4069,6 +4118,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
+      ],
+      "Unable to upload file": [
+        "文件没上传成"
       ],
       "Unexpected error, we can't import the contacts": [
         "意外错误，无法导入联系人"
@@ -4386,7 +4438,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        "证书 ${ name } 不存在或已被吊销"
+        "证书 ${ name } 不存在，或者已被吊销"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "姓和名字不能同时不选"
@@ -4624,13 +4676,13 @@
         "${ MaxVPN } 台设备可同时接入 VPN"
       ],
       "Access to all countries": [
-        "解说全部线路"
+        "解锁全部线路"
       ],
       "Add": [
         "添加"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "最多可连接 ${ plusVpnConnections } 台设备"
+        "最多连接 ${ plusVpnConnections } 部设备"
       ],
       "Fastest VPN servers": [
         "高速 VPN 服务器"
@@ -4639,7 +4691,7 @@
         "Secure Core 服务器"
       ],
       "Secure streaming support": [
-        "安全流媒体支持"
+        "让流媒体更安全"
       ],
       "Torrenting support (P2P)": [
         "支持 BT 下载 (P2P)"
@@ -5052,7 +5104,7 @@
         "支付"
       ],
       "Country": [
-        "国家"
+        "国家/地区"
       ],
       "Create your account": [
         "创建您的账户"
@@ -5065,6 +5117,9 @@
       ],
       "Folders": [
         "文件夹"
+      ],
+      "IP address": [
+        "IP 地址"
       ],
       "Key type": [
         "密钥类型"
@@ -5584,7 +5639,7 @@
         "${ number } 个城市"
       ],
       "${ number } server": [
-        "${ number } 个服务器"
+        "${ number } 台服务器"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "上传的 ${ numberOfNonPrivateKeys } 个文件不是有效的私钥，请验证并重试。"
@@ -5602,7 +5657,7 @@
         "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "${ provisioningCounter }服务器正在配置中，大概需要${ provisioningDuration }。"
+        "${ provisioningCounter } 台服务器正在配置中，大致需要 ${ provisioningDuration }。"
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }：请求收件人将未经授权的电子邮件标记为垃圾邮件或将其隔离。"
@@ -5638,10 +5693,10 @@
         "${ vaultLink } 标签已更改"
       ],
       "${ vpnPlus } required for Country level connection.": [
-        "指定国家连接需要开通 ${ vpnPlus }。"
+        "指定国家/地区连接需要开通 ${ vpnPlus }。"
       ],
       "${ vpnPlus } required for Secure Core feature.": [
-        "使用安全核心功能需要 ${ vpnPlus } 。"
+        "使用 Secure Core 功能需要 ${ vpnPlus }。"
       ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
@@ -5752,13 +5807,13 @@
         "一次性为您的组添加多个用户。"
       ],
       "Add server (${ availableAddedCount } available)": [
-        "添加服务器(${ availableAddedCount }台可用)"
+        "添加服务器 (有 ${ availableAddedCount } 台可用)"
       ],
       "Adding ${ addedServerCount } gateway server": [
-        "添加${ addedServerCount }网关服务器"
+        "添加 ${ addedServerCount } 台网关服务器"
       ],
       "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "添加网关服务器： ${ serverNumber }/${ total }"
+        "添加网关服务器：${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "其他选项"
@@ -5874,6 +5929,12 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "您确定要移除此用户的管理权限吗？"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "确定要移除域名 ${ boldDomain } 吗？"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "要求管理员设置网关。"
+      ],
       "Attention required": [
         "需要关注"
       ],
@@ -5911,7 +5972,7 @@
         "以下的基本导航和操作快捷键始终可以使用，不受开关控制。"
       ],
       "Basic, Plus or Visionary subscription required": [
-        "需要 Basic、Plus 或 Visionary 订阅方案"
+        "需开通 Basic 账户、Plus 账户或者 Visionary 账户"
       ],
       "Be sure to copy your password and store it somewhere safe.": [
         "请务必复制您的密码并将其存储在安全的地方。"
@@ -5957,6 +6018,12 @@
       ],
       "Cancel anytime": [
         "随时取消"
+      ],
+      "Can’t access your recovery email?": [
+        "找回密码需要的邮箱用不了？"
+      ],
+      "Can’t access your recovery phone?": [
+        "找回密码需要的手机号用不了？"
       ],
       "Center": [
         "居中"
@@ -6016,10 +6083,10 @@
         "创建于"
       ],
       "Create your first Gateway": [
-        "创建您的第一个网关"
+        "创建第一个网关"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "创建网关服务器：${ serverNumber }/${ total }"
+        "创建网关服务器：${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "创建账户"
@@ -6076,7 +6143,7 @@
         "删除链接？"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "删除${ deletedServerCount }网关服务器"
+        "删除 ${ deletedServerCount } 台网关服务器"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 图标"
@@ -6087,17 +6154,32 @@
       "DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The \"p=\" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the \"p=quarantine\" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "DMARC 检查发送者的SPF和DKIM记录是否来自您的域。 这可以防止攻击者使用另一个域名的 SPF 和 DKIM 模拟你的域。 此记录中的\"p=\"(策略)指示您希望收件人平台如何处理未经授权的电子邮件。 我们建议在大多数领域使用“p=quantine”策略。 请确保您在 DNS 中添加以下TXT 记录 (通常由网站注册商提供)。"
       ],
+      "DNS TXT record": [
+        "DNS 的 TXT 记录"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "切勿遗忘此密码，否则您将失去机构的管理权限。"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "确定要让本机以外的所有设备退出此账户吗？"
       ],
+      "Domain ownership failed verification.": [
+        "域名归属的认证没有成功。"
+      ],
+      "Domain ownership not verified.": [
+        "域名的归属没有得到认证。"
+      ],
+      "Domain ownership verified.": [
+        "域名的归属得到了认证。"
+      ],
       "domain used": [
         "域名用量"
       ],
       "Done! We sent a code to ${ destination }.": [
         "搞定！我们向 ${ destination } 发送了一个验证码。"
+      ],
+      "Don’t know your recovery phrase?": [
+        "找回密码需要的助记词没有了？"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "没有跳转？请先关闭弹出窗口屏蔽插件。"
@@ -6121,7 +6203,7 @@
         "您可以下载 PGP 密钥用于其他兼容 PGP 的服务。"
       ],
       "Drop file here to upload": [
-        "拖至此处即可上传"
+        "拖至此处上传文件"
       ],
       "Drop to import": [
         "拖至此处即可导入"
@@ -6175,7 +6257,7 @@
         "加密设置已更改"
       ],
       "Enhance your network security": [
-        "增强您的网络安全"
+        "增强网络安全"
       ],
       "Enter key manually instead": [
         "手动输入密钥"
@@ -6218,6 +6300,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "请输入您的密保手机号，我们将把您的用户名或邮箱地址发送至该号码。"
+      ],
+      "Enter your recovery phrase to change your password now.": [
+        "输入找回密码需要的助记词。"
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "事件邀请与回应都将采用这一语言发送。"
@@ -6284,9 +6369,6 @@
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "把公钥发给亲朋好友，或者挂到网上，这样大家就都能给你发端到端加密的邮件了！"
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "在收件箱中将同一对话中的电子邮件组合在一起或单独显示"
       ],
       "here": [
         "此处"
@@ -6412,16 +6494,16 @@
         "插入链接"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
-        "国家/地区配置文件用于连接所选国家的某个随机服务器。"
+        "国家/地区配置文件用于在所选国家/地区随机选择某个服务器连接。"
       ],
       "Install a Free server configuration file to connect to a specific server in one of the three free locations.": [
-        "免费服务器配置文件用于连接到三个免费位置的特定服务器。"
+        "免费服务器配置文件用于指定要连接的处于三个免费位置之中的特定服务器。"
       ],
       "Install a Secure Core configuration file to benefit from an additional protection against VPN endpoint compromise.": [
-        "安全核心 (Secure Core) 配置文件能够提升防护等级，抵御针对 VPN 网络的攻击。"
+        "Secure Core（安全核心）配置文件能够提升防护等级，抵御针对 VPN 网络的攻击。"
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
-        "服务器配置文件用于连接所选国家的特定服务器。"
+        "服务器配置文件用于指定要连接的在所选国家/地区的特定服务器。"
       ],
       "Internet connection lost": [
         "网络连接已断开"
@@ -6498,11 +6580,14 @@
       "Large imports can take several days.": [
         "大批量的导入可能需要几天才能完成。"
       ],
+      "Lean more about gateways": [
+        "了解网关"
+      ],
       "Learn how to ${ staySaferOnlineLink }": [
         "学习如何 ${ staySaferOnlineLink }"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "了解如何使用第三方 VPN 应用程序登录 ${ VPN_APP_NAME } 。"
+        "了解如何使用第三方 VPN 应用程序登录 ${ VPN_APP_NAME }。"
       ],
       "Learn more": [
         "了解详情"
@@ -6594,6 +6679,18 @@
       "Multi-user support not enabled.": [
         "未开启多用户功能。"
       ],
+      "Must be between 3 and 20 characters long.": [
+        "只能有 3 到 20 个字符长。"
+      ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "只能有字母、数字、连字符 (-)。"
+      ],
+      "Must not contain spaces.": [
+        "不能有空格。"
+      ],
+      "Must start with a letter.": [
+        "必须字母打头。"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
       ],
@@ -6624,6 +6721,12 @@
       "No folder selected": [
         "未选择文件夹"
       ],
+      "No gateways": [
+        "没有网关"
+      ],
+      "No Gateways yet": [
+        "网关还没有"
+      ],
       "No imports or forwarding history.": [
         "暂无邮件导入与自动转发记录。"
       ],
@@ -6648,6 +6751,9 @@
       "Number of dedicated servers in the organization": [
         "组织中的专用服务器数量"
       ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "一共有 ${ ownedCount } 台专用服务器能用，有 ${ usedCount } 台正在用，剩下 ${ remainingCount } 台可以分配。要分配 ${ addedCount } 台，不够用。"
+      ],
       "of": [
         "，共"
       ],
@@ -6667,13 +6773,16 @@
         "开放源代码"
       ],
       "or ${ selectFileButton }": [
-        "或${ selectFileButton }"
+        "或 ${ selectFileButton }"
       ],
       "Or select a particular server:": [
-        "或选择特定的服务器："
+        "或指定服务器："
       ],
       "Organization size": [
         "组织的规模"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "以专用服务器组成网关，设置能访问它们的成员。"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "您的机构中还有其他管理员，您需要将新密码告知他们。"
@@ -6793,7 +6902,7 @@
         "以及另外 ${ numOfBreaches } 项"
       ],
       "Plus or Visionary subscription required": [
-        "需开通增强版或尊享版账户"
+        "需开通 Plus 账户或者 Visionary 账户"
       ],
       "Preview": [
         "预览"
@@ -6811,7 +6920,7 @@
         "暂不支持文档预览。"
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
-        "价格包括所有适用的基于周期的折扣与保存在您账户中的未过期的优惠券。"
+        "价格已经考虑各种能用得上的周期计费优惠，以及账户中未过期的优惠券。"
       ],
       "Priority support": [
         "优先支持"
@@ -6937,7 +7046,7 @@
         "通过 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全邮箱发送。"
       ],
       "Server is currently down": [
-        "服务器目前不可用"
+        "服务器当下用不了"
       ],
       "Server load": [
         "服务器负荷"
@@ -6989,6 +7098,9 @@
       ],
       "Some keys successfully reactivated": [
         "已成功重新激活某些密钥"
+      ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "由于我们近来移除了一些服务器，目前能用的服务器中，有的只能在部分国家/地区使用。"
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF 用于声明谁可以代表您的域名发送邮件。请务必在您的 DNS 管理面板（在您购买该域名的平台上）添加下列 TXT 记录。"
@@ -7117,13 +7229,13 @@
         "验证过程将在新页面进行，请先关闭弹出窗口屏蔽插件。"
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        "使用第三方 VPN 客户端或在路由器上设置 VPN 连接时，可通过这些配置文件选择连接到哪个 ${ VPN_APP_NAME } 服务器。"
+        "使用第三方 VPN 客户端，以及在路由器上设置 VPN 连接时，这些配置文件用于选择连到哪个 ${ VPN_APP_NAME } 服务器。"
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "这些配置可用于 WireGuard 路由器和官方客户端。"
+        "这些配置适用于 WireGuard 路由器和官方客户端。"
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
-        "这些凭据不能被用来登录我们的官方${ VPN_APP_NAME }应用。${ learnMore }"
+        "这些凭据无法用来登录我们的官方 ${ VPN_APP_NAME } 应用。${ learnMore }"
       ],
       "They'll receive a free month of ${ planName }.": [
         "2. 好友可免费体验 ${ planName } 一个月。"
@@ -7257,8 +7369,11 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "您需要选择一种账户恢复方式，验证身份后方可继续操作。"
       ],
+      "To proceed, we must verify the request.": [
+        "继续操作之前，操作请求需要验证。"
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
-        "若需要保护与互联网之间的连接，下载并安装 ${ VPN_APP_NAME } 应用程序并连接至服务器。"
+        "增强互联网传输安全，下载安装 ${ VPN_APP_NAME } 应用程序，连接应用提供的服务器。"
       ],
       "to use ${ toAppName } and all ${ BRAND_NAME } services": [
         "即可使用 ${ toAppName } 和所有 ${ BRAND_NAME } 服务"
@@ -7360,7 +7475,7 @@
         "使用 ${ BRAND_NAME } 提供的各类邮箱地址与别名。"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "若不安装官方客户端，例如在 macOS 上使用 Tunnelblick 或在 GNU/Linux 上使用 OpenVPN 时，需要使用下列账号连接 ${ VPN_APP_NAME }。"
+        "要是不使用官方客户端，比如使用 macOS 上的 Tunnelblick 或者 GNU/Linux 上的 OpenVPN，那就用下面的凭据连接 ${ VPN_APP_NAME }。"
       ],
       "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
         "发送邮件时使用所选邮箱地址作为 SMTP 用户名，生成的专用密码作为 SMTP 密码。"
@@ -7395,6 +7510,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "验证将在新标签页中进行，请停止拦截弹窗。您不必为此付费，验证结束后所用金额将立即退还。"
       ],
+      "Verify domain": [
+        "认证域名"
+      ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "通过应用程序根据时间生成的一次性验证码确认身份"
       ],
@@ -7416,6 +7534,9 @@
       "Visa Secure logo": [
         "Visa Secure 图标"
       ],
+      "Want servers in other countries?": [
+        "想连到其他国家/地区的服务器？"
+      ],
       "Want to learn more?": [
         "想详细了解？"
       ],
@@ -7426,7 +7547,7 @@
         "警告：账户一经删除无法恢复，您将不能再登录任何相关服务，通讯录中的所有信息也将清空。"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        "我们建议您尽可能使用官方 ${ VPN_APP_NAME } 客户端。"
+        "我们建议尽可能使用官方 ${ VPN_APP_NAME } 客户端。"
       ],
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
@@ -7448,6 +7569,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "我们建议至少拥有 2 台服务器以提供冗余。"
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "建议使用在多地的多台服务器，互为冗余。"
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "我们建议在强制使用双重认证之前通知组织成员并要求他们为其账户设置双重认证。"
@@ -7488,6 +7612,9 @@
       "Welcome": [
         "欢迎"
       ],
+      "We’ll send a reset code to ${ boldValue }.": [
+        "验证码会发到 ${ boldValue }。"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "我们会将重置代码发送到您先前提供的密保邮箱。"
       ],
@@ -7512,8 +7639,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
       ],
+      "Whole organization": [
+        "整个组织"
+      ],
       "Why?": [
         "为什么？"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "开通 Business 套餐或者 Enterprise 套餐，为组织选购 ${ boldDedicatedServers }，分到各 ${ boldGateways }，设置谁要使用哪些服务器。"
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "使用加密的 ${ BRAND_NAME } 地址，您可以使用所有 ${ BRAND_NAME } 服务"
@@ -7600,7 +7733,7 @@
         "您可以通过 Outlook、Apple Mail、Thunderbird 等任何支持 IMAP/SMTP 的邮件客户端使用 ${ MAIL_APP_NAME }。"
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "您可以使用以下凭证通过第三方开源 VPN 客户端连接到 ${ VPN_APP_NAME } 服务器，例如 macOS 下的 Tunnelblick 或 GNU/Linux 下的 OpenVPN。"
+        "可以使用以下凭据，通过诸如 macOS 下的 Tunnelblick 和 GNU/Linux 下的 OpenVPN 等第三方开源 VPN 客户端，连接到 ${ VPN_APP_NAME } 服务器。"
       ],
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
         "未来 24 小时内您最多只能发送 ${ emailSendLimitNumber } 封邀请邮件"
@@ -7615,7 +7748,7 @@
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
       ],
       "You have ${ availableCount } dedicated server available.": [
-        "您有${ availableCount }台独立服务器可用。"
+        "有 ${ availableCount } 台独立服务器可以使用。"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一个试用版 ${ planTitle } 订阅。如果您想在试用期结束后继续订阅，请添加付款方式。"
@@ -7723,7 +7856,7 @@
         "您的邮箱将只会用于此一次性验证。"
       ],
       "Your files will be encrypted and then saved": [
-        "您的文件将被加密保存。"
+        "文件会加密保存"
       ],
       "Your import from ${ accounts } is temporarily delayed.": [
         "您从 ${ accounts } 的导入被暂时推迟。"
@@ -8296,12 +8429,6 @@
       "Auto-detect primary time zone": [
         "自动检测主要时区"
       ],
-      "Auto-load embedded images": [
-        "自动加载嵌入图像"
-      ],
-      "Auto-load remote content": [
-        "自动加载外链内容"
-      ],
       "Auto-reply": [
         "自动回复"
       ],
@@ -8366,7 +8493,7 @@
         "类别"
       ],
       "Choose a name for the generated certificate file": [
-        "输入新证书的名称"
+        "输入所创建证书文件的名称"
       ],
       "Code": [
         "验证码"
@@ -8498,7 +8625,7 @@
         "说明："
       ],
       "Device/certificate name": [
-        "设备或证书名称"
+        "设备或证书的名称"
       ],
       "Digits": [
         "验证码位数"
@@ -8526,6 +8653,9 @@
       ],
       "Duration": [
         "时长"
+      ],
+      "e.g. example.com": [
+        "类似于 example.com"
       ],
       "Email": [
         "邮箱"
@@ -8706,6 +8836,15 @@
       ],
       "Messages per page": [
         "每页邮件数量"
+      ],
+      "Metadata file for ${ appName }": [
+        "${ appName } 的元数据文件"
+      ],
+      "Metadata URL for ${ appName }": [
+        "${ appName } 的元数据网址"
+      ],
+      "Method for importing metadata": [
+        "导入元数据的方法"
       ],
       "Moderate NAT": [
         "保守 NAT"
@@ -8916,6 +9055,9 @@
       ],
       "Signature": [
         "落款"
+      ],
+      "Single sign-on URL": [
+        "单点登录网址"
       ],
       "SMTP port": [
         "SMTP 端口"
@@ -9264,6 +9406,9 @@
       "Create an alias": [
         "创建别名"
       ],
+      "Don't have access to your 2FA?": [
+        "暂时不想用 2FA？"
+      ],
       "Encryption and keys": [
         "加密与密钥"
       ],
@@ -9563,6 +9708,26 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } 有新版本，请${ reloadButton }。"
+      ]
+    },
+    "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }：登录"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }：注册"
+      ],
+      "Create a new ${ appName } account": [
+        "创建 ${ appName } 账户"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "忘了 ${ BRAND_NAME } 账户的密码？凭代码、电子邮件或短信重置密码，继续登录 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等诸多应用。"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "重置 ${ BRAND_NAME } 账户的密码"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "登录 ${ appName } 账户"
       ]
     },
     "Modal title": {
@@ -9976,9 +10141,6 @@
       ],
       "Data breach monitoring": [
         "数据泄露监控"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "数据泄露监控（即将推出）"
       ],
       "Dedicated servers and IP": [
         "专用服务器和IP"
@@ -10597,6 +10759,9 @@
       "Invalid code": [
         "无效的验证码"
       ],
+      "IP Address copied to clipboard": [
+        "剪贴板里目前是 IP 地址"
+      ],
       "Key copied to the clipboard": [
         "密钥已复制到剪贴板"
       ],
@@ -10607,7 +10772,7 @@
         "链接已复制到剪贴板"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
-        "OpenVPN / IKEv2 账号密码已重新生成"
+        "重新生成了 OpenVPN / IKEv2 的账号密码"
       ],
       "Reminder has been sent": [
         "提醒已发送"
@@ -10831,7 +10996,7 @@
         "自动 (${ value })"
       ],
       "Country configs": [
-        "国家配置"
+        "国家/地区配置"
       ],
       "Create new group": [
         "创建群组"
@@ -10900,7 +11065,10 @@
         "路由器"
       ],
       "Secure Core configs": [
-        "安全核心配置"
+        "Secure Core 配置"
+      ],
+      "Select who can access...": [
+        "选择让谁访问..."
       ],
       "Spam": [
         "垃圾邮件"
@@ -10910,6 +11078,9 @@
       ],
       "Star": [
         "星标"
+      ],
+      "The whole organization": [
+        "整个组织"
       ],
       "Trash": [
         "回收站"
@@ -11262,6 +11433,15 @@
       "domain.com": [
         "域名.com"
       ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "类似于 https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "类似于 https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "类似于 https://idp.example.com/XXXXX"
+      ],
       "E.g., ": [
         "例如："
       ],
@@ -11583,6 +11763,14 @@
       ],
       "Upload additional files": [
         "上传其他文件"
+      ]
+    },
+    "Select invoice document": {
+      "Currency conversion": [
+        "货币转换"
+      ],
+      "Invoice": [
+        "发票"
       ]
     },
     "Select search results": {
@@ -12038,7 +12226,7 @@
         "6 位用户"
       ],
       "64 countries": [
-        "64 个国家"
+        "64 个国家和地区"
       ],
       "All paid Mail and Calendar features": [
         "享受 Mail 与 Calendar 的所有付费功能"
@@ -12050,13 +12238,13 @@
         "VPN 速度最快"
       ],
       "Premium ${ appName1 }": [
-        "高级 ${ appName1 } 账户"
+        "高级版 ${ appName1 } 账户"
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
-        "高级 ${ appName1 } 与 ${ appName2 } 账户"
+        "高级版 ${ appName1 } 及 ${ appName2 } 账户"
       ],
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
-        "高级版 ${ appName1 } 、 ${ appName2 } 和 ${ appName3 }"
+        "高级版 ${ appName1 }、${ appName2 } 及 ${ appName3 } 账户"
       ],
       "Premium early access": [
         "抢先体验高级功能"
@@ -12813,7 +13001,7 @@
         "证书有效期已延长至 ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "${ name } 配置已创建。注意：其私钥不会存储在我们的服务器上，今后也不会再显示，您应当立刻复制或下载此配置。"
+        "创建了配置文件“${ name }”。注意：私钥不会保存，此后不会再显示。现在，应复制或者下载此配置文件。"
       ],
       "Creating config file for ${ serverName }": [
         "创建连接至 ${ serverName } 的配置文件"
@@ -12889,7 +13077,7 @@
         "城市"
       ],
       "Country": [
-        "国家"
+        "国家/地区"
       ],
       "CSV field": [
         "CSV 字段"
@@ -12983,7 +13171,7 @@
         "（当前）"
       ],
       "1. Give a name to the config to be generated": [
-        "1. 为需要生成的证书设置名称"
+        "1. 为需要生成的配置文件设置名称"
       ],
       "1. Select platform": [
         "1. 选择平台"
@@ -12995,13 +13183,13 @@
         "2. 选择协议"
       ],
       "3. Select config file and download": [
-        "3. 选择配置文件并下载"
+        "3. 选择、下载配置文件"
       ],
       "3. Select VPN options": [
         "3. 设置 VPN 选项"
       ],
       "4. Select a server to connect to": [
-        "4. 选择需要连接的服务器"
+        "4. 选择要连接的服务器"
       ],
       "A filter name is required": [
         "筛选规则的名称必须填写"
@@ -13063,6 +13251,9 @@
       "Add PayPal payment method": [
         "添加 PayPal 支付方式"
       ],
+      "Add servers": [
+        "添加服务器"
+      ],
       "Add Sieve filter": [
         "创建 Sieve 规则"
       ],
@@ -13077,6 +13268,9 @@
       ],
       "Add user accounts": [
         "添加用户账户"
+      ],
+      "Add users": [
+        "添加用户"
       ],
       "Address": [
         "联络地址"
@@ -13213,6 +13407,15 @@
       "Create ${ selectedUserIds.length } user": [
         "创建 ${ selectedUserIds.length } 位用户"
       ],
+      "Create a new Gateway": [
+        "新建网关"
+      ],
+      "Create a new gateway": [
+        "新建网关"
+      ],
+      "Create Gateway": [
+        "创建网关"
+      ],
       "Create multiple user accounts": [
         "创建多个账户"
       ],
@@ -13313,7 +13516,7 @@
         "详细信息"
       ],
       "Device connected!": [
-        "设备已连接！"
+        "设备连上了！"
       ],
       "Disable two-factor authentication": [
         "关闭双重验证"
@@ -13360,6 +13563,9 @@
       "Edit filter": [
         "更改规则"
       ],
+      "Edit Gateway ${ currentName }": [
+        "编辑网关 ${ currentName }"
+      ],
       "Edit invoice details": [
         "修改账单信息"
       ],
@@ -13369,8 +13575,17 @@
       "Edit Sieve filter": [
         "更改 Sieve 规则"
       ],
+      "Edit the list of servers of the gateway": [
+        "编辑分配给网关的服务器列表"
+      ],
       "Edit user": [
         "编辑用户"
+      ],
+      "Edit users": [
+        "编辑用户"
+      ],
+      "Edit who can access the gateway": [
+        "编辑谁要使用该网关"
       ],
       "Email": [
         "邮件"
@@ -13472,7 +13687,7 @@
         "生成 SMTP 专用密码"
       ],
       "Get ${ vpnPlus } to access all servers": [
-        "获取 ${ vpnPlus } 以访问所有服务器"
+        "开通 ${ vpnPlus }，任意选择服务器"
       ],
       "Get the apps": [
         "下载应用"
@@ -13657,6 +13872,9 @@
       "Phone": [
         "电话"
       ],
+      "Photos": [
+        "照片"
+      ],
       "Preview": [
         "预览"
       ],
@@ -13696,8 +13914,20 @@
       "Remove calendar": [
         "删除日历"
       ],
+      "Remove domain": [
+        "移除域名"
+      ],
+      "Remove single sign-on": [
+        "移除单点登录"
+      ],
+      "Remove single sign-on for your organization?": [
+        "移除组织的单点登录？"
+      ],
       "Remove user?": [
         "是否移除用户？"
+      ],
+      "Rename the gateway": [
+        "重命名网关"
       ],
       "Report a problem": [
         "反馈问题"
@@ -13719,6 +13949,9 @@
       ],
       "Revoke certificate": [
         "吊销证书"
+      ],
+      "SAML authentication": [
+        "SAML 授权"
       ],
       "Save time with email filters": [
         "将琐事交给筛选规则"
@@ -13780,6 +14013,9 @@
       "Settings": [
         "设置"
       ],
+      "Setup dedicated servers by upgrading to Business": [
+        "升级到 Business 套餐，配置专用服务器"
+      ],
       "Short domain (@pm.me)": [
         "短域名（@pm.me）"
       ],
@@ -13803,6 +14039,9 @@
       ],
       "Signed in to member account": [
         "已登录成员账户"
+      ],
+      "Single sign-on": [
+        "单点登录"
       ],
       "SMTP submission": [
         "SMTP 投递"
@@ -13892,7 +14131,7 @@
         "用户"
       ],
       "Users": [
-        "用户数"
+        "用户"
       ],
       "Users and addresses": [
         "用户和地址"

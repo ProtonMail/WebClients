@@ -223,6 +223,9 @@
       "Create and copy alias": [
         "Crear y copiar alias"
       ],
+      "Create free account": [
+        "Crear cuenta gratuita"
+      ],
       "Create link": [
         "Crear enlace"
       ],
@@ -389,6 +392,9 @@
       ],
       "Get verification code": [
         "Obtener código de verificación"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Ir a ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Ir a la etiqueta"
@@ -707,9 +713,6 @@
       ],
       "Save changes": [
         "Guardar los cambios"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Guardar en ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Escanear y descargar"
@@ -4092,7 +4095,7 @@
         "¿Está seguro que quiere eliminar permanentemente los elementos seleccionados de la papelera?"
       ],
       "Are you sure you want to proceed?": [
-        "¿Está seguro de que quiere continuar?"
+        "¿En verdad desea continuar?"
       ],
       "Attention required": [
         "Atención requerida"
@@ -4776,6 +4779,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Tome en cuenta que este proceso puede tardar algún tiempo dependiendo del tamaño de su libreta de direcciones."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Tome en cuenta que al hacer clic en el botón Confirmar, la cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
+      ],
       "Please open the document to view it.": [
         "Abra el documento para verlo."
       ],
@@ -4847,7 +4853,7 @@
         "Búsqueda privada activada. Puede cerrar esta ventana y buscar archivos y carpetas."
       ],
       "Public link": [
-        "Enlace publico"
+        "Enlace público"
       ],
       "Public sharing of documents is not yet supported.": [
         "El intercambio público de documentos aún no está admitido."
@@ -4897,8 +4903,8 @@
       "Retry now": [
         "Reintentar ahora"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Guardado en ${ DRIVE_SHORT_APP_NAME }"
+      "Saving...": [
+        "Guardando..."
       ],
       "Scan issue": [
         "Problema de escaneo"
@@ -6875,9 +6881,6 @@
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoreo de vulneración de datos (próximamente)"
-      ],
       "Desktop app": [
         "App de escritorio"
       ],
@@ -7749,7 +7752,7 @@
       ],
       "This item was succefully removed from your list": [
         "Se borró este elemento de su lista.",
-        "Se borraro estos elementos de su lista."
+        "Se borraron estos elementos de su lista."
       ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
@@ -7974,6 +7977,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Más planes disponibles en otras divisas"
       ],
       "Payment Processing": [
         "Procesando el pago"
@@ -9611,8 +9617,8 @@
         "¿Está seguro de que quiere cerrar la vista previa?"
       ],
       "Are you sure you want to remove this item from your list?": [
-        "¿Seguro que quiere borrar este elemento de su lista?",
-        "¿Seguro que quiere borrar estos elementos de su lista?"
+        "¿En verdad desea borrar este elemento de su lista?",
+        "¿En verdad desea borrar estos elementos de su lista?"
       ],
       "Billing cycle": [
         "Ciclo de facturación"

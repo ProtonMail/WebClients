@@ -549,6 +549,9 @@
       "Hide": [
         "დამალვა"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარის დამალვა"
+      ],
       "Hide advanced PGP settings": [
         "PGP-ის დამატებითი პარამეტრების დამალვა"
       ],
@@ -832,10 +835,10 @@
       "Not saved": [
         "არაა შენახული"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
       "Open": [
@@ -1015,6 +1018,9 @@
       "Revert to original display": [
         "თავდაპირველ ეკრანზე დაბრუნება"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "გაშვება ${ BRAND_NAME }-ის სერვერებზე"
+      ],
       "Save": [
         "შენახვა"
       ],
@@ -1125,6 +1131,9 @@
       ],
       "Show": [
         "ჩვენება"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარის ჩვენება"
       ],
       "Show advanced PGP settings": [
         "PGP-ის დამატებითი პარამეტრების ჩვენება"
@@ -1546,6 +1555,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "თქვენი კონფიდენციალობის შესანახად ჩვენ ჟურნალს არ ვინახავთ. ყელაფერი უფრო სწრაფია."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "გაშვება ${ BRAND_NAME }-ის სერვერებზე"
       ],
       "Run on device": [
         "გაშვება მოწყობილობაზე"
@@ -4154,6 +4166,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "მიმაგრებული ფაილების გაგზავნა შეზღუდულია, სანამ არ დააკმაყოფილებთ თქვენს სატარიფო გეგმას ან არ ასწევთ მას."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "მიმაგრებული ფაილების გაგზავან შეზღუდულია, სანამ სცდებით თქვენი სატარიფო გეგმის საზღვრებს, ან სანამ არ ასწევთ მას."
+      ],
       "Signature not verified": [
         "ხელმოწერა არ შემოწმებულა"
       ],
@@ -6609,6 +6624,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ remainingCreditsFormatted } კრედიტი იქნება დარჩენილი."
       ],
       "Please open the document to view it.": [
         "გახსენით დოკუმენტი, რომ ნახოთ ის."
@@ -9170,9 +9188,6 @@
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
       ],
-      "Data breach monitoring (coming soon)": [
-        "მონაცემების გაჟონვის თვალყურის დევნება (მალე)"
-      ],
       "Desktop app": [
         "კომპიუტერის აპი"
       ],
@@ -10059,6 +10074,9 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "More plans are available in other currencies": [
+        "სხვა სატარიფო გეგმები ხელმისაწვდომია სხვა ვალუტებში"
       ],
       "Payment Processing": [
         "გადახდის დამუშავება"
@@ -11956,6 +11974,9 @@
       ],
       "Preferences saved": [
         "პარამეტრები შენახულია"
+      ],
+      "Problem reported": [
+        "პრობლემა შეტყობინებულია"
       ],
       "Public key trusted": [
         "საჯარო გასაღებები სანდოა"

@@ -294,6 +294,9 @@
       "Get verification code": [
         "Pridobi kodo za preverjanje"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Pojdi na ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Pojdi na oznako"
       ],
@@ -551,6 +554,9 @@
       ],
       "Switch or add account": [
         "Preklopi ali dodaj račun"
+      ],
+      "Take out of trash": [
+        "Izprazni smetnjak"
       ],
       "Trust": [
         "Zaupaj"
@@ -2242,6 +2248,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Prišlo je do napake pri podvajanju dokumenta. Poskusite znova."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Prišlo je do napake pri obnovitvi dokumenta. Poskusite znova."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Prišlo je do napake pri premikanju dokumenta v smetnjak. Poskusite znova."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Prišlo je do napake pri ustvarjanju novega dokumenta. Poskusite znova."
       ],
@@ -3455,6 +3467,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "\"${ documentTitle }\" je bil premaknjen v smetnjak. Tam bo ostal, dokler ga ne obnovite ali dokončno izbrišete."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "\"${ documentTitle }\" je v smetnjaku in bo tam ostal, dokler ga dokončno ne izbrišete."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } e-poštni naslov",
         "${ addressCount } e-poštna naslova",
@@ -3778,6 +3796,12 @@
       ],
       "Display word count": [
         "Pokaži število besed"
+      ],
+      "Document is in trash": [
+        "Dokument je v smetnjaku."
+      ],
+      "Document moved to trash": [
+        "Dokument premaknjen v smetnjak"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Ne vidite ničesar? Ne pozabite izklopiti prepovedi pojavnih oken."
@@ -5737,9 +5761,6 @@
       ],
       "Data breach monitoring": [
         "Spremljanje vdorov v podatke"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Spremljanje vdorov v podatke (kmalu na voljo)"
       ],
       "Desktop app": [
         "Namizna aplikacija"

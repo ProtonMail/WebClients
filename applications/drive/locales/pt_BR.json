@@ -223,6 +223,9 @@
       "Create and copy alias": [
         "Criar e copiar alias"
       ],
+      "Create free account": [
+        "Criar uma conta gratuita"
+      ],
       "Create link": [
         "Criar link"
       ],
@@ -389,6 +392,9 @@
       ],
       "Get verification code": [
         "Obter código de verificação"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Vá para ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Ir para marcador"
@@ -707,9 +713,6 @@
       ],
       "Save changes": [
         "Salvar alterações"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Salvar no ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Escanear e Baixar"
@@ -2419,7 +2422,7 @@
         "Cobrado a cada 2 anos a ${ amountBilled }. Os descontos são baseados no preço mensal padrão."
       ],
       "Billed yearly at ${ amountBilled }. Save ${ amountSave } over 2 individual ${ BRAND_NAME } Unlimited yearly subscriptions.": [
-        "Cobrado anualmente em ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
+        "Cobrado anualmente a ${ amountBilled }. Economize ${ amountSave } em 2 assinaturas anuais individuais ${ BRAND_NAME } Unlimited."
       ]
     },
     "duoplan2024: Info": {
@@ -2441,7 +2444,7 @@
         "Todos os recursos da ${ BRAND_NAME }, para 2 pessoas."
       ],
       "Double your storage": [
-        "Dobrar seu armazenamento"
+        "Dobre seu armazenamento"
       ]
     },
     "duoplan2024: Title": {
@@ -4103,6 +4106,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Você tem certeza de que deseja excluir permanentemente os itens selecionados da lixeira?"
       ],
+      "Are you sure you want to proceed?": [
+        "Tem certeza de que deseja continuar?"
+      ],
       "Attention required": [
         "Atenção necessária"
       ],
@@ -4785,6 +4791,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Note que este processo pode levar algum tempo, dependendo do tamanho da sua lista de contatos."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Note que ao clicar no botão Confirmar a sua conta terá ${ remainingCreditsFormatted } créditos restantes."
+      ],
       "Please open the document to view it.": [
         "Abra o documento para visualizá-lo"
       ],
@@ -4855,6 +4864,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Pesquisa privada ativada. Agora você pode fechar esta caixa de diálogo e procurar arquivos e pastas."
       ],
+      "Public link": [
+        "Link público"
+      ],
       "Public sharing of documents is not yet supported.": [
         "O compartilhamento público de documentos ainda não é suportado."
       ],
@@ -4903,8 +4915,8 @@
       "Retry now": [
         "Tente novamente agora"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Salvo no ${ DRIVE_SHORT_APP_NAME }"
+      "Saving...": [
+        "Salvando..."
       ],
       "Scan issue": [
         "Problema ao escanear"
@@ -5325,6 +5337,9 @@
       "You already have a free account": [
         "Você já possui uma conta gratuita"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Você está prestes a sair do item compartilhado. Você não poderá acessá-lo novamente até que o proprietário o compartilhe com você."
+      ],
       "You are about to open another browser tab and visit:": [
         "Você está prestes a abrir outra guia do navegador e visitar:"
       ],
@@ -5390,6 +5405,10 @@
       ],
       "You will lose all unsaved changes.": [
         "Você perderá todas as alterações não salvas."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Você precisará salvá-lo novamente na página do link público.",
+        "Você precisará salvá-los novamente na página do link público."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
@@ -6820,9 +6839,6 @@
       "Data breach monitoring": [
         "Monitoramento de violação de dados"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoramento de violação de dados (em breve)"
-      ],
       "Desktop app": [
         "Aplicativo para computador"
       ],
@@ -7261,7 +7277,7 @@
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
       ],
       "Email everyone in a group with a single email address": [
-        "Envie e-mails para todos em um grupo com um único endereço de e-mail"
+        "Envie e-mail a todos em um grupo com um único endereço de e-mail"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -7318,7 +7334,7 @@
         "Personalize sua assinatura de e-mail com logotipos, imagens, ícones de redes sociais, links para seus detalhes de contato e muito mais"
       ],
       "Phone support is available from the ${ BRAND_NAME } Customer Support team during European business hours, for customers with 20 or more users": [
-        "O suporte por telefone da equipe de suporte do cliente da ${ BRAND_NAME } está disponível durante o horário comercial europeu, para clientes com 20 ou mais usuários"
+        "O suporte por telefone está disponível na equipe de Suporte ao Cliente da ${ BRAND_NAME } durante o horário comercial europeu, para clientes com 20 ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
@@ -7691,6 +7707,14 @@
       "The link to your item was deleted": [
         "O link para seu item foi excluído"
       ],
+      "This item was not removed from your list": [
+        "O item não foi removido da sua lista",
+        "Alguns itens não foram removidos da sua lista"
+      ],
+      "This item was succefully removed from your list": [
+        "O item foi removido com sucesso da sua lista",
+        "Todos os itens foram removidos com sucesso da sua lista"
+      ],
       "Trash failed to be emptied": [
         "Erro ao esvaziar a lixeira"
       ],
@@ -7920,6 +7944,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Mais planos estão disponíveis em outras moedas"
       ],
       "Payment Processing": [
         "Processando pagamento"
@@ -9341,6 +9368,9 @@
       "Preferences saved": [
         "Preferências salvas"
       ],
+      "Problem reported": [
+        "Problema reportado"
+      ],
       "Recovery has started": [
         "Recuperação iniciada"
       ],
@@ -9553,6 +9583,10 @@
       "Are you sure you want to close the preview?": [
         "Você tem certeza que deseja fechar a pré-visualização?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Tem certeza que deseja excluir esse item da sua lista?",
+        "Tem certeza que deseja excluir esses itens da sua lista?"
+      ],
       "Billing cycle": [
         "Ciclo de faturamento"
       ],
@@ -9597,6 +9631,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmar a perda dos benefícios da ${ BRAND_NAME }"
+      ],
+      "Confirmation required?": [
+        "Confirmação necessária?"
       ],
       "Contact Details": [
         "Detalhes do contato"

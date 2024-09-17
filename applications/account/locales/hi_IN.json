@@ -70,10 +70,10 @@
       "Accept": [
         "स्वीकार करें"
       ],
-      "Activate": [
+      "activate": [
         "सक्रिय"
       ],
-      "activate": [
+      "Activate": [
         "सक्रिय"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -1352,11 +1352,6 @@
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } ऐप"
-      ]
-    },
-    "Assistant toggle": {
-      "New": [
-        "नया"
       ]
     },
     "Attached ics file error": {
@@ -4542,9 +4537,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ग्रुप"
       ],
-      "*Only one free trial per customer.": [
-        "*हर ग्राहक पे सिर्फ एक मुफ्त ट्रायल।"
-      ],
       "customer support": [
         "ग्राहक सहायता"
       ],
@@ -4575,9 +4567,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "आपको दिया गया स्टोरेज: ${ assignedStorage }"
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "परिवर्तन को आसान बनाने के लिए, हम आपको ${ BRAND_NAME } असीमित* का 30-दिन का सौजन्य परीक्षण दे रहे हैं।"
-      ],
       "You are part of ${ organization.Name }.": [
         "आप ${ organization.Name } के सदस्य है।"
       ],
@@ -4595,9 +4584,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*हर यूज़र पे सिर्फ एक मुफ्त ट्रायल।"
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "डिफ़ॉल्ट रूप से हम व्यवस्थापक खाते को ${ formattedStorage } संग्रहण सौंपते हैं। आप बाद में अतिरिक्त उपयोगकर्ताओं के बीच वितरित करने के लिए निर्दिष्ट संग्रहण का प्रबंधन कर सकते हैं।"
       ],
@@ -4606,9 +4592,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "यदि उपयोगकर्ता के पास पहले से ही ${ MAIL_APP_NAME } पता है, तो उसे यहाँ दर्ज करें। अन्यथा उन्हें पहले एक खाता बनाना होगा।"
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "उपयोगकर्ता का खाता 30-दिन के निःशुल्क परीक्षण* के लिए ${ BRAND_NAME } असीमित योजना में स्थानांतरित कर दिया जाएगा।"
       ],
       "To create a new user, a configured custom domain is required.": [
         "नया उपयोगकर्ता बनाने के लिए, कॉन्फ़िगर किया गया कस्टम डोमेन आवश्यक है।"
@@ -6448,9 +6431,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "पहचान प्रदाता के पास जाएं, ${ appName } के लिए SAML मेटाडाटा प्राप्त करें और इसे यहां आयात करें।"
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "एक ही बातचीत में ईमेल को अपने इनबॉक्स में समूहित करें या उन्हें अलग से प्रदर्शित करें।"
       ],
       "here": [
         "यहां"
@@ -10287,9 +10267,6 @@
       "Data breach monitoring": [
         "डाटा लीक की निगरानी"
       ],
-      "Data breach monitoring (coming soon)": [
-        "डाटा लीक की निगरानी (जल्द आ रहा है)"
-      ],
       "Dedicated servers and IP": [
         "विशेष सर्वर और IP"
       ],
@@ -13984,6 +13961,9 @@
       ],
       "Phone": [
         "फोन"
+      ],
+      "Photos": [
+        "तस्वीरें"
       ],
       "Preview": [
         "प्रिव्यू करें"

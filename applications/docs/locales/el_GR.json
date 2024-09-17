@@ -288,6 +288,9 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Πηγαίνετε στο ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Go to label": [
         "Μετάβαση στην ετικέτα"
       ],
@@ -545,6 +548,9 @@
       ],
       "Switch or add account": [
         "Εναλλαγή ή προσθήκη λογαριασμού"
+      ],
+      "Take out of trash": [
+        "Αδειάστε τα διαγραμμένα"
       ],
       "Trust": [
         "Αξιόπιστο"
@@ -2231,6 +2237,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Παρουσιάστηκε σφάλμα κατά την προσπάθεια αναπαραγωγής του εγγράφου. Παρακαλούμε προσπαθήστε ξανά."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Παρουσιάστηκε σφάλμα κατά την προσπάθεια επαναφοράς του εγγράφου. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Παρουσιάστηκε σφάλμα κατά την προσπάθεια απόρριψης του εγγράφου. Παρακαλούμε προσπαθήστε ξανά."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Παρουσιάστηκε σφάλμα κατά τη δημιουργία ενός νέου εγγράφου. Παρακαλπύμε προσπαθήστε ξανά."
       ],
@@ -3410,6 +3422,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "Το \"${ documentTitle }\" έχει μετακινηθεί στον κάδο απορριμμάτων. Θα παραμείνει εκεί μέχρι να το επαναφέρετε ή να το διαγράψετε οριστικά."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "Το \"${ documentTitle }\" βρίσκεται στον κάδο απορριμμάτων και θα παραμείνει εκεί μέχρι να το διαγράψετε οριστικά."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
@@ -3698,6 +3716,12 @@
       ],
       "Display word count": [
         "Εμφάνιση καταμέτρησης λέξεων"
+      ],
+      "Document is in trash": [
+        "Το έγγραφο βρίσκεται στα διαγραμμένα"
+      ],
+      "Document moved to trash": [
+        "Το έγγραφο μετακινήθηκε στα διαγραμμένα"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Δε βλέπετε τίποτα; Θυμηθείτε να απενεργοποιήσετε τα προγράμματα αποκλεισμού αναδυόμενων παραθύρων."
@@ -4067,6 +4091,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Παρακαλείστε να σημειώσετε ότι αυτή η διαδικασία μπορεί να διαρκέσει κάποιο χρόνο, ανάλογα με το μέγεθος του βιβλίου διευθύνσεών σας."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ remainingCreditsFormatted }."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Παρακαλούμε δώστε ένα όνομα και μια διεύθυνση ηλεκτρονικού ταχυδρομείου για τη δημιουργία μιας ομάδας."
@@ -5668,9 +5695,6 @@
       "Data breach monitoring": [
         "Παρακολούθηση παραβίασης δεδομένων"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Παρακολούθηση παραβίασης δεδομένων (σύντομα κοντά σας)"
-      ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
       ],
@@ -6616,6 +6640,9 @@
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "More plans are available in other currencies": [
+        "Περισσότερα προγράμματα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
       "Payment Processing": [
         "Επεξεργασία Πληρωμής"
@@ -7581,6 +7608,9 @@
       ],
       "Preferences saved": [
         "Οι προτιμήσεις αποθηκεύτηκαν"
+      ],
+      "Problem reported": [
+        "Αναφέρθηκε πρόβλημα"
       ],
       "Secure link copied": [
         "Ο ασφαλής σύνδεσμος αντιγράφηκε"

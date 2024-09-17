@@ -552,6 +552,9 @@
       "Hide": [
         "Ascundere"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Ascundere asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "Hide advanced PGP settings": [
         "Ascundere setări PGP avansate"
       ],
@@ -836,10 +839,10 @@
       "Not saved": [
         "Nesalvat"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -1019,6 +1022,9 @@
       "Revert to original display": [
         "Revenire la afișarea inițială"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Rulare pe serverele ${ BRAND_NAME }"
+      ],
       "Save": [
         "Salvare"
       ],
@@ -1129,6 +1135,9 @@
       ],
       "Show": [
         "Afișare"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Afișare asistent de scriere ${ BRAND_NAME } Scribe"
       ],
       "Show advanced PGP settings": [
         "Afișare setări PGP avansate"
@@ -1555,6 +1564,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "Nu se păstrează jurnale pentru a vă proteja confidențialitatea. Procesare mai rapidă."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Rulare pe serverele ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Rulare pe dispozitiv"
@@ -4182,6 +4194,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Trimiterea atașamentelor este restricționată până când atingeți limitele planului sau schimbați tipul de abonament."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Trimiterea atașamentelor este restricționată în timp ce depășiți limitele planului actual sau până când treceți la un plan cu plată superior."
+      ],
       "Signature not verified": [
         "Semnătură neverificată"
       ],
@@ -6718,6 +6733,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "După apăsarea pe butonul de confirmare, contul va mai avea ${ remainingCreditsFormatted } (de) credite rămase."
+      ],
       "Please open the document to view it.": [
         "Deschideți documentul pentru a-l vedea."
       ],
@@ -8736,7 +8754,7 @@
         "Detalii"
       ],
       "upgrade for more storage": [
-        "treceți la alt tip de plan pentru mai mult spațiu"
+        "treceți la un plan cu plată pentru mai mult spațiu"
       ],
       "Upgrade to restore full access": [
         "Schimbați tipul de abonament pentru a restaura accesul complet"
@@ -9328,9 +9346,6 @@
       ],
       "Data breach monitoring": [
         "Monitorizarea divulgării datelor"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorizarea divulgării datelor (în curând)"
       ],
       "Desktop app": [
         "Aplicația desktop"
@@ -10226,6 +10241,9 @@
       ],
       "MM/YY": [
         "LL/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Există alte planuri în monede diferite"
       ],
       "Payment Processing": [
         "Se procesează plata"
@@ -11375,19 +11393,19 @@
         "Pentru toate serviciile ${ BRAND_NAME }"
       ],
       "To continue uploading and syncing files, free up space or upgrade for more storage.": [
-        "Pentru a continua să încărcați și să sincronizați fișiere, eliberați spațiu sau treceți la alt tip de plan pentru mai mult spațiu de stocare."
+        "Pentru a continua să încărcați și să sincronizați fișiere, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
       ],
       "To send or receive emails, free up space or ${ upgrade }": [
         "Pentru a trimite sau a primi mesaje, eliberați spațiu sau ${ upgrade }"
       ],
       "To send or receive emails, free up space or upgrade for more storage.": [
-        "Pentru a trimite sau primi mesaje, eliberați spațiu sau treceți la alt tip de plan pentru mai mult spațiu de stocare."
+        "Pentru a trimite sau primi mesaje, eliberați spațiu sau treceți la un plan cu plată pentru a obține mai mult spațiu."
       ],
       "To upload or sync files, free up space or ${ upgrade }": [
         "Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }"
       ],
       "upgrade for more storage": [
-        "treceți la alt tip de plan pentru mai mult spațiu"
+        "treceți la un plan cu plată pentru mai mult spațiu"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Vom adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }."
@@ -12188,6 +12206,9 @@
       ],
       "Preferences saved": [
         "Preferințe salvate"
+      ],
+      "Problem reported": [
+        "Problemă raportată"
       ],
       "Public key trusted": [
         "Chei publice aprobate"

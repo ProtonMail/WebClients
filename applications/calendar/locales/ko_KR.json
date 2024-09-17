@@ -2613,13 +2613,13 @@
         "1GB 저장공간"
       ],
       "2 users": [
-        "두 사용자들"
+        "두 명의 사용자"
       ],
       "Full access to all ${ BRAND_NAME } products": [
         "모든 ${ BRAND_NAME } 제품들에 대한 모든 접근권한"
       ],
       "You save ${ amountSave }": [
-        "${ amountSave }를 절약했습니다"
+        "${ amountSave }를 절약할 수 있음"
       ]
     },
     "duoplan2024: SubTitle": {
@@ -2632,7 +2632,7 @@
     },
     "duoplan2024: Title": {
       "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "${ PLAN_NAMES[PLANS.DUO] } 를 소개합니다 "
+        "${ PLAN_NAMES[PLANS.DUO] }를 소개합니다 "
       ]
     },
     "Duplicate event button tooltip": {
@@ -4680,6 +4680,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "확인 버튼을 누르면 계정에는 ${ remainingCreditsFormatted } 크레딧이 남게됩니다."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "그룹을 생성하기 위해서 이름과 이메일 주소를 입력해주세요."
       ],
@@ -6349,9 +6352,6 @@
       "Data breach monitoring": [
         "데이터 유출 모니터링"
       ],
-      "Data breach monitoring (coming soon)": [
-        "데이터 유출 모니터링 (출시 예정)"
-      ],
       "Desktop app": [
         "데스크톱 앱"
       ],
@@ -7315,6 +7315,9 @@
       ],
       "MM/YY": [
         "MM/YY (월/년)"
+      ],
+      "More plans are available in other currencies": [
+        "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
       "Payment Processing": [
         "결제 처리중"
@@ -8847,6 +8850,9 @@
       ],
       "Preferences saved": [
         "설정 저장됨"
+      ],
+      "Problem reported": [
+        "문제 제보됨"
       ],
       "Undo in progress": [
         "실행 취소 중"

@@ -181,6 +181,9 @@
       "Delete logo": [
         "Видалити логотип"
       ],
+      "Delete member": [
+        "Видалити учасника"
+      ],
       "Delete user": [
         "Видалити користувача"
       ],
@@ -2751,9 +2754,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Тільки одна безплатна пробна версія на одного користувача."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Типово ми призначаємо ${ formattedStorage } сховища для облікового запису адміністратора. Ви можете керувати призначеним сховищем, щоб пізніше розподілити його між іншими користувачами."
       ],
@@ -2765,9 +2765,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Запрошення буде скасовано, і користувач не зможе приєднатися до ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Обліковий запис користувача буде переведено на тарифний план ${ BRAND_NAME } Unlimited на 30-денну безплатну пробну версію*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Для створення нового користувача потрібен налаштований власний домен."
@@ -6191,9 +6188,6 @@
       ],
       "Data breach monitoring": [
         "Відстеження витоків даних"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Відстеження витоків даних (скоро з'явиться)"
       ],
       "Dedicated servers and IP": [
         "Виділені сервери та IP-адреси"

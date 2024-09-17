@@ -223,6 +223,9 @@
       "Create and copy alias": [
         "Skapa och kopiera alias"
       ],
+      "Create free account": [
+        "Skapa gratis konto"
+      ],
       "Create link": [
         "Skapa länk"
       ],
@@ -389,6 +392,9 @@
       ],
       "Get verification code": [
         "Skaffa verifieringskod"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Gå till ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Gå till etikett"
@@ -707,9 +713,6 @@
       ],
       "Save changes": [
         "Spara ändringar"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Spara till ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Skanna och ladda ner"
@@ -4091,6 +4094,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Är du säker på att du vill ta bort markerade objekt permanent från papperskorgen?"
       ],
+      "Are you sure you want to proceed?": [
+        "Är du säker på att du vill fortsätta?"
+      ],
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
@@ -4840,6 +4846,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Privat sökning aktiverad. Du kan nu stänga denna dialogruta och söka efter filer och mappar."
       ],
+      "Public link": [
+        "Offentlig länk"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig delning av dokument stöds ännu inte."
       ],
@@ -4888,8 +4897,8 @@
       "Retry now": [
         "Försök igen nu"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Sparad i ${ DRIVE_SHORT_APP_NAME }"
+      "Saving...": [
+        "Sparar …"
       ],
       "Scan issue": [
         "Skanningsproblem"
@@ -6853,9 +6862,6 @@
       "Data breach monitoring": [
         "Dataintrångsövervakning"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Dataintrångsövervakning (kommer snart)"
-      ],
       "Desktop app": [
         "App för stationär dator"
       ],
@@ -7721,6 +7727,14 @@
       "The link to your item was deleted": [
         "Länken till ditt objekt togs bort"
       ],
+      "This item was not removed from your list": [
+        "Detta objekt togs inte bort från din lista",
+        "Några objekt misslyckades att tas bort från din lista"
+      ],
+      "This item was succefully removed from your list": [
+        "Detta objekt togs bort från din lista",
+        "Alla objekt togs bort från din lista"
+      ],
       "Trash failed to be emptied": [
         "Misslyckades att tömma papperskorg"
       ],
@@ -7947,6 +7961,9 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "More plans are available in other currencies": [
+        "Fler paket är tillgängliga i andra valutor"
       ],
       "Payment Processing": [
         "Betalning behandlas"
@@ -9350,6 +9367,9 @@
       "Preferences saved": [
         "Preferenser sparade"
       ],
+      "Problem reported": [
+        "Problem rapporterat"
+      ],
       "Recovery has started": [
         "Återställning har startat"
       ],
@@ -9562,6 +9582,10 @@
       "Are you sure you want to close the preview?": [
         "Är du säker på att du vill stänga förhandsgranskningen?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Är du säker på att du vill ta bort detta objekt från din lista?",
+        "Är du säker på att du vill ta bort dessa objekt från din lista?"
+      ],
       "Billing cycle": [
         "Faktureringscykel"
       ],
@@ -9606,6 +9630,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Bekräfta förlust av ${ BRAND_NAME }-bonusar"
+      ],
+      "Confirmation required?": [
+        "Bekräftelse krävs?"
       ],
       "Contact Details": [
         "Kontaktdetaljer"

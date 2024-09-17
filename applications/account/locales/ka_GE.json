@@ -70,10 +70,10 @@
       "Accept": [
         "დასტური"
       ],
-      "Activate": [
+      "activate": [
         "აქტივაცია"
       ],
-      "activate": [
+      "Activate": [
         "აქტივაცია"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -892,6 +892,9 @@
       "Resume": [
         "გაგრძელება"
       ],
+      "Resume membership": [
+        "წევრობის გაგრძელება"
+      ],
       "Retry": [
         "თავიდან"
       ],
@@ -1186,8 +1189,8 @@
       "Use authentication code": [
         "ავთენტიკაციის კოდის გამოყენება"
       ],
-      "Use group permissions": [
-        "ჯგუფის წვდომების გამოყენება"
+      "Use group sending permissions": [
+        "ჯგუფის გაგზავნის წვდომების გამოყენება"
       ],
       "Use recovery code": [
         "აღდგენის კოდის გამოყენება"
@@ -1467,6 +1470,9 @@
       "Fast and secure. No logs are kept.": [
         "სწრაფი და უსაფრთხო. ჟურნალს არ ვინახავთ."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "გაშვება ${ BRAND_NAME }-ის სერვერებზე"
+      ],
       "Run on device": [
         "გაშვება მოწყობილობაზე"
       ]
@@ -1474,9 +1480,6 @@
     "Assistant toggle": {
       "Buy now": [
         "შეიძინეთ ახლავე"
-      ],
-      "New": [
-        "ახალი"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "აიყვანეთ ელფოსტის წარმადობა ახალ დონეებზე. მიეცით საშუალება ${ BRAND_NAME } Scribe-ს, რომ დაგეხმაროთ თქვენი ელფოსტების წერაში, პასუხში და გადამოწმებაში."
@@ -5145,8 +5148,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ჯგუფები"
       ],
-      "*Only one free trial per customer.": [
-        "* მხოლოდ, ერთი საცდელი თითოეული კლიენტისთვის."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*მხოლოდ, ერთი უფასო სატესტო დრო ერთი მომხმარებლისთვის. შემდეგ კი ჩვეულებრივი ფასებით გადაიხდით."
       ],
       "Accounts with custom domains cannot join a group plan.": [
         "მომხმარებლის დომენის მქონე ანგარიშები ჯგუფურ ტარიფს ვერ მიიღებენ."
@@ -5209,7 +5212,7 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "გამოწერის გადასახადს ამ გეგმის ძირითადი ადამინისტრატორი გადაიხდის."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "გადასვლის გასაადვილებლად ${ BRAND_NAME } Unlimited-თან 30 დღიან გამოსაცდელ წვდომას მოგცემთ*."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
@@ -5261,8 +5264,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "* მხოლოდ, ერთი საცდელი თითოეული მომხმარებლისთვის."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*მხოლოდ, ერთი უფასო სატესტო დრო ერთი მომხმარებლისთვის. შემდეგ კი ჩვეულებრივი ფასებით გადაიხდით."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "თქვენი სატარიფო გეგმის მიტოვების შემდეგ ეს მომხმრებელი გადატანილი იქნება სატარიფო გეგმაზე ${ BRAND_NAME } Unlimited 30-დღიანი გამოსაცდელი პერიოდით. *"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "ნაგულისხმევად საცავის ${ formattedStorage } ადმინისტრატორის ანგარიშს ეკუთვნის. მინიჭებული საცავი მოგვიანებით დამატებით მომხმარებლებს შეგიძლიათ, გადაუნაწილოთ."
@@ -5275,9 +5281,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "მოსაწვევი გაუქმდება და მომხმარებელს ${ organizationName }-სთან მიერთება აღარ შეეძლება."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "მომხმარებლის ანგარიშს 30 დღით ექნება საცდელი წვდომა ${ BRAND_NAME }-ის შეუზღუდავ ტარიფთან*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "ახალი მომხმარებლის დასამატებლად საჭიროა ჯერ თქვენი დომენი მოირგოთ."
@@ -7070,6 +7073,9 @@
       "Disable recovery by ${ type }": [
         "${ type }-ით აღდგენის გათიშვა"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "გათიშვის თარიღი ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2FA-ის გათიშვა თქვენს ანგარიშს ნაკლებად დაცულს გახდის. გააგრძელეთ, თუ ზუსტად იცით, რას აკეთებთ."
       ],
@@ -7184,6 +7190,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "გარე სერვისზე TLS/SSL_ის ჩართვა მხარდაჭერილი არაა."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "ჩართვის თარიღი ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "აღდგენის ფრაზის ჩართვა მის ხელახალ გენერაციას გამოიწვევს."
@@ -7325,9 +7334,6 @@
       ],
       "Group deleted": [
         "ჯგუფი წაიშალა"
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "ელფოსტების ერთ საუბრად და ცალ-ცალკე ჩვენებას შორის გადართვა."
       ],
       "here": [
         "აქ"
@@ -7966,6 +7972,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "დაიმახსოვრეთ, რომ ფილტრის ${ nameDeleted } წაშლის შედეგად ასევე შეწყდება იმ ავტომატური ქმედებების დამუშავებაც, რომელსაც ის ატრიგერებს."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ remainingCreditsFormatted } კრედიტი იქნება დარჩენილი."
       ],
       "please open a support ticket": [
         "გახსენით მხარდაჭერის ბილეთი"
@@ -8962,6 +8971,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "თქვენ შეგიძლიათ, ჩართოთ ავტორიზაციის ჟურნალი, რომ ნახოთ, როდის შედიან თქვენს ანგარიშში და რომელი IP-დან. ჩვენ ჩავიწერთ IP მისამართს, რომლიდანაც წვდომა განხორციელდა და დროს, ისევე, როგორც წარუმატებელ მცდელობებს."
       ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "ფოტოების სექციის ჩართვა ინტერფეისიდან შეგიძლიათ, ქვემო მხარეს არსებული გადასართველით."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "ზედა პარამეტრები შეგიძლიათ, თქვენს ტარიფში ${ specificCountryCount } IP მისამართის დამატებით განბლოკოთ, ან, მორგებული გადაწყვეტილებებისთვის, დაგვიკავშირდით"
       ],
@@ -9788,12 +9800,6 @@
       "Auto-detect primary time zone": [
         "ძირითადი დროის სარტყლის ავტომატური გამოცნობა"
       ],
-      "Auto-load embedded images": [
-        "ჩადგმული გამოსახულებების ავტომატური ჩატვირთვა"
-      ],
-      "Auto-load remote content": [
-        "სხვა სერვერებიდან შემცველობის ავტომატური ჩვენება"
-      ],
       "Auto-reply": [
         "თვითმოპასუხე"
       ],
@@ -10126,9 +10132,6 @@
       ],
       "Group address": [
         "ჯგუფის მისამართი"
-      ],
-      "Group conversations": [
-        "ჯგუფური საუბრები"
       ],
       "Group members": [
         "ჯგუფის წევრები"
@@ -11061,6 +11064,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe წერის დამხმარე"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "დააატეთ წერის დამხმარე ${ BRAND_NAME } Scribe"
       ],
@@ -11299,11 +11305,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "ბრაზილიური რეალი"
+      ],
       "Euro": [
         "ევრო"
       ],
       "Swiss franc": [
         "შვედური ფრანკი"
+      ],
+      "US Dollar": [
+        "აშშ დოლარი"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -11761,9 +11773,6 @@
       ],
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "მონაცემების გაჟონვის თვალყურის დევნება (მალე)"
       ],
       "Dedicated account manager": [
         "გამოყოფილი ანგარიშის მმართველი"
@@ -13532,6 +13541,9 @@
       "MM/YY": [
         "თთ/წწ"
       ],
+      "More plans are available in other currencies": [
+        "სხვა სატარიფო გეგმები ხელმისაწვდომია სხვა ვალუტებში"
+      ],
       "Payment Processing": [
         "გადახდის დამუშავება"
       ],
@@ -13576,6 +13588,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "ჩვენ ვამუშავებთ თქვენს გადახდას ამ ინვოისისთვის. მოითმინეთ, სანამ გადახდა დასრულდება თქვენი სატარიფო გეგმის შეცვლამდე ან გადახდის დეტალების განახლებამდე. მადლობა მოთმინებისთვის."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "გადაიხდით ${ amountToCharge }-ს თქვენი არჩეული გადახდის მეთოდით."
       ]
     },
     "Payments.Error": {
@@ -14738,6 +14753,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "პაროლის შეცვლის მოთხოვნა"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "ფოტოების სექციის ჩართვა"
       ]
     },
     "Settings description": {
@@ -15931,6 +15951,9 @@
       "Premium address created": [
         "Premium მისამართი შექმნილია"
       ],
+      "Problem reported": [
+        "პრობლემა შეტყობინებულია"
+      ],
       "Resuming import": [
         "შემოტანის გაგრძელება"
       ],
@@ -17003,6 +17026,9 @@
       ],
       "Phone": [
         "ტელეფონი"
+      ],
+      "Photos": [
+        "ფოტოები"
       ],
       "Policies": [
         "პოლიტიკები"
