@@ -70,11 +70,11 @@
       "Accept": [
         "Annehmen"
       ],
-      "Activate": [
-        "Aktivieren"
-      ],
       "activate": [
         "aktivieren"
+      ],
+      "Activate": [
+        "Aktivieren"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
@@ -1186,8 +1186,8 @@
       "Use authentication code": [
         "Authentifizierungscode verwenden"
       ],
-      "Use group permissions": [
-        "Verwende Gruppenrechte"
+      "Use group sending permissions": [
+        "Verwende Gruppensenderechte"
       ],
       "Use recovery code": [
         "Wiederherstellungscode verwenden"
@@ -1471,9 +1471,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Jetzt kaufen"
-      ],
-      "New": [
-        "Neu"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Hebe die E-Mail-Produktivität auf ein neues Niveau. Lasse ${ BRAND_NAME } Scribe dir beim Schreiben, Beantworten und Korrekturlesen deiner E-Mails helfen."
@@ -5139,9 +5136,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-Gruppen"
       ],
-      "*Only one free trial per customer.": [
-        "*Nur eine kostenlose Testversion pro Kunde."
-      ],
       "Accounts with custom domains cannot join a group plan.": [
         "Konten mit eigenen Domains können keinem Gruppenabonnement beitreten."
       ],
@@ -5203,9 +5197,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Das Abonnement wird dem Hauptadministrator dieses Plans in Rechnung gestellt."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Um dir den Übergang zu erleichtern, bieten wir dir eine kostenlose 30-tägige Testversion von ${ BRAND_NAME } Unlimited*."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du wurdest eingeladen, ${ invite.OrganizationName } beizutreten"
       ],
@@ -5255,9 +5246,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Nur eine kostenlose Testversion pro Benutzer."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Standardmäßig weisen wir dem Administratorkonto ${ formattedStorage } Speicher zu. Du kannst den zugewiesenen Speicher verwalten, um ihn später auf weitere Benutzer zu verteilen."
       ],
@@ -5269,9 +5257,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Die Einladung wird widerrufen und der Benutzer kann ${ organizationName } nicht beitreten."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Das Konto des Nutzers wird für eine 30-tägige kostenlose Testversion* auf ein ${ BRAND_NAME } Unlimited-Abonnement umgestellt."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Zur Erstellung eines neuen Benutzers ist eine konfigurierte eigene Domain erforderlich."
@@ -7320,9 +7305,6 @@
       "Group deleted": [
         "Gruppe gelöscht"
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Gruppiere E-Mails in derselben Konversation in deinem Posteingang oder zeige diese getrennt an."
-      ],
       "here": [
         "hier"
       ],
@@ -8956,6 +8938,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Du kannst die Protokollierung von Authentifizierungen aktivieren, um zu sehen, wann von welcher IP-Adresse auf dein Konto zugegriffen wurde. Wir werden die IP-Adresse und den Zeitpunkt, auch von fehlgeschlagenen Anmeldeversuchen aufzeichnen."
       ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Du kannst den Bereich Fotos über das Interface aktivieren, indem du den Schalter unten betätigst."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Du kannst die oben genannte Konfiguration sofort freischalten, indem du ${ specificCountryCount } zur Anzahl der IP-Adressen in deinem Plan hinzufügst oder uns für maßgeschneiderte Lösungen kontaktierst."
       ],
@@ -9782,12 +9767,6 @@
       "Auto-detect primary time zone": [
         "Primäre Zeitzone automatisch erkennen"
       ],
-      "Auto-load embedded images": [
-        "Eingebettete Grafiken automatisch laden"
-      ],
-      "Auto-load remote content": [
-        "Inhalte aus externen Quellen automatisch laden"
-      ],
       "Auto-reply": [
         "Automatische Antworten"
       ],
@@ -10120,9 +10099,6 @@
       ],
       "Group address": [
         "Gruppenadresse"
-      ],
-      "Group conversations": [
-        "Gruppenunterhaltungen"
       ],
       "Group members": [
         "Gruppenmitglieder"
@@ -11752,9 +11728,6 @@
       ],
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Überwachung von Datenlecks (Demnächst verfügbar)"
       ],
       "Dedicated account manager": [
         "Dedizierter Account Manager"
@@ -14728,6 +14701,11 @@
         "Anfrage zur Passwortzurücksetzung"
       ]
     },
+    "Setting": {
+      "Enable Photos section": [
+        "Aktiviere den Bereich Fotos"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Schließe den Wechsel zur Privatsphäre mit unseren sicheren Import- und Weiterleitungstools ab."
@@ -16991,6 +16969,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Policies": [
         "Richtlinien"

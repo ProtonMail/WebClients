@@ -58,11 +58,11 @@
       "Accept": [
         "Aceitar"
       ],
-      "Activate": [
-        "Ativar"
-      ],
       "activate": [
         "ativar"
+      ],
+      "Activate": [
+        "Ativar"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
@@ -1159,9 +1159,6 @@
       "Use authentication code": [
         "Usar código de autenticação"
       ],
-      "Use group permissions": [
-        "Utilizar permissões de grupo"
-      ],
       "Use recovery code": [
         "Usar código de recuperação"
       ],
@@ -1413,9 +1410,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Comprar agora"
-      ],
-      "New": [
-        "Novo"
       ]
     },
     "Attached ics file error": {
@@ -4706,9 +4700,6 @@
       "${ BRAND_NAME } groups": [
         "Grupos do ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "*Apenas uma avaliação gratuita por cliente."
-      ],
       "customer support": [
         "apoio ao cliente"
       ],
@@ -4745,9 +4736,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Armazenamento atribuído a si: ${ assignedStorage }"
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Para facilitar a transição, estamos a oferecer-lhe uma avaliação gratuita de 30 dias da ${ BRAND_NAME } Unlimited*."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Está convidado a juntar-se a ${ invite.OrganizationName }"
       ],
@@ -4781,9 +4769,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Apenas uma avaliação gratuita por utilizador."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Por predefinição, atribuímos ${ formattedStorage } de armazenamento à conta de administrador. Pode gerir o armazenamento atribuído para ser distribuído por outros utilizadores mais tarde."
       ],
@@ -4792,9 +4777,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Se o utilizador já tiver um endereço ${ MAIL_APP_NAME }, introduza-o aqui. Caso contrário, é necessário criar uma conta primeiro."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "A conta do utilizador será transferida para um plano ilimitado da ${ BRAND_NAME } para uma avaliação gratuita de 30 dias*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Para criar um utilizador, é necessário um domínio personalizado configurado."
@@ -6057,6 +6039,9 @@
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me à sua conta. Este domínio simples e mais curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
       ],
+      "Add a recovery ${ type }": [
+        "Adicionar ${ type } de recuperação"
+      ],
       "Add a recovery email address": [
         "Adicionar um e-mail de recuperação"
       ],
@@ -6298,6 +6283,9 @@
       "Check the status of imports and forwarding.": [
         "Verificar o estado das importações e do reencaminhamento."
       ],
+      "Choose an app to get started": [
+        "Escolha uma aplicação para começar"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
       ],
@@ -6415,6 +6403,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "A apagar ${ deletedServerCount } servidor gateway",
         "A apagar ${ deletedServerCount } servidores gateway"
+      ],
+      "Disable recovery by ${ type }": [
+        "Desativar recuperação por ${ type }"
       ],
       "Discount": [
         "Desconto"
@@ -6570,6 +6561,9 @@
       "Failed to fetch logs.": [
         "Erro na obtenção dos registos."
       ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rápido e focado. E-mail e calendário, diretamente no seu ambiente de trabalho."
+      ],
       "Fill in user details": [
         "Preencher dados de utilizador"
       ],
@@ -6612,9 +6606,6 @@
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dê a sua chave pública aos seus amigos, ou publique-a online para que todos lhe possam enviar e-mails encriptados de ponta a ponta."
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Agrupe e-mails na mesma conversa na sua caixa de entrada ou veja-os separadamente."
-      ],
       "here": [
         "aqui"
       ],
@@ -6638,6 +6629,9 @@
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
+      ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Se tiver a sessão iniciada noutro local, poderá conseguir fazer ${ signedInPasswordResetLink }."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se acredita que houve um erro, contacte-nos em ${ contactLink }."
@@ -6754,6 +6748,12 @@
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
+      "Invitation link expired": [
+        "A ligação de convite expirou"
+      ],
+      "Invitation link used": [
+        "Ligação de convite utilizada"
+      ],
       "Invite Accepted": [
         "O convite foi aceite."
       ],
@@ -6788,6 +6788,9 @@
       "It appears some of your data is encrypted and locked.": [
         "Parece que alguns dos seus dados estão encriptados e bloqueados."
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Item preenchido automaticamente em ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "Item auto-preenchimento no cofre"
       ],
@@ -6803,17 +6806,41 @@
       "Item Deleted": [
         "O item foi eliminado."
       ],
+      "Item deleted from ${ vaultLink }": [
+        "Item eliminado de ${ vaultLink }"
+      ],
       "Item deleted from vault": [
         "Item apagado do cofre"
       ],
       "Item flags changed in vault": [
         "Sinalizadores de itens alterados no cofre"
       ],
+      "Item in ${ vaultLink } trashed": [
+        "Item em ${ vaultLink } eliminado"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Item em ${ vaultLink } recuperado"
+      ],
+      "Item in vault trashed": [
+        "Item no cofre eliminado"
+      ],
+      "Item in vault untrashed": [
+        "Item no cofre recuperado"
+      ],
       "Item Read": [
         "O item foi lido."
       ],
+      "Item read in ${ vaultLink }": [
+        "Item lido em ${ vaultLink }"
+      ],
       "Item read in vault": [
         "Item lido no cofre"
+      ],
+      "Item Trashed": [
+        "Item eliminado"
+      ],
+      "Item Untrashed": [
+        "Item recuperado"
       ],
       "Item Updated": [
         "O item foi atualizado."
@@ -7104,6 +7131,9 @@
       "per month": [
         "por mês"
       ],
+      "per month, billed at ${ price }": [
+        "por mês, faturado em ${ price }"
+      ],
       "per month, billed every 12 months": [
         "por mês, faturado a cada 12 meses"
       ],
@@ -7144,6 +7174,9 @@
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Mantenha-o seguro. Vai precisar dele para aceder à sua conta e descodificar os seus dados em caso de reposição de uma palavra-passe."
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Tenha em atenção que, se eliminar este filtro ${ nameDeleted }, deixaremos de processar todas as ações automatizadas que ele desencadeia."
       ],
       "Please select the folders you would like to import:": [
         "Selecione as pastas que deseja importar:"
@@ -7246,6 +7279,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de partilhar os detalhes de início de sessão do utilizador com o mesmo."
+      ],
+      "Remove metadata from images to protect your privacy.": [
+        "Remova os metadados das imagens para proteger a sua privacidade."
       ],
       "Remove one of your calendars to join this one": [
         "Remova um dos seus calendários para se juntar a este"
@@ -7527,6 +7563,15 @@
       "This file is too large to preview": [
         "Este ficheiro é demasiado grande para pré-visualizar"
       ],
+      "This invitation link has expired. Please contact your administrator to request access.": [
+        "Esta ligação de convite expirou. Contacte o seu administrador para solicitar o acesso."
+      ],
+      "This invitation link has expired. We just sent you a new link.": [
+        "Esta ligação de convite expirou. Acabámos de enviar-lhe uma nova ligação."
+      ],
+      "This invitation link is already used. Please sign in directly instead.": [
+        "Esta ligação de convite já foi utilizada. Em vez disso, inicie sessão diretamente."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Esta é uma frase de 12 palavras que lhe foi pedida para definir."
       ],
@@ -7535,6 +7580,9 @@
       ],
       "This is an encryption key you may have previously saved.": [
         "Esta é uma chave de encriptação que pode ter guardado anteriormente."
+      ],
+      "This is an invitation from:": [
+        "Este é um convite de:"
       ],
       "This is the password you used before the password reset.": [
         "Esta é a palavra-passe que utilizou antes de redefinir a palavra-passe."
@@ -7584,6 +7632,9 @@
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Isto substituirá a sua palavra-passe temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
       ],
+      "This will sign you out of all accounts currently logged in.": [
+        "Esta ação irá terminar a sessão de todas as contas atualmente conectadas."
+      ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Isto desligará-lo de todas as sessões ativas e desativará a autenticação de dois fatores."
       ],
@@ -7616,6 +7667,9 @@
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "Para garantir o acesso contínuo à sua conta, defina um método de recuperação de conta"
+      ],
+      "To ensure highest possible security of your account": [
+        "Para garantir a máxima segurança possível da sua conta"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Para garantir que não perde dados importantes, ${ DRIVE_APP_NAME } guarda versões mais antigas dos seus ficheiros à medida que você e os seus colaboradores efetuam alterações. Selecione durante quanto tempo ${ BRAND_NAME } deve manter as versões anteriores."
@@ -7778,6 +7832,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "A verificação abrirá um novo separador, pelo que deve desativar os bloqueadores de pop-ups. Não lhe será cobrado nada. Qualquer montante utilizado para verificar o cartão será reembolsado imediatamente."
+      ],
+      "Verify ${ type }": [
+        "Verificar ${ type }"
       ],
       "Verify domain": [
         "Verificar o domínio"
@@ -8157,6 +8214,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
+      ],
+      "Your support ticket has been closed. Thank you for contacting ${ BRAND_NAME } support.": [
+        "O seu pedido de assistência foi encerrado. Obrigado por contactar o suporte da ${ BRAND_NAME }."
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
@@ -8711,12 +8771,6 @@
       ],
       "Auto-detect primary time zone": [
         "Auto detetar o fuso horário primário"
-      ],
-      "Auto-load embedded images": [
-        "Carregar automaticamente as imagens incorporadas"
-      ],
-      "Auto-load remote content": [
-        "Carregar automaticamente o conteúdo remoto"
       ],
       "Auto-reply": [
         "Resposta automática"
@@ -10480,9 +10534,6 @@
       ],
       "Data breach monitoring": [
         "Monitoramento das violações de dados"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoramento de violações de dados (em breve)"
       ],
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"
@@ -13781,6 +13832,9 @@
       "${ appName } Free": [
         "${ appName } Free"
       ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita ${ BRAND_NAME } Scribe"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Ferramenta de exportação ${ MAIL_APP_NAME }"
       ],
@@ -14000,6 +14054,9 @@
       "Clear out the junk": [
         "Limpe a lixeira"
       ],
+      "Click a value in the table to use it as filter": [
+        "Clique num valor da tabela para utilizá-lo como filtro"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -14087,6 +14144,9 @@
       ],
       "Custom filters": [
         "Filtros personalizados"
+      ],
+      "Custom folders and labels": [
+        "Pastas e etiquetas personalizadas"
       ],
       "Custom selection of users": [
         "Seleção personalizada de utilizadores"
@@ -14490,6 +14550,9 @@
       "Night theme": [
         "Tema noturno"
       ],
+      "No account information was found in any data breaches": [
+        "Não foram encontradas informações sobre contas em nenhuma violação de dados"
+      ],
       "No recovery method": [
         "Nenhum método de recuperação"
       ],
@@ -14550,6 +14613,9 @@
       "Phone": [
         "Telefone"
       ],
+      "Photos": [
+        "Fotografias"
+      ],
       "Policies": [
         "Políticas"
       ],
@@ -14561,6 +14627,9 @@
       ],
       "Privacy and data collection": [
         "Privacidade e recolha de dados"
+      ],
+      "Privacy and security": [
+        "Privacidade e segurança"
       ],
       "Processing...": [
         "A processar..."
@@ -15505,6 +15574,9 @@
       ]
     },
     "wallet_signup_2024:Wallet Settings": {
+      "Authorization": [
+        "Autorização"
+      ],
       "Downloads": [
         "Transferências"
       ]

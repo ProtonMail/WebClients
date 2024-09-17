@@ -70,11 +70,11 @@
       "Accept": [
         "Accepta"
       ],
-      "Activate": [
-        "Activa"
-      ],
       "activate": [
         "activar"
+      ],
+      "Activate": [
+        "Activa"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activa ${ user.Name }@pm.me"
@@ -1450,9 +1450,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Compreu ara"
-      ],
-      "New": [
-        "Nou"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porteu la productivitat del correu electrònic a nivells nous. Deixeu que ${ BRAND_NAME } Scribe us ajudi a escriure, respondre i corregir els correus electrònics. "
@@ -5056,9 +5053,6 @@
       "${ BRAND_NAME } groups": [
         "Grups de ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "*Només una prova gratuïta per client."
-      ],
       "customer support": [
         "atenció al client"
       ],
@@ -5104,9 +5098,6 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "Emmagatzematge que se us ha assignat: ${ assignedStorage }"
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Per a facilitar la transició, us oferim una prova de cortesia de 30 dies de ${ BRAND_NAME } Il·limitat*."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Esteu convidat a unir-vos a ${ invite.OrganizationName }"
       ],
@@ -5136,9 +5127,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Només una prova gratuïta per usuari."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "De manera predeterminada, assignem ${ formattedStorage } d'emmagatzematge al compte d'administrador. Podeu gestionar l'emmagatzematge assignat per distribuir-lo entre usuaris addicionals més endavant."
       ],
@@ -5150,9 +5138,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "La invitació es cancel·larà i l'usuari no es podrà unir a ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "El compte de l'usuari es traslladarà a un pla de ${ BRAND_NAME } Il·limitat per a una prova gratuïta de 30 dies*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Per a crear un usuari, es requereix un domini personalitzat configurat."
@@ -7124,9 +7109,6 @@
       ],
       "Group deleted": [
         "S'ha eliminat el grup."
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Agrupeu correus electrònics a la mateixa conversa a la vostra safata d'entrada o mostreu-los separadament."
       ],
       "here": [
         "aquí"
@@ -9516,12 +9498,6 @@
       "Auto-detect primary time zone": [
         "Detecció automàtica del fus horari principal"
       ],
-      "Auto-load embedded images": [
-        "Càrrega automàtica d'imatges incrustades"
-      ],
-      "Auto-load remote content": [
-        "Carrega automàticament el contingut remot"
-      ],
       "Auto-reply": [
         "Resposta automàtica"
       ],
@@ -9775,7 +9751,7 @@
         "Correu electrònic o nom d'usuari"
       ],
       "Email settings": [
-        "Configuració del correu"
+        "Preferències del correu"
       ],
       "Emails": [
         "Correus electrònics"
@@ -9854,9 +9830,6 @@
       ],
       "Group address": [
         "Adreça del grup"
-      ],
-      "Group conversations": [
-        "Converses de grup"
       ],
       "Group members": [
         "Membres del grup"
@@ -10364,7 +10337,7 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
-        "Afegeixi un domini propi al seu compte de ${ MAIL_APP_NAME }."
+        "Afegiu un domini propi al vostre compte de ${ MAIL_APP_NAME }."
       ]
     },
     "Label for default event notifications": {
@@ -11442,9 +11415,6 @@
       ],
       "Data breach monitoring": [
         "Monitoratge de filtracions de dades"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoratge de filtracions de dades (pròximament)"
       ],
       "Dedicated account manager": [
         "Gestor de comptes dedicat"
@@ -12816,7 +12786,7 @@
         "Alertes de contrasenyes vulnerables"
       ],
       "Aliases for email protection from breaches": [
-        "Àlies per a la protecció del correu electrònic contra infraccions"
+        "Àlies per a la protecció del correu electrònic contra violacions de dades"
       ],
       "All premium ${ BRAND_NAME } services.": [
         "Tots els serveis prèmium de ${ BRAND_NAME }."
@@ -12900,7 +12870,7 @@
         "Entenc que si perdo els detalls de recuperació, podria perdre permanentment l'accés al meu compte."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **Recovery kit** will allow you to sign in and recover your data.": [
-        "Si se us bloqueja el compte de ${ BRAND_NAME }, el vostre **Joc de recuperació** us permetrà iniciar sessió i recuperar les vostres dades."
+        "Si se us bloqueja el compte de ${ BRAND_NAME }, el vostre **Joc de recuperació** us permetrà iniciar sessió i recuperar les dades."
       ],
       "Includes:": [
         "Inclou:"
@@ -13650,7 +13620,7 @@
     },
     "saml: Error": {
       "Something went wrong": [
-        "S'ha produït un error."
+        "Alguna cosa ha anat malament."
       ]
     },
     "saml: Info": {
@@ -14064,7 +14034,7 @@
     },
     "session_recovery:initiation:title": {
       "Request password reset?": [
-        "Sol·licita el restabliment de contrasenya?"
+        "Voleu sol·licitar el restabliment de contrasenya?"
       ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Podreu restablir la vostra contrasenya en ${ gracePeriodHoursRemaining } hora.",
@@ -16364,6 +16334,9 @@
       ],
       "Phone": [
         "Telèfon"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Policies": [
         "Polítiques"

@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Aktivér"
-      ],
       "activate": [
         "aktivér"
+      ],
+      "Activate": [
+        "Aktivér"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
@@ -1186,8 +1186,8 @@
       "Use authentication code": [
         "Brug godkendelseskode"
       ],
-      "Use group permissions": [
-        "Brug gruppetilladelser"
+      "Use group sending permissions": [
+        "Brug tilladelser til gruppeafsendelse"
       ],
       "Use recovery code": [
         "Brug gendannelseskode"
@@ -1467,6 +1467,9 @@
       "Fast and secure. No logs are kept.": [
         "Hurtig og sikker. Ingen logføring."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Kør på ${ BRAND_NAME }-servere"
+      ],
       "Run on device": [
         "Kør på enhed"
       ]
@@ -1474,9 +1477,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Køb nu"
-      ],
-      "New": [
-        "Ny"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Tag e-mailproduktivitet til nye højder. Lad ${ BRAND_NAME } Scribe hjælpe dig med at skrive, besvare og korrekturlæse dine e-mails."
@@ -5145,9 +5145,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupper"
       ],
-      "*Only one free trial per customer.": [
-        "*Kun én gratis prøveperiode pr. kunde."
-      ],
       "Accounts with custom domains cannot join a group plan.": [
         "Konti med tilpassede domæner kan ikke deltage i et gruppeabonnement."
       ],
@@ -5209,9 +5206,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonnementet faktureres til den primære administrator af denne abonnement."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "For at lette overgangen giver vi dig en 30-dages prøveversion af ${ BRAND_NAME } Unlimited*."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Du er inviteret til at blive medlem af ${ invite.OrganizationName }"
       ],
@@ -5261,9 +5255,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Kun én gratis prøveperiode pr. bruger."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Som standard tildeler vi ${ formattedStorage } lagerplads til administratorkontoen. Du kan administrere den tildelte lagerplads, så den fordeles mellem flere brugere senere."
       ],
@@ -5275,9 +5266,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Invitationen vil blive annulleret, og brugeren kan ikke blive medlem af ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Brugerens konto vil blive flyttet til et ${ BRAND_NAME } Unlimited-abonnement i en 30-dages gratis prøveperiode*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "For at oprette en ny bruger kræves et konfigureret brugerdefineret domæne."
@@ -7329,9 +7317,6 @@
       "Group deleted": [
         "Gruppe slettet"
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Gruppér e-mails i den samme samtale i din indbakke, eller vis dem separat."
-      ],
       "here": [
         "her"
       ],
@@ -7969,6 +7954,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Bemærk, at hvis du sletter dette filter ${ nameDeleted } stopper vi med at behandle alle de automatiserede handlinger, det udløser."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Bemærk, i det øjeblik du klikker på knappen 'Bekræft' , vil din konto have ${ remainingCreditsFormatted } kreditter tilbage."
       ],
       "please open a support ticket": [
         "åbn venligst en support-sag"
@@ -9791,12 +9779,6 @@
       "Auto-detect primary time zone": [
         "Registrer automatisk primær tidszone"
       ],
-      "Auto-load embedded images": [
-        "Indlæs automatisk indlejrede billeder"
-      ],
-      "Auto-load remote content": [
-        "Indlæs automatisk eksternt indhold"
-      ],
       "Auto-reply": [
         "Autosvar"
       ],
@@ -10129,9 +10111,6 @@
       ],
       "Group address": [
         "Gruppeadresse"
-      ],
-      "Group conversations": [
-        "Gruppesamtaler"
       ],
       "Group members": [
         "Gruppemedlemmer"
@@ -11764,9 +11743,6 @@
       ],
       "Data breach monitoring": [
         "Overvågning af databrud"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Overvågning af databrud (kommer snart)"
       ],
       "Dedicated account manager": [
         "Dedikeret kontoadministrator"
@@ -13534,6 +13510,9 @@
       ],
       "MM/YY": [
         "MM/ÅÅ"
+      ],
+      "More plans are available in other currencies": [
+        "Flere abonnementer er tilgængelige i andre valutaer"
       ],
       "Payment Processing": [
         "Betalingsbehandling"
@@ -15934,6 +15913,9 @@
       "Premium address created": [
         "Premium-adresse oprettet"
       ],
+      "Problem reported": [
+        "Problem indberettet"
+      ],
       "Resuming import": [
         "Genoptager import"
       ],
@@ -17006,6 +16988,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Policies": [
         "Retningslinjer"

@@ -70,11 +70,11 @@
       "Accept": [
         "Схвалити"
       ],
-      "Activate": [
-        "Активувати"
-      ],
       "activate": [
         "активувати"
+      ],
+      "Activate": [
+        "Активувати"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Активувати ${ user.Name }@pm.me"
@@ -360,6 +360,9 @@
       ],
       "Delete logo": [
         "Видалити логотип"
+      ],
+      "Delete member": [
+        "Видалити учасника"
       ],
       "Delete permanently": [
         "Видалити остаточно"
@@ -1452,9 +1455,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Придбати зараз"
-      ],
-      "New": [
-        "Новий"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Вдоскональте рівень продуктивності електронної пошти. Дозвольте ${ BRAND_NAME } Scribe допомогти вам писати, відповідати й рецензувати ваші листи."
@@ -5065,9 +5065,6 @@
       "${ BRAND_NAME } groups": [
         "Групи ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "*Тільки одна безплатна пробна версія на одного клієнта."
-      ],
       "customer support": [
         "клієнтська підтримка"
       ],
@@ -5107,9 +5104,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Рахунок за передплату буде виставлено головному адміністратору цього тарифного плану."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Щоб полегшити перехід, ми надаємо вам 30-денну пробну версію ${ BRAND_NAME } Unlimited*."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрошено приєднатися до ${ invite.OrganizationName }"
       ],
@@ -5142,9 +5136,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Тільки одна безплатна пробна версія на одного користувача."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Типово ми призначаємо ${ formattedStorage } сховища для облікового запису адміністратора. Ви можете керувати призначеним сховищем, щоб пізніше розподілити його між іншими користувачами."
       ],
@@ -5156,9 +5147,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Запрошення буде скасовано, і користувач не зможе приєднатися до ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Обліковий запис користувача буде переведено на тарифний план ${ BRAND_NAME } Unlimited на 30-денну безплатну пробну версію*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Для створення нового користувача потрібен налаштований власний домен."
@@ -7264,9 +7252,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Перейдіть до свого провайдера ідентифікації, отримайте метадані SAML для ${ appName } та імпортуйте їх тут."
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Групуйте повідомлення в одній розмові або переглядайте їх окремо."
       ],
       "here": [
         "тут"
@@ -9719,12 +9704,6 @@
       "Auto-detect primary time zone": [
         "Автовизначення основного часового поясу"
       ],
-      "Auto-load embedded images": [
-        "Автозавантаження вбудованих зображень"
-      ],
-      "Auto-load remote content": [
-        "Автозавантаження зовнішнього вмісту"
-      ],
       "Auto-reply": [
         "Автовідповідь"
       ],
@@ -11661,9 +11640,6 @@
       ],
       "Data breach monitoring": [
         "Відстеження витоків даних"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Відстеження витоків даних (скоро з'явиться)"
       ],
       "Dedicated account manager": [
         "Призначений менеджер облікового запису"
@@ -13821,6 +13797,17 @@
       ],
       "User": [
         "Користувач"
+      ]
+    },
+    "Safety review": {
+      "Add a recovery email address": [
+        "Додати адресу резервної електронної пошти"
+      ],
+      "Enable recovery by email": [
+        "Увімкнути відновлення за допомогою електронної пошти"
+      ],
+      "to recover your account if you're ever locked out": [
+        "щоб відновити свій обліковий запис, якщо ви коли-небудь втратите доступ до нього"
       ]
     },
     "saml: Action": {
@@ -16541,6 +16528,9 @@
       ],
       "Phone": [
         "Телефон"
+      ],
+      "Photos": [
+        "Фото"
       ],
       "Policies": [
         "Політики"

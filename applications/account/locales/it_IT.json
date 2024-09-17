@@ -70,11 +70,11 @@
       "Accept": [
         "Accetta"
       ],
-      "Activate": [
-        "Attiva"
-      ],
       "activate": [
         "attiva"
+      ],
+      "Activate": [
+        "Attiva"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
@@ -1186,9 +1186,6 @@
       "Use authentication code": [
         "Usa il codice di autenticazione"
       ],
-      "Use group permissions": [
-        "Utilizza i permessi del gruppo"
-      ],
       "Use recovery code": [
         "Usa un codice di recupero"
       ],
@@ -1467,6 +1464,9 @@
       "Fast and secure. No logs are kept.": [
         "Veloce e sicuro. Senza la conservazione di log."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Eseguito sui server ${ BRAND_NAME }"
+      ],
       "Run on device": [
         "Eseguito sul dispositivo"
       ]
@@ -1474,9 +1474,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Acquista ora"
-      ],
-      "New": [
-        "Novità"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Porta la produttività delle email a nuovi livelli. Lascia che ${ BRAND_NAME } Scribe ti aiuti a scrivere, rispondere e correggere le tue email."
@@ -5145,9 +5142,6 @@
       "${ BRAND_NAME } groups": [
         "Gruppi ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "*Una sola prova gratuita a cliente."
-      ],
       "Accounts with custom domains cannot join a group plan.": [
         "Gli account con domini personalizzati non possono aderire a un piano di gruppo."
       ],
@@ -5209,9 +5203,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "L'abbonamento verrà fatturato all'amministratore principale di questo piano."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Per agevolare la transizione, ti offriamo una prova gratuita di ${ BRAND_NAME } Unlimited della durata di 30 giorni.*"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Hai ricevuto un invito a ${ invite.OrganizationName }"
       ],
@@ -5261,9 +5252,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Una sola prova gratuita a utente."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Per impostazione predefinita assegniamo ${ formattedStorage } di archiviazione all'account dell'amministratore. Puoi gestire lo spazio di archiviazione che ti è stato assegnato, distribuendolo poi tra gli utenti aggiuntivi."
       ],
@@ -5275,9 +5263,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "L'invito verrà annullato e l'utente non potrà unirsi a ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "L'account dell'utente verrà trasferito su un piano ${ BRAND_NAME } Unlimited per una prova gratuita di 30 giorni.*"
       ],
       "To create a new user, a configured custom domain is required.": [
         "Per creare un nuovo utente, è necessario un dominio personalizzato."
@@ -7326,9 +7311,6 @@
       "Group deleted": [
         "Gruppo eliminato"
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Raggruppa o visualizza separatamente nella tua Posta in arrivo le email nella stessa conversazione."
-      ],
       "here": [
         "qui"
       ],
@@ -7969,6 +7951,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Nota che se elimini il filtro ${ nameDeleted } interromperemo l'elaborazione di tutte le azioni automatiche associate a esso."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ remainingCreditsFormatted } crediti rimanenti."
       ],
       "please open a support ticket": [
         "apri un ticket per il supporto"
@@ -9794,12 +9779,6 @@
       "Auto-detect primary time zone": [
         "Rileva automaticamente il fuso orario primario"
       ],
-      "Auto-load embedded images": [
-        "Carica automaticamente le immagini incorporate"
-      ],
-      "Auto-load remote content": [
-        "Carica automaticamente i contenuti remoti"
-      ],
       "Auto-reply": [
         "Risposta automatica"
       ],
@@ -10132,9 +10111,6 @@
       ],
       "Group address": [
         "Indirizzo di gruppo"
-      ],
-      "Group conversations": [
-        "Conversazioni di gruppo"
       ],
       "Group members": [
         "Membri del gruppo"
@@ -11773,9 +11749,6 @@
       ],
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoraggio di violazioni di dati (in arrivo)"
       ],
       "Dedicated account manager": [
         "Account manager dedicato"
@@ -13567,6 +13540,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Sono disponibili altri piani in altre valute"
       ],
       "Payment Processing": [
         "Elaborazione del pagamento"
@@ -15967,6 +15943,9 @@
       "Premium address created": [
         "Indirizzo premium creato"
       ],
+      "Problem reported": [
+        "Problema segnalato"
+      ],
       "Resuming import": [
         "Ripresa importazione"
       ],
@@ -17042,6 +17021,9 @@
       ],
       "Phone": [
         "Telefono"
+      ],
+      "Photos": [
+        "Foto"
       ],
       "Policies": [
         "Politiche"

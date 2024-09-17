@@ -70,11 +70,11 @@
       "Accept": [
         "Прыняць"
       ],
-      "Activate": [
-        "Актываваць"
-      ],
       "activate": [
         "актываваць"
+      ],
+      "Activate": [
+        "Актываваць"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
@@ -892,6 +892,9 @@
       "Resume": [
         "Узнавіць"
       ],
+      "Resume membership": [
+        "Узнавіць членства"
+      ],
       "Retry": [
         "Паўтарыць"
       ],
@@ -1186,8 +1189,8 @@
       "Use authentication code": [
         "Выкарыстаць код аўтэнтыфікацыі"
       ],
-      "Use group permissions": [
-        "Выкарыстаць дазволы групы"
+      "Use group sending permissions": [
+        "Выкарыстоўваць дазволы групавой адпраўкі"
       ],
       "Use recovery code": [
         "Выкарыстоўваць код аднаўлення"
@@ -1475,6 +1478,9 @@
       "Fast and secure. No logs are kept.": [
         "Хуткі і бяспечны. Не пакідае журналаў."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Выканаць на серверах ${ BRAND_NAME }"
+      ],
       "Run on device": [
         "Выканаць на прыладзе"
       ]
@@ -1482,9 +1488,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Купіць зараз"
-      ],
-      "New": [
-        "Новае"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Выведзіце прадукцыйнасць электроннай пошты на новы ўзровень. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
@@ -5187,8 +5190,8 @@
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "*Толькі адзін бясплатны выпрабавальны перыяд для кожнага кліента."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Толькі адзін бясплатны пробны перыяд на карыстальніка. Пасля гэтага перыяду будзе ўжыта стандартная плата."
       ],
       "Accounts with custom domains cannot join a group plan.": [
         "Уліковыя запісы з карыстальніцкімі даменамі нельга далучыць да групавога тарыфнага плана."
@@ -5253,8 +5256,8 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Рахунак за падпіску будзе выстаўляцца галоўнаму адміністратару гэта тарыфнага плана."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Для спрашчэння пераходу мы ветліва даём вам магчымасць на працягу 30 дзён карыстацца пробнай версіяй ${ BRAND_NAME } Unlimited*."
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "Для спрашчэння пераходу мы даём вам магчымасць на працягу 30 дзён карыстацца пробнай версіяй ${ BRAND_NAME } Unlimited* абсалютна бясплатна."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Вас запрасілі далучыцца да ${ invite.OrganizationName }"
@@ -5309,8 +5312,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Толькі адзін бясплатны пробны перыяд для кожнага карыстальніка."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Толькі адзін бясплатны пробны перыяд на карыстальніка. Пасля гэтага перыяду будзе ўжыта стандартная плата."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Пасля адмовы ад вашага бягучага тарыфнага плана наступныя карыстальнікі будуць пераведзены на тарыфны план ${ BRAND_NAME } Unlimited з бясплатным пробным перыядам на працягу 30 дзён."
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Прадвызначана ўліковаму запісу адміністратара даступна ${ formattedStorage } сховішча. Вы можаце пазней пераразмеркаваць сховішча паміж дадатковымі карыстальнікамі."
@@ -5323,9 +5329,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Запрашэнне будзе скасавана і карыстальнік не зможа далучыцца да ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Уліковы запіс карыстальніка будзе пераведзены на тарыфны план ${ BRAND_NAME } Unlimited на 30 дзён бясплатнай пробнай версіі*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Перад стварэннем карыстальніка, вам неабходна наладзіць карыстальніцкі дамен."
@@ -7210,6 +7213,9 @@
       "Disable recovery by ${ type }": [
         "Адключыць аднаўленне ${ type }"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Адключана з ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Адключэнне двухфактарнай аўтэнтыфікацыі зробіць ваш уліковы запіс менш бяспечным. Працягвайце толькі ў тым выпадку, калі гэта сапраўды неабходна."
       ],
@@ -7326,6 +7332,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Уключыце TLS або SSL знешняй паштовай службы, калі яна падтрымлівае гэтыя пратаколы."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Уключана з ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Паўторнае ўключэнне аднаўлення фразай згенерыруе новую фразу аднаўлення."
@@ -7467,9 +7476,6 @@
       ],
       "Group deleted": [
         "Група выдалена"
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Групуйце лісты ў адну размову ў папцы з уваходнымі лістамі або адлюстроўвайце іх асобна."
       ],
       "here": [
         "тут"
@@ -8118,6 +8124,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Звярніце ўвагу, што калі вы выдаліце ​​фільтр ${ nameDeleted }, то мы больш не будзем апрацоўваць усе аўтаматычныя дзеянні, якія ён запускае."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца наступная колькасць крэдытаў: ${ remainingCreditsFormatted }."
       ],
       "please open a support ticket": [
         "адкрыйце запыт для службы падтрымкі"
@@ -9130,6 +9139,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Вы можаце ўключыць журнал аўтэнтыфікацыі, каб бачыць у які час і з якога IP-адраса ажыццяўляўся доступ да ўліковага запісу. Мы будзем запісваць IP-адрасы, якія мелі доступ да ўліковага запісу, а таксама час наведвання і няўдалыя спробы ўваходу."
       ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Вы можаце ўключыць раздзел Фатаграфіі ў інтэрфейсе з дапамогай пераключальніка, які размяшчаецца ніжэй."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Вы зможаце неадкладна разблакіраваць налады вышэй, дадаўшы ${ specificCountryCount } да колькасці IP-адрасоў у сваім тарыфным плане або звязацца з намі для атрымання індывідуальнага рашэння."
       ],
@@ -9978,12 +9990,6 @@
       "Auto-detect primary time zone": [
         "Аўтаматычнае вызначэнне асноўнага часавага пояса"
       ],
-      "Auto-load embedded images": [
-        "Аўтаматычная загрузка ўбудаваных відарысаў"
-      ],
-      "Auto-load remote content": [
-        "Аўтаматычная загрузка аддаленага змесціва"
-      ],
       "Auto-reply": [
         "Аўтаматычны адказ"
       ],
@@ -10316,9 +10322,6 @@
       ],
       "Group address": [
         "Адрас групы"
-      ],
-      "Group conversations": [
-        "Групавыя размовы"
       ],
       "Group members": [
         "Удзельнікі групы"
@@ -11263,6 +11266,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Дадаванне памочніка ў напісанні ${ BRAND_NAME } Scribe"
       ],
@@ -11505,11 +11511,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Бразільскі рэал"
+      ],
       "Euro": [
         "Еўра"
       ],
       "Swiss franc": [
         "Швейцарскі франк"
+      ],
+      "US Dollar": [
+        "Долар ЗША"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -12007,9 +12019,6 @@
       ],
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Назіранне за ўцечкай даных (неўзабаве з'явіцца)"
       ],
       "Dedicated account manager": [
         "Вылучаны менеджар уліковага запісу"
@@ -13812,6 +13821,9 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
+      "More plans are available in other currencies": [
+        "Больш тарыфных планаў даступна з іншымі валютамі"
+      ],
       "Payment Processing": [
         "Апрацоўка плацяжу"
       ],
@@ -13856,6 +13868,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Мы апрацоўваем ваш плацеж за выстаўлены рахунак. Перад тым, як уносіць змены ў свой тарыфны план або абнаўляць рэквізіты плацяжу, дачакайцеся завяршэння плацяжу. Дзякуй за цярпенне."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
       ]
     },
     "Payments.Error": {
@@ -15050,6 +15065,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Запыт скідання пароля"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Уключыць раздзел Фатаграфіі"
       ]
     },
     "Settings description": {
@@ -16295,6 +16315,9 @@
       "Premium address created": [
         "Створаны прэміяльны адрас"
       ],
+      "Problem reported": [
+        "Паведамлена аб праблеме"
+      ],
       "Resuming import": [
         "Узнавіць імпартаванне"
       ],
@@ -17387,6 +17410,9 @@
       ],
       "Phone": [
         "Тэлефон"
+      ],
+      "Photos": [
+        "Фотаграфіі"
       ],
       "Policies": [
         "Палітыкі"

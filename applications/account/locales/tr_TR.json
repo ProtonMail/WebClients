@@ -70,11 +70,11 @@
       "Accept": [
         "Kabul et"
       ],
-      "Activate": [
-        "Kullanıma al"
-      ],
       "activate": [
         "kullanıma al"
+      ],
+      "Activate": [
+        "Kullanıma al"
       ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
@@ -557,7 +557,7 @@
         "${ vpnPlus } alın"
       ],
       "Get a new encrypted email address": [
-        "Yeni bir şifrelenmiş e-posta adresi alın"
+        "Yeni bir şifrelenmiş e-posta adresi edinin"
       ],
       "Get in touch": [
         "Bizimle görüşün"
@@ -566,22 +566,22 @@
         "Daha fazlasını edinin"
       ],
       "Get more addresses": [
-        "Daha fazla adres alın"
+        "Daha fazla adres edinin"
       ],
       "Get more filters": [
-        "Daha fazla süzgeç alın"
+        "Daha fazla süzgeç edinin"
       ],
       "Get more folders": [
-        "Daha fazla klasör alın"
+        "Daha fazla klasör edinin"
       ],
       "Get more labels": [
-        "Daha fazla etiket alın"
+        "Daha fazla etiket edinin"
       ],
       "Get more licenses": [
-        "Daha fazla lisans alın"
+        "Daha fazla lisans edinin"
       ],
       "Get more servers": [
-        "Daha fazla sunucu alın"
+        "Daha fazla sunucu edinin"
       ],
       "Get the deal": [
         "Tekliften yararlanın"
@@ -892,6 +892,9 @@
       "Resume": [
         "Sürdür"
       ],
+      "Resume membership": [
+        "Üyeliği sürdür"
+      ],
       "Retry": [
         "Yeniden dene"
       ],
@@ -1186,8 +1189,8 @@
       "Use authentication code": [
         "Kimlik doğrulama kodu kullan"
       ],
-      "Use group permissions": [
-        "Grup izinleri kullanılsın"
+      "Use group sending permissions": [
+        "Grup gönderim izinleri kullanılsın"
       ],
       "Use recovery code": [
         "Kurtarma kodunu kullan"
@@ -1401,7 +1404,7 @@
     },
     "Alias promotion": {
       "Get 10 aliases for free!": [
-        "10 takma adı ücretsiz alın!"
+        "10 takma adı ücretsiz edinin!"
       ],
       "Get unlimited aliases!": [
         "Sınırsız sayıda takma ad edinin!"
@@ -1467,6 +1470,9 @@
       "Fast and secure. No logs are kept.": [
         "Hızlı ve güvenli. Herhangi bir kayıt tutulmaz."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } sunucularında çalıştır"
+      ],
       "Run on device": [
         "Aygıt üzerinde çalışsın"
       ]
@@ -1474,9 +1480,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Satın al"
-      ],
-      "New": [
-        "Yeni"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "E-posta üretkenliğini yeni bir düzeye çıkarın e-postalarınızı yazmanıza, yanıtlamanıza ve düzeltmenize ${ BRAND_NAME } Scribe tarafından yardım edilmesine izin verin."
@@ -4921,10 +4924,10 @@
         "Destek kaydı bulunamadı."
       ],
       "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
-        "${ MAIL_APP_NAME } ya da ${ CALENDAR_APP_NAME } kullanmak için İnternet sürümüne geçin."
+        "${ MAIL_APP_NAME } ya da ${ CALENDAR_APP_NAME } kullanmak için internet uygulamasına geçin."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
-        "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya İnternet bağlantınızı denetleyin."
+        "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
       ]
     },
     "Error message, Disable account": {
@@ -5145,8 +5148,8 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupları"
       ],
-      "*Only one free trial per customer.": [
-        "* Her müşteri için yalnızca bir ücretsiz deneme."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Her kullanıcı için yalnızca bir ücretsiz deneme süresi olabilir. Bundan sonra normal fiyatlandırma geçerli olur."
       ],
       "Accounts with custom domains cannot join a group plan.": [
         "Özel etki alanları olan hesaplar, bir grup tarifesine katılamaz."
@@ -5209,7 +5212,7 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonelik ücreti faturası bu tarifenin birincil yöneticisine kesilir."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
         "Geçişi kolaylaştırmak için size 30 günlük ücretsiz ${ BRAND_NAME } Unlimited* deneme süresi sunuyoruz."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
@@ -5261,8 +5264,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "* Her kullanıcı için yalnızca bir ücretsiz deneme."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Her kullanıcı için yalnızca bir ücretsiz deneme süresi olabilir. Bundan sonra normal fiyatlandırma geçerli olur."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Tarifenizden ayrıldıktan sonra bu kullanıcı 30 günlük deneme süresi ile ${ BRAND_NAME } Unlimited tarifesine geçirilecek.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Varsayılan olarak, yönetici hesabına ${ formattedStorage } depolama alanı veririz. Bu depolama alanını yöneterek daha sonra başka kullanıcılar arasında dağıtabilirsiniz."
@@ -5275,9 +5281,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Davet iptal edilecek ve kullanıcı ${ organizationName } kuruluşuna katılamayacak."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Kullanıcının hesabı, 30 günlük ücretsiz deneme* için ${ BRAND_NAME } Unlimited tarifesine geçirilecek."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Yeni bir kullanıcı oluşturmak için yapılandırılmış bir özel etki alanı gereklidir."
@@ -7070,6 +7073,9 @@
       "Disable recovery by ${ type }": [
         "${ type } kurtarmasını kapat"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "${ formattedDateAndTime } zamanından beri kapalı"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "İki adımlı doğrulamayı kapatmak hesabınızın güvenliğini azaltacak. Bu işlemi yalnızca gerçekten gerekliyse yapın."
       ],
@@ -7184,6 +7190,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Destekleniyorsa, dış hizmette TLS ya da SSL kullanın."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "${ formattedDateAndTime } zamanından beri açık"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "İfade ile kurtarma seçeneğini yeniden açtığınızda, yeni bir kurtarma ifadesi oluşturulur."
@@ -7325,9 +7334,6 @@
       ],
       "Group deleted": [
         "Grup silindi"
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Aynı yazışmadaki e-postaları Gelen kutunuzda gruplayın ya da ayrı ayrı görüntüleyin."
       ],
       "here": [
         "buraya"
@@ -7967,6 +7973,9 @@
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Bu ${ nameDeleted } süzgecini silerseniz, tetiklediği tüm otomatik işlemlerin durdurulacağını unutmayın."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Onayla düğmesine tıkladığınız zaman hesabınızda ${ remainingCreditsFormatted } kredi kalacağını lütfen unutmayın."
+      ],
       "please open a support ticket": [
         "lütfen bir destek kaydı açın"
       ],
@@ -8314,7 +8323,7 @@
         "Teşekkürler"
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
-        "Gizlilik ve özgürlüğe öncelik veren daha iyi bir İnternet oluşturma amacımızı desteklediğiniz için teşekkür ederiz."
+        "Gizlilik ve özgürlüğe öncelik veren daha iyi bir internet oluşturma amacımızı desteklediğiniz için teşekkür ederiz."
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } iletisi artık görüntülenmeyecek. Ancak yine de ${ encryptionAndKeysLink } altında verilerinizin kilidini açabilirsiniz."
@@ -8329,7 +8338,7 @@
         "Kimlik hizmeti sağlayıcınızdaki kimlik bilgileri silinecek."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
-        "Karanlık ağ, kimlikler gibi çalınan kişisel bilgilerin alınıp satılabildiği gizli bir İnternet bölümüdür."
+        "Karanlık ağ, kimlikler gibi çalınan kişisel bilgilerin alınıp satılabildiği gizli bir internet bölümüdür."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "İndirme sayısına hem güncel indirmeler hem de dosya ön izlemeleri katılır."
@@ -8401,7 +8410,7 @@
         "Bu değişiklik yaklaşık 1 saat içinde altyapınıza tam olarak yansıyacak"
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
-        "Bu işlemin tamamlanması biraz zaman alabilir. Bu sırada lütfen bu sayfayı kapatmayın veya İnternet bağlantınızı kesmeyin."
+        "Bu işlemin tamamlanması biraz zaman alabilir. Bu sırada lütfen bu sayfayı kapatmayın veya internet bağlantınızı kesmeyin."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Bu özellik, e-postalarınızı göndermeyi geciktirerek belirtilen süre içinde göndermeyi geri alma olanağı sağlar."
@@ -8961,6 +8970,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Hesabınıza ne zaman ve hangi IP adresinden erişildiğini görmek için kimlik doğrulama günlüğünü açabilirsiniz. Başarısız oturum açma girişimlerinin yanında hesaba erişen IP adresini ve saatini de kaydedeceğiz."
+      ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Arayüzde aşağıdaki anahtarı kullanarak Fotoğraflar bölümünü açabilirsiniz."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Tarifenizdeki IP adreslerini sayıya ${ specificCountryCount } ekleyerek ya da size özel çözümler için bize ulaşarak yukarıdaki kurulumu kullanmaya başlayabilirsiniz."
@@ -9788,12 +9800,6 @@
       "Auto-detect primary time zone": [
         "Birincil saat dilimi otomatik algılansın"
       ],
-      "Auto-load embedded images": [
-        "Gömülü görseller otomatik olarak yüklensin"
-      ],
-      "Auto-load remote content": [
-        "Uzak içerik otomatik olarak yüklensin"
-      ],
       "Auto-reply": [
         "Otomatik yanıt"
       ],
@@ -9879,7 +9885,7 @@
         "Oluşturucu"
       ],
       "Composer default font/size": [
-        "Oluşturucu varsayılan yazı tipi/boyutu"
+        "Oluşturucu varsayılan yazı tipi ve boyutu"
       ],
       "Composer mode": [
         "Oluşturucu görünümü"
@@ -10126,9 +10132,6 @@
       ],
       "Group address": [
         "Grup adresi"
-      ],
-      "Group conversations": [
-        "Grup konuşmaları"
       ],
       "Group members": [
         "Grup üyeleri"
@@ -11061,6 +11064,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısını ekle"
       ],
@@ -11299,11 +11305,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Brezilya reali"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "İsviçre frangı"
+      ],
+      "US Dollar": [
+        "ABD Doları"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -11762,9 +11774,6 @@
       "Data breach monitoring": [
         "Verilerin ele geçirilmesini izleme"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Verilerin ele geçirilmesini izleme (yakında)"
-      ],
       "Dedicated account manager": [
         "Size ayrılmış hesap yöneticisi"
       ],
@@ -12137,7 +12146,7 @@
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Temel ağ izlemesi ile her yerden güvenli İnternet erişimi"
+        "Temel ağ izlemesi ile her yerden güvenli internet erişimi"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolama alanı."
@@ -12152,7 +12161,7 @@
         "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Güvenli, sınırsız ve yüksek hızda İnternet erişimi sağlayan size ayrılmış VPN çözümü."
+        "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan size ayrılmış VPN çözümü."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Ücretsiz başlangıç hesabı gizliliğe odaklanmış herkesin gereksinimlerine göre tasarlanmıştır."
@@ -12341,7 +12350,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Şirket kaynaklarınızın herkese açık İnternet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Şirket kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -12425,7 +12434,7 @@
         "SMTP, 3. taraf hizmetlerin veya aygıtların ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        "Özel olarak tasarlanmış NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek İnternet üzerinde gezinme hızınızı artırır"
+        "Özel olarak tasarlanmış NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek internet üzerinde gezinme hızınızı artırır"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } arasında paylaşılır"
@@ -12440,7 +12449,7 @@
         "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Ekibinizin deneyimini ${ BRAND_NAME } İnternet uygulamalarına yükleyeceğiniz kuruluş logonuz ile özelleştirin"
+        "Ekibinizin deneyimini ${ BRAND_NAME } internet uygulamalarına yükleyeceğiniz kuruluş logonuz ile özelleştirin"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
@@ -13022,7 +13031,7 @@
         "En az 128 piksel kare biçiminde görsel"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Kullanıcılar İnternet uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
+        "Kullanıcılar internet uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
       ]
     },
     "OS compatibility": {
@@ -13276,7 +13285,7 @@
         "Hesabınızı tam olarak kurtarmanın tek yolu bu olduğundan bunu güvenli bir yerde sakladığınızdan emin olun."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "İnternette güvende kalmak için ${ BRAND_NAME } kullanan 100 milyondan fazla kişiye katılın"
+        "İnternet üzerinde güvende kalmak için ${ BRAND_NAME } kullanan 100 milyondan fazla kişiye katılın"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulaması başlatılıyor"
@@ -13532,6 +13541,9 @@
       "MM/YY": [
         "AA/YY"
       ],
+      "More plans are available in other currencies": [
+        "Farklı para birimlerinde başka tarifeler de var"
+      ],
       "Payment Processing": [
         "Ödeme işleniyor"
       ],
@@ -13576,6 +13588,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Faturanızın ödemesini işliyoruz. Tarifenizde değişiklik yapmadan veya ödeme bilgilerinizi güncellemeden önce lütfen ödeme işleminin tamamlanmasını bekleyin. Sabrınız için teşekkür ederiz."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Seçilmiş ödeme yönteminizden ${ amountToCharge } ödeme alınacak."
       ]
     },
     "Payments.Error": {
@@ -14688,7 +14703,7 @@
         "Parola sıfırlama özelliğini kapatmak için bir kurtarma yöntemi ayarlamanız gerekir."
       ],
       "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
-        "Hesabınızın güvenliğini artırmak ve verilerinizi korumak için İnternet uygulamasındaki hesap ayarlarınızdan parola sıfırlama isteğinde bulunabilirsiniz."
+        "Hesabınızın güvenliğini artırmak ve verilerinizi korumak için internet uygulamasındaki hesap ayarlarınızdan parola sıfırlama isteğinde bulunabilirsiniz."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -14738,6 +14753,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Parola sıfırlama isteği"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Fotoğraflar bölümünü aç"
       ]
     },
     "Settings description": {
@@ -15634,7 +15654,7 @@
         "En iyi ${ BRAND_NAME }"
       ],
       "Unblocking internet access in Iran": [
-        "İran İnternet erişimi engelini kaldırmak"
+        "İran internet erişiminin engelini kaldırmak"
       ],
       "Unlimited folders and labels": [
         "Sınırsız sayıda klasör ve etiket"
@@ -15717,7 +15737,7 @@
         "Masaüstü uygulaması"
       ],
       "Help us keep the internet safe and private for everyone. Upgrade to a paid plan.": [
-        "Ücretli bir tarifeye geçerek İnterneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
+        "Ücretli bir tarifeye geçerek interneti herkes için gizli ve güvenli tutmamıza yardımcı olun."
       ],
       "No ads or tracking": [
         "Reklam veya izleme yok"
@@ -15930,6 +15950,9 @@
       ],
       "Premium address created": [
         "Ücretli hesap eklendi"
+      ],
+      "Problem reported": [
+        "Sorun bildirildi"
       ],
       "Resuming import": [
         "İçe aktarma sürdürülüyor"
@@ -17004,6 +17027,9 @@
       "Phone": [
         "Telefon"
       ],
+      "Photos": [
+        "Fotoğraflar"
+      ],
       "Policies": [
         "İlkeler"
       ],
@@ -17567,13 +17593,13 @@
         "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
       ],
       "See number of unread messages in the tab icon": [
-        "Okunmamış ileti sayısını sekme simgesinde görüntüler"
+        "Okunmamış ileti sayısını sekme simgesinde görüntüler."
       ],
       "Set how your list of messages looks like by default.": [
         "İleti listenizin varsayılan olarak nasıl görüneceğini seçin."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Varsayılan oluşturucu açılır pencere boyutunu küçük veya tam ekran olarak ayarlayın."
+        "Oluşturucu açılan penceresinin varsayılan boyutunu küçük veya tam ekran olarak ayarlayın."
       ],
       "Set the default layout for your Inbox.": [
         "Gelen kutunuzun varsayılan düzenini ayarlayın."
@@ -17597,7 +17623,7 @@
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
       ],
       "The Internet Service Provider of the IP address": [
-        "IP adresinin İnternet hizmeti sağlayıcısı"
+        "IP adresinin internet hizmeti sağlayıcısı"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
@@ -17645,7 +17671,7 @@
         "Açıldığında, tarayıcınızın varsayılan kaydırma çubukları kullanılır. Bunlar genellikle daha geniştir ve daha kolay kullanılır"
       ],
       "Users will see your logo instead of the ${ BRAND_NAME } icon when signed in on our web apps.": [
-        "Kullanıcılar İnternet uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
+        "Kullanıcılar internet uygulamalarımızda oturum açtıklarında ${ BRAND_NAME } simgesi yerine logonuzu görecekler."
       ],
       "Usually an URL that contains the identity provider's name within": [
         "Genellikle kimlik hizmeti sağlayıcının adının bulunduğu bir adres"
@@ -18170,7 +18196,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin saklamanın ve göndermenin daha güvenli ve kolay yolu"
+        "Bitcoin birikimlerinizi kolayca ve güvenle saklayın ve gönderin"
       ]
     },
     "wallet_signup_2024:Bug category": {
