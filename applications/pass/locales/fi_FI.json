@@ -669,6 +669,9 @@
       "Alias options could not be resolved": [
         "Aliasvaihtoehtoja ei voitu selvittää"
       ],
+      "An error occurred while resuming your session": [
+        "Virhe istuntosi jatkamisessa"
+      ],
       "Authentication error": [
         "Tunnistautumisvirhe"
       ],
@@ -1556,6 +1559,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Vahvista lisäsalasanasi käyttääksesi automaattista lisäsalasanalukitusta."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Vahvista ${ PASS_APP_NAME } -tietojesi vienti lisäsalasanallasi"
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Poista nykyinen lukitustapa vahvistamalla lisäsalasanasi."
@@ -3096,6 +3102,9 @@
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Kaikki roskakorin kohteet poistetaan pysyvästi. Et voi kumota toimintoa."
+      ],
+      "An error occurred while exporting your data": [
+        "Virhe tietojasi vietäessä"
       ],
       "At least one email address is required": [
         "Ainakin yksi sähköpostiosoite vaaditaan"

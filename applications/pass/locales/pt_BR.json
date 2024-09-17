@@ -290,7 +290,7 @@
         "Deixar cofre"
       ],
       "Link copied to clipboard": [
-        "O link foi copiado para área de transferência."
+        "O link foi copiado para área de transferência"
       ],
       "Link expires after": [
         "Link expira depois de"
@@ -425,7 +425,7 @@
         "Restaurar item"
       ],
       "Restrict number of views": [
-        "Restringir números de visualizações"
+        "Restringir número de visualizações"
       ],
       "Resume monitoring": [
         "Retomar monitoramento"
@@ -491,7 +491,7 @@
         "Encerrar sessão"
       ],
       "Someone shared an item with you on ${ PASS_APP_NAME }.": [
-        "Alguém compartilhou um item com você em ${ PASS_APP_NAME }."
+        "Alguém compartilhou um item com você no ${ PASS_APP_NAME }."
       ],
       "Sort vault items": [
         "Ordenar itens do cofre"
@@ -644,7 +644,7 @@
         "Esta conta está vulnerável, visite o serviço e altere sua senha."
       ],
       "This service offers 2FA. Enable it for added account security.": [
-        "Este serviço oferece autenticação de dois fatores (2FA). Ative-a para aumentar a segurança da sua conta."
+        "Este serviço oferece autenticação de dois fatores (2FA). Ative-a para maior segurança da sua conta."
       ],
       "Unlock advanced security features and detailed logs to safeguard your online presence.": [
         "Desbloqueie recursos avançados de segurança e registros detalhados para proteger sua presença online."
@@ -2047,7 +2047,7 @@
         "País ou região"
       ],
       "County": [
-        "Província"
+        "Município"
       ],
       "Create a credit card": [
         "Criar um cartão de crédito"
@@ -2080,7 +2080,7 @@
         "Campo oculto personalizado"
       ],
       "Custom text field": [
-        "Campo de texto.personalizado"
+        "Campo de texto personalizado"
       ],
       "Date": [
         "Data"
@@ -2152,7 +2152,7 @@
         "Primeiro nome"
       ],
       "Floor, apartment, building": [
-        "Piso, apartamento, prédio"
+        "Andar, apartamento, prédio"
       ],
       "Forwards to": [
         "Encaminhar para"
@@ -2218,7 +2218,7 @@
         "Incluir números (0–9)"
       ],
       "Instagram handle": [
-        "Nome de usuário no Instagram"
+        "Usuário no Instagram"
       ],
       "Invitations": [
         "Convites"
@@ -2269,7 +2269,7 @@
         "Número da licença"
       ],
       "LinkedIn account": [
-        "Conta no LinkedIn"
+        "Conta do LinkedIn"
       ],
       "Login": [
         "Início de sessão"
@@ -2344,7 +2344,7 @@
         "Do mais antigo ao mais recente"
       ],
       "Open-source password manager for effortless protection.": [
-        "Gerenciador de senha de código aberto para proteção sem esforço."
+        "Gerenciador de senhas de código aberto para proteção sem esforço."
       ],
       "Organization": [
         "Organização"
@@ -2398,7 +2398,7 @@
         "Recente"
       ],
       "Reddit handle": [
-        "Nome de usuário no Reddit"
+        "Usuário no Reddit"
       ],
       "Remove link": [
         "Remover link"
@@ -2413,7 +2413,7 @@
         "Mostrar senha"
       ],
       "Securely store, share and auto-login your accounts with ${ PASS_APP_NAME }, using end-to-end encryption trusted by millions.": [
-        "Armazene, compartilhe e inicie a sessão automática em suas contas com segurança com o ${ PASS_APP_NAME }, usando a criptografia de ponta a ponta que tem a confiança de milhões de pessoas."
+        "Armazene, compartilhe e faça login automático com segurança em suas contas com o ${ PASS_APP_NAME }, usando criptografia de ponta a ponta confiável por milhões de pessoas."
       ],
       "Security": [
         "Segurança"
@@ -2428,7 +2428,7 @@
         "Selecionar idioma preferido"
       ],
       "Select the vault where SimpleLogin aliases will be imported into": [
-        "Selecione o cofre para o qual os alíases do SimpleLogin serão importados"
+        "Selecione o cofre para o qual os aliases do SimpleLogin serão importados"
       ],
       "Select your password manager": [
         "Selecione o seu gerenciador de senhas"
@@ -2440,7 +2440,7 @@
         "Compartilhar"
       ],
       "Share this vault or create a new vault": [
-        "Compartilhe esse cofre ou crie um cofre"
+        "Compartilhe esse cofre ou crie um novo cofre"
       ],
       "Shared link": [
         "Link compartilhado"
@@ -2452,13 +2452,13 @@
         "Número de Segurança Social"
       ],
       "Social security number": [
-        "Número do seguro social"
+        "CPF"
       ],
       "Special characters (!&*)": [
         "Carateres especiais (!&*)"
       ],
       "State or province": [
-        "Estado ou província"
+        "Estado ou município"
       ],
       "Status": [
         "Status"
@@ -2479,7 +2479,7 @@
         "Suporte"
       ],
       "Sync aliases with SimpleLogin": [
-        "Sincronizar alíases com SimpleLogin"
+        "Sincronizar aliases com SimpleLogin"
       ],
       "Tax number": [
         "Número de identificação fiscal"
@@ -2576,13 +2576,13 @@
         "E-mail corporativo"
       ],
       "Work phone number": [
-        "Número de telefone no trabalho"
+        "Número de telefone do trabalho"
       ],
       "X handle": [
         "Usuário no X"
       ],
       "Yahoo account": [
-        "Conta no Yahoo"
+        "Conta do Yahoo"
       ],
       "You are about to create": [
         "Você está prestes a criar"
@@ -2763,7 +2763,7 @@
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
-        "A sincronização de alíases foi realizada com sucesso. Os alíases do SimpleLogin podem levar algum tempo para serem sincronizados"
+        "A sincronização de aliases foi realizada com sucesso. Os aliases do SimpleLogin podem levar algum tempo para serem sincronizados"
       ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "Cofres não podem conter mais do que ${ vault.targetMaxMembers } usuários.",
@@ -3081,7 +3081,7 @@
         "É necessário introduzir uma chave secreta OTP ou um URL."
       ],
       "Section name cannot be empty": [
-        "Seção de nome não pode ser vazio"
+        "O nome da seção não pode estar vazio"
       ],
       "Url already exists": [
         "URL já existe"

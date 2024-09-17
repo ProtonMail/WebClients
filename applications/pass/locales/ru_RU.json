@@ -175,6 +175,12 @@
       "Deselect": [
         "Снять выделение"
       ],
+      "Disable instead": [
+        "Отключить вместо этого"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Отключите этот псевдоним, чтобы перестать получать электронные письма, на него отправленные."
+      ],
       "Discard": [
         "Сбросить"
       ],
@@ -192,6 +198,9 @@
       ],
       "Enable Dark Web Monitoring": [
         "Включить мониторинг Темной паутины"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Включите этот псевдоним, чтобы получать электронные письма, на него отправленные."
       ],
       "Entire vault": [
         "Все хранилище"
@@ -481,6 +490,9 @@
       "Submitting report...": [
         "Отправка отчёта..."
       ],
+      "Sync aliases": [
+        "Синхронизировать псевдонимы"
+      ],
       "Transfer ownership": [
         "Передать права владельца"
       ],
@@ -641,8 +653,14 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } не может быть обработан. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "В данный момент псевдоним не может быть обновлен. Повторите попытку позже"
+      ],
       "Alias options could not be resolved": [
         "Параметры псевдонима не могут быть определены"
+      ],
+      "An error occurred while resuming your session": [
+        "При возобновлении сеанса произошла ошибка"
       ],
       "Authentication error": [
         "Ошибка аутентификации"
@@ -766,6 +784,9 @@
       ],
       "Failed to restore items from trash": [
         "Не удалось восстановить элементы из Корзины"
+      ],
+      "Failed to sync aliases": [
+        "Не удалось синхронизировать псевдонимы"
       ],
       "Failed to transfer this vault's ownership.": [
         "Сбой при передаче владения хранилищем."
@@ -1103,6 +1124,21 @@
       ],
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "После успешного импорта данных вы можете удалить файл CSV, содержащий ваши пароли, для безопасности."
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Псевдоним успешно отключен. Вы больше не будете получать письма, отправленные на ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Псевдоним успешно включен. Теперь вы можете получать электронные письма, отправленные на ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Синхронизация псевдонимов между вашими аккаунтами ${ BRAND_NAME } и SimpleLogin активна."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Псевдонимы в корзине будут продолжать пересылать письма. Если вы хотите прекратить получение писем на этот адрес, отключите его."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Псевдонимы не синхронизируются (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Псевдонимы с пользовательскими доменами не отслеживаются, добавьте их в качестве пользовательского электронного адреса для мониторинга."
@@ -1509,6 +1545,9 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
       ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Подтвердите свой дополнительный пароль, чтобы экспортировать данные ${ PASS_APP_NAME }."
+      ],
       "Please confirm your password": [
         "Подтвердите ваш пароль"
       ],
@@ -1737,8 +1776,17 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "У нас возникли проблемы при синхронизации данных со средствами локального хранения. Пожалуйста, убедитесь, что у вас достаточно места на диске, чтобы ${ PASS_SHORT_APP_NAME } работал без сбоев."
       ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Мы обнаружили, что у вас есть псевдоним ${ aliasCount }, который присутствует в SimpleLogin, но отсутствует в ${ PASS_APP_NAME }. Не хотите ли вы его импортировать?",
+        "Мы обнаружили, что у вас есть ${ aliasCount } псевдонима, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
+        "Мы обнаружили, что у вас есть ${ aliasCount } псевдонимов, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
+        "Мы обнаружили, что у вас есть ${ aliasCount } псевдонимов, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?"
+      ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Мы отправили код подтверждения на ${ email }. Введите его ниже:"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "При создании или изменении имени пользователя в ${ PASS_APP_NAME } ввод 'имени пользователя' всегда будет виден."
       ],
       "You are about to create:": [
         "Вы собираетесь создать:"
@@ -1805,6 +1853,12 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } псевдоним",
+        "${ aliasCount } псевдонима",
+        "${ aliasCount } псевдонимов",
+        "${ aliasCount } псевдонимов"
+      ],
       "${ config.options.length } character": [
         "${ config.options.length } символ",
         "${ config.options.length } символов",
@@ -1913,6 +1967,9 @@
       "Alphabetical": [
         "По алфавиту"
       ],
+      "Always show username field": [
+        "Всегда показывать поле имени пользователя"
+      ],
       "Application logs": [
         "Журналы приложения"
       ],
@@ -2000,6 +2057,9 @@
       "Domain": [
         "Домен"
       ],
+      "Don't remind me again": [
+        "Больше не напоминать"
+      ],
       "Download logs": [
         "Скачать журналы"
       ],
@@ -2023,6 +2083,9 @@
       ],
       "Enable offline access": [
         "Включить офлайновый доступ"
+      ],
+      "Enter email or username": [
+        "Введите адрес электронной почты или имя пользователя"
       ],
       "Expiration date": [
         "Срок действия"
@@ -2309,6 +2372,9 @@
       "Select preferred language": [
         "Выберите предпочитаемый язык"
       ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Выберите хранилище, в которое будут импортированы псевдонимы SimpleLogin"
+      ],
       "Select your password manager": [
         "Выберите свой менеджер паролей"
       ],
@@ -2356,6 +2422,9 @@
       ],
       "Support": [
         "Поддержка"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Синхронизировать псевдонимы с SimpleLogin"
       ],
       "Tax number": [
         "Налоговый номер"
@@ -2633,6 +2702,9 @@
       ]
     },
     "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Синхронизация псевдонимов успешно включена. Синхронизация псевдонимов SimpleLogin может занять некоторое время"
+      ],
       "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
         "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователя.",
         "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей.",
@@ -2875,6 +2947,9 @@
       "Suggestions": [
         "Рекомендации"
       ],
+      "Sync alias": [
+        "Синхронизировать псевдонимы"
+      ],
       "Transfer ownership": [
         "Передать права владельца"
       ],
@@ -2960,6 +3035,9 @@
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Все ваши объекты, попавшие в корзину, будут удалены безвозвратно. Отменить это действие невозможно."
       ],
+      "An error occurred while exporting your data": [
+        "При экспорте данных произошла ошибка"
+      ],
       "At least one email address is required": [
         "Требуется хотя бы один адрес электронной почты"
       ],
@@ -3026,6 +3104,9 @@
       "Missing alias suffix": [
         "Отсутствует суффикс псевдонима"
       ],
+      "Move to trash": [
+        "Переместить в корзину"
+      ],
       "No items": [
         "Нет элементов"
       ],
@@ -3082,6 +3163,9 @@
       ],
       "The alias prefix cannot be longer than 40 characters": [
         "Префикс псевдонима не может быть длиннее 40 символов"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Этот псевдоним \"${ aliasEmail }\" в настоящее время используется в логине \"${ relatedLoginName }\"."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Этот адрес электронной почты больше не будет отслеживаться на предмет утечек."

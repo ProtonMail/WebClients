@@ -373,6 +373,9 @@
       "Pin item": [
         "항목 고정"
       ],
+      "Please retry": [
+        "다시 시도하세요"
+      ],
       "Refresh the page": [
         "페이지 새로 고침"
       ],
@@ -664,6 +667,9 @@
       ],
       "Alias options could not be resolved": [
         "별칭 옵션을 확인할 수 없습니다."
+      ],
+      "An error occurred while resuming your session": [
+        "세션 재개 중 오류 발생"
       ],
       "Authentication error": [
         "인증 오류"
@@ -1535,6 +1541,9 @@
       ],
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "비밀번호를 사용하는 자동 잠금을 위해 추가 비밀번호를 확인해 주세요."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } 데이터를 내보내기 위해서는 추가 비밀번호를 입력하세요."
       ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "지금의 잠금을 등록 해제하기 위해 추가 비밀번호를 확인해 주세요."
@@ -3061,6 +3070,9 @@
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "모든 휴지통에 있는 항목이 완전히 삭제됩니다. 이 동작을 취소할 수 없습니다."
+      ],
+      "An error occurred while exporting your data": [
+        "데이터 내보내기 중 오류가 발생했습니다."
       ],
       "At least one email address is required": [
         "적어도 하나의 이메일 주소가 필요합니다"
