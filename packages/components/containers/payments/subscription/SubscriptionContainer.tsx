@@ -281,6 +281,7 @@ const SubscriptionContainer = ({
             plans,
             paramCurrency: maybeCurrency,
             status: paymentsStatus,
+            paramPlanName: plan,
         })
     );
 
