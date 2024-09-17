@@ -4,6 +4,11 @@
     "language": "ko_KR"
   },
   "contexts": {
+    "Action": {
+      "Please retry": [
+        "다시 시도하세요"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } 파일을 분석할 수 없습니다. ${ errorDetail }"
