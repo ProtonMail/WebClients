@@ -1,3 +1,10 @@
+### Version 1.23.0
+
+-   Make social security number hidden by default
+-   Improve UX during authentication failures
+-   Improve username/email splitting for login items
+-   Default to most recent vault when creating new items
+
 ### Version 1.22.3
 
 -   Improve importing identities from other password managers
