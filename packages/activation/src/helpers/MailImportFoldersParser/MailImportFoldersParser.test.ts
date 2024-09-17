@@ -31,12 +31,12 @@ const paths = [
 ];
 
 /** Basic ApiMailImporterFolders: Source is the minimal required fields */
-export const getApiFoldersTestHelper = (paths: string[]) =>
+export const getApiFoldersTestHelper = (paths: string[], separator = '/') =>
     paths.map(
         (path) =>
             ({
                 Source: path,
-                Separator: '/',
+                Separator: separator,
                 ...(Object.values(MailImportDestinationFolder).some((dest) => dest.toLowerCase() === path.toLowerCase())
                     ? { DestinationFolder: path }
                     : {}),
