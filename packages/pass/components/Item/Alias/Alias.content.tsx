@@ -25,7 +25,7 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
 }) => {
     const dispatch = useDispatch();
 
-    const { data: item, shareId, itemId } = revision;
+    const { data: item, shareId, itemId, modifyTime, revisionTime } = revision;
     const aliasEmail = revision.aliasEmail!;
     const note = useDeobfuscatedValue(item.metadata.note);
     const mailboxesForAlias = useSelector(selectAliasDetails(aliasEmail!));
@@ -45,7 +45,12 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     });
 
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
-    const aliasActions = canToggleStatus ? <AliasSyncToggle disabled={optimistic} revision={revision} /> : undefined;
+
+    const isViewingItemHistory = revisionTime !== modifyTime;
+    const aliasActions =
+        canToggleStatus && !isViewingItemHistory ? (
+            <AliasSyncToggle disabled={optimistic} revision={revision} />
+        ) : undefined;
 
     useEffect(() => {
         if (!optimistic) getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
