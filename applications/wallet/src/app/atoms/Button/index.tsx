@@ -1,7 +1,7 @@
 import { type ElementType, type Ref, forwardRef } from 'react';
 
-import type { ButtonProps } from '@proton/atoms';
-import { Button as CoreButton } from '@proton/atoms';
+import type { ButtonProps } from '@proton/atoms/Button/Button';
+import { Button as CoreButton } from '@proton/atoms/Button/Button';
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import CoreButtonLike from '@proton/atoms/Button/ButtonLike';
 import clsx from '@proton/utils/clsx';
