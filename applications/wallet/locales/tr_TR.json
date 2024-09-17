@@ -139,6 +139,9 @@
       "More options": [
         "Diğer seçenekler"
       ],
+      "Need help?": [
+        "Yardım gerekiyor mu?"
+      ],
       "Next": [
         "İleri"
       ],
@@ -375,7 +378,7 @@
         "Netflix, Disney+ ve Prime Video ve diğer yayın akışı hizmetlerindeki içeriğe her yerden erişin."
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Yerel İnternet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
+        "Yerel internet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
       ],
       "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve diğer özellikleri içerir.",
@@ -394,7 +397,7 @@
         "Dosyalarınızı şifrelenmiş bulut depolama alanı ile koruyun. Sürüm geçmişi, şifrelenmiş dosya paylaşımı ve diğer özellikler."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek İnternet üzerinde gezinme hızınızı artırır."
+        "Özel olarak tasarlanmış NetShield aygıtlarınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek internet üzerinde gezinme hızınızı artırır."
       ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
         "Depolama alanı tüm ${ BRAND_NAME } uygulamaları arasında paylaşılır."
@@ -2253,6 +2256,9 @@
       "Please authenticate your payment in the verification tab.": [
         "Lütfen doğrulama sekmesinden ödemenizi doğrulayın."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Onayla düğmesine tıkladığınız zaman hesabınızda ${ remainingCreditsFormatted } kredi kalacağını lütfen unutmayın."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Lütfen farklı bir ödeme yöntemi kullanarak yeniden deneyin ya da bankanızla görüşün."
       ],
@@ -2857,9 +2863,6 @@
       "Data breach monitoring": [
         "Verilerin ele geçirilmesini izleme"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Verilerin ele geçirilmesini izleme (yakında)"
-      ],
       "Desktop app": [
         "Masaüstü uygulaması"
       ],
@@ -3151,7 +3154,7 @@
         "Tüm ${ BRAND_NAME } hizmetlerini bir arada kullanarak ailenizin gizliliğini koruyun."
       ],
       "Safely access internet from anywhere with essential network monitoring": [
-        "Temel ağ izlemesi ile her yerden güvenli İnternet erişimi"
+        "Temel ağ izlemesi ile her yerden güvenli internet erişimi"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolama alanı."
@@ -3163,7 +3166,7 @@
         "Özel güvenlik gereksinimleri olan daha büyük kuruluşlara özel çözümler"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Güvenli, sınırsız ve yüksek hızda İnternet erişimi sağlayan size ayrılmış VPN çözümü."
+        "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan size ayrılmış VPN çözümü."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Ücretsiz başlangıç hesabı gizliliğe odaklanmış herkesin gereksinimlerine göre tasarlanmıştır."
@@ -3282,7 +3285,7 @@
         "Bir klasör gibi kasalar da ögelerinizi düzenlemeye yardımcı olur"
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Şirket kaynaklarınızın herkese açık İnternet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
+        "Şirket kaynaklarınızın herkese açık internet üzerinde olmasını engelleyin ve yalnızca özel ağ geçitleriniz üzerinden erişime açın"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
@@ -3366,7 +3369,7 @@
         "SMTP, 3. taraf hizmetlerin veya aygıtların ${ MAIL_APP_NAME } üzerinden e-posta göndermesini sağlar."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        "Özel olarak tasarlanmış NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek İnternet üzerinde gezinme hızınızı artırır"
+        "Özel olarak tasarlanmış NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek internet üzerinde gezinme hızınızı artırır"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME }, and ${ PASS_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, ${ DRIVE_APP_NAME } ve ${ PASS_APP_NAME } arasında paylaşılır"
@@ -3381,7 +3384,7 @@
         "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Ekibinizin deneyimini ${ BRAND_NAME } İnternet uygulamalarına yükleyeceğiniz kuruluş logonuz ile özelleştirin"
+        "Ekibinizin deneyimini ${ BRAND_NAME } internet uygulamalarına yükleyeceğiniz kuruluş logonuz ile özelleştirin"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
@@ -3520,6 +3523,9 @@
       ],
       "MM/YY": [
         "AA/YY"
+      ],
+      "More plans are available in other currencies": [
+        "Farklı para birimlerinde başka tarifeler de var"
       ],
       "Payment Processing": [
         "Ödeme işleniyor"
@@ -4081,6 +4087,9 @@
       "Payment method updated": [
         "Ödeme yöntemi güncellendi"
       ],
+      "Problem reported": [
+        "Sorun bildirildi"
+      ],
       "Verification successful": [
         "Doğrulandı"
       ],
@@ -4358,9 +4367,6 @@
       ]
     },
     "Wallet": {
-      "An error occured": [
-        "Bir sorun çıktı"
-      ],
       "Close": [
         "Kapat"
       ],
@@ -4470,9 +4476,6 @@
       ],
       "Send": [
         "Gönder"
-      ],
-      "The current fingerprint doesn't match stored one": [
-        "Geçerli parmak izi kayıtlı olanla eşleşmiyor"
       ]
     },
     "wallet dashboard": {
@@ -4925,9 +4928,6 @@
       "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
         "Bu cüzdan hesabını bir e-posta ile ilişkilendirerek diğer ${ WALLET_APP_NAME } kullanıcılarının e-posta adresinize kolayca Bitcoin göndermesini sağlayın."
       ],
-      "Local storage cleared": [
-        "Yerel depolama alanı temizlendi"
-      ],
       "New fiat currency applied": [
         "Yeni fiyat para birimi uygulandı"
       ],
@@ -5240,15 +5240,7 @@
         "Hesap işlemi etiketi güncellendi"
       ]
     },
-    "Wallet Transaction List": {
-      "Page ${ displayedPageNumber }": [
-        "${ displayedPageNumber }. sayfa"
-      ]
-    },
     "Wallet transactions": {
-      "Syncing transactions": [
-        "Hesap işlemleri eşitleniyor"
-      ],
       "Transactions": [
         "Hesap işlemleri"
       ]
@@ -5334,7 +5326,7 @@
     },
     "wallet_signup_2024:app-switcher": {
       "A safer/easier way to hold & send Bitcoin": [
-        "Bitcoin saklamanın ve göndermenin daha güvenli ve kolay yolu"
+        "Bitcoin birikimlerinizi kolayca ve güvenle saklayın ve gönderin"
       ]
     },
     "wallet_signup_2024:Bug category": {
