@@ -52,6 +52,9 @@ export {
     default as ConfirmSignOutModal,
     shouldShowConfirmSignOutModal,
 } from './components/confirmSignOutModal/ConfirmSignOutModal';
+export { default as ContextMenu } from './components/contextMenu/ContextMenu';
+export { default as ContextMenuButton } from './components/contextMenu/ContextMenuButton';
+export { default as ContextSeparator } from './components/contextMenu/ContextSeparator';
 export { default as Dropdown } from './components/dropdown/Dropdown';
 export type { DropdownProps } from './components/dropdown/Dropdown';
 export { default as DropdownActions } from './components/dropdown/DropdownActions';
