@@ -37,10 +37,10 @@ const HideButton = ({ hidden, onClick }: { hidden: boolean; onClick: () => void 
     <Button
         icon
         pill
-        color="weak"
+        color="norm"
         onClick={onClick}
         size="medium"
-        shape="solid"
+        shape="ghost"
         title={hidden ? c('Action').t`Show` : c('Action').t`Hide`}
     >
         <Icon size={5} name={hidden ? 'eye' : 'eye-slash'} />

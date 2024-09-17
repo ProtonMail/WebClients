@@ -31,7 +31,7 @@ export const ExpirationTimeSelect: FC<Props> = ({ disabled, value, onChange }) =
     return (
         <InlineFieldBox label={c('Action').t`Link expires after`}>
             <SelectTwo
-                className="bg-weak border-none"
+                className="bg-weak"
                 color="weak"
                 value={value}
                 onChange={({ value }) => onChange(value)}

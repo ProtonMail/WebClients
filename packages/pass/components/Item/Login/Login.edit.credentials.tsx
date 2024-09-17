@@ -104,7 +104,7 @@ export const LoginEditCredentials: FC<Props> = ({ form, isNew = false }) => {
                     <>
                         <Icon
                             name={aliasModal.usernameIsAlias ? 'alias' : itemEmailFieldIcon}
-                            size={5}
+                            size={4}
                             className="mt-2"
                         />
                         {!withUsername && (

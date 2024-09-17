@@ -18,8 +18,8 @@
 
 		&:first-child,
 		&:first-child::before {
-			border-start-start-radius: var(--border-radius-xl) !important;
-			border-start-end-radius: var(--border-radius-xl) !important;
+			border-start-start-radius: var(--border-radius-lg) !important;
+			border-start-end-radius: var(--border-radius-lg) !important;
 			border-end-start-radius: 0 !important;
 			border-end-end-radius: 0 !important;
 		}
@@ -28,13 +28,13 @@
 		&:last-child::before {
 			border-start-start-radius: 0 !important;
 			border-start-end-radius: 0 !important;
-			border-end-start-radius: var(--border-radius-xl) !important;
-			border-end-end-radius: var(--border-radius-xl) !important;
+			border-end-start-radius: var(--border-radius-lg) !important;
+			border-end-end-radius: var(--border-radius-lg) !important;
 		}
 
 		&:only-child,
 		&:only-child::before {
-			border-radius: var(--border-radius-xl) !important;
+			border-radius: var(--border-radius-lg) !important;
 		}
 	}
 }

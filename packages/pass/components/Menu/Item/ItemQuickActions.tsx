@@ -73,16 +73,16 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
     return (
         <>
             <Button
-                icon
                 pill
                 color="norm"
                 disabled={disabled}
                 onClick={toggle}
                 ref={anchorRef}
-                size="small"
+                size="medium"
                 title={c('Action').t`Add new item`}
             >
-                <Icon name="plus" alt={c('Action').t`Add new item`} />
+                <Icon className="mr-1" name="plus" alt={c('Action').t`Add new item`} />
+                {c('Action').t`Create item`}
             </Button>
             <Dropdown
                 isOpen={isOpen}

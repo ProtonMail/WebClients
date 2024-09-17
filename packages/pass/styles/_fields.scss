@@ -54,35 +54,42 @@ textarea {
 // Toggle component
 .toggle-label {
 	.toggle-container {
-		background-color: var(--interaction-norm-minor-1);
 		transition: background-color 0.2s;
+
+		&::after {
+			border: 1px solid var(--border-norm);
+		}
 
 		&::before {
 			background-color: var(--interaction-weak-major-3);
 		}
 
 		&:hover::before {
-			background-color: var(--interaction-weak-contrast);
+			background-color: var(--interaction-norm);
 		}
 
 		&.toggle-container--checked {
-			background-color: var(--interaction-norm);
+			background-color: var(--interaction-weak);
+
+			&::after {
+				border: none;
+			}
 
 			&::before {
-				background-color: var(--interaction-weak-contrast);
+				background-color: var(--interaction-norm);
 			}
 
 			&:hover {
 				&::before {
-					background-color: var(--interaction-weak-contrast);
+					background-color: var(--interaction-norm-major-1);
 				}
 			}
 
 			&.toggle-container--loading {
-				background-color: var(--interaction-norm);
+				background-color: var(--interaction-weak-major-1);
 
 				&::before {
-					background-color: var(--interaction-weak-contrast);
+					background-color: var(--interaction-weak-major-3);
 				}
 			}
 		}
