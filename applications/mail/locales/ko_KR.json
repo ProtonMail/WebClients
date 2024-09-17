@@ -546,6 +546,9 @@
       "Hide": [
         "숨기기"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미 가리기"
+      ],
       "Hide advanced PGP settings": [
         "고급 PGP 설정 숨기기"
       ],
@@ -828,10 +831,10 @@
       "Not saved": [
         "저장되지 않음"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
       "Open": [
@@ -1011,6 +1014,9 @@
       "Revert to original display": [
         "원래 모양으로 되돌리기"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } 서버에서 실행"
+      ],
       "Save": [
         "저장"
       ],
@@ -1121,6 +1127,9 @@
       ],
       "Show": [
         "보기"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe 글쓰기 도우미 보기"
       ],
       "Show advanced PGP settings": [
         "고급 PGP 설정 보기"
@@ -1537,6 +1546,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "개인정보를 보호하기 위해 로그가 저장되지 않습니다. 장치 기반 대비 더 빠르게 처리합니다."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "${ BRAND_NAME } 서버에서 실행"
       ],
       "Run on device": [
         "디바이스에서 실행"
@@ -3395,7 +3407,7 @@
         "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 ${ MAX_IMPORT_CONTACTS_STRING } 연락처를 초과하지 않도록 하십시오. 파일이 더 크면, 더 작은 파일로 나누세요. ${ learnMoreLink }."
       ],
       "For unlimited access to the writing assistant and more, upgrade to ${ BRAND_NAME } Duo.": [
-        "글쓰기 도우미 및 기타 서비스에 대한 무제한 액세스를 원하시면 ${ BRAND_NAME } Duo로 업그레이드하십시오."
+        "글쓰기 도우미 및 기타 서비스에 대한 무제한 접근이 필요하다면 ${ BRAND_NAME } Duo로 업그레이드하세요."
       ],
       "Get unlimited aliases and 500 GB of storage with ${ PLAN_NAMES[PLANS.BUNDLE] }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] }으로 무제한 별칭과 500 GB 스토리지 공간을 받으세요."
@@ -3594,13 +3606,13 @@
         "1GB 저장공간"
       ],
       "2 users": [
-        "두 사용자들"
+        "두 명의 사용자"
       ],
       "Full access to all ${ BRAND_NAME } products": [
         "모든 ${ BRAND_NAME } 제품들에 대한 모든 접근권한"
       ],
       "You save ${ amountSave }": [
-        "${ amountSave }를 절약했습니다"
+        "${ amountSave }를 절약할 수 있음"
       ]
     },
     "duoplan2024: SubTitle": {
@@ -3613,7 +3625,7 @@
     },
     "duoplan2024: Title": {
       "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "${ PLAN_NAMES[PLANS.DUO] } 를 소개합니다 "
+        "${ PLAN_NAMES[PLANS.DUO] }를 소개합니다 "
       ]
     },
     "Email body for description (description part)": {
@@ -4124,6 +4136,9 @@
         "하나 이상 조건 필요"
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
+        "첨부 기능이 요금제의 상한을 만족하거나 업그레이드하기 전까지 제한됩니다."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
         "첨부 기능이 요금제의 상한을 만족하거나 업그레이드하기 전까지 제한됩니다."
       ],
       "Signature not verified": [
@@ -6134,7 +6149,7 @@
         "더 많은 검색 결과를 보려면 이메일 내용에서 이 단어를 검색해 보세요."
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
-        "무료로 ${ ASSISTANT_TRIAL_TIME_DAYS }일 동안 사용해 보십시오"
+        "무료로 ${ ASSISTANT_TRIAL_TIME_DAYS }일 동안 사용해 보세요"
       ],
       "From": [
         "보낸 사람"
@@ -6501,6 +6516,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "확인 버튼을 누르면 계정에는 ${ remainingCreditsFormatted } 크레딧이 남게됩니다."
       ],
       "Please open the document to view it.": [
         "문서를 확인하려면 열어주세요."
@@ -6920,7 +6938,7 @@
         "(${ destinationElement } 폴더)"
       ],
       "To avoid getting sidetracked by the open tabs in your browser, use the desktop app.": [
-        "브라우저의 열린 탭들이 주는 혼란을 피하고 싶다면, 데스크톱 앱을 이용하십시오."
+        "브라우저의 열린 탭들이 주는 혼란을 피하고 싶다면, 데스크톱 앱을 이용하세요."
       ],
       "To complete your payment, please send ${ btcAmountBold } to the address below.": [
         "결제를 완료하기 위해서, 아래 주소로 ${ btcAmountBold } 를 송금해 주시기 바랍니다."
@@ -9011,9 +9029,6 @@
       "Data breach monitoring": [
         "데이터 유출 모니터링"
       ],
-      "Data breach monitoring (coming soon)": [
-        "데이터 유출 모니터링 (출시 예정)"
-      ],
       "Desktop app": [
         "데스크톱 앱"
       ],
@@ -9892,6 +9907,9 @@
       ],
       "MM/YY": [
         "MM/YY (월/년)"
+      ],
+      "More plans are available in other currencies": [
+        "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
       "Payment Processing": [
         "결제 처리중"
@@ -11724,6 +11742,9 @@
       ],
       "Preferences saved": [
         "설정 저장됨"
+      ],
+      "Problem reported": [
+        "문제 제보됨"
       ],
       "Public key trusted": [
         "공개 키 신뢰됨"
