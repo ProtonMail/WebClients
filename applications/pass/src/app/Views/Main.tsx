@@ -17,6 +17,7 @@ import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvide
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { Items } from '@proton/pass/components/Item/Items';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
+import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import { OnboardingProvider } from '@proton/pass/components/Onboarding/OnboardingProvider';
 import { OrganizationProvider } from '@proton/pass/components/Organization/OrganizationProvider';
@@ -103,6 +104,7 @@ const MainSwitch: FC = () => {
                                             <Route component={Items} />
                                         </Switch>
                                     )}
+                                    <ThemeOnboardingModal />
                                 </div>
                             </div>
                         </main>
