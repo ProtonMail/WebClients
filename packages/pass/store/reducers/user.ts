@@ -42,7 +42,14 @@ export type UserSettingsState = {
 export type UserData = {
     defaultShareId: MaybeNull<string>;
     aliasSyncEnabled: boolean;
-    pendingAliasToSync: number /** Always 0 if alias sync disabled */;
+    /**
+     * When alias sync is disabled:
+     * - user/access: `pendingAliasToSync = 0` regardless of whether
+     *   any aliases can actually be synced
+     * - alias_status/sync: `pendingAliasToSync` reflects the number
+     *   of aliases that can potentially be synced by the client
+     */
+    pendingAliasToSync: number;
 };
 
 export type UserAccessState = {
@@ -114,8 +121,17 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
     }
 
     if (getUserAccessSuccess.match(action)) {
-        /* triggered on each popup wakeup: avoid unnecessary re-renders */
-        const { plan, waitingNewUserInvites, monitor, userData } = action.payload;
+        const { plan, waitingNewUserInvites, monitor } = action.payload;
+        const userData = { ...action.payload.userData };
+
+        /** If the incoming `userData` does not have alias syncing enabled,
+         * preserve the `pendingAliasToSync` count from the current state.
+         * This accounts for a backend discrepancy where:
+         * - user/access endpoint always sets `pendingAliasToSync = 0` when
+         *   alias sync is disabled, regardless of actual sync status
+         * - alias_status/sync endpoint reflects the true number of aliases
+         *   that can potentially be synced by the client */
+        if (!userData.aliasSyncEnabled) userData.pendingAliasToSync = state.userData.pendingAliasToSync;
 
         const didChange =
             waitingNewUserInvites !== state.waitingNewUserInvites ||
@@ -123,6 +139,7 @@ const reducer: Reducer<UserState> = (state = getInitialState(), action) => {
             !isDeepEqual(monitor, state.monitor) ||
             !isDeepEqual(userData, state.userData);
 
+        /** Triggered on each popup wakeup: avoid unnecessary re-renders */
         return didChange ? partialMerge(state, { plan, waitingNewUserInvites, userData }) : state;
     }
 
