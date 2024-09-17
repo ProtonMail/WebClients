@@ -223,6 +223,9 @@
       "Create and copy alias": [
         "ფსევდონიმის შექმნა და კოპირება"
       ],
+      "Create free account": [
+        "უფასო ანგარიშის შექმნა"
+      ],
       "Create link": [
         "ბმულის შექმნა"
       ],
@@ -389,6 +392,9 @@
       ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }-ზე გადასვლა"
       ],
       "Go to label": [
         "ჭდეზე გადასვლა"
@@ -707,9 +713,6 @@
       ],
       "Save changes": [
         "ცვლილებების შენახვა"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }-ზე შენახვა"
       ],
       "Scan & Download": [
         "სკანირება & გადმოწერა"
@@ -4091,6 +4094,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, სამუდამოდ წაშალოთ ელემენტები სანაგვე ყუთიდან?"
       ],
+      "Are you sure you want to proceed?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
+      ],
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
@@ -4773,6 +4779,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ remainingCreditsFormatted } კრედიტი იქნება დარჩენილი."
+      ],
       "Please open the document to view it.": [
         "გახსენით დოკუმენტი, რომ ნახოთ ის."
       ],
@@ -4843,6 +4852,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "პირადი ძებნა ჩართულია. ახლა შეგიძლიათ, დახუროთ ეს ფანჯარა და მოძებნოთ ფაილები და საქაღალდეები."
       ],
+      "Public link": [
+        "საჯარო ბმული"
+      ],
       "Public sharing of documents is not yet supported.": [
         "დოკუმენტების საჯაროდ გაზიარება ჯერ მხარდაჭერილი არაა."
       ],
@@ -4891,8 +4903,8 @@
       "Retry now": [
         "თავიდან ცდა ახლავე"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "შენახულია ${ DRIVE_SHORT_APP_NAME }-ში"
+      "Saving...": [
+        "შენახვა..."
       ],
       "Scan issue": [
         "სკანირების შეცდომა"
@@ -5313,6 +5325,9 @@
       "You already have a free account": [
         "თქვენ უკვე გაქვთ უფასო ანგარიში"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "აპირებთ, გახვიდეთ გაზიარებული ელემენტიდან. მასთან წვდომა აღარ გექნებათ, თუ მფლობელი თავიდან არ გაგიზიარებთ მას."
+      ],
       "You are about to open another browser tab and visit:": [
         "თქვენ ახლა ბრაუზერის ახალ ჩანართს გახსნით და ეწვევით:"
       ],
@@ -5378,6 +5393,10 @@
       ],
       "You will lose all unsaved changes.": [
         "დაკარგავთ ყველა შეუნახავ ცვლილებას."
+      ],
+      "You will need to save it again from the public link page.": [
+        "საჭიროა, ის თავიდან შეინახოთ საჯარო ბმულის გვერდიდან.",
+        "საჭიროა, ისინი თავიდან შეინახოთ საჯარო ბმულის გვერდიდან."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
@@ -6802,9 +6821,6 @@
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
       ],
-      "Data breach monitoring (coming soon)": [
-        "მონაცემების გაჟონვის თვალყურის დევნება (მალე)"
-      ],
       "Desktop app": [
         "კომპიუტერის აპი"
       ],
@@ -7670,6 +7686,14 @@
       "The link to your item was deleted": [
         "ბმული თქვენს ელემენტამდე წაიშალა"
       ],
+      "This item was not removed from your list": [
+        "ეს ელემენტი თქვენი სიიდან არ წაშლილა",
+        "ზოგიერთი ელემენტი თქვენი სიიდან არ წაშლილა"
+      ],
+      "This item was succefully removed from your list": [
+        "ეს ელემენტი წარმატებით წაიშალა თქვენი სიიდან",
+        "ეს ელემენტები წარმატებით წაიშალა თქვენი სიიდან"
+      ],
       "Trash failed to be emptied": [
         "ნაგვის ყუთის გასუფთავების შეცდომა"
       ],
@@ -7893,6 +7917,9 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "More plans are available in other currencies": [
+        "სხვა სატარიფო გეგმები ხელმისაწვდომია სხვა ვალუტებში"
       ],
       "Payment Processing": [
         "გადახდის დამუშავება"
@@ -9314,6 +9341,9 @@
       "Preferences saved": [
         "პარამეტრები შენახულია"
       ],
+      "Problem reported": [
+        "პრობლემა შეტყობინებულია"
+      ],
       "Recovery has started": [
         "აღდგენა დაიწყო"
       ],
@@ -9526,6 +9556,10 @@
       "Are you sure you want to close the preview?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, დახუროთ მინიატურა?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ეს ელემენტი თქვენი სიიდან?",
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ ეს ელემენტები თქვენი სიიდან?"
+      ],
       "Billing cycle": [
         "გადახდის პერიოდი"
       ],
@@ -9570,6 +9604,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "დაადასტურეთ ${ BRAND_NAME } -ის დამატებითი ჯილდოების დაკარგვა"
+      ],
+      "Confirmation required?": [
+        "დადასტურება აუცილებელია?"
       ],
       "Contact Details": [
         "კონტაქტის დეტალები"

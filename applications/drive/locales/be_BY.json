@@ -225,6 +225,9 @@
       "Create and copy alias": [
         "Стварыць і скапіяваць псеўданім"
       ],
+      "Create free account": [
+        "Стварыць бясплатны ўліковы запіс"
+      ],
       "Create link": [
         "Стварыць спасылку"
       ],
@@ -395,6 +398,9 @@
       ],
       "Get verification code": [
         "Атрымаць праверачны код"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Перайсці ў ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Перайсці да меткі"
@@ -713,9 +719,6 @@
       ],
       "Save changes": [
         "Захаваць змены"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Захаваць у ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Сканіраваць і спампаваць"
@@ -4231,6 +4234,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы сапраўды хочаце незваротна выдаліць выбраныя элементы са сметніцы?"
       ],
+      "Are you sure you want to proceed?": [
+        "Вы сапраўды хочаце працягнуць?"
+      ],
       "Attention required": [
         "Патрабуецца ўвага"
       ],
@@ -4927,6 +4933,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Звярніце ўвагу, што гэты працэс можа заняць некаторы час у залежнасці ад памеру вашай адраснай кнігі."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца наступная колькасць крэдытаў: ${ remainingCreditsFormatted }."
+      ],
       "Please open the document to view it.": [
         "Адкрыйце дакумент, каб паглядзець яго."
       ],
@@ -4999,6 +5008,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Прыватны пошук уключаны. Цяпер вы можаце закрыць гэта акно і шукаць у файлах і папках."
       ],
+      "Public link": [
+        "Публічная спасылка"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
       ],
@@ -5047,8 +5059,8 @@
       "Retry now": [
         "Паўтарыць зараз"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Захавана ў ${ DRIVE_SHORT_APP_NAME }"
+      "Saving...": [
+        "Захаванне..."
       ],
       "Scan issue": [
         "Сканіраванне праблемы"
@@ -5473,6 +5485,9 @@
       "You already have a free account": [
         "У вас ужо ёсць бясплатны ўліковы запіс"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Вы збіраецеся пакінуць абагулены элемент. Вы не зможаце атрымаць доступ да яго, пакуль уладальнік паўторна не абагуліць яго з вамі."
+      ],
       "You are about to open another browser tab and visit:": [
         "Вы збіраецеся адкрыць іншую ўкладку браўзера і наведаць:"
       ],
@@ -5544,6 +5559,12 @@
       ],
       "You will lose all unsaved changes.": [
         "Вы страціце ўсе незахаваныя змены."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Вам неабходна захаваць яго паўторна са старонкі, якая змяшчае публічную спасылку.",
+        "Вам неабходна захаваць іх паўторна са старонкі, якая змяшчае публічную спасылку.",
+        "Вам неабходна захаваць іх паўторна са старонкі, якая змяшчае публічную спасылку.",
+        "Вам неабходна захаваць іх паўторна са старонкі, якая змяшчае публічную спасылку."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для праверкі плацяжу."
@@ -7075,9 +7096,6 @@
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Назіранне за ўцечкай даных (неўзабаве з'явіцца)"
-      ],
       "Desktop app": [
         "Настольная праграма"
       ],
@@ -7985,6 +8003,18 @@
       "The link to your item was deleted": [
         "Спасылка на ваш элемент была выдалена"
       ],
+      "This item was not removed from your list": [
+        "Гэты элемент не быў выдалены з вашага спіса",
+        "Гэтыя элементы не былі выдалены з вашага спіса",
+        "Гэтыя элементы не былі выдалены з вашага спіса",
+        "Гэтыя элементы не былі выдалены з вашага спіса"
+      ],
+      "This item was succefully removed from your list": [
+        "Гэты элемент быў паспяхова выдалены з вашага спіса",
+        "Гэтыя элементы былі паспяхова выдалены з вашага спіса",
+        "Гэтыя элементы былі паспяхова выдалены з вашага спіса",
+        "Гэтыя элементы былі паспяхова выдалены з вашага спіса"
+      ],
       "Trash failed to be emptied": [
         "Не ўдалося ачысціць сметніцу"
       ],
@@ -8214,6 +8244,9 @@
       ],
       "MM/YY": [
         "ММ/ГГ"
+      ],
+      "More plans are available in other currencies": [
+        "Больш тарыфных планаў даступна з іншымі валютамі"
       ],
       "Payment Processing": [
         "Апрацоўка плацяжу"
@@ -9707,6 +9740,9 @@
       "Preferences saved": [
         "Параметры захаваны"
       ],
+      "Problem reported": [
+        "Паведамлена аб праблеме"
+      ],
       "Recovery has started": [
         "Пачалося аднаўленне"
       ],
@@ -9941,6 +9977,12 @@
       "Are you sure you want to close the preview?": [
         "Вы сапраўды хочаце закрыць папярэдні прагляд?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Вы сапраўды хочаце выдаліць гэты элемент са свайго спіса?",
+        "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?",
+        "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?",
+        "Вы сапраўды хочаце выдаліць гэтыя элементы са свайго спіса?"
+      ],
       "Billing cycle": [
         "Перыяд аплаты"
       ],
@@ -9985,6 +10027,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Пацвердзіць страту бонусаў ${ BRAND_NAME }"
+      ],
+      "Confirmation required?": [
+        "Патрабуецца пацвярджэнне?"
       ],
       "Contact Details": [
         "Кантактныя звесткі"

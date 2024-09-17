@@ -225,6 +225,9 @@
       "Create and copy alias": [
         "Utwórz i skopiuj alias"
       ],
+      "Create free account": [
+        "Utwórz darmowe konto"
+      ],
       "Create link": [
         "Utwórz link"
       ],
@@ -395,6 +398,9 @@
       ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Przejdź do ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Przejdź do etykiety"
@@ -713,9 +719,6 @@
       ],
       "Save changes": [
         "Zapisz zmiany"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Zapisz w ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Skanuj i pobierz"
@@ -4225,6 +4228,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Czy na pewno chcesz trwale usunąć zaznaczone elementy?"
       ],
+      "Are you sure you want to proceed?": [
+        "Czy na pewno chcesz kontynuować?"
+      ],
       "Attention required": [
         "Wymagana uwaga"
       ],
@@ -4990,6 +4996,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Prywatne wyszukiwanie zostało włączone. Możesz zamknąć okno i szukać plików oraz folderów."
       ],
+      "Public link": [
+        "Link"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Publiczne udostępnianie dokumentów nie jest obsługiwane."
       ],
@@ -5038,8 +5047,8 @@
       "Retry now": [
         "Spróbuj ponownie"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Zapisano w ${ DRIVE_SHORT_APP_NAME }"
+      "Saving...": [
+        "Zapisywanie..."
       ],
       "Scan issue": [
         "Błąd skanowania"
@@ -7069,9 +7078,6 @@
       "Data breach monitoring": [
         "Monitoring wycieku danych"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoring wycieku danych (wkrótce)"
-      ],
       "Desktop app": [
         "Aplikacja desktopowa"
       ],
@@ -7979,6 +7985,18 @@
       "The link to your item was deleted": [
         "Link do elementu został usunięty"
       ],
+      "This item was not removed from your list": [
+        "Element nie został usunięty z listy",
+        "Elementy nie zostały usunięte z listy",
+        "Elementy nie zostały usunięte z listy",
+        "Elementy nie zostały usunięte z listy"
+      ],
+      "This item was succefully removed from your list": [
+        "Element został usunięty z listy",
+        "Elementy zostały usunięte z listy",
+        "Elementy zostały usunięte z listy",
+        "Elementy zostały usunięte z listy"
+      ],
       "Trash failed to be emptied": [
         "Opróżnienie kosza nie powiodło się"
       ],
@@ -8208,6 +8226,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "More plans are available in other currencies": [
+        "Więcej planów jest dostępnych w innych walutach"
       ],
       "Payment Processing": [
         "Przetwarzanie płatności"
@@ -9698,6 +9719,9 @@
       "Preferences saved": [
         "Ustawienia zostały zapisane"
       ],
+      "Problem reported": [
+        "Problem został zgłoszony"
+      ],
       "Recovery has started": [
         "Proces odzyskiwania został rozpoczęty"
       ],
@@ -9931,6 +9955,12 @@
       ],
       "Are you sure you want to close the preview?": [
         "Czy na pewno chcesz zamknąć podgląd?"
+      ],
+      "Are you sure you want to remove this item from your list?": [
+        "Czy na pewno chcesz usunąć element z listy?",
+        "Czy na pewno chcesz usunąć elementy z listy?",
+        "Czy na pewno chcesz usunąć elementy z listy?",
+        "Czy na pewno chcesz usunąć elementy z listy?"
       ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
