@@ -139,6 +139,9 @@
       "More options": [
         "Weitere Optionen"
       ],
+      "Need help?": [
+        "Benötigst du Hilfe?"
+      ],
       "Next": [
         "Weiter"
       ],
@@ -2872,9 +2875,6 @@
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Überwachung von Datenlecks (Demnächst verfügbar)"
-      ],
       "Desktop app": [
         "Desktop-App"
       ],
@@ -4370,9 +4370,6 @@
       ]
     },
     "Wallet": {
-      "An error occured": [
-        "Ein Fehler ist aufgetreten."
-      ],
       "Close": [
         "Schließen"
       ],
@@ -4482,9 +4479,6 @@
       ],
       "Send": [
         "Senden"
-      ],
-      "The current fingerprint doesn't match stored one": [
-        "Der aktuelle Fingerabdruck stimmt nicht mit dem gespeicherten überein"
       ]
     },
     "wallet dashboard": {
@@ -4937,9 +4931,6 @@
       "Link an email to this wallet account so other ${ WALLET_APP_NAME } users can easily send bitcoin to your email.": [
         "Verknüpfe eine E-Mail mit diesem Wallet-Konto, damit andere ${ WALLET_APP_NAME }-Nutzer dir leicht Bitcoin an deine E-Mail senden können."
       ],
-      "Local storage cleared": [
-        "Lokalen Speicher bereinigt"
-      ],
       "New fiat currency applied": [
         "Neue Fiat-Währung angewendet"
       ],
@@ -5252,15 +5243,7 @@
         "Transaktionsbezeichnung erfolgreich aktualisiert"
       ]
     },
-    "Wallet Transaction List": {
-      "Page ${ displayedPageNumber }": [
-        "Seite ${ displayedPageNumber }"
-      ]
-    },
     "Wallet transactions": {
-      "Syncing transactions": [
-        "Transaktionen werden synchronisiert"
-      ],
       "Transactions": [
         "Transaktionen"
       ]
