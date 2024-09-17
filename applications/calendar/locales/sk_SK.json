@@ -4902,6 +4902,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornenie, tento proces môže trvať nejakú dobu v závislosti na veľkosti Vášho adresára."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Berte prosím na vedomie, že po kliknutí na tlačidlo Potvrdiť vám na účte zostanú kredity vo výške ${ remainingCreditsFormatted }."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "Na vytvorenie skupiny zadajte meno a emailovú adresu, prosím."
       ],
@@ -6670,9 +6673,6 @@
       "Data breach monitoring": [
         "Monitorovanie úniku dát"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorovanie úniku dát (už čoskoro)"
-      ],
       "Desktop app": [
         "Desktopová aplikácia"
       ],
@@ -7735,6 +7735,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "More plans are available in other currencies": [
+        "Ďalšie plány sú k dispozícii v iných menách"
       ],
       "Payment Processing": [
         "Spracovanie platby"
@@ -9375,6 +9378,9 @@
       ],
       "Preferences saved": [
         "Nastavenie bolo uložené"
+      ],
+      "Problem reported": [
+        "Problém nahlásený"
       ],
       "Undo in progress": [
         "Prebieha zrušenie"

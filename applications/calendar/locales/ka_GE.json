@@ -4754,6 +4754,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "გაითვალისწინეთ, რომ ამ პროცესს, თქვენი მისამართების წიგნის ზომის მიხედვით, საკმაოდ, დიდი დრო შეიძლება, დასჭირდეს."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ remainingCreditsFormatted } კრედიტი იქნება დარჩენილი."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "ჯგუფის შესაქმნელად შეიყვანეთ სახელი და ელფოსტის მისამართი."
       ],
@@ -6456,9 +6459,6 @@
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
       ],
-      "Data breach monitoring (coming soon)": [
-        "მონაცემების გაჟონვის თვალყურის დევნება (მალე)"
-      ],
       "Desktop app": [
         "კომპიუტერის აპი"
       ],
@@ -7455,6 +7455,9 @@
       ],
       "MM/YY": [
         "თთ/წწ"
+      ],
+      "More plans are available in other currencies": [
+        "სხვა სატარიფო გეგმები ხელმისაწვდომია სხვა ვალუტებში"
       ],
       "Payment Processing": [
         "გადახდის დამუშავება"
@@ -9023,6 +9026,9 @@
       ],
       "Preferences saved": [
         "პარამეტრები შენახულია"
+      ],
+      "Problem reported": [
+        "პრობლემა შეტყობინებულია"
       ],
       "Undo in progress": [
         "მიმდინარეობს გაუქმება"
