@@ -661,7 +661,7 @@
         "E-posta adresiniz ve hide-my-email takma adlarınızla oluşturulan hesaplarla ilgili verilerin ele geçirilmesi olaylarını izlemeye başlayın."
       ],
       "The dark web is a hidden part of the internet where stolen personal information, like identities, can be bought and sold.": [
-        "Karanlık ağ, kimlikler gibi çalınan kişisel bilgilerin alınıp satılabildiği gizli bir İnternet bölümüdür."
+        "Karanlık ağ, kimlikler gibi çalınan kişisel bilgilerin alınıp satılabildiği gizli bir internet bölümüdür."
       ],
       "These items remain at risk": [
         "Bu ögeler risk altında"
@@ -694,6 +694,9 @@
       ],
       "Alias options could not be resolved": [
         "Takma ad seçenekleri çözümlenemedi"
+      ],
+      "An error occurred while resuming your session": [
+        "Oturumunuz sürdürülürken bir sorun çıktı"
       ],
       "Authentication error": [
         "Kimlik doğrulayıcı sorunu"
@@ -1127,7 +1130,7 @@
         "${ PASS_APP_NAME } her zaman erişilebilir olacak"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
-        "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin İnternet simgesini görüntüleyecek."
+        "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin internet simgesini görüntüleyecek."
       ],
       "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not, kredi kartı ve kimlik kayıtlarını içe aktarır."
@@ -1617,6 +1620,9 @@
       "Please confirm your extra password in order to auto-lock with your extra password.": [
         "Ek parolanızla otomatik kilitleme için lütfen ek parolanızı yazın."
       ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ek parolanızı yazın"
+      ],
       "Please confirm your extra password in order to unregister your current lock.": [
         "Geçerli kilidin kaydını kaldırmak için ek parolanızı yazın."
       ],
@@ -1654,7 +1660,7 @@
         "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "${ PASS_APP_NAME } İnternet uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
+        "${ PASS_APP_NAME } internet uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
       ],
       "Press Enter to copy": [
         "Kopyalamak için Enter tuşuna basın"

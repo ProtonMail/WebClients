@@ -1210,7 +1210,7 @@
         "Synchronizácia aliasov medzi vašimi kontami ${ BRAND_NAME } a SimpleLogin je aktívna."
       ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
-        "Aliasy v koši budú aj naďalej preposielať emaily. Ak chcete prestať dostávať emaily na túto adresu, vypnite ju."
+        "Aliasy v koši budú naďalej preposielať emaily. Ak chcete prestať dostávať emaily na túto adresu, deaktivujte ju."
       ],
       "Aliases out of sync (${ aliasCount })": [
         "Nesynchronizované aliasy (${ aliasCount })"
@@ -1912,10 +1912,10 @@
         "Máme problém so synchronizáciou údajov do vášho lokálneho úložiska. Uistite sa, prosím, že máte dostatok miesta na disku pre správne fungovanie ${ PASS_SHORT_APP_NAME }."
       ],
       "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Zistili sme, že máte ${ aliasCount } alias, ktorý je prítomný v SimpleLogin, ale chýba v ${ PASS_APP_NAME }. Chcete ho naimportovať?",
-        "Zistili sme, že máte ${ aliasCount } aliasy, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich naimportovať?",
-        "Zistili sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich naimportovať?",
-        "Zistili sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich naimportovať?"
+        "Zaznamenali sme, že máte ${ aliasCount } alias, ktorý je prítomný v SimpleLogin, ale chýba v ${ PASS_APP_NAME }. Chcete ho importovať?",
+        "Zaznamenali sme, že máte ${ aliasCount } aliasy, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?",
+        "Zaznamenali sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?",
+        "Zaznamenali sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?"
       ],
       "We’ve sent a verification code to ${ email }. Please enter it below:": [
         "Odoslali sme overovací kód na adresu ${ email }. Zadajte ho, prosím, nižšie:"
@@ -3245,7 +3245,7 @@
         "Všetky položky v koši budú natrvalo odstránené. Túto akciu nie je možné vrátiť späť."
       ],
       "An error occurred while exporting your data": [
-        "Pri exporte vašich údajov došlo k chybe"
+        "Vyskytla sa chyba počas exportovania vašich dát"
       ],
       "At least one email address is required": [
         "Vyžaduje sa aspoň jedna emailová adresa"
@@ -3377,7 +3377,7 @@
         "Predpona aliasu nemôže byť dlhšia ako 40 znakov"
       ],
       "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
-        "Tento alias \"${ aliasEmail }\" sa v súčasnosti používa v prihlasovacom mene \"${ relatedLoginName }\"."
+        "Tento alias „${ aliasEmail }“ sa v súčasnosti používa v prihlásení „${ relatedLoginName }“."
       ],
       "This email address will no longer be monitored for data breaches.": [
         "Táto emailová adresa už nebude monitorovaná na úniky údajov"
