@@ -55,10 +55,10 @@
       "Accept": [
         "接受"
       ],
-      "Activate": [
+      "activate": [
         "啟用"
       ],
-      "activate": [
+      "Activate": [
         "啟用"
       ],
       "Activate ${ user.Name }@pm.me": [
@@ -474,6 +474,9 @@
       ],
       "enable desktop notifications": [
         "啟用桌面通知"
+      ],
+      "Enable device-based recovery": [
+        "啟用裝置復原"
       ],
       "Enable multi-user support": [
         "啟用多使用者支援"
@@ -1153,6 +1156,9 @@
       "Use authentication code": [
         "使用驗證代碼"
       ],
+      "Use group sending permissions": [
+        "使用群組傳送權限"
+      ],
       "Use recovery code": [
         "使用復原代碼"
       ],
@@ -1191,6 +1197,9 @@
       ],
       "View plans details": [
         "檢視方案詳細內容"
+      ],
+      "View recovery settings": [
+        "瀏覽復原設定"
       ],
       "Void": [
         "無效"
@@ -1414,9 +1423,6 @@
       ]
     },
     "Assistant toggle": {
-      "New": [
-        "新版"
-      ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "使電子郵件生產力至新的等級。讓${ BRAND_NAME }以幫助書寫，回覆至，和校閱您的電子郵件。"
       ],
@@ -4945,9 +4951,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 群組"
       ],
-      "*Only one free trial per customer.": [
-        "*每位客戶僅限一次免費滿意體驗。"
-      ],
       "Accounts with custom domains cannot join a group plan.": [
         "有自訂網域的帳號無法加入群組方案。"
       ],
@@ -4996,9 +4999,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "此訂購授權將向主要管理員收取方案費用。"
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "我們專案提供 30 天滿意體驗 ${ BRAND_NAME } Unlimited*，讓您有足夠時間快速上手。"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "謹邀請閣下加入 ${ invite.OrganizationName }"
       ],
@@ -5034,9 +5034,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*每位使用者僅限一次免費滿意體驗。"
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "我們預設分配 ${ formattedStorage } 的儲存空間予管理員帳號。您可稍後管理如何分配儲存空間予額外的使用者。"
       ],
@@ -5045,9 +5042,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "若使用者已有 ${ MAIL_APP_NAME } 電子郵件位址，請在此輸入。否則需先創建帳號。"
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "此使用者的帳號將轉為 30 天滿意體驗* ${ BRAND_NAME } Unlimited 方案。"
       ],
       "To create a new user, a configured custom domain is required.": [
         "要創建新使用者，必須設定自訂網域。"
@@ -5466,6 +5460,12 @@
       ],
       "Keep using the desktop app": [
         "保持使用桌面應用程序"
+      ],
+      "Open ${ MAIL_APP_NAME } in the ${ webAppMessage }": [
+        "於${ webAppMessage }開啟${ MAIL_APP_NAME }"
+      ],
+      "Your desktop app free trial has ended": [
+        "您的桌面應用程式試用已結束。"
       ]
     },
     "Frequency of news": {
@@ -5579,6 +5579,24 @@
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } 位成員"
+      ]
+    },
+    "group_invite_2024: Error message, recovery": {
+      "Please try opening the link again.": [
+        "請重新開啟連結。"
+      ]
+    },
+    "group_invite_2024: Info": {
+      "You can safely close this tab.": [
+        "現在您可以安全地關閉此分頁。"
+      ]
+    },
+    "group_invite_2024: Title": {
+      "Group invitation accepted": [
+        "群組邀請已接受"
+      ],
+      "Group invitation declined": [
+        "群組邀請已拒絕"
       ]
     },
     "Header": {
@@ -6362,6 +6380,9 @@
       "All keys successfully reactivated": [
         "所有金鑰都已成功重新啟用"
       ],
+      "All members have been added.": [
+        "全部成員已添加"
+      ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
       ],
@@ -6914,8 +6935,8 @@
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "請前往您的身分提供者，取得 ${ appName } 的 SAML 中繼資料並在此匯入。"
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "將同一往來對話中的電郵在 [收件匣] 分組顯示，還是獨立顯示。"
+      "Group deleted": [
+        "群組刪除"
       ],
       "here": [
         "這裡"
@@ -7054,6 +7075,9 @@
       ],
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "安裝伺服器設定檔以連線到您選擇國家的指定伺服器。"
+      ],
+      "Internal user": [
+        "內部使用者"
       ],
       "Internet connection lost": [
         "網際網路連線中斷"
@@ -7520,6 +7544,9 @@
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "請知悉，若您刪除 ${ nameDeleted } 篩選器，我們將會停止處理任何有關於此篩選器的自動化操作。"
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "請注意，當您點擊確認時，您的帳號將剩${ remainingCreditsFormatted }可用額度。"
+      ],
       "please open a support ticket": [
         "請開啟支援票卷"
       ],
@@ -7940,6 +7967,9 @@
       "This file is too large to preview": [
         "此檔案太大無法預覽"
       ],
+      "This invitation link has expired. We just sent you a new link.": [
+        "此邀請連結已過期。我們已重新寄送新的連結。"
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "此一 12字短語是你過去被要求設定的。"
       ],
@@ -8236,6 +8266,9 @@
       ],
       "Version number successfully copied to clipboard": [
         "成功地將版本號碼複製到剪貼簿"
+      ],
+      "View and manage your groups.": [
+        "瀏覽及管理您的群組。"
       ],
       "View, download, and manage your invoices.": [
         "檢視、下載與管理您的收據。"
@@ -9166,12 +9199,6 @@
       "Auto-detect primary time zone": [
         "自動偵測主要時區"
       ],
-      "Auto-load embedded images": [
-        "自動載入嵌入圖像"
-      ],
-      "Auto-load remote content": [
-        "自動載入遠端內容"
-      ],
       "Auto-reply": [
         "自動回覆"
       ],
@@ -9414,6 +9441,9 @@
       ],
       "Email or username": [
         "電郵位址或使用者名稱"
+      ],
+      "Email settings": [
+        "郵件設置"
       ],
       "Emails": [
         "電郵"
@@ -9778,6 +9808,9 @@
       "Recovery phrase": [
         "復原短語"
       ],
+      "Remove image metadata": [
+        "移除圖像中繼資料"
+      ],
       "Repeat password": [
         "重複輸入密碼"
       ],
@@ -9873,6 +9906,12 @@
       ],
       "Subscription options": [
         "訂購授權選項"
+      ],
+      "Swipe left action": [
+        "左滑動作"
+      ],
+      "Swipe right action": [
+        "右滑動作"
       ],
       "Synchronize with system": [
         "與系統同步"
@@ -11031,9 +11070,6 @@
       "Data breach monitoring": [
         "資料外洩監測"
       ],
-      "Data breach monitoring (coming soon)": [
-        "資料外洩監測 (即將登場)"
-      ],
       "Dedicated account manager": [
         "專屬客戶經理"
       ],
@@ -11222,6 +11258,9 @@
       ],
       "Support for up to 2 users": [
         "支援最多2位使用者"
+      ],
+      "Sync and backup all your files across devices": [
+        "於裝置同步及備份您全部的檔案"
       ],
       "Tor over VPN": [
         "Tor 經由 VPN"
@@ -13009,23 +13048,41 @@
       "Account safety review": [
         "帳號安全檢查"
       ],
+      "Add a recovery email": [
+        "新增一個備援電子郵件"
+      ],
       "Add a recovery email address": [
         "加入復原電郵位址"
       ],
       "Add a recovery phone number": [
         "加入復原手機號碼"
       ],
+      "Back to Safety Review": [
+        "回復至安全檢查"
+      ],
       "Check account security": [
         "檢查帳號安全"
       ],
+      "Continue to Safety Review": [
+        "繼續安全檢查"
+      ],
       "Download your Recovery Kit": [
         "下載復原包"
+      ],
+      "Enable device-based recovery": [
+        "啟用裝置復原"
       ],
       "Enable recovery by email": [
         "啟用透過電子郵件復原"
       ],
       "Enable recovery by phone": [
         "啟用透過手機復原"
+      ],
+      "Recovery email address": [
+        "復原電郵位址"
+      ],
+      "Recovery phone number": [
+        "復原電話號碼"
       ],
       "Review your account safety": [
         "查看您的帳號安全"
@@ -13036,11 +13093,56 @@
       "Safeguard your account": [
         "保護您的帳號安全"
       ],
+      "Safeguard your account further": [
+        "更深度的保護您的帳號安全"
+      ],
+      "Show more": [
+        "顯示更多"
+      ],
+      "There was an error verifying your recovery phone": [
+        "驗證復原手機時出了一些錯誤"
+      ],
       "Update your Recovery Kit": [
         "更新復原包"
       ],
+      "Verify your recovery email address": [
+        "驗證復原電子郵件地址"
+      ],
+      "Verify your recovery phone number": [
+        "驗證復原電話號碼"
+      ],
+      "You can disable this at any time.": [
+        "您可隨時關閉此。"
+      ],
+      "You recovery email address is:": [
+        "您的備援電子郵件地址為："
+      ],
+      "You recovery phone number is:": [
+        "您的復原電話號碼:"
+      ],
+      "Your account is secure.": [
+        "你的帳號是安全的。"
+      ],
+      "Your recovery email": [
+        "你的復原電子郵件"
+      ],
+      "Your recovery email has been enabled": [
+        "您的復原電子郵件已啟用"
+      ],
+      "Your recovery email is set": [
+        "你的復原電子郵件已設置"
+      ],
       "Your Recovery Kit": [
         "你的復原包"
+      ],
+      "Your recovery methods": [
+        "您的復原方法"
+      ],
+      "Your recovery phone": [
+        "您的復原手機"
+      ],
+      "Your recovery phone is set": [
+        "你的復原手機已設置"
       ]
     },
     "scim: Action": {
@@ -14392,6 +14494,12 @@
       "Organization identity updated": [
         "組織身分已更新"
       ],
+      "Organization logo removed": [
+        "組織標誌已移除"
+      ],
+      "Organization logo updated": [
+        "組織標誌已上傳"
+      ],
       "Organization name updated": [
         "組織名稱更新"
       ],
@@ -14421,6 +14529,9 @@
       ],
       "Premium address created": [
         "Premium 電郵位址已創建"
+      ],
+      "Problem reported": [
+        "以回報問題"
       ],
       "Resuming import": [
         "正在恢復匯入"
@@ -14527,6 +14638,9 @@
         "已移除篩選器"
       ],
       "Preference updated": [
+        "偏好設定已更新"
+      ],
+      "Preferences updated": [
         "偏好設定已更新"
       ],
       "Status updated": [
@@ -14640,6 +14754,9 @@
       ],
       "Status": [
         "狀態"
+      ],
+      "Time": [
+        "時間"
       ],
       "Total storage": [
         "總儲存量"
@@ -14936,6 +15053,12 @@
       "Connection events": [
         "連線行程"
       ],
+      "Connection monitor disabled": [
+        "連線監控已關閉"
+      ],
+      "Connection monitor enabled": [
+        "連線監控已啟用"
+      ],
       "Contact us": [
         "聯絡我們"
       ],
@@ -15082,6 +15205,9 @@
       ],
       "Disable two-factor authentication": [
         "停用兩步驟驗證"
+      ],
+      "Disable two-factor authentication?": [
+        "停用兩步驟驗證?"
       ],
       "Discard changes?": [
         "捨棄變更？"
@@ -15464,6 +15590,9 @@
       "Phone": [
         "電話"
       ],
+      "Photos": [
+        "相片"
+      ],
       "Policies": [
         "政策"
       ],
@@ -15484,6 +15613,9 @@
       ],
       "Profile": [
         "個人檔案"
+      ],
+      "QRCode": [
+        "QRCode"
       ],
       "Recommended": [
         "推薦"
@@ -15697,6 +15829,9 @@
       ],
       "Take precautions to avoid data loss!": [
         "採取行動以免資料遺失！"
+      ],
+      "Text": [
+        "文字"
       ],
       "Theme": [
         "布景主題"
@@ -16388,6 +16523,9 @@
       "${ n } year": [
         "${ n } 年"
       ],
+      "Just ${ price }": [
+        "只要 ${ price }"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "嘗試無風險的 ${ upsellPlanName }"
       ],
@@ -16411,11 +16549,20 @@
       "Bitcoin via email": [
         "Bitcoin透過電子郵件"
       ],
+      "Early access waitlist": [
+        "優先存取等候名單"
+      ],
       "Get started": [
         "開始使用"
       ],
+      "Invite Friends": [
+        "邀請朋友"
+      ],
       "Unlock ${ appName } premium features by upgrading": [
         "升級以解鎖${ appName }付費版功能"
+      ],
+      "You're Invited.": [
+        "您已被邀請"
       ]
     },
     "wallet_signup_2024:Bug category": {
@@ -16426,6 +16573,11 @@
     "wallet_signup_2024:Info": {
       "Coming soon": [
         "即將推出"
+      ]
+    },
+    "wallet_signup_2024:Navigation": {
+      "Back to wallet": [
+        "返回至錢包"
       ]
     },
     "wallet_signup_2024:Wallet Settings": {

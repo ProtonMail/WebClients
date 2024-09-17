@@ -549,6 +549,9 @@
       "Switch or add account": [
         "Cambiar o añadir cuenta"
       ],
+      "Take out of trash": [
+        "Sacar de la papelera"
+      ],
       "Trust": [
         "Confiar"
       ],
@@ -2234,6 +2237,12 @@
       "An error occurred while attempting to duplicate the document. Please try again.": [
         "Se ha producido un error al intentar duplicar el documento. Inténtalo de nuevo."
       ],
+      "An error occurred while attempting to restore the document. Please try again.": [
+        "Ha ocurrido un error intentando restaurar el documento. Inténtalo de nuevo."
+      ],
+      "An error occurred while attempting to trash the document. Please try again.": [
+        "Ha ocurrido un error intentando eliminar el documento. Inténtalo de nuevo."
+      ],
       "An error occurred while creating a new document. Please try again.": [
         "Se ha producido un error al crear un documento. Inténtalo de nuevo."
       ],
@@ -3413,6 +3422,12 @@
       ]
     },
     "Info": {
+      "\"${ documentTitle }\" has been moved to the trash. It will stay there until you restore it or delete it permanently.": [
+        "\"${ documentTitle }\" ha sido movido a la papelera. Permanecerá ahí hasta que lo restaures o elimines permanentemente."
+      ],
+      "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
+        "\"${ documentTitle }\" está en la papelera y permanecerá ahí hasta que lo elimines permanentemente."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } dirección de correo electrónico",
         "${ addressCount } direcciones de correo electrónico"
@@ -3701,6 +3716,12 @@
       ],
       "Display word count": [
         "Mostrar el conteo de palabras"
+      ],
+      "Document is in trash": [
+        "El documento está en la papelera"
+      ],
+      "Document moved to trash": [
+        "Documento movido a la papelera"
       ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "¿No aparece nada? No olvides desactivar los bloqueadores de ventanas emergentes."
@@ -4070,6 +4091,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Indica un nombre y una dirección de correo para crear un grupo."
@@ -5674,9 +5698,6 @@
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoreo de vulneración de datos (próximamente)"
-      ],
       "Desktop app": [
         "Aplicación de escritorio"
       ],
@@ -6622,6 +6643,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Hay más planes disponibles en otras divisas"
       ],
       "Payment Processing": [
         "Procesando el pago"

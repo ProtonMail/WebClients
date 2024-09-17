@@ -70,11 +70,11 @@
       "Accept": [
         "Hyväksy"
       ],
-      "Activate": [
-        "Ota käyttöön"
-      ],
       "activate": [
         "ota käyttöön"
+      ],
+      "Activate": [
+        "Ota käyttöön"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivoi ${ user.Name }@pm.me"
@@ -1186,8 +1186,8 @@
       "Use authentication code": [
         "Käytä vahvistuskoodia"
       ],
-      "Use group permissions": [
-        "Käytä ryhmän käyttöoikeuksia"
+      "Use group sending permissions": [
+        "Käytä ryhmälähetysoikeuksia"
       ],
       "Use recovery code": [
         "Käytä palautuskoodia"
@@ -1467,6 +1467,9 @@
       "Fast and secure. No logs are kept.": [
         "Nopea ja turvallinen. Lokitietoja ei säilytetä."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Suorita ${ BRAND_NAME } -palvelimilla"
+      ],
       "Run on device": [
         "Suorita laitteella"
       ]
@@ -1474,9 +1477,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Osta nyt"
-      ],
-      "New": [
-        "Uusi"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Vie sähköpostin tuottavuus uudelle tasolle. Anna ${ BRAND_NAME } Scriben auttaa sinua kirjoittamaan, vastaamaan ja oikolukemaan viestejäsi."
@@ -5145,9 +5145,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-ryhmää"
       ],
-      "*Only one free trial per customer.": [
-        "*Vain yksi ilmainen kokeilu asiakasta kohden."
-      ],
       "Accounts with custom domains cannot join a group plan.": [
         "Omia verkkotunnuksia käyttävät tilit eivät voi liittyä ryhmätilaukseen."
       ],
@@ -5209,9 +5206,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Tilaus laskutetaan tämän tilauksen ensisijaiselta ylläpitäjältä."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Muutoksen helpottamiseksi tarjoamme sinulle ${ BRAND_NAME } rajattoman 30 päivän kokeilujakson*."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Sinut on kutsuttu liittymään organisaatioon ${ invite.OrganizationName }"
       ],
@@ -5261,9 +5255,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Vain yksi ilmainen kokeilu/käyttäjä."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Oletuksena myönnämme ${ formattedStorage } tallennustilaa ylläpitäjän tilille. Voit hallita lisäkäyttäjien kesken jaettua tallennustilaa myöhemmin."
       ],
@@ -5275,9 +5266,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Kutsu perutaan, eikä käyttäjä voi liittyä organisaatioon ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Käyttäjän tili vaihdetaan ${ BRAND_NAME } Unlimited -tilauksen ilmaiseen 30 päivän kokeiluun*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Uuden käyttäjän luonti edellyttää oman verkkotunnuksen määritystä."
@@ -7326,9 +7314,6 @@
       "Group deleted": [
         "Ryhmä poistettiin"
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Ryhmittele samaan keskusteluun kuuluvat viestit yhteen tai näytä ne erillään."
-      ],
       "here": [
         "tässä"
       ],
@@ -7966,6 +7951,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Huomioithan, että suodattimen ${ nameDeleted } poisto lopettaa myös kaikkien sen käynnistämien automaattisten toimintojen käsittelyn."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Huomioithan, että painettuasi \"Vahvista\"-painiketta, tilillesi jää ${ remainingCreditsFormatted } saldoa."
       ],
       "please open a support ticket": [
         "avaa tukipyyntö"
@@ -9788,12 +9776,6 @@
       "Auto-detect primary time zone": [
         "Tunnista ensisijainen aikavyöhyke automaattisesti"
       ],
-      "Auto-load embedded images": [
-        "Lataa upotetut kuvat automaattisesti"
-      ],
-      "Auto-load remote content": [
-        "Lataa ulkoinen sisältö automaattisesti"
-      ],
       "Auto-reply": [
         "Automaattivastaus"
       ],
@@ -10126,9 +10108,6 @@
       ],
       "Group address": [
         "Ryhmän osoite"
-      ],
-      "Group conversations": [
-        "Ryhmäkeskustelut"
       ],
       "Group members": [
         "Ryhmän jäsenet"
@@ -11761,9 +11740,6 @@
       ],
       "Data breach monitoring": [
         "Tietomurtovalvonta"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Tietomurtovalvonta (tulossa pian)"
       ],
       "Dedicated account manager": [
         "Oma tilinhoitaja"
@@ -13531,6 +13507,9 @@
       ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "More plans are available in other currencies": [
+        "Lisää palvelupaketteja on saatavilla muissa valuutoissa"
       ],
       "Payment Processing": [
         "Maksua käsitellään"
@@ -15931,6 +15910,9 @@
       "Premium address created": [
         "Premium-osoite luotiin"
       ],
+      "Problem reported": [
+        "Ongelma raportoitu"
+      ],
       "Resuming import": [
         "Jatketaan tuontia"
       ],
@@ -17004,6 +16986,9 @@
       "Phone": [
         "Puhelin"
       ],
+      "Photos": [
+        "Kuvat"
+      ],
       "Policies": [
         "Käytännöt"
       ],
@@ -17545,6 +17530,9 @@
       "Feature in early access": [
         "Ominaisuus on varhaisessa käytössä"
       ],
+      "Get productivity and security tips to help you make the most of ${ MAIL_APP_NAME } and beyond.": [
+        "Hanki tuottavuus- ja tietoturvavinkkejä, joiden avulla saat kaiken irti ${ MAIL_APP_NAME }-sovelluksesta ja paljon muuta."
+      ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail lajittelee joitakin viestejä automaattisesti kategorioihin kuten Sosiaaliset verkostot ja Tarjoukset. Voit valita minne nämä viestit tuodaan."
       ],
@@ -17767,11 +17755,20 @@
       "Enable admin access?": [
         "Myönnetäänkö ylläpito-oikeudet?"
       ],
+      "Enable administrator access": [
+        "Ota ylläpitäjän oikeudet käyttöön"
+      ],
       "If you ever lose access to your credentials, your organization’s administrators will be able to reset your password and restore access to your account.": [
         "Jos menetät kirjautumistietosi, organisaatiosi ylläpitäjä voi nollata salasanasi ja palauttaa pääsysi tilillesi."
       ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Kun käyttäjä on antanyt suostumuksen, voit auttaa heitä samaan takaisin tilinkäyttöoikeuden tai hallinnoimaan heidän tietojaan."
+      ],
       "Organization key must be activated to request data access": [
         "Organisaatioavain on aktivoitava tietojen käyttöoikeuden anomiseksi"
+      ],
+      "Pending admin access": [
+        "Odottaa ylläpitäjän oikeuksia"
       ],
       "Private user": [
         "Yksityinen käyttäjä"
@@ -17799,6 +17796,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tämä mitätöi ylläpitäjän oikeuden hallita tämän käyttäjän tiliä."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Jatkaaksesi sinun on pyydettävä käyttäjältä lupa käyttää heidän tietojaan tai nollata heidän salasanansa."
       ],
       "View request": [
         "Näytä pyyntö"

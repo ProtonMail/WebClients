@@ -1115,8 +1115,14 @@
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "Alias ​​aktiverat. Du kan nu ta emot e-post skickat till ${ item.aliasEmail }"
       ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Alias-synkronisering mellan dina ${ BRAND_NAME } och SimpleLogin-konton är aktiv."
+      ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
         "Alias ​​i papperskorg kommer fortsätta vidarebefordra e-post. Om du vill sluta ta emot e-post på denna adress, inaktivera den istället."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Ej synkroniserade alias (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "Alias med anpassade domäner övervakas inte, lägg till dem som en anpassad e-post för övervakning."

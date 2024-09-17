@@ -755,10 +755,10 @@
       "Not saved": [
         "Nincs mentve"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open": [
@@ -3466,6 +3466,9 @@
       "Draft could not be saved. Try again.": [
         "Piszkozat mentése nem sikerült. Próbálja újra."
       ],
+      "Due to an error, text generation couldn't be canceled": [
+        "Egy hiba miatt a szöveg generálását nem lehet visszavonni."
+      ],
       "Email address disabled": [
         "Az e-mail cím le van tiltva"
       ],
@@ -3647,6 +3650,12 @@
       "Please provide either a first name, a last name or a display name": [
         "Adjon meg egy keresztnevet, vezetéknevet vagy megjelenített nevet"
       ],
+      "Please try again or refresh the page.": [
+        "Kérjük, próbálja újra, vagy frissítse az oldalt."
+      ],
+      "Please try generating the text again": [
+        "Kérjük, próbálja újragenerálni a szöveget."
+      ],
       "Port is required": [
         "A port megadása szükséges"
       ],
@@ -3762,6 +3771,12 @@
       ],
       "The sending key is not valid": [
         "A küldő kulcs érvénytelen"
+      ],
+      "The system is busy at the moment. Please try again in a few minutes.": [
+        "Jelenleg a rendszer elfoglalt. Kérjük próbálja újra néhány perc múlva."
+      ],
+      "The writing assistant cannot proceed with your request. Please try a different prompt.": [
+        "A fogalmazási segéd nem tudja feldolgozni a kérését. Kérjük, próbáljon meg más utasítást adni."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
@@ -5443,6 +5458,10 @@
       "Create a new contact group": [
         "Új névjegy csoport"
       ],
+      "Create a secure cloud for ${ n } member": [
+        "Hozzon létre biztonságos felhőt ${ n } tagnak",
+        "Hozzon létre biztonságos felhőt ${ n } tagnak"
+      ],
       "Create in": [
         "Létrehozás itt"
       ],
@@ -5640,6 +5659,10 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "További keresési eredményekért, próbáljon meg erre a kulcsszóra keresni az e-mail üzenetek tartalmában"
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "${ ASSISTANT_TRIAL_TIME_DAYS } napig ingyenesen kipróbálható",
+        "${ ASSISTANT_TRIAL_TIME_DAYS } napig ingyenesen kipróbálható"
       ],
       "From": [
         "Forrás:"
@@ -6520,6 +6543,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "Szeretne kapni egy új ellenőrzési kódot?"
+      ],
+      "Writing assistant": [
+        "Fogalmazási segéd"
       ],
       "Yearly": [
         "Évente"
@@ -8166,6 +8192,14 @@
         "${ n } üzenet naponta",
         "${ n } üzenet naponta"
       ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } széf felhasználónként",
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } széf felhasználónként"
+      ],
+      "${ n } user": [
+        "${ n } felhasználó",
+        "${ n } felhasználóig"
+      ],
       "${ n } vault": [
         "${ n } tároló",
         "${ n } tároló"
@@ -8173,6 +8207,10 @@
       "${ n } VPN connection": [
         "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolat"
+      ],
+      "${ options }-day file version history": [
+        "${ options } napos fájl verzió előzmény",
+        "${ options } napos fájl verzió előzmény"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
@@ -8258,9 +8296,6 @@
       ],
       "Data breach monitoring": [
         "Adatvédelmi incidensek figyelése"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Adatvédelmi incidensek figyelése (hamarosan)"
       ],
       "Desktop app": [
         "Asztali alkalmazás"

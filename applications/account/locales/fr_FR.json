@@ -70,11 +70,11 @@
       "Accept": [
         "Accepter"
       ],
-      "Activate": [
-        "Activer"
-      ],
       "activate": [
         "activer"
+      ],
+      "Activate": [
+        "Activer"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Activer ${ user.Name }@pm.me"
@@ -892,6 +892,9 @@
       "Resume": [
         "Reprendre"
       ],
+      "Resume membership": [
+        "Reprendre l'adhésion"
+      ],
       "Retry": [
         "Réessayer"
       ],
@@ -1186,8 +1189,8 @@
       "Use authentication code": [
         "Utiliser le code d'authentification"
       ],
-      "Use group permissions": [
-        "Utiliser les autorisations du groupe"
+      "Use group sending permissions": [
+        "Utiliser les autorisations d'envoi groupé"
       ],
       "Use recovery code": [
         "Utiliser un code de récupération"
@@ -1477,9 +1480,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Acheter"
-      ],
-      "New": [
-        "Nouveau"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails."
@@ -3579,6 +3579,17 @@
         "Aidez-nous à nous améliorer"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmation de la perte de la remise spéciale de ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Retirer la réduction"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Votre abonnement ${ PLAN_NAMES[PLANS.PASS] } est au prix réduit de ${ price } par an. En passant à un abonnement gratuit, vous perdrez définitivement cette remise, même si vous décidez ensuite de passer à nouveau à un abonnement payant."
+      ]
+    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb pour Debian / Ubuntu"
@@ -5148,8 +5159,8 @@
       "${ BRAND_NAME } groups": [
         "Groupes ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "*Un seul essai gratuit par client."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Une seule période d'essai gratuite par utilisateur. Les tarifs réguliers s'appliquent par la suite."
       ],
       "Accounts with custom domains cannot join a group plan.": [
         "Les comptes avec des domaines personnalisés ne peuvent pas rejoindre un abonnement de groupe."
@@ -5212,8 +5223,8 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "L'abonnement sera facturé à l'administrateur principal."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Pour faciliter la transition, nous vous offrons un essai gratuit de 30 jours pour ${ BRAND_NAME } Unlimited*."
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "Pour faciliter la transition, nous vous offrons un essai gratuit de 30 jours pour ${ BRAND_NAME } Unlimited*."
       ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vous avez une invitation à rejoindre ${ invite.OrganizationName }."
@@ -5264,8 +5275,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Un seul essai gratuit par utilisateur."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Une seule période d'essai gratuite par utilisateur. Les tarifs réguliers s'appliquent par la suite."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Après avoir quitté votre abonnement, cet utilisateur sera transféré à un abonnement ${ BRAND_NAME } Unlimited avec une période d'essai gratuite de 30 jours.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Nous attribuons par défaut ${ formattedStorage } d'espace de stockage au compte de l'administrateur. Vous pouvez gérer cet espace pour le répartir entre d'autres utilisateurs par la suite."
@@ -5278,9 +5292,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "L'invitation sera annulée et l'utilisateur ne pourra pas rejoindre ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Le compte de l'utilisateur sera transféré vers l'abonnement ${ BRAND_NAME } Unlimited pour un essai gratuit de 30 jours*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Pour créer un nouvel utilisateur, vous devez configurer un domaine personnalisé."
@@ -7338,9 +7349,6 @@
       "Group deleted": [
         "Le groupe a été supprimé."
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Groupez les messages d'une même conversation dans votre boite de réception ou affichez-les séparément."
-      ],
       "here": [
         "ici"
       ],
@@ -8980,6 +8988,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Vous pouvez activer la journalisation des connexions pour savoir quand votre compte est utilisé et à partir de quelle adresse IP. Nous enregistrerons l'adresse IP qui accède au compte et l'heure, ainsi que les tentatives qui ont échoué."
       ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Vous pouvez activer la section Photos depuis l'interface en utilisant le commutateur ci-dessous."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Vous pouvez débloquer immédiatement la configuration ci-dessus en ajoutant ${ specificCountryCount } au nombre d'adresses IP de votre abonnement ou nous contacter pour une solution personnalisée."
       ],
@@ -9806,12 +9817,6 @@
       "Auto-detect primary time zone": [
         "Détecter automatiquement le fuseau horaire principal"
       ],
-      "Auto-load embedded images": [
-        "Charger automatiquement les images intégrées"
-      ],
-      "Auto-load remote content": [
-        "Charger automatiquement le contenu distant"
-      ],
       "Auto-reply": [
         "Réponse automatique"
       ],
@@ -10144,9 +10149,6 @@
       ],
       "Group address": [
         "Groupe d'adresses"
-      ],
-      "Group conversations": [
-        "Conversations de groupe"
       ],
       "Group members": [
         "Membres du groupe"
@@ -11788,9 +11790,6 @@
       ],
       "Data breach monitoring": [
         "Surveillance des fuites de données"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Surveillance des fuites de données (prochainement)"
       ],
       "Dedicated account manager": [
         "Responsable de compte dédié"
@@ -14100,7 +14099,7 @@
         "Numéro de téléphone de récupération"
       ],
       "Review your account safety": [
-        "Vérifier la sécurité de votre compte"
+        "Vérifier la sécurité du compte"
       ],
       "Safeguard account now": [
         "Protégez votre compte"
@@ -14773,6 +14772,11 @@
         "Demande de réinitialisation du mot de passe"
       ]
     },
+    "Setting": {
+      "Enable Photos section": [
+        "Activer la section Photos"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Terminez votre transition vers un internet respectueux de votre vie privée avec nos outils d'importation et de transfert sécurisés."
@@ -15384,6 +15388,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Votre abonnement a été acheté avec une application iOS. Pour apporter des modifications à votre abonnement ou mettre à jour vos données de paiement, vous devez donc vous rendre sur l'App Store d'Apple."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Vous passerez à un abonnement inférieur à la fin du cycle de facturation."
       ]
     },
     "Subscription price": {
@@ -17043,6 +17052,9 @@
       "Phone": [
         "Téléphone"
       ],
+      "Photos": [
+        "Photos"
+      ],
       "Policies": [
         "Politiques"
       ],
@@ -17819,7 +17831,7 @@
         "Une fois que l'utilisateur a donné son accord, vous pourrez l'aider à retrouver l'accès à son compte ou à gérer ses données."
       ],
       "Organization key must be activated to request data access": [
-        "La clé d'organisation doit être activée pour demander l'accès aux données"
+        "La clé de l'organisation doit être activée pour demander l'accès aux données."
       ],
       "Pending admin access": [
         "Accès administrateur en attente"
@@ -17846,7 +17858,7 @@
         "Envoyer une demande"
       ],
       "The user must have an address to request data access": [
-        "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données"
+        "L'utilisateur doit disposer d'une adresse pour demander l'accès aux données."
       ],
       "This will delete the pending request for administrator access to the user’s data or password reset.": [
         "Cela supprimera la demande en attente pour l'accès en tant qu'administrateur aux données de l'utilisateur ou pour la réinitialisation du mot de passe."

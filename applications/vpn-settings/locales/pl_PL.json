@@ -68,7 +68,7 @@
         "Zezwalaj na szyfrowanie ent-to-end w grupie"
       ],
       "Always allow sending": [
-        "Zezwalaj na wysyłanie"
+        "Zawsze zezwalaj na wysyłanie"
       ],
       "Apply": [
         "Zastosuj"
@@ -681,9 +681,6 @@
       ],
       "Use authentication code": [
         "Użyj kodu uwierzytelniającego"
-      ],
-      "Use group permissions": [
-        "Użyj uprawnień grupy"
       ],
       "Use recovery code": [
         "Użyj kodu odzyskiwania"
@@ -2845,8 +2842,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "* Tylko jedna darmowa wersja próbna na użytkownika."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "* Tylko jedna darmowa wersja próbna na użytkownika. Później obowiązuje normalna cena."
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Domyślne przypiszemy ${ formattedStorage } przestrzeni dyskowej do konta administratora. Możesz zarządzać przypisaną przestrzenią dyskową w celu rozdysponowania jej wśród dodatkowych użytkowników w późniejszym czasie."
@@ -2859,9 +2856,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Zaproszenie zostanie anulowane. Użytkownik nie będzie mógł dołączyć do organizacji ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Konto użytkownika zostanie przeniesione do planu Unlimited ${ BRAND_NAME } na 30-dniową darmową wersję próbną*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Aby utworzyć użytkownika, skonfiguruj niestandardową domenę."
@@ -3768,6 +3762,9 @@
         "Usuwanie ${ deletedServerCount } serwerów bramy",
         "Usuwanie ${ deletedServerCount } serwerów bramy"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Wyłączone od ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Wyłączenie uwierzytelniania dwustopniowego obniży bezpieczeństwo konta. Zrób to tylko wtedy, jeśli jest to absolutnie konieczne."
       ],
@@ -3851,6 +3848,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Włącz logowanie SSO, aby zapewnić swojej organizacji bezpieczeństwo"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Włączone od ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Adres URL punktu końcowego otrzymany od dostawcy tożsamości (np. https://idp.przyklad.pl/sso/saml)."
@@ -6098,11 +6098,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real brazylijski"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Frank szwajcarski"
+      ],
+      "US Dollar": [
+        "Dolar amerykański"
       ]
     },
     "Navigation": {
@@ -6404,9 +6410,6 @@
       ],
       "Data breach monitoring": [
         "Monitoring wycieku danych"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoring wycieku danych (wkrótce)"
       ],
       "Dedicated servers and IP": [
         "Dedykowane serwery i adresy IP"
@@ -7566,6 +7569,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "More plans are available in other currencies": [
+        "Więcej planów jest dostępnych w innych walutach"
       ],
       "Payment Processing": [
         "Przetwarzanie płatności"
@@ -9410,6 +9416,9 @@
       ],
       "Preference saved": [
         "Ustawienia zostały zapisane"
+      ],
+      "Problem reported": [
+        "Problem został zgłoszony"
       ],
       "SPF value copied to clipboard": [
         "Wartość SPF została skopiowana do schowka"

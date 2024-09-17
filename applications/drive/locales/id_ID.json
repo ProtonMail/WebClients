@@ -222,6 +222,9 @@
       "Create and copy alias": [
         "Buat dan salin alias"
       ],
+      "Create free account": [
+        "Buat akun gratis"
+      ],
       "Create link": [
         "Buat tautan"
       ],
@@ -386,6 +389,9 @@
       ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "Tuju ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Go to label": [
         "Tuju label"
@@ -704,9 +710,6 @@
       ],
       "Save changes": [
         "Simpan perubahan"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "Simpan ke ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Scan & Download": [
         "Pindai & Unduh"
@@ -4021,6 +4024,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Apakah Anda yakin untuk menghapus item-item yang terpilih dari sampah secara permanen?"
       ],
+      "Are you sure you want to proceed?": [
+        "Apakah Anda yakin ingin melanjutkan?"
+      ],
       "Attention required": [
         "Diperlukan perhatian"
       ],
@@ -4696,6 +4702,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Mohon dicatat bahwa proses ini dapat memakan waktu sejenak tergantung pada ukuran buku alamat Anda."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo yang tersisa pada akun Anda akan menjadi ${ remainingCreditsFormatted }."
+      ],
       "Please open the document to view it.": [
         "Silakan buka dokumen ini untuk melihat isinya."
       ],
@@ -4765,6 +4774,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "Pencarian pribadi diaktifkan. Anda kini dapat menutup kotak dialog ini dan mulai mencari berkas dan folder tertentu."
       ],
+      "Public link": [
+        "Tautan publik"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
       ],
@@ -4813,8 +4825,8 @@
       "Retry now": [
         "Coba lagi sekarang"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "Tersimpan di ${ DRIVE_SHORT_APP_NAME }"
+      "Saving...": [
+        "Menyimpan..."
       ],
       "Scan issue": [
         "Masalah pemindaian"
@@ -5233,6 +5245,9 @@
       "You already have a free account": [
         "Anda telah memiliki akun gratis"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Anda akan keluar dari item yang dibagikan. Anda tidak akan dapat mengaksesnya lagi sampai pemilik membagikan ulang dengan Anda."
+      ],
       "You are about to open another browser tab and visit:": [
         "Anda akan membuka tab browser baru dan mengunjungi:"
       ],
@@ -5295,6 +5310,9 @@
       ],
       "You will lose all unsaved changes.": [
         "Anda akan kehilangan seluruh perubahan yang belum disimpan."
+      ],
+      "You will need to save it again from the public link page.": [
+        "Anda akan harus menyimpannya lagi dari laman tautan publik"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
@@ -6748,9 +6766,6 @@
       "Data breach monitoring": [
         "Pemantauan kebocoran data"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Pemantauan kebocoran data (segera hadir)"
-      ],
       "Desktop app": [
         "Aplikasi desktop"
       ],
@@ -7595,6 +7610,12 @@
       "The link to your item was deleted": [
         "Tautan ke item Anda telah dihapus"
       ],
+      "This item was not removed from your list": [
+        "Beberapa item gagal dihapus dari daftar Anda"
+      ],
+      "This item was succefully removed from your list": [
+        "Semua item berhasil dihapus dari daftar Anda"
+      ],
       "Trash failed to be emptied": [
         "Gagal mengosongkan sampah"
       ],
@@ -7815,6 +7836,9 @@
       ],
       "MM/YY": [
         "BB/TT"
+      ],
+      "More plans are available in other currencies": [
+        "Lebih banyak paket tersedia pada mata uang lainnya"
       ],
       "Payment Processing": [
         "Pembayaran Sedang Diproses"
@@ -9200,6 +9224,9 @@
       "Preferences saved": [
         "Preferensi disimpan"
       ],
+      "Problem reported": [
+        "Masalah dilaporkan"
+      ],
       "Recovery has started": [
         "Proses pemulihan telah dimulai"
       ],
@@ -9401,6 +9428,9 @@
       "Are you sure you want to close the preview?": [
         "Apakah Anda yakin untuk menutup pratinjau?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "Apakah Anda ingin menghapus item tersebut dari daftar Anda?"
+      ],
       "Billing cycle": [
         "Siklus tagihan"
       ],
@@ -9445,6 +9475,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Konfirmasi hilangnya bonus ${ BRAND_NAME }"
+      ],
+      "Confirmation required?": [
+        "Konfirmasi diperlukan?"
       ],
       "Contact Details": [
         "Rincian Kontak"

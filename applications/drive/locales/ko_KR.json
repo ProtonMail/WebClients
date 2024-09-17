@@ -222,6 +222,9 @@
       "Create and copy alias": [
         "별칭 생성 및 복사"
       ],
+      "Create free account": [
+        "무료 계정 생성"
+      ],
       "Create link": [
         "링크 생성"
       ],
@@ -386,6 +389,9 @@
       ],
       "Get verification code": [
         "인증코드 전송"
+      ],
+      "Go to ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME }로 이동"
       ],
       "Go to label": [
         "라벨로 이동"
@@ -704,9 +710,6 @@
       ],
       "Save changes": [
         "변경 사항 저장"
-      ],
-      "Save to ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }에 저장"
       ],
       "Scan & Download": [
         "검사하고 다운로드"
@@ -2411,13 +2414,13 @@
         "1GB 저장공간"
       ],
       "2 users": [
-        "두 사용자들"
+        "두 명의 사용자"
       ],
       "Full access to all ${ BRAND_NAME } products": [
         "모든 ${ BRAND_NAME } 제품들에 대한 모든 접근권한"
       ],
       "You save ${ amountSave }": [
-        "${ amountSave }를 절약했습니다"
+        "${ amountSave }를 절약할 수 있음"
       ]
     },
     "duoplan2024: SubTitle": {
@@ -2430,7 +2433,7 @@
     },
     "duoplan2024: Title": {
       "Introducing ${ PLAN_NAMES[PLANS.DUO] } ": [
-        "${ PLAN_NAMES[PLANS.DUO] } 를 소개합니다 "
+        "${ PLAN_NAMES[PLANS.DUO] }를 소개합니다 "
       ]
     },
     "Email body for description (description part)": {
@@ -4021,6 +4024,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "정말 선택한 항목을 휴지통에서 영구적으로 삭제하시겠습니까?"
       ],
+      "Are you sure you want to proceed?": [
+        "계속 진행하겠습니까?"
+      ],
       "Attention required": [
         "주의 필요"
       ],
@@ -4696,6 +4702,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "이 과정은 주소록의 크기에 따라 시간이 좀 걸릴 수 있습니다."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "확인 버튼을 누르면 계정에는 ${ remainingCreditsFormatted } 크레딧이 남게됩니다."
+      ],
       "Please open the document to view it.": [
         "문서를 확인하려면 열어주세요."
       ],
@@ -4765,6 +4774,9 @@
       "Private search enabled. You may now close this dialogue and search for files and folders.": [
         "비공개 검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
       ],
+      "Public link": [
+        "공개 링크"
+      ],
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
       ],
@@ -4813,8 +4825,8 @@
       "Retry now": [
         "지금 다시 시도"
       ],
-      "Saved in ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME }에 저장됨"
+      "Saving...": [
+        "저장 중..."
       ],
       "Scan issue": [
         "스캔 문제 발생"
@@ -4826,7 +4838,7 @@
         "검색 활성화됨"
       ],
       "Securely downloaded ${ nbFile } file": [
-        "${ nbFile } 파일 안전히 다운로드됨"
+        "${ nbFile }개 파일을 안전하게 다운로드했습니다."
       ],
       "Securely downloaded all encrypted files": [
         "안전히 모든 암호화된 파일을 다운로드 했습니다."
@@ -5233,6 +5245,9 @@
       "You already have a free account": [
         "이미 무료 계정을 가지고 있습니다."
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "공유된 항목에서 떠나려고 시도하고 있습니다. 소유자가 나와 공유하지 않는 한 다시 해당 항목에 접근할 수 없습니다."
+      ],
       "You are about to open another browser tab and visit:": [
         "다른 브라우저 탭을 열고 다음을 방문합니다:"
       ],
@@ -5295,6 +5310,9 @@
       ],
       "You will lose all unsaved changes.": [
         "저장되지 않은 사항을 잃게 됩니다."
+      ],
+      "You will need to save it again from the public link page.": [
+        "공개 링크 페이지에서 다시 저장해야할 수 있습니다."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "결제를 인증하기 위해 곧 PayPal로 이동됩니다."
@@ -6691,9 +6709,6 @@
       "Data breach monitoring": [
         "데이터 유출 모니터링"
       ],
-      "Data breach monitoring (coming soon)": [
-        "데이터 유출 모니터링 (출시 예정)"
-      ],
       "Desktop app": [
         "데스크톱 앱"
       ],
@@ -7538,6 +7553,12 @@
       "The link to your item was deleted": [
         "항목의 링크가 삭제되었습니다"
       ],
+      "This item was not removed from your list": [
+        "이 항목이 목록에서 삭제되지 않았습니다."
+      ],
+      "This item was succefully removed from your list": [
+        "항목이 성공적으로 목록에서 삭제되었습니다."
+      ],
       "Trash failed to be emptied": [
         "휴지통 비우기 실패"
       ],
@@ -7758,6 +7779,9 @@
       ],
       "MM/YY": [
         "MM/YY (월/년)"
+      ],
+      "More plans are available in other currencies": [
+        "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
       "Payment Processing": [
         "결제 처리중"
@@ -9143,6 +9167,9 @@
       "Preferences saved": [
         "설정 저장됨"
       ],
+      "Problem reported": [
+        "문제 제보됨"
+      ],
       "Recovery has started": [
         "복구가 시작되었습니다"
       ],
@@ -9344,6 +9371,9 @@
       "Are you sure you want to close the preview?": [
         "정말로 미리보기를 닫으시겠습니까?"
       ],
+      "Are you sure you want to remove this item from your list?": [
+        "이 목록에서 해당 항목을 정말 삭제하시겠어요?"
+      ],
       "Billing cycle": [
         "결제 주기"
       ],
@@ -9388,6 +9418,9 @@
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "${ BRAND_NAME } 의 보너스를 잃는 것을 확인합니다"
+      ],
+      "Confirmation required?": [
+        "확인 필요를 요구합니까?"
       ],
       "Contact Details": [
         "연락처 정보"

@@ -70,11 +70,11 @@
       "Accept": [
         "Αποδοχή"
       ],
-      "Activate": [
-        "Ενεργοποίηση"
-      ],
       "activate": [
         "ενεργοποιήστε"
+      ],
+      "Activate": [
+        "Ενεργοποίηση"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
@@ -1186,8 +1186,8 @@
       "Use authentication code": [
         "Χρησιμοποιήστε έναν κωδικό ελέγχου ταυτότητας"
       ],
-      "Use group permissions": [
-        "Χρήση δικαιωμάτων ομάδας"
+      "Use group sending permissions": [
+        "Χρήση δικαιωμάτων αποστολής σε ομάδα"
       ],
       "Use recovery code": [
         "Χρησιμοποιήστε κωδικό ανάκτησης"
@@ -1467,6 +1467,9 @@
       "Fast and secure. No logs are kept.": [
         "Γρήγορα και με ασφάλεια. Δεν τηρούνται αρχεία καταγραφής."
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Εκτέλεση σε διακομιστές ${ BRAND_NAME }"
+      ],
       "Run on device": [
         "Εκτέλεση στη συσκευή"
       ]
@@ -1474,9 +1477,6 @@
     "Assistant toggle": {
       "Buy now": [
         "Αγοράστε τώρα"
-      ],
-      "New": [
-        "Νέο"
       ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Ανεβάστε την παραγωγικότητα του ηλεκτρονικού ταχυδρομείου σε νέα επίπεδα. Αφήστε το ${ BRAND_NAME } Scribe να σας βοηθήσει να γράψετε, να απαντήσετε και να διορθώσετε τα μηνύματά σας."
@@ -5145,9 +5145,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ομάδες"
       ],
-      "*Only one free trial per customer.": [
-        "*Μόνο μία δωρεάν δοκιμή ανά πελάτη."
-      ],
       "Accounts with custom domains cannot join a group plan.": [
         "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
       ],
@@ -5209,9 +5206,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Η συνδρομή θα χρεωθεί στον κύριο διαχειριστή αυτού του προγράμματος."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Για να διευκολύνουμε τη μετάβαση, σας προσφέρουμε μια δοκιμή ευγένειας 30 ημερών για ${ BRAND_NAME } Unlimited*."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Έχετε προσκληθεί να συμμετάσχετε στο ${ invite.OrganizationName }"
       ],
@@ -5261,9 +5255,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Μόνο μία δωρεάν δοκιμή ανά χρήστη."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Από προεπιλογή, εκχωρούμε ${ formattedStorage } αποθηκευτικού χώρου στον λογαριασμό διαχειριστή. Μπορείτε να διαχειριστείτε τον εκχωρημένο χώρο αποθήκευσης που θα διανεμηθεί σε επιπλέον χρήστες αργότερα."
       ],
@@ -5275,9 +5266,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Η πρόσκληση θα ακυρωθεί και ο χρήστης δε θα μπορεί να συμμετάσχει στον οργανισμό ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Ο λογαριασμός του χρήστη θα μετακινηθεί σε ένα Απεριόριστο πρόγραμμα ${ BRAND_NAME } για δωρεάν δοκιμή 30 ημερών*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Για δημιουργία νέου χρήστη, απαιτείται ένας παραμετροποιημένος προσαρμοσμένος τομέας."
@@ -7326,9 +7314,6 @@
       "Group deleted": [
         "Η ομάδα διαγράφηκε"
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Ομαδοποιήστε τα μηνύματα της ίδιας συνομιλίας στα Εισερχόμενά σας ή εμφανίστε τα ξεχωριστά."
-      ],
       "here": [
         "εδώ"
       ],
@@ -7966,6 +7951,9 @@
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
         "Παρακαλούμε λάβετε υπόψη ότι αν διαγράψετε αυτό το φίλτρο ${ nameDeleted } θα σταματήσουμε να επεξεργαζόμαστε όλες τις αυτοματοποιημένες ενέργειες που ενεργοποιεί."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ remainingCreditsFormatted }."
       ],
       "please open a support ticket": [
         "παρακαλούμε ανοίξτε ένα εισιτήριο υποστήριξης"
@@ -8962,6 +8950,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Μπορείτε να ενεργοποιήσετε τη σύνδεση ελέγχου ταυτότητας για να δείτε πότε γίνεται πρόσβαση στον λογαριασμό σας και από ποια IP. Θα καταγράψουμε τη διεύθυνση IP που έχει πρόσβαση στον λογαριασμό και την ώρα, καθώς και τις αποτυχημένες προσπάθειες."
       ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Μπορείτε να ενεργοποιήσετε την ενότητα Φωτογραφίες από τη διεπαφή χρησιμοποιώντας την παρακάτω εναλλαγή"
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Μπορείτε να ξεκλειδώσετε αμέσως την παραπάνω ρύθμιση προσθέτοντας ${ specificCountryCount } στον αριθμό διευθύνσεων IP στο πλάνο σας ή να επικοινωνήσετε μαζί μας για εξατομικευμένες λύσεις."
       ],
@@ -9788,12 +9779,6 @@
       "Auto-detect primary time zone": [
         "Αυτόματη ανίχνευση κύριας ζώνης ώρας"
       ],
-      "Auto-load embedded images": [
-        "Αυτόματη φόρτωση ενσωματωμένων εικόνων"
-      ],
-      "Auto-load remote content": [
-        "Αυτόματη φόρτωση απομακρυσμένου περιεχομένου"
-      ],
       "Auto-reply": [
         "Αυτόματη απάντηση"
       ],
@@ -10126,9 +10111,6 @@
       ],
       "Group address": [
         "Διεύθυνση ομάδας"
-      ],
-      "Group conversations": [
-        "Ομαδικες συζητήσεις"
       ],
       "Group members": [
         "Μέλη ομάδας"
@@ -11299,11 +11281,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Ρεάλ Βραζιλίας"
+      ],
       "Euro": [
         "Ευρώ"
       ],
       "Swiss franc": [
         "Ελβετικό Φράγκο"
+      ],
+      "US Dollar": [
+        "Δολάριο ΗΠΑ"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -11761,9 +11749,6 @@
       ],
       "Data breach monitoring": [
         "Παρακολούθηση παραβίασης δεδομένων"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Παρακολούθηση παραβίασης δεδομένων (σύντομα κοντά σας)"
       ],
       "Dedicated account manager": [
         "Αποκλειστικός διαχειριστής λογαριασμού"
@@ -13531,6 +13516,9 @@
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
+      ],
+      "More plans are available in other currencies": [
+        "Περισσότερα προγράμματα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
       "Payment Processing": [
         "Επεξεργασία Πληρωμής"
@@ -15931,6 +15919,9 @@
       "Premium address created": [
         "Δημιουργήθηκε Premium διεύθυνση"
       ],
+      "Problem reported": [
+        "Αναφέρθηκε πρόβλημα"
+      ],
       "Resuming import": [
         "Γίνεται συνέχιση εισαγωγής"
       ],
@@ -17000,6 +16991,9 @@
       ],
       "Phone": [
         "Τηλέφωνο"
+      ],
+      "Photos": [
+        "Φωτογραφίες"
       ],
       "Policies": [
         "Πολιτικές"

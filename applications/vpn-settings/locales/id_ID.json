@@ -496,6 +496,9 @@
       "Restore": [
         "Pulihkan"
       ],
+      "Resume membership": [
+        "Lanjutkan keanggotaan"
+      ],
       "Retry": [
         "Coba lagi"
       ],
@@ -682,8 +685,8 @@
       "Use authentication code": [
         "Gunakan kode autentikasi"
       ],
-      "Use group permissions": [
-        "Gunakan perizinan grup"
+      "Use group sending permissions": [
+        "Gunakan perizinan pengiriman grup"
       ],
       "Use recovery code": [
         "Gunakan kode pemulihan"
@@ -2815,8 +2818,11 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Hanya satu uji coba gratis per pengguna."
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Terbatas hanya pada satu uji coba gratis per pengguna. Harga normal berlaku setelahnya."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Setelah meninggalkan paket Anda, pengguna ini akan dipindahkan ke paket ${ BRAND_NAME } Unlimited dengan masa uji coba gratis 30 hari.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Secara bawaan, kami memberikan ruang penyimpanan sebesar ${ formattedStorage } ke akun administrator. Anda dapat mengelola penyimpanan yang diberikan untuk dibagikan antara pengguna tambahan."
@@ -2829,9 +2835,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Undangan ini akan dibatalkan dan pengguna yang bersangkutan tidak akan dapat bergabung ke ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Akun pengguna akan dipindahkan ke paket ${ BRAND_NAME } Unlimited selama uji coba gratis 30 hari."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Untuk membuat pengguna baru, Anda harus mengatur domain kustom."
@@ -4241,6 +4244,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Harap masukkan frasa pemulihan (12 kata) yang terhubung dengan akun Anda."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Mohon diperhatikan bahwa dengan mengeklik tombol Konfirmasi, saldo yang tersisa pada akun Anda akan menjadi ${ remainingCreditsFormatted }."
       ],
       "please open a support ticket": [
         "silakan buka tiket layanan dukungan"
@@ -5933,11 +5939,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real Brazil"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franc Swiss"
+      ],
+      "US Dollar": [
+        "Dolar AS"
       ]
     },
     "Navigation": {
@@ -6188,9 +6200,6 @@
       ],
       "Data breach monitoring": [
         "Pemantauan kebocoran data"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Pemantauan kebocoran data (segera hadir)"
       ],
       "Dedicated servers and IP": [
         "Server dan alamat IP khusus"
@@ -7315,6 +7324,9 @@
       "MM/YY": [
         "BB/TT"
       ],
+      "More plans are available in other currencies": [
+        "Lebih banyak paket tersedia pada mata uang lainnya"
+      ],
       "Payment Processing": [
         "Pembayaran Sedang Diproses"
       ],
@@ -7359,6 +7371,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Kami sedang memproses pembayaran Anda untuk faktur yang tertagih. Silakan tunggu hingga pembayaran selesai sebelum membuat perubahan pada paket Anda atau memperbarui rincian pembayaran Anda. Terima kasih atas kesabaran Anda."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Anda akan ditagihkan ${ amountToCharge } dari metode pembayaran yang Anda pilih."
       ]
     },
     "Payments.Error": {
@@ -9039,6 +9054,9 @@
       "Preference saved": [
         "Preferensi disimpan"
       ],
+      "Problem reported": [
+        "Masalah dilaporkan"
+      ],
       "SPF value copied to clipboard": [
         "Nilai SPF disalin ke papan klip"
       ],
@@ -9495,7 +9513,7 @@
         "Sunting rincian faktur"
       ],
       "Edit organization identity": [
-        "Edit identitas organisasi"
+        "Sunting identitas organisasi"
       ],
       "Edit servers": [
         "Sunting server"

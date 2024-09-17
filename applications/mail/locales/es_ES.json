@@ -835,10 +835,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "Ok": [
+      "OK": [
         "Aceptar"
       ],
-      "OK": [
+      "Ok": [
         "Aceptar"
       ],
       "Open": [
@@ -4166,6 +4166,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "El envío de archivos adjuntos está limitado hasta que respetes los límites de tu plan o mejores."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "El envío de archivos adjuntos está restringido cuando excedes los límites de tu plan o hasta que actualices tu plan."
+      ],
       "Signature not verified": [
         "Firma no verificada"
       ],
@@ -6621,6 +6624,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Ten en cuenta que al hacer clic en el botón Confirmar, tu cuenta tendrá ${ remainingCreditsFormatted } créditos restantes."
       ],
       "Please open the document to view it.": [
         "Abre el documento para verlo."
@@ -9185,9 +9191,6 @@
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoreo de vulneración de datos (próximamente)"
-      ],
       "Desktop app": [
         "Aplicación de escritorio"
       ],
@@ -10074,6 +10077,9 @@
       ],
       "MM/YY": [
         "MM/AA"
+      ],
+      "More plans are available in other currencies": [
+        "Hay más planes disponibles en otras divisas"
       ],
       "Payment Processing": [
         "Procesando el pago"

@@ -4828,6 +4828,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "Rețineți că acest proces poate dura ceva timp, în funcție de dimensiunea agendei de contacte."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "După apăsarea pe butonul de confirmare, contul va mai avea ${ remainingCreditsFormatted } (de) credite rămase."
+      ],
       "Please provide a name and an email address for creating a group.": [
         "Furnizați un nume și o adresă de e-mail pentru a crea un grup."
       ],
@@ -5962,7 +5965,7 @@
         "Detalii"
       ],
       "upgrade for more storage": [
-        "treceți la alt tip de plan pentru mai mult spațiu"
+        "treceți la un plan cu plată pentru mai mult spațiu"
       ],
       "Upgrade to restore full access": [
         "Schimbați tipul de abonament pentru a restaura accesul complet"
@@ -6562,9 +6565,6 @@
       ],
       "Data breach monitoring": [
         "Monitorizarea divulgării datelor"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorizarea divulgării datelor (în curând)"
       ],
       "Desktop app": [
         "Aplicația desktop"
@@ -7596,6 +7596,9 @@
       "MM/YY": [
         "LL/AA"
       ],
+      "More plans are available in other currencies": [
+        "Există alte planuri în monede diferite"
+      ],
       "Payment Processing": [
         "Se procesează plata"
       ],
@@ -8509,7 +8512,7 @@
         "Pentru a încărca sau sincroniza fișiere, eliberați spațiu sau ${ upgrade }"
       ],
       "upgrade for more storage": [
-        "treceți la alt tip de plan pentru mai mult spațiu"
+        "treceți la un plan cu plată pentru mai mult spațiu"
       ],
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Vom adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }."
@@ -9199,6 +9202,9 @@
       ],
       "Preferences saved": [
         "Preferințe salvate"
+      ],
+      "Problem reported": [
+        "Problemă raportată"
       ],
       "Undo in progress": [
         "Anulare în desfășurare"

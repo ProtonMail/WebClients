@@ -682,8 +682,8 @@
       "Use authentication code": [
         "Käytä vahvistuskoodia"
       ],
-      "Use group permissions": [
-        "Käytä ryhmän käyttöoikeuksia"
+      "Use group sending permissions": [
+        "Käytä ryhmälähetysoikeuksia"
       ],
       "Use recovery code": [
         "Käytä palautuskoodia"
@@ -2827,9 +2827,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Vain yksi ilmainen kokeilu/käyttäjä."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Oletuksena myönnämme ${ formattedStorage } tallennustilaa ylläpitäjän tilille. Voit hallita lisäkäyttäjien kesken jaettua tallennustilaa myöhemmin."
       ],
@@ -2841,9 +2838,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Kutsu perutaan, eikä käyttäjä voi liittyä organisaatioon ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Käyttäjän tili vaihdetaan ${ BRAND_NAME } Unlimited -tilauksen ilmaiseen 30 päivän kokeiluun*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Uuden käyttäjän luonti edellyttää oman verkkotunnuksen määritystä."
@@ -4283,6 +4277,9 @@
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Syötä tilillesi kuuluva 12-sanainen palautuslauseke."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Huomioithan, että painettuasi \"Vahvista\"-painiketta, tilillesi jää ${ remainingCreditsFormatted } saldoa."
       ],
       "please open a support ticket": [
         "avaa tukipyyntö"
@@ -6266,9 +6263,6 @@
       "Data breach monitoring": [
         "Tietomurtovalvonta"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Tietomurtovalvonta (tulossa pian)"
-      ],
       "Dedicated servers and IP": [
         "Omat palvelimet ja kiinteät IP-osoitteet"
       ],
@@ -7403,6 +7397,9 @@
       ],
       "MM/YY": [
         "KK/VV"
+      ],
+      "More plans are available in other currencies": [
+        "Lisää palvelupaketteja on saatavilla muissa valuutoissa"
       ],
       "Payment Processing": [
         "Maksua käsitellään"
@@ -9169,6 +9166,9 @@
       "Preference saved": [
         "Asetus tallennettiin"
       ],
+      "Problem reported": [
+        "Ongelma raportoitu"
+      ],
       "SPF value copied to clipboard": [
         "SFF-arvo kopioitiin leikepöydälle"
       ],
@@ -10163,8 +10163,14 @@
       "Delete request to access user data?": [
         "Poistetaanko käyttäjän tietojen käsittelyoikeuspyyntö?"
       ],
+      "Once the user consents, you will be able to help them regain account access or manage their data.": [
+        "Kun käyttäjä on antanyt suostumuksen, voit auttaa heitä samaan takaisin tilinkäyttöoikeuden tai hallinnoimaan heidän tietojaan."
+      ],
       "Organization key must be activated to request data access": [
         "Organisaatioavain on aktivoitava tietojen käyttöoikeuden anomiseksi"
+      ],
+      "Pending admin access": [
+        "Odottaa ylläpitäjän oikeuksia"
       ],
       "Private user": [
         "Yksityinen käyttäjä"
@@ -10189,6 +10195,9 @@
       ],
       "This will revoke the administrator permission to manage this user's account.": [
         "Tämä mitätöi ylläpitäjän oikeuden hallita tämän käyttäjän tiliä."
+      ],
+      "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
+        "Jatkaaksesi sinun on pyydettävä käyttäjältä lupa käyttää heidän tietojaan tai nollata heidän salasanansa."
       ]
     },
     "upsell panel": {

@@ -655,9 +655,6 @@
       "Use authentication code": [
         "Usar código de autenticação"
       ],
-      "Use group permissions": [
-        "Utilizar permissões de grupo"
-      ],
       "Use recovery code": [
         "Usar código de recuperação"
       ],
@@ -2523,9 +2520,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Apenas uma avaliação gratuita por utilizador."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Por predefinição, atribuímos ${ formattedStorage } de armazenamento à conta de administrador. Pode gerir o armazenamento atribuído para ser distribuído por outros utilizadores mais tarde."
       ],
@@ -2534,9 +2528,6 @@
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
         "Se o utilizador já tiver um endereço ${ MAIL_APP_NAME }, introduza-o aqui. Caso contrário, é necessário criar uma conta primeiro."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "A conta do utilizador será transferida para um plano ilimitado da ${ BRAND_NAME } para uma avaliação gratuita de 30 dias*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Para criar um utilizador, é necessário um domínio personalizado configurado."
@@ -3427,6 +3418,9 @@
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
+      "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
+        "Se tiver a sessão iniciada noutro local, poderá conseguir fazer ${ signedInPasswordResetLink }."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se acredita que houve um erro, contacte-nos em ${ contactLink }."
       ],
@@ -3520,6 +3514,9 @@
       "Invite Rejected": [
         "O convite foi rejeitado."
       ],
+      "Item autofilled in ${ vaultLink }": [
+        "Item preenchido automaticamente em ${ vaultLink }"
+      ],
       "Item autofilled in vault": [
         "Item auto-preenchimento no cofre"
       ],
@@ -3535,17 +3532,41 @@
       "Item Deleted": [
         "O item foi eliminado."
       ],
+      "Item deleted from ${ vaultLink }": [
+        "Item eliminado de ${ vaultLink }"
+      ],
       "Item deleted from vault": [
         "Item apagado do cofre"
       ],
       "Item flags changed in vault": [
         "Sinalizadores de itens alterados no cofre"
       ],
+      "Item in ${ vaultLink } trashed": [
+        "Item em ${ vaultLink } eliminado"
+      ],
+      "Item in ${ vaultLink } untrashed": [
+        "Item em ${ vaultLink } recuperado"
+      ],
+      "Item in vault trashed": [
+        "Item no cofre eliminado"
+      ],
+      "Item in vault untrashed": [
+        "Item no cofre recuperado"
+      ],
       "Item Read": [
         "O item foi lido."
       ],
+      "Item read in ${ vaultLink }": [
+        "Item lido em ${ vaultLink }"
+      ],
       "Item read in vault": [
         "Item lido no cofre"
+      ],
+      "Item Trashed": [
+        "Item eliminado"
+      ],
+      "Item Untrashed": [
+        "Item recuperado"
       ],
       "Item Updated": [
         "O item foi atualizado."
@@ -3708,6 +3729,9 @@
       ],
       "per month": [
         "por mês"
+      ],
+      "per month, billed at ${ price }": [
+        "por mês, faturado em ${ price }"
       ],
       "per month, billed every 12 months": [
         "por mês, faturado a cada 12 meses"
@@ -5412,9 +5436,6 @@
       ],
       "Data breach monitoring": [
         "Monitoramento das violações de dados"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Monitoramento de violações de dados (em breve)"
       ],
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"

@@ -555,6 +555,9 @@
       "Hide": [
         "Skrýt"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Skrýt asistenta psaní ${ BRAND_NAME } Scribe"
+      ],
       "Hide advanced PGP settings": [
         "Skrýt pokročilé nastavení PGP"
       ],
@@ -840,11 +843,11 @@
       "Not saved": [
         "Neuloženo"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open": [
         "Otevřít"
@@ -1023,6 +1026,9 @@
       "Revert to original display": [
         "Návrat k původnímu zobrazení"
       ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Spustit na serverech ${ BRAND_NAME }"
+      ],
       "Save": [
         "Uložit"
       ],
@@ -1133,6 +1139,9 @@
       ],
       "Show": [
         "Zobrazit"
+      ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Zobrazit asistenta psaní ${ BRAND_NAME } Scribe"
       ],
       "Show advanced PGP settings": [
         "Zobrazit pokročilé nastavení PGP"
@@ -1564,6 +1573,9 @@
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "Žádné logy nejsou uchovávány pro ochranu vašeho soukromí. Rychlejší zpracování."
+      ],
+      "Run on ${ BRAND_NAME } servers": [
+        "Spustit na serverech ${ BRAND_NAME }"
       ],
       "Run on device": [
         "Spusťte na zařízení"
@@ -4210,6 +4222,9 @@
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Odesílání příloh je omezeno, dokud se nevejdete do limitů svého tarifu nebo neprovedete navýšení."
       ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Odesílání příloh je omezeno, když překročíte limity svého tarifu, nebo dokud nenavýšíte svůj tarif."
+      ],
       "Signature not verified": [
         "Podpis nebyl ověřen"
       ],
@@ -6825,6 +6840,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zůstane ${ remainingCreditsFormatted } kreditů."
       ],
       "Please open the document to view it.": [
         "Prosím, otevřete dokument pro jeho zobrazení."
@@ -9488,9 +9506,6 @@
       "Data breach monitoring": [
         "Monitorování narušení bezpečnosti dat"
       ],
-      "Data breach monitoring (coming soon)": [
-        "Monitorování narušení bezpečnosti dat (již brzy)"
-      ],
       "Desktop app": [
         "Desktopová aplikace"
       ],
@@ -10393,6 +10408,9 @@
       ],
       "MM/YY": [
         "MM/RR"
+      ],
+      "More plans are available in other currencies": [
+        "Další tarify jsou k dispozici v jiných měnách"
       ],
       "Payment Processing": [
         "Zpracování platby"
@@ -12420,6 +12438,9 @@
       ],
       "Preferences saved": [
         "Nastavení bylo uloženo"
+      ],
+      "Problem reported": [
+        "Problém nahlášen"
       ],
       "Public key trusted": [
         "Veřejný klíč nastavený jako důvěryhodný"

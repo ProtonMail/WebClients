@@ -70,11 +70,11 @@
       "Accept": [
         "Sprejmi"
       ],
-      "Activate": [
-        "Aktiviraj"
-      ],
       "activate": [
         "aktiviraj"
+      ],
+      "Activate": [
+        "Aktiviraj"
       ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
@@ -1447,9 +1447,6 @@
       ]
     },
     "Assistant toggle": {
-      "New": [
-        "Novo"
-      ],
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Dvignite produktivnost pri e-pošti na novo raven. Naj vam ${ BRAND_NAME } Scribe pomaga pri pisanju, odgovarjanju in lektoriranju vaših e-poštnih sporočil."
       ],
@@ -5045,9 +5042,6 @@
       "${ BRAND_NAME } groups": [
         "Skupine ${ BRAND_NAME }"
       ],
-      "*Only one free trial per customer.": [
-        "Samo eno brezplačno preizkušanje na stranko."
-      ],
       "customer support": [
         "podporo strankam"
       ],
@@ -5102,9 +5096,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Naročnina bo zaračunana glavnemu skrbniku tega paketa."
       ],
-      "To ease the transition, we're giving you a 30-day courtesy trial of ${ BRAND_NAME } Unlimited*.": [
-        "Za lažji prehod vam dajemo 30-dnevni preizkus brezplačnega ${ BRAND_NAME } Unlimited*."
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Vabljeni ste, da se pridružite organizaciji ${ invite.OrganizationName }."
       ],
@@ -5152,9 +5143,6 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user.": [
-        "*Samo eno brezplačno preizkušanje na uporabnika."
-      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Privzeto dodelimo ${ formattedStorage } shrambe upraviteljskemu računu. Kasneje lahko upravljate dodeljeno shrambo, ki jo razdelite med dodatne uporabnike."
       ],
@@ -5166,9 +5154,6 @@
       ],
       "The invitation will be canceled and the user won't be able to join ${ organizationName }.": [
         "Povabilo bo preklicano in uporabnik ne bo mogel pristopiti k ${ organizationName }."
-      ],
-      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
-        "Račun uporabnika bo prestavljen na brezplačen poskus paketa ${ BRAND_NAME } Unlimited za 30 dni*."
       ],
       "To create a new user, a configured custom domain is required.": [
         "Za ustvarjanje novega uporabnika potrebujete nastavljeno domeno po meri."
@@ -7227,9 +7212,6 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Obiščite svojega ponudnika identitete, pridobite metapodatke SAML za ${ appName } in jih uvozite sem."
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "E-poštna sporočila v istem pogovoru lahko v mapi prejetih sporočil združite v skupine ali jih prikažete ločeno."
       ],
       "here": [
         "tukaj"
@@ -9461,12 +9443,6 @@
       "Auto-detect primary time zone": [
         "Samodejno zaznaj primarni časovni pas"
       ],
-      "Auto-load embedded images": [
-        "Samodejno prenesi vdelane slike"
-      ],
-      "Auto-load remote content": [
-        "Samodejno prenesi oddaljeno vsebino"
-      ],
       "Auto-reply": [
         "Samodejni odgovor"
       ],
@@ -11361,9 +11337,6 @@
       ],
       "Data breach monitoring": [
         "Spremljanje vdorov v podatke"
-      ],
-      "Data breach monitoring (coming soon)": [
-        "Spremljanje vdorov v podatke (kmalu na voljo)"
       ],
       "Dedicated servers and IP": [
         "Namenski strežniki in IP"
@@ -16285,6 +16258,9 @@
       ],
       "Phone": [
         "Telefon"
+      ],
+      "Photos": [
+        "Fotografije"
       ],
       "Policies": [
         "Politike"

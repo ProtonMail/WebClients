@@ -4645,6 +4645,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "請注意，當您點擊確認時，您的帳號將剩${ remainingCreditsFormatted }可用額度。"
+      ],
       "Please provide a name and an email address for creating a group.": [
         "請提供一個名子和電子郵件位址以創建群組。"
       ],
@@ -6314,9 +6317,6 @@
       "Data breach monitoring": [
         "資料外洩監測"
       ],
-      "Data breach monitoring (coming soon)": [
-        "資料外洩監測 (即將登場)"
-      ],
       "Desktop app": [
         "桌面應用程式"
       ],
@@ -6484,6 +6484,9 @@
       ],
       "Support for up to 2 users": [
         "支援最多2位使用者"
+      ],
+      "Sync and backup all your files across devices": [
+        "於裝置同步及備份您全部的檔案"
       ],
       "Tor over VPN": [
         "Tor 經由 VPN"
@@ -8009,6 +8012,9 @@
       ],
       "Now you can see when participants are free to attend your meeting.": [
         "現在您可以查看參與者何時有空加入您的會議。"
+      ],
+      "You can now collapse the navigation bar.": [
+        "您現在可以摺疊導航欄。"
       ]
     },
     "State": {
@@ -8595,6 +8601,9 @@
       ],
       "Preferences saved": [
         "偏好設定已儲存"
+      ],
+      "Problem reported": [
+        "以回報問題"
       ],
       "Undo in progress": [
         "復原進行中"
