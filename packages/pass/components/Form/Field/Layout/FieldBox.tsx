@@ -49,7 +49,7 @@ const stopOnClickPropagation = (nodes: MaybeArray<ReactElement>): MaybeArray<Rea
 const FieldBoxRender: ForwardRefRenderFunction<HTMLDivElement, FieldBoxProps> = (props, ref) => {
     const { className, actions, actionsContainerClassName, children, icon } = props;
     const isCoreIcon = typeof icon == 'string';
-    const iconEl = isCoreIcon ? <Icon name={icon} size={5} /> : icon;
+    const iconEl = isCoreIcon ? <Icon name={icon} size={4} /> : icon;
 
     return (
         <div

@@ -25,6 +25,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
             {lastUseTime !== undefined && (
                 <CardContent
                     icon="magic-wand"
+                    iconProps={{ size: 4 }}
                     ellipsis
                     title={c('Title').t`Last autofill`}
                     subtitle={
@@ -36,6 +37,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
 
             <CardContent
                 icon="pencil"
+                iconProps={{ size: 4 }}
                 title={c('Title').t`Last modified`}
                 subtitle={epochToRelativeDate(modifyTime)}
                 ellipsis
@@ -43,6 +45,7 @@ export const ItemHistoryStats: FC<Props> = ({ createTime, modifyTime, lastUseTim
 
             <CardContent
                 icon="bolt"
+                iconProps={{ size: 4 }}
                 title={c('Title').t`Created`}
                 subtitle={epochToRelativeDate(createTime)}
                 ellipsis
