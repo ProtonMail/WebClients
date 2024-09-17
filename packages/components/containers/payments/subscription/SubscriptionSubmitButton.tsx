@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
 import { Price, PrimaryButton, useConfig, useModalState } from '@proton/components';
-import type { PaymentMethodType, PlainPaymentMethodType } from '@proton/components/payments/core';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
-import { isChargebeePaymentMethod } from '@proton/components/payments/core/helpers';
 import { isChargebeePaymentProcessor } from '@proton/components/payments/react-extensions/helpers';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import type { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
+import type { PaymentMethodType, PlainPaymentMethodType } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, isChargebeePaymentMethod } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import type { Currency, SubscriptionCheckResponse, SubscriptionModel } from '@proton/shared/lib/interfaces';

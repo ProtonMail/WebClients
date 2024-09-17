@@ -16,7 +16,7 @@ import {
     useUser,
     useVPNServersCount,
 } from '@proton/components/hooks';
-import { type PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import { type PaymentMethodStatusExtended } from '@proton/payments';
 import { APPS, ORGANIZATION_STATE, PLANS } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { getLongTestPlans } from '@proton/testing/data';

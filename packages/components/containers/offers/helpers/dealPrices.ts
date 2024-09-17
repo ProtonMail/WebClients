@@ -1,4 +1,4 @@
-import type { PaymentsApi } from '@proton/components/payments/core';
+import type { PaymentsApi } from '@proton/payments';
 import { CYCLE } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 

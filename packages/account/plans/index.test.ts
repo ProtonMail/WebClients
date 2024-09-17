@@ -1,4 +1,4 @@
-import { type PaymentMethodStatusExtended } from '@proton/components/payments/core';
+import { type PaymentMethodStatusExtended } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { PLANS } from '@proton/shared/lib/constants';

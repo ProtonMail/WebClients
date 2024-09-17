@@ -7,9 +7,9 @@ import Form from '@proton/components/components/form/Form';
 import { useAutomaticCurrency, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
-import { PAYMENT_METHOD_TYPES, type PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import type { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
+import { PAYMENT_METHOD_TYPES, type PaymentMethodStatusExtended } from '@proton/payments';
 import { getPaymentsVersion } from '@proton/shared/lib/api/payments';
 import {
     APPS,

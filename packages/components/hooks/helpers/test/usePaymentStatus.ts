@@ -1,4 +1,4 @@
-import { type PaymentMethodStatusExtended, queryPaymentMethodStatus } from '@proton/components/payments/core';
+import { type PaymentMethodStatusExtended, queryPaymentMethodStatus } from '@proton/payments';
 import { addApiMock } from '@proton/testing/index';
 
 export const statusDefaultResponse: PaymentMethodStatusExtended = {

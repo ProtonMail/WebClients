@@ -23,11 +23,11 @@ import type { AuthSession } from '@proton/components/containers/login/interface'
 import { useIsChargebeeEnabled } from '@proton/components/containers/payments/PaymentSwitcher';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
-import type { FullPlansMap, PaymentMethodFlows, PaymentsApi } from '@proton/components/payments/core';
-import { DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES, getPlansMap } from '@proton/components/payments/core';
 import type { PaymentProcessorType } from '@proton/components/payments/react-extensions/interface';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
+import type { FullPlansMap, PaymentMethodFlows, PaymentsApi } from '@proton/payments';
+import { DEFAULT_TAX_BILLING_ADDRESS, PAYMENT_METHOD_TYPES, getPlansMap } from '@proton/payments';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';

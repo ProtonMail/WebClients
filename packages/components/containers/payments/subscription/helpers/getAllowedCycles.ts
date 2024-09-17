@@ -1,4 +1,4 @@
-import { isRegionalCurrency } from '@proton/components/payments/core';
+import { isRegionalCurrency } from '@proton/payments';
 import type { FreeSubscription } from '@proton/shared/lib/constants';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getPlanFromIds } from '@proton/shared/lib/helpers/planIDs';

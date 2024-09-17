@@ -1,21 +1,22 @@
 import type { PlanIDs } from 'proton-account/src/app/signup/interfaces';
 
-import type { Autopay, PAYMENT_TOKEN_STATUS, WrappedCryptoPayment } from '@proton/components/payments/core';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import type {
     AmountAndCurrency,
+    Autopay,
     BillingAddress,
     BillingAddressProperty,
     ChargeablePaymentParameters,
     ExistingPayment,
+    PAYMENT_TOKEN_STATUS,
     SavedPaymentMethod,
     TokenPayment,
     TokenPaymentMethod,
     V5PaymentToken,
     WrappedCardPayment,
+    WrappedCryptoPayment,
     WrappedPaypalPayment,
-} from '@proton/components/payments/core';
-import { isTokenPaymentMethod, isV5PaymentToken } from '@proton/components/payments/core/interface';
+} from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, isTokenPaymentMethod, isV5PaymentToken } from '@proton/payments';
 import type { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 

@@ -6,15 +6,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import type { PaymentMethodCardDetails } from '@proton/components/payments/core';
+import { useLoading } from '@proton/hooks';
+import type { CardModel, PaymentMethodCardDetails } from '@proton/payments';
 import {
     Autopay,
     PAYMENT_METHOD_TYPES,
     isV5PaymentToken,
     paymentMethodPaymentsVersion,
     v5PaymentTokenToLegacyPaymentToken,
-} from '@proton/components/payments/core';
-import { useLoading } from '@proton/hooks';
+} from '@proton/payments';
 import {
     getPaymentsVersion,
     setPaymentMethodV4,
@@ -29,7 +29,6 @@ import type { ModalProps } from '../../components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
 import { ChargebeeCreditCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
-import type { CardModel } from '../../payments/core';
 import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 

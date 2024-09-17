@@ -1,7 +1,7 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { Autopay } from '@proton/components/payments/core';
+import { Autopay } from '@proton/payments';
 
 import { getStoreWrapper } from '../contacts/tests/render';
 import RenewToggle, { useRenewToggle } from './RenewToggle';

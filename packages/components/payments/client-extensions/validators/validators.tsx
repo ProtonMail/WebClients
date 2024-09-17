@@ -4,19 +4,19 @@ import { c } from 'ttag';
 
 import { FormModal, Loader } from '@proton/components/components';
 import { useModals, useNotifications } from '@proton/components/hooks';
-import { Api } from '@proton/shared/lib/interfaces';
-
-import { getChargebeeErrorMessage } from '../../chargebee/ChargebeeIframe';
 import {
-    ChargebeePaypalModalHandles,
+    type ChargebeePaypalModalHandles,
     PAYMENT_METHOD_TYPES,
-    PaymentVerificator,
-    PaymentVerificatorV5,
-    PaymentVerificatorV5Params,
-    V5PaymentToken,
+    type PaymentVerificator,
+    type PaymentVerificatorV5,
+    type PaymentVerificatorV5Params,
+    type V5PaymentToken,
     ensureTokenChargeableV5,
     toV5PaymentToken,
-} from '../../core';
+} from '@proton/payments';
+import { type Api } from '@proton/shared/lib/interfaces';
+
+import { getChargebeeErrorMessage } from '../../chargebee/ChargebeeIframe';
 import { defaultTranslations, ensureTokenChargeable } from '../ensureTokenChargeable';
 import PaymentVerificationModal from './PaymentVerificationModal';
 

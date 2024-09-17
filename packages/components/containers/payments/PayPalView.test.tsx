@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { usePaypal } from '@proton/components/payments/react-extensions/usePaypal';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import { apiMock, mockVerifyPayment } from '@proton/testing';
 

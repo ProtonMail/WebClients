@@ -1,5 +1,5 @@
-import type { PaymentMethodStatus } from '@proton/components/payments/core';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import type { PaymentMethodStatus } from '@proton/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import type { CYCLE } from '@proton/shared/lib/constants';
 import { PLANS } from '@proton/shared/lib/constants';
