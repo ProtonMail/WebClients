@@ -8,6 +8,9 @@
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } не может быть обработан. ${ errorDetail }"
       ],
+      "Alias could not be updated at the moment. Please try again later": [
+        "В данный момент псевдоним не может быть обновлен. Повторите попытку позже"
+      ],
       "Alias options could not be resolved": [
         "Параметры псевдонима не могут быть определены"
       ],
@@ -112,6 +115,9 @@
       ],
       "Failed to restore items from trash": [
         "Не удалось восстановить элементы из Корзины"
+      ],
+      "Failed to sync aliases": [
+        "Не удалось синхронизировать псевдонимы"
       ],
       "Failed to transfer this vault's ownership.": [
         "Сбой при передаче владения хранилищем."
@@ -279,6 +285,12 @@
       ],
       "Access successfully confirmed": [
         "Доступ успешно подтверждён"
+      ],
+      "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
+        "Псевдоним успешно отключен. Вы больше не будете получать письма, отправленные на ${ item.aliasEmail }"
+      ],
+      "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
+        "Псевдоним успешно включен. Теперь вы можете получать электронные письма, отправленные на ${ item.aliasEmail }"
       ],
       "All breaches for this address were resolved": [
         "Все утечки по этому адресу были устранены"
@@ -558,6 +570,11 @@
     "Placeholder": {
       "Used on ${ url }": [
         "Использовать на ${ url }"
+      ]
+    },
+    "Success": {
+      "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
+        "Синхронизация псевдонимов успешно включена. Синхронизация псевдонимов SimpleLogin может занять некоторое время"
       ]
     },
     "Warning": {
