@@ -145,6 +145,14 @@ export { default as TopNavbarListItemFeedbackButton } from './containers/heading
 export { default as UserDropdown } from './containers/heading/UserDropdown';
 export { default as IllustrationPlaceholder } from './containers/illustration/IllustrationPlaceholder';
 export { default as ImportExportAppSection } from './containers/importExportApp/ImportExportAppSection';
+export type { Invoice, InvoiceResponse } from './containers/invoices/interface';
+export { default as InvoiceActions } from './containers/invoices/InvoiceActions';
+export { default as InvoiceAmount } from './containers/invoices/InvoiceAmount';
+export { default as InvoicesSection } from './containers/invoices/InvoicesSection';
+export { default as InvoiceState } from './containers/invoices/InvoiceState';
+export { default as InvoiceTextModal } from './containers/invoices/InvoiceTextModal';
+export { default as InvoiceType } from './containers/invoices/InvoiceType';
+export { default as PayInvoiceModal } from './containers/invoices/PayInvoiceModal';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
 export { getOverallStatus } from './containers/recovery/getOverallStatus';
