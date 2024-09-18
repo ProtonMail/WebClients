@@ -1,6 +1,6 @@
-import React, { Suspense, lazy } from 'react';
+import { Suspense, lazy } from 'react';
 
-import { Loader } from '@proton/components/components';
+import Loader from '@proton/components/components/loader/Loader';
 
 const PassAliases = lazy(
     () => import(/* webpackChunkName: "SecurityCenterPassAliases", webpackPreload: true */ './PassAliases')

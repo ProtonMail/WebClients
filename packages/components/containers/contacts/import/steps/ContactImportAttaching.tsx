@@ -12,8 +12,8 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    SettingsLink,
 } from '@proton/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { APPS } from '@proton/shared/lib/constants';
 import {
     MAX_CONTACTS_PER_USER,

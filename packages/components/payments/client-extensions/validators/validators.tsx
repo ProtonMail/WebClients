@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { FormModal, Loader } from '@proton/components/components';
+import { FormModal } from '@proton/components/components';
+import Loader from '@proton/components/components/loader/Loader';
 import { useModals, useNotifications } from '@proton/components/hooks';
 import {
     type ChargebeePaypalModalHandles,

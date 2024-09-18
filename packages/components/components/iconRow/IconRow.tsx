@@ -1,7 +1,8 @@
 import type { ReactElement, ReactNode } from 'react';
 
 import type { IconName } from '@proton/components';
-import { Icon, Label } from '@proton/components';
+import { Label } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import clsx from '@proton/utils/clsx';
 
 import { Tooltip } from '../tooltip';

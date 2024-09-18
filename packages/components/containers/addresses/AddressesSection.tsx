@@ -1,4 +1,5 @@
-import { Loader } from '../../components';
+import Loader from '@proton/components/components/loader/Loader';
+
 import { useOrganization } from '../../hooks';
 import { SettingsSectionWide } from '../account';
 import Addresses from './Addresses';

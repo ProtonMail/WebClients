@@ -4,7 +4,7 @@ import type { PushNotification } from 'push.js';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Badge } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
 import { Status, create, getStatus, request } from '@proton/shared/lib/helpers/desktopNotification';
 
 import Field from '../../components/container/Field';

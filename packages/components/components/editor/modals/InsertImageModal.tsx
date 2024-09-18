@@ -4,11 +4,11 @@ import { useCallback, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import debounce from '@proton/utils/debounce';
 import generateUID from '@proton/utils/generateUID';
 
-import { PrimaryButton } from '../../button';
 import FileButton from '../../button/FileButton';
 import Form from '../../form/Form';
 import Input from '../../input/Input';

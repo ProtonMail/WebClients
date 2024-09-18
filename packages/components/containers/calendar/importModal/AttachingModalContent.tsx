@@ -3,8 +3,9 @@ import type { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { AttachedFile, FileInput, Label, Row } from '@proton/components';
+import { FileInput, Label, Row } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
+import AttachedFile from '@proton/components/components/attachedFile/AttachedFile';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import {
     IMPORT_CALENDAR_FAQ_URL,

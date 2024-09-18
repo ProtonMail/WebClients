@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import Price from '@proton/components/components/price/Price';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
@@ -16,7 +18,7 @@ import type { Currency } from '@proton/shared/lib/interfaces';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 
-import { EllipsisLoader, FormModal, Input, Label, PrimaryButton } from '../../components';
+import { FormModal, Input, Label } from '../../components';
 import Field from '../../components/container/Field';
 import Row from '../../components/container/Row';
 import { useApiResult, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';

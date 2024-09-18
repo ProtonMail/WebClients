@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { Invoice } from '@proton/components';
-import { Badge } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
+import type { Invoice } from '@proton/components/containers/invoices/interface';
 import { INVOICE_STATE } from '@proton/shared/lib/constants';
 
 const TYPES = {

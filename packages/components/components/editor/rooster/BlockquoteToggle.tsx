@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 
 interface Props {
     show: boolean | undefined;

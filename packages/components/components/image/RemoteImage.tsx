@@ -6,10 +6,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Tooltip } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
+import Loader from '@proton/components/components/loader/Loader';
 
 import LoadRemoteImageBanner from '../../containers/banner/LoadRemoteImageBanner';
 import useLoadContactImage from '../../hooks/useLoadContactImage';
-import { Loader } from '../loader';
 
 export interface Props extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
     src: string;

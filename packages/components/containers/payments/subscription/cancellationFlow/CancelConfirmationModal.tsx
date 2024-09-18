@@ -3,14 +3,9 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms';
 import { StripedItem, StripedList } from '@proton/components';
 import type { ModalProps } from '@proton/components/components';
-import {
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    SettingsLink,
-} from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 
 import type { ConfirmationModal } from './interface';
 import useCancellationTelemetry from './useCancellationTelemetry';

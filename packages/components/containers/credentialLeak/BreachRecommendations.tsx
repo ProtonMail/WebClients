@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import Icon from '@proton/components/components/icon/Icon';
 import type { FetchedBreaches } from '@proton/components/containers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-
-import { Icon } from '../..';
 
 interface Props {
     actions: FetchedBreaches['actions'];

@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { Table, TableBody, TableHeader, TableRow } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
 import type { Referral } from '@proton/shared/lib/interfaces';
 import { ReferralState } from '@proton/shared/lib/interfaces';
 
-import { Loader } from '../../../../components';
 import ActivityCell from './ActivityCell';
 import DateCell from './DateCell';
 import RewardCell from './RewardCell';

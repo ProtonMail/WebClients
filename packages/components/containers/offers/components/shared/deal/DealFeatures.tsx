@@ -3,7 +3,9 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
-import { Badge, Icon, StripedItem, StripedList } from '@proton/components';
+import { StripedItem, StripedList } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
+import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import clsx from '@proton/utils/clsx';
 

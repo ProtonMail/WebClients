@@ -2,6 +2,7 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -24,7 +25,6 @@ import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shar
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { SUBSCRIPTION_STEPS, SubscriptionModalProvider, useSubscriptionModal } from '..';
-import { SettingsLink } from '../..';
 import { useConfig, useSubscription, useUser } from '../../hooks';
 import TopBanner from './TopBanner';
 

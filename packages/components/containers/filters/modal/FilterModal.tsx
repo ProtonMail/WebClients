@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import Form from '@proton/components/components/form/Form';
+import Loader from '@proton/components/components/loader/Loader';
 import { useLoading } from '@proton/hooks';
 import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -13,7 +14,6 @@ import generateUID from '@proton/utils/generateUID';
 import type { ModalProps } from '../../../components';
 import {
     Checkbox,
-    Loader,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

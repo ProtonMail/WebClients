@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
-import { Loader } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
 import { useMembers } from '@proton/components/hooks';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 

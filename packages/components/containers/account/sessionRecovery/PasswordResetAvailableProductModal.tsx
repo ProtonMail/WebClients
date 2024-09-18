@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useSessionRecoveryInsecureTimeRemaining } from '@proton/components/hooks/useSessionRecovery';
 
 import type { ModalProps } from '../../../components';
@@ -11,7 +12,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    SettingsLink,
 } from '../../../components';
 import { useUser } from '../../../hooks';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';

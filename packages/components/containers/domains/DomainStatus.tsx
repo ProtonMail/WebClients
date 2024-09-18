@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Badge } from '@proton/components';
 import type { BadgeType } from '@proton/components/components/badge/Badge';
+import Badge from '@proton/components/components/badge/Badge';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import {
     DKIM_STATE,

@@ -1,18 +1,17 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { DualPaneContent, DualPaneSidebar } from '@proton/atoms/DualPane';
-import { Loader, SettingsParagraph, SettingsSectionWide } from '@proton/components';
-import { SettingsLink } from '@proton/components/components';
+import { Button, DualPaneContent, DualPaneSidebar } from '@proton/atoms';
+import { SettingsParagraph, SettingsSectionWide } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import Loader from '@proton/components/components/loader/Loader';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
 import GroupForm from './GroupForm';
 import GroupList from './GroupList';
-import useGroupsManagement from './useGroupsManagement';
-import { INITIAL_FORM_VALUES } from './useGroupsManagement';
+import useGroupsManagement, { INITIAL_FORM_VALUES } from './useGroupsManagement';
 
 import './OrganizationGroupsManagementSection.scss';
 

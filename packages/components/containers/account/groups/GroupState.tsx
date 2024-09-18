@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Badge } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
 
 const GroupStateBadge = ({ type, text }: { type: 'success' | 'light' | undefined; text: string }) => {

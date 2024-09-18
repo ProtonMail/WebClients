@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import Loader from '@proton/components/components/loader/Loader';
 import { useLoading } from '@proton/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { getDomain } from '@proton/shared/lib/api/domains';
@@ -22,7 +23,7 @@ import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Loader, Table, TableBody, TableHeader, TableRow, useModalState } from '../../components';
+import { Table, TableBody, TableHeader, TableRow, useModalState } from '../../components';
 import {
     useApi,
     useCustomDomains,

@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { Member, UserModel } from '@proton/shared/lib/interfaces';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 
 import type { ModalProps } from '../../components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import AdministratorList from './AdministratorList';
 
 interface Props extends Omit<ModalProps, 'buttons' | 'title' | 'children'> {

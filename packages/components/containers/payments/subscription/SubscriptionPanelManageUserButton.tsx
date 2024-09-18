@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
-import { AppLink, SettingsLink } from '@proton/components/components';
+import { AppLink } from '@proton/components/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useConfig, useOrganization, useSubscription, useUser } from '@proton/components/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';

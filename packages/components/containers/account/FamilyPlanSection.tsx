@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useModalState } from '@proton/components/components';
-import { Loader } from '@proton/components/components/loader';
+import Loader from '@proton/components/components/loader/Loader';
 import { useAddresses, useCalendars, useMember, useOrganization, useUser } from '@proton/components/hooks';
 import { isOrganizationDuo, isOrganizationFamily } from '@proton/shared/lib/organization/helper';
 

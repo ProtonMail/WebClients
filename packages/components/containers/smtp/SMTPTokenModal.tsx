@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
-    Copy,
     Form,
     InputFieldTwo,
     ModalTwo,
@@ -13,12 +12,13 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     Option,
-    PrimaryButton,
     SelectTwo,
     useApi,
     useFormErrors,
     useNotifications,
 } from '@proton/components';
+import Copy from '@proton/components/components/button/Copy';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import { useLoading } from '@proton/hooks';
 import { createToken } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';

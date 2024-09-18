@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import {
-    Loader,
     SettingsParagraph,
     SettingsSection,
     SettingsSectionWide,
@@ -22,6 +21,7 @@ import {
     useOrganization,
     useUser,
 } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import { deleteToken, getTokens, isTokenEligible } from '@proton/shared/lib/api/smtptokens';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Badge } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 

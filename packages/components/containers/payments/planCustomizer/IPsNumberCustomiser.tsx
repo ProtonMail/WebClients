@@ -2,10 +2,10 @@ import type { ReactElement } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
 import type { Plan } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Info } from '../../../components';
 import { contactHref } from './helpers';
 
 export const IPsNumberCustomiser = ({
