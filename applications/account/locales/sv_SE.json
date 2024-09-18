@@ -811,11 +811,11 @@
       "Refresh status": [
         "Uppdatera status"
       ],
-      "Refresh the page": [
-        "Uppdatera sidan"
-      ],
       "refresh the page": [
         "uppdatera sidan"
+      ],
+      "Refresh the page": [
+        "Uppdatera sidan"
       ],
       "Reload": [
         "Ladda om"
@@ -1612,14 +1612,6 @@
         "Välj ditt årsslutserbjudande"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB lagringsutrymme (2 gånger mer än något annat paket)"
@@ -1641,6 +1633,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paketet ${ plan } är tillbaka endast under en begränsad tid"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få **${ discountPercentage } rabatt på ${ plan.Title }** när du prenumererar för **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3569,6 +3569,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Hjälp oss att förbättra"
+      ]
+    },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Ta bort rabatt"
       ]
     },
     "Download link": {
@@ -7028,11 +7033,11 @@
       "Data locked": [
         "Data låst"
       ],
-      "dedicated servers": [
-        "dedikerade servrar"
-      ],
       "Dedicated servers": [
         "Dedikerade servrar"
+      ],
+      "dedicated servers": [
+        "dedikerade servrar"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikerade servrar med dedikerade IP-adresser kan läggas till privata gateways för att möjliggöra finjusterad åtkomstkontroll."
@@ -10982,6 +10987,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Lägg till ${ BRAND_NAME } Scribe skrivassistent"
       ],
@@ -11433,26 +11441,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Kom igång för ${ price }"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Fortsätt med Free"
@@ -11480,6 +11468,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Kom igång för ${ price }"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -12135,20 +12143,6 @@
         "Ditt valda paket: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } provperiod"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Skaffa Mail Plus för ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Ditt kontos användning"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ta bort konto?"
@@ -12167,6 +12161,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Lås upp premiumfunktioner genom att uppgradera"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } provperiod"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Skaffa Mail Plus för ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Ditt kontos användning"
       ]
     },
     "new_plans: tooltip": {
@@ -15265,6 +15273,11 @@
         "Ditt paket köptes med en iOS-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Prenumerationen kommer att nedgraderas i slutet av faktureringsperioden."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "För ${ totalPrice }"
@@ -16303,10 +16316,10 @@
       "Card verification": [
         "Kortverifiering"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Catch all-adress"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Catch all-adress"
       ],
       "Change login password": [
