@@ -1,4 +1,5 @@
 import jszip from 'jszip';
+import { c } from 'ttag';
 
 import { ImportProviderError } from '@proton/pass/lib/import/helpers/error';
 import {
@@ -24,7 +25,7 @@ import {
     format1PasswordMonthYear,
     is1PasswordCCField,
 } from './1p.utils';
-import type { OnePass1PuxData, OnePassBaseItem, OnePassCreditCardFields, OnePassItem } from './1pux.types';
+import type { OnePass1PuxData, OnePassCreditCardFields, OnePassItem } from './1pux.types';
 import { OnePassCategory, OnePassLoginDesignation, OnePassState, OnePasswordTypeMap } from './1pux.types';
 
 const processNoteItem = (
@@ -133,24 +134,28 @@ export const read1Password1PuxData = async ({ data }: { data: ArrayBuffer }): Pr
                     items: vault.items
                         .filter((item) => item.state !== OnePassState.TRASHED)
                         .map((item): Maybe<ItemImportIntent> => {
-                            switch (item.categoryUuid) {
-                                case OnePassCategory.LOGIN:
-                                    return processLoginItem(item);
-                                case OnePassCategory.NOTE:
-                                    return processNoteItem(item);
-                                case OnePassCategory.CREDIT_CARD:
-                                    return processCreditCardItem(item);
-                                case OnePassCategory.PASSWORD:
-                                    return processPasswordItem(item);
-                                case OnePassCategory.IDENTITY:
-                                    return processIdentityItem(item);
-                                default:
-                                    const { categoryUuid, overview } = item as OnePassBaseItem;
-                                    ignored.push(
-                                        `[${OnePasswordTypeMap[categoryUuid] ?? 'Other'}] ${
-                                            overview.title ?? overview.subtitle
-                                        }`
-                                    );
+                            const category = item?.categoryUuid;
+                            const type = (category ? OnePasswordTypeMap[category] : null) ?? c('Label').t`Unknown`;
+                            const title = item?.overview?.title ?? item?.overview?.subtitle ?? '';
+
+                            try {
+                                switch (item.categoryUuid) {
+                                    case OnePassCategory.LOGIN:
+                                        return processLoginItem(item);
+                                    case OnePassCategory.NOTE:
+                                        return processNoteItem(item);
+                                    case OnePassCategory.CREDIT_CARD:
+                                        return processCreditCardItem(item);
+                                    case OnePassCategory.PASSWORD:
+                                        return processPasswordItem(item);
+                                    case OnePassCategory.IDENTITY:
+                                        return processIdentityItem(item);
+                                    default:
+                                        ignored.push(`[${type}] ${title}`);
+                                }
+                            } catch (err) {
+                                ignored.push(`[${type}] ${title}`);
+                                logger.warn('[Importer::1Password::1pux]', err);
                             }
                         })
                         .filter(truthy),
@@ -160,7 +165,7 @@ export const read1Password1PuxData = async ({ data }: { data: ArrayBuffer }): Pr
 
         return { vaults, ignored, warnings: [] };
     } catch (e) {
-        logger.warn('[Importer::1Password]', e);
+        logger.warn('[Importer::1Password::1pux]', e);
         throw new ImportProviderError('1Password', e);
     }
 };
