@@ -13,10 +13,10 @@ import {
     useErrorHandler,
     useEventManager,
     useGetUser,
+    useKTActivation,
     useModalState,
     useTheme,
 } from '@proton/components';
-import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp, stripSlugFromPathname } from '@proton/shared/lib/apps/slugHelper';

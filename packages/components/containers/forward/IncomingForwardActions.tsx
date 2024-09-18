@@ -9,8 +9,8 @@ import { ForwardingState } from '@proton/shared/lib/interfaces';
 import { getHasMigratedAddressKeys, getReplacedAddressKeyTokens, splitKeys } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useKTVerifier } from '..';
 import { useApi, useEventManager, useGetAddressKeys, useGetUser, useGetUserKeys, useNotifications } from '../../hooks';
+import useKTVerifier from '../keyTransparency/useKTVerifier';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import { acceptIncomingForwarding } from './helpers';
 

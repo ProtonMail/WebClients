@@ -21,7 +21,7 @@ import {
     useProtonDomains,
     useUser,
 } from '../../hooks';
-import { useKTVerifier } from '../keyTransparency';
+import useKTVerifier from '../keyTransparency/useKTVerifier';
 import UnlockModal from '../login/UnlockModal';
 
 export const getActivateString = (user: User) => {

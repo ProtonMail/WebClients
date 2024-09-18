@@ -11,9 +11,9 @@ import {
     useErrorHandler,
     useGetPaymentStatus,
     useGetPlans,
+    useKTActivation,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
-import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { getIsVPNPassPromotion, getIsVpn2024Deal } from '@proton/components/containers/payments/subscription/helpers';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';

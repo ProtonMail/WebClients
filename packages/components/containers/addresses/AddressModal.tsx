@@ -52,7 +52,7 @@ import {
     useProtonDomains,
     useUser,
 } from '../../hooks';
-import { useKTVerifier } from '../keyTransparency';
+import useKTVerifier from '../keyTransparency/useKTVerifier';
 
 const keyGenConfig = KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE];
 
