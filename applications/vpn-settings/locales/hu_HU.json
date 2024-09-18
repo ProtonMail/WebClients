@@ -870,6 +870,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Változások megjegyzését, titkosított megosztást és további lehetőségeket tartalmaz."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "A tárhelye meg van osztva minden ${ BRAND_NAME } alkalmazás között."
       ]
     },
     "Billing cycle": {
@@ -924,6 +927,9 @@
       ],
       "Custom domain problem": [
         "Probléma saját domain névvel"
+      ],
+      "Docs problem": [
+        "Docs probléma"
       ],
       "Drive problem": [
         "Drive probléma"
@@ -1192,6 +1198,9 @@
       "British Indian Ocean Territory": [
         "Brit Indiai-óceáni Terület"
       ],
+      "British Virgin Islands": [
+        "Brit Virgin-szigetek"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam Állam"
       ],
@@ -1246,6 +1255,9 @@
       "Congo": [
         "Kongó"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongói Demokratikus Köztársaság"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongói Demokratikus Köztársaság"
       ],
@@ -1284,6 +1296,9 @@
       ],
       "Dominican Republic": [
         "Dominikai Köztársaság"
+      ],
+      "East Timor": [
+        "Kelet-Timor"
       ],
       "Ecuador": [
         "Ecuador"
@@ -1426,6 +1441,9 @@
       "Ireland": [
         "Írország"
       ],
+      "Islamic Republic of Iran": [
+        "Irán"
+      ],
       "Isle of Man": [
         "Mann"
       ],
@@ -1455,6 +1473,9 @@
       ],
       "Kiribati": [
         "Kiribati"
+      ],
+      "Korea (Democratic People's Republic of)": [
+        "Észak-Korea"
       ],
       "Kosovo": [
         "Koszovó"
@@ -1771,6 +1792,9 @@
       "Tanzania": [
         "Tanzánia"
       ],
+      "Tanzania, United Republic of": [
+        "Tanzánia"
+      ],
       "Thailand": [
         "Thaiföld"
       ],
@@ -2048,6 +2072,36 @@
     "driveplus2024: Deal details": {
       "Priority support": [
         "Elsőbbségi támogatás"
+      ]
+    },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Szerezzen ${ BRAND_NAME } Duo-t"
+      ],
+      "Get it for ${ price }": [
+        "Kapja meg ${ price } ért"
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB tárhely"
+      ],
+      "2 users": [
+        "2 felhasználó"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Teljes hozzáférés minden ${ BRAND_NAME } termékhez"
+      ],
+      "You save ${ amountSave }": [
+        "${ amountSave } takarít meg"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Minden a ${ BRAND_NAME }, 2 embernek."
+      ],
+      "Double your storage": [
+        "Duplázza meg a tárhelyét"
       ]
     },
     "Email spam notification": {
@@ -5154,6 +5208,9 @@
       ],
       "upgrade for more storage": [
         "váltson nagyobb csomagra több tárhelyért"
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Az ön fiókja lehet törölve lesz. Kérje meg az adminisztrátort, hogy fizessen elő és, hogy elkerülje az adatok elvesztését. ${ cta }"
       ]
     },
     "Log preference": {
@@ -5181,6 +5238,9 @@
       "10 email addresses": [
         "10 e-mail cím"
       ],
+      "Auto-delete Spam and Trash": [
+        "Levélszemét és Lomtár automatikus törlése"
+      ],
       "Support for 1 custom email domain": [
         "Egy saját e-mail domain név használata"
       ],
@@ -5188,9 +5248,22 @@
         "Korlátlan számú mappa, címke és szűrő"
       ]
     },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Előfizetés megújul ${ renewablePrice }, bármikor lemondhatja"
+      ]
+    },
     "mailtrial2024: Info": {
       "for the first month": [
         "az első hónapban"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Korlátozott idejű ajánlat, 2024. április 2-án jár le"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Szerezze be a ${ planName }-t csak ${ planPrice } ért"
       ]
     },
     "Member action": {
@@ -5394,6 +5467,12 @@
       "1 user": [
         "1 felhasználó"
       ],
+      "10 email addresses/aliases": [
+        "10 email cím / e-mail álnév"
+      ],
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
       "24/7 account management support": [
         "Non-stop fiókkezelési támogatás"
       ],
@@ -5487,6 +5566,9 @@
       "Email client support (via IMAP/SMTP)": [
         "E-mail kliens támogatás (IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-mail csoportok"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA megfelelőséget tesz lehetővé"
       ],
@@ -5547,6 +5629,9 @@
       ],
       "Organize items with multiple vaults": [
         "Elemek rendezése több tárolóba"
+      ],
+      "Password manager": [
+        "Jelszókezelő"
       ],
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
@@ -5680,6 +5765,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 saját e-mail domain név"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain2 } a hírleveleinek"
       ],
@@ -6605,6 +6693,11 @@
         "Felhasználó"
       ]
     },
+    "Safety review": {
+      "Review your account safety": [
+        "Tekintse át fiókja biztonságát"
+      ]
+    },
     "scim: Action": {
       "Generate token": [
         "Token létrehozása"
@@ -6694,6 +6787,9 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } óra",
         "${ timeRemaining.inHours } óra"
+      ],
+      "Password reset request approved (${ user.Email }).": [
+        "Jelszó visszaállítási kérelem elfogadva (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "A jelszó megváltoztatásához használja a bejelentkezett eszközt (abban a munkamenetben, ahol a kérés indult)."
@@ -6972,6 +7068,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Prémium ${ appName1 } és ${ appName2 }."
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Prémium ${ appName1 }, ${ appName2 } és ${ appName3 }."
+      ],
       "Premium early access": [
         "Prémium korai-hozzáférés"
       ],
@@ -7121,6 +7220,9 @@
       "${ app } storage": [
         "${ app } tárhely"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% tele van"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "A lemondással elveszít az alábbi előnyöket. Biztos benne, hogy folytatja?"
       ],
@@ -7133,6 +7235,12 @@
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből.",
         "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Az ön ${ appStorage } majdnem tele van."
+      ],
+      "Your ${ appStorage } is full": [
+        "Az ön ${ appStorage } tele van."
       ],
       "Your storage is full": [
         "A tárhelye megtelt"
@@ -7282,11 +7390,17 @@
       "10 email addresses": [
         "10 e-mail cím"
       ],
+      "25 calendars per user": [
+        "25 naptár felhasználónként"
+      ],
       "6 users": [
         "6 felhasználó"
       ],
       "All you need for your business": [
         "Minden, amire az üzlethez szüksége van"
+      ],
+      "Automatic email forwarding": [
+        "Automatikus e-mail továbbítás"
       ],
       "Calendar sharing": [
         "Naptár megosztás"
@@ -7318,6 +7432,9 @@
       "Unlimited folders, labels and filters": [
         "Korlátlan számú mappa, címke és szűrő"
       ],
+      "Users won’t be able to send emails": [
+        "Felhasználók nem fognak tudni e-maileket küldeni"
+      ],
       "Version history": [
         "Verziótörténet"
       ]
@@ -7326,11 +7443,23 @@
       "15 GB storage": [
         "15 GB tárhely"
       ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
       "Desktop app": [
         "Asztali alkalmazás"
       ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
       "Upgrade": [
         "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -7780,6 +7909,9 @@
       "Couldn’t create accounts": [
         "Fiókok létrehozása nem sikerült"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Create ${ selectedUserIds.length } user": [
         "${ selectedUserIds.length } felhasználói fiók létrehozása",
         "${ selectedUserIds.length } felhasználói fiók létrehozása"
@@ -7883,6 +8015,9 @@
       ],
       "Email subscriptions": [
         "E-mail feliratkozás"
+      ],
+      "Enter 2FA code": [
+        "Írja be a kétlépcsős hitelesítési kódot"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Adja meg a ${ BRAND_NAME } fiókja adatait a ${ app } Béta programhoz való csatlakozáshoz"
@@ -8173,6 +8308,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard beállítás"
+      ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Az ön ${ planName } ingyenes próbaidőszaka végett ér: ${ textDate }"
       ],
       "Your changes are not synced yet": [
         "Módosításai még nincsenek szinkronizálva"
@@ -8508,6 +8646,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin email-en keresztül"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Wallet probléma"
       ]
     },
     "Warning": {

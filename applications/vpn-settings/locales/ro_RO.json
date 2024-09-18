@@ -496,6 +496,9 @@
       "Restore": [
         "Restaurare"
       ],
+      "Resume membership": [
+        "Reluare calitate de membru"
+      ],
       "Retry": [
         "Reîncercare"
       ],
@@ -2839,6 +2842,12 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "* Doar o singură perioadă de probare per utilizator. După aceea se aplică prețul standard."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "După ce vă va părăsi planul actual, acest utilizator va fi mutat la planul ${ BRAND_NAME } Unlimited cu o perioadă de probare de 30 de zile.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "În mod implicit, sunt atribuiți ${ formattedStorage } de stocare în contul de administrator. Ulterior puteți gestiona spațiul alocat pentru a fi distribuit între utilizatori suplimentari."
       ],
@@ -3729,6 +3738,9 @@
         "Se șterg ${ deletedServerCount } servere poartă de acces",
         "Se șterg ${ deletedServerCount } de servere poartă de acces"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Dezactivat din ${ formattedDateAndTime }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Dezactivarea autentificării cu doi factori vă va face contul mai puțin sigur. Continuați doar dacă este absolut necesar."
       ],
@@ -3811,6 +3823,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Activați autentificarea unică pentru a vă menține organizația în siguranță."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Activat din ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Adresa URL a punctului final primită de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)."
@@ -6053,11 +6068,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real brazilian"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franci elvețieni"
+      ],
+      "US Dollar": [
+        "Dolar SUA"
       ]
     },
     "Navigation": {
@@ -7558,6 +7579,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Se procesează plata pentru factura emisă. Așteptați până când plata este finalizată înainte de a face modificări planului sau de a actualiza detaliile de plată. Vă mulțumim pentru răbdare."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Vi se va retrage suma de ${ amountToCharge } folosind metoda de plată selectată."
       ]
     },
     "Payments.Error": {
