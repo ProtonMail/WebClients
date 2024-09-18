@@ -11,10 +11,6 @@
 		--fieldset-cluster-icon-color: var(--field-placeholder-color);
 	}
 
-	&--standout {
-		background: linear-gradient(180deg, var(--interaction-norm-major-3) -850%, transparent 150%);
-	}
-
 	> * {
 		border: 1px solid var(--border-norm);
 		margin-block-start: -1px;
