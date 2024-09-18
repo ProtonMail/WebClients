@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { mocked } from 'jest-mock';
 import { setupServer } from 'msw/node';
 
+import { CacheProvider } from '@proton/components';
 import { useApi, useGetEncryptionPreferences, useNotifications } from '@proton/components/hooks';
 import type { PublicKeyReference } from '@proton/crypto';
 import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';
@@ -11,7 +12,6 @@ import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPr
 import { addressBuilder, calendarBuilder, mockApiWithServer, mockNotifications } from '@proton/testing';
 import { getHandlers } from '@proton/testing/lib/handlers';
 
-import { CacheProvider } from '../../cache';
 import ShareCalendarModal from './ShareCalendarModal';
 
 const server = setupServer(...getHandlers());

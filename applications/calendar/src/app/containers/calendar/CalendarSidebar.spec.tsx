@@ -4,7 +4,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { getUnixTime } from 'date-fns';
 import { createMemoryHistory } from 'history';
 
-import { CacheProvider } from '@proton/components/containers/cache';
+import { CacheProvider } from '@proton/components';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import {
     CALENDAR_FLAGS,
