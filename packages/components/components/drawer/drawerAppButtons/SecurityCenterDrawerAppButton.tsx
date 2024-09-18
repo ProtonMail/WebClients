@@ -15,6 +15,7 @@ import {
     selectAccountSecurityIssuesCount,
     selectHasAccountSecurityIssue,
 } from '../views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
+import { selectCanDisplayAccountSecuritySection } from '../views/SecurityCenter/AccountSecurity/slice/accountSecuritySlice';
 import { selectUnreadBreachesCount } from '../views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
 import BreachAlertsSpotlight from '../views/SecurityCenter/BreachAlertsSpotlight';
 import useSecurityCenter from '../views/SecurityCenter/useSecurityCenter';
@@ -29,18 +30,19 @@ const SecurityCenterDrawerAppButton = ({
     const accountSecurityCardsCount = baseUseSelector(selectAccountSecurityIssuesCount);
     const unreadBreachesCount = baseUseSelector(selectUnreadBreachesCount) || 0;
     const { recoveryPhraseSet, hasSentinelEnabled } = baseUseSelector(selectAccountSecurityElements);
+    const canDisplayAccountSecurity = baseUseSelector(selectCanDisplayAccountSecuritySection);
 
     const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
     const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
 
     const getNotificationCount = () => {
         if (canDisplayNewSentinelSettings && hasSentinelEnabled) {
-            return !recoveryPhraseSet ? unreadBreachesCount + 1 : unreadBreachesCount;
+            return canDisplayAccountSecurity && !recoveryPhraseSet ? unreadBreachesCount + 1 : unreadBreachesCount;
         }
         return accountSecurityCardsCount + unreadBreachesCount;
     };
     const getNotificationDotColor = () => {
-        if (hasSentinelEnabled && !recoveryPhraseSet && canDisplayNewSentinelSettings) {
+        if (hasSentinelEnabled && canDisplayAccountSecurity && !recoveryPhraseSet && canDisplayNewSentinelSettings) {
             return ThemeColor.Danger;
         }
         if (hasAccountSecurityWarning || !!unreadBreachesCount) {
