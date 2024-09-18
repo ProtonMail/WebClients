@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { PromotionBanner } from '@proton/components';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import lightlabellingUpsellSvg from '@proton/styles/assets/img/illustrations/account-lightlabelling-upsell.svg';
 
-import { PromotionBanner } from '../../banner';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments';
 
 interface UpsellBannerProps {
