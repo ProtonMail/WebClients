@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import type { PassEvent } from '..';
+import type { PassEvent } from './interface';
 
 export const PAGINATION_LIMIT = 50;
 export const ALL_EVENTS_DEFAULT = 'All Events';

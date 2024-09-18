@@ -23,7 +23,7 @@ interface Props {
     ['data-testid']?: string;
 }
 
-const PromotionBanner = ({
+export const PromotionBanner = ({
     className,
     rounded = false,
     loading = false,
@@ -106,5 +106,3 @@ const PromotionBanner = ({
         </div>
     );
 };
-
-export default PromotionBanner;

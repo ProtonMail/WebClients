@@ -83,7 +83,7 @@ const fetchBridgeVersion = async (bridgeClient: BridgeClient): Promise<BridgeCli
     return bridgeClient;
 };
 
-const ProtonMailBridgeSection = () => {
+export const ProtonMailBridgeSection = () => {
     const [{ hasPaidMail }] = useUser();
 
     const fileTypes = new Map([
@@ -180,5 +180,3 @@ const ProtonMailBridgeSection = () => {
         </SettingsSectionWide>
     );
 };
-
-export default ProtonMailBridgeSection;
