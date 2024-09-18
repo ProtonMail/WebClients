@@ -9,7 +9,7 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
 import { useContactFocus } from '../../../hooks/useContactFocus';
 import { useContactHotkeys } from '../../../hooks/useContactHotkeys';
-import { useItemsDraggable } from '../../items';
+import useItemsDraggable from '../../items/useItemsDraggable';
 import ContactRow from './ContactRow';
 
 interface Props {
