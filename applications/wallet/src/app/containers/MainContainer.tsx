@@ -57,9 +57,7 @@ const MainContainer = () => {
                                     </Route>
 
                                     <Route>
-                                        <PrivateWalletLayout>
-                                            <EmptyViewContainer />
-                                        </PrivateWalletLayout>
+                                        <EmptyViewContainer />
                                     </Route>
                                 </Switch>
                             </ResponsiveContainerContextProvider>

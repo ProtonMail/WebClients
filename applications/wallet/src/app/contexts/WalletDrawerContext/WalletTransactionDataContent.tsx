@@ -69,7 +69,7 @@ export const WalletTransactionDataDrawer = ({ transaction, onClickEditNote, onCl
                             unit={exchangeRate ?? settings.BitcoinUnit}
                             className="h1 text-semibold"
                             wrapperClassName="contrast"
-                            satsAmount={value}
+                            amount={value}
                         />
                     </div>
                 </div>

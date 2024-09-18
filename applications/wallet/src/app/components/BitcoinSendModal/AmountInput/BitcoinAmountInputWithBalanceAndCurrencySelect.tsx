@@ -45,7 +45,7 @@ export const secondaryAmount = ({
             return null;
         }
 
-        return <Price key={key} satsAmount={value} unit={secondaryExchangeRate} />;
+        return <Price key={key} amount={value} unit={secondaryExchangeRate} />;
     }
 
     return (
@@ -86,7 +86,7 @@ export const BitcoinAmountInputWithBalanceAndCurrencySelect = ({
     const exchangeRateOrBitcoinUnit = exchangeRate ?? getExchangeRateFromBitcoinUnit(settings.BitcoinUnit);
     const exchangeRateSymbolOrBitcoinUnit = exchangeRate?.FiatCurrency;
 
-    const price = <Price key="available-amount" satsAmount={remainingBalance} unit={exchangeRateOrBitcoinUnit} />;
+    const price = <Price key="available-amount" amount={remainingBalance} unit={exchangeRateOrBitcoinUnit} />;
 
     return (
         <div className="mt-12 mb-4">

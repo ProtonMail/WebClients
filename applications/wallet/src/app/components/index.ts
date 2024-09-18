@@ -1,4 +1,4 @@
-export * from './layout';
+export * from './PrivateWalletLayout';
 export * from './WalletCreationModal';
 export * from './BitcoinSendModal';
 export * from './Balance';

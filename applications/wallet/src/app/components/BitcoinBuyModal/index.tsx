@@ -62,10 +62,6 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
         ? bitcoinAddressHelperByWalletAccountId[selectedWalletAccount[1].ID]
         : undefined;
 
-    if (!bitcoinAddressHelper?.receiveBitcoinAddress) {
-        return <Loader />;
-    }
-
     return (
         <FullscreenModal
             header={
@@ -83,85 +79,91 @@ export const BitcoinBuyModal = ({ wallet, account, modal, onDone }: Props) => {
             }
             {...modal}
         >
-            <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
-                <div className="sticky top-0 w-full">
-                    <WalletAccountSelector
-                        disabled={stepKey === StepKey.Onramp}
-                        value={selectedWalletAccount}
-                        onSelect={(selected) => {
-                            setSelectedWalletAccount(selected);
-                        }}
-                        options={toWalletAccountSelectorOptions(apiWalletsData ?? [])}
-                    />
-                </div>
-            </div>
+            {!bitcoinAddressHelper?.receiveBitcoinAddress ? (
+                <Loader />
+            ) : (
+                <>
+                    <div className="flex flex-column items-center mb-8 wallet-fullscreen-modal-left">
+                        <div className="sticky top-0 w-full">
+                            <WalletAccountSelector
+                                disabled={stepKey === StepKey.Onramp}
+                                value={selectedWalletAccount}
+                                onSelect={(selected) => {
+                                    setSelectedWalletAccount(selected);
+                                }}
+                                options={toWalletAccountSelectorOptions(apiWalletsData ?? [])}
+                            />
+                        </div>
+                    </div>
 
-            <div>
-                <div className="wallet-fullscreen-modal-main">
-                    {stepKey === StepKey.Location && (
-                        <Location
-                            onConfirm={(country) => {
-                                setCountry(country);
-                                setStepKey(StepKey.Amount);
-                            }}
-                        />
-                    )}
-
-                    {stepKey === StepKey.Amount &&
-                        (() => {
-                            if (!country) {
-                                return (
-                                    <div className="color-danger text-center">{c('Wallet buy')
-                                        .t`Missing country. Please refresh and try again or contact support`}</div>
-                                );
-                            }
-
-                            return (
-                                <Amount
-                                    country={country}
-                                    preselectedQuote={quote}
-                                    onConfirm={(quote) => {
-                                        setQuote(quote);
-                                        setStepKey(StepKey.Onramp);
-                                    }}
-                                />
-                            );
-                        })()}
-
-                    {stepKey === StepKey.Onramp &&
-                        (() => {
-                            if (!quote) {
-                                return (
-                                    <div className="color-danger text-center">{c('Wallet buy')
-                                        .t`Missing quote. Please refresh and try again or contact support`}</div>
-                                );
-                            }
-
-                            if (!bitcoinAddressHelper.receiveBitcoinAddress) {
-                                return (
-                                    <div className="color-danger text-center">{c('Wallet buy')
-                                        .t`Missing bitcoin address. Please refresh and try again or contact support`}</div>
-                                );
-                            }
-
-                            return (
-                                <Checkout
-                                    quote={quote}
-                                    btcAddress={bitcoinAddressHelper.receiveBitcoinAddress.address}
-                                    onDone={() => {
-                                        onDone?.();
-                                    }}
-                                    onBack={() => {
+                    <div>
+                        <div className="wallet-fullscreen-modal-main">
+                            {stepKey === StepKey.Location && (
+                                <Location
+                                    onConfirm={(country) => {
+                                        setCountry(country);
                                         setStepKey(StepKey.Amount);
                                     }}
                                 />
-                            );
-                        })()}
-                </div>
-            </div>
+                            )}
 
-            {/* empty div for grid centering */}
-            <div className="wallet-fullscreen-modal-right" />
+                            {stepKey === StepKey.Amount &&
+                                (() => {
+                                    if (!country) {
+                                        return (
+                                            <div className="color-danger text-center">{c('Wallet buy')
+                                                .t`Missing country. Please refresh and try again or contact support`}</div>
+                                        );
+                                    }
+
+                                    return (
+                                        <Amount
+                                            country={country}
+                                            preselectedQuote={quote}
+                                            onConfirm={(quote) => {
+                                                setQuote(quote);
+                                                setStepKey(StepKey.Onramp);
+                                            }}
+                                        />
+                                    );
+                                })()}
+
+                            {stepKey === StepKey.Onramp &&
+                                (() => {
+                                    if (!quote) {
+                                        return (
+                                            <div className="color-danger text-center">{c('Wallet buy')
+                                                .t`Missing quote. Please refresh and try again or contact support`}</div>
+                                        );
+                                    }
+
+                                    if (!bitcoinAddressHelper.receiveBitcoinAddress) {
+                                        return (
+                                            <div className="color-danger text-center">{c('Wallet buy')
+                                                .t`Missing bitcoin address. Please refresh and try again or contact support`}</div>
+                                        );
+                                    }
+
+                                    return (
+                                        <Checkout
+                                            quote={quote}
+                                            btcAddress={bitcoinAddressHelper.receiveBitcoinAddress.address}
+                                            onDone={() => {
+                                                onDone?.();
+                                            }}
+                                            onBack={() => {
+                                                setStepKey(StepKey.Amount);
+                                            }}
+                                        />
+                                    );
+                                })()}
+                        </div>
+                    </div>
+
+                    {/* empty div for grid centering */}
+                    <div className="wallet-fullscreen-modal-right" />
+                </>
+            )}
         </FullscreenModal>
     );
 };

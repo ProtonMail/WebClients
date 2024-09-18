@@ -22,9 +22,10 @@ import './Balance.scss';
 interface Props {
     apiWalletData: IWasmApiWalletData;
     apiAccount?: WasmApiWalletAccount;
+    disabled?: boolean;
 }
 
-export const Balance = ({ apiWalletData, apiAccount }: Props) => {
+export const Balance = ({ apiWalletData, apiAccount, disabled }: Props) => {
     const [settings] = useUserWalletSettings();
     const [exchangeRate, loadingExchangeRate] = useWalletAccountExchangeRate(
         apiAccount ?? apiWalletData.WalletAccounts[0]
@@ -57,22 +58,24 @@ export const Balance = ({ apiWalletData, apiAccount }: Props) => {
                             amountClassName={clsx(!showBalance && 'blurred')}
                             wrapperClassName="contrast"
                             unit={exchangeRate ?? settings.BitcoinUnit}
-                            satsAmount={totalBalance}
+                            amount={disabled ? '--' : totalBalance}
                         />
                     </Skeleton>
 
-                    <CoreButton
-                        shape="ghost"
-                        pill
-                        icon
-                        className="ml-2 shrink-0"
-                        aria-pressed={showBalance}
-                        onClick={() => toggleShowBalance()}
-                    >
-                        <Icon name={showBalance ? 'eye-slash' : 'eye'} alt={c('Action').t`Show balance`} size={6} />
-                    </CoreButton>
+                    {!disabled && (
+                        <CoreButton
+                            shape="ghost"
+                            pill
+                            icon
+                            className="ml-2 shrink-0"
+                            aria-pressed={showBalance}
+                            onClick={() => toggleShowBalance()}
+                        >
+                            <Icon name={showBalance ? 'eye-slash' : 'eye'} alt={c('Action').t`Show balance`} size={6} />
+                        </CoreButton>
+                    )}
                 </div>
-                {!loadingExchangeRate && exchangeRate && (
+                {!loadingExchangeRate && exchangeRate && !disabled && (
                     <Skeleton
                         loading={loadingBalance}
                         placeholder={<div className="text-lg">{c('Balance').t`Loading balance`}</div>}
