@@ -1150,6 +1150,9 @@
       "Enter your PIN code": [
         "Voer uw pincode in"
       ],
+      "Expires in": [
+        "Verloopt over"
+      ],
       "Expires in ${ remainingTime }": [
         "Verloopt over ${ remainingTime }"
       ],
@@ -1382,6 +1385,9 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Bevestig uw ${ BRAND_NAME }-wachtwoord om uw ${ PASS_APP_NAME }-gegevens te exporteren"
       ],
+      "Please confirm your password": [
+        "Bevestig uw wachtwoord"
+      ],
       "Please confirm your PIN code in order to unregister your current lock.": [
         "Bevestig uw PIN-code om uw huidige vergrendeling te deactiveren."
       ],
@@ -1494,6 +1500,9 @@
         "Het volgende ${ result.ignored.length } item kon niet geïmporteerd worden:",
         "De volgende ${ result.ignored.length } items konden niet geïmporteerd worden:"
       ],
+      "The secure link has been removed": [
+        "De beveiligde link is verwijderd"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "De tekst die u probeert te plakken is langer dan de maximaal toegelaten lengte van ${ maxLength } tekens."
       ],
@@ -1526,6 +1535,9 @@
       ],
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Ontgrendel ${ PASS_SHORT_APP_NAME } met uw ${ BRAND_NAME }-wachtwoord"
       ],
       "Unpinning item...": [
         "Item losmaken..."
