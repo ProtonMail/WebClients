@@ -993,8 +993,14 @@
       "${ n } item": [
         "${ n } アイテム"
       ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } は常にアクセス可能です"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } は、${ BRAND_NAME } の匿名化された画像プロキシを介してアイテムのファビコンを表示します。"
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } はログイン情報、メモ、クレジットカード、ユーザー情報のみインポートします。"
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } でデータにオフラインでアクセスするには、${ BRAND_NAME } のパスワードが必要です。"
@@ -1017,6 +1023,12 @@
       "Access successfully confirmed": [
         "アクセスが正常に確認されました"
       ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } へのアクセスには常にあなたの ${ BRAND_NAME } パスワードが必要です。"
+      ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "${ PASS_APP_NAME } へのアクセスには指紋または端末のPINが必要です。"
+      ],
       "Add your custom email address to monitor :": [
         "監視するカスタム電子メール アドレスを追加します。"
       ],
@@ -1026,8 +1038,14 @@
       "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
         "データが正常にインポートされた後、セキュリティのためにパスワードを含む CSV ファイルを削除できます。"
       ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "${ BRAND_NAME } アカウントと SimpleLogin アカウント間のエイリアス同期が有効です。"
+      ],
       "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
         "ゴミ箱に入れてもエイリアスはメールの転送を続けます。メールの受信を停止したい場合は、エイリアスを無効にしてください。"
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "エイリアスが同期されていません (${ aliasCount })"
       ],
       "Aliases with custom domains are not monitored, please add them as a custom email for monitoring.": [
         "カスタム ドメインを持つエイリアスは監視されません。監視用のカスタム電子メールとして追加してください。"
@@ -1059,6 +1077,9 @@
       "Auto-lock successfully disabled.": [
         "自動ロックを無効にしました."
       ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "生体認証は無効化され、再び有効化する必要があります。"
+      ],
       "Breaches detected": [
         "侵害が検出されました"
       ],
@@ -1085,6 +1106,9 @@
       ],
       "Change your password": [
         "パスワードを変更"
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "削除を続行するために、追加パスワードを確認します。"
       ],
       "Congratulations, your access has been confirmed": [
         "おめでとうございます。アクセスが確認されました"
@@ -1374,6 +1398,9 @@
       "Offline support successfully disabled": [
         "オフライン サポートが正常に無効になりました"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "${ PASS_APP_NAME } へのオンラインアクセスにはPINコードが必要です。3回の試行に失敗するとログアウトされます。"
+      ],
       "Owner": [
         "所有者"
       ],
@@ -1413,8 +1440,29 @@
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "${ PASS_APP_NAME } データをエクスポートするには、${ BRAND_NAME } のパスワードを確認してください"
       ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "追加パスワードで自動ロックするには、追加パスワードを確認してください。"
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "自動ロック時間を更新するには、追加パスワードを確認してください。"
+      ],
       "Please confirm your password": [
         "パスワードを確認してください"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "生体認証で自動ロックするには、パスワードを確認してください。"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "パスワードで自動ロックするには、パスワードを確認してください。"
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "現在のロックを解除するには、パスワードを確認してください。"
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "自動ロック時間を更新するには、パスワードを確認してください。"
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "現在のロックを解除するには、PINコードを確認してください。"
       ],
       "Please confirm your PIN code to edit this setting.": [
         "この設定を編集するには、PINコードを確認してください。"
@@ -1479,6 +1527,9 @@
       "Session timed out": [
         "セッションがタイムアウトしました"
       ],
+      "Set by your organization": [
+        "組織によって設定されます"
+      ],
       "Settings successfully updated": [
         "設定が正常に更新されました"
       ],
@@ -1523,6 +1574,9 @@
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "公開された情報は第三者サービスから漏洩しました。あなたの ${ BRAND_NAME } アカウント情報は安全で暗号化されたままです。${ learnMoreLink }"
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } を使用するには追加パスワードが必要になります。追加パスワードは ${ BRAND_NAME } のパスワードに加えて、さらに追加して必要になるパスワードとして機能します。"
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "次の ${ result.ignored.length } つのアイテムをインポート出来ませんでした:"
@@ -1652,6 +1706,9 @@
       ],
       "You have reached the maximum allowed length of ${ maxLength } characters.": [
         "${ maxLength } 文字の最大許容長に達しました。"
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "ログアウトされ、他のすべてのデバイスで再度ログインする必要があります。"
       ],
       "You will be notified of data breaches for these email addresses.": [
         "これらの電子メール アドレスのデータ侵害について通知されます。"
