@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
+import Loader from '@proton/components/components/loader/Loader';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 
-import { Loader } from '../../components';
 import { useEventManager, useModals, useMyCountry, useNotifications, useUserSettings } from '../../hooks';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';

@@ -7,7 +7,6 @@ export * from './input';
 export * from './label';
 export * from './labelStack';
 export * from './link';
-export * from './loader';
 export * from './logo';
 export * from './maintenanceLayout';
 export * from './miniCalendar';
