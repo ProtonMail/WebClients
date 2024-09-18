@@ -5,6 +5,11 @@ import DropdownActions from '@proton/components/components/dropdown/DropdownActi
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import { useLoading } from '@proton/hooks';
 import { onSessionMigrationPaymentsVersion } from '@proton/payments';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
@@ -21,7 +26,7 @@ import { Renew } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { Table, TableBody, TableCell, TableHeader, TableRow, Time, Tooltip } from '../../components';
+import { Time, Tooltip } from '../../components';
 import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
 import { useApi, useEventManager, usePlans, usePreferredPlansMap, useSubscription, useUser } from '../../hooks';

@@ -1,9 +1,13 @@
 import { c } from 'ttag';
 
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
+
 import { useNotifications } from '../..';
 import Copy from '../../components/button/Copy';
 import PersonalKeyWarningIcon from '../../components/icon/PersonalKeyWarningIcon';
-import { Table, TableBody, TableCell, TableRow } from '../../components/table';
 import KeysActions from './KeysActions';
 import KeysStatus from './KeysStatus';
 import type { KeyActions, KeyDisplay } from './shared/interface';

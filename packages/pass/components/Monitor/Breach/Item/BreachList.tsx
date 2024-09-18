@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Card } from '@proton/atoms';
 import type { FetchedBreaches } from '@proton/components';
-import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '@proton/components/components/table';
+import { Table, TableBody, TableHeader, TableHeaderCell, TableRow } from '@proton/components';
 import { TableRowLoading } from '@proton/pass/components/Layout/Table/TableRowLoading';
 
 import { BreachListRow } from './BreachListRow';

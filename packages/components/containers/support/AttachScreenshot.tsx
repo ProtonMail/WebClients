@@ -6,12 +6,15 @@ import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import FileInput from '@proton/components/components/input/FileInput';
 import Info from '@proton/components/components/link/Info';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import { MAX_SIZE_SCREENSHOT } from '@proton/shared/lib/constants';
 import { resize, toBlob } from '@proton/shared/lib/helpers/image';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import removeItem from '@proton/utils/removeIndex';
 
-import { Table, TableBody, TableCell, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
 
 export interface Screenshot {

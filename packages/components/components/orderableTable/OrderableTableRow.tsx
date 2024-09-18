@@ -1,10 +1,11 @@
 import type { ReactNode, Ref } from 'react';
 import { forwardRef } from 'react';
 
-import Icon from '../icon/Icon';
+import Icon from '@proton/components/components/icon/Icon';
+import type Cell from '@proton/components/components/table/Cell';
+import TableRow from '@proton/components/components/table/TableRow';
+
 import { OrderableElement, OrderableHandle } from '../orderable';
-import type { Cell } from '../table';
-import { TableRow } from '../table';
 
 interface Props {
     index: number;

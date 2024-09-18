@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { TableCell, TableRow } from '@proton/components/components/table';
+import { TableCell, TableRow } from '@proton/components';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { MonitorTableRow } from '@proton/pass/hooks/monitor/useBreachesTable';
 import { getAddressId } from '@proton/pass/lib/monitor/monitor.utils';

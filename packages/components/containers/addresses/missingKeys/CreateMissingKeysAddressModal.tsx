@@ -5,6 +5,10 @@ import { c } from 'ttag';
 
 import { getMemberAddresses } from '@proton/account';
 import { Button } from '@proton/atoms';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -32,10 +36,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     PasswordInputTwo,
-    Table,
-    TableBody,
-    TableHeader,
-    TableRow,
     useFormErrors,
 } from '../../../components';
 import {
