@@ -1173,9 +1173,6 @@
       "Snooze": [
         "Відкласти"
       ],
-      "Some images could not be loaded with tracker protection.": [
-        "Деякі зображення неможливо завантажити, якщо увімкнено захист від стеження."
-      ],
       "Star": [
         "Позначити зірочкою"
       ],
@@ -6331,6 +6328,12 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Щоб отримати більше результатів пошуку, спробуйте шукати за цим ключовим словом у вмісті повідомлень вашої пошти."
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Спробуйте безкоштовно протягом ${ ASSISTANT_TRIAL_TIME_DAYS } дня",
+        "Спробуйте безкоштовно протягом ${ ASSISTANT_TRIAL_TIME_DAYS } днів",
+        "Спробуйте безкоштовно протягом ${ ASSISTANT_TRIAL_TIME_DAYS } днІв",
+        "Спробуйте безкоштовно протягом ${ ASSISTANT_TRIAL_TIME_DAYS } днів"
       ],
       "From": [
         "Від"

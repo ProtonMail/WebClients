@@ -1179,9 +1179,6 @@
       "Snooze": [
         "방해 금지"
       ],
-      "Some images could not be loaded with tracker protection.": [
-        "트래커 보호로 인하여 일부 이미지가 불러오지 않을 수 있습니다."
-      ],
       "Star": [
         "별표"
       ],
@@ -1235,6 +1232,9 @@
       ],
       "Tomorrow": [
         "내일"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "로딩 도중 트래커 보호가 일부 이미지에 적용되었습니다. 해당 발송자를 신뢰한다면 이를 해제 후 로드하십시오."
       ],
       "Trust": [
         "신뢰"
@@ -3570,6 +3570,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "개선을 도와주세요"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "${ PASS_APP_NAME } 특별 할인 잃기"
+      ],
+      "Remove discount": [
+        "혜택 받지 않기"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "${ PLAN_NAMES[PLANS.PASS] } 구독이 연간 ${ price }의 특별 가격으로 제공됩니다. Free 플랜으로 다운그레이드함으로서 할인을 잃게되며 추후에도 할인된 가격으로 구독할 수 없습니다."
       ]
     },
     "Download attachments": {
@@ -10688,6 +10699,14 @@
         "서명"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "앱에서 더 빠름"
+      ],
+      "Private, fast, and organized": [
+        "비공개, 빠르고 잘 정돈됨"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "방해 금지 메시지"
@@ -11116,6 +11135,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "IOS 앱에서 요금제를 구매하여 사용하고 계십니다. 요금제를 변경하거나 결제 수단 세부사항을 변경하려면, Apple App Store에서 변경이 필요합니다."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "결제 주기 종료일에 구독이 다운그레이드됩니다."
       ]
     },
     "Subscription price": {

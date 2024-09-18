@@ -1191,9 +1191,6 @@
       "Snooze": [
         "Odłóż"
       ],
-      "Some images could not be loaded with tracker protection.": [
-        "Niektóre obrazy nie mogły zostać załadowane z ochroną przed śledzeniem."
-      ],
       "Star": [
         "Oznacz gwiazdką"
       ],
@@ -1247,6 +1244,9 @@
       ],
       "Tomorrow": [
         "Jutro"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Ochrona przed śledzeniem zapobiega załadowaniu niektórych obrazów. Załaduj je, jeśli ufasz nadawcy."
       ],
       "Trust": [
         "Zaufaj"
@@ -3623,6 +3623,17 @@
         "Pomóż nam ulepszyć usługę"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Potwierdź utratę specjalnej zniżki ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Usuń zniżkę"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Twoja subskrypcja ${ PLAN_NAMES[PLANS.PASS] } jest w specjalnej cenie ${ price } za rok. Obniżenie planu do darmowej wersji spowoduje trwałą utratę zniżki, nawet w przypadku ponownej subskrypcji w przyszłości."
+      ]
+    },
     "Download attachments": {
       "Download all": [
         "Pobierz wszystkie"
@@ -4215,6 +4226,9 @@
       ],
       "Sending attachments is restricted until you meet your plan limits or upgrade.": [
         "Możliwość wysyłania załączników została ograniczona do czasu wygaśnięcia limitów lub ulepszenia konta."
+      ],
+      "Sending attachments is restricted while you exceed your plan limits or until you upgrade you plan.": [
+        "Wysyłanie załączników jest ograniczone po przekroczeniu limitów lub do czasu ulepszenia planu."
       ],
       "Signature not verified": [
         "Podpis nie został zweryfikowany"
@@ -6828,6 +6842,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Pamiętaj, że w zależności od rozmiaru książki adresowej, ten proces może zająć trochę czasu."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Po kliknięciu przycisku Potwierdź na Twoim koncie pozostaną środki w wysokości ${ remainingCreditsFormatted }."
       ],
       "Please open the document to view it.": [
         "Otwórz dokument, aby go zobaczyć."
@@ -11237,6 +11254,14 @@
         "Podpisz"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Szybciej w aplikacji"
+      ],
+      "Private, fast, and organized": [
+        "Prywatna, szybka i zorganizowana"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Odłóż wiadomość"
@@ -11701,6 +11726,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Plan został zakupiony przez aplikację na iOS. Aby zmienić lub zaktualizować szczegóły płatności, przejdź do sklepu App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Subskrypcja zostanie obniżona na koniec cyklu rozliczeniowego."
       ]
     },
     "Subscription price": {
