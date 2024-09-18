@@ -3273,6 +3273,9 @@
       "The alias prefix cannot be longer than 40 characters": [
         "Alias-prefixet får inte vara längre än 40 tecken"
       ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Detta alias ”${ aliasEmail }” används för närvarande i inloggningen ”${ relatedLoginName }”."
+      ],
       "This email address will no longer be monitored for data breaches.": [
         "Denna e-postadress kommer inte längre att övervakas för dataintrång."
       ],
