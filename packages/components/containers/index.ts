@@ -20,7 +20,6 @@ export * from './features';
 export * from './filePreview';
 export * from './filters';
 export * from './general';
-export * from './illustration';
 export * from './importExportApp';
 export * from './invoices';
 export * from './items';
