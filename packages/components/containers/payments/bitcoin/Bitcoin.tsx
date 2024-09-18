@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Bordered } from '@proton/components';
 import Alert from '@proton/components/components/alert/Alert';
+import Bordered from '@proton/components/components/container/Bordered';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
 import type { BitcoinHook } from '@proton/components/payments/react-extensions/useBitcoin';

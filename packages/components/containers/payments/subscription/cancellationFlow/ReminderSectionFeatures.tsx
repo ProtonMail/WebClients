@@ -1,5 +1,6 @@
-import { StripedItem, StripedList } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
+import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { SettingsParagraph, SettingsSection, SettingsSectionTitle } from '@proton/components/containers/account';
 
 import type { PlanConfigFeatures } from './interface';

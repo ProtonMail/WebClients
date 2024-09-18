@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Field, Row } from '@proton/components';
-import { Option, SelectTwo, SortingTableHeader, Table, TableBody, TableRow } from '@proton/components/components';
+import { Option, SelectTwo, SortingTableHeader, Table, TableBody, TableRow } from '@proton/components';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useSortedList } from '@proton/components/hooks';

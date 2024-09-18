@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PromotionBanner } from '@proton/components';
+import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import { CYCLE, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 

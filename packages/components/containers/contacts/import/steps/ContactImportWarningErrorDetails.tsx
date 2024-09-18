@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Bordered, Details, Summary } from '@proton/components';
+import Bordered from '@proton/components/components/container/Bordered';
+import Details from '@proton/components/components/container/Details';
+import Summary from '@proton/components/components/container/Summary';
 import type { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 
 const ErrorDetail = ({ error, ...rest }: { error: ImportContactError }) => {

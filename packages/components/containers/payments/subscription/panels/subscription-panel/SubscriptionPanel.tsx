@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
-import { StripedItem, StripedList } from '@proton/components';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import Price from '@proton/components/components/price/Price';
 import Meter from '@proton/components/components/progress/Meter';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
+import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     APPS,
