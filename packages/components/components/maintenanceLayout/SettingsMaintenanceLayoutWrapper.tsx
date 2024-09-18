@@ -6,7 +6,7 @@ import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layou
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 import { type FeatureFlag, useFlag } from '@proton/unleash';
 
-import type { SettingsAreaConfig } from '../..';
+import type { SettingsAreaConfig } from '../../containers/layout/interface';
 
 interface Props {
     config: SettingsAreaConfig;

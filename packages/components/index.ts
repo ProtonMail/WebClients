@@ -227,6 +227,14 @@ export { default as LabelsSection } from './containers/labels/LabelsSection';
 export { default as DeleteLabelModal } from './containers/labels/modals/DeleteLabelModal';
 export { default as EditLabelModal } from './containers/labels/modals/EditLabelModal';
 export type { LabelModel } from './containers/labels/modals/EditLabelModal';
+export { SectionConfig, SettingsAreaConfig, SidebarConfig, SubSectionConfig } from './containers/layout/interface';
+export { default as PrivateMainArea } from './containers/layout/PrivateMainArea';
+export { default as PrivateMainAreaLoading } from './containers/layout/PrivateMainAreaLoading';
+export {
+    default as PrivateMainSettingsArea,
+    PrivateMainSettingsAreaBase,
+} from './containers/layout/PrivateMainSettingsArea';
+export { default as SubSettingsSection } from './containers/layout/SubSettingsSection';
 export { default as ComposerModeCards } from './containers/layouts/ComposerModeCards';
 export { default as DensityInjector } from './containers/layouts/DensityInjector';
 export { default as DraftTypeSelect } from './containers/layouts/DraftTypeSelect';

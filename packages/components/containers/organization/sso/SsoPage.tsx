@@ -19,7 +19,7 @@ import {
     SettingsParagraph,
     SettingsSectionWide,
 } from '../../account';
-import { SubSettingsSection } from '../../layout';
+import SubSettingsSection from '../../layout/SubSettingsSection';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments';
 import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';
