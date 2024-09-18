@@ -811,11 +811,11 @@
       "Refresh status": [
         "Aggiorna stato"
       ],
-      "Refresh the page": [
-        "Aggiorna la pagina"
-      ],
       "refresh the page": [
         "aggiorna la pagina"
+      ],
+      "Refresh the page": [
+        "Aggiorna la pagina"
       ],
       "Reload": [
         "Ricarica"
@@ -891,6 +891,9 @@
       ],
       "Resume": [
         "Riprendi"
+      ],
+      "Resume membership": [
+        "Riprendi l'abbonamento"
       ],
       "Retry": [
         "Riprova"
@@ -1185,6 +1188,9 @@
       ],
       "Use authentication code": [
         "Usa il codice di autenticazione"
+      ],
+      "Use group sending permissions": [
+        "Utilizza le autorizzazioni di invio di gruppo"
       ],
       "Use recovery code": [
         "Usa un codice di recupero"
@@ -1613,14 +1619,6 @@
         "Seleziona la tua offerta della Fine dell'Anno"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB di spazio di archiviazione (2 volte di più rispetto a qualsiasi altro piano)"
@@ -1642,6 +1640,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Il piano ${ plan } è tornato, ma solo per un periodo di tempo limitato"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto del **${ discountPercentage } su ${ plan.Title }** quando ti abboni per **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5142,6 +5148,9 @@
       "${ BRAND_NAME } groups": [
         "Gruppi ${ BRAND_NAME }"
       ],
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Solo una prova gratuita per utente. Successivamente si applica il prezzo normale."
+      ],
       "Accounts with custom domains cannot join a group plan.": [
         "Gli account con domini personalizzati non possono aderire a un piano di gruppo."
       ],
@@ -5203,6 +5212,9 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "L'abbonamento verrà fatturato all'amministratore principale di questo piano."
       ],
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "Per facilitare la transizione, ti offriamo una prova gratuita di 30 giorni di ${ BRAND_NAME } Unlimited*."
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Hai ricevuto un invito a ${ invite.OrganizationName }"
       ],
@@ -5252,6 +5264,12 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Solo una prova gratuita per utente. Successivamente si applica il prezzo normale."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Dopo aver abbandonato il tuo piano, questo utente verrà trasferito a un piano ${ BRAND_NAME } Unlimited con una prova gratuita di 30 giorni.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Per impostazione predefinita assegniamo ${ formattedStorage } di archiviazione all'account dell'amministratore. Puoi gestire lo spazio di archiviazione che ti è stato assegnato, distribuendolo poi tra gli utenti aggiuntivi."
       ],
@@ -7033,11 +7051,11 @@
       "Data locked": [
         "Dati bloccati"
       ],
-      "dedicated servers": [
-        "server dedicati"
-      ],
       "Dedicated servers": [
         "Server dedicati"
+      ],
+      "dedicated servers": [
+        "server dedicati"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "È possibile aggiungere server dedicati con indirizzi IP dedicati ai gateway privati ​​per consentire un controllo degli accessi ottimizzato."
@@ -7054,6 +7072,9 @@
       ],
       "Disable recovery by ${ type }": [
         "Disabilita recupero tramite ${ type }"
+      ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Disabilitato dal ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Disabilitare l'autenticazione a due fattori renderà il tuo account meno sicuro. Procedere solo se assolutamente necessario."
@@ -7169,6 +7190,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Abilita TLS o SSL sul servizio esterno se è supportato."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Abilitato dal ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Abilitare nuovamente il recupero tramite frase di recupero genererà una nuova frase."
@@ -8952,6 +8976,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Puoi abilitare i log di autenticazione per vedere quando viene effettuato l'accesso al tuo account e da quale IP. Registreremo l'indirizzo IP che accede all'account e l'ora, così come i tentativi falliti."
+      ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Puoi abilitare la sezione Foto dall'interfaccia utilizzando il seguente interruttore."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Puoi sbloccare immediatamente la configurazione qui sopra aggiungendo ${ specificCountryCount } al numero di indirizzi IP nel tuo piano o puoi contattarci per soluzioni su misura."
@@ -11287,11 +11314,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real Brasiliano"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franco svizzero"
+      ],
+      "US Dollar": [
+        "Dollaro USA"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -11497,26 +11530,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Inizia per ${ price }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua Gratis"
@@ -11544,6 +11557,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Inizia per ${ price }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
       ]
     },
     "new_plans: feature": {
@@ -12205,20 +12238,6 @@
         "Il tuo piano selezionato: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Prova"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Ottieni Mail Plus per ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "L'utilizzo del tuo account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Vuoi eliminare l'account?"
@@ -12237,6 +12256,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Sblocca le funzionalità premium effettuando l'upgrade"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Prova"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Ottieni Mail Plus per ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "L'utilizzo del tuo account"
       ]
     },
     "new_plans: tooltip": {
@@ -13588,6 +13621,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Stiamo elaborando il pagamento della fattura. Attendi il completamento del pagamento prima di apportare modifiche al tuo piano o aggiornare i dettagli di pagamento. Grazie per la pazienza."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Ti verranno addebitati ${ amountToCharge } dal metodo di pagamento selezionato."
       ]
     },
     "Payments.Error": {
@@ -14750,6 +14786,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Richiesta di reimpostazione della password"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Abilita la sezione Foto"
       ]
     },
     "Settings description": {
@@ -16415,11 +16456,11 @@
       "Card verification": [
         "Verifica della carta"
       ],
-      "Catch-All address": [
-        "Indirizzi catch-all"
-      ],
       "Catch-all address": [
         "Indirizzi Catch-all"
+      ],
+      "Catch-All address": [
+        "Indirizzi catch-all"
       ],
       "Change login password": [
         "Cambia la password di accesso"
