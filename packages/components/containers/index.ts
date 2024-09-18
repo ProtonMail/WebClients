@@ -23,7 +23,6 @@ export * from './general';
 export * from './labels';
 export * from './layout';
 export * from './layouts';
-export * from './messages';
 export * from './mnemonic';
 export * from './mobile';
 export * from './modals';
