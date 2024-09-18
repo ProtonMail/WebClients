@@ -67,7 +67,7 @@ export const AmountInput = ({ txBuilderHelpers, btcAddressMap, onBack, account, 
     const constrainedMin = convertAmount(DEFAULT_MINIMUM_SATS_AMOUNT, 'SATS', exchangeRateOrBitcoinUnit);
     const constrainedSatMin = convertAmount(constrainedMin, exchangeRateOrBitcoinUnit, 'SATS');
     const constrainedMinElement = useMemo(
-        () => <Price key="min-amount" satsAmount={constrainedSatMin} unit={exchangeRateOrBitcoinUnit} />,
+        () => <Price key="min-amount" amount={constrainedSatMin} unit={exchangeRateOrBitcoinUnit} />,
         [constrainedSatMin, exchangeRateOrBitcoinUnit]
     );
 
@@ -95,7 +95,7 @@ export const AmountInput = ({ txBuilderHelpers, btcAddressMap, onBack, account, 
                 switch (err?.kind) {
                     case 'InsufficientFunds':
                         const feesToReserveElement = (
-                            <Price key="fees-to-reserve" satsAmount={err.needed - totalSentAmount} unit={'BTC'} />
+                            <Price key="fees-to-reserve" amount={err.needed - totalSentAmount} unit={'BTC'} />
                         );
                         return c('Wallet send')
                             .jt`You do not have enough BTC in this account to fund the transaction and the required network fee of ${feesToReserveElement}.`;

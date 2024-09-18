@@ -109,7 +109,7 @@ export const FeesModal = ({
                         <div className="mx-4">{text}</div>
                         <div className="flex flex-column items-end ml-auto">
                             <div className="mb-1">
-                                {exchangeRate && <Price satsAmount={feesAtFeeRate} unit={exchangeRate} />}
+                                {exchangeRate && <Price amount={feesAtFeeRate} unit={exchangeRate} />}
                             </div>
 
                             <span className="block color-hint">

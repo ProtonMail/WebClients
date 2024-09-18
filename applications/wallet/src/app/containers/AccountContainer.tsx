@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Redirect, useHistory, useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -16,12 +16,12 @@ import { BitcoinBuyModal } from '../components/BitcoinBuyModal';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
 import { InvitesButton } from '../components/InvitesButton';
 import { MetricsAndCtas } from '../components/MetricsAndCtas';
-import { PassphraseInputModal } from '../components/PassphraseInputModal';
 import { TransactionList } from '../components/TransactionList';
 import { WalletPreferencesModal } from '../components/WalletPreferencesModal';
 import { useBitcoinBlockchainContext } from '../contexts';
 import { useResponsiveContainerContext } from '../contexts/ResponsiveContainerContext';
 import { useWalletDrawerContext } from '../contexts/WalletDrawerContext';
+import { useWalletPassphrase } from '../hooks/useWalletPassphrase';
 import { getThemeForWallet } from '../utils';
 
 // Used to reset bitcoin buy modal at the end of the process
@@ -32,7 +32,6 @@ const generateBitcoinSendKey = () => generateUID(`bitcoin-send`);
 
 export const AccountContainer = () => {
     const { walletId, accountId } = useParams<{ walletId?: string; accountId?: string }>();
-    const history = useHistory();
 
     const { isNarrow } = useResponsiveContainerContext();
 
@@ -50,7 +49,7 @@ export const AccountContainer = () => {
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
         useModalState();
 
-    const { apiWalletsData, syncSingleWallet, isSyncing } = useBitcoinBlockchainContext();
+    const { apiWalletsData, getSyncingData } = useBitcoinBlockchainContext();
 
     const { createNotification, removeNotification } = useNotifications();
     const notificationRef = useRef<number>();
@@ -69,12 +68,13 @@ export const AccountContainer = () => {
     ];
 
     const walletAccount = wallet?.WalletAccounts?.find(({ ID }) => ID === accountId);
-    const isSyncingChainData = Boolean(
-        wallet?.Wallet?.ID && walletAccount?.ID && isSyncing(wallet.Wallet.ID, walletAccount.ID)
-    );
+
+    const syncingData = wallet?.Wallet?.ID ? getSyncingData(wallet?.Wallet?.ID, walletAccount?.ID) : undefined;
+    const isSyncing = Boolean(syncingData?.syncing);
+    const didFailedSyncing = Boolean(syncingData?.error);
 
     useEffect(() => {
-        if (isSyncingChainData) {
+        if (isSyncing) {
             notificationRef.current = createNotification({
                 text: c('Wallet').t`Syncing new data`,
                 expiration: 10 * MINUTE,
@@ -83,7 +83,9 @@ export const AccountContainer = () => {
         } else if (notificationRef.current) {
             removeNotification(notificationRef.current);
         }
-    }, [createNotification, isSyncingChainData, removeNotification]);
+    }, [createNotification, isSyncing, removeNotification]);
+
+    const { canUseWallet } = useWalletPassphrase(wallet);
 
     if (!apiWalletsData) {
         return <CircleLoader />;
@@ -93,8 +95,6 @@ export const AccountContainer = () => {
     if (!wallet || wallet.IsNotDecryptable) {
         return <Redirect to={'/'} />;
     }
-
-    const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);
 
     const theme = getThemeForWallet(apiWalletsData, wallet.Wallet.ID);
 
@@ -133,13 +133,13 @@ export const AccountContainer = () => {
                     </div>
 
                     {/* Balance */}
-                    <Balance apiWalletData={wallet} apiAccount={walletAccount} />
+                    <Balance apiWalletData={wallet} apiAccount={walletAccount} disabled={!canUseWallet} />
 
                     {/* Wallet metrics and cta (send, buy, receive) */}
                     <MetricsAndCtas
                         apiWalletData={wallet}
                         apiAccount={walletAccount}
-                        disabled={isSyncingChainData}
+                        disabled={isSyncing || didFailedSyncing || !canUseWallet}
                         onClickSend={() => setWalletSendModal(true)}
                         onClickReceive={() => {
                             openDrawer({ kind: 'wallet-receive', account: walletAccount, wallet, theme });
@@ -149,27 +149,20 @@ export const AccountContainer = () => {
                         }}
                     />
 
-                    <TransactionList
-                        apiWalletData={wallet}
-                        apiAccount={walletAccount}
-                        onClickReceive={() => {
-                            openDrawer({ kind: 'wallet-receive', account: walletAccount, wallet, theme });
-                        }}
-                        onClickBuy={() => {
-                            setWalletBuyModal(true);
-                        }}
-                    />
+                    {canUseWallet && (
+                        <TransactionList
+                            apiWalletData={wallet}
+                            apiAccount={walletAccount}
+                            onClickReceive={() => {
+                                openDrawer({ kind: 'wallet-receive', account: walletAccount, wallet, theme });
+                            }}
+                            onClickBuy={() => {
+                                setWalletBuyModal(true);
+                            }}
+                        />
+                    )}
 
-                    <PassphraseInputModal
-                        wallet={wallet}
-                        isOpen={needPassphrase}
-                        onClose={history.goBack}
-                        onConfirmPassphrase={() => {
-                            void syncSingleWallet({ walletId: wallet.Wallet.ID });
-                        }}
-                    />
-
-                    {!isSyncingChainData && (
+                    {!isSyncing && (
                         <>
                             <BitcoinSendModal
                                 key={bitcoinSendKey}
