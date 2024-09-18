@@ -104,6 +104,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     as,
     ...rest
 }: PolymorphicPropsWithoutRef<ModalOwnProps, E>) => {
+    const [key, setKey] = useState(() => generateUID());
     const [exit, setExit] = useState(() => (open ? ExitState.idle : ExitState.exited));
     const id = useInstance(() => generateUID('modal'));
     const backdropRef = useRef<HTMLDivElement>(null);
@@ -116,6 +117,15 @@ const Modal = <E extends ElementType = typeof defaultElement>({
         active,
         rootRef: dialogRef,
     });
+
+    const handleClose = () => {
+        onClose?.();
+    };
+
+    const handleExit = () => {
+        setKey(generateUID());
+        onExit?.();
+    };
 
     const modalContextValue: ModalContextValue = {
         id,
@@ -145,7 +155,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                         return;
                     }
                     e.stopPropagation();
-                    onClose?.();
+                    handleClose();
                 },
             ],
         ],
@@ -204,12 +214,12 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     }
                     if (exiting && animationName === 'anime-modal-two-out') {
                         setExit(ExitState.exited);
-                        onExit?.();
+                        handleExit();
                     }
                 }}
                 onClick={(e) => {
                     if (enableCloseWhenClickOutside && e.target === e.currentTarget) {
-                        onClose?.();
+                        handleClose();
                     }
                 }}
             >
@@ -228,7 +238,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     ])}
                 >
                     <ModalContext.Provider value={modalContextValue}>
-                        <Element className="modal-two-dialog-container" {...rest} />
+                        <Element className="modal-two-dialog-container" {...rest} key={key} />
                     </ModalContext.Provider>
                 </Dialog>
             </div>

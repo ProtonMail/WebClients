@@ -158,26 +158,22 @@ const mockCreateModalSpy = jest.fn(({ ...props }) => {
     props.props.onSubmit();
 });
 
-jest.mock('@proton/components', () => {
-    const componentsMock = jest.requireActual('@proton/components');
-
-    const useGetEncryptionPreferences = () => {
+jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
+    __esModule: true,
+    default: () => {
         const getEncryptionPreferences: ({ email }: { email: string }) => EncryptionPreferences = ({ email }) =>
             mockEncryptionPreferences[email];
         return getEncryptionPreferences;
-    };
-
-    return {
-        __esModule: true,
-        ...componentsMock,
-        useModals: function () {
-            return {
-                createModal: mockCreateModalSpy,
-            };
-        },
-        useGetEncryptionPreferences,
-    };
-});
+    },
+}));
+jest.mock('@proton/components/hooks/useModals', () => ({
+    __esModule: true,
+    default: () => {
+        return {
+            createModal: mockCreateModalSpy,
+        };
+    },
+}));
 
 const originalResizeObserver = window.ResizeObserver;
 const ResizeObserverMock = jest.fn(() => ({
