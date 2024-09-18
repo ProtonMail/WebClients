@@ -24,7 +24,6 @@ export * from './keyTransparency';
 export * from './labels';
 export * from './layout';
 export * from './layouts';
-export * from './login';
 export * from './logs';
 export * from './mail';
 export * from './members';
