@@ -26,7 +26,7 @@ import {
     SettingsParagraph,
     SettingsSectionWide,
 } from '../../../account';
-import { SubSettingsSection } from '../../../layout';
+import SubSettingsSection from '../../../layout/SubSettingsSection';
 import ReadonlyFieldWithCopy from '../ReadonlyFieldWithCopy';
 import DisableSCIMModal from './DisableSCIMModal';
 import RegenerateSCIMConfirmModal from './RegenerateSCIMConfirmModal';

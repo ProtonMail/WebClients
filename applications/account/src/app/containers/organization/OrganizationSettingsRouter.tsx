@@ -17,13 +17,13 @@ import {
     OrganizationTwoFAHeader,
     OrganizationTwoFARemindersSection,
     PrivateMainSettingsArea,
+    PrivateMainSettingsAreaBase,
     SsoPage,
     SubscriptionModalProvider,
     UsersAndAddressesSection,
     VPNEvents,
     useOrganization,
 } from '@proton/components';
-import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 

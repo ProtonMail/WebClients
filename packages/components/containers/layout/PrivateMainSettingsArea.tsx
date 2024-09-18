@@ -15,7 +15,7 @@ import type { SettingsAreaConfig } from './interface';
 
 interface PrivateMainSettingsAreaBaseProps {
     breadcrumbs?: ReactNode;
-    title: string;
+    title?: string;
     noTitle?: boolean;
     description?: ReactNode;
     children?: ReactNode;

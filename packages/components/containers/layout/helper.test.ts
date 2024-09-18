@@ -1,5 +1,5 @@
-import type { SectionConfig, SubSectionConfig } from '.';
 import { getIsSectionAvailable, getIsSubsectionAvailable } from './helper';
+import type { SectionConfig, SubSectionConfig } from './interface';
 
 describe('getIsSubsectionAvailable', () => {
     it('returns true when `available` is undefined', () => {
