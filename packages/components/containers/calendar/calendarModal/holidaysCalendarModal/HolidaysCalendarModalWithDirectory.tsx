@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import ColorPicker from '@proton/components/components/input/ColorPicker';
 import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import { useLoading } from '@proton/hooks';
@@ -38,7 +39,6 @@ import uniqueBy from '@proton/utils/uniqueBy';
 
 import type { ModalProps } from '../../../../components';
 import {
-    ColorPicker,
     InputFieldTwo as InputField,
     ModalTwo,
     ModalTwoContent,

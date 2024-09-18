@@ -1,4 +1,6 @@
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import IntegerInput from '@proton/components/components/input/IntegerInput';
+import TimeInput from '@proton/components/components/input/TimeInput';
 import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
 import {
     NOTIFICATION_INPUT_ID,
@@ -8,7 +10,7 @@ import {
 import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import clsx from '@proton/utils/clsx';
 
-import { IntegerInput, Option, SelectTwo, TimeInput } from '../../../../components';
+import { Option, SelectTwo } from '../../../../components';
 import {
     getDaysBefore,
     getHoursBefore,

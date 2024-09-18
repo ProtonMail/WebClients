@@ -4,15 +4,7 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
-import {
-    ColorPicker,
-    Label,
-    type ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '@proton/components';
+import { Label, type ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import {
     type AddressesAutocompleteItem,
     getContactsAutocompleteItems,
@@ -21,6 +13,7 @@ import Alert from '@proton/components/components/alert/Alert';
 import Autocomplete from '@proton/components/components/autocomplete/Autocomplete';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
+import ColorPicker from '@proton/components/components/input/ColorPicker';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';

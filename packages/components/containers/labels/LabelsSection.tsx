@@ -4,6 +4,7 @@ import { arrayMove } from 'react-sortable-hoc';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useDebounceInput from '@proton/components/components/input/useDebounceInput';
 import Loader from '@proton/components/components/loader/Loader';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import LabelsUpsellModal from '@proton/components/components/upsell/modal/types/LabelsUpsellModal';
@@ -14,7 +15,7 @@ import { hasReachedLabelLimit } from '@proton/shared/lib/helpers/folder';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Label } from '@proton/shared/lib/interfaces';
 
-import { useDebounceInput, useModalState } from '../../components';
+import { useModalState } from '../../components';
 import { useApi, useEventManager, useLabels, useNotifications, useUser } from '../../hooks';
 import { SettingsSection } from '../account';
 import LabelSortableList from './LabelSortableList';

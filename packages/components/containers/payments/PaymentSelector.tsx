@@ -2,12 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import Input from '@proton/components/components/input/Input';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type PaymentMethodStatusExtended } from '@proton/payments';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
-import { Input, Label } from '../../components';
+import { Label } from '../../components';
 import { useSubscription, useUser } from '../../hooks';
 import AmountButton from './AmountButton';
 import CurrencySelector from './CurrencySelector';

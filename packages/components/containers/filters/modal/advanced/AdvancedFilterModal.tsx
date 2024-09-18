@@ -5,19 +5,13 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import useDebounceInput from '@proton/components/components/input/useDebounceInput';
 import { useLoading } from '@proton/hooks';
 import { addTreeFilter, checkSieveFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import type { ModalProps } from '../../../../components';
-import {
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useDebounceInput,
-    useModalState,
-} from '../../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '../../../../components';
 import { useApi, useEventManager, useFilters, useNotifications } from '../../../../hooks';
 import { FILTER_VERSION } from '../../constants';
 import type { AdvancedSimpleFilterModalModel, CreateFilter, ErrorsSieve, Filter } from '../../interfaces';
