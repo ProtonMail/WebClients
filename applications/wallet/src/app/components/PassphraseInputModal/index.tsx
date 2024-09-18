@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { WasmWallet } from '@proton/andromeda';
-import { PasswordInputTwo } from '@proton/components';
+import { type ModalStateProps, PasswordInputTwo } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { type IWasmApiWalletData, encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
 import { setWalletPassphrase, useWalletDispatch } from '@proton/wallet/store';
@@ -15,14 +15,10 @@ import { isUndefined } from '../../utils';
 
 interface Props {
     wallet: IWasmApiWalletData;
-    isOpen: boolean;
-    onClose: () => void;
-    onConfirmPassphrase: (walletPassphrase: string) => void;
 }
 
-export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphrase }: Props) => {
+export const PassphraseInputModal = ({ wallet, ...modalProps }: Props & ModalStateProps) => {
     const dispatch = useWalletDispatch();
-
     const { network } = useBitcoinBlockchainContext();
     const [passphrase, setPassphrase] = useState('');
     const [loading, withLoading] = useLoading();
@@ -56,16 +52,15 @@ export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphr
             localStorage.setItem(getPassphraseLocalStorageKey(wallet.Wallet.Fingerprint), encryptedPassphrase);
         }
 
-        onConfirmPassphrase(passphrase);
+        modalProps.onClose();
     };
 
     return (
         <Modal
             className="p-0"
-            open={isOpen}
-            onClose={onClose}
             title={wallet.Wallet.Name}
-            subline={c('Wallet passphrase').t`To access this wallet, you need to input the passphrase`}
+            subline={c('Wallet passphrase').t`To use this wallet, you need to input the passphrase`}
+            {...modalProps}
         >
             <div className="flex flex-column">
                 <div className="flex flex-row mb-5">
@@ -77,6 +72,7 @@ export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphr
                         placeholder={c('Wallet passphrase').t`My wallet passphrase`}
                         value={passphrase}
                         error={error}
+                        disbaled={loading}
                         onChange={(event: ChangeEvent<HTMLInputElement>): void => {
                             setPassphrase(event.target.value);
                         }}

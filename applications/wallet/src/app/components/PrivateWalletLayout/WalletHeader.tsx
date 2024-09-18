@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -15,6 +15,8 @@ import {
 
 import { CoreButton } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
+import { useWalletPassphrase } from '../../hooks/useWalletPassphrase';
+import { PassphraseInputModal } from '../PassphraseInputModal';
 
 interface Props {
     isHeaderExpanded: boolean;
@@ -33,8 +35,9 @@ const WalletHeader = ({
     const isSmallViewport = viewportWidth['<=small'];
 
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
+    const [passphraseInputModal, setPassphraseInputModal, renderPassphraseInputModal] = useModalState();
 
-    const { apiWalletsData, walletsChainData } = useBitcoinBlockchainContext();
+    const { apiWalletsData } = useBitcoinBlockchainContext();
 
     const { walletId } = useParams<{ walletId?: string }>();
     const wallet = useMemo(
@@ -42,11 +45,11 @@ const WalletHeader = ({
         [walletId, apiWalletsData]
     );
 
-    const needPassphrase = Boolean(wallet?.Wallet.HasPassphrase && !wallet?.Wallet.Passphrase);
-    const wrongFingerprint =
-        needPassphrase &&
-        wallet?.Wallet.ID &&
-        wallet?.Wallet.Fingerprint !== walletsChainData[wallet.Wallet.ID]?.wallet.getFingerprint();
+    const { needPassphrase, wrongFingerprint } = useWalletPassphrase(wallet);
+
+    useEffect(() => {
+        setPassphraseInputModal(needPassphrase);
+    }, [setPassphraseInputModal, needPassphrase]);
 
     return (
         <>
@@ -81,13 +84,24 @@ const WalletHeader = ({
                             );
                         }
 
-                        if (wrongFingerprint) {
+                        if (needPassphrase || wrongFingerprint) {
                             return (
                                 <TopBanner className="h-full bg-primary color-invert">
                                     <div className="w-full h-full flex flex-row justify-center items-center">
                                         <Icon name="exclamation-circle" className="mr-2" size={4} />
-                                        <span className="block text-semibold">{c('Wallet header')
-                                            .t`The current fingerprint doesn't match stored one`}</span>
+                                        <span className="block text-semibold mr-1">
+                                            {needPassphrase
+                                                ? c('Wallet header').t`This wallet needs a passphrase to be used.`
+                                                : c('Wallet header')
+                                                      .t`The current fingerprint doesn't match stored one.`}
+                                        </span>
+
+                                        <CoreButton
+                                            shape="underline"
+                                            onClick={() => {
+                                                setPassphraseInputModal(true);
+                                            }}
+                                        >{c('Action').t`Input passphrase`}</CoreButton>
                                     </div>
                                 </TopBanner>
                             );
@@ -97,6 +111,8 @@ const WalletHeader = ({
                     })()}
                 </div>
             </Header>
+
+            {renderPassphraseInputModal && wallet && <PassphraseInputModal wallet={wallet} {...passphraseInputModal} />}
 
             {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} />}
         </>

@@ -171,7 +171,7 @@ export const TransactionReview = ({
                                                 >
                                                     <div className="mb-1">
                                                         {exchangeRate && (
-                                                            <Price satsAmount={Number(amount)} unit={exchangeRate} />
+                                                            <Price amount={Number(amount)} unit={exchangeRate} />
                                                         )}
                                                     </div>
 
@@ -279,7 +279,7 @@ export const TransactionReview = ({
                             {hasFeeEstimations ? (
                                 <>
                                     <div className="mb-1">
-                                        {exchangeRate && <Price satsAmount={totalFees} unit={exchangeRate} />}
+                                        {exchangeRate && <Price amount={totalFees} unit={exchangeRate} />}
                                     </div>
                                     <span className="block color-hint">
                                         {secondaryAmount({
@@ -336,9 +336,7 @@ export const TransactionReview = ({
                         </div>
 
                         <div className="mb-1">
-                            {exchangeRate && (
-                                <Price satsAmount={hasFeeEstimations ? totalAmount : 0} unit={exchangeRate} />
-                            )}
+                            {exchangeRate && <Price amount={hasFeeEstimations ? totalAmount : 0} unit={exchangeRate} />}
                         </div>
 
                         <span className="block color-hint">
