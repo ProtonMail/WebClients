@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import Info from '@proton/components/components/link/Info';
 import RegisterSecurityKeyContent from '@proton/components/containers/account/fido/RegisterSecurityKeyContent';
 import { useLoading } from '@proton/hooks';
@@ -19,7 +20,6 @@ import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physi
 
 import type { ModalProps } from '../../../components';
 import {
-    Checkbox,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

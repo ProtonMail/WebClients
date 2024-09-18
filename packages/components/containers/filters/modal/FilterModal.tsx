@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import Form from '@proton/components/components/form/Form';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import Loader from '@proton/components/components/loader/Loader';
 import { useLoading } from '@proton/hooks';
 import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/api/filters';
@@ -12,14 +13,7 @@ import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 import generateUID from '@proton/utils/generateUID';
 
 import type { ModalProps } from '../../../components';
-import {
-    Checkbox,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useModalState,
-} from '../../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '../../../components';
 import { useApi, useEventManager, useFilters, useFolders, useLabels, useNotifications } from '../../../hooks';
 import { getDefaultFolders, noFolderValue } from '../constants';
 import type {

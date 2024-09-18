@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { Checkbox } from '@proton/components/components/input';
+import { Checkbox } from '@proton/components';
 import { type Tab, Tabs } from '@proton/components/components/tabs/Tabs';
 
 import bulbasaur from '../../assets/bulbasaur.png';
