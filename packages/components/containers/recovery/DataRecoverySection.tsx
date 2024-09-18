@@ -35,7 +35,8 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
-import { DisableMnemonicModal, GenerateMnemonicModal } from '../mnemonic';
+import DisableMnemonicModal from '../mnemonic/DisableMnemonicModal';
+import GenerateMnemonicModal from '../mnemonic/GenerateMnemonicModal';
 import ExportRecoveryFileButton from './ExportRecoveryFileButton';
 import VoidRecoveryFilesModal from './VoidRecoveryFilesModal';
 
