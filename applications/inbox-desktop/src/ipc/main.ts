@@ -8,7 +8,7 @@ import { getTheme, isEqualTheme, setTheme } from "../utils/themes";
 import { reloadHiddenViews, resetHiddenViews, showEndOfTrial, showView } from "../utils/view/viewManagement";
 import { DESKTOP_FEATURES } from "./ipcConstants";
 import { handleIPCBadge, resetBadge, showNotification } from "./notification";
-import { clearInstallSource, getInstallSource } from "../store/installSourceStore";
+import { setInstallSourceReported, getInstallSource } from "../store/installInfoStore";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
@@ -30,7 +30,7 @@ export const handleIPCCalls = () => {
             case "installSource": {
                 const installSource = getInstallSource();
                 event.returnValue = installSource;
-                clearInstallSource();
+                setInstallSourceReported();
                 break;
             }
             default:
