@@ -43,16 +43,16 @@ class ProtonIconsTreeShakePlugin {
 
     /**
      * Removes unused icon definitions from the content
-     * @param {string} content File content
+     * @param {string} source File content
      * @param {Set<string>} unused Set of unused icon names
      * @returns {string} Updated content with unused icons removed
      */
-    removeUnusedIcons(content, unused) {
+    removeUnusedIcons(source, unused) {
         unused.forEach((icon) => {
             const regex = new RegExp(`<g id="(ic|mime-(sm|md|lg))-${icon}"[\\s\\S]*?<\/g>`, 'g');
-            content = content.replace(regex, '');
+            source = source.replace(regex, '');
         });
-        return content;
+        return source;
     }
 
     /**
@@ -61,28 +61,28 @@ class ProtonIconsTreeShakePlugin {
      * @param {Object} assets Compilation assets
      * @param {string} filename Name of the file to process
      */
-    processFile(compilation, assets, filename) {
+    processFile(compilation, filename) {
         const asset = compilation.getAsset(filename);
-        const source = asset.source;
-        const content = source.source();
-        const originalLength = content.length;
+        const { source, map } = asset.source.sourceAndMap();
+        const originalLength = source.length;
 
         const unused = new Set([...this.mimeIcons, ...this.spriteIcons]);
-        unused.forEach((icon) => content.includes(`"${icon}"`) && unused.delete(icon));
+
+        /* Identify used icons (may have false positives) via direct string match */
+        unused.forEach((icon) => source.includes(`"${icon}"`) && unused.delete(icon));
         if (this.excludeMimeIcons) this.mimeIcons.forEach((icon) => unused.add(icon));
 
         console.info(`[ProtonIconsTreeShake] Found ${unused.size} unused icons in ${filename}`);
 
         if (unused.size > 0) {
-            const newContent = this.removeUnusedIcons(content, unused);
+            const nextSource = this.removeUnusedIcons(source, unused);
 
-            if (newContent.length !== originalLength) {
-                const savedChars = originalLength - newContent.length;
+            if (nextSource.length !== originalLength) {
+                const savedChars = originalLength - nextSource.length;
                 const savedKB = (savedChars / 1024).toFixed(2);
                 console.info(`[ProtonIconsTreeShake] Reduced ${filename} size by ${savedKB}KB`);
 
-                const newSource = new webpack.sources.ReplaceSource(source);
-                newSource.replace(0, content.length - 1, newContent);
+                const newSource = new webpack.sources.SourceMapSource(nextSource, filename, map, source, map, true);
                 compilation.updateAsset(filename, newSource);
             }
         }
@@ -102,7 +102,7 @@ class ProtonIconsTreeShakePlugin {
                 (assets) => {
                     Object.keys(assets).forEach((filename) => {
                         if (this.entries.some((entry) => filename.endsWith(`${entry}.js`))) {
-                            this.processFile(compilation, assets, filename);
+                            this.processFile(compilation, filename);
                         }
                     });
                 }
