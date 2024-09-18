@@ -5,11 +5,11 @@ import {
     createSlice,
     miniSerializeError,
 } from '@reduxjs/toolkit';
-import type { ThunkAction } from 'redux-thunk';
+import type { ThunkAction, ThunkDispatch } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
-    CacheType,
+    type CacheType,
     cacheHelper,
     createPromiseMapStore,
     defaultLongExpiry,
@@ -117,6 +117,19 @@ export const addressKeysThunk = ({
         };
         return cacheHelper({ store: promiseStore, key: addressID, select, cb, cache, expiry: defaultLongExpiry });
     };
+};
+
+export const dispatchGetAllAddressesKeys = async (
+    dispatch: ThunkDispatch<AddressKeysState, ProtonThunkArguments, UnknownAction>
+) => {
+    const addresses = await dispatch(addressesThunk());
+    const keys = await Promise.all(
+        addresses.map((address) => {
+            return dispatch(addressKeysThunk({ addressID: address.ID }));
+        })
+    );
+
+    return keys.flat();
 };
 
 export const addressKeysReducer = { [name]: slice.reducer };
