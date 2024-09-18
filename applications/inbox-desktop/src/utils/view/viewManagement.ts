@@ -73,6 +73,12 @@ export const viewCreationAppStartup = (session: Session) => {
     mainWindow.on("maximize", updateViewsBounds);
     mainWindow.on("unmaximize", updateViewsBounds);
 
+    // We need to delay the update until the next tick, otherwise
+    // mainWindow.isFullScreen() value is not correctly updated.
+    const debouncedUpdateViewsBounds = debounce(() => updateViewsBounds(), 0);
+    mainWindow.on("enter-full-screen", debouncedUpdateViewsBounds);
+    mainWindow.on("leave-full-screen", debouncedUpdateViewsBounds);
+
     mainWindow.on("close", (event) => {
         // We don't want to prevent the close event if the update is downloaded
         if (updateDownloaded) {
