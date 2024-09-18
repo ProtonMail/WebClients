@@ -9,7 +9,7 @@ export interface StripedListProps {
     className?: string;
 }
 
-const StripedList = ({ children, alternate = 'even', className }: StripedListProps) => (
+export const StripedList = ({ children, alternate = 'even', className }: StripedListProps) => (
     <ul className={clsx(alternate === 'even' ? 'even:bg-weak' : 'odd:bg-weak', 'unstyled', className)}>
         {Children.map(children, (child) => {
             if (isValidElement(child)) {
@@ -19,5 +19,3 @@ const StripedList = ({ children, alternate = 'even', className }: StripedListPro
         })}
     </ul>
 );
-
-export default StripedList;
