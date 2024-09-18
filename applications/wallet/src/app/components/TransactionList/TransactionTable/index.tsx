@@ -1,14 +1,14 @@
 import compact from 'lodash/compact';
+import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
 import type { WasmSortOrder, WasmTransactionDetails } from '@proton/andromeda';
 import arrowsExchange from '@proton/styles/assets/img/illustrations/arrows-exchange.svg';
 import clsx from '@proton/utils/clsx';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { DecryptedTransactionData, IWasmApiWalletData } from '@proton/wallet';
 
 import { Button, SimplePaginator } from '../../../atoms';
 import { useResponsiveContainerContext } from '../../../contexts/ResponsiveContainerContext';
-import type { DecryptedTransactionData } from '../../../hooks/useWalletTransactions';
 import { type DataColumn, DataList } from '../../DataList';
 import { TransactionNoteModal } from '../../TransactionNoteModal';
 import { UnknownSenderModal } from '../../UnknownSenderModal';
@@ -42,14 +42,13 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
         handleNext,
         handlePrev,
 
-        loadingRecordInit,
-        loadingApiData,
-        transactionDetails,
+        apiWalletTransactionData,
+        networkTransactionByHashedTxId,
+        loadingApiWalletTransactionData,
 
         noteModalState,
         unknownSenderModal,
         openNoteModal,
-        handleTxUpdate,
         handleClickRow,
     } = useTransactionTable({
         wallet,
@@ -57,7 +56,7 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
         sortOrder,
     });
 
-    if (transactionDetails?.length) {
+    if (!isEmpty(networkTransactionByHashedTxId)) {
         const columns: DataColumn<{
             key: string;
             networkData: WasmTransactionDetails;
@@ -66,12 +65,12 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
             {
                 id: 'confirmation',
                 colSpan: 'minmax(10rem, 2fr)',
-                data: (row) => <ConfirmationTimeDataListItem loading={loadingRecordInit} tx={row} />,
+                data: (row) => <ConfirmationTimeDataListItem loading={loadingApiWalletTransactionData} tx={row} />,
             },
             {
                 id: 'senderorrecipients',
                 colSpan: '3fr',
-                data: (row) => <SenderOrRecipientDataListItem loading={loadingApiData} tx={row} />,
+                data: (row) => <SenderOrRecipientDataListItem loading={loadingApiWalletTransactionData} tx={row} />,
             },
             !isNarrow
                 ? {
@@ -79,7 +78,7 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
                       colSpan: '1fr',
                       data: (row) => (
                           <NoteDataListItem
-                              loading={loadingApiData}
+                              loading={loadingApiWalletTransactionData}
                               tx={row}
                               onClick={() => {
                                   openNoteModal(row);
@@ -93,8 +92,7 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
                 colSpan: 'minmax(7rem, 1fr)',
                 data: (row) => (
                     <AmountDataListItem
-                        loadingLabel={loadingApiData}
-                        loading={loadingRecordInit}
+                        loadingLabel={loadingApiWalletTransactionData}
                         tx={row}
                         exchangeRate={row.apiData?.ExchangeRate ?? undefined}
                     />
@@ -114,9 +112,10 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
                         <DataList
                             onClickRow={(tx) => handleClickRow(tx)}
                             canClickRow={(tx) => !!tx}
-                            rows={transactionDetails.map((tx) => ({
-                                ...tx,
-                                key: `${tx.networkData.txid}-${tx.networkData.received}-${tx.networkData.sent}`,
+                            rows={Object.keys(networkTransactionByHashedTxId).map((hashedTxId) => ({
+                                networkData: networkTransactionByHashedTxId[hashedTxId] as WasmTransactionDetails,
+                                apiData: apiWalletTransactionData?.[hashedTxId] ?? null,
+                                key: hashedTxId,
                             }))}
                             columns={columns}
                         />
@@ -132,7 +131,7 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
                                 onNext={handleNext}
                                 canGoNext={canGoNext}
                                 onPrev={handlePrev}
-                                disabled={loadingApiData || (isSyncingWalletData ?? false)}
+                                disabled={loadingApiWalletTransactionData || (isSyncingWalletData ?? false)}
                             />
                         </>
                     </div>
@@ -141,7 +140,7 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
         );
     }
 
-    if (isSyncingWalletData || !transactionDetails) {
+    if (isSyncingWalletData || !apiWalletTransactionData) {
         const dummyLoadingColumns: DataColumn<null>[] = compact([
             {
                 id: 'confirmation',
@@ -216,14 +215,10 @@ export const TransactionTable = ({ wallet, walletAccountId, sortOrder, onClickRe
                 </div>
             </div>
 
-            <TransactionNoteModal apiWalletData={wallet} onUpdate={handleTxUpdate} {...noteModalState} />
+            <TransactionNoteModal apiWalletData={wallet} {...noteModalState} />
 
             {unknownSenderModal.data && (
-                <UnknownSenderModal
-                    walletTransaction={unknownSenderModal.data.transaction}
-                    onUpdate={handleTxUpdate}
-                    {...unknownSenderModal}
-                />
+                <UnknownSenderModal walletTransaction={unknownSenderModal.data.transaction} {...unknownSenderModal} />
             )}
         </>
     );

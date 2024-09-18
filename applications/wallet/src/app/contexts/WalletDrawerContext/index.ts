@@ -3,9 +3,8 @@ import { createContext, useContext } from 'react';
 import noop from 'lodash/noop';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData, TransactionData } from '@proton/wallet';
 
-import type { TransactionData } from '../../hooks/useWalletTransactions';
 import type { SubTheme } from '../../utils';
 
 export interface WalletTransactionDrawerData {

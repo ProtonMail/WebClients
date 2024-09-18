@@ -1,23 +1,18 @@
-import type { WasmApiWalletTransaction, WasmTransactionDetails } from '@proton/andromeda';
+import type { WasmApiClients, WasmApiWalletTransaction, WasmTransactionDetails } from '@proton/andromeda';
 import type { PrivateKeyReference } from '@proton/crypto';
+import { SECOND } from '@proton/shared/lib/constants';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
-import { decryptTextData, decryptWalletData } from './crypto';
-
-export type DecryptedTransactionData = Omit<WasmApiWalletTransaction, 'ToList' | 'TransactionID' | 'Sender'> & {
-    Sender: SenderObject | string | null;
-    ToList: Partial<Record<string, string>>;
-    TransactionID: string | null;
-};
-
-export interface SenderObject {
-    name?: string;
-    email?: string;
-}
-
-export interface TransactionData {
-    networkData: WasmTransactionDetails;
-    apiData: DecryptedTransactionData | null;
-}
+import type {
+    AccountIdByDerivationPathAndWalletId,
+    DecryptedTransactionData,
+    NetworkTransactionByHashedTxId,
+    SenderObject,
+} from '../types';
+import { removeMasterPrefix } from './account';
+import { decryptTextData, decryptWalletData, encryptPgp, hmac } from './crypto';
 
 const parsedRecipientList = (toList: string | null): Partial<Record<string, string>> => {
     try {
@@ -84,4 +79,221 @@ export const decryptTransactionData = async (
         Body,
         ToList,
     };
+};
+
+export const buildNetworkTransactionByHashedTxId = async (
+    transactions: WasmTransactionDetails[],
+    hmacKey: CryptoKey
+): Promise<NetworkTransactionByHashedTxId> => {
+    return transactions.reduce((prevPromise, transaction) => {
+        return prevPromise.then(async (acc) => {
+            try {
+                const hashedTxIdBuffer = await hmac(hmacKey, transaction.txid);
+                const key = uint8ArrayToBase64String(new Uint8Array(hashedTxIdBuffer));
+
+                return {
+                    ...acc,
+                    [key]: {
+                        HashedTransactionID: key,
+                        ...transaction,
+                    },
+                };
+            } catch {
+                return acc;
+            }
+        });
+    }, Promise.resolve({}));
+};
+
+/**
+ * Fetches transactions from the API, decrypts the transaction data, and returns the decrypted transactions.
+ *
+ */
+export const fetchApiTransactions = async ({
+    api,
+    hashedTxids,
+    walletId,
+    walletKey,
+    userPrivateKeys,
+    addressesPrivateKeys,
+}: {
+    api: WasmApiClients;
+    hashedTxids: string[] | undefined;
+    walletId: string;
+    walletKey: CryptoKey;
+    userPrivateKeys: PrivateKeyReference[];
+    addressesPrivateKeys: PrivateKeyReference[];
+}) => {
+    const transactionsApiData = await api.wallet
+        .getWalletTransactions(walletId, undefined, hashedTxids)
+        .then((data) => data[0]);
+
+    const fetched: DecryptedTransactionData[] = [];
+
+    // populate txData with api data
+    for (const { Data: transactionApiData } of transactionsApiData) {
+        const { HashedTransactionID } = transactionApiData;
+
+        if (HashedTransactionID) {
+            const decryptedTransactionData = await decryptTransactionData(
+                transactionApiData,
+                walletKey,
+                userPrivateKeys,
+                addressesPrivateKeys
+            );
+
+            fetched.push(decryptedTransactionData);
+        }
+    }
+
+    return fetched;
+};
+
+/**
+ * Encrypts the transaction data, creates new transactions in the API and then returns
+ * the created transactions.
+ */
+export const createApiTransactions = async ({
+    api,
+    walletId,
+    walletKey,
+    accountIDByDerivationPathByWalletID,
+    transactionsWithoutApiData,
+    userKeys,
+    checkShouldAbort,
+}: {
+    api: WasmApiClients;
+    walletId: string;
+    walletKey: CryptoKey;
+    accountIDByDerivationPathByWalletID: AccountIdByDerivationPathAndWalletId;
+    transactionsWithoutApiData: (WasmTransactionDetails & { HashedTransactionID: string })[];
+    userKeys: DecryptedKey[];
+    checkShouldAbort: () => boolean;
+}) => {
+    const created: DecryptedTransactionData[] = [];
+    const [primaryUserKeys] = userKeys;
+
+    for (const transaction of transactionsWithoutApiData) {
+        if (checkShouldAbort()) {
+            break;
+        }
+
+        try {
+            const normalisedDerivationPath = removeMasterPrefix(transaction.account_derivation_path);
+            const accountId = accountIDByDerivationPathByWalletID[walletId]?.[normalisedDerivationPath];
+
+            if (!accountId) {
+                continue;
+            }
+
+            const txid = await encryptPgp(transaction.txid, [primaryUserKeys.publicKey]);
+
+            // TODO: this can only occur on encryption error: we need to better handle that
+            if (!txid) {
+                continue;
+            }
+
+            const { Data: createdTransaction } = await api.wallet.createWalletTransaction(walletId, accountId, {
+                txid,
+                hashed_txid: transaction.HashedTransactionID,
+                transaction_time: transaction.time?.confirmation_time
+                    ? transaction.time?.confirmation_time.toString()
+                    : Math.floor(Date.now() / SECOND).toString(),
+                label: null,
+                exchange_rate_id: null,
+            });
+
+            const decryptedTransactionData = await decryptTransactionData(
+                createdTransaction,
+                walletKey,
+                userKeys.map((k) => k.privateKey)
+            );
+
+            created.push(decryptedTransactionData);
+        } catch (error) {
+            console.error('Could not create missing tx data', error);
+        }
+    }
+
+    return created;
+};
+
+const getWalletTransactionsToHash = async (api: WasmApiClients, walletId: string) => {
+    try {
+        const walletTransactionsToHash = await api.wallet.getWalletTransactionsToHash(walletId);
+        return walletTransactionsToHash[0];
+    } catch {
+        return [];
+    }
+};
+
+/**
+ * This function hashes API transactions by first decrypting the transaction data,
+ * then hashing the transaction ID, and finally updating the transaction with the hashed ID.
+ */
+export const hashApiTransactions = async ({
+    api,
+    walletId,
+    walletKey,
+    hmacKey,
+    userPrivateKeys,
+    addressesPrivateKeys,
+    checkShouldAbort,
+}: {
+    api: WasmApiClients;
+    walletId: string;
+    walletKey: CryptoKey;
+    hmacKey: CryptoKey;
+    userPrivateKeys: PrivateKeyReference[];
+    addressesPrivateKeys: PrivateKeyReference[];
+    checkShouldAbort: () => boolean;
+}) => {
+    const hashed: DecryptedTransactionData[] = [];
+
+    // TODO: check pagination
+    const walletTransactionsToHash = await getWalletTransactionsToHash(api, walletId);
+
+    for (const walletTransactionToHash of walletTransactionsToHash) {
+        if (checkShouldAbort()) {
+            break;
+        }
+
+        try {
+            // Decrypt txid
+            const decryptedTransactionData = await decryptTransactionData(
+                walletTransactionToHash.Data,
+                walletKey,
+                userPrivateKeys,
+                addressesPrivateKeys
+            );
+
+            // TODO: this can only occur if decryption fails. We need to better handle that
+            if (!decryptedTransactionData.TransactionID || !walletTransactionToHash.Data.WalletAccountID) {
+                continue;
+            }
+
+            // Then hash it
+            const hashedTxIdBuffer = await hmac(hmacKey, decryptedTransactionData.TransactionID);
+            const hashedTransactionID = uint8ArrayToBase64String(new Uint8Array(hashedTxIdBuffer));
+
+            await api.wallet
+                .updateWalletTransactionHashedTxId(
+                    walletId,
+                    walletTransactionToHash.Data.WalletAccountID,
+                    walletTransactionToHash.Data.ID,
+                    hashedTransactionID
+                )
+                .catch(noop);
+
+            hashed.push({
+                ...decryptedTransactionData,
+                HashedTransactionID: hashedTransactionID,
+            });
+        } catch (e) {
+            // TODO: do something to avoid creating wallet transaction when error occurs here
+            console.error('An error occured during transactin decryption, we will create a new transaction', e);
+        }
+    }
+
+    return hashed;
 };
