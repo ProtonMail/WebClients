@@ -134,25 +134,28 @@ export { VPNEvents } from './containers/b2bDashboard/VPN/VPNEvents';
 export { PromotionBanner } from './containers/banner/PromotionBanner';
 export { ProtonMailBridgeSection } from './containers/bridge/ProtonMailBridgeSection';
 export { CacheProvider } from './containers/cache/Provider';
+export { default as GmailSyncModal } from './containers/gmailSyncModal/GmailSyncModal';
+export { default as GmailSyncModalAnimation } from './containers/gmailSyncModal/GmailSyncModalAnimation';
+export { default as SignInWithGoogle } from './containers/gmailSyncModal/SignInWithGoogle';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
-export { SessionRecoverySection } from './containers/recovery/SessionRecoverySection';
-export { OverviewSection } from './containers/recovery/OverviewSection';
 export { getOverallStatus } from './containers/recovery/getOverallStatus';
+export { OverviewSection } from './containers/recovery/OverviewSection';
+export { SessionRecoverySection } from './containers/recovery/SessionRecoverySection';
 export { InviteSection } from './containers/referral/invite/InviteSection';
-export { RewardSection } from './containers/referral/rewards/RewardSection';
+export { getShouldOpenReferralModal } from './containers/referral/modals/helper';
 export { ReferralModal } from './containers/referral/modals/ReferralModal';
-export { ReferralSpotlight } from './containers/referral/ReferralSpotlight';
 export { ReferralFeaturesList } from './containers/referral/ReferralFeaturesList';
 export { ReferralHowItWorks } from './containers/referral/ReferralHowItWorks';
 export {
     ReferralInvitesContextProvider,
     useReferralInvitesContext,
 } from './containers/referral/ReferralInvitesContext';
-export { getShouldOpenReferralModal } from './containers/referral/modals/helper';
-export { useRightToLeft } from './containers/rightToLeft/useRightToLeft';
+export { ReferralSpotlight } from './containers/referral/ReferralSpotlight';
+export { RewardSection } from './containers/referral/rewards/RewardSection';
 export { RightToLeftProvider } from './containers/rightToLeft/Provider';
-export { ExternalPGPSettingsSection } from './containers/security/ExternalPGPSettingsSection';
+export { useRightToLeft } from './containers/rightToLeft/useRightToLeft';
 export { AddressVerificationSection } from './containers/security/AddressVerificationSection';
+export { ExternalPGPSettingsSection } from './containers/security/ExternalPGPSettingsSection';
 export { PGPSchemeSelect } from './containers/security/PGPSchemeSelect';
 export { SentinelSection } from './containers/sentinel/SentinelSection';
