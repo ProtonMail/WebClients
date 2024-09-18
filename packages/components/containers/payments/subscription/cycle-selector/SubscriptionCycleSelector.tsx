@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import Price from '@proton/components/components/price/Price';
 import { SelectedPlan } from '@proton/payments';
 import type { CYCLE } from '@proton/shared/lib/constants';
 import { type ADDON_NAMES } from '@proton/shared/lib/constants';
@@ -10,7 +11,7 @@ import { type PricingMode, type TotalPricings, getTotals } from '@proton/shared/
 import type { Currency, PlanIDs, PlansMap, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Option, Price, Radio, SelectTwo } from '../../../../components';
+import { Option, Radio, SelectTwo } from '../../../../components';
 import InputField from '../../../../components/v2/field/InputField';
 import { getShortBillingText } from '../../helper';
 import { getDiscountPrice } from '../helpers';

@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { Info, Toggle } from '@proton/components/components';
+import Info from '@proton/components/components/link/Info';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { PassLockSelector } from '@proton/components/containers/pass/PassLockSelector';
 import { useErrorHandler } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';

@@ -3,11 +3,12 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
+import Price from '@proton/components/components/price/Price';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Currency, Cycle } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Price, PrimaryButton } from '../../../components';
+import { PrimaryButton } from '../../../components';
 
 interface Base {
     planName: PLANS;

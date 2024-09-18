@@ -3,7 +3,7 @@ import { type FC } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Slider } from '@proton/atoms';
-import { Toggle } from '@proton/components';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 
 type Props = UsePasswordGeneratorResult<'random'> & { advanced: boolean; dense?: boolean };

@@ -2,11 +2,11 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import Toggle from '@proton/components/components/toggle/Toggle';
 import useLoading from '@proton/hooks/useLoading';
 import { updateKT } from '@proton/shared/lib/api/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { Toggle } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
 
 interface Props {

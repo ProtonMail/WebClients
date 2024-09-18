@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Price } from '@proton/components/components';
+import Price from '@proton/components/components/price/Price';
 
 import { getDiscount } from '../../helpers/dealPrices';
 import { getRenewDescription } from '../../helpers/offerCopies';
