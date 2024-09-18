@@ -20,7 +20,7 @@ class ProtonIconsTreeShakePlugin {
         this.entries = options.entries ?? [];
         this.excludeMimeIcons = options.excludeMimeIcons ?? false;
         this.spriteIcons = this.getIconNames('icons/assets/sprite-icons.svg');
-        this.mimeIcons = this.getIconNames('styles/assets/img/icons/file-icons.svg');
+        this.mimeIcons = this.getIconNames('icons/assets/file-icons.svg');
     }
 
     /**
@@ -62,24 +62,28 @@ class ProtonIconsTreeShakePlugin {
      * @param {string} filename Name of the file to process
      */
     processFile(compilation, assets, filename) {
-        let content = assets[filename].source();
+        const asset = compilation.getAsset(filename);
+        const source = asset.source;
+        const content = source.source();
         const originalLength = content.length;
-        const unused = new Set([...this.mimeIcons, ...this.spriteIcons]);
 
-        /* Identify used icons (may have false positives) via direct string match */
+        const unused = new Set([...this.mimeIcons, ...this.spriteIcons]);
         unused.forEach((icon) => content.includes(`"${icon}"`) && unused.delete(icon));
         if (this.excludeMimeIcons) this.mimeIcons.forEach((icon) => unused.add(icon));
 
         console.info(`[ProtonIconsTreeShake] Found ${unused.size} unused icons in ${filename}`);
 
         if (unused.size > 0) {
-            content = this.removeUnusedIcons(content, unused);
+            const newContent = this.removeUnusedIcons(content, unused);
 
-            if (content.length !== originalLength) {
-                compilation.updateAsset(filename, new webpack.sources.RawSource(content));
-                const savedChars = originalLength - content.length;
+            if (newContent.length !== originalLength) {
+                const savedChars = originalLength - newContent.length;
                 const savedKB = (savedChars / 1024).toFixed(2);
                 console.info(`[ProtonIconsTreeShake] Reduced ${filename} size by ${savedKB}KB`);
+
+                const newSource = new webpack.sources.ReplaceSource(source);
+                newSource.replace(0, content.length - 1, newContent);
+                compilation.updateAsset(filename, newSource);
             }
         }
     }
