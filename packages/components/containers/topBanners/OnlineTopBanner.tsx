@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import useDebounceInput from '@proton/components/components/input/useDebounceInput';
 import { ping } from '@proton/shared/lib/api/tests';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useDebounceInput } from '../../components';
 import { useOnline } from '../../hooks';
 import useApi from '../../hooks/useApi';
 import useApiStatus from '../../hooks/useApiStatus';

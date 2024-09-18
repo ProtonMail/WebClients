@@ -4,15 +4,8 @@ import { c } from 'ttag';
 
 import { EASY_SWITCH_SEARCH_SOURCES } from '@proton/activation/src/interface';
 import { Button, Href } from '@proton/atoms';
-import {
-    Alert,
-    AttachedFile,
-    Dropzone,
-    FileInput,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '@proton/components';
+import { Alert, AttachedFile, Dropzone, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import FileInput from '@proton/components/components/input/FileInput';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { APPS } from '@proton/shared/lib/constants';
 import {

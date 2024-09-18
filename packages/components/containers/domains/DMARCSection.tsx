@@ -5,9 +5,10 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Copy from '@proton/components/components/button/Copy';
+import Input from '@proton/components/components/input/Input';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
-import { Input, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
+import { Label, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
 
 const DMARCSection = () => {

@@ -10,10 +10,10 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    RadioGroup,
 } from '@proton/components/components';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import Icon from '@proton/components/components/icon/Icon';
+import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Loader from '@proton/components/components/loader/Loader';
 import InputField from '@proton/components/components/v2/field/InputField';
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';

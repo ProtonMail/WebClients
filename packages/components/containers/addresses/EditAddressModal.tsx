@@ -6,11 +6,12 @@ import { c } from 'ttag';
 import Editor from '@proton/components/components/editor/Editor';
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import type { EditorActions } from '@proton/components/components/editor/interface';
+import Input from '@proton/components/components/input/Input';
 import { useLoading } from '@proton/hooks';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import type { Address } from '@proton/shared/lib/interfaces';
 
-import { FormModal, Input, Label } from '../../components';
+import { FormModal, Label } from '../../components';
 import Field from '../../components/container/Field';
 import Row from '../../components/container/Row';
 import { useApi, useEventManager, useNotifications } from '../../hooks';

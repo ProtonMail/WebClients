@@ -1,12 +1,11 @@
 import type { DetailedHTMLProps, OptionHTMLAttributes, Ref, SelectHTMLAttributes } from 'react';
 import { forwardRef, useState } from 'react';
 
+import Icon from '@proton/components/components/icon/Icon';
+import useInput from '@proton/components/components/input/useInput';
+import ErrorZone from '@proton/components/components/text/ErrorZone';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
-
-import Icon from '../icon/Icon';
-import useInput from '../input/useInput';
-import ErrorZone from '../text/ErrorZone';
 
 export interface OptionProps extends DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement> {
     value: string | number;

@@ -8,6 +8,7 @@ import { selectUnprivatizationState } from '@proton/account/members/unprivatizeM
 import { getDomainError } from '@proton/account/members/validateAddUser';
 import { Avatar, Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import SearchInput from '@proton/components/components/input/SearchInput';
 import Info from '@proton/components/components/link/Info';
 import {
     getInvitationAcceptLimit,
@@ -41,7 +42,7 @@ import {
 } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 
-import { SearchInput, Table, TableBody, TableCell, TableRow, useModalState } from '../../../components';
+import { Table, TableBody, TableCell, TableRow, useModalState } from '../../../components';
 import Tooltip from '../../../components/tooltip/Tooltip';
 import {
     useAddresses,

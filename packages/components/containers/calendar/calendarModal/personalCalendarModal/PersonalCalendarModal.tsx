@@ -5,6 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import ColorPicker from '@proton/components/components/input/ColorPicker';
+import TextArea from '@proton/components/components/input/TextArea';
 import Loader from '@proton/components/components/loader/Loader';
 import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
@@ -18,7 +20,6 @@ import type { Nullable } from '@proton/shared/lib/interfaces';
 import type { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import {
-    ColorPicker,
     InputFieldTwo,
     ModalTwo,
     ModalTwoContent,
@@ -26,7 +27,6 @@ import {
     ModalTwoHeader,
     Option,
     SelectTwo,
-    TextArea,
 } from '../../../../components';
 import type { SelectChangeEvent } from '../../../../components/selectTwo/select';
 import { TruncatedText } from '../../../../components/truncatedText';

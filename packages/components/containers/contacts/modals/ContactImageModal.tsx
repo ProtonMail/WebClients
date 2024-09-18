@@ -5,21 +5,14 @@ import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import FileInput from '@proton/components/components/input/FileInput';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import debounce from '@proton/utils/debounce';
 
 import type { ModalProps } from '../../../components';
-import {
-    ErrorZone,
-    FileInput,
-    Label,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '../../../components';
+import { ErrorZone, Label, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import Field from '../../../components/container/Field';
 import Row from '../../../components/container/Row';
 import { useNotifications } from '../../../hooks';

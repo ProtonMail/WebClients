@@ -5,14 +5,14 @@ import { c } from 'ttag';
 import {
     LabelStack,
     Pagination,
-    SearchInput,
     Table,
     TableBody,
     TableCell,
     TableHeader,
     TableRow,
     useModalState,
-} from '@proton/components/components';
+} from '@proton/components';
+import SearchInput from '@proton/components/components/input/SearchInput';
 import Loader from '@proton/components/components/loader/Loader';
 import { useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';

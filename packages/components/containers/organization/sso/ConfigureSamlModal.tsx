@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import Form from '@proton/components/components/form/Form';
+import RadioGroup from '@proton/components/components/input/RadioGroup';
 import TextArea from '@proton/components/components/v2/input/TextArea';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
@@ -23,7 +24,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    RadioGroup,
     useFormErrors,
 } from '../../../components';
 import type { IdentityProviderEndpointsContentProps } from './IdentityProviderEndpointsContent';
