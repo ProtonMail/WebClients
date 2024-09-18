@@ -25,7 +25,6 @@ export * from './layout';
 export * from './layouts';
 export * from './mobile';
 export * from './modals';
-export * from './notification';
 export * from './notifications';
 export * from './offers';
 export * from './onboarding';
