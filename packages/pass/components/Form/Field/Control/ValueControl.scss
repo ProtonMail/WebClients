@@ -3,6 +3,10 @@
 .pass-value-control {
 	background-color: var(--input-background-color);
 
+	&--standout {
+		background: linear-gradient(180deg, var(--interaction-norm-major-2) -850%, transparent 150%);
+	}
+
 	&--value {
 		min-block-size: rem(20);
 
