@@ -20,7 +20,6 @@ export * from './features';
 export * from './filePreview';
 export * from './filters';
 export * from './general';
-export * from './items';
 export * from './keys';
 export * from './keyTransparency';
 export * from './labels';

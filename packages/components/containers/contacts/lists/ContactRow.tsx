@@ -14,7 +14,7 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import clsx from '@proton/utils/clsx';
 
 import { useNotifications } from '../../../hooks';
-import { ItemCheckbox } from '../../items';
+import ItemCheckbox from '../../items/ItemCheckbox';
 import ContactGroupLabels from '../group/ContactGroupLabels';
 import { ContactRowItemFirstLine, ContactRowItemSecondLine } from './ContactRowItem';
 
