@@ -5,8 +5,631 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Konto"
+      ],
+      "Account settings": [
+        "Ustawienia konta"
+      ],
+      "Add": [
+        "Dodaj"
+      ],
+      "Add current URL": [
+        "Dodaj obecny adres URL"
+      ],
+      "Add domain": [
+        "Dodaj domenę"
+      ],
+      "Add more": [
+        "Dodaj więcej"
+      ],
+      "Add new item": [
+        "Dodaj nowy element"
+      ],
+      "Add section": [
+        "Dodaj sekcję"
+      ],
+      "Add username field": [
+        "Dodaj pole nazwy użytkownika"
+      ],
+      "Advanced": [
+        "Zaawansowane"
+      ],
+      "Advanced options": [
+        "Opcje zaawansowane"
+      ],
+      "Authenticate": [
+        "Uwierzytelnij"
+      ],
+      "Back": [
+        "Wstecz"
+      ],
+      "Bulk delete items from trash": [
+        "Usuń elementy z Kosza"
+      ],
+      "Bulk move items to another vault": [
+        "Przenieś elementy do innego sejfu"
+      ],
+      "Bulk move items to trash": [
+        "Przenieś elementy do Kosza"
+      ],
+      "Bulk restore items from trash": [
+        "Przywróć elementy z Kosza"
+      ],
+      "Bulk select items": [
+        "Zaznacz elementy"
+      ],
+      "Cancel": [
+        "Anuluj"
+      ],
+      "Change": [
+        "Zmień"
+      ],
+      "Choose a file or drag it here": [
+        "Wybierz plik lub przeciągnij go tutaj"
+      ],
+      "Clear": [
+        "Wyczyść"
+      ],
+      "Clear search": [
+        "Wyczyść wyszukiwanie"
+      ],
+      "Close": [
+        "Zamknij"
+      ],
+      "Close advanced options": [
+        "Zamknij opcje zaawansowane"
+      ],
+      "Close navigation": [
+        "Zamknij nawigację"
+      ],
+      "Confirm": [
+        "Potwierdź"
+      ],
+      "Confirm access": [
+        "Potwierdź dostęp"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Połącz konto ${ BRAND_NAME }"
+      ],
+      "Continue": [
+        "Kontynuuj"
+      ],
+      "Continue offline": [
+        "Kontynuuj w trybie offline"
+      ],
+      "Continue without pinning": [
+        "Kontynuuj bez przypinania"
+      ],
+      "Copy & fill in": [
+        "Kopiuj i uzupełnij"
+      ],
+      "Copy and close": [
+        "Kopiuj i zamknij"
+      ],
+      "Copy link": [
+        "Kopiuj link"
+      ],
+      "Copy to clipboard": [
+        "Kopiuj do schowka"
+      ],
+      "Create": [
+        "Utwórz"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Utwórz konto ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Utwórz konto ${ BRAND_NAME }"
+      ],
+      "Create a new vault to share": [
+        "Utwórz nowy sejf do udostępnienia"
+      ],
+      "Create alias": [
+        "Utwórz alias"
+      ],
+      "Create an account": [
+        "Utwórz konto"
+      ],
+      "Create card": [
+        "Utwórz kartę"
+      ],
+      "Create identity": [
+        "Utwórz tożsamość"
+      ],
+      "Create login": [
+        "Utwórz dane logowania"
+      ],
+      "Create new login": [
+        "Utwórz nowe dane logowania"
+      ],
+      "Create note": [
+        "Utwórz notatkę"
+      ],
+      "Create vault": [
+        "Utwórz sejf"
+      ],
+      "Creating vault": [
+        "Tworzenie sejfu"
+      ],
+      "Custom section": [
+        "Niestandardowa sekcja"
+      ],
+      "Customize": [
+        "Dostosuj"
+      ],
+      "Delete": [
+        "Usuń"
+      ],
+      "Delete alias": [
+        "Usuń alias"
+      ],
+      "Delete all": [
+        "Usuń wszystko"
+      ],
+      "Delete password": [
+        "Usuń hasło"
+      ],
+      "Delete permanently": [
+        "Usuń trwale"
+      ],
+      "Delete vault": [
+        "Usuń sejf"
+      ],
+      "Deselect": [
+        "Odznacz"
+      ],
+      "Disable autosave on this website": [
+        "Wyłącz automatyczne zapisywanie na tej stronie"
+      ],
+      "Disable instead": [
+        "Wyłącz"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Wyłącz alias, aby zatrzymać otrzymywanie wiadomości na ten adres"
+      ],
+      "Discard": [
+        "Odrzuć"
+      ],
+      "Dismiss": [
+        "Odrzuć"
+      ],
+      "Do not show on this website": [
+        "Nie pokazuj na tej stronie"
+      ],
+      "Do not suggest on this website": [
+        "Nie sugeruj na tej stronie"
+      ],
+      "Done": [
+        "Gotowe"
+      ],
+      "Download this CSV template": [
+        "Pobierz szablon pliku CSV"
+      ],
+      "Edit": [
+        "Edytuj"
+      ],
+      "Edit vault": [
+        "Edytuj sejf"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Włącz alias, aby otrzymywać wiadomości wysłane na ten adres"
+      ],
+      "Entire vault": [
+        "Cały sejf"
+      ],
+      "Exclude from monitoring": [
+        "Wyklucz z monitoringu"
+      ],
+      "Export": [
+        "Eksportuj"
+      ],
+      "Feedback & Help": [
+        "Opinia i pomoc"
+      ],
+      "Fill password": [
+        "Uzupełnij hasło"
+      ],
+      "Filter vault items": [
+        "Filtruj elementy sejfu"
+      ],
+      "Generate alias": [
+        "Generuj alias"
+      ],
+      "Generate password": [
+        "Generuj hasło"
+      ],
+      "Generate secure link": [
+        "Generuj link"
+      ],
+      "Generated passwords": [
+        "Wygenerowane hasła"
+      ],
+      "Generating secure link...": [
+        "Generowanie linku..."
+      ],
+      "Get mobile apps": [
+        "Pobierz aplikację mobilną"
+      ],
+      "Get Pass Business": [
+        "Wybierz plan Pass Business"
+      ],
+      "Get Pass Plus": [
+        "Wybierz plan Pass Plus"
+      ],
+      "Hide": [
+        "Ukryj"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Jak wyeksportować dane z ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Jak używać ${ PASS_APP_NAME }"
+      ],
+      "Import": [
+        "Importuj"
+      ],
+      "Import your passwords": [
+        "Importuj hasła"
+      ],
+      "Importing": [
+        "Importowanie"
+      ],
+      "Include in monitoring": [
+        "Uwzględnij w monitoringu"
+      ],
+      "Invite others": [
+        "Zaproś użytkowników"
+      ],
+      "Join shared vault": [
+        "Dołącz do udostępnionego sejfu"
+      ],
+      "Learn more": [
+        "Dowiedz się więcej"
+      ],
+      "Leave": [
+        "Opuść"
+      ],
+      "Leave vault": [
+        "Opuść sejf"
+      ],
+      "Link copied to clipboard": [
+        "Link został skopiowany do schowka"
+      ],
+      "Link expires after": [
+        "Link wygaśnie za"
+      ],
+      "Lock extension": [
+        "Zablokuj rozszerzenie"
+      ],
+      "Make admin": [
+        "Administrator"
+      ],
+      "Make editor": [
+        "Edycja"
+      ],
+      "Make viewer": [
+        "Odczyt"
+      ],
+      "Manage access": [
+        "Zarządzaj dostępem"
+      ],
+      "Manage vault access": [
+        "Zarządzaj dostępem do sejfu"
+      ],
+      "Manually sync your data": [
+        "Synchronizuj dane"
+      ],
+      "Maximum views": [
+        "Maksymalna liczba dostępów"
+      ],
+      "More info: ${ safeTitle }": [
+        "Więcej informacji: ${ safeTitle }"
+      ],
+      "More options": [
+        "Więcej opcji"
+      ],
+      "Move": [
+        "Przenieś"
+      ],
+      "Move all items": [
+        "Przenieś wszystkie elementy"
+      ],
+      "Move to a shared vault": [
+        "Przenieś do udostępnionego sejfu"
+      ],
+      "Move to another vault": [
+        "Przenieś do innego sejfu"
+      ],
+      "Move to Trash": [
+        "Przenieś do Kosza"
+      ],
+      "Move to trash": [
+        "Przenieś do Kosza"
+      ],
+      "Multiple select": [
+        "Zaznacz"
+      ],
+      "No expired links": [
+        "Brak wygaśniętych linków"
+      ],
+      "Not now": [
+        "Nie teraz"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Open in a window": [
+        "Otwórz w oknie"
+      ],
+      "Open navigation": [
+        "Otwórz nawigację"
+      ],
+      "Open web app": [
+        "Otwórz aplikację internetową"
+      ],
+      "Pass for Android": [
+        "Proton Pass na Androida"
+      ],
+      "Pass for iOS": [
+        "Proton Pass na iOS"
+      ],
+      "Pin item": [
+        "Przypnij element"
+      ],
       "Please retry": [
         "Spróbuj ponownie"
+      ],
+      "Refresh the page": [
+        "Odśwież stronę"
+      ],
+      "Regenerate": [
+        "Wygeneruj ponownie"
+      ],
+      "Reject": [
+        "Odrzuć"
+      ],
+      "Reject invitation": [
+        "Odrzuć zaproszenie"
+      ],
+      "Reload extension": [
+        "Odśwież rozszerzenie"
+      ],
+      "Remove": [
+        "Usuń"
+      ],
+      "Remove access": [
+        "Usuń dostęp"
+      ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Usuń wszystkie nieaktywne linki (${ inactiveLinkCount })"
+      ],
+      "Remove link": [
+        "Usuń link"
+      ],
+      "Remove member": [
+        "Usuń użytkownika"
+      ],
+      "Request a feature": [
+        "Poproś o dodatkową funkcję"
+      ],
+      "Resend invitation": [
+        "Wyślij ponownie zaproszenie"
+      ],
+      "Restore": [
+        "Przywróć"
+      ],
+      "Restore item": [
+        "Przywróć element"
+      ],
+      "Restrict number of views": [
+        "Ogranicz liczbę dostępów"
+      ],
+      "Retry": [
+        "Spróbuj ponownie"
+      ],
+      "Right click and download this CSV": [
+        "Kliknij prawym przyciskiem i pobierz plik CSV"
+      ],
+      "Save": [
+        "Zapisz"
+      ],
+      "Save passkey": [
+        "Zapisz klucz dostępu"
+      ],
+      "Saving": [
+        "Zapisywanie"
+      ],
+      "Saving passkey...": [
+        "Zapisywanie klucza dostępu..."
+      ],
+      "Section name": [
+        "Nazwa sekcji"
+      ],
+      "Secure links": [
+        "Linki"
+      ],
+      "See all": [
+        "Zobacz wszystko"
+      ],
+      "See members": [
+        "Pokaż użytkowników"
+      ],
+      "Send invite": [
+        "Wyślij zaproszenie"
+      ],
+      "Send us a message": [
+        "Wyślij nam wiadomość"
+      ],
+      "Set access level": [
+        "Ustaw uprawnienia"
+      ],
+      "Set extra password": [
+        "Ustaw dodatkowe hasło"
+      ],
+      "Setup 2FA": [
+        "Skonfiguruj uwierzytelnianie dwustopniowe"
+      ],
+      "Share": [
+        "Udostępnij"
+      ],
+      "Share secure link": [
+        "Udostępnij link"
+      ],
+      "Share this vault": [
+        "Udostępnij sejf"
+      ],
+      "Share vault": [
+        "Udostępnij sejf"
+      ],
+      "Show": [
+        "Pokaż"
+      ],
+      "Show advanced options": [
+        "Pokaż opcje zaawansowane"
+      ],
+      "Sign back in": [
+        "Zaloguj się ponownie"
+      ],
+      "Sign in": [
+        "Zaloguj się"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Zaloguj się przez ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Wyloguj"
+      ],
+      "Sort vault items": [
+        "Sortuj elementy sejfu"
+      ],
+      "Submit": [
+        "Wyślij"
+      ],
+      "Submitting report...": [
+        "Wysyłanie raportu..."
+      ],
+      "Sync aliases": [
+        "Synchronizuj aliasy"
+      ],
+      "Transfer ownership": [
+        "Zmień właściciela"
+      ],
+      "Trash": [
+        "Przenieś do Kosza"
+      ],
+      "Try again": [
+        "Spróbuj ponownie"
+      ],
+      "Unlock": [
+        "Odblokuj"
+      ],
+      "Unlock offline with password": [
+        "Odblokowanie w trybie offline za pomocą hasła"
+      ],
+      "Unpin item": [
+        "Odepnij element"
+      ],
+      "Update": [
+        "Zaktualizuj"
+      ],
+      "Update vault": [
+        "Zaktualizuj sejf"
+      ],
+      "Updating": [
+        "Aktualizowanie"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ],
+      "Upgrade now to share with more people": [
+        "Ulepsz konto, aby udostępnić elementy użytkownikom"
+      ],
+      "Via secure link": [
+        "przez link"
+      ],
+      "View app logs": [
+        "Pokaż logi aplikacji"
+      ],
+      "View history": [
+        "Pokaż historię"
+      ],
+      "View item history": [
+        "Pokaż historię elementu"
+      ],
+      "View older history": [
+        "Pokaż starszą historię"
+      ],
+      "Write us on Reddit": [
+        "Napisz do nas na Reddicie"
+      ],
+      "Write us on Twitter": [
+        "Napisz do nas na Twitterze"
+      ],
+      "Your password manager not here? Request it.": [
+        "Nie ma Twojego menadżera haseł? Zgłoś to."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Oszczędzaj mądrze. Skorzystaj z rozwiązania Pass Plus za jedynie ${ relativePrice } miesięcznie."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Oferta z okazji Czarnego Piątku"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Więcej informacji"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Zwiń"
+      ],
+      "Expand": [
+        "Rozwiń"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "Tego hasła używa jeszcze ${ total } inne dane logowania",
+        "Tego hasła używają jeszcze ${ total } inne dane logowania",
+        "Tego hasła używa jeszcze ${ total } innych danych logowania",
+        "Tego hasła używa jeszcze ${ total } innych danych logowania"
+      ],
+      "A checked box means the feature is disabled.": [
+        "Zaznaczone pole oznacza włączoną funkcję."
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Monitoring dark web jest dostępny w płatnym planie. Ulepsz konto, aby uzyskać do niego dostęp."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Lista domen, w których niektóre funkcje aplikacji ${ PASS_SHORT_APP_NAME } (autouzupełnianie, automatyczne sugestie, automatyczne zapisywanie) nie powinny zostać uruchamiane.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Konto jest zagrożone. Przejdź do usługi i zmień hasło."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Usługa oferuje uwierzytelnianie dwustopniowe. Włącz je, aby zwiększyć bezpieczeństwo konta."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Odblokuj zaawansowane funkcje bezpieczeństwa i szczegółowe logi, aby chronić się w Internecie."
       ]
     },
     "Error": {
@@ -22,10 +645,22 @@
       "Authentication error": [
         "Błąd uwierzytelniania"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Uwierzytelnianie nie powiodło się. Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane"
+      ],
+      "Authentication failure: ${ message }": [
+        "Błąd uwierzytelniania: ${ message }"
+      ],
+      "Cannot create alias (${ error }).": [
+        "Nie można utworzyć aliasu (${ error })."
+      ],
       "Cannot send invitation at the moment": [
         "Nie można wysłać zaproszenia",
         "Nie można wysłać zaproszeń",
         "Nie można wysłać zaproszeń",
+        "Nie można wysłać zaproszeń"
+      ],
+      "Cannot send invitations at the moment": [
         "Nie można wysłać zaproszeń"
       ],
       "Could not confirm this invite at the moment": [
@@ -52,6 +687,9 @@
       "Could not validate addresses at the moment.": [
         "Nie można zweryfikować adresów."
       ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "Brak wymaganych nagłówków w pliku CSV: ${ missingHeaders }"
+      ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Odszyfrowywanie pliku eksportu danych ${ PASS_APP_NAME } nie powiodło się. ${ errorDetail }"
       ],
@@ -61,11 +699,23 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Usuwanie sejfu \"${ payload.content.name }\" nie powiodło się"
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Wykryto ${ errors.length } uszkodzony wiersz pliku CSV",
+        "Wykryto ${ errors.length } uszkodzone wiersze pliku CSV",
+        "Wykryto ${ errors.length } uszkodzonych wierszy pliku CSV",
+        "Wykryto ${ errors.length } uszkodzonych wierszy pliku CSV"
+      ],
       "Editing item failed": [
         "Edytowanie elementu nie powiodło się"
       ],
+      "Empty CSV file": [
+        "Plik CSV jest pusty"
+      ],
       "Emptying trash failed": [
         "Opróżnienie Kosza nie powiodło się"
+      ],
+      "Encrypted JSON not supported": [
+        "Zaszyfrowany plik JSON nie jest obsługiwany"
       ],
       "Error reporting problem": [
         "Wystąpił błąd podczas zgłaszania problemu"
@@ -148,6 +798,12 @@
       "File could not be parsed": [
         "Plik nie mógł zostać przetworzony"
       ],
+      "File could not be read": [
+        "Plik nie może zostać odczytany"
+      ],
+      "File does not match expected format": [
+        "Format pliku jest nieprawidłowy"
+      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Importowanie sejfu \"${ vaultData.name }\" nie powiodło się: ${ description }"
       ],
@@ -159,6 +815,9 @@
       ],
       "Invalid password manager": [
         "Menadżer haseł jest nieprawidłowy"
+      ],
+      "Invalid URL": [
+        "Adres URL jest nieprawidłowy"
       ],
       "Invitation could not be accepted": [
         "Zaproszenie nie może zostać zaakceptowane"
@@ -175,6 +834,9 @@
       "Item does not exist": [
         "Element nie istnieje"
       ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass wyeksportuje uszkodzony plik CSV, jeśli jakiekolwiek pole zawiera nieoczekiwane przecinki, cudzysłowy lub wiele wierszy"
+      ],
       "Missing passkey": [
         "Brak klucza dostępu"
       ],
@@ -186,6 +848,18 @@
       ],
       "Passphrase is incorrect": [
         "Hasło jest nieprawidłowe"
+      ],
+      "PIN codes do not match": [
+        "Kody PIN nie pasują do siebie"
+      ],
+      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
+        "Aby kontynuować, przyznaj rozszerzeniu ${ PASS_APP_NAME } niezbędne uprawnienia."
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Przypnij rozszerzenie lub kliknij \"Kontynuuj bez przypinania\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Błąd rejestracji: ${ message }"
       ],
       "Request timed out": [
         "Upłynął limit czasu żądania"
@@ -211,8 +885,20 @@
       "Signature verification failed": [
         "Weryfikacja podpisu nie powiodła się"
       ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Niektóre sejfy nie są dostępne z powodu zresetowania hasła. Aby odzyskać do nich dostęp, reaktywuj klucze konta. ${ reactivateLink }"
+      ],
       "Something went wrong": [
         "Coś poszło nie tak"
+      ],
+      "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
+        "Coś poszło nie tak. Odśwież rozszerzenie ${ PASS_APP_NAME }. Problem został zarejestrowany"
+      ],
+      "The file you are trying to import is empty": [
+        "Plik, który próbujesz zaimportować, jest pusty"
+      ],
+      "The URL is in the list": [
+        "Adres URL jest na liście"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Wystąpił błąd podczas usuwania linku. Spróbuj ponownie za kilka minut."
@@ -222,6 +908,9 @@
       ],
       "Trashing item failed": [
         "Usunięcie elementu nie powiodło się"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Nie można wygenerować kodu uwierzytelniającego dla tego elementu"
       ],
       "Unable to sync": [
         "Nie można zsynchronizować"
@@ -256,6 +945,9 @@
       "Vault \"${ vaultData.name }\" could not be created": [
         "Sejf \"${ vaultData.name }\" nie mógł zostać utworzony"
       ],
+      "Vault name does not match": [
+        "Nazwy sejfów nie pasują do siebie"
+      ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Mamy problem z usługą ${ PASS_SHORT_APP_NAME }. Jeśli problem będzie się powtarzał, skontaktuj się z naszym wsparciem klienta."
       ],
@@ -268,16 +960,136 @@
       "Wrong PIN code. Try again.": [
         "Kod PIN jest nieprawidłowy. Spróbuj ponownie."
       ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Jesteś w trybie offline. Wznów połączenie, aby odblokować ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Kod PIN został usunięty przez inną aplikację ${ PASS_APP_NAME }"
       ]
     },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Odśwież stronę lub spróbuj ponownie później."
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "kB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
+      ],
+      "Gigabyte": [
+        "gigabajt",
+        "gigabajty",
+        "gigabajtów",
+        "gigabajtów"
+      ],
+      "Kilobyte": [
+        "kilobajt",
+        "kilobajty",
+        "kilobajtów",
+        "kilobajtów"
+      ],
+      "Megabyte": [
+        "megabajt",
+        "megabajty",
+        "megabajtów",
+        "megabajtów"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtów",
+        "terabajtów"
+      ]
+    },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Ulepsz do płatnego planu, aby utworzyć wiele sejfów."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Element \"${ payload.item.data.metadata.name }\" został odrzucony"
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizacja \"${ payload.item.data.metadata.name }\" została odrzucona"
+      ],
+      "${ count } time": [
+        "${ count } raz",
+        "${ count } razy",
+        "${ count } razy",
+        "${ count } razy"
+      ],
+      "${ count } view": [
+        "otwarto ${ count } raz",
+        "otwarto ${ count } razy",
+        "otwarto ${ count } razy",
+        "otwarto ${ count } razy"
+      ],
+      "${ count }/${ maxReads } views": [
+        "Otwarto ${ count } / ${ maxReads } razy"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } użytkownik",
+        "${ memberCount } użytkowników",
+        "${ memberCount } użytkowników",
+        "${ memberCount } użytkowników"
+      ],
+      "${ n } item": [
+        "${ n } element",
+        "${ n } elementy",
+        "${ n } elementów",
+        "${ n } elementów"
+      ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } będzie zawsze dostępny"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } będzie wyświetlał ikonę stron przez anonimową proxy ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } obsługuje tylko importowanie danych logowania, notatek, kart płatniczych i tożsamości."
+      ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } będzie proponował zapisywanie haseł, gdy wygenerowane hasła zostaną automatycznie uzupełnione."
+      ],
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } będzie proponował zapisywanie lub aktualizację danych logowania."
+      ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } będzie sugerował uwierzytelnianie za pomocą kluczy dostępu"
+      ],
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } będzie sugerował tworzenie aliasu w formularzach logowania."
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } będzie sugerował tworzenie silnych haseł w formularzach logowania."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } będzie sugerował zapisywanie kluczy dostępu."
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "Ochrona ${ PROTON_SENTINEL_NAME } została wyłączona"
@@ -285,14 +1097,53 @@
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "Ochrona ${ PROTON_SENTINEL_NAME } została włączona"
       ],
+      "${ trialDaysLeft } day left": [
+        "Pozostał ${ trialDaysLeft } dzień",
+        "Pozostały ${ trialDaysLeft } dni",
+        "Pozostało ${ trialDaysLeft } dni",
+        "Pozostało ${ trialDaysLeft } dnia"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "Masz 7 dni na wypróbowanie funkcji premium za darmo. Tylko podczas pierwszego tygodnia z usługą ${ BRAND_NAME }."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Dostępna jest nowa wersja rozszerzenia ${ PASS_APP_NAME }. Zaktualizuj je, aby cieszyć się najnowszymi funkcjami i poprawkami błędów."
+      ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Klucz dostępu \"${ username }\" zostanie zapisany i będzie dostępny na urządzeniach, na których zainstalowano ${ PASS_APP_NAME }."
+      ],
       "Access successfully confirmed": [
         "Dostęp został potwierdzony"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Dostęp do ${ PASS_APP_NAME } będzie wymagał hasła ${ BRAND_NAME }."
+      ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Dostęp do ${ PASS_APP_NAME } będzie wymagał odcisku palca lub kodu PIN."
+      ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Dostęp do haseł z aplikacji mobilnej."
+      ],
+      "Admin": [
+        "Administrator"
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Po zaimportowaniu danych możesz usunąć plik CSV zawierający hasła."
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Alias został wyłączony. Nie będziesz otrzymywać wiadomości wysłanych na adres ${ item.aliasEmail }"
       ],
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "Alias został włączony. Będziesz otrzymywać wiadomości wysłane na adres ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Synchronizacja aliasów ${ BRAND_NAME } i SimpleLogin jest aktywna."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Aliasy w Koszu będą nadal przekierowywać wiadomości. Wyłącz alias, jeśli chcesz zatrzymać otrzymywanie wiadomości na ten adres."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Aliasy nie są zsynchronizowane (${ aliasCount })"
       ],
       "All breaches for this address were resolved": [
         "Wszystkie wycieki dla tego adresu zostały oznaczone jako rozwiązane"
@@ -315,14 +1166,80 @@
       "An item previously shared with you was removed": [
         "Poprzednio udostępniony element został usunięty"
       ],
+      "Are you sure you want to remove the link?": [
+        "Czy na pewno chcesz usunąć link?"
+      ],
       "Auto-lock successfully disabled.": [
         "Automatyczna blokada została wyłączona."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "Automatycznie kopiuj wygenerowane hasło do schowka"
       ],
       "Autosaved on ${ payload.domain }": [
         "Zapisano na ${ payload.domain }"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Przed wyeksportowaniem danych w tym formacie otwórz ustawienia Safari -> zakładka \"Ogólne\" -> wyłącz opcję \"Otwieraj bezpieczne pliki po pobraniu\". Zapobiegnie to nieprawidłowemu przetworzeniu wyeksportowanego pliku przez przeglądarkę Safari."
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Blokada za pomocą biometrii została włączona. Użyj jej, aby odblokować ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biometria zostanie wyłączona i będzie musiała zostać ponownie włączona."
+      ],
+      "Built in 2FA authenticator": [
+        "Wbudowana aplikacja uwierzytelniająca"
+      ],
+      "Can be viewed": [
+        "Maksymalna liczba dostępów"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Może edytować i eksportować elementy w sejfie."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Zarządza dostępem do sejfu."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Zarządza dostępem do sejfu."
+      ],
+      "Can view items in this vault.": [
+        "Widzi elementy w sejfie."
+      ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Wybierz zapisany klucz dostępu, aby zalogować się do ${ domain }"
+      ],
+      "Click the icon to open it anytime.": [
+        "Kliknij ikonę, aby otworzyć."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Zamknij okno, aby użyć klucza bezpieczeństwa lub klucza dostępu."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Zamknij okno, aby użyć innego menedżera kluczy dostępu."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Potwierdź dodatkowe hasło, aby je usunąć."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "Gratulacje. Dostęp został potwierdzony"
+      ],
+      "Copied to clipboard": [
+        "Skopiowano do schowka"
+      ],
+      "Creating alias...": [
+        "Tworzenie aliasu..."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "Plik CSV oferuje wygodny format do przeglądania danych, ale niektóre dane (jak pola niestandardowe, klucze dostępu itp.) nie zostaną uwzględnione. Użyj innego formatu pliku, aby wyeksportować wszystkie dane."
+      ],
+      "Current version": [
+        "Obecna wersja"
+      ],
+      "Decrypting your data": [
+        "Odszyfrowywanie danych"
+      ],
+      "Deleted items will be moved here first": [
+        "Usunięte elementy zostaną przeniesione tutaj"
       ],
       "Deleting \"${ payload.content.name }\"": [
         "Usuwanie \"${ payload.content.name }\""
@@ -336,6 +1253,24 @@
       "Disabling offline mode...": [
         "Wyłączenie trybu offline..."
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Zobacz filmy ${ PASS_APP_NAME } na YouTube"
+      ],
+      "Drop file here to upload": [
+        "Upuść, aby przesłać"
+      ],
+      "Drop to import": [
+        "Upuść, aby zaimportować"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Ze względu na ograniczenia rozszerzeń przeglądarki Safari po wyeksportowaniu danych w pliku będzie brakowało rozszerzenia \".pgp\". Po wyeksportowaniu zmień nazwę pliku, aby zawierała rozszerzenie .pgp (np. plik.pgp)."
+      ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Łatwe importowanie haseł do ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Edycja"
+      ],
       "Email address successfully deleted from monitoring": [
         "Adres e-mail został usunięty z monitoringu"
       ],
@@ -347,6 +1282,12 @@
       ],
       "Emptying trash...": [
         "Opróżnianie Kosza..."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Włącz ${ PASS_APP_NAME }, łącząc swoje konto ${ BRAND_NAME }"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Włącz automatyczną blokadę, aby chronić dane"
       ],
       "Enabling biometrics auto-lock": [
         "Włączenie blokady aplikacji za pomocą biometrii"
@@ -366,11 +1307,62 @@
       "Enabling PIN auto-lock": [
         "Włączanie automatycznej blokady za pomocą kodu PIN"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Wpisz kod weryfikacyjny. Cyfra nr ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Wpisz dodatkowe hasło"
+      ],
+      "Enter your PIN code": [
+        "Wpisz kod PIN"
+      ],
+      "Expires in": [
+        "Wygasa za"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Wygasa za ${ remainingTime }"
+      ],
       "Extra password successfuly created": [
         "Dodatkowe hasło zostało utworzone"
       ],
       "Extra password successfuly removed": [
         "Dodatkowe hasło zostało usunięte"
+      ],
+      "Fill in the CSV with your data": [
+        "Wypełnij plik CSV danymi"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Wykonaj te kroki, aby zaimportować dane za pomocą ogólnego pliku CSV:"
+      ],
+      "For easy access to your passwords and more.": [
+        "Dla łatwego dostępu do haseł i nie tylko."
+      ],
+      "For security reason, your access needs to be confirmed": [
+        "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Ze względów bezpieczeństwa dostęp musi zostać potwierdzony"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tydzień.",
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnie.",
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodni.",
+        "Wygenerowane hasła będą przechowywane przez ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnia."
+      ],
+      "Generating alias...": [
+        "Generowanie aliasu..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Ulepsz plan do wersji Pass Plus, aby uzyskać nieograniczoną liczbę aliasów, dodatkowe funkcje i wesprzeć nas."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Tutaj znajdują się wszystkie informacje niezbędne na początek."
+      ],
+      "Import in progress:": [
+        "Importowanie jest w toku:"
+      ],
+      "Import the CSV file below.": [
+        "Importuj poniższy plik CSV"
       ],
       "Imported ${ payload.total } item": [
         "Zaimportowano ${ payload.total } element",
@@ -381,8 +1373,17 @@
       "Imported on ${ date }": [
         "Zaimportowano: ${ date }"
       ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "Przyznaj niezbędne uprawnienia dla rozszerzenia ${ PASS_APP_NAME }, aby uzyskać najlepsze wrażenia z jego korzystania"
+      ],
       "Internet connection lost": [
         "Połączenie z Internetem zostało utracone"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Połączenie z Internetem zostało utracone. Sprawdź połączenie swojego urządzenia."
+      ],
+      "Invitation sent": [
+        "Zaproszenie zostało wysłane"
       ],
       "Invite successfully removed": [
         "Zaproszenie zostało usunięte"
@@ -393,8 +1394,17 @@
       "Invite successfully sent": [
         "Zaproszenie zostało wysłane"
       ],
+      "invites you to access items in": [
+        "udostępnia Ci sejf"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zalogowano już do ${ PASS_APP_NAME }. Jeśli próbujesz zalogować się do innego konta, najpierw wyloguj się z rozszerzenia."
+      ],
+      "item": [
+        "element",
+        "elementy",
+        "elementów",
+        "elementów"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Element \"${ payload.item.data.metadata.name }\" został utworzony"
@@ -429,6 +1439,21 @@
       "Leaving vault...": [
         "Opuszczanie sejfu..."
       ],
+      "Let's get you started by creating your first item": [
+        "Rozpocznij od utworzenia pierwszego elementu"
+      ],
+      "Loading": [
+        "Ładowanie"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Ładowanie ${ PASS_APP_NAME }"
+      ],
+      "Loading...": [
+        "Ładowanie..."
+      ],
+      "me": [
+        "ja"
+      ],
       "Monitoring settings successfully updated": [
         "Ustawienia monitoringu zostały zaktualizowane"
       ],
@@ -438,11 +1463,35 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii i linków."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego historii."
+      ],
       "Moving items": [
         "Przenoszenie elementów"
       ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii i linków."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich historii."
+      ],
       "Moving items to trash": [
         "Przenoszenie elementów do Kosza"
+      ],
+      "Never": [
+        "Nigdy"
+      ],
+      "No identity item found": [
+        "Nie znaleziono tożsamości"
+      ],
+      "No login found": [
+        "Nie znaleziono danych logowania"
+      ],
+      "None": [
+        "Brak"
       ],
       "Offline mode could not be disabled at the moment": [
         "Tryb offline nie może zostać wyłączony"
@@ -453,17 +1502,44 @@
       "Offline support successfully disabled": [
         "Tryb offline został wyłączony"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Dostęp online do ${ PASS_APP_NAME } będzie wymagał kodu PIN. Wylogowanie nastąpi po 3 nieudanych próbach."
+      ],
+      "Open the Extensions menu": [
+        "Otwórz menu rozszerzenia"
+      ],
+      "Owner": [
+        "Właściciel"
+      ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Właściciel został zmieniony. Nie jesteś już właścicielem tego sejfu."
       ],
       "Pass Plus trial": [
         "Wersja próbna planu Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Logowanie kluczem dostępu"
+      ],
+      "Password copied": [
+        "Hasło zostało skopiowane"
+      ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Blokada za pomocą hasła została włączona. Użyj tego hasła, aby odblokować ${ PASS_APP_NAME }"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tydzień zostaną automatycznie usunięte z historii.",
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnie zostaną automatycznie usunięte z historii.",
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodni zostaną automatycznie usunięte z historii.",
+        "Hasła starsze niż ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tygodnia zostaną automatycznie usunięte z historii."
+      ],
+      "Pending access to the shared data": [
+        "Oczekujący dostęp do udostępnionych danych"
+      ],
       "Permanently deleting selected items": [
         "Trwałe usuwanie zaznaczonych elementów"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Przypnij ${ PASS_APP_NAME } do paska narzędzi"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kod PIN został zapisany. Użyj go, aby odblokować ${ PASS_APP_NAME }"
@@ -471,8 +1547,77 @@
       "Pinning item...": [
         "Przypinanie elementu..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Wpisz hasło ${ BRAND_NAME }, aby wyeksportować dane ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your extra password": [
+        "Potwierdź dodatkowe hasło"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Potwierdź dodatkowe hasło, aby włączyć blokadę."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Potwierdź dodatkowe hasło, aby włączyć blokadę."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Wpisz dodatkowe hasło, aby wyeksportować dane ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Potwierdź dodatkowe hasło, aby wyłączyć blokadę."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Potwierdź dodatkowe hasło, aby zaktualizować czas automatycznej blokady."
+      ],
+      "Please confirm your password": [
+        "Potwierdź hasło"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Potwierdź hasło, aby włączyć blokadę."
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Potwierdź hasło, aby włączyć blokadę."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Potwierdź hasło, aby wyłączyć blokadę."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Potwierdź hasło, aby zaktualizować czas automatycznej blokady."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Potwierdź kod PIN, aby wyłączyć blokadę."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Potwierdź kod PIN, aby edytować ustawienia."
+      ],
+      "Please consider leaving a review.": [
+        "Rozważ napisanie recenzji."
+      ],
       "Please do not close this window": [
         "Nie zamykaj tego okna"
+      ],
+      "Please enter your current PIN code to continue": [
+        "Wpisz kod PIN, aby kontynuować"
+      ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Wpisz dodatkowe hasło ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Ulepsz konto, aby uzyskać wcześniejszy dostęp do aplikacji internetowej ${ PASS_APP_NAME }"
+      ],
+      "Press Enter to copy": [
+        "Kliknij Enter, aby skopiować"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Prywatność jest dla nas bardzo ważna. Dowiedz się, dlaczego ${ PASS_APP_NAME } jest inny."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Chroniony przez ${ PROTON_SENTINEL_LINK } — zaawansowany program ochrony konta"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "Uzupełniaj kody uwierzytelniające."
+      ],
+      "Quickly autofill your identities.": [
+        "Uzupełniaj swoje tożsamości."
       ],
       "Registering extra password...": [
         "Dodawanie dodatkowego hasła..."
@@ -495,6 +1640,27 @@
       "Restoring trashed items...": [
         "Przywracanie usuniętych elementów..."
       ],
+      "Save login": [
+        "Zapisz dane logowania"
+      ],
+      "Save passkey": [
+        "Zapisz klucz dostępu"
+      ],
+      "Secure links": [
+        "Linki"
+      ],
+      "Select an existing login item to update.": [
+        "Wybierz dane logowania do zaktualizowania."
+      ],
+      "Select an existing login or create a new one.": [
+        "Wybierz dane logowania lub utwórz nowe."
+      ],
+      "Select destination vault": [
+        "Wybierz docelowy sejf"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Wybierz, gdzie chcesz zapisać zaimportowane sejfy."
+      ],
       "Selected items permanently deleted": [
         "Zaznaczone elementy zostały trwale usunięte"
       ],
@@ -510,8 +1676,26 @@
       "Session timed out": [
         "Upłynął limit czasu sesji"
       ],
+      "Set by your organization": [
+        "Skonfiguruj organizację"
+      ],
       "Settings successfully updated": [
         "Ustawienia zostały zaktualizowane"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Udostępniaj dane logowania i bezpieczne notatki do 10 użytkownikom"
+      ],
+      "Sign in or create an account to continue.": [
+        "Zaloguj się lub utwórz konto, aby kontynuować."
+      ],
+      "Sign in to your account": [
+        "Zaloguj się"
+      ],
+      "Signing you in": [
+        "Logowanie"
+      ],
+      "Successfully exported all your items": [
+        "Wyeksportowano wszystkie elementy"
       ],
       "Successfully left the vault": [
         "Opuszczono sejf"
@@ -519,17 +1703,104 @@
       "Successfully synced all vaults": [
         "Wszystkie sejfy zostały zsynchronizowane"
       ],
+      "Switch to another vault or create an item in this vault": [
+        "Wybierz, w którym sejfie utworzysz element"
+      ],
       "Syncing your vaults…": [
         "Synchronizowanie sejfów…"
       ],
       "Thank you, the problem has been reported": [
         "Dziękujemy. Problem został zgłoszony"
       ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Menu autouzupełniania będzie otwierane w polach logowania."
+      ],
+      "The export will only contain vaults that you own.": [
+        "Plik eksportu będzie zawierał tylko Twoje sejfy."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Plik eksportu danych zostanie zaszyfrowany za pomocą PGP i będzie wymagał silnego hasła."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Dodatkowe hasło ${ BRAND_NAME } będzie wymagane do korzystania z ${ PASS_APP_NAME }."
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Następujący ${ result.ignored.length } element nie może zostać zaimportowany:",
+        "Następujące ${ result.ignored.length } elementy nie mogą zostać zaimportowane:",
+        "Następujące ${ result.ignored.length } elementów nie mogą zostać zaimportowane:",
+        "Następujące ${ result.ignored.length } elementów nie mogą zostać zaimportowane:"
+      ],
       "The secure link has been removed": [
         "Link został usunięty"
       ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Tekst, który próbujesz wkleić, jest dłuższy niż maksymalna dozwolona liczba ${ maxLength } znaków."
+      ],
+      "The user did not accept the invitation yet.": [
+        "Użytkownik nie zaakceptował zaproszenia."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Ten eksport będzie niezaszyfrowany i każdy, kto uzyska dostęp do wyeksportowanego pliku, będzie mógł zobaczyć hasła. Ze względów bezpieczeństwa należy go usunąć po zakończeniu korzystania z niego."
+      ],
+      "This option is currently not available on your device.": [
+        "Funkcja nie jest dostępna na tym urządzeniu."
+      ],
+      "This setting is disabled on the organization level": [
+        "Ustawienie jest wyłączone na poziomie organizacji"
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Sejf nie jest udostępniony. Zaproś do niego użytkowników."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Ta wersja zostanie dodana do historii jako najnowsza wersja."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Aby przenieść dane z innego menedżera haseł, przejdź do menedżera haseł, wyeksportuj dane, a następnie prześlij je do ${ PASS_APP_NAME }. Po zaimportowaniu danych usuń wyeksportowany plik."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Kliknij ikonę Proton Pass na pasku narzędzi przeglądarki, aby przejrzeć zaimportowane dane."
+      ],
+      "Unable to copy to clipboard": [
+        "Nie można skopiować do schowka"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nieograniczona liczba aliasów hide-my-email"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Odblokuj ${ PASS_APP_NAME } za pomocą kodu PIN, aby uzyskać dostęp do kluczy dostępu."
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Odblokuj ${ PASS_APP_NAME } za pomocą kodu PIN, aby zapisać klucz dostępu."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą biometrii"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą hasła ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Odblokuj ${ PASS_SHORT_APP_NAME } za pomocą dodatkowego hasła"
+      ],
+      "Unlock it with your PIN to access the settings": [
+        "Odblokuj dostęp do ustawień za pomocą kodu PIN"
+      ],
+      "Unlock with biometrics": [
+        "Odblokuj za pomocą biometrii"
+      ],
       "Unpinning item...": [
         "Odpinanie elementu..."
+      ],
+      "Update login": [
+        "Zaktualizuj dane logowania"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "Ulepsz ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Ulepsz konto, aby odblokować funkcje premium"
+      ],
+      "Use vaults to share this item with others.": [
+        "Aby udostępnić element, udostępnij cały sejf."
       ],
       "User's access removed": [
         "Uprawienia użytkownika zostały usunięte"
@@ -549,13 +1820,466 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Sejf \"${ share.content.name }\" został usunięty"
       ],
+      "Verification code": [
+        "Kod weryfikacyjny"
+      ],
+      "Viewer": [
+        "Odczyt"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Mamy problem z synchronizacją danych z magazynem lokalnym. Upewnij się, że masz wystarczającą pamięć wewnętrzną do działania aplikacji ${ PASS_SHORT_APP_NAME }."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Masz ${ aliasCount } alias SimpleLogin, który nie jest widoczny w ${ PASS_APP_NAME } Czy chcesz go zaimportować?",
+        "Masz ${ aliasCount } aliasy SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME } Czy chcesz je zaimportować?",
+        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME } Czy chcesz je zaimportować?",
+        "Masz ${ aliasCount } aliasów SimpleLogin, które nie są widoczne w ${ PASS_APP_NAME } Czy chcesz je zaimportować?"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Pole 'nazwa użytkownika' będzie zawsze widoczne podczas edytowania danych logowania w ${ PASS_APP_NAME }."
+      ],
+      "You are about to create:": [
+        "Utworzysz:"
+      ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Użyj hasła ${ BRAND_NAME }, aby uzyskać dostęp do trybu offline ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Automatycznie uzupełniaj dane logowania po kliknięciu ikony ${ PASS_APP_NAME }."
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Nie możesz zmienić skrzynek pocztowych dla tego aliasu."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Masz ${ daysRemaining } dzień, aby wypróbować funkcje premium.",
+        "Masz ${ daysRemaining } dni, aby wypróbować funkcje premium.",
+        "Masz ${ daysRemaining } dni, aby wypróbować funkcje premium.",
+        "Masz ${ daysRemaining } dnia, aby wypróbować funkcje premium."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Elementy mogą być przenoszone tylko do 2 pierwszych sejfów. Ulepsz plan, aby przenosić elementy do innych sejfów."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Nowe elementy mogą być tworzone tylko w 2 pierwszych sejfach. Ulepsz plan, aby tworzyć nowe elementy we wszystkich sejfach."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Osiągnięto maksymalną liczbę aliasów, które możesz utworzyć. Ulepsz subskrypcję, aby utworzyć nieograniczoną liczbę aliasów."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Osiągnięto maksymalną liczbę kart płatniczych, które możesz utworzyć. Ulepsz subskrypcję, aby utworzyć nieograniczoną liczbę kart płatniczych."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Osiągnięto maksymalną liczbę utworzonych sejfów."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Osiągnięto maksymalną liczbę ${ maxLength } znaków."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Konieczne będzie ponowne zalogowanie się na wszystkich urządzeniach."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Będziesz używać tego kodu PIN, aby odblokować ${ PASS_APP_NAME } po automatycznej blokadzie aplikacji."
+      ],
+      "You're about to create": [
+        "Utworzysz"
+      ],
+      "You're invited to a vault.": [
+        "Otrzymano zaproszenie do sejfu."
+      ],
+      "Your ${ PASS_APP_NAME } session is locked": [
+        "Sesja ${ PASS_APP_NAME } została zablokowana"
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Dostęp do konta został ograniczony z powodu braku wymaganego uwierzytelniania dwustopniowego. Włącz uwierzytelnianie dwustopniowe w ustawieniach kontach lub skontaktuj się z administratorem."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Organizacja wymaga zabezpieczenia dostępu do ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliasy",
+        "${ aliasCount } aliasów",
+        "${ aliasCount } aliasów"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } znak",
+        "${ config.options.length } znaki",
+        "${ config.options.length } znaków",
+        "${ config.options.length } znaków"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } słowo",
+        "${ config.options.wordCount } słowa",
+        "${ config.options.wordCount } słów",
+        "${ config.options.wordCount } słów"
+      ],
+      "${ days } day": [
+        "${ days } dzień",
+        "${ days } dni",
+        "${ days } dni",
+        "${ days } dnia"
+      ],
+      "${ hours } hour": [
+        "${ hours } godzina",
+        "${ hours } godziny",
+        "${ hours } godzin",
+        "${ hours } godziny"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minuty"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Wersja ${ PASS_SHORT_APP_NAME }"
+      ],
+      "1 hour": [
+        "1 godzina"
+      ],
+      "1 minute": [
+        "1 minuta"
+      ],
+      "10 minutes": [
+        "10 minut"
+      ],
+      "14 days": [
+        "14 dni"
+      ],
+      "15 minutes": [
+        "15 minut"
+      ],
+      "2 minutes": [
+        "2 minuty"
+      ],
+      "24 hours": [
+        "1 dzień"
+      ],
+      "2FA autofill": [
+        "Autouzupełnianie uwierzytelniania dwustopniowego"
+      ],
+      "2FA secret key (TOTP)": [
+        "Sekret TOTP"
+      ],
+      "2FA token (TOTP)": [
+        "Token TOTP"
+      ],
+      "30 days": [
+        "30 dni"
+      ],
+      "30 minutes": [
+        "30 minut"
+      ],
+      "30 seconds": [
+        "30 sekund"
+      ],
+      "5 minutes": [
+        "5 minut"
+      ],
+      "7 days": [
+        "7 dni"
+      ],
+      "A-Z": [
+        "Alfabetycznie"
+      ],
+      "Account": [
+        "Konto"
+      ],
+      "Add section": [
+        "Dodaj sekcję"
+      ],
+      "Additional details": [
+        "Dodatkowe szczegóły"
+      ],
+      "Address details": [
+        "Szczegóły adresu"
+      ],
+      "Alias": [
+        "Alias"
+      ],
+      "Alias address": [
+        "Alias"
+      ],
+      "Aliases": [
+        "Aliasy"
+      ],
+      "All": [
+        "Wszystko"
+      ],
+      "All vaults": [
+        "Wszystkie sejfy"
+      ],
+      "Alphabetical": [
+        "Alfabetycznie"
+      ],
+      "Always show username field": [
+        "Zawsze pokazuj pole nazwy użytkownika"
+      ],
+      "Application logs": [
+        "Logi aplikacji"
+      ],
+      "Authenticate with passkeys": [
+        "Uwierzytelnij za pomocą kluczy dostępu"
+      ],
+      "Auto-lock after": [
+        "Automatyczna blokada"
+      ],
+      "Autofill": [
+        "Uzupełnij"
+      ],
+      "Autofill 2FA": [
+        "Autouzupełnianie uwierzytelniania dwustopniowego"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Automatycznie otwieraj autouzupełnianie w polach logowania"
+      ],
+      "Autosave": [
+        "Automatyczne zapisywanie"
+      ],
+      "Autosave vault": [
+        "Automatyczne zapisywanie sejfu"
+      ],
+      "Biometrics": [
+        "Biometria"
+      ],
+      "Birthdate": [
+        "Urodziny"
+      ],
+      "Capital letters (A-Z)": [
+        "Wielkie litery (A-Z)"
+      ],
+      "Capitalise": [
+        "Wielkie litery"
+      ],
+      "Card": [
+        "Karta"
+      ],
+      "Card number": [
+        "Numer karty"
+      ],
+      "Cards": [
+        "Karty"
+      ],
+      "City": [
+        "Miasto"
+      ],
+      "Company": [
+        "Firma"
+      ],
+      "Confirm vault name": [
+        "Potwierdź nazwę sejfu"
+      ],
+      "Contact details": [
+        "Szczegóły kontaktu"
+      ],
+      "Copy": [
+        "Kopiuj"
+      ],
+      "Copy password": [
+        "Kopiuj hasło"
+      ],
+      "Country or Region": [
+        "Kraj lub region"
+      ],
+      "County": [
+        "Powiat"
+      ],
+      "Create a credit card": [
+        "Utwórz kartę płatniczą"
+      ],
+      "Create a hide-my-email alias": [
+        "Utwórz alias hide-my-email"
+      ],
+      "Create a login": [
+        "Utwórz dane logowania"
+      ],
+      "Create an encrypted note": [
+        "Utwórz zaszyfrowaną notatkę"
+      ],
+      "Create an Identity": [
+        "Utwórz tożsamość"
+      ],
+      "Create lock": [
+        "Włącz blokadę"
+      ],
+      "Create new vault": [
+        "Utwórz nowy sejf"
+      ],
+      "Created": [
+        "Utworzono"
+      ],
+      "Created at": [
+        "Utworzono na stronie"
+      ],
+      "Custom hidden field": [
+        "Ukryte tekstowe pole niestandardowe"
+      ],
+      "Custom text field": [
+        "Tekstowe pole niestandardowe"
+      ],
+      "Device": [
+        "Urządzenie"
+      ],
+      "Display": [
+        "Wyświetlanie"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Pokaż ikonę ${ PASS_APP_NAME } w polach automatycznego uzupełniania"
+      ],
+      "Domain": [
+        "Domena"
+      ],
+      "Domains": [
+        "Domeny"
+      ],
+      "Don't remind me again": [
+        "Nie pokazuj ponownie"
+      ],
+      "Download logs": [
+        "Pobierz logi"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Email (alias)": [
+        "Adres e-mail (alias)"
+      ],
+      "Email (new alias)": [
+        "Adres e-mail (nowy alias)"
+      ],
+      "Email aliases": [
+        "Aliasy"
+      ],
+      "Email or username": [
+        "Adres e-mail lub nazwa użytkownika"
+      ],
+      "Empty trash": [
+        "Opróżnij Kosz"
+      ],
+      "Enter email or username": [
+        "Wpisz adres e-mail lub nazwę użytkownika"
+      ],
+      "Expiration date": [
+        "Data wygaśnięcia"
+      ],
+      "Expired": [
+        "Wygasł"
+      ],
+      "Expired link": [
+        "Link wygasł"
+      ],
+      "Export": [
+        "Eksportowanie"
+      ],
+      "Extra password": [
+        "Dodatkowe hasło"
+      ],
+      "Facebook account": [
+        "Profil Facebook"
+      ],
+      "Field name": [
+        "Nazwa pola"
+      ],
+      "File format": [
+        "Format pliku"
+      ],
+      "First name": [
+        "Imię"
+      ],
+      "Floor, apartment, building": [
+        "Piętro, mieszkanie, budynek"
+      ],
+      "Forwards to": [
+        "Przekaż do"
+      ],
+      "Full Name": [
+        "Imię i nazwisko"
+      ],
+      "Gender": [
+        "Płeć"
+      ],
+      "General": [
+        "Ogólne"
+      ],
+      "Generate a secure link for this item": [
+        "Utwórz link do elementu"
+      ],
       "Generic CSV": [
         "Ogólny plik CSV"
+      ],
+      "Grant": [
+        "Przyznaj"
+      ],
+      "Hidden": [
+        "Ukryty tekst"
+      ],
+      "Hide password": [
+        "Ukryj hasło"
+      ],
+      "https://example.com": [
+        "https://przyklad.pl"
+      ],
+      "ID Card": [
+        "Dowód osobisty"
+      ],
+      "ID Card number": [
+        "Numer dowodu osobistego"
+      ],
+      "Identities": [
+        "Tożsamości"
+      ],
+      "Identity": [
+        "Tożsamość"
+      ],
+      "Identity autofill": [
+        "Autouzupełnienie tożsamości"
+      ],
+      "Import": [
+        "Importowanie"
+      ],
+      "Import passwords": [
+        "Importuj hasła"
+      ],
+      "Imported from : ": [
+        "Zaimportowano z: "
+      ],
+      "Imported on : ": [
+        "Zaimportowano: "
+      ],
+      "Include numbers": [
+        "Cyfry"
+      ],
+      "Include numbers (0-9)": [
+        "Cyfry (0-9)"
+      ],
+      "Instagram handle": [
+        "Profil Instagram"
+      ],
+      "Invitations": [
+        "Zaproszenia"
+      ],
+      "Item ID": [
+        "Identyfikator elementu"
+      ],
+      "Job title": [
+        "Stanowisko"
+      ],
+      "Key": [
+        "Klucz"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Skrót klawiszowy: ${ shortcut }"
+      ],
+      "Language": [
+        "Język"
       ],
       "Last 2 weeks": [
         "Ostatnie 2 tygodnie"
@@ -563,14 +2287,361 @@
       "Last month": [
         "Ostatni miesiąc"
       ],
+      "Last name": [
+        "Nazwisko"
+      ],
       "Last week": [
         "Ostatni tydzień"
+      ],
+      "Latest import": [
+        "Ostatni import"
+      ],
+      "Learn more": [
+        "Dowiedz się więcej"
+      ],
+      "License": [
+        "Licencja"
+      ],
+      "License number": [
+        "Numer prawa jazdy"
+      ],
+      "LinkedIn account": [
+        "Profil LinkedIn"
+      ],
+      "Login": [
+        "Dane logowania"
+      ],
+      "Logins": [
+        "Dane logowania"
+      ],
+      "Make all admins": [
+        "Ustaw uprawnienie administratora wszystkim"
+      ],
+      "Make all editors": [
+        "Ustaw uprawnienie edycji wszystkim"
+      ],
+      "Make all viewers": [
+        "Ustaw uprawnienie odczytu wszystkim"
+      ],
+      "max views reached": [
+        "maksymalna liczba dostępów została osiągnięta"
+      ],
+      "Members": [
+        "Użytkownicy"
+      ],
+      "Middle name": [
+        "Drugie imię"
+      ],
+      "Modified": [
+        "Zmodyfikowano"
       ],
       "More than a month": [
         "Ponad miesiąc"
       ],
+      "Most recent": [
+        "Ostatnie"
+      ],
+      "Name": [
+        "Nazwa"
+      ],
+      "Name on card": [
+        "Właściciel karty"
+      ],
+      "Need help ?": [
+        "Potrzebujesz pomocy?"
+      ],
+      "New vault": [
+        "Nowy sejf"
+      ],
+      "New-Old": [
+        "Od najnowszych"
+      ],
+      "Newest to oldest": [
+        "Od najnowszych"
+      ],
+      "No history": [
+        "Brak historii"
+      ],
+      "None": [
+        "Brak"
+      ],
+      "Note": [
+        "Notatka"
+      ],
+      "Notes": [
+        "Notatki"
+      ],
+      "Old-New": [
+        "Od najstarszych"
+      ],
+      "Oldest to newest": [
+        "Od najstarszych"
+      ],
+      "Organization": [
+        "Organizacja"
+      ],
+      "Passkey": [
+        "Klucz dostępu"
+      ],
+      "Passkeys": [
+        "Klucze dostępu"
+      ],
+      "Passphrase": [
+        "Hasło"
+      ],
+      "Passport": [
+        "Paszport"
+      ],
+      "Passport number": [
+        "Numer paszportu"
+      ],
+      "Password": [
+        "Hasło"
+      ],
+      "Password history": [
+        "Historia hasła"
+      ],
+      "Passwords": [
+        "Hasła"
+      ],
+      "Pause list": [
+        "Lista wykluczonych"
+      ],
+      "Personal details": [
+        "Szczegóły osobiste"
+      ],
+      "Personal website": [
+        "Osobista strona internetowa"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON zaszyfrowany PGP (zalecany)"
+      ],
+      "Phone number": [
+        "Numer telefonu"
+      ],
+      "PIN": [
+        "Kod PIN"
+      ],
+      "PIN code": [
+        "Kod PIN"
+      ],
+      "Prefix": [
+        "Przedrostek"
+      ],
+      "Prompt for auto-save": [
+        "Proponuj automatyczne zapisywanie"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Proponuj automatyczne zapisywanie podczas generowania haseł"
+      ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Chroń ${ PASS_APP_NAME } za pomocą dodatkowego hasła"
+      ],
+      "Rate us": [
+        "Oceń nas"
+      ],
+      "Recent": [
+        "Ostatnie"
+      ],
+      "Reddit handle": [
+        "Nazwa użytkownika Reddit"
+      ],
+      "Remove link": [
+        "Usuń link"
+      ],
+      "Report a problem": [
+        "Zgłoś problem"
+      ],
+      "Restore all items": [
+        "Przywróć wszystkie elementy"
+      ],
+      "Reveal password": [
+        "Pokaż hasło"
+      ],
+      "Save passkeys": [
+        "Zapisz klucze dostępu"
+      ],
+      "Security": [
+        "Bezpieczeństwo"
+      ],
+      "Security code": [
+        "Kod zabezpieczający"
+      ],
+      "Select an email address": [
+        "Wybierz adres e-mail"
+      ],
+      "Select preferred language": [
+        "Wybierz język"
+      ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Wybierz sejf do zaimportowania aliasów SimpleLogin"
+      ],
+      "Select your password manager": [
+        "Wybierz menadżer haseł"
+      ],
+      "Settings": [
+        "Ustawienia"
+      ],
+      "Share": [
+        "Udostępnij"
+      ],
+      "Share this vault or create a new vault": [
+        "Udostępnij sejf lub utwórz nowy"
+      ],
+      "Shared link": [
+        "Udostępniony link"
+      ],
+      "Show website favicons": [
+        "Pokaż ikony stron internetowych"
+      ],
+      "Social security": [
+        "Numer ubezpieczenia społecznego"
+      ],
+      "Social security number": [
+        "Numer ubezpieczenia społecznego"
+      ],
+      "Special characters (!&*)": [
+        "Znaki specjalne (!&*)"
+      ],
+      "State or province": [
+        "Stan lub województwo"
+      ],
+      "Street address": [
+        "Ulica"
+      ],
+      "Street address, P.O. box": [
+        "Ulica"
+      ],
+      "Strong": [
+        "Silne"
+      ],
+      "Suffix": [
+        "Przyrostek"
+      ],
+      "Support": [
+        "Wsparcie"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Synchronizuj aliasy z SimpleLogin"
+      ],
+      "Tax number": [
+        "NIP"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikowi",
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom",
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom",
+        "Sejf z tym elementem jest udostępniony ${ targetMembers } użytkownikom"
+      ],
+      "The URL has been copied to the clipboard": [
+        "Link został skopiowany do schowka"
+      ],
+      "Title": [
+        "Tytuł"
+      ],
       "Today": [
         "Dzisiaj"
+      ],
+      "Total imported items : ": [
+        "Zaimportowane elementy: "
+      ],
+      "Total items : ": [
+        "Wszystkie elementy: "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Kosz"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Odblokuj ${ PASS_APP_NAME }"
+      ],
+      "Unlock with": [
+        "Odblokuj za pomocą"
+      ],
+      "Unnamed Credit Card": [
+        "Karta płatnicza bez nazwy"
+      ],
+      "Unnamed identity": [
+        "Tożsamość bez nazwy"
+      ],
+      "Unnamed item": [
+        "Element bez nazwy"
+      ],
+      "Unnamed note": [
+        "Notatka bez nazwy"
+      ],
+      "Untitled": [
+        "Bez nazwy"
+      ],
+      "Update": [
+        "Zaktualizuj"
+      ],
+      "Username": [
+        "Nazwa użytkownika"
+      ],
+      "Username/email": [
+        "Nazwa użytkownika / adres e-mail"
+      ],
+      "Vault ID": [
+        "Identyfikator sejfu"
+      ],
+      "View details": [
+        "Pokaż szczegóły"
+      ],
+      "View logs": [
+        "Pokaż logi"
+      ],
+      "Vulnerable": [
+        "Bardzo słabe"
+      ],
+      "Weak": [
+        "Słabe"
+      ],
+      "Website": [
+        "Strona internetowa"
+      ],
+      "Websites": [
+        "Strony internetowe"
+      ],
+      "Work details": [
+        "Szczegóły służbowe"
+      ],
+      "Work email": [
+        "Służbowy adres e-mail"
+      ],
+      "Work phone number": [
+        "Służbowy numer telefonu"
+      ],
+      "X handle": [
+        "Profil X"
+      ],
+      "Yahoo account": [
+        "Profil Yahoo"
+      ],
+      "You are about to create": [
+        "Utworzysz"
+      ],
+      "ZIP or Postal code": [
+        "Kod pocztowy"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementy",
+        "${ count } elementów",
+        "${ count } elementów"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Zaznaczono ${ semiboldText } w sejfie"
       ]
     },
     "Onboarding": {
@@ -578,28 +2649,451 @@
         "Witaj w ${ appName }"
       ]
     },
+    "Option": {
+      "Commas": [
+        "Przecinki"
+      ],
+      "Hyphens": [
+        "Myślniki"
+      ],
+      "Memorable Password": [
+        "Hasło wyrazowe"
+      ],
+      "Numbers": [
+        "Cyfry"
+      ],
+      "Numbers and Symbols": [
+        "Cyfry i symbole"
+      ],
+      "Periods": [
+        "Kropki"
+      ],
+      "Random Password": [
+        "Hasło losowe"
+      ],
+      "Spaces": [
+        "Spacje"
+      ],
+      "Underscores": [
+        "Podkreślenia"
+      ]
+    },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Dodaj sekret TOTP"
+      ],
+      "Add hidden text": [
+        "Dodaj ukryty tekst"
+      ],
+      "Add note": [
+        "Dodaj notatkę"
+      ],
+      "Add text": [
+        "Dodaj tekst"
+      ],
+      "Email address": [
+        "Adres e-mail"
+      ],
+      "Enter a note...": [
+        "Wpisz notatkę..."
+      ],
+      "Enter a prefix": [
+        "Wpisz przedrostek"
+      ],
+      "Enter email": [
+        "Wpisz adres e-mail"
+      ],
+      "Enter password": [
+        "Wpisz hasło"
+      ],
+      "Enter username": [
+        "Wpisz nazwę użytkownika"
+      ],
+      "Full Name": [
+        "Właściciel karty"
+      ],
+      "MM/YY": [
+        "MM/RR"
+      ],
+      "Other": [
+        "Inna"
+      ],
+      "Password": [
+        "Hasło"
+      ],
+      "Pick a vault": [
+        "Wybierz sejf"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Opisz problem i dołącz wszelkie informacje o błędach"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Wpisz \"${ vaultName }\", aby potwierdzić usunięcie"
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Przeszukaj ${ pluralItemType } w sejfie ${ vaultName }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Przeszukaj ${ pluralItemType } we wszystkich sejfach"
+      ],
+      "Search in ${ vaultName }": [
+        "Przeszukaj sejf ${ vaultName }"
+      ],
+      "Search in all vaults": [
+        "Przeszukaj wszystkie sejfy"
+      ],
+      "Search in Trash": [
+        "Przeszukaj Kosz"
+      ],
+      "Select a suffix": [
+        "Wybierz przyrostek"
+      ],
+      "Shared vault": [
+        "Udostępniony sejf"
+      ],
+      "Unknown origin": [
+        "Nieznana strona"
+      ],
+      "Untitled": [
+        "Bez nazwy"
+      ],
       "Used on ${ url }": [
         "Użyty na ${ url }"
+      ],
+      "Write your note": [
+        "Napisz notatkę"
       ]
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Synchronizacja aliasów została włączona. Aliasy SimpleLogin mogą chwilę się synchronizować"
+      ],
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkownika.",
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników."
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "Aktualizacja automatycznej blokady"
+      ],
+      "Autofill": [
+        "Uzupełnij"
+      ],
+      "Confirm extra password": [
+        "Potwierdź dodatkowe hasło"
+      ],
+      "Confirm PIN code": [
+        "Potwierdź kod PIN"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Połącz konto ${ BRAND_NAME }"
+      ],
+      "Create PIN code": [
+        "Utwórz kod PIN"
+      ],
+      "Created": [
+        "Utworzono"
+      ],
+      "Current version": [
+        "Obecna wersja"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Usunąć sejf \"${ vaultName }\"?"
+      ],
+      "Discard changes?": [
+        "Czy chcesz odrzucić zmiany?"
+      ],
+      "Email": [
+        "E-mail"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Lubisz ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Wpisz dodatkowe hasło"
+      ],
+      "Enter your password": [
+        "Wpisz hasło"
+      ],
+      "Enter your PIN": [
+        "Wpisz kod PIN"
+      ],
+      "Fill & copy password": [
+        "Uzupełnij i kopiuj hasło"
+      ],
+      "Fill password": [
+        "Uzupełnij hasło"
+      ],
+      "Get Started": [
+        "Rozpocznij"
+      ],
+      "Get the mobile apps": [
+        "Pobierz aplikacje mobilne"
+      ],
+      "Grant permissions": [
+        "Przyznaj uprawnienia"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
+      ],
+      "History": [
+        "Historia"
+      ],
+      "Identity": [
+        "Tożsamość"
+      ],
+      "Import - ${ date }": [
+        "Import - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Importuj do sejfów"
+      ],
+      "Last autofill": [
+        "Ostatnie autouzupełnianie"
+      ],
+      "Last modified": [
+        "Zmodyfikowano"
+      ],
+      "Leave vault ?": [
+        "Opuścić sejf?"
+      ],
+      "Log in as...": [
+        "Zaloguj się jako..."
+      ],
+      "Low disk space": [
+        "Mało miejsca na dysku"
+      ],
+      "Member limit": [
+        "Limit użytkowników"
+      ],
+      "Members": [
+        "Użytkownicy"
+      ],
+      "Modified": [
+        "Zmodyfikowano"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "Przenieść wszystkie elementy do sejfu \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "Przenieść element do sejfu \"${ vaultName }\"?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "Przenieść elementy do sejfu \"${ vaultName }\"?"
+      ],
+      "No items selected": [
+        "Nie zaznaczono elementów"
+      ],
+      "No shared secure links": [
+        "Brak udostępnionych linków"
+      ],
+      "Our welcome gift to you": [
+        "Nasz prezent powitalny"
+      ],
+      "Passkey": [
+        "Klucz dostępu"
+      ],
+      "Password": [
+        "Hasło"
+      ],
+      "Pending access to the shared data": [
+        "Oczekujący dostęp do udostępnionych danych"
+      ],
+      "Permanently remove all items ?": [
+        "Usunąć trwale wszystkie elementy?"
+      ],
+      "Pin the extension": [
+        "Przypnij rozszerzenie"
+      ],
+      "Pinned (${ items.length })": [
+        "Przypięte (${ items.length })"
+      ],
+      "Remove extra password": [
+        "Usuń dodatkowe hasło"
+      ],
+      "Remove secure link?": [
+        "Usunąć link?"
+      ],
+      "Restore this version?": [
+        "Przywrócić tę wersję?"
+      ],
+      "Review and share": [
+        "Przejrzyj i udostępnij"
+      ],
+      "Secure your data": [
+        "Zabezpiecz swoje dane"
+      ],
+      "Set access level": [
+        "Ustaw uprawnienia"
+      ],
+      "Set extra password": [
+        "Ustaw dodatkowe hasło"
+      ],
+      "Set up 2FA for more security": [
+        "Skonfiguruj uwierzytelnianie dwustopniowe dla większego bezpieczeństwa"
+      ],
+      "Share with": [
+        "Udostępnij"
+      ],
+      "Stay safer online": [
+        "Zachowaj bezpieczeństwo online"
+      ],
+      "Suggestions": [
+        "Sugestie"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Przechodzisz na ${ PASS_APP_NAME }?"
+      ],
+      "Sync alias": [
+        "Synchronizuj alias"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Dziękujemy za instalację ${ PASS_APP_NAME }"
+      ],
+      "The extension is now ready to use.": [
+        "Rozszerzenie jest gotowe do użycia."
+      ],
+      "Transfer ownership": [
+        "Zmień właściciela"
+      ],
+      "Trash empty": [
+        "Kosz jest pusty"
+      ],
+      "Unlock ${ brandNameJSX }": [
+        "Odblokuj ${ brandNameJSX }"
+      ],
+      "Update available": [
+        "Dostępna jest aktualizacja"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Ulepsz konto, aby odblokować funkcje premium"
+      ],
+      "Use my email": [
+        "Użyj mojego adresu"
+      ],
+      "Vault": [
+        "Sejf"
+      ],
+      "Vault shared with you": [
+        "Udostępniony sejf"
+      ],
+      "Weak password": [
+        "Słabe hasło"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Witaj w ${ brandNameJSX }"
+      ],
+      "Welcome to your new password manager!": [
+        "Witaj w nowym menadżerze haseł!"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Dlaczego ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Sejf jest pusty"
+      ],
+      "Your welcome gift": [
+        "Twój prezent powitalny"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "Adres URL został zduplikowany"
+      ],
+      "Field name is required": [
+        "Nazwa pola jest wymagana"
+      ],
+      "OTP secret or URI is invalid": [
+        "Sekret TOTP lub adres URL jest wymagany"
+      ],
+      "OTP secret or URI required": [
+        "Sekret TOTP lub adres URL jest wymagany"
+      ],
+      "Section name cannot be empty": [
+        "Nazwa sekcji nie może być pusta"
+      ],
+      "Url already exists": [
+        "Adres URL już istnieje"
+      ],
+      "URL cannot be empty": [
+        "Adres URL nie może być pusty"
+      ],
+      "Url is invalid": [
+        "Adres URL jest nieprawidłowy"
+      ],
+      "URL is invalid": [
+        "Adres URL jest nieprawidłowy"
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Hasło ${ BRAND_NAME } jest wymagane"
+      ],
+      "A description of the problem is required": [
+        "Opis problemu jest wymagany"
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Wszystkie elementy zostaną trwale usunięte. Tej akcji nie można cofnąć."
+      ],
+      "An error occurred while exporting your data": [
+        "Wystąpił błąd podczas eksportowania danych"
+      ],
+      "An error occurred while resuming your session": [
+        "Wystąpił błąd podczas wznawiania sesji"
+      ],
+      "At least one email address is required": [
+        "Co najmniej jeden adres e-mail jest wymagany"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Nie można pobrać skrzynek pocztowych dla tego aliasu"
+      ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Ostrzeżenie: Jeśli zapomnisz tego hasła, stracisz dostęp do konta ${ PASS_APP_NAME }."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Nie można utworzyć sejfu \"${ vaultName }\""
       ],
       "Could not send invitations to the following addresses :": [
         "Nie można wysłać zaproszeń na następujące adresy:"
       ],
+      "Duplicate email addresses.": [
+        "Adresy e-mail są zduplikowane."
+      ],
+      "Empty note": [
+        "Notatka jest pusta"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Data wygaśnięcia nie jest w formacie MM/RR"
       ],
+      "Extra password cannot be empty": [
+        "Dodatkowe hasło nie może być puste"
+      ],
+      "Extra password is required": [
+        "Dodatkowe hasło jest wymagane"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Dodatkowe hasło musi zawierać co najmniej 8 znaków"
+      ],
       "Invalid alias prefix": [
         "Przedrostek aliasu jest nieprawidłowy"
+      ],
+      "Invalid email addresses.": [
+        "Adresy e-mail są nieprawidłowe."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Zapraszanie adresów e-mail spoza organizacji nie jest dozwolone."
+      ],
+      "item was imported without custom fields": [
+        "element został zaimportowany bez pól niestandardowych"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maksymalna długość to ${ maxLength } znak",
+        "Maksymalna długość to ${ maxLength } znaki",
+        "Maksymalna długość to ${ maxLength } znaków",
+        "Maksymalna długość to ${ maxLength } znaków"
       ],
       "Missing alias prefix": [
         "Brak przedrostka aliasu"
@@ -607,20 +3101,104 @@
       "Missing alias suffix": [
         "Brak przyrostka aliasu"
       ],
+      "Move to trash": [
+        "Przenieś do Kosza"
+      ],
+      "No items": [
+        "Brak elementów"
+      ],
+      "No items in trash matching": [
+        "Brak pasujących elementów w Koszu"
+      ],
+      "No items matching": [
+        "Brak pasujących elementów"
+      ],
+      "No password manager selected": [
+        "Nie wybrano menadżera haseł"
+      ],
+      "No results": [
+        "Nie znaleziono żadnych wyników"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Dozwolone są tylko znaki alfanumeryczne, kropki, myślniki i podkreślenia"
+      ],
+      "Passphrase is required": [
+        "Hasło jest wymagane"
+      ],
+      "Passwords do not match": [
+        "Hasła nie pasują do siebie"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "Plik eksportu danych zaszyfrowany PGP wymaga hasła"
       ],
       "Please contact us for investigating the issue": [
         "Skontaktuj się z nami, aby zbadać problem"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Zweryfikuj adres e-mail, aby użyć aliasów"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Zweryfikuj adres e-mail, aby udostępnić sejf"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Usunięcie dodatkowego hasła spowoduje wylogowanie ze wszystkich urządzeń i zakończy wszystkie aktywne sesje."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Raporty nie są szyfrowane end-to-end. Nie wysyłaj żadnych poufnych informacji."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Coś poszło nie tak podczas uruchamiania rozszerzenia ${ PASS_APP_NAME }. Odśwież rozszerzenie"
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Przedrostek aliasu nie może być dłuższy niż 40 znaków"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Alias \"${ aliasEmail }\" jest wykorzystywany w danych logowania \"${ relatedLoginName }\"."
+      ],
+      "Title is required": [
+        "Tytuł jest wymagany"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Zmienić właściciela sejfu na ${ email }?"
+      ],
+      "Unable to save": [
+        "Nie można zapisać"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Nie można zalogować się do ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Sejf \"${ vaultName }\" i wszystkie jego elementy zostaną trwale usunięte. Tej akcji nie można cofnąć."
+      ],
+      "Vault name is required": [
+        "Nazwa sejfu jest wymagana"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Nie możesz utworzyć więcej sejfów w swojej subskrypcji."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Osiągnięto maksymalną liczbę użytkowników sejfu."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Osiągnięto maksymalną liczbę użytkowników w sejfie. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Osiągnięto maksymalną liczbę sejfów w obecnym planie."
+      ],
+      "You have unsaved changes.": [
+        "Masz niezapisane zmiany."
+      ],
       "You must select at least one mailbox": [
         "Wybierz, co najmniej jedną skrzynkę pocztową"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Nie masz dostępu do tego sejfu. Jeśli chcesz ponownie dołączyć do sejfu, potrzebujesz nowego zaproszenia."
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Twój plan nie pozwala na utworzenie większej liczby aliasów"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Twój plan pozwala na autouzupełnianie tylko z sejfu głównego"
       ],
       "Your session could not be authorized.": [
         "Sesja nie może zostać autoryzowana."
@@ -633,6 +3211,9 @@
       ],
       "Your session was locked.": [
         "Sesja została zablokowana."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do pierwszego sejfu. Ulepsz plan, aby importować do wielu sejfów."
       ]
     }
   }

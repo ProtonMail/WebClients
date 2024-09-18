@@ -5,8 +5,629 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Hesap"
+      ],
+      "Account settings": [
+        "Hesap ayarları"
+      ],
+      "Add": [
+        "Ekle"
+      ],
+      "Add current URL": [
+        "Geçerli adresi ekle"
+      ],
+      "Add domain": [
+        "Etki alanı ekle"
+      ],
+      "Add more": [
+        "Başka ekle"
+      ],
+      "Add new item": [
+        "Yeni öge ekle"
+      ],
+      "Add section": [
+        "Bölüm ekle"
+      ],
+      "Add username field": [
+        "Kullanıcı adı alanı ekle"
+      ],
+      "Advanced": [
+        "Gelişmiş"
+      ],
+      "Advanced options": [
+        "Gelişmiş seçenekler"
+      ],
+      "Authenticate": [
+        "Kimliği doğrula"
+      ],
+      "Back": [
+        "Geri"
+      ],
+      "Bulk delete items from trash": [
+        "Çöpteki ögeleri toplu olarak sil"
+      ],
+      "Bulk move items to another vault": [
+        "Ögeleri toplu olarak başka bir kasaya taşı"
+      ],
+      "Bulk move items to trash": [
+        "Ögeleri toplu olarak çöpe at"
+      ],
+      "Bulk restore items from trash": [
+        "Çöpteki ögeleri toplu olarak çıkar"
+      ],
+      "Bulk select items": [
+        "Ögeleri toplu olarak seç"
+      ],
+      "Cancel": [
+        "İptal"
+      ],
+      "Change": [
+        "Değiştir"
+      ],
+      "Choose a file or drag it here": [
+        "Bir dosya seçin ya da sürükleyip buraya bırakın"
+      ],
+      "Clear": [
+        "Temizle"
+      ],
+      "Clear search": [
+        "Aramayı temizle"
+      ],
+      "Close": [
+        "Kapat"
+      ],
+      "Close advanced options": [
+        "Gelişmiş seçenekleri kapat"
+      ],
+      "Close navigation": [
+        "Gezinmeyi kapat"
+      ],
+      "Confirm": [
+        "Onayla"
+      ],
+      "Confirm access": [
+        "Erişimi onayla"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } hesabınızı bağlayın"
+      ],
+      "Continue": [
+        "İlerle"
+      ],
+      "Continue offline": [
+        "Çevrim dışı kal"
+      ],
+      "Continue without pinning": [
+        "Sabitlemeden ilerle"
+      ],
+      "Copy & fill in": [
+        "Kopyala ve doldur"
+      ],
+      "Copy and close": [
+        "Kopyala ve kapat"
+      ],
+      "Copy link": [
+        "Bağlantıyı kopyala"
+      ],
+      "Copy to clipboard": [
+        "Panoya kopyala"
+      ],
+      "Create": [
+        "Ekle"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Bir ${ BRAND_NAME } hesabı açın"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Bir ${ BRAND_NAME } hesabı açın"
+      ],
+      "Create a new vault to share": [
+        "Paylaşılacak yeni bir kasa oluştur"
+      ],
+      "Create alias": [
+        "Takma ad oluştur"
+      ],
+      "Create an account": [
+        "Hesap açın"
+      ],
+      "Create card": [
+        "Kart ekle"
+      ],
+      "Create identity": [
+        "Kimlik oluştur"
+      ],
+      "Create login": [
+        "Oturum açma kaydı oluştur"
+      ],
+      "Create new login": [
+        "Yeni oturum açma kaydı oluştur"
+      ],
+      "Create note": [
+        "Not oluştur"
+      ],
+      "Create vault": [
+        "Kasa oluştur"
+      ],
+      "Creating vault": [
+        "Kasa oluşturuluyor"
+      ],
+      "Custom section": [
+        "Özel bölüm"
+      ],
+      "Customize": [
+        "Özelleştir"
+      ],
+      "Delete": [
+        "Sil"
+      ],
+      "Delete alias": [
+        "Takma adı sil"
+      ],
+      "Delete all": [
+        "Tümünü sil"
+      ],
+      "Delete password": [
+        "Parolayı sil"
+      ],
+      "Delete permanently": [
+        "Kalıcı olarak sil"
+      ],
+      "Delete vault": [
+        "Kasayı sil"
+      ],
+      "Deselect": [
+        "Bırak"
+      ],
+      "Disable autosave on this website": [
+        "Bu sitede otomatik kayıt kullanılmasın"
+      ],
+      "Disable instead": [
+        "Onun yerine kullanımdan kaldırın"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Bu takma adı kullanımdan kaldırarak bu takma ada gönderilen e-postaları almayı durdurun"
+      ],
+      "Discard": [
+        "Sil"
+      ],
+      "Dismiss": [
+        "Yok say"
+      ],
+      "Do not show on this website": [
+        "Bu sitede görüntülenmesin"
+      ],
+      "Do not suggest on this website": [
+        "Bu site için öneride bulunulmasın"
+      ],
+      "Done": [
+        "Tamam"
+      ],
+      "Download this CSV template": [
+        "Bu CSV kalıbını indir"
+      ],
+      "Edit": [
+        "Düzenle"
+      ],
+      "Edit vault": [
+        "Kasayı düzenle"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Bu takma adı kullanıma alarak bu takma ada gönderilen e-postaları alın"
+      ],
+      "Entire vault": [
+        "Tüm kasa"
+      ],
+      "Exclude from monitoring": [
+        "İzlemeye katma"
+      ],
+      "Export": [
+        "Dışa aktar"
+      ],
+      "Feedback & Help": [
+        "Geri bildirim ve yardım"
+      ],
+      "Fill password": [
+        "Parolayı doldur"
+      ],
+      "Filter vault items": [
+        "Kasa ögelerini süz"
+      ],
+      "Generate alias": [
+        "Takma ad üret"
+      ],
+      "Generate password": [
+        "Parola üret"
+      ],
+      "Generate secure link": [
+        "Güvenli bağlantı oluştur"
+      ],
+      "Generated passwords": [
+        "Oluşturulmuş parolalar"
+      ],
+      "Generating secure link...": [
+        "Güvenli bağlantı oluşturuluyor..."
+      ],
+      "Get mobile apps": [
+        "Mobil uygulamaları edinin"
+      ],
+      "Get Pass Business": [
+        "Pass Business edinin"
+      ],
+      "Get Pass Plus": [
+        "Pass Plus edinin"
+      ],
+      "Hide": [
+        "Gizle"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "${ PROVIDER_INFO_MAP[form.values.provider].title } üzerindeki verilerimi nasıl dışa aktarabilirim?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } nasıl kullanılır"
+      ],
+      "Import": [
+        "İçe aktar"
+      ],
+      "Import your passwords": [
+        "Parolalarınızı içe aktarın"
+      ],
+      "Importing": [
+        "İçe aktarılıyor"
+      ],
+      "Include in monitoring": [
+        "İzlemeye kat"
+      ],
+      "Invite others": [
+        "Başkalarını davet edin"
+      ],
+      "Join shared vault": [
+        "Paylaşılan kasaya eriş"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "Leave": [
+        "Ayrıl"
+      ],
+      "Leave vault": [
+        "Kasayı bırak"
+      ],
+      "Link copied to clipboard": [
+        "Bağlantı panoya kopyalandı"
+      ],
+      "Link expires after": [
+        "Bağlantının geçerlilik süresi sonu"
+      ],
+      "Lock extension": [
+        "Eklentiyi kilitle"
+      ],
+      "Make admin": [
+        "Yönetici yap"
+      ],
+      "Make editor": [
+        "Düzenleyici yap"
+      ],
+      "Make viewer": [
+        "Görüntüleyici yap"
+      ],
+      "Manage access": [
+        "Erişim yönetimi"
+      ],
+      "Manage vault access": [
+        "Kasa erişimi yönetimi"
+      ],
+      "Manually sync your data": [
+        "Verilerinizi el ile eşitleyin"
+      ],
+      "Maximum views": [
+        "En fazla görüntüleme sayısı"
+      ],
+      "More info: ${ safeTitle }": [
+        "Ayrıntılı bilgi: ${ safeTitle }"
+      ],
+      "More options": [
+        "Diğer seçenekler"
+      ],
+      "Move": [
+        "Taşı"
+      ],
+      "Move all items": [
+        "Tüm ögeleri taşı"
+      ],
+      "Move to a shared vault": [
+        "Paylaşılan bir kasaya taşı"
+      ],
+      "Move to another vault": [
+        "Başka bir kasaya taşı"
+      ],
+      "Move to Trash": [
+        "Çöpe at"
+      ],
+      "Move to trash": [
+        "Çöpe at"
+      ],
+      "Multiple select": [
+        "Çoklu seçim"
+      ],
+      "No expired links": [
+        "Geçerlilik süresi geçmiş bir bağlantı yok"
+      ],
+      "Not now": [
+        "Şimdi değil"
+      ],
+      "OK": [
+        "Tamam"
+      ],
+      "Open in a window": [
+        "Bir pencerede aç"
+      ],
+      "Open navigation": [
+        "Gezinmeyi aç"
+      ],
+      "Open web app": [
+        "İnternet uygulamasını aç"
+      ],
+      "Pass for Android": [
+        "Proton Pass Android uygulaması"
+      ],
+      "Pass for iOS": [
+        "Proton Pass iOS uygulaması"
+      ],
+      "Pin item": [
+        "Ögeyi sabitle"
+      ],
       "Please retry": [
         "Lütfen yeniden deneyin"
+      ],
+      "Refresh the page": [
+        "Sayfayı yenile"
+      ],
+      "Regenerate": [
+        "Yeniden üret"
+      ],
+      "Reject": [
+        "Reddet"
+      ],
+      "Reject invitation": [
+        "Daveti reddet"
+      ],
+      "Reload extension": [
+        "Eklentiyi yeniden yükle"
+      ],
+      "Remove": [
+        "Kaldır"
+      ],
+      "Remove access": [
+        "Erişimi kaldır"
+      ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Geçerlilik süresi geçmiş tüm bağlantıları kaldır (${ inactiveLinkCount })"
+      ],
+      "Remove link": [
+        "Bağlantıyı kaldır"
+      ],
+      "Remove member": [
+        "Üyeyi kaldır"
+      ],
+      "Request a feature": [
+        "Bir özellik istiyorum"
+      ],
+      "Resend invitation": [
+        "Daveti yeniden gönder"
+      ],
+      "Restore": [
+        "Geri yükle"
+      ],
+      "Restore item": [
+        "Ögeyi geri yükle"
+      ],
+      "Restrict number of views": [
+        "Görüntüleme sayısı sınırlansın"
+      ],
+      "Retry": [
+        "Yeniden dene"
+      ],
+      "Right click and download this CSV": [
+        "Sağ tıklayın ve bu CSV dosyasını indirin"
+      ],
+      "Save": [
+        "Kaydet"
+      ],
+      "Save passkey": [
+        "Geçiş anahtarını kaydet"
+      ],
+      "Saving": [
+        "Kaydediliyor"
+      ],
+      "Saving passkey...": [
+        "Geçiş anahtarı kaydediliyor..."
+      ],
+      "Section name": [
+        "Bölüm adı"
+      ],
+      "Secure links": [
+        "Güvenli bağlantılar"
+      ],
+      "See all": [
+        "Tümünü görüntüle"
+      ],
+      "See members": [
+        "Üyeleri görüntüle"
+      ],
+      "Send invite": [
+        "Davet gönder"
+      ],
+      "Send us a message": [
+        "Bize ileti gönderin"
+      ],
+      "Set access level": [
+        "Erişim düzeyini ayarla"
+      ],
+      "Set extra password": [
+        "Ek parolayı ayarla"
+      ],
+      "Setup 2FA": [
+        "İki adımlı doğrulama kur"
+      ],
+      "Share": [
+        "Paylaş"
+      ],
+      "Share secure link": [
+        "Güvenli bağlantıyı paylaş"
+      ],
+      "Share this vault": [
+        "Bu kasayı paylaş"
+      ],
+      "Share vault": [
+        "Kasayı paylaş"
+      ],
+      "Show": [
+        "Görüntüle"
+      ],
+      "Show advanced options": [
+        "Gelişmiş seçenekleri görüntüle"
+      ],
+      "Sign back in": [
+        "Yeniden oturum aç"
+      ],
+      "Sign in": [
+        "Oturum aç"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "${ BRAND_NAME } ile oturum aç"
+      ],
+      "Sign out": [
+        "Oturumu kapat"
+      ],
+      "Sort vault items": [
+        "Kasa ögelerini sırala"
+      ],
+      "Submit": [
+        "Gönder"
+      ],
+      "Submitting report...": [
+        "Rapor gönderiliyor..."
+      ],
+      "Sync aliases": [
+        "Takma adları eşitle"
+      ],
+      "Transfer ownership": [
+        "Sahipliği aktar"
+      ],
+      "Trash": [
+        "Çöpe at"
+      ],
+      "Try again": [
+        "Yeniden dene"
+      ],
+      "Unlock": [
+        "Kilidi aç"
+      ],
+      "Unlock offline with password": [
+        "Kilidi parola ile çevrim dışı aç"
+      ],
+      "Unpin item": [
+        "Ögenin sabitlemesini kaldır"
+      ],
+      "Update": [
+        "Güncelle"
+      ],
+      "Update vault": [
+        "Kasayı güncelle"
+      ],
+      "Updating": [
+        "Güncelleniyor"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ],
+      "Upgrade now to share with more people": [
+        "Daha fazla kişiyle paylaşmak için tarifenizi yükseltin"
+      ],
+      "Via secure link": [
+        "Güvenli bağlantı ile"
+      ],
+      "View app logs": [
+        "Uygulama günlüklerini görüntüle"
+      ],
+      "View history": [
+        "Geçmişi görüntüle"
+      ],
+      "View item history": [
+        "Öge geçmişini görüntüle"
+      ],
+      "View older history": [
+        "Daha eski geçmişi görüntüle"
+      ],
+      "Write us on Reddit": [
+        "Bize Reddit üzerinden yazın"
+      ],
+      "Write us on Twitter": [
+        "Bize Twitter üzerinden yazın"
+      ],
+      "Your password manager not here? Request it.": [
+        "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "İndirimli alın. Ayda tarifenize yalnızca ${ relativePrice } ek ödeme ile bir yıllık Pass Plus edinin."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Muhteşem Cuma teklifi"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Diğer bilgiler"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Daralt"
+      ],
+      "Expand": [
+        "Genişlet"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } oturum açma kaydı aynı parolayı kullanıyor",
+        "${ total } oturum açma kaydı aynı parolayı kullanıyor"
+      ],
+      "A checked box means the feature is disabled.": [
+        "Seçeneğin işaretlenmesi özelliğin kapatılmasını sağlar."
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Karanlık ağ izleme özelliği ücretli bir tarife ile kullanılabilir. Hemen kullanmak için tarifenizi yükseltin."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "${ PASS_SHORT_APP_NAME } içinde belirli otomatik işlemlerin (otomatik doldurma, otomatik önerme, otomatik kaydetme) yapılmayacağı etki alanlarının listesi.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Bu hesapta güvenlik açığı var. Hizmeti ziyaret edin ve parolanızı değiştirin."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Bu hizmet iki adımlı doğrulama sağlıyor. Hesap güvenliğini artırmak için bunu kullanın."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Çevrim içi varlığınızı korumak için gelişmiş güvenlik özellikleri ile ayrıntılı günlüklere erişin."
       ]
     },
     "Error": {
@@ -22,9 +643,21 @@
       "Authentication error": [
         "Kimlik doğrulayıcı sorunu"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ${ BRAND_NAME } parolasını yazın"
+      ],
+      "Authentication failure: ${ message }": [
+        "Kimlik doğrulanamadı: ${ message }"
+      ],
+      "Cannot create alias (${ error }).": [
+        "Takma ad oluşturulamadı (${ error })."
+      ],
       "Cannot send invitation at the moment": [
         "Davetiye şu anda gönderilemiyor",
         "Davetiyeler şu anda gönderilemiyor"
+      ],
+      "Cannot send invitations at the moment": [
+        "Şu anda davetiye gönderilemiyor"
       ],
       "Could not confirm this invite at the moment": [
         "Bu davet şu anda onaylanamıyor"
@@ -50,6 +683,9 @@
       "Could not validate addresses at the moment.": [
         "Adresler şu anda doğrulanamıyor."
       ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "CSV dosyasında beklenen başlık bilgileri bulunamadı: ${ missingHeaders }"
+      ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "${ PASS_APP_NAME } dış aktarma dosyanızın şifresi çözülemedi. ${ errorDetail }"
       ],
@@ -59,11 +695,21 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası silinemedi"
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } bozuk CSV satırı bulundu",
+        "${ errors.length } bozuk CSV satırı bulundu"
+      ],
       "Editing item failed": [
         "Öge düzenlenemedi"
       ],
+      "Empty CSV file": [
+        "CSV dosyası boş"
+      ],
       "Emptying trash failed": [
         "Çöp kutusu boşaltılamadı"
+      ],
+      "Encrypted JSON not supported": [
+        "Şifrelenmiş JSON desteklenmiyor"
       ],
       "Error reporting problem": [
         "Sorun bildirilirken sorun çıktı"
@@ -146,6 +792,12 @@
       "File could not be parsed": [
         "Dosya işlenemedi"
       ],
+      "File could not be read": [
+        "Dosya okunamadı"
+      ],
+      "File does not match expected format": [
+        "Dosya beklenen biçimde değil"
+      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "\"${ vaultData.name }\" kasası içine aktarılamadı: ${ description }"
       ],
@@ -157,6 +809,9 @@
       ],
       "Invalid password manager": [
         "Parola yöneticisi geçersiz"
+      ],
+      "Invalid URL": [
+        "Adres geçersiz"
       ],
       "Invitation could not be accepted": [
         "Davet kabul edilemedi"
@@ -173,6 +828,9 @@
       "Item does not exist": [
         "Öge bulunamadı"
       ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "Öge alanlarınızdan herhangi birinde beklenmedik virgüller, tırnak işaretleri veya birkaç satır varsa, LastPass tarafından dışa aktarılan CSV dosyası bozuk olur"
+      ],
       "Missing passkey": [
         "Geçiş anahtarı eksik"
       ],
@@ -184,6 +842,18 @@
       ],
       "Passphrase is incorrect": [
         "Parola ifadesi doğru değil"
+      ],
+      "PIN codes do not match": [
+        "PIN kodu ile onayı aynı değil"
+      ],
+      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
+        "İlerlemek için lütfen ${ PASS_APP_NAME } için gerekli eklenti izinlerini verin"
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Lütfen eklentiyi sabitleyin ya da \"Sabitlemeden ilerle\" olarak seçin."
+      ],
+      "Registration failure: ${ message }": [
+        "Kayıt yapılamadı: ${ message }"
       ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
@@ -209,8 +879,20 @@
       "Signature verification failed": [
         "İmza doğrulanamadı"
       ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Parola sıfırlandığı için bazı kasalara artık erişilemiyor. Yeniden erişebilmek için hesap anahtarlarınızı yeniden kullanıma alın. ${ reactivateLink }"
+      ],
       "Something went wrong": [
         "Bir sorun çıktı"
+      ],
+      "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
+        "Bir sorun çıktı. Lütfen ${ PASS_APP_NAME } eklentisini yeniden yükleyin. Bu sorun günlüğe kaydedildi"
+      ],
+      "The file you are trying to import is empty": [
+        "İçe aktarmak istediğiniz dosya boş"
+      ],
+      "The URL is in the list": [
+        "Adres listede var"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Güvenli bağlantı kaldırılırken bir hata oluştu. Lütfen birkaç dakika içinde tekrar deneyin."
@@ -220,6 +902,9 @@
       ],
       "Trashing item failed": [
         "Öge çöpe atılamadı"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Bu öge için tek kullanımlık parola üretilemedi"
       ],
       "Unable to sync": [
         "Eşitlenemedi"
@@ -254,6 +939,9 @@
       "Vault \"${ vaultData.name }\" could not be created": [
         "\"${ vaultData.name }\" kasası oluşturulamadı"
       ],
+      "Vault name does not match": [
+        "Kasa adı aynı değil"
+      ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "${ PASS_SHORT_APP_NAME } başlatılırken bir sorun çıktı. Sorun sürerse yardım almak için müşteri desteği ekibimizle görüşün."
       ],
@@ -266,11 +954,65 @@
       "Wrong PIN code. Try again.": [
         "PIN kodu yanlış. Yeniden deneyin."
       ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Şu anda çevrim dışısınız. ${ PASS_SHORT_APP_NAME } kilidini açmak için lütfen yeniden bağlanın."
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
       ]
     },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
+      ],
+      "Something went wrong": [
+        "Bir şeyler ters gitti"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "bayt",
+        "bayt"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bayt",
+        "Bayt"
+      ],
+      "Gigabyte": [
+        "Gigabayt",
+        "Gigabayt"
+      ],
+      "Kilobyte": [
+        "Kilobayt",
+        "Kilobayt"
+      ],
+      "Megabyte": [
+        "Megabayt",
+        "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
+      ]
+    },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Birden çok kasa oluşturabilmek için ücretli bir tarifeye geçin."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "\"${ payload.item.data.metadata.name }\" ögesi yok sayıldı"
       ],
@@ -280,20 +1022,103 @@
       "${ count } invites successfully sent": [
         "${ count } davetiye gönderildi"
       ],
+      "${ count } time": [
+        "${ count } kez",
+        "${ count } kez"
+      ],
+      "${ count } view": [
+        "${ count } görüntülenme",
+        "${ count } görüntülenme"
+      ],
+      "${ count }/${ maxReads } views": [
+        "${ count }/${ maxReads } görüntüleme"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } üye",
+        "${ memberCount } üye"
+      ],
+      "${ n } item": [
+        "${ n } öge",
+        "${ n } öge"
+      ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } her zaman erişilebilir olacak"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin internet simgesini görüntüleyecek."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } yalnızca oturum açma, not, kredi kartı ve kimlik kayıtlarını içe aktarır."
+      ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME }, oluşturulan parolalar otomatik olarak doldurulduğunda size bilgi verir."
+      ],
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } kimlik doğrulama bilgilerinizi kaydetmeyi ya da güncellemeyi soracak."
+      ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } kaydedilmiş geçiş anahtarlarını kullanarak kimlik doğrulamayı önerecek"
+      ],
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } oturum açma formlarında bir e-posta takma adı oluşturmayı önerecek."
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } oturum açma formlarında güçlü parola oluşturmayı önerecek."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } geçiş anahtarlarını kaydetmeyi önerecek."
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } kullanımdan kaldırıldı"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } kullanıma alındı"
       ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } gün kaldı",
+        "${ trialDaysLeft } gün kaldı"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 gün boyunca ücretli özellikleri ücretsiz olarak deneyin. Yalnızca ${ BRAND_NAME } ile ilk haftanızda."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Yeni bir ${ PASS_APP_NAME } sürümü yayınlanmış. Son özellikler ile hata düzeltmelerini almak için güncelleyin."
+      ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "\"${ username }\" için bir geçiş anahtarı kaydedilecek ve ${ PASS_APP_NAME } kurulu olan aygıtlarda kullanılabilecek."
+      ],
       "Access successfully confirmed": [
         "Erişim onaylandı"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } uygulamasına erişim için her zaman ${ BRAND_NAME } parolanız istenir."
+      ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "${ PASS_APP_NAME } kilidi açmak için parmak iziniz veya aygıtınızın PIN kodu gerekecek."
+      ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Mobil uygulamamız ile hareket halindeyken parolalarınıza erişin."
+      ],
+      "Admin": [
+        "Yönetici"
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "İçe aktarma işlemi tamamlandığında, güvende kalmak için parolalarınızın bulunduğu dosyayı silebilirsiniz."
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Takma ad kullanımdan kaldırıldı. Artık ${ item.aliasEmail } adresine gönderilen e-postaları almayacaksınız"
       ],
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "Takma ad kullanıma alındı. Artık ${ item.aliasEmail } adresine gönderilen e-postaları alacaksınız"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "${ BRAND_NAME } ile SimpleLogin hesaplarındaki takma adlar eşitleniyor."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Çöp kutusundaki takma adlar e-postaları iletmeyi sürdürür. Bu adreslere e-posta almayı durdurmak istiyorsanız, çöpe atmak yerine kullanımdan kaldırın."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Takma adlar eşitlenmemiş (${ aliasCount })"
       ],
       "All breaches for this address were resolved": [
         "Bu adres için tüm verilerin ele geçirilmesi olayları çözümlendi"
@@ -316,14 +1141,80 @@
       "An item previously shared with you was removed": [
         "Daha önce sizinle paylaşılan bir öge kullanımdan kaldırıldı"
       ],
+      "Are you sure you want to remove the link?": [
+        "Bağlantıyı kaldırmak istediğinize emin misiniz?"
+      ],
       "Auto-lock successfully disabled.": [
         "Otomatik kilitleme kapatıldı."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "Oluşturulan parola otomatik olarak panoya kopyalansın"
       ],
       "Autosaved on ${ payload.domain }": [
         "${ payload.domain } üzerinden otomatik olarak kaydedildi"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Verilerinizi bu biçimde dışa aktarmadan önce lütfen Safari -> Ayarlar -> \"Genel\" sekmesini açın ve \"Güvenli dosyaları indirdikten sonra aç\" seçeneğini kapatın. Böylece, dışa aktarılan dosyanın Safari tarafından yanlış bir şekilde ayıklanması engellenir."
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Biyometri ile kilitleme kullanıma alındı. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Biyometrik veriler kullanımdan kaldırılacak ve yeniden kullanıma alınması gerekecek."
+      ],
+      "Built in 2FA authenticator": [
+        "Hazır iki adımlı kimlik doğrulayıcı"
+      ],
+      "Can be viewed": [
+        "Görüntülenebilir"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Bu kasaya erişme izni verebilir, geri alabilir ya da silebilir."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Bu kasaya erişme izni verebilir ya da geri alabilir."
+      ],
+      "Can view items in this vault.": [
+        "Bu kasadaki ögeleri görüntüleyebilir."
+      ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "${ domain } oturumu açmak için kaydedilmiş bir geçiş anahtarı seçin"
+      ],
+      "Click the icon to open it anytime.": [
+        "İstediğiniz zaman açmak için simgeye tıklayın."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Bir güvenlik anahtarı ya da başka bir geçiş anahtarı kullanmak için bu pencereyi kapatın."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Başka bir geçiş anahtarı yöneticisi kullanmak için bu pencereyi kapatın."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Kaldırma işlemini tamamlamak için ek parolanızı doğrulayın."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "Tebrikler erişiminiz onaylandı"
+      ],
+      "Copied to clipboard": [
+        "Panoya kopyalandı"
+      ],
+      "Creating alias...": [
+        "Takma ad oluşturuluyor..."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "CSV, verilerinizi görüntülemek için pratik bir biçim sunar. Ancak basit yapısı nedeniyle bazı veriler katılmaz (özel alanlar, geçiş anahtarları...). Eksiksiz bir dışa aktarım için farklı bir biçim kullanmanızı öneririz."
+      ],
+      "Current version": [
+        "Güncel sürüm"
+      ],
+      "Decrypting your data": [
+        "Verilerinizin şifresi çözülüyor"
+      ],
+      "Deleted items will be moved here first": [
+        "Silinen ögeler önce buraya taşınır"
       ],
       "Deleting \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" siliniyor"
@@ -337,6 +1228,24 @@
       "Disabling offline mode...": [
         "Çevrim dışı kip kapatılıyor..."
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "${ PASS_APP_NAME } YouTube bölümüne bakın"
+      ],
+      "Drop file here to upload": [
+        "Yüklemek için dosyayı buraya bırakın"
+      ],
+      "Drop to import": [
+        "İçe aktarmak için bırakın"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Safari tarayıcı eklentilerindeki bir sınırlama nedeniyle, verileri dışa aktardıktan sonra \".pgp\" dosya uzantısı eksik kalır. Lütfen dışa aktardıktan sonra dosyayı yeniden adlandırın ve .pgp uzantısını ekleyin (örnek: dosya.pgp)."
+      ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Var olan parolalarınızı kolayca ${ PASS_APP_NAME } içine aktarın."
+      ],
+      "Editor": [
+        "Düzenleyici"
+      ],
       "Email address successfully deleted from monitoring": [
         "E-posta adresi izlemeden çıkarıldı"
       ],
@@ -348,6 +1257,12 @@
       ],
       "Emptying trash...": [
         "Çöp kutusu boşaltılıyor..."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesabınızı bağlayarak ${ PASS_APP_NAME } uygulamasını kullanıma alın"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Verilerinizi korumak için otomatik kilitlemeyi açın"
       ],
       "Enabling biometrics auto-lock": [
         "Otomatik biyometri kilidi kullanıma alınıyor"
@@ -367,11 +1282,60 @@
       "Enabling PIN auto-lock": [
         "PIN ile otomatik kilitleme açılıyor"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Doğrulama kodunu yazın. Rakam ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Ek parolanızı yazın"
+      ],
+      "Enter your PIN code": [
+        "PIN kodunuzu yazın"
+      ],
+      "Expires in": [
+        "Geçerlilik sonu"
+      ],
+      "Expires in ${ remainingTime }": [
+        "${ remainingTime } sonra geçerlilik süresi dolacak"
+      ],
       "Extra password successfuly created": [
         "Ek parola oluşturuldu"
       ],
       "Extra password successfuly removed": [
         "Ek parola kaldırıldı"
+      ],
+      "Fill in the CSV with your data": [
+        "CSV dosyasına verilerinizi ekleyin"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Verilerinizi bir CSV dosyasından içe aktarmak için şu adımları izleyin:"
+      ],
+      "For easy access to your passwords and more.": [
+        "Parolalarınıza ve diğer bilgilerinize kolayca erişmek için."
+      ],
+      "For security reason, your access needs to be confirmed": [
+        "Güvenlik nedeniyle erişiminizin onaylanması gerekiyor"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Güvenlik nedeniyle erişiminizin onaylanması gerekiyor"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanacak.",
+        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanacak."
+      ],
+      "Generating alias...": [
+        "Takma ad üretiliyor..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Sınırsız sayıda takma ad edinin, ücretli özelliklerin tadını çıkarın ve Pass Plus tarifesine abone olarak bizi destekleyin."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Başlamak için gereken tüm bilgileri burada bulabilirsiniz."
+      ],
+      "Import in progress:": [
+        "İçe aktarılıyor:"
+      ],
+      "Import the CSV file below.": [
+        "Aşağıdan CSV dosyasını içe aktarın."
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } öge içe aktarıldı",
@@ -380,8 +1344,17 @@
       "Imported on ${ date }": [
         "${ date } tarihinde içe aktarıldı"
       ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "En iyi ${ PASS_APP_NAME } deneyimine ulaşmak için lütfen gerekli eklenti izinlerini verin"
+      ],
       "Internet connection lost": [
         "İnternet bağlantısı kesildi"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "İnternet bağlantısı kesildi. Lütfen aygıtınızın bağlantısını denetleyin."
+      ],
+      "Invitation sent": [
+        "Davet gönderildi"
       ],
       "Invite successfully removed": [
         "Davet silindi"
@@ -392,8 +1365,15 @@
       "Invite successfully sent": [
         "Davet gönderildi"
       ],
+      "invites you to access items in": [
+        "sizi şu kasadaki ögelere erişmeye davet ediyor:"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Görünüşe göre ${ PASS_APP_NAME } uygulamasında zaten oturum açmışsınız. Farklı bir hesapla oturum açmaya çalışıyorsanız, lütfen önce eklentideki oturumunuzu kapatın."
+      ],
+      "item": [
+        "öge",
+        "öge"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "\"${ payload.item.data.metadata.name }\" ögesi oluşturuldu"
@@ -428,6 +1408,21 @@
       "Leaving vault...": [
         "Kasa bırakılıyor..."
       ],
+      "Let's get you started by creating your first item": [
+        "İlk ögenizi ekleyerek başlayalım"
+      ],
+      "Loading": [
+        "Yükleniyor"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } yükleniyor"
+      ],
+      "Loading...": [
+        "Yükleniyor..."
+      ],
+      "me": [
+        "benim"
+      ],
       "Monitoring settings successfully updated": [
         "İzleme ayarları güncellendi"
       ],
@@ -437,11 +1432,35 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Başka bir kasaya taşınan ögenin geçmişi ve tüm güvenli bağlantıları silinir."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Başka bir kasaya taşınan ögenin geçmişi silinir."
+      ],
       "Moving items": [
         "Ögeler taşınıyor"
       ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Başka bir kasaya taşınan ögelerin geçmişleri ve tüm güvenli bağlantıları silinir."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Başka bir kasaya taşınan ögelerin geçmişi silinir."
+      ],
       "Moving items to trash": [
         "Ögeler çöpe atılıyor"
+      ],
+      "Never": [
+        "Asla"
+      ],
+      "No identity item found": [
+        "Herhangi bir kimlik ögesi bulunamadı"
+      ],
+      "No login found": [
+        "Herhangi bir oturum açma kaydı bulunamadı"
+      ],
+      "None": [
+        "Yok"
       ],
       "Offline mode could not be disabled at the moment": [
         "Çevrim dışı kip şu anda kapatılamaz"
@@ -452,17 +1471,42 @@
       "Offline support successfully disabled": [
         "Çevrim dışı desteği kullanımdan kaldırıldı"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Çevrim içi olarak ${ PASS_APP_NAME } kullanmak için PIN kodu yazmanız gerekir. 3 başarısız denemeden sonra oturumunuz kapatılır."
+      ],
+      "Open the Extensions menu": [
+        "Eklenti menüsünü açın"
+      ],
+      "Owner": [
+        "Sahibi"
+      ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Sahiplik aktarıldı. Artık bu kasanın sahibi değilsiniz."
       ],
       "Pass Plus trial": [
         "Proton Pass Plus denemesi"
       ],
+      "Passkey sign-in": [
+        "Geçiş anahtarı ile oturum açma"
+      ],
+      "Password copied": [
+        "Parola kopyalandı"
+      ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Parola ile kilitleme kullanıma alındı. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir."
+      ],
+      "Pending access to the shared data": [
+        "Paylaşılmış verilere erişilmesi bekleniyor"
+      ],
       "Permanently deleting selected items": [
         "Seçilmiş ögeler kalıcı olarak siliniyor"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "${ PASS_APP_NAME } uygulamasını araç çubuğuna sabitleyin"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN kodu kaydedildi. ${ PASS_APP_NAME } kilidini açmak için kullanabilirsiniz"
@@ -470,8 +1514,77 @@
       "Pinning item...": [
         "Öge sabitleniyor..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
+      ],
+      "Please confirm your extra password": [
+        "Lütfen ek parolanızı onaylayın"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Biyometri ile otomatik kilitleme için lütfen ek parolanızı doğrulayın."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Ek parolanızla otomatik kilitleme için lütfen ek parolanızı yazın."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ek parolanızı yazın"
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Geçerli kilidin kaydını kaldırmak için ek parolanızı yazın."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Otomatik kilitleme süresini güncellemek için lütfen ek parolanızı yazın."
+      ],
+      "Please confirm your password": [
+        "Lütfen parolanızı onaylayın"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Biyometri ile otomatik kilitleme için lütfen parolanızı doğrulayın."
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Parolanızla otomatik kilitlemek için lütfen parolanızı doğrulayın."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Geçerli kilidi kaldırmak için lütfen parolanızı doğrulayın."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Otomatik kilitleme süresini güncellemek için lütfen parolanızı doğrulayın."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Geçerli kilidin kaydını kaldırmak için PIN kodunuzu yazın."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Bu ayarı düzenleyebilmek için lütfen PIN kodunuzu yazın."
+      ],
+      "Please consider leaving a review.": [
+        "Lütfen bir yorum yazmayı değerlendirin."
+      ],
       "Please do not close this window": [
         "Lütfen bu pencereyi kapatmayın"
+      ],
+      "Please enter your current PIN code to continue": [
+        "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
+      ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "${ PASS_SHORT_APP_NAME } uygulamasını kullanmaya başlamak için lütfen ek parolanızı yazın."
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "${ PASS_APP_NAME } internet uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
+      ],
+      "Press Enter to copy": [
+        "Kopyalamak için Enter tuşuna basın"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Gizliliğe çok önem veriyoruz. ${ PASS_APP_NAME } neden farklı öğrenin."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } ile korunmaktadır"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "İki adımlı doğrulama kodlarınızı otomatik doldurun."
+      ],
+      "Quickly autofill your identities.": [
+        "Kimliklerinizi kolayca otomatik olarak doldurun"
       ],
       "Registering extra password...": [
         "Ek parola kaydediliyor..."
@@ -494,6 +1607,27 @@
       "Restoring trashed items...": [
         "Çöpe atılmış ögeler geri yükleniyor..."
       ],
+      "Save login": [
+        "Oturum açmayı kaydet"
+      ],
+      "Save passkey": [
+        "Geçiş anahtarını kaydet"
+      ],
+      "Secure links": [
+        "Güvenli bağlantılar"
+      ],
+      "Select an existing login item to update.": [
+        "Güncellenecek var olan oturum açma ögesini seçin."
+      ],
+      "Select an existing login or create a new one.": [
+        "Var olan bir oturum açma kaydı seçin ya da yeni bir tane oluşturun."
+      ],
+      "Select destination vault": [
+        "Hedef kasayı seçin"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "İçe aktarılan kasaların kaydedileceği yeri seçin."
+      ],
       "Selected items permanently deleted": [
         "Seçilmiş ögeler kalıcı olarak silindi"
       ],
@@ -509,8 +1643,26 @@
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
       ],
+      "Set by your organization": [
+        "Kuruluşunuz tarafından ayarlanmış"
+      ],
       "Settings successfully updated": [
         "Ayarlar güncellendi"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Oturum açma bilgilerinizi ve gizli notlarınızı 10 kişiye kadar paylaşın"
+      ],
+      "Sign in or create an account to continue.": [
+        "İlerlemek için oturum ya da hesap açın."
+      ],
+      "Sign in to your account": [
+        "Hesabınızda oturum açın"
+      ],
+      "Signing you in": [
+        "Oturumunuz açılıyor"
+      ],
+      "Successfully exported all your items": [
+        "Tüm ögeleriniz dışa aktarıldı"
       ],
       "Successfully left the vault": [
         "Kasa bırakıldı"
@@ -518,17 +1670,102 @@
       "Successfully synced all vaults": [
         "Tüm kasalar eşitlendi"
       ],
+      "Switch to another vault or create an item in this vault": [
+        "Başka bir kasaya geçin ya da bu kasa içine bir öge ekleyin"
+      ],
       "Syncing your vaults…": [
         "Kasalarınız eşitleniyor…"
       ],
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
       ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Alana tıkladığınızda ya da üzerine geldiğinizde otomatik doldurma penceresi açılır."
+      ],
+      "The export will only contain vaults that you own.": [
+        "Yalnızca sahibi olduğunuz kasalar dışa aktarılacak."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Dışa aktarılan dosya PGP ile şifrelenir ve güçlü bir parola ifadesi kullanılması gerekir."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } kullanmak için ek parola gerekir. ${ BRAND_NAME } parolanıza ek bir parola olarak kullanılır."
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Şu ${ result.ignored.length } öge içe aktarılamadı:",
+        "Şu ${ result.ignored.length } öge içe aktarılamadı:"
+      ],
       "The secure link has been removed": [
         "Güvenli bağlantı kaldırıldı"
       ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Yapıştırmaya çalıştığınız metin izin verilen en fazla ${ maxLength } karakterden daha uzun."
+      ],
+      "The user did not accept the invitation yet.": [
+        "Kullanıcı henüz daveti kabul etmedi."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Bu dışa aktarma şifrelenmemiş olacak ve dışarıya aktarılmış dosyanıza erişebilen herhangi biri parolalarınızı görebilecek. Güvenlik için lütfen işiniz bittikten sonra dosyayı silin."
+      ],
+      "This option is currently not available on your device.": [
+        "Bu seçenek şu anda aygıtınızda kullanılamıyor."
+      ],
+      "This setting is disabled on the organization level": [
+        "Bu ayar kuruluş düzeyinde kapatılmış"
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Kasa şu anda hiç kimseyle paylaşılmıyor. Kişişleri çağırarak başkalarıyla paylaşın."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Bu sürüm geçmişe en yeni sürüm olarak eklenecek."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Başka bir parola yöneticisindeki verileri aktarmak için parola yöneticisine gidin, verilerinizi dışa aktarın ve ardından ${ PASS_APP_NAME } uygulamasına yükleyin. Verileriniz içe aktarıldıktan sonra dışa aktardığınız dosyayı silin."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "İçe aktarılan verilerinizi gözden geçirmek için tarayıcınızın araç çubuğundaki Proton Pass simgesine tıklayın."
+      ],
+      "Unable to copy to clipboard": [
+        "Panoya kopyalanamadı"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Geçiş anahtarlarınıza erişmek için PIN kodunuzla ${ PASS_APP_NAME } kilidini açın"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Bu geçiş anahtarını kaydetmek için PIN kodunuzla ${ PASS_APP_NAME } kilidini açın"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "${ PASS_SHORT_APP_NAME } kilidini açmak için Biyometri kullanın"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "${ PASS_SHORT_APP_NAME } uygulamasını ${ BRAND_NAME } parolanızla açın"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "${ PASS_SHORT_APP_NAME } uygulamasının kilidini açmak için ek parola kullanın"
+      ],
+      "Unlock it with your PIN to access the settings": [
+        "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
+      ],
+      "Unlock with biometrics": [
+        "Kilidi biyometri ile aç"
+      ],
       "Unpinning item...": [
         "Ögenin sabitlemesi kaldırılıyor..."
+      ],
+      "Update login": [
+        "Oturum açma kaydını güncelle"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasını yükselt"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
+      ],
+      "Use vaults to share this item with others.": [
+        "Bu ögeyi başkaları ile paylaşmak için kasaları kullanın."
       ],
       "User's access removed": [
         "Kullanıcının erişimi kaldırıldı"
@@ -548,13 +1785,450 @@
       "Vault \"${ share.content.name }\" was removed": [
         "\"${ share.content.name }\" kasası kaldırıldı"
       ],
+      "Verification code": [
+        "Doğrulama kodu"
+      ],
+      "Viewer": [
+        "Görüntüleyici"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Verileri yerel depolamanızla eşitlerken sorun çıktı. ${ PASS_SHORT_APP_NAME } uygulamasının sorunsuz çalışması için lütfen yeterli boş disk alanınızın olduğundan emin olun."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunu içe aktarmak ister misiniz?",
+        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunları içe aktarmak ister misiniz?"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "${ PASS_APP_NAME } üzerinde bir kayıt oluştururken ya da düzenlerken 'kullanıcı adı' alanı her zaman görüntülenir."
+      ],
+      "You are about to create:": [
+        "Şunu oluşturmak üzeresiniz:"
+      ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Artık ${ PASS_SHORT_APP_NAME } çevrim dışı erişimi için ${ BRAND_NAME } parolanızı kullanabilirsiniz"
+      ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "${ PASS_APP_NAME } simgesine tıklayarak kimlik doğrulama bilgilerinizi otomatik olarak doldurabilirsiniz."
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Bu takma adın e-posta kutularını değiştiremezsiniz."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı.",
+        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Abonelik tarifenizin izin verdiği kasa sayısını aştınız. Yeni ögeler yalnızca ilk iki kasanıza taşınabilir. Ögeleri tüm kasalarınız arasında taşıyabilmek için abonelik tarifenizi yükseltin."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Abonelik tarifenizin izin verdiği kasa sayısına ulaştınız. Yeni ögeler yalnızca ilk iki kasanızda oluşturulabilir. Tüm kasalarınızda yeni ögeler oluşturabilmek için abonelik tarifenizi yükseltin."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Oluşturabileceğiniz takma ad sayısı sınırına ulaştınız. Abonelik tarifenizi yükselterek sınırsız sayıda takma ad oluşturabilirsiniz."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Oluşturabileceğiniz kredi kartı sayısı sınırına ulaştınız. Abonelik tarifenizi yükselterek sınırsız sayıda kredi kartı oluşturabilirsiniz."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Oluşturabileceğiniz kasa sayısı sınırına ulaştınız."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "İzin verilen en fazla ${ maxLength } karakter sayısına ulaştınız."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Oturumunuz kapatılacak ve diğer tüm aygıtlarınızda yeniden oturum açmanız gerekecek."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Belirli bir süre kullanılmayan ${ PASS_APP_NAME } otomatik olarak kilitlendiğinde, kilidi bu PIN kodu ile açabileceksiniz."
+      ],
+      "You're about to create": [
+        "Şunu oluşturmak üzeresiniz"
+      ],
+      "You're invited to a vault.": [
+        "Bir kasaya davet edildiniz."
+      ],
+      "Your ${ PASS_APP_NAME } session is locked": [
+        "${ PASS_APP_NAME } oturumunuz kilitlendi"
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Kuruluşunuz iki adımlı doğrulama kullanılmasını zorunlu kıldığından hesabınız kısıtlandı. Lütfen hesap ayarlarınızdan iki adımlı doğrulamayı açın ya da yöneticinizle görüşün."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } takma ad",
+        "${ aliasCount } takma ad"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } karakter",
+        "${ config.options.length } karakter"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } sözcük",
+        "${ config.options.wordCount } sözcük"
+      ],
+      "${ days } day": [
+        "${ days } gün",
+        "${ days } gün"
+      ],
+      "${ hours } hour": [
+        "${ hours } saat",
+        "${ hours } saat"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } dakika",
+        "${ minutes } dakika"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } izleyici"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "${ PASS_SHORT_APP_NAME } sürümü"
+      ],
+      "1 hour": [
+        "1 saat"
+      ],
+      "1 minute": [
+        "1 dakika"
+      ],
+      "10 minutes": [
+        "10 dakika"
+      ],
+      "14 days": [
+        "14 gün"
+      ],
+      "15 minutes": [
+        "15 dakika"
+      ],
+      "2 minutes": [
+        "2 dakika"
+      ],
+      "24 hours": [
+        "24 saat"
+      ],
+      "2FA autofill": [
+        "İki adımlı doğrulama otomatik doldurma"
+      ],
+      "2FA secret key (TOTP)": [
+        "İki adımlı doğrulama gizli anahtarı (tek kullanımlık)"
+      ],
+      "2FA token (TOTP)": [
+        "İki adımlı doğrulama kodu (tek kullanımlık)"
+      ],
+      "30 days": [
+        "30 gün"
+      ],
+      "30 minutes": [
+        "30 dakika"
+      ],
+      "30 seconds": [
+        "30 saniye"
+      ],
+      "5 minutes": [
+        "5 dakika"
+      ],
+      "7 days": [
+        "7 gün"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Account": [
+        "Hesap"
+      ],
+      "Add section": [
+        "Bölüm ekle"
+      ],
+      "Additional details": [
+        "Ek bilgiler"
+      ],
+      "Address details": [
+        "Adres bilgileri"
+      ],
+      "Alias": [
+        "Takma ad"
+      ],
+      "Alias address": [
+        "Takma ad adresi"
+      ],
+      "Aliases": [
+        "Takma adlar"
+      ],
+      "All": [
+        "Tümü"
+      ],
+      "All vaults": [
+        "Tüm kasalar"
+      ],
+      "Alphabetical": [
+        "Alfabetik"
+      ],
+      "Always show username field": [
+        "Kullanıcı adı alanı her zaman görüntülensin"
+      ],
+      "Application logs": [
+        "Uygulama günlükleri"
+      ],
+      "Authenticate with passkeys": [
+        "Geçiş anahtarları ile kimlik doğrulama"
+      ],
+      "Auto-lock after": [
+        "Otomatik kilitleme süresi"
+      ],
+      "Autofill": [
+        "Otomatik doldurma"
+      ],
+      "Autofill 2FA": [
+        "Otomatik iki adımlı doğrulama doldurma"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Bir oturum açma alanına gelindiğinde otomatik doldurma açılsın"
+      ],
+      "Autosave": [
+        "Otomatik kaydet"
+      ],
+      "Autosave vault": [
+        "Kasa otomatik kaydedilsin"
+      ],
+      "Biometrics": [
+        "Biyometri"
+      ],
+      "Birthdate": [
+        "Doğum tarihi"
+      ],
+      "Capital letters (A-Z)": [
+        "Büyük harfler (A-Z)"
+      ],
+      "Capitalise": [
+        "Büyüt"
+      ],
+      "Card": [
+        "Kart"
+      ],
+      "Card number": [
+        "Kart numarası"
+      ],
+      "Cards": [
+        "Kartlar"
+      ],
+      "City": [
+        "İl"
+      ],
+      "Company": [
+        "Kuruluş"
+      ],
+      "Confirm vault name": [
+        "Kasa adı onayı"
+      ],
+      "Contact details": [
+        "Kişi bilgileri"
+      ],
+      "Copy": [
+        "Kopyala"
+      ],
+      "Copy password": [
+        "Parolayı kopyala"
+      ],
+      "Country or Region": [
+        "Ülke ya da bölge"
+      ],
+      "County": [
+        "İlçe"
+      ],
+      "Create a credit card": [
+        "Kredi kartı ekle"
+      ],
+      "Create a hide-my-email alias": [
+        "Bir hide-my-email takma adı oluştur"
+      ],
+      "Create a login": [
+        "Oturum açma kaydı oluştur"
+      ],
+      "Create an encrypted note": [
+        "Şifrelenmiş bir not oluştur"
+      ],
+      "Create an Identity": [
+        "Bir kimlik oluştur"
+      ],
+      "Create lock": [
+        "Kilit oluştur"
+      ],
+      "Create new vault": [
+        "Yeni kasa oluştur"
+      ],
+      "Created": [
+        "Oluşturulma"
+      ],
+      "Created at": [
+        "Oluşturulma tarihi"
+      ],
+      "Custom hidden field": [
+        "Özel gizli alan"
+      ],
+      "Custom text field": [
+        "Özel metin alanı"
+      ],
+      "Device": [
+        "Aygıt"
+      ],
+      "Display": [
+        "Görünüm"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Otomatik doldurulabilir alanlarda ${ PASS_APP_NAME } simgesi görüntülensin"
+      ],
+      "Domain": [
+        "Etki alanı"
+      ],
+      "Domains": [
+        "Etki alanları"
+      ],
+      "Don't remind me again": [
+        "Bir daha hatırlatma"
+      ],
+      "Download logs": [
+        "Günlükleri indir"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "Email (alias)": [
+        "E-posta (takma ad)"
+      ],
+      "Email (new alias)": [
+        "E-posta (yeni takma ad)"
+      ],
+      "Email aliases": [
+        "E-posta takma adları"
+      ],
+      "Email or username": [
+        "E-posta adresi ya da kullanıcı adı"
+      ],
+      "Empty trash": [
+        "Çöp kutusunu boşalt"
+      ],
+      "Enter email or username": [
+        "E-posta adresi ya da kullanıcı adı yazın"
+      ],
+      "Expiration date": [
+        "Son kullanma tarihi"
+      ],
+      "Expired": [
+        "Geçerlilik süresi dolmuş"
+      ],
+      "Expired link": [
+        "Bağlantının geçerlilik süresi geçmiş"
+      ],
+      "Export": [
+        "Dışa aktar"
+      ],
+      "Extra password": [
+        "Ek parola"
+      ],
+      "Facebook account": [
+        "Facebook hesabı"
+      ],
+      "Field name": [
+        "Alan adı"
+      ],
+      "File format": [
+        "Dosya biçimi"
+      ],
+      "First name": [
+        "Ad"
+      ],
+      "Floor, apartment, building": [
+        "Site, bina, kat"
+      ],
+      "Forwards to": [
+        "Şuraya iletiyor"
+      ],
+      "Full Name": [
+        "Tam ad"
+      ],
+      "Gender": [
+        "Cinsiyet"
+      ],
+      "General": [
+        "Genel"
+      ],
+      "Generate a secure link for this item": [
+        "Bu öge için bir güvenli bağlantı oluşturun"
+      ],
       "Generic CSV": [
         "CSV dosyası"
+      ],
+      "Grant": [
+        "İzin ver"
+      ],
+      "Hidden": [
+        "Gizli"
+      ],
+      "Hide password": [
+        "Parolayı gizle"
+      ],
+      "https://example.com": [
+        "https://ornek.com"
+      ],
+      "ID Card": [
+        "Kimlik kartı"
+      ],
+      "ID Card number": [
+        "Kimlik kartı numarası"
+      ],
+      "Identities": [
+        "Kimlikler"
+      ],
+      "Identity": [
+        "Kimlik"
+      ],
+      "Identity autofill": [
+        "Otomatik kimlik doldurma"
+      ],
+      "Import": [
+        "İçe aktar"
+      ],
+      "Import passwords": [
+        "Parolaları içe aktar"
+      ],
+      "Imported from : ": [
+        "Şuradan içe aktarıldı: "
+      ],
+      "Imported on : ": [
+        "Şu zamanda içe aktarıldı: "
+      ],
+      "Include numbers": [
+        "Sayılar katılsın"
+      ],
+      "Include numbers (0-9)": [
+        "Sayılar katılsın (0-9)"
+      ],
+      "Instagram handle": [
+        "Instagram kullanıcı adı"
+      ],
+      "Invitations": [
+        "Davetler"
+      ],
+      "Item ID": [
+        "Öge kimliği"
+      ],
+      "Job title": [
+        "İş unvanı"
+      ],
+      "Key": [
+        "Anahtar"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Klavye kısayolu: ${ shortcut }"
+      ],
+      "Language": [
+        "Dil"
       ],
       "Last 2 weeks": [
         "Son 2 hafta"
@@ -562,14 +2236,360 @@
       "Last month": [
         "Son bir ay"
       ],
+      "Last name": [
+        "Soyad"
+      ],
       "Last week": [
         "Son bir hafta"
+      ],
+      "Latest import": [
+        "Son içe aktarma"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
+      "License": [
+        "Ehliyet"
+      ],
+      "License number": [
+        "Ehliyet numarası"
+      ],
+      "LinkedIn account": [
+        "LinkedIn hesabı"
+      ],
+      "Login": [
+        "Oturum açma"
+      ],
+      "Logins": [
+        "Oturum açma kayıtları"
+      ],
+      "Make all admins": [
+        "Tümünü yönetici yap"
+      ],
+      "Make all editors": [
+        "Tümünü düzenleyici yap"
+      ],
+      "Make all viewers": [
+        "Tümünü izleyici yap"
+      ],
+      "max views reached": [
+        "en fazla görüntülenme sayısına ulaşılmış"
+      ],
+      "Members": [
+        "Üyeler"
+      ],
+      "Middle name": [
+        "İkinci ad"
+      ],
+      "Modified": [
+        "Değiştirilme"
       ],
       "More than a month": [
         "Bir aydan fazla"
       ],
+      "Most recent": [
+        "Son kullanıma göre"
+      ],
+      "Name": [
+        "Ad"
+      ],
+      "Name on card": [
+        "Kart üzerindeki isim"
+      ],
+      "Need help ?": [
+        "Yardım mı gerekiyor ?"
+      ],
+      "New vault": [
+        "Yeni kasa"
+      ],
+      "New-Old": [
+        "Yeniden eskiye"
+      ],
+      "Newest to oldest": [
+        "Yeniden eskiye"
+      ],
+      "No history": [
+        "Geçmiş yok"
+      ],
+      "None": [
+        "Yok"
+      ],
+      "Note": [
+        "Not"
+      ],
+      "Notes": [
+        "Notlar"
+      ],
+      "Old-New": [
+        "Eskiden yeniye"
+      ],
+      "Oldest to newest": [
+        "Eskiden yeniye"
+      ],
+      "Organization": [
+        "Kuruluş"
+      ],
+      "Passkey": [
+        "Geçiş anahtarı"
+      ],
+      "Passkeys": [
+        "Geçiş anahtarları"
+      ],
+      "Passphrase": [
+        "Parola ifadesi"
+      ],
+      "Passport": [
+        "Pasaport"
+      ],
+      "Passport number": [
+        "Pasaport numarası"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Password history": [
+        "Parola geçmişi"
+      ],
+      "Passwords": [
+        "Parolalar"
+      ],
+      "Pause list": [
+        "Duraklatma listesi"
+      ],
+      "Personal details": [
+        "Kişisel bilgiler"
+      ],
+      "Personal website": [
+        "Kişisel site"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "PGP ile şifrelenmiş JSON (önerilir)"
+      ],
+      "Phone number": [
+        "Telefon numarası"
+      ],
+      "PIN": [
+        "PIN"
+      ],
+      "PIN code": [
+        "PIN kodu"
+      ],
+      "Prefix": [
+        "Ön ek"
+      ],
+      "Prompt for auto-save": [
+        "Otomatik kaydetme uyarısı"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Parola oluştururken otomatik kaydetme sorulsun"
+      ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "${ PASS_APP_NAME } uygulamasını ek parola ile koruyun"
+      ],
+      "Rate us": [
+        "Bizi değerlendirin"
+      ],
+      "Recent": [
+        "Son"
+      ],
+      "Reddit handle": [
+        "Reddit takma adı"
+      ],
+      "Remove link": [
+        "Bağlantıyı kaldır"
+      ],
+      "Report a problem": [
+        "Sorun bildireceğim"
+      ],
+      "Restore all items": [
+        "Tüm ögeleri geri yükle"
+      ],
+      "Reveal password": [
+        "Parolayı görüntüle"
+      ],
+      "Save passkeys": [
+        "Geçiş anahtarlarını kaydet"
+      ],
+      "Security": [
+        "Güvenlik"
+      ],
+      "Security code": [
+        "Güvenlik kodu"
+      ],
+      "Select an email address": [
+        "Bir e-posta adresi seçin"
+      ],
+      "Select preferred language": [
+        "Kullanılacak dili seçin"
+      ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "SimpleLogin takma adlarının içe aktarılacağı kasayı seçin"
+      ],
+      "Select your password manager": [
+        "Parola yöneticinizi seçin"
+      ],
+      "Selected": [
+        "Seçilmiş"
+      ],
+      "Settings": [
+        "Ayarlar"
+      ],
+      "Share": [
+        "Paylaş"
+      ],
+      "Share this vault or create a new vault": [
+        "Bu kasayı paylaşın ya da yeni bir kasa oluşturun"
+      ],
+      "Shared link": [
+        "Paylaşılan bağlantı"
+      ],
+      "Show website favicons": [
+        "Site simgeleri görüntülensin"
+      ],
+      "Social security": [
+        "Sosyal güvenlik"
+      ],
+      "Social security number": [
+        "Sosyal güvenlik numarası"
+      ],
+      "Special characters (!&*)": [
+        "Özel karakterler (!&*)"
+      ],
+      "State or province": [
+        "İl ya da bölge"
+      ],
+      "Street address": [
+        "Sokak adresi"
+      ],
+      "Street address, P.O. box": [
+        "Sokak adresi, posta kutusu"
+      ],
+      "Strong": [
+        "Güçlü"
+      ],
+      "Suffix": [
+        "Son ek"
+      ],
+      "Support": [
+        "Destek"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Takma adları SimpleLogin ile eşitle"
+      ],
+      "Tax number": [
+        "Vergi numarası"
+      ],
+      "Text": [
+        "Metin"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Ögenin kasası ${ targetMembers } kişiyle paylaşılıyor",
+        "Ögenin kasası ${ targetMembers } kişiyle paylaşılıyor"
+      ],
+      "The URL has been copied to the clipboard": [
+        "Adres panoya kopyalandı"
+      ],
+      "Title": [
+        "Başlık"
+      ],
       "Today": [
         "Bugün"
+      ],
+      "Total imported items : ": [
+        "Toplam içe aktarılan öge: "
+      ],
+      "Total items : ": [
+        "Toplam öge: "
+      ],
+      "TOTP": [
+        "Tek kullanımlık parola"
+      ],
+      "Trash": [
+        "Çöp kutusu"
+      ],
+      "Type": [
+        "Tür"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } kilidini aç"
+      ],
+      "Unlock with": [
+        "Kilit şununla açılsın:"
+      ],
+      "Unnamed Credit Card": [
+        "Adsız kredi kartı"
+      ],
+      "Unnamed identity": [
+        "Adsız kimlik"
+      ],
+      "Unnamed item": [
+        "Adsız öge"
+      ],
+      "Unnamed note": [
+        "Adsız not"
+      ],
+      "Untitled": [
+        "Adsız"
+      ],
+      "Update": [
+        "Güncelle"
+      ],
+      "Username": [
+        "Kullanıcı adı"
+      ],
+      "Username/email": [
+        "Kullanıcı adı/e-posta adresi"
+      ],
+      "Vault ID": [
+        "Kasa kimliği"
+      ],
+      "View details": [
+        "Bilgileri görüntüle"
+      ],
+      "View logs": [
+        "Günlükleri görüntüle"
+      ],
+      "Vulnerable": [
+        "Çok zayıf"
+      ],
+      "Weak": [
+        "Zayıf"
+      ],
+      "Website": [
+        "Site"
+      ],
+      "Websites": [
+        "Siteler"
+      ],
+      "Work details": [
+        "İş bilgileri"
+      ],
+      "Work email": [
+        "İş e-posta adresi"
+      ],
+      "Work phone number": [
+        "İş telefonu"
+      ],
+      "X handle": [
+        "X takma adı"
+      ],
+      "Yahoo account": [
+        "Yahoo hesabı"
+      ],
+      "You are about to create": [
+        "Şunu oluşturmak üzeresiniz"
+      ],
+      "ZIP or Postal code": [
+        "Posta kodu"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } öge",
+        "${ count } öge"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Bu kasadaki ${ semiboldText } ögeyi seçtiniz"
       ]
     },
     "Onboarding": {
@@ -577,28 +2597,447 @@
         "${ appName } hoş geldiniz"
       ]
     },
+    "Option": {
+      "Commas": [
+        "Virgül"
+      ],
+      "Hyphens": [
+        "Tire"
+      ],
+      "Memorable Password": [
+        "Hatırlanabilir parola"
+      ],
+      "Numbers": [
+        "Rakamlar"
+      ],
+      "Numbers and Symbols": [
+        "Rakamlar ve simgeler"
+      ],
+      "Periods": [
+        "Nokta"
+      ],
+      "Random Password": [
+        "Rastgele parola"
+      ],
+      "Spaces": [
+        "Boşluk"
+      ],
+      "Underscores": [
+        "Alt çizgi"
+      ]
+    },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "İki adımlı doğrulama gizli anahtarı ekle"
+      ],
+      "Add hidden text": [
+        "Gizli metin ekle"
+      ],
+      "Add note": [
+        "Not ekle"
+      ],
+      "Add text": [
+        "Metin ekle"
+      ],
+      "Email address": [
+        "E-posta adresi"
+      ],
+      "Enter a note...": [
+        "Bir not yazın..."
+      ],
+      "Enter a prefix": [
+        "Bir ön ek yazın"
+      ],
+      "Enter email": [
+        "E-posta adresini yazın"
+      ],
+      "Enter password": [
+        "Parolayı yazın"
+      ],
+      "Enter username": [
+        "Kullanıcı adını yazın"
+      ],
+      "Full Name": [
+        "Ad Soyad"
+      ],
+      "MM/YY": [
+        "AA/YY"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Pick a vault": [
+        "Bir kasa seçin"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Silinmesini onaylamak için yeniden \"${ vaultName }\" yazın"
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "${ vaultName } içinde ${ pluralItemType } ara"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Tüm kasalarda ${ pluralItemType } ara"
+      ],
+      "Search in ${ vaultName }": [
+        "${ vaultName } içinde ara"
+      ],
+      "Search in all vaults": [
+        "Tüm kasalarda ara"
+      ],
+      "Search in Trash": [
+        "Çöp kutusunda ara"
+      ],
+      "Select a suffix": [
+        "Bir son ek yazın"
+      ],
+      "Shared vault": [
+        "Paylaşılan kasa"
+      ],
+      "Unknown origin": [
+        "Kaynak bilinmiyor"
+      ],
+      "Untitled": [
+        "Adsız"
+      ],
       "Used on ${ url }": [
         "${ url } üzerinde kullanılmış"
+      ],
+      "Write your note": [
+        "Notunuzu yazın"
       ]
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Takma adların eşitlenmesi açıldı. SimpleLogin takma adlarının eşitlenmesi biraz zaman alabilir"
+      ],
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz.",
+        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz."
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "Ootmatik kilitleme güncellemesi"
+      ],
+      "Autofill": [
+        "Otomatik doldur"
+      ],
+      "Confirm extra password": [
+        "Ek parolayı onayla"
+      ],
+      "Confirm PIN code": [
+        "PIN kodu onayı"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } hesabınızı bağlayın"
+      ],
+      "Create PIN code": [
+        "PIN kodu oluştur"
+      ],
+      "Created": [
+        "Oluşturulma"
+      ],
+      "Current version": [
+        "Güncel sürüm"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "\"${ vaultName }\" kasası silinsin mi?"
+      ],
+      "Discard changes?": [
+        "Değişiklikler silinsin mi?"
+      ],
+      "Email": [
+        "E-posta"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "${ PASS_APP_NAME } hoşunuza gitti mi?"
+      ],
+      "Enter your extra password": [
+        "Ek parolanızı yazın"
+      ],
+      "Enter your password": [
+        "Parolanızı yazın"
+      ],
+      "Enter your PIN": [
+        "PIN kodunuzu yazın"
+      ],
+      "Fill & copy password": [
+        "Doldur ve parolayı kopyala"
+      ],
+      "Fill password": [
+        "Parolayı doldur"
+      ],
+      "Get Started": [
+        "Başlayalım"
+      ],
+      "Get the mobile apps": [
+        "Mobil uygulamaları edinin"
+      ],
+      "Grant permissions": [
+        "İzinleri ver"
+      ],
+      "Hide my email": [
+        "Hide my email"
+      ],
+      "History": [
+        "Geçmiş"
+      ],
+      "Identity": [
+        "Kimlik"
+      ],
+      "Import - ${ date }": [
+        "İçe aktarma - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Kasaların içine aktar"
+      ],
+      "Last autofill": [
+        "Son otomatik doldurma"
+      ],
+      "Last modified": [
+        "Son değiştirilme"
+      ],
+      "Leave vault ?": [
+        "Kasa bırakılsın mı?"
+      ],
+      "Log in as...": [
+        "Şu olarak oturum aç..."
+      ],
+      "Low disk space": [
+        "Boş disk alanı azaldı"
+      ],
+      "Member limit": [
+        "Üye sayısı sınırı"
+      ],
+      "Members": [
+        "Üyeler"
+      ],
+      "Modified": [
+        "Değiştirilme"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "Tüm ögeler \"${ vaultName }\" kasasına taşınsın mı?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "Öge \"${ vaultName }\" kasasına taşınsın mı?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "Ögeler \"${ vaultName }\" kasasına taşınsın mı?"
+      ],
+      "No items selected": [
+        "Herhangi bir öge seçilmemiş"
+      ],
+      "No shared secure links": [
+        "Paylaşılan bir güvenli bağlantı yok"
+      ],
+      "Our welcome gift to you": [
+        "Karşılama hediyemiz"
+      ],
+      "Passkey": [
+        "Geçiş anahtarı"
+      ],
+      "Password": [
+        "Parola"
+      ],
+      "Pending access to the shared data": [
+        "Paylaşılmış verilere erişilmesi bekleniyor"
+      ],
+      "Permanently remove all items ?": [
+        "Tüm ögeler kalıcı olarak silinsin mi?"
+      ],
+      "Pin the extension": [
+        "Eklentiyi sabitle"
+      ],
+      "Pinned (${ items.length })": [
+        "Sabitlenmiş (${ items.length })"
+      ],
+      "Remove extra password": [
+        "Ek parolayı kaldır"
+      ],
+      "Remove secure link?": [
+        "Güvenli bağlantı kaldırılsın mı?"
+      ],
+      "Restore this version?": [
+        "Bu sürüm geri yüklensin mi?"
+      ],
+      "Review and share": [
+        "Gözden geçirip paylaş"
+      ],
+      "Secure your data": [
+        "Verilerinizi koruyun"
+      ],
+      "Set access level": [
+        "Erişim düzeyini ayarla"
+      ],
+      "Set extra password": [
+        "Ek parolayı ayarla"
+      ],
+      "Set up 2FA for more security": [
+        "Güvenliği artırmak için iki adımlı doğrulamayı açın"
+      ],
+      "Share with": [
+        "Şununla paylaş"
+      ],
+      "Stay safer online": [
+        "Çevrim içi ortamda daha güvende kalın"
+      ],
+      "Suggestions": [
+        "Öneriler"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "${ PASS_APP_NAME } uygulamasına geçilsin mi?"
+      ],
+      "Sync alias": [
+        "Takma adı eşitle"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } uygulamasını kurduğunuz için teşekkürler"
+      ],
+      "The extension is now ready to use.": [
+        "Eklenti kullanılmaya hazır."
+      ],
+      "Transfer ownership": [
+        "Sahipliği aktar"
+      ],
+      "Trash empty": [
+        "Çöp kutusu boş"
+      ],
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } kilidini aç"
+      ],
+      "Update available": [
+        "Güncelleme yayınlanmış"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
+      ],
+      "Use my email": [
+        "E-postamı kullan"
+      ],
+      "Vault": [
+        "Kasa"
+      ],
+      "Vault shared with you": [
+        "Sizinle bir kasa paylaşıldı"
+      ],
+      "Weak password": [
+        "Parola zayıf"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "${ brandNameJSX } uygulamasına hoş geldiniz"
+      ],
+      "Welcome to your new password manager!": [
+        "Yeni parola yöneticinize hoş geldiniz!"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Neden ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Kasanız boş"
+      ],
+      "Your welcome gift": [
+        "Karşılama hediyeniz"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "Çift adres"
+      ],
+      "Field name is required": [
+        "Alan adının yazılması zorunludur"
+      ],
+      "OTP secret or URI is invalid": [
+        "Tek kullanımlık parola kodu ya da adresi geçersiz"
+      ],
+      "OTP secret or URI required": [
+        "Tek kullanımlık parola kodu ya da adresi gerekli"
+      ],
+      "Section name cannot be empty": [
+        "Bölüm adı boş olamaz"
+      ],
+      "Url already exists": [
+        "Adres zaten var"
+      ],
+      "URL cannot be empty": [
+        "Adres boş olamaz"
+      ],
+      "Url is invalid": [
+        "Adres geçersiz"
+      ],
+      "URL is invalid": [
+        "Adres geçersiz"
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "${ BRAND_NAME } parolası gereklidir"
+      ],
+      "A description of the problem is required": [
+        "Sorunun açıklamasının yazılması zorunludur"
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Çöpe attığınız tüm ögeler kalıcı olarak silinecek. Bu işlem geri alınamaz."
+      ],
+      "An error occurred while exporting your data": [
+        "Verileriniz dışa aktarılırken bir sorun çıktı"
+      ],
+      "An error occurred while resuming your session": [
+        "Oturumunuz sürdürülürken bir sorun çıktı"
+      ],
+      "At least one email address is required": [
+        "En az bir e-posta adresi gereklidir"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Bu takma adın e-posta kutuları şu anda alınamadı"
+      ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Dikkat: Bu parolayı kaybederseniz ${ PASS_APP_NAME } hesabınıza erişemezsiniz."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "\"${ vaultName }\" kasası oluşturulamadı"
       ],
       "Could not send invitations to the following addresses :": [
         "Şu adreslere davetiye gönderilemedi :"
       ],
+      "Duplicate email addresses.": [
+        "E-posta adresleri yineleniyor."
+      ],
+      "Empty note": [
+        "Boş not"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Geçerlilik süresi AA/YY biçiminde değil"
       ],
+      "Extra password cannot be empty": [
+        "Ek parola boş olamaz"
+      ],
+      "Extra password is required": [
+        "Ek parolanın yazılması zorunludur"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Ek parola en az 8 karakter uzunluğunda olmalıdır"
+      ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
+      ],
+      "Invalid email addresses.": [
+        "E-posta adresleri geçersiz."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Kuruluş dışından e-posta adreslerinin davet edilmesine izin verilmiyor."
+      ],
+      "item was imported without custom fields": [
+        "öge özel alanlar olmadan ie aktarılmış"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "En fazla uzunluk ${ maxLength } karakter",
+        "En fazla uzunluk ${ maxLength } karakter"
       ],
       "Missing alias prefix": [
         "Takma ad ön eki eksik"
@@ -606,20 +3045,104 @@
       "Missing alias suffix": [
         "Takma ad son eki eksik"
       ],
+      "Move to trash": [
+        "Çöpe at"
+      ],
+      "No items": [
+        "Herhangi bir öge yok"
+      ],
+      "No items in trash matching": [
+        "Çöp kutusunda eşleşen bir öge bulunamadı"
+      ],
+      "No items matching": [
+        "Eşleşen bir öge bulunamadı"
+      ],
+      "No password manager selected": [
+        "Herhangi bir parola yöneticisi seçilmemiş"
+      ],
+      "No results": [
+        "Herhangi bir sonuç bulunamadı"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Yalnızca harfler, rakamlar, nokta, tire ve alt çizgi karakterleri kullanılabilir"
+      ],
+      "Passphrase is required": [
+        "Parola ifadesinin yazılması zorunludur"
+      ],
+      "Passwords do not match": [
+        "Parola ile onayı aynı değil"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "PGP ile şifrelenmiş dışa aktarma dosyası için parola ifadesi gereklidir"
       ],
       "Please contact us for investigating the issue": [
         "Sorunu inceleyebilmemiz için lütfen bizimle görüşün"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Lütfen e-posta takma adlarını kullanabilmek için e-posta adresinizi doğrulayın"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Lütfen kasa paylaşımını kullanabilmek için e-posta adresinizi doğrulayın"
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Ek parolanızı kaldırdığınızda tüm aygıtlarınızdaki oturumlar kapatılır."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Bildirimler uçtan uca şifrelenmez. Lütfen herhangi bir hassas bilgi göndermeyin."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "${ PASS_APP_NAME } başlatılırken bir sorun çıktı. Lütfen eklentiyi yenilemeyi ya da yeniden yüklemeyi deneyin"
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Takma ad ön ekiniz 40 karakterden uzun olamaz"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "\"${ aliasEmail }\" takma adı şu anda \"${ relatedLoginName }\" oturumu açmak için kullanılıyor."
+      ],
+      "Title is required": [
+        "Başlığın yazılması zorunludur"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Bu kasanın sahipliğini ${ email } kişisine aktarmak istediğinize emin misiniz?"
+      ],
+      "Unable to save": [
+        "Kaydedilemedi"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME } oturumu açılamadı. ${ additionalMessage }"
       ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "\"${ vaultName }\" kasası ve içindeki tüm ögeler kalıcı olarak silinecek. Bu işlem geri alınamaz."
+      ],
+      "Vault name is required": [
+        "Kasa adının yazılması zorunludur"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Abonelik tarifenizde sunulan kasa sayısından daha fazla kasa oluşturamazsınız."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Bu kasaya erişebilecek en fazla üye sayısı sınırına ulaştınız."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Bu kasada olabilecek en fazla kullanıcı sayısı sınırına ulaştınız. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Tarifenizle oluşturabileceğiniz en fazla kasa sayısı sınırına ulaştınız."
+      ],
+      "You have unsaved changes.": [
+        "Kaydedilmemiş değişiklikleriniz var."
+      ],
       "You must select at least one mailbox": [
         "En az bir e-posta kutusu seçmelisiniz"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Bu kasaya artık erişemeyeceksiniz. Yeniden katılabilmek için yeni bir davet almanız gerekecek."
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Tarifenizin sınırları daha fazla takma ad oluşturmanıza izin vermiyor"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Tarifeniz yalnızca ilk iki kasanızdan otomatik doldurmaya izin veriyor"
       ],
       "Your session could not be authorized.": [
         "Oturumunuza yetki verilemedi."
@@ -632,6 +3155,9 @@
       ],
       "Your session was locked.": [
         "Oturumunuz kilitlenmiş."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
       ]
     }
   }
