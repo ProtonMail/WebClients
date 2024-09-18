@@ -79,17 +79,25 @@ export const readNordPassData = async ({ data }: { data: string }): Promise<Impo
                     shareId: null,
                     items: items
                         .map((item) => {
-                            switch (item.type) {
-                                case NordPassType.CREDIT_CARD:
-                                    return processCreditCardItem(item);
-                                case NordPassType.IDENTITY:
-                                    return processIdentityItem(item);
-                                case NordPassType.LOGIN:
-                                    return processLoginItem(item);
-                                case NordPassType.NOTE:
-                                    return processNoteItem(item);
-                                default:
-                                    ignored.push(`[${item.type ?? c('Placeholder').t`Other`}] ${item.name ?? ''}`);
+                            const type = item?.type ?? c('Label').t`Unknown`;
+                            const title = item?.name ?? '';
+
+                            try {
+                                switch (item.type) {
+                                    case NordPassType.CREDIT_CARD:
+                                        return processCreditCardItem(item);
+                                    case NordPassType.IDENTITY:
+                                        return processIdentityItem(item);
+                                    case NordPassType.LOGIN:
+                                        return processLoginItem(item);
+                                    case NordPassType.NOTE:
+                                        return processNoteItem(item);
+                                    default:
+                                        ignored.push(`[${type}] ${title}`);
+                                }
+                            } catch (err) {
+                                ignored.push(`[${type}] ${title}`);
+                                logger.warn('[Importer::NordPass]', err);
                             }
                         })
                         .filter(truthy),

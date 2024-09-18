@@ -117,19 +117,27 @@ export const readEnpassData = ({ data }: { data: string }): ImportPayload => {
                 shareId: null,
                 items: items
                     .flatMap((item): Maybe<ItemImportIntent | ItemImportIntent[]> => {
-                        switch (item.category) {
-                            case EnpassCategory.LOGIN:
-                            case EnpassCategory.PASSWORD:
-                                return processLoginItem(item);
-                            case EnpassCategory.NOTE:
-                                return processNoteItem(item);
-                            case EnpassCategory.CREDIT_CARD:
-                                return processCreditCardItem(item);
-                            case EnpassCategory.IDENTITY:
-                                return processIdentityItem(item);
-                            default:
-                                ignored.push(`[${capitalize(item.category) ?? 'Other'}] ${item.title}`);
-                                return;
+                        const type = capitalize(item?.category ?? c('Label').t`Unknown`);
+                        const title = item?.title ?? '';
+
+                        try {
+                            switch (item.category) {
+                                case EnpassCategory.LOGIN:
+                                case EnpassCategory.PASSWORD:
+                                    return processLoginItem(item);
+                                case EnpassCategory.NOTE:
+                                    return processNoteItem(item);
+                                case EnpassCategory.CREDIT_CARD:
+                                    return processCreditCardItem(item);
+                                case EnpassCategory.IDENTITY:
+                                    return processIdentityItem(item);
+                                default:
+                                    ignored.push(`[${type}] ${title}`);
+                                    return;
+                            }
+                        } catch (err) {
+                            ignored.push(`[${type}] ${title}`);
+                            logger.warn('[Importer::Enpass]', err);
                         }
                     })
                     .filter(truthy),

@@ -63,42 +63,47 @@ export const readBitwardenData = ({ data }: { data: string }): ImportPayload => 
             shareId: null,
             items: items
                 .map((item): Maybe<ItemImportIntent> => {
-                    switch (item.type) {
-                        case BitwardenType.LOGIN:
-                            const urls = extractBitwardenUrls(item);
-                            return importLoginItem({
-                                name: item.name,
-                                note: item.notes,
-                                ...getEmailOrUsername(item.login.username),
-                                password: item.login.password,
-                                urls: urls.web,
-                                totp: item.login.totp,
-                                appIds: urls.android,
-                                extraFields: extractBitwardenExtraFields(item.fields),
-                            });
-                        case BitwardenType.NOTE:
-                            addCustomFieldsWarning(ignored, item);
-                            return importNoteItem({
-                                name: item.name,
-                                note: item.notes,
-                            });
-                        case BitwardenType.CREDIT_CARD:
-                            addCustomFieldsWarning(ignored, item);
-                            return importCreditCardItem({
-                                name: item.name,
-                                note: item.notes,
-                                cardholderName: item.card.cardholderName,
-                                number: item.card.number,
-                                verificationNumber: item.card.code,
-                                expirationDate: formatBitwardenCCExpirationDate(item),
-                            });
-                        case BitwardenType.IDENTITY:
-                            addCustomFieldsWarning(ignored, item);
-                            return importIdentityItem({
-                                name: item.name,
-                                note: item.notes,
-                                ...extractBitwardenIdentity(item),
-                            });
+                    try {
+                        switch (item.type) {
+                            case BitwardenType.LOGIN:
+                                const urls = extractBitwardenUrls(item);
+                                return importLoginItem({
+                                    name: item.name,
+                                    note: item.notes,
+                                    ...getEmailOrUsername(item.login.username),
+                                    password: item.login.password,
+                                    urls: urls.web,
+                                    totp: item.login.totp,
+                                    appIds: urls.android,
+                                    extraFields: extractBitwardenExtraFields(item.fields),
+                                });
+                            case BitwardenType.NOTE:
+                                addCustomFieldsWarning(ignored, item);
+                                return importNoteItem({
+                                    name: item.name,
+                                    note: item.notes,
+                                });
+                            case BitwardenType.CREDIT_CARD:
+                                addCustomFieldsWarning(ignored, item);
+                                return importCreditCardItem({
+                                    name: item.name,
+                                    note: item.notes,
+                                    cardholderName: item.card.cardholderName,
+                                    number: item.card.number,
+                                    verificationNumber: item.card.code,
+                                    expirationDate: formatBitwardenCCExpirationDate(item),
+                                });
+                            case BitwardenType.IDENTITY:
+                                addCustomFieldsWarning(ignored, item);
+                                return importIdentityItem({
+                                    name: item.name,
+                                    note: item.notes,
+                                    ...extractBitwardenIdentity(item),
+                                });
+                        }
+                    } catch (err) {
+                        ignored.push(c('Error').t`[Error] an item could not be parsed`);
+                        logger.warn('[Importer::Bitwarden]', err);
                     }
                 })
                 .filter(truthy),

@@ -92,16 +92,22 @@ export const readLastPassData = async ({ data }: { data: string }): Promise<Impo
                     shareId: null,
                     items: items
                         .map((item) => {
-                            const isNote = item.url === 'http://sn';
-                            if (!isNote) return processLoginItem(item);
+                            const noteType = extractLastPassFieldValue(item?.extra, 'NoteType');
+                            const type = capitalize(noteType ?? c('Label').t`Unknown`);
+                            const title = item?.name ?? '';
 
-                            const noteType = extractLastPassFieldValue(item.extra, 'NoteType');
+                            try {
+                                const isNote = item.url === 'http://sn';
+                                if (!isNote) return processLoginItem(item);
+                                if (!noteType) return processNoteItem(item);
+                                if (type === LastPassNoteType.CREDIT_CARD) return processCreditCardItem(item);
+                                if (type === LastPassNoteType.ADDRESS) return processIdentityItem(item);
 
-                            if (!noteType) return processNoteItem(item);
-                            if (noteType === LastPassNoteType.CREDIT_CARD) return processCreditCardItem(item);
-                            if (noteType === LastPassNoteType.ADDRESS) return processIdentityItem(item);
-
-                            ignored.push(`[${capitalize(noteType)}] ${item.name}`);
+                                ignored.push(`[${type}] ${title}`);
+                            } catch (err) {
+                                ignored.push(`[${type}] ${title}`);
+                                logger.warn('[Importer::LastPass]', err);
+                            }
                         })
                         .filter(truthy),
                 };

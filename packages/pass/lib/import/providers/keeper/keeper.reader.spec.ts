@@ -325,9 +325,9 @@ describe('Import Keeper CSV', () => {
 
     test('should correctly hydrate ignored arrays', () => {
         expect(payload.ignored.length).toEqual(4);
-        expect(payload.ignored[0]).toEqual('[Other] address item');
-        expect(payload.ignored[1]).toEqual('[Other] contact item');
-        expect(payload.ignored[2]).toEqual('[Other] file attachment item');
-        expect(payload.ignored[3]).toEqual('[Other] general item');
+        expect(payload.ignored[0]).toEqual('[Unknown] address item');
+        expect(payload.ignored[1]).toEqual('[Unknown] contact item');
+        expect(payload.ignored[2]).toEqual('[Unknown] file attachment item');
+        expect(payload.ignored[3]).toEqual('[Unknown] general item');
     });
 });
