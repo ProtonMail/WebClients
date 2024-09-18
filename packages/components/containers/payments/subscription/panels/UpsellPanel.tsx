@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
-import StripedList from '@proton/components/components/stripedList/StripedList';
+import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
 import { useActiveBreakpoint } from '@proton/components/hooks';

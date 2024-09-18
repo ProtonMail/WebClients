@@ -4,7 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 import Info from '../link/Info';
 
-export interface StripedItemProps extends ComponentPropsWithoutRef<'li'> {
+interface StripedItemProps extends ComponentPropsWithoutRef<'li'> {
     left: ReactNode;
     tooltip?: ReactNode;
 }
