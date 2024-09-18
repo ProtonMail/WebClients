@@ -5,9 +5,15 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address, DecryptedAddressKey, DecryptedKey, Key } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { addressesThunk, selectAddresses } from '../addresses';
+import { selectAddresses } from '../addresses';
 import { selectUserKeys } from '../userKeys';
-import { type AddressKeysState, addressKeysThunk, getAllAddressKeysAction, selectAddressKeys } from './index';
+import {
+    type AddressKeysState,
+    addressKeysThunk,
+    dispatchGetAllAddressesKeys,
+    getAllAddressKeysAction,
+    selectAddressKeys,
+} from './index';
 
 const addressKeyEqualityComparator = (a: Key[] | undefined = [], b: Key[] | undefined = []) => {
     return (
@@ -130,12 +136,7 @@ export const addressKeysListener = (startListening: SharedStartListening<Address
     startListening({
         actionCreator: getAllAddressKeysAction,
         effect: async (action, listenerApi) => {
-            const addresses = await listenerApi.dispatch(addressesThunk());
-            await Promise.all(
-                addresses.map((address) => {
-                    return listenerApi.dispatch(addressKeysThunk({ addressID: address.ID }));
-                })
-            );
+            await dispatchGetAllAddressesKeys(listenerApi.dispatch);
         },
     });
 };
