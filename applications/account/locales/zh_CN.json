@@ -526,6 +526,9 @@
       "Get more licenses": [
         "获取更多许可证"
       ],
+      "Get more servers": [
+        "获取更多服务器"
+      ],
       "Get the deal": [
         "立即享受优惠"
       ],
@@ -742,10 +745,10 @@
       "Refresh status": [
         "刷新状态"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "刷新页面"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "刷新页面"
       ],
       "Reload": [
@@ -1156,6 +1159,9 @@
       "Yes, undo": [
         "是的，撤消"
       ],
+      "Your server will be provisioned in the next days": [
+        "近几天，服务器会配置、准备好。"
+      ],
       "Zoom in": [
         "放大"
       ],
@@ -1433,14 +1439,6 @@
         "选择您的年终优惠"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此优惠不适用于您当前的套餐。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB 存储空间 (是其他套餐的 2 倍)"
@@ -1462,6 +1460,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "套餐 ${ plan } 限时回归"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
       ]
     },
     "bf2023: Offers": {
@@ -3684,6 +3690,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }，或查看我们的${ statusPageLink }"
       ],
+      "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "使用用户名 ${ user.Name }。前往设置 -> 消息和编辑 -> 短域名 (pm.me)，创建 ${ emailAddress }。"
+      ],
       "A group with this name already exists": [
         "已存在同名群组"
       ],
@@ -4680,6 +4689,9 @@
       ],
       "Add": [
         "添加"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "添加 (${ numberOfAddedServers } 台)"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
         "最多连接 ${ plusVpnConnections } 部设备"
@@ -6127,10 +6139,10 @@
       "Data locked": [
         "数据已锁定"
       ],
-      "dedicated servers": [
+      "Dedicated servers": [
         "专用服务器"
       ],
-      "Dedicated servers": [
+      "dedicated servers": [
         "专用服务器"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
@@ -6583,6 +6595,9 @@
       "Lean more about gateways": [
         "了解网关"
       ],
+      "Lean more about single sign-on": [
+        "单点登录详情"
+      ],
       "Learn how to ${ staySaferOnlineLink }": [
         "学习如何 ${ staySaferOnlineLink }"
       ],
@@ -6752,7 +6767,7 @@
         "组织中的专用服务器数量"
       ],
       "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
-        "一共有 ${ ownedCount } 台专用服务器能用，有 ${ usedCount } 台正在用，剩下 ${ remainingCount } 台可以分配。要分配 ${ addedCount } 台，不够用。"
+        "一共有 ${ ownedCount } 台专用服务器能用，有 ${ usedCount } 台正在用，剩下的 ${ remainingCount } 台不够分配出去 ${ addedCount } 台。"
       ],
       "of": [
         "，共"
@@ -7006,6 +7021,9 @@
       "Right to Left": [
         "从右到左"
       ],
+      "SAML configuration saved": [
+        "SAML 配置已经保存了"
+      ],
       "Save ${ percentage }": [
         "节省 ${ percentage }"
       ],
@@ -7090,6 +7108,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
+      "Single sign-on removed": [
+        "单点登录已经移除了"
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "第三方服务或设备可以使用 SMTP 投递功能通过您的 ${ MAIL_APP_NAME } 自有域名地址发送邮件。如需开通此功能，请${ createTicket }并说明您的用途、希望使用的自有域名，以及每小时与每天的预计邮件数量。"
       ],
@@ -7100,7 +7121,7 @@
         "已成功重新激活某些密钥"
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
-        "由于我们近来移除了一些服务器，目前能用的服务器中，有的只能在部分国家/地区使用。"
+        "由于我们近来移除了一些服务器，目前能用的服务器中，有的只能在部分国家/地区使用"
       ],
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF 用于声明谁可以代表您的域名发送邮件。请务必在您的 DNS 管理面板（在您购买该域名的平台上）添加下列 TXT 记录。"
@@ -7311,6 +7332,9 @@
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "此操作将永久删除您的账户及其所有数据，无法恢复。"
+      ],
+      "This will remove SSO for ${ boldDomainName }.": [
+        "${ boldDomainName } 的 SSO 会被移除。"
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "这将替换您的临时密码。您今后将使用此密码来访问您的 ${ BRAND_NAME } 账户。"
@@ -7640,13 +7664,13 @@
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
       ],
       "Whole organization": [
-        "整个组织"
+        "整个团体"
       ],
       "Why?": [
         "为什么？"
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "开通 Business 套餐或者 Enterprise 套餐，为组织选购 ${ boldDedicatedServers }，分到各 ${ boldGateways }，设置谁要使用哪些服务器。"
+        "开通 Business 套餐或者 Enterprise 套餐，为团体选购 ${ boldDedicatedServers }，分到各 ${ boldGateways }，设置谁要使用哪些服务器。"
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "使用加密的 ${ BRAND_NAME } 地址，您可以使用所有 ${ BRAND_NAME } 服务"
@@ -7677,6 +7701,9 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
+      ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "有 ${ ipAddresses } 台专用服务器可以使用，其中有 ${ ipCount } 台正在使用。"
       ],
       "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
         "您当前正在使用 ${ usedMembers } / ${ maxMembers } 个可用用户许可证"
@@ -7748,7 +7775,7 @@
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
       ],
       "You have ${ availableCount } dedicated server available.": [
-        "有 ${ availableCount } 台独立服务器可以使用。"
+        "有 ${ availableCount } 台专用服务器可以使用。"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一个试用版 ${ planTitle } 订阅。如果您想在试用期结束后继续订阅，请添加付款方式。"
@@ -8735,6 +8762,9 @@
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
       ],
+      "Gateway name": [
+        "网关名称"
+      ],
       "Gift code": [
         "礼品码"
       ],
@@ -8776,6 +8806,9 @@
       ],
       "Invite via email": [
         "通过电子邮件邀请"
+      ],
+      "Issuer ID": [
+        "颁发者标号"
       ],
       "Keep me signed in": [
         "保持登录状态"
@@ -8993,6 +9026,9 @@
       "Protection mode": [
         "保护模式"
       ],
+      "Public certificate (X.509)": [
+        "公钥认证 (X.509)"
+      ],
       "Read": [
         "已读"
       ],
@@ -9055,6 +9091,9 @@
       ],
       "Signature": [
         "落款"
+      ],
+      "Single sign-on entity ID": [
+        "单点登录实体标号"
       ],
       "Single sign-on URL": [
         "单点登录网址"
@@ -9148,6 +9187,9 @@
       ],
       "Username": [
         "用户名"
+      ],
+      "Value": [
+        "值"
       ],
       "VAT": [
         "增值税"
@@ -9723,6 +9765,9 @@
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "忘了 ${ BRAND_NAME } 账户的密码？凭代码、电子邮件或短信重置密码，继续登录 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等诸多应用。"
       ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "忘了 ${ BRAND_NAME } 账户的用户名？凭账户恢复所用的电子邮件或手机号重置密码，继续登录 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等诸多应用。"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "重置 ${ BRAND_NAME } 账户的密码"
       ],
@@ -9960,23 +10005,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "注册免费账户"
@@ -10004,6 +10032,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
       ]
     },
     "new_plans: feature": {
@@ -10499,14 +10544,6 @@
         "您所选的账户等级：${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } $ 试用"
-      ],
-      "Your account's usage": [
-        "您的账户使用情况"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "删除账户？"
@@ -10525,6 +10562,14 @@
       ],
       "Unlock premium features by upgrading": [
         "升级账户即可解锁更多高级功能"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
+      "Your account's usage": [
+        "您的账户使用情况"
       ]
     },
     "new_plans: tooltip": {
@@ -11080,7 +11125,7 @@
         "星标"
       ],
       "The whole organization": [
-        "整个组织"
+        "整个团体"
       ],
       "Trash": [
         "回收站"
@@ -13338,10 +13383,10 @@
       "Card verification": [
         "银行卡验证"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "通配邮箱"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "通配邮箱"
       ],
       "Change login password": [
@@ -13607,6 +13652,9 @@
       ],
       "Enter 2FA code": [
         "输入 2FA 验证码"
+      ],
+      "Enter SAML metadata": [
+        "输入 SAML 元数据"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "输入您的 ${ BRAND_NAME } 账户详情以加入 ${ app } Beta 计划"
@@ -13921,7 +13969,7 @@
         "移除单点登录"
       ],
       "Remove single sign-on for your organization?": [
-        "移除组织的单点登录？"
+        "移除团体的单点登录？"
       ],
       "Remove user?": [
         "是否移除用户？"
