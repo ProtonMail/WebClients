@@ -42,7 +42,7 @@ const WalletAccountBalance = ({ walletAccount, balance }: { walletAccount: WasmA
                 placeholder={<span className="block">{c('Wallet transaction').t`Loading balance`}</span>}
             >
                 <div className="ml-auto flex flex-row flex-nowrap justify-end">
-                    <Price unit={exchangeRate ?? settings.BitcoinUnit} satsAmount={balance} />
+                    <Price unit={exchangeRate ?? settings.BitcoinUnit} amount={balance} />
                 </div>
             </Skeleton>
 

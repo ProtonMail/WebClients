@@ -87,10 +87,7 @@ export const RecipientsDataItem = ({
                                 {!isSingleRecipient && (
                                     <div className="shrink-0 text-sm">
                                         <div className={clsx('ml-auto flex flex-row flex-nowrap justify-end')}>
-                                            <Price
-                                                unit={exchangeRate ?? settings.BitcoinUnit}
-                                                satsAmount={output.value}
-                                            />
+                                            <Price unit={exchangeRate ?? settings.BitcoinUnit} amount={output.value} />
                                         </div>
                                         {exchangeRate && (
                                             <div
@@ -280,11 +277,11 @@ export const AmountDataItem = ({
     return (
         <div className="w-full">
             <span className="color-weak flex items-center gap-2 my-1">
-                {label}
+                {label}amount
                 {infoTitle && <Info title={infoTitle} className="color-hint" />}
             </span>
             <div className="flex flex-row flex-nowrap items-center text-lg my-1">
-                <Price unit={exchangeRate ?? settings.BitcoinUnit} satsAmount={amount ?? 0} />
+                <Price unit={exchangeRate ?? settings.BitcoinUnit} amount={amount ?? 0} />
             </div>
             {exchangeRate && (
                 <div className="color-weak">
