@@ -21,6 +21,10 @@ export const computeAddress = async (
     };
 };
 
+export const removeMasterPrefix = (derivationPath: string) => {
+    return derivationPath.replace(/m\//, '');
+};
+
 export const generateBitcoinAddressesPayloadToFillPool = async ({
     addressesToCreate,
     wasmAccount,

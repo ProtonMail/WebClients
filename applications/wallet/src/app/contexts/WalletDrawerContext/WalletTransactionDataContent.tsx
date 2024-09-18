@@ -6,14 +6,13 @@ import { Icon, useModalStateWithData } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
-import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT, type TransactionData } from '@proton/wallet';
 import { useUserWalletSettings } from '@proton/wallet/store';
 
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import type { RecipientDetailsModalOwnProps } from '../../components/RecipientDetailsModal';
 import { RecipientDetailsModal } from '../../components/RecipientDetailsModal';
-import type { TransactionData } from '../../hooks/useWalletTransactions';
 import { convertAmountStr, getLabelByUnit } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 import {

@@ -2,24 +2,23 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import type { WasmApiWalletTransaction } from '@proton/andromeda';
 import type { ModalPropsWithData } from '@proton/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { encryptWalletDataWithWalletKey, useWalletApi } from '@proton/wallet';
+import { type TransactionData, encryptWalletDataWithWalletKey, useWalletApi } from '@proton/wallet';
+import { updateWalletTransaction, useWalletDispatch } from '@proton/wallet/store';
 
 import { TEXT_AREA_MAX_LENGTH } from '../../constants';
 import { useBitcoinBlockchainContext } from '../../contexts';
-import type { TransactionData } from '../../hooks/useWalletTransactions';
 import { TextAreaModal } from '../TextAreaModal';
 
 interface Props extends ModalPropsWithData<{ transaction: TransactionData }> {
     apiWalletData: IWasmApiWalletData;
-    onUpdate: (updatedTx: WasmApiWalletTransaction, oldTransactionData: TransactionData) => void;
 }
 
-export const TransactionNoteModal = ({ onUpdate, apiWalletData, data, ...modalProps }: Props) => {
+export const TransactionNoteModal = ({ apiWalletData, data, ...modalProps }: Props) => {
     const baseLabel = data?.transaction.apiData?.Label ?? '';
+    const dispatch = useWalletDispatch();
 
     const [userKeys] = useUserKeys();
     const { createNotification } = useNotifications();
@@ -48,7 +47,7 @@ export const TransactionNoteModal = ({ onUpdate, apiWalletData, data, ...modalPr
                         apiWalletData.WalletKey.DecryptedKey
                     );
 
-                    const { Data: updatedTx } = await walletApi
+                    await walletApi
                         .clients()
                         .wallet.updateWalletTransactionLabel(
                             WalletID,
@@ -57,8 +56,16 @@ export const TransactionNoteModal = ({ onUpdate, apiWalletData, data, ...modalPr
                             encryptedLabel ?? ''
                         );
 
+                    if (data.transaction.apiData?.HashedTransactionID) {
+                        dispatch(
+                            updateWalletTransaction({
+                                hashedTransactionId: data.transaction.apiData?.HashedTransactionID,
+                                update: { Label: label },
+                            })
+                        );
+                    }
+
                     createNotification({ text: c('Wallet Transaction').t`Transaction label successfully updated` });
-                    onUpdate(updatedTx, data.transaction);
                 } catch (e) {
                     createNotification({
                         type: 'error',
@@ -68,11 +75,11 @@ export const TransactionNoteModal = ({ onUpdate, apiWalletData, data, ...modalPr
             }
         },
         [
-            createNotification,
-            data?.transaction,
-            onUpdate,
-            userKeys,
             apiWalletData.WalletKey?.DecryptedKey,
+            createNotification,
+            data?.transaction.apiData,
+            dispatch,
+            userKeys,
             walletApi,
             walletMap,
         ]
