@@ -10,7 +10,7 @@
 -   Improve extension bundle size
 -   Fix conflict with AttentiveSMS third-party library
 
-### Version 1.22.4 [Safari]
+### Version 1.22.4 [Safari ONLY]
 
 -   Fixed logout issues due to service-worker registration failures
 
