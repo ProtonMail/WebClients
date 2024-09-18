@@ -8,6 +8,8 @@ import {
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
+    hasBundlePro,
+    hasBundlePro2024,
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
 import { canScheduleOrganizationPhoneCalls } from '@proton/shared/lib/helpers/support';
@@ -168,7 +170,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Gateways`,
                 to: '/gateways',
                 icon: 'servers',
-                available: hasVpnB2BPlan,
+                available: hasVpnB2BPlan || hasBundlePro2024(subscription) || hasBundlePro(subscription),
                 subsections: [
                     {
                         id: 'servers',
