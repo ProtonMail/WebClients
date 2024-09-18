@@ -204,7 +204,7 @@ export const AmountDataListItem = ({
     const primaryAmount = (
         <Price
             unit={exchangeRate ?? bitcoinUnit}
-            satsAmount={value}
+            amount={value}
             withPositiveSign
             signClassName={value < 0 ? 'color-danger' : 'color-success'}
         />

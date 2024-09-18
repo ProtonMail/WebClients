@@ -16,7 +16,10 @@ const formatterByCurrency: Map<string, Intl.NumberFormat> = new Map();
 
 interface Props extends Omit<PriceOwnProps, 'children' | 'currency' | 'divisor'> {
     unit: WasmBitcoinUnit | WasmApiExchangeRate;
-    satsAmount: number;
+    /**
+     * Amount in sats
+     */
+    amount: number | string;
     withPositiveSign?: boolean;
     className?: string;
     signClassName?: string;
@@ -53,7 +56,7 @@ const tryNumberFormat = (currency: string, minimumFractionDigits: number): Intl.
 
 export const Price = ({
     unit,
-    satsAmount,
+    amount: _amount,
     withPositiveSign = false,
     className,
     signClassName,
@@ -64,8 +67,9 @@ export const Price = ({
     large,
     ...props
 }: Props) => {
+    const isStringAmount = typeof _amount === 'string';
     if (typeof unit !== 'object' || isExchangeRateFromBitcoinUnit(unit)) {
-        const amount = convertAmountStr(satsAmount, COMPUTE_BITCOIN_UNIT, unit);
+        const amount = isStringAmount ? _amount : convertAmountStr(_amount, COMPUTE_BITCOIN_UNIT, unit);
         const currency = typeof unit === 'object' ? unit.FiatCurrency : unit;
 
         return (
@@ -74,16 +78,16 @@ export const Price = ({
                 data-currency={currency}
             >
                 <span
-                    key={`${satsAmount}-${currency}-amount`}
+                    key={`${_amount}-${currency}-amount`}
                     className={clsx(['amount', 'amount--large', amountClassName, classNames?.integer])}
                 >
                     {amount}
                 </span>
-                <span key={`${satsAmount}-${currency}-literal`} className={clsx(['text-pre', classNames?.literal])}>
+                <span key={`${_amount}-${currency}-literal`} className={clsx(['text-pre', classNames?.literal])}>
                     {' '}
                 </span>
                 <span
-                    key={`${satsAmount}-${currency}-currency`}
+                    key={`${_amount}-${currency}-currency`}
                     className={clsx(['currency', currencyClassName, classNames?.currency])}
                 >
                     {currency}
@@ -93,7 +97,10 @@ export const Price = ({
     }
 
     const time = unit.ExchangeRateTime;
-    const amount = convertAmount(satsAmount, COMPUTE_BITCOIN_UNIT, unit);
+
+    // If input amount is a string, we replace it by 0 for formatting purpose, then we'll use the string in the jsx template
+    const amount = isStringAmount ? 0 : convertAmount(_amount, COMPUTE_BITCOIN_UNIT, unit);
+
     const currency = unit.FiatCurrency;
     const formatter =
         formatterByCurrency.get(unit.FiatCurrency) ?? tryNumberFormat(unit.FiatCurrency, Math.log10(unit.Cents));
@@ -105,7 +112,7 @@ export const Price = ({
         <span
             className={clsx(['price', wrapperClassName, large && 'price--large', classNames?.price, className])}
             data-currency={currency}
-            key={`${time}-${satsAmount}-${satsAmount}-${currency}`}
+            key={`${time}-${_amount}-${currency}`}
             data-testid={props?.['data-testid']}
         >
             {formatter
@@ -123,7 +130,7 @@ export const Price = ({
                     ].includes(type)
                 )
                 .map(({ type, value }, index) => {
-                    const key = `${time}-${satsAmount}-${currency}-${type}-${index}`;
+                    const key = `${time}-${value}-${currency}-${type}-${index}`;
 
                     switch (type) {
                         case 'plusSign':
@@ -163,7 +170,8 @@ export const Price = ({
                                     key={key}
                                     className={clsx(['amount', 'amount--large', amountClassName, classNames?.integer])}
                                 >
-                                    {value}
+                                    {/* If input amount is a string, we replaced it to format currency but we want to use provided string here  */}
+                                    {isStringAmount ? _amount : value}
                                 </span>
                             );
                         case 'group':
@@ -173,13 +181,13 @@ export const Price = ({
                                 </span>
                             );
                         case 'decimal':
-                            return (
+                            return isStringAmount ? null : (
                                 <span key={key} className={clsx(['decimal', amountClassName, classNames?.decimal])}>
                                     {value}
                                 </span>
                             );
                         case 'fraction':
-                            return (
+                            return isStringAmount ? null : (
                                 <span key={key} className={clsx(['decimal', amountClassName, classNames?.fraction])}>
                                     {value}
                                 </span>

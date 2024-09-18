@@ -50,8 +50,6 @@ const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme, apiWalletsD
         ...(apiWalletsData?.slice((walletIndex ?? 0) + 1) ?? []),
     ];
 
-    const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);
-
     const { pathname } = useLocation();
 
     useEffect(() => {
@@ -75,7 +73,6 @@ const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme, apiWalletsD
                     data-testid="wallet-sidebar:wallet-item"
                     left={<WalletExpandButton expanded={showAccounts} onClick={() => toggleShowAccounts()} />}
                     right={
-                        !needPassphrase &&
                         !wallet.IsNotDecryptable && (
                             <CoreButton
                                 icon

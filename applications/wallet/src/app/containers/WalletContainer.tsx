@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Redirect, useHistory, useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -16,17 +16,16 @@ import { BitcoinBuyModal } from '../components/BitcoinBuyModal';
 import { BitcoinSendModal } from '../components/BitcoinSendModal';
 import { InvitesButton } from '../components/InvitesButton';
 import { MetricsAndCtas } from '../components/MetricsAndCtas';
-import { PassphraseInputModal } from '../components/PassphraseInputModal';
 import { TransactionList } from '../components/TransactionList';
 import { WalletPreferencesModal } from '../components/WalletPreferencesModal';
 import { useBitcoinBlockchainContext } from '../contexts';
 import { useResponsiveContainerContext } from '../contexts/ResponsiveContainerContext';
 import { useWalletDrawerContext } from '../contexts/WalletDrawerContext';
+import { useWalletPassphrase } from '../hooks/useWalletPassphrase';
 import { getThemeForWallet } from '../utils';
 
 export const WalletContainer = () => {
     const { walletId } = useParams<{ walletId: string }>();
-    const history = useHistory();
     const { openDrawer } = useWalletDrawerContext();
 
     const { isNarrow } = useResponsiveContainerContext();
@@ -44,7 +43,7 @@ export const WalletContainer = () => {
     const [walletSendModal, setWalletSendModal] = useModalState();
     const [walletBuyModal, setWalletBuyModal] = useModalState();
 
-    const { apiWalletsData, syncSingleWallet, getSyncingData } = useBitcoinBlockchainContext();
+    const { apiWalletsData, getSyncingData } = useBitcoinBlockchainContext();
 
     const { createNotification, removeNotification } = useNotifications();
     const notificationRef = useRef<number>();
@@ -77,6 +76,8 @@ export const WalletContainer = () => {
         }
     }, [createNotification, isSyncing, removeNotification]);
 
+    const { canUseWallet } = useWalletPassphrase(wallet);
+
     if (!apiWalletsData) {
         return <LayoutViewLoader />;
     }
@@ -88,8 +89,6 @@ export const WalletContainer = () => {
     if (wallet.IsNotDecryptable) {
         return <Redirect to={`/wallets/${wallet.Wallet.ID}/locked`} />;
     }
-
-    const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);
 
     const theme = getThemeForWallet(apiWalletsData, wallet.Wallet.ID);
 
@@ -137,12 +136,12 @@ export const WalletContainer = () => {
                     </div>
 
                     {/* Balance */}
-                    <Balance apiWalletData={wallet} />
+                    <Balance apiWalletData={wallet} disabled={!canUseWallet} />
 
                     {/* Wallet metrics and cta (send, buy, receive) */}
                     <MetricsAndCtas
                         apiWalletData={wallet}
-                        disabled={isSyncing || didFailedSyncing}
+                        disabled={isSyncing || didFailedSyncing || !canUseWallet}
                         onClickSend={() => setWalletSendModal(true)}
                         onClickReceive={() => {
                             openDrawer({ kind: 'wallet-receive', wallet, theme });
@@ -152,24 +151,17 @@ export const WalletContainer = () => {
                         }}
                     />
 
-                    <TransactionList
-                        apiWalletData={wallet}
-                        onClickReceive={() => {
-                            openDrawer({ kind: 'wallet-receive', wallet, theme });
-                        }}
-                        onClickBuy={() => {
-                            setWalletBuyModal(true);
-                        }}
-                    />
-
-                    <PassphraseInputModal
-                        wallet={wallet}
-                        isOpen={needPassphrase}
-                        onClose={history.goBack}
-                        onConfirmPassphrase={() => {
-                            void syncSingleWallet({ walletId: wallet.Wallet.ID });
-                        }}
-                    />
+                    {canUseWallet && (
+                        <TransactionList
+                            apiWalletData={wallet}
+                            onClickReceive={() => {
+                                openDrawer({ kind: 'wallet-receive', wallet, theme });
+                            }}
+                            onClickBuy={() => {
+                                setWalletBuyModal(true);
+                            }}
+                        />
+                    )}
 
                     {renderWalletPreferencesModalState && (
                         <WalletPreferencesModal

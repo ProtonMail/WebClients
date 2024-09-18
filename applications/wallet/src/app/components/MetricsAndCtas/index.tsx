@@ -110,7 +110,7 @@ export const MetricsAndCtas = ({
                                 placeholder={<span className="block">{c('Loader').t`Loading`}</span>}
                             >
                                 <span className="block">
-                                    {exchangeRate && <Price unit={exchangeRate} satsAmount={1 * BITCOIN} />}
+                                    {exchangeRate && <Price unit={exchangeRate} amount={1 * BITCOIN} />}
                                 </span>
                             </Skeleton>
                         </div>
