@@ -609,7 +609,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         {isAdmin
                             ? c('Info')
                                   .t`Organize your dedicated servers into Gateways and decide which members can access them.`
-                            : c('Info').t`Ask your organisation admin to setup Gateways.`}
+                            : c('Info').t`Ask your organization admin to setup Gateways.`}
                     </p>
 
                     {isAdmin && (
