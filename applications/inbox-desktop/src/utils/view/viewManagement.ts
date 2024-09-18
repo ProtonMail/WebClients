@@ -56,11 +56,11 @@ export const viewCreationAppStartup = (session: Session) => {
         showView("mail");
     }, delay);
 
-    const debouncedUpdateWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
-    mainWindow.on("move", debouncedUpdateWindowBounds);
-    mainWindow.on("resize", debouncedUpdateWindowBounds);
-    mainWindow.on("maximize", debouncedUpdateWindowBounds);
-    mainWindow.on("unmaximize", debouncedUpdateWindowBounds);
+    const debouncedSaveWindowBounds = debounce(() => saveWindowBounds(mainWindow!), 1000);
+    mainWindow.on("move", debouncedSaveWindowBounds);
+    mainWindow.on("resize", debouncedSaveWindowBounds);
+    mainWindow.on("maximize", debouncedSaveWindowBounds);
+    mainWindow.on("unmaximize", debouncedSaveWindowBounds);
 
     const updateViewsBounds = () => {
         for (const viewID of Object.keys(browserViewMap) as ViewID[]) {
