@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 
-import { WasmProtonWalletApiClient } from '@proton/andromeda';
+import { type WasmProtonWalletApiClient } from '@proton/andromeda';
 
 import { ExtendedApiContext } from '.';
 
