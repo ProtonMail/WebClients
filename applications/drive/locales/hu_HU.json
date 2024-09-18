@@ -194,6 +194,9 @@
       "Create a new contact group": [
         "Új névjegy csoport létrehozása"
       ],
+      "Create and copy alias": [
+        "E-mail álnév létrehozása és másolása"
+      ],
       "Create link": [
         "Hivatkozás létrehozása"
       ],
@@ -450,6 +453,9 @@
       ],
       "Manage link": [
         "Hivatkozás kezelése"
+      ],
+      "Mark as resolved": [
+        "Megjelölés megoldottként"
       ],
       "Mark for deletion": [
         "Törlésre jelöl"
@@ -981,6 +987,9 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Tartsa biztonságban fájljait, titkosított felhőtárhelyen. Változások megjegyzését, titkosított megosztást és további lehetőségeket tartalmaz."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "A tárhelye meg van osztva minden ${ BRAND_NAME } alkalmazás között."
       ]
     },
     "Billing cycle": {
@@ -1035,6 +1044,9 @@
       ],
       "Custom domain problem": [
         "Probléma saját domain névvel"
+      ],
+      "Docs problem": [
+        "Docs probléma"
       ],
       "Drive problem": [
         "Drive probléma"
@@ -1391,6 +1403,9 @@
       "British Indian Ocean Territory": [
         "Brit Indiai-óceáni Terület"
       ],
+      "British Virgin Islands": [
+        "Brit Virgin-szigetek"
+      ],
       "Brunei Darussalam": [
         "Brunei Darussalam Állam"
       ],
@@ -1445,6 +1460,9 @@
       "Congo": [
         "Kongó"
       ],
+      "Congo (The Democratic Republic of the)": [
+        "Kongói Demokratikus Köztársaság"
+      ],
       "Congo, Democratic Republic of the": [
         "Kongói Demokratikus Köztársaság"
       ],
@@ -1483,6 +1501,9 @@
       ],
       "Dominican Republic": [
         "Dominikai Köztársaság"
+      ],
+      "East Timor": [
+        "Kelet-Timor"
       ],
       "Ecuador": [
         "Ecuador"
@@ -1625,6 +1646,9 @@
       "Ireland": [
         "Írország"
       ],
+      "Islamic Republic of Iran": [
+        "Irán"
+      ],
       "Isle of Man": [
         "Mann"
       ],
@@ -1654,6 +1678,9 @@
       ],
       "Kiribati": [
         "Kiribati"
+      ],
+      "Korea (Democratic People's Republic of)": [
+        "Észak-Korea"
       ],
       "Kosovo": [
         "Koszovó"
@@ -1970,6 +1997,9 @@
       "Tanzania": [
         "Tanzánia"
       ],
+      "Tanzania, United Republic of": [
+        "Tanzánia"
+      ],
       "Thailand": [
         "Thaiföld"
       ],
@@ -2179,6 +2209,93 @@
         "Elsőbbségi támogatás"
       ]
     },
+    "duoplan2024: Action": {
+      "Get ${ BRAND_NAME } Duo": [
+        "Szerezzen ${ BRAND_NAME } Duo-t"
+      ],
+      "Get it for ${ price }": [
+        "Kapja meg ${ price } ért"
+      ]
+    },
+    "duoplan2024: Info": {
+      "1 TB storage": [
+        "1 TB tárhely"
+      ],
+      "2 users": [
+        "2 felhasználó"
+      ],
+      "Full access to all ${ BRAND_NAME } products": [
+        "Teljes hozzáférés minden ${ BRAND_NAME } termékhez"
+      ],
+      "You save ${ amountSave }": [
+        "${ amountSave } takarít meg"
+      ]
+    },
+    "duoplan2024: SubTitle": {
+      "All of ${ BRAND_NAME }, for 2.": [
+        "Minden a ${ BRAND_NAME }, 2 embernek."
+      ],
+      "Double your storage": [
+        "Duplázza meg a tárhelyét"
+      ]
+    },
+    "Email body for description (description part)": {
+      "DESCRIPTION:\n${ eventDescription }": [
+        "LEÍRÁS:\n${ eventDescription }"
+      ]
+    },
+    "Email body for invitation": {
+      "${ eventTitle } was canceled.": [
+        "${ eventTitle } lemondva."
+      ],
+      "This event occurrence was updated.": [
+        "Ennek az események az előfordulása frissítve lett."
+      ],
+      "This event occurrence was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Ennek az eseménynek az előfordulása megváltozott. Ezek változtak:\n\n${ updateEventDetailsText }"
+      ],
+      "This event was updated.": [
+        "Ez az esemény frissítve lett."
+      ],
+      "This event was updated. Here's what changed:\n\n${ updateEventDetailsText }": [
+        "Ez az esemény megváltozott. Ezek változtak:\n\n${ updateEventDetailsText }"
+      ],
+      "You are invited to ${ eventTitle }.\n\n${ eventDetailsText }": [
+        "Meghívták a következő eseményre: ${ eventTitle }\n\n${ eventDetailsText }"
+      ]
+    },
+    "Email body for invitation (date part)": {
+      "TIME:\n${ formattedStart }": [
+        "IDŐ:\n${ formattedStart }"
+      ],
+      "TIME:\n${ formattedStart } (all day)": [
+        "IDŐ:\n${ formattedStart } (minden nap)"
+      ],
+      "TIME:\n${ formattedStart } - ${ formattedEnd }": [
+        "IDŐ:\n${ formattedStart } - ${ formattedEnd }"
+      ]
+    },
+    "Email body for invitation (event details part)": {
+      "Removed": [
+        "Törölve"
+      ]
+    },
+    "Email body for invitation (location part)": {
+      "LOCATION:\n${ eventLocation }": [
+        "HELY:\n${ eventLocation }"
+      ]
+    },
+    "Email body for response to invitation": {
+      "${ emailAddress } accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } elfogadta a meghívást az eseményre: ${ eventTitle }"
+      ],
+      "${ emailAddress } declined your invitation to ${ eventTitle }": [
+        "${ emailAddress } elutasította a meghívást az eseményre: ${ eventTitle }"
+      ],
+      "${ emailAddress } tentatively accepted your invitation to ${ eventTitle }": [
+        "${ emailAddress } feltételesen elfogadta a meghívást az eseményre: ${ eventTitle }"
+      ]
+    },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
         "Esemény törlése ekkor: ${ formattedStart }"
@@ -2213,6 +2330,9 @@
     "Error": {
       "\"${ name }\" already exists": [
         "\"${ name }\" már létezik"
+      ],
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } nem tudd kapcsolódni az ön külső fiókjaihoz."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
@@ -5577,6 +5697,9 @@
       ],
       "upgrade for more storage": [
         "váltson nagyobb csomagra több tárhelyért"
+      ],
+      "Your account is at risk of deletion. To avoid data loss, ask your admin to upgrade. ${ cta }": [
+        "Az ön fiókja lehet törölve lesz. Kérje meg az adminisztrátort, hogy fizessen elő és, hogy elkerülje az adatok elvesztését. ${ cta }"
       ]
     },
     "Log preference": {
@@ -5622,6 +5745,9 @@
       "10 email addresses": [
         "10 e-mail cím"
       ],
+      "Auto-delete Spam and Trash": [
+        "Levélszemét és Lomtár automatikus törlése"
+      ],
       "Support for 1 custom email domain": [
         "Egy saját e-mail domain név használata"
       ],
@@ -5629,9 +5755,22 @@
         "Korlátlan számú mappa, címke és szűrő"
       ]
     },
+    "mailtrial2024: Footer": {
+      "Renews at ${ renewablePrice }, cancel anytime": [
+        "Előfizetés megújul ${ renewablePrice }, bármikor lemondhatja"
+      ]
+    },
     "mailtrial2024: Info": {
       "for the first month": [
         "az első hónapban"
+      ],
+      "Limited-time offer, expires April 2 2024": [
+        "Korlátozott idejű ajánlat, 2024. április 2-án jár le"
+      ]
+    },
+    "mailtrial2024: Title": {
+      "Get ${ planName } for only ${ planPrice }": [
+        "Szerezze be a ${ planName }-t csak ${ planPrice } ért"
       ]
     },
     "Message": {
@@ -5832,6 +5971,12 @@
       "1 user": [
         "1 felhasználó"
       ],
+      "10 email addresses/aliases": [
+        "10 email cím / e-mail álnév"
+      ],
+      "15 GB storage": [
+        "15 GB tárhely"
+      ],
       "24/7 account management support": [
         "Non-stop fiókkezelési támogatás"
       ],
@@ -5913,6 +6058,9 @@
       "Email client support (via IMAP/SMTP)": [
         "E-mail kliens támogatás (IMAP/SMTP)"
       ],
+      "Email groups": [
+        "E-mail csoportok"
+      ],
       "Enables HIPAA compliance": [
         "HIPAA megfelelőséget tesz lehetővé"
       ],
@@ -5967,6 +6115,9 @@
       ],
       "Organize items with multiple vaults": [
         "Elemek rendezése több tárolóba"
+      ],
+      "Password manager": [
+        "Jelszókezelő"
       ],
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
@@ -6090,6 +6241,9 @@
       ]
     },
     "new_plans: feature info": {
+      "1 custom email domain": [
+        "1 saját e-mail domain név"
+      ],
       "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain2 } a hírleveleinek"
       ],
@@ -6621,8 +6775,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Fedezze fel az összes ${ BRAND_NAME } szolgáltatást"
       ],
+      "Pick a theme": [
+        "Téma választása"
+      ],
       "Set up your organization": [
         "Állítsa be a szervezet adatait"
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "A beállítások között bármikor módosíthatja a témát."
       ]
     },
     "Onboarding Title": {
@@ -6912,12 +7072,26 @@
         "Hivatalos e-mail tőle: ${ BRAND_NAME }"
       ]
     },
+    "Safety review": {
+      "Review your account safety": [
+        "Tekintse át fiókja biztonságát"
+      ]
+    },
     "Security Center": {
+      "All aliases": [
+        "Minden e-mail álnév"
+      ],
       "Create alias": [
+        "E-mail álnév létrehozása"
+      ],
+      "Create an alias": [
         "E-mail álnév létrehozása"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email álnevek"
+      ],
+      "New alias": [
+        "Új e-mail álnév"
       ],
       "Open ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } megnyitása"
@@ -6926,6 +7100,11 @@
     "Security Center - Action": {
       "View logs": [
         "Naplók megtekintése"
+      ]
+    },
+    "Security Center - Info": {
+      "Sentinel is **active** and safeguarding your account.": [
+        "Sentinel **aktív**, biztonságban tartja a fiókját."
       ]
     },
     "Select files": {
@@ -6962,6 +7141,9 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } óra",
         "${ timeRemaining.inHours } óra"
+      ],
+      "Password reset request approved (${ user.Email }).": [
+        "Jelszó visszaállítási kérelem elfogadva (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "A jelszó megváltoztatásához használja a bejelentkezett eszközt (abban a munkamenetben, ahol a kérés indult)."
@@ -7189,6 +7371,9 @@
       "Premium ${ appName1 } & ${ appName2 }": [
         "Prémium ${ appName1 } és ${ appName2 }."
       ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Prémium ${ appName1 }, ${ appName2 } és ${ appName3 }."
+      ],
       "Premium early access": [
         "Prémium korai-hozzáférés"
       ],
@@ -7352,6 +7537,9 @@
       "${ app } storage": [
         "${ app } tárhely"
       ],
+      "${ storage } ${ percentage }% full": [
+        "${ storage } ${ percentage }% tele van"
+      ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
         "A lemondással elveszít az alábbi előnyöket. Biztos benne, hogy folytatja?"
       ],
@@ -7364,6 +7552,12 @@
       "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
         "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből.",
         "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből."
+      ],
+      "Your ${ appStorage } is almost full": [
+        "Az ön ${ appStorage } majdnem tele van."
+      ],
+      "Your ${ appStorage } is full": [
+        "Az ön ${ appStorage } tele van."
       ],
       "Your storage is full": [
         "A tárhelye megtelt"
@@ -7465,11 +7659,17 @@
       "10 email addresses": [
         "10 e-mail cím"
       ],
+      "25 calendars per user": [
+        "25 naptár felhasználónként"
+      ],
       "6 users": [
         "6 felhasználó"
       ],
       "All you need for your business": [
         "Minden, amire az üzlethez szüksége van"
+      ],
+      "Automatic email forwarding": [
+        "Automatikus e-mail továbbítás"
       ],
       "Calendar sharing": [
         "Naptár megosztás"
@@ -7489,6 +7689,9 @@
       "Unlimited folders, labels and filters": [
         "Korlátlan számú mappa, címke és szűrő"
       ],
+      "Users won’t be able to send emails": [
+        "Felhasználók nem fognak tudni e-maileket küldeni"
+      ],
       "Version history": [
         "Verziótörténet"
       ]
@@ -7497,11 +7700,23 @@
       "15 GB storage": [
         "15 GB tárhely"
       ],
+      "and 15 more premium features": [
+        "és 15 több prémium funkció"
+      ],
+      "Data breach alerts ${ strongArgument }": [
+        "Adatszivárgási figyelmeztetések ${ strongArgument }"
+      ],
       "Desktop app": [
         "Asztali alkalmazás"
       ],
+      "No ads or tracking": [
+        "Nincsenek reklámok vagy nyomon követés."
+      ],
       "Upgrade": [
         "Nagyobb csomagra váltás"
+      ],
+      "We don't sell your data": [
+        "Nem adjuk el az adatait."
       ]
     },
     "Subscription renewal state": {
@@ -7746,6 +7961,9 @@
       "Active": [
         "Aktív"
       ],
+      "Add a custom logo": [
+        "Egyedi logó hozzáadása"
+      ],
       "Add contact group name": [
         "Adjon nevet a névjegy csoportnak"
       ],
@@ -7834,6 +8052,9 @@
       "Continue with partial import?": [
         "Folytatja részleges importálással?"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Create a new file": [
         "Új fájl létrehozása"
       ],
@@ -7886,6 +8107,9 @@
       ],
       "Deleting contacts": [
         "Névjegyek törlése"
+      ],
+      "Details": [
+        "Részletek"
       ],
       "Discard": [
         "Elvetés"
@@ -7941,8 +8165,14 @@
       "Empty trash": [
         "Lomtár kiürítése"
       ],
+      "Enable 2FA": [
+        "Kétlépcsős hitelesítés bekapcsolása"
+      ],
       "Enable drive search": [
         "A felhőtárhelyen való keresés engedélyezése"
+      ],
+      "Enter 2FA code": [
+        "Írja be a kétlépcsős hitelesítési kódot"
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
@@ -7969,6 +8199,9 @@
         "${ searchView.numberOfResults } találat",
         "${ searchView.numberOfResults } találat"
       ],
+      "Get advanced protection": [
+        "Kapjon speciális védelmet"
+      ],
       "Gift": [
         "Ajándék"
       ],
@@ -7993,6 +8226,9 @@
       ],
       "Import failed": [
         "Importálás sikertelen"
+      ],
+      "Import groups": [
+        "Csoportok importálása"
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
@@ -8030,11 +8266,17 @@
       "Name": [
         "Név"
       ],
+      "Need more aliases?": [
+        "Több e-mail álnévre van szüksége?"
+      ],
       "Network error": [
         "Hálózati hiba"
       ],
       "Night theme": [
         "Éjszakai téma"
+      ],
+      "No breaches detected": [
+        "Nem észleltünk adatszivárgást."
       ],
       "No results found": [
         "Nincs találat"
@@ -8267,6 +8509,12 @@
       "You have no folders yet": [
         "Még nincsenek mappái"
       ],
+      "Your ${ planName } free trial ends on ${ textDate }": [
+        "Az ön ${ planName } ingyenes próbaidőszaka végett ér: ${ textDate }"
+      ],
+      "Your account is protected": [
+        "A fiókja védve van"
+      ],
       "Your changes are not synced yet": [
         "Módosításai még nincsenek szinkronizálva"
       ],
@@ -8441,6 +8689,11 @@
       ],
       "Bitcoin via email": [
         "Bitcoin email-en keresztül"
+      ]
+    },
+    "wallet_signup_2024:Bug category": {
+      "Wallet problem": [
+        "Wallet probléma"
       ]
     },
     "Warning": {
