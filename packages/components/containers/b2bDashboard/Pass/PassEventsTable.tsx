@@ -3,7 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AppLink, SortingTableHeader, Table, TableBody, TableRow, Time, Tooltip } from '@proton/components/components';
+import { AppLink, Time, Tooltip } from '@proton/components/components';
+import { SortingTableHeader } from '@proton/components/components/table/SortingTableHeader';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableRow from '@proton/components/components/table/TableRow';
 import { getShareID } from '@proton/shared/lib/api/b2blogs';
 import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
 

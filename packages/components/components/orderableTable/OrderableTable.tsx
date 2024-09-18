@@ -2,11 +2,11 @@ import type { ReactNode } from 'react';
 import { useRef } from 'react';
 import type { SortableContainerProps } from 'react-sortable-hoc';
 
+import Table from '@proton/components/components/table/Table';
 import { isModalOpen } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
 
 import OrderableContainer from '../orderable/OrderableContainer';
-import { Table } from '../table';
 
 import './OrderableTable.scss';
 

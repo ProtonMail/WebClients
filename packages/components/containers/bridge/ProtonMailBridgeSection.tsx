@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Select from '@proton/components/components/select/Select';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
@@ -17,7 +18,6 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import { Select } from '../../components';
 import { useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 

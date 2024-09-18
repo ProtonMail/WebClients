@@ -1,6 +1,10 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import type {
     Address,
     CachedOrganizationKey,
@@ -9,7 +13,6 @@ import type {
     UserModel,
 } from '@proton/shared/lib/interfaces';
 
-import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
 import { getPermissions, getStatus } from './helper';

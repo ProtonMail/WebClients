@@ -2,18 +2,14 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    LabelStack,
-    Pagination,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableRow,
-    useModalState,
-} from '@proton/components';
+import { LabelStack, Pagination, useModalState } from '@proton/components/components';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import Loader from '@proton/components/components/loader/Loader';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import { useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 

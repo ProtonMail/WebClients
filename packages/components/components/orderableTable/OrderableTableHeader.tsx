@@ -1,8 +1,7 @@
 import type { ReactNode } from 'react';
 
+import TableHeader from '@proton/components/components/table/TableHeader';
 import clsx from '@proton/utils/clsx';
-
-import { TableHeader } from '../table';
 
 import './OrderableTableHeader.scss';
 

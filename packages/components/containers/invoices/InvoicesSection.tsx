@@ -4,24 +4,22 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
-import { INVOICE_STATE, type Invoice } from '@proton/payments';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import Pagination from '@proton/components/components/pagination/Pagination';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
+import Time from '@proton/components/components/time/Time';
+import type { Invoice } from '@proton/components/containers/invoices/interface';
 import type { PaymentsVersion } from '@proton/shared/lib/api/payments';
 import { InvoiceDocument, getInvoice } from '@proton/shared/lib/api/payments';
-import { INVOICE_OWNER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import {
-    ButtonGroup,
-    Pagination,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableRow,
-    Time,
-    useModalState,
-} from '../../components';
+import { ButtonGroup } from '../../components';
 import { useApi, useSubscribeEventManager, useSubscription, useUser } from '../../hooks';
 import { useChargebeeUserStatusTracker } from '../../payments/client-extensions/useChargebeeContext';
 import { SettingsParagraph, SettingsSectionWide } from '../account';

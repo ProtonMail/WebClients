@@ -6,13 +6,16 @@ import { c } from 'ttag';
 import type { ButtonProps } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableRow from '@proton/components/components/table/TableRow';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import removeItem from '@proton/utils/removeIndex';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { InputFieldTwo, Table, TableBody, TableRow } from '../../../components';
+import { InputFieldTwo } from '../../../components';
 import { useModals, useNotifications } from '../../../hooks';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
 
