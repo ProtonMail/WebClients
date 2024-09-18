@@ -1,7 +1,10 @@
 import { c } from 'ttag';
 
-import { Table, TableBody, TableHeader, TableRow } from '@proton/components';
 import Loader from '@proton/components/components/loader/Loader';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import type { Referral } from '@proton/shared/lib/interfaces';
 import { ReferralState } from '@proton/shared/lib/interfaces';
 

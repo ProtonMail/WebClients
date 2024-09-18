@@ -5,6 +5,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Loader from '@proton/components/components/loader/Loader';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import {
@@ -13,7 +17,6 @@ import {
     getOrganizationKeyInfo,
 } from '@proton/shared/lib/organization/helper';
 
-import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useAddresses, useOrganizationKey } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import useDisplayOrganizationKey from './useDisplayOrganizationKey';

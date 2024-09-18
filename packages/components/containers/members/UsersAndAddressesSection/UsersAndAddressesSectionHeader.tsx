@@ -2,8 +2,8 @@ import type { CSSProperties, JSX } from 'react';
 
 import { c } from 'ttag';
 
-import { TableCell } from '@proton/components/components';
 import Info from '@proton/components/components/link/Info';
+import TableCell from '@proton/components/components/table/TableCell';
 import { adminTooltipText } from '@proton/components/containers/members/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import isTruthy from '@proton/utils/isTruthy';

@@ -4,13 +4,14 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import TableRow from '@proton/components/components/table/TableRow';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import { useUserKeys } from '@proton/components/hooks/useUserKeys';
 import type { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { OrderableTableBody } from '../../../../components';
-import { OrderableTableRow, TableRow } from '../../../../components';
+import { OrderableTableRow } from '../../../../components';
 import useContactConditionally from '../../hooks/useContactConditionally';
 import useVCardContact from '../../hooks/useVCardContact';
 import EmailsTableCell from './EmailsTableCell';

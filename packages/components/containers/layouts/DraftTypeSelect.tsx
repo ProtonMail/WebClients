@@ -2,9 +2,8 @@ import type { ChangeEvent } from 'react';
 
 import { c } from 'ttag';
 
+import Select from '@proton/components/components/select/Select';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-
-import { Select } from '../../components';
 
 const { DEFAULT, PLAINTEXT } = MIME_TYPES;
 

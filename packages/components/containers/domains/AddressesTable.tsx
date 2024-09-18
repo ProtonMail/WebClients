@@ -2,11 +2,14 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableRow from '@proton/components/components/table/TableRow';
 import { ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useEventManager } from '../../hooks';
 import AddressCatchAll from './AddressCatchAll';
 import DomainAddressStatus from './DomainAddressStatus';

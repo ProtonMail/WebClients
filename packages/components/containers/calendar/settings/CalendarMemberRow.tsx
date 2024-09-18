@@ -6,12 +6,12 @@ import { Avatar, Button } from '@proton/atoms';
 import { Option, SelectTwo, Tooltip } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import { useLoading } from '@proton/hooks';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { MEMBER_INVITATION_STATUS } from '@proton/shared/lib/interfaces/calendar';
-
-import { TableCell, TableRow } from '../../../components';
 
 import './CalendarMemberGrid.scss';
 

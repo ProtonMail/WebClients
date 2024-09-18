@@ -4,10 +4,12 @@ import { Fragment, useEffect, useState } from 'react';
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
 
-import { Table, TableBody, TableRow } from '@proton/components';
 import Badge from '@proton/components/components/badge/Badge';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import ContactKeyWarningIcon from '@proton/components/components/icon/ContactKeyWarningIcon';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableRow from '@proton/components/components/table/TableRow';
 import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { API_KEY_SOURCE } from '@proton/shared/lib/constants';

@@ -3,10 +3,9 @@ import type { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import Select from '@proton/components/components/select/Select';
 import type { Address } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
-
-import { Select } from '../../components';
 
 interface Props {
     addresses: Address[];

@@ -1,10 +1,10 @@
 import type { ChangeEvent } from 'react';
 import { useMemo } from 'react';
 
+import Select from '@proton/components/components/select/Select';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { Select } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../../account/SettingsLayoutRight';
