@@ -24,7 +24,6 @@ export * from './keyTransparency';
 export * from './labels';
 export * from './layout';
 export * from './layouts';
-export * from './logs';
 export * from './messages';
 export * from './mnemonic';
 export * from './mobile';
