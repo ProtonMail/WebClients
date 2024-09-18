@@ -5,7 +5,6 @@ import { Button, Href } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
     AppLink,
-    Icon,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -13,6 +12,7 @@ import {
     useConfig,
     useKeyTransparencyContext,
 } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import type {
     AddressAuditWarningDetails,
     LocalStorageAuditResult,

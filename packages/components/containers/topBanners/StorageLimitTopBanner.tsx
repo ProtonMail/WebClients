@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -22,7 +23,6 @@ import {
 import { useFlag } from '@proton/unleash';
 
 import { LockedStateTopBanner } from '.';
-import { SettingsLink } from '../../components';
 import { useConfig, useLocalState, useSubscription, useUser } from '../../hooks';
 import TopBanner from './TopBanner';
 

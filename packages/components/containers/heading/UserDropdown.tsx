@@ -13,10 +13,8 @@ import {
     AppLink,
     ConfirmSignOutModal,
     FeatureCode,
-    Icon,
     Logo,
     ReferralSpotlight,
-    SettingsLink,
     Tooltip,
     shouldShowConfirmSignOutModal,
     useActiveBreakpoint,
@@ -41,6 +39,8 @@ import {
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppHref, getAppShortName } from '@proton/shared/lib/apps/helper';

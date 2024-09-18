@@ -4,7 +4,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href, InlineLinkButton } from '@proton/atoms';
+import Copy from '@proton/components/components/button/Copy';
 import Form from '@proton/components/components/form/Form';
+import Loader from '@proton/components/components/loader/Loader';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TOTP_WRONG_ERROR, setupTotp } from '@proton/shared/lib/api/settings';
@@ -18,9 +20,7 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components';
 import {
-    Copy,
     InputFieldTwo,
-    Loader,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,

@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import type { ModalProps } from '../../components';
@@ -9,7 +10,6 @@ import {
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoHeader as ModalHeader,
-    SettingsLink,
     useModalState,
 } from '../../components';
 import { AuthenticatedBugModal } from '../support';

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
@@ -29,7 +30,6 @@ import type { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/li
 
 import {
     ButtonGroup,
-    SettingsLink,
     Table,
     TableBody,
     TableCell,

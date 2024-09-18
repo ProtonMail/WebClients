@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Form from '@proton/components/components/form/Form';
+import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
 import { useAutomaticCurrency, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
@@ -29,15 +31,7 @@ import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../components';
-import {
-    Loader,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    PrimaryButton,
-    useDebounceInput,
-} from '../../components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useDebounceInput } from '../../components';
 import { useConfig, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
 import { ChargebeePaypalWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import AmountRow from './AmountRow';

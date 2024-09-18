@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { Copy, TableRow } from '@proton/components/components';
+import { TableRow } from '@proton/components/components';
+import Copy from '@proton/components/components/button/Copy';
 import { useNotifications } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 

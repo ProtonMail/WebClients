@@ -1,9 +1,10 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { PromotionBanner } from '@proton/components';
+import Loader from '@proton/components/components/loader/Loader';
 import { PLANS, SERVER_FEATURES, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { getVPNDedicatedIPs } from '@proton/shared/lib/helpers/subscription';
@@ -12,7 +13,7 @@ import gatewaySvg from '@proton/styles/assets/img/illustrations/gateway.svg';
 import gatewaysEmptyStateAdminsSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-admins.svg';
 import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-users.svg';
 
-import { Loader, Table, TableBody, TableCell, useModalTwoStatic } from '../../../components';
+import { Table, TableBody, TableCell, useModalTwoStatic } from '../../../components';
 import SettingsSectionWide from '../../../containers/account/SettingsSectionWide';
 import { EmptyViewContainer } from '../../../containers/app';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../../containers/payments';

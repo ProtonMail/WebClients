@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
@@ -8,7 +9,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 
 import type { AppLinkProps } from '../../components';
-import { AppLink, SettingsLink } from '../../components';
+import { AppLink } from '../../components';
 
 interface ProductLinkProps {
     ownerApp: APP_NAMES;

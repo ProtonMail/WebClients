@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
+import Loader from '@proton/components/components/loader/Loader';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
 
-import { Loader, Table, TableBody, TableCell, TableHeader, TableRow } from '../../../components';
+import { Table, TableBody, TableCell, TableHeader, TableRow } from '../../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import GroupActions from './GroupActions';
 import GroupState from './GroupState';

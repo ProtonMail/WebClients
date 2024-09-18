@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import Loader from '@proton/components/components/loader/Loader';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import {
@@ -12,7 +13,7 @@ import {
     getOrganizationKeyInfo,
 } from '@proton/shared/lib/organization/helper';
 
-import { Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
+import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useAddresses, useOrganizationKey } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import useDisplayOrganizationKey from './useDisplayOrganizationKey';

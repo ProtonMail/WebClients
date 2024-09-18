@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import Href from '@proton/atoms/Href/Href';
+import { Href } from '@proton/atoms';
 import type { SidebarConfig } from '@proton/components';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { ADDRESS_TYPE, APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';

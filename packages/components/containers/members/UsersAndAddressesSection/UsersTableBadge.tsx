@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-import { Badge } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
 
 const UserTableBadge = ({
     children,

@@ -5,7 +5,6 @@ import { c, msgid } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import {
-    Autocomplete,
     ColorPicker,
     Field,
     Label,
@@ -21,6 +20,7 @@ import {
     getContactsAutocompleteItems,
 } from '@proton/components/components/addressesAutocomplete/helper';
 import Alert from '@proton/components/components/alert/Alert';
+import Autocomplete from '@proton/components/components/autocomplete/Autocomplete';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { hasReachedContactGroupMembersLimit } from '@proton/shared/lib/contacts/helpers/contactGroup';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';

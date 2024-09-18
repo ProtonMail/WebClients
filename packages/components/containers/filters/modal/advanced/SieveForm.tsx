@@ -1,6 +1,6 @@
 import { Suspense, lazy, useMemo } from 'react';
 
-import { Loader } from '@proton/components/components';
+import Loader from '@proton/components/components/loader/Loader';
 import { useTheme } from '@proton/components/containers';
 
 import type { AdvancedSimpleFilterModalModel } from '../../interfaces';

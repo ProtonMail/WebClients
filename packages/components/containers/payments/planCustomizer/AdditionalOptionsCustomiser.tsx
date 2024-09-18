@@ -2,10 +2,9 @@ import type { ReactElement } from 'react';
 
 import { c } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/interfaces';
-
-import { Info } from '../../../components';
 
 export const AdditionalOptionsCustomiser = ({
     addon,

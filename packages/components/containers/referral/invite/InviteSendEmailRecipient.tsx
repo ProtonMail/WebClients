@@ -2,7 +2,8 @@ import type { MouseEventHandler } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, Tooltip } from '@proton/components';
+import { Tooltip } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';

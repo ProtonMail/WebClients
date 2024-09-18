@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
-import { SettingsLink } from '@proton/components/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Badge } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuContainer from '@proton/components/components/dropdown/DropdownMenuContainer';
 import clsx from '@proton/utils/clsx';

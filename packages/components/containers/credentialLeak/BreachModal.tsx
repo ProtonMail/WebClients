@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import type { ModalProps } from '@proton/components/components';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, SettingsLink } from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useLoading from '@proton/hooks/useLoading';
 import { updateBreachState } from '@proton/shared/lib/api/breaches';
 

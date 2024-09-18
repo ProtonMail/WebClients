@@ -5,8 +5,6 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms';
 import {
     GenericError,
-    Icon,
-    Loader,
     SUBSCRIPTION_STEPS,
     useErrorHandler,
     useModalStateObject,
@@ -14,6 +12,8 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Loader from '@proton/components/components/loader/Loader';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';

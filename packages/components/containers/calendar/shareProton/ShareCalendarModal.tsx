@@ -6,7 +6,6 @@ import { c, msgid } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import {
     AddressesAutocompleteTwo,
-    Loader,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
@@ -15,6 +14,7 @@ import {
 } from '@proton/components/components';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import Icon from '@proton/components/components/icon/Icon';
+import Loader from '@proton/components/components/loader/Loader';
 import InputField from '@proton/components/components/v2/field/InputField';
 import {
     useApi,

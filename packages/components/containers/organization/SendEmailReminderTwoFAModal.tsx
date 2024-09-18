@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Avatar, Button } from '@proton/atoms';
-import { Badge } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
 import Form from '@proton/components/components/form/Form';
 import { useLoading } from '@proton/hooks';
 import { sendEmailReminderTwoFA } from '@proton/shared/lib/api/organization';

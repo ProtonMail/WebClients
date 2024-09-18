@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button, Scroll } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
+import Loader from '@proton/components/components/loader/Loader';
 import MailUpsellButton from '@proton/components/components/upsell/MailUpsellButton';
 import LabelsUpsellModal from '@proton/components/components/upsell/modal/types/LabelsUpsellModal';
 import { useLoading } from '@proton/hooks';
@@ -9,7 +10,7 @@ import { orderAllFolders } from '@proton/shared/lib/api/labels';
 import { MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 
-import { Loader, useModalState } from '../../components';
+import { useModalState } from '../../components';
 import { useApi, useEventManager, useFolders, useMailSettings, useNotifications, useUser } from '../../hooks';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';

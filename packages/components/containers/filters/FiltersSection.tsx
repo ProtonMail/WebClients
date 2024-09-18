@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { ContainerGetter, SortEndHandler } from 'react-sortable-hoc';
 import { arrayMove } from 'react-sortable-hoc';
 
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import Loader from '@proton/components/components/loader/Loader';
 import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Loader } from '../../components';
 import { useApi, useEventManager, useFilters, useNotifications } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import ActionsFilterToolbar from './ActionsFilterToolbar';

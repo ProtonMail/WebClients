@@ -4,13 +4,13 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Href, Input } from '@proton/atoms';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Form from '@proton/components/components/form/Form';
 import { useMailSettings } from '@proton/components/hooks';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
 
 import { useLinkHandler } from '../../../../hooks/useLinkHandler';
-import { PrimaryButton } from '../../../button';
 import Field from '../../../container/Field';
 import Row from '../../../container/Row';
 import Label from '../../../label/Label';

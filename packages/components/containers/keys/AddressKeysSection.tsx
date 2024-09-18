@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useInactiveKeys } from '@proton/account';
 import { Button } from '@proton/atoms';
+import Loader from '@proton/components/components/loader/Loader';
 import type { AlgorithmInfo } from '@proton/crypto';
 import type { KeyGenConfig } from '@proton/shared/lib/interfaces';
 import type { OnKeyImportCallback } from '@proton/shared/lib/keys';
@@ -18,7 +19,7 @@ import {
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { Loader, useModalState } from '../../components';
+import { useModalState } from '../../components';
 import {
     useAddresses,
     useAddressesKeys,
