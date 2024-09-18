@@ -5,7 +5,7 @@ import { CircleLoader } from '@proton/atoms';
 import { Icon, Tooltip, useModalState, useModalStateWithData } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { useUserWalletSettings } from '@proton/wallet';
+import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
 
 import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
@@ -14,7 +14,6 @@ import { Price } from '../../../atoms/Price';
 import { TEXT_AREA_MAX_LENGTH } from '../../../constants';
 import { useBitcoinBlockchainContext } from '../../../contexts';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
-import { useExchangeRate } from '../../../store/hooks';
 import { isUndefined } from '../../../utils';
 import Card from '../../Card';
 import { EmailListItem } from '../../EmailListItem';

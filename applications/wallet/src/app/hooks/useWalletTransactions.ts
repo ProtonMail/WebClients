@@ -17,9 +17,9 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import type { IWasmApiWalletData } from '@proton/wallet';
 import { decryptTransactionData, decryptWalletKeyForHmac, encryptPgp, hmac, useWalletApiClients } from '@proton/wallet';
+import { useGetApiWalletTransactionData } from '@proton/wallet/store';
 
 import { useBitcoinBlockchainContext } from '../contexts';
-import { useGetApiWalletTransactionData } from '../store/hooks';
 import type { AccountIdByDerivationPathAndWalletId } from '../types';
 import { removeMasterPrefix } from '../utils';
 

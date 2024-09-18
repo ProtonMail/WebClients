@@ -17,7 +17,7 @@ interface Props {
 
 export const PrivateWalletLayout = ({ children }: Props) => {
     const { walletId, accountId } = useParams<{ walletId?: string; accountId?: string }>();
-    const { decryptedApiWalletsData, loadingApiWalletsData, getSyncingData } = useBitcoinBlockchainContext();
+    const { apiWalletsData, loadingApiWalletsData, getSyncingData } = useBitcoinBlockchainContext();
 
     const syncingData = walletId ? getSyncingData(walletId, accountId) : undefined;
 
@@ -38,17 +38,17 @@ export const PrivateWalletLayout = ({ children }: Props) => {
                 <WalletSidebar
                     expanded={expanded}
                     loadingApiWalletsData={loadingApiWalletsData}
-                    apiWalletsData={decryptedApiWalletsData}
+                    apiWalletsData={apiWalletsData}
                     onToggleExpand={toggleExpanded}
                     onAddWallet={() => {
                         open({
-                            theme: getThemeForWallet(decryptedApiWalletsData, walletId),
+                            theme: getThemeForWallet(apiWalletsData, walletId),
                             kind: WalletSetupModalKind.WalletCreation,
                         });
                     }}
                     onAddWalletAccount={(apiWalletData: IWasmApiWalletData) => {
                         open({
-                            theme: getThemeForWallet(decryptedApiWalletsData, walletId),
+                            theme: getThemeForWallet(apiWalletsData, walletId),
                             kind: WalletSetupModalKind.WalletAccountCreation,
                             apiWalletData,
                         });
@@ -57,7 +57,7 @@ export const PrivateWalletLayout = ({ children }: Props) => {
             }
         >
             <PrivateMainArea data-testid="wallet-view:events-area" drawerSidebar>
-                {!decryptedApiWalletsData || loadingApiWalletsData ? (
+                {!apiWalletsData || loadingApiWalletsData ? (
                     <LayoutViewLoader />
                 ) : (
                     <div className="overflow-auto flex grow">

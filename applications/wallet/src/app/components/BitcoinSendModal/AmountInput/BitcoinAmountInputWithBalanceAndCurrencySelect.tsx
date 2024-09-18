@@ -1,14 +1,14 @@
 import { c } from 'ttag';
 
 import type { WasmApiExchangeRate, WasmApiFiatCurrency, WasmBitcoinUnit } from '@proton/andromeda';
-import { BITCOIN_CURRENCY, COMPUTE_BITCOIN_UNIT, SATS_CURRENCY, useUserWalletSettings } from '@proton/wallet';
+import { BITCOIN_CURRENCY, COMPUTE_BITCOIN_UNIT, SATS_CURRENCY } from '@proton/wallet';
+import { useFiatCurrencies, useGetExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
 
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { CoreButton } from '../../../atoms/Button';
 import type { BitcoinCurrency } from '../../../atoms/CurrencySelect';
 import { CurrencySelect, DEFAULT_POPULAR_SYMBOLS } from '../../../atoms/CurrencySelect';
 import { Price } from '../../../atoms/Price';
-import { useFiatCurrencies, useGetExchangeRate } from '../../../store/hooks';
 import { convertAmountStr, getExchangeRateFromBitcoinUnit, getLabelByUnit } from '../../../utils';
 
 interface Props {

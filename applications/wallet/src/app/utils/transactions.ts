@@ -6,9 +6,9 @@ import type { WasmTransactionDetails, WasmTxOut } from '@proton/andromeda';
 import { SECOND } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Address } from '@proton/shared/lib/interfaces';
-import type { WalletMap } from '@proton/wallet';
 
 import type { TransactionData } from '../hooks/useWalletTransactions';
+import { type WalletMap } from '../types';
 import { isSelfAddress } from './email';
 import { formatReadableNameAndEmail, multilineStrToOnelineJsx } from './string';
 

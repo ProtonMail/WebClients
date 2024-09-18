@@ -33,11 +33,11 @@ export interface BitcoinAddressHelper {
 }
 
 export const useBitcoinAddresses = ({
-    decryptedApiWalletsData,
+    apiWalletsData,
     walletsChainData,
     isSyncing,
 }: {
-    decryptedApiWalletsData?: IWasmApiWalletData[];
+    apiWalletsData?: IWasmApiWalletData[];
     walletsChainData: Partial<Record<string, WalletWithChainData>>;
     isSyncing: (walletId: string, accountId?: string | undefined) => boolean;
 }) => {
@@ -52,14 +52,14 @@ export const useBitcoinAddresses = ({
 
     const allWalletAccounts = useMemo(
         () =>
-            decryptedApiWalletsData?.flatMap((wallet) =>
+            apiWalletsData?.flatMap((wallet) =>
                 wallet.WalletAccounts.map((account) => ({
                     wallet: wallet.Wallet,
                     account: account,
                     isSyncing: isSyncing(account.WalletID, account.ID),
                 }))
             ) ?? [],
-        [decryptedApiWalletsData, isSyncing]
+        [apiWalletsData, isSyncing]
     );
 
     const walletAccountById: SimpleMap<(typeof allWalletAccounts)[0]> = useMemo(

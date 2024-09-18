@@ -7,11 +7,11 @@ import type { WasmApiCountry } from '@proton/andromeda';
 import { Href } from '@proton/atoms';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
+import { useCountriesByProvider } from '@proton/wallet/store';
 
 import type { CoreSearchableSelectProps } from '../../../atoms';
 import { Button, SearchableSelect } from '../../../atoms';
 import { ModalParagraph } from '../../../atoms/ModalParagraph';
-import { useCountriesByProvider } from '../../../store/hooks/useCountriesByProvider';
 
 interface Props {
     onConfirm: (country: WasmApiCountry) => void;

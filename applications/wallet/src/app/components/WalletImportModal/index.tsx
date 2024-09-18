@@ -18,7 +18,7 @@ import {
     TextAreaTwo,
     useModalStateWithData,
 } from '@proton/components';
-import { useWalletSettings } from '@proton/wallet';
+import { useWalletSettings } from '@proton/wallet/store';
 
 import { Button, CoreButton, CoreButtonLike, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';

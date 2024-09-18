@@ -20,7 +20,6 @@ import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
 
 import { CoreButton } from '../../../atoms';
-import { useBitcoinBlockchainContext } from '../../../contexts';
 import type { SubTheme } from '../../../utils';
 import { getThemeByIndex } from '../../../utils';
 import { WalletPreferencesModal } from '../../WalletPreferencesModal';
@@ -28,17 +27,12 @@ import { WalletExpandButton } from './WalletExpandButton';
 
 interface WalletsSidebarListItemProps {
     wallet: IWasmApiWalletData;
-    decryptedApiWalletsData: IWasmApiWalletData[] | undefined;
+    apiWalletsData: IWasmApiWalletData[] | undefined;
     onAddWalletAccount: () => void;
     theme?: SubTheme;
 }
 
-const WalletsSidebarListItem = ({
-    wallet,
-    onAddWalletAccount,
-    theme,
-    decryptedApiWalletsData,
-}: WalletsSidebarListItemProps) => {
+const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme, apiWalletsData }: WalletsSidebarListItemProps) => {
     const { state: showAccounts, toggle: toggleShowAccounts, set } = useToggle(false);
 
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
@@ -47,13 +41,13 @@ const WalletsSidebarListItem = ({
     const { walletId, accountId } = useParams<{ walletId?: string; accountId?: string }>();
 
     const walletIndex = useMemo(
-        () => decryptedApiWalletsData?.findIndex(({ Wallet }) => Wallet.ID === walletId),
-        [walletId, decryptedApiWalletsData]
+        () => apiWalletsData?.findIndex(({ Wallet }) => Wallet.ID === walletId),
+        [walletId, apiWalletsData]
     );
 
     const otherWallets = [
-        ...(decryptedApiWalletsData?.slice(0, walletIndex) ?? []),
-        ...(decryptedApiWalletsData?.slice((walletIndex ?? 0) + 1) ?? []),
+        ...(apiWalletsData?.slice(0, walletIndex) ?? []),
+        ...(apiWalletsData?.slice((walletIndex ?? 0) + 1) ?? []),
     ];
 
     const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);
@@ -178,8 +172,6 @@ export const WalletsSidebarList = ({
     onAddWallet,
     onAddWalletAccount,
 }: WalletsSidebarListProps) => {
-    const { decryptedApiWalletsData } = useBitcoinBlockchainContext();
-
     return (
         <SidebarListItem>
             <div
@@ -204,7 +196,7 @@ export const WalletsSidebarList = ({
                 </Tooltip>
             </div>
 
-            {!decryptedApiWalletsData ? (
+            {!apiWalletsData ? (
                 <div className="flex">
                     <CircleLoader className="color-primary mx-auto my-5" />
                 </div>
@@ -219,7 +211,7 @@ export const WalletsSidebarList = ({
                                         onAddWalletAccount(wallet);
                                     }}
                                     theme={getThemeByIndex(index)}
-                                    decryptedApiWalletsData={decryptedApiWalletsData}
+                                    apiWalletsData={apiWalletsData}
                                 />
                             </SubSidebarListItem>
                         );

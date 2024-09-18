@@ -5,11 +5,9 @@ import { c } from 'ttag';
 
 import { Icon, useModalState } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
-import { useLoading } from '@proton/hooks';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
-import { encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
 
 import { Button, CoreButton } from '../atoms';
 import { LayoutViewLoader } from '../atoms/LayoutViewLoader';
@@ -30,7 +28,6 @@ export const WalletContainer = () => {
     const { walletId } = useParams<{ walletId: string }>();
     const history = useHistory();
     const { openDrawer } = useWalletDrawerContext();
-    const [loading, withLoading] = useLoading();
 
     const { isNarrow } = useResponsiveContainerContext();
 
@@ -47,21 +44,21 @@ export const WalletContainer = () => {
     const [walletSendModal, setWalletSendModal] = useModalState();
     const [walletBuyModal, setWalletBuyModal] = useModalState();
 
-    const { decryptedApiWalletsData, setPassphrase, syncSingleWallet, getSyncingData } = useBitcoinBlockchainContext();
+    const { apiWalletsData, syncSingleWallet, getSyncingData } = useBitcoinBlockchainContext();
 
     const { createNotification, removeNotification } = useNotifications();
     const notificationRef = useRef<number>();
 
     const walletIndex = useMemo(
-        () => decryptedApiWalletsData?.findIndex(({ Wallet }) => Wallet.ID === walletId),
-        [walletId, decryptedApiWalletsData]
+        () => apiWalletsData?.findIndex(({ Wallet }) => Wallet.ID === walletId),
+        [walletId, apiWalletsData]
     );
 
-    const wallet = Number.isFinite(walletIndex) ? decryptedApiWalletsData?.[walletIndex as number] : undefined;
+    const wallet = Number.isFinite(walletIndex) ? apiWalletsData?.[walletIndex as number] : undefined;
 
     const otherWallets = [
-        ...(decryptedApiWalletsData?.slice(0, walletIndex) ?? []),
-        ...(decryptedApiWalletsData?.slice((walletIndex ?? 0) + 1) ?? []),
+        ...(apiWalletsData?.slice(0, walletIndex) ?? []),
+        ...(apiWalletsData?.slice((walletIndex ?? 0) + 1) ?? []),
     ];
 
     const syncingData = wallet?.Wallet?.ID ? getSyncingData(wallet?.Wallet?.ID) : undefined;
@@ -80,7 +77,7 @@ export const WalletContainer = () => {
         }
     }, [createNotification, isSyncing, removeNotification]);
 
-    if (!decryptedApiWalletsData) {
+    if (!apiWalletsData) {
         return <LayoutViewLoader />;
     }
 
@@ -94,20 +91,7 @@ export const WalletContainer = () => {
 
     const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);
 
-    const theme = getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID);
-
-    const loadWalletWithPassphrase = async (passphrase: string) => {
-        setPassphrase(wallet.Wallet.ID, passphrase);
-        if (wallet.WalletKey?.DecryptedKey && wallet.Wallet.Fingerprint) {
-            const [encryptedPassphrase] = await encryptWalletDataWithWalletKey(
-                [passphrase],
-                wallet.WalletKey.DecryptedKey
-            );
-            localStorage.setItem(getPassphraseLocalStorageKey(wallet.Wallet.Fingerprint), encryptedPassphrase);
-        }
-
-        void syncSingleWallet({ walletId: wallet.Wallet.ID });
-    };
+    const theme = getThemeForWallet(apiWalletsData, wallet.Wallet.ID);
 
     const [firstWalletAccount] = wallet.WalletAccounts;
 
@@ -128,7 +112,6 @@ export const WalletContainer = () => {
                                 shape="ghost"
                                 color="weak"
                                 className="ml-2 mr-6 bg-weak shrink-0"
-                                disabled={loading}
                                 onClick={() => {
                                     setWalletPreferencesModalState(true);
                                 }}
@@ -183,8 +166,8 @@ export const WalletContainer = () => {
                         wallet={wallet}
                         isOpen={needPassphrase}
                         onClose={history.goBack}
-                        onConfirmPassphrase={(passphrase) => {
-                            void withLoading(loadWalletWithPassphrase(passphrase));
+                        onConfirmPassphrase={() => {
+                            void syncSingleWallet({ walletId: wallet.Wallet.ID });
                         }}
                     />
 

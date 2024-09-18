@@ -1,4 +1,4 @@
-import { WasmTransactionDetails } from '@proton/andromeda';
+import { type WasmTransactionDetails } from '@proton/andromeda';
 
 export const simpleTransactions: WasmTransactionDetails[] = [
     {

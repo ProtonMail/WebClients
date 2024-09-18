@@ -37,12 +37,12 @@ import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { FlagProvider } from '@proton/unleash';
 import ExtendedApiProvider from '@proton/wallet/contexts/ExtendedApiContext/ExtendedApiProvider';
+import type { WalletStore } from '@proton/wallet/store';
 import { extraThunkArguments } from '@proton/wallet/store/thunk';
 import { isWasmSupported } from '@proton/wallet/utils/wasm';
 
 import { type bootstrapApp } from './bootstrap';
 import * as config from './config';
-import type { WalletStore } from './store/store';
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, Title, Filler);
 
