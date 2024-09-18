@@ -46,7 +46,7 @@ import useAutoReplyForm, { getDefaultAutoResponder } from './AutoReplyForm/useAu
 
 const AUTO_REPLY_MAX_LENGTH = 4096;
 
-const AutoReplySection = () => {
+export const AutoReplySection = () => {
     const errorHandler = useErrorHandler();
     const [{ hasPaidMail }] = useUser();
     const [mailSettings] = useMailSettings();
@@ -245,5 +245,3 @@ const AutoReplySection = () => {
         </SettingsSectionWide>
     );
 };
-
-export default AutoReplySection;

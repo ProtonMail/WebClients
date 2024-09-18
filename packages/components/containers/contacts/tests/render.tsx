@@ -6,6 +6,7 @@ import { render as originalRender, renderHook } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
+import { CacheProvider } from '@proton/components';
 import type { CryptoApiInterface } from '@proton/crypto';
 import { VERIFICATION_STATUS } from '@proton/crypto';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
@@ -32,7 +33,6 @@ import {
 
 import ApiContext from '../../api/apiContext';
 import AuthenticationProvider from '../../authentication/Provider';
-import { CacheProvider } from '../../cache';
 import { ConfigProvider } from '../../config';
 import EventManagerContext from '../../eventManager/context';
 import { NotificationsContext } from '../../notifications';

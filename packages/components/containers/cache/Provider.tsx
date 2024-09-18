@@ -11,7 +11,7 @@ interface Props<K, V> {
     children: ReactNode;
 }
 
-const Provider = <K, V>({ cache, children }: Props<K, V>) => {
+export const CacheProvider = <K, V>({ cache, children }: Props<K, V>) => {
     const cacheRef = useRef<Cache<string, any>>(cache as any);
     if (!cacheRef.current) {
         cacheRef.current = createCache<string, any>();
@@ -25,5 +25,3 @@ const Provider = <K, V>({ cache, children }: Props<K, V>) => {
     }, []);
     return <CacheContext.Provider value={cacheRef.current}>{children}</CacheContext.Provider>;
 };
-
-export default Provider;

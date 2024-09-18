@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { PromotionBanner } from '@proton/components';
 import { CYCLE, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
 import Logo from '../../../components/logo/Logo';
 import { getSimplePriceString } from '../../../components/price/helper';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
-import PromotionBanner from '../../banner/PromotionBanner';
 
 interface VPNPassPromotionButtonProps {
     onClick: () => void;

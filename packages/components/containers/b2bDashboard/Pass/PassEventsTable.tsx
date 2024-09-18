@@ -7,9 +7,9 @@ import { AppLink, SortingTableHeader, Table, TableBody, TableRow, Time, Tooltip 
 import { getShareID } from '@proton/shared/lib/api/b2blogs';
 import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import type { PassEvent } from '..';
 import { useApi } from '../../..';
 import { getDesciptionText, getDescriptionTextWithLink, getEventNameText } from './helpers';
+import type { PassEvent } from './interface';
 
 interface Props {
     events: PassEvent[];

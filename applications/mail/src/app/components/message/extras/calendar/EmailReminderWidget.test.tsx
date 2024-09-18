@@ -7,8 +7,8 @@ import { setupServer } from 'msw/node';
 
 import { getModelState } from '@proton/account/test';
 import { useAddresses, useGetAddresses, useUserSettings } from '@proton/components';
+import { CacheProvider } from '@proton/components';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
-import { CacheProvider } from '@proton/components/containers/cache';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
 import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
