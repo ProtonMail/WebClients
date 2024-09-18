@@ -86,7 +86,7 @@ const AddonCustomizer = ({
     const addonMaxKey = AddonKey[addonNameKey];
     /**
      * Workaround specifically for MaxIPs property. There is an upcoming mirgation in payments API v5
-     * That will sctructure all these Max* properties in a different way.
+     * That will structure all these Max* properties in a different way.
      * For now, we need to handle MaxIPs separately.
      * See {@link MaxKeys} and {@link Plan}. Note that all properties from MaxKeys must be present in Plan
      * with the exception of MaxIPs.
