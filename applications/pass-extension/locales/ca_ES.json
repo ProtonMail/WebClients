@@ -4,6 +4,620 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "Action": {
+      "Account": [
+        "Compte"
+      ],
+      "Account settings": [
+        "Configuració del compte"
+      ],
+      "Add": [
+        "Afegeix"
+      ],
+      "Add current URL": [
+        "Afegeix l'URL actual"
+      ],
+      "Add domain": [
+        "Afegir domini"
+      ],
+      "Add more": [
+        "Afegeix-ne més"
+      ],
+      "Add new item": [
+        "Afegir un nou element"
+      ],
+      "Add section": [
+        "Afegeix una secció"
+      ],
+      "Add username field": [
+        "Afegiu un camp de nom d'usuari"
+      ],
+      "Advanced": [
+        "Avançat"
+      ],
+      "Advanced options": [
+        "Opcions avançades"
+      ],
+      "Authenticate": [
+        "Autentica"
+      ],
+      "Back": [
+        "Torna"
+      ],
+      "Bulk delete items from trash": [
+        "Suprimeix en massa els elements de la paperera"
+      ],
+      "Bulk move items to another vault": [
+        "Mou els elements en massa a una altra caixa forta"
+      ],
+      "Bulk move items to trash": [
+        "Mou diversos elements a la paperera"
+      ],
+      "Bulk restore items from trash": [
+        "Restaura un grup d'elements des de la paperera"
+      ],
+      "Bulk select items": [
+        "Selecciona elements en massa"
+      ],
+      "Cancel": [
+        "Cancel·la"
+      ],
+      "Change": [
+        "Canvia"
+      ],
+      "Choose a file or drag it here": [
+        "Trieu un fitxer o arrossegueu-lo aquí"
+      ],
+      "Clear": [
+        "Neteja"
+      ],
+      "Clear search": [
+        "Esborra la cerca"
+      ],
+      "Close": [
+        "Tanca"
+      ],
+      "Close advanced options": [
+        "Tanca les opcions avançades"
+      ],
+      "Close navigation": [
+        "Tanca la navegació"
+      ],
+      "Confirm": [
+        "Confirma"
+      ],
+      "Confirm access": [
+        "Confirma l'accés"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Connecteu el vostre compte de ${ BRAND_NAME }"
+      ],
+      "Continue": [
+        "Continua"
+      ],
+      "Continue offline": [
+        "Continuar fora de línia"
+      ],
+      "Continue without pinning": [
+        "Continua sense fixar"
+      ],
+      "Copy & fill in": [
+        "Copia i omple"
+      ],
+      "Copy and close": [
+        "Copia i tanca"
+      ],
+      "Copy link": [
+        "Copia l'enllaç"
+      ],
+      "Copy to clipboard": [
+        "Copia al porta-retalls"
+      ],
+      "Create": [
+        "Crear"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Crea un compte de ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Crear un compte de ${ BRAND_NAME }"
+      ],
+      "Create a new vault to share": [
+        "Crea una caixa forta per compartir"
+      ],
+      "Create alias": [
+        "Crea un àlies"
+      ],
+      "Create an account": [
+        "Crea un compte"
+      ],
+      "Create card": [
+        "Crea una targeta"
+      ],
+      "Create identity": [
+        "Crea una identitat"
+      ],
+      "Create login": [
+        "Crea un inici de sessió"
+      ],
+      "Create new login": [
+        "Crea un nou inici de sessió"
+      ],
+      "Create note": [
+        "Crea una nota"
+      ],
+      "Create vault": [
+        "Crea la caixa forta"
+      ],
+      "Creating vault": [
+        "Creant la caixa forta"
+      ],
+      "Custom section": [
+        "Secció personalitzada"
+      ],
+      "Customize": [
+        "Personalitza"
+      ],
+      "Delete": [
+        "Elimina"
+      ],
+      "Delete alias": [
+        "Elimina l'àlies"
+      ],
+      "Delete all": [
+        "Eliminar-ho tot"
+      ],
+      "Delete password": [
+        "Elimina la contrasenya"
+      ],
+      "Delete permanently": [
+        "Elimina de manera permanent"
+      ],
+      "Delete vault": [
+        "Elimina la caixa forta"
+      ],
+      "Deselect": [
+        "Anul·la la selecció"
+      ],
+      "Disable autosave on this website": [
+        "Desactiva el desament automàtic en aquest lloc web"
+      ],
+      "Discard": [
+        "Descarta"
+      ],
+      "Dismiss": [
+        "Descarta"
+      ],
+      "Do not show on this website": [
+        "No ho mostris en aquest lloc web"
+      ],
+      "Do not suggest on this website": [
+        "No ho suggereixis en aquest lloc web"
+      ],
+      "Done": [
+        "Fet"
+      ],
+      "Download this CSV template": [
+        "Descarrega aquesta plantilla CSV"
+      ],
+      "Edit": [
+        "Edita"
+      ],
+      "Edit vault": [
+        "Edita la caixa forta"
+      ],
+      "Entire vault": [
+        "Caixa forta sencera"
+      ],
+      "Exclude from monitoring": [
+        "Exclou de la supervisió"
+      ],
+      "Export": [
+        "Exporta"
+      ],
+      "Feedback & Help": [
+        "Comentaris i ajuda"
+      ],
+      "Fill password": [
+        "Emplena la contrasenya"
+      ],
+      "Filter vault items": [
+        "Filtra els elements de la caixa forta"
+      ],
+      "Generate alias": [
+        "Genera un àlies"
+      ],
+      "Generate password": [
+        "Genera la contrasenya"
+      ],
+      "Generate secure link": [
+        "Genereu un enllaç segur"
+      ],
+      "Generated passwords": [
+        "Contrasenyes generades"
+      ],
+      "Generating secure link...": [
+        "S'està generant un enllaç segur..."
+      ],
+      "Get mobile apps": [
+        "Baixeu l'aplicació mòbil"
+      ],
+      "Get Pass Business": [
+        "Aconsegueixi Pass Business"
+      ],
+      "Get Pass Plus": [
+        "Obtingui Pass Plus"
+      ],
+      "Hide": [
+        "Amaga"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Com exporto les meves dades de ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Com utilitzar ${ PASS_APP_NAME }"
+      ],
+      "Import": [
+        "Importa"
+      ],
+      "Import your passwords": [
+        "Importeu les vostres contrasenyes"
+      ],
+      "Importing": [
+        "S'està important"
+      ],
+      "Include in monitoring": [
+        "Incloure en la supervisió"
+      ],
+      "Invite others": [
+        "Convida altres persones"
+      ],
+      "Join shared vault": [
+        "Uniu-vos a la caixa forta compartida"
+      ],
+      "Learn more": [
+        "Més informació"
+      ],
+      "Leave": [
+        "Surt"
+      ],
+      "Leave vault": [
+        "Deixa la caixa forta"
+      ],
+      "Link copied to clipboard": [
+        "S'ha copiat l'enllaç al porta-retalls."
+      ],
+      "Link expires after": [
+        "L'enllaç caduca després de"
+      ],
+      "Lock extension": [
+        "Bloqueja l'extensió"
+      ],
+      "Make admin": [
+        "Estableix com a administrador"
+      ],
+      "Make editor": [
+        "Estableix com a editor"
+      ],
+      "Make viewer": [
+        "Estableix com a visualitzador"
+      ],
+      "Manage access": [
+        "Gestiona l'accés"
+      ],
+      "Manage vault access": [
+        "Gestiona l'accés a la caixa forta"
+      ],
+      "Manually sync your data": [
+        "Sincronitzeu les vostres dades manualment"
+      ],
+      "Maximum views": [
+        "Màxim de visualitzacions"
+      ],
+      "More info: ${ safeTitle }": [
+        "Més informació: ${ safeTitle }"
+      ],
+      "More options": [
+        "Més opcions"
+      ],
+      "Move": [
+        "Mou"
+      ],
+      "Move all items": [
+        "Mou tots els elements"
+      ],
+      "Move to a shared vault": [
+        "Mou a una caixa forta compartida"
+      ],
+      "Move to another vault": [
+        "Mou a una altra caixa forta"
+      ],
+      "Move to Trash": [
+        "Mou a la paperera"
+      ],
+      "Move to trash": [
+        "Mou a la paperera"
+      ],
+      "Multiple select": [
+        "Selecció múltiple"
+      ],
+      "No expired links": [
+        "Sense enllaços caducats"
+      ],
+      "Not now": [
+        "Ara no"
+      ],
+      "OK": [
+        "D'acord"
+      ],
+      "Open in a window": [
+        "Obre en una finestra nova"
+      ],
+      "Open navigation": [
+        "Obre la navegació"
+      ],
+      "Open web app": [
+        "Obre l'aplicació web"
+      ],
+      "Pass for Android": [
+        "Pass per a Android"
+      ],
+      "Pass for iOS": [
+        "Pass per a iOS"
+      ],
+      "Pin item": [
+        "Ancora l'element"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
+      ],
+      "Regenerate": [
+        "Regenera"
+      ],
+      "Reject": [
+        "Rebutja"
+      ],
+      "Reject invitation": [
+        "Rebutja la invitació"
+      ],
+      "Reload extension": [
+        "Torna a carregar l'extensió"
+      ],
+      "Remove": [
+        "Esborra"
+      ],
+      "Remove access": [
+        "Esborra l'accés"
+      ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Esborra tots els enllaços caducats (${ inactiveLinkCount })"
+      ],
+      "Remove link": [
+        "Esborra l'enllaç"
+      ],
+      "Remove member": [
+        "Esborra el membre"
+      ],
+      "Request a feature": [
+        "Demaneu una nova característica"
+      ],
+      "Resend invitation": [
+        "Reenvia la invitació"
+      ],
+      "Restore": [
+        "Restaura"
+      ],
+      "Restore item": [
+        "Restaura l'element"
+      ],
+      "Restrict number of views": [
+        "Restringeix el nombre de visualitzacions"
+      ],
+      "Retry": [
+        "Reintenta"
+      ],
+      "Right click and download this CSV": [
+        "Feu clic dret i baixeu aquest CSV"
+      ],
+      "Save": [
+        "Desa"
+      ],
+      "Save passkey": [
+        "Desa la clau d'accés"
+      ],
+      "Saving": [
+        "Desant"
+      ],
+      "Saving passkey...": [
+        "S'està desant la clau d'accés"
+      ],
+      "Section name": [
+        "Nom de la secció"
+      ],
+      "Secure links": [
+        "Enllaços segurs"
+      ],
+      "See all": [
+        "Mostra-les totes"
+      ],
+      "See members": [
+        "Mostra els membres"
+      ],
+      "Send invite": [
+        "Envia l'invitació"
+      ],
+      "Send us a message": [
+        "Envieu-nos un missatge"
+      ],
+      "Set access level": [
+        "Estableix el nivell d`accés"
+      ],
+      "Set extra password": [
+        "Estableix una contrasenya addicional"
+      ],
+      "Setup 2FA": [
+        "Configura el 2FA"
+      ],
+      "Share": [
+        "Compartir"
+      ],
+      "Share secure link": [
+        "Comparteix un enllaç segur"
+      ],
+      "Share this vault": [
+        "Comparteix aquesta caixa forta"
+      ],
+      "Share vault": [
+        "Comparteix la caixa forta"
+      ],
+      "Show": [
+        "Mostra"
+      ],
+      "Show advanced options": [
+        "Mostra les opcions avançades"
+      ],
+      "Sign back in": [
+        "Tornar a entrar"
+      ],
+      "Sign in": [
+        "Inicia la sessió"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Inicia sessió amb ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Tanca la sessió"
+      ],
+      "Sort vault items": [
+        "Ordena els elements de la caixa forta"
+      ],
+      "Submit": [
+        "Envia"
+      ],
+      "Submitting report...": [
+        "S'està enviant l'informe..."
+      ],
+      "Sync aliases": [
+        "Sincronitza els àlies"
+      ],
+      "Transfer ownership": [
+        "Transfereix la propietat"
+      ],
+      "Trash": [
+        "Paperera"
+      ],
+      "Try again": [
+        "Proveu de nou"
+      ],
+      "Unlock": [
+        "Desbloquejar"
+      ],
+      "Unlock offline with password": [
+        "Desbloqueja fora de línia amb contrasenya"
+      ],
+      "Unpin item": [
+        "No fixis l'element"
+      ],
+      "Update": [
+        "Actualitza"
+      ],
+      "Update vault": [
+        "Actualitza la caixa forta"
+      ],
+      "Updating": [
+        "S'està actualitzant"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ],
+      "Upgrade now to share with more people": [
+        "Milloreu el pla ara per a compartir-ho amb més persones"
+      ],
+      "Via secure link": [
+        "Mitjançant un enllaç segur"
+      ],
+      "View app logs": [
+        "Mostra els registres de l'aplicació"
+      ],
+      "View history": [
+        "Visualitza l'historial"
+      ],
+      "View item history": [
+        "Veure l'historial d'elements"
+      ],
+      "View older history": [
+        "Mostra l'historial més antic"
+      ],
+      "Write us on Reddit": [
+        "Escriviu-nos a Reddit"
+      ],
+      "Write us on Twitter": [
+        "Escriviu-nos a Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Estalvieu amb intel·ligència. Aconseguiu un any de Pass Plus per només ${ relativePrice } al mes."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Obtingueu l’oferta"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Oferta del Black Friday"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Més informació"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Replega"
+      ],
+      "Expand": [
+        "Amplia"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } altre inici de sessió fa servir la mateixa contrasenya.",
+        "${ total } altres inicis de sessió fan servir la mateixa contrasenya."
+      ],
+      "A checked box means the feature is disabled.": [
+        "Una casella marcada significa que la funció està desactivada."
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "La supervisió del web fosc està disponible amb un pla de pagament. Milloreu el vostre pla per accedir-hi immediatament."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Llista de dominis on certes funcions automàtiques de ${ PASS_SHORT_APP_NAME } (emplenament, suggeriment i desament automàtics) no s'han d'executar.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Aquest compte és vulnerable, visiteu el servei i canvieu la contrasenya."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Aquest servei ofereix A2F. Habiliteu-lo per a augmentar la seguretat del compte."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Desbloquegeu característiques de seguretat avançades i registres detallats per a protegir la vostra presència en línia."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "No s'ha pogut analitzar el fitxer de ${ provider }. ${ errorDetail }"
@@ -14,9 +628,21 @@
       "Authentication error": [
         "Error d'autenticació"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "L'autenticació ha fallat. Confirmeu la contrasenya de ${ BRAND_NAME } per a continuar amb l'exportació"
+      ],
+      "Authentication failure: ${ message }": [
+        "Error d'autenticació: ${ message }"
+      ],
+      "Cannot create alias (${ error }).": [
+        "No es pot crear l'àlies (${ error })."
+      ],
       "Cannot send invitation at the moment": [
         "Ara mateix no es pot enviar la invitació",
         "Ara mateix no es poden enviar invitacions"
+      ],
+      "Cannot send invitations at the moment": [
+        "De moment, no es poden enviar invitacions"
       ],
       "Could not confirm this invite at the moment": [
         "No s'ha pogut confirmar aquesta invitació en aquest moment"
@@ -42,6 +668,9 @@
       "Could not validate addresses at the moment.": [
         "No s'han pogut validar les adreces en aquest moment."
       ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "Al fitxer CSV li falten les capçaleres esperades: ${ missingHeaders }"
+      ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "No s'ha pogut desxifrar el fitxer d'exportació de ${ PASS_APP_NAME }. ${ errorDetail }"
       ],
@@ -51,11 +680,21 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut eliminar la caixa forta \"${ payload.content.name }\""
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "S'ha detectat ${ errors.length } fila CSV corrupta",
+        "S'han detectat ${ errors.length } files CSV corruptes"
+      ],
       "Editing item failed": [
         "No s'ha pogut editar l'element"
       ],
+      "Empty CSV file": [
+        "El fitxer CSV està buit"
+      ],
       "Emptying trash failed": [
         "No s'ha pogut buidar la paperera"
+      ],
+      "Encrypted JSON not supported": [
+        "El JSON xifrat no és compatible"
       ],
       "Error reporting problem": [
         "S'ha produït un error en informar del problema"
@@ -135,6 +774,12 @@
       "File could not be parsed": [
         "No s'ha pogut analitzar el fitxer"
       ],
+      "File could not be read": [
+        "No s'ha pogut llegir el fitxer."
+      ],
+      "File does not match expected format": [
+        "El fitxer no coincideix amb el format esperat"
+      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "No s'ha pogut importar la caixa forta \"${ vaultData.name }\": ${ description }"
       ],
@@ -146,6 +791,9 @@
       ],
       "Invalid password manager": [
         "Gestor de contrasenya invàlid"
+      ],
+      "Invalid URL": [
+        "L'URL no és vàlid."
       ],
       "Invitation could not be accepted": [
         "No es pot acceptar la invitació"
@@ -162,6 +810,9 @@
       "Item does not exist": [
         "L'element no existeix"
       ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass exportarà un fitxer CSV corromput si qualsevol dels camps de l'element conté comes, cometes o línies múltiples inesperades"
+      ],
       "Missing passkey": [
         "Falta la clau d'accés"
       ],
@@ -173,6 +824,18 @@
       ],
       "Passphrase is incorrect": [
         "La frase de contrasenya no és correcta"
+      ],
+      "PIN codes do not match": [
+        "Els codis PIN no coincideixen"
+      ],
+      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
+        "Concediu a ${ PASS_APP_NAME } els permisos d'extensió necessaris per a continuar"
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Fixeu l'extensió o seleccioneu Continuar sense fixar."
+      ],
+      "Registration failure: ${ message }": [
+        "Error de registre: ${ message }"
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
@@ -198,8 +861,20 @@
       "Signature verification failed": [
         "No s'ha pogut verificar la signatura."
       ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Algunes caixes fortes ja no són accessibles a causa d'un restabliment de contrasenya. Reactiveu les claus del vostre compte per recuperar-hi l'accés. ${ reactivateLink }"
+      ],
       "Something went wrong": [
         "S'ha produït un error."
+      ],
+      "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
+        "Alguna cosa ha anat malament. Torneu a carregar l'extensió ${ PASS_APP_NAME }. Aquest problema ha estat registrat"
+      ],
+      "The file you are trying to import is empty": [
+        "El fitxer que esteu intentant importar està buit"
+      ],
+      "The URL is in the list": [
+        "L'URL és a la llista."
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "S'ha produït un error en eliminar l'enllaç segur. Torneu a provar-ho en uns minuts."
@@ -209,6 +884,9 @@
       ],
       "Trashing item failed": [
         "No s'ha pogut moure l'element a la paperera"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "No s'ha pogut generar un codi OTP per a aquest element"
       ],
       "Unable to sync": [
         "No s'ha pogut sincronitzar"
@@ -243,6 +921,9 @@
       "Vault \"${ vaultData.name }\" could not be created": [
         "No s'ha pogut crear la caixa forta \"${ vaultData.name }\"."
       ],
+      "Vault name does not match": [
+        "El nom de la caixa forta no coincideix"
+      ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Hem trobat un problema en iniciar ${ PASS_SHORT_APP_NAME }. Si aquest problema continua, poseu-vos en contacte amb el nostre servei d'atenció al client per obtenir ajuda."
       ],
@@ -255,11 +936,65 @@
       "Wrong PIN code. Try again.": [
         "Codi PIN incorrecte. Proveu de nou."
       ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "Actualment esteu fora de línia. Repreneu la connexió per desbloquejar ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
       ]
     },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Refresqueu la pàgina o proveu de nou més tard."
+      ],
+      "Something went wrong": [
+        "Alguna cosa ha anat malament."
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Millora a un pla de pagament per crear diverses caixes fortes."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "S'ha descartat l'element \"${ payload.item.data.metadata.name }\""
       ],
@@ -269,14 +1004,79 @@
       "${ count } invites successfully sent": [
         "S'han enviat ${ count } invitacions"
       ],
+      "${ count } time": [
+        "${ count } vegada",
+        "${ count } vegades"
+      ],
+      "${ count } view": [
+        "${ count } vista",
+        "${ count } vistes"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membre",
+        "${ memberCount } membres"
+      ],
+      "${ n } item": [
+        "${ n } element",
+        "${ n } elements"
+      ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } sempre serà accessible"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } mostrarà la icona de web de l'element a través del proxy d'imatges anònim ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } us avisarà tan bon punt s'autocompletin les contrasenyes generades."
+      ],
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } us demanarà que deseu o actualitzeu les credencials."
+      ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } suggerirà l'autenticació usant les claus d'accés desades"
+      ],
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } suggerirà la creació d'un àlies de correu electrònic en els formularis d'inscripció."
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } suggerirà la creació de contrasenyes fortes als formularis d'inscripció."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } suggerirà desar les claus d'accés."
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } s'ha desactivat correctament"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } s'ha habilitat correctament"
       ],
+      "${ trialDaysLeft } day left": [
+        "Queda ${ trialDaysLeft } dia",
+        "Queden ${ trialDaysLeft } dies"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 dies per a provar característiques prèmium de forma gratuïta. Només durant la primera setmana de ${ BRAND_NAME }."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
+      ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Es desarà una clau d'accés per a \"${ username }\" i estarà disponible als dispositius on estigui instal·lat ${ PASS_APP_NAME }."
+      ],
       "Access successfully confirmed": [
         "S'ha confirmat l'accés."
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
+      ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Accediu a les vostres contrasenyes sobre la marxa amb les nostres aplicacions mòbils."
+      ],
+      "Admin": [
+        "Administrador"
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Després d'importar correctament les dades, podeu suprimir el fitxer CSV que conté les contrasenyes per seguretat."
       ],
       "All breaches for this address were resolved": [
         "S'han resolt totes les infraccions d'aquesta adreça"
@@ -299,11 +1099,71 @@
       "An item previously shared with you was removed": [
         "S'ha esborrat un element compartit anteriorment amb vós."
       ],
+      "Are you sure you want to remove the link?": [
+        "Esteu segur que voleu esborrar l'enllaç?"
+      ],
       "Auto-lock successfully disabled.": [
         "El bloqueig automàtic s'ha desactivat correctament."
       ],
       "Autosaved on ${ payload.domain }": [
         "S'ha desat automàticament en ${ payload.domain }"
+      ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Abans d'exportar les vostres dades en aquest format, obreu i desactiveu l'opció següent: Paràmetres de Safari -> General -> Obrir els fitxers segurs després de la descàrrega. Això evitarà que Safari extraguí el fitxer exportat de manera incorrecta."
+      ],
+      "Built in 2FA authenticator": [
+        "Autenticador 2FA integrat"
+      ],
+      "Can be viewed": [
+        "Es pot veure"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Permet crear, editar, suprimir i exportar elements en aquesta caixa forta."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Permet concedir i revocar accés a aquesta caixa forta i eliminarla."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Permet concedir i revocar accés a aquesta caixa forta."
+      ],
+      "Can view items in this vault.": [
+        "Permet veure els elements d'aquesta caixa forte."
+      ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Trieu una contrasenya desada per iniciar la sessió a ${ domain }"
+      ],
+      "Click the icon to open it anytime.": [
+        "Feu clic a la icona per obrir-la en qualsevol moment."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Tanqueu aquesta finestra per utilitzar una clau de seguretat o una altra contrasenya."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Tanqueu aquesta finestra per tal d'utilitzar un altre gestor de contrasenyes."
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Confirmeu la vostra contrasenya addicional per procedir a la seva eliminació."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "S'ha confirmat el vostre accés"
+      ],
+      "Copied to clipboard": [
+        "Copiat al porta-retalls"
+      ],
+      "Creating alias...": [
+        "S'està creant un àlies..."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "CSV ofereix un format còmode per visualitzar les vostres dades. Tanmateix, per la seva senzillesa, algunes dades no s'inclouran (camps personalitzats, claus de pas...). Per a una exportació completa, recomanem utilitzar un format diferent."
+      ],
+      "Current version": [
+        "Versió actual"
+      ],
+      "Decrypting your data": [
+        "S'estan desxifrant les dades"
+      ],
+      "Deleted items will be moved here first": [
+        "Els elements eliminats es mouran aquí primer"
       ],
       "Deleting \"${ payload.content.name }\"": [
         "S'està suprimint «${ payload.content.name }»"
@@ -317,6 +1177,24 @@
       "Disabling offline mode...": [
         "S'està desactivant el mode fora de línia..."
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Descobriu el vídeo de Youtube de ${ PASS_APP_NAME }"
+      ],
+      "Drop file here to upload": [
+        "Arrossegueu el fitxer aquí per carregar-lo."
+      ],
+      "Drop to import": [
+        "Arrossegueu aquí per a importar"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "A causa d'una limitació de les extensions del navegador Safari, després d'exportar les dades faltarà l'extensió del fitxer \".pgp\". Reanomeneu el fitxer per a incloure l'extensió .pgp (p. ex. fitxer.pgp) després d'exportar."
+      ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Importeu fàcilment les vostres contrasenyes existents a ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Editor"
+      ],
       "Email address successfully deleted from monitoring": [
         "L'adreça de correu electrònic s'ha suprimit correctament de la supervisió"
       ],
@@ -328,6 +1206,12 @@
       ],
       "Emptying trash...": [
         "Buidant la paperera..."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Activeu ${ PASS_APP_NAME } connectant el vostre compte de ${ BRAND_NAME }"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Activeu el bloqueig automàtic per protegir les vostres dades"
       ],
       "Enabling offline mode...": [
         "S'està activant el mode fora de línia..."
@@ -341,11 +1225,60 @@
       "Enabling PIN auto-lock": [
         "S'està habilitant el bloqueig automàtic del PIN"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Introduïu el codi de verificació. Dígit ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Introduïu la vostra contrasenya addicional"
+      ],
+      "Enter your PIN code": [
+        "Introduïu el codi PIN"
+      ],
+      "Expires in": [
+        "Caduca en"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Caduca en ${ remainingTime }"
+      ],
       "Extra password successfuly created": [
         "S'ha creat la contrasenya addicional."
       ],
       "Extra password successfuly removed": [
         "S'ha esborrat la contrasenya addicional."
+      ],
+      "Fill in the CSV with your data": [
+        "Empleneu el CSV amb les vostres dades"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Seguiu aquests passos per a importar les dades amb un CSV genèric:"
+      ],
+      "For easy access to your passwords and more.": [
+        "Per a un accés fàcil a les contrasenyes i més."
+      ],
+      "For security reason, your access needs to be confirmed": [
+        "Per motius de seguretat, cal confirmar el vostre accés"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Per motius de seguretat, cal confirmar l'accés"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Les contrasenyes generades s'emmagatzemaran durant un període d'${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana.",
+        "Les contrasenyes generades s'emmagatzemaran durant un període de: ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes."
+      ],
+      "Generating alias...": [
+        "S'està generant un àlies..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Aconseguiu àlies il·limitats, gaudiu de característiques exclusives i doneu-nos suport subscrivint-vos al Pass Plus."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Aquí trobareu tota la informació necessària per a començar."
+      ],
+      "Import in progress:": [
+        "Importació en curs:"
+      ],
+      "Import the CSV file below.": [
+        "Importa el fitxer CSV de sota."
       ],
       "Imported ${ payload.total } item": [
         "S'ha importat ${ payload.total } element",
@@ -354,8 +1287,17 @@
       "Imported on ${ date }": [
         "Importat el ${ date }"
       ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "Per a obtenir la millor experiència de ${ PASS_APP_NAME }, doneu els permisos d'extensió necessaris"
+      ],
       "Internet connection lost": [
         "S'ha perdut la connexió a Internet"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "S'ha perdut la connexió a Internet. Comproveu la connectivitat del dispositiu."
+      ],
+      "Invitation sent": [
+        "S'ha enviat la invitació."
       ],
       "Invite successfully removed": [
         "S'ha esborrat la invitació."
@@ -366,8 +1308,15 @@
       "Invite successfully sent": [
         "S'ha enviat la invitació."
       ],
+      "invites you to access items in": [
+        "us convida a accedir a elements a"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sembla que ja heu iniciat sessió a ${ PASS_APP_NAME }. Si esteu intentant iniciar sessió amb un altre compte, tanqueu primer la sessió de l'extensió."
+      ],
+      "item": [
+        "element",
+        "elements"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "S'ha creat l'element \"${ payload.item.data.metadata.name }\""
@@ -402,6 +1351,21 @@
       "Leaving vault...": [
         "Deixant la caixa forta..."
       ],
+      "Let's get you started by creating your first item": [
+        "Comencem creant el primer element"
+      ],
+      "Loading": [
+        "Carregant"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Carregant ${ PASS_APP_NAME }"
+      ],
+      "Loading...": [
+        "S'està carregant..."
+      ],
+      "me": [
+        "jo"
+      ],
       "Monitoring settings successfully updated": [
         "Les preferències de seguiment s'han actualitzat correctament"
       ],
@@ -411,11 +1375,26 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
+      "Moving an item to another vault will erase its history.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà l'historial."
+      ],
       "Moving items": [
         "S'estan movent elements"
       ],
+      "Moving items to another vault will erase their history.": [
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà l'historial."
+      ],
       "Moving items to trash": [
         "S'estan desplaçant els elements a la paperera…"
+      ],
+      "Never": [
+        "Mai"
+      ],
+      "No login found": [
+        "No s'ha trobat cap inici de sessió."
+      ],
+      "None": [
+        "Cap"
       ],
       "Offline mode could not be disabled at the moment": [
         "El mode fora de línia no s'ha pogut desactivar en aquest moment"
@@ -426,17 +1405,39 @@
       "Offline support successfully disabled": [
         "S'ha desactivat el mode fora de línia"
       ],
+      "Open the Extensions menu": [
+        "Obre el menú d'Extensions"
+      ],
+      "Owner": [
+        "Propietari"
+      ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "S'ha transferit la propietat. Ja no sou el propietari d'aquesta caixa forta."
       ],
       "Pass Plus trial": [
         "Prova Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Inici de sessió amb contrasenya"
+      ],
+      "Password copied": [
+        "S'ha copiat la contrasenya"
+      ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "El bloqueig de la contrasenya s'ha registrat correctament. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana s'esborren automàticament de l'historial.",
+        "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes s'esborren automàticament de l'historial."
+      ],
+      "Pending access to the shared data": [
+        "Accés a les dades compartides pendent"
+      ],
       "Permanently deleting selected items": [
         "S'estan suprimint permanentment els elements seleccionats"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Fixa ${ PASS_APP_NAME } a la barra d'eines"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "El codi PIN s'ha registrat correctament. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }"
@@ -444,8 +1445,50 @@
       "Pinning item...": [
         "Ancorant l'element..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirmeu la contrasenya de ${ BRAND_NAME } per a exportar les dades de ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your password": [
+        "Confirmeu la vostra contrasenya"
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Confirmeu la vostra contrasenya per tal de bloquejar automàticament amb la vostra contrasenya."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Confirmeu la vostra contrasenya per desregistrar el vostre bloqueig."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Confirmeu la vostra contrasenya per actualitzar l'hora del bloqueig automàtic."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Confirmeu el vostre codi PIN per tal d'anul·lar el registre del vostre bloqueig actual."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Confirmeu el codi PIN per a editar aquesta preferència."
+      ],
+      "Please consider leaving a review.": [
+        "Considereu deixar una ressenya."
+      ],
       "Please do not close this window": [
         "Si us plau, no tanqueu aquesta finestra"
+      ],
+      "Please enter your current PIN code to continue": [
+        "Introduïu el codi PIN actual per a continuar."
+      ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Introduïu la vostra contrasenya extra per començar a utilitzar ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Actualitzeu per a tenir accés anticipat a l'aplicació web ${ PASS_APP_NAME }"
+      ],
+      "Press Enter to copy": [
+        "Premeu Retorn per a copiar"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "La privacitat és una gran preocupació per a nosaltres. Apreneu per què ${ PASS_APP_NAME } és diferent."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegit per ${ PROTON_SENTINEL_LINK }, el nostre programa avançat de protecció de comptes"
       ],
       "Registering extra password...": [
         "Registrant la contrasenya addicional..."
@@ -468,6 +1511,27 @@
       "Restoring trashed items...": [
         "S'estan restaurant els elements de la paperera..."
       ],
+      "Save login": [
+        "Desa l'inici de sessió"
+      ],
+      "Save passkey": [
+        "Desa la clau d'accés"
+      ],
+      "Secure links": [
+        "Enllaços segurs"
+      ],
+      "Select an existing login item to update.": [
+        "Seleccioneu un element d'inici de sessió existent per actualitzar."
+      ],
+      "Select an existing login or create a new one.": [
+        "Seleccioneu un inici de sessió existent o creeu-ne un de nou."
+      ],
+      "Select destination vault": [
+        "Selecciona la caixa forta de destinació"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Seleccioneu on voleu que es desi la/es caixa/es forta/es importada/es."
+      ],
       "Selected items permanently deleted": [
         "Els elements seleccionats s'han suprimit permanentment"
       ],
@@ -486,11 +1550,29 @@
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
       ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Compartiu els inicis de sessió, notes segures, amb un màxim de 10 persones"
+      ],
+      "Sign in or create an account to continue.": [
+        "Inicieu sessió o creeu un compte per continuar."
+      ],
+      "Sign in to your account": [
+        "Inicieu sessió al compte"
+      ],
+      "Signing you in": [
+        "S'està iniciant la sessió"
+      ],
+      "Successfully exported all your items": [
+        "S'han exportat tots els elements"
+      ],
       "Successfully left the vault": [
         "Heu deixat la caixa forta."
       ],
       "Successfully synced all vaults": [
         "S'han sincronitzat totes les caixes fortes"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "Canvieu a una altra caixa forta o creeu un element en aquesta caixa forta"
       ],
       "Syncing your vaults…": [
         "S'estan sincronitzant les vostres caixes fortes..."
@@ -498,11 +1580,87 @@
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
       ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "La llista desplegable d'emplenament automàtic s'obrirà automàticament quan feu clic o quan us centreu en el camp."
+      ],
+      "The export will only contain vaults that you own.": [
+        "L'exportació només contindrà les caixes fortes de la vostra propietat."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "El fitxer exportat es xifrarà amb PGP i requereix una contrasenya forta."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Es requerirà la contrasenya addicional per utilitzar ${ PASS_APP_NAME }. Actua com una contrasenya addicional a la contrasenya de ${ BRAND_NAME }."
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "No s'ha pogut importar ${ result.ignored.length } element:",
+        "No s'han pogut importar els ${ result.ignored.length } elements següents:"
+      ],
       "The secure link has been removed": [
         "S'ha eliminat l'enllaç segur."
       ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "El text que esteu intentant enganxar és més llarg que la longitud màxima permesa de ${ maxLength } caràcters."
+      ],
+      "The user did not accept the invitation yet.": [
+        "L'usuari encara no ha acceptat la invitació."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Aquesta exportació no es xifrarà i qualsevol persona amb accés al fitxer exportat podrà veure les contrasenyes. Per seguretat, elimineu-lo un cop hàgiu acabat d'utilitzar-lo."
+      ],
+      "This setting is disabled on the organization level": [
+        "Aquesta opció està desactivada en l'àmbit d'organització"
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Aquesta caixa forta no està compartida actualment amb ningú. Inviteu persones a compartir-la amb altres."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Aquesta versió s'afegirà a l'historial com a versió més nova."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Per migrar dades des d'un altre gestor de contrasenyes, aneu al gestor de contrasenyes, exporteu les dades i carregueu-les a ${ PASS_APP_NAME }. Un cop les dades s'hagin importat, suprimiu el fitxer exportat."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Per revisar les dades importades, feu clic a la icona del Proton Pass de la barra d'eines del navegador."
+      ],
+      "Unable to copy to clipboard": [
+        "No s'ha pogut copiar al porta-retalls"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre il·limitat d'àlies hide-my-email"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Desbloquegeu ${ PASS_APP_NAME } amb el vostre codi PIN per accedir a les vostres claus d'accés"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Desbloquegeu ${ PASS_APP_NAME } amb el vostre codi PIN per desar aquesta clau d'accés"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya de ${ BRAND_NAME }."
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Desbloquegeu ${ PASS_SHORT_APP_NAME } amb la vostra contrasenya addicional."
+      ],
+      "Unlock it with your PIN to access the settings": [
+        "Desbloqueja-ho amb el PIN per accedir a les preferències"
+      ],
+      "Unlock with biometrics": [
+        "Desbloqueja amb dades biomètriques"
+      ],
       "Unpinning item...": [
         "S'està desfixant l'element..."
+      ],
+      "Update login": [
+        "Actualitza l'inici de sessió"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "Millora ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Milloreu el vostre pla ara per a desbloquejar característiques prèmium"
+      ],
+      "Use vaults to share this item with others.": [
+        "Utilitzeu les caixes fortes per a compartir aquest element amb altres."
       ],
       "User's access removed": [
         "S'ha esborrat l'accés de l'usuari."
@@ -522,13 +1680,427 @@
       "Vault \"${ share.content.name }\" was removed": [
         "S'ha esborrat la caixa forta \"${ share.content.name }\"."
       ],
+      "Verification code": [
+        "Codi de verificació"
+      ],
+      "Viewer": [
+        "Visualitzador"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Estem tenint problemes per sincronitzar les dades amb el vostre emmagatzematge local. Assegureu-vos que teniu prou espai al disc perquè ${ PASS_SHORT_APP_NAME } funcioni correctament."
+      ],
+      "You are about to create:": [
+        "Esteu a punt de crear:"
+      ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Ara podeu usar la contrasenya de ${ BRAND_NAME } per a accedir a ${ PASS_SHORT_APP_NAME } fora de línia"
+      ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Podeu emplenar automàticament les vostres credencials fent clic a la icona de ${ PASS_APP_NAME }."
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "No podeu canviar les bústies de correu per a aquest àlies."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Us queda ${ daysRemaining } dia per provar aquestes i altres característiques prèmium.",
+        "Us queden ${ daysRemaining } dies per provar aquestes i altres característiques prèmium."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Heu excedit el nombre de caixes fortes incloses a la vostra subscripció. Els elements només es poden moure a les vostres dues primeres caixes fortes. Per moure elements entre totes les caixes fortes milloreu la vostra subscripció."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Heu excedit el nombre de caixes fortes incloses a la vostra subscripció. Només es poden crear elements nous a les vostres dues primeres caixes fortes. Per a crear elements nous a totes les caixes fortes, milloreu la vostra subscripció."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Heu assolit el límit d'àlies que podeu crear. Creeu un nombre il·limitat d'àlies quan milloreu la vostra subscripció."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Heu arribat al límit de targetes de crèdit que podeu crear. Creeu un nombre il·limitat de targetes de crèdit quan milloreu la vostra subscripció."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Heu arribat al límit de caixes fortes que podeu crear."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Heu assolit la longitud màxima permesa de ${ maxLength } caràcters."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "Se us tancarà la sessió i haureu de tornar a iniciar sessió en tots els vostres altres dispositius."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Utilitzareu aquest PIN per a desbloquejar ${ PASS_APP_NAME } un cop es bloquegi automàticament després d'un període d'inactivitat."
+      ],
+      "You're about to create": [
+        "Esteu a punt de crear"
+      ],
+      "You're invited to a vault.": [
+        "Esteu convidat a una caixa forta."
+      ],
+      "Your ${ PASS_APP_NAME } session is locked": [
+        "La vostra sessió de ${ PASS_APP_NAME } està bloquejada"
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "El vostre compte està restringit perquè la vostra organització ha forçat l'autenticació de dos factors. Activeu l'autenticació de dos factors a la configuració del vostre compte o contacteu amb el vostre administrador."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Es xifraran els fitxers i després es desaran."
       ]
     },
     "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length } caràcter",
+        "${ config.options.length } caràcters"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } paraula",
+        "${ config.options.wordCount } paraules"
+      ],
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dies"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "Monitor de ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Versió ${ PASS_SHORT_APP_NAME }"
+      ],
+      "1 hour": [
+        "1 hora"
+      ],
+      "1 minute": [
+        "1 minut"
+      ],
+      "10 minutes": [
+        "10 minuts"
+      ],
+      "14 days": [
+        "14 dies"
+      ],
+      "15 minutes": [
+        "15 minuts"
+      ],
+      "2 minutes": [
+        "2 minuts"
+      ],
+      "24 hours": [
+        "24 hores"
+      ],
+      "2FA autofill": [
+        "Emplenament automàtic A2F"
+      ],
+      "2FA secret key (TOTP)": [
+        "Clau secreta d'A2F (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "Testimoni d'A2F (TOTP)"
+      ],
+      "30 days": [
+        "30 dies"
+      ],
+      "30 minutes": [
+        "30 minuts"
+      ],
+      "30 seconds": [
+        "30 segons"
+      ],
+      "5 minutes": [
+        "5 minuts"
+      ],
+      "7 days": [
+        "7 dies"
+      ],
+      "A-Z": [
+        "A-Z"
+      ],
+      "Account": [
+        "Compte"
+      ],
+      "Add section": [
+        "Afegeix una secció"
+      ],
+      "Additional details": [
+        "Més detalls"
+      ],
+      "Address details": [
+        "Detalls de l'adreça"
+      ],
+      "Alias": [
+        "Àlies"
+      ],
+      "Alias address": [
+        "Adreça d'àlies"
+      ],
+      "Aliases": [
+        "Àlies"
+      ],
+      "All": [
+        "Tot"
+      ],
+      "All vaults": [
+        "Totes les caixes fortes"
+      ],
+      "Alphabetical": [
+        "Alfabètic"
+      ],
+      "Application logs": [
+        "Registres de l'aplicació"
+      ],
+      "Authenticate with passkeys": [
+        "Autenticació amb claus d'accés"
+      ],
+      "Auto-lock after": [
+        "Bloqueig automàtic després de"
+      ],
+      "Autofill": [
+        "Emplenament automàtic"
+      ],
+      "Autofill 2FA": [
+        "Emplenament automàtic A2F"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Obre automàticament l'emplenament automàtic quan un camp d'inici de sessió està enfocat"
+      ],
+      "Autosave": [
+        "Desament automàtic"
+      ],
+      "Autosave vault": [
+        "Desa automàticament la caixa forta"
+      ],
+      "Autosuggest": [
+        "Suggeriment automàtic"
+      ],
+      "Biometrics": [
+        "Dades biomètriques"
+      ],
+      "Birthdate": [
+        "Data de naixement"
+      ],
+      "Capital letters (A-Z)": [
+        "Lletres majúscules (A-Z)"
+      ],
+      "Capitalise": [
+        "Majúscules"
+      ],
+      "Card": [
+        "Targeta"
+      ],
+      "Card number": [
+        "Número de la targeta"
+      ],
+      "Cards": [
+        "Targetes"
+      ],
+      "City": [
+        "Ciutat"
+      ],
+      "Company": [
+        "Empresa"
+      ],
+      "Confirm vault name": [
+        "Confirma el nom de la caixa forta"
+      ],
+      "Contact details": [
+        "Detalls del contacte"
+      ],
+      "Copy": [
+        "Copia"
+      ],
+      "Copy password": [
+        "Copia la contrasenya"
+      ],
+      "Country or Region": [
+        "País o regió"
+      ],
+      "County": [
+        "Província"
+      ],
+      "Create a credit card": [
+        "Crea una targeta de crèdit"
+      ],
+      "Create a hide-my-email alias": [
+        "Crea un àlies hide-my-email"
+      ],
+      "Create a login": [
+        "Crea un inici de sessió"
+      ],
+      "Create an encrypted note": [
+        "Crea una nota xifrada"
+      ],
+      "Create an Identity": [
+        "Crea una identitat"
+      ],
+      "Create lock": [
+        "Crear bloqueig"
+      ],
+      "Create new vault": [
+        "Crea una caixa forta nova"
+      ],
+      "Created": [
+        "Creat"
+      ],
+      "Created at": [
+        "Creat a"
+      ],
+      "Custom text field": [
+        "Camp de text personalitzat"
+      ],
+      "Device": [
+        "Dispositiu"
+      ],
+      "Display": [
+        "Mostra"
+      ],
+      "Domain": [
+        "Domini"
+      ],
+      "Domains": [
+        "Dominis"
+      ],
+      "Don't remind me again": [
+        "No m'ho tornis a recordar"
+      ],
+      "Download logs": [
+        "Descarrega els registres"
+      ],
+      "Email": [
+        "Correu electrònic"
+      ],
+      "Email (alias)": [
+        "Correu electrònic (àlies)"
+      ],
+      "Email (new alias)": [
+        "Correu electrònic (nou àlies)"
+      ],
+      "Email aliases": [
+        "Àlies de correu electrònic"
+      ],
+      "Email or username": [
+        "Correu electrònic o nom d'usuari"
+      ],
+      "Empty trash": [
+        "Buida la paperera"
+      ],
+      "Enter email or username": [
+        "Introduïu el correu electrònic o el nom d’usuari"
+      ],
+      "Expiration date": [
+        "Data de caducitat"
+      ],
+      "Expired": [
+        "Caducat"
+      ],
+      "Expired link": [
+        "L'enllaç està caducat."
+      ],
+      "Export": [
+        "Exporta"
+      ],
+      "Extra password": [
+        "Contrasenya addicional"
+      ],
+      "Facebook account": [
+        "Compte de Facebook"
+      ],
+      "Field name": [
+        "Nom del camp"
+      ],
+      "File format": [
+        "Format de fitxer"
+      ],
+      "First name": [
+        "Nom"
+      ],
+      "Forwards to": [
+        "Reenvia a"
+      ],
+      "Full Name": [
+        "Nom complet"
+      ],
+      "Gender": [
+        "Gènere"
+      ],
+      "General": [
+        "General"
+      ],
+      "Generate a secure link for this item": [
+        "Genera un enllaç segur a aquest element"
+      ],
       "Generic CSV": [
         "CSV genèric"
+      ],
+      "Grant": [
+        "Autoritza"
+      ],
+      "Hidden": [
+        "Ocult"
+      ],
+      "Hide password": [
+        "Amaga la contrasenya"
+      ],
+      "https://example.com": [
+        "https://exemple.cat"
+      ],
+      "ID Card": [
+        "Targeta d'identitat"
+      ],
+      "ID Card number": [
+        "Número del DNI"
+      ],
+      "Identities": [
+        "Identitats"
+      ],
+      "Identity": [
+        "Identitat"
+      ],
+      "Identity autofill": [
+        "Emplenament automàtic d'identitat"
+      ],
+      "Import": [
+        "Importa"
+      ],
+      "Import passwords": [
+        "Importa les contrasenyes"
+      ],
+      "Imported from : ": [
+        "Importat des de: "
+      ],
+      "Imported on : ": [
+        "Importat en: "
+      ],
+      "Include numbers": [
+        "Incloeu números"
+      ],
+      "Include numbers (0-9)": [
+        "Incloeu números (0-9)"
+      ],
+      "Instagram handle": [
+        "Nom d'usuari d'Instagram"
+      ],
+      "Invitations": [
+        "Invitacions"
+      ],
+      "Item ID": [
+        "ID de l'element"
+      ],
+      "Job title": [
+        "Lloc de treball"
+      ],
+      "Key": [
+        "Clau"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Drecera de teclat: ${ shortcut }"
+      ],
+      "Language": [
+        "Idioma"
       ],
       "Last 2 weeks": [
         "Les últimes 2 setmanes"
@@ -536,14 +2108,354 @@
       "Last month": [
         "El mes passat"
       ],
+      "Last name": [
+        "Cognom"
+      ],
       "Last week": [
         "La setmana passada"
+      ],
+      "Latest import": [
+        "Última importació"
+      ],
+      "Learn more": [
+        "Més informació"
+      ],
+      "License": [
+        "Permís de conduir"
+      ],
+      "License number": [
+        "Número de llicència"
+      ],
+      "LinkedIn account": [
+        "Compte de LinkedIn"
+      ],
+      "Login": [
+        "Inici de sessió"
+      ],
+      "Logins": [
+        "Inicis de sessió"
+      ],
+      "Make all admins": [
+        "Estableix tots com a administradors"
+      ],
+      "Make all editors": [
+        "Estableix tots com a editors"
+      ],
+      "Make all viewers": [
+        "Estableix tots com a visualitzadors"
+      ],
+      "max views reached": [
+        "s'ha assolit el nombre màxim de vistas."
+      ],
+      "Members": [
+        "Membres"
+      ],
+      "Middle name": [
+        "Segon nom"
+      ],
+      "Modified": [
+        "Modificació"
       ],
       "More than a month": [
         "Més de un mes"
       ],
+      "Most recent": [
+        "Més recent"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Name on card": [
+        "Nom de la targeta"
+      ],
+      "Need help ?": [
+        "Necessiteu ajuda?"
+      ],
+      "New vault": [
+        "Nova caixa forta"
+      ],
+      "New-Old": [
+        "Del més nou al més antic"
+      ],
+      "Newest to oldest": [
+        "De més recent a més antic"
+      ],
+      "No history": [
+        "Sense historial"
+      ],
+      "None": [
+        "Cap"
+      ],
+      "Note": [
+        "Nota"
+      ],
+      "Notes": [
+        "Notes"
+      ],
+      "Old-New": [
+        "Del més antic al més nou"
+      ],
+      "Oldest to newest": [
+        "De més antic a més recent"
+      ],
+      "Organization": [
+        "Organització"
+      ],
+      "Passkey": [
+        "Contrasenya"
+      ],
+      "Passkeys": [
+        "Claus d'accés"
+      ],
+      "Passphrase": [
+        "Frase de pas"
+      ],
+      "Passport": [
+        "Passaport"
+      ],
+      "Passport number": [
+        "Número de passaport"
+      ],
+      "Password": [
+        "Contrasenya"
+      ],
+      "Password history": [
+        "Historial de les contrasenyes"
+      ],
+      "Passwords": [
+        "Contrasenyes"
+      ],
+      "Pause list": [
+        "Llista de pausa"
+      ],
+      "Personal details": [
+        "Detalls personals"
+      ],
+      "Personal website": [
+        "Lloc web personal"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON xifrat amb PGP (recomanat)"
+      ],
+      "Phone number": [
+        "Número de telèfon"
+      ],
+      "PIN": [
+        "Codi PIN"
+      ],
+      "PIN code": [
+        "Codi PIN"
+      ],
+      "Prefix": [
+        "Prefix"
+      ],
+      "Prompt for auto-save": [
+        "Demana el desament automàtic"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Sol·licita el desament automàtic en generar contrasenyes"
+      ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Protegiu ${ PASS_APP_NAME } amb una contrasenya addicional."
+      ],
+      "Rate us": [
+        "Avalueu-nos"
+      ],
+      "Recent": [
+        "Recents"
+      ],
+      "Reddit handle": [
+        "Nom d'usuari de Reddit"
+      ],
+      "Remove link": [
+        "Esborra l'enllaç"
+      ],
+      "Report a problem": [
+        "Notifica un problema"
+      ],
+      "Restore all items": [
+        "Restaura tots els elements"
+      ],
+      "Reveal password": [
+        "Mostra la contrasenya"
+      ],
+      "Save passkeys": [
+        "Desa les claus d'accés"
+      ],
+      "Security": [
+        "Seguretat"
+      ],
+      "Security code": [
+        "Codi de seguretat"
+      ],
+      "Select an email address": [
+        "Seleccioneu una adreça de correu electrònic"
+      ],
+      "Select preferred language": [
+        "Trieu la llengua preferida"
+      ],
+      "Select your password manager": [
+        "Seleccioneu el gestor de contrasenyes"
+      ],
+      "Selected": [
+        "Seleccionat"
+      ],
+      "Settings": [
+        "Preferències"
+      ],
+      "Share": [
+        "Comparteix"
+      ],
+      "Share this vault or create a new vault": [
+        "Comparteix aquesta caixa forte o crea una nova"
+      ],
+      "Shared link": [
+        "Enllaç compartit"
+      ],
+      "Show website favicons": [
+        "Mostra els favicons del lloc web"
+      ],
+      "Social security": [
+        "Seguretat social"
+      ],
+      "Social security number": [
+        "Número de la Seguretat Social"
+      ],
+      "Special characters (!&*)": [
+        "Caràcters especials (!&*)"
+      ],
+      "State or province": [
+        "Estat o província"
+      ],
+      "Street address": [
+        "Adreça de carrer"
+      ],
+      "Street address, P.O. box": [
+        "Adreça postal o apartat de correus"
+      ],
+      "Strong": [
+        "Forta"
+      ],
+      "Suffix": [
+        "Sufix"
+      ],
+      "Support": [
+        "Suport"
+      ],
+      "Tax number": [
+        "Número d'identificació fiscal"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "La caixa forta de l'element es comparteix actualment amb ${ targetMembers } persona.",
+        "La caixa forta de l'element es comparteix actualment amb ${ targetMembers } persones."
+      ],
+      "The URL has been copied to the clipboard": [
+        "S'ha copiat l'URL al porta-retalls."
+      ],
+      "Title": [
+        "Títol"
+      ],
       "Today": [
         "Avui"
+      ],
+      "Total imported items : ": [
+        "Total d'elements importats: "
+      ],
+      "Total items : ": [
+        "Total d'elements: "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Paperera"
+      ],
+      "Type": [
+        "Tipus"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Desbloqueja ${ PASS_APP_NAME }"
+      ],
+      "Unlock with": [
+        "Desbloqueja amb"
+      ],
+      "Unnamed Credit Card": [
+        "Targeta de crèdit sense nom"
+      ],
+      "Unnamed identity": [
+        "Identitat sense nom"
+      ],
+      "Unnamed item": [
+        "Element sense nom"
+      ],
+      "Unnamed note": [
+        "Nota sense nom"
+      ],
+      "Untitled": [
+        "Sense títol"
+      ],
+      "Update": [
+        "Actualitza"
+      ],
+      "Username": [
+        "Nom d'usuari"
+      ],
+      "Username/email": [
+        "Nom d'usuari/correu electrònic"
+      ],
+      "Vault ID": [
+        "ID de la caixa forta"
+      ],
+      "View details": [
+        "Mostra els detalls"
+      ],
+      "View logs": [
+        "Mostra els registres"
+      ],
+      "Vulnerable": [
+        "Vulnerable"
+      ],
+      "Weak": [
+        "Feble"
+      ],
+      "Website": [
+        "Lloc web"
+      ],
+      "Websites": [
+        "Llocs web"
+      ],
+      "Work details": [
+        "Detalls de la feina"
+      ],
+      "Work email": [
+        "Correu electrònic de la feina"
+      ],
+      "Work phone number": [
+        "Número de telèfon de la feina"
+      ],
+      "X handle": [
+        "Compte a X"
+      ],
+      "Yahoo account": [
+        "Compte de Yahoo"
+      ],
+      "You are about to create": [
+        "Esteu a punt de crear"
+      ],
+      "ZIP or Postal code": [
+        "Codi postal"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elements"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Heu seleccionat ${ semiboldText } en aquesta caixa forta"
       ]
     },
     "Onboarding": {
@@ -551,23 +2463,420 @@
         "Us donem la benvinguda a ${ appName }"
       ]
     },
+    "Option": {
+      "Commas": [
+        "Comes"
+      ],
+      "Hyphens": [
+        "Guions"
+      ],
+      "Memorable Password": [
+        "Contrasenya fàcil de recordar"
+      ],
+      "Numbers": [
+        "Números"
+      ],
+      "Numbers and Symbols": [
+        "Nombres i símbols"
+      ],
+      "Periods": [
+        "Punts"
+      ],
+      "Random Password": [
+        "Contrasenya aleatòria"
+      ],
+      "Spaces": [
+        "Espais"
+      ],
+      "Underscores": [
+        "Guions baixos"
+      ]
+    },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Afegeix una clau secreta d'A2F"
+      ],
+      "Add hidden text": [
+        "Afegeix text amagat"
+      ],
+      "Add note": [
+        "Afegeix una nota"
+      ],
+      "Add text": [
+        "Afegiu text"
+      ],
+      "Email address": [
+        "Adreça de correu electrònic"
+      ],
+      "Enter a note...": [
+        "Introduïu una nota..."
+      ],
+      "Enter a prefix": [
+        "Introduïu un prefix"
+      ],
+      "Enter email": [
+        "Introduïu el correu electrònic"
+      ],
+      "Enter password": [
+        "Introduïu la contrasenya"
+      ],
+      "Enter username": [
+        "Introduïu el nom d'usuari"
+      ],
+      "Full Name": [
+        "Nom complert"
+      ],
+      "MM/YY": [
+        "MM/AA"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Password": [
+        "Contrasenya"
+      ],
+      "Pick a vault": [
+        "Escolliu una caixa forta"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Descriviu el problema i incloeu qualsevol missatge d'error"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Torneu a escriure \"${ vaultName }\" per confirmar l'eliminació"
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Cerca ${ pluralItemType } a ${ vaultName }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Cerca ${ pluralItemType } en totes les caixes fortes"
+      ],
+      "Search in ${ vaultName }": [
+        "Cerca en ${ vaultName }"
+      ],
+      "Search in all vaults": [
+        "Cerca en totes les caixes fortes"
+      ],
+      "Search in Trash": [
+        "Cerca a la paperera"
+      ],
+      "Select a suffix": [
+        "Seleccioneu un sufix"
+      ],
+      "Shared vault": [
+        "Caixa forta compartida"
+      ],
+      "Unknown origin": [
+        "Origen desconegut"
+      ],
+      "Untitled": [
+        "Sense títol"
+      ],
       "Used on ${ url }": [
         "Utilitzada a ${ url }"
+      ],
+      "Write your note": [
+        "Escriviu la vostra nota"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Les caixes fortes no poden contenir més d'${ vault.targetMaxMembers } usuari.",
+        "Les caixes fortes no poden contenir més de ${ vault.targetMaxMembers } usuaris."
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "Actualització del bloqueig automàtic"
+      ],
+      "Autofill": [
+        "Emplenament automàtic"
+      ],
+      "Confirm extra password": [
+        "Confirmeu la contrasenya addicional"
+      ],
+      "Confirm PIN code": [
+        "Confirmeu el codi PIN"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Connecteu el vostre compte de ${ BRAND_NAME }"
+      ],
+      "Create PIN code": [
+        "Creeu un codi PIN"
+      ],
+      "Created": [
+        "Creat"
+      ],
+      "Current version": [
+        "Versió actual"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Voleu eliminar la caixa forta \"${ vaultName }\"?"
+      ],
+      "Discard changes?": [
+        "Voleu descartar els canvis?"
+      ],
+      "Email": [
+        "Correu electrònic"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Gaudint ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Introduïu la vostra contrasenya addicional"
+      ],
+      "Enter your password": [
+        "Introduïu la vostra contrasenya"
+      ],
+      "Enter your PIN": [
+        "Introduïu el vostre codi PIN"
+      ],
+      "Fill & copy password": [
+        "Emplena i copia la contrasenya"
+      ],
+      "Fill password": [
+        "Emplena la contrasenya"
+      ],
+      "Get Started": [
+        "Comenceu"
+      ],
+      "Get the mobile apps": [
+        "Obteniu les aplicacions mòbils"
+      ],
+      "Grant permissions": [
+        "Concediu permisos"
+      ],
+      "Hide my email": [
+        "Amaga el correu electrònic"
+      ],
+      "History": [
+        "Historial"
+      ],
+      "Identity": [
+        "Identitat"
+      ],
+      "Import - ${ date }": [
+        "Importació - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Importa a la(es) caixa(es) forta(es)"
+      ],
+      "Last autofill": [
+        "Darrer emplenament automàtic"
+      ],
+      "Last modified": [
+        "Última modificació"
+      ],
+      "Leave vault ?": [
+        "Deixa la caixa forta?"
+      ],
+      "Log in as...": [
+        "Inicieu sessió com a..."
+      ],
+      "Low disk space": [
+        "Poc espai al disc"
+      ],
+      "Member limit": [
+        "Límit de nombre de membres"
+      ],
+      "Members": [
+        "Membres"
+      ],
+      "Modified": [
+        "Modificació"
+      ],
+      "No items selected": [
+        "No s'ha seleccionat cap element."
+      ],
+      "No shared secure links": [
+        "Sense enllaços segurs compartits"
+      ],
+      "Our welcome gift to you": [
+        "El nostre regal de benvinguda per a vós"
+      ],
+      "Passkey": [
+        "Clau d'accés"
+      ],
+      "Password": [
+        "Contrasenya"
+      ],
+      "Pending access to the shared data": [
+        "Accés a les dades compartides pendent"
+      ],
+      "Permanently remove all items ?": [
+        "Voleu esborrar els elements de manera permanent?"
+      ],
+      "Pin the extension": [
+        "Fixa l'extensió"
+      ],
+      "Pinned (${ items.length })": [
+        "Ancorat (${ items.length })"
+      ],
+      "Remove extra password": [
+        "Esborra la contrasenya addicional"
+      ],
+      "Remove secure link?": [
+        "Voleu esborrar l'enllaç segur?"
+      ],
+      "Restore this version?": [
+        "Vol restaurar aquesta versió?"
+      ],
+      "Review and share": [
+        "Reviseu i comparteu"
+      ],
+      "Secure your data": [
+        "Assegureu les vostres dades"
+      ],
+      "Set access level": [
+        "Estableix el nivell d`accés"
+      ],
+      "Set extra password": [
+        "Estableixi la contrasenya addicional"
+      ],
+      "Set up 2FA for more security": [
+        "Configureu A2F per a més seguretat"
+      ],
+      "Share with": [
+        "Comparteix amb"
+      ],
+      "Stay safer online": [
+        "Mantingueu-vos més segurs en línia"
+      ],
+      "Suggestions": [
+        "Suggeriments"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Voleu canviar a ${ PASS_APP_NAME }?"
+      ],
+      "Sync alias": [
+        "Sincronitza l'àlies"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Gràcies per instal·lar ${ PASS_APP_NAME }"
+      ],
+      "The extension is now ready to use.": [
+        "L'extensió ja està llesta per utilitzar-se."
+      ],
+      "Transfer ownership": [
+        "Transfereix la propietat"
+      ],
+      "Trash empty": [
+        "La paperera està buida."
+      ],
+      "Unlock ${ brandNameJSX }": [
+        "Desbloqueja ${ brandNameJSX }"
+      ],
+      "Update available": [
+        "Hi ha una actualització disponible"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Actualitzeu per a desbloquejar les característiques prèmium"
+      ],
+      "Use my email": [
+        "Utilitza el meu correu electrònic"
+      ],
+      "Vault": [
+        "Caixa forta"
+      ],
+      "Vault shared with you": [
+        "Caixa forta compartida amb vosaltres"
+      ],
+      "Weak password": [
+        "Contrasenya feble"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Us donem la benvinguda a ${ brandNameJSX }"
+      ],
+      "Welcome to your new password manager!": [
+        "Us donem la benvinguda al vostre nou gestor de contrasenyes!"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Per què ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "La caixa forta està buida"
+      ],
+      "Your welcome gift": [
+        "El vostre regal de benvinguda"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "L'URL està duplicat."
+      ],
+      "Field name is required": [
+        "Es requereix el nom del camp."
+      ],
+      "OTP secret or URI is invalid": [
+        "La clau secreta OTP o l'URL no són vàlids."
+      ],
+      "OTP secret or URI required": [
+        "Heu d'introduir una clau secreta OTP o un URL."
+      ],
+      "Url already exists": [
+        "Ja existeix l'URL."
+      ],
+      "URL cannot be empty": [
+        "L'URL no pot ser buit."
+      ],
+      "Url is invalid": [
+        "L'URL no és vàlid."
+      ],
+      "URL is invalid": [
+        "L'URL no és vàlid."
       ]
     },
     "Warning": {
+      "A description of the problem is required": [
+        "Es requereix una descripció del problema"
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Tots els elements de la paperera s'eliminaran permanentment. No podeu desfer aquesta acció."
+      ],
+      "At least one email address is required": [
+        "Es requereix almenys una adreça de correu electrònic"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "No es poden recuperar les bústies d'aquest àlies ara mateix"
+      ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Precaució: no podreu accedir al vostre compte ${ PASS_APP_NAME } si perdeu aquesta contrasenya."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "No s'ha pogut crear la caixa forta \"${ vaultName }\""
       ],
       "Could not send invitations to the following addresses :": [
         "No s'han pogut enviar invitacions a les següents adreces:"
       ],
+      "Duplicate email addresses.": [
+        "Duplicitat d'adreces de correu electrònic."
+      ],
+      "Empty note": [
+        "Nota buida"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "La data de caducitat no té el format MM/AA"
       ],
+      "Extra password cannot be empty": [
+        "La contrasenya addicional no pot ser buida."
+      ],
+      "Extra password should have at least 8 characters": [
+        "La contrasenya addicional ha de tenir com a mínim 8 caràcters."
+      ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
+      ],
+      "Invalid email addresses.": [
+        "Les adreces de correu electrònic no són vàlides."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "No es permet convidar adreces de correu electrònic de fora de l'organització."
+      ],
+      "item was imported without custom fields": [
+        "L'element s'ha importat sense camps personalitzats"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "La longitud màxima és d'${ maxLength } caràcter.",
+        "La longitud màxima és de ${ maxLength } caràcters."
       ],
       "Missing alias prefix": [
         "Falta el prefix de l'àlies"
@@ -575,20 +2884,101 @@
       "Missing alias suffix": [
         "Falta el sufix de l'àlies"
       ],
+      "Move to trash": [
+        "Mou a la paperera"
+      ],
+      "No items": [
+        "Sense elements"
+      ],
+      "No items in trash matching": [
+        "No hi ha cap element coincident a la paperera"
+      ],
+      "No items matching": [
+        "No hi ha cap element coincident"
+      ],
+      "No password manager selected": [
+        "No s'ha seleccionat cap gestor de contrasenyes"
+      ],
+      "No results": [
+        "Sense resultats"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Només es permeten caràcters alfanumèrics, punts, guions i guions baixos"
+      ],
+      "Passphrase is required": [
+        "La frase de contrasenya és obligatòria"
+      ],
+      "Passwords do not match": [
+        "Les contrasenyes no coincideixen."
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "El fitxer d'exportació xifrat amb PGP requereix una contrasenya"
       ],
       "Please contact us for investigating the issue": [
         "Contacteu amb nosaltres per a investigar el problema"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Verifiqueu la vostra adreça de correu electrònic per poder utilitzar la compartició d'àlies de correu electrònic."
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Verifiqueu la vostra adreça de correu electrònic per poder utilitzar la compartició de caixa forta."
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Eliminar la vostra contrasenya extra us desconnectarà de tots els dispositius i finalitzarà totes les sessions actives."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Els informes no estan xifrats d'extrem a extrem. No envieu informació sensible."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Alguna cosa ha anat malament en iniciar ${ PASS_APP_NAME }. Proveu de refrescar o tornar a carregar l'extensió"
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "El prefix de l'àlies no pot tenir més de 40 caràcters"
+      ],
+      "Title is required": [
+        "El títol és obligatori"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Transferir la propietat d'aquesta caixa forta a ${ email }?"
+      ],
+      "Unable to save": [
+        "No s'ha pogut desar."
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No s'ha pogut iniciar la sessió a ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "La caixa forta \"${ vaultName }\" i tots els seus elements s'eliminaran permanentment. No podeu desfer aquesta acció."
+      ],
+      "Vault name is required": [
+        "Es requereix el nom de la caixa forta"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "No podeu crear més caixes fortes del que permet la vostra subscripció."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Heu arribat al límit de membres que poden accedir a aquesta caixa forta."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Heu assolit el límit d'usuaris en aquesta caixa forta. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Heu arribat al límit de les caixes fortes que podeu tenir al vostre pla."
+      ],
+      "You have unsaved changes.": [
+        "Teniu canvis per desar."
+      ],
       "You must select at least one mailbox": [
         "Heu de seleccionar almenys una bústia de correu"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Ja no tindreu accés a aquesta caixa forta. Per tornar-hi a entrar, necessitareu una nova invitació."
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "El vostre pla no us permet crear més àlies"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "El vostre pla només us permet emplenar automàticament des de les vostres dues primeres caixes fortes."
       ],
       "Your session could not be authorized.": [
         "No s'ha pogut autoritzar la sessió."
@@ -601,6 +2991,9 @@
       ],
       "Your session was locked.": [
         "S'ha bloquejat la sessió."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."
       ]
     }
   }
