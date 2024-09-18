@@ -3,8 +3,8 @@ import { useHistory, useParams } from 'react-router';
 
 import { c } from 'ttag';
 
+import { PrivateMainArea } from '@proton/components';
 import {
-    PrivateMainArea,
     SettingsPageTitle,
     SettingsParagraph,
     SettingsSection,
