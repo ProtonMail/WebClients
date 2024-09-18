@@ -169,6 +169,24 @@ export { default as MailComposerModeModal } from './containers/mail/MailComposer
 export { default as MailDensityModal } from './containers/mail/MailDensityModal';
 export { default as MailShortcutsModal } from './containers/mail/MailShortcutsModal';
 export { default as MailViewLayoutModal } from './containers/mail/MailViewLayoutModal';
+export { default as MemberActions } from './containers/members/MemberActions';
+export { default as MemberAddresses } from './containers/members/MemberAddresses';
+export { default as MemberFeatures } from './containers/members/MemberFeatures';
+export { default as MemberRole } from './containers/members/MemberRole';
+export {
+    default as MemberStorageSelector,
+    getInitialStorage,
+    getStorageRange,
+} from './containers/members/MemberStorageSelector';
+export { default as MultiUserCreationSection } from './containers/members/multipleUserCreation/MultiUserCreationSection';
+export { default as SubUserCreateModal } from './containers/members/SubUserCreateModal';
+export { default as SubUserEditModal } from './containers/members/SubUserEditModal';
+export {
+    getInvitationAcceptLimit,
+    getInvitationLimit,
+    getInviteLimit,
+} from './containers/members/UsersAndAddressesSection/helper';
+export { default as UsersAndAddressesSection } from './containers/members/UsersAndAddressesSection/UsersAndAddressesSection';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
 export { getOverallStatus } from './containers/recovery/getOverallStatus';
