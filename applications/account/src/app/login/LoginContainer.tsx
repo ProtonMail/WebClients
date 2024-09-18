@@ -5,9 +5,15 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import type { OnLoginCallback } from '@proton/components';
-import { AbuseModal, useApi, useConfig, useErrorHandler, useIsInboxElectronApp } from '@proton/components';
+import {
+    AbuseModal,
+    useApi,
+    useConfig,
+    useErrorHandler,
+    useIsInboxElectronApp,
+    useKTActivation,
+} from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
-import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import type {
     AuthActionResponse,
     AuthCacheResult,

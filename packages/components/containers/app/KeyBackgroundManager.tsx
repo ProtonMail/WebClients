@@ -28,7 +28,8 @@ import {
     useGetUserKeys,
 } from '../../hooks';
 import useApi from '../../hooks/useApi';
-import { useKTActivation, useKTVerifier } from '../keyTransparency';
+import useKTActivation from '../keyTransparency/useKTActivation';
+import useKTVerifier from '../keyTransparency/useKTVerifier';
 
 interface Props {
     hasPrivateMemberKeyGeneration?: boolean;

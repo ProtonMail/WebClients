@@ -10,6 +10,7 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
+    useKTActivation,
     useLocalState,
     useMyCountry,
     useNotifications,
@@ -17,7 +18,6 @@ import {
     useSearchParamsEffect,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
-import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import type {
     ResetActionResponse,
     ResetCacheResult,

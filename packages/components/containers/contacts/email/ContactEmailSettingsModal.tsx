@@ -43,7 +43,7 @@ import clsx from '@proton/utils/clsx';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../../hooks';
-import { useKeyTransparencyContext } from '../../keyTransparency';
+import { useKeyTransparencyContext } from '../../keyTransparency/useKeyTransparencyContext';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
 import ContactMIMETypeSelect from './ContactMIMETypeSelect';
 import ContactPGPSettings from './ContactPGPSettings';

@@ -16,6 +16,7 @@ import AddressesInput, { AddressesInputItem } from '@proton/components/component
 import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import InputField from '@proton/components/components/v2/field/InputField';
+import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import {
     useApi,
     useGetAddressKeys,
@@ -48,7 +49,6 @@ import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
-import { useKeyTransparencyContext } from '../../keyTransparency';
 
 export enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL,

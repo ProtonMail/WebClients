@@ -7,7 +7,7 @@ import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/Sessi
 import { ContactProvider } from '../contacts';
 import { EventNotices } from '../eventManager';
 import ForceRefreshProvider from '../forceRefresh/Provider';
-import { KeyTransparencyManager } from '../keyTransparency';
+import KeyTransparencyManager from '../keyTransparency/KeyTransparencyManager';
 import { DensityInjector } from '../layouts';
 import { ModalsChildren } from '../modals';
 import PaymentSwitcher from '../payments/PaymentSwitcher';

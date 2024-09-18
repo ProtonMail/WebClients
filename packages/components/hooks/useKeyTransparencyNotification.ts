@@ -3,7 +3,7 @@ import type { SelfAuditResult } from '@proton/key-transparency/lib';
 import { AddressAuditStatus, AddressAuditWarningReason } from '@proton/key-transparency/lib';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
-import { useKeyTransparencyContext } from '../containers';
+import { useKeyTransparencyContext } from '../containers/keyTransparency/useKeyTransparencyContext';
 
 const getHasSelfAuditFailure = (selfAuditResult: SelfAuditResult) => {
     const addressAuditFailed = selfAuditResult.addressAuditResults.some(

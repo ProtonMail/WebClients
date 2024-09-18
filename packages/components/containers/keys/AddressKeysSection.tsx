@@ -31,7 +31,7 @@ import {
     useUserKeys,
 } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
-import { useKTVerifier } from '../keyTransparency';
+import useKTVerifier from '../keyTransparency/useKTVerifier';
 import useResignSKLWithPrimaryKey from '../keyTransparency/useResignSKLWithPrimaryKey';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';
