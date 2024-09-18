@@ -20,7 +20,6 @@ export * from './features';
 export * from './filePreview';
 export * from './filters';
 export * from './general';
-export * from './gmailSyncModal';
 export * from './heading';
 export * from './illustration';
 export * from './importExportApp';
