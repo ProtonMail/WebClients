@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from 'react';
 
-import { Action, type ThunkDispatch, createSelector } from '@reduxjs/toolkit';
+import { type Action, type ThunkDispatch, createSelector } from '@reduxjs/toolkit';
 
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';

@@ -16,14 +16,7 @@ import generateUID from '@proton/utils/generateUID';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import {
-    decryptTextData,
-    decryptWalletData,
-    decryptWalletKeyForHmac,
-    encryptPgp,
-    hmac,
-    useWalletApiClients,
-} from '@proton/wallet';
+import { decryptTransactionData, decryptWalletKeyForHmac, encryptPgp, hmac, useWalletApiClients } from '@proton/wallet';
 
 import { useBitcoinBlockchainContext } from '../contexts';
 import { useGetApiWalletTransactionData } from '../store/hooks';
@@ -48,73 +41,6 @@ export interface TransactionData {
     networkData: WasmTransactionDetails;
     apiData: DecryptedTransactionData | null;
 }
-
-const parsedRecipientList = (toList: string | null): Partial<Record<string, string>> => {
-    try {
-        const parsed = toList ? JSON.parse(toList) : {};
-
-        // TODO: check with API why some toList are arrays
-        return Array.isArray(parsed) ? parsed[0] : parsed;
-    } catch {
-        return {};
-    }
-};
-
-/**
- * BitcoinViaEmail API sets Sender as string, but in ExternalSend / ExternalReceive, sender is an object
- */
-const parseSender = (sender: string): string | SenderObject => {
-    try {
-        const parsed: SenderObject = JSON.parse(sender);
-        return parsed;
-    } catch {
-        return sender;
-    }
-};
-
-/**
- * Decrypt transaction data. If addressKeys is not provided, we won't try to decrypt Body, Sender and ToList.
- *
- * Additionnally, TransactionID decryption might fail if Tx was created by a third party (using address keys)
- */
-const decryptTransactionData = async (
-    apiTransaction: WasmApiWalletTransaction,
-    walletKey: CryptoKey,
-    userPrivateKeys?: PrivateKeyReference[],
-    addressKeys?: PrivateKeyReference[]
-): Promise<DecryptedTransactionData> => {
-    const keys = [...(userPrivateKeys ? userPrivateKeys : []), ...(addressKeys ?? [])];
-
-    const [decryptedLabel = ''] = await decryptWalletData([apiTransaction.Label], walletKey).catch(() => []);
-
-    const TransactionID = await decryptTextData(apiTransaction.TransactionID, keys);
-    // Sender is encrypted with addressKey in BitcoinViaEmail but with userKey when manually set (unknown sender)
-    const Sender = apiTransaction.Sender && (await decryptTextData(apiTransaction.Sender, keys));
-    const parsedSender = Sender && parseSender(Sender);
-
-    const apiTransactionB = {
-        ...apiTransaction,
-        Label: decryptedLabel,
-        TransactionID,
-        Sender: parsedSender,
-        ToList: {},
-    };
-
-    if (!addressKeys) {
-        return apiTransactionB;
-    }
-
-    const Body = apiTransaction.Body && (await decryptTextData(apiTransaction.Body, addressKeys));
-    const SerialisedToList = apiTransaction.ToList && (await decryptTextData(apiTransaction.ToList, addressKeys));
-
-    const ToList = parsedRecipientList(SerialisedToList);
-
-    return {
-        ...apiTransactionB,
-        Body,
-        ToList,
-    };
-};
 
 const getWalletTransactionsToHash = async (api: WasmApiClients, walletId: string) => {
     try {
