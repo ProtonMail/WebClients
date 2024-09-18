@@ -54,11 +54,11 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
             return recycle && onRecycle(await setupExtensionContext(options));
         });
 
-        registerLoggerEffect((log) =>
+        registerLoggerEffect((...logs) =>
             sendMessage(
                 resolveMessageFactory(endpoint)({
                     type: WorkerMessageType.LOG_EVENT,
-                    payload: { log },
+                    payload: { log: logs.join(' ') },
                 })
             )
         );
