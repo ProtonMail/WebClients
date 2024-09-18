@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Info from '@proton/components/components/link/Info';
+import Loader from '@proton/components/components/loader/Loader';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
-import { Loader } from '../../components';
 import useModalState from '../../components/modalTwo/useModalState';
 import {
     useAvailableRecoveryMethods,
