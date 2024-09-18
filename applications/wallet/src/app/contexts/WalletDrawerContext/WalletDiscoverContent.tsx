@@ -10,7 +10,8 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { disabledWalletShowRecovery, useWalletApi } from '@proton/wallet';
+import { useWalletApi } from '@proton/wallet';
+import { disableWalletShowRecovery } from '@proton/wallet/store';
 
 import { type DiscoverArticle, articles } from '../../constants/discover';
 import { getThemeForWallet } from '../../utils';
@@ -84,7 +85,7 @@ interface Props {
 export const WalletDiscoverContent = ({ wallet: initWallet }: Props) => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
-    const { decryptedApiWalletsData = [] } = useBitcoinBlockchainContext();
+    const { apiWalletsData = [] } = useBitcoinBlockchainContext();
 
     const { open } = useWalletSetupModalContext();
     const walletApi = useWalletApi();
@@ -92,7 +93,7 @@ export const WalletDiscoverContent = ({ wallet: initWallet }: Props) => {
 
     const discoverArticles = useMemo(() => articles(), []);
 
-    const wallet = decryptedApiWalletsData.find((wa) => wa.Wallet.ID === initWallet.Wallet.ID);
+    const wallet = apiWalletsData.find((wa) => wa.Wallet.ID === initWallet.Wallet.ID);
     if (!wallet) {
         return null;
     }
@@ -101,7 +102,7 @@ export const WalletDiscoverContent = ({ wallet: initWallet }: Props) => {
         if (wallet.Wallet.Mnemonic) {
             open(
                 {
-                    theme: getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID),
+                    theme: getThemeForWallet(apiWalletsData, wallet.Wallet.ID),
                     kind: WalletSetupModalKind.WalletBackup,
                     apiWalletData: wallet,
                 },
@@ -111,7 +112,7 @@ export const WalletDiscoverContent = ({ wallet: initWallet }: Props) => {
                             .clients()
                             .wallet.disableShowWalletRecovery(wallet.Wallet.ID)
                             .then(() => {
-                                dispatch(disabledWalletShowRecovery({ walletID: wallet.Wallet.ID }));
+                                dispatch(disableWalletShowRecovery({ walletID: wallet.Wallet.ID }));
                             });
                     },
                 }

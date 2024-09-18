@@ -9,7 +9,8 @@ import { Icon, Info, MiddleEllipsis, Tooltip } from '@proton/components';
 import { useAddresses } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
+import { useUserWalletSettings } from '@proton/wallet/store';
 
 import { ButtonLike, CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';

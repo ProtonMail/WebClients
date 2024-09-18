@@ -5,7 +5,9 @@ import { c } from 'ttag';
 
 import { WasmWallet } from '@proton/andromeda';
 import { PasswordInputTwo } from '@proton/components';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import useLoading from '@proton/hooks/useLoading';
+import { type IWasmApiWalletData, encryptWalletDataWithWalletKey, getPassphraseLocalStorageKey } from '@proton/wallet';
+import { setWalletPassphrase, useWalletDispatch } from '@proton/wallet/store';
 
 import { Button, Input, Modal } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -19,8 +21,11 @@ interface Props {
 }
 
 export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphrase }: Props) => {
+    const dispatch = useWalletDispatch();
+
     const { network } = useBitcoinBlockchainContext();
     const [passphrase, setPassphrase] = useState('');
+    const [loading, withLoading] = useLoading();
 
     const fingerPrint = useMemo(() => {
         if (!isUndefined(network) && wallet.Wallet.Mnemonic) {
@@ -40,6 +45,20 @@ export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphr
         return null;
     }, [passphrase, fingerPrint, wallet.Wallet.Fingerprint]);
 
+    const handleConfirmPassphrase = async () => {
+        dispatch(setWalletPassphrase({ walletID: wallet.Wallet.ID, passphrase }));
+        if (wallet.WalletKey?.DecryptedKey && wallet.Wallet.Fingerprint) {
+            const [encryptedPassphrase] = await encryptWalletDataWithWalletKey(
+                [passphrase],
+                wallet.WalletKey.DecryptedKey
+            );
+
+            localStorage.setItem(getPassphraseLocalStorageKey(wallet.Wallet.Fingerprint), encryptedPassphrase);
+        }
+
+        onConfirmPassphrase(passphrase);
+    };
+
     return (
         <Modal
             className="p-0"
@@ -52,6 +71,7 @@ export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphr
                 <div className="flex flex-row mb-5">
                     <Input
                         id="passphrase-input"
+                        disabled={loading}
                         as={PasswordInputTwo}
                         label={c('Wallet passphrase').t`Wallet passphrase`}
                         placeholder={c('Wallet passphrase').t`My wallet passphrase`}
@@ -64,12 +84,12 @@ export const PassphraseInputModal = ({ wallet, isOpen, onClose, onConfirmPassphr
                 </div>
 
                 <Button
-                    disabled={!passphrase || Boolean(error)}
+                    disabled={!passphrase || Boolean(error) || loading}
                     className="block w-4/5 mx-auto mt-4 mb-2"
                     shape="solid"
                     color="norm"
                     onClick={() => {
-                        onConfirmPassphrase(passphrase);
+                        void withLoading(handleConfirmPassphrase());
                     }}
                 >
                     {c('Wallet setup').t`Confirm`}

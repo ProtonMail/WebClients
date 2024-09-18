@@ -2,12 +2,13 @@ import { createContext, useContext } from 'react';
 
 import type { WasmApiWallet, WasmApiWalletAccount, WasmNetwork } from '@proton/andromeda';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { IWasmApiWalletData, WalletMap } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet';
 
 import type {
     AccountIdByDerivationPathAndWalletId,
     AccountWithChainData,
     WalletChainDataByWalletId,
+    WalletMap,
     WalletWithChainData,
 } from '../../types';
 import type { BitcoinAddressHelper } from './useBitcoinAddresses';
@@ -18,10 +19,9 @@ export type SyncingObserver = (wallet: WalletWithChainData, account: AccountWith
 export interface BitcoinBlockchainContextValue {
     network: WasmNetwork | undefined;
 
-    decryptedApiWalletsData: IWasmApiWalletData[] | undefined;
+    apiWalletsData: IWasmApiWalletData[] | undefined;
     walletMap: WalletMap;
     loadingApiWalletsData: boolean;
-    setPassphrase: (walletId: string, walletPassphrase: string) => void;
 
     walletsChainData: WalletChainDataByWalletId;
     accountIDByDerivationPathByWalletID: AccountIdByDerivationPathAndWalletId;
@@ -52,10 +52,9 @@ export interface BitcoinBlockchainContextValue {
 export const BitcoinBlockchainContext = createContext<BitcoinBlockchainContextValue>({
     network: undefined,
 
-    decryptedApiWalletsData: undefined,
+    apiWalletsData: undefined,
     walletMap: {},
     loadingApiWalletsData: false,
-    setPassphrase: () => {},
 
     walletsChainData: {},
     accountIDByDerivationPathByWalletID: {},

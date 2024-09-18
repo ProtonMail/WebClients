@@ -8,7 +8,8 @@ import type { ModalOwnProps } from '@proton/components';
 import { useModalState, useModalStateWithData } from '@proton/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { toWalletAccountSelectorOptions, useUserWalletSettings } from '@proton/wallet';
+import { toWalletAccountSelectorOptions } from '@proton/wallet';
+import { useUserWalletSettings } from '@proton/wallet/store';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -70,7 +71,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
     ]);
     const [, walletAccount] = selectedWalletAccount;
 
-    const { walletsChainData, decryptedApiWalletsData } = useBitcoinBlockchainContext();
+    const { walletsChainData, apiWalletsData } = useBitcoinBlockchainContext();
 
     const wasmAccount = getAccountWithChainDataFromManyWallets(
         walletsChainData,
@@ -123,7 +124,7 @@ export const BitcoinSendModal = ({ wallet, account, theme, modal, onDone }: Prop
                             onSelect={(selected) => {
                                 setSelectedWalletAccount(selected);
                             }}
-                            options={toWalletAccountSelectorOptions(decryptedApiWalletsData ?? [])}
+                            options={toWalletAccountSelectorOptions(apiWalletsData ?? [])}
                             checkIsValid={async (w, a, accountChainData) => {
                                 const balance = await getAccountBalance(accountChainData);
                                 return balance > 0;

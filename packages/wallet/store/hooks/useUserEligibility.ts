@@ -1,4 +1,3 @@
-
 import { createHooks } from '@proton/redux-utilities';
 
 import { selectUserEligibility, userEligibilityThunk } from '../slices';

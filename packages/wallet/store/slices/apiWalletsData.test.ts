@@ -12,7 +12,7 @@ import {
     walletAccountUpdate,
     walletCreation,
     walletDeletion,
-    walletNameUpdate,
+    walletUpdate,
 } from './apiWalletsData';
 
 describe('apiWalletsData', () => {
@@ -52,7 +52,7 @@ describe('apiWalletsData', () => {
         it('should update the name of the wallet in the store', () => {
             const name = 'My super wallet';
             const { store } = setup(apiWalletsData);
-            store.dispatch(walletNameUpdate({ walletID: apiWalletsData[1].Wallet.ID, name }));
+            store.dispatch(walletUpdate({ walletID: apiWalletsData[1].Wallet.ID, update: { Name: name } }));
             expect(selectApiWalletsData(store.getState()).value).toStrictEqual([
                 apiWalletsData[0],
                 { ...apiWalletsData[1], Wallet: { ...apiWalletsData[1].Wallet, Name: name } },
@@ -115,7 +115,9 @@ describe('apiWalletsData', () => {
                 Addresses: [{ ID: '00098', Email: 'test@test.com' }],
             };
 
-            store.dispatch(walletAccountUpdate(account));
+            store.dispatch(
+                walletAccountUpdate({ walletID: account.WalletID, walletAccountID: account.ID, update: account })
+            );
 
             expect(selectApiWalletsData(store.getState()).value?.[1].WalletAccounts).toStrictEqual([
                 account,

@@ -6,14 +6,13 @@ import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromed
 import { CircleLoader } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { useUserWalletSettings } from '@proton/wallet';
+import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store';
 
 import { Button, CoreButton } from '../../../atoms';
 import { BitcoinAmountInput } from '../../../atoms/BitcoinAmountInput';
 import { Price } from '../../../atoms/Price';
 import { usePsbt } from '../../../hooks/usePsbt';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
-import { useExchangeRate } from '../../../store/hooks';
 import type { AccountWithChainData } from '../../../types';
 import { convertAmount, getAccountBalance, getExchangeRateFromBitcoinUnit } from '../../../utils';
 import { useAsyncValue } from '../../../utils/hooks/useAsyncValue';

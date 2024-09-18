@@ -34,12 +34,12 @@ const WalletHeader = ({
 
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
 
-    const { decryptedApiWalletsData, walletsChainData } = useBitcoinBlockchainContext();
+    const { apiWalletsData, walletsChainData } = useBitcoinBlockchainContext();
 
     const { walletId } = useParams<{ walletId?: string }>();
     const wallet = useMemo(
-        () => decryptedApiWalletsData?.find(({ Wallet }) => Wallet.ID === walletId),
-        [walletId, decryptedApiWalletsData]
+        () => apiWalletsData?.find(({ Wallet }) => Wallet.ID === walletId),
+        [walletId, apiWalletsData]
     );
 
     const needPassphrase = Boolean(wallet?.Wallet.HasPassphrase && !wallet?.Wallet.Passphrase);

@@ -4,7 +4,7 @@ import { vi } from 'vitest';
 import * as getRandomAccentColorModule from '@proton/shared/lib/colors';
 import { apiWalletsData } from '@proton/wallet/tests';
 
-import { mockUseBitcoinBlockchainContext, mockUseDecryptedWallets } from '../../tests';
+import { mockUseBitcoinBlockchainContext } from '../../tests';
 import { useBalance } from './useBalance';
 
 describe('useBalance', () => {
@@ -24,7 +24,6 @@ describe('useBalance', () => {
             .mockReturnValueOnce('#B4A40E');
 
         mockUseBitcoinBlockchainContext();
-        mockUseDecryptedWallets();
     });
 
     afterEach(() => {

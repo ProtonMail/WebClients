@@ -7,13 +7,13 @@ import { Icon } from '@proton/components';
 import { useToggle } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
+import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet/store';
 
 import { CoreButton } from '../../atoms';
 import { Price } from '../../atoms/Price';
 import { Skeleton } from '../../atoms/Skeleton';
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
 import { convertAmountStr, getLabelByUnit } from '../../utils';
 import { useBalance } from './useBalance';
 
