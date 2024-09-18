@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { TextLoader } from '@proton/components/components/loader';
+import { TextLoader } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import protonSpinnerNegative from '@proton/styles/assets/img/loading-spinners/proton-spinner-negative.svg';
