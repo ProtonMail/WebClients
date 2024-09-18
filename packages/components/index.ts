@@ -137,6 +137,7 @@ export { VPNEvents } from './containers/b2bDashboard/VPN/VPNEvents';
 export { PromotionBanner } from './containers/banner/PromotionBanner';
 export { ProtonMailBridgeSection } from './containers/bridge/ProtonMailBridgeSection';
 export { CacheProvider } from './containers/cache/Provider';
+export { default as MinimalForgotUsernameContainer } from './containers/forgotUsername/MinimalForgotUsernameContainer';
 export { default as GmailSyncModal } from './containers/gmailSyncModal/GmailSyncModal';
 export { default as GmailSyncModalAnimation } from './containers/gmailSyncModal/GmailSyncModalAnimation';
 export { default as SignInWithGoogle } from './containers/gmailSyncModal/SignInWithGoogle';
@@ -160,6 +161,10 @@ export { default as useItemsSelection } from './containers/items/useItemsSelecti
 export { default as AddressKeysSection } from './containers/keys/AddressKeysSection';
 export { default as SelectKeyFiles } from './containers/keys/shared/SelectKeyFiles';
 export { default as UserKeysSection } from './containers/keys/UserKeysSection';
+export { default as AbuseModal } from './containers/login/AbuseModal';
+export { default as FooterDetails } from './containers/login/FooterDetails';
+export { default as MinimalLoginContainer } from './containers/login/MinimalLoginContainer';
+export { default as UnlockModal } from './containers/login/UnlockModal';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
 export { getOverallStatus } from './containers/recovery/getOverallStatus';
