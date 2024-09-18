@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import Checkbox from '@proton/components/components/input/Checkbox';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { Checkbox } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../../account/SettingsLayoutRight';

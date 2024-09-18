@@ -4,10 +4,11 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import type { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { ButtonGroup, Checkbox, Tooltip } from '../../../components';
+import { ButtonGroup, Tooltip } from '../../../components';
 import type { CustomAction } from './types';
 
 interface Props {
