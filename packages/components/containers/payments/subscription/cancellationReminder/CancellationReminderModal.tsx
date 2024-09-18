@@ -2,11 +2,12 @@ import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { StripedItem, StripedList } from '@proton/components';
 import type { ModalProps } from '@proton/components/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import StripedItem from '@proton/components/components/stripedList/StripedItem';
+import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { FeatureCode } from '@proton/components/containers/features';
 import { useFeature, useSubscription, useUser } from '@proton/components/hooks';
 import subscriptionEnding from '@proton/styles/assets/img/illustrations/subscription_ending.svg';

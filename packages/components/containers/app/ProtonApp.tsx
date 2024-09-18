@@ -1,6 +1,7 @@
 import type { ComponentType, ReactNode } from 'react';
 
-import { CacheProvider, RightToLeftProvider } from '@proton/components';
+import { RightToLeftProvider } from '@proton/components';
+import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import Icons from '@proton/icons/Icons';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
