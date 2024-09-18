@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { ColorScheme, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
-import { Info, Toggle, useNotifications } from '../..';
+import { useNotifications } from '../..';
 import {
     SettingsLayout,
     SettingsLayoutLeft,

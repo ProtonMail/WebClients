@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import Toggle from '@proton/components/components/toggle/Toggle';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import { useLoading } from '@proton/hooks';
 import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
@@ -8,7 +9,7 @@ import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
-import { Toggle, useModalState } from '../../components';
+import { useModalState } from '../../components';
 import { useApi, useEventManager, useNotifications, useToggle, useUser } from '../../hooks';
 
 interface Props {

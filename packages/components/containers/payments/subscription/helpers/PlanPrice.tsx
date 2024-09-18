@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import Price from '@proton/components/components/price/Price';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { EllipsisLoader, Price } from '../../../../components';
+import { EllipsisLoader } from '../../../../components';
 
 interface PlanPriceProps {
     loading?: boolean;

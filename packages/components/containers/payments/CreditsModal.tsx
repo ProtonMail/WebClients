@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import Price from '@proton/components/components/price/Price';
 import { useAutomaticCurrency, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
@@ -34,7 +35,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    Price,
     PrimaryButton,
     useDebounceInput,
 } from '../../components';

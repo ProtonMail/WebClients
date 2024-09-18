@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { editMemberInvitation, inviteMember, updateAI } from '@proton/shared/lib/api/members';
 import { MAIL_APP_NAME, MEMBER_ROLE } from '@proton/shared/lib/constants';
@@ -20,7 +21,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    Toggle,
     useFormErrors,
 } from '../../components';
 import { useApi, useEventManager, useNotifications, useSubscription } from '../../hooks';

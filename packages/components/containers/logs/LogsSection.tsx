@@ -7,6 +7,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Icon from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
@@ -17,7 +19,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
 
-import { ConfirmModal, Info, Pagination, Toggle, usePaginationAsync } from '../../components';
+import { ConfirmModal, Pagination, usePaginationAsync } from '../../components';
 import { useApi, useModals, useUserSettings } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';

@@ -3,10 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Info from '@proton/components/components/link/Info';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
-import { Info, Loader, Toggle } from '../../components';
+import { Loader } from '../../components';
 import useModalState from '../../components/modalTwo/useModalState';
 import {
     useAvailableRecoveryMethods,

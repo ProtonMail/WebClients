@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Price } from '@proton/components/components';
+import Price from '@proton/components/components/price/Price';
 import clsx from '@proton/utils/clsx';
 
 import { useDealContext } from '../deal/DealContext';

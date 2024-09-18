@@ -4,12 +4,13 @@ import { cloneElement, isValidElement } from 'react';
 import { c } from 'ttag';
 
 import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
 import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
-import { CalendarLogo, DriveLogo, Info, MailLogo, PassLogo, VpnLogo, WalletLogo } from '../../../components';
+import { CalendarLogo, DriveLogo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '../../../components';
 import type { AllFeatures } from '../features';
 import { getFeatureDefinitions } from '../features';
 import type { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';

@@ -8,13 +8,13 @@ import {
     Icon,
     Loader,
     SUBSCRIPTION_STEPS,
-    Toggle,
     useErrorHandler,
     useModalStateObject,
     useSubscriptionModal,
     useUser,
     useUserSettings,
 } from '@proton/components';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { useApi, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';

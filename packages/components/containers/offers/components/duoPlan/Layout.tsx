@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Price } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
+import Price from '@proton/components/components/price/Price';
 import { usePreferredPlansMap, useUser } from '@proton/components/hooks';
 import type { AmountAndCurrency } from '@proton/payments';
 import { APPS, CYCLE, PLANS } from '@proton/shared/lib/constants';

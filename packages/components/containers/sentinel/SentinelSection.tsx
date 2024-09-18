@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '@proton/components/containers';
 import { useBundleProPlan } from '@proton/components/hooks/useHasPlan';
 import { useLoading } from '@proton/hooks';
@@ -22,7 +23,6 @@ import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSetting
 import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { Toggle } from '../../components';
 import {
     useApi,
     useConfig,

@@ -1,4 +1,4 @@
-import { Toggle } from '@proton/components/components';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { REMOVE_IMAGE_METADATA } from '@proton/shared/lib/mail/mailSettings';
 
 interface Props {

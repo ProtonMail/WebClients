@@ -5,8 +5,9 @@ import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
 
-import { Info, UnderlineButton } from '../../components';
+import { UnderlineButton } from '../../components';
 import { useToggle } from '../../hooks';
 
 interface Props {

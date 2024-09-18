@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
 
-import { Toggle } from '../../components';
 import { useApi, useEventManager, useNotifications, useToggle } from '../../hooks';
 
 interface Props {

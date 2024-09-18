@@ -6,16 +6,16 @@ import {
     CalendarLogo,
     DriveLogo,
     Icon,
-    Info,
     MailLogo,
     Option,
     PassLogo,
-    Price,
     SelectTwo,
     Tabs,
     VpnLogo,
     WalletLogo,
 } from '@proton/components';
+import Info from '@proton/components/components/link/Info';
+import Price from '@proton/components/components/price/Price';
 import { useUser } from '@proton/components/hooks';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { type PaymentMethodStatusExtended, getPlansMap, isRegionalCurrency, mainCurrencies } from '@proton/payments';

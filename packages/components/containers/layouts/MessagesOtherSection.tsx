@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { getFontFaceIdFromValue, getFontFaceValueFromId } from '@proton/components/components/editor/helpers/fontFace';
+import Info from '@proton/components/components/link/Info';
 import { useLoading } from '@proton/hooks';
 import {
     updateDraftType,
@@ -12,7 +13,7 @@ import type { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
-import { Info, Label } from '../../components';
+import { Label } from '../../components';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../../components/editor/constants';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
