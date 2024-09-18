@@ -140,7 +140,11 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
     const countryOptions = getCountryOptions(userSettings);
 
-    if (organization.PlanName !== PLANS.VPN_BUSINESS) {
+    const hasGatewaysAccess =
+        organization.PlanName === PLANS.VPN_BUSINESS ||
+        organization.PlanName === PLANS.BUNDLE_PRO ||
+        organization.PlanName === PLANS.BUNDLE_PRO_2024;
+    if (!hasGatewaysAccess) {
         const boldDedicatedServers = (
             <b key="bold-dedicated-servers">{
                 // translator: Full sentence "With a Business or Enterprise plan, you can purchase dedicated servers for your organization, and set up Gateways to control which users can access them"
