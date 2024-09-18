@@ -59,7 +59,7 @@ export const useAccountPreferences = (
             } catch (error: any) {
                 createNotification({
                     type: 'error',
-                    text: error?.error ?? c('Wallet Settings').t`Account name could not be change`,
+                    text: error?.error ?? c('Wallet Settings').t`Account name could not be changed`,
                 });
             }
         };
@@ -151,7 +151,7 @@ export const useAccountPreferences = (
                     }).catch(() => {
                         createNotification({
                             type: 'error',
-                            text: c('Wallet Settings').t`Could not fill the pool after email address adition`,
+                            text: c('Wallet Settings').t`Could not fill the pool after email address addition`,
                         });
                     });
                 }

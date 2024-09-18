@@ -66,10 +66,10 @@ export const TransactionNoteModal = ({ apiWalletData, data, ...modalProps }: Pro
                     }
 
                     createNotification({ text: c('Wallet Transaction').t`Transaction label successfully updated` });
-                } catch (e) {
+                } catch (error: any) {
                     createNotification({
                         type: 'error',
-                        text: c('Wallet Transaction').t`Could not update transaction label`,
+                        text: error?.error ?? c('Wallet Transaction').t`Could not update transaction label`,
                     });
                 }
             }
