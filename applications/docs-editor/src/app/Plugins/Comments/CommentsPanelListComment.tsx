@@ -1,5 +1,5 @@
 import { Button } from '@proton/atoms'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useState } from 'react'
 import {
   DropdownMenu,
   DropdownMenuButton,
@@ -122,9 +122,7 @@ export function CommentsPanelListComment({
   const isAuthorCurrentUser = comment.author === username
   const canEdit = application.getRole().canEdit()
 
-  const name = useMemo(() => {
-    return comment.author.split('@')[0]
-  }, [comment.author])
+  const name = comment.author
 
   const color = awarenessStates.find((state) => state.name === comment.author)?.color
 
@@ -163,7 +161,7 @@ export function CommentsPanelListComment({
           <UserAvatar name={comment.author} color={color ? { hsl: color } : undefined} className="mr-1 flex-shrink-0" />
           <div className="mr-auto flex flex-col overflow-hidden">
             <span
-              className="mb-px w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold capitalize"
+              className="mb-px w-full overflow-hidden text-ellipsis whitespace-nowrap font-semibold"
               data-testid="comment-author"
             >
               {name}
