@@ -155,7 +155,9 @@ const createViews = (session: Session) => {
     const config = getConfig();
 
     const mailto = readAndClearMailtoArgs();
-    loadURL("mail", config.url.mail + (mailto ? `/inbox#mailto=${mailto}` : ""));
+    loadURL("mail", config.url.mail + (mailto ? `/inbox#mailto=${mailto}` : "")).then(() => {
+        updateViewBounds("mail");
+    });
 };
 
 const createBrowserWindow = (session: Session) => {
