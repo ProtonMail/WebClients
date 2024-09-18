@@ -144,6 +144,7 @@ export { default as PrivateHeader } from './containers/heading/PrivateHeader';
 export { default as TopNavbarListItemFeedbackButton } from './containers/heading/TopNavbarListItemFeedbackButton';
 export { default as UserDropdown } from './containers/heading/UserDropdown';
 export { default as IllustrationPlaceholder } from './containers/illustration/IllustrationPlaceholder';
+export { default as ImportExportAppSection } from './containers/importExportApp/ImportExportAppSection';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
 export { getOverallStatus } from './containers/recovery/getOverallStatus';
