@@ -171,6 +171,16 @@ export {
 export { default as useKTActivation } from './containers/keyTransparency/useKTActivation';
 export { default as useKTVerifier } from './containers/keyTransparency/useKTVerifier';
 export { default as useResetSelfAudit } from './containers/keyTransparency/useResetSelfAudit';
+export { default as ComposerModeCards } from './containers/layouts/ComposerModeCards';
+export { default as DensityInjector } from './containers/layouts/DensityInjector';
+export { default as DraftTypeSelect } from './containers/layouts/DraftTypeSelect';
+export { default as FontFaceSelect } from './containers/layouts/FontFaceSelect';
+export { default as FontSizeSelect } from './containers/layouts/FontSizeSelect';
+export { default as LayoutsSection } from './containers/layouts/LayoutsSection';
+export { default as MessagesOtherSection } from './containers/layouts/MessagesOtherSection';
+export { default as TextDirectionSelect } from './containers/layouts/TextDirectionSelect';
+export { default as ViewLayoutCards } from './containers/layouts/ViewLayoutCards';
+export { default as ViewModeToggle } from './containers/layouts/ViewModeToggle';
 export { default as AbuseModal } from './containers/login/AbuseModal';
 export { default as FooterDetails } from './containers/login/FooterDetails';
 export { default as MinimalLoginContainer } from './containers/login/MinimalLoginContainer';
