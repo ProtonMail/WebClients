@@ -171,6 +171,12 @@ export {
 export { default as useKTActivation } from './containers/keyTransparency/useKTActivation';
 export { default as useKTVerifier } from './containers/keyTransparency/useKTVerifier';
 export { default as useResetSelfAudit } from './containers/keyTransparency/useResetSelfAudit';
+export { default as FolderIcon } from './containers/labels/FolderIcon';
+export { default as FoldersSection } from './containers/labels/FoldersSection';
+export { default as LabelsSection } from './containers/labels/LabelsSection';
+export { default as DeleteLabelModal } from './containers/labels/modals/DeleteLabelModal';
+export { default as EditLabelModal } from './containers/labels/modals/EditLabelModal';
+export type { LabelModel } from './containers/labels/modals/EditLabelModal';
 export { default as ComposerModeCards } from './containers/layouts/ComposerModeCards';
 export { default as DensityInjector } from './containers/layouts/DensityInjector';
 export { default as DraftTypeSelect } from './containers/layouts/DraftTypeSelect';
