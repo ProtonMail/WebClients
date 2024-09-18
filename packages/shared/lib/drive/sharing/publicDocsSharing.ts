@@ -1,3 +1,5 @@
+import metrics from '@proton/metrics';
+
 import { getAppHref } from '../../apps/helper';
 import { APPS } from '../../constants';
 import { getCurrentTab, getNewWindow } from '../../helpers/window';
@@ -71,12 +73,18 @@ export const handleDriveCustomPassword = ({
             try {
                 await submitPassword(event.data.customPassword);
             } catch (e) {
-                // TODO: Implement metrics type: `received_not_working`
                 onError(e);
+
+                metrics.docs_public_sharing_custom_password_success_rate_total.increment({
+                    status: 'received_not_working',
+                });
+
                 return;
             }
 
-            // TODO: Implement metrics type: `success`
+            metrics.docs_public_sharing_custom_password_success_rate_total.increment({
+                status: 'success',
+            });
         }
     };
 
@@ -92,6 +100,8 @@ export const handleDriveCustomPassword = ({
         onError(new Error('Custom password not received'));
         window.removeEventListener('message', onMessage);
 
-        // TODO: Implement metrics type: `not_received`
+        metrics.docs_public_sharing_custom_password_success_rate_total.increment({
+            status: 'did_not_receive',
+        });
     }, DRIVE_DOCS_CUSTOM_PASSWORD_TIMEOUT);
 };

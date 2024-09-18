@@ -21,6 +21,7 @@ import type { HttpsProtonMeDocsDocumentUpdatesLoadErrorTotalV1SchemaJson } from 
 import type { HttpsProtonMeDocsDocumentUpdatesSaveErrorTotalV1SchemaJson } from './types/docs_document_updates_save_error_total_v1.schema';
 import type { HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson } from './types/docs_document_updates_total_v1.schema';
 import type { HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson } from './types/docs_failed_websocket_connections_total_v1.schema';
+import type { HttpsProtonMeDocsPublicSharingCustomPasswordSuccessRateTotalV1SchemaJson } from './types/docs_public_sharing_custom_password_success_rate_total_v1.schema';
 import type { HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson } from './types/docs_readonly_mode_documents_total_v1.schema';
 import type { HttpsProtonMeDocsRealtimeDisconnectErrorTotalV1SchemaJson } from './types/docs_realtime_disconnect_error_total_v1.schema';
 import type { HttpsProtonMeDocsRealtimeEditLatencyHistogramV1SchemaJson } from './types/docs_realtime_edit_latency_histogram_v1.schema';
@@ -137,6 +138,8 @@ class Metrics extends MetricsBase {
     public docs_document_updates_total: Counter<HttpsProtonMeDocsDocumentUpdatesTotalV1SchemaJson>;
 
     public docs_failed_websocket_connections_total: Counter<HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson>;
+
+    public docs_public_sharing_custom_password_success_rate_total: Counter<HttpsProtonMeDocsPublicSharingCustomPasswordSuccessRateTotalV1SchemaJson>;
 
     public docs_readonly_mode_documents_total: Counter<HttpsProtonMeDocsReadonlyModeDocumentsTotalV1SchemaJson>;
 
@@ -385,6 +388,12 @@ class Metrics extends MetricsBase {
         this.docs_failed_websocket_connections_total =
             new Counter<HttpsProtonMeDocsFailedWebsocketConnectionsTotalV1SchemaJson>(
                 { name: 'docs_failed_websocket_connections_total', version: 1 },
+                this.requestService
+            );
+
+        this.docs_public_sharing_custom_password_success_rate_total =
+            new Counter<HttpsProtonMeDocsPublicSharingCustomPasswordSuccessRateTotalV1SchemaJson>(
+                { name: 'docs_public_sharing_custom_password_success_rate_total', version: 1 },
                 this.requestService
             );
 
