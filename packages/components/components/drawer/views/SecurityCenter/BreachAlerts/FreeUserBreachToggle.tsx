@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Toggle } from '@proton/components/components';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import type { SampleBreach } from '@proton/components/containers';
 import { getUpsellText } from '@proton/components/containers/credentialLeak/helpers';
 import { DARK_WEB_MONITORING_NAME } from '@proton/shared/lib/constants';

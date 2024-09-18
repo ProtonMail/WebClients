@@ -1,7 +1,8 @@
+import Price from '@proton/components/components/price/Price';
 import type { CYCLE } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 
-import { EllipsisLoader, Price } from '../../../../components';
+import { EllipsisLoader } from '../../../../components';
 import { getMonthFreeText } from '../../../offers/helpers/offerCopies';
 import PlanDiscount from '../helpers/PlanDiscount';
 import PlanPrice from '../helpers/PlanPrice';

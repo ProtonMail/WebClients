@@ -2,13 +2,14 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { PromotionBanner } from '@proton/components';
+import Info from '@proton/components/components/link/Info';
 import TestSamlModal from '@proton/components/containers/organization/sso/TestSamlModal';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
 import securityUpsellSvg from '@proton/styles/assets/img/illustrations/security-upsell.svg';
 
 import type { ModalStateProps } from '../../../components';
-import { Info, InputFieldTwo, Loader, useModalState } from '../../../components';
+import { InputFieldTwo, Loader, useModalState } from '../../../components';
 import { useCustomDomains, useOrganization, useSamlSSO, useUser } from '../../../hooks';
 import {
     SettingsLayout,

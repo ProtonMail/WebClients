@@ -1,5 +1,6 @@
 import { useUserSettings, userSettingsActions } from '@proton/account';
-import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, SettingsSection, Toggle } from '@proton/components';
+import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, SettingsSection } from '@proton/components';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { getEnableString } from '@proton/components/containers/credentialLeak/helpers';
 import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';

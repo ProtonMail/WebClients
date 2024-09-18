@@ -14,6 +14,7 @@ import {
 import { Button, Card } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -26,7 +27,7 @@ import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton
 import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import { InputFieldTwo, Toggle, Tooltip, useFormErrors } from '../../components';
+import { InputFieldTwo, Tooltip, useFormErrors } from '../../components';
 import {
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

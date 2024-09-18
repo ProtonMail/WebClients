@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { BetaBadge, Info } from '@proton/components';
+import { BetaBadge } from '@proton/components';
+import Info from '@proton/components/components/link/Info';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useFlag } from '@proton/unleash';

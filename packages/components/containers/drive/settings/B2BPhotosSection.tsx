@@ -4,9 +4,9 @@ import {
     SettingsLayout,
     SettingsLayoutLeft,
     SettingsLayoutRight,
-    Toggle,
     useDriveB2BPhotosEnabledSetting,
 } from '@proton/components';
+import Toggle from '@proton/components/components/toggle/Toggle';
 
 export const B2BPhotosSection = () => {
     const { b2bPhotosEnabled, isLoading, isSubmitting, handleChange } = useDriveB2BPhotosEnabledSetting();

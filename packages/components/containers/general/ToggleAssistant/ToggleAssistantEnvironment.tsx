@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Info, RadioGroup } from '@proton/components';
+import { RadioGroup } from '@proton/components';
+import Info from '@proton/components/components/link/Info';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { updateAIAssistant } from '@proton/shared/lib/api/settings';

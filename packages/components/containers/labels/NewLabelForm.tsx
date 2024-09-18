@@ -1,12 +1,14 @@
 import { c } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
+import Toggle from '@proton/components/components/toggle/Toggle';
 import { getColorName } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
 
-import { ColorPicker, Info, InputFieldTwo, Label, Toggle } from '../../components';
+import { ColorPicker, InputFieldTwo, Label } from '../../components';
 import { useMailSettings } from '../../hooks';
 import ParentFolderSelector from './ParentFolderSelector';
 

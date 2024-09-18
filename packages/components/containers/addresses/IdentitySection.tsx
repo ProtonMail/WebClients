@@ -2,13 +2,14 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import Info from '@proton/components/components/link/Info';
 import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Info, Loader, Option, SelectTwo } from '../../components';
+import { Loader, Option, SelectTwo } from '../../components';
 import { useAddresses, useMailSettings, useUser, useUserSettings } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';

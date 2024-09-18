@@ -4,6 +4,7 @@ import { useLocation } from 'react-router';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Price from '@proton/components/components/price/Price';
 import { isSplittedUser } from '@proton/payments';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, isFreeSubscription } from '@proton/shared/lib/constants';
@@ -11,7 +12,7 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { BillingPlatform, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
-import { Loader, Price, useModalTwoStatic } from '../../components';
+import { Loader, useModalTwoStatic } from '../../components';
 import { useModalState } from '../../components/modalTwo';
 import { usePaymentStatus, useSubscription, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
