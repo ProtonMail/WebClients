@@ -1,8 +1,6 @@
-import type { Key } from 'react';
 import { useCallback, useMemo, useState } from 'react';
 
 import useControlled from '@proton/hooks/useControlled';
-import generateUID from '@proton/utils/generateUID';
 
 export interface ModalStateProps {
     open: boolean;
@@ -12,7 +10,7 @@ export interface ModalStateProps {
 
 type ModalStateOptions = Partial<Pick<ModalStateProps, 'open' | 'onClose' | 'onExit'>>;
 type ModalStateReturnTuple = [
-    modalProps: ModalStateProps & { key: Key },
+    modalProps: ModalStateProps,
     openModal: (newValue: boolean) => void,
     renderModal: boolean,
 ];
@@ -25,7 +23,6 @@ export interface ModalStateReturnObj {
 const useModalState = (options?: ModalStateOptions): ModalStateReturnTuple => {
     const { open: controlledOpen, onClose, onExit } = options || {};
 
-    const [key, setKey] = useState(() => generateUID());
     const [open, setOpen] = useControlled(controlledOpen);
     const [render, setRender] = useState(!!open);
 
@@ -45,18 +42,16 @@ const useModalState = (options?: ModalStateOptions): ModalStateReturnTuple => {
 
     const handleExit = useCallback(() => {
         setRender(false);
-        setKey(generateUID());
         onExit?.();
     }, [onExit]);
 
-    const modalProps: ModalStateProps & { key: Key } = useMemo(
+    const modalProps: ModalStateProps = useMemo(
         () => ({
-            key,
             open: !!open,
             onClose: handleClose,
             onExit: handleExit,
         }),
-        [key, open, handleClose, handleExit]
+        [open, handleClose, handleExit]
     );
 
     return [modalProps, handleSetOpen, render] as const;
