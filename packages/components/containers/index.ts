@@ -23,7 +23,6 @@ export * from './general';
 export * from './labels';
 export * from './layout';
 export * from './layouts';
-export * from './modals';
 export * from './notifications';
 export * from './offers';
 export * from './onboarding';

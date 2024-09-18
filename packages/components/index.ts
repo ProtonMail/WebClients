@@ -216,6 +216,10 @@ export { default as SwipeActionSelect } from './containers/messages/SwipeActionS
 export { default as DisableMnemonicModal } from './containers/mnemonic/DisableMnemonicModal';
 export { default as GenerateMnemonicModal } from './containers/mnemonic/GenerateMnemonicModal';
 export { default as MobileAppSettingsSection } from './containers/mobile/MobileAppSettingsSection';
+export { default as ModalsChildren } from './containers/modals/Children';
+export { default as ModalsContainer } from './containers/modals/Container';
+export type { ModalPropsInjection } from './containers/modals/Container';
+export { default as ModalsProvider } from './containers/modals/Provider';
 export { default as DesktopNotificationSection } from './containers/notification/DesktopNotificationSection';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';

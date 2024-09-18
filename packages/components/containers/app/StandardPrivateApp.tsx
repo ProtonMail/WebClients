@@ -9,7 +9,7 @@ import { EventNotices } from '../eventManager';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import KeyTransparencyManager from '../keyTransparency/KeyTransparencyManager';
 import { DensityInjector } from '../layouts';
-import { ModalsChildren } from '../modals';
+import ModalsChildren from '../modals/Children';
 import PaymentSwitcher from '../payments/PaymentSwitcher';
 import { ThemeInjector } from '../themes/ThemeInjector';
 import ElectronBlockedContainer from './ElectronBlockedContainer';

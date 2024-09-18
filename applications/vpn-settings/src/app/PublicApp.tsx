@@ -14,9 +14,9 @@ import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/sr
 
 import type { OnLoginCallbackResult, ProtonLoginCallback } from '@proton/components';
 import { NotificationsChildren, UnAuthenticated, UnAuthenticatedApiProvider, useApi } from '@proton/components';
+import { ModalsChildren } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { AuthType } from '@proton/components/containers/login/interface';
-import ModalsChildren from '@proton/components/containers/modals/Children';
 import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import { APPS, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
