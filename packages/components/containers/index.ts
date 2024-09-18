@@ -25,7 +25,6 @@ export * from './labels';
 export * from './layout';
 export * from './layouts';
 export * from './logs';
-export * from './members';
 export * from './messages';
 export * from './mnemonic';
 export * from './mobile';
