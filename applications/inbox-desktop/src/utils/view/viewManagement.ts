@@ -176,10 +176,17 @@ function updateViewBounds(viewID: ViewID) {
     let verticalMargin = 0;
 
     if (isWindows) {
-        horizontalMargin = 16;
-        verticalMargin = 39;
+        const menuBarHeight = mainWindow.isMenuBarVisible() ? 20 : 0;
+
+        if (mainWindow.isFullScreen()) {
+            horizontalMargin = 0;
+            verticalMargin = menuBarHeight;
+        } else {
+            horizontalMargin = 16;
+            verticalMargin = 39 + menuBarHeight;
+        }
     } else if (isLinux) {
-        verticalMargin = 24;
+        verticalMargin = mainWindow.isFullScreen() ? 0 : 24;
     }
 
     const updatedBounds: Rectangle = {
