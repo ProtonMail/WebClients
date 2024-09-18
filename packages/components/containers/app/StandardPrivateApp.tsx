@@ -8,7 +8,7 @@ import { ContactProvider } from '../contacts';
 import { EventNotices } from '../eventManager';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import KeyTransparencyManager from '../keyTransparency/KeyTransparencyManager';
-import { DensityInjector } from '../layouts';
+import DensityInjector from '../layouts/DensityInjector';
 import ModalsChildren from '../modals/Children';
 import PaymentSwitcher from '../payments/PaymentSwitcher';
 import { ThemeInjector } from '../themes/ThemeInjector';
