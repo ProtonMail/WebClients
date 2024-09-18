@@ -98,6 +98,8 @@ export { default as TodayIcon } from './components/icon/TodayIcon';
 export { default as IconRow } from './components/iconRow/IconRow';
 export type { IconRowProps } from './components/iconRow/IconRow';
 export { default as MemoizedIconRow } from './components/iconRow/MemoizedIconRow';
+export { default as Checkbox } from './components/input/Checkbox';
+export type { CheckboxProps } from './components/input/Checkbox';
 export { default as Price } from './components/price/Price';
 export { default as CircularProgress } from './components/progress/CircularProgress';
 export { default as DynamicProgress } from './components/progress/DynamicProgress';

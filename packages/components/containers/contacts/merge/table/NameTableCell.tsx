@@ -1,6 +1,5 @@
+import Checkbox from '@proton/components/components/input/Checkbox';
 import clsx from '@proton/utils/clsx';
-
-import { Checkbox } from '../../../../components';
 
 interface Props {
     contactID: string;

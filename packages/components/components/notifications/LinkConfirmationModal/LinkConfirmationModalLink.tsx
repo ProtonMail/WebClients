@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import { useNotifications } from '@proton/components/hooks';
 import { isEdge, isIE11 } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Checkbox } from '../../input';
 import { Label } from '../../label';
 
 interface Props {

@@ -1,15 +1,8 @@
 import { c } from 'ttag';
 
 import { Field, Row } from '@proton/components';
-import {
-    Checkbox,
-    Option,
-    SelectTwo,
-    SortingTableHeader,
-    Table,
-    TableBody,
-    TableRow,
-} from '@proton/components/components';
+import { Option, SelectTwo, SortingTableHeader, Table, TableBody, TableRow } from '@proton/components/components';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useSortedList } from '@proton/components/hooks';
 import { SERVER_FEATURES, SORT_DIRECTION, USER_ROLES } from '@proton/shared/lib/constants';

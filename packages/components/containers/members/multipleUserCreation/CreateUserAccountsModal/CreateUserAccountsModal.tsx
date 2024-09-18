@@ -8,7 +8,6 @@ import validateAddUser from '@proton/account/members/validateAddUser';
 import { Button, Input } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
-    Checkbox,
     Marks,
     ModalTwo,
     ModalTwoContent,
@@ -26,12 +25,13 @@ import {
     useGetOrganizationKey,
     useGetUser,
     useGetUserKeys,
-    useKTVerifier,
     useNotifications,
     useSubscription,
 } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
+import Checkbox from '@proton/components/components/input/Checkbox';
 import Progress from '@proton/components/components/progress/Progress';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
