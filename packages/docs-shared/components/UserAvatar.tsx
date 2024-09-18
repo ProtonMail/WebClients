@@ -1,4 +1,5 @@
-import { useMemo, forwardRef, ForwardedRef, ComponentPropsWithoutRef } from 'react'
+import type { ForwardedRef, ComponentPropsWithoutRef } from 'react'
+import { useMemo, forwardRef } from 'react'
 import clsx from '@proton/utils/clsx'
 import tinycolor from 'tinycolor2'
 import { getAccentColorForUsername } from './getAccentColorForUsername'
