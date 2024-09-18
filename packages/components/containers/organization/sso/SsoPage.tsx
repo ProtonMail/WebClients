@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
-import { PromotionBanner } from '@proton/components';
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
+import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import TestSamlModal from '@proton/components/containers/organization/sso/TestSamlModal';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
