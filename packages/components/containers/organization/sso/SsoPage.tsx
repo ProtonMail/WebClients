@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { PromotionBanner } from '@proton/components';
 import TestSamlModal from '@proton/components/containers/organization/sso/TestSamlModal';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { Domain, SSO } from '@proton/shared/lib/interfaces';
@@ -16,7 +17,6 @@ import {
     SettingsParagraph,
     SettingsSectionWide,
 } from '../../account';
-import PromotionBanner from '../../banner/PromotionBanner';
 import { SubSettingsSection } from '../../layout';
 import { SUBSCRIPTION_STEPS, useSubscriptionModal } from '../../payments';
 import ConfigureSamlModal from './ConfigureSamlModal';

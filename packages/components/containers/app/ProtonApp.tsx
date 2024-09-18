@@ -1,12 +1,12 @@
 import type { ComponentType, ReactNode } from 'react';
 
+import { CacheProvider } from '@proton/components';
 import Icons from '@proton/icons/Icons';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import SpotlightProvider from '../../components/spotlight/Provider';
 import { PreventLeaveProvider } from '../../hooks';
-import CacheProvider from '../cache/Provider';
 import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
 import ConfigProvider from '../config/Provider';
 import ModalsProvider from '../modals/Provider';

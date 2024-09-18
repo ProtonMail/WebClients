@@ -21,7 +21,7 @@ interface Props {
     getEventTypeText: (eventType: string) => string;
 }
 
-const FilterAndSortEventsBlock = ({
+export const FilterAndSortEventsBlock = ({
     filter,
     keyword,
     setKeyword,
@@ -87,5 +87,3 @@ const FilterAndSortEventsBlock = ({
         </div>
     );
 };
-
-export default FilterAndSortEventsBlock;
