@@ -16,16 +16,18 @@ import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails } from '@proton/pass/store/selectors';
 import { PassFeature } from '@proton/pass/types/api/features';
 
-import { AliasSyncToggle } from './AliasSyncToggle';
+import { AliasStatusToggle } from './AliasStatusToggle';
 
 export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; actions: ReactNode }>> = ({
     revision,
+    history = false,
     optimistic = false,
     actions = [],
 }) => {
     const dispatch = useDispatch();
 
     const { data: item, shareId, itemId } = revision;
+
     const aliasEmail = revision.aliasEmail!;
     const note = useDeobfuscatedValue(item.metadata.note);
     const mailboxesForAlias = useSelector(selectAliasDetails(aliasEmail!));
@@ -45,7 +47,8 @@ export const AliasContent: FC<ItemContentProps<'alias', { optimistic: boolean; a
     });
 
     const ready = !(getAliasDetails.loading && mailboxesForAlias === undefined);
-    const aliasActions = canToggleStatus ? <AliasSyncToggle disabled={optimistic} revision={revision} /> : undefined;
+    const allowActions = canToggleStatus && !history;
+    const aliasActions = allowActions ? <AliasStatusToggle disabled={optimistic} revision={revision} /> : undefined;
 
     useEffect(() => {
         if (!optimistic) getAliasDetails.dispatch({ shareId, itemId, aliasEmail });
