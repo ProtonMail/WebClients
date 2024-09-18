@@ -215,6 +215,7 @@ export { default as SpamActionSelect } from './containers/messages/SpamActionSel
 export { default as SwipeActionSelect } from './containers/messages/SwipeActionSelect';
 export { default as DisableMnemonicModal } from './containers/mnemonic/DisableMnemonicModal';
 export { default as GenerateMnemonicModal } from './containers/mnemonic/GenerateMnemonicModal';
+export { default as DesktopNotificationSection } from './containers/notification/DesktopNotificationSection';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
 export { getOverallStatus } from './containers/recovery/getOverallStatus';
