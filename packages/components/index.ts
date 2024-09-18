@@ -102,3 +102,11 @@ export { default as UpsellModal } from './components/upsell/modal/UpsellModal';
 export { default as useUpsellConfig } from './components/upsell/useUpsellConfig';
 export { default as AppVersion } from './components/version/AppVersion';
 export { default as VideoInstructions } from './components/videoInstructions/VideoInstructions';
+
+export { AutoReplySection } from './containers/autoReply/AutoReplySection';
+export { VPNEvents } from './containers/b2bDashboard/VPN/VPNEvents';
+export { PassEvents } from './containers/b2bDashboard/Pass/PassEvents';
+export type { PassEvent } from './containers/b2bDashboard/Pass/interface';
+export { PromotionBanner } from './containers/banner/PromotionBanner';
+export { ProtonMailBridgeSection } from './containers/bridge/ProtonMailBridgeSection';
+export { CacheProvider } from './containers/cache/Provider';

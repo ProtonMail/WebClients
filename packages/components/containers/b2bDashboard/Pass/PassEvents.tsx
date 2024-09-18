@@ -13,10 +13,9 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
-import type { PassEvent } from '../../..';
 import { GenericError, SettingsSectionWide, usePaginationAsync } from '../../..';
 import { toCamelCase } from '../../credentialLeak/helpers';
-import FilterAndSortEventsBlock from '../FilterAndSortEventBlock';
+import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
 import PassEventsTable from './PassEventsTable';
 import {
     ALL_EVENTS_DEFAULT,
@@ -27,6 +26,7 @@ import {
     handlePassEventsDownload,
     uniquePassEventsArray,
 } from './helpers';
+import type { PassEvent } from './interface';
 
 export interface FilterModel {
     eventType: string;
@@ -49,7 +49,7 @@ const getQueryParams = (filter: FilterModel, searchType: 'ip' | 'email' | 'empty
     return { Email, Ip, Event, StartTime, EndTime };
 };
 
-const PassEvents = () => {
+export const PassEvents = () => {
     const api = useApi();
     const handleError = useErrorHandler();
     const { page, onNext, onPrevious, onSelect, reset } = usePaginationAsync(1);
@@ -232,5 +232,3 @@ const PassEvents = () => {
         </SettingsSectionWide>
     );
 };
-
-export default PassEvents;

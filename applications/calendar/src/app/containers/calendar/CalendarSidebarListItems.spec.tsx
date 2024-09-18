@@ -3,7 +3,7 @@ import { Router } from 'react-router-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
 
-import { CacheProvider } from '@proton/components/containers/cache';
+import { CacheProvider } from '@proton/components';
 import useUser from '@proton/components/hooks/useUser';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';

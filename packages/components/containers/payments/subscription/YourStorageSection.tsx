@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
+import { PromotionBanner } from '@proton/components';
 import { CalendarLogo, DriveLogo, MailLogo, PassLogo, SettingsLink, WalletLogo } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Meter from '@proton/components/components/progress/Meter';
@@ -32,7 +33,6 @@ import {
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
-import PromotionBanner from '../../banner/PromotionBanner';
 import upsellStorageDrive from './upsell-storage-drive-full.svg';
 import upsellStorageGlobal from './upsell-storage-global.svg';
 import upsellStorageIncrease from './upsell-storage-increase.svg';

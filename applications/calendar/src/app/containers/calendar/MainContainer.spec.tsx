@@ -4,7 +4,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createMemoryHistory } from 'history';
 
-import { CacheProvider } from '@proton/components/containers/cache';
+import { CacheProvider } from '@proton/components';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import useCalendars from '@proton/components/hooks/useCalendars';

@@ -16,7 +16,7 @@ import noop from '@proton/utils/noop';
 import { GenericError, SettingsSectionWide } from '../..';
 import { getCountryOptions } from '../../../helpers/countries';
 import { toCamelCase } from '../../credentialLeak/helpers';
-import FilterAndSortEventsBlock from '../FilterAndSortEventBlock';
+import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
 import { ALL_EVENTS_DEFAULT, PAGINATION_LIMIT, getLocalTimeStringFromDate, getSearchType } from '../Pass/helpers';
 import TogglingMonitoringModal from './TogglingMonitoringModal';
 import VPNEventsTable from './VPNEventsTable';
@@ -47,7 +47,7 @@ const getQueryParams = (filter: FilterModel, searchType: 'ip' | 'email' | 'empty
     return { Email, Ip, Event, StartTime, EndTime };
 };
 
-const VPNEvents = () => {
+export const VPNEvents = () => {
     const api = useApi();
     const handleError = useErrorHandler();
     const [userSettings] = useUserSettings();
@@ -322,5 +322,3 @@ const VPNEvents = () => {
         </SettingsSectionWide>
     );
 };
-
-export default VPNEvents;

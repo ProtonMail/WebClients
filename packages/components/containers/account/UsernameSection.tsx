@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, Card, CircleLoader, Href, InlineLinkButton } from '@proton/atoms';
+import { PromotionBanner } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
@@ -40,7 +41,6 @@ import {
     useSessionRecoveryState,
     useUser,
 } from '../../hooks';
-import PromotionBanner from '../banner/PromotionBanner';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import EditExternalAddressModal from './EditExternalAddressModal';
 import SettingsLayout from './SettingsLayout';
