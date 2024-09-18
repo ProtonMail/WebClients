@@ -163,6 +163,14 @@ export { default as useItemsSelection } from './containers/items/useItemsSelecti
 export { default as AddressKeysSection } from './containers/keys/AddressKeysSection';
 export { default as SelectKeyFiles } from './containers/keys/shared/SelectKeyFiles';
 export { default as UserKeysSection } from './containers/keys/UserKeysSection';
+export { default as KeyTransparencyManager } from './containers/keyTransparency/KeyTransparencyManager';
+export {
+    KeyTransparencyContext,
+    useKeyTransparencyContext,
+} from './containers/keyTransparency/useKeyTransparencyContext';
+export { default as useKTActivation } from './containers/keyTransparency/useKTActivation';
+export { default as useKTVerifier } from './containers/keyTransparency/useKTVerifier';
+export { default as useResetSelfAudit } from './containers/keyTransparency/useResetSelfAudit';
 export { default as AbuseModal } from './containers/login/AbuseModal';
 export { default as FooterDetails } from './containers/login/FooterDetails';
 export { default as MinimalLoginContainer } from './containers/login/MinimalLoginContainer';

@@ -30,7 +30,7 @@ import {
 } from '@proton/shared/lib/keys';
 import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
-import { useKTVerifier } from '../..';
+import useKTVerifier from '../../keyTransparency/useKTVerifier';
 import useVerifyOutboundPublicKeys from '../../keyTransparency/useVerifyOutboundPublicKeys';
 
 interface ForwardingAddressKeyParameters {

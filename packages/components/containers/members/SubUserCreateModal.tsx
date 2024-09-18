@@ -65,7 +65,7 @@ import {
     useOrganizationKey,
     useSubscription,
 } from '../../hooks';
-import { useKTVerifier } from '../keyTransparency';
+import useKTVerifier from '../keyTransparency/useKTVerifier';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import { AssistantUpdateSubscriptionButton } from '../payments';
 import MemberStorageSelector, { getInitialStorage, getStorageRange, getTotalStorage } from './MemberStorageSelector';

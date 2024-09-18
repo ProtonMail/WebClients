@@ -16,7 +16,7 @@ import {
     useUserKeys,
 } from '../../hooks';
 import { FeatureCode } from '../features';
-import { useKTVerifier } from '../keyTransparency';
+import useKTVerifier from '../keyTransparency/useKTVerifier';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
 import RecoverDataCard from './RecoverDataCard';
 import RecoverDataConfirmModal from './RecoverDataConfirmModal';

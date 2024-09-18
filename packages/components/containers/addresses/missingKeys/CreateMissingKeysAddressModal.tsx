@@ -50,7 +50,7 @@ import {
     useGetUserKeys,
     useNotifications,
 } from '../../../hooks';
-import { useKTVerifier } from '../../keyTransparency';
+import useKTVerifier from '../../keyTransparency/useKTVerifier';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
