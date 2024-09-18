@@ -1,4 +1,5 @@
-import { MOCK_TOKEN_RESPONSE, addTokensResolver, addTokensResponse, apiMock } from '@proton/testing';
+import { apiMock } from '@proton/testing/lib/api';
+import { MOCK_TOKEN_RESPONSE, addTokensResolver, addTokensResponse } from '@proton/testing/lib/payments/api-endpoints';
 
 import { type CardModel, getDefaultCard } from '../cardDetails';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
