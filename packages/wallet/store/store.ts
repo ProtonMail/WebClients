@@ -1,10 +1,9 @@
 import type { TypedStartListening } from '@reduxjs/toolkit';
 import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
-import { type WalletThunkArguments, extraThunkArguments } from '@proton/wallet/store/thunk';
-
-import { start } from './listener';
+import { start } from './listeners';
 import { rootReducer } from './rootReducer';
+import { type WalletThunkArguments, extraThunkArguments } from './thunk';
 
 export type WalletState = ReturnType<typeof rootReducer>;
 
@@ -25,7 +24,7 @@ export const setupStore = () => {
 
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
-        module.hot.accept('./listener', () => {
+        module.hot.accept('./listeners', () => {
             listenerMiddleware.clearListeners();
             start(startListening);
         });
@@ -43,5 +42,10 @@ export const extendStore = (newThunkArguments: Partial<WalletThunkArguments>) =>
 export type WalletStore = ReturnType<typeof setupStore>;
 export type WalletDispatch = WalletStore['dispatch'];
 type ExtraArgument = typeof extraThunkArguments;
+export type WalletThunkExtra = {
+    state: WalletState;
+    dispatch: WalletDispatch;
+    extra: ExtraArgument;
+};
 
 export type AppStartListening = TypedStartListening<WalletState, WalletDispatch, ExtraArgument>;

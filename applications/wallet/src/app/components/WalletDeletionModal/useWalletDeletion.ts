@@ -3,11 +3,11 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { useWalletApiClients, walletDeletion } from '@proton/wallet';
+import { useWalletApiClients } from '@proton/wallet';
+import { useWalletDispatch, walletDeletion } from '@proton/wallet/store';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
-import { useWalletDispatch } from '../../store/hooks';
 import { getThemeForWallet } from '../../utils';
 
 export const useWalletDeletion = ({ wallet, onDeletion }: { wallet: IWasmApiWalletData; onDeletion: () => void }) => {
@@ -15,13 +15,13 @@ export const useWalletDeletion = ({ wallet, onDeletion }: { wallet: IWasmApiWall
     const api = useWalletApiClients();
     const { createNotification } = useNotifications();
     const dispatch = useWalletDispatch();
-    const { decryptedApiWalletsData = [] } = useBitcoinBlockchainContext();
+    const { apiWalletsData = [] } = useBitcoinBlockchainContext();
 
     const { open } = useWalletSetupModalContext();
     const openBackupModal = () => {
         if (wallet.Wallet.Mnemonic) {
             open({
-                theme: getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID),
+                theme: getThemeForWallet(apiWalletsData, wallet.Wallet.ID),
                 apiWalletData: wallet,
                 kind: WalletSetupModalKind.WalletBackup,
             });

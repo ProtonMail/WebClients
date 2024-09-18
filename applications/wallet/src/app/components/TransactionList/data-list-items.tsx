@@ -11,7 +11,8 @@ import { SECOND } from '@proton/shared/lib/constants';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
 import arrowSendSvg from '@proton/styles/assets/img/illustrations/arrow-send.svg';
 import clsx from '@proton/utils/clsx';
-import { COMPUTE_BITCOIN_UNIT, useUserWalletSettings } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
+import { useUserWalletSettings } from '@proton/wallet/store';
 
 import { Price } from '../../atoms/Price';
 import { Skeleton } from '../../atoms/Skeleton';

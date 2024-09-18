@@ -11,13 +11,12 @@ import { Tooltip } from '@proton/components';
 import btcSvg from '@proton/styles/assets/img/illustrations/btc.svg';
 import clsx from '@proton/utils/clsx';
 import { BITCOIN, DEFAULT_FIAT_CURRENCY, type IWasmApiWalletData } from '@proton/wallet';
+import { usePriceGraphData, useWalletAccountExchangeRate } from '@proton/wallet/store';
 
 import { Button, CoreButton } from '../../atoms/Button';
 import { Price } from '../../atoms/Price';
 import { Skeleton } from '../../atoms/Skeleton';
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
-import { useWalletAccountExchangeRate } from '../../hooks/useWalletAccountExchangeRate';
-import { usePriceGraphData } from '../../store/hooks/usePriceGraphData';
 import { useBalance } from '../Balance/useBalance';
 
 import './MetricsAndCtas.scss';

@@ -8,15 +8,10 @@ import { useAddresses, useNotifications, useUserKeys } from '@proton/components/
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import {
-    encryptWalletDataWithWalletKey,
-    useWalletApiClients,
-    walletAccountDeletion,
-    walletAccountUpdate,
-} from '@proton/wallet';
+import { encryptWalletDataWithWalletKey, useWalletApiClients } from '@proton/wallet';
+import { useFiatCurrencies, walletAccountDeletion, walletAccountUpdate } from '@proton/wallet/store';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { useFiatCurrencies } from '../../store/hooks';
 import { getAccountWithChainDataFromManyWallets } from '../../utils';
 
 export const useAccountPreferences = (
@@ -51,14 +46,16 @@ export const useAccountPreferences = (
             const [encryptedWalletName] = await encryptWalletDataWithWalletKey([label], wallet.WalletKey.DecryptedKey);
 
             try {
-                const { Data: updatedAccount } = await api.wallet.updateWalletAccountLabel(
-                    wallet.Wallet.ID,
-                    walletAccount.ID,
-                    encryptedWalletName
-                );
+                await api.wallet.updateWalletAccountLabel(wallet.Wallet.ID, walletAccount.ID, encryptedWalletName);
 
                 createNotification({ text: c('Wallet Settings').t`Account name changed` });
-                dispatch(walletAccountUpdate(updatedAccount));
+                dispatch(
+                    walletAccountUpdate({
+                        walletID: wallet.Wallet.ID,
+                        walletAccountID: walletAccount.ID,
+                        update: { Label: label },
+                    })
+                );
             } catch (error: any) {
                 createNotification({
                     type: 'error',
@@ -110,14 +107,16 @@ export const useAccountPreferences = (
     const onChangeFiatCurrency = async (fiatCurrency: WasmFiatCurrencySymbol) => {
         const promise = async () => {
             try {
-                const { Data: updatedAccount } = await api.wallet.updateWalletAccountFiatCurrency(
-                    wallet.Wallet.ID,
-                    walletAccount.ID,
-                    fiatCurrency
-                );
+                await api.wallet.updateWalletAccountFiatCurrency(wallet.Wallet.ID, walletAccount.ID, fiatCurrency);
 
                 createNotification({ text: c('Wallet Settings').t`New fiat currency applied` });
-                dispatch(walletAccountUpdate(updatedAccount));
+                dispatch(
+                    walletAccountUpdate({
+                        walletID: wallet.Wallet.ID,
+                        walletAccountID: walletAccount.ID,
+                        update: { FiatCurrency: fiatCurrency },
+                    })
+                );
             } catch (error: any) {
                 createNotification({
                     type: 'error',
@@ -158,7 +157,13 @@ export const useAccountPreferences = (
                 }
 
                 createNotification({ text: c('Wallet Settings').t`Email address has been added` });
-                dispatch(walletAccountUpdate(updatedAccount));
+                dispatch(
+                    walletAccountUpdate({
+                        walletID: wallet.Wallet.ID,
+                        walletAccountID: walletAccount.ID,
+                        update: { Addresses: updatedAccount.Addresses },
+                    })
+                );
             } catch (error: any) {
                 createNotification({
                     type: 'error',
@@ -180,7 +185,13 @@ export const useAccountPreferences = (
                 );
 
                 createNotification({ text: c('Wallet Settings').t`Email address has been removed` });
-                dispatch(walletAccountUpdate(updatedAccount));
+                dispatch(
+                    walletAccountUpdate({
+                        walletID: wallet.Wallet.ID,
+                        walletAccountID: walletAccount.ID,
+                        update: { Addresses: updatedAccount.Addresses },
+                    })
+                );
             } catch (error: any) {
                 createNotification({
                     type: 'error',
@@ -210,8 +221,17 @@ export const useAccountPreferences = (
                     updatedAccount.ID
                 );
 
+                createNotification({ text: c('Wallet Settings').t`Email address has been replaced` });
+                dispatch(
+                    walletAccountUpdate({
+                        walletID: wallet.Wallet.ID,
+                        walletAccountID: walletAccount.ID,
+                        update: { Addresses: updatedAccount.Addresses },
+                    })
+                );
+
                 if (accountChainData) {
-                    await manageBitcoinAddressPool({
+                    void manageBitcoinAddressPool({
                         wallet: wallet.Wallet,
                         account: updatedAccount,
                         accountChainData,
@@ -222,9 +242,6 @@ export const useAccountPreferences = (
                         });
                     });
                 }
-
-                dispatch(walletAccountUpdate(updatedAccount));
-                createNotification({ text: c('Wallet Settings').t`Email address has been replaced` });
             } catch (error: any) {
                 createNotification({
                     type: 'error',

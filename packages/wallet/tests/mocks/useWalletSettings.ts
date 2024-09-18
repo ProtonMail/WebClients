@@ -1,4 +1,4 @@
-import * as useWalletSettingsModule from '../../store';
+import * as useWalletSettingsModule from '../../store/hooks/useWalletSettings';
 
 export const mockUseWalletSettings = (
     mockedValue?: Partial<ReturnType<typeof useWalletSettingsModule.useWalletSettings>>

@@ -15,14 +15,14 @@ export const LockedWalletContainer = () => {
 
     const [walletDeletionModalState, setWalletDeletionModalState] = useModalState();
 
-    const { decryptedApiWalletsData } = useBitcoinBlockchainContext();
+    const { apiWalletsData } = useBitcoinBlockchainContext();
 
     const wallet = useMemo(
-        () => decryptedApiWalletsData?.find(({ Wallet }) => Wallet.ID === walletId),
-        [walletId, decryptedApiWalletsData]
+        () => apiWalletsData?.find(({ Wallet }) => Wallet.ID === walletId),
+        [walletId, apiWalletsData]
     );
 
-    if (!decryptedApiWalletsData) {
+    if (!apiWalletsData) {
         return <CircleLoader />;
     }
 

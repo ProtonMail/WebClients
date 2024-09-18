@@ -5,11 +5,11 @@ import { Prompt, useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletPlaneImg from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
-import { acceptTermsAndConditions, useUserWalletSettings, useWalletApiClients } from '@proton/wallet';
+import { useWalletApiClients } from '@proton/wallet';
+import { acceptTermsAndConditions, useUserWalletSettings, useWalletDispatch } from '@proton/wallet/store';
 
 import { Button } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
-import { useWalletDispatch } from '../../store/hooks';
 import { getTermAndConditionsSentence } from '../../utils/legal';
 
 interface WalletWelcomePromptProps {
