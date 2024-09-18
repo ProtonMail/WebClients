@@ -124,6 +124,12 @@ const createViews = (session: Session) => {
         const handleBeforeInput = (_event: unknown, input: Input) => {
             if (input.key === "Alt" && input.type === "keyDown") {
                 mainWindow!.setMenuBarVisibility(!mainWindow!.isMenuBarVisible());
+
+                for (const viewID of Object.keys(browserViewMap) as ViewID[]) {
+                    if (browserViewMap[viewID]) {
+                        updateViewBounds(viewID);
+                    }
+                }
             }
         };
 
