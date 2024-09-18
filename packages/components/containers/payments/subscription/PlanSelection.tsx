@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import {
     CalendarLogo,
     DriveLogo,
-    Icon,
     MailLogo,
     Option,
     PassLogo,
@@ -14,6 +13,7 @@ import {
     VpnLogo,
     WalletLogo,
 } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import Price from '@proton/components/components/price/Price';
 import { useUser } from '@proton/components/hooks';

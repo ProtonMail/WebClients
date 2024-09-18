@@ -2,11 +2,12 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import Loader from '@proton/components/components/loader/Loader';
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
-import { InputFieldTwo, Loader, Option, SearchableSelect } from '../../components';
+import { InputFieldTwo, Option, SearchableSelect } from '../../components';
 import type { OptionProps } from '../../components/select/Select';
 import { useFolders } from '../../hooks';
 

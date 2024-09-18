@@ -6,6 +6,8 @@ import { useMemberAddresses } from '@proton/account';
 import { getDomainAddressError } from '@proton/account/members/validateAddUser';
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import Loader from '@proton/components/components/loader/Loader';
 import { GenericError } from '@proton/components/containers';
 import { ALL_MEMBERS_ID, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
@@ -13,7 +15,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getOrganizationKeyInfo, validateOrganizationKey } from '@proton/shared/lib/organization/helper';
 
-import { Loader, SettingsLink, useModalState } from '../../components';
+import { useModalState } from '../../components';
 import {
     useAddresses,
     useCustomDomains,

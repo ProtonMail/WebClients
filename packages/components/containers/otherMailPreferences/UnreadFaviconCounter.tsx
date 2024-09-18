@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Info } from '../../components';
+import Info from '@proton/components/components/link/Info';
+
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight } from '../account';
 import { UnreadFaviconCounterToggle } from './UnreadFaviconCounterToggle';
 

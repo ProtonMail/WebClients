@@ -9,7 +9,6 @@ import { Button, Input } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import {
     Checkbox,
-    Icon,
     Marks,
     ModalTwo,
     ModalTwoContent,
@@ -31,14 +30,14 @@ import {
     useNotifications,
     useSubscription,
 } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import Progress from '@proton/components/components/progress/Progress';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { MEMBER_PRIVATE } from '@proton/shared/lib/constants';
-import { MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { escapeRegex, getMatches } from '@proton/shared/lib/helpers/regex';

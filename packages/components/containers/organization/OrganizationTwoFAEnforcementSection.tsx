@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/components';
 import Info from '@proton/components/components/link/Info';
+import Loader from '@proton/components/components/loader/Loader';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { queryEnforceTwoFA, queryRemoveTwoFA } from '@proton/shared/lib/api/organization';
 import { APPS, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
@@ -11,7 +12,6 @@ import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/sh
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
-import { Loader } from '../../components';
 import { useConfig, useNotifications } from '../../hooks';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, SettingsParagraph } from '../account';
 

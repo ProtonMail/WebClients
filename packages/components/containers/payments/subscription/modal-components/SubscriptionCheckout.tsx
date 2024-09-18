@@ -2,7 +2,8 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { Badge, Info } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
+import Info from '@proton/components/components/link/Info';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import type { FullPlansMap, PaymentMethodStatusExtended } from '@proton/payments';
 import { getAvailableCurrencies } from '@proton/payments';

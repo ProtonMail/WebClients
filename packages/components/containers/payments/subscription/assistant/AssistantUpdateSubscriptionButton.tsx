@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { SettingsLink } from '@proton/components/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useSubscription, useUser } from '@proton/components/hooks';
 import { APPS, APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRef } from '@proton/shared/lib/helpers/upsell';

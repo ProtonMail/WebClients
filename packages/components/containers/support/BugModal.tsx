@@ -10,7 +10,6 @@ import {
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Form,
-    Icon,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
@@ -23,6 +22,7 @@ import {
     useFormErrors,
 } from '@proton/components';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Icon from '@proton/components/components/icon/Icon';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';

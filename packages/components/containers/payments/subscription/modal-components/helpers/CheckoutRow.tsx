@@ -2,11 +2,10 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import Price from '@proton/components/components/price/Price';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
-
-import { EllipsisLoader } from '../../../../../components';
 
 export interface Props {
     title: ReactNode;

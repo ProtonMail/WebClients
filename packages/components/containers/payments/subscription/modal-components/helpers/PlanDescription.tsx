@@ -1,12 +1,7 @@
 import { c } from 'ttag';
 
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Icon,
-} from '@proton/components';
+import { Collapsible, CollapsibleContent, CollapsibleHeader, CollapsibleHeaderIconButton } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
 import type { Included } from '@proton/shared/lib/helpers/checkout';
 
 export const PlanDescription = ({ list }: { list: Included[] }) => {

@@ -1,6 +1,6 @@
 import { ButtonLike } from '@proton/atoms';
-import { SettingsLink } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useConfig, useSubscription, useUser } from '@proton/components/hooks';
 import {
     DRIVE_SHORT_APP_NAME,

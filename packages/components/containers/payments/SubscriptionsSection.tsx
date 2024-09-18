@@ -3,6 +3,7 @@ import { c, msgid } from 'ttag';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import Icon from '@proton/components/components/icon/Icon';
+import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
 import { useLoading } from '@proton/hooks';
 import { onSessionMigrationPaymentsVersion } from '@proton/payments';
@@ -20,7 +21,7 @@ import { Renew } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { Loader, Table, TableBody, TableCell, TableHeader, TableRow, Time, Tooltip } from '../../components';
+import { Table, TableBody, TableCell, TableHeader, TableRow, Time, Tooltip } from '../../components';
 import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
 import { useApi, useEventManager, usePlans, usePreferredPlansMap, useSubscription, useUser } from '../../hooks';

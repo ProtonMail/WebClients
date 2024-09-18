@@ -3,12 +3,13 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Loader from '@proton/components/components/loader/Loader';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import noop from '@proton/utils/noop';
 
-import { Loader, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useAddresses, useContactGroups } from '../../../hooks';
 import useContactList from '../hooks/useContactList';
 import ContactView from '../view/ContactView';

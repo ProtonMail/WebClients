@@ -3,7 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { FormModal, Loader, PrimaryButton } from '@proton/components/components';
+import { FormModal } from '@proton/components/components';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
+import Loader from '@proton/components/components/loader/Loader';
 import PaymentVerificationImage from '@proton/components/containers/payments/PaymentVerificationImage';
 import { useNotifications } from '@proton/components/hooks';
 import { type CardPayment, PAYMENT_METHOD_TYPES } from '@proton/payments';

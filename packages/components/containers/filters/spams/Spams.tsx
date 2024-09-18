@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import {
     LabelStack,
-    Loader,
     Pagination,
     SearchInput,
     Table,
@@ -14,6 +13,7 @@ import {
     TableRow,
     useModalState,
 } from '@proton/components/components';
+import Loader from '@proton/components/components/loader/Loader';
 import { useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 

@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Prompt, useSessionRecoveryGracePeriodHoursRemaining } from '@proton/components';
-import { SettingsLink } from '@proton/components/components';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 
 const SessionRecoveryResetConfirmedPrompt = ({ open, onClose }: { open?: boolean; onClose?: () => void }) => {
     const gracePeriodHoursRemaining = useSessionRecoveryGracePeriodHoursRemaining();

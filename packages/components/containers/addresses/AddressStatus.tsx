@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Badge, Tooltip } from '@proton/components';
+import { Tooltip } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 

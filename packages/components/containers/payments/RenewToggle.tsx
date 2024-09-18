@@ -4,12 +4,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import PrimaryButton from '@proton/components/components/button/PrimaryButton';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { Autopay } from '@proton/payments';
 import { getHasConsumerVpnPlan } from '@proton/shared/lib/helpers/subscription';
 
-import { PrimaryButton } from '../../components/button';
 import type { ModalProps } from '../../components/modalTwo';
 import { useModalTwo } from '../../components/modalTwo/useModalTwo';
 import { useSubscription } from '../../hooks';

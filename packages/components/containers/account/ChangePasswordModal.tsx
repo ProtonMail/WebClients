@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { signoutAction } from '@proton/account';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { useDispatch } from '@proton/redux-shared-store';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
@@ -32,7 +33,6 @@ import {
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     PasswordInputTwo,
-    SettingsLink,
     useFormErrors,
 } from '../../components';
 import {

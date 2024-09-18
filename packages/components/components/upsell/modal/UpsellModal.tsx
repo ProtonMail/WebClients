@@ -4,9 +4,10 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import type { ModalSize, ModalStateProps } from '@proton/components/components';
-import { ModalTwo, ModalTwoContent, ModalTwoHeader, SettingsLink } from '@proton/components/components';
+import { ModalTwo, ModalTwoContent, ModalTwoHeader } from '@proton/components/components';
 import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import calendarHeaderImage from '@proton/styles/assets/img/illustrations/upsell-calendar-header.svg';
 import composerAssistantImage from '@proton/styles/assets/img/illustrations/upsell-composer-assistant.svg';
 import mailHeaderImage from '@proton/styles/assets/img/illustrations/upsell-mail-header.svg';

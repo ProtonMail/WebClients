@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
+import Loader from '@proton/components/components/loader/Loader';
 import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
@@ -19,7 +20,6 @@ import type { NotificationModel, SubscribedCalendar, VisualCalendar } from '@pro
 import {
     ColorPicker,
     InputFieldTwo,
-    Loader,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Loader, type ModalStateProps } from '@proton/components/components';
+import { type ModalStateProps } from '@proton/components/components';
+import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
 import UpsellModal from '@proton/components/components/upsell/modal/UpsellModal';
 import useUpsellConfig from '@proton/components/components/upsell/useUpsellConfig';

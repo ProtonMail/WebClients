@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
+import Info from '@proton/components/components/link/Info';
 import clsx from '@proton/utils/clsx';
 
-import { Info } from '../../../components';
 import type { DecreaseBlockedReason } from './helpers';
 
 export const getIsValidValue = (min: number, max: number, step: number, newValue?: number) => {

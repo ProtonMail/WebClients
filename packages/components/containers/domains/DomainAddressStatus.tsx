@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Badge } from '@proton/components';
+import Badge from '@proton/components/components/badge/Badge';
 import { ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { DomainAddress } from '@proton/shared/lib/interfaces';
 

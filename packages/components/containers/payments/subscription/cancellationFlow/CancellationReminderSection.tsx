@@ -4,8 +4,6 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import {
-    Icon,
-    SettingsLink,
     SettingsSection,
     useAppTitle,
     useModalState,
@@ -13,6 +11,8 @@ import {
     useUser,
     useVPNServersCount,
 } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 

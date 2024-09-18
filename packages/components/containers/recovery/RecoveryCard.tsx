@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import Loader from '@proton/components/components/loader/Loader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -10,7 +11,7 @@ import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { AppLink, Loader, SubTitle } from '../../components';
+import { AppLink, SubTitle } from '../../components';
 import {
     useHasOutdatedRecoveryFile,
     useIsDataRecoveryAvailable,
