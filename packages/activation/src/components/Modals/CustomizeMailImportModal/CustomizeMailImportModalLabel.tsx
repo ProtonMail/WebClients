@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Field, Icon, Label, LabelStack, Row, Tooltip, useModalState } from '@proton/components';
-import type { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
-import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import { EditLabelModal, Field, Icon, Label, LabelStack, Row, Tooltip, useModalState } from '@proton/components';
+import type { LabelModel } from '@proton/components';
 
 interface Props {
     label: Pick<LabelModel, 'Name' | 'Color' | 'Type'>;

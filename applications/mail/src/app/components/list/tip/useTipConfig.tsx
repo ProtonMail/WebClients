@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
+import { EditLabelModal } from '@proton/components';
 import ProtonSentinelUpsellModal from '@proton/components/components/drawer/views/SecurityCenter/ProtonSentinel/modal/ProtonSentinelUpsellModal';
 import { useModalStateObject } from '@proton/components/components/modalTwo';
 import AutoDeleteUpsellModal from '@proton/components/components/upsell/modal/types/AutoDeleteUpsellModal';
 import IncreasePrivacyUpsellModal from '@proton/components/components/upsell/modal/types/IncreasePrivacyUpsellModal';
 import LabelsUpsellModal from '@proton/components/components/upsell/modal/types/LabelsUpsellModal';
 import PmMeUpsellModal from '@proton/components/components/upsell/modal/types/PmMeUpsellModal';
-import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 import { useApi, useEventManager, useNotifications, useUser } from '@proton/components/hooks';
 import { useFolders, useLabels } from '@proton/components/hooks/useCategories';
 import { updateAutoDelete } from '@proton/shared/lib/api/mailSettings';
