@@ -1,5 +1,7 @@
 import { ButtonLike } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import IntegerInput from '@proton/components/components/input/IntegerInput';
+import TimeInput from '@proton/components/components/input/TimeInput';
 import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
 import {
     NOTIFICATION_INPUT_ID,
@@ -9,7 +11,7 @@ import {
 import type { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import clsx from '@proton/utils/clsx';
 
-import { IntegerInput, Option, SelectTwo, TimeInput, Tooltip } from '../../../../components';
+import { Option, SelectTwo, Tooltip } from '../../../../components';
 import {
     getDaysBefore,
     getHoursBefore,
