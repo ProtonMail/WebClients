@@ -2243,6 +2243,17 @@
         "Ajude-nos a melhorar"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirme a perda de ${ PASS_APP_NAME } desconto\nespecial"
+      ],
+      "Remove discount": [
+        "Remover o desconto"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "A sua ${ PLAN_NAMES[PLANS.PASS] } Assinatura, está a um preço especial de ${ price } por ano. Rebaixando para um plano Livre, você perderá o desconto para sempre, mesmo se você fizer um upgrade de novo no futuro."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Histórico de versão estendido"
@@ -2895,7 +2906,7 @@
         "Ocorreu um erro, tente novamente"
       ],
       "Family name updated": [
-        "Nome da família atualizado"
+        "Sobrenome atualizado"
       ],
       "Member updated": [
         "Membro atualizado"
@@ -3875,7 +3886,7 @@
         "Monitoramento de gateways está desativado."
       ],
       "Gateways monitoring is enabled.": [
-        "Gateways monitoring está habilitado."
+        "Monitoramento de gateways está ativado."
       ],
       "Get ${ upsellPlanName }": [
         "Obter ${ upsellPlanName }"
@@ -7782,7 +7793,7 @@
     },
     "saml: Error": {
       "Sign-in wasn't successfully completed.": [
-        "O início de sessão não foi completado."
+        "O início de sessão não foi concluído."
       ],
       "Something went wrong": [
         "Algo deu errado"
@@ -8685,6 +8696,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Seu plano foi adquirido usando um aplicativo para iOS. Portanto, para fazer alterações em seu plano ou atualizar seus detalhes de pagamento, você precisará acessar a Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "A assinatura será rebaixada no final do ciclo de cobrança."
       ]
     },
     "Subscription price": {
@@ -10176,7 +10192,7 @@
         "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ],
       "Group membership paused": [
-        "Pausa na associação do grupo"
+        "Associação ao grupo pausada"
       ],
       "Sending member invitation": [
         "Enviando convite ao membro"
@@ -10215,7 +10231,7 @@
         "Excluir solicitação"
       ],
       "Delete request to access user data?": [
-        "Deletar requisição de acesso aos dados do usuário?"
+        "Excluir solicitação para acessar dados do usuário?"
       ],
       "Once the user consents, you will be able to help them regain account access or manage their data.": [
         "Após o consentimento do usuário, você poderá ajudá-lo a recuperar o acesso à conta ou gerenciar seus dados."
@@ -10233,13 +10249,13 @@
         "Requisição para gerenciar conta enviada, esperando a aprovação do usuário"
       ],
       "Request user permission for data access": [
-        "Requisição da permissão do usuário para acessar os dados."
+        "Solicitar permissão do usuário para acesso aos dados"
       ],
       "Revoke access": [
         "Revogar acesso"
       ],
       "Revoke administrator access?": [
-        "Revogar acesso administrativo?"
+        "Revogar o acesso de administrador?"
       ],
       "Send request": [
         "Enviar solicitação"
@@ -10254,7 +10270,7 @@
         "Isso revogará a permissão do administrador para gerenciar a conta deste usuário."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
-        "Para continuar, você precisará solicitar a permissão do usuário para acessar seus dados ou redefinir sua senha."
+        "Para continuar, você precisará solicitar a permissão do usuário para acessar os dados ou redefinir a senha dele."
       ]
     },
     "upsell panel": {
