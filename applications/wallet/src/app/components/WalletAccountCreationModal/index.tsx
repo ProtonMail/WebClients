@@ -23,17 +23,17 @@ import {
     BASE_INDEX_OPTIONS,
     DEFAULT_INDEX,
     SCRIPT_TYPES,
+    decryptWalletAccount,
     encryptWalletDataWithWalletKey,
     getDefaultWalletAccountName,
     useWalletApiClients,
-    walletAccountCreation,
 } from '@proton/wallet';
+import { useWalletDispatch, walletAccountCreation } from '@proton/wallet/store';
 
 import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
 import { ModalSectionHeader } from '../../atoms/ModalSection';
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { useWalletDispatch } from '../../store/hooks';
 import type { SubTheme } from '../../utils';
 import { getDescriptionByScriptType, getLabelByScriptType, isUndefined } from '../../utils';
 
@@ -114,19 +114,29 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
             return;
         }
 
-        await api.wallet
-            .createWalletAccount(Wallet.ID, derivationPath, encryptedLabel, selectedScriptType)
-            .then(async (createdAccount) => {
-                createNotification({ text: c('Wallet Account').t`Your account was successfully created` });
-                dispatch(walletAccountCreation(createdAccount.Data));
-                modalProps.onClose?.();
-            })
-            .catch((error: any) => {
-                createNotification({
-                    text: error?.error ?? c('Wallet Account').t`Could not add account to wallet`,
-                    type: 'error',
-                });
+        try {
+            const createdAccount = await api.wallet.createWalletAccount(
+                Wallet.ID,
+                derivationPath,
+                encryptedLabel,
+                selectedScriptType
+            );
+
+            createNotification({ text: c('Wallet Account').t`Your account was successfully created` });
+
+            const decryptedAccount = await decryptWalletAccount({
+                walletKey: WalletKey.DecryptedKey,
+                walletAccount: createdAccount.Data,
             });
+
+            dispatch(walletAccountCreation(decryptedAccount));
+            modalProps.onClose?.();
+        } catch (error: any) {
+            createNotification({
+                text: error?.error ?? c('Wallet Account').t`Could not add account to wallet`,
+                type: 'error',
+            });
+        }
     };
 
     return (

@@ -1,14 +1,13 @@
-import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';
 import { CacheType } from '@proton/redux-utilities';
 import { MINUTE } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { selectExchangeRate } from './slices';
-import { exchangeRateThunk, parseKey } from './slices/exchangeRate';
-import type { AppStartListening } from './store';
+import { selectExchangeRate } from '../slices';
+import { exchangeRateThunk, parseKey } from '../slices/exchangeRate';
+import type { AppStartListening } from '../store';
 
-const startPollingExchangeRate = (startListening: AppStartListening) => {
+export const startPollingExchangeRateListener = (startListening: AppStartListening) => {
     startListening({
         predicate: (action, previousState, currentState) => {
             const previousValue = selectExchangeRate(previousState).value;
@@ -48,9 +47,4 @@ const startPollingExchangeRate = (startListening: AppStartListening) => {
             } catch (e) {}
         },
     });
-};
-
-export const start = (startListening: AppStartListening) => {
-    startSharedListening(startListening);
-    startPollingExchangeRate(startListening);
 };

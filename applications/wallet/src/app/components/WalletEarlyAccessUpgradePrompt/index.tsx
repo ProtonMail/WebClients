@@ -19,11 +19,10 @@ import { APPS, BRAND_NAME, PLANS, WALLET_APP_NAME } from '@proton/shared/lib/con
 import { getAppStaticUrl, getStaticURL } from '@proton/shared/lib/helpers/url';
 import walletClock from '@proton/styles/assets/img/wallet/wallet-clock.jpg';
 import clsx from '@proton/utils/clsx';
-import { useUserWalletSettings } from '@proton/wallet';
+import { useGetUserEligibility, useUserWalletSettings } from '@proton/wallet/store';
 
 import { Button, CoreButtonLike, Modal } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
-import { useGetUserEligibility } from '../../store/hooks/useUserEligibility';
 import { getTermAndConditionsSentence } from '../../utils/legal';
 
 export const WalletEarlyAccessUpgradePrompt = ({ ...modalProps }: ModalOwnProps) => {

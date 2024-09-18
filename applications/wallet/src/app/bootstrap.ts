@@ -22,9 +22,9 @@ import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
+import { extendStore, setupStore } from '@proton/wallet/store';
 
 import locales from './locales';
-import { extendStore, setupStore } from './store/store';
 
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './containers/MainContainer').then((result) => result.default);

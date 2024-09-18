@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import { Icon, Tooltip } from '@proton/components';
 import { useAddresses } from '@proton/components/hooks';
-import { useDecryptedApiWalletsData } from '@proton/wallet';
 
 import { Select } from '../../atoms';
 import { ANONYMOUS_SENDER_ADDRESS_ID } from '../../constants/wallet';
+import { useBitcoinBlockchainContext } from '../../contexts';
 
 interface Props {
     value?: string;
@@ -30,10 +30,10 @@ export const EmailSelect = ({ value, onChange, extraOptions }: Props) => {
         }
     }, [addresses, addressesById, onChange, value]);
 
-    const { decryptedApiWalletsData } = useDecryptedApiWalletsData();
+    const { apiWalletsData } = useBitcoinBlockchainContext();
     const walletAccountEmails = useMemo(
-        () => decryptedApiWalletsData?.flatMap((w) => w.WalletAccounts.flatMap((w) => w.Addresses.map((a) => a.Email))),
-        [decryptedApiWalletsData]
+        () => apiWalletsData?.flatMap((w) => w.WalletAccounts.flatMap((w) => w.Addresses.map((a) => a.Email))),
+        [apiWalletsData]
     );
 
     const icon = (option: { Email: string; ID: string }) => {
