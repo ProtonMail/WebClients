@@ -1,4 +1,4 @@
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { type DecryptedKey } from '@proton/shared/lib/interfaces';
 import { verifySignedData } from '@proton/wallet';
 
 export const expectSignedBy = async (k: DecryptedKey, a?: string, w?: string) => {

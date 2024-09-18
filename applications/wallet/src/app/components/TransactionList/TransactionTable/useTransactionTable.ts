@@ -22,7 +22,7 @@ export const useTransactionTable = ({
     sortOrder: WasmSortOrder;
 }) => {
     const walletId = wallet.Wallet.ID;
-    const { walletsChainData, getSyncingData, decryptedApiWalletsData } = useBitcoinBlockchainContext();
+    const { walletsChainData, getSyncingData, apiWalletsData } = useBitcoinBlockchainContext();
     const { openDrawer, drawer, setDrawerData } = useWalletDrawerContext();
 
     const syncingData = getSyncingData(walletId, walletAccountId);
@@ -98,14 +98,14 @@ export const useTransactionTable = ({
     const handleClickRow = useCallback(
         async (transaction: TransactionData) => {
             openDrawer({
-                theme: getThemeForWallet(decryptedApiWalletsData ?? [], wallet.Wallet.ID),
+                theme: getThemeForWallet(apiWalletsData ?? [], wallet.Wallet.ID),
                 transaction,
                 kind: 'transaction-data',
                 onClickEditNote: () => setNoteModalState({ transaction }),
                 onClickEditSender: () => setUnknownSenderModal({ transaction }),
             });
         },
-        [decryptedApiWalletsData, openDrawer, setNoteModalState, setUnknownSenderModal, wallet.Wallet.ID]
+        [apiWalletsData, openDrawer, setNoteModalState, setUnknownSenderModal, wallet.Wallet.ID]
     );
 
     const handleTxUpdate = useCallback(

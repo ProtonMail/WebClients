@@ -16,7 +16,7 @@ import {
     PasswordInputTwo,
     useModalState,
 } from '@proton/components';
-import { useUserWalletSettings } from '@proton/wallet';
+import { useUserWalletSettings } from '@proton/wallet/store';
 
 import { Button, CoreButton, Input, Modal } from '../../atoms';
 import { CurrencySelect } from '../../atoms/CurrencySelect';

@@ -24,14 +24,12 @@ import useLoading from '@proton/hooks/useLoading';
 import banxaLogo from '@proton/styles/assets/img/brand/banxa.svg';
 import moonpayLogo from '@proton/styles/assets/img/brand/moonpay.svg';
 import rampLogo from '@proton/styles/assets/img/brand/ramp.svg';
+import { useCountriesByProvider, useFiatCurrenciesByProvider, useGetQuotesByProvider } from '@proton/wallet/store';
+import type { GetQuotesArgs } from '@proton/wallet/store';
 
 import type { CoreSearchableSelectProps } from '../../../atoms';
 import { Button, Input, SearchableSelect, Select } from '../../../atoms';
 import { CurrencySelect } from '../../../atoms/CurrencySelect';
-import { useCountriesByProvider } from '../../../store/hooks/useCountriesByProvider';
-import { useFiatCurrenciesByProvider } from '../../../store/hooks/useFiatCurrenciesByProvider';
-import { useGetQuotesByProvider } from '../../../store/hooks/useQuotesByProvider';
-import type { GetQuotesArgs } from '../../../store/slices/quotesByProvider';
 import { useDebounceEffect } from '../../../utils/hooks/useDebouncedEffect';
 import { DisclaimerModal } from './DisclaimerModal';
 

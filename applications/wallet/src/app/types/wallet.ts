@@ -1,4 +1,5 @@
-import type { WasmAccount, WasmWallet } from '@proton/andromeda';
+import type { WasmAccount, WasmApiWalletAccount, WasmWallet } from '@proton/andromeda';
+import { type IWasmApiWalletData } from '@proton/wallet';
 
 export type AccountWithChainData = {
     account: WasmAccount;
@@ -15,3 +16,7 @@ export type WalletWithChainData = {
 };
 
 export type WalletChainDataByWalletId = Partial<Record<string, WalletWithChainData>>;
+
+export type WalletMap = Partial<
+    Record<string, { wallet: IWasmApiWalletData; accounts: Partial<Record<string, WasmApiWalletAccount>> }>
+>;

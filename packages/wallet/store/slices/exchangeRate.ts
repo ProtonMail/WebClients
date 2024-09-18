@@ -5,7 +5,8 @@ import { getInitialModelState } from '@proton/account';
 import type { WasmApiExchangeRate, WasmFiatCurrencySymbol } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
 import { SECOND } from '@proton/shared/lib/constants';
-import type { WalletThunkArguments } from '@proton/wallet';
+
+import type { WalletThunkArguments } from '../thunk';
 
 const name = 'exchange_rate' as const;
 

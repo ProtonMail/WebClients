@@ -1,9 +1,11 @@
 import type { ReactNode } from 'react';
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 
-import { useBitcoinNetwork, useDecryptedApiWalletsData } from '@proton/wallet';
+import { buildMapFromWallets } from '@proton/wallet';
+import { useApiWalletsData, useBitcoinNetwork } from '@proton/wallet/store';
 
 import { BitcoinBlockchainContext } from '.';
+import { type WalletMap } from '../../types';
 import { useBitcoinAddresses } from './useBitcoinAddresses';
 import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 import { useWalletsChainData } from './useWalletsChainData';
@@ -14,12 +16,12 @@ interface Props {
 
 export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
     const [network] = useBitcoinNetwork();
-    const {
-        decryptedApiWalletsData,
-        walletMap,
-        loading: loadingApiWalletsData,
-        setPassphrase,
-    } = useDecryptedApiWalletsData();
+
+    const [apiWalletsData, loadingApiWalletsData] = useApiWalletsData();
+
+    const walletMap: WalletMap = useMemo(() => {
+        return buildMapFromWallets(apiWalletsData);
+    }, [apiWalletsData]);
 
     const {
         walletsChainData,
@@ -31,12 +33,12 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
         incrementSyncKey,
         isSyncing,
         getSyncingData,
-    } = useWalletsChainData(decryptedApiWalletsData);
+    } = useWalletsChainData(apiWalletsData);
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
 
     const { manageBitcoinAddressPool, bitcoinAddressHelperByWalletAccountId } = useBitcoinAddresses({
-        decryptedApiWalletsData,
+        apiWalletsData,
         walletsChainData,
         isSyncing,
     });
@@ -46,10 +48,9 @@ export const BitcoinBlockchainContextProvider = ({ children }: Props) => {
             value={{
                 network,
 
-                decryptedApiWalletsData,
+                apiWalletsData,
                 walletMap,
                 loadingApiWalletsData,
-                setPassphrase,
 
                 walletsChainData,
                 accountIDByDerivationPathByWalletID,

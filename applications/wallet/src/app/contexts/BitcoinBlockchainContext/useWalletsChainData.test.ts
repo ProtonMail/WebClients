@@ -109,6 +109,7 @@ describe('useWalletsChainData', () => {
         it('should return helpers to trigger manually sync for single account, when needed', async () => {
             const { result, waitForNextUpdate } = renderHook(() => useWalletsChainData(apiWalletsData));
             await waitForNextUpdate();
+
             // we advance timer to bypass cooldown
             vitest.advanceTimersByTime(2 * MINUTE);
             mockedFullSync.mockClear();
@@ -149,7 +150,7 @@ describe('useWalletsChainData', () => {
 
     describe('when hook gets unmounted', () => {
         it('should stop polling on hook unmount', async () => {
-            const { unmount } = renderHook(() => useWalletsChainData(apiWalletsData));
+            const { unmount, waitForNextUpdate } = renderHook(() => useWalletsChainData(apiWalletsData));
 
             // one for each account
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
@@ -159,12 +160,15 @@ describe('useWalletsChainData', () => {
             vi.clearAllMocks();
             vitest.advanceTimersByTime(10 * MINUTE);
 
+            await waitForNextUpdate();
             await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
             expect(mockedFullSync).toHaveBeenLastCalledWith(expect.any(WasmAccount), 53);
 
             vi.clearAllMocks();
             unmount();
             vitest.advanceTimersByTime(10 * MINUTE);
+
+            expect(mockedFullSync).toHaveBeenCalledTimes(0);
         });
     });
 });

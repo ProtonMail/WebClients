@@ -50,7 +50,7 @@ export const AccountContainer = () => {
     const [walletPreferencesModalState, setWalletPreferencesModalState, renderWalletPreferencesModalState] =
         useModalState();
 
-    const { decryptedApiWalletsData, setPassphrase, syncSingleWallet, isSyncing } = useBitcoinBlockchainContext();
+    const { apiWalletsData, syncSingleWallet, isSyncing } = useBitcoinBlockchainContext();
 
     const { createNotification, removeNotification } = useNotifications();
     const notificationRef = useRef<number>();
@@ -58,14 +58,14 @@ export const AccountContainer = () => {
     const { openDrawer } = useWalletDrawerContext();
 
     const walletIndex = useMemo(
-        () => decryptedApiWalletsData?.findIndex(({ Wallet }) => Wallet.ID === walletId),
-        [walletId, decryptedApiWalletsData]
+        () => apiWalletsData?.findIndex(({ Wallet }) => Wallet.ID === walletId),
+        [walletId, apiWalletsData]
     );
 
-    const wallet = Number.isFinite(walletIndex) ? decryptedApiWalletsData?.[walletIndex as number] : undefined;
+    const wallet = Number.isFinite(walletIndex) ? apiWalletsData?.[walletIndex as number] : undefined;
     const otherWallets = [
-        ...(decryptedApiWalletsData?.slice(0, walletIndex) ?? []),
-        ...(decryptedApiWalletsData?.slice((walletIndex ?? 0) + 1) ?? []),
+        ...(apiWalletsData?.slice(0, walletIndex) ?? []),
+        ...(apiWalletsData?.slice((walletIndex ?? 0) + 1) ?? []),
     ];
 
     const walletAccount = wallet?.WalletAccounts?.find(({ ID }) => ID === accountId);
@@ -85,7 +85,7 @@ export const AccountContainer = () => {
         }
     }, [createNotification, isSyncingChainData, removeNotification]);
 
-    if (!decryptedApiWalletsData) {
+    if (!apiWalletsData) {
         return <CircleLoader />;
     }
 
@@ -96,7 +96,7 @@ export const AccountContainer = () => {
 
     const needPassphrase = Boolean(wallet.Wallet.HasPassphrase && !wallet.Wallet.Passphrase);
 
-    const theme = getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID);
+    const theme = getThemeForWallet(apiWalletsData, wallet.Wallet.ID);
 
     if (!walletAccount) {
         return <Redirect to={`/wallets/${wallet.Wallet.ID}`} />;
@@ -164,8 +164,7 @@ export const AccountContainer = () => {
                         wallet={wallet}
                         isOpen={needPassphrase}
                         onClose={history.goBack}
-                        onConfirmPassphrase={(passphrase) => {
-                            setPassphrase(wallet.Wallet.ID, passphrase);
+                        onConfirmPassphrase={() => {
                             void syncSingleWallet({ walletId: wallet.Wallet.ID });
                         }}
                     />

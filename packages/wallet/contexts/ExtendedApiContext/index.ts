@@ -1,6 +1,6 @@
 import { createContext, useContext, useMemo } from 'react';
 
-import { WasmProtonWalletApiClient } from '@proton/andromeda';
+import { type WasmProtonWalletApiClient } from '@proton/andromeda';
 
 export const ExtendedApiContext = createContext<{ walletApi: WasmProtonWalletApiClient } | undefined>(undefined);
 

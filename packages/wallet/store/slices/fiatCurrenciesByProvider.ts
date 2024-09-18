@@ -4,7 +4,8 @@ import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';
 import type { WasmApiSimpleFiatCurrency, WasmGatewayProvider } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import type { WalletThunkArguments } from '@proton/wallet';
+
+import type { WalletThunkArguments } from '../thunk';
 
 const name = 'fiat_currencies_by_provider' as const;
 

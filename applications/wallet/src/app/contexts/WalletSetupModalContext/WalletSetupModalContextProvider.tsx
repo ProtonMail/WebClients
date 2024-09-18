@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useModalState, useModalStateWithData } from '@proton/components';
 import { useOrganization } from '@proton/components/hooks';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { useUserWalletSettings } from '@proton/wallet';
+import { useUserEligibility, useUserWalletSettings } from '@proton/wallet/store';
 
 import type { ModalData } from '.';
 import { WalletSetupModalContext, WalletSetupModalKind } from '.';
@@ -18,7 +18,6 @@ import type { WalletUpgradeModalOwnProps } from '../../components/WalletUpgradeM
 import { WalletUpgradeModal } from '../../components/WalletUpgradeModal';
 import { WalletWelcomePrompt } from '../../components/WalletWelcomePrompt';
 import { DEFAULT_MAX_SUB_WALLETS, DEFAULT_MAX_WALLETS } from '../../constants/wallet';
-import { useUserEligibility } from '../../store/hooks';
 import { SubTheme } from '../../utils';
 import { useBitcoinBlockchainContext } from '../BitcoinBlockchainContext';
 
@@ -47,7 +46,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
         },
     });
     const [walletWelcomeModal, setWalletWelcomeModal] = useModalState();
-    const { decryptedApiWalletsData } = useBitcoinBlockchainContext();
+    const { apiWalletsData } = useBitcoinBlockchainContext();
 
     const close = async () => {
         walletSetupModal.onClose?.();
@@ -60,7 +59,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
         if (data.kind === WalletSetupModalKind.WalletCreation) {
             // TODO: determine user plan
             const hasReachedWalletLimit =
-                (decryptedApiWalletsData?.length ?? 0) >= (organization?.MaxWallets ?? DEFAULT_MAX_WALLETS);
+                (apiWalletsData?.length ?? 0) >= (organization?.MaxWallets ?? DEFAULT_MAX_WALLETS);
 
             if (hasReachedWalletLimit) {
                 setWalletUpgradeModal({
@@ -102,7 +101,7 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                     return <WalletEarlyAccessUpgradePrompt open />;
                 }
 
-                if (decryptedApiWalletsData && !decryptedApiWalletsData.length) {
+                if (apiWalletsData && !apiWalletsData.length) {
                     // We want to open wallet creation modal whenever there is no wallet setup on for the user
                     return (
                         <WalletCreationModal
@@ -123,13 +122,13 @@ export const WalletSetupModalContextProvider = ({ children }: Props) => {
                         <WalletWelcomePrompt
                             open
                             onClose={walletWelcomeModal.onClose}
-                            email={getPrimaryEmail(decryptedApiWalletsData)}
+                            email={getPrimaryEmail(apiWalletsData)}
                         />
                     );
                 }
 
-                const walletWithoutWalletAccount = decryptedApiWalletsData?.find((w) => !w.WalletAccounts.length);
-                if (decryptedApiWalletsData && walletWithoutWalletAccount) {
+                const walletWithoutWalletAccount = apiWalletsData?.find((w) => !w.WalletAccounts.length);
+                if (apiWalletsData && walletWithoutWalletAccount) {
                     // We want to open wallet account creation modal whenever there is no wallet account setup on for the wallet
                     return (
                         <WalletAccountCreationModal
