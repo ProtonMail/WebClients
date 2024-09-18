@@ -4,10 +4,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import type { WasmApiExchangeRate } from '@proton/andromeda';
 import { baseUseSelector } from '@proton/react-redux-store';
-import { useWalletSettings } from '@proton/wallet';
-
-import { useGetExchangeRate } from '../store/hooks';
-import { selectExchangeRate } from '../store/slices';
+import { selectExchangeRate, useGetExchangeRate, useWalletSettings } from '@proton/wallet/store';
 
 export const useUserExchangeRate = () => {
     const [walletSettings] = useWalletSettings();

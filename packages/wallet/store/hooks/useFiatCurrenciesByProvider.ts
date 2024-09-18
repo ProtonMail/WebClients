@@ -6,4 +6,3 @@ const hooks = createHooks(fiatCurrenciesByProviderThunk, selectFiatCurrenciesByP
 
 export const useFiatCurrenciesByProvider = hooks.useValue;
 export const useGetFiatCurrenciesByProvider = hooks.useGet;
-

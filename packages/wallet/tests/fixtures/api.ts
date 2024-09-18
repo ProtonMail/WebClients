@@ -4,42 +4,16 @@ import type {
     WasmApiWalletAccount,
     WasmApiWalletKey,
     WasmApiWalletSettings,
-    WasmUserSettings} from '@proton/andromeda';
-import {
-    WasmScriptType
+    WasmUserSettings,
 } from '@proton/andromeda';
+import { WasmScriptType } from '@proton/andromeda';
 
-import type {
-    BitcoinUnit,
-    FiatCurrency,
-    IWasmApiWalletData,
-    UserWalletSettings,
-    Wallet} from '../../types';
-import {
-    WalletPassphrase,
-    WalletSetupMode,
-    WalletStatus,
-    WalletType,
-} from '../../types';
+import type { BitcoinUnit, FiatCurrency, IWasmApiWalletData, UserWalletSettings } from '../../types';
+import { WalletPassphrase, WalletSetupMode, WalletStatus, WalletType } from '../../types/api';
 
 /**
  * Fixtures used to mock api while it is being implemented
  */
-
-export const emptyWallet: Wallet = {
-    WalletID: 81772,
-    UserID: 999,
-    Name: 'Bitcoin empty 01',
-    // TODO should be encrypted when comin from server
-    Mnemonic: 'benefit indoor helmet wine exist height grain spot rely half beef nothing',
-    Passphrase: WalletPassphrase.WithoutPassphrase,
-    Imported: WalletSetupMode.Created,
-    Priority: 1,
-    Status: WalletStatus.Active,
-    Type: WalletType.OnChain,
-    CreateTime: 1701149748899,
-    ModifyTime: 1701169836899,
-};
 
 const apiWalletOne: WasmApiWallet = {
     ID: '0',

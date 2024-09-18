@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { isBefore, sub } from 'date-fns';
+import isEqual from 'lodash/isEqual';
 import pick from 'lodash/pick';
 import set from 'lodash/set';
 import { c } from 'ttag';
@@ -10,7 +11,8 @@ import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import generateUID from '@proton/utils/generateUID';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { POOL_FILLING_THRESHOLD, useGetBitcoinNetwork } from '@proton/wallet';
+import { POOL_FILLING_THRESHOLD } from '@proton/wallet';
+import { useGetBitcoinNetwork } from '@proton/wallet/store';
 
 import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '../../constants/wallet';
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
@@ -21,6 +23,7 @@ import type {
     WalletChainDataByWalletId,
 } from '../../types';
 import { removeMasterPrefix } from '../../utils';
+import usePrevious from '@proton/hooks/usePrevious';
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number; error: string | null };
 
@@ -44,19 +47,33 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
     const walletsChainDataRef = useRef<WalletChainDataByWalletId>();
 
+    const walletSubsetData = useMemo(() => {
+        return apiWalletsData?.map(({ Wallet, WalletAccounts, IsNotDecryptable }) => ({
+            ...pick(Wallet, ['ID', 'Mnemonic', 'Passphrase', 'HasPassphrase']),
+            IsNotDecryptable,
+            WalletAccounts: WalletAccounts.map(({ ID, ScriptType, DerivationPath }) => ({
+                ID,
+                ScriptType,
+                DerivationPath,
+            })),
+        }));
+    }, [apiWalletsData]);
+
+    const previousWalletSubsetData = usePrevious(walletSubsetData);
+
     const getWalletsChainDataInit = useCallback(
-        async (apiWalletsData?: IWasmApiWalletData[]) => {
+        async (apiWalletsData?: typeof walletSubsetData) => {
             const network = await getNetwork();
 
             const walletsChainData = apiWalletsData?.reduce((acc: WalletChainDataByWalletId, apiWallet) => {
-                const { Wallet, WalletAccounts, IsNotDecryptable } = apiWallet;
+                const { ID, Mnemonic, HasPassphrase, Passphrase, WalletAccounts, IsNotDecryptable } = apiWallet;
 
                 // TODO: support watch-only wallets
-                if (IsNotDecryptable || !Wallet.Mnemonic || (Wallet.HasPassphrase && !Wallet.Passphrase)) {
+                if (IsNotDecryptable || !Mnemonic || (HasPassphrase && !Passphrase)) {
                     return acc;
                 }
 
-                const wasmWallet = new WasmWallet(network, Wallet.Mnemonic, Wallet.Passphrase ?? '');
+                const wasmWallet = new WasmWallet(network, Mnemonic, Passphrase ?? '');
 
                 // Get accounts created in wasm wallet
                 const wasmAccounts = WalletAccounts.reduce((acc: AccountChainDataByAccountId, account) => {
@@ -74,7 +91,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
                 return {
                     ...acc,
-                    [Wallet.ID]: {
+                    [ID]: {
                         wallet: wasmWallet,
                         accounts: wasmAccounts,
                     },
@@ -216,7 +233,7 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
             walletsChainDataRef.current = init;
 
             // This ensure that if another poll is start (via calling this fn), previous one will be stoped: uuid won't match anymore
-            while (pollingIdRef.current == pollingId && init) {
+            while (pollingIdRef.current == pollingId) {
                 await syncManyWallets({
                     walletIds: Object.keys(init),
                 });
@@ -229,18 +246,17 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
     useEffect(() => {
         const run = async () => {
-            const init = await getWalletsChainDataInit(apiWalletsData);
-            if (init) {
-                void startPolling(init);
+            // We only want to start polling if there is a change in relevant data
+            if (!isEqual(walletSubsetData, previousWalletSubsetData)) {
+                const init = await getWalletsChainDataInit(walletSubsetData);
+                if (init) {
+                    void startPolling(init);
+                }
             }
         };
 
         void run();
-
-        return () => {
-            pollingIdRef.current = undefined;
-        };
-    }, [getWalletsChainDataInit, apiWalletsData, startPolling]);
+    }, [getWalletsChainDataInit, walletSubsetData, previousWalletSubsetData, startPolling]);
 
     // We need this reversed map to reconciliate WalletId+DerivationPath -> AccountId
     const accountIDByDerivationPathByWalletID = useMemo(() => {

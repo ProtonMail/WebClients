@@ -22,20 +22,24 @@ import {
     DEFAULT_FIRST_BVE_ACCOUNT_LABEL,
     DEFAULT_SCRIPT_TYPE,
     WalletType,
-    acceptTermsAndConditions,
+    decryptWallet,
     encryptWalletData,
     encryptWalletDataWithWalletKey,
     getDefaultWalletName,
-    useUserWalletSettings,
     useWalletApi,
     useWalletApiClients,
-    walletCreation,
     wordCountToNumber,
 } from '@proton/wallet';
+import {
+    acceptTermsAndConditions,
+    useFiatCurrencies,
+    useUserWalletSettings,
+    useWalletDispatch,
+    walletCreation,
+} from '@proton/wallet/store';
 
 import { DEFAULT_MAX_SUB_WALLETS } from '../../constants/wallet';
 import { useBitcoinBlockchainContext } from '../../contexts';
-import { useFiatCurrencies, useWalletDispatch } from '../../store/hooks';
 import { isUndefined } from '../../utils';
 
 const parseMnemonic = (value?: string): { mnemonic: WasmMnemonic } | { error: string } => {
@@ -142,7 +146,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
 
     const { createNotification } = useNotifications();
 
-    const { decryptedApiWalletsData, network, manageBitcoinAddressPool } = useBitcoinBlockchainContext();
+    const { apiWalletsData, network, manageBitcoinAddressPool } = useBitcoinBlockchainContext();
 
     const [mnemonicError, setMnemonicError] = useState<string>();
     const [mnemonic, setMnemonic] = useState<string>();
@@ -184,9 +188,9 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
             const wasmWallet = new WasmWallet(network, mnemonicStr, passphrase);
             const fingerprint = wasmWallet.getFingerprint();
 
-            return Boolean(decryptedApiWalletsData?.some((w) => w.Wallet.Fingerprint === fingerprint));
+            return Boolean(apiWalletsData?.some((w) => w.Wallet.Fingerprint === fingerprint));
         },
-        [decryptedApiWalletsData, passphrase]
+        [apiWalletsData, passphrase]
     );
 
     useEffect(() => {
@@ -243,7 +247,7 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
         const [primaryUserKey] = userKeys;
 
         const hasPassphrase = !!passphrase;
-        const compelledWalletName = walletName || getDefaultWalletName(isImported, decryptedApiWalletsData ?? []);
+        const compelledWalletName = walletName || getDefaultWalletName(isImported, apiWalletsData ?? []);
 
         // TODO: add public key support here
         const [
@@ -347,14 +351,19 @@ export const useWalletCreation = ({ onSetupFinish }: Props) => {
                 }
             }
 
-            dispatch(
-                walletCreation({
+            const decryptedWallet = await decryptWallet({
+                userKeys,
+                apiWalletData: {
                     Wallet,
                     WalletKey,
                     WalletSettings,
                     WalletAccounts: createdAccounts,
-                })
-            );
+                },
+            });
+
+            if (decryptedWallet) {
+                dispatch(walletCreation(decryptedWallet));
+            }
 
             if (isFirstCreation) {
                 createNotification({ text: c('Wallet terms and conditions').t`Terms and conditions were accepted` });

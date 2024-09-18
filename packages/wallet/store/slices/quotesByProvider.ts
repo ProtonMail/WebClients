@@ -5,7 +5,8 @@ import { getInitialModelState } from '@proton/account';
 import type { WasmGatewayProvider, WasmPaymentMethod, WasmQuote } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
 import { MINUTE } from '@proton/shared/lib/constants';
-import type { WalletThunkArguments } from '@proton/wallet';
+
+import type { WalletThunkArguments } from '../thunk';
 
 const name = 'quotes_by_provider' as const;
 

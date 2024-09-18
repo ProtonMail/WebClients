@@ -7,17 +7,11 @@ import { useModalState } from '@proton/components';
 import { useNotifications, useUserKeys } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import {
-    bitcoinUnitChange,
-    encryptWalletDataWithWalletKey,
-    useUserWalletSettings,
-    useWalletApiClients,
-    walletNameUpdate,
-} from '@proton/wallet';
+import { encryptWalletDataWithWalletKey, useWalletApiClients } from '@proton/wallet';
+import { bitcoinUnitChange, useUserWalletSettings, useWalletDispatch, walletUpdate } from '@proton/wallet/store';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { WalletSetupModalKind, useWalletSetupModalContext } from '../../contexts/WalletSetupModalContext';
-import { useWalletDispatch } from '../../store/hooks';
 import { getAccountBalance, getAccountWithChainDataFromManyWallets, getThemeForWallet } from '../../utils';
 
 export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAccount?: () => void) => {
@@ -35,13 +29,13 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
     const dispatch = useWalletDispatch();
     const [userKeys] = useUserKeys();
 
-    const { decryptedApiWalletsData = [], walletsChainData } = useBitcoinBlockchainContext();
+    const { apiWalletsData = [], walletsChainData } = useBitcoinBlockchainContext();
 
     const { open } = useWalletSetupModalContext();
     const openBackupModal = () => {
         if (wallet.Wallet.Mnemonic) {
             open({
-                theme: getThemeForWallet(decryptedApiWalletsData, wallet.Wallet.ID),
+                theme: getThemeForWallet(apiWalletsData, wallet.Wallet.ID),
                 apiWalletData: wallet,
                 kind: WalletSetupModalKind.WalletBackup,
             });
@@ -54,19 +48,19 @@ export const useWalletPreferences = (wallet: IWasmApiWalletData, onEmptyWalletAc
                 return;
             }
 
-            const [encryptedWalletName] = await encryptWalletDataWithWalletKey(
+            const [encryptedWalletAccountLabel] = await encryptWalletDataWithWalletKey(
                 [walletName],
                 wallet.WalletKey.DecryptedKey
             );
 
             try {
-                await api.wallet.updateWalletName(wallet.Wallet.ID, encryptedWalletName);
-
+                await api.wallet.updateWalletName(wallet.Wallet.ID, encryptedWalletAccountLabel);
                 createNotification({ text: c('Wallet Settings').t`Wallet name changed` });
+
                 dispatch(
-                    walletNameUpdate({
+                    walletUpdate({
                         walletID: wallet.Wallet.ID,
-                        name: walletName,
+                        update: { Name: walletName },
                     })
                 );
             } catch (error: any) {

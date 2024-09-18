@@ -5,7 +5,8 @@ import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';
 import type { WasmApiWalletTransactionData } from '@proton/andromeda';
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
-import type { WalletThunkArguments } from '@proton/wallet';
+
+import type { WalletThunkArguments } from '../thunk';
 
 export const apiWalletTransactionDataSliceName = 'api_wallet_transaction_data' as const;
 

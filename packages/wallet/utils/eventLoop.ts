@@ -1,10 +1,17 @@
-import { WasmApiWalletAccount, WasmApiWalletKey, WasmApiWalletSettings } from '@proton/andromeda';
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { CreateEventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
+import { createAction } from '@reduxjs/toolkit';
+import compact from 'lodash/compact';
 
-import { IWasmApiWalletData } from '../types';
-import { WalletAccountEvent, WalletEvent, WalletEventLoop } from '../types/eventLoop';
+import type { WasmApiWalletAccount, WasmApiWalletKey, WasmApiWalletSettings } from '@proton/andromeda';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { type CreateEventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
+import { type DecryptedKey } from '@proton/shared/lib/interfaces';
+
+import type { IWasmApiWalletData } from '../types';
+import type { WalletAccountEvent, WalletEvent, WalletEventLoop } from '../types/eventLoop';
 import { replaceAt } from './array';
+import { decryptWallet } from './wallet';
+
+export const eventLoopEvent = createAction<WalletEventLoop>('server event');
 
 const findCreatedWalletKeyFromEvents = (walletID: string, events: WalletEventLoop) => {
     return events.WalletKeys?.find(
@@ -35,94 +42,133 @@ const findCreatedWalletAccountsFromEvents = (walletID: string, events: WalletEve
 export const stateFromWalletEvent = (
     walletEvent: WalletEvent,
     eventLoop: WalletEventLoop,
-    currentApiWalletsData: IWasmApiWalletData[]
-) => {
+    currentApiWalletsData: IWasmApiWalletData[],
+    userKeys: DecryptedKey[]
+): Promise<IWasmApiWalletData[]> => {
     switch (walletEvent.Action) {
         case EVENT_ACTIONS.CREATE:
-            if (currentApiWalletsData.some((data) => data.Wallet.ID === walletEvent.ID)) {
-                return currentApiWalletsData;
-            }
+            return (async () => {
+                if (currentApiWalletsData.some((data) => data.Wallet.ID === walletEvent.ID)) {
+                    return currentApiWalletsData;
+                }
 
-            const walletKey = findCreatedWalletKeyFromEvents(walletEvent.ID, eventLoop);
-            const walletSettings = findCreatedWalletSettingsFromEvents(walletEvent.ID, eventLoop);
-            const walletAccounts = findCreatedWalletAccountsFromEvents(walletEvent.ID, eventLoop);
+                // WalletKey and WalletSettings should be create at the same time
+                const walletKey = findCreatedWalletKeyFromEvents(walletEvent.ID, eventLoop);
+                const walletSettings = findCreatedWalletSettingsFromEvents(walletEvent.ID, eventLoop);
+                const walletAccounts = findCreatedWalletAccountsFromEvents(walletEvent.ID, eventLoop);
 
-            // WalletKey and WalletSettings should be create at the same time
-            return [
-                ...currentApiWalletsData,
-                {
+                const apiWalletData = {
                     Wallet: walletEvent.Wallet,
                     WalletKey: walletKey,
                     WalletSettings: walletSettings,
                     WalletAccounts: walletAccounts,
-                },
-            ];
+                };
+
+                const wallet = await decryptWallet({
+                    apiWalletData,
+                    userKeys,
+                });
+
+                return compact([...currentApiWalletsData, wallet]);
+            })();
         case EVENT_ACTIONS.UPDATE:
-            const index = currentApiWalletsData.findIndex((wallet) => wallet.Wallet.ID === walletEvent.ID);
-            if (index && index > -1) {
-                return replaceAt(currentApiWalletsData, index, {
+            return (async () => {
+                const index = currentApiWalletsData.findIndex((wallet) => wallet.Wallet.ID === walletEvent.ID);
+
+                const apiWalletData = {
                     ...currentApiWalletsData[index],
                     Wallet: { ...currentApiWalletsData[index].Wallet, ...walletEvent.Wallet },
-                });
-            }
+                };
 
-            return currentApiWalletsData;
+                const wallet = await decryptWallet({
+                    apiWalletData,
+                    userKeys,
+                });
+
+                if (index && index > -1) {
+                    return compact(replaceAt(currentApiWalletsData, index, wallet));
+                }
+
+                return compact(currentApiWalletsData);
+            })();
         case EVENT_ACTIONS.DELETE:
-            return currentApiWalletsData?.filter((walletData) => walletData.Wallet.ID != walletEvent.ID);
+            return Promise.resolve(
+                currentApiWalletsData.filter((walletData) => walletData.Wallet.ID != walletEvent.ID)
+            );
         default:
-            return currentApiWalletsData;
+            return Promise.resolve(currentApiWalletsData);
     }
 };
 
 export const stateFromWalletAccountEvent = (
     walletAccountEvent: WalletAccountEvent,
-    currentWallets: IWasmApiWalletData[]
-) => {
+    currentWallets: IWasmApiWalletData[],
+    userKeys: DecryptedKey[]
+): Promise<IWasmApiWalletData[]> => {
     switch (walletAccountEvent.Action) {
-        case EVENT_ACTIONS.DELETE:
-            return currentWallets.map(({ WalletAccounts, ...rest }) => ({
-                ...rest,
-                WalletAccounts: WalletAccounts.filter((walletAccount) => walletAccount.ID !== walletAccountEvent.ID),
-            }));
-
         case EVENT_ACTIONS.CREATE:
-            const index = currentWallets.findIndex(
-                (wallet) => wallet.Wallet.ID === walletAccountEvent.WalletAccount.WalletID
-            );
-
-            if (index > -1) {
-                const walletAtIndex = currentWallets[index];
-
-                replaceAt(currentWallets, index, {
-                    ...walletAtIndex,
-                    WalletAccounts: [...walletAtIndex.WalletAccounts, walletAccountEvent.WalletAccount],
-                });
-            }
-
-            break;
-        case EVENT_ACTIONS.UPDATE:
-            const walletIndex = currentWallets.findIndex(
-                (wallet) => wallet.Wallet.ID === walletAccountEvent.WalletAccount.WalletID
-            );
-
-            const walletAtIndex = currentWallets[walletIndex];
-
-            if (walletAtIndex) {
-                const accountIndex = walletAtIndex.WalletAccounts.findIndex(
-                    (walletAccount) => walletAccount.ID === walletAccountEvent.ID
+            return (async () => {
+                const index = currentWallets.findIndex(
+                    (wallet) => wallet.Wallet.ID === walletAccountEvent.WalletAccount.WalletID
                 );
 
-                if (accountIndex > -1) {
-                    return replaceAt(currentWallets, walletIndex, {
+                const apiWalletData = {
+                    ...currentWallets[index],
+                    WalletAccounts: [...currentWallets[index].WalletAccounts, walletAccountEvent.WalletAccount],
+                };
+
+                const wallet = await decryptWallet({
+                    apiWalletData,
+                    userKeys,
+                });
+
+                if (index && index > -1) {
+                    replaceAt(currentWallets, index, wallet);
+                }
+
+                return Promise.resolve(currentWallets);
+            })();
+        case EVENT_ACTIONS.UPDATE:
+            return (async () => {
+                const walletIndex = currentWallets.findIndex(
+                    (wallet) => wallet.Wallet.ID === walletAccountEvent.WalletAccount.WalletID
+                );
+
+                const walletAtIndex = currentWallets[walletIndex];
+
+                if (walletAtIndex) {
+                    const accountIndex = walletAtIndex.WalletAccounts.findIndex(
+                        (walletAccount) => walletAccount.ID === walletAccountEvent.ID
+                    );
+
+                    const apiWalletData = {
                         ...walletAtIndex,
                         WalletAccounts: replaceAt(walletAtIndex.WalletAccounts, accountIndex, {
                             ...walletAtIndex.WalletAccounts[accountIndex],
                             ...walletAccountEvent.WalletAccount,
                         }),
-                    });
-                }
-            }
+                    };
 
-            break;
+                    const wallet = await decryptWallet({
+                        apiWalletData,
+                        userKeys,
+                    });
+
+                    if (accountIndex > -1) {
+                        return compact(replaceAt(currentWallets, walletIndex, wallet));
+                    }
+                }
+
+                return Promise.resolve(currentWallets);
+            })();
+        case EVENT_ACTIONS.DELETE:
+            return Promise.resolve(
+                currentWallets.map(({ WalletAccounts, ...rest }) => ({
+                    ...rest,
+                    WalletAccounts: WalletAccounts.filter(
+                        (walletAccount) => walletAccount.ID !== walletAccountEvent.ID
+                    ),
+                }))
+            );
     }
 };

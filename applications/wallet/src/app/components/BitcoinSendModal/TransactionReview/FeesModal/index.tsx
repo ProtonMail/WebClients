@@ -7,7 +7,7 @@ import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import type { IconName } from '@proton/components';
 import { Icon, Tooltip } from '@proton/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
-import { useUserWalletSettings } from '@proton/wallet';
+import { useUserWalletSettings } from '@proton/wallet/store';
 
 import { Modal } from '../../../../atoms';
 import { CoreButton } from '../../../../atoms/Button';
