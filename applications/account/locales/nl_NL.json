@@ -400,6 +400,9 @@
       "Discard changes": [
         "Wijzigingen weggooien"
       ],
+      "Domain name": [
+        "Domeinnaam"
+      ],
       "Don't show again": [
         "Niet meer weergeven"
       ],
@@ -649,6 +652,9 @@
       "Keep logo": [
         "Logo behouden"
       ],
+      "Keep my subscription": [
+        "Mijn abonnement behouden"
+      ],
       "label emails as": [
         "e-mail labellen als"
       ],
@@ -793,11 +799,11 @@
       "Refresh status": [
         "Status vernieuwen"
       ],
-      "Refresh the page": [
-        "Pagina vernieuwen"
-      ],
       "refresh the page": [
         "pagina vernieuwen"
+      ],
+      "Refresh the page": [
+        "Pagina vernieuwen"
       ],
       "Reload": [
         "Opnieuw laden"
@@ -1589,14 +1595,6 @@
         "Selecteer uw eindejaarsaanbieding"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement. Maar u kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als u zich inschrijft voor **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB opslagruimte (2x meer dan binnen elk ander abonnement)"
@@ -1618,6 +1616,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Het ${ plan }-abonnement is tijdelijk terug"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement. Maar u kunt **${ discountPercentage } korting krijgen op ${ plan.Title }** als u zich inschrijft voor **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -6479,6 +6485,9 @@
       "2. They try ${ planName }": [
         "2. Ze proberen ${ planName }"
       ],
+      "2FA disabled": [
+        "Tweestapsverificatie uitgeschakeld"
+      ],
       "3. You earn credits": [
         "3. U verdient tegoed"
       ],
@@ -6936,11 +6945,11 @@
       "Data locked": [
         "Gegevens vergrendeld"
       ],
-      "dedicated servers": [
-        "toegewijde servers"
-      ],
       "Dedicated servers": [
         "Dedicated servers"
+      ],
+      "dedicated servers": [
+        "toegewijde servers"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
@@ -6957,6 +6966,9 @@
       ],
       "Disable recovery by ${ type }": [
         "Herstel via ${ type } uitschakelen"
+      ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Uitgeschakeld sinds ${ formattedDateAndTime }"
       ],
       "Discount": [
         "Korting"
@@ -7069,6 +7081,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Activeer TLS of SSL op de externe dienst indien dit wordt ondersteund."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Ingeschakeld sinds ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Het opnieuw inschakelen van herstel per uitdrukking zal een nieuwe herstelzin genereren."
@@ -11299,26 +11314,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Begin voor ${ price }"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Doorgaan met gratis"
@@ -11346,6 +11341,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgraden naar ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Begin voor ${ price }"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
       ]
     },
     "new_plans: feature": {
@@ -11696,6 +11711,9 @@
         "Servers in ${ vpnServersCountData.paid.countries }+ land",
         "Servers in ${ vpnServersCountData.paid.countries }+ landen"
       ],
+      "Share files with no size limit": [
+        "Deel bestanden zonder maximale grootte"
+      ],
       "Sign in as user": [
         "Inloggen als gebruiker"
       ],
@@ -11722,6 +11740,9 @@
       ],
       "Support for up to 2 users": [
         "Ondersteuning voor maximaal 2 gebruikers"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchroniseer en back-up al uw bestanden op alle apparaten"
       ],
       "Tailored to your needs": [
         "Aangepast aan uw behoeften"
@@ -11974,14 +11995,6 @@
         "Uw geselecteerde abonnement: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "${ shortPlan.title } Proefversie"
-      ],
-      "Your account's usage": [
-        "Verbruik van uw account"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Account verwijderen?"
@@ -12000,6 +12013,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Ontgrendel premium functies door te upgraden"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } Proefversie"
+      ],
+      "Your account's usage": [
+        "Verbruik van uw account"
       ]
     },
     "new_plans: tooltip": {
@@ -13721,11 +13742,17 @@
       ]
     },
     "Safety review": {
+      "Add a recovery phone number": [
+        "Een telefoonnummer voor herstel toevoegen"
+      ],
       "Download ${ size }": [
         "${ size } downloaden"
       ],
       "Invalid code": [
         "Ongeldige code"
+      ],
+      "Show more": [
+        "Meer tonen"
       ],
       "Verify": [
         "Verifiëren"
@@ -15753,6 +15780,9 @@
       "Account recovery": [
         "Accountherstel"
       ],
+      "Account settings": [
+        "Accountinstellingen"
+      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -15888,11 +15918,11 @@
       "Card verification": [
         "Kaartverificatie"
       ],
-      "Catch-All address": [
-        "Catch-All adres"
-      ],
       "Catch-all address": [
         "Catch-all adres"
+      ],
+      "Catch-All address": [
+        "Catch-All adres"
       ],
       "Change login password": [
         "Inlogwachtwoord wijzigen"
@@ -16096,6 +16126,9 @@
       ],
       "Disable two-factor authentication": [
         "Tweestapsverificatie uitschakelen"
+      ],
+      "Disable two-factor authentication?": [
+        "Tweestapsverificatie uitschakelen?"
       ],
       "Discard changes?": [
         "Wijzigingen annuleren?"
@@ -16500,6 +16533,9 @@
       ],
       "Profile": [
         "Profiel"
+      ],
+      "QRCode": [
+        "QR-code"
       ],
       "Recommended": [
         "Aanbevolen"

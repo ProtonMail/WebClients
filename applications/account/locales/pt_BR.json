@@ -811,11 +811,11 @@
       "Refresh status": [
         "Atualizar status"
       ],
-      "Refresh the page": [
-        "Atualizar a página"
-      ],
       "refresh the page": [
         "atualizar a página"
+      ],
+      "Refresh the page": [
+        "Atualizar a página"
       ],
       "Reload": [
         "Recarregar"
@@ -1619,14 +1619,6 @@
         "Selecione sua oferta de fim de ano"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TB de armazenamento (duas vezes mais que qualquer outro plano)"
@@ -1648,6 +1640,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "O plano ${ plan } voltou apenas por tempo limitado"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual. Mas você pode obter **${ discountPercentage } de desconto em ${ plan.Title }** ao assinar por **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3582,6 +3582,17 @@
         "Ajude-nos a melhorar"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirme a perda de ${ PASS_APP_NAME } desconto\nespecial"
+      ],
+      "Remove discount": [
+        "Remover o desconto"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "A sua ${ PLAN_NAMES[PLANS.PASS] } Assinatura, está a um preço especial de ${ price } por ano. Rebaixando para um plano Livre, você perderá o desconto para sempre, mesmo se você fizer um upgrade de novo no futuro."
+      ]
+    },
     "Download link": {
       ".deb for Debian / Ubuntu": [
         ".deb para Debian / Ubuntu"
@@ -5176,7 +5187,7 @@
         "Sair do plano Duo"
       ],
       "Leave Family plan": [
-        "Sair do plano Family"
+        "Sair do plano familiar"
       ],
       "Leave Visionary plan": [
         "Sair do plano Visionary"
@@ -5335,7 +5346,7 @@
         "Ocorreu um erro, tente novamente"
       ],
       "Family name updated": [
-        "Nome da família atualizado"
+        "Sobrenome atualizado"
       ],
       "Member updated": [
         "Membro atualizado"
@@ -7066,11 +7077,11 @@
       "Data locked": [
         "Dados bloqueados"
       ],
-      "dedicated servers": [
-        "servidores dedicados"
-      ],
       "Dedicated servers": [
         "Servidores dedicados"
+      ],
+      "dedicated servers": [
+        "servidores dedicados"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidores dedicados com endereço(s) IP dedicado(s) podem ser adicionados a gateways privados para permitir um controle de acesso mais refinado."
@@ -7324,7 +7335,7 @@
         "Monitoramento de gateways está desativado."
       ],
       "Gateways monitoring is enabled.": [
-        "Gateways monitoring está habilitado."
+        "Monitoramento de gateways está ativado."
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Gerar uma nova frase de recuperação desativará a antiga."
@@ -11545,26 +11556,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comece por ${ price }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar com o plano Free"
@@ -11592,6 +11583,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comece por ${ price }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
       ]
     },
     "new_plans: feature": {
@@ -12253,20 +12264,6 @@
         "Seu plano selecionado: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Avaliação do ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Obtenha Mail Plus por ${ price }"
-      ],
-      "VPN Enterprise": [
-        "VPN Enterprise"
-      ],
-      "Your account's usage": [
-        "Uso da sua conta"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Excluir conta?"
@@ -12285,6 +12282,20 @@
       ],
       "Unlock premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Avaliação do ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Obtenha Mail Plus por ${ price }"
+      ],
+      "VPN Enterprise": [
+        "VPN Enterprise"
+      ],
+      "Your account's usage": [
+        "Uso da sua conta"
       ]
     },
     "new_plans: tooltip": {
@@ -14166,7 +14177,7 @@
         "Ocorreu um erro ao verificar seu e-mail de recuperação"
       ],
       "There was an error verifying your recovery phone": [
-        "Ocorreu um erro ao verificar seu telefone de recepção"
+        "Ocorreu um erro ao verificar seu telefone de recuperação"
       ],
       "to automatically recover your data when you log into a trusted device": [
         "para recuperar automaticamente seus dados quando você iniciar sessão em um dispositivo confiável"
@@ -14253,7 +14264,7 @@
         "Sua conta e seus dados podem ser recuperados. Você tem ações recomendadas."
       ],
       "Your account is fully secure.": [
-        "Sua conta está toltamente segura."
+        "Sua conta está totalmente segura."
       ],
       "Your account is secure.": [
         "Sua conta está segura."
@@ -14302,7 +14313,7 @@
     },
     "saml: Error": {
       "Sign-in wasn't successfully completed.": [
-        "O início de sessão não foi completado."
+        "O início de sessão não foi concluído."
       ],
       "Something went wrong": [
         "Algo deu errado"
@@ -15427,6 +15438,11 @@
         "Seu plano foi adquirido usando um aplicativo para iOS. Portanto, para fazer alterações em seu plano ou atualizar seus detalhes de pagamento, você precisará acessar a Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "A assinatura será rebaixada no final do ciclo de cobrança."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
@@ -16480,11 +16496,11 @@
       "Card verification": [
         "Verificação do cartão"
       ],
-      "Catch-All address": [
-        "Endereço Catch-All (captura tudo)"
-      ],
       "Catch-all address": [
         "Endereço catch-all"
+      ],
+      "Catch-All address": [
+        "Endereço Catch-All (captura tudo)"
       ],
       "Change login password": [
         "Alterar a senha de login"
@@ -17781,7 +17797,7 @@
         "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ],
       "Group membership paused": [
-        "Pausa na associação do grupo"
+        "Associação ao grupo pausada"
       ],
       "Sending member invitation": [
         "Enviando convite ao membro"
@@ -17845,7 +17861,7 @@
         "Um administrador da ${ orgName } deseja ativar o acesso de administrador para sua conta."
       ],
       "An administrator of the **${ orgName }** organization (**${ adminEmail }**) wants to enable administrator access for your account.": [
-        "Um administrador da organização **${ orgName }** (**${ adminEmail }**) deseja habilitar o acesso de administrador para sua conta."
+        "Um administrador da organização **${ orgName }** (**${ adminEmail }**) deseja ativar o acesso de administrador para sua conta."
       ],
       "By making the user private you won't be able to help them regain access to their data or account.": [
         "Ao tornar o usuário privado, você não poderá ajudá-lo a recuperar o acesso aos seus dados ou conta."
@@ -17857,10 +17873,10 @@
         "Excluir solicitação"
       ],
       "Delete request to access user data?": [
-        "Deletar requisição de acesso aos dados do usuário?"
+        "Excluir solicitação para acessar dados do usuário?"
       ],
       "Enable admin access?": [
-        "Ativar acesso administrador"
+        "Ativar o acesso do administrador?"
       ],
       "Enable administrator access": [
         "Ativar o acesso do administrador"
@@ -17887,13 +17903,13 @@
         "Requisição para gerenciar conta enviada, esperando a aprovação do usuário"
       ],
       "Request user permission for data access": [
-        "Requisição da permissão do usuário para acessar os dados."
+        "Solicitar permissão do usuário para acesso aos dados"
       ],
       "Revoke access": [
         "Revogar acesso"
       ],
       "Revoke administrator access?": [
-        "Revogar acesso administrativo?"
+        "Revogar o acesso de administrador?"
       ],
       "Send request": [
         "Enviar solicitação"
@@ -17908,7 +17924,7 @@
         "Isso revogará a permissão do administrador para gerenciar a conta deste usuário."
       ],
       "To proceed, you'll need to request the user's permission to access their data or reset their password.": [
-        "Para continuar, você precisará solicitar a permissão do usuário para acessar seus dados ou redefinir sua senha."
+        "Para continuar, você precisará solicitar a permissão do usuário para acessar os dados ou redefinir a senha dele."
       ],
       "View request": [
         "Ver solicitação"
@@ -18271,7 +18287,7 @@
         "Junte-se ao acesso antecipado do ${ appName }!"
       ],
       "Sign up for a free ${ BRAND_NAME } account to secure your spot. The earlier you sign up, the sooner you will get access to ${ appName }. After signup, you can also upgrade to our exclusive Visionary plan to skip the waitlist and start using ${ appName } right away.": [
-        "Crie conta para obter uma conta gratuita da ${ BRAND_NAME } para garantir seu lugar. Quanto mais cedo você criar a conta, mais cedo terá acesso ao ${ appName }. Após o cadastro, você também pode fazer upgrade para o nosso plano Visionary exclusivo para pular a lista de espera e começar a usar o ${ appName } imediatamente."
+        "Inscreva-se em uma conta ${ BRAND_NAME } gratuita para garantir seu lugar. Quanto mais cedo você se inscrever, mais cedo terá acesso ao ${ appName }. Após a inscrição, você também pode fazer upgrade para o nosso plano exclusivo Visionary para pular a lista de espera e começar a usar ${ appName } imediatamente."
       ],
       "Unlock ${ appName } premium features by upgrading": [
         "Faça o upgrade para desbloquear recursos premium do ${ appName }"

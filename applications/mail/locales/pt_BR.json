@@ -1186,9 +1186,6 @@
       "Snooze": [
         "Adiar"
       ],
-      "Some images could not be loaded with tracker protection.": [
-        "Não foi possível carregar algumas imagens com proteção de rastreamento."
-      ],
       "Star": [
         "Favorito"
       ],
@@ -1242,6 +1239,9 @@
       ],
       "Tomorrow": [
         "Amanhã"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "A proteção do rastreador impediu que algumas imagens fossem carregadas. Carregue-as se você confiar no remetente."
       ],
       "Trust": [
         "Confiar"
@@ -3595,6 +3595,17 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Ajude-nos a melhorar"
+      ]
+    },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirme a perda de ${ PASS_APP_NAME } desconto\nespecial"
+      ],
+      "Remove discount": [
+        "Remover o desconto"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "A sua ${ PLAN_NAMES[PLANS.PASS] } Assinatura, está a um preço especial de ${ price } por ano. Rebaixando para um plano Livre, você perderá o desconto para sempre, mesmo se você fizer um upgrade de novo no futuro."
       ]
     },
     "Download attachments": {
@@ -10908,6 +10919,14 @@
         "Assinar"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Mais rápido no aplicativo"
+      ],
+      "Private, fast, and organized": [
+        "Privado, rápido, e organizado"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Adiar mensagem"
@@ -11348,6 +11367,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Seu plano foi adquirido usando um aplicativo para iOS. Portanto, para fazer alterações em seu plano ou atualizar seus detalhes de pagamento, você precisará acessar a Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "A assinatura será rebaixada no final do ciclo de cobrança."
       ]
     },
     "Subscription price": {

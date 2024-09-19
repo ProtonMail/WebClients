@@ -811,11 +811,11 @@
       "Refresh status": [
         "Actualizare stare"
       ],
-      "Refresh the page": [
-        "Împrospătare pagină"
-      ],
       "refresh the page": [
         "Împrospătați pagina"
+      ],
+      "Refresh the page": [
+        "Împrospătare pagină"
       ],
       "Reload": [
         "Reîncărcare"
@@ -891,6 +891,9 @@
       ],
       "Resume": [
         "Reluare"
+      ],
+      "Resume membership": [
+        "Reluare calitate de membru"
       ],
       "Retry": [
         "Reîncercare"
@@ -1620,14 +1623,6 @@
         "Selectați oferta de sfârșit de an"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6 TiB stocare (de 2 ori mai mare ca orice plan)"
@@ -1649,6 +1644,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Planul ${ plan } a revenit pentru o perioadă limitată"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă pentru planul curent."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de **${ discountPercentage } cu planul ${ plan.Title }** când vă abonați pentru **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -5166,6 +5169,9 @@
       "${ BRAND_NAME } groups": [
         "Grupuri ${ BRAND_NAME }"
       ],
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "* Doar o singură perioadă de probare per utilizator. După aceea se aplică prețul standard."
+      ],
       "Accounts with custom domains cannot join a group plan.": [
         "Conturile cu domenii personale nu se pot alătura unui plan de grup."
       ],
@@ -5228,6 +5234,9 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonamentul va fi facturat administratorului principal al acestui plan."
       ],
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "Pentru a vă ușura tranziția, vă oferim o perioadă de probare de 30 de zile pentru ${ BRAND_NAME } Unlimited.*"
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Ați primit o invitație la ${ invite.OrganizationName }."
       ],
@@ -5279,6 +5288,12 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "* Doar o singură perioadă de probare per utilizator. După aceea se aplică prețul standard."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "După ce vă va părăsi planul actual, acest utilizator va fi mutat la planul ${ BRAND_NAME } Unlimited cu o perioadă de probare de 30 de zile.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "În mod implicit, sunt atribuiți ${ formattedStorage } de stocare în contul de administrator. Ulterior puteți gestiona spațiul alocat pentru a fi distribuit între utilizatori suplimentari."
       ],
@@ -7105,11 +7120,11 @@
       "Data locked": [
         "Date blocate"
       ],
-      "dedicated servers": [
-        "servere dedicate"
-      ],
       "Dedicated servers": [
         "Servere dedicate"
+      ],
+      "dedicated servers": [
+        "servere dedicate"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
@@ -7127,6 +7142,9 @@
       ],
       "Disable recovery by ${ type }": [
         "Dezactivare recuperare prin ${ type }."
+      ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Dezactivat din ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Dezactivarea autentificării cu doi factori vă va face contul mai puțin sigur. Continuați doar dacă este absolut necesar."
@@ -7243,6 +7261,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Activați TLS sau SSL în serviciul extern dacă se poate."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Activat din ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Activând din nou fraza de recuperare se va genera o nouă fraza de recuperare."
@@ -9036,6 +9057,9 @@
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Puteți activa înregistrarea conectărilor pentru a vedea când a fost accesat contul și de la care IP. Vom înregistra adresa IP care accesează contul, ora și încercările eșuate de accesare."
+      ],
+      "You can enable the Photos section from the interface using the toggle below.": [
+        "Puteți activa secțiunea „Fotografii” din interfață folosind comutatorul de mai jos."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Puteți debloca imediat configurația de mai sus adăugând ${ specificCountryCount } la numărul de adrese IP din planul actual sau ne puteți contacta pentru soluții personalizate."
@@ -11147,6 +11171,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Adăugați asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
@@ -11387,11 +11414,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real brazilian"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franci elvețieni"
+      ],
+      "US Dollar": [
+        "Dolar SUA"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -11600,26 +11633,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Începeți cu ${ price }"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuare cu Free"
@@ -11647,6 +11660,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Începeți cu ${ price }"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -12330,17 +12363,6 @@
         "Planul selectat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Probare ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Luați Mail Plus cu ${ price }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -12359,6 +12381,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium modificând contul"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Probare ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Luați Mail Plus cu ${ price }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -13722,6 +13755,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Se procesează plata pentru factura emisă. Așteptați până când plata este finalizată înainte de a face modificări planului sau de a actualiza detaliile de plată. Vă mulțumim pentru răbdare."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Vi se va retrage suma de ${ amountToCharge } folosind metoda de plată selectată."
       ]
     },
     "Payments.Error": {
@@ -14900,6 +14936,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Solicitare resetare parolă"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Activare secțiune „Fotografii”"
       ]
     },
     "Settings description": {
@@ -16597,10 +16638,10 @@
       "Card verification": [
         "Verificare card"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adresă de agregare"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adresă de agregare"
       ],
       "Change login password": [

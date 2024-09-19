@@ -2418,6 +2418,25 @@
         "Pomóż nam ulepszyć usługę"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Potwierdź utratę specjalnej zniżki ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Usuń zniżkę"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Twoja subskrypcja ${ PLAN_NAMES[PLANS.PASS] } jest w specjalnej cenie ${ price } za rok. Obniżenie planu do darmowej wersji spowoduje trwałą utratę zniżki, nawet w przypadku ponownej subskrypcji w przyszłości."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Otwórz w ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Zapisz na później"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Rozszerzona historia wersji"
@@ -4538,13 +4557,13 @@
         "Niepowodzenie"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
-        "Nie udało się wygenerować bezpiecznego linku. Powodem jest: ${ error }"
+        "Nie udało się wygenerować linku. Powodem jest: ${ error }"
       ],
       "Failed to generate a secure link. Try again later": [
-        "Nie udało się wygenerować bezpiecznego linku. Spróbuj ponownie później"
+        "Nie udało się wygenerować linku. Spróbuj ponownie później"
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        "Nie udało się otworzyć bezpiecznego linku. Powodem jest: ${ error }"
+        "Nie udało się otworzyć linku. Powodem jest: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "Plik \"${ name }\" został usunięty podczas pobierania"
@@ -4923,6 +4942,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Pamiętaj, że w zależności od rozmiaru książki adresowej, ten proces może zająć trochę czasu."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Po kliknięciu przycisku Potwierdź na Twoim koncie pozostaną środki w wysokości ${ remainingCreditsFormatted }."
       ],
       "Please open the document to view it.": [
         "Otwórz dokument, aby go zobaczyć."
@@ -5469,6 +5491,9 @@
       ],
       "You already have a free account": [
         "Posiadasz już darmowe konto"
+      ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Opuszczasz udostępniony element. Nie będziesz mógł ponownie uzyskać do niego dostępu, dopóki właściciel go nie udostępni."
       ],
       "You are about to open another browser tab and visit:": [
         "Uruchomisz nową kartę przeglądarki i przejdziesz do:"
@@ -7973,6 +7998,12 @@
       "Subfolder failed to be loaded": [
         "Załadowanie podfolderu nie powiodło się"
       ],
+      "The item was not added to your drive": [
+        "Element nie został dodany do dysku"
+      ],
+      "The item was succefully added to your drive": [
+        "Element został dodany do dysku"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Usunięcie linku do elementu \"${ name }\" nie powiodło się"
       ],
@@ -9030,6 +9061,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Link do elementu został zapisany na dysku. Możesz uzyskać do niego dostęp w sekcji 'Udostępnione Tobie'."
+      ],
       "Encrypted search is here": [
         "Wyszukiwanie zawartości jest tutaj"
       ],
@@ -9233,6 +9267,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Plan został zakupiony przez aplikację na iOS. Aby zmienić lub zaktualizować szczegóły płatności, przejdź do sklepu App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Subskrypcja zostanie obniżona na koniec cyklu rozliczeniowego."
       ]
     },
     "Subscription price": {
@@ -10007,6 +10046,9 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Potwierdź utratę ${ BRAND_NAME } bonusów"
       ],
+      "Confirmation required?": [
+        "Wymagane potwierdzenie?"
+      ],
       "Contact Details": [
         "Szczegóły kontaktu"
       ],
@@ -10221,7 +10263,7 @@
         "Lokalizacja"
       ],
       "Manage secure link": [
-        "Zarządzaj bezpiecznym linkiem"
+        "Zarządzaj linkiem"
       ],
       "Merge contacts": [
         "Scal kontakty"
