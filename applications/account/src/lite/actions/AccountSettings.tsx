@@ -43,7 +43,7 @@ const AccountSettings = ({
         <>
             {renderProfileModal && <EditProfileModal address={firstAddress} {...profileModalProps} />}
             <div className="mobile-settings">
-                <MobileSection title={c('Title').t`Account settings`}>
+                <MobileSection>
                     <MobileSectionRow stackContent>
                         <MobileSectionLabel small htmlFor="email">{c('Label').t`Email address`}</MobileSectionLabel>
                         <div className="text-lg mt-0.5">{Email}</div>
