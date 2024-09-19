@@ -2636,6 +2636,17 @@
         "Pomóż nam ulepszyć usługę"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Potwierdź utratę specjalnej zniżki ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Usuń zniżkę"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Twoja subskrypcja ${ PLAN_NAMES[PLANS.PASS] } jest w specjalnej cenie ${ price } za rok. Obniżenie planu do darmowej wersji spowoduje trwałą utratę zniżki, nawet w przypadku ponownej subskrypcji w przyszłości."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Rozszerzona historia wersji"
@@ -4892,6 +4903,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Pamiętaj, że w zależności od rozmiaru książki adresowej, ten proces może zająć trochę czasu."
+      ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Po kliknięciu przycisku Potwierdź na Twoim koncie pozostaną środki w wysokości ${ remainingCreditsFormatted }."
       ],
       "Please provide a name and an email address for creating a group.": [
         "Wpisz nazwę i adres e-mail, aby utworzyć grupę."
@@ -8791,6 +8805,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Plan został zakupiony przez aplikację na iOS. Aby zmienić lub zaktualizować szczegóły płatności, przejdź do sklepu App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Subskrypcja zostanie obniżona na koniec cyklu rozliczeniowego."
       ]
     },
     "Subscription price": {

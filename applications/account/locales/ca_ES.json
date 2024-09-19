@@ -157,6 +157,9 @@
       "Allow": [
         "Permet"
       ],
+      "Always allow sending": [
+        "Permet sempre l'enviament"
+      ],
       "Apply": [
         "Aplica"
       ],
@@ -249,6 +252,9 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmeu l'obertura de l'enllaç ${ linkToShow }"
+      ],
+      "Contact sales": [
+        "Contacta amb vendes"
       ],
       "Contact support": [
         "Contactar amb el suport"
@@ -489,6 +495,9 @@
       ],
       "enable desktop notifications": [
         "activa les notificacions d'escriptori"
+      ],
+      "Enable device-based recovery": [
+        "Activa la recuperació basada en dispositius"
       ],
       "Enable multi-user support": [
         "Activar suport multiusuari"
@@ -796,11 +805,11 @@
       "Refresh status": [
         "Refresca l'estat"
       ],
-      "Refresh the page": [
-        "Refresca la pàgina"
-      ],
       "refresh the page": [
         "refresca la pàgina"
+      ],
+      "Refresh the page": [
+        "Refresca la pàgina"
       ],
       "Reload": [
         "Recarrega"
@@ -1210,6 +1219,9 @@
       "View plans details": [
         "Mostra els detalls dels plans"
       ],
+      "View recovery settings": [
+        "Mostra les preferències de recuperació"
+      ],
       "Void": [
         "Nul"
       ],
@@ -1589,14 +1601,6 @@
         "Seleccioneu la vostra oferta de final d'any."
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Emmagatzematge de 6 TB (dues vegades més que qualsevol altre pla)"
@@ -1618,6 +1622,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Torna el pla ${ plan } per temps limitat"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3576,6 +3588,11 @@
       ],
       "You're invited to access a file in ${ DRIVE_APP_NAME }": [
         "Esteu convidat a accedir a un fitxer a ${ DRIVE_APP_NAME }"
+      ]
+    },
+    "drive_signup_2024: Info": {
+      "**ISO 27001** certified": [
+        "Certificat **ISO 27001**"
       ]
     },
     "driveplus2024: Deal details": {
@@ -6535,6 +6552,9 @@
       "All keys successfully reactivated": [
         "S'han reactivat correctament totes les claus"
       ],
+      "All members have been added.": [
+        "S'han afegit tots els membres."
+      ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
       ],
@@ -6850,11 +6870,11 @@
       "Data locked": [
         "Dades bloquejades"
       ],
-      "dedicated servers": [
-        "servidors dedicats"
-      ],
       "Dedicated servers": [
         "Servidors dedicats"
+      ],
+      "dedicated servers": [
+        "servidors dedicats"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Servidors dedicats amb adreça(es) IP dedicades poden ser afegits a portes d'enllaç privades per a permetre un control d'accés més ajustat."
@@ -8493,6 +8513,9 @@
       "Version number successfully copied to clipboard": [
         "El número de versió s'ha copiat correctament al porta-retalls"
       ],
+      "View and manage your groups.": [
+        "Visualitza i gestiona els grups."
+      ],
       "View, download, and manage your invoices.": [
         "Veieu, descarregueu i gestioneu les factures."
       ],
@@ -8995,6 +9018,9 @@
       ],
       "Pending": [
         "Pendent"
+      ],
+      "Sending invite...": [
+        "S'està enviant la invitació..."
       ]
     },
     "Invoice state display as badge": {
@@ -9402,6 +9428,9 @@
       "Activity": [
         "Activitat"
       ],
+      "Add all organization members": [
+        "Afegeix tots els membres de l'organització"
+      ],
       "Add group member": [
         "Afegeix el membre al grup"
       ],
@@ -9751,7 +9780,7 @@
         "Correu electrònic o nom d'usuari"
       ],
       "Email settings": [
-        "Preferències del correu"
+        "Preferències del correu electrònic"
       ],
       "Emails": [
         "Correus electrònics"
@@ -10716,6 +10745,9 @@
       "Enable ${ reason }": [
         "Habilita ${ reason }"
       ],
+      "Enable detailed events": [
+        "Habilita els esdeveniments detallats"
+      ],
       "Enable security events": [
         "Activa els esdeveniments de seguretat"
       ]
@@ -10979,11 +11011,17 @@
       ]
     },
     "Monetary unit": {
+      "Brazilian real": [
+        "Real brasiler"
+      ],
       "Euro": [
         "Euro"
       ],
       "Swiss franc": [
         "Franc suís"
+      ],
+      "US Dollar": [
+        "Dòlar americà"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -11189,26 +11227,6 @@
         "Velocitat VPN mitjana"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Comenceu per ${ price }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Continua amb el pla gratuït"
@@ -11236,6 +11254,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Comenceu per ${ price }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -11847,14 +11885,6 @@
         "El vostre pla seleccionat: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Prova de ${ shortPlan.title }"
-      ],
-      "Your account's usage": [
-        "Ús del vostre compte"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Voleu eliminar el compte?"
@@ -11873,6 +11903,14 @@
       ],
       "Unlock premium features by upgrading": [
         "Milloreu el pla i desbloquegeu funcions prèmium"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Prova de ${ shortPlan.title }"
+      ],
+      "Your account's usage": [
+        "Ús del vostre compte"
       ]
     },
     "new_plans: tooltip": {
@@ -13354,6 +13392,9 @@
       "Add a group name": [
         "Afegeix nu nom al grup"
       ],
+      "e.g. marketing": [
+        "p. ex. màrqueting"
+      ],
       "Members": [
         "Membres"
       ]
@@ -13567,8 +13608,26 @@
       ]
     },
     "Safety review": {
+      "Account safety review": [
+        "Revisió de seguretat del compte"
+      ],
+      "Add a recovery email": [
+        "Afegeix un correu electrònic de recuperació"
+      ],
+      "Add a recovery email address": [
+        "Afegeix una adreça de correu electrònic de recuperació"
+      ],
+      "Check account security": [
+        "Comprova la seguretat del compte"
+      ],
+      "Device-based recovery enabled": [
+        "S'ha activat la recuperació basada en el dispositiu"
+      ],
       "Download ${ size }": [
         "Descarrega ${ size }"
+      ],
+      "Enable device-based recovery": [
+        "Activa la recuperació basada en dispositius"
       ],
       "Enable recovery by email": [
         "Activa la recuperació per correu electrònic"
@@ -13591,6 +13650,9 @@
       "Safeguard your account": [
         "Protegiu el vostre compte"
       ],
+      "Safety review": [
+        "Revisió de seguretat"
+      ],
       "Send a new code": [
         "Envia un altre codi"
       ],
@@ -13599,6 +13661,15 @@
       ],
       "Verify": [
         "Verifica"
+      ],
+      "You recovery phone number is:": [
+        "El número de telèfon de recuperació és:"
+      ],
+      "Your account is fully secure.": [
+        "El vostre compte és totalment segur."
+      ],
+      "Your account is secure.": [
+        "El vostre compte és segur."
       ],
       "Your recovery email": [
         "El vostre correu electrònic de recuperació"
@@ -13626,6 +13697,9 @@
     "saml: Info": {
       "Details": [
         "Detalls"
+      ],
+      "Test in progress...": [
+        "Prova en curs..."
       ]
     },
     "saml: Label": {
@@ -14104,6 +14178,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Sol·licitud de restabliment de la contrasenya"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Activa la secció de fotografies"
       ]
     },
     "Settings description": {
@@ -15250,6 +15329,9 @@
       "Organization activated": [
         "Organització activada"
       ],
+      "Organization identity updated": [
+        "S'ha actualitzat la identitat de l'organització"
+      ],
       "Password copied to clipboard": [
         "La contrasenya s'ha copiat al porta-retalls"
       ],
@@ -15743,10 +15825,10 @@
       "Card verification": [
         "Verificació de la targeta"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Adreça d'arreplega"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Adreça d'arreplega"
       ],
       "Change login password": [
@@ -17068,6 +17150,9 @@
       "Enable admin access?": [
         "Voleu activar l'accés d'administrador?"
       ],
+      "Pending admin access": [
+        "Accés a administrador pendent"
+      ],
       "Private user": [
         "Usuari privat"
       ],
@@ -17076,6 +17161,9 @@
       ],
       "Revoke access": [
         "Revoca l'accés"
+      ],
+      "Revoke administrator access?": [
+        "Voleu revocar l'accés de l'administrador?"
       ],
       "Send request": [
         "Envia una sol·licitud"
@@ -17212,6 +17300,9 @@
       ],
       "It's you": [
         "Sou vós"
+      ],
+      "Pending admin access": [
+        "Accés a administrador pendent"
       ],
       "Private": [
         "Privat"
@@ -17383,6 +17474,12 @@
       ],
       "Bitcoin via email": [
         "Bitcoin via correu electrònic"
+      ],
+      "Early access to new features": [
+        "Accés anticipat a les noves característiques"
+      ],
+      "Early access waitlist": [
+        "Llista d'espera per a l'accés anticipat"
       ],
       "Get started": [
         "Comenceu"

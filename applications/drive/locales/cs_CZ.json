@@ -2424,6 +2424,25 @@
         "Pomozte nám se zlepšit"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Potvrďte ztrátu speciální slevy na ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Odebrat slevu"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Vaše předplatné ${ PLAN_NAMES[PLANS.PASS] } je za speciální cenu ${ price } ročně. Snížením na tarif Free trvale ztratíte slevu, a to i v případě, že v budoucnu opět navýšíte tarif."
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Otevřít v ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Uložit na později"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Rozšířená historie verzí"
@@ -7940,6 +7959,12 @@
       "Subfolder failed to be loaded": [
         "Podsložku se nepodařilo načíst"
       ],
+      "The item was not added to your drive": [
+        "Položka nebyla přidána na váš disk"
+      ],
+      "The item was succefully added to your drive": [
+        "Položka byla úspěšně přidána na váš disk"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Odkaz na \"${ name }\" se nepodařilo odstranit"
       ],
@@ -9000,6 +9025,9 @@
       ]
     },
     "Spotlight": {
+      "A link to this item has been saved in your drive. You can access it later in the 'Shared with me' section.": [
+        "Odkaz na tuto položku byl uložen na váš disk. Můžete k ní později přistupovat v části 'Sdíleno se mnou'."
+      ],
       "Encrypted search is here": [
         "Vyhledávání v šifrovaných datech je zde"
       ],
@@ -9203,6 +9231,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Váš tarif byl zakoupen pomocí aplikace pro iOS. Chcete-li provést změny tarifu nebo aktualizovat platební údaje, musíte přejít do Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Na konci fakturačního cyklu bude předplatné sníženo."
       ]
     },
     "Subscription price": {

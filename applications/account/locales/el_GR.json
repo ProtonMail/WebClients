@@ -811,11 +811,11 @@
       "Refresh status": [
         "Ανανέωση κατάστασης"
       ],
-      "Refresh the page": [
-        "Ανανέωση της σελίδας"
-      ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
+      ],
+      "Refresh the page": [
+        "Ανανέωση της σελίδας"
       ],
       "Reload": [
         "Ανανέωση"
@@ -891,6 +891,9 @@
       ],
       "Resume": [
         "Συνέχεια"
+      ],
+      "Resume membership": [
+        "Συνέχιση συνδρομής"
       ],
       "Retry": [
         "Δοκιμάστε ξανά"
@@ -1616,14 +1619,6 @@
         "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "Χώρος αποθήκευσης 6 TB (2 φορές περισσότερος από οποιοδήποτε άλλο πρόγραμμα)"
@@ -1645,6 +1640,14 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Το πλάνο ${ plan } επιστρέφει μόνο για περιορισμένο χρονικό διάστημα"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Λυπούμαστε, αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας. Αλλά μπορείτε να πάρετε έκπτωση **${ discountPercentage } στο πλάνο ${ plan.Title }** όταν εγγραφείτε για **${ months }** μήνες."
       ]
     },
     "bf2023: Offers": {
@@ -5145,6 +5148,9 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ομάδες"
       ],
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Μόνο μία δωρεάν δοκιμή ανά χρήστη. Στη συνέχεια ισχύει κανονική τιμολόγηση."
+      ],
       "Accounts with custom domains cannot join a group plan.": [
         "Οι λογαριασμοί με προσαρμοσμένους τομείς δεν μπορούν να συμμετάσχουν σε ομαδικό πλάνο."
       ],
@@ -5206,6 +5212,9 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Η συνδρομή θα χρεωθεί στον κύριο διαχειριστή αυτού του προγράμματος."
       ],
+      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
+        "Για να διευκολύνουμε τη μετάβαση, σας προσφέρουμε μια δωρεάν δοκιμή 30 ημερών με ${ BRAND_NAME } Unlimited*."
+      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "Έχετε προσκληθεί να συμμετάσχετε στο ${ invite.OrganizationName }"
       ],
@@ -5255,6 +5264,12 @@
       ]
     },
     "familyOffer_2023:Info": {
+      "*Only one free trial per user. Regular pricing applies thereafter.": [
+        "*Μόνο μία δωρεάν δοκιμή ανά χρήστη. Στη συνέχεια ισχύει κανονική τιμολόγηση."
+      ],
+      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
+        "Αφού αποχωρήσει από το πρόγραμμά σας, αυτός ο χρήστης θα μετακινηθεί σε ένα πρόγραμμα ${ BRAND_NAME } Unlimited με δωρεάν δοκιμή 30 ημερών.*"
+      ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Από προεπιλογή, εκχωρούμε ${ formattedStorage } αποθηκευτικού χώρου στον λογαριασμό διαχειριστή. Μπορείτε να διαχειριστείτε τον εκχωρημένο χώρο αποθήκευσης που θα διανεμηθεί σε επιπλέον χρήστες αργότερα."
       ],
@@ -7036,11 +7051,11 @@
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
-      "dedicated servers": [
-        "αφοσιωμένοι διακομιστές"
-      ],
       "Dedicated servers": [
         "Αφοσιωμένοι διακομιστές"
+      ],
+      "dedicated servers": [
+        "αφοσιωμένοι διακομιστές"
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Αποκλειστικοί διακομιστές με αποκλειστική(ές) διεύθυνση(σεις) IP μπορούν να προστεθούν σε ιδιωτικές πύλες για να ενεργοποιήσουν βελτιστοποιημένο έλεγχο πρόσβασης."
@@ -7057,6 +7072,9 @@
       ],
       "Disable recovery by ${ type }": [
         "Απενεργοποιήστε την ανάκτηση κατά ${ type }"
+      ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Απενεργοποιημένη από ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Η απενεργοποίηση του ελέγχου ταυτότητας δύο παραγόντων θα κάνει τον λογαριασμό σας λιγότερο ασφαλή. Προχωρήστε μόνο εάν είναι απολύτως απαραίτητο."
@@ -7172,6 +7190,9 @@
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Ενεργοποίηση TLS ή SSL στην εξωτερική υπηρεσία, εφόσον υποστηρίζεται."
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Ενεργοποιημένη από ${ formattedDateAndTime }"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Η ενεργοποίηση ξανά της ανάκτησης μέσω φράσης θα παράξει μια νέα φράση ανάκτησης."
@@ -11043,6 +11064,9 @@
       ]
     },
     "mail_signup_2024: Info": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Προσθέστε το ${ BRAND_NAME } Scribe βοηθό γραφής"
       ],
@@ -11497,26 +11521,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Get started for ${ price }": [
-        "Ξεκινήστε με ${ price }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Συνέχεια με Δωρεάν"
@@ -11544,6 +11548,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Get started for ${ price }": [
+        "Ξεκινήστε με ${ price }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -12205,17 +12229,6 @@
         "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
       ]
     },
-    "new_plans: Title": {
-      "${ shortPlan.title } Trial": [
-        "Δοκιμή ${ shortPlan.title }"
-      ],
-      "Get Mail Plus for ${ price }": [
-        "Αποκτήστε το Mail Plus για ${ price }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
-      ]
-    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -12234,6 +12247,17 @@
       ],
       "Unlock premium features by upgrading": [
         "Ξεκλειδώστε premium χαρακτηριστικά με αναβάθμιση"
+      ]
+    },
+    "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "Δοκιμή ${ shortPlan.title }"
+      ],
+      "Get Mail Plus for ${ price }": [
+        "Αποκτήστε το Mail Plus για ${ price }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {
@@ -13564,6 +13588,9 @@
       ],
       "We are processing your payment for the billed invoice. Please wait until the payment is completed before making changes to your plan or updating your payment details. Thank you for your patience.": [
         "Επεξεργαζόμαστε την πληρωμή σας για το τιμολογημένο τιμολόγιο. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή προτού κάνετε αλλαγές στο πρόγραμμά σας ή ενημερώσετε τα στοιχεία πληρωμής σας. Σας ευχαριστούμε για την υπομονή σας."
+      ],
+      "You will be charged ${ amountToCharge } from your selected payment method.": [
+        "Θα χρεωθείτε ${ amountToCharge } από τον επιλεγμένο τρόπο πληρωμής."
       ]
     },
     "Payments.Error": {
@@ -14726,6 +14753,11 @@
     "session_recovery:status:title": {
       "Password reset request": [
         "Αίτηση Επαναφοράς Κωδικού Πρόσβασης"
+      ]
+    },
+    "Setting": {
+      "Enable Photos section": [
+        "Ενεργοποίηση ενότητας Φωτογραφίες"
       ]
     },
     "Settings description": {
@@ -16388,10 +16420,10 @@
       "Card verification": [
         "Επαλήθευση Κάρτας"
       ],
-      "Catch-All address": [
+      "Catch-all address": [
         "Διευθύνσεις Catch all"
       ],
-      "Catch-all address": [
+      "Catch-All address": [
         "Διευθύνσεις Catch all"
       ],
       "Change login password": [

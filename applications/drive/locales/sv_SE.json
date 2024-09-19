@@ -2397,6 +2397,19 @@
         "Hjälp oss att förbättra"
       ]
     },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Ta bort rabatt"
+      ]
+    },
+    "drive:action": {
+      "Open in ${ DRIVE_SHORT_APP_NAME }": [
+        "Öppna i ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Save for later": [
+        "Spara till senare"
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Utökad versionshistorik"
@@ -5319,6 +5332,9 @@
       "You already have a free account": [
         "Du har redan ett gratis konto"
       ],
+      "You are about to leave the shared item. You will not be able to access it again until the owner shares it with you.": [
+        "Du är på väg att lämna det delade objektet. Du kommer inte att kunna komma åt den igen förrän ägaren delar det med dig."
+      ],
       "You are about to open another browser tab and visit:": [
         "Du är på väg att öppna en annan webbläsarflik och besöka:"
       ],
@@ -7715,6 +7731,12 @@
       "Subfolder failed to be loaded": [
         "Undermapp kunde inte laddas"
       ],
+      "The item was not added to your drive": [
+        "Objektet lades inte till på din Drive"
+      ],
+      "The item was succefully added to your drive": [
+        "Objektet lades till på din Drive"
+      ],
       "The link to \"${ name }\" failed to be deleted": [
         "Länken till “${ name }“ misslyckades att tas bort"
       ],
@@ -8912,6 +8934,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Ditt paket köptes med en iOS-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Prenumerationen kommer att nedgraderas i slutet av faktureringsperioden."
       ]
     },
     "Subscription price": {

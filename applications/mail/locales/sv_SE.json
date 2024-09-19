@@ -546,6 +546,9 @@
       "Hide": [
         "Dölj"
       ],
+      "Hide ${ BRAND_NAME } Scribe writing assistant": [
+        "Dölj ${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "Hide advanced PGP settings": [
         "Dölj avancerade PGP-inställningar"
       ],
@@ -1129,6 +1132,9 @@
       "Show": [
         "Visa"
       ],
+      "Show ${ BRAND_NAME } Scribe writing assistant": [
+        "Visa ${ BRAND_NAME } Scribe skrivassistent"
+      ],
       "Show advanced PGP settings": [
         "Visa avancerade PGP-inställningar"
       ],
@@ -1176,9 +1182,6 @@
       ],
       "Snooze": [
         "Snooza"
-      ],
-      "Some images could not be loaded with tracker protection.": [
-        "Några bilder kunde inte laddas med spårningsskydd."
       ],
       "Star": [
         "Stjärnmärk"
@@ -1233,6 +1236,9 @@
       ],
       "Tomorrow": [
         "Imorgon"
+      ],
+      "Tracker protection prevented some images from loading. Load them if you trust the sender.": [
+        "Spårningsskydd hindrade några bilder från att laddas. Ladda dem om du litar på avsändaren."
       ],
       "Trust": [
         "Lita på"
@@ -3572,6 +3578,11 @@
     "Downgrade modal exit survey title": {
       "Help us improve": [
         "Hjälp oss att förbättra"
+      ]
+    },
+    "Downgrade warning": {
+      "Remove discount": [
+        "Ta bort rabatt"
       ]
     },
     "Download attachments": {
@@ -10855,6 +10866,14 @@
         "Signera"
       ]
     },
+    "SmartBanner": {
+      "Faster on the app": [
+        "Snabbare på appen"
+      ],
+      "Private, fast, and organized": [
+        "Privat, snabbt och organiserat"
+      ]
+    },
     "Snooze message": {
       "Snooze Message": [
         "Snooza meddelande"
@@ -11295,6 +11314,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Ditt paket köptes med en iOS-app. Så för att göra ändringar i ditt paket eller uppdatera dina betalningsuppgifter måste du gå till Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Prenumerationen kommer att nedgraderas i slutet av faktureringsperioden."
       ]
     },
     "Subscription price": {

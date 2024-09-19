@@ -5,8 +5,631 @@
   },
   "contexts": {
     "Action": {
+      "Account": [
+        "Уліковы запіс"
+      ],
+      "Account settings": [
+        "Налады ўліковага запісу"
+      ],
+      "Add": [
+        "Дадаць"
+      ],
+      "Add current URL": [
+        "Дадаць бягучы URL-адрас"
+      ],
+      "Add domain": [
+        "Дадаць дамен"
+      ],
+      "Add more": [
+        "Дадаць яшчэ"
+      ],
+      "Add new item": [
+        "Дадаць новы элемент"
+      ],
+      "Add section": [
+        "Дадаць раздзел"
+      ],
+      "Add username field": [
+        "Дадаць поле імя карыстальніка"
+      ],
+      "Advanced": [
+        "Дадаткова"
+      ],
+      "Advanced options": [
+        "Дадатковыя параметры"
+      ],
+      "Authenticate": [
+        "Аўтэнтыфікацыя"
+      ],
+      "Back": [
+        "Назад"
+      ],
+      "Bulk delete items from trash": [
+        "Масавае выдаленне элементаў са сметніцы"
+      ],
+      "Bulk move items to another vault": [
+        "Масавае перамяшчэнне элементаў у іншае сховішча"
+      ],
+      "Bulk move items to trash": [
+        "Масавае перамяшчэнне элементаў у сметніцу"
+      ],
+      "Bulk restore items from trash": [
+        "Масавае аднаўленне элементаў са сметніцы"
+      ],
+      "Bulk select items": [
+        "Масавы выбар элементаў"
+      ],
+      "Cancel": [
+        "Скасаваць"
+      ],
+      "Change": [
+        "Змяніць"
+      ],
+      "Choose a file or drag it here": [
+        "Выберыце файл або перацягніце яго сюды"
+      ],
+      "Clear": [
+        "Ачысціць"
+      ],
+      "Clear search": [
+        "Ачысціць пошук"
+      ],
+      "Close": [
+        "Закрыць"
+      ],
+      "Close advanced options": [
+        "Закрыць пашыраныя параметры"
+      ],
+      "Close navigation": [
+        "Закрыць панэль навігацыі"
+      ],
+      "Confirm": [
+        "Пацвердзіць"
+      ],
+      "Confirm access": [
+        "Пацвердзіць доступ"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Падключыце свой уліковы запіс ${ BRAND_NAME }"
+      ],
+      "Continue": [
+        "Працягнуць"
+      ],
+      "Continue offline": [
+        "Працягнуць па-за сеткай"
+      ],
+      "Continue without pinning": [
+        "Працягнуць без замацавання"
+      ],
+      "Copy & fill in": [
+        "Скапіяваць і запоўніць"
+      ],
+      "Copy and close": [
+        "Скапіяваць і закрыць"
+      ],
+      "Copy link": [
+        "Капіяваць спасылку"
+      ],
+      "Copy to clipboard": [
+        "Скапіяваць у буфер абмену"
+      ],
+      "Create": [
+        "Стварыць"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Стварыць уліковы запіс ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Стварыць уліковы запіс ${ BRAND_NAME }"
+      ],
+      "Create a new vault to share": [
+        "Стварыць новае сховішча для абагулення"
+      ],
+      "Create alias": [
+        "Стварыць псеўданім"
+      ],
+      "Create an account": [
+        "Стварыць уліковы запіс"
+      ],
+      "Create card": [
+        "Стварыць картку"
+      ],
+      "Create identity": [
+        "Стварыць ідэнтычнасць"
+      ],
+      "Create login": [
+        "Стварыць запіс уваходу"
+      ],
+      "Create new login": [
+        "Стварыць новы запіс уваходу"
+      ],
+      "Create note": [
+        "Стварыць нататку"
+      ],
+      "Create vault": [
+        "Стварыць сховішча"
+      ],
+      "Creating vault": [
+        "Стварэнне сховішча"
+      ],
+      "Custom section": [
+        "Карыстальніцкі раздзел"
+      ],
+      "Customize": [
+        "Наладзіць"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Delete alias": [
+        "Выдаліць псеўданім"
+      ],
+      "Delete all": [
+        "Выдаліць усе"
+      ],
+      "Delete password": [
+        "Выдаліць пароль"
+      ],
+      "Delete permanently": [
+        "Выдаліць незваротна"
+      ],
+      "Delete vault": [
+        "Выдаліць сховішча"
+      ],
+      "Deselect": [
+        "Зняць выбар"
+      ],
+      "Disable autosave on this website": [
+        "Адключыць аўтазахаванне на гэтым сайце"
+      ],
+      "Disable instead": [
+        "Адключыць"
+      ],
+      "Disable this alias to stop receiving emails sent to this alias": [
+        "Адключыць гэты псеўданім і спыніць атрыманне лістоў, якія адпраўляюцца на яго"
+      ],
+      "Discard": [
+        "Адхіліць"
+      ],
+      "Dismiss": [
+        "Закрыць"
+      ],
+      "Do not show on this website": [
+        "Не паказваць на гэтым сайце"
+      ],
+      "Do not suggest on this website": [
+        "Не прапаноўваць на гэтым сайце"
+      ],
+      "Done": [
+        "Гатова"
+      ],
+      "Download this CSV template": [
+        "Спампаваць гэты шаблон CSV"
+      ],
+      "Edit": [
+        "Рэдагаваць"
+      ],
+      "Edit vault": [
+        "Рэдагаваць сховішча"
+      ],
+      "Enable this alias to receive emails sent to this alias": [
+        "Уключыць гэты псеўданім і зноў пачаць атрымліваць лісты, якія адпраўляюцца на яго"
+      ],
+      "Entire vault": [
+        "Усё сховішча"
+      ],
+      "Exclude from monitoring": [
+        "Выключыць з назірання"
+      ],
+      "Export": [
+        "Экспартаваць"
+      ],
+      "Feedback & Help": [
+        "Зваротная сувязь і дапамога"
+      ],
+      "Fill password": [
+        "Запоўніць пароль"
+      ],
+      "Filter vault items": [
+        "Фільтраваць элементы сховішча"
+      ],
+      "Generate alias": [
+        "Згенерыраваць псеўданім"
+      ],
+      "Generate password": [
+        "Згенерыраваць пароль"
+      ],
+      "Generate secure link": [
+        "Згенерыраваць бяспечнаю спасылку"
+      ],
+      "Generated passwords": [
+        "Згенерыраваныя паролі"
+      ],
+      "Generating secure link...": [
+        "Генерацыя бяспечнай спасылкі..."
+      ],
+      "Get mobile apps": [
+        "Атрымаць мабільныя праграмы"
+      ],
+      "Get Pass Business": [
+        "Атрымаць Pass Business"
+      ],
+      "Get Pass Plus": [
+        "Атрымаць Pass Plus"
+      ],
+      "Hide": [
+        "Схаваць"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Як экспартаваць даныя з ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "How to use ${ PASS_APP_NAME }": [
+        "Як выкарыстоўваць ${ PASS_APP_NAME }"
+      ],
+      "Import": [
+        "Імпартаваць"
+      ],
+      "Import your passwords": [
+        "Імпартаваць вашы паролі"
+      ],
+      "Importing": [
+        "Імпартаванне"
+      ],
+      "Include in monitoring": [
+        "Уключыць у назіранне"
+      ],
+      "Invite others": [
+        "Запрасіць іншых"
+      ],
+      "Join shared vault": [
+        "Далучыцца да абагуленага сховішча"
+      ],
+      "Learn more": [
+        "Даведацца больш"
+      ],
+      "Leave": [
+        "Выйсці"
+      ],
+      "Leave vault": [
+        "Выйсці са сховішча"
+      ],
+      "Link copied to clipboard": [
+        "Спасылка скапіявана ў буфер абмену"
+      ],
+      "Link expires after": [
+        "Спасылка міне праз"
+      ],
+      "Lock extension": [
+        "Блакіраваць пашырэнне"
+      ],
+      "Make admin": [
+        "Можа адміністраваць"
+      ],
+      "Make editor": [
+        "Можа рэдагаваць"
+      ],
+      "Make viewer": [
+        "Можа праглядаць"
+      ],
+      "Manage access": [
+        "Кіраваць доступам"
+      ],
+      "Manage vault access": [
+        "Кіраванне доступам да сховішча"
+      ],
+      "Manually sync your data": [
+        "Сінхранізацыя даных уручную"
+      ],
+      "Maximum views": [
+        "Максімум праглядаў"
+      ],
+      "More info: ${ safeTitle }": [
+        "Больш інфармацыі: ${ safeTitle }"
+      ],
+      "More options": [
+        "Дадатковыя параметры"
+      ],
+      "Move": [
+        "Перамясціць"
+      ],
+      "Move all items": [
+        "Перамяшчэнне ўсіх элементаў"
+      ],
+      "Move to a shared vault": [
+        "Перамясціць абагуленае сховішча"
+      ],
+      "Move to another vault": [
+        "Перамясціць у іншае сховішча"
+      ],
+      "Move to Trash": [
+        "Перамясціць у Сметніцу"
+      ],
+      "Move to trash": [
+        "Перамясціць у сметніцу"
+      ],
+      "Multiple select": [
+        "Выбар некалькіх элементаў"
+      ],
+      "No expired links": [
+        "Пратэрмінаваныя спасылкі адсутнічаюць"
+      ],
+      "Not now": [
+        "Не зараз"
+      ],
+      "OK": [
+        "Добра"
+      ],
+      "Open in a window": [
+        "Адкрыць у акне"
+      ],
+      "Open navigation": [
+        "Адкрыць панэль навігацыі"
+      ],
+      "Open web app": [
+        "Адкрыць вэб-праграму"
+      ],
+      "Pass for Android": [
+        "Pass для Android"
+      ],
+      "Pass for iOS": [
+        "Pass для iOS"
+      ],
+      "Pin item": [
+        "Замацаваць элемент"
+      ],
       "Please retry": [
         "Паспрабуйце яшчэ раз"
+      ],
+      "Refresh the page": [
+        "Абнавіць старонку"
+      ],
+      "Regenerate": [
+        "Згенерыраваць яшчэ раз"
+      ],
+      "Reject": [
+        "Адхіліць"
+      ],
+      "Reject invitation": [
+        "Адхіліць запрашэнне"
+      ],
+      "Reload extension": [
+        "Перазагрузіць пашырэнне"
+      ],
+      "Remove": [
+        "Выдаліць"
+      ],
+      "Remove access": [
+        "Выдаліць доступ"
+      ],
+      "Remove all expired links (${ inactiveLinkCount })": [
+        "Выдаліць ўсе пратэрмінаваныя спасылкі (${ inactiveLinkCount })"
+      ],
+      "Remove link": [
+        "Выдаліць спасылку"
+      ],
+      "Remove member": [
+        "Выдаліць удзельніка"
+      ],
+      "Request a feature": [
+        "Запытаць функцыю"
+      ],
+      "Resend invitation": [
+        "Паўторна адправіць запрашэнне"
+      ],
+      "Restore": [
+        "Аднавіць"
+      ],
+      "Restore item": [
+        "Аднавіць элемент"
+      ],
+      "Restrict number of views": [
+        "Абмежаваць колькасць праглядаў"
+      ],
+      "Retry": [
+        "Паўтарыць"
+      ],
+      "Right click and download this CSV": [
+        "Націсніце правую кнопку і спампуйце гэты CSV"
+      ],
+      "Save": [
+        "Захаваць"
+      ],
+      "Save passkey": [
+        "Захаванне ключа доступу"
+      ],
+      "Saving": [
+        "Захаванне"
+      ],
+      "Saving passkey...": [
+        "Захаванне ключа доступу..."
+      ],
+      "Section name": [
+        "Назва раздзела"
+      ],
+      "Secure links": [
+        "Бяспечныя спасылкі"
+      ],
+      "See all": [
+        "Праглядзець усе"
+      ],
+      "See members": [
+        "Паглядзець удзельнікаў"
+      ],
+      "Send invite": [
+        "Адправіць запрашэнне"
+      ],
+      "Send us a message": [
+        "Напішыце нам"
+      ],
+      "Set access level": [
+        "Задаць узровень доступу"
+      ],
+      "Set extra password": [
+        "Задаць дадатковы пароль"
+      ],
+      "Setup 2FA": [
+        "Наладжванне 2ФА"
+      ],
+      "Share": [
+        "Абагуліць"
+      ],
+      "Share secure link": [
+        "Абагуліць бяспечную спасылку"
+      ],
+      "Share this vault": [
+        "Абагуліць гэта сховішча"
+      ],
+      "Share vault": [
+        "Абагуліць сховішча"
+      ],
+      "Show": [
+        "Паказаць"
+      ],
+      "Show advanced options": [
+        "Паказаць дадатковыя параметры"
+      ],
+      "Sign back in": [
+        "Увайсці яшчэ раз"
+      ],
+      "Sign in": [
+        "Увайсці"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Увайсці з ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Выйсці з уліковага запісу"
+      ],
+      "Sort vault items": [
+        "Сартаваць элементы сховішча"
+      ],
+      "Submit": [
+        "Адправіць"
+      ],
+      "Submitting report...": [
+        "Адпраўка справаздачы..."
+      ],
+      "Sync aliases": [
+        "Сінхранізаваць псеўданімы"
+      ],
+      "Transfer ownership": [
+        "Перадаць права ўласнасці"
+      ],
+      "Trash": [
+        "Сметніца"
+      ],
+      "Try again": [
+        "Паспрабуйце яшчэ раз"
+      ],
+      "Unlock": [
+        "Разблакіраваць"
+      ],
+      "Unlock offline with password": [
+        "Разблакіраваць па-за сеткай з паролем"
+      ],
+      "Unpin item": [
+        "Адмацаваць элемент"
+      ],
+      "Update": [
+        "Абнавіць"
+      ],
+      "Update vault": [
+        "Абнавіць сховішча"
+      ],
+      "Updating": [
+        "Абнаўленне"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ],
+      "Upgrade now to share with more people": [
+        "Палепшыце, каб абагульваць з большай колькасцю карыстальнікаў"
+      ],
+      "Via secure link": [
+        "Праз бяспечную спасылку"
+      ],
+      "View app logs": [
+        "Паглядзець журнал праграмы"
+      ],
+      "View history": [
+        "Праглядзець гісторыю"
+      ],
+      "View item history": [
+        "Паглядзець гісторыю элемента"
+      ],
+      "View older history": [
+        "Паглядзець больш старую гісторыю"
+      ],
+      "Write us on Reddit": [
+        "Напішыце нам у Reddit"
+      ],
+      "Write us on Twitter": [
+        "Напішыце нам у Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Адсутнічае ваш менеджар пароля? Запытайце яго."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Эканомце з розумам. Атрымайце год падпіскі на Pass Plus усяго за ${ relativePrice } у месяц."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Скарыстацца прапановай"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Прапанова \"Чорная пятніца\""
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Настольная праграма ${ MAIL_APP_NAME }"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Падрабязней"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Згарнуць"
+      ],
+      "Expand": [
+        "Разгарнуць"
+      ]
+    },
+    "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } запіс уваходу выкарыстоўвае такі ж самы пароль",
+        "${ total } запісы ўваходу выкарыстоўваюць такі ж самы пароль",
+        "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль",
+        "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль"
+      ],
+      "A checked box means the feature is disabled.": [
+        "Сцяжок азначае, што функцыя адключана."
+      ],
+      "Dark Web Monitoring is available with a paid plan. Upgrade for immediate access.": [
+        "Функцыя Dark Web Monitoring даступна з платным тарыфным планам. Палепшыце сваю падпіску, каб неадкладна атрымаць доступ да яе."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Спіс даменаў, дзе некаторыя функцыі ў праграме ${ PASS_SHORT_APP_NAME } (аўтазапаўненне, аўтапрапанова, аўтазахаванне) могуць не працаваць.${ infoText }"
+      ],
+      "This account is vulnerable, visit the service and change your password.": [
+        "Гэты ўліковы запіс з'яўляецца ўразлівым. Наведайце сэрвіс і змяніце пароль."
+      ],
+      "This service offers 2FA. Enable it for added account security.": [
+        "Гэты сэрвіс прапануе 2ФА. Уключыце гэту функцыю, каб дадаць бяспеку ўліковаму запісу."
+      ],
+      "Unlock advanced security features and detailed logs to safeguard your online presence.": [
+        "Разблакіруйце дадатковыя функцыі бяспекі і падрабязныя журналы для абароны сваёй прысутнасці ў інтэрнэце."
       ]
     },
     "Error": {
@@ -22,10 +645,22 @@
       "Authentication error": [
         "Памылка аўтэнтыфікацыі"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Збой аўтэнтыфікацыі. Пацвердзіце ваш пароль ${ BRAND_NAME }, каб працягнуць экспартаванне"
+      ],
+      "Authentication failure: ${ message }": [
+        "Збой аўтэнтыфікацыі: ${ message }"
+      ],
+      "Cannot create alias (${ error }).": [
+        "Немагчыма стварыць псеўданім (${ error })."
+      ],
       "Cannot send invitation at the moment": [
         "У цяперашні час немагчыма адправіць запрашэнне",
         "У цяперашні час немагчыма адправіць запрашэнні",
         "У цяперашні час немагчыма адправіць запрашэнні",
+        "У цяперашні час немагчыма адправіць запрашэнні"
+      ],
+      "Cannot send invitations at the moment": [
         "У цяперашні час немагчыма адправіць запрашэнні"
       ],
       "Could not confirm this invite at the moment": [
@@ -52,6 +687,9 @@
       "Could not validate addresses at the moment.": [
         "Немагчыма праверыць адрасы ў дадзены момант."
       ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "Файл CSV не змяшчае неабходных загалоўкаў: ${ missingHeaders }"
+      ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Збой расшыфроўкі экспартаванага файла ${ PASS_APP_NAME }. ${ errorDetail }"
       ],
@@ -61,11 +699,23 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Збой выдалення сховішча \"${ payload.content.name }\""
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Выяўлены ${ errors.length } пашкоджаны радок CSV",
+        "Выяўлены ${ errors.length } пашкоджаныя радкі CSV",
+        "Выяўлены ${ errors.length } пашкоджаных радкоў CSV",
+        "Выяўлены ${ errors.length } пашкоджаных радкоў CSV"
+      ],
       "Editing item failed": [
         "Збой рэдагавання элемента"
       ],
+      "Empty CSV file": [
+        "Пусты файл CSV"
+      ],
       "Emptying trash failed": [
         "Збой ачысткі сметніцы"
+      ],
+      "Encrypted JSON not supported": [
+        "Зашыфраваны JSON не падтрымліваецца"
       ],
       "Error reporting problem": [
         "Памылка адпраўкі справаздачы аб праблеме"
@@ -148,6 +798,12 @@
       "File could not be parsed": [
         "Не атрымалася прааналізаваць файл"
       ],
+      "File could not be read": [
+        "Не атрымалася прачытаць файл"
+      ],
+      "File does not match expected format": [
+        "Файл не адпавядае фармату, які чакаўся"
+      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Збой імпартавання для сховішча \"${ vaultData.name }\" : ${ description }"
       ],
@@ -159,6 +815,9 @@
       ],
       "Invalid password manager": [
         "Памылковы менеджар пароляў"
+      ],
+      "Invalid URL": [
+        "Памылковы URL-адрас"
       ],
       "Invitation could not be accepted": [
         "Не атрымалася прыняць запрашэнне"
@@ -175,6 +834,9 @@
       "Item does not exist": [
         "Элемент не існуе"
       ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass экспартуе пашкоджаны файл CSV, калі якое-небудзь поле элемента змяшчае нечаканыя коскі, двукоссі або некалькі радкоў"
+      ],
       "Missing passkey": [
         "Адсутнічае ключ доступу"
       ],
@@ -186,6 +848,18 @@
       ],
       "Passphrase is incorrect": [
         "Няправільная парольная фраза"
+      ],
+      "PIN codes do not match": [
+        "PIN-коды не супадаюць"
+      ],
+      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
+        "Вы павінны даць пашырэнню ${ PASS_APP_NAME } неабходныя дазволы, каб працягнуць."
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Замацуйце пашырэнне або выберыце \"Працягнуць без замацавання\"."
+      ],
+      "Registration failure: ${ message }": [
+        "Збой рэгістрацыі: ${ message }"
       ],
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
@@ -211,8 +885,20 @@
       "Signature verification failed": [
         "Не ўдалося праверыць подпіс"
       ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Некаторыя сховішчы больш недаступны па прычыне таго, што было выканана скіданне пароля. Паўторна актывуйце ключы ўліковага запісу, каб аднавіць доступ. ${ reactivateLink }"
+      ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
+        "Нешта пайшло не так. Перазагрузіце пашырэнне ${ PASS_APP_NAME }. Гэта праблема была ўнесена ў журнал."
+      ],
+      "The file you are trying to import is empty": [
+        "Файл, які вы спрабуеце імпартаваць нічога не змяшчае"
+      ],
+      "The URL is in the list": [
+        "URL-адрас знаходзіцца ў спісе"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
         "Адбылася памылка падчас выдалення бяспечнай спасылкі. Паспрабуйце яшчэ раз праз некалькі хвілін."
@@ -222,6 +908,9 @@
       ],
       "Trashing item failed": [
         "Збой перамяшчэння элемента ў сметніцу"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Немагчыма згенерыраваць код OTP для гэтага элемента"
       ],
       "Unable to sync": [
         "Немагчыма сінхранізаваць"
@@ -256,6 +945,9 @@
       "Vault \"${ vaultData.name }\" could not be created": [
         "Не атрымалася стварыць сховішча \"${ vaultData.name }\""
       ],
+      "Vault name does not match": [
+        "Назва сховішча не супадае"
+      ],
       "We encountered an issue while starting ${ PASS_SHORT_APP_NAME }. If this problem continues, please contact our customer support for assistance.": [
         "Узнікла праблема падчас запуску ${ PASS_SHORT_APP_NAME }. Звяжыцеся з нашай службай падтрымкі кліентаў, калі гэта праблема застанецца."
       ],
@@ -268,11 +960,77 @@
       "Wrong PIN code. Try again.": [
         "Няправільны PIN-код. Паспрабуйце яшчэ раз."
       ],
+      "You're currently offline. Please resume connectivity in order to unlock ${ PASS_SHORT_APP_NAME }.": [
+        "У цяперашні момант вы па-за сеткай. Узнавіце падключэнне, каб разблакіраваць ${ PASS_SHORT_APP_NAME }."
+      ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
       ]
     },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "байт",
+        "байты",
+        "байтаў",
+        "байты"
+      ],
+      "GB": [
+        "ГБ"
+      ],
+      "KB": [
+        "КБ"
+      ],
+      "MB": [
+        "МБ"
+      ],
+      "TB": [
+        "ТБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байты",
+        "Байтаў",
+        "Байты"
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайты",
+        "Гігабайтаў",
+        "Гігабайты"
+      ],
+      "Kilobyte": [
+        "Кілабайт",
+        "Кілабайты",
+        "Кілабайтаў",
+        "Кілабайты"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайты",
+        "Мегабайтаў",
+        "Мегабайты"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "тэрабайтаў"
+      ]
+    },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Перайдзіце на платны тарыфны план, каб стварыць некалькі сховішчаў."
+      ],
       "\"${ payload.item.data.metadata.name }\" item was dismissed": [
         "Элемент \"${ payload.item.data.metadata.name }\" быў праігнараваны"
       ],
@@ -282,20 +1040,113 @@
       "${ count } invites successfully sent": [
         "Паспяхова адпраўлена наступная колькасць запрашэнняў: ${ count }"
       ],
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } разы",
+        "${ count } разоў",
+        "${ count } разоў"
+      ],
+      "${ count } view": [
+        "${ count } прагляд",
+        "${ count } прагляды",
+        "${ count } праглядаў",
+        "${ count } праглядаў"
+      ],
+      "${ count }/${ maxReads } views": [
+        "Праглядаў: ${ count }/${ maxReads }"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } удзельнік",
+        "${ memberCount } удзельнікі",
+        "${ memberCount } удзельнікаў",
+        "${ memberCount } удзельнікаў"
+      ],
+      "${ n } item": [
+        "${ n } элемент",
+        "${ n } элементы",
+        "${ n } элементаў",
+        "${ n } элементаў"
+      ],
+      "${ PASS_APP_NAME } will always be accessible": [
+        "${ PASS_APP_NAME } заўсёды будзе даступны"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes, credit cards and identities.": [
+        "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі, крэдытныя карткі і асабістыя звесткі."
+      ],
+      "${ PASS_APP_NAME } will prompt you as soon as generated passwords are autofilled.": [
+        "${ PASS_APP_NAME } прапануе вам, як толькі згенерыраваныя паролі будуць запоўнены аўтаматычна."
+      ],
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } не будзе прапаноўваць вам захоўваць або абнаўляць уліковыя даныя."
+      ],
+      "${ PASS_APP_NAME } will suggest authenticating using saved passkeys": [
+        "${ PASS_APP_NAME } прапануе прайсці аўтэнтыфікацыю з дапамогай захаваных ключоў доступу"
+      ],
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } будзе прапаноўваць стварыць псеўданім электроннай пошты на формах рэгістрацыі."
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } не будзе прапаноўваць ствараць надзейныя паролі на формах рэгістрацыі."
+      ],
+      "${ PASS_APP_NAME } will suggest saving passkeys.": [
+        "${ PASS_APP_NAME } прапануе захаваць ключы доступу."
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } паспяхова адключана"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } паспяхова ўключана"
       ],
+      "${ trialDaysLeft } day left": [
+        "Застаўся ${ trialDaysLeft } дзень",
+        "Засталося ${ trialDaysLeft } дні",
+        "Засталося ${ trialDaysLeft } дзён",
+        "Засталося ${ trialDaysLeft } дзён"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "Паспрабуйце прэміяльныя функцыі праграмы на працягу 7 дзён бясплатна. Толькі на працягу першага тыдня выкарыстання ${ BRAND_NAME }."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "Даступна новая версія ${ PASS_APP_NAME }. Абнавіце праграму да апошняй версіі, каб паспрабаваць новыя функцыі і выпраўленыя памылкі."
+      ],
+      "A passkey for \"${ username }\" will be saved and available on devices where ${ PASS_APP_NAME } is installed.": [
+        "Ключ доступу для \"${ username }\" будзе захаваны і даступны на прыладах з усталяваным ${ PASS_APP_NAME }."
+      ],
       "Access successfully confirmed": [
         "Доступ паспяхова пацверджаны"
+      ],
+      "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
+        "Для доступу да ${ PASS_APP_NAME } заўсёды будзе патрабавацца ваш пароль ад ${ BRAND_NAME }"
+      ],
+      "Access to ${ PASS_APP_NAME } will require your fingerprint or device PIN.": [
+        "Для доступу да ${ PASS_APP_NAME } спатрэбіцца ваш адбітак пальца або PIN-код прылады."
+      ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Атрымлівайце доступ да сваіх пароляў дзе б вы не знаходзіліся пры дапамозе нашых мабільных праграм."
+      ],
+      "Admin": [
+        "Адміністратар"
+      ],
+      "After successfully importing your data, you may delete the CSV file containing your passwords for security.": [
+        "Вы можаце выдаліць файл CSV, які змяшчае вашы паролі ў мэтах бяспекі пасля таго, як вашы даныя будуць паспяхова імпартаваны."
       ],
       "Alias succcessfully disabled. You will no longer receive emails sent to ${ item.aliasEmail }": [
         "Псеўданім паспяхова адключаны. Вы больш не будзеце атрымліваць лісты адпраўленыя на ${ item.aliasEmail }"
       ],
       "Alias succcessfully enabled. You can now receive emails sent to ${ item.aliasEmail }": [
         "Псеўданім паспяхова ўключаны. Цяпер вы зноў можаце атрымліваць лісты адпраўленыя на ${ item.aliasEmail }"
+      ],
+      "Alias syncing between your ${ BRAND_NAME } and SimpleLogin accounts is active.": [
+        "Сінхранізацыя псеўданімаў паміж вашымі ўліковымі запісамі ${ BRAND_NAME } і SimpleLogin знаходзіцца ў актыўным стане."
+      ],
+      "Aliases in trash will continue forwarding emails. If you want to stop receiving emails on this address, disable it instead.": [
+        "Псеўданімы перамешчаныя ў сметніцу працягнуць перасылаць лісты. Спачатку адключыце псеўданім, калі хочаце спыніць атрыманне лістоў на гэты адрас."
+      ],
+      "Aliases out of sync (${ aliasCount })": [
+        "Псеўданімы не сінхранізаваныя (${ aliasCount })"
       ],
       "All breaches for this address were resolved": [
         "Усе парушэнні для гэтага адраса былі вырашаны"
@@ -318,14 +1169,80 @@
       "An item previously shared with you was removed": [
         "Раней абагулены з вамі элемент быў выдалены"
       ],
+      "Are you sure you want to remove the link?": [
+        "Вы сапраўды хочаце выдаліць спасылку?"
+      ],
       "Auto-lock successfully disabled.": [
         "Аўтаблакіроўка паспяхова адключана."
+      ],
+      "Automatically copy the generated password to the clipboard": [
+        "Аўтаматычнае капіяванне згенерыраванага пароля ў буфер абмену"
       ],
       "Autosaved on ${ payload.domain }": [
         "Аўтазахавана на ${ payload.domain }"
       ],
+      "Before exporting your data with this format, please open Safari settings -> \"General\" tab -> disable the option \"Open safe files after downloading\". This will prevent Safari from incorrectly extracting the exported file.": [
+        "Адкрыйце налады Safari -> укладка \"Агульныя (General)\" -> адключыце параметр \"Адкрываць бяспечныя файлы пасля спампоўвання (Open safe files after downloading)\" перад тым, як экспартаваць свае даныя ў гэты фармат."
+      ],
       "Biometrics lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Блакіроўка біяметрыяй паспяхова зарэгістравана. Вы можаце выкарыстоўваць яе, каб разблакіраваць ${ PASS_APP_NAME }"
+      ],
+      "Biometrics will be disabled and will need to be enabled again.": [
+        "Біяметрыя будзе адключана і яе неабходна будзе ўключыць паўторна."
+      ],
+      "Built in 2FA authenticator": [
+        "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
+      "Can be viewed": [
+        "Могуць праглядаць"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Можа ствараць, рэдагаваць, выдаляць і экспартаваць элементы ў гэтым сховішчы."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Можа даваць і адклікаць дазвол на доступ да гэтага сховішча, а таксама выдаляць яго."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Можа даваць і адклікаць дазвол на доступ да гэтага сховішча."
+      ],
+      "Can view items in this vault.": [
+        "Можа праглядаць элементы ў гэтым сховішчы."
+      ],
+      "Choose a saved passkey to sign-in to ${ domain }": [
+        "Выбраць захаваны ключ доступу для ўваходу ў ${ domain }"
+      ],
+      "Click the icon to open it anytime.": [
+        "Націсніце па значку, каб адкрыць яго ў любы час."
+      ],
+      "Close this window in order to use a security key or another passkey.": [
+        "Закрываць гэта акно ў выпадку выкарыстання ключа бяспекі або іншага ключа доступу."
+      ],
+      "Close this window in order to use another passkey manager.": [
+        "Закрываць гэта акно ў выпадку выкарыстання іншага менеджара ключоў доступу"
+      ],
+      "Confirm your extra password to proceed with its removal.": [
+        "Пацвердзіце свой дадатковы пароль, каб працягнуць яго выдаленне."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "Віншуем! Вы паспяхова пацвердзілі свой доступ"
+      ],
+      "Copied to clipboard": [
+        "Скапіявана ў буфер абмену"
+      ],
+      "Creating alias...": [
+        "Стварэнне псеўданіма..."
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, passkeys...). For a complete export, we recommend using a different format.": [
+        "CSV прапануе зручны фармат прагляду вашых даных. Аднак некаторыя даныя не будуць уключаны (карыстальніцкія палі, ключы доступу і г.д.), бо дадзены фармат мае спрошчаную рэалізацыю. Мы рэкамендуем скарыстацца іншым фарматам для поўнага экспартавання."
+      ],
+      "Current version": [
+        "Бягучая версія"
+      ],
+      "Decrypting your data": [
+        "Расшыфроўка вашых даных"
+      ],
+      "Deleted items will be moved here first": [
+        "Выдаленыя элементы першапачаткова трапяць сюды"
       ],
       "Deleting \"${ payload.content.name }\"": [
         "Выдаленне \"${ payload.content.name }\""
@@ -339,6 +1256,24 @@
       "Disabling offline mode...": [
         "Адключэнне рэжыму па-за сеткай..."
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Пазнаёмцеся з усімі функцыямі ${ PASS_APP_NAME } з дапамогай відэа на YouTube"
+      ],
+      "Drop file here to upload": [
+        "Перацягніце файл сюды, каб запампаваць"
+      ],
+      "Drop to import": [
+        "Перацягніце для імпартавання"
+      ],
+      "Due to a limitation of Safari browser extensions, after exporting the data the file extension will be missing \".pgp\". Please rename the file to include the .pgp extension (e.g file.pgp) after exporting.": [
+        "Па прычыне абмежавання пашырэнняў браўзера Safari, пасля экспартавання даных будзе адсутнічаць пашырэнне файла \".pgp\". Змяніце назву файла, каб яно ўключала пашырэнне .pgp пасля экспартавання (напрыклад, file.pgp)"
+      ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Без намаганняў імпартуйце вашы існуючыя паролі ў ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Рэдактар​​"
+      ],
       "Email address successfully deleted from monitoring": [
         "Адрас электроннай пошты паспяхова выдалены з назірання"
       ],
@@ -350,6 +1285,12 @@
       ],
       "Emptying trash...": [
         "Ачышчэнне сметніцы..."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Уключыць ${ PASS_APP_NAME }, падключыўшы свой уліковы запіс ${ BRAND_NAME }"
+      ],
+      "Enable auto-locking to secure your data": [
+        "Уключыць аўтаматычную блакіроўку для бяспекі вашых даных"
       ],
       "Enabling biometrics auto-lock": [
         "Уключэнне аўтаблакіроўкі біяметрыяй"
@@ -369,11 +1310,62 @@
       "Enabling PIN auto-lock": [
         "Уключэнне аўтаблакіроўкі PIN"
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Увядзіце праверачны код. Лічба ${ digit }."
+      ],
+      "Enter your extra password": [
+        "Увядзіце ваш дадатковы пароль"
+      ],
+      "Enter your PIN code": [
+        "Увядзіце свой PIN-код."
+      ],
+      "Expires in": [
+        "Дзейнічае да"
+      ],
+      "Expires in ${ remainingTime }": [
+        "Тэрмін дзеяння завершыцца ${ remainingTime }"
+      ],
       "Extra password successfuly created": [
         "Дадатковы пароль паспяхова створаны"
       ],
       "Extra password successfuly removed": [
         "Дадатковы пароль паспяхова выдалены"
+      ],
+      "Fill in the CSV with your data": [
+        "Запоўніце CSV сваімі данымі"
+      ],
+      "Follow those steps to import your data with a generic CSV :": [
+        "Выканайце наступныя дзеянні, каб імпартаваць свае даныя з агульнага CSV:"
+      ],
+      "For easy access to your passwords and more.": [
+        "Для лёгкага доступу да вашых пароляў і не толькі."
+      ],
+      "For security reason, your access needs to be confirmed": [
+        "У мэтах бяспекі, вам неабходна пацвердзіць свой доступ"
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "У мэтах бяспекі, вам неабходна пацвердзіць свой доступ"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдня.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў."
+      ],
+      "Generating alias...": [
+        "Генерацыя псеўданіма..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Атрымайце неабмежаваную колькасць псеўданімаў, атрымлівайце асалоду ад эксклюзіўных функцый і падтрымлівайце нас падпісаўшыся на Pass Plus."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Тут вы знойдзеце ўсю неабходную інфармацыю, каб пачаць працу з праграмай."
+      ],
+      "Import in progress:": [
+        "Выконваецца імпартаванне:"
+      ],
+      "Import the CSV file below.": [
+        "Імпартуйце файл CSV ніжэй."
       ],
       "Imported ${ payload.total } item": [
         "Імпартаваны ${ payload.total } элемент",
@@ -384,8 +1376,17 @@
       "Imported on ${ date }": [
         "Імпартавана ${ date }"
       ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "Для атрымання лепшага досведу ад працы з ${ PASS_APP_NAME }, дайце неабходныя дазволы пашырэнню"
+      ],
       "Internet connection lost": [
         "Падключэнне да інтэрнэту страчана"
+      ],
+      "Internet connection lost. Please check your device's connectivity.": [
+        "Падключэнне да інтэрнэту страчана. Праверце падключэнне вашай прылады."
+      ],
+      "Invitation sent": [
+        "Запрашэнне адпраўлена"
       ],
       "Invite successfully removed": [
         "Запрашэнне паспяхова выдалена"
@@ -396,8 +1397,17 @@
       "Invite successfully sent": [
         "Запрашэнне паспяхова адпраўлена"
       ],
+      "invites you to access items in": [
+        "запрасіў(-ла) вас атрымаць доступ да элементаў у"
+      ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Здаецца, што вы ўжо ўвайшлі ў ${ PASS_APP_NAME }. Спачатку выйдзіце з уліковага запісу ў пашырэнні, калі вы спрабуеце ўвайсці з іншым уліковым запісам, спачатку выйдзіце з уліковага запісу ў пашырэнні."
+      ],
+      "item": [
+        "элемент",
+        "элементы",
+        "элементаў",
+        "элементаў"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Створаны элемент \"${ payload.item.data.metadata.name }\""
@@ -432,6 +1442,21 @@
       "Leaving vault...": [
         "Выхад са сховішча..."
       ],
+      "Let's get you started by creating your first item": [
+        "Давайце пачнём ствараць ваш першы элемент"
+      ],
+      "Loading": [
+        "Загрузка"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Загрузка ${ PASS_APP_NAME }"
+      ],
+      "Loading...": [
+        "Загрузка..."
+      ],
+      "me": [
+        "я"
+      ],
       "Monitoring settings successfully updated": [
         "Налады назірання паспяхова абноўлены"
       ],
@@ -441,11 +1466,35 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its history and all secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча ачысціць яго гісторыю і ўсе бяспечныя спасылкі."
+      ],
+      "Moving an item to another vault will erase its history.": [
+        "Перамяшчэнне элемента ў іншае сховішча ачысціць яго гісторыю."
+      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
+      "Moving items to another vault will erase their history and all secure links.": [
+        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю і ўсе бяспечныя спасылкі."
+      ],
+      "Moving items to another vault will erase their history.": [
+        "Перамяшчэнне элементаў у іншае сховішча ачысціць іх гісторыю."
+      ],
       "Moving items to trash": [
         "Перамяшчэнне элементаў у сметніцу"
+      ],
+      "Never": [
+        "Ніколі"
+      ],
+      "No identity item found": [
+        "Элемент пасведчання не знойдзены"
+      ],
+      "No login found": [
+        "Запіс уваходу не знойдзены"
+      ],
+      "None": [
+        "Няма"
       ],
       "Offline mode could not be disabled at the moment": [
         "Рэжым па-за сеткай не можа быць адключаны ў дадзены момант"
@@ -456,17 +1505,44 @@
       "Offline support successfully disabled": [
         "Падтрымка па-за сеткай паспяхова адключана"
       ],
+      "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
+        "Для доступу праз інтэрнэт да ${ PASS_APP_NAME } вам спатрэбіцца PIN-код. Вы выйдзеце з сістэмы пасля 3 няўдалых спроб."
+      ],
+      "Open the Extensions menu": [
+        "Адкрыйце меню з пашырэннямі"
+      ],
+      "Owner": [
+        "Уладальнік"
+      ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Правы ўласнасці паспяхова перададзены. Цяпер вы больш не з'яўляецеся ўладальнікам гэтага сховішча."
       ],
       "Pass Plus trial": [
         "Пробны перыяд Pass Plus"
       ],
+      "Passkey sign-in": [
+        "Увайсці з ключом доступу"
+      ],
+      "Password copied": [
+        "Пароль скапіяваны"
+      ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Пароль блакіроўкі паспяхова зарэгістраваны. Вы можаце выкарыстоўваць яго, каб разблакіраваць ${ PASS_APP_NAME }"
       ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдзень будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдні будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі."
+      ],
+      "Pending access to the shared data": [
+        "Чаканне доступу да абагуленых даных"
+      ],
       "Permanently deleting selected items": [
         "Незваротнае выдаленне выбраных элементаў"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Замацуйце ${ PASS_APP_NAME } на панэлі інструментаў"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код паспяхова зарэгістраваны. Вы можаце выкарыстоўваць яго, каб разблакіраваць ${ PASS_APP_NAME }"
@@ -474,8 +1550,77 @@
       "Pinning item...": [
         "Замацаванне элемента..."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Пацвердзіце свой пароль ${ BRAND_NAME }, каб экспартаваць даныя ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your extra password": [
+        "Пацвердзіце свой дадатковы пароль"
+      ],
+      "Please confirm your extra password in order to auto-lock with biometrics.": [
+        "Пацвердзіце свой дадатковы пароль для аўтаблакіроўкі з дапамогай біяметрыі."
+      ],
+      "Please confirm your extra password in order to auto-lock with your extra password.": [
+        "Пацвердзіце свой дадатковы пароль, калі вы хочаце прызначыць яго для аўтаблакіроўкі."
+      ],
+      "Please confirm your extra password in order to export your ${ PASS_APP_NAME } data": [
+        "Пацвердзіце свой пароль, каб экспартаваць даныя ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your extra password in order to unregister your current lock.": [
+        "Пацвердзіце свой дадатковы пароль для скасавання рэгістрацыі бягучай блакіроўкі."
+      ],
+      "Please confirm your extra password in order to update the auto-lock time.": [
+        "Пацвердзіце свой дадатковы пароль для абнаўлення часу аўтаматычнага блакіравання."
+      ],
+      "Please confirm your password": [
+        "Пацвердзіце свой пароль"
+      ],
+      "Please confirm your password in order to auto-lock with biometrics.": [
+        "Пацвердзіце свой пароль для аўтаблакіроўкі з дапамогай біяметрыі."
+      ],
+      "Please confirm your password in order to auto-lock with your password.": [
+        "Пацвердзіце свой пароль для аўтаблакіроўкі з дапамогай вашага пароля."
+      ],
+      "Please confirm your password in order to unregister your current lock.": [
+        "Пацвердзіце свой пароль, каб скасаваць рэгістрацыю бягучай блакіроўкі."
+      ],
+      "Please confirm your password in order to update the auto-lock time.": [
+        "Пацвердзіце пароль, каб абнавіць час аўтаматычнага блакіравання."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.": [
+        "Пацвердзіце свой PIN-код, каб скасаваць рэгістрацыю бягучай блакіроўкі."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Пацвердзіце PIN-код для рэдагавання гэтых налад."
+      ],
+      "Please consider leaving a review.": [
+        "Падумайце пра тое, каб пакінуць водгук."
+      ],
       "Please do not close this window": [
         "Не закрывайце акно"
+      ],
+      "Please enter your current PIN code to continue": [
+        "Увядзіце свой бягучы PIN-код для працягу"
+      ],
+      "Please enter your extra password to start using ${ PASS_SHORT_APP_NAME }.": [
+        "Увядзіце свой дадатковы пароль, каб пачаць выкарыстоўваць ${ PASS_SHORT_APP_NAME }."
+      ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Палепшыце, каб мець ранні доступ да вэб-праграмы ${ PASS_APP_NAME }"
+      ],
+      "Press Enter to copy": [
+        "Націсніце Enter, каб скапіяваць"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Прыватнасць для нас выклікае вялікую заклапочанасць. Даведайцеся чым ${ PASS_APP_NAME } адрозніваецца ад іншых праграм такога тыпу."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Абаронена з дапамогай ${ PROTON_SENTINEL_LINK } — нашай перадавой праграмы абароны ўліковых запісаў"
+      ],
+      "Quickly autofill your 2FA tokens.": [
+        "Хуткае аўтазапаўненне вашых токенаў 2ФА."
+      ],
+      "Quickly autofill your identities.": [
+        "Хуткае запаўненне вашых ідэнтычнасцей."
       ],
       "Registering extra password...": [
         "Рэгістрацыя дадатковага пароля..."
@@ -498,6 +1643,27 @@
       "Restoring trashed items...": [
         "Аднаўленне выдаленых элементаў..."
       ],
+      "Save login": [
+        "Захаваць запіс уваходу"
+      ],
+      "Save passkey": [
+        "Захаванне ключа доступу"
+      ],
+      "Secure links": [
+        "Бяспечныя спасылкі"
+      ],
+      "Select an existing login item to update.": [
+        "Выберыце існуючы элемент уваходу для абнаўлення."
+      ],
+      "Select an existing login or create a new one.": [
+        "Выберыце бягучы запіс уваходу або стварыце новы."
+      ],
+      "Select destination vault": [
+        "Выберыце мэтавае сховішча"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Выберыце куды вы хочаце, каб было захавана ваша імпартаванае сховішча(-ы)."
+      ],
       "Selected items permanently deleted": [
         "Выбраныя элементы незваротна выдалены"
       ],
@@ -513,8 +1679,26 @@
       "Session timed out": [
         "Сеанс завяршыўся"
       ],
+      "Set by your organization": [
+        "Зададзена вашай арганізацыяй"
+      ],
       "Settings successfully updated": [
         "Налады паспяхова абноўлены"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Дзяліцеся сваімі запісамі ўваходу і бяспечнымі нататкамі (да 10 карыстальнікаў)"
+      ],
+      "Sign in or create an account to continue.": [
+        "Увайдзіце або стварыце ўліковы запіс, каб працягнуць."
+      ],
+      "Sign in to your account": [
+        "Увайдзіце ў свой уліковы запіс"
+      ],
+      "Signing you in": [
+        "Адбываецца ўваход…"
+      ],
+      "Successfully exported all your items": [
+        "Усе вашы элементы паспяхова экспартаваны"
       ],
       "Successfully left the vault": [
         "Паспяхова пакінулі сховішча"
@@ -522,17 +1706,104 @@
       "Successfully synced all vaults": [
         "Паспяхова сінхранізаваны ўсе сховішчы"
       ],
+      "Switch to another vault or create an item in this vault": [
+        "Пераключыцеся на іншае сховішча або стварыце элемент у гэтым сховішчы."
+      ],
       "Syncing your vaults…": [
         "Сінхранізацыя вашых сховішчаў..."
       ],
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
       ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Выпадное меню аўтазапаўнення будзе аўтаматычна адкрывацца пры націску або навядзенні на поле."
+      ],
+      "The export will only contain vaults that you own.": [
+        "Экспартаванне будзе змяшчаць толькі тыя сховішчы, якімі вы валодаеце."
+      ],
+      "The exported file will be encrypted using PGP and requires a strong passphrase.": [
+        "Экспартаваны файл будзе зашыфраваны з дапамогай PGP і яму спатрэбіцца надзейная парольная фраза."
+      ],
+      "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
+        "Для выкарыстання ${ PASS_APP_NAME } спатрэбіцца дадатковы пароль. Ён дзейнічае як дадатковы пароль паверх вашага пароля ${ BRAND_NAME }."
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Не атрымалася імпартаваць наступны ${ result.ignored.length } элемент:",
+        "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементы:",
+        "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементаў:",
+        "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементаў:"
+      ],
       "The secure link has been removed": [
         "Бяспечная спасылка выдалена"
       ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Тэкст, які вы спрабуеце ўставіць перавышае максімальную даўжыню. Дазволена сімвалаў: ${ maxLength }."
+      ],
+      "The user did not accept the invitation yet.": [
+        "Карыстальнік пакуль не прыняў запрашэнне."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Гэта экспартаванне будзе незашыфравана, і кожны ў каго ёсць доступ да файла экспартаванага файла зможа ўбачыць вашы паролі. Для вашай бяспекі, мы раім адразу выдаліць яго пасля таго, як вы скарысталіся ім."
+      ],
+      "This option is currently not available on your device.": [
+        "Гэты параметр у цяперашні час недаступны на вашай прыладзе."
+      ],
+      "This setting is disabled on the organization level": [
+        "Налада адключана на ўзроўні арганізацыі"
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Сховішча пакуль не з'яўляецца агульнадаступным. Запрасіце карыстальнікаў, каб абагуліць яго з іншымі."
+      ],
+      "This version will be added to the history as the newest version.": [
+        "Гэта версія будзе дададзена ў гісторыю як самая новая."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Для пераносу даных з іншага менеджара пароляў вам неабходна перайсці ў яго і экспартаваць свае даныя, а потым запампаваць іх у ${ PASS_APP_NAME }. Пасля завяршэння працэсу імпартавання, выдаліце экспартаваны файл."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "Для прагляду імпартаваных даных, націсніце на значок Pass на панэлі інструментаў свайго браўзера."
+      ],
+      "Unable to copy to clipboard": [
+        "Немагчыма скапіяваць у буфер абмену"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неабмежаваная колькасць псеўданімаў Hide-my-email"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
+        "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб атрымаць доступ да сваіх ключоў"
+      ],
+      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
+        "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб захаваць гэты ключ доступу"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
+        "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай біяметрыі"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your ${ BRAND_NAME } password": [
+        "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай пароля ${ BRAND_NAME }"
+      ],
+      "Unlock ${ PASS_SHORT_APP_NAME } with your extra password": [
+        "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай дадатковага пароля"
+      ],
+      "Unlock it with your PIN to access the settings": [
+        "Разблакіруйце яго з дапамогай PIN, каб атрымаць доступ да налад"
+      ],
+      "Unlock with biometrics": [
+        "Разблакіраваць з дапамогай біяметрыі"
+      ],
       "Unpinning item...": [
         "Адмацаванне элемента..."
+      ],
+      "Update login": [
+        "Абнавіць запіс уваходу"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "Палепшыць ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
+      ],
+      "Use vaults to share this item with others.": [
+        "Выкарыстанне сховішча для абагулення элементаў з іншымі."
       ],
       "User's access removed": [
         "Доступ карыстальніка выдалены"
@@ -552,13 +1823,466 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Сховішча \"${ share.content.name }\" было выдалена"
       ],
+      "Verification code": [
+        "Праверачны код"
+      ],
+      "Viewer": [
+        "Праглядальнік"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Узніклі праблемы сінхранізацыі даных з вашым лакальным сховішчам. Пераканайцеся, што ў вас дастаткова месца на дыску для бесперабойнай працы ${ PASS_SHORT_APP_NAME }."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданім, які прысутнічае ў SimpleLogin, але адсутнічае ў ${ PASS_APP_NAME }. Хочаце імпартаваць яго?",
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімы, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?"
+      ],
+      "When creating/editing a Login on ${ PASS_APP_NAME } the 'username' input will always be visible.": [
+        "Пры стварэнні або рэдагаванні запісу ўваходу ў ${ PASS_APP_NAME } поле ўводу 'імя карыстальніка' заўсёды будзе бачным."
+      ],
+      "You are about to create:": [
+        "Вы збіраецеся стварыць:"
+      ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Цяпер вы можаце выкарыстоўваць свой пароль ${ BRAND_NAME } для доступу па-за сеткай ${ PASS_SHORT_APP_NAME }"
+      ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Вы можаце хутка аўтазапаўняць свае ўліковыя даныя, націснуўшы на значок ${ PASS_APP_NAME }."
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "У вас няма магчымасці змяніць паштовыя скрыні для гэтага псеўданіма."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "У вас застаўся ${ daysRemaining } дзень паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
+        "У вас засталося ${ daysRemaining } дні паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
+        "У вас засталося ${ daysRemaining } дзён паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
+        "У вас засталося ${ daysRemaining } дзён паспрабаваць гэтыя і іншыя прэміяльныя функцыі."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Вы перавысілі колькасць сховішчаў, якія ўключаны ў вашу падпіску. Элементы можна перамяшчаць толькі ў першыя два вашы сховішчы. Неабходна палепшыць падпіску, каб перамяшчаць элементы паміж усімі вашымі сховішчамі."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Вы перавысілі колькасць сховішчаў, якія ўключаны ў вашу падпіску. Новыя элементы можна ствараць толькі ў першых двух вашых сховішчах. Неабходна палепшыць падпіску, каб ствараць новыя элементы ва ўсіх вашых сховішчах."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Вы дасягнулі абмежавання па колькасці псеўданімаў, якія вы можаце стварыць. Неабмежаваная колькасць псеўданімаў стане даступна пасля паляпшэння вашай падпіскі."
+      ],
+      "You have reached the limit of credit cards you can create. Create an unlimited number of credit cards when you upgrade your subscription.": [
+        "Вы дасягнулі абмежавання па колькасці крэдытных картак, якія можна стварыць. Неабмежаваная колькасць крэдытных картак стане даступна пасля паляпшэння вашай падпіскі."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Перавышана абмежаванне колькасці сховішчаў, якія вам дазволена стварыць."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Вы дасягнулі максімальнай даўжыні. Дазволена сімвалаў: ${ maxLength }."
+      ],
+      "You will be logged out and need to log in again on all of your other devices.": [
+        "На ўсіх вашых іншых прыладах сеанс будзе завершаны і вам неабходна будзе аўтарызавацца паўторна."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Вы будзеце выкарыстоўваць гэты PIN для разблакіроўкі ${ PASS_APP_NAME }, калі ён будзе не актыўны пэўны перыяд часу."
+      ],
+      "You're about to create": [
+        "Вы збіраецеся стварыць"
+      ],
+      "You're invited to a vault.": [
+        "Вас запрасілі ў сховішча."
+      ],
+      "Your ${ PASS_APP_NAME } session is locked": [
+        "Ваш сеанс ${ PASS_APP_NAME } заблакіраваны"
+      ],
+      "Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.": [
+        "Ваш уліковы запіс абмежаваны па той прычыне, што ў вашай арганізацыі прысутнічае прымусовая двухфактарная аўтэнтыфікацыя. Уключыце двухфактарную аўтэнтыфікацыю ў наладах уліковага запісу або звяжыцеся са сваім адміністратарам."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
+      ],
+      "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
+        "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } псеўданім",
+        "${ aliasCount } псеўданімы",
+        "${ aliasCount } псеўданімаў",
+        "${ aliasCount } псеўданімаў"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } сімвал",
+        "${ config.options.length } сімвалы",
+        "${ config.options.length } сімвалаў",
+        "${ config.options.length } сімвалаў"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } слова",
+        "${ config.options.wordCount } словы",
+        "${ config.options.wordCount } слоў",
+        "${ config.options.wordCount } слоў"
+      ],
+      "${ days } day": [
+        "${ days } дзень",
+        "${ days } дні",
+        "${ days } дзён",
+        "${ days } дзён"
+      ],
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзін"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвілін"
+      ],
+      "${ PASS_SHORT_APP_NAME } monitor": [
+        "${ PASS_SHORT_APP_NAME } Monitor"
+      ],
+      "${ PASS_SHORT_APP_NAME } version": [
+        "Версія ${ PASS_SHORT_APP_NAME }"
+      ],
+      "1 hour": [
+        "1 гадзіна"
+      ],
+      "1 minute": [
+        "1 хвіліна"
+      ],
+      "10 minutes": [
+        "10 хвілін"
+      ],
+      "14 days": [
+        "14 дзён"
+      ],
+      "15 minutes": [
+        "15 хвілін"
+      ],
+      "2 minutes": [
+        "2 хвіліны"
+      ],
+      "24 hours": [
+        "24 гадзіны"
+      ],
+      "2FA autofill": [
+        "Аўтазапаўненне 2ФА"
+      ],
+      "2FA secret key (TOTP)": [
+        "Сакрэтны ключ 2ФА (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "Токен 2ФА (TOTP)"
+      ],
+      "30 days": [
+        "30 дзён"
+      ],
+      "30 minutes": [
+        "30 хвілін"
+      ],
+      "30 seconds": [
+        "30 секунд"
+      ],
+      "5 minutes": [
+        "5 хвілін"
+      ],
+      "7 days": [
+        "7 дзён"
+      ],
+      "A-Z": [
+        "А-Я"
+      ],
+      "Account": [
+        "Уліковы запіс"
+      ],
+      "Add section": [
+        "Дадаць раздзел"
+      ],
+      "Additional details": [
+        "Дадатковыя падрабязнасці"
+      ],
+      "Address details": [
+        "Звесткі аб адрасе"
+      ],
+      "Alias": [
+        "Псеўданім"
+      ],
+      "Alias address": [
+        "Адрас псеўданіма"
+      ],
+      "Aliases": [
+        "Псеўданімы"
+      ],
+      "All": [
+        "Усе"
+      ],
+      "All vaults": [
+        "Усе сховішчы"
+      ],
+      "Alphabetical": [
+        "Па алфавіце"
+      ],
+      "Always show username field": [
+        "Заўсёды паказваць поле імя карыстальніка"
+      ],
+      "Application logs": [
+        "Журналы праграмы"
+      ],
+      "Authenticate with passkeys": [
+        "Аўтэнтыфікацыі з дапамогай ключоў доступу"
+      ],
+      "Auto-lock after": [
+        "Аўтаблакіроўка пасля"
+      ],
+      "Autofill": [
+        "Аўтазапоўніць"
+      ],
+      "Autofill 2FA": [
+        "Аўтазапаўненне 2ФА"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Аўтаматычна адкрываць аўтазапаўненне пры навядзенні на поле ўваходу"
+      ],
+      "Autosave": [
+        "Аўтазахаванне"
+      ],
+      "Autosave vault": [
+        "Аўтаматычнае захаванне сховішча"
+      ],
+      "Biometrics": [
+        "Біяметрыя"
+      ],
+      "Birthdate": [
+        "Дата нараджэння"
+      ],
+      "Capital letters (A-Z)": [
+        "Вялікія літары (A-Z)"
+      ],
+      "Capitalise": [
+        "Вялікімі літарамі"
+      ],
+      "Card": [
+        "Картка"
+      ],
+      "Card number": [
+        "Нумар карткі"
+      ],
+      "Cards": [
+        "Карткі"
+      ],
+      "City": [
+        "Горад"
+      ],
+      "Company": [
+        "Кампанія"
+      ],
+      "Confirm vault name": [
+        "Пацвярджэнне назвы сховішча"
+      ],
+      "Contact details": [
+        "Кантактныя звесткі"
+      ],
+      "Copy": [
+        "Капіяваць"
+      ],
+      "Copy password": [
+        "Скапіяваць пароль"
+      ],
+      "Country or Region": [
+        "Краіна або рэгіён"
+      ],
+      "County": [
+        "Акруга"
+      ],
+      "Create a credit card": [
+        "Стварыць крэдытную картку"
+      ],
+      "Create a hide-my-email alias": [
+        "Стварыць псеўданім Hide-my-email"
+      ],
+      "Create a login": [
+        "Стварыць запіс уваходу"
+      ],
+      "Create an encrypted note": [
+        "Стварыць зашыфраваную нататку"
+      ],
+      "Create an Identity": [
+        "Стварыць ідэнтычнасць"
+      ],
+      "Create lock": [
+        "Стварыць блакіроўку"
+      ],
+      "Create new vault": [
+        "Стварыць новае сховішча"
+      ],
+      "Created": [
+        "Створана"
+      ],
+      "Created at": [
+        "Створана"
+      ],
+      "Custom hidden field": [
+        "Карыстальніцкія схаваныя палі"
+      ],
+      "Custom text field": [
+        "Карыстальніцкія тэкставыя палі"
+      ],
+      "Device": [
+        "Прылада"
+      ],
+      "Display": [
+        "Адлюстроўваць"
+      ],
+      "Display ${ PASS_APP_NAME } icon on autofillable fields": [
+        "Паказваць значок ${ PASS_APP_NAME } у палях аўтазапаўнення"
+      ],
+      "Domain": [
+        "Дамен"
+      ],
+      "Domains": [
+        "Дамены"
+      ],
+      "Don't remind me again": [
+        "Больш не нагадваць"
+      ],
+      "Download logs": [
+        "Спампаваць журналы"
+      ],
+      "Email": [
+        "Электронная пошта"
+      ],
+      "Email (alias)": [
+        "Электроннай пошта (псеўданім)"
+      ],
+      "Email (new alias)": [
+        "Электронная пошта (новы псеўданім)"
+      ],
+      "Email aliases": [
+        "Псеўданімы электроннай пошты"
+      ],
+      "Email or username": [
+        "Электронная пошта або імя карыстальніка"
+      ],
+      "Empty trash": [
+        "Ачысціць сметніцу"
+      ],
+      "Enter email or username": [
+        "Увядзіце электронную пошту або імя карыстальніка"
+      ],
+      "Expiration date": [
+        "Тэрмін дзеяння"
+      ],
+      "Expired": [
+        "Пратэрмінавана"
+      ],
+      "Expired link": [
+        "Пратэрмінаваная спасылка"
+      ],
+      "Export": [
+        "Экспартаванне"
+      ],
+      "Extra password": [
+        "Дадатковы пароль"
+      ],
+      "Facebook account": [
+        "Уліковы запіс Facebook"
+      ],
+      "Field name": [
+        "Назва поля"
+      ],
+      "File format": [
+        "Фармат файла"
+      ],
+      "First name": [
+        "Імя"
+      ],
+      "Floor, apartment, building": [
+        "Паверх, кватэра, будынак"
+      ],
+      "Forwards to": [
+        "Перасылаць на"
+      ],
+      "Full Name": [
+        "Поўнае імя"
+      ],
+      "Gender": [
+        "Пол"
+      ],
+      "General": [
+        "Агульныя"
+      ],
+      "Generate a secure link for this item": [
+        "Згенерыраваць бяспечную спасылку для гэтага элемента"
+      ],
       "Generic CSV": [
         "Агульны CSV"
+      ],
+      "Grant": [
+        "Дазволіць"
+      ],
+      "Hidden": [
+        "Схаванае"
+      ],
+      "Hide password": [
+        "Схаваць пароль"
+      ],
+      "https://example.com": [
+        "https://pryklad.com"
+      ],
+      "ID Card": [
+        "Пасведчанне асобы"
+      ],
+      "ID Card number": [
+        "Нумар пасведчання асобы"
+      ],
+      "Identities": [
+        "Ідэнтычнасці"
+      ],
+      "Identity": [
+        "Ідэнтычнасць"
+      ],
+      "Identity autofill": [
+        "Аўтазапаўненне ідэнтычнасці"
+      ],
+      "Import": [
+        "Імпартаванне"
+      ],
+      "Import passwords": [
+        "Імпартаваць паролі"
+      ],
+      "Imported from : ": [
+        "Імпартавана з:"
+      ],
+      "Imported on : ": [
+        "Імпартавана:"
+      ],
+      "Include numbers": [
+        "Уключаць лічбы"
+      ],
+      "Include numbers (0-9)": [
+        "Уключаць лічбы (0-9)"
+      ],
+      "Instagram handle": [
+        "Профіль Instagram"
+      ],
+      "Invitations": [
+        "Запрашэнні"
+      ],
+      "Item ID": [
+        "Ідэнтыфікатар элемента"
+      ],
+      "Job title": [
+        "Пасада"
+      ],
+      "Key": [
+        "Ключ"
+      ],
+      "Keyboard shortcut: ${ shortcut }": [
+        "Спалучэнні клавіш: ${ shortcut }"
+      ],
+      "Language": [
+        "Мова"
       ],
       "Last 2 weeks": [
         "Апошнія 2 тыдні"
@@ -566,14 +2290,364 @@
       "Last month": [
         "Мінулы месяц"
       ],
+      "Last name": [
+        "Прозвішча"
+      ],
       "Last week": [
         "Мінулы тыдзень"
+      ],
+      "Latest import": [
+        "Апошняе імпартаванне"
+      ],
+      "Learn more": [
+        "Даведацца больш"
+      ],
+      "License": [
+        "Ліцэнзія"
+      ],
+      "License number": [
+        "Пасведчанне кіроўцы"
+      ],
+      "LinkedIn account": [
+        "Уліковы запіс LinkedIn"
+      ],
+      "Login": [
+        "Запіс уваходу"
+      ],
+      "Logins": [
+        "Запісы ўваходу"
+      ],
+      "Make all admins": [
+        "Даць усім правы адміністратара"
+      ],
+      "Make all editors": [
+        "Даць усім правы рэдагавання"
+      ],
+      "Make all viewers": [
+        "Даць усім правы прагляду"
+      ],
+      "max views reached": [
+        "дасягнута максімальная колькасць праглядаў"
+      ],
+      "Members": [
+        "Удзельнікі"
+      ],
+      "Middle name": [
+        "Імя па бацьку"
+      ],
+      "Modified": [
+        "Зменена"
       ],
       "More than a month": [
         "Больш за месяц"
       ],
+      "Most recent": [
+        "Самыя апошнія"
+      ],
+      "Name": [
+        "Назва"
+      ],
+      "Name on card": [
+        "Імя на картцы"
+      ],
+      "Need help ?": [
+        "Патрэбна дапамога?"
+      ],
+      "New vault": [
+        "Новае сховішча"
+      ],
+      "New-Old": [
+        "Ад самых новых"
+      ],
+      "Newest to oldest": [
+        "Ад самых новых да самых старых"
+      ],
+      "No history": [
+        "Гісторыя пустая"
+      ],
+      "None": [
+        "Няма"
+      ],
+      "Note": [
+        "Нататка"
+      ],
+      "Notes": [
+        "Нататкі"
+      ],
+      "Old-New": [
+        "Ад самых старых"
+      ],
+      "Oldest to newest": [
+        "Ад самых старых да самых новых"
+      ],
+      "Organization": [
+        "Арганізацыя"
+      ],
+      "Passkey": [
+        "Ключ доступу"
+      ],
+      "Passkeys": [
+        "Ключы доступу"
+      ],
+      "Passphrase": [
+        "Парольная фраза"
+      ],
+      "Passport": [
+        "Пашпарт"
+      ],
+      "Passport number": [
+        "Нумар пашпарта"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Password history": [
+        "Гісторыя пароляў"
+      ],
+      "Passwords": [
+        "Паролі"
+      ],
+      "Pause list": [
+        "Спіс прыпыненых"
+      ],
+      "Personal details": [
+        "Асабістыя даныя"
+      ],
+      "Personal website": [
+        "Асабісты вэб-сайт"
+      ],
+      "PGP-encrypted JSON (recommended)": [
+        "JSON зашыфраваны PGP (рэкамендавана)"
+      ],
+      "Phone number": [
+        "Нумар тэлефона"
+      ],
+      "PIN": [
+        "PIN"
+      ],
+      "PIN code": [
+        "PIN-код"
+      ],
+      "Prefix": [
+        "Прэфікс"
+      ],
+      "Prompt for auto-save": [
+        "Запыт на аўтазахаванне"
+      ],
+      "Prompt for auto-save when generating passwords": [
+        "Прапануе для аўтаматычнага захавання пры генерацыі пароляў"
+      ],
+      "Protect ${ PASS_APP_NAME } with an extra password": [
+        "Абарона ${ PASS_APP_NAME } з дапамогай дадатковага пароля"
+      ],
+      "Rate us": [
+        "Ацаніце нас"
+      ],
+      "Recent": [
+        "Нядаўнія"
+      ],
+      "Reddit handle": [
+        "Профіль Reddit"
+      ],
+      "Remove link": [
+        "Выдаліць спасылку"
+      ],
+      "Report a problem": [
+        "Паведаміць аб праблеме"
+      ],
+      "Restore all items": [
+        "Аднавіць усе элементы"
+      ],
+      "Reveal password": [
+        "Паказаць пароль"
+      ],
+      "Save passkeys": [
+        "Захаваць ключы доступу"
+      ],
+      "Security": [
+        "Бяспека"
+      ],
+      "Security code": [
+        "Код бяспекі"
+      ],
+      "Select an email address": [
+        "Выберыце адрас электроннай пошты"
+      ],
+      "Select preferred language": [
+        "Выберыце пажаданую мову"
+      ],
+      "Select the vault where SimpleLogin aliases will be imported into": [
+        "Выберыце сховішча ў якое будуць імпартаваны псеўданімы SimpleLogin"
+      ],
+      "Select your password manager": [
+        "Выберыце менеджар пароляў"
+      ],
+      "Selected": [
+        "Выбрана"
+      ],
+      "Settings": [
+        "Налады"
+      ],
+      "Share": [
+        "Абагуліць"
+      ],
+      "Share this vault or create a new vault": [
+        "Абагуліць гэтае сховішча або стварыць новае сховішча"
+      ],
+      "Shared link": [
+        "Абагуленая спасылка"
+      ],
+      "Show website favicons": [
+        "Паказваць піктаграмы вэб-сайтаў"
+      ],
+      "Social security": [
+        "Сацыяльнае забеспячэнне"
+      ],
+      "Social security number": [
+        "Нумар сацыяльнага страхавання"
+      ],
+      "Special characters (!&*)": [
+        "Спецыяльныя сімвалы (!&*)"
+      ],
+      "State or province": [
+        "Вобласць або раён"
+      ],
+      "Street address": [
+        "Вуліца"
+      ],
+      "Street address, P.O. box": [
+        "Адрас і паштовая скрыня"
+      ],
+      "Strong": [
+        "Надзейны"
+      ],
+      "Suffix": [
+        "Суфікс"
+      ],
+      "Support": [
+        "Падтрымка"
+      ],
+      "Sync aliases with SimpleLogin": [
+        "Сінхранізаваць псеўданімы з SimpleLogin"
+      ],
+      "Tax number": [
+        "Нумар падаткаплацельшчыка"
+      ],
+      "Text": [
+        "Тэкст"
+      ],
+      "The item's vault is currently shared with ${ targetMembers } person": [
+        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобай",
+        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобамі",
+        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобамі",
+        "Сховішча элемента ў цяперашні час абагулена з ${ targetMembers } асобамі"
+      ],
+      "The URL has been copied to the clipboard": [
+        "URL-адрас скапіяваны ў буфер абмену"
+      ],
+      "Title": [
+        "Назва"
+      ],
       "Today": [
         "Сёння"
+      ],
+      "Total imported items : ": [
+        "Усяго імпартаваных элементаў: "
+      ],
+      "Total items : ": [
+        "Усяго элементаў: "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Сметніца"
+      ],
+      "Type": [
+        "Тып"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Разблакіраваць ${ PASS_APP_NAME }"
+      ],
+      "Unlock with": [
+        "Разблакіраваць з дапамогай"
+      ],
+      "Unnamed Credit Card": [
+        "Крэдытная картка без назвы"
+      ],
+      "Unnamed identity": [
+        "Ідэнтычнасць без назвы"
+      ],
+      "Unnamed item": [
+        "Элемент без назвы"
+      ],
+      "Unnamed note": [
+        "Нататка без назвы"
+      ],
+      "Untitled": [
+        "Без назвы"
+      ],
+      "Update": [
+        "Абнавіць"
+      ],
+      "Username": [
+        "Імя карыстальніка"
+      ],
+      "Username/email": [
+        "Імя карыстальніка або электронная пошта"
+      ],
+      "Vault ID": [
+        "Ідэнтыфікатар сховішча"
+      ],
+      "View details": [
+        "Паглядзець падрабязнасці"
+      ],
+      "View logs": [
+        "Паглядзець журнал"
+      ],
+      "Vulnerable": [
+        "Уразлівы"
+      ],
+      "Weak": [
+        "Ненадзейны"
+      ],
+      "Website": [
+        "Вэб-сайт"
+      ],
+      "Websites": [
+        "Вэб-сайты"
+      ],
+      "Work details": [
+        "Звесткі аб працы"
+      ],
+      "Work email": [
+        "Працоўны электронная пошта"
+      ],
+      "Work phone number": [
+        "Працоўны нумар тэлефона"
+      ],
+      "X handle": [
+        "Профіль X"
+      ],
+      "Yahoo account": [
+        "Уліковы запіс Yahoo"
+      ],
+      "You are about to create": [
+        "Вы збіраецеся стварыць"
+      ],
+      "ZIP or Postal code": [
+        "Паштовы індэкс"
+      ]
+    },
+    "Message": {
+      "${ count } item": [
+        "${ count } элемент",
+        "${ count } элементы",
+        "${ count } элементаў",
+        "${ count } элементаў"
+      ],
+      "You selected ${ semiboldText } in this vault": [
+        "Вы выбралі ${ semiboldText } у гэтым сховішчы"
       ]
     },
     "Onboarding": {
@@ -581,28 +2655,451 @@
         "Вітаем у ${ appName }"
       ]
     },
+    "Option": {
+      "Commas": [
+        "Коскі"
+      ],
+      "Hyphens": [
+        "Злучкі"
+      ],
+      "Memorable Password": [
+        "Пароль, які лёгка запомніць"
+      ],
+      "Numbers": [
+        "Лічбы"
+      ],
+      "Numbers and Symbols": [
+        "Лічбы і сімвалы"
+      ],
+      "Periods": [
+        "Кропкі"
+      ],
+      "Random Password": [
+        "Выпадковы пароль"
+      ],
+      "Spaces": [
+        "Прабелы"
+      ],
+      "Underscores": [
+        "Падкрэсліванні"
+      ]
+    },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Дадайце сакрэтны ключ 2ФА"
+      ],
+      "Add hidden text": [
+        "Дадаць схаваны тэкст"
+      ],
+      "Add note": [
+        "Дадаць нататку"
+      ],
+      "Add text": [
+        "Дадаць тэкст"
+      ],
+      "Email address": [
+        "Адрас электроннай пошты"
+      ],
+      "Enter a note...": [
+        "Увядзіце нататку..."
+      ],
+      "Enter a prefix": [
+        "Увядзіце прэфікс"
+      ],
+      "Enter email": [
+        "Увядзіце электронную пошту"
+      ],
+      "Enter password": [
+        "Увядзіце пароль"
+      ],
+      "Enter username": [
+        "Увядзіце імя карыстальніка"
+      ],
+      "Full Name": [
+        "Поўнае імя"
+      ],
+      "MM/YY": [
+        "ММ/ГГ"
+      ],
+      "Other": [
+        "Іншае"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Pick a vault": [
+        "Выберыце сховішча"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Апішыце праблему і далучыце ўсе паведамленні з памылкамі"
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Увядзіце паўторна \"${ vaultName }\", каб пацвердзіць выдаленне"
+      ],
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Пошук ${ pluralItemType } у ${ vaultName }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Пошук ${ pluralItemType } ва ўсіх сховішчах"
+      ],
+      "Search in ${ vaultName }": [
+        "Пошук у ${ vaultName }"
+      ],
+      "Search in all vaults": [
+        "Пошук ва ўсіх сховішчах"
+      ],
+      "Search in Trash": [
+        "Пошук у Сметніцы"
+      ],
+      "Select a suffix": [
+        "Выберыце суфікс"
+      ],
+      "Shared vault": [
+        "Абагуленыя сховішчы"
+      ],
+      "Unknown origin": [
+        "Невядомае паходжанне"
+      ],
+      "Untitled": [
+        "Без назвы"
+      ],
       "Used on ${ url }": [
         "Выкарыстоўваецца на ${ url }"
+      ],
+      "Write your note": [
+        "Напішыце сваю нататку"
       ]
     },
     "Success": {
       "Aliases sync enabled successfully. SimpleLogin aliases may take some time to sync": [
         "Сінхранізацыя псеўданімаў паспяхова ўключана. Можа спатрэбіцца некаторы час, каб сінхранізаваць псеўданімы SimpleLogin"
+      ],
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальніка.",
+        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў.",
+        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў.",
+        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў."
+      ]
+    },
+    "Title": {
+      "Auto-lock update": [
+        "Абнаўленне аўтаблакіравання"
+      ],
+      "Autofill": [
+        "Аўтазапаўненне"
+      ],
+      "Confirm extra password": [
+        "Пацвярджэнне дадатковага пароля"
+      ],
+      "Confirm PIN code": [
+        "Пацвердзіць PIN-код"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Падключыце свой уліковы запіс ${ BRAND_NAME }"
+      ],
+      "Create PIN code": [
+        "Стварыць PIN-код"
+      ],
+      "Created": [
+        "Створана"
+      ],
+      "Current version": [
+        "Бягучая версія"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Выдаліць сховішча \"${ vaultName }\"?"
+      ],
+      "Discard changes?": [
+        "Адхіліць змены?"
+      ],
+      "Email": [
+        "Электронная пошта"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Падабаецца ${ PASS_APP_NAME }?"
+      ],
+      "Enter your extra password": [
+        "Увядзіце свой дадатковы пароль"
+      ],
+      "Enter your password": [
+        "Увядзіце пароль"
+      ],
+      "Enter your PIN": [
+        "Увядзіце свой PIN"
+      ],
+      "Fill & copy password": [
+        "Запаўненне і капіяванне пароля"
+      ],
+      "Fill password": [
+        "Запоўніць пароль"
+      ],
+      "Get Started": [
+        "Пачаць працу"
+      ],
+      "Get the mobile apps": [
+        "Атрымайце мабільныя праграмы"
+      ],
+      "Grant permissions": [
+        "Даць дазволы"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
+      ],
+      "History": [
+        "Гісторыя"
+      ],
+      "Identity": [
+        "Ідэнтычнасць"
+      ],
+      "Import - ${ date }": [
+        "Імпартаванне - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Імпартаванне ў сховішча(-ы)"
+      ],
+      "Last autofill": [
+        "Апошняе аўтазапаўненне"
+      ],
+      "Last modified": [
+        "Апошняе змяненне"
+      ],
+      "Leave vault ?": [
+        "Выйсці са сховішча?"
+      ],
+      "Log in as...": [
+        "Выконваецца ўваход ад імя..."
+      ],
+      "Low disk space": [
+        "Недастаткова месца на дыску"
+      ],
+      "Member limit": [
+        "Абмежаванне ўдзельніка"
+      ],
+      "Members": [
+        "Удзельнікі"
+      ],
+      "Modified": [
+        "Зменена"
+      ],
+      "Move all items to \"${ vaultName }\"?": [
+        "Перамясціць усе элементы ў \"${ vaultName }\"?"
+      ],
+      "Move item to \"${ vaultName }\"?": [
+        "Перамясціць элемент у \"${ vaultName }\"?"
+      ],
+      "Move items to \"${ vaultName }\"?": [
+        "Перамясціць элементы ў \"${ vaultName }\"?"
+      ],
+      "No items selected": [
+        "Элементы не выбраны"
+      ],
+      "No shared secure links": [
+        "Няма абагуленых бяспечных спасылак"
+      ],
+      "Our welcome gift to you": [
+        "Наш прывітальны падарунак для вас"
+      ],
+      "Passkey": [
+        "Ключ доступу"
+      ],
+      "Password": [
+        "Пароль"
+      ],
+      "Pending access to the shared data": [
+        "Чаканне доступу да абагуленых даных"
+      ],
+      "Permanently remove all items ?": [
+        "Незваротна выдаліць элементы?"
+      ],
+      "Pin the extension": [
+        "Замацаваць пашырэнне"
+      ],
+      "Pinned (${ items.length })": [
+        "Замацавана (${ items.length })"
+      ],
+      "Remove extra password": [
+        "Выдаленне дадатковага пароля"
+      ],
+      "Remove secure link?": [
+        "Выдаліць бяспечную спасылку?"
+      ],
+      "Restore this version?": [
+        "Аднавіць гэту версію?"
+      ],
+      "Review and share": [
+        "Прагляд і абагульванне"
+      ],
+      "Secure your data": [
+        "Бяспека вашых даных"
+      ],
+      "Set access level": [
+        "Задаць узровень доступу"
+      ],
+      "Set extra password": [
+        "Заданне дадатковага пароля"
+      ],
+      "Set up 2FA for more security": [
+        "Наладзьце 2ФА для большай бяспекі"
+      ],
+      "Share with": [
+        "Абагуліць з"
+      ],
+      "Stay safer online": [
+        "Заставайцеся абароненымі ў інтэрнэце"
+      ],
+      "Suggestions": [
+        "Прапановы"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Перайсці на ${ PASS_APP_NAME }?"
+      ],
+      "Sync alias": [
+        "Сінхранізацыя псеўданімаў"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Дзякуй, што ўсталявалі ${ PASS_APP_NAME }"
+      ],
+      "The extension is now ready to use.": [
+        "Усё гатова для выкарыстання пашырэння."
+      ],
+      "Transfer ownership": [
+        "Перадаць права ўласнасці"
+      ],
+      "Trash empty": [
+        "Сметніца пустая"
+      ],
+      "Unlock ${ brandNameJSX }": [
+        "Разблакіроўка ${ brandNameJSX }"
+      ],
+      "Update available": [
+        "Даступна абнаўленне"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
+      ],
+      "Use my email": [
+        "Выкарыстоўваць маю электронную пошту"
+      ],
+      "Vault": [
+        "Сховішча"
+      ],
+      "Vault shared with you": [
+        "Сховішча абагуленае з вамі"
+      ],
+      "Weak password": [
+        "Ненадзейны пароль"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Вітаем у ${ brandNameJSX }"
+      ],
+      "Welcome to your new password manager!": [
+        "Вітаем у вашым новым менеджары пароляў!"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Чаму менавіта ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Ваша сховішча нічога не змяшчае"
+      ],
+      "Your welcome gift": [
+        "Ваш прывітальны падарунак"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "Дубліраваны URL-адрас"
+      ],
+      "Field name is required": [
+        "Патрабуецца назва поля"
+      ],
+      "OTP secret or URI is invalid": [
+        "Памылковы сакрэт OTP або URL-адрас"
+      ],
+      "OTP secret or URI required": [
+        "Патрабуецца сакрэтны ключ OTP або URL-адрас"
+      ],
+      "Section name cannot be empty": [
+        "Назва раздзела не можа быць пустой"
+      ],
+      "Url already exists": [
+        "URL-адрас ужо існуе"
+      ],
+      "URL cannot be empty": [
+        "URL-адрас не можа быць пустым"
+      ],
+      "Url is invalid": [
+        "Памылковы URL-адрас."
+      ],
+      "URL is invalid": [
+        "Памылковы URL-адрас."
       ]
     },
     "Warning": {
+      "${ BRAND_NAME } password is required": [
+        "Патрабуецца ўвесці пароль ${ BRAND_NAME }"
+      ],
+      "A description of the problem is required": [
+        "Патрабуецца апісанне праблемы"
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Усе элементы са сметніцы будуць незваротна выдалены. Вы не зможаце адрабіць гэта дзеянне."
+      ],
+      "An error occurred while exporting your data": [
+        "Падчас экспартавання вашых даных адбылася памылка"
+      ],
+      "An error occurred while resuming your session": [
+        "Падчас узнаўлення вашага сеанса адбылася памылка"
+      ],
+      "At least one email address is required": [
+        "Патрабуецца прынамсі адзін адрас электроннай пошты"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "У дадзены момант немагчыма атрымаць паштовыя скрыні для гэтага псеўданіма"
+      ],
+      "Caution: You won’t be able to access your ${ PASS_APP_NAME } account if you lose this password.": [
+        "Асцярожна: вы не зможаце атрымаць доступ да свайго ўліковага запісу ${ PASS_APP_NAME }, калі згубіце гэты пароль."
+      ],
       "Could not create vault \"${ vaultName }\"": [
         "Немагчыма стварыць сховішча \"${ vaultName }\""
       ],
       "Could not send invitations to the following addresses :": [
         "Немагчыма адправіць запрашэнні на наступныя адрасы:"
       ],
+      "Duplicate email addresses.": [
+        "Дубліраваныя адрасы электроннай пошты."
+      ],
+      "Empty note": [
+        "Пустая нататка"
+      ],
       "Expiration Date is not in the format MM/YY": [
         "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
       ],
+      "Extra password cannot be empty": [
+        "Дадатковы пароль не можа быць пустым"
+      ],
+      "Extra password is required": [
+        "Патрабуецца дадатковы пароль"
+      ],
+      "Extra password should have at least 8 characters": [
+        "Дадатковы пароль павінен мець прынамсі 8 сімвалаў"
+      ],
       "Invalid alias prefix": [
         "Памылковы прэфікс псеўданіма"
+      ],
+      "Invalid email addresses.": [
+        "Памылковыя адрасы электроннай пошты."
+      ],
+      "Inviting email addresses outside organization is not allowed.": [
+        "Запрашэнне адрасоў электроннай пошты па-за межамі арганізацыі забаронена."
+      ],
+      "item was imported without custom fields": [
+        "элемент быў імпартаваны без карыстальніцкіх палёў"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Максімальная даўжыня ${ maxLength } сімвал",
+        "Максімальная даўжыня ${ maxLength } сімвалы",
+        "Максімальная даўжыня ${ maxLength } сімвалаў",
+        "Максімальная даўжыня ${ maxLength } сімвалаў"
       ],
       "Missing alias prefix": [
         "Прапушчаны прэфікс псеўданіма"
@@ -610,20 +3107,104 @@
       "Missing alias suffix": [
         "Памылковы суфікс псеўданіма"
       ],
+      "Move to trash": [
+        "Перамясціць у сметніцу"
+      ],
+      "No items": [
+        "Элементы адсутнічаюць"
+      ],
+      "No items in trash matching": [
+        "Адпаведныя элементы ў сметніцы адсутнічаюць"
+      ],
+      "No items matching": [
+        "Няма адпаведных элементаў"
+      ],
+      "No password manager selected": [
+        "Не выбраны менеджар пароляў"
+      ],
+      "No results": [
+        "Няма вынікаў"
+      ],
       "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
         "Вам даступны наступныя сімвалы: літары, лічбы, кропкі, злучкі і падкрэсліванні"
+      ],
+      "Passphrase is required": [
+        "Патрабуецца парольная фраза"
+      ],
+      "Passwords do not match": [
+        "Паролі не супадаюць"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "Экспартаваны файл зашыфраваны з дапамогай PGP і патрабуе парольную фразу"
       ],
       "Please contact us for investigating the issue": [
         "Звяжыцеся з намі для даследавання праблемы"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Праверце свой адрас электроннай пошты, каб карыстацца псеўданімамі."
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Праверце свой адрас электроннай пошты, каб карыстацца абагуленым сховішчам."
+      ],
+      "Removing your extra password will log you out from all devices and end all active sessions.": [
+        "Выдаленне вашага дадатковага пароля прывядзе да выхаду з усіх прылад і завершыць усе актыўныя сеансы."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Справаздачы не шыфруюцца скразным метадам. Не адпраўляйце ў іх любую канфідэнцыяльную інфармацыю."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Нешта пайшло не так падчас запуску ${ PASS_APP_NAME }. Паспрабуйце абнавіць або перазагрузіць пашырэнне"
+      ],
       "The alias prefix cannot be longer than 40 characters": [
         "Прэфікс псеўданіма не можа быць даўжэй за 40 сімвалаў"
+      ],
+      "This alias \"${ aliasEmail }\" is currently used in the login \"${ relatedLoginName }\".": [
+        "Псеўданім \"${ aliasEmail }\" у цяперашні час выкарыстоўваецца ў запісе ўваходу \"${ relatedLoginName }\"."
+      ],
+      "Title is required": [
+        "Патрабуецца загаловак"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Перадаць правы ўласнасці гэтага сховішча ${ email }?"
+      ],
+      "Unable to save": [
+        "Немагчыма захаваць"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Немагчыма ўвайсці ў ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Сховішча \"${ vaultName }\" і ўсе яго элементы будуць незваротна выдалены. Вы не зможаце адрабіць гэта дзеянне."
+      ],
+      "Vault name is required": [
+        "Неабходна ўвесці назву сховішча"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Ваша падпіска не дазваляе ствараць яшчэ больш сховішчаў."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Вы дасягнулі абмежавання па колькасці ўдзельнікаў, якія могуць атрымаць доступ да гэтага сховішча."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Вы дасягнулі максімальнай колькасці карыстальнікаў у сховішчы. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Вы дасягнулі абмежавання па колькасці сховішчаў, якія прадугледжаны на вашым тарыфным плане."
+      ],
+      "You have unsaved changes.": [
+        "У вас ёсць незахаваныя змены."
+      ],
       "You must select at least one mailbox": [
         "Вы павінны выбраць прынамсі адну паштовую скрыню"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "У вас больш не будзе доступу да гэтага сховішча. Каб паўторна далучыцца да яго, вам неабходна будзе атрымаць новае запрашэнне."
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Вы дасягнулі максімальнай колькасці псеўданімаў для вашага тарыфнага плана."
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Ваш тарыфны план дазваляе аўтазапаўненне толькі з першых двух сховішчаў"
       ],
       "Your session could not be authorized.": [
         "Не атрымалася аўтарызаваць ваш сеанс."
@@ -636,6 +3217,9 @@
       ],
       "Your session was locked.": [
         "Ваш сеанс быў заблакіраваны."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
       ]
     }
   }
