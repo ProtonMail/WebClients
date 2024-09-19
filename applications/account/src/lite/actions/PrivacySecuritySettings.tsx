@@ -49,7 +49,7 @@ const PrivacySecuritySettings = ({
 
     return layout(
         <div className="mobile-settings">
-            <MobileSection title={c('Title').t`Privacy and security`}>
+            <MobileSection>
                 <MobileSectionRow>
                     <MobileSectionLabel
                         description={c('Info').t`Blocks senders from seeing if and when you opened a message.`}
