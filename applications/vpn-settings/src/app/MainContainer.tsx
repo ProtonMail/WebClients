@@ -11,6 +11,7 @@ import {
     AccountRecoverySection,
     AuthenticatedBugModal,
     AutomaticSubscriptionModal,
+    type BugModalMode,
     CancelB2bSubscriptionSection,
     CancelSubscriptionSection,
     CancellationReminderSection,
@@ -61,7 +62,6 @@ import {
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
-import type { BugModalMode } from '@proton/components/containers/support/BugModal';
 import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
 import type { ZendeskRef } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import LiveChatZendesk, {
