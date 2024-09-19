@@ -172,6 +172,7 @@ export { default as TimeZoneSelector } from './components/timezoneSelector/TimeZ
 export { default as Toggle } from './components/toggle/Toggle';
 export { default as Toolbar } from './components/toolbar/Toolbar';
 export { default as ToolbarButton } from './components/toolbar/ToolbarButton';
+export { default as Tooltip } from './components/tooltip/Tooltip';
 export type { UpsellFeature as UpsellFeatures } from './components/upsell/modal/interface';
 export { default as AutoDeleteUpsellModal } from './components/upsell/modal/types/AutoDeleteUpsellModal';
 export { default as ComposerAssistantB2BUpsellModal } from './components/upsell/modal/types/ComposerAssistantB2BUpsellModal';

@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -10,7 +11,6 @@ import { ModalTwo } from '../../../components';
 import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 import ModalHeader from '../../../components/modalTwo/ModalHeader';
-import Tooltip from '../../../components/tooltip/Tooltip';
 import { useContactEmails, useContactGroups, useUser } from '../../../hooks';
 import type { ContactExportingProps } from '../modals/ContactExportingModal';
 import RecipientDropdownItem from '../view/RecipientDropdownItem';

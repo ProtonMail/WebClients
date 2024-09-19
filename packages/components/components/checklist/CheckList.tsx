@@ -2,6 +2,7 @@ import type { CSSProperties } from 'react';
 
 import { c } from 'ttag';
 
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import accountLoginSmall from '@proton/styles/assets/img/illustrations/checklist-account-login-small.svg';
 import accountLogin from '@proton/styles/assets/img/illustrations/checklist-account-login.svg';
@@ -12,7 +13,6 @@ import gmailForward from '@proton/styles/assets/img/illustrations/checklist-gmai
 import protectInboxSmall from '@proton/styles/assets/img/illustrations/checklist-protect-inbox-small.svg';
 import protectInbox from '@proton/styles/assets/img/illustrations/checklist-protect-inbox.svg';
 
-import { Tooltip } from '../tooltip';
 import CheckListItem from './CheckListItem';
 
 interface CheckListItemProps {

@@ -1,9 +1,8 @@
 import type { ReactNode } from 'react';
 
 import { Href } from '@proton/atoms';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
-
-import Tooltip from '../tooltip/Tooltip';
 
 const CLASSNAMES = {
     default: 'badge-label-norm',

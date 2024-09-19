@@ -23,7 +23,6 @@ export * from './spotlight';
 export * from './tabs';
 export * from './text';
 export * from './title';
-export * from './tooltip';
 export * from './topnavbar';
 export * from './treeview';
 export * from './v2';
