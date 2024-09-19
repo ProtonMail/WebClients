@@ -118,6 +118,9 @@
       "Increase": [
         "Aumentar"
       ],
+      "Input passphrase": [
+        "Introducir la frase de contraseña"
+      ],
       "Keep my subscription": [
         "Mantener mi suscripción"
       ],
@@ -321,6 +324,11 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Lleva la productividad de tus correos electrónicos a nuevos niveles. Deja que ${ BRAND_NAME } Scribe te ayude a escribir, responder y revisar tus correos electrónicos."
+      ]
+    },
+    "Balance": {
+      "Loading balance": [
+        "Cargando el balance"
       ]
     },
     "bf2023: Deal details": {
@@ -1674,6 +1682,17 @@
         "Ayúdanos a mejorar"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmar la pérdida del descuento especial de ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Eliminar el descuento"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "La suscripción del plan ${ PLAN_NAMES[PLANS.PASS] } tiene un precio especial de ${ price } al año. Al cambiar al plan Free perderás el descuento permanentemente incluso si mejoras el plan en el futuro."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Historial de versiones extendido"
@@ -2620,6 +2639,28 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ]
+    },
+    "Loader": {
+      "Loading": [
+        "Cargando"
+      ],
+      "Loading data": [
+        "Cargando los datos"
+      ],
+      "Loading message": [
+        "Cargando el mensaje"
+      ],
+      "Loading send from label": [
+        "Cargando el envío desde la etiqueta"
+      ]
+    },
+    "Loading": {
+      "Amount": [
+        "Importe"
+      ],
+      "Secondary amount": [
+        "Importe secundario"
       ]
     },
     "mail_signup_2024: Info": {
@@ -4022,6 +4063,11 @@
         "Has comprado tu plan usando una app de iOS. Para realizar cambios a tu plan o actualizar tus datos de pago necesitarás conectarte a la App Store de Apple."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Pasarás a un plan inferior al finalizar el ciclo de facturación."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
@@ -4367,6 +4413,9 @@
       ]
     },
     "Wallet": {
+      "An error occurred": [
+        "Se ha producido un error."
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -4378,6 +4427,9 @@
       ],
       "Explore other ${ BRAND_NAME } products": [
         "Explorar otros productos de ${ BRAND_NAME }."
+      ],
+      "Syncing new data": [
+        "Sincronizando datos nuevos"
       ],
       "Upgrade to Visionary": [
         "Cambiar de plan a Visionary"
@@ -4525,6 +4577,9 @@
     "Wallet header": {
       "Secure your wallet": [
         "Protege tu cartera"
+      ],
+      "The current fingerprint doesn't match stored one.": [
+        "La huella digital actual no coincide con la almacenada."
       ]
     },
     "Wallet import": {
@@ -4617,8 +4672,8 @@
       "My wallet passphrase": [
         "Frase de contraseña de mi cartera"
       ],
-      "To access this wallet, you need to input the passphrase": [
-        "Para acceder a esta cartera, debes introducir la frase de contraseña"
+      "To use this wallet, you need to input the passphrase": [
+        "Para usar esta cartera, debes introducir la frase de contraseña"
       ],
       "Wallet passphrase": [
         "Frase de contraseña de la cartera"
@@ -5177,11 +5232,17 @@
       "Loading": [
         "Cargando"
       ],
+      "Loading balance": [
+        "Cargando el balance"
+      ],
       "Message to recipient": [
         "Mensaje al destinatario"
       ],
       "Network fee": [
         "Comisión de red"
+      ],
+      "Note": [
+        "Nota"
       ],
       "Note to self": [
         "Nota personal"
@@ -5222,6 +5283,9 @@
       "View more": [
         "Ver más"
       ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
+        "Estamos presentando dificultades para calcular las tarifas de red. Intenta de nuevo más tarde. Si el problema persiste, contacta con nuestro equipo de soporte."
+      ],
       "You received": [
         "Has recibido"
       ],
@@ -5230,14 +5294,16 @@
       ]
     },
     "Wallet Transaction": {
-      "Could not load updated transaction": [
-        "No se ha podido cargar la transacción actualizada"
-      ],
       "Could not update transaction label": [
         "No se ha podido actualizar la etiqueta de la transacción"
       ],
       "Transaction label successfully updated": [
         "Se ha actualizado correctamente la etiqueta de la transacción"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ pageNumber }": [
+        "Página ${ pageNumber }"
       ]
     },
     "Wallet transactions": {
