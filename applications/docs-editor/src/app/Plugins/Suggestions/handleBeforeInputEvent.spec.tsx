@@ -16,9 +16,6 @@ import { ProtonContentEditable } from '../../ContentEditable/ProtonContentEditab
 import { LexicalErrorBoundary } from '@lexical/react/LexicalErrorBoundary'
 import * as ReactTestUtils from '../../Utils/react-test-utils'
 
-// @ts-expect-error Required to use ReactTestUtils.act (https://react.dev/reference/react/act#error-the-current-testing-environment-is-not-configured-to-support-act)
-global.IS_REACT_ACT_ENVIRONMENT = true
-
 polyfillSelectionRelatedThingsForTests()
 
 describe('$handleBeforeInputEvent', () => {
