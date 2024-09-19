@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { useLoading } from '@proton/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS } from '@proton/shared/lib/constants';
@@ -21,7 +22,6 @@ import {
     useProtonDomains,
     useUser,
 } from '../../hooks';
-import useKTVerifier from '../keyTransparency/useKTVerifier';
 import UnlockModal from '../login/UnlockModal';
 
 export const getActivateString = (user: User) => {

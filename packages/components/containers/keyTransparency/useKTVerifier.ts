@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 
+import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { serverTime } from '@proton/crypto';
 import {
     commitSKLToLS,
@@ -20,7 +21,6 @@ import type {
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { useConfig } from '../../hooks';
-import useKTActivation from './useKTActivation';
 
 /**
  * Return a KT verifier for when the state exists, i.e. we are inside the apps

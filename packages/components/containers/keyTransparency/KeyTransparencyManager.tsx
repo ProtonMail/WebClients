@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
+import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { serverTime } from '@proton/crypto';
 import { ktSentryReportError } from '@proton/key-transparency/lib';
@@ -10,7 +11,6 @@ import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { useOnline } from '../../hooks';
 import type { KTContext } from './ktContext';
-import useKTActivation from './useKTActivation';
 import useKTState from './useKTState';
 import { KeyTransparencyContext } from './useKeyTransparencyContext';
 import useRunSelfAudit from './useRunSelfAudit';
