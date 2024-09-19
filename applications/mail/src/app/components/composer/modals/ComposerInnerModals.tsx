@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { Alert, ErrorButton } from '@proton/components';
+import { Alert, Checkbox, ErrorButton, useLocalState } from '@proton/components';
 import type { Cancellable } from '@proton/components/hooks/useHandler';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { AI_ASSISTANT_ACCESS } from '@proton/shared/lib/interfaces';
 import type { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
+import { NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../../constants';
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
 import type { MessageState } from '../../../store/messages/messagesTypes';
 import type { MessageChange } from '../Composer';
@@ -53,6 +54,7 @@ const ComposerInnerModals = ({
     handleToggleAssistant,
 }: Props) => {
     const boldNoReplyEmail = <strong key="no-reply-email">{noReplyEmail}</strong>;
+    const [dontShowAgain, setDontShowAgain] = useLocalState(false, NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY);
     return (
         <>
             {innerModal === ComposerInnerModalStates.Password && (
@@ -129,17 +131,28 @@ const ComposerInnerModals = ({
             {innerModal === ComposerInnerModalStates.NoReplyEmail && (
                 <ComposerInnerModal
                     title={c('Title').t`No-reply address detected`}
-                    onCancel={() => handleCancelSend('no-reply email')}
+                    onCancel={() => {
+                        setDontShowAgain(false); // Reset the local state since the local state is updated via the checkbox
+                        handleCancelSend('no-reply email');
+                    }}
                     onSubmit={handleSendAnyway}
                     submit={c('Action').t`Send anyway`}
                 >
-                    <Alert>
+                    <Alert className="mb-4">
                         {
                             // translator: Full sentence is "The email address "boldNoReplyEmail" does not seem to accept replies. Are you sure you want to send your message?"
                             c('Info')
                                 .jt`The email address ${boldNoReplyEmail} does not seem to accept replies. Are you sure you want to send your message?`
                         }
                     </Alert>
+                    <label className="flex flex-align-center">
+                        <Checkbox
+                            checked={dontShowAgain}
+                            onChange={() => setDontShowAgain(!dontShowAgain)}
+                            className="mr-2"
+                        />
+                        {c('Label').t`Don't show again`}
+                    </label>
                 </ComposerInnerModal>
             )}
             {innerModal === ComposerInnerModalStates.AssistantSettings && (
