@@ -20,7 +20,6 @@ export * from './features';
 export * from './filePreview';
 export * from './filters';
 export * from './general';
-export * from './organization';
 export * from './otherMailPreferences';
 export * from './overview';
 export * from './password';
