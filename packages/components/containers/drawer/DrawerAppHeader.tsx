@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import { useTheme } from '@proton/components/containers';
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import {
     closeDrawerFromChildApp,
     getIsDrawerPostMessage,
