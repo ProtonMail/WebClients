@@ -1,4 +1,5 @@
 import { useInactiveKeys } from '@proton/account';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { reactivateKeysProcess } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash';
 import noop from '@proton/utils/noop';
@@ -16,7 +17,6 @@ import {
     useUserKeys,
 } from '../../hooks';
 import { FeatureCode } from '../features';
-import useKTVerifier from '../keyTransparency/useKTVerifier';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
 import RecoverDataCard from './RecoverDataCard';
 import RecoverDataConfirmModal from './RecoverDataConfirmModal';

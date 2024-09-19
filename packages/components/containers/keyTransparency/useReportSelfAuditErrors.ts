@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 
+import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import type { SelfAuditResult } from '@proton/key-transparency/lib';
 import { AddressAuditStatus, ktSentryReport } from '@proton/key-transparency/lib';
 import metrics from '@proton/metrics';
@@ -12,7 +13,6 @@ import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { getWarningReason } from '@proton/shared/lib/keyTransparency/telemetry';
 
 import { useApi } from '../../hooks';
-import useKTActivation from './useKTActivation';
 
 const useReportSelfAuditErrors = () => {
     const api = getSilentApi(useApi());
