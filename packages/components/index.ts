@@ -403,3 +403,4 @@ export { default as SubUserTopBanner } from './containers/topBanners/SubUserTopB
 export { default as TimeOutOfSyncTopBanner } from './containers/topBanners/TimeOutOfSyncTopBanner';
 export { default as TopBanner } from './containers/topBanners/TopBanner';
 export { default as TopBanners } from './containers/topBanners/TopBanners';
+export { default as EmbeddedVerification } from './containers/verification/EmbeddedVerification';
