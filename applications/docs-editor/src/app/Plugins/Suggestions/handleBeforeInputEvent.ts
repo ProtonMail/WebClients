@@ -43,6 +43,8 @@ export function $handleBeforeInputEvent(
 ): boolean {
   const inputType = event.inputType
 
+  logger?.info('handleBeforeInput', inputType)
+
   if (inputType === 'historyUndo') {
     editor.dispatchCommand(UNDO_COMMAND, undefined)
     return false
