@@ -88,7 +88,7 @@ const EmailSettings = ({
 
     return layout(
         <div className="mobile-settings">
-            <MobileSection title={c('Label').t`Email settings`}>
+            <MobileSection>
                 <MobileSectionRow>
                     <MobileSectionLabel
                         htmlFor="delaySendSecondsSelect"
