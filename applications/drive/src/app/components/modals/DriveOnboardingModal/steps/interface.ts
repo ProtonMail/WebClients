@@ -1,3 +1,3 @@
-import type { OnboardingStepRenderCallback } from '@proton/components/containers/onboarding/interface';
+import type { OnboardingStepRenderCallback } from '@proton/components';
 
 export type StepProps<Props = {}> = OnboardingStepRenderCallback & Props;

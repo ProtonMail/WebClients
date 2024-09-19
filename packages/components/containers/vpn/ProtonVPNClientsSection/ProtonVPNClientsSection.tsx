@@ -14,7 +14,7 @@ import { ModalTwo, ModalTwoContent } from '../../../components';
 import DownloadClientCard from '../../../components/downloadClientCard/DownloadClientCard';
 import { useNotifications, useWelcomeFlags } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
-import { OnboardingContent } from '../../onboarding';
+import OnboardingContent from '../../onboarding/OnboardingContent';
 
 interface DownloadModalProps extends ModalProps {
     downloadUrl: string;
