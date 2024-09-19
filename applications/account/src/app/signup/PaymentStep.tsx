@@ -21,7 +21,6 @@ import { WrappedTaxCountrySelector } from '@proton/components/containers/payment
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { getAllowedCycles, getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
 import { useConfig, useHandler } from '@proton/components/hooks';
-import { useAssistantAddonEnabledSignup } from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { useCurrencies, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
@@ -89,7 +88,6 @@ const PaymentStep = ({
     const hasSomeVpnPlan = getIsVpnPlan(plan?.Name);
 
     const chargebeeContext = useChargebeeContext();
-    const scribeEnabled = useAssistantAddonEnabledSignup();
 
     const paymentFacade = usePaymentFacade({
         checkResult: subscriptionData.checkResult,
@@ -310,7 +308,6 @@ const PaymentStep = ({
                                 planIDs={optimisticPlanIDs ?? subscriptionData.planIDs}
                                 onChangePlanIDs={handleOptimisticPlanIDs}
                                 className="pb-7 mb-8"
-                                scribeEnabled={scribeEnabled}
                             />
                         );
                     })()}

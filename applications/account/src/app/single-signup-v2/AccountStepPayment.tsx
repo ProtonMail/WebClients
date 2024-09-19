@@ -13,7 +13,6 @@ import { WrappedTaxCountrySelector } from '@proton/components/containers/payment
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { getBillingAddressStatus } from '@proton/components/containers/payments/subscription/helpers';
-import { useAssistantAddonEnabledSignup } from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { BilledUserInlineMessage } from '@proton/components/payments/client-extensions/billed-user';
@@ -97,7 +96,6 @@ const AccountStepPayment = ({
 }: Props) => {
     const publicTheme = usePublicTheme();
     const formRef = useRef<HTMLFormElement>(null);
-    const scribeEnabled = useAssistantAddonEnabledSignup();
 
     const measurePay = (
         type: TelemetryPayType,
@@ -334,7 +332,6 @@ const AccountStepPayment = ({
                         return (
                             <>
                                 <ProtonPlanCustomizer
-                                    scribeEnabled={scribeEnabled}
                                     mode="signup"
                                     loading={false}
                                     currentPlan={currentPlan}

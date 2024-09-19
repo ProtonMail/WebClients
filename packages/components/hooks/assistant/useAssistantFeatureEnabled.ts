@@ -33,7 +33,6 @@ function isScribeSupported(organization?: Organization): boolean {
 }
 
 const useAssistantFeatureEnabled = () => {
-    const killSwitch = useFlag('AIAssistantToggleKillSwitch');
     const accessToAssistant = useFlag('ComposerAssistant');
     const scribePaymentsEnabled = useScribePaymentsEnabled();
     const isOrganizationBeforeBackfill = useIsOrganizationBeforeBackfill();
@@ -67,17 +66,8 @@ const useAssistantFeatureEnabled = () => {
          * scribe is supported by the organization's plan.
          * Kill switch takes precedence
          */
-        enabled: killSwitch ? false : enabled,
-        /**
-         * Deactivates the feature across every product: Mail + Payments + Account
-         */
-        killSwitch,
+        enabled: enabled,
     };
 };
 
 export default useAssistantFeatureEnabled;
-
-export const useAssistantAddonEnabledSignup = () => {
-    const killSwitch = useFlag('AIAssistantToggleKillSwitch');
-    return !killSwitch;
-};
