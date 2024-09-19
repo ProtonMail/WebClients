@@ -1,9 +1,8 @@
 import type { ReactNode } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-import { PassEvents, PrivateMainSettingsArea } from '@proton/components';
+import { PassEvents, PassPolicies, PrivateMainSettingsArea } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
-import PassPolicies from '@proton/components/containers/organization/PassPolicies';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
 
 import PassDownloadsSettingsPage from './pages/PassDownloadsSettingsPage';

@@ -49,17 +49,17 @@ import {
     WireGuardConfigurationSection,
     YourPlanSection,
     useActiveBreakpoint,
+    useConvertExternalAddresses,
     useModalState,
     useOrganization,
     useSubscription,
     useToggle,
+    useUnprivatizeMembers,
     useUser,
     useUserSettings,
 } from '@proton/components';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
-import useConvertExternalAddresses from '@proton/components/containers/organization/useConvertExternalAddresses';
-import useUnprivatizeMembers from '@proton/components/containers/organization/useUnprivatizeMembers';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import type { BugModalMode } from '@proton/components/containers/support/BugModal';
 import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
