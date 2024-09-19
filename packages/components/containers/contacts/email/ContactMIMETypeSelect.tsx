@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import Option from '@proton/components/components/option/Option';
 import type { CONTACT_MIME_TYPES } from '@proton/shared/lib/constants';
 import { MIME_TYPES, MIME_TYPES_MORE } from '@proton/shared/lib/constants';
 
-import { Option, SelectTwo } from '../../../components';
+import { SelectTwo } from '../../../components';
 import type { SelectChangeEvent } from '../../../components/selectTwo/select';
 
 interface Props {

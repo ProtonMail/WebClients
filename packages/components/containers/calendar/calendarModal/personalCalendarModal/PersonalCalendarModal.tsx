@@ -8,6 +8,7 @@ import Form from '@proton/components/components/form/Form';
 import ColorPicker from '@proton/components/components/input/ColorPicker';
 import TextArea from '@proton/components/components/input/TextArea';
 import Loader from '@proton/components/components/loader/Loader';
+import Option from '@proton/components/components/option/Option';
 import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
@@ -25,7 +26,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    Option,
     SelectTwo,
 } from '../../../../components';
 import type { SelectChangeEvent } from '../../../../components/selectTwo/select';

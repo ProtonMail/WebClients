@@ -2,6 +2,8 @@ import type { KeyboardEvent, RefObject } from 'react';
 import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
 import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Option from '@proton/components/components/option/Option';
 import { useCombinedRefs } from '@proton/hooks';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
@@ -9,10 +11,8 @@ import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/c
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { handleRecipientInputChange, inputToRecipient } from '@proton/shared/lib/mail/recipient';
 
-import Icon from '../icon/Icon';
 import type { Props as InputProps } from '../input/Input';
 import Input from '../input/Input';
-import { Option } from '../option';
 import { Marks } from '../text';
 import { Tooltip } from '../tooltip';
 import type { AddressesAutocompleteItem, GroupsWithContactsMap } from './helper';

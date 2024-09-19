@@ -12,7 +12,6 @@ export * from './miniCalendar';
 export * from './modalTwo';
 export * from './newFeatureOnboarding';
 export * from './newFeatureTag';
-export * from './option';
 export * from './orderable';
 export * from './orderableTable';
 export * from './pagination';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
+import Option from '@proton/components/components/option/Option';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
@@ -13,7 +14,7 @@ import {
 } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
-import { Option, SelectTwo, Tooltip, useNotifications } from '../..';
+import { SelectTwo, Tooltip, useNotifications } from '../..';
 import { useTheme } from '../themes/ThemeProvider';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, SettingsParagraph, SettingsSection } from './index';
 

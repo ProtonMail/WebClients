@@ -7,6 +7,7 @@ import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Form from '@proton/components/components/form/Form';
 import Checkbox from '@proton/components/components/input/Checkbox';
+import Option from '@proton/components/components/option/Option';
 import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -27,7 +28,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    Option,
     SelectTwo,
     TextAreaTwo,
     useFormErrors,

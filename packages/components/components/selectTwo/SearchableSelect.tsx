@@ -9,7 +9,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import clsx from '@proton/utils/clsx';
 
-import type { Props as OptionProps } from '../option/Option';
+import type { OptionProps } from '../option/Option';
 import Option from '../option/Option';
 import type { PopperPlacement } from '../popper';
 import SelectButton from './SelectButton';

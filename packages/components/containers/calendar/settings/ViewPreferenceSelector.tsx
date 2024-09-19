@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import Option from '@proton/components/components/option/Option';
 import { SETTINGS_VIEW } from '@proton/shared/lib/calendar/constants';
 
-import { Option, SelectTwo } from '../../../components';
+import { SelectTwo } from '../../../components';
 
 interface Props {
     id: string;

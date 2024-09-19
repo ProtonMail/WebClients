@@ -2,7 +2,8 @@ import { type FC } from 'react';
 
 import { c } from 'ttag';
 
-import { InputFieldTwo, Option, SelectTwo } from '@proton/components';
+import { InputFieldTwo, SelectTwo } from '@proton/components';
+import Option from '@proton/components/components/option/Option';
 import { TTL_LABELS, TTL_OPTIONS } from '@proton/pass/components/Lock/LockTTLField';
 
 type Props = {

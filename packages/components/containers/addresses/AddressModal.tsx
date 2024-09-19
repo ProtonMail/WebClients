@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import Option from '@proton/components/components/option/Option';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { useLoading } from '@proton/hooks';
 import { createAddress } from '@proton/shared/lib/api/addresses';
@@ -36,7 +37,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    Option,
     PasswordInputTwo,
     SelectTwo,
     useFormErrors,
