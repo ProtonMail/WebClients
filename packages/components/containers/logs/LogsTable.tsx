@@ -7,11 +7,11 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import Time from '@proton/components/components/time/Time';
 import type { AuthLog } from '@proton/shared/lib/authlog';
 import { SETTINGS_LOG_AUTH_STATE, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Time } from '../../components';
 import AppVersionCell from './AppVersionCell';
 import DeviceCell from './DeviceCell';
 import EventCell from './EventCell';
