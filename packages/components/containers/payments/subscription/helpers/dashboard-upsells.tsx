@@ -702,7 +702,7 @@ export const resolveUpsellsToDisplay = ({
             case hasVpnPro(subscription):
                 return [getVpnBusinessUpsell(upsellsPayload), getVpnEnterpriseUpsell(serversCount)];
             case hasVpnBusiness(subscription):
-                return [getVpnEnterpriseUpsell(serversCount)];
+                return [getVpnEnterpriseUpsell(serversCount), getBundleProUpsell({ ...upsellsPayload })];
             default:
                 return [];
         }
