@@ -1414,6 +1414,7 @@ export default function DocumentEditorToolbar({
           hasCaret={!viewportWidth['<=small']}
           contentProps={DropdownContentProps}
           data-testid="edit-options-dropdown"
+          data-interaction-mode={interactionMode}
         >
           <DropdownMenu>
             {hasEditAccess && (
