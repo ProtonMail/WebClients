@@ -35,7 +35,7 @@ import ApiContext from '../../api/apiContext';
 import AuthenticationProvider from '../../authentication/Provider';
 import { ConfigProvider } from '../../config';
 import EventManagerContext from '../../eventManager/context';
-import { NotificationsContext } from '../../notifications';
+import NotificationsContext from '../../notifications/notificationsContext';
 import ContactProvider from '../ContactProvider';
 import { extendStore, setupStore } from './store';
 

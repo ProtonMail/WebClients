@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import { NotificationsChildren } from '@proton/components/containers';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 

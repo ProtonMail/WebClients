@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { NotificationsChildren } from '@proton/components/containers';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
 
 import { useConfig, useIsInboxElectronApp } from '../../hooks';
 import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';

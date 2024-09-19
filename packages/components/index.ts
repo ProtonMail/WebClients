@@ -295,6 +295,30 @@ export { default as ModalsContainer } from './containers/modals/Container';
 export type { ModalPropsInjection } from './containers/modals/Container';
 export { default as ModalsProvider } from './containers/modals/Provider';
 export { default as DesktopNotificationSection } from './containers/notification/DesktopNotificationSection';
+export { default as NotificationsChildren } from './containers/notifications/Children';
+export { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from './containers/notifications/constants';
+export { default as NotificationsContainer } from './containers/notifications/Container';
+export type {
+    CreateNotificationOptions,
+    CustomNotificationProps,
+    Notification,
+    NotificationContextProps,
+    NotificationOffset,
+    NotificationType,
+} from './containers/notifications/interfaces';
+export { default as createNotificationManager } from './containers/notifications/manager';
+export {
+    default as NotificationButton,
+    NotificationCloseButton,
+    type NotificationButtonProps,
+} from './containers/notifications/NotificationButton';
+export { default as NotificationContext } from './containers/notifications/notificationContext';
+export {
+    default as NotificationsContext,
+    type NotificationsContextValue,
+} from './containers/notifications/notificationsContext';
+export { default as NotificationsHijack } from './containers/notifications/NotificationsHijack';
+export { default as NotificationsProvider } from './containers/notifications/Provider';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
 export { getOverallStatus } from './containers/recovery/getOverallStatus';
