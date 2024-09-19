@@ -36,7 +36,10 @@ export const createDropdown = ({ root, onDestroy }: DropdownOptions): InjectedDr
         root,
         src: DROPDOWN_IFRAME_SRC,
         onError: onDestroy,
-        onClose: (_, options) => options?.refocus && fieldRef.current?.focus(),
+        onClose: (_, options) => {
+            if (options.refocus) fieldRef.current?.focus();
+            else if (fieldRef.current?.element !== document.activeElement) fieldRef.current?.detachIcon();
+        },
         backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
         position: (iframeRoot: HTMLElement) => {
             const field = fieldRef.current;

@@ -1,8 +1,7 @@
-import { type FC, useState } from 'react';
+import { type FC, useCallback, useState } from 'react';
 
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
-import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
-import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerStateEvents';
+import { useExtensionState } from 'proton-pass-extension/lib/hooks/useExtensionState';
 import { c } from 'ttag';
 
 import { ButtonLike, Href } from '@proton/atoms';
@@ -26,22 +25,18 @@ const brandNameJSX = (
 );
 
 export const Welcome: FC = () => {
-    const { tabId, endpoint } = ExtensionContext.get();
     const [pendingAccess, setPendingAccess] = useState(false);
 
-    useWorkerStateEvents({
-        endpoint,
-        tabId,
-        messageFactory: pageMessage,
-        onWorkerStateChange: ({ status }) => {
+    useExtensionState(
+        useCallback(({ status }) => {
             if (clientReady(status)) {
                 void sendMessage.onSuccess(
                     pageMessage({ type: WorkerMessageType.ONBOARDING_REQUEST }),
                     async ({ message }) => setPendingAccess(message === OnboardingMessage.PENDING_SHARE_ACCESS)
                 );
             }
-        },
-    });
+        }, [])
+    );
 
     return (
         <>

@@ -9,6 +9,7 @@ import { IFramePortMessageType, NotificationAction } from 'proton-pass-extension
 
 import { CircleLoader } from '@proton/atoms';
 import { NotificationsChildren } from '@proton/components';
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { clientBusy } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types';
@@ -21,9 +22,10 @@ import { PasskeyGet } from './views/PasskeyGet';
 import './Notification.scss';
 
 export const Notification: FC = () => {
-    const { appState, visible } = useIFrameContext();
+    const { visible } = useIFrameContext();
+    const app = useAppState();
     const [state, setState] = useState<MaybeNull<NotificationActions>>(null);
-    const loading = state === null || clientBusy(appState.status);
+    const loading = state === null || clientBusy(app.state.status);
 
     useRegisterMessageHandler(IFramePortMessageType.NOTIFICATION_ACTION, ({ payload }) => setState(payload));
 

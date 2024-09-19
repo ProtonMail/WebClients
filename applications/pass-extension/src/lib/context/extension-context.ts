@@ -1,7 +1,6 @@
 import { generatePortName } from 'proton-pass-extension/lib/utils/port';
 import type { Runtime } from 'webextension-polyfill';
 
-import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import browser from '@proton/pass/lib/globals/browser';
 import type { ClientEndpoint, MaybeNull, TabId } from '@proton/pass/types';
@@ -11,7 +10,6 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger, registerLoggerEffect } from '@proton/pass/utils/logger';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
-import createStore from '@proton/shared/lib/helpers/store';
 
 import.meta.webpackHot?.decline();
 
@@ -34,10 +32,6 @@ export const ExtensionContext = contextHandlerFactory<ExtensionContextType>('ext
 export const setupExtensionContext = async (options: ExtensionContextOptions): Promise<ExtensionContextType> => {
     const { endpoint, onDisconnect, onRecycle } = options;
     const message = resolveMessageFactory(endpoint);
-
-    /* Expose an authentication store for utilities requiring it.
-     * FIXME: decouple these utilities from the `authStore` global */
-    exposeAuthStore(createAuthStore(createStore()));
 
     try {
         const { tabId, url } = await sendMessage.on(

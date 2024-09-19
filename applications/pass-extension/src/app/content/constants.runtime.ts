@@ -2,7 +2,7 @@ import { FieldType, FormType } from '@proton/pass/fathom';
 import browser from '@proton/pass/lib/globals/browser';
 
 import type { FormTrackerFieldConfig } from './types';
-import { DropdownAction, FieldInjectionRule } from './types';
+import { DropdownAction } from './types';
 
 export const ACTIVE_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-active.svg');
 export const LOCKED_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-locked.svg');
@@ -13,74 +13,25 @@ export const NOTIFICATION_IFRAME_SRC = browser.runtime.getURL('/notification.htm
 
 export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
     [FormType.LOGIN]: [
-        {
-            type: FieldType.USERNAME,
-            injection: FieldInjectionRule.FIRST_OF_FORM,
-            action: DropdownAction.AUTOFILL_LOGIN,
-        },
-        {
-            type: FieldType.USERNAME_HIDDEN,
-            injection: FieldInjectionRule.NEVER,
-        },
-        {
-            type: FieldType.EMAIL,
-            injection: FieldInjectionRule.FIRST_OF_FORM,
-            action: DropdownAction.AUTOFILL_LOGIN,
-        },
-        {
-            type: FieldType.PASSWORD_CURRENT,
-            injection: FieldInjectionRule.FIRST_OF_FORM,
-            action: DropdownAction.AUTOFILL_LOGIN,
-        },
+        { type: FieldType.USERNAME, action: DropdownAction.AUTOFILL_LOGIN },
+        { type: FieldType.USERNAME_HIDDEN },
+        { type: FieldType.EMAIL, action: DropdownAction.AUTOFILL_LOGIN },
+        { type: FieldType.PASSWORD_CURRENT, action: DropdownAction.AUTOFILL_LOGIN },
     ],
     [FormType.REGISTER]: [
-        {
-            type: FieldType.USERNAME,
-            injection: FieldInjectionRule.NEVER,
-        },
-        {
-            type: FieldType.USERNAME_HIDDEN,
-            injection: FieldInjectionRule.NEVER,
-        },
-        {
-            type: FieldType.EMAIL,
-            injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOSUGGEST_ALIAS,
-        },
-        {
-            type: FieldType.PASSWORD_NEW,
-            injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOSUGGEST_PASSWORD,
-        },
-        {
-            type: FieldType.IDENTITY,
-            injection: FieldInjectionRule.FIRST_OF_SECTION,
-            action: DropdownAction.AUTOFILL_IDENTITY,
-        },
+        { type: FieldType.USERNAME },
+        { type: FieldType.USERNAME_HIDDEN },
+        { type: FieldType.EMAIL, action: DropdownAction.AUTOSUGGEST_ALIAS },
+        { type: FieldType.PASSWORD_NEW, action: DropdownAction.AUTOSUGGEST_PASSWORD },
+        { type: FieldType.IDENTITY, action: DropdownAction.AUTOFILL_IDENTITY },
     ],
     [FormType.RECOVERY]: [
-        {
-            type: FieldType.EMAIL,
-            injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOFILL_LOGIN,
-        },
-        {
-            type: FieldType.IDENTITY,
-            injection: FieldInjectionRule.FIRST_OF_SECTION,
-            action: DropdownAction.AUTOFILL_IDENTITY,
-        },
+        { type: FieldType.EMAIL, action: DropdownAction.AUTOFILL_LOGIN },
+        { type: FieldType.IDENTITY, action: DropdownAction.AUTOFILL_IDENTITY },
     ],
     [FormType.PASSWORD_CHANGE]: [
-        {
-            type: FieldType.PASSWORD_CURRENT,
-            injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOFILL_LOGIN,
-        },
-        {
-            type: FieldType.PASSWORD_NEW,
-            injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOSUGGEST_PASSWORD,
-        },
+        { type: FieldType.PASSWORD_CURRENT, action: DropdownAction.AUTOFILL_LOGIN },
+        { type: FieldType.PASSWORD_NEW, action: DropdownAction.AUTOSUGGEST_PASSWORD },
     ],
     /* NOOP forms are forms that were not classified into
      * one of our form types. This can either be a detection
@@ -88,25 +39,9 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
      * we should still add some actions - OR due to exotic
      * forms (newsletters etc..) */
     [FormType.NOOP]: [
-        {
-            type: FieldType.EMAIL,
-            injection: FieldInjectionRule.ALWAYS,
-            action: DropdownAction.AUTOSUGGEST_ALIAS,
-        },
-        {
-            type: FieldType.PASSWORD_CURRENT,
-            injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOFILL_LOGIN,
-        },
-        {
-            type: FieldType.PASSWORD_NEW,
-            injection: FieldInjectionRule.FIRST_OF_TYPE,
-            action: DropdownAction.AUTOSUGGEST_PASSWORD,
-        },
-        {
-            type: FieldType.IDENTITY,
-            injection: FieldInjectionRule.FIRST_OF_SECTION,
-            action: DropdownAction.AUTOFILL_IDENTITY,
-        },
+        { type: FieldType.EMAIL, action: DropdownAction.AUTOSUGGEST_ALIAS },
+        { type: FieldType.PASSWORD_CURRENT, action: DropdownAction.AUTOFILL_LOGIN },
+        { type: FieldType.PASSWORD_NEW, action: DropdownAction.AUTOSUGGEST_PASSWORD },
+        { type: FieldType.IDENTITY, action: DropdownAction.AUTOFILL_IDENTITY },
     ],
 };

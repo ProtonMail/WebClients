@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { useExtensionConnect } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
+import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 import { checkExtensionPermissions } from 'proton-pass-extension/lib/utils/permissions';
 
 import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
@@ -11,7 +11,7 @@ import { WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/ty
  * while the clients are running */
 export const usePermissionsGranted = (): boolean => {
     const [valid, setValid] = useState<boolean>(false);
-    const { context: extensionContext } = useExtensionConnect();
+    const { port } = useExtensionContext();
 
     const checkForPermissions = useCallback(async () => {
         try {
@@ -28,9 +28,9 @@ export const usePermissionsGranted = (): boolean => {
         };
 
         void checkForPermissions();
-        extensionContext?.port.onMessage.addListener(handleMessage);
 
-        return () => extensionContext?.port.onMessage.removeListener(handleMessage);
+        port.onMessage.addListener(handleMessage);
+        return () => port.onMessage.removeListener(handleMessage);
     }, []);
 
     return valid;
