@@ -7,7 +7,6 @@ import type { ModalProps } from '@proton/components';
 import { DriveLogo, Icon, Tooltip, useModalTwoStatic } from '@proton/components';
 import Dialog from '@proton/components/components/dialog/Dialog';
 import { Portal } from '@proton/components/components/portal';
-import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import usePrevious from '@proton/hooks/usePrevious';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
@@ -15,7 +14,7 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import clsx from '@proton/utils/clsx';
 
-import { useDownload } from '../../../store';
+import { useDownload, usePublicSessionUser } from '../../../store';
 
 import './UpsellFloatingModal.scss';
 
@@ -118,12 +117,13 @@ const UpsellFloatingModal = ({ open, onClose }: ChildProps & ModalProps) => {
 export default UpsellFloatingModal;
 
 export const useUpsellFloatingModal = () => {
+    const user = usePublicSessionUser();
     const [renderUpsellFloatingModal, showUpsellFloatingModal] = useModalTwoStatic(UpsellFloatingModal);
 
     const { viewportWidth } = useActiveBreakpoint();
 
     // If user is proton user or on mobile we disable upsell modal
-    const hideModal = viewportWidth['<=small'] || isProtonUserFromCookie();
+    const hideModal = viewportWidth['<=small'] || !!user;
 
     useEffect(() => {
         if (hideModal) {

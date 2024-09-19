@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 
-import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
@@ -59,11 +58,9 @@ const ProductLink = ({
         );
     }
 
-    // This does not allow to get any user information but allow us to know if the user was already logged in Proton
-    const isProtonUser = isProtonUserFromCookie();
     // If a user is passed here, it means the user is signed in (e.g. not viewing a public link)
     // and as such we should not show the static product links
-    if (!user && !isProtonUser) {
+    if (!user) {
         return (
             <a
                 href={getAppStaticUrl(appToLinkTo)}

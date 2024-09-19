@@ -84,7 +84,6 @@ export { default as useOnline } from './useOnline';
 export * from './useOrganization';
 export { useGetOrganizationKey, default as useOrganizationKey } from './useOrganizationKey';
 export { default as useIsPaidUserCookie } from './useIsPaidUserCookie';
-export { default as useIsProtonUserCookie } from './useIsProtonUserCookie';
 export { default as usePaymentMethods } from './usePaymentMethods';
 export { default as usePlans, useGetPlans } from './usePlans';
 export { default as useProtonDomains } from './useProtonDomains';

@@ -9,7 +9,7 @@ import { Hamburger } from '../../components';
 import type { Props as HeaderProps } from '../../components/header/Header';
 import Header from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
-import { useConfig, useIsPaidUserCookie, useIsProtonUserCookie } from '../../hooks';
+import { useConfig, useIsPaidUserCookie } from '../../hooks';
 import { useTheme } from '../themes';
 
 interface Props extends HeaderProps {
@@ -44,7 +44,6 @@ const PrivateHeader = ({
     app,
 }: Props) => {
     useIsPaidUserCookie();
-    useIsProtonUserCookie();
 
     const { APP_NAME } = useConfig();
     const theme = useTheme();
