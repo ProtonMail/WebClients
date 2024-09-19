@@ -11,7 +11,7 @@ import noop from '@proton/utils/noop';
 import * as config from '../config';
 import { sendErrorReport } from './errorHandling';
 import { EnrichedError } from './errorHandling/EnrichedError';
-import { getLastActivePersistedUserSessionUID } from './lastActivePersistedUserSession';
+import { getLastActivePersistedUserSession } from './lastActivePersistedUserSession';
 
 export enum ExperimentGroup {
     control = 'control',
@@ -196,11 +196,11 @@ export const useMeasureFeaturePerformanceOnMount = (features: Features) => {
 const apiInstance = createApi({ config, sendLocaleHeaders: true });
 
 export const countActionWithTelemetry = (action: Actions, count: number = 1): void => {
-    const uid = getLastActivePersistedUserSessionUID();
+    const persistedSession = getLastActivePersistedUserSession();
 
-    if (uid) {
+    if (persistedSession?.UID) {
         // API calls will now be Authenticated with x-pm-uid header
-        apiInstance.UID = uid;
+        apiInstance.UID = persistedSession?.UID;
     }
 
     void sendTelemetryReport({
