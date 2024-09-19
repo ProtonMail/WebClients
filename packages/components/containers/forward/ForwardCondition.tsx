@@ -3,8 +3,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 
-import { SelectTwo, Tooltip } from '../../components';
+import { Tooltip } from '../../components';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../filters/constants';
 import type { Condition, ConditionComparator } from '../filters/interfaces';
 import { ConditionType, FilterStatement } from '../filters/interfaces';

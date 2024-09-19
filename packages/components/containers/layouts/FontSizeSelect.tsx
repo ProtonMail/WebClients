@@ -1,6 +1,6 @@
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 
-import { SelectTwo } from '../../components';
 import { DEFAULT_FONT_SIZE, FONT_SIZES } from '../../components/editor/constants';
 
 interface Props {

@@ -9,6 +9,7 @@ import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Form from '@proton/components/components/form/Form';
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useMailSettings } from '@proton/components/hooks';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
@@ -17,7 +18,6 @@ import { useLinkHandler } from '../../../../hooks/useLinkHandler';
 import Label from '../../../label/Label';
 import type { ModalStateProps } from '../../../modalTwo';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../modalTwo';
-import { SelectTwo } from '../../../selectTwo';
 import type { InsertLinkSelectionType } from './InsertLinkModal';
 
 export interface InsertLinkModalProps {

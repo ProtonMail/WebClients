@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import ColorPicker from '@proton/components/components/input/ColorPicker';
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import { useLoading } from '@proton/hooks';
@@ -45,7 +46,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    SelectTwo as Select,
     useFormErrors,
 } from '../../../../components';
 import CountrySelect from '../../../../components/country/CountrySelect';
@@ -432,7 +432,7 @@ const HolidaysCalendarModalWithDirectory = ({
                 {computedCalendar && filteredLanguageOptions.length > 1 && isComplete && (
                     <InputField
                         id="languageSelect"
-                        as={Select}
+                        as={SelectTwo}
                         label={c('Label').t`Language`}
                         value={computedCalendar.Language}
                         onChange={handleSelectLanguage}

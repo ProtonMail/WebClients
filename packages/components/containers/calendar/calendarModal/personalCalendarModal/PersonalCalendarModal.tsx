@@ -9,6 +9,7 @@ import ColorPicker from '@proton/components/components/input/ColorPicker';
 import TextArea from '@proton/components/components/input/TextArea';
 import Loader from '@proton/components/components/loader/Loader';
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getCalendarModalSize } from '@proton/components/containers/calendar/calendarModal/helpers';
 import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal/interface';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
@@ -20,14 +21,7 @@ import { getSharedCalendarSubHeaderText } from '@proton/shared/lib/calendar/shar
 import type { Nullable } from '@proton/shared/lib/interfaces';
 import type { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import {
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    SelectTwo,
-} from '../../../../components';
+import { InputFieldTwo, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../../components';
 import type { SelectChangeEvent } from '../../../../components/selectTwo/select';
 import { TruncatedText } from '../../../../components/truncatedText';
 import GenericError from '../../../error/GenericError';
