@@ -1,3 +1,4 @@
+import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { ktSentryReportError, verifyPublicKeysAddressAndCatchall } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type {
@@ -10,7 +11,6 @@ import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../hooks';
 import useGetLatestEpoch from './useGetLatestEpoch';
-import useKTActivation from './useKTActivation';
 import useSaveSKLToLS from './useSaveSKLToLS';
 
 const useVerifyOutboundPublicKeys = () => {

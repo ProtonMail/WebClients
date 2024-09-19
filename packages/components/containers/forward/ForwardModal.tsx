@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
 import useLoading from '@proton/hooks/useLoading';
@@ -46,7 +47,6 @@ import {
 } from '../../hooks';
 import type { Condition } from '../filters/interfaces';
 import { FilterStatement } from '../filters/interfaces';
-import useKTVerifier from '../keyTransparency/useKTVerifier';
 import ForwardConditions from './ForwardConditions';
 import { getInternalParametersPrivate, getSieveParameters, getSieveTree } from './helpers';
 

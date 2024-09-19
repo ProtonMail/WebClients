@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import useLoading from '@proton/hooks/useLoading';
 import { deleteForwarding, rejectForwarding } from '@proton/shared/lib/api/forwardings';
 import { replaceAddressTokens } from '@proton/shared/lib/api/keys';
@@ -10,7 +11,6 @@ import { getHasMigratedAddressKeys, getReplacedAddressKeyTokens, splitKeys } fro
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useApi, useEventManager, useGetAddressKeys, useGetUser, useGetUserKeys, useNotifications } from '../../hooks';
-import useKTVerifier from '../keyTransparency/useKTVerifier';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';
 import { acceptIncomingForwarding } from './helpers';
 

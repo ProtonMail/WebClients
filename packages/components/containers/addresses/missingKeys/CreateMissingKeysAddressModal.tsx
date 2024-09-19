@@ -9,6 +9,7 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -50,7 +51,6 @@ import {
     useGetUserKeys,
     useNotifications,
 } from '../../../hooks';
-import useKTVerifier from '../../keyTransparency/useKTVerifier';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
