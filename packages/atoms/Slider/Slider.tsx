@@ -9,7 +9,7 @@ import { useRef, useState } from 'react';
 import type { ThemeColorUnion } from '@proton/colors';
 import Icon from '@proton/components/components/icon/Icon';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import { useRightToLeft } from '@proton/components/containers/rightToLeft';
+import { useRightToLeft } from '@proton/components/containers/rightToLeft/useRightToLeft';
 import useSynchronizingState from '@proton/hooks/useSynchronizingState';
 import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';

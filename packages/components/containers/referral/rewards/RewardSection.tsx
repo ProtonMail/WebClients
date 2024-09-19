@@ -9,7 +9,7 @@ import RewardsProgress from './RewardsProgress';
 import { getDeduplicatedReferrals } from './helpers';
 import RewardsTable from './table/RewardsTable';
 
-const RewardSection = () => {
+export const RewardSection = () => {
     const {
         invitedReferralsState: [invitedReferrals],
         fetchedReferrals: { referrals, total, loading: loadingReferrals },
@@ -52,5 +52,3 @@ const RewardSection = () => {
         </SettingsSectionWide>
     );
 };
-
-export default RewardSection;

@@ -4,7 +4,7 @@ import { Icon, Info, StripedItem, StripedList } from '@proton/components';
 import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-const ReferralFeaturesList = () => {
+export const ReferralFeaturesList = () => {
     const storageSize = humanSize({ bytes: 15 * 1024 ** 3, fraction: 0 });
     return (
         <StripedList>
@@ -37,5 +37,3 @@ const ReferralFeaturesList = () => {
         </StripedList>
     );
 };
-
-export default ReferralFeaturesList;
