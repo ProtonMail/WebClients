@@ -7,18 +7,18 @@ const numericEntries = <T extends Record<number, any>>(
     Object.keys(obj).map((key) => [Number(key), obj[Number(key)]]);
 
 export const VAULT_COLOR_MAP: Record<number, string> = {
-    [VaultColor.COLOR_UNSPECIFIED]: '--vault-unspecified',
-    [VaultColor.COLOR_CUSTOM]: '--vault-custom',
-    [VaultColor.COLOR1]: '--vault-heliotrope',
-    [VaultColor.COLOR2]: '--vault-mauvelous',
-    [VaultColor.COLOR3]: '--vault-marigold-yellow',
-    [VaultColor.COLOR4]: '--vault-de-york',
-    [VaultColor.COLOR5]: '--vault-jordy-blue',
-    [VaultColor.COLOR6]: '--vault-lavender-magenta',
-    [VaultColor.COLOR7]: '--vault-chestnut-rose',
-    [VaultColor.COLOR8]: '--vault-porsche',
-    [VaultColor.COLOR9]: '--vault-mercury',
-    [VaultColor.COLOR10]: '--vault-water-leaf',
+    [VaultColor.COLOR_UNSPECIFIED]: 'var(--vault-unspecified)',
+    [VaultColor.COLOR_CUSTOM]: 'var(--vault-custom)',
+    [VaultColor.COLOR1]: 'var(--vault-heliotrope)',
+    [VaultColor.COLOR2]: 'var(--vault-mauvelous)',
+    [VaultColor.COLOR3]: 'var(--vault-marigold-yellow)',
+    [VaultColor.COLOR4]: 'var(--vault-de-york)',
+    [VaultColor.COLOR5]: 'var(--vault-jordy-blue)',
+    [VaultColor.COLOR6]: 'var(--vault-lavender-magenta)',
+    [VaultColor.COLOR7]: 'var(--vault-chestnut-rose)',
+    [VaultColor.COLOR8]: 'var(--vault-porsche)',
+    [VaultColor.COLOR9]: 'var(--vault-mercury)',
+    [VaultColor.COLOR10]: 'var(--vault-water-leaf)',
 };
 
 export const VAULT_COLORS = numericEntries(VAULT_COLOR_MAP);

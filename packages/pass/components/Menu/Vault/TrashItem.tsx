@@ -29,7 +29,7 @@ export const TrashItem: FC<Props> = ({ dense, selected, handleTrashRestore, hand
             className={clsx(!dense && 'py-3')}
             parentClassName={clsx('pass-vault-submenu-vault-item w-full', selected && 'selected')}
             style={{
-                '--vault-icon-color': `var(${VAULT_COLOR_MAP[VaultColor.COLOR_UNSPECIFIED]})`,
+                '--vault-icon-color': VAULT_COLOR_MAP[VaultColor.COLOR_UNSPECIFIED],
             }}
             quickActions={[
                 <DropdownMenuButton

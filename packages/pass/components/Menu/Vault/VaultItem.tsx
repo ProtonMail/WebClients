@@ -74,7 +74,7 @@ export const VaultItem: FC<Props> = ({
             )}
             className={clsx(!dense && 'py-3')}
             style={{
-                '--vault-icon-color': `var(${VAULT_COLOR_MAP[vault?.content.display.color ?? VaultColor.COLOR1]})`,
+                '--vault-icon-color': VAULT_COLOR_MAP[vault?.content.display.color ?? VaultColor.COLOR1],
                 '--max-h-custom': '1.25rem',
             }}
             extra={
