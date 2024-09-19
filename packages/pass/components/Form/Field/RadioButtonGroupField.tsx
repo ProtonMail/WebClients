@@ -33,7 +33,7 @@ export const RadioButton = <T,>({ onChange, id, checked, value, name, color, ico
             onChange={(e) => e.target.checked && onChange?.(value)}
             labelProps={{
                 className: 'pass-radio-group--button',
-                style: { '--radio-button-background': color ? `var(${color})` : 'var(--background-weak)' },
+                style: { '--radio-button-background': color ? `rgb(${color})` : 'var(--background-weak)' },
             }}
         >
             {icon && <Icon name={icon} size={5} />}

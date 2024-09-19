@@ -9,17 +9,17 @@
 
 	&.selected {
 		> button {
-			background-color: var(--vault-icon-color);
-			color: var(--interaction-norm-contrast);
+			background-color: rgb(var(--vault-icon-color) / 0.16);
+			color: rgb(var(--vault-icon-color));
 
 			.pass-vault-icon {
-				--vault-icon-color: var(--interaction-norm-contrast);
+				--vault-icon-color: rgb(var(--vault-icon-color));
 			}
 		}
 
 		svg,
 		.pass-vault--count {
-			color: var(--interaction-norm-contrast) !important;
+			color: rgb(var(--vault-icon-color)) !important;
 		}
 	}
 }
