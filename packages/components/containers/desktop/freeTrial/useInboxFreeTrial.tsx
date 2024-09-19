@@ -24,7 +24,7 @@ const useInboxFreeTrial = () => {
     const { feature: remindFlag, update: updateReminders } = useFeature<InboxDesktopFreeTrialReminders>(RemindersFlag);
 
     const shouldDisplayReminder = useMemo(() => {
-        if (user.hasPaidMail || !user.canPay) {
+        if (user.hasPaidMail || user.isMember) {
             return false;
         }
 
