@@ -227,7 +227,7 @@ export { default as LabelsSection } from './containers/labels/LabelsSection';
 export { default as DeleteLabelModal } from './containers/labels/modals/DeleteLabelModal';
 export { default as EditLabelModal } from './containers/labels/modals/EditLabelModal';
 export type { LabelModel } from './containers/labels/modals/EditLabelModal';
-export { SectionConfig, SettingsAreaConfig, SidebarConfig, SubSectionConfig } from './containers/layout/interface';
+export type { SectionConfig, SettingsAreaConfig, SidebarConfig, SubSectionConfig } from './containers/layout/interface';
 export { default as PrivateMainArea } from './containers/layout/PrivateMainArea';
 export { default as PrivateMainAreaLoading } from './containers/layout/PrivateMainAreaLoading';
 export {
