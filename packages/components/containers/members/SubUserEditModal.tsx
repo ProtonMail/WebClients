@@ -583,9 +583,9 @@ const SubUserEditModal = ({
                     )}
                     {showAddressesSection && (
                         <div>
-                            <h3 className="text-strong">{c('Label').t`Addresses`}</h3>
+                            <h3 className="text-strong mb-2">{c('Label').t`Addresses`}</h3>
                             <div>
-                                <Addresses organization={organization} memberID={member.ID} />
+                                <Addresses organization={organization} memberID={member.ID} hasDescription={false} />
                             </div>
                         </div>
                     )}
