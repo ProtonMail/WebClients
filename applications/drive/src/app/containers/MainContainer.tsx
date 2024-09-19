@@ -14,7 +14,6 @@ import { useLoading } from '@proton/hooks';
 
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
-import DriveStartupModals from '../components/modals/DriveStartupModals';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
@@ -147,7 +146,6 @@ const InitContainer = () => {
 
     return (
         <ActiveShareProvider defaultShareRoot={rootShare}>
-            <DriveStartupModals />
             <ModalsChildren />
             <TransferManager />
             <GiftFloatingButton />
