@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { OnboardingContent, OnboardingStep } from '@proton/components/containers/onboarding';
+import { OnboardingContent, OnboardingStep } from '@proton/components';
 import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
