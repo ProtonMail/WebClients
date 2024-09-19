@@ -6,10 +6,10 @@ import {
     OpenVPNCredentialsSection,
     PrivateMainSettingsArea,
     ProtonVPNClientsSection,
+    TVContainer,
     WireGuardConfigurationSection,
 } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
-import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
 import { VPN_TV_PATHS } from '@proton/shared/lib/constants';
 
 import VpnUpgradeSection from './VpnUpgradeSection';

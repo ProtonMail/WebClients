@@ -22,8 +22,3 @@ export * from './filters';
 export * from './general';
 export * from './password';
 export * from './payments';
-export * from './support';
-export * from './themes';
-export * from './topBanners';
-export * from './verification';
-export * from './vpn';
