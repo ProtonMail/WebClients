@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import type { DropdownProps } from '@proton/components/components/dropdown/Dropdown';
+import Option from '@proton/components/components/option/Option';
 import { updatePageSize } from '@proton/shared/lib/api/mailSettings';
 import { DEFAULT_MAIL_PAGE_SIZE } from '@proton/shared/lib/constants';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
-import { Option, SelectTwo } from '../../components';
+import { SelectTwo } from '../../components';
 import { useApi, useEventManager, useMailSettings, useNotifications } from '../../hooks';
 
 interface Props {

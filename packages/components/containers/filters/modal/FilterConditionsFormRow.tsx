@@ -7,10 +7,11 @@ import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Input from '@proton/components/components/input/Input';
 import Radio from '@proton/components/components/input/Radio';
+import Option from '@proton/components/components/option/Option';
 import { useNotifications } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
-import { Option, SelectTwo, Tooltip } from '../../../components';
+import { SelectTwo, Tooltip } from '../../../components';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';
 import type { Condition } from '../interfaces';
 import { ConditionComparator, ConditionType, FilterStatement } from '../interfaces';

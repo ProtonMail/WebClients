@@ -15,6 +15,7 @@ import { Button, InlineLinkButton } from '@proton/atoms';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import Option from '@proton/components/components/option/Option';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { useLoading } from '@proton/hooks';
@@ -51,7 +52,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    Option,
     PasswordInputTwo,
     SelectTwo,
     Tooltip,

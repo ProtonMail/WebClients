@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { Option } from '@proton/components/components';
+import Option from '@proton/components/components/option/Option';
 import type { Props as SearchableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import { defaultFilterFunction } from '@proton/components/components/selectTwo/helpers';

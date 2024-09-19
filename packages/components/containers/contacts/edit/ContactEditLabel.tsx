@@ -1,7 +1,8 @@
+import Option from '@proton/components/components/option/Option';
 import { getAllTypes, getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
 import type { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { Label, Option, SelectTwo } from '../../../components';
+import { Label, SelectTwo } from '../../../components';
 import type { SelectChangeEvent } from '../../../components/selectTwo/select';
 import ContactLabelProperty from '../view/ContactLabelProperty';
 

@@ -6,6 +6,8 @@ export * from './containers';
 export * from './helpers';
 export * from './hooks';
 
+export { default as Option } from './components/option/Option';
+
 export { default as ActionCard } from './components/actionCard/ActionCard';
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
 export * from './components/addressesAutocomplete/helper';

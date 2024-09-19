@@ -4,13 +4,14 @@ import { c } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
 import Loader from '@proton/components/components/loader/Loader';
+import Option from '@proton/components/components/option/Option';
 import UpsellIcon from '@proton/components/components/upsell/UpsellIcon';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import type { Address } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { Option, SelectTwo } from '../../components';
+import { SelectTwo } from '../../components';
 import { useAddresses, useMailSettings, useUser, useUserSettings } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';

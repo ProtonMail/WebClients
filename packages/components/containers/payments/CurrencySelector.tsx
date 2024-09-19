@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Option from '@proton/components/components/option/Option';
 import type { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { mainCurrencies } from '@proton/payments';
 import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import type { Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { ButtonGroup, Option, SelectTwo } from '../../components';
+import { ButtonGroup, SelectTwo } from '../../components';
 
 interface SharedProps {
     onSelect: (newCurrency: Currency) => void;
