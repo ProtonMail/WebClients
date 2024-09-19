@@ -4,14 +4,13 @@ import { c, msgid } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
 import { FileIcon, Icon, Tooltip, useToggle } from '@proton/components';
-import { isProtonUserFromCookie } from '@proton/components/helpers/protonUserCookie';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
 import clsx from '@proton/utils/clsx';
 
 import type { DecryptedLink } from '../../../store';
-import { useDownload } from '../../../store';
+import { useDownload, usePublicSessionUser } from '../../../store';
 import { getPercentageFormatter } from '../../../utils/intl/numberFormatter';
 import { isTransferActive } from '../../../utils/transfer';
 import type { Download } from '../../TransferManager/transfer';
@@ -347,8 +346,8 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
     const [downloadedSize, setDownloadedSize] = useState<number>(0);
     const [totalSize, setTotalSize] = useState<number>(0);
     const [nbFile, setNbFile] = useState<number>(0);
+    const user = usePublicSessionUser();
 
-    const isProtonUser = isProtonUserFromCookie();
     const { downloads, getDownloadsLinksProgresses, restartDownloads, clearDownloads } = useDownload();
 
     const isDownloadAll = downloads[0]?.links[0].linkId === rootItem.linkId && !rootItem.isFile;
@@ -442,7 +441,7 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                     !expanded && isInProgress && 'share-transfer-manager-content--minimized'
                 )}
             >
-                {!isProtonUser && (isInProgress || isDone) ? (
+                {!user && (isInProgress || isDone) ? (
                     <div className="flex flex-nowrap items-center gap-8 px-4 py-5">
                         <div className="flex-1">
                             {getNonProtonUserContentText({
