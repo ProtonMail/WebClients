@@ -331,6 +331,11 @@
         "Wznieś produktywność poczty na nowy poziom. ${ BRAND_NAME } Scribe pomoże Ci pisać, odpowiadać i sprawdzać wiadomości."
       ]
     },
+    "Balance": {
+      "Loading balance": [
+        "Ładowanie salda"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } przestrzeni dyskowej"
@@ -1701,6 +1706,17 @@
         "Pomóż nam ulepszyć usługę"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Potwierdź utratę specjalnej zniżki ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Usuń zniżkę"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Twoja subskrypcja ${ PLAN_NAMES[PLANS.PASS] } jest w specjalnej cenie ${ price } za rok. Obniżenie planu do darmowej wersji spowoduje trwałą utratę zniżki, nawet w przypadku ponownej subskrypcji w przyszłości."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Rozszerzona historia wersji"
@@ -2301,6 +2317,9 @@
       "Please authenticate your payment in the verification tab.": [
         "Potwierdź płatność w nowej karcie."
       ],
+      "Please note that upon clicking the Confirm button, your account will have ${ remainingCreditsFormatted } credits remaining.": [
+        "Po kliknięciu przycisku Potwierdź na Twoim koncie pozostaną środki w wysokości ${ remainingCreditsFormatted }."
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "Użyj innej metody płatności lub skontaktuj się ze swoim bankiem."
       ],
@@ -2665,6 +2684,22 @@
       ],
       "What’s this?": [
         "Co to jest?"
+      ]
+    },
+    "Loader": {
+      "Loading": [
+        "Ładowanie"
+      ],
+      "Loading data": [
+        "Ładowanie danych"
+      ],
+      "Loading message": [
+        "Ładowanie wiadomości"
+      ]
+    },
+    "Loading": {
+      "Amount": [
+        "Kwota"
       ]
     },
     "mail_signup_2024: Info": {
@@ -4136,6 +4171,11 @@
         "Plan został zakupiony przez aplikację na iOS. Aby zmienić lub zaktualizować szczegóły płatności, przejdź do sklepu App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Subskrypcja zostanie obniżona na koniec cyklu rozliczeniowego."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Za ${ totalPrice }"
@@ -4495,6 +4535,9 @@
       ]
     },
     "Wallet": {
+      "An error occurred": [
+        "Wystąpił błąd"
+      ],
       "Close": [
         "Zamknij"
       ],
@@ -4506,6 +4549,9 @@
       ],
       "Explore other ${ BRAND_NAME } products": [
         "Odkryj inne usługi ${ BRAND_NAME }"
+      ],
+      "Syncing new data": [
+        "Synchronizowanie nowych danych"
       ],
       "Upgrade to Visionary": [
         "Ulepsz do planu Visionary"
@@ -4746,9 +4792,6 @@
       ],
       "My wallet passphrase": [
         "Hasło portfela"
-      ],
-      "To access this wallet, you need to input the passphrase": [
-        "Wpisz hasło, aby uzyskać dostęp do portfela"
       ],
       "Wallet passphrase": [
         "Hasło portfela"
@@ -5307,11 +5350,17 @@
       "Loading": [
         "Ładowanie"
       ],
+      "Loading balance": [
+        "Ładowanie salda"
+      ],
       "Message to recipient": [
         "Wiadomość do odbiorcy"
       ],
       "Network fee": [
         "Opłata sieciowa"
+      ],
+      "Note": [
+        "Notatka"
       ],
       "Note to self": [
         "Notatka"
@@ -5360,14 +5409,16 @@
       ]
     },
     "Wallet Transaction": {
-      "Could not load updated transaction": [
-        "Nie można załadować zaktualizowanej transakcji"
-      ],
       "Could not update transaction label": [
         "Nie można zaktualizować etykiety transakcji"
       ],
       "Transaction label successfully updated": [
         "Etykieta transakcji została zaktualizowana"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ pageNumber }": [
+        "Strona ${ pageNumber }"
       ]
     },
     "Wallet transactions": {

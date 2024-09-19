@@ -323,6 +323,11 @@
         "Leve a produtividade dos e-mails a um novo nível. Deixe ${ BRAND_NAME } Scribe ajudá-lo a escrever, responder e revisar seus e-mails."
       ]
     },
+    "Balance": {
+      "Loading balance": [
+        "Carregando saldo"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } armazenamento"
@@ -1689,6 +1694,17 @@
         "Ajude-nos a melhorar"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmar a perda do desconto especial do ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Remover o desconto"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Sua assinatura ${ PLAN_NAMES[PLANS.PASS] } está com um preço especial de ${ price } por ano. Ao fazer downgrade para um plano Free, você perderá o desconto de forma definitiva, mesmo que faça upgrade novamente no futuro."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Histórico de versão estendido"
@@ -2638,6 +2654,25 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ]
+    },
+    "Loader": {
+      "Loading": [
+        "Carregando"
+      ],
+      "Loading data": [
+        "Carregando dados"
+      ],
+      "Loading message": [
+        "Carregando mensagem"
+      ]
+    },
+    "Loading": {
+      "Amount": [
+        "Quantia"
+      ],
+      "Secondary amount": [
+        "Valor secundário"
       ]
     },
     "mail_signup_2024: Info": {
@@ -3700,7 +3735,7 @@
     },
     "Receive bitcoin": {
       "Below is the last generated Bitcoin address. For better privacy, use a different address for each transaction.": [
-        "Veja abaixo o último endereço de bitcoin gerado.\nPara ter mais privacidade, use um endereço diferente para cada transação."
+        "Veja abaixo o último endereço de Bitcoin gerado.\nPara ter mais privacidade, use um endereço diferente para cada transação."
       ],
       "Receive Bitcoin": [
         "Receber Bitcoin"
@@ -4056,6 +4091,11 @@
         "Seu plano foi adquirido usando um aplicativo para iOS. Portanto, para fazer alterações em seu plano ou atualizar seus detalhes de pagamento, você precisará acessar a Apple App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "A assinatura será rebaixada no final do ciclo de cobrança."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
@@ -4401,6 +4441,9 @@
       ]
     },
     "Wallet": {
+      "An error occurred": [
+        "Ocorreu um erro"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -4412,6 +4455,9 @@
       ],
       "Explore other ${ BRAND_NAME } products": [
         "Explorar outros produtos da ${ BRAND_NAME }"
+      ],
+      "Syncing new data": [
+        "Sincronizando novos dados"
       ],
       "Upgrade to Visionary": [
         "Faça upgrade para o Visionary"
@@ -4650,9 +4696,6 @@
       ],
       "My wallet passphrase": [
         "Minha palavra-passe da carteira"
-      ],
-      "To access this wallet, you need to input the passphrase": [
-        "Para acessar esta carteira, é necessário inserir a frase secreta"
       ],
       "Wallet passphrase": [
         "Palavra-passe da carteira"
@@ -5165,7 +5208,7 @@
         "Para evitar a perda de ativos devido ao esquecimento da senha ou a outros problemas de acesso, faça um backup da frase de recuperação ${ BRAND_NAME } e da frase inicial da carteira."
       ],
       "We have created two BTC accounts for you. A primary account, and a second account for receiving Bitcoin via Email (at ${ emailEl }) from other ${ WALLET_APP_NAME } users.": [
-        "Criamos duas contas de BTC para você. Uma conta primária e uma segunda conta para receber Bitcoin via e-mail (no ${ emailEl }) de outros usuários do ${ WALLET_APP_NAME }. "
+        "Criamos duas contas BTC para você. Uma conta principal e uma segunda conta para você receber Bitcoin por e-mail (no ${ emailEl }) de outros usuários do ${ WALLET_APP_NAME }."
       ]
     },
     "Wallet transaction": {
@@ -5211,11 +5254,17 @@
       "Loading": [
         "Carregando"
       ],
+      "Loading balance": [
+        "Carregando saldo"
+      ],
       "Message to recipient": [
         "Mensagem para o destinatário"
       ],
       "Network fee": [
         "Taxa de rede"
+      ],
+      "Note": [
+        "Nota"
       ],
       "Note to self": [
         "Nota pessoal"
@@ -5256,6 +5305,9 @@
       "View more": [
         "Visualizar mais"
       ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
+        "No momento, estamos enfrentando dificuldades para calcular as tarifas da rede. Tente novamente mais tarde. Se o problema persistir, entre em contato com nossa equipe de suporte para obter assistência."
+      ],
       "You received": [
         "Você recebeu"
       ],
@@ -5264,14 +5316,16 @@
       ]
     },
     "Wallet Transaction": {
-      "Could not load updated transaction": [
-        "Não foi possível carregar a transação atualizada"
-      ],
       "Could not update transaction label": [
         "Não foi possível atualizar a identificação da transação"
       ],
       "Transaction label successfully updated": [
         "Identificação da transação atualizada com sucesso"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ pageNumber }": [
+        "Página ${ pageNumber }"
       ]
     },
     "Wallet transactions": {

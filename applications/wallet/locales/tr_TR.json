@@ -323,6 +323,11 @@
         "E-posta üretkenliğini yeni bir düzeye çıkarın e-postalarınızı yazmanıza, yanıtlamanıza ve düzeltmenize ${ BRAND_NAME } Scribe tarafından yardım edilmesine izin verin."
       ]
     },
+    "Balance": {
+      "Loading balance": [
+        "Bakiye yükleniyor"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } depolama alanı"
@@ -1674,6 +1679,17 @@
         "Kendimizi geliştirmemize yardımcı olun"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Özel ${ PASS_APP_NAME } indirimini kaybedeceğinizi onaylayın"
+      ],
+      "Remove discount": [
+        "İndirimi kaldır"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "${ PLAN_NAMES[PLANS.PASS] } aboneliğinizi yıllık ${ price } özel fiyatı ile kullanıyorsunuz. Free tarifesine geçtikten sonra, gelecekte yeniden tarifenizi yükseltseniz bile indirim hakkınızı kalıcı olarak kaybedersiniz."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Genişletilmiş sürüm geçmişi"
@@ -2620,6 +2636,28 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ]
+    },
+    "Loader": {
+      "Loading": [
+        "Yükleniyor"
+      ],
+      "Loading data": [
+        "Veriler yükleniyor"
+      ],
+      "Loading message": [
+        "İleti yükleniyor"
+      ],
+      "Loading send from label": [
+        "Kimden gönderildi etiketi yükleniyor"
+      ]
+    },
+    "Loading": {
+      "Amount": [
+        "Tutar"
+      ],
+      "Secondary amount": [
+        "İkincil tutar"
       ]
     },
     "mail_signup_2024: Info": {
@@ -4022,6 +4060,11 @@
         "Tarifeniz bir iOS uygulaması kullanılarak satın alınmış. Bu nedenle, tarifenizde değişiklik yapmak ya da ödeme bilgilerinizi güncellemek için Apple App Store uygulamasını kullanmalısınız."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Abonelik tarifeniz fatura döneminin sonunda düşürülecek."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "${ totalPrice } için"
@@ -4367,6 +4410,9 @@
       ]
     },
     "Wallet": {
+      "An error occurred": [
+        "Bir sorun çıktı"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -4378,6 +4424,9 @@
       ],
       "Explore other ${ BRAND_NAME } products": [
         "Diğer ${ BRAND_NAME } ürünlerini keşfedin"
+      ],
+      "Syncing new data": [
+        "Yeni veriler eşitleniyor"
       ],
       "Upgrade to Visionary": [
         "Visionary tarifesine yükselt"
@@ -4616,9 +4665,6 @@
       ],
       "My wallet passphrase": [
         "Cüzdanımın parola ifadesi"
-      ],
-      "To access this wallet, you need to input the passphrase": [
-        "Bu cüzdana erişmek için parola ifadesini yazmalısınız"
       ],
       "Wallet passphrase": [
         "Cüzdan parola ifadesi"
@@ -5177,11 +5223,17 @@
       "Loading": [
         "Yükleniyor"
       ],
+      "Loading balance": [
+        "Bakiye yükleniyor"
+      ],
       "Message to recipient": [
         "Alıcıya ileti"
       ],
       "Network fee": [
         "Ağ ücreti"
+      ],
+      "Note": [
+        "Not"
       ],
       "Note to self": [
         "Kendime not"
@@ -5222,6 +5274,9 @@
       "View more": [
         "Diğerlerini görüntüle"
       ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
+        "Şu anda ağ ücretlerini hesaplamakta sorun yaşıyoruz. Lütfen bir süre sonra yeniden deneyin. Sorun sürerse, yardım almak için destek ekibimizle görüşün."
+      ],
       "You received": [
         "Aldığınız"
       ],
@@ -5230,14 +5285,16 @@
       ]
     },
     "Wallet Transaction": {
-      "Could not load updated transaction": [
-        "Güncellenmiş hesap işlemi yüklenemedi"
-      ],
       "Could not update transaction label": [
         "Hesap işlemi etiketi güncellenemedi"
       ],
       "Transaction label successfully updated": [
         "Hesap işlemi etiketi güncellendi"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ pageNumber }": [
+        "${ pageNumber }. sayfa"
       ]
     },
     "Wallet transactions": {

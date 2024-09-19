@@ -323,6 +323,11 @@
         "Lleve la productividad de sus correos electrónicos a nuevos niveles. Deje que ${ BRAND_NAME } Scribe le ayude a escribir, responder y revisar sus correos electrónicos."
       ]
     },
+    "Balance": {
+      "Loading balance": [
+        "Cargando el balance"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
@@ -1689,6 +1694,17 @@
         "Ayúdenos a mejorar"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Confirmar pérdida del descuento especial de ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Eliminar descuento"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "La suscripción del plan ${ PLAN_NAMES[PLANS.PASS] } tiene un precio especial de ${ price } al año. Al cambiar al plan Free perderá el descuento permanentemente incluso si mejora el plan en el futuro."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Historial de versiones extendido"
@@ -2635,6 +2651,28 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ]
+    },
+    "Loader": {
+      "Loading": [
+        "Cargando"
+      ],
+      "Loading data": [
+        "Cargando los datos"
+      ],
+      "Loading message": [
+        "Cargando el mensaje"
+      ],
+      "Loading send from label": [
+        "Cargando el envío desde la etiqueta"
+      ]
+    },
+    "Loading": {
+      "Amount": [
+        "Importe"
+      ],
+      "Secondary amount": [
+        "Importe secundario"
       ]
     },
     "mail_signup_2024: Info": {
@@ -4037,6 +4075,11 @@
         "El plan fue comprado usando una aplicación de iOS. Para realizar cambios a el plan o actualizar los datos de pago necesitará ir a la App Store."
       ]
     },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Pasará a un plan inferior al finalizar el ciclo de facturación."
+      ]
+    },
     "Subscription price": {
       "For ${ totalPrice }": [
         "Por ${ totalPrice }"
@@ -4382,6 +4425,9 @@
       ]
     },
     "Wallet": {
+      "An error occurred": [
+        "Ocurrió un error"
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -4393,6 +4439,9 @@
       ],
       "Explore other ${ BRAND_NAME } products": [
         "Explorar otros productos de ${ BRAND_NAME }"
+      ],
+      "Syncing new data": [
+        "Sincronizando datos nuevos"
       ],
       "Upgrade to Visionary": [
         "Cambiar a Visionary"
@@ -4631,9 +4680,6 @@
       ],
       "My wallet passphrase": [
         "Frase de contraseña de mi cartera"
-      ],
-      "To access this wallet, you need to input the passphrase": [
-        "Para acceder a esta cartera, debe introducir la frase de contraseña"
       ],
       "Wallet passphrase": [
         "Frase de contraseña de la cartera"
@@ -5192,11 +5238,17 @@
       "Loading": [
         "Cargando"
       ],
+      "Loading balance": [
+        "Cargando el balance"
+      ],
       "Message to recipient": [
         "Mensaje al destinatario"
       ],
       "Network fee": [
         "Comisión de red"
+      ],
+      "Note": [
+        "Nota"
       ],
       "Note to self": [
         "Nota personal"
@@ -5237,6 +5289,9 @@
       "View more": [
         "Ver más"
       ],
+      "We are currently experiencing difficulties in calculating network fees. Please try again later. If the issue persists, contact our support team for assistance.": [
+        "Estamos presentando dificultades para calcular las tarifas de red. Intente de nuevo más tarde. Si el problema persiste, contacte con nuestro equipo de soporte."
+      ],
       "You received": [
         "Ha recibido"
       ],
@@ -5245,14 +5300,16 @@
       ]
     },
     "Wallet Transaction": {
-      "Could not load updated transaction": [
-        "No se ha podido cargar la transacción actualizada"
-      ],
       "Could not update transaction label": [
         "No se ha podido actualizar la etiqueta de la transacción"
       ],
       "Transaction label successfully updated": [
         "Se ha actualizado correctamente la etiqueta de la transacción"
+      ]
+    },
+    "Wallet Transaction List": {
+      "Page ${ pageNumber }": [
+        "Página ${ pageNumber }"
       ]
     },
     "Wallet transactions": {
