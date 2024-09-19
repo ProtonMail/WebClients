@@ -20,7 +20,6 @@ export * from './features';
 export * from './filePreview';
 export * from './filters';
 export * from './general';
-export * from './overview';
 export * from './password';
 export * from './payments';
 export * from './privacy';
