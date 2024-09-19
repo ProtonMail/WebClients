@@ -2,10 +2,16 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
-import { Icon, ModalTwo, ModalTwoContent, Tooltip } from '@proton/components';
+import {
+    Icon,
+    ModalTwo,
+    ModalTwoContent,
+    Tooltip,
+    getCTAContent,
+    getRenews,
+    getTryDrivePlus2024Features,
+} from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { getTryDrivePlus2024Features } from '@proton/components/containers/offers/helpers/offerCopies';
-import { getCTAContent, getRenews } from '@proton/components/containers/offers/operations/mailTrial2024/text';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { useLoading } from '@proton/hooks';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
