@@ -8,9 +8,9 @@ import { deletePassDB } from 'proton-pass-web/lib/database';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { getSettingsStorageKey, settings } from 'proton-pass-web/lib/settings';
 import { getTelemetryStorageKey, telemetry } from 'proton-pass-web/lib/telemetry';
-import type { ClientContextValue } from 'proton-pass-web/src/app/Context/ClientProvider';
 
 import type { CreateNotificationOptions } from '@proton/components/containers/notifications';
+import type { AppStateContextValue } from '@proton/pass/components/Core/AppStateProvider';
 import {
     type AuthRouteState,
     getBootRedirectPath,
@@ -34,7 +34,6 @@ import { bootIntent, cacheCancel, lockSync, stateDestroy, stopEventPolling } fro
 import { AppStatus, type Maybe, type MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { objectHandler } from '@proton/pass/utils/object/handler';
-import { createMutableProxy } from '@proton/pass/utils/object/proxy';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
@@ -74,25 +73,24 @@ export const getPersistedSessionsForUserID = (UserID: string): string[] =>
     });
 
 type AuthServiceBindings = {
+    app: AppStateContextValue;
     config: PassConfig;
     history: History<MaybeNull<AuthRouteState>>;
     sw: MaybeNull<ServiceWorkerClient>;
-    getClient: () => ClientContextValue;
     getOfflineEnabled?: () => Promise<boolean>;
     getOnline: () => boolean;
     onNotification: (notification: CreateNotificationOptions) => void;
 };
 
 export const createAuthService = ({
+    app,
     config,
     history,
     sw,
-    getClient,
     getOfflineEnabled,
     getOnline,
     onNotification,
 }: AuthServiceBindings) => {
-    const client = createMutableProxy(getClient);
     const route = objectHandler({ redirectPath: getBootRedirectPath(history.location) });
 
     const auth = createCoreAuthService({
@@ -126,7 +124,7 @@ export const createAuthService = ({
             if (error !== null) {
                 route.set('redirectPath', '/');
                 const pathname = pathLocalID ? `/u/${pathLocalID}` : '/';
-                client.setStatus(AppStatus.ERROR);
+                app.setStatus(AppStatus.ERROR);
                 history.replace({ search: '', pathname, state: { error } });
                 return false;
             } else history.replace({ state: null });
@@ -146,7 +144,7 @@ export const createAuthService = ({
                  * before allowing the user to password unlock. */
                 if (!cookieUpgrade && getOnline()) {
                     await getPersistedSessionKey(api, authStore).catch((err) => {
-                        client.setStatus(AppStatus.ERROR);
+                        app.setStatus(AppStatus.ERROR);
                         throw err;
                     });
                 }
@@ -169,14 +167,14 @@ export const createAuthService = ({
                     encryptedOfflineKD: authStore.getEncryptedOfflineKD(),
                 };
 
-                const isLocalUnlockable = canLocalUnlock(localUnlockableOpts);
-                if (isLocalUnlockable) {
+                if (canLocalUnlock(localUnlockableOpts)) {
                     authStore.setPassword(undefined);
                     const appStatus =
                         localUnlockableOpts.lockMode === LockMode.BIOMETRICS
                             ? AppStatus.BIOMETRICS_LOCKED
                             : AppStatus.PASSWORD_LOCKED;
-                    client.setStatus(appStatus);
+
+                    app.setStatus(appStatus);
                     return false;
                 }
             }
@@ -191,10 +189,10 @@ export const createAuthService = ({
             const validSession = authStore.validSession(session) && session.LocalID === localID;
             const autoFork = !loggedIn && !locked && pathLocalID !== undefined && !validSession;
 
-            if (!getOnline()) client.setStatus(AppStatus.ERROR);
+            if (!getOnline()) app.setStatus(AppStatus.ERROR);
             else if (autoFork) {
                 /* If the session could not be resumed from the LocalID from path,
-                 * we are likely dealing with an app-switch request from another client.
+                 * we are likely dealing with an app-switch request from another app.
                  * In this case, redirect to account through a fork request */
                 auth.requestFork({ app: APPS.PROTONPASS, host: config.SSO_URL, localID: pathLocalID });
             }
@@ -203,20 +201,20 @@ export const createAuthService = ({
         },
 
         onLoginStart: () => {
-            if (client.state.booted) return;
-            return client.setStatus(AppStatus.AUTHORIZING);
+            if (app.state.booted) return;
+            return app.setStatus(AppStatus.AUTHORIZING);
         },
 
         onLoginComplete: async (_, localID) => {
-            client.setAuthorized(true);
-            onboarding.init().catch(noop);
+            app.setAuthorized(true);
             setSentryUID(authStore.getUID());
+            onboarding.init().catch(noop);
 
-            if (client.state.booted) client.setStatus(AppStatus.READY);
+            if (app.state.booted) app.setStatus(AppStatus.READY);
             else {
                 const redirect = stripLocalBasenameFromPathname(route.get('redirectPath'));
                 history.replace((getBasename(localID) ?? '/') + redirect);
-                client.setStatus(AppStatus.AUTHORIZED);
+                app.setStatus(AppStatus.AUTHORIZED);
                 store.dispatch(bootIntent());
             }
         },
@@ -231,28 +229,29 @@ export const createAuthService = ({
             B2BEvents.stop();
             void settings.clear();
 
-            setSentryUID(undefined);
+            store.dispatch(cacheCancel());
+            store.dispatch(stopEventPolling());
         },
 
         onLogoutComplete: (userID, localID, broadcast) => {
             if (broadcast) sw?.send({ type: 'unauthorized', localID, broadcast });
             if (userID) deletePassDB(userID).catch(noop);
+
             localStorage.removeItem(getSessionKey(localID));
+            setSentryUID(undefined);
 
             flushSync(() => {
-                client.setBooted(false);
-                client.setStatus(AppStatus.UNAUTHORIZED);
+                app.setBooted(false);
+                app.setStatus(AppStatus.UNAUTHORIZED);
+                app.setAuthorized(false);
             });
 
-            store.dispatch(cacheCancel());
-            store.dispatch(stopEventPolling());
             store.dispatch(stateDestroy());
-
             history.replace('/');
         },
 
         onMissingScope: () => {
-            flushSync(() => client.setStatus(AppStatus.MISSING_SCOPE));
+            flushSync(() => app.setStatus(AppStatus.MISSING_SCOPE));
             history.replace('/');
         },
 
@@ -303,7 +302,7 @@ export const createAuthService = ({
 
         onSessionEmpty: () => {
             history.replace('/');
-            client.setStatus(AppStatus.UNAUTHORIZED);
+            app.setStatus(AppStatus.UNAUTHORIZED);
         },
 
         /** This retry handling is crucial to handle an edge case where the session might be
@@ -333,8 +332,8 @@ export const createAuthService = ({
             if (userInitiatedLock) history.replace({ ...history.location, state: { userInitiatedLock } });
 
             flushSync(() => {
-                client.setBooted(false);
-                client.setStatus(AppStatusFromLockMode[mode]);
+                app.setBooted(false);
+                app.setStatus(AppStatusFromLockMode[mode]);
             });
 
             store.dispatch(stateDestroy());
@@ -345,7 +344,7 @@ export const createAuthService = ({
         },
 
         onUnlocked: async (mode, _, localID) => {
-            if (clientBooted(client.state.status)) return;
+            if (clientBooted(app.state.status)) return;
 
             const validSession = authStore.validSession(authStore.getSession());
 
@@ -398,9 +397,9 @@ export const createAuthService = ({
 
         onSessionFailure: () => {
             logger.info('[AuthServiceProvider] Session resume failure');
-            if (!(clientOffline(client.state.status) && !getOnline())) {
-                client.setStatus(AppStatus.ERROR);
-                client.setBooted(false);
+            if (!(clientOffline(app.state.status) && !getOnline())) {
+                app.setStatus(AppStatus.ERROR);
+                app.setBooted(false);
             }
         },
 

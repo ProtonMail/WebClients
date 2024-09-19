@@ -2,7 +2,7 @@ import { type FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
-import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
+import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { usePopupStateEffects } from 'proton-pass-extension/lib/hooks/usePopupStateEffects';
 
 import { useNotifications } from '@proton/components/hooks';
@@ -50,15 +50,14 @@ const MainSwitch: FC = () => {
 };
 
 export const Main: FC = () => {
-    const ctx = usePopupContext();
+    const { logout } = useExtensionClient();
+    const lockSetup = useSelector(selectLockSetupRequired);
+
     usePopupStateEffects();
 
-    /** clear notifications when `Main` unmounts */
+    /** Clear notifications when `Main` unmounts */
     const { clearNotifications } = useNotifications();
     useEffect(() => () => clearNotifications(), []);
-
-    const lockSetup = useSelector(selectLockSetupRequired);
-    const logout = () => ctx.logout({ soft: true });
 
     return (
         <OrganizationProvider>
@@ -68,7 +67,11 @@ export const Main: FC = () => {
                         <InviteProvider>
                             <PasswordProvider>
                                 <SpotlightProvider>
-                                    {lockSetup ? <LockOnboarding onCancel={logout} /> : <MainSwitch />}
+                                    {lockSetup ? (
+                                        <LockOnboarding onCancel={() => logout({ soft: true })} />
+                                    ) : (
+                                        <MainSwitch />
+                                    )}
                                 </SpotlightProvider>
                             </PasswordProvider>
                         </InviteProvider>

@@ -7,10 +7,9 @@ import { Icon, Option } from '@proton/components';
 import type { VaultIconName } from '@proton/pass/components/Vault/VaultIcon';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import type { ShareItem } from '@proton/pass/store/reducers';
-import { selectVaultLimits, selectWritableVaults } from '@proton/pass/store/selectors';
+import { selectWritableVaults } from '@proton/pass/store/selectors';
 import type { Maybe, ShareType } from '@proton/pass/types';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
-import { prop } from '@proton/pass/utils/fp/lens';
 import clsx from '@proton/utils/clsx';
 
 import { VAULT_COLOR_MAP } from '../../Vault/constants';
@@ -19,15 +18,10 @@ import { SelectField, type SelectFieldProps } from './SelectField';
 import './VaultPickerField.scss';
 
 type VaultPickerSelection = { title: string; icon?: VaultIconName; color?: VaultColor };
-type VaultPickerFieldProps = Omit<SelectFieldProps, 'children'> & {
-    placeholder?: string;
-    legacy?: boolean;
-};
+type VaultPickerFieldProps = Omit<SelectFieldProps, 'children'> & { legacy?: boolean };
+type VaultPickerProps = VaultPickerFieldProps & { vaults: ShareItem<ShareType.Vault>[] };
 
-export const VaultPickerField: FC<VaultPickerFieldProps> = ({ placeholder, legacy, ...props }) => {
-    const vaults = useSelector(selectWritableVaults);
-    const writableShareIds = useSelector(selectWritableVaults).map(prop('shareId'));
-    const { didDowngrade } = useSelector(selectVaultLimits);
+export const VaultPicker: FC<VaultPickerProps> = ({ legacy, vaults, ...props }) => {
     const selectedId = props.field.value;
 
     const selectedVault = useMemo<Maybe<VaultPickerSelection>>(() => {
@@ -67,13 +61,7 @@ export const VaultPickerField: FC<VaultPickerFieldProps> = ({ placeholder, legac
                     const selected = selectedId === shareId;
 
                     return (
-                        <Option
-                            key={shareId}
-                            value={shareId}
-                            title={content.name}
-                            /* only allow selecting writable vaults if a downgrade was detected */
-                            disabled={didDowngrade && !writableShareIds.includes(shareId)}
-                        >
+                        <Option key={shareId} value={shareId} title={content.name}>
                             <div className="flex gap-x-3 items-center">
                                 <VaultIcon
                                     icon={content.display.icon}
@@ -96,4 +84,9 @@ export const VaultPickerField: FC<VaultPickerFieldProps> = ({ placeholder, legac
             </SelectField>
         </div>
     );
+};
+
+export const VaultPickerField: FC<VaultPickerFieldProps> = (props) => {
+    const vaults = useSelector(selectWritableVaults);
+    return <VaultPicker vaults={vaults} {...props} />;
 };

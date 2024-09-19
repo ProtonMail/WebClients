@@ -1,7 +1,8 @@
 import { type FC, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
+import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
+import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { useExpandPopup } from 'proton-pass-extension/lib/hooks/useExpandPopup';
 import { useOpenSettingsTab } from 'proton-pass-extension/lib/hooks/useOpenSettingsTab';
 import { c } from 'ttag';
@@ -60,7 +61,8 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
 
 export const MenuDropdown: FC = () => {
     const { onLink, onboardingAcknowledge, onboardingCheck } = usePassCore();
-    const { lock, logout, ready, expanded } = usePopupContext();
+    const { ready, expanded } = usePopupContext();
+    const { lock, logout } = useExtensionClient();
     const { API_URL } = usePassConfig();
     const { navigate, filters, matchTrash } = useNavigation();
     const { selectedShareId } = filters;

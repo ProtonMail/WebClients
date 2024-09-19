@@ -1,11 +1,12 @@
 import type { FC } from 'react';
 
-import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
+import { useExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { PromptForReload } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
 import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
@@ -33,7 +34,8 @@ const getCriticalRuntimeErrorMessage = (): string => {
 
 export const Lobby: FC = () => {
     const { openSettings } = usePassCore();
-    const { state, logout } = usePopupContext();
+    const { logout } = useExtensionClient();
+    const { state } = useAppState();
     const errored = clientErrored(state.status);
 
     const requestFork = useRequestForkWithPermissions({ autoClose: true });

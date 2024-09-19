@@ -1,21 +1,17 @@
 import { createRoot } from 'react-dom/client';
 
-import sentry from '@proton/shared/lib/helpers/sentry';
+import { ExtensionRoot } from 'proton-pass-extension/lib/components/Extension/ExtensionRoot';
+import { ExtensionSetup } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 
-import * as config from '../../app/config';
-import Popup from './Popup';
-
-sentry({
-    config,
-    sentryConfig: {
-        host: new URL(config.API_URL).host,
-        release: config.APP_VERSION,
-        environment: `browser-pass::popup`,
-    },
-    ignore: () => false,
-    denyUrls: [],
-});
+import { Popup } from './Popup';
 
 const container = document.querySelector('.app-root');
 const root = createRoot(container!);
-root.render(<Popup />);
+
+root.render(
+    <ExtensionRoot endpoint="popup">
+        <ExtensionSetup>
+            <Popup />
+        </ExtensionSetup>
+    </ExtensionRoot>
+);
