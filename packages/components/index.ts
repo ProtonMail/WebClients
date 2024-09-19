@@ -378,3 +378,5 @@ export { AddressVerificationSection } from './containers/security/AddressVerific
 export { ExternalPGPSettingsSection } from './containers/security/ExternalPGPSettingsSection';
 export { PGPSchemeSelect } from './containers/security/PGPSchemeSelect';
 export { SentinelSection } from './containers/sentinel/SentinelSection';
+export { default as SessionAction } from './containers/sessions/SessionAction';
+export { default as SessionsSection } from './containers/sessions/SessionsSection';
