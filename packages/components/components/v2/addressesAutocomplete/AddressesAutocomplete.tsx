@@ -3,6 +3,8 @@ import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 
 import type { Input } from '@proton/atoms';
 import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '@proton/components';
+import Icon from '@proton/components/components/icon/Icon';
+import Option from '@proton/components/components/option/Option';
 import { useCombinedRefs } from '@proton/hooks';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
@@ -20,8 +22,6 @@ import {
     getNumberOfMembersText,
     getRecipientFromAutocompleteItem,
 } from '../../addressesAutocomplete/helper';
-import Icon from '../../icon/Icon';
-import { Option } from '../../option';
 import { Marks } from '../../text';
 import type { InputFieldProps } from '../field/InputField';
 import InputField from '../field/InputField';

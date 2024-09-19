@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InputFieldTwo, Option, SelectTwo } from '@proton/components/components';
+import { InputFieldTwo, SelectTwo } from '@proton/components/components';
+import Option from '@proton/components/components/option/Option';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { SettingsLayoutLeft, SettingsSectionWide, useCalendarModelEventManager } from '@proton/components/containers';

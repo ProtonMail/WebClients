@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button, Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
+import Option from '@proton/components/components/option/Option';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto/lib';
 import { CryptoProxy } from '@proton/crypto/lib';
@@ -28,7 +29,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    Option,
     SelectTwo,
     useFormErrors,
 } from '../../components';

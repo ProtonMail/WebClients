@@ -1,6 +1,7 @@
+import Option from '@proton/components/components/option/Option';
 import { getAllTypes } from '@proton/shared/lib/helpers/contacts';
 
-import { Label, Option, SelectTwo } from '../../../../components';
+import { Label, SelectTwo } from '../../../../components';
 import type { SelectChangeEvent } from '../../../../components/selectTwo/select';
 
 interface Props {

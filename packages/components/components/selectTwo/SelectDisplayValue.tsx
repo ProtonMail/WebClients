@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 
-import type { Props as OptionProps } from '../option/Option';
+import type { OptionProps } from '../option/Option';
 
 type SelectDisplayValueProps<V> = {
     placeholder?: string;

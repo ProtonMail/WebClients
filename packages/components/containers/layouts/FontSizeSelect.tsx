@@ -1,6 +1,6 @@
-import * as React from 'react';
+import Option from '@proton/components/components/option/Option';
 
-import { Option, SelectTwo } from '../../components';
+import { SelectTwo } from '../../components';
 import { DEFAULT_FONT_SIZE, FONT_SIZES } from '../../components/editor/constants';
 
 interface Props {

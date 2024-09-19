@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import type { ModalTwoPromiseHandlers } from '@proton/components/components/modalTwo/useModalTwo';
+import Option from '@proton/components/components/option/Option';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME, SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -20,7 +21,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    Option,
     SelectTwo,
     TextAreaTwo,
     useFormErrors,

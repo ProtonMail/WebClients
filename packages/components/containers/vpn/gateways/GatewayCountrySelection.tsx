@@ -1,14 +1,15 @@
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import Field from '@proton/components/components/container/Field';
+import Row from '@proton/components/components/container/Row';
 import Icon from '@proton/components/components/icon/Icon';
+import Option from '@proton/components/components/option/Option';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { vpnEnterpriseContactUrl } from '@proton/components/containers/payments/subscription/helpers';
 import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 
-import { Label, Option, SelectTwo } from '../../../components';
-import Field from '../../../components/container/Field';
-import Row from '../../../components/container/Row';
+import { Label, SelectTwo } from '../../../components';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { ButtonNumberInput } from './ButtonNumberInput';
 import { CountryFlagAndName } from './CountryFlagAndName';
