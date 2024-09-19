@@ -3,12 +3,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
 import type { IconProps } from '../icon/Icon';
 import Icon from '../icon/Icon';
-import Tooltip from '../tooltip/Tooltip';
 
 import './Info.scss';
 

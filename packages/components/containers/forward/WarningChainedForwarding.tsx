@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 
-import { Tooltip } from '../../components';
 import { isChainedForwarding } from './helpers';
 
 interface Props {

@@ -6,10 +6,10 @@ import { InlineLinkButton } from '@proton/atoms';
 import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, type PaymentMethodStatusExtended } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
-import { Tooltip } from '../../components';
 import type { SearcheableSelectProps } from '../../components/selectTwo/SearchableSelect';
 import CountriesDropdown, { useCountries } from './CountriesDropdown';
 import { countriesWithStates, getBillingAddressStatus } from './subscription/helpers';

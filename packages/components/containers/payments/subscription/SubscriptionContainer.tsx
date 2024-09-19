@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
 import { useLoading } from '@proton/hooks';
@@ -71,7 +72,6 @@ import type {
     PaymentProcessorType,
 } from '../../../../components/payments/react-extensions/interface';
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
-import { Tooltip } from '../../../components';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
 import {
     useApi,

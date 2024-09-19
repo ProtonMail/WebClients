@@ -4,9 +4,8 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
-
-import { Tooltip } from '../tooltip';
 
 interface AddressesInputItemProps extends ComponentPropsWithoutRef<'div'> {
     iconTooltipTitle?: string;

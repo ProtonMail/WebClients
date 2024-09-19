@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AppLink, Tooltip } from '@proton/components/components';
+import { AppLink } from '@proton/components/components';
 import { SortingTableHeader } from '@proton/components/components/table/SortingTableHeader';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
@@ -12,7 +12,7 @@ import Time from '@proton/components/components/time/Time';
 import { getShareID } from '@proton/shared/lib/api/b2blogs';
 import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { useApi } from '../../..';
+import { Tooltip, useApi } from '../../..';
 import { getDesciptionText, getDescriptionTextWithLink, getEventNameText } from './helpers';
 import type { PassEvent } from './interface';
 

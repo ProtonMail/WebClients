@@ -14,7 +14,7 @@ import useTooltipHandlers from './useTooltipHandlers';
 
 import './Tooltip.scss';
 
-export type TooltipType = 'info' | 'error' | 'warning';
+type TooltipType = 'info' | 'error' | 'warning';
 
 interface Props extends Omit<HTMLProps<HTMLElement>, 'title' | 'children'> {
     children: ReactElement;
