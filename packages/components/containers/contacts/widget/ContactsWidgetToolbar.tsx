@@ -6,10 +6,11 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { ButtonGroup, Tooltip } from '../../../components';
+import { ButtonGroup } from '../../../components';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import type { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import type useContactList from '../hooks/useContactList';

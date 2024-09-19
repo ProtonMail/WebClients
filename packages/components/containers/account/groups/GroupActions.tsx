@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/components/components';
+import { Tooltip } from '@proton/components';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
 import useLoading from '@proton/hooks/useLoading';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';

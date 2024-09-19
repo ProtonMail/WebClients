@@ -18,6 +18,7 @@ import Info from '@proton/components/components/link/Info';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import useKTVerifier from '@proton/components/containers/keyTransparency/useKTVerifier';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
@@ -54,7 +55,6 @@ import {
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     PasswordInputTwo,
-    Tooltip,
     useFormErrors,
 } from '../../components';
 import {

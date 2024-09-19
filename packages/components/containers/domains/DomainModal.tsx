@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
 import RoundedIcon from '@proton/components/components/icon/RoundedIcon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { useLoading } from '@proton/hooks';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
@@ -28,7 +29,6 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    Tooltip,
     useFormErrors,
 } from '../../components';
 import { useApi, useCustomDomains, useEventManager, useNotifications, useStep } from '../../hooks';

@@ -7,6 +7,7 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Option from '@proton/components/components/option/Option';
 import type { SearcheableSelectProps } from '@proton/components/components/selectTwo/SearchableSelect';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { TelemetryCalendarEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import type { AbbreviatedTimezone } from '@proton/shared/lib/date/timezone';
 import { getAbbreviatedTimezoneName, getTimeZoneOptions, getTimezoneAndOffset } from '@proton/shared/lib/date/timezone';
@@ -15,7 +16,6 @@ import type { SimpleMap } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../hooks';
 import type { SelectTwoProps } from '../selectTwo/SelectTwo';
-import { Tooltip } from '../tooltip';
 
 interface Props extends Omit<SelectTwoProps<string>, 'onChange' | 'children'> {
     timezone?: string;

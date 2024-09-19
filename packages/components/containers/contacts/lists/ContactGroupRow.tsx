@@ -6,8 +6,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import genAccentShades from '@proton/colors/gen-accent-shades';
+import { Tooltip } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
-import { Tooltip } from '@proton/components/components/tooltip';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';

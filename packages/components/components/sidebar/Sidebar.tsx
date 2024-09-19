@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { getMeterColor } from '@proton/components/components/progress/Meter';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -24,7 +25,6 @@ import percentage from '@proton/utils/percentage';
 import UserDropdown from '../../containers/heading/UserDropdown';
 import { useActiveBreakpoint, useConfig, useSubscription, useUser } from '../../hooks';
 import useFocusTrap from '../focus/useFocusTrap';
-import { Tooltip } from '../tooltip';
 import Hamburger from './Hamburger';
 import SidebarStorageMeter from './SidebarStorageMeter';
 

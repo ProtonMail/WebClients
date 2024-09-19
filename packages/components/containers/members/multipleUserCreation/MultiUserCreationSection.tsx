@@ -3,8 +3,8 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { Tooltip } from '@proton/components';
 import { useModalState } from '@proton/components/components/modalTwo';
-import { Tooltip } from '@proton/components/components/tooltip';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { CreateMemberMode } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';

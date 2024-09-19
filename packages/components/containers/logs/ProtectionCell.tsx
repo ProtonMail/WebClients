@@ -1,8 +1,7 @@
 import Icon from '@proton/components/components/icon/Icon';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { ProtectionType } from '@proton/shared/lib/authlog';
 import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
-
-import { Tooltip } from '../../components';
 
 type Props = {
     protection?: ProtectionType | null;
