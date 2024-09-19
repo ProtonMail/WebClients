@@ -22,8 +22,8 @@ import {
 } from '@proton/shared/lib/user/storage';
 import { useFlag } from '@proton/unleash';
 
-import { LockedStateTopBanner } from '.';
 import { useConfig, useLocalState, useSubscription, useUser } from '../../hooks';
+import LockedStateTopBanner from './LockedStateTopBanner';
 import TopBanner from './TopBanner';
 
 const IGNORE_STORAGE_LIMIT_KEY = 'ignore-storage-limit';
