@@ -277,7 +277,7 @@ export function SuggestionModePlugin({
       editor.registerCommand(
         SELECTION_INSERT_CLIPBOARD_NODES_COMMAND,
         ({ nodes }) => {
-          return $selectionInsertClipboardNodes(nodes, addCreatedIDtoSet)
+          return $selectionInsertClipboardNodes(nodes, addCreatedIDtoSet, suggestionModeLogger)
         },
         COMMAND_PRIORITY_CRITICAL,
       ),
