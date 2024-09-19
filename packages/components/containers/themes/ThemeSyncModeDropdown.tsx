@@ -10,7 +10,7 @@ import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 import clsx from '@proton/utils/clsx';
 
-import { ThemeCard } from '../..';
+import ThemeCard from '../../containers/themes/ThemeCard';
 import type { Theme } from './ThemeCards';
 
 interface Props {

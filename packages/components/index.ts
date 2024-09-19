@@ -384,3 +384,12 @@ export { default as SMTPSubmissionSection } from './containers/smtp/SMTPSubmissi
 export { default as AuthenticatedBugModal } from './containers/support/AuthenticatedBugModal';
 export { default as BugModal, type BugModalMode } from './containers/support/BugModal';
 export { default as FreeUserLiveChatModal } from './containers/support/FreeUserLiveChatModal';
+export { default as ThemeCard } from './containers/themes/ThemeCard';
+export { default as ThemeCards } from './containers/themes/ThemeCards';
+export { DrawerThemeInjector } from './containers/themes/ThemeInjector';
+export { default as ThemeProvider, getThemeStyle, useTheme } from './containers/themes/ThemeProvider';
+export { default as ThemesModal } from './containers/themes/ThemesModal';
+export { default as ThemesSection } from './containers/themes/ThemesSection';
+export { default as ThemeSvg } from './containers/themes/ThemeSvg';
+export { default as useSyncIframeStyles } from './containers/themes/useSyncIframeStyles';
+export { default as useThemeQueryParameter } from './containers/themes/useThemeQueryParameter';

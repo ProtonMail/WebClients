@@ -3,7 +3,7 @@ import { useLayoutEffect } from 'react';
 
 import type { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
-import { useTheme } from '../themes';
+import { useTheme } from '../themes/ThemeProvider';
 
 /*
  * Meant to wrap portions of ui that we know are for certain only

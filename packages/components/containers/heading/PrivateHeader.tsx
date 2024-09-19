@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
@@ -10,7 +11,6 @@ import type { Props as HeaderProps } from '../../components/header/Header';
 import Header from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
 import { useConfig, useIsPaidUserCookie } from '../../hooks';
-import { useTheme } from '../themes';
 
 interface Props extends HeaderProps {
     settingsButton?: ReactNode;

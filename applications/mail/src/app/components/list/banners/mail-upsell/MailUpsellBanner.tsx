@@ -1,8 +1,7 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useState } from 'react';
 
-import { MailShortcutsModal, PromotionBanner, useModalState } from '@proton/components';
-import ThemesModal from '@proton/components/containers/themes/ThemesModal';
+import { MailShortcutsModal, PromotionBanner, ThemesModal, useModalState } from '@proton/components';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import type { MessageOption } from './useMailUpsellOption';
