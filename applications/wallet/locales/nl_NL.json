@@ -118,6 +118,9 @@
       "Increase": [
         "Verhogen"
       ],
+      "Keep my subscription": [
+        "Mijn abonnement behouden"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -2616,6 +2619,17 @@
         "Wat is dit?"
       ]
     },
+    "Loader": {
+      "Loading": [
+        "Bezig met laden"
+      ],
+      "Loading data": [
+        "Gegevens laden"
+      ],
+      "Loading message": [
+        "Bericht wordt geladen"
+      ]
+    },
     "mail_signup_2024: Info": {
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Voeg ${ BRAND_NAME } Scribe schrijfassistent toe"
@@ -2751,7 +2765,7 @@
         "${ n } VPN-verbindingen"
       ],
       "${ options }-day file version history": [
-        "Bestandsversiegeschiedenis van ${ options } dagen",
+        "Bestandsversiegeschiedenis van ${ options } dag",
         "Bestandsversiegeschiedenis van ${ options } dagen"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
@@ -2967,6 +2981,9 @@
       "Send & receive invitations": [
         "Uitnodigingen verzenden & ontvangen"
       ],
+      "Share files with no size limit": [
+        "Deel bestanden zonder maximale grootte"
+      ],
       "Sign in as user": [
         "Inloggen als gebruiker"
       ],
@@ -2984,6 +3001,9 @@
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchroniseer en back-up al uw bestanden op alle apparaten"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -4567,9 +4587,6 @@
       "My wallet passphrase": [
         "Wachtwoordzin van mijn portemonnee"
       ],
-      "To access this wallet, you need to input the passphrase": [
-        "Om deze portemonnee te openen, dient u de wachtwoordzin in te voeren"
-      ],
       "Wallet passphrase": [
         "Wachtwoordzin van portemonnee"
       ]
@@ -5174,9 +5191,6 @@
       ]
     },
     "Wallet Transaction": {
-      "Could not load updated transaction": [
-        "Kan de bijgewerkte transactie niet laden"
-      ],
       "Could not update transaction label": [
         "Kan transactielabel niet bijwerken"
       ],

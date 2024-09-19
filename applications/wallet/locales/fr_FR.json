@@ -118,6 +118,9 @@
       "Increase": [
         "Augmenter"
       ],
+      "Input passphrase": [
+        "Saisir la phrase secrète"
+      ],
       "Keep my subscription": [
         "Conserver mon abonnement"
       ],
@@ -321,6 +324,11 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "Améliorez la productivité de vos e-mails. Laissez ${ BRAND_NAME } Scribe vous aider à rédiger, répondre et corriger vos e-mails."
+      ]
+    },
+    "Balance": {
+      "Loading balance": [
+        "Chargement du solde"
       ]
     },
     "bf2023: Deal details": {
@@ -2654,11 +2662,17 @@
       ],
       "Loading message": [
         "Chargement du message"
+      ],
+      "Loading send from label": [
+        "Chargement de l'envoi à partir du label"
       ]
     },
     "Loading": {
       "Amount": [
         "Quantité"
+      ],
+      "Secondary amount": [
+        "Montant secondaire"
       ]
     },
     "mail_signup_2024: Info": {
@@ -4576,8 +4590,11 @@
       "Secure your wallet": [
         "Sécurisez votre portefeuille"
       ],
-      "The current fingerprint doesn't match stored one": [
+      "The current fingerprint doesn't match stored one.": [
         "L'empreinte digitale actuelle ne correspond pas à celle enregistrée."
+      ],
+      "This wallet needs a passphrase to be used.": [
+        "Ce portefeuille a besoin d'une 'phrase secrète pour être utilisé."
       ]
     },
     "Wallet import": {
@@ -4670,8 +4687,8 @@
       "My wallet passphrase": [
         "Phrase secrète du portefeuille"
       ],
-      "To access this wallet, you need to input the passphrase": [
-        "Pour accéder au portefeuille, vous devez saisir la phrase secrète."
+      "To use this wallet, you need to input the passphrase": [
+        "Pour utiliser ce portefeuille, vous devez saisir la phrase secrète."
       ],
       "Wallet passphrase": [
         "Phrase secrète du portefeuille"
@@ -5230,6 +5247,9 @@
       "Loading": [
         "Chargement"
       ],
+      "Loading balance": [
+        "Chargement du solde"
+      ],
       "Message to recipient": [
         "Message au destinataire"
       ],
@@ -5289,9 +5309,6 @@
       ]
     },
     "Wallet Transaction": {
-      "Could not load updated transaction": [
-        "La transaction mise à jour n'a pas pu être chargée."
-      ],
       "Could not update transaction label": [
         "Le label de la transaction ne peut pas être mis à jour."
       ],
