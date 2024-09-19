@@ -39,7 +39,6 @@ import useUnprivatizeMembers from '@proton/components/containers/organization/us
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
 import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
-import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
@@ -155,11 +154,10 @@ const MainContainer = () => {
 
     // We hide the assistant upsell for users on Mail and Calendar app without the assistant when the kill switch is enabled
     const hasAssistant = hasAIAssistant(subscription);
-    const { killSwitch: assistantUpsellKillSwitch } = useAssistantFeatureEnabled();
     const hasAllProducts = hasAllProductsB2CPlan(subscription);
     const isInAllowedApps =
         hasAllProducts || appFromPathname === APPS.PROTONMAIL || appFromPathname === APPS.PROTONCALENDAR;
-    const assistantKillSwitch = isInAllowedApps ? !hasAssistant && assistantUpsellKillSwitch : true;
+    const assistantKillSwitch = isInAllowedApps ? !hasAssistant : true;
 
     const organizationTheme = useOrganizationTheme();
     const [memberships, loadingGroupMembership] = useGroupMemberships();
