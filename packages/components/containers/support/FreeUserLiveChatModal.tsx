@@ -12,7 +12,7 @@ import {
     ModalTwoHeader as ModalHeader,
     useModalState,
 } from '../../components';
-import { AuthenticatedBugModal } from '../support';
+import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
 
 export interface Props {
     onClose: ModalProps['onClose'];

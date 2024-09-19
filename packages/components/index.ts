@@ -381,3 +381,6 @@ export { SentinelSection } from './containers/sentinel/SentinelSection';
 export { default as SessionAction } from './containers/sessions/SessionAction';
 export { default as SessionsSection } from './containers/sessions/SessionsSection';
 export { default as SMTPSubmissionSection } from './containers/smtp/SMTPSubmissionSection';
+export { default as AuthenticatedBugModal } from './containers/support/AuthenticatedBugModal';
+export { default as BugModal, type BugModalMode } from './containers/support/BugModal';
+export { default as FreeUserLiveChatModal } from './containers/support/FreeUserLiveChatModal';
