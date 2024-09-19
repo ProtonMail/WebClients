@@ -7,6 +7,7 @@ import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
+import DriveStartupModals from '../components/modals/DriveStartupModals';
 import type { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
 import DriveView from '../components/sections/Drive/DriveView';
 import type { DriveFolder } from '../hooks/drive/useActiveShare';
@@ -113,6 +114,7 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
     return (
         <>
             {shouldRenderDriveView ? <DriveView /> : null}
+            <DriveStartupModals />
             <Route path={`/:shareId?/${LinkURLType.FILE}/:linkId?`} component={PreviewContainer} exact />
         </>
     );
