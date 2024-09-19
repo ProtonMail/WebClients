@@ -9,7 +9,6 @@ export * from './link';
 export * from './logo';
 export * from './maintenanceLayout';
 export * from './miniCalendar';
-export * from './modal';
 export * from './modalTwo';
 export * from './newFeatureOnboarding';
 export * from './newFeatureTag';
