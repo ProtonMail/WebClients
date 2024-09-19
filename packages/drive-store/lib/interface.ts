@@ -19,3 +19,7 @@ export type LegacyNodeMeta = {
     volumeId: string;
     linkId: string;
 };
+
+export function areNodeMetasEqual(a: NodeMeta, b: NodeMeta): boolean {
+    return a.volumeId === b.volumeId && a.linkId === b.linkId;
+}

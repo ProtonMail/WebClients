@@ -1,21 +1,14 @@
 import { Icon } from '@proton/components'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { WebsocketConnectionEventPayloads, WebsocketConnectionEventStatusChange } from '@proton/docs-core'
 import { ParticipantTrackerEvent, WebsocketConnectionEvent } from '@proton/docs-core'
 import { useApplication } from '../../Containers/ApplicationProvider'
 import { mergeRegister } from '@lexical/utils'
-import type { ConnectionCloseReason } from '@proton/docs-proto'
 import { c } from 'ttag'
 import CloudSlashIcon from '../../Icons/CloudSlashIcon'
 import ArrowsRotate from '../../Icons/ArrowsRotate'
 import Pill from '../Pill'
 import PopoverPill from '../PopoverPill'
-
-/**
- * Number of ms a "Saving..." status should be shown at minimum, to prevent fast-paced/jarring switching
- * from Saving to Saved and back.
- */
-const MINIMUM_DURATION_SAVING_MUST_BE_SHOWN = 1000
+import { useWebSocketStatus } from '../../Hooks/useWebsocketStatus'
 
 /**
  * @TODO DRVDOC-842
@@ -32,17 +25,12 @@ const DURATION_BEFORE_CONNECTING_STATUS_SHOWN = 1_000
 
 export const ConnectionStatus = () => {
   const application = useApplication()
-  const [status, setStatus] = useState<WebsocketConnectionEventStatusChange>()
-  const [disconnectReason, setDisconnectReason] = useState<ConnectionCloseReason>()
-  const [hasConcerningMessages, setHasConcerningMessages] = useState(false)
-  const [hasErroredMessages, setHasErroredMessages] = useState(false)
-  const [saving, setSaving] = useState(false)
   const [isUserLimitReached, setIsUserLimitReached] = useState(false)
-  const [saveStartTime, setSaveStartTime] = useState(0)
   const [lastSaveRetryTime, setLastSaveRetryTime] = useState(0)
   const [shouldShowConnecting, setShouldShowConnecting] = useState(false)
 
-  const savingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const status = useWebSocketStatus()
+
   const connectingTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const onErrorPillToggle = useCallback(
@@ -56,73 +44,23 @@ export const ConnectionStatus = () => {
   )
 
   useEffect(() => {
+    if (status.state === WebsocketConnectionEvent.Connecting) {
+      if (connectingTimeoutRef.current) {
+        clearTimeout(connectingTimeoutRef.current)
+      }
+      connectingTimeoutRef.current = setTimeout(() => {
+        setShouldShowConnecting(true)
+      }, DURATION_BEFORE_CONNECTING_STATUS_SHOWN)
+    } else if (status.state === WebsocketConnectionEvent.Connected) {
+      if (connectingTimeoutRef.current) {
+        clearTimeout(connectingTimeoutRef.current)
+      }
+      setShouldShowConnecting(false)
+    }
+  }, [status.state])
+
+  useEffect(() => {
     return mergeRegister(
-      application.eventBus.addEventCallback(() => {
-        setStatus(WebsocketConnectionEvent.Connected)
-        if (connectingTimeoutRef.current) {
-          clearTimeout(connectingTimeoutRef.current)
-        }
-        setShouldShowConnecting(false)
-      }, WebsocketConnectionEvent.Connected),
-
-      application.eventBus.addEventCallback(() => {
-        setStatus(WebsocketConnectionEvent.Connecting)
-        if (connectingTimeoutRef.current) {
-          clearTimeout(connectingTimeoutRef.current)
-        }
-        connectingTimeoutRef.current = setTimeout(() => {
-          setShouldShowConnecting(true)
-        }, DURATION_BEFORE_CONNECTING_STATUS_SHOWN)
-      }, WebsocketConnectionEvent.Connecting),
-
-      application.eventBus.addEventCallback(
-        (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.Disconnected]) => {
-          setStatus(WebsocketConnectionEvent.Disconnected)
-          setDisconnectReason(payload.serverReason)
-          setSaving(false)
-        },
-        WebsocketConnectionEvent.Disconnected,
-      ),
-
-      application.eventBus.addEventCallback(
-        (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.FailedToConnect]) => {
-          setStatus(WebsocketConnectionEvent.FailedToConnect)
-          setDisconnectReason(payload.serverReason)
-          setSaving(false)
-        },
-        WebsocketConnectionEvent.FailedToConnect,
-      ),
-
-      application.eventBus.addEventCallback(
-        (payload: WebsocketConnectionEventPayloads[WebsocketConnectionEvent.AckStatusChange]) => {
-          setHasConcerningMessages(payload.ledger.hasConcerningMessages())
-
-          const hasErrored = payload.ledger.hasErroredMessages()
-          setHasErroredMessages(hasErrored)
-
-          if (hasErrored) {
-            setSaving(false)
-          }
-        },
-        WebsocketConnectionEvent.AckStatusChange,
-      ),
-
-      application.eventBus.addEventCallback(() => {
-        if (savingTimeoutRef.current) {
-          clearTimeout(savingTimeoutRef.current)
-        }
-        setSaving(true)
-        setSaveStartTime(Date.now())
-      }, WebsocketConnectionEvent.Saving),
-
-      application.eventBus.addEventCallback(() => {
-        const elapsedTime = Date.now() - saveStartTime
-        const remainingTime = Math.max(0, MINIMUM_DURATION_SAVING_MUST_BE_SHOWN - elapsedTime)
-        savingTimeoutRef.current = setTimeout(() => {
-          setSaving(false)
-        }, remainingTime)
-      }, WebsocketConnectionEvent.Saved),
-
       application.eventBus.addEventCallback(() => {
         setIsUserLimitReached(true)
       }, ParticipantTrackerEvent.DocumentLimitBreached),
@@ -131,12 +69,12 @@ export const ConnectionStatus = () => {
         setIsUserLimitReached(false)
       }, ParticipantTrackerEvent.DocumentLimitUnbreached),
     )
-  }, [application.eventBus, saveStartTime])
+  }, [application.eventBus])
 
-  const disconnectReasonMessage = disconnectReason ? disconnectReason?.props.message : ''
+  const disconnectReasonMessage = status.disconnectReason ? status.disconnectReason.props.message : ''
 
   let connectionPill = null
-  switch (status) {
+  switch (status.state) {
     case WebsocketConnectionEvent.Connecting:
       {
         if (shouldShowConnecting) {
@@ -164,7 +102,7 @@ export const ConnectionStatus = () => {
               <div>{c('Info')
                 .t`Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.`}</div>
               {disconnectReasonMessage && (
-                <div className="pt-4" data-testid="network-status-offline-info">
+                <div className="color-weak pt-4" data-testid="network-status-offline-info">
                   Disconnection error code: {disconnectReasonMessage}
                 </div>
               )}
@@ -181,7 +119,7 @@ export const ConnectionStatus = () => {
   return (
     <div className="flex select-none items-center gap-3">
       {connectionPill}
-      {saving && (
+      {status.saving && (
         <PopoverPill
           title={
             <div className="flex gap-2">
@@ -192,7 +130,7 @@ export const ConnectionStatus = () => {
           content={
             <>
               <div>{c('Info').t`Your changes are being synced to Drive. Please do not close the web page.`}</div>
-              {hasConcerningMessages && (
+              {status.hasConcerningMessages && (
                 <div className="pt-4">{c('Info').t`Some edits are taking longer to sync than expected.`}</div>
               )}
             </>
@@ -202,7 +140,7 @@ export const ConnectionStatus = () => {
           {c('Info').t`Saving...`}
         </PopoverPill>
       )}
-      {!saving && !connectionPill && (
+      {!status.saving && !connectionPill && (
         <PopoverPill
           title={
             <div className="flex gap-2" data-testid="changes-info-e2e-encrypted">
@@ -216,7 +154,7 @@ export const ConnectionStatus = () => {
           {c('Info').t`End-to-end encrypted`}
         </PopoverPill>
       )}
-      {hasErroredMessages && (
+      {status.hasErroredMessages && (
         <PopoverPill
           title={
             <div className="flex gap-2" data-testid="changes-info-error">
