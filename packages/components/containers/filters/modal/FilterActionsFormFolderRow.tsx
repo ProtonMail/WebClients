@@ -5,12 +5,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
+import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import { useUser } from '@proton/components/hooks';
 import { buildTreeview, formatFolderName, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
-import { InputFieldTwo, SearchableSelect, useModalState } from '../../../components';
+import { InputFieldTwo, useModalState } from '../../../components';
 import type { LabelModel } from '../../labels/modals/EditLabelModal';
 import EditLabelModal from '../../labels/modals/EditLabelModal';
 import { getDefaultFolderOptions, noFolderOption, noFolderValue } from '../constants';

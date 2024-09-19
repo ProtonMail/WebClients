@@ -13,11 +13,11 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    SelectTwo,
     useFormErrors,
 } from '@proton/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useAddresses, useErrorHandler, useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';

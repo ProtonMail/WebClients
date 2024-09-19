@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
 import Option from '@proton/components/components/option/Option';
+import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { type BillingAddress, DEFAULT_TAX_BILLING_ADDRESS, type PaymentMethodStatusExtended } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 import { Tooltip } from '../../components';
-import type { Props as SearchableSelectProps } from '../../components/selectTwo/SearchableSelect';
-import SearchableSelect from '../../components/selectTwo/SearchableSelect';
+import type { SearcheableSelectProps } from '../../components/selectTwo/SearchableSelect';
 import CountriesDropdown, { useCountries } from './CountriesDropdown';
 import { countriesWithStates, getBillingAddressStatus } from './subscription/helpers';
 
@@ -173,7 +173,7 @@ type StateSelectorProps = {
 const StateSelector = ({ onStateChange, federalStateCode, selectedCountryCode }: StateSelectorProps) => {
     const states = useMemo(() => getStateList(selectedCountryCode), [selectedCountryCode]);
 
-    const props: SearchableSelectProps<string> = {
+    const props: SearcheableSelectProps<string> = {
         onChange: ({ value: stateCode }: SelectChangeEvent<string>) => onStateChange?.(stateCode),
         value: federalStateCode ?? '',
         id: 'tax-state',

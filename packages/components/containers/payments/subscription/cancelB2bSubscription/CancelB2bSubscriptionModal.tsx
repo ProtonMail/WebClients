@@ -11,7 +11,6 @@ import {
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    SelectTwo,
     TextAreaTwo,
     useApi,
     useConfig,
@@ -21,6 +20,7 @@ import {
 } from '@proton/components';
 import Option from '@proton/components/components/option/Option';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { getClientName } from '@proton/components/helpers/report';
 import { reportCancelPlan } from '@proton/shared/lib/api/reports';
 import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';

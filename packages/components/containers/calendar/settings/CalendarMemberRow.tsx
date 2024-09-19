@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Avatar, Button } from '@proton/atoms';
-import { SelectTwo, Tooltip } from '@proton/components/components';
+import { Tooltip } from '@proton/components/components';
 import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';

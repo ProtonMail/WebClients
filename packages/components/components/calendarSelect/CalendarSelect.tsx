@@ -1,9 +1,9 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { CalendarSelectOption } from '@proton/shared/lib/interfaces/calendar';
 
-import { SelectTwo } from '../selectTwo';
 import type { SelectChangeEvent } from '../selectTwo/select';
 import CalendarSelectIcon from './CalendarSelectIcon';
 

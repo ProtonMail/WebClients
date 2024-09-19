@@ -15,7 +15,7 @@ import SelectOptions from './SelectOptions';
 import type { SelectProps } from './select';
 import useSelect, { SelectProvider } from './useSelect';
 
-export interface Props<V> extends SelectProps<V> {
+export interface SelectTwoProps<V> extends SelectProps<V> {
     /**
      * Optionally allows to remove the border around the select. Use for example in inputs
      */
@@ -70,7 +70,7 @@ const SelectTwo = <V extends any>({
     caretClassName,
     dropdownClassName,
     ...rest
-}: Props<V>) => {
+}: SelectTwoProps<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
 
     const [search, setSearch] = useState('');
