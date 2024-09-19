@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import {
+    DrawerThemeInjector,
     FeatureCode,
     ModalsChildren,
     SubscriptionModalProvider,
@@ -10,7 +11,6 @@ import {
     useConfig,
     useFeatures,
 } from '@proton/components';
-import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useInboxDesktopMessageForward } from '@proton/components/hooks/useInboxDesktopMessageForward';
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';

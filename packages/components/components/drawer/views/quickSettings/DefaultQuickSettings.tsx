@@ -10,7 +10,8 @@ import type { QuickSettingsReminders } from '@proton/shared/lib/drawer/interface
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ColorScheme, PROTON_THEMES_MAP, ThemeModeSetting, getThemes } from '@proton/shared/lib/themes/themes';
 
-import { ThemeCards, useTheme } from '../../../../containers';
+import ThemeCards from '../../../../containers/themes/ThemeCards';
+import { useTheme } from '../../../../containers/themes/ThemeProvider';
 import ThemeSyncModeDropdown from '../../../../containers/themes/ThemeSyncModeDropdown';
 import { useEarlyAccess, useNotifications, useShowThemeSelection } from '../../../../hooks';
 import DrawerAppHeadline from '../shared/DrawerAppHeadline';

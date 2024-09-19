@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import { useTheme } from '../themes';
+import { useTheme } from '../themes/ThemeProvider';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
     className?: string;
