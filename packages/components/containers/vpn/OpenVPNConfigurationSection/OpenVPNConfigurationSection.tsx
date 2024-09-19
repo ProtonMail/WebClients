@@ -10,7 +10,6 @@ import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Info from '@proton/components/components/link/Info';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { SettingsSectionWide } from '@proton/components/containers';
-import type { EnhancedLogical } from '@proton/components/containers/vpn/OpenVPNConfigurationSection/interface';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
@@ -22,6 +21,7 @@ import {
 } from '../../../helpers/countries';
 import { usePlans, useSortedList, useUser, useUserSettings, useUserVPN, useVPNLogicals } from '../../../hooks';
 import { SettingsParagraph } from '../../account';
+import type { EnhancedLogical } from '../OpenVPNConfigurationSection/interface';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import ServerConfigs from './ServerConfigs';
 import { isSecureCoreEnabled, isTorEnabled } from './utils';

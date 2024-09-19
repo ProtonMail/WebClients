@@ -40,6 +40,7 @@ import {
     SidebarNav,
     SubscriptionModalProvider,
     SubscriptionsSection,
+    TVContainer,
     ThemesSection,
     TopBanners,
     TopNavbarUpsell,
@@ -62,7 +63,6 @@ import {
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
-import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
 import type { ZendeskRef } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import LiveChatZendesk, {
     getIsSelfChat,
