@@ -350,6 +350,7 @@ export { default as PassPolicies } from './containers/organization/PassPolicies'
 export { default as SsoPage } from './containers/organization/sso/SsoPage';
 export { default as useConvertExternalAddresses } from './containers/organization/useConvertExternalAddresses';
 export { default as useUnprivatizeMembers } from './containers/organization/useUnprivatizeMembers';
+export { OtherMailPreferencesSection } from './containers/otherMailPreferences/OtherMailPreferencesSection';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
 export { getOverallStatus } from './containers/recovery/getOverallStatus';
