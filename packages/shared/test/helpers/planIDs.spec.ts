@@ -165,6 +165,42 @@ describe('switchPlan', () => {
         });
     });
 
+    it('should transfer IP addons when switching from vpn biz to bundle pro', () => {
+        const planIDs = { [PLANS.VPN_BUSINESS]: 1, [ADDON_NAMES.IP_VPN_BUSINESS]: 5 };
+        const planID = PLANS.BUNDLE_PRO_2024;
+        expect(
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                showGatewaysForBundlePlan: true,
+            })
+        ).toEqual({
+            [PLANS.BUNDLE_PRO_2024]: 1,
+            [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 6, // We expect 1 more than the IP_VPN_BUSINESS amount because one IP is included in that plan
+        });
+    });
+
+    it('should transfer IP addons when switching from bundle pro to vpn biz', () => {
+        const planIDs = { [PLANS.BUNDLE_PRO_2024]: 1, [ADDON_NAMES.IP_BUNDLE_PRO_2024]: 5 };
+        const planID = PLANS.VPN_BUSINESS;
+        expect(
+            switchPlan({
+                planIDs,
+                planID,
+                plans: getTestPlans(),
+                organization: MOCK_ORGANIZATION,
+                user,
+                showGatewaysForBundlePlan: true,
+            })
+        ).toEqual({
+            [PLANS.VPN_BUSINESS]: 1,
+            [ADDON_NAMES.IP_VPN_BUSINESS]: 4,
+        });
+    });
+
     it('should not transfer addons', () => {
         const planIDs = { [PLANS.BUNDLE_PRO]: 1, [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 5 };
         const planID = PLANS.MAIL;

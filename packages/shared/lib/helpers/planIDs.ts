@@ -13,7 +13,14 @@ import type {
     User,
 } from '../interfaces';
 import { ChargebeeEnabled } from '../interfaces';
-import { getSupportedAddons, getSupportedB2BAddons, isDomainAddon, isMemberAddon, isScribeAddon } from './addons';
+import {
+    getSupportedAddons,
+    getSupportedB2BAddons,
+    isDomainAddon,
+    isIpAddon,
+    isMemberAddon,
+    isScribeAddon,
+} from './addons';
 import type { AggregatedPricing, PricingForCycles } from './subscription';
 import { allCycles, getMaxValue, getPlanMembers, getPricePerCycle, getPricePerMember } from './subscription';
 
@@ -176,8 +183,27 @@ export const switchPlan = ({
             }
         }
 
-        // '1ip' case remains unhandled. We currently have only one plan with an IP addon, so for now it is not transferable.
-        // When/if we have the other plans with the same addon type, then it must be handled here.
+        if (isIpAddon(addon) && plan && organization) {
+            if (planID === PLANS.BUNDLE_PRO || PLANS.BUNDLE_PRO_2024) {
+                newPlanIDs[addon] = Math.max(
+                    // VPN business includes a dedicated IP, whereas other plans do not.
+                    // So when switching to bundle we need to accommodate for this
+                    planIDs[ADDON_NAMES.IP_VPN_BUSINESS] ? planIDs[ADDON_NAMES.IP_VPN_BUSINESS] + 1 : 0,
+                    planIDs[ADDON_NAMES.IP_BUNDLE_PRO] || 0,
+                    planIDs[ADDON_NAMES.IP_BUNDLE_PRO_2024] || 0
+                );
+            }
+
+            if (planID === PLANS.VPN_BUSINESS) {
+                newPlanIDs[addon] = Math.max(
+                    // VPN business includes a dedicated IP, whereas other plans do not.
+                    // So when switching to VPN_BUSINESS we need to accommodate for this
+                    planIDs[ADDON_NAMES.IP_VPN_BUSINESS] || 0,
+                    planIDs[ADDON_NAMES.IP_BUNDLE_PRO] ? planIDs[ADDON_NAMES.IP_BUNDLE_PRO] - 1 : 0,
+                    planIDs[ADDON_NAMES.IP_BUNDLE_PRO_2024] ? planIDs[ADDON_NAMES.IP_BUNDLE_PRO_2024] - 1 : 0
+                );
+            }
+        }
     });
 
     return clearPlanIDs(newPlanIDs);
