@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import Time from '@proton/components/components/time/Time';
 import { getPlanTitle } from '@proton/shared/lib/helpers/subscription';
 import type { SubscriptionModel } from '@proton/shared/lib/interfaces';
 
 import type { ModalProps } from '../../../../components';
-import { Time } from '../../../../components';
 import type { ModalTwoPromiseHandlers } from '../../../../components/modalTwo/useModalTwo';
 import type { CancelSubscriptionResult } from './types';
 

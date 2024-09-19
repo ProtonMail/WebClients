@@ -161,6 +161,8 @@ export { default as TableHeaderCell } from './components/table/TableHeaderCell';
 export { default as TableRow } from './components/table/TableRow';
 export { default as TableRowBusy } from './components/table/TableRowBusy';
 export { default as TableRowSticky } from './components/table/TableRowSticky';
+export { default as Time } from './components/time/Time';
+export { default as TimeIntl } from './components/time/TimeIntl';
 export { default as TimeZoneSelector } from './components/timezoneSelector/TimeZoneSelector';
 export { default as Toggle } from './components/toggle/Toggle';
 export { default as Toolbar } from './components/toolbar/Toolbar';

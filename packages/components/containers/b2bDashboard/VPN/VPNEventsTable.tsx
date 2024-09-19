@@ -6,8 +6,8 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import Time from '@proton/components/components/time/Time';
 
-import { Time } from '../../../components';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { getVPNEventColor } from './helpers';
 import type { VPNEvent } from './interface';

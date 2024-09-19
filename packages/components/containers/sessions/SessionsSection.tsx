@@ -8,13 +8,14 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import Time from '@proton/components/components/time/Time';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { querySessions, revokeOtherSessions, revokeSession } from '@proton/shared/lib/api/auth';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
-import { Pagination, Time, useModalState, usePagination } from '../../components';
+import { Pagination, useModalState, usePagination } from '../../components';
 import { useApi, useAuthentication, useNotifications } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SessionAction from './SessionAction';
