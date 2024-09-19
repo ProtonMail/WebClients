@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { SelectTwo } from '@proton/components/components';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { SortingTableHeader } from '@proton/components/components/table/SortingTableHeader';
 import Table from '@proton/components/components/table/Table';

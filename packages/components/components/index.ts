@@ -16,7 +16,6 @@ export * from './orderable';
 export * from './orderableTable';
 export * from './pagination';
 export * from './popper';
-export * from './selectTwo';
 export * from './shortcuts';
 export * from './sidebar';
 export { default as SmartBanner } from './smartBanner/SmartBanner';

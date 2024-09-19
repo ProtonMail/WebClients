@@ -5,11 +5,12 @@ import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
 import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { vpnEnterpriseContactUrl } from '@proton/components/containers/payments/subscription/helpers';
 import { MAX_IPS_ADDON } from '@proton/shared/lib/constants';
 
-import { Label, SelectTwo } from '../../../components';
+import { Label } from '../../../components';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '../../../helpers/countries';
 import { ButtonNumberInput } from './ButtonNumberInput';
 import { CountryFlagAndName } from './CountryFlagAndName';

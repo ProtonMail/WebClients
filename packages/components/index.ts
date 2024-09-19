@@ -6,8 +6,6 @@ export * from './containers';
 export * from './helpers';
 export * from './hooks';
 
-export { default as Option } from './components/option/Option';
-
 export { default as ActionCard } from './components/actionCard/ActionCard';
 export { default as AddressesAutocomplete } from './components/addressesAutocomplete/AddressesAutocomplete';
 export * from './components/addressesAutocomplete/helper';
@@ -132,6 +130,7 @@ export { default as FormModal } from './components/modal/FormModal';
 export { default as HeaderModal } from './components/modal/Header';
 export { default as InnerModal } from './components/modal/Inner';
 export { default as PreviewPDFModal } from './components/modal/PreviewPDFModal';
+export { default as Option } from './components/option/Option';
 export { default as Price } from './components/price/Price';
 export { default as CircularProgress } from './components/progress/CircularProgress';
 export { default as DynamicProgress } from './components/progress/DynamicProgress';
@@ -144,6 +143,10 @@ export { default as ProtonBadge } from './components/protonBadge/ProtonBadge';
 export { default as ProtonBadgeType } from './components/protonBadge/ProtonBadgeType';
 export { default as VerifiedBadge } from './components/protonBadge/VerifiedBadge';
 export { default as Select } from './components/select/Select';
+export { default as SearchableSelect } from './components/selectTwo/SearchableSelect';
+export type { SearcheableSelectProps } from './components/selectTwo/SearchableSelect';
+export { default as SelectTwo } from './components/selectTwo/SelectTwo';
+export type { SelectTwoProps } from './components/selectTwo/SelectTwo';
 export { default as SkeletonLoader } from './components/skeletonLoader/SkeletonLoader';
 export { default as ReloadSpinner } from './components/spinner/ReloadSpinner';
 export { default as StepDot } from './components/stepDot/StepDot';

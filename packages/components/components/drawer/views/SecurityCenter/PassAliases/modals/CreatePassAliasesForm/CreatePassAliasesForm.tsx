@@ -11,13 +11,13 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    SelectTwo,
     TextAreaTwo,
 } from '@proton/components/components';
 import Form from '@proton/components/components/form/Form';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useNotifications } from '@proton/components/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { deriveAliasPrefix } from '@proton/pass/lib/validation/alias';

@@ -1,6 +1,6 @@
 import { useGetAddresses, useGetCalendarBootstrap } from '@proton/components';
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
-import type { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
+import type { SelectTwoProps } from '@proton/components/components/selectTwo/SelectTwo';
 import { useLoading } from '@proton/hooks';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
 import type { CalendarMember, EventModel } from '@proton/shared/lib/interfaces/calendar';
@@ -8,7 +8,7 @@ import type { CalendarMember, EventModel } from '@proton/shared/lib/interfaces/c
 import { getIsAvailableCalendar } from '../../../helpers/event';
 import { getInitialMemberModel, getOrganizerAndSelfAddressModel } from '../eventForm/state';
 
-export interface Props extends Omit<SelectProps<string>, 'children'> {
+export interface Props extends Omit<SelectTwoProps<string>, 'children'> {
     model: EventModel;
     setModel: (value: EventModel) => void;
     isCreateEvent: boolean;

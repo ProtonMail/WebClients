@@ -4,10 +4,11 @@ import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
 import { Button, CircleLoader, Panel, PanelHeader } from '@proton/atoms';
-import { InputFieldTwo, SelectTwo, TextAreaTwo, useModalState } from '@proton/components/components';
+import { InputFieldTwo, TextAreaTwo, useModalState } from '@proton/components/components';
 import { InputFieldStacked } from '@proton/components/components/inputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import type { Address, EnhancedMember, Group } from '@proton/shared/lib/interfaces';

@@ -11,7 +11,7 @@ import ButtonGroup from '../../components/button/ButtonGroup';
 import Option from '../../components/option/Option';
 import type { Props as ForwardedSelectProps } from '../../components/select/Select';
 import Select from '../../components/select/Select';
-import type { Props as ForwardedSelectTwoProps } from '../../components/selectTwo/SelectTwo';
+import type { SelectTwoProps as ForwardedSelectTwoProps } from '../../components/selectTwo/SelectTwo';
 import SelectTwo from '../../components/selectTwo/SelectTwo';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
