@@ -331,6 +331,10 @@ export { default as useOfferConfig } from './containers/offers/hooks/useOfferCon
 export { default as useOfferModal } from './containers/offers/hooks/useOfferModal';
 export { mailTrial2024Config } from './containers/offers/operations/mailTrial2024';
 export { getCTAContent, getRenews } from './containers/offers/operations/mailTrial2024/text';
+export type { OnboardingStepProps, OnboardingStepRenderCallback } from './containers/onboarding/interface';
+export { default as OnboardingContent } from './containers/onboarding/OnboardingContent';
+export { default as OnboardingModal } from './containers/onboarding/OnboardingModal';
+export { default as OnboardingStep } from './containers/onboarding/OnboardingStep';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
 export { getOverallStatus } from './containers/recovery/getOverallStatus';
