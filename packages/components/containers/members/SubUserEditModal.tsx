@@ -591,9 +591,7 @@ const SubUserEditModal = ({
                     )}
                 </ModalContent>
                 <ModalFooter>
-                    <Button onClick={handleClose} disabled={submitting}>
-                        {c('Action').t`Cancel`}
-                    </Button>
+                    <div>{/* empty div to make it right aligned*/}</div>
                     <Button loading={submitting} type="submit" color="norm">
                         {c('Action').t`Save`}
                     </Button>
