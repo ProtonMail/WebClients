@@ -12,7 +12,7 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import KTToggle from './KTToggle';
 import PromptPinToggle from './PromptPinToggle';
 
-const AddressVerificationSection = () => {
+export const AddressVerificationSection = () => {
     const showKTSetting = useFlag('KeyTransparencyShowUI');
     return (
         <SettingsSection>
@@ -48,5 +48,3 @@ const AddressVerificationSection = () => {
         </SettingsSection>
     );
 };
-
-export default AddressVerificationSection;

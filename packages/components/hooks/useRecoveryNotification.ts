@@ -6,7 +6,7 @@ import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiv
 
 import useSecurityCenter from '../components/drawer/views/SecurityCenter/useSecurityCenter';
 import { FeatureCode } from '../containers/features';
-import getOverallStatus from '../containers/recovery/getOverallStatus';
+import { getOverallStatus } from '../containers/recovery/getOverallStatus';
 import { useIsRecoveryFileAvailable } from './recoveryFile';
 import useAddresses from './useAddresses';
 import useFeature from './useFeature';

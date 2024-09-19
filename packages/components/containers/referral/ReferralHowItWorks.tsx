@@ -6,7 +6,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-const ReferralHowItWorks = () => {
+export const ReferralHowItWorks = () => {
     // NOTE API plan to return subscription start date with GET /plans route
     const startDate = addMonths(new Date(), 1);
     const startText = format(startDate, 'PP', { locale: dateLocale });
@@ -40,5 +40,3 @@ const ReferralHowItWorks = () => {
         </VerticalSteps>
     );
 };
-
-export default ReferralHowItWorks;

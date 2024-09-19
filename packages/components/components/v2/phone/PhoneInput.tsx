@@ -3,10 +3,10 @@ import { forwardRef, useEffect, useLayoutEffect, useMemo, useRef, useState } fro
 
 import type { InputProps } from '@proton/atoms';
 import { Input } from '@proton/atoms';
+import { useRightToLeft } from '@proton/components/containers/rightToLeft/useRightToLeft';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
 import clsx from '@proton/utils/clsx';
 
-import useRightToLeft from '../../../containers/rightToLeft/useRightToLeft';
 import PhoneCountrySelect from './PhoneCountrySelect';
 import {
     getCountries,

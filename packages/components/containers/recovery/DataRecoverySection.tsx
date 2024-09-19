@@ -37,7 +37,7 @@ import { DisableMnemonicModal, GenerateMnemonicModal } from '../mnemonic';
 import ExportRecoveryFileButton from './ExportRecoveryFileButton';
 import VoidRecoveryFilesModal from './VoidRecoveryFilesModal';
 
-const DataRecoverySection = () => {
+export const DataRecoverySection = () => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const { call } = useEventManager();
@@ -286,5 +286,3 @@ const DataRecoverySection = () => {
         </>
     );
 };
-
-export default DataRecoverySection;
