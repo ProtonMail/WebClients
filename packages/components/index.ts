@@ -380,3 +380,4 @@ export { PGPSchemeSelect } from './containers/security/PGPSchemeSelect';
 export { SentinelSection } from './containers/sentinel/SentinelSection';
 export { default as SessionAction } from './containers/sessions/SessionAction';
 export { default as SessionsSection } from './containers/sessions/SessionsSection';
+export { default as SMTPSubmissionSection } from './containers/smtp/SMTPSubmissionSection';
