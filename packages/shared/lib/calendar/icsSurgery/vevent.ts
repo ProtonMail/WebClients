@@ -2,14 +2,16 @@ import { addDays, fromUnixTime } from 'date-fns';
 
 import type { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
 import { getClosestProtonColor } from '@proton/shared/lib/colors';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import truncate from '@proton/utils/truncate';
 import unique from '@proton/utils/unique';
 
-import type { RequireOnly } from '../../../lib/interfaces';
+import type { RequireOnly, RequireSome } from '../../../lib/interfaces';
 import { DAY } from '../../constants';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '../../date/timezone';
 import type {
     IcalJSDateOrDateTimeProperty,
+    VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
     VcalDateTimeValue,
     VcalDurationValue,
@@ -625,7 +627,12 @@ export const getSupportedEvent = ({
 
             if (attendee) {
                 const attendeeEmails = attendee.map((att) => getAttendeeEmail(att));
-                if (unique(attendeeEmails).length !== attendeeEmails.length) {
+                // Some attendees might be malformed, meaning that we receive an empty string as email
+                // We want it to be possible to still add the event in such cases.
+                // To do so, we start by cleaning the emails array, so that we get all correct emails.
+                // Then we can search for duplicate emails, which will lead to an invitation unsupported error
+                const cleanedAttendeeEmails = attendeeEmails.filter((attendee) => attendee !== '');
+                if (unique(cleanedAttendeeEmails).length !== cleanedAttendeeEmails.length) {
                     // Do not accept invitations with repeated emails as they will cause problems.
                     // Usually external providers don't allow this to happen
                     throw new EventInvitationError(INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
@@ -633,7 +640,18 @@ export const getSupportedEvent = ({
                         extendedType: EVENT_INVITATION_ERROR_TYPE.DUPLICATE_ATTENDEES,
                     });
                 }
-                validated.attendee = attendee.map((vcalAttendee) => getSupportedAttendee(vcalAttendee));
+                // Do not add malformed attendee
+                const supportedAttendee = attendee.reduce<RequireSome<VcalAttendeeProperty, 'parameters'>[]>(
+                    (acc, vcalAttendee) => {
+                        const attendeeEmail = getAttendeeEmail(vcalAttendee);
+                        if (validateEmailAddress(attendeeEmail)) {
+                            acc.push(getSupportedAttendee(vcalAttendee));
+                        }
+                        return acc;
+                    },
+                    []
+                );
+                validated.attendee = supportedAttendee;
             }
         }
 
