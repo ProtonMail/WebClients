@@ -110,7 +110,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const allowStorageConfiguration = !hasExternalMemberCapableB2BPlan || hasDriveB2BPlan;
     const allowVpnAccessConfiguration = !hasExternalMemberCapableB2BPlan;
     const allowPrivateMemberConfiguration = !hasExternalMemberCapableB2BPlan;
-    const allowAIAssistantConfiguration = accessToAssistant.enabled && !accessToAssistant.killSwitch;
+    const allowAIAssistantConfiguration = accessToAssistant.enabled;
 
     const showMultipleUserUploadButton = hasExternalMemberCapableB2BPlan;
     const showAddressesSection = !hasExternalMemberCapableB2BPlan;
