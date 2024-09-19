@@ -7,6 +7,7 @@ import { serverTime } from '@proton/crypto';
 import { HOUR } from '@proton/shared/lib/constants';
 import { isNoReplyEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { mentionAttachment } from '@proton/shared/lib/helpers/emailAttachment';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import type { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -21,7 +22,7 @@ import SendWithChangedPreferencesModal, {
 import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
 import SendWithExpirationModal from '../../components/composer/addresses/SendWithExpirationModal';
 import SendWithWarningsModal from '../../components/composer/addresses/SendWithWarningsModal';
-import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
+import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY } from '../../constants';
 import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 import type { MapSendInfo } from '../../models/crypto';
@@ -40,6 +41,7 @@ export const useSendVerifications = (
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getMessage = useGetMessage();
     const contactsMap = useContactsMap();
+    const dontShowNoReplyAgain = getItem(NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY) === 'true';
 
     const preliminaryVerifications = useCallback(async (message: MessageStateWithData): Promise<void> => {
         const { draftFlags } = getMessage(message.localID) as MessageStateWithData;
@@ -57,13 +59,17 @@ export const useSendVerifications = (
             }
         }
 
-        // Try to reply to no-reply emails
-        const emails = getRecipientsAddresses(message.data);
-        const noReplyEmail = emails.find((email) => isNoReplyEmail(email));
+        // Skip no-reply email detection if the user has already dismissed the modal
+        if (!dontShowNoReplyAgain) {
+            // Detect if the user tries to send a message to a no-reply email address
+            const emails = getRecipientsAddresses(message.data);
+            const noReplyEmail = emails.find((email) => isNoReplyEmail(email));
 
-        if (noReplyEmail) {
-            if (handleNoReplyEmail) {
-                await handleNoReplyEmail(noReplyEmail);
+            // If a no-reply email address is detected, display a modal asking the user if they want to send the message anyway
+            if (noReplyEmail) {
+                if (handleNoReplyEmail) {
+                    await handleNoReplyEmail(noReplyEmail);
+                }
             }
         }
 
