@@ -11,13 +11,14 @@ import Icon from '@proton/components/components/icon/Icon';
 import Radio from '@proton/components/components/input/Radio';
 import TextArea from '@proton/components/components/input/TextArea';
 import Info from '@proton/components/components/link/Info';
+import ConfirmModal from '@proton/components/components/modal/Confirm';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 
-import { ConfirmModal, ErrorButton, InputFieldTwo, Option, SelectTwo, useModalTwoStatic } from '../../../components';
+import { ErrorButton, InputFieldTwo, Option, SelectTwo, useModalTwoStatic } from '../../../components';
 import Details from '../../../components/container/Details';
 import Row from '../../../components/container/Row';
 import Summary from '../../../components/container/Summary';
