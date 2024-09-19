@@ -1,5 +1,4 @@
-import type { GatewayIpModel } from '@proton/components/containers/vpn/gateways/GatewayIpModel';
-
+import type { GatewayIpModel } from '../gateways/GatewayIpModel';
 import type { GatewayModel } from './GatewayModel';
 
 export const queryVPNGateways = () => ({

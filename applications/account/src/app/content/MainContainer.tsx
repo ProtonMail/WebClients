@@ -13,6 +13,7 @@ import {
     PrivateAppContainer,
     PrivateHeader,
     PrivateMainAreaLoading,
+    TVContainer,
     TopBanners,
     TopNavbarUpsell,
     UserDropdown,
@@ -37,7 +38,6 @@ import ContactEmailsProvider from '@proton/components/containers/contacts/Contac
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
-import TVContainer from '@proton/components/containers/vpn/tv/TVContainer';
 import { useIsSessionRecoveryAvailable, useShowThemeSelection } from '@proton/components/hooks';
 import { getPublicUserProtonAddressApps, getSSOVPNOnlyAccountApps } from '@proton/shared/lib/apps/apps';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
