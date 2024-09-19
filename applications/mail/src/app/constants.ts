@@ -166,3 +166,5 @@ export const EO_PASSWORD_KEY = 'proton:eo_password';
 
 export const MAX_ROW_ATTACHMENT_THUMBNAILS = 3;
 export const MAX_COLUMN_ATTACHMENT_THUMBNAILS = 2;
+
+export const NO_REPLY_EMAIL_DONT_SHOW_AGAIN_KEY = 'no-reply-email-dont-show-again';
