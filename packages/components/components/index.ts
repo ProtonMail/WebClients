@@ -24,7 +24,6 @@ export { default as SmartBanner } from './smartBanner/SmartBanner';
 export * from './spotlight';
 export * from './tabs';
 export * from './text';
-export * from './time';
 export * from './title';
 export * from './tooltip';
 export * from './topnavbar';

@@ -10,6 +10,7 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
+import Time from '@proton/components/components/time/Time';
 import { useLoading } from '@proton/hooks';
 import { onSessionMigrationPaymentsVersion } from '@proton/payments';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
@@ -26,7 +27,7 @@ import { Renew } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { Time, Tooltip } from '../../components';
+import { Tooltip } from '../../components';
 import type { BadgeType } from '../../components/badge/Badge';
 import { default as Badge } from '../../components/badge/Badge';
 import { useApi, useEventManager, usePlans, usePreferredPlansMap, useSubscription, useUser } from '../../hooks';
