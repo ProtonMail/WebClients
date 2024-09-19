@@ -1,10 +1,10 @@
 import { type FC, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { useAuthService } from 'proton-pass-web/app/Context/AuthServiceProvider';
-import { useClient } from 'proton-pass-web/app/Context/ClientProvider';
+import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
@@ -16,14 +16,13 @@ import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-const app = APPS.PROTONPASS;
-
 export const Lobby: FC = () => {
     const { SSO_URL: host } = usePassConfig();
-    const client = useClient();
-    const { status } = client.state;
-    const authService = useAuthService();
     const history = useHistory<MaybeNull<AuthRouteState>>();
+
+    const authService = useAuthService();
+    const app = useAppState();
+    const { status } = app.state;
 
     const connectivityBar = useConnectivityBar((online) => ({
         className: clsx('bg-danger fixed bottom-0 left-0'),
@@ -56,9 +55,9 @@ export const Lobby: FC = () => {
                     return authService.init(options);
                 }}
                 onLogout={() => authService.logout({ soft: false })}
-                onFork={() => authService.requestFork({ host, app })}
-                onOffline={() => client.setStatus(AppStatus.PASSWORD_LOCKED)}
-                onRegister={() => authService.requestFork({ host, app, forkType: ForkType.SIGNUP })}
+                onFork={() => authService.requestFork({ host, app: APPS.PROTONPASS })}
+                onOffline={() => app.setStatus(AppStatus.PASSWORD_LOCKED)}
+                onRegister={() => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SIGNUP })}
                 renderError={() => <></>}
             />
 

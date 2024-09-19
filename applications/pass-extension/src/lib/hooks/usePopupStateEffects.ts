@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
+import { usePopupContext } from 'proton-pass-extension/app/popup/PopupProvider';
+import { useExtensionContext } from 'proton-pass-extension/lib/components/Extension/ExtensionSetup';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -16,6 +17,7 @@ import { selectLatestDraft } from '@proton/pass/store/selectors';
  * selected item and/or re-hydrate the draft view */
 export const usePopupStateEffects = () => {
     const { getCurrentTabUrl } = usePassCore();
+    const { tabId } = useExtensionContext();
     const popup = usePopupContext();
     const { navigate, selectItem, selectedItem, filters, setFilters } = useNavigation();
     const dispatch = useDispatch();
@@ -38,12 +40,12 @@ export const usePopupStateEffects = () => {
             filters: { search, sort, type, selectedShareId },
             search,
             selectedItem: selectedItem ? { shareId: selectedItem.shareId, itemId: selectedItem.itemId } : null,
-            tabId: popup.context!.tabId,
+            tabId,
         };
     }, [itemId, shareId, search, sort, type, selectedShareId]);
 
     useEffect(() => {
-        const { initial } = popup.state;
+        const { initial } = popup;
         const { selectedItem } = initial;
         const filters = { ...initial.filters, search: initial.search ?? '' };
 

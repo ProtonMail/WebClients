@@ -1,6 +1,8 @@
 import { type FC } from 'react';
 import { useSelector } from 'react-redux';
 
+import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
+import { SettingsDropdown } from 'proton-pass-web/app/Views/Settings/SettingsDropdown';
 import { c } from 'ttag';
 
 import { Button, Scroll } from '@proton/atoms';
@@ -26,9 +28,6 @@ import { selectLockMode, selectPassPlan, selectPlanDisplayName, selectUser } fro
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-
-import { useAuthService } from '../../Context/AuthServiceProvider';
-import { SettingsDropdown } from '../Settings/SettingsDropdown';
 
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const authService = useAuthService();

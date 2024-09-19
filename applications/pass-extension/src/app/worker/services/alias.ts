@@ -9,7 +9,7 @@ import {
     itemCreationSuccess,
 } from '@proton/pass/store/actions';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
-import { selectAliasLimits, selectAutosaveVault } from '@proton/pass/store/selectors';
+import { selectAliasLimits, selectMostRecentVault } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -26,7 +26,7 @@ export const createAliasService = () => {
         onContextReady((ctx) => {
             const state = ctx.service.store.getState();
             const { needsUpgrade } = selectAliasLimits(state);
-            const { shareId } = selectAutosaveVault(state);
+            const shareId = selectMostRecentVault(state);
 
             return new Promise((resolve) => {
                 ctx.service.store.dispatch(
@@ -50,7 +50,7 @@ export const createAliasService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.ALIAS_CREATE,
         onContextReady(async (ctx, message) => {
-            const { shareId } = selectAutosaveVault(ctx.service.store.getState());
+            const shareId = selectMostRecentVault(ctx.service.store.getState());
             const { url, alias } = message.payload;
             const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
             const optimisticId = uniqueId();

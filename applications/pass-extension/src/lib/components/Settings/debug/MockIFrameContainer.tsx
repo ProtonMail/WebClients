@@ -10,25 +10,18 @@ import {
     type NotificationActions,
 } from 'proton-pass-extension/app/content/types';
 
+import { AppStateProvider } from '@proton/pass/components/Core/AppStateProvider';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { type AppState, AppStatus } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-const createMockIFrameContext = (appState: Partial<AppState>, payload?: any): IFrameContextValue => ({
+const createMockIFrameContext = (payload?: any): IFrameContextValue => ({
     endpoint: 'test',
     features: {},
     port: null,
     settings: getInitialSettings(),
     userEmail: 'john@proton.me',
     visible: true,
-    appState: {
-        booted: true,
-        localID: undefined,
-        authorized: true,
-        status: AppStatus.READY,
-        UID: undefined,
-        ...appState,
-    },
     close: noop,
     postMessage: noop,
     forwardMessage: noop,
@@ -66,8 +59,17 @@ export const MockIFrameContainer: FC<{
             marginBottom: 12,
         }}
     >
-        <IFrameContext.Provider value={createMockIFrameContext(appState ?? {}, payload)}>
-            {children}
-        </IFrameContext.Provider>
+        <AppStateProvider
+            initial={{
+                booted: true,
+                localID: undefined,
+                authorized: true,
+                status: AppStatus.READY,
+                UID: undefined,
+                ...appState,
+            }}
+        >
+            <IFrameContext.Provider value={createMockIFrameContext(payload)}>{children}</IFrameContext.Provider>
+        </AppStateProvider>
     </div>
 );

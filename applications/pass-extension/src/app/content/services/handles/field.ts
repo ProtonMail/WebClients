@@ -3,8 +3,7 @@ import type { FieldHandle, FormHandle } from 'proton-pass-extension/app/content/
 import { actionPrevented, actionTrap, withActionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill';
 
-import type { FormType } from '@proton/pass/fathom';
-import { FieldType } from '@proton/pass/fathom';
+import { FieldType, FormType } from '@proton/pass/fathom';
 import { findBoundingInputElement } from '@proton/pass/utils/dom/input';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
@@ -27,11 +26,16 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
         const { action, element } = field;
         if (!action) return;
 
-        if (field.icon) field.icon.reposition(true);
-        else field.getBoxElement({ reflow: true });
-
-        requestAnimationFrame(() => {
+        requestAnimationFrame(async () => {
             if (actionPrevented(element)) return;
+
+            if (ctx?.getSettings().autofill.inject) {
+                const { formType } = field.getFormHandle();
+                const login = formType === FormType.LOGIN;
+                const count = login ? ((await ctx?.service.autofill.getCredentialsCount()) ?? 0) : 0;
+
+                field.attachIcon({ count });
+            }
 
             const target = evt?.target;
             const dropdown = ctx?.service.iframe.dropdown;
@@ -46,6 +50,14 @@ const onFocusField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
             if (shouldClose) dropdown?.close();
             if (shouldOpen) ctx?.service.iframe.attachDropdown()?.open({ action, autofocused: true, field });
         });
+    });
+
+const onBlurField = (field: FieldHandle): ((evt?: FocusEvent) => void) =>
+    withContext((ctx, _evt) => {
+        const dropdown = ctx?.service.iframe.dropdown;
+        const visible = dropdown?.getState().visible;
+        const attachedTo = dropdown?.getCurrentField();
+        if (!(attachedTo === field && visible)) field.detachIcon();
     });
 
 /* on input change : close the dropdown if it was visible
@@ -135,10 +147,10 @@ export const createFieldHandles = ({
         },
 
         /* if an icon is already attached recycle it */
-        attachIcon: withContext((ctx) => {
+        attachIcon: withContext((ctx, { count }) => {
             if (!ctx) return;
             field.icon = field.icon ?? createFieldIconHandle({ field, elements: ctx.elements });
-            field.icon.setCount(0);
+            field.icon.setCount(count);
 
             return field.icon;
         }),
@@ -151,7 +163,7 @@ export const createFieldHandles = ({
         attach({ onChange, onSubmit }) {
             field.tracked = true;
             listeners.removeAll();
-            listeners.addListener(field.element, 'blur', () => field.icon?.reposition(false));
+            listeners.addListener(field.element, 'blur', onBlurField(field));
             listeners.addListener(field.element, 'focus', onFocusField(field));
             listeners.addListener(field.element, 'input', pipe(onInputField(field), onChange));
             listeners.addListener(field.element, 'keydown', pipe(onKeyDownField(onSubmit), onChange));

@@ -50,7 +50,7 @@ export interface FieldHandle {
     /** optimal z-index for icon injection */
     zIndex: number;
     attach: (options: { onChange: () => void; onSubmit: () => void }) => void;
-    attachIcon: () => Maybe<FieldIconHandle>;
+    attachIcon: (options: { count: number }) => Maybe<FieldIconHandle>;
     autofill: (value: string, options?: AutofillOptions) => void;
     detach: () => void;
     detachIcon: () => void;
@@ -61,17 +61,8 @@ export interface FieldHandle {
     setValue: (value: string) => void;
 }
 
-export enum FieldInjectionRule {
-    ALWAYS /* always inject */,
-    FIRST_OF_TYPE /* first field for field type */,
-    FIRST_OF_FORM /* first field in form */,
-    FIRST_OF_SECTION /* first field in form section */,
-    NEVER /* never inject */,
-}
-
 export type FormTrackerFieldConfig = {
     type: FieldType;
-    injection: FieldInjectionRule;
     action?: DropdownAction;
 };
 

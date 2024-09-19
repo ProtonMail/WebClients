@@ -1,18 +1,22 @@
 import { useMemo } from 'react';
 
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
-import { type MessageWithSenderFactory, sendMessage } from '@proton/pass/lib/extension/message/send-message';
+import { sendMessage } from '@proton/pass/lib/extension/message/send-message';
 import { WorkerMessageType } from '@proton/pass/types';
 
-export const useExtensionActivityProbe = (messageFactory: MessageWithSenderFactory) => {
+import { useEndpointMessage } from './useEndpointMessage';
+
+export const useExtensionActivityProbe = () => {
     const probe = useActivityProbe();
+    const message = useEndpointMessage();
+
     return useMemo(
         () => ({
             start: () =>
                 probe.start(
                     () =>
                         sendMessage(
-                            messageFactory({
+                            message({
                                 type: WorkerMessageType.AUTH_CHECK,
                                 payload: { immediate: false },
                             })

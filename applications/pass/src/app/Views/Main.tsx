@@ -2,14 +2,15 @@ import { type FC, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
-import { useClient } from 'proton-pass-web/app/Context/ClientProvider';
-import { Monitor } from 'proton-pass-web/app/Views/Monitor/Monitor';
+import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Hamburger } from '@proton/components';
 import { useToggle } from '@proton/components/hooks';
 import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvider';
+import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useConnectivityBar } from '@proton/pass/components/Core/ConnectivityProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemsProvider } from '@proton/pass/components/Item/Context/ItemsProvider';
@@ -23,25 +24,26 @@ import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvi
 import { SecureLinks } from '@proton/pass/components/SecureLink/SecureLinks';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { authStore } from '@proton/pass/lib/auth/store';
 import { clientOffline } from '@proton/pass/lib/client';
 import { offlineResume } from '@proton/pass/store/actions';
 import { offlineResumeRequest } from '@proton/pass/store/actions/requests';
 import { selectLockSetupRequired, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
-import { useAuthService } from '../Context/AuthServiceProvider';
 import { ExtensionInstallBar } from './Header/ExtensionInstallBar';
 import { Header } from './Header/Header';
 import { LinuxUpdateBar } from './Header/LinuxUpdateBar';
+import { Monitor } from './Monitor/Monitor';
 import { Onboarding } from './Onboarding/Onboarding';
 import { Settings } from './Settings/Settings';
 import { Menu } from './Sidebar/Menu';
 
 const MainSwitch: FC = () => {
     const dispatch = useDispatch();
-    const client = useClient();
-    const offline = clientOffline(client.state.status);
+    const app = useAppState();
+    const authStore = useAuthStore();
+    const localID = authStore?.getLocalID();
+    const offline = clientOffline(app.state.status);
     const offlineResuming = useSelector(selectRequestInFlight(offlineResumeRequest()));
 
     const { state: expanded, toggle } = useToggle();
@@ -55,7 +57,7 @@ const MainSwitch: FC = () => {
 
                 <Button
                     className="text-sm"
-                    onClick={() => dispatch(offlineResume.intent({ localID: authStore.getLocalID() }))}
+                    onClick={() => dispatch(offlineResume.intent({ localID }))}
                     shape="underline"
                     size="small"
                     loading={offlineResuming}
@@ -76,7 +78,7 @@ const MainSwitch: FC = () => {
                     <Menu onToggle={toggle} />
                 </Sidebar>
 
-                <Route path={`/${getLocalIDPath(client.state.localID)}`}>
+                <Route path={`/${getLocalIDPath(localID)}`}>
                     {(route) => (
                         <main id="main" className="content flex-1 overflow-hidden">
                             <div className="flex flex-nowrap flex-column h-full">

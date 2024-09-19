@@ -119,6 +119,35 @@ export const NotificationDebug: FC = () => {
                     <Notification />
                 </MockIFrameContainer>
 
+                <MockIFrameContainer
+                    width={NOTIFICATION_WIDTH}
+                    height={NOTIFICATION_HEIGHT}
+                    payload={{
+                        action: NotificationAction.PASSKEY_CREATE,
+                        domain: 'webauthn.io',
+                        token: 'some-token',
+                        request: JSON.stringify({
+                            rp: {
+                                name: 'webauthn.io',
+                                id: 'webauthn.io',
+                            },
+                            user: {
+                                id: 'igHw8ywfAyFqAabwFcBRnAqyNUi3NG2nB9huIWAxseU',
+                                name: 'Nobody',
+                                displayName: 'Nobody',
+                            },
+                            challenge:
+                                'l196lpn2WQgvnd5BD-tShTTj6FhB_FOj0AmNFlrTl2WN9qY5XUrsEftE1CCa_LJmQs9GqiVxvNu5rJWGih2rPw',
+                            pubKeyCredParams: [
+                                { type: 'public-key', alg: -7 },
+                                { type: 'public-key', alg: -257 },
+                            ],
+                        }),
+                    }}
+                >
+                    <Notification />
+                </MockIFrameContainer>
+
                 {otpItem && (
                     <MockIFrameContainer
                         width={NOTIFICATION_WIDTH}

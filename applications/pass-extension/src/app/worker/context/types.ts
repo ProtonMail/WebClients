@@ -23,6 +23,7 @@ import type { SettingsService } from '../services/settings';
 import type { StorageService } from '../services/storage';
 import type { StoreService } from '../services/store';
 import type { TelemetryService } from '../services/telemetry';
+import type { VaultsService } from '../services/vaults';
 
 export type WorkerInitOptions = {
     sync?: boolean /* will clear local storage */;
@@ -55,6 +56,7 @@ export interface WorkerContextInterface {
         store: StoreService;
         telemetry: MaybeNull<TelemetryService>;
         b2bEvents: MaybeNull<B2BEventsService>;
+        vaults: VaultsService;
     };
     /* status update : side-effects will be triggered */
     setStatus: (status: AppStatus) => void;
