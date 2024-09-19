@@ -205,6 +205,9 @@
       "Discard changes": [
         "Wijzigingen weggooien"
       ],
+      "Domain name": [
+        "Domeinnaam"
+      ],
       "Done": [
         "Klaar"
       ],
@@ -345,6 +348,9 @@
       ],
       "Keep logo": [
         "Logo behouden"
+      ],
+      "Keep my subscription": [
+        "Mijn abonnement behouden"
       ],
       "Let's talk": [
         "Laten we praten!"
@@ -3395,6 +3401,9 @@
         "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
         "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
+      "2FA disabled": [
+        "Tweestapsverificatie uitgeschakeld"
+      ],
       "30-day money-back guarantee": [
         "30 dagen geld-terug-garantie"
       ],
@@ -3654,6 +3663,9 @@
         "${ deletedServerCount } gatewayserver wordt verwijderd",
         "${ deletedServerCount } gatewayservers worden verwijderd"
       ],
+      "Disabled since ${ formattedDateAndTime }": [
+        "Uitgeschakeld sinds ${ formattedDateAndTime }"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
@@ -3732,6 +3744,9 @@
       ],
       "Enable single sign-on to keep your organization safe": [
         "Schakel eenmalig inloggen in om uw organisatie veilig te houden"
+      ],
+      "Enabled since ${ formattedDateAndTime }": [
+        "Ingeschakeld sinds ${ formattedDateAndTime }"
       ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL ontvangen van uw identiteitsprovider (bv. https://idp.example.com/sso/saml)."
@@ -6318,6 +6333,9 @@
         "Servers in ${ vpnServersCountData.paid.countries }+ land",
         "Servers in ${ vpnServersCountData.paid.countries }+ landen"
       ],
+      "Share files with no size limit": [
+        "Deel bestanden zonder maximale grootte"
+      ],
       "Sign in as user": [
         "Inloggen als gebruiker"
       ],
@@ -6344,6 +6362,9 @@
       ],
       "Support for up to 2 users": [
         "Ondersteuning voor maximaal 2 gebruikers"
+      ],
+      "Sync and backup all your files across devices": [
+        "Synchroniseer en back-up al uw bestanden op alle apparaten"
       ],
       "Tor over VPN": [
         "Tor via VPN"
@@ -9430,6 +9451,9 @@
       "Disable two-factor authentication": [
         "Tweestapsverificatie uitschakelen"
       ],
+      "Disable two-factor authentication?": [
+        "Tweestapsverificatie uitschakelen?"
+      ],
       "Discard changes?": [
         "Wijzigingen annuleren?"
       ],
@@ -9637,6 +9661,9 @@
       ],
       "Processing...": [
         "Wordt verwerkt..."
+      ],
+      "QRCode": [
+        "QR-code"
       ],
       "Recommended": [
         "Aanbevolen"

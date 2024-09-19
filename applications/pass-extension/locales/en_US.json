@@ -4,7 +4,18 @@
     "language": "en_US"
   },
   "contexts": {
+    "Action": {
+      "Your password manager not here? Request it.": [
+        "Your password manager is not here? Request it."
+      ]
+    },
     "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        "Upgrade to a paid plan to create multiple vaults."
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 days to try premium features for free. Only during your first week with ${ BRAND_NAME }."
+      ],
       "Extra password successfuly created": [
         "Extra password successfully created"
       ],
@@ -14,8 +25,53 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you."
       ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Select where you want your imported vaults to be saved."
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Share your logins and secure notes, with up to 10 people"
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "To review your imported data, click on the Proton Pass icon in your browser toolbar."
+      ],
       "User's access sucessfuly updated": [
         "User's access successfully updated"
+      ]
+    },
+    "Label": {
+      "Capitalise": [
+        "Capitalize"
+      ],
+      "Imported from : ": [
+        "Imported from: "
+      ],
+      "Need help ?": [
+        "Need help?"
+      ],
+      "Total imported items : ": [
+        "Total imported items: "
+      ],
+      "Total items : ": [
+        "Total items: "
+      ]
+    },
+    "Title": {
+      "Delete vault \"${ vaultName }\" ?": [
+        "Delete vault \"${ vaultName }\"?"
+      ],
+      "Leave vault ?": [
+        "Leave vault?"
+      ],
+      "Permanently remove all items ?": [
+        "Permanently remove all items?"
+      ]
+    },
+    "Validation": {
+      "Url already exists": [
+        "URL already exists"
+      ],
+      "Url is invalid": [
+        "URL is invalid"
       ]
     },
     "Warning": {
@@ -24,6 +80,9 @@
       ],
       "Please contact us for investigating the issue": [
         "Please contact us to investigate the issue"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Your subscription does not allow you to create more vaults."
       ]
     }
   }

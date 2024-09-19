@@ -17,6 +17,9 @@
       "a. b. c. d.": [
         "a. b. c. d."
       ],
+      "Accept suggestion": [
+        "Akceptuj sugestię"
+      ],
       "Add comment": [
         "Dodaj komentarz"
       ],
@@ -76,6 +79,9 @@
       ],
       "Copy link": [
         "Kopiuj link"
+      ],
+      "Decline suggestion": [
+        "Odrzuć sugestię"
       ],
       "Delete": [
         "Usuń"
@@ -392,6 +398,9 @@
       ]
     },
     "Error": {
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again.": [
+        "Wystąpił błąd podczas ładowania dokumentu. Aby zapobiec uszkodzeniu dokumentu, edytor został zablokowany. Odśwież stronę i spróbuj ponownie."
+      ],
       "Failed to export document.": [
         "Nie udało się wyeksportować dokumentu."
       ],
@@ -481,6 +490,9 @@
       "Something went wrong:": [
         "Coś poszło nie tak:"
       ],
+      "Suggesting": [
+        "Sugerowanie"
+      ],
       "The content you are attempting to paste is too large to be pasted at once. Try again by pasting in smaller pieces at a time.": [
         "Zawartość, którą próbujesz wkleić, jest zbyt duża. Spróbuj ponownie wkleić mniejsze części."
       ],
@@ -498,6 +510,15 @@
       "Delete": [
         "Usuń"
       ],
+      "Delete paragraph": [
+        "Usuń akapit"
+      ],
+      "Insert": [
+        "Wstaw"
+      ],
+      "Insert paragraph": [
+        "Wstaw akapit"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Skrót klawiszowy: ${ shortcut }"
       ],
@@ -509,6 +530,9 @@
       ],
       "More options": [
         "Więcej opcji"
+      ],
+      "Replace": [
+        "Zastąp"
       ],
       "Text colour": [
         "Kolor tekstu"

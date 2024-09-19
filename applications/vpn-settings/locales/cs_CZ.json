@@ -2261,6 +2261,17 @@
         "Pomozte nám se zlepšit"
       ]
     },
+    "Downgrade warning": {
+      "Confirm loss of ${ PASS_APP_NAME } special discount": [
+        "Potvrďte ztrátu speciální slevy na ${ PASS_APP_NAME }"
+      ],
+      "Remove discount": [
+        "Odebrat slevu"
+      ],
+      "Your ${ PLAN_NAMES[PLANS.PASS] } subscription is at a special price of ${ price } per year. By downgrading to a Free plan, you will permanently lose the discount, even if you upgrade again in the future.": [
+        "Vaše předplatné ${ PLAN_NAMES[PLANS.PASS] } je za speciální cenu ${ price } ročně. Snížením na tarif Free trvale ztratíte slevu, a to i v případě, že v budoucnu opět navýšíte tarif."
+      ]
+    },
     "driveplus2024: Deal details": {
       "Extended version history": [
         "Rozšířená historie verzí"
@@ -2858,7 +2869,7 @@
         "*Na jednoho uživatele je k dispozici pouze jedna bezplatná zkušební verze. Poté platí běžné ceny."
       ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Po opuštění vašeho tarifu bude tento uživatel přesunut do ${ BRAND_NAME }. Neomezený tarif s 30denní zkušební dobou zdarma.*"
+        "Po opuštění vašeho tarifu bude tento uživatel přesunut na ${ BRAND_NAME }. Neomezený tarif s 30denní bezplatnou zkušební dobou.*"
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
         "Ve výchozím stavu je správci přiřazeno ${ formattedStorage } úložného prostoru. Velikost prostoru přiřazeného dalším uživatelům, můžete později změnit."
@@ -3778,7 +3789,7 @@
         "Mazání ${ deletedServerCount } serverů brány"
       ],
       "Disabled since ${ formattedDateAndTime }": [
-        "Zakázáno od ${ formattedDateAndTime }"
+        "Deaktivováno od ${ formattedDateAndTime }"
       ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "Vypnutím dvoufázového ověřování bude váš účet méně bezpečný. Vypněte toto ověřování pouze pokud je to nezbytně nutné."
@@ -6126,7 +6137,7 @@
     },
     "Monetary unit": {
       "Brazilian real": [
-        "Brazilský Reál"
+        "Brazilský real"
       ],
       "Euro": [
         "Euro"
@@ -8928,6 +8939,11 @@
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
         "Váš tarif byl zakoupen pomocí aplikace pro iOS. Chcete-li provést změny tarifu nebo aktualizovat platební údaje, musíte přejít do Apple App Store."
+      ]
+    },
+    "subscription downgrading info": {
+      "The subscription will be downgraded at the end of the billing cycle.": [
+        "Na konci fakturačního cyklu bude předplatné sníženo."
       ]
     },
     "Subscription price": {
