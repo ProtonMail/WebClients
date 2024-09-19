@@ -75,7 +75,7 @@ import generateUID from '@proton/utils/generateUID';
 
 import ProductLink from '../../containers/app/ProductLink';
 import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/SessionRecoverySignOutConfirmPrompt';
-import { AuthenticatedBugModal } from '../support';
+import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
 import type { Props as UserDropdownButtonProps } from './UserDropdownButton';
 import UserDropdownButton from './UserDropdownButton';
 
