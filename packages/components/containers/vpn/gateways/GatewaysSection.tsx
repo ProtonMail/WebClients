@@ -133,7 +133,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                 source,
             },
             step: SUBSCRIPTION_STEPS.CHECKOUT,
-            plan: PLANS.VPN_BUSINESS,
+            plan: organization.PlanName,
         });
 
     const isAdmin = user.isAdmin && !user.isSubUser;
