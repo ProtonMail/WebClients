@@ -6,7 +6,7 @@ interface Props {
     isDataRecoveryAvailable: boolean;
 }
 
-const getOverallStatus = ({
+export const getOverallStatus = ({
     accountRecoveryStatus,
     dataRecoveryStatus,
     isDataRecoveryAvailable,
@@ -21,5 +21,3 @@ const getOverallStatus = ({
 
     return 'complete';
 };
-
-export default getOverallStatus;

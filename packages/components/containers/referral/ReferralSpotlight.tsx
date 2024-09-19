@@ -17,7 +17,7 @@ interface Props {
     user?: UserModel;
 }
 
-const ReferralSpotlight = ({ children, show, onDisplayed, anchorRef, user }: Props) => {
+export const ReferralSpotlight = ({ children, show, onDisplayed, anchorRef, user }: Props) => {
     const credits = getSimplePriceString(user?.Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
     return (
         <Spotlight
@@ -45,5 +45,3 @@ const ReferralSpotlight = ({ children, show, onDisplayed, anchorRef, user }: Pro
         </Spotlight>
     );
 };
-
-export default ReferralSpotlight;

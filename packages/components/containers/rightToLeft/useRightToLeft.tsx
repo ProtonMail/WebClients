@@ -2,6 +2,4 @@ import { useContext } from 'react';
 
 import Context from './context';
 
-const useRightToLeft = () => useContext(Context);
-
-export default useRightToLeft;
+export const useRightToLeft = () => useContext(Context);

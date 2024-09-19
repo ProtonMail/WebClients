@@ -24,7 +24,7 @@ import SettingsSection from '../account/SettingsSection';
 import InitiateSessionRecoveryModal from '../account/sessionRecovery/InitiateSessionRecoveryModal';
 import ConfirmDisableSessionRecoveryModal from './ConfirmDisableSessionRecoveryModal';
 
-const SessionRecoverySection = () => {
+export const SessionRecoverySection = () => {
     const api = useApi();
     const { call } = useEventManager();
 
@@ -150,5 +150,3 @@ const SessionRecoverySection = () => {
         </>
     );
 };
-
-export default SessionRecoverySection;

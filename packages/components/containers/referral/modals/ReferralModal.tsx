@@ -23,7 +23,7 @@ interface Props extends ModalProps<'div'> {
     endDate: Date;
 }
 
-const ReferralModal = ({ endDate, ...rest }: Props) => {
+export const ReferralModal = ({ endDate, ...rest }: Props) => {
     const planName = PLAN_NAMES[PLANS.MAIL];
     const settingsLink = useSettingsLink();
     const { feature, update } = useFeature(FeatureCode.SeenReferralModal);
@@ -88,5 +88,3 @@ const ReferralModal = ({ endDate, ...rest }: Props) => {
         </ModalTwo>
     );
 };
-
-export default ReferralModal;

@@ -3,12 +3,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import { type IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
+import { useRightToLeft } from '@proton/components/containers/rightToLeft/useRightToLeft';
 import { equivalentReducer } from '@proton/components/hooks/useElementRect';
 import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
-
-import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 
 import './Tabs.scss';
 
