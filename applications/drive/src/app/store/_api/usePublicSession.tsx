@@ -12,10 +12,7 @@ import type { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/shari
 import { srpAuth } from '@proton/shared/lib/srp';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
-import {
-    getLastActivePersistedUserSessionUID,
-    getLastPersistedLocalID,
-} from '../../utils/lastActivePersistedUserSession';
+import { getLastActivePersistedUserSession } from '../../utils/lastActivePersistedUserSession';
 import retryOnError from '../../utils/retryOnError';
 import { hasCustomPassword, hasGeneratedPasswordIncluded, isLegacySharedUrl } from '../_shares';
 import useDebouncedRequest from './useDebouncedRequest';
@@ -51,17 +48,15 @@ function usePublicSessionProvider() {
             Metrics to be authenticated either needs a persisted session (default, as below) or an access token set in initSession().
             In case you neither have persisted session or access token, you will be 401 Unauthorized to call metrics.
         */
-        const UID = getLastActivePersistedUserSessionUID();
-        if (UID) {
-            metrics.setAuthHeaders(UID);
-        }
-
-        const localID = getLastPersistedLocalID();
-        if (localID !== null) {
+        const persistedSession = getLastActivePersistedUserSession();
+        if (persistedSession) {
             try {
-                const resumedSession = await resumeSession({ api, localID });
-                if (resumedSession.keyPassword) {
+                metrics.setAuthHeaders(persistedSession?.UID);
+                const resumedSession = await resumeSession({ api, localID: persistedSession.localID });
+                if (resumedSession) {
                     auth.setPassword(resumedSession.keyPassword);
+                    auth.setUID(persistedSession.UID);
+                    auth.setLocalID(persistedSession.localID);
                 }
                 setUser(formatUser(resumedSession.User));
             } catch (e) {
@@ -92,7 +87,8 @@ function usePublicSessionProvider() {
             If user is logged-in, re-use the current session UID
             This inform the backend of who is accessing the public session
         */
-        const UID = getLastActivePersistedUserSessionUID();
+        const persistedSession = getLastActivePersistedUserSession();
+        const UID = persistedSession?.UID;
 
         const response = await srpAuth({
             api,
