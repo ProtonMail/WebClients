@@ -367,9 +367,10 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
     await view.webContents.loadFile(join(app.getAppPath(), "assets/error-network/error.html"), {
         query: {
             theme: nativeTheme.shouldUseDarkColors ? "dark" : "light",
-            title: c("error screen").t`Something went wrong`,
-            description: c("error screen").t`Please restart the application or try again later.`,
-            button: c("error screen").t`Restart the application`,
+            title: c("error screen").t`Cannot establish connection`,
+            description: c("error screen")
+                .t`Check your internet connection or network settings. If the issue persist, please contact customer support.`,
+            button: c("error screen").t`Try again`,
             buttonTarget: getConfig().url[viewID],
         },
     });
