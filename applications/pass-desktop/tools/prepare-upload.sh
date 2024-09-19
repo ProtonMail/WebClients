@@ -25,7 +25,7 @@ fi
 # Copy artefacts
 cd "$BUILD_DIR"
 if [ "$CHANNEL" = "Stable" ] && [ "$PLATFORM" = "windows" ]; then
-  cp ./*.exe "ProtonPass_Setup.exe"
+  cp ./squirrel.windows/x64/*.exe "ProtonPass_Setup.exe"
 elif [ "$CHANNEL" = "Stable" ] && [ "$PLATFORM" = "linux" ]; then
   cp ./rpm/x64/*.rpm "ProtonPass.rpm"
   cp ./deb/x64/*.deb "ProtonPass.deb"
