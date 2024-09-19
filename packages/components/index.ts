@@ -319,6 +319,18 @@ export {
 } from './containers/notifications/notificationsContext';
 export { default as NotificationsHijack } from './containers/notifications/NotificationsHijack';
 export { default as NotificationsProvider } from './containers/notifications/Provider';
+export { default as OfferModal } from './containers/offers/components/OfferModal';
+export {
+    getDealDurationText,
+    getMailPlus2024InboxFeatures,
+    getTryDrivePlus2024Features,
+} from './containers/offers/helpers/offerCopies';
+export { isBlackFridayPeriod, isCyberWeekPeriod } from './containers/offers/helpers/offerPeriods';
+export { default as useFetchOffer } from './containers/offers/hooks/useFetchOffer';
+export { default as useOfferConfig } from './containers/offers/hooks/useOfferConfig';
+export { default as useOfferModal } from './containers/offers/hooks/useOfferModal';
+export { mailTrial2024Config } from './containers/offers/operations/mailTrial2024';
+export { getCTAContent, getRenews } from './containers/offers/operations/mailTrial2024/text';
 export { AccountRecoverySection } from './containers/recovery/AccountRecoverySection';
 export { DataRecoverySection } from './containers/recovery/DataRecoverySection';
 export { getOverallStatus } from './containers/recovery/getOverallStatus';
