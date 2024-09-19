@@ -155,17 +155,17 @@ function PublicShareLinkInitContainer() {
 
     useEffect(() => {
         /** If the navigation appears from a non proton user and the flag is enabled, we display a sign-up flow modal */
-        if (isDriveShareUrlBookmarkingEnabled && !isLoggedIn) {
+        if (isDriveShareUrlBookmarkingEnabled && !isLoggedIn && !isLoading) {
             showSignUpFlowModal({});
         }
-    }, [isDriveShareUrlBookmarkingEnabled, isLoggedIn]);
+    }, [isDriveShareUrlBookmarkingEnabled, isLoggedIn, isLoading]);
 
     if (isPasswordNeeded) {
         return <PasswordPage submitPassword={submitPassword} />;
     }
 
     if (showLoadingPage) {
-        return <LoadingPage partialView={isPartialView} />;
+        return <LoadingPage />;
     }
 
     if (showErrorPage || !link) {
@@ -183,7 +183,7 @@ function PublicShareLinkInitContainer() {
     return (
         <>
             {link.isFile ? <SharedFilePage {...props} link={link} /> : <SharedFolderPage {...props} rootLink={link} />}
-            {isDriveShareUrlBookmarkingEnabled && !isLoggedIn ? signUpFlowModal : renderUpsellFloatingModal}
+            {isDriveShareUrlBookmarkingEnabled ? signUpFlowModal : renderUpsellFloatingModal}
         </>
     );
 }
