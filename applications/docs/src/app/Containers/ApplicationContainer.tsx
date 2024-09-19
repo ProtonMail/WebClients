@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Application } from '@proton/docs-core'
 import { useApi, useAuthentication, useConfig } from '@proton/components/hooks'
 import { DocsLayout } from '../Components'
-import { Route, Switch, useLocation } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import ApplicationProvider from './ApplicationProvider'
 import { DocumentViewer } from '../Components/DocumentViewer'
 import { CircleLoader } from '@proton/atoms'
@@ -12,12 +12,11 @@ import type { DocumentAction, DriveCompat } from '@proton/drive-store'
 import { useDriveCompat } from '@proton/drive-store'
 import type { FileToDocConversionResult } from '@proton/docs-core'
 import type { EditorInitializationConfig, FileToDocPendingConversion } from '@proton/docs-shared'
-import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
-import useEffectOnce from '@proton/hooks/useEffectOnce'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import { getPlatformFriendlyDateForFileName } from '@proton/docs-core'
 import { APP_VERSION } from '../config'
 import { WordCountContextProvider } from '../Components/WordCount/WordCountProvider'
+import { useDocsUrlBar } from './useDocsUrlBar'
 
 function ApplicationContainer() {
   void import('../tailwind.scss')
@@ -26,11 +25,10 @@ function ApplicationContainer() {
   const driveCompat = useDriveCompat()
 
   const { API_URL } = useConfig()
-  const { UID, getLocalID } = useAuthentication()
+  const { UID } = useAuthentication()
 
-  const { search } = useLocation()
-  const searchParams = new URLSearchParams(search)
-  const [openAction, setOpenAction] = useState<DocumentAction | null>(null)
+  const { openAction, updateParameters } = useDocsUrlBar()
+
   const [action, setAction] = useState<DocumentAction['mode']>()
   const [isCreatingNewDocument, setIsCreatingNewDocument] = useState<boolean>(false)
   const [didCreateNewDocument, setDidCreateNewDocument] = useState<boolean>(false)
@@ -51,68 +49,6 @@ function ApplicationContainer() {
   }, [])
 
   const [isAppReady, setIsAppReady] = useState(false)
-
-  useEffectOnce(() => {
-    const mode = searchParams.get('mode') ?? 'open'
-    const parentLinkId = searchParams.get('parentLinkId')
-    const volumeId = searchParams.get('volumeId')
-    const linkId = searchParams.get('linkId')
-
-    const hasRequiredParametersToLoadOrCreateADocument = volumeId && mode && (linkId || parentLinkId)
-
-    if (!hasRequiredParametersToLoadOrCreateADocument && !driveCompat.isDocsEnabled) {
-      window.location.assign(getAppHref('/', APPS.PROTONDRIVE, getLocalID()))
-      return
-    }
-
-    if (!volumeId || !mode) {
-      return
-    }
-
-    if (mode === 'open' || mode === 'convert') {
-      if (!linkId) {
-        return
-      }
-
-      setOpenAction({
-        mode,
-        volumeId,
-        linkId,
-      })
-    } else if (mode === 'create') {
-      if (!parentLinkId) {
-        return
-      }
-
-      setOpenAction({
-        mode,
-        volumeId,
-        parentLinkId,
-      })
-    }
-
-    if (mode === 'history') {
-      if (!linkId) {
-        return
-      }
-      setOpenAction({
-        mode,
-        volumeId,
-        linkId,
-      })
-    }
-
-    if (mode === 'download') {
-      if (!linkId) {
-        return
-      }
-      setOpenAction({
-        mode,
-        volumeId,
-        linkId,
-      })
-    }
-  })
 
   useEffect(() => {
     if (!isAppReady) {
@@ -135,20 +71,6 @@ function ApplicationContainer() {
 
     return result
   }, [driveCompat, openAction])
-
-  const updateParameters = useCallback((newVolumeId: string, newLinkId: string) => {
-    setOpenAction({
-      mode: 'open',
-      volumeId: newVolumeId,
-      linkId: newLinkId,
-    })
-
-    const newUrl = new URL(location.href)
-    newUrl.searchParams.set('mode', 'open')
-    newUrl.searchParams.set('volumeId', newVolumeId)
-    newUrl.searchParams.set('linkId', newLinkId)
-    history.replaceState(null, '', newUrl.toString())
-  }, [])
 
   useEffect(() => {
     if (!isAppReady || isCreatingNewDocument) {
