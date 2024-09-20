@@ -11,7 +11,7 @@ const BorderedBox = ({ children, className }: { children: React.ReactNode; class
     <div className={clsx([className, 'border rounded p-5'])}>{children}</div>
 );
 
-const InviteSection = () => {
+export const InviteSection = () => {
     return (
         <SettingsSectionWide>
             <div className="flex justify-space-between gap-4 mb-8 invite-section">
@@ -26,5 +26,3 @@ const InviteSection = () => {
         </SettingsSectionWide>
     );
 };
-
-export default InviteSection;
