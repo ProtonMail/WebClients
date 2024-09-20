@@ -4,6 +4,8 @@ import { querySharedWithMeLinks } from '@proton/shared/lib/api/drive/sharing';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import type { ListDriveSharedWithMeLinksPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
+import { sendErrorReport } from '../../../utils/errorHandling';
+import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
 import { useShare } from '../../_shares';
@@ -117,7 +119,15 @@ export function useSharedWithMeLinksListingByVolume() {
 
         const shareIds = new Set(Object.values(results).flatMap(Object.keys));
         const sharesQueue = [...shareIds].map((shareId) => {
-            return () => getSharePrivateKey(signal, shareId);
+            return () =>
+                getSharePrivateKey(signal, shareId).catch((e) => {
+                    // If we can't get the share private key, continue to load the rest of shares
+                    const error = new EnrichedError(e.message, {
+                        tags: { shareId },
+                        extra: { e },
+                    });
+                    sendErrorReport(error);
+                });
         });
         await runInQueue(sharesQueue, BATCH_PROCESSING);
 
