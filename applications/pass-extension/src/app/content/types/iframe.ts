@@ -57,6 +57,7 @@ export interface IFrameAppService<T extends { action: any }> {
     getState: () => IFrameState<T['action']>;
     init: (port: Runtime.Port, payload: IFrameInitPayload) => IFrameAppService<T>;
     open: (options: T) => IFrameAppService<T>;
+    sendMessage: (message: IFrameMessage) => void;
 }
 
 /** These messages are not exported on the main
