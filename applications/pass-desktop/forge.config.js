@@ -44,6 +44,7 @@ const config = {
             signWithParams: process.env.SQUIRREL_SIGNTOOL_ARGS,
             setupExe: `ProtonPass_Setup_${pkg.version}.exe`,
             name: 'ProtonPass',
+            vendorDirectory: `${__dirname}/../../packages/shared/lib/squirrel/assets`,
         }),
         // macOS
         new MakerDMG((arch) => ({
