@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 
 import Option from '@proton/components/components/option/Option';
+import Marks from '@proton/components/components/text/Marks';
 
 import type { Props as InputProps } from '../input/Input';
 import Input from '../input/Input';
-import { Marks } from '../text';
 import AutocompleteList from './AutocompleteList';
 import { useAutocomplete, useAutocompleteFilter } from './useAutocomplete';
 
