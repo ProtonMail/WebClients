@@ -13,7 +13,6 @@ export * from './popper';
 export * from './sidebar';
 export { default as SmartBanner } from './smartBanner/SmartBanner';
 export * from './spotlight';
-export * from './tabs';
 export * from './text';
 export * from './title';
 export * from './topnavbar';

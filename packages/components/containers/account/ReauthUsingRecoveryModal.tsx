@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
+import { Tabs } from '@proton/components';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -19,7 +20,7 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Tabs, useFormErrors } from '../../components';
+import { useFormErrors } from '../../components';
 import {
     useApi,
     useAuthentication,
