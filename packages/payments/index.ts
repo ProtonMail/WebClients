@@ -1,7 +1,14 @@
 export { getPaymentMethodStatus, queryPaymentMethodStatus } from './core/api';
 export { DEFAULT_TAX_BILLING_ADDRESS, type BillingAddress, type BillingAddressProperty } from './core/billing-address';
 export { getErrors, isExpired, type CardModel } from './core/cardDetails';
-export { Autopay, MethodStorage, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './core/constants';
+export {
+    Autopay,
+    MethodStorage,
+    PAYMENT_METHOD_TYPES,
+    PAYMENT_TOKEN_STATUS,
+    INVOICE_STATE,
+    INVOICE_TYPE,
+} from './core/constants';
 export {
     type PaymentVerificator,
     type PaymentVerificatorV5,
@@ -21,12 +28,15 @@ export {
     isCardPayment,
     isChargebeePaymentMethod,
     isCheckWithAutomaticOptions,
+    isCreditNoteInvoice,
+    isCurrencyConversionInvoice,
     isExistingPaymentMethod,
     isMainCurrency,
     isPaymentMethodStatusExtended,
     isPaypalDetails,
     isPaypalPayment,
     isRegionalCurrency,
+    isRegularInvoice,
     isSavedCardDetails,
     isSavedPaymentMethodExternal,
     isSavedPaymentMethodInternal,
@@ -56,6 +66,8 @@ export type {
     ExtendedTokenPayment,
     ForceEnableChargebee,
     InitializeCreditCardOptions,
+    Invoice,
+    InvoiceResponse,
     LatestSubscription,
     MultiCheckOptions,
     MultiCheckSubscriptionData,
