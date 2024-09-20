@@ -324,7 +324,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                         htmlFor="organization-identity-edit-button"
                                         className="text-bold pt-0 mb-2 md:mb-0"
                                     >
-                                        {c('Label').t`Organization identity`}{' '}
+                                        {c('orgidentity').t`Organization identity`}{' '}
                                         <Info
                                             title={c('Tooltip')
                                                 .t`This email address will be shown to all organization members when performing account management operations.`}
@@ -365,7 +365,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                                             onClick={() => {
                                                 setEditOrganizationIdentityModal(true);
                                             }}
-                                            aria-label={c('Action').t`Edit organization identity`}
+                                            aria-label={c('orgidentity').t`Edit organization identity`}
                                         >
                                             {c('Action').t`Edit`}
                                         </InlineLinkButton>

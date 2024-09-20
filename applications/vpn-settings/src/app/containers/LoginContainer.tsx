@@ -40,7 +40,7 @@ const LoginContainer = ({ metaTags, onLogin, paths, initialLocation }: Props) =>
                 const { User } = data;
                 const previousHash = initialLocation?.hash || '';
                 const previousSearch = initialLocation?.search || '';
-                const path = initialLocation?.pathname || (User && isMember(User) ? '/account' : '/dashboard');
+                const path = initialLocation?.pathname || (User && isMember(User) ? '/account-password' : '/dashboard');
                 const pathWithSearch = `${path}${previousSearch}${previousHash}`;
                 return onLogin({ ...data, path: pathWithSearch });
             }}
