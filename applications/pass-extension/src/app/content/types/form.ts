@@ -25,6 +25,7 @@ export interface FormHandle {
 }
 
 export type FieldAction = { type: DropdownAction; filterable?: boolean };
+export type FieldEffects = { onChange: () => void; onSubmit: () => void };
 
 export interface FieldHandle {
     /** action attached for this field */
@@ -51,7 +52,7 @@ export interface FieldHandle {
     value: string;
     /** optimal z-index for icon injection */
     zIndex: number;
-    attach: (options: { onChange: () => void; onSubmit: () => void }) => void;
+    attach: (options: FieldEffects) => void;
     attachIcon: (options: { count: number }) => Maybe<FieldIconHandle>;
     autofill: (value: string, options?: AutofillOptions) => void;
     detach: () => void;
