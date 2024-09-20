@@ -13,9 +13,9 @@ export const NOTIFICATION_IFRAME_SRC = browser.runtime.getURL('/notification.htm
 
 export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
     [FormType.LOGIN]: [
-        { type: FieldType.USERNAME, action: DropdownAction.AUTOFILL_LOGIN },
+        { type: FieldType.USERNAME, action: DropdownAction.AUTOFILL_LOGIN, filterable: true },
         { type: FieldType.USERNAME_HIDDEN },
-        { type: FieldType.EMAIL, action: DropdownAction.AUTOFILL_LOGIN },
+        { type: FieldType.EMAIL, action: DropdownAction.AUTOFILL_LOGIN, filterable: true },
         { type: FieldType.PASSWORD_CURRENT, action: DropdownAction.AUTOFILL_LOGIN },
     ],
     [FormType.REGISTER]: [

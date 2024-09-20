@@ -1,4 +1,4 @@
-import type { Unpack } from '@proton/pass/types';
+import type { Maybe, Unpack } from '@proton/pass/types';
 
 export type Predicate<T extends any[] = any[]> = (...a: T) => boolean;
 export type TypePredicate<A, B extends A> = (a: A) => a is B;
@@ -28,6 +28,11 @@ export const oneOf =
     <T extends any>(...args: T[]) =>
     (value: T): boolean =>
         args.includes(value);
+
+export const partOf =
+    (...args: Maybe<string>[]) =>
+    (value: string): boolean =>
+        args.some((param) => param?.toLowerCase().includes(value?.toLowerCase()));
 
 export const eq =
     <T extends any>(a: T) =>

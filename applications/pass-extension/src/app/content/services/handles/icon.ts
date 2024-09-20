@@ -81,7 +81,7 @@ export const createFieldIconHandle = ({ field, elements }: CreateIconOptions): F
         const dropdown = ctx?.service.iframe.dropdown;
         const visible = dropdown?.getState().visible;
 
-        if (action) return visible ? dropdown?.close() : dropdown?.open({ action, field });
+        if (action) return visible ? dropdown?.close() : dropdown?.open({ action: action.type, field });
     });
 
     const detach = safeCall(() => {

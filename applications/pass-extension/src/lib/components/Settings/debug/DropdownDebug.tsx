@@ -22,6 +22,7 @@ export const DropdownDebug: FC = () => {
                     payload={{
                         action: DropdownAction.AUTOFILL_LOGIN,
                         domain: 'proton.me',
+                        startsWith: '',
                     }}
                     width={DROPDOWN_WIDTH}
                 >
@@ -33,6 +34,7 @@ export const DropdownDebug: FC = () => {
                     payload={{
                         action: DropdownAction.AUTOFILL_LOGIN,
                         domain: 'proton.me',
+                        startsWith: '',
                     }}
                     width={DROPDOWN_WIDTH}
                 >
@@ -43,6 +45,7 @@ export const DropdownDebug: FC = () => {
                     payload={{
                         action: DropdownAction.AUTOFILL_LOGIN,
                         domain: 'proton.me',
+                        startsWith: '',
                     }}
                     width={DROPDOWN_WIDTH}
                 >
@@ -53,6 +56,7 @@ export const DropdownDebug: FC = () => {
                     payload={{
                         action: DropdownAction.AUTOFILL_LOGIN,
                         domain: 'proton.me',
+                        startsWith: '',
                     }}
                     width={DROPDOWN_WIDTH}
                 >
@@ -63,6 +67,7 @@ export const DropdownDebug: FC = () => {
                     payload={{
                         action: DropdownAction.AUTOFILL_LOGIN,
                         domain: 'proton.me',
+                        startsWith: '',
                     }}
                     width={DROPDOWN_WIDTH}
                 >

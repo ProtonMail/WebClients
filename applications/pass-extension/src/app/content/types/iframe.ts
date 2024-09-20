@@ -57,12 +57,14 @@ export interface IFrameAppService<T extends { action: any }> {
     getState: () => IFrameState<T['action']>;
     init: (port: Runtime.Port, payload: IFrameInitPayload) => IFrameAppService<T>;
     open: (options: T) => IFrameAppService<T>;
+    sendMessage: (message: IFrameMessage) => void;
 }
 
 /** These messages are not exported on the main
  * `WorkerMessages` as they are always forwarded
  * between the content-script and iframe. */
 export enum IFramePortMessageType {
+    AUTOFILL_FILTER = 'AUTOFILL_FILTER',
     DROPDOWN_ACTION = 'DROPDOWN_ACTION',
     DROPDOWN_AUTOFILL_EMAIL = 'DROPDOWN_AUTOFILL_EMAIL',
     DROPDOWN_AUTOFILL_GENERATED_PW = 'DROPDOWN_AUTOFILL_GENERATED_PASSWORD',
@@ -96,6 +98,7 @@ export type IFrameMessageType = IFramePortMessageType | IFrameWorkerMessages['ty
 
 export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Extract<
     | IFrameWorkerMessages
+    | { type: IFramePortMessageType.AUTOFILL_FILTER; payload: { startsWith: string } }
     | { type: IFramePortMessageType.DROPDOWN_ACTION; payload: DropdownActions }
     | { type: IFramePortMessageType.DROPDOWN_AUTOFILL_EMAIL; payload: { email: string } }
     | { type: IFramePortMessageType.DROPDOWN_AUTOFILL_GENERATED_PW; payload: { password: string } }

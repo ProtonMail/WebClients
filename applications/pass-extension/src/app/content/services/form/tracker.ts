@@ -208,8 +208,8 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
             const config = FORM_TRACKER_CONFIG[form.formType].find(({ type }) => type === field.fieldType);
             if (!config) return field.detach();
 
-            const { action } = config;
-            field.setAction(action && canProcessAction(action) ? action : null);
+            const { action, filterable } = config;
+            field.setAction(action && canProcessAction(action) ? { type: action, filterable } : null);
             if (!field.tracked) field.attach({ onChange, onSubmit });
         });
 
