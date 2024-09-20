@@ -20,7 +20,7 @@ const TopNavbarUpsell = ({ offerProps, app }: Props) => {
     }
 
     if (offerConfig) {
-        // We need to ingore the onboarding for the desktop app since we don't mark the welcome flag as done in the app
+        // We need to ignore the onboarding for the desktop app since we don't mark the welcome flag as done in the app
         return <TopNavbarOffer {...offerProps} offerConfig={offerConfig} app={app} ignoreOnboarding={isElectronApp} />;
     }
 
