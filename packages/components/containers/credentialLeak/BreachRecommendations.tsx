@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
-import type { FetchedBreaches } from '@proton/components/containers';
+import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 interface Props {
