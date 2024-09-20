@@ -1,9 +1,9 @@
-import { usePopperAnchor } from '@proton/components/components';
 import type { SelectedDrawerOption } from '@proton/components/components/drawer/views/DrawerView';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
