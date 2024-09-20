@@ -60,7 +60,7 @@ import UnavailableAddressesError from './errors/UnavailableAddressesError';
 import { MemberCreationValidationError, membersThunk, upsertMember } from './index';
 import validateAddUser from './validateAddUser';
 
-const getMember = (api: Api, memberID: string) =>
+export const getMember = (api: Api, memberID: string) =>
     api<{
         Member: Member;
     }>(getMemberConfig(memberID)).then(({ Member }) => Member);

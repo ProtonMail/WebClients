@@ -21,6 +21,7 @@ import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { User } from '@proton/shared/lib/interfaces';
 import type { Member } from '@proton/shared/lib/interfaces/Member';
+import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
 import noop from '@proton/utils/noop';
 
 import { AuthModal } from '../password';
@@ -94,7 +95,7 @@ const LoginMemberModal = ({ app, member, onClose, ...rest }: Props) => {
         );
     }
 
-    const memberAddress = <b key="member">{member.Addresses?.[0].Email || member.Name}</b>;
+    const memberAddress = <b key="member">{getMemberEmailOrName(member)}</b>;
 
     return (
         <Prompt

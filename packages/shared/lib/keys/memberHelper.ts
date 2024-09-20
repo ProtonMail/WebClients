@@ -21,7 +21,9 @@ export const getMemberUnprivatizationMode = (member?: Member) => {
     if (getHasMemberUnprivatization(member)) {
         return {
             exists: true,
-            pending: member.Unprivatization.State === MemberUnprivatizationState.Pending,
+            pending:
+                member.Unprivatization.State === MemberUnprivatizationState.Pending ||
+                member.Unprivatization.State === MemberUnprivatizationState.Ready,
             mode: (() => {
                 const isMemberSetup = getIsMemberSetup(member);
                 if (isMemberSetup) {
@@ -40,4 +42,8 @@ export const getMemberUnprivatizationMode = (member?: Member) => {
         mode: MemberUnprivatizationMode.None,
         pending: false,
     };
+};
+
+export const getMemberEmailOrName = (member: Member) => {
+    return member.Addresses?.[0]?.Email || member.Name || '';
 };
