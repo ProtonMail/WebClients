@@ -13,23 +13,31 @@ export const getIsMemberSetup = (member?: Member) => {
 export enum MemberUnprivatizationMode {
     None,
     MagicLinkInvite,
+    GSSO,
     AdminAccess,
 }
 
 export const getMemberUnprivatizationMode = (member?: Member) => {
-    const isMemberSetup = getIsMemberSetup(member);
     if (getHasMemberUnprivatization(member)) {
         return {
             exists: true,
-            mode: isMemberSetup ? MemberUnprivatizationMode.AdminAccess : MemberUnprivatizationMode.MagicLinkInvite,
             pending: member.Unprivatization.State === MemberUnprivatizationState.Pending,
-            isMemberSetup,
+            mode: (() => {
+                const isMemberSetup = getIsMemberSetup(member);
+                if (isMemberSetup) {
+                    return MemberUnprivatizationMode.AdminAccess;
+                }
+                if (member.SSO) {
+                    return MemberUnprivatizationMode.GSSO;
+                }
+                return MemberUnprivatizationMode.MagicLinkInvite;
+            })(),
         };
     }
+
     return {
         exists: false,
         mode: MemberUnprivatizationMode.None,
         pending: false,
-        isMemberSetup,
     };
 };
