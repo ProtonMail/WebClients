@@ -11,6 +11,9 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import type { PrivateKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
@@ -18,7 +21,6 @@ import { confirmPasswordValidator, passwordLengthValidator } from '@proton/share
 import { getBackupKeyData } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '../../components';
 import { useEventManager, useNotifications } from '../../hooks';
 import AuthModal from '../password/AuthModal';
 

@@ -12,6 +12,8 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import RegisterSecurityKeyContent from '@proton/components/containers/account/fido/RegisterSecurityKeyContent';
 import { useLoading } from '@proton/hooks';
 import { getSecurityKeyChallenge, registerSecurityKey } from '@proton/shared/lib/api/settings';
@@ -23,7 +25,6 @@ import { getCreatePayload } from '@proton/shared/lib/webauthn/create';
 import type { RegisterCredentials } from '@proton/shared/lib/webauthn/interface';
 import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physical-key-registered.svg';
 
-import { InputFieldTwo, useFormErrors } from '../../../components';
 import { useApi, useErrorHandler, useEventManager } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 import { maxSecurityKeyNameLength } from './constants';

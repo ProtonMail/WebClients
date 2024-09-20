@@ -8,6 +8,7 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import { sendEmailReminderTwoFA } from '@proton/shared/lib/api/organization';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
@@ -15,7 +16,6 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Address, Member, PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { useFormErrors } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
