@@ -122,6 +122,21 @@ export { default as EllipsisLoader } from './components/loader/EllipsisLoader';
 export { default as Loader } from './components/loader/Loader';
 export { default as LoaderIcon } from './components/loader/LoaderIcon';
 export { default as TextLoader } from './components/loader/TextLoader';
+export { default as CalendarLogo } from './components/logo/CalendarLogo';
+export { default as CustomLogo } from './components/logo/CustomLogo';
+export { default as DriveLogo } from './components/logo/DriveLogo';
+export { default as InboxDesktopLogo } from './components/logo/InboxDesktopLogo';
+export { default as Logo } from './components/logo/Logo';
+export type { LogoProps, LogoVariant } from './components/logo/Logo';
+export { default as MailLogo } from './components/logo/MailLogo';
+export { default as MainLogo } from './components/logo/MainLogo';
+export { default as PassForBusinessLogo } from './components/logo/PassForBusinessLogo';
+export { default as PassLogo } from './components/logo/PassLogo';
+export { default as ProtonForBusinessLogo } from './components/logo/ProtonForBusinessLogo';
+export { default as ProtonLogo } from './components/logo/ProtonLogo';
+export { default as VpnForBusinessLogo } from './components/logo/VpnForBusinessLogo';
+export { default as VpnLogo } from './components/logo/VpnLogo';
+export { default as WalletLogo } from './components/logo/WalletLogo';
 export { default as SettingsMaintenanceLayoutWrapper } from './components/maintenanceLayout/SettingsMaintenanceLayoutWrapper';
 export { default as LocalizedMiniCalendar } from './components/miniCalendar/LocalizedMiniCalendar';
 export { default as MiniCalendar } from './components/miniCalendar/MiniCalendar';
@@ -251,17 +266,32 @@ export {
     sieveTemplates,
 } from './containers/filters/utils';
 export { default as MinimalForgotUsernameContainer } from './containers/forgotUsername/MinimalForgotUsernameContainer';
-export { default as AutoSaveContactsToggle } from './containers/general/AutoSaveContactsToggle';
-export { default as DateFormatSection } from './containers/general/DateFormatSection';
-export { default as LanguageAndTimeSection } from './containers/general/LanguageAndTimeSection';
-export { default as LanguageSection } from './containers/general/LanguageSection';
-export { default as PmMeSection } from './containers/general/PmMeSection';
-export { default as ShortcutsToggle } from './containers/general/ShortcutsToggle';
-export { default as TimeFormatSection } from './containers/general/TimeFormatSection';
-export { default as ToggleAssistant } from './containers/general/ToggleAssistant/ToggleAssistant';
-export { default as ToggleAssistantContainer } from './containers/general/ToggleAssistant/ToggleAssistantContainer';
-export { default as ToggleAssistantEnvironment } from './containers/general/ToggleAssistant/ToggleAssistantEnvironment';
-export { default as WeekStartSection } from './containers/general/WeekStartSection';
+export {
+    default as AutoSaveContactsToggle,
+    default as AutoSaveContactsToggle,
+} from './containers/general/AutoSaveContactsToggle';
+export { default as DateFormatSection, default as DateFormatSection } from './containers/general/DateFormatSection';
+export {
+    default as LanguageAndTimeSection,
+    default as LanguageAndTimeSection,
+} from './containers/general/LanguageAndTimeSection';
+export { default as LanguageSection, default as LanguageSection } from './containers/general/LanguageSection';
+export { default as PmMeSection, default as PmMeSection } from './containers/general/PmMeSection';
+export { default as ShortcutsToggle, default as ShortcutsToggle } from './containers/general/ShortcutsToggle';
+export { default as TimeFormatSection, default as TimeFormatSection } from './containers/general/TimeFormatSection';
+export {
+    default as ToggleAssistant,
+    default as ToggleAssistant,
+} from './containers/general/ToggleAssistant/ToggleAssistant';
+export {
+    default as ToggleAssistantContainer,
+    default as ToggleAssistantContainer,
+} from './containers/general/ToggleAssistant/ToggleAssistantContainer';
+export {
+    default as ToggleAssistantEnvironment,
+    default as ToggleAssistantEnvironment,
+} from './containers/general/ToggleAssistant/ToggleAssistantEnvironment';
+export { default as WeekStartSection, default as WeekStartSection } from './containers/general/WeekStartSection';
 export { default as GmailSyncModal } from './containers/gmailSyncModal/GmailSyncModal';
 export { default as GmailSyncModalAnimation } from './containers/gmailSyncModal/GmailSyncModalAnimation';
 export { default as SignInWithGoogle } from './containers/gmailSyncModal/SignInWithGoogle';
