@@ -10,11 +10,12 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import { renameSecurityKey } from '@proton/shared/lib/api/settings';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { InputFieldTwo, useFormErrors } from '../../../components';
 import { useApi, useErrorHandler, useEventManager, useNotifications } from '../../../hooks';
 import { maxSecurityKeyNameLength } from './constants';
 

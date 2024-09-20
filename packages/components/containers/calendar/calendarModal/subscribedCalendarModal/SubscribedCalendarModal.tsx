@@ -7,6 +7,7 @@ import { Button, Href } from '@proton/atoms';
 import Form from '@proton/components/components/form/Form';
 import Loader from '@proton/components/components/loader/Loader';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { useLoading } from '@proton/hooks';
 import { validateSubscription } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_TYPE, MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
@@ -17,7 +18,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_SUBSCRIPTION_STATUS } from '@proton/shared/lib/interfaces/calendar';
 
-import { InputFieldTwo } from '../../../../components';
 import { useApi } from '../../../../hooks';
 import { GenericError } from '../../../error';
 import useGetCalendarActions from '../../hooks/useGetCalendarActions';

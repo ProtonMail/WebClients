@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { InputFieldTwo } from '@proton/components/components';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { useCalendarModelEventManager } from '@proton/components/containers';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';

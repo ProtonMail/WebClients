@@ -6,6 +6,7 @@ import { AutocompleteList, useAutocomplete, useAutocompleteFilter } from '@proto
 import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import Marks from '@proton/components/components/text/Marks';
+import InputField from '@proton/components/components/v2/field/InputField';
 import { useCombinedRefs } from '@proton/hooks';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
@@ -24,7 +25,6 @@ import {
     getRecipientFromAutocompleteItem,
 } from '../../addressesAutocomplete/helper';
 import type { InputFieldProps } from '../field/InputField';
-import InputField from '../field/InputField';
 
 interface Props extends Omit<InputFieldProps<typeof Input>, 'value' | 'onChange'> {
     id: string;

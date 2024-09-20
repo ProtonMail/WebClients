@@ -9,13 +9,14 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryUnlock } from '@proton/shared/lib/api/user';
 import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
-import { InputFieldTwo, PasswordInputTwo } from '../../components';
 import { useApi, useErrorHandler } from '../../hooks';
 
 interface Props extends Omit<ModalProps<typeof Form>, 'as' | 'onSubmit' | 'size' | 'onSuccess'> {

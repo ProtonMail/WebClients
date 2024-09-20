@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import { Icon, useKTActivation } from '@proton/components';
-import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components/components';
+import { InputFieldTwo, PasswordInputTwo, useFormErrors } from '@proton/components';
 import type { OnLoginCallback } from '@proton/components/containers';
 import { GenericError } from '@proton/components/containers';
 import useVerifyOutboundPublicKeys from '@proton/components/containers/keyTransparency/useVerifyOutboundPublicKeys';

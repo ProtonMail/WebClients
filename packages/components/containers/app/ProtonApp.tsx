@@ -1,12 +1,12 @@
 import type { ComponentType, ReactNode } from 'react';
 
 import { RightToLeftProvider } from '@proton/components';
+import SpotlightProvider from '@proton/components/components/spotlight/Provider';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import Icons from '@proton/icons/Icons';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 
-import SpotlightProvider from '../../components/spotlight/Provider';
 import { PreventLeaveProvider } from '../../hooks';
 import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
 import ConfigProvider from '../config/Provider';

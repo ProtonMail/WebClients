@@ -5,13 +5,16 @@ import { flushSync } from 'react-dom';
 import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
-import { AuthSecurityKeyContent, InputFieldTwo, PasswordInputTwo, Tabs, useFormErrors } from '@proton/components';
+import { AuthSecurityKeyContent, Tabs } from '@proton/components';
 import Form from '@proton/components/components/form/Form';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

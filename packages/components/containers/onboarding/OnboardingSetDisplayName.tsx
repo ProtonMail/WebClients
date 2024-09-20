@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import onboardingDisplayName from '@proton/styles/assets/img/onboarding/display-name.svg';
 
-import { InputFieldTwo } from '../../components';
 import type { Props as OnboardingContentProps } from './OnboardingContent';
 import OnboardingContent from './OnboardingContent';
 

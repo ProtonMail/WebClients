@@ -4,10 +4,12 @@ import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
+import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
+import OrderableTableBody from '@proton/components/components/orderableTable/OrderableTableBody';
+import OrderableTableHeader from '@proton/components/components/orderableTable/OrderableTableHeader';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
-import { OrderableTable, OrderableTableBody, OrderableTableHeader } from '../../components';
 import LabelSortableItem from './LabelSortableItem';
 
 interface Props extends SortableContainerProps {

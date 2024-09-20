@@ -7,12 +7,12 @@ import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { useUser } from '@proton/components/hooks';
 import { buildTreeview, formatFolderName, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
-import { InputFieldTwo } from '../../../components';
 import type { LabelModel } from '../../labels/modals/EditLabelModal';
 import EditLabelModal from '../../labels/modals/EditLabelModal';
 import { getDefaultFolderOptions, noFolderOption, noFolderValue } from '../constants';

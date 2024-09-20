@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { Spotlight, useSpotlightShow } from '@proton/components/components';
+import { Spotlight, useSpotlightShow } from '@proton/components';
 import {
     useActiveBreakpoint,
     useOrganization,

@@ -4,12 +4,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
-
-import { InputFieldTwo, useFormErrors } from '../../../components';
 
 interface Props {
     onSubmit: (email: string) => Promise<void>;

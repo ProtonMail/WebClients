@@ -22,6 +22,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Prompt from '@proton/components/components/prompt/Prompt';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -34,7 +36,6 @@ import { MemberUnprivatizationMode, getMemberUnprivatizationMode } from '@proton
 import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import { InputFieldTwo, useFormErrors } from '../../components';
 import { useApi, useErrorHandler, useNotifications, useOrganization, useOrganizationKey } from '../../hooks';
 import Addresses from '../addresses/Addresses';
 import useVerifyOutboundPublicKeys from '../keyTransparency/useVerifyOutboundPublicKeys';

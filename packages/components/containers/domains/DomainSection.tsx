@@ -2,12 +2,11 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Domain } from '@proton/shared/lib/interfaces';
-
-import { InputFieldTwo } from '../../components';
 
 interface Props {
     domain: Partial<Domain>;

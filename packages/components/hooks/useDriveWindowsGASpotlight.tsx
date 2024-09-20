@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import type { SpotlightProps } from '@proton/components/components';
+import type { SpotlightProps } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import devicesSpotlightIcon from '@proton/styles/assets/img/drive/computers-spotlight.png';
 

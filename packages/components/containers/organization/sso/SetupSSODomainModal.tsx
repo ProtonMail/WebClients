@@ -11,6 +11,8 @@ import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
@@ -20,7 +22,6 @@ import type { Domain } from '@proton/shared/lib/interfaces';
 import { VERIFY_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import { InputFieldTwo, useFormErrors } from '../../../components';
 import { useApi, useEventManager } from '../../../hooks';
 import TXTSection from './TXTSection';
 

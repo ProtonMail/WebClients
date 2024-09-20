@@ -6,12 +6,13 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useLoading } from '@proton/hooks';
 import { onSessionMigrationPaymentsVersion } from '@proton/payments';
 import { buyCredit, validateCredit } from '@proton/shared/lib/api/payments';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { InputFieldTwo, useFormErrors } from '../../components';
 import { useApi, useEventManager, useNotifications, useSubscription, useUser } from '../../hooks';
 
 const GiftCodeSection = () => {
