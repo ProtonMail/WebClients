@@ -32,8 +32,8 @@ export const createLogStore = <T extends LogStorageData>(storage: AnyStorage<T>)
         buffer.length = 0;
     }, 5_000);
 
-    const push = (message: string) => {
-        buffer.unshift(`${new Date().toLocaleString()} ${message}`);
+    const push = (...logs: string[]) => {
+        buffer.unshift(`${new Date().toLocaleString()} ${logs.join(' ')}`);
         void write();
         return true;
     };

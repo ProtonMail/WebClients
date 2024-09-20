@@ -85,27 +85,35 @@ export const readKeeperData = async ({ data }: { data: string }): Promise<Import
                     shareId: null,
                     items: items
                         .map((item): Maybe<ItemImportIntent> => {
-                            if (isNoteItem(item)) {
-                                return importNoteItem({
-                                    name: item[1],
-                                    note: item[5],
-                                });
-                            }
+                            const type = c('Label').t`Unknown`;
+                            const title = item?.[1] ?? '';
 
-                            if (isLoginItem(item)) {
-                                return importLoginItem({
-                                    name: item[1],
-                                    note: item[5],
-                                    ...getEmailOrUsername(item[2]),
-                                    password: item[3],
-                                    urls: [item[4]],
-                                    totp: extractTOTP(item),
-                                    extraFields: extractExtraFields(item),
-                                });
-                            }
+                            try {
+                                if (isNoteItem(item)) {
+                                    return importNoteItem({
+                                        name: item[1],
+                                        note: item[5],
+                                    });
+                                }
 
-                            ignored.push(`[${c('Placeholder').t`Other`}] ${item[1]}`);
-                            return;
+                                if (isLoginItem(item)) {
+                                    return importLoginItem({
+                                        name: item[1],
+                                        note: item[5],
+                                        ...getEmailOrUsername(item[2]),
+                                        password: item[3],
+                                        urls: [item[4]],
+                                        totp: extractTOTP(item),
+                                        extraFields: extractExtraFields(item),
+                                    });
+                                }
+
+                                ignored.push(`[${type}] ${title}`);
+                                return;
+                            } catch (err) {
+                                ignored.push(`[${type}] ${title}`);
+                                logger.warn('[Importer::Keeper]', err);
+                            }
                         })
                         .filter(truthy),
                 };
