@@ -13,6 +13,5 @@ export * from './popper';
 export { default as SmartBanner } from './smartBanner/SmartBanner';
 export * from './spotlight';
 export * from './text';
-export * from './title';
 export * from './topnavbar';
 export * from './v2';
