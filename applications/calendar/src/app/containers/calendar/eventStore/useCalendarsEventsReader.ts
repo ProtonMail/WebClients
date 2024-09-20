@@ -3,8 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi, useGetCalendarEventRaw } from '@proton/components';
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { useApi, useContactEmailsCache, useGetCalendarEventRaw } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { getApiWithAbort } from '@proton/shared/lib/api/helpers/customConfig';
