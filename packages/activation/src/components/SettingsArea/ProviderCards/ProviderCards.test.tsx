@@ -70,8 +70,10 @@ jest.mock('@proton/components/hooks/useCalendarUserSettings', () => ({
     useCalendarUserSettings: () => [],
     useGetCalendarUserSettings: () => () => [],
 }));
-jest.mock('@proton/components/containers/eventManager/calendar', () => ({
-    useCalendarModelEventManager: () => ({}),
+jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+    useCalendarModelEventManager: jest.fn(() => ({
+        subscribe: jest.fn(),
+    })),
 }));
 jest.mock('@proton/components/hooks/useCalendars', () => () => [
     [

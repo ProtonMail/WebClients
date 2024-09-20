@@ -1,11 +1,10 @@
 import type { ReactNode } from 'react';
 
-import { ContactProvider } from '@proton/components';
+import { ContactProvider, EventNotices } from '@proton/components';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 
 import { useConfig, useIsInboxElectronApp } from '../../hooks';
 import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
-import { EventNotices } from '../eventManager';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import KeyTransparencyManager from '../keyTransparency/KeyTransparencyManager';
 import DensityInjector from '../layouts/DensityInjector';

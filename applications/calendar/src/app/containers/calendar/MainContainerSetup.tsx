@@ -5,9 +5,9 @@ import {
     ContactEmailsProvider,
     useActiveBreakpoint,
     useCalendarUserSettings,
+    useCalendarsInfoListener,
     useUserSettings,
 } from '@proton/components';
-import { useCalendarsInfoListener } from '@proton/components/containers/eventManager/calendar';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getPreferredActiveWritableCalendar,
