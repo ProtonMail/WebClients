@@ -151,6 +151,9 @@ export { default as Option } from './components/option/Option';
 export { default as OrderableContainer } from './components/orderable/OrderableContainer';
 export { default as OrderableElement } from './components/orderable/OrderableElement';
 export { default as OrderableHandle } from './components/orderable/OrderableHandle';
+export { default as Pagination } from './components/pagination/Pagination';
+export { default as usePagination } from './components/pagination/usePagination';
+export { default as usePaginationAsync } from './components/pagination/usePaginationAsync';
 export { default as Price } from './components/price/Price';
 export { default as CircularProgress } from './components/progress/CircularProgress';
 export { default as DynamicProgress } from './components/progress/DynamicProgress';
@@ -250,29 +253,58 @@ export { default as MinimalForgotUsernameContainer } from './containers/forgotUs
 export {
     default as AutoSaveContactsToggle,
     default as AutoSaveContactsToggle,
+    default as AutoSaveContactsToggle,
 } from './containers/general/AutoSaveContactsToggle';
-export { default as DateFormatSection, default as DateFormatSection } from './containers/general/DateFormatSection';
 export {
+    default as DateFormatSection,
+    default as DateFormatSection,
+    default as DateFormatSection,
+} from './containers/general/DateFormatSection';
+export {
+    default as LanguageAndTimeSection,
     default as LanguageAndTimeSection,
     default as LanguageAndTimeSection,
 } from './containers/general/LanguageAndTimeSection';
-export { default as LanguageSection, default as LanguageSection } from './containers/general/LanguageSection';
-export { default as PmMeSection, default as PmMeSection } from './containers/general/PmMeSection';
-export { default as ShortcutsToggle, default as ShortcutsToggle } from './containers/general/ShortcutsToggle';
-export { default as TimeFormatSection, default as TimeFormatSection } from './containers/general/TimeFormatSection';
 export {
+    default as LanguageSection,
+    default as LanguageSection,
+    default as LanguageSection,
+} from './containers/general/LanguageSection';
+export {
+    default as PmMeSection,
+    default as PmMeSection,
+    default as PmMeSection,
+} from './containers/general/PmMeSection';
+export {
+    default as ShortcutsToggle,
+    default as ShortcutsToggle,
+    default as ShortcutsToggle,
+} from './containers/general/ShortcutsToggle';
+export {
+    default as TimeFormatSection,
+    default as TimeFormatSection,
+    default as TimeFormatSection,
+} from './containers/general/TimeFormatSection';
+export {
+    default as ToggleAssistant,
     default as ToggleAssistant,
     default as ToggleAssistant,
 } from './containers/general/ToggleAssistant/ToggleAssistant';
 export {
     default as ToggleAssistantContainer,
     default as ToggleAssistantContainer,
+    default as ToggleAssistantContainer,
 } from './containers/general/ToggleAssistant/ToggleAssistantContainer';
 export {
     default as ToggleAssistantEnvironment,
     default as ToggleAssistantEnvironment,
+    default as ToggleAssistantEnvironment,
 } from './containers/general/ToggleAssistant/ToggleAssistantEnvironment';
-export { default as WeekStartSection, default as WeekStartSection } from './containers/general/WeekStartSection';
+export {
+    default as WeekStartSection,
+    default as WeekStartSection,
+    default as WeekStartSection,
+} from './containers/general/WeekStartSection';
 export { default as GmailSyncModal } from './containers/gmailSyncModal/GmailSyncModal';
 export { default as GmailSyncModalAnimation } from './containers/gmailSyncModal/GmailSyncModalAnimation';
 export { default as SignInWithGoogle } from './containers/gmailSyncModal/SignInWithGoogle';

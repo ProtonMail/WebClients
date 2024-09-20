@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { LabelStack, Pagination } from '@proton/components/components';
+import { LabelStack, Pagination } from '@proton/components';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
