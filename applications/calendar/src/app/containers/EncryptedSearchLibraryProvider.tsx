@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
+import { useContactEmailsCache } from '@proton/components';
 import { useCalendarModelEventManager } from '@proton/components/containers/eventManager';
 import { useApi, useEventManager, useGetCalendarEventRaw, useUser } from '@proton/components/hooks';
 import type { IndexingMetrics } from '@proton/encrypted-search';

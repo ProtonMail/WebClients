@@ -3,9 +3,16 @@ import { memo, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { AddressesAutocompleteTwo, Alert, Details, Icon, Summary, useMailSettings } from '@proton/components';
+import {
+    AddressesAutocompleteTwo,
+    Alert,
+    Details,
+    Icon,
+    Summary,
+    useContactEmailsCache,
+    useMailSettings,
+} from '@proton/components';
 import useBusySlotsAvailable from '@proton/components/containers/calendar/hooks/useBusySlotsAvailable';
-import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import type { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
