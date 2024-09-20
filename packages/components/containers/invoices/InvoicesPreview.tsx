@@ -5,7 +5,8 @@ import type { Invoice } from '@proton/payments';
 import { getInvoice } from '@proton/shared/lib/api/payments';
 
 import { useApi } from '../../hooks';
-import { FilePreview, NavigationControl } from '../filePreview';
+import FilePreview from '../filePreview/FilePreview';
+import NavigationControl from '../filePreview/NavigationControl';
 import { getInvoicePaymentsVersion } from './helpers';
 
 export interface InvoicesPreviewControls {
