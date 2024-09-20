@@ -83,7 +83,7 @@ export const getRoutes = ({ user, subscription }: Arguments) => {
         },
         account: <SectionConfig>{
             text: c('Title').t`Account`,
-            to: '/account',
+            to: '/account-password',
             icon: 'user-circle',
             subsections: [
                 {
